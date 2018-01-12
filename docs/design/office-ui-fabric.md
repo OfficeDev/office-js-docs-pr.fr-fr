@@ -1,0 +1,43 @@
+# <a name="office-ui-fabric-in-office-add-ins"></a>Office UI Fabric dans des compléments Office 
+
+Office UI Fabric est une infrastructure frontale JavaScript permettant de créer des expériences pour Office et Office 365. Fabric propose des composants axés sur des visuels que vous pouvez étendre, retravailler et utiliser dans votre complément Office. Fabric utilisant le langage de création d’Office, ses composants d’expérience utilisateur ressemblent à une extension naturelle d’Office. 
+
+Si vous créez un complément, nous vous encourageons à utiliser Office UI Fabric pour mettre au point l’expérience utilisateur. L’utilisation d’Office UI Fabric est facultative.
+
+Les sections suivantes expliquent comment commencer à utiliser Fabric en fonction de vos besoins. 
+
+## <a name="use-fabric-core-icons-fonts-colors"></a>Utiliser Fabric Core : icônes, polices, couleurs
+Fabric Core contient les principaux éléments du langage de création tels que les icônes, les couleurs, le type et la grille. Fabric Core n’est pas dépendant de l’infrastructure. Les composants JS et React de la structure utilisent Fabric Core.
+
+Pour commencer à utiliser Fabric Core :
+
+1. Ajoutez la référence CDN au code HTML sur votre page.  
+
+    `<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.min.css">`   
+    
+2. Utilisez les polices et les icônes Fabric. 
+
+Pour utiliser une icône Fabric, incluez l’élément « i » sur votre page, puis référencez les classes appropriées. Vous pouvez contrôler la taille de l’icône en modifiant la taille de police. Par exemple, le code suivant montre comment créer une icône de tableau extra large qui utilise la couleur themePrimary (#0078d7). 
+   
+`<i class="ms-Icon ms-font-xl ms-Icon--Table ms-fontColor-themePrimary"></i>`
+
+Pour rechercher des icônes supplémentaires disponibles dans Office UI Fabric, utilisez la fonctionnalité de recherche de la page [Icônes](https://dev.office.com/fabric#/styles/icons). Lorsque vous trouvez une icône à utiliser dans votre complément, veillez à précéder le nom de l’icône de `ms-Icon--`. 
+
+Pour plus d’informations sur les tailles de police et les couleurs disponibles dans Office UI Fabric, voir [Typographie](https://dev.office.com/fabric#/styles/typography) et [Couleurs](https://dev.office.com/fabric#/styles/colors).
+ 
+## <a name="use-fabric-components"></a>Utiliser les composants Fabric 
+Fabric fournit une variété de composants UX que vous pouvez utiliser pour créer votre complément, y compris les types de composants suivants :
+
+- Composants d’entrée - par exemple, bouton, case à cocher et bouton bascule
+- Composants de navigation - par exemple, tableau croisé dynamique, barre de navigation
+- Composants de notification - par exemple, MessageBar et légende  
+
+Il n’est pas recommandé d’utiliser tous les composants Fabric dans des compléments. Nous fournissons des conseils sur l’utilisation des composants recommandés dans cette section. Par exemple, pour savoir comment utiliser un bouton Fabric dans votre complément, voir [Bouton](button.md). 
+
+Vous pouvez utiliser différentes infrastructures JavaScript, comme Angular ou React, pour créer votre complément. Pour commencer à utiliser les composants Fabric avec votre infrastructure, consultez les ressources suivantes.
+
+|**Infrastructure**|**Exemple**|
+|:------------|:----------|
+|**JavaScript uniquement** (pas d’infrastructure)|[Utilisation d’Office UI Fabric JS dans des compléments Office](using-office-ui-fabric-js.md)|
+|**React**|[Utilisation d’Office UI Fabric React dans des compléments Office](using-office-ui-fabric-react.md )|
+|**Angular**| Voir [ngOfficeUIFabric](http://ngofficeuifabric.com/), qui est un projet de communauté avec des directives Angular 1.5, et [Insertion de composants Fabric dans des composants Angular 2](https://dev.office.com/docs/add-ins/develop/add-ins-with-angular2#consider-wrapping-fabric-components-with-angular-2-components)|
