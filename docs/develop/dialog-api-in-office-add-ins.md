@@ -1,10 +1,10 @@
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Utiliser l’API de dialogue dans vos compléments Office
 
-Vous pouvez utiliser l’[API de dialogue](../../reference/shared/officeui.md) pour ouvrir des boîtes de dialogue dans votre complément Office. Cet article fournit des conseils concernant l’utilisation de l’API de dialogue dans votre complément Office.
+Vous pouvez utiliser l’[API de dialogue](http://dev.office.com/reference/add-ins/shared/officeui) pour ouvrir des boîtes de dialogue dans votre complément Office. Cet article fournit des conseils concernant l’utilisation de l’API de dialogue dans votre complément Office.
 
 > **Remarques :**
 
-> Pour plus d’informations sur les applications où l’API de dialogue est actuellement prise en charge, consultez la rubrique relative aux [ensembles de conditions requises de l’API de dialogue](../../reference/requirement-sets/dialog-api-requirement-sets.md). L’API de dialogue est actuellement prise en charge pour Word, Excel, PowerPoint et Outlook.
+> Pour plus d’informations sur les applications où l’API de dialogue est actuellement prise en charge, consultez la rubrique relative aux [ensembles de conditions requises de l’API de dialogue](http://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets). L’API de dialogue est actuellement prise en charge pour Word, Excel, PowerPoint et Outlook.
 
 > Un scénario principal pour l’API de dialogue consiste à activer l’authentification pour une ressource telle que Google ou Facebook. Si votre complément nécessite les données relatives à l’utilisateur d’Office ou leurs ressources accessibles via Microsoft Graph, par exemple Office 365 ou OneDrive, nous vous recommandons d’utiliser l’API d’authentification unique chaque fois que possible. Si vous utilisez les API pour l’authentification unique, vous n’aurez pas besoin de l’API de dialogue. Pour plus d’informations, consultez la rubrique [Activer l’authentification unique pour des compléments Office](http://dev.office.com/docs/add-ins/develop/sso-in-office-add-ins).
 
@@ -24,7 +24,7 @@ Notez que la boîte de dialogue s’ouvre toujours au centre de l’écran. L’
 
 ## <a name="dialog-api-scenarios"></a>Scénarios de l’API de dialogue
 
-Les API JavaScript Office prennent en charge les scénarios suivants avec un objet [Dialog](../../reference/shared/officeui.dialog.md) et deux fonctions dans l’[espace de noms Office.context.ui](../../reference/shared/officeui.md).
+Les API JavaScript Office prennent en charge les scénarios suivants avec un objet [Dialog](../../reference/shared/officeui.dialog.md) et deux fonctions dans l’[espace de noms Office.context.ui](http://dev.office.com/reference/add-ins/shared/officeui).
 
 ### <a name="open-a-dialog-box"></a>Ouvrir une boîte de dialogue.
 

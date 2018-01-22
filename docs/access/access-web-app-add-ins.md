@@ -136,4 +136,4 @@ Téléchargez l’exemple sur la page [Office 365 : Liaison et manipulation des 
 
 - [Présentation de l’API JavaScript pour compléments](../develop/understanding-the-javascript-api-for-office.md)
 
-- [Interface API JavaScript pour Office](../../reference/javascript-api-for-office.md)
+- [Interface API JavaScript pour Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)

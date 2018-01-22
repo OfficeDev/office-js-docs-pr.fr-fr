@@ -69,7 +69,7 @@ Appliquez les meilleures pratiques suivantes lorsque vous développez des comman
 
 La meilleure façon de commencer à utiliser des commandes de complément consiste à consulter des [exemples de commandes de complément Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) sur GitHub.
 
-Pour plus d’informations sur la spécification des commandes de complément dans votre manifeste, reportez-vous à [Définir des commandes de complément dans votre manifeste](../develop/define-add-in-commands.md) et au contenu de référence sur [VersionOverrides](../../reference/manifest/versionoverrides.md).
+Pour plus d’informations sur la spécification des commandes de complément dans votre manifeste, reportez-vous à [Définir des commandes de complément dans votre manifeste](../develop/define-add-in-commands.md) et au contenu de référence sur [VersionOverrides](http://dev.office.com/reference/add-ins/manifest/versionoverrides).
 
 
 

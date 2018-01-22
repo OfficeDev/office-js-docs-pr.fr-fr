@@ -5,7 +5,7 @@
 
 La bibliothèque LabsJS (labs.js) prend en charge l’écriture de Compléments Office (appelés « ateliers ») qui s’intègrent avec Office Mix. Office Mix, puis affiche les ateliers à l’aide de Microsoft PowerPoint. Même si nous nommons ces composants des « ateliers », nous créons bien des Compléments Office spéciaux qui sont des Compléments Office Mix.
 
-Le contenu LabsJS vous permet d’implémenter l’API JavaScript labs.js en vous donnant des conseils et des exemples. Cette bibliothèque est créée au-dessus de l’ [Interface API JavaScript pour Office](../../../reference/javascript-api-for-office.md) (Office.js) et fournit une couche d’abstraction optimisée pour les compléments incorporés dans Office Mix.
+Le contenu LabsJS vous permet d’implémenter l’API JavaScript labs.js en vous donnant des conseils et des exemples. Cette bibliothèque est créée au-dessus de l’ [Interface API JavaScript pour Office](http://dev.office.com/reference/add-ins/javascript-api-for-office) (Office.js) et fournit une couche d’abstraction optimisée pour les compléments incorporés dans Office Mix.
 
 
 ## <a name="general-guidelines"></a>Recommandations générales

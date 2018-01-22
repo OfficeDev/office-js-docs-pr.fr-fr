@@ -1,6 +1,6 @@
 # <a name="define-add-in-commands-in-your-manifest"></a>Définir des commandes de complément dans votre manifeste
 
-Les commandes de complément sont un moyen de personnaliser facilement l’interface utilisateur d’Office par défaut en y ajoutant des éléments d’interface qui exécutent des actions, tels que des boutons personnalisés ajoutés au ruban. Pour créer des commandes, ajoutez un nœud **[VersionOverrides](../../reference/manifest/versionoverrides.md)** à un manifeste existant. 
+Les commandes de complément sont un moyen de personnaliser facilement l’interface utilisateur d’Office par défaut en y ajoutant des éléments d’interface qui exécutent des actions, tels que des boutons personnalisés ajoutés au ruban. Pour créer des commandes, ajoutez un nœud **[VersionOverrides](http://dev.office.com/reference/add-ins/manifest/versionoverrides)** à un manifeste existant. 
 
 Lorsqu’un manifeste contient l’élément **VersionOverrides**, les versions de Word, Excel, Outlook et PowerPoint prenant en charge les commandes de complément utiliseront les informations de cet élément pour charger le complément. Les versions antérieures des produits Office qui ne prennent pas en charge les commandes de complément ignoreront l’élément.
 
@@ -8,7 +8,7 @@ Lorsque les applications clientes reconnaissent le nœud **VersionOverrides**, l
  
 ## <a name="versionoverrides"></a>VersionOverrides
 
-L’élément [VersionOverrides](../../reference/manifest/versionoverrides.md) est l’élément racine qui contient des informations pour les commandes de complément implémentées par le complément. Il est pris en charge dans la version 1.1 et les versions ultérieures du schéma de manifeste.
+L’élément [VersionOverrides](http://dev.office.com/reference/add-ins/manifest/versionoverrides) est l’élément racine qui contient des informations pour les commandes de complément implémentées par le complément. Il est pris en charge dans la version 1.1 et les versions ultérieures du schéma de manifeste.
 
 Il existe deux versions du schéma **VersionOverrides**.
 
@@ -21,11 +21,11 @@ Un complément peut prendre en charge plusieurs versions du schéma **VersionOve
 
 L’élément **VersionOverrides** inclut les éléments enfants suivants :
 
-- [Description](../../reference/manifest/description.md)
-- [Requirements](../../reference/manifest/requirements.md)
-- [Hosts](../../reference/manifest/hosts.md)
-- [Ressources](../../reference/manifest/resources.md)
-- [VersionOverrides](../../reference/manifest/versionoverrides.md)
+- [Description](http://dev.office.com/reference/add-ins/manifest/description)
+- [Requirements](http://dev.office.com/reference/add-ins/manifest/requirements)
+- [Hosts](http://dev.office.com/reference/add-ins/manifest/hosts)
+- [Ressources](http://dev.office.com/reference/add-ins/manifest/resources)
+- [VersionOverrides](http://dev.office.com/reference/add-ins/manifest/versionoverrides)
 
 Le diagramme suivant illustre la hiérarchie des éléments utilisés pour définir des commandes de complément. 
 

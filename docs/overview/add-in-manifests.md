@@ -58,19 +58,19 @@ Le tableau suivant spécifie les éléments qui sont requis pour les trois types
 
 - Vérifiez que l’ID du complément est un GUID valide et unique. Vous trouverez des outils de génération de GUID sur Internet pour vous aider à créer un GUID unique. 
 
-- Toutes les URL, telles que les emplacements des fichiers source spécifiés dans l’élément [SourceLocation](../../reference/manifest/sourcelocation.md), doivent être **sécurisées par une protection SSL (HTTPS)**.
+- Toutes les URL, telles que les emplacements des fichiers source spécifiés dans l’élément [SourceLocation](http://dev.office.com/reference/add-ins/manifest/sourcelocation), doivent être **sécurisées par une protection SSL (HTTPS)**.
 
 - Toutes les URL d’icône, telles que celles utilisées sur les surfaces de commande, doivent **autoriser la mise en cache**. Le serveur web NE doit PAS renvoyer les en-têtes HTTP, tels que no-cache/no-store. 
 
-- Les compléments envoyés à l’Office Store doivent également inclure l’élément [SupportUrl](../../reference/manifest/supporturl.md). Pour plus d’informations, voir la section relative aux [erreurs d’envoi fréquentes à éviter](http://msdn.microsoft.com/library/0ceb385c-a608-40cc-8314-78e39d6c75d0%28Office.15%29.aspx#bk_q2).
+- Les compléments envoyés à l’Office Store doivent également inclure l’élément [SupportUrl](http://dev.office.com/reference/add-ins/manifest/supporturl). Pour plus d’informations, voir la section relative aux [erreurs d’envoi fréquentes à éviter](http://msdn.microsoft.com/library/0ceb385c-a608-40cc-8314-78e39d6c75d0%28Office.15%29.aspx#bk_q2).
 
-- Il est recommandé d’utiliser uniquement l’élément [AppDomains](../../reference/manifest/appdomains.md) pour spécifier des domaines différents de celui spécifié dans l’élément [SourceLocation](../../reference/manifest/sourcelocation.md) pour les scénarios d’authentification.
+- Il est recommandé d’utiliser uniquement l’élément [AppDomains](http://dev.office.com/reference/add-ins/manifest/appdomains) pour spécifier des domaines différents de celui spécifié dans l’élément [SourceLocation](http://dev.office.com/reference/add-ins/manifest/sourcelocation) pour les scénarios d’authentification.
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>Spécifier les domaines que vous souhaitez ouvrir dans la fenêtre de complément
 
-Par défaut, si votre complément tente d’accéder à une URL située dans un autre domaine que celui qui héberge la page initiale (comme indiqué dans l’élément [SourceLocation](../../reference/manifest/sourcelocation.md) du fichier manifeste), cette URL s’ouvre dans une nouvelle fenêtre de navigateur en dehors du volet de complément de l’application hôte Office. Ce comportement par défaut protège l’utilisateur contre toute navigation inattendue dans le volet de complément à partir d’éléments **iframe** incorporés.
+Par défaut, si votre complément tente d’accéder à une URL située dans un autre domaine que celui qui héberge la page initiale (comme indiqué dans l’élément [SourceLocation](http://dev.office.com/reference/add-ins/manifest/sourcelocation) du fichier manifeste), cette URL s’ouvre dans une nouvelle fenêtre de navigateur en dehors du volet de complément de l’application hôte Office. Ce comportement par défaut protège l’utilisateur contre toute navigation inattendue dans le volet de complément à partir d’éléments **iframe** incorporés.
 
-Pour remplacer ce comportement, spécifiez chaque domaine à ouvrir dans la fenêtre de complément dans la liste des domaines spécifiés dans l’élément [AppDomains](../../reference/manifest/appdomains.md) du fichier manifeste. Si le complément tente d’accéder à une URL dans un domaine qui n’est pas dans la liste, cette URL s’ouvre dans une nouvelle fenêtre de navigateur (en dehors du volet de complément).
+Pour remplacer ce comportement, spécifiez chaque domaine à ouvrir dans la fenêtre de complément dans la liste des domaines spécifiés dans l’élément [AppDomains](http://dev.office.com/reference/add-ins/manifest/appdomains) du fichier manifeste. Si le complément tente d’accéder à une URL dans un domaine qui n’est pas dans la liste, cette URL s’ouvre dans une nouvelle fenêtre de navigateur (en dehors du volet de complément).
 
 L’exemple de manifeste XML suivant héberge sa page de complément principale dans le domaine `https://www.contoso.com` comme indiqué dans l’élément **SourceLocation**. Il indique également le domaine `https://www.northwindtraders.com` dans un élément [AppDomain](http://msdn.microsoft.com/en-us/library/2a0353ec-5e09-6fbf-1636-4bb5dcebb9bf%28Office.15%29.aspx) au sein de la liste d’éléments **AppDomains**. Si le complément ouvre une page dans le domaine www.northwindtraders.com, cette page s’ouvre dans le volet de complément.
 

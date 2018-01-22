@@ -65,7 +65,7 @@ Dans le fichier manifeste de votre complément, mettez à jour l’attribut **xm
 </OfficeApp>
 ```
 
-> **Remarque :** une fois le schéma manifeste du complément mis à jour vers la version 1.1, vous devez supprimer les éléments **Capabilities** et **Capability**, et les remplacer par les éléments [Hosts](../../reference/manifest/hosts.md) et [Host](../../reference/manifest/hosts.md) ou [Requirements et Requirement](../../docs/overview/specify-office-hosts-and-api-requirements.md).
+> **Remarque :** une fois le schéma manifeste du complément mis à jour vers la version 1.1, vous devez supprimer les éléments **Capabilities** et **Capability**, et les remplacer par les éléments [Hosts](http://dev.office.com/reference/add-ins/manifest/hosts) et [Host](http://dev.office.com/reference/add-ins/manifest/hosts) ou [Requirements et Requirement](../../docs/overview/specify-office-hosts-and-api-requirements.md).
 
 ## <a name="updating-an-office-add-in-project-created-with-a-text-editor-or-other-ide"></a>Mise à jour d’un projet de complément Office créé avec un éditeur de texte ou une autre IDE
 
@@ -105,7 +105,7 @@ Dans le fichier manifeste de votre complément, mettez à jour l’attribut **xm
 </OfficeApp>
 ```
 
-> **Remarque :** une fois le schéma manifeste du complément mis à jour vers la version 1.1, vous devez supprimer les éléments **Capabilities** et **Capability**, et les remplacer par les éléments [Hosts](../../reference/manifest/hosts.md) et [Host](../../reference/manifest/hosts.md) ou [Requirements et Requirement](../../docs/overview/specify-office-hosts-and-api-requirements.md).
+> **Remarque :** une fois le schéma manifeste du complément mis à jour vers la version 1.1, vous devez supprimer les éléments **Capabilities** et **Capability**, et les remplacer par les éléments [Hosts](http://dev.office.com/reference/add-ins/manifest/hosts) et [Host](http://dev.office.com/reference/add-ins/manifest/hosts) ou [Requirements et Requirement](../../docs/overview/specify-office-hosts-and-api-requirements.md).
     
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
@@ -114,7 +114,7 @@ Dans le fichier manifeste de votre complément, mettez à jour l’attribut **xm
     
 - [Présentation de l’API JavaScript pour Office](../../docs/develop/understanding-the-javascript-api-for-office.md)
     
-- [Interface API JavaScript pour Office](../../reference/javascript-api-for-office.md)
+- [Interface API JavaScript pour Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)
     
 - [Informations de référence sur le schéma des manifestes des applications pour Office (version 1.1)](../overview/add-in-manifests.md)
     

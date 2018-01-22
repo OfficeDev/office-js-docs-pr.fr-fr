@@ -27,7 +27,7 @@ Vous spécifiez [trois types de liaisons différents][Office.BindingType] avec l
 
     Dans Excel, toute sélection contiguë de cellules peut être utilisée pour établir une liaison de matrice. Dans Word, seuls les tableaux prennent en charge la liaison de matrice.
 
-3. **[Liaison de tableau][TableBinding]** - Établit une liaison à une zone d’un document qui contient un tableau avec des en-têtes. Les données dans une liaison de tableau sont écrites ou lues comme un objet [TableData](../../reference/shared/tabledata.md). L’objet `TableData` expose les données via les propriétés `headers` et `rows`.
+3. **[Liaison de tableau][TableBinding]** - Établit une liaison à une zone d’un document qui contient un tableau avec des en-têtes. Les données dans une liaison de tableau sont écrites ou lues comme un objet [TableData](http://dev.office.com/reference/add-ins/shared/tabledata). L’objet `TableData` expose les données via les propriétés `headers` et `rows`.
 
     Tout tableau Excel ou Word peut être la base d’une liaison de tableau. Une fois que vous établissez une liaison de tableau, chaque nouvelle ligne ou colonne qu’un utilisateur ajoute au tableau est automatiquement incluse dans la liaison.
 

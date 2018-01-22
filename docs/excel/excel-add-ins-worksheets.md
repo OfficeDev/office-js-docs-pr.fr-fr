@@ -1,6 +1,6 @@
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 
-Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes à l’aide de feuilles de calcul utilisant l’API JavaScript pour Excel. Pour une liste complète des propriétés et des méthodes prises en charge par les objets **Worksheet** et **WorksheetCollection**, reportez-vous aux rubriques [Objet Worksheet (API JavaScript pour Excel)](../../reference/excel/worksheet.md) et [Objet WorksheetCollection (API JavaScript pour Excel)](../../reference/excel/worksheetcollection.md).
+Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes à l’aide de feuilles de calcul utilisant l’API JavaScript pour Excel. Pour une liste complète des propriétés et des méthodes prises en charge par les objets **Worksheet** et **WorksheetCollection**, reportez-vous aux rubriques [Objet Worksheet (API JavaScript pour Excel)](http://dev.office.com/reference/add-ins/excel/worksheet) et [Objet WorksheetCollection (API JavaScript pour Excel)](http://dev.office.com/reference/add-ins/excel/worksheetcollection).
 
 **Remarque** : les informations contenues dans cet article s’appliquent uniquement aux feuilles de calcul standard. Elles ne concernent pas les feuilles « chart » ou « macro ».
 
@@ -269,5 +269,5 @@ Pour obtenir des exemples qui montrent comment obtenir une plage dans une feuill
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 - [Concepts de base de l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
-- [Objet Worksheet (API JavaScript pour Excel)](../../reference/excel/worksheet.md)
-- [Objet WorksheetCollection (API JavaScript pour Excel)](../../reference/excel/worksheetcollection.md)
+- [Objet Worksheet (API JavaScript pour Excel)](http://dev.office.com/reference/add-ins/excel/worksheet)
+- [Objet WorksheetCollection (API JavaScript pour Excel)](http://dev.office.com/reference/add-ins/excel/worksheetcollection)

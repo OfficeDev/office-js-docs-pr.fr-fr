@@ -26,8 +26,8 @@ Une fois le processus d’installation terminé, les dernières applications d�
 
 Pour plus d’informations sur les versions minimum des produits pour chaque plate-forme pour les ensembles de conditions requises pour les API, voir les rubriques suivantes :
 
-- [Ensembles de conditions requises de l’API JavaScript pour Word](../../reference/requirement-sets/word-api-requirement-sets.md)
-- [Ensembles de conditions requises de l’API JavaScript pour Excel](../../reference/requirement-sets/excel-api-requirement-sets.md)
-- [Ensembles de conditions requises de l’API JavaScript pour OneNote](../../reference/requirement-sets/onenote-api-requirement-sets.md)
-- [Ensembles de conditions requises de l’API de boîte de dialogue](../../reference/requirement-sets/dialog-api-requirement-sets.md)
-- [Ensembles de conditions requises des API communes pour Office](../../reference/requirement-sets/office-add-in-requirement-sets.md)
+- [Ensembles de conditions requises de l’API JavaScript pour Word](http://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets)
+- [Ensembles de conditions requises de l’API JavaScript pour Excel](http://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets)
+- [Ensembles de conditions requises de l’API JavaScript pour OneNote](http://dev.office.com/reference/add-ins/requirement-sets/onenote-api-requirement-sets)
+- [Ensembles de conditions requises de l’API de boîte de dialogue](http://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets)
+- [Ensembles de conditions requises des API communes pour Office](http://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets)

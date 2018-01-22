@@ -1,6 +1,6 @@
 # <a name="excel-javascript-api-core-concepts"></a>Concepts de base de l’API JavaScript Excel
  
-Cet article décrit comment utiliser l’[API JavaScript pour Excel](../../reference/excel/excel-add-ins-reference-overview.md) afin de créer des compléments pour Excel 2016. Il présente les concepts fondamentaux de l’utilisation des API et fournit des conseils pour effectuer des tâches spécifiques, comme la lecture ou l’écriture d’une grande plage, la mise à jour de toutes les cellules d’une plage, et bien plus encore.
+Cet article décrit comment utiliser l’[API JavaScript pour Excel](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview) afin de créer des compléments pour Excel 2016. Il présente les concepts fondamentaux de l’utilisation des API et fournit des conseils pour effectuer des tâches spécifiques, comme la lecture ou l’écriture d’une grande plage, la mise à jour de toutes les cellules d’une plage, et bien plus encore.
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Nature asynchrone des API Excel
 
@@ -127,8 +127,8 @@ object.load({ loadOption });
  
 _Où :_
  
-* `properties` est la liste des propriétés et/ou des noms de relation à charger, fournie sous forme de chaînes séparées par des virgules ou de tableau de noms. Pour plus d’informations, reportez-vous aux méthodes **load()** définies pour les objets dans la rubrique [Référence de l’API JavaScript pour Excel](../../reference/excel/excel-add-ins-reference-overview.md).
-* `loadOption` spécifie un objet qui décrit les options selection, expansion, top et skip. Pour plus d’informations, reportez-vous aux [options](../../reference/excel/loadoption.md) de chargement d’objet.
+* `properties` est la liste des propriétés et/ou des noms de relation à charger, fournie sous forme de chaînes séparées par des virgules ou de tableau de noms. Pour plus d’informations, reportez-vous aux méthodes **load()** définies pour les objets dans la rubrique [Référence de l’API JavaScript pour Excel](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview).
+* `loadOption` spécifie un objet qui décrit les options selection, expansion, top et skip. Pour plus d’informations, reportez-vous aux [options](http://dev.office.com/reference/add-ins/excel/loadoption) de chargement d’objet.
 
 Pour plus d’informations sur la méthode **load()**, reportez-vous à la rubrique [Concepts avancés pour l’API JavaScript pour Excel](excel-add-ins-advanced-concepts.md).
 
@@ -271,4 +271,4 @@ Lorsqu’une erreur d’API se produit, l’API renvoie un objet **error** qui c
  
 * [Prise en main des compléments Excel](excel-add-ins-get-started-overview.md)
 * [Exemples de code pour les compléments Excel](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Référence de l’API JavaScript pour Excel](../../reference/excel/excel-add-ins-reference-overview.md)
+* [Référence de l’API JavaScript pour Excel](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

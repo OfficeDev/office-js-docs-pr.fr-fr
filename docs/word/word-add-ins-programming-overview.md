@@ -44,7 +44,7 @@ Les interfaces API JavaScript pour Word permettent à votre application d’acc�
 
 Vous pouvez utiliser les deux ensembles d’API JavaScript pour interagir avec les objets et les métadonnées d’un document Word. Le premier est l’[API JavaScript pour Office](https://dev.office.com/reference/add-ins/javascript-api-for-office?product=word), introduit dans Office 2013. Il s’agit d’une interface API partagée : la plupart des objets peuvent être utilisés dans des compléments hébergés par plusieurs clients Office. Cette API utilise largement les rappels. 
 
-Le deuxième est l’[API JavaScript pour Word](../../reference/word/word-add-ins-reference-overview.md). Il s’agit d’un modèle d’objet fortement typé qui vous permet de créer des compléments Word destinés à Word 2016 pour Mac et Windows. Ce modèle d’objet utilise les promesses et fournit un accès aux objets Word, tels que le [corps](../../reference/word/body.md), les [contrôles de contenu](../../reference/word/contentcontrol.md), les [images incluses](../../reference/word/inlinepicture.md) et les [paragraphes](../../reference/word/paragraph.md). L’API JavaScript pour Word inclut les définitions TypeScript et les fichiers vsdoc pour vous permettre d’obtenir des conseils concernant votre code dans votre IDE.
+Le deuxième est l’[API JavaScript pour Word](http://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview). Il s’agit d’un modèle d’objet fortement typé qui vous permet de créer des compléments Word destinés à Word 2016 pour Mac et Windows. Ce modèle d’objet utilise les promesses et fournit un accès aux objets Word, tels que le [corps](http://dev.office.com/reference/add-ins/word/body), les [contrôles de contenu](http://dev.office.com/reference/add-ins/word/contentcontrol), les [images incluses](http://dev.office.com/reference/add-ins/word/inlinepicture) et les [paragraphes](http://dev.office.com/reference/add-ins/word/paragraph). L’API JavaScript pour Word inclut les définitions TypeScript et les fichiers vsdoc pour vous permettre d’obtenir des conseils concernant votre code dans votre IDE.
 
 Actuellement, tous les clients Word prennent en charge l’API JavaScript partagé pour Office, et la plupart des clients prennent en charge l’API JavaScript pour Word. Pour plus d’informations sur les clients pris en charge, voir la [Documentation de référence de l’API](https://dev.office.com/reference/add-ins/javascript-api-for-office?product=word).
 
@@ -72,12 +72,12 @@ Une fois le développement de votre complément terminé, vous pouvez le [publie
 
 ## <a name="whats-coming-up-for-word-add-ins"></a>Nouveautés pour les compléments Word
 
-Au fur et à mesure que nous concevons et développons de nouvelles API pour les compléments Word, nous les mettons à votre disposition sur notre page de [spécifications d’ouverture de l’API](../../reference/openspec.md) pour que vous puissiez fournir vos commentaires. Découvrez les nouvelles fonctionnalités dans le pipeline pour les API JavaScript pour Word et donnez votre avis sur nos spécifications de conception.
+Au fur et à mesure que nous concevons et développons de nouvelles API pour les compléments Word, nous les mettons à votre disposition sur notre page de [spécifications d’ouverture de l’API](http://dev.office.com/reference/add-ins/openspec) pour que vous puissiez fournir vos commentaires. Découvrez les nouvelles fonctionnalités dans le pipeline pour les API JavaScript pour Word et donnez votre avis sur nos spécifications de conception.
 
 Vous pouvez également afficher les nouveautés de l’API JavaScript pour Word sur la page du [journal des modifications](http://dev.office.com/changelog).
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 * [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
-* [Référence d’API JavaScript pour Word](../../reference/word/word-add-ins-reference-overview.md)
+* [Référence d’API JavaScript pour Word](http://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview)
 

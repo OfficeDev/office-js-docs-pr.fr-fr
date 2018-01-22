@@ -16,9 +16,9 @@ Pour créer une page OneNote vide, utilisez l’une des méthodes suivantes :
 
 Utilisez ensuite les méthodes dans les objets suivants pour travailler avec le contenu de la page, comme Page.addOutline et Outline.appendHtml. 
 
-- [Page](../../reference/onenote/page.md)
-- [Outline](../../reference/onenote/outline.md)
-- [Paragraph](../../reference/onenote/paragraph.md)
+- [Page](http://dev.office.com/reference/add-ins/onenote/page)
+- [Outline](http://dev.office.com/reference/add-ins/onenote/outline)
+- [Paragraph](http://dev.office.com/reference/add-ins/onenote/paragraph)
 
 Le contenu et la structure d’une page OneNote sont représentés par du code HTML. Seul un sous-ensemble de code HTML est pris en charge pour créer ou mettre à jour du contenu de page, comme décrit ci-dessous.
 
@@ -44,6 +44,6 @@ Des métadonnées, telles que le titre, peuvent toujours être interrogées pour
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 - [Vue d’ensemble de la programmation de l’API JavaScript de OneNote](onenote-add-ins-programming-overview.md)
-- [Référence de l’API JavaScript de OneNote](../../reference/onenote/onenote-add-ins-javascript-reference.md)
+- [Référence de l’API JavaScript de OneNote](http://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
 - [Exemple de grille d’évaluation](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Vue d’ensemble de la plateforme des compléments Office](https://dev.office.com/docs/add-ins/overview/office-add-ins)

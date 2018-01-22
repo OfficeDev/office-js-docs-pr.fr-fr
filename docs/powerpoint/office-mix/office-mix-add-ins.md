@@ -16,7 +16,7 @@ Pour en voir des exemples, parcourez les nombreuses démonstrations de leçons O
 
 LabsJS étend le concept d’Office Mix. Alors qu’un Office Mix transforme une présentation PowerPoint en une leçon dynamique, avec LabsJS, vous pouvez permettre aux utilisateurs d’interagir de façon avancée avec la leçon. Cette interactivité se présente sous la forme de démonstrations, de quiz, de simulations, ainsi que de nombreux autres types de contenu interactif. Ces nouveaux composants pédagogiques interactifs sont appelés des ateliers. En fait, il s’agit simplement de Compléments Office Mix créés avec HTML5 et JavaScript.
 
-Ces ateliers sont en fait des compléments écrits dans JavaScript à l’aide de l’API labs.js ([Référence d’API JavaScript LabsJS](../../../reference/office-mix/labsjs-javascript-api-reference.md)). Labs.js sert de couche d’abstraction en plus de la bibliothèque office.js. Pour résumé, labs.js permet de créer ces ateliers et de les insérer dans des instances Office Mix, les « Mixes », qui sont ensuite affichés dans PowerPoint.
+Ces ateliers sont en fait des compléments écrits dans JavaScript à l’aide de l’API labs.js ([Référence d’API JavaScript LabsJS](http://dev.office.com/reference/add-ins/office-mix/labsjs-javascript-api-reference)). Labs.js sert de couche d’abstraction en plus de la bibliothèque office.js. Pour résumé, labs.js permet de créer ces ateliers et de les insérer dans des instances Office Mix, les « Mixes », qui sont ensuite affichés dans PowerPoint.
 
 
 ## <a name="take-a-look"></a>Explorez

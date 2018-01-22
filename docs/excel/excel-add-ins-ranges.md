@@ -1,6 +1,6 @@
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Utiliser des plages à l’aide de l’API JavaScript pour Excel
 
-Cet article fournit des exemples de code qui expliquent comment effectuer des tâches courantes avec des plages à l’aide de l’API JavaScript pour Excel. Pour obtenir une liste complète des propriétés et des méthodes prises en charge par l’objet **Range**, reportez-vous à la rubrique [Objet Range (API JavaScript pour Excel)](../../reference/excel/range.md).
+Cet article fournit des exemples de code qui expliquent comment effectuer des tâches courantes avec des plages à l’aide de l’API JavaScript pour Excel. Pour obtenir une liste complète des propriétés et des méthodes prises en charge par l’objet **Range**, reportez-vous à la rubrique [Objet Range (API JavaScript pour Excel)](http://dev.office.com/reference/add-ins/excel/range).
 
 ## <a name="get-a-range"></a>Obtenir une plage
 
@@ -527,4 +527,4 @@ Excel.run(function (context) {
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 - [Concepts de base de l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
-- [Objet Range (API JavaScript pour Excel)](../../reference/excel/range.md)
+- [Objet Range (API JavaScript pour Excel)](http://dev.office.com/reference/add-ins/excel/range)

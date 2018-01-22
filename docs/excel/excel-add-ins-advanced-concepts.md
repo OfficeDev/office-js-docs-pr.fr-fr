@@ -6,19 +6,19 @@ Cet article s’appuie sur les informations contenues dans la rubrique [Concepts
 
 Un complément Excel interagit avec des objets dans Excel à l’aide de l’API JavaScript pour Office, qui inclut deux modèles d’objets JavaScript :
 
-* **API JavaScript pour Excel** : inclut dans Office 2016, l’[API JavaScript Excel](../../reference/excel/excel-add-ins-reference-overview.md) fournit des objets fortement typés que vous pouvez utiliser pour accéder à des feuilles de calcul, des plages, des tableaux, des graphiques et bien plus encore. 
+* **API JavaScript pour Excel** : inclut dans Office 2016, l’[API JavaScript Excel](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview) fournit des objets fortement typés que vous pouvez utiliser pour accéder à des feuilles de calcul, des plages, des tableaux, des graphiques et bien plus encore. 
 
-* **API communes** : incluses dans Office 2013, les API communes (également appelées [API partagées](../../reference/javascript-api-for-office.md)) peuvent être utilisées pour accéder à des fonctionnalités, telles que l’interface utilisateur, les boîtes de dialogue et les paramètres du client, qui sont communes à plusieurs types d’applications hôtes, comme Word, Excel et PowerPoint.
+* **API communes** : incluses dans Office 2013, les API communes (également appelées [API partagées](http://dev.office.com/reference/add-ins/javascript-api-for-office)) peuvent être utilisées pour accéder à des fonctionnalités, telles que l’interface utilisateur, les boîtes de dialogue et les paramètres du client, qui sont communes à plusieurs types d’applications hôtes, comme Word, Excel et PowerPoint.
 
 Lorsque vous emploierez l’API JavaScript Excel pour développer la majorité des fonctionnalités dans des compléments destinés à Excel 2016, vous utiliserez également des objets dans l’API partagée. Par exemple :
 
-- [Context](../../reference/shared/context.md) : l’objet **Context** représente l’environnement d’exécution du complément et permet d’accéder à des objets clés de l’API. Il se compose de détails sur la configuration du classeur comme `contentLanguage` et `officeTheme`, et fournit des informations sur l’environnement d’exécution du complément comme `host` et `platform`. En outre, il fournit la méthode `requirements.isSetSupported()` que vous pouvez utiliser pour vérifier si l’ensemble de conditions requises spécifié est pris en charge par l’application Excel dans laquelle le complément est exécuté. 
+- [Context](http://dev.office.com/reference/add-ins/shared/context) : l’objet **Context** représente l’environnement d’exécution du complément et permet d’accéder à des objets clés de l’API. Il se compose de détails sur la configuration du classeur comme `contentLanguage` et `officeTheme`, et fournit des informations sur l’environnement d’exécution du complément comme `host` et `platform`. En outre, il fournit la méthode `requirements.isSetSupported()` que vous pouvez utiliser pour vérifier si l’ensemble de conditions requises spécifié est pris en charge par l’application Excel dans laquelle le complément est exécuté. 
 
-- [Document](../../reference/shared/document.md) : L’objet **Document** fournit la méthode `getFileAsync()` que vous pouvez utiliser pour télécharger le fichier Excel dans lequel le complément est exécuté. 
+- [Document](http://dev.office.com/reference/add-ins/shared/document) : L’objet **Document** fournit la méthode `getFileAsync()` que vous pouvez utiliser pour télécharger le fichier Excel dans lequel le complément est exécuté. 
 
 ## <a name="requirement-sets"></a>Ensembles de conditions requises
 
-Les ensembles de conditions requises sont des groupes nommés de membres d’API. Le complément Office peut effectuer une vérification à l’exécution ou utiliser des ensembles de conditions requises spécifiés dans le manifeste pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour identifier les ensembles de conditions requises spécifiques disponibles sur chaque plateforme prise en charge, reportez-vous à [Ensembles de conditions requises de l’API JavaScript pour Excel](../../reference/requirement-sets/excel-api-requirement-sets.md).
+Les ensembles de conditions requises sont des groupes nommés de membres d’API. Le complément Office peut effectuer une vérification à l’exécution ou utiliser des ensembles de conditions requises spécifiés dans le manifeste pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour identifier les ensembles de conditions requises spécifiques disponibles sur chaque plateforme prise en charge, reportez-vous à [Ensembles de conditions requises de l’API JavaScript pour Excel](http://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets).
 
 ### <a name="checking-for-requirement-set-support-at-runtime"></a>Vérification de la prise en charge de l’ensemble de conditions requises à l’exécution
 
@@ -35,7 +35,7 @@ else {
 
 ### <a name="defining-requirement-set-support-in-the-manifest"></a>Définition de la prise en charge de l’ensemble de conditions requises dans le manifeste
 
-Vous pouvez utiliser l’[élément Requirements](../../reference/manifest/requirements.md) dans le manifeste de complément pour spécifier les ensembles de conditions requises minimales et/ou les méthodes d’API que votre complément doit activer. Si la plateforme ou l’hôte Office ne prend pas en charge les ensembles de conditions requises ou les méthodes d’API spécifiées dans l’élément **Requirements** du manifeste, le complément ne s’exécute pas dans cet hôte ou cette plateforme et ne s’affiche pas dans des compléments dans **Mes compléments**. 
+Vous pouvez utiliser l’[élément Requirements](http://dev.office.com/reference/add-ins/manifest/requirements) dans le manifeste de complément pour spécifier les ensembles de conditions requises minimales et/ou les méthodes d’API que votre complément doit activer. Si la plateforme ou l’hôte Office ne prend pas en charge les ensembles de conditions requises ou les méthodes d’API spécifiées dans l’élément **Requirements** du manifeste, le complément ne s’exécute pas dans cet hôte ou cette plateforme et ne s’affiche pas dans des compléments dans **Mes compléments**. 
 
 L’exemple de code suivant montre l’élément **Requirements** dans un manifeste indiquant que le complément doit être chargé dans toutes les applications hôtes Office prenant en charge l’ensemble de conditions requises ExcelApi version 1.3 ou ultérieure.
 
@@ -51,7 +51,7 @@ L’exemple de code suivant montre l’élément **Requirements** dans un manife
 
 ### <a name="requirement-sets-for-the-officejs-common-api"></a>Ensembles de conditions requises pour l’API commune Office.js
 
-Pour plus d’informations sur les ensembles de conditions requises des API communes, voir [Ensembles de conditions requises des API communes pour Office](../../reference/requirement-sets/office-add-in-requirement-sets.md).
+Pour plus d’informations sur les ensembles de conditions requises des API communes, voir [Ensembles de conditions requises des API communes pour Office](http://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets).
 
 ## <a name="loading-the-properties-of-an-object"></a>Chargement des propriétés d’un objet
 
@@ -131,7 +131,7 @@ myWorksheets.load({
 
 ## <a name="scalar-and-navigation-properties"></a>Propriétés scalaires et de navigation 
 
-Dans la documentation de référence de l’API JavaScript pour Excel, les membres de l’objet sont regroupés en deux catégories : les **propriétés** et les **relations**. Une propriété d’objet est un membre scalaire comme une chaîne, un nombre entier ou une valeur booléenne, alors qu’une relation d’objet (également appelée propriété de navigation) est un membre qui est un objet ou une collection d’objets. Par exemple, les membres `name` et `position` sur l’objet [Worksheet](../../reference/excel/worksheet.md) sont des propriétés scalaires, tandis que `protection` et `tables` sont des relations (propriétés de navigation). 
+Dans la documentation de référence de l’API JavaScript pour Excel, les membres de l’objet sont regroupés en deux catégories : les **propriétés** et les **relations**. Une propriété d’objet est un membre scalaire comme une chaîne, un nombre entier ou une valeur booléenne, alors qu’une relation d’objet (également appelée propriété de navigation) est un membre qui est un objet ou une collection d’objets. Par exemple, les membres `name` et `position` sur l’objet [Worksheet](http://dev.office.com/reference/add-ins/excel/worksheet) sont des propriétés scalaires, tandis que `protection` et `tables` sont des relations (propriétés de navigation). 
 
 ### <a name="scalar-properties-and-navigation-properties-with-objectload"></a>Propriétés scalaires et propriétés de navigation avec `object.load()`
 
@@ -221,4 +221,4 @@ dataSheet.position = 1;
  
 * [Concepts de base de l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
 * [Exemples de code pour les compléments Excel](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Référence de l’API JavaScript pour Excel](../../reference/excel/excel-add-ins-reference-overview.md)
+* [Référence de l’API JavaScript pour Excel](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

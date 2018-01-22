@@ -72,7 +72,7 @@ Par exemple :
     }
 ```
 
-Vous pouvez déterminer les objets et les opérations OneNote pris en charge dans la [référence de l’API](../../reference/onenote/onenote-add-ins-javascript-reference.md).
+Vous pouvez déterminer les objets et les opérations OneNote pris en charge dans la [référence de l’API](http://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference).
 
 ### <a name="accessing-the-common-api-through-the-document-object"></a>Accès à l’API commune via l’objet *Document*
 
@@ -117,6 +117,6 @@ Le diagramme suivant représente ce qui est actuellement disponible dans l’API
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 - [Créer votre premier complément OneNote](onenote-add-ins-getting-started.md)
-- [Référence de l’API JavaScript de OneNote](../../reference/onenote/onenote-add-ins-javascript-reference.md)
+- [Référence de l’API JavaScript de OneNote](http://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
 - [Exemple de grille d’évaluation](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Vue d’ensemble de la plateforme des compléments Office](https://dev.office.com/docs/add-ins/overview/office-add-ins)

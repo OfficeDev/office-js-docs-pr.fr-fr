@@ -163,4 +163,4 @@ Félicitations, vous avez créé un complément Excel à l’aide de jQuery ! A
 
 * [Concepts de base de l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
 * [Exemples de code pour les compléments Excel](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Référence de l’API JavaScript pour Excel](../../reference/excel/excel-add-ins-reference-overview.md)
+* [Référence de l’API JavaScript pour Excel](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

@@ -1,6 +1,6 @@
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Utiliser des graphiques à l’aide de l’API JavaScript pour Excel
 
-Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes à l’aide de graphiques utilisant l’API JavaScript pour Excel. Pour une liste complète des propriétés et des méthodes prises en charge par les objets **Chart** et **ChartCollection**, reportez-vous à la rubrique [Objet Chart (API JavaScript pour Excel)](../../reference/excel/chart.md) et [Objet ChartCollection (API JavaScript pour Excel)](../../reference/excel/chartcollection.md).
+Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes à l’aide de graphiques utilisant l’API JavaScript pour Excel. Pour une liste complète des propriétés et des méthodes prises en charge par les objets **Chart** et **ChartCollection**, reportez-vous à la rubrique [Objet Chart (API JavaScript pour Excel)](http://dev.office.com/reference/add-ins/excel/chart) et [Objet ChartCollection (API JavaScript pour Excel)](http://dev.office.com/reference/add-ins/excel/chartcollection).
 
 ## <a name="create-a-chart"></a>Créer un graphique
 
@@ -186,5 +186,5 @@ Excel.run(function (context) {
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 - [Concepts de base de l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
-- [Objet Chart (API JavaScript pour Excel)](../../reference/excel/chart.md) 
-- [Objet ChartCollection (API JavaScript pour Excel)](../../reference/excel/chartcollection.md)
+- [Objet Chart (API JavaScript pour Excel)](http://dev.office.com/reference/add-ins/excel/chart) 
+- [Objet ChartCollection (API JavaScript pour Excel)](http://dev.office.com/reference/add-ins/excel/chartcollection)

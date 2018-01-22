@@ -197,4 +197,4 @@ Félicitations, vous avez créé un complément Word à l’aide de jQuery ! Ap
 
 * [Présentation des compléments Word](word-add-ins-programming-overview.md)
 * [Exemples de code pour les compléments Word](http://dev.office.com/code-samples#?filters=word,office%20add-ins)
-* [Référence d’API JavaScript pour Word](../../reference/word/word-add-ins-reference-overview.md)
+* [Référence d’API JavaScript pour Word](http://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview)

@@ -2,7 +2,7 @@
 
 **S’applique à :** Excel 2016 | Compléments Office | PowerPoint 2016 | Word 2016
 
-Utilisez **[VersionOverrides](../../reference/manifest/versionoverrides.md)** dans votre manifeste pour définir des commandes de complément pour Excel, Word et PowerPoint. Les commandes de complément sont un moyen de personnaliser facilement l’interface utilisateur Office par défaut en y ajoutant des éléments d’interface de votre choix qui exécutent des actions. Vous pouvez utiliser les commandes de complément pour :
+Utilisez **[VersionOverrides](http://dev.office.com/reference/add-ins/manifest/versionoverrides)** dans votre manifeste pour définir des commandes de complément pour Excel, Word et PowerPoint. Les commandes de complément sont un moyen de personnaliser facilement l’interface utilisateur Office par défaut en y ajoutant des éléments d’interface de votre choix qui exécutent des actions. Vous pouvez utiliser les commandes de complément pour :
 - créer des éléments d’interface utilisateur ou des points d’entrée qui facilitent l’utilisation des fonctionnalités de votre complément ;  
   
 - ajouter des boutons ou une liste déroulante de boutons sur le ruban ;    

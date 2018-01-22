@@ -139,6 +139,6 @@ function addOutlineToPage() {
 <a id="additional-resources" class="xliff"></a>
 
 - [Vue d’ensemble de la programmation de l’API JavaScript de OneNote](onenote-add-ins-programming-overview.md)
-- [Référence de l’API JavaScript de OneNote](../../reference/onenote/onenote-add-ins-javascript-reference.md)
+- [Référence de l’API JavaScript de OneNote](http://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
 - [Exemple de grille d’évaluation](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Vue d’ensemble de la plateforme des compléments Office](https://dev.office.com/docs/add-ins/overview/office-add-ins)

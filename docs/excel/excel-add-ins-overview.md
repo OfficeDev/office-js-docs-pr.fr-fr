@@ -21,7 +21,7 @@ La plateforme de compléments Office fournit la structure et les API JavaScript 
 
 Un complément Excel comprend deux composants de base : une application web et un fichier de configuration, appelé fichier manifeste. 
 
-L’application web utilise l’[API JavaScript pour Office](../../reference/javascript-api-for-office.md) pour interagir avec des objets dans Excel et peut également faciliter l’interaction avec les ressources en ligne. Par exemple, un complément peut effectuer une des opérations suivantes :
+L’application web utilise l’[API JavaScript pour Office](http://dev.office.com/reference/add-ins/javascript-api-for-office) pour interagir avec des objets dans Excel et peut également faciliter l’interaction avec les ressources en ligne. Par exemple, un complément peut effectuer une des opérations suivantes :
 
 * Créer, lire, mettre à jour et supprimer des données dans le classeur (feuilles de calcul, plages, tableaux, graphiques, éléments nommés, etc.).
 * Effectuer une autorisation utilisateur avec un service en ligne à l’aide du flux OAuth 2.0 standard.
@@ -60,9 +60,9 @@ En plus d’interagir avec le contenu du classeur, les compléments Excel peuven
 
 ## <a name="javascript-apis-to-interact-with-workbook-content"></a>API JavaScript permettant d’interagir avec le contenu du classeur
 
-Un complément Excel interagit avec des objets dans Excel en utilisant l’[API JavaScript pour Office](../../reference/javascript-api-for-office.md), qui inclut deux modèles d’objets JavaScript :
+Un complément Excel interagit avec des objets dans Excel en utilisant l’[API JavaScript pour Office](http://dev.office.com/reference/add-ins/javascript-api-for-office), qui inclut deux modèles d’objets JavaScript :
 
-* **API JavaScript pour Excel** : incluse dans Office 2016, l’[API JavaScript pour Excel](../../reference/excel/excel-add-ins-reference-overview.md) fournit des objets Excel fortement typés que vous pouvez utiliser pour accéder aux feuilles de calcul, aux plages, aux tableaux, aux graphiques et bien plus encore. 
+* **API JavaScript pour Excel** : incluse dans Office 2016, l’[API JavaScript pour Excel](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview) fournit des objets Excel fortement typés que vous pouvez utiliser pour accéder aux feuilles de calcul, aux plages, aux tableaux, aux graphiques et bien plus encore. 
 
 * **API partagée** : incluse dans Office 2013, l’API partagée vous permet d’accéder à des fonctionnalités, comme l’interface utilisateur, les boîtes de dialogue et les paramètres du client, qui sont communes à plusieurs types d’applications hôtes, telles que Word, Excel et PowerPoint. Étant donné que l’API partagée fournit des fonctionnalités limitées pour une interaction avec Excel, vous pouvez l’utiliser si votre complément doit s’exécuter sur Excel 2013.
 
@@ -76,4 +76,4 @@ Apprenez à [créer votre premier complément Excel](excel-add-ins-get-started-o
 - [Meilleures pratiques en matière de développement de compléments Office](../overview/add-in-development-best-practices.md)
 - [Instructions de conception pour les compléments Office](../design/add-in-design.md)
 - [Concepts de base de l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
-- [Référence de l’API JavaScript pour Excel](../../reference/excel/excel-add-ins-reference-overview.md)
+- [Référence de l’API JavaScript pour Excel](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

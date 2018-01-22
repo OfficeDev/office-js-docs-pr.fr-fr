@@ -17,7 +17,7 @@ La prise en charge de cette conception asynchrone dans les clients riches et les
 ## <a name="writing-the-callback-function-for-an-async-method"></a>Écriture de la fonction de rappel pour une méthode « Async »
 
 
-La fonction de rappel que vous transmettez en tant qu’argument _callback_ à une méthode « Async » doit déclarer un seul paramètre que le runtime de complément va utiliser pour permettre l’accès à un objet [AsyncResult](../../reference/shared/asyncresult.md) lorsque la fonction de rappel sera exécutée. Vous pouvez écrire :
+La fonction de rappel que vous transmettez en tant qu’argument _callback_ à une méthode « Async » doit déclarer un seul paramètre que le runtime de complément va utiliser pour permettre l’accès à un objet [AsyncResult](http://dev.office.com/reference/add-ins/shared/asyncresult) lorsque la fonction de rappel sera exécutée. Vous pouvez écrire :
 
 
 - une fonction anonyme devant être écrite et passée directement en ligne avec l’appel à la méthode « Async » en tant que paramètre  _callback_ de la méthode « Async » ;
@@ -61,7 +61,7 @@ function write(message){
 }
 ```
 
-Vous pouvez également utiliser le paramètre de votre fonction de rappel pour accéder aux autres propriétés de l’objet **AsyncResult**. Utilisez la propriété [AsyncResult.status](../../reference/shared/asyncresult.error.md) pour déterminer si l’appel a réussi ou échoué. En cas d’échec, vous pouvez utiliser la propriété [AsyncResult.error](../../reference/shared/asyncresult.context.md) pour accéder à un objet [Error](../../reference/shared/error.md) et obtenir des informations sur l’erreur.
+Vous pouvez également utiliser le paramètre de votre fonction de rappel pour accéder aux autres propriétés de l’objet **AsyncResult**. Utilisez la propriété [AsyncResult.status](../../reference/shared/asyncresult.error.md) pour déterminer si l’appel a réussi ou échoué. En cas d’échec, vous pouvez utiliser la propriété [AsyncResult.error](../../reference/shared/asyncresult.context.md) pour accéder à un objet [Error](http://dev.office.com/reference/add-ins/shared/error) et obtenir des informations sur l’erreur.
 
 Pour plus d’informations sur l’utilisation de la méthode  **getSelectedDataAsync**, voir [Lecture et écriture de données dans la sélection active d’un document ou d’une feuille de calcul](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md). 
 
@@ -92,11 +92,11 @@ function write(message){
 
 Les propriétés  **asyncContext**,  **status** et **error** de l’objet **AsyncResult** retournent le même type d’informations à la fonction de rappel passée à toutes les méthodes « Async ». Cependant, les éléments retournés à la propriété **AsyncResult.value** varient selon la fonctionnalité de la méthode « Async ».
 
-Par exemple, les méthodes **addHandlerAsync** (des objets [Binding](../../reference/shared/binding.md), [CustomXmlPart](../../reference/shared/customxmlpart.customxmlpart.md), [Document](../../reference/shared/document.md), [RoamingSettings](../../reference/outlook/RoamingSettings.md) et [Settings](../../reference/shared/settings.md)) sont utilisées pour ajouter des fonctions de gestionnaire d’événements aux éléments représentés par ces objets. Vous pouvez accéder à la propriété **AsyncResult.value** à partir de la fonction de rappel que vous transmettez aux méthodes **addHandlerAsync**, mais comme vous n’accédez à aucune donnée ni à aucun objet lorsque vous ajoutez un gestionnaire d’événements, la propriété **value** renvoie toujours **undefined** si vous tentez d’y accéder.
+Par exemple, les méthodes **addHandlerAsync** (des objets [Binding](http://dev.office.com/reference/add-ins/shared/binding), [CustomXmlPart](../../reference/shared/customxmlpart.customxmlpart.md), [Document](http://dev.office.com/reference/add-ins/shared/document), [RoamingSettings](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) et [Settings](http://dev.office.com/reference/add-ins/shared/settings)) sont utilisées pour ajouter des fonctions de gestionnaire d’événements aux éléments représentés par ces objets. Vous pouvez accéder à la propriété **AsyncResult.value** à partir de la fonction de rappel que vous transmettez aux méthodes **addHandlerAsync**, mais comme vous n’accédez à aucune donnée ni à aucun objet lorsque vous ajoutez un gestionnaire d’événements, la propriété **value** renvoie toujours **undefined** si vous tentez d’y accéder.
 
 En revanche, si vous appelez la méthode  **Document.getSelectedDataAsync**, celle-ci renvoie les données que l’utilisateur a sélectionnées dans le document à la propriété  **AsyncResult.value** dans le rappel. Ou alors, si vous appelez la méthode [Bindings.getAllAsync](../../reference/shared/bindings.getallasync.md), celle-ci renvoie un tableau de tous les objets  **Binding** du document. Enfin, si vous appelez la méthode [Bindings.getByIdAsync](../../reference/shared/bindings.getbyidasync.md), celle-ci renvoie un seul objet  **Binding**.
 
-Pour obtenir une description des éléments renvoyés à la propriété **AsyncResult.value** pour une méthode « Async », voir la section relative à la valeur de rappel dans la rubrique de référence de cette méthode. Pour obtenir un résumé de tous les objets qui fournissent des méthodes « Async », voir le tableau situé au bas de la rubrique relative à l’objet [AsyncResult](../../reference/shared/asyncresult.md).
+Pour obtenir une description des éléments renvoyés à la propriété **AsyncResult.value** pour une méthode « Async », voir la section relative à la valeur de rappel dans la rubrique de référence de cette méthode. Pour obtenir un résumé de tous les objets qui fournissent des méthodes « Async », voir le tableau situé au bas de la rubrique relative à l’objet [AsyncResult](http://dev.office.com/reference/add-ins/shared/asyncresult).
 
 
 ## <a name="asynchronous-programming-patterns"></a>Modèles de programmation asynchrone
@@ -206,7 +206,7 @@ function write(message){
 
 Plutôt que de transmettre une fonction de rappel et d’attendre le renvoi de la fonction pour poursuivre l’exécution, le motif de programmation des promesses renvoie immédiatement un objet de promesse qui représente le résultat souhaité. Toutefois, contrairement à la vraie programmation synchrone, en arrière-plan, la concrétisation du résultat prévu est en fait différée jusqu’à ce que l’environnement d’exécution des compléments Office puisse réaliser la demande. Un gestionnaire _onError_ est fourni pour couvrir les cas où la demande ne peut pas être remplie.
 
-L’interface API JavaScript pour Office fournit la méthode [Office.select](../../reference/shared/office.select.md) pour prendre en charge le modèle des promesses permettant d’utiliser des objets de liaison existants. L’objet de promesse renvoyé à la méthode **Office.select** prend en charge uniquement les quatre méthodes auxquelles vous pouvez accéder directement à partir de l’objet [Binding](../../reference/shared/binding.md) : [getDataAsync](../../reference/shared/binding.getdataasync.md), [setDataAsync](../../reference/shared/binding.setdataasync.md), [addHandlerAsync](../../reference/shared/asyncresult.value.md) et [removeHandlerAsync](../../reference/shared/binding.removehandlerasync.md).
+L’interface API JavaScript pour Office fournit la méthode [Office.select](../../reference/shared/office.select.md) pour prendre en charge le modèle des promesses permettant d’utiliser des objets de liaison existants. L’objet de promesse renvoyé à la méthode **Office.select** prend en charge uniquement les quatre méthodes auxquelles vous pouvez accéder directement à partir de l’objet [Binding](http://dev.office.com/reference/add-ins/shared/binding) : [getDataAsync](../../reference/shared/binding.getdataasync.md), [setDataAsync](../../reference/shared/binding.setdataasync.md), [addHandlerAsync](../../reference/shared/asyncresult.value.md) et [removeHandlerAsync](../../reference/shared/binding.removehandlerasync.md).
 
 Le modèle des promesses à utiliser avec les liaisons se présente comme suit :
 
@@ -317,7 +317,7 @@ var options = {
 
 ```
 
-Ce qui ressemble à l’exemple suivant lors de la spécification des paramètres [ValueFormat](../../reference/shared/valueformat-enumeration.md) et [FilterType](../../reference/shared/filtertype-enumeration.md).
+Ce qui ressemble à l’exemple suivant lors de la spécification des paramètres [ValueFormat](http://dev.office.com/reference/add-ins/shared/valueformat-enumeration) et [FilterType](http://dev.office.com/reference/add-ins/shared/filtertype-enumeration).
 
 
 
@@ -388,5 +388,5 @@ Dans les deux exemples de paramètres facultatifs, le paramètre _callback_ est 
 
 - [Présentation de l’API JavaScript pour Office](../../docs/develop/understanding-the-javascript-api-for-office.md)
     
-- [Interface API JavaScript pour Office](../../reference/javascript-api-for-office.md)
+- [Interface API JavaScript pour Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)
      

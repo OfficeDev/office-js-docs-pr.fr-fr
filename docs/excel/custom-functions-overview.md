@@ -80,8 +80,8 @@ Excel.run(function(ctx) {
 -   `helpUrl` : lorsque l’utilisateur demande de l’aide concernant une fonction, Excel ouvre un volet Office et affiche la page web accessible via cette URL.
 -   `result` : Définit le type d’informations renvoyées par la fonction à Excel.
 
-    -   `resultType` : votre fonction peut renvoyer une valeur `"string"` ou `"number"` (également utilisées pour les dates et les devises). Pour plus d’informations, reportez-vous à la section [Énumérations des fonctions personnalisées](../../reference/excel/customfunctionsenumerations.md).
-    -   `resultDimensionality` : votre fonction peut renvoyer une valeur (`"scalar"`) simple ou une `"matrix"` de valeurs. Dans le cas d’une matrice de valeurs, la fonction renvoie un tableau, où chaque élément de tableau est un autre tableau qui représente une ligne de valeurs. Pour plus d’informations, reportez-vous à la section [Énumérations des fonctions personnalisées](../../reference/excel/customfunctionsenumerations.md). L’exemple suivant renvoie une matrice de valeurs à 3 lignes et 2 colonnes à partir d’une fonction personnalisée.
+    -   `resultType` : votre fonction peut renvoyer une valeur `"string"` ou `"number"` (également utilisées pour les dates et les devises). Pour plus d’informations, reportez-vous à la section [Énumérations des fonctions personnalisées](http://dev.office.com/reference/add-ins/excel/customfunctionsenumerations).
+    -   `resultDimensionality` : votre fonction peut renvoyer une valeur (`"scalar"`) simple ou une `"matrix"` de valeurs. Dans le cas d’une matrice de valeurs, la fonction renvoie un tableau, où chaque élément de tableau est un autre tableau qui représente une ligne de valeurs. Pour plus d’informations, reportez-vous à la section [Énumérations des fonctions personnalisées](http://dev.office.com/reference/add-ins/excel/customfunctionsenumerations). L’exemple suivant renvoie une matrice de valeurs à 3 lignes et 2 colonnes à partir d’une fonction personnalisée.
 
 ```js
 return [["first","row"],["second","row"],["third","row"]];

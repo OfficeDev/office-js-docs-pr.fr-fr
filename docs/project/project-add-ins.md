@@ -200,7 +200,7 @@ Vous pouvez distribuer des compléments via un partage de fichiers, un catalogue
     
 - [Manifeste XML des compléments Office](../../docs/overview/add-in-manifests.md)
     
-- [API JavaScript pour Office](../../reference/javascript-api-for-office.md)
+- [API JavaScript pour Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)
     
 - [Créer votre premier complément du volet Office pour Project 2013 à l’aide d’un éditeur de texte](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
     
