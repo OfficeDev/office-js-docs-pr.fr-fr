@@ -18,7 +18,7 @@ Envisagez d’ouvrir une boîte de dialogue à partir d’un volet Office, d’u
 
 L’image suivante montre un exemple de boîte de dialogue.
 
-![Commandes de complément](../../images/Auth0DialogOpen.PNG)
+![Commandes de complément](../images/Auth0DialogOpen.PNG)
 
 Notez que la boîte de dialogue s’ouvre toujours au centre de l’écran. L’utilisateur peut la déplacer et la redimensionner. La fenêtre est *non modale* : un utilisateur peut continuer à interagir à la fois avec le document dans l’application Office hôte et avec la page hôte dans le volet Office, le cas échéant.
 
@@ -362,7 +362,7 @@ Pour afficher une vidéo dans une boîte de dialogue :
 
 Pour voir un exemple qui affiche une vidéo dans une boîte de dialogue, consultez le [modèle de conception de maquette de vidéo](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/video-placemat) dans le référentiel de [modèles de conception de l’expérience utilisateur pour compléments Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
 
-![Capture d’écran d’une vidéo s’affichant dans une boîte de dialogue de complément.](../../images/VideoPlacematDialogOpen.PNG)
+![Capture d’écran d’une vidéo s’affichant dans une boîte de dialogue de complément.](../images/VideoPlacematDialogOpen.PNG)
 
 ## <a name="use-the-dialog-apis-in-an-authentication-flow"></a>Utilisation des API de dialogue dans un flux d’authentification
 

@@ -79,7 +79,7 @@ Pour déboguer une application à l’aide de Vorlon.JS, ajoutez la balise `<sc
 
 Le complément apparaît dans la liste des clients dans Vorlon.JS (sur la gauche dans l’interface de Vorlon.JS) en tant que **{Système d’exploitation} - n**, pour un nombre *n*, et où *{Système d’exploitation}* correspond au type d’appareil (par exemple, « Macintosh »). 
 
-![Capture d’écran de l’interface Vorlon.js](../../images/vorlon_interface.png)
+![Capture d’écran de l’interface Vorlon.js](../images/vorlon_interface.png)
 
 L’outil Vorlon dispose d’une variété de plug-ins. Les plug-ins actuellement activés apparaissent sous forme d’onglets dans la partie supérieure de l’interface de l’outil. (Vous pouvez en activer davantage en cliquant sur l’icône en forme d’engrenage sur la gauche.) Ces plug-ins sont semblables aux fonctions disponibles dans les outils F12. Par exemple, vous pouvez mettre en surbrillance les éléments DOM, exécuter des commandes, etc. Pour plus d’informations, reportez-vous à la page relative à la [documentation principale sur les plug-ins Vorlon](http://vorlonjs.com/documentation/#console). 
 

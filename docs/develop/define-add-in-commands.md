@@ -29,7 +29,7 @@ L’élément **VersionOverrides** inclut les éléments enfants suivants :
 
 Le diagramme suivant illustre la hiérarchie des éléments utilisés pour définir des commandes de complément. 
 
-![Hiérarchie des éléments de commandes de complément dans le manifeste](../../images/080da303-51c4-4882-b74a-7ba11517c0ad.png)
+![Hiérarchie des éléments de commandes de complément dans le manifeste](../images/080da303-51c4-4882-b74a-7ba11517c0ad.png)
 
 ## <a name="sample-manifests"></a>Exemple de manifestes
 

@@ -9,7 +9,7 @@ Un complément doit s’assurer que le DOM et l’environnement d’exécution d
 
 La figure suivante illustre le flux des événements impliqués au démarrage d’un complément de contenu ou du volet Office dans Excel, PowerPoint, Project, Word ou Access.
 
-![Flux des événements au démarrage d’un complément de contenu ou du volet Office](../../images/off15appsdk_LoadingDOMAgaveRuntime.png)
+![Flux des événements au démarrage d’un complément de contenu ou du volet Office](../images/off15appsdk_LoadingDOMAgaveRuntime.png)
 
 Les événements suivants se produisent lors du démarrage d’un complément de contenu ou du volet Office : 
 
@@ -36,7 +36,7 @@ Les événements suivants se produisent lors du démarrage d’un complément de
 
 La figure suivante illustre le flux des événements impliqués au démarrage d’un complément Outlook exécuté sur un ordinateur de bureau, une tablette ou un smartphone.
 
-![Flux des événements au démarrage du complément Outlook](../../images/olowawecon15_LoadingDOMAgaveRuntime.png)
+![Flux des événements au démarrage du complément Outlook](../images/olowawecon15_LoadingDOMAgaveRuntime.png)
 
 Les événements suivants se produisent lors du démarrage d’un complément Outlook : 
 

@@ -94,7 +94,7 @@ La figure 1 montre l’invite de sélection de plage intégrée dans Excel.
 
 **Figure 1. Interface utilisateur de sélection de données dans Excel**
 
-![Interface utilisateur de sélection de données dans Excel](../../images/AgaveAPIOverview_ExcelSelectionUI.png)
+![Interface utilisateur de sélection de données dans Excel](../images/AgaveAPIOverview_ExcelSelectionUI.png)
 
 
 ## <a name="add-a-binding-to-a-named-item"></a>Ajout d’une liaison à un élément nommé

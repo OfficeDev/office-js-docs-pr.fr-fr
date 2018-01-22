@@ -25,7 +25,7 @@ Si vous ne l’avez pas déjà fait, vous devez installer [Yeoman](https://githu
     ```bash
     yo office
     ```
-    ![Générateur Yeoman](../../images/yo-office-jquery.png)
+    ![Générateur Yeoman](../images/yo-office-jquery.png)
 
 
 4. Dans votre éditeur de code, ouvrez **index.html** à la racine du projet. Ce fichier spécifie le code HTML qui s’affichera dans le volet Office du complément. 
@@ -147,13 +147,13 @@ Les compléments web Office doivent utiliser le protocole HTTPS, et non HTTP, m�
 
 3. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
-    ![Bouton Complément Excel](../../images/excel_quickstart_addin_2a.png)
+    ![Bouton Complément Excel](../images/excel_quickstart_addin_2a.png)
 
 4. Sélectionnez une plage de cellules dans la feuille de calcul.
 
 5. Dans le volet Office, choisissez le volet du bouton **Indiquer une couleur** pour définir la couleur de la plage sélectionnée sur vert.
 
-    ![Complément Excel](../../images/excel_quickstart_addin_2b.png)
+    ![Complément Excel](../images/excel_quickstart_addin_2b.png)
 
 ## <a name="next-steps"></a>Étapes suivantes
 

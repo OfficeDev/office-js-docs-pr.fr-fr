@@ -8,11 +8,11 @@ Pour lancer l’outil **Attacher le débogueur**, cliquez sur le coin supérieur
    - À l’heure actuelle, le seul outil de débogage pris en charge est [Visual Studio 2015](https://www.visualstudio.com/downloads/) avec la [mise à jour 3](https://msdn.microsoft.com/en-us/library/mt752379.aspx) ou version ultérieure. Si vous n’avez pas installé Visual Studio, la sélection de l’option **Attacher le débogueur** ne produit aucune action.   
    - Vous ne pouvez déboguer JavaScript côté client qu’à l’aide de l’outil **Attacher le débogueur**. Pour déboguer du code côté serveur, comme avec un serveur Node.js, vous disposez de nombreuses options. Pour plus d’informations sur le débogage avec Visual Studio Code, reportez-vous à la rubrique sur le [débogage de Node.js dans VS Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging). Si vous n’utilisez pas Visual Studio Code, recherchez « déboguer Node.js » ou « déboguer {nom de serveur} ».
 
-![Capture d’écran du menu Attacher le débogueur](../../images/attach-debugger.png)
+![Capture d’écran du menu Attacher le débogueur](../images/attach-debugger.png)
 
 Sélectionnez **Attacher le débogueur**. Cette action ouvre la boîte de dialogue **Débogueur juste-à-temps Visual Studio**, comme illustré dans l’image suivante. 
 
-![Capture d’écran de la boîte de dialogue Débogueur juste-à-temps Visual Studio](../../images/visual-studio-debugger.png)
+![Capture d’écran de la boîte de dialogue Débogueur juste-à-temps Visual Studio](../images/visual-studio-debugger.png)
 
 Dans Visual Studio, les fichiers de code s’affichent dans **l’Explorateur de solutions**.   Vous pouvez définir des points d’arrêt à la ligne de code que vous souhaitez déboguer dans Visual Studio.
 

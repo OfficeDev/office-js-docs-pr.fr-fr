@@ -4,7 +4,7 @@ Les volets des tâches sont des surfaces d’interface qui s’affichent génér
 
 **Exemple : Volet des tâches**
 
-![Image affichant une disposition du volet des tâches](../../images/overview_withApp_taskPane.png)
+![Image affichant une disposition du volet des tâches](../images/overview_withApp_taskPane.png)
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
@@ -22,7 +22,7 @@ Les images suivantes montrent les différentes tailles de volet des tâches avec
 
 **Tailles de volet des tâches du bureau Office 2016**
 
-![Image affichant les tailles de volet des tâches du bureau à une résolution de 1 366 x 768](../../images/addinTaskpaneSizes_desktop.png)
+![Image affichant les tailles de volet des tâches du bureau à une résolution de 1 366 x 768](../images/addinTaskpaneSizes_desktop.png)
 
 - Excel - 320 x 455
 - PowerPoint - 320 x 531
@@ -31,7 +31,7 @@ Les images suivantes montrent les différentes tailles de volet des tâches avec
 
 **Tailles de volet des tâches Office 365**
 
-![Image affichant les tailles de volet des tâches du bureau à une résolution de 1 366 x 768](../../images/addinTaskpaneSizes_online.png)
+![Image affichant les tailles de volet des tâches du bureau à une résolution de 1 366 x 768](../images/addinTaskpaneSizes_online.png)
 
 - Excel - 350 x 378
 - PowerPoint - 348 x 391
@@ -46,13 +46,13 @@ Les menus Caractéristique peuvent entraver les éléments de navigation et de c
 
 Pour Windows, le menu Caractéristique mesure 12 x 32 pixels, comme illustré.
 
-![Image illustrant le menu Caractéristique sur le bureau Windows](../../images/personalityMenu_Win.png)
+![Image illustrant le menu Caractéristique sur le bureau Windows](../images/personalityMenu_Win.png)
 
 **Menu Caractéristique sur Windows**
 
 Pour Mac, le menu Caractéristique mesure 26 x 26 pixels, mais flotte à 8 pixels de la droite et à 6 pixels du haut, ce qui permet d’augmenter l’espace à 34 x 32 pixels, comme illustré.
 
-![Image illustrant le menu Caractéristique sur le bureau Mac](../../images/personalityMenu_Mac.png)
+![Image illustrant le menu Caractéristique sur le bureau Mac](../images/personalityMenu_Mac.png)
 
 ## <a name="implementation"></a>Implémentation
 

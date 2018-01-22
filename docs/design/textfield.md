@@ -4,7 +4,7 @@ Un champ de texte permet aux utilisateurs d’entrer du texte. Il est générale
   
 #### <a name="example-textfield-in-a-task-pane"></a>Exemple : TextField dans un volet des tâches
 
-![Image illustrant le composant TextField](../../images/overview_withApp_textField.png)
+![Image illustrant le composant TextField](../images/overview_withApp_textField.png)
 
 <br/>
 
@@ -23,11 +23,11 @@ Un champ de texte permet aux utilisateurs d’entrer du texte. Il est générale
 
 |**Variation**|**Description**|**Exemple**|
 |:------------|:--------------|:----------|
-|**Default TextField (champ de texte par défaut)**|À utiliser comme champ de texte par défaut.|![Image Default TextField (champ de texte par défaut) ](../../images/textfieldDefault.png)<br/>|
-|**Disabled TextField (champ de texte désactivé)**|À utiliser lorsque le champ de texte est désactivé.|![Image Disabled TextField (champ de texte désactivé)](../../images/textfieldDisabled.png)<br/>|
-|**Required TextField (champ de texte obligatoire)**|À utiliser lorsque le champ de texte est obligatoire.|![Image Required TextField (champ de texte obligatoire)](../../images/textfieldRequired.png)<br/>|
-|**TextField with a placeholder (champ de texte avec un espace réservé)**|À utiliser lorsqu’un texte de l’espace réservé est nécessaire.|![Image TextField with a placeholder (champ de texte avec un espace réservé)](../../images/textfieldPlaceholder.png)<br/>|
-|**TextField with multiple lines (champ de texte avec plusieurs lignes)**|À utiliser lorsque plusieurs lignes de texte sont nécessaires.|![Image TextField with a placeholder (champ de texte avec un espace réservé)](../../images/textfieldMulti.png)<br/>|
+|**Default TextField (champ de texte par défaut)**|À utiliser comme champ de texte par défaut.|![Image Default TextField (champ de texte par défaut) ](../images/textfieldDefault.png)<br/>|
+|**Disabled TextField (champ de texte désactivé)**|À utiliser lorsque le champ de texte est désactivé.|![Image Disabled TextField (champ de texte désactivé)](../images/textfieldDisabled.png)<br/>|
+|**Required TextField (champ de texte obligatoire)**|À utiliser lorsque le champ de texte est obligatoire.|![Image Required TextField (champ de texte obligatoire)](../images/textfieldRequired.png)<br/>|
+|**TextField with a placeholder (champ de texte avec un espace réservé)**|À utiliser lorsqu’un texte de l’espace réservé est nécessaire.|![Image TextField with a placeholder (champ de texte avec un espace réservé)](../images/textfieldPlaceholder.png)<br/>|
+|**TextField with multiple lines (champ de texte avec plusieurs lignes)**|À utiliser lorsque plusieurs lignes de texte sont nécessaires.|![Image TextField with a placeholder (champ de texte avec un espace réservé)](../images/textfieldMulti.png)<br/>|
 
 ## <a name="implementation"></a>Implémentation
 

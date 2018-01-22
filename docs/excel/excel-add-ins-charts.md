@@ -24,7 +24,7 @@ Excel.run(function (context) {
 
 **Nouveau graphique en courbes**
 
-![Nouveau graphique en courbes dans Excel](../../images/Excel-chart-create-line.png)
+![Nouveau graphique en courbes dans Excel](../images/Excel-chart-create-line.png)
 
 
 ## <a name="add-a-data-series-to-a-chart"></a>Ajouter une série de données à un graphique
@@ -48,11 +48,11 @@ Excel.run(function (context) {
 
 **Graphique avant l’ajout de la série de données 2016**
 
-![Graphique dans Excel avant l’ajout de la série de données 2016](../../images/Excel-chart-data-series-before.png)
+![Graphique dans Excel avant l’ajout de la série de données 2016](../images/Excel-chart-data-series-before.png)
 
 **Graphique après l’ajout de la série de données 2016**
 
-![Graphique dans Excel après l’ajout de la série de données 2016](../../images/Excel-chart-data-series-after.png)
+![Graphique dans Excel après l’ajout de la série de données 2016](../images/Excel-chart-data-series-after.png)
 
 ## <a name="set-chart-title"></a>Définir le titre du graphique
 
@@ -71,7 +71,7 @@ Excel.run(function (context) {
 
 **Graphique après la définition du titre**
 
-![Graphique avec un titre dans Excel](../../images/Excel-chart-title-set.png)
+![Graphique avec un titre dans Excel](../images/Excel-chart-title-set.png)
 
 ## <a name="set-properties-of-an-axis-in-a-chart"></a>Définir les propriétés d’un axe d’un graphique
 
@@ -94,7 +94,7 @@ Excel.run(function (context) {
 
 **Graphique après la définition de l’axe des abscisses**
 
-![Graphique avec un titre d’axe dans Excel](../../images/Excel-chart-axis-title-set.png)
+![Graphique avec un titre d’axe dans Excel](../images/Excel-chart-axis-title-set.png)
 
 ### <a name="set-axis-display-unit"></a>Définir l’unité d’affichage de l’axe
 
@@ -115,7 +115,7 @@ Excel.run(function (context) {
 
 **Graphique après la définition de l’unité d’affichage de l’axe des ordonnées**
 
-![Graphique avec l’unité d’affichage de l’axe dans Excel](../../images/Excel-chart-axis-display-unit-set.png)
+![Graphique avec l’unité d’affichage de l’axe dans Excel](../images/Excel-chart-axis-display-unit-set.png)
 
 ## <a name="set-visibility-of-gridlines-in-a-chart"></a>Définir la visibilité du quadrillage dans un graphique
 
@@ -134,7 +134,7 @@ Excel.run(function (context) {
 
 **Graphique avec du quadrillage masqué**
 
-![Graphique avec du quadrillage masqué dans Excel](../../images/Excel-chart-gridlines-removed.png)
+![Graphique avec du quadrillage masqué dans Excel](../images/Excel-chart-gridlines-removed.png)
 
 ## <a name="chart-trendlines"></a>Courbes de tendance de graphiques
 
@@ -158,7 +158,7 @@ Excel.run(function (context) {
 
 **Graphique avec courbe de tendance de moyenne mobile**
 
-![Graphique avec courbe de tendance de moyenne mobile dans Excel](../../images/Excel-chart-create-trendline.png)
+![Graphique avec courbe de tendance de moyenne mobile dans Excel](../images/Excel-chart-create-trendline.png)
 
 ### <a name="update-a-trendline"></a>Mettre à jour une courbe de tendance
 
@@ -181,7 +181,7 @@ Excel.run(function (context) {
 
 **Graphique avec une courbe de tendance linéaire**
 
-![Graphique avec une courbe de tendance linéaire dans Excel](../../images/Excel-chart-trendline-linear.png)
+![Graphique avec une courbe de tendance linéaire dans Excel](../images/Excel-chart-trendline-linear.png)
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 

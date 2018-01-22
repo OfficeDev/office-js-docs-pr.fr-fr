@@ -61,7 +61,7 @@ Le générateur vous demande d’indiquer les éléments suivants :
 >- Ajouter [TypeScript](https://www.typescriptlang.org/) : utiliser _Y_
 >- Choisir l’infrastructure : utiliser _React_
 
-![Image GIF du générateur Yeoman invitant à saisir des informations sur le projet](../../images/gettingstarted-fast.gif)
+![Image GIF du générateur Yeoman invitant à saisir des informations sur le projet](../images/gettingstarted-fast.gif)
 
 Ce bloc de code permet de créer la structure et les fichiers de base de votre complément.
 
@@ -80,7 +80,7 @@ npm start
 Browsersync démarre un serveur HTTPS et lance le fichier index.html dans votre projet. Vous verrez une erreur indiquant « Un problème s’est produit avec le certificat de sécurité du site Web. »
 
 
-![Image GIF affichant le processus qui permet de contourner l’erreur et d’afficher le fichier index.html par défaut](../../images/ssl-chrome-bypass.gif)
+![Image GIF affichant le processus qui permet de contourner l’erreur et d’afficher le fichier index.html par défaut](../images/ssl-chrome-bypass.gif)
 
 Cette erreur se produit, car Browsersync contient un certificat SSL auto-signé que votre environnement de développement doit approuver. Pour plus d’informations sur la résolution de cette erreur, consultez la rubrique relative à l’[ajout de certificats auto-signés](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
 

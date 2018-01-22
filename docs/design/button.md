@@ -6,7 +6,7 @@ Utilisez les boutons dans votre complément Office pour permettre aux utilisateu
 
 <br/>
 
-![Image illustrant le bouton](../../images/overview_withApp_button.png)
+![Image illustrant le bouton](../images/overview_withApp_button.png)
 
 <br/>
 
@@ -24,9 +24,9 @@ Utilisez les boutons dans votre complément Office pour permettre aux utilisateu
 
 |**Variation**|**Description**|**Exemple**|
 |:------------|:--------------|:----------|
-|**Bouton principal**|Les boutons principaux héritent de la couleur de thème dans le statut non opérationnel. Utilisez les boutons principaux pour mettre en évidence l’appel principal à l’action.|![Image du bouton principal](../../images/button_primary.png)|
-|**Bouton par défaut**|Les boutons par défaut doivent toujours effectuer des opérations sûres et ne doivent jamais rien supprimer.|![Image du bouton par défaut](../../images/button_default.png)|
-|**Bouton composé**|Utilisez les boutons composés pour provoquer des actions qui exécutent une tâche ou entraînent une tâche de transition.|![Image du bouton composé](../../images/button_compound.png)|
+|**Bouton principal**|Les boutons principaux héritent de la couleur de thème dans le statut non opérationnel. Utilisez les boutons principaux pour mettre en évidence l’appel principal à l’action.|![Image du bouton principal](../images/button_primary.png)|
+|**Bouton par défaut**|Les boutons par défaut doivent toujours effectuer des opérations sûres et ne doivent jamais rien supprimer.|![Image du bouton par défaut](../images/button_default.png)|
+|**Bouton composé**|Utilisez les boutons composés pour provoquer des actions qui exécutent une tâche ou entraînent une tâche de transition.|![Image du bouton composé](../images/button_compound.png)|
 
 ## <a name="implementation"></a>Implémentation
 

@@ -6,7 +6,7 @@ Une liste déroulante est une liste d’options qui s’affiche en cliquant sur 
 
 <br/>
 
-![Image illustrant la liste déroulante](../../images/overview_withApp_dropdown.png)
+![Image illustrant la liste déroulante](../images/overview_withApp_dropdown.png)
 
 <br/>
 
@@ -22,9 +22,9 @@ Une liste déroulante est une liste d’options qui s’affiche en cliquant sur 
 
 |**Variation**|**Description**|**Exemple**|
 |:------------|:--------------|:----------|
-|**Liste déroulante non contrôlée de base**|À utiliser lorsque de nombreuses options peuvent être sélectionnées.|![Image de la liste déroulante non contrôlée de base](../../images/dropdownUncontrolled.png)<br/>|
-|**Liste déroulante non contrôlée désactivée avec defaultSelectedKey**|État désactivé de la liste déroulante.|![Image de la liste déroulante non contrôlée désactivée avec defaultSelectedKey](../../images/dropdownDisabled.png)<br/>|
-|**Liste déroulante contrôlée**|À utiliser lorsque l’élément sélectionné par défaut est influencé par un autre emplacement dans votre interface utilisateur et que l’élément sélectionné dans la liste déroulante doit être conservé.|![Image de la liste déroulante contrôlée](../../images/dropdownControlled.png)<br/>|
+|**Liste déroulante non contrôlée de base**|À utiliser lorsque de nombreuses options peuvent être sélectionnées.|![Image de la liste déroulante non contrôlée de base](../images/dropdownUncontrolled.png)<br/>|
+|**Liste déroulante non contrôlée désactivée avec defaultSelectedKey**|État désactivé de la liste déroulante.|![Image de la liste déroulante non contrôlée désactivée avec defaultSelectedKey](../images/dropdownDisabled.png)<br/>|
+|**Liste déroulante contrôlée**|À utiliser lorsque l’élément sélectionné par défaut est influencé par un autre emplacement dans votre interface utilisateur et que l’élément sélectionné dans la liste déroulante doit être conservé.|![Image de la liste déroulante contrôlée](../images/dropdownControlled.png)<br/>|
 
 ## <a name="implementation"></a>Implémentation
 

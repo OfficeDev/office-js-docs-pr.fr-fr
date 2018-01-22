@@ -9,11 +9,11 @@ Pour en savoir plus sur les fonctionnalités, regardez la vidéo sur les [comman
 
 **Complément incluant des commandes en cours d’exécution dans Excel (version de bureau)**
 
-![Capture d’écran d’une commande de complément dans Excel](../../images/addincommands1.png)
+![Capture d’écran d’une commande de complément dans Excel](../images/addincommands1.png)
 
 **Complément incluant des commandes en cours d’exécution dans Excel (version Online)**
 
-![Capture d’écran d’une commande de complément dans Excel Online](../../images/addincommands2.png)
+![Capture d’écran d’une commande de complément dans Excel Online](../images/addincommands2.png)
 
 ## <a name="command-capabilities"></a>Fonctionnalités de commande
 Les fonctionnalités de commande suivantes sont actuellement prises en charge.
@@ -62,7 +62,7 @@ Appliquez les meilleures pratiques suivantes lorsque vous développez des comman
 - Pour toutes les icônes, suivez les [règles de conception d’icône](../design/design-icons.md).
 - Proposez une version de complément qui fonctionne aussi sur les hôtes qui ne prennent pas en charge les commandes. Un seul manifeste de complément peut fonctionner sur les hôtes tenant compte ou non des commandes (par exemple, un volet de tâches dans le second cas).
 
-    ![Capture d’écran illustrant un complément du volet Office dans Office 2013 et le même complément utilisant des commandes de complément dans Office 2016](../../images/4f90a3cc-8cc4-4879-9a03-0bb2b6079026.png)
+    ![Capture d’écran illustrant un complément du volet Office dans Office 2013 et le même complément utilisant des commandes de complément dans Office 2016](../images/4f90a3cc-8cc4-4879-9a03-0bb2b6079026.png)
 
 
 ## <a name="next-steps-to-get-started"></a>Étapes suivantes pour la prise en main

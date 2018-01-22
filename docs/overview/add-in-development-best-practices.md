@@ -30,11 +30,11 @@ Des compléments efficaces proposent des fonctionnalités uniques et attrayantes
 
  - Proposez une interface utilisateur pédagogique pour guider les utilisateurs et la personnaliser.
 
-    ![Capture d’écran illustrant un complément de volet Office avec des étapes de mise en route en regard d’un complément sans étapes de mise en route](../../images/586202ad-333b-417c-ad31-cc6eb952b239.png)
+    ![Capture d’écran illustrant un complément de volet Office avec des étapes de mise en route en regard d’un complément sans étapes de mise en route](../images/586202ad-333b-417c-ad31-cc6eb952b239.png)
 
   - Si votre complément de contenu est lié à des données dans le document de l’utilisateur, incluez des exemples de données ou un modèle pour montrer aux utilisateurs le format de données à utiliser.
 
-    ![Capture d’écran illustrant un complément de contenu avec des données en regard d’un complément de contenu sans données](../../images/7de2215f-ccef-4f82-aa9d-babcbddae0c6.png)
+    ![Capture d’écran illustrant un complément de contenu avec des données en regard d’un complément de contenu sans données](../images/7de2215f-ccef-4f82-aa9d-babcbddae0c6.png)
 
 - Offrez des [essais gratuits](https://msdn.microsoft.com/en-us/library/dn456317.aspx#Anchor_1). Si votre complément nécessite un abonnement, proposez certaines fonctionnalités gratuitement.
 

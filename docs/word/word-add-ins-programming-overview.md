@@ -12,7 +12,7 @@ La figure suivante montre un exemple d’un complément Word qui s’exécute da
 
 **Figure 1. Complément exécuté dans un volet Office de Word**
 
-![Complément exécuté dans un volet Office de Word](../../images/WordAddinShowHostClient.png)
+![Complément exécuté dans un volet Office de Word](../images/WordAddinShowHostClient.png)
 
 Le complément Word (1) peut envoyer des demandes dans le document Word (2) et utiliser JavaScript pour accéder à l’objet de paragraphe et mettre à jour, supprimer ou déplacer le paragraphe. Par exemple, le code suivant montre comment ajouter une nouvelle phrase à ce paragraphe.
 

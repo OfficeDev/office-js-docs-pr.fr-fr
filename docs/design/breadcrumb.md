@@ -6,7 +6,7 @@ Dans les compléments Office, utilisez la barre de navigation pour naviguer. Ell
 
 <br/>
 
-![Image illustrant la barre de navigation](../../images/overview_withApp_breadcrumb.png)
+![Image illustrant la barre de navigation](../images/overview_withApp_breadcrumb.png)
 
 <br/>
 
@@ -14,7 +14,7 @@ Dans les compléments Office, utilisez la barre de navigation pour naviguer. Ell
 
 |**À faire**|**À ne pas faire**|
 |:------------|:--------------|
-|Placer les barres de navigation en haut d’une mise en page dans un complément, au-dessus d’une liste d’éléments ou au-dessus du contenu principal d’une mise en page.<br/><br/>![Utiliser l’image de la barre de navigation](../../images/breadcrumbDo.png) |Ne pas utiliser les barres de navigation comme méthode principale pour accéder à d’autres pages.<br/><br/>![Ne pas utiliser l’image de la barre de navigation](../../images/breadcrumbDont.png)|
+|Placer les barres de navigation en haut d’une mise en page dans un complément, au-dessus d’une liste d’éléments ou au-dessus du contenu principal d’une mise en page.<br/><br/>![Utiliser l’image de la barre de navigation](../images/breadcrumbDo.png) |Ne pas utiliser les barres de navigation comme méthode principale pour accéder à d’autres pages.<br/><br/>![Ne pas utiliser l’image de la barre de navigation](../images/breadcrumbDont.png)|
 
 <br/>
 

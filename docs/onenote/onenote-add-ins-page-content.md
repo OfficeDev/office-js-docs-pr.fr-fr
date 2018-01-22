@@ -2,7 +2,7 @@
 
 Dans l’API JavaScript des compléments OneNote, le contenu de page est représenté par le modèle objet suivant.
 
-  ![Diagramme du modèle objet de page OneNote](../../images/OneNoteOM-page.png)
+  ![Diagramme du modèle objet de page OneNote](../images/OneNoteOM-page.png)
 
 - Un objet Page contient une collection d’objets PageContent.
 - Un objet PageContent contient un type de contenu de Outline, Image ou Other.

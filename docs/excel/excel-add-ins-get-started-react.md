@@ -41,7 +41,7 @@ Chaque complément nécessite un fichier manifeste pour définir ses paramètres
     ```bash
     yo office
     ```
-    ![Générateur Yeoman](../../images/yo-office.png)
+    ![Générateur Yeoman](../images/yo-office.png)
     >**Remarque** : si vous êtes invité à remplacer **package.json**, répondez **Non** (ne pas remplacer).
 
 3. Ouvrez le fichier manifeste (à savoir, le fichier dans le répertoire racine de votre application dont le nom se termine par « manifest.xml »). Remplacez toutes les occurrences de `https://localhost:3000` par `http://localhost:3000`, puis enregistrez le fichier.
@@ -154,11 +154,11 @@ Chaque complément nécessite un fichier manifeste pour définir ses paramètres
 
 2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
-    ![Bouton Complément Excel](../../images/excel_quickstart_addin_2a.png)
+    ![Bouton Complément Excel](../images/excel_quickstart_addin_2a.png)
 
 3. Dans le volet Office, choisissez le volet du bouton **Indiquer une couleur** pour définir la couleur de la plage sélectionnée sur vert.
 
-    ![Complément Excel](../../images/excel_quickstart_addin_2b.png)
+    ![Complément Excel](../images/excel_quickstart_addin_2b.png)
 
 ## <a name="next-steps"></a>Étapes suivantes
 

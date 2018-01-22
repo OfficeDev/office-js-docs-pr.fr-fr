@@ -35,14 +35,14 @@ Sur le bureau Windows, Le mode protégé d’Internet Explorer doit être activ�
 
 **Figure 1. Environnement d’exécution des compléments Office dans les clients de bureau et de tablette Windows**
 
-![Infrastructure de client riche](../../images/DK2_AgaveOverview02.png)
+![Infrastructure de client riche](../images/DK2_AgaveOverview02.png)
 
 Comme indiqué dans la figure 2, sur un ordinateur de bureau Mac OS X, la page web du complément est hébergée dans un processus hôte d’exécution Webkit en mode bac à sable qui fournit un niveau similaire de sécurité et de protection des performances. 
 
 
 **Figure 2. Environnement d’exécution des compléments Office dans les clients Mac OS X**
 
-![Applications pour environnement d’exécution Office sur OS X Mac](../../images/DK2_AgaveOverview_Mac_02.png)
+![Applications pour environnement d’exécution Office sur OS X Mac](../images/DK2_AgaveOverview_Mac_02.png)
 
 Le runtime des compléments Office gère les communications entre processus, la traduction des appels et des événements d’API JavaScript dans des appels et événements natifs, ainsi que la prise en charge à distance de l’interface utilisateur pour permettre au complément d’être restitué à l’intérieur du document, dans un volet Office ou de façon adjacente à un message électronique, une demande de réunion ou un rendez-vous.
 
@@ -54,7 +54,7 @@ Dans les clients web pris en charge, tels que Excel Online et Outlook Web App, l
 
 **Figure 3. Infrastructure prenant en charge les compléments Office dans les clients web Office**
 
-![Infrastructure de client web](../../images/DK2_AgaveOverview03.png)
+![Infrastructure de client web](../images/DK2_AgaveOverview03.png)
 
 
 ## <a name="add-in-integrity-in-the-office-store"></a>Intégrité des compléments dans l’Office Store

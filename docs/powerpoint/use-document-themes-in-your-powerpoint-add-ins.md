@@ -16,12 +16,12 @@ OfficeThemes.css vous permet de concevoir des compléments coordonnés à PowerP
 Chaque thème de document Office définit 12 couleurs. Dix de ces couleurs sont disponibles lorsque vous définissez la police, l’arrière-plan et d’autres paramètres de couleur dans une présentation grâce au sélecteur de couleurs :
 
 
-![Palette de couleurs](../../images/off15app_ColorPalette.png)
+![Palette de couleurs](../images/off15app_ColorPalette.png)
 
 Pour afficher ou personnaliser l’intégralité des 12 couleurs de thème dans PowerPoint, dans le groupe **Variantes** de l’onglet **Conception**, cliquez sur le menu déroulant **Plus**, puis choisissez **Couleur** et cliquez sur **Personnaliser les couleurs** pour afficher la boîte de dialogue **Créer de nouvelles couleurs de thème** :
 
 
-![Boîte de dialogue Créer de nouvelles couleurs de thème](../../images/off15app_CreateNewThemeColors.png)
+![Boîte de dialogue Créer de nouvelles couleurs de thème](../images/off15app_CreateNewThemeColors.png)
 
 Les quatre premières couleurs sont pour le texte et les arrière-plans. Un texte créé avec des couleurs claires sera toujours lisible sur les couleurs foncées, tandis qu’un texte créé avec des couleurs foncées sera toujours lisible sur les couleurs claires. Les six couleurs suivantes sont des couleurs d’accentuation qui sont toujours visibles sur les quatre couleurs d’arrière-plan potentielles. Les deux dernières couleurs sont pour les liens hypertexte et les liens hypertexte visités.
 
@@ -31,12 +31,12 @@ Les quatre premières couleurs sont pour le texte et les arrière-plans. Un text
 Chaque thème de document Office définit également deux polices : une pour les titres et l’autre pour le corps de texte. PowerPoint utilise ces polices pour créer des styles de texte automatiques. En outre, les galeries  **Styles rapides** pour le texte et **WordArt** utilisent ces mêmes polices de thème. Ces deux polices sont les deux premières proposées lorsque vous sélectionnez des polices avec le sélecteur de polices :
 
 
-![Sélecteur de polices](../../images/off15app_FontPicker.png)
+![Sélecteur de polices](../images/off15app_FontPicker.png)
 
 Pour afficher ou personnaliser les polices de thème dans PowerPoint, dans le groupe **Variantes** de l’onglet **Conception**, cliquez sur le menu déroulant **Plus**. Ensuite, pointez vers **Polices** et cliquez sur **Personnaliser les polices** pour afficher la boîte de dialogue **Créer de nouvelles polices de thème**.
 
 
-![Boîte de dialogue Créer de nouvelles polices de thème](../../images/off15app_CreateNewThemeFonts.png)
+![Boîte de dialogue Créer de nouvelles polices de thème](../images/off15app_CreateNewThemeFonts.png)
 
 
 ### <a name="office-ui-theme-fonts-and-colors"></a>Couleurs et polices de thème de l’interface utilisateur Office
@@ -44,7 +44,7 @@ Pour afficher ou personnaliser les polices de thème dans PowerPoint, dans le gr
 Office vous permet également de choisir entre plusieurs thèmes prédéfinis qui spécifient certaines des couleurs et des polices utilisées dans l’interface utilisateur de toutes les applications Office. Pour cela, utilisez le menu déroulant  **Fichier**  >   **Compte**  >   **Thème Office** (dans toutes les applications Office).
 
 
-![Liste déroulante de thèmes Office](../../images/off15app_OfficeThemePicker.png)
+![Liste déroulante de thèmes Office](../images/off15app_OfficeThemePicker.png)
 
 OfficeThemes.css inclut des classes que vous pouvez utiliser dans vos compléments du volet Office pour PowerPoint afin qu’elles utilisent ces mêmes polices et couleurs. Cela vous permet de concevoir des compléments du volet Office dont l’apparence concorde avec celle des volets Office intégrés.
 
@@ -114,12 +114,12 @@ Ci-dessous figure un exemple simple de code HTML dans une complément de contenu
 Lors de l’exécution, lorsque l’complément de contenu est insérée dans une présentation qui utilise le **thème Office** par défaut, elle est restituée comme suit :
 
 
-![Application de contenu en cours d’exécution avec le thème Office](../../images/off15app_ContentApp_OfficeTheme.png)
+![Application de contenu en cours d’exécution avec le thème Office](../images/off15app_ContentApp_OfficeTheme.png)
 
 Si vous modifiez la présentation afin d’utiliser un autre thème ou de personnaliser le thème de la présentation, les polices et couleurs spécifiées avec des classes OfficeThemes.css sont mises à jour dynamiquement pour correspondre aux polices et aux couleurs du thème de la présentation. En prenant l’exemple HTML ci-dessus, si la présentation dans laquelle le complément est inséré utilise le thème **Facette**, le complément est restitué comme suit :
 
 
-![Application de contenu en cours d’exécution avec le thème Facette](../../images/off15app_ContentApp_FacetTheme.png)
+![Application de contenu en cours d’exécution avec le thème Facette](../images/off15app_ContentApp_FacetTheme.png)
 
 
 ### <a name="using-officethemescss-office-ui-theme-classes-in-your-task-pane-add-ins-html-page"></a>Utilisation de classes de thèmes de l’interface utilisateur Office OfficeThemes.css dans la page HTML de votre complément du volet Office
@@ -136,12 +136,12 @@ Ci-dessous figure un exemple simple de code HTML dans une complément de volet O
 Lors de l’exécution de PowerPoint avec  **Fichier**  >   **Compte**  >   **Thème Office** défini sur **Blanc**, l’complémentde volet de tâches est restituée comme suit :
 
 
-![Volet de tâches avec thème blanc Office](../../images/off15app_TaskPaneThemeWhite.png)
+![Volet de tâches avec thème blanc Office](../images/off15app_TaskPaneThemeWhite.png)
 
 Si vous modifiez la valeur de **Thème Office** en la définissant sur **Gris foncé**, les polices et couleurs spécifiées avec des classes OfficeThemes.css seront mises à jour dynamiquement et seront restituées comme suit :
 
 
-![Volet de tâches avec thème gris foncé Office](../../images/off15app_TaskPaneThemeDarkGray.png)
+![Volet de tâches avec thème gris foncé Office](../images/off15app_TaskPaneThemeDarkGray.png)
 
 
 ## <a name="officethemecss-classes"></a>Classes OfficeTheme.css
@@ -202,7 +202,7 @@ Le fichier OfficeThemes.css fournit des classes qui correspondent aux 12 couleu
 La capture d’écran suivante montre des exemples de toutes les classes de couleurs de thème (sauf pour les deux couleurs de lien hypertexte) affectées à du texte d’complément lorsque vous utilisez le thème Office par défaut.
 
 
-![Exemple de couleurs de thème Office par défaut](../../images/off15app_DefaultOfficeThemeColors.png)
+![Exemple de couleurs de thème Office par défaut](../images/off15app_DefaultOfficeThemeColors.png)
 
 
 ### <a name="theme-classes-for-task-pane-add-ins"></a>Classes de thèmes pour les compléments du volet Office

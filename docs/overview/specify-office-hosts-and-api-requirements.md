@@ -56,7 +56,7 @@ Si vous utilisez des vérifications à l’exécution, référencez la version l
 Lors de la spécification des hôtes Office ou des conditions requises d’API, vous devez tenir compte de plusieurs facteurs. Le diagramme suivant montre comment choisir la technique à utiliser dans votre complément.
 
 
-![Optez pour la meilleure solution pour votre complément lorsque vous spécifiez des hôtes Office ou des exigences d’API](../../images/e3498f8f-7c7c-461c-84f3-b93910b088b9.png)
+![Optez pour la meilleure solution pour votre complément lorsque vous spécifiez des hôtes Office ou des exigences d’API](../images/e3498f8f-7c7c-461c-84f3-b93910b088b9.png)
 
 - Si votre complément s’exécute dans un hôte Office, définissez l’élément **Hosts** dans le manifeste. Pour plus d’informations, voir [Définition de l’élément Hosts](../../docs/overview/specify-office-hosts-and-api-requirements.md#set-the-hosts-element).
     

@@ -5,7 +5,7 @@ Cet article vous guide tout au long de la procédure de création d’un complé
 
 L’image suivante présente le complément que vous allez créer.
 
-   ![Complément OneNote généré à partir de cette procédure pas à pas](../../images/onenote-first-add-in.png)
+   ![Complément OneNote généré à partir de cette procédure pas à pas](../images/onenote-first-add-in.png)
 
 <a name="setup"></a>
 ## Étape 1 : Configurer votre environnement de développement et créer un projet de complément
@@ -117,7 +117,7 @@ function addOutlineToPage() {
   
   L’image suivante montre l’onglet **MES COMPLÉMENTS** pour les blocs-notes de consommateurs.
 
-  ![Boîte de dialogue Compléments Office affichant l’onglet MES COMPLÉMENTS](../../images/onenote-office-add-ins-dialog.png)
+  ![Boîte de dialogue Compléments Office affichant l’onglet MES COMPLÉMENTS](../images/onenote-office-add-ins-dialog.png)
 
 5 - Dans la boîte de dialogue Télécharger le complément, accédez à **onenote-add-in-manifest.xml** dans le dossier de projet, puis choisissez **Télécharger**. Pendant le test, votre fichier manifeste est stocké dans un espace de stockage local du navigateur.
 
@@ -129,7 +129,7 @@ function addOutlineToPage() {
 
 - Lorsque vous examinez un objet OneNote, les propriétés qui sont actuellement disponibles affichent les valeurs réelles. Les propriétés qui doivent être chargées sont affichées comme *non définies*. Développez le nœud `_proto_` pour visualiser les propriétés qui sont définies sur l’objet, mais qui ne sont pas encore chargées.
 
-![Objet OneNote déchargé dans le débogueur](../../images/onenote-debug.png)
+![Objet OneNote déchargé dans le débogueur](../images/onenote-debug.png)
 
 - Vous devez activer le contenu mixte dans le navigateur si votre complément utilise des ressources HTTP. Les compléments de production doivent uniquement utiliser des ressources HTTPS sécurisées.
 

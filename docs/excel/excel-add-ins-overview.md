@@ -44,19 +44,19 @@ En plus d’interagir avec le contenu du classeur, les compléments Excel peuven
 
 **Boutons personnalisés du ruban**
 
-![Commandes de complément](../../images/Excel_add-in_commands_Script-Lab.png)
+![Commandes de complément](../images/Excel_add-in_commands_Script-Lab.png)
 
 **Volet Office**
 
-![Volet Office pour le complément](../../images/Excel_add-in_task_pane_Insights.png)
+![Volet Office pour le complément](../images/Excel_add-in_task_pane_Insights.png)
 
 **Boîte de dialogue**
 
-![Boîte de dialogue de complément](../../images/Excel_add-in_dialog_choose-number.png)
+![Boîte de dialogue de complément](../images/Excel_add-in_dialog_choose-number.png)
 
 **Complément de contenu**
 
-![complément de contenu](../../images/Excel_add-in_content_map.png)
+![complément de contenu](../images/Excel_add-in_content_map.png)
 
 ## <a name="javascript-apis-to-interact-with-workbook-content"></a>API JavaScript permettant d’interagir avec le contenu du classeur
 

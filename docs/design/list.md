@@ -6,7 +6,7 @@ Les listes proposent une mise en page cohérente lors de l’interaction avec de
 
 <br/>
 
-![Image illustrant une liste](../../images/overview_withApp_list.png)
+![Image illustrant une liste](../images/overview_withApp_list.png)
 
 <br/>
 
@@ -24,8 +24,8 @@ Les listes proposent une mise en page cohérente lors de l’interaction avec de
 
 |**Variation**|**Description**|**Exemple**|
 |:------------|:--------------|:----------|
-|**Liste de la grille**|À utiliser lorsque des informations détaillées sont requises avec chaque élément de liste.|![Image de la liste de la grille](../../images/list.png)<br/>|
-|**Liste d’éléments à hauteur variable**|À utiliser lorsque des images et des textes importants sont nécessaires.|![Image de la liste des éléments à hauteur variable](../../images/listGrid.png)<br/>|
+|**Liste de la grille**|À utiliser lorsque des informations détaillées sont requises avec chaque élément de liste.|![Image de la liste de la grille](../images/list.png)<br/>|
+|**Liste d’éléments à hauteur variable**|À utiliser lorsque des images et des textes importants sont nécessaires.|![Image de la liste des éléments à hauteur variable](../images/listGrid.png)<br/>|
 
 <br/>
 

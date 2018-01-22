@@ -74,19 +74,19 @@ Outils de développement Office pour Visual Studio comprend un modèle pour les 
     
     **Création d’un complément Office**
 
-    ![Création d’une application pour Office 2013](../../images/pj15_HelloProjectOData_CreatingApp.png)
+    ![Création d’une application pour Office 2013](../images/pj15_HelloProjectOData_CreatingApp.png)
 
 5. Dans la boîte de dialogue **Choisir le type de complément**, sélectionnez **Volet Office** et choisissez **Suivant** (voir la capture d’écran suivante).
     
     **Choix du type de complément à créer**
 
-    ![Choix du type d’application à créer](../../images/pj15_HelloProjectOData_ChooseProject.png)
+    ![Choix du type d’application à créer](../images/pj15_HelloProjectOData_ChooseProject.png)
 
 6. Dans la boîte de dialogue  **Choisir les applications hôtes**, désélectionnez toutes les cases, sauf la case  **Project** (voir la capture d’écran suivante) et cliquez sur **Terminer**.
     
     **Choix de l’application hôte**
 
-    ![Sélection d’un projet comme application hôte unique](../../images/b2144f2c-51f6-4e61-bc0d-972125c57031.png)
+    ![Sélection d’un projet comme application hôte unique](../images/b2144f2c-51f6-4e61-bc0d-972125c57031.png)
     
     Visual Studio crée les projets **HelloProjectOdata** et **HelloProjectODataWeb**.
     
@@ -94,7 +94,7 @@ Le dossier  **AddIn** (voir la capture d’écran suivante) contient le fichier 
 
 **Affichage des fichiers projet web par défaut dans l’Explorateur de solutions**
 
-![Affichage des fichiers de projet web dans l’Explorateur de solutions](../../images/pj15_HelloProjectOData_InitialSolutionExplorer.png)
+![Affichage des fichiers de projet web dans l’Explorateur de solutions](../images/pj15_HelloProjectOData_InitialSolutionExplorer.png)
 
 Le manifeste du projet  **HelloProjectOData** est représenté par le fichier HelloProjectOData.xml. Vous pouvez éventuellement modifier le manifeste afin d’y ajouter une description du complément, une référence à une icône, des informations sur les langues supplémentaires et bien d’autres paramètres. La procédure 3 modifie simplement le nom d’affichage et la description du complément. En outre, elle ajoute une icône.
 
@@ -118,7 +118,7 @@ Les étapes suivantes montrent comment ajouter un fichier d’icône à la solut
     
 2. Pour pouvoir être affichée dans la liste déroulante **Compléments Office**, l’icône doit avoir une taille de 32 x 32 pixels. Par exemple, installez le Kit de développement logiciel (SDK) de Project 2013, puis sélectionnez le dossier **Images** et ajoutez le fichier suivant à partir du Kit de développement logiciel (SDK) : `\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`
     
-    Alternately, use your own 32 x 32 icon; or, copy the following image to a file named NewIcon.png, and then add that file to the  `HelloProjectODataWeb\Images` folder: ![Icône de l’application HelloProjectOData](../../images/pj15_HelloProjectData_NewIcon.jpg)
+    Alternately, use your own 32 x 32 icon; or, copy the following image to a file named NewIcon.png, and then add that file to the  `HelloProjectODataWeb\Images` folder: ![Icône de l’application HelloProjectOData](../images/pj15_HelloProjectData_NewIcon.jpg)
 
 3. Dans le manifeste HelloProjectOData.xml, ajoutez un élément **IconUrl** sous l’élément **Description**, où la valeur de l’URL de l’icône correspond au chemin d’accès relatif du fichier d’icône 32 x 32 pixels. Par exemple, ajoutez la ligne suivante : **<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />**. Le fichier de manifeste HelloProjectOData.xml contient désormais ceci (votre valeur **Id** sera différente) :
 
@@ -578,7 +578,7 @@ Voici les tests de base préconisés :
     
     **Figure 4. Démarrage du complément HelloProjectOData**
 
-    ![Test de l’application HelloProjectOData](../../images/pj15_HelloProjectData_TestTheApp.png)
+    ![Test de l’application HelloProjectOData](../images/pj15_HelloProjectData_TestTheApp.png)
 
 4. Dans le volet Office  **Hello ProjectData**, sélectionnez  **Obtenir le point de terminaison ProjectData**. La ligne  **projectDataEndPoint** devrait afficher l’URL du service **ProjectData** et le bouton **Comparer tous les projets** devrait être activé (voir la figure 5).
     
@@ -586,7 +586,7 @@ Voici les tests de base préconisés :
     
     **Figure 5. Affichage des résultats de la requête REST**
 
-    ![Affichage des résultats de la requête REST](../../images/pj15_HelloProjectData_RESTresults.gif)
+    ![Affichage des résultats de la requête REST](../images/pj15_HelloProjectData_RESTresults.gif)
 
 6. Examinez la sortie dans la zone de texte. Elle doit indiquer le chemin d’accès du document, la requête REST, les informations d’état et les résultats JSON des appels à  **ajax** et **parseODataResult**. La sortie permet de comprendre, créer et déboguer le code dans la méthode  **parseODataResult**, par exemple  `projCost += Number(res.d.results[i].ProjectCost);`.
     
@@ -644,7 +644,7 @@ Voici les tests de base préconisés :
     
     **Figure 6. Utilisation du complément sans connexion à Project Web App**
 
-    ![Utilisation de l’application sans connexion à Project Web App](../../images/pj15_HelloProjectData_NoConnection.gif)
+    ![Utilisation de l’application sans connexion à Project Web App](../images/pj15_HelloProjectData_NoConnection.gif)
 
 8. Arrêtez le débogage, puis appuyez à nouveau sur  **F5**. Connectez-vous à Project Web App, puis créez un projet qui contient des données de coût et de travail. Vous pouvez enregistrer le projet mais pas le publier.
     
@@ -653,7 +653,7 @@ Voici les tests de base préconisés :
 
     **Figure 7. Comparaison d’un projet non publié à d’autres projets**
 
-    ![Comparaison d’un projet non publié à d’autres](../../images/pj15_HelloProjectData_NotPublished.gif)
+    ![Comparaison d’un projet non publié à d’autres](../images/pj15_HelloProjectData_NotPublished.gif)
 
 Même si votre complément fonctionne correctement dans les tests précédents, il existe d’autres tests à exécuter. Par exemple :
 

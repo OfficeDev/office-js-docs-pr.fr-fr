@@ -6,7 +6,7 @@ Utilisez des étiquettes pour nommer ou donner un titre à un composant ou un gr
 
 <br/>
 
-![Image illustrant l’étiquette](../../images/overview_withApp_label.png)
+![Image illustrant l’étiquette](../images/overview_withApp_label.png)
 
 <br/>
 
@@ -22,9 +22,9 @@ Utilisez des étiquettes pour nommer ou donner un titre à un composant ou un gr
 
 |**Variation**|**Description**|**Exemple**|
 |:------------|:--------------|:----------|
-|**Étiquette par défaut**|À utiliser pour les étiquettes standard.|![Image de l’étiquette par défaut](../../images/label.png)<br/>|
-|**Étiquette désactivée**|À utiliser lorsque le composant associé est désactivé.|![Image d’étiquette désactivée](../../images/labelDisabled.png)<br/>|
-|**Étiquette requise**|À utiliser lorsque le composant associé est requis.|![Image d’étiquette requise](../../images/labelRequired.png)<br/>|
+|**Étiquette par défaut**|À utiliser pour les étiquettes standard.|![Image de l’étiquette par défaut](../images/label.png)<br/>|
+|**Étiquette désactivée**|À utiliser lorsque le composant associé est désactivé.|![Image d’étiquette désactivée](../images/labelDisabled.png)<br/>|
+|**Étiquette requise**|À utiliser lorsque le composant associé est requis.|![Image d’étiquette requise](../images/labelRequired.png)<br/>|
 
 ## <a name="implementation"></a>Implémentation
 

@@ -13,7 +13,7 @@ Le modèle d’autorisations d’accès de l’API JavaScript à cinq niveaux fo
 
 **Figure 1. Modèle d’autorisations à cinq niveaux pour les compléments de contenu et du volet Office**
 
-![Niveaux d’autorisations des applications de volet de tâches](../../images/off15appsdk_TaskPaneAppPermission.gif)
+![Niveaux d’autorisations des applications de volet de tâches](../images/off15appsdk_TaskPaneAppPermission.gif)
 
 
 

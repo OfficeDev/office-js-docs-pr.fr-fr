@@ -4,7 +4,7 @@ Les boîtes de dialogue sont des surfaces qui flottent au-dessus de la fenêtre 
 
 **Exemple : Boîte de dialogue**
 
-![Exemple d’image affichant une mise en page par défaut pour une boîte de dialogue](../../images/overview_withApp_dialog.png)
+![Exemple d’image affichant une mise en page par défaut pour une boîte de dialogue](../images/overview_withApp_dialog.png)
 
 ### <a name="best-practices"></a>Meilleures pratiques
 

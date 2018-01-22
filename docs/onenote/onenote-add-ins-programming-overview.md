@@ -15,7 +15,7 @@ Les compléments sont constitués de deux composants de base :
 
 **Complément pour Office = manifeste + page web**
 
-![Un complément Office se compose d’un manifeste et d’une page web](../../images/onenote-add-in.png)
+![Un complément Office se compose d’un manifeste et d’une page web](../images/onenote-add-in.png)
 
 ## <a name="using-the-javascript-api"></a>Utilisation de l’API JavaScript
 
@@ -111,7 +111,7 @@ En règle générale, vous utilisez uniquement l’API commune pour effectuer un
 ## <a name="onenote-object-model-diagram"></a>Diagramme du modèle objet OneNote 
 Le diagramme suivant représente ce qui est actuellement disponible dans l’API JavaScript de OneNote.
 
-  ![Diagramme du modèle objet OneNote](../../images/onenote-om.png)
+  ![Diagramme du modèle objet OneNote](../images/onenote-om.png)
 
 
 ## <a name="additional-resources"></a>Ressources supplémentaires

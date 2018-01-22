@@ -14,7 +14,7 @@ Les icônes Office sont basées sur les principes de conception suivants :
 
 L’image suivante montre les icônes qui appliquent les principes de conception modernes.
 
-![Image illustrant les anciennes icônes Office et l’interprétation moderne actualisée des icônes](../../images/icons_image.PNG)
+![Image illustrant les anciennes icônes Office et l’interprétation moderne actualisée des icônes](../images/icons_image.PNG)
 
 ## <a name="icon-guidelines"></a>Instructions relatives aux icônes
 Suivez ces instructions lorsque vous créez vos icônes : 
@@ -46,7 +46,7 @@ Les icônes du bureau Office 2016 sont des images bitmap. Différentes tailles a
 
 Veillez à renouveler les icônes pour chaque taille au lieu de les réduire pour les ajuster.
 
-![Illustration présentant la recommandation qui indique de redimensionner les icônes plutôt que de les réduire](../../images/icon_resizing.png)
+![Illustration présentant la recommandation qui indique de redimensionner les icônes plutôt que de les réduire](../images/icon_resizing.png)
 
 <!--
 The following table shows the icon sizes that render for different modes at different DPI settings.
@@ -82,7 +82,7 @@ Pour créer des commandes qui s’alignent sur l’interface utilisateur d’Off
 
 L’image suivante montre la disposition des éléments de base et modificateurs dans une icône Office.
 
-![Image illustrant un élément de base d’icône dans le centre avec un modificateur dans le coin inférieur droit et un modificateur d’action dans le coin supérieur gauche](../../images/icon_layout.PNG)
+![Image illustrant un élément de base d’icône dans le centre avec un modificateur dans le coin inférieur droit et un modificateur d’action dans le coin supérieur gauche](../images/icon_layout.PNG)
 
 - Éléments de base centraux dans le cadre de pixel avec remplissage vide tout autour.
 - Placez les modificateurs d’action dans le coin supérieur gauche. 
@@ -125,26 +125,26 @@ Les icônes Office ont une palette de couleurs limitée. Utilisez les couleurs r
 
 |**Nom de la couleur**|**RVB**|**Hex**|**Couleur**|**Catégorie**|
 |:---|:---|:---|:---|:---|
-|Texte gris (80)|80, 80, 80|#505050|![Image couleur texte gris 80](../../images/textGray_80.gif)|Texte|
-|Texte gris (95)|95, 95, 95|#5F5F5F|![Image couleur texte gris 95](../../images/textGray_95.gif)|Texte|
-|Texte gris (105)|105, 105, 105|#696969|![Image couleur texte gris 105](../../images/textGray_105.gif)|Texte|
-|Gris foncé 32|128, 128, 128|#808080|![Image couleur gris foncé 32](../../images/darkGray_32.gif)|32 et plus|
-|Gris moyen 32|158, 158, 158|#9E9E9E|![Image couleur gris moyen 32](../../images/mediumGray_32.gif)|32 et plus|
-|TOUT gris clair|179, 179, 179|#B3B3B3|![Image couleur tout en gris clair](../../images/lightGray_all.gif)|Toutes les tailles|
-|Gris foncé 16|114, 114, 114|#727272|![Image couleur gris foncé 16](../../images/darkGray_16.gif)|16 et moins|
-|Gris moyen 16|144, 144, 144|#909090|![Image couleur gris moyen 16](../../images/mediumGray_16.gif)|16 et moins|
-|Bleu 32|77, 130, 184|#4d82B8|![Image couleur bleu 32](../../images/blue_32.gif)|32 et plus|
-|Bleu 16|74, 125, 177|#4A7DB1|![Image couleur bleu 16](../../images/blue_16.gif)|16 et moins|
-|TOUT jaune|234, 194, 130|#EAC282|![Image couleur tout en jaune](../../images/yellow_all.gif)|Toutes les tailles|
-|Orange 32|231, 142, 70|#E78E46|![Image couleur orange 32](../../images/orange_32.gif)|32 et plus|
-|Orange 16|227, 142, 70|#E3751C|![Image couleur orange 16](../../images/orange_16.gif)|16 et moins|
-|TOUT rose|230, 132, 151|#E68497|![Image couleur tout en rose](../../images/pink_all.gif)|Toutes les tailles|
-|Vert 32|118, 167, 151|#76A797|![Image couleur vert 32](../../images/green_32.gif)|32 et plus|
-|Vert 16|104, 164, 144|#68A490|![Image couleur vert 16](../../images/green_16.gif)|16 et moins|
-|Rouge 32|216, 99, 68|#D86344|![Image couleur rouge 32](../../images/red_32.gif)|32 et plus|
-|Rouge 16|214, 85, 50|#D65532|![Image couleur rouge 16](../../images/red_16.gif)|16 et moins|
-|Violet 32|152, 104, 185|#9868B9|![Image couleur violet 32](../../images/purple_32.gif)|32 et plus|
-|Violet 16|137, 89, 171|#8959AB|![Image couleur violet 16](../../images/purple_16.gif)|16 et moins|
+|Texte gris (80)|80, 80, 80|#505050|![Image couleur texte gris 80](../images/textGray_80.gif)|Texte|
+|Texte gris (95)|95, 95, 95|#5F5F5F|![Image couleur texte gris 95](../images/textGray_95.gif)|Texte|
+|Texte gris (105)|105, 105, 105|#696969|![Image couleur texte gris 105](../images/textGray_105.gif)|Texte|
+|Gris foncé 32|128, 128, 128|#808080|![Image couleur gris foncé 32](../images/darkGray_32.gif)|32 et plus|
+|Gris moyen 32|158, 158, 158|#9E9E9E|![Image couleur gris moyen 32](../images/mediumGray_32.gif)|32 et plus|
+|TOUT gris clair|179, 179, 179|#B3B3B3|![Image couleur tout en gris clair](../images/lightGray_all.gif)|Toutes les tailles|
+|Gris foncé 16|114, 114, 114|#727272|![Image couleur gris foncé 16](../images/darkGray_16.gif)|16 et moins|
+|Gris moyen 16|144, 144, 144|#909090|![Image couleur gris moyen 16](../images/mediumGray_16.gif)|16 et moins|
+|Bleu 32|77, 130, 184|#4d82B8|![Image couleur bleu 32](../images/blue_32.gif)|32 et plus|
+|Bleu 16|74, 125, 177|#4A7DB1|![Image couleur bleu 16](../images/blue_16.gif)|16 et moins|
+|TOUT jaune|234, 194, 130|#EAC282|![Image couleur tout en jaune](../images/yellow_all.gif)|Toutes les tailles|
+|Orange 32|231, 142, 70|#E78E46|![Image couleur orange 32](../images/orange_32.gif)|32 et plus|
+|Orange 16|227, 142, 70|#E3751C|![Image couleur orange 16](../images/orange_16.gif)|16 et moins|
+|TOUT rose|230, 132, 151|#E68497|![Image couleur tout en rose](../images/pink_all.gif)|Toutes les tailles|
+|Vert 32|118, 167, 151|#76A797|![Image couleur vert 32](../images/green_32.gif)|32 et plus|
+|Vert 16|104, 164, 144|#68A490|![Image couleur vert 16](../images/green_16.gif)|16 et moins|
+|Rouge 32|216, 99, 68|#D86344|![Image couleur rouge 32](../images/red_32.gif)|32 et plus|
+|Rouge 16|214, 85, 50|#D65532|![Image couleur rouge 16](../images/red_16.gif)|16 et moins|
+|Violet 32|152, 104, 185|#9868B9|![Image couleur violet 32](../images/purple_32.gif)|32 et plus|
+|Violet 16|137, 89, 171|#8959AB|![Image couleur violet 16](../images/purple_16.gif)|16 et moins|
 
 ## <a name="icons-in-high-contrast-modes"></a>Icônes en modes de contraste élevé
 

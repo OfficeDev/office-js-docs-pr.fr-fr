@@ -36,7 +36,7 @@ La technique de base est de faire précéder la variable (ou le paramètre, etc.
 /** @type {Excel.Range} */
 var subsetRange;
 ```
-![IntelliSense pour variable](../../images/IntellisenseVS17Var.png)
+![IntelliSense pour variable](../images/IntellisenseVS17Var.png)
 
 ### <a name="parameter"></a>Paramètre
 
@@ -46,7 +46,7 @@ function myFunc(paragraphs){
 
 }
 ```
-![IntelliSense pour paramètre](../../images/IntellisenseVS17Param.png)
+![IntelliSense pour paramètre](../images/IntellisenseVS17Param.png)
 
 ### <a name="return-value"></a>Valeur renvoyée
 
@@ -56,7 +56,7 @@ function myFunc() {
 
 }
 ```
-![IntelliSense pour la valeur renvoyée](../../images/IntellisenseVS17Return.png)
+![IntelliSense pour la valeur renvoyée](../images/IntellisenseVS17Return.png)
 
 ### <a name="complex-types"></a>Types complexes
 
@@ -68,7 +68,7 @@ function myFunc() {
 
 }
 ```
-![IntelliSense pour le type complexe](../../images/IntellisenseVS17ComplexType.png)
+![IntelliSense pour le type complexe](../images/IntellisenseVS17ComplexType.png)
 
 ##<a name="additional-resources"></a>Ressources supplémentaires
 

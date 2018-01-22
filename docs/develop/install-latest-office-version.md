@@ -20,7 +20,7 @@ Pour obtenir la dernière version :
 
 Une fois le processus d’installation terminé, les dernières applications d’Office 2016 sont installées. Pour vérifier que la dernière version est bien installée, accédez à **Fichier**  >  **Compte** à partir de n’importe quelle application Office. Sous Mises à jour Office, vous verrez la mention (Office Insiders) au-dessus du numéro de version.
 
-![Capture d’écran affichant les informations du produit avec la mention Office Insiders](../../images/officeinsider.PNG)
+![Capture d’écran affichant les informations du produit avec la mention Office Insiders](../images/officeinsider.PNG)
 
 ## <a name="minimum-office-builds-for-office-javascript-api-requirement-sets"></a>Builds Office minimum pour les ensembles de conditions requises pour l’API JavaScript pour Office
 

@@ -46,7 +46,7 @@ Si votre organisation répond à toutes les conditions requises, procédez comme
     - **J’ai le fichier manifeste (.xml) sur cet appareil**. Pour cette option, sélectionnez **Parcourir** afin de recherche le fichier manifeste (.xml) que vous voulez utiliser.
     - **J’ai une URL pour le fichier manifeste**. Pour cette option, entrez l’URL du manifeste dans le champ disponible.
 
-    ![Boîte de dialogue Nouveau complément dans le Centre d’administration Office 365](../../images/b3abd42f-63d8-4a5f-8893-d1ae38f4e9b2.png)
+    ![Boîte de dialogue Nouveau complément dans le Centre d’administration Office 365](../images/b3abd42f-63d8-4a5f-8893-d1ae38f4e9b2.png)
 
 7.  Cliquez sur **Suivant**.
 
@@ -54,22 +54,22 @@ Si votre organisation répond à toutes les conditions requises, procédez comme
 
     >**Remarque :** Avec l’option Office Store, les mises à jour et améliorations du complément sont automatiquement mises à la disposition des utilisateurs, sans intervention de votre part.
 
-    ![Boîte de dialogue Sélectionner un module additionnel dans le Centre d’administration Office 365](../../images/2a8de1f4-03b0-4ab6-aa99-4451ee30a64c.png)
+    ![Boîte de dialogue Sélectionner un module additionnel dans le Centre d’administration Office 365](../images/2a8de1f4-03b0-4ab6-aa99-4451ee30a64c.png)
 
 9. Le complément est désormais activé. Dans la page relative au complément, l’état de celui-ci indique **Activé**, comme illustré pour le complément des vignettes Power BI dans la capture d’écran ci-dessous. Dans **Qui a accès**, sélectionnez **Modifier** pour affecter le complément à des utilisateurs et/ou groupes.
 
-    ![Page du complément des vignettes Power BI dans le Centre d’administration Office 365](../../images/0faa60e8-1e71-4ed1-bbc1-5a2f85ebf981.png)
+    ![Page du complément des vignettes Power BI dans le Centre d’administration Office 365](../images/0faa60e8-1e71-4ed1-bbc1-5a2f85ebf981.png)
 
 10. Dans la page **Modifier les utilisateurs ayant accès**, sélectionnez **Tout le monde** ou **Utilisateurs/Groupes spécifiques**. Utilisez la zone de recherche pour trouver les utilisateurs et/ou groupes vers lesquels vous voulez déployer le complément.
 
-    ![Page Modifier les utilisateurs ayant accès dans le Centre d’administration Office 365](../../images/46571963-5938-4c7d-b60e-a3ad06758ddf.png)
+    ![Page Modifier les utilisateurs ayant accès dans le Centre d’administration Office 365](../images/46571963-5938-4c7d-b60e-a3ad06758ddf.png)
 
     >**Remarque :** pour les compléments à authentification unique (SSO), les utilisateurs et les groupes affectés seront également partagés avec les compléments partageant le même ID d’application Azure. Les modifications apportées aux affectations d’utilisateurs seront appliquées également à ces compléments. Les compléments connexes seront affichés sur cette page. Uniquement pour les compléments à authentification unique, cette page affiche la liste des autorisations Microsoft Graph requises par le complément.
 
 11. Lorsque vous avez terminé, cliquez sur **Enregistrer**, passez en revue les paramètres du complément, puis cliquez sur **Fermer**. Votre complément apparaît à présent avec d’autres applications dans Office 365.
     >**Remarque :** Quand un administrateur sélectionne **Enregistrer**, le consentement est donné pour tous les utilisateurs. 
 
-    ![Liste des applications dans le Centre d’administration Office 365](../../images/71bfd837-20bc-4517-9513-33fc70147669.png)
+    ![Liste des applications dans le Centre d’administration Office 365](../images/71bfd837-20bc-4517-9513-33fc70147669.png)
 
 >**Conseil :** lorsque vous déployez un nouveau complément vers des utilisateurs et/ou des groupes de votre organisation, pensez à leur envoyer un courrier décrivant quand et comment utiliser le complément et incluez des liens vers un contenu pertinent de l’aide ou du forum aux questions, ou d’autres ressources de support.
 
@@ -109,7 +109,7 @@ Une fois qu’un complément a été publié via un déploiement centralisé, le
 
 Si le complément prend en charge les commandes de complément, celles-ci apparaissent dans le ruban de l’application Office pour tous les utilisateurs vers lesquels le complément est déployé. Dans l’exemple suivant, la commande **Recherche de citation** apparaît dans le ruban pour le complément **Citations**. 
 
-![Capture d’écran illustrant une section du ruban Office avec la commande Recherche de citation mise en évidence dans le complément Citations](../../images/553b0c0a-65e9-4746-b3b0-8c1b81715a86.png)
+![Capture d’écran illustrant une section du ruban Office avec la commande Recherche de citation mise en évidence dans le complément Citations](../images/553b0c0a-65e9-4746-b3b0-8c1b81715a86.png)
 
 Si le complément ne prend pas en charge les commandes de complément, les utilisateurs peuvent l’ajouter à leur application Office en procédant comme suit :
 
@@ -117,4 +117,4 @@ Si le complément ne prend pas en charge les commandes de complément, les utili
 2.  Sélectionnez l’onglet **Géré par l’administrateur** dans le fenêtre du complément.
 3.  Choisissez le complément, puis cliquez sur **Ajouter**. 
 
-    ![Capture d’écran illustrant l’onglet Géré par l’administrateur de la page Compléments Office d’une application Office. Le complément Citations apparaît sur l’onglet.](../../images/fd36ba81-9882-40f0-9fce-74f991aa97d5.png)
+    ![Capture d’écran illustrant l’onglet Géré par l’administrateur de la page Compléments Office d’une application Office. Le complément Citations apparaît sur l’onglet.](../images/fd36ba81-9882-40f0-9fce-74f991aa97d5.png)

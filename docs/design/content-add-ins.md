@@ -4,7 +4,7 @@ Les compléments de contenu sont des surfaces qui peuvent être incorporées dir
 
 **Exemple : Complément de contenu**
 
-![Exemple d’image affichant une mise en page typique pour des compléments de contenu.](../../images/overview_withApp_content.png)
+![Exemple d’image affichant une mise en page typique pour des compléments de contenu.](../images/overview_withApp_content.png)
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
@@ -23,13 +23,13 @@ Les menus Caractéristique peuvent entraver les éléments de navigation et de c
 
 Pour Windows, le menu Caractéristique mesure 12 x 32 pixels, comme illustré.
 
-![Image illustrant le menu Caractéristique sur le bureau Windows](../../images/personalityMenu_Win.png)
+![Image illustrant le menu Caractéristique sur le bureau Windows](../images/personalityMenu_Win.png)
 
 **Menu Caractéristique sur Mac**
 
 Pour Mac, le menu Caractéristique mesure 26 x 26 pixels, mais flotte à 8 pixels de la droite et à 6 pixels du haut, ce qui permet d’augmenter l’espace occupé à 34 x 32 pixels, comme illustré.
 
-![Image illustrant le menu Caractéristique sur le bureau Mac](../../images/personalityMenu_Mac.png)
+![Image illustrant le menu Caractéristique sur le bureau Mac](../images/personalityMenu_Mac.png)
 
 ## <a name="implementation"></a>Implémentation
 

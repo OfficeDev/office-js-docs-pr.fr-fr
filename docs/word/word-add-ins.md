@@ -187,7 +187,7 @@ Cet article décrit le processus de création d’un complément Word à l’aid
 
 2. Dans le volet Office de droite, choisissez l’un des boutons pour ajouter du texte réutilisable dans le document.
 
-![Image de l’application Word avec le complément boilerplate chargé.](../../images/boilerplateAddin.png)
+![Image de l’application Word avec le complément boilerplate chargé.](../images/boilerplateAddin.png)
 
 ## <a name="next-steps"></a>Étapes suivantes
 

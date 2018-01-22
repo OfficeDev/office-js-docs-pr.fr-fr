@@ -39,7 +39,7 @@ Excel.run(function (context) {
 
 **Nouveau tableau**
 
-![Nouveau tableau dans Excel](../../images/Excel-table-create.png)
+![Nouveau tableau dans Excel](../images/Excel-table-create.png)
 
 ## <a name="add-rows-to-a-table"></a>Ajouter des lignes dans un tableau
 
@@ -73,7 +73,7 @@ Excel.run(function (context) {
 
 **Tableau avec de nouvelles lignes**
 
-![Tableau avec de nouvelles lignes dans Excel](../../images/Excel-table-add-rows.png)
+![Tableau avec de nouvelles lignes dans Excel](../images/Excel-table-add-rows.png)
 
 ## <a name="add-a-column-to-a-table"></a>Ajouter une colonne à un tableau
 
@@ -112,7 +112,7 @@ Excel.run(function (context) {
 
 **Tableau avec une nouvelle colonne**
 
-![Tableau avec une nouvelle colonne dans Excel](../../images/Excel-table-add-column.png)
+![Tableau avec une nouvelle colonne dans Excel](../images/Excel-table-add-column.png)
 
 ### <a name="add-a-column-that-contains-formulas"></a>Ajouter une colonne qui contient des formules
 
@@ -145,7 +145,7 @@ Excel.run(function (context) {
 
 **Tableau avec une nouvelle colonne calculée**
 
-![Tableau avec une nouvelle colonne calculée dans Excel](../../images/Excel-table-add-calculated-column.png)
+![Tableau avec une nouvelle colonne calculée dans Excel](../images/Excel-table-add-calculated-column.png)
 
 ## <a name="update-column-name"></a>Mettre à jour un nom de colonne
 
@@ -174,7 +174,7 @@ Excel.run(function (context) {
 
 **Tableau avec un nouveau nom de colonne**
 
-![Tableau avec un nouveau nom de colonne dans Excel](../../images/Excel-table-update-column-name.png)
+![Tableau avec un nouveau nom de colonne dans Excel](../images/Excel-table-update-column-name.png)
 
 ## <a name="get-data-from-a-table"></a>Obtenir des données à partir d’un tableau
 
@@ -220,7 +220,7 @@ Excel.run(function (context) {
 
 **Tableau et sortie des données**
 
-![Données de tableau dans Excel](../../images/Excel-table-get-data.png)
+![Données de tableau dans Excel](../images/Excel-table-get-data.png)
 
 ## <a name="sort-data-in-a-table"></a>Trier des données dans un tableau
 
@@ -247,7 +247,7 @@ Excel.run(function (context) {
 
 **Données de tableau triées par montant (décroissant)**
 
-![Données de tableau dans Excel](../../images/Excel-table-sort.png)
+![Données de tableau dans Excel](../images/Excel-table-sort.png)
 
 ## <a name="apply-filters-to-a-table"></a>Appliquer des filtres à un tableau
 
@@ -279,7 +279,7 @@ Excel.run(function (context) {
 
 **Données de tableau avec des filtres appliqués pour les colonnes Category et Amount**
 
-![Données de tableau filtrées dans Excel](../../images/Excel-table-filters-apply.png)
+![Données de tableau filtrées dans Excel](../images/Excel-table-filters-apply.png)
 
 ## <a name="clear-table-filters"></a>Effacer les filtres du tableau
 
@@ -298,7 +298,7 @@ Excel.run(function (context) {
 
 **Données de tableau sans filtre appliqué**
 
-![Données de tableau non filtrées dans Excel](../../images/Excel-table-filters-clear.png)
+![Données de tableau non filtrées dans Excel](../images/Excel-table-filters-clear.png)
 
 ## <a name="get-the-visible-range-from-a-filtered-table"></a>Obtenir la plage visible à partir d’une table filtrée
 
@@ -339,7 +339,7 @@ Excel.run(function (context) {
 
 **Tableau après application de la mise en forme**
 
-![Tableau après application de la mise en forme dans Excel](../../images/Excel-table-formatting-after.png)
+![Tableau après application de la mise en forme dans Excel](../images/Excel-table-formatting-after.png)
 
 ## <a name="convert-a-range-to-a-table"></a>Convertir une plage en tableau
 
@@ -379,11 +379,11 @@ Excel.run(function (context) {
 
 **Données de la plage (avant la conversion de la plage en tableau)**
 
-![Données de la plage dans Excel](../../images/Excel-range.png)
+![Données de la plage dans Excel](../images/Excel-range.png)
 
 **Données du tableau (après la conversion de la plage en tableau)**
 
-![Données du tableau dans Excel](../../images/Excel-table-from-range.png)
+![Données du tableau dans Excel](../images/Excel-table-from-range.png)
 
 ## <a name="import-json-data-into-a-table"></a>Importer des données JSON dans un tableau
 
@@ -430,7 +430,7 @@ Excel.run(function (context) {
 
 **Nouveau tableau**
 
-![Nouveau tableau dans Excel](../../images/Excel-table-create-from-json.png)
+![Nouveau tableau dans Excel](../images/Excel-table-create-from-json.png)
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 

@@ -32,7 +32,7 @@ Les compléments Office offrent les avantages suivants par rapport aux compléme
 Un complément Office inclut deux composants de base : un fichier manifeste XML et votre propre application web. Le manifeste définit différents paramètres, y compris la façon dont votre complément s’intègre avec les clients Office. Votre application web doit être hébergée sur un serveur web ou un service d’hébergement web, tel que Microsoft Azure.
 
 **Manifeste + page web = un complément pour Office**
-![Manifeste + page web = complément pour Office](../../images/DK2_AgaveOverview01.png)
+![Manifeste + page web = complément pour Office](../images/DK2_AgaveOverview01.png)
 
 ### <a name="manifest"></a>Manifeste 
 
@@ -50,7 +50,7 @@ Le complément Office le plus simple est composé d’une page HTML statique qui
 
 **Composants d’un complément Office Hello World**
 
-![Composants d’un complément Hello World](../../images/DK2_AgaveOverview07.png)
+![Composants d’un complément Hello World](../images/DK2_AgaveOverview07.png)
 
 ## <a name="extending-and-interacting-with-office-clients"></a>Extension des clients Office et interaction avec ces clients 
 
@@ -75,14 +75,14 @@ Les éléments d’interface personnalisés et les volets Office sont définis d
 Vous pouvez ajouter des éléments de menu et des boutons de ruban personnalisé au ruban d’Office pour bureau Windows et Office Online. Les utilisateurs peuvent ainsi accéder à votre complément directement à partir de leur application Office. Les boutons de commande peuvent lancer différentes actions, par exemple afficher un volet Office comportant du contenu HTML personnalisé ou exécuter une fonction JavaScript.  
 
 **Commandes de complément dans Excel**
-![Commandes de menu et boutons personnalisés](../../images/add-in-commands-overview..png)
+![Commandes de menu et boutons personnalisés](../images/add-in-commands-overview..png)
 
 #### <a name="task-panes"></a>Volets Office  
 
 Vous pouvez utiliser des volets Office en plus des commandes de complément pour permettre aux utilisateurs d’interagir avec votre solution. Les clients qui ne prennent pas en charge les commandes de complément (Office 2013 et Office pour iPad) exécutent votre complément sous la forme d’un volet Office. Les utilisateurs lancent les compléments de volet Office via le bouton **Mes compléments** situé sous l’onglet Insertion. 
 
 **Volet Office**
-![Volet Office](../../images/task-pane-overview.jpg)
+![Volet Office](../images/task-pane-overview.jpg)
 
 ### <a name="extend-outlook-functionality"></a>Extension des fonctionnalités Outlook 
 
@@ -98,7 +98,7 @@ Vous pouvez incorporer des objets web, appelés compléments de contenu, dans de
 
 **Complément de contenu**
 
-![Complément d’insertion de contenu](../../images/DK2_AgaveOverview05.png)
+![Complément d’insertion de contenu](../images/DK2_AgaveOverview05.png)
 
 ## <a name="office-javascript-apis"></a>API JavaScript pour Office 
 

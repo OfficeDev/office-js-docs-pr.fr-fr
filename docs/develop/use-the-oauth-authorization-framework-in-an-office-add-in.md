@@ -11,7 +11,7 @@ Cette rubrique explique comment mettre en œuvre un flux d’authentification da
 
 Le schéma suivant présente les composants nécessaires, ainsi que le flux d’événements qui se produisent lors de l’implémentation de l’authentification dans votre complément.
 
-![Réalisation d’une authentification OAuth dans un complément Office](../../images/OAuthInOfficeAddin.png)
+![Réalisation d’une authentification OAuth dans un complément Office](../images/OAuthInOfficeAddin.png)
 
 Le schéma illustre la façon dont les composants requis suivants sont utilisés :
 

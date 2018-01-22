@@ -4,7 +4,7 @@ Vous pouvez utiliser plusieurs types d’éléments d’interface utilisateur po
 
 L’image suivante montre les types d’éléments d’interface utilisateur d’Office que vous pouvez créer.
 
-![Image qui affiche des commandes de complément sur le ruban, un volet des tâches et une boîte de dialogue dans un document Office](../../images/overview_withApp_interfaceElements.png)
+![Image qui affiche des commandes de complément sur le ruban, un volet des tâches et une boîte de dialogue dans un document Office](../images/overview_withApp_interfaceElements.png)
 
 ## <a name="add-in-commands"></a>Commandes de complément
 

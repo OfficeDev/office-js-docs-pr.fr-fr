@@ -260,7 +260,7 @@ La figure 3 montre l’élément titre (h1) et l’élément paragraphe (p) qui 
 
 **Figure 3. Interface utilisateur du complément**
 
-![Interface utilisateur de l’application avec des sections en surbrillance](../../images/off15App_HowToLocalize_fig03.png)
+![Interface utilisateur de l’application avec des sections en surbrillance](../images/off15App_HowToLocalize_fig03.png)
 
 ### <a name="add-the-resource-file-that-contains-the-localized-strings"></a>Ajouter le fichier de ressources qui contient les chaînes localisées
 
@@ -395,7 +395,7 @@ Pour changer la langue utilisée pour l’affichage ou l’édition dans votre c
     
     **Figure 4. Options de langue dans la boîte de dialogue Options Word 2013**
 
-    ![Boîte de dialogue Options Word 2013](../../images/off15App_HowToLocalize_fig04.png)
+    ![Boîte de dialogue Options Word 2013](../images/off15App_HowToLocalize_fig04.png)
 
 2. Sous  **Choisir les langues de l’interface utilisateur et de l’Aide**, sélectionnez la langue souhaitée pour l’affichage, par exemple l’espagnol, puis cliquez sur la flèche vers le haut pour déplacer l’espagnol tout en haut de la liste. Pour changer la langue utilisée pour l’édition, sous  **Choisir les langues d’édition**, choisissez la langue que vous voulez utiliser pour l’édition, par exemple l’espagnol, puis choisissez  **Définir par défaut**.
     
@@ -406,7 +406,7 @@ Exécutez l’exemple de complément. Le complément de volet de tâches se char
 
 **Figure 5. Interface utilisateur du complément avec texte localisé**
 
-![Application avec texte de l’interface utilisateur localisé](../../images/off15App_HowToLocalize_fig05.png)
+![Application avec texte de l’interface utilisateur localisé](../images/off15App_HowToLocalize_fig05.png)
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 

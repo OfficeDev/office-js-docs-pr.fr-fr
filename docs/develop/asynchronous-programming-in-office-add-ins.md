@@ -10,7 +10,7 @@ Le diagramme suivant présente le flux d’exécution d’un appel à une métho
 **Figure 1. Flux d’exécution de programmation asynchrone**
 
 
-![Flux d’exécution de thread de programmation asynchrone](../../images/off15appAsyncProgFig01.png)
+![Flux d’exécution de thread de programmation asynchrone](../images/off15appAsyncProgFig01.png)
 
 La prise en charge de cette conception asynchrone dans les clients riches et les clients web fait partie des objectifs de conception « écriture unique-exécution multiplateforme » du modèle de développement des Compléments Office. Par exemple, vous pouvez créer un complément de contenu ou du volet de tâches avec une seule base de code qui sera exécutée sur Excel 2013 et Excel Online.
 

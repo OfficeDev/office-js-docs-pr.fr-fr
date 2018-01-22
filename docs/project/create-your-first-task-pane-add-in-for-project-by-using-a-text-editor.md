@@ -724,19 +724,19 @@ La procédure 3 montre comment installer et utiliser les fonctionnalités du co
     
     **Figure 1. Ajout d’un partage de fichiers réseau pour des manifestes de complément**
 
-    ![Ajout d’un partage de fichiers réseau pour des manifestes d’application](../../images/pj15_CreateSimpleAgave_ManageCatalogs.png)
+    ![Ajout d’un partage de fichiers réseau pour des manifestes d’application](../images/pj15_CreateSimpleAgave_ManageCatalogs.png)
 
 6. Après que vous avez ajouté de nouveaux compléments ou modifié le code source, redémarrez Project. Dans le ruban  **PROJECT**, choisissez le menu déroulant  **Compléments Office**, puis choisissez  **Afficher tout**. Dans la boîte de dialogue  **Insérer un complément**, choisissez  **DOSSIER PARTAGÉ** (voir la figure 2), sélectionnez **Test du modèle objet de Project**, puis choisissez  **Insérer**. Le complément Test du modèle objet de Project démarre dans un volet Office.
     
     **Figure 2. Démarrage du complément Test du modèle objet Project qui se trouve sur un partage de fichiers**
 
-    ![Insertion d’une application](../../images/pj15_CreateSimpleAgave_StartAgaveApp.png)
+    ![Insertion d’une application](../images/pj15_CreateSimpleAgave_StartAgaveApp.png)
 
 7. Dans Project, créez et enregistrez un projet simple comportant au moins deux tâches. Par exemple, créez les tâches nommées T1, T2 et un jalon nomméM1, puis définissez des durées et des prédécesseurs de tâches similaires à ceux de la figure 3. Choisissez l’onglet  **PROJECT** sur le ruban, sélectionnez toute la ligne pour la tâche T2, puis cliquez sur le bouton **getSelectedDataAsync** dans le volet Office. La figure 3 montre les données qui sont sélectionnées dans la zone de texte du complément **Test du modèle objet de Project**.
     
     **Figure 3. Utilisation du complément Test du modèle objet Project**
 
-    ![Utilisation de l’application Test du modèle objet Project](../../images/pj15_CreateSimpleAgave_ProjectOMTest.gif)
+    ![Utilisation de l’application Test du modèle objet Project](../images/pj15_CreateSimpleAgave_ProjectOMTest.gif)
 
 8. Sélectionnez la cellule dans la colonne  **Durée** de la première tâche, puis cliquez sur le bouton **getSelectedDataAsync** dans le complément **Test du modèle objet de Project**. La fonction  **getSelectedDataAsync** définit la valeur de la zone de texte à `2 days`. 
     
@@ -1122,7 +1122,7 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 
 **Figure 4. Les fonctions incluses dans le fichier SurfaceErrors.js peuvent afficher une notification « toast »**
 
-![Utilisation des routines SurfaceError pour afficher une erreur](../../images/pj15_CreateSimpleAgave_SurfaceError.gif)
+![Utilisation des routines SurfaceError pour afficher une erreur](../images/pj15_CreateSimpleAgave_SurfaceError.gif)
 
 
 ## <a name="additional-resources"></a>Ressources supplémentaires

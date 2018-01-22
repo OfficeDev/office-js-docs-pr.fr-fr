@@ -8,7 +8,7 @@ Les commandes de complément sont des éléments d’interface utilisateur qui �
 
 **Commandes de complément**
 
-![Commandes de complément dans Excel](../../images/Excel_add-in_commands_Script-Lab.png)
+![Commandes de complément dans Excel](../images/Excel_add-in_commands_Script-Lab.png)
 
 Pour plus d’informations sur les fonctionnalités des commandes, les plateformes prises en charge et les bonnes pratiques pour le développement de commandes, reportez-vous à la rubrique [Commandes de complément pour Excel, Word et PowerPoint](../design/add-in-commands.md).
 
@@ -18,7 +18,7 @@ Les volets des tâches sont des surfaces d’interface qui s’affichent génér
 
 **Volet Office**
 
-![Complément du volet Office dans Excel](../../images/Excel_add-in_task_pane_Insights.png)
+![Complément du volet Office dans Excel](../images/Excel_add-in_task_pane_Insights.png)
 
 Pour plus d’informations sur les volets Office, reportez-vous à [Volets Office dans les compléments Office](../design/task-pane-add-ins.md). Pour consulter un exemple qui implémente un volet Office dans Excel, reportez-vous à [Excel Add-in JS WoodGrove Expense Trends](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends).
 
@@ -28,7 +28,7 @@ Les boîtes de dialogue sont des surfaces qui flottent au-dessus de la fenêtre 
 
 **Boîte de dialogue**
 
-![Boîte de dialogue de complément dans Excel](../../images/Excel_add-in_dialog_choose-number.png)
+![Boîte de dialogue de complément dans Excel](../images/Excel_add-in_dialog_choose-number.png)
 
 Pour plus d’informations sur les boîtes de dialogue et l’API de dialogue, reportez-vous aux rubriques [Boîtes de dialogue dans les compléments Office](../design/dialog-boxes.md) et [Utiliser l’API de dialogue dans vos compléments Office](../develop/dialog-api-in-office-add-ins.md).
 
@@ -38,7 +38,7 @@ Les compléments de contenu sont des surfaces que vous pouvez incorporer directe
 
 **Complément de contenu**
 
-![Complément de contenu dans Excel](../../images/Excel_add-in_content_map.png)
+![Complément de contenu dans Excel](../images/Excel_add-in_content_map.png)
 
 Pour plus d’informations sur les compléments de contenu, reportez-vous à [Compléments Office de contenu](../design/content-add-ins.md). Pour consulter un exemple qui implémente un complément de contenu dans Excel, reportez-vous à [Excel Content Add-in Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance) dans GitHub.
 

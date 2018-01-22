@@ -11,7 +11,7 @@ Dans un complément du volet Office classique, un utilisateur sélectionne un mo
 **Figure 1. Complément de dictionnaire affichant des définitions pour le mot sélectionné**
 
 
-![Application de dictionnaire affichant une définition](../../images/DictionaryAgave01.jpg)
+![Application de dictionnaire affichant une définition](../images/DictionaryAgave01.jpg)
 
 Il vous incombe de déterminer si le fait de cliquer sur le lien **Afficher d’autres résultats** dans l’interface utilisateur HTML du complément de dictionnaire affiche d’autres informations dans le volet Office ou ouvre une fenêtre de navigateur séparée dans la page web complète pour le mot ou l’expression sélectionné. La figure 2 illustre la commande de menu contextuel **Définir** qui permet aux utilisateurs de lancer rapidement des dictionnaires installés. Les figures 3 à 5 montrent les endroits dans l’interface utilisateur d’Office où les services XML de dictionnaire sont utilisés pour fournir des définitions dans Word 2013.
 
@@ -19,22 +19,22 @@ Il vous incombe de déterminer si le fait de cliquer sur le lien **Afficher d’
 
 
 
-![Menu contextuel Définir](../../images/DictionaryAgave02.jpg)
+![Menu contextuel Définir](../images/DictionaryAgave02.jpg)
 
 **Figure 3. Définitions dans les volets Orthographe et Grammaire**
 
 
-![Définitions dans les volets Orthographe et Grammaire](../../images/DictionaryAgave03.jpg)
+![Définitions dans les volets Orthographe et Grammaire](../images/DictionaryAgave03.jpg)
 
 **Figure 4. Définitions dans le volet Synonymes**
 
 
-![Définitions dans le volet Synonymes](../../images/DictionaryAgave04.jpg)
+![Définitions dans le volet Synonymes](../images/DictionaryAgave04.jpg)
 
 **Figure 5. Définitions dans le mode Lecture**
 
 
-![Définitions dans le mode Lecture](../../images/DictionaryAgave05.jpg)
+![Définitions dans le mode Lecture](../images/DictionaryAgave05.jpg)
 
 Pour créer un complément du volet Office qui fournit une recherche de dictionnaire, vous créez deux composants principaux : 
 
@@ -533,7 +533,7 @@ a:hover, a:active
 
 **Figure 6. Interface utilisateur du dictionnaire de démonstration**
 
-![Interface utilisateur du dictionnaire de démonstration](../../images/DictionaryAgave06.jpg)
+![Interface utilisateur du dictionnaire de démonstration](../images/DictionaryAgave06.jpg)
 
 
 ### <a name="writing-the-javascript-implementation"></a>Écriture de l’implémentation JavaScript

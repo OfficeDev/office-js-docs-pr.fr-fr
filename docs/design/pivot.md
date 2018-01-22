@@ -6,7 +6,7 @@ Les tableaux croisés dynamiques permettent d’accéder rapidement au contenu f
 
 <br/>
 
-![Image illustrant le tableau croisé dynamique](../../images/overview_withApp_pivot.png)
+![Image illustrant le tableau croisé dynamique](../images/overview_withApp_pivot.png)
 
 <br/>
 
@@ -24,8 +24,8 @@ Les tableaux croisés dynamiques permettent d’accéder rapidement au contenu f
 
 |**Variation**|**Description**|**Exemple**|
 |:------------|:--------------|:----------|
-|**Exemple de base**|À utiliser comme option de tableau croisé dynamique par défaut.|![Image d’un exemple de base](../../images/pivotBasic.png)<br/>|
-|**Liens de style d’onglet**|À utiliser lorsque les boutons de tableau croisé dynamique de style d’onglet sont privilégiés.|![Image des liens de style d’onglet](../../images/pivotTab.png)<br/>|
+|**Exemple de base**|À utiliser comme option de tableau croisé dynamique par défaut.|![Image d’un exemple de base](../images/pivotBasic.png)<br/>|
+|**Liens de style d’onglet**|À utiliser lorsque les boutons de tableau croisé dynamique de style d’onglet sont privilégiés.|![Image des liens de style d’onglet](../images/pivotTab.png)<br/>|
 
 ## <a name="implementation"></a>Implémentation
 

@@ -169,13 +169,13 @@ Dans la procédure 2, le complément Bing Search est installé sur l’ordinateu
 
     **Figure 1. Utilisation du Centre de gestion de la confidentialité pour ajouter des catalogues de manifestes de complément**
 
-    ![Utilisation du Centre de gestion de la confidentialité pour ajouter des manifestes d’application](../../images/pj15_AgaveOverview_TrustCenter.PNG)
+    ![Utilisation du Centre de gestion de la confidentialité pour ajouter des manifestes d’application](../images/pj15_AgaveOverview_TrustCenter.PNG)
 
 7. Dans le ruban  **Project**, choisissez le menu déroulant  **Compléments Office**, puis choisissez  **Afficher tout**. Dans la boîte de dialogue  **Insérer un complément**, choisissez  **DOSSIER PARTAGÉ** (voir la figure 2).
     
     **Figure 2. Démarrage d’un complément se trouvant sur un partage de fichiers**
 
-    ![Démarrage d’une application Office dans un partage de fichiers](../../images/pj15_AgaveOverview_StartAgaveApp.PNG)
+    ![Démarrage d’une application Office dans un partage de fichiers](../images/pj15_AgaveOverview_StartAgaveApp.PNG)
 
 8. Sélectionnez le complément Bing Search, puis choisissez  **Insérer**.
     
@@ -183,7 +183,7 @@ Le complément Bing Search affiche un volet Office comme dans la figure 3. Vous
 
 **Figure 3. Utilisation de l’application de recherche Bing**
 
-![Utilisation de l’application de recherche Bing](../../images/pj15_AgaveOverview_BingSearch.gif)
+![Utilisation de l’application de recherche Bing](../images/pj15_AgaveOverview_BingSearch.gif)
 
 
 ## <a name="distributing-project-add-ins"></a>Distribution de compléments Project

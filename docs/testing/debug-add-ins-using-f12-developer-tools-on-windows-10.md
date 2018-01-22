@@ -38,7 +38,7 @@ Cet exemple utilise Word et un complément gratuit de l’Office Store.
     
     Par exemple, sélectionnez **home.html**. 
     
-    ![Écran du sélecteur F12, pointe vers un complément de type « bulles »](../../images/4f8823a3-595a-4657-83ac-8b235a7ba087.png)
+    ![Écran du sélecteur F12, pointe vers un complément de type « bulles »](../images/4f8823a3-595a-4657-83ac-8b235a7ba087.png)
 
 4. Dans la fenêtre F12, sélectionnez le fichier à déboguer.
     
@@ -48,13 +48,13 @@ Cet exemple utilise Word et un complément gratuit de l’Office Store.
     
     To set the breakpoint in home.js, choose line 144, which is in the  _textChanged_ function. You will see a red dot to the left of the line and a corresponding line in the **Callstack and Breakpoints** (bottom right) pane. For other ways to set a breakpoint, see [Inspect running JavaScript with the Debugger](https://msdn.microsoft.com/library/dn255007%28v=vs.85%29.aspx). 
     
-    ![Débogueur avec le point d’arrêt dans le fichier home.js](../../images/e3cbc7ca-8b21-4ebb-b7a1-93e2364f1d16.png)
+    ![Débogueur avec le point d’arrêt dans le fichier home.js](../images/e3cbc7ca-8b21-4ebb-b7a1-93e2364f1d16.png)
 
 6. Exécutez votre complément pour déclencher le point d’arrêt.
     
     Cliquez sur la zone de texte URL dans la partie supérieure du volet QR4Office pour modifier le texte. Dans le débogueur, dans le volet **Pile d’appels et Points d’arrêt**, vous verrez que le point d’arrêt s’est déclenché et affiche différentes informations. Vous devrez peut-être actualiser l’outil F12 pour afficher les résultats.
     
-    ![Débogueur avec les résultats du point d’arrêt déclenché](../../images/e0bcd036-91ce-4509-ae98-6c10b593d61b.png)
+    ![Débogueur avec les résultats du point d’arrêt déclenché](../images/e0bcd036-91ce-4509-ae98-6c10b593d61b.png)
 
 
 ## <a name="additional-resources"></a>Ressources supplémentaires

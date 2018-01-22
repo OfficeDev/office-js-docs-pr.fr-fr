@@ -5,7 +5,7 @@ Les utilisateurs se connectent à Office (plateformes en ligne, mobiles et de bu
 * Autorisez l’utilisateur à se connecter dans votre complément.
 * Autorisez le complément à accéder à [Microsoft Graph](https://developer.microsoft.com/graph/docs).
 
-![Image illustrant le processus de connexion pour un complément](../../images/OfficeHostTitleBarLogin.png)
+![Image illustrant le processus de connexion pour un complément](../images/OfficeHostTitleBarLogin.png)
 
 >**Remarque :** L’API de l’authentification unique est actuellement prise en charge pour Word, Excel et PowerPoint. Pour plus d’informations sur l’endroit où l’API de l’authentification unique est actuellement prise en charge, consultez la rubrique [Ensembles de conditions requises de l’API d’identité](../../reference/requirement-sets/identity-api-requirement-sets.md).
 > L’authentification unique est actuellement en préversion pour Outlook. Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location d’Office 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
@@ -22,7 +22,7 @@ Le manifeste du complément contient un balisage qui spécifie comment le compl�
 
 Le diagramme suivant illustre le mode de fonctionnement du processus d’authentification unique.
 <!-- Minor fixes to the text in the diagram - change V2 to v2.0, and change "(e.g. Word, Excel, etc.)" to "(for example, Word, Excel)". -->
-![Diagramme illustrant le processus d’authentification unique](../../images/SSOOverviewDiagram.png)
+![Diagramme illustrant le processus d’authentification unique](../images/SSOOverviewDiagram.png)
 
 1. Dans le complément, JavaScript appelle une nouvelle API Office.js `getAccessTokenAsync`. Cela indique à l’application hôte Office qu’elle doit obtenir un jeton d’accès au complément. (Ci-après, ce jeton est également appelé **« jeton de complément »**.)
 1. Si l’utilisateur n’est pas connecté, l’application hôte Office ouvre une fenêtre contextuelle pour que l’utilisateur se connecte.

@@ -17,28 +17,28 @@ Pour commencer, jetez un œil à quelques-uns des types de contenu que vous pouv
 **Figure 1. Texte avec mise en forme directe**
 
 
-![Texte avec mise en forme directe appliquée.](../../images/off15app_CreateWdAppUsingOOXML_fig01.png)
+![Texte avec mise en forme directe appliquée.](../images/off15app_CreateWdAppUsingOOXML_fig01.png)
 
 Vous pouvez utiliser la mise en forme directe pour spécifier l’apparence du texte de manière exacte, indépendamment de la mise en forme existante dans le document de l’utilisateur.
 
 **Figure 2. Texte mis en forme avec un style**
 
 
-![Texte mis en forme avec le style de paragraphe.](../../images/off15app_CreateWdAppUsingOOXML_fig02.png)
+![Texte mis en forme avec le style de paragraphe.](../images/off15app_CreateWdAppUsingOOXML_fig02.png)
 
 Vous pouvez utiliser un style pour coordonner automatiquement l’apparence du texte inséré avec le document de l’utilisateur.
 
 **Figure 3. Image simple**
 
 
-![Image d’un logo.](../../images/off15app_CreateWdAppUsingOOXML_fig03.png)
+![Image d’un logo.](../images/off15app_CreateWdAppUsingOOXML_fig03.png)
 
 Vous pouvez utiliser la même méthode pour insérer n’importe quel format d’image pris en charge par Office.
 
 **Figure 4. Image mise en forme avec des styles d’image et des effets**
 
 
-![Image mise en forme dans Word 2013.](../../images/off15app_CreateWdAppUsingOOXML_fig04.png)
+![Image mise en forme dans Word 2013.](../images/off15app_CreateWdAppUsingOOXML_fig04.png)
 
 
 L’ajout d’une mise en forme et d’effets de haute qualité à vos images nécessite beaucoup moins de balises que vous ne le pensez.
@@ -46,49 +46,49 @@ L’ajout d’une mise en forme et d’effets de haute qualité à vos images n�
 **Figure 5. Contrôle de contenu**
 
 
-![Texte dans un contrôle de contenu lié.](../../images/off15app_CreateWdAppUsingOOXML_fig05.png)
+![Texte dans un contrôle de contenu lié.](../images/off15app_CreateWdAppUsingOOXML_fig05.png)
 
 Vous pouvez utiliser des contrôles de contenu avec votre complément afin d’ajouter du contenu à un emplacement spécifié (lié) plutôt qu’à l’emplacement de sélection.
 
 **Figure 6. Zone de texte avec mise en forme WordArt**
 
 
-![Texte mis en forme avec des effets de texte WordArt.](../../images/off15app_CreateWdAppUsingOOXML_fig06.png)
+![Texte mis en forme avec des effets de texte WordArt.](../images/off15app_CreateWdAppUsingOOXML_fig06.png)
 
 Les effets de texte sont disponibles dans Word pour le texte situé à l’intérieur d’une zone de texte (comme ici) ou pour un corps de texte classique.
 
 **Figure 7. Forme**
 
 
-![Forme de dessin Office 2013 dans Word 2013.](../../images/off15app_CreateWdAppUsingOOXML_fig07.png)
+![Forme de dessin Office 2013 dans Word 2013.](../images/off15app_CreateWdAppUsingOOXML_fig07.png)
 
 Vous pouvez insérer des formes de dessin intégrées ou personnalisées, avec ou sans texte et effets de mise en forme.
 
 **Figure 8. Tableau avec une mise en forme directe**
 
 
-![Tableau mis en forme dans Word 2013.](../../images/off15app_CreateWdAppUsingOOXML_fig08.png)
+![Tableau mis en forme dans Word 2013.](../images/off15app_CreateWdAppUsingOOXML_fig08.png)
 
 Vous pouvez inclure la mise en forme du texte, des bordures, une trame de fond, le dimensionnement des cellules ou toute mise en forme de tableau dont vous avez besoin.
 
 **Figure 9. Tableau mis en forme avec un style de tableau**
 
 
-![Tableau mis en forme dans Word 2013.](../../images/off15app_CreateWdAppUsingOOXML_fig09.png)
+![Tableau mis en forme dans Word 2013.](../images/off15app_CreateWdAppUsingOOXML_fig09.png)
 
 Vous pouvez utiliser des styles de tableau intégrés ou personnalisés aussi facilement pour un paragraphe de texte.
 
 **Figure 10. Graphique SmartArt**
 
 
-![Graphique SmartArt dynamique dans Word 2013.](../../images/off15app_CreateWdAppUsingOOXML_fig10.png)
+![Graphique SmartArt dynamique dans Word 2013.](../images/off15app_CreateWdAppUsingOOXML_fig10.png)
 
 Office 2013 offre un large éventail de dispositions pour les diagrammes SmartArt (et vous pouvez utiliser Office Open XML pour créer les vôtres).
 
 **Figure 11. Graphique**
 
 
-![Graphique dans Word 2013.](../../images/off15app_CreateWdAppUsingOOXML_fig11.png)
+![Graphique dans Word 2013.](../images/off15app_CreateWdAppUsingOOXML_fig11.png)
 
 Vous pouvez insérer des graphiques Excel sous forme de graphiques dynamiques dans des documents Word, ce qui signifie également que vous pouvez les utiliser dans votre complément pour Word. Comme vous pouvez le constater avec les exemples précédents, vous pouvez utiliser le forçage Office Open XML pour insérer pratiquement n’importe quel type de contenu dans un document. Il existe deux façons simples d’obtenir le balisage Office Open XML dont vous avez besoin. Vous pouvez ajouter votre contenu riche à un document Word 2013 vierge, puis enregistrer ce fichier au format Document XML Word, ou utiliser un complément de test avec la méthode [getSelectedDataAsync](http://msdn.microsoft.com/en-us/library/fp142294.aspx) pour récupérer le balisage. Les deux approches fournissent globalement le même résultat.
 
@@ -112,11 +112,11 @@ Par exemple, supposons que vous voulez insérer uniquement un paragraphe de text
 
 **Figure 12. Réduction et développement des composants de package pour faciliter la modification dans Visual Studio 2015**
 
-![Extrait de code Office Open XML pour un composant de package.](../../images/off15app_CreateWdAppUsingOOXML_fig12.png)
+![Extrait de code Office Open XML pour un composant de package.](../images/off15app_CreateWdAppUsingOOXML_fig12.png)
 
 **Figure 13. Composants inclus dans un package de document Word Office Open XML de base**
 
-![Extrait de code Office Open XML pour un composant de package.](../../images/off15app_CreateWdAppUsingOOXML_fig13.png)
+![Extrait de code Office Open XML pour un composant de package.](../images/off15app_CreateWdAppUsingOOXML_fig13.png)
 
 Avec toutes ces balises, vous serez surpris de découvrir que les seuls éléments dont vous avez réellement besoin pour insérer l’exemple de texte mis en forme sont des parties des composants .rels et document.xml.
 
@@ -324,7 +324,7 @@ Le balisage suivant présente le composant document.xml, qui contient notre exem
 
 **Figure 14. Lien entre les balises communes dans document.xml et le contenu et la mise en page d’un document Word**
 
-![Éléments Office Open XML dans un document Word.](../../images/off15app_CreateWdAppUsingOOXML_fig14.png)
+![Éléments Office Open XML dans un document Word.](../images/off15app_CreateWdAppUsingOOXML_fig14.png)
     
 **Conseil :**  Dans le balisage que vous créez, vous pouvez voir un autre attribut dans plusieurs balises, qui comprend les caractères **w:rsid** qui n’apparaissent pas dans les exemples utilisés dans cette rubrique. Il s’agit d’identificateurs de révision. Ils sont utilisés dans Word pour la fonctionnalité Combiner des documents et ils sont activés par défaut. Vous n’en aurez jamais besoin dans le balisage que vous insérez avec votre complément. Les désactiver permet de rendre votre balisage plus lisible. Vous pouvez facilement supprimer les balises RSID existantes ou désactiver la fonctionnalité (comme décrit dans la procédure ci-dessous) pour éviter qu’elles ne soient ajoutées à votre balisage pour le nouveau contenu.
  
@@ -385,7 +385,7 @@ Dans Word, retrouvez les contrôles de contenu sur l’onglet Développeur du ru
 
 **Figure 15. Groupe Contrôles de l’onglet Développeur dans Word**
 
-![Groupe de contrôles de contenu sur le ruban Word 2013.](../../images/off15app_CreateWdAppUsingOOXML_fig15.png)
+![Groupe de contrôles de contenu sur le ruban Word 2013.](../images/off15app_CreateWdAppUsingOOXML_fig15.png)
 
 Les types de contrôles de contenu dans Word comprennent du texte enrichi, du texte brut, des images, des galeries de blocs de construction, des cases à cocher, des listes déroulantes, des zones de liste modifiable, un sélecteur de dates et des sections extensibles. 
 
