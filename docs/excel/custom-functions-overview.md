@@ -4,7 +4,7 @@ Les fonctions personnalisées (similaires aux fonctions définies par l’utilis
 
 Voici à quoi ressemblent les fonctions personnalisées dans Excel :
 
-<img src="../../images/custom-function.gif" width="579" height="383" />
+<img src="../images/custom-function.gif" width="579" height="383" />
 
 Voici le code d’un exemple de fonction personnalisée qui ajoute 42 à une paire de nombres.
 

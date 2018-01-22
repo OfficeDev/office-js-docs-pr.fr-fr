@@ -263,7 +263,7 @@ Le volet Office indique le nom d’affichage du complément tout en haut, qui re
           </tr>
         </table>
       </div>
-      <img alt="Corporation" class="logo" src="../../images/NewLogo.png" />
+      <img alt="Corporation" class="logo" src="../images/NewLogo.png" />
       <br />
       <textarea id="odataText" rows="12" cols="40"></textarea>
     </body>
@@ -750,7 +750,7 @@ Même si votre complément fonctionne correctement dans les tests précédents, 
           </tr>
         </table>
       </div>
-      <img alt="Corporation" class="logo" src="../../images/NewLogo.png" />
+      <img alt="Corporation" class="logo" src="../images/NewLogo.png" />
       <br />
       <textarea id="odataText" rows="12" cols="40"></textarea>
     </body>

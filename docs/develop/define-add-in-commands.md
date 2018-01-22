@@ -17,7 +17,7 @@ Il existe deux versions du schéma **VersionOverrides**.
 | 1.0 | Prend en charge les commandes de complément pour les versions de bureau des applications Office. | 
 | 1.1 | Ajoute la prise en charge des [volets des tâches épinglables](https://docs.microsoft.com/outlook/add-ins/pinnable-taskpane) et des compléments mobiles. **Remarque :** ils sont actuellement uniquement pris en charge par Outlook 2016 pour Windows et Outlook pour iOS. |
 
-Un complément peut prendre en charge plusieurs versions du schéma **VersionOverrides** en imbriquant des versions plus récentes à l’intérieur de la version précédente. Cela permet aux clients prendre en charge les versions plus récentes pour tirer parti des nouvelles fonctionnalités, tout en permettant aux clients plus anciens de charger la version plus ancienne. Voir la section sur la [mise en œuvre de plusieurs versions](../../reference/manifest/versionoverrides.md#implementing-multiple-versions) pour plus d’informations.
+Un complément peut prendre en charge plusieurs versions du schéma **VersionOverrides** en imbriquant des versions plus récentes à l’intérieur de la version précédente. Cela permet aux clients prendre en charge les versions plus récentes pour tirer parti des nouvelles fonctionnalités, tout en permettant aux clients plus anciens de charger la version plus ancienne. Voir la section sur la [mise en œuvre de plusieurs versions](http://dev.office.com/reference/add-ins/manifest/versionoverrides#implementing-multiple-versions) pour plus d’informations.
 
 L’élément **VersionOverrides** inclut les éléments enfants suivants :
 
