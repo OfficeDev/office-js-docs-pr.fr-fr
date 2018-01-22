@@ -8,13 +8,13 @@ Vous pouvez utiliser deux types d’éléments d’interface utilisateur dans vo
 ## <a name="add-in-commands"></a>Des commandes de complément
 Les commandes sont définies dans le [fichier manifeste XML du complément](../../../docs/develop/define-add-in-commands.md) et sont restituées sous forme d’extensions natives dans l’interface utilisateur d’Office. Par exemple, vous pouvez utiliser des commandes de complément pour ajouter des boutons au ruban Office. 
 
-![Image illustrant des commandes et des éléments d’interface utilisateur HTML personnalisés dans un complément](../../../images/layouts_addInCommands_v0.03.png)
+![Image illustrant des commandes et des éléments d’interface utilisateur HTML personnalisés dans un complément](../../images/layouts_addInCommands_v0.03.png)
 
 Actuellement, les commandes de complément sont uniquement prises en charge pour les compléments de messagerie. Pour plus d’informations, consultez la page relative aux [commandes de complément de messagerie](../../outlook/add-in-commands-for-outlook.md). 
 
 Excel, PowerPoint et Word disposent de points d’entrée prédéfinis pour les compléments de volet de tâches et de contenu sous l’onglet Insertion du ruban Office. Des fonctionnalités de commande personnalisées seront bientôt disponibles pour les compléments de volet de tâches et de contenu. 
 
-![Image présentant l’onglet Insertion du ruban Word](../../../images/Word-insert-tab.png)
+![Image présentant l’onglet Insertion du ruban Word](../../images/Word-insert-tab.png)
 
 ## <a name="custom-html-based-ui"></a>Éléments d’interface utilisateur HTML personnalisés
 Les compléments peuvent incorporer des éléments d’interface utilisateur HTML personnalisés aux clients Office. Les conteneurs disponibles pour afficher ces éléments varient selon le type de complément. Par exemple, les compléments de volet de tâches affichent les éléments d’interface utilisateur HTML personnalisés dans le volet droit du document, tandis que les compléments de contenu les affichent directement dans les documents Office.

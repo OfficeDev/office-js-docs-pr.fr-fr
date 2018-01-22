@@ -16,7 +16,7 @@ Pour bénéficier de conseils sur le texte de l’interface utilisateur de vos c
 
 L’image suivante présente la mise en page recommandée pour un [complément de messagerie contextuel](https://msdn.microsoft.com/EN-US/library/office/dn893542.aspx).
 
-![Mise en page d’un complément de messagerie contextuel](../../../images/mail-add-in-contextual-card.png)
+![Mise en page d’un complément de messagerie contextuel](../../images/mail-add-in-contextual-card.png)
 
 ##<a name="functions-with-infobar-notifications"></a>Fonctions avec notifications de la barre d’informations
 

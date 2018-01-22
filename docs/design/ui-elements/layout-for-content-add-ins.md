@@ -6,7 +6,7 @@ Créez un style visuel cohérent pour vos compléments de contenu en utilisant l
 - Contenu du complément
 - Élément de personnalisation (facultatif)
 
-![Mise en page d’un complément de contenu : contenu et barre de commandes](../../../images/layouts_content_v0.02.png)
+![Mise en page d’un complément de contenu : contenu et barre de commandes](../../images/layouts_content_v0.02.png)
 
 Vous pouvez également ajouter des [éléments d’interface HTML personnalisés](ui-elements.md#custom-HTML-based-UI) à votre complément de contenu.
 

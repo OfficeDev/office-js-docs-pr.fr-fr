@@ -7,7 +7,7 @@ Créez un style visuel cohérent pour vos conteneurs du volet Office en utilisan
 - Contenu du complément
 - Élément de personnalisation (facultatif)
 
-![Mise en page d’un volet Office, avec des éléments de marque, de navigation et de contenu](../../../images/layouts_taskpane_v0.02.png)
+![Mise en page d’un volet Office, avec des éléments de marque, de navigation et de contenu](../../images/layouts_taskpane_v0.02.png)
 
 Vous pouvez également ajouter des [éléments d’interface utilisateur HTML personnalisés](ui-elements.md#custom-HTML-based-UI) à votre volet Office.
 
