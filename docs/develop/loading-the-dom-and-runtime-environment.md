@@ -25,7 +25,7 @@ Les événements suivants se produisent lors du démarrage d’un complément de
     
 4. Le contrôle de navigateur charge le DOM et le corps HTML, puis demande au gestionnaire d’événements l’événement  **window.onload**.
     
-5. L’application hôte Office charge l’environnement d’exécution, lequel télécharge et met en cache l’API JavaScript pour les fichiers de bibliothèque JavaScript à partir du serveur de réseau de distribution de contenu, puis appelle le gestionnaire d’événements du complément pour l’événement [initialize](../../reference/shared/office.initialize.md) de l’objet [Office](http://dev.office.com/reference/add-ins/shared/office).
+5. L’application hôte Office charge l’environnement d’exécution, lequel télécharge et met en cache l’API JavaScript pour les fichiers de bibliothèque JavaScript à partir du serveur de réseau de distribution de contenu, puis appelle le gestionnaire d’événements du complément pour l’événement [initialize](http://dev.office.com/reference/add-ins/shared/office.initialize) de l’objet [Office](http://dev.office.com/reference/add-ins/shared/office).
     
 6. Lorsque le chargement du modèle objet de document (DOM) et du corps HTML est terminé et que le complément s’est initialisé, la fonction principale de l’application peut s’exécuter.
     
@@ -52,7 +52,7 @@ Les événements suivants se produisent lors du démarrage d’un complément Ou
     
 5. Le contrôle de navigateur charge le modèle objet de document (DOM) et le corps HTML, puis appelle le gestionnaire d’événements pour l’événement  **onload**.
     
-6. Outlook appelle le gestionnaire d’événements pour l’événement [initialize](../../reference/shared/office.initialize.md) de l’objet [Office](http://dev.office.com/reference/add-ins/shared/office) du complément.
+6. Outlook appelle le gestionnaire d’événements pour l’événement [initialize](http://dev.office.com/reference/add-ins/shared/office.initialize) de l’objet [Office](http://dev.office.com/reference/add-ins/shared/office) du complément.
     
 7. Lorsque le chargement du DOM et du corps HTML est terminé et que le complément finit de s’initialiser, la fonction principale du complément peut poursuivre.
     
@@ -60,7 +60,7 @@ Les événements suivants se produisent lors du démarrage d’un complément Ou
 ## <a name="checking-the-load-status"></a>Vérification du statut de chargement
 
 
-Pour vérifier que le chargement du modèle objet de document (DOM) et de l’environnement d’exécution des est terminé, il est notamment possible d’utiliser la fonction jQuery [.ready()](http://api.jquery.com/ready/) :  `$(document).ready()`. Par exemple, la fonction de gestionnaire d’événements  **initialize** ci-dessous s’assure d’abord que le DOM est bien chargé avant l’exécution du code d’initialisation du complément. Par conséquent, le gestionnaire d’événements **initialize** utilise la propriété [mailbox.item](../../reference/outlook/Office.context.mailbox.item.md) pour obtenir l’élément actuellement sélectionné dans Outlook, puis appelle la fonction principale du complément, `initDialer`.
+Pour vérifier que le chargement du modèle objet de document (DOM) et de l’environnement d’exécution des est terminé, il est notamment possible d’utiliser la fonction jQuery [.ready()](http://api.jquery.com/ready/) :  `$(document).ready()`. Par exemple, la fonction de gestionnaire d’événements  **initialize** ci-dessous s’assure d’abord que le DOM est bien chargé avant l’exécution du code d’initialisation du complément. Par conséquent, le gestionnaire d’événements **initialize** utilise la propriété [mailbox.item](http://dev.office.com/reference/add-ins/outlook/Office.context.mailbox.item) pour obtenir l’élément actuellement sélectionné dans Outlook, puis appelle la fonction principale du complément, `initDialer`.
 
 
 ```js

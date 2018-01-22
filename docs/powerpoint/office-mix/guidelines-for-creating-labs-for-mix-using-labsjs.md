@@ -86,7 +86,7 @@ L’initialisation établit le chemin de communication entre l’atelier et son 
 Labs.connect((err, connectionResponse) => {});
 ```
 
-Une fois l’initialisation terminée, vous pouvez appeler d’autres méthodes de l’API labs.js. Le paramètre  _connectionResponse_ contient des informations sur l’hôte, l’utilisateur et la connexion. Pour plus d’informations sur les valeurs renvoyées, voir [Labs.Core.IConnectionResponse](../../../reference/office-mix/labs.core.iconnectionresponse.md).
+Une fois l’initialisation terminée, vous pouvez appeler d’autres méthodes de l’API labs.js. Le paramètre  _connectionResponse_ contient des informations sur l’hôte, l’utilisateur et la connexion. Pour plus d’informations sur les valeurs renvoyées, voir [Labs.Core.IConnectionResponse](http://dev.office.com/reference/add-ins/office-mix/labs.core.iconnectionresponse).
 
 
 ### <a name="time-format"></a>Format d’heure

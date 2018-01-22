@@ -7,7 +7,7 @@ Office Mix fournit des méthodes office.js pour obtenir et définir des configu
 
 ## <a name="getting-the-lab-editor"></a>Obtention de l’éditeur d’atelier
 
-L’éditeur d’atelier, l’objet [Labs.LabEditor](../../../reference/office-mix/labs.labeditor.md), vous permet de modifier votre atelier, ainsi que d’obtenir et de définir la configuration de ce dernier. Après avoir terminé de modifier votre atelier, vous devez appeler la méthode  **Done**. Toutefois, l’appel de la méthode  **Done** n’est pas requis, sauf lorsque vous essayez de récupérer ou d’exécuter un atelier que vous modifiez. Vous ne pouvez ouvrir qu’une seule instance de l’atelier à la fois.
+L’éditeur d’atelier, l’objet [Labs.LabEditor](http://dev.office.com/reference/add-ins/office-mix/labs.labeditor), vous permet de modifier votre atelier, ainsi que d’obtenir et de définir la configuration de ce dernier. Après avoir terminé de modifier votre atelier, vous devez appeler la méthode  **Done**. Toutefois, l’appel de la méthode  **Done** n’est pas requis, sauf lorsque vous essayez de récupérer ou d’exécuter un atelier que vous modifiez. Vous ne pouvez ouvrir qu’une seule instance de l’atelier à la fois.
 
 Le code suivant vous montre comment obtenir l’éditeur d’atelier.
 
@@ -24,7 +24,7 @@ Labs.editLab((err, labEditor) => {
 });
 ```
 
-Utilisez les méthodes  **getConfiguration** et **setConfiguration** sur [Labs.LabEditor](../../../reference/office-mix/labs.labeditor.md) pour stocker la configuration d’un atelier spécifique. La configuration ([Labs.Core.IConfiguration](../../../reference/office-mix/labs.core.iconfiguration.md)) indique à Office Mix les données qui seront collectées et traitées par l’atelier. Une configuration contient des informations générales sur un atelier, notamment son nom, sa version et d’autres options de configuration. La définition des composants d’atelier est la partie la plus importante de la configuration.
+Utilisez les méthodes  **getConfiguration** et **setConfiguration** sur [Labs.LabEditor](http://dev.office.com/reference/add-ins/office-mix/labs.labeditor) pour stocker la configuration d’un atelier spécifique. La configuration ([Labs.Core.IConfiguration](http://dev.office.com/reference/add-ins/office-mix/labs.core.iconfiguration)) indique à Office Mix les données qui seront collectées et traitées par l’atelier. Une configuration contient des informations générales sur un atelier, notamment son nom, sa version et d’autres options de configuration. La définition des composants d’atelier est la partie la plus importante de la configuration.
 
 Le code suivant illustre comment définir et obtenir une configuration. Pour définir une configuration, il vous suffit de créer l’objet de configuration et d’appeler ensuite la méthode  **setConfiguration**. Ensuite, pour récupérer la configuration, vous devez appeler la méthode  **getConfiguration** sur l’objet d’éditeur d’atelier.
 
@@ -79,7 +79,7 @@ Une fois la configuration de l’atelier définie, vous pouvez interagir avec l�
 
 ### <a name="getting-the-lab-instance"></a>Obtention de l’instance d’atelier
 
-Vous interagissez avec l’atelier à l’aide de l’objet [Labs.LabInstance](../../../reference/office-mix/labs.labinstance.md), qui est une instance de l’atelier configuré pour l’utilisateur en cours. Pour exécuter l’atelier, appelez la fonction [Labs.takeLab](../../../reference/office-mix/labs.takelab.md).
+Vous interagissez avec l’atelier à l’aide de l’objet [Labs.LabInstance](http://dev.office.com/reference/add-ins/office-mix/labs.labinstance), qui est une instance de l’atelier configuré pour l’utilisateur en cours. Pour exécuter l’atelier, appelez la fonction [Labs.takeLab](http://dev.office.com/reference/add-ins/office-mix/labs.takelab).
 
 
 ```js
@@ -90,7 +90,7 @@ Labs.takeLab((err, labInstance) => {
 });
 ```
 
-L’objet d’instance contient un tableau des instances de composants ([Labs.ComponentInstanceBase](../../../reference/office-mix/labs.componentinstancebase.md), [Labs.ComponentInstance](../../../reference/office-mix/labs.componentinstance.md)) qui est mis en correspondance avec les composants indiqués dans la configuration. En fait, une instance est tout simplement une version transformée de la configuration qui est utilisée pour joindre des ID côté serveur à des objets d’instance, ainsi que pour dissimuler certains champs à l’utilisateur le cas échéant (par exemple, des conseils, des réponses, etc.).
+L’objet d’instance contient un tableau des instances de composants ([Labs.ComponentInstanceBase](http://dev.office.com/reference/add-ins/office-mix/labs.componentinstancebase), [Labs.ComponentInstance](http://dev.office.com/reference/add-ins/office-mix/labs.componentinstance)) qui est mis en correspondance avec les composants indiqués dans la configuration. En fait, une instance est tout simplement une version transformée de la configuration qui est utilisée pour joindre des ID côté serveur à des objets d’instance, ainsi que pour dissimuler certains champs à l’utilisateur le cas échéant (par exemple, des conseils, des réponses, etc.).
 
 
 ### <a name="managing-state"></a>Gestion de l’état

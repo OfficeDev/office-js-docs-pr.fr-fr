@@ -326,7 +326,7 @@ La fonction anonyme qui est passée dans la fonction est un rappel qui est exéc
 ## <a name="detect-changes-to-data-or-the-selection-in-a-binding"></a>Détection des modifications apportées aux données ou à la section dans une liaison
 
 
-L’exemple suivant montre comment lier un gestionnaire d’événements à l’événement [DataChanged](../../reference/shared/binding.bindingdatachangedevent.md) d’une liaison ayant l’ID « MyBinding ».
+L’exemple suivant montre comment lier un gestionnaire d’événements à l’événement [DataChanged](http://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent) d’une liaison ayant l’ID « MyBinding ».
 
 
 ```js

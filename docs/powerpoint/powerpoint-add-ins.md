@@ -22,11 +22,11 @@ Pour obtenir ces exemples de code, votre projet doit faire référence à la [bi
 Si vous créez un complément de contenu, vous devrez obtenir la vue active de la présentation et gérer l’événement ActiveViewChanged dans le cadre de votre gestionnaire Office.Initialize.
 
 
-- La fonction  `getActiveFileView` appelle la méthode [Document.getActiveViewAsync](../../reference/shared/document.getactiveviewasync.md) afin de renvoyer si la vue actuelle de la présentation est une vue de « modification » (toutes les vues dans lesquelles vous modifiez des diapositives, telles que les vues **Normal** ou **Mode Plan**) ou « lecture » ( **Diaporama** ou **Mode Lecture**).
+- La fonction  `getActiveFileView` appelle la méthode [Document.getActiveViewAsync](http://dev.office.com/reference/add-ins/shared/document.getactiveviewasync) afin de renvoyer si la vue actuelle de la présentation est une vue de « modification » (toutes les vues dans lesquelles vous modifiez des diapositives, telles que les vues **Normal** ou **Mode Plan**) ou « lecture » ( **Diaporama** ou **Mode Lecture**).
 
 
-- La fonction `registerActiveViewChanged` appelle la méthode [addHandlerAsync](../../reference/shared/document.addhandlerasync.md) afin d’inscrire un gestionnaire pour l’événement [Document.ActiveViewChanged](../../reference/shared/document.activeviewchanged.md). 
-> Remarque : Dans PowerPoint Online, l’événement [Document.ActiveViewChanged](../../reference/shared/document.activeviewchanged.md) ne se déclenche jamais, car le mode diaporama est considéré comme une nouvelle session. Dans ce cas, le complément doit extraire la vue active lors du chargement, comme indiqué ci-dessous.
+- La fonction `registerActiveViewChanged` appelle la méthode [addHandlerAsync](http://dev.office.com/reference/add-ins/shared/document.addhandlerasync) afin d’inscrire un gestionnaire pour l’événement [Document.ActiveViewChanged](http://dev.office.com/reference/add-ins/shared/document.activeviewchanged). 
+> Remarque : Dans PowerPoint Online, l’événement [Document.ActiveViewChanged](http://dev.office.com/reference/add-ins/shared/document.activeviewchanged) ne se déclenche jamais, car le mode diaporama est considéré comme une nouvelle session. Dans ce cas, le complément doit extraire la vue active lors du chargement, comme indiqué ci-dessous.
 
 
 
@@ -79,7 +79,7 @@ function registerActiveViewChanged() {
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>Accéder à une diapositive spécifique dans la présentation
 
-La fonction  `getSelectedRange` appelle la méthode [Document.getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md) pour obtenir un objet JSON renvoyé par `asyncResult.value` et qui contient un tableau intitulé « diapositives » répertoriant les ID, les titres et les index de la série de diapositives sélectionnée (ou uniquement de la diapositive en cours). Elle enregistre également l’ID de la première diapositive de la série sélectionnée dans une variable globale.
+La fonction  `getSelectedRange` appelle la méthode [Document.getSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) pour obtenir un objet JSON renvoyé par `asyncResult.value` et qui contient un tableau intitulé « diapositives » répertoriant les ID, les titres et les index de la série de diapositives sélectionnée (ou uniquement de la diapositive en cours). Elle enregistre également l’ID de la première diapositive de la série sélectionnée dans une variable globale.
 
 
 ```js
@@ -99,7 +99,7 @@ function getSelectedRange() {
 }
 ```
 
-La fonction  `goToFirstSlide` appelle la méthode [Document.goToByIdAsync](../../reference/shared/document.gotobyidasync.md) pour accéder à l’ID de la première diapositive stockée par la fonction `getSelectedRange` ci-dessus.
+La fonction  `goToFirstSlide` appelle la méthode [Document.goToByIdAsync](http://dev.office.com/reference/add-ins/shared/document.gotobyidasync) pour accéder à l’ID de la première diapositive stockée par la fonction `getSelectedRange` ci-dessus.
 
 
 
@@ -143,7 +143,7 @@ function goToSlideByIndex() {
 
 ## <a name="get-the-url-of-the-presentation"></a>Obtenir l’URL de la présentation
 
-La fonction `getFileUrl` appelle la méthode [Document.getFileProperties](../../reference/shared/document.getfilepropertiesasync.md) pour obtenir l’URL du fichier de présentation.
+La fonction `getFileUrl` appelle la méthode [Document.getFileProperties](http://dev.office.com/reference/add-ins/shared/document.getfilepropertiesasync) pour obtenir l’URL du fichier de présentation.
 
 
 ```js

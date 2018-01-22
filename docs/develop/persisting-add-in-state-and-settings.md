@@ -54,14 +54,14 @@ Une fois le conteneur de propriétés des paramètres enregistré lors de la ses
 
 Pour conserver l’état ou les paramètres personnalisés d’un complément de contenu ou du volet Office pour Word, Excel ou PowerPoint, utilisez l’objet [Settings](http://dev.office.com/reference/add-ins/shared/settings) et ses méthodes. Le conteneur de propriétés créé à l’aide des méthodes de l’objet **Settings** est accessible uniquement par l’instance du complément de contenu ou du volet Office qui l’a créé, et uniquement à partir du document dans lequel il est enregistré.
 
-L’objet  **Settings** est automatiquement chargé comme partie intégrante de l’objet [Document](http://dev.office.com/reference/add-ins/shared/document) et il est disponible lorsque le complément du volet Office ou de contenu est activé. Une fois que l’objet **Document** est instancié, vous pouvez accéder à l’objet **Settings** en utilisant la propriété [settings](../../reference/shared/document.settings.md) de l’objet **Document**. Pendant la durée de vie de la session, vous ne pouvez utiliser que les méthodes  **Settings.get**,  **Settings.set** et **Settings.remove** pour lire, écrire et supprimer les paramètres et l’état du complément conservés dans la copie en mémoire du conteneur de propriétés.
+L’objet  **Settings** est automatiquement chargé comme partie intégrante de l’objet [Document](http://dev.office.com/reference/add-ins/shared/document) et il est disponible lorsque le complément du volet Office ou de contenu est activé. Une fois que l’objet **Document** est instancié, vous pouvez accéder à l’objet **Settings** en utilisant la propriété [settings](http://dev.office.com/reference/add-ins/shared/document.settings) de l’objet **Document**. Pendant la durée de vie de la session, vous ne pouvez utiliser que les méthodes  **Settings.get**,  **Settings.set** et **Settings.remove** pour lire, écrire et supprimer les paramètres et l’état du complément conservés dans la copie en mémoire du conteneur de propriétés.
 
-Étant donné que les méthodes de définition (set) et de suppression (remove) fonctionnent uniquement par rapport à la copie en mémoire du conteneur des propriétés de paramètres, pour enregistrer de nouveaux paramètres ou des paramètres modifiés dans le document auquel le complément est associé, vous devez appeler la méthode [Settings.saveAsync](../../reference/shared/settings.saveasync.md).
+Étant donné que les méthodes de définition (set) et de suppression (remove) fonctionnent uniquement par rapport à la copie en mémoire du conteneur des propriétés de paramètres, pour enregistrer de nouveaux paramètres ou des paramètres modifiés dans le document auquel le complément est associé, vous devez appeler la méthode [Settings.saveAsync](http://dev.office.com/reference/add-ins/shared/settings.saveasync).
 
 
 ### <a name="creating-or-updating-a-setting-value"></a>Création ou mise à jour d’une valeur de paramètre
 
-L’exemple de code suivant montre comment utiliser la méthode [Settings.set](../../reference/shared/settings.set.md) pour créer un paramètre appelé `'themeColor'` avec la valeur `'green'`. Le premier paramètre de la méthode set est le _name_ (ID) respectant la casse du paramètre à définir ou à créer. Le second paramètre est la _value_ du paramètre.
+L’exemple de code suivant montre comment utiliser la méthode [Settings.set](http://dev.office.com/reference/add-ins/shared/settings.set) pour créer un paramètre appelé `'themeColor'` avec la valeur `'green'`. Le premier paramètre de la méthode set est le _name_ (ID) respectant la casse du paramètre à définir ou à créer. Le second paramètre est la _value_ du paramètre.
 
 
 ```
@@ -73,7 +73,7 @@ Office.context.document.settings.set('themeColor', 'green');
 
 ### <a name="getting-the-value-of-a-setting"></a>Obtention de la valeur d’un paramètre
 
-L’exemple suivant illustre comment utiliser la méthode [Settings.get](../../reference/shared/settings.get.md) pour obtenir la valeur d’un paramètre nommé « themeColor ». Le seul paramètre de la méthode **get** est le _name_ respectant la casse du paramètre.
+L’exemple suivant illustre comment utiliser la méthode [Settings.get](http://dev.office.com/reference/add-ins/shared/settings.get) pour obtenir la valeur d’un paramètre nommé « themeColor ». Le seul paramètre de la méthode **get** est le _name_ respectant la casse du paramètre.
 
 
 ```js
@@ -90,7 +90,7 @@ function write(message){
 
 ### <a name="removing-a-setting"></a>Suppression d’un paramètre
 
-L’exemple suivant illustre comment utiliser la méthode [Settings.remove](../../reference/shared/settings.removehandlerasync.md) pour supprimer un paramètre portant le nom « themeColor ». Le seul paramètre de la méthode **remove** est le _name_ respectant la casse du paramètre.
+L’exemple suivant illustre comment utiliser la méthode [Settings.remove](http://dev.office.com/reference/add-ins/shared/settings.removehandlerasync) pour supprimer un paramètre portant le nom « themeColor ». Le seul paramètre de la méthode **remove** est le _name_ respectant la casse du paramètre.
 
 
 ```
@@ -102,7 +102,7 @@ Rien ne se produit si le paramètre n’existe pas. Utilisez la méthode  **Sett
 
 ### <a name="saving-your-settings"></a>Enregistrement de vos paramètres
 
-Pour enregistrer les ajouts, modifications ou suppressions que votre complément a effectués sur la copie en mémoire du conteneur de propriétés des paramètres pendant la session en cours, vous devez appeler la méthode [Settings.saveAsync](../../reference/shared/settings.saveasync.md) pour les stocker dans le document. L’unique paramètre de la méthode **saveAsync** est _callback_, lequel est une fonction de rappel avec un paramètre unique. 
+Pour enregistrer les ajouts, modifications ou suppressions que votre complément a effectués sur la copie en mémoire du conteneur de propriétés des paramètres pendant la session en cours, vous devez appeler la méthode [Settings.saveAsync](http://dev.office.com/reference/add-ins/shared/settings.saveasync) pour les stocker dans le document. L’unique paramètre de la méthode **saveAsync** est _callback_, lequel est une fonction de rappel avec un paramètre unique. 
 
 
 ```js
@@ -131,7 +131,7 @@ Un complément Outlook peut utiliser l’objet [RoamingSettings ](http://dev.off
 ### <a name="loading-roaming-settings"></a>Chargement des paramètres d’itinérance
 
 
-Un complément Outlook charge généralement les paramètres d’itinérance dans le gestionnaire d’événements [Office.initialize](../../reference/shared/office.initialize.md). L’exemple de code JavaScript suivant explique comment charger des paramètres d’itinérance existants.
+Un complément Outlook charge généralement les paramètres d’itinérance dans le gestionnaire d’événements [Office.initialize](http://dev.office.com/reference/add-ins/shared/office.initialize). L’exemple de code JavaScript suivant explique comment charger des paramètres d’itinérance existants.
 
 
 ```
@@ -197,7 +197,7 @@ function removeAppSetting()
 
 Les propriétés personnalisées permettent à votre complément Outlook de stocker des informations sur un élément qu’il utilise. Par exemple, si votre complément Outlook crée un rendez-vous à partir d’une suggestion de réunion dans un message, vous pouvez utiliser des propriétés personnalisées pour stocker le fait que la réunion a été créée. Cela garantit que si le message est rouvert, votre complément Outlook ne propose pas de recréer le rendez-vous.
 
-Pour pouvoir utiliser des propriétés personnalisées pour un élément de message, de rendez-vous ou de demande de réunion particulier, vous devez charger les propriétés en mémoire en appelant la méthode [loadCustomPropertiesAsync](../../reference/outlook/Office.context.mailbox.item.md) de l’objet **Item**. Si des propriétés personnalisées sont déjà définies pour l’élément actuel, elles sont chargées à ce moment à partir du serveur Exchange. Après avoir chargé les propriétés, vous pouvez utiliser les méthodes [set](http://dev.office.com/reference/add-ins/outlook/CustomProperties) et [get](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) de l’objet **CustomProperties** pour ajouter, mettre à jour et récupérer des propriétés en mémoire. Pour enregistrer les modifications que vous avez apportées aux propriétés personnalisées de l’élément, vous devez utiliser la méthode [saveAsync](http://dev.office.com/reference/add-ins/outlook/CustomProperties) pour conserver les modifications de l’élément sur le serveur Exchange.
+Pour pouvoir utiliser des propriétés personnalisées pour un élément de message, de rendez-vous ou de demande de réunion particulier, vous devez charger les propriétés en mémoire en appelant la méthode [loadCustomPropertiesAsync](http://dev.office.com/reference/add-ins/outlook/Office.context.mailbox.item) de l’objet **Item**. Si des propriétés personnalisées sont déjà définies pour l’élément actuel, elles sont chargées à ce moment à partir du serveur Exchange. Après avoir chargé les propriétés, vous pouvez utiliser les méthodes [set](http://dev.office.com/reference/add-ins/outlook/CustomProperties) et [get](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) de l’objet **CustomProperties** pour ajouter, mettre à jour et récupérer des propriétés en mémoire. Pour enregistrer les modifications que vous avez apportées aux propriétés personnalisées de l’élément, vous devez utiliser la méthode [saveAsync](http://dev.office.com/reference/add-ins/outlook/CustomProperties) pour conserver les modifications de l’élément sur le serveur Exchange.
 
 
 ### <a name="custom-properties-example"></a>Exemple de propriétés personnalisées

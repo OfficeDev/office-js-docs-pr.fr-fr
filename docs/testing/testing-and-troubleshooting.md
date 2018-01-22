@@ -71,7 +71,7 @@ Pour ajouter une URL à votre liste de sites de confiance :
 3. Entrez l’URL qui apparaît dans le message d’erreur, puis choisissez **Ajouter**.
 4. Essayez d’utiliser le complément à nouveau. Si le problème persiste, vérifiez les paramètres pour les autres zones de sécurité et assurez-vous que le domaine du complément se trouve dans la même zone que l’URL qui s’affiche dans la barre d’adresse de l’application Office.
 
-Ce problème se produit lorsque l’API de la boîte de dialogue est utilisée en mode contextuel. Pour éviter ce problème, utilisez l’indicateur [displayInFrame](../../reference/shared/officeui.displaydialogasync.md). Cela nécessite que votre page prenne en charge l’affichage dans un iframe. L’exemple suivant montre comment utiliser l’indicateur.
+Ce problème se produit lorsque l’API de la boîte de dialogue est utilisée en mode contextuel. Pour éviter ce problème, utilisez l’indicateur [displayInFrame](http://dev.office.com/reference/add-ins/shared/officeui.displaydialogasync). Cela nécessite que votre page prenne en charge l’affichage dans un iframe. L’exemple suivant montre comment utiliser l’indicateur.
 
 ```js
 

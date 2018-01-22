@@ -134,7 +134,7 @@ input [type="submit"], input[type="button"]
 ## <a name="add-the-javascript-to-get-the-document"></a>Ajouter le code JavaScript pour obtenir le document
 
 
-Dans le code pour le complément, un gestionnaire vers l’événement [Office.initialize](../../reference/shared/office.initialize.md) ajoute un gestionnaire à l’événement Click du bouton **Envoyer** du formulaire et informe l’utilisateur que le complément est prêt.
+Dans le code pour le complément, un gestionnaire vers l’événement [Office.initialize](http://dev.office.com/reference/add-ins/shared/office.initialize) ajoute un gestionnaire à l’événement Click du bouton **Envoyer** du formulaire et informe l’utilisateur que le complément est prêt.
 
 L’exemple de code suivant montre le gestionnaire d’événements pour l’événement  **Office.initialize** avec une fonction d’aide, `updateStatus`, pour écrire dans status div.
 
@@ -167,11 +167,11 @@ function updateStatus(message) {
 
 
 
-Quand vous cliquez sur le bouton  **Envoyer** dans l’interface utilisateur, le complément appelle la fonction `sendFile`, qui contient un appel à la méthode [Document.getFileAsync](../../reference/shared/document.getfileasync.md). La méthode  **getFileAsync** utilise le modèle asynchrone, comme d’autres méthodes de l’API JavaScript pour Office. Elle utilise un paramètre obligatoire, _fileType_, et deux paramètres facultatifs,  _options_ et _callback_. 
+Quand vous cliquez sur le bouton  **Envoyer** dans l’interface utilisateur, le complément appelle la fonction `sendFile`, qui contient un appel à la méthode [Document.getFileAsync](http://dev.office.com/reference/add-ins/shared/document.getfileasync). La méthode  **getFileAsync** utilise le modèle asynchrone, comme d’autres méthodes de l’API JavaScript pour Office. Elle utilise un paramètre obligatoire, _fileType_, et deux paramètres facultatifs,  _options_ et _callback_. 
 
 Le paramètre _fileType_ attend l’une des trois constantes de l’énumération [FileType](http://dev.office.com/reference/add-ins/shared/filetype-enumeration) :  **Office.FileType.Compressed** (« compressé »), **Office.FileType.PDF** (« PDF ») ou **Office.FileType.Text** (« texte »). PowerPoint prend en charge uniquement **Compressed** comme argument, tandis que Word prend en charge les trois. Lorsque vous transmettez **Compressed** pour le paramètre _fileType_, la méthode  **getFileAsync** renvoie le document sous la forme d’un fichier de présentation PowerPoint 2013 (*.pptx) ou Word 2013 d’un fichier de document (*.docx) en créant une copie temporaire du fichier sur l’ordinateur local.
 
-La méthode **getFileAsync** renvoie une référence au fichier sous la forme d’un objet [File](http://dev.office.com/reference/add-ins/shared/file). L’objet **File** expose quatre membres : la propriété [size](../../reference/shared/file.size.md), la propriété [sliceCount](../../reference/shared/file.slicecount.md), la méthode [getSliceAsync](../../reference/shared/file.getsliceasync.md) et la méthode [closeAsync](../../reference/shared/file.closeasync.md). La propriété **size** renvoie le nombre d’octets du fichier. La propriété **sliceCount** renvoie le nombre d’objets [Slice](http://dev.office.com/reference/add-ins/shared/document) (expliqué plus loin dans cet article) du fichier.
+La méthode **getFileAsync** renvoie une référence au fichier sous la forme d’un objet [File](http://dev.office.com/reference/add-ins/shared/file). L’objet **File** expose quatre membres : la propriété [size](http://dev.office.com/reference/add-ins/shared/file.size), la propriété [sliceCount](http://dev.office.com/reference/add-ins/shared/file.slicecount), la méthode [getSliceAsync](http://dev.office.com/reference/add-ins/shared/file.getsliceasync) et la méthode [closeAsync](http://dev.office.com/reference/add-ins/shared/file.closeasync). La propriété **size** renvoie le nombre d’octets du fichier. La propriété **sliceCount** renvoie le nombre d’objets [Slice](http://dev.office.com/reference/add-ins/shared/document) (expliqué plus loin dans cet article) du fichier.
 
 Utilisez le code suivant pour obtenir le document Word ou PowerPoint sous la forme d’un objet  **File** en utilisant la méthode **Document.getFileAsync**, puis appeler la fonction  `getSlice` définie localement. L’objet **File**, une variable compteur et le nombre total de tranches du fichier sont passés avec l’appel à  `getSlice` dans un objet anonyme.
 
@@ -209,7 +209,7 @@ function sendFile() {
 
 La fonction locale  `getSlice` appelle la méthode **File.getSliceAsync** pour extraire une tranche de l’objet **File**. La méthode  **getSliceAsync** retourne un objet **Slice** de la collection de tranches. Elle a deux paramètres requis, _sliceIndex_ et _callback_. Le paramètre  _sliceIndex_ utilise un entier comme indexeur dans la collection de tranches. Comme d’autres fonctions de l’API JavaScript pour Office, la méthode **getSliceAsync** prend également une fonction de rappel comme paramètre pour gérer les résultats de l’appel de la méthode.
 
-L’objet **Slice** vous donne accès aux données contenues dans le fichier. Sauf indication contraire dans le paramètre _options_ de la méthode **getFileAsync**, la taille de l’objet **Slice** est de 4 Mo. L’objet **Slice** expose trois propriétés : [size](../../reference/shared/slice.size.md), [data](../../reference/shared/slice.data.md) et [index](../../reference/shared/slice.index.md). La propriété **size** obtient la taille, en octets, de la tranche. La propriété **index** obtient un entier qui représente la position de la tranche dans la collection de tranches.
+L’objet **Slice** vous donne accès aux données contenues dans le fichier. Sauf indication contraire dans le paramètre _options_ de la méthode **getFileAsync**, la taille de l’objet **Slice** est de 4 Mo. L’objet **Slice** expose trois propriétés : [size](http://dev.office.com/reference/add-ins/shared/slice.size), [data](http://dev.office.com/reference/add-ins/shared/slice.data) et [index](http://dev.office.com/reference/add-ins/shared/slice.index). La propriété **size** obtient la taille, en octets, de la tranche. La propriété **index** obtient un entier qui représente la position de la tranche dans la collection de tranches.
 
 
 

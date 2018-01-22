@@ -17,7 +17,7 @@ Lorsque vous développez votre API de service, vous pouvez également essayer :
 
 ### <a name="13000"></a>13000
 
-L’API [getAccessTokenAsync](../../reference/shared/office.context.auth.getAccessTokenAsync.md) n’est pas prise en charge par le complément ou la version d’Office. 
+L’API [getAccessTokenAsync](http://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync) n’est pas prise en charge par le complément ou la version d’Office. 
 
 - La version d’Office ne prend pas en charge la SSO. La version requise est Office 2016, version 1710, build 8629.nnnn ou ultérieure (la version par abonnement Office 365, parfois appelée « Démarrer en un clic »). Vous devrez peut-être participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à [Participez au programme Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1). 
 - Le complément manifeste n’inclut pas la section [WebApplicationInfo](http://dev.office.com/reference/add-ins/manifest/webapplicationinfo) appropriée.

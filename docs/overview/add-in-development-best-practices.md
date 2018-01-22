@@ -76,7 +76,7 @@ Pour les modèles appliquant des principes de conception que vous pouvez utilise
 
 
 
-- Utilisez la propriété [Context.touchEnabled](../../reference/shared/office.context.touchenabled.md) pour déterminer si l’application hôte sur laquelle votre complément est exécuté est compatible avec la fonction tactile.
+- Utilisez la propriété [Context.touchEnabled](http://dev.office.com/reference/add-ins/shared/office.context.touchenabled) pour déterminer si l’application hôte sur laquelle votre complément est exécuté est compatible avec la fonction tactile.
 
      >**Remarque**  Cette propriété n’est pas prise en charge dans Outlook.
 - Assurez-vous que toutes les commandes sont correctement dimensionnées pour l’interaction tactile. Par exemple, vérifiez que les boutons disposent de cibles tactiles adéquates et que les zones de texte sont assez grandes pour permettre la saisie.

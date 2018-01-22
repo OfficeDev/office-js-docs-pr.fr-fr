@@ -24,11 +24,11 @@ Notez que la boîte de dialogue s’ouvre toujours au centre de l’écran. L’
 
 ## <a name="dialog-api-scenarios"></a>Scénarios de l’API de dialogue
 
-Les API JavaScript Office prennent en charge les scénarios suivants avec un objet [Dialog](../../reference/shared/officeui.dialog.md) et deux fonctions dans l’[espace de noms Office.context.ui](http://dev.office.com/reference/add-ins/shared/officeui).
+Les API JavaScript Office prennent en charge les scénarios suivants avec un objet [Dialog](http://dev.office.com/reference/add-ins/shared/officeui.dialog) et deux fonctions dans l’[espace de noms Office.context.ui](http://dev.office.com/reference/add-ins/shared/officeui).
 
 ### <a name="open-a-dialog-box"></a>Ouvrir une boîte de dialogue.
 
-Pour ouvrir une boîte de dialogue, votre code dans le volet Office appelle la méthode [displayDialogAsync](../../reference/shared/officeui.displaydialogasync.md) et lui transmet l’URL de la ressource que vous voulez ouvrir. Il s’agit généralement d’une page, mais ce peut être une méthode du contrôleur dans une application MVC, un itinéraire, une méthode de service web ou toute autre ressource. Dans cet article, les termes « page » ou « site web » font référence à la ressource dans la boîte de dialogue. Le code suivant est un exemple simple :
+Pour ouvrir une boîte de dialogue, votre code dans le volet Office appelle la méthode [displayDialogAsync](http://dev.office.com/reference/add-ins/shared/officeui.displaydialogasync) et lui transmet l’URL de la ressource que vous voulez ouvrir. Il s’agit généralement d’une page, mais ce peut être une méthode du contrôleur dans une application MVC, un itinéraire, une méthode de service web ou toute autre ressource. Dans cet article, les termes « page » ou « site web » font référence à la ressource dans la boîte de dialogue. Le code suivant est un exemple simple :
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');

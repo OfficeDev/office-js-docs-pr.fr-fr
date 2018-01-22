@@ -50,7 +50,7 @@ Si vous décidez d’utiliser votre propre palette de couleurs, gardez les point
 Que vous décidiez d’adopter le jeu de couleurs Office ou d’utiliser le vôtre, nous vous encourageons à utiliser nos API d’application de thèmes. Les compléments qui reprennent les thèmes visuels d’Office s’intégreront bien plus harmonieusement avec les produits Office.
 
 
-- Pour les compléments de volet de tâches et de messagerie, utilisez la propriété [Context.officeTheme](../../../reference/shared/office.context.officetheme.md) pour utiliser les thèmes correspondant à ceux des applications Office. Actuellement, cette API n’est disponible que dans Office 2016.  
+- Pour les compléments de volet de tâches et de messagerie, utilisez la propriété [Context.officeTheme](http://dev.office.com/reference/add-ins/shared/office.context.officetheme) pour utiliser les thèmes correspondant à ceux des applications Office. Actuellement, cette API n’est disponible que dans Office 2016.  
 - Pour plus d’informations sur les compléments de contenu pour PowerPoint, voir [Utiliser des thèmes Office dans vos compléments PowerPoint](../../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md).
 
 <!-- Link to theming API docs and Humberto's seed sample. Add screenshot of themed add-in. -->
