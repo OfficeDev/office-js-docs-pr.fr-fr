@@ -4,7 +4,7 @@ Cet article décrit comment mettre à jour vers la version 1.1 les fichiers Jav
 
 ## <a name="using-the-most-up-to-date-project-files"></a>Utilisation des fichiers de projet les plus récents
 
-Si vous utilisez Visual Studio pour développer votre complément, et que vous souhaitez utiliser les [nouveaux membres d’API](../../reference/what's-changed-in-the-javascript-api-for-office.md) de l’interface API JavaScript pour Office et les [fonctionnalités de la version 1.1 du manifeste du complément](../../docs/overview/add-in-manifests.md) (qui est validé par rapport à offappmanifest-1.1.xsd), vous devez télécharger et installer [Visual Studio 2015 et les derniers Outils de développement Office](https://www.visualstudio.com/features/office-tools-vs).
+Si vous utilisez Visual Studio pour développer votre complément, et que vous souhaitez utiliser les [nouveaux membres d’API](https://dev.office.com/reference/add-ins/what's-changed-in-the-javascript-api-for-office) de l’interface API JavaScript pour Office et les [fonctionnalités de la version 1.1 du manifeste du complément](../../docs/overview/add-in-manifests.md) (qui est validé par rapport à offappmanifest-1.1.xsd), vous devez télécharger et installer [Visual Studio 2015 et les derniers Outils de développement Office](https://www.visualstudio.com/features/office-tools-vs).
 
 Si vous utilisez un éditeur de texte ou une interface IDE autre que Visual Studio pour développer votre complément, vous devez mettre à jour les références vers le CDN pour Office.js et la version de schéma référencée dans le manifeste de votre complément.
 

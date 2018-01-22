@@ -419,7 +419,7 @@ Exécutez l’exemple de complément. Le complément de volet de tâches se char
 [DisplayName]:           http://dev.office.com/reference/add-ins/manifest/displayname
 [IconUrl]:               http://dev.office.com/reference/add-ins/manifest/iconurl
 [HighResolutionIconUrl]: http://dev.office.com/reference/add-ins/manifest/highresolutioniconurl
-[Resources]:             ../../reference/manifest/resources
+[Resources]:             https://dev.office.com/reference/add-ins/manifest/resources
 [SourceLocation]:        http://dev.office.com/reference/add-ins/manifest/sourcelocation
 [Override]:              http://dev.office.com/reference/add-ins/manifest/override
 [DesktopSettings]:       http://dev.office.com/reference/add-ins/manifest/desktopsettings
