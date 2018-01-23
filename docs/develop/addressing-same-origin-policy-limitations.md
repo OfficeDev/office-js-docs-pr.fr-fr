@@ -65,5 +65,5 @@ Pour un exemple de construction de votre propre proxy à l’aide d’IFRAME et 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 
-- [Confidentialité et sécurité pour les compléments Office](../../docs/develop/privacy-and-security.md)
+- [Confidentialité et sécurité pour les compléments Office](../develop/privacy-and-security.md)
     

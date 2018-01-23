@@ -6,7 +6,7 @@ Vous pouvez utiliser deux types d’éléments d’interface utilisateur dans vo
 - Des éléments d’interface HTML personnalisés
 
 ## <a name="add-in-commands"></a>Des commandes de complément
-Les commandes sont définies dans le [fichier manifeste XML du complément](../../../docs/develop/define-add-in-commands.md) et sont restituées sous forme d’extensions natives dans l’interface utilisateur d’Office. Par exemple, vous pouvez utiliser des commandes de complément pour ajouter des boutons au ruban Office. 
+Les commandes sont définies dans le [fichier manifeste XML du complément](../../develop/define-add-in-commands.md) et sont restituées sous forme d’extensions natives dans l’interface utilisateur d’Office. Par exemple, vous pouvez utiliser des commandes de complément pour ajouter des boutons au ruban Office. 
 
 ![Image illustrant des commandes et des éléments d’interface utilisateur HTML personnalisés dans un complément](../../images/layouts_addInCommands_v0.03.png)
 

@@ -2,7 +2,7 @@
 
 _S’applique à : Word 2016, Word pour iPad, Word pour Mac_
 
-Un complément Word est exécuté à l’intérieur de Word et peut interagir avec le contenu du document à l’aide de l’API JavaScript pour Word, qui fait partie du modèle de programmation des compléments Office pour étendre des applications Office. Dans le modèle de programmation de ce complément, vous pouvez utiliser la plateforme et la langue de votre choix pour créer l’application web qui héberge votre extension à Word puis utiliser le [manifeste](../../docs/overview/add-in-manifests.md) du complément pour définir ses paramètres et fonctionnalités.
+Un complément Word est exécuté à l’intérieur de Word et peut interagir avec le contenu du document à l’aide de l’API JavaScript pour Word, qui fait partie du modèle de programmation des compléments Office pour étendre des applications Office. Dans le modèle de programmation de ce complément, vous pouvez utiliser la plateforme et la langue de votre choix pour créer l’application web qui héberge votre extension à Word puis utiliser le [manifeste](../overview/add-in-manifests.md) du complément pour définir ses paramètres et fonctionnalités.
 
 Cet article décrit le processus de création d’un complément Word à l’aide de jQuery et de l’API JavaScript pour Word. 
 

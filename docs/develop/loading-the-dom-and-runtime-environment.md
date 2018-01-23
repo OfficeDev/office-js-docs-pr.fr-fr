@@ -98,5 +98,5 @@ Si votre complément comprend plusieurs pages, chaque fois qu’il charge une no
 
 
 
-- [Présentation de l’API JavaScript pour Office](../../docs/develop/understanding-the-javascript-api-for-office.md)
+- [Présentation de l’API JavaScript pour Office](../develop/understanding-the-javascript-api-for-office.md)
     

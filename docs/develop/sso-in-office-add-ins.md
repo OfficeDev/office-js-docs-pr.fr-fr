@@ -43,8 +43,8 @@ Le diagramme suivant illustre le mode de fonctionnement du processus d’authent
 
 Cette section décrit les tâches impliquées dans la création d’un complément Office qui utilise l’authentification unique. Ces tâches sont décrites ici indépendamment du langage et de l’infrastructure. Pour obtenir des exemples de procédures pas à pas détaillées, consultez les rubriques suivantes :
 
-* [Créer un complément Office Node.js qui utilise l’authentification unique](../../docs/develop/create-sso-office-add-ins-nodejs.md)
-* [Créer un complément Office ASP.NET qui utilise l’authentification unique](../../docs/develop/create-sso-office-add-ins-aspnet.md)
+* [Créer un complément Office Node.js qui utilise l’authentification unique](../develop/create-sso-office-add-ins-nodejs.md)
+* [Créer un complément Office ASP.NET qui utilise l’authentification unique](../develop/create-sso-office-add-ins-aspnet.md)
 
 ### <a name="create-the-service-application"></a>Créer l’application de service
 

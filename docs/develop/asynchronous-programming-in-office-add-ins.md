@@ -63,7 +63,7 @@ function write(message){
 
 Vous pouvez également utiliser le paramètre de votre fonction de rappel pour accéder aux autres propriétés de l’objet **AsyncResult**. Utilisez la propriété [AsyncResult.status](http://dev.office.com/reference/add-ins/shared/asyncresult.error) pour déterminer si l’appel a réussi ou échoué. En cas d’échec, vous pouvez utiliser la propriété [AsyncResult.error](http://dev.office.com/reference/add-ins/shared/asyncresult.context) pour accéder à un objet [Error](http://dev.office.com/reference/add-ins/shared/error) et obtenir des informations sur l’erreur.
 
-Pour plus d’informations sur l’utilisation de la méthode  **getSelectedDataAsync**, voir [Lecture et écriture de données dans la sélection active d’un document ou d’une feuille de calcul](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md). 
+Pour plus d’informations sur l’utilisation de la méthode  **getSelectedDataAsync**, voir [Lecture et écriture de données dans la sélection active d’un document ou d’une feuille de calcul](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md). 
 
 
 ### <a name="writing-a-named-callback-function"></a>Écriture d’une fonction de rappel nommée
@@ -111,7 +111,7 @@ L’interface API JavaScript pour Office prend en charge deux types de modèles
     
 La programmation asynchrone à l’aide des fonctions de rappel nécessite que vous imbriquiez fréquemment le résultat retourné d’un rappel au sein d’au moins deux rappels. Pour ce faire, vous pouvez utiliser les rappels imbriqués de toutes les méthodes « Async » de l’API.
 
-L’utilisation des rappels imbriqués est un modèle de programmation familier pour la plupart des développeurs JavaScript, mais le code contenant des rappels fortement imbriqués peut être difficile à lire et à comprendre. Pour offrir une solution de remplacement aux rappels imbriqués, l’interface API JavaScript pour Office prend également en charge l’implémentation du modèle des promesses. Cependant, dans la version actuelle de l’interface API JavaScript pour Office, le modèle des promesses fonctionne uniquement avec du code destiné aux [liaisons dans les feuilles de calcul Excel et les documents Word](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md).
+L’utilisation des rappels imbriqués est un modèle de programmation familier pour la plupart des développeurs JavaScript, mais le code contenant des rappels fortement imbriqués peut être difficile à lire et à comprendre. Pour offrir une solution de remplacement aux rappels imbriqués, l’interface API JavaScript pour Office prend également en charge l’implémentation du modèle des promesses. Cependant, dans la version actuelle de l’interface API JavaScript pour Office, le modèle des promesses fonctionne uniquement avec du code destiné aux [liaisons dans les feuilles de calcul Excel et les documents Word](../develop/bind-to-regions-in-a-document-or-spreadsheet.md).
 
 <a name="AsyncProgramming_NestedCallbacks" />
 ### <a name="asynchronous-programming-using-nested-callback-functions"></a>Programmation asynchrone utilisant des fonctions de rappel imbriquées
@@ -230,7 +230,7 @@ function write(message){
 }
 ```
 
-Remplacez l’espace réservé _BindingObjectAsyncMethod_ par un appel à l’une des quatre méthodes d’objet **Binding** prises en charge par l’objet de promesse : **getDataAsync**, **setDataAsync**, **addHandlerAsync** ou **removeHandlerAsync**. Les appels à ces méthodes ne prennent pas en charge les promesses supplémentaires. Vous devez les appeler à l’aide du [modèle de fonction de rappel imbriquée](../../docs/develop/asynchronous-programming-in-office-add-ins.md#AsyncProgramming_NestedCallbacks).
+Remplacez l’espace réservé _BindingObjectAsyncMethod_ par un appel à l’une des quatre méthodes d’objet **Binding** prises en charge par l’objet de promesse : **getDataAsync**, **setDataAsync**, **addHandlerAsync** ou **removeHandlerAsync**. Les appels à ces méthodes ne prennent pas en charge les promesses supplémentaires. Vous devez les appeler à l’aide du [modèle de fonction de rappel imbriquée](../develop/asynchronous-programming-in-office-add-ins.md#AsyncProgramming_NestedCallbacks).
 
 Une fois qu’une promesse d’objet  **Binding** est concrétisée, elle peut être réutilisée dans l’appel de méthode chaîné comme s’il s’agissait d’une liaison (le runtime de complément ne retentera pas de concrétiser la promesse de façon asynchrone). Si la promesse d’objet **Binding** ne peut pas être concrétisée, le runtime de complément retentera d’accéder à l’objet de liaison au prochain appel de l’une de ses méthodes asynchrones.
 
@@ -386,7 +386,7 @@ Dans les deux exemples de paramètres facultatifs, le paramètre _callback_ est 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 
-- [Présentation de l’API JavaScript pour Office](../../docs/develop/understanding-the-javascript-api-for-office.md)
+- [Présentation de l’API JavaScript pour Office](../develop/understanding-the-javascript-api-for-office.md)
     
 - [Interface API JavaScript pour Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)
      

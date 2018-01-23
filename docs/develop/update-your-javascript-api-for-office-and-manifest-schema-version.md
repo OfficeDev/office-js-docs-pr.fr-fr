@@ -4,7 +4,7 @@ Cet article décrit comment mettre à jour vers la version 1.1 les fichiers Jav
 
 ## <a name="using-the-most-up-to-date-project-files"></a>Utilisation des fichiers de projet les plus récents
 
-Si vous utilisez Visual Studio pour développer votre complément, et que vous souhaitez utiliser les [nouveaux membres d’API](https://dev.office.com/reference/add-ins/what's-changed-in-the-javascript-api-for-office) de l’interface API JavaScript pour Office et les [fonctionnalités de la version 1.1 du manifeste du complément](../../docs/overview/add-in-manifests.md) (qui est validé par rapport à offappmanifest-1.1.xsd), vous devez télécharger et installer [Visual Studio 2015 et les derniers Outils de développement Office](https://www.visualstudio.com/features/office-tools-vs).
+Si vous utilisez Visual Studio pour développer votre complément, et que vous souhaitez utiliser les [nouveaux membres d’API](https://dev.office.com/reference/add-ins/what's-changed-in-the-javascript-api-for-office) de l’interface API JavaScript pour Office et les [fonctionnalités de la version 1.1 du manifeste du complément](../overview/add-in-manifests.md) (qui est validé par rapport à offappmanifest-1.1.xsd), vous devez télécharger et installer [Visual Studio 2015 et les derniers Outils de développement Office](https://www.visualstudio.com/features/office-tools-vs).
 
 Si vous utilisez un éditeur de texte ou une interface IDE autre que Visual Studio pour développer votre complément, vous devez mettre à jour les références vers le CDN pour Office.js et la version de schéma référencée dans le manifeste de votre complément.
 
@@ -65,7 +65,7 @@ Dans le fichier manifeste de votre complément, mettez à jour l’attribut **xm
 </OfficeApp>
 ```
 
-> **Remarque :** une fois le schéma manifeste du complément mis à jour vers la version 1.1, vous devez supprimer les éléments **Capabilities** et **Capability**, et les remplacer par les éléments [Hosts](http://dev.office.com/reference/add-ins/manifest/hosts) et [Host](http://dev.office.com/reference/add-ins/manifest/hosts) ou [Requirements et Requirement](../../docs/overview/specify-office-hosts-and-api-requirements.md).
+> **Remarque :** une fois le schéma manifeste du complément mis à jour vers la version 1.1, vous devez supprimer les éléments **Capabilities** et **Capability**, et les remplacer par les éléments [Hosts](http://dev.office.com/reference/add-ins/manifest/hosts) et [Host](http://dev.office.com/reference/add-ins/manifest/hosts) ou [Requirements et Requirement](../overview/specify-office-hosts-and-api-requirements.md).
 
 ## <a name="updating-an-office-add-in-project-created-with-a-text-editor-or-other-ide"></a>Mise à jour d’un projet de complément Office créé avec un éditeur de texte ou une autre IDE
 
@@ -105,14 +105,14 @@ Dans le fichier manifeste de votre complément, mettez à jour l’attribut **xm
 </OfficeApp>
 ```
 
-> **Remarque :** une fois le schéma manifeste du complément mis à jour vers la version 1.1, vous devez supprimer les éléments **Capabilities** et **Capability**, et les remplacer par les éléments [Hosts](http://dev.office.com/reference/add-ins/manifest/hosts) et [Host](http://dev.office.com/reference/add-ins/manifest/hosts) ou [Requirements et Requirement](../../docs/overview/specify-office-hosts-and-api-requirements.md).
+> **Remarque :** une fois le schéma manifeste du complément mis à jour vers la version 1.1, vous devez supprimer les éléments **Capabilities** et **Capability**, et les remplacer par les éléments [Hosts](http://dev.office.com/reference/add-ins/manifest/hosts) et [Host](http://dev.office.com/reference/add-ins/manifest/hosts) ou [Requirements et Requirement](../overview/specify-office-hosts-and-api-requirements.md).
     
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- [Spécification des exigences en matière d’hôtes Office et d’API](../../docs/overview/specify-office-hosts-and-api-requirements.md)
+- [Spécification des exigences en matière d’hôtes Office et d’API](../overview/specify-office-hosts-and-api-requirements.md)
     
-- [Présentation de l’API JavaScript pour Office](../../docs/develop/understanding-the-javascript-api-for-office.md)
+- [Présentation de l’API JavaScript pour Office](../develop/understanding-the-javascript-api-for-office.md)
     
 - [Interface API JavaScript pour Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)
     

@@ -21,6 +21,6 @@ Si vous envisagez de publier votre complément Office à partir de l’Office St
 
 
 
-- [Présentation de l’API JavaScript pour Office](../../docs/develop/understanding-the-javascript-api-for-office.md)    
+- [Présentation de l’API JavaScript pour Office](../develop/understanding-the-javascript-api-for-office.md)    
 - [Interface API JavaScript pour Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)
     

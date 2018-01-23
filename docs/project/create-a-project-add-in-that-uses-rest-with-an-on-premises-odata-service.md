@@ -98,7 +98,7 @@ Le dossier  **AddIn** (voir la capture d’écran suivante) contient le fichier 
 
 Le manifeste du projet  **HelloProjectOData** est représenté par le fichier HelloProjectOData.xml. Vous pouvez éventuellement modifier le manifeste afin d’y ajouter une description du complément, une référence à une icône, des informations sur les langues supplémentaires et bien d’autres paramètres. La procédure 3 modifie simplement le nom d’affichage et la description du complément. En outre, elle ajoute une icône.
 
-Pour plus d’informations sur le manifeste, voir [Manifeste XML des compléments Office](../../docs/overview/add-in-manifests.md) et [Informations de référence sur le schéma des manifestes des applications pour Office (version 1.1)](../overview/add-in-manifests.md).
+Pour plus d’informations sur le manifeste, voir [Manifeste XML des compléments Office](../overview/add-in-manifests.md) et [Informations de référence sur le schéma des manifestes des applications pour Office (version 1.1)](../overview/add-in-manifests.md).
 
 
 ### <a name="procedure-3-to-modify-the-add-in-manifest"></a>Procédure 3. Pour modifier le manifeste du complément
@@ -146,7 +146,7 @@ Les étapes suivantes montrent comment ajouter un fichier d’icône à la solut
 
 ## <a name="creating-the-html-content-for-the-helloprojectodata-add-in"></a>Création du contenu HTML pour le complément HelloProjectOData
 
-Le complément  **HelloProjectOData** est un exemple qui inclut une sortie de débogage et d’erreur ; il n’est pas conçu pour une utilisation en production. Avant de commencer à coder le contenu HTML, concevez l’interface utilisateur et l’expérience utilisateur du complément, et définissez également les fonctions JavaScript qui interagissent avec le code HTML. Pour plus d’informations, voir[Instructions de conception pour les compléments Office](../../docs/design/add-in-design.md). 
+Le complément  **HelloProjectOData** est un exemple qui inclut une sortie de débogage et d’erreur ; il n’est pas conçu pour une utilisation en production. Avant de commencer à coder le contenu HTML, concevez l’interface utilisateur et l’expérience utilisateur du complément, et définissez également les fonctions JavaScript qui interagissent avec le code HTML. Pour plus d’informations, voir[Instructions de conception pour les compléments Office](../design/add-in-design.md). 
 
 Le volet Office indique le nom d’affichage du complément tout en haut, qui représente la valeur de l’élément  **DisplayName** dans le manifeste. L’élément **body** du fichier HelloProjectOData.html contient les autres éléments d’interface utilisateur, comme suit :
 
@@ -367,7 +367,7 @@ Le reste du fichier HelloProjectOData.js comprend deux fonctions : la fonction  
 
 3. Ajoutez la fonction  **retrieveOData**, qui concatène les valeurs de la requête REST, puis appelle la fonction  **ajax** dans jQuery pour obtenir les données demandées à partir du service **ProjectData**. La variable  **support.cors** active le partage des ressources CORS (Cross-Origin Resource Sharing) avec la fonction **ajax**. Si l’instruction  **support.cors** est manquante ou a la valeur **false**, la fonction  **ajax** retourne l’erreur **Aucun transport**.
     
-     >**Remarque**  Le code suivant fonctionne avec une installation locale de Project Server 2013. Pour Project Online, vous pouvez utiliser OAuth pour l’authentification basée sur le jeton. Pour plus d’informations, voir [Résolutions des limites de stratégie d’origine identique dans les compléments Office](../../docs/develop/addressing-same-origin-policy-limitations.md).
+     >**Remarque**  Le code suivant fonctionne avec une installation locale de Project Server 2013. Pour Project Online, vous pouvez utiliser OAuth pour l’authentification basée sur le jeton. Pour plus d’informations, voir [Résolutions des limites de stratégie d’origine identique dans les compléments Office](../develop/addressing-same-origin-policy-limitations.md).
 
     Dans l’appel **ajax**, vous pouvez utiliser le paramètre _headers_ ou le paramètre _beforeSend_. Le paramètre _complete_ est une fonction anonyme. Il peut figurer dans la même portée que les variables dans **retrieveOData**. La fonction pour le paramètre _complete_ affiche les résultats dans le contrôle **odataText** et appelle également la méthode **parseODataResult** pour analyser et afficher la réponse JSON. Le paramètre _error_ spécifie la fonction **getProjectDataErrorHandler** nommée qui écrit un message d’erreur sur le contrôle **odataText** et utilise également la méthode **throwError** pour afficher un message.
     
@@ -1142,7 +1142,7 @@ Si vous modifiez le complément  **HelloProjectOData** pour une utilisation en p
     
 - [ProjectData – Référence de service Project OData](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx)
     
-- [Manifeste XML des compléments Office](../../docs/overview/add-in-manifests.md)
+- [Manifeste XML des compléments Office](../overview/add-in-manifests.md)
     
 - [Publier votre complément Office](../publish/publish.md)
     

@@ -72,7 +72,7 @@ Pour publier un complément dans un catalogue de compléments, procédez comme s
     
 2. Sélectionnez le lien **Cliquer pour ajouter un nouvel élément**.
     
-3. Choisissez **Parcourir**, puis spécifiez le [manifeste](../../docs/overview/add-in-manifests.md) à télécharger.
+3. Choisissez **Parcourir**, puis spécifiez le [manifeste](../overview/add-in-manifests.md) à télécharger.
     
     Les compléments de contenu et de volet Office de ce catalogue sont désormais disponibles dans la boîte de dialogue **Compléments Office**. Pour y accéder, choisissez **Mes compléments** sous l’onglet **Insérer**, puis choisissez **MON ORGANISATION**.
 

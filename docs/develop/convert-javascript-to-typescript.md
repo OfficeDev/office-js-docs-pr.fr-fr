@@ -3,7 +3,7 @@
 
 Vous pouvez utiliser le modèle JavaScript de complément Office dans Visual Studio pour créer un complément qui utilise TypeScript. Après avoir créé le nouveau complément dans Visual Studio, vous pouvez convertir le projet au format TypeScript.  Ainsi, vous n’êtes pas obligé de commencer le projet TypeScript de complément Office de zéro.  
 
-   > **Remarque :** pour découvrir comment créer un projet TypeScript de complément Office sans l’aide de Visual Studio, consultez [Créer un complément Office avec n’importe quel éditeur](../../docs/get-started/create-an-office-add-in-using-any-editor.md).
+   > **Remarque :** pour découvrir comment créer un projet TypeScript de complément Office sans l’aide de Visual Studio, consultez [Créer un complément Office avec n’importe quel éditeur](../get-started/create-an-office-add-in-using-any-editor.md).
 
 Dans votre projet TypeScript, vous pouvez avoir un mélange de fichiers TypeScript et JavaScript, qui seront compilés. En effet, TypeScript est un sur-ensemble typé de code JavaScript compilé en code JavaScript. 
 

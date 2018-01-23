@@ -96,7 +96,7 @@ La plateforme du complément répond aux inquiétudes des utilisateurs finaux co
 
   - L’exécution dans un contrôle de navigateur web permet au complément de faire quasiment tout ce qu’une page web ordinaire exécutée dans un navigateur peut faire mais, en même temps, oblige le complément à suivre la stratégie d’origine identique pour l’isolation du domaine et les zones de sécurité.
 
-Les compléments Outlook fournissent des fonctionnalités supplémentaires de sécurité et de performance grâce à une analyse de l’utilisation des ressources propres aux compléments Outlook. Pour en savoir plus, voir [Confidentialité, autorisations et sécurité pour les compléments Outlook](../../docs/outlook/privacy-and-security.md).
+Les compléments Outlook fournissent des fonctionnalités supplémentaires de sécurité et de performance grâce à une analyse de l’utilisation des ressources propres aux compléments Outlook. Pour en savoir plus, voir [Confidentialité, autorisations et sécurité pour les compléments Outlook](../outlook/privacy-and-security.md).
 
 
 ### <a name="developer-guidelines-to-handle-pii"></a>Recommandations à l’intention des développeurs en matière de gestion des PII
@@ -148,9 +148,9 @@ Pour plus d’informations à ce propos pour les compléments de contenu et du v
 
 Pour plus d’informations à ce propos pour les compléments Outlook, voir les rubriques suivantes :
 
-- [Confidentialité, autorisations et sécurité pour les compléments Outlook](../../docs/outlook/privacy-and-security.md)
+- [Confidentialité, autorisations et sécurité pour les compléments Outlook](../outlook/privacy-and-security.md)
 
-- [Présentation des autorisations de complément Outlook](../../docs/outlook/understanding-outlook-add-in-permissions.md)
+- [Présentation des autorisations de complément Outlook](../outlook/understanding-outlook-add-in-permissions.md)
 
 
 ### <a name="same-origin-policy"></a>Stratégie d’origine identique
@@ -175,7 +175,7 @@ function loadVideoDetails(videoIndex) {
 }
 ```
 
-Exchange et SharePoint sont des proxys côté client qui permettent un accès sur plusieurs domaines. En général, la stratégie d’origine identique sur un intranet n’est pas aussi stricte que sur Internet. Pour plus d’informations, voir [Stratégie d’origine identique Partie 1 : Interdiction de regarder](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx) et [Résolution des limites de stratégie d’origine identique dans les compléments Office](../../docs/develop/addressing-same-origin-policy-limitations.md).
+Exchange et SharePoint sont des proxys côté client qui permettent un accès sur plusieurs domaines. En général, la stratégie d’origine identique sur un intranet n’est pas aussi stricte que sur Internet. Pour plus d’informations, voir [Stratégie d’origine identique Partie 1 : Interdiction de regarder](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx) et [Résolution des limites de stratégie d’origine identique dans les compléments Office](../develop/addressing-same-origin-policy-limitations.md).
 
 
 ### <a name="tips-to-prevent-malicious-cross-site-scripting"></a>Conseils pour éviter les scripts intersites malveillants

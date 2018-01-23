@@ -41,7 +41,7 @@ Lorsque vous avez terminé l’Assistant, Visual Studio crée une solution qui 
 ## <a name="modify-your-add-in-settings"></a>Modifier les paramètres de votre complément
 
 
-Pour modifier les paramètres de votre complément, modifiez le fichier manifeste XML du projet. Dans l’**Explorateur de solutions**, développez le nœud de projet du complément et le dossier contenant le manifeste XML, puis sélectionnez le manifeste XML. Vous pouvez pointer sur n’importe quel élément du fichier pour afficher une info-bulle qui décrit l’objectif de l’élément. Pour plus d’informations sur le fichier manifeste, voir l’article sur le [manifeste XML de compléments Office](../../docs/overview/add-in-manifests.md).
+Pour modifier les paramètres de votre complément, modifiez le fichier manifeste XML du projet. Dans l’**Explorateur de solutions**, développez le nœud de projet du complément et le dossier contenant le manifeste XML, puis sélectionnez le manifeste XML. Vous pouvez pointer sur n’importe quel élément du fichier pour afficher une info-bulle qui décrit l’objectif de l’élément. Pour plus d’informations sur le fichier manifeste, voir l’article sur le [manifeste XML de compléments Office](../overview/add-in-manifests.md).
 
 
 ## <a name="develop-the-contents-of-your-add-in"></a>Développer le contenu de votre complément
@@ -158,7 +158,7 @@ Visual Studio n’affiche pas les erreurs de validation dans la fenêtre  **OUTP
     
 - [Validation, CSS, Éditeur de texte, boîte de dialogue Options](http://go.microsoft.com/fwlink/?LinkID=238780)
     
-Pour réviser les règles de validation du fichier manifeste XML dans votre projet, voir [Manifeste XML des compléments Office](../../docs/overview/add-in-manifests.md).
+Pour réviser les règles de validation du fichier manifeste XML dans votre projet, voir [Manifeste XML des compléments Office](../overview/add-in-manifests.md).
 
 
 ### <a name="show-an-add-in-in-excel-word-or-project-and-step-through-your-code"></a>Afficher un complément dans Excel, Word ou Project, et avancer pas à pas dans votre code

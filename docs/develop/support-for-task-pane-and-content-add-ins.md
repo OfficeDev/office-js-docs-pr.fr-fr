@@ -9,7 +9,7 @@ Vous pouvez utiliser l’[API JavaScript pour Office](http://dev.office.com/refe
     
 2.  **Objet Document** Une grand partie de l’API disponible pour les compléments de contenu ou du volet Office est exposée via les méthodes, les propriétés et les événements de l’objet [Document](http://dev.office.com/reference/add-ins/shared/document). Un complément de contenu ou du volet Office peut utiliser la propriété [Office.context.document](http://dev.office.com/reference/add-ins/shared/office.context.document) pour accéder à l’objet **Document**, et accéder par ce biais aux membres clés de l’API pour utiliser des données dans des documents, telles que les objets [Bindings](http://dev.office.com/reference/add-ins/shared/bindings.bindings) et [CustomXmlParts](http://dev.office.com/reference/add-ins/shared/customxmlparts.customxmlparts), et les méthodes [getSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document.getselecteddataasync), [setSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) et [getFileAsync](http://dev.office.com/reference/add-ins/shared/document.getfileasync). L’objet **Document**  fournit également la propriété [mode](http://dev.office.com/reference/add-ins/shared/document.mode) permettant de déterminer si un document est en mode lecture seule ou modification, la propriété [url](http://dev.office.com/reference/add-ins/shared/document.url) pour obtenir l’URL du document actuel et accéder à l’objet [Settings](http://dev.office.com/reference/add-ins/shared/settings). L’objet **Document** prend également en charge l’ajout de gestionnaires d’événements pour l’événement [SelectionChanged](http://dev.office.com/reference/add-ins/shared/document.selectionchanged.event), afin de vous permettre de détecter quand un utilisateur modifie sa sélection dans le document.
     
-   Un complément de contenu ou du volet Office peut accéder à l’objet **Document** uniquement après le chargement de l’environnement d’exécution et du DOM, généralement dans le gestionnaire d’événements pour l’événement [Office.initialize](http://dev.office.com/reference/add-ins/shared/office.initialize). Pour plus d’informations sur le flux d’événements lors de l’initialisation d’un complément et sur la vérification du chargement correct du DOM et de l’environnement d’exécution, voir la page relative au [chargement du DOM et de l’environnement d’exécution](../../docs/develop/loading-the-dom-and-runtime-environment.md).
+   Un complément de contenu ou du volet Office peut accéder à l’objet **Document** uniquement après le chargement de l’environnement d’exécution et du DOM, généralement dans le gestionnaire d’événements pour l’événement [Office.initialize](http://dev.office.com/reference/add-ins/shared/office.initialize). Pour plus d’informations sur le flux d’événements lors de l’initialisation d’un complément et sur la vérification du chargement correct du DOM et de l’environnement d’exécution, voir la page relative au [chargement du DOM et de l’environnement d’exécution](../develop/loading-the-dom-and-runtime-environment.md).
     
 3.  **Objets pour l’utilisation de fonctionnalités spécifiques.** Pour travailler avec des fonctionnalités spécifiques de l’API, utilisez les méthodes et les objets suivants :
     
@@ -24,7 +24,7 @@ Vous pouvez utiliser l’[API JavaScript pour Office](http://dev.office.com/refe
 
  >**Important**  Certains des membres de l’API ne sont pas pris en charge dans toutes les applications Office pouvant héberger des compléments de contenu et du volet Office.
 
-Pour consulter un résumé de la prise en charge de l’interface API JavaScript pour Office dans les applications hôtes d’Office, voir [Présentation de l’interface API Javascript pour Office](../../docs/develop/understanding-the-javascript-api-for-office.md).
+Pour consulter un résumé de la prise en charge de l’interface API JavaScript pour Office dans les applications hôtes d’Office, voir [Présentation de l’interface API Javascript pour Office](../develop/understanding-the-javascript-api-for-office.md).
 
 
 ## <a name="reading-and-writing-to-an-active-selection"></a>Lecture et écriture dans une sélection active
@@ -50,7 +50,7 @@ function write(message){
 
 ```
 
-Pour plus d’informations et d’exemples, voir l’article concernant la [lecture et l’écriture de données dans la sélection active d’un document ou d’une feuille de calcul](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md).
+Pour plus d’informations et d’exemples, voir l’article concernant la [lecture et l’écriture de données dans la sélection active d’un document ou d’une feuille de calcul](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md).
 
 
 ## <a name="binding-to-a-region-in-a-document-or-spreadsheet"></a>Liaison à une région d’un document ou d’une feuille de calcul
@@ -80,7 +80,7 @@ function write(message){
 }
 ```
 
-Pour plus d’informations et d’exemples, voir l’article [Liaisons de régions dans un document ou une feuille de calcul](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md).
+Pour plus d’informations et d’exemples, voir l’article [Liaisons de régions dans un document ou une feuille de calcul](../develop/bind-to-regions-in-a-document-or-spreadsheet.md).
 
 
 ## <a name="getting-entire-documents"></a>Obtention de documents entiers
@@ -89,7 +89,7 @@ Si votre complément du volet Office s’exécute dans PowerPoint ou Word, vous 
 
 Lorsque vous appelez **Document.getFileAsync**, vous obtenez une copie du document dans un objet [File](http://dev.office.com/reference/add-ins/shared/file). L’objet **File** donne accès au document en « blocs » représenté sous la forme d’objets [Slice](http://dev.office.com/reference/add-ins/shared/document). Lorsque vous appelez **getFileAsync**, vous pouvez spécifier le type de fichier (texte ou format Open Office XML compressé) et la taille des secteurs (jusqu’à 4 Mo). Pour accéder au contenu de l’objet **File**, appelez **File.getSliceAsync** qui renvoie les données brutes dans la propriété [Slice.data](http://dev.office.com/reference/add-ins/shared/slice.data). Si vous avez spécifié un format compressé, vous obtiendrez les données du fichier sous la forme d’un tableau d’octets. Si vous transférez le fichier à un service web, vous pouvez transformer les données brutes compressées dans une chaîne codée en Base64 avant l’envoi. Enfin, lorsque vous avez obtenu les sections du fichier, utilisez la méthode **File.closeAsync** pour fermer le document.
 
-Pour plus d’informations, voir l’article relatif à la [façon d’obtenir l’intégralité d’un document à partir d’un complément pour PowerPoint ou Word](../../docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md). 
+Pour plus d’informations, voir l’article relatif à la [façon d’obtenir l’intégralité d’un document à partir d’un complément pour PowerPoint ou Word](../develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md). 
 
 
 ## <a name="reading-and-writing-custom-xml-parts-of-a-word-document"></a>Lecture et écriture des parties XML personnalisées d’un document Word
@@ -102,7 +102,7 @@ Vous pouvez également utiliser la [CustomXmlParts.getByIdAsync](http://dev.offi
 
 Pour ajouter une partie XML personnalisée à un document, utilisez la propriété **Document.customXmlParts** afin d’obtenir les parties XML personnalisées qui sont dans le document et appelez la méthode [CustomXmlParts.addAsync](http://dev.office.com/reference/add-ins/shared/customxmlparts.addasync).
 
-Pour obtenir des informations détaillées sur l’utilisation de parties XML personnalisées avec un complément du volet Office, voir [Création de meilleurs compléments pour Word avec Office Open XML](../../docs/word/create-better-add-ins-for-word-with-office-open-xml.md).
+Pour obtenir des informations détaillées sur l’utilisation de parties XML personnalisées avec un complément du volet Office, voir [Création de meilleurs compléments pour Word avec Office Open XML](../word/create-better-add-ins-for-word-with-office-open-xml.md).
 
 
 ## <a name="persisting-add-in-settings"></a>Persistance des paramètres de complément
@@ -121,14 +121,14 @@ Office.context.document.settings.set('themeColor', 'green');
 
 Étant donné que les données de paramètres créées ou supprimées avec les méthodes **set** et **remove** agissent sur une copie en mémoire des données, vous devez appeler **saveAsync** pour rendre persistantes les modifications apportées aux données de paramètres dans le document utilisé par votre complément.
 
-Pour plus de détails sur l’utilisation des données personnalisées à l’aide des méthodes de l’objet **Settings**, voir la page relative à la [conservation des données et aux paramètres d’état de complément](../../docs/develop/persisting-add-in-state-and-settings.md).
+Pour plus de détails sur l’utilisation des données personnalisées à l’aide des méthodes de l’objet **Settings**, voir la page relative à la [conservation des données et aux paramètres d’état de complément](../develop/persisting-add-in-state-and-settings.md).
 
 
 ## <a name="reading-properties-of-a-project-document"></a>Lecture des propriétés d’un document de projet
 
 Si votre complément de volet Office s’exécute dans Project, vous pouvez lire les données de certains champs, ressources et champs de tâche du projet actif. Pour ce faire, vous pouvez utiliser les méthodes et les événements de l’objet [ProjectDocument](http://dev.office.com/reference/add-ins/shared/projectdocument.projectdocument), qui étend l’objet **Document** pour fournir des fonctionnalités supplémentaires propres à Project.
 
-Pour des exemples de lecture de données Project, voir [Créer votre premier complément du volet Office pour Projet 2013 à l’aide d’un éditeur de texte](../../docs/project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md).
+Pour des exemples de lecture de données Project, voir [Créer votre premier complément du volet Office pour Projet 2013 à l’aide d’un éditeur de texte](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md).
 
 
 ## <a name="permissions-model-and-governance"></a>Modèle d’autorisations et gouvernance
@@ -148,7 +148,7 @@ Votre complément utilise l’élément **Permissions** dans son manifeste pour 
 
 ```
 
-Pour plus d’informations, consultez la page relative à la [demande d’autorisations pour l’utilisation de l’API dans des compléments de contenu et de volet Office](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md).
+Pour plus d’informations, consultez la page relative à la [demande d’autorisations pour l’utilisation de l’API dans des compléments de contenu et de volet Office](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md).
 
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
@@ -158,5 +158,5 @@ Pour plus d’informations, consultez la page relative à la [demande d’autori
     
 - [Informations de référence sur le schéma des manifestes des applications pour Office](http://msdn.microsoft.com/en-us/library/7e0cadc3-f613-8eb9-57ef-9032cbb97f92.aspx)
     
-- [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](../../docs/testing/testing-and-troubleshooting.md)
+- [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](../testing/testing-and-troubleshooting.md)
     

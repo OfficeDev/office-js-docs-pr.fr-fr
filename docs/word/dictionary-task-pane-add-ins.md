@@ -253,7 +253,7 @@ L’exemple suivant illustre un fichier de manifeste pour un complément de dict
 </OfficeApp>
 ```
 
-L’élément  **Dictionary** et ses éléments enfants qui sont spécifiques à la création d’un fichier de manifeste de complément de dictionnaire sont décrits dans les sections suivantes. Pour plus d’informations sur les autres éléments du fichier de manifeste, voir [Manifeste XML des compléments Office](../../docs/overview/add-in-manifests.md).
+L’élément  **Dictionary** et ses éléments enfants qui sont spécifiques à la création d’un fichier de manifeste de complément de dictionnaire sont décrits dans les sections suivantes. Pour plus d’informations sur les autres éléments du fichier de manifeste, voir [Manifeste XML des compléments Office](../overview/add-in-manifests.md).
 
 
 ### <a name="dictionary-element"></a>Élément Dictionary
@@ -379,7 +379,7 @@ Spécifie le texte à utiliser dans les citations. Requis (pour les compléments
 
 Cet élément spécifie le début du texte de citation qui sera affiché sur une ligne sous le contenu qui est renvoyé du service web (par exemple, « Résultats par : » ou « Optimisé par : »).
 
-Pour cet élément, vous pouvez spécifier des valeurs pour des paramètres régionaux supplémentaires en utilisant l’élément  **Override**. Par exemple si un utilisateur exécute le SKU espagnol d’Office, mais utilise un dictionnaire anglais, ceci permet à la ligne de citation de prendre la valeur « Resultados por: Bing » et non « Results by: Bing ». Pour plus d’informations sur la spécification de valeurs pour des paramètres régionaux supplémentaires, voir la section « Fourniture de paramètres pour différents paramètres régionaux » dans [Manifeste XML des compléments Office](../../docs/overview/add-in-manifests.md).
+Pour cet élément, vous pouvez spécifier des valeurs pour des paramètres régionaux supplémentaires en utilisant l’élément  **Override**. Par exemple si un utilisateur exécute le SKU espagnol d’Office, mais utilise un dictionnaire anglais, ceci permet à la ligne de citation de prendre la valeur « Resultados por: Bing » et non « Results by: Bing ». Pour plus d’informations sur la spécification de valeurs pour des paramètres régionaux supplémentaires, voir la section « Fourniture de paramètres pour différents paramètres régionaux » dans [Manifeste XML des compléments Office](../overview/add-in-manifests.md).
 
  **Exemple**
 

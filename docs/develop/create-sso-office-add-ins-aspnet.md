@@ -1,10 +1,10 @@
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>Créer un complément Office ASP.NET qui utilise l’authentification unique
 
-Lorsque les utilisateurs sont connectés à Office, votre complément peut utiliser les mêmes informations d’identification pour permettre aux utilisateurs d’accéder à plusieurs applications sans avoir à se connecter une deuxième fois. Pour obtenir une vue d’ensemble, consultez la rubrique [Activer l’authentification unique dans un complément Office](../../docs/develop/sso-in-office-add-ins.md).
+Lorsque les utilisateurs sont connectés à Office, votre complément peut utiliser les mêmes informations d’identification pour permettre aux utilisateurs d’accéder à plusieurs applications sans avoir à se connecter une deuxième fois. Pour obtenir une vue d’ensemble, consultez la rubrique [Activer l’authentification unique dans un complément Office](../develop/sso-in-office-add-ins.md).
 
 Cet article vous guide tout au long du processus d’activation de l’authentification unique (SSO) dans un complément intégré avec ASP.NET, OWIN et la bibliothèque d’authentification Microsoft (MSAL) pour .NET.
 
-> **Remarque :** Pour un article similaire concernant un complément basé sur Node.js, voir [Créer un complément Office Node.js qui utilise l’authentification unique](../../docs/develop/create-sso-office-add-ins-nodejs.md).
+> **Remarque :** Pour un article similaire concernant un complément basé sur Node.js, voir [Créer un complément Office Node.js qui utilise l’authentification unique](../develop/create-sso-office-add-ins-nodejs.md).
 
 ## <a name="prerequisites"></a>Conditions préalables
 

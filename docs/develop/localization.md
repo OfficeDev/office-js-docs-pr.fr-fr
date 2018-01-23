@@ -410,7 +410,7 @@ Exécutez l’exemple de complément. Le complément de volet de tâches se char
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- [Instructions de conception pour les compléments Office](../../docs/design/add-in-design.md)
+- [Instructions de conception pour les compléments Office](../design/add-in-design.md)
     
 - [Identificateurs de langue et valeurs d’ID de l’élément OptionState dans Office 2013](http://technet.microsoft.com/en-us/library/cc179219%28Office.15%29.aspx)
 

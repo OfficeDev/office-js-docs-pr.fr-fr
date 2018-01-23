@@ -14,7 +14,7 @@ Les exemples de code figurant dans l’article vous présentent certaines tâche
 
 Pour afficher des informations, ces exemples dépendent de la fonction `app.showNotification`, qui est incluse dans les modèles de projet de compléments Office Visual Studio. Si vous n’utilisez pas Visual Studio pour développer votre complément, vous devrez remplacer la fonction `showNotification` par votre propre code. Plusieurs de ces exemples dépendent également de l’objet `globals` qui est déclaré en dehors de la portée de ces fonctions : `var globals = {activeViewHandler:0, firstSlideId:0};`
 
-Pour obtenir ces exemples de code, votre projet doit faire référence à la [bibliothèque Office.js v1.1 ou version ultérieure](../../docs/develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md).
+Pour obtenir ces exemples de code, votre projet doit faire référence à la [bibliothèque Office.js v1.1 ou version ultérieure](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md).
 
 
 ## <a name="detect-the-presentations-active-view-and-handle-the-activeviewchanged-event"></a>Détecter l’affichage actif de la présentation et gérer l’événement ActiveViewChanged
@@ -166,11 +166,11 @@ function getFileUrl() {
 ## <a name="additional-resources"></a>Ressources supplémentaires
 - [Exemples de code PowerPoint](https://dev.office.com/code-samples#?filters=powerpoint)
 
-- [Enregistrement de l’état et des paramètres d’un complément par document pour les compléments de contenu et du volet Office](../../docs/develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
+- [Enregistrement de l’état et des paramètres d’un complément par document pour les compléments de contenu et du volet Office](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 
-- [Lecture et écriture de données dans la sélection active d’un document ou d’une feuille de calcul](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
+- [Lecture et écriture de données dans la sélection active d’un document ou d’une feuille de calcul](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
     
-- [Obtention de l’intégralité d’un document pour un complément pour PowerPoint ou Word](../../docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)
+- [Obtention de l’intégralité d’un document pour un complément pour PowerPoint ou Word](../develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)
     
 - [Utiliser des thèmes de document dans vos compléments PowerPoint](../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md)
     

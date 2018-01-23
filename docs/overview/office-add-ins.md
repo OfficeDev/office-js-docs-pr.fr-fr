@@ -106,15 +106,15 @@ Les API JavaScript Office sont composées d’objets et de membres permettant de
 
 ## <a name="next-steps"></a>Étapes suivantes 
 
-Pour plus d’informations sur la façon de commencer à créer votre complément Office, essayez notre [programme de prise en main](https://dev.office.com/getting-started/addins). Vous pouvez commencer à créer des compléments instant en utilisant [Visual Studio](../../docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md) ou [vos propres outils](../../docs/get-started/create-an-office-add-in-using-any-editor). 
+Pour plus d’informations sur la façon de commencer à créer votre complément Office, essayez notre [programme de prise en main](https://dev.office.com/getting-started/addins). Vous pouvez commencer à créer des compléments instant en utilisant [Visual Studio](../get-started/create-and-debug-office-add-ins-in-visual-studio.md) ou [vos propres outils](../get-started/create-an-office-add-in-using-any-editor). 
 
-Pour commencer à concevoir des solutions offrant des expériences utilisateur efficaces et attrayantes, consultez les [instructions de conception](../../docs/design/add-in-design) et les [meilleures pratiques](../../docs/add-ins/overview/add-in-development-best-practices) pour les compléments Office.    
+Pour commencer à concevoir des solutions offrant des expériences utilisateur efficaces et attrayantes, consultez les [instructions de conception](../design/add-in-design) et les [meilleures pratiques](../add-ins/overview/add-in-development-best-practices) pour les compléments Office.    
    
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 - [Exemples de compléments Office](https://dev.office.com/code-samples)
     
-- [Présentation de l’API JavaScript pour Office](../../docs/develop/understanding-the-javascript-api-for-office.md)
+- [Présentation de l’API JavaScript pour Office](../develop/understanding-the-javascript-api-for-office.md)
 
 - [Disponibilité des compléments Office sur les plateformes et les hôtes](https://dev.office.com/add-in-availability)
 

@@ -43,7 +43,7 @@ Le tableau suivant décrit le sous-ensemble de l’API JavaScript activé pour c
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
     
-- [Confidentialité et sécurité pour les compléments Office](../../docs/develop/privacy-and-security.md)
+- [Confidentialité et sécurité pour les compléments Office](../develop/privacy-and-security.md)
     
 
 

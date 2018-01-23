@@ -23,7 +23,7 @@ Pour déboguer votre complément à l’aide d’Office Online, procédez comme 
     
      >**Remarque :**  Nous vous recommandons d’utiliser le [générateur Yeoman](https://github.com/OfficeDev/generator-office) pour créer et héberger votre complément.
      
-2. Dans le [fichier manifeste de votre complément](../../docs/overview/add-in-manifests.md), mettez à jour la valeur de l’élément **SourceLocation** afin d’inclure un URI absolu, plutôt que relatif. Par exemple :
+2. Dans le [fichier manifeste de votre complément](../overview/add-in-manifests.md), mettez à jour la valeur de l’élément **SourceLocation** afin d’inclure un URI absolu, plutôt que relatif. Par exemple :
     
     ```xml
     <SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />

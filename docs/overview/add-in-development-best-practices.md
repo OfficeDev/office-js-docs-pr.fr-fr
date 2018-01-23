@@ -105,7 +105,7 @@ Pour les modèles appliquant des principes de conception que vous pouvez utilise
 
 - Suivez les pratiques web standard pour optimiser votre page web. En production, utilisez uniquement les versions réduites des bibliothèques. Chargez uniquement les ressources dont vous avez besoin et optimisez leur chargement.
 
-- Si l’exécution des opérations dure longtemps, fournissez des commentaires aux utilisateurs. Prenez en compte les seuils indiqués dans le tableau suivant. Voir également [Limites des ressources et optimisation des performances pour les compléments Office](../../docs/develop/resource-limits-and-performance-optimization.md).
+- Si l’exécution des opérations dure longtemps, fournissez des commentaires aux utilisateurs. Prenez en compte les seuils indiqués dans le tableau suivant. Voir également [Limites des ressources et optimisation des performances pour les compléments Office](../develop/resource-limits-and-performance-optimization.md).
 
 
 |**Classe d’interaction**|**Cible**|**Limite supérieure**|**Perception humaine**|

@@ -106,7 +106,7 @@ Bien que les limites en matière d’utilisation des ressources de l’UC et de 
 
 
 
-- [Confidentialité et sécurité pour les compléments Office](../../docs/develop/privacy-and-security.md)
+- [Confidentialité et sécurité pour les compléments Office](../develop/privacy-and-security.md)
     
 - [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
     

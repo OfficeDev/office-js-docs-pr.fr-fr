@@ -6,7 +6,7 @@ Project Standard 2013 et Project Professionnel 2013 incluent tous les deux u
 
  >**Remarque**  Le [téléchargement du Kit de développement logiciel (SDK) de Project 2013](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20) inclut des exemples de compléments qui montrent comment utiliser le modèle objet du complément pour Project et le service OData pour la création de rapports dans Project Server 2013. Après avoir extrait et installé le SDK, accédez au sous-dossier `\Samples\Apps\`.
 
-Pour une introduction sur les Compléments Office, voir [Vue d’ensemble de la plateforme des compléments pour Office](../../docs/overview/office-add-ins.md).
+Pour une introduction sur les Compléments Office, voir [Vue d’ensemble de la plateforme des compléments pour Office](../overview/office-add-ins.md).
 
 ## <a name="add-in-scenarios-for-project"></a>Scénarios de compléments pour Project
 
@@ -43,7 +43,7 @@ Les scénarios des compléments pour Project comprennent les fonctionnalités su
 
 La bibliothèque JavaScript pour les compléments Project comprend des extensions de l’alias de l’espace de nom **Office** qui permet aux développeurs d’accéder aux propriétés de l’application Project, ainsi qu’aux tâches, ressources et vues dans un projet. Les extensions de la bibliothèque JavaScript du fichier Project-15.js sont utilisées dans un complément Project créé avec Visual Studio 2015. Les fichiers Office.js, Office.debug.js, Project-15.js, Project-15.debug.js et autres fichiers associés sont également fournis dans le téléchargement du Kit de développement logiciel (SDK) Project 2013.
 
-Pour créer un complément, vous pouvez utiliser un éditeur de texte simple afin de créer une page web HTML avec les fichiers JavaScript associés, les fichiers CSS et les requêtes REST. Outre une page HTML ou une application web, le complément nécessite un fichier manifeste XML pour la configuration. Project peut utiliser un fichier manifeste qui inclut un attribut  **type** spécifié comme **TaskPaneExtension**. Le fichier manifeste peut être utilisé par plusieurs applications clientes Office 2013, ou vous pouvez créer un fichier manifeste spécifique pour Project 2013. Pour plus d’informations, voir la section  _Notions fondamentales de développement_ dans [Vue d’ensemble de la plateforme des compléments pour Office](../../docs/overview/office-add-ins.md).
+Pour créer un complément, vous pouvez utiliser un éditeur de texte simple afin de créer une page web HTML avec les fichiers JavaScript associés, les fichiers CSS et les requêtes REST. Outre une page HTML ou une application web, le complément nécessite un fichier manifeste XML pour la configuration. Project peut utiliser un fichier manifeste qui inclut un attribut  **type** spécifié comme **TaskPaneExtension**. Le fichier manifeste peut être utilisé par plusieurs applications clientes Office 2013, ou vous pouvez créer un fichier manifeste spécifique pour Project 2013. Pour plus d’informations, voir la section  _Notions fondamentales de développement_ dans [Vue d’ensemble de la plateforme des compléments pour Office](../overview/office-add-ins.md).
 
 Pour les applications complexes personnalisées, et pour un débogage plus facile, nous vous recommandons d’utiliser Visual Studio 2015 pour développer des sites web pour les compléments. Visual Studio 2015 contient des modèles pour les projets de compléments qui permettent de choisir le type de complément (volet Office, contenu ou messagerie) et l’application hôte (Project, Word, Excel ou Outlook). Pour obtenir un exemple qui intègre des données de Project Online, voir l’article relatif à la [connexion d’un complément du volet Office Project à PWA](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx) dans le blog Project Programmability sur MSDN.
 
@@ -66,7 +66,7 @@ Le fichier manifeste spécifie l’URL de la page web du complément ou l’appl
 ### <a name="procedure-1-to-create-the-add-in-manifest-file-for-bing-search"></a>Procédure 1. Créer le fichier manifeste du complément pour Bing Search
 
 
-- Créez un fichier XML dans un répertoire local. Le fichier XML inclut l’élément  **OfficeApp**, et ses éléments enfants, qui sont décrits dans [Manifeste XML des compléments Office](../../docs/overview/add-in-manifests.md). Par exemple, créez un fichier nommé BingSearch.xml qui contient le code XML suivant.
+- Créez un fichier XML dans un répertoire local. Le fichier XML inclut l’élément  **OfficeApp**, et ses éléments enfants, qui sont décrits dans [Manifeste XML des compléments Office](../overview/add-in-manifests.md). Par exemple, créez un fichier nommé BingSearch.xml qui contient le code XML suivant.
     
 ```XML
    <?xml version="1.0" encoding="utf-8"?>
@@ -196,9 +196,9 @@ Vous pouvez distribuer des compléments via un partage de fichiers, un catalogue
 
 
 
-- [Vue d’ensemble de la plateforme des compléments Office](../../docs/overview/office-add-ins.md)
+- [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
     
-- [Manifeste XML des compléments Office](../../docs/overview/add-in-manifests.md)
+- [Manifeste XML des compléments Office](../overview/add-in-manifests.md)
     
 - [API JavaScript pour Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)
     

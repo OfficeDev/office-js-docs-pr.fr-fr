@@ -426,14 +426,14 @@ Les sections suivantes présentent des exemples de fichiers XML manifeste versio
 
 ## <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>Valider et résoudre des problèmes avec votre manifeste
 
-Pour résoudre les problèmes rencontrés avec votre manifeste, consultez la rubrique relative à la [validation et à la résolution des problèmes avec votre manifeste](../../docs/testing/troubleshoot-manifest.md). Vous apprendrez à valider le manifeste par rapport à la [définition de schéma XML (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas) et à utiliser la journalisation runtime pour déboguer le manifeste.
+Pour résoudre les problèmes rencontrés avec votre manifeste, consultez la rubrique relative à la [validation et à la résolution des problèmes avec votre manifeste](../testing/troubleshoot-manifest.md). Vous apprendrez à valider le manifeste par rapport à la [définition de schéma XML (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas) et à utiliser la journalisation runtime pour déboguer le manifeste.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 
-- [Définir des commandes de complément dans votre manifeste](../../docs/develop/define-add-in-commands.md)
-- [Spécification des exigences en matière d’hôtes Office et d’API](../../docs/overview/specify-office-hosts-and-api-requirements.md)
-- [Localisation des compléments Office](../../docs/develop/localization.md)
+- [Définir des commandes de complément dans votre manifeste](../develop/define-add-in-commands.md)
+- [Spécification des exigences en matière d’hôtes Office et d’API](../overview/specify-office-hosts-and-api-requirements.md)
+- [Localisation des compléments Office](../develop/localization.md)
 - [Référence de schéma pour les manifestes des compléments Office](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas)
-- [Valider et résoudre des problèmes avec votre manifeste](../../docs/testing/troubleshoot-manifest.md)
+- [Valider et résoudre des problèmes avec votre manifeste](../testing/troubleshoot-manifest.md)
 

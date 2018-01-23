@@ -1,10 +1,10 @@
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>Création d’un complément Office Node.js qui utilise l’authentification unique
 
-Les utilisateurs peuvent se connecter à Office et votre complément Web Office peut tirer parti de cette procédure de connexion pour autoriser les utilisateurs de votre complément et de Microsoft Graph sans obliger les utilisateurs à une deuxième authentification. Pour obtenir une vue d’ensemble, voir [Activer l’authentification unique dans un complément Office](../../docs/develop/sso-in-office-add-ins.md).
+Les utilisateurs peuvent se connecter à Office et votre complément Web Office peut tirer parti de cette procédure de connexion pour autoriser les utilisateurs de votre complément et de Microsoft Graph sans obliger les utilisateurs à une deuxième authentification. Pour obtenir une vue d’ensemble, voir [Activer l’authentification unique dans un complément Office](../develop/sso-in-office-add-ins.md).
 
 Cet article vous guide tout au long du processus d’activation de l’authentification unique (SSO) dans un complément intégré avec Node.js et express. 
 
-> **Remarque :** Pour un article similaire concernant un complément basé sur ASP.NET, voir [Créer un complément Office ASP.NET qui utilise l’authentification unique](../../docs/develop/create-sso-office-add-ins-aspnet.md).
+> **Remarque :** Pour un article similaire concernant un complément basé sur ASP.NET, voir [Créer un complément Office ASP.NET qui utilise l’authentification unique](../develop/create-sso-office-add-ins-aspnet.md).
 
 ## <a name="prerequisites"></a>Conditions préalables
 

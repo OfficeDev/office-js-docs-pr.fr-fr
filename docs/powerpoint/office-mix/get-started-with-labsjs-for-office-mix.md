@@ -57,7 +57,7 @@ Après avoir créé votre atelier, vous pouvez le publier et le soumettre au mag
 
 Le manifeste d’application est un document XML qui décrit votre atelier LabJS. Il indique l’URL où l’atelier est hébergé et fournit des détails sur celui-ci, y compris le nom d’affichage, la description, les icônes, la taille, etc.
 
-Nous incluons un exemple de manifeste intitulé « SampleManifest.xml ». Pour obtenir plus d’informations sur le schéma de manifeste et un lien vers la définition du schéma, voir [Manifeste XML des compléments Office](../../../docs/overview/add-in-manifests.md).
+Nous incluons un exemple de manifeste intitulé « SampleManifest.xml ». Pour obtenir plus d’informations sur le schéma de manifeste et un lien vers la définition du schéma, voir [Manifeste XML des compléments Office](../../overview/add-in-manifests.md).
 
 Pour télécharger votre manifeste sur votre site SharePoint, accédez d’abord à votre catalogue d’applications, qui se trouve généralement à l’URL <code>https://\<your site\>/sites/AppCatalog</code>. Sélectionnez ensuite le bouton **Nouvelle application** et suivez les étapes pour télécharger votre manifeste d’application.
 
@@ -92,7 +92,7 @@ Pour soumettre votre atelier à l’Office Store, voir [Publier votre complémen
 
 - [Compléments Office Mix](../../powerpoint/office-mix/office-mix-add-ins.md)
     
-- [Compléments Office](../../../docs/overview/office-add-ins.md)
+- [Compléments Office](../../overview/office-add-ins.md)
     
 - [Création de votre premier laboratoire pour Office Mix](../../powerpoint/office-mix/creating-your-first-lab-for-office-mix.md)
     

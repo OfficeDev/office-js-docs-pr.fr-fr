@@ -24,6 +24,6 @@ Pour plus d’informations sur le débogage dans Visual Studio, consultez les ru
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- [Créer et déboguer des compléments Office dans Visual Studio](../../docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md)
-- [Créer un complément Office à l’aide d’un éditeur](../../docs/get-started/create-an-office-add-in-using-any-editor.md)
+- [Créer et déboguer des compléments Office dans Visual Studio](../get-started/create-and-debug-office-add-ins-in-visual-studio.md)
+- [Créer un complément Office à l’aide d’un éditeur](../get-started/create-an-office-add-in-using-any-editor.md)
 - [Publier votre complément Office](../publish/publish.md)

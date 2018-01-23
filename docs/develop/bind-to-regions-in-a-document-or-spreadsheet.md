@@ -320,7 +320,7 @@ Dans l’exemple, le premier paramètre est la valeur à définir sur `myBinding
 
 La fonction anonyme qui est passée dans la fonction est un rappel qui est exécuté lorsque l’opération est terminée. La fonction est appelée avec un seul paramètre, `asyncResult`, qui contient l’état du résultat.
 
- > **Remarque :** depuis la publication d’Excel 2013 SP1 et de la version correspondante d’Excel Online, vous pouvez désormais [définir la mise en forme lors de l’écriture et de la mise à jour des données dans des tableaux liés](../../docs/excel/format-tables-in-add-ins-for-excel.md).
+ > **Remarque :** depuis la publication d’Excel 2013 SP1 et de la version correspondante d’Excel Online, vous pouvez désormais [définir la mise en forme lors de l’écriture et de la mise à jour des données dans des tableaux liés](../excel/format-tables-in-add-ins-for-excel.md).
 
 
 ## <a name="detect-changes-to-data-or-the-selection-in-a-binding"></a>Détection des modifications apportées aux données ou à la section dans une liaison
@@ -373,11 +373,11 @@ function removeEventHandlerFromBinding() {
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- [Présentation de l’API JavaScript pour Office](../../docs/develop/understanding-the-javascript-api-for-office.md)
+- [Présentation de l’API JavaScript pour Office](../develop/understanding-the-javascript-api-for-office.md)
     
-- [Programmation asynchrone dans des compléments Office](../../docs/develop/asynchronous-programming-in-office-add-ins.md)
+- [Programmation asynchrone dans des compléments Office](../develop/asynchronous-programming-in-office-add-ins.md)
     
-- [Lecture et écriture de données dans la sélection active d’un document ou d’une feuille de calcul](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
+- [Lecture et écriture de données dans la sélection active d’un document ou d’une feuille de calcul](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
     
 [Binding]:               http://dev.office.com/reference/add-ins/shared/binding
 [MatrixBinding]:         http://dev.office.com/reference/add-ins/shared/binding.matrixbinding
