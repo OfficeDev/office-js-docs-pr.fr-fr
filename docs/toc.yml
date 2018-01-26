@@ -95,7 +95,7 @@
     - name: Structure de l’interface utilisateur Office
       href: design/office-ui-fabric.md
       items:
-      - name: Prise en main de Fabric JS :
+      - name: Prise en main de Fabric JS
         href: design/using-office-ui-fabric-js.md
       - name: Prise en main de Fabric React :
         href: design/using-office-ui-fabric-react.md
