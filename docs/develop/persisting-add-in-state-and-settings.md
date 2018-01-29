@@ -8,14 +8,14 @@ Pour ce faire, vous pouvez :
 
 - Utilisez des membres de l’interface API JavaScript pour Office qui stockent les données en tant que paires nom/valeur dans un conteneur des propriétés stocké à un emplacement qui dépend du type de complément.
     
-- Utiliser des techniques fournies par le contrôle de navigateur sous-jacent : les cookies de navigateur ou le stockage Web HTML5 ([localStorage](http://msdn.microsoft.com/en-us/library/cc848902%28v=vs.85%29.aspx) ou [sessionStorage](http://msdn.microsoft.com/en-us/library/cc197020%28v=vs.85%29.aspx)).
+- Utiliser des techniques fournies par le contrôle de navigateur sous-jacent : les cookies de navigateur ou le stockage Web HTML5 ([localStorage](http://msdn.microsoft.com/fr-fr/library/cc848902%28v=vs.85%29.aspx) ou [sessionStorage](http://msdn.microsoft.com/fr-fr/library/cc197020%28v=vs.85%29.aspx)).
     
 Cet article se concentre sur l’utilisation de l’interface API JavaScript pour Office afin de faire persister l’état du complément. Pour obtenir des exemples d’utilisation des cookies de navigateur et du stockage web, voir l’exemple de code [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings).
 
 ## <a name="persisting-add-in-state-and-settings-with-the-javascript-api-for-office"></a>Persistance de l’état et des paramètres d’un complément avec l’interface API JavaScript pour Office
 
 
-L’interface API JavaScript pour Office fournit les objets [Settings](http://dev.office.com/reference/add-ins/shared/settings), [RoamingSettings](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) et [CustomProperties](http://dev.office.com/reference/add-ins/outlook/CustomProperties) pour enregistrer l’état du complément dans plusieurs sessions, comme décrit dans le tableau suivant. Dans tous les cas, les valeurs de paramètre enregistrées sont associées à l’[ID](http://msdn.microsoft.com/en-us/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx) du complément qui les a créées.
+L’interface API JavaScript pour Office fournit les objets [Settings](http://dev.office.com/reference/add-ins/shared/settings), [RoamingSettings](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) et [CustomProperties](http://dev.office.com/reference/add-ins/outlook/CustomProperties) pour enregistrer l’état du complément dans plusieurs sessions, comme décrit dans le tableau suivant. Dans tous les cas, les valeurs de paramètre enregistrées sont associées à l’[ID](http://msdn.microsoft.com/fr-fr/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx) du complément qui les a créées.
 
 
 

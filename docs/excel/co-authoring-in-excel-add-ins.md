@@ -1,6 +1,6 @@
 # <a name="coauthoring-in-excel-add-ins"></a>La co-création dans des compléments Excel  
 
-Avec la [co-création](https://support.office.com/en-US/article/Collaborate-on-Excel-workbooks-at-the-same-time-with-co-authoring-7152aa8b-b791-414c-a3bb-3024e46fb104), plusieurs personnes peuvent travailler ensemble et modifier simultanément le même classeur Excel. Tous les co-auteurs d’un classeur peuvent voir les modifications d’un autre co-auteur dès que ce co-auteur enregistre le classeur. Pour co-créer un classeur Excel, le classeur doit être enregistré dans OneDrive, OneDrive Entreprise ou SharePoint Online.
+Avec la [co-création](https://support.office.com/fr-fr/article/Collaborate-on-Excel-workbooks-at-the-same-time-with-co-authoring-7152aa8b-b791-414c-a3bb-3024e46fb104), plusieurs personnes peuvent travailler ensemble et modifier simultanément le même classeur Excel. Tous les co-auteurs d’un classeur peuvent voir les modifications d’un autre co-auteur dès que ce co-auteur enregistre le classeur. Pour co-créer un classeur Excel, le classeur doit être enregistré dans OneDrive, OneDrive Entreprise ou SharePoint Online.
 
 > **Important :** Dans Excel 2016 pour Office 365, vous remarquerez l’enregistrement automatique dans le coin supérieur gauche. Lorsque l’enregistrement automatique est activé, les co-auteurs visualisent vos modifications en temps réel. Prenez en considération l’impact de ce comportement sur la conception de votre complément Excel. Les utilisateurs peuvent désactiver l’enregistrement automatique via le commutateur dans le coin supérieur gauche de la fenêtre Excel.
 
@@ -44,5 +44,5 @@ Par exemple, dans les scénarios de validation de données, il est fréquent d�
 
 ## <a name="see-also"></a>Voir aussi 
 
-- [À propos de la co-création dans Excel (VBA)](https://msdn.microsoft.com/en-us/vba/excel-vba/articles/about-coauthoring-in-excel) 
-- [Impact de l’enregistrement automatique sur les compléments et les macros (VBA)](https://msdn.microsoft.com/en-us/vba/office-shared-vba/articles/how-autosave-impacts-addins-and-macros) 
+- [À propos de la co-création dans Excel (VBA)](https://msdn.microsoft.com/fr-fr/vba/excel-vba/articles/about-coauthoring-in-excel) 
+- [Impact de l’enregistrement automatique sur les compléments et les macros (VBA)](https://msdn.microsoft.com/fr-fr/vba/office-shared-vba/articles/how-autosave-impacts-addins-and-macros) 

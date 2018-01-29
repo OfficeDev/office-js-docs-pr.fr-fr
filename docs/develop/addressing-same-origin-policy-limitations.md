@@ -47,7 +47,7 @@ Une autre manière de résoudre les limitations de la stratégie de même origin
 
 Pour un exemple d’utilisation d’OAuth pour l’authentification, reportez-vous à [Composant WebPart Twitter SharePoint avec OAuth](http://aidangarnish.net/post/Twitter-SharePoint-Web-Part-With-OAuth).
 
-Pour un exemple de code côté serveur qui illustre comment utiliser l’objet `Cookie` dans `System.Net` pour obtenir et définir des valeurs de cookie, voir la propriété [Value](http://msdn2.microsoft.com/EN-US/library/4f772twc).
+Pour un exemple de code côté serveur qui illustre comment utiliser l’objet `Cookie` dans `System.Net` pour obtenir et définir des valeurs de cookie, voir la propriété [Value](http://msdn2.microsoft.com/fr-fr/library/4f772twc).
 
 
 ## <a name="using-cross-origin-resource-sharing-cors"></a>Utilisation du partage de ressources cross-origin (CORS)

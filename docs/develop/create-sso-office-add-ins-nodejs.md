@@ -106,7 +106,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 4. Pour la propriété `audience`, remplacez l’espace réservé `{audience GUID}` par l’ID d’application que vous avez enregistré lorsque vous avez inscrit le complément. (La même valeur que celle affectée à la propriété `client_id`.)
   
-3. Dans la chaîne affectée à la propriété `issuer`, vous verrez l’espace réservé *{O365 tenant GUID}*. Remplacez ceci par l’ID du client Office 365 que vous avez enregistré à la fin de la dernière procédure. Si pour une raison quelconque, vous n’avez pas obtenu l’ID antérieur, utilisez l’une des méthodes de la page [Trouver votre ID de client Office 365](https://support.office.com/en-us/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b) pour l’obtenir. Lorsque vous avez terminé, la valeur de propriété `issuer` doit ressembler à ceci :
+3. Dans la chaîne affectée à la propriété `issuer`, vous verrez l’espace réservé *{O365 tenant GUID}*. Remplacez ceci par l’ID du client Office 365 que vous avez enregistré à la fin de la dernière procédure. Si pour une raison quelconque, vous n’avez pas obtenu l’ID antérieur, utilisez l’une des méthodes de la page [Trouver votre ID de client Office 365](https://support.office.com/fr-fr/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b) pour l’obtenir. Lorsque vous avez terminé, la valeur de propriété `issuer` doit ressembler à ceci :
 
     `https://login.microsoftonline.com/12345678-1234-1234-1234-123456789012/v2.0`
 
@@ -444,7 +444,7 @@ Il existe deux fichiers côté serveur qui doivent être modifiés.
 
 Vous devez maintenant indiquer à Office où trouver le complément.
 
-1. Créez un partage réseau, ou [partagez un dossier sur le réseau](https://technet.microsoft.com/en-us/library/cc770880.aspx).
+1. Créez un partage réseau, ou [partagez un dossier sur le réseau](https://technet.microsoft.com/fr-fr/library/cc770880.aspx).
 
 2. Placez une copie du fichier manifeste Office-Add-in-NodeJS-SSO.xml, depuis la racine du projet, dans le dossier partagé.
 

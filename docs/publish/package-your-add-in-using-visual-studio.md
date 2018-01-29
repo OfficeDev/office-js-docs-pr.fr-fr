@@ -16,11 +16,11 @@ Procédez comme suit pour déployer votre projet web à l’aide de Visual Studi
 
     Si vous choisissez **Nouveau...**, l’Assistant **Créer un profil de publication** s’ouvre. Vous pouvez utiliser cet Assistant pour importer un profil de publication à partir d’un site web d’hébergement comme Microsoft Azure ou créer un profil et ajouter votre serveur, vos informations d’identification et d’autres paramètres, comme décrit dans la procédure suivante.
     
-    Pour plus d’informations sur l’importation et la création de profils de publication, voir [Création d’un profil de publication](http://msdn.microsoft.com/en-us/library/dd465337.aspx#creating_a_profile).
+    Pour plus d’informations sur l’importation et la création de profils de publication, voir [Création d’un profil de publication](http://msdn.microsoft.com/fr-fr/library/dd465337.aspx#creating_a_profile).
     
 3. Sur la page **Publier votre complément**, cliquez sur le lien **Déployer votre projet Web**.
     
-    La boîte de dialogue **Publier le site web** s’affiche. Pour plus d’informations sur l’utilisation de cet Assistant, reportez-vous à l’article relatif à la [procédure de déploiement d’un projet web à l’aide de la publication en un clic dans Visual Studio](http://msdn.microsoft.com/en-us/library/dd465337.aspx).
+    La boîte de dialogue **Publier le site web** s’affiche. Pour plus d’informations sur l’utilisation de cet Assistant, reportez-vous à l’article relatif à la [procédure de déploiement d’un projet web à l’aide de la publication en un clic dans Visual Studio](http://msdn.microsoft.com/fr-fr/library/dd465337.aspx).
     
 
 ## <a name="to-package-your-add-in-using-visual-studio-2015"></a>Création d’un package de votre complément avec Visual Studio 2015
@@ -33,7 +33,7 @@ Procédez comme suit pour créer un package de votre projet de complément à l�
     
 2. Dans la liste déroulante **Où votre site web est-il hébergé ?**, sélectionnez ou saisissez l’URL du site web qui hébergera les fichiers de contenu de votre complément, puis cliquez sur **Terminer**.
     
-    Vous devez spécifier une adresse qui commence par le préfixe HTTPS pour l’Assistant. L’utilisation d’un point de terminaison HTTPS pour votre site web est généralement recommandée, mais cela n’est pas obligatoire si vous ne comptez pas publier votre complément sur l’Office Store. Si vous souhaitez utiliser un point de terminaison HTTP pour votre site web, vous pouvez ouvrir le fichier manifeste XML dans un éditeur de texte une fois que le package a été créé et remplacer le préfixe HTTPS de votre site web par un préfixe HTTP. Pour plus d’informations, reportez-vous à [Pourquoi mes applications et compléments doivent-ils être sécurisés par une protection SSL ?](http://msdn.microsoft.com/en-us/library/jj591603#bk_q7).
+    Vous devez spécifier une adresse qui commence par le préfixe HTTPS pour l’Assistant. L’utilisation d’un point de terminaison HTTPS pour votre site web est généralement recommandée, mais cela n’est pas obligatoire si vous ne comptez pas publier votre complément sur l’Office Store. Si vous souhaitez utiliser un point de terminaison HTTP pour votre site web, vous pouvez ouvrir le fichier manifeste XML dans un éditeur de texte une fois que le package a été créé et remplacer le préfixe HTTPS de votre site web par un préfixe HTTP. Pour plus d’informations, reportez-vous à [Pourquoi mes applications et compléments doivent-ils être sécurisés par une protection SSL ?](http://msdn.microsoft.com/fr-fr/library/jj591603#bk_q7).
     
      >**Remarque :**  Les sites web Azure fournissent automatiquement un point de terminaison HTTPS.
 

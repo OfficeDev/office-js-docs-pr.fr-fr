@@ -102,7 +102,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 ## <a name="configure-the-add-in"></a>Configurer le complément
 
-1. Dans la chaîne suivante, remplacez l’espace réservé « {tenant_ID} » par l’ID de client Office 365 que vous avez obtenu précédemment. Si pour une raison quelconque, vous n’avez pas obtenu l’ID antérieur, utilisez l’une des méthodes de la page [Trouver votre ID de client Office 365](https://support.office.com/en-us/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b) pour l’obtenir.
+1. Dans la chaîne suivante, remplacez l’espace réservé « {tenant_ID} » par l’ID de client Office 365 que vous avez obtenu précédemment. Si pour une raison quelconque, vous n’avez pas obtenu l’ID antérieur, utilisez l’une des méthodes de la page [Trouver votre ID de client Office 365](https://support.office.com/fr-fr/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b) pour l’obtenir.
 
     `https://login.microsoftonline.com/{tenant_ID}/v2.0`
 

@@ -63,5 +63,5 @@ Cet exemple utilise Word et un complément gratuit de l’Office Store.
 
 - [Inspecter le code JavaScript en cours d’exécution avec le débogueur](https://msdn.microsoft.com/library/dn255007%28v=vs.85%29.aspx)
     
-- [Utilisation des outils de développement F12](https://msdn.microsoft.com/en-us/library/bg182326%28v=vs.85%29.aspx)
+- [Utilisation des outils de développement F12](https://msdn.microsoft.com/fr-fr/library/bg182326%28v=vs.85%29.aspx)
     

@@ -10,8 +10,8 @@ Vous pouvez utiliser l’une des méthodes pour déployer votre complément Offi
 |[Office Store](https://dev.office.com/officestore/docs/submit-to-the-office-store)|Pour distribuer publiquement votre complément auprès des utilisateurs.|
 |[Serveur Exchange](#outlook-add-in-deployment)|Dans un environnement local ou en ligne, pour distribuer des compléments Outlook à des utilisateurs.|
 
->
-  **Remarque :** si vous envisagez d’envoyer votre complément à l’Office Store, assurez-vous que vous respectez les [stratégies de validation de l’Office Store](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Par exemple, pour obtenir la validation, votre complément doit fonctionner sur toutes les plateformes qui prennent en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](https://dev.office.com/officestore/docs/validation-policies#4-apps-and-add-ins-behave-predictably) et la [page relative à la disponibilité des compléments Office sur les plateformes et les hôtes](https://dev.office.com/add-in-availability)).
+> [!NOTE]
+>  si vous envisagez d’envoyer votre complément à l’Office Store, assurez-vous que vous respectez les [stratégies de validation de l’Office Store](https://msdn.microsoft.com/fr-fr/library/jj220035.aspx). Par exemple, pour obtenir la validation, votre complément doit fonctionner sur toutes les plateformes qui prennent en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](https://dev.office.com/officestore/docs/validation-policies#4-apps-and-add-ins-behave-predictably) et la [page relative à la disponibilité des compléments Office sur les plateformes et les hôtes](https://dev.office.com/add-in-availability)).
 
 ## <a name="deployment-options-by-office-host"></a>Options de déploiement par l’hôte Office
 
@@ -63,7 +63,7 @@ Le déploiement de compléments Outlook nécessite :
 - Office 365, Exchange Online ou Exchange Server 2013 ou version ultérieure
 - Outlook 2013 ou une version ultérieure
 
-Pour affecter des compléments à des clients, utilisez le centre d’administration Exchange pour télécharger un manifeste directement, à partir d’un fichier ou d’une URL, ou ajoutez un complément à partir de l’Office Store. Pour affecter des compléments à des utilisateurs individuels, vous devez utiliser Exchange PowerShell. Pour plus d’informations, voir [Installation ou suppression de compléments Outlook pour votre organisation](https://technet.microsoft.com/en-us/library/jj943752(v=exchg.150).aspx) sur TechNet.
+Pour affecter des compléments à des clients, utilisez le centre d’administration Exchange pour télécharger un manifeste directement, à partir d’un fichier ou d’une URL, ou ajoutez un complément à partir de l’Office Store. Pour affecter des compléments à des utilisateurs individuels, vous devez utiliser Exchange PowerShell. Pour plus d’informations, voir [Installation ou suppression de compléments Outlook pour votre organisation](https://technet.microsoft.com/fr-fr/library/jj943752(v=exchg.150).aspx) sur TechNet.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
@@ -71,7 +71,7 @@ Pour affecter des compléments à des clients, utilisez le centre d’administra
 - [Envoyer à l’Office Store][Office Store]
 - [Instructions de conception pour les compléments Office](../design/add-in-design)
 - 
-  [Création de compléments efficaces pour l’Office Store](https://msdn.microsoft.com/en-us/library/jj635874.aspx)
+  [Création de compléments efficaces pour l’Office Store](https://msdn.microsoft.com/fr-fr/library/jj635874.aspx)
 - [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](../testing/testing-and-troubleshooting.md)
 
 [Office Store]: http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx

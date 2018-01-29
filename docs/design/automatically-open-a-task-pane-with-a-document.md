@@ -104,7 +104,7 @@ Le composant webextension comprend également une référence au store ou au cat
 
 >\* Pour trouver l’ID de ressource et la version d’un complément dans l’Office Store, accédez à la page d’accueil d’Office Store pour le complément. L’ID de ressource apparaît dans la barre d’adresse dans le navigateur. La version est répertoriée dans la section **Détails** de la page.
 
-Pour plus d’informations sur le balisage webextension, voir [[MS-OWEXML] 2.2.5. WebExtensionReference](https://msdn.microsoft.com/en-us/library/hh695383(v=office.12).aspx).
+Pour plus d’informations sur le balisage webextension, voir [[MS-OWEXML] 2.2.5. WebExtensionReference](https://msdn.microsoft.com/fr-fr/library/hh695383(v=office.12).aspx).
 
 L’exemple suivant montre comment ajouter le composant du volet Office.
 

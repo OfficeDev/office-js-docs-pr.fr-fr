@@ -36,7 +36,7 @@ Lorsque vous avez terminé l’Assistant, Visual Studio crée une solution qui 
 |**Projet**|**Description**|
 |:-----|:-----|
 |Projet de complément|Contient seulement un fichier de manifeste XML, qui contient tous les paramètres qui décrivent votre complément. Ces paramètres aident l’hôte Office à déterminer quand votre complément doit être activé et où il doit apparaître. Visual Studio génère le contenu de ce fichier pour vous afin que vous puissiez exécuter le projet et utiliser immédiatement votre complément. Vous pouvez modifier ces paramètres à tout moment à l’aide de l’éditeur de manifeste.|
-|Projet d’application web|Contient les pages de contenu de votre complément, notamment tous les fichiers et références de fichiers dont vous avez besoin pour développer des pages HTML et JavaScript compatibles avec Office. Pendant que vous développez votre complément, Visual Studio héberge l’application web sur votre serveur IIS local. Lorsque vous êtes prêt à la publier, vous devez trouver un serveur pour héberger ce projet.Pour en savoir plus sur les projets d’applications web ASP.NET, voir [Projets web ASP.NET](http://msdn.microsoft.com/en-us/library/cdcd712f-96b0-4165-8b5d-9d0566650a28%28Office.15%29.aspx).|
+|Projet d’application web|Contient les pages de contenu de votre complément, notamment tous les fichiers et références de fichiers dont vous avez besoin pour développer des pages HTML et JavaScript compatibles avec Office. Pendant que vous développez votre complément, Visual Studio héberge l’application web sur votre serveur IIS local. Lorsque vous êtes prêt à la publier, vous devez trouver un serveur pour héberger ce projet.Pour en savoir plus sur les projets d’applications web ASP.NET, voir [Projets web ASP.NET](http://msdn.microsoft.com/fr-fr/library/cdcd712f-96b0-4165-8b5d-9d0566650a28%28Office.15%29.aspx).|
 
 ## <a name="modify-your-add-in-settings"></a>Modifier les paramètres de votre complément
 
@@ -143,7 +143,7 @@ Visual Studio génère le projet et effectue les actions suivantes.
 Visual Studio effectue ensuite les actions suivantes :
 
 
-1. Il modifie l’élément [SourceLocation](http://msdn.microsoft.com/en-us/library/e6ea8cd4-7c8b-1da7-d8f8-8d3c80a088bc%28Office.15%29.aspx) du fichier manifeste XML en remplaçant le jeton ~remoteAppUrl par l’adresse complète de la page de démarrage (par exemple http://localhost/MyAgave.html).
+1. Il modifie l’élément [SourceLocation](http://msdn.microsoft.com/fr-fr/library/e6ea8cd4-7c8b-1da7-d8f8-8d3c80a088bc%28Office.15%29.aspx) du fichier manifeste XML en remplaçant le jeton ~remoteAppUrl par l’adresse complète de la page de démarrage (par exemple http://localhost/MyAgave.html).
     
 2. Il démarre le projet d’application web dans IIS Express.
     
@@ -154,7 +154,7 @@ Visual Studio n’affiche pas les erreurs de validation dans la fenêtre  **OUTP
 
 - [Options, Éditeur de texte, JavaScript, IntelliSense](http://go.microsoft.com/fwlink/?LinkID=238779)
     
-- [Procédure : définir des options de validation pour l’édition HTML dans Visual Web Developer](http://msdn.microsoft.com/en-us/library/vstudio/0byxkfet%28v=vs.100%29.aspx)
+- [Procédure : définir des options de validation pour l’édition HTML dans Visual Web Developer](http://msdn.microsoft.com/fr-fr/library/vstudio/0byxkfet%28v=vs.100%29.aspx)
     
 - [Validation, CSS, Éditeur de texte, boîte de dialogue Options](http://go.microsoft.com/fwlink/?LinkID=238780)
     

@@ -51,7 +51,7 @@ Chaque complément Office indique un élément [DefaultLocale] élément et un p
 |[SourceLocation]   |Les utilisateurs de chaque paramètre régional que vous spécifiez peuvent voir une page web que vous concevez spécifiquement pour le complément pour ce paramètre régional. |
 
 
- > **Remarque :** Vous ne pouvez localiser la description et le nom d’affichage que pour les paramètres régionaux pris en charge par Office. Voir [Identificateurs de langues et valeurs OptionState Id dans Office 2013](http://technet.microsoft.com/en-us/library/cc179219.aspx) pour connaître la liste des langues et des paramètres régionaux pour la version actuelle d’Office.
+ > **Remarque :** Vous ne pouvez localiser la description et le nom d’affichage que pour les paramètres régionaux pris en charge par Office. Voir [Identificateurs de langues et valeurs OptionState Id dans Office 2013](http://technet.microsoft.com/fr-fr/library/cc179219.aspx) pour connaître la liste des langues et des paramètres régionaux pour la version actuelle d’Office.
 
 
 ### <a name="examples"></a>Exemples
@@ -412,7 +412,7 @@ Exécutez l’exemple de complément. Le complément de volet de tâches se char
 
 - [Instructions de conception pour les compléments Office](../design/add-in-design.md)
     
-- [Identificateurs de langue et valeurs d’ID de l’élément OptionState dans Office 2013](http://technet.microsoft.com/en-us/library/cc179219%28Office.15%29.aspx)
+- [Identificateurs de langue et valeurs d’ID de l’élément OptionState dans Office 2013](http://technet.microsoft.com/fr-fr/library/cc179219%28Office.15%29.aspx)
 
 [DefaultLocale]:         http://dev.office.com/reference/add-ins/manifest/defaultlocale
 [Description]:           http://dev.office.com/reference/add-ins/manifest/description

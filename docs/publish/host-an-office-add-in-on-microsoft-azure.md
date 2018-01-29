@@ -9,7 +9,7 @@ Cet article décrit comment déployer une application web de complément sur Azu
 
 1. Installez [Visual Studio 2017](https://www.visualstudio.com/downloads) et choisissez d’inclure la charge de travail de **développement Azure**.
 
-    >**Remarque :** Si vous avez déjà installé Visual Studio 2017, [utilisez le programme d’installation Visual Studio](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio) pour vous assurer que la charge de travail de **développement Azure** est installée. 
+    >**Remarque :** Si vous avez déjà installé Visual Studio 2017, [utilisez le programme d’installation Visual Studio](https://docs.microsoft.com/fr-fr/visualstudio/install/modify-visual-studio) pour vous assurer que la charge de travail de **développement Azure** est installée. 
 
 2. Installez Office 2016. 
     

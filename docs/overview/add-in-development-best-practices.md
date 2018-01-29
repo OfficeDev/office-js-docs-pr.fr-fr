@@ -4,8 +4,8 @@
 
 Des compléments efficaces proposent des fonctionnalités uniques et attrayantes qui étendent les applications Office d’une manière visuellement attractive. Pour créer un complément intéressant, offrez une première expérience attractive à vos utilisateurs, concevez une interface utilisateur de premier choix et optimisez les performances de votre complément. Appliquez les meilleures pratiques décrites dans cet article pour créer des compléments permettant aux utilisateurs d’accomplir leurs tâches rapidement et efficacement.
 
->
-  **Remarque :** Lorsque vous créez votre complément, si vous envisagez de le [publier](../publish/publish.md) dans Office Store, assurez-vous que vous respectez les [stratégies de validation Office Store](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Par exemple, pour réussir la validation, votre complément doit fonctionner sur toutes les plateformes qui prennent en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) et la [page relative à la disponibilité des compléments Office sur les plateformes et les hôtes](https://dev.office.com/add-in-availability)).
+> [!NOTE]
+>  Lorsque vous créez votre complément, si vous envisagez de le [publier](../publish/publish.md) dans Office Store, assurez-vous que vous respectez les [stratégies de validation Office Store](https://msdn.microsoft.com/fr-fr/library/jj220035.aspx). Par exemple, pour réussir la validation, votre complément doit fonctionner sur toutes les plateformes qui prennent en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](https://msdn.microsoft.com/fr-fr/library/jj220035.aspx#Anchor_3) et la [page relative à la disponibilité des compléments Office sur les plateformes et les hôtes](https://dev.office.com/add-in-availability)).
 
 ## <a name="provide-clear-value"></a>Indication d’une valeur claire
 
@@ -36,7 +36,7 @@ Des compléments efficaces proposent des fonctionnalités uniques et attrayantes
 
     ![Capture d’écran illustrant un complément de contenu avec des données en regard d’un complément de contenu sans données](../images/7de2215f-ccef-4f82-aa9d-babcbddae0c6.png)
 
-- Offrez des [essais gratuits](https://msdn.microsoft.com/en-us/library/dn456317.aspx#Anchor_1). Si votre complément nécessite un abonnement, proposez certaines fonctionnalités gratuitement.
+- Offrez des [essais gratuits](https://msdn.microsoft.com/fr-fr/library/dn456317.aspx#Anchor_1). Si votre complément nécessite un abonnement, proposez certaines fonctionnalités gratuitement.
 
 - Facilitez l’inscription. Préremplissez les informations (e-mail, nom d’affichage) et ignorez les vérifications d’adresses e-mail.
 

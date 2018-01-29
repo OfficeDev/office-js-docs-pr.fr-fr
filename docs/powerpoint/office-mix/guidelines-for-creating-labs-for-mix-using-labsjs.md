@@ -91,7 +91,7 @@ Une fois l’initialisation terminée, vous pouvez appeler d’autres méthodes 
 
 ### <a name="time-format"></a>Format d’heure
 
-Labs.js stocke les nombres sous forme de millisecondes écoulées depuis le 1er janvier 1970 UTC. Cela correspond au format de date de l’ [objet Date](http://msdn.microsoft.com/en-us/library/ie/cd9w2te4%28v=vs.94%29.aspx)JavaScript.
+Labs.js stocke les nombres sous forme de millisecondes écoulées depuis le 1er janvier 1970 UTC. Cela correspond au format de date de l’ [objet Date](http://msdn.microsoft.com/fr-fr/library/ie/cd9w2te4%28v=vs.94%29.aspx)JavaScript.
 
 
 ### <a name="timeline"></a>Chronologie

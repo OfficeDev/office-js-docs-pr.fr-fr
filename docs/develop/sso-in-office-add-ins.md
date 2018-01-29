@@ -14,7 +14,7 @@ Pour les utilisateurs, cela permet une exécution aisée de votre complément qu
 
 ## <a name="sso-add-in-architecture"></a>Architecture des compléments d’authentification unique
 
-Outre l’hébergement des pages et du JavaScript de l’application Web, le complément doit également héberger, dans le même [nom de domaine complet](https://msdn.microsoft.com/en-us/library/windows/desktop/ms682135.aspx#_dns_fully_qualified_domain_name_fqdn__gly), une ou plusieurs API Web qui recevront un jeton d’accès à Microsoft Graph et effectueront des requêtes.
+Outre l’hébergement des pages et du JavaScript de l’application Web, le complément doit également héberger, dans le même [nom de domaine complet](https://msdn.microsoft.com/fr-fr/library/windows/desktop/ms682135.aspx#_dns_fully_qualified_domain_name_fqdn__gly), une ou plusieurs API Web qui recevront un jeton d’accès à Microsoft Graph et effectueront des requêtes.
 
 Le manifeste du complément contient un balisage qui spécifie comment le complément est enregistré dans le point de terminaison Azure Active Directory (Azure AD) v2.0 et il indique les autorisations à Microsoft Graph dont le complément a besoin.
 
@@ -32,7 +32,7 @@ Le diagramme suivant illustre le mode de fonctionnement du processus d’authent
 1. L’application hôte Office envoie le **jeton de complément** au complément dans le cadre de l’objet de résultat renvoyé par l’appel `getAccessTokenAsync`.
 1. Un code JavaScript dans le complément effectue une requête HTTP à une API web qui est hébergée sur le même domaine complet que le complément et inclut le **jeton de complément** comme preuve d’autorisation.  
 1. Le code côté serveur valide le **jeton de complément** entrant.
-1. Le code côté serveur utilise le flux « de la part de » (défini dans [OAuth2 Token Exchange](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02) et l’application de [démon ou de serveur dans un scénario Azure avec une API web](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-authentication-scenarios#daemon-or-server-application-to-web-api)) pour obtenir un jeton d’accès à Microsoft Graph (ci-après, le **« jeton MSG »**) en échange du jeton de complément.
+1. Le code côté serveur utilise le flux « de la part de » (défini dans [OAuth2 Token Exchange](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02) et l’application de [démon ou de serveur dans un scénario Azure avec une API web](https://docs.microsoft.com/fr-fr/azure/active-directory/develop/active-directory-authentication-scenarios#daemon-or-server-application-to-web-api)) pour obtenir un jeton d’accès à Microsoft Graph (ci-après, le **« jeton MSG »**) en échange du jeton de complément.
 1. Azure AD renvoie le **jeton MSG** (et un jeton d’actualisation si le complément demande l’autorisation *offline_access*) au complément.
 1. Le code côté serveur met en cache le(s) **jeton(s) MSG**.
 1. Le code côté serveur effectue des requêtes à Microsoft Graph et inclut le **jeton MSG**.

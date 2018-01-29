@@ -92,5 +92,5 @@ Les utilisateurs finaux peuvent accéder au catalogue des compléments dans une 
     
 3. Fermez puis rouvrez l’application Office. Le catalogue de compléments est disponible dans la boîte de dialogue **Compléments Office**.
 
-Par ailleurs, un administrateur peut spécifier un catalogue de compléments Office sur SharePoint à l’aide d’une stratégie de groupe. Pour plus d’informations, reportez-vous à la section relative à l’[utilisation d’une stratégie de groupe pour gérer la manière dont les utilisateurs peuvent installer et utiliser des compléments Office](https://technet.microsoft.com/en-us/library/jj219429.aspx#BKMK_GP) sur TechNet.
+Par ailleurs, un administrateur peut spécifier un catalogue de compléments Office sur SharePoint à l’aide d’une stratégie de groupe. Pour plus d’informations, reportez-vous à la section relative à l’[utilisation d’une stratégie de groupe pour gérer la manière dont les utilisateurs peuvent installer et utiliser des compléments Office](https://technet.microsoft.com/fr-fr/library/jj219429.aspx#BKMK_GP) sur TechNet.
 

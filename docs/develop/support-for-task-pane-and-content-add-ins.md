@@ -156,7 +156,7 @@ Pour plus d’informations, consultez la page relative à la [demande d’autori
 
 - [API JavaScript pour Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)
     
-- [Informations de référence sur le schéma des manifestes des applications pour Office](http://msdn.microsoft.com/en-us/library/7e0cadc3-f613-8eb9-57ef-9032cbb97f92.aspx)
+- [Informations de référence sur le schéma des manifestes des applications pour Office](http://msdn.microsoft.com/fr-fr/library/7e0cadc3-f613-8eb9-57ef-9032cbb97f92.aspx)
     
 - [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](../testing/testing-and-troubleshooting.md)
     

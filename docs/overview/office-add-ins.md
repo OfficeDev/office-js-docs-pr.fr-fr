@@ -90,7 +90,7 @@ Les compléments Outlook peuvent développer le ruban Office et s’afficher en 
 
 Les compléments Outlook peuvent accéder à des informations contextuelles à partir de l’élément, telles que l’adresse ou l’ID de suivi, et utiliser ces données pour accéder à d’autres informations sur le serveur ou provenant de services web pour créer des expériences utilisateur convaincantes. Dans la plupart des cas, un complément Outlook peut être exécuté sans modification sur les différentes applications hôte prise en charge, notamment Outlook, Outlook pour Mac, Outlook Web App et Outlook Web App pour appareils, afin d’offrir une expérience homogène sur le bureau, en ligne, sur les tablettes et sur les appareils mobiles. 
 
-Pour accéder à une vue d’ensemble des compléments Outlook, reportez-vous à la rubrique [Présentation des compléments Outlook](https://docs.microsoft.com/en-us/outlook/add-ins/). 
+Pour accéder à une vue d’ensemble des compléments Outlook, reportez-vous à la rubrique [Présentation des compléments Outlook](https://docs.microsoft.com/fr-fr/outlook/add-ins/). 
 
 ### <a name="create-new-objects-in-office-documents"></a>Création d’objets dans des documents Office 
 

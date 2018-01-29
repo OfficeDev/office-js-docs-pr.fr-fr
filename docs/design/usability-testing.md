@@ -13,7 +13,7 @@ Ces services de test vous aident à simplifier la création d’un plan de test 
 Vous avez seulement besoin de cinq participants pour révéler la plupart des problèmes d’utilisation dans votre conception. Incorporez régulièrement des petits tests dans votre cycle de développement pour vous assurer que votre produit est centré sur l’utilisateur.
 
 > 
-  **Remarque :** nous vous recommandons de tester l’utilisation de votre complément sur plusieurs plateformes. Pour [publier votre complément sur l’Office Store](https://msdn.microsoft.com/en-us/library/office/jj220037.aspx), il doit fonctionner sur toutes les [plateformes qui prennent en charge les méthodes que vous définissez](https://dev.office.com/add-in-availability).
+  **Remarque :** nous vous recommandons de tester l’utilisation de votre complément sur plusieurs plateformes. Pour [publier votre complément sur l’Office Store](https://msdn.microsoft.com/fr-fr/library/office/jj220037.aspx), il doit fonctionner sur toutes les [plateformes qui prennent en charge les méthodes que vous définissez](https://dev.office.com/add-in-availability).
 
 ## <a name="1----sign-up-for-a-testing-service"></a>1.    Inscrivez-vous à un service de test
 
