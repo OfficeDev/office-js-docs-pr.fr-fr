@@ -2,6 +2,13 @@
   tocHref: /office/
   topicHref: /office/index
   items:
-  - name: Add-ins
+  - name: Compléments
     tocHref: /office/dev/add-ins/
-    topicHref: /office/dev/add-ins/overview/office-add-ins
+    topicHref: /office/dev/add-ins
+    items:
+    - name: Didacticiels
+      tocHref: /office/dev/add-ins
+      items: 
+      - name: Didacticiel sur le complément Excel
+        tocHref: /office/dev/add-ins/tutorials/excel-tutorial
+        topicHref: /office/dev/add-ins/tutorials/excel-tutorial
