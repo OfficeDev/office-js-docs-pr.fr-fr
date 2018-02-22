@@ -1,5 +1,11 @@
+---
+title: Lier des régions dans un document ou une feuille de calcul
+description: ''
+ms.date: 12/04/2017
+---
 
-# <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>Liaisons de régions dans un document ou une feuille de calcul
+
+# <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>Lier des régions dans un document ou une feuille de calcul
 
 L’accès aux données basées sur une liaison permet aux compléments de contenu et du volet Office d’accéder de façon cohérente à une zone particulière d’un document ou d’une feuille de calcul au moyen d’un identificateur. Le complément doit d’abord établir la liaison en appelant l’une des méthodes qui associent une partie du document à un identificateur unique : [addFromPromptAsync], [addFromSelectionAsync] ou [addFromNamedItemAsync]. Une fois la liaison établie, le complément peut utiliser l’identificateur fourni pour accéder aux données contenues dans la zone associée du document ou de la feuille de calcul. La création de liaisons apporte la valeur ajoutée suivante à votre complément :
 
@@ -27,12 +33,13 @@ Vous spécifiez [trois types de liaisons différents][Office.BindingType] avec l
 
     Dans Excel, toute sélection contiguë de cellules peut être utilisée pour établir une liaison de matrice. Dans Word, seuls les tableaux prennent en charge la liaison de matrice.
 
-3. **[Liaison de tableau][TableBinding]** - Établit une liaison à une zone d’un document qui contient un tableau avec des en-têtes. Les données dans une liaison de tableau sont écrites ou lues comme un objet [TableData](http://dev.office.com/reference/add-ins/shared/tabledata). L’objet `TableData` expose les données via les propriétés `headers` et `rows`.
+3. **[Liaison de tableau][TableBinding]** - Établit une liaison à une zone d’un document qui contient un tableau avec des en-têtes. Les données dans une liaison de tableau sont écrites ou lues comme un objet [TableData](https://dev.office.com/reference/add-ins/shared/tabledata). L’objet `TableData` expose les données via les propriétés `headers` et `rows`.
 
     Tout tableau Excel ou Word peut être la base d’une liaison de tableau. Une fois que vous établissez une liaison de tableau, chaque nouvelle ligne ou colonne qu’un utilisateur ajoute au tableau est automatiquement incluse dans la liaison.
 
 Après la création d’une liaison à l’aide de l’une des trois méthodes « addFrom » de l’objet `Bindings`, vous pouvez travailler avec les données et les propriétés de la liaison en utilisant les méthodes de l’objet correspondant : [MatrixBinding], [TableBinding] ou [TextBinding]. Ces trois objets héritent des méthodes [getDataAsync] et [setDataAsync] de l’objet `Binding` qui vous permettent d’interagir avec les données liées.
 
+> [!NOTE]
 > **Quand devez-vous utiliser une liaison de matrice ou une liaison de tableau ?** Lorsque les données tabulaires avec lesquelles vous travaillez contiennent une ligne de total, vous devez utiliser une liaison de matrice si le script de votre complément doit accéder aux valeurs figurant dans la ligne de total ou détecter que la sélection de l’utilisateur figure dans la ligne de total. Si vous établissez une liaison de tableau pour des données tabulaires qui contiennent une ligne de total, la propriété [TableBinding.rowCount] et les propriétés `rowCount` et `startRow` de l’objet [BindingSelectionChangedEventArgs] dans les gestionnaires d’événements ne reflèteront pas la ligne de total dans leurs valeurs. Pour contourner cette limitation, vous devez établir une liaison de matrice pour travailler avec la ligne de total.
 
 ## <a name="add-a-binding-to-the-users-current-selection"></a>Ajout d’une liaison à la sélection actuelle de l’utilisateur
@@ -92,9 +99,9 @@ La fonction anonyme transmise dans la fonction comme troisième paramètre _call
 La figure 1 montre l’invite de sélection de plage intégrée dans Excel.
 
 
-**Figure 1. Interface utilisateur de sélection de données dans Excel**
+*Figure 1. Interface utilisateur de sélection de données dans Excel*
 
-![Interface utilisateur de sélection de données dans Excel](../images/AgaveAPIOverview_ExcelSelectionUI.png)
+![Interface utilisateur de sélection de données dans Excel](../images/agave-api-overview-excel-selection-ui.png)
 
 
 ## <a name="add-a-binding-to-a-named-item"></a>Ajout d’une liaison à un élément nommé
@@ -121,10 +128,11 @@ function write(message){
 
 ```
 
- **Pour Excel**, le paramètre `itemName` de la méthode [addFromNamedItemAsync] peut se référer à une plage nommée existante, une plage spécifiée avec le style de référence `A1` `("A1:A3")` ou un tableau. Par défaut, l’ajout d’un tableau dans Excel entraîne l’affectation du nom « Tableau1 » pour le premier tableau que vous ajoutez, « Tableau2 » pour le deuxième tableau que vous ajoutez, et ainsi de suite. Pour affecter un nom significatif à un tableau dans l’interface utilisateur d’Excel, servez-vous de la propriété **Table Name** sous l’onglet **Outils de tableau | Conception** du ruban.
+**Pour Excel**, le paramètre `itemName` de la méthode [addFromNamedItemAsync] peut se référer à une plage nommée existante, une plage spécifiée avec le style de référence `A1` `("A1:A3")` ou un tableau. Par défaut, l’ajout d’un tableau dans Excel entraîne l’affectation du nom « Tableau1 » pour le premier tableau que vous ajoutez, « Tableau2 » pour le deuxième tableau que vous ajoutez, et ainsi de suite. Pour affecter un nom significatif à un tableau dans l’interface utilisateur d’Excel, servez-vous de la propriété **Table Name** sous l’onglet **Outils de tableau | Conception** du ruban.
 
 
- >**Remarque**  Dans Excel, lors de la spécification d’un tableau comme élément nommé, vous devez entièrement qualifier le nom pour inclure le nom de la feuille de calcul dans le nom du tableau dans ce format :  `"Sheet1!Table1"`
+> [!NOTE]
+> Dans Excel, lors de la spécification d’un tableau comme élément nommé, vous devez entièrement qualifier le nom pour inclure le nom de la feuille de calcul dans le nom du tableau dans ce format :  `"Sheet1!Table1"`
 
 L’exemple suivant crée une liaison dans Excel aux trois premières cellules de la colonne A (`"A1:A3"`), attribue l’id`"MyCities"`, puis écrit trois noms de ville dans cette liaison.
 
@@ -153,7 +161,7 @@ function write(message){
 }
 ```
 
- **Pour Word**, le paramètre `itemName` de la méthode [addFromNamedItemAsync] fait référence à la propriété `Title` d’un contrôle de contenu `Rich Text`. (Vous ne pouvez réaliser de liaison avec des contrôles de contenu différents du contrôle de contenu `Rich Text`.)
+**Pour Word**, le paramètre `itemName` de la méthode [addFromNamedItemAsync] fait référence à la propriété `Title` d’un contrôle de contenu `Rich Text`. (Vous ne pouvez réaliser de liaison avec des contrôles de contenu différents du contrôle de contenu `Rich Text`.)
 
 Par défaut, un contrôle de contenu ne comporte aucune valeur affectée `Title*`. Pour attribuer un nom significatif dans l’interface utilisateur de Word, après avoir inséré un contrôle de contenu de **texte enrichi** à partir du groupe **Contrôles** sous l’onglet **Développeur** du ruban, utilisez la commande **Propriétés** dans le groupe **Contrôles** pour afficher la boîte de dialogue **Propriétés du contrôle de contenu**. Définissez la propriété **Title** du contrôle de contenu sur le nom auquel vous souhaitez faire référence à partir de votre code.
 
@@ -252,7 +260,8 @@ function write(message){
 ```
 
 
- > **Remarque :**  Si la promesse de la méthode `select` renvoie un objet [Binding], cet objet expose uniquement les quatre méthodes suivantes de l’objet : [getDataAsync], [setDataAsync], [addHandlerAsync] et [removeHandlerAsync]. Si la promesse ne peut pas renvoyer un objet Binding, le rappel `onError` peut être utilisé pour accéder à un objet [asyncResult.error] afin d’obtenir plus d’informations. Si vous devez appeler un membre de l’objet Binding autre que les quatre méthodes exposées par la promesse d’objet Binding renvoyée par la méthode `select`, utilisez plutôt la méthode [getByIdAsync] en employant la propriété [Document.bindings] et la méthode [Bindings.getByIdAsync] pour récupérer l’objet Binding**.
+> [!NOTE]
+> Si la promesse de la méthode `select` renvoie un objet [Binding], cet objet expose uniquement les quatre méthodes suivantes de l’objet : [getDataAsync], [setDataAsync], [addHandlerAsync] et [removeHandlerAsync]. Si la promesse ne peut pas renvoyer un objet Binding, le rappel `onError` peut être utilisé pour accéder à un objet [asyncResult].error afin d’obtenir plus d’informations. Si vous devez appeler un membre de l’objet Binding autre que les quatre méthodes exposées par la promesse d’objet Binding renvoyée par la méthode `select`, utilisez plutôt la méthode [getByIdAsync] en employant la propriété [Document.bindings] et la méthode [Bindings.getByIdAsync] pour récupérer l’objet Binding**.
 
 ## <a name="release-a-binding-by-id"></a>Publication d’une liaison par ID
 
@@ -320,13 +329,14 @@ Dans l’exemple, le premier paramètre est la valeur à définir sur `myBinding
 
 La fonction anonyme qui est passée dans la fonction est un rappel qui est exécuté lorsque l’opération est terminée. La fonction est appelée avec un seul paramètre, `asyncResult`, qui contient l’état du résultat.
 
- > **Remarque :** depuis la publication d’Excel 2013 SP1 et de la version correspondante d’Excel Online, vous pouvez désormais [définir la mise en forme lors de l’écriture et de la mise à jour des données dans des tableaux liés](../excel/format-tables-in-add-ins-for-excel.md).
+> [!NOTE]
+> Depuis la publication d’Excel 2013 SP1 et de la version correspondante d’Excel Online, vous pouvez désormais [définir la mise en forme lors de l’écriture et de la mise à jour des données dans des tableaux liés](../excel/excel-add-ins-tables.md).
 
 
 ## <a name="detect-changes-to-data-or-the-selection-in-a-binding"></a>Détection des modifications apportées aux données ou à la section dans une liaison
 
 
-L’exemple suivant montre comment lier un gestionnaire d’événements à l’événement [DataChanged](http://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent) d’une liaison ayant l’ID « MyBinding ».
+L’exemple suivant montre comment lier un gestionnaire d’événements à l’événement [DataChanged](https://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent) d’une liaison ayant l’ID « MyBinding ».
 
 
 ```js
@@ -343,7 +353,7 @@ function write(message){
 }
 ```
 
- `myBinding` est une variable qui contient une liaison de texte existante dans le document.
+`myBinding` est une variable qui contient une liaison de texte existante dans le document.
 
 Le premier paramètre `eventType` de la méthode [addHandlerAsync] spécifie le nom de l’événement auquel s’abonner. [Office.EventType] est une énumération des valeurs de types d’événement disponibles. `Office.EventType.BindingDataChanged evaluates to the string `"bindingDataChanged"`.
 
@@ -360,7 +370,7 @@ Vous pouvez ajouter plusieurs gestionnaires d’événements pour un événement
 Pour supprimer un gestionnaire d’événements pour un événement, appelez la méthode [removeHandlerAsync] en transmettant le type d’événement en tant que premier paramètre _eventType_, puis le nom de la fonction de gestionnaire d’événements à supprimer comme deuxième paramètre _handler_. Par exemple, la fonction suivante supprimera la fonction de gestionnaire d’événements `dataChanged` ajoutée dans l’exemple de la section précédente.
 
 
-```
+```js
 function removeEventHandlerFromBinding() {
     Office.select("bindings#MyBinding").removeHandlerAsync(
         Office.EventType.BindingDataChanged, {handler:dataChanged});
@@ -368,41 +378,40 @@ function removeEventHandlerFromBinding() {
 ```
 
 
- >**Important :**   Si le paramètre facultatif _handler_ est omis lors de l’appel à la méthode [removeHandlerAsync], tous les gestionnaires d’événements du paramètre `eventType` spécifié seront supprimés.
+> [!IMPORTANT]
+> Si le paramètre facultatif _handler_ est omis lors de l’appel à la méthode [removeHandlerAsync], tous les gestionnaires d’événements du paramètre `eventType` spécifié seront supprimés.
 
 
-## <a name="additional-resources"></a>Ressources supplémentaires
+## <a name="see-also"></a>Voir aussi
 
-- [Présentation de l’API JavaScript pour Office](../develop/understanding-the-javascript-api-for-office.md)
+- [Présentation de l’API JavaScript pour Office](understanding-the-javascript-api-for-office.md) 
+- [Programmation asynchrone dans des compléments Office](asynchronous-programming-in-office-add-ins.md)
+- [Lecture et écriture de données dans la sélection active d’un document ou d’une feuille de calcul](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
     
-- [Programmation asynchrone dans des compléments Office](../develop/asynchronous-programming-in-office-add-ins.md)
-    
-- [Lecture et écriture de données dans la sélection active d’un document ou d’une feuille de calcul](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
-    
-[Binding]:               http://dev.office.com/reference/add-ins/shared/binding
-[MatrixBinding]:         http://dev.office.com/reference/add-ins/shared/binding.matrixbinding
-[TableBinding]:          http://dev.office.com/reference/add-ins/shared/binding.tablebinding
-[TextBinding]:           http://dev.office.com/reference/add-ins/shared/binding.textbinding
-[getDataAsync]:          http://dev.office.com/reference/add-ins/shared/binding.getdataasync
-[setDataAsync]:          http://dev.office.com/reference/add-ins/shared/binding.setdataasync
-[SelectionChanged]:      http://dev.office.com/reference/add-ins/shared/binding.bindingselectionchangedevent
-[addHandlerAsync]:       http://dev.office.com/reference/add-ins/shared/binding.addhandlerasync
-[removeHandlerAsync]:    http://dev.office.com/reference/add-ins/shared/binding.removehandlerasync
+[Binding]:               https://dev.office.com/reference/add-ins/shared/binding
+[MatrixBinding]:         https://dev.office.com/reference/add-ins/shared/binding.matrixbinding
+[TableBinding]:          https://dev.office.com/reference/add-ins/shared/binding.tablebinding
+[TextBinding]:           https://dev.office.com/reference/add-ins/shared/binding.textbinding
+[getDataAsync]:          https://dev.office.com/reference/add-ins/shared/binding.getdataasync
+[setDataAsync]:          https://dev.office.com/reference/add-ins/shared/binding.setdataasync
+[SelectionChanged]:      https://dev.office.com/reference/add-ins/shared/binding.bindingselectionchangedevent
+[addHandlerAsync]:       https://dev.office.com/reference/add-ins/shared/binding.addhandlerasync
+[removeHandlerAsync]:    https://dev.office.com/reference/add-ins/shared/binding.removehandlerasync
 
-[Bindings]:              http://dev.office.com/reference/add-ins/shared/bindings.bindings
-[getByIdAsync]:          http://dev.office.com/reference/add-ins/shared/bindings.getbyidasync 
-[getAllAsync]:           http://dev.office.com/reference/add-ins/shared/bindings.getallasync
-[addFromNamedItemAsync]: http://dev.office.com/reference/add-ins/shared/bindings.addfromnameditemasync
-[addFromSelectionAsync]: http://dev.office.com/reference/add-ins/shared/bindings.addfromselectionasync
-[addFromPromptAsync]:    http://dev.office.com/reference/add-ins/shared/bindings.addfrompromptasync
-[releaseByIdAsync]:      http://dev.office.com/reference/add-ins/shared/bindings.releasebyidasync
+[Bindings]:              https://dev.office.com/reference/add-ins/shared/bindings.bindings
+[getByIdAsync]:          https://dev.office.com/reference/add-ins/shared/bindings.getbyidasync 
+[getAllAsync]:           https://dev.office.com/reference/add-ins/shared/bindings.getallasync
+[addFromNamedItemAsync]: https://dev.office.com/reference/add-ins/shared/bindings.addfromnameditemasync
+[addFromSelectionAsync]: https://dev.office.com/reference/add-ins/shared/bindings.addfromselectionasync
+[addFromPromptAsync]:    https://dev.office.com/reference/add-ins/shared/bindings.addfrompromptasync
+[releaseByIdAsync]:      https://dev.office.com/reference/add-ins/shared/bindings.releasebyidasync
 
-[AsyncResult]:          http://dev.office.com/reference/add-ins/shared/asyncresult
-[Office.BindingType]:   http://dev.office.com/reference/add-ins/shared/bindingtype-enumeration
-[Office.select]:        http://dev.office.com/reference/add-ins/shared/office.select 
-[Office.EventType]:     http://dev.office.com/reference/add-ins/shared/eventtype-enumeration 
-[Document.bindings]:    http://dev.office.com/reference/add-ins/shared/document.bindings
+[AsyncResult]:          https://dev.office.com/reference/add-ins/shared/asyncresult
+[Office.BindingType]:   https://dev.office.com/reference/add-ins/shared/bindingtype-enumeration
+[Office.select]:        https://dev.office.com/reference/add-ins/shared/office.select 
+[Office.EventType]:     https://dev.office.com/reference/add-ins/shared/eventtype-enumeration 
+[Document.bindings]:    https://dev.office.com/reference/add-ins/shared/document.bindings
 
 
-[TableBinding.rowCount]: http://dev.office.com/reference/add-ins/shared/binding.tablebinding.rowcount
-[BindingSelectionChangedEventArgs]: http://dev.office.com/reference/add-ins/shared/binding.bindingselectionchangedeventargs
+[TableBinding.rowCount]: https://dev.office.com/reference/add-ins/shared/binding.tablebinding.rowcount
+[BindingSelectionChangedEventArgs]: https://dev.office.com/reference/add-ins/shared/binding.bindingselectionchangedeventargs

@@ -1,3 +1,11 @@
+---
+title: Tests d’utilisation pour les compléments Office
+description: ''
+ms.date: 01/23/2018
+---
+
+
+
 # <a name="usability-testing-for-office-add-ins"></a>Tests d’utilisation pour les compléments Office
 
 Une excellente conception de complément tient compte des comportements des utilisateurs. Étant donné que vos propres idées préconçues influenceront vos décisions de conception, il est important de tester les conceptions avec des utilisateurs réels pour vous assurer que vos compléments fonctionnent correctement pour vos clients. 
@@ -12,12 +20,12 @@ Ces services de test vous aident à simplifier la création d’un plan de test 
 
 Vous avez seulement besoin de cinq participants pour révéler la plupart des problèmes d’utilisation dans votre conception. Incorporez régulièrement des petits tests dans votre cycle de développement pour vous assurer que votre produit est centré sur l’utilisateur.
 
-> 
-  **Remarque :** nous vous recommandons de tester l’utilisation de votre complément sur plusieurs plateformes. Pour [publier votre complément sur l’Office Store](https://msdn.microsoft.com/fr-fr/library/office/jj220037.aspx), il doit fonctionner sur toutes les [plateformes qui prennent en charge les méthodes que vous définissez](https://dev.office.com/add-in-availability).
+> [!NOTE]
+> Nous vous recommandons de tester l’utilisation de votre complément sur plusieurs plateformes. Pour [publier votre complément dans AppSource](https://docs.microsoft.com/fr-fr/office/dev/store/submit-to-the-office-store), il doit fonctionner sur toutes les [plateformes qui prennent en charge les méthodes que vous définissez](../overview/office-add-in-availability.md).
 
-## <a name="1----sign-up-for-a-testing-service"></a>1.    Inscrivez-vous à un service de test
+## <a name="1---sign-up-for-a-testing-service"></a>1.   Inscrivez-vous à un service de test
 
-Pour plus d’informations, voir la section sur la [sélection d’un outil en ligne pour les tests utilisateur distants sans modérateur](https://www.nngroup.com/articles/unmoderated-user-testing-tools/).
+Pour plus d’informations, reportez-vous à la section sur la [sélection d’un outil en ligne pour les tests utilisateur distants sans modérateur](https://www.nngroup.com/articles/unmoderated-user-testing-tools/).
 
 ## <a name="2-develop-your-research-questions"></a>2. Développez vos questions de recherche
  
@@ -25,7 +33,7 @@ Les questions de recherche définissent les objectifs de votre recherche et guid
  
 Voici quelques exemples de questions de recherche :
   
- **Spécifiques**  
+**Spécifiques**  
 
  - Les utilisateurs remarquent-ils le lien indiquant « version d’évaluation gratuite » sur la page d’accueil ?
  - Lorsque les utilisateurs insèrent du contenu dans leur document à partir du complément, savent-ils où il est inséré dans le document ?
@@ -38,7 +46,7 @@ Voici quelques exemples de questions de recherche :
 
 Il est important d’obtenir des données sur l’intégralité du parcours des utilisateurs, de la découverte de votre complément jusqu’à son installation et son utilisation. Envisagez de rédiger des questions de recherche qui abordent les aspects suivants de l’expérience utilisateur dans le complément :
  
- - Recherche de votre complément dans le magasin
+ - Recherche de votre complément dans AppSource
  - Décision d’installation de votre complément
  - Première exécution
  - Commandes du ruban
@@ -59,25 +67,24 @@ Le filtre est l’ensemble de questions et d’exigences que vous allez présent
 Par exemple, si vous recherchez des participants qui connaissent GitHub, pour exclure les utilisateurs qui mentent, incluez des réponses qui ne vous intéressent pas dans la liste des réponses possibles.
 
 **Parmi les référentiels de code source suivants, lesquels connaissez-vous ?**  
- a.    SourceShelf  [*Réponse disqualifiante*]  
- b.    CodeContainer  [*Réponse disqualifiante*]  
- c.    GitHub  [*Doit sélectionner cette réponse*]  
- d.    BitBucket  [*Peut sélectionner cette réponse*]  
- e.    CloudForge  [*Peut sélectionner cette réponse*]  
-
+ a. SourceShelf  [*Réponse disqualifiante*]  
+ b. CodeContainer  [*Réponse disqualifiante*]  
+ c. GitHub  [*Doit sélectionner cette réponse*]  
+ d. BitBucket  [*Peut sélectionner cette réponse*]  
+ e. CloudForge  [*Peut sélectionner cette réponse*]  
 
 Si vous envisagez de tester une version déjà en ligne de votre complément, les questions suivantes peuvent permettre de sélectionner les utilisateurs qui seront en mesure de le faire. 
 
-   **Ce test exige que vous disposiez de Microsoft PowerPoint 2016. Avez-vous PowerPoint 2016 ?**  
-   a.    Oui [*Doit sélectionner cette réponse*]  
-   b.    Non [*Réponse disqualifiante*]  
-   c.    Je ne sais pas [*Réponse disqualifiante*]  
+**Ce test exige que vous disposiez de Microsoft PowerPoint 2016. Avez-vous PowerPoint 2016 ?**  
+ a. Oui [*Doit sélectionner cette réponse*]  
+ b. Non [*Réponse disqualifiante*]  
+ c. Je ne sais pas [*Réponse disqualifiante*]  
 
-   **Pour ce test, vous devez installer un complément gratuit pour PowerPoint 2016 et créer un compte gratuit pour l’utiliser. Êtes-vous prêt à installer un complément et à créer un compte gratuit ?**  
-    a.    Oui [*Doit sélectionner cette réponse*]  
-    b.    Non [*Réponse disqualifiante*]  
+**Pour ce test, vous devez installer un complément gratuit pour PowerPoint 2016 et créer un compte gratuit pour l’utiliser. Êtes-vous prêt à installer un complément et à créer un compte gratuit ?**  
+ a. Oui [*Doit sélectionner cette réponse*]  
+ b. Non [*Réponse disqualifiante*]  
 
-Pour plus d’informations, voir les [meilleures pratiques en matière de questions de filtrage](http://help.usertesting.com/customer/en/portal/articles/2077835-screener-question-best-practices).
+Pour plus d’informations, consultez les [meilleures pratiques en matière de questions de filtrage](http://help.usertesting.com/customer/en/portal/articles/2077835-screener-question-best-practices).
  
 ## <a name="5-create-tasks-and-questions-for-participants"></a>5. Créez des tâches et des questions pour les participants
  
@@ -127,7 +134,7 @@ Un problème d’utilisation rencontré par un seul participant n’est pas suff
 En règle générale, soyez prudent lorsque vous utilisez vos données pour tirer des conclusions. N’essayez pas d’interpréter les données de sorte qu’elles aillent dans un sens en particulier. Ne tombez pas dans ce piège. Soyez honnête lorsque vous identifiez ce que les données prouvent réellement ou ne prouvent pas, et n’hésitez pas à reconnaître que, parfois, elles ne procurent aucune information exploitable. Gardez l’esprit ouvert. Les comportements des utilisateurs vont souvent à l’encontre des attentes du concepteur.
  
 
-## <a name="additional-resources"></a>Ressources supplémentaires
+## <a name="see-also"></a>Voir aussi
  
  - [Réalisation de tests d’utilisation](http://whatpixel.com/howto-conduct-usability-testing/)  
  - [Meilleures pratiques](http://help.usertesting.com/customer/en/portal/articles/1680726-best-practices)  

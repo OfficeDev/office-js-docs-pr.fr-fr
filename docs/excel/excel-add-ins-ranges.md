@@ -1,6 +1,13 @@
-# <a name="work-with-ranges-using-the-excel-javascript-api"></a>Utiliser des plages à l’aide de l’API JavaScript pour Excel
+---
+title: Utilisation de plages à l’aide de l’API JavaScript pour Excel
+description: ''
+ms.date: 12/04/2017
+---
 
-Cet article fournit des exemples de code qui expliquent comment effectuer des tâches courantes avec des plages à l’aide de l’API JavaScript pour Excel. Pour obtenir une liste complète des propriétés et des méthodes prises en charge par l’objet **Range**, reportez-vous à la rubrique [Objet Range (API JavaScript pour Excel)](http://dev.office.com/reference/add-ins/excel/range).
+
+# <a name="work-with-ranges-using-the-excel-javascript-api"></a>Utilisation de plages à l’aide de l’API JavaScript pour Excel
+
+Cet article fournit des exemples de code qui expliquent comment effectuer des tâches courantes avec des plages à l’aide de l’API JavaScript pour Excel. Pour obtenir une liste complète des propriétés et des méthodes prises en charge par l’objet **Range**, reportez-vous à la rubrique [Objet Range (API JavaScript pour Excel)](https://dev.office.com/reference/add-ins/excel/range).
 
 ## <a name="get-a-range"></a>Obtenir une plage
 
@@ -91,11 +98,11 @@ Excel.run(function (context) {
 
 **Données avant l’insertion de la plage**
 
-![Données dans Excel avant l’insertion de la plage](../images/Excel-range-start.png)
+![Données dans Excel avant l’insertion de la plage](../images/excel-ranges-start.png)
 
 **Données après l’insertion de la plage**
 
-![Données dans Excel après l’insertion de plage](../images/Excel-range-after-insert.png)
+![Données dans Excel après l’insertion de plage](../images/excel-ranges-after-insert.png)
 
 ## <a name="clear-a-range-of-cells"></a>Effacer une plage de cellules
 
@@ -114,11 +121,11 @@ Excel.run(function (context) {
 
 **Données avant l’effacement de la plage**
 
-![Données dans Excel avant l’effacement de la plage](../images/Excel-range-start.png)
+![Données dans Excel avant l’effacement de la plage](../images/excel-ranges-start.png)
 
 **Données après l’effacement de plage**
 
-![Données dans Excel après l’effacement de plage](../images/Excel-range-after-clear.png)
+![Données dans Excel après l’effacement de plage](../images/excel-ranges-after-clear.png)
 
 ## <a name="delete-a-range-of-cells"></a>Supprimer une plage de cellules
 
@@ -137,11 +144,11 @@ Excel.run(function (context) {
 
 **Données avant la suppression d’une plage**
 
-![Données dans Excel avant la suppression d’une plage](../images/Excel-range-start.png)
+![Données dans Excel avant la suppression d’une plage](../images/excel-ranges-start.png)
 
 **Données après la suppression d’une plage**
 
-![Données dans Excel après la suppression d’une plage](../images/Excel-range-after-delete.png)
+![Données dans Excel après la suppression d’une plage](../images/excel-ranges-after-delete.png)
 
 ## <a name="set-the-selected-range"></a>Définir la plage sélectionnée
 
@@ -160,7 +167,7 @@ Excel.run(function (context) {
 
 **Plage sélectionnée  B2:E6**
 
-![Plage sélectionnée dans Excel](../images/Excel-range-set-selection.png)
+![Plage sélectionnée dans Excel](../images/excel-ranges-set-selection.png)
 
 ## <a name="get-the-selected-range"></a>Obtenir la plage sélectionnée
 
@@ -200,11 +207,11 @@ Excel.run(function (context) {
 
 **Données avant la mise à jour de la valeur de la cellule**
 
-![Données dans Excel avant la mise à jour de la valeur de la cellule](../images/Excel-range-set-start.png)
+![Données dans Excel avant la mise à jour de la valeur de la cellule](../images/excel-ranges-set-start.png)
 
 **Données après la mise à jour de la valeur de la cellule**
 
-![Données dans Excel après la mise à jour de la valeur de la cellule](../images/Excel-range-set-cell-value.png)
+![Données dans Excel après la mise à jour de la valeur de la cellule](../images/excel-ranges-set-cell-value.png)
 
 ### <a name="set-values-for-a-range-of-cells"></a>Définir des valeurs pour une plage de cellules
 
@@ -228,11 +235,11 @@ Excel.run(function (context) {
 
 **Données avant la mise à jour des valeurs des cellules**
 
-![Données dans Excel avant la mise à jour des valeurs des cellules](../images/Excel-range-set-start.png)
+![Données dans Excel avant la mise à jour des valeurs des cellules](../images/excel-ranges-set-start.png)
 
 **Données après la mise à jour des valeurs des cellules**
 
-![Données dans Excel après la mise à jour des valeurs des cellules](../images/Excel-range-set-cell-values.png)
+![Données dans Excel après la mise à jour des valeurs des cellules](../images/excel-ranges-set-cell-values.png)
 
 ### <a name="set-formula-for-a-single-cell"></a>Définir la formule d’une cellule unique
 
@@ -252,11 +259,11 @@ Excel.run(function (context) {
 
 **Données avant la définition de la formule de la cellule**
 
-![Données dans Excel avant la définition de la formule de la cellule](../images/Excel-range-start-set-formula.png)
+![Données dans Excel avant la définition de la formule de la cellule](../images/excel-ranges-start-set-formula.png)
 
 **Données après la définition de la formule de la cellule**
 
-![Données dans Excel après la définition de la formule de la cellule](../images/Excel-range-set-formula.png)
+![Données dans Excel après la définition de la formule de la cellule](../images/excel-ranges-set-formula.png)
 
 ### <a name="set-formulas-for-a-range-of-cells"></a>Définir des formules pour une plage de cellules
 
@@ -283,11 +290,11 @@ Excel.run(function (context) {
 
 **Données avant la définition des formules des cellules**
 
-![Données dans Excel avant la définition des formules des cellules](../images/Excel-range-start-set-formula.png)
+![Données dans Excel avant la définition des formules des cellules](../images/excel-ranges-start-set-formula.png)
 
 **Données après la définition des formules des cellules**
 
-![Données dans Excel après la définition des formules des cellules](../images/Excel-range-set-formulas.png)
+![Données dans Excel après la définition des formules des cellules](../images/excel-ranges-set-formulas.png)
 
 ## <a name="get-values-text-or-formulas"></a>Obtenir des valeurs, du texte ou des formules
 
@@ -312,7 +319,7 @@ Excel.run(function (context) {
 
 **Données de la plage (les valeurs de la colonne E sont le résultat des formules)**
 
-![Données dans Excel après la définition des formules des cellules](../images/Excel-range-set-formulas.png)
+![Données dans Excel après la définition des formules des cellules](../images/excel-ranges-set-formulas.png)
 
 **range.values (comme consigné dans la console par l’exemple de code ci-dessus)**
 
@@ -370,7 +377,7 @@ Excel.run(function (context) {
 
 **Données de la plage (les valeurs de la colonne E sont le résultat des formules)**
 
-![Données dans Excel après la définition des formules des cellules](../images/Excel-range-set-formulas.png)
+![Données dans Excel après la définition des formules des cellules](../images/excel-ranges-set-formulas.png)
 
 **range.text (comme consigné dans la console par l’exemple de code ci-dessus)**
 
@@ -428,7 +435,7 @@ Excel.run(function (context) {
 
 **Données de la plage (les valeurs de la colonne E sont le résultat des formules)**
 
-![Données dans Excel après la définition des formules des cellules](../images/Excel-range-set-formulas.png)
+![Données dans Excel après la définition des formules des cellules](../images/excel-ranges-set-formulas.png)
 
 **range.formulas (comme consigné dans la console par l’exemple de code ci-dessus)**
 
@@ -489,11 +496,11 @@ Excel.run(function (context) {
 
 **Données de la plage avant la définition de la couleur de police et de la couleur de remplissage**
 
-![Données dans Excel de la plage avant la définition de la couleur de police et de la couleur de remplissage](../images/Excel-range-format-before.png)
+![Données dans Excel de la plage avant la définition de la couleur de police et de la couleur de remplissage](../images/excel-ranges-format-before.png)
 
 **Données de la plage après la définition de la couleur de police et de la couleur de remplissage**
 
-![Données dans Excel après la définition du format](../images/Excel-range-format-font-and-fill.png)
+![Données dans Excel après la définition du format](../images/excel-ranges-format-font-and-fill.png)
 
 ### <a name="set-number-format"></a>Définir le format de nombre
 
@@ -518,13 +525,13 @@ Excel.run(function (context) {
 
 **Données de la plage avant la définition du format de nombre**
 
-![Données dans Excel de la plage avant la définition de la couleur de police et de la couleur de remplissage](../images/Excel-range-format-font-and-fill.png)
+![Données dans Excel de la plage avant la définition de la couleur de police et de la couleur de remplissage](../images/excel-ranges-format-font-and-fill.png)
 
 **Données de la plage après la définition du format de nombre**
 
-![Données dans Excel après la définition du format](../images/Excel-range-format-numbers.png)
+![Données dans Excel après la définition du format](../images/excel-ranges-format-numbers.png)
 
-## <a name="additional-resources"></a>Ressources supplémentaires
+## <a name="see-also"></a>Voir aussi
 
 - [Concepts de base de l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
-- [Objet Range (API JavaScript pour Excel)](http://dev.office.com/reference/add-ins/excel/range)
+- [Objet Range (API JavaScript pour Excel)](https://dev.office.com/reference/add-ins/excel/range)

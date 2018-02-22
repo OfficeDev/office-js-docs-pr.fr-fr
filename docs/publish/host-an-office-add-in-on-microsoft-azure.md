@@ -1,3 +1,10 @@
+---
+title: "Héberger un complément pour Office sur Microsoft\_Azure"
+description: ''
+ms.date: 01/25/2018
+---
+
+
 
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>Héberger un complément pour Office sur Microsoft Azure
 
@@ -9,15 +16,18 @@ Cet article décrit comment déployer une application web de complément sur Azu
 
 1. Installez [Visual Studio 2017](https://www.visualstudio.com/downloads) et choisissez d’inclure la charge de travail de **développement Azure**.
 
-    >**Remarque :** Si vous avez déjà installé Visual Studio 2017, [utilisez le programme d’installation Visual Studio](https://docs.microsoft.com/fr-fr/visualstudio/install/modify-visual-studio) pour vous assurer que la charge de travail de **développement Azure** est installée. 
+    > [!NOTE]
+    > Si vous avez déjà installé Visual Studio 2017, [utilisez le programme d’installation Visual Studio](https://docs.microsoft.com/fr-fr/visualstudio/install/modify-visual-studio) pour vous assurer que la charge de travail de **développement Azure** est installée. 
 
 2. Installez Office 2016. 
     
-     >**Remarque :** Si vous n’avez pas encore Office 2016, vous pouvez vous [inscrire pour une version d’évaluation gratuite d’un mois](http://office.microsoft.com/en-us/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786).
+    > [!NOTE]
+    > Si vous n’avez pas encore Office 2016, vous pouvez vous [inscrire pour obtenir une version d’évaluation gratuite d’un mois](http://office.microsoft.com/en-us/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786).
 
 3.  Obtenez un abonnement Azure.
     
-     >**Remarque :** Si vous n’avez pas encore d’abonnement Azure, vous pouvez [en obtenir un dans le cadre de votre abonnement MSDN](http://www.windowsazure.com/en-us/pricing/member-offers/msdn-benefits/) ou vous [inscrire pour obtenir une version d’évaluation gratuite](https://azure.microsoft.com/en-us/pricing/free-trial). 
+    > [!NOTE]
+    > Si vous n’avez pas encore d’abonnement Azure, vous pouvez [en obtenir un dans le cadre de votre abonnement MSDN](http://www.windowsazure.com/en-us/pricing/member-offers/msdn-benefits/) ou vous [inscrire pour obtenir une version d’évaluation gratuite](https://azure.microsoft.com/en-us/pricing/free-trial). 
 
 ## <a name="step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file"></a>Étape 1 : Créer un dossier partagé pour héberger le fichier manifeste XML de votre complément
 
@@ -31,13 +41,15 @@ Cet article décrit comment déployer une application web de complément sur Azu
     
 5. Dans **Partage de fichiers**, sélectionnez la flèche déroulante vers le bas, puis choisissez **Tout le monde** > **Ajouter** > **Partager**.
     
-> **Remarque :** Dans cette procédure, vous utilisez un partage de fichiers local en tant que catalogue approuvé où vous allez stocker le fichier manifeste XML du complément. Dans un scénario réel, vous pouvez choisir à la place de [déployer le fichier manifeste XML dans un catalogue SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) ou de [publier le complément dans l’Office Store](https://dev.office.com/officestore/docs/submit-to-the-office-store).
+> [!NOTE]
+> Dans cette procédure, vous utilisez un partage de fichiers local en tant que catalogue approuvé où vous allez stocker le fichier manifeste XML du complément. Dans un scénario réel, vous pouvez choisir de [déployer le fichier manifeste XML dans un catalogue SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) ou de [publier le complément dans AppSource](https://docs.microsoft.com/fr-fr/office/dev/store/submit-to-the-office-store), à la place.
 
 ## <a name="step-2-add-the-file-share-to-the-trusted-add-ins-catalog"></a>Étape 2 : Ajouter le partage de fichiers au catalogue de compléments approuvés
 
 1.  Démarrez Word 2016 et créez un document.
 
-    >**Remarque :** Bien que cet exemple utilise Word 2016, vous pouvez utiliser n’importe quelle application Office qui prend en charge des compléments Office comme Excel, Outlook, PowerPoint ou Project 2016.
+    > [!NOTE]
+    > Bien que cet exemple utilise Word 2016, vous pouvez utiliser n’importe quelle application Office qui prend en charge des compléments Office comme Excel, Outlook, PowerPoint ou Project 2016.
     
 2.  Choisissez **Fichier**  >  **Options**.
     
@@ -47,7 +59,8 @@ Cet article décrit comment déployer une application web de complément sur Azu
     
 5. Activez la case **Afficher dans le menu**. 
 
-    >**Remarque :** Lorsque vous stockez un fichier manifeste XML de complément sur un partage qui est défini comme un catalogue de compléments web approuvés, le complément apparaît sous **Dossier partagé** dans la boîte de dialogue **Compléments Office** lorsque l’utilisateur accède à l’onglet **Insérer** dans le ruban et choisit **Mes compléments**.
+    > [!NOTE]
+    > Lorsque vous stockez un fichier manifeste XML de complément sur un partage qui est défini comme un catalogue de compléments web approuvés, le complément apparaît sous **Dossier partagé** dans la boîte de dialogue **Compléments Office** lorsque l’utilisateur accède à l’onglet **Insérer** dans le ruban et choisit **Mes compléments**.
 
 6. Fermez Word 2016.
 
@@ -79,7 +92,10 @@ Pour créer l’application web à l’aide de Visual Studio 2017, procédez c
     
 4. Cliquez avec le bouton droit de la souris sur la nouvelle application web, puis choisissez **Afficher dans le navigateur**. Votre navigateur s’ouvre et affiche une page web avec le message « Votre service d’application a été créé. ».
     
-5. Dans la barre d’adresse du navigateur, modifiez l’URL de l’application web pour qu’elle utilise le protocole HTTPS et appuyez sur **Entrée** pour confirmer que le protocole HTTPS est activé. Le modèle de complément Office nécessite des compléments pour utiliser le protocole HTTPS.
+5. Dans la barre d’adresse du navigateur, modifiez l’URL de l’application web pour qu’elle utilise le protocole HTTPS et appuyez sur **Entrée** pour confirmer que le protocole HTTPS est activé. 
+
+    > [!IMPORTANT]
+    > [!include[HTTPS guidance](../includes/https-guidance.md)] Les sites web Azure fournissent automatiquement un point de terminaison HTTPS.
     
 ### <a name="using-the-azure-portal"></a>Utilisation du portail Azure
 
@@ -105,13 +121,17 @@ Pour créer l’application web à l’aide du portail Azure, procédez comme s
 
 4. Choisissez **Notifications** (l’icône représentant une cloche qui se trouve sur le bord supérieur du portail Azure), puis choisissez la notification **Déploiements réussis** pour ouvrir la page **Vue d’ensemble** du site dans le portail Azure.
 
-    >**Remarque :** La notification passera de **Déploiement en cours** à **Déploiements réussis** quand le déploiement du site sera terminé.
+    > [!NOTE]
+    > La notification passera de **Déploiement en cours** à **Déploiements réussis** quand le déploiement du site sera terminé.
 
 5. Dans la section **Essentials** de la page **Vue d’ensemble** du site dans le portail Azure, sélectionnez l’URL qui s’affiche sous **URL**. Votre navigateur s’ouvre et affiche une page web avec le message « Votre service d’application a été créé. ». 
     
-6. Dans la barre d’adresse du navigateur, modifiez l’URL de l’application web pour qu’elle utilise le protocole HTTPS et appuyez sur **Entrée** pour confirmer que le protocole HTTPS est activé. Le modèle de complément Office nécessite des compléments pour utiliser le protocole HTTPS.    
+6. Dans la barre d’adresse du navigateur, modifiez l’URL de l’application web pour qu’elle utilise le protocole HTTPS et appuyez sur **Entrée** pour confirmer que le protocole HTTPS est activé. 
 
-## <a name="step-4-create-an-office-add-in-in-visual-studio"></a>Étape 4 : Créer un complément Office dans Visual Studio
+    > [!IMPORTANT]
+    > [!include[HTTPS guidance](../includes/https-guidance.md)] Les sites web Azure fournissent automatiquement un point de terminaison HTTPS.
+
+## <a name="step-4-create-an-office-add-in-in-visual-studio"></a>Étape 4 : Créer un complément Office dans Visual Studio.
 
 1. Démarrez Visual Studio en tant qu’administrateur.
     
@@ -159,7 +179,7 @@ Visual Studio crée un complément Word de base que vous pourrez publier tel qu
     
 7. Accédez au partage de fichiers réseau que vous avez créé à l’[étape 1 : Créer un dossier partagé](../publish/host-an-office-add-in-on-microsoft-azure.md#step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file) et collez le fichier manifeste dans le dossier.
 
-## <a name="step-7-insert-and-run-the-add-in-in-the-office-client-application"></a>Étape 7 : Insérer et exécuter le complément dans l’application cliente Office
+## <a name="step-7-insert-and-run-the-add-in-in-the-office-client-application"></a>Étape 7 : insérer et exécuter le complément dans l’application cliente Office
 
 1. Démarrez Word 2016 et créez un document.
     
@@ -173,9 +193,8 @@ Visual Studio crée un complément Word de base que vous pourrez publier tel qu
     
 6. Vérifiez que le complément fonctionne en sélectionnant du texte dans le document et en choisissant le bouton **Mettre en surbrillance** dans le volet de tâches. 
 
-## <a name="additional-resources"></a>Ressources supplémentaires
+## <a name="see-also"></a>Voir aussi
 
 - [Publier votre complément Office](../publish/publish.md)
-    
 - [Créer le package de votre complément à l’aide de Visual Studio pour préparer la publication](../publish/package-your-add-in-using-visual-studio.md)
     

@@ -1,12 +1,19 @@
+---
+title: Boîtes de dialogue dans les compléments Office
+description: ''
+ms.date: 12/04/2017
+---
+
+
 # <a name="dialog-boxes-in-office-add-ins"></a>Boîtes de dialogue dans les compléments Office
  
 Les boîtes de dialogue sont des surfaces qui flottent au-dessus de la fenêtre active de l’application Office. Vous pouvez utiliser les boîtes de dialogue afin de fournir un espace supplémentaire sur l’écran pour les tâches comme les pages de connexion impossibles à ouvrir directement dans un volet des tâches, ou pour les demandes de confirmation d’une action effectuée par un utilisateur, ou pour afficher des vidéos qui peuvent être trop petites si confinées à un volet des tâches.
 
-**Exemple : Boîte de dialogue**
+*Figure 1. Mise en page type pour une boîte de dialogue*
 
-![Exemple d’image affichant une mise en page par défaut pour une boîte de dialogue](../images/overview_withApp_dialog.png)
+![Exemple d’image affichant une mise en page par défaut pour une boîte de dialogue](../images/overview-with-app-dialog.png)
 
-### <a name="best-practices"></a>Meilleures pratiques
+## <a name="best-practices"></a>Meilleures pratiques
 
 |**À faire**|**À ne pas faire**|
 |:-----|:--------|
@@ -15,9 +22,9 @@ Les boîtes de dialogue sont des surfaces qui flottent au-dessus de la fenêtre 
 
 ## <a name="implementation"></a>Implémentation
 
-Pour voir un exemple relatif à l’implémentation d’une boîte de dialogue, consultez [Exemple d’interface API de boîte de dialogue de complément Office](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example) dans GitHub.
+Pour voir un exemple relatif à l’implémentation d’une boîte de dialogue, consultez [Exemple d’API de boîte de dialogue de complément Office](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example) dans GitHub.
 
-## <a name="additional-resources"></a>Ressources supplémentaires
+## <a name="see-also"></a>Voir aussi
 
 - [Exemple de modèle UX](https://office.visualstudio.com/DefaultCollection/OC/_git/GettingStarted-FabricReact)
 - [Ressources de développement GitHub](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)

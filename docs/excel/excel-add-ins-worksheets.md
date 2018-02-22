@@ -1,8 +1,16 @@
+---
+title: Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
+description: ''
+ms.date: 12/04/2017
+---
+
+
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 
-Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes à l’aide de feuilles de calcul utilisant l’API JavaScript pour Excel. Pour une liste complète des propriétés et des méthodes prises en charge par les objets **Worksheet** et **WorksheetCollection**, reportez-vous aux rubriques [Objet Worksheet (API JavaScript pour Excel)](http://dev.office.com/reference/add-ins/excel/worksheet) et [Objet WorksheetCollection (API JavaScript pour Excel)](http://dev.office.com/reference/add-ins/excel/worksheetcollection).
+Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes à l’aide de feuilles de calcul utilisant l’API JavaScript pour Excel. Pour une liste complète des propriétés et des méthodes prises en charge par les objets **Worksheet** et **WorksheetCollection**, reportez-vous aux rubriques [Objet Worksheet (API JavaScript pour Excel)](https://dev.office.com/reference/add-ins/excel/worksheet) et [Objet WorksheetCollection (API JavaScript pour Excel)](https://dev.office.com/reference/add-ins/excel/worksheetcollection).
 
-**Remarque** : les informations contenues dans cet article s’appliquent uniquement aux feuilles de calcul standard. Elles ne concernent pas les feuilles « chart » ou « macro ».
+> [!NOTE]
+> les informations contenues dans cet article s’appliquent uniquement aux feuilles de calcul standard. Elles ne concernent pas les feuilles « chart » ou « macro ».
 
 ## <a name="get-worksheets"></a>Obtenir des feuilles de calcul
 
@@ -27,7 +35,8 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Remarque** : la propriété **id** d’une feuille de calcul identifie exclusivement la feuille de calcul dans un classeur donné et sa valeur ne change pas, même lorsque la feuille de calcul est renommée ou déplacée. Lorsqu’une feuille de calcul est supprimée d’un classeur dans Excel pour Mac, la propriété **id** de la feuille de calcul supprimée peut être réaffectée à une nouvelle feuille de calcul créée par la suite.
+> [!NOTE]
+> La propriété **id** d’une feuille de calcul identifie de manière unique la feuille de calcul dans un classeur donné et sa valeur ne change pas, même lorsque la feuille de calcul est renommée ou déplacée. Lorsqu’une feuille de calcul est supprimée d’un classeur dans Excel pour Mac, la propriété **id** de la feuille de calcul supprimée peut être réaffectée à une nouvelle feuille de calcul créée par la suite.
 
 ## <a name="get-the-active-worksheet"></a>Obtenir la feuille de calcul active
 
@@ -134,7 +143,7 @@ Excel.run(function (context) {
 
 ## <a name="add-a-worksheet"></a>Ajouter une feuille de calcul
 
-L’exemple de code suivant ajoute une nouvelle feuille de calcul nommée **Sample** au classeur, charge ses propriétés **name** et **position**, et écrit un message dans la console. La nouvelle feuille de calcul est ajoutée à la suite de toutes les feuilles de calcul existantes.
+L’exemple de code suivant ajoute une nouvelle feuille de calcul nommée **Sample** au classeur, charge ses propriétés **name** et **position**, et écrit un message dans la console. Le nouveau tableur est ajouté après toutes les feuilles de calcul existantes.
 
 ```js
 Excel.run(function (context) {
@@ -266,8 +275,8 @@ Excel.run(function (context) {
 
 Pour obtenir des exemples qui montrent comment obtenir une plage dans une feuille de calcul, reportez-vous à la rubrique [Utiliser des plages à l’aide de l’API JavaScript pour Excel](excel-add-ins-ranges.md).
 
-## <a name="additional-resources"></a>Ressources supplémentaires
+## <a name="see-also"></a>Voir aussi
 
 - [Concepts de base de l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
-- [Objet Worksheet (API JavaScript pour Excel)](http://dev.office.com/reference/add-ins/excel/worksheet)
-- [Objet WorksheetCollection (API JavaScript pour Excel)](http://dev.office.com/reference/add-ins/excel/worksheetcollection)
+- [Objet Worksheet (API JavaScript pour Excel)](https://dev.office.com/reference/add-ins/excel/worksheet)
+- [Objet WorksheetCollection (API JavaScript pour Excel)](https://dev.office.com/reference/add-ins/excel/worksheetcollection)

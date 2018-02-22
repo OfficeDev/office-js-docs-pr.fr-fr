@@ -1,14 +1,17 @@
+---
+title: Publication de compléments du volet Office et de contenu dans un catalogue SharePoint
+description: ''
+ms.date: 01/23/2018
+---
+
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-catalog"></a>Publication de compléments du volet Office et de contenu dans un catalogue SharePoint
 
-Un catalogue de compléments est une collection de sites dédiée dans une application web SharePoint ou une location SharePoint Online qui héberge des bibliothèques de documents pour des compléments Office et SharePoint. Pour rendre les compléments Office accessibles aux utilisateurs, les administrateurs peuvent charger des fichiers manifeste de compléments Office vers le catalogue de compléments pour leur organisation. Lorsqu’un administrateur enregistre un catalogue de compléments en tant que catalogue approuvé, les utilisateurs peuvent insérer le complément à partir de l’interface utilisateur d’insertion dans une application cliente Office.
+Un catalogue de compléments est une collection de sites dédiée dans une application web SharePoint ou une location SharePoint Online qui héberge des bibliothèques de documents pour des compléments Office et SharePoint. Pour rendre les compléments Office accessibles aux utilisateurs dans leur organisation, les administrateurs peuvent charger des fichiers manifeste de compléments Office vers le catalogue de compléments pour leur organisation. Lorsqu’un administrateur enregistre un catalogue de compléments en tant que catalogue approuvé, les utilisateurs peuvent insérer le complément à partir de l’interface utilisateur d’insertion dans une application cliente Office.
 
-**Remarques importantes :** 
-
-- les catalogues de compléments sur SharePoint ne prennent pas en charge les fonctionnalités de complément qui sont implémentées dans le nœud `VersionOverrides` du [manifeste de complément](../overview/add-in-manifests.md), comme les commandes de complément.
-
-- Si vous ciblez un environnement de cloud ou hybride, nous vous recommandons d’[utiliser un déploiement centralisé via le centre d’administration Office 365](publish/centralized-deployment.md) pour publier vos compléments.
-
-- Les catalogues SharePoint ne sont pas pris en charge dans Office 2016 pour Mac. Pour déployer des compléments Office sur les clients Mac, vous devez les envoyer à l’[Office Store](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx).   
+> [!IMPORTANT]
+> - Les catalogues de compléments sur SharePoint ne prennent pas en charge les fonctionnalités de complément qui sont implémentées dans le nœud `VersionOverrides` du [manifeste de complément](../develop/add-in-manifests.md), comme les commandes de complément.
+> - Si vous ciblez un environnement de cloud ou hybride, nous vous recommandons d’[utiliser un déploiement centralisé via le centre d’administration Office 365](../publish/centralized-deployment.md) pour publier vos compléments.
+> - Les catalogues SharePoint ne sont pas pris en charge dans Office 2016 pour Mac. Pour déployer des compléments Office sur les clients Mac, vous devez les envoyer à [AppSource](https://docs.microsoft.com/fr-fr/office/dev/store/submit-to-the-office-store).   
 
 ## <a name="set-up-an-add-in-catalog"></a>Configuration d’un catalogue de compléments
 
@@ -48,13 +51,13 @@ Suivez les étapes décrites dans l’une des sections suivantes pour configurer
     
 6. Spécifiez l’adresse du site web.
     
-7. Définissez le **quota de stockage** sur la valeur la plus petite possible (110 actuellement). Vous allez installer uniquement des packages de compléments sur cette collection de sites et ils sont très petits.
+7. Définissez l’option  **Quota de stockage** sur la plus faible valeur possible (actuellement 110). Vous n’installerez que des packages de complément sur cette collection de sites et ils sont peu volumineux.
     
-8. Définissez le **quota de ressources du serveur** sur 0 (zéro). (Le quota de ressources du serveur est lié à la limitation des solutions bac à sable (sandbox) dont les performances sont médiocres, mais vous n’installerez aucune solution bac à sable (sandbox) sur votre site de catalogue de compléments.)
+8. Définissez l’option  **Quota de ressources du serveur** sur 0 (zéro). (Le quota de ressources du serveur est lié à la limitation des solutions bac à sable (sandbox) dont les performances sont médiocres, mais vous n’installerez aucune solution bac à sable (sandbox) sur votre site de catalogue de compléments.)
     
 9. Sélectionnez **OK**.
     
-10. Pour ajouter un complément au site du catalogue de compléments, accédez au site que vous venez de créer. Dans le volet de navigation gauche, sélectionnez **Compléments Office**, puis, pour charger un fichier manifeste de complément Office, sélectionnez **Nouveau complément**.
+10. Pour ajouter un complément au site de catalogue de compléments, accédez au site que vous venez de créer. Dans le volet de navigation de gauche, choisissez **Compléments Office**, puis, pour télécharger un fichier manifeste de complément Office, sélectionnez **Nouveau complément**.
 
 ## <a name="publish-an-add-in-to-an-add-in-catalog"></a>Publication d’un complément dans un catalogue de compléments
 
@@ -62,17 +65,17 @@ Pour publier un complément dans un catalogue de compléments, procédez comme s
 
 1. Accédez au catalogue de compléments :
 
-    1- Ouvrez la page principale de l’Administration centrale de SharePoint.
+    - Ouvrez la page principale de l’Administration centrale de SharePoint.
     
-    2- Sélectionnez **Compléments**.
+    - Sélectionnez **Compléments**.
     
-    3- Sélectionnez **Gérer le catalogue de compléments**.
+    - Sélectionnez **Gérer le catalogue de compléments**.
     
-    4- Sélectionnez le lien fourni, puis choisissez **Compléments Office** dans la barre de navigation située à gauche.
+    - Sélectionnez le lien fourni, puis choisissez **Compléments Office** dans la barre de navigation située à gauche.
     
 2. Sélectionnez le lien **Cliquer pour ajouter un nouvel élément**.
     
-3. Choisissez **Parcourir**, puis spécifiez le [manifeste](../overview/add-in-manifests.md) à télécharger.
+3. Choisissez **Parcourir**, puis spécifiez le [manifeste](../develop/add-in-manifests.md) à télécharger.
     
     Les compléments de contenu et de volet Office de ce catalogue sont désormais disponibles dans la boîte de dialogue **Compléments Office**. Pour y accéder, choisissez **Mes compléments** sous l’onglet **Insérer**, puis choisissez **MON ORGANISATION**.
 
@@ -82,7 +85,9 @@ Les utilisateurs finaux peuvent accéder au catalogue des compléments dans une 
 
 1. Dans l’application Office, accédez à **Fichier**  >  **Options**  >  **Centre de gestion de la confidentialité**  >  **Paramètres du centre de gestion de la confidentialité**  >  **Catalogues de compléments approuvés**.
     
-2. Spécifiez l’URL de la _collection de sites SharePoint parente_ du catalogue de compléments. Par exemple, si l’URL du catalogue de compléments Office est :
+2. Spécifiez l’URL de la _collection de sites SharePoint parente_ du catalogue de compléments. 
+    
+    Par exemple, si l’URL du catalogue de compléments Office est :
     
     - `https:// _domain_ /sites/ _AddinCatalogSiteCollection_ /AgaveCatalog`
     
@@ -92,5 +97,4 @@ Les utilisateurs finaux peuvent accéder au catalogue des compléments dans une 
     
 3. Fermez puis rouvrez l’application Office. Le catalogue de compléments est disponible dans la boîte de dialogue **Compléments Office**.
 
-Par ailleurs, un administrateur peut spécifier un catalogue de compléments Office sur SharePoint à l’aide d’une stratégie de groupe. Pour plus d’informations, reportez-vous à la section relative à l’[utilisation d’une stratégie de groupe pour gérer la manière dont les utilisateurs peuvent installer et utiliser des compléments Office](https://technet.microsoft.com/fr-fr/library/jj219429.aspx#BKMK_GP) sur TechNet.
-
+Par ailleurs, un administrateur peut spécifier un catalogue de compléments Office sur SharePoint à l’aide de la stratégie de groupe. Pour plus d’informations, reportez-vous à la section [Utilisation de la stratégie de groupe pour gérer la façon dont les utilisateurs peuvent installer et utiliser les compléments pour Office](https://technet.microsoft.com/fr-fr/library/jj219429.aspx#BKMK_GP) sur TechNet.

@@ -1,10 +1,17 @@
+---
+title: Éléments d’interface utilisateur Office pour les compléments Office
+description: ''
+ms.date: 12/04/2017
+---
+
+
 # <a name="office-ui-elements-for-office-add-ins"></a>Éléments d’interface utilisateur Office pour les compléments Office
 
 Vous pouvez utiliser plusieurs types d’éléments d’interface utilisateur pour étendre l’interface utilisateur d’Office, y compris des commandes de complément et des conteneurs HTML. Ces éléments d’interface utilisateur ressemblent à une extension naturelle d’Office et fonctionnent sur les plateformes. Vous pouvez insérer votre code basé sur le web personnalisé dans l’un de ces éléments.
 
 L’image suivante montre les types d’éléments d’interface utilisateur d’Office que vous pouvez créer.
 
-![Image qui affiche des commandes de complément sur le ruban, un volet des tâches et une boîte de dialogue dans un document Office](../images/overview_withApp_interfaceElements.png)
+![Image qui affiche des commandes de complément sur le ruban, un volet des tâches et une boîte de dialogue dans un document Office](../images/overview-with-app-interface-elements.png)
 
 ## <a name="add-in-commands"></a>Commandes de complément
 
@@ -15,7 +22,7 @@ Utilisez des [commandes de complément](add-in-commands.md) pour ajouter des poi
 |Onglets, menus et boutons du ruban|Permet d’ajouter des boutons personnalisés, des menus (déroulants) ou des onglets au ruban par défaut dans Office. Utilisez les boutons et menus pour déclencher une action dans Office. Utilisez les onglets pour regrouper et organiser des boutons et menus.|
 |Menus contextuels| Permet de développer le menu contextuel par défaut. Les menus contextuels s’affichent lorsque les utilisateurs cliquent avec le bouton droit de la souris sur du texte dans un document Office ou un tableau dans Excel.| 
 
-## <a name="html-containers"></a>Conteneurs HTML
+## <a name="html-containers"></a>Conteneurs HTML
 
 Utilisez les conteneurs HTML pour intégrer du code de l’interface utilisateur basé sur HTML dans les clients Office. Ces pages web peuvent ensuite référencer l’API JavaScript Office pour interagir avec du contenu dans le document. Vous pouvez créer trois types de conteneurs HTML.
 
@@ -25,7 +32,7 @@ Utilisez les conteneurs HTML pour intégrer du code de l’interface utilisateur
 |[Compléments de contenu](content-add-ins.md)|Permet d’afficher l’interface utilisateur personnalisée incorporée dans les documents Office. Utilisez les compléments de contenu pour permettre aux utilisateurs d’interagir avec votre complément directement dans le document Office. Par exemple, vous pouvez afficher du contenu externe tel que des vidéos ou des visualisations de données provenant d’autres sources. |
 |[Boîtes de dialogue](dialog-boxes.md)|Permet d’afficher l’interface utilisateur personnalisée dans une boîte de dialogue superposée sur le document Office. Utilisez une boîte de dialogue pour les interactions qui nécessitent de l’attention et plus de valeur et ne nécessitent pas une interaction côte-à-côte avec le document.|
 
-## <a name="related-resources"></a>Ressources connexes
+## <a name="see-also"></a>Voir aussi
 
 - [Commandes de complément pour Excel, Word et PowerPoint](add-in-commands.md)
 - [Volets des tâches](task-pane-add-ins.md)

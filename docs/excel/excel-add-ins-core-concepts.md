@@ -1,6 +1,13 @@
-# <a name="excel-javascript-api-core-concepts"></a>Concepts de base de l’API JavaScript Excel
+---
+title: Concepts de base de l’API JavaScript pour Excel
+description: ''
+ms.date: 12/04/2017
+---
+
+
+# <a name="excel-javascript-api-core-concepts"></a>Concepts de base de l’API JavaScript pour Excel
  
-Cet article décrit comment utiliser l’[API JavaScript pour Excel](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview) afin de créer des compléments pour Excel 2016. Il présente les concepts fondamentaux de l’utilisation des API et fournit des conseils pour effectuer des tâches spécifiques, comme la lecture ou l’écriture d’une grande plage, la mise à jour de toutes les cellules d’une plage, et bien plus encore.
+Cet article décrit comment utiliser l’[API JavaScript pour Excel](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview) afin de créer des compléments pour Excel 2016. Il présente les concepts fondamentaux de l’utilisation des API et fournit des conseils pour effectuer des tâches spécifiques, comme la lecture ou l’écriture d’une grande plage, la mise à jour de toutes les cellules d’une plage, et bien plus encore.
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Nature asynchrone des API Excel
 
@@ -27,7 +34,7 @@ Excel.run(function (context) {
 
 ## <a name="request-context"></a>Contexte de demande
  
-Excel et votre complément s’exécutent dans deux processus différents. Dans la mesure où ils utilisent des environnements d’exécution différents, les compléments Excel nécessitent un objet **RequestContext** afin de connecter votre complément aux objets dans Excel, tels que les feuilles de calcul, les plages, les graphiques et les tableaux.
+Excel et votre complément sont exécutés dans deux processus distincts. Dans la mesure où ils utilisent des environnements d’exécution différents, les compléments Excel nécessitent un objet **RequestContext** afin de connecter votre complément aux objets dans Excel, tels que les feuilles de calcul, les plages, les graphiques et les tableaux.
  
 ## <a name="proxy-objects"></a>Objets de proxy
  
@@ -46,7 +53,8 @@ selectedRange.format.autofitColumns();
  
 Tout appel de la méthode **sync()** concernant le contexte de demande synchronise l’état entre les objets proxy et les objets du document Excel. La méthode **sync()** exécute les commandes mises en file d’attente concernant le contexte de demande et récupère des valeurs pour les propriétés qui doivent être chargées dans les objets proxy. La méthode **sync()** est exécutée de façon asynchrone et renvoie une [promesse](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), qui est résolue lorsque la méthode **sync()** est terminée.
  
->**Remarque** : dans l’API JavaScript pour Excel, **sync()** est la seule opération asynchrone. Pour optimiser les performances, vous devez mettre en file d’attente autant de modifications que possible avant d’appeler **sync()** et limiter le nombre de fois que vous appelez **sync()**.
+> [!NOTE]
+> Dans l’API JavaScript pour Excel, **sync()** est la seule opération asynchrone. Pour optimiser les performances, vous devez mettre en file d’attente autant de modifications que possible avant d’appeler **sync()** et limiter le nombre d’appels de **sync()**.
  
 L’exemple suivant montre une fonction de traitement par lot qui définit un objet proxy JavaScript local (**selectedRange**), charge une propriété de cet objet et utilise ensuite le modèle de promesses JavaScript pour appeler **context.sync()** afin de synchroniser l’état entre les objets proxy et les objets du document Excel.
  
@@ -74,9 +82,10 @@ Dans l’exemple précédent, l’objet **selectedRange** est défini et sa prop
  
 Avant que vous puissiez lire les propriétés d’un objet proxy, vous devez charger explicitement les propriétés pour remplir l’objet proxy avec des données à partir du document Excel, puis appeler **context.sync()**. Par exemple, si vous créez un objet proxy pour référencer une plage sélectionnée, puis que vous voulez lire la propriété **address** de la plage sélectionnée, vous devez charger la propriété **address** avant de pouvoir la lire. Pour demander le chargement de propriétés d’un objet, appelez la méthode **load()** sur l’objet et spécifiez les propriétés à charger. 
 
->**Remarque** : si vous appelez uniquement des méthodes ou définissez des propriétés sur un objet proxy, il est inutile d’appeler la méthode **load()**. La méthode **load()** n’est nécessaire que lorsque vous souhaitez lire les propriétés sur un objet proxy.
+> [!NOTE]
+> Si vous appelez uniquement des méthodes ou définissez des propriétés sur un objet proxy, il est inutile d’appeler la méthode **load()**. La méthode **load()** n’est nécessaire que lorsque vous souhaitez lire les propriétés sur un objet proxy.
  
-À l’instar des demandes de définition de propriétés ou d’appel de méthodes sur des objets proxy, des demandes de chargement de propriétés sur des objets proxy sont ajoutées à la file d’attente des commandes sur le contexte de demande, qui s’exécutera la prochaine fois que vous appellerez la méthode **sync()**. Vous pouvez mettre en file d’attente autant d’appels **load()** sur le contexte de demande que nécessaire.
+À l’instar des demandes de définition de propriétés ou d’appel de méthodes sur des objets proxy, des demandes de chargement de propriétés sur des objets proxy sont ajoutées à la file d’attente des commandes sur le contexte de demande, qui s’exécutera la prochaine fois que vous appellerez la méthode **sync()**. Vous pouvez mettre en file d’attente autant d’appels **load()** sur le contexte de la demande que nécessaire.
  
 Dans l’exemple suivant, seules les propriétés spécifiques de la plage sont chargées.
  
@@ -127,8 +136,8 @@ object.load({ loadOption });
  
 _Où :_
  
-* `properties` est la liste des propriétés et/ou des noms de relation à charger, fournie sous forme de chaînes séparées par des virgules ou de tableau de noms. Pour plus d’informations, reportez-vous aux méthodes **load()** définies pour les objets dans la rubrique [Référence de l’API JavaScript pour Excel](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview).
-* `loadOption` spécifie un objet qui décrit les options selection, expansion, top et skip. Pour plus d’informations, reportez-vous aux [options](http://dev.office.com/reference/add-ins/excel/loadoption) de chargement d’objet.
+* `properties` est la liste des propriétés et/ou des noms de relation à charger, fournie sous forme de chaînes séparées par des virgules ou de tableau de noms. Pour plus d’informations, reportez-vous aux méthodes **load()** définies pour les objets dans la rubrique [Référence de l’API JavaScript pour Excel](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview).
+* `loadOption` spécifie un objet qui décrit les options select, expand, top et skip. Pour plus d’informations, reportez-vous aux [options](https://dev.office.com/reference/add-ins/excel/loadoption) de chargement d’objet.
 
 Pour plus d’informations sur la méthode **load()**, reportez-vous à la rubrique [Concepts avancés pour l’API JavaScript pour Excel](excel-add-ins-advanced-concepts.md).
 
@@ -147,7 +156,7 @@ range.numberFormat = [[null, null, null, 'm/d/yyyy;@']];
  
 ### <a name="null-input-for-a-property"></a>Entrée null pour une propriété
  
-`null` n’est pas une entrée valide pour la propriété unique. Par exemple, l’extrait de code suivant n’est pas valide, car la propriété **values** de la plage ne peut pas être définie sur `null`.
+`null` n’est pas une entrée valide pour une propriété unique. Par exemple, l’extrait de code suivant n’est pas valide, car la propriété **values** de la plage ne peut pas être définie sur `null`.
  
 ```js
 range.values = null;
@@ -168,7 +177,7 @@ Les propriétés de mise en forme comme `size` et `color` contiendront des valeu
  
 ### <a name="blank-input-for-a-property"></a>Entrée vide pour une propriété
  
-Lorsque vous spécifiez une valeur vide pour une propriété (c'est-à-dire deux guillemets droits sans espace entre `''`), cela est interprété comme une instruction d’effacement ou de réinitialisation de la propriété Par exemple :
+Lorsque vous spécifiez une valeur vide pour une propriété (c’est-à-dire deux guillemets droits sans espace entre `''`), cela est interprété comme une instruction d’effacement ou de réinitialisation de la propriété. Par exemple :
  
 * Si vous spécifiez une valeur vide pour la propriété `values` d’une plage, le contenu de la plage est effacé.
  
@@ -267,8 +276,8 @@ Lorsqu’une erreur d’API se produit, l’API renvoie un objet **error** qui c
 |InsertDeleteConflict|L’opération d’insertion ou de suppression tentée a créé un conflit.|
 |InvalidOperation|L’opération tentée n’est pas valide sur l’objet.|
  
-## <a name="additional-resources"></a>Ressources supplémentaires
+## <a name="see-also"></a>Voir aussi
  
 * [Prise en main des compléments Excel](excel-add-ins-get-started-overview.md)
 * [Exemples de code pour les compléments Excel](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Référence de l’API JavaScript pour Excel](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
+* [Référence de l’API JavaScript pour Excel](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

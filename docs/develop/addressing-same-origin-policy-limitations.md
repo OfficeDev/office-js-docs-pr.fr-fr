@@ -1,3 +1,9 @@
+---
+title: Résolutions des limites de stratégie d’origine identique dans les compléments Office
+description: ''
+ms.date: 12/04/2017
+---
+
 
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>Résolutions des limites de stratégie d’origine identique dans les compléments Office
 
@@ -47,7 +53,7 @@ Une autre manière de résoudre les limitations de la stratégie de même origin
 
 Pour un exemple d’utilisation d’OAuth pour l’authentification, reportez-vous à [Composant WebPart Twitter SharePoint avec OAuth](http://aidangarnish.net/post/Twitter-SharePoint-Web-Part-With-OAuth).
 
-Pour un exemple de code côté serveur qui illustre comment utiliser l’objet `Cookie` dans `System.Net` pour obtenir et définir des valeurs de cookie, voir la propriété [Value](http://msdn2.microsoft.com/fr-fr/library/4f772twc).
+Pour un exemple de code côté serveur qui illustre comment utiliser l’objet `Cookie` dans `System.Net` pour obtenir et définir des valeurs de cookie, voir la propriété [Value](https://msdn.microsoft.com/fr-fr/library/4f772twc).
 
 
 ## <a name="using-cross-origin-resource-sharing-cors"></a>Utilisation du partage de ressources cross-origin (CORS)
@@ -59,11 +65,10 @@ Pour un exemple de la fonctionnalité de partage de ressources cross-origin de [
 ## <a name="building-your-own-proxy-using-iframe-and-post-message"></a>Construction de votre propre proxy à l’aide d’IFRAME et de POSTMESSAGE
 
 
-Pour un exemple de construction de votre propre proxy à l’aide d’IFRAME et de POSTMESSAGE, voir [Messagerie entre fenêtres](http://ejohn.org/blog/cross-window-messaging/).
+Pour un exemple de construction de votre propre proxy à l’aide d’IFRAME et de POSTMESSAGE, reportez-vous à [Messagerie entre fenêtres](http://ejohn.org/blog/cross-window-messaging/).
 
 
-## <a name="additional-resources"></a>Ressources supplémentaires
+## <a name="see-also"></a>Voir aussi
 
-
-- [Confidentialité et sécurité pour les compléments Office](../develop/privacy-and-security.md)
+- [Confidentialité et sécurité pour les compléments Office](../concepts/privacy-and-security.md)
     

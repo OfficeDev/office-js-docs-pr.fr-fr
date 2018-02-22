@@ -1,16 +1,23 @@
-# <a name="enable-single-sign-on-for-office-add-ins"></a>Activer l’authentification unique pour des compléments Office
+---
+title: Activer l’authentification unique pour des compléments Office
+description: ''
+ms.date: 12/04/2017
+---
+
+# <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Activer l’authentification unique pour des compléments Office (aperçu)
 
 Les utilisateurs se connectent à Office (plateformes en ligne, mobiles et de bureau) à l’aide de leur compte Microsoft personnel ou de leur compte professionnel ou scolaire (Office 365). Vous pouvez en profiter et vous servir de la SSO comme suit, sans que l’utilisateur ait besoin de se connecter une deuxième fois :
 
 * Autorisez l’utilisateur à se connecter dans votre complément.
 * Autorisez le complément à accéder à [Microsoft Graph](https://developer.microsoft.com/graph/docs).
 
-![Image illustrant le processus de connexion pour un complément](../images/OfficeHostTitleBarLogin.png)
+![Image illustrant le processus de connexion pour un complément](../images/office-host-title-bar-sign-in.png)
 
->**Remarque :** L’API de l’authentification unique est actuellement prise en charge pour Word, Excel et PowerPoint. Pour plus d’informations sur l’endroit où l’API de l’authentification unique est actuellement prise en charge, consultez la rubrique [Ensembles de conditions requises de l’API d’identité](http://dev.office.com/reference/add-ins/requirement-sets/identity-api-requirement-sets).
-> L’authentification unique est actuellement en préversion pour Outlook. Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location d’Office 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> [!NOTE]
+> L’API de l’authentification unique est actuellement prise en charge en mode aperçu pour Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur l’endroit où l’API d’authentification unique est actuellement prise en charge, consultez la rubrique [Ensembles de conditions requises de l’API d’identité](https://dev.office.com/reference/add-ins/requirement-sets/identity-api-requirement-sets).
+> Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location d’Office 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
-Pour les utilisateurs, cela permet une exécution aisée de votre complément qui ne requiert qu’une seule connexion. Pour les développeurs, cela signifie que l’utilisation de votre complément permet d’authentifier les utilisateurs et d’obtenir un accès autorisé aux données de l’utilisateur via Microsoft Graph avec les informations d’identification que l’utilisateur a déjà fournies à l’application Office.
+Pour les utilisateurs, cela simplifie l’exécution de votre complément car la connexion n’a lieu qu’une seule fois. Pour les développeurs, cela signifie que l’utilisation de votre complément permet d’authentifier les utilisateurs et d’obtenir un accès autorisé aux données de l’utilisateur via Microsoft Graph avec les informations d’identification que l’utilisateur a déjà fournies à l’application Office.
 
 ## <a name="sso-add-in-architecture"></a>Architecture des compléments d’authentification unique
 
@@ -22,9 +29,10 @@ Le manifeste du complément contient un balisage qui spécifie comment le compl�
 
 Le diagramme suivant illustre le mode de fonctionnement du processus d’authentification unique.
 <!-- Minor fixes to the text in the diagram - change V2 to v2.0, and change "(e.g. Word, Excel, etc.)" to "(for example, Word, Excel)". -->
-![Diagramme illustrant le processus d’authentification unique](../images/SSOOverviewDiagram.png)
 
-1. Dans le complément, JavaScript appelle une nouvelle API Office.js `getAccessTokenAsync`. Cela indique à l’application hôte Office qu’elle doit obtenir un jeton d’accès au complément. (Ci-après, ce jeton est également appelé **« jeton de complément »**.)
+![Diagramme illustrant le processus d’authentification unique](../images/sso-overview-diagram.png)
+
+1. Dans le complément, JavaScript appelle une nouvelle API Office.js `getAccessTokenAsync`. Cela indique à l’application hôte Office qu’elle doit obtenir un jeton d’accès au complément. (Ci-après, également appelé **jeton de complément**.)
 1. Si l’utilisateur n’est pas connecté, l’application hôte Office ouvre une fenêtre contextuelle pour que l’utilisateur se connecte.
 1.  Si c’est la première fois que l’utilisateur actuel utilise votre complément, il est invité à donner son consentement.
 1. L’application hôte Office demande le **jeton de complément** au point de terminaison Azure AD v2.0 pour l’utilisateur actuel.
@@ -43,8 +51,8 @@ Le diagramme suivant illustre le mode de fonctionnement du processus d’authent
 
 Cette section décrit les tâches impliquées dans la création d’un complément Office qui utilise l’authentification unique. Ces tâches sont décrites ici indépendamment du langage et de l’infrastructure. Pour obtenir des exemples de procédures pas à pas détaillées, consultez les rubriques suivantes :
 
-* [Créer un complément Office Node.js qui utilise l’authentification unique](../develop/create-sso-office-add-ins-nodejs.md)
-* [Créer un complément Office ASP.NET qui utilise l’authentification unique](../develop/create-sso-office-add-ins-aspnet.md)
+* [Créer un complément Office Node.js qui utilise l’authentification unique](create-sso-office-add-ins-nodejs.md)
+* [Créer un complément Office ASP.NET qui utilise l’authentification unique](create-sso-office-add-ins-aspnet.md)
 
 ### <a name="create-the-service-application"></a>Créer l’application de service
 
@@ -63,7 +71,7 @@ Ajoutez un nouveau balisage au manifeste du complément :
 * **ID** : ID client du complément.
 * **Resource** : URL du complément.
 * **Scopes** : parent d’un ou plusieurs éléments **Scope**.
-* **Scope** : spécifie une autorisation nécessaire pour le complément dans Microsoft Graph. Par exemple : `User.Read`, `Mail.Read` ou `offline_access`). Pour plus d’informations, reportez-vous à l’article relatif aux [Autorisations Microsoft Graph](https://developer.microsoft.com/en-us/graph/docs/concepts/permissions_reference).
+* **Scope** : spécifie une autorisation nécessaire pour le complément dans Microsoft Graph. Par exemple : `User.Read`, `Mail.Read` ou `offline_access`). Pour plus d’informations, reportez-vous à l’article relatif aux [Autorisations Microsoft Graph](https://developer.microsoft.com/fr-fr/graph/docs/concepts/permissions_reference).
 
 Pour les hôtes Office autres qu’Outlook, ajoutez le balisage à la fin de la section `<VersionOverrides ... xsi:type="VersionOverridesV1_0">`. Pour Outlook, ajoutez le balisage à la fin de la section `<VersionOverrides ... xsi:type="VersionOverridesV1_1">`.
 

@@ -1,6 +1,14 @@
+---
+title: Utiliser des graphiques à l’aide de l’API JavaScript pour Excel
+description: ''
+ms.date: 12/04/2017
+---
+
+
+
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Utiliser des graphiques à l’aide de l’API JavaScript pour Excel
 
-Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes à l’aide de graphiques utilisant l’API JavaScript pour Excel. Pour une liste complète des propriétés et des méthodes prises en charge par les objets **Chart** et **ChartCollection**, reportez-vous à la rubrique [Objet Chart (API JavaScript pour Excel)](http://dev.office.com/reference/add-ins/excel/chart) et [Objet ChartCollection (API JavaScript pour Excel)](http://dev.office.com/reference/add-ins/excel/chartcollection).
+Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes à l’aide de graphiques utilisant l’API JavaScript pour Excel. Pour une liste complète des propriétés et des méthodes prises en charge par les objets **Chart** et **ChartCollection**, reportez-vous à la rubrique [Objet Chart (API JavaScript pour Excel)](https://dev.office.com/reference/add-ins/excel/chart) et [Objet ChartCollection (API JavaScript pour Excel)](https://dev.office.com/reference/add-ins/excel/chartcollection).
 
 ## <a name="create-a-chart"></a>Créer un graphique
 
@@ -24,14 +32,15 @@ Excel.run(function (context) {
 
 **Nouveau graphique en courbes**
 
-![Nouveau graphique en courbes dans Excel](../images/Excel-chart-create-line.png)
+![Nouveau graphique en courbes dans Excel](../images/excel-charts-create-line.png)
 
 
 ## <a name="add-a-data-series-to-a-chart"></a>Ajouter une série de données à un graphique
 
 L’exemple de code suivant ajoute une série de données au premier graphique de la feuille de calcul. La nouvelle série de données correspond à la colonne nommée **2016** et repose sur les données de la plage **D2:D5**.
 
-**Remarque** : cet exemple utilise des API actuellement disponibles uniquement en préversion publique (bêta). Pour exécuter cet exemple, vous devez utiliser la bibliothèque bêta de CDN Office.js : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> [!NOTE]
+> cet exemple utilise des API actuellement disponibles uniquement en préversion publique (bêta). Pour exécuter cet exemple, vous devez utiliser la bibliothèque bêta de CDN Office.js : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
 ```js
 Excel.run(function (context) {
@@ -48,11 +57,11 @@ Excel.run(function (context) {
 
 **Graphique avant l’ajout de la série de données 2016**
 
-![Graphique dans Excel avant l’ajout de la série de données 2016](../images/Excel-chart-data-series-before.png)
+![Graphique dans Excel avant l’ajout de la série de données 2016](../images/excel-charts-data-series-before.png)
 
 **Graphique après l’ajout de la série de données 2016**
 
-![Graphique dans Excel après l’ajout de la série de données 2016](../images/Excel-chart-data-series-after.png)
+![Graphique dans Excel après l’ajout de la série de données 2016](../images/excel-charts-data-series-after.png)
 
 ## <a name="set-chart-title"></a>Définir le titre du graphique
 
@@ -71,7 +80,7 @@ Excel.run(function (context) {
 
 **Graphique après la définition du titre**
 
-![Graphique avec un titre dans Excel](../images/Excel-chart-title-set.png)
+![Graphique avec un titre dans Excel](../images/excel-charts-title-set.png)
 
 ## <a name="set-properties-of-an-axis-in-a-chart"></a>Définir les propriétés d’un axe d’un graphique
 
@@ -94,13 +103,14 @@ Excel.run(function (context) {
 
 **Graphique après la définition de l’axe des abscisses**
 
-![Graphique avec un titre d’axe dans Excel](../images/Excel-chart-axis-title-set.png)
+![Graphique avec un titre d’axe dans Excel](../images/excel-charts-axis-title-set.png)
 
 ### <a name="set-axis-display-unit"></a>Définir l’unité d’affichage de l’axe
 
 L’exemple de code suivant définit l’unité d’affichage de l’axe des ordonnées pour le premier graphique de la feuille de calcul sur **Hundreds**.
 
-**Remarque** : cet exemple utilise des API actuellement disponibles uniquement en préversion publique (bêta). Pour exécuter cet exemple, vous devez utiliser la bibliothèque bêta de CDN Office.js : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> [!NOTE]
+> cet exemple utilise des API actuellement disponibles uniquement en préversion publique (bêta). Pour exécuter cet exemple, vous devez utiliser la bibliothèque bêta de CDN Office.js : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
 ```js
 Excel.run(function (context) {
@@ -115,7 +125,7 @@ Excel.run(function (context) {
 
 **Graphique après la définition de l’unité d’affichage de l’axe des ordonnées**
 
-![Graphique avec l’unité d’affichage de l’axe dans Excel](../images/Excel-chart-axis-display-unit-set.png)
+![Graphique avec l’unité d’affichage de l’axe dans Excel](../images/excel-charts-axis-display-unit-set.png)
 
 ## <a name="set-visibility-of-gridlines-in-a-chart"></a>Définir la visibilité du quadrillage dans un graphique
 
@@ -134,7 +144,7 @@ Excel.run(function (context) {
 
 **Graphique avec du quadrillage masqué**
 
-![Graphique avec du quadrillage masqué dans Excel](../images/Excel-chart-gridlines-removed.png)
+![Graphique avec du quadrillage masqué dans Excel](../images/excel-charts-gridlines-removed.png)
 
 ## <a name="chart-trendlines"></a>Courbes de tendance de graphiques
 
@@ -142,7 +152,8 @@ Excel.run(function (context) {
 
 L’exemple de code suivant ajoute une courbe de tendance de moyenne mobile à la première série du premier graphique de la feuille de calcul nommée **Sample**. La courbe de tendance affiche une moyenne mobile sur 5 périodes.
 
-**Remarque** : cet exemple utilise des API actuellement disponibles uniquement en préversion publique (bêta). Pour exécuter cet exemple, vous devez utiliser la bibliothèque bêta de CDN Office.js : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> [!NOTE]
+> cet exemple utilise des API actuellement disponibles uniquement en préversion publique (bêta). Pour exécuter cet exemple, vous devez utiliser la bibliothèque bêta de CDN Office.js : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
 ```js
 Excel.run(function (context) {
@@ -158,13 +169,14 @@ Excel.run(function (context) {
 
 **Graphique avec courbe de tendance de moyenne mobile**
 
-![Graphique avec courbe de tendance de moyenne mobile dans Excel](../images/Excel-chart-create-trendline.png)
+![Graphique avec courbe de tendance de moyenne mobile dans Excel](../images/excel-charts-create-trendline.png)
 
 ### <a name="update-a-trendline"></a>Mettre à jour une courbe de tendance
 
 L’exemple de code suivant définit la courbe de tendance sur le type **Linear** pour la première série du premier graphique de la feuille de calcul nommée **Sample**.
 
-**Remarque** : cet exemple utilise des API actuellement disponibles uniquement en préversion publique (bêta). Pour exécuter cet exemple, vous devez utiliser la bibliothèque bêta de CDN Office.js : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> [!NOTE]
+> cet exemple utilise des API actuellement disponibles uniquement en préversion publique (bêta). Pour exécuter cet exemple, vous devez utiliser la bibliothèque bêta de CDN Office.js : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
 ```js
 Excel.run(function (context) {
@@ -181,10 +193,10 @@ Excel.run(function (context) {
 
 **Graphique avec une courbe de tendance linéaire**
 
-![Graphique avec une courbe de tendance linéaire dans Excel](../images/Excel-chart-trendline-linear.png)
+![Graphique avec une courbe de tendance linéaire dans Excel](../images/excel-charts-trendline-linear.png)
 
-## <a name="additional-resources"></a>Ressources supplémentaires
+## <a name="see-also"></a>Voir aussi
 
 - [Concepts de base de l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
-- [Objet Chart (API JavaScript pour Excel)](http://dev.office.com/reference/add-ins/excel/chart) 
-- [Objet ChartCollection (API JavaScript pour Excel)](http://dev.office.com/reference/add-ins/excel/chartcollection)
+- [Objet Chart (API JavaScript pour Excel)](https://dev.office.com/reference/add-ins/excel/chart) 
+- [Objet ChartCollection (API JavaScript pour Excel)](https://dev.office.com/reference/add-ins/excel/chartcollection)

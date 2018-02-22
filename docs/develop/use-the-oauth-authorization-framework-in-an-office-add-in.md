@@ -1,3 +1,9 @@
+---
+title: Utilisation d’OAuth dans un complément Office
+description: ''
+ms.date: 12/04/2017
+---
+
 
 # <a name="use-the-oauth-authorization-framework-in-an-office-add-in"></a>Utilisation d’OAuth dans un complément Office
 
@@ -7,11 +13,12 @@ Les fournisseurs de services en ligne peuvent proposer des API publiques qui se 
 
 Cette rubrique explique comment mettre en œuvre un flux d’authentification dans votre complément pour procéder à l’authentification des utilisateurs. Les segments de code inclus dans cette rubrique sont extraits de l’exemple de code [Office-Add-in-NodeJS-ServerAuth](https://github.com/OfficeDev/Office-Add-in-NodeJS-ServerAuth).
 
- **Remarque**  Pour des raisons de sécurité, les navigateurs ne sont pas autorisés à afficher les pages de connexion dans un IFrame. Selon la version d’Office utilisée par vos clients, notamment les versions web, votre complément s’affiche dans un IFrame. C’est pourquoi il est indispensable de savoir comment gérer le flux d’authentification. 
+> [!NOTE]
+> Pour des raisons de sécurité, les navigateurs ne sont pas autorisés à afficher les pages de connexion dans un IFrame. Selon la version d’Office utilisée par vos clients, notamment les versions web, votre complément s’affiche dans un IFrame. C’est pourquoi il est indispensable de savoir comment gérer le flux d’authentification.  
 
 Le schéma suivant présente les composants nécessaires, ainsi que le flux d’événements qui se produisent lors de l’implémentation de l’authentification dans votre complément.
 
-![Réalisation d’une authentification OAuth dans un complément Office](../images/OAuthInOfficeAddin.png)
+![Réalisation d’une authentification OAuth dans un complément Office](../images/oauth-in-office-add-in.png)
 
 Le schéma illustre la façon dont les composants requis suivants sont utilisés :
 
@@ -24,7 +31,8 @@ Le schéma illustre la façon dont les composants requis suivants sont utilisés
     
 
     
- **Important**  Les jetons d’accès ne peuvent pas être renvoyés au volet Office, mais ils peuvent être utilisés sur le serveur. Dans cet exemple de code, les jetons d’accès sont stockés dans la base de données pendant 2 minutes. Passé ce délai, ils sont purgés de la base de données et les utilisateurs sont invités à se ré-authentifier. Avant de changer ce délai dans vos paramètres, pensez aux risques de sécurité que peut poser le stockage de jetons d’accès dans une base de données pendant plus de deux minutes.
+> [!IMPORTANT]
+> Les jetons d’accès ne peuvent pas être renvoyés au volet Office, mais ils peuvent être utilisés sur le serveur. Dans cet exemple de code, les jetons d’accès sont stockés dans la base de données pendant deux minutes. Passé ce délai, ils sont purgés de la base de données et les utilisateurs sont invités à se ré-authentifier. Avant de changer ce délai dans vos paramètres, pensez aux risques de sécurité que peut poser le stockage de jetons d’accès dans une base de données pendant plus de deux minutes.
 
 
 ## <a name="step-1---start-socket-and-open-a-pop-up-window"></a>Étape 1 : démarrer un socket et ouvrer une fenêtre contextuelle
@@ -114,9 +122,7 @@ Le segment de code suivant, issu de connect.js, met à jour l’interface utilis
 ```
 
 
-## <a name="additional-resources"></a>Ressources supplémentaires
-<a name="bk_addresources"> </a>
-
+## <a name="see-also"></a>Voir aussi
 
 - [Exemple d’authentification du complément Office sur le serveur pour Node.js](https://github.com/OfficeDev/Office-Add-in-Nodejs-ServerAuth/blob/master/README.md)
     

@@ -1,3 +1,9 @@
+---
+title: Langage de création d’un complément Office
+description: ''
+ms.date: 12/04/2017
+---
+
 # <a name="office-add-in-design-language"></a>Langage de création d’un complément Office
 
 Le langage de création d’Office est un système visuel clair et simple qui garantit la cohérence entre expériences. Il contient un ensemble d’éléments visuels qui définissent les interfaces Office, y compris : 
@@ -22,12 +28,14 @@ Segoe est la police standard pour Office. Utilisez-la dans votre complément pou
 |Exemple |Classe |Taille |Pondération |Utilisation recommandée |
 |------ |----- |---- |------ |----------------- |
 |![Image de texte Hero](../images/add-in-typeramp-hero.png)|.ms-font-xxl |28 px | Segoe Light |<ul><li>Cette classe est plus grande que tous les autres éléments typographiques dans Office. Utilisez-la avec parcimonie pour éviter une hiérarchie visuelle non valide.</li><li>Évitez d’utiliser de longues chaînes dans des espaces limités.</li><li>Laissez suffisamment d’espaces blancs autour du texte en utilisant cette classe.</li><li>Couramment utilisée pour les premiers messages, éléments hero ou autres appels à l’action.</li></ul> |
-|![Image de texte Hero](../images/add-in-typeramp-title.png)|.ms-font-xl |21 px |Segoe Light | <ul><li>Cette classe correspond au titre du volet des tâches des applications Office.</li><li>Utilisez-la avec parcimonie pour éviter une hiérarchie typographique plate.</li><li>Couramment utilisée comme élément de niveau supérieur (titres de contenu, de page ou de boîte de dialogue).</li><li></ul> |
+|![Image de texte Hero](../images/add-in-typeramp-title.png)|.ms-font-xl |21 px |Segoe Light | <ul><li>Cette classe correspond au titre du volet des tâches des applications Office.</li><li>Utilisez-la avec parcimonie pour éviter une hiérarchie typographique plate.</li><li>Couramment utilisée comme élément de niveau supérieur (titres de contenu, de page ou de boîte de dialogue).</li></ul> |
 |![Image de texte Hero](../images/add-in-typeramp-subtitle.png)|.ms-font-l |17 px |Segoe Semilight | <ul><li>Cette classe est le premier point en dessous des titres.</li><li>Couramment utilisée comme sous-titre, élément de navigation ou en-tête de groupe.</li><ul> |
-|![Image de texte Hero](../images/add-in-typeramp-body.png)|.ms-font-m |14 px |Segoe Regular |* Couramment utilisée comme corps de texte dans les compléments. |
-|![Image de texte Hero](../images/add-in-typeramp-caption.png)|.ms-font-xs |11 px | Segoe Regular |* Couramment utilisée pour le texte secondaire ou tertiaire (horodateurs, par lignes, légendes ou étiquettes de champ). |
-|![Image de texte Hero](../images/add-in-typeramp-annotation.png)|.ms-font-mi |10 px |Segoe Semibold |* Le plus petit niveau dans le dégradé de polices doit être rarement utilisé. Il est disponible lorsque la lisibilité n’est pas requise. |
-> La couleur du texte n’est pas incluse dans ces classes de base. Utilisez « Neutre primaire » de Fabric pour la plupart du texte sur arrière-plans blancs.
+|![Image de texte Hero](../images/add-in-typeramp-body.png)|.ms-font-m |14 px |Segoe Regular |<ul><li>Couramment utilisée comme corps de texte dans les compléments.</li><ul>|
+|![Image de texte Hero](../images/add-in-typeramp-caption.png)|.ms-font-xs |11 px | Segoe Regular |<ul><li>Couramment utilisée pour le texte secondaire ou tertiaire (horodatages, signatures, légendes ou étiquettes de champ).</li><ul>|
+|![Image de texte Hero](../images/add-in-typeramp-annotation.png)|.ms-font-mi |10 px |Segoe Semibold |<ul><li>Le plus petit niveau dans le dégradé de polices doit être rarement utilisé. Il est disponible lorsque la lisibilité n’est pas requise.</li><ul>|
+
+> [!NOTE]
+> La couleur du texte n’est pas incluse dans ces classes de base. Utilisez le « neutre primaire » de Fabric pour la plupart du texte sur des arrière-plans blancs.
 
 ## <a name="color"></a>Couleur
 La couleur est souvent utilisée pour mettre en évidence la marque et renforcer la hiérarchie visuelle. Elle permet d’identifier une interface et de guider les clients dans une expérience. Dans Office, la couleur est utilisée pour les mêmes objectifs mais elle est appliquée délibérément et au minimum. Elle ne surcharge jamais le contenu clients. Même lorsque chaque application Office est marquée avec sa propre couleur dominante, elle est utilisée avec parcimonie.
@@ -36,9 +44,9 @@ Office UI Fabric comprend un jeu de couleurs de thème par défaut. Lorsque Fabr
 
 Les applications Office permettent aux clients de personnaliser leurs interfaces en appliquant un thème de l’interface utilisateur d’Office. Les clients peuvent choisir entre quatre thèmes de l’interface utilisateur pour modifier le style des arrière-plans et des boutons dans Word, PowerPoint, Excel et les autres applications de la suite Office. Pour que vos compléments paraissent comme des composants naturels d’Office et répondent à la personnalisation, utilisez nos API de thèmes. Par exemple, les couleurs d’arrière-plan du volet des tâches deviennent gris foncé dans certains thèmes. Nos API de thèmes vous permettent de faire de même et d’ajuster le texte de premier plan pour garantir l’[accessibilité](add-in-design-guidelines.md#accessibility-guidelines).
 
->  Pour les compléments de volet de tâches et de messagerie, utilisez la propriété [Context.officeTheme](https://dev.office.com/docs/reference/shared/office.context.officetheme.htm) pour utiliser les thèmes correspondant à ceux des applications Office. Actuellement, cette API n’est disponible que dans Office 2016.
-
-> Pour plus d’informations sur les compléments de contenu pour PowerPoint, voir [Utiliser des thèmes Office dans vos compléments PowerPoint](https://dev.office.com/docs/add-ins/powerpoint/use-document-themes-in-your-powerpoint-add-ins.htm).
+> [!NOTE]
+> - Pour les compléments de volet de tâches et de messagerie, utilisez la propriété [Context.officeTheme](https://dev.office.com/reference/add-ins/shared/office.context.officetheme) pour utiliser les thèmes correspondant à ceux des applications Office. Actuellement, cette API n’est disponible que dans Office 2016.
+> - Pour plus d’informations sur les compléments de contenu pour PowerPoint, reportez-vous à l’article expliquant comment [utiliser des thèmes Office dans vos compléments PowerPoint](../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md).
 
 Appliquez les recommandations générales suivantes pour la couleur :
 
@@ -47,7 +55,7 @@ Appliquez les recommandations générales suivantes pour la couleur :
 * Évitez les conflits inutiles avec des couleurs non Office.
 * Utilisez vos propres couleurs de la marque pour créer une association avec votre service ou votre société.
 * Assurez-vous que tout le texte est accessible. N’oubliez pas qu’il existe un ratio de contraste 4.5:1 entre le texte de premier plan et l’arrière-plan.
-* Pensez au daltonisme. Utilisez plus que simplement de la couleur pour indiquer l’interactivité et la hiérarchie.
+* Pensez aux personnes atteintes de daltonisme : n’utilisez pas que des couleurs pour indiquer l’interactivité et la hiérarchie.
 * Consultez [Instructions relatives aux icônes](design-icons.md) pour en savoir plus sur la conception des icônes de commande de complément avec la palette de couleurs d’icônes Office.
 
 ## <a name="layout"></a>Disposition
@@ -57,15 +65,15 @@ Pour des recommandations sur la disposition, voir [Volet des tâches](task-pane-
 
 Appliquez les recommandations générales suivantes pour les dispositions :
 
-*    Évitez les marges étroites ou larges sur vos conteneurs HTML. 20 pixels est une grande valeur par défaut. 
-*    Alignez les éléments intentionnellement. Les retraits supplémentaires et les nouveaux points d’alignement doivent aider la hiérarchie visuelle.
-*    Les interfaces Office se trouvent sur une grille 4px. Essayez de conserver votre marge intérieure entre les éléments à des multiples de 4. 
-*    Une interface surchargée peut être source de confusion et ne pas être utilisée facilement avec les interactions tactiles. 
-*    Vérifiez que les dispositions sont cohérentes entre les écrans. Les modifications de disposition inattendues ressemblent à des bogues visuels qui contribuent à un manque de confiance en votre solution. 
-*    Suivez les modèles de disposition courants. Les conventions permettent aux utilisateurs de comprendre comment utiliser une interface.
-*    Évitez les éléments redondants comme la personnalisation ou les commandes.
-*    Consolidez les contrôles et les affichages pour éviter une utilisation excessive de la souris. 
-*    Créez des expériences réactives qui s’adaptent aux hauteurs et largeurs du conteneur HTML.
+*   Évitez les marges étroites ou larges sur vos conteneurs HTML. 20 pixels est une grande valeur par défaut. 
+*   Alignez les éléments intentionnellement. Les retraits supplémentaires et les nouveaux points d’alignement doivent aider la hiérarchie visuelle.
+*   Les interfaces Office se trouvent sur une grille 4px. Essayez de conserver votre marge intérieure entre les éléments à des multiples de 4. 
+*   Une interface surchargée peut être source de confusion et ne pas être utilisée facilement avec les interactions tactiles. 
+*   Vérifiez que les dispositions sont cohérentes entre les écrans. Les modifications de disposition inattendues ressemblent à des bogues visuels qui contribuent à un manque de confiance en votre solution. 
+*   Suivez les modèles de disposition courants. Les conventions permettent aux utilisateurs de comprendre comment utiliser une interface.
+*   Évitez les éléments redondants comme la personnalisation ou les commandes.
+*   Consolidez les contrôles et les affichages pour éviter une utilisation excessive de la souris. 
+*   Créez des expériences réactives qui s’adaptent aux hauteurs et largeurs du conteneur HTML.
 
 ## <a name="component-language"></a>Langage du composant
 
@@ -75,15 +83,15 @@ Office UI Fabric rend les composants qui ressemblent à une partie d’Office et
 
 Appliquez les recommandations générales suivantes pour les composants :
 
-*    Ne répliquez pas le ruban Office à l’intérieur de votre complément
-*    Évitez de créer des menus, des boutons ou d’autres composants qui se comportent différemment des composants Office.
-*    Utilisez les composants [Office UI Fabric](office-ui-fabric.md) que nous recommandons pour les compléments.
-*    Utilisez les [modèles de conception UX](ux-design-patterns.md) pour les composants de l’interface utilisateur d’Office courants. 
+*   Ne répliquez pas le ruban Office à l’intérieur de votre complément
+*   Évitez de créer des menus, des boutons ou d’autres composants qui se comportent différemment des composants Office.
+*   Utilisez les composants [Office UI Fabric](office-ui-fabric.md) que nous recommandons pour les compléments.
+*   Utilisez les [modèles de conception UX](ux-design-patterns.md) pour les composants de l’interface utilisateur d’Office courants. 
 
 ## <a name="icons"></a>Icônes
 Les icônes sont la représentation visuelle d’un comportement ou d’un concept. Elles sont souvent utilisées pour ajouter une signification aux contrôles et commandes. Les visuels, qu’ils soient réalistes ou symboliques, permettent à l’utilisateur de naviguer dans l’interface utilisateur de la même façon que les signes l’aident à naviguer dans son environnement. Ils doivent être simples et clairs et contenir uniquement les informations nécessaires pour permettre aux clients d’analyser rapidement l’action qui se produit lorsqu’ils choisissent un contrôle.
 
-Les interfaces de ruban Office ont un style visuel standard. Si vous concevez une commande de complément pour le ruban Office, suivez nos [instructions relatives aux icônes](design-icons). Cela garantit la cohérence dans les applications Office. Les instructions vous aident à créer un ensemble de composants PNG pour votre solution qui s’intègrent naturellement dans Office.
+Les interfaces de ruban Office ont un style visuel standard. Si vous concevez une commande de complément pour le ruban Office, suivez nos [instructions relatives aux icônes](design-icons.md). Cela garantit la cohérence dans les applications Office. Les instructions vous aident à créer un ensemble de composants PNG pour votre solution qui s’intègrent naturellement dans Office.
 
 De nombreux conteneurs HTML contiennent des contrôles avec iconographie. Utilisez la police personnalisée d’Office UI Fabric pour le rendu des icônes de style Office dans votre complément. La police d’icône de Fabric contient de nombreux glyphes pour les métaphores Office courantes que vous pouvez redimensionner, colorier et personnaliser selon vos besoins. Si vous avez un langage visuel existant avec votre propre jeu d’icônes, n’hésitez pas à l’utiliser dans vos canevas HTML. Créer la continuité avec votre marque avec un jeu d’icônes standard est une partie importante de tout langage de création. Soyez prudent pour éviter de créer de la confusion pour les clients en conflit avec les métaphores Office.
 
@@ -108,4 +116,8 @@ Appliquez les recommandations générales suivantes pour les animations :
 * Chorégraphiez les éléments pour renforcer la hiérarchie et les modèles mentaux.
 * Utilisez le mouvement pour guider l’utilisateur et fournir un focus de composition sur les éléments clés pour l’exécution d’une tâche. 
 * Pensez à l’origine de votre élément déclencheur. Utilisez le mouvement pour créer un lien entre l’action et l’interface utilisateur obtenue.
-* Analysez le style et l’objectif de votre contenu lors du choix des animations. Gérez les messages critiques différemment des navigations d’exploration.
+* Prenez en compte le ton et l’objectif de votre contenu lors du choix des animations. Gérez les messages critiques différemment des navigations d’exploration.
+
+## <a name="see-also"></a>Voir aussi
+
+- [Instructions de création d’un complément Office](add-in-design-guidelines.md)

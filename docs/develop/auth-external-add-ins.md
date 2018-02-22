@@ -1,10 +1,17 @@
+---
+title: Autoriser des services externes dans votre complément Office
+description: ''
+ms.date: 12/04/2017
+---
+
 # <a name="authorize-external-services-in-your-office-add-in"></a>Autoriser des services externes dans votre complément Office
 
-Les services en ligne populaires, y compris Office 365, Google, Facebook, LinkedIn, SalesForce et GitHub, permettent aux développeurs de fournir aux utilisateurs l’accès à leurs comptes dans d’autres applications. Vous avez ainsi la possibilité d’inclure ces services dans votre complément Office.
+Les services en ligne populaires, y compris Office 365, Google, Facebook, LinkedIn, SalesForce et GitHub, permettent aux développeurs d’accorder aux utilisateurs l’accès à leurs comptes dans d’autres applications. Vous avez ainsi la possibilité d’inclure ces services dans votre complément Office.
 
->**Remarque :** Si le service externe est accessible via Microsoft Graph, par exemple Office 365 ou OneDrive, vous pouvez fournir à vos utilisateurs la meilleure expérience possible et vous offrir à vous-même l’expérience de développement la plus simple, en utilisant le système d’authentification unique décrit sur la page [Activer l’authentification unique pour les compléments Office](http://dev.office.com/docs/add-ins/develop/sso-in-office-add-ins) et ses articles connexes. Les techniques décrites dans cet article trouvent leur meilleur usage dans des services externes qui ne sont pas accessibles avec Microsoft Graph. Toutefois, elles *peuvent* être utilisées pour accéder à Microsoft Graph, et vous pouvez préférer leurs avantages à ceux de l’authentification unique. Par exemple, le système d’authentification unique requiert un code côté serveur, et ne peut donc pas être utilisé dans une application web monopage. En outre, le système de l’authentification unique n’est pas encore pris en charge sur toutes les plateformes.
+> [!NOTE]
+> Si le service externe est accessible via Microsoft Graph, par exemple Office 365 ou OneDrive, vous pouvez fournir à vos utilisateurs la meilleure expérience possible tout en profitant vous-même d’une expérience de développement la plus simple possible, en utilisant le système d’authentification unique décrit sur la page [Activer l’authentification unique pour les compléments Office](sso-in-office-add-ins.md) et ses articles connexes. Les techniques décrites dans cet article trouvent leur meilleur usage dans des services externes qui ne sont pas accessibles avec Microsoft Graph. Toutefois, elles *peuvent* être utilisées pour accéder à Microsoft Graph, et vous pouvez préférer leurs avantages à ceux de l’authentification unique. Par exemple, le système d’authentification unique requiert un code côté serveur, et ne peut donc pas être utilisé dans une application web monopage. En outre, le système de l’authentification unique n’est pas encore pris en charge sur toutes les plateformes.
 
-L’infrastructure standard permettant d’activer l’accès d’une application web à un service en ligne est appelée **OAuth 2.0**. En règle générale, vous n’avez pas besoin de connaître les détails du fonctionnement de l’infrastructure pour pouvoir l’utiliser dans votre complément. Ces détails sont simplifiés pour vous dans de nombreuses bibliothèques disponibles.
+L’infrastructure standard dans le secteur permettant d’activer l’accès d’une application web à un service en ligne est appelée **OAuth 2.0**. En règle générale, vous n’avez pas besoin de connaître les détails du fonctionnement de l’infrastructure pour pouvoir l’utiliser dans votre complément. Ces détails sont simplifiés pour vous dans de nombreuses bibliothèques disponibles.
 
 L’un des fondements d’OAuth est qu’une application peut être un principal de sécurité en elle-même, de la même façon qu’un utilisateur ou un groupe, avec sa propre identité et son ensemble d’autorisations. Dans les scénarios les plus courants, lorsque l’utilisateur exécute une action dans le complément Office ayant besoin du service en ligne, le complément envoie une demande au service portant sur un ensemble spécifique d’autorisations pour le compte de l’utilisateur. Le service invite ensuite l’utilisateur à octroyer ces autorisations au complément. Une fois que les autorisations sont accordées, le service envoie un petit *jeton d’accès* codé au complément. Le complément peut utiliser le service en incluant le jeton dans toutes ses demandes aux API du service. Toutefois, le complément agit uniquement dans la limite des autorisations que l’utilisateur lui a accordées. En outre, le jeton expire après un certain délai.
 
@@ -17,7 +24,8 @@ L’objectif d’un flux OAuth est de sécuriser l’identité et l’autorisati
 
 Vous devez être familiarisé avec les avantages et inconvénients du flux implicite et du flux de code d’autorisation. Pour plus d’informations sur ces deux flux, reportez-vous à [Code d’autorisation](https://tools.ietf.org/html/rfc6749#section-1.3.1) et [Implicite](https://tools.ietf.org/html/rfc6749#section-1.3.2).
 
->**Remarque :** Vous avez aussi la possibilité de charger un service intermédiaire d’effectuer tout ce qui concerne les autorisations et de transmettre le jeton d’accès à votre complément. Pour plus d’informations sur ce scénario, consultez la rubrique **Services intermédiaires** plus loin dans cet article.
+> [!NOTE]
+> Vous avez aussi la possibilité de charger un service intermédiaire d’effectuer tout ce qui concerne les autorisations et de transmettre le jeton d’accès à votre complément. Pour plus d’informations sur ce scénario, consultez la rubrique **Services intermédiaires** plus loin dans cet article.
 
 ## <a name="using-the-implicit-flow-in-office-add-ins"></a>Utilisation du flux implicite dans des compléments Office
 La meilleure façon de déterminer si un service en ligne prend en charge le flux implicite est de consulter la documentation. Pour les services qui prennent en charge le flux implicite, vous pouvez charger la bibliothèque JavaScript **Office-js-helpers** d’effectuer à votre place toutes les tâches détaillées :
@@ -28,7 +36,7 @@ Pour plus d’informations sur les autres bibliothèques prenant en charge le fl
 
 ## <a name="using-the-authorization-code-flow-in-office-add-ins"></a>Utilisation du flux de code d’autorisation dans les compléments Office
 
-De nombreuses bibliothèques sont disponibles pour l’implémentation du flux de code d’autorisation dans différentes langues et infrastructures. Pour plus d’informations sur certaines de ces bibliothèques, consultez la rubrique **Bibliothèques** plus loin dans cet article.
+De nombreuses bibliothèques sont disponibles pour l’implémentation du flux de code d’autorisation dans différentes langues et infrastructures. Pour plus d’informations sur ces bibliothèques, reportez-vous à la section **Bibliothèques** plus loin dans cet article.
 
 Les aperçus suivants fournissent des exemples de compléments qui implémentent le flux de code d’autorisation :
 
@@ -37,10 +45,9 @@ Les aperçus suivants fournissent des exemples de compléments qui implémentent
 
 ### <a name="relayproxy-functions"></a>Fonctions de relais/proxy
 
-Vous pouvez utiliser le flux de code d’autorisation même avec une application web sans serveur en stockant les valeurs d’**ID client** et de **clé secrète client** dans une fonction simple, hébergée dans un service tel qu’[Azure Functions](https://azure.microsoft.com/en-us/services/functions) ou [Amazon Lambda](https://aws.amazon.com/lambda).
-La fonction remplace un code donné par un **jeton d’accès** et le transmet au client. La sécurité de cette approche dépend de la surveillance de l’accès à la fonction.
+Vous pouvez utiliser le flux de code d’autorisation même avec une application web sans serveur en stockant les valeurs d’**identifiant client** et de **clé secrète client** dans une fonction simple, hébergée dans un service tel qu’[Azure Functions](https://azure.microsoft.com/en-us/services/functions) ou [Amazon Lambda](https://aws.amazon.com/lambda). La fonction remplace un code donné par un **jeton d’accès** et le transmet au client. La sécurité de cette approche dépend de la surveillance de l’accès à la fonction.
 
-Pour utiliser cette technique, votre complément ouvre une interface utilisateur/un menu contextuel pour afficher l’écran de connexion au service en ligne (Google, Facebook, etc.). Lorsque l’utilisateur se connecte et accorde au complément l’autorisation d’accéder à ses ressources dans le service en ligne, le complément reçoit un code qui peut être envoyé à la fonction en ligne. Les services décrits dans la section **Services intermédiaires** plus bas dans cet article utilisent un flux semblable à celui-ci.
+Pour utiliser cette technique, votre complément ouvre une interface utilisateur/un menu contextuel pour afficher l’écran de connexion au service en ligne (Google, Facebook, etc.). Lorsque l’utilisateur est connecté et accorde l’autorisation au complément d’accéder à ses ressources dans le service en ligne, le complément reçoit un code qui peut être envoyé à la fonction en ligne. Les services décrits dans la section **Services intermédiaires** plus loin dans cet article utilisent un flux semblable à celui-ci.
 
 ## <a name="libraries"></a>Bibliothèques
 
@@ -56,7 +63,7 @@ Des bibliothèques sont disponibles dans de nombreuses langues et sur de nombreu
 
 ## <a name="middleman-services"></a>Services intermédiaires
 
-Votre complément peut utiliser un service intermédiaire, comme OAuth.io ou Auth0, pour gérer les autorisations. Un service intermédiaire peut fournir des jetons d’accès à des services en ligne courants et/ou simplifier la procédure de connexion aux réseaux sociaux pour votre complément. Avec très peu de code, votre complément peut utiliser un script côté client ou du code côté serveur pour se connecter au service intermédiaire, qui lui enverra les jetons requis pour le service en ligne. L’ensemble du code de mise en œuvre des autorisations se trouve dans le service intermédiaire.
+Votre complément peut utiliser un service intermédiaire tel qu’OAuth.io ou Auth0 pour gérer des autorisations. Un service intermédiaire peut fournir des jetons d’accès pour de nombreux services en ligne populaires ou simplifier la procédure de connexion aux réseaux sociaux pour votre complément, ou qui effectue ces deux opérations. Avec très peu de code, votre complément peut utiliser un script côté client ou du code côté serveur pour se connecter au service intermédiaire et envoyer les jetons requis à votre complément pour le service en ligne. L’ensemble du code de mise en œuvre des autorisations se trouve dans le service intermédiaire.
 
 Pour obtenir des exemples de compléments qui utilisent un service intermédiaire d’autorisation, voir les exemples suivants :
 
@@ -66,4 +73,4 @@ Pour obtenir des exemples de compléments qui utilisent un service intermédiair
 
 ## <a name="what-is-cors"></a>Que signifie l’acronyme CORS ?
 
-CORS est l’acronyme de [Cross Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS) (partage des ressources d’origines croisées). Pour plus d’informations sur l’utilisation de CORS dans les compléments, reportez-vous à la rubrique relative à la [Résolution des limites de stratégie d’origine identique dans les compléments Office](http://dev.office.com/docs/add-ins/develop/addressing-same-origin-policy-limitations).
+CORS est l’acronyme de [Cross Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS) (partage des ressources d’origines croisées). Pour plus d’informations sur l’utilisation de CORS dans les compléments, reportez-vous à la rubrique relative à la [résolution des limites de stratégie d’origine identique dans les compléments Office](addressing-same-origin-policy-limitations.md).

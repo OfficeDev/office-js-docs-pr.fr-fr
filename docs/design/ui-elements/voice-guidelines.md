@@ -1,3 +1,10 @@
+---
+title: Instructions relatives au ton pour les compléments Office
+description: ''
+ms.date: 01/23/2018
+---
+
+
 # <a name="voice-guidelines-for-office-add-ins"></a>Instructions relatives au ton pour les compléments Office
 
 Lorsque vous concevez vos compléments Office, tenez compte du ton que vous utilisez dans le texte de l’interface utilisateur et des éléments. Tâchez de suivre la voix et le ton de l’interface utilisateur d’Office, à savoir un ton informel, amical et accessible aux utilisateurs. 
@@ -11,5 +18,8 @@ Pour aligner votre texte avec les principes de la voix Office :
 - **Aidez l’utilisateur et soyez compréhensif.** Votre texte doit être positif, poli et encourageant. Mettez l’accent sur ce que les utilisateurs peuvent accomplir, et non sur ce qu’ils ne peuvent pas faire.
 - **Apprenez à connaître vos clients.** Tenez comptes des différences culturelles et des difficultés de compréhension lorsque vous utilisez des expressions idiomatiques ou familières.
 
-Si vous comptez proposer votre complément dans l’[Office Store](https://msdn.microsoft.com/fr-fr/library/dn708487.aspx), assurez-vous que son contenu et le langage utilisé sont conformes aux [stratégies de validation](https://msdn.microsoft.com/fr-fr/library/office/jj220035.aspx).
+Si vous comptez proposer votre complément dans [AppSource](https://docs.microsoft.com/fr-fr/office/dev/store/submit-to-the-office-store), assurez-vous que son contenu et le langage utilisé sont conformes aux [stratégies de validation](https://docs.microsoft.com/fr-fr/office/dev/store/validation-policies).
 
+## <a name="see-also"></a>Voir aussi
+
+- [Instructions de conception pour les compléments Office](../add-in-design.md)

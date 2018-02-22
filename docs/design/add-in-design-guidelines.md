@@ -1,8 +1,16 @@
+---
+title: Instructions de création d’un complément Office
+description: ''
+ms.date: 01/23/2018
+---
+
+
+
 # <a name="office-add-in-design-guidelines"></a>Instructions de création d’un complément Office
 
 Améliorez votre expérience utilisateur dans votre complément Office en développant l’interface utilisateur qui correspond à la voix Office et en appliquant les instructions d’accessibilité pour vous assurer que votre complément est accessible à tous les utilisateurs.
 
-Si vous comptez proposer votre complément dans l’[Office Store](https://dev.office.com/officestore/docs/submit-to-the-office-store), assurez-vous que son contenu et le langage utilisé sont conformes aux [stratégies de validation](https://dev.office.com/officestore/docs/validation-policies).
+Si vous comptez proposer votre complément dans [AppSource](https://docs.microsoft.com/fr-fr/office/dev/store/submit-to-the-office-store), assurez-vous que son contenu et le langage utilisé sont conformes aux [stratégies de validation](https://docs.microsoft.com/fr-fr/office/dev/store/validation-policies).
 
 ## <a name="voice-guidelines"></a>Conseils sur le ton 
 
@@ -49,7 +57,7 @@ Lorsque vous concevez et développez des compléments Office, il est important d
 - Fournissez un moyen aux utilisateurs d’activer des légendes ou une description audio avec les sources audio.
 - Prévoyez d’autres solutions que des signaux audio pour informer les utilisateurs, telles que des indications visuelles ou des vibrations.
 
-### <a name="accessibility-resources"></a>Ressources d’accessibilité
+## <a name="see-also"></a>Voir aussi
 
 - [Web Content Accessibility Guidelines (WCAG) 2.0](http://www.w3.org/TR/wcag2ict/#REF-WCAG20)
 - [Conseils sur l’application de WCAG 2.0 aux technologies d’information et de communication non web (WCAG2ICT)](http://www.w3.org/TR/wcag2ict/)

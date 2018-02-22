@@ -1,4 +1,11 @@
-#<a name="layout-for-content-add-ins"></a>Mise en page pour les compléments de contenu
+---
+title: Mise en page pour les compléments de contenu
+description: ''
+ms.date: 12/04/2017
+---
+
+
+# <a name="layout-for-content-add-ins"></a>Mise en page pour les compléments de contenu
 
 Créez un style visuel cohérent pour vos compléments de contenu en utilisant la mise en page recommandée. Celle-ci contient les éléments suivants : 
 
@@ -6,10 +13,14 @@ Créez un style visuel cohérent pour vos compléments de contenu en utilisant l
 - Contenu du complément
 - Élément de personnalisation (facultatif)
 
-![Mise en page d’un complément de contenu : contenu et barre de commandes](../../images/layouts_content_v0.02.png)
+![Mise en page d’un complément de contenu : contenu et barre de commandes](../../images/layouts-content-v0.02.png)
 
-Vous pouvez également ajouter des [éléments d’interface HTML personnalisés](ui-elements.md#custom-HTML-based-UI) à votre complément de contenu.
+Vous pouvez également ajouter des [éléments d’interface utilisateur HTML personnalisés](ui-elements.md#custom-html-based-ui) à votre complément de contenu.
 
 Vous pouvez également consulter un [exemple d’utilisation d’Office UI Fabric dans des compléments Office](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample).
 
 <!-- Add sample template for content add-in and individual building blocks - Command Bar, Input, layout components. -->
+
+## <a name="see-also"></a>Voir aussi
+
+- [Instructions de conception pour les compléments Office](../add-in-design.md)

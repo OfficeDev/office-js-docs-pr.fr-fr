@@ -1,16 +1,23 @@
+---
+title: "Utilisation de la structure JS d’interface utilisateur Office\_dans des compléments\_Office"
+description: ''
+ms.date: 12/04/2017
+---
 
 # <a name="use-office-ui-fabric-js-in-office-add-ins"></a>Utilisation de la structure JS d’interface utilisateur Office dans des compléments Office
 
 La structure d’interface utilisateur Office est l’infrastructure frontale JavaScript permettant de créer des expériences pour Office et Office 365. Si vous créez un complément à l’aide de JavaScript uniquement, sans utiliser de cadre Angular ou React, pensez à utiliser la structure JS pour créer votre expérience utilisateur. Pour plus d’informations, voir [Structure JS d’interface utilisateur Office](https://dev.office.com/fabric-js).
 
-Cet article décrit les principes de base relatifs à  l’utilisation de la structure JS.  
+Cet article décrit les principes de base relatifs à l’utilisation de la structure JS.  
 
 ## <a name="add-the-fabric-cdn-references"></a>Ajouter les références CDN de la structure
 Pour faire référence à la structure à partir de CDN, ajoutez le code HTML suivant à votre page.
 
-    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.min.css">
-    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.components.min.css">
-    <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/js/fabric.min.js"></script>
+```html
+<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.min.css">
+<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.components.min.css">
+<script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/js/fabric.min.js"></script>
+```
 
 ## <a name="use-fabric-js-ux-components"></a>Utiliser les composants UX de la structure JS
 
@@ -45,16 +52,16 @@ Si vous utilisez une version précédente d’Office UI Fabric et que vous sou
 - Certains noms de classe d’icône et styles ont été mis à jour.
 - La modification la plus notable consiste à utiliser l’élément `<label>` dans de nombreux composants. L’élément `<label>` contrôle le style du composant. Vous devrez peut-être mettre à jour votre code UX pour utiliser l’élément `<label>`. Par exemple, la modification de la valeur de l’attribut coché de l’élément `<input>` sur une case à cocher de la structure JS n’a aucun effet sur celle-ci. À la place, vous utilisez les fonctions `check`, `unCheck` ou `toggle`.   
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="implementation"></a>Implémentation
 Si vous recherchez un exemple de code de bout en bout qui vous montre comment utiliser la structure JS, nous avons tout prévu. Consultez la ressource suivante :
 
 - [Suivi des ventes d’Excel](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) 
 
-## <a name="related-resources"></a>Ressources connexes
+## <a name="see-also"></a>Voir aussi
 Si vous cherchez des exemples de code ou de la documentation sur une version précédente de la structure, consultez les rubriques suivantes :
 
 - [Modèles de conception de l’expérience utilisateur (utilise la structure 2.6.1)](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code) 
 - [Exemples d’éléments d’interface utilisateur Fabric pour les compléments Office (utilise Fabric 1.0)](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample) 
-- [Utilisation de la structure 2.6.1 dans un complément Office](https://dev.office.com/docs/add-ins/design/ui-elements/using-office-ui-fabric)
+- [Utiliser Office UI Fabric 2.6.1 dans des compléments Office](ui-elements/using-office-ui-fabric.md)
  
 

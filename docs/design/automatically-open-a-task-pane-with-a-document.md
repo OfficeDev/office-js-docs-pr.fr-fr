@@ -1,3 +1,10 @@
+---
+title: Ouvrir automatiquement un volet Office avec un document
+description: ''
+ms.date: 01/23/2018
+---
+
+
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Ouvrir automatiquement un volet Office avec un document
 
 Vous pouvez utiliser des commandes de complément dans votre complément Office pour étendre l’interface utilisateur Office en ajoutant des boutons au ruban Office. Lorsque les utilisateurs cliquent sur le bouton de commande, une action est réalisée, comme l’ouverture d’un volet des tâches. 
@@ -16,7 +23,7 @@ La fonctionnalité d’ouverture automatique est actuellement <!-- in **develope
 
 |**Produits**|**Plateformes**|
 |:-----------|:------------|
-|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|<ul><li>Office pour Bureau Windows. Build 16.0.8121.1000+</li><li>Office pour Mac. Build 15.34.17051500+</li><li>Office Online</li></ul>|
+|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|<ul><li>Office pour bureau Windows. Build 16.0.8121.1000 et versions ultérieures</li><li>Office pour Mac. Build 15.34.17051500 et versions ultérieures</li><li>Office Online</li></ul>|
 
 
 ## <a name="best-practices"></a>Meilleures pratiques
@@ -30,7 +37,8 @@ Appliquez les meilleures pratiques suivantes lorsque vous utilisez la fonctionna
 - Utilisez la détection de l’ensemble de conditions pour déterminer si la fonctionnalité d’ouverture automatique est disponible, et fournissez un comportement de secours si elle ne l’est pas.
 - N’utilisez pas la fonctionnalité d’ouverture automatique pour augmenter artificiellement l’utilisation de votre complément. Si l’ouverture automatique du complément n’est pas pertinente pour certains documents, cette fonctionnalité peut gêner les utilisateurs. 
 
-    >**Remarque :** si Microsoft détecte un abus de la fonctionnalité d’ouverture automatique, votre complément peut être rejeté de l’Office Store. 
+    > [!NOTE]
+    > Si Microsoft détecte un abus de la fonctionnalité d’ouverture automatique, votre complément peut être rejeté d’AppSource. 
 
 - N’utilisez pas cette fonctionnalité pour épingler plusieurs volets de tâches. Vous pouvez uniquement définir l’ouverture automatique d’un volet de votre complément avec un document.  
 
@@ -40,9 +48,10 @@ Pour implémenter la fonctionnalité d’ouverture automatique, procédez comme 
 - Spécifiez le volet des tâches à ouvrir automatiquement.
 - Ajoutez des balises au document pour ouvrir automatiquement le volet des tâches.
 
->**Important :** Le volet des tâches à ouvrir automatiquement s’ouvre uniquement si le complément est déjà installé sur l’appareil de l’utilisateur. Si le complément n’est pas installé lorsque l’utilisateur ouvre un document, la fonctionnalité d’ouverture automatique ne fonctionnera pas et le paramètre sera ignoré. Si vous avez également besoin que le complément soit distribué avec le document, vous devez définir la propriété de visibilité sur 1. Cette opération peut uniquement être effectuée à l’aide d’OpenXML, un exemple est fourni plus loin dans cet article. 
+> [!IMPORTANT]
+> Le volet des tâches à ouvrir automatiquement s’ouvre uniquement si le complément est déjà installé sur l’appareil de l’utilisateur. Si le complément n’est pas installé lorsque l’utilisateur ouvre un document, la fonctionnalité d’ouverture automatique ne fonctionnera pas et le paramètre sera ignoré. Si vous avez également besoin que le complément soit distribué avec le document, vous devez définir la propriété de visibilité sur 1. Cette opération peut uniquement être effectuée à l’aide d’OpenXML. Un exemple est fourni plus loin dans cet article. 
 
-### <a name="step-1-specify-the-task-pane-to-open"></a>Étape 1 : Spécifier le volet de tâches à ouvrir
+### <a name="step-1-specify-the-task-pane-to-open"></a>Étape 1 : Spécifier le volet des tâches à ouvrir
 Pour spécifier le volet de tâches à ouvrir automatiquement, définissez la valeur [TaskpaneId](https://dev.office.com/reference/add-ins/manifest/action#taskpaneid) sur **Office.AutoShowTaskpaneWithDocument**. Vous pouvez uniquement définir cette valeur sur un seul volet de tâches. Si vous définissez cette valeur sur plusieurs volets de tâches, la première occurrence de la valeur sera reconnue et les autres seront ignorées. 
 
 L’exemple suivant illustre la valeur TaskPaneId définie sur Office.AutoShowTaskpaneWithDocument.
@@ -81,7 +90,7 @@ L’exemple suivant montre comment ajouter le composant webextension.
 
 ```xml
 <we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="[ADD-IN ID PER MANIFEST]">
-  <we:reference id="[GUID or Office Store asset ID]" version="[your add-in version]" store="[Pointer to store or catalog]" storeType="[Store or catalog type]"/>
+  <we:reference id="[GUID or AppSource asset ID]" version="[your add-in version]" store="[Pointer to store or catalog]" storeType="[Store or catalog type]"/>
   <we:alternateReferences/>
   <we:properties>
     <we:property name="Office.AutoShowTaskpaneWithDocument" value="true"/>
@@ -97,14 +106,15 @@ Le composant webextension comprend également une référence au store ou au cat
 
 | **`storeType`valeur** | **`id`valeur**    |**`store`valeur** | **`version`valeur**|
 |:---------------|:---------------|:---------------|:---------------|
-|OMEX (Office Store)|L’ID de ressource Office Store du complément.\*|Les paramètres régionaux de l’Office Store ; par exemple, « fr-fr ».|La version dans le catalogue Office Store.\*|
+|OMEX (AppSource)|L’ID de la ressource AppSource du complément (voir la remarque).|Les paramètres régionaux d’AppSource ; par exemple, « fr-fr ».|La version dans le catalogue AppSource (voir la remarque).|
 |Système de fichiers (un partage réseau)|Le GUID du complément dans le manifeste de complément.|Le chemin du partage réseau ; par exemple, « \\\\MyComputer\\MySharedFolder ».|La version dans le manifeste de complément.|
 |EXCatalog (déploiement via le serveur Exchange) |Le GUID du complément dans le manifeste de complément.|« EXCatalog »|La version dans le manifeste de complément.
 |Registre (Registre système)|Le GUID du complément dans le manifeste de complément.|« développeur »|La version dans le manifeste de complément.|
 
->\* Pour trouver l’ID de ressource et la version d’un complément dans l’Office Store, accédez à la page d’accueil d’Office Store pour le complément. L’ID de ressource apparaît dans la barre d’adresse dans le navigateur. La version est répertoriée dans la section **Détails** de la page.
+> [!NOTE]
+> Pour trouver l’ID de ressource et la version d’un complément dans AppSource, accédez à la page d’accueil d’AppSource pour le complément. L’ID de ressource apparaît dans la barre d’adresse dans le navigateur. La version est répertoriée dans la section **Détails** de la page.
 
-Pour plus d’informations sur le balisage webextension, voir [[MS-OWEXML] 2.2.5. WebExtensionReference](https://msdn.microsoft.com/fr-fr/library/hh695383(v=office.12).aspx).
+Pour plus d’informations sur le balisage webextension, reportez-vous à [[MS-OWEXML] 2.2.5. WebExtensionReference](https://msdn.microsoft.com/fr-fr/library/hh695383(v=office.12).aspx).
 
 L’exemple suivant montre comment ajouter le composant du volet Office.
 
@@ -120,11 +130,12 @@ Si `visibility` est défini sur « 1 », le volet de tâches s’ouvre automat
 
 Définir `visibility` sur « 1 » est un bon choix lorsque le complément et le modèle ou contenu du document sont tellement étroitement intégrés que l’utilisateur ne choisirait pas de désactiver la fonctionnalité d’ouverture automatique. 
 
->**Remarque :** Si vous voulez distribuer votre complément dans le document, pour que les utilisateurs soient invités à l’installer, vous devez définir la propriété de visibilité sur 1. Vous pouvez uniquement le faire via Open XML.
+> [!NOTE]
+> Si vous voulez distribuer votre complément avec le document, pour que les utilisateurs soient invités à l’installer, vous devez définir la propriété de visibilité sur 1. Cette opération peut uniquement être effectuée à l’aide d’Open XML.
 
 Une méthode simple d’écriture du code XML consiste à exécuter d’abord votre complément, puis à [baliser le document côté client](#tag-the-document-on-the-client-side) pour écrire la valeur, à enregistrer le document et à inspecter le code XML généré. Office détectera et fournira les valeurs d’attribut appropriées. Vous pouvez également utiliser l’outil de productivité [Kit de développement logiciel Open XML 2.5](https://www.microsoft.com/en-us/download/details.aspx?id=30425) pour générer le code C# pour ajouter par programme le balisage en fonction du XML vous générez.
 
-## <a name="additional-resources"></a>Ressources supplémentaires
+## <a name="see-also"></a>Voir aussi
 
-Pour voir un exemple illustrant comment utiliser la fonctionnalité d’ouverture automatique, voir [Exemples de commandes de complément Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane). 
+Pour voir un exemple illustrant comment utiliser la fonctionnalité d’ouverture automatique, reportez-vous à [Exemples de commandes de complément Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane). 
 

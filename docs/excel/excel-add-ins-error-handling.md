@@ -1,8 +1,16 @@
+---
+title: Gestion des erreurs
+description: ''
+ms.date: 12/04/2017
+---
+
+
 # <a name="error-handling"></a>Gestion des erreurs
 
 Lorsque vous créez un complément à l’aide de l’API JavaScript pour Excel, veillez à inclure la logique de gestion des erreurs pour prendre en compte les erreurs d’exécution. Il s’agit d’une étape essentielle en raison de la nature asynchrone de l’API.
 
-**Remarque** : pour plus d’informations sur la méthode **sync()** et la nature asynchrone de l’API JavaScript pour Excel, reportez-vous à la rubrique [Concepts de base de l’API JavaScript pour Excel](excel-add-ins-core-concepts.md).
+> [!NOTE]
+> Pour plus d’informations sur la méthode **sync()** et la nature asynchrone de l’API JavaScript pour Excel, reportez-vous à la rubrique [Concepts de base de l’API JavaScript pour Excel](excel-add-ins-core-concepts.md).
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
@@ -31,9 +39,10 @@ Quand une demande d’API JavaScript pour Excel ne parvient pas à s’exécuter
 
 - **debugInfo** : le cas échéant, la propriété `debugInfo` du message d’erreur fournit des informations supplémentaires que vous pouvez utiliser pour comprendre la cause principale de l’erreur. 
 
-**Remarque** : si vous utilisez `console.log()` pour imprimer les messages d’erreur de la console, ces messages ne seront visibles que sur le serveur. Les utilisateurs finals ne verront pas ces messages d’erreur dans le volet Office du complément ou n’importe où dans l’application hôte.
+> [!NOTE]
+> si vous utilisez `console.log()` pour imprimer les messages d’erreur de la console, ces messages ne seront visibles que sur le serveur. Les utilisateurs finals ne verront pas ces messages d’erreur dans le volet Office du complément ou n’importe où dans l’application hôte.
 
-## <a name="additional-resources"></a>Ressources supplémentaires
+## <a name="see-also"></a>Voir aussi
 
 - [Concepts de base de l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
-- [Objet OfficeExtension.Error (API JavaScript pour Excel)](http://dev.office.com/reference/add-ins/excel/error)
+- [Objet OfficeExtension.Error (API JavaScript pour Excel)](https://dev.office.com/reference/add-ins/excel/error)

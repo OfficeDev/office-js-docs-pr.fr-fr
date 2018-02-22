@@ -1,0 +1,6 @@
+Quand vous arrivez au bout de l’Assistant, Visual Studio crée une solution qui contient deux projets.
+
+|**Project**|**Description**|
+|:-----|:-----|
+|Projet de complément|Contient seulement un fichier de manifeste XML, qui contient tous les paramètres qui décrivent votre complément. Ces paramètres aident l’hôte Office à déterminer quand votre complément doit être activé et où il doit apparaître. Visual Studio génère le contenu de ce fichier pour vous afin que vous puissiez exécuter le projet et utiliser immédiatement votre complément. Vous pouvez modifier ces paramètres à tout moment en modifiant le fichier XML.|
+|Projet d’application web|Contient les pages de contenu de votre complément, notamment tous les fichiers et références de fichiers dont vous avez besoin pour développer des pages HTML et JavaScript compatibles avec Office. Pendant que vous développez votre complément, Visual Studio héberge l’application web sur votre serveur IIS local. Lorsque vous êtes prêt à publier le complément, vous devez déployer ce projet d’application web sur un serveur web.|

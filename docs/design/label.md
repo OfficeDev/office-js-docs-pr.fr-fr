@@ -1,14 +1,16 @@
+---
+title: Composant d’étiquette dans la structure de l’interface utilisateur d’Office
+description: ''
+ms.date: 12/04/2017
+---
+
 # <a name="label-component-in-office-ui-fabric"></a>Composant d’étiquette dans la structure de l’interface utilisateur d’Office
 
 Utilisez des étiquettes pour nommer ou donner un titre à un composant ou un groupe de composants. Associées à un autre composant ou groupe de composants, les étiquettes doivent se trouver à proximité des composants ou des groupes associés. Certains composants ont des étiquettes prédéfinies comme les listes déroulantes ou les boutons bascule.
   
 #### <a name="example-label-in-a-task-pane"></a>Exemple : Étiquette dans un volet de tâches
 
-<br/>
-
-![Image illustrant l’étiquette](../images/overview_withApp_label.png)
-
-<br/>
+![Image illustrant l’étiquette](../images/overview-with-app-label.png)
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
@@ -23,15 +25,14 @@ Utilisez des étiquettes pour nommer ou donner un titre à un composant ou un gr
 |**Variation**|**Description**|**Exemple**|
 |:------------|:--------------|:----------|
 |**Étiquette par défaut**|À utiliser pour les étiquettes standard.|![Image de l’étiquette par défaut](../images/label.png)<br/>|
-|**Étiquette désactivée**|À utiliser lorsque le composant associé est désactivé.|![Image d’étiquette désactivée](../images/labelDisabled.png)<br/>|
-|**Étiquette requise**|À utiliser lorsque le composant associé est requis.|![Image d’étiquette requise](../images/labelRequired.png)<br/>|
+|**Étiquette désactivée**|À utiliser lorsque le composant associé est désactivé.|![Image d’étiquette désactivée](../images/label-disabled.png)<br/>|
+|**Étiquette requise**|À utiliser lorsque le composant associé est requis.|![Image d’étiquette requise](../images/label-required.png)<br/>|
 
 ## <a name="implementation"></a>Implémentation
 
-Pour plus d’informations, voir [Étiquette](https://dev.office.com/fabric#/components/label) et [Démarrer avec un exemple de code React de la structure](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact).
+Pour plus d’informations, reportez-vous à [Étiquette](https://dev.office.com/fabric#/components/label) et [Démarrer avec un exemple de code React de la structure](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact).
 
-## <a name="additional-resources"></a>Ressources supplémentaires
+## <a name="see-also"></a>Voir aussi
 
 - [Modèles de conception UX](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
-
 - [Office UI Fabric dans des compléments Office](office-ui-fabric.md)

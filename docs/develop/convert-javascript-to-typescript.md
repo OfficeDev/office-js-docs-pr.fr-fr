@@ -1,78 +1,105 @@
-# <a name="convert-an-office-add-in-task-pane-template-in-visual-studio-to-typescript"></a>Convertir un modèle de volet de tâche de complément Office de Visual Studio vers TypeScript
+---
+title: Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
+description: ''
+ms.date: 01/19/2018
+---
 
+# <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
 
-Vous pouvez utiliser le modèle JavaScript de complément Office dans Visual Studio pour créer un complément qui utilise TypeScript. Après avoir créé le nouveau complément dans Visual Studio, vous pouvez convertir le projet au format TypeScript.  Ainsi, vous n’êtes pas obligé de commencer le projet TypeScript de complément Office de zéro.  
+Vous pouvez utiliser le modèle de complément Office dans Visual Studio pour créer un complément qui utilise JavaScript, puis convertir le projet de complément au format TypeScript. En utilisant Visual Studio pour créer le projet complément, vous ne devez pas créer votre projet TypeScript de complément Office à partir de zéro. 
 
-   > **Remarque :** pour découvrir comment créer un projet TypeScript de complément Office sans l’aide de Visual Studio, consultez [Créer un complément Office avec n’importe quel éditeur](../get-started/create-an-office-add-in-using-any-editor.md).
+Cet article explique comment créer un complément Excel à l’aide de Visual Studio et convertir le projet de complément de JavaScript au format TypeScript. Vous pouvez utiliser le même processus pour convertir les autres types de projet JavaScript de complément Office au format TypeScript dans Visual Studio.
 
-Dans votre projet TypeScript, vous pouvez avoir un mélange de fichiers TypeScript et JavaScript, qui seront compilés. En effet, TypeScript est un sur-ensemble typé de code JavaScript compilé en code JavaScript. 
-
-Cet article explique comment convertir un modèle de volet de tâches pour complément Excel dans Visual Studio à partir de JavaScript en TypeScript. Vous pouvez utiliser la même procédure pour convertir d’autres modèles JavaScript de complément Office au format TypeScript.
-
-Pour afficher ou télécharger l’exemple de code sur lequel s’appuie cet article, consultez [Excel-Add-In-TS-Start](https://github.com/officedev/Excel-Add-In-TS-Start) sur GitHub.
+> [!NOTE]
+> Pour créer un projet TypeScript de complément Office sans utiliser Visual Studio, suivez les instructions de la section « Tous les éditeurs » d’un [démarrage rapide en 5 minutes](../index.yml), puis sélectionnez `TypeScript` lorsque le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) vous y invite.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-Assurez-vous que les éléments suivants sont installés :
+- [Visual Studio 2017](https://www.visualstudio.com/vs/) avec la charge de travail de **développement Office/SharePoint** installée
 
-* [Visual Studio 2015 ou version ultérieure.](https://www.visualstudio.com/downloads/)
-* [Outils de développement Office pour Visual Studio](https://www.visualstudio.com/fr-FR/features/office-tools-vs.aspx)
-* [Publication de service cumulative pour la mise à jour 3 de Microsoft Visual Studio 2015 (KB3165756)](https://msdn.microsoft.com/fr-FR/library/mt752379.aspx)
-* Excel 2016
-* [TypeScript 2.1 pour Visual Studio 2015](http://download.microsoft.com/download/6/D/8/6D8381B0-03C1-4BD2-AE65-30FF0A4C62DA/TS2.1-dev14update3-20161206.2/TypeScript_Dev14Full.exe) (après avoir installé la mise à jour 3 de Visual Studio 2015)
+    > [!NOTE]
+    > Si vous avez déjà installé Visual Studio 2017, [utilisez Visual Studio Installer](https://docs.microsoft.com/fr-fr/visualstudio/install/modify-visual-studio) pour vérifier que la charge de travail de **développement Office/SharePoint** est bien installée. 
 
-    > **Remarque :**  Pour plus d’informations sur l’installation de TypeScript 2.1, reportez-vous à l’article relatif à la [publication de TypeScript 2.1](https://blogs.msdn.microsoft.com/typescript/2016/12/07/announcing-typescript-2-1/).
+- TypeScript 2.3 pour Visual Studio 2017
 
-## <a name="create-new-add-in-project"></a>Créer un projet de complément
+    > [!NOTE]
+    > TypeScript doit être installé par défaut avec Visual Studio 2017, mais vous pouvez [utiliser le programme d’installation Visual Studio](https://docs.microsoft.com/fr-fr/visualstudio/install/modify-visual-studio) pour confirmer qu’il est installé. Dans le programme d’installation Visual Studio, sélectionnez l’onglet **Composants individuels**, puis vérifiez que l’option **SDK TypeScript 2.3** est sélectionnée sous **SDK, bibliothèques et frameworks**.
 
-1.  Ouvrez Visual Studio et accédez à **Fichier** > **Nouveau** > **Projet**. 
-2.  Sous **Office/SharePoint**, choisissez **Complément Excel**, puis **OK**.
+- Excel 2016
 
-    ![Modèle de complément Excel Visual Studio](../images/visual-studio-addin-template.png)
+## <a name="create-the-add-in-project"></a>Création du projet de complément
 
-3.  Dans l’assistant de création d’application, choisissez **Ajouter de nouvelles fonctionnalités à Excel** et choisissez **Terminer**.
-4.  Effectuez un test rapide du complément Excel créé en appuyant sur F5 ou sur le bouton **Démarrer** vert pour lancer le complément. Le complément sera hébergé localement sur IIS, et Excel s’ouvrira avec le complément chargé.
+1. Ouvrez Visual Studio, puis sur la barre de menus Visual Studio, sélectionnez **Fichier** > **Nouveau** > **Projet**.
+
+2. Dans la liste des types de projet sous **Visual C#** ou **Visual Basic**, développez **Office/SharePoint**, choisissez **Compléments**, puis **Complément web Excel** pour le type de projet. 
+
+3. Nommez le projet, puis cliquez sur **OK**.
+
+4. Dans la fenêtre de dialogue **Créer un complément Office**, sélectionnez **Ajouter de nouvelles fonctionnalités à Excel**, puis sélectionnez **Terminer** pour créer le projet.
+
+5. Visual Studio crée une solution et ses deux projets apparaissent dans l’**Explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
 
 ## <a name="convert-the-add-in-project-to-typescript"></a>Convertir le projet de complément au format TypeScript
 
-1. Dans **Explorateur de solutions**, renommez le fichier Home.js en l’appelant Home.ts.
-2. Sélectionnez **Oui** lorsque vous devez indiquer si vous êtes sûr de vouloir modifier l’extension du nom de fichier.  
-3. Sélectionnez **Oui** lorsque vous devez indiquer si vous souhaitez rechercher des typages TypeScript sur NuGet, comme indiqué sur la capture d’écran suivante. Cette action ouvre le **gestionnaire de package NuGet**.
+1. Dans l’**Explorateur de solutions**, renommez le fichier **Home.js** comme suit : **Home.ts**.
 
-    ![Boîte de dialogue de recherche des typages TypeScript](../images/search-typescript-typings.png)
+    > [!NOTE]
+    > Dans votre projet TypeScript, vous pouvez avoir un mélange de fichiers TypeScript et JavaScript, qui seront compilés. En effet, TypeScript est un sur-ensemble typé de code JavaScript compilé en code JavaScript. 
 
-4. Choisissez **Parcourir** dans le **gestionnaire de package NuGet**.  
-5. Dans la zone de recherche, saisissez **office-js tag:typescript**.
-6. Installez **office.js.TypeScript.DefinitelyTyped** et **jquery.TypeScript.DefinitelyTyped**, comme montré dans la capture d’écran suivante.
+2. Sélectionnez **Oui** lorsque vous êtes invité à confirmer la modification de l’extension du nom de fichier.
 
-    ![TypeScript DefinitelyTyped NuGets](../images/typescript-definitelytyped-nugets.png)
+3. Créez un fichier nommé **Office.d.ts** dans la racine du projet d’application web.
 
-7. Ouvrez Home.ts (anciennement Home.js). Retirez la référence suivante de la partie supérieure du fichier Home.ts :
+4. Dans un navigateur web, ouvrez le [fichier de définitions de types pour Office.js](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js/index.d.ts). Copiez le contenu de ce fichier dans le presse-papiers.
 
-    ```///<reference path="/Scripts/FabricUI/MessageBanner.js" />```
+5. Dans Visual Studio, ouvrez le fichier **Office.d.ts**, collez le contenu du presse-papiers dans le fichier, puis enregistrez le fichier.
 
-8. Ajoutez les instructions suivantes en haut du fichier Home.ts :
+6. Créez un fichier nommé **jQuery.d.ts** dans la racine du projet d’application web.
 
-    ```declare var fabric: any;```
+7. Dans un navigateur web, ouvrez le [fichier de définitions de types pour jQuery](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/jquery/index.d.ts). Copiez le contenu de ce fichier dans le presse-papiers.
 
-9. Remplacez **‘1.1’** par **1.1** ; plus clairement : enlevez les guillemets de la ligne suivante du fichier Home.ts :
+8. Dans Visual Studio, ouvrez le fichier **jQuery.d.ts**, collez le contenu du presse-papiers dans le fichier, puis enregistrez le fichier.
 
-    ```if (!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {```
- 
+9. Dans Visual Studio, créez un fichier nommé **tsconfig.json** dans la racine du projet d’application web.
+
+10. Ouvrez le fichier **tsconfig.json**, ajoutez le contenu suivant au fichier, puis enregistrez le fichier :
+
+    ```javascript
+    {
+        "compilerOptions": {
+            "skipLibCheck": true,
+            "lib": [ "es5", "dom", "es2015.promise" ]
+        }
+    }
+    ```
+
+11. Ouvrez le fichier **Home.ts** et ajoutez les instructions suivantes en haut du fichier :
+
+    ```javascript
+    declare var fabric: any;
+    ```
+
+12. Dans le fichier **Home.ts**, remplacez **'1.1'** par **1.1** (autrement dit, supprimez les guillemets) dans la ligne suivante, puis enregistrez le fichier :
+
+    ```javascript
+    if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
+    ```
+
 ## <a name="run-the-converted-add-in-project"></a>Exécuter le projet de complément converti
 
-1. Appuyez sur F5 ou le bouton **Démarrer** vert pour lancer le complément. 
-2. Après le démarrage d’Excel, appuyez sur le bouton **Afficher le volet de tâches** sur le ruban **Accueil**.
-3. Sélectionnez toutes les cellules contenant des nombres.
-4. Appuyez sur le bouton **Mettre en surbrillance** dans le volet des tâches. 
+1. Dans Visual Studio, appuyez sur F5 ou sélectionnez le bouton **Démarrer** pour lancer Excel avec le complément **Afficher le volet de tâches** affiché dans le ruban. Le complément est hébergé localement sur IIS.
+
+2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
+
+3. Dans la feuille de calcul, sélectionnez les neuf cellules qui contiennent des nombres.
+
+4. Appuyez sur le bouton **Mettre en surbrillance** dans le volet Office pour mettre en surbrillance la cellule de la plage sélectionnée contenant la valeur la plus élevée.
 
 ## <a name="homets-code-file"></a>Fichier de code Home.ts
 
-Pour référence, voici le code inclus dans le fichier Home.ts. Ce fichier inclut le nombre minimal de modifications nécessaires afin que votre complément fonctionne.
+Par exemple, l’extrait de code suivant affiche le contenu du fichier **Home.ts** une fois que les modifications décrites précédemment ont été appliquées. Ce code inclut le nombre minimal de modifications nécessaires afin que votre complément fonctionne.
 
->**Remarque :** pour obtenir un exemple complet de fichier JavaScript converti au format TypeScript, voir [Excel-Add-In-TS-StartWeb/Home.ts](https://github.com/officedev/Excel-Add-In-TS-Start/blob/master/Excel-Add-In-TS-StartWeb/Home.ts). 
-
-```
+```javascript
 declare var fabric: any;
 
 (function () {
@@ -91,12 +118,11 @@ declare var fabric: any;
             
             // If not using Excel 2016, use fallback logic.
             if (!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
-                $("#template-description").text("This sample will display the value of the cells you have selected in the spreadsheet.");
+                $("#template-description").text("This sample will display the value of the cells that you have selected in the spreadsheet.");
                 $('#button-text').text("Display!");
                 $('#button-desc').text("Display the selection");
 
-                $('#highlight-button').click(
-                    displaySelectedCells);
+                $('#highlight-button').click(displaySelectedCells);
                 return;
             }
 
@@ -107,20 +133,18 @@ declare var fabric: any;
             loadSampleData();
 
             // Add a click event handler for the highlight button.
-            $('#highlight-button').click(
-                hightlightHighestValue);
+            $('#highlight-button').click(hightlightHighestValue);
         });
-    }
+    };
 
     function loadSampleData() {
-
         var values = [
-                        [Math.floor(Math.random() * 1000), Math.floor(Math.random() * 1000), Math.floor(Math.random() * 1000)],
-                        [Math.floor(Math.random() * 1000), Math.floor(Math.random() * 1000), Math.floor(Math.random() * 1000)],
-                        [Math.floor(Math.random() * 1000), Math.floor(Math.random() * 1000), Math.floor(Math.random() * 1000)]
+            [Math.floor(Math.random() * 1000), Math.floor(Math.random() * 1000), Math.floor(Math.random() * 1000)],
+            [Math.floor(Math.random() * 1000), Math.floor(Math.random() * 1000), Math.floor(Math.random() * 1000)],
+            [Math.floor(Math.random() * 1000), Math.floor(Math.random() * 1000), Math.floor(Math.random() * 1000)]
         ];
 
-        // Run a batch operation against the Excel object model.
+        // Run a batch operation against the Excel object model
         Excel.run(function (ctx) {
             // Create a proxy object for the active sheet
             var sheet = ctx.workbook.worksheets.getActiveWorksheet();
@@ -134,15 +158,13 @@ declare var fabric: any;
     }
 
     function hightlightHighestValue() {
-
-        // Run a batch operation against the Excel object model.
+        // Run a batch operation against the Excel object model
         Excel.run(function (ctx) {
-
-            // Create a proxy object for the selected range and load its address and values properties.
-            var sourceRange = ctx.workbook.getSelectedRange().load("values, address, rowIndex, columnIndex, rowCount, columnCount");
+            // Create a proxy object for the selected range and load its properties
+            var sourceRange = ctx.workbook.getSelectedRange().load("values, rowCount, columnCount");
 
             // Run the queued-up command, and return a promise to indicate task completion
-            return ctx.sync().
+            return ctx.sync()
                 .then(function () {
                     var highestRow = 0;
                     var highestCol = 0;
@@ -163,16 +185,11 @@ declare var fabric: any;
                     sourceRange.worksheet.getUsedRange().format.fill.clear();
                     sourceRange.worksheet.getUsedRange().format.font.bold = false;
 
-                    cellToHighlight.load("values");
-                })
-                   // Run the queued-up commands.
-                .then(ctx.sync)
-                .then(function () {
                     // Highlight the cell
                     cellToHighlight.format.fill.color = "orange";
                     cellToHighlight.format.font.bold = true;
                 })
-                .then(ctx.sync)
+                .then(ctx.sync);
         })
         .catch(errorHandler);
     }
@@ -188,7 +205,7 @@ declare var fabric: any;
             });
     }
 
-    // Helper function for treating errors.
+    // Helper function for treating errors
     function errorHandler(error) {
         // Always be sure to catch any accumulated errors that bubble up from the Excel.run execution
         showNotification("Error", error);
@@ -200,16 +217,15 @@ declare var fabric: any;
 
     // Helper function for displaying notifications
     function showNotification(header, content) {
-        $("#notificationHeader").text(header);
-        $("#notificationBody").text(content);
+        $("#notification-header").text(header);
+        $("#notification-body").text(content);
         messageBanner.showBanner();
         messageBanner.toggleExpansion();
     }
 })();
-
 ```
 
-## <a name="additional-resources"></a>Ressources supplémentaires
+## <a name="see-also"></a>Voir aussi
 
 * [Discussion sur la mise en œuvre de promesses sur StackOverflow](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
 * [Exemples de compléments Office sur GitHub](https://github.com/officedev)
