@@ -114,7 +114,7 @@ Une fois qu’un complément Office a été publié via un déploiement centrali
 
 - **Complément métier** : si un administrateur a chargé explicitement un fichier manifeste lors de l’implémentation du déploiement centralisé via le Centre d’administration Office 365, il doit charger un nouveau fichier manifeste contenant les modifications souhaitées. Une fois que le fichier manifeste a été chargé, le complément est mis à jour au démarrage suivant des applications Office concernées.
 
-- **Complément AppSource** : si un administrateur a sélectionné un complément dans AppSource lors de l’implémentation du déploiement centralisé via le Centre d’administration Office 365 et que le complément est mis à jour dans AppSource, le complément sera mis à jour plus tard via le déploiement centralisé. Le complément est mis à jour au démarrage suivant des applications Office concernées.
+- **Complément AppSource** : si un administrateur a sélectionné un complément dans AppSource lors de l’implémentation du déploiement centralisé via le Centre d’administration Office 365 et que le complément est mis à jour dans AppSource, le complément sera mis à jour plus tard via le déploiement centralisé. Au prochain démarrage des applications Office concernées, le complément sera mis à jour.
 
 ## <a name="end-user-experience-with-add-ins"></a>Expérience des utilisateurs finaux avec les compléments
 

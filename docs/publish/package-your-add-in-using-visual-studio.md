@@ -48,7 +48,7 @@ Procédez comme suit pour créer un package de votre projet de complément à l�
 
     Visual Studio génère les fichiers nécessaires à la publication de votre complément, puis ouvre le dossier de sortie de publication. 
     
-Si vous prévoyez de soumettre votre complément à AppSource, vous pouvez cliquer sur le lien **Effectuer la vérification de la validation** pour identifier les problèmes susceptibles d’empêcher votre complément d’être accepté. Vous devez corriger tous les problèmes avant d’envoyer votre complément au Store.
+Si vous prévoyez de soumettre votre complément à AppSource, vous pouvez sélectionner le lien **Effectuer la vérification de la validation** pour identifier les problèmes susceptibles d’empêcher votre complément d’être accepté. Vous devez régler tous ces problèmes avant de soumettre votre complément au magasin.
 
 Vous pouvez désormais télécharger votre manifeste XML à l’emplacement approprié pour [publier votre complément](../publish/publish.md). Le manifeste XML se trouve dans `OfficeAppManifests` dans le dossier `app.publish`. Par exemple :
 

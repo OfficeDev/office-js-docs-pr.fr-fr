@@ -1,0 +1,40 @@
+### YamlMime:Tutorial
+documentType: Tutorial
+title: Didacticiel sur les compléments PowerPoint
+metadata:
+  title: Didacticiel sur les compléments PowerPoint
+  description: Dans ce didacticiel, vous allez créer un complément\_PowerPoint qui insère une image, insère du texte, obtient les métadonnées des diapositives et navigue entre les diapositives.
+  audience: Développeur
+  level: Débutant
+  displayType: one-column
+  ms.date: 02/28/2018
+items:
+- durationInMinutes: 1
+  content: |
+    Ce didacticiel vous explique comment créer un complément de volet des tâches PowerPoint qui ajoute la photo <a href="https://www.bing.com">Bing</a> du jour à une diapositive, ajoute du texte à une diapositive, obtient les métadonnées des diapositives et navigue entre les diapositives. Si vous rencontrez des problèmes tout au long du processus, veuillez <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">nous contacter</a>.
+- title: Créer votre projet de complément
+  durationInMinutes: 5
+  content: |
+    [!INCLUDE [](../includes/powerpoint-tutorial-setup.md)]
+- title: Insérer une image
+  durationInMinutes: 8
+  content: |
+    [!INCLUDE [](../includes/powerpoint-tutorial-insert-image.md)]
+- title: Personnaliser les éléments de l’interface utilisateur (IU)
+  durationInMinutes: 3
+  content: |
+    [!INCLUDE [](../includes/powerpoint-tutorial-customize-ui.md)]
+- title: Insérer du texte
+  durationInMinutes: 4
+  content: |
+    [!INCLUDE [](../includes/powerpoint-tutorial-insert-text.md)]
+- title: Obtenir les métadonnées des diapositives
+  durationInMinutes: 4
+  content: |
+    [!INCLUDE [](../includes/powerpoint-tutorial-get-slide-metadata.md)]
+- title: Naviguer entre les diapositives
+  durationInMinutes: 5
+  content: |
+    [!INCLUDE [](../includes/powerpoint-tutorial-navigate-slides.md)]
+- content: |
+    Vous avez terminé le didacticiel sur les compléments PowerPoint. Pour en savoir plus sur la création des compléments PowerPoint, reportez-vous à la <a href="../powerpoint/powerpoint-add-ins.md">vue d’ensemble des compléments PowerPoint</a>.\n

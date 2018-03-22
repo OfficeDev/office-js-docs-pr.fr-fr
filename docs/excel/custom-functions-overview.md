@@ -22,7 +22,7 @@ function add42 (a, b) {
 
 Les fonctions personnalisées sont désormais disponibles en version d’évaluation. Pour les tester, procédez comme suit :
 
-1.  Rejoignez le programme [Office Insider](https://products.office.com/en-us/office-insider) pour installer la version d’Excel 2016 requise pour les fonctions personnalisées sur votre ordinateur (version 16.8711 ou ultérieure). Vous devez choisir le canal « Insider » pour obtenir l’aperçu des fonctions personnalisées à utiliser.
+1.  Rejoignez le programme [Office Insider](https://products.office.com/fr-fr/office-insider) pour installer la version d’Excel 2016 requise pour les fonctions personnalisées sur votre ordinateur (version 16.8711 ou ultérieure). Vous devez choisir le canal « Insider » pour obtenir l’aperçu des fonctions personnalisées à utiliser.
 2.  Clonez le référentiel [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) et suivez les instructions dans *README.md* afin de lancer le complément dans Excel.
 3.  Saisissez `=CONTOSO.ADD42(1,2)` dans une cellule, puis appuyez sur **Entrée** pour exécuter la fonction personnalisée.
 4.  Si vous avez des questions, posez-les sur Office Insider à l’aide de la balise [office-js](https://stackoverflow.com/questions/tagged/office-js).
@@ -187,9 +187,9 @@ Pour les fonctions de flux, le paramètre final, `caller`, n’est jamais spéci
 Vous pouvez annuler les fonctions de flux et les fonctions asynchrones. L’annulation de vos appels de fonction permet de considérablement réduire leur consommation de bande passante, la mémoire de travail et la charge de l’UC. Excel annule les appels de fonction dans les situations suivantes :
 - L’utilisateur modifie ou supprime une cellule qui fait référence à la fonction.
 - Un des arguments (entrées) de la fonction est modifié. Dans ce cas, un nouvel appel de fonction est déclenché en plus de l’annulation.
-- L’utilisateur déclenche manuellement le recalcul. Comme dans le cas ci-dessus, un nouvel appel de fonction est déclenché en plus de l’annulation.
+- L’utilisateur déclenche le nouveau processus de calcul manuellement. Comme pour le cas précédent, un nouvel appel de fonction est déclenché en plus de l’annulation.
 
-Le code suivant affiche l’exemple précédent avec l’annulation mise en œuvre. Dans le code, l’objet `caller` contient une fonction `onCanceled` qui doit être définie pour chaque fonction personnalisée.
+Le code suivant affiche l’exemple précédent avec l’annulation mise en œuvre. Dans le code, l’objet `caller` contient une propriété `onCanceled` qui doit être définie pour chaque fonction personnalisée. Pour qu’Excel appelle la fonction `onCanceled`, vous devez déclarer la prise en charge de l’annulation lors de l’enregistrement de votre fonction en définissant le paramètre `cancelable` sur `true`.
 
 ```js
 function incrementValue(increment, caller){ 
@@ -266,7 +266,7 @@ function secondHighestTemp(temperatures){
  }
 ```
 
-Si vous créez une fonction qui renvoie une plage de données, il est nécessaire d’indiquer une formule matricielle dans Excel pour identifier la plage complète de valeurs. Pour plus d’informations, reportez-vous à la rubrique [Instructions et exemples de formules matricielles](https://support.office.com/fr-fr/article/Guidelines-and-examples-of-array-formulas-7d94a64e-3ff3-4686-9372-ecfd5caa57c7).
+Si vous créez une fonction qui renvoie une plage de données, il est nécessaire d’indiquer une formule de tableau dans Excel pour identifier la plage complète de valeurs. Pour plus d’informations, reportez-vous à [Instructions et exemples de formules matricielles](https://support.office.com/fr-fr/article/Guidelines-and-examples-of-array-formulas-7d94a64e-3ff3-4686-9372-ecfd5caa57c7).
 
 ## <a name="known-issues"></a>Problèmes connus
 

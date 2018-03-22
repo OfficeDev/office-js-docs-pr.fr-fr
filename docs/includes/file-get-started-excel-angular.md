@@ -26,7 +26,7 @@ Utilisez l’outil CLI Angular pour générer votre application Angular. À part
 ng new my-addin
 ```
 
-## <a name="generate-the-manifest-file-and-sideload-the-add-in"></a>Générer le fichier manifeste et charger une version test du complément
+## <a name="generate-the-manifest-file"></a>Génération du fichier manifeste
 
 Le fichier manifeste d’un complément définit ses paramètres et ses fonctionnalités.
 
@@ -36,7 +36,7 @@ Le fichier manifeste d’un complément définit ses paramètres et ses fonction
     cd my-addin
     ```
 
-2. Utilisez le générateur Yeoman pour générer le fichier manifeste de votre complément. Exécutez la commande suivante, puis répondez aux invites comme indiqué dans la capture d’écran ci-dessous.
+2. Utilisez le générateur Yeoman pour générer le fichier manifeste de votre complément. Exécutez la commande suivante, puis répondez aux invites comme indiqué ci-dessous.
 
     ```bash
     yo office
@@ -53,26 +53,53 @@ Le fichier manifeste d’un complément définit ses paramètres et ses fonction
     > [!NOTE]
     > Si vous êtes invité à remplacer **package.json**, répondez **Non** (ne pas remplacer).
 
-3. Ouvrez le fichier manifeste (c’est-à-dire, le fichier du répertoire racine de votre application dont le nom se termine par « manifest.xml »). Remplacez toutes les occurrences de `https://localhost:3000` par `http://localhost:4200` et enregistrez le fichier.
+## <a name="secure-the-app"></a>Sécurisation de l’application
 
-    > [!TIP]
-    > Assurez-vous que vous avez défini le protocole sur **http** et que vous avez défini le numéro de port sur **4200**.
+[!include[HTTPS guidance](../includes/https-guidance.md)]
 
-4. Suivez les instructions pour la plateforme que vous utiliserez pour exécuter votre complément et chargez une version test du complément dans Excel.
+Pour ce démarrage rapide, vous pouvez utiliser les certificats fournis par le **générateur de compléments Office Yeoman**. Vous avez déjà installé le générateur globalement (comme demandé dans la section **Conditions préalables** de ce démarrage rapide). Vous n’avez donc qu’à copier les certificats situés dans l’emplacement d’installation global dans le dossier de votre application. La procédure suivante explique comment effectuer cette procédure.
 
-    - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online : [Chargement de version test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+1. À partir du terminal, exécutez la commande suivante pour identifier le dossier où les bibliothèques **npm** globales sont installées :
+
+    ```bash 
+    npm list -g 
+    ``` 
+    
+    > [!TIP]    
+    > La première ligne de la sortie générée par cette commande spécifie le dossier où les bibliothèques **npm** globales sont installées.          
+    
+2. À l’aide de l’explorateur de fichiers, accédez au dossier `{global libraries folder}/node_modules/generator-office/generators/app/templates/js/base`. À partir de cet emplacement, copiez le dossier `certs` dans votre presse-papiers.
+
+3. Accédez au dossier racine de l’application Angular que vous avez créée à l’étape 1 de la section précédente et collez le dossier `certs` (qui se trouve dans votre presse-papiers) dans ce dossier.
 
 ## <a name="update-the-app"></a>Mettre à jour l’application
 
-1. Ouvrez **src/index.html**, ajoutez la balise `<script>` suivante immédiatement avant la balise `</head>`, puis enregistrez le fichier.
+1. Dans votre éditeur de code, ouvrez **package.json** à la racine du projet. Modifiez le script `start` pour spécifier que le serveur doit s’exécuter à l’aide de SSL et du port 3000, puis enregistrez le fichier.
+
+    ```json
+    "start": "ng serve --ssl true --port 3000"
+    ```
+
+2. Ouvrez **.angular-cli.json** à la racine du projet. Modifiez l’objet **defaults** pour indiquer l’emplacement des fichiers de certificat et enregistrez le fichier.
+
+    ```json
+    "defaults": {
+      "styleExt": "css",
+      "component": {},
+      "serve": {
+        "sslKey": "certs/server.key",
+        "sslCert": "certs/server.crt"
+      }
+    }
+    ```
+
+3. Ouvrez **src/index.html**, ajoutez la balise `<script>` suivante immédiatement avant la balise `</head>`, puis enregistrez le fichier.
 
     ```html
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     ```
 
-2. Ouvrez **src/main.ts**, remplacez `platformBrowserDynamic().bootstrapModule(AppModule).catch(err => console.log(err));` par le code suivant, puis enregistrez le fichier. 
+4. Ouvrez **src/main.ts**, remplacez `platformBrowserDynamic().bootstrapModule(AppModule).catch(err => console.log(err));` par le code suivant, puis enregistrez le fichier. 
 
     ```typescript 
     declare const Office: any;
@@ -83,13 +110,13 @@ Le fichier manifeste d’un complément définit ses paramètres et ses fonction
     };
     ```
 
-3. Ouvrez **src/polyfills.ts**, ajoutez la ligne de code suivante au-dessus de toutes les instructions `import` existantes, puis enregistrez le fichier.
+5. Ouvrez **src/polyfills.ts**, ajoutez la ligne de code suivante au-dessus de toutes les instructions `import` existantes, puis enregistrez le fichier.
 
     ```typescript
     import 'core-js/client/shim';
     ```
 
-4. Dans **src/polyfills.ts**, supprimez les commentaires des lignes suivantes, puis enregistrez le fichier.
+6. Dans **src/polyfills.ts**, supprimez les commentaires des lignes suivantes, puis enregistrez le fichier.
 
     ```typescript
     import 'core-js/es6/symbol';
@@ -108,7 +135,7 @@ Le fichier manifeste d’un complément définit ses paramètres et ses fonction
     import 'core-js/es6/set';
     ```
 
-5. Ouvrez **src/app/app.component.html**, remplacez le contenu du fichier par le code HTML suivant, puis enregistrez le fichier. 
+7. Ouvrez **src/app/app.component.html**, remplacez le contenu du fichier par le code HTML suivant, puis enregistrez le fichier. 
 
     ```html
     <div id="content-header">
@@ -126,7 +153,7 @@ Le fichier manifeste d’un complément définit ses paramètres et ses fonction
     </div>
     ```
 
-6. Ouvrez **src/app/app.component.css**, remplacez le contenu du fichier par le code CSS suivant, puis enregistrez le fichier.
+8. Ouvrez **src/app/app.component.css**, remplacez le contenu du fichier par le code CSS suivant, puis enregistrez le fichier.
 
     ```css
     #content-header {
@@ -155,7 +182,7 @@ Le fichier manifeste d’un complément définit ses paramètres et ses fonction
     }
     ```
 
-7. Ouvrez **src/app/app.component.ts**, remplacez le contenu du fichier par le code suivant, puis enregistrez le fichier. 
+9. Ouvrez **src/app/app.component.ts**, remplacez le contenu du fichier par le code suivant, puis enregistrez le fichier. 
 
     ```typescript
     import { Component } from '@angular/core';
@@ -178,13 +205,29 @@ Le fichier manifeste d’un complément définit ses paramètres et ses fonction
     }
     ```
 
-## <a name="try-it-out"></a>Essayez !
+## <a name="start-the-dev-server"></a>Démarrage du serveur de développement
 
 1. À partir du terminal, exécutez la commande suivante pour démarrer le serveur dev.
 
     ```bash
-    npm start
+    npm run start
     ```
+
+2. Dans un navigateur web, accédez à `https://localhost:3000`. Si votre navigateur indique que le certificat du site n’est pas approuvé, vous devrez ajouter le certificat en tant que certificat approuvé. Consultez la rubrique relative à l’[ajout de certificats auto-signés en tant que certificats racine approuvés](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) pour obtenir plus de détails.
+
+    > [!NOTE]
+    > Il est possible que le navigateur web Chrome continue d’indiquer que le certificat du site n’est pas approuvé, même si vous avez suivi les étapes décrites dans l’article relatif à l’[ajout de certificats auto-signés comme certificat racine approuvé](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md). Vous pouvez ignorer ce message d’avertissement dans Chrome. Vérifiez tout de même que le certificat est approuvé en entrant `https://localhost:3000` dans Internet Explorer ou Microsoft Edge. 
+
+3. Une fois que votre navigateur a chargé la page du complément sans erreurs de certificat, vous pouvez tester votre complément. 
+
+## <a name="try-it-out"></a>Essayez !
+
+1. Suivez les instructions pour la plateforme que vous utiliserez pour exécuter votre complément et chargez une version test du complément dans Excel.
+
+    - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Excel Online : [Chargement de versions test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+    - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+
    
 2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
@@ -198,7 +241,7 @@ Le fichier manifeste d’un complément définit ses paramètres et ses fonction
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations, vous avez créé un complément Excel à l’aide d’Angular ! Ensuite, découvrez les fonctionnalités d’un complément Excel et créez-en un plus complexe en suivant le didacticiel sur les compléments Excel.
+Félicitations, vous avez créé un complément Excel à l’aide d’Angular ! Découvrez à présent les fonctionnalités des compléments Excel et créez un complément plus complexe en continuant le didacticiel sur le complément Excel.
 
 > [!div class="nextstepaction"]
 > [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial-create-table.md)
@@ -209,4 +252,3 @@ Félicitations, vous avez créé un complément Excel à l’aide d’Angular !
 * [Concepts de base de l’API JavaScript pour Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemples de code pour les compléments Excel](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
 * [Référence de l’API JavaScript pour Excel](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
-

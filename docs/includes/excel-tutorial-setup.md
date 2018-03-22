@@ -1,13 +1,13 @@
 Vous commencerez ce didacticiel par la configuration de votre projet de développement. 
 
-> [!TIP]
-> Si vous ne l’avez pas déjà fait, veuillez lire le [guide de démarrage rapide pour la création d’un complément Excel qui utilise jQuery](../quickstarts/excel-quickstart-jquery.md?tabs=visual-studio-code). Vous devez notamment savoir comment charger une version test d’un complément Excel.
+> [!NOTE]
+> Cette page décrit une étape individuelle du didacticiel sur le complément Excel. Si vous êtes arrivé à cette page via les résultats du moteur de recherche ou d’un autre lien direct, accédez à la page d’introduction du [didacticiel sur le complément Excel](../tutorials/excel-tutorial.yml) pour démarrer le didacticiel à partir du début.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
 Pour utiliser ce didacticiel, les logiciels suivants doivent être installés. 
 
-- Excel 2016, version 1711 (Démarrer en un clic version 8730.1000) ou version ultérieure. Vous devrez peut-être participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à [Participez au programme Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1).
+- Excel 2016, version 1711 (Démarrer en un clic version 8730.1000) ou version ultérieure. Vous devrez peut-être participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à [Participez au programme Office Insider](https://products.office.com/fr-fr/office-insider?tab=tab-1).
 - [Nœud et npm](https://nodejs.org/en/) 
 - [Git Bash](https://git-scm.com/downloads) (ou un autre client Git)
 

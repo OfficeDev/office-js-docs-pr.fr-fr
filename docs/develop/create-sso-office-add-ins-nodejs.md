@@ -22,7 +22,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 * Office 2016, version 1708, build 8424.nnnn ou version ultérieure (la version par abonnement Office 365, parfois appelée « Démarrer en un clic »).
 
-  Il vous sera peut-être demandé de participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, consultez la page [Participez au programme Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1).
+  Il vous sera peut-être demandé de participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, consultez la page [Participez au programme Office Insider](https://products.office.com/fr-fr/office-insider?tab=tab-1).
 
 ## <a name="set-up-the-starter-project"></a>Configurer le projet de démarrage
 
@@ -88,7 +88,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     * profil
 
     > [!NOTE]
-    > L’autorisation `User.Read` est peut-être déjà répertoriée par défaut. Une bonne pratique consiste à demander uniquement les autorisations dont vous avez besoin. Ainsi, nous vous recommandons de désactiver la case à cocher de cette autorisation.
+    > L’autorisation `User.Read` peut déjà être répertoriée par défaut. Une bonne pratique consiste à demander uniquement les autorisations dont vous avez besoin. Ainsi, nous vous recommandons de désactiver la case à cocher de cette autorisation.
 
 1. Cliquez sur **OK** au bas de la boîte de dialogue.
 
@@ -167,7 +167,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 11. En dessous de l’affectation au `Office.initialize`, ajoutez le code ci-dessous. Tenez compte des informations suivantes :
 
     * La gestion des erreurs dans le complément tente parfois automatiquement d’obtenir un jeton d’accès une deuxième fois, à l’aide d’un autre jeu d’options. La variable de compteur `timesGetOneDriveFilesHasRun` et la variable d’indicateur `triedWithoutForceConsent` et `timesMSGraphErrorReceived` permettent de s’assurer que l’utilisateur ne tente pas de manière répétée d’obtenir un jeton sans y parvenir. 
-    * Vous allez créer la méthode `getDataWithToken` à l’étape suivante, mais rappelez-vous qu’elle définit une option appelée `forceConsent` sur `false`. Vous en saurez plus à l’étape suivante.
+    * Vous allez créer la méthode `getDataWithToken` à l’étape suivante, mais rappelez-vous qu’elle définit une option appelée `forceConsent` sur `false`. Vous en saurez plus à la prochaine étape.
 
     ```javascript
     var timesGetOneDriveFilesHasRun = 0;
@@ -209,7 +209,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     getData("/api/values", accessToken);
     ```
 
-1. En dessous de la méthode `getOneDriveFiles`, ajoutez le code suivant. Tenez compte des informations suivantes :
+1. En dessous de la méthode `getOneDriveFiles`, ajoutez le code ci-dessous. Tenez compte des informations suivantes :
 
     * Cette méthode appelle un point de terminaison d’API Web spécifié et lui transmet le même jeton d’accès que l’application hôte Office a utilisé pour accéder à votre complément. Côté serveur, ce jeton d’accès est utilisé dans le flux « de la part de » pour obtenir un jeton d’accès à Microsoft Graph.
     * Vous créerez la méthode `handleServerSideErrors` à une étape ultérieure.
@@ -293,7 +293,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     > [!NOTE]
     > Les erreurs 13004 et 13005 ne sont pas gérées dans cette méthode, car elles ne devraient se produire qu’en développement. Elles ne peuvent pas être résolues par du code d’exécution et il ne serait d’aucune utilité de les signaler à un utilisateur final.
 
-1. Remplacez `TODO5` par le code suivant. L’erreur 13006 se produit lorsqu’une erreur non spécifiée est survenue dans l’hôte Office et indique que l’hôte est peut-être dans un état instable. Demandez à l’utilisateur de redémarrer Office.
+1. Remplacez `TODO5` par le code suivant. L’erreur 13006 se produit lorsqu’une erreur non spécifiée indiquant que l’hôte est dans un état instable est survenue dans l’hôte Office. Demandez à l’utilisateur de redémarrer Office.
 
     ```javascript
     case 13006:
@@ -309,7 +309,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
         break;      
     ```
 
-1. Remplacez `TODO7` par le code suivant. L’erreur 13008 se produit lorsque l’utilisateur a déclenché une opération qui appelle `getAccessTokenAsync` avant que la fin de l’appel précédent.
+1. Remplacez `getAccessTokenAsync` par le code suivant. L’erreur 13008 se produit lorsque l’utilisateur a déclenché une opération qui appelle `TODO7` avant la fin de l’appel précédent.
 
     ```javascript
     case 13008:
@@ -371,7 +371,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     }
     ```
 
-1. Remplacez `TODO11` par le code suivant *juste en dessous de la dernière accolade fermante du code que vous avez ajouté à l’étape précédente*. Tenez compte des informations suivantes sur ce code :
+1. Remplacez `TODO11` par le code suivant *juste en dessous de la dernière accolade fermante du code que vous avez ajouté à l’étape précédente*. Tenez compte des remarques suivantes à propos de ce code :
 
     * L’erreur 65001 signifie que l’utilisateur a refusé de donner l’accès à Microsoft Graph (ou que l’accès a été révoqué) pour une ou plusieurs autorisations. 
     * Le complément doit obtenir un nouveau jeton avec l’option `forceConsent` définie sur `true`.
@@ -390,7 +390,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     }
     ```
 
-1. Remplacez `TODO12` par le code suivant *juste en dessous de la dernière accolade fermante du code que vous avez ajouté à l’étape précédente*. Tenez compte des informations suivantes sur ce code :
+1. Remplacez `TODO12` par le code suivant *juste en dessous de la dernière accolade fermante du code que vous avez ajouté à l’étape précédente*. Tenez compte des remarques suivantes à propos de ce code :
 
     * L’erreur 70011 signifie qu’une portée (autorisation) non valide a été demandée. Le complément doit signaler l’erreur.
     * Le code consigne les autres erreurs avec un numéro d’erreur AAD.
@@ -403,7 +403,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     }
     ```
 
-1. Remplacez `TODO13` par le code suivant *juste en dessous de la dernière accolade fermante du code que vous avez ajouté à l’étape précédente*. Tenez compte des informations suivantes sur ce code :
+1. Remplacez `TODO13` par le code suivant *juste en dessous de la dernière accolade fermante du code que vous avez ajouté à l’étape précédente*. Tenez compte des remarques suivantes à propos de ce code :
 
     * Le code côté serveur que vous créerez à une étape ultérieure enverra le message qui se termine par `... expected access_as_user` si l’étendue (autorisation) `access_as_user` ne se trouve pas dans le jeton d’accès que le client du complément envoie à AAD, afin qu’il soit utilisé dans le flux « de la part de ».
     * Le complément doit signaler l’erreur.
@@ -415,7 +415,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     }
     ```
 
-1. Remplacez `TODO14` par le code suivant *juste en dessous de la dernière accolade fermante du code que vous avez ajouté à l’étape précédente*. Tenez compte des informations suivantes sur ce code :
+1. Remplacez `TODO14` par le code suivant *juste en dessous de la dernière accolade fermante du code que vous avez ajouté à l’étape précédente*. Tenez compte des remarques suivantes à propos de ce code :
 
     * Il est peu probable qu’un jeton expiré ou non valide soit envoyé à Microsoft Graph. Cependant, si cela se produit, le code côté serveur que vous créerez dans une étape ultérieure se terminera par la chaîne `Microsoft Graph error`.
     * Dans ce cas, le complément doit recommencer l’intégralité du processus d’authentification en réinitialisant les variables de compteur `timesGetOneDriveFilesHasRun` et d’indicateur `timesGetOneDriveFilesHasRun`, puis en appelant à nouveau la méthode de gestionnaire de boutons. Toutefois, il ne doit faire cela qu’une seule fois. Si l’erreur se produit à nouveau, il doit simplement la consigner.
@@ -651,7 +651,7 @@ Il existe deux fichiers côté serveur qui doivent être modifiés.
     }
     ```
 
-1.  Remplacez `TODO1` par le code suivant. Le code suppose que les données sont renvoyées au format JSON.
+1.  Remplacez `TODO1` par le code suivant. Notez que le code suppose que les données sont renvoyées au format JSON.
 
     ```javascript
     let parsedBody = JSON.parse(body);

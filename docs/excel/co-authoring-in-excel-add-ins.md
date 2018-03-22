@@ -53,5 +53,5 @@ Par exemple, dans les scénarios de validation de données, il est fréquent d�
 
 ## <a name="see-also"></a>Voir aussi 
 
-- [À propos de la co-création dans Excel (VBA)](https://msdn.microsoft.com/en-us/vba/excel-vba/articles/about-coauthoring-in-excel) 
-- [Impact de l’enregistrement automatique sur les compléments et les macros (VBA)](https://msdn.microsoft.com/en-us/vba/office-shared-vba/articles/how-autosave-impacts-addins-and-macros) 
+- [À propos de la co-création dans Excel (VBA)](https://msdn.microsoft.com/fr-fr/vba/excel-vba/articles/about-coauthoring-in-excel) 
+- [Impact de l’enregistrement automatique sur les compléments et les macros (VBA)](https://msdn.microsoft.com/fr-fr/vba/office-shared-vba/articles/how-autosave-impacts-addins-and-macros) 

@@ -12,7 +12,7 @@ Project 2013 utilise le même schéma de manifeste de complément que d’autres
 
 L’exemple de complément Test du modèle objet de Project peut obtenir le GUID d’une tâche et les propriétés de l’application et du projet actif. Si Project Professionnel 2013 ouvre un projet se trouvant dans une bibliothèque SharePoint, le complément peut afficher l’URL du projet. 
 
-Le [téléchargement du kit de développement logiciel de Project 2013](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20) inclut le code source complet. Lorsque vous extrayez et installez le kit de développement logiciel et les exemples figurant dans le fichier Project2013SDK.msi, reportez-vous au `\Samples\Apps\Copy_to_AppManifests_FileShare` sous-répertoire pour le fichier manifeste et au`\Samples\Apps\Copy_to_AppSource_FileShare` sous-répertoire pour le code source. 
+Le [téléchargement du kit de développement logiciel Project 2013](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20) inclut le code source complet. Lorsque vous extrayez et installez le kit de développement logiciel et les exemples figurant dans le fichier Project2013SDK.msi, reportez-vous au sous-répertoire `\Samples\Apps\Copy_to_AppManifests_FileShare` pour le fichier manifeste et au sous-répertoire `\Samples\Apps\Copy_to_AppSource_FileShare` pour le code source. 
 
 L’exemple JSOMCall.html utilise les fonctions JavaScript du fichier office.js et le fichier project-15.js qui sont inclus. Vous pouvez utiliser les fichiers de débogage correspondants (office.debug.js et project-15.debug.js) pour examiner les fonctions.
 

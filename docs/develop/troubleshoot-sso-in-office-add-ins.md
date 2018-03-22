@@ -29,7 +29,7 @@ Pour consulter des exemples de la gestion des erreurs décrite dans cette sectio
 
 L’API [getAccessTokenAsync](https://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync) n’est pas prise en charge par le complément ou la version d’Office. 
 
-- La version d’office ne prend pas en charge SSO. La version requise est Office 2016, version 1710, build 8629.nnnn ou version ultérieure (la version par abonnement Office 365, parfois appelée « Démarrer en un clic »). Vous devrez peut-être participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à la rubrique [Participer au programme Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1). 
+- La version d’office ne prend pas en charge SSO. La version requise est Office 2016, version 1710, build 8629.nnnn ou version ultérieure (la version par abonnement Office 365, parfois appelée « Démarrer en un clic »). Vous devrez peut-être participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à la rubrique [Participer au programme Office Insider](https://products.office.com/fr-fr/office-insider?tab=tab-1). 
 - Le manifeste de complément n’inclut pas la section [WebApplicationInfo](https://dev.office.com/reference/add-ins/manifest/webapplicationinfo) appropriée.
 
 ### <a name="13001"></a>13001
@@ -58,7 +58,7 @@ Octroi non valide. Cela signifie généralement qu’Office n’a pas été pré
 
 ### <a name="13006"></a>13006
 
-Erreur du client. Votre code doit suggérer que l’utilisateur s’est déconnecté et a redémarré Office, ou a redémarré la session Office Online.
+Erreur client. Votre code doit suggérer à l’utilisateur de se déconnecter et de redémarrer Office, ou de redémarrer la session Office Online.
 
 ### <a name="13007"></a>13007
 

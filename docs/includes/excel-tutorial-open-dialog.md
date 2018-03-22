@@ -1,10 +1,13 @@
 Dans cette étape finale du didacticiel, vous allez ouvrir une boîte de dialogue dans votre complément, transmettre un message du processus de boîte de dialogue au processus de volet Office et fermer la boîte de dialogue. Les boîtes de dialogue des compléments Office sont *non modales* : un utilisateur peut continuer à interagir à la fois avec le document dans l’application Office hôte et avec la page hôte dans le volet Office.
 
+> [!NOTE]
+> Cette page décrit une étape individuelle du didacticiel sur le complément Excel. Si vous êtes arrivé à cette page via les résultats du moteur de recherche ou d’un autre lien direct, accédez à la page d’introduction du [didacticiel sur le complément Excel](../tutorials/excel-tutorial.yml) pour démarrer le didacticiel à partir du début.
+
 ## <a name="create-the-dialog-page"></a>Création de la page de boîte de dialogue
 
 1. Ouvrez le projet dans votre éditeur de code.
 2. Créez un fichier à la racine du projet (où se trouve le fichier index.html) et nommez-le popup.html.
-3. Ajoutez le balisage suivant au fichier popup.html. Veuillez noter les informations suivantes :
+3. Ajoutez le balisage suivant au fichier popup.html. Remarque :
    - La page comporte un champ `<input>`, dans lequel l’utilisateur entrera son nom, et un bouton qui permet d’envoyer le nom à la page dans le volet Office où il sera affiché.
    - Le balisage charge un script appelé popup.js que vous allez créer dans une étape ultérieure.
    - Il charge également la bibliothèque Office.JS et jQuery, car ils seront utilisés dans popup.js.
@@ -41,9 +44,9 @@ Dans cette étape finale du didacticiel, vous allez ouvrir une boîte de dialogu
     ```
 
 4. Créez un fichier à la racine du projet et nommez-le popup.js.
-5. Ajoutez le code suivant au fichier popup.js. Veuillez noter les informations suivantes :
+5. Ajoutez le code suivant au fichier popup.js. Remarque :
    - *Toutes les pages qui appellent des API dans la bibliothèque Office.JS doivent affecter une fonction à la propriété `Office.initialize`.* Si aucune initialisation n’est nécessaire, la fonction peut avoir un corps vide, mais la propriété ne doit pas être laissée indéfinie, affectée à null ni à une valeur qui n’est pas une fonction. Pour voir un exemple, affichez le fichier app.js à la racine du projet. Le code qui exécute l’affectation doit être exécuté avant tout appel à Office.JS ; l’affectation se trouve donc dans un fichier de script chargé par la page, comme dans ce cas.
-   - La fonction `ready` jQuery est appelée à l’intérieur de la méthode `initialize`. Une règle quasi-universelle veut que le code de chargement, d’initialisation ou d’amorçage d’autres bibliothèques JavaScript se trouve à l’intérieur de la fonction `Office.initialize`.
+   - La fonction `ready` jQuery est appelée à l’intérieur de la méthode `initialize`. Une règle quasi-universelle veut que le code de chargement, d’initialisation ou d’amorçage des autres bibliothèques JavaScript se trouve à l’intérieur de la fonction `Office.initialize`.
 
     ```js
     (function () {
@@ -110,7 +113,7 @@ Dans cette étape finale du didacticiel, vous allez ouvrir une boîte de dialogu
     $('#open-dialog').click(openDialog);
     ```
 
-6. Sous la fonction `freezeHeader`, ajoutez la déclaration suivante. Cette variable est utilisée pour conserver un objet dans le contexte d’exécution de la page parent qui agit en tant qu’intermédiaire pour le contexte d’exécution de la page de boîte de dialogue.
+6. Ajoutez la déclaration suivante sous la fonction `freezeHeader`. Cette variable est utilisée pour conserver un objet dans le contexte d’exécution de la page parent qui agit en tant qu’intermédiaire pour le contexte d’exécution de la page de boîte de dialogue.
 
     ```js
     let dialog = null;
@@ -127,7 +130,7 @@ Dans cette étape finale du didacticiel, vous allez ouvrir une boîte de dialogu
 8. Remplacez `TODO1` par le code suivant. Tenez compte des informations suivantes :
    - La méthode `displayDialogAsync` ouvre une boîte de dialogue au centre de l’écran.
    - Le premier paramètre est l’URL de la page à ouvrir.
-   - Le deuxième paramètre transmet les options. `height` et `width` sont des pourcentages de la taille de la fenêtre de l’application Office. 
+   - Le deuxième paramètre transmet les options. `height` et `width` sont des pourcentages de la taille de la fenêtre de l’application Office. 
    
     ```js
     Office.context.ui.displayDialogAsync(
@@ -140,8 +143,8 @@ Dans cette étape finale du didacticiel, vous allez ouvrir une boîte de dialogu
 
 ## <a name="process-the-message-from-the-dialog-and-close-the-dialog"></a>Traitement du message à partir de la boîte de dialogue et fermeture de la boîte de dialogue
 
-1. Continuez dans le fichier app.js et remplacez `TODO2` par le code suivant. Veuillez noter les informations suivantes :
-   - Le rappel est exécuté immédiatement après que la boîte de dialogue s’est ouverte correctement et avant que l’utilisateur a pris une quelconque action dans la boîte de dialogue.
+1. Continuez dans le fichier app.js et remplacez `TODO2` par le code suivant. Remarque :
+   - Le rappel est exécuté immédiatement après que la boîte de dialogue s’est ouverte correctement et avant que l’utilisateur ait pris une quelconque action dans la boîte de dialogue.
    - `result.value` représente l’objet qui agit comme un intermédiaire entre les contextes d’exécution des pages parent et de boîte de dialogue.
    - La fonction `processMessage` sera créée à une étape ultérieure. Ce gestionnaire traitera toutes les valeurs envoyées par la page de boîte de dialogue avec les appels de la fonction `messageParent`.
 
@@ -163,10 +166,10 @@ Dans cette étape finale du didacticiel, vous allez ouvrir une boîte de dialogu
 
 ## <a name="test-the-add-in"></a>Test du complément
 
-1. Si la fenêtre Git Bash, ou l’invite système Node.JS, de l’étape précédente du didacticiel, est encore ouverte, appuyez deux fois sur Ctrl+C pour arrêter le serveur web en cours d’exécution. Sinon, ouvrez une fenêtre Git Bash, ou une invite système Node.JS, et accédez au dossier **Start** du projet.
+1. Si la fenêtre Git Bash, ou l’invite système Node.JS, de l’étape précédente du didacticiel est encore ouverte, appuyez sur Ctrl+C à deux reprises pour arrêter le serveur web en cours d’exécution. Sinon, ouvrez une fenêtre Git Bash, ou une invite système Node.JS, et accédez au dossier **Start** du projet.
 
      > [!NOTE]
-     > Bien que le serveur synchronisé au navigateur recharge votre complément dans le volet Office chaque fois que vous apportez une modification à un fichier, y compris le fichier app.js, il ne retranspile pas le code JavaScript, donc vous devez répéter la commande build afin que vos modifications app.js prennent effet. Pour ce faire, vous devez arrêter le processus du serveur pour pouvoir obtenir une invite pour saisir la commande build. Une fois la commande build exécutée, redémarrez le serveur. Les prochaines étapes vous permettent d’effectuer ce processus.
+     > Bien que le serveur synchronisé au navigateur recharge votre complément dans le volet Office chaque fois que vous apportez une modification à un fichier, y compris le fichier app.js, il ne retranspile pas le code JavaScript. Vous devez donc de nouveau utiliser la commande build afin que les modifications apportées à app.js prennent effet. Pour ce faire, vous devez arrêter le processus du serveur pour pouvoir obtenir une invite et saisir la commande build. Une fois la commande build exécutée, redémarrez le serveur. Les prochaines étapes vous permettent d’effectuer ce processus.
 
 1. Exécutez la commande `npm run build` pour transpiler votre code source ES6 vers une version antérieure de JavaScript prise en charge par Internet Explorer (qui est utilisé en arrière-plan par Excel pour exécuter les compléments Excel).
 2. Exécutez la commande `npm start` pour démarrer un serveur web en cours d’exécution sur localhost.

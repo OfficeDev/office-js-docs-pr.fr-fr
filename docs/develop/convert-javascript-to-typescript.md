@@ -37,7 +37,7 @@ Cet article explique comment créer un complément Excel à l’aide de Visual S
 
 4. Dans la fenêtre de dialogue **Créer un complément Office**, sélectionnez **Ajouter de nouvelles fonctionnalités à Excel**, puis sélectionnez **Terminer** pour créer le projet.
 
-5. Visual Studio crée une solution et ses deux projets apparaissent dans l’**Explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
+5. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
 
 ## <a name="convert-the-add-in-project-to-typescript"></a>Convertir le projet de complément au format TypeScript
 
@@ -87,7 +87,7 @@ Cet article explique comment créer un complément Excel à l’aide de Visual S
 
 ## <a name="run-the-converted-add-in-project"></a>Exécuter le projet de complément converti
 
-1. Dans Visual Studio, appuyez sur F5 ou sélectionnez le bouton **Démarrer** pour lancer Excel avec le complément **Afficher le volet de tâches** affiché dans le ruban. Le complément est hébergé localement sur IIS.
+1. Dans Visual Studio, appuyez sur F5 ou sélectionnez le bouton **Démarrer** pour lancer Excel avec le bouton du complément **Show Taskpane** (Afficher le volet Office) affiché dans le ruban. Le complément sera hébergé localement sur IIS.
 
 2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 

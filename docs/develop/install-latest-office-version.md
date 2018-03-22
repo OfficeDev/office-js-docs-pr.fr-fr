@@ -12,7 +12,7 @@ De nouvelles fonctionnalités de développeur, y compris celles en version d’�
 
 Pour s’inscrire afin d’obtenir les dernières versions d’Office 2016, procédez comme suit : 
 
-- Si vous êtes abonné à Office 365 Famille, Personnel ou Université, consultez la page [Participez au programme Office Insider](https://products.office.com/en-us/office-insider).
+- Si vous êtes abonné à Office 365 Famille, Personnel ou Université, consultez la page [Participez au programme Office Insider](https://products.office.com/fr-fr/office-insider).
 - Si vous êtes un client d’Office 365 pour les entreprises, consultez l’article [Installer la version First Release pour Office 365 pour les entreprises](https://support.office.com/fr-fr/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead?ui=en-US&rs=en-US&ad=US).
 - Si vous exécutez Office 2016 sur un Mac :
     - Démarrez un programme Office 2016 pour Mac.

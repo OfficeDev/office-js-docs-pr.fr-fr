@@ -36,11 +36,11 @@ Toute modification conforme aux comportements par défaut d’Excel déclenche l
 
 ### <a name="lifecycle-of-an-event-handler"></a>Cycle de vie d’un gestionnaire d’événements
 
-Un gestionnaire d’événements est créé lorsqu’un complément inscrit le Gestionnaire d’événements et est détruit lorsque le complément désinscrit le Gestionnaire d’événements ou que le complément est fermé. Les gestionnaires d’événements ne sont pas conservées dans le cadre du fichier Excel.
+Un gestionnaire d’événements est créé lorsqu’un complément inscrit le gestionnaire d’événements et est détruit lorsque le complément désinscrit le gestionnaire d’événements ou que le complément est fermé. Les gestionnaires d’événements ne persistent pas en tant que partie du fichier Excel.
 
 ### <a name="events-and-coauthoring"></a>Événements et co-création
 
-Avec la [co-création](co-authoring-in-excel-add-ins.md), plusieurs personnes peuvent collaborer et modifier simultanément le même classeur Excel. Pour les événements pouvant être déclenchés par un co-auteur, tels que `onDataChanged`, l’objet **Event** correspondant contient une propriété **source** qui indique si l’événement a été déclenché localement par l’utilisateur actuel (`event.source = Local`) ou par le co-auteur à distance (`event.source = Remote`).
+Avec la [co-création](co-authoring-in-excel-add-ins.md), plusieurs personnes peuvent travailler ensemble et modifier le même classeur Excel simultanément. Pour les événements pouvant être déclenchés par un co-auteur, tels que `onDataChanged`, l’objet **Event** correspondant contient une propriété **source** qui indique si l’événement a été déclenché localement par l’utilisateur actuel (`event.source = Local`) ou par le co-auteur à distance (`event.source = Remote`).
 
 ## <a name="register-an-event-handler"></a>Inscription d’un gestionnaire d’événements
 

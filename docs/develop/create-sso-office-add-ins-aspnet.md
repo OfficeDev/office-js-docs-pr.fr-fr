@@ -17,7 +17,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 * Version la plus récente disponible de Visual Studio 2017 Preview.
 
-* Office 2016, Version 1708, build 8424.nnnn ou version ultérieure (la version par abonnement Office 365, parfois appelée « Démarrer en un clic »). Vous devrez peut-être participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, voir [Participez au programme Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1).
+* Office 2016, Version 1708, build 8424.nnnn ou version ultérieure (la version par abonnement Office 365, parfois appelée « Démarrer en un clic »). Vous devrez peut-être participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, voir [Participez au programme Office Insider](https://products.office.com/fr-fr/office-insider?tab=tab-1).
 
 ## <a name="set-up-the-starter-project"></a>Configurer le projet de démarrage
 
@@ -41,7 +41,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
    >    `Install-Package Microsoft.Identity.Client -Version 1.1.1-alpha0393 -Source https://www.myget.org/F/aad-clients-nightly/api/v3/index.json`
 
-   > 3. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur **Références**. Vérifiez que **Microsoft.Identity.Client** est dans la liste. S’il n’y est pas ou qu’une icône d’avertissement figure sur son entrée, supprimez l’entrée, puis utilisez l’Assistant Ajouter une référence Visual Studio pour ajouter une référence à l’assembly dans **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.1-alpha0393\lib\net45\Microsoft.Identity.Client.dll**
+   > 3. Dans l’**explorateur de solutions**, cliquez avec le bouton de la souris sur **Références**. Vérifiez que **Microsoft.Identity.Client** est répertorié. S’il n’est pas répertorié ou qu’une icône d’avertissement figure sur son entrée, supprimez l’entrée, puis utilisez l’Assistant Ajouter une référence Visual Studio pour ajouter une référence à l’assembly dans **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.1-alpha0393\lib\net45\Microsoft.Identity.Client.dll**
 
 1. Créez le projet une deuxième fois.
 
@@ -94,7 +94,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     * profil
 
     > [!NOTE]
-    > L’autorisation `User.Read` est peut-être déjà répertoriée par défaut. Une bonne pratique consiste à demander uniquement les autorisations dont vous avez besoin. Ainsi, nous vous recommandons de désactiver la case à cocher de cette autorisation.
+    > L’autorisation `User.Read` peut déjà être répertoriée par défaut. Une bonne pratique consiste à demander uniquement les autorisations dont vous avez besoin. Ainsi, nous vous recommandons de désactiver la case à cocher de cette autorisation.
 
 1. Cliquez sur **OK** au bas de la boîte de dialogue.
 
@@ -103,7 +103,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 ## <a name="grant-admin-consent-to-the-add-in"></a>Accorder le consentement de l’administrateur au complément
 
 > [!NOTE]
-> Cette procédure est nécessaire uniquement lorsque vous développez le complément. Lorsque votre complément de production est déployé dans AppSource ou dans un catalogue de compléments, les utilisateurs l’approuvent individuellement ou un administrateur l’approuvera pour l’organisation au moment de l’installation.
+> Cette procédure est uniquement nécessaire quand vous développez le complément. Lorsque votre complément de production est déployé dans AppSource ou dans un catalogue de compléments, les utilisateurs l’approuvent individuellement ou un administrateur l’approuvera pour l’organisation au moment de l’installation.
 
 1. Si le complément ne fonctionne pas dans Visual Studio, appuyez sur **F5** pour l’exécuter. Il doit s’exécuter dans IIS pour que cette procédure se déroule sans problème.
 
@@ -223,7 +223,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 1. En dessous de l’affectation au `Office.initialize`, ajoutez le code ci-dessous. Tenez compte des informations suivantes :
 
     * La gestion des erreurs dans le complément tente parfois automatiquement d’obtenir un jeton d’accès une deuxième fois, à l’aide d’un autre jeu d’options. La variable de compteur `timesGetOneDriveFilesHasRun` et la variable d’indicateur `triedWithoutForceConsent` permettent de s’assurer que l’utilisateur ne tente pas de manière répétée d’obtenir un jeton sans y parvenir. 
-    * Vous allez créer la méthode `getDataWithToken` à l’étape suivante, mais rappelez-vous qu’elle définit une option appelée `forceConsent` sur `false`. Vous en saurez plus à l’étape suivante.
+    * Vous allez créer la méthode `getDataWithToken` à l’étape suivante, mais rappelez-vous qu’elle définit une option appelée `forceConsent` sur `false`. Vous en saurez plus à la prochaine étape.
 
     ```javascript
     var timesGetOneDriveFilesHasRun = 0;
@@ -264,7 +264,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     getData("/api/values", accessToken);
     ```
 
-1. En dessous de la méthode `getOneDriveFiles`, ajoutez le code suivant. Tenez compte des informations suivantes :
+1. En dessous de la méthode `getOneDriveFiles`, ajoutez le code ci-dessous. Tenez compte des informations suivantes :
 
     * Cette méthode appelle un point de terminaison d’API Web spécifié et lui transmet le même jeton d’accès que l’application hôte Office a utilisé pour accéder à votre complément. Côté serveur, ce jeton d’accès est utilisé dans le flux « de la part de » pour obtenir un jeton d’accès à Microsoft Graph.
     * Vous créerez la méthode `handleServerSideErrors` à une étape ultérieure.
@@ -348,7 +348,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     > [!NOTE]
     > Les erreurs 13004 et 13005 ne sont pas gérées dans cette méthode, car elles ne devraient se produire qu’en développement. Elles ne peuvent pas être résolues par du code d’exécution et il ne serait d’aucune utilité de les signaler à un utilisateur final.
 
-1. Remplacez `TODO5` par le code suivant. L’erreur 13006 se produit lorsqu’une erreur non spécifiée est survenue dans l’hôte Office et indique que l’hôte est peut-être dans un état instable. Demandez à l’utilisateur de redémarrer Office.
+1. Remplacez `TODO5` par le code suivant. L’erreur 13006 se produit lorsqu’une erreur non spécifiée indiquant que l’hôte est dans un état instable est survenue dans l’hôte Office. Demandez à l’utilisateur de redémarrer Office.
 
     ```javascript
     case 13006:
@@ -364,7 +364,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
         break;      
     ```
 
-1. Remplacez `TODO7` par le code suivant. L’erreur 13008 se produit lorsque l’utilisateur a déclenché une opération qui appelle `getAccessTokenAsync` avant que la fin de l’appel précédent.
+1. Remplacez `getAccessTokenAsync` par le code suivant. L’erreur 13008 se produit lorsque l’utilisateur a déclenché une opération qui appelle `TODO7` avant la fin de l’appel précédent.
 
     ```javascript
     case 13008:
@@ -458,7 +458,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 1. Remplacez `TODO13` par le code suivant. Tenez compte des informations suivantes :
 
-    * L’erreur 70011 peut indiquer différents problèmes. Le problème qui importe pour ce complément est lorsque cette erreur indique qu’une étendue (autorisation) non valide a été demandée ; le code vérifie alors la description complète de l’erreur, pas seulement le numéro.
+    * L’erreur 70011 a plusieurs sens. Le problème qui importe pour ce complément est lorsque cette erreur indique qu’une étendue (autorisation) non valide a été demandée ; le code vérifie alors la description complète de l’erreur, pas seulement le numéro.
     * Le complément doit signaler l’erreur.
 
     ```javascript
@@ -480,7 +480,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 1. Remplacez `TODO15` par le code suivant. Tenez compte des informations suivantes :
 
-    * La bibliothèque d’identité que vous allez utiliser dans le code côté serveur (Microsoft Authentication Library, MSAL) doit garantir qu’aucun jeton expiré ou non valide n’est envoyé à Microsoft Graph. Cependant, si cela se produit, l’erreur renvoyée par Microsoft Graph au service web du complément a le code `InvalidAuthenticationToken`. Le code côté serveur que vous allez créer dans une étape ultérieure envoie ce message au client du complément.
+    * La bibliothèque d’identité que vous allez utiliser dans le code côté serveur (Microsoft Authentication Library, MSAL) doit garantir qu’aucun jeton expiré ou non valide n’est envoyé à Microsoft Graph. Cependant, si cela se produit, l’erreur renvoyée par Microsoft Graph au service web du complément a le code `InvalidAuthenticationToken`. Le code côté serveur que vous créerez dans une étape suivante relaiera ce message au client du complément.
     * Dans ce cas, le complément doit recommencer l’intégralité du processus d’authentification en réinitialisant les variables de compteur et d’indicateur, puis en rappelant la méthode de gestionnaire de boutons.
 
     ```javascript
@@ -673,8 +673,8 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 8. Remplacez `TODO3a` par le code suivant. Tenez compte des informations suivantes :
 
-    * Si une authentification multifacteur est requise par la ressource MS Graph et si l’utilisateur ne l’a pas encore fournie, AAD renvoie « 400 Demande incorrecte » avec l’erreur AADSTS50076 et une propriété **Claims**. MSAL génère une exception **MsalUiRequiredException** (qui hérite de **MsalServiceException**) avec ces informations. 
-    * La valeur de la propriété **Claims** doit être transmise au client qui doit la transmettre à son tour à l’hôte Office, qui l’inclut alors dans une demande de nouveau jeton. AAD invite l’utilisateur à remplir tous les formulaires d’authentification requis.
+    * Si l’authentification multifacteur est requise par la ressource MS Graph et que l’utilisateur ne l'a pas encore fournie, AAD renvoie « 400 - Demande incorrecte » avec l’erreur AADSTS50076 et une propriété **Claims**. MSAL génère une exception **MsalUiRequiredException** (qui hérite de **MsalServiceException**) avec ces informations. 
+    * La valeur de la propriété **Claims** doit être transmise au client qui doit la transmettre à son tour à l’hôte Office, qui l’inclut alors dans une demande de nouveau jeton. AAD demandera à l’utilisateur d’accepter tous les formulaires d’authentification requis.
     * Les API qui créent des réponses HTTP à partir d’exceptions ne connaissent pas la propriété **Claims**, donc ils ne l’incluent pas dans l’objet de la réponse. Nous devons créer manuellement un message qui l’inclut. Une propriété **Message** personnalisé, cependant, bloque la création d’une propriété **ExceptionMessage**, afin que la seule façon de communiquer l’ID d’erreur `AADSTS50076` au client est de l’ajouter à la propriété **Message** personnalisée. JavaScript dans le client devra découvrir si une réponse a une propriété **Message** ou **ExceptionMessage**, afin qu’il sache laquelle lire.
     * Le message personnalisé est au format JSON pour que le code JavaScript côté client puisse l’analyser avec des méthodes d’objet `JSON` connues.
     * Vous créerez la méthode `SendErrorToClient` à une étape ultérieure. Son deuxième paramètre est un objet **Exception**. Dans ce cas, le code transmet `null` car même l’objet **Exception** bloque l’inclusion de la propriété **Message** dans la réponse HTTP qui est générée.
