@@ -10,7 +10,7 @@
     href: overview/office-add-in-availability.md
     displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
 
-- name: Démarrage rapide
+- name: Démarrages rapides
   items:
   - name: Création d’un complément Excel
     items:
@@ -50,6 +50,9 @@
   - name: Didacticiel sur les compléments PowerPoint
     href: tutorials/powerpoint-tutorial.yml
     displayName: PowerPoint
+  - name: Didacticiel sur les compléments Word
+    href: tutorials/word-tutorial.yml
+    displayName: Word
 
 - name: Concepts
   items:
@@ -75,6 +78,8 @@
       items:
       - name: Langage de création
         href: design/add-in-design-language.md
+      - name: Utilisation du mouvement
+        href: design/using-motion-office-addins.md
       - name: Modèles de conception d’expérience utilisateur
         href: design/ux-design-patterns.md
       - name: Tests d’utilisation
@@ -129,6 +134,8 @@
 
   - name: Développer
     items:
+    - name: Versions d’Office et ensembles de conditions requises
+      href: develop/office-versions-and-requirement-sets.md
     - name: Installer la dernière version d’Office
       href: develop/install-latest-office-version.md
     - name: API JavaScript pour Office
@@ -262,6 +269,9 @@
     - name: Créer votre premier complément Word
       href: word/word-add-ins.md
       displayName: Word
+    - name: Didacticiel sur les compléments Word
+      href: tutorials/word-tutorial.yml
+      displayName: Word
     - name: Créer de meilleurs compléments pour Word avec Office Open XML
       href: word/create-better-add-ins-for-word-with-office-open-xml.md
       displayName: Word
@@ -334,7 +344,7 @@
     href: testing/test-debug-office-add-ins.md
     items:
     - name: Windows
-      items: 
+      items:
       - name: Chargement de versions test de compléments Office sur Windows
         href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
       - name: Attacher un débogueur à partir du volet Office
@@ -342,7 +352,7 @@
       - name: Débogage à l’aide des outils de développement F12
         href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
     - name: Office Online
-      items: 
+      items:
       - name: Chargement de versions test de compléments Office dans Office Online
         href: testing/sideload-office-add-ins-for-testing.md
       - name: Déboguer dans Office Online

@@ -6,7 +6,7 @@ ms.date: 12/04/2017
 
 # <a name="office-add-in-design-language"></a>Langage de création d’un complément Office
 
-Le langage de création d’Office est un système visuel clair et simple qui garantit la cohérence entre expériences. Il contient un ensemble d’éléments visuels qui définissent les interfaces Office, y compris : 
+Le langage de création d’Office est un système visuel clair et simple qui garantit la cohérence entre expériences. Il contient un ensemble d’éléments visuels qui définissent les interfaces Office, y compris :
 
 - Police standard
 - Palette de couleurs courantes
@@ -65,14 +65,14 @@ Pour des recommandations sur la disposition, voir [Volet des tâches](task-pane-
 
 Appliquez les recommandations générales suivantes pour les dispositions :
 
-*   Évitez les marges étroites ou larges sur vos conteneurs HTML. 20 pixels est une grande valeur par défaut. 
+*   Évitez les marges étroites ou larges sur vos conteneurs HTML. 20 pixels est une grande valeur par défaut.
 *   Alignez les éléments intentionnellement. Les retraits supplémentaires et les nouveaux points d’alignement doivent aider la hiérarchie visuelle.
-*   Les interfaces Office se trouvent sur une grille 4px. Essayez de conserver votre marge intérieure entre les éléments à des multiples de 4. 
-*   Une interface surchargée peut être source de confusion et ne pas être utilisée facilement avec les interactions tactiles. 
-*   Vérifiez que les dispositions sont cohérentes entre les écrans. Les modifications de disposition inattendues ressemblent à des bogues visuels qui contribuent à un manque de confiance en votre solution. 
+*   Les interfaces Office se trouvent sur une grille 4px. Essayez de conserver votre marge intérieure entre les éléments à des multiples de 4.
+*   Une interface surchargée peut être source de confusion et ne pas être utilisée facilement avec les interactions tactiles.
+*   Vérifiez que les dispositions sont cohérentes entre les écrans. Les modifications de disposition inattendues ressemblent à des bogues visuels qui contribuent à un manque de confiance en votre solution.
 *   Suivez les modèles de disposition courants. Les conventions permettent aux utilisateurs de comprendre comment utiliser une interface.
 *   Évitez les éléments redondants comme la personnalisation ou les commandes.
-*   Consolidez les contrôles et les affichages pour éviter une utilisation excessive de la souris. 
+*   Consolidez les contrôles et les affichages pour éviter une utilisation excessive de la souris.
 *   Créez des expériences réactives qui s’adaptent aux hauteurs et largeurs du conteneur HTML.
 
 ## <a name="component-language"></a>Langage du composant
@@ -86,7 +86,7 @@ Appliquez les recommandations générales suivantes pour les composants :
 *   Ne répliquez pas le ruban Office à l’intérieur de votre complément
 *   Évitez de créer des menus, des boutons ou d’autres composants qui se comportent différemment des composants Office.
 *   Utilisez les composants [Office UI Fabric](office-ui-fabric.md) que nous recommandons pour les compléments.
-*   Utilisez les [modèles de conception UX](ux-design-patterns.md) pour les composants de l’interface utilisateur d’Office courants. 
+*   Utilisez les [modèles de conception UX](ux-design-patterns.md) pour les composants de l’interface utilisateur d’Office courants.
 
 ## <a name="icons"></a>Icônes
 Les icônes sont la représentation visuelle d’un comportement ou d’un concept. Elles sont souvent utilisées pour ajouter une signification aux contrôles et commandes. Les visuels, qu’ils soient réalistes ou symboliques, permettent à l’utilisateur de naviguer dans l’interface utilisateur de la même façon que les signes l’aident à naviguer dans son environnement. Ils doivent être simples et clairs et contenir uniquement les informations nécessaires pour permettre aux clients d’analyser rapidement l’action qui se produit lorsqu’ils choisissent un contrôle.
@@ -102,22 +102,8 @@ Appliquez les recommandations générales suivantes pour les icônes :
 * Réutilisez les métaphores visuelles d’Office courantes telles que le pinceau pour mettre en forme ou la loupe pour rechercher.
 * N’utilisez pas les métaphores pour des actions qui n’ont rien à voir. L’utilisation du même visuel pour un comportement ou un concept différent peut être source de confusion pour les utilisateurs.
 
-## <a name="animation"></a>Animation
-Les composants, contrôles et éléments de l’interface utilisateur ont souvent des comportements interactifs qui nécessitent des transitions, du mouvement ou de l’animation. Les caractéristiques de mouvement communes dans les éléments de l’interface utilisateur définissent les aspects d’animation d’un langage de création. Office étant axé sur la productivité, le langage d’animation Office aide les clients dans l’exécution de leurs tâches. Il offre un équilibre entre réponse performante, chorégraphie fiable et satisfaction détaillée.
-
-Office UI Fabric comprend une bibliothèque d’animation pour contrôler le mouvement dans vos conteneurs HTML. Elle permet l’intégration en toute transparence dans Office. Elle vous aide à créer des expériences davantage ressenties qu’observées. Les classes CSS d’animation fournissent des informations de direction, entrée/sortie et durée qui renforcent les modèles mentaux d’Office et offrent aux clients la possibilité d’apprendre à interagir avec votre complément. 
-
-Si votre complément a son propre langage d’animation, utilisez-le. Recherchez les opportunités pour conserver votre animation marquée lors de l’intégration avec Office. Veillez à ne pas interférer ni à entrer en conflit avec les modèles de mouvement courants dans Office. Évitez de créer des expériences qui sont embellissements qui ne font que créer une confusion pour vos clients.
-
-Appliquez les recommandations générales suivantes pour les animations :
-
-* Les animations doivent être ressenties et vécues inconsciemment, afin d’éviter d’altérer la fin de la tâche.
-* Évitez les anticipations, les rebonds, les élastiques ou autres effets qui émulent la physique du monde naturel.
-* Chorégraphiez les éléments pour renforcer la hiérarchie et les modèles mentaux.
-* Utilisez le mouvement pour guider l’utilisateur et fournir un focus de composition sur les éléments clés pour l’exécution d’une tâche. 
-* Pensez à l’origine de votre élément déclencheur. Utilisez le mouvement pour créer un lien entre l’action et l’interface utilisateur obtenue.
-* Prenez en compte le ton et l’objectif de votre contenu lors du choix des animations. Gérez les messages critiques différemment des navigations d’exploration.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Instructions de création d’un complément Office](add-in-design-guidelines.md)
+- [Utilisation du mouvement dans les compléments Office](using-motion-office-addins.md)

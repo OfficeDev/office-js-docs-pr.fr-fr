@@ -38,7 +38,9 @@ Pour vous assurer que le fichier manifeste qui décrit votre complément Office
 
 ## <a name="validate-your-manifest-against-the-xml-schema"></a>Validation de votre manifeste par rapport au schéma XML
 
-Pour vous assurer que le fichier manifeste suit le bon schéma, vérifiez-le par rapport aux fichiers de [définition de schéma XML (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas). Pour ce faire, vous pouvez utiliser un outil de validation de schéma XML. 
+Cette opération vous permet de vérifier que le fichier manifeste suit le schéma approprié, y compris les espaces de noms pour les éléments que vous utilisez. Si vous avez copié des éléments à partir d’autres exemples de manifestes, vérifiez par deux fois que vous avez également **inclut les espaces de noms appropriés**. Vous pouvez valider un manifeste par rapport aux fichiers de [définition de schéma XML (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas). Pour ce faire, vous pouvez utiliser un outil de validation de schéma XML. 
+
+
 
 ### <a name="to-use-a-command-line-xml-schema-validation-tool-to-validate-your-manifest"></a>Pour utiliser un outil de validation de schéma XML à ligne de commande pour valider votre manifeste
 

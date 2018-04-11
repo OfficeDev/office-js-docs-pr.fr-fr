@@ -45,12 +45,16 @@ Pour Mac, le menu Caractéristique mesure 26 x 26 pixels, mais flotte à 8 pixel
 Pour consulter un exemple qui implémente un complément de contenu, reportez-vous à [Excel Content Add-in Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance) dans GitHub.
 
 ## <a name="support-considerations"></a>Considérations relatives à la prise en charge
-- Vérifiez si votre complément Office fonctionne sur une [plateforme hôte Office spécifique](/overview/office-add-in-availability.md). 
-- Certains compléments de contenu peuvent exiger que l’utilisateur accepte que le complément lise et écrive sur Excel ou PowerPoint. Vous pouvez déclarer le [niveau des autorisations](/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md) que vous souhaitez attribuer à votre utilisateur dans le manifeste du complément.  
+- Vérifiez si votre complément Office fonctionne sur une [plateforme hôte Office spécifique](https://docs.microsoft.com/fr-fr/office/dev/add-ins/overview/office-add-in-availability). 
+- Certains compléments de contenu peuvent exiger que l’utilisateur accepte que le complément lise et écrive sur Excel ou PowerPoint. Vous pouvez déclarer le [niveau des autorisations](https://docs.microsoft.com/fr-fr/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins) que vous souhaitez attribuer à votre utilisateur dans le manifeste du complément.  
 - Les compléments de contenu sont pris en charge dans Excel et PowerPoint dans Office 2013 et versions ultérieures. Si vous ouvrez un complément dans une version d’Office qui ne prend pas en charge les compléments web Office, le complément s’affichera comme une image.
 
 ## <a name="see-also"></a>Voir aussi
-- [Disponibilité des compléments Office sur les plateformes et les hôtes](/overview/office-add-in-availability.md)
-- [Office UI Fabric dans des compléments Office](office-ui-fabric.md) 
-- [Modèles de conception de l’expérience utilisateur pour les compléments Office](ux-design-patterns.md)
-- [Demande d’autorisations d’utilisation de l’API dans des compléments de contenu et de volet des tâches](/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
+- 
+  [Disponibilité des compléments Office sur les plateformes et les hôtes](https://docs.microsoft.com/fr-fr/office/dev/add-ins/overview/office-add-in-availability)
+- 
+  [Office UI Fabric dans des compléments Office](https://docs.microsoft.com/fr-fr/office/dev/add-ins/design/office-ui-fabric) 
+- 
+  [Modèles de conception de l’expérience utilisateur pour les compléments Office](https://docs.microsoft.com/fr-fr/office/dev/add-ins/design/ux-design-patterns)
+- 
+  [Demande d’autorisations d’utilisation de l’API dans des compléments de contenu et de volet des tâches](https://docs.microsoft.com/fr-fr/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)

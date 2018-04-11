@@ -34,7 +34,7 @@ Nous vous recommandons vivement de commencer à partir d’un des exemples que n
 
 ## <a name="step-2-create-a-task-pane-add-in"></a>Étape 2 : créer un complément de volet Office
 
-Pour utiliser les commandes de complément, vous devez tout d’abord créer un complément de volet de tâches, puis modifier le manifeste du complément, comme décrit dans cet article. Vous ne pouvez pas utiliser de commandes de complément avec les compléments de contenu. Si vous mettez à jour un manifeste existant, vous pouvez ajouter l’élément **VersionOverrides** au manifeste, comme décrit à l’[étape 3 : Ajoutez l’élément VersionOverrides](#step-3-add-versionoverrides-element).
+Pour utiliser les commandes de complément, vous devez tout d’abord créer un complément de volet Office, puis modifier le manifeste du complément, comme décrit dans cet article. Vous ne pouvez pas utiliser de commandes de complément avec les compléments de contenu. Si vous mettez à jour un manifeste existant, vous devez ajouter les **espaces de noms XML** appropriés, ainsi que l’élément **VersionOverrides** au manifeste, comme décrit à l’[étape 3 : Ajoutez l’élément VersionOverrides](#step-3-add-versionoverrides-element).
    
 L’exemple suivant illustre le manifeste d’un complément Office 2013. Ce manifeste ne contient pas de commande de complément car il n’y a pas d’élément **VersionOverrides**. Office 2013 ne prend pas en charge les commandes de complément mais, en ajoutant **VersionOverrides** à ce manifeste, votre complément s’exécute dans Office 2013 et Office 2016. Dans Office 2013, votre complément n’affiche pas les commandes de complément et utilise la valeur **SourceLocation** pour exécuter votre complément sous la forme d’un complément de volet de tâches unique. Dans Office 2016, si aucun élément **VersionOverrides** n’est inclus, **SourceLocation** est utilisé pour exécuter votre complément. Cependant, si vous incluez **VersionOverrides**, votre complément affiche uniquement les commandes de complément et n’affiche pas votre complément sous la forme d’un complément de volet de tâches unique.
   
@@ -71,7 +71,7 @@ L’élément **VersionOverrides** est l’élément racine qui contient la déf
 
 |**Attribut**|**Description**|
 |:-----|:-----|
-|**xmlns** <br/> | Obligatoire. Emplacement du schéma, qui doit être http://schemas.microsoft.com/office/taskpaneappversionoverrides. <br/> |
+|**xmlns** <br/> | Obligatoire. Emplacement du schéma, qui doit être « http://schemas.microsoft.com/office/taskpaneappversionoverrides ». <br/> |
 |**xsi:type** <br/> |Obligatoire. Version du schéma. La version décrite dans cet article est « VersionOverridesV1_0 ».  <br/> |
    
 Le tableau suivant présente les éléments enfants de **VersionOverrides**.

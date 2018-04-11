@@ -1,7 +1,7 @@
 ---
 title: Disponibilité des compléments Office sur les plateformes et les hôtes
 description: 'Ensembles de conditions requises pris en charge pour Excel, Word, Outlook, PowerPoint et OneNote.'
-ms.date: 12/01/2017
+ms.date: 3/20/2018
 ---
 
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilité des compléments Office sur les plateformes et les hôtes
@@ -137,12 +137,11 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
     <td> - Lecture de message<br>
       - Composition de message<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
-    <td> - Mailbox 1.0<br>
-      - Mailbox 1.1<br>
-      - Mailbox 1.2<br>
-      - Mailbox 1.3<br>
-      - Mailbox 1.4<br>
-      - Mailbox 1.5</td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></td>
     <td>non disponible</td>
   </tr>
   <tr>
@@ -150,11 +149,10 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
     <td> - Lecture de message<br>
       - Composition de message<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
-    <td> - Mailbox 1.0<br>
-      - Mailbox 1.1<br>
-      - Mailbox 1.2<br>
-      - Mailbox 1.3<br>
-      - Mailbox 1.4</td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></td>
     <td>non disponible</td>
   </tr>
   <tr>
@@ -163,19 +161,23 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
       - Composition de message<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a><br>
       - Modules</td>
-    <td> - Mailbox 1.0<br>
-      - Mailbox 1.1<br>
-      - Mailbox 1.2<br>
-      - Mailbox 1.3<br>
-      - Mailbox 1.4<br>
-      - Mailbox 1.5</td></td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Mailbox 1.6</a></td>
     <td>non disponible</td> 
   </tr>
   <tr>
     <td>Office pour iOS</td>
     <td> - Lecture de message<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
-    <td> - Mailbox 1.4</td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></td>    
     <td>non disponible</td>
   </tr>
   <tr>
@@ -183,19 +185,21 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
     <td> - Lecture de message<br>
       - Composition de message<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
-    <td> - Mailbox 1.0<br>
-      - Mailbox 1.1<br>
-      - Mailbox 1.2<br>
-      - Mailbox 1.3<br>
-      - Mailbox 1.4<br>
-      - Mailbox 1.5</td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></td>
     <td>non disponible</td>
   </tr>
   <tr>
     <td>Office pour Android</td>
     <td> - Lecture de message<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
-    <td> - Mailbox 1.4</td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></td>
     <td>non disponible</td>
   </tr>
 </table>

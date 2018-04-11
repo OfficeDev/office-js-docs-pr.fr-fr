@@ -1,7 +1,7 @@
 ---
 title: "Créer et déboguer des compléments Office dans Visual\_Studio"
 description: ''
-ms.date: 12/04/2017
+ms.date: 03/14/2018
 ---
 
 
@@ -15,10 +15,10 @@ Cet article explique comment utiliser Visual Studio pour créer votre premier co
 ## <a name="create-an-office-add-in-project-in-visual-studio"></a>Créer un projet de complément Office dans Visual Studio
 
 
-Pour commencer, vérifiez que les [outils de développement Office](https://www.visualstudio.com/features/office-tools-vs.aspx) sont installés et que vous disposez d’une version de Microsoft Office. Vous pouvez participer au [programme pour les développeurs Office 365](https://dev.office.com/devprogram), ou suivre ces instructions pour obtenir le [version la plus récente](../develop/install-latest-office-version.md).
+Pour commencer, vérifiez que les [outils de développement Office](https://www.visualstudio.com/features/office-tools-vs.aspx) sont installés et que vous disposez d’une version de Microsoft Office. Vous pouvez participer au [programme pour les développeurs Office 365](https://developer.microsoft.com/en-us/office/dev-program), ou suivre ces instructions pour obtenir la [version la plus récente](../develop/install-latest-office-version.md).
 
 
-1. Dans la barre de menu de Visual Studio, choisissez successivement **Fichier** > **Nouveau** > **Projet**.
+1. Dans la barre de menu de Visual Studio, choisissez successivement **Fichier** > **Nouveau** > **Projet**.
     
 2. Dans la liste des types de projets sous **Visual C#** ou **Visual Basic**, développez **Office/SharePoint**, choisissez **Compléments web**, puis sélectionnez un des projets de compléments.  
     
@@ -101,8 +101,8 @@ Le tableau suivant décrit les propriétés du projet.
 |**Document de démarrage** (compléments de contenu et du volet Office uniquement)|Spécifie le document à ouvrir lors du démarrage du projet.|
 |**Projet Web**|Spécifie le nom du projet web associé au complément.|
 |**Adresse de messagerie** (compléments Outlook uniquement)|Spécifie l’adresse de messagerie du compte d’utilisateur dans Exchange Server ou Exchange Online avec lequel vous souhaitez tester votre complément Outlook.|
-|**URL EWS** (compléments Outlook uniquement)|URL du service web Exchange (par exemple : https://www.contoso.com/ews/exchange.aspx). |
-|**URL OWA** (compléments Outlook uniquement)|URL Outlook Web App (par exemple : https://www.contoso.com/owa).|
+|**URL EWS** (compléments Outlook uniquement)|URL de service web Exchange (par exemple : https://www.contoso.com/ews/exchange.aspx). |
+|**URL OWA** (compléments Outlook uniquement)|URL d’application web Outlook (par exemple : https://www.contoso.com/owa).|
 |**Nom d’utilisateur** (compléments Outlook uniquement)|Spécifie le nom de votre compte d’utilisateur dans Exchange Server ou Exchange Online.|
 |**Fichier du projet**|Indique le nom du fichier contenant la version, la configuration et d’autres informations sur le projet.|
 |**Dossier du projet**|Emplacement du fichier de projet.|

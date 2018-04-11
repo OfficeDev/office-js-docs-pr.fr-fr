@@ -1,0 +1,40 @@
+### YamlMime:Tutorial
+documentType: Tutorial
+title: Didacticiel sur les compléments Word
+metadata:
+  title: Didacticiel sur les compléments Word
+  description: Dans ce didacticiel, vous allez créer un complément Word qui insère (et remplace) des plages de texte, des paragraphes, des images, du code HTML, des tableaux et des contrôles de contenu. Vous découvrirez également comment mettre en forme du texte et comment insérer (et remplacer) du contenu dans les contrôles de contenu.
+  audience: Développeur
+  level: Débutant
+  displayType: one-column
+  ms.date: 03/10/2018
+items:
+- durationInMinutes: 1
+  content: |
+    Ce didacticiel vous apprend à créer un complément Word qui insère et remplace du texte, des images et d’autres types de contenu. Vous devez commencer par créer un complément Word qui insère un paragraphe. Dans chaque étape suivante du didacticiel, vous allez ajouter davantage de fonctionnalités au complément. Si vous rencontrez des problèmes tout au long du processus, veuillez <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">nous contacter</a>.
+- title: Créer votre projet de complément
+  durationInMinutes: 5
+  content: |
+    [!INCLUDE [](../includes/word-tutorial-setup.md)]
+- title: Insérer une plage de texte
+  durationInMinutes: 10
+  content: |
+    [!INCLUDE [](../includes/word-tutorial-insert-text.md)]
+- title: Mettre en forme du texte et appliquer un style
+  durationInMinutes: 15
+  content: |
+    [!INCLUDE [](../includes/word-tutorial-format-text.md)]
+- title: Remplacer du texte et insérer du texte à divers emplacements
+  durationInMinutes: 20
+  content: |
+    [!INCLUDE [](../includes/word-tutorial-replace-text.md)]
+- title: Insérer des images, du code HTML et des tableaux
+  durationInMinutes: 6
+  content: |
+    [!INCLUDE [](../includes/word-tutorial-insert-image-html-table.md)]
+- title: Créer des contrôles de contenu et remplacer leur contenu
+  durationInMinutes: 8
+  content: |
+    [!INCLUDE [](../includes/word-tutorial-content-control.md)]
+- content: |
+    Vous avez terminé le didacticiel sur les compléments Word. Pour en savoir plus sur la création de compléments Word, reportez-vous à <a href="../word/word-add-ins-programming-overview.md">Word add-ins overview</a>.
