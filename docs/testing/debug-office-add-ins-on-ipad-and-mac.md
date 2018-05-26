@@ -1,112 +1,137 @@
 ---
-title: "Débogage des compléments\_Office sur iPad et Mac"
+title: D?bogage des compl?ments Office sur iPad et Mac
 description: ''
-ms.date: 01/25/2018
+ms.date: 03/21/2018
+ms.openlocfilehash: 5d68fa000e19d81ebbcd1b383a790958f2bbac72
+ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/23/2018
 ---
+# <a name="debug-office-add-ins-on-ipad-and-mac"></a>D?bogage des compl?ments Office sur iPad et Mac
 
-# <a name="debug-office-add-ins-on-ipad-and-mac"></a>Débogage des compléments Office sur iPad et Mac
+Vous pouvez utiliser Visual Studio pour le d?veloppement et le d?bogage des compl?ments sur Windows. Toutefois, vous ne pouvez pas l?utiliser pour d?boguer les compl?ments sur iPad ou sur Mac. Dans la mesure o? les compl?ments sont d?velopp?s dans le code HTML et Javascript, ils devraient fonctionner sur diff?rentes plateformes. Il peut toutefois exister de l?g?res diff?rences dans l?affichage du code HTML dans les diff?rents navigateurs. Cette rubrique explique comment d?boguer les compl?ments en ex?cution sur iPad ou sur Mac. 
 
-Vous pouvez utiliser Visual Studio pour le développement et le débogage des compléments sur Windows. Toutefois, vous ne pouvez pas l’utiliser pour déboguer les compléments sur iPad ou sur Mac. Dans la mesure où les compléments sont développés dans le code HTML et Javascript, ils devraient fonctionner sur différentes plateformes. Il peut toutefois exister de légères différences dans l’affichage du code HTML dans les différents navigateurs. Cette rubrique explique comment déboguer les compléments en exécution sur iPad ou sur Mac. 
+## <a name="debugging-with-safari-web-inspector-on-a-mac"></a>D?bogage avec l'inspecteur Web de Safari sur un Mac
 
-## <a name="debugging-with-vorlonjs"></a>Débogage avec Vorlon.JS 
+Vous pouvez d?boguer un compl?ment Office ? l'aide de l'inspecteur Web de Safari. 
 
-Vorlon.JS est un débogueur de pages web, semblable aux outils disponibles avec la touche F12. Il est conçu pour fonctionner à distance et déboguer des pages web sur différents appareils. Pour plus d’informations, consultez le [site web de Vorlon](http://www.vorlonjs.com).  
+Pour pouvoir d?boguer les compl?ments Office sur Mac, vous devez disposer de Mac OS High Sierra ET de Mac Office Version : 16.9.1 (Build 18012504) ou version ult?rieure. Si vous n'avez pas de build Office pour Mac, vous pouvez en obtenir un en rejoignant notre [programme pour les d?veloppeurs Office 365](https://aka.ms/o365devprogram).
+
+Pour commencer, ouvrez un terminal et r?glez la propri?t? `OfficeWebAddinDeveloperExtras` pour l'application Office concern?e en proc?dant comme suit?:
+
+- `defaults write com.microsoft.Word OfficeWebAddinDeveloperExtras -bool true`
+
+- `defaults write com.microsoft.Excel OfficeWebAddinDeveloperExtras -bool true`
+
+- `defaults write com.microsoft.Powerpoint OfficeWebAddinDeveloperExtras -bool true`
+
+- `defaults write com.microsoft.Outlook OfficeWebAddinDeveloperExtras -bool true`
+
+Ensuite, ouvrez l'application Office et ins?rez votre compl?ment. Cliquez avec le bouton droit sur le compl?ment et vous devriez voir une option **Inspecter l'?l?ment** dans le menu contextuel.  S?lectionnez cette option et l'inspecteur appara?tra, o? vous pouvez d?finir des points d'arr?t et d?boguer votre compl?ment.
+
+> [!NOTE]
+> Veuillez noter qu'il s'agit d'une fonctionnalit? exp?rimentale et il n'y a aucune garantie que nous allons la conserver dans les futures versions des applications Office.
+
+## <a name="debugging-with-vorlonjs-on-a-ipad-or-mac"></a>D?bogage avec Vorlon.JS sur iPad ou Mac
+
+Pour d?boguer un compl?ment sur iPad ou Mac, vous pouvez utiliser Vorlon.JS, un d?bogueur pour pages Web similaire aux outils F12. Il est con?u pour fonctionner ? distance et d?boguer des pages web sur diff?rents appareils. Pour plus d?informations, consultez le [site web de Vorlon](http://www.vorlonjs.com).  
 
 
-### <a name="install-and-set-up-up-vorlonjs-on-a-mac-or-ipad"></a>Installation et configuration de Vorlon.JS sur Mac ou iPad 
+### <a name="install-and-set-up-vorlonjs"></a>Installation et configuration de Vorlon.JS  
 
-1.  Connectez-vous à l’appareil en tant qu’administrateur.
+1.  Connectez-vous au support en tant qu?administrateur.
 
-2.  Installez [Node.js](https://nodejs.org) s’il n’est pas déjà installé. 
+2.  Installez [Node.js](https://nodejs.org) s?il n?est pas d?j? install?. 
 
-3.  Ouvrez une fenêtre **Terminal** et entrez la commande `npm i -g vorlon`. L’outil est installé dans le dossier `/usr/local/lib/node_modules/vorlon`.
+3.  Ouvrez une fen?tre **Terminal** et entrez la commande `npm i -g vorlon`. L?outil est install? dans le dossier `/usr/local/lib/node_modules/vorlon`.
 
 
-### <a name="configure-vorlonjs-to-use-https"></a>Configuration de Vorlon.JS pour une utilisation avec le protocole HTTPS
+### <a name="configure-vorlonjs-to-use-https"></a>Configuration de Vorlon.JS pour une utilisation avec le protocole HTTPS
 
-Pour déboguer une application à l’aide de Vorlon.JS, ajoutez la balise `<script>` à la page d’ouverture de l’application qui charge un script Vorlon.JS à partir d’un emplacement connu (pour plus de détails, reportez-vous à la procédure suivante). Si un complément est sécurisé par SSL (HTTPS), tout script qu’il utilis doit être hébergé sur un serveur HTTPS, y compris le script Vorlon.JS. Par conséquent, afin d’utiliser Vorlon.JS avec des compléments, vous devez le configurer pour qu’il se serve du protocole SSL. 
+Pour d?boguer une application ? l?aide de Vorlon.JS, ajoutez la balise `<script>` ? la page d?ouverture de l?application qui charge un script Vorlon.JS ? partir d?un emplacement connu (pour plus de d?tails, reportez-vous ? la proc?dure suivante). Si un compl?ment est s?curis? par SSL (HTTPS), tout script qu?il utilis doit ?tre h?berg? sur un serveur HTTPS, y compris le script Vorlon.JS. Par cons?quent, afin d?utiliser Vorlon.JS avec des compl?ments, vous devez le configurer pour qu?il se serve du protocole SSL. 
 
 > [!IMPORTANT]
 > [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-1.  Dans **Finder**, accédez à `/usr/local/lib/node_modules/vorlon`, ouvrez le menu contextuel (en cliquant avec le bouton droit) du dossier `/Server`, puis sélectionnez **Lire les informations**.
+1.  Dans **Finder**, acc?dez ? `/usr/local/lib/node_modules/vorlon`, ouvrez le menu contextuel (en cliquant avec le bouton droit) du dossier `/Server`, puis s?lectionnez **Lire les informations**.
 
-2.  Cliquez sur l’icône en forme de cadenas dans le coin inférieur droit de la fenêtre **Informations sur le serveur** pour déverrouiller le dossier.
+2.  Cliquez sur l?ic?ne en forme de cadenas dans le coin inf?rieur droit de la fen?tre **Informations sur le serveur** pour d?verrouiller le dossier.
 
-3. Dans la section **Partage et permissions** de la fenêtre, définissez le **privilège** pour le groupe **personnel** sur **Lecture et écriture**.
+3. Dans la section **Partage et permissions** de la fen?tre, d?finissez le **privil?ge** pour le groupe **personnel** sur **Lecture et ?criture**.
 
-4. Cliquez à nouveau sur l’icône en forme de cadenas pour ***verrouiller à nouveau*** le dossier.
+4. Cliquez ? nouveau sur l?ic?ne en forme de cadenas pour ***verrouiller ? nouveau*** le dossier.
 
-5. Dans **Finder**, développez le sous-dossier `/Server`, cliquez avec le bouton droit sur le fichier `config.json`, puis sélectionnez **Lire les informations**.
+5. Dans **Finder**, d?veloppez le sous-dossier `/Server`, cliquez avec le bouton droit sur le fichier `config.json`, puis s?lectionnez **Lire les informations**.
 
-6. Dans la fenêtre **config.json info**, modifiez les privilèges du fichier de la même façon que pour le dossier `/Server` parent. Verrouillez à nouveau le dossier et fermez la fenêtre.
+6. Dans la fen?tre **config.json info**, modifiez les privil?ges du fichier de la m?me fa?on que pour le dossier `/Server` parent. Verrouillez ? nouveau le dossier et fermez la fen?tre.
 
-7. Dans **Finder**, cliquez avec le bouton droit sur le fichier `config.json`, sélectionnez **Ouvrir avec**, puis **TextEdit**. Le fichier s’ouvre dans un éditeur de texte.
+7. Dans **Finder**, cliquez avec le bouton droit sur le fichier `config.json`, s?lectionnez **Ouvrir avec**, puis **TextEdit**. Le fichier s?ouvre dans un ?diteur de texte.
 
-8. Définissez la valeur de la propriété **useSSL** sur `true`.
+8. D?finissez la valeur de la propri?t? **useSSL** sur `true`.
 
-9. Dans la section **Modules**, recherchez le module ayant pour **ID** `OFFICE` et pour **nom** `Office Addin`. Si la valeur de la propriété **enabled** pour le module n’est pas déjà définie sur `true`, définissez-la sur `true`.
+9. Dans la section **Modules**, recherchez le module ayant pour **ID** `OFFICE` et pour **nom** `Office Addin`. Si la valeur de la propri?t? **enabled** pour le module n?est pas d?j? d?finie sur `true`, d?finissez-la sur `true`.
 
-10. Enregistrez le fichier et fermez l’éditeur.
+10. Enregistrez le fichier et fermez l??diteur.
 
-11. Dans **Finder**, accédez à `/usr/local/lib/node_modules/vorlon`, cliquez avec le bouton droit sur le sous-dossier `Server`, et sélectionnez **Nouveau terminal au dossier**. 
+11. Dans **Finder**, acc?dez ? `/usr/local/lib/node_modules/vorlon`, cliquez avec le bouton droit sur le sous-dossier `Server`, et s?lectionnez **Nouveau terminal au dossier**. 
     
-12. Dans la fenêtre **Terminal**, entrez `sudo vorlon`. Vous êtes invité à saisir le mot de passe de l’administrateur. Le serveur Vorlon démarre. Laissez la fenêtre **Terminal** ouverte.
+12. Dans la fen?tre **Terminal**, entrez `sudo vorlon`. Vous ?tes invit? ? saisir le mot de passe de l?administrateur. Le serveur Vorlon d?marre. Laissez la fen?tre **Terminal** ouverte.
 
-13. Ouvrez une fenêtre de navigateur et accédez à `https://localhost:1337`, qui est l’interface de Vorlon.JS. Lorsque vous y êtes invité, sélectionnez **Toujours** pour approuver le certificat de sécurité. 
+13. Ouvrez une fen?tre de navigateur et acc?dez ? `https://localhost:1337`, qui est l?interface de Vorlon.JS. Lorsque vous y ?tes invit?, s?lectionnez **Toujours** pour approuver le certificat de s?curit?. 
 
     > [!NOTE]
-    > Si aucune fenêtre d’invite n’apparaît, il se peut que vous deviez approuver le certificat manuellement. Le fichier de certificat est le suivant : `/usr/local/lib/node_modules/vorlon/Server/cert/server.crt`. Suivez la procédure ci-dessous. Si vous rencontrez des problèmes, consultez l’aide de Macintosh ou iPad. 
+    > Si aucune fen?tre d?invite n?appara?t, il se peut que vous deviez approuver le certificat manuellement. Le fichier de certificat est le suivant : `/usr/local/lib/node_modules/vorlon/Server/cert/server.crt`. Suivez la proc?dure ci-dessous. Si vous rencontrez des probl?mes, consultez l?aide de Macintosh ou iPad. 
     >
-    > 1. Fermez la fenêtre du navigateur et, dans la fenêtre **Terminal** en cours d’exécution sur le serveur Vorlon, utilisez le raccourci Ctrl+C pour arrêter le serveur.
-    > 2. Dans **Finder**, cliquez avec le bouton droit sur le fichier `server.crt` et sélectionnez **Trousseaux d’accès**. La fenêtre **Trousseaux d’accès** s’ouvre.
-    > 3. Dans la liste **Trousseaux** sur la gauche, sélectionnez **Connexion** si l’option n’est pas déjà sélectionnée, puis choisissez **Certificats** dans la section **Catégorie**. Le certificat **localhost** figure dans la liste.
-    > 4. Cliquez avec le bouton droit sur le certificat **localhost** et sélectionnez **Lire les informations**. Une fenêtre **localhost** s’ouvre.
-    > 5. Dans la section **Approuver**, ouvrez le sélecteur nommé **Lors de l’utilisation de ce certificat** et sélectionnez **Toujours approuver**. 
-    > 6. Fermez la fenêtre **localhost**. Si l’action réussit, une croix blanche dans un cercle bleu apparaît sur l’icône du certificat **localhost** dans la fenêtre **Trousseaux d’accès**.
+    > 1. Fermez la fen?tre du navigateur et, dans la fen?tre **Terminal** en cours d?ex?cution sur le serveur Vorlon, utilisez le raccourci Ctrl+C pour arr?ter le serveur.
+    > 2. Dans **Finder**, cliquez avec le bouton droit sur le fichier `server.crt` et s?lectionnez **Trousseaux d?acc?s**. La fen?tre **Trousseaux d?acc?s** s?ouvre.
+    > 3. Dans la liste **Trousseaux** sur la gauche, s?lectionnez **Connexion** si l?option n?est pas d?j? s?lectionn?e, puis choisissez **Certificats** dans la section **Cat?gorie**. Le certificat **localhost** figure dans la liste.
+    > 4. Cliquez avec le bouton droit sur le certificat **localhost** et s?lectionnez **Lire les informations**. Une fen?tre **localhost** s?ouvre.
+    > 5. Dans la section **Approuver**, ouvrez le s?lecteur nomm? **Lors de l?utilisation de ce certificat** et s?lectionnez **Toujours approuver**. 
+    > 6. Fermez la fen?tre **localhost**. Si l?action r?ussit, une croix blanche dans un cercle bleu appara?t sur l?ic?ne du certificat **localhost** dans la fen?tre **Trousseaux d?acc?s**.
 
 
-### <a name="configure-the-add-in-for-vorlonjs-debugging"></a>Configuration du complément pour le débogage Vorlon.JS
+### <a name="configure-the-add-in-for-vorlonjs-debugging"></a>Configuration du compl?ment pour le d?bogage Vorlon.JS
 
-1. Ajoutez la balise de script suivante à la section `<head>` du fichier home.html (ou fichier HTML principal) de votre complément :
+1. Ajoutez la balise de script suivante ? la section `<head>` du fichier home.html (ou fichier HTML principal) de votre compl?ment :
 
     ```html
     <script src="https://localhost:1337/vorlon.js"></script>    
     ```  
 
-2. Déployez l’application web du complément sur un serveur web accessible à partir de l’ordinateur Mac ou de l’iPad, tel qu’un site web Azure. 
+2. D?ployez l?application web du compl?ment sur un serveur web accessible ? partir de l?ordinateur Mac ou de l?iPad, tel qu?un site web Azure. 
 
-3. Mettez à jour l’URL du complément à tous les emplacements où elle apparaît dans le manifeste du complément.
+3. Mettez ? jour l?URL du compl?ment ? tous les emplacements o? elle appara?t dans le manifeste du compl?ment.
 
-4. Copiez le manifeste du complément dans le dossier suivant sur l’ordinateur Mac ou l’iPad : `/Users/{your_name_on_the_device}/Library/Containers/com.microsoft.{host_name}/Data/Documents/wef`, où *{host_name}* est Word, Excel, PowerPoint ou Outlook.
+4. Copiez le manifeste du compl?ment dans le dossier suivant sur l?ordinateur Mac ou l?iPad : `/Users/{your_name_on_the_device}/Library/Containers/com.microsoft.{host_name}/Data/Documents/wef`, o? *{host_name}* est Word, Excel, PowerPoint ou Outlook.
 
 
-### <a name="inspect-an-add-in-in-vorlonjs"></a>Vérification d’un complément dans Vorlon.JS
+### <a name="inspect-an-add-in-in-vorlonjs"></a>V?rification d?un compl?ment dans Vorlon.JS
 
-1. Si le serveur Vorlon n’est pas en cours d’exécution, dans **Finder**, accédez à `/usr/local/lib/node_modules/vorlon`, puis cliquez avec le bouton droit sur le sous-dossier `Server` et sélectionnez **Nouveau terminal au dossier**. 
+1. Si le serveur Vorlon n?est pas en cours d?ex?cution, dans **Finder**, acc?dez ? `/usr/local/lib/node_modules/vorlon`, puis cliquez avec le bouton droit sur le sous-dossier `Server` et s?lectionnez **Nouveau terminal au dossier**. 
     
-2.  Dans la fenêtre **Terminal**, entrez `sudo vorlon`. Vous êtes invité à saisir le mot de passe de l’administrateur. Le serveur Vorlon démarre. Laissez la fenêtre **Terminal** ouverte.
+2.  Dans la fen?tre **Terminal**, entrez `sudo vorlon`. Vous ?tes invit? ? saisir le mot de passe de l?administrateur. Le serveur Vorlon d?marre. Laissez la fen?tre **Terminal** ouverte.
 
-3.  Ouvrez une fenêtre de navigateur et accédez à `https://localhost:1337`, qui est l’interface de Vorlon.JS.
+3.  Ouvrez une fen?tre de navigateur et acc?dez ? `https://localhost:1337`, qui est l?interface de Vorlon.JS.
 
-4. Chargez une version test du complément. S’il s’agit d’un complément pour Excel, PowerPoint ou Word, chargez une version test en suivant les étapes décrites dans la rubrique relative au [chargement d’une version test d’un complément Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md). S’il s’agit d’un complément Outlook, chargez une version de test en suivant les étapes décrites dans la rubrique relative au [chargement d’une version test de compléments Outlook à des fins de test](https://docs.microsoft.com/fr-fr/outlook/add-ins/sideload-outlook-add-ins-for-testing). Si le complément n’utilise pas les commandes du complément, il s’ouvre automatiquement. Sinon, cliquez sur le bouton d’ouverture du complément. En fonction de la version de l’application hôte d’Office, vous trouverez le bouton sur l’onglet **Accueil** ou sur l’onglet **Complément**.
+4. Chargez une version test du compl?ment. S?il s?agit d?un compl?ment pour Excel, PowerPoint ou Word, chargez une version test en suivant les ?tapes d?crites dans la rubrique relative au [chargement d?une version test d?un compl?ment Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md). S?il s?agit d?un compl?ment Outlook, chargez une version de test en suivant les ?tapes d?crites dans la rubrique relative au [chargement d?une version test de compl?ments Outlook ? des fins de test](https://docs.microsoft.com/en-us/outlook/add-ins/sideload-outlook-add-ins-for-testing). Si le compl?ment n?utilise pas les commandes du compl?ment, il s?ouvre automatiquement. Sinon, cliquez sur le bouton d?ouverture du compl?ment. En fonction de la version de l?application h?te d?Office, vous trouverez le bouton sur l?onglet **Accueil** ou sur l?onglet **Compl?ment**.
 
-Le complément apparaît dans la liste des clients dans Vorlon.JS (sur la gauche dans l’interface de Vorlon.JS) en tant que **{Système d’exploitation} - n**, pour un nombre *n*, et où *{Système d’exploitation}* correspond au type d’appareil (par exemple, « Macintosh »). 
+Le compl?ment appara?t dans la liste des clients dans Vorlon.JS (sur la gauche dans l?interface de Vorlon.JS) en tant que **{Syst?me d?exploitation} - n**, pour un nombre *n*, et o? *{Syst?me d?exploitation}* correspond au type d?appareil (par exemple, ? Macintosh ?). 
 
-![Capture d’écran de l’interface Vorlon.js](../images/vorlon-interface.png)
+![Capture d??cran de l?interface Vorlon.js](../images/vorlon-interface.png)
 
-L’outil Vorlon dispose d’une variété de plug-ins. Les plug-ins actuellement activés apparaissent sous forme d’onglets dans la partie supérieure de l’interface de l’outil. (Vous pouvez en activer davantage en cliquant sur l’icône en forme d’engrenage sur la gauche.) Ces plug-ins sont semblables aux fonctions disponibles dans les outils F12. Par exemple, vous pouvez mettre en surbrillance les éléments DOM, exécuter des commandes, etc. Pour plus d’informations, reportez-vous à la page relative à la [documentation principale sur les plug-ins Vorlon](http://vorlonjs.com/documentation/#console). 
+L?outil Vorlon dispose d?une vari?t? de plug-ins. Les plug-ins actuellement activ?s apparaissent sous forme d?onglets dans la partie sup?rieure de l?interface de l?outil. (Vous pouvez en activer davantage en cliquant sur l?ic?ne en forme d?engrenage sur la gauche.) Ces plug-ins sont semblables aux fonctions disponibles dans les outils F12. Par exemple, vous pouvez mettre en surbrillance les ?l?ments DOM, ex?cuter des commandes, etc. Pour plus d?informations, reportez-vous ? la page relative ? la [documentation principale sur les plug-ins Vorlon](http://vorlonjs.com/documentation/#console). 
 
-Un plug-in **Complément Office** permet d’ajouter des fonctionnalités supplémentaires pour Office.js, telles que l’exploration du modèle objet, l’exécution d’appels Office.js et la lecture des valeurs des propriétés de l’objet. Pour plus d’informations, reportez-vous à l’article relatif à l’utilisation du [plug-in VorlonJS pour déboguer un complément Office](https://blogs.msdn.microsoft.com/mim/2016/02/18/vorlonjs-plugin-for-debugging-office-addin/).
+Un plug-in **Compl?ment Office** permet d?ajouter des fonctionnalit?s suppl?mentaires pour Office.js, telles que l?exploration du mod?le objet, l?ex?cution d?appels Office.js et la lecture des valeurs des propri?t?s de l?objet. Pour plus d?informations, reportez-vous ? l?article relatif ? l?utilisation du [plug-in VorlonJS pour d?boguer un compl?ment Office](https://blogs.msdn.microsoft.com/mim/2016/02/18/vorlonjs-plugin-for-debugging-office-addin/).
 
 > [!NOTE]
-> il n’existe aucun moyen de définir des points d’arrêt dans Vorlon.JS.
+> il n?existe aucun moyen de d?finir des points d?arr?t dans Vorlon.JS.
 
 
-## <a name="clearing-the-office-applications-cache-on-a-mac-or-ipad"></a>Effacement du cache de l’application Office sur un ordinateur Mac ou un iPad
+## <a name="clearing-the-office-applications-cache-on-a-mac-or-ipad"></a>Effacement du cache de l?application Office sur un ordinateur Mac ou un iPad
 
-Les compléments sont souvent mis en cache dans Office pour Mac, pour des raisons de performances. En règle générale, vous pouvez effacer le cache en rechargeant le complément. En présence de plusieurs compléments dans le même document, il se peut que le processus d’effacement automatique du cache lors du rechargement ne fonctionne pas systématiquement. 
+Les compl?ments sont souvent mis en cache dans Office pour Mac, pour des raisons de performances. En r?gle g?n?rale, vous pouvez effacer le cache en rechargeant le compl?ment. En pr?sence de plusieurs compl?ments dans le m?me document, il se peut que le processus d?effacement automatique du cache lors du rechargement ne fonctionne pas syst?matiquement. 
 
-Sur un ordinateur Mac, vous pouvez effacer le cache manuellement en supprimant tous les éléments contenus dans le dossier `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
+Sur un ordinateur Mac, vous pouvez effacer le cache manuellement en supprimant tous les ?l?ments contenus dans le dossier `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
 
-Sur un iPad, vous pouvez appeler `window.location.reload(true)` à partir de JavaScript dans le complément pour forcer le rechargement. Vous pouvez également choisir de réinstaller Office.
+Sur un iPad, vous pouvez appeler `window.location.reload(true)` ? partir de JavaScript dans le compl?ment pour forcer le rechargement. Vous pouvez ?galement choisir de r?installer Office.
