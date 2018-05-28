@@ -1,0 +1,47 @@
+### YamlMime:Tutorial
+title: <span data-ttu-id="e8eb3-101">Didacticiel sur la macro compl?mentaire Excel</span><span class="sxs-lookup"><span data-stu-id="e8eb3-101">Excel add-in tutorial</span></span>
+metadata:
+  title: Didacticiel sur la macro compl?mentaire Excel
+  description: Dans ce didacticiel, vous allez cr?er une macro compl?mentaire Excel qui g?n?re, remplit, filtre et trie une table, cr?e un graphique, fige un en-t?te de table, prot?ge une feuille de calcul et ouvre une bo?te de dialogue.
+  audience: Developer
+  level: Beginner
+  displayType: one-column
+  ms.date: 01/18/2018
+  ms.openlocfilehash: 97e7fb4340060c527d8dae9b360818cb2bc35625
+  ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+  ms.translationtype: HT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 05/23/2018
+items:
+- durationInMinutes: 1
+  content: >
+    <span data-ttu-id="e8eb3-104">Ce didacticiel vous apprend ? cr?er une macro compl?mentaire Excel qui interagit avec des tables, des diagrammes, des feuilles de calcul et des bo?tes de dialogue dans un classeur Excel.</span><span class="sxs-lookup"><span data-stu-id="e8eb3-104">This tutorial teaches you how to build an Excel add-in that interacts with tables, charts, worksheets, and dialogs in an Excel workbook.</span></span> <span data-ttu-id="e8eb3-105">Vous commencerez par cr?er une macro compl?mentaire Excel qui g?n?re, remplit et met en forme une table.</span><span class="sxs-lookup"><span data-stu-id="e8eb3-105">You'll start by building an Excel add-in that creates, populates, and formats a table.</span></span> <span data-ttu-id="e8eb3-106">Dans chaque ?tape suivante du didacticiel, vous ajouterez plus de fonctionnalit?s au compl?ment.</span><span class="sxs-lookup"><span data-stu-id="e8eb3-106">In each subsequent step of the tutorial, you'll add more functionality to the add-in.</span></span> <span data-ttu-id="e8eb3-107">Si vous rencontrez des probl?mes en cours de route, veuillez <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">nous le faire savoir</a>.</span><span class="sxs-lookup"><span data-stu-id="e8eb3-107">If you run into any issues along the way, please <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">let us know</a>.</span></span>
+- title: <span data-ttu-id="e8eb3-108">Cr?er votre projet de compl?ment</span><span class="sxs-lookup"><span data-stu-id="e8eb3-108">Create your add-in project</span></span>
+  durationInMinutes: 5
+  content: >
+    [!INCLUDE [](../includes/excel-tutorial-setup.md)]
+- title: <span data-ttu-id="e8eb3-109">Cr?er une table</span><span class="sxs-lookup"><span data-stu-id="e8eb3-109">Create a table</span></span>
+  durationInMinutes: 15
+  content: >
+    [!INCLUDE [](../includes/excel-tutorial-create-table.md)]
+- title: <span data-ttu-id="e8eb3-110">Filtrer et trier une table</span><span class="sxs-lookup"><span data-stu-id="e8eb3-110">Filter and sort a table</span></span>
+  durationInMinutes: 10
+  content: >
+    [!INCLUDE [](../includes/excel-tutorial-filter-and-sort-table.md)]
+- title: <span data-ttu-id="e8eb3-111">Cr?er un graphique</span><span class="sxs-lookup"><span data-stu-id="e8eb3-111">Create a chart</span></span>
+  durationInMinutes: 7
+  content: >
+    [!INCLUDE [](../includes/excel-tutorial-create-chart.md)]
+- title: <span data-ttu-id="e8eb3-112">Figer un en-t?te de table</span><span class="sxs-lookup"><span data-stu-id="e8eb3-112">Freeze a table header in place</span></span>
+  durationInMinutes: 6
+  content: >
+    [!INCLUDE [](../includes/excel-tutorial-freeze-header.md)]
+- title: <span data-ttu-id="e8eb3-113">Prot?ger une feuille de calcul</span><span class="sxs-lookup"><span data-stu-id="e8eb3-113">Protect a worksheet from changes</span></span>
+  durationInMinutes: 20
+  content: >
+    [!INCLUDE [](../includes/excel-tutorial-protect-worksheet.md)]
+- title: <span data-ttu-id="e8eb3-114">Ouvrir une bo?te de dialogue</span><span class="sxs-lookup"><span data-stu-id="e8eb3-114">Open a dialog box.</span></span>
+  durationInMinutes: 7
+  content: >
+    [!INCLUDE [](../includes/excel-tutorial-open-dialog.md)]
+- content: <span data-ttu-id="e8eb3-115">Vous avez termin? le didacticiel de macro compl?mentaire Excel.</span><span class="sxs-lookup"><span data-stu-id="e8eb3-115">You've completed the Excel add-in tutorial.</span></span> <span data-ttu-id="e8eb3-116">Pour en savoir plus sur la cr?ation de macros compl?mentaires Excel, consultez <a href="../excel/excel-add-ins-overview.md">Vue d'ensemble des macros compl?mentaires Excel</a>.</span><span class="sxs-lookup"><span data-stu-id="e8eb3-116">To learn more about building Excel add-ins, see <a href="../excel/excel-add-ins-overview.md">Excel add-ins overview</a>.</span></span>
