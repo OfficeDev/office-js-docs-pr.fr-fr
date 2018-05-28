@@ -1,19 +1,16 @@
 ---
 title: Utilisation d??v?nements ? l?aide de l?API JavaScript pour Excel
 description: ''
-ms.date: 01/29/2018
-ms.openlocfilehash: 4e04b31e7a130f21d6a9c94d041dc2a122a5890e
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.date: 05/25/2018
+ms.openlocfilehash: b928910cc673cfe8ff99906259b51fa2c3afdca4
+ms.sourcegitcommit: 17f60431644b448a4816913039aaebfa328f9b0a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Utilisation d??v?nements ? l?aide de l?API JavaScript pour Excel 
 
 Cet article d?crit des concepts importants relatifs ? l?utilisation des ?v?nements dans Excel et fournit des exemples de code montrant comment inscrire des gestionnaires d??v?nements, g?rer des ?v?nements et supprimer des gestionnaires d??v?nements ? l?aide de l?API JavaScript pour Excel. 
-
-> [!IMPORTANT]
-> Les API d?crites dans cet article sont actuellement disponibles uniquement dans la version d??valuation publique (b?ta) et ne sont pas destin?es ? ?tre utilis?es dans des environnements de production. Pour ex?cuter les exemples de code contenus dans cet article, vous devez utiliser une version suffisamment r?cente d?Office et faire r?f?rence ? la biblioth?que b?ta du CDN Office.js : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
 ## <a name="events-in-excel"></a>?v?nements dans Excel
 
@@ -21,11 +18,13 @@ Chaque fois que certains types de modifications se produisent dans un classeur E
 
 | ?v?nement | Description | Objets pris en charge |
 |:---------------|:-------------|:-----------|
-| `onAdded` | ?v?nement se produisant lors de l?ajout d?un objet. | [**WorksheetCollection**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetaddedeventargs.md) |
-| `onActivated` | ?v?nement se produisant lorsqu?un objet est activ?. | [**WorksheetCollection**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetactivatedeventargs.md), [**Worksheet**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetactivatedeventargs.md) |
-| `onDeactivated` | ?v?nement se produisant lorsqu?un objet est d?sactiv?. | [**WorksheetCollection**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetdeactivatedeventargs.md), [**Worksheet**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetdeactivatedeventargs.md) |
-| `onChanged` | ?v?nement se produisant lorsque les donn?es au sein des cellules sont modifi?es. | [**Worksheet**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetchangedeventargs.md), [**Table**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/tablechangedeventargs.md), [**TableCollection**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/tablechangedeventargs.md), [**Liaison**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/bindingdatachangedeventargs.md) |
-| `onSelectionChanged` | ?v?nement se produisant lorsque la cellule active ou la plage s?lectionn?e est modifi?e. | [**Worksheet**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/worksheetselectionchangedeventargs.md), [**Table**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/tableselectionchangedeventargs.md), [**Liaison**](https://github.com/OfficeDev/office-js-docs/blob/master/reference/excel/bindingselectionchangedeventargs.md) |
+| `onAdded` | ?v?nement se produisant lors de l?ajout d?un objet. | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection) |
+| `onDeleted` | ?v?nement se produisant lors de la suppression d'un objet. | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection) |
+| `onActivated` | ?v?nement se produisant lors de l'activation d'un objet. | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection), [**Feuille de calcul**](https://dev.office.com/reference/add-ins/excel/worksheet) |
+| `onDeactivated` | ?v?nement se produisant lors de la d?sactivation d'un objet. | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection), [**Feuille de calcul**](https://dev.office.com/reference/add-ins/excel/worksheet) |
+| `onChanged` | ?v?nement se produisant lors de la modification de cellules. | [**Feuille de travail**](https://dev.office.com/reference/add-ins/excel/worksheet), [**Table**](https://dev.office.com/reference/add-ins/excel/table), [**TableCollection**](https://dev.office.com/reference/add-ins/excel/tablecollection) |
+| `onDataChanged` | ?v?nement se produisant lors de la modification des donn?es ou de la mise en forme dans la liaison. | [**Liaison**](https://dev.office.com/reference/add-ins/excel/binding) |
+| `onSelectionChanged` | ?v?nement se produisant lors de la modification de la cellule active ou de la plage s?lectionn?e. | [**Feuille de calcul**](https://dev.office.com/reference/add-ins/excel/worksheet), [**Table**](https://dev.office.com/reference/add-ins/excel/table), [**Liaison**](https://dev.office.com/reference/add-ins/excel/binding) |
 
 ### <a name="event-triggers"></a>D?clencheurs d??v?nements
 
@@ -122,5 +121,4 @@ function remove() {
 ## <a name="see-also"></a>Voir aussi
 
 - [Concepts de base de l?API JavaScript pour Excel](excel-add-ins-core-concepts.md)
-- [Sp?cification d?ouverture d?API JavaScript pour Excel](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
-- [Pr?sentation des fonctionnalit?s d??v?nement Excel (aper?u)](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/Event_README.md)
+- [Sp?cification libre de l'API JavaScript pour Excel](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
