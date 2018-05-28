@@ -1,37 +1,41 @@
 ---
-title: "Manifeste\_XML des compléments Office"
+title: Manifeste XML des compl?ments Office
 description: ''
 ms.date: 02/09/2018
+ms.openlocfilehash: 24c212335fa50feb4d13b6069a24cacbd9849715
+ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/23/2018
 ---
+# <a name="office-add-ins-xml-manifest"></a>Manifeste XML des compl?ments Office
 
-# <a name="office-add-ins-xml-manifest"></a>Manifeste XML des compléments Office
+Le fichier manifeste XML d?un compl?ment Office la mani?re dont votre compl?ment doit ?tre activ? lorsqu?un utilisateur final l?installe et l?utilise avec des documents et des applications Office.
 
-Le fichier manifeste XML d’un complément Office la manière dont votre complément doit être activé lorsqu’un utilisateur final l’installe et l’utilise avec des documents et des applications Office.
+Un fichier de manifeste XML bas? sur ce sch?ma permet ? un Compl?ment Office d?effectuer les op?rations suivantes :
 
-Un fichier de manifeste XML basé sur ce schéma permet à un Complément Office d’effectuer les opérations suivantes :
+* Se d?crire en fournissant un ID, une version, une description, un nom d?affichage et un param?tre r?gional par d?faut.
 
-* Se décrire en fournissant un ID, une version, une description, un nom d’affichage et un paramètre régional par défaut.
+* Sp?cifier les images utilis?es pour personnaliser le compl?ment et l?iconographie utilis?e pour les [commandes de compl?ment][] dans le ruban Office.
 
-* Spécifier les images utilisées pour personnaliser le complément et l’iconographie utilisée pour les [commandes de complément][] dans le ruban Office.
+* Sp?cifier comment le compl?ment s?int?gre ? Office, y compris les interfaces utilisateur personnalis?es, telles que les boutons du ruban cr??s par le compl?ment.
 
-* Spécifier comment le complément s’intègre à Office, y compris les interfaces utilisateur personnalisées, telles que les boutons du ruban créés par le complément.
+* Sp?cifier les dimensions par d?faut demand?es pour des compl?ments de contenu, et la hauteur demand?e pour des compl?ments Outlook.
 
-* Spécifier les dimensions par défaut demandées pour des compléments de contenu, et la hauteur demandée pour des compléments Outlook.
+* D?clarer les autorisations que le Compl?ment Office n?cessite, par exemple la lecture du document ou l??criture dans celui-ci.
 
-* Déclarer les autorisations que le Complément Office nécessite, par exemple la lecture du document ou l’écriture dans celui-ci.
-
-* Pour des compléments Outlook, définir la ou les règles qui spécifient le contexte dans lequel ils seront activés et seront en interaction avec un message, un rendez-vous ou un élément de demande de réunion.
+* Pour des compl?ments Outlook, d?finir la ou les r?gles qui sp?cifient le contexte dans lequel ils seront activ?s et seront en interaction avec un message, un rendez-vous ou un ?l?ment de demande de r?union.
 
 > [!NOTE]
-> Si vous prévoyez de [publier](../publish/publish.md) votre complément sur AppSource et de le rendre disponible dans l’expérience Office, assurez-vous que vous respectez les [stratégies de validation AppSource](https://docs.microsoft.com/fr-fr/office/dev/store/validation-policies). Par exemple, pour réussir la validation, votre complément doit fonctionner sur toutes les plateformes prenant en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](https://docs.microsoft.com/fr-fr/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) et la [page relative à la disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md)).
+> Si vous pr?voyez de [publier](../publish/publish.md) votre compl?ment sur AppSource et de le rendre disponible dans l?exp?rience Office, assurez-vous que vous respectez les [strat?gies de validation AppSource](https://docs.microsoft.com/en-us/office/dev/store/validation-policies). Par exemple, pour r?ussir la validation, votre compl?ment doit fonctionner sur toutes les plateformes prenant en charge les m?thodes d?finies (pour en savoir plus, consultez la [section 4.12](https://docs.microsoft.com/en-us/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) et la [page relative ? la disponibilit? des compl?ments Office sur les plateformes et les h?tes](../overview/office-add-in-availability.md)).
 
-## <a name="required-elements"></a>Éléments requis
+## <a name="required-elements"></a>?l?ments requis
 
-Le tableau suivant spécifie les éléments qui sont requis pour les trois types de compléments Office.
+Le tableau suivant sp?cifie les ?l?ments qui sont requis pour les trois types de compl?ments Office.
 
-### <a name="required-elements-by-office-add-in-type"></a>Éléments requis par type de complément Office
+### <a name="required-elements-by-office-add-in-type"></a>?l?ments requis par type de compl?ment Office
 
-| Élément                                                                                      | Contenu | Volet de tâches | Outlook |
+| ?l?ment                                                                                      | Contenu | Volet de t?ches | Outlook |
 | :------------------------------------------------------------------------------------------- | :-----: | :-------: | :-----: |
 | [OfficeApp][]                                                                                |    X    |     X     |    X    |
 | [Id][]                                                                                       |    X    |     X     |    X    |
@@ -48,89 +52,65 @@ Le tableau suivant spécifie les éléments qui sont requis pour les trois types
 | [SourceLocation (MailApp)][]                                                                 |         |           |    X    |
 | [Permissions (ContentApp)][]<br/>[Permissions (TaskPaneApp)][]<br/>[Permissions (MailApp)][] |    X    |     X     |    X    |
 | [Rule (RuleCollection)][]<br/>[Rule (MailApp)][]                                             |         |           |    X    |
-| [Requirements (MailApp)][]                                                                   |         |           |    X    |
+| [Requirements (MailApp)][]                                                                  |         |           |    X    |
 | [Set*][]<br/>[Sets (MailAppRequirements)*][]                                                 |         |           |    X    |
 | [Form*][]<br/>[FormSettings*][]                                                              |         |           |    X    |
 | [Sets (Requirements)*][]                                                                     |    X    |     X     |         |
 | [Hosts*][]                                                                                   |    X    |     X     |         |
 
-_\*Ajouté dans le schéma de manifeste du complément Office version 1.1._
+_\*Ajout? dans le sch?ma de manifeste du compl?ment Office version 1.1._
 
 <!-- Links for above table -->
 
-
-  [officeapp]: http://msdn.microsoft.com/fr-fr/library/68f1cada-66f8-4341-45f5-14e0634c24fb%28Office.15%29.aspx
-
-  [id]: http://msdn.microsoft.com/fr-fr/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx
-
-  [version]: http://msdn.microsoft.com/fr-fr/library/6a8bbaa5-ee8c-6824-4aba-cb1a804269f6%28Office.15%29.aspx
-
-  [providername]: http://msdn.microsoft.com/fr-fr/library/0062693a-fafa-ea2d-051a-75dac0f6c323%28Office.15%29.aspx
-
-  [defaultlocale]: http://msdn.microsoft.com/fr-fr/library/04796a3a-3afa-dc85-db66-4677560c185c%28Office.15%29.aspx
-
-  [displayname]: http://msdn.microsoft.com/fr-fr/library/529159ca-53bf-efcf-c245-e572dab0ef57%28Office.15%29.aspx
-
-  [description]: http://msdn.microsoft.com/fr-fr/library/bcce6bad-23d0-7631-7d8c-1064b8453b5a%28Office.15%29.aspx
+[officeapp]: http://msdn.microsoft.com/en-us/library/68f1cada-66f8-4341-45f5-14e0634c24fb%28Office.15%29.aspx
+[id]: http://msdn.microsoft.com/en-us/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx
+[version]: http://msdn.microsoft.com/en-us/library/6a8bbaa5-ee8c-6824-4aba-cb1a804269f6%28Office.15%29.aspx
+[providername]: http://msdn.microsoft.com/en-us/library/0062693a-fafa-ea2d-051a-75dac0f6c323%28Office.15%29.aspx
+[defaultlocale]: http://msdn.microsoft.com/en-us/library/04796a3a-3afa-dc85-db66-4677560c185c%28Office.15%29.aspx
+[displayname]: http://msdn.microsoft.com/en-us/library/529159ca-53bf-efcf-c245-e572dab0ef57%28Office.15%29.aspx
+[description]: http://msdn.microsoft.com/en-us/library/bcce6bad-23d0-7631-7d8c-1064b8453b5a%28Office.15%29.aspx
 [iconurl]: http://msdn.microsoft.com/library/c7dac2d4-4fda-6fc7-3774-49f02b2d3e1e%28Office.15%29.aspx
 [highresolutioniconurl]: http://msdn.microsoft.com/library/ff7b2647-ec8e-70dc-4e4a-e1a1377ff3f2%28Office.15%29.aspx
-
-  [defaultsettings (contentapp)]: http://msdn.microsoft.com/fr-fr/library/f7edc689-551f-1a17-ea81-ffd58f534557%28Office.15%29.aspx
-
-  [defaultsettings (taskpaneapp)]: http://msdn.microsoft.com/fr-fr/library/36e3d139-56a4-fb3d-0a21-cbd14e606765%28Office.15%29.aspx
-
-  [sourcelocation (contentapp)]: http://msdn.microsoft.com/fr-fr/library/00d95bb0-e8f5-647f-790a-0aa3aabc8141%28Office.15%29.aspx
-
-  [sourcelocation (taskpaneapp)]: http://msdn.microsoft.com/fr-fr/library/e6ea8cd4-7c8b-1da7-d8f8-8d3c80a088bc%28Office.15%29.aspx
-
-  [desktopsettings]: http://msdn.microsoft.com/fr-fr/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c%28Office.15%29.aspx
-
-  [sourcelocation (mailapp)]: http://msdn.microsoft.com/fr-fr/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx
-
-  [permissions (contentapp)]: http://msdn.microsoft.com/fr-fr/library/9f3dcf9c-fced-c115-4f0d-38d60fb7c583%28Office.15%29.aspx
-
-  [permissions (taskpaneapp)]: http://msdn.microsoft.com/fr-fr/library/d4cfe645-353d-8240-8495-f76fb36602fe%28Office.15%29.aspx
-
-  [permissions (mailapp)]: http://msdn.microsoft.com/fr-fr/library/c20cdf29-74b0-564c-e178-b75d148b36d1%28Office.15%29.aspx
-
-  [rule (rulecollection)]: http://msdn.microsoft.com/fr-fr/library/c6ce9d52-4b53-c6a6-de7e-c64106135c81%28Office.15%29.aspx
-
-  [rule (mailapp)]: http://msdn.microsoft.com/fr-fr/library/56dfc32e-2b8c-1724-05be-5595baf38aa3%28Office.15%29.aspx
-
-  [requirements (mailapp)*]: http://msdn.microsoft.com/fr-fr/library/9536ea30-34f7-76b5-7f30-1508626840e4%28Office.15%29.aspx
-
-  [set*]: http://msdn.microsoft.com/fr-fr/library/1506daa1-332c-30e1-6402-3371bcd0b895%28Office.15%29.aspx
-
-  [sets (mailapprequirements)*]: http://msdn.microsoft.com/fr-fr/library/2a6a2484-eeee-37e4-43bc-c185e8ae0d1d%28Office.15%29.aspx
-
-  [form*]: http://msdn.microsoft.com/fr-fr/library/77a8ac83-c22b-1225-4fc4-ba4038b68648%28Office.15%29.aspx
-
-  [formsettings*]: http://msdn.microsoft.com/fr-fr/library/0d1a311d-939d-78c1-e968-89ddf7ebc4b4%28Office.15%29.aspx
-
-  [sets (requirements)*]: http://msdn.microsoft.com/fr-fr/library/509be287-b532-87c6-71ac-64f3a4bbd3af%28Office.15%29.aspx
+[defaultsettings (contentapp)]: http://msdn.microsoft.com/en-us/library/f7edc689-551f-1a17-ea81-ffd58f534557%28Office.15%29.aspx
+[defaultsettings (taskpaneapp)]: http://msdn.microsoft.com/en-us/library/36e3d139-56a4-fb3d-0a21-cbd14e606765%28Office.15%29.aspx
+[sourcelocation (contentapp)]: http://msdn.microsoft.com/en-us/library/00d95bb0-e8f5-647f-790a-0aa3aabc8141%28Office.15%29.aspx
+[sourcelocation (taskpaneapp)]: http://msdn.microsoft.com/en-us/library/e6ea8cd4-7c8b-1da7-d8f8-8d3c80a088bc%28Office.15%29.aspx
+[desktopsettings]: http://msdn.microsoft.com/en-us/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c%28Office.15%29.aspx
+[sourcelocation (mailapp)]: http://msdn.microsoft.com/en-us/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx
+[permissions (contentapp)]: http://msdn.microsoft.com/en-us/library/9f3dcf9c-fced-c115-4f0d-38d60fb7c583%28Office.15%29.aspx
+[permissions (taskpaneapp)]: http://msdn.microsoft.com/en-us/library/d4cfe645-353d-8240-8495-f76fb36602fe%28Office.15%29.aspx
+[permissions (mailapp)]: http://msdn.microsoft.com/en-us/library/c20cdf29-74b0-564c-e178-b75d148b36d1%28Office.15%29.aspx
+[rule (rulecollection)]: http://msdn.microsoft.com/en-us/library/c6ce9d52-4b53-c6a6-de7e-c64106135c81%28Office.15%29.aspx
+[rule (mailapp)]: http://msdn.microsoft.com/en-us/library/56dfc32e-2b8c-1724-05be-5595baf38aa3%28Office.15%29.aspx
+[requirements (mailapp)*]: http://msdn.microsoft.com/en-us/library/9536ea30-34f7-76b5-7f30-1508626840e4%28Office.15%29.aspx
+[set*]: http://msdn.microsoft.com/en-us/library/1506daa1-332c-30e1-6402-3371bcd0b895%28Office.15%29.aspx
+[sets (mailapprequirements)*]: http://msdn.microsoft.com/en-us/library/2a6a2484-eeee-37e4-43bc-c185e8ae0d1d%28Office.15%29.aspx
+[form*]: http://msdn.microsoft.com/en-us/library/77a8ac83-c22b-1225-4fc4-ba4038b68648%28Office.15%29.aspx
+[formsettings*]: http://msdn.microsoft.com/en-us/library/0d1a311d-939d-78c1-e968-89ddf7ebc4b4%28Office.15%29.aspx
+[sets (requirements)*]: http://msdn.microsoft.com/en-us/library/509be287-b532-87c6-71ac-64f3a4bbd3af%28Office.15%29.aspx
 [hosts*]: http://msdn.microsoft.com/library/f9a739c1-3daf-c03a-2bd9-4a2a6b870101%28Office.15%29.aspx
 
-## <a name="hosting-requirements"></a>Configuration requise pour l’hébergement
+## <a name="hosting-requirements"></a>Configuration requise pour l?h?bergement
 
-Tous les URI des images, tels que ceux utilisés pour les [commandes de complément][], doivent prendre en charge la mise en cache. Le serveur qui héberge l’image ne doit pas renvoyer d’en-tête `Cache-Control` spécifiant `no-cache`, `no-store` ou des options similaires dans la réponse HTTP.
+Tous les URI des images, tels que ceux utilis?s pour les [commandes de compl?ment][], doivent prendre en charge la mise en cache. Le serveur qui h?berge l?image ne doit pas renvoyer d?en-t?te `Cache-Control` sp?cifiant `no-cache`, `no-store` ou des options similaires dans la r?ponse HTTP.
 
-Toutes les URL, telles que les emplacements des fichiers source spécifiés dans l’élément [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation), doivent être **sécurisées par une protection SSL (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
+Toutes les URL, telles que les emplacements des fichiers source sp?cifi?s dans l??l?ment [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation), doivent ?tre **s?curis?es par une protection SSL (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-## <a name="best-practices-for-submitting-to-appsource"></a>Bonnes pratiques pour l’envoi dans AppSource
+## <a name="best-practices-for-submitting-to-appsource"></a>Bonnes pratiques pour l?envoi dans AppSource
 
-Vérifiez que l’ID du complément est un GUID valide et unique. Vous trouverez des outils de génération de GUID sur Internet pour vous aider à créer un GUID unique.
+V?rifiez que l?ID du compl?ment est un GUID valide et unique. Vous trouverez des outils de g?n?ration de GUID sur Internet pour vous aider ? cr?er un GUID unique.
 
-Les compléments envoyés à AppSource doivent également inclure l’élément [SupportUrl](https://dev.office.com/reference/add-ins/manifest/supporturl). Pour plus d’informations, reportez-vous à [Stratégies de validation pour les applications et les compléments envoyés à AppSource](https://docs.microsoft.com/office/dev/store/validation-policies).
+Les compl?ments envoy?s ? AppSource doivent ?galement inclure l??l?ment [SupportUrl](https://dev.office.com/reference/add-ins/manifest/supporturl). Pour plus d?informations, reportez-vous ? [Strat?gies de validation pour les applications et les compl?ments envoy?s ? AppSource](https://docs.microsoft.com/office/dev/store/validation-policies).
 
-Utilisez uniquement l’élément [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) pour spécifier des domaines différents de celui spécifié dans l’élément [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) pour les scénarios d’authentification.
+Utilisez uniquement l??l?ment [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) pour sp?cifier des domaines diff?rents de celui sp?cifi? dans l??l?ment [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) pour les sc?narios d?authentification.
 
-## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>Spécifier les domaines que vous souhaitez ouvrir dans la fenêtre de complément
+## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>Sp?cifier les domaines que vous souhaitez ouvrir dans la fen?tre de compl?ment
 
-Par défaut, si votre complément tente d’accéder à une URL située dans un autre domaine que celui qui héberge la page initiale (comme indiqué dans l’élément [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) du fichier manifeste), cette URL s’ouvre dans une nouvelle fenêtre de navigateur en dehors du volet de complément de l’application hôte Office. Ce comportement par défaut protège l’utilisateur contre toute navigation inattendue dans le volet de complément à partir d’éléments **iframe** incorporés.
+Par d?faut, si votre compl?ment tente d?acc?der ? une URL situ?e dans un autre domaine que celui qui h?berge la page initiale (comme indiqu? dans l??l?ment [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) du fichier manifeste), cette URL s?ouvre dans une nouvelle fen?tre de navigateur en dehors du volet de compl?ment de l?application h?te Office. Ce comportement par d?faut prot?ge l?utilisateur contre toute navigation inattendue dans le volet de compl?ment ? partir d??l?ments **iframe** incorpor?s.
 
-Pour remplacer ce comportement, spécifiez chaque domaine à ouvrir dans la fenêtre de complément dans la liste des domaines spécifiés dans l’élément [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) du fichier manifeste. Si le complément tente d’accéder à une URL dans un domaine qui n’est pas dans la liste, cette URL s’ouvre dans une nouvelle fenêtre de navigateur (en dehors du volet de complément).
+Pour remplacer ce comportement, sp?cifiez chaque domaine ? ouvrir dans la fen?tre de compl?ment dans la liste des domaines sp?cifi?s dans l??l?ment [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) du fichier manifeste. Si le compl?ment tente d?acc?der ? une URL dans un domaine qui n?est pas dans la liste, cette URL s?ouvre dans une nouvelle fen?tre de navigateur (en dehors du volet de compl?ment).
 
-L’exemple de manifeste XML suivant héberge sa page de complément principale dans le domaine `https://www.contoso.com` comme indiqué dans l’élément **SourceLocation**. Il indique également le domaine `https://www.northwindtraders.com` dans un élément [AppDomain](http://msdn.microsoft.com/fr-fr/library/2a0353ec-5e09-6fbf-1636-4bb5dcebb9bf%28Office.15%29.aspx) au sein de la liste d’éléments **AppDomains**. Si le complément ouvre une page dans le domaine www.northwindtraders.com, cette page s’ouvre dans le volet de complément.
+L?exemple de manifeste XML suivant h?berge sa page de compl?ment principale dans le domaine `https://www.contoso.com` comme indiqu? dans l??l?ment **SourceLocation**. Il indique ?galement le domaine `https://www.northwindtraders.com` dans un ?l?ment [AppDomain](http://msdn.microsoft.com/en-us/library/2a0353ec-5e09-6fbf-1636-4bb5dcebb9bf%28Office.15%29.aspx) au sein de la liste d??l?ments **AppDomains**. Si le compl?ment ouvre une page dans le domaine www.northwindtraders.com, cette page s?ouvre dans le volet de compl?ment.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -151,12 +131,12 @@ L’exemple de manifeste XML suivant héberge sa page de complément principale 
 </OfficeApp>
 ```
 
-## <a name="manifest-v11-xml-file-examples-and-schemas"></a>Exemples et schémas de fichier XML manifeste version 1.1
-Les sections suivantes présentent des exemples de fichiers manifeste XML version 1.1 pour des compléments de contenu, de volet Office et Outlook.
+## <a name="manifest-v11-xml-file-examples-and-schemas"></a>Exemples et sch?mas de fichier XML manifeste version 1.1
+Les sections suivantes pr?sentent des exemples de fichiers manifeste XML version 1.1 pour des compl?ments de contenu, de volet Office et Outlook.
 
 # <a name="task-panetabtabid-1"></a>[Volet Office](#tab/tabid-1)
 
-[Schéma de manifeste d’application de volet Office](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/taskpane)
+[Sch?ma de manifeste d?application de volet Office](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/taskpane)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -353,7 +333,7 @@ Les sections suivantes présentent des exemples de fichiers manifeste XML versio
 
 # <a name="contenttabtabid-2"></a>[Contenu](#tab/tabid-2)
 
-[Schéma de manifeste d’application de contenu](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/content)
+[Sch?ma de manifeste d?application de contenu](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/content)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -390,7 +370,7 @@ Les sections suivantes présentent des exemples de fichiers manifeste XML versio
 
 # <a name="mailtabtabid-3"></a>[Messagerie](#tab/tabid-3)
 
-[Schéma de manifeste d’application de messagerie](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/mail)
+[Sch?ma de manifeste d?application de messagerie](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/mail)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -481,16 +461,16 @@ Les sections suivantes présentent des exemples de fichiers manifeste XML versio
 
 ---
 
-## <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>Valider et résoudre des problèmes avec votre manifeste
+## <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>Valider et r?soudre des probl?mes avec votre manifeste
 
-Pour résoudre les problèmes rencontrés avec votre manifeste, consultez la rubrique relative à la [validation et à la résolution des problèmes avec votre manifeste](../testing/troubleshoot-manifest.md). Vous apprendrez à valider le manifeste par rapport à la [définition de schéma XML (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) et à utiliser la journalisation runtime pour déboguer le manifeste.
+Pour r?soudre les probl?mes rencontr?s avec votre manifeste, consultez la rubrique relative ? la [validation et ? la r?solution des probl?mes avec votre manifeste](../testing/troubleshoot-manifest.md). Vous apprendrez ? valider le manifeste par rapport ? la [d?finition de sch?ma XML (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) et ? utiliser la journalisation runtime pour d?boguer le manifeste.
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Création de commandes de complément dans votre manifeste][commandes de complément]
-* [Spécification des exigences en matière d’hôtes Office et d’API](specify-office-hosts-and-api-requirements.md)
-* [Localisation des compléments Office](localization.md)
-* [Référence de schéma pour les manifestes des compléments Office](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas)
-* [Valider et résoudre des problèmes avec votre manifeste](../testing/troubleshoot-manifest.md)
+* [Cr?ation de commandes de compl?ment dans votre manifeste][commandes de compl?ment]
+* [Sp?cification des exigences en mati?re d?h?tes Office et d?API](specify-office-hosts-and-api-requirements.md)
+* [Localisation des compl?ments Office](localization.md)
+* [R?f?rence de sch?ma pour les manifestes des compl?ments Office](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas)
+* [Valider et r?soudre des probl?mes avec votre manifeste](../testing/troubleshoot-manifest.md)
 
-[commandes de complément]: create-addin-commands.md
+[commandes de compl?ment]: create-addin-commands.md

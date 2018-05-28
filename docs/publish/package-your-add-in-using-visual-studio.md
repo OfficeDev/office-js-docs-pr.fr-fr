@@ -1,63 +1,65 @@
 ---
-title: "Créer le package de votre complément à l’aide de Visual\_Studio pour préparer la publication"
+title: Cr?er le package de votre compl?ment ? l?aide de Visual Studio pour pr?parer la publication
 description: ''
 ms.date: 01/25/2018
+ms.openlocfilehash: e03959294536eeb416a1531d2d281ba83f2d3732
+ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/23/2018
 ---
+# <a name="package-your-add-in-using-visual-studio-to-prepare-for-publishing"></a>Cr?er le package de votre compl?ment ? l?aide de Visual Studio pour pr?parer la publication
 
+Votre package de compl?ment Office contient un [fichier manifeste](../develop/add-in-manifests.md) XML que vous allez utiliser pour publier le compl?ment. Vous devez publier les fichiers d?application web de votre projet s?par?ment. Cet article d?crit le d?ploiement de votre projet web et l?empaquetage de votre compl?ment ? l?aide de Visual Studio 2015.
 
-# <a name="package-your-add-in-using-visual-studio-to-prepare-for-publishing"></a>Créer le package de votre complément à l’aide de Visual Studio pour préparer la publication
+## <a name="to-deploy-your-web-project-using-visual-studio-2015"></a>D?ploiement de votre projet web ? l?aide de Visual Studio 2015
 
-Votre package de complément Office contient un [fichier manifeste](../develop/add-in-manifests.md) XML que vous allez utiliser pour publier le complément. Vous devez publier les fichiers d’application web de votre projet séparément. Cet article décrit le déploiement de votre projet web et l’empaquetage de votre complément à l’aide de Visual Studio 2015.
+Proc?dez comme suit pour d?ployer votre projet web ? l?aide de Visual Studio 2015.
 
-## <a name="to-deploy-your-web-project-using-visual-studio-2015"></a>Déploiement de votre projet web à l’aide de Visual Studio 2015
-
-Procédez comme suit pour déployer votre projet web à l’aide de Visual Studio 2015.
-
-1. Dans l’**explorateur de solutions**, ouvrez le menu contextuel du projet de complément, puis sélectionnez **Publier**.
+1. Dans l?**explorateur de solutions**, ouvrez le menu contextuel du projet de compl?ment, puis s?lectionnez **Publier**.
     
-    La page **Publier votre complément** s’ouvre.
+    La page **Publier votre compl?ment** s?ouvre.
     
-2. Dans la liste déroulante **Profil actuel**, sélectionnez un profil ou choisissez **Nouveau…** pour créer un profil.
+2. Dans la liste d?roulante **Profil actuel**, s?lectionnez un profil ou choisissez **Nouveau?** pour cr?er un profil.
     
     > [!NOTE]
-    > Un profil de publication indique le serveur sur lequel vous effectuez le déploiement, les informations d’identification nécessaires pour se connecter au serveur, les bases de données à déployer, ainsi que d’autres options de déploiement.
+    > Un profil de publication indique le serveur sur lequel vous effectuez le d?ploiement, les informations d?identification n?cessaires pour se connecter au serveur, les bases de donn?es ? d?ployer, ainsi que d?autres options de d?ploiement.
 
-    Si vous choisissez  **Nouveau...**, l’Assistant **Créer un profil de publication** s’ouvre. Vous pouvez utiliser cet Assistant pour importer un profil de publication à partir d’un site web d’hébergement comme Microsoft Azure ou créer un profil et ajouter votre serveur, vos informations d’identification et d’autres paramètres, comme décrit dans la procédure suivante.
+    Si vous choisissez  **Nouveau...**, l?Assistant **Cr?er un profil de publication** s?ouvre. Vous pouvez utiliser cet Assistant pour importer un profil de publication ? partir d?un site web d?h?bergement comme Microsoft Azure ou cr?er un profil et ajouter votre serveur, vos informations d?identification et d?autres param?tres, comme d?crit dans la proc?dure suivante.
     
-    Pour plus d’informations sur l’importation et la création de profils de publication, voir [Création d’un profil de publication](http://msdn.microsoft.com/fr-fr/library/dd465337.aspx#creating_a_profile).
+    Pour plus d?informations sur l?importation et la cr?ation de profils de publication, voir [Cr?ation d?un profil de publication](http://msdn.microsoft.com/en-us/library/dd465337.aspx#creating_a_profile).
     
-3. Sur la page  **Publier votre complément**, cliquez sur le lien  **Déployer votre projet Web**.
+3. Sur la page  **Publier votre compl?ment**, cliquez sur le lien  **D?ployer votre projet Web**.
     
-    The  **Publish Web** dialog box appears. For more information about using this wizard, see [How to: Deploy a Web Project using On-Click Publishing in Visual Studio](http://msdn.microsoft.com/fr-fr/library/dd465337.aspx).
+    La bo?te de dialogue **Publier Web** appara?t. Pour plus d?information sur l?utilisation de cet assistant, reportez-vous ? l?article [Proc?dure?: D?ployer un projet d?application Web ? l?aide de la publication en un clic dans Visual Studio](http://msdn.microsoft.com/en-us/library/dd465337.aspx).
     
 
-## <a name="to-package-your-add-in-using-visual-studio-2015"></a>Création d’un package de votre complément avec Visual Studio 2015
+## <a name="to-package-your-add-in-using-visual-studio-2015"></a>Cr?ation d?un package de votre compl?ment avec Visual Studio 2015
 
-Procédez comme suit pour créer un package de votre projet de complément à l’aide de Visual Studio 2015.
+Proc?dez comme suit pour cr?er un package de votre projet de compl?ment ? l?aide de Visual Studio 2015.
 
-1. Sur la page **Publier votre complément**, cliquez sur le lien **Empaqueter le complément**.
+1. Sur la page **Publier votre compl?ment**, cliquez sur le lien **Empaqueter le compl?ment**.
     
-    L’Assistant **Publication des compléments SharePoint et Office** apparaît.
+    L?Assistant **Publication des compl?ments SharePoint et Office** appara?t.
     
-2. Dans la liste déroulante **Où votre site web est-il hébergé ?**, sélectionnez ou saisissez l’URL HTTPS du site web qui hébergera les fichiers de contenu de votre complément, puis cliquez sur **Terminer**. 
+2. Dans la liste d?roulante **O? votre site web est-il h?berg? ?**, s?lectionnez ou saisissez l?URL HTTPS du site web qui h?bergera les fichiers de contenu de votre compl?ment, puis cliquez sur **Terminer**. 
     
-    Vous devez spécifier une URL qui commence par le préfixe HTTPS pour terminer cet assistant. Si vous souhaitez utiliser un point de terminaison HTTP pour votre site web, vous pouvez ouvrir le fichier manifeste XML dans un éditeur de texte une fois que le package a été créé et remplacer le préfixe HTTPS de votre site web par un préfixe HTTP. 
+    Vous devez sp?cifier une URL qui commence par le pr?fixe HTTPS pour terminer cet assistant. Si vous souhaitez utiliser un point de terminaison HTTP pour votre site web, vous pouvez ouvrir le fichier manifeste XML dans un ?diteur de texte une fois que le package a ?t? cr?? et remplacer le pr?fixe HTTPS de votre site web par un pr?fixe HTTP. 
 
     > [!IMPORTANT]
-    > [!include[HTTPS guidance](../includes/https-guidance.md)] Les sites web Azure fournissent automatiquement un point de terminaison HTTPS.
+    > [!include[HTTPS guidance](../includes/https-guidance.md)] Les sites Web Azure fournissent automatiquement un point de terminaison HTTPS.
 
-    Visual Studio génère les fichiers nécessaires à la publication de votre complément, puis ouvre le dossier de sortie de publication. 
+    Visual Studio g?n?re les fichiers n?cessaires ? la publication de votre compl?ment, puis ouvre le dossier de sortie de publication. 
     
-Si vous prévoyez de soumettre votre complément à AppSource, vous pouvez sélectionner le lien **Effectuer la vérification de la validation** pour identifier les problèmes susceptibles d’empêcher votre complément d’être accepté. Vous devez régler tous ces problèmes avant de soumettre votre complément au magasin.
+Si vous pr?voyez de soumettre votre compl?ment ? AppSource, vous pouvez s?lectionner le lien **Effectuer la v?rification de la validation** pour identifier les probl?mes susceptibles d?emp?cher votre compl?ment d??tre accept?. Vous devez r?gler tous ces probl?mes avant de soumettre votre compl?ment au magasin.
 
-Vous pouvez désormais télécharger votre manifeste XML à l’emplacement approprié pour [publier votre complément](../publish/publish.md). Le manifeste XML se trouve dans `OfficeAppManifests` dans le dossier `app.publish`. Par exemple :
+Vous pouvez d?sormais t?l?charger votre manifeste XML ? l?emplacement appropri? pour [publier votre compl?ment](../publish/publish.md). Le manifeste XML se trouve dans `OfficeAppManifests` dans le dossier `app.publish`. Par exemple :
 
  `%UserProfile%\Documents\Visual Studio 2015\Projects\MyApp\bin\Debug\app.publish\OfficeAppManifests`
 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Publier votre complément Office](../publish/publish.md)
-- 
-  [Mise à disposition de vos solutions sur AppSource et dans Office](https://docs.microsoft.com/fr-fr/office/dev/store/submit-to-the-office-store)
+- [Publier votre compl?ment Office](../publish/publish.md)
+- [Mise ? disposition de vos solutions sur AppSource et dans Office](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store)
     

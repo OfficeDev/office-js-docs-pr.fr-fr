@@ -10,7 +10,7 @@ Cet article d?crit le processus de cr?ation d?un compl?ment Excel ? l?aide de jQ
 
 ### <a name="prerequisites"></a>Conditions pr?alables
 
-[!include[Quickstart prerequisites](../includes/quickstart-vs-prerequisites.md)]
+[!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
 ### <a name="create-the-add-in-project"></a>Cr?ation du projet de compl?ment
 
