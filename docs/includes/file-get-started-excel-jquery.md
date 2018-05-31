@@ -10,7 +10,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 
 ### <a name="prerequisites"></a>Conditions préalables
 
-[!include[Quickstart prerequisites](../includes/quickstart-vs-prerequisites.md)]
+[!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
 ### <a name="create-the-add-in-project"></a>Création du projet de complément
 
