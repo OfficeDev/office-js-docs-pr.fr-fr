@@ -1,26 +1,27 @@
 ---
 title: Optimisation des performances de l'API JavaScript d'Excel
-description: Optimiser les performances ? l'aide de l'API JavaScript d'Excel
+description: Optimiser les performances à l'aide de l'API JavaScript d'Excel
 ms.date: 03/28/2018
 ms.openlocfilehash: dabbb69f8dee0df782a265edcfdfb1c89894e915
 ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "19437408"
 ---
-# <a name="performance-optimization-using-the-excel-javascript-api"></a>Optimisation des performances ? l'aide de l'API JavaScript d'Excel
+# <a name="performance-optimization-using-the-excel-javascript-api"></a>Optimisation des performances à l'aide de l'API JavaScript d'Excel
 
-Il y a plusieurs mani?res d'effectuer des t?ches courantes avec l'API JavaScript d'Excel. Vous trouverez des diff?rences de performances significatives entre les diverses approches. Cet article fournit de l'aide et des exemples de code pour vous montrer comment effectuer efficacement des t?ches courantes en utilisant l'API JavaScript d'Excel.
+Il y a plusieurs manières d'effectuer des tâches courantes avec l'API JavaScript d'Excel. Vous trouverez des différences de performances significatives entre les diverses approches. Cet article fournit de l'aide et des exemples de code pour vous montrer comment effectuer efficacement des tâches courantes en utilisant l'API JavaScript d'Excel.
 
-## <a name="minimize-the-number-of-sync-calls"></a>R?duisez le nombre d'appels ? sync()
+## <a name="minimize-the-number-of-sync-calls"></a>Réduisez le nombre d'appels à sync()
 
-Dans l'API JavaScript d'Excel, ```sync()``` est la seule op?ration asynchrone, et elle peut ?tre lente dans certaines circonstances, en particulier pour Excel Online. Pour optimiser les performances, r?duisez le nombre d'appels ? ```sync()``` en mettant en file d'attente autant de changements que possible avant de l'appeler.
+Dans l'API JavaScript d'Excel, ```sync()``` est la seule opération asynchrone, et elle peut être lente dans certaines circonstances, en particulier pour Excel Online. Pour optimiser les performances, réduisez le nombre d'appels à ```sync()``` en mettant en file d'attente autant de changements que possible avant de l'appeler.
 
 Voir [Concepts de base - sync()](excel-add-ins-core-concepts.md#sync) pour des exemples de code qui suivent cette pratique.
 
-## <a name="minimize-the-number-of-proxy-objects-created"></a>R?duisez le nombre d'objets proxy cr??s
+## <a name="minimize-the-number-of-proxy-objects-created"></a>Réduisez le nombre d'objets proxy créés
 
-?vitez de cr?er r?p?titivement le m?me objet proxy. A la place, si vous avez besoin du m?me objet proxy pour plus d'une op?ration, cr?ez-le une fois et affectez-le ? une variable, puis utilisez cette variable dans votre code.
+Évitez de créer répétitivement le même objet proxy. A la place, si vous avez besoin du même objet proxy pour plus d'une opération, créez-le une fois et affectez-le à une variable, puis utilisez cette variable dans votre code.
 
 ```javascript
 // BAD: repeated calls to .getRange() to create the same proxy object
@@ -46,17 +47,17 @@ worksheet.getRange("A1").set({
 });
 ```
 
-## <a name="load-necessary-properties-only"></a>Ne chargez que les propri?t?s n?cessaires
+## <a name="load-necessary-properties-only"></a>Ne chargez que les propriétés nécessaires
 
-Dans l'API JavaScript d'Excel, vous devez charger explicitement les propri?t?s d'un objet proxy. Bien que vous puissiez charger toutes les propri?t?s en une fois avec un appel vide ? ```load()```, cette approche peut avoir un surco?t significatif en termes de performances. A la place, nous vous sugg?rons de ne charger que les propri?t?s n?cessaires, en particulier pour ceux des objets qui ont un nombre important de propri?t?s.
+Dans l'API JavaScript d'Excel, vous devez charger explicitement les propriétés d'un objet proxy. Bien que vous puissiez charger toutes les propriétés en une fois avec un appel vide à ```load()```, cette approche peut avoir un surcoût significatif en termes de performances. A la place, nous vous suggérons de ne charger que les propriétés nécessaires, en particulier pour ceux des objets qui ont un nombre important de propriétés.
 
-Par exemple, si vous ne souhaitez relire que la propri?t? **address** d?un objet plage, indiquez seulement cette propri?t? lorsque vous appelez la m?thode **load()** :
+Par exemple, si vous ne souhaitez relire que la propriété **address** d’un objet plage, indiquez seulement cette propriété lorsque vous appelez la méthode **load()** :
  
 ```js
 range.load('address');
 ```
  
-Vous pouvez appeler la m?thode **load()** de l?une quelconque des fa?ons suivantes :
+Vous pouvez appeler la méthode **load()** de l’une quelconque des façons suivantes :
  
 _Syntaxe :_
  
@@ -68,18 +69,18 @@ object.load(array: properties);
 object.load({ loadOption });
 ```
  
-_O? :_
+_Où :_
  
-* `properties` est la liste des propri?t?s ? charger, sp?cifi?e comme des cha?nes d?limit?es par des virgules ou comme un tableau de noms. Pour plus d?informations, voir les m?thodes **load()** d?finies pour les objets dans la [R?f?rence de l?API JavaScript d'Excel](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview).
-* `loadOption` sp?cifie un objet qui d?crit les options selection, expansion, top et skip. Voir les [options](https://dev.office.com/reference/add-ins/excel/loadoption) de chargement d?objet pour les d?tails.
+* `properties` est la liste des propriétés à charger, spécifiée comme des chaînes délimitées par des virgules ou comme un tableau de noms. Pour plus d’informations, voir les méthodes **load()** définies pour les objets dans la [Référence de l’API JavaScript d'Excel](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview).
+* `loadOption` spécifie un objet qui décrit les options selection, expansion, top et skip. Voir les [options](https://dev.office.com/reference/add-ins/excel/loadoption) de chargement d’objet pour les détails.
 
-SVP, soyez conscient que certaines des "propri?t?s" dans un objet peuvent avoir le m?me nom qu'un autre objet. Par exemple, `format` est une propri?t? dans l'objet plage, mais `format` lui-m?me est un objet aussi. Donc, si vous faites un appel tel que `range.load("format")`, c'est ?quivalent ? `range.format.load()`, qui est un appel vide ? load() qui peut engendrer des probl?mes de performances comme r?sum? pr?c?demment. Pour ?viter cela, votre code ne devrait charger que les "n?uds feuilles" dans une arborescence d'objets. 
+SVP, soyez conscient que certaines des "propriétés" dans un objet peuvent avoir le même nom qu'un autre objet. Par exemple, `format` est une propriété dans l'objet plage, mais `format` lui-même est un objet aussi. Donc, si vous faites un appel tel que `range.load("format")`, c'est équivalent à `range.format.load()`, qui est un appel vide à load() qui peut engendrer des problèmes de performances comme résumé précédemment. Pour éviter cela, votre code ne devrait charger que les "nœuds feuilles" dans une arborescence d'objets. 
 
 ## <a name="suspend-calculation-temporarily"></a>Suspendre le calcul temporairement
 
-Si vous essayez d'effectuer une op?ration sur un grand nombre de cellules (par exemple, en d?finissant la valeur d'un objet plage tr?s volumineux) et que cela ne vous d?range pas de suspendre temporairement le calcul dans Excel jusqu'? ce que votre op?ration se termine, nous vous recommandons de suspendre le calcul jusqu'? ce que le prochain ```context.sync()``` soit appel?.
+Si vous essayez d'effectuer une opération sur un grand nombre de cellules (par exemple, en définissant la valeur d'un objet plage très volumineux) et que cela ne vous dérange pas de suspendre temporairement le calcul dans Excel jusqu'à ce que votre opération se termine, nous vous recommandons de suspendre le calcul jusqu'à ce que le prochain ```context.sync()``` soit appelé.
 
-Voir la documentation de r?f?rence de l'[Objet Application](https://dev.office.com/reference/add-ins/excel/application) pour des informations sur la fa?on d'utiliser l'```suspendApiCalculationUntilNextSync()``` API pour suspendre et r?activer les calculs d'une mani?re tr?s pratique. Le code suivant montre comment suspendre le calcul temporairement :
+Voir la documentation de référence de l'[Objet Application](https://dev.office.com/reference/add-ins/excel/application) pour des informations sur la façon d'utiliser l'```suspendApiCalculationUntilNextSync()``` API pour suspendre et réactiver les calculs d'une manière très pratique. Le code suivant montre comment suspendre le calcul temporairement :
 
 ```js
 Excel.run(async function(ctx) {
@@ -120,20 +121,20 @@ Excel.run(async function(ctx) {
 })
 ```
 
-## <a name="update-all-cells-in-a-range"></a>Mettre ? jour toutes les cellules d?une plage 
+## <a name="update-all-cells-in-a-range"></a>Mettre à jour toutes les cellules d’une plage 
 
-Lorsque vous devez mettre ? jour toutes les cellules dans une plage avec la m?me valeur ou propri?t?, il peut ?tre lent de le faire via un tableau bidimensionnel qui indique r?p?titivement la m?me valeur, car cette approche n?cessite qu'Excel parcoure toutes les cellules de la plage pour les d?finir individuellement. Excel a un moyen plus efficace pour mettre ? jour toutes les cellules dans une plage avec la m?me valeur ou propri?t?.
+Lorsque vous devez mettre à jour toutes les cellules dans une plage avec la même valeur ou propriété, il peut être lent de le faire via un tableau bidimensionnel qui indique répétitivement la même valeur, car cette approche nécessite qu'Excel parcoure toutes les cellules de la plage pour les définir individuellement. Excel a un moyen plus efficace pour mettre à jour toutes les cellules dans une plage avec la même valeur ou propriété.
 
-Si vous devez appliquer la m?me valeur, le m?me format num?rique ou la m?me formule ? une plage de cellules, il est plus efficace de sp?cifier une seule valeur au lieu d'un tableau de valeurs. Proc?der ainsi am?liorera significativement les performances. Pour un exemple de code qui montre cette approche en action, voir [Concepts de base - Mettre ? jour toutes les cellules d'une plage](excel-add-ins-core-concepts.md#update-all-cells-in-a-range).
+Si vous devez appliquer la même valeur, le même format numérique ou la même formule à une plage de cellules, il est plus efficace de spécifier une seule valeur au lieu d'un tableau de valeurs. Procéder ainsi améliorera significativement les performances. Pour un exemple de code qui montre cette approche en action, voir [Concepts de base - Mettre à jour toutes les cellules d'une plage](excel-add-ins-core-concepts.md#update-all-cells-in-a-range).
 
-Un sc?nario courant dans lequel vous pouvez appliquer cette approche est la d?finition de formats num?riques diff?rents pour des colonnes diff?rentes dans une feuille de calcul. Dans ce cas, vous pouvez simplement parcourir les colonnes et d?finir le format num?rique pour chaque colonne avec une seule valeur. Manipuler chaque colonne comme une plage, comme indiqu? dans l'exemple de code [Mettre ? jour toutes les cellules dans une plage](excel-add-ins-core-concepts.md#update-all-cells-in-a-range).
+Un scénario courant dans lequel vous pouvez appliquer cette approche est la définition de formats numériques différents pour des colonnes différentes dans une feuille de calcul. Dans ce cas, vous pouvez simplement parcourir les colonnes et définir le format numérique pour chaque colonne avec une seule valeur. Manipuler chaque colonne comme une plage, comme indiqué dans l'exemple de code [Mettre à jour toutes les cellules dans une plage](excel-add-ins-core-concepts.md#update-all-cells-in-a-range).
 
 > [!NOTE]
-> Si vous utilisez TypeScript, vous remarquerez une erreur de compilation indiquant qu'une valeur unique ne peut pas ?tre affect?e ? un tableau 2D.  C'est in?vitable du fait que les valeurs *sont* un tableau 2D lors de la r?cup?ration des propri?t?s, et que TypeScript n'autorise pas des types diff?rents pour un setter et un getter.  Cependant, un contournement simple consiste ? d?finir les valeurs avec un suffixe `as any`, par exemple, `range.values = "hello world" as any`.
+> Si vous utilisez TypeScript, vous remarquerez une erreur de compilation indiquant qu'une valeur unique ne peut pas être affectée à un tableau 2D.  C'est inévitable du fait que les valeurs *sont* un tableau 2D lors de la récupération des propriétés, et que TypeScript n'autorise pas des types différents pour un setter et un getter.  Cependant, un contournement simple consiste à définir les valeurs avec un suffixe `as any`, par exemple, `range.values = "hello world" as any`.
 
-## <a name="importing-data-into-tables"></a>Importation de donn?es dans des tables
+## <a name="importing-data-into-tables"></a>Importation de données dans des tables
 
-Lorsque vous essayez d'importer un tr?s grand volume de donn?es directement dans un objet[Table](https://dev.office.com/reference/add-ins/excel/table) (par exemple, en utilisant `TableRowCollection.add()`), vous risquez de subir une performance lente. Si vous essayez d'ajouter une nouvelle table, vous devriez d'abord remplir les donn?es en d?finissant `range.values`, puis appeler alors `worksheet.tables.add()` pour cr?er une table sur la plage. Si vous essayez d'?crire des donn?es dans une table existante, ?crivez les donn?es dans un objet plage via `table.getDataBodyRange()`, et la table s'agrandira automatiquement. 
+Lorsque vous essayez d'importer un très grand volume de données directement dans un objet[Table](https://dev.office.com/reference/add-ins/excel/table) (par exemple, en utilisant `TableRowCollection.add()`), vous risquez de subir une performance lente. Si vous essayez d'ajouter une nouvelle table, vous devriez d'abord remplir les données en définissant `range.values`, puis appeler alors `worksheet.tables.add()` pour créer une table sur la plage. Si vous essayez d'écrire des données dans une table existante, écrivez les données dans un objet plage via `table.getDataBodyRange()`, et la table s'agrandira automatiquement. 
 
 Voici un exemple de cette approche :
 
@@ -159,11 +160,11 @@ Excel.run(async (ctx) => {
 ```
 
 > [!NOTE]
-> Vous pouvez ais?ment convertir un objet Table en objet Range en utilisant la m?thode [Table.convertToRange()](https://dev.office.com/reference/add-ins/excel/table#converttorange).
+> Vous pouvez aisément convertir un objet Table en objet Range en utilisant la méthode [Table.convertToRange()](https://dev.office.com/reference/add-ins/excel/table#converttorange).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Concepts de base de l?API JavaScript d'Excel](excel-add-ins-core-concepts.md)
-- [Concepts avanc?s de l?API JavaScript d'Excel](excel-add-ins-advanced-concepts.md)
-- [Sp?cification ouverte de l?API JavaScript d'Excel](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
+- [Concepts de base de l’API JavaScript d'Excel](excel-add-ins-core-concepts.md)
+- [Concepts avancés de l’API JavaScript d'Excel](excel-add-ins-advanced-concepts.md)
+- [Spécification ouverte de l’API JavaScript d'Excel](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
 - [Objet de fonctions de feuille de calcul (API JavaScript pour Excel)](https://dev.office.com/reference/add-ins/excel/functions)

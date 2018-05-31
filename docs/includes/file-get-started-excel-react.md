@@ -1,6 +1,12 @@
 # <a name="build-an-excel-add-in-using-react"></a>Développement d’un complément Excel à l’aide de React
 
-Cet article décrit le processus de création d’un complément Excel à l’aide de React et de l’API JavaScript pour Excel.
+Dans cet article vous apprendrez à créer une macro complémentaire Excel à l’aide de React et de l’API JavaScript pour Excel.
+
+## <a name="environment"></a>Environnement
+
+- **Office pour ordinateur de bureau** : Assurez-vous de disposer de la dernière version d'Office. Les commandes du complément nécessitent la version 16.0.6769.0000 ou supérieure (la version **16.0.6868.0000** est conseillée). Apprenez à [Installer la dernière version des applications Office](http://aka.ms/latestoffice). 
+ 
+- **Office Online** : Aucune installation supplémentaire n'est nécessaire. Notez que la prise en charge des commandes au sein d'Office Online pour les comptes professionnels / scolaires est actuellement en préversion.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -10,7 +16,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
     npm install -g create-react-app
     ```
 
-- Installez la dernière version de [Yeoman](https://github.com/yeoman/yo) et le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) globalement.
+- Installez la dernière version de [Yeoman](https://github.com/yeoman/yo) et le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) globalement.
 
     ```bash
     npm install -g yo generator-office
@@ -18,7 +24,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 
 ## <a name="generate-a-new-react-app"></a>Générer une nouvelle application React
 
-L’outil Create React App permet de générer votre application React. À partir du terminal, exécutez la commande suivante :
+L’outil Create React App permet de générer votre application React. À partir du terminal, exécutez la commande suivante :
 
 ```bash
 create-react-app my-addin
@@ -34,16 +40,16 @@ Chaque complément nécessite un fichier manifeste pour définir ses paramètres
     cd my-addin
     ```
 
-2. Utilisez le générateur Yeoman pour générer le fichier manifeste de votre complément. Exécutez la commande suivante, puis répondez aux invites comme indiqué dans la capture d’écran suivante :
+2. Utilisez le générateur Yeoman pour générer le fichier manifeste de votre complément. Exécutez la commande suivante, puis répondez aux invites comme indiqué dans la capture d’écran suivante :
 
     ```bash
     yo office
     ```
 
-    - **Voulez-vous créer un sous-dossier de votre projet ? :**`No`
-    - **Comment souhaitez-vous nommer votre complément ? :** `My Office Add-in`
-    - **Quelle application client Office voulez-vous prendre en charge ? :**`Excel`
-    - **Voulez-vous créer un complément ? :** `No`
+    - **Voulez-vous créer un sous-dossier de votre projet ? :** `No`
+    - **Comment souhaitez-vous nommer votre complément ? :** `My Office Add-in`
+    - **Quelle application client Office voulez-vous prendre en charge ? :** `Excel`
+    - **Voulez-vous créer un complément ? :** `No`
 
     Le générateur demande ensuite si vous voulez ouvrir **resource.html**. Il n’est pas nécessaire de l’ouvrir pour ce didacticiel, mais n’hésitez pas à l’ouvrir si vous êtes curieux. Cliquez sur Oui ou Non pour fermer l’assistant et laisser le générateur faire son travail.
 
@@ -54,9 +60,9 @@ Chaque complément nécessite un fichier manifeste pour définir ses paramètres
 
 3. Suivez les instructions pour la plateforme que vous utiliserez pour exécuter votre complément et chargez une version test du complément dans Excel.
 
-    - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online : [Chargement de versions test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Excel Online : [Chargement de versions test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+    - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 ## <a name="update-the-app"></a>Mettre à jour l’application
 
@@ -150,16 +156,16 @@ Chaque complément nécessite un fichier manifeste pour définir ses paramètres
     }
     ```
 
-## <a name="try-it-out"></a>Essayez !
+## <a name="try-it-out"></a>Essayez !
 
 1. À partir du terminal, exécutez la commande suivante pour démarrer le serveur dev.
 
-    Windows :
+    Windows :
     ```bash
     set HTTPS=true&&npm start
     ```
 
-    macOS:
+    macOS :
     ```bash
     HTTPS=true npm start
     ```
@@ -167,22 +173,22 @@ Chaque complément nécessite un fichier manifeste pour définir ses paramètres
    > [!NOTE]
    > Une fenêtre de navigateur s’ouvre avec le complément qu’elle contient. Fermez cette fenêtre.
 
-2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
+2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
     ![Bouton Complément Excel](../images/excel-quickstart-addin-2b.png)
 
 3. Sélectionnez une plage de cellules dans la feuille de calcul.
 
-4. Dans le volet Office, cliquez sur le bouton **Définir couleur** pour définir la couleur de la plage sélectionnée en vert.
+4. Dans le volet Office, cliquez sur le bouton **Définir couleur** pour définir la couleur de la plage sélectionnée en vert.
 
     ![Complément Excel](../images/excel-quickstart-addin-2c.png)
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations, vous avez créé un complément Excel à l’aide de React ! Découvrez à présent les fonctionnalités des compléments Excel et créez un complément plus complexe en continuant le didacticiel sur le complément Excel.
+Félicitations, vous avez créé un complément Excel à l’aide de React ! Découvrez à présent les fonctionnalités des compléments Excel et créez un complément plus complexe en continuant le didacticiel sur le complément Excel.
 
 > [!div class="nextstepaction"]
-> [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial-create-table.md)
+> [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial.yml)
 
 ## <a name="see-also"></a>Voir aussi
 

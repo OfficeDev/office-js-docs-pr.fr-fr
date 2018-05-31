@@ -2,13 +2,18 @@
 title: Composant de liste déroulante dans Office UI Fabric
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: af780d5c88c95eb742f82b59e522e4c34a276d31
+ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "19437387"
 ---
-
 # <a name="dropdown-component-in-office-ui-fabric"></a>Composant de liste déroulante dans Office UI Fabric
 
 Une liste déroulante est une liste d’options qui s’affiche en cliquant sur un bouton de liste déroulante. Utilisez des listes déroulantes ou des menus déroulants pour simplifier la conception de l’interface utilisateur, et lorsque les utilisateurs doivent effectuer un choix dans l’interface utilisateur. Lorsque la liste est réduite, l’élément sélectionné est visible. Pour modifier l’élément sélectionné, les utilisateurs ouvrent la liste et sélectionnent une nouvelle valeur.
   
-#### <a name="example-drop-down-in-a-task-pane"></a>Exemple : Liste déroulante dans un volet de tâches
+#### <a name="example-drop-down-in-a-task-pane"></a>Exemple : Liste déroulante dans un volet de tâches
 
 ![Image illustrant la liste déroulante](../images/overview-with-app-dropdown.png)
 

@@ -1,5 +1,5 @@
 ---
-title: Conversion d?un projet de compl?ment Office dans Visual Studio au format TypeScript
+title: Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
 description: ''
 ms.date: 01/19/2018
 ms.openlocfilehash: 05e845b9d085b64b0534d28053dcd5ca3c7b403e
@@ -7,64 +7,65 @@ ms.sourcegitcommit: 17f60431644b448a4816913039aaebfa328f9b0a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/25/2018
+ms.locfileid: "19476528"
 ---
-# <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Conversion d?un projet de compl?ment Office dans Visual Studio au format TypeScript
+# <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
 
-Vous pouvez utiliser le mod?le de compl?ment Office dans Visual Studio pour cr?er un compl?ment qui utilise JavaScript, puis convertir le projet de compl?ment au format TypeScript. En utilisant Visual Studio pour cr?er le projet compl?ment, vous ne devez pas cr?er votre projet TypeScript de compl?ment Office ? partir de z?ro. 
+Vous pouvez utiliser le modèle de complément Office dans Visual Studio pour créer un complément qui utilise JavaScript, puis convertir le projet de complément au format TypeScript. En utilisant Visual Studio pour créer le projet complément, vous ne devez pas créer votre projet TypeScript de complément Office à partir de zéro. 
 
-Cet article explique comment cr?er un compl?ment Excel ? l?aide de Visual Studio et convertir le projet de compl?ment de JavaScript au format TypeScript. Vous pouvez suivre la m?me proc?dure pour convertir d'autres types de projet JavaScript de compl?ment Office au format TypeScript dans Visual Studio.
+Cet article explique comment créer un complément Excel à l’aide de Visual Studio et convertir le projet de complément de JavaScript au format TypeScript. Vous pouvez suivre la même procédure pour convertir d'autres types de projet JavaScript de complément Office au format TypeScript dans Visual Studio.
 
 > [!NOTE]
-> Pour cr?er un projet TypeScript de compl?ment Office sans utiliser Visual Studio, suivez les instructions de la section "N'importe quel ?diteur" d'un [D?marrage rapide en 5 minutes](../index.yml) et choisissez `TypeScript` ? l'invite du [G?n?rateur Yeoman pour les compl?ments Office](https://github.com/OfficeDev/generator-office).
+> Pour créer un projet TypeScript de complément Office sans utiliser Visual Studio, suivez les instructions de la section "N'importe quel éditeur" d'un [Démarrage rapide en 5 minutes](../index.yml) et choisissez `TypeScript` à l'invite du [Générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office).
 
-## <a name="prerequisites"></a>Conditions pr?alables
+## <a name="prerequisites"></a>Conditions préalables
 
-- [Visual Studio 2017](https://www.visualstudio.com/vs/) avec la charge de travail de **d?veloppement Office/SharePoint** install?e
+- [Visual Studio 2017](https://www.visualstudio.com/vs/) avec la charge de travail de **développement Office/SharePoint** installée
 
     > [!NOTE]
-    > Si vous avez d?j? install? Visual Studio 2017, [utilisez Visual Studio Installer](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio) pour v?rifier que la charge de travail de **d?veloppement Office/SharePoint** est bien install?e. 
+    > Si vous avez déjà installé Visual Studio 2017, [utilisez Visual Studio Installer](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio) pour vérifier que la charge de travail de **développement Office/SharePoint** est bien installée. 
 
 - TypeScript 2.3 pour Visual Studio 2017
 
     > [!NOTE]
-    > TypeScript doit ?tre install? par d?faut avec Visual Studio 2017, mais vous pouvez [utiliser le programme d?installation Visual Studio](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio) pour confirmer qu?il est install?. Dans le programme d?installation Visual Studio, s?lectionnez l?onglet **Composants individuels**, puis v?rifiez que l?option **SDK TypeScript 2.3** est s?lectionn?e sous **SDK, biblioth?ques et frameworks**.
+    > TypeScript doit être installé par défaut avec Visual Studio 2017, mais vous pouvez [utiliser le programme d’installation Visual Studio](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio) pour confirmer qu’il est installé. Dans le programme d’installation Visual Studio, sélectionnez l’onglet **Composants individuels**, puis vérifiez que l’option **SDK TypeScript 2.3** est sélectionnée sous **SDK, bibliothèques et frameworks**.
 
 - Excel 2016
 
-## <a name="create-the-add-in-project"></a>Cr?ation du projet de compl?ment
+## <a name="create-the-add-in-project"></a>Création du projet de complément
 
-1. Ouvrez Visual Studio, puis sur la barre de menus Visual Studio, s?lectionnez **Fichier** > **Nouveau** > **Projet**.
+1. Ouvrez Visual Studio, puis sur la barre de menus Visual Studio, sélectionnez **Fichier** > **Nouveau** > **Projet**.
 
-2. Dans la liste des types de projet sous **Visual C#** ou **Visual Basic**, d?veloppez **Office/SharePoint**, choisissez **Compl?ments**, puis **Compl?ment web Excel** pour le type de projet. 
+2. Dans la liste des types de projet sous **Visual C#** ou **Visual Basic**, développez **Office/SharePoint**, choisissez **Compléments**, puis **Complément web Excel** pour le type de projet. 
 
 3. Nommez le projet, puis cliquez sur **OK**.
 
-4. Dans la fen?tre de dialogue **Cr?er un compl?ment Office**, s?lectionnez **Ajouter de nouvelles fonctionnalit?s ? Excel**, puis s?lectionnez **Terminer** pour cr?er le projet.
+4. Dans la fenêtre de dialogue **Créer un complément Office**, sélectionnez **Ajouter de nouvelles fonctionnalités à Excel**, puis sélectionnez **Terminer** pour créer le projet.
 
-5. Visual Studio cr?e une solution et ses deux projets apparaissent dans l?**explorateur de solutions**. Le fichier **Home.html** s?ouvre dans Visual Studio.
+5. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
 
-## <a name="convert-the-add-in-project-to-typescript"></a>Convertir le projet de compl?ment au format TypeScript
+## <a name="convert-the-add-in-project-to-typescript"></a>Convertir le projet de complément au format TypeScript
 
-1. Dans l?**Explorateur de solutions**, renommez le fichier **Home.js** comme suit : **Home.ts**.
+1. Dans l’**Explorateur de solutions**, renommez le fichier **Home.js** comme suit : **Home.ts**.
 
     > [!NOTE]
-    > Dans votre projet TypeScript, vous pouvez avoir un m?lange de fichiers TypeScript et JavaScript, qui seront compil?s. En effet, TypeScript est un sur-ensemble typ? de code JavaScript compil? en code JavaScript. 
+    > Dans votre projet TypeScript, vous pouvez avoir un mélange de fichiers TypeScript et JavaScript, qui seront compilés. En effet, TypeScript est un sur-ensemble typé de code JavaScript compilé en code JavaScript. 
 
-2. S?lectionnez **Oui** lorsque vous ?tes invit? ? confirmer la modification de l?extension du nom de fichier.
+2. Sélectionnez **Oui** lorsque vous êtes invité à confirmer la modification de l’extension du nom de fichier.
 
-3. Cr?ez un fichier nomm? **Office.d.ts** dans la racine du projet d?application web.
+3. Créez un fichier nommé **Office.d.ts** dans la racine du projet d’application web.
 
-4. Dans un navigateur web, ouvrez le [fichier de d?finitions de types pour Office.js](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js/index.d.ts). Copiez le contenu de ce fichier dans le presse-papiers.
+4. Dans un navigateur web, ouvrez le [fichier de définitions de types pour Office.js](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js/index.d.ts). Copiez le contenu de ce fichier dans le presse-papiers.
 
 5. Dans Visual Studio, ouvrez le fichier **Office.d.ts**, collez le contenu du presse-papiers dans le fichier, puis enregistrez le fichier.
 
-6. Cr?ez un fichier nomm? **jQuery.d.ts** dans la racine du projet d?application web.
+6. Créez un fichier nommé **jQuery.d.ts** dans la racine du projet d’application web.
 
-7. Dans un navigateur web, ouvrez le [fichier de d?finitions de types pour jQuery](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/jquery/index.d.ts). Copiez le contenu de ce fichier dans le presse-papiers.
+7. Dans un navigateur web, ouvrez le [fichier de définitions de types pour jQuery](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/jquery/index.d.ts). Copiez le contenu de ce fichier dans le presse-papiers.
 
 8. Dans Visual Studio, ouvrez le fichier **jQuery.d.ts**, collez le contenu du presse-papiers dans le fichier, puis enregistrez le fichier.
 
-9. Dans Visual Studio, cr?ez un fichier nomm? **tsconfig.json** dans la racine du projet d?application web.
+9. Dans Visual Studio, créez un fichier nommé **tsconfig.json** dans la racine du projet d’application web.
 
 10. Ouvrez le fichier **tsconfig.json**, ajoutez le contenu suivant au fichier, puis enregistrez le fichier :
 
@@ -89,19 +90,19 @@ Cet article explique comment cr?er un compl?ment Excel ? l?aide de Visual Studio
     if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
     ```
 
-## <a name="run-the-converted-add-in-project"></a>Ex?cuter le projet de compl?ment converti
+## <a name="run-the-converted-add-in-project"></a>Exécuter le projet de complément converti
 
-1. Dans Visual Studio, appuyez sur F5 ou s?lectionnez le bouton **D?marrer** pour lancer Excel avec le bouton du compl?ment **Show Taskpane** (Afficher le volet Office) affich? dans le ruban. Le compl?ment sera h?berg? localement sur IIS.
+1. Dans Visual Studio, appuyez sur F5 ou sélectionnez le bouton **Démarrer** pour lancer Excel avec le bouton du complément **Show Taskpane** (Afficher le volet Office) affiché dans le ruban. Le complément sera hébergé localement sur IIS.
 
-2. Dans Excel, s?lectionnez l?onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du compl?ment.
+2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
-3. Dans la feuille de calcul, s?lectionnez les neuf cellules qui contiennent des nombres.
+3. Dans la feuille de calcul, sélectionnez les neuf cellules qui contiennent des nombres.
 
-4. Appuyez sur le bouton **Mettre en surbrillance** dans le volet Office pour mettre en surbrillance la cellule de la plage s?lectionn?e contenant la valeur la plus ?lev?e.
+4. Appuyez sur le bouton **Mettre en surbrillance** dans le volet Office pour mettre en surbrillance la cellule de la plage sélectionnée contenant la valeur la plus élevée.
 
 ## <a name="homets-code-file"></a>Fichier de code Home.ts
 
-Par exemple, l?extrait de code suivant affiche le contenu du fichier **Home.ts** une fois que les modifications d?crites pr?c?demment ont ?t? appliqu?es. Ce code inclut le nombre minimal de modifications n?cessaires afin que votre compl?ment fonctionne.
+Par exemple, l’extrait de code suivant affiche le contenu du fichier **Home.ts** une fois que les modifications décrites précédemment ont été appliquées. Ce code inclut le nombre minimal de modifications nécessaires afin que votre complément fonctionne.
 
 ```javascript
 declare var fabric: any;
@@ -231,5 +232,5 @@ declare var fabric: any;
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Discussion sur la mise en ?uvre de promesses sur StackOverflow](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
-* [Exemples de compl?ments Office sur GitHub](https://github.com/officedev)
+* [Discussion sur la mise en œuvre de promesses sur StackOverflow](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
+* [Exemples de compléments Office sur GitHub](https://github.com/officedev)

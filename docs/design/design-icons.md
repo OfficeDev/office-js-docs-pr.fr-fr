@@ -2,19 +2,22 @@
 title: Concevoir des icônes pour les commandes de complément
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: a3dc7837bdc95df9576a5fc4a6c1840e64afacb6
+ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "19437478"
 ---
-
-
-
 # <a name="design-icons-for-add-in-commands"></a>Concevoir des icônes pour les commandes de complément
 
 [Commandes de complément](add-in-commands.md) Ajoutez des boutons, du texte et des icônes à l’interface utilisateur Office. Vos boutons de commande de complément doivent fournir des icônes significatives et des étiquettes qui identifient clairement l’action que l’utilisateur effectue lorsqu’il utilise une commande. Cet article fournit des instructions stylistiques et de production pour vous aider à concevoir des icônes s’intégrant parfaitement avec Office. 
 
 ## <a name="office-icon-design-principles"></a>Principes de conception des icônes Office
 
-La version Office 2013 des clients de bureau Office inclut une iconographie actualisée. La modification stylistique de remplacement est une réduction. Les nouvelles icônes incluent uniquement les éléments de communication essentiels. Les éléments non essentiels, tels que la source de lumière, les dégradés et les perspectives, sont supprimés. Les icônes simplifiées prennent en charge l’analyse rapide des commandes et des contrôles. Suivez ce style pour mieux correspondre à Office.
+La version Office 2013 des clients de bureau Office inclut une iconographie actualisée. La modification stylistique de remplacement est une réduction. Les nouvelles icônes incluent uniquement les éléments de communication essentiels. Les éléments non essentiels, tels que la source de lumière, les dégradés et les perspectives, sont supprimés. Les icônes simplifiées prennent en charge l’analyse rapide des commandes et des contrôles. Suivez ce style pour mieux correspondre à Office.
 
-Les icônes Office sont basées sur les principes de conception suivants : 
+Les icônes Office sont basées sur les principes de conception suivants : 
 
 - Interprétation moderne de la collection d’icônes Office 
 - À la fois nouveau et familier  
@@ -25,15 +28,15 @@ L’image suivante montre les icônes qui appliquent les principes de conception
 ![Image illustrant les anciennes icônes Office et l’interprétation moderne actualisée des icônes](../images/icons-images.png)
 
 ## <a name="icon-guidelines"></a>Instructions relatives aux icônes
-Suivez ces instructions lorsque vous créez vos icônes : 
+Suivez ces instructions lorsque vous créez vos icônes : 
 
-- Respectez la grille 1 px et utilisez l’outil d’édition des images bitmap pour de meilleurs résultats.  
+- Respectez la grille 1 px et utilisez l’outil d’édition des images bitmap pour de meilleurs résultats.  
 - Renouvelez sans redimensionner. Lorsque vous redimensionnez vos icônes à des tailles supérieures ou inférieures, prenez le temps de redessiner les découpages, les coins et des bords arrondis pour optimiser la netteté de ligne. 
 - Supprimez les artefacts qui rendent votre icône désordonnée.
-- Ne réutilisez pas les icônes d’Office UI Fabric dans le ruban Office ou le menu contextuel. Les icônes de structure sont stylistiquement différentes et ne correspondront pas. 
+- Ne réutilisez pas les icônes d’Office UI Fabric dans le ruban Office ou le menu contextuel. Les icônes de structure sont stylistiquement différentes et ne correspondront pas. 
 - Évitez de vous fier à votre logo ou marque pour communiquer ce que fait une commande de complément. Les repères de marque ne sont pas toujours reconnaissables sur des icônes de petites tailles et lorsque des modificateurs sont appliqués. Les repères de marque entrent souvent en conflit avec les styles d’icônes du ruban Office et peuvent gêner l’attention de l’utilisateur dans un environnement saturé.
 - Utilisez un remplissage blanc pour améliorer l’accessibilité. La plupart des objets dans les icônes nécessitent un arrière-plan blanc pour être lisibles sur les thèmes de l’interface utilisateur d’Office et en mode contraste élevé.  
-- Utilisez le format PNG avec un arrière-plan transparent. 
+- Utilisez le format PNG avec un arrière-plan transparent. 
 - Évitez le contenu localisable dans les icônes, y compris les caractères typographiques, les paragraphes en drapeau et les points d’interrogation. 
 - Ne réutilisez pas les métaphores visuelles pour différentes commandes. L’utilisation de la même icône pour différentes actions peut semer la confusion. 
 - Simplifiez au maximum le nom de vos boutons. Utilisez une combinaison d’informations visuelles et textuelles pour transmettre sa signification. 
@@ -41,15 +44,15 @@ Suivez ces instructions lorsque vous créez vos icônes :
 
 ## <a name="icon-size-recommendations-and-requirements"></a>Configuration requise et recommandations sur la taille des icônes
 
-Les icônes du bureau Office 2016 sont des images bitmap. Différentes tailles apparaissent en fonction du paramètre PPP de l’utilisateur et du mode tactile. Incluez les huit tailles prises en charge pour créer la meilleure expérience possible dans tous les contextes et résolutions pris en charge. Voici les tailles prises en charge - trois sont obligatoires :
+Les icônes du bureau Office 2016 sont des images bitmap. Différentes tailles apparaissent en fonction du paramètre PPP de l’utilisateur et du mode tactile. Incluez les huit tailles prises en charge pour créer la meilleure expérience possible dans tous les contextes et résolutions pris en charge. Voici les tailles prises en charge - trois sont obligatoires :
 
-- 16 px (obligatoire)
-- 20 px
-- 24 px
-- 32 px (obligatoire)
-- 40 px
-- 48 px
-- 64 px (recommandé, meilleur choix pour Mac)
+- 16 px (obligatoire)
+- 20 px
+- 24 px
+- 32 px (obligatoire)
+- 40 px
+- 48 px
+- 64 px (recommandé, meilleur choix pour Mac)
 - 80 px (obligatoire)  
 
 Veillez à renouveler les icônes pour chaque taille au lieu de les réduire pour les ajuster.
@@ -96,43 +99,43 @@ L’image suivante montre la disposition des éléments de base et modificateurs
 - Éléments de base centraux dans le cadre de pixel avec remplissage vide tout autour.
 - Placez les modificateurs d’action dans le coin supérieur gauche. 
 - Placez les modificateurs conceptuels dans la partie inférieure droite.
-- Limitez le nombre d’éléments dans les icônes. En 32 px, limitez le nombre de modificateurs à un maximum de deux. En 16 px, limitez le nombre de modificateurs à un.
+- Limitez le nombre d’éléments dans les icônes. En 32 px, limitez le nombre de modificateurs à un maximum de deux. En 16 px, limitez le nombre de modificateurs à un.
 
 Placez les éléments de base de façon cohérente en fonction des tailles. Si les éléments de base ne peuvent pas être centrés dans le cadre, alignez-les en haut à gauche, en laissant les pixels supplémentaires dans la partie inférieure droite. Pour obtenir de meilleurs résultats, appliquez les instructions de remplissage répertoriées dans le tableau suivant.
 
 |**Taille de l’icône**|**Remplissage autour de l’élément de base**|
 |:---|:---|
-|16px|0|
-|20px|1px|
-|24px|1px|
-|32px|2px|
-|40px|2px|
-|48px|3px|
-|64px|5px|
-|80px|5px|
+|16 px|0|
+|20 px|1 px|
+|24 px|1 px|
+|32 px|2 px|
+|40 px|2 px|
+|48 px|3 px|
+|64 px|5 px|
+|80 px|5 px|
 
-Tous les modificateurs doivent avoir un découpage transparent 1 px entre chaque élément, y compris l’arrière-plan. Les éléments ne doivent pas se chevaucher directement. Créez des espaces entre les règles et les bords. Les modificateurs peuvent varier légèrement en taille, mais utilisez ces dimensions comme point de départ.
+Tous les modificateurs doivent avoir un découpage transparent 1 px entre chaque élément, y compris l’arrière-plan. Les éléments ne doivent pas se chevaucher directement. Créez des espaces entre les règles et les bords. Les modificateurs peuvent varier légèrement en taille, mais utilisez ces dimensions comme point de départ.
 
 |**Taille de l’icône**|**Taille du modificateur**|
 |:---|:---|
-|16px|9px|
-|20px|10px|
-|24px|12px|
-|32px|14px|
-|40px|20px|
-|48px|22px|
-|64px|29px|
-|80px|38px|
+|16 px|9 px|
+|20 px|10 px|
+|24 px|12 px|
+|32 px|14 px|
+|40 px|20 px|
+|48 px|22 px|
+|64 px|29 px|
+|80 px|38 px|
 
 ## <a name="icon-colors"></a>Couleurs de l’icône
 
-Les icônes Office ont une palette de couleurs limitée. Utilisez les couleurs répertoriées dans le tableau suivant pour garantir une intégration parfaite avec l’interface utilisateur d’Office. Appliquez les instructions suivantes sur l’utilisation des couleurs : 
+Les icônes Office ont une palette de couleurs limitée. Utilisez les couleurs répertoriées dans le tableau suivant pour garantir une intégration parfaite avec l’interface utilisateur d’Office. Appliquez les instructions suivantes sur l’utilisation des couleurs : 
 
 - Utilisez la couleur pour véhiculer une signification plutôt que pour embellir. Elle doit mettre en surbrillance ou mettre en évidence une action, un état ou un élément qui différencie explicitement le repère.  
 - Si possible, n’utilisez qu’une seule couleur supplémentaire au-delà du gris. Limitez les couleurs supplémentaires à deux au maximum.
-- Les couleurs ont une apparence cohérente dans toutes les tailles d’icône. Les icônes Office ont des palettes de couleurs légèrement différentes pour des tailles d’icônes différentes. Les icônes 16 px et plus petites sont légèrement plus sombres et plus percutantes que les icônes 32 px et plus grandes. Sans ces ajustements discrets, les couleurs semblent varier en taille.   
+- Les couleurs ont une apparence cohérente dans toutes les tailles d’icône. Les icônes Office ont des palettes de couleurs légèrement différentes pour des tailles d’icônes différentes. Les icônes 16 px et plus petites sont légèrement plus sombres et plus percutantes que les icônes 32 px et plus grandes. Sans ces ajustements discrets, les couleurs semblent varier en taille.   
 
-|**Nom de la couleur**|**RVB**|**Hex**|**Couleur**|**Catégorie**|
+|**Nom de la couleur**|**RVB**|**Hexadécimal**|**Couleur**|**Catégorie**|
 |:---|:---|:---|:---|:---|
 |Texte gris (80)|80, 80, 80|#505050| ![Image couleur texte gris 80](../images/color-text-gray-80.png) |Texte|
 |Texte gris (95)|95, 95, 95|#5F5F5F| ![Image couleur texte gris 95](../images/color-text-gray-95.png) |Texte|
@@ -158,7 +161,7 @@ Les icônes Office ont une palette de couleurs limitée. Utilisez les couleurs r
 
 ## <a name="icons-in-high-contrast-modes"></a>Icônes en modes de contraste élevé
 
-Les icônes Office sont conçues pour un rendu correct en mode de contraste élevé. Les éléments de premier plan sont bien différenciés des arrière-plans pour optimiser la lisibilité et permettre le recoloriage. En modes de contraste élevé, Office recolorie tous les pixels de votre icône avec une valeur rouge, verte ou bleue inférieure à 190 en noir plein. Tous les autres pixels sont blancs. Autrement dit, chaque canal RVB est évalué lorsque les valeurs 0-189 sont noires et les valeurs 190-255 sont blanches. D’autres thèmes à contraste élevé recolorient à l’aide du même seuil de valeur 190 mais avec des règles différentes. Par exemple, le thème blanc à contraste élevé recolorie tous les pixels supérieurs à 190 en opaque, mais tous les autres pixels en transparent. Appliquez les instructions suivantes pour optimiser la lisibilité dans les paramètres de contraste élevé :
+Les icônes Office sont conçues pour un rendu correct en mode de contraste élevé. Les éléments de premier plan sont bien différenciés des arrière-plans pour optimiser la lisibilité et permettre le recoloriage. En modes de contraste élevé, Office recolorie tous les pixels de votre icône avec une valeur rouge, verte ou bleue inférieure à 190 en noir plein. Tous les autres pixels sont blancs. Autrement dit, chaque canal RVB est évalué lorsque les valeurs 0-189 sont noires et les valeurs 190-255 sont blanches. D’autres thèmes à contraste élevé recolorient à l’aide du même seuil de valeur 190 mais avec des règles différentes. Par exemple, le thème blanc à contraste élevé recolorie tous les pixels supérieurs à 190 en opaque, mais tous les autres pixels en transparent. Appliquez les instructions suivantes pour optimiser la lisibilité dans les paramètres de contraste élevé :
 
 - Essayez de différencier les éléments de premier plan et d’arrière-plan par rapport au seuil de valeur 190.
 - Suivez les styles visuels des icônes Office.

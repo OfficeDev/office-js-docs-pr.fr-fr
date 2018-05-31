@@ -17,6 +17,6 @@ If your issue is not related to the Office Add-ins documentation, please post it
 ## <a name="article-url"></a>URL de l'article
 <!-- Provide the URL of the article that this documentation issue relates to -->
 
-## <a name="issue"></a>Probl?me
+## <a name="issue"></a>Problème
 <!-- Provide a thorough description of the documentation issue -->
  

@@ -2,13 +2,18 @@
 title: Composant d’étiquette dans la structure de l’interface utilisateur d’Office
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: e9d6e9eaca918068b682725ee9236f6539641fa0
+ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "19437240"
 ---
-
 # <a name="label-component-in-office-ui-fabric"></a>Composant d’étiquette dans la structure de l’interface utilisateur d’Office
 
 Utilisez des étiquettes pour nommer ou donner un titre à un composant ou un groupe de composants. Associées à un autre composant ou groupe de composants, les étiquettes doivent se trouver à proximité des composants ou des groupes associés. Certains composants ont des étiquettes prédéfinies comme les listes déroulantes ou les boutons bascule.
   
-#### <a name="example-label-in-a-task-pane"></a>Exemple : Étiquette dans un volet de tâches
+#### <a name="example-label-in-a-task-pane"></a>Exemple : Étiquette dans un volet de tâches
 
 ![Image illustrant l’étiquette](../images/overview-with-app-label.png)
 

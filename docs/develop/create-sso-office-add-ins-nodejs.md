@@ -1,11 +1,16 @@
 ---
 title: Création d’un complément Office Node.js qui utilise l’authentification unique
 description: 23/01/2018
+ms.openlocfilehash: 4086471bec2ded671e1b3eafebc4fe69e9818344
+ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "19437646"
 ---
-
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office Node.js qui utilise l’authentification unique (aperçu)
 
-Les utilisateurs peuvent se connecter à Office et votre complément Web Office peut tirer parti de cette procédure de connexion pour autoriser les utilisateurs à accéder à votre complément et à Microsoft Graph sans obliger les utilisateurs à se connecter une deuxième fois. Pour obtenir une vue d’ensemble, consultez [Activer l’authentification unique pour des compléments Office](sso-in-office-add-ins.md).
+Les utilisateurs peuvent se connecter à Office et votre complément Web Office peut tirer parti de cette procédure de connexion pour autoriser les utilisateurs à accéder à votre complément et à Microsoft Graph sans obliger les utilisateurs à se connecter une deuxième fois. Pour obtenir une vue d’ensemble, consultez [Activer l’authentification unique pour des compléments Office](sso-in-office-add-ins.md).
 
 Cet article vous guide tout au long du processus d’activation de l’authentification unique (SSO) dans un complément intégré à Node.js et Express. 
 
@@ -20,18 +25,18 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 * TypeScript version 2.2.2 ou ultérieure.
 
-* Office 2016, version 1708, build 8424.nnnn ou version ultérieure (la version par abonnement Office 365, parfois appelée « Démarrer en un clic »).
+* Office 2016, version 1708, build 8424.nnnn ou version ultérieure (la version par abonnement Office 365, parfois appelée « Démarrer en un clic »).
 
-  Il vous sera peut-être demandé de participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, consultez la page [Participez au programme Office Insider](https://products.office.com/fr-fr/office-insider?tab=tab-1).
+  Il vous sera peut-être demandé de participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, consultez la page [Participez au programme Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1).
 
 ## <a name="set-up-the-starter-project"></a>Configurer le projet de démarrage
 
 1. Clonez ou téléchargez le référentiel sur [Complément Office NodeJS SSO](https://github.com/officedev/office-add-in-nodejs-sso). 
 
     > [!NOTE]
-    > Il existe deux versions de l’échantillon :  
+    > Il existe deux versions de l’échantillon :  
     > * Le dossier **Before** est un projet de démarrage. L’interface utilisateur et d’autres aspects du complément qui ne sont pas directement liés à l’authentification unique ou à l’autorisation sont déjà terminés. Les sections suivantes de cet article vous guident tout au long de la procédure d’exécution de cette dernière. 
-    > * La version **Finale** de l’échantillon s’apparente au complément que vous auriez si vous terminiez les procédures de cet article, sauf que le projet terminé comporte des commentaires de code qui seraient redondants avec le texte de cet article. Pour utiliser la version finale, suivez simplement les instructions de cet article, mais remplacez « Avant » par « Finale » et ignorez les sections **Code côté client** et **Code côté serveur**.
+    > * La version **Finale** de l’échantillon s’apparente au complément que vous auriez si vous terminiez les procédures de cet article, sauf que le projet terminé comporte des commentaires de code qui seraient redondants avec le texte de cet article. Pour utiliser la version finale, suivez simplement les instructions de cet article, mais remplacez « Avant » par « Finale » et ignorez les sections **Code côté client** et **Code côté serveur**.
 
 2. Ouvrez une console Git Bash dans le dossier **Before**.
 
@@ -40,102 +45,45 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 4. Saisissez `npm run build ` dans la console pour générer le projet. 
 
     > [!NOTE]
-    > Il se peut que vous voyiez certaines erreurs de construction indiquant que certaines variables sont déclarées mais pas utilisées. Ignorez ces erreurs. Elles représentent un effet secondaire du fait qu’il manque du code dans la version « Avant » de l’échantillon. Ce code sera ajouté ultérieurement.
+    > Il se peut que vous voyiez certaines erreurs de construction indiquant que certaines variables sont déclarées mais pas utilisées. Ignorez ces erreurs. Elles représentent un effet secondaire du fait qu’il manque du code dans la version « Avant » de l’échantillon. Ce code sera ajouté ultérieurement.
 
 ## <a name="register-the-add-in-with-azure-ad-v20-endpoint"></a>Enregistrez le complément avec le point de terminaison Azure AD v2.0
 
-1. Accédez à [https://apps.dev.microsoft.com](https://apps.dev.microsoft.com). 
-
-1. Connectez-vous avec les informations d’identification d’administrateur à votre client Office 365. Par exemple, MonNom@contoso.onmicrosoft.com
-
-1. Cliquez sur **Ajouter une application**.
-
-1. Lorsque vous y êtes invité, utilisez « Office-Add-in-NodeJS-SSO » comme nom d’application et appuyez sur **Créer une application**.
-
-1. Quand la page de configuration de l’application s’ouvre, copiez l’**ID de l’application** et enregistrez-le. Vous l’utiliserez dans une procédure ultérieure. 
-
-    > [!NOTE]
-    > Cet ID est la valeur « audience » lorsque d’autres applications, telles que l’application hôte Office (par exemple, PowerPoint, Word, Excel) recherchent un accès autorisé à l’application. Il s’agit également de l’« ID client » de l’application dès que celle-ci recherche un accès autorisé à Microsoft Graph.
-
-1. Dans la section **Secrets de l’application**, appuyez sur **Générer un nouveau mot de passe**. Une boîte de dialogue contextuelle s’ouvre avec un nouveau mot de passe (également appelé « secret de l’application »). *Copiez le mot de passe immédiatement et enregistrez-le avec l’ID de l’application.* Vous en aurez besoin dans une procédure ultérieure. Ensuite, fermez la boîte de dialogue.
-
-1. Dans la section **Plateformes**, cliquez sur **Ajouter une plateforme**. 
-
-1. Dans la boîte de dialogue qui s’ouvre, sélectionnez **API Web**.
-
-1. Un **URI d’ID d’application** a été généré du formulaire « api://{App ID GUID} ». Insérez la chaîne « localhost:3000/ » entre la double barre oblique et le GUID. L’ID entier doit être `api://localhost:3000/{App ID GUID}`. 
-
-    > [!NOTE]
-    > La partie domaine du nom d’**étendue**, juste en dessous de l’**URI d’ID d’application**, change automatiquement en conséquence. Il doit se présenter sous la forme `api://localhost:3000/{App ID GUID}/access_as_user`.
-
-1. Cette étape et la suivante permettent à l’application hôte Office d’accéder à votre complément. Dans la section **Applications pré-autorisées**, vous identifiez les applications que vous souhaitez autoriser dans l’application web de votre complément. Chacun des ID suivants doit être pré-autorisé. Chaque fois que vous en entrez un, une nouvelle zone de texte vide s’affiche. (Entrez uniquement le GUID.)
-
-    * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
-    * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office Online)
-    * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Office Online) 
-
-1. Ouvrez le menu déroulant **Étendue** à côté de chaque **ID d’application** et activez la case à cocher pour `api://localhost:3000/{App ID GUID}/access_as_user`.
-
-1. En haut de la section **Plateformes**, cliquez sur **Ajouter une plateforme** à nouveau, puis sélectionnez **Web**.
-
-1. Dans la nouvelle section **Web** sous **Plateformes**, entrez les informations suivantes en guise d’**URL de redirection** : `https://localhost:3000`. 
-
-1. Faites défiler jusqu’à la section **Autorisations pour Microsoft Graph** et à la sous-section **Autorisations déléguées**. Utilisez le bouton **Ajouter** pour ouvrir une boîte de dialogue **Sélectionner des autorisations**.
-
-1. Dans la boîte de dialogue, cochez les cases pour les autorisations suivantes : 
-
+Les instructions suivantes sont écrites de façon générique afin qu’elles puissent être utilisées à plusieurs endroits. Pour cet article, faites ce qui suit :
+- Remplacez l’espace réservé **$ADD-IN-NAME$** par `“Office-Add-in-NodeJS-SSO`.
+- Remplacez l’espace réservé **$FQDN-WITHOUT-PROTOCOL$** par `localhost:3000`.
+- Lorsque vous spécifiez des autorisations dans la boîte de dialogue **Sélectionner autorisations**, cochez les cases pour les autorisations suivantes. Seule la première est vraiment requise par votre complément lui-même ; mais l'autorisation `profile` est requise pour que l'hôte Office obtienne un jeton pour votre application Web complémentaire.
     * Files.Read.All
     * profil
 
-    > [!NOTE]
-    > L’autorisation `User.Read` peut déjà être répertoriée par défaut. Une bonne pratique consiste à demander uniquement les autorisations dont vous avez besoin. Ainsi, nous vous recommandons de désactiver la case à cocher de cette autorisation.
+[!INCLUDE[](../includes/register-sso-add-in-aad-v2-include.md)]
 
-1. Cliquez sur **OK** au bas de la boîte de dialogue.
 
-1. Cliquez sur **Enregistrer** au bas de la page d’inscription.
+## <a name="grant-administrator-consent-to-the-add-in"></a>Accorder le consentement de l'administrateur au complément
 
-## <a name="grant-admin-consent-to-the-add-in"></a>Accorder le consentement de l’administrateur au complément
-
-> [!NOTE]
-> Cette procédure n’est nécessaire que quand vous êtes en train de développer le complément. Lorsque votre complément de production est déployé dans AppSource ou dans un catalogue de compléments, les utilisateurs l’approuvent individuellement à l’installation.
-
-1. Dans la chaîne suivante, remplacez l’espace réservé « {application_ID} » par l’ID d’application que vous avez copié lorsque vous avez enregistré votre complément.
-
-    `https://login.microsoftonline.com/common/adminconsent?client_id={application_ID}&state=12345`
-
-1. Collez l’URL résultante dans la barre d’adresses d’un navigateur pour y accéder.
-
-1. Lorsque vous y êtes invité, connectez-vous avec les informations d’identification d’administrateur à votre client Office 365.
-
-1. Vous êtes ensuite invité à accorder des autorisations pour votre complément pour accéder à vos données Microsoft Graph. Cliquez sur **Accepter**. 
-
-1. L’onglet ou la fenêtre du navigateur est alors redirigé vers l’**URL de redirection** que vous avez spécifiée lorsque vous avez enregistré le complément ; ainsi, si le complément fonctionne, la page d’accueil du complément s’ouvre dans le navigateur. Si le complément ne fonctionne pas, vous obtiendrez une erreur indiquant que la ressource au niveau de localhost:3000 ne peut pas être trouvée ou ouverte. *Mais le fait que la redirection ait été tentée signifie que le processus de consentement de l’administrateur a abouti*. Ainsi, que la page d’accueil soit ouverte ou que vous receviez un message d’erreur, vous pouvez passer à l’étape suivante.
-
-2. Dans la barre d’adresses du navigateur, vous verrez un paramètre de requête « client » avec une valeur GUID. Il s’agit de l’ID de votre client Office 365. Copiez et enregistrez cette valeur. Vous l’utiliserez dans une étape ultérieure.
-
-3. Fermez la fenêtre/l’onglet.
+[!INCLUDE[](../includes/grant-admin-consent-to-an-add-in-include.md)]
 
 ## <a name="configure-the-add-in"></a>Configurer le complément
 
 1. Dans votre éditeur de code, ouvrez le fichier src\server.ts. Près de la partie supérieure se trouve un appel à un constructeur d’une classe `AuthModule`. Il existe certains paramètres de chaîne dans le constructeur auxquels vous devez affecter des valeurs.
 
-2. Pour la propriété `client_id`, remplacez l’espace réservé `{client GUID}` par l’ID d’application que vous avez enregistré lorsque vous avez inscrit le complément. Lorsque vous avez terminé, vous obtenez simplement un GUID entre guillemets simples. Il ne doit pas exister de caractères « {} ».
+2. Pour la propriété `client_id`, remplacez l’espace réservé `{client GUID}` par l'ID de l’application, que vous avez enregistré lorsque vous avez enregistré le complément. Lorsque vous avez terminé, il ne devrait rester q’un GUID entre deux apostrophes. Il ne devrait pas y avoir de ponctuation comme "{}".
 
 3. Pour la propriété `client_secret`, remplacez l’espace réservé `{client secret}` par le secret de l’application que vous avez enregistré lorsque vous avez inscrit le complément.
 
 4. Pour la propriété `audience`, remplacez l’espace réservé `{audience GUID}` par l’ID d’application que vous avez enregistré lorsque vous avez inscrit le complément. (La même valeur que celle affectée à la propriété `client_id`.)
   
-3. Dans la chaîne affectée à la propriété `issuer`, vous verrez l’espace réservé *{O365 tenant GUID}*. Remplacez ceci par l’ID du client Office 365 que vous avez enregistré à la fin de la dernière procédure. Si pour une raison quelconque, vous n’avez pas obtenu l’ID antérieur, utilisez l’une des méthodes de la page [Trouver votre ID de client Office 365](https://support.office.com/fr-fr/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b) pour l’obtenir. Lorsque vous avez terminé, la valeur de propriété `issuer` doit ressembler à ceci :
+3. Dans la chaîne affectée à la propriété `issuer`, vous verrez l'espace réservé *{GUID locataire O365}*. Remplacez ceci par l'ID de location Office 365. Pour l'obtenir, [utilisez l'une des méthodes décrites dans](https://support.office.com/en-us/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b) Trouver votre identité Office 365. Lorsque vous avez terminé, la valeur de la propriété `issuer` devrait ressembler à quelque chose comme ceci :
 
     `https://login.microsoftonline.com/12345678-1234-1234-1234-123456789012/v2.0`
 
 1. Conservez les autres paramètres du constructeur `AuthModule` inchangés. Enregistrez et fermez le fichier.
 
-1. Dans la racine du projet, ouvrez le fichier manifeste du complément « Office-Add-in-NodeJS-SSO.xml ».
+1. Dans la racine du projet, ouvrez le fichier manifeste du complément « Office-Add-in-NodeJS-SSO.xml ».
 
 1. Faites défiler vers le bas du fichier.
 
-1. Juste au-dessus de la balise de fin `</VersionOverrides>`, vous trouverez le balisage suivant :
+1. Juste au-dessus de la balise de fin `</VersionOverrides>`, vous trouverez le balisage suivant :
 
     ```xml
     <WebApplicationInfo>
@@ -148,7 +96,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     </WebApplicationInfo>
     ```
 
-1. Remplacez l’espace réservé « {application_GUID here} » *aux deux endroits* du balisage par l’ID d’application que vous avez copié lorsque vous avez enregistré votre complément. (Les crochets « {} » ne font pas partie de l’ID, ne les incluez pas.) C’est le même ID que celui que vous avez utilisé pour ClientID et Audience dans le fichier web.config.
+1. Remplacez l’espace réservé « {application_GUID here} » *aux deux endroits* du balisage par l’ID d’application que vous avez copié lorsque vous avez enregistré votre complément. (Les "{}"ne font pas partie de l'ID, donc ne les incluez pas). Il s'agit du même ID que celui utilisé pour ClientID et Audience dans web.config.
 
     > [!NOTE]
     > * La valeur **Resource** correspond à l’**URI d’ID d’application** défini lorsque vous avez ajouté la plateforme d’API web à l’enregistrement du complément.
@@ -158,13 +106,13 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 ## <a name="code-the-client-side"></a>Code côté client
 
-1. Ouvrez le fichier program.js dans le dossier **public**. Il contient déjà du code :
+1. Ouvrez le fichier program.js dans le dossier **public**. Il contient déjà du code :
 
     * Une affectation à la méthode `Office.initialize` qui affecte elle-même un gestionnaire à l’événement ClickButton `getGraphAccessTokenButton`.
     * Une méthode `showResult` permettant d’afficher les données renvoyées par Microsoft Graph (ou un message d’erreur) en bas du volet Office.
     * Une méthode `logErrors` qui consigne dans la console les erreurs qui ne sont pas destinées à l’utilisateur final.
 
-11. En dessous de l’affectation au `Office.initialize`, ajoutez le code ci-dessous. Tenez compte des informations suivantes :
+11. En dessous de l’affectation au `Office.initialize`, ajoutez le code ci-dessous. Tenez compte des informations suivantes :
 
     * La gestion des erreurs dans le complément tente parfois automatiquement d’obtenir un jeton d’accès une deuxième fois, à l’aide d’un autre jeu d’options. La variable de compteur `timesGetOneDriveFilesHasRun` et la variable d’indicateur `triedWithoutForceConsent` et `timesMSGraphErrorReceived` permettent de s’assurer que l’utilisateur ne tente pas de manière répétée d’obtenir un jeton sans y parvenir. 
     * Vous allez créer la méthode `getDataWithToken` à l’étape suivante, mais rappelez-vous qu’elle définit une option appelée `forceConsent` sur `false`. Vous en saurez plus à la prochaine étape.
@@ -181,9 +129,9 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     }   
     ```
 
-1. En dessous de la méthode `getOneDriveFiles`, ajoutez le code ci-dessous. Tenez compte des informations suivantes :
+1. En dessous de la méthode `getOneDriveFiles`, ajoutez le code ci-dessous. Tenez compte des informations suivantes :
 
-    * `getAccessTokenAsync` est la nouvelle API d’Office.js qui permet à un complément de demander à l’application hôte Office (Excel, PowerPoint, Word, etc.) un jeton d’accès au complément (pour l’utilisateur connecté à Office). L’application hôte Office demande alors le jeton au point de terminaison Azure AD 2.0. Dans la mesure où vous avez préalablement autorisé l’hôte Office sur votre complément lors de son inscription, Azure AD enverra le jeton.
+    * est la nouvelle API d’Office.js qui permet à un complément de demander à l’application hôte Office (Excel, PowerPoint, Word, etc.) un jeton d’accès au complément (pour l’utilisateur connecté à Office). L’application hôte Office demande alors le jeton au point de terminaison Azure AD 2.0. Dans la mesure où vous avez préalablement autorisé l’hôte Office sur votre complément lors de son inscription, Azure AD enverra le jeton.`getAccessTokenAsync`
     * Si aucun utilisateur n’est connecté à Office, l’hôte Office invite l’utilisateur à se connecter.
     * Le paramètre d’options définit `forceConsent` sur `false`, donc l’utilisateur ne sera pas invité à accorder à l’hôte Office l’accès à votre complément chaque fois qu’il utilisera le complément. La première fois que l’utilisateur exécutera le complément, l’appel à `getAccessTokenAsync` échouera, mais la logique de gestion des erreurs que vous ajouterez dans une étape ultérieure effectuera automatiquement un autre appel avec le jeu d’options `forceConsent` défini sur `true`, et l’utilisateur sera invité à donner son consentement, mais uniquement la première fois.
     * Vous créerez la méthode `handleClientSideErrors` à une étape ultérieure.
@@ -202,16 +150,16 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     }
     ```
 
-1. Remplacez TODO1 par les lignes suivantes. Vous créez la méthode `getData` et la route « /api/values » côté serveur dans les étapes suivantes. Une URL relative est utilisée pour le point de terminaison car il doit être hébergé sur le même domaine que votre complément.
+1. Remplacez TODO1 par les lignes suivantes. Vous créez la méthode `getData` et la route « /api/values » côté serveur dans les étapes suivantes. Une URL relative est utilisée pour le point de terminaison car il doit être hébergé sur le même domaine que votre complément.
 
     ```javascript
     accessToken = result.value;
     getData("/api/values", accessToken);
     ```
 
-1. En dessous de la méthode `getOneDriveFiles`, ajoutez le code ci-dessous. Tenez compte des informations suivantes :
+1. En dessous de la méthode `getOneDriveFiles`, ajoutez le code ci-dessous. Tenez compte des informations suivantes :
 
-    * Cette méthode appelle un point de terminaison d’API Web spécifié et lui transmet le même jeton d’accès que l’application hôte Office a utilisé pour accéder à votre complément. Côté serveur, ce jeton d’accès est utilisé dans le flux « de la part de » pour obtenir un jeton d’accès à Microsoft Graph.
+    * Cette méthode appelle un point de terminaison d’API Web spécifié et lui transmet le même jeton d’accès que l’application hôte Office a utilisé pour accéder à votre complément. Côté serveur, ce jeton d’accès est utilisé dans le flux « de la part de » pour obtenir un jeton d’accès à Microsoft Graph.
     * Vous créerez la méthode `handleServerSideErrors` à une étape ultérieure.
 
     ```javascript
@@ -262,7 +210,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     }
     ```
 
-1. Remplacez `TODO2` par le code suivant. L’erreur 13001 se produit si l’utilisateur n’est pas connecté, ou s’il a annulé, sans y répondre, une invite lui demandant d’indiquer un deuxième facteur d’authentification. Dans les deux cas, le code réexécute la méthode `getDataWithToken` et définit une option pour forcer une invite de connexion.
+1. Remplacez `TODO2` par le code suivant. L’erreur 13001 se produit si l’utilisateur n’est pas connecté, ou s’il a annulé, sans y répondre, une invite lui demandant d’indiquer un deuxième facteur d’authentification. Dans les deux cas, le code réexécute la méthode `getDataWithToken` et définit une option pour forcer une invite de connexion.
 
     ```javascript
     case 13001:
@@ -270,7 +218,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
         break;
     ```
 
-1. Remplacez `TODO3` par le code suivant. L’erreur 13002 se produit lorsque la connexion ou l’octroi du consentement de l’utilisateur a été abandonné. Demandez à l’utilisateur de réessayer, mais seulement une fois.
+1. Remplacez `TODO3` par le code suivant. L’erreur 13002 se produit lorsque la connexion ou l’octroi du consentement de l’utilisateur a été abandonné. Demandez à l’utilisateur de réessayer, mais seulement une fois.
 
     ```javascript
     case 13002:
@@ -282,7 +230,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
         break; 
     ```
 
-1. Remplacez `TODO4` par le code suivant. L’erreur 13003 se produit si l’utilisateur est connecté avec un compte qui n’est ni un compte professionnel ni un compte scolaire, ni un compte Microsoft. Demandez à l’utilisateur de se déconnecter, puis de se reconnecter avec un type de compte pris en charge.
+1. Remplacez `TODO4` par le code suivant. L’erreur 13003 se produit si l’utilisateur est connecté avec un compte qui n’est ni un compte professionnel ni un compte scolaire, ni un compte Microsoft. Demandez à l’utilisateur de se déconnecter, puis de se reconnecter avec un type de compte pris en charge.
 
     ```javascript
     case 13003: 
@@ -291,9 +239,9 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     ```
 
     > [!NOTE]
-    > Les erreurs 13004 et 13005 ne sont pas gérées dans cette méthode, car elles ne devraient se produire qu’en développement. Elles ne peuvent pas être résolues par du code d’exécution et il ne serait d’aucune utilité de les signaler à un utilisateur final.
+    > Les erreurs 13004 et 13005 ne sont pas gérées dans cette méthode, car elles ne devraient se produire qu’en développement. Elles ne peuvent pas être résolues par du code d’exécution et il ne serait d’aucune utilité de les signaler à un utilisateur final.
 
-1. Remplacez `TODO5` par le code suivant. L’erreur 13006 se produit lorsqu’une erreur non spécifiée indiquant que l’hôte est dans un état instable est survenue dans l’hôte Office. Demandez à l’utilisateur de redémarrer Office.
+1. Remplacez `TODO5` par le code suivant. L’erreur 13006 se produit lorsqu’une erreur non spécifiée indiquant que l’hôte est dans un état instable est survenue dans l’hôte Office. Demandez à l’utilisateur de redémarrer Office.
 
     ```javascript
     case 13006:
@@ -301,7 +249,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
         break;        
     ```
 
-1. Remplacez `TODO6` par le code suivant. L’erreur 13007 se produit lorsqu’un problème est survenu au niveau de l’interaction de l’hôte Office avec AAD de telle sorte que l’hôte ne peut pas obtenir de jeton d’accès pour accéder à l’application/au service Web des compléments. Il peut s’agir d’un problème temporaire de réseau. Demandez à l’utilisateur de réessayer plus tard.
+1. Remplacez `TODO6` par le code suivant. L’erreur 13007 se produit lorsqu’un problème est survenu au niveau de l’interaction de l’hôte Office avec AAD de telle sorte que l’hôte ne peut pas obtenir de jeton d’accès pour accéder à l’application/au service Web des compléments. Il peut s’agir d’un problème temporaire de réseau. Demandez à l’utilisateur de réessayer plus tard.
 
     ```javascript
     case 13007:
@@ -309,7 +257,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
         break;      
     ```
 
-1. Remplacez `getAccessTokenAsync` par le code suivant. L’erreur 13008 se produit lorsque l’utilisateur a déclenché une opération qui appelle `TODO7` avant la fin de l’appel précédent.
+1. Remplacez `TODO7`  par le code suivant. L’erreur 13008 se produit lorsque l’utilisateur a déclenché une opération qui appelle `getAccessTokenAsync`  avant la fin de l’appel précédent.
 
     ```javascript
     case 13008:
@@ -317,7 +265,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
         break;
     ```      
 
-1. Remplacez `TODO8` par le code suivant. L’erreur 13009 se produit lorsque le complément ne prend pas en charge l’obligation d’afficher une invite de consentement, mais que `getAccessTokenAsync` a été appelé avec l’option `forceConsent` définie sur `true`. Dans le cas habituel, lorsque cela se produit, le code doit automatiquement réexécuter `getAccessTokenAsync` avec l’option de consentement définie sur `false`. Toutefois, dans certains cas, l’appel de la méthode avec `forceConsent` défini sur `true` était lui-même une réponse automatique à une erreur dans un appel à la méthode avec l’option définie sur `false`. Dans ce cas, le code ne doit pas réessayer, mais il doit à la place conseiller à l’utilisateur de se déconnecter et de se reconnecter.
+1. Remplacez `TODO8` par le code suivant. L’erreur 13009 se produit lorsque le complément ne prend pas en charge l’obligation d’afficher une invite de consentement, mais que `getAccessTokenAsync` a été appelé avec l’option `forceConsent` définie sur `true`. Dans le cas habituel, lorsque cela se produit, le code doit automatiquement réexécuter `getAccessTokenAsync` avec l’option de consentement définie sur `false`. Toutefois, dans certains cas, l’appel de la méthode avec `forceConsent` défini sur `true` était lui-même une réponse automatique à une erreur dans un appel à la méthode avec l’option définie sur `false`. Dans ce cas, le code ne doit pas réessayer, mais il doit à la place conseiller à l’utilisateur de se déconnecter et de se reconnecter.
 
     ```javascript
     case 13009:
@@ -337,7 +285,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
         break;
     ```  
 
-1. En dessous de la méthode `handleClientSideErrors`, ajoutez la méthode suivante. Cette méthode gérera les erreurs du service web du complément en cas de problème d’exécution du flux « de la part de » ou de problème d’obtention de données à partir de Microsoft Graph.
+1. En dessous de la méthode `handleClientSideErrors`, ajoutez la méthode suivante. Cette méthode gérera les erreurs du service web du complément en cas de problème d’exécution du flux « de la part de » ou de problème d’obtention de données à partir de Microsoft Graph.
 
     ```javascript
     function handleServerSideErrors(result) {
@@ -371,9 +319,9 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     }
     ```
 
-1. Remplacez `TODO11` par le code suivant *juste en dessous de la dernière accolade fermante du code que vous avez ajouté à l’étape précédente*. Tenez compte des remarques suivantes à propos de ce code :
+1. Remplacez `TODO11` par le code suivant *juste en dessous de la dernière accolade fermante du code que vous avez ajouté à l’étape précédente*. Tenez compte des remarques suivantes à propos de ce code :
 
-    * L’erreur 65001 signifie que l’utilisateur a refusé de donner l’accès à Microsoft Graph (ou que l’accès a été révoqué) pour une ou plusieurs autorisations. 
+    * L’erreur 65001 signifie que l’utilisateur a refusé de donner l’accès à Microsoft Graph (ou que l’accès a été révoqué) pour une ou plusieurs autorisations. 
     * Le complément doit obtenir un nouveau jeton avec l’option `forceConsent` définie sur `true`.
 
     ```javascript
@@ -390,10 +338,10 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     }
     ```
 
-1. Remplacez `TODO12` par le code suivant *juste en dessous de la dernière accolade fermante du code que vous avez ajouté à l’étape précédente*. Tenez compte des remarques suivantes à propos de ce code :
+1. Remplacez `TODO12` par le code suivant *juste en dessous de la dernière accolade fermante du code que vous avez ajouté à l’étape précédente*. Tenez compte des remarques suivantes à propos de ce code :
 
-    * L’erreur 70011 signifie qu’une portée (autorisation) non valide a été demandée. Le complément doit signaler l’erreur.
-    * Le code consigne les autres erreurs avec un numéro d’erreur AAD.
+    * L’erreur 70011 signifie qu’une portée (autorisation) non valide a été demandée. Le complément doit signaler l’erreur.
+    * Le code consigne les autres erreurs avec un numéro d’erreur AAD.
 
     ```javascript
     else if (result.responseJSON.error.innerError
@@ -403,9 +351,9 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     }
     ```
 
-1. Remplacez `TODO13` par le code suivant *juste en dessous de la dernière accolade fermante du code que vous avez ajouté à l’étape précédente*. Tenez compte des remarques suivantes à propos de ce code :
+1. Remplacez `TODO13` par le code suivant *juste en dessous de la dernière accolade fermante du code que vous avez ajouté à l’étape précédente*. Tenez compte des remarques suivantes à propos de ce code :
 
-    * Le code côté serveur que vous créerez à une étape ultérieure enverra le message qui se termine par `... expected access_as_user` si l’étendue (autorisation) `access_as_user` ne se trouve pas dans le jeton d’accès que le client du complément envoie à AAD, afin qu’il soit utilisé dans le flux « de la part de ».
+    * Le code côté serveur que vous créerez à une étape ultérieure enverra le message qui se termine par `... expected access_as_user` si l’étendue (autorisation) `access_as_user` ne se trouve pas dans le jeton d’accès que le client du complément envoie à AAD, afin qu’il soit utilisé dans le flux « de la part de ».
     * Le complément doit signaler l’erreur.
 
     ```javascript
@@ -415,9 +363,9 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     }
     ```
 
-1. Remplacez `TODO14` par le code suivant *juste en dessous de la dernière accolade fermante du code que vous avez ajouté à l’étape précédente*. Tenez compte des remarques suivantes à propos de ce code :
+1. Remplacez `TODO14` par le code suivant *juste en dessous de la dernière accolade fermante du code que vous avez ajouté à l’étape précédente*. Tenez compte des remarques suivantes à propos de ce code :
 
-    * Il est peu probable qu’un jeton expiré ou non valide soit envoyé à Microsoft Graph. Cependant, si cela se produit, le code côté serveur que vous créerez dans une étape ultérieure se terminera par la chaîne `Microsoft Graph error`.
+    * Il est peu probable qu’un jeton expiré ou non valide soit envoyé à Microsoft Graph. Cependant, si cela se produit, le code côté serveur que vous créerez dans une étape ultérieure se terminera par la chaîne `Microsoft Graph error`.
     * Dans ce cas, le complément doit recommencer l’intégralité du processus d’authentification en réinitialisant les variables de compteur `timesGetOneDriveFilesHasRun` et d’indicateur `timesGetOneDriveFilesHasRun`, puis en appelant à nouveau la méthode de gestionnaire de boutons. Toutefois, il ne doit faire cela qu’une seule fois. Si l’erreur se produit à nouveau, il doit simplement la consigner.
     * Le code consigne l’erreur si elle se produit deux fois de suite.
 
@@ -446,19 +394,18 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 ## <a name="code-the-server-side"></a>Code côté serveur
 
 Il existe deux fichiers côté serveur qui doivent être modifiés. 
-- Le fichier src\auth.js fournit des fonctions d’assistance pour l’autorisation. Il dispose déjà des membres génériques qui sont utilisés dans une variété de flux d’autorisation. Nous devons ajouter des fonctions qui implémentent le flux « de la part de ».
+- Le fichier src\auth.js fournit des fonctions d’assistance pour l’autorisation. Il dispose déjà des membres génériques qui sont utilisés dans une variété de flux d’autorisation. Nous devons ajouter des fonctions qui implémentent le flux « de la part de ».
 - Le fichier src\server.js possède les membres de base requis pour exécuter un serveur et les intergiciels express. Nous devons y ajouter des fonctions qui servent la page d’accueil et une API Web pour obtenir des données Microsoft Graph.
 
 ### <a name="create-a-method-to-exchange-tokens"></a>Créer une méthode pour échanger des jetons
 
-1. Ouvrez le fichier \src\auth.ts. Ajoutez la méthode ci-après à la classe `AuthModule`. Tenez compte des informations suivantes :
+1. Ouvrez le fichier \src\auth.ts. Ajoutez la méthode ci-après à la classe `AuthModule`. Tenez compte des informations suivantes :
 
-    * Le paramètre `jwt` est le jeton d’accès à l’application. Dans le flux « de la part de », il est échangé avec AAD contre un jeton d’accès à la ressource.
+    * Le paramètre `jwt` est le jeton d’accès à l’application. Dans le flux « de la part de », il est échangé avec AAD contre un jeton d’accès à la ressource.
     * Le paramètre scopes a une valeur par défaut, mais dans cet exemple, elle sera remplacée par le code appelant.
-    * Le paramètre de ressource est facultatif. Il ne doit pas être utilisé lorsque le STS est le point de terminaison AAD V 2.0. Le point de terminaison AAD V 2.0 déduit la ressource des étendues et renvoie une erreur si une ressource est envoyée dans la requête HTTP. 
-    * La génération d’une exception dans le bloc `catch` ne provoquera *pas* l’envoi immédiat du message « 500 Erreur interne du serveur » au client. L’appel de code dans le fichier server.js interceptera cette exception et la convertira en un message d’erreur qui sera envoyé au client.
+    * Le paramètre de ressource est facultatif. Il ne doit pas être utilisé lorsque le STS est le point de terminaison AAD V 2.0. Le point de terminaison AAD V 2.0 déduit la ressource des étendues et renvoie une erreur si une ressource est envoyée dans la requête HTTP. 
+    * La génération d’une exception dans le bloc `catch` ne provoquera *pas* l’envoi immédiat du message « 500 Erreur interne du serveur » au client. L’appel de code dans le fichier server.js interceptera cette exception et la convertira en un message d’erreur qui sera envoyé au client.
 
-    
         ```javascript
         private async exchangeForToken(jwt: string, scopes: string[] = ['openid'], resource?: string) {
             try {
@@ -476,8 +423,8 @@ Il existe deux fichiers côté serveur qui doivent être modifiés.
         }
         ```
 
-2. Remplacez `TODO3` par le code suivant. Tenez compte des informations suivantes :
-    * Un STS qui prend en charge le flux « de la part de » attend certaines paires de propriété/valeur dans le corps de la requête HTTP. Ce code construit un objet qui devient le corps de la requête. 
+2. Remplacez `TODO3` par le code suivant. Tenez compte des informations suivantes :
+    * Un STS qui prend en charge le flux « de la part de » attend certaines paires de propriété/valeur dans le corps de la requête HTTP. Ce code construit un objet qui devient le corps de la requête. 
     * Une propriété de ressource est ajoutée au corps si, et uniquement si, une ressource a été transmise à la méthode.
 
         ```javascript
@@ -501,7 +448,7 @@ Il existe deux fichiers côté serveur qui doivent être modifiés.
             } 
         ```
 
-3. Remplacez `TODO4` par le code suivant, qui envoie la requête HTTP au point de terminaison de jeton du STS.
+3. Remplacez `TODO4` par le code suivant, qui envoie la requête HTTP au point de terminaison de jeton du STS.
 
     ```javascript
     const res = await fetch(`${this.stsDomain}/${this.tenant}/${this.tokenURLsegment}`, {
@@ -514,7 +461,7 @@ Il existe deux fichiers côté serveur qui doivent être modifiés.
     }); 
     ```
 
-4. Remplacez `TODO5` par le code suivant. Vous remarquerez que la génération d’une exception ne provoquera *pas* l’envoi immédiat d’un message « 500 Erreur interne du serveur » au client. L’appel de code dans le fichier server.js interceptera cette exception et la convertira en un message d’erreur qui sera envoyé au client.
+4. Remplacez `TODO5` par le code suivant. Vous remarquerez que la génération d’une exception ne provoquera *pas* l’envoi immédiat d’un message « 500 Erreur interne du serveur » au client. L’appel de code dans le fichier server.js interceptera cette exception et la convertira en un message d’erreur qui sera envoyé au client.
 
     ```javascript
      if (res.status !== 200) {
@@ -537,9 +484,9 @@ Il existe deux fichiers côté serveur qui doivent être modifiés.
 
 6. Enregistrez le fichier, mais ne le fermez pas.
 
-### <a name="create-a-method-to-get-access-to-the-resource-using-the-on-behalf-of-flow"></a>Créer une méthode pour accéder à la ressource à l’aide du flux « de la part de »
+### <a name="create-a-method-to-get-access-to-the-resource-using-the-on-behalf-of-flow"></a>Créer une méthode pour accéder à la ressource à l’aide du flux « de la part de »
 
-1. Toujours dans src/auth.ts, ajoutez la méthode ci-après à la classe `AuthModule`. Tenez compte des informations suivantes :
+1. Toujours dans src/auth.ts, ajoutez la méthode ci-après à la classe `AuthModule`. Tenez compte des informations suivantes :
 
     * Les commentaires ci-dessus concernant les paramètres de la méthode `exchangeForToken` s’appliquent aussi aux paramètres de cette méthode.
     * La méthode recherche d’abord dans le stockage permanent un jeton d’accès à la ressource qui n’a pas expiré et qui ne va pas expirer dans la minute qui suit. Il appelle la méthode `exchangeForToken` que vous avez créée dans la dernière section uniquement si nécessaire.
@@ -584,7 +531,7 @@ Il existe deux fichiers côté serveur qui doivent être modifiés.
     })); 
     ```
 
-4. Remplacez `TODO7` par le code suivant qui valide le jeton d’accès reçu de la part de l’application hôte Office. La méthode `verifyJWT` est définie dans le fichier src\auth.ts. Elle valide toujours l’audience et l’émetteur. Nous utilisons le paramètre facultatif pour spécifier que nous souhaitons également vérifier que l’étendue du jeton d’accès est `access_as_user`. C’est la seule autorisation du complément dont l’utilisateur et l’hôte Office ont besoin pour obtenir un jeton d’accès à Microsoft Graph au moyen du flux « de la part de ». 
+4. Remplacez `TODO7` par le code suivant qui valide le jeton d’accès reçu de la part de l’application hôte Office. La méthode `verifyJWT` est définie dans le fichier src\auth.ts. Elle valide toujours l’audience et l’émetteur. Nous utilisons le paramètre facultatif pour spécifier que nous souhaitons également vérifier que l’étendue du jeton d’accès est `access_as_user`. C’est la seule autorisation du complément dont l’utilisateur et l’hôte Office ont besoin pour obtenir un jeton d’accès à Microsoft Graph au moyen du flux « de la part de ». 
 
     ```javascript
     await auth.initialize();
@@ -592,13 +539,12 @@ Il existe deux fichiers côté serveur qui doivent être modifiés.
     ```
 
     > [!NOTE]
-    > Vous devez uniquement utiliser l’étendue `access_as_user` pour autoriser l’API qui gère le flux « de la part de » pour les compléments Office. Les autres API de votre service peuvent avoir leurs propres exigences d’étendue. Cela limite les possibilités d’accès avec les jetons acquis par Office.
+    > Vous devez uniquement utiliser l’étendue `access_as_user` pour autoriser l’API qui gère le flux « de la part de » pour les compléments Office. Les autres API de votre service peuvent avoir leurs propres exigences d’étendue. Cela limite les possibilités d’accès avec les jetons acquis par Office.
 
-5. Remplacez `TODO8` par le code suivant. Tenez compte des informations suivantes :
+5. Remplacez `TODO8` par le code suivant. Tenez compte des informations suivantes :
 
     * L’appel vers `acquireTokenOnBehalfOf` ne comprend pas de paramètre de ressource, étant donné que nous avons construit l’objet `AuthModule` (`auth`) avec le point de terminaison AAD V2.0 qui ne prend pas en charge une propriété de ressource.
     * Le deuxième paramètre de l’appel spécifie les autorisations dont le complément aura besoin pour obtenir une liste des fichiers et dossiers de l’utilisateur dans OneDrive. (L’autorisation `profile` n’est pas demandée, car elle n’est nécessaire qu’au moment où l’hôte Office obtient le jeton d’accès à votre complément, pas lorsque vous travaillez dans ce jeton pour un jeton d’accès à Microsoft Graph.)
-
 
     ```javascript
     const graphToken = await auth.acquireTokenOnBehalfOf(jwt, ['Files.Read.All']);
@@ -611,7 +557,7 @@ Il existe deux fichiers côté serveur qui doivent être modifiés.
 
     `const graphData = await MSGraphHelper.getGraphData(graphToken, "/me/drive/root/children", "?$select=name&$top=3");`
 
-7. Remplacez `TODO10` par le code suivant. Notez que ce code gère les erreurs « 401 Non autorisé » de Microsoft Graph qui signalent un jeton expiré ou non valide. Il est très peu probable que cela se produise, car la logique persistante du jeton doit empêcher ces erreurs. (Reportez-vous à la section **Créer une méthode pour accéder à la ressource à l’aide du flux « de la part de »** ci-dessus.) Si cela se produit, ce code communiquera l’erreur au client avec, dans le nom de l’erreur, « Microsoft Graph error ». (Reportez-vous à la méthode `handleClientSideErrors` que vous avez créée dans le fichier program.js dans une étape précédente.) Le code que vous ajouterez au fichier ODataHelper.js à une étape ultérieure vous permet de traiter les erreurs provenant de Microsoft Graph.
+7. Remplacez `TODO10` par le code suivant. Notez que ce code gère les erreurs « 401 Non autorisé » de Microsoft Graph qui signalent un jeton expiré ou non valide. Il est très peu probable que cela se produise, car la logique persistante du jeton doit empêcher ces erreurs. (Reportez-vous à la section **Créer une méthode pour accéder à la ressource à l’aide du flux « de la part de »** ci-dessus.) Si cela se produit, ce code communiquera l’erreur au client avec, dans le nom de l’erreur, « Microsoft Graph error ». (Reportez-vous à la méthode `handleClientSideErrors` que vous avez créée dans le fichier program.js dans une étape précédente.) Le code que vous ajouterez au fichier ODataHelper.js à une étape ultérieure vous permet de traiter les erreurs provenant de Microsoft Graph.
 
     ```javascript
     if (graphData.code) {
@@ -622,7 +568,7 @@ Il existe deux fichiers côté serveur qui doivent être modifiés.
     ```
 
 
-1. Remplacez `TODO11` par le code suivant. Notez que Microsoft Graph renvoie des métadonnées OData et une propriété **eTag** pour chaque élément, même si `name` est la seule propriété demandée. Le code envoie uniquement les noms d’éléments au client.
+1. Remplacez `TODO11` par le code suivant. Notez que Microsoft Graph renvoie des métadonnées OData et une propriété **eTag** pour chaque élément, même si `name` est la seule propriété demandée. Le code envoie uniquement les noms d’éléments au client.
 
     ```javascript
     const itemNames: string[] = [];
@@ -637,10 +583,9 @@ Il existe deux fichiers côté serveur qui doivent être modifiés.
 
 ### <a name="add-response-handling-to-the-odatahelper"></a>Ajouter une gestion des réponses à ODataHelper
 
-1. Ouvrez le fichier src\odata-helper.ts. Le fichier est presque complet. Il manquant le corps du rappel au gestionnaire pour l’événement de « fin » de demande. Remplacez `TODO` par le code suivant. Tenez compte des informations suivantes sur ce code :
+1. Ouvrez le fichier src\odata-helper.ts. Le fichier est presque complet. Il manquant le corps du rappel au gestionnaire pour l’événement de « fin » de demande. Remplacez `TODO` par le code suivant. Tenez compte des informations suivantes sur ce code :
 
-    * La réponse du point de terminaison OData peut-être une erreur, supposons une erreur 401 si le point de terminaison nécessite un jeton d’accès et que celui-ci n’est pas valide ou a expiré. Cependant, un message d’erreur reste un *message*, pas une erreur dans l’appel de `https.get`, donc la ligne `on('error', reject)` à la fin de `https.get` n’est pas déclenchée. Par conséquent, le code distingue les messages de réussite (200) des messages d’erreur, et envoie un objet JSON à l’appelant soit les informations d’erreur, soit avec les informations demandées.
-
+    * La réponse du point de terminaison OData peut-être une erreur, supposons une erreur 401 si le point de terminaison nécessite un jeton d’accès et que celui-ci n’est pas valide ou a expiré. Cependant, un message d’erreur reste un *message*, pas une erreur dans l’appel de `https.get`, donc la ligne `on('error', reject)` à la fin de `https.get` n’est pas déclenchée. Par conséquent, le code distingue les messages de réussite (200) des messages d’erreur, et envoie un objet JSON à l’appelant soit les informations d’erreur, soit avec les informations demandées.
 
     ```javascript
     var error;
@@ -660,8 +605,8 @@ Il existe deux fichiers côté serveur qui doivent être modifiés.
 
 1.  Remplacez `TODO2` par le code suivant. Tenez compte des informations suivantes :
 
-    * Une réponse d’erreur d’une source OData aura toujours un code d’état (statusCode) et généralement un message d’état (statusMessage). Certaines sources OData ajoutent également une propriété d’erreur au corps avec des informations supplémentaires, telles qu’un message et un code internes, ou plus spécifiques.
-    * L’objet de promesse est résolu, pas rejeté. `https.get` s’exécute quand un service web appelle un point de terminaison OData de serveur à serveur. Cependant, cet appel s’inscrit dans le contexte d’un appel d’un client à une API web dans le service web. La demande « externe » du client au service web n’aboutit jamais si cette demande « interne » est rejetée. De plus, la résolution de la requête avec l’objet `Error` personnalisé est obligatoire si l’émetteur de l’appel `http.get` doit communiquer les erreurs du point de terminaison OData au client.
+    * Une réponse d’erreur d’une source OData aura toujours un code d’état (statusCode) et généralement un message d’état (statusMessage). Certaines sources OData ajoutent également une propriété d’erreur au corps avec des informations supplémentaires, telles qu’un message et un code internes, ou plus spécifiques.
+    * L’objet de promesse est résolu, pas rejeté. s’exécute quand un service web appelle un point de terminaison OData de serveur à serveur.`https.get` Cependant, cet appel s’inscrit dans le contexte d’un appel d’un client à une API web dans le service web. La demande « externe » du client au service web n’aboutit jamais si cette demande « interne » est rejetée. De plus, la résolution de la requête avec l’objet `Error` personnalisé est obligatoire si l’émetteur de l’appel `http.get` doit communiquer les erreurs du point de terminaison OData au client.
 
     ```javascript
     error = new Error();
@@ -682,9 +627,9 @@ Il existe deux fichiers côté serveur qui doivent être modifiés.
 
 Vous devez maintenant indiquer à Office où trouver le complément.
 
-1. Créez un partage réseau, ou [partagez un dossier sur le réseau](https://technet.microsoft.com/fr-fr/library/cc770880.aspx).
+1. Créez un partage réseau, ou [partagez un dossier sur le réseau](https://technet.microsoft.com/en-us/library/cc770880.aspx).
 
-2. Placez une copie du fichier manifeste Office-Add-in-NodeJS-SSO.xml, depuis la racine du projet, dans le dossier partagé.
+2. Placez une copie du fichier manifeste Office-Add-in-NodeJS-SSO.xml, depuis la racine du projet, dans le dossier partagé.
 
 3. Lancez PowerPoint et ouvrez un document.
 
@@ -694,7 +639,7 @@ Vous devez maintenant indiquer à Office où trouver le complément.
 
 6. Choisissez **Catalogues de compléments approuvés**.
 
-7. Dans le champ **URL du catalogue**, saisissez le chemin réseau permettant d’accéder au partage de dossier qui contient le fichier Office-Add-in-NodeJS-SSO.xml, puis sélectionnez **Ajouter un catalogue**.
+7. Dans le champ **URL du catalogue**, saisissez le chemin réseau permettant d’accéder au partage de dossier qui contient le fichier Office-Add-in-NodeJS-SSO.xml, puis sélectionnez **Ajouter un catalogue**.
 
 8. Activez la case à cocher **Afficher dans le menu**, puis cliquez sur **OK**.
 
@@ -704,13 +649,13 @@ Vous devez maintenant indiquer à Office où trouver le complément.
 
 Il existe deux manières de créer et d’exécuter le projet selon que vous utilisez Visual Studio Code. Pour les deux façons, le projet est généré et reconstruit automatiquement, puis ré-exécuté lorsque vous apportez des modifications au code.
 
-1. Si vous n’utilisez pas Visual Studio Code : 
+1. Si vous n’utilisez pas Visual Studio Code : 
  1. Ouvrez un terminal de nœud et accédez au dossier racine du projet.
  2. Dans le terminal, entrez **npm run build**. 
  3. Ouvrez un second terminal de nœud et accédez au dossier racine du projet.
  4. Dans le terminal, entrez **npm run start**.
 
-2. Si vous utilisez VS Code :
+2. Si vous utilisez VS Code :
  1. Ouvrez le projet dans VS Code.
  2. Appuyez sur CTRL-MAJ-B pour générer le projet.
  3. Appuyez sur F5 pour exécuter le projet dans une session de débogage.
@@ -736,7 +681,7 @@ Il existe deux manières de créer et d’exécuter le projet selon que vous uti
 
 2. Le complément s’ouvre avec une page d’accueil. Cliquez sur le bouton **Obtenir mes fichiers à partir de OneDrive**.
 
-2. Si vous êtes connecté à Office, une liste de vos fichiers et dossiers sur OneDrive apparaîtront en dessous du bouton. La première fois, l’opération peut prendre plus de 15 secondes.
+2. Si vous êtes connecté à Office, une liste de vos fichiers et dossiers sur OneDrive apparaîtront en dessous du bouton. La première fois, l’opération peut prendre plus de 15 secondes.
 
 3. Si vous n’êtes pas connecté à Office, une fenêtre contextuelle s’ouvre et vous invite à vous connecter. Une fois que vous êtes connecté, la liste de vos fichiers et dossiers s’affiche après quelques secondes. *Vous n’appuyez pas sur le bouton une deuxième fois.*
 
