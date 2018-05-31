@@ -14,9 +14,9 @@ If your issue is not related to the Office Add-ins documentation, please post it
 
 <!--- Provide a general summary of the documentation issue in the Title above -->
 
-## <a name="article-url"></a><span data-ttu-id="502ae-101">URL de l'article</span><span class="sxs-lookup"><span data-stu-id="502ae-101">Article URL</span></span>
+## <a name="article-url"></a><span data-ttu-id="5184d-101">URL de l'article</span><span class="sxs-lookup"><span data-stu-id="5184d-101">Article URL</span></span>
 <!-- Provide the URL of the article that this documentation issue relates to -->
 
-## <a name="issue"></a><span data-ttu-id="502ae-102">Probl?me</span><span class="sxs-lookup"><span data-stu-id="502ae-102">Issue</span></span>
+## <a name="issue"></a><span data-ttu-id="5184d-102">Problème</span><span class="sxs-lookup"><span data-stu-id="5184d-102">Issue</span></span>
 <!-- Provide a thorough description of the documentation issue -->
  
