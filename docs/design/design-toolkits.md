@@ -1,0 +1,11 @@
+#<a name="design-toolkits"></a><span data-ttu-id="265a0-101">Kit d'outils de conception</span><span class="sxs-lookup"><span data-stu-id="265a0-101">Design toolkits</span></span>
+
+<span data-ttu-id="265a0-102">Nous avons inclus notre kit d'outils pour vous aider à démarrer.</span><span class="sxs-lookup"><span data-stu-id="265a0-102">We've included our toolkit to help you get started.</span></span> <span data-ttu-id="265a0-103">Vous pouvez trouver ici tous nos motifs disponibles avec de courtes descriptions, des suggestions de disposition, et un exemple de complément.</span><span class="sxs-lookup"><span data-stu-id="265a0-103">You can find all of our available patterns here with brief descriptions, layout recommendations, and a sample add-in.</span></span>
+
+### <a name="downloads"></a><span data-ttu-id="265a0-104">Téléchargements</span><span class="sxs-lookup"><span data-stu-id="265a0-104">Downloads</span></span>
+
+* [<span data-ttu-id="265a0-105">Kit d'outils de conception Fabric Croquis</span><span class="sxs-lookup"><span data-stu-id="265a0-105">Fabric Design Toolkit</span></span>](https://aka.ms/fabric-sketch-toolkit)
+* [<span data-ttu-id="265a0-106">Kit d'outils de conception Fabric Adobe XD</span><span class="sxs-lookup"><span data-stu-id="265a0-106">Fabric Design Adobe XD Toolkit</span></span>](https://aka.ms/fabric-toolkit)
+* [<span data-ttu-id="265a0-107">Kit d'outils de conception complément</span><span class="sxs-lookup"><span data-stu-id="265a0-107">Add-in Sketch Toolkit</span></span>](https://aka.ms/addins_sketch_toolkit)
+* [<span data-ttu-id="265a0-108">Kit d"outils complément Adobe XD</span><span class="sxs-lookup"><span data-stu-id="265a0-108">Add-in Adobe XD Toolkit</span></span>](https://aka.ms/addins_toolkit)
+* [<span data-ttu-id="265a0-109">Police d'icône Segoe UI et Fabric MDL2</span><span class="sxs-lookup"><span data-stu-id="265a0-109">Segoe UI and Fabric MDL2 icon font</span></span>](https://static2.sharepointonline.com/files/fabric/fabric-website/files/segoeui_fabricmdl2_icon_fonts.zip)
