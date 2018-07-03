@@ -2,12 +2,12 @@
 title: Vue d’ensemble de la plateforme des compléments pour Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: f0f20371eee759a449773effaff1ce365e32bf48
-ms.sourcegitcommit: 17f60431644b448a4816913039aaebfa328f9b0a
+ms.openlocfilehash: f7b1f4add776f1971e9762c5cb80dabed45b0a1c
+ms.sourcegitcommit: a0e0416289b293863b8b4d3f9a12581a9e681b27
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/25/2018
-ms.locfileid: "19476521"
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "20023164"
 ---
 # <a name="office-add-ins-platform-overview"></a>Vue d’ensemble de la plateforme de compléments pour Office
 
@@ -39,9 +39,9 @@ Les compléments Office offrent les avantages suivants par rapport aux compléme
 
 Un complément Office inclut deux composants de base : un fichier manifeste XML et votre propre application web. Le manifeste définit différents paramètres, y compris la façon dont votre complément s’intègre avec les clients Office. Votre application web doit être hébergée sur un serveur web ou un service d’hébergement web, tel que Microsoft Azure.
 
-*Figure 1. Manifeste + page web = complément Office*
+*Figure 1. Manifeste de complément (XML) + page web (HTML, JS) = un complément Office*
 
-![Manifeste + page web = complément Office](../images/dk2-agave-overview-01.png)
+![Manifeste + page web = complément Office](../images/about-addins-manifestwebpage.png)
 
 ### <a name="manifest"></a>Manifeste 
 
@@ -59,7 +59,7 @@ Le complément Office le plus simple est composé d’une page HTML statique qui
 
 *Figure 2. Composants d’un complément Office Hello World*
 
-![Composants d’un complément Hello World](../images/dk2-agave-overview-07.png)
+![Composants d’un complément Hello World](../images/about-addins-componentshelloworldoffice.png)
 
 ## <a name="extending-and-interacting-with-office-clients"></a>Extension des clients Office et interaction avec ces clients 
 
@@ -83,9 +83,9 @@ Les éléments d’interface personnalisés et les volets Office sont définis d
 
 Vous pouvez ajouter des éléments de menu et des boutons de ruban personnalisé au ruban d’Office pour bureau Windows et Office Online. Les utilisateurs peuvent ainsi accéder à votre complément directement à partir de leur application Office. Les boutons de commande peuvent lancer différentes actions, par exemple afficher un volet Office comportant du contenu HTML personnalisé ou exécuter une fonction JavaScript.  
 
-*Figure 3. Commandes de complément en cours d’exécution dans Excel (version de bureau)*
+*Figure 3. Commandes de complément dans le ruban*
 
-![Commandes de menu et boutons personnalisés](../images/add-in-commands-overview.png)
+![Commandes de menu et boutons personnalisés](../images/about-addins-addincommands.png)
 
 #### <a name="task-panes"></a>Volets Office  
 
@@ -93,7 +93,7 @@ Vous pouvez utiliser des volets Office en plus des commandes de complément pour
 
 *Figure 4. Volet Office*
 
-![Volet de tâches](../images/task-pane-overview.jpg)
+![Volet de tâches](../images/about-addins-taskpane.png)
 
 ### <a name="extend-outlook-functionality"></a>Extension des fonctionnalités Outlook 
 
@@ -109,7 +109,7 @@ Vous pouvez incorporer des objets web, appelés compléments de contenu, dans de
 
 *Figure 5. Complément de contenu*
 
-![complément de contenu](../images/dk2-agave-overview-05.png)
+![complément de contenu](../images/about-addins-contentaddin.png)
 
 ## <a name="office-javascript-apis"></a>API JavaScript pour Office 
 
@@ -119,7 +119,7 @@ Les API JavaScript Office sont composées d’objets et de membres permettant de
 
 Pour en savoir plus sur la création de votre complément Office, essayez notre [Démarrage rapide en 5 minutes](https://docs.microsoft.com/en-us/office/dev/add-ins/). Vous pouvez commencer à créer des compléments immédiatement à l'aide de Visual Studio ou de tout autre éditeur. 
 
-Pour commencer à concevoir des solutions offrant des expériences utilisateur efficaces et attrayantes, consultez les [instructions de conception](../design/add-in-design.md) et les [meilleures pratiques](../concepts/add-in-development-best-practices.md) pour les compléments Office.    
+Pour commencer à concevoir des solutions offrant des expériences utilisateur efficaces et attrayantes, consultez les [recommandations de conception](../design/add-in-design.md) et les [meilleures pratiques](../concepts/add-in-development-best-practices.md) pour les compléments Office.    
    
 ## <a name="see-also"></a>Voir aussi
 

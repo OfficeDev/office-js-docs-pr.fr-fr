@@ -2,12 +2,12 @@
 title: Débogage des compléments Office sur iPad et Mac
 description: ''
 ms.date: 03/21/2018
-ms.openlocfilehash: 5d68fa000e19d81ebbcd1b383a790958f2bbac72
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: e9efae76aa3341eacfd73d6afcc3a3274536aa9d
+ms.sourcegitcommit: 6fbf42723f9c1b72095700c20458fd0e8c572794
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19439634"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "19722330"
 ---
 # <a name="debug-office-add-ins-on-ipad-and-mac"></a>Débogage des compléments Office sur iPad et Mac
 
@@ -15,11 +15,11 @@ Vous pouvez utiliser Visual Studio pour le développement et le débogage des co
 
 ## <a name="debugging-with-safari-web-inspector-on-a-mac"></a>Débogage avec l'inspecteur Web de Safari sur un Mac
 
-Vous pouvez déboguer un complément Office à l'aide de l'inspecteur Web de Safari. 
+Si vous avez un complément qui affiche l'interface utilisateur dans un volet de tâches ou dans un complément de contenu, vous pouvez déboguer un complément Office à l'aide de Safari Web Inspector. 
 
 Pour pouvoir déboguer les compléments Office sur Mac, vous devez disposer de Mac OS High Sierra ET de Mac Office Version : 16.9.1 (Build 18012504) ou version ultérieure. Si vous n'avez pas de build Office pour Mac, vous pouvez en obtenir un en rejoignant notre [programme pour les développeurs Office 365](https://aka.ms/o365devprogram).
 
-Pour commencer, ouvrez un terminal et réglez la propriété `OfficeWebAddinDeveloperExtras` pour l'application Office concernée en procédant comme suit :
+Pour commencer, ouvrez un terminal et réglez la propriété `OfficeWebAddinDeveloperExtras` pour l'application Office concernée en procédant comme suit :
 
 - `defaults write com.microsoft.Word OfficeWebAddinDeveloperExtras -bool true`
 
@@ -41,7 +41,7 @@ Pour déboguer un complément sur iPad ou Mac, vous pouvez utiliser Vorlon.JS, u
 
 ### <a name="install-and-set-up-vorlonjs"></a>Installation et configuration de Vorlon.JS  
 
-1.  Connectez-vous au support en tant qu’administrateur.
+1.  Connectez-vous à l’appareil en tant qu’administrateur.
 
 2.  Installez [Node.js](https://nodejs.org) s’il n’est pas déjà installé. 
 

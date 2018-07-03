@@ -22,22 +22,20 @@ Cet article décrit le processus de création d’un complément OneNote à l’
     cd my-onenote-addin
     ```
 
-3. Utilisez le générateur Yeoman afin de créer un projet de complément OneNote. Exécutez la commande suivante, puis répondez aux invites comme suit :
+3. Utilisez le générateur Yeoman afin de créer un projet de complément OneNote. Exécutez la commande suivante, puis répondez aux invites comme suit :
 
     ```bash
     yo office
     ```
 
-    - **Voulez-vous créer un sous-dossier de votre projet ? :** `No`
-    - **Comment souhaitez-vous nommer votre complément ? :** `OneNote Add-in`
-    - **Quelle application client Office voulez-vous prendre en charge ? :** `OneNote`
-    - **Voulez-vous créer un complément ? :** `Yes`
-    - **Souhaitez-vous utiliser TypeScript ? :** `No`
-    - **Choisissez une infrastructure :** `Jquery`
+    - **Choisissez un type de projet :** `Jquery`
+    - **Choisissez un type de script :** `Javascript`
+    - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
+    - **Quelle application client Office voulez-vous prendre en charge ?** `Onenote`
 
-    Le générateur demande ensuite si vous voulez ouvrir **resource.html**. Il n’est pas nécessaire de l’ouvrir pour ce didacticiel, mais n’hésitez pas à l’ouvrir si vous êtes curieux. Cliquez sur Oui ou Non pour fermer l’assistant et laisser le générateur faire son travail.
-
-    ![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yo-office-onenote-jquery.png)
+    ![Capture d’écran des invites et des réponses pour le générateur Yeoman](../images/yo-office-onenote-jquery.png)
+    
+    Une fois que vois avez terminé avec l'assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
 
 ## <a name="update-the-code"></a>Mise à jour du code
@@ -146,11 +144,11 @@ Cet article décrit le processus de création d’un complément OneNote à l’
 
     <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
 
-3. Dans la boîte de dialogue Télécharger le complément, accédez à **one-note-add-in-manifest.xml** dans le dossier de projet, puis choisissez **Télécharger**. 
+3. Dans la boîte de dialogue Télécharger le complément, accédez à **one-note-add-in-manifest.xml** dans le dossier de votre projet, puis choisissez **Télécharger**. 
 
-4. Depuis l’onglet **Accueil**, cliquez le bouton **Afficher le volet Office** du ruban. Le complément volet Office s’ouvre dans un iFrame à côté de la page OneNote.
+4. Depuis l’onglet **Accueil**, cliquez sur le bouton **Afficher le volet Office** du ruban. Le complément volet Office s’ouvre dans un iFrame à côté de la page OneNote.
 
-5. Entrez du texte dans la zone de texte, puis choisissez **Ajouter un plan**. Le texte que vous avez entré est ajouté à la page. 
+5. Entrez du texte dans la zone de texte, puis choisissez **Ajouter un plan**. Le texte que vous avez saisi est ajouté à la page. 
 
     ![Complément OneNote généré à partir de cette procédure pas à pas](../images/onenote-first-add-in.png)
 

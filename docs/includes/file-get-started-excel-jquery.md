@@ -150,7 +150,6 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 - [Node.js](https://nodejs.org)
 
 - Installez la dernière version de [Yeoman](https://github.com/yeoman/yo) et le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) globalement.
-
     ```bash
     npm install -g yo generator-office
     ```
@@ -165,23 +164,22 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
     cd my-addin
     ```
 
-3. Utilisez le générateur Yeoman pour générer le fichier manifeste de votre complément. Exécutez la commande suivante, puis répondez aux invites comme indiqué dans la capture d’écran suivante :
+3. Utilisez le générateur Yeoman pour générer le fichier manifeste de votre complément. Exécutez la commande suivante, puis répondez aux invites comme indiqué dans la capture d’écran suivante :
 
     ```bash
     yo office
     ```
 
-    - **Voulez-vous créer un sous-dossier de votre projet ? :** `No`
-    - **Comment souhaitez-vous nommer votre complément ? :** `My Office Add-in`
-    - **Quelle application client Office voulez-vous prendre en charge ? :** `Excel`
-    - **Voulez-vous créer un complément ? :** `Yes`
-    - **Souhaitez-vous utiliser TypeScript ? :** `No`
-    - **Choisissez une infrastructure :** `Jquery`
-
-    Le générateur demande ensuite si vous voulez ouvrir **resource.html**. Il n’est pas nécessaire de l’ouvrir pour ce didacticiel, mais n’hésitez pas à l’ouvrir si vous êtes curieux. Cliquez sur Oui ou Non pour fermer l’assistant et laisser le générateur faire son travail.
+    - **Choisissez un type de projet :** `Jquery`
+    - **Choisissez un type de script :** `Javascript`
+    - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
+    - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
 
     ![Générateur Yeoman](../images/yo-office-jquery.png)
+    
+    Une fois que vous avez terminé avec l'assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
+    
 
 4. Dans votre éditeur de code, ouvrez **index.html** à la racine du projet. Ce fichier spécifie le code HTML qui s’affichera dans le volet Office du complément. 
  

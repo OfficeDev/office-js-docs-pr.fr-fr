@@ -2,12 +2,12 @@
 title: Office UI Fabric dans des compléments Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 8fafe8a68c477868c12bff61c7f9ff23fc7314e0
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 04964d5864eea4a960f7b57e5df6f7bd7c844fde
+ms.sourcegitcommit: 4e4f7c095e8f33b06bd8a02534ee901125eb1d17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437366"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "20084069"
 ---
 # <a name="office-ui-fabric-in-office-add-ins"></a>Office UI Fabric dans des compléments Office 
 
@@ -44,10 +44,21 @@ Pour commencer à utiliser Fabric Core :
 Fabric fournit une variété de composants UX que vous pouvez utiliser pour créer votre complément, y compris les types de composants suivants :
 
 - Composants d’entrée - par exemple, bouton, case à cocher et bouton bascule
-- Composants de navigation - par exemple, tableau croisé dynamique, barre de navigation
+- Composants de navigation - pivot et Breadcrumb à titre d'exemples
 - Composants de notification - par exemple, MessageBar et légende  
 
-Il n’est pas recommandé d’utiliser tous les composants Fabric dans des compléments. Nous fournissons des conseils sur l’utilisation des composants recommandés dans cette section. Par exemple, pour savoir comment utiliser un bouton Fabric dans votre complément, voir [Bouton](button.md). 
+Tous les composants ne sont pas recommandés pour une dans les compléments. Voici une liste des composants Fabric React UX que nous vous recommandons d'utiliser dans un complément :
+
+- [Breadcrumb](https://developer.microsoft.com/en-us/fabric#/components/breadcrumb)
+- [Bouton](https://developer.microsoft.com/en-us/fabric#/components/button)
+- [Case à cocher](https://developer.microsoft.com/en-us/fabric#/components/checkbox)
+- [ChoiceGroup](https://developer.microsoft.com/en-us/fabric#/components/choicegroup)
+- [Liste déroulante](https://developer.microsoft.com/en-us/fabric#/components/dropdown)
+- [Étiquette](https://developer.microsoft.com/en-us/fabric#/components/label)
+- [Liste](https://developer.microsoft.com/en-us/fabric#/components/list)
+- [Tableau croisé dynamique](https://developer.microsoft.com/en-us/fabric#/components/pivot)
+- [TextField](https://developer.microsoft.com/en-us/fabric#/components/textfield)
+- [Bascule](https://developer.microsoft.com/en-us/fabric#/components/toggle)
 
 Vous pouvez utiliser différentes infrastructures JavaScript, comme Angular ou React, pour créer votre complément. Pour commencer à utiliser les composants Fabric avec votre infrastructure, consultez les ressources suivantes.
 

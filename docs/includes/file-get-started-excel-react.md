@@ -1,12 +1,12 @@
 # <a name="build-an-excel-add-in-using-react"></a>Développement d’un complément Excel à l’aide de React
 
-Dans cet article vous apprendrez à créer une macro complémentaire Excel à l’aide de React et de l’API JavaScript pour Excel.
+Cet article décrit le processus de création d’un complément Excel à l’aide de React et de l’API JavaScript pour Excel.
 
 ## <a name="environment"></a>Environnement
 
-- **Office pour ordinateur de bureau** : Assurez-vous de disposer de la dernière version d'Office. Les commandes du complément nécessitent la version 16.0.6769.0000 ou supérieure (la version **16.0.6868.0000** est conseillée). Apprenez à [Installer la dernière version des applications Office](http://aka.ms/latestoffice). 
+- **Office pour ordinateur de bureau** : Assurez-vous de disposer de la dernière version d'Office. Les commandes du complément nécessitent la version 16.0.6769.0000 ou supérieure (la version **16.0.6868.0000** est conseillée). Apprenez à [Installer la dernière version des applications Office](http://aka.ms/latestoffice). 
  
-- **Office Online** : Aucune installation supplémentaire n'est nécessaire. Notez que la prise en charge des commandes au sein d'Office Online pour les comptes professionnels / scolaires est actuellement en préversion.
+- **Office Online** : Aucune installation supplémentaire n'est nécessaire. Notez que la prise en charge des commandes au sein d'Office Online pour les comptes professionnels / scolaires est actuellement en préversion.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -40,19 +40,19 @@ Chaque complément nécessite un fichier manifeste pour définir ses paramètres
     cd my-addin
     ```
 
-2. Utilisez le générateur Yeoman pour générer le fichier manifeste de votre complément. Exécutez la commande suivante, puis répondez aux invites comme indiqué dans la capture d’écran suivante :
+2. Utilisez le générateur Yeoman pour générer le fichier manifeste de votre complément. Exécutez la commande suivante, puis répondez aux invites comme indiqué dans la capture d’écran suivante :
 
     ```bash
-    yo office
+    yo office 
     ```
 
-    - **Voulez-vous créer un sous-dossier de votre projet ? :** `No`
+    - **Choisissez un type de projet :** `Manifest`
     - **Comment souhaitez-vous nommer votre complément ? :** `My Office Add-in`
     - **Quelle application client Office voulez-vous prendre en charge ? :** `Excel`
-    - **Voulez-vous créer un complément ? :** `No`
 
-    Le générateur demande ensuite si vous voulez ouvrir **resource.html**. Il n’est pas nécessaire de l’ouvrir pour ce didacticiel, mais n’hésitez pas à l’ouvrir si vous êtes curieux. Cliquez sur Oui ou Non pour fermer l’assistant et laisser le générateur faire son travail.
 
+    Après avoir terminé l'assistant, un fichier manifeste et un fichier de ressources sont disponibles pour vous permettre de générer votre projet.
+    
     ![Générateur Yeoman](../images/yo-office.png)
     
     > [!NOTE]
@@ -165,7 +165,7 @@ Chaque complément nécessite un fichier manifeste pour définir ses paramètres
     set HTTPS=true&&npm start
     ```
 
-    macOS :
+    macOS :
     ```bash
     HTTPS=true npm start
     ```
