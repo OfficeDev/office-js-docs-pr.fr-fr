@@ -2,12 +2,12 @@
 title: Configuration requise pour exécuter des compléments Office
 description: ''
 ms.date: 02/09/2018
-ms.openlocfilehash: a4859af73d8e9cf041990a3533894b24f1cbde6f
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 944ac0c26b864124a8c86b46e023609120d8ea75
+ms.sourcegitcommit: 3e4e3a45a07ed91176cab182c44184c196c23d35
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437422"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "20159676"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Configuration requise pour exécuter des compléments Office
 
@@ -50,6 +50,10 @@ Le logiciel suivant est requis pour développer un Complément Office pour les c
     - [Office 2013 pour les particuliers (.exe)](https://c2rsetup.officeapps.live.com/c2r/download.aspx?productReleaseID=O365HomePremRetail&platform=X86&language=en-us&version=O15GA&source=O15OLSO365) 
 
 - Internet Explorer 11 ou version ultérieure, qui doit être installé, mais ne doit pas être le navigateur par défaut. Pour prendre en charge les compléments Office, le client Office qui s’exécute en tant qu’hôte utilise des composants de navigateur qui font partie d’Internet Explorer 11 ou version ultérieure.
+
+  > [!NOTE]
+  > La configuration de sécurité renforcée (ESC) d'Internet Explorer doit être désactivée pour que les compléments Office Web fonctionnent. Si vous utilisez un ordinateur Windows Server en tant que client lors du développement de compléments, notez que l'option ESC est activée par défaut dans Windows Server.
+
 - L’un des éléments suivants en tant que navigateur par défaut : Internet Explorer 11 ou version ultérieure, ou la dernière version de Microsoft Edge, Chrome, Firefox ou Safari (Mac OS).
 - Un éditeur HTML et JavaScript tel que le Bloc-notes, [Visual Studio et les outils de développement Office ](https://www.visualstudio.com/features/office-tools-vs) ou un outil de développement web tiers.
 
