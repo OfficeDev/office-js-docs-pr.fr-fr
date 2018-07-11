@@ -2,12 +2,12 @@
 title: Meilleures pratiques en matière de développement de compléments Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 777cc45570474bc422056cefbe4bd79107bd1fb4
-ms.sourcegitcommit: 4e4f7c095e8f33b06bd8a02534ee901125eb1d17
+ms.openlocfilehash: abb04439d40d412acba51d62bcc7544d01810f52
+ms.sourcegitcommit: 376a80e8bc740a80802af81cabcdabe099217b3e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "20084034"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "20246086"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Meilleures pratiques en matière de développement de compléments Office
 
@@ -73,7 +73,7 @@ Pour obtenir les modèles illustrant les modèles de conception à appliquer lor
 
 - Utilisez un [langage clair et simple](../design/voice-guidelines.md) dans votre complément.
 
-- Soulignez l’accessibilité : votre complément doit être facile à utiliser pour tous les utilisateurs et s’accommoder de technologies d’assistance telles que les lecteurs d’écran.
+- Soulignez l’accessibilité : votre complément doit être facile à utiliser pour tous les utilisateurs et s’accommoder de technologies d’assistance telles que les lecteurs d’écran.
 
 - Adaptez-le à toutes les plateformes et méthodes d’entrée, y compris la souris/le clavier et la [fonction tactile](#optimize-for-touch). Assurez-vous que votre interface utilisateur réagit à différents formats.
 
@@ -115,13 +115,13 @@ Pour les modèles appliquant des principes de conception que vous pouvez utilise
   |**Classe d’interaction**|**Cible**|**Limite supérieure**|**Perception humaine**|
   |:-----|:-----|:-----|:-----|
   |Instantanée|<= 50 ms|100 ms|Aucun délai notable.|
-  |Rapide|50-100 ms|200 ms|Délai notable minime. Aucun commentaire n’est nécessaire.|
-  |Normale|100-300 ms|500 ms|L’opération va assez vite, sans pour autant pouvoir être qualifiée de rapide. Aucun commentaire n’est nécessaire.|
-  |Réactive|300-500 ms|1 seconde|L’opération n’est pas rapide, mais le système donne l’impression de répondre. Aucun commentaire n’est nécessaire.|
+  |Rapide|50 – 100 ms|200 ms|Délai notable minime. Aucun commentaire n’est nécessaire.|
+  |Normale|100 – 300 ms|500 ms|L’opération va assez vite, sans pour autant pouvoir être qualifiée de rapide. Aucun commentaire n’est nécessaire.|
+  |Réactive|300 – 500 ms|1 seconde|L’opération n’est pas rapide, mais le système donne l’impression de répondre. Aucun commentaire n’est nécessaire.|
   |Continue|> 500 ms|5 secondes|Attente moyenne, le système n’a plus l’air de répondre. Un commentaire peut-être nécessaire.|
   |Captive|> 500 ms|10 secondes|Long, mais pas assez pour faire autre chose. Un commentaire peut-être nécessaire.|
   |Étendue|> 500 ms|> 10 secondes|Assez long pour faire quelque chose en attendant. Un commentaire peut être nécessaire.|
-  |Longue durée|> 5 ms|> 1 minute|Les utilisateurs effectueront certainement une autre action.|
+  |Longue durée|> 5 secondes|> 1 minute|Les utilisateurs effectueront certainement une autre action.|
 
 - Surveillez l’état de votre service et utilisez la télémétrie pour surveiller le succès d’utilisateur.
 
