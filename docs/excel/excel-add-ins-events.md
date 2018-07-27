@@ -2,12 +2,12 @@
 title: Utilisation d’événements à l’aide de l’API JavaScript pour Excel
 description: ''
 ms.date: 05/25/2018
-ms.openlocfilehash: 575e4112ed5f55356020eed8327d309fc58cd643
-ms.sourcegitcommit: 9685fd83136bd2106f4c5595bda0010bc1b1950b
+ms.openlocfilehash: 5b48712b0b1b5bd0dd7492ee7c692104a99678a7
+ms.sourcegitcommit: 9e0952b3df852bd2896e9f4a6f59f5b89fc1ae24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "20596518"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "21270271"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Utilisation d’événements à l’aide de l’API JavaScript pour Excel 
 
@@ -23,10 +23,23 @@ Chaque fois que certains types de modifications se produisent dans un classeur E
 | `onDeleted` | Événement se produisant lors de la suppression d'un objet. | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection) |
 | `onActivated` | Événement se produisant lors de l'activation d'un objet. | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection), [**Feuille de calcul**](https://dev.office.com/reference/add-ins/excel/worksheet) |
 | `onDeactivated` | Événement se produisant lors de la désactivation d'un objet. | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection), [**Feuille de calcul**](https://dev.office.com/reference/add-ins/excel/worksheet) |
-| `onChanged` | Événement se produisant lors de la modification de données dans les cellules. | [**Feuille de calcul**](https://dev.office.com/reference/add-ins/excel/worksheet), [**Table**](https://dev.office.com/reference/add-ins/excel/table), [**TableCollection**](https://dev.office.com/reference/add-ins/excel/tablecollection) |
+| `onChanged` | Événement se produisant lorsque des données dans des cellules sont modifiées. | [**Feuille de calcul**](https://dev.office.com/reference/add-ins/excel/worksheet), [**Table**](https://dev.office.com/reference/add-ins/excel/table), [**TableCollection**](https://dev.office.com/reference/add-ins/excel/tablecollection) |
 | `onDataChanged` | Événement se produisant lors de la modification des données ou de la mise en forme dans la liaison. | [**Liaison**](https://dev.office.com/reference/add-ins/excel/binding) |
 | `onSelectionChanged` | Événement se produisant lorsque la cellule active ou la plage sélectionnée est modifiée. | [**Feuille de calcul**](https://dev.office.com/reference/add-ins/excel/worksheet), [**Table**](https://dev.office.com/reference/add-ins/excel/table), [**Liaison**](https://dev.office.com/reference/add-ins/excel/binding) |
 | `onSettingsChanged` | Événement qui se produit lorsque les paramètres dans le document sont modifiés. | [**SettingCollection**](https://dev.office.com/reference/add-ins/excel/settingcollection) |
+
+## <a name="preview-beta-events-in-excel"></a>Préversion (bêta) des événements dans Excel
+
+> [!NOTE]
+> Ces événements sont actuellement disponibles uniquement en préversion publique (version bêta). Pour utiliser ces fonctionnalités, vous devez utiliser la bibliothèque bêta du CDN Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+
+| Événement | Description | Objets pris en charge |
+|:---------------|:-------------|:-----------|
+| `onAdded` | Événement qui se produit lorsqu'un graphique est ajouté. | [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+| `onDeleted` | Événement qui se produit lorsqu'un graphique est supprimé. | [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+| `onActivated` | Événement qui se produit lorsqu'un graphique est activé. | [**Graphique**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md), [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+| `onDeactivated` | Événement qui se produit lorsqu'un graphique est désactivé. | [**Graphique**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md), [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+| `onCalculated` | Événement qui se produit lorsqu'une feuille de calcul a terminé le calcul (ou que toutes les feuilles de calcul de la collection sont terminées). | [**WorksheetCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md), [**Feuille de calcul**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
 
 ### <a name="event-triggers"></a>Déclencheurs d’événements
 

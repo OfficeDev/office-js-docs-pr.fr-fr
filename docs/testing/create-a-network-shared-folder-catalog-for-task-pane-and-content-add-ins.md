@@ -2,18 +2,28 @@
 title: Chargement de compléments Office pour des tests
 description: ''
 ms.date: 01/25/2018
+ms.openlocfilehash: e5769ef40868ec996194725d98913e61b76279bc
+ms.sourcegitcommit: 9e0952b3df852bd2896e9f4a6f59f5b89fc1ae24
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "21270292"
 ---
+# <a name="sideload-office-add-ins-for-testing"></a>Chargez les compléments Office en version test effectuer des tests
 
-# <a name="sideload-office-add-ins-for-testing"></a>Chargement de compléments Office pour des tests
+Vous pouvez installer un complément Office pour tester dans un client Office s'exécutant sous Windows par l'une des méthodes suivantes :
 
-Vous pouvez installer un complément Office à des fins de test dans un client Office s’exécutant sur Windows à l’aide d’un catalogue de dossiers partagés pour publier le manifeste sur un partage de fichiers réseau. 
+- Utilisez un catalogue de dossiers partagés pour publier le manifeste sur un partage de fichiers réseau (instructions ci-dessous)
+- [Exécutez la commande **« npm run sideload »** à partir de la racine du dossier de projet du complément.](sideload-office-addin-using-sideload-command.md) 
+>[!NOTE]
+>La méthode « npm run sideload » ne fonctionne que pour les compléments Excel, Word et PowerPoint).
 
-Si vous ne testez pas un complément Word, Excel ou PowerPoint sous Windows, consultez une des rubriques suivantes pour charger la version test de votre complément :
+Si vous ne testez pas un complément Word, Excel ou PowerPoint sous Windows, consultez une des rubriques suivantes pour charger la version test de votre complément :
 
-- [Chargement de version test des compléments Office dans Office Online](sideload-office-add-ins-for-testing.md)
-- [Chargement de version test des compléments Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
+- [Chargement de version test des compléments Office dans Office Online](sideload-office-add-ins-for-testing.md)
+- [Chargement de version test des compléments Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
 
-La vidéo suivante présente la procédure de chargement de version test de votre complément dans la version de bureau Office ou Office Online.  
+La vidéo suivante présente la procédure de chargement indépendant de votre complément dans la version de bureau Office ou Office Online à l'aide du catalogue d'un dossier partagé.  
 
 
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]

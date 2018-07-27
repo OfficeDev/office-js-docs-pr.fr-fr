@@ -186,18 +186,18 @@ Cet article décrit le processus de création d’un complément PowerPoint à l
     cd my-powerpoint-addin
     ```
 
-3. Utilisez le générateur Yeoman afin de créer un projet de complément PowerPoint. Exécutez la commande suivante, puis répondez aux invites comme suit :
+3. Utilisez le générateur Yeoman afin de créer un projet de complément PowerPoint. Exécutez la commande suivante, puis répondez aux invites comme suit :
 
     ```bash
     yo office
     ```
 
-    - **Choisissez un type de projet :** `Jquery`
-    - **Choisissez un type de script :** `Javascript`
-    - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
-    - **Quelle application client Office voulez-vous prendre en charge ?** `Powerpoint`
+    - **Choisissez un type de projet :** `Jquery`
+    - **Choisissez un type de script :** `Javascript`
+    - **Comment souhaitez-vous nommer votre complément ? :** `My Office Add-in`
+    - **Quelle application client Office voulez-vous prendre en charge ? :** `Powerpoint`
 
-    ![Capture d’écran des invites et des réponses pour le générateur Yeoman](../images/yo-office-powerpoint-jquery.png)
+    ![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yo-office-powerpoint-jquery.png)
     
     Une fois que vous avez terminé avec l'assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -230,7 +230,7 @@ Cet article décrit le processus de création d’un complément PowerPoint à l
     </div>
     ```
 
-4. Ouvrez le fichier **app.jss** dans la racine du projet pour spécifier le script du complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+4. Ouvrez le fichier **src\index.js** pour spécifier le script du complément. Remplacez le contenu entier par le code suivant et enregistrez le fichier.
 
     ```js
     'use strict';
@@ -352,7 +352,7 @@ Cet article décrit le processus de création d’un complément PowerPoint à l
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations, vous avez créé un complément PowerPoint ! Découvrez maintenant d'autres fonctionnalités d’un complément PowerPoint et créez-en un plus complexe en suivant le didacticiel sur les compléments PowerPoint.
+Félicitations, vous avez créé un complément PowerPoint ! Ensuite, découvrez d'autres fonctionnalités d’un complément PowerPoint et générez-en un plus complexe en suivant le didacticiel sur les compléments PowerPoint.
 
 > [!div class="nextstepaction"]
 > [Didacticiel sur les compléments PowerPoint](../tutorials/powerpoint-tutorial.yml)
