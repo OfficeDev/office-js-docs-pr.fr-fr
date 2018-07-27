@@ -42,7 +42,7 @@ Cet article décrit le processus de création d’un complément OneNote à l’
 
 1. Dans votre éditeur de code, ouvrez **index.html** à la racine du projet. Ce fichier contient le code HTML qui s’affichera dans le volet Office du complément.
 
-2. Remplacez l’élément `<main>` dans l’élément `<body>` par le balisage suivant et enregistrez le fichier. Cette action ajoute une zone de texte et un bouton à l’aide de [composants Office UI Fabric](http://dev.office.com/fabric/components).
+2. Remplacez l’élément `<main>` dans l’élément `<body>` par le balisage suivant et enregistrez le fichier. Cette option ajoute une zone de texte et un bouton à l’aide des [composants de la structure de l’interface utilisateur d’Office](http://dev.office.com/fabric/components).
 
     ```html
     <main class="ms-welcome__main">
@@ -59,7 +59,7 @@ Cet article décrit le processus de création d’un complément OneNote à l’
     </main>
     ```
 
-3. Ouvrez le fichier **index/src.js** pour spécifier le script pour le complément. Remplacez le contenu entier par le code suivant et enregistrez le fichier.
+3. Ouvrez le fichier **src\index.js** pour spécifier le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
 
     ```js
     'use strict';
@@ -142,11 +142,11 @@ Cet article décrit le processus de création d’un complément OneNote à l’
 
     <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
 
-3. Dans la boîte de dialogue Télécharger le complément, accédez à **one-note-add-in-manifest.xml** dans le dossier de votre projet, puis choisissez **Télécharger**. 
+3. Dans la boîte de dialogue Télécharger le complément, accédez à **one-note-add-in-manifest.xml** dans le dossier de projet, puis choisissez **Télécharger**. 
 
-4. Dans l’onglet **Accueil**, cliquez sur le bouton **Afficher le volet Office** du ruban. Le complément volet Office s’ouvre dans un iFrame à côté de la page OneNote.
+4. Dans l’onglet **Accueil,** cliquez sur le bouton **Afficher le volet des tâches** du ruban. Le complément volet Office s’ouvre dans un iFrame à côté de la page OneNote.
 
-5. Entrez du texte dans la zone de texte, puis choisissez **Ajouter un plan**. Le texte que vous avez saisi est ajouté à la page. 
+5. Entrez du texte dans la zone de texte, puis choisissez **Ajouter un contour**. Le texte que vous avez entré est ajouté à la page. 
 
     ![Complément OneNote généré à partir de cette procédure pas à pas](../images/onenote-first-add-in.png)
 
