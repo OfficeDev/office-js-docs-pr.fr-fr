@@ -1,736 +1,734 @@
 ---
 title: Disponibilité des compléments Office sur les plateformes et les hôtes
 description: Ensembles de conditions requises pris en charge pour Excel, Word, Outlook, PowerPoint et OneNote.
-ms.date: 03/23/2018
-ms.openlocfilehash: f50ab7e5312702eb25fbb2c8a25291c5ff5027a7
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.date: 07/31/2018
+ms.openlocfilehash: 084029c0a5b70b73eaa0b3fcc180f4a813fb8b72
+ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19438871"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "21703909"
 ---
-# <a name="office-add-in-host-and-platform-availability"></a><span data-ttu-id="76d88-103">Disponibilité des compléments Office sur les plateformes et les hôtes</span><span class="sxs-lookup"><span data-stu-id="76d88-103">Office Add-in host and platform availability</span></span>
+# <a name="office-add-in-host-and-platform-availability"></a><span data-ttu-id="c86cb-103">Disponibilité des compléments Office sur les plateformes et les hôtes</span><span class="sxs-lookup"><span data-stu-id="c86cb-103">Office Add-in host and platform availability</span></span>
 
-<span data-ttu-id="76d88-104">Pour fonctionner comme prévu, il se peut que votre complément Office dépende d’un hôte Office spécifique, d’un ensemble de conditions requises, d’un membre d’API ou d’une version de l’API.</span><span class="sxs-lookup"><span data-stu-id="76d88-104">To work as expected, your Office Add-in might depend on a specific Office host, a requirement set, an API member, or a version of the API.</span></span> <span data-ttu-id="76d88-105">Les tableaux suivants contiennent la plateforme disponible, les points d’extension, les ensembles de conditions requises de l’API et les ensembles de conditions requises des API communes qui sont actuellement pris en charge pour chaque application Office.</span><span class="sxs-lookup"><span data-stu-id="76d88-105">The following tables contain the available platform, extension points, API requirement sets, and common API requirement sets that are currently supported for each Office application.</span></span> 
+<span data-ttu-id="c86cb-104">Pour fonctionner comme prévu, il se peut que votre complément Office dépende d’un hôte Office spécifique, d’un ensemble de conditions requises, d’un membre d’API ou d’une version de l’API.</span><span class="sxs-lookup"><span data-stu-id="c86cb-104">To work as expected, your Office Add-in might depend on a specific Office host, a requirement set, an API member, or a version of the API.</span></span> <span data-ttu-id="c86cb-105">Les tableaux suivants contiennent la plateforme disponible, les points d’extension, les ensembles de conditions requises de l’API et les ensembles de conditions requises des API communes qui sont actuellement pris en charge pour chaque application Office.</span><span class="sxs-lookup"><span data-stu-id="c86cb-105">The following tables contain the available platform, extension points, API requirement sets, and common API requirement sets that are currently supported for each Office application.</span></span> 
 
-<span data-ttu-id="76d88-106">Si une cellule de tableau contient un astérisque (\*), cela signifie que nous travaillons sur celle-ci.</span><span class="sxs-lookup"><span data-stu-id="76d88-106">If a table cell contains an asterisk ( \* ), that means we’re working on it.</span></span> <span data-ttu-id="76d88-107">Pour les ensembles de conditions requises pour Project ou Access, consultez les [ensembles de conditions requises communs à Office](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets).</span><span class="sxs-lookup"><span data-stu-id="76d88-107">For requirement sets for Project or Access, see [Office common requirement sets](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets).</span></span>  
+<span data-ttu-id="c86cb-106">Si une cellule de tableau contient un astérisque (\*), cela signifie que nous travaillons sur celle-ci.</span><span class="sxs-lookup"><span data-stu-id="c86cb-106">If a table cell contains an asterisk ( \* ), that means we’re working on it.</span></span> <span data-ttu-id="c86cb-107">Pour les ensembles de conditions requises pour Project ou Access, consultez les [ensembles de conditions requises communs à Office](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets).</span><span class="sxs-lookup"><span data-stu-id="c86cb-107">For requirement sets for Project or Access, see [Office common requirement sets](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets).</span></span>  
 
 > [!NOTE]
-> <span data-ttu-id="76d88-p103">Le numéro de build pour Office 2016 installé via MSI est 16.0.4266.1001. Cette version ne contient que les ensembles de conditions requises des API communes, ExcelApi 1.1 et WordApi 1.1.</span><span class="sxs-lookup"><span data-stu-id="76d88-p103">The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the ExcelApi 1.1, WordApi 1.1, and common API requirement sets.</span></span>
+> <span data-ttu-id="c86cb-p103">Le numéro de build pour Office 2016 installé via MSI est 16.0.4266.1001. Cette version ne contient que les ensembles de conditions requises des API communes, ExcelApi 1.1 et WordApi 1.1.</span><span class="sxs-lookup"><span data-stu-id="c86cb-p103">The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the ExcelApi 1.1, WordApi 1.1, and common API requirement sets.</span></span>
 
-## <a name="excel"></a><span data-ttu-id="76d88-110">Excel</span><span class="sxs-lookup"><span data-stu-id="76d88-110">Excel</span></span>
+## <a name="excel"></a><span data-ttu-id="c86cb-110">Excel</span><span class="sxs-lookup"><span data-stu-id="c86cb-110">Excel</span></span>
 
 <table style="width:80%">
   <tr>
-    <th style="width:10%"><span data-ttu-id="76d88-111">Plate-forme</span><span class="sxs-lookup"><span data-stu-id="76d88-111">Platform</span></span></th>
-    <th style="width:10%"><span data-ttu-id="76d88-112">Points d’extension</span><span class="sxs-lookup"><span data-stu-id="76d88-112">Extension points</span></span></th> 
-    <th style="width:20%"><span data-ttu-id="76d88-113">Ensembles de conditions requises de l’API</span><span class="sxs-lookup"><span data-stu-id="76d88-113">API requirement sets</span></span></th> 
-    <th style="width:40%"><span data-ttu-id="76d88-114"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>API communes</b></a></span><span class="sxs-lookup"><span data-stu-id="76d88-114"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></span></span></th> 
+    <th style="width:10%"><span data-ttu-id="c86cb-111">Plate-forme</span><span class="sxs-lookup"><span data-stu-id="c86cb-111">Platform</span></span></th>
+    <th style="width:10%"><span data-ttu-id="c86cb-112">Points d’extension</span><span class="sxs-lookup"><span data-stu-id="c86cb-112">Extension points</span></span></th> 
+    <th style="width:20%"><span data-ttu-id="c86cb-113">Ensembles de conditions requises de l’API</span><span class="sxs-lookup"><span data-stu-id="c86cb-113">API requirement sets</span></span></th> 
+    <th style="width:40%"><span data-ttu-id="c86cb-114"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>API communes</b></a></span><span class="sxs-lookup"><span data-stu-id="c86cb-114"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></span></span></th> 
   </tr>
   <tr>
-    <td><span data-ttu-id="76d88-115">Office Online</span><span class="sxs-lookup"><span data-stu-id="76d88-115">Office Online</span></span></td>
-    <td> <span data-ttu-id="76d88-116">- Volet Office</span><span class="sxs-lookup"><span data-stu-id="76d88-116">- Taskpane</span></span><br><span data-ttu-id="76d88-117">
-        - Contenu</span><span class="sxs-lookup"><span data-stu-id="76d88-117">
-        - Content</span></span><br><span data-ttu-id="76d88-118">
+    <td><span data-ttu-id="c86cb-115">Office Online</span><span class="sxs-lookup"><span data-stu-id="c86cb-115">Office Online</span></span></td>
+    <td> <span data-ttu-id="c86cb-116">- Volet Office</span><span class="sxs-lookup"><span data-stu-id="c86cb-116">- Taskpane</span></span><br><span data-ttu-id="c86cb-117">
+        - Contenu</span><span class="sxs-lookup"><span data-stu-id="c86cb-117">
+        - Content</span></span><br><span data-ttu-id="c86cb-118">
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a>
-    </span><span class="sxs-lookup"><span data-stu-id="76d88-118">
+    </span><span class="sxs-lookup"><span data-stu-id="c86cb-118">
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a>
     </span></span></td>
-    <td><span data-ttu-id="76d88-119">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-119">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a></span></span><br><span data-ttu-id="76d88-120">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a></span><span class="sxs-lookup"><span data-stu-id="76d88-120">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a></span></span><br><span data-ttu-id="76d88-121">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a></span><span class="sxs-lookup"><span data-stu-id="76d88-121">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a></span></span><br><span data-ttu-id="76d88-122">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a></span><span class="sxs-lookup"><span data-stu-id="76d88-122">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a></span></span><br><span data-ttu-id="76d88-123">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-123">
+    <td><span data-ttu-id="c86cb-119">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-119">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a></span></span><br><span data-ttu-id="c86cb-120">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-120">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a></span></span><br><span data-ttu-id="c86cb-121">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-121">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a></span></span><br><span data-ttu-id="c86cb-122">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-122">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a></span></span><br><span data-ttu-id="c86cb-123">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-123">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a></span></span><br><span data-ttu-id="c86cb-124">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-124">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a></span></span><br><span data-ttu-id="c86cb-125">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-125">ExcelApi 1.7 Beta</span></span><br><span data-ttu-id="c86cb-126">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-126">
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span></span></td>
-    <td><span data-ttu-id="76d88-124">
-        - BindingEvents</span><span class="sxs-lookup"><span data-stu-id="76d88-124">
-        -BindingEvents</span></span><br><span data-ttu-id="76d88-125">
-        - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="76d88-125">
-        -DocumentEvents</span></span><br><span data-ttu-id="76d88-126">
-        - MatrixBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-126">
-        -MatrixBindings</span></span><br><span data-ttu-id="76d88-127">
-        - MatrixCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-127">
-        -MatrixCoercion</span></span><br><span data-ttu-id="76d88-128">
-        - TableBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-128">
-        -TableBindings</span></span><br><span data-ttu-id="76d88-129">
-        - TableCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-129">
-        -TableCoercion</span></span><br><span data-ttu-id="76d88-130">
-        - TextBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-130">
-        -TextBindings</span></span><br><span data-ttu-id="76d88-131">
-        - CompressedFile</span><span class="sxs-lookup"><span data-stu-id="76d88-131">
-        -CompressedFile</span></span><br><span data-ttu-id="76d88-132">
-        - Settings</span><span class="sxs-lookup"><span data-stu-id="76d88-132">
-        - Settings</span></span><br><span data-ttu-id="76d88-133">
-        - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-133">
+    <td><span data-ttu-id="c86cb-127">
+        - BindingEvents</span><span class="sxs-lookup"><span data-stu-id="c86cb-127">
+        -BindingEvents</span></span><br><span data-ttu-id="c86cb-128">
+        - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="c86cb-128">
+        -DocumentEvents</span></span><br><span data-ttu-id="c86cb-129">
+        - MatrixBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-129">
+        -MatrixBindings</span></span><br><span data-ttu-id="c86cb-130">
+        - MatrixCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-130">
+        -MatrixCoercion</span></span><br><span data-ttu-id="c86cb-131">
+        - TableBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-131">
+        -TableBindings</span></span><br><span data-ttu-id="c86cb-132">
+        - TableCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-132">
+        -TableCoercion</span></span><br><span data-ttu-id="c86cb-133">
+        - TextBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-133">
+        -TextBindings</span></span><br><span data-ttu-id="c86cb-134">
+        - CompressedFile</span><span class="sxs-lookup"><span data-stu-id="c86cb-134">
+        -CompressedFile</span></span><br><span data-ttu-id="c86cb-135">
+        - Paramètres</span><span class="sxs-lookup"><span data-stu-id="c86cb-135">
+        - Settings</span></span><br><span data-ttu-id="c86cb-136">
+        - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-136">
         -TextCoercion</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="76d88-134">Office 2013 pour Windows</span><span class="sxs-lookup"><span data-stu-id="76d88-134">Office 2013 for Windows</span></span></td>
-    <td><span data-ttu-id="76d88-135">
-        - Volet Office</span><span class="sxs-lookup"><span data-stu-id="76d88-135">
-        - Taskpane</span></span><br><span data-ttu-id="76d88-136">
-        - Contenu</span><span class="sxs-lookup"><span data-stu-id="76d88-136">
+    <td><span data-ttu-id="c86cb-137">Office 2013 pour Windows</span><span class="sxs-lookup"><span data-stu-id="c86cb-137">Office 2013 for Windows</span></span></td>
+    <td><span data-ttu-id="c86cb-138">
+        - Volet Office</span><span class="sxs-lookup"><span data-stu-id="c86cb-138">
+        - Taskpane</span></span><br><span data-ttu-id="c86cb-139">
+        - Contenu</span><span class="sxs-lookup"><span data-stu-id="c86cb-139">
         - Content</span></span></td>
-    <td>  <span data-ttu-id="76d88-137">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-137">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span></span></td>
-    <td><span data-ttu-id="76d88-138">
-        - BindingEvents</span><span class="sxs-lookup"><span data-stu-id="76d88-138">
-        -BindingEvents</span></span><br><span data-ttu-id="76d88-139">
-        - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="76d88-139">
-        -DocumentEvents</span></span><br><span data-ttu-id="76d88-140">
-        - MatrixBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-140">
-        -MatrixBindings</span></span><br><span data-ttu-id="76d88-141">
-        - MatrixCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-141">
-        -MatrixCoercion</span></span><br><span data-ttu-id="76d88-142">
-        - TableBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-142">
-        -TableBindings</span></span><br><span data-ttu-id="76d88-143">
-        - TableCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-143">
-        -TableCoercion</span></span><br><span data-ttu-id="76d88-144">
-        - TextBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-144">
-        -TextBindings</span></span><br><span data-ttu-id="76d88-145">
-        - Settings</span><span class="sxs-lookup"><span data-stu-id="76d88-145">
-        - Settings</span></span><br><span data-ttu-id="76d88-146">
-        - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-146">
+    <td>  <span data-ttu-id="c86cb-140">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-140">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span></span></td>
+    <td><span data-ttu-id="c86cb-141">
+        - BindingEvents</span><span class="sxs-lookup"><span data-stu-id="c86cb-141">
+        -BindingEvents</span></span><br><span data-ttu-id="c86cb-142">
+        - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="c86cb-142">
+        -DocumentEvents</span></span><br><span data-ttu-id="c86cb-143">
+        - MatrixBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-143">
+        -MatrixBindings</span></span><br><span data-ttu-id="c86cb-144">
+        - MatrixCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-144">
+        -MatrixCoercion</span></span><br><span data-ttu-id="c86cb-145">
+        - TableBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-145">
+        -TableBindings</span></span><br><span data-ttu-id="c86cb-146">
+        - TableCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-146">
+        -TableCoercion</span></span><br><span data-ttu-id="c86cb-147">
+        - TextBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-147">
+        -TextBindings</span></span><br><span data-ttu-id="c86cb-148">
+        - Paramètres</span><span class="sxs-lookup"><span data-stu-id="c86cb-148">
+        - Settings</span></span><br><span data-ttu-id="c86cb-149">
+        - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-149">
         -TextCoercion</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="76d88-147">Office 2016 pour Windows</span><span class="sxs-lookup"><span data-stu-id="76d88-147">Office 2016 for Windows</span></span></td>
-    <td><span data-ttu-id="76d88-148">- Volet Office</span><span class="sxs-lookup"><span data-stu-id="76d88-148">- Taskpane</span></span><br><span data-ttu-id="76d88-149">
-        - Contenu</span><span class="sxs-lookup"><span data-stu-id="76d88-149">
-        - Content</span></span><br><span data-ttu-id="76d88-150">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="76d88-150">
+    <td><span data-ttu-id="c86cb-150">Office 2016 pour Windows</span><span class="sxs-lookup"><span data-stu-id="c86cb-150">Office 2016 for Windows</span></span></td>
+    <td><span data-ttu-id="c86cb-151">- Volet Office</span><span class="sxs-lookup"><span data-stu-id="c86cb-151">- Taskpane</span></span><br><span data-ttu-id="c86cb-152">
+        - Contenu</span><span class="sxs-lookup"><span data-stu-id="c86cb-152">
+        - Content</span></span><br><span data-ttu-id="c86cb-153">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-153">
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></span></span></td>
-    <td><span data-ttu-id="76d88-151">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-151">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a></span></span><br><span data-ttu-id="76d88-152">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a></span><span class="sxs-lookup"><span data-stu-id="76d88-152">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a></span></span><br><span data-ttu-id="76d88-153">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a></span><span class="sxs-lookup"><span data-stu-id="76d88-153">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a></span></span><br><span data-ttu-id="76d88-154">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a></span><span class="sxs-lookup"><span data-stu-id="76d88-154">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a></span></span><br><span data-ttu-id="76d88-155">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-155">
+    <td><span data-ttu-id="c86cb-154">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-154">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a></span></span><br><span data-ttu-id="c86cb-155">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-155">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a></span></span><br><span data-ttu-id="c86cb-156">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-156">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a></span></span><br><span data-ttu-id="c86cb-157">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-157">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a></span></span><br><span data-ttu-id="c86cb-158">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-158">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a></span></span><br><span data-ttu-id="c86cb-159">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-159">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a></span></span><br><span data-ttu-id="c86cb-160">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-160">ExcelApi 1.7 Beta</span></span><br><span data-ttu-id="c86cb-161">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-161">
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span></span></td>
-    <td><span data-ttu-id="76d88-156">- BindingEvents</span><span class="sxs-lookup"><span data-stu-id="76d88-156">-BindingEvents</span></span><br><span data-ttu-id="76d88-157">
-        - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="76d88-157">
-        -DocumentEvents</span></span><br><span data-ttu-id="76d88-158">
-        - MatrixBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-158">
-        -MatrixBindings</span></span><br><span data-ttu-id="76d88-159">
-        - MatrixCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-159">
-        -MatrixCoercion</span></span><br><span data-ttu-id="76d88-160">
-        - TableBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-160">
-        -TableBindings</span></span><br><span data-ttu-id="76d88-161">
-        - TableCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-161">
-        -TableCoercion</span></span><br><span data-ttu-id="76d88-162">
-        - TextBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-162">
-        -TextBindings</span></span><br><span data-ttu-id="76d88-163">
-        - Settings</span><span class="sxs-lookup"><span data-stu-id="76d88-163">
-        - Settings</span></span><br><span data-ttu-id="76d88-164">
-        - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-164">
+    <td><span data-ttu-id="c86cb-162">- BindingEvents</span><span class="sxs-lookup"><span data-stu-id="c86cb-162">-BindingEvents</span></span><br><span data-ttu-id="c86cb-163">
+        - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="c86cb-163">
+        -DocumentEvents</span></span><br><span data-ttu-id="c86cb-164">
+        - MatrixBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-164">
+        -MatrixBindings</span></span><br><span data-ttu-id="c86cb-165">
+        - MatrixCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-165">
+        -MatrixCoercion</span></span><br><span data-ttu-id="c86cb-166">
+        - TableBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-166">
+        -TableBindings</span></span><br><span data-ttu-id="c86cb-167">
+        - TableCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-167">
+        -TableCoercion</span></span><br><span data-ttu-id="c86cb-168">
+        - TextBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-168">
+        -TextBindings</span></span><br><span data-ttu-id="c86cb-169">
+        - Paramètres</span><span class="sxs-lookup"><span data-stu-id="c86cb-169">
+        - Settings</span></span><br><span data-ttu-id="c86cb-170">
+        - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-170">
         -TextCoercion</span></span></td> 
   </tr>
   <tr>
-    <td><span data-ttu-id="76d88-165">Office pour iOS</span><span class="sxs-lookup"><span data-stu-id="76d88-165">Office for iOS</span></span></td>
-    <td><span data-ttu-id="76d88-166">- Volet Office</span><span class="sxs-lookup"><span data-stu-id="76d88-166">- Taskpane</span></span><br><span data-ttu-id="76d88-167">
-        - Contenu</span><span class="sxs-lookup"><span data-stu-id="76d88-167">
+    <td><span data-ttu-id="c86cb-171">Office pour iOS</span><span class="sxs-lookup"><span data-stu-id="c86cb-171">Office for iOS</span></span></td>
+    <td><span data-ttu-id="c86cb-172">- Volet Office</span><span class="sxs-lookup"><span data-stu-id="c86cb-172">- Taskpane</span></span><br><span data-ttu-id="c86cb-173">
+        - Contenu</span><span class="sxs-lookup"><span data-stu-id="c86cb-173">
         - Content</span></span></td>
-    <td><span data-ttu-id="76d88-168">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-168">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a></span></span><br><span data-ttu-id="76d88-169">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a></span><span class="sxs-lookup"><span data-stu-id="76d88-169">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a></span></span><br><span data-ttu-id="76d88-170">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a></span><span class="sxs-lookup"><span data-stu-id="76d88-170">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a></span></span><br><span data-ttu-id="76d88-171">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-171">
+    <td><span data-ttu-id="c86cb-174">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-174">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a></span></span><br><span data-ttu-id="c86cb-175">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-175">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a></span></span><br><span data-ttu-id="c86cb-176">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-176">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a></span></span><br><span data-ttu-id="c86cb-177">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-177">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a></span></span><br><span data-ttu-id="c86cb-178">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-178">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a></span></span><br><span data-ttu-id="c86cb-179">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-179">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a></span></span><br><span data-ttu-id="c86cb-180">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-180">ExcelApi 1.7 Beta</span></span><br><span data-ttu-id="c86cb-181">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-181">
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span></span></td>
-    <td><span data-ttu-id="76d88-172">- BindingEvents</span><span class="sxs-lookup"><span data-stu-id="76d88-172">-BindingEvents</span></span><br><span data-ttu-id="76d88-173">
-        - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="76d88-173">
-        -DocumentEvents</span></span><br><span data-ttu-id="76d88-174">
-        - MatrixBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-174">
-        -MatrixBindings</span></span><br><span data-ttu-id="76d88-175">
-        - MatrixCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-175">
-        -MatrixCoercion</span></span><br><span data-ttu-id="76d88-176">
-        - TableBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-176">
-        -TableBindings</span></span><br><span data-ttu-id="76d88-177">
-        - TableCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-177">
-        -TableCoercion</span></span><br><span data-ttu-id="76d88-178">
-        - TextBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-178">
-        -TextBindings</span></span><br><span data-ttu-id="76d88-179">
-        - Settings</span><span class="sxs-lookup"><span data-stu-id="76d88-179">
-        - Settings</span></span><br><span data-ttu-id="76d88-180">
-        - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-180">
+    <td><span data-ttu-id="c86cb-182">- BindingEvents</span><span class="sxs-lookup"><span data-stu-id="c86cb-182">-BindingEvents</span></span><br><span data-ttu-id="c86cb-183">
+        - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="c86cb-183">
+        -DocumentEvents</span></span><br><span data-ttu-id="c86cb-184">
+        - MatrixBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-184">
+        -MatrixBindings</span></span><br><span data-ttu-id="c86cb-185">
+        - MatrixCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-185">
+        -MatrixCoercion</span></span><br><span data-ttu-id="c86cb-186">
+        - TableBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-186">
+        -TableBindings</span></span><br><span data-ttu-id="c86cb-187">
+        - TableCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-187">
+        -TableCoercion</span></span><br><span data-ttu-id="c86cb-188">
+        - TextBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-188">
+        -TextBindings</span></span><br><span data-ttu-id="c86cb-189">
+        - Paramètres</span><span class="sxs-lookup"><span data-stu-id="c86cb-189">
+        - Settings</span></span><br><span data-ttu-id="c86cb-190">
+        - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-190">
         -TextCoercion</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="76d88-181">Office 2016 pour Mac</span><span class="sxs-lookup"><span data-stu-id="76d88-181">Office 2016 for Mac</span></span></td>
-    <td><span data-ttu-id="76d88-182">- Volet Office</span><span class="sxs-lookup"><span data-stu-id="76d88-182">- Taskpane</span></span><br><span data-ttu-id="76d88-183">
-        - Contenu</span><span class="sxs-lookup"><span data-stu-id="76d88-183">
-        - Content</span></span><br><span data-ttu-id="76d88-184">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="76d88-184">
+    <td><span data-ttu-id="c86cb-191">Office 2016 pour Mac</span><span class="sxs-lookup"><span data-stu-id="c86cb-191">Office 2016 for Mac</span></span></td>
+    <td><span data-ttu-id="c86cb-192">- Volet Office</span><span class="sxs-lookup"><span data-stu-id="c86cb-192">- Taskpane</span></span><br><span data-ttu-id="c86cb-193">
+        - Contenu</span><span class="sxs-lookup"><span data-stu-id="c86cb-193">
+        - Content</span></span><br><span data-ttu-id="c86cb-194">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-194">
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></span></span></td>
-    <td><span data-ttu-id="76d88-185">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-185">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a></span></span><br><span data-ttu-id="76d88-186">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a></span><span class="sxs-lookup"><span data-stu-id="76d88-186">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a></span></span><br><span data-ttu-id="76d88-187">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a></span><span class="sxs-lookup"><span data-stu-id="76d88-187">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a></span></span><br><span data-ttu-id="76d88-188">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-188">
+    <td><span data-ttu-id="c86cb-195">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-195">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a></span></span><br><span data-ttu-id="c86cb-196">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-196">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a></span></span><br><span data-ttu-id="c86cb-197">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-197">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a></span></span><br><span data-ttu-id="c86cb-198">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-198">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a></span></span><br><span data-ttu-id="c86cb-199">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-199">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a></span></span><br><span data-ttu-id="c86cb-200">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-200">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a></span></span><br><span data-ttu-id="c86cb-201">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-201">ExcelApi 1.7 Beta</span></span><br><span data-ttu-id="c86cb-202">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-202">
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span></span></td>
-    <td><span data-ttu-id="76d88-189">- BindingEvents</span><span class="sxs-lookup"><span data-stu-id="76d88-189">-BindingEvents</span></span><br><span data-ttu-id="76d88-190">
-        - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="76d88-190">
-        -DocumentEvents</span></span><br><span data-ttu-id="76d88-191">
-        - MatrixBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-191">
-        -MatrixBindings</span></span><br><span data-ttu-id="76d88-192">
-        - MatrixCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-192">
-        -MatrixCoercion</span></span><br><span data-ttu-id="76d88-193">
-        - TableBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-193">
-        -TableBindings</span></span><br><span data-ttu-id="76d88-194">
-        - TableCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-194">
-        -TableCoercion</span></span><br><span data-ttu-id="76d88-195">
-        - TextBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-195">
-        -TextBindings</span></span><br><span data-ttu-id="76d88-196">
-        - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-196">
+    <td><span data-ttu-id="c86cb-203">- BindingEvents</span><span class="sxs-lookup"><span data-stu-id="c86cb-203">-BindingEvents</span></span><br><span data-ttu-id="c86cb-204">
+        - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="c86cb-204">
+        -DocumentEvents</span></span><br><span data-ttu-id="c86cb-205">
+        - MatrixBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-205">
+        -MatrixBindings</span></span><br><span data-ttu-id="c86cb-206">
+        - MatrixCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-206">
+        -MatrixCoercion</span></span><br><span data-ttu-id="c86cb-207">
+        - TableBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-207">
+        -TableBindings</span></span><br><span data-ttu-id="c86cb-208">
+        - TableCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-208">
+        -TableCoercion</span></span><br><span data-ttu-id="c86cb-209">
+        - TextBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-209">
+        -TextBindings</span></span><br><span data-ttu-id="c86cb-210">
+        - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-210">
         -TextCoercion</span></span></td>
   </tr>
 </table>
 
 <br/>
 
-## <a name="outlook"></a><span data-ttu-id="76d88-197">Outlook</span><span class="sxs-lookup"><span data-stu-id="76d88-197">Outlook</span></span>
+## <a name="outlook"></a><span data-ttu-id="c86cb-211">Outlook</span><span class="sxs-lookup"><span data-stu-id="c86cb-211">Outlook</span></span>
 
 <table style="width:80%">
   <tr>
-    <th><span data-ttu-id="76d88-198">Plate-forme</span><span class="sxs-lookup"><span data-stu-id="76d88-198">Platform</span></span></th>
-    <th><span data-ttu-id="76d88-199">Points d’extension</span><span class="sxs-lookup"><span data-stu-id="76d88-199">Extension points</span></span></th> 
-    <th><span data-ttu-id="76d88-200">Ensembles de conditions requises de l’API</span><span class="sxs-lookup"><span data-stu-id="76d88-200">API requirement sets</span></span></th> 
-    <th><span data-ttu-id="76d88-201"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>API communes</b></a></span><span class="sxs-lookup"><span data-stu-id="76d88-201"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></span></span></th> 
+    <th><span data-ttu-id="c86cb-212">Plate-forme</span><span class="sxs-lookup"><span data-stu-id="c86cb-212">Platform</span></span></th>
+    <th><span data-ttu-id="c86cb-213">Points d’extension</span><span class="sxs-lookup"><span data-stu-id="c86cb-213">Extension points</span></span></th> 
+    <th><span data-ttu-id="c86cb-214">Ensembles de conditions requises de l’API</span><span class="sxs-lookup"><span data-stu-id="c86cb-214">API requirement sets</span></span></th> 
+    <th><span data-ttu-id="c86cb-215"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>API communes</b></a></span><span class="sxs-lookup"><span data-stu-id="c86cb-215"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></span></span></th> 
   </tr>
   <tr>
-    <td><span data-ttu-id="76d88-202">Office Online</span><span class="sxs-lookup"><span data-stu-id="76d88-202">Office Online</span></span></td>
-    <td> <span data-ttu-id="76d88-203">- Lecture de message</span><span class="sxs-lookup"><span data-stu-id="76d88-203">- Mail Read</span></span><br><span data-ttu-id="76d88-204">
-      - Composition de message</span><span class="sxs-lookup"><span data-stu-id="76d88-204">
-      - Mail Compose</span></span><br><span data-ttu-id="76d88-205">
-      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="76d88-205">
+    <td><span data-ttu-id="c86cb-216">Office Online</span><span class="sxs-lookup"><span data-stu-id="c86cb-216">Office Online</span></span></td>
+    <td> <span data-ttu-id="c86cb-217">- Lecture de message</span><span class="sxs-lookup"><span data-stu-id="c86cb-217">- Mail Read</span></span><br><span data-ttu-id="c86cb-218">
+      - Composition de message</span><span class="sxs-lookup"><span data-stu-id="c86cb-218">
+      - Mail Compose</span></span><br><span data-ttu-id="c86cb-219">
+      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-219">
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></span></span></td>
-    <td> <span data-ttu-id="76d88-206">- <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-206">- <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a></span></span><br><span data-ttu-id="76d88-207">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a></span><span class="sxs-lookup"><span data-stu-id="76d88-207">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a></span></span><br><span data-ttu-id="76d88-208">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a></span><span class="sxs-lookup"><span data-stu-id="76d88-208">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a></span></span><br><span data-ttu-id="76d88-209">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></span><span class="sxs-lookup"><span data-stu-id="76d88-209">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></span></span><br><span data-ttu-id="76d88-210">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></span><span class="sxs-lookup"><span data-stu-id="76d88-210">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></span></span><br><span data-ttu-id="76d88-211">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Mailbox 1.6</a></span><span class="sxs-lookup"><span data-stu-id="76d88-211">
+    <td> <span data-ttu-id="c86cb-220">- <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-220">- <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a></span></span><br><span data-ttu-id="c86cb-221">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-221">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a></span></span><br><span data-ttu-id="c86cb-222">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-222">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a></span></span><br><span data-ttu-id="c86cb-223">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-223">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></span></span><br><span data-ttu-id="c86cb-224">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-224">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></span></span><br><span data-ttu-id="c86cb-225">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Mailbox 1.6</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-225">
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Mailbox 1.6</a></span></span></td>
-    <td><span data-ttu-id="76d88-212">non disponible</span><span class="sxs-lookup"><span data-stu-id="76d88-212">not available</span></span></td>
+    <td><span data-ttu-id="c86cb-226">Non disponible</span><span class="sxs-lookup"><span data-stu-id="c86cb-226">Not available</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="76d88-213">Office 2013 pour Windows</span><span class="sxs-lookup"><span data-stu-id="76d88-213">Office 2013 for Windows</span></span></td>
-    <td> <span data-ttu-id="76d88-214">- Lecture de message</span><span class="sxs-lookup"><span data-stu-id="76d88-214">- Mail Read</span></span><br><span data-ttu-id="76d88-215">
-      - Composition de message</span><span class="sxs-lookup"><span data-stu-id="76d88-215">
-      - Mail Compose</span></span><br><span data-ttu-id="76d88-216">
-      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="76d88-216">
+    <td><span data-ttu-id="c86cb-227">Office 2013 pour Windows</span><span class="sxs-lookup"><span data-stu-id="c86cb-227">Office 2013 for Windows</span></span></td>
+    <td> <span data-ttu-id="c86cb-228">- Lecture de message</span><span class="sxs-lookup"><span data-stu-id="c86cb-228">- Mail Read</span></span><br><span data-ttu-id="c86cb-229">
+      - Composition de message</span><span class="sxs-lookup"><span data-stu-id="c86cb-229">
+      - Mail Compose</span></span><br><span data-ttu-id="c86cb-230">
+      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-230">
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></span></span></td>
-    <td> <span data-ttu-id="76d88-217">- <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-217">- <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a></span></span><br><span data-ttu-id="76d88-218">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a></span><span class="sxs-lookup"><span data-stu-id="76d88-218">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a></span></span><br><span data-ttu-id="76d88-219">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a></span><span class="sxs-lookup"><span data-stu-id="76d88-219">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a></span></span><br><span data-ttu-id="76d88-220">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></span><span class="sxs-lookup"><span data-stu-id="76d88-220">
+    <td> <span data-ttu-id="c86cb-231">- <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-231">- <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a></span></span><br><span data-ttu-id="c86cb-232">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-232">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a></span></span><br><span data-ttu-id="c86cb-233">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-233">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a></span></span><br><span data-ttu-id="c86cb-234">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-234">
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></span></span></td>
-    <td><span data-ttu-id="76d88-221">non disponible</span><span class="sxs-lookup"><span data-stu-id="76d88-221">not available</span></span></td>
+    <td><span data-ttu-id="c86cb-235">Non disponible</span><span class="sxs-lookup"><span data-stu-id="c86cb-235">Not available</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="76d88-222">Office 2016 pour Windows</span><span class="sxs-lookup"><span data-stu-id="76d88-222">Office 2016 for Windows</span></span></td>
-    <td> <span data-ttu-id="76d88-223">- Lecture de message</span><span class="sxs-lookup"><span data-stu-id="76d88-223">- Mail Read</span></span><br><span data-ttu-id="76d88-224">
-      - Composition de message</span><span class="sxs-lookup"><span data-stu-id="76d88-224">
-      - Mail Compose</span></span><br><span data-ttu-id="76d88-225">
-      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="76d88-225">
-      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></span></span><br><span data-ttu-id="76d88-226">
-      - Modules</span><span class="sxs-lookup"><span data-stu-id="76d88-226">
+    <td><span data-ttu-id="c86cb-236">Office 2016 pour Windows</span><span class="sxs-lookup"><span data-stu-id="c86cb-236">Office 2016 for Windows</span></span></td>
+    <td> <span data-ttu-id="c86cb-237">- Lecture de message</span><span class="sxs-lookup"><span data-stu-id="c86cb-237">- Mail Read</span></span><br><span data-ttu-id="c86cb-238">
+      - Composition de message</span><span class="sxs-lookup"><span data-stu-id="c86cb-238">
+      - Mail Compose</span></span><br><span data-ttu-id="c86cb-239">
+      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-239">
+      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></span></span><br><span data-ttu-id="c86cb-240">
+      - Modules</span><span class="sxs-lookup"><span data-stu-id="c86cb-240">
       - Modules</span></span></td>
-    <td> <span data-ttu-id="76d88-227">- <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-227">- <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a></span></span><br><span data-ttu-id="76d88-228">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a></span><span class="sxs-lookup"><span data-stu-id="76d88-228">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a></span></span><br><span data-ttu-id="76d88-229">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a></span><span class="sxs-lookup"><span data-stu-id="76d88-229">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a></span></span><br><span data-ttu-id="76d88-230">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></span><span class="sxs-lookup"><span data-stu-id="76d88-230">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></span></span><br><span data-ttu-id="76d88-231">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></span><span class="sxs-lookup"><span data-stu-id="76d88-231">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></span></span><br><span data-ttu-id="76d88-232">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Mailbox 1.6</a></span><span class="sxs-lookup"><span data-stu-id="76d88-232">
+    <td> <span data-ttu-id="c86cb-241">- <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-241">- <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a></span></span><br><span data-ttu-id="c86cb-242">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-242">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a></span></span><br><span data-ttu-id="c86cb-243">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-243">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a></span></span><br><span data-ttu-id="c86cb-244">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-244">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></span></span><br><span data-ttu-id="c86cb-245">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-245">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></span></span><br><span data-ttu-id="c86cb-246">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Mailbox 1.6</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-246">
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Mailbox 1.6</a></span></span></td>
-    <td><span data-ttu-id="76d88-233">non disponible</span><span class="sxs-lookup"><span data-stu-id="76d88-233">not available</span></span></td> 
+    <td><span data-ttu-id="c86cb-247">Non disponible</span><span class="sxs-lookup"><span data-stu-id="c86cb-247">Not available</span></span></td> 
   </tr>
   <tr>
-    <td><span data-ttu-id="76d88-234">Office pour iOS</span><span class="sxs-lookup"><span data-stu-id="76d88-234">Office for iOS</span></span></td>
-    <td> <span data-ttu-id="76d88-235">- Lecture de message</span><span class="sxs-lookup"><span data-stu-id="76d88-235">- Mail Read</span></span><br><span data-ttu-id="76d88-236">
-      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="76d88-236">
+    <td><span data-ttu-id="c86cb-248">Office pour iOS</span><span class="sxs-lookup"><span data-stu-id="c86cb-248">Office for iOS</span></span></td>
+    <td> <span data-ttu-id="c86cb-249">- Lecture de message</span><span class="sxs-lookup"><span data-stu-id="c86cb-249">- Mail Read</span></span><br><span data-ttu-id="c86cb-250">
+      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-250">
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></span></span></td>
-    <td> <span data-ttu-id="76d88-237">- <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-237">- <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a></span></span><br><span data-ttu-id="76d88-238">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a></span><span class="sxs-lookup"><span data-stu-id="76d88-238">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a></span></span><br><span data-ttu-id="76d88-239">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a></span><span class="sxs-lookup"><span data-stu-id="76d88-239">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a></span></span><br><span data-ttu-id="76d88-240">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></span><span class="sxs-lookup"><span data-stu-id="76d88-240">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></span></span><br><span data-ttu-id="76d88-241">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></span><span class="sxs-lookup"><span data-stu-id="76d88-241">
+    <td> <span data-ttu-id="c86cb-251">- <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-251">- <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a></span></span><br><span data-ttu-id="c86cb-252">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-252">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a></span></span><br><span data-ttu-id="c86cb-253">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-253">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a></span></span><br><span data-ttu-id="c86cb-254">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-254">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></span></span><br><span data-ttu-id="c86cb-255">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-255">
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></span></span></td>    
-    <td><span data-ttu-id="76d88-242">non disponible</span><span class="sxs-lookup"><span data-stu-id="76d88-242">not available</span></span></td>
+    <td><span data-ttu-id="c86cb-256">Non disponible</span><span class="sxs-lookup"><span data-stu-id="c86cb-256">Not available</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="76d88-243">Office 2016 pour Mac</span><span class="sxs-lookup"><span data-stu-id="76d88-243">Office 2016 for Mac</span></span></td>
-    <td> <span data-ttu-id="76d88-244">- Lecture de message</span><span class="sxs-lookup"><span data-stu-id="76d88-244">- Mail Read</span></span><br><span data-ttu-id="76d88-245">
-      - Composition de message</span><span class="sxs-lookup"><span data-stu-id="76d88-245">
-      - Mail Compose</span></span><br><span data-ttu-id="76d88-246">
-      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="76d88-246">
+    <td><span data-ttu-id="c86cb-257">Office 2016 pour Mac</span><span class="sxs-lookup"><span data-stu-id="c86cb-257">Office 2016 for Mac</span></span></td>
+    <td> <span data-ttu-id="c86cb-258">- Lecture de message</span><span class="sxs-lookup"><span data-stu-id="c86cb-258">- Mail Read</span></span><br><span data-ttu-id="c86cb-259">
+      - Composition de message</span><span class="sxs-lookup"><span data-stu-id="c86cb-259">
+      - Mail Compose</span></span><br><span data-ttu-id="c86cb-260">
+      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-260">
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></span></span></td>
-    <td> <span data-ttu-id="76d88-247">- <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-247">- <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a></span></span><br><span data-ttu-id="76d88-248">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a></span><span class="sxs-lookup"><span data-stu-id="76d88-248">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a></span></span><br><span data-ttu-id="76d88-249">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a></span><span class="sxs-lookup"><span data-stu-id="76d88-249">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a></span></span><br><span data-ttu-id="76d88-250">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></span><span class="sxs-lookup"><span data-stu-id="76d88-250">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></span></span><br><span data-ttu-id="76d88-251">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></span><span class="sxs-lookup"><span data-stu-id="76d88-251">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></span></span><br><span data-ttu-id="76d88-252">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Mailbox 1.6</a></span><span class="sxs-lookup"><span data-stu-id="76d88-252">
+    <td> <span data-ttu-id="c86cb-261">- <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-261">- <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a></span></span><br><span data-ttu-id="c86cb-262">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-262">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a></span></span><br><span data-ttu-id="c86cb-263">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-263">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a></span></span><br><span data-ttu-id="c86cb-264">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-264">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></span></span><br><span data-ttu-id="c86cb-265">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-265">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></span></span><br><span data-ttu-id="c86cb-266">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Mailbox 1.6</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-266">
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Mailbox 1.6</a></span></span></td>
-    <td><span data-ttu-id="76d88-253">non disponible</span><span class="sxs-lookup"><span data-stu-id="76d88-253">not available</span></span></td>
+    <td><span data-ttu-id="c86cb-267">Non disponible</span><span class="sxs-lookup"><span data-stu-id="c86cb-267">Not available</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="76d88-254">Office pour Android</span><span class="sxs-lookup"><span data-stu-id="76d88-254">Office for Android</span></span></td>
-    <td> <span data-ttu-id="76d88-255">- Lecture de message</span><span class="sxs-lookup"><span data-stu-id="76d88-255">- Mail Read</span></span><br><span data-ttu-id="76d88-256">
-      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="76d88-256">
+    <td><span data-ttu-id="c86cb-268">Office pour Android</span><span class="sxs-lookup"><span data-stu-id="c86cb-268">Office for Android</span></span></td>
+    <td> <span data-ttu-id="c86cb-269">- Lecture de message</span><span class="sxs-lookup"><span data-stu-id="c86cb-269">- Mail Read</span></span><br><span data-ttu-id="c86cb-270">
+      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-270">
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></span></span></td>
-    <td> <span data-ttu-id="76d88-257">- <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-257">- <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a></span></span><br><span data-ttu-id="76d88-258">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a></span><span class="sxs-lookup"><span data-stu-id="76d88-258">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a></span></span><br><span data-ttu-id="76d88-259">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a></span><span class="sxs-lookup"><span data-stu-id="76d88-259">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a></span></span><br><span data-ttu-id="76d88-260">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></span><span class="sxs-lookup"><span data-stu-id="76d88-260">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></span></span><br><span data-ttu-id="76d88-261">
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></span><span class="sxs-lookup"><span data-stu-id="76d88-261">
+    <td> <span data-ttu-id="c86cb-271">- <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-271">- <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Mailbox 1.1</a></span></span><br><span data-ttu-id="c86cb-272">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-272">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a></span></span><br><span data-ttu-id="c86cb-273">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-273">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a></span></span><br><span data-ttu-id="c86cb-274">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-274">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></span></span><br><span data-ttu-id="c86cb-275">
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-275">
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></span></span></td>
-    <td><span data-ttu-id="76d88-262">non disponible</span><span class="sxs-lookup"><span data-stu-id="76d88-262">not available</span></span></td>
+    <td><span data-ttu-id="c86cb-276">Non disponible</span><span class="sxs-lookup"><span data-stu-id="c86cb-276">Not available</span></span></td>
   </tr>
 </table>
 
 <br/>
 
-## <a name="word"></a><span data-ttu-id="76d88-263">Word</span><span class="sxs-lookup"><span data-stu-id="76d88-263">Word</span></span>
+## <a name="word"></a><span data-ttu-id="c86cb-277">Word</span><span class="sxs-lookup"><span data-stu-id="c86cb-277">Word</span></span>
 
 <table style="width:80%">
   <tr>
-    <th><span data-ttu-id="76d88-264">Plate-forme</span><span class="sxs-lookup"><span data-stu-id="76d88-264">Platform</span></span></th>
-    <th><span data-ttu-id="76d88-265">Points d’extension</span><span class="sxs-lookup"><span data-stu-id="76d88-265">Extension points</span></span></th> 
-    <th><span data-ttu-id="76d88-266">Ensembles de conditions requises de l’API</span><span class="sxs-lookup"><span data-stu-id="76d88-266">API requirement sets</span></span></th> 
-    <th><span data-ttu-id="76d88-267"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>API communes</b></a></span><span class="sxs-lookup"><span data-stu-id="76d88-267"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></span></span></th> 
+    <th><span data-ttu-id="c86cb-278">Plate-forme</span><span class="sxs-lookup"><span data-stu-id="c86cb-278">Platform</span></span></th>
+    <th><span data-ttu-id="c86cb-279">Points d’extension</span><span class="sxs-lookup"><span data-stu-id="c86cb-279">Extension points</span></span></th> 
+    <th><span data-ttu-id="c86cb-280">Ensembles de conditions requises de l’API</span><span class="sxs-lookup"><span data-stu-id="c86cb-280">API requirement sets</span></span></th> 
+    <th><span data-ttu-id="c86cb-281"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>API communes</b></a></span><span class="sxs-lookup"><span data-stu-id="c86cb-281"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></span></span></th> 
   </tr> 
   </tr>
   <tr>
-    <td><span data-ttu-id="76d88-268">Office Online</span><span class="sxs-lookup"><span data-stu-id="76d88-268">Office Online</span></span></td>
-    <td> <span data-ttu-id="76d88-269">- Volet Office</span><span class="sxs-lookup"><span data-stu-id="76d88-269">- Taskpane</span></span><br><span data-ttu-id="76d88-270">
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="76d88-270">
+    <td><span data-ttu-id="c86cb-282">Office Online</span><span class="sxs-lookup"><span data-stu-id="c86cb-282">Office Online</span></span></td>
+    <td> <span data-ttu-id="c86cb-283">- Volet Office</span><span class="sxs-lookup"><span data-stu-id="c86cb-283">- Taskpane</span></span><br><span data-ttu-id="c86cb-284">
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-284">
          - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></span></span></td>
-    <td> <span data-ttu-id="76d88-271">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-271">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a></span></span><br><span data-ttu-id="76d88-272">
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a></span><span class="sxs-lookup"><span data-stu-id="76d88-272">
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a></span></span><br><span data-ttu-id="76d88-273">
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a></span><span class="sxs-lookup"><span data-stu-id="76d88-273">
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a></span></span><br><span data-ttu-id="76d88-274">
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-274">
+    <td> <span data-ttu-id="c86cb-285">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-285">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a></span></span><br><span data-ttu-id="c86cb-286">
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-286">
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a></span></span><br><span data-ttu-id="c86cb-287">
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-287">
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a></span></span><br><span data-ttu-id="c86cb-288">
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-288">
          - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span></span></td>
-    <td> <span data-ttu-id="76d88-275">- BindingEvents</span><span class="sxs-lookup"><span data-stu-id="76d88-275">-BindingEvents</span></span><br><span data-ttu-id="76d88-276">
-         - CustomXmlParts</span><span class="sxs-lookup"><span data-stu-id="76d88-276">
-         -</span></span><br><span data-ttu-id="76d88-277">
-         - MatrixBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-277">
-         -MatrixBindings</span></span><br><span data-ttu-id="76d88-278">
-         - MatrixCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-278">
-         -MatrixCoercion</span></span><br><span data-ttu-id="76d88-279">
-         - TableBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-279">
-         -TableBindings</span></span><br><span data-ttu-id="76d88-280">
-         - TableCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-280">
-         -TableCoercion</span></span><br><span data-ttu-id="76d88-281">
-         - TextBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-281">
-         -TextBindings</span></span><br><span data-ttu-id="76d88-282">
-         - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="76d88-282">
-         -DocumentEvents</span></span><br><span data-ttu-id="76d88-283">
-         - TextFile</span><span class="sxs-lookup"><span data-stu-id="76d88-283">
-         -TextFile</span></span><br><span data-ttu-id="76d88-284">
-         - ImageCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-284">
-         -ImageCoercion</span></span><br><span data-ttu-id="76d88-285">
-         - Settings</span><span class="sxs-lookup"><span data-stu-id="76d88-285">
-         - Settings</span></span><br><span data-ttu-id="76d88-286">
-         - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-286">
+    <td> <span data-ttu-id="c86cb-289">- BindingEvents</span><span class="sxs-lookup"><span data-stu-id="c86cb-289">-BindingEvents</span></span><br><span data-ttu-id="c86cb-290">
+         - CustomXmlParts</span><span class="sxs-lookup"><span data-stu-id="c86cb-290">
+         -</span></span><br><span data-ttu-id="c86cb-291">
+         - MatrixBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-291">
+         -MatrixBindings</span></span><br><span data-ttu-id="c86cb-292">
+         - MatrixCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-292">
+         -MatrixCoercion</span></span><br><span data-ttu-id="c86cb-293">
+         - TableBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-293">
+         -TableBindings</span></span><br><span data-ttu-id="c86cb-294">
+         - TableCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-294">
+         -TableCoercion</span></span><br><span data-ttu-id="c86cb-295">
+         - TextBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-295">
+         -TextBindings</span></span><br><span data-ttu-id="c86cb-296">
+         - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="c86cb-296">
+         -DocumentEvents</span></span><br><span data-ttu-id="c86cb-297">
+         - TextFile</span><span class="sxs-lookup"><span data-stu-id="c86cb-297">
+         -TextFile</span></span><br><span data-ttu-id="c86cb-298">
+         - ImageCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-298">
+         -ImageCoercion</span></span><br><span data-ttu-id="c86cb-299">
+         - Paramètres</span><span class="sxs-lookup"><span data-stu-id="c86cb-299">
+         - Settings</span></span><br><span data-ttu-id="c86cb-300">
+         - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-300">
          -TextCoercion</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="76d88-287">Office 2013 pour Windows</span><span class="sxs-lookup"><span data-stu-id="76d88-287">Office 2013 for Windows</span></span></td>
-    <td> <span data-ttu-id="76d88-288">- Volet Office</span><span class="sxs-lookup"><span data-stu-id="76d88-288">- Taskpane</span></span></td>
-    <td> <span data-ttu-id="76d88-289">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-289">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span></span></td>
-    <td> <span data-ttu-id="76d88-290">- BindingEvents</span><span class="sxs-lookup"><span data-stu-id="76d88-290">-BindingEvents</span></span><br><span data-ttu-id="76d88-291">
-         - CompressedFile</span><span class="sxs-lookup"><span data-stu-id="76d88-291">
-         -CompressedFile</span></span><br><span data-ttu-id="76d88-292">
-         - CustomXmlPart</span><span class="sxs-lookup"><span data-stu-id="76d88-292">
-         -CustomXmlPart</span></span><br><span data-ttu-id="76d88-293">
-         - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="76d88-293">
-         -DocumentEvents</span></span><br><span data-ttu-id="76d88-294">
-         - File</span><span class="sxs-lookup"><span data-stu-id="76d88-294">
-         - File</span></span><br><span data-ttu-id="76d88-295">
-         - HtmlCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-295">
-         -HtmlCoercion</span></span><br><span data-ttu-id="76d88-296">
-         - ImageCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-296">
-         -ImageCoercion</span></span><br><span data-ttu-id="76d88-297">
-         - OoxmlCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-297">
-         -OoxmlCoercion</span></span><br><span data-ttu-id="76d88-298">
-         - TableBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-298">
-         -TableBindings</span></span><br><span data-ttu-id="76d88-299">
-         - TableCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-299">
-         -TableCoercion</span></span><br><span data-ttu-id="76d88-300">
-         - TextBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-300">
-         -TextBindings</span></span><br><span data-ttu-id="76d88-301">
-         - TextFile</span><span class="sxs-lookup"><span data-stu-id="76d88-301">
-         -TextFile</span></span><br><span data-ttu-id="76d88-302">
-         - Settings</span><span class="sxs-lookup"><span data-stu-id="76d88-302">
-         - Settings</span></span><br><span data-ttu-id="76d88-303">
-         - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-303">
-         -TextCoercion</span></span><br><span data-ttu-id="76d88-304">
-         - MatrixCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-304">
-         -MatrixCoercion</span></span><br><span data-ttu-id="76d88-305">
-         - MatrixBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-305">
+    <td><span data-ttu-id="c86cb-301">Office 2013 pour Windows</span><span class="sxs-lookup"><span data-stu-id="c86cb-301">Office 2013 for Windows</span></span></td>
+    <td> <span data-ttu-id="c86cb-302">- Volet Office</span><span class="sxs-lookup"><span data-stu-id="c86cb-302">- Taskpane</span></span></td>
+    <td> <span data-ttu-id="c86cb-303">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-303">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span></span></td>
+    <td> <span data-ttu-id="c86cb-304">- BindingEvents</span><span class="sxs-lookup"><span data-stu-id="c86cb-304">-BindingEvents</span></span><br><span data-ttu-id="c86cb-305">
+         - CompressedFile</span><span class="sxs-lookup"><span data-stu-id="c86cb-305">
+         -CompressedFile</span></span><br><span data-ttu-id="c86cb-306">
+         - CustomXmlPart</span><span class="sxs-lookup"><span data-stu-id="c86cb-306">
+         -CustomXmlPart</span></span><br><span data-ttu-id="c86cb-307">
+         - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="c86cb-307">
+         -DocumentEvents</span></span><br><span data-ttu-id="c86cb-308">
+         - File</span><span class="sxs-lookup"><span data-stu-id="c86cb-308">
+         - File</span></span><br><span data-ttu-id="c86cb-309">
+         - HtmlCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-309">
+         -HtmlCoercion</span></span><br><span data-ttu-id="c86cb-310">
+         - ImageCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-310">
+         -ImageCoercion</span></span><br><span data-ttu-id="c86cb-311">
+         - OoxmlCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-311">
+         -OoxmlCoercion</span></span><br><span data-ttu-id="c86cb-312">
+         - TableBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-312">
+         -TableBindings</span></span><br><span data-ttu-id="c86cb-313">
+         - TableCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-313">
+         -TableCoercion</span></span><br><span data-ttu-id="c86cb-314">
+         - TextBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-314">
+         -TextBindings</span></span><br><span data-ttu-id="c86cb-315">
+         - TextFile</span><span class="sxs-lookup"><span data-stu-id="c86cb-315">
+         -TextFile</span></span><br><span data-ttu-id="c86cb-316">
+         - Paramètres</span><span class="sxs-lookup"><span data-stu-id="c86cb-316">
+         - Settings</span></span><br><span data-ttu-id="c86cb-317">
+         - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-317">
+         -TextCoercion</span></span><br><span data-ttu-id="c86cb-318">
+         - MatrixCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-318">
+         -MatrixCoercion</span></span><br><span data-ttu-id="c86cb-319">
+         - MatrixBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-319">
          - Matrix Bindings</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="76d88-306">Office 2016 pour Windows</span><span class="sxs-lookup"><span data-stu-id="76d88-306">Office 2016 for Windows</span></span></td>
-    <td> <span data-ttu-id="76d88-307">- Volet Office</span><span class="sxs-lookup"><span data-stu-id="76d88-307">- Taskpane</span></span><br><span data-ttu-id="76d88-308">
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="76d88-308">
+    <td><span data-ttu-id="c86cb-320">Office 2016 pour Windows</span><span class="sxs-lookup"><span data-stu-id="c86cb-320">Office 2016 for Windows</span></span></td>
+    <td> <span data-ttu-id="c86cb-321">- Volet Office</span><span class="sxs-lookup"><span data-stu-id="c86cb-321">- Taskpane</span></span><br><span data-ttu-id="c86cb-322">
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-322">
          - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></span></span></td>
-    <td> <span data-ttu-id="76d88-309">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-309">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a></span></span><br><span data-ttu-id="76d88-310">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a></span><span class="sxs-lookup"><span data-stu-id="76d88-310">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a></span></span><br><span data-ttu-id="76d88-311">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a></span><span class="sxs-lookup"><span data-stu-id="76d88-311">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a></span></span><br><span data-ttu-id="76d88-312">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-312">
+    <td> <span data-ttu-id="c86cb-323">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-323">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a></span></span><br><span data-ttu-id="c86cb-324">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-324">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a></span></span><br><span data-ttu-id="c86cb-325">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-325">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a></span></span><br><span data-ttu-id="c86cb-326">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-326">
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span></span></td>
-    <td> <span data-ttu-id="76d88-313">- BindingEvents</span><span class="sxs-lookup"><span data-stu-id="76d88-313">-BindingEvents</span></span><br><span data-ttu-id="76d88-314">
-         - CompressedFile</span><span class="sxs-lookup"><span data-stu-id="76d88-314">
-         -CompressedFile</span></span><br><span data-ttu-id="76d88-315">
-         - CustomXmlPart</span><span class="sxs-lookup"><span data-stu-id="76d88-315">
-         -CustomXmlPart</span></span><br><span data-ttu-id="76d88-316">
-         - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="76d88-316">
-         -DocumentEvents</span></span><br><span data-ttu-id="76d88-317">
-         - File</span><span class="sxs-lookup"><span data-stu-id="76d88-317">
-         - File</span></span><br><span data-ttu-id="76d88-318">
-         - HtmlCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-318">
-         -HtmlCoercion</span></span><br><span data-ttu-id="76d88-319">
-         - ImageCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-319">
-         -ImageCoercion</span></span><br><span data-ttu-id="76d88-320">
-         - OoxmlCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-320">
-         -OoxmlCoercion</span></span><br><span data-ttu-id="76d88-321">
-         - TableBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-321">
-         -TableBindings</span></span><br><span data-ttu-id="76d88-322">
-         - TableCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-322">
-         -TableCoercion</span></span><br><span data-ttu-id="76d88-323">
-         - TextBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-323">
-         -TextBindings</span></span><br><span data-ttu-id="76d88-324">
-         - TextFile</span><span class="sxs-lookup"><span data-stu-id="76d88-324">
-         -TextFile</span></span><br><span data-ttu-id="76d88-325">
-         - Settings</span><span class="sxs-lookup"><span data-stu-id="76d88-325">
-         - Settings</span></span><br><span data-ttu-id="76d88-326">
-         - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-326">
-         -TextCoercion</span></span><br><span data-ttu-id="76d88-327">
-         - MatrixCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-327">
-         -MatrixCoercion</span></span><br><span data-ttu-id="76d88-328">
-         - MatrixBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-328">
+    <td> <span data-ttu-id="c86cb-327">- BindingEvents</span><span class="sxs-lookup"><span data-stu-id="c86cb-327">-BindingEvents</span></span><br><span data-ttu-id="c86cb-328">
+         - CompressedFile</span><span class="sxs-lookup"><span data-stu-id="c86cb-328">
+         -CompressedFile</span></span><br><span data-ttu-id="c86cb-329">
+         - CustomXmlPart</span><span class="sxs-lookup"><span data-stu-id="c86cb-329">
+         -CustomXmlPart</span></span><br><span data-ttu-id="c86cb-330">
+         - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="c86cb-330">
+         -DocumentEvents</span></span><br><span data-ttu-id="c86cb-331">
+         - File</span><span class="sxs-lookup"><span data-stu-id="c86cb-331">
+         - File</span></span><br><span data-ttu-id="c86cb-332">
+         - HtmlCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-332">
+         -HtmlCoercion</span></span><br><span data-ttu-id="c86cb-333">
+         - ImageCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-333">
+         -ImageCoercion</span></span><br><span data-ttu-id="c86cb-334">
+         - OoxmlCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-334">
+         -OoxmlCoercion</span></span><br><span data-ttu-id="c86cb-335">
+         - TableBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-335">
+         -TableBindings</span></span><br><span data-ttu-id="c86cb-336">
+         - TableCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-336">
+         -TableCoercion</span></span><br><span data-ttu-id="c86cb-337">
+         - TextBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-337">
+         -TextBindings</span></span><br><span data-ttu-id="c86cb-338">
+         - TextFile</span><span class="sxs-lookup"><span data-stu-id="c86cb-338">
+         -TextFile</span></span><br><span data-ttu-id="c86cb-339">
+         - Paramètres</span><span class="sxs-lookup"><span data-stu-id="c86cb-339">
+         - Settings</span></span><br><span data-ttu-id="c86cb-340">
+         - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-340">
+         -TextCoercion</span></span><br><span data-ttu-id="c86cb-341">
+         - MatrixCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-341">
+         -MatrixCoercion</span></span><br><span data-ttu-id="c86cb-342">
+         - MatrixBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-342">
          - Matrix Bindings</span></span> </td> 
   </tr>
   <tr>
-    <td><span data-ttu-id="76d88-329">Office pour iOS</span><span class="sxs-lookup"><span data-stu-id="76d88-329">Office for iOS</span></span></td>
-    <td> <span data-ttu-id="76d88-330">- Volet Office</span><span class="sxs-lookup"><span data-stu-id="76d88-330">- Taskpane</span></span></td>
-    <td> <span data-ttu-id="76d88-331">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-331">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a></span></span><br><span data-ttu-id="76d88-332">
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a></span><span class="sxs-lookup"><span data-stu-id="76d88-332">
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a></span></span><br><span data-ttu-id="76d88-333">
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a></span><span class="sxs-lookup"><span data-stu-id="76d88-333">
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a></span></span><br><span data-ttu-id="76d88-334">
+    <td><span data-ttu-id="c86cb-343">Office pour iOS</span><span class="sxs-lookup"><span data-stu-id="c86cb-343">Office for iOS</span></span></td>
+    <td> <span data-ttu-id="c86cb-344">- Volet Office</span><span class="sxs-lookup"><span data-stu-id="c86cb-344">- Taskpane</span></span></td>
+    <td> <span data-ttu-id="c86cb-345">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-345">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a></span></span><br><span data-ttu-id="c86cb-346">
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-346">
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a></span></span><br><span data-ttu-id="c86cb-347">
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-347">
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a></span></span><br><span data-ttu-id="c86cb-348">
          - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
-</span><span class="sxs-lookup"><span data-stu-id="76d88-334">
+</span><span class="sxs-lookup"><span data-stu-id="c86cb-348">
          - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
 </span></span></td>
-    <td> <span data-ttu-id="76d88-335">- BindingEvents</span><span class="sxs-lookup"><span data-stu-id="76d88-335">-BindingEvents</span></span><br><span data-ttu-id="76d88-336">
-         - CompressedFile</span><span class="sxs-lookup"><span data-stu-id="76d88-336">
-         -CompressedFile</span></span><br><span data-ttu-id="76d88-337">
-         - CustomXmlPart</span><span class="sxs-lookup"><span data-stu-id="76d88-337">
-         -CustomXmlPart</span></span><br><span data-ttu-id="76d88-338">
-         - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="76d88-338">
-         -DocumentEvents</span></span><br><span data-ttu-id="76d88-339">
-         - File</span><span class="sxs-lookup"><span data-stu-id="76d88-339">
-         - File</span></span><br><span data-ttu-id="76d88-340">
-         - HtmlCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-340">
-         -HtmlCoercion</span></span><br><span data-ttu-id="76d88-341">
-         - ImageCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-341">
-         -ImageCoercion</span></span><br><span data-ttu-id="76d88-342">
-         - OoxmlCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-342">
-         -OoxmlCoercion</span></span><br><span data-ttu-id="76d88-343">
-         - TableBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-343">
-         -TableBindings</span></span><br><span data-ttu-id="76d88-344">
-         - TableCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-344">
-         -TableCoercion</span></span><br><span data-ttu-id="76d88-345">
-         - TextBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-345">
-         -TextBindings</span></span><br><span data-ttu-id="76d88-346">
-         - TextFile</span><span class="sxs-lookup"><span data-stu-id="76d88-346">
-         -TextFile</span></span><br><span data-ttu-id="76d88-347">
-         - Settings</span><span class="sxs-lookup"><span data-stu-id="76d88-347">
-         - Settings</span></span><br><span data-ttu-id="76d88-348">
-         - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-348">
-         -TextCoercion</span></span><br><span data-ttu-id="76d88-349">
-         - MatrixCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-349">
-         -MatrixCoercion</span></span><br><span data-ttu-id="76d88-350">
-         - MatrixBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-350">
+    <td> <span data-ttu-id="c86cb-349">- BindingEvents</span><span class="sxs-lookup"><span data-stu-id="c86cb-349">-BindingEvents</span></span><br><span data-ttu-id="c86cb-350">
+         - CompressedFile</span><span class="sxs-lookup"><span data-stu-id="c86cb-350">
+         -CompressedFile</span></span><br><span data-ttu-id="c86cb-351">
+         - CustomXmlPart</span><span class="sxs-lookup"><span data-stu-id="c86cb-351">
+         -CustomXmlPart</span></span><br><span data-ttu-id="c86cb-352">
+         - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="c86cb-352">
+         -DocumentEvents</span></span><br><span data-ttu-id="c86cb-353">
+         - File</span><span class="sxs-lookup"><span data-stu-id="c86cb-353">
+         - File</span></span><br><span data-ttu-id="c86cb-354">
+         - HtmlCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-354">
+         -HtmlCoercion</span></span><br><span data-ttu-id="c86cb-355">
+         - ImageCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-355">
+         -ImageCoercion</span></span><br><span data-ttu-id="c86cb-356">
+         - OoxmlCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-356">
+         -OoxmlCoercion</span></span><br><span data-ttu-id="c86cb-357">
+         - TableBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-357">
+         -TableBindings</span></span><br><span data-ttu-id="c86cb-358">
+         - TableCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-358">
+         -TableCoercion</span></span><br><span data-ttu-id="c86cb-359">
+         - TextBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-359">
+         -TextBindings</span></span><br><span data-ttu-id="c86cb-360">
+         - TextFile</span><span class="sxs-lookup"><span data-stu-id="c86cb-360">
+         -TextFile</span></span><br><span data-ttu-id="c86cb-361">
+         - Paramètres</span><span class="sxs-lookup"><span data-stu-id="c86cb-361">
+         - Settings</span></span><br><span data-ttu-id="c86cb-362">
+         - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-362">
+         -TextCoercion</span></span><br><span data-ttu-id="c86cb-363">
+         - MatrixCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-363">
+         -MatrixCoercion</span></span><br><span data-ttu-id="c86cb-364">
+         - MatrixBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-364">
          - Matrix Bindings</span></span> </td> 
   </tr>
   <tr>
-    <td><span data-ttu-id="76d88-351">Office 2016 pour Mac</span><span class="sxs-lookup"><span data-stu-id="76d88-351">Office 2016 for Mac</span></span></td>
-    <td> <span data-ttu-id="76d88-352">- Volet Office</span><span class="sxs-lookup"><span data-stu-id="76d88-352">- Taskpane</span></span><br><span data-ttu-id="76d88-353">
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="76d88-353">
+    <td><span data-ttu-id="c86cb-365">Office 2016 pour Mac</span><span class="sxs-lookup"><span data-stu-id="c86cb-365">Office 2016 for Mac</span></span></td>
+    <td> <span data-ttu-id="c86cb-366">- Volet Office</span><span class="sxs-lookup"><span data-stu-id="c86cb-366">- Taskpane</span></span><br><span data-ttu-id="c86cb-367">
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-367">
          - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></span></span></td>
-    <td> <span data-ttu-id="76d88-354">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-354">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a></span></span><br><span data-ttu-id="76d88-355">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a></span><span class="sxs-lookup"><span data-stu-id="76d88-355">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a></span></span><br><span data-ttu-id="76d88-356">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a></span><span class="sxs-lookup"><span data-stu-id="76d88-356">
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a></span></span><br><span data-ttu-id="76d88-357">
+    <td> <span data-ttu-id="c86cb-368">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-368">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a></span></span><br><span data-ttu-id="c86cb-369">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-369">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a></span></span><br><span data-ttu-id="c86cb-370">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-370">
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a></span></span><br><span data-ttu-id="c86cb-371">
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
-</span><span class="sxs-lookup"><span data-stu-id="76d88-357">
+</span><span class="sxs-lookup"><span data-stu-id="c86cb-371">
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
 </span></span></td>
-    <td> <span data-ttu-id="76d88-358">- BindingEvents</span><span class="sxs-lookup"><span data-stu-id="76d88-358">-BindingEvents</span></span><br><span data-ttu-id="76d88-359">
-         - CompressedFile</span><span class="sxs-lookup"><span data-stu-id="76d88-359">
-         -CompressedFile</span></span><br><span data-ttu-id="76d88-360">
-         - CustomXmlPart</span><span class="sxs-lookup"><span data-stu-id="76d88-360">
-         -CustomXmlPart</span></span><br><span data-ttu-id="76d88-361">
-         - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="76d88-361">
-         -DocumentEvents</span></span><br><span data-ttu-id="76d88-362">
-         - File</span><span class="sxs-lookup"><span data-stu-id="76d88-362">
-         - File</span></span><br><span data-ttu-id="76d88-363">
-         - HtmlCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-363">
-         -HtmlCoercion</span></span><br><span data-ttu-id="76d88-364">
-         - ImageCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-364">
-         -ImageCoercion</span></span><br><span data-ttu-id="76d88-365">
-         - OoxmlCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-365">
-         -OoxmlCoercion</span></span><br><span data-ttu-id="76d88-366">
-         - TableBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-366">
-         -TableBindings</span></span><br><span data-ttu-id="76d88-367">
-         - TableCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-367">
-         -TableCoercion</span></span><br><span data-ttu-id="76d88-368">
-         - TextBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-368">
-         -TextBindings</span></span><br><span data-ttu-id="76d88-369">
-         - TextFile</span><span class="sxs-lookup"><span data-stu-id="76d88-369">
-         -TextFile</span></span><br><span data-ttu-id="76d88-370">
-         - Settings</span><span class="sxs-lookup"><span data-stu-id="76d88-370">
-         - Settings</span></span><br><span data-ttu-id="76d88-371">
-         - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-371">
-         -TextCoercion</span></span><br><span data-ttu-id="76d88-372">
-         - MatrixCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-372">
-         -MatrixCoercion</span></span><br><span data-ttu-id="76d88-373">
-         - MatrixBindings</span><span class="sxs-lookup"><span data-stu-id="76d88-373">
+    <td> <span data-ttu-id="c86cb-372">- BindingEvents</span><span class="sxs-lookup"><span data-stu-id="c86cb-372">-BindingEvents</span></span><br><span data-ttu-id="c86cb-373">
+         - CompressedFile</span><span class="sxs-lookup"><span data-stu-id="c86cb-373">
+         -CompressedFile</span></span><br><span data-ttu-id="c86cb-374">
+         - CustomXmlPart</span><span class="sxs-lookup"><span data-stu-id="c86cb-374">
+         -CustomXmlPart</span></span><br><span data-ttu-id="c86cb-375">
+         - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="c86cb-375">
+         -DocumentEvents</span></span><br><span data-ttu-id="c86cb-376">
+         - File</span><span class="sxs-lookup"><span data-stu-id="c86cb-376">
+         - File</span></span><br><span data-ttu-id="c86cb-377">
+         - HtmlCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-377">
+         -HtmlCoercion</span></span><br><span data-ttu-id="c86cb-378">
+         - ImageCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-378">
+         -ImageCoercion</span></span><br><span data-ttu-id="c86cb-379">
+         - OoxmlCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-379">
+         -OoxmlCoercion</span></span><br><span data-ttu-id="c86cb-380">
+         - TableBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-380">
+         -TableBindings</span></span><br><span data-ttu-id="c86cb-381">
+         - TableCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-381">
+         -TableCoercion</span></span><br><span data-ttu-id="c86cb-382">
+         - TextBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-382">
+         -TextBindings</span></span><br><span data-ttu-id="c86cb-383">
+         - TextFile</span><span class="sxs-lookup"><span data-stu-id="c86cb-383">
+         -TextFile</span></span><br><span data-ttu-id="c86cb-384">
+         - Paramètres</span><span class="sxs-lookup"><span data-stu-id="c86cb-384">
+         - Settings</span></span><br><span data-ttu-id="c86cb-385">
+         - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-385">
+         -TextCoercion</span></span><br><span data-ttu-id="c86cb-386">
+         - MatrixCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-386">
+         -MatrixCoercion</span></span><br><span data-ttu-id="c86cb-387">
+         - MatrixBindings</span><span class="sxs-lookup"><span data-stu-id="c86cb-387">
          - Matrix Bindings</span></span> </td> 
   </tr>
 </table>
 
 <br/>
 
-## <a name="powerpoint"></a><span data-ttu-id="76d88-374">PowerPoint</span><span class="sxs-lookup"><span data-stu-id="76d88-374">PowerPoint</span></span>
+## <a name="powerpoint"></a><span data-ttu-id="c86cb-388">PowerPoint</span><span class="sxs-lookup"><span data-stu-id="c86cb-388">PowerPoint</span></span>
 
 <table style="width:80%">
   <tr>
-    <th><span data-ttu-id="76d88-375">Plate-forme</span><span class="sxs-lookup"><span data-stu-id="76d88-375">Platform</span></span></th>
-    <th><span data-ttu-id="76d88-376">Points d’extension</span><span class="sxs-lookup"><span data-stu-id="76d88-376">Extension points</span></span></th> 
-    <th><span data-ttu-id="76d88-377">Ensembles de conditions requises de l’API</span><span class="sxs-lookup"><span data-stu-id="76d88-377">API requirement sets</span></span></th> 
-    <th><span data-ttu-id="76d88-378"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>API communes</b></a></span><span class="sxs-lookup"><span data-stu-id="76d88-378"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></span></span></th> 
+    <th><span data-ttu-id="c86cb-389">Plate-forme</span><span class="sxs-lookup"><span data-stu-id="c86cb-389">Platform</span></span></th>
+    <th><span data-ttu-id="c86cb-390">Points d’extension</span><span class="sxs-lookup"><span data-stu-id="c86cb-390">Extension points</span></span></th> 
+    <th><span data-ttu-id="c86cb-391">Ensembles de conditions requises de l’API</span><span class="sxs-lookup"><span data-stu-id="c86cb-391">API requirement sets</span></span></th> 
+    <th><span data-ttu-id="c86cb-392"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>API communes</b></a></span><span class="sxs-lookup"><span data-stu-id="c86cb-392"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></span></span></th> 
   </tr> 
   </tr>
   <tr>
-    <td><span data-ttu-id="76d88-379">Office Online</span><span class="sxs-lookup"><span data-stu-id="76d88-379">Office Online</span></span></td>
-    <td> <span data-ttu-id="76d88-380">- Contenu</span><span class="sxs-lookup"><span data-stu-id="76d88-380">- Content</span></span><br><span data-ttu-id="76d88-381">
-         - Volet Office</span><span class="sxs-lookup"><span data-stu-id="76d88-381">
-         - Taskpane</span></span><br><span data-ttu-id="76d88-382">
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="76d88-382">
+    <td><span data-ttu-id="c86cb-393">Office Online</span><span class="sxs-lookup"><span data-stu-id="c86cb-393">Office Online</span></span></td>
+    <td> <span data-ttu-id="c86cb-394">- Contenu</span><span class="sxs-lookup"><span data-stu-id="c86cb-394">- Content</span></span><br><span data-ttu-id="c86cb-395">
+         - Volet Office</span><span class="sxs-lookup"><span data-stu-id="c86cb-395">
+         - Taskpane</span></span><br><span data-ttu-id="c86cb-396">
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-396">
          - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></span></span></td>
-    <td> <span data-ttu-id="76d88-383">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-383">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span></span></td>
-    <td> <span data-ttu-id="76d88-384">- ActiveView</span><span class="sxs-lookup"><span data-stu-id="76d88-384">-ActiveView</span></span><br><span data-ttu-id="76d88-385">
-         - CompressedFile</span><span class="sxs-lookup"><span data-stu-id="76d88-385">
-         -CompressedFile</span></span><br><span data-ttu-id="76d88-386">
-         - File</span><span class="sxs-lookup"><span data-stu-id="76d88-386">
-         - File</span></span><br><span data-ttu-id="76d88-387">
-         - Selection</span><span class="sxs-lookup"><span data-stu-id="76d88-387">
-         - Selection</span></span><br><span data-ttu-id="76d88-388">
-         - Settings</span><span class="sxs-lookup"><span data-stu-id="76d88-388">
-         - Settings</span></span><br><span data-ttu-id="76d88-389">
-         - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-389">
-         -TextCoercion</span></span><br><span data-ttu-id="76d88-390">
-         - ImageCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-390">
+    <td> <span data-ttu-id="c86cb-397">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-397">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span></span></td>
+    <td> <span data-ttu-id="c86cb-398">- ActiveView</span><span class="sxs-lookup"><span data-stu-id="c86cb-398">-ActiveView</span></span><br><span data-ttu-id="c86cb-399">
+         - CompressedFile</span><span class="sxs-lookup"><span data-stu-id="c86cb-399">
+         -CompressedFile</span></span><br><span data-ttu-id="c86cb-400">
+         - File</span><span class="sxs-lookup"><span data-stu-id="c86cb-400">
+         - File</span></span><br><span data-ttu-id="c86cb-401">
+         - Sélection</span><span class="sxs-lookup"><span data-stu-id="c86cb-401">
+         - Selection</span></span><br><span data-ttu-id="c86cb-402">
+         - Paramètres</span><span class="sxs-lookup"><span data-stu-id="c86cb-402">
+         - Settings</span></span><br><span data-ttu-id="c86cb-403">
+         - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-403">
+         -TextCoercion</span></span><br><span data-ttu-id="c86cb-404">
+         - ImageCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-404">
          -ImageCoercion</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="76d88-391">Office 2013 pour Windows</span><span class="sxs-lookup"><span data-stu-id="76d88-391">Office 2013 for Windows</span></span></td>
-    <td> <span data-ttu-id="76d88-392">- Contenu</span><span class="sxs-lookup"><span data-stu-id="76d88-392">- Content</span></span><br><span data-ttu-id="76d88-393">
-         - Volet Office</span><span class="sxs-lookup"><span data-stu-id="76d88-393">
+    <td><span data-ttu-id="c86cb-405">Office 2013 pour Windows</span><span class="sxs-lookup"><span data-stu-id="c86cb-405">Office 2013 for Windows</span></span></td>
+    <td> <span data-ttu-id="c86cb-406">- Contenu</span><span class="sxs-lookup"><span data-stu-id="c86cb-406">- Content</span></span><br><span data-ttu-id="c86cb-407">
+         - Volet Office</span><span class="sxs-lookup"><span data-stu-id="c86cb-407">
          - Taskpane</span></span><br>
     </td>
-    <td> <span data-ttu-id="76d88-394">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
-</span><span class="sxs-lookup"><span data-stu-id="76d88-394">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
+    <td> <span data-ttu-id="c86cb-408">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
+</span><span class="sxs-lookup"><span data-stu-id="c86cb-408">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
 </span></span></td>
-    <td> <span data-ttu-id="76d88-395">- ActiveView</span><span class="sxs-lookup"><span data-stu-id="76d88-395">-ActiveView</span></span><br><span data-ttu-id="76d88-396">
-         - CompressedFile</span><span class="sxs-lookup"><span data-stu-id="76d88-396">
-         -CompressedFile</span></span><br><span data-ttu-id="76d88-397">
-         - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="76d88-397">
-         -DocumentEvents</span></span><br><span data-ttu-id="76d88-398">
-         - File</span><span class="sxs-lookup"><span data-stu-id="76d88-398">
-         - File</span></span><br><span data-ttu-id="76d88-399">
-         - Selection</span><span class="sxs-lookup"><span data-stu-id="76d88-399">
-         - Selection</span></span><br><span data-ttu-id="76d88-400">
-         - Settings</span><span class="sxs-lookup"><span data-stu-id="76d88-400">
-         - Settings</span></span><br><span data-ttu-id="76d88-401">
-         - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-401">
+    <td> <span data-ttu-id="c86cb-409">- ActiveView</span><span class="sxs-lookup"><span data-stu-id="c86cb-409">-ActiveView</span></span><br><span data-ttu-id="c86cb-410">
+         - CompressedFile</span><span class="sxs-lookup"><span data-stu-id="c86cb-410">
+         -CompressedFile</span></span><br><span data-ttu-id="c86cb-411">
+         - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="c86cb-411">
+         -DocumentEvents</span></span><br><span data-ttu-id="c86cb-412">
+         - File</span><span class="sxs-lookup"><span data-stu-id="c86cb-412">
+         - File</span></span><br><span data-ttu-id="c86cb-413">
+         - Sélection</span><span class="sxs-lookup"><span data-stu-id="c86cb-413">
+         - Selection</span></span><br><span data-ttu-id="c86cb-414">
+         - Paramètres</span><span class="sxs-lookup"><span data-stu-id="c86cb-414">
+         - Settings</span></span><br><span data-ttu-id="c86cb-415">
+         - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-415">
          -TextCoercion</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="76d88-402">Office 2016 pour Windows</span><span class="sxs-lookup"><span data-stu-id="76d88-402">Office 2016 for Windows</span></span></td>
-    <td> <span data-ttu-id="76d88-403">- Contenu</span><span class="sxs-lookup"><span data-stu-id="76d88-403">- Content</span></span><br><span data-ttu-id="76d88-404">
-         - Volet Office</span><span class="sxs-lookup"><span data-stu-id="76d88-404">
-         - Taskpane</span></span><br><span data-ttu-id="76d88-405">
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="76d88-405">
+    <td><span data-ttu-id="c86cb-416">Office 2016 pour Windows</span><span class="sxs-lookup"><span data-stu-id="c86cb-416">Office 2016 for Windows</span></span></td>
+    <td> <span data-ttu-id="c86cb-417">- Contenu</span><span class="sxs-lookup"><span data-stu-id="c86cb-417">- Content</span></span><br><span data-ttu-id="c86cb-418">
+         - Volet Office</span><span class="sxs-lookup"><span data-stu-id="c86cb-418">
+         - Taskpane</span></span><br><span data-ttu-id="c86cb-419">
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-419">
          - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></span></span></td>
-    <td> <span data-ttu-id="76d88-406">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-406">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span></span></td>
-    <td> <span data-ttu-id="76d88-407">- ActiveView</span><span class="sxs-lookup"><span data-stu-id="76d88-407">-ActiveView</span></span><br><span data-ttu-id="76d88-408">
-         - CompressedFile</span><span class="sxs-lookup"><span data-stu-id="76d88-408">
-         -CompressedFile</span></span><br><span data-ttu-id="76d88-409">
-         - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="76d88-409">
-         -DocumentEvents</span></span><br><span data-ttu-id="76d88-410">
-         - File</span><span class="sxs-lookup"><span data-stu-id="76d88-410">
-         - File</span></span><br><span data-ttu-id="76d88-411">
-         - Selection</span><span class="sxs-lookup"><span data-stu-id="76d88-411">
-         - Selection</span></span><br><span data-ttu-id="76d88-412">
-         - Settings</span><span class="sxs-lookup"><span data-stu-id="76d88-412">
-         - Settings</span></span><br><span data-ttu-id="76d88-413">
-         - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-413">
-         -TextCoercion</span></span><br><span data-ttu-id="76d88-414">
-         - ImageCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-414">
+    <td> <span data-ttu-id="c86cb-420">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-420">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span></span></td>
+    <td> <span data-ttu-id="c86cb-421">- ActiveView</span><span class="sxs-lookup"><span data-stu-id="c86cb-421">-ActiveView</span></span><br><span data-ttu-id="c86cb-422">
+         - CompressedFile</span><span class="sxs-lookup"><span data-stu-id="c86cb-422">
+         -CompressedFile</span></span><br><span data-ttu-id="c86cb-423">
+         - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="c86cb-423">
+         -DocumentEvents</span></span><br><span data-ttu-id="c86cb-424">
+         - File</span><span class="sxs-lookup"><span data-stu-id="c86cb-424">
+         - File</span></span><br><span data-ttu-id="c86cb-425">
+         - Sélection</span><span class="sxs-lookup"><span data-stu-id="c86cb-425">
+         - Selection</span></span><br><span data-ttu-id="c86cb-426">
+         - Paramètres</span><span class="sxs-lookup"><span data-stu-id="c86cb-426">
+         - Settings</span></span><br><span data-ttu-id="c86cb-427">
+         - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-427">
+         -TextCoercion</span></span><br><span data-ttu-id="c86cb-428">
+         - ImageCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-428">
          -ImageCoercion</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="76d88-415">Office pour iOS</span><span class="sxs-lookup"><span data-stu-id="76d88-415">Office for iOS</span></span></td>
-    <td> <span data-ttu-id="76d88-416">- Contenu</span><span class="sxs-lookup"><span data-stu-id="76d88-416">- Content</span></span><br><span data-ttu-id="76d88-417">
-         - Volet Office</span><span class="sxs-lookup"><span data-stu-id="76d88-417">
+    <td><span data-ttu-id="c86cb-429">Office pour iOS</span><span class="sxs-lookup"><span data-stu-id="c86cb-429">Office for iOS</span></span></td>
+    <td> <span data-ttu-id="c86cb-430">- Contenu</span><span class="sxs-lookup"><span data-stu-id="c86cb-430">- Content</span></span><br><span data-ttu-id="c86cb-431">
+         - Volet Office</span><span class="sxs-lookup"><span data-stu-id="c86cb-431">
          - Taskpane</span></span></td>
-    <td> <span data-ttu-id="76d88-418">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-418">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span></span></td>
-     <td> <span data-ttu-id="76d88-419">- ActiveView</span><span class="sxs-lookup"><span data-stu-id="76d88-419">-ActiveView</span></span><br><span data-ttu-id="76d88-420">
-         - CompressedFile</span><span class="sxs-lookup"><span data-stu-id="76d88-420">
-         -CompressedFile</span></span><br><span data-ttu-id="76d88-421">
-         - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="76d88-421">
-         -DocumentEvents</span></span><br><span data-ttu-id="76d88-422">
-         - File</span><span class="sxs-lookup"><span data-stu-id="76d88-422">
-         - File</span></span><br><span data-ttu-id="76d88-423">
-         - Selection</span><span class="sxs-lookup"><span data-stu-id="76d88-423">
-         - Selection</span></span><br><span data-ttu-id="76d88-424">
-         - Settings</span><span class="sxs-lookup"><span data-stu-id="76d88-424">
-         - Settings</span></span><br><span data-ttu-id="76d88-425">
-         - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-425">
-         -TextCoercion</span></span><br><span data-ttu-id="76d88-426">
-         - ImageCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-426">
+    <td> <span data-ttu-id="c86cb-432">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-432">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span></span></td>
+     <td> <span data-ttu-id="c86cb-433">- ActiveView</span><span class="sxs-lookup"><span data-stu-id="c86cb-433">-ActiveView</span></span><br><span data-ttu-id="c86cb-434">
+         - CompressedFile</span><span class="sxs-lookup"><span data-stu-id="c86cb-434">
+         -CompressedFile</span></span><br><span data-ttu-id="c86cb-435">
+         - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="c86cb-435">
+         -DocumentEvents</span></span><br><span data-ttu-id="c86cb-436">
+         - File</span><span class="sxs-lookup"><span data-stu-id="c86cb-436">
+         - File</span></span><br><span data-ttu-id="c86cb-437">
+         - Sélection</span><span class="sxs-lookup"><span data-stu-id="c86cb-437">
+         - Selection</span></span><br><span data-ttu-id="c86cb-438">
+         - Paramètres</span><span class="sxs-lookup"><span data-stu-id="c86cb-438">
+         - Settings</span></span><br><span data-ttu-id="c86cb-439">
+         - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-439">
+         -TextCoercion</span></span><br><span data-ttu-id="c86cb-440">
+         - ImageCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-440">
          -ImageCoercion</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="76d88-427">Office 2016 pour Mac</span><span class="sxs-lookup"><span data-stu-id="76d88-427">Office 2016 for Mac</span></span></td>
-    <td> <span data-ttu-id="76d88-428">- Contenu</span><span class="sxs-lookup"><span data-stu-id="76d88-428">- Content</span></span><br><span data-ttu-id="76d88-429">
-         - Volet Office</span><span class="sxs-lookup"><span data-stu-id="76d88-429">
-         - Taskpane</span></span><br><span data-ttu-id="76d88-430">
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="76d88-430">
+    <td><span data-ttu-id="c86cb-441">Office 2016 pour Mac</span><span class="sxs-lookup"><span data-stu-id="c86cb-441">Office 2016 for Mac</span></span></td>
+    <td> <span data-ttu-id="c86cb-442">- Contenu</span><span class="sxs-lookup"><span data-stu-id="c86cb-442">- Content</span></span><br><span data-ttu-id="c86cb-443">
+         - Volet Office</span><span class="sxs-lookup"><span data-stu-id="c86cb-443">
+         - Taskpane</span></span><br><span data-ttu-id="c86cb-444">
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-444">
          - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></span></span></td>
-    <td> <span data-ttu-id="76d88-431">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-431">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span></span></td>
-    <td> <span data-ttu-id="76d88-432">- ActiveView</span><span class="sxs-lookup"><span data-stu-id="76d88-432">-ActiveView</span></span><br><span data-ttu-id="76d88-433">
-         - CompressedFile</span><span class="sxs-lookup"><span data-stu-id="76d88-433">
-         -CompressedFile</span></span><br><span data-ttu-id="76d88-434">
-         - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="76d88-434">
-         -DocumentEvents</span></span><br><span data-ttu-id="76d88-435">
-         - File</span><span class="sxs-lookup"><span data-stu-id="76d88-435">
-         - File</span></span><br><span data-ttu-id="76d88-436">
-         - Selection</span><span class="sxs-lookup"><span data-stu-id="76d88-436">
-         - Selection</span></span><br><span data-ttu-id="76d88-437">
-         - Settings</span><span class="sxs-lookup"><span data-stu-id="76d88-437">
-         - Settings</span></span><br><span data-ttu-id="76d88-438">
-         - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-438">
-         -TextCoercion</span></span><br><span data-ttu-id="76d88-439">
-         - ImageCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-439">
+    <td> <span data-ttu-id="c86cb-445">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-445">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span></span></td>
+    <td> <span data-ttu-id="c86cb-446">- ActiveView</span><span class="sxs-lookup"><span data-stu-id="c86cb-446">-ActiveView</span></span><br><span data-ttu-id="c86cb-447">
+         - CompressedFile</span><span class="sxs-lookup"><span data-stu-id="c86cb-447">
+         -CompressedFile</span></span><br><span data-ttu-id="c86cb-448">
+         - DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="c86cb-448">
+         -DocumentEvents</span></span><br><span data-ttu-id="c86cb-449">
+         - File</span><span class="sxs-lookup"><span data-stu-id="c86cb-449">
+         - File</span></span><br><span data-ttu-id="c86cb-450">
+         - Sélection</span><span class="sxs-lookup"><span data-stu-id="c86cb-450">
+         - Selection</span></span><br><span data-ttu-id="c86cb-451">
+         - Paramètres</span><span class="sxs-lookup"><span data-stu-id="c86cb-451">
+         - Settings</span></span><br><span data-ttu-id="c86cb-452">
+         - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-452">
+         -TextCoercion</span></span><br><span data-ttu-id="c86cb-453">
+         - ImageCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-453">
          -ImageCoercion</span></span></td>
   </tr>
 </table>
 
 <br/>
 
-## <a name="onenote"></a><span data-ttu-id="76d88-440">OneNote</span><span class="sxs-lookup"><span data-stu-id="76d88-440">OneNote</span></span>
+## <a name="onenote"></a><span data-ttu-id="c86cb-454">OneNote</span><span class="sxs-lookup"><span data-stu-id="c86cb-454">OneNote</span></span>
 
 <table style="width:80%">
   <tr>
-    <th><span data-ttu-id="76d88-441">Plate-forme</span><span class="sxs-lookup"><span data-stu-id="76d88-441">Platform</span></span></th>
-    <th><span data-ttu-id="76d88-442">Points d’extension</span><span class="sxs-lookup"><span data-stu-id="76d88-442">Extension points</span></span></th> 
-    <th><span data-ttu-id="76d88-443">Ensembles de conditions requises de l’API</span><span class="sxs-lookup"><span data-stu-id="76d88-443">API requirement sets</span></span></th> 
-    <th><span data-ttu-id="76d88-444"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>API communes</b></a></span><span class="sxs-lookup"><span data-stu-id="76d88-444"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></span></span></th> 
+    <th><span data-ttu-id="c86cb-455">Plate-forme</span><span class="sxs-lookup"><span data-stu-id="c86cb-455">Platform</span></span></th>
+    <th><span data-ttu-id="c86cb-456">Points d’extension</span><span class="sxs-lookup"><span data-stu-id="c86cb-456">Extension points</span></span></th> 
+    <th><span data-ttu-id="c86cb-457">Ensembles de conditions requises de l’API</span><span class="sxs-lookup"><span data-stu-id="c86cb-457">API requirement sets</span></span></th> 
+    <th><span data-ttu-id="c86cb-458"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>API communes</b></a></span><span class="sxs-lookup"><span data-stu-id="c86cb-458"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>Common APIs</b></a></span></span></th> 
   </tr> 
   </tr>
   <tr>
-    <td><span data-ttu-id="76d88-445">Office Online</span><span class="sxs-lookup"><span data-stu-id="76d88-445">Office Online</span></span></td>
-    <td> <span data-ttu-id="76d88-446">- Contenu</span><span class="sxs-lookup"><span data-stu-id="76d88-446">- Content</span></span><br><span data-ttu-id="76d88-447">
-         - Volet Office</span><span class="sxs-lookup"><span data-stu-id="76d88-447">
-         - Taskpane</span></span><br><span data-ttu-id="76d88-448">
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="76d88-448">
+    <td><span data-ttu-id="c86cb-459">Office Online</span><span class="sxs-lookup"><span data-stu-id="c86cb-459">Office Online</span></span></td>
+    <td> <span data-ttu-id="c86cb-460">- Contenu</span><span class="sxs-lookup"><span data-stu-id="c86cb-460">- Content</span></span><br><span data-ttu-id="c86cb-461">
+         - Volet Office</span><span class="sxs-lookup"><span data-stu-id="c86cb-461">
+         - Taskpane</span></span><br><span data-ttu-id="c86cb-462">
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-462">
          - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Add-in Commands</a></span></span></td>
-    <td> <span data-ttu-id="76d88-449">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/onenote-api-requirement-sets">OneNoteApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-449">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/onenote-api-requirement-sets">OneNoteApi 1.1</a></span></span><br><span data-ttu-id="76d88-450">
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="76d88-450">
+    <td> <span data-ttu-id="c86cb-463">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/onenote-api-requirement-sets">OneNoteApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-463">- <a href="https://dev.office.com/reference/add-ins/requirement-sets/onenote-api-requirement-sets">OneNoteApi 1.1</a></span></span><br><span data-ttu-id="c86cb-464">
+         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span><span class="sxs-lookup"><span data-stu-id="c86cb-464">
          - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></span></span></td>
-    <td> <span data-ttu-id="76d88-451">- DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="76d88-451">-DocumentEvents</span></span><br><span data-ttu-id="76d88-452">
-         - Settings</span><span class="sxs-lookup"><span data-stu-id="76d88-452">
-         - Settings</span></span><br><span data-ttu-id="76d88-453">
-         - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-453">
-         -TextCoercion</span></span><br><span data-ttu-id="76d88-454">
-         - HtmlCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-454">
-         -HtmlCoercion</span></span><br><span data-ttu-id="76d88-455">
-         - ImageCoercion</span><span class="sxs-lookup"><span data-stu-id="76d88-455">
+    <td> <span data-ttu-id="c86cb-465">- DocumentEvents</span><span class="sxs-lookup"><span data-stu-id="c86cb-465">-DocumentEvents</span></span><br><span data-ttu-id="c86cb-466">
+         - Paramètres</span><span class="sxs-lookup"><span data-stu-id="c86cb-466">
+         - Settings</span></span><br><span data-ttu-id="c86cb-467">
+         - TextCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-467">
+         -TextCoercion</span></span><br><span data-ttu-id="c86cb-468">
+         - HtmlCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-468">
+         -HtmlCoercion</span></span><br><span data-ttu-id="c86cb-469">
+         - ImageCoercion</span><span class="sxs-lookup"><span data-stu-id="c86cb-469">
          -ImageCoercion</span></span></td>
-  </tr>
-  <tr>
-    <td><span data-ttu-id="76d88-456">Office 2013 pour Windows</span><span class="sxs-lookup"><span data-stu-id="76d88-456">Office 2013 for Windows</span></span></td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-  </tr> 
-  <tr>
-    <td><span data-ttu-id="76d88-457">Office 2016 pour Windows</span><span class="sxs-lookup"><span data-stu-id="76d88-457">Office 2016 for Windows</span></span></td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td> 
-  </tr>
-  <tr>
-    <td><span data-ttu-id="76d88-458">Office pour iOS</span><span class="sxs-lookup"><span data-stu-id="76d88-458">Office for iOS</span></span></td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-  </tr>
-  <tr>
-    <td><span data-ttu-id="76d88-459">Office 2016 pour Mac</span><span class="sxs-lookup"><span data-stu-id="76d88-459">Office 2016 for Mac</span></span></td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
   </tr>
 </table>
 
 <br/>
 
-<span data-ttu-id="76d88-460">\* = Nous y travaillons.</span><span class="sxs-lookup"><span data-stu-id="76d88-460">\* = We're working on it.</span></span> 
+## <a name="see-also"></a><span data-ttu-id="c86cb-470">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c86cb-470">See also</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="76d88-461">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="76d88-461">See also</span></span>
-
-- [<span data-ttu-id="76d88-462">Vue d’ensemble de la plateforme des compléments Office</span><span class="sxs-lookup"><span data-stu-id="76d88-462">Office Add-ins platform overview</span></span>](office-add-ins.md)
-- [<span data-ttu-id="76d88-463">Ensembles de conditions requises des API communes</span><span class="sxs-lookup"><span data-stu-id="76d88-463">Common API requirement sets</span></span>](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets)
-- [<span data-ttu-id="76d88-464">Ensembles de conditions requises concernant les commandes de complément</span><span class="sxs-lookup"><span data-stu-id="76d88-464">Add-in Commands requirement sets</span></span>](https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets)
-- [<span data-ttu-id="76d88-465">Référence de l’API JavaScript pour Office</span><span class="sxs-lookup"><span data-stu-id="76d88-465">JavaScript API for Office reference</span></span>](https://dev.office.com/reference/add-ins/javascript-api-for-office)
+- [<span data-ttu-id="c86cb-471">Vue d’ensemble de la plateforme des compléments Office</span><span class="sxs-lookup"><span data-stu-id="c86cb-471">Office Add-ins platform overview</span></span>](office-add-ins.md)
+- [<span data-ttu-id="c86cb-472">Ensembles de conditions requises des API communes</span><span class="sxs-lookup"><span data-stu-id="c86cb-472">Common API requirement sets</span></span>](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets)
+- [<span data-ttu-id="c86cb-473">Ensembles de conditions requises concernant les commandes de complément</span><span class="sxs-lookup"><span data-stu-id="c86cb-473">Add-in Commands requirement sets</span></span>](https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets)
+- [<span data-ttu-id="c86cb-474">Référence de l’API JavaScript pour Office</span><span class="sxs-lookup"><span data-stu-id="c86cb-474">JavaScript API for Office reference</span></span>](https://dev.office.com/reference/add-ins/javascript-api-for-office)
 
