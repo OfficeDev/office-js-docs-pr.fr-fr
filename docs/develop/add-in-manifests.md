@@ -2,12 +2,12 @@
 title: Manifeste XML des compléments Office
 description: ''
 ms.date: 02/09/2018
-ms.openlocfilehash: 24c212335fa50feb4d13b6069a24cacbd9849715
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 71c77e190d5d2d6cc67ada671b9efe3168b7f7b5
+ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437618"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "21703818"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifeste XML des compléments Office
 
@@ -107,11 +107,14 @@ Utilisez uniquement l’élément [AppDomains](https://dev.office.com/reference/
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>Spécifier les domaines que vous souhaitez ouvrir dans la fenêtre de complément
 
-Par défaut, si votre complément tente d’accéder à une URL située dans un autre domaine que celui qui héberge la page initiale (comme indiqué dans l’élément [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) du fichier manifeste), cette URL s’ouvre dans une nouvelle fenêtre de navigateur en dehors du volet de complément de l’application hôte Office. Ce comportement par défaut protège l’utilisateur contre toute navigation inattendue dans le volet de complément à partir d’éléments **iframe** incorporés.
+Lors de l'exécution dans Office Online, votre volet des tâches peut être redirigé vers n'importe quelle URL. Toutefois, sur une plate-forme bureau, si votre complément tente d’accéder à une URL située dans un autre domaine que celui qui héberge la page initiale (comme indiqué dans l’élément [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) du fichier manifeste), cette URL s’ouvre dans une nouvelle fenêtre de navigateur en dehors du volet de complément de l’application hôte Office.
 
-Pour remplacer ce comportement, spécifiez chaque domaine à ouvrir dans la fenêtre de complément dans la liste des domaines spécifiés dans l’élément [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) du fichier manifeste. Si le complément tente d’accéder à une URL dans un domaine qui n’est pas dans la liste, cette URL s’ouvre dans une nouvelle fenêtre de navigateur (en dehors du volet de complément).
+Pour remplacer ce comportement (Office sur bureau), spécifiez chaque domaine que vous voulez ouvrir dans la fenêtre de complément sur la liste des domaines spécifiés dans l’élément [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) du fichier manifeste. Si le complément tente d'accéder à une URL dans un domaine figurant dans la liste, il s'ouvre dans le volet des tâches dans Office sur bureau et Office Online. S'il tente d'accéder à une URL qui ne figure pas dans la liste, alors cette URL s'ouvre dans une nouvelle fenêtre de navigateur (en dehors du volet complémentaire).
 
-L’exemple de manifeste XML suivant héberge sa page de complément principale dans le domaine `https://www.contoso.com` comme indiqué dans l’élément **SourceLocation**. Il indique également le domaine `https://www.northwindtraders.com` dans un élément [AppDomain](http://msdn.microsoft.com/en-us/library/2a0353ec-5e09-6fbf-1636-4bb5dcebb9bf%28Office.15%29.aspx) au sein de la liste d’éléments **AppDomains**. Si le complément ouvre une page dans le domaine www.northwindtraders.com, cette page s’ouvre dans le volet de complément.
+> [!NOTE]
+> Ce comportement s'applique uniquement au volet racine du complément. Si une iframe est incorporée dans la page du complément, l'iframe peut être redirigé vers n'importe quelle URL, qu'elle soit répertoriée dans **AppDomains**, ou pas, même dans Office pour bureau.
+
+L’exemple de manifeste XML suivant héberge sa page de complément principale dans le domaine `https://www.contoso.com` comme indiqué dans l’élément **SourceLocation**. Il indique également le domaine `https://www.northwindtraders.com` dans un élément [AppDomain](https://dev.office.com/reference/add-ins/manifest/appdomain) au sein de la liste d’éléments **AppDomains**. Si le complément accède à une page du domaine www.northwindtraders.com, cette page s'ouvre dans le volet du complément, même dans le bureau Office.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>

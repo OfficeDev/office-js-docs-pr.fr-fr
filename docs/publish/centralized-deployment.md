@@ -2,12 +2,12 @@
 title: Publication de compléments Office à l’aide du déploiement centralisé via le centre d’administration Office 365
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 42ef569ddc868fb82730e445d4d34fd9caa94b0e
-ms.sourcegitcommit: eea7f2b1679cf9a209d35880b906e311bdf1359c
+ms.openlocfilehash: b16d38d9e4dff46257dfe04b280eab4752558a01
+ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "21241214"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "21703895"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>Publication de compléments Office à l’aide du déploiement centralisé via le centre d’administration Office 365
 
@@ -31,7 +31,7 @@ Le déploiement centralisé est la méthode recommandée pour le déploiement de
 
 ## <a name="recommended-approach-for-deploying-office-add-ins"></a>Approche recommandée pour le déploiement des compléments Office
 
-Envisagez de déployer des compléments Office par un approche progressive pour veiller à ce que le déploiement se déroule sans problème. Nous recommandons le plan suivant :
+Envisagez de déployer des compléments Office par une approche progressive pour vous assurer que le déploiement se déroule sans problème. Nous recommandons le plan suivant :
 
 1. Déployez le complément auprès d’un petit groupe de parties prenantes et de membres du service informatique. Si le déploiement réussit, passez à l’étape 2.
 
@@ -67,9 +67,9 @@ Si votre organisation répond à toutes les conditions requises, procédez comme
     > [!NOTE]
     > Avec l’option AppSource, les mises à jour et améliorations du complément sont automatiquement mises à la disposition des utilisateurs, sans intervention de votre part.
 
-    ![Sélectionnez la boîte de dialogue d'un complément dans le Centre d’administration Office 365](../images/select-an-add-in.png)
+    ![Boîte de dialogue Sélectionner un module additionnel dans le Centre d’administration Office 365](../images/select-an-add-in.png)
 
-9. Le complément est désormais disponible pour l'activité. Dans la page relative au complément, sont statut indique **Activé**, comme illustré pour le complément des mosaïques  Power BI dans la capture d’écran ci-dessous. Dans **Qui a accès**, sélectionnez **Modifier** pour affecter le complément à des utilisateurs et/ou groupes.
+9. Le complément est désormais disponible pour l'activité. Dans la page relative au complément, l’état de celui-ci indique **Activé**, comme illustré pour le complément des vignettes Power BI dans la capture d’écran ci-dessous. Dans **Qui a accès**, sélectionnez **Modifier** pour affecter le complément à des utilisateurs et/ou groupes.
 
     ![Page du complément des vignettes Power BI dans le Centre d’administration Office 365](../images/power-bi-tiles.png)
 
@@ -136,6 +136,14 @@ Si le complément ne prend pas en charge les commandes de complément, les utili
 
     ![Capture d’écran illustrant l’onglet Géré par l’administrateur de la page Compléments Office d’une application Office. Le complément Citations apparaît sur l’onglet.](../images/office-add-ins-admin-managed.png)
     
+Toutefois, pour Outlook, les utilisateurs peuvent effectuer les opérations suivantes :
+
+1.  Dans Outlook 2016, choisissez **Accueil** > **Magasin**.
+2.  Choisissez l'élément **managé par l'administrateur** sous l'onglet du complément.
+3.  Choisissez le complément, puis cliquez sur **Ajouter**.
+
+    ![La capture d'écran affiche la zone managée par l'administrateur de la page du Magasin de l'application Outlook.](../images/outlook-add-ins-admin-managed.png)
+
 ## <a name="see-also"></a>Voir aussi
 [Déterminer si le déploiement centralisé des compléments fonctionne avec votre organisation Office 365](https://support.office.com/en-us/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-b4527d49-4073-4b43-8274-31b7a3166f92)
     

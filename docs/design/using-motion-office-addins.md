@@ -48,15 +48,13 @@ Prenez en compte la taille de la zone de dessin HTML (volet des tâches, boîte 
 
 |À faire|À ne pas faire|
 |:-----|:-----|
-| Utilisez les [durées recommandées de mouvement](https://developer.microsoft.com/en-us/fabric#/styles/animations). | N’utilisez pas trop d’animations. Évitez de créer des expériences qui enjolivent seulement l’interface utilisateur et détournent l’attention de vos clients.
-| Suivez les courbes recommandées dans le [guide Microsoft sur le mouvement](https://microsoft.sharepoint.com/teams/BrandCentral/Pages/The-Microsoft-brand-Core-elements-Motion.aspx#topic_0).  |Ne mettez pas en mouvement les éléments de manière saccadée ou décousue. Évitez les anticipations, les rebonds, les élastiques ou autres effets qui émulent la physique du monde naturel.|
+| Utilisez les [durées recommandées de mouvement](https://developer.microsoft.com/fabric#/styles/animations). | N’utilisez pas trop d’animations. Évitez de créer des expériences qui enjolivent seulement l’interface utilisateur et détournent l’attention de vos clients.
+| Suivez [courbes d'accélération recommandées](https://docs.microsoft.com/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion).  |Ne mettez pas en mouvement les éléments de manière saccadée ou décousue. Évitez les anticipations, les rebonds, les élastiques ou autres effets qui émulent la physique du monde naturel.|
 
 ![GIF affichant le chargement de mosaïques avec un fondu léger en regard d’un GIF affichant le chargement de mosaïques avec un effet de rebond](../images/add-in-motion-character.gif)
 
 ## <a name="see-also"></a>Voir aussi
 
-* 
-  [Recommandations sur l’animation dans la structure Fabric](https://developer.microsoft.com/en-us/fabric#/styles/animations)
-* 
-  [Mouvement pour les applications de la plateforme Windows universelle](https://docs.microsoft.com/fr-fr/windows/uwp/design/motion/)
+* [Recommandations sur l’animation dans la structure Fabric](https://developer.microsoft.com/fabric#/styles/animations)
+* [Mouvement pour les applications de la plateforme Windows universelle](https://docs.microsoft.com/windows/uwp/design/motion)
 

@@ -2,12 +2,12 @@
 title: Compléments Office de contenu
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: bd0dcea7a3f37175a48946fc9dcd61d2b89f9c08
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: f2632e94e0a797836f73caf0d53fdc0f24bd6790
+ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437261"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "21703916"
 ---
 # <a name="content-office-add-ins"></a>Compléments Office de contenu
 
@@ -48,12 +48,12 @@ Pour Mac, le menu Caractéristique mesure 26 x 26 pixels, mais flotte à 8 pixel
 Pour consulter un exemple qui implémente un complément de contenu, reportez-vous à [Excel Content Add-in Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance) dans GitHub.
 
 ## <a name="support-considerations"></a>Considérations relatives à la prise en charge
-- Vérifiez si votre complément Office fonctionne sur une [plateforme hôte Office spécifique](https://docs.microsoft.com/en-us/office/dev/add-ins/overview/office-add-in-availability). 
-- Certains compléments de contenu peuvent exiger que l’utilisateur accepte que le complément lise et écrive sur Excel ou PowerPoint. Vous pouvez déclarer le [niveau des autorisations](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins) que vous souhaitez attribuer à votre utilisateur dans le manifeste du complément.  
-- Les compléments de contenu sont pris en charge dans Excel et PowerPoint dans Office 2013 et les versions ultérieures. Si vous ouvrez un complément dans une version d’Office qui ne prend pas en charge les compléments web Office, le complément s’affichera comme une image.
+- Vérifiez si votre complément Office fonctionne sur une [plateforme hôte Office spécifique](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-in-availability). 
+- Certains compléments de contenu peuvent exiger que l’utilisateur « approuve » que le complément lise et écrive sur Excel ou PowerPoint. Vous pouvez décider du [niveau d'autorisations](https://docs.microsoft.com/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins) que vous souhaitez attribuer à votre utilisateur dans le manifeste du complément.  
+- Les compléments de contenu sont pris en charge dans Excel et PowerPoint dans Office 2013 et versions ultérieures. Si vous ouvrez un complément dans une version d’Office qui ne prend pas en charge les compléments web Office, le complément s’affichera comme une image.
 
 ## <a name="see-also"></a>Voir aussi
-- [Disponibilité des compléments Office sur les plateformes et les hôtes](https://docs.microsoft.com/en-us/office/dev/add-ins/overview/office-add-in-availability)
-- [Office UI Fabric dans des compléments Office](https://docs.microsoft.com/en-us/office/dev/add-ins/design/office-ui-fabric) 
-- [Modèles de conception de l’expérience utilisateur pour les compléments Office](https://docs.microsoft.com/en-us/office/dev/add-ins/design/ux-design-patterns)
-- [Demande d’autorisations d’utilisation de l’API dans des compléments de contenu et de volet des tâches](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
+- [Disponibilité des compléments Office sur les plateformes et les hôtes](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-in-availability)
+- [Office UI Fabric dans des compléments Office](https://docs.microsoft.com/office/dev/add-ins/design/office-ui-fabric) 
+- [Modèles de conception de l’expérience utilisateur pour les compléments Office](https://docs.microsoft.com/office/dev/add-ins/design/ux-design-pattern-templates)
+- [Demande d’autorisations d’utilisation de l’API dans des compléments de contenu et de volet des tâches](https://docs.microsoft.com/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)

@@ -28,7 +28,7 @@ Cet article décrit le processus de création d’un complément OneNote à l’
     yo office
     ```
 
-    - **Choisissez un type de projet :** `Jquery`
+    - **Choisissez un type de projet :** `Office Add-in project using Jquery framework`
     - **Choisissez un type de script :** `Javascript`
     - **Comment souhaitez-vous nommer votre complément ? :** `My Office Add-in`
     - **Quelle application client Office voulez-vous prendre en charge ? :** `Onenote`
@@ -59,7 +59,7 @@ Cet article décrit le processus de création d’un complément OneNote à l’
     </main>
     ```
 
-3. Ouvrez le fichier **src\index.js** pour spécifier le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+3. Ouvrez le fichier **src\index.js** pour spécifier le script du complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
 
     ```js
     'use strict';

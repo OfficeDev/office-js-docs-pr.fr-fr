@@ -1,13 +1,13 @@
 ---
 title: Disponibilité des compléments Office sur les plateformes et les hôtes
 description: Ensembles de conditions requises pris en charge pour Excel, Word, Outlook, PowerPoint et OneNote.
-ms.date: 03/23/2018
-ms.openlocfilehash: f50ab7e5312702eb25fbb2c8a25291c5ff5027a7
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.date: 07/31/2018
+ms.openlocfilehash: 084029c0a5b70b73eaa0b3fcc180f4a813fb8b72
+ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19438871"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "21703909"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilité des compléments Office sur les plateformes et les hôtes
 
@@ -38,6 +38,9 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>
         - BindingEvents<br>
@@ -48,7 +51,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
         - TableCoercion<br>
         - TextBindings<br>
         - CompressedFile<br>
-        - Settings<br>
+        - Paramètres<br>
         - TextCoercion</td>
   </tr>
   <tr>
@@ -65,7 +68,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
-        - Settings<br>
+        - Paramètres<br>
         - TextCoercion</td>
   </tr>
   <tr>
@@ -77,6 +80,9 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
         - DocumentEvents<br>
@@ -85,7 +91,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
-        - Settings<br>
+        - Paramètres<br>
         - TextCoercion</td> 
   </tr>
   <tr>
@@ -95,6 +101,10 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
     <td>- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
         - DocumentEvents<br>
@@ -103,7 +113,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
-        - Settings<br>
+        - Paramètres<br>
         - TextCoercion</td>
   </tr>
   <tr>
@@ -114,6 +124,10 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
     <td>- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
         - DocumentEvents<br>
@@ -148,7 +162,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Mailbox 1.6</a></td>
-    <td>non disponible</td>
+    <td>Non disponible</td>
   </tr>
   <tr>
     <td>Office 2013 pour Windows</td>
@@ -159,7 +173,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Mailbox 1.2</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a></td>
-    <td>non disponible</td>
+    <td>Non disponible</td>
   </tr>
   <tr>
     <td>Office 2016 pour Windows</td>
@@ -173,7 +187,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Mailbox 1.6</a></td>
-    <td>non disponible</td> 
+    <td>Non disponible</td> 
   </tr>
   <tr>
     <td>Office pour iOS</td>
@@ -184,7 +198,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></td>    
-    <td>non disponible</td>
+    <td>Non disponible</td>
   </tr>
   <tr>
     <td>Office 2016 pour Mac</td>
@@ -197,7 +211,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Mailbox 1.6</a></td>
-    <td>non disponible</td>
+    <td>Non disponible</td>
   </tr>
   <tr>
     <td>Office pour Android</td>
@@ -208,7 +222,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Mailbox 1.3</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Mailbox 1.4</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Mailbox 1.5</a></td>
-    <td>non disponible</td>
+    <td>Non disponible</td>
   </tr>
 </table>
 
@@ -242,7 +256,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
          - DocumentEvents<br>
          - TextFile<br>
          - ImageCoercion<br>
-         - Settings<br>
+         - Paramètres<br>
          - TextCoercion</td>
   </tr>
   <tr>
@@ -261,7 +275,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
          - TableCoercion<br>
          - TextBindings<br>
          - TextFile<br>
-         - Settings<br>
+         - Paramètres<br>
          - TextCoercion<br>
          - MatrixCoercion<br>
          - MatrixBindings</td>
@@ -286,7 +300,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
          - TableCoercion<br>
          - TextBindings<br>
          - TextFile<br>
-         - Settings<br>
+         - Paramètres<br>
          - TextCoercion<br>
          - MatrixCoercion<br>
          - MatrixBindings </td> 
@@ -311,7 +325,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
          - TableCoercion<br>
          - TextBindings<br>
          - TextFile<br>
-         - Settings<br>
+         - Paramètres<br>
          - TextCoercion<br>
          - MatrixCoercion<br>
          - MatrixBindings </td> 
@@ -337,7 +351,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
          - TableCoercion<br>
          - TextBindings<br>
          - TextFile<br>
-         - Settings<br>
+         - Paramètres<br>
          - TextCoercion<br>
          - MatrixCoercion<br>
          - MatrixBindings </td> 
@@ -365,8 +379,8 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
     <td> - ActiveView<br>
          - CompressedFile<br>
          - File<br>
-         - Selection<br>
-         - Settings<br>
+         - Sélection<br>
+         - Paramètres<br>
          - TextCoercion<br>
          - ImageCoercion</td>
   </tr>
@@ -381,8 +395,8 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
          - CompressedFile<br>
          - DocumentEvents<br>
          - File<br>
-         - Selection<br>
-         - Settings<br>
+         - Sélection<br>
+         - Paramètres<br>
          - TextCoercion</td>
   </tr>
   <tr>
@@ -395,8 +409,8 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
          - CompressedFile<br>
          - DocumentEvents<br>
          - File<br>
-         - Selection<br>
-         - Settings<br>
+         - Sélection<br>
+         - Paramètres<br>
          - TextCoercion<br>
          - ImageCoercion</td>
   </tr>
@@ -409,8 +423,8 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
          - CompressedFile<br>
          - DocumentEvents<br>
          - File<br>
-         - Selection<br>
-         - Settings<br>
+         - Sélection<br>
+         - Paramètres<br>
          - TextCoercion<br>
          - ImageCoercion</td>
   </tr>
@@ -424,8 +438,8 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
          - CompressedFile<br>
          - DocumentEvents<br>
          - File<br>
-         - Selection<br>
-         - Settings<br>
+         - Sélection<br>
+         - Paramètres<br>
          - TextCoercion<br>
          - ImageCoercion</td>
   </tr>
@@ -451,40 +465,14 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
     <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/onenote-api-requirement-sets">OneNoteApi 1.1</a><br>
          - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - DocumentEvents<br>
-         - Settings<br>
+         - Paramètres<br>
          - TextCoercion<br>
          - HtmlCoercion<br>
          - ImageCoercion</td>
   </tr>
-  <tr>
-    <td>Office 2013 pour Windows</td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-  </tr> 
-  <tr>
-    <td>Office 2016 pour Windows</td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td> 
-  </tr>
-  <tr>
-    <td>Office pour iOS</td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-  </tr>
-  <tr>
-    <td>Office 2016 pour Mac</td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-  </tr>
 </table>
 
 <br/>
-
-\* = Nous y travaillons. 
 
 ## <a name="see-also"></a>Voir aussi
 

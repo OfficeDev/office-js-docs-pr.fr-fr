@@ -2,12 +2,12 @@
 title: Concepts de base de l’API JavaScript Excel
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 1582268a3bdac2b7fe63c4b0a48cf1a19f85bd31
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: fb22ae41718c459366a628c8f06531cc6978a178
+ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437485"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "21703839"
 ---
 # <a name="excel-javascript-api-core-concepts"></a>Concepts de base de l’API JavaScript pour Excel
  
@@ -77,7 +77,7 @@ Excel.run(function (context) {
  
 Dans l’exemple précédent, l’objet **selectedRange** est défini et sa propriété **address** est chargée quand l’élément **context.sync()** est appelé.
  
-Étant donné que **sync()** est une opération asynchrone qui renvoie une promesse, vous devez toujours **renvoyer** la promesse (dans JavaScript). Cela garantit que l’opération **sync()** se termine avant que le script continue à s’exécuter. Pour plus d’informations sur l’optimisation des performances avec **sync ()**, voir [Optimisation des performances de l’API JavaScript pour Excel](https://dev.office.com/reference/add-ins/excel/performance.md).
+Étant donné que **sync()** est une opération asynchrone qui renvoie une promesse, vous devez toujours **renvoyer** la promesse (dans JavaScript). Cela garantit que l’opération **sync()** se termine avant que le script continue à s’exécuter. Pour plus d’informations sur l’optimisation des performances avec **sync ()**, voir [Optimisation des performances de l’API JavaScript pour Excel](https://docs.microsoft.com/office/dev/add-ins/excel/performance).
  
 ### <a name="load"></a>load()
  
@@ -117,7 +117,7 @@ Excel.run(function (context) {
  
 Comme `format/font` n’est pas spécifié dans l’appel à **myRange.load()**, la propriété `format.font.color` ne peut pas être lue dans l’exemple précédent.
 
-Pour optimiser les performances, vous devez spécifier explicitement les propriétés et les relations de chargement lorsque vous utilisez la méthode **load()** sur un objet, tel que décrit dans [Optimisations des performances de l’API JavaScript pour Excel](performance.md). Pour plus d’informations sur la méthode **load()**, reportez-vous à la rubrique [Concepts avancés pour l’API JavaScript pour Excel](excel-add-ins-advanced-concepts.md).
+Pour optimiser le niveau de performance, vous devez spécifier clairement les propriétés et les relations à charger lorsque vous utilisez la méthode **load()** sur un objet, comme le propose la rubrique [Optimisations des niveaux de performance de l’API JavaScript pour Excel](performance.md). Pour plus d’informations sur la méthode **load()**, reportez-vous à la rubrique [Concepts avancés pour l’API JavaScript pour Excel](excel-add-ins-advanced-concepts.md).
 
 ## <a name="null-or-blank-property-values"></a>valeurs de propriété null ou vides
  
@@ -257,6 +257,6 @@ Lorsqu’une erreur d’API se produit, l’API renvoie un objet **error** qui c
 ## <a name="see-also"></a>Voir aussi
  
 * [Prise en main des compléments Excel](excel-add-ins-get-started-overview.md)
-* [Exemples de code pour les compléments Excel](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Optimisation des performances de l'API JavaScript pour Excel](https://dev.office.com/reference/add-ins/excel/performance.md)
+* [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
+* [Optimisation des performances de l'API JavaScript pour Excel](https://docs.microsoft.com/office/dev/add-ins/excel/performance)
 * [Référence de l’API JavaScript pour Excel](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

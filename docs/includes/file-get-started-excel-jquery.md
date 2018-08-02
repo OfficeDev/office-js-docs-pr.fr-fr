@@ -170,7 +170,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
     yo office
     ```
 
-    - **Choisissez un type de projet :** `Jquery`
+    - **Choisissez un type de projet :** `Office Add-in project using Jquery framework`
     - **Choisissez un type de script :** `Javascript`
     - **Comment souhaitez-vous nommer votre complément ? :** `My Office Add-in`
     - **Quelle application client Office voulez-vous prendre en charge ? :** `Excel`
@@ -206,7 +206,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
     </div>
     ```
 
-7. Ouvrez le fichier **src\index.js** pour spécifier le script du complément. Remplacez le contenu entier par le code suivant et enregistrez le fichier.
+7. Ouvrez le fichier **src\index.js** pour spécifier le script du complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
 
     ```js
     'use strict';

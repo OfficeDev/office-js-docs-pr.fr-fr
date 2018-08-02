@@ -192,7 +192,7 @@ Cet article décrit le processus de création d’un complément PowerPoint à l
     yo office
     ```
 
-    - **Choisissez un type de projet :** `Jquery`
+    - **Choisissez un type de projet :** `Office Add-in project using Jquery framework`
     - **Choisissez un type de script :** `Javascript`
     - **Comment souhaitez-vous nommer votre complément ? :** `My Office Add-in`
     - **Quelle application client Office voulez-vous prendre en charge ? :** `Powerpoint`
@@ -230,7 +230,7 @@ Cet article décrit le processus de création d’un complément PowerPoint à l
     </div>
     ```
 
-4. Ouvrez le fichier **src\index.js** pour spécifier le script du complément. Remplacez le contenu entier par le code suivant et enregistrez le fichier.
+4. Ouvrez le fichier **src\index.js** pour spécifier le script du complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
 
     ```js
     'use strict';
@@ -352,7 +352,7 @@ Cet article décrit le processus de création d’un complément PowerPoint à l
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations, vous avez créé un complément PowerPoint ! Ensuite, découvrez d'autres fonctionnalités d’un complément PowerPoint et générez-en un plus complexe en suivant le didacticiel sur les compléments PowerPoint.
+Félicitations, vous avez créé un complément PowerPoint ! Ensuite, découvrez aussi d'autres capacités d’un complément PowerPoint et générez-en un plus complexe en suivant le didacticiel sur les compléments PowerPoint.
 
 > [!div class="nextstepaction"]
 > [Didacticiel sur les compléments PowerPoint](../tutorials/powerpoint-tutorial.yml)

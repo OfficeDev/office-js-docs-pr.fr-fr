@@ -28,12 +28,12 @@ Cet article décrit le processus de création d’un complément Project à l’
     yo office
     ```
 
-    - **Choisissez un type de projet :** `Jquery`
-    - **Choisissez un type de script :** `Javascript`
-    - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
-    - **Quelle application client Office voulez-vous prendre en charge ?** `Project`
+    - **Choisissez un type de projet :** `Office Add-in project using Jquery framework`
+    - **Choisissez un type de script :** `Javascript`
+    - **Comment souhaitez-vous nommer votre complément ? :** `My Office Add-in`
+    - **Quelle application client Office voulez-vous prendre en charge ? :** `Project`
 
-    ![Capture d’écran des invites et des réponses pour le générateur Yeoman](../images/yo-office-project-jquery.png)
+    ![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yo-office-project-jquery.png)
     
     Une fois que vous avez terminé avec l'assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 

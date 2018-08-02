@@ -42,9 +42,9 @@ Le fichier manifeste d’un complément définit ses paramètres et ses fonction
     yo office 
     ```
 
-    - **Choisissez un type de projet :** `Manifest`
-    - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
-    - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
+    - **Choisissez un type de projet :** `Office Add-in containing the manifest only`
+    - **Comment souhaitez-vous nommer votre complément ? :** `My Office Add-in`
+    - **Quelle application client Office voulez-vous prendre en charge ? :** `Excel`
 
 
     Après avoir terminé l'assistant, un fichier manifeste et un fichier de ressources sont disponibles pour vous permettre de générer votre projet.
