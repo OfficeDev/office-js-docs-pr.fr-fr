@@ -1,30 +1,28 @@
 ---
-title: Chargement de compléments Office pour des tests
+title: Chargement de version test de compléments Office
 description: ''
 ms.date: 01/25/2018
-ms.openlocfilehash: 42af5d0665fc6cb1135103789adcb4414c4763ff
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.openlocfilehash: 1bca17808deaa5e7f0c65669a87abe1b38e5393f
+ms.sourcegitcommit: 0d4d78e275249f0d4b6a6cf807b42b79890c3023
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 08/02/2018
-ms.locfileid: "21703804"
+ms.locfileid: "21773579"
 ---
-# <a name="sideload-office-add-ins-for-testing"></a>Chargement de compléments Office pour des tests
+# <a name="sideload-office-add-ins-for-testing"></a>Chargement de version test de compléments Office
 
-Vous pouvez installer un complément Office pour tester dans un client Office s'exécutant sous Windows par l'une des méthodes suivantes :
+Vous pouvez installer un complément Office à tester dans un client Office s’exécutant sous Windows en publiant le manifeste sur un partage de fichiers réseau (instructions ci-dessous).
 
-- Utilisez un catalogue de dossiers partagés pour publier le manifeste sur un partage de fichiers réseau (instructions ci-dessous)
-- [Exécutez la commande **« npm run sideload »** à partir de la racine du dossier de projet du complément.](sideload-office-addin-using-sideload-command.md)
+> [!NOTE]
+> Si votre projet de complément a été créé avec l’outil [**Yo Office**](https://github.com/OfficeDev/generator-office), il existe une façon alternative de charger la version test correspondante qui pourrait fonctionner pour vous. Pour plus de détails, voir [Charger une version test des compléments Office à l’aide de la commande de chargement indépendant](sideload-office-addin-using-sideload-command.md).
 
-    > [!NOTE]
-    > La méthode « npm run sideload » ne fonctionne que pour les compléments Excel, Word et PowerPoint.
-
-Si vous ne testez pas un complément Word, Excel ou PowerPoint sous Windows, consultez une des rubriques suivantes pour charger la version test de votre complément :
+Cet article s’applique uniquement aux tests des compléments Word, Excel ou PowerPoint sur Windows. Si vous souhaitez tester sur une autre plateforme ou si vous souhaitez tester un complément Outlook, consultez l'une des rubriques suivantes pour charger la version test de votre complément :
 
 - [Chargement de version test des compléments Office dans Office Online](sideload-office-add-ins-for-testing.md)
 - [Chargement de version test des compléments Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
+- [Chargement de version test de compléments Outlook](../../../../outlook/add-insSideload Outlook Add-ins for testing)
 
-La vidéo suivante présente vous guide à travers la procédure de chargement indépendant de votre complément dans la version de bureau Office ou Office Online à l'aide du catalogue d'un dossier partagé.  
+La vidéo suivante présente vous guide à travers la procédure de chargement indépendant de votre complément dans la version de bureau Office ou Office Online à l’aide du catalogue d'un dossier partagé.  
 
 
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
