@@ -10,7 +10,7 @@ Vous commencerez ce didacticiel par la configuration de votre projet de dévelop
 
 Pour utiliser ce didacticiel, les logiciels suivants doivent être installés. 
 
-- Word 2016, version 1711 (Démarrer en un clic version 8730.1000) ou version ultérieure. Vous devrez peut-être participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à [Participez au programme Office Insider](https://products.office.com/fr-fr/office-insider?tab=tab-1).
+- Word 2016, version 1711 (Démarrer en un clic version 8730.1000) ou version ultérieure. Vous devrez peut-être participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à [Participez au programme Office Insider](https://products.office.com/office-insider?tab=tab-1).
 - [Nœud et npm](https://nodejs.org/en/) 
 - [Git Bash](https://git-scm.com/downloads) (ou un autre client Git)
 
