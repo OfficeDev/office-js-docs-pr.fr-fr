@@ -1,212 +1,212 @@
-# Contribute to this documentation
+# <a name="contribute-to-this-documentation"></a>Contribuer à cette documentation
 
-Thank you for your interest in our documentation!
+Nous vous remercions de l’intérêt que vous portez à notre documentation.
 
-* [Ways to contribute](#ways-to-contribute)
-* [Contribute using GitHub](#contribute-using-github)
-* [Contribute using Git](#contribute-using-git)
-* [How to use Markdown to format your topic](#how-to-use-markdown-to-format-your-topic)
+* [Méthodes de contribution](#ways-to-contribute)
+* [Contribution à l’aide de GitHub](#contribute-using-github)
+* [Contribution à l’aide de Git](#contribute-using-git)
+* [Utilisation de Markdown pour mettre en forme votre rubrique](#how-to-use-markdown-to-format-your-topic)
 * [FAQ](#faq)
-* [More resources](#more-resources)
+* [Autres ressources](#more-resources)
 
-## Ways to contribute
+## <a name="ways-to-contribute"></a>Méthodes de collaboration
 
-Here are some ways you can contribute to this documentation:
+Voici comment vous pouvez contribuer à la documentation :
 
-* To make small changes to an article, [Contribute using GitHub](#contribute-using-github).
-* To make large changes, or changes that involve code, [Contribute using Git](#contribute-using-git).
-* Report documentation bugs via GitHub Issues
-* Request new documentation at the [Office Developer Platform UserVoice](http://officespdev.uservoice.com) site.
+* Pour apporter des modifications mineures à un article, reportez-vous à la section [Contribution à l’aide de GitHub](#contribute-using-github).
+* Pour apporter des modifications importantes ou relatives au code, reportez-vous à la section [Contribution à l’aide de Git](#contribute-using-git).
+* Signalez les bogues de documentation via Problèmes GitHub
+* Demandez la nouvelle documentation sur le site [UserVoice pour les développeurs Office](http://officespdev.uservoice.com).
 
-## Contribute using GitHub
+## <a name="contribute-using-github"></a>Contribution à l’aide de GitHub
 
-Use GitHub to contribute to this documentation without having to clone the repo to your desktop. This is the easiest way to create a pull request in this repository. Use this method to make a minor change that doesn't involve code changes. 
+Utilisez GitHub pour contribuer à cette documentation sans avoir à cloner le référentiel sur votre bureau. Il s’agit de la manière la plus simple de créer une requête de tirage dans ce référentiel. Utilisez cette méthode pour apporter des changements mineurs qui n’impliquent pas de modifier le code. 
 
-**Note** Using this method allows you to contribute to one article at a time.
+**Remarque** Cette méthode vous permet de contribuer à un article à la fois.
 
-### To Contribute using GitHub
+### <a name="to-contribute-using-github"></a>Contribution à l’aide de GitHub
 
-1. Find the article you want to contribute to on GitHub. 
+1. Recherchez l’article auquel vous souhaitez contribuer sur GitHub. 
 
-    If the article is in MSDN, choose the **suggest and submit changes** link in the **Contribute to this content** section and you'll be taken to the same article on GitHub.
-2. Once you are on the article in GitHub, sign in to GitHub (get a free account [Join GitHub](https://github.com/join).
-3. Choose the **pencil icon** (edit the file in your fork of this project) and make your changes in the **<>Edit file** window. 
-4. Scroll to the bottom and enter a description.
-5. Choose **Propose file change**>**Create pull request**.
+    Si l’article se trouve dans MSDN, choisissez le lien de **suggestion et d’envoi de modifications** présent dans la section de **contribution au contenu** et vous serez redirigé vers le même article sur GitHub.
+2. Une fois que vous avez accédé à l’article dans GitHub, connectez-vous à GitHub (obtenir un compte gratuit [Rejoindre GitHub](https://github.com/join)).
+3. Choisissez l’**icône en forme de crayon** (modifier le fichier dans la bifurcation de ce projet) et apportez vos modifications dans la fenêtre **<>Modifier le fichier**. 
+4. Faites défiler vers le bas, puis entrez une description.
+5. Choisissez **Proposer une modification de fichier**>**Créer une requête de tirage**.
 
-You now have successfully submitted a pull request. Pull requests are typically reviewed within 10 business days. 
+Vous avez désormais envoyé une requête de tirage. Les demandes de tirage sont généralement examinées dans les 10 jours ouvrés. 
 
 
-## Contribute using Git
+## <a name="contribute-using-git"></a>Contribution à l’aide de Git
 
-Use Git to contribute substantive changes, such as:
+Utilisez Git pour apporter des modifications substantielles, telles que :
 
-* Contributing code.
-* Contributing changes that affect meaning.
-* Contributing large changes to text.
-* Adding new topics.
+* Contribution au code.
+* Contribution aux modifications qui ont une incidence sur la signification.
+* Contribution à des changements importants apportés au texte.
+* Ajout de nouvelles rubriques.
 
-### To Contribute using Git
+### <a name="to-contribute-using-git"></a>Contribution à l’aide de Git
 
-1. If you don't have a GitHub account, set one up at [GitHub](https://github.com/join). 
-2. After you have an account, install Git on your computer. Follow the steps in [Setting up Git Tutorial](https://help.github.com/articles/set-up-git/).
-3. To submit a pull request using Git, follow the steps in [Use GitHub, Git, and this repository](#use-github-git-and-this-repository).
-4. You will be asked to sign the Contributor's License Agreement if you are:
+1. Si vous n’avez pas de compte GitHub, configurez-en un sur [GitHub](https://github.com/join). 
+2. Une fois que vous disposez d’un compte, installez Git sur votre ordinateur. Suivez les étapes du [Didacticiel sur la configuration de Git](https://help.github.com/articles/set-up-git/).
+3. Pour envoyer une demande de tirage (pull request) à l’aide de Git, suivez les étapes indiquées dans la section [Utilisation de GitHub, de Git et du référentiel](#use-github-git-and-this-repository).
+4. Vous serez invité à signer le Contrat de licence de contributeur si vous êtes :
 
-    * A member of the Microsoft Open Technologies group.
-    * A contributors who doesn't work for Microsoft.
+    * membre du groupe Technologies ouvertes Microsoft ;
+    * un contributeur qui ne travaille pas pour Microsoft.
 
-As a community member, you must sign the Contribution License Agreement (CLA) before you can contribute large submissions to a project. You only need to complete and submit the documentation once. Carefully review the document. You may be required to have your employer sign the document.
+En tant que membre de la communauté, vous devez signer le Contrat de licence de contributeur (CLA) pour pouvoir contribuer largement à un projet. Vous ne devez remplir et soumettre la documentation qu’une seule fois. Lisez attentivement le document. Il faudra peut-être que votre employeur signe le document.
 
-Signing the CLA does not grant you rights to commit to the main repository, but it does mean that the Office Developer and Office Developer Content Publishing teams will be able to review and approve your contributions. You will be credited for your submissions.
+En signant ce contrat, vous n’obtenez pas le droit de valider le référentiel principal. Cela signifie seulement que les équipes Publication du contenu de développeur Office et Développeurs Office pourront examiner et approuver vos contributions. Vous serez récompensé pour vos envois.
 
-Pull requests are typically reviewed within 10 business days.
+Les demandes de tirage sont généralement examinées dans les 10 jours ouvrés.
 
-## Use GitHub, Git, and this repository
+## <a name="use-github-git-and-this-repository"></a>Utilisation de GitHub, de Git et du référentiel
 
-**Note:** Most of the information in this section can be found in [GitHub Help] articles.  If you're familiar with Git and GitHub, skip to the **Contribute and edit content** section for the specifics of the code/content flow of this repository.
+**Remarque :** La plupart des informations contenues dans cette section figurent dans les articles de l’[aide GitHub].  Si vous connaissez Git et GitHub, passez à la section **Contribution et modification du contenu** pour découvrir les éléments du flux de code/contenu de ce référentiel.
 
-### To set up your fork of the repository
+### <a name="to-set-up-your-fork-of-the-repository"></a>Configuration de votre bifurcation de référentiel
 
-1.	Set up a GitHub account so you can contribute to this project. If you haven't done this, go to [GitHub](https://github.com/join) and do it now.
-2.	Install Git on your computer. Follow the steps in the [Setting up Git Tutorial] [Set Up Git].
-3.	Create your own fork of this repository. To do this, at the top of the page,  choose the **Fork** button.
-4.	Copy your fork to your computer. To do this, open Git Bash. At the command prompt enter:
+1.  Configurez un compte GitHub pour pouvoir contribuer à ce projet. Si vous n’avez pas fait cela, accédez à [GitHub](https://github.com/join) et configurez le compte maintenant.
+2.  Installez Git sur votre ordinateur. Suivez les étapes du [Didacticiel sur la configuration de Git] [Set Up Git].
+3.  Créez votre propre duplication (fork) du référentiel. Pour cela, cliquez sur le bouton **Dupliquer (Fork)** en haut de la page.
+4.  Copiez la duplication sur votre ordinateur. Pour ce faire, ouvrez Git Bash. À l’invite de commandes, entrez les informations suivantes :
 
         git clone https://github.com/<your user name>/<repo name>.git
 
-    Next, create a reference to the root repository by entering these commands:
+    Créez ensuite une référence vers le référentiel racine en entrant les commandes suivantes :
 
         cd <repo name>
         git remote add upstream https://github.com/OfficeDev/<repo name>.git
         git fetch upstream
 
-Congratulations! You've now set up your repository. You won't need to repeat these steps again.
+Félicitations ! Votre référentiel est maintenant configuré. Vous n’aurez plus besoin de répéter ces étapes.
 
-### Contribute and edit content
+### <a name="contribute-and-edit-content"></a>Contribution et modification de contenu
 
-To make the contribution process as seamless as possible, follow these steps.
+Pour contribuer de la manière la plus simple possible, suivez les étapes suivantes.
 
-#### To contribute and edit content
+#### <a name="to-contribute-and-edit-content"></a>Contribution et modification de contenu
 
-1. Create a new branch.
-2. Add new content or edit existing content.
-3. Submit a pull request to the main repository.
-4. Delete the branch.
+1. Créez une branche.
+2. Ajoutez du nouveau contenu ou modifiez le contenu existant.
+3. Envoyez une requête de tirage au référentiel principal.
+4. Supprimez la branche.
 
-**Important** Limit each branch to a single concept/article to streamline the work flow and reduce the chance of merge conflicts. Content appropriate for a new branch includes:
+**Important** Attribuez un concept/article par branche pour simplifier le flux de travail et réduire les risques de conflits de fusion. Le contenu approprié à une nouvelle branche inclut les éléments suivants :
 
-* A new article.
-* Spelling and grammar edits.
-* Applying a single formatting change across a large set of articles (for example, applying a new copyright footer).
+* Nouvel article.
+* Modifications liés à l’orthographe et à la grammaire.
+* Changement de mise en forme unique dans plusieurs articles (par exemple, insérer un copyright dans le pied de page).
 
-#### To create a new branch
+#### <a name="to-create-a-new-branch"></a>Création d’une branche
 
-1.	Open Git Bash.
-2.	At the Git Bash command prompt, type `git pull upstream master:<new branch name>`. This creates a new branch locally that is copied from the latest OfficeDev master branch.
-3.	At the Git Bash command prompt, type `git push origin <new branch name>`. This alerts GitHub to the new branch. You should now see the new branch in your fork of the repository on GitHub.
-4.	At the Git Bash command prompt, type `git checkout <new branch name>` to switch to your new branch.
+1.  Ouvrez Git Bash.
+2.  À l’invite de commande Git Bash, saisissez `git pull upstream master:<new branch name>`. Une branche est créée localement et copiée à partir de la dernière branche maître OfficeDev.
+3.  À l’invite de commande Git Bash, saisissez `git push origin <new branch name>`. Ceci signale la nouvelle branche à GitHub. La nouvelle branche doit maintenant apparaître dans votre bifurcation du référentiel sur GitHub.
+4.  À l’invite de commande Git Bash, saisissez `git checkout <new branch name>` pour basculer sur la nouvelle branche.
 
-#### Add new content or edit existing content
+#### <a name="add-new-content-or-edit-existing-content"></a>Ajout de nouveau contenu ou modification de contenu existant
 
-You navigate to the repository on your computer by using File Explorer. The repository files are in `C:\Users\<yourusername>\<repo name>`.
+Utilisez l’Explorateur de fichiers pour accéder au référentiel sur votre ordinateur. Les fichiers du référentiel se trouvent dans `C:\Users\<yourusername>\<repo name>`.
 
-To edit files, open them in an editor of your choice and modify them. To create a new file, use the editor of your choice and save the new file in the appropriate location in your local copy of the repository. While working, save your work frequently.
+Pour modifier des fichiers, ouvrez-les dans l’éditeur de votre choix et modifiez-les. Pour créer un fichier, utilisez l’éditeur de votre choix et enregistrez le nouveau fichier à l’emplacement approprié dans votre copie locale du référentiel. Lorsque vous travaillez, enregistrez votre travail régulièrement.
 
-The files in `C:\Users\<yourusername>\<repo name>` are a working copy of the new branch that you created in your local repository. Changing anything in this folder doesn't affect the local repository until you commit a change. To commit a change to the local repository, type the following commands in GitBash:
+Les fichiers présents dans `C:\Users\<yourusername>\<repo name>` constituent une copie de travail de la nouvelle branche créée dans le référentiel local. Si vous effectuez des modifications dans ce dossier, le référentiel local ne sera pas altéré tant que vous ne validez pas les modifications. Pour valider une modification dans le référentiel local, entrez les commandes suivantes dans GitBash :
 
     git add .
     git commit -v -a -m "<Describe the changes made in this commit>"
 
-The `add` command adds your changes to a staging area in preparation for committing them to the repository. The period after the `add` command specifies that you want to stage all of the files that you added or modified, checking subfolders recursively. (If you don't want to commit all of the changes, you can add specific files. You can also undo a commit. For help, type `git add -help` or `git status`.)
+La commande `add` ajoute vos modifications dans une zone de transit pour qu’elles soient validées dans le référentiel. Le point situé après la commande `add` indique que tous les fichiers ajoutés ou modifiés doivent être placés dans la zone de transit, en vérifiant les sous-dossiers de manière récursive. (Si vous ne souhaitez pas valider toutes les modifications, vous pouvez ajouter des fichiers spécifiques. Vous pouvez également annuler une validation. Pour obtenir de l’aide, entrez `git add -help` ou `git status`.)
 
-The `commit` command applies the staged changes to the repository. The switch `-m` means you are providing the commit comment in the command line. The -v and -a switches can be omitted. The -v switch is for verbose output from the command, and -a does what you already did with the add command.
+La commande `commit` applique les modifications en attente dans le référentiel. Le commutateur « `-m` » signifie que vous indiquez le commentaire de validation dans la ligne de commande. Les commutateurs « -v » et « -a » peuvent être omis. Le commutateur « -v » est détaillé à partir de la commande, tandis que le commutateur « -a » répète l’action effectuée avec la commande « add ».
 
-You can commit multiple times while you are doing your work, or you can commit once when you're done.
+Vous pouvez valider des changements plusieurs fois lorsque vous travaillez, ou vous pouvez tout valider une fois que vous avez terminé.
 
-#### Submit a pull request to the main repository
+#### <a name="submit-a-pull-request-to-the-main-repository"></a>Envoi d’une requête de tirage au référentiel principal
 
-When you're finished with your work and are ready to have it merged into the main repository, follow these steps.
+Quand vous avez terminé votre travail et que vous êtes prêt à le fusionner dans le référentiel principal, suivez les étapes suivantes.
 
-#### To submit a pull request to the main repository
+#### <a name="to-submit-a-pull-request-to-the-main-repository"></a>Envoi d’une requête de tirage au référentiel principal.
 
-1.	In the Git Bash command prompt, type `git push origin <new branch name>`. In your local repository, `origin` refers to your GitHub repository that you cloned the local repository from. This command pushes the current state of your new branch, including all commits made in the previous steps, to your GitHub fork.
-2.	On the GitHub site, navigate in your fork to the new branch.
-3.	Choose the **Pull Request** button at the top of the page.
-4.	Verify the Base branch is `OfficeDev/<repo name>@master` and the Head branch is `<your username>/<repo name>@<branch name>`.
-5.	Choose the **Update Commit Range** button.
-6.	Add a title to your pull request, and describe all the changes you're making.
-7.	Submit the pull request.
+1.  Dans l’invite de commande Git Bash, saisissez `git push origin <new branch name>`. Dans le référentiel local, `origin` fait référence au référentiel GitHub à partir duquel vous avez cloné le référentiel local. Cette commande affiche l’état actuel de votre nouvelle branche, y compris toutes les validations effectuées au cours des étapes précédentes dans votre bifurcation GitHub.
+2.  Sur le site GitHub, accédez à la nouvelle branche dans votre bifurcation.
+3.  Sélectionnez le bouton **Requête de tirage** situé en haut de la page.
+4.  Vérifiez que la branche de base est `OfficeDev/<repo name>@master` et que la branche de tête est `<your username>/<repo name>@<branch name>`.
+5.  Sélectionnez le bouton **Mettre à jour la plage de validation**.
+6.  Ajoutez un titre à votre requête de tirage et décrivez toutes les modifications que vous apportez.
+7.  Envoyez la requête de tirage.
 
-One of the site administrators will process your pull request. Your pull request will surface on the OfficeDev/<repo name> site under Issues. When the pull request is accepted, the issue will be resolved.
+Un des administrateurs du site traitera votre requête de tirage. Votre requête de tirage apparaîtra sur le site OfficeDev/<repo name> sous Problèmes. Lorsque votre la requête de tirage est acceptée, le problème est résolu.
 
-#### Create a new branch after merge
+#### <a name="create-a-new-branch-after-merge"></a>Créer une branche après fusion
 
-After a branch is successfully merged (that is, your pull request is accepted), don't continue working in that local branch. This can lead to merge conflicts if you submit another pull request. To do another update, create a new local branch from the successfully merged upstream branch, and then delete your initial local branch.
+Après la fusion d’une branche (par exemple, quand votre requête de tirage est acceptée), cessez de travailler dans la branche locale. Ceci peut entraîner la fusion des conflits si vous envoyez une autre requête de tirage. Pour effectuer une autre mise à jour, créez une branche locale à partir de la branche fusionnée en amont, puis supprimez la branche locale d’origine.
 
-For example, if your local branch X was successfully merged into the OfficeDev/microsoft-graph-docs master branch and you want to make additional updates to the content that was merged. Create a new local branch, X2, from the OfficeDev/microsoft-graph-docs master branch. To do this, open GitBash and execute the following commands:
+Par exemple, si votre branche locale X a été fusionnée dans la branche maître OfficeDev/microsoft-graph-docs et que vous voulez effectuer d’autres mises à jour dans le contenu fusionné. Créez une branche locale, X2, à partir de la branche maître OfficeDev/microsoft-graph-docs. Pour cela, ouvrez GitBash et exécutez les commandes suivantes :
 
     cd microsoft-graph-docs
     git pull upstream master:X2
     git push origin X2
 
-You now have local copies (in a new local branch) of the work that you submitted in branch X. The X2 branch also contains all the work other writers have merged, so if your work depends on others' work (for example, shared images), it is available in the new branch. You can verify that your previous work (and others' work) is in the branch by checking out the new branch...
+Vous possédez désormais des copies locales (dans une nouvelle branche locale) du travail que vous avez effectué dans la branche X. La branche X2 contient également tout le travail que les autres auteurs ont fusionné. Ainsi, si votre travail dépend du travail d’autres personnes (par exemple, des images partagées), celui-ci est disponible dans la nouvelle branche. Pour vérifier que le travail que vous avez effectué (ainsi que celui d’autres personnes) se trouve dans la branche, vous pouvez extraire la nouvelle branche...
 
     git checkout X2
 
-...and verifying the content. (The `checkout` command updates the files in `C:\Users\<yourusername>\microsoft-graph-docs` to the current state of the X2 branch.) Once you check out the new branch, you can make updates to the content and commit them as usual. However, to avoid working in the merged branch (X) by mistake, it's best to delete it (see the following **Delete a branch** section).
+...et vérifier le contenu. (La commande `checkout` applique les mises à jour des fichiers dans `C:\Users\<yourusername>\microsoft-graph-docs` à l’état actuel de la branche X2.) Quand vous avez extrait la nouvelle branche, vous pouvez mettre à jour le contenu et valider les mises à jour. Toutefois, pour éviter de travailler par erreur dans la branche fusionnée (X), il est préférable de la supprimer (consultez la section suivante **Supprimer une branche**).
 
-#### Delete a branch
+#### <a name="delete-a-branch"></a>Supprimer une branche
 
-Once your changes are successfully merged into the main repository, delete the branch you used because you no longer need it.  Any additional work should be done in a new branch.  
+Lorsque vos modifications sont fusionnées dans le référentiel principal, supprimez la branche utilisée dont vous n’avez plus besoin.  Aucun travail supplémentaire ne doit être effectué dans une nouvelle branche.  
 
-#### To delete a branch
+#### <a name="to-delete-a-branch"></a>Suppression d’une branche
 
-1.	In the Git Bash command prompt, type `git checkout master`. This ensures that you aren't in the branch to be deleted (which isn't allowed).
-2.	Next, at the command prompt, type `git branch -d <branch name>`. This deletes the branch on your computer only if it has been successfully merged to the upstream repository. (You can override this behavior with the `–D` flag, but first be sure you want to do this.)
-3.	Finally, type `git push origin :<branch name>` at the command prompt (a space before the colon and no space after it).  This will delete the branch on your github fork.  
+1.  Dans l’invite de commande Git Bash, saisissez `git checkout master`. Ainsi, vous êtes sûr de ne pas vous trouver dans la branche à supprimer (ce qui est interdit).
+2.  À l’invite de commande, saisissez `git branch -d <branch name>`. La branche est supprimée de votre ordinateur uniquement si elle a été fusionnée en amont dans le référentiel. (Vous pouvez remplacer ce comportement par l’indicateur `–D`, mais vous devez d’abord être sûr de vouloir effectuer cette action.)
+3.  Enfin, entrez `git push origin :<branch name>` à l’invite de commandes (un espace avant le signe deux-points et pas d’espace après celui-ci).  La branche est supprimée de votre bifurcation Github.  
 
-Congratulations, you have successfully contributed to the project!
+Félicitations ! Vous avez contribué au projet.
 
-## How to use Markdown to format your topic
+## <a name="how-to-use-markdown-to-format-your-topic"></a>Utilisation de Markdown pour mettre en forme votre rubrique
 
-### Standard Markdown
+### <a name="standard-markdown"></a>Markdown version standard
 
-All of the articles in this repository use Markdown. A complete introduction (and listing of all the syntax) can be found at [Markdown Home](http://daringfireball.net/projects/markdown/ 
+Tous les articles de ce référentiel utilisent Markdown. Une présentation complète (et la description de toutes les syntaxes) est disponible sur l’[accueil de Markdown](http://daringfireball.net/projects/markdown/ 
 ).
  
-## FAQ
+## <a name="faq"></a>FAQ
 
-### How do I get a GitHub account?
+### <a name="how-do-i-get-a-github-account"></a>Comment obtenir un compte GitHub ?
 
-Fill out the form at [Join GitHub](https://github.com/join) to open a free GitHub account. 
+Remplissez le formulaire sur [Rejoindre GitHub](https://github.com/join) pour ouvrir un compte GitHub gratuit. 
 
-### Where do I get a Contributor's License Agreement? 
+### <a name="where-do-i-get-a-contributors-license-agreement"></a>Où puis-je obtenir un Contrat de licence de contributeur ? 
 
-You will automatically be sent a notice that you need to sign the Contributor's License Agreement (CLA) if your pull request requires one. 
+Vous recevrez automatiquement une notification vous informant que vous devez signer le Contrat de licence de contributeur (CLA) si votre requête de tirage l’exige. 
 
-As a community member, **you must sign the Contribution License Agreement (CLA) before you can contribute large submissions to this project**. You only need complete and submit the documentation once. Carefully review the document. You may be required to have your employer sign the document.
+En tant que membre de la communauté, **vous devez signer le Contrat de licence de contributeur (CLA) pour pouvoir contribuer largement à ce projet**. Vous ne devez remplir et soumettre la documentation qu’une seule fois. Lisez attentivement le document. Il faudra peut-être que votre employeur signe le document.
 
-### What happens with my contributions?
+### <a name="what-happens-with-my-contributions"></a>Que se produit-t-il avec mes contributions ?
 
-When you submit your changes, via a pull request, our team will be notified and will review your pull request. You will receive notifications about your pull request from GitHub; you may also be notified by someone from our team if we need more information. If your pull request is approved, we'll update the documentation. We reserve the right to edit your submission for legal, style, clarity, or other issues.
+Lorsque vous envoyez vos modifications, via une requête de tirage, notre équipe est informée et examine votre requête. Vous recevrez des notifications sur votre requête de tirage de la part de GitHub. Vous pouvez également être contacté par une personne de notre équipe si nous avons besoin de plus d’informations. Si votre requête de tirage est approuvée, nous mettrons à jour la documentation. Nous nous réservons le droit de modifier votre envoi en cas de problèmes juridiques, de style, de clarté ou autres.
 
-### Can I become an approver for this repository's GitHub pull requests?
+### <a name="can-i-become-an-approver-for-this-repositorys-github-pull-requests"></a>Puis-je devenir un approbateur pour les requêtes de tirage GitHub de ce référentiel ?
 
-Currently, we are not allowing external contributors to approve pull requests in this repository.
+Actuellement, nous n’autorisons pas les contributeurs externes à approuver les requêtes de tirage dans ce référentiel.
 
-### How soon will I get a response about my change request?
+### <a name="how-soon-will-i-get-a-response-about-my-change-request"></a>Quel est le délai d’attente avant d’obtenir une réponse à propos de ma demande de modification ?
 
-Pull requests are typically reviewed within 10 business days.
+Les demandes de tirage sont généralement examinées dans les 10 jours ouvrés.
 
 
-## More resources
+## <a name="more-resources"></a>Autres ressources
 
-* To learn more about Markdown, go to the Git creator's site [Daring Fireball].
-* To learn more about using Git and GitHub, first check out the [GitHub Help section] [GitHub Help].
+* Pour en savoir plus sur Markdown, rendez-vous sur le site du créateur de Markdown [Daring Fireball].
+* Pour en savoir plus sur l’utilisation de Git et GitHub, commencez par consulter la [section d’aide GitHub] [Aide GitHub].
 
 [GitHub Home]: http://github.com
-[GitHub Help]: http://help.github.com/
+[Aide GitHub]: http://help.github.com/
 [Set Up Git]: http://help.github.com/win-set-up-git/
 [Markdown Home]: http://daringfireball.net/projects/markdown/
 [Daring Fireball]: http://daringfireball.net/

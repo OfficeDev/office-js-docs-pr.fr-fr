@@ -2,38 +2,43 @@
 title: Didacticiel sur les compléments PowerPoint
 metadata:
   title: Didacticiel sur les compléments PowerPoint
-  description: Dans ce didacticiel, vous allez créer un complément\_PowerPoint qui insère une image, insère du texte, obtient les métadonnées des diapositives et navigue entre les diapositives.
-  audience: Développeur
-  level: Débutant
+  description: Dans ce didacticiel, vous allez créer un complément PowerPoint qui insère une image, insère du texte, récupère des métadonnées de diapositives et navigue entre les diapositives.
+  audience: Developer
+  level: Beginner
   displayType: one-column
   ms.date: 02/28/2018
+  ms.openlocfilehash: 8ef93ed2a55f427f2c162d76231d9bf4801fa69a
+  ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+  ms.translationtype: HT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 05/23/2018
+  ms.locfileid: "19438556"
 items:
 - durationInMinutes: 1
-  content: |
-    Ce didacticiel vous explique comment créer un complément de volet des tâches PowerPoint qui ajoute la photo <a href="https://www.bing.com">Bing</a> du jour à une diapositive, ajoute du texte à une diapositive, obtient les métadonnées des diapositives et navigue entre les diapositives. Si vous rencontrez des problèmes tout au long du processus, veuillez <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">nous contacter</a>.
+  content: >
+    Ce didacticiel vous apprend à créer un complément de volet de tâches PowerPoint qui ajoute <a href="https://www.bing.com">Bing</a> photo du jour sur une diapositive, ajoute du texte à une diapositive, obtient des métadonnées de diapositives et navigue entre les diapositives. Si vous rencontrez des problèmes en cours de route, veuillez <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">nous contacter</a>.
 - title: Créer votre projet de complément
   durationInMinutes: 5
-  content: |
+  content: >
     [!INCLUDE [](../includes/powerpoint-tutorial-setup.md)]
 - title: Insérer une image
   durationInMinutes: 8
-  content: |
+  content: >
     [!INCLUDE [](../includes/powerpoint-tutorial-insert-image.md)]
-- title: Personnaliser les éléments de l’interface utilisateur (IU)
+- title: Personnaliser les éléments de l'interface utilisateur (IU)
   durationInMinutes: 3
-  content: |
+  content: >
     [!INCLUDE [](../includes/powerpoint-tutorial-customize-ui.md)]
 - title: Insérer du texte
   durationInMinutes: 4
-  content: |
+  content: >
     [!INCLUDE [](../includes/powerpoint-tutorial-insert-text.md)]
 - title: Obtenir les métadonnées des diapositives
   durationInMinutes: 4
-  content: |
+  content: >
     [!INCLUDE [](../includes/powerpoint-tutorial-get-slide-metadata.md)]
 - title: Naviguer entre les diapositives
   durationInMinutes: 5
-  content: |
+  content: >
     [!INCLUDE [](../includes/powerpoint-tutorial-navigate-slides.md)]
-- content: |
-    Vous avez terminé le didacticiel sur les compléments PowerPoint. Pour en savoir plus sur la création des compléments PowerPoint, reportez-vous à la <a href="../powerpoint/powerpoint-add-ins.md">vue d’ensemble des compléments PowerPoint</a>.\n
+- content: Vous avez terminé le didacticiel du complément PowerPoint. Pour en savoir plus sur la création de compléments PowerPoint, voir <a href="../powerpoint/powerpoint-add-ins.md">Présentation des compléments PowerPoint</a>.
