@@ -1,0 +1,44 @@
+### YamlMime:Tutorial
+title: <span data-ttu-id="0c541-101">Didacticiel sur les compléments PowerPoint</span><span class="sxs-lookup"><span data-stu-id="0c541-101">PowerPoint add-in tutorial</span></span>
+metadata:
+  title: Didacticiel sur les compléments PowerPoint
+  description: Dans ce didacticiel, vous allez créer un complément PowerPoint qui insère une image, insère du texte, récupère des métadonnées de diapositives et navigue entre les diapositives.
+  audience: Developer
+  level: Beginner
+  displayType: one-column
+  ms.date: 02/28/2018
+  ms.openlocfilehash: 8ef93ed2a55f427f2c162d76231d9bf4801fa69a
+  ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+  ms.translationtype: HT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 05/23/2018
+  ms.locfileid: "19438556"
+items:
+- durationInMinutes: 1
+  content: >
+    <span data-ttu-id="0c541-104">Ce didacticiel vous apprend à créer un complément de volet de tâches PowerPoint qui ajoute <a href="https://www.bing.com">Bing</a> photo du jour sur une diapositive, ajoute du texte à une diapositive, obtient des métadonnées de diapositives et navigue entre les diapositives.</span><span class="sxs-lookup"><span data-stu-id="0c541-104">This tutorial teaches you how to build an PowerPoint task pane add-in that adds the <a href="https://www.bing.com">Bing</a> photo of the day to a slide, adds text to a slide, gets slide metadata, and navigates between slides.</span></span> <span data-ttu-id="0c541-105">Si vous rencontrez des problèmes en cours de route, veuillez <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">nous contacter</a>.</span><span class="sxs-lookup"><span data-stu-id="0c541-105">If you run into any issues along the way, please <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">let us know</a>.</span></span>
+- title: <span data-ttu-id="0c541-106">Créer votre projet de complément</span><span class="sxs-lookup"><span data-stu-id="0c541-106">Create your add-in project</span></span>
+  durationInMinutes: 5
+  content: >
+    [!INCLUDE [](../includes/powerpoint-tutorial-setup.md)]
+- title: <span data-ttu-id="0c541-107">Insérer une image</span><span class="sxs-lookup"><span data-stu-id="0c541-107">Insert an image</span></span>
+  durationInMinutes: 8
+  content: >
+    [!INCLUDE [](../includes/powerpoint-tutorial-insert-image.md)]
+- title: <span data-ttu-id="0c541-108">Personnaliser les éléments de l'interface utilisateur (IU)</span><span class="sxs-lookup"><span data-stu-id="0c541-108">Customize User Interface (UI) elements in your PowerPoint task pane add-in</span></span>
+  durationInMinutes: 3
+  content: >
+    [!INCLUDE [](../includes/powerpoint-tutorial-customize-ui.md)]
+- title: <span data-ttu-id="0c541-109">Insérer du texte</span><span class="sxs-lookup"><span data-stu-id="0c541-109">Insert text</span></span>
+  durationInMinutes: 4
+  content: >
+    [!INCLUDE [](../includes/powerpoint-tutorial-insert-text.md)]
+- title: <span data-ttu-id="0c541-110">Obtenir les métadonnées des diapositives</span><span class="sxs-lookup"><span data-stu-id="0c541-110">Get slide metadata</span></span>
+  durationInMinutes: 4
+  content: >
+    [!INCLUDE [](../includes/powerpoint-tutorial-get-slide-metadata.md)]
+- title: <span data-ttu-id="0c541-111">Naviguer entre les diapositives</span><span class="sxs-lookup"><span data-stu-id="0c541-111">Navigate between slides in the presentation</span></span>
+  durationInMinutes: 5
+  content: >
+    [!INCLUDE [](../includes/powerpoint-tutorial-navigate-slides.md)]
+- content: <span data-ttu-id="0c541-112">Vous avez terminé le didacticiel du complément PowerPoint.</span><span class="sxs-lookup"><span data-stu-id="0c541-112">You've completed the PowerPoint add-in tutorial.</span></span> <span data-ttu-id="0c541-113">Pour en savoir plus sur la création de compléments PowerPoint, voir <a href="../powerpoint/powerpoint-add-ins.md">Présentation des compléments PowerPoint</a>.</span><span class="sxs-lookup"><span data-stu-id="0c541-113">To learn more about building PowerPoint add-ins, see <a href="../powerpoint/powerpoint-add-ins.md">PowerPoint add-ins overview</a>.</span></span>
