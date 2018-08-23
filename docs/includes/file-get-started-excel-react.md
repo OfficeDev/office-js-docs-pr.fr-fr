@@ -10,176 +10,77 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-- Installez [Create React App](https://github.com/facebookincubator/create-react-app) globalement.
-
-    ```bash
-    npm install -g create-react-app
-    ```
+- [Node.js](https://nodejs.org)
 
 - Installez la dernière version de [Yeoman](https://github.com/yeoman/yo) et le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) globalement.
-
     ```bash
     npm install -g yo generator-office
     ```
 
-## <a name="generate-a-new-react-app"></a>Générer une nouvelle application React
+### <a name="create-the-web-app"></a>Création de l’application web
 
-L’outil Create React App permet de générer votre application React. À partir du terminal, exécutez la commande suivante :
+1. Créez un dossier sur votre lecteur local et nommez-le **my-addin**. Il s’agit de l’endroit où vous allez créer les fichiers de votre application.
 
-```bash
-create-react-app my-addin
-```
-
-## <a name="generate-the-manifest-file-and-sideload-the-add-in"></a>Générer le fichier manifeste et charger une version test du complément
-
-Chaque complément nécessite un fichier manifeste pour définir ses paramètres et ses fonctionnalités.
-
-1. Accédez au dossier de votre application.
+2. Accédez au dossier de votre application.
 
     ```bash
     cd my-addin
     ```
 
-2. Utilisez le générateur Yeoman pour générer le fichier manifeste de votre complément. Exécutez la commande suivante, puis répondez aux invites comme indiqué dans la capture d’écran suivante :
+3. Utilisez le générateur Yeoman pour générer le fichier manifeste de votre complément. Exécutez la commande suivante, puis répondez aux invites comme indiqué dans la capture d’écran suivante.
 
     ```bash
-    yo office 
+    yo office
     ```
 
-    - **Choisissez un type de projet :** `Manifest`
+    - **Choisissez un type de projet :** `Office Add-in project using React framework`
     - **Comment souhaitez-vous nommer votre complément ? :** `My Office Add-in`
     - **Quelle application client Office voulez-vous prendre en charge ? :** `Excel`
 
-
-    Après avoir terminé l'assistant, un fichier manifeste et un fichier de ressources sont disponibles pour vous permettre de générer votre projet.
+    ![Générateur Yeoman](../images/yo-office-excel-react.png)
     
-    ![Générateur Yeoman](../images/yo-office.png)
-    
-    > [!NOTE]
-    > Si vous êtes invité à remplacer **package.json**, répondez **Non** (ne pas remplacer).
+    Une fois que vous avez terminé avec l'assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
-3. Suivez les instructions pour la plateforme que vous utiliserez pour exécuter votre complément et chargez une version test du complément dans Excel.
-
-    - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online : [Chargement de versions test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
-
-## <a name="update-the-app"></a>Mettre à jour l’application
-
-1. Ouvrez **public/index.html**, ajoutez la balise `<script>` suivante immédiatement avant la balise `</head>`, puis enregistrez le fichier.
-
-    ```html
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
-    ```
-
-2. Ouvrez **src/index.js**, remplacez `ReactDOM.render(<App />, document.getElementById('root'));` par le code suivant, puis enregistrez le fichier. 
-
-    ```typescript
-    const Office = window.Office;
-    
-    Office.initialize = () => {
-      ReactDOM.render(<App />, document.getElementById('root'));
-    };
-    ```
-
-3. Ouvrez **src/App.js**, remplacez le contenu du fichier par le code suivant, puis enregistrez le fichier. 
+4.  Ouvrez **src/components/App.tsx**, recherchez le commentaire « Mettre à jour la couleur de remplissage », puis modifiez la couleur de remplissage de « jaune » à « bleu » avant d'enregistrer le fichier. 
 
     ```js
-    import React, { Component } from 'react';
-    import './App.css';
+    range.format.fill.color = 'blue'
 
-    class App extends Component {
-      constructor(props) {
-        super(props);
-
-        this.onSetColor = this.onSetColor.bind(this);
-      }
-
-      onSetColor() {
-        window.Excel.run(async (context) => {
-          const range = context.workbook.getSelectedRange();
-          range.format.fill.color = 'green';
-          await context.sync();
-        });
-      }
-
-      render() {
-        return (
-          <div id="content">
-            <div id="content-header">
-              <div className="padding">
-                  <h1>Welcome</h1>
-              </div>
-            </div>
-            <div id="content-main">
-              <div className="padding">
-                  <p>Choose the button below to set the color of the selected range to green.</p>
-                  <br />
-                  <h3>Try it out</h3>
-                  <button onClick={this.onSetColor}>Set color</button>
-              </div>
-            </div>
-          </div>
-        );
-      }
-    }
-
-    export default App;
     ```
 
-4. Ouvrez **src/App.css**, remplacez le contenu du fichier par le code CSS suivant, puis enregistrez le fichier. 
+5. Dans le bloc `return` de la fonction `render` au sein de **src/components/App.tsx**, mettez le `<Herolist>` à jour avec le code ci-dessous, puis enregistrez le fichier. 
 
-    ```css
-    #content-header {
-        background: #2a8dd4;
-        color: #fff;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 80px; 
-        overflow: hidden;
-    }
-
-    #content-main {
-        background: #fff;
-        position: fixed;
-        top: 80px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        overflow: auto; 
-    }
-
-    .padding {
-        padding: 15px;
-    }
+    ```js
+      <HeroList message='Discover what My Office Add-in can do for you today!' items={this.state.listItems}>
+        <p className='ms-font-l'>Choose the button below to set the color of the selected range to blue. <b>Set color</b>.</p>
+        <Button className='ms-welcome__action' buttonType={ButtonType.hero} iconProps={{ iconName: 'ChevronRight' }} onClick={this.click}>Run</Button>
+    </HeroList>
     ```
 
-## <a name="try-it-out"></a>Essayez !
+6. Effectuez les étapes décrites dans la rubrique relative à l’[ajout de certificats auto-signés comme certificat racine approuvé](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) pour approuver le certificat pour le système d’exploitation de votre ordinateur de développement.
+
+7. Chargez une version test de votre complément afin qu’il apparaisse dans Excel. Dans le terminal, exécutez la commande suivante : 
+    
+    ```bash
+    npm run sideload
+    ```
+
+## <a name="try-it-out"></a>Essayez
 
 1. À partir du terminal, exécutez la commande suivante pour démarrer le serveur dev.
 
-    Windows :
+    Windows :
     ```bash
-    set HTTPS=true&&npm start
+    npm start
     ```
 
-    macOS :
-    ```bash
-    HTTPS=true npm start
-    ```
-
-   > [!NOTE]
-   > Une fenêtre de navigateur s’ouvre avec le complément qu’elle contient. Fermez cette fenêtre.
-
-2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
+2. Dans Excel, sélectionnez l’onglet **Accueil**, puis le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
     ![Bouton Complément Excel](../images/excel-quickstart-addin-2b.png)
 
 3. Sélectionnez une plage de cellules dans la feuille de calcul.
 
-4. Dans le volet Office, cliquez sur le bouton **Définir couleur** pour définir la couleur de la plage sélectionnée en vert.
+4. Dans le volet Office, cliquez sur le bouton **Définir couleur** pour définir la couleur de la plage sélectionnée en bleu.
 
     ![Complément Excel](../images/excel-quickstart-addin-2c.png)
 
