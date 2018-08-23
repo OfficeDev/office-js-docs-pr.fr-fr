@@ -46,7 +46,6 @@ Le fichier manifeste d’un complément définit ses paramètres et ses fonction
     - **Comment souhaitez-vous nommer votre complément ? :** `My Office Add-in`
     - **Quelle application client Office voulez-vous prendre en charge ? :** `Excel`
 
-
     Après avoir terminé l'assistant, un fichier manifeste et un fichier de ressources sont disponibles pour vous permettre de générer votre projet.
 
     ![Générateur Yeoman](../images/yo-office.png)
@@ -58,7 +57,7 @@ Le fichier manifeste d’un complément définit ses paramètres et ses fonction
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-Pour ce démarrage rapide, vous pouvez utiliser les certificats fournis par le **générateur de compléments Office Yeoman**. Vous avez déjà installé le générateur globalement (comme demandé dans la section **Conditions préalables** de ce démarrage rapide). Vous n’avez donc qu’à copier les certificats situés dans l’emplacement d’installation global dans le dossier de votre application. La procédure suivante explique comment effectuer cette procédure.
+Pour ce démarrage rapide, vous pouvez utiliser les certificats fournis par le **générateur de compléments Office Yeoman**. Vous avez déjà installé le générateur globalement (comme demandé dans la section **Conditions préalables** de ce démarrage rapide). Vous n’avez donc qu’à copier les certificats situés dans l’emplacement d’installation global dans le dossier de votre application. La procédure suivante explique comment effectuer cette opération.
 
 1. À partir du terminal, exécutez la commande suivante pour identifier le dossier où les bibliothèques **npm** globales sont installées :
 
