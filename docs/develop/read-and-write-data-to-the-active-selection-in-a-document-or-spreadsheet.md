@@ -2,9 +2,13 @@
 title: Lire et écrire des données dans la sélection active d’un document ou d’une feuille de calcul
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 6d0aa8a27223a436b7f8e99cbbab0c21dd93f2b5
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "19437534"
 ---
-
-
 # <a name="read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet"></a>Lire et écrire des données dans la sélection active d’un document ou d’une feuille de calcul
 
 L’objet [Document](https://dev.office.com/reference/add-ins/shared/document) expose des méthodes qui vous permettent de lire et d’écrire dans la sélection active de l’utilisateur dans un document ou une feuille de calcul. Pour cela, l’objet **Document** fournit les méthodes **getSelectedDataAsync** et **setSelectedDataAsync**. Cette rubrique explique comment lire, écrire et créer des gestionnaires d’événements pour détecter les changements intervenant dans la sélection de l’utilisateur.

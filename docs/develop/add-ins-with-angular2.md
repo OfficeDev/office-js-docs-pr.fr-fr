@@ -2,8 +2,13 @@
 title: Développement de compléments Office avec Angular
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: c3aa67d7427249fb04d9777dc0d76098ea607582
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "19437506"
 ---
-
 # <a name="develop-office-add-ins-with-angular"></a>Développement de compléments Office avec Angular
 
 Cet article fournit des conseils sur l’utilisation d’Angular 2+ pour créer un complément Office sous la forme d’une application monopage.
@@ -17,7 +22,7 @@ Pour obtenir un exemple de complément Office créé à l’aide de l’infrastr
 Ouvrez une fenêtre nodejs et entrez les informations suivantes sur la ligne de commande : 
 
 ```bash
-npm install --save-dev @types/office-js`
+npm install --save-dev @types/office-js
 ```
 
 ## <a name="bootstrapping-must-be-inside-officeinitialize"></a>L’amorçage doit s’effectuer à l’intérieur d’Office.initialize

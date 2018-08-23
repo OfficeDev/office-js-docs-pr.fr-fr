@@ -2,8 +2,13 @@
 title: Valider et résoudre des problèmes avec votre manifeste
 description: Utiliser ces méthodes pour valider le manifeste des compléments Office.
 ms.date: 12/04/2017
+ms.openlocfilehash: 19f7caaf1d5482972432aad3d2774d69c75cde76
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "19438759"
 ---
-
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>Valider et résoudre des problèmes avec votre manifeste
 
 Utiliser les méthodes suivantes pour valider et résoudre les problèmes rencontrés dans votre manifeste pour compléments Office : 
@@ -117,7 +122,7 @@ Supprimez le contenu du dossier `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 #### <a name="for-mac"></a>Pour Mac :
 Supprimez le contenu du dossier `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
 
-#### <a name="for-ios"></a>Pour iOS :
+#### <a name="for-ios"></a>Pour iOS :
 Appelez `window.location.reload(true)` à partir de JavaScript dans le complément pour forcer le rechargement. Vous pouvez également choisir de réinstaller Office.
 
 ## <a name="see-also"></a>Voir aussi
