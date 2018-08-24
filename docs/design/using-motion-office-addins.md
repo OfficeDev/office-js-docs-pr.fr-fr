@@ -25,7 +25,7 @@ Les éléments standard utilisés dans un complément peuvent intégrer du mouve
 
 
 ## <a name="use-expected-motions"></a>Utiliser des mouvements attendus
-Nous vous recommandons d’utiliser la [structure de l’interface utilisateur Office](https://developer.microsoft.com/en-us/fabric) (Office UI Fabric) pour créer une connexion visuelle avec la plateforme Office et nous encourageons également l’utilisation d’[animations de la structure Fabric](https://developer.microsoft.com/en-us/fabric#/styles/animations) pour créer des mouvements qui s’alignent sur le langage de mouvement Fabric. 
+Nous vous recommandons d’utiliser la [structure de l’interface utilisateur Office](https://developer.microsoft.com/fabric) (Office UI Fabric) pour créer une connexion visuelle avec la plateforme Office et nous encourageons également l’utilisation d’[animations de la structure Fabric](https://developer.microsoft.com/fabric#/styles/animations) pour créer des mouvements qui s’alignent sur le langage de mouvement Fabric. 
 
 Elle permet l’intégration en toute transparence dans Office. Elle vous aide à créer des expériences davantage ressenties qu’observées. Les classes CSS d’animation fournissent des informations de direction, d’entrée/sortie et de durée qui renforcent les modèles mentaux d’Office et offrent aux clients la possibilité d’apprendre à interagir avec votre complément.
 
@@ -49,7 +49,7 @@ Prenez en compte la taille de la zone de dessin HTML (volet des tâches, boîte 
 |À faire|À ne pas faire|
 |:-----|:-----|
 | Utilisez les [durées recommandées de mouvement](https://developer.microsoft.com/fabric#/styles/animations). | N’utilisez pas trop d’animations. Évitez de créer des expériences qui enjolivent seulement l’interface utilisateur et détournent l’attention de vos clients.
-| Suivez [courbes d'accélération recommandées](https://docs.microsoft.com/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion).  |Ne mettez pas en mouvement les éléments de manière saccadée ou décousue. Évitez les anticipations, les rebonds, les élastiques ou autres effets qui émulent la physique du monde naturel.|
+| Suivez les [courbes d’accélération recommandées](https://docs.microsoft.com/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion).  |Ne mettez pas en mouvement les éléments de manière saccadée ou décousue. Évitez les anticipations, les rebonds, les élastiques ou autres effets qui émulent la physique du monde naturel.|
 
 ![GIF affichant le chargement de mosaïques avec un fondu léger en regard d’un GIF affichant le chargement de mosaïques avec un effet de rebond](../images/add-in-motion-character.gif)
 

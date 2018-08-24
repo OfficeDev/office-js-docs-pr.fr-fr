@@ -2,12 +2,12 @@
 title: Vue d’ensemble de la plateforme des compléments pour Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: f7b1f4add776f1971e9762c5cb80dabed45b0a1c
-ms.sourcegitcommit: a0e0416289b293863b8b4d3f9a12581a9e681b27
+ms.openlocfilehash: a35e0db20f5c573357b12b9034d9b13ce0cc3a27
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "20023164"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925275"
 ---
 # <a name="office-add-ins-platform-overview"></a>Vue d’ensemble de la plateforme de compléments pour Office
 
@@ -101,7 +101,7 @@ Les compléments Outlook peuvent développer le ruban Office et s’afficher en 
 
 Les compléments Outlook peuvent accéder à des informations contextuelles à partir de l’élément, telles qu’une adresse ou un ID de suivi, et utiliser ces données pour accéder à d’autres informations sur le serveur ou provenant de services web pour créer des expériences utilisateur attrayantes. Dans la plupart des cas, un complément Outlook peut être exécuté sans modification sur les différentes applications hôte prise en charge, notamment Outlook, Outlook pour Mac, Outlook Web App et Outlook Web App pour appareils, afin d’offrir une expérience homogène sur le bureau, en ligne, sur les tablettes et sur les appareils mobiles. 
 
-Pour accéder à une vue d’ensemble des compléments Outlook, reportez-vous à la rubrique [Présentation des compléments Outlook](https://docs.microsoft.com/en-us/outlook/add-ins/). 
+Pour accéder à une vue d’ensemble des compléments Outlook, reportez-vous à la rubrique [Présentation des compléments Outlook](https://docs.microsoft.com/outlook/add-ins/). 
 
 ### <a name="create-new-objects-in-office-documents"></a>Création d’objets dans des documents Office 
 
@@ -117,13 +117,13 @@ Les API JavaScript Office sont composées d’objets et de membres permettant de
 
 ## <a name="next-steps"></a>Étapes suivantes 
 
-Pour en savoir plus sur la création de votre complément Office, essayez notre [Démarrage rapide en 5 minutes](https://docs.microsoft.com/en-us/office/dev/add-ins/). Vous pouvez commencer à créer des compléments immédiatement à l'aide de Visual Studio ou de tout autre éditeur. 
+Pour en savoir plus sur la création de votre complément Office, essayez notre [Démarrage rapide en 5 minutes](https://docs.microsoft.com/office/dev/add-ins/). Vous pouvez commencer à créer des compléments immédiatement à l'aide de Visual Studio ou de tout autre éditeur. 
 
-Pour commencer à concevoir des solutions offrant des expériences utilisateur efficaces et attrayantes, consultez les [recommandations de conception](../design/add-in-design.md) et les [meilleures pratiques](../concepts/add-in-development-best-practices.md) pour les compléments Office.    
+Pour commencer à concevoir des solutions offrant des expériences utilisateur efficaces et attrayantes, consultez les [instructions de conception](../design/add-in-design.md) et les [meilleures pratiques](../concepts/add-in-development-best-practices.md) pour les compléments Office.    
    
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemples de compléments Office](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples)
+- [Exemples de compléments Office](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
 - [Présentation de l’API JavaScript pour Office](../develop/understanding-the-javascript-api-for-office.md)
 - [Disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md)
 

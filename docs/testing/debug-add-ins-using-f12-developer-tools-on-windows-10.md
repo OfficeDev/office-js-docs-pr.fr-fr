@@ -2,12 +2,12 @@
 title: Débogage des compléments avec les outils de développement F12 sur Windows 10
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: e1e4cde4a1a0fe27058346b93e8aaa39dd75a4e3
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 226773962fb1777a3a1f0e09445721ae2b8b5f5b
+ms.sourcegitcommit: e1c92ba882e6eb03a165867c6021a6aa742aa310
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19438724"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "22925604"
 ---
 # <a name="debug-add-ins-using-f12-developer-tools-on-windows-10"></a>Débogage des compléments avec les outils de développement F12 sur Windows 10
 
@@ -38,15 +38,15 @@ Cet exemple utilise Word et un complément gratuit d’AppSource.
     
 3. Ouvrez les outils de développement F12 correspondant à votre version d’Office :
     
-   - Pour la version 32 bits, utilisez C:\Windows\System32\F12\F12Chooser.exe
+   - Pour la version 32 bits, utilisez C:\Windows\System32\F12\IEChooser.exe
     
-   - Pour la version 64 bits, utilisez C:\Windows\SysWOW64\F12\F12Chooser.exe
+   - Pour la version 64 bits, utilisez C:\Windows\SysWOW64\F12\IEChooser.exe
     
-   Lorsque vous cliquez sur F12Chooser, une autre fenêtre (intitulée « Choisir la cible à déboguer ») affiche les applications possibles pour effectuer le débogage. Sélectionnez l’application de votre choix. Si vous écrivez votre propre complément, sélectionnez le site web où le complément est déployé. Il peut s’agir d’une URL localhost. 
+   Lorsque vous lancez IEChooser, une fenêtre séparée nommée « Choisir la cible à déboguer » affiche les applications possibles pour effectuer le débogage. Sélectionnez l’application de votre choix. Si vous écrivez votre propre complément, sélectionnez le site web où le complément est déployé. Il peut s’agir d’une URL localhost. 
     
    Par exemple, sélectionnez **home.html**. 
     
-   ![Écran du sélecteur F12, pointe vers un complément de type « bulles »](../images/choose-target-to-debug.png)
+   ![Écran IEChooser, pointant sur le complément bulles](../images/choose-target-to-debug.png)
 
 4. Dans la fenêtre F12, sélectionnez le fichier à déboguer.
     
@@ -54,7 +54,7 @@ Cet exemple utilise Word et un complément gratuit d’AppSource.
     
 5. Définissez le point d’arrêt.
     
-   Pour définir un point d'arrêt dans home.js, choisissez la ligne 144 qui se trouve dans la fonction _textChanged_. Vous verrez un point rouge à gauche de la ligne et une ligne correspondante dans le volet **Callstack and Breakpoints** (en bas à droite). Pour connaître d'autres manières de définir un point d'arrêt, référez-vous à [Consulter JavaScript en fonctionnement avec le débogueur](https://msdn.microsoft.com/library/dn255007%28v=vs.85%29.aspx). 
+   Pour définir un point d'arrêt dans home.js, choisissez la ligne 144 qui se trouve dans la fonction _textChanged_. Vous verrez un point rouge à gauche de la ligne et une ligne correspondante dans le volet **Callstack and Breakpoints** (en bas à droite). Pour connaître d'autres manières de définir un point d'arrêt, référez-vous à [Consulter JavaScript en fonctionnement avec le débogueur](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85)). 
     
    ![Débogueur avec le point d’arrêt dans le fichier home.js](../images/debugger-home-js-02.png)
 
@@ -67,6 +67,6 @@ Cet exemple utilise Word et un complément gratuit d’AppSource.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Inspecter le code JavaScript en cours d’exécution avec le débogueur](https://msdn.microsoft.com/library/dn255007%28v=vs.85%29.aspx)
-- [Utilisation des outils de développement F12](https://msdn.microsoft.com/en-us/library/bg182326%28v=vs.85%29.aspx)
+- [Inspecter le code JavaScript en cours d’exécution avec le débogueur](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85))
+- [Utilisation des outils de développement F12](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85))
     

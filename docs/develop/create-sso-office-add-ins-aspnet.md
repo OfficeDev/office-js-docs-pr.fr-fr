@@ -2,12 +2,12 @@
 title: Créer un complément Office ASP.NET qui utilise l’authentification unique
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: be7d6a8ab7f646c1ef9e77a2b459c41000c49f43
-ms.sourcegitcommit: eea7f2b1679cf9a209d35880b906e311bdf1359c
+ms.openlocfilehash: 70662a01d86d3fa111b39deb4c16702a4f8530f5
+ms.sourcegitcommit: e1c92ba882e6eb03a165867c6021a6aa742aa310
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "21241137"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "22925639"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office ASP.NET qui utilise l’authentification unique (aperçu)
 
@@ -22,7 +22,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 * Version la plus récente disponible de Visual Studio 2017 Preview.
 
-* Office 2016, Version 1708, build 8424.nnnn ou version ultérieure (la version par abonnement Office 365, parfois appelée « Démarrer en un clic »). Vous devrez peut-être participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, voir [Participez au programme Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1).
+* Office 2016, Version 1708, build 8424.nnnn ou version ultérieure (la version par abonnement Office 365, parfois appelée « Démarrer en un clic »). Vous devrez peut-être participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, voir [Participez au programme Office Insider](https://products.office.com/office-insider?tab=tab-1).
 
 ## <a name="set-up-the-starter-project"></a>Configurer le projet de démarrage
 
@@ -38,11 +38,11 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     > [!NOTE]
     > Vous obtiendrez une erreur relative à l’espace de noms Identity. Il s’agit d’un effet indésirable dû à un problème de configuration qui sera corrigé à la prochaine étape. Le plus important est que les packages soient bien installés.
 
-1. Pour l’instant, la version de la bibliothèque MSAL (Microsoft.Identity.Client) dont vous avez besoin pour l’authentification unique (version `1.1.1-alpha0393`) ne fait pas partie du catalogue NuGet standard, elle n’est donc pas répertoriée dans package.config et doit être installée séparément. 
+1. Pour l’instant, la version de la bibliothèque MSAL (Microsoft.Identity.Client) dont vous avez besoin pour l’authentification unique (version `1.1.4-preview0002`) ne fait pas partie du catalogue NuGet standard, elle n’est donc pas répertoriée dans package.config et doit être installée séparément. 
 
    > 1. Dans le menu **Outils**, accédez à **Gestionnaire de package NuGet** > **Console du Gestionnaire de package**. 
 
-   > 2. Dans la console, exécutez la commande suivante. L’opération peut prendre une minute ou plus, même avec une bonne connexion Internet. Une fois l’opération terminée, le message **Successfully installed 'Microsoft.Identity.Client 1.1.4-alpha0002' ...** doit être affiché à côté la fin de la sortie dans la console.
+   > 2. Dans la console, exécutez la commande suivante. L’opération peut prendre une minute ou plus, même avec une bonne connexion Internet. Une fois l’opération terminée, le message **Successfully installed 'Microsoft.Identity.Client 1.1.4-alpha0002' ...** doit s’afficher vers la fin de la sortie dans la console.
 
    >    `Install-Package Microsoft.Identity.Client -Version 1.1.4-preview0002`
 
@@ -64,13 +64,13 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
 
 [!INCLUDE[](../includes/register-sso-add-in-aad-v2-include.md)]
 
-## <a name="grant-administrator-consent-to-the-add-in"></a>Accordez le consentement de l'administrateur au complément
+## <a name="grant-administrator-consent-to-the-add-in"></a>Accorder le consentement de l’administrateur au complément
 
 [!INCLUDE[](../includes/grant-admin-consent-to-an-add-in-include.md)]
 
 ## <a name="configure-the-add-in"></a>Configurer le complément
 
-1. Dans la chaîne suivante, remplacez l'espace réservé « {tenant_ID} » par votre ID client Office 365. Pour l'obtenir, [utilisez l'une des méthodes décrites dans](https://support.office.com/en-us/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b) Trouver votre identité Office 365.
+1. Dans la chaîne suivante, remplacez l'espace réservé « {tenant_ID} » par votre ID client Office 365. Pour l'obtenir, [utilisez l'une des méthodes décrites dans](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id) Trouver votre identité Office 365.
 
     `https://login.microsoftonline.com/{tenant_ID}/v2.0`
 
@@ -548,7 +548,7 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
 3. Juste au-dessus de la ligne qui déclare `ValuesController`, ajoutez l’attribut `[Authorize]`. Cela permet de s’assurer que votre complément exécutera le processus d’autorisation que vous avez configuré dans la dernière procédure chaque fois qu’une méthode de contrôleur est appelée. Seuls les appelants avec un jeton d’accès valide à votre complément peuvent ainsi appeler les méthodes du contrôleur.
 
     > [!NOTE]
-    > Un service d’API Web MVC ASP.NET en production doit avoir une logique personnalisée pour le flux « de la part de » dans une ou plusieurs classes [FilterAttribute](https://msdn.microsoft.com/en-us/library/system.web.http.filters(v=vs.108).aspx) personnalisées. Cet exemple pédagogique place la logique dans le contrôleur principal afin que l’intégralité du flux de la logique d’extraction de données et d’autorisation puisse être facilement suivie. De plus, l’exemple est cohérent avec les exemples de modèle d’autorisation dans [Exemples Azure](https://github.com/Azure-Samples/).    
+    > Un service d’API Web MVC ASP.NET en production doit avoir une logique personnalisée pour le flux « de la part de » dans une ou plusieurs classes [FilterAttribute](https://docs.microsoft.com/previous-versions/aspnet/web-frameworks/hh834645(v=vs.108)) personnalisées. Cet exemple pédagogique place la logique dans le contrôleur principal afin que l’intégralité du flux de la logique d’extraction de données et d’autorisation puisse être facilement suivie. De plus, l’exemple est cohérent avec les exemples de modèle d’autorisation dans [Exemples Azure](https://github.com/Azure-Samples/).    
 
 4. Ajoutez la méthode suivante à `ValuesController`. Vous remarquerez que la valeur renvoyée est `Task<HttpResponseMessage>` et non `Task<IEnumerable<string>>`, laquelle serait plus courante pour une méthode `GET api/values`. Il s’agit d’un effet secondaire du fait que notre logique d’autorisation personnalisée se trouvera dans le contrôleur : certaines conditions d’erreur de cette logique nécessitent qu’un objet Réponse HTTP soit envoyé au client du complément. 
 

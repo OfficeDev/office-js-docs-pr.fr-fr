@@ -270,7 +270,6 @@ Cet article décrit le processus de création d’un complément Word à l’aid
             <title>Boilerplate text app</title>
             <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
             <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
-            <script src="app.js" type="text/javascript"></script>
             <link href="app.css" rel="stylesheet" type="text/css" />
         </head>
         <body>
@@ -297,7 +296,7 @@ Cet article décrit le processus de création d’un complément Word à l’aid
     </html>
     ```
 
-2. Ouvrez le fichier **app.js** pour spécifier le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier. Ce script contient le code d’initialisation ainsi que le code qui apporte des modifications au document Word en insérant du texte dans le document lorsqu’un bouton est choisi. 
+2. Ouvrez le fichier **src/index.js** pour spécifier le script pour le complément et remplacez le contenu par le code suivant, puis enregistrez le fichier. Ce script contient le code d’initialisation, ainsi que le code qui modifie le document Word, en insérant du texte dans le document lorsqu’un bouton est sélectionné. 
 
     ```js
     'use strict';

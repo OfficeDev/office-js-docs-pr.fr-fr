@@ -2,12 +2,12 @@
 title: Confidentialité et sécurité pour les compléments Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 326c8095b6ced105cc21492dc290a443212b3d3f
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 76408abe96b07e793a72a8cbd177a29428366dd0
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437730"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925527"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Confidentialité et sécurité pour les compléments Office
 
@@ -33,13 +33,13 @@ De plus, l’utilisation des ressources de mémoire, de processeur et réseau pa
 
 Les sections suivantes décrivent brièvement comment l’architecture d’exécution prend en charge l’exécution de compléments dans les clients Office sur des appareils Windows ou Mac OS X, et dans les clients Office Online sur le web.
 
-> **REMARQUE**  Pour en savoir plus sur l’utilisation de la protection des informations Windows et d’Intune avec des compléments Office, reportez-vous à l’article relatif à l’[utilisation de la protection des informations Windows et d’Intune pour protéger des données d’entreprise dans les documents utilisant des compléments Office](https://docs.microsoft.com/en-us/microsoft-365-enterprise/office-add-ins-wip).
+> **REMARQUE**  Pour en savoir plus sur l’utilisation de la protection des informations Windows et d’Intune avec des compléments Office, reportez-vous à l’article relatif à l’[utilisation de la protection des informations Windows et d’Intune pour protéger des données d’entreprise dans les documents utilisant des compléments Office](https://docs.microsoft.com/microsoft-365/enterprise/office-add-ins-wip).
 
 ### <a name="clients-for-windows-and-os-x-devices"></a>Clients pour les appareils Windows et OS X
 
 Dans les clients pris en charge pour les ordinateurs de bureau et les tablettes, comme Excel, Outlook et Outlook pour Mac, les complément Office sont pris en charge en intégrant un composant in-process, le runtime des compléments Office, qui gère le cycle de vie du complément et permet l’interopérabilité entre le complément et l’application cliente. La page web du complément elle-même est hébergée hors processus. Comme indiqué dans la figure 1, sur un ordinateur de bureau ou une tablette, la page web du complément est hébergée dans un contrôle Internet Explorer qui, à son tour, est hébergé dans un processus d’exécution du complément qui fournit la sécurité et l’isolation des performances.
 
-Sur le bureau Windows, Le mode protégé d’Internet Explorer doit être activé pour la zone de site sensible. En règle générale, il est activé par défaut. S’il est désactivé, une [erreur se produit](https://support.microsoft.com/en-us/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer) lorsque vous essayez de lancer un complément.
+Sur le bureau Windows, Le mode protégé d’Internet Explorer doit être activé pour la zone de site sensible. En règle générale, il est activé par défaut. S’il est désactivé, une [erreur se produit](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer) lorsque vous essayez de lancer un complément.
 
 *Figure 1. Environnement d’exécution des compléments Office dans les clients de bureau et de tablette Windows*
 
@@ -90,7 +90,7 @@ La plateforme du complément répond aux inquiétudes des utilisateurs finaux co
 
 - Lorsqu’ils partagent un document, les utilisateurs partagent également les compléments insérés dans ces documents ou qui y sont associés. Si un utilisateur ouvre un document qui contient un complément qu’il n’a jamais utilisé auparavant, l’application hôte demande à l’utilisateur d’accorder l’autorisation d’exécution du complément dans le document. Dans un environnement d’entreprise, l’application hôte Office demande également à l’utilisateur si le document provient d’une source externe.
 
-- Les utilisateurs peuvent activer ou désactiver l’accès à AppSource. Pour les compléments de contenu et du volet Office, les utilisateurs gèrent l’accès aux compléments et aux catalogues approuvés à partir du **Centre de gestion de la confidentialité** sur le client Office hôte (ouvert à partir de **Fichier** > **Options** > **Centre de gestion de la confidentialité** > **Paramètres du Centre de gestion de la confidentialité** > **Catalogues de compléments approuvés**). Pour les compléments Outlook, les utilisateurs peuvent gérer les compléments en sélectionnant le bouton **Gérer les compléments** ; dans Outlook pour Windows, choisissez **Fichier** > **Gérer les compléments**. Dans Outlook pour Mac, sélectionnez le bouton **Gérer les compléments** dans la barre des compléments. Dans Outlook Web App, choisissez le menu **Paramètres**(icône d’engrenage) > **Gérer les compléments**. Les administrateurs peuvent également gérer cet accès [à l’aide de la stratégie de groupe](http://technet.microsoft.com/en-us/library/jj219429.aspx#BKMK_Managing).
+- Les utilisateurs peuvent activer ou désactiver l’accès à AppSource. Pour les compléments de contenu et du volet Office, les utilisateurs gèrent l’accès aux compléments et aux catalogues approuvés à partir du **Centre de gestion de la confidentialité** sur le client Office hôte (ouvert à partir de **Fichier** > **Options** > **Centre de gestion de la confidentialité** > **Paramètres du Centre de gestion de la confidentialité** > **Catalogues de compléments approuvés**). Pour les compléments Outlook, les utilisateurs peuvent gérer les compléments en sélectionnant le bouton **Gérer les compléments** ; dans Outlook pour Windows, choisissez **Fichier** > **Gérer les compléments**. Dans Outlook pour Mac, sélectionnez le bouton **Gérer les compléments** dans la barre des compléments. Dans Outlook Web App, choisissez le menu **Paramètres**(icône d’engrenage) > **Gérer les compléments**. Les administrateurs peuvent également gérer cet accès [à l’aide de la stratégie de groupe](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
 
 - La conception de la plateforme du complément offre sécurité et performance aux utilisateurs finals des façons suivantes :
 
@@ -98,11 +98,11 @@ La plateforme du complément répond aux inquiétudes des utilisateurs finaux co
 
   - L’exécution dans un contrôle de navigateur web permet au complément de faire quasiment tout ce qu’une page web ordinaire exécutée dans un navigateur peut faire mais, en même temps, oblige le complément à suivre la stratégie d’origine identique pour l’isolation du domaine et les zones de sécurité.
 
-Les compléments Outlook fournissent des fonctionnalités supplémentaires de sécurité et de performance grâce à une analyse de l’utilisation des ressources propres aux compléments Outlook. Pour en savoir plus, voir [Confidentialité, autorisations et sécurité pour les compléments Outlook](https://docs.microsoft.com/en-us/outlook/add-ins/privacy-and-security).
+Les compléments Outlook fournissent des fonctionnalités supplémentaires de sécurité et de performance grâce à une analyse de l’utilisation des ressources propres aux compléments Outlook. Pour en savoir plus, voir [Confidentialité, autorisations et sécurité pour les compléments Outlook](https://docs.microsoft.com/outlook/add-ins/privacy-and-security).
 
 ### <a name="developer-guidelines-to-handle-pii"></a>Recommandations à l’intention des développeurs en matière de gestion des PII
 
-Vous pouvez lire les recommandations générales en matière de protection de PII destinées aux administrateurs informatiques et aux développeurs dans la rubrique [Protection de la confidentialité des données dans le développement et le test d’applications de gestion de ressources humaines](http://technet.microsoft.com/en-us/library/gg447064.aspx). Voici quelques recommandations en matière de protection de PII pour les développeurs de compléments Office :
+Voici quelques recommandations en matière de protection de PII pour les développeurs de compléments Office :
 
 - L’objet [Settings](https://dev.office.com/reference/add-ins/shared/settings) est conçu pour conserver les paramètres de complément et les données d’état entre les sessions pour un complément de contenu ou du volet Office, mais il ne stocke pas les mots de passe et autres informations d’identification personnelle confidentielles dans l’objet **Settings**. Les données contenues dans l’objet **Settings** ne sont pas visibles par les utilisateurs finaux, mais elles sont stockées en tant que partie du format de fichier du document, qui est facilement accessible. Vous devez limiter l’utilisation par votre complément des informations d’identification personnelle et stocker celles qu’il exige sur le serveur hébergeant votre complément en tant que ressource sécurisée par l’utilisateur.
 
@@ -139,7 +139,7 @@ L’exemple suivant montre comment un complément du volet Office spécifie l’
 </OfficeApp>
 ```
 
-Pour plus d’informations sur les autorisations pour les compléments de contenu et du volet Office, reportez-vous à la rubrique [Demande d’autorisations d’utilisation de l’API dans des compléments de contenu et de volet des tâches](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins).
+Pour plus d’informations sur les autorisations pour les compléments de contenu et du volet Office, reportez-vous à la rubrique [Demande d’autorisations d’utilisation de l’API dans des compléments de contenu et de volet des tâches](https://docs.microsoft.com/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins).
 
 Pour plus d’informations sur les autorisations pour les compléments Outlook, reportez-vous aux rubriques suivantes :
 
@@ -176,23 +176,23 @@ Exchange et SharePoint sont des proxys côté client qui permettent un accès su
 Un utilisateur mal intentionné pourrait attaquer l’origine d’un complément en entrant un script malveillant dans le document ou des champs du complément. Un développeur doit traiter les entrées utilisateur pour éviter d’exécuter le code JavaScript d'un utilisateur malveillant dans son domaine. Voici quelques bonnes pratiques à suivre pour gérer les entrées utilisateur d’un document, d’un message électronique ou via les champs d’un complément :
 
 
-- Au lieu d’utiliser la propriété DOM [innerHTML](http://msdn.microsoft.com/en-us/library/ie/ms533897.aspx), utilisez les propriétés [innerText](https://msdn.microsoft.com/library/ms533899.aspx) et [textContent](https://developer.mozilla.org/en-US/docs/DOM/Node.textContent) chaque fois que cela est possible. Utilisez ce qui suit afin d’assurer la prise en charge entre navigateurs pour Internet Explorer et Firefox :
+- Au lieu d’utiliser la propriété DOM [innerHTML](https://developer.mozilla.org/docs/Web/API/Element/innerHTML), utilisez les propriétés [innerText](https://developer.mozilla.org/docs/Web/API/Node/innerText) et [textContent](https://developer.mozilla.org/docs/DOM/Node.textContent) chaque fois que cela est possible. Utilisez ce qui suit afin d’assurer la prise en charge entre navigateurs pour Internet Explorer et Firefox :
 
     ```js
      var text = x.innerText || x.textContent
     ```
 
-    Pour plus d’informations sur les différences entre  **innerText** et **textContent**, voir [Node.textContent](https://developer.mozilla.org/en-US/docs/DOM/Node.textContent). Pour plus d’informations sur la compatibilité DOM entre les navigateurs les plus répandus, voir les instructions relatives à la [compatibilité DOM W3C - HTML](http://www.quirksmode.org/dom/w3c_html.html#t07).
+    Pour plus d’informations sur les différences entre  **innerText** et **textContent**, voir [Node.textContent](https://developer.mozilla.org/docs/DOM/Node.textContent). Pour plus d’informations sur la compatibilité DOM entre les navigateurs les plus répandus, voir les instructions relatives à la [compatibilité DOM W3C - HTML](http://www.quirksmode.org/dom/w3c_html.html#t07).
 
-- Si vous devez utiliser  **innerHTML**, assurez-vous que l’entrée de l’utilisateur ne comporte pas de contenu malveillant avant de le transmettre à  **innerHTML**. Pour plus d’informations et pour obtenir un exemple montrant comment utiliser sans risque  **innerHTML**, voir la propriété [innerHTML](http://msdn.microsoft.com/en-us/library/ie/ms533897.aspx).
+- Si vous devez utiliser  **innerHTML**, assurez-vous que l’entrée de l’utilisateur ne comporte pas de contenu malveillant avant de le transmettre à  **innerHTML**. Pour plus d’informations et pour obtenir un exemple montrant comment utiliser sans risque  **innerHTML**, voir la propriété [innerHTML](https://developer.mozilla.org/docs/Web/API/Element/innerHTML).
 
 - Si vous utilisez jQuery, utilisez la méthode [.text()](http://api.jquery.com/text/) au lieu de la méthode [.html()](http://api.jquery.com/html/).
 
-- Utilisez la méthode [toStaticHTML](http://msdn.microsoft.com/en-us/library/ie/cc848922.aspx) pour supprimer les éléments et attributs HTML dynamiques des entrées des utilisateurs avant de les transmettre à **innerHTML**.
+- Utilisez la méthode [toStaticHTML](http://msdn.microsoft.com/library/ie/cc848922.aspx) pour supprimer les éléments et attributs HTML dynamiques des entrées des utilisateurs avant de les transmettre à **innerHTML**.
 
-- Utilisez la fonction [encodeURIComponent](http://msdn.microsoft.com/en-us/library/8202bce6-1342-40dc-a5ef-ac6d210a7d15.aspx) ou [encodeURI](http://msdn.microsoft.com/en-us/library/17bab5a2-bcd4-46c2-8b52-b2b5a0ed98a3.aspx) pour encoder le texte qui représente une URL ayant pour origine ou contenant une entrée utilisateur.
+- Utilisez la fonction [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) ou [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) pour encoder le texte qui représente une URL ayant pour origine ou contenant une entrée utilisateur.
 
-- Consultez les informations relatives au [développement de compléments sécurisés](http://msdn.microsoft.com/en-us/library/windows/apps/hh849625.aspx) pour connaître d’autres meilleures pratiques en matière de création de solutions web plus sécurisées.
+- Consultez les informations relatives au [développement de compléments sécurisés](https://docs.microsoft.com/previous-versions/windows/apps/hh849625(v=win.10)) pour connaître d’autres meilleures pratiques en matière de création de solutions web plus sécurisées.
 
 ### <a name="tips-to-prevent-clickjacking"></a>Conseils pour éviter les « détournements de clic »
 
@@ -241,7 +241,7 @@ Les développeurs doivent aussi tenir compte des pratiques de sécurité suivant
   - Produire une déclaration énonçant une stratégie de confidentialité conforme.
   - Être prêts à signer un accord contractuel lorsqu’ils soumettent le complément.
 
-Outre les règles d’utilisation des ressources, les développeurs de compléments Outlook doivent également s’assurer que leurs compléments respectent les limites de spécification des règles d’activation et l’utilisation de l’interface API JavaScript. Pour plus d’informations, voir [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](http://msdn.microsoft.com/library/e0c9e3d0-517e-4333-b8bd-e169c51a07f6.aspx).
+Outre les règles d’utilisation des ressources, les développeurs de compléments Outlook doivent également s’assurer que leurs compléments respectent les limites de spécification des règles d’activation et l’utilisation de l’interface API JavaScript. Pour plus d’informations, voir [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins).
 
 ## <a name="it-administrators-control"></a>Contrôle des administrateurs informatiques
 
@@ -249,12 +249,12 @@ Dans un environnement d’entreprise, les administrateurs informatiques ont l’
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Demande d’autorisations d’utilisation de l’API dans des compléments de contenu et de volet des tâches](http://msdn.microsoft.com/library/da2efadc-4ebf-45fe-be39-397ac1eb1dbd.aspx)
-- [Confidentialité, autorisations et sécurité pour les compléments Outlook](http://msdn.microsoft.com/library/44208fc4-05d4-42d8-ab20-faa89624de1c.aspx)
-- [Présentation des autorisations de complément Outlook](https://docs.microsoft.com/en-us/outlook/add-ins/understanding-outlook-add-in-permissions)
-- [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](http://msdn.microsoft.com/library/e0c9e3d0-517e-4333-b8bd-e169c51a07f6.aspx)
-- [Résolutions des limites de stratégie d’origine identique dans les compléments Office](http://msdn.microsoft.com/library/36c800ae-1dda-4ea8-a558-37c89ffb161b.aspx)
+- [Demande d’autorisations d’utilisation de l’API dans des compléments de contenu et de volet des tâches](https://docs.microsoft.com/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
+- [Confidentialité, autorisations et sécurité pour les compléments Outlook](https://docs.microsoft.com/outlook/add-ins/privacy-and-security)
+- [Présentation des autorisations de complément Outlook](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)
+- [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
+- [Résolutions des limites de stratégie d’origine identique dans les compléments Office](https://docs.microsoft.com/office/dev/add-ins/develop/addressing-same-origin-policy-limitations)
 - [Stratégie d’origine identique](http://www.w3.org/Security/wiki/Same_Origin_Policy)
 - [Stratégie d’origine identique Partie 1 : Interdiction de regarder](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)
-- [Stratégie d’origine identique pour JavaScript](https://developer.mozilla.org/En/Same_origin_policy_for_JavaScript)
-- [Mode de protection d’Internet Explorer](https://support.microsoft.com/en-us/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)
+- [Stratégie d’origine identique pour JavaScript](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)
+- [Mode de protection d’Internet Explorer](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)

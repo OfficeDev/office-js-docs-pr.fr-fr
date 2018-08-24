@@ -2,21 +2,21 @@
 title: Modèle objet API JavaScript pour Office
 description: ''
 ms.date: 07/27/2018
-ms.openlocfilehash: a1fca2c8dd5a92cadb6f2798c3732093578360e5
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.openlocfilehash: 999383ae07472ec8d07be0fa714a44339c8ce76d
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "21719880"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925506"
 ---
 # <a name="office-javascript-api-object-model"></a>Modèle objet API JavaScript pour Office
 Les compléments JavaScript Office donnent accès aux fonctionnalités sous-jacentes de l'hôte. Une grande partie de cet accès passe par quelques objets importants. L'objet [Contexte](#context-object) donne accès à l'environnement d'exécution après l'initialisation. L'objet [Document](#document-object) donne le contrôle utilisateur sur un document Excel, PowerPoint ou Word. L'objet [Boite aux lettres](#mailbox-object) donne l'accès aux messages et aux profils utilisateur à un complément Outlook. Comprendre les relations entre ces objets de haut niveau est la base d'un complément JavaScript.
 
-## <a name="context-object"></a>Context, objet
+## <a name="context-object"></a>Objet Context
 
-**S’applique à :** tous les types de complément
+**S’applique à :** tous les types de complément
 
-Lorsqu'un complément est [initialisé](https://docs.microsoft.com/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in), il a de nombreux objets différents avec lesquels il peut interagir dans l'environnement d'exécution. Le contexte d'exécution du complément est reflété dans l'API par l'objet [Contexte](https://dev.office.com/reference/add-ins/shared/office.context). L'objet **Contexte** est l'objet principal qui donne accès aux objets les plus importants de l'API, tels que les objets [Document](https://dev.office.com/reference/add-ins/shared/document) et [Boites aux lettres](https://dev.office.com/reference/add-ins/outlook/Office.context.mailbox) qui à leur tour, fournissent un accès au contenu du document et de la boîte aux lettres.
+Lorsqu'un complément est [initialisé](https://docs.microsoft.com/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in), il a de nombreux objets différents avec lesquels il peut interagir dans l'environnement d'exécution. Le contexte d'exécution du complément est reflété dans l'API par l'objet [Contexte](https://dev.office.com/reference/add-ins/shared/office.context). **Context** est l’objet principal qui permet d’accéder aux objets les plus importants de l’API (par exemple, les objets [Document](https://dev.office.com/reference/add-ins/shared/document) et [Mailbox](https://dev.office.com/reference/add-ins/outlook/Office.context.mailbox)) qui, quant à eux, donnent accès au contenu des documents et de la boîte aux lettres.
 
 Par exemple, dans les compléments de contenu ou du volet Office, vous pouvez utiliser la propriété [document](https://dev.office.com/reference/add-ins/shared/office.context.document) de l’objet **Context** pour accéder aux propriétés et aux méthodes de l’objet **Document** afin d’interagir avec le contenu de documents Word, de feuilles de calcul Excel ou de planifications Project. De même, dans les compléments Outlook, vous pouvez utiliser la propriété [mailbox](https://dev.office.com/reference/add-ins/outlook/Office.context.mailbox) de l’objet **Context** pour accéder aux méthodes et aux propriétés de l’objet **Mailbox** afin d’interagir avec le contenu des messages, des demandes de réunion ou des rendez-vous.
 
@@ -171,4 +171,4 @@ De plus, les compléments Outlook peuvent utiliser les objets suivants :
     
 -  Objet **RoamingSettings** : pour l’enregistrement des paramètres personnalisés propres au complément Outlook dans la boîte aux lettres de l’utilisateur dans laquelle le complément est installé.
     
-Pour plus d’informations sur l’utilisation de JavaScript dans les compléments Outlook, reportez-vous à la rubrique [Compléments Outlook](https://docs.microsoft.com/en-us/outlook/add-ins/).
+Pour plus d’informations sur l’utilisation de JavaScript dans les compléments Outlook, reportez-vous à la rubrique [Compléments Outlook](https://docs.microsoft.com/outlook/add-ins/).

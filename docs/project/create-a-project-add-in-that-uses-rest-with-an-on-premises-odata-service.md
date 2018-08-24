@@ -2,12 +2,12 @@
 title: Créer un complément Project qui utilise REST avec un service OData Project Server local
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: ce481438086f7e55dd27acb61010e61dff7153dc
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 23f9a2f1f2272d5fce4609e111932f4b585caa31
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19439207"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925541"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>Créer un complément Project qui utilise REST avec un service OData Project Server local
 
@@ -29,7 +29,7 @@ Voici les conditions requises pour la création d’un complément du volet Offi
     > [!NOTE]
     > Project Standard 2013 peut également héberger des compléments de volet Office, mais ne peut pas se connecter à Project Web App.
 
-- Visual Studio 2015 avec Outils de développement Office pour Visual Studio comprend des modèles permettant de créer des Compléments Office et SharePoint. Assurez-vous que vous avez installé la version la plus récente des outils de développement Office. Consultez la section  _Outils_ de la page relative aux [téléchargements de compléments Office et SharePoint](http://msdn.microsoft.com/en-us/office/apps/fp123627.aspx)
+- Visual Studio 2015 avec Outils de développement Office pour Visual Studio comprend des modèles permettant de créer des Compléments Office et SharePoint. Assurez-vous que vous avez installé la version la plus récente des outils de développement Office. Consultez la section  _Outils_ de la page relative aux [téléchargements de compléments Office et SharePoint](https://developer.microsoft.com/office/docs)
     
 - Les procédures et les exemples de code de cet article accèdent au service  **ProjectData** de Project Server 2013 dans un domaine local. Les méthodes jQuery de cet article ne fonctionnent pas avec Project Online.
     
@@ -39,9 +39,9 @@ Voici les conditions requises pour la création d’un complément du volet Offi
 ### <a name="procedure-1-to-verify-that-the-projectdata-service-is-accessible"></a>Procédure 1. Pour vérifier que le service ProjectData est accessible
 
 
-1. Pour permettre à votre navigateur d’afficher directement les données XML à partir d’une requête REST, désactivez le mode Lecture du flux. Pour plus d’informations sur la façon d’y parvenir dans Internet Explorer, voir la procédure 1, étape 4 dans [Interrogation des flux OData pour les données de création de rapports Project](http://msdn.microsoft.com/library/3eafda3b-f006-48be-baa6-961b2ed9fe01%28Office.15%29.aspx).
+1. Pour permettre à votre navigateur d’afficher directement les données XML à partir d’une requête REST, désactivez le mode Lecture du flux. Pour plus d’informations sur la façon d’y parvenir dans Internet Explorer, voir la procédure 1, étape 4 dans [Interrogation des flux OData pour les données de création de rapports Project](https://docs.microsoft.com/previous-versions/office/project-odata/jj163048(v=office.15)).
     
-2. Interrogez le service  **ProjectData** à l'aide de votre navigateur et de l'URL suivante : **http://ServerName /ProjectServerName /_api/ProjectData**. Par exemple, si l'instance Project Web App est `http://MyServer/pwa`, le navigateur affiche les résultats suivants :
+2. Interrogez le service  **ProjectData** à l'aide de votre navigateur et de l’URL suivante : **http://ServerName /ProjectServerName /_api/ProjectData**. Par exemple, si l’instance Project Web App est `http://MyServer/pwa`, le navigateur affiche les résultats suivants :
     
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -667,7 +667,7 @@ Même si votre complément fonctionne correctement dans les tests précédents, 
     
 
 > [!NOTE]
-> La quantité de données pouvant être renvoyée dans une requête du service **ProjectData** est limitée. Celle-ci varie selon l’entité. Par exemple, le jeu d’entités **Projects** a une limite par défaut de 100 projets par requête, mais la limite par défaut du jeu d’entités **Risks** est de 200. Pour une installation de production, le code de l’exemple **HelloProjectOData** doit être modifié afin de permettre la prise en charge de requêtes de plus de 100 projets. Pour plus d’informations, reportez-vous à [Étapes suivantes](#next-steps) et [Interrogation des flux OData pour les données de création de rapports Project](http://msdn.microsoft.com/library/3eafda3b-f006-48be-baa6-961b2ed9fe01%28Office.15%29.aspx).
+> La quantité de données pouvant être renvoyée dans une requête du service **ProjectData** est limitée. Celle-ci varie selon l’entité. Par exemple, le jeu d’entités **Projects** a une limite par défaut de 100 projets par requête, mais la limite par défaut du jeu d’entités **Risks** est de 200. Pour une installation de production, le code de l’exemple **HelloProjectOData** doit être modifié afin de permettre la prise en charge de requêtes de plus de 100 projets. Pour plus d’informations, reportez-vous à [Étapes suivantes](#next-steps) et [Interrogation des flux OData pour les données de création de rapports Project](https://docs.microsoft.com/previous-versions/office/project-odata/jj163048(v=office.15)).
 
 
 ## <a name="example-code-for-the-helloprojectodata-add-in"></a>Exemple de code pour le complément HelloProjectOData
@@ -1118,7 +1118,7 @@ Si **HelloProjectOData** était un complément de production destiné à être v
 
 Le complément devrait contenir des contrôles d’erreurs supplémentaires, ainsi qu’une logique permettant d’identifier et d’expliquer ou d’illustrer les cas extrêmes. Par exemple, si une instance de Project Web App a 1 000 projets d’une durée moyenne de cinq jours et d’un coût moyen de 2 400 €, et que le projet actif est le seul dont la durée est supérieure à 20 jours, la comparaison des coûts et du travail est faussée. Cela pourrait être illustré avec un graphique de fréquences. Vous pouvez ajouter des options pour afficher la durée, comparer les projets de durée similaire ou comparer les projets de services identiques ou distincts. Sinon, vous pouvez également permettre à l’utilisateur d’effectuer des choix parmi une liste de champs affichés.
 
-Pour les autres requêtes du service  **ProjectData**, la longueur de la chaîne de requête est limitée, ce qui a une incidence sur le nombre d’étapes qu’une requête peut suivre d’une collection parente à un objet d’une collection enfant. Par exemple, une requête en deux étapes telle que  **Projects** vers **Tasks**, puis vers un élément de tâche fonctionne, mais une requête en trois étapes telle que  **Projects** vers **Tasks** vers **Assignments**, puis vers l’élément d’affectation risque de dépasser la longueur maximale par défaut de l’URL. Pour plus d’informations, voir [Interrogation des flux OData pour les données de création de rapports Project](http://msdn.microsoft.com/library/3eafda3b-f006-48be-baa6-961b2ed9fe01%28Office.15%29.aspx).
+Pour les autres requêtes du service  **ProjectData**, la longueur de la chaîne de requête est limitée, ce qui a une incidence sur le nombre d’étapes qu’une requête peut suivre d’une collection parente à un objet d’une collection enfant. Par exemple, une requête en deux étapes telle que  **Projects** vers **Tasks**, puis vers un élément de tâche fonctionne, mais une requête en trois étapes telle que  **Projects** vers **Tasks** vers **Assignments**, puis vers l’élément d’affectation risque de dépasser la longueur maximale par défaut de l’URL. Pour plus d’informations, voir [Interrogation des flux OData pour les données de création de rapports Project](https://docs.microsoft.com/previous-versions/office/project-odata/jj163048(v=office.15)).
 
 Si vous modifiez le complément  **HelloProjectOData** pour une utilisation en production, procédez comme suit :
 
@@ -1132,7 +1132,7 @@ Si vous modifiez le complément  **HelloProjectOData** pour une utilisation en p
 
   `~/ProjectData/Projects()?skip= [numSkipped]&amp;$top=100&amp;$filter=[filter]&amp;$select=[field1,field2, ???????]`
     
-  Pour plus d'informations, consultez [Options de requête de système OData à l'aide de REST Endpoint](http://msdn.microsoft.com/library/8a938b9b-7fdb-45a3-a04c-4d2d5cf2e353.aspx). Vous pouvez également utiliser la commande [Set-SPProjectOdataConfiguration](http://technet.microsoft.com/library/jj219516%28v=office.15%29.aspx) dans Windows PowerShell pour ignorer la taille de page par défaut pour un jeu d'entité de **Projets** (ou n'importe lequel des 33 jeux d'entité). Consultez [ProjectData - référence de service project OData](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx).
+  Pour plus d'informations, consultez [Options de requête de système OData à l'aide de REST Endpoint](https://docs.microsoft.com/previous-versions/dynamicscrm-2015/developers-guide/gg309461(v=crm.7)). Vous pouvez également utiliser la commande [Set-SPProjectOdataConfiguration](http://technet.microsoft.com/library/jj219516%28v=office.15%29.aspx) dans Windows PowerShell pour ignorer la taille de page par défaut pour un jeu d'entité de **Projets** (ou n'importe lequel des 33 jeux d'entité). Consultez [ProjectData - référence de service project OData](https://docs.microsoft.com/previous-versions/office/project-odata/jj163015(v=office.15)).
     
 - Pour déployer le complément, voir [Publier votre complément Office](../publish/publish.md).
     
@@ -1141,7 +1141,7 @@ Si vous modifiez le complément  **HelloProjectOData** pour une utilisation en p
 
 - [Compléments du volet Office pour Project](project-add-ins.md)
 - [Créer votre premier complément du volet Office pour Project 2013 à l’aide d’un éditeur de texte](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
-- [ProjectData – Référence de service Project OData](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx) 
+- [ProjectData – Référence de service Project OData](https://docs.microsoft.com/previous-versions/office/project-odata/jj163015(v=office.15)) 
 - [Manifeste XML des compléments Office](../develop/add-in-manifests.md) 
 - [Publier votre complément Office](../publish/publish.md)
     

@@ -2,12 +2,12 @@
 title: Tests d’utilisation pour les compléments Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 410b8d7ede22cf222ee2df794e438c7f5f8881dd
-ms.sourcegitcommit: 4e4f7c095e8f33b06bd8a02534ee901125eb1d17
+ms.openlocfilehash: 4b21af2502c9357e8a7d2c953cd5182833577ac9
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "20085353"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925450"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Tests d’utilisation pour les compléments Office
 
@@ -24,7 +24,7 @@ Ces services de test vous aident à simplifier la création d’un plan de test 
 Vous avez seulement besoin de cinq participants pour révéler la plupart des problèmes d’utilisation dans votre conception. Incorporez régulièrement des petits tests dans votre cycle de développement pour vous assurer que votre produit est centré sur l’utilisateur.
 
 > [!NOTE]
-> Nous vous recommandons de tester l’utilisation de votre complément sur plusieurs plateformes. Pour [publier votre complément dans AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store), il doit fonctionner sur toutes les [plateformes qui prennent en charge les méthodes que vous définissez](../overview/office-add-in-availability.md).
+> Nous vous recommandons de tester l’utilisation de votre complément sur plusieurs plateformes. Pour [publier votre complément dans AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store), il doit fonctionner sur toutes les [plateformes qui prennent en charge les méthodes que vous définissez](../overview/office-add-in-availability.md).
 
 ## <a name="1---sign-up-for-a-testing-service"></a>1.   Inscrivez-vous à un service de test
 

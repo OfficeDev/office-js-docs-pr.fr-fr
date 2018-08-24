@@ -26,9 +26,7 @@ Utilisez GitHub pour contribuer à cette documentation sans avoir à cloner le r
 
 ### <a name="to-contribute-using-github"></a>Contribution à l’aide de GitHub
 
-1. Recherchez l’article auquel vous souhaitez contribuer sur GitHub. 
-
-    Si l’article se trouve dans MSDN, choisissez le lien de **suggestion et d’envoi de modifications** présent dans la section de **contribution au contenu** et vous serez redirigé vers le même article sur GitHub.
+1. Recherchez l’article auquel vous souhaitez contribuer sur GitHub.
 2. Une fois que vous avez accédé à l’article dans GitHub, connectez-vous à GitHub (obtenir un compte gratuit [Rejoindre GitHub](https://github.com/join)).
 3. Choisissez l’**icône en forme de crayon** (modifier le fichier dans la bifurcation de ce projet) et apportez vos modifications dans la fenêtre **<>Modifier le fichier**. 
 4. Faites défiler vers le bas, puis entrez une description.
@@ -49,8 +47,8 @@ Utilisez Git pour apporter des modifications substantielles, telles que :
 ### <a name="to-contribute-using-git"></a>Contribution à l’aide de Git
 
 1. Si vous n’avez pas de compte GitHub, configurez-en un sur [GitHub](https://github.com/join). 
-2. Une fois que vous disposez d’un compte, installez Git sur votre ordinateur. Suivez les étapes du [Didacticiel sur la configuration de Git](https://help.github.com/articles/set-up-git/).
-3. Pour envoyer une demande de tirage (pull request) à l’aide de Git, suivez les étapes indiquées dans la section [Utilisation de GitHub, de Git et du référentiel](#use-github-git-and-this-repository).
+2. Une fois que vous disposez d’un compte, installez Git sur votre ordinateur. Suivez les étapes indiquées dans le [didacticiel sur la configuration de Git].
+3. Pour envoyer une requête de tirage à l’aide de Git, suivez les étapes indiquées dans la section [Utilisation de GitHub, de Git et du référentiel](#use-github-git-and-this-repository).
 4. Vous serez invité à signer le Contrat de licence de contributeur si vous êtes :
 
     * membre du groupe Technologies ouvertes Microsoft ;
@@ -58,20 +56,20 @@ Utilisez Git pour apporter des modifications substantielles, telles que :
 
 En tant que membre de la communauté, vous devez signer le Contrat de licence de contributeur (CLA) pour pouvoir contribuer largement à un projet. Vous ne devez remplir et soumettre la documentation qu’une seule fois. Lisez attentivement le document. Il faudra peut-être que votre employeur signe le document.
 
-En signant ce contrat, vous n’obtenez pas le droit de valider le référentiel principal. Cela signifie seulement que les équipes Publication du contenu de développeur Office et Développeurs Office pourront examiner et approuver vos contributions. Vous serez récompensé pour vos envois.
+En signant ce contrat, vous n’obtenez pas le droit de valider le référentiel principal. Cela signifie seulement que les équipes Publication du contenu de développeur Office et Développeurs Office pourront examiner et approuver vos contributions. Votre nom apparaîtra comme auteur de vos contributions.
 
 Les demandes de tirage sont généralement examinées dans les 10 jours ouvrés.
 
 ## <a name="use-github-git-and-this-repository"></a>Utilisation de GitHub, de Git et du référentiel
 
-**Remarque :** La plupart des informations contenues dans cette section figurent dans les articles de l’[aide GitHub].  Si vous connaissez Git et GitHub, passez à la section **Contribution et modification du contenu** pour découvrir les éléments du flux de code/contenu de ce référentiel.
+**Remarque :** La plupart des informations contenues dans cette section figurent dans les articles de l’[aide GitHub].  Si vous connaissez Git et GitHub, passez à la section **Contribution et modification du contenu** pour découvrir les éléments du flux de code/contenu de ce référentiel.
 
 ### <a name="to-set-up-your-fork-of-the-repository"></a>Configuration de votre bifurcation de référentiel
 
 1.  Configurez un compte GitHub pour pouvoir contribuer à ce projet. Si vous n’avez pas fait cela, accédez à [GitHub](https://github.com/join) et configurez le compte maintenant.
-2.  Installez Git sur votre ordinateur. Suivez les étapes du [Didacticiel sur la configuration de Git] [Set Up Git].
-3.  Créez votre propre duplication (fork) du référentiel. Pour cela, cliquez sur le bouton **Dupliquer (Fork)** en haut de la page.
-4.  Copiez la duplication sur votre ordinateur. Pour ce faire, ouvrez Git Bash. À l’invite de commandes, entrez les informations suivantes :
+2.  Installez Git sur votre ordinateur. Suivez les étapes indiquées dans le [didacticiel sur la configuration de Git].
+3.  Créez votre propre bifurcation du référentiel. Pour cela, cliquez sur le bouton **Dupliquer (Fork)** en haut de la page.
+4.  Copiez la bifurcation sur votre ordinateur. Pour ce faire, ouvrez Git Bash. À l’invite de commandes, entrez les informations suivantes :
 
         git clone https://github.com/<your user name>/<repo name>.git
 
@@ -113,14 +111,14 @@ Utilisez l’Explorateur de fichiers pour accéder au référentiel sur votre or
 
 Pour modifier des fichiers, ouvrez-les dans l’éditeur de votre choix et modifiez-les. Pour créer un fichier, utilisez l’éditeur de votre choix et enregistrez le nouveau fichier à l’emplacement approprié dans votre copie locale du référentiel. Lorsque vous travaillez, enregistrez votre travail régulièrement.
 
-Les fichiers présents dans `C:\Users\<yourusername>\<repo name>` constituent une copie de travail de la nouvelle branche créée dans le référentiel local. Si vous effectuez des modifications dans ce dossier, le référentiel local ne sera pas altéré tant que vous ne validez pas les modifications. Pour valider une modification dans le référentiel local, entrez les commandes suivantes dans GitBash :
+Les fichiers présents dans `C:\Users\<yourusername>\<repo name>` constituent une copie de travail de la nouvelle branche créée dans le référentiel local. Si vous effectuez des modifications dans ce dossier, le référentiel local ne sera pas altéré tant que vous ne validez pas les modifications. Pour valider une modification dans le référentiel local, tapez les commandes suivantes dans GitBash :
 
     git add .
     git commit -v -a -m "<Describe the changes made in this commit>"
 
-La commande `add` ajoute vos modifications dans une zone de transit pour qu’elles soient validées dans le référentiel. Le point situé après la commande `add` indique que tous les fichiers ajoutés ou modifiés doivent être placés dans la zone de transit, en vérifiant les sous-dossiers de manière récursive. (Si vous ne souhaitez pas valider toutes les modifications, vous pouvez ajouter des fichiers spécifiques. Vous pouvez également annuler une validation. Pour obtenir de l’aide, entrez `git add -help` ou `git status`.)
+La commande `add` ajoute vos modifications dans une zone de transit pour qu’elles soient validées dans le référentiel. Le point situé après la commande `add` indique que tous les fichiers ajoutés ou modifiés doivent être placés dans la zone de transit, en vérifiant les sous-dossiers de manière récursive. (Si vous ne souhaitez pas valider toutes les modifications, vous pouvez ajouter des fichiers spécifiques. Vous pouvez également annuler une validation. Pour plus d’informations, entrez `git add -help` ou `git status`.)
 
-La commande `commit` applique les modifications en attente dans le référentiel. Le commutateur « `-m` » signifie que vous indiquez le commentaire de validation dans la ligne de commande. Les commutateurs « -v » et « -a » peuvent être omis. Le commutateur « -v » est détaillé à partir de la commande, tandis que le commutateur « -a » répète l’action effectuée avec la commande « add ».
+La commande `commit` applique les modifications en attente dans le référentiel. Le commutateur « `-m` » signifie que vous fournissez le commentaire de validation dans la ligne de commande. Les commutateurs « -v » et « -a » peuvent être omis. Le commutateur « -v » est détaillé à partir de la commande, tandis que le commutateur « -a » répète l’action effectuée avec la commande « add ».
 
 Vous pouvez valider des changements plusieurs fois lorsque vous travaillez, ou vous pouvez tout valider une fois que vous avez terminé.
 
@@ -130,7 +128,7 @@ Quand vous avez terminé votre travail et que vous êtes prêt à le fusionner d
 
 #### <a name="to-submit-a-pull-request-to-the-main-repository"></a>Envoi d’une requête de tirage au référentiel principal.
 
-1.  Dans l’invite de commande Git Bash, saisissez `git push origin <new branch name>`. Dans le référentiel local, `origin` fait référence au référentiel GitHub à partir duquel vous avez cloné le référentiel local. Cette commande affiche l’état actuel de votre nouvelle branche, y compris toutes les validations effectuées au cours des étapes précédentes dans votre bifurcation GitHub.
+1.  Dans l’invite de commande Git Bash, saisissez `git push origin <new branch name>`. Dans le référentiel local, `origin` fait référence à votre référentiel GitHub à partir duquel vous avez cloné le référentiel local. Cette commande affiche l’état actuel de votre nouvelle branche, y compris toutes les validations effectuées au cours des étapes précédentes dans votre bifurcation GitHub.
 2.  Sur le site GitHub, accédez à la nouvelle branche dans votre bifurcation.
 3.  Sélectionnez le bouton **Requête de tirage** situé en haut de la page.
 4.  Vérifiez que la branche de base est `OfficeDev/<repo name>@master` et que la branche de tête est `<your username>/<repo name>@<branch name>`.
@@ -154,7 +152,7 @@ Vous possédez désormais des copies locales (dans une nouvelle branche locale) 
 
     git checkout X2
 
-...et vérifier le contenu. (La commande `checkout` applique les mises à jour des fichiers dans `C:\Users\<yourusername>\microsoft-graph-docs` à l’état actuel de la branche X2.) Quand vous avez extrait la nouvelle branche, vous pouvez mettre à jour le contenu et valider les mises à jour. Toutefois, pour éviter de travailler par erreur dans la branche fusionnée (X), il est préférable de la supprimer (consultez la section suivante **Supprimer une branche**).
+...et consulter le contenu. (La commande `checkout` applique les mises à jour des fichiers dans `C:\Users\<yourusername>\microsoft-graph-docs` à l’état actuel de la branche X2.) Quand vous avez extrait la nouvelle branche, vous pouvez mettre à jour le contenu et valider les mises à jour. Toutefois, pour éviter de travailler par erreur dans la branche fusionnée (X), il est préférable de la supprimer (consultez la section suivante **Supprimer une branche**).
 
 #### <a name="delete-a-branch"></a>Supprimer une branche
 
@@ -170,10 +168,9 @@ Félicitations ! Vous avez contribué au projet.
 
 ## <a name="how-to-use-markdown-to-format-your-topic"></a>Utilisation de Markdown pour mettre en forme votre rubrique
 
-### <a name="standard-markdown"></a>Markdown version standard
+### <a name="markdown"></a>Markdown
 
-Tous les articles de ce référentiel utilisent Markdown. Une présentation complète (et la description de toutes les syntaxes) est disponible sur l’[accueil de Markdown](http://daringfireball.net/projects/markdown/ 
-).
+Tous les articles de ce référentiel utilisent Markdown. Une présentation complète (et la description de toutes les syntaxes) est disponible sur la page [Daring Fireball - Markdown].
  
 ## <a name="faq"></a>FAQ
 
@@ -202,11 +199,11 @@ Les demandes de tirage sont généralement examinées dans les 10 jours ouvrés.
 
 ## <a name="more-resources"></a>Autres ressources
 
-* Pour en savoir plus sur Markdown, rendez-vous sur le site du créateur de Markdown [Daring Fireball].
-* Pour en savoir plus sur l’utilisation de Git et GitHub, commencez par consulter la [section d’aide GitHub] [Aide GitHub].
+* Pour en savoir plus sur Markdown, accédez au site du créateur de Markdown, [Daring Fireball].
+* Pour en savoir plus sur l’utilisation de Git et GitHub, commencez par consulter la [l’aide GitHub].
 
 [GitHub Home]: http://github.com
-[Aide GitHub]: http://help.github.com/
-[Set Up Git]: http://help.github.com/win-set-up-git/
-[Markdown Home]: http://daringfireball.net/projects/markdown/
+[Aide de GitHub]: http://help.github.com/
+[Configuration de Git]: https://help.github.com/articles/set-up-git/
+[Daring Fireball - Markdown]: http://daringfireball.net/projects/markdown/
 [Daring Fireball]: http://daringfireball.net/

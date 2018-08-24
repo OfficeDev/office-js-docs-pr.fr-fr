@@ -2,12 +2,12 @@
 title: Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)
 description: ''
 ms.date: 12/08/2017
-ms.openlocfilehash: 39099d746db3b5bea8a1ef629872006ba4ee087a
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 8906a168db7be938ecc572ad41a9feec2500c189
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437548"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925499"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>Résolution des messages d’erreur pour l’authentification unique (SSO) (aperçu)
 
@@ -31,20 +31,20 @@ Pour consulter des exemples de la gestion des erreurs décrite dans cette sectio
 - [program.js dans Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/public/program.js)
 
 > [!NOTE]
-> Outre les suggestions faites dans cette section, un complément Outlook a un moyen supplémentaire pour répondre à n'importe quelle erreur 13*nnn*. Pour plus de détails, voir [Scénario : implémentez une connexion unique à votre service dans un complément Outlook](https://docs.microsoft.com/en-us/outlook/add-ins/implement-sso-in-outlook-add-in) et [Exemple de complément AttachmentsDemo](https://github.com/OfficeDev/outlook-add-in-attachments-demo). 
+> Outre les suggestions faites dans cette section, un complément Outlook a un moyen supplémentaire pour répondre à n'importe quelle erreur 13*nnn*. Pour plus d’informations, reportez-vous à [Scénario : implémenter l’authentification unique sur votre service dans un complément Outlook](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in) et [Exemple de complément AttachmentsDemo](https://github.com/OfficeDev/outlook-add-in-attachments-demo). 
 
 ### <a name="13000"></a>13000
 
 L’API [getAccessTokenAsync](https://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync) n’est pas prise en charge par le complément ou la version d’Office. 
 
-- La version d’office ne prend pas en charge SSO. La version requise est Office 2016, version 1710, build 8629.nnnn ou version ultérieure (la version par abonnement Office 365, parfois appelée « Démarrer en un clic »). Vous devrez peut-être participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à la rubrique [Participer au programme Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1). 
+- La version d’office ne prend pas en charge SSO. La version requise est Office 2016, version 1710, build 8629.nnnn ou version ultérieure (la version par abonnement Office 365, parfois appelée « Démarrer en un clic »). Vous devrez peut-être participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à la rubrique [Participer au programme Office Insider](https://products.office.com/office-insider?tab=tab-1). 
 - Le manifeste de complément n’inclut pas la section [WebApplicationInfo](https://dev.office.com/reference/add-ins/manifest/webapplicationinfo) appropriée.
 
 ### <a name="13001"></a>13001
 
 L’utilisateur n’est pas connecté à Office. Votre code doit rappeler la méthode `getAccessTokenAsync` et lui passer l’option `forceAddAccount: true` dans le paramètre [options](https://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync#parameters). Mais ne le faites pas plus d'une fois. L'utilisateur peut avoir décidé de ne pas se connecter.
 
-Cette erreur n’apparaît jamais dans Office Online. Si le cookie de l’utilisateur a expiré, Office Online renvoie l’erreur 13006. 
+Cette erreur n’est jamais apparue dans Office Online. Si le cookie de l’utilisateur a expiré, Office Online renvoie l’erreur 13006. 
 
 ### <a name="13002"></a>13002
 
@@ -72,7 +72,7 @@ Erreur client. Votre code doit suggérer à l’utilisateur de se déconnecter e
 
 L’hôte Office n’a pas pu obtenir de jeton d’accès au service web du complément.
 - Si cette erreur se produit pendant le développement, assurez-vous que votre enregistrement de complément et votre manifeste de complément spécifient les autorisations `openid` et `profile`. Pour plus d’informations, consultez la rubrique sur l’[enregistrement du complément avec le point de terminaison Azure AD v2.0](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) ou sur l’[enregistrement du complément avec le point de terminaison Azure AD v2.0](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (nœud JS), et sur la [configuration du complément](create-sso-office-add-ins-aspnet.md#configure-the-add-in)(ASP.NET) ou sur la [configuration du complément](create-sso-office-add-ins-nodejs.md#configure-the-add-in) (nœud JS).
-- En production, il y a plusieurs choses qui peuvent provoquer cette erreur. En voici certaines :
+- En production, il y a plusieurs choses qui peuvent provoquer cette erreur. En voici certaines :
     - L'utilisateur a révoqué son consentement, après l'avoir préalablement accordé. Votre code doit rappeler la méthode `getAccessTokenAsync` avec l’option `forceConsent: true`, mais pas plus d’une fois.
     - L'utilisateur possède une identité de compte Microsoft (MSA). Certaines situations qui entraîneraient l’une des autres erreurs 13nnn avec un compte Work ou School, provoqueront une erreur 13007 lorsqu’un MSA est utilisé. 
 
@@ -84,10 +84,10 @@ L’utilisateur a déclenché une opération qui appelle `getAccessTokenAsync` a
 
 ### <a name="13009"></a>13009
 
-Le complément a appelé la méthode `getAccessTokenAsync` avec l’option `forceConsent: true`, mais le manifeste du complément est déployé sur un type de catalogue qui ne prend pas en charge le consentement forcé. Votre code doit rappeler la méthode `getAccessTokenAsync` et lui passer l’option `forceConsent: false` dans le paramètre [options](https://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync#parameters). Toutefois, l’appel de `getAccessTokenAsync` avec `forceConsent: true` peut lui-même représenter une réponse automatique à un appel ayant échoué de `getAccessTokenAsync` avec `forceConsent: false`, donc votre code doit suivre si `getAccessTokenAsync` avec `forceConsent: false` a déjà été appelé. S’il l’a fait, votre code devrait indiquer à l’utilisateur de se déconnecter d’Office et de se connecter à nouveau.
+Le complément a appelé la méthode `getAccessTokenAsync` avec l’option `forceConsent: true`, mais le manifeste du complément est déployé sur un type de catalogue qui ne prend pas en charge le consentement forcé. Votre code doit rappeler la méthode `getAccessTokenAsync` et lui passer l’option `forceConsent: false` dans le paramètre [options](https://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync#parameters). Toutefois, l’appel de `getAccessTokenAsync` avec `forceConsent: true` peut lui-même représenter une réponse automatique à un appel ayant échoué de `getAccessTokenAsync` avec `forceConsent: false`, donc votre code doit suivre si `getAccessTokenAsync` avec `forceConsent: false` a déjà été appelé. Si c’est le cas, votre code doit indiquer à l’utilisateur de se déconnecter d’Office et de se connecter à nouveau.
 
 > [!NOTE]
-> Microsoft n’imposera pas nécessairement cette restriction sur tous les types de catalogues de compléments. S'il ne le fait pas, alors cette erreur ne sera jamais vue.
+> Microsoft n’imposera pas nécessairement cette restriction sur tous les types de catalogues de compléments. Si la restriction ne s’applique pas, l’erreur n’est jamais affichée.
 
 ### <a name="13010"></a>13010
 
@@ -95,9 +95,9 @@ L’utilisateur exécute le complément sur Office Online et utilise Edge ou Int
 
 ### <a name="50001"></a>50001
 
-Cette erreur (qui n'est pas spécifique à `getAccessTokenAsync`) peut indiquer que le navigateur a en cache une ancienne copie des fichiers office.js. Effacer le cache du navigateur. Une autre possibilité est que la version d'Office n'est pas suffisamment récente pour prendre en charge SSO. Voir [Conditions préalables](create-sso-office-add-ins-aspnet.md#prerequisites).
+Cette erreur (qui n'est pas spécifique à `getAccessTokenAsync`) peut indiquer que le navigateur a en cache une ancienne copie des fichiers office.js. Effacez le cache du navigateur. Une autre possibilité est que la version d'Office n'est pas suffisamment récente pour prendre en charge SSO. Voir [Conditions préalables](create-sso-office-add-ins-aspnet.md#prerequisites).
 
-## <a name="errors-on-the-server-side-from-azure-active-directory"></a>Erreurs d’Azure Active Directory du côté serveur
+## <a name="errors-on-the-server-side-from-azure-active-directory"></a>Erreurs d’Azure Active Directory côté serveur
 
 Pour plus d’exemples de la gestion des erreurs décrite dans cette section, reportez-vous aux articles suivants :
 - [Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)
