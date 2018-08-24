@@ -1,413 +1,427 @@
+items:
 - name: Documentation pour compléments Office
+  displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
   href: index.yml
-  displayName: 'Excel, Word, Outlook, PowerPoint, OneNote, Project'
 - name: Vue d’ensemble
   items:
-    - name: À propos des compléments Office
-      href: overview/office-add-ins.md
-      displayName: 'Excel, Word, Outlook, PowerPoint, OneNote, Project'
-    - name: Disponibilité sur les plateformes et les hôtes
-      href: overview/office-add-in-availability.md
-      displayName: 'Excel, Word, Outlook, PowerPoint, OneNote, Project'
+  - name: À propos des compléments Office
+    displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
+    href: overview/office-add-ins.md
+  - name: Disponibilité sur les plateformes et les hôtes
+    displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
+    href: overview/office-add-in-availability.md
 - name: Démarrages rapides
   items:
-    - name: Créer un complément Excel
-      items:
-        - name: Utiliser Angular
-          href: quickstarts/excel-quickstart-angular.md
-          displayName: Excel
-        - name: Utiliser jQuery
-          href: quickstarts/excel-quickstart-jquery.md
-          displayName: Excel
-        - name: Utiliser React
-          href: quickstarts/excel-quickstart-react.md
-          displayName: Excel
-        - name: Utiliser Vue
-          href: quickstarts/excel-quickstart-vue.md
-          displayName: Excel
-    - name: Créer un complément Word
-      href: quickstarts/word-quickstart.md
-      displayName: Word
-    - name: Créer un complément OneNote
-      href: quickstarts/onenote-quickstart.md
-      displayName: OneNote
-    - name: Créer un complément Outlook
-      href: 'https://docs.microsoft.com/en-us/outlook/add-ins/quick-start'
-      displayName: Outlook
-    - name: Créer un complément PowerPoint
-      href: quickstarts/powerpoint-quickstart.md
-      displayName: PowerPoint
-    - name: Créer un complément Projet
-      href: quickstarts/project-quickstart.md
-      displayName: Project
+  - name: Créer un complément Excel
+    items:
+    - name: Utiliser Angular
+      displayName: Excel
+      href: quickstarts/excel-quickstart-angular.md
+    - name: Utiliser jQuery
+      displayName: Excel
+      href: quickstarts/excel-quickstart-jquery.md
+    - name: Utiliser React
+      displayName: Excel
+      href: quickstarts/excel-quickstart-react.md
+    - name: Utiliser Vue
+      displayName: Excel
+      href: quickstarts/excel-quickstart-vue.md
+  - name: Créer un complément Word
+    displayName: Word
+    href: quickstarts/word-quickstart.md
+  - name: Créer un complément OneNote
+    displayName: OneNote
+    href: quickstarts/onenote-quickstart.md
+  - name: Créer un complément Outlook
+    displayName: Outlook
+    href: https://docs.microsoft.com/outlook/add-ins/quick-start
+  - name: Créer un complément PowerPoint
+    displayName: PowerPoint
+    href: quickstarts/powerpoint-quickstart.md
+  - name: Créer un complément Projet
+    displayName: Project
+    href: quickstarts/project-quickstart.md
 - name: Didacticiels
   items:
-    - name: Didacticiel sur les compléments Excel
-      href: tutorials/excel-tutorial.yml
-      displayName: Excel
-    - name: Didacticiel sur les compléments PowerPoint
-      href: tutorials/powerpoint-tutorial.yml
-      displayName: PowerPoint
-    - name: Didacticiel sur les compléments Word
-      href: tutorials/word-tutorial.yml
-      displayName: Word
+  - name: Didacticiel sur les compléments Excel
+    displayName: Excel
+    href: tutorials/excel-tutorial.yml
+  - name: Didacticiel sur les compléments PowerPoint
+    displayName: PowerPoint
+    href: tutorials/powerpoint-tutorial.yml
+  - name: Didacticiel sur les compléments Word
+    displayName: Word
+    href: tutorials/word-tutorial.yml
 - name: Concepts
   items:
-    - name: Configuration requise pour exécuter des compléments
-      href: concepts/requirements-for-running-office-add-ins.md
-    - name: Meilleures pratiques en matière de développement de compléments
-      href: concepts/add-in-development-best-practices.md
-    - name: Cycle de vie du développement des compléments
-      href: concepts/add-in-development-lifecycle.md
-    - name: Confidentialité et sécurité
-      href: concepts/privacy-and-security.md
-    - name: Performances
-      href: concepts/resource-limits-and-performance-optimization.md
+  - name: Configuration requise pour exécuter des compléments
+    href: concepts/requirements-for-running-office-add-ins.md
+  - name: Meilleures pratiques en matière de développement de compléments
+    href: concepts/add-in-development-best-practices.md
+  - name: Cycle de vie du développement des compléments
+    href: concepts/add-in-development-lifecycle.md
+  - name: Confidentialité et sécurité
+    href: concepts/privacy-and-security.md
+  - name: Performances
+    href: concepts/resource-limits-and-performance-optimization.md
 - name: Guides pratiques
   items:
-    - name: Concevoir l'interface utilisateur
-      href: design/add-in-design.md
+  - name: Concevoir l’interface utilisateur
+    href: design/add-in-design.md
+    items:
+    - name: Conseils
       items:
-        - name: Conseils
-          items:
-            - name: Accessibilité
-              href: design/accessibility-guidelines.md
-            - name: Ton
-              href: design/voice-guidelines.md
-            - name: Visualisation des données
-              href: design/data-visualization-guidelines.md
-        - name: Langage de création
-          href: design/add-in-design-language.md
-          items:
-            - name: Typographie
-              href: design/add-in-typography.md
-            - name: Couleur
-              href: design/add-in-color.md
-            - name: Disposition
-              href: design/add-in-layout.md
-            - name: Icônes
-              href: design/add-in-icons.md
-            - name: Utiliser le mouvement
-              href: design/using-motion-office-addins.md
-              displayName: Motion
-        - name: Eléments d'interface
-          href: design/interface-elements.md
-          items:
-            - name: Commandes de complément
-              href: design/add-in-commands.md
-            - name: Volets des tâches
-              href: design/task-pane-add-ins.md
-            - name: Boîtes de dialogue
-              href: design/dialog-boxes.md
-            - name: Compléments de contenu
-              href: design/content-add-ins.md
-        - name: Modèles de conception UX
-          href: design/ux-design-pattern-templates.md
-          items:
-            - name: Authentification
-              href: design/authentication-patterns.md
-            - name: Première exécution
-              href: design/first-run-experience-patterns.md
-            - name: Navigation
-              href: design/navigation-patterns.md
-            - name: Personnalisation
-              href: design/branding-patterns.md
-        - name: Ressources
-          items:
-            - name: Kit d'outils de conception
-              href: design/design-toolkits.md
-            - name: Structure de l’interface utilisateur Office
-              href: design/office-ui-fabric.md
-            - name: Commencer à utiliser Fabric React
-              href: design/using-office-ui-fabric-react.md
-    - name: Développer
+      - name: Accessibilité
+        href: design/accessibility-guidelines.md
+      - name: Ton
+        href: design/voice-guidelines.md
+      - name: Visualisation des données
+        href: design/data-visualization-guidelines.md
+    - name: Langage de création
+      href: design/add-in-design-language.md
       items:
-        - name: Versions d’Office et ensembles de conditions requises
-          href: develop/office-versions-and-requirement-sets.md
-        - name: Installer la version la plus récente d'Office
-          href: develop/install-latest-office-version.md
-        - name: API JavaScript pour Office
-          href: develop/understanding-the-javascript-api-for-office.md
-          items:
-            - name: Assistance pour les compléments de contenu et de volet des tâches
-              href: develop/support-for-task-pane-and-content-add-ins.md
-            - name: Référencer Office.js
-              href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
-            - name: Chargez Office.js
-              href: develop/loading-the-dom-and-runtime-environment.md
-            - name: Modèle objet JavaScript Office
-              href: develop/office-javascript-api-object-model.md
-            - name: Programmation asynchrone dans des compléments Office
-              href: develop/asynchronous-programming-in-office-add-ins.md
-            - name: Etat persistant et paramètres
-              href: develop/persisting-add-in-state-and-settings.md
-        - name: Manifeste
-          href: develop/add-in-manifests.md
-          items:
-            - name: Créez des commandes de compléments
-              href: develop/create-addin-commands.md
-            - name: Spécifier les hôtes Office
-              href: develop/specify-office-hosts-and-api-requirements.md
-            - name: Demandez les autorisations d’utilisation de l’API dans les compléments de contenu et de volet des tâches
-              href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
-            - name: Mettez à jour l'API et la version du manifeste
-              href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
-        - name: Authentification et autorisation
-          items:
-            - name: Activer le SSO dans un complément
-              href: develop/sso-in-office-add-ins.md
-              items:
-                - name: Créer un complément SSO à l'aide d'ASP.NET
-                  href: develop/create-sso-office-add-ins-aspnet.md
-                - name: Créer un complément d'authentification unique à l'aide de Node.js
-                  href: develop/create-sso-office-add-ins-nodejs.md
-                - name: Inscrivez un complément Office qui utilise le SSO avec Azure AD version 2.0
-                  href: develop/register-sso-add-in-aad-v2.md
-                - name: Accorder le consentement de l'administrateur au complément
-                  href: develop/grant-admin-consent-to-an-add-in.md
-                - name: Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)
-                  href: develop/troubleshoot-sso-in-office-add-ins.md
-            - name: Autoriser les services externes
-              href: develop/auth-external-add-ins.md
-            - name: Autorisez Microsoft Graph
-              href: develop/authorize-to-microsoft-graph.md
-        - name: Utiliser l'API Dialog
-          href: develop/dialog-api-in-office-add-ins.md
-        - name: Ouvrir automatiquement un volet Office avec un document
-          href: develop/automatically-open-a-task-pane-with-a-document.md
-        - name: Résoudre les limitations des politiques d'origine identiques
-          href: develop/addressing-same-origin-policy-limitations.md
-        - name: Localisation
-          href: develop/localization.md
-        - name: Développer des compléments avec Visual Studio
-          items:
-            - name: Créer et déboguer des compléments Office dans Visual Studio
-              href: develop/create-and-debug-office-add-ins-in-visual-studio.md
-              items: null
-            - name: Obtenir JavaScript IntelliSense dans Visual Studio
-              href: develop/get-javascript-intellisense-in-visual-studio.md
-            - name: Convertir JavaScript en TypeScript
-              href: develop/convert-javascript-to-typescript.md
-        - name: Développer des compléments pour iPad
-          href: develop/develop-office-add-ins-for-the-ipad.md
-        - name: Développer des compléments avec Angular
-          href: develop/add-ins-with-angular2.md
-    - name: Compléments Excel
-      href: excel/excel-add-ins-overview.md
+      - name: Typographie
+        href: design/add-in-typography.md
+      - name: Couleur
+        href: design/add-in-color.md
+      - name: Disposition
+        href: design/add-in-layout.md
+      - name: Icônes
+        href: design/add-in-icons.md
+      - name: Utiliser le mouvement
+        displayName: Motion
+        href: design/using-motion-office-addins.md
+    - name: Eléments d'interface
+      href: design/interface-elements.md
+      items:
+      - name: Commandes de complément
+        href: design/add-in-commands.md
+      - name: Volets Office
+        href: design/task-pane-add-ins.md
+      - name: Boîtes de dialogue
+        href: design/dialog-boxes.md
+      - name: Compléments de contenu
+        href: design/content-add-ins.md
+    - name: Modèles de conception UX
+      href: design/ux-design-pattern-templates.md
+      items:
+      - name: Authentification
+        href: design/authentication-patterns.md
+      - name: Première exécution
+        href: design/first-run-experience-patterns.md
+      - name: Navigation
+        href: design/navigation-patterns.md
+      - name: Personnalisation
+        href: design/branding-patterns.md
+    - name: Ressources
+      items:
+      - name: Kit d'outils de conception
+        href: design/design-toolkits.md
+      - name: Structure de l’interface utilisateur Office
+        href: design/office-ui-fabric.md
+      - name: Commencer à utiliser Fabric React
+        href: design/using-office-ui-fabric-react.md
+  - name: Développer
+    items:
+    - name: Versions d’Office et ensembles de conditions requises
+      href: develop/office-versions-and-requirement-sets.md
+    - name: Installer la version la plus récente d’Office
+      href: develop/install-latest-office-version.md
+    - name: API JavaScript pour Office
+      href: develop/understanding-the-javascript-api-for-office.md
+      items:
+      - name: Assistance pour les compléments de contenu et de volet des tâches
+        href: develop/support-for-task-pane-and-content-add-ins.md
+      - name: Référencer Office.js
+        href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
+      - name: Chargez Office.js
+        href: develop/loading-the-dom-and-runtime-environment.md
+      - name: Modèle objet JavaScript Office
+        href: develop/office-javascript-api-object-model.md
+      - name: Programmation asynchrone dans des compléments Office
+        href: develop/asynchronous-programming-in-office-add-ins.md
+      - name: État persistant et paramètres
+        href: develop/persisting-add-in-state-and-settings.md
+    - name: Manifeste
+      href: develop/add-in-manifests.md
+      items:
+      - name: Créez des commandes de compléments
+        href: develop/create-addin-commands.md
+      - name: Spécifier les hôtes Office
+        href: develop/specify-office-hosts-and-api-requirements.md
+      - name: Demandez les autorisations d’utilisation de l’API dans les compléments de contenu et de volet des tâches
+        href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
+      - name: Mettre à jour l’API et la version du manifeste
+        href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
+    - name: Authentification et autorisation
+      items:
+      - name: Activer le SSO dans un complément
+        href: develop/sso-in-office-add-ins.md
+        items:
+        - name: Créer un complément SSO à l'aide d'ASP.NET
+          href: develop/create-sso-office-add-ins-aspnet.md
+        - name: Créer un complément d'authentification unique à l'aide de Node.js
+          href: develop/create-sso-office-add-ins-nodejs.md
+        - name: Inscrivez un complément Office qui utilise le SSO avec Azure AD version 2.0
+          href: develop/register-sso-add-in-aad-v2.md
+        - name: Accorder le consentement de l’administrateur au complément
+          href: develop/grant-admin-consent-to-an-add-in.md
+        - name: Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)
+          href: develop/troubleshoot-sso-in-office-add-ins.md
+      - name: Autoriser les services externes
+        href: develop/auth-external-add-ins.md
+      - name: Autorisez Microsoft Graph
+        href: develop/authorize-to-microsoft-graph.md
+    - name: Utiliser l'API Dialog
+      href: develop/dialog-api-in-office-add-ins.md
+    - name: Ouvrir automatiquement un volet Office avec un document
+      href: develop/automatically-open-a-task-pane-with-a-document.md
+    - name: Résoudre les limitations des politiques d’origines identiques
+      href: develop/addressing-same-origin-policy-limitations.md
+    - name: Localisation
+      href: develop/localization.md
+    - name: Développer des compléments avec Visual Studio
+      items:
+      - name: Créer et déboguer des compléments Office dans Visual Studio
+        href: develop/create-and-debug-office-add-ins-in-visual-studio.md
+      - name: Obtenir JavaScript IntelliSense dans Visual Studio
+        href: develop/get-javascript-intellisense-in-visual-studio.md
+      - name: Convertir JavaScript en TypeScript
+        href: develop/convert-javascript-to-typescript.md
+    - name: Développer des compléments pour iPad
+      href: develop/develop-office-add-ins-for-the-ipad.md
+    - name: Développer des compléments avec Angular
+      href: develop/add-ins-with-angular2.md
+  - name: Compléments Excel
+    displayName: Excel
+    href: excel/excel-add-ins-overview.md
+    items:
+    - name: Création de votre premier complément Excel
       displayName: Excel
+      href: excel/excel-add-ins-get-started-overview.md
       items:
-        - name: Création de votre premier complément Excel
-          href: excel/excel-add-ins-get-started-overview.md
+      - name: Utiliser Angular
+        displayName: Excel
+        href: excel/excel-add-ins-get-started-angular.md
+      - name: Utiliser jQuery
+        displayName: Excel
+        href: excel/excel-add-ins-get-started-jquery.md
+      - name: Utiliser React
+        displayName: Excel
+        href: excel/excel-add-ins-get-started-react.md
+      - name: Utiliser Vue
+        displayName: Excel
+        href: excel/excel-add-ins-get-started-vue.md
+    - name: Didacticiel sur les compléments Excel
+      displayName: Excel
+      href: tutorials/excel-tutorial.yml
+    - name: Concepts de base
+      displayName: Excel
+      href: excel/excel-add-ins-core-concepts.md
+      items:
+      - name: Fonctions personnalisées
+        displayName: Excel
+        href: excel/custom-functions-overview.md
+        items:
+        - name: Inscription JSON fonctions personnalisées Excel
           displayName: Excel
-          items:
-            - name: Utiliser Angular
-              href: excel/excel-add-ins-get-started-angular.md
-              displayName: Excel
-            - name: Utiliser jQuery
-              href: excel/excel-add-ins-get-started-jquery.md
-              displayName: Excel
-            - name: Utiliser React
-              href: excel/excel-add-ins-get-started-react.md
-              displayName: Excel
-            - name: Utiliser Vue
-              href: excel/excel-add-ins-get-started-vue.md
-              displayName: Excel
-        - name: Didacticiel sur les compléments Excel
-          href: tutorials/excel-tutorial.yml
-          displayName: Excel
-        - name: Concepts de base
-          href: excel/excel-add-ins-core-concepts.md
-          displayName: Excel
-          items:
-            - name: Fonctions personnalisées
-              href: excel/custom-functions-overview.md
-              displayName: Excel
-              items:
-                - name: Inscription JSON fonctions personnalisées Excel
-                  href: excel/custom-functions-json.md
-                  displayName: Excel
-            - name: graphiques ;
-              href: excel/excel-add-ins-charts.md
-              displayName: Excel
-            - name: Événements
-              href: excel/excel-add-ins-events.md
-              displayName: Excel
-            - name: Plages
-              href: excel/excel-add-ins-ranges.md
-              displayName: Excel
-            - name: Tableaux
-              href: excel/excel-add-ins-tables.md
-              displayName: Excel
-            - name: Worksheets
-              href: excel/excel-add-ins-worksheets.md
-              displayName: Excel
-        - name: Concepts avancés
-          href: excel/excel-add-ins-advanced-concepts.md
-          displayName: Excel
-          items:
-            - name: Appeler des fonctions intégrées
-              href: excel/excel-add-ins-worksheet-functions.md
-              displayName: Excel
-            - name: Co-création dans des macros complémentaires Excel
-              href: excel/co-authoring-in-excel-add-ins.md
-              displayName: Excel
-            - name: Validation de données
-              href: excel/excel-add-ins-data-validation.md
-              displayName: Excel
-            - name: Gestion des erreurs
-              href: excel/excel-add-ins-error-handling.md
-              displayName: Excel
-            - name: Optimisation des performances
-              href: excel/performance.md
-              displayName: Excel
-        - name: Référence de l’API JavaScript d’Excel
-          href: 'https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview'
-          displayName: Excel
-    - name: Compléments Word
-      href: word/word-add-ins-programming-overview.md
+          href: excel/custom-functions-json.md
+      - name: Graphiques
+        displayName: Excel
+        href: excel/excel-add-ins-charts.md
+      - name: Événements
+        displayName: Excel
+        href: excel/excel-add-ins-events.md
+      - name: Tableaux croisés dynamiques
+        displayName: Excel
+        href: excel/excel-add-ins-pivottables.md
+      - name: Ranges
+        displayName: Excel
+        href: excel/excel-add-ins-ranges.md
+      - name: Tableaux
+        displayName: Excel
+        href: excel/excel-add-ins-tables.md
+      - name: Feuilles de calcul
+        displayName: Excel
+        href: excel/excel-add-ins-worksheets.md
+    - name: Concepts avancés
+      displayName: Excel
+      href: excel/excel-add-ins-advanced-concepts.md
+      items:
+      - name: Appeler des fonctions intégrées
+        displayName: Excel
+        href: excel/excel-add-ins-worksheet-functions.md
+      - name: Co-création dans des macros complémentaires Excel
+        displayName: Excel
+        href: excel/co-authoring-in-excel-add-ins.md
+      - name: Validation de données
+        displayName: Excel
+        href: excel/excel-add-ins-data-validation.md
+      - name: Gestion des erreurs
+        displayName: Excel
+        href: excel/excel-add-ins-error-handling.md
+      - name: Optimisation des performances
+        displayName: Excel
+        href: excel/performance.md
+    - name: Référence de l’API JavaScript d’Excel
+      displayName: Excel
+      href: https://docs.microsoft.com/en-us/javascript/office/overview/excel-add-ins-reference-overview?view=office-js
+  - name: Compléments Word
+    displayName: Word
+    href: word/word-add-ins-programming-overview.md
+    items:
+    - name: Créer votre premier complément Word
       displayName: Word
-      items:
-        - name: Créer votre premier complément Word
-          href: word/word-add-ins.md
-          displayName: Word
-        - name: Didacticiel sur les compléments Word
-          href: tutorials/word-tutorial.yml
-          displayName: Word
-        - name: Créer de meilleurs compléments pour Word avec Office Open XML
-          href: word/create-better-add-ins-for-word-with-office-open-xml.md
-          displayName: Word
-        - name: Compléments de dictionnaire du volet Office
-          href: word/dictionary-task-pane-add-ins.md
-          displayName: Word
-        - name: Obtenir le document complet à partir d’un complément
-          href: word/get-the-whole-document-from-an-add-in-for-word.md
-          displayName: Word
-        - name: Lire et écrire des données dans la sélection active
-          href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
-          displayName: Word
-        - name: Lier à des régions dans un document
-          href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
-          displayName: Word
-        - name: Utilisez les options de recherche pour trouver du texte dans votre complément Word
-          href: word/search-option-guidance.md
-          displayName: Word
-        - name: Référence d’API JavaScript pour Word
-          href: 'https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview'
-          displayName: Word
-    - name: Compléments Outlook
-      href: 'https://docs.microsoft.com/en-us/outlook/add-ins/'
-      displayName: Outlook
-    - name: Compléments PowerPoint
-      href: powerpoint/powerpoint-add-ins.md
+      href: word/word-add-ins.md
+    - name: Didacticiel sur les compléments Word
+      displayName: Word
+      href: tutorials/word-tutorial.yml
+    - name: Créer de meilleurs compléments pour Word avec Office Open XML
+      displayName: Word
+      href: word/create-better-add-ins-for-word-with-office-open-xml.md
+    - name: Compléments de dictionnaire du volet Office
+      displayName: Word
+      href: word/dictionary-task-pane-add-ins.md
+    - name: Obtenir le document complet à partir d’un complément
+      displayName: Word
+      href: word/get-the-whole-document-from-an-add-in-for-word.md
+    - name: Lire et écrire des données dans la sélection active
+      displayName: Word
+      href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
+    - name: Lier à des régions dans un document
+      displayName: Word
+      href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
+    - name: Utilisez les options de recherche pour trouver du texte dans votre complément Word
+      displayName: Word
+      href: word/search-option-guidance.md
+    - name: Référence d’API JavaScript pour Word
+      displayName: Word
+      href: https://docs.microsoft.com/en-us/javascript/office/overview/word-add-ins-reference-overview?view=office-js
+  - name: Compléments Outlook
+    displayName: Outlook
+    href: https://docs.microsoft.com/outlook/add-ins/
+  - name: Compléments PowerPoint
+    displayName: PowerPoint
+    href: powerpoint/powerpoint-add-ins.md
+    items:
+    - name: Création de votre premier complément PowerPoint
       displayName: PowerPoint
-      items:
-        - name: Création de votre premier complément PowerPoint
-          href: powerpoint/powerpoint-add-ins-get-started.md
-          displayName: PowerPoint
-        - name: Didacticiel sur les compléments PowerPoint
-          href: tutorials/powerpoint-tutorial.yml
-          displayName: PowerPoint
-        - name: Utiliser des thèmes de document dans vos compléments PowerPoint
-          href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
-          displayName: PowerPoint
-        - name: Obtenir le document complet à partir d’un complément
-          href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
-          displayName: PowerPoint
-    - name: Compléments OneNote
-      href: onenote/onenote-add-ins-programming-overview.md
+      href: powerpoint/powerpoint-add-ins-get-started.md
+    - name: Didacticiel sur les compléments PowerPoint
+      displayName: PowerPoint
+      href: tutorials/powerpoint-tutorial.yml
+    - name: Utiliser des thèmes de document dans vos compléments PowerPoint
+      displayName: PowerPoint
+      href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
+    - name: Obtenir le document complet à partir d’un complément
+      displayName: PowerPoint
+      href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
+  - name: Compléments OneNote
+    displayName: OneNote
+    href: onenote/onenote-add-ins-programming-overview.md
+    items:
+    - name: Créer votre premier complément OneNote
       displayName: OneNote
-      items:
-        - name: Créer votre premier complément OneNote
-          href: onenote/onenote-add-ins-getting-started.md
-          displayName: OneNote
-        - name: Utiliser du contenu de page OneNote
-          href: onenote/onenote-add-ins-page-content.md
-          displayName: OneNote
-        - name: Référence de l’API JavaScript de OneNote
-          href: 'https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference'
-          displayName: OneNote
-    - name: Compléments Project
-      href: project/project-add-ins.md
+      href: onenote/onenote-add-ins-getting-started.md
+    - name: Utiliser du contenu de page OneNote
+      displayName: OneNote
+      href: onenote/onenote-add-ins-page-content.md
+    - name: Référence de l’API JavaScript de OneNote
+      displayName: OneNote
+      href: https://docs.microsoft.com/en-us/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js
+  - name: Compléments Project
+    displayName: Project
+    href: project/project-add-ins.md
+    items:
+    - name: Création de votre premier complément Project
       displayName: Project
+      href: project/project-add-ins-get-started.md
+    - name: Créer un complément Project qui utilise REST avec un service OData local
+      displayName: Project
+      href: project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md
+    - name: Créer votre premier complément du volet Office pour Project à l’aide d’un éditeur de texte
+      displayName: Project
+      href: project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md
+  - name: Tester et déboguer
+    href: testing/test-debug-office-add-ins.md
+    items:
+    - name: Windows
       items:
-        - name: Création de votre premier complément Project
-          href: project/project-add-ins-get-started.md
-          displayName: Project
-        - name: Créer un complément Project qui utilise REST avec un service OData local
-          href: project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md
-          displayName: Project
-        - name: Créer votre premier complément du volet Office pour Project à l’aide d’un éditeur de texte
-          href: project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md
-          displayName: Project
-    - name: Tester et déboguer
-      href: testing/test-debug-office-add-ins.md
+      - name: Chargement de version test des compléments Office sur Windows
+        href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
+      - name: Chargez une version test des compléments Office à l'aide de la commande de chargement indépendant
+        href: testing/sideload-office-addin-using-sideload-command.md
+      - name: Attacher un débogueur à partir du volet Office
+        href: testing/attach-debugger-from-task-pane.md
+      - name: Déboguer à l’aide des outils de développement F12
+        href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
+    - name: Office Online
       items:
-        - name: Windows
-          items:
-            - name: Chargement de version test des compléments Office sur Windows
-              href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
-            - name: Chargez une version test des compléments Office à l'aide de la commande de chargement indépendant
-              href: testing/sideload-office-addin-using-sideload-command.md
-            - name: Attacher un débogueur à partir du volet Office
-              href: testing/attach-debugger-from-task-pane.md
-            - name: Déboguer à l'aide des outils de développement F12
-              href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
-        - name: Office Online
-          items:
-            - name: Chargement de version test des compléments Office dans Office Online
-              href: testing/sideload-office-add-ins-for-testing.md
-            - name: Déboguer dans Office Online
-              href: testing/debug-add-ins-in-office-online.md
-        - name: iPad et Mac
-          items:
-            - name: Chargement de version test de compléments Office sur iPad et Mac
-              href: testing/sideload-an-office-add-in-on-ipad-and-mac.md
-            - name: Déboguer sur iPad et Mac
-              href: testing/debug-office-add-ins-on-ipad-and-mac.md
-        - name: Tests d'ergonomie
-          href: develop/usability-testing.md
-        - name: Résolution des erreurs de l’utilisateur
-          href: testing/testing-and-troubleshooting.md
-        - name: Valider un manifeste de complément et dépanner
-          href: testing/troubleshoot-manifest.md
-    - name: Publier
-      href: publish/publish.md
+      - name: Chargement de version test des compléments Office dans Office Online
+        href: testing/sideload-office-add-ins-for-testing.md
+      - name: Déboguer dans Office Online
+        href: testing/debug-add-ins-in-office-online.md
+    - name: iPad et Mac
       items:
-        - name: Héberger un complément pour Office sur Microsoft Azure
-          href: publish/host-an-office-add-in-on-microsoft-azure.md
-        - name: Créer un package de votre complément avec Visual Studio
-          href: publish/package-your-add-in-using-visual-studio.md
-        - name: Publier les compléments via le déploiement centralisé
-          href: publish/centralized-deployment.md
-        - name: Publier les compléments dans un catalogue SharePoint
-          href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
-        - name: Publication de compléments sur AppSource
-          href: 'https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store'
-        - name: Stratégies de validation AppSource
-          href: 'https://docs.microsoft.com/en-us/office/dev/store/validation-policies'
+      - name: Chargement de version test de compléments Office sur iPad et Mac
+        href: testing/sideload-an-office-add-in-on-ipad-and-mac.md
+      - name: Déboguer sur iPad et Mac
+        href: testing/debug-office-add-ins-on-ipad-and-mac.md
+    - name: Tests d'ergonomie
+      href: develop/usability-testing.md
+    - name: Résolution des erreurs de l’utilisateur
+      href: testing/testing-and-troubleshooting.md
+    - name: Valider un manifeste de complément et dépanner
+      href: testing/troubleshoot-manifest.md
+  - name: Publier
+    href: publish/publish.md
+    items:
+    - name: Héberger un complément pour Office sur Microsoft Azure
+      href: publish/host-an-office-add-in-on-microsoft-azure.md
+    - name: Créer un package de votre complément avec Visual Studio
+      href: publish/package-your-add-in-using-visual-studio.md
+    - name: Publier les compléments via le déploiement centralisé
+      href: publish/centralized-deployment.md
+    - name: Publier les compléments dans un catalogue SharePoint
+      href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
+    - name: Publication de compléments sur AppSource
+      href: https://docs.microsoft.com/office/dev/store/submit-to-the-office-store
+    - name: Stratégies de validation AppSource
+      href: https://docs.microsoft.com/office/dev/store/validation-policies
 - name: Référence
   items:
-    - name: Manifeste de complément Office
-      href: 'https://dev.office.com/reference/add-ins/manifest/allowsnapshot'
-      displayName: 'Excel, Word, Outlook, PowerPoint, OneNote, Project'
-    - name: API JavaScript pour Office
-      href: 'https://dev.office.com/reference/add-ins/javascript-api-for-office'
-      displayName: 'Excel, Word, Outlook, PowerPoint, OneNote, Project'
-    - name: API JavaScript pour Excel
-      href: 'https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview'
-      displayName: Excel
-    - name: API JavaScript pour Word
-      href: 'https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview'
-      displayName: Word
-    - name: API JavaScript pour OneNote
-      href: 'https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference'
-      displayName: OneNote
-    - name: API JavaScript pour Outlook
-      href: 'https://dev.office.com/reference/add-ins/outlook/tutorial-api-requirement-sets'
-      displayName: Outlook
-    - name: Spécifications ouvertes des API
-      href: 'https://dev.office.com/reference/add-ins/openspec'
-      displayName: 'Excel, Word'
+  - name: Manifeste de complément Office
+    displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
+    href: https://docs.microsoft.com/javascript/office/manifest/allowsnapshot?view=office-js
+  - name: API JavaScript pour Office
+    displayName: Excel, Word, Outlook, Visio, OneNote
+    href: https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js
+  - name: API JavaScript pour Excel
+    displayName: Excel
+    href: https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js
+  - name: API JavaScript pour OneNote
+    displayName: OneNote
+    href: https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js
+  - name: API JavaScript pour Outlook
+    displayName: Outlook
+    href: https://docs.microsoft.com/javascript/office/requirement-sets/outlook-api-requirement-sets?view=office-js
+  - name: API JavaScript Visio
+    displayName: Visio
+    href: https://docs.microsoft.com/javascript/office/overview/visio-javascript-reference-overview?view=office-js
+  - name: API JavaScript pour Word
+    displayName: Word
+    href: https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js
+  - name: API partagée
+    displayName: PowerPoint, Project
+    href: https://docs.microsoft.com/en-us/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js
+  - name: Spécifications ouvertes des API
+    displayName: Excel, Word
+    href: https://docs.microsoft.com/javascript/office/openspec?view=office-js
 - name: Ressources
   href: resources/resources-links-help.md
-  displayName: 'Excel, Word, Outlook, PowerPoint, OneNote, Project'
+ms.openlocfilehash: 1dd64f00bdf9327b47e74dcc4527d7c6364f8821
+ms.sourcegitcommit: 28fc652bded31205e393df9dec3a9dedb4169d78
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "22928048"
