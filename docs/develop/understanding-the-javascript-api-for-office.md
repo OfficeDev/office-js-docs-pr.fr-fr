@@ -2,19 +2,19 @@
 title: Présentation de l’API JavaScript pour Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: fef2cdad69408f099296461066f1ea380e3b118b
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.openlocfilehash: ccc5122061e267fec875fcbbb5b2083e1b934f9d
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "21703811"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "22546787"
 ---
 # <a name="understanding-the-javascript-api-for-office"></a>Présentation de l’API JavaScript pour Office
 
 Cet article fournit des informations sur l’API JavaScript pour Office et son utilisation. Pour obtenir des informations de référence, voir [API JavaScript pour Office](https://dev.office.com/reference/add-ins/javascript-api-for-office). Pour plus d’informations sur la mise à jour des fichiers de projet Visual Studio vers la version la plus récente de l’API JavaScript pour Office, voir [Mettre à jour la version de votre API JavaScript pour Office et les fichiers de schéma manifeste](update-your-javascript-api-for-office-and-manifest-schema-version.md).
 
 > [!NOTE]
-> Si vous prévoyez de [publier](../publish/publish.md) votre complément sur AppSource et de le rendre disponible dans l’expérience Office, assurez-vous que vous respectez les [stratégies de validation AppSource](https://docs.microsoft.com/en-us/office/dev/store/validation-policies). Par exemple, pour réussir la validation, votre complément doit fonctionner sur toutes les plateformes prenant en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](https://docs.microsoft.com/en-us/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) et la [page relative à la disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md)). 
+> Si vous prévoyez de [publier](../publish/publish.md) votre complément sur AppSource et de le rendre disponible dans l’expérience Office, assurez-vous que vous respectez les [stratégies de validation AppSource](https://docs.microsoft.com/office/dev/store/validation-policies). Par exemple, pour réussir la validation, votre complément doit fonctionner sur toutes les plateformes prenant en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) et la [page relative à la disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md)). 
 
 ## <a name="referencing-the-javascript-api-for-office-library-in-your-add-in"></a>Référence à la bibliothèque de l’interface API JavaScript pour Office dans votre complément
 
@@ -26,7 +26,7 @@ La bibliothèque de l’[interface API JavaScript pour Office](https://dev.offic
 
 Cette opération permet de télécharger et de mettre en cache les fichiers de l’interface API JavaScript pour Office lors du premier chargement de votre complément pour garantir qu’elle utilise l’implémentation d’Office.js la plus récente et les fichiers .js qui lui sont associés pour la version indiquée.
 
-Pour en savoir plus sur le CDN Office.js, y compris la gestion du contrôle de version et de la rétrocompatibilité, consultez la page relative au [référencement de l’API JavaScript pour la bibliothèque Office à partir de son réseau de distribution de contenu (CDN)](referencing-the-javascript-api-for-office-library-from-its-cdn.md).
+Pour en savoir plus sur le CDN Office.js, y compris sur la gestion du contrôle de version et de la rétrocompatibilité, consultez la page relative au [référencement de l’API JavaScript pour la bibliothèque Office à partir de son réseau de distribution de contenu (CDN)](referencing-the-javascript-api-for-office-library-from-its-cdn.md).
 
 ## <a name="initializing-your-add-in"></a>Initialisation de votre complément
 
@@ -71,9 +71,9 @@ Pour plus d’informations, consultez les pages relatives à l’[événement Of
 
 ## <a name="office-javascript-api-object-model"></a>Modèle objet JavaScript Office
 
-Une fois initialisé, le complément peut interagir avec l'hôte (par exemple Excel, Outlook). La page sur le [modèle objet de l'API JavaScript Office](/office-javascript-api-object-model.md)contient plus de détails sur les habitudes d'utilisation spécifiques. Il existe également une documentation de référence détaillée à la fois pour les [API partagées](https://dev.office.com/reference/add-ins/javascript-api-for-office) et les hôtes spécifiques.
+Une fois initialisé, le complément peut interagir avec l'hôte (par exemple Excel, Outlook). La page sur le [modèle objet de l'API JavaScript Office](office-javascript-api-object-model.md)contient plus de détails sur les habitudes d'utilisation spécifiques. Il existe également une documentation de référence détaillée à la fois pour les [API partagées](https://dev.office.com/reference/add-ins/javascript-api-for-office) et les hôtes spécifiques.
 
-## <a name="api-support-matrix"></a>Matrice de support de l’API
+## <a name="api-support-matrix"></a>Matrice de support de l'API
 
 
 Ce tableau récapitule l’API et les fonctionnalités prises en charge dans les types de complément (contenu, volet Office et Outlook), ainsi que les applications Office qui peuvent les héberger lorsque vous indiquez les applications hôte Office prises en charge par votre complément à l’aide du [schéma de manifeste de complément 1.1 et des fonctionnalités prises en charge par la version 1.1 de l’interface API JavaScript pour Office](update-your-javascript-api-for-office-and-manifest-schema-version.md).
