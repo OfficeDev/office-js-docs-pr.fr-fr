@@ -2,12 +2,12 @@
 title: Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 375b3819d423362c7d5e124700a0bea2dcf6e9e0
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: b9f55b5487aec1a2e700863e58cd5bbbf2daf146
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19438822"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925457"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 
@@ -15,7 +15,7 @@ Parfois, vos utilisateurs peuvent rencontrer des problèmes avec les complément
 
 Vous pouvez également utiliser [Fiddler](http://www.telerik.com/fiddler) pour identifier et déboguer les problèmes avec vos compléments.
 
-Une fois le problème de l’utilisateur résolu, vous pouvez [répondre directement aux avis des clients dans AppSource](https://docs.microsoft.com/en-us/office/dev/store/create-effective-office-store-listings).
+Une fois le problème de l’utilisateur résolu, vous pouvez [répondre directement aux avis des clients dans AppSource](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings).
 
 ## <a name="common-errors-and-troubleshooting-steps"></a>Erreurs courantes et étapes de dépannage
 
@@ -26,7 +26,7 @@ Le tableau suivant répertorie les messages d’erreur courants que les utilisat
 |**Message d’erreur**|**Solution**|
 |:-----|:-----|
 |Erreur d’application : impossible d’accéder au catalogue|Vérifiez les paramètres de pare-feu. Le terme « catalogue » désigne AppSource. Ce message indique que l’utilisateur ne peut pas accéder à AppSource.|
-|Erreur d’application : cette application n’a pas pu être démarrée. Fermez cette boîte de dialogue pour ignorer le problème, ou cliquez sur « Redémarrer » pour réessayer.|Vérifiez que les dernières mises à jour d’Office sont installés, ou téléchargez la [mise à jour pour Office 2013](https://support.microsoft.com/en-us/kb/2986156/).|
+|Erreur d’application : cette application n’a pas pu être démarrée. Fermez cette boîte de dialogue pour ignorer le problème, ou cliquez sur « Redémarrer » pour réessayer.|Vérifiez que les dernières mises à jour d’Office sont installés, ou téléchargez la [mise à jour pour Office 2013](https://support.microsoft.com/kb/2986156/).|
 |Erreur : l’objet ne prend pas en charge la propriété ou la méthode « defineProperty »|Vérifiez qu’Internet Explorer ne fonctionne pas en mode de compatibilité. Accédez à Outils >  **Paramètres d’affichage de compatibilité**.|
 |Désolé, nous n’avons pas pu charger l’application, car la version de votre navigateur n’est pas prise en charge. Cliquez ici pour obtenir la liste des versions de navigateur prises en charge.|Assurez-vous que le navigateur prend en charge le stockage local HTML5 ou réinitialisez les paramètres d’Internet Explorer. Pour plus d’informations sur les navigateurs pris en charge, reportez-vous à [Configuration requise pour exécuter des compléments Office](../concepts/requirements-for-running-office-add-ins.md).|
 
@@ -54,7 +54,7 @@ Le complément ne s’active pas lorsque l’utilisateur effectue les étapes su
     
 3. vérification de son identité après invitation lorsqu’il tente d’insérer un complément.
     
-Pour résoudre ce problème, vérifiez que les dernières mises à jour Office sont installées ou téléchargez la [mise à jour pour Office 2013](https://support.microsoft.com/en-us/kb/2986156/).
+Pour résoudre ce problème, vérifiez que les dernières mises à jour Office sont installées ou téléchargez la [mise à jour pour Office 2013](https://support.microsoft.com/kb/2986156/).
 
 
 ## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>Le complément ne se charge pas dans le volet des tâches ou d’autres problèmes existent avec le manifeste du complément

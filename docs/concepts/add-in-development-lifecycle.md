@@ -1,13 +1,18 @@
 ---
-title: "Cycle de vie du développement des compléments\_Office"
+title: Cycle de vie du développement des compléments Office
 description: ''
 ms.date: 01/23/2018
+ms.openlocfilehash: 8da351a87fdf455d3ae8f8583f2db3226a3cb340
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925436"
 ---
-
 # <a name="office-add-ins-development-lifecycle"></a>Cycle de vie du développement des compléments Office
 
 > [!NOTE]
-> Si vous prévoyez de [publier](../publish/publish.md) votre complément sur AppSource et de le rendre disponible dans l’expérience Office, assurez-vous que vous respectez les [stratégies de validation AppSource](https://docs.microsoft.com/fr-fr/office/dev/store/validation-policies). Par exemple, pour réussir la validation, votre complément doit fonctionner sur toutes les plateformes prenant en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](https://docs.microsoft.com/fr-fr/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) et la [page relative à la disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md)). 
+> Si vous prévoyez de [publier](../publish/publish.md) votre complément sur AppSource et de le rendre disponible dans l’expérience Office, assurez-vous que vous respectez les [stratégies de validation AppSource](https://docs.microsoft.com/office/dev/store/validation-policies). Par exemple, pour réussir la validation, votre complément doit fonctionner sur toutes les plateformes prenant en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) et la [page relative à la disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md)). 
 
 Le cycle de vie de développement classique d’un complément Office comprend les étapes suivantes :
 
@@ -44,7 +49,7 @@ Tenez compte des informations suivantes pour identifier les scénarios :
     
     Si vous répondez oui à l’une de ces questions, envisagez de créer un **complément Outlook**. Identifiez le contexte qui déclenchera votre complément (par exemple, un formulaire de composition utilisé par un utilisateur, des types de messages spécifiques, la présence d’une pièce jointe, l’adresse, la suggestion de tâche, la suggestion de réunion ou certains modèles de chaînes dans le contenu d’un courrier électronique ou d’un rendez-vous). 
         
-    Reportez-vous à l’article relatif aux [règles d’activation pour les compléments Outlook](https://docs.microsoft.com/fr-fr/outlook/add-ins/activation-rules) pour savoir comment activer le complément Outlook en fonction du contexte. 
+    Reportez-vous à l’article relatif aux [règles d’activation pour les compléments Outlook](https://docs.microsoft.com/outlook/add-ins/activation-rules) pour savoir comment activer le complément Outlook en fonction du contexte. 
     
 - Les clients utiliseront-ils le complément pour améliorer l’affichage ou l’expérience de création d’un document ? Si c’est le cas, vous pouvez créer un **complément de volet Office**. 
 
@@ -69,7 +74,7 @@ Pour les compléments Outlook, vous pouvez spécifier le contexte, en fonction 
     
 Placez les fichiers HTML et les éventuels fichiers JavaScript et CSS sur les serveurs web qui sont spécifiés dans le fichier manifeste du complément. Le processus d’installation d’un complément dépend du type de celui-ci. Pour plus d’informations, reportez-vous à la page relative au [chargement d’une version test des compléments Office à des fins de test](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
     
-Pour les compléments Outlook, installez-le dans une boîte aux lettres Exchange et spécifiez l’emplacement du fichier manifeste du complément dans le Centre d’administration Exchange (CAE). Pour plus d’informations, consultez la rubrique [Déployer et installer des compléments Outlook à des fins de test](https://docs.microsoft.com/fr-fr/outlook/add-ins/testing-and-tips).
+Pour les compléments Outlook, installez-le dans une boîte aux lettres Exchange et spécifiez l’emplacement du fichier manifeste du complément dans le Centre d’administration Exchange (CAE). Pour plus d’informations, consultez la rubrique [Déployer et installer des compléments Outlook à des fins de test](https://docs.microsoft.com/outlook/add-ins/testing-and-tips).
 
     
 ## <a name="7-publish-the-add-in"></a>7. Publier le complément

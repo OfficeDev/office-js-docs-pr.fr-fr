@@ -2,12 +2,12 @@
 title: Présentation des compléments Word
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 63605c18f7e1b3eae2c542aef236372819bc2e6f
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 90b6ad29b4d1fe4ecffd3a1e57d76d16752ee77a
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19438878"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925429"
 ---
 # <a name="word-add-ins-overview"></a>Présentation des compléments Word
 
@@ -16,7 +16,7 @@ Vous souhaitez créer une solution qui étend les fonctionnalités de Word ? Par
 Les compléments Word font partie des nombreuses options de développement disponibles sur la [plateforme de compléments Office](../overview/office-add-ins.md). Vous pouvez utiliser les commandes de complément pour développer l’interface utilisateur Word et créer des volets Office qui exécutent un code JavaScript pour interagir avec le contenu d’un document Word. Tout code que vous pouvez exécuter dans un navigateur peut s’exécuter dans un complément Word. Les compléments qui interagissent avec le contenu d’un document Word créent des requêtes qui agissent sur des objets Word et synchronisent l’état des objets. 
 
 > [!NOTE]
-> Lorsque vous créez votre complément, si vous envisagez de le [publier](../publish/publish.md) dans AppSource, assurez-vous que vous respectez les [stratégies de validation AppSource](https://docs.microsoft.com/en-us/office/dev/store/validation-policies). Par exemple, pour réussir la validation, votre complément doit fonctionner sur toutes les plateformes qui prennent en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](https://docs.microsoft.com/en-us/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) et la page relative à la [disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md)).
+> Lorsque vous créez votre complément, si vous envisagez de le [publier](../publish/publish.md) dans AppSource, assurez-vous que vous respectez les [stratégies de validation AppSource](https://docs.microsoft.com/office/dev/store/validation-policies). Par exemple, pour réussir la validation, votre complément doit fonctionner sur toutes les plateformes qui prennent en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) et la page relative à la [disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md)).
 
 La figure suivante montre un exemple d’un complément Word qui s’exécute dans un volet des tâches.
 
