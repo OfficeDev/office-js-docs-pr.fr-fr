@@ -2,12 +2,12 @@
 title: Créer le package de votre complément à l’aide de Visual Studio pour préparer la publication
 description: ''
 ms.date: 01/25/2018
-ms.openlocfilehash: e03959294536eeb416a1531d2d281ba83f2d3732
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 89f59d06ff305e0d0fd062a36f7e9f756415df45
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19438752"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925247"
 ---
 # <a name="package-your-add-in-using-visual-studio-to-prepare-for-publishing"></a>Créer le package de votre complément à l’aide de Visual Studio pour préparer la publication
 
@@ -28,11 +28,11 @@ Procédez comme suit pour déployer votre projet web à l’aide de Visual Studi
 
     Si vous choisissez  **Nouveau...**, l’Assistant **Créer un profil de publication** s’ouvre. Vous pouvez utiliser cet Assistant pour importer un profil de publication à partir d’un site web d’hébergement comme Microsoft Azure ou créer un profil et ajouter votre serveur, vos informations d’identification et d’autres paramètres, comme décrit dans la procédure suivante.
     
-    Pour plus d’informations sur l’importation et la création de profils de publication, voir [Création d’un profil de publication](http://msdn.microsoft.com/en-us/library/dd465337.aspx#creating_a_profile).
+    Pour plus d’informations sur l’importation et la création de profils de publication, voir [Création d’un profil de publication](http://msdn.microsoft.com/library/dd465337.aspx#creating_a_profile).
     
 3. Sur la page  **Publier votre complément**, cliquez sur le lien  **Déployer votre projet Web**.
     
-    La boîte de dialogue **Publier Web** apparaît. Pour plus d’information sur l’utilisation de cet assistant, reportez-vous à l’article [Procédure : Déployer un projet d’application Web à l’aide de la publication en un clic dans Visual Studio](http://msdn.microsoft.com/en-us/library/dd465337.aspx).
+    La boîte de dialogue **Publier Web** apparaît. Pour plus d’information sur l’utilisation de cet assistant, reportez-vous à l’article [Procédure : Déployer un projet d’application Web à l’aide de la publication en un clic dans Visual Studio](http://msdn.microsoft.com/library/dd465337.aspx).
     
 
 ## <a name="to-package-your-add-in-using-visual-studio-2015"></a>Création d’un package de votre complément avec Visual Studio 2015
@@ -48,7 +48,7 @@ Procédez comme suit pour créer un package de votre projet de complément à l�
     Vous devez spécifier une URL qui commence par le préfixe HTTPS pour terminer cet assistant. Si vous souhaitez utiliser un point de terminaison HTTP pour votre site web, vous pouvez ouvrir le fichier manifeste XML dans un éditeur de texte une fois que le package a été créé et remplacer le préfixe HTTPS de votre site web par un préfixe HTTP. 
 
     > [!IMPORTANT]
-    > [!include[HTTPS guidance](../includes/https-guidance.md)] Les sites Web Azure fournissent automatiquement un point de terminaison HTTPS.
+    > [!include[HTTPS guidance](../includes/https-guidance.md)] Les sites web Azure fournissent automatiquement un point de terminaison HTTPS.
 
     Visual Studio génère les fichiers nécessaires à la publication de votre complément, puis ouvre le dossier de sortie de publication. 
     
@@ -62,5 +62,5 @@ Vous pouvez désormais télécharger votre manifeste XML à l’emplacement appr
 ## <a name="see-also"></a>Voir aussi
 
 - [Publier votre complément Office](../publish/publish.md)
-- [Mise à disposition de vos solutions sur AppSource et dans Office](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store)
+- [Mise à disposition de vos solutions sur AppSource et dans Office](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)
     

@@ -2,12 +2,12 @@
 title: Localisation des compléments Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: d7888859ca29a62541020b45b0b7a3638c41f4f2
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: c700dfa2f424577edf364505b0da47854467f77b
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437737"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925576"
 ---
 # <a name="localization-for-office-add-ins"></a>Localisation des compléments Office
 
@@ -17,7 +17,7 @@ Vous pouvez librement implémenter n’importe quel schéma de localisation conv
 
 L’API JavaScript pour Office offre deux propriétés qui prennent en charge l’affichage ou l’interprétation de valeurs cohérentes avec les paramètres régionaux de l’application hôte et des données :
 
-- [Context.displayLanguage][displayLanguage] spécifie les paramètres régionaux (ou langue) de l’interface utilisateur de l’application hôte. L’exemple suivant vérifie si l’application hôte utilise les paramètres régionaux en-US ou fr-Fr, et affiche un message de bienvenue propre aux paramètres régionaux.
+- [Context.displayLanguage][displayLanguage] spécifie les paramètres régionaux (ou la langue) de l’interface utilisateur de l’application hôte. L’exemple suivant vérifie si l’application hôte utilise les paramètres régionaux en-US ou fr-Fr, et affiche un message de bienvenue propre aux paramètres régionaux.
     
     ```js
     function sayHelloWithDisplayLanguage() {
@@ -62,7 +62,7 @@ Chaque complément Office indique un élément [DefaultLocale] élément et un p
 |[SourceLocation]   |Les utilisateurs de chaque paramètre régional que vous spécifiez peuvent voir une page web que vous concevez spécifiquement pour le complément pour ce paramètre régional. |
 
 
-> **REMARQUE** Vous pouvez trouver la description et le nom d’affichage uniquement pour les paramètres régionaux pris en charge par Office. Reportez-vous à la rubrique [Identificateurs de langue et valeurs d'ID de l'élément OptionState dans Office 2013](http://technet.microsoft.com/en-us/library/cc179219.aspx) pour connaître la liste des langues et des paramètres régionaux pour la version actuelle d’Office.
+> **REMARQUE** Vous pouvez trouver la description et le nom d’affichage uniquement pour les paramètres régionaux pris en charge par Office. Reportez-vous à la rubrique [Identificateurs de langue et valeurs d'ID de l'élément OptionState dans Office 2013](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15)) pour connaître la liste des langues et des paramètres régionaux pour la version actuelle d’Office.
 
 
 ### <a name="examples"></a>Exemples
@@ -158,7 +158,7 @@ Vous pouvez obtenir les paramètres régionaux des données de l’application d
 
 Si vous utilisez Visual Studio pour créer des Compléments Office, .NET Framework et Ajax offrent des moyens d’internationaliser et de localiser les fichiers de script client.
 
-Vous pouvez internationaliser et utiliser les extensions de type JavaScript [Date](http://msdn.microsoft.com/library/caf98d32-2de2-4704-8198-692350343681.aspx) et [Number](http://msdn.microsoft.com/library/c216d3a1-12ae-47d1-bca1-c3666d04572f.aspx) ainsi que l’objet JavaScript [Date](http://msdn.microsoft.com/library/ce2202bb-7ec9-4f5a-bf48-3a04feff283e.aspx) dans le code JavaScript pour qu’une Complément Office affiche les valeurs en fonction des paramètres régionaux du navigateur actuel. Pour plus d’informations, voir [Walkthrough: Globalizing a Date by Using Client Script](http://msdn.microsoft.com/library/69b34e6d-d590-4d03-a763-b7ae54b47d74.aspx).
+Vous pouvez internationaliser et utiliser les extensions de type JavaScript [Date](http://msdn.microsoft.com/library/caf98d32-2de2-4704-8198-692350343681.aspx) et [Number](http://msdn.microsoft.com/library/c216d3a1-12ae-47d1-bca1-c3666d04572f.aspx) ainsi que l’objet JavaScript [Date](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date) dans le code JavaScript pour qu’une Complément Office affiche les valeurs en fonction des paramètres régionaux du navigateur actuel. Pour plus d’informations, voir [Walkthrough: Globalizing a Date by Using Client Script](http://msdn.microsoft.com/library/69b34e6d-d590-4d03-a763-b7ae54b47d74.aspx).
 
 Vous pouvez inclure des chaînes de ressources localisées directement dans des fichiers JavaScript autonomes pour fournir des fichiers de script client pour les différents paramètres régionaux, qui sont définis dans le navigateur ou fournis par l’utilisateur. Créez un fichier de script distinct pour chaque paramètre régional pris en charge. Dans chaque fichier de script, incluez un objet au format JSON contenant les chaînes de ressources pour ce paramètre régional. Les valeurs localisées sont appliquées lorsque le script s’exécute dans le navigateur. 
 
@@ -175,7 +175,7 @@ En outre, vous devez créer un projet de complément Office Visual Studio 2015.
 
 ### <a name="configure-office-2013-to-use-additional-languages-for-display-or-editing"></a>Configurer Office 2013 pour utiliser des langues supplémentaires pour l’affichage ou l’édition
 
-Vous pouvez utiliser un module linguistique Office 2013 pour installer des langues supplémentaires. Pour plus d’informations sur les modules linguistiques et comment les obtenir, voir [Options de langue Office 2013](http://office.microsoft.com/en-us/language-packs/).
+Vous pouvez utiliser un module linguistique Office 2013 pour installer des langues supplémentaires. Pour plus d’informations sur les modules linguistiques et comment les obtenir, voir [Options de langue Office 2013](http://office.microsoft.com/language-packs/).
 
 > **REMARQUE** Si vous êtes abonné à MSDN, les modules linguistiques Office 2013 peuvent être disponibles dans le cadre de votre abonnement. Pour savoir si votre abonnement propose le téléchargement des modules linguistiques Office 2013, accédez à [Accueil Abonnements MSDN](https://msdn.microsoft.com/subscriptions/manage/), tapez « Modules linguistiques Office 2013 » dans **Téléchargements logiciels**, choisissez **Rechercher**, puis sélectionnez **Produits disponibles avec mon abonnement**. Sous **Langue**, cochez la case correspondant au module linguistique que vous voulez télécharger, puis cliquez sur **OK**. 
 
@@ -419,7 +419,7 @@ Exécutez l’exemple de complément. Le complément de volet de tâches est cha
 ## <a name="see-also"></a>Voir aussi
 
 - [Instructions de conception pour les compléments Office](../design/add-in-design.md)    
-- [Identificateurs de langue et valeurs d’ID de l’élément OptionState dans Office 2013](http://technet.microsoft.com/en-us/library/cc179219%28Office.15%29.aspx)
+- [Identificateurs de langue et valeurs d’ID de l’élément OptionState dans Office 2013](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
 
 [DefaultLocale]:        https://dev.office.com/reference/add-ins/manifest/defaultlocale
 [Description]:          https://dev.office.com/reference/add-ins/manifest/description

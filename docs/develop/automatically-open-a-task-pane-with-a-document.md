@@ -2,12 +2,12 @@
 title: Ouvrir automatiquement un volet Office avec un document
 description: ''
 ms.date: 05/02/2018
-ms.openlocfilehash: 06e1cce3a45a5af744a1be4b3feabbf051940d76
-ms.sourcegitcommit: 4e4f7c095e8f33b06bd8a02534ee901125eb1d17
+ms.openlocfilehash: 4f3d677619610208b585df72dd1764be39fd9e35
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "20085363"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925352"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Ouvrir automatiquement un volet Office avec un document
 
@@ -118,7 +118,7 @@ Le composant webextension comprend également une référence au store ou au cat
 > [!NOTE]
 > Pour trouver l’ID de ressource et la version d’un complément dans AppSource, accédez à la page d’accueil d’AppSource pour le complément. L’ID de ressource apparaît dans la barre d’adresse dans le navigateur. La version est répertoriée dans la section **Détails** de la page.
 
-Pour plus d’informations sur le balisage webextension, reportez-vous à [[MS-OWEXML] 2.2.5. WebExtensionReference](https://msdn.microsoft.com/en-us/library/hh695383(v=office.12).aspx).
+Pour plus d’informations sur le balisage webextension, reportez-vous à [[MS-OWEXML] 2.2.5. WebExtensionReference](https://msdn.microsoft.com/library/hh695383(v=office.12).aspx).
 
 L’exemple suivant montre comment ajouter le composant du volet Office.
 
@@ -137,10 +137,10 @@ Définir `visibility` sur « 1 » est un bon choix lorsque le complément et le 
 > [!NOTE]
 > Si vous voulez distribuer votre complément avec le document, pour que les utilisateurs soient invités à l’installer, vous devez définir la propriété de visibilité sur 1. Cette opération peut uniquement être effectuée à l’aide d’Open XML.
 
-Une méthode simple d’écriture du code XML consiste à exécuter d’abord votre complément, puis à [baliser le document côté client](#tag-the-document-on-the-client-side) pour écrire la valeur, à enregistrer le document et à inspecter le code XML généré. Office détectera et fournira les valeurs d’attribut appropriées. Vous pouvez également utiliser l’outil de productivité [Kit de développement logiciel Open XML 2.5](https://www.microsoft.com/en-us/download/details.aspx?id=30425) pour générer le code C# pour ajouter par programme le balisage en fonction du XML vous générez.
+Une méthode simple d’écriture du code XML consiste à exécuter d’abord votre complément, puis à [baliser le document côté client](#tag-the-document-on-the-client-side) pour écrire la valeur, à enregistrer le document et à inspecter le code XML généré. Office détectera et fournira les valeurs d’attribut appropriées. Vous pouvez également utiliser l’outil de productivité [Kit de développement logiciel Open XML 2.5](https://www.microsoft.com/download/details.aspx?id=30425) pour générer le code C# pour ajouter par programme le balisage en fonction du XML vous générez.
 
 ## <a name="test-and-verify-opening-taskpanes"></a>Tester et vérifier les tâches d'ouverture
-Vous pouvez déployer une version de test de votre complément qui ouvrira automatiquement un volet de tâches à l'aide du déploiement centralisé via le Centre d'administration Office 365. L'exemple suivant montre comment les compléments sont insérés à partir du catalogue de déploiement centralisé à l'aide de la version du EXCatalog store.
+Vous pouvez déployer une version d’évaluation de votre complément qui ouvre automatiquement un volet Office à l’aide du Déploiement Centralisé via le centre d’administration Office 365. L’exemple suivant montre comment les compléments sont insérés à partir du catalogue de Déploiement Centralisé à l’aide de la version magasin de EXCatalog.
 
 ```xml
 <we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="{52811C31-4593-43B8-A697-EB873422D156}">
@@ -151,11 +151,11 @@ Vous pouvez déployer une version de test de votre complément qui ouvrira autom
     <we:snapshot xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"/>
 </we:webextension>
 ```
-Pour tester l'exemple précédent, veuillez consulter la rubrique [Configurez votre environnement de développement Office 365](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment) et envisagez de vous inscrire à un [Compte de développeur Office 365](https://developer.microsoft.com/en-us/office/dev-program). Vous pouvez réellement tester le déploiement centralisé du lecteur et vérifier que votre complément fonctionne comme prévu.
+Pour tester l’exemple précédent, nous vous recommandons de participer au [Programme de développement Office 365](https://docs.microsoft.com/office/developer-program/office-365-developer-program) et de créer un [compte de développeur Office 365](https://developer.microsoft.com/office/dev-program) si vous ne possédez pas déjà d’abonnement à Office 365. Vous pouvez réellement tester le déploiement centralisé du lecteur et vérifier que votre complément fonctionne comme prévu.
 
 
 ## <a name="see-also"></a>Voir aussi
 
 Pour voir un exemple illustrant comment utiliser la fonctionnalité d’ouverture automatique, reportez-vous à [Exemples de commandes de complément Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane). 
-[Rejoignez le programme de développement Office 365](https://docs.microsoft.com/en-us/office/developer-program/office-365-developer-program). 
+[Rejoignez le programme de développement Office 365](https://docs.microsoft.com/office/developer-program/office-365-developer-program). 
 

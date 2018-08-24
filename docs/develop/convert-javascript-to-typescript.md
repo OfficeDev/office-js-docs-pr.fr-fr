@@ -2,33 +2,33 @@
 title: Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
 description: ''
 ms.date: 01/19/2018
-ms.openlocfilehash: 05e845b9d085b64b0534d28053dcd5ca3c7b403e
-ms.sourcegitcommit: 17f60431644b448a4816913039aaebfa328f9b0a
+ms.openlocfilehash: 783d47e04fc6d28604501ac77345470c26d36c89
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/25/2018
-ms.locfileid: "19476528"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925380"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
 
 Vous pouvez utiliser le modèle de complément Office dans Visual Studio pour créer un complément qui utilise JavaScript, puis convertir le projet de complément au format TypeScript. En utilisant Visual Studio pour créer le projet complément, vous ne devez pas créer votre projet TypeScript de complément Office à partir de zéro. 
 
-Cet article explique comment créer un complément Excel à l’aide de Visual Studio et convertir le projet de complément de JavaScript au format TypeScript. Vous pouvez suivre la même procédure pour convertir d'autres types de projet JavaScript de complément Office au format TypeScript dans Visual Studio.
+Cet article explique comment créer un complément Excel à l’aide de Visual Studio et convertir le projet de complément de JavaScript au format TypeScript. Vous pouvez utiliser le même processus pour convertir les autres types de projet JavaScript de complément Office au format TypeScript dans Visual Studio.
 
 > [!NOTE]
-> Pour créer un projet TypeScript de complément Office sans utiliser Visual Studio, suivez les instructions de la section "N'importe quel éditeur" d'un [Démarrage rapide en 5 minutes](../index.yml) et choisissez `TypeScript` à l'invite du [Générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office).
+> Pour créer un projet TypeScript de complément Office sans utiliser Visual Studio, suivez les instructions de la section « Tous les éditeurs » d’un [démarrage rapide en 5 minutes](../index.yml), puis sélectionnez `TypeScript` lorsque le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) vous y invite.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
 - [Visual Studio 2017](https://www.visualstudio.com/vs/) avec la charge de travail de **développement Office/SharePoint** installée
 
     > [!NOTE]
-    > Si vous avez déjà installé Visual Studio 2017, [utilisez Visual Studio Installer](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio) pour vérifier que la charge de travail de **développement Office/SharePoint** est bien installée. 
+    > Si vous avez déjà installé Visual Studio 2017, [utilisez Visual Studio Installer](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) pour vérifier que la charge de travail de **développement Office/SharePoint** est bien installée. 
 
 - TypeScript 2.3 pour Visual Studio 2017
 
     > [!NOTE]
-    > TypeScript doit être installé par défaut avec Visual Studio 2017, mais vous pouvez [utiliser le programme d’installation Visual Studio](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio) pour confirmer qu’il est installé. Dans le programme d’installation Visual Studio, sélectionnez l’onglet **Composants individuels**, puis vérifiez que l’option **SDK TypeScript 2.3** est sélectionnée sous **SDK, bibliothèques et frameworks**.
+    > TypeScript doit être installé par défaut avec Visual Studio 2017, mais vous pouvez [utiliser le programme d’installation Visual Studio](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) pour confirmer qu’il est installé. Dans le programme d’installation Visual Studio, sélectionnez l’onglet **Composants individuels**, puis vérifiez que l’option **SDK TypeScript 2.3** est sélectionnée sous **SDK, bibliothèques et frameworks**.
 
 - Excel 2016
 

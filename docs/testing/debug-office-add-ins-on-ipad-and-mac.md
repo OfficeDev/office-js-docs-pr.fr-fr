@@ -2,12 +2,12 @@
 title: Débogage des compléments Office sur iPad et Mac
 description: ''
 ms.date: 03/21/2018
-ms.openlocfilehash: e9efae76aa3341eacfd73d6afcc3a3274536aa9d
-ms.sourcegitcommit: 6fbf42723f9c1b72095700c20458fd0e8c572794
+ms.openlocfilehash: 24a95799ba400aa6ecf93ee5431cf3fd64779d75
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "19722330"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925205"
 ---
 # <a name="debug-office-add-ins-on-ipad-and-mac"></a>Débogage des compléments Office sur iPad et Mac
 
@@ -115,7 +115,7 @@ Pour déboguer une application à l’aide de Vorlon.JS, ajoutez la balise `<scr
 
 3.  Ouvrez une fenêtre de navigateur et accédez à `https://localhost:1337`, qui est l’interface de Vorlon.JS.
 
-4. Chargez une version test du complément. S’il s’agit d’un complément pour Excel, PowerPoint ou Word, chargez une version test en suivant les étapes décrites dans la rubrique relative au [chargement d’une version test d’un complément Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md). S’il s’agit d’un complément Outlook, chargez une version de test en suivant les étapes décrites dans la rubrique relative au [chargement d’une version test de compléments Outlook à des fins de test](https://docs.microsoft.com/en-us/outlook/add-ins/sideload-outlook-add-ins-for-testing). Si le complément n’utilise pas les commandes du complément, il s’ouvre automatiquement. Sinon, cliquez sur le bouton d’ouverture du complément. En fonction de la version de l’application hôte d’Office, vous trouverez le bouton sur l’onglet **Accueil** ou sur l’onglet **Complément**.
+4. Chargez une version test du complément. S’il s’agit d’un complément pour Excel, PowerPoint ou Word, chargez une version test en suivant les étapes décrites dans la rubrique relative au [chargement d’une version test d’un complément Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md). S’il s’agit d’un complément Outlook, chargez une version de test en suivant les étapes décrites dans la rubrique relative au [chargement d’une version test de compléments Outlook à des fins de test](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing). Si le complément n’utilise pas les commandes du complément, il s’ouvre automatiquement. Sinon, cliquez sur le bouton d’ouverture du complément. En fonction de la version de l’application hôte d’Office, vous trouverez le bouton sur l’onglet **Accueil** ou sur l’onglet **Complément**.
 
 Le complément apparaît dans la liste des clients dans Vorlon.JS (sur la gauche dans l’interface de Vorlon.JS) en tant que **{Système d’exploitation} - n**, pour un nombre *n*, et où *{Système d’exploitation}* correspond au type d’appareil (par exemple, « Macintosh »). 
 

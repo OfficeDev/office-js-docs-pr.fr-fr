@@ -15,10 +15,10 @@ Les compléments peuvent exiger que les utilisateurs se connectent ou s'inscrive
 |Fournir aux utilisateurs un moyen de se déconnecter et de se ré-authentifier.    |Forcer les utilisateurs à désinstaller pour changer d'identité.|
 
 > [!NOTE]
-> L’API de l’authentification unique est actuellement prise en charge en mode aperçu pour Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur l’endroit où l’API d’authentification unique est actuellement prise en charge, consultez la rubrique [Ensembles de conditions requises de l’API d’identité](https://dev.office.com/reference/add-ins/requirement-sets/identity-api-requirement-sets). Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location d’Office 365. Pour obtenir plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour une authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> L’API de l’authentification unique est actuellement prise en charge en mode aperçu pour Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur l’endroit où l’API d’authentification unique est actuellement prise en charge, consultez la rubrique [Ensembles de conditions requises de l’API d’identité](https://dev.office.com/reference/add-ins/requirement-sets/identity-api-requirement-sets). Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location d’Office 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 
-## <a name="authentication-flow"></a>Flux d'authentification
+## <a name="authentication-flow"></a>Flux d’authentification
 Si la connexion unique n'est pas encore disponible pour vos utilisateurs, envisagez un autre flux d'authentification. Donnez aux utilisateurs le choix de se connecter directement à votre service ou à un fournisseur d'identité tel que Microsoft.
 
 1. First Run Placemat - Placez votre bouton de connexion comme une action d'appel claire dans la première expérience d'exécution de votre complément.
@@ -29,7 +29,7 @@ Si la connexion unique n'est pas encore disponible pour vos utilisateurs, envisa
 
 
 
-3. Connexion au fournisseur d'identité - Le fournisseur d'identité aura sa propre interface utilisateur. Microsoft Azure Active Directory permet la personnalisation des pages de connexion et d'accès pour une apparence cohérente avec votre service. [En savoir plus](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/customize-branding).
+3. Connexion au fournisseur d'identité - Le fournisseur d'identité aura sa propre interface utilisateur. Microsoft Azure Active Directory permet la personnalisation des pages de connexion et d'accès pour une apparence cohérente avec votre service. [En savoir plus](https://docs.microsoft.com/azure/active-directory/fundamentals/customize-branding).
 ![](../images/add-in-auth-identity-sign-in.png)
 
 4. Progression - Indique la progression lorsque les paramètres et l'interface utilisateur sont chargés.
@@ -49,4 +49,4 @@ L'authentification unique est toujours en préversion. Une fois disponible à gr
 ![](../images/add-in-ribbon.png)
 
 ## <a name="see-also"></a>Voir aussi
-- En savoir plus sur [le développement des compléments SSO](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/sso-in-office-add-ins)
+- En savoir plus sur [le développement des compléments SSO](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins)

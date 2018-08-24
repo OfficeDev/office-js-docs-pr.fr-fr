@@ -1,4 +1,4 @@
-# <a name="ux-design-patterns-for-office-add-ins"></a>Modèles de conception UX pour les compléments Office
+# <a name="ux-design-patterns-for-office-add-ins"></a>Modèles de conception de l’expérience utilisateur pour les compléments Office
 
 Concevoir l’expérience utilisateur pour les compléments Office offre l’occasion de proposer une expérience satisfaisante aux utilisateurs Office et d’étendre son expérience globale grâce à une intégration sans failles dans l'interface utilisateur Office par défaut.  
 
@@ -12,16 +12,16 @@ Utilisez les modèles de modèles UX pour :
 
 * Appliquer des solutions à des scénarios client courants.
 * Appliquer les meilleures pratiques en matière de conception.
-* Incorporer les composants et styles d’[Office UI Fabric](https://developer.microsoft.com/en-us/fabric#/get-started).
+* Incorporer les composants et styles d’[Office UI Fabric](https://developer.microsoft.com/fabric#/get-started).
 * Créer des compléments qui s’intègrent visuellement à l’interface utilisateur d’Office par défaut.
 * Proposer des idées et visualiser l’expérience utilisateur (UX).
 
 
 ## <a name="getting-started"></a>Prise en main
 
-Les modèles sont organisés par actions clés ou expériences communes dans un complément. Les quatre principaux groupes sont :
+Les modèles sont organisés par actions clés ou expériences communes dans un complément. Les principaux groupes sont :
 
-* [Première expérience d'exécution](../design/first-run-experience-patterns.md)
+* [Expérience de première exécution](../design/first-run-experience-patterns.md)
 * [Authentification](../design/authentication-patterns.md)
 * [Navigation](../design/navigation-patterns.md)
 * [Personnalisation](../design/branding-patterns.md)
@@ -37,6 +37,6 @@ Parcourez chaque regroupement pour avoir une idée de la façon dont vous pouvez
 
 ## <a name="see-also"></a>Voir aussi
 * [Kit d’outils de conception](design-toolkits.md)
-* [Office UI Fabric](https://developer.microsoft.com/en-us/fabric)
-* [Meilleures pratiques en matière de développement de compléments Office](https://docs.microsoft.com/en-us/office/dev/add-ins/concepts/add-in-development-best-practices)
-* [Commencer à utiliser Fabric React](https://docs.microsoft.com/en-us/office/dev/add-ins/design/using-office-ui-fabric-react)
+* [Office UI Fabric](https://developer.microsoft.com/fabric)
+* [Meilleures pratiques en matière de développement de compléments Office](https://docs.microsoft.com/office/dev/add-ins/concepts/add-in-development-best-practices)
+* [Commencer à utiliser Fabric React](https://docs.microsoft.com/office/dev/add-ins/design/using-office-ui-fabric-react)

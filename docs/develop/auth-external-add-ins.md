@@ -2,12 +2,12 @@
 title: Autoriser des services externes dans votre complément Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 34e8119d4ecf6432cde7f06552584d164b8c9b8e
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 12f6f80b1679eeec8aec569b534aca074610e929
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437450"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925289"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>Autoriser des services externes dans votre complément Office
 
@@ -51,7 +51,7 @@ Les aperçus suivants fournissent des exemples de compléments qui implémentent
 
 ### <a name="relayproxy-functions"></a>Fonctions de relais/proxy
 
-Vous pouvez utiliser le flux de code d’autorisation même avec une application web sans serveur en stockant les valeurs d’**identifiant client** et de **clé secrète client** dans une fonction simple, hébergée dans un service tel qu’[Azure Functions](https://azure.microsoft.com/en-us/services/functions) ou [Amazon Lambda](https://aws.amazon.com/lambda). La fonction remplace un code donné par un **jeton d’accès** et le transmet au client. La sécurité de cette approche dépend de la surveillance de l’accès à la fonction.
+Vous pouvez utiliser le flux de code d’autorisation même avec une application web sans serveur en stockant les valeurs d’**identifiant client** et de **clé secrète client** dans une fonction simple, hébergée dans un service tel qu’[Azure Functions](https://azure.microsoft.com/services/functions) ou [Amazon Lambda](https://aws.amazon.com/lambda). La fonction remplace un code donné par un **jeton d’accès** et le transmet au client. La sécurité de cette approche dépend de la surveillance de l’accès à la fonction.
 
 Pour utiliser cette technique, votre complément ouvre une interface utilisateur/un menu contextuel pour afficher l’écran de connexion au service en ligne (Google, Facebook, etc.). Lorsque l’utilisateur est connecté et accorde l’autorisation au complément d’accéder à ses ressources dans le service en ligne, le complément reçoit un code qui peut être envoyé à la fonction en ligne. Les services décrits dans la section **Services intermédiaires** plus loin dans cet article utilisent un flux semblable à celui-ci.
 
@@ -59,7 +59,7 @@ Pour utiliser cette technique, votre complément ouvre une interface utilisateur
 
 Des bibliothèques sont disponibles dans de nombreuses langues et sur de nombreuses plateformes, aussi bien pour le flux implicite que pour le flux de code d’autorisation. Certaines sont destinées à un usage général, d’autres sont propres à des services en ligne bien spécifiques.
 
-**Office 365 et autres services utilisant Azure Active Directory en tant que fournisseur d’autorisation** : [bibliothèques d’authentification Azure Active Directory](https://azure.microsoft.com/en-us/documentation/articles/active-directory-authentication-libraries/). Un aperçu est également disponible pour la [bibliothèque d’authentification Microsoft](https://www.nuget.org/packages/Microsoft.Identity.Client).
+**Office 365 et autres services utilisant Azure Active Directory en tant que fournisseur d’autorisation** : [bibliothèques d’authentification Azure Active Directory](https://azure.microsoft.com/documentation/articles/active-directory-authentication-libraries/). Un aperçu est également disponible pour la [bibliothèque d’authentification Microsoft](https://www.nuget.org/packages/Microsoft.Identity.Client).
 
 **Google** : cherchez « auth » ou le nom de votre langue sur [GitHub.com/Google](https://github.com/google). La plupart des référentiels pertinents sont nommés `google-auth-library-[name of language]`.
 
@@ -79,4 +79,4 @@ Pour obtenir des exemples de compléments qui utilisent un service intermédiair
 
 ## <a name="what-is-cors"></a>Que signifie l’acronyme CORS ?
 
-CORS est l’acronyme de [Cross Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS) (partage des ressources d’origines croisées). Pour plus d’informations sur l’utilisation de CORS dans les compléments, reportez-vous à la rubrique relative à la [résolution des limites de stratégie d’origine identique dans les compléments Office](addressing-same-origin-policy-limitations.md).
+CORS est l’acronyme de [Cross Origin Resource Sharing](https://developer.mozilla.org/docs/Web/HTTP/Access_control_CORS) (partage des ressources d’origines croisées). Pour plus d’informations sur l’utilisation de CORS dans les compléments, reportez-vous à la rubrique relative à la [résolution des limites de stratégie d’origine identique dans les compléments Office](addressing-same-origin-policy-limitations.md).

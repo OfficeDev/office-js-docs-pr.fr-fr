@@ -2,12 +2,12 @@
 title: Héberger un complément pour Office sur Microsoft Azure
 description: ''
 ms.date: 01/25/2018
-ms.openlocfilehash: f0d6a5a10d2ce0620b42566be03e2d36f8a922f2
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: a7a364db256a64a224ed6895ed710bb0592fa72f
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19438808"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925520"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>Héberger un complément pour Office sur Microsoft Azure
 
@@ -20,17 +20,17 @@ Cet article décrit comment déployer une application web de complément sur Azu
 1. Installez [Visual Studio 2017](https://www.visualstudio.com/downloads) et choisissez d’inclure la charge de travail de **développement Azure**.
 
     > [!NOTE]
-    > Si vous avez déjà installé Visual Studio 2017, [utilisez le programme d’installation Visual Studio](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio) pour vous assurer que la charge de travail de **développement Azure** est installée. 
+    > Si vous avez déjà installé Visual Studio 2017, [utilisez le programme d’installation Visual Studio](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) pour vous assurer que la charge de travail de **développement Azure** est installée. 
 
 2. Installez Office 2016. 
     
     > [!NOTE]
-    > Si vous n’avez pas encore Office 2016, vous pouvez vous [inscrire pour obtenir une version d’évaluation gratuite d’un mois](http://office.microsoft.com/en-us/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786).
+    > Si vous n’avez pas encore Office 2016, vous pouvez vous [inscrire pour obtenir une version d’évaluation gratuite d’un mois](http://office.microsoft.com/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786).
 
 3.  Obtenez un abonnement Azure.
     
     > [!NOTE]
-    > Si vous n’avez pas encore d’abonnement Azure, vous pouvez [en obtenir un dans le cadre de votre abonnement MSDN](http://www.windowsazure.com/en-us/pricing/member-offers/msdn-benefits/) ou vous [inscrire pour obtenir une version d’évaluation gratuite](https://azure.microsoft.com/en-us/pricing/free-trial). 
+    > Si vous n’avez pas encore d’abonnement Azure, vous pouvez [en obtenir un dans le cadre de votre abonnement MSDN](http://www.windowsazure.com/pricing/member-offers/msdn-benefits/) ou vous [inscrire pour obtenir une version d’évaluation gratuite](https://azure.microsoft.com/pricing/free-trial). 
 
 ## <a name="step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file"></a>Étape 1 : Créer un dossier partagé pour héberger le fichier manifeste XML de votre complément
 
@@ -45,7 +45,7 @@ Cet article décrit comment déployer une application web de complément sur Azu
 5. Dans **Partage de fichiers**, sélectionnez la flèche déroulante vers le bas, puis choisissez **Tout le monde** > **Ajouter** > **Partager**.
     
 > [!NOTE]
-> Dans cette procédure, vous utilisez un partage de fichiers local en tant que catalogue approuvé où vous allez stocker le fichier manifeste XML du complément. Dans un scénario réel, vous pouvez choisir de [déployer le fichier manifeste XML dans un catalogue SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) ou de [publier le complément dans AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store), à la place.
+> Dans cette procédure, vous utilisez un partage de fichiers local en tant que catalogue approuvé où vous allez stocker le fichier manifeste XML du complément. Dans un scénario réel, vous pouvez choisir de [déployer le fichier manifeste XML dans un catalogue SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) ou de [publier le complément dans AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store), à la place.
 
 ## <a name="step-2-add-the-file-share-to-the-trusted-add-ins-catalog"></a>Étape 2 : Ajouter le partage de fichiers au catalogue de compléments approuvés
 
@@ -98,7 +98,7 @@ Pour créer l’application web à l’aide de Visual Studio 2017, procédez com
 5. Dans la barre d’adresse du navigateur, modifiez l’URL de l’application web pour qu’elle utilise le protocole HTTPS et appuyez sur **Entrée** pour confirmer que le protocole HTTPS est activé. 
 
     > [!IMPORTANT]
-    > [!include[HTTPS guidance](../includes/https-guidance.md)] Les sites Web Azure fournissent automatiquement un point de terminaison HTTPS.
+    > [!include[HTTPS guidance](../includes/https-guidance.md)] Les sites web Azure fournissent automatiquement un point de terminaison HTTPS.
     
 ### <a name="using-the-azure-portal"></a>Utilisation du portail Azure
 
@@ -132,9 +132,9 @@ Pour créer l’application web à l’aide du portail Azure, procédez comme su
 6. Dans la barre d’adresse du navigateur, modifiez l’URL de l’application web pour qu’elle utilise le protocole HTTPS et appuyez sur **Entrée** pour confirmer que le protocole HTTPS est activé. 
 
     > [!IMPORTANT]
-    > [!include[HTTPS guidance](../includes/https-guidance.md)] Les sites Web Azure fournissent automatiquement un point de terminaison HTTPS.
+    > [!include[HTTPS guidance](../includes/https-guidance.md)] Les sites web Azure fournissent automatiquement un point de terminaison HTTPS.
 
-## <a name="step-4-create-an-office-add-in-in-visual-studio"></a>Étape 4 : Créer un complément Office dans Visual Studio
+## <a name="step-4-create-an-office-add-in-in-visual-studio"></a>Étape 4 : Créer un complément Office dans Visual Studio.
 
 1. Démarrez Visual Studio en tant qu’administrateur.
     
@@ -164,15 +164,15 @@ Visual Studio crée un complément Word de base que vous pourrez publier tel que
 
     Visual Studio publie le projet web pour votre complément Office sur votre site web Azure. Une fois le projet web publié par Visual Studio, votre navigateur s’ouvre et affiche une page web avec le texte « Votre application de service d’application a été créée. » Il s’agit de la page active par défaut pour l’application web.
 
-7. Pour voir la page Web de votre complément, modifiez l'URL afin qu'elle utilise HTTPS et spécifie le chemin d'accès de la page HTML de votre complément (par exemple : https://YourDomain.azurewebsites.net/Home.html). Cela confirme que l'application Web de votre complément est désormais hébergée sur Azure. Copiez l'URL racine (par exemple : https://YourDomain.azurewebsites.net); vous en aurez besoin lorsque vous modifierez le fichier manifeste du complément plus loin dans cet article.
+7. Pour voir la page Web de votre complément, modifiez l'URL afin qu'elle utilise HTTPS et spécifie le chemin d'accès de la page HTML de votre complément (par exemple : https://YourDomain.azurewebsites.net/Home.html). Cela confirme que l’application Web de votre complément est désormais hébergée sur Azure. Copiez l’URL racine (par exemple : https://YourDomain.azurewebsites.net); vous en aurez besoin lorsque vous modifierez le fichier manifeste du complément plus loin dans cet article.
     
-## <a name="step-6-edit-and-deploy-the-add-in-xml-manifest-file"></a>Étape 6 : Modifier et déployer le fichier manifeste XML du complément
+## <a name="step-6-edit-and-deploy-the-add-in-xml-manifest-file"></a>Étape 6 : Modifier et déployer le fichier manifeste XML
 
 1. Dans Visual Studio avec l’exemple de complément Office ouvert dans l’**explorateur de solutions**, développez la solution pour que les deux projets s’affichent.
     
-2. Développez le projet de complément Office (par exemple WordWebAddIn), cliquez sur le dossier manifeste avec le bouton droit de la souris et sélectionnez **Ouvrir**. Le fichier manifeste XML du complément s’ouvre.
+2. Développez le projet macro complémentaire Office (par exemple WordWebAddIn), le dossier manifest d’avec le bouton droit de la souris et sélectionnez **ouvrir**. Le fichier manifeste XML du complément s’ouvre.
     
-3. Dans le fichier manifeste XML, recherchez et remplacez toutes les instances de "~remoteAppUrl" par l'URL racine de l'application Web du complément sur Azure. Il s'agit de l'URL que vous avez copiée plus tôt après la publication de l'application Web du complément dans Azure (par exemple : https://YourDomain.azurewebsites.net). 
+3. Dans le fichier manifeste XML, recherchez et remplacez toutes les instances de « ~ remoteAppUrl » par l’URL racine de l’application web du complément sur Azure. Il s'agit de l'URL que vous avez copiée plus tôt après la publication de l'application Web du complément dans Azure (par exemple : https://YourDomain.azurewebsites.net). 
     
 4. Choisissez **Fichier**, puis **Enregistrer tout**. Fermez le fichier manifeste XML du complément.
     

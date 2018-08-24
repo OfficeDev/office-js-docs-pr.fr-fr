@@ -2,12 +2,12 @@
 title: Limites des ressources et optimisation des performances pour les compléments Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: f5f24faf337a40caf7245d45052208ef6f46af1a
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.openlocfilehash: 57004d5f3b38bfb1c58cefbccf22a2ea0aa0b16f
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "21703825"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925387"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites des ressources et optimisation des performances pour les compléments Office
 
@@ -52,7 +52,7 @@ En plus du cœur du processeur, de la mémoire et des règles de fiabilité, les
 
     À l’aide d’une stratégie de groupe ou d’un paramètre propre à l’application dans le registre Windows, les administrateurs peuvent ajuster ce nombre de tentatives d’évaluation dans le paramètre **OutlookActivationManagerRetryLimit**.
 
-### <a name="task-pane-and-content-add-ins"></a>Volet des tâches et compléments de contenu
+### <a name="task-pane-and-content-add-ins"></a>Compléments de volet Office et de contenu
     
 Si un complément de contenu ou de volet de tâches dépasse les seuils précédents en matière d’utilisation du cœur du processeur ou de la mémoire, ou en matière de tolérance d’incident, l’application hôte correspondante affiche un avertissement pour l’utilisateur. À ce stade, l’utilisateur peut effectuer l’une des actions suivantes :
 
@@ -85,7 +85,7 @@ Le tableau suivant répertorie les événements que le journal de télémétrie 
 |19|Le complément a rencontré une erreur d’exécution|Critique|L’Complément Office a rencontré un problème qui l’a empêchée de s’exécuter. Pour plus de détails, consultez le journal  **Alertes Microsoft Office** à l’aide de l’Observateur d’événements Windows sur l’ordinateur sur lequel l’erreur s’est produite.|
 |20|Le complément n’a pas pu vérifier la licence|Critique|Les informations de licence de l’Complément Office n’ont pas pu être vérifiées et la licence a peut-être expiré. Pour plus de détails, consultez le journal  **Alertes Microsoft Office** à l’aide de l’Observateur d’événements Windows sur l’ordinateur sur lequel l’erreur s’est produite.|
 
-Pour plus d’informations, consultez [Déployer le Tableau de bord de télémétrie](http://msdn.microsoft.com/en-us/library/f69cde72-689d-421f-99b8-c51676c77717%28Office.15%29.aspx) et [Dépannage des fichiers et des solutions personnalisées d’Office avec le journal de télémétrie](http://msdn.microsoft.com/library/ef88e30e-7537-488e-bc72-8da29810f7aa%28Office.15%29.aspx)
+Pour plus d’informations, consultez [Déployer le Tableau de bord de télémétrie](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219431(v=office.15)) et [Dépannage des fichiers et des solutions personnalisées d’Office avec le journal de télémétrie](https://docs.microsoft.com/office/client-developer/shared/troubleshooting-office-files-and-custom-solutions-with-the-telemetry-log)
 
 
 ## <a name="design-and-implementation-techniques"></a>Techniques de conception et d’implémentation
@@ -94,9 +94,9 @@ Bien que les limites en matière d’utilisation des ressources de l’UC et de 
 
 - Dans un scénario où votre complément a besoin de lire un important volume de données à partir d’un jeu de données illimité, vous pouvez appliquer la pagination lors de la lecture des données dans une table ou réduire la taille des données à chaque opération de lecture raccourcie, plutôt que de tenter de terminer la lecture en une seule opération. 
     
-   Pour obtenir un exemple de code JavaScript et jQuery qui montre la séparation d'une série d'opérations d'entrée et de sortie longue durée ou de données illimitées qui sollicitent l'unité centrale de manière intensive, reportez-vous à la rubrique [Comment puis-je redonner (brièvement) le contrôle au navigateur pendant un traitement JavaScript intense ?](http://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript). Cet exemple utilise la méthode [setTimeout](http://msdn.microsoft.com/en-us/library/ie/ms536753%28v=vs.85%29.aspx) de l'objet global pour limiter la durée de l'entrée et de la sortie. Il gère également les données dans des blocs définis au lieu de données non liées de façon aléatoire.
+   Pour obtenir un exemple de code JavaScript et jQuery qui montre la séparation d'une série d'opérations d'entrée et de sortie longue durée ou de données illimitées qui sollicitent l'unité centrale de manière intensive, reportez-vous à la rubrique [Comment puis-je redonner (brièvement) le contrôle au navigateur pendant un traitement JavaScript intense ?](http://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript). Cet exemple utilise la méthode [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) de l'objet global pour limiter la durée de l'entrée et de la sortie. Il gère également les données dans des blocs définis au lieu de données non liées de façon aléatoire.
     
-- Si votre complément utilise un algorithme qui sollicite l’UC de manière intensive pour traiter un important volume de données, vous pouvez recourir aux API Web Worker afin d’effectuer une tâche de longue durée en arrière-plan pendant qu’un script distinct s’exécute au premier plan (par exemple, l’affichage de la progression d’une opération dans l’interface utilisateur). Les API Web Worker ne bloquent pas les activités des utilisateurs. En outre, elles permettent à la page HTML de rester réactive. Pour obtenir un exemple d’API Web Worker, voir les [bases des API Web Worker](https://www.html5rocks.com/en/tutorials/workers/basics/). Pour plus d’informations sur l’API Web Worker Internet Explorer, voir [API Web Worker](http://msdn.microsoft.com/en-us/library/IE/hh772807%28v=vs.85%29.aspx).
+- Si votre complément utilise un algorithme qui sollicite l’UC de manière intensive pour traiter un important volume de données, vous pouvez recourir aux API Web Worker afin d’effectuer une tâche de longue durée en arrière-plan pendant qu’un script distinct s’exécute au premier plan (par exemple, l’affichage de la progression d’une opération dans l’interface utilisateur). Les API Web Worker ne bloquent pas les activités des utilisateurs. En outre, elles permettent à la page HTML de rester réactive. Pour obtenir un exemple d’API Web Worker, voir les [bases des API Web Worker](https://www.html5rocks.com/en/tutorials/workers/basics/). Pour plus d’informations sur l’API Web Worker Internet Explorer, voir [API Web Worker](https://developer.mozilla.org/docs/Web/API/Web_Workers_API).
     
 - Si votre complément utilise un algorithme qui sollicite l’UC de manière intensive et si vous pouvez décomposer les entrées ou sorties de données en jeux de données de plus petite taille, créez un service web afin de lui passer les données et d’alléger la charge de l’UC, puis attendez un rappel asynchrone.
     
@@ -106,5 +106,5 @@ Bien que les limites en matière d’utilisation des ressources de l’UC et de 
 ## <a name="see-also"></a>Voir aussi
 
 - [Confidentialité et sécurité pour les compléments Office](../concepts/privacy-and-security.md)
-- [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](https://docs.microsoft.com/en-us/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
+- [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
     

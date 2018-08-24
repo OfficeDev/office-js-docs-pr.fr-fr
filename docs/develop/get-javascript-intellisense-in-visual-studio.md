@@ -2,16 +2,20 @@
 title: Obtenir JavaScript IntelliSense dans Visual Studio 2017
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 1d112ba2374ca8f05fb1ed79407ef8549e88c72c
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925282"
 ---
-
-
 # <a name="get-javascript-intellisense-in-visual-studio-2017"></a>Obtenir JavaScript IntelliSense dans Visual Studio 2017 
 
-Lorsque vous utilisez Visual Studio 2017 pour développer des compléments Office, vous pouvez utiliser JSDoc pour activer IntelliSense pour vos variables, objets, paramètres et valeurs renvoyées JavaScript. Cet article fournit une vue d’ensemble de JSDoc et explique comment vous pouvez l’utiliser pour créer IntellSense dans Visual Studio. Pour plus d’informations, voir [JavaScript IntelliSense](https://docs.microsoft.com/fr-fr/visualstudio/ide/javascript-intellisense) et [Prise en charge de JSDoc dans JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript). 
+Lorsque vous utilisez Visual Studio 2017 pour développer des compléments Office, vous pouvez utiliser JSDoc pour activer IntelliSense pour vos variables, objets, paramètres et valeurs renvoyées JavaScript. Cet article fournit une vue d’ensemble de JSDoc et explique comment vous pouvez l’utiliser pour créer IntellSense dans Visual Studio. Pour plus d’informations, voir [JavaScript IntelliSense](https://docs.microsoft.com/visualstudio/ide/javascript-intellisense) et [Prise en charge de JSDoc dans JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript). 
 
 ## <a name="officejs-type-definitions"></a>Définitions de type Office.js
 
-Vous devez fournir les définitions des types dans Office.js pour Visual Studio. Pour ce faire, vous pouvez :
+Vous devez fournir les définitions des types dans Office.js pour Visual Studio. Pour ce faire, vous pouvez :
 
 - Conserver une copie locale des fichiers Office.js dans un dossier dans votre solution nommée `\Office\1\`. Les modèles de projet Complément Office dans Visual Studio ajoutent cette copie locale lorsque vous créez un projet de complément. 
 - Utiliser une version en ligne de Office.js en ajoutant un fichier tsconfig.json à la racine du projet d’application Web dans la solution de complément. Le fichier doit inclure le contenu suivant.
@@ -79,4 +83,4 @@ function myFunc() {
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Création et débogage de compléments Office dans Visual Studio](create-and-debug-office-add-ins-in-visual-studio.md)
+- [Création et débogage de compléments Office dans Visual Studio](create-and-debug-office-add-ins-in-visual-studio.md)

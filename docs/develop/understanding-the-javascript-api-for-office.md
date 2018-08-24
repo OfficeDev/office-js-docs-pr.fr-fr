@@ -2,12 +2,12 @@
 title: Présentation de l’API JavaScript pour Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: ccc5122061e267fec875fcbbb5b2083e1b934f9d
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.openlocfilehash: a9e1e26d4ba94a933ecb98250c19afee90750f5d
+ms.sourcegitcommit: 28fc652bded31205e393df9dec3a9dedb4169d78
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "22546787"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "22928034"
 ---
 # <a name="understanding-the-javascript-api-for-office"></a>Présentation de l’API JavaScript pour Office
 
@@ -71,9 +71,9 @@ Pour plus d’informations, consultez les pages relatives à l’[événement Of
 
 ## <a name="office-javascript-api-object-model"></a>Modèle objet JavaScript Office
 
-Une fois initialisé, le complément peut interagir avec l'hôte (par exemple Excel, Outlook). La page sur le [modèle objet de l'API JavaScript Office](office-javascript-api-object-model.md)contient plus de détails sur les habitudes d'utilisation spécifiques. Il existe également une documentation de référence détaillée à la fois pour les [API partagées](https://dev.office.com/reference/add-ins/javascript-api-for-office) et les hôtes spécifiques.
+Une fois initialisé, le complément peut interagir avec l’hôte (par exemple, Excel, Outlook). La page [Modèle d’objet API JavaScript pour Office](office-javascript-api-object-model.md) a plus de détails sur les modèles d’utilisations spécifiques. Il existe également une documentation de référence détaillée pour les [API partagées](https://dev.office.com/reference/add-ins/javascript-api-for-office) et les hôtes spécifiques.
 
-## <a name="api-support-matrix"></a>Matrice de support de l'API
+## <a name="api-support-matrix"></a>Matrice de prise en charge d’API
 
 
 Ce tableau récapitule l’API et les fonctionnalités prises en charge dans les types de complément (contenu, volet Office et Outlook), ainsi que les applications Office qui peuvent les héberger lorsque vous indiquez les applications hôte Office prises en charge par votre complément à l’aide du [schéma de manifeste de complément 1.1 et des fonctionnalités prises en charge par la version 1.1 de l’interface API JavaScript pour Office](update-your-javascript-api-for-office-and-manifest-schema-version.md).

@@ -2,12 +2,12 @@
 title: Commandes de complément pour Excel, Word et PowerPoint
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 68eee18233b6b874f237ded41009561dbde774de
-ms.sourcegitcommit: 4e4f7c095e8f33b06bd8a02534ee901125eb1d17
+ms.openlocfilehash: 621c3e991d6ec4930cd11e39e19cca1c8a1fa3d8
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "20084062"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925198"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Commandes de complément pour Excel, Word et PowerPoint
 
@@ -16,7 +16,7 @@ Les commandes de complément sont des éléments d’interface utilisateur qui �
 Pour en savoir plus sur les fonctionnalités, regardez la vidéo sur les [commandes de complément du ruban Office](https://channel9.msdn.com/events/Build/2016/P551).
 
 > [!NOTE]
-> Les catalogues SharePoint n’acceptent pas les commandes de complément. Vous pouvez déployer des commandes de complément via le [déploiement centralisé](../publish/centralized-deployment.md) ou [AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store), ou utiliser le [chargement de version test](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) pour déployer votre commande de complément à des fins de test. 
+> Les catalogues SharePoint n’acceptent pas les commandes de complément. Vous pouvez déployer des commandes de complément via le [déploiement centralisé](../publish/centralized-deployment.md) ou [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store), ou utiliser le [chargement de version test](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) pour déployer votre commande de complément à des fins de test. 
 
 *Figure 1. Complément incluant des commandes en cours d’exécution dans Excel (version de bureau)*
 
@@ -70,7 +70,7 @@ Appliquez les meilleures pratiques suivantes lorsque vous développez des comman
     - N’ajoutez pas de boutons superflus pour augmenter la valeur de votre complément.
 
      > [!NOTE]
-     > Les compléments qui occupent trop d’espace peuvent ne pas obtenir la [validation d’AppSource](https://docs.microsoft.com/en-us/office/dev/store/validation-policies).
+     > Les compléments qui occupent trop d’espace peuvent ne pas obtenir la [validation d’AppSource](https://docs.microsoft.com/office/dev/store/validation-policies).
 
 - Pour toutes les icônes, suivez les [règles de conception d’icône](add-in-icons.md).
 - Proposez une version de complément qui fonctionne aussi sur les hôtes qui ne prennent pas en charge les commandes. Un seul manifeste de complément peut fonctionner sur les hôtes tenant compte ou non des commandes (par exemple, un volet de tâches dans le second cas).

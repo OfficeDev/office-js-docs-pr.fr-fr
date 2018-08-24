@@ -2,26 +2,26 @@
 title: Ajouter la validation des données aux plages Excel
 description: ''
 ms.date: 04/13/2018
-ms.openlocfilehash: 3d6a901e2f8296806cff470340b40f4d77e79e34
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.openlocfilehash: af965df4a1aece5b7f8d5ea89664519b576a4850
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "21703944"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925310"
 ---
 # <a name="add-data-validation-to-excel-ranges-preview"></a>Ajouter la validation des données aux plages Excel (préversion)
 
 > [!NOTE]
-> Tant que les API de validation des données sont en préversion, vous devez charger la version bêta de la bibliothèque JavaScript Office pour les utiliser. L'URL est https://appsforoffice.microsoft.com/lib/beta/hosted/office.js. Si vous utilisez TypeScript ou si votre éditeur de code utilise un fichier de définition de type TypeScript pour intelliSense, utilisez https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+> Tant que les API de validation des données sont en préversion, vous devez charger la version bêta de la bibliothèque JavaScript Office pour les utiliser. L’URL est https://appsforoffice.microsoft.com/lib/beta/hosted/office.js. Si vous utilisez TypeScript ou si votre éditeur de code utilise un fichier de définition de type TypeScript pour intelliSense, utilisez https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
 
 > [!NOTE]
 > Alors que les API de validation des données sont en préversion, les liens de cet article vers la référence de l'API ne fonctionneront pas. En attendant, vous pouvez utiliser le [projet de référence de l'API Excel](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec/reference/excel).
 
 La bibliothèque JavaScript Excel fournit des API pour permettre à votre complément d'ajouter une validation automatique des données aux tables, colonnes, lignes et autres plages d'un classeur. Pour comprendre les concepts et la terminologie de la validation des données, consultez les articles suivants qui portent sur la manière dont les utilisateurs peuvent ajouter la validation des données via l'IU Excel :
 
-- [Appliquer la validation des données aux cellules](https://support.office.com/en-us/article/Apply-data-validation-to-cells-29FECBCC-D1B9-42C1-9D76-EFF3CE5F7249)
-- [Plus d'informations sur la validation des données](https://support.office.com/en-us/article/More-on-data-validation-f38dee73-9900-4ca6-9301-8a5f6e1f0c4c)
-- [Description et exemples de validation de données dans Excel](https://support.microsoft.com/en-us/help/211485/description-and-examples-of-data-validation-in-excel)
+- [Appliquer la validation des données aux cellules](https://support.office.com/article/Apply-data-validation-to-cells-29FECBCC-D1B9-42C1-9D76-EFF3CE5F7249)
+- [Plus d'informations sur la validation des données](https://support.office.com/article/More-on-data-validation-f38dee73-9900-4ca6-9301-8a5f6e1f0c4c)
+- [Description et exemples de validation de données dans Excel](https://support.microsoft.com/help/211485/description-and-examples-of-data-validation-in-excel)
 
 ## <a name="programmatic-control-of-data-validation"></a>Contrôle programmatique de la validation des données
 
@@ -145,7 +145,7 @@ Utilisez la propriété `custom` dans l'objet `DataValidationRule` pour spécifi
 
 - Il suppose qu'il y a un tableau à deux colonnes avec des colonnes **Nom de l'athlète** et **Commentaires** dans les colonnes A et B de la feuille de calcul.
 - Pour réduire la verbosité dans la colonne **Commentaires,** il rend invalides les données qui incluent le nom de l'athlète.
-- `SEARCH(A2,B2)` renvoie la position de départ, de la chaîne dans B2, de la chaîne dans A2. Si A2 n'est pas contenu dans B2, il ne renvoie pas de nombre. `ISNUMBER()` Il retourne un booléen. La propriété `formula` indique donc que les données valides pour la colonne **Commentaire** sont les données qui n'incluent pas la chaîne présente dans la colonne **Nom de l'athlète**.
+- `SEARCH(A2,B2)` renvoie la position de départ, de la chaîne dans B2, de la chaîne dans A2. Si A2 n'est pas contenu dans B2, il ne renvoie pas de nombre. `ISNUMBER()` retourne un booléen. La propriété `formula` indique donc que les données valides pour la colonne **Commentaire** sont les données qui n'incluent pas la chaîne présente dans la colonne **Nom de l'athlète**.
 
 ```js
 Excel.run(function (context) {
@@ -165,7 +165,7 @@ Excel.run(function (context) {
 
 ### <a name="create-validation-error-alerts"></a>Créer des alertes d'erreur de validation
 
-Vous pouvez créer une alerte d'erreur personnalisée qui apparaît lorsqu'un utilisateur tente d'entrer des données non valides dans une cellule. Ce qui suit est un simple exemple. Tenez compte des informations suivantes :
+Vous pouvez créer une alerte d'erreur personnalisée qui apparaît lorsqu'un utilisateur tente d'entrer des données non valides dans une cellule. Ce qui suit est un exemple simple. Tenez compte des informations suivantes :
 
 - La propriété `style` détermine si l'utilisateur reçoit une alerte informative, un avertissement ou une alerte d' "arrêt". Seule `Stop` empêche réellement l'utilisateur d'ajouter des données invalides. La fenêtre contextuelle pour `Warning` et `Information` a des options qui permettent à l'utilisateur d'entrer les données invalides de toute façon.
 - La propriété `showAlert` prend `true` par défaut. Cela signifie que l'hôte Excel affichera une alerte générique (de type `Stop`) sauf si vous créez une alerte personnalisée qui soit définit `showAlert` pour `false` ou définit un message, un titre et un style personnalisés. Ce code définit un message et un titre personnalisés.

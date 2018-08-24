@@ -1,12 +1,12 @@
 ---
 title: Création d’un complément Office Node.js qui utilise l’authentification unique
 description: 23/01/2018
-ms.openlocfilehash: 4086471bec2ded671e1b3eafebc4fe69e9818344
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 70ce81a1cd0038d3219763fb1e15bc3089e06f57
+ms.sourcegitcommit: 28fc652bded31205e393df9dec3a9dedb4169d78
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437646"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "22927389"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office Node.js qui utilise l’authentification unique (aperçu)
 
@@ -27,16 +27,17 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 * Office 2016, version 1708, build 8424.nnnn ou version ultérieure (la version par abonnement Office 365, parfois appelée « Démarrer en un clic »).
 
-  Il vous sera peut-être demandé de participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, consultez la page [Participez au programme Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1).
+  Il vous sera peut-être demandé de participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, consultez la page [Participez au programme Office Insider](https://products.office.com/office-insider?tab=tab-1).
 
 ## <a name="set-up-the-starter-project"></a>Configurer le projet de démarrage
 
 1. Clonez ou téléchargez le référentiel sur [Complément Office NodeJS SSO](https://github.com/officedev/office-add-in-nodejs-sso). 
 
     > [!NOTE]
-    > Il existe deux versions de l’échantillon :  
+    > Il existe trois versions de cet example :  
     > * Le dossier **Before** est un projet de démarrage. L’interface utilisateur et d’autres aspects du complément qui ne sont pas directement liés à l’authentification unique ou à l’autorisation sont déjà terminés. Les sections suivantes de cet article vous guident tout au long de la procédure d’exécution de cette dernière. 
     > * La version **Finale** de l’échantillon s’apparente au complément que vous auriez si vous terminiez les procédures de cet article, sauf que le projet terminé comporte des commentaires de code qui seraient redondants avec le texte de cet article. Pour utiliser la version finale, suivez simplement les instructions de cet article, mais remplacez « Avant » par « Finale » et ignorez les sections **Code côté client** et **Code côté serveur**.
+    > * La version **Multiclient Complété** est un exemple complet qui prend en charge une architecture mutualisée. Explorez cet exemple si vous souhaitez prendre en charge les comptes Microsoft à partir de différents domaines avec l’authentification unique.
 
 2. Ouvrez une console Git Bash dans le dossier **Before**.
 
@@ -49,17 +50,17 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 ## <a name="register-the-add-in-with-azure-ad-v20-endpoint"></a>Enregistrez le complément avec le point de terminaison Azure AD v2.0
 
-Les instructions suivantes sont écrites de façon générique afin qu’elles puissent être utilisées à plusieurs endroits. Pour cet article, faites ce qui suit :
+Les instructions suivantes sont écrites de façon générique afin qu’elles puissent être utilisées à plusieurs endroits. Pour cet article, faites ce qui suit :
 - Remplacez l’espace réservé **$ADD-IN-NAME$** par `“Office-Add-in-NodeJS-SSO`.
 - Remplacez l’espace réservé **$FQDN-WITHOUT-PROTOCOL$** par `localhost:3000`.
-- Lorsque vous spécifiez des autorisations dans la boîte de dialogue **Sélectionner autorisations**, cochez les cases pour les autorisations suivantes. Seule la première est vraiment requise par votre complément lui-même ; mais l'autorisation `profile` est requise pour que l'hôte Office obtienne un jeton pour votre application Web complémentaire.
+- Lorsque vous spécifiez des autorisations dans la boîte de dialogue **Sélectionner autorisations**, cochez les cases pour les autorisations suivantes. Seule la première est vraiment requise par votre complément lui-même ; mais l'autorisation `profile` est requise pour que l'hôte Office obtienne un jeton pour votre application Web complémentaire.
     * Files.Read.All
     * profil
 
 [!INCLUDE[](../includes/register-sso-add-in-aad-v2-include.md)]
 
 
-## <a name="grant-administrator-consent-to-the-add-in"></a>Accorder le consentement de l'administrateur au complément
+## <a name="grant-administrator-consent-to-the-add-in"></a>Accorde le consentement de l’administrateur au complément
 
 [!INCLUDE[](../includes/grant-admin-consent-to-an-add-in-include.md)]
 
@@ -67,13 +68,13 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
 
 1. Dans votre éditeur de code, ouvrez le fichier src\server.ts. Près de la partie supérieure se trouve un appel à un constructeur d’une classe `AuthModule`. Il existe certains paramètres de chaîne dans le constructeur auxquels vous devez affecter des valeurs.
 
-2. Pour la propriété `client_id`, remplacez l’espace réservé `{client GUID}` par l'ID de l’application, que vous avez enregistré lorsque vous avez enregistré le complément. Lorsque vous avez terminé, il ne devrait rester q’un GUID entre deux apostrophes. Il ne devrait pas y avoir de ponctuation comme "{}".
+2. Pour la propriété `client_id`, remplacez l’espace réservé `{client GUID}` par l’ID de l’application que vous avez enregistré lorsque vous avez enregistré le complément. Lorsque vous avez terminé, il ne devrait rester q’un GUID entre deux apostrophes. Il ne devrait pas y avoir de ponctuation comme "{}".
 
 3. Pour la propriété `client_secret`, remplacez l’espace réservé `{client secret}` par le secret de l’application que vous avez enregistré lorsque vous avez inscrit le complément.
 
 4. Pour la propriété `audience`, remplacez l’espace réservé `{audience GUID}` par l’ID d’application que vous avez enregistré lorsque vous avez inscrit le complément. (La même valeur que celle affectée à la propriété `client_id`.)
   
-3. Dans la chaîne affectée à la propriété `issuer`, vous verrez l'espace réservé *{GUID locataire O365}*. Remplacez ceci par l'ID de location Office 365. Pour l'obtenir, [utilisez l'une des méthodes décrites dans](https://support.office.com/en-us/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b) Trouver votre identité Office 365. Lorsque vous avez terminé, la valeur de la propriété `issuer` devrait ressembler à quelque chose comme ceci :
+3. Dans la chaîne affectée à la propriété `issuer`, vous verrez l'espace réservé *{GUID locataire O365}*. Remplacez ceci par l'ID de location Office 365. Pour l'obtenir, [utilisez l'une des méthodes décrites dans](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id) Trouver votre identité Office 365. Lorsque vous avez terminé, la valeur de la propriété `issuer` devrait ressembler à quelque chose comme ceci :
 
     `https://login.microsoftonline.com/12345678-1234-1234-1234-123456789012/v2.0`
 
@@ -96,7 +97,7 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
     </WebApplicationInfo>
     ```
 
-1. Remplacez l’espace réservé « {application_GUID here} » *aux deux endroits* du balisage par l’ID d’application que vous avez copié lorsque vous avez enregistré votre complément. (Les "{}"ne font pas partie de l'ID, donc ne les incluez pas). Il s'agit du même ID que celui utilisé pour ClientID et Audience dans web.config.
+1. Remplacez l’espace réservé « {application_GUID here} » *aux deux endroits* du balisage par l’ID d’application que vous avez copié lorsque vous avez enregistré votre complément. (Les « {} » ne font pas partie de l’ID ; vous ne devez pas les inclure.) C’est le même ID que celui que vous avez utilisé pour ClientID et Audience dans le fichier web.config.
 
     > [!NOTE]
     > * La valeur **Resource** correspond à l’**URI d’ID d’application** défini lorsque vous avez ajouté la plateforme d’API web à l’enregistrement du complément.
@@ -257,7 +258,7 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
         break;      
     ```
 
-1. Remplacez `TODO7`  par le code suivant. L’erreur 13008 se produit lorsque l’utilisateur a déclenché une opération qui appelle `getAccessTokenAsync`  avant la fin de l’appel précédent.
+1. Remplacez `getAccessTokenAsync` par le code suivant. L’erreur 13008 se produit lorsque l’utilisateur a déclenché une opération qui appelle `TODO7` avant la fin de l’appel précédent.
 
     ```javascript
     case 13008:
@@ -306,7 +307,7 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
     }
     ```
 
-1. Remplacez `TODO10` par le code suivant. Tenez compte des informations suivantes :
+1. Remplacez `TODO10` par le code suivant. Tenez compte des informations suivantes :
 
     * Il existe des configurations d’Azure Active Directory où l’on demande à l’utilisateur de fournir un ou plusieurs facteurs d’authentification supplémentaires pour accéder à certaines cibles Microsoft Graph (par exemple, OneDrive), même si l’utilisateur peut se connecter à Office par un simple mot de passe. Dans ce cas, AAD enverra, avec l’erreur 50076, une réponse comportant la propriété `Claims`. 
     * L’hôte Office dois obtenir un nouveau jeton avec la valeur **Claims** pour l’option `authChallenge`. Cela demande à AAD d’inviter l’utilisateur à accepter tous les formulaires d’authentification requis. 
@@ -550,7 +551,7 @@ Il existe deux fichiers côté serveur qui doivent être modifiés.
     const graphToken = await auth.acquireTokenOnBehalfOf(jwt, ['Files.Read.All']);
     ```
 
-6. Remplacez `TODO9` par la ligne suivante. Tenez compte des informations suivantes :
+6. Remplacez `TODO9` par la ligne suivante. Tenez compte des informations suivantes :
 
     * La classe MSGraphHelper est définie dans src\msgraph-helper.ts. 
     * Nous réduisons les données qui doivent être renvoyées en spécifiant que nous ne souhaitons que la propriété name et uniquement les 3 premiers éléments.
@@ -603,7 +604,7 @@ Il existe deux fichiers côté serveur qui doivent être modifiés.
     resolve(parsedBody);
     ```
 
-1.  Remplacez `TODO2` par le code suivant. Tenez compte des informations suivantes :
+1.  Remplacez `TODO2` par le code suivant. Tenez compte des informations suivantes :
 
     * Une réponse d’erreur d’une source OData aura toujours un code d’état (statusCode) et généralement un message d’état (statusMessage). Certaines sources OData ajoutent également une propriété d’erreur au corps avec des informations supplémentaires, telles qu’un message et un code internes, ou plus spécifiques.
     * L’objet de promesse est résolu, pas rejeté. s’exécute quand un service web appelle un point de terminaison OData de serveur à serveur.`https.get` Cependant, cet appel s’inscrit dans le contexte d’un appel d’un client à une API web dans le service web. La demande « externe » du client au service web n’aboutit jamais si cette demande « interne » est rejetée. De plus, la résolution de la requête avec l’objet `Error` personnalisé est obligatoire si l’émetteur de l’appel `http.get` doit communiquer les erreurs du point de terminaison OData au client.
@@ -627,7 +628,7 @@ Il existe deux fichiers côté serveur qui doivent être modifiés.
 
 Vous devez maintenant indiquer à Office où trouver le complément.
 
-1. Créez un partage réseau, ou [partagez un dossier sur le réseau](https://technet.microsoft.com/en-us/library/cc770880.aspx).
+1. Créez un partage réseau, ou [partagez un dossier sur le réseau](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770880(v=ws.11)).
 
 2. Placez une copie du fichier manifeste Office-Add-in-NodeJS-SSO.xml, depuis la racine du projet, dans le dossier partagé.
 

@@ -68,7 +68,7 @@ Cet article décrit le processus de création d’un complément Project à l’
     </div>
     ```
 
-4. Ouvrez le fichier **app.js** pour spécifier le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+4. Ouvrez le fichier **src/index.js** pour spécifier le script pour le complément. Remplacez le contenu entier par le code suivant et enregistrez le fichier.
 
     ```js
     'use strict';

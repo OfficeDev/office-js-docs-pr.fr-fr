@@ -2,28 +2,28 @@
 title: Déploiement et publication de votre complément Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: d8264667306dcdac2e9d5e5d6e6607a2a2100546
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 83581b729f5004c36d267bda14795275a5153a9c
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19438780"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925345"
 ---
 # <a name="deploy-and-publish-your-office-add-in"></a>Déploiement et publication de votre complément Office
 
 Vous pouvez utiliser l’une des méthodes pour déployer votre complément Office à des fins de test ou de distribution auprès des utilisateurs.
 
-|**Méthode**|**Use...**|
+|**Méthode**|**Utiliser...**|
 |:---------|:------------|
 |[Chargement de version test](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|Dans le cadre de votre processus de développement, pour tester l’exécution de votre complément sur Windows, Office Online, iPad ou Mac.|
 |[Déploiement centralisé](centralized-deployment.md)|Dans un environnement de cloud ou hybride, utilisez cette méthode pour distribuer votre complément auprès des utilisateurs de votre organisation à l’aide du Centre d’administration Office 365.|
 |[Catalogue SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|Dans un environnement local, pour distribuer votre complément auprès des utilisateurs de votre organisation.|
-|[AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store)|Pour distribuer publiquement votre complément auprès des utilisateurs.|
+|[AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)|Pour distribuer publiquement votre complément auprès des utilisateurs.|
 |[Serveur Exchange](#outlook-add-in-deployment)|Dans un environnement local ou en ligne, pour distribuer des compléments Outlook à des utilisateurs.|
 |[Partage réseau](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|Sur un ordinateur Windows sur un réseau sur lequel vous voulez héberger votre complément, accédez au dossier parent ou à la lettre de lecteur du dossier que vous souhaitez utiliser comme catalogue de dossiers partagés.|
 
 > [!NOTE]
-> Si vous prévoyez de [publier](../publish/publish.md) votre complément sur AppSource et de le rendre disponible dans l’expérience Office, assurez-vous que vous respectez les [stratégies de validation AppSource](https://docs.microsoft.com/en-us/office/dev/store/validation-policies). Par exemple, pour réussir la validation, votre complément doit fonctionner sur toutes les plateformes prenant en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](https://docs.microsoft.com/en-us/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) et la [page relative à la disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md)).
+> Si vous prévoyez de [publier](../publish/publish.md) votre complément sur AppSource et de le rendre disponible dans l’expérience Office, assurez-vous que vous respectez les [stratégies de validation AppSource](https://docs.microsoft.com/office/dev/store/validation-policies). Par exemple, pour réussir la validation, votre complément doit fonctionner sur toutes les plateformes prenant en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) et la [page relative à la disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md)).
 
 ## <a name="deployment-options-by-office-host"></a>Options de déploiement par l’hôte Office
 
@@ -76,15 +76,15 @@ Le déploiement de compléments Outlook nécessite :
 - Office 365, Exchange Online ou Exchange Server 2013 ou version ultérieure
 - Outlook 2013 ou une version ultérieure
 
-Pour affecter des compléments à des clients, utilisez le centre d’administration Exchange pour télécharger un manifeste directement, à partir d’un fichier ou d’une URL, ou ajoutez un complément à partir d’AppSource. Pour affecter des compléments à des utilisateurs individuels, vous devez utiliser Exchange PowerShell. Pour plus d’informations, reportez-vous à [Installation ou suppression de compléments Outlook pour votre organisation](https://technet.microsoft.com/en-us/library/jj943752(v=exchg.150).aspx) sur TechNet.
+Pour affecter des compléments à des clients, utilisez le centre d’administration Exchange pour télécharger un manifeste directement, à partir d’un fichier ou d’une URL, ou ajoutez un complément à partir d’AppSource. Pour affecter des compléments à des utilisateurs individuels, vous devez utiliser Exchange PowerShell. Pour plus d’informations, reportez-vous à [Installation ou suppression de compléments Outlook pour votre organisation](https://technet.microsoft.com/library/jj943752(v=exchg.150).aspx) sur TechNet.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Chargement de version test des compléments Outlook](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 - [Envoyer à AppSource][AppSource]
 - [Instructions de conception pour les compléments Office](../design/add-in-design.md)
-- [Création de descriptions efficaces dans AppSource](https://docs.microsoft.com/en-us/office/dev/store/create-effective-office-store-listings)
+- [Création de descriptions efficaces dans AppSource](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings)
 - [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](../testing/testing-and-troubleshooting.md)
 
-[AppSource]: https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store
+[AppSource]: https://docs.microsoft.com/office/dev/store/submit-to-the-office-store
 [Office Add-in host and platform availability]: ../overview/office-add-in-availability
