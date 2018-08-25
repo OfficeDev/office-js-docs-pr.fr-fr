@@ -2,9 +2,13 @@
 title: Utilisation de plages à l’aide de l’API JavaScript pour Excel
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 48784d14542bcff4a2aab416c5f91c132f6c172d
+ms.sourcegitcommit: e1c92ba882e6eb03a165867c6021a6aa742aa310
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "22925618"
 ---
-
-
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Utilisation de plages à l’aide de l’API JavaScript pour Excel
 
 Cet article fournit des exemples de code qui expliquent comment effectuer des tâches courantes avec des plages à l’aide de l’API JavaScript pour Excel. Pour obtenir une liste complète des propriétés et des méthodes prises en charge par l’objet **Range**, reportez-vous à la rubrique [Objet Range (API JavaScript pour Excel)](https://dev.office.com/reference/add-ins/excel/range).
@@ -15,7 +19,7 @@ Les exemples suivants montrent les différentes façons d’obtenir une référe
 
 ### <a name="get-range-by-address"></a>Obtenir une plage en fonction d’une adresse
 
-L’exemple de code suivant obtient la plage ayant l’adresse **B2 : B5** à partir de la feuille de calcul nommée **Sample**, charge sa propriété **address** et écrit un message dans la console.
+L’exemple de code suivant obtient la plage ayant l’adresse **B2 : B5** à partir de la feuille de calcul nommée **Sample**, charge sa propriété **address** et écrit un message dans la console.
 
 ```js
 Excel.run(function (context) {
@@ -106,7 +110,7 @@ Excel.run(function (context) {
 
 ## <a name="clear-a-range-of-cells"></a>Effacer une plage de cellules
 
-L’exemple de code suivant efface tout le contenu et la mise en forme des cellules de la plage **E2 : E5**.  
+L’exemple de code suivant efface tout le contenu et la mise en forme des cellules de la plage **E2 : E5**.  
 
 ```js
 Excel.run(function (context) {
@@ -191,7 +195,7 @@ Les exemples suivants indiquent comment définir des valeurs et des formules pou
 
 ### <a name="set-value-for-a-single-cell"></a>Définir une valeur pour une cellule unique
 
-L’exemple de code suivant définit la valeur de la cellule **C3** sur « 5 », puis définit la largeur des colonnes pour mieux s’adapter aux données.
+L’exemple de code suivant définit la valeur de la cellule **C3** sur « 5 », puis définit la largeur des colonnes pour mieux s’adapter aux données.
 
 ```js
 Excel.run(function (context) {
@@ -530,6 +534,67 @@ Excel.run(function (context) {
 **Données de la plage après la définition du format de nombre**
 
 ![Données dans Excel après la définition du format](../images/excel-ranges-format-numbers.png)
+
+## <a name="copy-and-paste"></a>Copie et collage
+
+> [!NOTE]
+> La fonction copyFrom est uniquement disponible en version d’évaluation (bêta). Pour utiliser cette fonctionnalité, vous devez utiliser la bibliothèque de la version bêta du CDN Office.js : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> Si vous utilisez TypeScript ou si votre éditeur de code utilise un fichier de définition de type TypeScript pour intelliSense, utilisez https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+
+La fonction copyFrom d’une plage réplique le comportement de copie et collage de l’interface utilisateur d’Excel. L’objet plage sur lequel la fonction copyFrom est appelée est la destination. La source à copier est transmise en tant que plage ou adresse de type chaîne représentant une plage. L’exemple de code suivant copie les données de la plage **A1:E1** dans la plage qui commence à **G1** (ce qui revient à coller dans la plage **G1:K1**).
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    // copy a range starting at a single cell destination
+    sheet.getRange("G1").copyFrom("A1:E1");
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+Range.copyFrom comporte trois paramètres facultatifs.
+
+```ts
+copyFrom(sourceRange: Range | string, copyType?: "All" | "Formulas" | "Values" | "Formats", skipBlanks?: boolean, transpose?: boolean): void;
+``` 
+
+`copyType` spécifie quelles données sont copiées de la source à la destination. 
+`“Formulas”` transfère les formules dans les cellules de la source et conserve le positionnement relatif des plages de ces formules. Toutes les entrées sans formule sont copiées telles quelles. 
+`“Values”` copie les valeurs de données et, dans le cas des formules, le résultat de la formule. 
+`“Formats”` copie la mise en forme de la plage, notamment la police, la couleur et les autres paramètres de format, mais sans les valeurs. 
+`”All”` (l’option par défaut) copie les données et la mise en forme, en conservant les formules des cellules s’il y en a.
+
+`skipBlanks` indique si les cellules vides sont copiées dans la destination. Lorsque cette condition est vraie, `copyFrom` ignore les cellules vides de la plage source. Les cellules ignorées ne remplacent pas les données existantes des cellules correspondantes dans la plage de destination. Faux est la condition par défaut.
+
+L’exemple de code et les images suivants illustrent ce comportement dans un scénario simple. 
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    // copy a range, omitting the blank cells so existing data is not overwritten in those cells
+    sheet.getRange("D1").copyFrom("A1:C1",
+        Excel.RangeCopyType.all,
+        true, // skipBlanks
+        false); // transpose
+    // copy a range, including the blank cells which will overwrite existing data in the target cells
+    sheet.getRange("D2").copyFrom("A2:C2",
+        Excel.RangeCopyType.all,
+        false, // skipBlanks
+        false); // transpose
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+*Avant que la fonction précédente ait été exécutée.*
+
+![Les données dans Excel avant que la méthode de copie de plage ait été exécutée.](../images/excel-range-copyfrom-skipblanks-before.png)
+
+*Une fois que la fonction précédente a été exécutée.*
+
+![Données dans Excel après l’exécution de la méthode de copie de plage.](../images/excel-range-copyfrom-skipblanks-after.png)
+
+`transpose` détermine si les données sont transposées, ce qui signifie que ses lignes et colonnes sont interchangées, dans l’emplacement source. Une plage transposée est inversée le long de la diagonale principale, afin que les lignes **1**, **2**et **3** deviennent les colonnes **A**, **B**et **C**. 
+
 
 ## <a name="see-also"></a>Voir aussi
 
