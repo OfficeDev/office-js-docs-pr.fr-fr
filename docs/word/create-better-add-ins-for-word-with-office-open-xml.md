@@ -2,12 +2,12 @@
 title: Créer de meilleurs compléments pour Word avec Office Open XML
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: ed44b9d331670ac7bf9fb625555dcd05f7bff7ec
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 2e8545f175143c26b3f65af78ad4c47053e927cd
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19439718"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925555"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Créer de meilleurs compléments pour Word avec Office Open XML
 
@@ -857,5 +857,5 @@ Lorsque vous utilisez des modèles avec votre application, que le complément r�
 - [API JavaScript pour Office ](https://dev.office.com/reference/add-ins/javascript-api-for-office) 
 - [Norme ECMA-376 : Formats de fichier Office Open XML](http://www.ecma-international.org/publications/standards/Ecma-376.htm) (accéder ici au guide de langage complet et à la documentation correspondante sur Open XML) 
 - [OpenXMLDeveloper.org](http://www.openxmldeveloper.org)
-- [Exploration de l’API JavaScript pour Office : liaisons de données et parties XML personnalisées](https://msdn.microsoft.com/en-us/magazine/dn166930.aspx)
+- [Exploration de l’API JavaScript pour Office : liaisons de données et parties XML personnalisées](https://msdn.microsoft.com/magazine/dn166930.aspx)
     
