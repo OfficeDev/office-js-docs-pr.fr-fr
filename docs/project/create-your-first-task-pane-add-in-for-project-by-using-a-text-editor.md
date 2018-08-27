@@ -1,18 +1,23 @@
 ---
-title: "Créer votre premier complément du volet Office pour Project\_2013 à l’aide d’un éditeur de texte"
+title: Créer votre premier complément du volet Office pour Project 2013 à l’aide d’un éditeur de texte
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: a09da8fd3ab4989afb8a6ec6e6b2ae226b6f18d5
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925548"
 ---
-
-# <a name="create-your-first-task-pane-add-in-for-project-2013-by-using-a-text-editor"></a>Créer votre premier complément du volet Office pour Project 2013 à l’aide d’un éditeur de texte
+# <a name="create-your-first-task-pane-add-in-for-project-2013-by-using-a-text-editor"></a>Créer votre premier complément du volet Office pour Project 2013 à l’aide d’un éditeur de texte
 
 Vous pouvez créer un complément du volet Office pour Project Standard 2013 ou Project Professionnel 2013 à l’aide de Visual Studio 2015 afin de créer une application web complexe ou à l’aide d’un éditeur de texte en vue de créer les fichiers d’un complément local. Cet article indique comment créer un complément simple utilisant un manifeste XML qui pointe vers un fichier HTML sur un partage de fichiers. L’exemple de complément Test du modèle objet de Project teste certaines fonctions JavaScript qui utilisent le modèle objet pour compléments. Une fois que vous avez utilisé le  **Centre de gestion de la confidentialité** dans Project 2013 pour enregistrer le partage de fichiers contenant le fichier manifeste, vous pouvez ouvrir le complément du volet Office à partir de l’onglet **PROJECT** sur le ruban. L’exemple de code dans cet article est basé sur une application de test créée par Arvind Iyer, Microsoft Corporation.
 
 Project 2013 utilise le même schéma de manifeste de complément que d’autres clients Microsoft Office 2013 emploient, et la majeure partie de la même API JavaScript. Le code complet du complément qui est décrit dans cet article est disponible dans le sous-répertoire  `Samples\Apps` du téléchargement du kit de développement logiciel de Project 2013.
 
-L’exemple de complément Test du modèle objet de Project peut obtenir le GUID d’une tâche et les propriétés de l’application et du projet actif. Si Project Professionnel 2013 ouvre un projet se trouvant dans une bibliothèque SharePoint, le complément peut afficher l’URL du projet. 
+L’exemple de complément Test du modèle objet de Project peut obtenir le GUID d’une tâche et les propriétés de l’application et du projet actif. Si Project Professionnel 2013 ouvre un projet se trouvant dans une bibliothèque SharePoint, le complément peut afficher l’URL du projet. 
 
-Le [téléchargement du kit de développement logiciel Project 2013](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20) inclut le code source complet. Lorsque vous extrayez et installez le kit de développement logiciel et les exemples figurant dans le fichier Project2013SDK.msi, reportez-vous au sous-répertoire `\Samples\Apps\Copy_to_AppManifests_FileShare` pour le fichier manifeste et au sous-répertoire `\Samples\Apps\Copy_to_AppSource_FileShare` pour le code source. 
+Le [téléchargement du kit de développement logiciel Project 2013](https://www.microsoft.com/download/details.aspx?id=30435%20) inclut le code source complet. Lorsque vous extrayez et installez le kit de développement logiciel et les exemples figurant dans le fichier Project2013SDK.msi, reportez-vous au sous-répertoire `\Samples\Apps\Copy_to_AppManifests_FileShare` pour le fichier manifeste et au sous-répertoire `\Samples\Apps\Copy_to_AppSource_FileShare` pour le code source. 
 
 L’exemple JSOMCall.html utilise les fonctions JavaScript du fichier office.js et le fichier project-15.js qui sont inclus. Vous pouvez utiliser les fichiers de débogage correspondants (office.debug.js et project-15.debug.js) pour examiner les fonctions.
 
@@ -57,15 +62,15 @@ Créez un fichier XML dans un répertoire local. Le fichier XML inclut l’élé
 
 Pour Project, l’élément **OfficeApp** doit inclure la valeur d’attribut `xsi:type="TaskPaneApp"`. L’élément **Id** est un GUID. La valeur **SourceLocation** doit être un chemin d’accès de partage de fichiers ou une URL SharePoint pour le fichier source HTML du complément ou l’application web qui s’exécute dans le volet Office. Pour une explication des autres éléments dans le fichier de manifeste, reportez-vous à la rubrique [Compléments du volet Office pour Project](../project/project-add-ins.md).
     
-La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_SimpleOMCalls.xml spécifie pour le complément de test de Project. Les boutons qui sont spécifiés dans le fichier HTML appellent des fonctions JavaScript associées. Vous pouvez ajouter les fonctions JavaScript dans le fichier HTML ou les placer dans un fichier .js distinct.
+La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_SimpleOMCalls.xml spécifie pour le complément de test de Project. Les boutons qui sont spécifiés dans le fichier HTML appellent des fonctions JavaScript associées. Vous pouvez ajouter les fonctions JavaScript dans le fichier HTML ou les placer dans un fichier .js distinct.
 
-## <a name="procedure-2-to-create-the-source-files-for-the-project-om-test-add-in"></a>Procédure 2. Pour créer les fichiers sources du complément Test du modèle objet de Project
+## <a name="procedure-2-to-create-the-source-files-for-the-project-om-test-add-in"></a>Procédure 2. Pour créer les fichiers sources du complément Test du modèle objet de Project
 
 1. Créez un fichier HTML avec un nom spécifié par l’élément **SourceLocation** dans le fichier manifeste JSOM_SimpleOMCalls.xml. 
 
-   Par exemple, créez le fichierJSOMCall.html dans le répertoire `C:\Project\AppSource`. Bien que vous puissiez utiliser un éditeur de texte simple pour créer les fichiers source, il est plus simple d’utiliser un outil tel que Visual Studio 2015, qui fonctionne avec des types de documents spécifiques (tels que HTML et JavaScript) et propose d’autres aides à l’édition. Si vous n’avez pas déjà effectué l’exemple Recherche Bing décrit dans [Compléments du volet Office pour Project](../project/project-add-ins.md), la procédure 3 montre comment créer le partage de fichiers `\\ServerName\AppSource` que le manifeste spécifie.
+   Par exemple, créez le fichierJSOMCall.html dans le répertoire `C:\Project\AppSource`. Bien que vous puissiez utiliser un éditeur de texte simple pour créer les fichiers source, il est plus simple d’utiliser un outil tel que Visual Studio 2015, qui fonctionne avec des types de documents spécifiques (tels que HTML et JavaScript) et propose d’autres aides à l’édition. Si vous n’avez pas déjà effectué l’exemple Recherche Bing décrit dans [Compléments du volet Office pour Project](../project/project-add-ins.md), la procédure 3 montre comment créer le partage de fichiers `\\ServerName\AppSource` que le manifeste spécifie.
     
-   Le fichier JSOMCall.html utilise le fichier MicrosoftAjax.js commun pour les fonctionnalités AJAX et le fichier Office.js pour la fonctionnalité de complément dans les applications Microsoft Office 2013.
+   Le fichier JSOMCall.html utilise le fichier MicrosoftAjax.js commun pour les fonctionnalités AJAX et le fichier Office.js pour la fonctionnalité de complément dans les applications Microsoft Office 2013.
 
     ```HTML
     <!DOCTYPE html>
@@ -93,9 +98,9 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
    L’élément **textarea** spécifie une zone de texte qui montre les résultats des fonctions JavaScript.
     
    > [!NOTE]
-   > Pour garantir le bon fonctionnement de l’exemple Test du modèle objet de Project, copiez les fichiers suivants du téléchargement du kit de développement logiciel de Project 2013 dans le même répertoire que le fichier JSOMCall.html : Office.js, Project-15.js et MicrosoftAjax.js.
+   > Pour garantir le bon fonctionnement de l’exemple Test du modèle objet de Project, copiez les fichiers suivants du téléchargement du kit de développement logiciel de Project 2013 dans le même répertoire que le fichier JSOMCall.html : Office.js, Project-15.js et MicrosoftAjax.js.
 
-   L’étape 2 ajoute le fichier JSOM_Sample.js pour les fonctions spécifiques que l’exemple de complément Test du modèle objet de Project utilise. Dans les dernières étapes, vous ajoutez d’autres éléments HTML pour les boutons qui appellent les fonctions JavaScript.
+   L’étape 2 ajoute le fichier JSOM_Sample.js pour les fonctions spécifiques que l’exemple de complément Test du modèle objet de Project utilise. Dans les dernières étapes, vous ajoutez d’autres éléments HTML pour les boutons qui appellent les fonctions JavaScript.
     
 2. Créez un fichier JavaScript nommé JSOM_Sample.js dans le même répertoire que le fichier JSOMCall.html. 
 
@@ -165,7 +170,7 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
 
    Pour plus d’informations sur les fonctions dans le fichier Office.debug.js, voir [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office). Par exemple, la fonction **getDocumentUrl** obtient l’URL ou le chemin de fichier du projet ouvert.
     
-3. Ajoutez les fonctions JavaScript qui appellent des fonctions asynchrones dans Office.js et Project-15.js pour obtenir les données sélectionnées :
+3. Ajoutez les fonctions JavaScript qui appellent des fonctions asynchrones dans Office.js et Project-15.js pour obtenir les données sélectionnées :
     
    - Par exemple, **getSelectedDataAsync** est une fonction générale d’Office.js qui recherche du texte non formaté pour les données sélectionnées. Pour plus d’informations, reportez-vous à la rubrique sur l’[objet AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult).
     
@@ -697,7 +702,7 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
     ```
 
 > [!NOTE]
-> Le modèle **Complément de volet Office (Project)** dans Visual Studio 2015 inclut les fichiers .css par défaut utilisés pour l’apparence générale des compléments. La procédure 3 montre comment installer et utiliser les fonctionnalités du complément Test du modèle objet de Project.
+> Le modèle **Complément de volet Office (Project)** dans Visual Studio 2015 inclut les fichiers .css par défaut utilisés pour l’apparence générale des compléments. La procédure 3 montre comment installer et utiliser les fonctionnalités du complément Test du modèle objet de Project.
 
 ## <a name="procedure-3-to-install-and-use-the-project-om-test-add-in"></a>Procédure 3. Pour installer et utiliser le complément Test du modèle objet de Project
 
@@ -717,19 +722,19 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
     
 5. Si vous avez déjà ajouté le chemin `\\ServerName\AppManifests` pour le complément Recherche Bing, ignorez cette étape. Sinon, dans le volet **Catalogues de compléments approuvés**, ajoutez le chemin d’accès `\\ServerName\AppManifests` dans la zone de texte **URL du catalogue**, choisissez ** Ajouter un catalogue**, activez le partage réseau comme source par défaut (reportez-vous à la figure 1), puis cliquez sur **OK**.
     
-   *Figure 1. Ajout d’un partage de fichiers réseau pour des manifestes de complément*
+   *Figure 1. Ajout d’un partage de fichiers réseau pour des manifestes de complément*
 
    ![Ajout d’un partage de fichiers réseau pour des manifestes d’application](../images/pj15-create-simple-agave-manage-catalogs.png)
 
 6. Après que vous avez ajouté de nouveaux compléments ou modifié le code source, redémarrez Project. Dans le ruban  **PROJECT**, choisissez le menu déroulant  **Compléments Office**, puis choisissez  **Afficher tout**. Dans la boîte de dialogue  **Insérer un complément**, choisissez  **DOSSIER PARTAGÉ** (voir la figure 2), sélectionnez **Test du modèle objet de Project**, puis choisissez  **Insérer**. Le complément Test du modèle objet de Project démarre dans un volet Office.
     
-   *Figure 2. Démarrage du complément Test du modèle objet Project qui se trouve sur un partage de fichiers*
+   *Figure 2. Démarrage du complément Test du modèle objet Project qui se trouve sur un partage de fichiers*
 
    ![Insertion d’une application](../images/pj15-create-simple-agave-start-agave-app.png)
 
 7. Dans Project, créez et enregistrez un projet simple comportant au moins deux tâches. Par exemple, créez les tâches nommées T1, T2 et un jalon nomméM1, puis définissez des durées et des prédécesseurs de tâches similaires à ceux de la figure 3. Choisissez l’onglet  **PROJECT** sur le ruban, sélectionnez toute la ligne pour la tâche T2, puis cliquez sur le bouton **getSelectedDataAsync** dans le volet Office. La figure 3 montre les données qui sont sélectionnées dans la zone de texte du complément **Test du modèle objet de Project**.
     
-   *Figure 3. Utilisation du complément Test du modèle objet Project*
+   *Figure 3. Utilisation du complément Test du modèle objet Project*
 
    ![Utilisation de l’application Test du modèle objet Project](../images/pj15-create-simple-agave-project-om-test.png)
 
@@ -737,7 +742,7 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
     
 9. Sélectionnez les trois cellules  **Durée** pour les trois tâches. La fonction **getSelectedDataAsync** renvoie des valeurs de texte séparées par des points-virgules pour les cellules sélectionnées dans différentes lignes, par exemple, `2 days;4 days;0 days`.
     
-   La fonction **getSelectedDataAsync** renvoie des valeurs texte séparées par des virgules pour les cellules sélectionnées dans une ligne. Par exemple, dans la figure 3, la ligne entière correspondant à la tâche T2 est sélectionnée. Lorsque vous choisissez **getSelectedDataAsync**, la zone de texte affiche les informations suivantes : `,Auto Scheduled,T2,4 days,Thu 6/14/12,Tue 6/19/12,1,,<NA>`
+   La fonction **getSelectedDataAsync** renvoie des valeurs texte séparées par des virgules pour les cellules sélectionnées dans une ligne. Par exemple, dans la figure 3, la ligne entière correspondant à la tâche T2 est sélectionnée. Lorsque vous choisissez **getSelectedDataAsync**, la zone de texte affiche les informations suivantes :  `,Auto Scheduled,T2,4 days,Thu 6/14/12,Tue 6/19/12,1,,<NA>`
     
    Les colonnes **Indicateurs** et **Noms des ressources** étant toutes les deux vides, le tableau de texte affiche des valeurs vides pour ces colonnes. La valeur `<NA>` correspond à la cellule **Ajouter une nouvelle colonne**.
     
@@ -745,21 +750,21 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
     
 11. Choisissez **getTaskAsync**. Si la variable **taskGuid** contient le GUID de la tâche T2, la zone de texte affiche les informations de la tâche. La valeur **ResourceNames** est vide.
     
-    Créez deux ressources locales R1 et R2, affectez-les à la tâche T2 à raison de 50 % chacune, puis choisissez **getTaskAsync** à nouveau. Les résultats qui apparaissent dans la zone de texte incluent des informations sur les ressources. Si la tâche se trouve dans une liste de tâches SharePoint synchronisée, les résultats incluent également l’ID de tâche SharePoint.
+    Créez deux ressources locales R1 et R2, affectez-les à la tâche T2 à raison de 50 % chacune, puis choisissez **getTaskAsync** à nouveau. Les résultats qui apparaissent dans la zone de texte incluent des informations sur les ressources. Si la tâche se trouve dans une liste de tâches SharePoint synchronisée, les résultats incluent également l’ID de tâche SharePoint.
     
-    - Nom de la tâche : `T2`
-    - GUID : `{25D3E03B-9A7D-E111-92FC-00155D3BA208}`
-    - Identifiant de WSS : `0`
-    - ResourceNames: `R1[50%],R2[50%]`
+    - Nom de la tâche : `T2`
+    - GUID : `{25D3E03B-9A7D-E111-92FC-00155D3BA208}`
+    - Identifiant de WSS : `0`
+    - ResourceNames : `R1[50%],R2[50%]`
 
 12. Sélectionnez le bouton **Get Task Fields**. La fonction **getTaskFields** appelle la fonction **getTaskfieldAsync** plusieurs fois pour le nom de tâche, l’index, la date de début, la durée, la priorité et les notes de tâches.
 
-    - Nom : `T2`
-    - Identifiant : `2`
-    - Début : `Thu 6/14/12`
-    - Durée : `4d`
-    - Priorité : `500`
-    - Remarques : il s’agit d’une note de la tâche T2. Il s’agit uniquement d’une note de test. Si elle avait été une note réelle, elle contiendrait des informations réelles.
+    - Nom : `T2`
+    - Identifiant : `2`
+    - Début : `Thu 6/14/12`
+    - Durée : `4d`
+    - Priorité : `500`
+    - Remarques : il s’agit d’une note de la tâche T2. Il s’agit uniquement d’une note de test. Si elle avait été une note réelle, elle contiendrait des informations réelles.
 
 13. Sélectionnez le bouton **getWSSUrlAsync**. Si le projet appartient à l’un des types suivants, les résultats présentent l’URL et le nom de la liste de tâches.
     
@@ -771,48 +776,48 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
 
     Si le projet est un projet local, ou si vous utilisez Project Professionnel pour ouvrir un projet géré par Project Server, la méthode **getWSSUrlAsync** affiche une erreur non définie.
 
-    - URL SharePoint : `http://ServerName`
-    - Nom de la liste : `Test task list`
+    - URL SharePoint : `http://ServerName`
+    - Nom de la liste : `Test task list`
     
 
 14. Sélectionnez le bouton **Ajouter** dans la section **Événement TaskSelectionChanged**, ce qui appelle la fonction **manageTaskEventHandler** pour enregistrer un événement de changement de sélection de tâche et renvoie `In onComplete function for addHandlerAsync Status: succeeded` dans la zone de texte. Sélectionnez une autre tâche. La zone de texte affiche `In task selection changed event handler`, qui représente la sortie de la fonction de rappel pour l’événement de changement de sélection de tâche. Cliquez sur le bouton **Supprimer** pour annuler l’enregistrement du gestionnaire d’événements.
     
 15. Pour utiliser des méthodes de ressources, sélectionnez d’abord un affichage tel que  **Tableau des ressources**,  **Utilisation des ressources** ou **Formulaire ressource**, puis sélectionnez une ressource dans cet affichage. Choisissez  **getSelectedResourceAsync** pour initialiser la variable **resourceGuid**, puis choisissez  **Get Resource Fields** pour appeler **getResourceFieldAsync** plusieurs fois pour les propriétés de ressources. Vous pouvez également ajouter ou supprimer le gestionnaire d’événements de changement de sélection de ressources.
     
-    - Nom de la ressource : `R1`
-    - Coût : `$800.00`
-    - Taux standard : `$50.00/h`
-    - Coût réel : `$0.00`
-    - Travail réel : `0h`
-    - Unités : `100%`
+    - Nom de la ressource : `R1`
+    - Coût : `$800.00`
+    - Taux standard : `$50.00/h`
+    - Coût réel : `$0.00`
+    - Travail réel : `0h`
+    - Unités : `100%`
 
-16. Choisissez **getSelectedViewAsync** pour afficher le type et le nom de l’affichage actif. Vous pouvez également ajouter ou supprimer le gestionnaire d’événements de changement de sélection d’affichage. Par exemple, si **Formulaire ressource** est l’affichage actif, la fonction **getSelectedViewAsync** affiche les informations suivantes dans la zone de texte :
+16. Choisissez **getSelectedViewAsync** pour afficher le type et le nom de l’affichage actif. Vous pouvez également ajouter ou supprimer le gestionnaire d’événements de changement de sélection d’affichage. Par exemple, si **Formulaire ressource** est l’affichage actif, la fonction **getSelectedViewAsync** affiche les informations suivantes dans la zone de texte :
     
-    - Type d’affichage : `6`
-    - Nom : `Resource Form`
+    - Type d’affichage : `6`
+    - Nom : `Resource Form`
     
 17. Sélectionnez **Get Project Fields** pour appeler la fonction **getProjectFieldAsync** plusieurs fois pour les différentes propriétés du projet actif. Si le projet est ouvert à partir de Project Web App, la fonction **getProjectFieldAsync** peut obtenir l’URL de l’instance Project Web App.
     
-    - GUID du projet : `9845922E-DAB4-E111-8AF3-00155D3BA208`
-    - Début : `Tue 6/12/12`
-    - Fin : `Tue 6/19/12`
-    - Chiffres de la devise :`2`
-    - Symbole monétaire : `$`
-    - Position du symbole : `0`
-    - URL Project Web App : `http://servername/pwa`
+    - GUID du projet : `9845922E-DAB4-E111-8AF3-00155D3BA208`
+    - Début : `Tue 6/12/12`
+    - Fin : `Tue 6/19/12`
+    - Chiffres de la devise : `2`
+    - Symbole monétaire : `$`
+    - Position du symbole : `0`
+    - URL Project Web App : `http://servername/pwa`
   
 18. Sélectionnez le bouton **Get Context Values** pour obtenir les propriétés du document et de l’application dans lesquels le complément s’exécute, par l’obtention des propriétés de l’objet **Office.Context.document** et de l’objet **Office.context.application**. Par exemple, si le fichier Project1.mpp se trouve sur le bureau de l’ordinateur local, l’URL du document est `C:\Users\UserAlias\Desktop\Project1.mpp`. Si le fichier .mpp se trouve dans une bibliothèque SharePoint, la valeur est l’URL du document. Si vous utilisez Project Professionnel 2013 pour ouvrir un projet nommé Project1 à partir de Project Web App, l’URL du document est `<>\Project1`.
     
-    - URL du document : `<>\Project1`
-    - Mode de document : `readWrite`
-    - Langue de l’application : `en-US`
-    - Langue d’affichage : `en-US`
+    - URL du document : `<>\Project1`
+    - Mode de document : `readWrite`
+    - Langue de l’application : `en-US`
+    - Langue d’affichage : `en-US`
     
 19. Vous pouvez actualiser le complément après avoir édité le code source en fermant et en redémarrant Project. Dans le ruban  **Project**, la liste déroulante  ** Compléments Office** contient la liste des compléments récemment utilisés.
     
 ## <a name="example"></a>Exemple
 
-Le kit de développement logiciel Project 2013 contient le code complet du fichier JSOMCall.html, le fichier JSOM_Sample.js et les fichiers Office.js, Office.debug.js, Project-15.js et Project-15.debug.js associés. Voici le code du fichier JSOMCall.html.
+Le kit de développement logiciel Project 2013 contient le code complet du fichier JSOMCall.html, le fichier JSOM_Sample.js et les fichiers Office.js, Office.debug.js, Project-15.js et Project-15.debug.js associés. Voici le code du fichier JSOMCall.html.
 
 ```HTML
 <!DOCTYPE html>
@@ -1081,7 +1086,7 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 
 <br/>
 
-*Figure 4. Les fonctions incluses dans le fichier SurfaceErrors.js peuvent afficher une notification « toast »*
+*Figure 4. Les fonctions incluses dans le fichier SurfaceErrors.js peuvent afficher une notification « toast »*
 
 ![Utilisation des routines SurfaceError pour afficher une erreur](../images/pj15-create-simple-agave-surface-error.png)
 
@@ -1090,7 +1095,7 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 
 - [Compléments du volet Office pour Project](../project/project-add-ins.md)
 - [Présentation de l’API JavaScript pour compléments](../develop/understanding-the-javascript-api-for-office.md)
-- [API JavaScript pour les compléments Office](https://dev.office.com/reference/add-ins/javascript-api-for-office)
-- [Référence de schéma pour les manifestes des compléments Office (version 1.1)](../develop/add-in-manifests.md)     
-- [Téléchargement du Kit de développement logiciel (SDK) de Project 2013](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)
+- [API JavaScript pour les compléments Office](https://dev.office.com/reference/add-ins/javascript-api-for-office)
+- [Référence de schéma pour les manifestes des compléments Office (version 1.1)](../develop/add-in-manifests.md)     
+- [Téléchargement du Kit de développement logiciel (SDK) de Project 2013](https://www.microsoft.com/download/details.aspx?id=30435%20)
     
