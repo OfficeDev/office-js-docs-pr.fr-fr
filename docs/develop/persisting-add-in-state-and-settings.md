@@ -2,12 +2,12 @@
 title: Conservation de l’état et des paramètres des compléments
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: b4d1cdf2ce127d140153b6db02bc9a337a37bb5d
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: ee65d6b1f033b012a548bc685b9228679bec8c5e
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437863"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925569"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>Conservation de l’état et des paramètres des compléments
 
@@ -17,7 +17,7 @@ Les compléments Office sont essentiellement des applications web exécutées da
     -  Paires nom/valeur dans un conteneur de propriétés stocké dans un emplacement qui dépend du type de complément.
     -  Éléments XML personnalisés stockés dans le document.
     
-- Utilisez des techniques fournies par le contrôle de navigateur sous-jacent : les cookies de navigateur ou le stockage web HTML5 ([localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) ou [sessionStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage)).
+- Utilisez des techniques fournies par le contrôle de navigateur sous-jacent : les cookies de navigateur ou le stockage web HTML5 ([localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) ou [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)).
     
 Cet article se concentre sur l’utilisation de l’interface API JavaScript pour Office afin de faire persister l’état du complément. Pour obtenir des exemples d’utilisation des cookies de navigateur et du stockage web, voir l’exemple de code [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings).
 
@@ -333,6 +333,6 @@ function saveCallback(asyncResult) {
 ## <a name="see-also"></a>Voir aussi
 
 - [Présentation de l’API JavaScript pour Office](understanding-the-javascript-api-for-office.md)
-- [Compléments Outlook](https://docs.microsoft.com/en-us/outlook/add-ins/)
+- [Compléments Outlook](https://docs.microsoft.com/outlook/add-ins/)
 - [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)
     
