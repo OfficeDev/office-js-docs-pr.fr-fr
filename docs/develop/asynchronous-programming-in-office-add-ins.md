@@ -2,18 +2,18 @@
 title: Programmation asynchrone dans des compléments Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: d251ebfd03227569b9a24bcd7f17baada6099938
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: babf71499ad63be757efdfa6ccf7ad9dfd292932
+ms.sourcegitcommit: 90d3b64219f14dd9cfe23ee9746477734195cb8f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437884"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "23271356"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Programmation asynchrone dans des compléments Office
 
 Pourquoi l’API de Compléments Office a-t-elle recours à la programmation asynchrone ?JavaScript étant un langage monothread, si le script appelle un processus synchrone de longue durée, toute exécution de script ultérieure sera bloquée tant que ce processus ne sera pas terminé. Comme certaines opérations, notamment celles agissant sur les clients web Office (mais aussi sur les clients riches), peuvent bloquer l’exécution si elles sont exécutées de façon synchrone, la plupart des méthodes dans l’interface API JavaScript pour Office sont conçues pour être exécutées de façon asynchrone. Cela permet de garantir que les Compléments Office sont réactifs et très performants. Vous devez donc fréquemment écrire des fonctions de rappel lorsque vous utilisez ces méthodes asynchrones.
 
-Le nom de toutes les méthodes asynchrones de l’API se terminent par « Async », comme pour les méthodes [Document.getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync), [Binding.getDataAsync](https://dev.office.com/reference/add-ins/shared/binding.getdataasync) ou [Item.loadCustomPropertiesAsync](https://dev.office.com/reference/add-ins/outlook/Office.context.mailbox.item). Lorsqu’une méthode « Async » est appelée, elle est exécutée immédiatement et toute exécution de script ultérieure peut se poursuivre normalement. La fonction de rappel facultative que vous transmettez à une méthode « Async » s’exécute dès que l’opération demandée ou les données sont prêtes. L’opération est généralement rapide, mais le retour pourrait présenter un léger retard.
+Le nom de toutes les méthodes asynchrones de l’API se terminent par « Async », comme pour les méthodes [Document.getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-), [Binding.getDataAsync](https://docs.microsoft.com/javascript/api/office/office.binding#getdataasync-options--callback-) ou [Item.loadCustomPropertiesAsync](https://docs.microsoft.com/javascript/api/outlook/office.item#loadcustompropertiesasync-callback--usercontext-). Lorsqu’une méthode « Async » est appelée, elle est exécutée immédiatement et toute exécution de script ultérieure peut se poursuivre normalement. La fonction de rappel facultative que vous transmettez à une méthode « Async » s’exécute dès que l’opération demandée ou les données sont prêtes. L’opération est généralement rapide, mais le retour pourrait présenter un léger retard.
 
 Le diagramme suivant présente le flux d’exécution d’un appel à une méthode « Async » qui lit les données sélectionnées par l’utilisateur dans un document ouvert dans l’instance Word Online ou Excel Online sur le serveur. Au moment où l’appel « Async » est effectué, le thread d’exécution JavaScript est libre d’effectuer tout traitement côté client supplémentaire (même si aucun n’est affiché dans le diagramme). Lors du retour de la méthode « Async », l’appel reprend l’exécution sur le thread et le complément peut accéder aux données, les exploiter et afficher le résultat. Le même motif d’exécution asynchrone est employé en cas d’utilisation des applications hôtes de client riche Office, telles que Word 2013 ou Excel 2013.
 
@@ -26,7 +26,7 @@ La prise en charge de cette conception asynchrone dans les clients riches et les
 ## <a name="writing-the-callback-function-for-an-async-method"></a>Écriture de la fonction de rappel pour une méthode « Async »
 
 
-La fonction de rappel que vous transmettez en tant qu’argument _callback_ à une méthode « Async » doit déclarer un seul paramètre que le runtime de complément va utiliser pour permettre l’accès à un objet [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) lorsque la fonction de rappel sera exécutée. Vous pouvez écrire :
+La fonction de rappel que vous transmettez en tant qu’argument _callback_ à une méthode « Async » doit déclarer un seul paramètre que le runtime de complément va utiliser pour permettre l’accès à un objet [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult) lorsque la fonction de rappel sera exécutée. Vous pouvez écrire :
 
 
 - une fonction anonyme devant être écrite et passée directement en ligne avec l’appel à la méthode « Async » en tant que paramètre  _callback_ de la méthode « Async » ;
@@ -38,7 +38,7 @@ Une fonction anonyme est utile si vous envisagez de n’utiliser son code qu’u
 
 ### <a name="writing-an-anonymous-callback-function"></a>Écriture d’une fonction de rappel anonyme
 
-La fonction de rappel anonyme suivante déclare un seul paramètre nommé `result` qui récupère les données à partir de la propriété [AsyncResult.value](https://dev.office.com/reference/add-ins/shared/asyncresult.status) lorsque le rappel est renvoyé.
+La fonction de rappel anonyme suivante déclare un seul paramètre nommé `result` qui récupère les données à partir de la propriété [AsyncResult.value](https://docs.microsoft.com/javascript/api/office/office.asyncresult#value) lorsque le rappel est renvoyé.
 
 
 ```js
@@ -70,7 +70,7 @@ function write(message){
 }
 ```
 
-Vous pouvez également utiliser le paramètre de votre fonction de rappel pour accéder aux autres propriétés de l’objet **AsyncResult**. Utilisez la propriété [AsyncResult.status](https://dev.office.com/reference/add-ins/shared/asyncresult.error) pour déterminer si l’appel a réussi ou échoué. En cas d’échec, vous pouvez utiliser la propriété [AsyncResult.error](https://dev.office.com/reference/add-ins/shared/asyncresult.context) pour accéder à un objet [Error](https://dev.office.com/reference/add-ins/shared/error) et obtenir des informations sur l’erreur.
+Vous pouvez également utiliser le paramètre de votre fonction de rappel pour accéder aux autres propriétés de l’objet **AsyncResult**. Utilisez la propriété [AsyncResult.status](https://docs.microsoft.com/javascript/api/office/office.asyncresult#status) pour déterminer si l’appel a réussi ou échoué. En cas d’échec, vous pouvez utiliser la propriété [AsyncResult.error](https://docs.microsoft.com/javascript/api/office/office.asyncresult#error) pour accéder à un objet [Error](https://docs.microsoft.com/javascript/api/office/office.error) et obtenir des informations sur l’erreur.
 
 Pour plus d’informations sur l’utilisation de la méthode  **getSelectedDataAsync**, voir [Lecture et écriture de données dans la sélection active d’un document ou d’une feuille de calcul](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md). 
 
@@ -101,11 +101,11 @@ function write(message){
 
 Les propriétés  **asyncContext**,  **status** et **error** de l’objet **AsyncResult** retournent le même type d’informations à la fonction de rappel passée à toutes les méthodes « Async ». Cependant, les éléments retournés à la propriété **AsyncResult.value** varient selon la fonctionnalité de la méthode « Async ».
 
-Par exemple, les méthodes **addHandlerAsync** (des objets [Binding](https://dev.office.com/reference/add-ins/shared/binding), [CustomXmlPart](https://dev.office.com/reference/add-ins/shared/customxmlpart.customxmlpart), [Document](https://dev.office.com/reference/add-ins/shared/document), [RoamingSettings](https://dev.office.com/reference/add-ins/outlook/RoamingSettings) et [Settings](https://dev.office.com/reference/add-ins/shared/settings)) sont utilisées pour ajouter des fonctions de gestionnaire d’événements aux éléments représentés par ces objets. Vous pouvez accéder à la propriété **AsyncResult.value** à partir de la fonction de rappel que vous transmettez aux méthodes **addHandlerAsync**, mais comme vous n’accédez à aucune donnée ni à aucun objet lorsque vous ajoutez un gestionnaire d’événements, la propriété **value** renvoie toujours **undefined** si vous tentez d’y accéder.
+Par exemple, les méthodes **addHandlerAsync** (des objets [Binding](https://docs.microsoft.com/javascript/api/office/office.binding), [CustomXmlPart](https://docs.microsoft.com/javascript/api/office/office.customxmlpart), [Document](https://docs.microsoft.com/javascript/api/office/office.document), [RoamingSettings](https://docs.microsoft.com/en-us/javascript/api/outlook/office.roamingsettings) et [Settings](https://docs.microsoft.com/javascript/api/office/office.settings)) sont utilisées pour ajouter des fonctions de gestionnaire d’événements aux éléments représentés par ces objets. Vous pouvez accéder à la propriété **AsyncResult.value** à partir de la fonction de rappel que vous transmettez aux méthodes **addHandlerAsync**, mais comme vous n’accédez à aucune donnée ni à aucun objet lorsque vous ajoutez un gestionnaire d’événements, la propriété **value** renvoie toujours **undefined** si vous tentez d’y accéder.
 
-En revanche, si vous appelez la méthode  **Document.getSelectedDataAsync**, celle-ci renvoie les données que l’utilisateur a sélectionnées dans le document à la propriété  **AsyncResult.value** dans le rappel. Ou alors, si vous appelez la méthode [Bindings.getAllAsync](https://dev.office.com/reference/add-ins/shared/bindings.getallasync), celle-ci renvoie un tableau de tous les objets  **Binding** du document. Enfin, si vous appelez la méthode [Bindings.getByIdAsync](https://dev.office.com/reference/add-ins/shared/bindings.getbyidasync), celle-ci renvoie un seul objet  **Binding**.
+En revanche, si vous appelez la méthode  **Document.getSelectedDataAsync**, celle-ci renvoie les données que l’utilisateur a sélectionnées dans le document à la propriété  **AsyncResult.value** dans le rappel. Ou alors, si vous appelez la méthode [Bindings.getAllAsync](https://docs.microsoft.com/javascript/api/office/office.bindings#getallasync-options--callback-), celle-ci renvoie un tableau de tous les objets  **Binding** du document. Enfin, si vous appelez la méthode [Bindings.getByIdAsync](https://docs.microsoft.com/javascript/api/office/office.bindings#getbyidasync-id--options--callback-), celle-ci renvoie un seul objet  **Binding**.
 
-Pour obtenir une description des éléments renvoyés à la propriété **AsyncResult.value** pour une méthode « Async », voir la section relative à la valeur de rappel dans la rubrique de référence de cette méthode. Pour obtenir un résumé de tous les objets qui fournissent des méthodes « Async », voir le tableau situé au bas de la rubrique relative à l’objet [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult).
+Pour obtenir une description des éléments renvoyés à la propriété **AsyncResult.value** pour une méthode « Async », voir la section relative à la valeur de rappel dans la rubrique de référence de cette méthode. Pour obtenir un résumé de tous les objets qui fournissent des méthodes « Async », voir le tableau situé au bas de la rubrique relative à l’objet [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult).
 
 
 ## <a name="asynchronous-programming-patterns"></a>Modèles de programmation asynchrone
@@ -131,9 +131,9 @@ Vous devez fréquemment effectuer au moins deux opérations asynchrones pour ré
 L’exemple de code suivant imbrique deux appels asynchrones. 
 
 
-- D’abord, la méthode [Bindings.getByIdAsync](https://dev.office.com/reference/add-ins/shared/bindings.getbyidasync) est appelée pour accéder à une liaison dans le document nommé « MyBinding ». L’objet **AsyncResult** renvoyé au paramètre `result` de ce rappel donne accès à l’objet de liaison spécifié dans la propriété **AsyncResult.value**.
+- D’abord, la méthode [Bindings.getByIdAsync](https://docs.microsoft.com/javascript/api/office/office.bindings#getbyidasync-id--options--callback-) est appelée pour accéder à une liaison dans le document nommé « MyBinding ». L’objet **AsyncResult** renvoyé au paramètre `result` de ce rappel donne accès à l’objet de liaison spécifié dans la propriété **AsyncResult.value**.
     
-- Ensuite, l’objet Binding auquel vous avez accédé à partir du premier paramètre `result` est utilisé pour appeler la méthode [Binding.getDataAsync](https://dev.office.com/reference/add-ins/shared/binding.getdataasync).
+- Ensuite, l’objet Binding auquel vous avez accédé à partir du premier paramètre `result` est utilisé pour appeler la méthode [Binding.getDataAsync](https://docs.microsoft.com/javascript/api/office/office.binding#getdataasync-options--callback-).
     
 - Enfin, le paramètre  `result2` du rappel passé à la méthode **Binding.getDataAsync** est utilisé pour afficher les données dans la liaison.
     
@@ -215,7 +215,7 @@ function write(message){
 
 Plutôt que de transmettre une fonction de rappel et d’attendre le renvoi de la fonction pour poursuivre l’exécution, le motif de programmation des promesses renvoie immédiatement un objet de promesse qui représente le résultat souhaité. Toutefois, contrairement à la vraie programmation synchrone, en arrière-plan, la concrétisation du résultat prévu est en fait différée jusqu’à ce que l’environnement d’exécution des compléments Office puisse réaliser la demande. Un gestionnaire _onError_ est fourni pour couvrir les cas où la demande ne peut pas être remplie.
 
-L’interface API JavaScript pour Office fournit la méthode [Office.select](https://dev.office.com/reference/add-ins/shared/office.select) pour prendre en charge le modèle des promesses permettant d’utiliser des objets de liaison existants. L’objet de promesse renvoyé à la méthode **Office.select** prend en charge uniquement les quatre méthodes auxquelles vous pouvez accéder directement à partir de l’objet [Binding](https://dev.office.com/reference/add-ins/shared/binding) : [getDataAsync](https://dev.office.com/reference/add-ins/shared/binding.getdataasync), [setDataAsync](https://dev.office.com/reference/add-ins/shared/binding.setdataasync), [addHandlerAsync](https://dev.office.com/reference/add-ins/shared/asyncresult.value) et [removeHandlerAsync](https://dev.office.com/reference/add-ins/shared/binding.removehandlerasync).
+L’interface API JavaScript pour Office fournit la méthode [Office.select](https://docs.microsoft.com/javascript/api/office#select-expression--callback-) pour prendre en charge le modèle des promesses permettant d’utiliser des objets de liaison existants. L’objet de promesse renvoyé à la méthode **Office.select** prend en charge uniquement les quatre méthodes auxquelles vous pouvez accéder directement à partir de l’objet [Binding](https://docs.microsoft.com/javascript/api/office/office.binding) : [getDataAsync](https://docs.microsoft.com/javascript/api/office/office.binding#getdataasync-options--callback-), [setDataAsync](https://docs.microsoft.com/javascript/api/office/office.binding#setdataasync-data--options--callback-), [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.binding#addhandlerasync-eventtype--handler--options--callback-) et [removeHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.binding#removehandlerasync-eventtype--options--callback-).
 
 Le modèle des promesses à utiliser avec les liaisons se présente comme suit :
 
@@ -243,7 +243,7 @@ Remplacez l’espace réservé _BindingObjectAsyncMethod_ par un appel à l’un
 
 Une fois qu’une promesse d’objet  **Binding** est concrétisée, elle peut être réutilisée dans l’appel de méthode chaîné comme s’il s’agissait d’une liaison (le runtime de complément ne retentera pas de concrétiser la promesse de façon asynchrone). Si la promesse d’objet **Binding** ne peut pas être concrétisée, le runtime de complément retentera d’accéder à l’objet de liaison au prochain appel de l’une de ses méthodes asynchrones.
 
-L’exemple de code suivant utilise la méthode **select** pour récupérer une liaison avec l’**id** « `cities` » à partir de la collection **Bindings**, puis appelle la méthode [addHandlerAsync](https://dev.office.com/reference/add-ins/shared/asyncresult.value) afin d’ajouter un gestionnaire d’événements pour l’événement [dataChanged](https://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent) de la liaison.
+L’exemple de code suivant utilise la méthode **select** pour récupérer une liaison avec l’**id** « `cities` » à partir de la collection **Bindings**, puis appelle la méthode [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.binding#addhandlerasync-eventtype--handler--options--callback-) afin d’ajouter un gestionnaire d’événements pour l’événement [dataChanged](https://docs.microsoft.com/javascript/api/office/office.bindingdatachangedeventargs) de la liaison.
 
 
 
@@ -260,7 +260,7 @@ function addBindingDataChangedEventHandler() {
 
 
 > [!IMPORTANT]
-> La promesse d’objet **Binding** renvoyée par la méthode **Office.select** fournit uniquement un accès aux quatre méthodes de l’objet **Binding**. Pour accéder à l’un des autres membres de l’objet **Binding**, vous devez utiliser la propriété **Document.bindings** et la méthode **Bindings.getByIdAsync** ou **Bindings.getAllAsync** pour récupérer l’objet **Binding**. Par exemple, pour accéder aux propriétés de l’objet **Binding** (propriété **document**, **id** ou **type**) ou pour accéder aux propriétés de l’objet [MatrixBinding](https://dev.office.com/reference/add-ins/shared/binding.matrixbinding) ou [TableBinding](https://dev.office.com/reference/add-ins/shared/binding.tablebinding), vous devez utiliser la méthode **getByIdAsync** ou **getAllAsync** pour récupérer un objet **Binding**.
+> La promesse d’objet **Binding** renvoyée par la méthode **Office.select** fournit uniquement un accès aux quatre méthodes de l’objet **Binding**. Pour accéder à l’un des autres membres de l’objet **Binding**, vous devez utiliser la propriété **Document.bindings** et la méthode **Bindings.getByIdAsync** ou **Bindings.getAllAsync** pour récupérer l’objet **Binding**. Par exemple, pour accéder aux propriétés de l’objet **Binding** (propriété **document**, **id** ou **type**) ou pour accéder aux propriétés de l’objet [MatrixBinding](https://docs.microsoft.com/javascript/api/office/office.matrixbinding) ou [TableBinding](https://docs.microsoft.com/javascript/api/office/office.tablebinding), vous devez utiliser la méthode **getByIdAsync** ou **getAllAsync** pour récupérer un objet **Binding**.
 
 
 ## <a name="passing-optional-parameters-to-asynchronous-methods"></a>Passage de paramètres facultatifs à des méthodes asynchrones
@@ -277,10 +277,10 @@ Vous pouvez créer l’objet JSON qui contient les paramètres facultatifs incor
 
 ### <a name="passing-optional-parameters-inline"></a>Passage de paramètres facultatifs incorporés
 
-Par exemple, la syntaxe pour appeler la méthode [Document.setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) avec des paramètres facultatifs incorporés se présente comme ceci :
+Par exemple, la syntaxe pour appeler la méthode [Document.setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) avec des paramètres facultatifs incorporés se présente comme ceci :
 
 ```js
- Office.context.document.setSelectedDataAsync(data, {coercionType: 'coercionType', asyncContext:' asyncContext},callback);
+ Office.context.document.setSelectedDataAsync(data, {coercionType: 'coercionType', asyncContext: 'asyncContext'},callback);
 
 ```
 
@@ -328,7 +328,7 @@ var options = {
 
 ```
 
-Ce qui ressemble à l’exemple suivant lors de la spécification des paramètres [ValueFormat](https://dev.office.com/reference/add-ins/shared/valueformat-enumeration) et [FilterType](https://dev.office.com/reference/add-ins/shared/filtertype-enumeration).
+Ce qui ressemble à l’exemple suivant lors de la spécification des paramètres [ValueFormat](https://docs.microsoft.com/javascript/api/office/office.valueformat) et [FilterType](https://docs.microsoft.com/javascript/api/office/office.filtertype).
 
 
 
@@ -398,5 +398,5 @@ Dans les deux exemples de paramètres facultatifs, le paramètre _callback_ est 
 ## <a name="see-also"></a>Voir aussi
 
 - [Présentation de l’API JavaScript pour Office](understanding-the-javascript-api-for-office.md) 
-- [Interface API JavaScript pour Office](https://dev.office.com/reference/add-ins/javascript-api-for-office)
+- [Interface API JavaScript pour Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office)
      
