@@ -7,7 +7,7 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
 
 1. Ouvrez le projet dans votre éditeur de code. 
 2. Ouvrez le fichier index.html.
-3. Juste en dessous de la balise `div` qui contient le bouton `create-table`, ajoutez le balisage suivant :
+3. Juste en dessous de la balise `div` qui contient le bouton `create-table`, ajoutez le balisage suivant :
 
     ```html
     <div class="padding">            
@@ -17,7 +17,7 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
 
 4. Ouvrez le fichier app.js.
 
-5. Juste en dessous de la ligne qui attribue un gestionnaire de clic au bouton `create-table`, ajoutez le code suivant :
+5. Juste en dessous de la ligne qui attribue un gestionnaire de clic au bouton `create-table`, ajoutez le code suivant :
 
     ```js
     $('#filter-table').click(filterTable);
@@ -57,7 +57,7 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
 ## <a name="sort-the-table"></a>Tri du tableau
 
 1. Ouvrez le fichier index.html.
-2. En dessous de la balise `div` qui contient le bouton `filter-table`, ajoutez le balisage suivant :
+2. En dessous de la balise `div` qui contient le bouton `filter-table`, ajoutez le balisage suivant :
 
     ```html
     <div class="padding">            
@@ -67,7 +67,7 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
 
 3. Ouvrez le fichier app.js.
 
-4. En dessous de la ligne qui attribue un gestionnaire de clic au bouton `filter-table`, ajoutez le code suivant :
+4. Sous la ligne qui attribue un gestionnaire de clics au bouton `filter-table`, ajoutez le code suivant :
 
     ```js
     $('#sort-table').click(sortTable);
@@ -110,14 +110,14 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
     expensesTable.sort.apply(sortFields);
     ``` 
 
-## <a name="test-the-add-in"></a>Tester le complément
+## <a name="test-the-add-in"></a>Test du complément
 
-1. Si la fenêtre Git Bash, ou l’invite système Node.JS, de l’étape précédente du didacticiel est encore ouverte, appuyez sur Ctrl+C à deux reprises pour arrêter le serveur web en cours d’exécution. Sinon, ouvrez une fenêtre Git Bash, ou une invite système Node.JS, et accédez au dossier **Start** du projet.
+1. Si la fenêtre Git Bash, ou l’invite système Node.JS, de l’étape précédente du didacticiel est encore ouverte, appuyez sur Ctrl+C à deux reprises pour arrêter le serveur web en cours d’exécution. Sinon, ouvrez une fenêtre Git Bash, ou une invite système Node.JS, et accédez au dossier **Start** du projet.
 
      > [!NOTE]
      > Bien que le serveur synchronisé au navigateur recharge votre complément dans le volet Office chaque fois que vous apportez une modification à un fichier, y compris le fichier app.js, il ne retranspile pas le code JavaScript. Vous devez donc de nouveau utiliser la commande build afin que les modifications apportées à app.js prennent effet. Pour ce faire, vous devez arrêter le processus du serveur pour pouvoir obtenir une invite et saisir la commande build. Une fois la commande build exécutée, redémarrez le serveur. Les prochaines étapes vous permettent d’effectuer ce processus.
 
-1. Exécutez la commande `npm run build` pour transpiler votre code source ES6 vers une version antérieure de JavaScript prise en charge par Internet Explorer (qui est utilisé en arrière-plan par Excel pour exécuter les compléments Excel).
+1. Exécutez la commande `npm run build` pour transpiler votre code source ES6 vers une version antérieure de JavaScript prise en charge par Internet Explorer (qui est utilisé en arrière-plan par Excel pour exécuter les compléments Excel).
 2. Exécutez la commande `npm start` pour démarrer un serveur web en cours d’exécution sur localhost.
 4. Rechargez le volet Office en le fermant, puis dans le menu **Accueil**, sélectionnez **Afficher le volet Office** pour rouvrir le complément.
 5. Si, pour une raison quelconque, le tableau ne se trouve pas dans la feuille de calcul ouverte, dans le volet Office, sélectionnez **Créer un tableau**. 
