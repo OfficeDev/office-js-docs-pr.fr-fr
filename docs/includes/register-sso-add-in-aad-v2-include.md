@@ -2,11 +2,11 @@
 
 1. Accédez à [https://apps.dev.microsoft.com/](https://apps.dev.microsoft.com).
 
-1. Connectez-vous avec les informations d’identification d’administrateur à votre client Office 365. Par exemple, MonNom@contoso.onmicrosoft.com
+1. Connectez-vous avec les informations d’identification d’***administrateur*** à votre client Office 365. Par exemple, MonNom@contoso.onmicrosoft.com
 
 1. Cliquez sur **Ajouter une application**.
 
-1. À l'invite, entrez **$ADD-IN-NAME$** comme nom de l'application, puis appuyez sur **Créer une application**.
+1. À l'invite, entrez **$ADD-IN-NAME$** comme nom d’application, puis appuyez sur **Créer l’application**.
 
 1. Quand la page de configuration de l’application s’ouvre, copiez l’**ID de l’application** et enregistrez-le. Vous l’utiliserez dans une procédure ultérieure.
 
@@ -22,10 +22,10 @@
 1. L'URl **de l'ID de l'application** est génée à partir du for mulaire “api://$App ID GUID$”. Insérez le **$FQDN-SANS-PROTOCOLE$** (avec une barre oblique de division (/) ajoutée à la fin) entre deux barres obliques de division et le GUID. L'identifiant complet doit avoir la forme `api://$FQDN-WITHOUT-PROTOCOL$/$App ID GUID$` ; par exemple `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
 
     > [!NOTE]
-    > Si vous obtenez une erreur indiquant que le domaine est déjà possédé, mais que vous le possédez, suivez la procédure [Quickstart: Ajouter un nom de domaine personnalisé à Azure Active Directory](https://docs.microsoft.com/azure/active-directory/add-custom-domain) pour l'enregistrer, puis répétez cette étape.
+    > Si vous obtenez une erreur indiquant que le domaine est déjà possédé, mais que vous le possédez, suivez la procédure [Quickstart: Ajouter un nom de domaine personnalisé à Azure Active Directory](https://docs.microsoft.com/azure/active-directory/add-custom-domain) pour l'enregistrer, puis répétez cette étape. (Cette erreur peut également survenir si vous n’êtes pas connecté avec les informations d’identification d’administrateur dans le client Office 365. Voir l’étape 2. Déconnectez-vous puis reconnectez-vous avec les informations d’identification d’administration et répétez le processus à partir de l’étape 3.)
 
     > [!NOTE]
-    > La partie domaine du nom de l'**Étendue** situé juste en dessous de l'**URI de l'ID de l'application** changera automatiquement pour s'adapter, avec `/access_as_user` ajouté à la fin ; par exemple, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
+    > La partie domaine du nom de l’**Étendue** situé juste en dessous de l’**URI de l’ID de l’application** changera automatiquement pour s’adapter, avec `/access_as_user` ajouté à la fin ; par exemple, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
 
 1. Dans la section **Applications pré-autorisées**, vous identifiez les applications que vous souhaitez autoriser dans l’application web de votre complément. Chacun des ID suivants doit être pré-autorisé. Chaque fois que vous en entrez un, une nouvelle zone de texte vide s’affiche. (Entrez uniquement le GUID.)
     * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
@@ -40,7 +40,7 @@
 
 1. Faites défiler jusqu’à la section **Autorisations pour Microsoft Graph** et à la sous-section **Autorisations déléguées**. Utilisez le bouton **Ajouter** pour ouvrir une boîte de dialogue **Sélectionner des autorisations**.
 
-1. Dans la boîte de dialogue, cochez les cases pour `profile` et toutes les autres autorisations AAD et Microsoft Graph dont votre complément a besoin. Voici des exemples :
+1. Dans la boîte de dialogue, cochez les cases pour `profile` et toutes les autres autorisations AAD et Microsoft Graph dont votre complément a besoin. Les éléments suivants sont des exemples :
 
     * Files.Read.All
     * offline_access
@@ -48,7 +48,7 @@
     * profil
 
     > [!NOTE]
-    > L’autorisation `User.Read` est peut-être déjà répertoriée par défaut. Une bonne pratique consiste à demander uniquement les autorisations dont vous avez besoin. Ainsi, nous vous recommandons de désactiver la case à cocher de cette autorisation si votre complément n'en a pas vraiment besoin.
+    > L’autorisation `User.Read` est peut-être déjà répertoriée par défaut. Une bonne pratique consiste à demander uniquement les autorisations dont vous avez besoin. Ainsi, nous vous recommandons de décocher la case de cette autorisation si votre complément n’en a pas vraiment besoin.
 
 1. Cliquez sur **OK** au bas de la boîte de dialogue.
 
