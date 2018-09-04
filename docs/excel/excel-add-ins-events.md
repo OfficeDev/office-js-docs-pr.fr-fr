@@ -2,12 +2,12 @@
 title: Utilisation d’événements à l’aide de l’API JavaScript pour Excel
 description: ''
 ms.date: 05/25/2018
-ms.openlocfilehash: 3d94a36a60220b856795b8d0abf5387fcb8c1bad
-ms.sourcegitcommit: e1c92ba882e6eb03a165867c6021a6aa742aa310
+ms.openlocfilehash: df3a677cc804e0cc066a6a380e2eb8aac39a1d92
+ms.sourcegitcommit: 78b28ae88d53bfef3134c09cc4336a5a8722c70b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "22925625"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "23797279"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Utilisation d’événements à l’aide de l’API JavaScript pour Excel 
 
@@ -19,14 +19,14 @@ Chaque fois que certains types de modifications se produisent dans un classeur E
 
 | Événement | Description | Objets pris en charge |
 |:---------------|:-------------|:-----------|
-| `onAdded` | Événement se produisant lors de l’ajout d’un objet. | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection) |
-| `onDeleted` | Événement se produisant lorsqu’un objet est supprimé. | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection) |
-| `onActivated` | Événement se produisant lorsqu’un objet est activé. | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection), [**Worksheet**](https://dev.office.com/reference/add-ins/excel/worksheet) |
-| `onDeactivated` | Événement se produisant lorsqu’un objet est désactivé. | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection), [**Worksheet**](https://dev.office.com/reference/add-ins/excel/worksheet) |
-| `onChanged` | Événement se produisant lorsque les données au sein des cellules sont modifiées. | [**Feuille de calcul**](https://dev.office.com/reference/add-ins/excel/worksheet), [**Table**](https://dev.office.com/reference/add-ins/excel/table), [**TableCollection**](https://dev.office.com/reference/add-ins/excel/tablecollection) |
-| `onDataChanged` | Événement se produisant lors de la modification des données ou de la mise en forme dans la liaison. | [**Liaison**](https://dev.office.com/reference/add-ins/excel/binding) |
-| `onSelectionChanged` | Événement se produisant lorsque la cellule active ou la plage sélectionnée est modifiée. | [**Worksheet**](https://dev.office.com/reference/add-ins/excel/worksheet), [**Table**](https://dev.office.com/reference/add-ins/excel/table), [**Binding**](https://dev.office.com/reference/add-ins/excel/binding) |
-| `onSettingsChanged` | Événement qui se produit lorsque les paramètres dans le document sont modifiés. | [**SettingCollection**](https://dev.office.com/reference/add-ins/excel/settingcollection) |
+| `onAdded` | Événement se produisant lors de l’ajout d’un objet. | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
+| `onDeleted` | Événement se produisant lorsqu’un objet est supprimé. | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
+| `onActivated` | Événement se produisant lorsqu’un objet est activé. | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection), [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
+| `onDeactivated` | Événement se produisant lorsqu’un objet est désactivé. | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection), [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
+| `onChanged` | Événement se produisant lorsque les données au sein des cellules sont modifiées. | [**Feuille de calcul**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet), [**Table**](https://docs.microsoft.com/javascript/api/excel/excel.table), [**TableCollection**](https://docs.microsoft.com/javascript/api/excel/excel.tablecollection) |
+| `onDataChanged` | Événement se produisant lors de la modification des données ou de la mise en forme dans la liaison. | [**Liaison**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
+| `onSelectionChanged` | Événement se produisant lorsque la cellule active ou la plage sélectionnée est modifiée. | [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet), [**Table**](https://docs.microsoft.com/javascript/api/excel/excel.table), [**Binding**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
+| `onSettingsChanged` | Événement qui se produit lorsque les Paramètres dans le document sont modifiés. | [**SettingCollection**](https://docs.microsoft.com/javascript/api/excel/excel.settingcollection) |
 
 ## <a name="preview-beta-events-in-excel"></a>Préversion (bêta) des événements dans Excel
 
@@ -138,25 +138,26 @@ function remove() {
 > [!NOTE]
 > Cette fonctionnalité est uniquement disponible en version d’évaluation (bêta). Pour l’utiliser, vous devez référencer la bibliothèque de la version bêta du CDN Office.js : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
-Les événements sont activés et désactivés au niveau de [l’exécution](https://docs.microsoft.com/en-us/javascript/api/excel/excel.runtime?view=office-js). La propriété `enableEvents` détermine si les événements sont déclenchés et si leurs gestionnaires sont activés. Désactiver des événements est utile lorsque la performance est critique ou lors de la modification de plusieurs entités, et que vous souhaitez éviter le déclenchement des événements jusqu'à ce que vous ayez terminé.
+Le niveau de performance d’un complément peut être amélioré en désactivant des événements. Par exemple, votre application pourrait ne jamais avoir besoin de recevoir des événements, ou bien elle pourrait ignorer les événements lors de l’exécution de lots de modifications de plusieurs entités. 
+
+Les événements sont activées et désactivées au niveau de [l’exécution](https://docs.microsoft.com/javascript/api/excel/excel.runtime). La propriété `enableEvents` détermine si les événements sont déclenchés et si leurs gestionnaires sont activés. 
 
 L’exemple de code suivant montre comment activer ou désactiver les événements.
 
-```typescript
-async function toggleEvents() {
-    await Excel.run(async (context) => {
-        context.runtime.load("enableEvents");
-        await context.sync();
-        const eventBoolean = !context.runtime.enableEvents
-        context.runtime.enableEvents = eventBoolean;
-        if (eventBoolean) {
-            console.log("Events are currently on.");
-        } else {
-            console.log("Events are currently off.");
-        }
-        await context.sync();
-    });
-}
+```js
+Excel.run(function (context) {
+    context.runtime.load("enableEvents");
+    return context.sync()
+        .then(function () {
+            var eventBoolean = !context.runtime.enableEvents;
+            context.runtime.enableEvents = eventBoolean;
+            if (eventBoolean) {
+                console.log("Events are currently on.");
+            } else {
+                console.log("Events are currently off.");
+            }
+        }).then(context.sync);
+}).catch(errorHandlerFunction);
 ```
 
 ## <a name="see-also"></a>Voir aussi
