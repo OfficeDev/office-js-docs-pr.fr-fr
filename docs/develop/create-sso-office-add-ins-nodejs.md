@@ -1,12 +1,12 @@
 ---
 title: Création d’un complément Office Node.js qui utilise l’authentification unique
 description: 23/01/2018
-ms.openlocfilehash: 70ce81a1cd0038d3219763fb1e15bc3089e06f57
-ms.sourcegitcommit: 28fc652bded31205e393df9dec3a9dedb4169d78
+ms.openlocfilehash: bb77d037140f8c56ca05f3817fb2b9d0271297ae
+ms.sourcegitcommit: 8333ede51307513312d3078cb072f856f5bef8a2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "22927389"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "23876612"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office Node.js qui utilise l’authentification unique (aperçu)
 
@@ -34,7 +34,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 1. Clonez ou téléchargez le référentiel sur [Complément Office NodeJS SSO](https://github.com/officedev/office-add-in-nodejs-sso). 
 
     > [!NOTE]
-    > Il existe trois versions de cet example :  
+    > Il existe trois versions de cet exemple :  
     > * Le dossier **Before** est un projet de démarrage. L’interface utilisateur et d’autres aspects du complément qui ne sont pas directement liés à l’authentification unique ou à l’autorisation sont déjà terminés. Les sections suivantes de cet article vous guident tout au long de la procédure d’exécution de cette dernière. 
     > * La version **Finale** de l’échantillon s’apparente au complément que vous auriez si vous terminiez les procédures de cet article, sauf que le projet terminé comporte des commentaires de code qui seraient redondants avec le texte de cet article. Pour utiliser la version finale, suivez simplement les instructions de cet article, mais remplacez « Avant » par « Finale » et ignorez les sections **Code côté client** et **Code côté serveur**.
     > * La version **Multiclient Complété** est un exemple complet qui prend en charge une architecture mutualisée. Explorez cet exemple si vous souhaitez prendre en charge les comptes Microsoft à partir de différents domaines avec l’authentification unique.
@@ -60,7 +60,7 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
 [!INCLUDE[](../includes/register-sso-add-in-aad-v2-include.md)]
 
 
-## <a name="grant-administrator-consent-to-the-add-in"></a>Accorde le consentement de l’administrateur au complément
+## <a name="grant-administrator-consent-to-the-add-in"></a>Accorder le consentement de l’administrateur au complément
 
 [!INCLUDE[](../includes/grant-admin-consent-to-an-add-in-include.md)]
 
@@ -68,7 +68,7 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
 
 1. Dans votre éditeur de code, ouvrez le fichier src\server.ts. Près de la partie supérieure se trouve un appel à un constructeur d’une classe `AuthModule`. Il existe certains paramètres de chaîne dans le constructeur auxquels vous devez affecter des valeurs.
 
-2. Pour la propriété `client_id`, remplacez l’espace réservé `{client GUID}` par l’ID de l’application que vous avez enregistré lorsque vous avez enregistré le complément. Lorsque vous avez terminé, il ne devrait rester q’un GUID entre deux apostrophes. Il ne devrait pas y avoir de ponctuation comme "{}".
+2. Pour la propriété `client_id`, remplacez l’espace réservé `{client GUID}` par l’ID de l’application que vous avez inscrit lorsque vous avez enregistré le complément. Lorsque vous avez terminé, il ne devrait rester q’un GUID entre deux apostrophes. Il ne devrait pas y avoir de ponctuation comme "{}".
 
 3. Pour la propriété `client_secret`, remplacez l’espace réservé `{client secret}` par le secret de l’application que vous avez enregistré lorsque vous avez inscrit le complément.
 
@@ -132,7 +132,7 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
 
 1. En dessous de la méthode `getOneDriveFiles`, ajoutez le code ci-dessous. Tenez compte des informations suivantes :
 
-    * est la nouvelle API d’Office.js qui permet à un complément de demander à l’application hôte Office (Excel, PowerPoint, Word, etc.) un jeton d’accès au complément (pour l’utilisateur connecté à Office). L’application hôte Office demande alors le jeton au point de terminaison Azure AD 2.0. Dans la mesure où vous avez préalablement autorisé l’hôte Office sur votre complément lors de son inscription, Azure AD enverra le jeton.`getAccessTokenAsync`
+    * [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) est la nouvelle API d’Office.js qui permet à un complément de demander à l’application hôte Office (Excel, PowerPoint, Word, etc.) un jeton d’accès au complément (pour l’utilisateur connecté à Office). L’application hôte Office demande alors le jeton au point de terminaison Azure AD 2.0. Dans la mesure où vous avez préalablement autorisé l’hôte Office sur votre complément lors de son inscription, Azure AD enverra le jeton.
     * Si aucun utilisateur n’est connecté à Office, l’hôte Office invite l’utilisateur à se connecter.
     * Le paramètre d’options définit `forceConsent` sur `false`, donc l’utilisateur ne sera pas invité à accorder à l’hôte Office l’accès à votre complément chaque fois qu’il utilisera le complément. La première fois que l’utilisateur exécutera le complément, l’appel à `getAccessTokenAsync` échouera, mais la logique de gestion des erreurs que vous ajouterez dans une étape ultérieure effectuera automatiquement un autre appel avec le jeu d’options `forceConsent` défini sur `true`, et l’utilisateur sera invité à donner son consentement, mais uniquement la première fois.
     * Vous créerez la méthode `handleClientSideErrors` à une étape ultérieure.

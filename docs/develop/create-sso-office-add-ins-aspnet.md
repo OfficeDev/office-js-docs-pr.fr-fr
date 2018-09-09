@@ -2,12 +2,12 @@
 title: Créer un complément Office ASP.NET qui utilise l’authentification unique
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 70662a01d86d3fa111b39deb4c16702a4f8530f5
-ms.sourcegitcommit: e1c92ba882e6eb03a165867c6021a6aa742aa310
+ms.openlocfilehash: cdf039e66f0d61e656827ee3ab0ad5762cba430d
+ms.sourcegitcommit: 8333ede51307513312d3078cb072f856f5bef8a2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "22925639"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "23876619"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office ASP.NET qui utilise l’authentification unique (aperçu)
 
@@ -46,7 +46,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
    >    `Install-Package Microsoft.Identity.Client -Version 1.1.4-preview0002`
 
-   > 3. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur **Références**. Vérifiez que **Microsoft.Identity.Client** est dans la liste. S’il n’y est pas ou une icône d’avertissement figure sur son entrée, supprimez l’entrée, puis utilisez l’Assistant Ajoutez une référence de Visual Studio pour ajouter une référence à l’assemblage dans **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.4-alpha0002\lib\net45\Microsoft.Identity.Client.dll**
+   > 3. Dans l’**Explorateur de solutions**, faites un clic droit sur **Références**. Vérifiez que **Microsoft.Identity.Client** est dans la liste. S’il n’y est pas ou si une icône d’avertissement figure sur son entrée, supprimez l’entrée, puis utilisez l’Assistant d'ajout d'une référence de Visual Studio pour ajouter une référence à l’assemblage dans **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.4-alpha0002\lib\net45\Microsoft.Identity.Client.dll**
 
 1. Créez le projet une deuxième fois.
 
@@ -74,7 +74,7 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
 
     `https://login.microsoftonline.com/{tenant_ID}/v2.0`
 
-2. Dans Visual Studio, ouvrez le fichier web.config. Il existe certaines clés dans la section **appSettings** à laquelle vous devez affecter les valeurs.
+2. Dans Visual Studio, ouvrez le fichier web.config. Il existe certaines clés dans la section **appSettings** auxquelles vous devez affecter des valeurs.
 
 3. Utilisez la chaîne que vous avez créée à l’étape 1 en tant que valeur pour la clé nommée « ida:Issuer ». Assurez-vous que la valeur ne comporte aucun espace vide.
 
@@ -126,7 +126,7 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
     > * La valeur **Resource** correspond à l’**URI d’ID d’application** défini lorsque vous avez ajouté la plateforme d’API web à l’enregistrement du complément.
     > * La section **Scopes** est utilisée uniquement pour générer une boîte de dialogue de consentement si le complément est vendu via AppSource.
 
-1. Ouvrez l’onglet **Avertissements** de la **liste d’erreurs** dans Visual Studio. Si un message d’avertissement indique que `<WebApplicationInfo>` n’est pas un enfant valide de `<VersionOverrides>`, votre version de Visual Studio 2017 préversion ne reconnaît pas le balisage SSO. Solution de contournement : procédez comme suit pour un complément Word, Excel ou PowerPoint. (Si vous utilisez un complément Outlook, consultez la solution de contournement ci-dessous.)
+1. Ouvrez l’onglet **Avertissements** de la **liste d’erreurs** dans Visual Studio. Si un message d’avertissement indique que `<WebApplicationInfo>` n’est pas un enfant valide de `<VersionOverrides>`, votre version de Visual Studio 2017 Preview ne reconnaît pas le balisage SSO. Solution de contournement : procédez comme suit pour un complément Word, Excel ou PowerPoint. (Si vous utilisez un complément Outlook, consultez la solution de contournement ci-dessous.)
 
    - **Solution de contournement pour Word, Excel et PowerPoint**
 
@@ -183,7 +183,7 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
 
 1. En dessous de la méthode `getOneDriveFiles`, ajoutez le code ci-dessous. Tenez compte des informations suivantes :
 
-    * est la nouvelle API d’Office.js qui permet à un complément de demander à l’application hôte Office (Excel, PowerPoint, Word, etc.) un jeton d’accès au complément (pour l’utilisateur connecté à Office). L’application hôte Office demande alors le jeton au point de terminaison Azure AD 2.0. Dans la mesure où vous avez préalablement autorisé l’hôte Office sur votre complément lors de son inscription, Azure AD enverra le jeton.`getAccessTokenAsync`
+    * [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) est la nouvelle API d’Office.js qui permet à un complément de demander à l’application hôte Office (Excel, PowerPoint, Word, etc.) un jeton d’accès au complément (pour l’utilisateur connecté à Office). L’application hôte Office demande alors le jeton au point de terminaison Azure AD 2.0. Dans la mesure où vous avez préalablement autorisé l’hôte Office sur votre complément lors de son inscription, Azure AD enverra le jeton.
     * Si aucun utilisateur n’est connecté à Office, l’hôte Office invite l’utilisateur à se connecter.
     * Le paramètre d’options définit `forceConsent` sur `false`, donc l’utilisateur ne sera pas invité à accorder à l’hôte Office l’accès à votre complément chaque fois qu’il utilisera le complément. La première fois que l’utilisateur exécutera le complément, l’appel à `getAccessTokenAsync` échouera, mais la logique de gestion des erreurs que vous ajouterez dans une étape ultérieure effectuera automatiquement un autre appel avec le jeu d’options `forceConsent` défini sur `true`, et l’utilisateur sera invité à donner son consentement, mais uniquement la première fois.
     * Vous créerez la méthode `handleClientSideErrors` à une étape ultérieure.
@@ -282,11 +282,11 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
         break; 
     ```
 
-1. Remplacez `TODO4` par le code suivant. L’erreur 13003 se produit si l’utilisateur est connecté avec un compte qui n’est ni un compte professionnel ni un compte scolaire, ni un compte Microsoft. Demandez à l’utilisateur de se déconnecter, puis de se reconnecter avec un type de compte pris en charge.
+1. Remplacez `TODO4` par le code suivant. L'erreur 13003 se produit lorsque l’utilisateur se connecte avec un compte qui n’est ni un compte de bureau ou d'école, ni un compte Microsoft. Demandez à l’utilisateur de se déconnecter, puis de se reconnecter avec un type de compte pris en charge.
 
     ```javascript
     case 13003: 
-        showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft Account. Other kinds of accounts, like corporate domain accounts do not work.']);
+        showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft account. Other kinds of accounts, like corporate domain accounts do not work.']);
         break;   
     ```
 
@@ -322,7 +322,7 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
     ```javascript
     case 13009:
         if (triedWithoutForceConsent) {
-            showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft Account.']);
+            showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft account.']);
         } else {
             getDataWithToken({ forceConsent: false });
         }
