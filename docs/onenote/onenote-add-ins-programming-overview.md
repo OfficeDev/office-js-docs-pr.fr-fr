@@ -2,12 +2,12 @@
 title: Vue d’ensemble de la programmation de l’API JavaScript de OneNote
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: a2161484991888a6a8c834ba61398cc8c0afb955
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: d45e73841c191d5760963cbc684f03cf23ea1989
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925170"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944150"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>Vue d’ensemble de la programmation de l’API JavaScript de OneNote
 
@@ -26,7 +26,7 @@ Les compléments sont constitués de deux composants de base :
 
 **Complément pour Office = manifeste + page web**
 
-![Un complément Office se compose d’un manifeste et d’une page web](../images/onenote-add-in.png)
+![Un complément Office se compose d'un manifeste et d'une page Web.](../images/onenote-add-in.png)
 
 ## <a name="using-the-javascript-api"></a>Utilisation de l’API JavaScript
 
@@ -84,11 +84,12 @@ function getPagesInSection() {
 }
 ```
 
-Vous pouvez déterminer les objets et les opérations OneNote pris en charge dans la [référence de l’API](https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference).
+Vous pouvez déterminer les objets et les opérations OneNote pris en charge dans la [référence de l’API](https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js).
 
 ### <a name="accessing-the-common-api-through-the-document-object"></a>Accès à l’API commune via l’objet *Document*
 
-Utilisez l’objet **Document** pour accéder à l’API commune, par exemple les méthodes [getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) et [setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync). 
+Utilisez l’objet **Document** pour accéder à l’API commune, par exemple les méthodes [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) et [setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#setselecteddataasync-data--options--callback-). 
+
 
 Par exemple :  
 
@@ -110,13 +111,13 @@ Les compléments OneNote prennent en charge uniquement les API communes suivante
 
 | API | Commentaires |
 |:------|:------|
-| [Office.context.document.getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) | **Office.CoercionType.Text** et **Office.CoercionType.Matrix** uniquement |
-| [Office.context.document.setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) | **Office.CoercionType.Text**, **Office.CoercionType.Image** et **Office.CoercionType.Html** uniquement | 
-| [var mySetting = Office.context.document.settings.get(name);](https://dev.office.com/reference/add-ins/shared/settings.get) | Les paramètres sont pris en charge par les compléments de contenu uniquement | 
-| [Office.context.document.settings.set(name, value);](https://dev.office.com/reference/add-ins/shared/settings.set) | Les paramètres sont pris en charge par les compléments de contenu uniquement | 
-| [Office.EventType.DocumentSelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) ||
+| [Office.context.document.getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) | **Office.CoercionType.Text** et **Office.CoercionType.Matrix** uniquement |
+| [Office.context.document.setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#setselecteddataasync-data--options--callback-) | **Office.CoercionType.Text**, **Office.CoercionType.Image** et **Office.CoercionType.Html** uniquement | 
+| [var mySetting = Office.context.document.settings.get(nom);](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#get-name-) | Les paramètres sont pris en charge par les compléments de contenu uniquement | 
+| [Office.context.document.settings.set(nom, valeur);](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#set-name--value-) | Les paramètres sont pris en charge par les compléments de contenu uniquement | 
+| [Office.EventType.DocumentSelectionChanged](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs?view=office-js) ||
 
-En règle générale, vous utilisez uniquement l’API commune pour effectuer une action qui n’est pas prise en charge dans l’API enrichie. Pour en savoir plus sur l’utilisation de l’API commune, voir la [documentation](../overview/office-add-ins.md) et les [références](https://dev.office.com/reference/add-ins/javascript-api-for-office) concernant les compléments Office.
+En règle générale, vous utilisez uniquement l’API commune pour effectuer une action qui n’est pas prise en charge dans l’API enrichie. Pour en savoir plus sur l’utilisation de l’API commune, voir la [documentation](../overview/office-add-ins.md) et les [références](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js) concernant les compléments Office.
 
 
 <a name="om-diagram"></a>
@@ -129,6 +130,6 @@ Le diagramme suivant représente ce qui est actuellement disponible dans l’API
 ## <a name="see-also"></a>Voir aussi
 
 - [Créer votre premier complément OneNote](onenote-add-ins-getting-started.md)
-- [Référence de l’API JavaScript de OneNote](https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
+- [Référence de l’API JavaScript de OneNote](https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js)
 - [Exemple de grille d’évaluation](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
