@@ -2,12 +2,12 @@
 title: Lier des régions dans un document ou une feuille de calcul
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: bd26aa12e5d6da145fb6a2a89daf937cf6e88f04
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 5fda8635b7f968ff1e0e6ea160a78544998b64fc
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437968"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945571"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>Lier des régions dans un document ou une feuille de calcul
 
@@ -37,7 +37,7 @@ Vous spécifiez [trois types de liaisons différents][Office.BindingType] avec l
 
     Dans Excel, toute sélection contiguë de cellules peut être utilisée pour établir une liaison de matrice. Dans Word, seuls les tableaux prennent en charge la liaison de matrice.
 
-3. **[Liaison de tableau][TableBinding]** - Établit une liaison à une zone d’un document qui contient un tableau avec des en-têtes. Les données dans une liaison de tableau sont écrites ou lues comme un objet [TableData](https://dev.office.com/reference/add-ins/shared/tabledata). L’objet `TableData` expose les données via les propriétés `headers` et `rows`.
+3. **[Liaison de tableau][TableBinding]** - Établit une liaison à une zone d’un document qui contient un tableau avec des en-têtes. Les données dans une liaison de tableau sont écrites ou lues comme un objet [TableData](https://docs.microsoft.com/javascript/api/office/office.tabledata?view=office-js). L’objet `TableData` expose les données via les propriétés `headers` et `rows`.
 
     Tout tableau Excel ou Word peut être la base d’une liaison de tableau. Une fois que vous établissez une liaison de tableau, chaque nouvelle ligne ou colonne qu’un utilisateur ajoute au tableau est automatiquement incluse dans la liaison.
 
@@ -340,7 +340,7 @@ La fonction anonyme qui est passée dans la fonction est un rappel qui est exéc
 ## <a name="detect-changes-to-data-or-the-selection-in-a-binding"></a>Détection des modifications apportées aux données ou à la section dans une liaison
 
 
-L’exemple suivant montre comment lier un gestionnaire d’événements à l’événement [DataChanged](https://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent) d’une liaison ayant l’ID « MyBinding ».
+L’exemple suivant montre comment lier un gestionnaire d’événements à l’événement [DataChanged](https://docs.microsoft.com/javascript/api/office/office.binding?view=office-js) d’une liaison ayant l’ID « MyBinding ».
 
 
 ```js
@@ -392,30 +392,30 @@ function removeEventHandlerFromBinding() {
 - [Programmation asynchrone dans des compléments Office](asynchronous-programming-in-office-add-ins.md)
 - [Lecture et écriture de données dans la sélection active d’un document ou d’une feuille de calcul](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
     
-[Binding]:               https://dev.office.com/reference/add-ins/shared/binding
-[MatrixBinding]:         https://dev.office.com/reference/add-ins/shared/binding.matrixbinding
-[TableBinding]:          https://dev.office.com/reference/add-ins/shared/binding.tablebinding
-[TextBinding]:           https://dev.office.com/reference/add-ins/shared/binding.textbinding
-[getDataAsync]:          https://dev.office.com/reference/add-ins/shared/binding.getdataasync
-[setDataAsync]:          https://dev.office.com/reference/add-ins/shared/binding.setdataasync
-[SelectionChanged]:      https://dev.office.com/reference/add-ins/shared/binding.bindingselectionchangedevent
-[addHandlerAsync]:       https://dev.office.com/reference/add-ins/shared/binding.addhandlerasync
-[removeHandlerAsync]:    https://dev.office.com/reference/add-ins/shared/binding.removehandlerasync
+[Binding]:               https://docs.microsoft.com/javascript/api/office/office.binding?view=office-js
+[MatrixBinding]:         https://docs.microsoft.com/javascript/api/office/office.matrixbinding?view=office-js
+[TableBinding]:          https://docs.microsoft.com/javascript/api/office/office.tablebinding
+[TextBinding]:           https://docs.microsoft.com/javascript/api/office/office.textbinding
+[getDataAsync]:          https://docs.microsoft.com/javascript/api/office/Office.Binding?view=office-js#getdataasync-options--callback-
+[setDataAsync]:          https://docs.microsoft.com/javascript/api/office/Office.Binding?view=office-js#setdataasync-data--options--callback-
+[SelectionChanged]:      https://docs.microsoft.com/javascript/api/office/office.bindingselectionchangedeventargs?view=office-js
+[addHandlerAsync]:       https://docs.microsoft.com/javascript/api/office/Office.Binding?view=office-js#addhandlerasync-eventtype--handler--options--callback-
+[removeHandlerAsync]:    https://docs.microsoft.com/en-us/javascript/api/office/Office.Binding?view=office-js#removehandlerasync-eventtype--options--callback-
 
-[Bindings]:              https://dev.office.com/reference/add-ins/shared/bindings.bindings
-[getByIdAsync]:          https://dev.office.com/reference/add-ins/shared/bindings.getbyidasync 
-[getAllAsync]:           https://dev.office.com/reference/add-ins/shared/bindings.getallasync
-[addFromNamedItemAsync]: https://dev.office.com/reference/add-ins/shared/bindings.addfromnameditemasync
-[addFromSelectionAsync]: https://dev.office.com/reference/add-ins/shared/bindings.addfromselectionasync
-[addFromPromptAsync]:    https://dev.office.com/reference/add-ins/shared/bindings.addfrompromptasync
-[releaseByIdAsync]:      https://dev.office.com/reference/add-ins/shared/bindings.releasebyidasync
+[Bindings]:              https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js
+[getByIdAsync]:          https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#getbyidasync-id--options--callback- 
+[getAllAsync]:           https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#getallasync-options--callback-
+[addFromNamedItemAsync]: https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#addfromnameditemasync-itemname--bindingtype--options--callback-
+[addFromSelectionAsync]: https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#addfromselectionasync-bindingtype--options--callback-
+[addFromPromptAsync]:    https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#addfrompromptasync-bindingtype--options--callback-
+[releaseByIdAsync]:      https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#releasebyidasync-id--options--callback-
 
-[AsyncResult]:          https://dev.office.com/reference/add-ins/shared/asyncresult
-[Office.BindingType]:   https://dev.office.com/reference/add-ins/shared/bindingtype-enumeration
-[Office.select]:        https://dev.office.com/reference/add-ins/shared/office.select 
-[Office.EventType]:     https://dev.office.com/reference/add-ins/shared/eventtype-enumeration 
-[Document.bindings]:    https://dev.office.com/reference/add-ins/shared/document.bindings
+[AsyncResult]:          https://docs.microsoft.com/en-us/javascript/api/office/office.asyncresult?view=office-js
+[Office.BindingType]:   https://docs.microsoft.com/en-us/javascript/api/office/office.bindingtype?view=office-js
+[Office.select]:        https://docs.microsoft.com/en-us/javascript/api/office?view=office-js 
+[Office.EventType]:     https://docs.microsoft.com/en-us/javascript/api/office/office.eventtype?view=office-js 
+[Document.bindings]:    https://docs.microsoft.com/en-us/javascript/api/office/office.document?view=office-js
 
 
-[TableBinding.rowCount]: https://dev.office.com/reference/add-ins/shared/binding.tablebinding.rowcount
-[BindingSelectionChangedEventArgs]: https://dev.office.com/reference/add-ins/shared/binding.bindingselectionchangedeventargs
+[TableBinding.rowCount]: https://docs.microsoft.com/en-us/javascript/api/office/office.tablebinding?view=office-js
+[BindingSelectionChangedEventArgs]: https://docs.microsoft.com/en-us/javascript/api/office/office.bindingselectionchangedeventargs?view=office-js

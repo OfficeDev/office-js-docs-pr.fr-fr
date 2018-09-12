@@ -2,24 +2,24 @@
 title: Lire et écrire des données dans la sélection active d’un document ou d’une feuille de calcul
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 6d0aa8a27223a436b7f8e99cbbab0c21dd93f2b5
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.openlocfilehash: d1c8fcdeec8d92fd3f77e169dc24715f7c5e9964
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "19437534"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944985"
 ---
 # <a name="read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet"></a>Lire et écrire des données dans la sélection active d’un document ou d’une feuille de calcul
 
-L’objet [Document](https://dev.office.com/reference/add-ins/shared/document) expose des méthodes qui vous permettent de lire et d’écrire dans la sélection active de l’utilisateur dans un document ou une feuille de calcul. Pour cela, l’objet **Document** fournit les méthodes **getSelectedDataAsync** et **setSelectedDataAsync**. Cette rubrique explique comment lire, écrire et créer des gestionnaires d’événements pour détecter les changements intervenant dans la sélection de l’utilisateur.
+L’objet [Document](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js) expose des méthodes qui vous permettent de lire et d’écrire dans la sélection active de l’utilisateur dans un document ou une feuille de calcul. Pour cela, l’objet **Document** fournit les méthodes **getSelectedDataAsync** et **setSelectedDataAsync**. Cette rubrique explique comment lire, écrire et créer des gestionnaires d’événements pour détecter les changements intervenant dans la sélection de l’utilisateur.
 
-La méthode **getSelectedDataAsync** ne fonctionne que sur la sélection active de l’utilisateur. Si vous devez conserver la sélection dans le document, afin que la même sélection soit disponible en lecture et en écriture dans les sessions exécutant votre complément, vous devez ajouter une liaison à l’aide de la méthode [Bindings.addFromSelectionAsync](https://dev.office.com/reference/add-ins/shared/bindings.addfromselectionasync) (ou créer une liaison à l’aide de l’une des autres méthodes « addFrom » de l’objet [Bindings](https://dev.office.com/reference/add-ins/shared/bindings.bindings)). Pour plus d’informations sur la création d’une liaison vers une zone d’un document et sur la lecture et l’écriture dans une liaison, voir [Liaisons de régions dans un document ou une feuille de calcul](bind-to-regions-in-a-document-or-spreadsheet.md).
+La méthode **getSelectedDataAsync** ne fonctionne que sur la sélection active de l’utilisateur. Si vous devez conserver la sélection dans le document, afin que la même sélection soit disponible en lecture et en écriture dans les sessions exécutant votre complément, vous devez ajouter une liaison à l’aide de la méthode [Bindings.addFromSelectionAsync](https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#addfromselectionasync-bindingtype--options--callback-) (ou créer une liaison à l’aide de l’une des autres méthodes « addFrom » de l’objet [Bindings](https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js)). Pour plus d’informations sur la création d’une liaison vers une zone d’un document et sur la lecture et l’écriture dans une liaison, voir [Liaisons de régions dans un document ou une feuille de calcul](bind-to-regions-in-a-document-or-spreadsheet.md).
 
 
 ## <a name="read-selected-data"></a>Lecture de données sélectionnées
 
 
-L’exemple suivant montre comment obtenir les données d’une sélection dans un document en utilisant la méthode [getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync).
+L’exemple suivant montre comment obtenir les données d’une sélection dans un document en utilisant la méthode [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-).
 
 
 ```js
@@ -38,15 +38,15 @@ function write(message){
 }
 ```
 
-Dans cet exemple, le premier paramètre _coercionType_ est spécifié comme **Office.CoercionType.Text** (vous pouvez également spécifier ce paramètre en utilisant la chaîne littérale `"text"`). Cela signifie que la propriété [value](https://dev.office.com/reference/add-ins/shared/asyncresult.status) de l’objet [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) qui est disponible à partir du paramètre _asyncResult_ dans la fonction de rappel renverra une **string** qui contient le texte sélectionné dans le document. La spécification de différents types de forçage de type produit des valeurs différentes. [Office.CoercionType](https://dev.office.com/reference/add-ins/shared/coerciontype-enumeration) est une énumération des valeurs de types de forçage de type disponibles. **Office.CoercionType.Text** prend la valeur de la chaîne « text ».
+Dans cet exemple, le premier paramètre _coercionType_ est spécifié comme **Office.CoercionType.Text** (vous pouvez également spécifier ce paramètre en utilisant la chaîne littérale `"text"`). Cela signifie que la propriété [value](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js#status) de l’objet [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js) qui est disponible à partir du paramètre _asyncResult_ dans la fonction de rappel renverra une **string** qui contient le texte sélectionné dans le document. La spécification de différents types de forçage de type produit des valeurs différentes. [Office.CoercionType](https://docs.microsoft.com/javascript/api/office/office.coerciontype?view=office-js) est une énumération des valeurs de types de forçage de type disponibles. **Office.CoercionType.Text** prend la valeur de la chaîne « text ».
 
 
 > [!TIP]
 > **Quand devez-vous utiliser la matrice ou le paramètre coercionType de tableau pour accéder aux données ?** Si les données tabulaires sélectionnées doivent croître de façon dynamique lors de l’ajout de lignes et de colonnes, et que vous devez travailler avec des en-têtes de tableaux, vous devez utiliser le type de données de tableau (en spécifiant le paramètre _coercionType_ de la méthode **getSelectedDataAsync** en tant que `"table"` ou **Office.CoercionType.Table**). L’ajout de lignes et de colonnes au sein de la structure de données est pris en charge dans les données de tableau et de matrice, mais l’ajout de lignes et de colonnes à la fin est pris en charge uniquement pour les données de tableau. Si vous ne prévoyez pas d’ajouter des lignes et des colonnes, et que vos données ne nécessitent pas la fonctionnalité d’en-tête, vous devez utiliser le type de données de matrice (en spécifiant le paramètre _coercionType_ de la méthode **getSelecteDataAsync** en tant que `"matrix"` ou **Office.CoercionType.Matrix**), qui fournit un modèle plus simple d’interaction avec les données.
 
-La fonction anonyme qui est transmise dans la fonction comme deuxième paramètre _callback_ est exécutée lorsque l’opération **getSelectedDataAsync** est terminée. La fonction est appelée avec un seul paramètre, _asyncResult_, qui contient le résultat et l’état de l’appel. Si l’appel échoue, la propriété [error](https://dev.office.com/reference/add-ins/shared/asyncresult.context) de l’objet **AsyncResult** donne accès à l’objet [Error](https://dev.office.com/reference/add-ins/shared/error). Vous pouvez vérifier la valeur des propriétés [Error.name](https://dev.office.com/reference/add-ins/shared/error.name) et [Error.message](https://dev.office.com/reference/add-ins/shared/error.message) pour déterminer les raisons de l’échec de l’opération. Sinon, le texte sélectionné dans le document s’affiche.
+La fonction anonyme qui est transmise dans la fonction comme deuxième paramètre _callback_ est exécutée lorsque l’opération **getSelectedDataAsync** est terminée. La fonction est appelée avec un seul paramètre, _asyncResult_, qui contient le résultat et l’état de l’appel. Si l’appel échoue, la propriété [error](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js#asynccontext) de l’objet **AsyncResult** donne accès à l’objet [Error](https://docs.microsoft.com/javascript/api/office/office.error?view=office-js). Vous pouvez vérifier la valeur des propriétés [Error.name](https://docs.microsoft.com/javascript/api/office/office.error?view=office-js#name) et [Error.message](https://docs.microsoft.com/javascript/api/office/office.error?view=office-js#message) pour déterminer les raisons de l’échec de l’opération. Sinon, le texte sélectionné dans le document s’affiche.
 
-La propriété [AsyncResult.status](https://dev.office.com/reference/add-ins/shared/asyncresult.error) est utilisée dans l’instruction **if** pour tester la réussite de l’appel. [Office.AsyncResultStatus](https://dev.office.com/reference/add-ins/shared/asyncresultstatus-enumeration) est une énumération des valeurs de propriété **AsyncResult.status** disponibles. **Office.AsyncResultStatus.Failed** prend la valeur de la chaîne « failed » (et, de nouveau, peut également être spécifié comme chaîne littérale).
+La propriété [AsyncResult.status](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js#error) est utilisée dans l’instruction **if** pour tester la réussite de l’appel. [Office.AsyncResultStatus](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js#status) est une énumération des valeurs de propriété **AsyncResult.status** disponibles. **Office.AsyncResultStatus.Failed** prend la valeur de la chaîne « failed » (et, de nouveau, peut également être spécifié comme chaîne littérale).
 
 
 ## <a name="write-data-to-the-selection"></a>Écriture de données dans la sélection
@@ -70,7 +70,7 @@ function write(message){
 
 Le passage de différents types d’objets pour le paramètre  _data_ produit différents résultats. Le résultat varie en fonction de la sélection actuelle dans le document, de l’application qui héberge votre complément, et de l’éventuel passage forcé des données dans la sélection actuelle.
 
-La fonction anonyme transmise dans la méthode [setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) comme paramètre _callback_ est exécutée quand l’appel anonyme est terminé. Lorsque vous écrivez des données dans la sélection à l’aide de la méthode **setSelectedDataAsync**, le paramètre _asyncResult_ du rappel donne uniquement accès à l’état de l’appel et à l’objet [Error](https://dev.office.com/reference/add-ins/shared/error) si l’appel échoue.
+La fonction anonyme transmise dans la méthode [setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#setselecteddataasync-data--options--callback-) comme paramètre _callback_ est exécutée quand l’appel anonyme est terminé. Lorsque vous écrivez des données dans la sélection à l’aide de la méthode **setSelectedDataAsync**, le paramètre _asyncResult_ du rappel donne uniquement accès à l’état de l’appel et à l’objet [Error](https://docs.microsoft.com/javascript/api/office/office.error?view=office-js) si l’appel échoue.
 
 > [!NOTE]
 > Depuis la publication d’Excel 2013 SP1 et de la version correspondante d’Excel Online, vous pouvez désormais [définir la mise en forme lors de l’écriture d’un tableau sur la sélection active](../excel/excel-add-ins-tables.md).
@@ -79,7 +79,7 @@ La fonction anonyme transmise dans la méthode [setSelectedDataAsync](https://de
 ## <a name="detect-changes-in-the-selection"></a>Détection de modifications dans la sélection
 
 
-L’exemple suivant montre comment détecter des modifications dans la sélection à l’aide de la méthode [Document.addHandlerAsync](https://dev.office.com/reference/add-ins/shared/document.addhandlerasync) permettant d’ajouter un gestionnaire d’événements pour l’événement [SelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) sur le document.
+L’exemple suivant montre comment détecter des modifications dans la sélection à l’aide de la méthode [Document.addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#addhandlerasync-eventtype--handler--options--callback-) permettant d’ajouter un gestionnaire d’événements pour l’événement [SelectionChanged](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs?view=office-js) sur le document.
 
 
 ```js
@@ -97,9 +97,9 @@ function write(message){
 }
 ```
 
-Le premier paramètre  _eventType_ spécifie le nom de l’événement auquel souscrire. Transmettre la chaîne `"documentSelectionChanged"` pour ce paramètre revient à transmettre le type d’événement **Office.EventType.DocumentSelectionChanged** de l’énumération [Office.EventType](https://dev.office.com/reference/add-ins/shared/eventtype-enumeration).
+Le premier paramètre  _eventType_ spécifie le nom de l’événement auquel souscrire. Transmettre la chaîne `"documentSelectionChanged"` pour ce paramètre revient à transmettre le type d’événement **Office.EventType.DocumentSelectionChanged** de l’énumération [Office.EventType](https://docs.microsoft.com/javascript/api/office/office.eventtype?view=office-js).
 
-La fonction `myHander()` transmise dans la fonction comme deuxième paramètre _handler_ est un gestionnaire d’événements qui est exécuté lorsque la sélection change dans le document. La fonction est appelée avec un seul paramètre, _eventArgs_, qui contient une référence à un objet [DocumentSelectionChangedEventArgs](https://dev.office.com/reference/add-ins/shared/document.selectionchangedeventargs) quand l’opération asynchrone se termine. Vous pouvez utiliser la propriété [DocumentSelectionChangedEventArgs.document](https://dev.office.com/reference/add-ins/shared/document.selectionchangedeventargs.document) pour accéder au document qui a déclenché l’événement.
+La fonction `myHander()` transmise dans la fonction comme deuxième paramètre _handler_ est un gestionnaire d’événements qui est exécuté lorsque la sélection change dans le document. La fonction est appelée avec un seul paramètre, _eventArgs_, qui contient une référence à un objet [DocumentSelectionChangedEventArgs](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs?view=office-js) quand l’opération asynchrone se termine. Vous pouvez utiliser la propriété [DocumentSelectionChangedEventArgs.document](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs?view=office-js#document) pour accéder au document qui a déclenché l’événement.
 
 
 > [!NOTE]
@@ -109,7 +109,7 @@ La fonction `myHander()` transmise dans la fonction comme deuxième paramètre _
 ## <a name="stop-detecting-changes-in-the-selection"></a>Arrêt de la détection de modifications dans la sélection
 
 
-L’exemple suivant montre comment arrêter l’écoute de l’événement [Document.SelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) en appelant la méthode [document.removeHandlerAsync](https://dev.office.com/reference/add-ins/shared/document.removehandlerasync).
+L’exemple suivant montre comment arrêter l’écoute de l’événement [Document.SelectionChanged](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs?view=office-js) en appelant la méthode [document.removeHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#removehandlerasync-eventtype--options--callback-).
 
 
 ```js
