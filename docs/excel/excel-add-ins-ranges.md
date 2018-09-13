@@ -2,16 +2,16 @@
 title: Utilisation de plages à l’aide de l’API JavaScript pour Excel
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 48784d14542bcff4a2aab416c5f91c132f6c172d
-ms.sourcegitcommit: e1c92ba882e6eb03a165867c6021a6aa742aa310
+ms.openlocfilehash: 2760e3991951088edb8cd9c1aab7b242a8f105bb
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "22925618"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945777"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Utilisation de plages à l’aide de l’API JavaScript pour Excel
 
-Cet article fournit des exemples de code qui expliquent comment effectuer des tâches courantes avec des plages à l’aide de l’API JavaScript pour Excel. Pour obtenir une liste complète des propriétés et des méthodes prises en charge par l’objet **Range**, reportez-vous à la rubrique [Objet Range (API JavaScript pour Excel)](https://dev.office.com/reference/add-ins/excel/range).
+Cet article fournit des exemples de code qui expliquent comment effectuer des tâches courantes avec des plages à l’aide de l’API JavaScript pour Excel. Pour obtenir une liste complète des propriétés et des méthodes prises en charge par l’objet **Range**, reportez-vous à la rubrique [Objet Range (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range?view=office-js).
 
 ## <a name="get-a-range"></a>Obtenir une plage
 
@@ -535,11 +535,11 @@ Excel.run(function (context) {
 
 ![Données dans Excel après la définition du format](../images/excel-ranges-format-numbers.png)
 
-## <a name="copy-and-paste"></a>Copie et collage
+## <a name="copy-and-paste"></a>Copier et coller
 
 > [!NOTE]
 > La fonction copyFrom est uniquement disponible en version d’évaluation (bêta). Pour utiliser cette fonctionnalité, vous devez utiliser la bibliothèque de la version bêta du CDN Office.js : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-> Si vous utilisez TypeScript ou si votre éditeur de code utilise un fichier de définition de type TypeScript pour intelliSense, utilisez https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+> Si vous utilisez TypeScript ou si votre éditeur de code utilise un fichier de définition de type TypeScript pour IntelliSense, utilisez https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
 
 La fonction copyFrom d’une plage réplique le comportement de copie et collage de l’interface utilisateur d’Excel. L’objet plage sur lequel la fonction copyFrom est appelée est la destination. La source à copier est transmise en tant que plage ou adresse de type chaîne représentant une plage. L’exemple de code suivant copie les données de la plage **A1:E1** dans la plage qui commence à **G1** (ce qui revient à coller dans la plage **G1:K1**).
 
@@ -599,4 +599,4 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>Voir aussi
 
 - [Concepts de base de l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
-- [Objet Range (API JavaScript pour Excel)](https://dev.office.com/reference/add-ins/excel/range)
+

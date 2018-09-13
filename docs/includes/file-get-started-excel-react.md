@@ -33,15 +33,15 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
     yo office
     ```
 
-    - **Choisissez un type de projet :** `Office Add-in project using React framework`
+    - **Choisissez un type de projet :** `Office Add-in project using React framework`
     - **Comment souhaitez-vous nommer votre complément ? :** `My Office Add-in`
     - **Quelle application client Office voulez-vous prendre en charge ? :** `Excel`
 
-    ![Générateur Yeoman](../images/yo-office-excel-react.png)
+    ![Le générateur Yeoman](../images/yo-office-excel-react.png)
     
     Une fois que vous avez terminé avec l'assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
-4.  Ouvrez **src/components/App.tsx**, recherchez le commentaire « Mettre à jour la couleur de remplissage », puis modifiez la couleur de remplissage de « jaune » à « bleu » avant d'enregistrer le fichier. 
+4.  Ouvrez **src/components/App.tsx**, recherchez le commentaire « Mettre à jour la couleur de remplissage », puis modifiez la couleur de remplissage de « jaune » à « bleu » avant d'enregistrer le fichier. 
 
     ```js
     range.format.fill.color = 'blue'
@@ -57,7 +57,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
     </HeroList>
     ```
 
-6. Effectuez les étapes décrites dans la rubrique relative à l’[ajout de certificats auto-signés comme certificat racine approuvé](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) pour approuver le certificat pour le système d’exploitation de votre ordinateur de développement.
+6. Effectuez les étapes décrites dans la rubrique relative à l’[Ajout de certificats auto-signés comme certificat racine approuvé](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) pour approuver le certificat pour le système d’exploitation de votre ordinateur de développement.
 
 7. Chargez une version test de votre complément afin qu’il apparaisse dans Excel. Dans le terminal, exécutez la commande suivante : 
     
@@ -69,12 +69,12 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 
 1. À partir du terminal, exécutez la commande suivante pour démarrer le serveur dev.
 
-    Windows :
+    Windows :
     ```bash
     npm start
     ```
 
-2. Dans Excel, sélectionnez l’onglet **Accueil**, puis le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
+2. |||UNTRANSLATED_CONTENT_START|||In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.|||UNTRANSLATED_CONTENT_END|||
 
     ![Bouton Complément Excel](../images/excel-quickstart-addin-2b.png)
 
@@ -95,5 +95,5 @@ Félicitations, vous avez créé un complément Excel à l’aide de React ! Dé
 
 * [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial-create-table.md)
 * [Concepts de base de l’API JavaScript pour Excel](../excel/excel-add-ins-core-concepts.md)
-* [Exemples de code pour les compléments Excel](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Référence de l’API JavaScript pour Excel](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
+* [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [Référence de l’API JavaScript pour Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
