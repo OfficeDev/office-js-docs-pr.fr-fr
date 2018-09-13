@@ -2,12 +2,12 @@
 title: Appel de fonctions de feuille de calcul Excel intégrées à l’aide de l’API JavaScript pour Excel
 description: ''
 ms.date: 01/24/2017
-ms.openlocfilehash: 6c0568fc1c608c4f1586d783ea5ac49aef944542
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: e709884db0bef36f1ff9a59ebf25d000f160d043
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925562"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945805"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>Appel de fonctions de feuille de calcul Excel intégrées
 
@@ -455,4 +455,4 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 
 - [Concepts de base de l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
 - [Spécification d’ouverture d’API JavaScript pour Excel](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
-- [Objet de fonctions de feuille de calcul (API JavaScript pour Excel)](https://dev.office.com/reference/add-ins/excel/functions)
+- [Objet de fonctions de feuille de calcul (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheet?view=office-js)
