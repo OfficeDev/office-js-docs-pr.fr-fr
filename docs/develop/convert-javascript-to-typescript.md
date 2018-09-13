@@ -2,12 +2,12 @@
 title: Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
 description: ''
 ms.date: 01/19/2018
-ms.openlocfilehash: 783d47e04fc6d28604501ac77345470c26d36c89
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 894cdcb8360a26dfb0f2d5ddbf06cbd7c52d5623
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925380"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945347"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
 
@@ -30,7 +30,7 @@ Cet article explique comment créer un complément Excel à l’aide de Visual S
     > [!NOTE]
     > TypeScript doit être installé par défaut avec Visual Studio 2017, mais vous pouvez [utiliser le programme d’installation Visual Studio](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) pour confirmer qu’il est installé. Dans le programme d’installation Visual Studio, sélectionnez l’onglet **Composants individuels**, puis vérifiez que l’option **SDK TypeScript 2.3** est sélectionnée sous **SDK, bibliothèques et frameworks**.
 
-- Excel 2016
+- Excel 2016 ou version ultérieure
 
 ## <a name="create-the-add-in-project"></a>Création du projet de complément
 
@@ -121,7 +121,7 @@ declare var fabric: any;
             messageBanner = new fabric.MessageBanner(element);
             messageBanner.hideBanner();
             
-            // If not using Excel 2016, use fallback logic.
+            // If not using Excel 2016 or later, use fallback logic.
             if (!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
                 $("#template-description").text("This sample will display the value of the cells that you have selected in the spreadsheet.");
                 $('#button-text').text("Display!");

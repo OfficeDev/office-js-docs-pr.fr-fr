@@ -2,12 +2,12 @@
 title: Créer et déboguer des compléments Office dans Visual Studio
 description: ''
 ms.date: 03/14/2018
-ms.openlocfilehash: c903f3d475e46ee09a3c350f79c1e3d671ae5923
-ms.sourcegitcommit: 28fc652bded31205e393df9dec3a9dedb4169d78
+ms.openlocfilehash: 2e5c08a72ec97e26000d6ea7e53dd1d0f2c9e6dc
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "22927446"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945354"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Créer et déboguer des compléments Office dans Visual Studio
 
@@ -16,7 +16,7 @@ Cet article explique comment utiliser Visual Studio pour créer votre premier co
 > [!NOTE]
 > Si vous débutez avec les compléments pour OneNote, reportez-vous à [Créer votre premier complément OneNote](../onenote/onenote-add-ins-getting-started.md).
 
-## <a name="create-an-office-add-in-project-in-visual-studio"></a>Créer un projet de complément Office dans Visual Studio
+## <a name="create-an-office-add-in-project-in-visual-studio"></a>Créez un projet de complément Office dans Visual Studio
 
 
 Pour commencer, vérifiez que les [outils de développement Office](https://www.visualstudio.com/features/office-tools-vs.aspx) sont installés et que vous disposez d’une version de Microsoft Office. Vous pouvez participer au [programme pour les développeurs Office 365](https://developer.microsoft.com/office/dev-program), ou suivre ces instructions pour obtenir la [version la plus récente](../develop/install-latest-office-version.md).
@@ -159,7 +159,7 @@ Visual Studio génère le projet et effectue les actions suivantes.
 Visual Studio effectue ensuite les actions suivantes :
 
 
-1. Il modifie l'élément [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) du fichier manifeste XML en remplaçant le jeton ~remoteAppUrl par l’adresse complète de la page de démarrage (par exemple, http://localhost/MyAgave.html).
+1. Il modifie l'élément [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation?view=office-js) du fichier manifeste XML en remplaçant le jeton ~remoteAppUrl par l’adresse complète de la page de démarrage (par exemple, http://localhost/MyAgave.html).
     
 2. Il démarre le projet d’application web dans IIS Express.
     
@@ -167,7 +167,7 @@ Visual Studio effectue ensuite les actions suivantes :
     
 Visual Studio n’affiche pas les erreurs de validation dans la fenêtre  **OUTPUT** lorsque vous générez le projet. Visual Studio signale au fur et à mesure les erreurs et les avertissements dans la fenêtre **ERRORLIST**. Visual Studio signale également les erreurs de validation en affichant des traits de soulignement ondulés (appelés aussi zigzags) de différentes couleurs dans le code et l’éditeur de texte. Ces marques sont là pour vous indiquer les problèmes détectés par Visual Studio dans votre code. Pour plus d’informations, voir la page relative au [code et à l’éditeur de texte](https://msdn.microsoft.com/library/se2f663y(v=vs.140).aspx). Pour plus d’informations sur l’activation ou la désactivation de la validation, voir les rubriques suivantes : 
 
-- [Options, Éditeur de texte, JavaScript, IntelliSense](https://msdn.microsoft.com/library/hh362485(v=vs.140).aspx)
+- [Options, Éditeur de texte, JavaScript, IntelliSense](https://docs.microsoft.com/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2015)
     
 - [Procédure : définir des options de validation pour l’édition HTML dans Visual Web Developer](https://msdn.microsoft.com/library/0byxkfet(v=vs.100).aspx)
     

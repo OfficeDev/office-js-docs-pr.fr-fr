@@ -2,12 +2,12 @@
 title: Tests d’utilisation pour les compléments Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 4b21af2502c9357e8a7d2c953cd5182833577ac9
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 0c90cc4e573d24f9c7c4e5c4f6a77853ec9fc93e
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925450"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945603"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Tests d’utilisation pour les compléments Office
 
@@ -78,12 +78,12 @@ Par exemple, si vous recherchez des participants qui connaissent GitHub, pour ex
 
 Si vous envisagez de tester une version déjà en ligne de votre complément, les questions suivantes peuvent permettre de sélectionner les utilisateurs qui seront en mesure de le faire. 
 
-**Ce test exige que vous disposiez de Microsoft PowerPoint 2016. Avez-vous PowerPoint 2016 ?**  
+**Ce test nécessite la dernière version de Microsoft PowerPoint. Vous disposez de la dernière version de PowerPoint ?**  
  a. Oui [*Doit sélectionner cette réponse*]  
  b. Non [*Réponse disqualifiante*]  
  c. Je ne sais pas [*Réponse disqualifiante*]  
 
-**Pour ce test, vous devez installer un complément gratuit pour PowerPoint 2016 et créer un compte gratuit pour l’utiliser. Êtes-vous prêt à installer un complément et à créer un compte gratuit ?**  
+**Pour ce test, vous devez installer un complément gratuit pour PowerPoint et créer un compte gratuit pour l’utiliser. Êtes-vous prêt à installer un complément et à créer un compte gratuit ?**  
  a. Oui [*Doit sélectionner cette réponse*]  
  b. Non [*Réponse disqualifiante*]  
 
@@ -103,13 +103,13 @@ Pour plus d’informations, voir la section expliquant [comment rédiger des ins
 
 ## <a name="6-create-a-prototype-to-match-the-tasks-and-questions"></a>6. Créez un prototype pour faire correspondre les tâches et les questions
  
-Vous pouvez faire tester votre complément déjà en ligne ou vous pouvez faire tester un prototype. N’oubliez pas que si vous souhaitez tester un complément déjà en ligne, vous devez filtrer les participants pour ne sélectionner que ceux qui ont Office 2016, qui sont prêts à installer le complément et qui sont prêts à créer un compte (sauf si vous leur fournissez des informations d’identification). Vous devez ensuite pour vous assurer qu’ils installent correctement votre complément. 
+Vous pouvez faire tester votre complément déjà en ligne ou vous pouvez faire tester un prototype. N’oubliez pas que si vous souhaitez tester un complément déjà en ligne, vous devez filtrer les participants pour ne sélectionner que ceux qui ont Office, qui sont prêts à installer le complément et qui sont prêts à créer un compte (sauf si vous leur fournissez des informations d’identification). Vous devez ensuite vous assurer qu’ils installent correctement votre complément. 
 
 En moyenne, aider un utilisateur à installer un complément prend environ 5 minutes. Voici un exemple d’étapes d’installation claires et concises. Modifiez-les en fonction des caractéristiques propres à votre test.
 
-**Installez le complément (indiquez le nom de votre nom complément ici) pour PowerPoint 2016, en suivant les instructions suivantes :** 
+**Installez le complément (indiquez le nom de votre complément ici) pour PowerPoint, en suivant les instructions suivantes :** 
 
-1. Ouvrez Microsoft PowerPoint 2016.
+1. Ouvrez Microsoft PowerPoint.
 2. Sélectionnez **Nouvelle présentation**.
 3. Accédez à **Insérer > Mes compléments**.
 5. Dans la fenêtre contextuelle, choisissez **Magasin**.
