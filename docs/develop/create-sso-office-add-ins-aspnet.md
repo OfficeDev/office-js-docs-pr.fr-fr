@@ -2,12 +2,12 @@
 title: Créer un complément Office ASP.NET qui utilise l’authentification unique
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: cdf039e66f0d61e656827ee3ab0ad5762cba430d
-ms.sourcegitcommit: 8333ede51307513312d3078cb072f856f5bef8a2
+ms.openlocfilehash: d98fdc6604f0b4bf0c7437e75f27759fc6c5c83f
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "23876619"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945721"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office ASP.NET qui utilise l’authentification unique (aperçu)
 
@@ -42,11 +42,11 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
    > 1. Dans le menu **Outils**, accédez à **Gestionnaire de package NuGet** > **Console du Gestionnaire de package**. 
 
-   > 2. Dans la console, exécutez la commande suivante. L’opération peut prendre une minute ou plus, même avec une bonne connexion Internet. Une fois l’opération terminée, le message **Successfully installed 'Microsoft.Identity.Client 1.1.4-alpha0002' ...** doit s’afficher vers la fin de la sortie dans la console.
+   > 2. Dans la console, exécutez la commande suivante. L’opération peut prendre une minute ou plus, même avec une bonne connexion Internet. Une fois l’opération terminée, le message **Installé avec succès 'Microsoft.Identity.Client 1.1.4-preview0002' ...** doit s’afficher vers la fin de la sortie dans la console.
 
    >    `Install-Package Microsoft.Identity.Client -Version 1.1.4-preview0002`
 
-   > 3. Dans l’**Explorateur de solutions**, faites un clic droit sur **Références**. Vérifiez que **Microsoft.Identity.Client** est dans la liste. S’il n’y est pas ou si une icône d’avertissement figure sur son entrée, supprimez l’entrée, puis utilisez l’Assistant d'ajout d'une référence de Visual Studio pour ajouter une référence à l’assemblage dans **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.4-alpha0002\lib\net45\Microsoft.Identity.Client.dll**
+   > 3. Dans l’**Explorateur de Solutions**, cliquez avec le bouton de la souris sur **Références**. Vérifiez que **Microsoft.Identity.Client** est répertorié. S’il n’est pas répertorié ou qu’une icône d’avertissement figure sur son entrée, supprimez l’entrée, puis utilisez l’Assistant Ajouter une référence Visual Studio pour ajouter une référence à l'assemblage dans **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.4-preview0002\lib\net45\Microsoft.Identity.Client.dll**
 
 1. Créez le projet une deuxième fois.
 
@@ -70,11 +70,11 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
 
 ## <a name="configure-the-add-in"></a>Configurer le complément
 
-1. Dans la chaîne suivante, remplacez l'espace réservé « {tenant_ID} » par votre ID client Office 365. Pour l'obtenir, [utilisez l'une des méthodes décrites dans](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id) Trouver votre identité Office 365.
+1. Dans la chaîne suivante, remplacez l'espace réservé « {tenant_ID} » par votre ID client Office 365. Pour l'obtenir, [utilisez l'une des méthodes décrites dans](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id) Trouvez votre ID client Office 365.
 
     `https://login.microsoftonline.com/{tenant_ID}/v2.0`
 
-2. Dans Visual Studio, ouvrez le fichier web.config. Il existe certaines clés dans la section **appSettings** auxquelles vous devez affecter des valeurs.
+2. Dans Visual Studio, ouvrez le fichier web.config. Il y a quelques clés dans la section **appSettings** auxquelles vous devez attribuer des valeurs.
 
 3. Utilisez la chaîne que vous avez créée à l’étape 1 en tant que valeur pour la clé nommée « ida:Issuer ». Assurez-vous que la valeur ne comporte aucun espace vide.
 
@@ -165,7 +165,7 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
     * Une méthode `showResult` permettant d’afficher les données renvoyées par Microsoft Graph (ou un message d’erreur) en bas du volet Office.
     * Une méthode `logErrors` qui consigne dans la console les erreurs qui ne sont pas destinées à l’utilisateur final.
 
-1. En dessous de l’affectation au `Office.initialize`, ajoutez le code ci-dessous. Tenez compte des informations suivantes :
+1. En dessous de l’affectation au `Office.initialize`, ajoutez le code ci-dessous. Remarque sur ce code :
 
     * La gestion des erreurs dans le complément tente parfois automatiquement d’obtenir un jeton d’accès une deuxième fois, à l’aide d’un autre jeu d’options. La variable de compteur `timesGetOneDriveFilesHasRun` et la variable d’indicateur `triedWithoutForceConsent` permettent de s’assurer que l’utilisateur ne tente pas de manière répétée d’obtenir un jeton sans y parvenir. 
     * Vous allez créer la méthode `getDataWithToken` à l’étape suivante, mais rappelez-vous qu’elle définit une option appelée `forceConsent` sur `false`. Vous en saurez plus à la prochaine étape.
@@ -183,7 +183,7 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
 
 1. En dessous de la méthode `getOneDriveFiles`, ajoutez le code ci-dessous. Tenez compte des informations suivantes :
 
-    * [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) est la nouvelle API d’Office.js qui permet à un complément de demander à l’application hôte Office (Excel, PowerPoint, Word, etc.) un jeton d’accès au complément (pour l’utilisateur connecté à Office). L’application hôte Office demande alors le jeton au point de terminaison Azure AD 2.0. Dans la mesure où vous avez préalablement autorisé l’hôte Office sur votre complément lors de son inscription, Azure AD enverra le jeton.
+    * Le [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) est la nouvelle API dans Office.js qui permet à un complément de demander, à l’application hôte Office (Excel, PowerPoint, Word, etc.), un jeton d'accès au complément (pour l'utilisateur connecté à Office). L'application hôte Office, à son tour, demande le jeton au point de terminaison Azure AD 2.0. Dans la mesure où vous avez préalablement autorisé l’hôte Office sur votre complément lors de son inscription, Azure AD enverra le jeton.
     * Si aucun utilisateur n’est connecté à Office, l’hôte Office invite l’utilisateur à se connecter.
     * Le paramètre d’options définit `forceConsent` sur `false`, donc l’utilisateur ne sera pas invité à accorder à l’hôte Office l’accès à votre complément chaque fois qu’il utilisera le complément. La première fois que l’utilisateur exécutera le complément, l’appel à `getAccessTokenAsync` échouera, mais la logique de gestion des erreurs que vous ajouterez dans une étape ultérieure effectuera automatiquement un autre appel avec le jeu d’options `forceConsent` défini sur `true`, et l’utilisateur sera invité à donner son consentement, mais uniquement la première fois.
     * Vous créerez la méthode `handleClientSideErrors` à une étape ultérieure.
@@ -282,7 +282,7 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
         break; 
     ```
 
-1. Remplacez `TODO4` par le code suivant. L'erreur 13003 se produit lorsque l’utilisateur se connecte avec un compte qui n’est ni un compte de bureau ou d'école, ni un compte Microsoft. Demandez à l’utilisateur de se déconnecter, puis de se reconnecter avec un type de compte pris en charge.
+1. Remplacez `TODO4` par le code suivant. L'erreur 13003 se produit lorsque l'utilisateur est connecté avec un compte qui n'est ni un compte professionnel ou scolaire, ni un compte Microsoft. Demandez à l’utilisateur de se déconnecter, puis de se reconnecter avec un type de compte pris en charge.
 
     ```javascript
     case 13003: 
@@ -309,7 +309,7 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
         break;      
     ```
 
-1. Remplacez `getAccessTokenAsync` par le code suivant. L’erreur 13008 se produit lorsque l’utilisateur a déclenché une opération qui appelle `TODO7` avant la fin de l’appel précédent.
+1. Remplacez `TODO7` par le code suivant. L’erreur 13008 se produit lorsque l’utilisateur a déclenché une opération qui appelle `getAccessTokenAsync` avant la fin de l’appel précédent.
 
     ```javascript
     case 13008:
@@ -347,17 +347,12 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
 
         // TODO11: Handle the case where AAD asks for an additional form of authentication.
 
-        // TODO12: Handle the case where consent has not been granted, or has been revoked.
+        // TODO12: Handle missing consent and scope (permission) related issues.
 
-        // TODO13: Handle the case where an invalid scope (permission) was used in the on-behalf-of flow.
-
-        // TODO14: Handle the case where the token that the add-in's client-side sends to it's 
-        //         server-side is not valid because it is missing `access_as_user` scope (permission).
-
-        // TODO15: Handle the case where the token sent to Microsoft Graph in the request for 
+        // TODO13: Handle the case where the token sent to Microsoft Graph in the request for 
         //         data is expired or invalid.
 
-        // TODO16: Log all other server errors.
+        // TODO14: Log all other server errors.
     }
     ```
 
@@ -368,7 +363,7 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
     var message = JSON.parse(result.responseText).Message;
     ```
 
-1. Remplacez `TODO11` par le code suivant. Tenez compte des informations suivantes :
+1. Remplacez `TODO11` par le code suivant. Remarque sur ce code :
 
     * L’erreur 50076 se produit lorsque Microsoft Graph exige un formulaire d’authentification supplémentaire.
     * L’hôte Office dois obtenir un nouveau jeton avec la valeur **Claims** pour l’option `authChallenge`. Cela demande à AAD d’inviter l’utilisateur à accepter tous les formulaires d’authentification requis. 
@@ -383,9 +378,25 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
     }    
     ```
 
-1. Remplacez `TODO12` par le code suivant. Tenez compte des informations suivantes :
+1. Remplacez `TODO12` par le code suivant. Vous remplacerez les trois `TODO`s dans ce code par un bloc conditionnel *interne* dans les prochaines étapes.
 
-    * L’erreur 65001 signifie que l’utilisateur a refusé de donner l’accès à Microsoft Graph (ou que l’accès a été révoqué) pour une ou plusieurs autorisations. 
+    ```javascript
+    else if (exceptionMessage) {
+
+        // TODO12A: Handle the case where consent has not been granted, or has been revoked.
+
+        // TODO12B: Handle the case where an invalid scope (permission) was used in the on-behalf-of flow.
+
+        // TODO12C: Handle the case where the token that the add-in's client-side sends to it's 
+        //          server-side is not valid because it is missing `access_as_user` scope (permission).
+    }
+  
+    ```
+
+
+1. Remplacez `TODO12A` par le code suivant. (Cette opération crée la première partie d’un bloc conditionnel *interne* ). Remarque sur ce code :
+
+    * L'erreur 65001 signifie que le consentement pour accéder à Microsoft Graph n'a pas été accordé (ou a été révoqué) pour une ou plusieurs autorisations. 
     * Le complément doit obtenir un nouveau jeton avec l’option `forceConsent` définie sur `true`.
 
     ```javascript
@@ -400,7 +411,7 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
     }    
     ```
 
-1. Remplacez `TODO13` par le code suivant. Tenez compte des informations suivantes :
+1. Remplacez `TODO12B` par le code suivant. Tenez compte des informations suivantes :
 
     * L’erreur 70011 a plusieurs sens. Le problème qui importe pour ce complément est lorsque cette erreur indique qu’une étendue (autorisation) non valide a été demandée ; le code vérifie alors la description complète de l’erreur, pas seulement le numéro.
     * Le complément doit signaler l’erreur.
@@ -411,7 +422,7 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
     }    
     ```
 
-1. Remplacez `TODO14` par le code suivant. Tenez compte des informations suivantes :
+1. Remplacez `TODO12C` par le code suivant. Tenez compte des informations suivantes :
 
     * Le code côté serveur que vous allez créer dans une étape ultérieure enverra le message `Missing access_as_user` si l’étendue (autorisation) `access_as_user` ne se trouve pas dans le jeton d’accès que le client du complément envoie à AAD pour qu’il l’utilise dans flux « de la part de ».
     * Le complément doit signaler l’erreur.
@@ -422,7 +433,7 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
     }    
     ```
 
-1. Remplacez `TODO15` par le code suivant. Tenez compte des informations suivantes :
+1. Remplacez `TODO13` par le code suivant. (Cela fait partie du bloc conditionnel *externe* et doit être placé immédiatement après le crochet de fermeture de la structure qui commence par `else if (exceptionMessage) {` et au même niveau d'indentation.) Remarque sur ce code :
 
     * La bibliothèque d’identité que vous allez utiliser dans le code côté serveur (Microsoft Authentication Library, MSAL) doit garantir qu’aucun jeton expiré ou non valide n’est envoyé à Microsoft Graph. Cependant, si cela se produit, l’erreur renvoyée par Microsoft Graph au service web du complément a le code `InvalidAuthenticationToken`. Le code côté serveur que vous créerez dans une étape suivante relaiera ce message au client du complément.
     * Dans ce cas, le complément doit recommencer l’intégralité du processus d’authentification en réinitialisant les variables de compteur et d’indicateur, puis en rappelant la méthode de gestionnaire de boutons.
@@ -436,7 +447,7 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
     }    
     ```
 
-1. Remplacez `TODO16` par le code suivant.
+1. Remplacez `TODO14` par le code suivant.
 
     ```javascript
     else {
@@ -560,7 +571,7 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
     }
     ```
 
-5. Remplacez `TODO1` par le code suivant pour confirmer que les étendues spécifiées dans le jeton incluent `access_as_user`.
+5. Remplacez `TODO1` par le code suivant pour valider que les étendues spécifiées dans le jeton incluent `access_as_user`.
 
     ```csharp
     string[] addinScopes = ClaimsPrincipal.Current.FindFirst("http://schemas.microsoft.com/identity/claims/scope").Value.Split(' ');
@@ -575,9 +586,9 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
     ```
 
     > [!NOTE]
-    > Vous devez uniquement utiliser l’étendue `access_as_user` pour autoriser l’API qui gère le flux « de la part de » pour les compléments Office. Les autres API de votre service peuvent avoir leurs propres exigences d’étendue. Cela limite les possibilités d’accès avec les jetons acquis par Office.
+    > Vous ne devez utiliser que l’étendue `access_as_user` pour autoriser l’API qui gère le flux « de la part de » pour les compléments Office. D’autres API dans votre service peuvent avoir leurs propres exigences d’étendue. Cela permet de limiter ce à quoi donnent accès les jetons acquis par Office.
 
-6. Remplacez `TODO2` par le code suivant. Tenez compte des informations suivantes :
+6. Remplacez `TODO2` par le code suivant. Remarque sur ce code :
     * Ce code transforme le jeton d’accès brut reçu de l’hôte Office en objet `UserAssertion` qui sera transmis à une autre méthode.
     * Votre complément ne joue plus le rôle d’une ressource (ou audience) à laquelle l’hôte Office et l’utilisateur doivent accéder. Désormais, il est lui-même un client qui a besoin d’accéder à Microsoft Graph. `ConfidentialClientApplication` est l’objet de « contexte client » MSAL.
     * Le troisième paramètre du constructeur `ConfidentialClientApplication` est une URL de redirection qui n’est pas utilisée dans le flux « de la part de », mais il est recommandé d’utiliser l’URL correcte. Les quatrième et cinquième paramètres peuvent être utilisés pour définir un magasin permanent qui permettrait la réutilisation des jetons non expirés entre différentes sessions avec le complément. Cet exemple n’implémente pas un stockage permanent.
@@ -593,7 +604,7 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
     string[] graphScopes = { "Files.Read.All" };
     ```
 
-7. Remplacez `TODO3` par le code suivant. Tenez compte des informations suivantes :
+7. Remplacez `TODO3` par le code suivant. Remarque sur ce code :
 
     * La méthode `ConfidentialClientApplication.AcquireTokenOnBehalfOfAsync` recherchera tout d’abord dans le cache MSAL, c’est-à-dire en mémoire, un jeton d’accès correspondant. Uniquement s’il n’existe pas, elle lance le flux « de la part de » avec le point de terminaison Azure AD V2.
     * Si une authentification multifacteur est requise par la ressource MS Graph et si l’utilisateur ne l'a pas encore fournie, AAD lève une exception qui contient une propriété de revendication.
@@ -630,7 +641,7 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
     }
     ```
 
-9. Remplacez `TODO3b` et `TODO3c` par le code suivant. Tenez compte des informations suivantes :
+9. Remplacez `TODO3b` et `TODO3c` par le code suivant. Remarque sur ce code :
 
     * Si l’appel à AAD contenait au moins une étendue (autorisation) pour laquelle ni l’utilisateur, ni un administrateur client a consenti (ou pour laquelle le consentement a été révoqué) : AAD renverra « 400 Demande incorrecte » avec l’erreur `AADSTS65001`. MSAL génère une exception **MsalUiRequiredException** avec ces informations. Le client doit de nouveau appeler `getAccessTokenAsync` avec l’option `{ forceConsent: true }`.
     *  Si l’appel à AAD contenait au moins une étendue non reconnue par AAD, AAD renvoie « 400 Demande incorrecte » avec l’erreur `AADSTS70011`. MSAL génère une exception **MsalUiRequiredException** avec ces informations. Le client doit informer l’utilisateur.
@@ -655,7 +666,7 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
     }  
     ```
 
-11. Remplacez `TODO4` par le code suivant. Tenez compte des informations suivantes :
+11. Remplacez `TODO4` par le code suivant. Remarque sur ce code :
 
     * Les classes `GraphApiHelper` et `ODataHelper` sont définies dans les fichiers du dossier **Helpers**. La classe `OneDriveItem` est définie dans un fichier du dossier **Models**. La description détaillée de ces classes n’est pas pertinente pour l’autorisation ou l’authentification unique, elle est donc hors de portée de cet article.
     * Vous pouvez améliorer les performances en ne demandant à Microsoft Graph que les données réellement requises. Ainsi, le code utilise le paramètre de requête ` $select` pour spécifier que nous ne souhaitons que la propriété de nom, et le paramètre `$top` pour spécifier que nous ne voulons que les trois premiers noms de fichier ou de dossier.
@@ -674,7 +685,7 @@ Les instructions suivantes sont écrites de façon générique afin qu’elles p
     }
     ```
 
-12. Remplacez `TODO5` par le code suivant. Tenez compte des informations suivantes : 
+12. Remplacez `TODO5` par le code suivant. Remarque sur ce code : 
 
     * Bien que le code ci-dessus demande uniquement la propriété *name* des éléments OneDrive, Microsoft Graph comporte toujours la propriété *eTag* pour les éléments OneDrive. Pour réduire la charge utile envoyée au client, le code ci-dessous reconstruit les résultats avec uniquement les noms d’élément.
     * La liste des trois fichiers et dossiers OneDrive est envoyée au client en tant que réponse HTTP « 200 OK ».

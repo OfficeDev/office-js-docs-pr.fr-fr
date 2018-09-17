@@ -1,6 +1,6 @@
 # <a name="create-custom-functions-in-excel-preview"></a>Créer des fonctions personnalisées dans Excel (Aperçu)
 
-Les fonctions personnalisées (similaires aux fonctions définies par l’utilisateur) permettent aux développeurs d’ajouter n’importe quelle fonction JavaScript à Excel en utilisant un complément. Les utilisateurs peuvent alors avoir accès aux fonctions personnalisées comme toute autre fonction native dans Excel (par exemple, `=SUM()`). Cet article explique comment créer des fonctions personnalisées dans Excel.
+Les fonctions personnalisées (similaires aux fonctions définies par l’utilisateur ou UDF) permettent aux développeurs d’ajouter n’importe quelle fonction JavaScript à Excel en utilisant un complément. Les utilisateurs peuvent alors avoir accès aux fonctions personnalisées comme toute autre fonction native dans Excel (par exemple, `=SUM()`). Cet article explique comment créer des fonctions personnalisées dans Excel.
 
 L'illustration suivante montre comment un utilisateur final insère une fonction personnalisée dans une cellule. La fonction qui ajoute 42 à une paire de nombres.
 
@@ -14,21 +14,21 @@ function ADD42(a, b) {
 }
 ```
 
-Les fonctions personnalisées sont désormais disponibles dans Developer Preview sous Windows, Mac et Excel Online. Pour les tester, procédez comme suit :
+Les fonctions personnalisées sont désormais disponibles dans Developer Preview sous Windows, Mac et Excel Online. Pour les tester, procédez comme suit :
 
 1. Installez Office (version 9325 sur Windows ou 13.329 sur Mac) et participez au programme [Office Insider](https://products.office.com/office-insider). (Notez qu'il ne suffit pas d'obtenir la dernière version, la fonctionnalité sera désactivée sur n'importe quelle version jusqu'à ce que vous rejoignez le programme Insider)
 2. Créez un projet de complément de fonctions personnalisées Excel à l’aide de [Yo Office](https://github.com/OfficeDev/generator-office)et suivez les instructions fournies dans le [projet README.md](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/README.md) pour démarrer le complément dans Excel, apporter des modifications dans le code et déboguer.
 3. Saisissez `=CONTOSO.ADD42(1,2)` dans une cellule, puis appuyez sur **Entrée** pour exécuter la fonction personnalisée.
 
-Reportez-vous à la section **Problèmes connus**à la fin de cet article qui inclut les limites actuelles des fonctions personnalisées et qui sera mise à jour au fil du temps.
+Reportez-vous à la section **Problèmes connus** à la fin de cet article qui inclut les limites actuelles des fonctions personnalisées et qui sera mise à jour au fil du temps.
 
 ## <a name="learn-the-basics"></a>Notions fondamentales
 
-Dans le référentiel d’exemple cloné, vous trouverez les fichiers suivants :
+Dans le référentiel d’exemple cloné, vous trouverez les fichiers suivants :
 
-- **./src/customfunctions.js**, qui contient le code de fonction personnalisé (voir l’exemple de code simple ci-dessus pour la fonction `ADD42`).
-- **./config/customfunctions.json**, qui contient l’enregistrement JSON qui indique à Excel votre fonction personnalisée. Avec l’enregistrement, vos fonctions personnalisées apparaissent dans la liste des fonctions disponibles affichée lorsqu'un utilisateur saisit du texte dans les cellules.
-- **./index.html**, qui fournit une référence &lt;Script&gt; au fichier JS. Ce fichier n’affiche pas d’interface utilisateur dans Excel.
+- **./src/customfunctions.js**, qui contient le code de fonction personnalisée (voir l’exemple de code simple ci-dessus pour la fonction `ADD42`).
+- **customfunctions.json**, qui contient l’enregistrement JSON qui indique à Excel votre fonction personnalisée. Avec l’enregistrement, vos fonctions personnalisées apparaissent dans la liste des fonctions disponibles qui s'affiche lorsqu'un utilisateur saisit du texte dans une cellule.
+- **customfunctions.html**, qui fournit une référence &lt;Script&gt; au fichier JS. Ce fichier n’affiche pas d’interface utilisateur dans Excel.
 - **./manifest.xml**, qui indique à Excel l’emplacement des fichiers HTML, JavaScript et JSON, et spécifie également un espace de noms pour toutes les fonctions personnalisées installées avec le complément.
 
 ### <a name="json-file-configcustomfunctionsjson"></a>Fichier JSON (./config/customfunctions.json)
@@ -48,38 +48,38 @@ Notez que pour cet exemple :
 - Le tableau `parameters` spécifie, *dans l'ordre*, le type de données dans chaque paramètre qui est passé à la fonction. Les propriétés enfants `name` et `description` sont utilisées dans l’intelliSense Excel. Les propriétés enfants `type` et `dimensionality` sont identiques aux propriétés enfants de la propriété `result` décrite ci-dessus.
 - La propriété `options` vous permet de personnaliser certains aspects de la façon dont Excel exécute la fonction et quand. Il y a plus d'informations sur ces options plus loin dans cet article.
 
- ```js
-{
-    "$schema": "https://developer.microsoft.com/json-schemas/office-js/custom-functions.schema.json",
-    "functions": [
-        {
-            "name": "ADD42", 
-            "description":  "adds 42 to the input numbers",
-            "helpUrl": "http://dev.office.com",
-            "result": {
-                "type": "number",
-                "dimensionality": "scalar"
-            },
-            "parameters": [
-                {
-                    "name": "number 1",
-                    "description": "the first number to be added",
+```js
+    {
+        "$schema": "https://developer.microsoft.com/json-schemas/office-js/custom-functions.schema.json",
+        "functions": [
+            {
+                "name": "ADD42", 
+                "description":  "adds 42 to the input numbers",
+                "helpUrl": "http://dev.office.com",
+                "result": {
                     "type": "number",
                     "dimensionality": "scalar"
                 },
-                {
-                    "name": "number 2",
-                    "description": "the second number to be added",
-                    "type": "number",
-                    "dimensionality": "scalar"
+                "parameters": [
+                    {
+                        "name": "number 1",
+                        "description": "the first number to be added",
+                        "type": "number",
+                        "dimensionality": "scalar"
+                    },
+                    {
+                        "name": "number 2",
+                        "description": "the second number to be added",
+                        "type": "number",
+                        "dimensionality": "scalar"
+                    }
+                ],
+                "options": {
+                    "sync": true
                 }
-            ],
-            "options": {
-                "sync": true
             }
-        }
-    ]
-}
+        ]
+    }
 ```
 
 > [!NOTE]
@@ -174,7 +174,7 @@ La fonction `ADD42` ci-dessus est synchrone par rapport à Excel (désigné en r
 
 D'un autre côté, si votre fonction personnalisée récupère des données du Web, elle doit être asynchrone par rapport à Excel. Les fonctions asynchrones doivent :
 
-1. Renvoyer une promesse JavaScript à Excel
+1. Renvoyer une promesse JavaScript à Excel.
 3. Résolvez la promesse avec la valeur finale en utilisant la fonction de rappel.
 
 Le code suivant indique un exemple de fonction personnalisée asynchrone qui récupère la température d’un thermomètre. Notez que `sendWebRequest` est une fonction hypothétique, non spécifiée ici, qui utilise XHR pour appeler un service Web de température.
@@ -196,7 +196,7 @@ Les fonctions asynchrones affichent une erreur temporaire `GETTING_DATA` dans la
 
 ## <a name="streamed-functions"></a>Fonctions de flux
 
-Une fonction asynchrone peut être diffusée. Les fonctions personnalisées de flux vous permettent d’afficher des données dans des cellules à plusieurs reprises au fil du temps, sans devoir attendre qu’Excel ou que des utilisateurs demandent à effectuer le calcul à nouveau. L’exemple suivant est une fonction personnalisée qui ajoute un nombre au résultat toutes les secondes. Tenez compte des informations suivantes :
+Une fonction asynchrone peut être diffusée. Les fonctions personnalisées de flux vous permettent d’afficher des données dans des cellules à plusieurs reprises au fil du temps, sans devoir attendre qu’Excel ou que des utilisateurs demandent à effectuer le calcul à nouveau. L’exemple suivant est une fonction personnalisée qui ajoute un nombre au résultat toutes les secondes. Tenez compte des informations suivantes :
 
 - Excel affiche automatiquement chaque nouvelle valeur en utilisant le rappel `setResult`.
 - Le paramètre final, `caller`, n’est jamais spécifié dans votre code d’enregistrement et ne s’affiche pas dans le menu de remplissage automatique pour les utilisateurs d’Excel lorsqu’ils entrent la fonction. Il s’agit d’un objet contenant une fonction de rappel `setResult` utilisée pour transmettre des données de la fonction à Excel afin de mette à jour la valeur d’une cellule.
@@ -244,7 +244,7 @@ function incrementValue(increment, caller){
 
 Les fonctions asynchrones peuvent enregistrer des données dans des variables JavaScript globales. Lors d’appels ultérieurs, votre fonction personnalisée peut utiliser les valeurs enregistrées dans ces variables. L'état enregistré est utile lorsque les utilisateurs ajoutent la même fonction personnalisée à plusieurs cellules, car toutes les instances de la fonction peuvent partager l'état. Par exemple, vous pouvez enregistrer les données renvoyées par un appel à une ressource web pour éviter d’effectuer des appels supplémentaires à la même ressource web.
 
-Le code suivant illustre une implémentation de la fonction de flux précédente relative à la température qui enregistre l’état global. Tenez compte des informations suivantes :
+Le code suivant illustre une implémentation de la fonction de flux précédente relative à la température qui enregistre l’état global. Tenez compte des informations suivantes :
 
 - `refreshTemperature` est une fonction de flux qui lit la température d’un thermomètre spécifique à chaque seconde qui passe. Les nouvelles températures sont enregistrées dans la variable `savedTemperatures`, mais ne mettent pas directement à jour la valeur de la cellule. Elles ne doivent pas être appelées directement à partir d'une cellule de feuille de calcul, *de sorte qu'elles ne sont pas enregistrées dans le fichier JSON*.
 - `streamTemperature` met à jour les valeurs de température affichées dans la cellule chaque seconde et utilise une variable `savedTemperatures` comme source de données. Elles doivent être enregistrées dans le fichier JSON et nommées en lettres majuscules, `STREAMTEMPERATURE`.
