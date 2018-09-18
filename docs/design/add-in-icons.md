@@ -1,7 +1,7 @@
 # <a name="icons"></a>Icônes
 Les icônes sont la représentation visuelle d'un comportement ou d'un concept. Elles sont souvent utilisées pour ajouter du sens aux contrôles et aux commandes. Les objets visuels, qu'ils soient réalistes ou symboliques, permettent à l'utilisateur de naviguer à travers l'interface utilisateur de la même manière que les signes aident les utilisateurs à naviguer dans leur environnement. Ils doivent être simples, clairs et ne contenir que les détails nécessaires pour permettre aux clients d'analyser rapidement l'action qui se produira lorsqu'ils choisiront un contrôle.
 
-Les interfaces de ruban Office ont un style visuel standard. Cela garantit la cohérence et la familiarité de toutes les applications Office. Les instructions vous aideront à concevoir un ensemble d'actifs PNG pour votre solution qui s'intègre naturellement à Office.
+Les interfaces de ruban Office ont un style visuel standard. Cela garantit la cohérence et la familiarité de toutes les applications Office. Les instructions vous aideront à concevoir un ensemble de composants PNG pour votre solution qui s'intègrent naturellement à Office.
 
 De nombreux conteneurs HTML contiennent des contrôles avec iconographie. Utilisez la police personnalisée d’Office UI Fabric pour le rendu des icônes de style Office dans votre complément. La police d’icône de Fabric contient de nombreux glyphes pour les métaphores Office courantes que vous pouvez redimensionner, colorier et personnaliser selon vos besoins. Si vous avez un langage visuel existant avec votre propre jeu d’icônes, n’hésitez pas à l’utiliser dans vos canevas HTML. Créer la continuité avec votre marque avec un jeu d’icônes standard est une partie importante de tout langage de création. Soyez prudent pour éviter de créer de la confusion pour les clients en conflit avec les métaphores Office.
 
@@ -26,7 +26,7 @@ L’image suivante montre les icônes qui appliquent les principes de conception
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
-Suivez ces instructions lorsque vous créez vos icônes : 
+Suivez ces instructions lorsque vous créez vos icônes : 
 
 |À faire|À ne pas faire|
 |:---|:---|
@@ -36,20 +36,20 @@ Suivez ces instructions lorsque vous créez vos icônes :
 |Redessinez vos icônes pour les rendre petites ou plus grandes. Prenez le temps de redessiner les découpes, les coins et les bords arrondis pour agrandir la clarté de la ligne. |Ne redimensionnez pas vos icônes en les rétrécissant ou en les agrandissant. Cela peut entraîner une mauvaise qualité visuelle et des actions imprécises. Les icônes complexes créées à une plus grande taille peuvent perdre de leur clarté si elles sont redimensionnées pour être plus petites sans redessiner. |
 |Utilisez un remplissage blanc pour améliorer l’accessibilité. La plupart des objets dans les icônes nécessitent un arrière-plan blanc pour être lisibles sur les thèmes de l’interface utilisateur d’Office et en mode contraste élevé.  ||
 |Utilisez le format PNG avec un arrière-plan transparent. ||
-|Évitez du contenu de localisation dans les icônes, y compris les caractères typographiques, les indications de paragraphes en drapeau et les points d’interrogation. ||
+|Évitez le contenu localisable dans les icônes, y compris les caractères typographiques, les indications de paragraphes en drapeau et les points d’interrogation. ||
 
 
 
 ## <a name="icon-size-recommendations-and-requirements"></a>Configuration requise et recommandations sur la taille des icônes
 
-Les icônes du bureau Office 2016 sont des images bitmap. Différentes tailles apparaissent en fonction du paramètre PPP de l’utilisateur et du mode tactile. Incluez les huit tailles prises en charge pour créer la meilleure expérience possible dans tous les contextes et résolutions pris en charge. Voici les tailles prises en charge - trois sont obligatoires :
+Les icônes de Office bureau sont des images bitmap. Différentes tailles apparaîtront en fonction du paramètre PPP de l’utilisateur et du mode tactile. Incluez les huit tailles prises en charge pour créer la meilleure expérience possible dans tous les contextes et résolutions pris en charge. Voici les tailles prises en charge - trois sont obligatoires :
 
 - 16 px (obligatoire)
-- 20 px
-- 24 px
+- 20 px
+- 24 px
 - 32 px (obligatoire)
-- 40 px
-- 48 px
+- 40 px
+- 48 px
 - 64 px (recommandé, meilleur choix pour Mac)
 - 80 px (obligatoire)  
 
@@ -136,11 +136,11 @@ Les icônes Office ont une palette de couleurs limitée. Utilisez les couleurs r
 |TOUT gris clair|179, 179, 179|#B3B3B3| ![Image couleur tout en gris clair](../images/color-light-gray-all.png) |Toutes les tailles|
 |Gris foncé 16|114, 114, 114|#727272| ![Image couleur gris foncé 16](../images/color-dark-gray-16.png) |16 et moins|
 |Gris moyen 16|144, 144, 144|#909090| ![Image couleur gris moyen 16](../images/color-medium-gray-16.png) |16 et moins|
-|Bleu 32|77, 130, 184|#4d82B8| ![Image couleur bleu 32](../images/color-blue-32.png) |32 et plus|
+|Bleu 32|77, 130, 184|#4D82B8| ![Image couleur bleu 32](../images/color-blue-32.png) |32 et plus|
 |Bleu 16|74, 125, 177|#4A7DB1| ![Image couleur bleu 16](../images/color-blue-16.png) |16 et moins|
 |TOUT jaune|234, 194, 130|#EAC282| ![Image couleur tout en jaune](../images/color-yellow-all.png) |Toutes les tailles|
-|Orange 32|231, 142, 70|#E78E46| ![Image couleur orange 32](../images/color-orange-32.png) |32 et plus|
-|Orange 16|227, 142, 70|#E3751C| ![Image couleur orange 16](../images/color-orange-16.png) |16 et moins|
+|Orange 32|231, 142, 70|#E78E46| ![Image couleur orange 32](../images/color-orange-32.png) |32 et plus|
+|Orange 16|227, 142, 70|#E3751C| ![Image couleur orange 16](../images/color-orange-16.png) |16 et moins|
 |TOUT rose|230, 132, 151|#E68497| ![Image couleur tout en rose](../images/color-pink-all.png) |Toutes les tailles|
 |Vert 32|118, 167, 151|#76A797| ![Image couleur vert 32](../images/color-green-32.png) |32 et plus|
 |Vert 16|104, 164, 144|#68A490| ![Image couleur vert 16](../images/color-green-16.png) |16 et moins|

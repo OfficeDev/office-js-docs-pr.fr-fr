@@ -2,12 +2,12 @@
 title: Ajouter la validation des données aux plages Excel
 description: ''
 ms.date: 04/13/2018
-ms.openlocfilehash: af965df4a1aece5b7f8d5ea89664519b576a4850
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: fd40cab045da0472a060752651a27f0b26028b4b
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925310"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944876"
 ---
 # <a name="add-data-validation-to-excel-ranges-preview"></a>Ajouter la validation des données aux plages Excel (préversion)
 
@@ -38,11 +38,11 @@ La propriété `Range.dataValidation`, qui prend un objet de validation de donn�
 
 ### <a name="creating-validation-rules"></a>Créer des règles de validation
 
-Pour ajouter une validation de données à une plage, votre code doit définir la propriété `rule` de l'objet `DataValidation` dans `Range.dataValidation`. Cela prend un objet [DataValidationRule](https://dev.office.com/reference/add-ins/excel/datavalidationrule) qui a sept propriétés facultatives. *Une seule de ces propriétés peut être présente dans un objet `DataValidationRule`.* La propriété que vous incluez détermine le type de validation.
+Pour ajouter une validation de données à une plage, votre code doit définir la propriété `rule` de l'objet `DataValidation` dans `Range.dataValidation`. Cela prend un objet [DataValidationRule](https://docs.microsoft.com/javascript/api/excel?view=office-js) qui a sept propriétés facultatives. *Une seule de ces propriétés peut être présente dans un objet `DataValidationRule`.* La propriété que vous incluez détermine le type de validation.
 
 #### <a name="basic-and-datetime-validation-rule-types"></a>Types de règles de validation de base et DateTime
 
-Les trois premières propriétés `DataValidationRule` (c.-à-d. les types de règles de validation) prennent un objet [BasicDataValidation](https://docs.microsoft.com/javascript/api/excel/excel.basicdatavalidation) comme leur valeur.
+Les trois premières propriétés `DataValidationRule` (c.-à-d. les types de règles de validation) prennent un objet [BasicDataValidation](https://docs.microsoft.com/javascript/api/excel?view=office-js) comme leur valeur.
 
 - `wholeNumber` – Nécessite un nombre entier en plus de toute autre validation spécifiée par l'objet `BasicDataValidation`.
 - `decimal` - Nécessite un nombre décimal en plus de toute autre validation spécifiée par l'objet `BasicDataValidation`.
@@ -116,7 +116,7 @@ Excel.run(function (context) {
 
 #### <a name="list-validation-rule-type"></a>Type de règle de validation de liste
 
-Utilisez la propriété `list` dans l'objet `DataValidationRule` pour spécifier que les seules valeurs valides sont celles d'une liste finie. comme dans l’exemple suivant. Tenez compte des informations suivantes :
+Utilisez la propriété `list` dans l'objet `DataValidationRule` pour spécifier que les seules valeurs valides sont celles d'une liste finie. Voici un exemple. Tenez compte des informations suivantes :
 
 - Il suppose qu'il existe une feuille de calcul nommée "Noms" et que les valeurs de la plage "A1: A3" sont des noms.
 - La propriété `source` spécifie la liste des valeurs valides. La plage avec les noms lui a été affectée. Vous pouvez également affecter une liste délimitée par des virgules, comme par exemple : « Sue, Ricky, Liz ». 
@@ -141,11 +141,11 @@ Excel.run(function (context) {
 
 #### <a name="custom-validation-rule-type"></a>Type de règle de validation personnalisée
 
-Utilisez la propriété `custom` dans l'objet `DataValidationRule` pour spécifier une formule de validation personnalisée. comme dans l’exemple suivant. Tenez compte des informations suivantes :
+Utilisez la propriété `custom` dans l'objet `DataValidationRule` pour spécifier une formule de validation personnalisée. Voici un exemple. Tenez compte des informations suivantes :
 
 - Il suppose qu'il y a un tableau à deux colonnes avec des colonnes **Nom de l'athlète** et **Commentaires** dans les colonnes A et B de la feuille de calcul.
 - Pour réduire la verbosité dans la colonne **Commentaires,** il rend invalides les données qui incluent le nom de l'athlète.
-- `SEARCH(A2,B2)` renvoie la position de départ, de la chaîne dans B2, de la chaîne dans A2. Si A2 n'est pas contenu dans B2, il ne renvoie pas de nombre. `ISNUMBER()` retourne un booléen. La propriété `formula` indique donc que les données valides pour la colonne **Commentaire** sont les données qui n'incluent pas la chaîne présente dans la colonne **Nom de l'athlète**.
+- `SEARCH(A2,B2)` renvoie la position de départ, de la chaîne dans B2, de la chaîne dans A2. Si A2 n'est pas contenu dans B2, il ne renvoie pas de nombre. `ISNUMBER()` renvoie un booléen. La propriété `formula` indique donc que les données valides pour la colonne **Commentaire** sont les données qui n'incluent pas la chaîne présente dans la colonne **Nom de l'athlète**.
 
 ```js
 Excel.run(function (context) {

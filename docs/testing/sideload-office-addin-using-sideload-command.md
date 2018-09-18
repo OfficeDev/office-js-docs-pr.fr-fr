@@ -2,18 +2,18 @@
 title: Charger une version test des compléments Office à l'aide de la commande de chargement indépendant
 description: ''
 ms.date: 07/24/2018
-ms.openlocfilehash: 3aacfdb09f362ea10ba0e2393caca335fe4c04c6
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 1ab0277493f2899adb479c2f24b1635a881af3cc
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925100"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944040"
 ---
 # <a name="sideload-office-add-ins-for-testing-using-the-sideload-command"></a>Chargez une version test des compléments Office à l'aide de la **commande de chargement indépendant**
  >[!NOTE]
->La méthode « npm run sideload » fonctionne uniquement pour les compléments Excel, Word et PowerPoint qui s’exécutent sur Windows ; et uniquement pour les projets de complément créés avec l’outil [**Yo Office**](https://github.com/OfficeDev/generator-office) et disposant d’un `sideload` script dans la section `scripts` du fichier package.json. (Les projets créés avec des versions antérieures de **Yo Office** ne disposent pas de ce script.) Si votre projet a été créé avec Visual Studio ou ne dispose pas du script sideload, vous pouvez en charger la version test sur Windows en suivant la méthode décrite dans [Chargement d’une version test de complément Office à partir d’un partage réseau](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
+>La méthode « npm exécuter sideload » ne fonctionne que pour les compléments Excel, Word et PowerPoint qui s’exécutent sur Windows ; et uniquement pour les projets de compléments qui ont été créés avec l'outil [**yo office**](https://github.com/OfficeDev/generator-office) et qui ont un script `sideload` dans la section `scripts` du fichier package.json. (Les projets qui ont été créées avec les versions antérieures de **yo office** n’ont pas non plus ce script.) Si votre projet a été créé avec Visual Studio ou n’a pas le script sideload, vous pouvez le charger en version test sur Windows avec la méthode décrite dans [Chargement de la version test d'un complément Office depuis un partage réseau](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
 >
-> Si vous ne testez pas un complément Word, Excel ou PowerPoint sous Windows, consultez une des rubriques suivantes pour charger la version test de votre complément :
+> Si ce n'est pas un complément Word, Excel ou PowerPoint sous Windows que vous testez, consultez une des rubriques suivantes pour charger la version test de votre complément :
 > 
 > - [Chargement de version test des compléments Office dans Office Online](sideload-office-add-ins-for-testing.md)
 > - [Chargement de version test des compléments Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md)

@@ -2,12 +2,12 @@
 title: Chargement de version test de compléments Office
 description: ''
 ms.date: 01/25/2018
-ms.openlocfilehash: 94803a2c610fc869aefb6c77d53965981778e62e
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 0f11544566b998b9dd364ad25a58b256383192a4
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925121"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23943970"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>Chargement de version test de compléments Office
 
@@ -62,7 +62,7 @@ La vidéo suivante vous guide à travers la procédure de chargement indépendan
 ## <a name="sideload-your-add-in"></a>Charger votre complément
 
 
-1. Placez le fichier manifeste d’un complément en cours de test dans le catalogue de dossiers partagés. Notez que vous déployez l’application web sur un serveur web. Veillez à spécifier l’URL dans l’élément **SourceLocation** du fichier manifeste.
+1. Placez le fichier manifeste XML d’un complément en cours de test dans le catalogue de dossiers partagés. Notez que vous déployez l’application web elle-même sur un serveur web. Veillez à spécifier l’URL dans l’élément **SourceLocation** du fichier manifeste.
 
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)]

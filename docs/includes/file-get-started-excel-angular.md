@@ -57,7 +57,7 @@ Le fichier manifeste d’un complément définit ses paramètres et ses fonction
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-Pour ce démarrage rapide, vous pouvez utiliser les certificats fournis par le **générateur de compléments Office Yeoman**. Vous avez déjà installé le générateur globalement (comme demandé dans la section **Conditions préalables** de ce démarrage rapide). Vous n’avez donc qu’à copier les certificats situés dans l’emplacement d’installation global dans le dossier de votre application. La procédure suivante explique comment effectuer cette opération.
+Pour ce démarrage rapide, vous pouvez utiliser les certificats fournis par le **générateur de compléments Office Yeoman**. Vous avez déjà globalement installé le générateur (comme demandé dans la section **Conditions préalables** de ce démarrage rapide). Vous n’avez donc qu’à copier les certificats situés dans l’emplacement d’installation global, dans le dossier de votre application. La procédure suivante explique comment effectuer cette procédure.
 
 1. À partir du terminal, exécutez la commande suivante pour identifier le dossier où les bibliothèques **npm** globales sont installées :
 
@@ -231,7 +231,7 @@ Pour ce démarrage rapide, vous pouvez utiliser les certificats fournis par le *
    
 2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
-    ![Bouton Complément Excel](../images/excel-quickstart-addin-2a.png)
+    ![Bouton de Complément Excel](../images/excel-quickstart-addin-2a.png)
 
 3. Sélectionnez une plage de cellules dans la feuille de calcul.
 
@@ -250,5 +250,5 @@ Félicitations, vous avez créé un complément Excel à l’aide d’Angular ! 
 
 * [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial-create-table.md)
 * [Concepts de base de l’API JavaScript pour Excel](../excel/excel-add-ins-core-concepts.md)
-* [Exemples de code pour les compléments Excel](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Référence de l’API JavaScript pour Excel](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
+* [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [Référence de l’API JavaScript pour Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)

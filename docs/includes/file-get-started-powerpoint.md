@@ -352,7 +352,7 @@ Cet article décrit le processus de création d’un complément PowerPoint à l
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations, vous avez créé un complément PowerPoint ! Ensuite, découvrez aussi d'autres capacités d’un complément PowerPoint et générez-en un plus complexe en suivant le didacticiel sur les compléments PowerPoint.
+Félicitations, vous avez créé un complément PowerPoint ! Ensuite, découvrez les fonctionnalités d’un complément PowerPoint et créez-en un plus complexe en suivant le didacticiel sur les compléments PowerPoint.
 
 > [!div class="nextstepaction"]
 > [Didacticiel sur les compléments PowerPoint](../tutorials/powerpoint-tutorial.yml)

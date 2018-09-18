@@ -2,12 +2,12 @@
 title: Office UI Fabric dans des compléments Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: b573f720ebe4f90f7d4dbfdb05693871b93a2258
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 7b1e4a9c377c9a60195a51115d7f275603f1ca5a
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925191"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944033"
 ---
 # <a name="office-ui-fabric-in-office-add-ins"></a>Office UI Fabric dans des compléments Office 
 
@@ -36,9 +36,9 @@ Pour commencer à utiliser Fabric Core :
     <i class="ms-Icon ms-font-xl ms-Icon--Table ms-fontColor-themePrimary"></i>
     ```
 
-    Pour rechercher des icônes supplémentaires disponibles dans Office UI Fabric, utilisez la fonctionnalité de recherche de la page [Icônes](https://dev.office.com/fabric#/styles/icons). Lorsque vous trouvez une icône à utiliser dans votre complément, veillez à précéder le nom de l’icône de `ms-Icon--`. 
+    Pour rechercher des icônes supplémentaires disponibles dans Office UI Fabric, utilisez la fonctionnalité de recherche de la page [Icônes](https://developer.microsoft.com/fabric#/styles/icons). Lorsque vous trouvez une icône à utiliser dans votre complément, veillez à précéder le nom de l’icône de `ms-Icon--`. 
 
-    Pour plus d’informations sur les tailles de police et les couleurs disponibles dans Office UI Fabric, voir [Typographie](https://dev.office.com/fabric#/styles/typography) et [Couleurs](https://dev.office.com/fabric#/styles/colors).
+    Pour plus d’informations sur les tailles de police et les couleurs disponibles dans Office UI Fabric, voir [Typographie](https://developer.microsoft.com/fabric#/styles/typography) et [Couleurs](https://developer.microsoft.com/fabric#/styles/colors).
  
 ## <a name="use-fabric-components"></a>Utiliser les composants Fabric 
 Fabric fournit une variété de composants UX que vous pouvez utiliser pour créer votre complément, y compris les types de composants suivants :
@@ -49,7 +49,7 @@ Fabric fournit une variété de composants UX que vous pouvez utiliser pour cré
 
 Tous les composants ne sont pas recommandés pour une dans les compléments. Voici une liste des composants Fabric React UX que nous vous recommandons d'utiliser dans un complément :
 
-- [Barre de navigation](https://developer.microsoft.com/fabric#/components/breadcrumb)
+- [Breadcrumb](https://developer.microsoft.com/fabric#/components/breadcrumb)
 - [Bouton](https://developer.microsoft.com/fabric#/components/button)
 - [Case à cocher](https://developer.microsoft.com/fabric#/components/checkbox)
 - [ChoiceGroup](https://developer.microsoft.com/fabric#/components/choicegroup)

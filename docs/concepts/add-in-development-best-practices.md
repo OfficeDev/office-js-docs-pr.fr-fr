@@ -2,12 +2,12 @@
 title: Meilleures pratiques en matière de développement de compléments Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 2ad5cf1e4c34fdbae827cdd115c57313f6faeda9
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: efb637cfd31f95688d6b0db0e17b24fefe51c2fc
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925478"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944647"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Meilleures pratiques en matière de développement de compléments Office
 
@@ -81,7 +81,7 @@ Pour les modèles appliquant des principes de conception que vous pouvez utilise
 
 ### <a name="optimize-for-touch"></a>Optimisation de la fonction tactile
 
-- Utilisez la propriété [Context.touchEnabled](https://dev.office.com/reference/add-ins/shared/office.context.touchenabled) pour déterminer si l’application hôte sur laquelle votre complément est exécuté est compatible avec la fonction tactile.
+- Utilisez la propriété [Context.touchEnabled](https://docs.microsoft.com/javascript/api/office/office.context?view=office-js) pour déterminer si l’application hôte sur laquelle votre complément est exécuté est compatible avec la fonction tactile.
 
   > [!NOTE]
   > Cette propriété n’est pas prise en charge dans Outlook.
@@ -114,9 +114,9 @@ Pour les modèles appliquant des principes de conception que vous pouvez utilise
 
   |**Classe d’interaction**|**Cible**|**Limite supérieure**|**Perception humaine**|
   |:-----|:-----|:-----|:-----|
-  |Instantanée|<= 50 ms|100 ms|Aucun délai notable.|
-  |Rapide|50 – 100 ms|200 ms|Délai notable minime. Aucun commentaire n’est nécessaire.|
-  |Normale|100 – 300 ms|500 ms|L’opération va assez vite, sans pour autant pouvoir être qualifiée de rapide. Aucun commentaire n’est nécessaire.|
+  |Instantanée|<= 50 ms|100 ms|Aucun délai notable.|
+  |Rapide|50 – 100 ms|200 ms|Délai notable minime. Aucun commentaire n’est nécessaire.|
+  |Normale|100 – 300 ms|500 ms|L’opération va assez vite, sans pour autant pouvoir être qualifiée de rapide. Aucun commentaire n’est nécessaire.|
   |Réactive|300 – 500 ms|1 seconde|L’opération n’est pas rapide, mais le système donne l’impression de répondre. Aucun commentaire n’est nécessaire.|
   |Continue|> 500 ms|5 secondes|Attente moyenne, le système n’a plus l’air de répondre. Un commentaire peut-être nécessaire.|
   |Captive|> 500 ms|10 secondes|Long, mais pas assez pour faire autre chose. Un commentaire peut-être nécessaire.|

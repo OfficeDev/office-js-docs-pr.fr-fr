@@ -2,12 +2,12 @@
 title: Manifeste XML des compléments Office
 description: ''
 ms.date: 02/09/2018
-ms.openlocfilehash: 449c6ae3f98383ddff5f866cc47d19ea82ea89c2
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 5c24f0c773195ee7b2ed5c6fc9eccfd5840e2651
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925401"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944931"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifeste XML des compléments Office
 
@@ -63,58 +63,58 @@ _\*Ajouté dans le schéma de manifeste du complément Office version 1.1._
 
 <!-- Links for above table -->
 
-[officeapp]: https://dev.office.com/reference/add-ins/manifest/officeapp
-[id]: https://dev.office.com/reference/add-ins/manifest/id
-[version]: https://dev.office.com/reference/add-ins/manifest/version
-[providername]: https://dev.office.com/reference/add-ins/manifest/providername
-[defaultlocale]: https://dev.office.com/reference/add-ins/manifest/defaultlocale
-[displayname]: https://dev.office.com/reference/add-ins/manifest/displayname
-[description]: https://dev.office.com/reference/add-ins/manifest/description
-[iconurl]: https://dev.office.com/reference/add-ins/manifest/iconurl
-[highresolutioniconurl]: https://dev.office.com/reference/add-ins/manifest/highresolutioniconurl
-[defaultsettings (contentapp)]: https://dev.office.com/reference/add-ins/manifest/defaultsettings
-[defaultsettings (taskpaneapp)]: https://dev.office.com/reference/add-ins/manifest/defaultsettings
-[sourcelocation (contentapp)]: https://dev.office.com/reference/add-ins/manifest/sourcelocation
-[sourcelocation (taskpaneapp)]: https://dev.office.com/reference/add-ins/manifest/sourcelocation
+[officeapp]: https://docs.microsoft.com/javascript/office/manifest/officeapp?view=office-js
+[id]: https://docs.microsoft.com/javascript/office/manifest/id
+[version]: https://docs.microsoft.com/javascript/office/manifest/version
+[providername]: https://docs.microsoft.com/javascript/office/manifest/providername
+[defaultlocale]: https://docs.microsoft.com/javascript/office/manifest/defaultlocale
+[displayname]: https://docs.microsoft.com/javascript/office/manifest/displayname
+[description]: https://docs.microsoft.com/javascript/office/manifest/description
+[iconurl]: https://docs.microsoft.com/javascript/office/manifest/iconurl
+[highresolutioniconurl]: https://docs.microsoft.com/javascript/office/manifest/highresolutioniconurl
+[defaultsettings (contentapp)]: https://docs.microsoft.com/javascript/office/manifest/defaultsettings
+[defaultsettings (taskpaneapp)]: https://docs.microsoft.com/javascript/office/manifest/defaultsettings
+[sourcelocation (contentapp)]: https://docs.microsoft.com/javascript/office/manifest/sourcelocation
+[sourcelocation (taskpaneapp)]: https://docs.microsoft.com/javascript/office/manifest/sourcelocation
 [desktopsettings]: https://msdn.microsoft.com/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c(Office.15).aspx
 [sourcelocation (mailapp)]: http://msdn.microsoft.com/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx
-[permissions (contentapp)]: https://dev.office.com/reference/add-ins/manifest/permissions
-[permissions (taskpaneapp)]: https://dev.office.com/reference/add-ins/manifest/permissions
-[permissions (mailapp)]: https://dev.office.com/reference/add-ins/manifest/permissions
-[rule (rulecollection)]: https://dev.office.com/reference/add-ins/manifest/rule
-[rule (mailapp)]: https://dev.office.com/reference/add-ins/manifest/rule
-[requirements (mailapp)*]: https://dev.office.com/reference/add-ins/manifest/requirements
-[set*]: https://dev.office.com/reference/add-ins/manifest/set
-[sets (mailapprequirements)*]: https://dev.office.com/reference/add-ins/manifest/sets
-[form*]: https://dev.office.com/reference/add-ins/manifest/form
-[formsettings*]: https://dev.office.com/reference/add-ins/manifest/formsettings
-[sets (requirements)*]: https://dev.office.com/reference/add-ins/manifest/sets
-[hosts*]: https://dev.office.com/reference/add-ins/manifest/hosts
+[permissions (contentapp)]: https://docs.microsoft.com/javascript/office/manifest/permissions
+[permissions (taskpaneapp)]: https://docs.microsoft.com/javascript/office/manifest/permissions
+[permissions (mailapp)]: https://docs.microsoft.com/javascript/office/manifest/permissions
+[rule (rulecollection)]: https://docs.microsoft.com/javascript/office/manifest/rule
+[rule (mailapp)]: https://docs.microsoft.com/javascript/office/manifest/rule
+[requirements (mailapp)*]: https://docs.microsoft.com/javascript/office/manifest/requirements
+[set*]: https://docs.microsoft.com/javascript/office/manifest/set
+[sets (mailapprequirements)*]: https://docs.microsoft.com/javascript/office/manifest/sets
+[form*]: https://docs.microsoft.com/javascript/office/manifest/form
+[formsettings*]: https://docs.microsoft.com/javascript/office/manifest/formsettings
+[sets (requirements)*]: https://docs.microsoft.com/javascript/office/manifest/sets
+[hôtes*]: https://docs.microsoft.com/javascript/office/manifest/hosts
 
 ## <a name="hosting-requirements"></a>Configuration requise pour l’hébergement
 
-Tous les URI des images, tels que ceux utilisés pour les [commandes de complément][], doivent prendre en charge la mise en cache. Le serveur qui héberge l’image ne doit pas renvoyer d’en-tête `Cache-Control` spécifiant `no-cache`, `no-store` ou des options similaires dans la réponse HTTP.
+Toutes les images des URI, telles que celles utilisées pour les [commandes du complément][], doivent prendre en charge la mise en cache. Le serveur qui héberge l’image ne doit pas renvoyer une `Cache-Control` en-tête spécifiant `no-cache`, `no-store`, ou des options similaires dans la réponse HTTP.
 
-Toutes les URL, telles que les emplacements des fichiers source spécifiés dans l’élément [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation), doivent être **sécurisées par une protection SSL (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
+Toutes les URL, telles que les emplacements des fichiers source spécifiés dans l’élément [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation), doivent être **sécurisées par une protection SSL (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
 
 ## <a name="best-practices-for-submitting-to-appsource"></a>Bonnes pratiques pour l’envoi dans AppSource
 
 Vérifiez que l’ID du complément est un GUID valide et unique. Vous trouverez des outils de génération de GUID sur Internet pour vous aider à créer un GUID unique.
 
-Les compléments envoyés à AppSource doivent également inclure l’élément [SupportUrl](https://dev.office.com/reference/add-ins/manifest/supporturl). Pour plus d’informations, reportez-vous à [Stratégies de validation pour les applications et les compléments envoyés à AppSource](https://docs.microsoft.com/office/dev/store/validation-policies).
+Les compléments envoyés à AppSource doivent également inclure l’élément [SupportUrl](https://docs.microsoft.com/javascript/office/manifest/supporturl). Pour plus d’informations, reportez-vous à [Stratégies de validation pour les applications et les compléments envoyés à AppSource](https://docs.microsoft.com/office/dev/store/validation-policies).
 
-Utilisez uniquement l’élément [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) pour spécifier des domaines différents de celui spécifié dans l’élément [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) pour les scénarios d’authentification.
+Utilisez uniquement l’élément [AppDomains](https://docs.microsoft.com/javascript/office/manifest/appdomains) pour spécifier des domaines différents de celui spécifié dans l’élément [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation) pour les scénarios d’authentification.
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>Spécifier les domaines que vous souhaitez ouvrir dans la fenêtre de complément
 
-Lors de l'exécution dans Office Online, votre volet des tâches peut être redirigé vers n'importe quelle URL. Toutefois, sur une plate-forme bureau, si votre complément tente d’accéder à une URL située dans un autre domaine que celui qui héberge la page initiale (comme indiqué dans l’élément [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) du fichier manifeste), cette URL s’ouvre dans une nouvelle fenêtre de navigateur en dehors du volet de complément de l’application hôte Office.
+Lors de l'exécution dans Office Online, votre volet des tâches peut être redirigé vers n'importe quelle URL. Toutefois, sur une plate-forme bureau, si votre complément tente d’accéder à une URL située dans un autre domaine que celui qui héberge la page initiale (comme indiqué dans l’élément [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation) du fichier manifeste), cette URL s’ouvre dans une nouvelle fenêtre de navigateur en dehors du volet de complément de l’application hôte Office.
 
-Pour remplacer ce comportement (Office sur bureau), spécifiez chaque domaine que vous voulez ouvrir dans la fenêtre de complément sur la liste des domaines spécifiés dans l’élément [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) du fichier manifeste. Si le complément tente d'accéder à une URL dans un domaine figurant dans la liste, il s'ouvre dans le volet des tâches dans Office sur bureau et Office Online. S’il tente d’accéder à une URL qui ne figure pas dans la liste, alors cette URL s’ouvre dans une nouvelle fenêtre de navigateur (en dehors du volet du complément).
+Pour corriger ce comportement (bureau Office), spécifiez chaque domaine que vous voulez ouvrir dans la fenêtre de complément sur la liste des domaines spécifiés dans l’élément [AppDomains](https://docs.microsoft.com/javascript/office/manifest/appdomains) du fichier manifeste. Si le complément tente d'accéder à une URL dans un domaine figurant dans la liste, il s'ouvre dans le volet des tâches dans Office sur bureau et Office Online. S’il tente d’accéder à une URL qui ne figure pas dans la liste, alors cette URL s’ouvre dans une nouvelle fenêtre de navigateur (en dehors du volet du complément).
 
 > [!NOTE]
 > Ce comportement s'applique uniquement au volet racine du complément. Si une iframe est incorporée dans la page du complément, l'iframe peut être redirigé vers n'importe quelle URL, qu'elle soit répertoriée dans **AppDomains**, ou pas, même dans Office pour bureau.
 
-L’exemple de manifeste XML suivant héberge sa page de complément principale dans le domaine `https://www.contoso.com` comme indiqué dans l’élément **SourceLocation**. Il indique également le domaine `https://www.northwindtraders.com` dans un élément [AppDomain](https://dev.office.com/reference/add-ins/manifest/appdomain) au sein de la liste d’éléments **AppDomains**. Si le complément accède à une page du domaine www.northwindtraders.com, cette page s’ouvre dans le volet du complément, même avec Office version bureau.
+L’exemple de manifeste XML suivant héberge sa page de complément principale dans le domaine `https://www.contoso.com` comme indiqué dans l’élément **SourceLocation**. Il indique également le domaine `https://www.northwindtraders.com` dans un élément [AppDomain](https://docs.microsoft.com/javascript/office/manifest/appdomain) au sein de la liste d’éléments **AppDomains**. Si le complément accède à une page du domaine www.northwindtraders.com, cette page s’ouvre dans le volet du complément, même avec Office version bureau.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>

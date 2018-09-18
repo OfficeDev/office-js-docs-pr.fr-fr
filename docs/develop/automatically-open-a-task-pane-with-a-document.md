@@ -2,12 +2,12 @@
 title: Ouvrir automatiquement un volet Office avec un document
 description: ''
 ms.date: 05/02/2018
-ms.openlocfilehash: 4f3d677619610208b585df72dd1764be39fd9e35
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: d624a34e5eb7c23a885aec42c8ed14914f413578
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925352"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944791"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Ouvrir automatiquement un volet Office avec un document
 
@@ -56,7 +56,7 @@ Pour implémenter la fonctionnalité d’ouverture automatique, procédez comme 
 > Le volet des tâches à ouvrir automatiquement s’ouvre uniquement si le complément est déjà installé sur l’appareil de l’utilisateur. Si le complément n’est pas installé lorsque l’utilisateur ouvre un document, la fonctionnalité d’ouverture automatique ne fonctionnera pas et le paramètre sera ignoré. Si vous avez également besoin que le complément soit distribué avec le document, vous devez définir la propriété de visibilité sur 1. Cette opération peut uniquement être effectuée à l’aide d’OpenXML. Un exemple est fourni plus loin dans cet article. 
 
 ### <a name="step-1-specify-the-task-pane-to-open"></a>Étape 1 : Spécifier le volet des tâches à ouvrir
-Pour spécifier le volet de tâches à ouvrir automatiquement, définissez la valeur [TaskpaneId](https://dev.office.com/reference/add-ins/manifest/action#taskpaneid) sur **Office.AutoShowTaskpaneWithDocument**. Vous pouvez uniquement définir cette valeur sur un seul volet de tâches. Si vous définissez cette valeur sur plusieurs volets de tâches, la première occurrence de la valeur sera reconnue et les autres seront ignorées. 
+Pour spécifier le volet de tâches à ouvrir automatiquement, définissez la valeur [TaskpaneId](https://docs.microsoft.com/javascript/office/manifest/action?view=office-js#taskpaneid) sur **Office.AutoShowTaskpaneWithDocument**. Vous pouvez uniquement définir cette valeur sur un seul volet de tâches. Si vous définissez cette valeur sur plusieurs volets de tâches, la première occurrence de la valeur sera reconnue et les autres seront ignorées. 
 
 L’exemple suivant illustre la valeur TaskPaneId définie sur Office.AutoShowTaskpaneWithDocument.
           
@@ -73,7 +73,7 @@ Vous pouvez baliser le document pour déclencher la fonctionnalité d’ouvertur
 
 
 #### <a name="tag-the-document-on-the-client-side"></a>Baliser le document côté client
-Utilisez la méthode Office.js [settings.set](https://dev.office.com/reference/add-ins/shared/settings.set) pour définir **Office.AutoShowTaskpaneWithDocument** sur **true**, comme illustré dans l’exemple suivant.   
+Utilisez la méthode Office.js [settings.set](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js) pour définir **Office.AutoShowTaskpaneWithDocument** sur **true**, comme illustré dans l’exemple suivant.   
 
 ```js
 Office.context.document.settings.set("Office.AutoShowTaskpaneWithDocument", true);
@@ -140,7 +140,7 @@ Définir `visibility` sur « 1 » est un bon choix lorsque le complément et le 
 Une méthode simple d’écriture du code XML consiste à exécuter d’abord votre complément, puis à [baliser le document côté client](#tag-the-document-on-the-client-side) pour écrire la valeur, à enregistrer le document et à inspecter le code XML généré. Office détectera et fournira les valeurs d’attribut appropriées. Vous pouvez également utiliser l’outil de productivité [Kit de développement logiciel Open XML 2.5](https://www.microsoft.com/download/details.aspx?id=30425) pour générer le code C# pour ajouter par programme le balisage en fonction du XML vous générez.
 
 ## <a name="test-and-verify-opening-taskpanes"></a>Tester et vérifier les tâches d'ouverture
-Vous pouvez déployer une version d’évaluation de votre complément qui ouvre automatiquement un volet Office à l’aide du Déploiement Centralisé via le centre d’administration Office 365. L’exemple suivant montre comment les compléments sont insérés à partir du catalogue de Déploiement Centralisé à l’aide de la version magasin de EXCatalog.
+Vous pouvez déployer une version de test de votre complément qui ouvrira automatiquement un volet de tâches à l'aide du déploiement centralisé via le Centre d'administration Office 365. L'exemple suivant montre comment les compléments sont insérés à partir du catalogue de déploiement centralisé à l'aide de la version magasin du EXCatalog.
 
 ```xml
 <we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="{52811C31-4593-43B8-A697-EB873422D156}">

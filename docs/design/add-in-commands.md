@@ -2,12 +2,12 @@
 title: Commandes de complément pour Excel, Word et PowerPoint
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 621c3e991d6ec4930cd11e39e19cca1c8a1fa3d8
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 101c34748f0eba5502caeab63ecbc00992ac548e
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925198"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944515"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Commandes de complément pour Excel, Word et PowerPoint
 
@@ -45,9 +45,10 @@ Les fonctionnalités de commande suivantes sont actuellement prises en charge.
 **Actions**
 
 - ShowTaskpane - Affiche un ou plusieurs volets où sont chargées des pages HTML personnalisées.
-- ExecuteFunction - Charge une page HTML invisible, puis y exécute une fonction JavaScript. Pour afficher l’interface utilisateur au sein de votre fonction (par exemple, erreurs, avancement, entrées supplémentaires), vous pouvez utiliser l’API [displayDialog](http://dev.office.com/reference/add-ins/shared/officeui).  
+- ExecuteFunction - Charge une page HTML invisible, puis y exécute une fonction JavaScript. Pour afficher l’interface utilisateur au sein de votre fonction (par exemple, erreurs, avancement, entrées supplémentaires), vous pouvez utiliser l’API [displayDialog](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js).  
 
 ## <a name="supported-platforms"></a>Plateformes prises en charge
+
 Les commandes de complément sont actuellement prises en charge sur les plateformes suivantes :
 
 - Office pour bureau Windows 2016 (build 16.0.6769+)
@@ -84,7 +85,7 @@ Appliquez les meilleures pratiques suivantes lorsque vous développez des comman
 
 La meilleure façon de commencer à utiliser des commandes de complément consiste à consulter des [exemples de commandes de complément Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) sur GitHub.
 
-Pour plus d’informations sur la spécification des commandes de complément dans votre manifeste, reportez-vous à l’article expliquant comment [créer des commandes de complément dans votre manifeste](../develop/create-addin-commands.md) et au contenu de référence sur [VersionOverrides](https://dev.office.com/reference/add-ins/manifest/versionoverrides).
+Pour plus d’informations sur la spécification des commandes de complément dans votre manifeste, reportez-vous à l’article expliquant comment [créer des commandes de complément dans votre manifeste](../develop/create-addin-commands.md) et au contenu de référence sur [VersionOverrides](https://docs.microsoft.com/javascript/office/manifest/versionoverrides?view=office-js).
 
 
 

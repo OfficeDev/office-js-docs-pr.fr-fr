@@ -73,11 +73,11 @@ Cet article décrit le processus de création d’un complément Word à l’aid
                     $('#emerson').click(insertEmersonQuoteAtSelection);
                     $('#checkhov').click(insertChekhovQuoteAtTheBeginning);
                     $('#proverb').click(insertChineseProverbAtTheEnd);
-                    $('#supportedVersion').html('This code is using Word 2016 or greater.');
+                    $('#supportedVersion').html('This code is using Word 2016 or later.');
                 }
                 else {
                     // Just letting you know that this code will not work with your version of Word.
-                    $('#supportedVersion').html('This code requires Word 2016 or greater.');
+                    $('#supportedVersion').html('This code requires Word 2016 or later.');
                 }
             });
         };
@@ -296,7 +296,7 @@ Cet article décrit le processus de création d’un complément Word à l’aid
     </html>
     ```
 
-2. Ouvrez le fichier **src/index.js** pour spécifier le script pour le complément et remplacez le contenu par le code suivant, puis enregistrez le fichier. Ce script contient le code d’initialisation, ainsi que le code qui modifie le document Word, en insérant du texte dans le document lorsqu’un bouton est sélectionné. 
+2. Ouvrez le fichier **src/index.js** pour spécifier le script du complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier. Ce script contient le code d’initialisation ainsi que le code qui apporte des modifications au document Word en insérant du texte dans le document lorsqu’un bouton est choisi. 
 
     ```js
     'use strict';
@@ -313,11 +313,11 @@ Cet article décrit le processus de création d’un complément Word à l’aid
                     $('#emerson').click(insertEmersonQuoteAtSelection);
                     $('#checkhov').click(insertChekhovQuoteAtTheBeginning);
                     $('#proverb').click(insertChineseProverbAtTheEnd);
-                    $('#supportedVersion').html('This code is using Word 2016 or greater.');
+                    $('#supportedVersion').html('This code is using Word 2016 or later.');
                 }
                 else {
                     // Just letting you know that this code will not work with your version of Word.
-                    $('#supportedVersion').html('This code requires Word 2016 or greater.');
+                    $('#supportedVersion').html('This code requires Word 2016 or later.');
                 }
             });
         };
@@ -478,5 +478,5 @@ Félicitations, vous avez créé un complément Word à l’aide de jQuery ! Dé
 ## <a name="see-also"></a>Voir aussi
 
 * [Présentation des compléments Word](../word/word-add-ins-programming-overview.md)
-* [Exemples de code pour les compléments Word](http://dev.office.com/code-samples#?filters=word,office%20add-ins)
-* [Référence d’API JavaScript pour Word](https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview)
+* [Exemples de code pour les compléments Word](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
+* [Référence d’API JavaScript pour Word](https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js)

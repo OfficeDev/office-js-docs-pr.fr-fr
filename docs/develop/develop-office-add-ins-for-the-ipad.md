@@ -2,12 +2,12 @@
 title: Développer des compléments Office pour iPad
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 96743b343aca28e7a35e78c587a9b39cf050a539
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 77e67c361d227babebdd081ecdf308fc7469e507
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925114"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944353"
 ---
 # <a name="develop-office-add-ins-for-the-ipad"></a>Développer des compléments Office pour iPad
 
@@ -17,7 +17,7 @@ Le tableau suivant répertorie les tâches à effectuer pour développer un comp
 
 |**Tâche**|**Description**|**Ressources**|
 |:-----|:-----|:-----|
-|Mettez à jour votre complément pour prendre en charge la version 1.1 d’Office.js.|Mettez à jour les fichiers JavaScript (Office.js et fichiers .js propres aux applications) et le fichier de validation du manifeste du complément utilisés dans votre projet Complément Office vers la version 1.1.|[Nouveautés de l’API JavaScript pour Office](https://dev.office.com/reference/add-ins/what's-changed-in-the-javascript-api-for-office)|
+|Mettez à jour votre complément pour prendre en charge la version 1.1 d’Office.js.|Mettez à jour les fichiers JavaScript (Office.js et fichiers .js propres aux applications) et le fichier de validation du manifeste du complément utilisés dans votre projet Complément Office vers la version 1.1.|[Nouveautés de l’API JavaScript pour Office](https://docs.microsoft.com/javascript/office/what's-changed-in-the-javascript-api-for-office?view=office-js)|
 |Appliquez les méthodes recommandées pour concevoir une interface utilisateur.|Intégrez l’interface utilisateur de votre complément de manière transparente avec iOS.|[Concevoir pour iOS](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/)|
 |Appliquez les méthodes recommandées pour concevoir un complément.|Assurez-vous que votre complément offre une valeur claire, une expérience conviviale et des performances optimales.|[Meilleures pratiques en matière de développement de compléments Office](../concepts/add-in-development-best-practices.md)|
 |Optimisez votre complément pour les écrans tactiles.|Concevez une interface utilisateur optimisée pour les écrans tactiles, en plus de la souris et du clavier.|[Application des principes de conception de l’expérience utilisateur](../concepts/add-in-development-best-practices.md#apply-ux-design-principles)|
@@ -26,8 +26,8 @@ Le tableau suivant répertorie les tâches à effectuer pour développer un comp
 |Envoyez à nouveau votre complément à AppSource.|Dans le tableau de bord vendeur, cochez la case **Ajouter ce complément au catalogue des compléments Office sur iPad**. Indiquez votre ID de développeur Apple dans la case Identifiant Apple. Lisez le [contrat de fournisseur d’application](https://sellerdashboard.microsoft.com/Assets/Content/Agreements/en-US/Office_Store_Seller_Agreement_20120927.htm) pour connaître les termes du contrat.|[Mise à disposition de vos solutions sur AppSource et dans Office](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)|
 
 Votre complément peut rester en l’état pour les applications Office exécutées sur d’autres plateformes. Vous pouvez également proposer une interface utilisateur différente en fonction du navigateur ou de l’appareil qui utilise votre complément. Pour savoir si votre complément est exécuté sur un iPad, vous pouvez utiliser les API suivantes :
-- var isTouchEnabled = [Office.context.touchEnabled](https://dev.office.com/reference/add-ins/shared/office.context.touchenabled)
-- var allowCommerce = [Office.context.commerceAllowed](https://dev.office.com/reference/add-ins/shared/office.context.commerceallowed)
+- var isTouchEnabled = [Office.context.touchEnabled](https://docs.microsoft.com/javascript/api/office/office.context?view=office-js#touchenabled)
+- var allowCommerce = [Office.context.commerceAllowed](https://docs.microsoft.com/javascript/api/office/office.context?view=office-js#commerceallowed)
     
 
 ## <a name="best-practices-for-developing-office-add-ins-for-ios-and-mac"></a>Meilleures pratiques en matière de développement de compléments Office pour iOS et Mac

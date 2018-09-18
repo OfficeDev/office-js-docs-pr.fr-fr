@@ -1,13 +1,13 @@
 ---
 title: Publication de compléments du volet Office et de contenu dans un catalogue SharePoint
-description: ''
+description: Pour rendre les compléments Office accessibles aux utilisateurs au sein de leur organisation, les administrateurs peuvent télécharger des fichiers manifestes des compléments Office dans le catalogue de compléments pour leur organisation.
 ms.date: 01/23/2018
-ms.openlocfilehash: 6bf63c36d952b901faaa16b0d93748023ac0fef9
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 2d1328b9944366d063934ff5781029beccfc82c8
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925296"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944845"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-catalog"></a>Publication de compléments du volet Office et de contenu dans un catalogue SharePoint
 
@@ -16,7 +16,7 @@ Un catalogue de compléments est une collection de sites dédiée dans une appli
 > [!IMPORTANT]
 > - Les catalogues de compléments sur SharePoint ne prennent pas en charge les fonctionnalités de complément qui sont implémentées dans le nœud `VersionOverrides` du [manifeste de complément](../develop/add-in-manifests.md), comme les commandes de complément.
 > - Si vous ciblez un environnement de cloud ou hybride, nous vous recommandons d’[utiliser un déploiement centralisé via le centre d’administration Office 365](../publish/centralized-deployment.md) pour publier vos compléments.
-> - Les catalogues SharePoint ne sont pas pris en charge dans Office 2016 pour Mac. Pour déployer des compléments Office sur les clients Mac, vous devez les envoyer à [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store).   
+> - Les catalogues SharePoint ne sont pas pris en charge dans Office pour Mac. Pour déployer des compléments Office à des clients Mac, vous devez les envoyer à [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store).   
 
 ## <a name="set-up-an-add-in-catalog"></a>Configuration d’un catalogue de compléments
 
@@ -102,4 +102,4 @@ Les utilisateurs finaux peuvent accéder au catalogue des compléments dans une 
     
 3. Fermez puis rouvrez l’application Office. Le catalogue de compléments est disponible dans la boîte de dialogue **Compléments Office**.
 
-Par ailleurs, un administrateur peut spécifier un catalogue de compléments Office sur SharePoint à l’aide d’une stratégie de groupe. Pour plus d’informations, reportez-vous à la section relative à l’[utilisation d’une stratégie de groupe pour gérer la manière dont les utilisateurs peuvent installer et utiliser des compléments Office](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
+Par ailleurs, un administrateur peut spécifier un catalogue de compléments Office sur SharePoint à l’aide d’une stratégie de groupe. Pour plus d’informations, reportez-vous à la section [Utilisation d’une stratégie de groupe pour gérer la manière dont les utilisateurs peuvent installer et utiliser des compléments Office](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).

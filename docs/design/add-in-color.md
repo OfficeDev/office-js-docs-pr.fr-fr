@@ -6,7 +6,7 @@ Office UI Fabric comprend un jeu de couleurs de thème par défaut. Lorsque Fabr
 Les applications Office permettent aux clients de personnaliser leurs interfaces en appliquant un thème de l’interface utilisateur d’Office. Les clients peuvent choisir entre quatre thèmes de l’interface utilisateur pour modifier le style des arrière-plans et des boutons dans Word, PowerPoint, Excel et les autres applications de la suite Office. Pour que vos compléments paraissent comme des composants naturels d’Office et répondent à la personnalisation, utilisez nos API de thèmes. Par exemple, les couleurs d’arrière-plan du volet des tâches deviennent gris foncé dans certains thèmes. Nos API de thèmes vous permettent de faire de même et d’ajuster le texte de premier plan pour garantir l’[accessibilité](../design/accessibility-guidelines.md).
 
 > [!NOTE]
-> - Pour les compléments de volet de tâches et de messagerie, utilisez la propriété [Context.officeTheme](https://dev.office.com/reference/add-ins/shared/office.context.officetheme) pour utiliser les thèmes correspondant à ceux des applications Office. Actuellement, cette API n’est disponible que dans Office 2016.
+> - Pour les compléments de volet de tâches et de messagerie, utilisez la propriété [Context.officeTheme](https://docs.microsoft.com/javascript/api/office/office.context?view=office-js) pour utiliser les thèmes correspondant à ceux des applications Office. Actuellement, cette API n’est disponible que dans Office 2016.
 > - Pour plus d’informations sur les compléments de contenu pour PowerPoint, reportez-vous à l’article expliquant comment [utiliser des thèmes Office dans vos compléments PowerPoint](../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md).
 
 Appliquez les recommandations générales suivantes pour la couleur :
@@ -16,5 +16,5 @@ Appliquez les recommandations générales suivantes pour la couleur :
 * Évitez les conflits inutiles avec des couleurs non Office.
 * Utilisez vos propres couleurs de la marque pour créer une association avec votre service ou votre société.
 * Assurez-vous que tout le texte est accessible. N’oubliez pas qu’il existe un ratio de contraste 4.5:1 entre le texte de premier plan et l’arrière-plan.
-* Pensez aux personnes atteintes de daltonisme : n’utilisez pas seulement des couleurs pour indiquer l’interactivité et la hiérarchie.
+* Pensez aux personnes atteintes de daltonisme : n’utilisez pas que des couleurs pour indiquer l’interactivité et la hiérarchie.
 * Consultez les [Instructions relatives aux icônes](../design/add-in-icons.md) pour en savoir plus sur la conception des icônes de commande de complément avec la palette de couleurs d’icônes Office.

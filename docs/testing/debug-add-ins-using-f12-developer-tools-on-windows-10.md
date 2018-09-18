@@ -2,12 +2,12 @@
 title: Débogage des compléments avec les outils de développement F12 sur Windows 10
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 226773962fb1777a3a1f0e09445721ae2b8b5f5b
-ms.sourcegitcommit: e1c92ba882e6eb03a165867c6021a6aa742aa310
+ms.openlocfilehash: 57e0818da0a115380bcb11f1226c48d3ded1078a
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "22925604"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23943725"
 ---
 # <a name="debug-add-ins-using-f12-developer-tools-on-windows-10"></a>Débogage des compléments avec les outils de développement F12 sur Windows 10
 
@@ -38,11 +38,11 @@ Cet exemple utilise Word et un complément gratuit d’AppSource.
     
 3. Ouvrez les outils de développement F12 correspondant à votre version d’Office :
     
-   - Pour la version 32 bits, utilisez C:\Windows\System32\F12\IEChooser.exe
+   - Pour la version 32 bits d'Office, utilisez C:\Windows\System32\F12\IEChooser.exe
     
-   - Pour la version 64 bits, utilisez C:\Windows\SysWOW64\F12\IEChooser.exe
+   - Pour la version 64 bits d'Office, utilisez C:\Windows\SysWOW64\F12\IEChooser.exe
     
-   Lorsque vous lancez IEChooser, une fenêtre séparée nommée « Choisir la cible à déboguer » affiche les applications possibles pour effectuer le débogage. Sélectionnez l’application de votre choix. Si vous écrivez votre propre complément, sélectionnez le site web où le complément est déployé. Il peut s’agir d’une URL localhost. 
+   Lorsque vouslancez F12Chooser, une autre fenêtre (intitulée « Choisir la cible à déboguer ») affiche les éventuelles applications à débogue. Sélectionnez l’application qui vous intéresse. Si vous écrivez votre propre complément, sélectionnez le site web où le complément est déployé. Il peut s’agir d’une URL localhost. 
     
    Par exemple, sélectionnez **home.html**. 
     

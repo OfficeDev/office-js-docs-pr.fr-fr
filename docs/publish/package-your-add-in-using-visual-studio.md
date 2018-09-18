@@ -2,12 +2,12 @@
 title: Créer le package de votre complément à l’aide de Visual Studio pour préparer la publication
 description: ''
 ms.date: 01/25/2018
-ms.openlocfilehash: 89f59d06ff305e0d0fd062a36f7e9f756415df45
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: aa93fc6befd133127c3542a420d779d070316a57
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925247"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944380"
 ---
 # <a name="package-your-add-in-using-visual-studio-to-prepare-for-publishing"></a>Créer le package de votre complément à l’aide de Visual Studio pour préparer la publication
 
@@ -26,7 +26,7 @@ Procédez comme suit pour déployer votre projet web à l’aide de Visual Studi
     > [!NOTE]
     > Un profil de publication indique le serveur sur lequel vous effectuez le déploiement, les informations d’identification nécessaires pour se connecter au serveur, les bases de données à déployer, ainsi que d’autres options de déploiement.
 
-    Si vous choisissez  **Nouveau...**, l’Assistant **Créer un profil de publication** s’ouvre. Vous pouvez utiliser cet Assistant pour importer un profil de publication à partir d’un site web d’hébergement comme Microsoft Azure ou créer un profil et ajouter votre serveur, vos informations d’identification et d’autres paramètres, comme décrit dans la procédure suivante.
+    Si vous choisissez  **Nouveau...**, l’assistant Créer un profil de publication s’ouvre. Vous pouvez utiliser cet assistant pour importer un profil de publication à partir d’un site web d’hébergement comme Microsoft Azure ou créer un nouveau profil et ajouter votre serveur, vos informations d’identification et d’autres paramètres, comme décrit dans la procédure suivante.
     
     Pour plus d’informations sur l’importation et la création de profils de publication, voir [Création d’un profil de publication](http://msdn.microsoft.com/library/dd465337.aspx#creating_a_profile).
     
@@ -41,7 +41,7 @@ Procédez comme suit pour créer un package de votre projet de complément à l�
 
 1. Sur la page **Publier votre complément**, cliquez sur le lien **Empaqueter le complément**.
     
-    L’Assistant **Publication des compléments SharePoint et Office** apparaît.
+    L’assistant de Publication des compléments SharePoint et Office apparaît.
     
 2. Dans la liste déroulante **Où votre site web est-il hébergé ?**, sélectionnez ou saisissez l’URL HTTPS du site web qui hébergera les fichiers de contenu de votre complément, puis cliquez sur **Terminer**. 
     

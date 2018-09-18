@@ -2,12 +2,12 @@
 title: Déploiement et publication de votre complément Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 83581b729f5004c36d267bda14795275a5153a9c
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: b35c50c65a5d8b8b3f1a5e9724fa9072285fb7ae
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925345"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944339"
 ---
 # <a name="deploy-and-publish-your-office-add-in"></a>Déploiement et publication de votre complément Office
 
@@ -31,17 +31,17 @@ Les options de déploiement disponibles dépendent de l’hôte Office que vous 
 
 ### <a name="deployment-options-for-word-excel-and-powerpoint-add-ins"></a>Options de déploiement pour les compléments Word, Excel et PowerPoint
 
-| Point d’extension | Chargement de version test | Centre d’administration Office 365 |AppSource| Catalogue SharePoint\*  |
+| Point d’extension | Chargement de version test | Centre d’administration Office 365 |AppSource   | Catalogue SharePoint\* |
 |:----------------|:-----------:|:-----------------------:|:----------:|:--------------------:|
 | Contenu         | X           | X                       | X          | X                    |
 | Volet Office       | X           | X                       | X          | X                    |
-| Commande           | X           | X                       | X          |                      |
+| Commande         | X           | X                       | X          |                      |
 
-* Les catalogues SharePoint ne prennent pas en charge Office 2016 pour Mac.
+* Les catalogues SharePoint ne prennent pas en charge Office pour Mac.
 
 ### <a name="deployment-options-for-outlook-add-ins"></a>Options de déploiement pour les compléments Outlook
 
-| Point d’extension | Chargement de version test | Serveur Exchange | AppSource |
+| Point d’extension | Chargement de version test | Serveur Exchange | AppSource    |
 |:----------------|:-----------:|:---------------:|:------------:|
 | Application de messagerie        | X           | X               | X            |
 | Commande         | X           | X               | X            |
@@ -65,7 +65,7 @@ Un catalogue de compléments SharePoint est une collection de sites spéciale qu
 Si vous déployez des compléments dans un environnement local, utilisez un catalogue SharePoint. Pour obtenir des détails, voir l’article sur la [publication de compléments du volet des tâches et de contenu dans un catalogue SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
 > [!NOTE]
-> Les catalogues SharePoint ne prennent pas en charge Office 2016 pour Mac. Pour déployer des compléments Office sur les clients Mac, vous devez les envoyer à [AppSource]. 
+> Les catalogues SharePoint ne prennent pas en charge Office pour Mac. Pour déployer des compléments Office sur les clients Mac, vous devez les envoyer à [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store). 
 
 ### <a name="outlook-add-in-deployment"></a>Déploiement de compléments Outlook
 
