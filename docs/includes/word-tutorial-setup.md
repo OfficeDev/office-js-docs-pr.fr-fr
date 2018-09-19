@@ -10,14 +10,14 @@ Vous commencerez ce didacticiel par la configuration de votre projet de dévelop
 
 Pour utiliser ce didacticiel, les logiciels suivants doivent être installés. 
 
-- Word 2016, version 1711 (Démarrer en un clic version 8730.1000) ou version ultérieure. Vous devrez peut-être participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à [Participez au programme Office Insider](https://products.office.com/office-insider?tab=tab-1).
+- Word 2016, version 1711 (Démarrer en un clic version 8730.1000) ou version ultérieure. Vous devrez peut-être participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à [Participez au programme Office Insider](https://products.office.com/office-insider?tab=tab-1).
 - [Nœud et npm](https://nodejs.org/en/) 
-- [Git Bash](https://git-scm.com/downloads) (ou un autre client Git)
+- [Git Bash](https://git-scm.com/downloads) (ou un autre client Git)
 
 ## <a name="setup"></a>Installation
 
-1. Clonez le référentiel GitHub du [didacticiel sur les compléments Word](https://github.com/OfficeDev/Word-Add-in-Tutorial).
-2. Ouvrez une fenêtre Git Bash, ou une invite système Node.JS, et accédez au dossier **Start** du projet.
+1. Clonez le [didacticiel du complément Word](https://github.com/OfficeDev/Word-Add-in-Tutorial) du référentiel GitHub.
+2. Ouvrez une fenêtre Git Bash, ou une invite système Node.JS, et accédez au dossier **Début** du projet.
 3. Exécutez la commande `npm install` pour installer les outils et les bibliothèques répertoriées dans le fichier package.json. 
 4. Effectuez les étapes décrites dans la rubrique relative à l’[ajout de certificats auto-signés comme certificat racine approuvé](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) pour approuver le certificat pour le système d’exploitation de votre ordinateur de développement.
 
