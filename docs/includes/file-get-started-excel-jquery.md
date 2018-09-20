@@ -135,7 +135,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 
 2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
-    ![Bouton Complément Excel](../images/excel-quickstart-addin-2a.png)
+    ![Bouton de Complément Excel](../images/excel-quickstart-addin-2a.png)
 
 3. Sélectionnez une plage de cellules dans la feuille de calcul.
 
@@ -179,11 +179,15 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
     
     Une fois que vous avez terminé avec l'assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
-    
+4. Accédez au dossier racine du projet d’application web.
 
-4. Dans votre éditeur de code, ouvrez **index.html** à la racine du projet. Ce fichier spécifie le code HTML qui s’affichera dans le volet Office du complément. 
+    ```bash
+    cd "My Office Add-in"
+    ```
+
+5. Dans votre éditeur de code, ouvrez **index.html** à la racine du projet. Ce fichier spécifie le code HTML qui s’affichera dans le volet Office du complément. 
  
-5. Dans **index.html**, remplacez la balise `header` générée par le balisage suivant.
+6. Dans **index.html**, remplacez la balise `header` générée par le balisage suivant.
  
     ```html
     <div id="content-header">
@@ -193,7 +197,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
     </div>
     ```
 
-6. Dans **index.html**, remplacez la balise `main` générée par le balisage suivant et enregistrez le fichier.
+7. Dans **index.html**, remplacez la balise `main` générée par le balisage suivant et enregistrez le fichier.
 
     ```html
     <div id="content-main">
@@ -206,7 +210,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
     </div>
     ```
 
-7. Ouvrez le fichier **src\index.js** pour spécifier le script du complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+8. Ouvrez le fichier **src\index.js** pour spécifier le script du complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
 
     ```js
     'use strict';
@@ -234,7 +238,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
     })();
     ```
 
-8. Ouvrez le fichier **app.css** pour spécifier les styles personnalisés pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+9. Ouvrez le fichier **app.css** pour spécifier les styles personnalisés pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
 
     ```css
     #content-header {
@@ -299,7 +303,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 
 2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
-    ![Bouton Complément Excel](../images/excel-quickstart-addin-2b.png)
+    ![Bouton de Complément Excel](../images/excel-quickstart-addin-2b.png)
 
 3. Sélectionnez une plage de cellules dans la feuille de calcul.
 

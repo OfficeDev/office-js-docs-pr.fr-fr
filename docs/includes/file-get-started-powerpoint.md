@@ -200,6 +200,12 @@ Cet article décrit le processus de création d’un complément PowerPoint à l
     ![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yo-office-powerpoint-jquery.png)
     
     Une fois que vous avez terminé avec l'assistant, le générateur crée le projet et installe les composants Node de prise en charge.
+    
+4. Accédez au dossier racine du projet d’application web.
+
+    ```bash
+    cd "My Office Add-in"
+    ```
 
 ### <a name="update-the-code"></a>Mise à jour du code
 

@@ -1,13 +1,13 @@
 ---
 title: Localisation des compléments Office
-description: ''
+description: Vous pouvez utiliser l’interface API JavaScript pour Office pour déterminer les paramètres régionaux et afficher des chaînes basées sur les paramètres régionaux de l’application hôte, ou pour interpréter ou afficher des données en fonction de leurs paramètres régionaux.
 ms.date: 01/23/2018
-ms.openlocfilehash: c700dfa2f424577edf364505b0da47854467f77b
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 2b47a54acd2018be0d4c6c6fdac2e5d3bd1d6770
+ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925576"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "24016443"
 ---
 # <a name="localization-for-office-add-ins"></a>Localisation des compléments Office
 
@@ -17,7 +17,7 @@ Vous pouvez librement implémenter n’importe quel schéma de localisation conv
 
 L’API JavaScript pour Office offre deux propriétés qui prennent en charge l’affichage ou l’interprétation de valeurs cohérentes avec les paramètres régionaux de l’application hôte et des données :
 
-- [Context.displayLanguage][displayLanguage] spécifie les paramètres régionaux (ou la langue) de l’interface utilisateur de l’application hôte. L’exemple suivant vérifie si l’application hôte utilise les paramètres régionaux en-US ou fr-Fr, et affiche un message de bienvenue propre aux paramètres régionaux.
+- [Context.displayLanguage][displayLanguage] spécifie les paramètres régionaux (ou langue) de l’interface utilisateur de l’application hôte. L’exemple suivant vérifie si l’application hôte utilise les paramètres régionaux en-US ou fr-FR, et affiche un message de bienvenue propre aux paramètres régionaux.
     
     ```js
     function sayHelloWithDisplayLanguage() {
@@ -62,7 +62,8 @@ Chaque complément Office indique un élément [DefaultLocale] élément et un p
 |[SourceLocation]   |Les utilisateurs de chaque paramètre régional que vous spécifiez peuvent voir une page web que vous concevez spécifiquement pour le complément pour ce paramètre régional. |
 
 
-> **REMARQUE** Vous pouvez trouver la description et le nom d’affichage uniquement pour les paramètres régionaux pris en charge par Office. Reportez-vous à la rubrique [Identificateurs de langue et valeurs d'ID de l'élément OptionState dans Office 2013](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15)) pour connaître la liste des langues et des paramètres régionaux pour la version actuelle d’Office.
+> [!NOTE] 
+> Vous pouvez localiser la description et le nom d'affichage uniquement pour les paramètres régionaux pris en charge par Office. Pour obtenir la liste des langues et paramètres régionaux pour la version actuelle de Microsoft Office, voir [Identificateurs de langue et valeurs OptionState Id dans Office 2013](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15)).
 
 
 ### <a name="examples"></a>Exemples
@@ -78,11 +79,13 @@ Par exemple, un complément Office peut spécifier [DefaultLocale] en tant que `
 </DisplayName>
 ```
 
-> **REMARQUE** Si vous devez rechercher plusieurs domaines au sein d’une famille de langues, comme `de-de` et `de-at`, nous vous recommandons d’utiliser des éléments `Override` distincts pour chaque domaine. L’utilisation uniquement du nom de la langue, soit `de` dans ce cas, n’est pas prise en charge pour toutes les combinaisons de plateformes et d’applications hôte Office.
+> [!NOTE] 
+> Si vous devez localiser pour plusieurs zones au sein d’une famille de langue, tel que `de-de` et `de-at`, nous vous recommandons d’utiliser des éléments `Override` distincts pour chaque zone. L’utilisation du seul nom de la langue, dans ce cas, `de`, n’est pas prise en charge dans toutes les combinaisons d'applications hôtes et de plateformes Office.
 
 Cela signifie que le complément adopte le paramètre régional `en-us` par défaut. Les utilisateurs voient le nom d’affichage « Video player » pour tous les paramètres régionaux, sauf si le paramètre régional de l’ordinateur client est `fr-fr`, auquel cas ils verront le nom d’affichage « Lecteur vidéo ».
 
-> **REMARQUE** Vous ne pouvez spécifier qu’un seul remplacement par langue, notamment pour les paramètres régionaux par défaut. Par exemple, si votre paramètre régional par défaut est `en-us`, vous ne pouvez pas spécifier un remplacement pour `en-us`. 
+> [!NOTE] 
+> Vous ne pouvez spécifier qu’un seul remplacement par langue, y compris pour les paramètres régionaux par défaut. Par exemple, si votre paramètre régional par défaut est `en-us`, vous ne pouvez pas spécifier un remplacement pour `en-us`. 
 
 L’exemple suivant applique un remplacement de paramètre régional pour l’élément [Description]. Il commence par spécifier le paramètre régional par défaut `en-us` et une description en anglais, puis spécifie une instruction [Override] avec une description en français pour le paramètre régional `fr-fr` :
 
@@ -171,13 +174,15 @@ Pour exécuter l’exemple de code fourni, configurez Microsoft Office 2013 sur 
 
 En outre, vous devez créer un projet de complément Office Visual Studio 2015.
 
-> **REMARQUE** Pour télécharger Visual Studio 2015, consultez la [page dédiée aux outils de développement Office](https://www.visualstudio.com/features/office-tools-vs). Cette page contient également un lien pour télécharger les outils de développement Office.
+> [!NOTE] 
+> Pour télécharger Visual Studio 2015, consultez la [page des outils de développement Office](https://www.visualstudio.com/features/office-tools-vs). Cette page contient également un lien pour les outils de développement Office.
 
 ### <a name="configure-office-2013-to-use-additional-languages-for-display-or-editing"></a>Configurer Office 2013 pour utiliser des langues supplémentaires pour l’affichage ou l’édition
 
 Vous pouvez utiliser un module linguistique Office 2013 pour installer des langues supplémentaires. Pour plus d’informations sur les modules linguistiques et comment les obtenir, voir [Options de langue Office 2013](http://office.microsoft.com/language-packs/).
 
-> **REMARQUE** Si vous êtes abonné à MSDN, les modules linguistiques Office 2013 peuvent être disponibles dans le cadre de votre abonnement. Pour savoir si votre abonnement propose le téléchargement des modules linguistiques Office 2013, accédez à [Accueil Abonnements MSDN](https://msdn.microsoft.com/subscriptions/manage/), tapez « Modules linguistiques Office 2013 » dans **Téléchargements logiciels**, choisissez **Rechercher**, puis sélectionnez **Produits disponibles avec mon abonnement**. Sous **Langue**, cochez la case correspondant au module linguistique que vous voulez télécharger, puis cliquez sur **OK**. 
+> [!NOTE] 
+> Si vous êtes un abonné MSDN, vous devez peut-être déjà avoir les modules linguistiques Office 2013 à votre disposition. Pour déterminer si votre abonnement vous permet de télécharger les modules linguistiques pour Office 2013, allez à [Accueil Abonnements MSDN](https://msdn.microsoft.com/subscriptions/manage/), entrez Module Linguistique Office 2013 dans **Téléchargement de logiciels**, choisissez **Rechercher**, puis sélectionnez **Produits disponibles avec mon abonnement**. Sous **Langue**, activez la case à cocher pour le module linguistique que vous souhaitez télécharger, puis cliquez sur **Atteindre**. 
 
 Une fois le module linguistique installé, vous pouvez configurer Office 2013 pour utiliser la langue installée pour l’affichage de l’interface utilisateur, pour l’édition du contenu du document, ou les deux. Dans cet exemple, le module linguistique espagnol a été installé sur Office 2013.
 
@@ -204,9 +209,10 @@ Pour localiser le nom d’affichage et la description du complément
 
 1. Dans l’ **Explorateur de solutions**, développez **WorldReadyApp**, **WorldReadyAppManifest**, puis choisissez **WorldReadyApp.xml**.
     
-2. Dans WorldReadyAppManifest.xml, remplacez les éléments [DisplayName] et [Description] par le bloc de code suivant :
+2. Dans WorldReadyAppManifest.xml, remplacez les éléments [DisplayName] et [Description] par le bloc de code suivant :
     
-    > **REMARQUE** Vous pouvez remplacer les chaînes localisées en espagnol utilisées dans cet exemple pour les éléments [DisplayName] et [Description] par les chaînes localisées dans une autre langue.
+    > [!NOTE] 
+    > Vous pouvez remplacer les chaînes localisées en espagnol utilisées dans cet exemple pour les éléments [DisplayName] et [Description] par les chaînes localisées en une autre langue.
 
     ```xml
     <DisplayName DefaultValue="World Ready add-in">
@@ -354,7 +360,8 @@ Une fois que vous connaissez la langue utilisée par l’application hôte, vous
 
 Remplacez le code du fichier Home.js par le code suivant. Le code montre comment changer les chaînes utilisées dans les éléments d’interface utilisateur de Home.html en fonction de la langue d’affichage de l’application hôte ou de la langue d’édition de l’application hôte.
 
-> **REMARQUE** Pour activer ou désactiver la localisation du complément en fonction de la langue utilisée pour la modification, supprimez le commentaire de la ligne de code `var myLanguage = Office.context.contentLanguage;` et ajoutez un commentaire à la ligne de code `var myLanguage = Office.context.displayLanguage;`
+> [!NOTE] 
+> Pour basculer entre la modification de la localisation du complément en fonction de la langue utilisée pour l'édition, supprimez les marques de commentaire de la ligne de code `var myLanguage = Office.context.contentLanguage;` et commentez la ligne de code `var myLanguage = Office.context.displayLanguage;`
 
 ```js
 /// <reference path="../App.js" />
@@ -421,17 +428,17 @@ Exécutez l’exemple de complément. Le complément de volet de tâches est cha
 - [Instructions de conception pour les compléments Office](../design/add-in-design.md)    
 - [Identificateurs de langue et valeurs d’ID de l’élément OptionState dans Office 2013](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
 
-[DefaultLocale]:        https://dev.office.com/reference/add-ins/manifest/defaultlocale
-[Description]:          https://dev.office.com/reference/add-ins/manifest/description
-[DisplayName]:          https://dev.office.com/reference/add-ins/manifest/displayname
-[IconUrl]:              https://dev.office.com/reference/add-ins/manifest/iconurl
-[HighResolutionIconUrl]:https://dev.office.com/reference/add-ins/manifest/highresolutioniconurl
-[Ressources]:            https://dev.office.com/reference/add-ins/manifest/resources
-[SourceLocation]:       https://dev.office.com/reference/add-ins/manifest/sourcelocation
-[Override]:             https://dev.office.com/reference/add-ins/manifest/override
-[DesktopSettings]:      https://dev.office.com/reference/add-ins/manifest/desktopsettings
-[TabletSettings]:       https://dev.office.com/reference/add-ins/manifest/tabletsettings
-[PhoneSettings]:        https://dev.office.com/reference/add-ins/manifest/phonesettings
-[displayLanguage]:  https://dev.office.com/reference/add-ins/shared/office.context.displaylanguage 
-[contentLanguage]:  https://dev.office.com/reference/add-ins/shared/office.context.contentlanguage 
+[DefaultLocale]:        https://docs.microsoft.com/javascript/office/manifest/defaultlocale?view=office-js
+[Description]:          https://docs.microsoft.com/javascript/office/manifest/description?view=office-js
+[DisplayName]:          https://docs.microsoft.com/javascript/office/manifest/displayname?view=office-js
+[IconUrl]:              https://docs.microsoft.com/javascript/office/manifest/iconurl?view=office-js
+[HighResolutionIconUrl]:https://docs.microsoft.com/javascript/office/manifest/highresolutioniconurl?view=office-js
+[Ressources]:            https://docs.microsoft.com/javascript/office/manifest/resources?view=office-js
+[SourceLocation]:       https://docs.microsoft.com/javascript/office/manifest/sourcelocation?view=office-js
+[Override]:             https://docs.microsoft.com/javascript/office/manifest/override?view=office-js
+[DesktopSettings]:      https://docs.microsoft.com/javascript/office/manifest/desktopsettings?view=office-js
+[TabletSettings]:       https://docs.microsoft.com/javascript/office/manifest/tabletsettings?view=office-js
+[PhoneSettings]:        https://docs.microsoft.com/javascript/office/manifest/phonesettings?view=office-js
+[displayLanguage]:  https://docs.microsoft.com/javascript/api/office/office.context?view=office-js#displaylanguage 
+[contentLanguage]:  https://docs.microsoft.com/javascript/api/office/office.context?view=office-js#contentlanguage 
 [RFC 3066]: https://www.rfc-editor.org/info/rfc3066
