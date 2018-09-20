@@ -2,72 +2,72 @@
 title: Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
 description: ''
 ms.date: 01/19/2018
-ms.openlocfilehash: 894cdcb8360a26dfb0f2d5ddbf06cbd7c52d5623
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 015fd9d7e9bf4412c09b76f0de5a97c9946e4d58
+ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945347"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "24016331"
 ---
-# <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a><span data-ttu-id="e40be-102">Conversion d’un projet de complément Office dans Visual Studio au format TypeScript</span><span class="sxs-lookup"><span data-stu-id="e40be-102">Convert an Office Add-in project in Visual Studio to TypeScript</span></span>
+# <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a><span data-ttu-id="5f22a-102">Conversion d’un projet de complément Office dans Visual Studio au format TypeScript</span><span class="sxs-lookup"><span data-stu-id="5f22a-102">Convert an Office Add-in project in Visual Studio to TypeScript</span></span>
 
-<span data-ttu-id="e40be-103">Vous pouvez utiliser le modèle de complément Office dans Visual Studio pour créer un complément qui utilise JavaScript, puis convertir le projet de complément au format TypeScript.</span><span class="sxs-lookup"><span data-stu-id="e40be-103">You can use the Office Add-in template in Visual Studio to create an add-in that uses JavaScript, and then convert that add-in project to TypeScript.</span></span> <span data-ttu-id="e40be-104">En utilisant Visual Studio pour créer le projet complément, vous ne devez pas créer votre projet TypeScript de complément Office à partir de zéro.</span><span class="sxs-lookup"><span data-stu-id="e40be-104">By using Visual Studio to create the add-in project, you avoid having to create your Office Add-in TypeScript project from scratch.</span></span> 
+<span data-ttu-id="5f22a-103">Vous pouvez utiliser le modèle de complément Office dans Visual Studio pour créer un complément qui utilise JavaScript, puis convertir le projet de complément au format TypeScript.</span><span class="sxs-lookup"><span data-stu-id="5f22a-103">You can use the Office Add-in template in Visual Studio to create an add-in that uses JavaScript, and then convert that add-in project to TypeScript.</span></span> <span data-ttu-id="5f22a-104">En utilisant Visual Studio pour créer le projet complément, vous ne devez pas créer votre projet TypeScript de complément Office à partir de zéro.</span><span class="sxs-lookup"><span data-stu-id="5f22a-104">By using Visual Studio to create the add-in project, you avoid having to create your Office Add-in TypeScript project from scratch.</span></span> 
 
-<span data-ttu-id="e40be-105">Cet article explique comment créer un complément Excel à l’aide de Visual Studio et convertir le projet de complément de JavaScript au format TypeScript.</span><span class="sxs-lookup"><span data-stu-id="e40be-105">This article shows you how to create an Excel add-in using Visual Studio and then convert the add-in project from JavaScript to TypeScript.</span></span> <span data-ttu-id="e40be-106">Vous pouvez utiliser le même processus pour convertir les autres types de projet JavaScript de complément Office au format TypeScript dans Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="e40be-106">You can use the same process to convert other types of Office Add-in JavaScript projects to TypeScript in Visual Studio.</span></span>
+<span data-ttu-id="5f22a-105">Cet article explique comment créer un complément Excel à l’aide de Visual Studio et convertir le projet de complément de JavaScript au format TypeScript.</span><span class="sxs-lookup"><span data-stu-id="5f22a-105">This article shows you how to create an Excel add-in using Visual Studio and then convert the add-in project from JavaScript to TypeScript.</span></span> <span data-ttu-id="5f22a-106">Vous pouvez utiliser le même processus pour convertir les autres types de projet JavaScript de complément Office au format TypeScript dans Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="5f22a-106">You can use the same process to convert other types of Office Add-in JavaScript projects to TypeScript in Visual Studio.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="e40be-107">Pour créer un projet TypeScript de complément Office sans utiliser Visual Studio, suivez les instructions de la section « Tous les éditeurs » d’un [démarrage rapide en 5 minutes](../index.yml), puis sélectionnez `TypeScript` lorsque le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) vous y invite.</span><span class="sxs-lookup"><span data-stu-id="e40be-107">To create an Office Add-in TypeScript project without using Visual Studio, follow the instructions in the "Any editor" section of any [5-minute quickstart](../index.yml) and choose `TypeScript` when prompted by the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).</span></span>
+> <span data-ttu-id="5f22a-107">Pour créer un projet TypeScript de complément Office sans utiliser Visual Studio, suivez les instructions de la section « Tous les éditeurs » d’un [démarrage rapide en 5 minutes](../index.yml), puis sélectionnez `TypeScript` lorsque le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) vous y invite.</span><span class="sxs-lookup"><span data-stu-id="5f22a-107">To create an Office Add-in TypeScript project without using Visual Studio, follow the instructions in the "Any editor" section of any [5-minute quickstart](../index.yml) and choose `TypeScript` when prompted by the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="e40be-108">Conditions préalables</span><span class="sxs-lookup"><span data-stu-id="e40be-108">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="5f22a-108">Conditions préalables</span><span class="sxs-lookup"><span data-stu-id="5f22a-108">Prerequisites</span></span>
 
-- <span data-ttu-id="e40be-109">[Visual Studio 2017](https://www.visualstudio.com/vs/) avec la charge de travail de **développement Office/SharePoint** installée</span><span class="sxs-lookup"><span data-stu-id="e40be-109">[Visual Studio 2017](https://www.visualstudio.com/vs/) with the **Office/SharePoint development** workload installed</span></span>
-
-    > [!NOTE]
-    > <span data-ttu-id="e40be-110">Si vous avez déjà installé Visual Studio 2017, [utilisez Visual Studio Installer](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) pour vérifier que la charge de travail de **développement Office/SharePoint** est bien installée.</span><span class="sxs-lookup"><span data-stu-id="e40be-110">If you've previously installed Visual Studio 2017, [use the Visual Studio Installer](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed.</span></span> 
-
-- <span data-ttu-id="e40be-111">TypeScript 2.3 pour Visual Studio 2017</span><span class="sxs-lookup"><span data-stu-id="e40be-111">TypeScript 2.3 for Visual Studio 2017</span></span>
+- <span data-ttu-id="5f22a-109">[Visual Studio 2017](https://www.visualstudio.com/vs/) avec la charge de travail de **développement Office/SharePoint** installée</span><span class="sxs-lookup"><span data-stu-id="5f22a-109">[Visual Studio 2017](https://www.visualstudio.com/vs/) with the **Office/SharePoint development** workload installed</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="e40be-112">TypeScript doit être installé par défaut avec Visual Studio 2017, mais vous pouvez [utiliser le programme d’installation Visual Studio](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) pour confirmer qu’il est installé.</span><span class="sxs-lookup"><span data-stu-id="e40be-112">TypeScript should be installed by default with Visual Studio 2017, but you can [use the Visual Studio Installer](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) to confirm that it is installed.</span></span> <span data-ttu-id="e40be-113">Dans le programme d’installation Visual Studio, sélectionnez l’onglet **Composants individuels**, puis vérifiez que l’option **SDK TypeScript 2.3** est sélectionnée sous **SDK, bibliothèques et frameworks**.</span><span class="sxs-lookup"><span data-stu-id="e40be-113">In the Visual Studio Installer, select the **Individual components** tab and then verify that **TypeScript 2.3 SDK** is selected under **SDKs, libraries, and frameworks**.</span></span>
+    > <span data-ttu-id="5f22a-110">Si vous avez déjà installé Visual Studio 2017, [utilisez Visual Studio Installer](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) pour vérifier que la charge de travail de **développement Office/SharePoint** est bien installée.</span><span class="sxs-lookup"><span data-stu-id="5f22a-110">If you've previously installed Visual Studio 2017, [use the Visual Studio Installer](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed.</span></span> 
 
-- <span data-ttu-id="e40be-114">Excel 2016 ou version ultérieure</span><span class="sxs-lookup"><span data-stu-id="e40be-114">Excel 2016, version 6769.2011 or later</span></span>
-
-## <a name="create-the-add-in-project"></a><span data-ttu-id="e40be-115">Création du projet de complément</span><span class="sxs-lookup"><span data-stu-id="e40be-115">Create the add-in project</span></span>
-
-1. <span data-ttu-id="e40be-116">Ouvrez Visual Studio, puis sur la barre de menus Visual Studio, sélectionnez **Fichier** > **Nouveau** > **Projet**.</span><span class="sxs-lookup"><span data-stu-id="e40be-116">Open Visual Studio and on the Visual Studio menu bar, choose  **File** > **New** > **Project**.</span></span>
-
-2. <span data-ttu-id="e40be-117">Dans la liste des types de projet sous **Visual C#** ou **Visual Basic**, développez **Office/SharePoint**, choisissez **Compléments**, puis **Complément web Excel** pour le type de projet.</span><span class="sxs-lookup"><span data-stu-id="e40be-117">In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **Excel Web Add-in** as the project type.</span></span> 
-
-3. <span data-ttu-id="e40be-118">Nommez le projet, puis cliquez sur **OK**.</span><span class="sxs-lookup"><span data-stu-id="e40be-118">Name the project, and then choose **OK**.</span></span>
-
-4. <span data-ttu-id="e40be-119">Dans la fenêtre de dialogue **Créer un complément Office**, sélectionnez **Ajouter de nouvelles fonctionnalités à Excel**, puis sélectionnez **Terminer** pour créer le projet.</span><span class="sxs-lookup"><span data-stu-id="e40be-119">In the **Create Office Add-in** dialog window, choose **Add new functionalities to Excel**, and then choose **Finish** to create the project.</span></span>
-
-5. <span data-ttu-id="e40be-p104">Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="e40be-p104">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
-
-## <a name="convert-the-add-in-project-to-typescript"></a><span data-ttu-id="e40be-122">Convertir le projet de complément au format TypeScript</span><span class="sxs-lookup"><span data-stu-id="e40be-122">Convert the add-in project to TypeScript</span></span>
-
-1. <span data-ttu-id="e40be-123">Dans l’**Explorateur de solutions**, renommez le fichier **Home.js** comme suit : **Home.ts**.</span><span class="sxs-lookup"><span data-stu-id="e40be-123">In **Solution Explorer**, rename the **Home.js** file to **Home.ts**.</span></span>
+- <span data-ttu-id="5f22a-111">TypeScript 2.3 pour Visual Studio 2017</span><span class="sxs-lookup"><span data-stu-id="5f22a-111">TypeScript 2.3 for Visual Studio 2017</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="e40be-p105">Dans votre projet TypeScript, vous pouvez avoir un mélange de fichiers TypeScript et JavaScript, qui seront compilés. En effet, TypeScript est un sur-ensemble typé de code JavaScript compilé en code JavaScript.</span><span class="sxs-lookup"><span data-stu-id="e40be-p105">In your TypeScript project, you can have a mix of TypeScript and JavaScript files and your project will compile. This is because TypeScript is a typed superset of JavaScript that compiles JavaScript.</span></span> 
+    > <span data-ttu-id="5f22a-112">TypeScript doit être installé par défaut avec Visual Studio 2017, mais vous pouvez [utiliser le programme d’installation Visual Studio](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) pour confirmer qu’il est installé.</span><span class="sxs-lookup"><span data-stu-id="5f22a-112">TypeScript should be installed by default with Visual Studio 2017, but you can [use the Visual Studio Installer](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) to confirm that it is installed.</span></span> <span data-ttu-id="5f22a-113">Dans le programme d’installation Visual Studio, sélectionnez l’onglet **Composants individuels**, puis vérifiez que l’option **SDK TypeScript 2.3** est sélectionnée sous **SDK, bibliothèques et frameworks**.</span><span class="sxs-lookup"><span data-stu-id="5f22a-113">In the Visual Studio Installer, select the **Individual components** tab and then verify that **TypeScript 2.3 SDK** is selected under **SDKs, libraries, and frameworks**.</span></span>
 
-2. <span data-ttu-id="e40be-126">Sélectionnez **Oui** lorsque vous êtes invité à confirmer la modification de l’extension du nom de fichier.</span><span class="sxs-lookup"><span data-stu-id="e40be-126">Select **Yes** when prompted to confirm that you want to change file name extension.</span></span>
+- <span data-ttu-id="5f22a-114">Excel 2016 ou version ultérieure</span><span class="sxs-lookup"><span data-stu-id="5f22a-114">Excel 2016, version 6769.2011 or later</span></span>
 
-3. <span data-ttu-id="e40be-127">Créez un fichier nommé **Office.d.ts** dans la racine du projet d’application web.</span><span class="sxs-lookup"><span data-stu-id="e40be-127">Create a new file named **Office.d.ts** in the root of the web application project.</span></span>
+## <a name="create-the-add-in-project"></a><span data-ttu-id="5f22a-115">Création du projet de complément</span><span class="sxs-lookup"><span data-stu-id="5f22a-115">Create the add-in project</span></span>
 
-4. <span data-ttu-id="e40be-128">Dans un navigateur web, ouvrez le [fichier de définitions de types pour Office.js](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js/index.d.ts).</span><span class="sxs-lookup"><span data-stu-id="e40be-128">In a web browser, open the [type definitions file for Office.js](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js/index.d.ts).</span></span> <span data-ttu-id="e40be-129">Copiez le contenu de ce fichier dans le presse-papiers.</span><span class="sxs-lookup"><span data-stu-id="e40be-129">Copy the contents of this file to your clipboard.</span></span>
+1. <span data-ttu-id="5f22a-116">Ouvrez Visual Studio, puis sur la barre de menus Visual Studio, sélectionnez **Fichier** > **Nouveau** > **Projet**.</span><span class="sxs-lookup"><span data-stu-id="5f22a-116">Open Visual Studio and on the Visual Studio menu bar, choose  **File** > **New** > **Project**.</span></span>
 
-5. <span data-ttu-id="e40be-130">Dans Visual Studio, ouvrez le fichier **Office.d.ts**, collez le contenu du presse-papiers dans le fichier, puis enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="e40be-130">In Visual Studio, open the **Office.d.ts** file, paste the contents of your clipboard into this file, and save the file.</span></span>
+2. <span data-ttu-id="5f22a-117">Dans la liste des types de projet sous **Visual C#** ou **Visual Basic**, développez **Office/SharePoint**, choisissez **Compléments**, puis **Complément web Excel** pour le type de projet.</span><span class="sxs-lookup"><span data-stu-id="5f22a-117">In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **Excel Web Add-in** as the project type.</span></span> 
 
-6. <span data-ttu-id="e40be-131">Créez un fichier nommé **jQuery.d.ts** dans la racine du projet d’application web.</span><span class="sxs-lookup"><span data-stu-id="e40be-131">Create a new file named **jQuery.d.ts** in the root of the web application project.</span></span>
+3. <span data-ttu-id="5f22a-118">Nommez le projet, puis cliquez sur **OK**.</span><span class="sxs-lookup"><span data-stu-id="5f22a-118">Name the project, and then choose **OK**.</span></span>
 
-7. <span data-ttu-id="e40be-132">Dans un navigateur web, ouvrez le [fichier de définitions de types pour jQuery](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/jquery/index.d.ts).</span><span class="sxs-lookup"><span data-stu-id="e40be-132">In a web browser, open the [type definitions file for jQuery](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/jquery/index.d.ts).</span></span> <span data-ttu-id="e40be-133">Copiez le contenu de ce fichier dans le presse-papiers.</span><span class="sxs-lookup"><span data-stu-id="e40be-133">Copy the contents of this file to your clipboard.</span></span>
+4. <span data-ttu-id="5f22a-119">Dans la fenêtre de dialogue **Créer un complément Office**, sélectionnez **Ajouter de nouvelles fonctionnalités à Excel**, puis sélectionnez **Terminer** pour créer le projet.</span><span class="sxs-lookup"><span data-stu-id="5f22a-119">In the **Create Office Add-in** dialog window, choose **Add new functionalities to Excel**, and then choose **Finish** to create the project.</span></span>
 
-8. <span data-ttu-id="e40be-134">Dans Visual Studio, ouvrez le fichier **jQuery.d.ts**, collez le contenu du presse-papiers dans le fichier, puis enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="e40be-134">In Visual Studio, open the **jQuery.d.ts** file, paste the contents of your clipboard into this file, and save the file.</span></span>
+5. <span data-ttu-id="5f22a-p104">Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="5f22a-p104">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
 
-9. <span data-ttu-id="e40be-135">Dans Visual Studio, créez un fichier nommé **tsconfig.json** dans la racine du projet d’application web.</span><span class="sxs-lookup"><span data-stu-id="e40be-135">In Visual Studio, create a new file named **tsconfig.json** in the root of the web application project.</span></span>
+## <a name="convert-the-add-in-project-to-typescript"></a><span data-ttu-id="5f22a-122">Convertir le projet de complément au format TypeScript</span><span class="sxs-lookup"><span data-stu-id="5f22a-122">Convert the add-in project to TypeScript</span></span>
 
-10. <span data-ttu-id="e40be-136">Ouvrez le fichier **tsconfig.json**, ajoutez le contenu suivant au fichier, puis enregistrez le fichier :</span><span class="sxs-lookup"><span data-stu-id="e40be-136">Open the **tsconfig.json** file, add the following content to the file, and save the file:</span></span>
+1. <span data-ttu-id="5f22a-123">Dans l’**Explorateur de solutions**, renommez le fichier **Home.js** comme suit : **Home.ts**.</span><span class="sxs-lookup"><span data-stu-id="5f22a-123">In **Solution Explorer**, rename the **Home.js** file to **Home.ts**.</span></span>
+
+    > [!NOTE]
+    > <span data-ttu-id="5f22a-p105">Dans votre projet TypeScript, vous pouvez avoir un mélange de fichiers TypeScript et JavaScript, qui seront compilés. En effet, TypeScript est un sur-ensemble typé de code JavaScript compilé en code JavaScript.</span><span class="sxs-lookup"><span data-stu-id="5f22a-p105">In your TypeScript project, you can have a mix of TypeScript and JavaScript files and your project will compile. This is because TypeScript is a typed superset of JavaScript that compiles JavaScript.</span></span> 
+
+2. <span data-ttu-id="5f22a-126">Sélectionnez **Oui** lorsque vous êtes invité à confirmer la modification de l’extension du nom de fichier.</span><span class="sxs-lookup"><span data-stu-id="5f22a-126">Select **Yes** when prompted to confirm that you want to change file name extension.</span></span>
+
+3. <span data-ttu-id="5f22a-127">Créez un fichier nommé **Office.d.ts** dans la racine du projet d’application web.</span><span class="sxs-lookup"><span data-stu-id="5f22a-127">Create a new file named **Office.d.ts** in the root of the web application project.</span></span>
+
+4. <span data-ttu-id="5f22a-128">Dans un navigateur web, ouvrez le [fichier de définitions de types pour Office.js](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js/index.d.ts).</span><span class="sxs-lookup"><span data-stu-id="5f22a-128">In a web browser, open the [type definitions file for Office.js](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js/index.d.ts).</span></span> <span data-ttu-id="5f22a-129">Copiez le contenu de ce fichier dans le presse-papiers.</span><span class="sxs-lookup"><span data-stu-id="5f22a-129">Copy the contents of this file to your clipboard.</span></span>
+
+5. <span data-ttu-id="5f22a-130">Dans Visual Studio, ouvrez le fichier **Office.d.ts**, collez le contenu du presse-papiers dans le fichier, puis enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="5f22a-130">In Visual Studio, open the **Office.d.ts** file, paste the contents of your clipboard into this file, and save the file.</span></span>
+
+6. <span data-ttu-id="5f22a-131">Créez un fichier nommé **jQuery.d.ts** dans la racine du projet d’application web.</span><span class="sxs-lookup"><span data-stu-id="5f22a-131">Create a new file named **jQuery.d.ts** in the root of the web application project.</span></span>
+
+7. <span data-ttu-id="5f22a-132">Dans un navigateur web, ouvrez le [fichier de définitions de types pour jQuery](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/jquery/index.d.ts).</span><span class="sxs-lookup"><span data-stu-id="5f22a-132">In a web browser, open the [type definitions file for jQuery](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/jquery/index.d.ts).</span></span> <span data-ttu-id="5f22a-133">Copiez le contenu de ce fichier dans le presse-papiers.</span><span class="sxs-lookup"><span data-stu-id="5f22a-133">Copy the contents of this file to your clipboard.</span></span>
+
+8. <span data-ttu-id="5f22a-134">Dans Visual Studio, ouvrez le fichier **jQuery.d.ts**, collez le contenu du presse-papiers dans le fichier, puis enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="5f22a-134">In Visual Studio, open the **jQuery.d.ts** file, paste the contents of your clipboard into this file, and save the file.</span></span>
+
+9. <span data-ttu-id="5f22a-135">Dans Visual Studio, créez un fichier nommé **tsconfig.json** dans la racine du projet d’application web.</span><span class="sxs-lookup"><span data-stu-id="5f22a-135">In Visual Studio, create a new file named **tsconfig.json** in the root of the web application project.</span></span>
+
+10. <span data-ttu-id="5f22a-136">Ouvrez le fichier **tsconfig.json**, ajoutez le contenu suivant au fichier, puis enregistrez le fichier :</span><span class="sxs-lookup"><span data-stu-id="5f22a-136">Open the **tsconfig.json** file, add the following content to the file, and save the file:</span></span>
 
     ```javascript
     {
@@ -78,31 +78,31 @@ ms.locfileid: "23945347"
     }
     ```
 
-11. <span data-ttu-id="e40be-137">Ouvrez le fichier **Home.ts** et ajoutez les instructions suivantes en haut du fichier :</span><span class="sxs-lookup"><span data-stu-id="e40be-137">Open the **Home.ts** file and add the following declaration at the top of the file:</span></span>
+11. <span data-ttu-id="5f22a-137">Ouvrez le fichier **Home.ts** et ajoutez les instructions suivantes en haut du fichier :</span><span class="sxs-lookup"><span data-stu-id="5f22a-137">Open the **Home.ts** file and add the following declaration at the top of the file:</span></span>
 
     ```javascript
     declare var fabric: any;
     ```
 
-12. <span data-ttu-id="e40be-138">Dans le fichier **Home.ts**, remplacez **'1.1'** par **1.1** (autrement dit, supprimez les guillemets) dans la ligne suivante, puis enregistrez le fichier :</span><span class="sxs-lookup"><span data-stu-id="e40be-138">In the **Home.ts** file, change **'1.1'** to **1.1** (that is, remove the quotation marks) in the following line, and save the file:</span></span>
+12. <span data-ttu-id="5f22a-138">Dans le fichier **Home.ts**, remplacez **'1.1'** par **1.1** (autrement dit, supprimez les guillemets) dans la ligne suivante, puis enregistrez le fichier :</span><span class="sxs-lookup"><span data-stu-id="5f22a-138">In the **Home.ts** file, change **'1.1'** to **1.1** (that is, remove the quotation marks) in the following line, and save the file:</span></span>
 
     ```javascript
     if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
     ```
 
-## <a name="run-the-converted-add-in-project"></a><span data-ttu-id="e40be-139">Exécuter le projet de complément converti</span><span class="sxs-lookup"><span data-stu-id="e40be-139">Run the converted add-in project</span></span>
+## <a name="run-the-converted-add-in-project"></a><span data-ttu-id="5f22a-139">Exécuter le projet de complément converti</span><span class="sxs-lookup"><span data-stu-id="5f22a-139">Run the converted add-in project</span></span>
 
-1. <span data-ttu-id="e40be-p108">Dans Visual Studio, appuyez sur F5 ou sélectionnez le bouton **Démarrer** pour lancer Excel avec le bouton du complément **Show Taskpane** (Afficher le volet Office) affiché dans le ruban. Le complément sera hébergé localement sur IIS.</span><span class="sxs-lookup"><span data-stu-id="e40be-p108">In Visual Studio, press F5 or choose the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
+1. <span data-ttu-id="5f22a-p108">Dans Visual Studio, appuyez sur F5 ou sélectionnez le bouton **Démarrer** pour lancer Excel avec le bouton du complément **Show Taskpane** (Afficher le volet Office) affiché dans le ruban. Le complément sera hébergé localement sur IIS.</span><span class="sxs-lookup"><span data-stu-id="5f22a-p108">In Visual Studio, press F5 or choose the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
 
-2. <span data-ttu-id="e40be-142">Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.</span><span class="sxs-lookup"><span data-stu-id="e40be-142">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="5f22a-142">Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.</span><span class="sxs-lookup"><span data-stu-id="5f22a-142">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
-3. <span data-ttu-id="e40be-143">Dans la feuille de calcul, sélectionnez les neuf cellules qui contiennent des nombres.</span><span class="sxs-lookup"><span data-stu-id="e40be-143">In the worksheet, select the nine cells that contain numbers.</span></span>
+3. <span data-ttu-id="5f22a-143">Dans la feuille de calcul, sélectionnez les neuf cellules qui contiennent des nombres.</span><span class="sxs-lookup"><span data-stu-id="5f22a-143">In the worksheet, select the nine cells that contain numbers.</span></span>
 
-4. <span data-ttu-id="e40be-144">Appuyez sur le bouton **Mettre en surbrillance** dans le volet Office pour mettre en surbrillance la cellule de la plage sélectionnée contenant la valeur la plus élevée.</span><span class="sxs-lookup"><span data-stu-id="e40be-144">Press the **Highlight** button on the task pane to highlight the cell in the selected range that contains the highest value.</span></span>
+4. <span data-ttu-id="5f22a-144">Appuyez sur le bouton **Mettre en surbrillance** dans le volet Office pour mettre en surbrillance la cellule de la plage sélectionnée contenant la valeur la plus élevée.</span><span class="sxs-lookup"><span data-stu-id="5f22a-144">Press the **Highlight** button on the task pane to highlight the cell in the selected range that contains the highest value.</span></span>
 
-## <a name="homets-code-file"></a><span data-ttu-id="e40be-145">Fichier de code Home.ts</span><span class="sxs-lookup"><span data-stu-id="e40be-145">Home.ts code file</span></span>
+## <a name="homets-code-file"></a><span data-ttu-id="5f22a-145">Fichier de code Home.ts</span><span class="sxs-lookup"><span data-stu-id="5f22a-145">Home.ts code file</span></span>
 
-<span data-ttu-id="e40be-146">Par exemple, l’extrait de code suivant affiche le contenu du fichier **Home.ts** une fois que les modifications décrites précédemment ont été appliquées.</span><span class="sxs-lookup"><span data-stu-id="e40be-146">For your reference, the following code snippet shows the contents of the **Home.ts** file after the previously described changes have been applied.</span></span> <span data-ttu-id="e40be-147">Ce code inclut le nombre minimal de modifications nécessaires afin que votre complément fonctionne.</span><span class="sxs-lookup"><span data-stu-id="e40be-147">This code includes the minimum number of changes needed in order for your add-in to run.</span></span>
+<span data-ttu-id="5f22a-146">Par exemple, l’extrait de code suivant affiche le contenu du fichier **Home.ts** une fois que les modifications décrites précédemment ont été appliquées.</span><span class="sxs-lookup"><span data-stu-id="5f22a-146">For your reference, the following code snippet shows the contents of the **Home.ts** file after the previously described changes have been applied.</span></span> <span data-ttu-id="5f22a-147">Ce code inclut le nombre minimal de modifications nécessaires afin que votre complément fonctionne.</span><span class="sxs-lookup"><span data-stu-id="5f22a-147">This code includes the minimum number of changes needed in order for your add-in to run.</span></span>
 
 ```javascript
 declare var fabric: any;
@@ -230,7 +230,7 @@ declare var fabric: any;
 })();
 ```
 
-## <a name="see-also"></a><span data-ttu-id="e40be-148">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e40be-148">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5f22a-148">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5f22a-148">See also</span></span>
 
-* [<span data-ttu-id="e40be-149">Discussion sur la mise en œuvre de promesses sur StackOverflow</span><span class="sxs-lookup"><span data-stu-id="e40be-149">Promise implementation discussion on StackOverflow</span></span>](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
-* [<span data-ttu-id="e40be-150">Exemples de compléments Office sur GitHub</span><span class="sxs-lookup"><span data-stu-id="e40be-150">Office Add-in samples on GitHub</span></span>](https://github.com/officedev)
+* [<span data-ttu-id="5f22a-149">Discussion sur la mise en œuvre de promesses sur StackOverflow</span><span class="sxs-lookup"><span data-stu-id="5f22a-149">Promise implementation discussion on StackOverflow</span></span>](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
+* [<span data-ttu-id="5f22a-150">Exemples de compléments Office sur GitHub</span><span class="sxs-lookup"><span data-stu-id="5f22a-150">Office Add-in samples on GitHub</span></span>](https://github.com/officedev)
