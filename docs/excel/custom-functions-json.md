@@ -13,9 +13,9 @@ Les métadonnées sont un objet JSON qui contient une seule `functions` proprié
 |  `description`  |  chaîne  |  Non  |  Une description de la fonction figurant sur l'interface utilisateur Excel. Par exemple, " Convertir une valeur Celsius en Fahrenheit ". |
 |  `helpUrl`  |  chaîne  |   Non  |  L’URL où vos utilisateurs peuvent obtenir de l’aide sur la fonction. (Il est affiché dans une tâche.) Par exemple, "http://contoso.com/help/convertcelsiustofahrenheit.html"  |
 |  `name`  |  chaîne  |  Oui  |  Le nom de la fonction telle qu'elle apparaîtra (préfixée d'un espace de nom) dans l'interface utilisateur Excel lorsqu'un utilisateur sélectionne une fonction. Il devrait être le même que le nom de la fonction où il est défini dans le JavaScript. |
-|  `options`  |  objet  |  Non  |  Configurer comment Excel traite une fonction. Voir [options objet](#options-object) pour plus de détails. |
-|  `parameters`  |  tableau  |  Oui  |  Métadonnées sur les paramètres de la fonction. Voir[tableau de paramètres](#parameters-array) pour plus de détails. |
-|  `result`  |  objet  |  Oui  |  Métadonnées sur la valeur renvoyée par la fonction. Voir [objet de résultat](#result-object) pour plus de détails. |
+|  `options`  |  object  |  Non  |  Configurer comment Excel traite une fonction. Voir [options objet](#options-object) pour plus de détails. |
+|  `parameters`  |  array  |  Oui  |  Métadonnées sur les paramètres de la fonction. Voir[tableau de paramètres](#parameters-array) pour plus de détails. |
+|  `result`  |  object  |  Oui  |  Métadonnées sur la valeur renvoyée par la fonction. Voir [objet de résultat](#result-object) pour plus de détails. |
 
 ## <a name="options-object"></a>Objet Options
 
@@ -23,9 +23,8 @@ L’ `options` objet configure comment Excel traite la fonction. Le tableau suiv
 
 |  Propriété  |  Type de données  |  Obligatoire ?  |  Description  |
 |:-----|:-----|:-----|:-----|
-|  `cancelable`  |  booléen  |  Non, la valeur par défaut est `false`.  |  Lorsqu’`true`Excel appelle le `onCanceled` gestionnaire au moment où l'utilisateur prend une action visant par exemple à annuler la fonction, le déclenchement manuel du recalcul ou la modification d’une cellule est référencée par cette fonction. Si vous utilisez cette option, Excel appellera la fonction JavaScript avec un paramètre `caller` additionnel. (Ne ***pas*** enregistrer ce paramètre dans la propriété `parameters`). Dans le corps de la fonction, un gestionnaire doit être affecté à un membre `caller.onCanceled`. Remarque : `cancelable` et `sync` ne peuvent pas être à la fois `true`.  |
-|  `stream`  |  booléen  |  Non, la valeur par défaut est `false`.  |  Si `true`, la fonction peut générer une sortie plusieurs fois dans la cellule même lorsqu'elle n'est invoquée qu'une seule fois. Cette option est utile pour les sources de données en évolution rapide, telles que le cours d'une action. Si vous utilisez cette option, Excel appellera la fonction JavaScript avec un paramètre `caller` additionnel. (Ne ***pas*** enregistrer ce paramètre dans la propriété `parameters`). La fonction ne devrait pas avoir de `return` déclaration. Au lieu de cela, la valeur du résultat est transmise en tant que motif de la `caller.setResult` méthode de rappel. Remarque : `stream` et `sync` ne peuvent pas être à la fois `true`.|
-|  `sync`  |  booléen  |  Non, la valeur par défaut est `false`  |  Si `true`, la fonction s'exécute de manière synchrone et elle doit renvoyer une valeur. Si `false`, la fonction s'exécute de manière asynchrone et elle doit renvoyer un `OfficeExtension.Promise` objet. Remarque : `sync` n'est peut être pas `true` si `cancelable` ou `stream` sont `true`.  |
+|  `cancelable`  |  booléen  |  Non, la valeur par défaut est `false`.  |  Si `true`, Excel appelle le gestionnaire `onCanceled` à chaque fois que l’utilisateur exécute une action qui a pour effet l’annulation de la fonction ; par exemple, déclencher manuellement le recalcul, ou modifier une cellule référencée par la fonction. Si vous utilisez cette option, Excel appelle la fonction JavaScript avec un paramètre `caller` en plus. (Ne ***pas*** enregistrer ce paramètre dans la propriété `parameters`). Dans le corps de la fonction, un gestionnaire doit être affecté au membre `caller.onCanceled`.|
+|  `stream`  |  booléen  |  Non, la valeur par défaut est `false`.  |  Si `true`, la fonction peut générer une sortie plusieurs fois dans la cellule même lorsqu'elle n'est invoquée qu'une seule fois. Cette option est utile pour les sources de données en évolution rapide, telles que le cours d'une action. Si vous utilisez cette option, Excel appellera la fonction JavaScript avec un paramètre `caller` additionnel. (Ne ***pas*** enregistrer ce paramètre dans la propriété `parameters`). La fonction ne devrait pas avoir de `return` déclaration. Au lieu de cela, la valeur du résultat est transmise en tant que motif de la `caller.setResult` méthode de rappel.|
 
 ## <a name="parameters-array"></a>Tableau de paramètres
 
@@ -69,10 +68,7 @@ Le code JSON suivant est un exemple de fichier de métadonnées pour fonctions p
                     "type": "number",
                     "dimensionality": "scalar"
                 }
-            ],
-            "options": {
-                "sync": true
-            }
+            ]
         },
         {
             "name": "ADD42ASYNC", 
@@ -89,10 +85,7 @@ Le code JSON suivant est un exemple de fichier de métadonnées pour fonctions p
                     "type": "number",
                     "dimensionality": "scalar"
                 }
-            ],
-            "options": {
-                "sync": false
-            }
+            ]
         },
         {
             "name": "ISEVEN", 
@@ -109,10 +102,7 @@ Le code JSON suivant est un exemple de fichier de métadonnées pour fonctions p
                     "type": "number",
                     "dimensionality": "scalar"
                 }
-            ],
-            "options": {
-                "sync": true
-            }
+            ]
         },
         {
             "name": "GETDAY",
@@ -121,10 +111,7 @@ Le code JSON suivant est un exemple de fichier de métadonnées pour fonctions p
             "result": {
                 "type": "string"
             },
-            "parameters": [],
-            "options": {
-                "sync": true
-            }
+            "parameters": []
         },
         {
             "name": "INCREMENTVALUE", 
@@ -143,7 +130,6 @@ Le code JSON suivant est un exemple de fichier de métadonnées pour fonctions p
                 }
             ],
             "options": {
-                "sync": false,
                 "stream": true,
                 "cancelable": true
             }
@@ -163,10 +149,7 @@ Le code JSON suivant est un exemple de fichier de métadonnées pour fonctions p
                     "type": "number",
                     "dimensionality": "matrix"
                 }
-            ],
-            "options": {
-                "sync": true
-            }
+            ]
         }
     ]
 }
