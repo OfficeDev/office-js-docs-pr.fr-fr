@@ -1,4 +1,4 @@
-1. Ouvrez un terminal Bash à la racine du projet et exécutez la commande suivante pour démarrer le serveur de développement.
+1. Ouvrez un terminal bash à la racine du projet (**[...] /Mes complément office**) et exécutez la commande suivante pour démarrer le serveur de développement.
 
     ```bash
     npm start

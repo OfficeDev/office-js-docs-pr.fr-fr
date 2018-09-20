@@ -2,20 +2,20 @@
 title: Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)
 description: ''
 ms.date: 12/08/2017
-ms.openlocfilehash: ef4d7ed873121deec5fd235e0eace70a3a0c2f0e
-ms.sourcegitcommit: 8333ede51307513312d3078cb072f856f5bef8a2
+ms.openlocfilehash: a0eb0839596bad0dfe45c2cbbc05c2c3d74eda24
+ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "23876598"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "24016317"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>Résolution des messages d’erreur pour l’authentification unique (SSO) (aperçu)
 
 Cet article fournit des conseils sur la résolution des problèmes liés à l’authentification unique (SSO) dans les compléments Office, et explique comment faire en sorte que votre complément gère correctement les conditions particulières ou les erreurs.
 
 > [!NOTE]
-> L’API d'authentification unique est actuellement prise en charge en mode aperçu pour Word, Excel, Outlook et PowerPoint. Pour plus d’informations à propos de la prise en charge actuelle de l’API d’authentification unique, consultez la rubrique [Ensembles de conditions requises d'IdentityAPI]https://docs.microsoft.com/javascript/office/requirement-sets/identity-api-requirement-sets).
-> Pour utiliser l’authentification unique, vous devez charger la version bêta de la bibliothèque JavaScript Office à partir de https://appsforoffice.microsoft.com/lib/beta/hosted/office.js dans la page de démarrage HTML du complément.
+> L’API d’authentification unique est actuellement prise en charge dans les préversions de Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur la prise en charge actuelle de l’API d’authentification unique, consultez la rubrique [Ensembles de prérequis d’IdentityAPI]https://docs.microsoft.com/javascript/office/requirement-sets/identity-api-requirement-sets).
+> Pour utiliser l’authentification unique, vous devez charger la version bêta de la bibliothèque à partir de JavaScript Office https://appsforoffice.microsoft.com/lib/beta/hosted/office.js dans la page de démarrage HTML du complément.
 > Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location d’Office 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## <a name="debugging-tools"></a>Outils de débogage
@@ -43,7 +43,7 @@ Pour consulter des exemples de la gestion des erreurs décrite dans cette sectio
 L’API [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) n’est pas prise en charge par le complément ou la version d’Office. 
 
 - La version d’office ne prend pas en charge SSO. La version requise est Office 2016, version 1710, build 8629.nnnn ou version ultérieure (la version par abonnement Office 365, parfois appelée « Démarrer en un clic »). Vous devrez peut-être participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à la rubrique [Participer au programme Office Insider](https://products.office.com/office-insider?tab=tab-1). 
-- Le manifeste de complément n’inclut pas la section [WebApplicationInfo](https://dev.office.com/reference/add-ins/manifest/webapplicationinfo) appropriée.
+- Le manifeste de complément n’inclut pas la section [WebApplicationInfo](https://docs.microsoft.com/javascript/office/manifest/webapplicationinfo?view=office-js) appropriée.
 
 ### <a name="13001"></a>13001
 
@@ -67,7 +67,7 @@ Ressource non valide. Le manifeste du complément n’a pas été configuré cor
 
 ### <a name="13005"></a>13005
 
-Octroi non valide. Cela signifie généralement qu’Office n’a pas été pré-autorisé sur le service web du complément. Pour plus d’informations, consultez la rubrique sur la [création de l’application de service](sso-in-office-add-ins.md#create-the-service-application) et sur l’[enregistrement du complément avec le point de terminaison Azure AD v2.0](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) ou sur l’[enregistrement du complément avec le point de terminaison Azure AD v2.0](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (nœud JS). Cela peut également arriver si l’utilisateur n’a pas accordé à votre service les autorisations d’application à leur `profile`.
+Octroi non valide. Cela signifie généralement qu’Office n’a pas été pré-autorisé sur le service web du complément. Pour plus d’informations, consultez la rubrique sur la [création de l’application de service](sso-in-office-add-ins.md#create-the-service-application) et sur l’[enregistrement du complément avec le point de terminaison Azure AD v2.0](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) ou sur l’[enregistrement du complément avec le point de terminaison Azure AD v2.0](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (nœud JS). Cela peut également arriver si l’utilisateur n’a pas accordé à votre application de service les autorisations concernant leur `profile`.
 
 ### <a name="13006"></a>13006
 
@@ -75,7 +75,7 @@ Erreur client. Votre code doit suggérer à l’utilisateur de se déconnecter e
 
 ### <a name="13007"></a>13007
 
-L’hôte Office n’a pas pu obtenir de jeton d’accès au service Web du complément.
+L’hôte Office n’a pas pu obtenir de jeton d’accès au service web du complément.
 - Si cette erreur se produit pendant le développement, assurez-vous que votre enregistrement de complément et votre manifeste de complément spécifient les autorisations `openid` et `profile`. Pour plus d’informations, consultez la rubrique sur l’[enregistrement du complément avec le point de terminaison Azure AD v2.0](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) ou sur l’[enregistrement du complément avec le point de terminaison Azure AD v2.0](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (nœud JS), et sur la [configuration du complément](create-sso-office-add-ins-aspnet.md#configure-the-add-in)(ASP.NET) ou sur la [configuration du complément](create-sso-office-add-ins-nodejs.md#configure-the-add-in) (nœud JS).
 - En production, il y a plusieurs choses qui peuvent provoquer cette erreur. En voici certaines :
     - L'utilisateur a révoqué son consentement, après l'avoir préalablement accordé. Votre code doit rappeler la méthode `getAccessTokenAsync` avec l’option `forceConsent: true`, mais pas plus d’une fois.
@@ -97,6 +97,10 @@ Le complément a appelé la méthode `getAccessTokenAsync` avec l’option `forc
 ### <a name="13010"></a>13010
 
 L’utilisateur exécute le complément sur Office Online et utilise Edge ou Internet Explorer. Le domaine Office 365 de l’utilisateur et le domaine login.microsoftonline.com sont dans des zones de sécurité distinctes dans les paramètres de navigateur. Si cette erreur est renvoyée, l’utilisateur a déjà vu une erreur expliquant cela et menant vers une page sur la modification de la configuration de la zone. Si votre complément fournit des fonctions qui ne nécessitent pas que l’utilisateur soit connecté, votre code doit intercepter cette erreur et autoriser l’exécution du complément.
+
+### <a name="13012"></a>13012
+
+Le complément est en cours d’exécution sur une plate-forme ne prenant pas en charge l’API `getAccessTokenAsync`. Par exemple, il n'est pas pris en charge sur iPad. Voir aussi [Ensembles de conditions requises de l’API d’identité](https://docs.microsoft.com/javascript/office/requirement-sets/identity-api-requirement-sets)
 
 ### <a name="50001"></a>50001
 
@@ -122,7 +126,7 @@ Si AAD ne détient aucune trace qu’un consentement (à la ressource Microsoft 
 ### <a name="invalid-or-missing-scope-permission-errors"></a>Erreurs d’étendue (permission) non valide ou manquante
 
 - Votre code côté serveur doit envoyer une réponse `403 Forbidden` au client, qui doit présenter un message amical à l’utilisateur. Si possible, consignez l’erreur dans la console ou enregistrez-la dans un journal.
-- Assurez-vous que la section [Scopes](https://dev.office.com/reference/add-ins/manifest/scopes) du manifeste de votre complément indique toutes les autorisations nécessaires. Vérifiez également que l’alignement du service web de votre complément spécifie les mêmes autorisations. Vérifiez les fautes d’orthographe. Pour plus d’informations, consultez la rubrique sur l’[enregistrement du complément avec le point de terminaison Azure AD v2.0](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) ou sur l’[enregistrement du complément avec le point de terminaison Azure AD v2.0](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (nœud JS), et sur la [configuration du complément](create-sso-office-add-ins-aspnet.md#configure-the-add-in)(ASP.NET) ou sur la [configuration du complément](create-sso-office-add-ins-nodejs.md#configure-the-add-in) (nœud JS).
+- Assurez-vous que la section [Scopes](https://docs.microsoft.com/javascript/office/manifest/scopes?view=office-js) du manifeste de votre complément indique toutes les autorisations nécessaires. Vérifiez également que l’alignement du service web de votre complément spécifie les mêmes autorisations. Vérifiez les fautes d’orthographe. Pour plus d’informations, consultez la rubrique sur l’[enregistrement du complément avec le point de terminaison Azure AD v2.0](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) ou sur l’[enregistrement du complément avec le point de terminaison Azure AD v2.0](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (nœud JS), et sur la [configuration du complément](create-sso-office-add-ins-aspnet.md#configure-the-add-in)(ASP.NET) ou sur la [configuration du complément](create-sso-office-add-ins-nodejs.md#configure-the-add-in) (nœud JS).
 
 ### <a name="expired-or-invalid-token-errors-when-calling-microsoft-graph"></a>Erreurs de jetons expirés ou invalides lors de l’appel à Microsoft Graph
 

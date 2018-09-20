@@ -1,6 +1,6 @@
 # <a name="create-custom-functions-in-excel-preview"></a>Créer des fonctions personnalisées dans Excel (Aperçu)
 
-Les fonctions personnalisées (similaires aux fonctions définies par l’utilisateur ou UDF) permettent aux développeurs d’ajouter n’importe quelle fonction JavaScript à Excel en utilisant un complément. Les utilisateurs peuvent alors avoir accès aux fonctions personnalisées comme toute autre fonction native dans Excel (par exemple, `=SUM()`). Cet article explique comment créer des fonctions personnalisées dans Excel.
+Les fonctions personnalisées (similaires aux fonctions définies par l’utilisateur, ou UDF) permettent aux développeurs d’ajouter n’importe quelle fonction JavaScript à Excel en utilisant un complément. Les utilisateurs peuvent alors avoir accès aux fonctions personnalisées comme toute autre fonction native dans Excel (par exemple, `=SUM()`). Cet article explique comment créer des fonctions personnalisées dans Excel.
 
 L'illustration suivante montre comment un utilisateur final insère une fonction personnalisée dans une cellule. La fonction qui ajoute 42 à une paire de nombres.
 
@@ -41,7 +41,7 @@ Le code suivant dans customfunctions.json spécifie les métadonnées pour la m�
 Notez que pour cet exemple :
 
 - Il n'y a qu'une seule fonction personnalisée, donc il n'y a qu'un seul membre d tableau `functions`.
-- La propriété `name` définit le nom de la fonction. Comme vous le voyez dans l'image gif animée montrée précédemment, un espace de noms (`CONTOSO`) est ajouté au nom de la fonction dans le menu remplissage automatique Excel. Ce préfixe est défini dans le manifeste du complément, décrit ci-dessous. Le préfixe et le nom de la fonction sont séparés à l'aide d'un point et, par convention, les préfixes et les noms de fonctions sont en majuscules. Pour utiliser votre fonction personnalisée, un utilisateur tape l’espace de nom suivi du nom de la fonction (`ADD42`) dans une cellule, dans ce cas `=CONTOSO.ADD42`. Le préfixe est destiné à être utilisé comme identificateur de votre entreprise ou du complément. 
+- La propriété `name` définit le nom de la fonction. Comme vous le voyez dans l'image gif animée montrée précédemment, un espace de noms (`CONTOSO`) est ajouté au nom de la fonction dans le menu remplissage automatique Excel. Ce préfixe est défini dans le manifeste du complément, décrit ci-dessous. Le préfixe et le nom de la fonction sont séparés à l'aide d'un point et, par convention, les préfixes et les noms de fonctions sont en majuscules. Pour utiliser votre fonction personnalisée, un utilisateur tape l’espace de nom suivi du nom de la fonction (`ADD42`) dans une cellule, dans ce cas `=CONTOSO.ADD42`. Le préfixe est destiné à être utilisé comme identificateur pour votre entreprise ou votre complément. 
 - Le `description` apparaît dans le menu remplissage automatique dans Excel.
 - Lorsque l’utilisateur demande de l’aide concernant une fonction, Excel ouvre un volet Office et affiche la page web accessible via cette URL spécifiée dans `helpUrl`.
 - La propriété `result` spécifie le type d’informations renvoyées par la fonction à Excel. La propriété enfant `type` peut `"string"`, `"number"`, ou `"boolean"`. La propriété `dimensionality` peut être `scalar` ou `matrix` (un tableau bidimensionnel de valeurs de la valeur spécifiée `type`).
@@ -174,7 +174,7 @@ La fonction `ADD42` ci-dessus est synchrone par rapport à Excel (désigné en r
 
 D'un autre côté, si votre fonction personnalisée récupère des données du Web, elle doit être asynchrone par rapport à Excel. Les fonctions asynchrones doivent :
 
-1. Renvoyer une promesse JavaScript à Excel.
+1. Renvoyer une promesse JavaScript à Excel
 3. Résolvez la promesse avec la valeur finale en utilisant la fonction de rappel.
 
 Le code suivant indique un exemple de fonction personnalisée asynchrone qui récupère la température d’un thermomètre. Notez que `sendWebRequest` est une fonction hypothétique, non spécifiée ici, qui utilise XHR pour appeler un service Web de température.
@@ -199,15 +199,15 @@ Les fonctions asynchrones affichent une erreur temporaire `GETTING_DATA` dans la
 Une fonction asynchrone peut être diffusée. Les fonctions personnalisées de flux vous permettent d’afficher des données dans des cellules à plusieurs reprises au fil du temps, sans devoir attendre qu’Excel ou que des utilisateurs demandent à effectuer le calcul à nouveau. L’exemple suivant est une fonction personnalisée qui ajoute un nombre au résultat toutes les secondes. Tenez compte des informations suivantes :
 
 - Excel affiche automatiquement chaque nouvelle valeur en utilisant le rappel `setResult`.
-- Le paramètre final, `caller`, n’est jamais spécifié dans votre code d’enregistrement et ne s’affiche pas dans le menu de remplissage automatique pour les utilisateurs d’Excel lorsqu’ils entrent la fonction. Il s’agit d’un objet contenant une fonction de rappel `setResult` utilisée pour transmettre des données de la fonction à Excel afin de mette à jour la valeur d’une cellule.
-- Pour qu'Excel transmette la fonction `setResult` dans l'objet `caller`, vous devez déclarer la prise en charge de la diffusion en continu pendant l’enregistrement de votre fonction en définissant l’option `"stream": true` dans la propriété `options` pour la fonction personnalisée dans le fichier JSON d’enregistrement.
+- Le paramètre final, `handler`, n’est jamais spécifié dans votre code d’enregistrement et ne s’affiche pas dans le menu de remplissage automatique pour les utilisateurs d’Excel lorsqu’ils entrent la fonction. Il s’agit d’un objet contenant une fonction de rappel `setResult` utilisée pour transmettre des données de la fonction à Excel afin de mette à jour la valeur d’une cellule.
+- Pour qu'Excel transmette la fonction `setResult` dans l'objet `handler`, vous devez déclarer la prise en charge de la diffusion en continu pendant l’enregistrement de votre fonction en définissant l’option `"stream": true` dans la propriété `options` pour la fonction personnalisée dans le fichier JSON d’enregistrement.
 
 ```js
-function incrementValue(increment, caller){
+function incrementValue(increment, handler){
     var result = 0;
     setInterval(function(){
          result += increment;
-         caller.setResult(result);
+         handler.setResult(result);
     }, 1000);
 }
 ```
@@ -224,17 +224,17 @@ Vous *devez* implémenter un gestionnaire d'annulation pour chaque fonction de d
 
 Pour rendre une fonction annulable, définissez l’option `"cancelable": true` dans la propriété `options` pour la fonction personnalisée dans le fichier JSON d’enregistrement.
 
-Le code suivant affiche l’exemple précédent avec l’annulation mise en œuvre. Dans le code, l’objet `caller` contient une fonction `onCanceled` qui doit être définie pour chaque fonction personnalisée pouvant être annulée.
+Le code suivant affiche l’exemple précédent avec l’annulation mise en œuvre. Dans le code, l’objet `handler` contient une fonction `onCanceled` qui doit être définie pour chaque fonction personnalisée pouvant être annulée.
 
 ```js
-function incrementValue(increment, caller){ 
+function incrementValue(increment, handler){ 
     var result = 0;
     var timer = setInterval(function(){
          result += increment;
-         caller.setResult(result);
+         handler.setResult(result);
     }, 1000);
 
-    caller.onCanceled = function(){
+    handler.onCanceled = function(){
         clearInterval(timer);
     }
 }
@@ -253,13 +253,13 @@ Le code suivant illustre une implémentation de la fonction de flux précédente
 ```js
 var savedTemperatures;
 
-function streamTemperature(thermometerID, caller){ 
+function streamTemperature(thermometerID, handler){ 
      if(!savedTemperatures[thermometerID]){
          refreshTemperatures(thermometerID); // starts fetching temperatures if the thermometer hasn't been read yet
      }
 
      function getNextTemperature(){
-         caller.setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
+         handler.setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
          setTimeout(getNextTemperature, 1000); // Wait 1 second before updating Excel again.
      }
      getNextTemperature();
@@ -320,3 +320,5 @@ Comme vous pouvez le voir, les plages sont gérées en JavaScript sous la forme 
 - **20 novembre 2017 :** correction du bogue de compatibilité pour les utilisateurs de la version 8801 et ultérieure
 - **28 novembre 2017 :** prise en charge de l’annulation sur des fonctions asynchrones (nécessite la modification des fonctions de flux)
 - **7 mai 2018**: Support fourni pour Mac, Excel Online et fonctions synchrones en cours de traitement
+
+\* vers le canal Office Insiders
