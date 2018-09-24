@@ -2,20 +2,14 @@
 title: Ajouter la validation des données aux plages Excel
 description: ''
 ms.date: 04/13/2018
-ms.openlocfilehash: fd40cab045da0472a060752651a27f0b26028b4b
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 7e545ccca01a12257f4083f19135a320b2693190
+ms.sourcegitcommit: e7e4d08569a01c69168bb005188e9a1e628304b9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944876"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "24967689"
 ---
 # <a name="add-data-validation-to-excel-ranges-preview"></a>Ajouter la validation des données aux plages Excel (préversion)
-
-> [!NOTE]
-> Tant que les API de validation des données sont en préversion, vous devez charger la version bêta de la bibliothèque JavaScript Office pour les utiliser. L’URL est https://appsforoffice.microsoft.com/lib/beta/hosted/office.js. Si vous utilisez TypeScript ou si votre éditeur de code utilise un fichier de définition de type TypeScript pour intelliSense, utilisez https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
-
-> [!NOTE]
-> Alors que les API de validation des données sont en préversion, les liens de cet article vers la référence de l'API ne fonctionneront pas. En attendant, vous pouvez utiliser le [projet de référence de l'API Excel](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec/reference/excel).
 
 La bibliothèque JavaScript Excel fournit des API pour permettre à votre complément d'ajouter une validation automatique des données aux tables, colonnes, lignes et autres plages d'un classeur. Pour comprendre les concepts et la terminologie de la validation des données, consultez les articles suivants qui portent sur la manière dont les utilisateurs peuvent ajouter la validation des données via l'IU Excel :
 
@@ -30,7 +24,7 @@ La propriété `Range.dataValidation`, qui prend un objet de validation de donn�
 - `rule` - Définit ce qui constitue des données valides pour la plage. Voir [DataValidationRule](https://docs.microsoft.com/javascript/api/excel/excel.datavalidationrule).
 - `errorAlert` - Spécifie si une erreur apparaît lorsque l'utilisateur entre des données non valides et définit le texte, le titre et le style d'alerte ; par exemple, **Informatif**, **Avertissement**, et **Arrêter**. Voir [DataValidationErrorAlert](https://docs.microsoft.com/javascript/api/excel/excel.datavalidationerroralert).
 - `prompt` - Indique si une invite s'affiche lorsque l'utilisateur survole la plage et définit le message d'assistance vocale. Voir [DataValidationPrompt](https://docs.microsoft.com/javascript/api/excel/excel.datavalidationprompt).
-- `ignoreBlanks` - Spécifie si la règle de validation des données s'applique aux cellules vides de la plage. Par défaut `true`.
+- `ignoreBlanks` - Spécifie si la règle de validation des données s'applique aux cellules vides de la plage. `true` par défaut.
 - `type` - Une identification en lecture seule du type de validation, tel que WholeNumber, Date, TextLength, etc. Il est défini indirectement lorsque vous définissez la propriété `rule`.
 
 > [!NOTE]
@@ -42,13 +36,13 @@ Pour ajouter une validation de données à une plage, votre code doit définir l
 
 #### <a name="basic-and-datetime-validation-rule-types"></a>Types de règles de validation de base et DateTime
 
-Les trois premières propriétés `DataValidationRule` (c.-à-d. les types de règles de validation) prennent un objet [BasicDataValidation](https://docs.microsoft.com/javascript/api/excel?view=office-js) comme leur valeur.
+Les trois premières propriétés `DataValidationRule` (c.-à-d. les types de règles de validation) prennent un objet [BasicDataValidation](https://docs.microsoft.com/javascript/api/excel) comme leur valeur.
 
 - `wholeNumber` – Nécessite un nombre entier en plus de toute autre validation spécifiée par l'objet `BasicDataValidation`.
 - `decimal` - Nécessite un nombre décimal en plus de toute autre validation spécifiée par l'objet `BasicDataValidation`.
 - `textLength` – Applique les détails de validation dans l'objet `BasicDataValidation` à la *longueur*  de la valeur de la cellule.
 
-Voici un exemple de création d'une règle de validation. Tenez compte des informations suivantes :
+Voici un exemple de création d'une règle de validation. Tenez compte des informations suivantes :
 
 - Le `operator` est l'opérateur binaire "supérieur à". Chaque fois que vous utilisez un opérateur binaire, la valeur que l'utilisateur essaie d'entrer dans la cellule est l'opérande de gauche et la valeur spécifiée dans `formula1` est l'opérande de droite. Donc, cette règle dit que seuls les nombres entiers supérieurs à 0 sont valides. 
 - Le `formula1` est un nombre codé en dur. Si vous ne savez pas au moment du codage quelle devrait être la valeur, vous pouvez également utiliser une formule Excel (sous forme de chaîne) pour la valeur. Par exemple, « = A3 » et « = SOMME (A4:B5) » peuvent également être des valeurs de `formula1`.
@@ -116,7 +110,7 @@ Excel.run(function (context) {
 
 #### <a name="list-validation-rule-type"></a>Type de règle de validation de liste
 
-Utilisez la propriété `list` dans l'objet `DataValidationRule` pour spécifier que les seules valeurs valides sont celles d'une liste finie. Voici un exemple. Tenez compte des informations suivantes :
+Utilisez la propriété `list` dans l'objet `DataValidationRule` pour spécifier que les seules valeurs valides sont celles d'une liste finie. Voici un exemple. Tenez compte des informations suivantes :
 
 - Il suppose qu'il existe une feuille de calcul nommée "Noms" et que les valeurs de la plage "A1: A3" sont des noms.
 - La propriété `source` spécifie la liste des valeurs valides. La plage avec les noms lui a été affectée. Vous pouvez également affecter une liste délimitée par des virgules, comme par exemple : « Sue, Ricky, Liz ». 
@@ -141,7 +135,7 @@ Excel.run(function (context) {
 
 #### <a name="custom-validation-rule-type"></a>Type de règle de validation personnalisée
 
-Utilisez la propriété `custom` dans l'objet `DataValidationRule` pour spécifier une formule de validation personnalisée. Voici un exemple. Tenez compte des informations suivantes :
+Utilisez la propriété `custom` dans l'objet `DataValidationRule` pour spécifier une formule de validation personnalisée. Voici un exemple. Tenez compte des informations suivantes :
 
 - Il suppose qu'il y a un tableau à deux colonnes avec des colonnes **Nom de l'athlète** et **Commentaires** dans les colonnes A et B de la feuille de calcul.
 - Pour réduire la verbosité dans la colonne **Commentaires,** il rend invalides les données qui incluent le nom de l'athlète.
@@ -165,7 +159,7 @@ Excel.run(function (context) {
 
 ### <a name="create-validation-error-alerts"></a>Créer des alertes d'erreur de validation
 
-Vous pouvez créer une alerte d'erreur personnalisée qui apparaît lorsqu'un utilisateur tente d'entrer des données non valides dans une cellule. Ce qui suit est un exemple simple. Tenez compte des informations suivantes :
+Vous pouvez créer une alerte d'erreur personnalisée qui apparaît lorsqu'un utilisateur tente d'entrer des données non valides dans une cellule. Ce qui suit est un exemple simple. Tenez compte des informations suivantes :
 
 - La propriété `style` détermine si l'utilisateur reçoit une alerte informative, un avertissement ou une alerte d' "arrêt". Seule `Stop` empêche réellement l'utilisateur d'ajouter des données invalides. La fenêtre contextuelle pour `Warning` et `Information` a des options qui permettent à l'utilisateur d'entrer les données invalides de toute façon.
 - La propriété `showAlert` prend `true` par défaut. Cela signifie que l'hôte Excel affichera une alerte générique (de type `Stop`) sauf si vous créez une alerte personnalisée qui soit définit `showAlert` pour `false` ou définit un message, un titre et un style personnalisés. Ce code définit un message et un titre personnalisés.
@@ -193,7 +187,7 @@ Pour en savoir plus, voir [DataValidationErrorAlert](https://docs.microsoft.com/
 
 ### <a name="create-validation-prompts"></a>Créer des invites de validation
 
-Vous pouvez créer une invite d'instruction qui apparaît lorsqu'un utilisateur survole ou sélectionne une cellule à laquelle la validation des données a été appliquée. Voici un exemple :
+Vous pouvez créer une invite d'instruction qui apparaît lorsqu'un utilisateur survole ou sélectionne une cellule à laquelle la validation des données a été appliquée. Voici un exemple :
 
 ```js
 Excel.run(function (context) {

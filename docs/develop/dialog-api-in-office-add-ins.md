@@ -2,19 +2,19 @@
 title: Utiliser l’API de dialogue dans vos compléments Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: b026c3c5871372c52d0b44e36c01fc44a3d2bf04
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 569aa6fe6a16b4dc158f0b4e0f5b457650a5a46a
+ms.sourcegitcommit: 470d8212b256275587e651abaa6f28beafebcab4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437954"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "24062136"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Utiliser l’API de dialogue dans vos compléments Office
 
-Vous pouvez utiliser l’[API de dialogue](https://dev.office.com/reference/add-ins/shared/officeui) pour ouvrir des boîtes de dialogue dans votre complément Office. Cet article fournit des conseils concernant l’utilisation de l’API de dialogue dans votre complément Office.
+Vous pouvez utiliser l’[API de dialogue](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) pour ouvrir des boîtes de dialogue dans votre complément Office. Cet article fournit des conseils concernant l’utilisation de l’API de dialogue dans votre complément Office.
 
 > [!NOTE]
-> Pour plus d’informations sur les compléments où l’API de dialogue est actuellement prise en charge, consultez la rubrique relative aux [ensembles de conditions requises de l’API de dialogue](https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets). L’API de dialogue est actuellement prise en charge pour Word, Excel, PowerPoint et Outlook.
+> Pour plus d’informations sur les compléments où l’API de dialogue est actuellement prise en charge, consultez la rubrique relative aux [ensembles de conditions requises de l’API de dialogue](https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets?view=office-js). L’API de dialogue est actuellement prise en charge pour Word, Excel, PowerPoint et Outlook.
 
 > Un scénario principal pour l’API de dialogue consiste à activer l’authentification pour une ressource telle que Google ou Facebook. Si votre complément nécessite les données relatives à l’utilisateur d’Office ou leurs ressources accessibles via Microsoft Graph, par exemple Office 365 ou OneDrive, nous vous recommandons d’utiliser l’API d’authentification unique chaque fois que possible. Si vous utilisez les API pour l’authentification unique, vous n’aurez pas besoin de l’API de dialogue. Pour plus d’informations, consultez la rubrique [Activer l’authentification unique pour des compléments Office](sso-in-office-add-ins.md).
 
@@ -35,11 +35,11 @@ Notez que la boîte de dialogue s’ouvre toujours au centre de l’écran. L’
 
 ## <a name="dialog-api-scenarios"></a>Scénarios de l’API de dialogue
 
-Les API JavaScript Office prennent en charge les scénarios suivants avec un objet [Dialog](https://dev.office.com/reference/add-ins/shared/officeui.dialog) et deux fonctions dans l’[espace de noms Office.context.ui](https://dev.office.com/reference/add-ins/shared/officeui).
+Les API JavaScript Office prennent en charge les scénarios suivants avec un objet [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog?view=office-js) et deux fonctions dans l’[espace de noms Office.context.ui](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js).
 
 ### <a name="open-a-dialog-box"></a>Ouvrir une boîte de dialogue.
 
-Pour ouvrir une boîte de dialogue, votre code dans le volet Office appelle la méthode [displayDialogAsync](https://dev.office.com/reference/add-ins/shared/officeui.displaydialogasync) et lui transmet l’URL de la ressource que vous voulez ouvrir. Il s’agit généralement d’une page, mais ce peut être une méthode du contrôleur dans une application MVC, un itinéraire, une méthode de service web ou toute autre ressource. Dans cet article, les termes « page » ou « site web » font référence à la ressource dans la boîte de dialogue. Le code suivant est un exemple simple.
+Pour ouvrir une boîte de dialogue, votre code dans le volet Office appelle la méthode [displayDialogAsync](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) et lui transmet l’URL de la ressource que vous voulez ouvrir. Il s’agit généralement d’une page, mais ce peut être une méthode du contrôleur dans une application MVC, un itinéraire, une méthode de service web ou toute autre ressource. Dans cet article, les termes « page » ou « site web » font référence à la ressource dans la boîte de dialogue. Le code suivant est un exemple simple.
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
@@ -47,7 +47,10 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 
 > [!NOTE]
 > - L’URL utilise le protocole HTTP**S**. Ceci est obligatoire pour toutes les pages chargées dans une boîte de dialogue, pas seulement la première page chargée.
-> - Le domaine est le même que celui de la page hôte, qui peut être la page d’un volet Office ou le [fichier de fonctions](https://dev.office.com/reference/add-ins/manifest/functionfile) d’une commande de complément. Obligatoire : la page, la méthode du contrôleur ou toute autre ressource qui est transmise à la méthode `displayDialogAsync` doit se trouver dans le même domaine que la page hôte.
+> - Le domaine de la ressource de la boite de dialogue est le même que celui de la page hôte, qui peut être la page d’un volet Office ou le [fichier de fonctions](https://docs.microsoft.com/javascript/office/manifest/functionfile?view=office-js) d’une commande de complément. Obligatoire : la page, la méthode du contrôleur ou toute autre ressource qui est transmise à la méthode `displayDialogAsync` doit se trouver dans le même domaine que la page hôte.
+
+> [!IMPORTANT]
+> La page hôte et les ressources de la boîte de dialogue doivent avoir le même domaine complet. Si vous essayez de passer à `displayDialogAsync` un sous-domaine du domaine du complément, cela ne fonctionnera pas. Le domaine complet et tout ses sous-domaines doivent correspondre.
 
 Une fois que la première page (ou toute autre ressource) est chargée, un utilisateur peut accéder à n’importe quel site web (ou n’importe quelle autre ressource) qui utilise le protocole HTTPS. Vous pouvez également concevoir la première page de façon à ce que l’utilisateur soit immédiatement redirigé vers un autre site.
 
@@ -117,8 +120,8 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 ```
 
 > [!NOTE]
-> - Office transmet un objet [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) au rappel. Il représente le résultat de la tentative d’ouverture de la boîte de dialogue. Il ne représente pas le résultat de tous les événements dans la boîte de dialogue. Pour plus d’informations sur cette distinction, consultez la section [Gestion des erreurs et des événements](#handle-errors-and-events).
-> - La propriété `value` de `asyncResult` est définie sur un objet [Dialog](https://dev.office.com/reference/add-ins/shared/officeui.dialog), qui existe dans la page hôte, pas dans le contexte d’exécution de la boîte de dialogue.
+> - Office transmet un objet [AsyncResult]() au rappel. Il représente le résultat de la tentative d’ouverture de la boîte de dialogue. Il ne représente pas le résultat de tous les événements dans la boîte de dialogue. Pour plus d’informations sur cette distinction, consultez la section [Gestion des erreurs et des événements](#handle-errors-and-events).
+> - La propriété `value` de `asyncResult` est définie sur un objet [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog?view=office-js), qui existe dans la page hôte, pas dans le contexte d’exécution de la boîte de dialogue.
 > - est la fonction qui gère l’événement. Vous pouvez lui donner le nom que vous souhaitez.`processMessage`
 > - La variable `dialog` est déclarée avec une portée plus large que le rappel, car elle est également référencée dans `processMessage`.
 
@@ -250,7 +253,7 @@ En plus des erreurs système et de plateforme générales, trois erreurs sont pr
 |12005|L’URL transmise à `displayDialogAsync` utilise le protocole HTTP. C’est le protocole HTTPS qui est requis. (Dans certaines versions d’Office, le message d’erreur renvoyé avec le code 12005 est identique à celui renvoyé avec le code 12004.)|
 |<span id="12007">12007</span>|Une boîte de dialogue est déjà ouverte à partir de cette fenêtre hôte. Une fenêtre hôte, par exemple un volet Office, ne peut avoir qu’une seule boîte de dialogue ouverte à la fois.|
 
-Lorsque `displayDialogAsync` est appelé, il transmet toujours un objet [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult) à sa fonction de rappel. Lorsque l’appel réussit (autrement dit, que la fenêtre de dialogue est ouverte), la propriété `value` de l’objet `AsyncResult` est un objet [Dialog](https://dev.office.com/reference/add-ins/shared/officeui.dialog). Vous trouverez un exemple dans la section [Envoi d’informations à la page hôte à partir de la boîte de dialogue](#send-information-from-the-dialog-box-to-the-host-page). Lorsque l’appel de `displayDialogAsync` échoue, la fenêtre n’est pas créée, la propriété `status` de l’objet `AsyncResult` est définie sur « failed » et la propriété `error` de l’objet est renseignée. Vous devez toujours disposer d’un rappel qui teste `status` et répond lorsqu’il s’agit d’une erreur. Voici un exemple de code qui signale simplement le message d’erreur, quel que soit son numéro de code :
+Lorsque `displayDialogAsync` est appelé, il transmet toujours un objet [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js) à sa fonction de rappel. Lorsque l’appel réussit (autrement dit, que la fenêtre de dialogue est ouverte), la propriété `value` de l’objet `AsyncResult` est un objet [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog?view=office-js). Vous trouverez un exemple dans la section [Envoi d’informations à la page hôte à partir de la boîte de dialogue](#send-information-from-the-dialog-box-to-the-host-page). Lorsque l’appel de `displayDialogAsync` échoue, la fenêtre n’est pas créée, la propriété `status` de l’objet `AsyncResult` est définie sur « failed » et la propriété `error` de l’objet est renseignée. Vous devez toujours disposer d’un rappel qui teste `status` et répond lorsqu’il s’agit d’une erreur. Voici un exemple de code qui signale simplement le message d’erreur, quel que soit son numéro de code :
 
 ```js
 var dialog;
@@ -389,10 +392,10 @@ Voici un flux d’authentification simple et standard :
 3. Lorsque la page redirectPage.html s’ouvre, elle appelle `messageParent` pour indiquer le succès ou l’échec à la page hôte et éventuellement indiquer également des données utilisateur ou des données d’erreur.
 4. L’événement `DialogMessageReceived` se déclenche dans la page hôte, et son gestionnaire ferme la fenêtre de dialogue et effectue éventuellement d’autres traitements du message.
 
-Pour voir des exemples de compléments qui utilisent ce modèle, consultez les pages suivantes :
+Pour voir des exemples de compléments qui utilisent ce modèle, consultez les pages suivantes :
 
-- [Insérer des graphiques Excel à l’aide de Microsoft Graph dans un complément PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) : La ressource qui s’ouvre initialement dans la fenêtre de la boîte de dialogue est une méthode du contrôleur qui ne dispose d’aucun affichage propre. Elle redirige l’utilisateur vers la page de connexion Office 365.
-- [Authentification client Office 365 du complément Office pour AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth) : La ressource qui s’ouvre initialement dans la fenêtre de dialogue est une page.
+- [Insérer des graphiques Excel à l’aide de Microsoft Graph dans un complément PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) : La ressource qui s’ouvre initialement dans la fenêtre de la boîte de dialogue est une méthode du contrôleur qui ne dispose d’aucun affichage propre. Elle redirige vers la page de connexion Office 365.
+- [Authentification client Office 365 du complément Office pour AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth) : La ressource qui s’ouvre initialement dans la fenêtre de dialogue est une page.
 
 #### <a name="support-multiple-identity-providers"></a>Prise en charge de plusieurs fournisseurs d’identité
 
@@ -414,8 +417,8 @@ Vous pouvez utiliser les API de dialogue pour gérer ce processus à l’aide d�
 - Si l’utilisateur n’a pas préalablement accordé à l’application les autorisations nécessaires, il est invité à le faire dans la boîte de dialogue après la connexion.
 - La fenêtre de dialogue envoie le jeton d’accès à la fenêtre hôte en utilisant `messageParent` pour envoyer le jeton d’accès converti en chaîne ou en stockant jeton d’accès à un emplacement où la fenêtre hôte peut le récupérer. Le jeton a une limite de temps, mais tant qu’elle n’est pas écoulée, la fenêtre hôte peut l’utiliser pour accéder directement aux ressources de l’utilisateur sans demander d’autre confirmation.
 
-Les exemples suivants utilisent les API de dialogue à cet effet :
-- [Insérer des graphiques Excel à l’aide de Microsoft Graph dans un complément PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) : stocke le jeton d’accès dans une base de données.
+Les exemples suivants utilisent les API de dialogue à cet effet :
+- [Insérer des graphiques Excel à l’aide de Microsoft Graph dans un complément PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) : stocke le jeton d’accès dans une base de données.
 - [Complément Office qui utilise le service OAuth.io pour simplifier l’accès aux services en ligne populaires](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 Pour plus d’informations sur l’authentification et l’autorisation dans des compléments, consultez les rubriques suivantes :
@@ -425,7 +428,7 @@ Pour plus d’informations sur l’authentification et l’autorisation dans des
 
 ## <a name="use-the-office-dialog-api-with-single-page-applications-and-client-side-routing"></a>Utilisation de l’API de dialogue Office avec des applications à page unique et routage côté client
 
-Si votre complément utilise le routage côté client, comme le font les applications à page unique en règle générale, vous avez la possibilité de transmettre l’URL d’un itinéraire à la méthode [displayDialogAsync](http://dev.office.com/reference/add-ins/shared/officeui.displaydialogasync), au lieu de l’URL de la page HTML complète et distincte.
+Si votre complément utilise le routage côté client, comme le font les applications à page unique en règle générale, vous avez la possibilité de transmettre l’URL d’un itinéraire à la méthode [displayDialogAsync](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js), au lieu de l’URL de la page HTML complète et distincte.
 
 > [!IMPORTANT]
 >La boîte de dialogue se trouve dans une nouvelle fenêtre avec son propre contexte d’exécution. Si vous transmettez un itinéraire, votre page de base et son code d’initialisation et d’amorçage s’exécutent à nouveau dans ce nouveau contexte, et toutes les variables sont définies sur leurs valeurs initiales dans la fenêtre de dialogue. Par conséquent, cette technique lance une deuxième instance de votre application dans la fenêtre de dialogue. Le code qui modifie des variables dans la fenêtre de dialogue ne change pas la version du volet Office des mêmes variables. De même, la fenêtre de dialogue possède son propre stockage de session, qui n’est pas accessible à partir du code dans le volet Office.
