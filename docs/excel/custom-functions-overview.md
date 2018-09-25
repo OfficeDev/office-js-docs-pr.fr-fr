@@ -2,12 +2,12 @@
 ms.date: 09/20/2018
 description: Créez une fonction personnalisée dans Excel à l’aide de JavaScript.
 title: Créer des fonctions personnalisées dans Excel (Aperçu)
-ms.openlocfilehash: 295152ca14cf56293d51b8b0512b729373841208
-ms.sourcegitcommit: 470d8212b256275587e651abaa6f28beafebcab4
+ms.openlocfilehash: abfc43872c84ac7a86e59d70ef616308ba3d4231
+ms.sourcegitcommit: 8ce9a8d7f41d96879c39cc5527a3007dff25bee8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "24062129"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "24985808"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Créer des fonctions personnalisées dans Excel (Aperçu)
 
@@ -25,20 +25,20 @@ function ADD42(a, b) {
 }
 ```
 
-Les fonctions personnalisées sont désormais disponibles dans Developer Preview sous Windows, Mac et Excel Online. Pour les essayer, procédez comme suit :
+Les fonctions personnalisées sont désormais disponibles dans Developer Preview sous Windows, Mac et Excel Online. Pour les essayer, procédez comme suit :
 
-1. Installez Office (version 10827 sur Windows ou 13.329 sur Mac) et participez au programme [Office Insider](https://products.office.com/office-insider). Vous devez rejoindre le programme Office Insider pour pouvoir accéder aux fonctions personnalisées ; actuellement, les fonctions personnalisées sont désactivées dans toutes les versions d’Office, sauf si vous êtes membre du programme Office Insider.
+1. Installez Office (version 10827 sur Windows ou 13.329 sur Mac) et participez au programme [Office Insider](https://products.office.com/office-insider). Vous devez rejoindre le programme Office Insider pour pouvoir accéder aux fonctions personnalisées ; actuellement, les fonctions personnalisées sont désactivées dans toutes les versions d’Office, sauf si vous êtes membre du programme Office Insider.
 
 2. Utilisez [Yo Office](https://github.com/OfficeDev/generator-office) pour créer un projet de complément Fonctions Personnalisées Excel, puis suivez les instructions indiquées dans [OfficeDev/Excel-Custom-Functions README](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/README.md) pour utiliser le projet.
 
-3. Typez `=CONTOSO.ADD42(1,2)` dans n’importe quelle cellule d’une feuille de calcul Excel et appuyez sur **Entrée** pour exécuter la fonction personnalisée.
+3. Saisissez `=CONTOSO.ADD42(1,2)` dans une cellule d’une feuille de calcul Excel et appuyez sur **Entrée** pour exécuter la fonction personnalisée.
 
 > [!NOTE]
 > Plus loin dans cet article, la section [Problèmes connus](#known-issues) indique les limites actuelles des fonctions personnalisées.
 
 ## <a name="learn-the-basics"></a>Notions fondamentales
 
-Dans le projet de fonctions personnalisées que vous avez créé à l’aide de [Yo Office](https://github.com/OfficeDev/generator-office), vous verrez les fichiers suivants :
+Dans le projet de fonctions personnalisées que vous avez créé à l’aide de [Yo Office](https://github.com/OfficeDev/generator-office), vous verrez les fichiers suivants :
 
 | Fichier | Format de fichier | Description |
 |------|-------------|-------------|
@@ -141,13 +141,13 @@ Le tableau suivant répertorie les propriétés qui sont généralement présent
 
 ## <a name="functions-that-return-data-from-external-sources"></a>Fonctions qui retournent des données provenant de sources externes
 
-Si une fonction personnalisée récupère les données d’une source externe comme le Web, elle doit :
+Si une fonction personnalisée récupère les données d’une source externe comme le Web, elle doit :
 
-1. Renvoyer une Promesse JavaScript à Excel.
+1. Renvoyer une promesse JavaScript à Excel
 
-2. Résoudre la Promesse avec la valeur finale en utilisant la fonction de rappel.
+2. Résolvez la promesse avec la valeur finale en utilisant la fonction de rappel.
 
-Les fonctions personnalisées affichent un résultat temporaire `#GETTING_DATA` dans la cellule pendant qu'Excel attend le résultat final. Les utilisateurs peuvent interagir normalement avec le reste de la feuille de calcul pendant qu’ils attendent le résultat.
+Les fonctions personnalisées affichent un résultat temporaire `#GETTING_DATA` dans la cellule pendant qu’Excel attend le résultat final. Les utilisateurs peuvent interagir normalement avec le reste de la feuille de calcul pendant qu’ils attendent le résultat.
 
 Dans l’exemple de code suivant, la fonction personnalisée `getTemperature()` récupère la température actuelle d’un thermomètre. Notez que `sendWebRequest` est une fonction hypothétique, non spécifiée ici, qui utilise XHR pour appeler un service Web de température.
 
@@ -169,7 +169,7 @@ Les fonctions de flux personnalisées permettent de générer des données dans 
 
 - Le dernier paramètre, `handler`, n’est jamais spécifié dans votre code d’enregistrement et ne s’affiche pas dans le menu de saisie semi-automatique pour les utilisateurs d’Excel lorsqu’ils entrent la fonction. Il s’agit d’un objet contenant une fonction de rappel `setResult` utilisée pour transmettre des données de la fonction à Excel afin de mette à jour la valeur d’une cellule.
 
-- Pour qu'Excel transmette la fonction `setResult` dans l'objet `handler`, vous devez déclarer la prise en charge de la diffusion en continu pendant l’enregistrement de votre fonction en définissant l’option `"stream": true` dans la propriété `options` pour la fonction personnalisée dans le fichier de métadonnées JSON.
+- Pour qu’Excel transmette la fonction `setResult` dans l'objet `handler`, vous devez déclarer la prise en charge de la diffusion en continu pendant l’enregistrement de votre fonction en définissant l’option `"stream": true` dans la propriété `options` pour la fonction personnalisée dans le fichier de métadonnées JSON.
 
 ```js
 function incrementValue(increment, handler){
@@ -183,7 +183,7 @@ function incrementValue(increment, handler){
 
 ## <a name="canceling-a-function"></a>Annulation d’une fonction
 
-Dans certains cas, vous devrez peut-être annuler l’exécution d’une fonction personnalisée en flux continu pour réduire la consommation de la bande passante, de la mémoire et de la charge processeur. Excel annule l’exécution d’une fonction dans les situations suivantes :
+Dans certains cas, vous devrez peut-être annuler l’exécution d’une fonction personnalisée en flux continu pour réduire la consommation de la bande passante, de la mémoire et de la charge processeur. Excel annule l’exécution d’une fonction dans les situations suivantes :
 
 - Quand l’utilisateur modifie ou supprime une cellule qui fait référence à la fonction.
 
@@ -192,7 +192,7 @@ Dans certains cas, vous devrez peut-être annuler l’exécution d’une fonctio
 - L’utilisateur déclenche manuellement le recalcul. Dans ce cas, un nouvel appel de fonction est déclenché après l’annulation.
 
 > [!NOTE]
-> Vous devez implémenter un gestionnaire d'annulation pour chaque fonction de diffusion en continu.
+> Vous devez implémenter un gestionnaire d’annulation pour chaque fonction de diffusion en continu.
 
 Pour rendre une fonction annulable, définissez l’option `"cancelable": true` dans la propriété `options` pour la fonction personnalisée dans le fichier de métadonnées JSON.
 
@@ -300,7 +300,7 @@ function getComment(x) {
 - Les descriptions de paramètre et les URL d’aide ne sont pas encore utilisées par Excel.
 - Les fonctions personnalisées ne sont actuellement pas disponibles sur Excel pour les clients mobiles.
 - Les fonctions volatiles (celles qui recalculent automatiquement lorsque des modifications de données indépendantes sont effectuées dans le tableur) ne sont pas encore prises en charge.
-- Le déploiement via le portail d'administration Office 365 et AppSource n'est pas encore activé.
+- Le déploiement via le portail d’administration Office 365 et AppSource n'est pas encore activé.
 - Les fonctions personnalisées dans Excel Online peuvent cesser de fonctionner pendant une session après une période d'inactivité. Actualisez la page du navigateur (F5) et entrez à nouveau une fonction personnalisée pour restaurer la fonction.
 - Il est possible d’avoir le résultat temporaire **#GETTING_DATA** dans la ou les cellules d’une feuille de calcul si vous avez plusieurs compléments s’exécutant dans Microsoft Excel pour Windows. Fermez toutes les fenêtres Excel et redémarrez Excel.
 - Des outils de débogage spécifiques pour les fonctions personnalisées pourraient devenir disponibles à l’avenir. En attendant, vous pouvez déboguer sur Excel Online à l’aide des outils de développement F12. Voir plus de détails dans [Meilleures pratiques pour les fonctions personnalisées](custom-functions-best-practices.md).
@@ -310,7 +310,7 @@ function getComment(x) {
 - **7 novembre 2017 :** mise à disposition des exemples et de la version d’évaluation des fonctions personnalisées
 - **20 novembre 2017 :** correction du bogue de compatibilité pour les utilisateurs de la version 8801 et ultérieure
 - **28 novembre 2017 :** prise en charge* de l’annulation sur des fonctions asynchrones (nécessite la modification des fonctions de flux)
-- **7 mai 2018** : Support* fourni pour Mac, Excel Online et fonctions synchrones en cours de traitement
+- ** 7 mai 2018 : support* fourni pour Mac, Excel Online et fonctions synchrones en cours de **traitement
 - **20 septembre 2018** : Support fourni pour les fonctions personnalisées à l'exécution de JavaScript. Pour plus d’informations, voir [Exécution des fonctions personnalisées d’Excel](custom-functions-runtime.md).
 
 \* vers le canal Office Insiders

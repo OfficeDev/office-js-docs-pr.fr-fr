@@ -2,14 +2,14 @@
 ms.date: 09/20/2018
 description: Les fonctions personnalisées Excel utilisent un nouveau runtime JavaScript, qui diffère du runtime de contrôle WebView de compléments standard.
 title: Runtime pour les fonctions personnalisées Excel
-ms.openlocfilehash: d31002096fccd682c0f2a23a8b43249af5d4df8f
-ms.sourcegitcommit: 470d8212b256275587e651abaa6f28beafebcab4
+ms.openlocfilehash: fa2b2030259e05f64b8b4660ded8b80c6af1eb5a
+ms.sourcegitcommit: 8ce9a8d7f41d96879c39cc5527a3007dff25bee8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "24068816"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "24985794"
 ---
-# <a name="runtime-for-excel-custom-functions"></a>Runtime pour les fonctions personnalisées Excel
+# <a name="runtime-for-excel-custom-functions-preview"></a>Runtime pour les fonctions personnalisées Excel (Aperçu)
 
 Les fonctions personnalisées étendent les fonctionnalités d’Excel à l’aide d’un nouveau runtime JavaScript qui utilise un moteur de JavaScript en bac à sable plutôt que dans un navigateur web. Puisque les fonctions personnalisées n’ont pas besoin d’afficher des éléments d’interface utilisateur, le nouveau runtime JavaScript est optimisé pour l’exécution de calculs, ce qui vous permet d’exécuter simultanément des milliers de fonctions personnalisées.
 
@@ -25,7 +25,7 @@ Seules les fonctions personnalisées au sein d’un complément utiliseront le n
 
 ## <a name="new-apis"></a>Nouvelles API 
 
-Le runtime JavaScript utilisé par les fonctions personnalisées comprend les APIs suivantes :
+Le runtime JavaScript utilisé par les fonctions personnalisées comprend les APIs suivantes :
 
 - [XHR](#xhr)
 - [WebSockets](#websockets)
@@ -88,7 +88,7 @@ AsyncStorage est un système de stockage clé-valeur qui peut être utilisé pou
 
 AsyncStorage est globalement disponible pour tous les composants de votre complément. Pour les fonctions personnalisées, `AsyncStorage` est exposé comme un objet global. (Pour les autres composants de votre complément, tels que les volets Office et d’autres éléments qui utilisent le runtime WebView, AsyncStorage est exposé par le biais de `OfficeRuntime`.) Chaque complément a sa propre partition de stockage, avec une taille par défaut de 5 Mo. 
 
-Les méthodes suivantes sont disponibles sur l’objet `AsyncStorage` :
+Les méthodes suivantes sont disponibles sur l’objet `AsyncStorage` :
  
  - `getItem`
  - `setItem`

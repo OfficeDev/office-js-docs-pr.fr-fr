@@ -1,13 +1,13 @@
 ---
 title: Présentation des compléments Word
 description: ''
-ms.date: 01/23/2018
-ms.openlocfilehash: 51ab24fa12017fc16a49d5ac2f97dad288bcfcfe
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.date: 09/24/2018
+ms.openlocfilehash: 6dedb3386d6e052b374c8716e90899ef2aca7880
+ms.sourcegitcommit: 8ce9a8d7f41d96879c39cc5527a3007dff25bee8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944640"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "24985801"
 ---
 # <a name="word-add-ins-overview"></a>Présentation des compléments Word
 
@@ -42,17 +42,16 @@ Vous pouvez utiliser n’importe quelle technologie de serveur web pour héberge
 
 Les interfaces API JavaScript pour Word permettent à votre application d’accéder aux objets et aux métadonnées situés dans le document Word. Vous pouvez utiliser ces API pour créer des compléments destinés à :
 
-* Word 2013 pour Windows
-* Word 2016 pour Windows
+* Word 2013 ou version ultérieure pour Windows
 * Word Online
-* Word 2016 pour Mac
+* Word 2016 ou version ultérieure pour Mac
 * Word pour iOS
 
 Écrivez votre complément une seule fois. Celui-ci s’exécutera dans toutes les versions de Word sur plusieurs plateformes. Pour plus d’informations, voir la page relative à la [disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md).
 
 ## <a name="javascript-apis-for-word"></a>API JavaScript pour Word
 
-Vous pouvez utiliser les deux ensembles d’API JavaScript pour interagir avec les objets et les métadonnées d’un document Word. Le premier est l’[API JavaScript pour Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js?product=word), introduit dans Office 2013. Il s’agit d’une interface API partagée : la plupart des objets peuvent être utilisés dans des compléments hébergés par plusieurs clients Office. Cette API utilise largement les rappels. 
+Vous pouvez utiliser les deux ensembles d’API JavaScript pour interagir avec les objets et les métadonnées d’un document Word. Le premier est l’[API JavaScript pour Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js?product=word), introduit dans Office 2013. Il s’agit d’une interface API partagée : la plupart des objets peuvent être utilisés dans des compléments hébergés par plusieurs clients Office. Cette API utilise largement les rappels.
 
 Le deuxième est l’[API JavaScript pour Word](https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js). Il s’agit d’un modèle d’objet fortement typé qui vous permet de créer des compléments Word destinés à Word 2016 pour Mac et Windows. Ce modèle d’objet utilise les promesses et fournit un accès aux objets Word, tels que le [corps](https://docs.microsoft.com/javascript/api/word/word.body?view=office-js), les [contrôles de contenu](https://docs.microsoft.com/javascript/api/word/word.contentcontrol?view=office-js), les [images incluses](https://docs.microsoft.com/javascript/api/word/word.inlinepicture?view=office-js) et les [paragraphes](https://docs.microsoft.com/javascript/api/word/word.paragraph?view=office-js). L’API JavaScript pour Word inclut les définitions TypeScript et les fichiers vsdoc pour vous permettre d’obtenir des conseils concernant votre code dans votre IDE.
 
