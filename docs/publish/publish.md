@@ -1,13 +1,13 @@
 ---
-title: Déploiement et publication de votre complément Office
-description: ''
+title: Déploiement et publication de votre complément Office | Documents Microsoft
+description: Méthodes et options pour déployer votre complément Office à des fins de test ou de distribution auprès des utilisateurs.
 ms.date: 01/23/2018
-ms.openlocfilehash: b35c50c65a5d8b8b3f1a5e9724fa9072285fb7ae
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: ada786ed7ded1f34d564389c09c2cd5c25c2a331
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944339"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004930"
 ---
 # <a name="deploy-and-publish-your-office-add-in"></a>Déploiement et publication de votre complément Office
 
@@ -65,7 +65,7 @@ Un catalogue de compléments SharePoint est une collection de sites spéciale qu
 Si vous déployez des compléments dans un environnement local, utilisez un catalogue SharePoint. Pour obtenir des détails, voir l’article sur la [publication de compléments du volet des tâches et de contenu dans un catalogue SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
 > [!NOTE]
-> Les catalogues SharePoint ne prennent pas en charge Office pour Mac. Pour déployer des compléments Office sur les clients Mac, vous devez les envoyer à [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store). 
+> Les catalogues SharePoint ne prennent pas en charge Office pour Mac. Pour déployer des compléments Office à des clients Mac, vous devez les envoyer à [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store). 
 
 ### <a name="outlook-add-in-deployment"></a>Déploiement de compléments Outlook
 

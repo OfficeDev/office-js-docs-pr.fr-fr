@@ -1,15 +1,15 @@
 ---
 ms.date: 09/20/2018
 description: Créez une fonction personnalisée dans Excel à l’aide de JavaScript.
-title: Créer des fonctions personnalisées dans Excel (Aperçu)
-ms.openlocfilehash: abfc43872c84ac7a86e59d70ef616308ba3d4231
-ms.sourcegitcommit: 8ce9a8d7f41d96879c39cc5527a3007dff25bee8
+title: Créer des fonctions personnalisées dans Excel (Préversion)
+ms.openlocfilehash: b214329fe50955d0f39d50f674152f475ca24b4d
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "24985808"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25005042"
 ---
-# <a name="create-custom-functions-in-excel-preview"></a>Créer des fonctions personnalisées dans Excel (Aperçu)
+# <a name="create-custom-functions-in-excel-preview"></a>Créer des fonctions personnalisées dans Excel (Préversion)
 
 Les fonctions personnalisées permettent aux développeurs d’ajouter de nouvelles fonctions à Excel en définissant ces fonctions en JavaScript dans le cadre d’un complément. Les utilisateurs Excel peuvent accéder aux fonctions personnalisées comme toute autre fonction native dans Excel (par exemple, `SUM()`). Cet article décrit comment créer des fonctions personnalisées dans Excel.
 
@@ -25,7 +25,7 @@ function ADD42(a, b) {
 }
 ```
 
-Les fonctions personnalisées sont désormais disponibles dans Developer Preview sous Windows, Mac et Excel Online. Pour les essayer, procédez comme suit :
+Les fonctions personnalisées sont désormais disponibles en préversion pour développeur sur Windows, Mac et Excel Online. Pour les essayer, procédez comme suit :
 
 1. Installez Office (version 10827 sur Windows ou 13.329 sur Mac) et participez au programme [Office Insider](https://products.office.com/office-insider). Vous devez rejoindre le programme Office Insider pour pouvoir accéder aux fonctions personnalisées ; actuellement, les fonctions personnalisées sont désactivées dans toutes les versions d’Office, sauf si vous êtes membre du programme Office Insider.
 
@@ -85,14 +85,14 @@ Le fichier manifeste XML d’un complément qui définit les fonctions personnal
 ```
 
 > [!NOTE]
-> Les fonctions dans Excel sont précédées par l’espace de noms spécifié dans votre fichier manifeste XML. L’espace de noms d’une fonction précède le nom de la fonction, et ils sont séparés par un point. Par exemple, pour appeler la fonction `ADD42()` dans la cellule d’une feuille de calcul Excel, vous devez taper `=CONTOSO.ADD42`, puisque CONTOSO est l’espace de noms et `ADD42` est le nom de la fonction spécifiée dans le fichier JSON. L’espace de noms est destiné à être utilisé comme identificateur de votre entreprise ou du complément. 
+> Les fonctions dans Excel sont précédées par l’espace de noms spécifié dans votre fichier manifeste XML. L’espace de noms d’une fonction précède le nom de la fonction, et ils sont séparés par un point. Par exemple, pour appeler la fonction `ADD42()` dans la cellule d’une feuille de calcul Excel, vous devez taper `=CONTOSO.ADD42`, puisque CONTOSO est l’espace de noms et `ADD42` est le nom de la fonction spécifiée dans le fichier JSON. L’espace de noms est destiné à être utilisé comme identificateur pour votre entreprise ou le complément. 
 
 ### <a name="json-file-configcustomfunctionsjson"></a>Fichier JSON (./config/customfunctions.json)
 
 Un fichier de métadonnées des fonctions personnalisées fournit les informations dont Excel a besoin pour inscrire les fonctions personnalisées et les rendre disponibles pour les utilisateurs finaux. Les fonctions personnalisées sont enregistrées lorsqu’un utilisateur exécute un complément pour la première fois. Après cela, elles sont disponibles pour cet utilisateur dans tous les classeurs (autrement dit, pas seulement dans le classeur dans lequel le complément a été exécuté pour la première fois.)
 
 > [!TIP]
-> Les paramètres de serveur pour le serveur qui héberge le fichier JSON doivent avoir activé [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) pour que les fonctions personnalisées fonctionnent correctement dans Excel Online.
+> Parmi les paramètres de serveur sur le serveur qui héberge le fichier JSON, [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) doit être activé pour que les fonctions personnalisées fonctionnent correctement dans Excel Online.
 
 Le code suivant dans **customfunctions.json** spécifie les métadonnées pour la fonction `ADD42` décrite précédemment dans cet article. Ces métadonnées définissent le nom, la description, la valeur renvoyée, les paramètres d’entrée de la fonction, et plus. Le tableau qui suit cet exemple de code fournit des informations détaillées sur les propriétés individuelles dans cet objet JSON.
 
@@ -135,7 +135,7 @@ Le tableau suivant répertorie les propriétés qui sont généralement présent
 | `name` | Nom de la fonction qui est affichée dans le menu de saisie semi-automatique quand un utilisateur tape une formule dans une cellule. Dans le menu de saisie semi-automatique, cette valeur sera préfixée par l’espace de noms des fonctions personnalisées spécifié dans le fichier manifeste XML. |
 | `helpUrl` | URL de la page qui s’affiche lorsqu’un utilisateur demande de l’aide. |
 | `description` | Décrit ce que fait la fonction. Cette valeur s’affiche comme une info-bulle lorsque la fonction est l’élément sélectionné dans le menu de saisie semi-automatique dans Excel. |
-| `result`  | Objet qui définit le type de l’information renvoyée par la fonction. La valeur de la propriété enfant `type` peut être **string**, **number**ou **boolean**. La valeur de la propriété enfant `dimensionality` peut être **scalar** ou la **matrix** (un tableau à deux dimensions des valeurs du `type` spécifié). |
+| `result`  | Objet qui définit le type de l’information renvoyée par la fonction. La valeur de la propriété enfant `type` peut être **string**, **number**ou **boolean**. La valeur de la propriété enfant `dimensionality` peut être **scalar** ou **matrix** (tableau à deux dimensions des valeurs du `type` spécifié). |
 | `parameters` | Tableau qui définit les paramètres d’entrée de la fonction. Les propriétés enfants `name` et `description` apparaissent dans l’intelliSense Excel. Les propriétés enfants `type` et `dimensionality` sont identiques aux propriétés enfants de l’objet `result` décrit précédemment dans ce tableau. |
 | `options` | Vous permet de personnaliser certains aspects de la façon dont Excel exécute la fonction, et quand. Pour plus d’informations sur l’utilisation de cette propriété, voir [Fonctions de flux](#streamed-functions) et [Annulation](#canceling-a-function) plus loin dans cet article. |
 
@@ -143,13 +143,13 @@ Le tableau suivant répertorie les propriétés qui sont généralement présent
 
 Si une fonction personnalisée récupère les données d’une source externe comme le Web, elle doit :
 
-1. Renvoyer une promesse JavaScript à Excel
+1. Renvoyer une promesse JavaScript à Excel.
 
-2. Résolvez la promesse avec la valeur finale en utilisant la fonction de rappel.
+2. Résoudre la promesse avec la valeur finale en utilisant la fonction de rappel.
 
-Les fonctions personnalisées affichent un résultat temporaire `#GETTING_DATA` dans la cellule pendant qu’Excel attend le résultat final. Les utilisateurs peuvent interagir normalement avec le reste de la feuille de calcul pendant qu’ils attendent le résultat.
+Les fonctions personnalisées affichent un résultat temporaire `#GETTING_DATA` dans la cellule pendant qu’Excel attend le résultat final. Les utilisateurs peuvent interagir normalement avec le reste de la feuille de calcul tout en attendant le résultat.
 
-Dans l’exemple de code suivant, la fonction personnalisée `getTemperature()` récupère la température actuelle d’un thermomètre. Notez que `sendWebRequest` est une fonction hypothétique, non spécifiée ici, qui utilise XHR pour appeler un service Web de température.
+Dans l’exemple de code suivant, la fonction personnalisée `getTemperature()` récupère la température actuelle d’un thermomètre. Notez que `sendWebRequest` est une fonction hypothétique, non spécifiée ici, qui utilise XHR pour appeler un service web de température.
 
 ```js
 function getTemperature(thermometerID){
@@ -167,7 +167,7 @@ Les fonctions de flux personnalisées permettent de générer des données dans 
 
 - Excel affiche automatiquement chaque nouvelle valeur en utilisant le rappel `setResult`.
 
-- Le dernier paramètre, `handler`, n’est jamais spécifié dans votre code d’enregistrement et ne s’affiche pas dans le menu de saisie semi-automatique pour les utilisateurs d’Excel lorsqu’ils entrent la fonction. Il s’agit d’un objet contenant une fonction de rappel `setResult` utilisée pour transmettre des données de la fonction à Excel afin de mette à jour la valeur d’une cellule.
+- Le dernier paramètre, `handler`, n’est jamais spécifié dans votre code d’enregistrement et ne s’affiche pas dans le menu de saisie semi-automatique pour les utilisateurs d’Excel lorsqu’ils lancent la fonction. Il s’agit d’un objet contenant une fonction de rappel `setResult` utilisée pour transmettre des données de la fonction à Excel afin de mette à jour la valeur d’une cellule.
 
 - Pour qu’Excel transmette la fonction `setResult` dans l'objet `handler`, vous devez déclarer la prise en charge de la diffusion en continu pendant l’enregistrement de votre fonction en définissant l’option `"stream": true` dans la propriété `options` pour la fonction personnalisée dans le fichier de métadonnées JSON.
 
@@ -189,10 +189,10 @@ Dans certains cas, vous devrez peut-être annuler l’exécution d’une fonctio
 
 - Quand un des arguments (entrées) de la fonction est modifié. Dans ce cas, un nouvel appel de fonction est déclenché après l’annulation.
 
-- L’utilisateur déclenche manuellement le recalcul. Dans ce cas, un nouvel appel de fonction est déclenché après l’annulation.
+- L’utilisateur déclenche manuellement un nouveau calcul. Dans ce cas, un nouvel appel de fonction est déclenché après l’annulation.
 
 > [!NOTE]
-> Vous devez implémenter un gestionnaire d’annulation pour chaque fonction de diffusion en continu.
+> Vous devez implémenter un gestionnaire d'annulation pour chaque fonction de diffusion en continu.
 
 Pour rendre une fonction annulable, définissez l’option `"cancelable": true` dans la propriété `options` pour la fonction personnalisée dans le fichier de métadonnées JSON.
 
@@ -212,17 +212,17 @@ function incrementValue(increment, handler){
 }
 ```
 
-## <a name="saving-and-sharing-state"></a>Enregistrement et partage de l’état
+## <a name="saving-and-sharing-state"></a>Enregistrement et partage de l'état
 
-Les fonctions personnalisées peuvent enregistrer des données dans des variables JavaScript globales. Lors d’appels ultérieurs, votre fonction personnalisée peut utiliser les valeurs enregistrées dans ces variables. L'état enregistré est utile lorsque les utilisateurs ajoutent la même fonction personnalisée à plusieurs cellules, car toutes les instances de la fonction peuvent partager l'état. Par exemple, vous pouvez enregistrer les données renvoyées par un appel à une ressource web pour éviter d’effectuer des appels supplémentaires à la même ressource web.
+Les fonctions personnalisées peuvent enregistrer des données dans des variables JavaScript globales. Lors d’appels ultérieurs, votre fonction personnalisée pourra utiliser les valeurs enregistrées dans ces variables. L'état enregistré est utile lorsque les utilisateurs ajoutent la même fonction personnalisée à plusieurs cellules, car toutes les instances de la fonction peuvent partager l'état. Par exemple, vous pouvez enregistrer les données renvoyées par un appel à une ressource web pour éviter d’effectuer des appels supplémentaires à la même ressource web.
 
-L’exemple de code suivant illustre une implémentation de la fonction de flux précédente relative à la température qui enregistre l’état globalement. Tenez compte des informations suivantes :
+L’exemple de code suivant illustre une implémentation de la fonction de flux précédente relative à la température et qui enregistre l’état globalement. Tenez compte des informations suivantes :
 
-- `refreshTemperature` est une fonction de flux qui lit la température d’un thermomètre spécifique à chaque seconde qui passe. Les nouvelles températures sont enregistrées dans la variable `savedTemperatures`, mais ne mettent pas directement à jour la valeur de la cellule. Elles ne doivent pas être appelées directement à partir d'une cellule de feuille de calcul, *de sorte qu'elles ne sont pas enregistrées dans le fichier JSON*.
+- `refreshTemperature` ,est une fonction de flux qui chaque seconde, lit la température d’un thermomètre spécifique. Les nouvelles températures sont enregistrées dans la variable `savedTemperatures`, mais ne mettent pas directement à jour la valeur de la cellule. Elles ne doivent pas être appelées directement à partir d'une cellule de feuille de calcul, *de sorte qu'elles ne sont pas enregistrées dans le fichier JSON*.
 
 - `streamTemperature` met à jour les valeurs de température affichées dans la cellule chaque seconde et utilise une variable `savedTemperatures` comme source de données. Elles doivent être enregistrées dans le fichier JSON et nommées en lettres majuscules, `STREAMTEMPERATURE`.
 
-- Les utilisateurs peuvent appeler `streamTemperature` à partir de plusieurs cellules dans l’interface utilisateur Excel. Chaque appel lit des données de la même variable `savedTemperatures`.
+- Les utilisateurs peuvent appeler `streamTemperature` à partir de plusieurs cellules dans l’interface utilisateur Excel. Chaque appel lit des données depuis la même variable `savedTemperatures`.
 
 ```js
 var savedTemperatures;
@@ -253,7 +253,7 @@ function refreshTemperature(thermometerID){
 
 Votre fonction personnalisée peut accepter une plage de données comme paramètre d’entrée, ou elle peut renvoyer une plage de données. En JavaScript, une plage de données est représentée sous la forme d’un tableau à deux dimensions.
 
-Par exemple, supposons que votre fonction renvoie la deuxième valeur la plus élevée prise dans une plage de nombres stockés dans Excel. La fonction suivante accepte le paramètre `values`, qui est de type `Excel.CustomFunctionDimensionality.matrix`. Notez que dans les métadonnées JSON de cette fonction, vous devez définir la propriété `type` du paramètre sur `matrix`.
+Par exemple, supposons que votre fonction renvoie la deuxième valeur la plus élevée prise dans une plage de nombres stockés dans Excel. La fonction suivante accepte le paramètre `values`, qui est de type `Excel.CustomFunctionDimensionality.matrix`. Notez que dans les métadonnées JSON de cette fonction, vous devez définir la propriété `type` du paramètre à `matrix`.
 
 ```js
 function secondHighest(values){
@@ -279,8 +279,7 @@ Lorsque vous créez un complément qui définit des fonctions personnalisées, v
 
 ```js
 function getComment(x) {
-    //this delivers a section of lorem ipsum from the jsonplaceholder API
-    let url = "https://jsonplaceholder.typicode.com/comments/" + x;
+    let url = "https://yourhypotheticalapi/comments/" + x;
 
     return fetch(url)
         .then(function (data) {
@@ -299,18 +298,18 @@ function getComment(x) {
 
 - Les descriptions de paramètre et les URL d’aide ne sont pas encore utilisées par Excel.
 - Les fonctions personnalisées ne sont actuellement pas disponibles sur Excel pour les clients mobiles.
-- Les fonctions volatiles (celles qui recalculent automatiquement lorsque des modifications de données indépendantes sont effectuées dans le tableur) ne sont pas encore prises en charge.
-- Le déploiement via le portail d’administration Office 365 et AppSource n'est pas encore activé.
+- Les fonctions volatiles (celles qui recalculent automatiquement lorsque des modifications de données indépendantes sont effectuées dans la feuille de calcul) ne sont pas encore prises en charge.
+- Le déploiement via le portail d'administration Office 365 et AppSource n'est pas encore activé.
 - Les fonctions personnalisées dans Excel Online peuvent cesser de fonctionner pendant une session après une période d'inactivité. Actualisez la page du navigateur (F5) et entrez à nouveau une fonction personnalisée pour restaurer la fonction.
 - Il est possible d’avoir le résultat temporaire **#GETTING_DATA** dans la ou les cellules d’une feuille de calcul si vous avez plusieurs compléments s’exécutant dans Microsoft Excel pour Windows. Fermez toutes les fenêtres Excel et redémarrez Excel.
 - Des outils de débogage spécifiques pour les fonctions personnalisées pourraient devenir disponibles à l’avenir. En attendant, vous pouvez déboguer sur Excel Online à l’aide des outils de développement F12. Voir plus de détails dans [Meilleures pratiques pour les fonctions personnalisées](custom-functions-best-practices.md).
 
 ## <a name="changelog"></a>Journal des modifications
 
-- **7 novembre 2017 :** mise à disposition des exemples et de la version d’évaluation des fonctions personnalisées
+- **7 novembre 2017 :** mise à disposition* de la préversion des fonctions personnalisées et d'exemples
 - **20 novembre 2017 :** correction du bogue de compatibilité pour les utilisateurs de la version 8801 et ultérieure
-- **28 novembre 2017 :** prise en charge* de l’annulation sur des fonctions asynchrones (nécessite la modification des fonctions de flux)
-- ** 7 mai 2018 : support* fourni pour Mac, Excel Online et fonctions synchrones en cours de **traitement
+- **28 novembre 2017 :** mise à disposition* de la prise en charge de l’annulation sur des fonctions asynchrones (nécessite la modification des fonctions de flux)
+- **7 mai 2018**  : mise à disposition* de la prise en charge pour Mac, Excel Online et fonctions synchrones en cours de traitement
 - **20 septembre 2018** : Support fourni pour les fonctions personnalisées à l'exécution de JavaScript. Pour plus d’informations, voir [Exécution des fonctions personnalisées d’Excel](custom-functions-runtime.md).
 
 \* vers le canal Office Insiders

@@ -1,15 +1,15 @@
 ---
-title: Mettre à jour votre version de la bibliothèque API JavaScript pour Office et la version 1.1 du schéma de manifeste du complément
+title: Télécharger la dernière version de l’API JavaScript pour la bibliothèque Office et la version 1.1 du schéma de manifeste du complément
 description: Mettez à jour vos fichiers JavaScript (Office.js et fichiers .js propres aux applications) et le fichier de validation du manifeste du complément utilisés dans votre projet de complément Office vers la version 1.1.
 ms.date: 12/04/2017
-ms.openlocfilehash: c597c7456da2749d1061ab3e2c5bf9f41800a9cf
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: e58239a4e67871eb955d7fc205e26d0eb95af327
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944397"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004937"
 ---
-# <a name="update-to-the-latest-javascript-api-for-office-library-and-version-11-add-in-manifest-schema"></a>Mettre à jour votre version de la bibliothèque API JavaScript pour Office et la version 1.1 du schéma de manifeste du complément
+# <a name="update-to-the-latest-javascript-api-for-office-library-and-version-11-add-in-manifest-schema"></a>Télécharger la dernière version de l’API JavaScript pour la bibliothèque Office et la version 1.1 du schéma de manifeste du complément
 
 Cet article décrit comment mettre à jour vers la version 1.1 les fichiers JavaScript pour Office (Office.js et fichiers .js propres aux applications) et le fichier de validation du manifeste du complément utilisés dans votre projet de complément Office.
 
@@ -69,7 +69,7 @@ Dans le fichier manifeste de votre complément, mettez à jour l’attribut **xm
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xsi:type="ContentApp" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
     xmlns="http://schemas.microsoft.com/office/appforoffice/1.1">
   
   <!-- manifest contents -->
@@ -112,7 +112,7 @@ Dans le fichier manifeste de votre complément, mettez à jour l’attribut **xm
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xsi:type="ContentApp" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
     xmlns="http://schemas.microsoft.com/office/appforoffice/1.1">
   
   <!-- manifest contents -->

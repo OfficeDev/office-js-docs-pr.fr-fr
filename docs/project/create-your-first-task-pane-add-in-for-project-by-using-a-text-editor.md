@@ -2,12 +2,12 @@
 title: Créer votre premier complément du volet Office pour Project 2013 à l’aide d’un éditeur de texte
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: a09da8fd3ab4989afb8a6ec6e6b2ae226b6f18d5
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: eb12f1d15135301fe27b143781e1f622475f7b66
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925548"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004895"
 ---
 # <a name="create-your-first-task-pane-add-in-for-project-2013-by-using-a-text-editor"></a>Créer votre premier complément du volet Office pour Project 2013 à l’aide d’un éditeur de texte
 
@@ -30,7 +30,7 @@ Créez un fichier XML dans un répertoire local. Le fichier XML inclut l’élé
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
-              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
               xsi:type="TaskPaneApp">
      <Id>93A26520-9414-492F-994B-4983A1C7A607</Id>
      <Version>15.0</Version>
@@ -106,7 +106,7 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Simp
 
    Le code suivant obtient le contexte d’application et les informations de document en utilisant des fonctions dans le fichier Office.js. L’objet **text** est l’identifiant du contrôle **textarea** dans le fichier HTML.
     
-   La variable **\_projDoc** est initialisée avec un objet **ProjectDocument**. Le code inclut des fonctions de gestion des erreurs simples, ainsi que la fonction **getContextValues** qui extrait les propriétés de contexte d’application et de contexte de document de projet. Pour plus d’informations sur le modèle d’objet JavaScript pour Project, reportez-vous à la rubrique [API JavaScript pour Office](https://dev.office.com/reference/add-ins/javascript-api-for-office).
+   La variable **\_projDoc** est initialisée avec un objet **ProjectDocument**. Le code inclut des fonctions de gestion des erreurs simples, ainsi que la fonction **getContextValues** qui extrait les propriétés de contexte d’application et de contexte de document de projet. Pour plus d’informations sur le modèle d’objet JavaScript pour Project, reportez-vous à la rubrique [API JavaScript pour Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js).
 
     ```javascript
     /*
@@ -168,11 +168,11 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Simp
     }
     ```
 
-   Pour plus d’informations sur les fonctions dans le fichier Office.debug.js, voir [JavaScript API for Office](https://dev.office.com/reference/add-ins/javascript-api-for-office). Par exemple, la fonction **getDocumentUrl** obtient l’URL ou le chemin de fichier du projet ouvert.
+   Pour plus d’informations sur les fonctions dans le fichier Office.debug.js, voir [JavaScript API for Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js). Par exemple, la fonction **getDocumentUrl** obtient l’URL ou le chemin de fichier du projet ouvert.
     
 3. Ajoutez les fonctions JavaScript qui appellent des fonctions asynchrones dans Office.js et Project-15.js pour obtenir les données sélectionnées :
     
-   - Par exemple, **getSelectedDataAsync** est une fonction générale d’Office.js qui recherche du texte non formaté pour les données sélectionnées. Pour plus d’informations, reportez-vous à la rubrique sur l’[objet AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult).
+   - Par exemple, **getSelectedDataAsync** est une fonction générale d’Office.js qui recherche du texte non formaté pour les données sélectionnées. Pour plus d’informations, reportez-vous à la rubrique sur l’[objet AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js).
     
    - La fonction  **getSelectedTaskAsync** dans Project-15.js recherche le GUID de la tâche sélectionnée. De même, la fonction **getSelectedResourceAsync** recherche le GUID de la ressource sélectionnée. Si vous appelez ces fonctions lorsqu’une tâche ou une ressource n’est pas sélectionnée, les fonctions produisent une erreur non définie.
     
@@ -188,7 +188,7 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Simp
    - Si le projet est synchronisé avec une liste de tâches SharePoint, la fonction  **getWSSUrlAsync** obtient l’URL et le nom de la liste des tâches. Si le projet n’est pas synchronisé avec une liste des tâches SharePoint, la fonction **getWSSUrlAsync** génère une erreur.
     
      > [!NOTE]
-     > Pour obtenir l’URL de SharePoint et le nom de la liste des tâches, nous vous recommandons d’utiliser la fonction **getProjectFieldAsync** avec les constantes **WSSUrl** et **WSSList** dans l’énumération [ProjectProjectFields](https://dev.office.com/reference/add-ins/shared/projectprojectfields-enumeration).
+     > Pour obtenir l’URL de SharePoint et le nom de la liste des tâches, nous vous recommandons d’utiliser la fonction **getProjectFieldAsync** avec les constantes **WSSUrl** et **WSSList** dans l’énumération [ProjectProjectFields](https://docs.microsoft.com/javascript/api/office/office.projectprojectfields?view=office-js).
 
    Chacune des fonctions utilisées dans le code suivant inclut une fonction anonyme représentée par `function (asyncResult)` et qui est un rappel qui obtient le résultat asynchrone. Au lieu de fonctions anonymes, vous pouvez utiliser les fonctions nommées, qui peuvent améliorer la maintenabilité des compléments complexes.
 
@@ -1095,7 +1095,7 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 
 - [Compléments du volet Office pour Project](../project/project-add-ins.md)
 - [Présentation de l’API JavaScript pour compléments](../develop/understanding-the-javascript-api-for-office.md)
-- [API JavaScript pour les compléments Office](https://dev.office.com/reference/add-ins/javascript-api-for-office)
+- [Interface API JavaScript pour les compléments Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)
 - [Référence de schéma pour les manifestes des compléments Office (version 1.1)](../develop/add-in-manifests.md)     
 - [Téléchargement du Kit de développement logiciel (SDK) de Project 2013](https://www.microsoft.com/download/details.aspx?id=30435%20)
     

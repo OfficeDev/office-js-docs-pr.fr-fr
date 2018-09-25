@@ -2,12 +2,12 @@
 title: Utiliser l’API de dialogue dans vos compléments Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 569aa6fe6a16b4dc158f0b4e0f5b457650a5a46a
-ms.sourcegitcommit: 470d8212b256275587e651abaa6f28beafebcab4
+ms.openlocfilehash: 148f4b564169e62f6444e87074c45cb8e4ce5c63
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "24062136"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25005056"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Utiliser l’API de dialogue dans vos compléments Office
 
@@ -318,7 +318,7 @@ Pour voir un exemple de complément qui gère les erreurs de cette façon, consu
 Parfois, la page hôte doit transmettre des informations à la boîte de dialogue. Pour ce faire, il existe deux moyens :
 
 - ajouter des paramètres de requête à l’URL qui est transmise à `displayDialogAsync` ;
-- stocker les informations à un emplacement auquel à la fois la fenêtre hôte et la boîte de dialogue ont accès. Les deux fenêtres ne partagent pas un stockage de session commun, mais *si elles ont le même domaine* (y compris le même numéro de port, le cas échéant), elles utilisent un [stockage local](http://www.w3schools.com/html/html5_webstorage.asp) commun.
+- stocker les informations à un emplacement auquel à la fois la fenêtre hôte et la boîte de dialogue ont accès. Les deux fenêtres ne partagent pas un stockage de session commun, mais *si elles ont le même domaine* (y compris le même numéro de port, le cas échéant), elles utilisent un [stockage local](https://www.w3schools.com/html/html5_webstorage.asp) commun.
 
 ### <a name="use-local-storage"></a>Utilisation du stockage local
 
@@ -392,10 +392,10 @@ Voici un flux d’authentification simple et standard :
 3. Lorsque la page redirectPage.html s’ouvre, elle appelle `messageParent` pour indiquer le succès ou l’échec à la page hôte et éventuellement indiquer également des données utilisateur ou des données d’erreur.
 4. L’événement `DialogMessageReceived` se déclenche dans la page hôte, et son gestionnaire ferme la fenêtre de dialogue et effectue éventuellement d’autres traitements du message.
 
-Pour voir des exemples de compléments qui utilisent ce modèle, consultez les pages suivantes :
+Pour voir des exemples de compléments qui utilisent ce modèle, consultez les pages suivantes :
 
-- [Insérer des graphiques Excel à l’aide de Microsoft Graph dans un complément PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) : La ressource qui s’ouvre initialement dans la fenêtre de la boîte de dialogue est une méthode du contrôleur qui ne dispose d’aucun affichage propre. Elle redirige vers la page de connexion Office 365.
-- [Authentification client Office 365 du complément Office pour AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth) : La ressource qui s’ouvre initialement dans la fenêtre de dialogue est une page.
+- [Insérer des graphiques Excel à l’aide de Microsoft Graph dans un complément PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) : la ressource qui s’ouvre initialement dans la fenêtre de la boîte de dialogue est une méthode du contrôleur qui ne dispose d’aucun affichage propre. Elle redirige vers la page de connexion Office 365.
+- [Authentification client Office 365 du complément Office pour AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth) : la ressource qui s’ouvre initialement dans la fenêtre de dialogue est une page.
 
 #### <a name="support-multiple-identity-providers"></a>Prise en charge de plusieurs fournisseurs d’identité
 

@@ -1,13 +1,13 @@
 ---
-title: Créer le package de votre complément à l’aide de Visual Studio pour préparer la publication
-description: ''
+title: Créer le package de votre complément à l’aide de Visual Studio pour préparer la publication | Microsoft Docs
+description: Comment déployer votre projet web et l’empaquetage de votre complément à l’aide de Visual Studio 2015.
 ms.date: 01/25/2018
-ms.openlocfilehash: aa93fc6befd133127c3542a420d779d070316a57
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: d74ead03b8ac5b7652c7c98851e7e082f4b31ba8
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944380"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004916"
 ---
 # <a name="package-your-add-in-using-visual-studio-to-prepare-for-publishing"></a>Créer le package de votre complément à l’aide de Visual Studio pour préparer la publication
 
@@ -26,13 +26,13 @@ Procédez comme suit pour déployer votre projet web à l’aide de Visual Studi
     > [!NOTE]
     > Un profil de publication indique le serveur sur lequel vous effectuez le déploiement, les informations d’identification nécessaires pour se connecter au serveur, les bases de données à déployer, ainsi que d’autres options de déploiement.
 
-    Si vous choisissez  **Nouveau...**, l’assistant Créer un profil de publication s’ouvre. Vous pouvez utiliser cet assistant pour importer un profil de publication à partir d’un site web d’hébergement comme Microsoft Azure ou créer un nouveau profil et ajouter votre serveur, vos informations d’identification et d’autres paramètres, comme décrit dans la procédure suivante.
+    Si vous choisissez **Nouveau...**, l’Assistant Créer un profil de publication s’ouvre. Vous pouvez utiliser cet Assistant pour importer un profil de publication à partir d’un site web d’hébergement comme Microsoft Azure ou créer un profil et ajouter votre serveur, vos informations d’identification et d’autres paramètres, comme décrit dans la procédure suivante.
     
-    Pour plus d’informations sur l’importation et la création de profils de publication, voir [Création d’un profil de publication](http://msdn.microsoft.com/library/dd465337.aspx#creating_a_profile).
+    Pour plus d’informations sur l’importation et la création de profils de publication, voir [Création d’un profil de publication](https://msdn.microsoft.com/library/dd465337.aspx#creating_a_profile).
     
 3. Sur la page  **Publier votre complément**, cliquez sur le lien  **Déployer votre projet Web**.
     
-    La boîte de dialogue **Publier Web** apparaît. Pour plus d’information sur l’utilisation de cet assistant, reportez-vous à l’article [Procédure : Déployer un projet d’application Web à l’aide de la publication en un clic dans Visual Studio](http://msdn.microsoft.com/library/dd465337.aspx).
+    La boîte de dialogue **Publier Web** apparaît. Pour plus d’information sur l’utilisation de cet assistant, reportez-vous à l’article [Procédure : Déployer un projet d’application Web à l’aide de la publication en un clic dans Visual Studio](https://msdn.microsoft.com/library/dd465337.aspx).
     
 
 ## <a name="to-package-your-add-in-using-visual-studio-2015"></a>Création d’un package de votre complément avec Visual Studio 2015

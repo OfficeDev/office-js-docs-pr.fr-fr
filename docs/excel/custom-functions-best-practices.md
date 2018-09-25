@@ -2,12 +2,12 @@
 ms.date: 09/20/2018
 description: Découvrez les meilleures pratiques et modèles recommandés pour les fonctions personnalisées d’Excel.
 title: Meilleures pratiques pour les fonctions personnalisées
-ms.openlocfilehash: 3934910c397aea348c4fe2d7f95f1dc20ebeb4d3
-ms.sourcegitcommit: 8ce9a8d7f41d96879c39cc5527a3007dff25bee8
+ms.openlocfilehash: 4fe0ddc36ce1b08ea360bb556121e76cd57c3823
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "24985787"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004909"
 ---
 # <a name="custom-functions-best-practices"></a>Meilleures pratiques pour les fonctions personnalisées
 
@@ -19,7 +19,7 @@ Lorsque vous créez un complément qui définit des fonctions personnalisées, v
 
 ```js
 function getComment(x) {
-    let url = "https://jsonplaceholder.typicode.com/comments/" + x; 
+    let url = "https://yourhypotheticalapi.com/comments/" + x; 
     return fetch(url)
         .then(function (data) {
             return data.json();
@@ -33,26 +33,17 @@ function getComment(x) {
 }
 ```
 
-## <a name="error-logging"></a>Enregistrement des erreurs
-
-Vous pouvez activer la journalisation des erreurs pour votre complément de fonctions personnalisées de plusieurs façons, telles que : 
-
-- [Utilisation de la journalisation runtime](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in-manifest) pour le débogage du fichier manifeste XML de votre complément. 
-
-- Utiliser des instructions `console.log` dans votre code des fonctions personnalisées pour envoyer la sortie à la console en temps réel.
-
-> [!NOTE]
-> La fonctionnalité de journalisation runtime n’est actuellement disponible que pour Office 2016 bureau.
-
 ## <a name="debugging"></a>Débogage
-
-Actuellement, la meilleure méthode pour le débogage des fonctions personnalisées Excel consiste à premier [sideload](../testing/sideload-office-add-ins-for-testing.md) votre complément dans Excel Online. Ensuite, vous pouvez déboguer vos fonctions personnalisées à l’aide de l' [outil de débogage F12 natif de votre navigateur](../testing/debug-add-ins-in-office-online.md).
+Actuellement, la meilleure méthode pour le débogage des fonctions personnalisées Excel consiste à premier [sideload](../testing/sideload-office-add-ins-for-testing.md) votre complément dans **Excel Online**. Ensuite, vous pouvez déboguer vos fonctions personnalisées à l’aide de l’[outil de débogage F12 natif de votre navigateur](../testing/debug-add-ins-in-office-online.md). Utiliser des instructions `console.log` dans votre code des fonctions personnalisées pour envoyer la sortie à la console en temps réel.
 
 Si votre complément ne parvient pas à s’enregistrer, [vérifiez que les certificats SSL sont correctement configurés](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) pour le serveur web qui héberge votre application de complément.
 
+Si vous testez votre complément dans Office 2016 bureau, vous pouvez activer la [journalisation runtime](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in) pour résoudre les problèmes du fichier manifeste XML de votre complément, ainsi que plusieurs conditions d’installation et d’exécution. 
+
+
 ## <a name="mapping-names"></a>Mappage de noms
 
-Par défaut, le nom d’une fonction personnalisée dans votre fichier JavaScript est déclaré généralement à l’aide de lettres toutes en majuscule et correspond exactement au nom de la fonction que l'utilisateur final voit dans Excel. Toutefois, vous pouvez modifier ce mappage à l’aide de l'objet `CustomFunctionsMappings` pour mapper un ou plusieurs noms de fonction à partir du fichier JavaScript à des valeurs différentes que les utilisateurs finaux verront s’afficher comme noms de fonction dans Excel. Cela peut être utile si vous utilisez un uglifier, un webpack ou une syntaxe d’importation - qui tous ont des difficultés avec les noms de fonctions en majuscules. `CustomFunctionsMappings` Il est éventuellement facultatif pour les projets utilisant JavaScript, mais vous devez vous en servir si votre projet utilise des caractères dactylographiés.  
+Par défaut, le nom d’une fonction personnalisée dans votre fichier JavaScript est déclaré généralement à l’aide de lettres toutes en majuscule et correspond exactement au nom de la fonction que l'utilisateur final voit dans Excel. Toutefois, vous pouvez modifier ce mappage à l’aide de l'objet `CustomFunctionsMappings` pour mapper un ou plusieurs noms de fonction à partir du fichier JavaScript à des valeurs différentes que les utilisateurs finaux verront s’afficher comme noms de fonction dans Excel. Cela peut être utile si vous utilisez un uglifier, un webpack ou une syntaxe d’importation - qui ont tous des difficultés avec les noms de fonctions en majuscules. `CustomFunctionsMappings` Il est éventuellement facultatif pour les projets utilisant JavaScript, mais vous devez vous en servir si votre projet utilise des caractères dactylographiés.  
   
 L’exemple de code suivant définit une seule paire clé-valeur qui mappe le nom de la fonction JavaScript `plusFortyTwo` au nom de la fonction `ADD42` dans l’interface utilisateur d’Excel. Lorsque l’utilisateur final choisit la fonction `ADD42` dans Excel, la fonction JavaScript `plusFortyTwo` s’exécute.
 
@@ -85,6 +76,6 @@ CustomFunctionsMappings = {
 
  ## <a name="see-also"></a>Voir aussi
 
-* [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
-* [Métadonnées des fonctions personnalisées](custom-functions-json.md)
-* [Runtime pour les fonctions personnalisées Excel](custom-functions-runtime.md)
+- [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
+- [Métadonnées des fonctions personnalisées](custom-functions-json.md)
+- [Runtime pour les fonctions personnalisées Excel](custom-functions-runtime.md)

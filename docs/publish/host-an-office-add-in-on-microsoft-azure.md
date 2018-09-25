@@ -1,13 +1,13 @@
 ---
-title: Héberger un complément pour Office sur Microsoft Azure
-description: ''
+title: Héberger un complément pour Office sur Microsoft Azure | Microsoft Docs
+description: Découvrez comment déployer une application web de complément sur Azure et charger une version test du complément pour le tester dans une application cliente Office.
 ms.date: 01/25/2018
-ms.openlocfilehash: a7a364db256a64a224ed6895ed710bb0592fa72f
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 32560fdd0655fbba937140152f16cc91c2185411
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925520"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25005000"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>Héberger un complément pour Office sur Microsoft Azure
 
@@ -22,17 +22,17 @@ Cet article décrit comment déployer une application web de complément sur Azu
     > [!NOTE]
     > Si vous avez déjà installé Visual Studio 2017, [utilisez le programme d’installation Visual Studio](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) pour vous assurer que la charge de travail de **développement Azure** est installée. 
 
-2. Installez Office 2016. 
+2. Installation d’Office. 
     
     > [!NOTE]
-    > Si vous n’avez pas encore Office 2016, vous pouvez vous [inscrire pour obtenir une version d’évaluation gratuite d’un mois](http://office.microsoft.com/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786).
+    > Si vous n’avez pas encore Office 2016, vous pouvez vous [inscrire pour obtenir une version d’évaluation gratuite d’un mois](https://products.office.com/en-US/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735).
 
 3.  Obtenez un abonnement Azure.
     
     > [!NOTE]
-    > Si vous n’avez pas encore d’abonnement Azure, vous pouvez [en obtenir un dans le cadre de votre abonnement MSDN](http://www.windowsazure.com/pricing/member-offers/msdn-benefits/) ou vous [inscrire pour obtenir une version d’évaluation gratuite](https://azure.microsoft.com/pricing/free-trial). 
+    > Si vous n’avez pas encore d’abonnement Azure, vous pouvez [en obtenir un dans le cadre de votre abonnement Visual Studio](https://azure.microsoft.com/en-us/pricing/member-offers/visual-studio-subscriptions/) ou vous [inscrire pour obtenir une version d’évaluation gratuite](https://azure.microsoft.com/pricing/free-trial). 
 
-## <a name="step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file"></a>Étape 1 : Créer un dossier partagé pour héberger le fichier manifeste XML de votre complément
+## <a name="step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file"></a>Étape 1 : Créer un dossier partagé pour héberger le fichier manifeste XML de votre complément
 
 1. Ouvrez l’explorateur de fichiers sur votre ordinateur de développement.
     
@@ -47,12 +47,12 @@ Cet article décrit comment déployer une application web de complément sur Azu
 > [!NOTE]
 > Dans cette procédure, vous utilisez un partage de fichiers local en tant que catalogue approuvé où vous allez stocker le fichier manifeste XML du complément. Dans un scénario réel, vous pouvez choisir de [déployer le fichier manifeste XML dans un catalogue SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) ou de [publier le complément dans AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store), à la place.
 
-## <a name="step-2-add-the-file-share-to-the-trusted-add-ins-catalog"></a>Étape 2 : Ajouter le partage de fichiers au catalogue de compléments approuvés
+## <a name="step-2-add-the-file-share-to-the-trusted-add-ins-catalog"></a>Étape 2 : Ajouter le partage de fichiers au catalogue de compléments approuvés
 
-1.  Démarrez Word 2016 et créez un document.
+1.  Démarrez Word et créez un document.
 
     > [!NOTE]
-    > Bien que cet exemple utilise Word 2016, vous pouvez utiliser n’importe quelle application Office qui prend en charge des compléments Office comme Excel, Outlook, PowerPoint ou Project 2016.
+    > Bien que cet exemple utilise Word, vous pouvez utiliser n’importe quelle application Office qui prend en charge des compléments Office comme Excel, Outlook, PowerPoint ou Project.
     
 2.  Choisissez **Fichier**  >  **Options**.
     
@@ -65,9 +65,9 @@ Cet article décrit comment déployer une application web de complément sur Azu
     > [!NOTE]
     > Lorsque vous stockez un fichier manifeste XML de complément sur un partage qui est défini comme un catalogue de compléments web approuvés, le complément apparaît sous **Dossier partagé** dans la boîte de dialogue **Compléments Office** lorsque l’utilisateur accède à l’onglet **Insérer** dans le ruban et choisit **Mes compléments**.
 
-6. Fermez Word 2016.
+6. Fermez Word.
 
-## <a name="step-3-create-a-web-app-in-azure"></a>Étape 3 : Créer une application web dans Azure
+## <a name="step-3-create-a-web-app-in-azure"></a>Étape 3 : Créer une application web dans Azure
 
 Créez une application web vide dans Azure en utilisant [Visual Studio 2017](../publish/host-an-office-add-in-on-microsoft-azure.md#using-visual-studio-2017) ou le [portail Azure](../publish/host-an-office-add-in-on-microsoft-azure.md#using-the-azure-portal).
 
@@ -134,7 +134,7 @@ Pour créer l’application web à l’aide du portail Azure, procédez comme su
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)] Les sites web Azure fournissent automatiquement un point de terminaison HTTPS.
 
-## <a name="step-4-create-an-office-add-in-in-visual-studio"></a>Étape 4 : Créer un complément Office dans Visual Studio.
+## <a name="step-4-create-an-office-add-in-in-visual-studio"></a>Étape 4 : Créer un complément Office dans Visual Studio
 
 1. Démarrez Visual Studio en tant qu’administrateur.
     
@@ -164,9 +164,9 @@ Visual Studio crée un complément Word de base que vous pourrez publier tel que
 
     Visual Studio publie le projet web pour votre complément Office sur votre site web Azure. Une fois le projet web publié par Visual Studio, votre navigateur s’ouvre et affiche une page web avec le texte « Votre application de service d’application a été créée. » Il s’agit de la page active par défaut pour l’application web.
 
-7. Pour voir la page Web de votre complément, modifiez l'URL afin qu'elle utilise HTTPS et spécifie le chemin d'accès de la page HTML de votre complément (par exemple : https://YourDomain.azurewebsites.net/Home.html). Cela confirme que l’application Web de votre complément est désormais hébergée sur Azure. Copiez l’URL racine (par exemple : https://YourDomain.azurewebsites.net); vous en aurez besoin lorsque vous modifierez le fichier manifeste du complément plus loin dans cet article.
+7. Pour voir la page Web de votre complément, modifiez l'URL afin qu'elle utilise HTTPS et spécifie le chemin d'accès de la page HTML de votre complément (par exemple : https://YourDomain.azurewebsites.net/Home.html). Cela confirme que l’application Web de votre complément est désormais hébergée sur Azure. Copiez l’URL racine (par exemple : https://YourDomain.azurewebsites.net); vous en aurez besoin lorsque vous modifierez le fichier manifeste du complément plus loin dans cet article.
     
-## <a name="step-6-edit-and-deploy-the-add-in-xml-manifest-file"></a>Étape 6 : Modifier et déployer le fichier manifeste XML
+## <a name="step-6-edit-and-deploy-the-add-in-xml-manifest-file"></a>Étape 6 : Modifier et déployer le fichier manifeste XML
 
 1. Dans Visual Studio avec l’exemple de complément Office ouvert dans l’**explorateur de solutions**, développez la solution pour que les deux projets s’affichent.
     
@@ -184,7 +184,7 @@ Visual Studio crée un complément Word de base que vous pourrez publier tel que
 
 ## <a name="step-7-insert-and-run-the-add-in-in-the-office-client-application"></a>Étape 7 : insérer et exécuter le complément dans l’application cliente Office
 
-1. Démarrez Word 2016 et créez un document.
+1. Démarrez Word et créez un document.
     
 2. Sur le ruban, cliquez sur **Insérer** > **Mes compléments**. 
     

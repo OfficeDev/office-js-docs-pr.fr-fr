@@ -2,12 +2,12 @@
 title: Créer un complément Project qui utilise REST avec un service OData Project Server local
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 23f9a2f1f2272d5fce4609e111932f4b585caa31
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 7a632b708ebcf714ce1fa6ca2f5feb095fcd9f9d
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925541"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25005035"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>Créer un complément Project qui utilise REST avec un service OData Project Server local
 
@@ -41,13 +41,13 @@ Voici les conditions requises pour la création d’un complément du volet Offi
 
 1. Pour permettre à votre navigateur d’afficher directement les données XML à partir d’une requête REST, désactivez le mode Lecture du flux. Pour plus d’informations sur la façon d’y parvenir dans Internet Explorer, voir la procédure 1, étape 4 dans [Interrogation des flux OData pour les données de création de rapports Project](https://docs.microsoft.com/previous-versions/office/project-odata/jj163048(v=office.15)).
     
-2. Interrogez le service  **ProjectData** à l'aide de votre navigateur et de l’URL suivante : **http://ServerName /ProjectServerName /_api/ProjectData**. Par exemple, si l’instance Project Web App est `http://MyServer/pwa`, le navigateur affiche les résultats suivants :
+2. Interrogez le service  **ProjectData** à l’aide de votre navigateur et de l’URL suivante : **http://ServerName /ProjectServerName /_api/ProjectData**. Par exemple, si l’instance Project Web App est `http://MyServer/pwa`, le navigateur affiche les résultats suivants :
     
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
         <service xml:base="http://myserver/pwa/_api/ProjectData/" 
-        xmlns="http://www.w3.org/2007/app" 
-        xmlns:atom="http://www.w3.org/2005/Atom">
+        xmlns="https://www.w3.org/2007/app" 
+        xmlns:atom="https://www.w3.org/2005/Atom">
         <workspace>
             <atom:title>Default</atom:title>
             <collection href="Projects">
@@ -103,7 +103,7 @@ Outils de développement Office pour Visual Studio comprend un modèle pour les 
     
     Visual Studio crée les projets **HelloProjectOdata** et **HelloProjectODataWeb**.
     
-Le dossier  **AddIn** (voir la capture d’écran suivante) contient le fichier App.css pour les styles CSS personnalisés. Dans le sous-dossier **Home**, le fichier Home.html comporte des références aux fichiers CSS et aux fichiers JavaScript utilisés par le complément, ainsi que le contenu HTML5 pour le complément. En outre, le fichier Home.js sert à votre code JavaScript personnalisé. Le dossier  **Scripts** comprend les fichiers de bibliothèque jQuery. Le sous-dossier  **Office** inclut les bibliothèques JavaScript, comme office.js et project-15.js, plus les bibliothèques de langues des chaînes standard dans les compléments Office. Dans le dossier  **Contenu**, le fichier Office.css comporte les styles par défaut de tous les compléments Office.
+Le dossier  **AddIn** (voir la capture d’écran suivante) contient le fichier App.css pour les styles CSS personnalisés. Dans le sous-dossier **Accueil**, le fichier Home.html comporte des références aux fichiers CSS et aux fichiers JavaScript utilisés par le complément, ainsi que le contenu HTML5 pour le complément. En outre, le fichier Home.js sert à votre code JavaScript personnalisé. Le dossier  **Scripts** comprend les fichiers de bibliothèque jQuery. Le sous-dossier  **Office** inclut les bibliothèques JavaScript, comme office.js et project-15.js, plus les bibliothèques de langues des chaînes standard dans les compléments Office. Dans le dossier **Contenu**, le fichier Office.css comporte les styles par défaut de tous les compléments Office.
 
 *Figure 4. Affichage des fichiers de projet web par défaut dans l’Explorateur de solutions*
 
@@ -139,7 +139,7 @@ Les étapes suivantes montrent comment ajouter un fichier d’icône à la solut
     ```XML
     <?xml version="1.0" encoding="UTF-8"?>
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+            xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
         <Id>c512df8d-a1c5-4d74-8a34-d30f6bbcbd82 </Id>
         <Version>1.0</Version>
         <ProviderName> [Provider name]</ProviderName>
@@ -316,7 +316,7 @@ Le reste du fichier HelloProjectOData.js comprend deux fonctions : la fonction  
     }
     ```
 
-2. Ajoutez  **setOdataUrl** et les fonctions connexes. La fonction **setOdataUrl** appelle **getProjectGuid** et **getDocumentUrl** pour initialiser les variables globales. Dans la [méthode getProjectFieldAsync](https://dev.office.com/reference/add-ins/shared/projectdocument.getprojectfieldasync), la fonction anonyme du paramètre  _callback_ active le bouton **Comparer tous les projets** en utilisant la méthode **removeAttr** de la bibliothèque jQuery, puis affiche l’URL du service **ProjectData**. Si Project n’est pas connecté à Project Web App, la fonction génère une erreur, ce qui entraîne l’affichage d’un message d’erreur dans une fenêtre contextuelle. Le fichier SurfaceErrors.js inclut la méthode  **throwError**.
+2. Ajoutez  **setOdataUrl** et les fonctions connexes. La fonction **setOdataUrl** appelle **getProjectGuid** et **getDocumentUrl** pour initialiser les variables globales. Dans la [méthode getProjectFieldAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js), la fonction anonyme du paramètre  _callback_ active le bouton **Comparer tous les projets** en utilisant la méthode **removeAttr** de la bibliothèque jQuery, puis affiche l’URL du service **ProjectData**. Si Project n’est pas connecté à Project Web App, la fonction génère une erreur, ce qui entraîne l’affichage d’un message d’erreur dans une fenêtre contextuelle. Le fichier SurfaceErrors.js inclut la méthode  **throwError**.
     
    > [!NOTE]
    > Si vous exécutez Visual Studio sur l’ordinateur Project Server, pour utiliser le débogage **F5**, supprimez le commentaire du code après la ligne qui initialise la variable globale **_pwa**. Pour permettre l’utilisation de la méthode **ajax** jQuery lors du débogage sur l’ordinateur Project Server, vous devez définir la valeur **localhost** pour l’URL PWA. Si vous exécutez Visual Studio sur un ordinateur distant, l’URL **localhost** n’est pas nécessaire. Avant de déployer le complément, commentez le code.

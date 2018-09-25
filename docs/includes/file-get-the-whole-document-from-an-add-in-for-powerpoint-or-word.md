@@ -1,12 +1,12 @@
 # <a name="get-the-whole-document-from-an-add-in-for-powerpoint-or-word"></a>Obtention de l’intégralité d’un document pour un complément pour PowerPoint ou Word
 
-Vous pouvez créer un Complément Office pour permettre l’envoi ou la publication en un clic d’un document Word 2013 ou PowerPoint 2013 sur un emplacement distant. Cet article explique comment créer un complément du volet de tâches pour PowerPoint 2013 qui envoie les données d’une présentation sous la forme d’un objet de données à un serveur web via une requête HTTP.
+Vous pouvez créer un Complément Office pour permettre l’envoi ou la publication en un clic d’un document Word 2013 ou PowerPoint 2013 sur un emplacement distant. Cet article explique comment créer un complément du volet de tâches pour PowerPoint 2013 qui envoie les données d’une présentation sous la forme d’un objet de données à un serveur web via une requête HTTP.
 
 ## <a name="prerequisites-for-creating-an-add-in-for-powerpoint-or-word"></a>Éléments requis pour créer un complément pour PowerPoint ou Word
 
-Dans cet article, vous utilisez un éditeur de texte pour créer le complément du volet Office pour PowerPoint ou Word. Pour créer le complément du volet Office, vous devez créer les fichiers suivants :
+Dans cet article, vous utilisez un éditeur de texte pour créer le complément du volet Office pour PowerPoint ou Word. Pour créer le complément du volet Office, vous devez créer les fichiers suivants :
 
-- Sur un dossier réseau partagé ou sur un serveur web, vous avez besoin des fichiers suivants :
+- Sur un dossier réseau partagé ou sur un serveur web, vous avez besoin des fichiers suivants :
     
     - Un fichier HTML (GetDoc_App.html) qui contient l’interface utilisateur, ainsi que les liens vers les fichiers JavaScript (notamment office.js et fichiers .js propres à l’hôte) et les fichiers CSS (Cascading Style Sheet).
            
@@ -16,7 +16,7 @@ Dans cet article, vous utilisez un éditeur de texte pour créer le complément 
     
 - Un fichier manifeste XML (GetDoc_App.xml) pour le complément, disponible dans un dossier réseau partagé ou un catalogue de compléments. Le fichier manifeste doit pointer vers l’emplacement du fichier HTML mentionné précédemment.
     
-Vous pouvez également créer un complément pour PowerPoint à l’aide de [Visual Studio](../quickstarts/powerpoint-quickstart.md?tabs=visual-studio) ou de [n’importe quel éditeur](../quickstarts/powerpoint-quickstart.md?tabs=visual-studio-code), ou pour Word à l’aide de [Visual Studio](../quickstarts/word-quickstart.md?tabs=visual-studio) ou de [n’importe quel éditeur](../quickstarts/word-quickstart.md?tabs=visual-studio-code). 
+Vous pouvez également créer un complément pour PowerPoint à l’aide de [Visual Studio](../quickstarts/powerpoint-quickstart.md?tabs=visual-studio) ou de [n’importe quel éditeur](../quickstarts/powerpoint-quickstart.md?tabs=visual-studio-code), ou pour Word à l’aide de [Visual Studio](../quickstarts/word-quickstart.md?tabs=visual-studio) ou de [n’importe quel éditeur](../quickstarts/word-quickstart.md?tabs=visual-studio-code). 
 
 ### <a name="core-concepts-to-know-for-creating-a-task-pane-add-in"></a>Concepts fondamentaux à connaître pour créer un complément du volet Office
 
@@ -25,14 +25,14 @@ Avant de commencer à créer ce complément pour PowerPoint ou Word, vous devez 
 ## <a name="create-the-manifest-for-the-add-in"></a>Créer le manifeste pour le complément
 
 
-Le fichier manifeste XML pour le complément PowerPoint fournit des informations importantes sur le complément : les applications qui peuvent l’héberger, l’emplacement du fichier HTML, le titre et la description du complément, et bien d’autres caractéristiques.
+Le fichier manifeste XML pour le complément PowerPoint fournit des informations importantes sur le complément : les applications qui peuvent l’héberger, l’emplacement du fichier HTML, le titre et la description du complément, et bien d’autres caractéristiques.
 
 1. Dans l’éditeur de texte, ajoutez le code suivant au fichier manifeste.
     
     ```xml  
     <?xml version="1.0" encoding="utf-8" ?> 
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
     xsi:type="TaskPaneApp">
         <Id>[Replace_With_Your_GUID]</Id> 
         <Version>1.0</Version> 
@@ -122,7 +122,7 @@ Utilisez la procédure suivante pour créer une interface utilisateur simple pou
     
 ## <a name="add-the-javascript-to-get-the-document"></a>Ajouter le code JavaScript pour obtenir le document
 
-Dans le code pour le complément, un gestionnaire vers l’événement [Office.initialize](https://dev.office.com/reference/add-ins/shared/office.initialize) ajoute un gestionnaire à l’événement Click du bouton **Envoyer** du formulaire et informe l’utilisateur que le complément est prêt.
+Dans le code pour le complément, un gestionnaire vers l’événement [Office.initialize](https://docs.microsoft.com/javascript/api/office?view=office-js) ajoute un gestionnaire à l’événement Click du bouton **Envoyer** du formulaire et informe l’utilisateur que le complément est prêt.
 
 L’exemple de code suivant montre le gestionnaire d’événements pour l’événement  **Office.initialize** avec une fonction d’aide, `updateStatus`, pour écrire dans status div.
 
@@ -150,11 +150,11 @@ function updateStatus(message) {
 }
 ```
 
-Quand vous cliquez sur le bouton  **Envoyer** dans l’interface utilisateur, le complément appelle la fonction `sendFile`, qui contient un appel à la méthode [Document.getFileAsync](https://dev.office.com/reference/add-ins/shared/document.getfileasync). La méthode  **getFileAsync** utilise le modèle asynchrone, comme d’autres méthodes de l’API JavaScript pour Office. Elle utilise un paramètre obligatoire, _fileType_, et deux paramètres facultatifs,  _options_ et _callback_. 
+Quand vous cliquez sur le bouton  **Envoyer** dans l’interface utilisateur, le complément appelle la fonction `sendFile`, qui contient un appel à la méthode [Document.getFileAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getfileasync-filetype--options--callback-). La méthode  **getFileAsync** utilise le modèle asynchrone, comme d’autres méthodes de l’API JavaScript pour Office. Elle utilise un paramètre obligatoire, _fileType_, et deux paramètres facultatifs,  _options_ et _callback_. 
 
-Le paramètre _fileType_ attend l’une des trois constantes de l’énumération [FileType](https://dev.office.com/reference/add-ins/shared/filetype-enumeration) :  **Office.FileType.Compressed** (« compressé »), **Office.FileType.PDF** (« PDF ») ou **Office.FileType.Text** (« texte »). PowerPoint prend en charge uniquement **Compressed** comme argument, tandis que Word prend en charge les trois. Lorsque vous transmettez **Compressed** pour le paramètre _fileType_, la méthode  **getFileAsync** renvoie le document sous la forme d’un fichier de présentation PowerPoint 2013 (*.pptx) ou Word 2013 d’un fichier de document (*.docx) en créant une copie temporaire du fichier sur l’ordinateur local.
+Le paramètre _fileType_ attend l’une des trois constantes de l’énumération [FileType](https://docs.microsoft.com/javascript/api/office/office.filetype?view=office-js) :  **Office.FileType.Compressed** (« compressé »), **Office.FileType.PDF** (« PDF ») ou **Office.FileType.Text** (« texte »). PowerPoint prend en charge uniquement **Compressed** comme argument, tandis que Word prend en charge les trois. Lorsque vous transmettez **Compressed** pour le paramètre _fileType_, la méthode  **getFileAsync** renvoie le document sous la forme d’un fichier de présentation PowerPoint 2013 (*.pptx) ou Word 2013 d’un fichier de document (*.docx) en créant une copie temporaire du fichier sur l’ordinateur local.
 
-La méthode **getFileAsync** renvoie une référence au fichier sous la forme d’un objet [File](https://dev.office.com/reference/add-ins/shared/file). L’objet **File** expose quatre membres : la propriété [size](https://dev.office.com/reference/add-ins/shared/file.size), la propriété [sliceCount](https://dev.office.com/reference/add-ins/shared/file.slicecount), la méthode [getSliceAsync](https://dev.office.com/reference/add-ins/shared/file.getsliceasync) et la méthode [closeAsync](https://dev.office.com/reference/add-ins/shared/file.closeasync). La propriété **size** renvoie le nombre d’octets du fichier. La propriété **sliceCount** renvoie le nombre d’objets [Slice](https://dev.office.com/reference/add-ins/shared/document) (expliqué plus loin dans cet article) du fichier.
+La méthode **getFileAsync** renvoie une référence au fichier sous la forme d’un objet [File](https://docs.microsoft.com/javascript/api/office/office.file?view=office-js). L’objet **File** expose quatre membres : la propriété [size](https://docs.microsoft.com/javascript/api/office/office.file?view=office-js#size), la propriété [sliceCount](https://docs.microsoft.com/javascript/api/office/office.file?view=office-js#slicecount), la méthode [getSliceAsync](https://docs.microsoft.com/javascript/api/office/office.file?view=office-js#getsliceasync-sliceindex--callback-) et la méthode [closeAsync](https://docs.microsoft.com/javascript/api/office/office.file?view=office-js#closeasync-callback-). La propriété **size** renvoie le nombre d’octets du fichier. La propriété **sliceCount** renvoie le nombre d’objets [Slice](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js) (expliqué plus loin dans cet article) du fichier.
 
 Utilisez le code suivant pour obtenir le document Word ou PowerPoint sous la forme d’un objet  **File** en utilisant la méthode **Document.getFileAsync**, puis appeler la fonction  `getSlice` définie localement. L’objet **File**, une variable compteur et le nombre total de tranches du fichier sont passés avec l’appel à  `getSlice` dans un objet anonyme.
 
@@ -187,7 +187,7 @@ function sendFile() {
 
 La fonction locale  `getSlice` appelle la méthode **File.getSliceAsync** pour extraire une tranche de l’objet **File**. La méthode  **getSliceAsync** retourne un objet **Slice** de la collection de tranches. Elle a deux paramètres requis, _sliceIndex_ et _callback_. Le paramètre  _sliceIndex_ utilise un entier comme indexeur dans la collection de tranches. Comme d’autres fonctions de l’API JavaScript pour Office, la méthode **getSliceAsync** prend également une fonction de rappel comme paramètre pour gérer les résultats de l’appel de la méthode.
 
-L’objet **Slice** vous donne accès aux données contenues dans le fichier. Sauf indication contraire dans le paramètre _options_ de la méthode **getFileAsync**, la taille de l’objet **Slice** est de 4 Mo. L’objet **Slice** expose trois propriétés : [size](https://dev.office.com/reference/add-ins/shared/slice.size), [data](https://dev.office.com/reference/add-ins/shared/slice.data) et [index](https://dev.office.com/reference/add-ins/shared/slice.index). La propriété **size** obtient la taille, en octets, de la tranche. La propriété **index** obtient un entier qui représente la position de la tranche dans la collection de tranches.
+L’objet **Section** vous donne accès aux données contenues dans le fichier. Sauf indication contraire dans le paramètre _options_ de la méthode **getFileAsync** , l’objet **Section** a une taille de 4 Mo. L’objet **Section**  expose trois propriétés : [taille](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js#size), [données](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js#data), et [index](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js#index). La propriété **taille** obtient la taille, en octets, de la section. La propriété **index** obtient un entier qui représente la position de la section dans la collection de sections.
 
 ```js
 // Get a slice from the file and then call sendSlice.

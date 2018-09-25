@@ -1,13 +1,13 @@
 ---
-title: Vue d’ensemble de la plateforme des compléments pour Office
-description: ''
+title: Vue d’ensemble de la plateforme des compléments Office | Documents Microsoft
+description: Utilisez des technologies Web familières comme HTML, CSS et JavaScript pour étendre et interagir avec Word, Excel, PowerPoint, OneNote, Project et Outlook.
 ms.date: 01/23/2018
-ms.openlocfilehash: a35e0db20f5c573357b12b9034d9b13ce0cc3a27
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 4249e675f4f6a0371e13c5933b3277e7e38841d0
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925275"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004979"
 ---
 # <a name="office-add-ins-platform-overview"></a>Vue d’ensemble de la plateforme de compléments pour Office
 
@@ -93,7 +93,7 @@ Vous pouvez utiliser des volets Office en plus des commandes de complément pour
 
 *Figure 4. Volet Office*
 
-![Volet de tâches](../images/about-addins-taskpane.png)
+![Utiliser des volets Office en plus des commandes de complément](../images/about-addins-taskpane.png)
 
 ### <a name="extend-outlook-functionality"></a>Extension des fonctionnalités Outlook 
 
@@ -109,7 +109,7 @@ Vous pouvez incorporer des objets web, appelés compléments de contenu, dans de
 
 *Figure 5. Complément de contenu*
 
-![complément de contenu](../images/about-addins-contentaddin.png)
+![Incorporer les objets Web appelés compléments de contenu](../images/about-addins-contentaddin.png)
 
 ## <a name="office-javascript-apis"></a>API JavaScript pour Office 
 
@@ -117,7 +117,7 @@ Les API JavaScript Office sont composées d’objets et de membres permettant de
 
 ## <a name="next-steps"></a>Étapes suivantes 
 
-Pour en savoir plus sur la création de votre complément Office, essayez notre [Démarrage rapide en 5 minutes](https://docs.microsoft.com/office/dev/add-ins/). Vous pouvez commencer à créer des compléments immédiatement à l'aide de Visual Studio ou de tout autre éditeur. 
+Pour en savoir plus sur la création de votre complément Office, essayez notre [Démarrage rapide en 5 minutes](https://docs.microsoft.com/office/dev/add-ins/). Vous pouvez commencer à créer des compléments immédiatement à l’aide de Visual Studio ou de tout autre éditeur. 
 
 Pour commencer à concevoir des solutions offrant des expériences utilisateur efficaces et attrayantes, consultez les [instructions de conception](../design/add-in-design.md) et les [meilleures pratiques](../concepts/add-in-development-best-practices.md) pour les compléments Office.    
    

@@ -2,12 +2,12 @@
 title: Manifeste XML des compléments Office
 description: ''
 ms.date: 02/09/2018
-ms.openlocfilehash: 5c24f0c773195ee7b2ed5c6fc9eccfd5840e2651
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: b2e0db2712ecfcd9e7df740548968c91ff1c1af2
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944931"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004986"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifeste XML des compléments Office
 
@@ -17,7 +17,7 @@ Un fichier de manifeste XML basé sur ce schéma permet à un Complément Office
 
 * Se décrire en fournissant un ID, une version, une description, un nom d’affichage et un paramètre régional par défaut.
 
-* Spécifier les images utilisées pour personnaliser le complément et l’iconographie utilisée pour les [commandes de complément][] dans le ruban Office.
+* Spécifier les images utilisées pour personnaliser le complément et l’iconographie utilisés pour les [commandes de complément][] dans le ruban Office.
 
 * Spécifier comment le complément s’intègre à Office, y compris les interfaces utilisateur personnalisées, telles que les boutons du ruban créés par le complément.
 
@@ -93,7 +93,7 @@ _\*Ajouté dans le schéma de manifeste du complément Office version 1.1._
 
 ## <a name="hosting-requirements"></a>Configuration requise pour l’hébergement
 
-Toutes les images des URI, telles que celles utilisées pour les [commandes du complément][], doivent prendre en charge la mise en cache. Le serveur qui héberge l’image ne doit pas renvoyer une `Cache-Control` en-tête spécifiant `no-cache`, `no-store`, ou des options similaires dans la réponse HTTP.
+Tous les URI des images, tels que ceux utilisés pour les [commandes de complément][], doivent prendre en charge la mise en cache. Le serveur qui héberge l’image ne doit pas renvoyer d’en-tête `Cache-Control` spécifiant `no-cache`, `no-store` ou des options similaires dans la réponse HTTP.
 
 Toutes les URL, telles que les emplacements des fichiers source spécifiés dans l’élément [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation), doivent être **sécurisées par une protection SSL (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
 
@@ -118,7 +118,7 @@ L’exemple de manifeste XML suivant héberge sa page de complément principale 
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
   <Id>c6890c26-5bbb-40ed-a321-37f07909a2f0</Id>
   <Version>1.0</Version>
   <ProviderName>Contoso, Ltd</ProviderName>
@@ -144,7 +144,7 @@ Les sections suivantes présentent des exemples de fichiers manifeste XML versio
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
 
 <!-- See https://github.com/OfficeDev/Office-Add-in-Commands-Samples for documentation-->
 
@@ -343,7 +343,7 @@ Les sections suivantes présentent des exemples de fichiers manifeste XML versio
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp
   xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
   xsi:type="ContentApp">
   <Id>01eac144-e55a-45a7-b6e3-f1cc60ab0126</Id>
   <AlternateId>en-US\WA123456789</AlternateId>
@@ -380,7 +380,7 @@ Les sections suivantes présentent des exemples de fichiers manifeste XML versio
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns=
   "http://schemas.microsoft.com/office/appforoffice/1.1"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
   xsi:type="MailApp">
 
   <Id>971E76EF-D73E-567F-ADAE-5A76B39052CF</Id>
