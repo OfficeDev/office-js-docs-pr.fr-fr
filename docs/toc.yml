@@ -172,7 +172,7 @@ items:
         href: develop/auth-external-add-ins.md
       - name: Autorisez Microsoft Graph
         href: develop/authorize-to-microsoft-graph.md
-    - name: Utiliser l'API Dialog
+    - name: Utiliser l’API de boîte de dialogue
       href: develop/dialog-api-in-office-add-ins.md
     - name: Ouvrir automatiquement un volet Office avec un document
       href: develop/automatically-open-a-task-pane-with-a-document.md
@@ -220,10 +220,11 @@ items:
       href: excel/excel-add-ins-core-concepts.md
       items:
       - name: Fonctions personnalisées
-        displayName: Excel
-        href: excel/custom-functions-overview.md
         items:
-        - name: Fonctions personnalisées à l'exécution
+        - name: Vue d’ensemble des fonctions personnalisées
+          displayName: Excel
+          href: excel/custom-functions-overview.md
+        - name: Fonctions personnalisées à l’exécution
           displayName: Excel
           href: excel/custom-functions-runtime.md
         - name: Fonctions personnalisées
@@ -232,19 +233,19 @@ items:
         - name: Meilleures pratiques des fonctions personnalisées
           displayName: Excel
           href: excel/custom-functions-best-practices.md
-      - name: graphiques ;
+      - name: Graphiques
         displayName: Excel
         href: excel/excel-add-ins-charts.md
       - name: Événements
         displayName: Excel
         href: excel/excel-add-ins-events.md
-      - name: Tableaux croisés dynamiques
+      - name: PivotTables
         displayName: Excel
         href: excel/excel-add-ins-pivottables.md
       - name: Ranges
         displayName: Excel
         href: excel/excel-add-ins-ranges.md
-      - name: tableaux ;
+      - name: Tables
         displayName: Excel
         href: excel/excel-add-ins-tables.md
       - name: Worksheets
@@ -266,15 +267,18 @@ items:
       - name: Gestion des erreurs
         displayName: Excel
         href: excel/excel-add-ins-error-handling.md
-      - name: Optimisation des performances
+      - name: Optimisation des niveaux de performances
         displayName: Excel
         href: excel/performance.md
       - name: Utilisation de plusieurs plages
         displayName: Excel
         href: excel/excel-add-ins-multiple-ranges.md
-    - name: Référence de l’API JavaScript d’Excel
+    - name: Vue d’ensemble de l’API JavaScript d’Excel
       displayName: Excel
       href: https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js
+    - name: Référence de l’API JavaScript d’Excel
+      displayName: Excel
+      href: https://docs.microsoft.com/javascript/api/excel?view=office-js
   - name: Compléments Word
     displayName: Word
     href: word/word-add-ins-programming-overview.md
@@ -303,9 +307,12 @@ items:
     - name: Utilisez les options de recherche pour trouver du texte dans votre complément Word
       displayName: Word
       href: word/search-option-guidance.md
-    - name: Référence d’API JavaScript pour Word
+    - name: Vue d’ensemble de l’utilisation de l’API JavaScript de Word
       displayName: Word
       href: https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js
+    - name: Référence de l’API JavaScript de Word
+      displayName: Word
+      href: https://docs.microsoft.com/en-us/javascript/api/word?view=office-js
   - name: Compléments Outlook
     displayName: Outlook
     href: https://docs.microsoft.com/outlook/add-ins/
@@ -335,9 +342,12 @@ items:
     - name: Utiliser du contenu de page OneNote
       displayName: OneNote
       href: onenote/onenote-add-ins-page-content.md
-    - name: Référence de l’API JavaScript de OneNote
+    - name: Vue d’ensemble de l’API JavaScript de OneNote
       displayName: OneNote
       href: https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js
+    - name: Référence de l’API JavaScript de OneNote
+      displayName: OneNote
+      href: https://docs.microsoft.com/en-us/javascript/api/onenote?view=office-js
   - name: Compléments Project
     displayName: Project
     href: project/project-add-ins.md
@@ -358,7 +368,7 @@ items:
       items:
       - name: Chargement de version test des compléments Office sur Windows
         href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
-      - name: Chargez une version test des compléments Office à l'aide de la commande de chargement indépendant
+      - name: Charger une version test des compléments Office à l'aide de la commande de chargement indépendant
         href: testing/sideload-office-addin-using-sideload-command.md
       - name: Attacher un débogueur à partir du volet Office
         href: testing/attach-debugger-from-task-pane.md
@@ -395,32 +405,32 @@ items:
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
     - name: Publication de compléments sur AppSource
       href: https://docs.microsoft.com/office/dev/store/submit-to-the-office-store
-    - name: Stratégies de validation AppSource
+    - name: Stratégies de contrôle AppSource
       href: https://docs.microsoft.com/office/dev/store/validation-policies
 - name: Référence
   items:
-  - name: Manifeste de complément Office
+  - name: Référence de manifeste de complément Office
     displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
     href: https://docs.microsoft.com/javascript/office/manifest/allowsnapshot?view=office-js
-  - name: API JavaScript pour Office
+  - name: Vue d’ensemble des API JavaScript de Office
     displayName: Excel, Word, Outlook, Visio, OneNote
     href: https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js
-  - name: API JavaScript pour Excel
+  - name: Vue d’ensemble de l’API JavaScript d’Excel
     displayName: Excel
     href: https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js
-  - name: API JavaScript pour OneNote
+  - name: Vue d’ensemble de l’API JavaScript de OneNote
     displayName: OneNote
     href: https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js
-  - name: API JavaScript pour Outlook
+  - name: Ensembles de conditions requises de l’API JavaScript pour Outlook
     displayName: Outlook
     href: https://docs.microsoft.com/javascript/office/requirement-sets/outlook-api-requirement-sets?view=office-js
-  - name: API JavaScript Visio
+  - name: Vue d’ensemble des API JavaScript spécifiques à Visio
     displayName: Visio
     href: https://docs.microsoft.com/javascript/office/overview/visio-javascript-reference-overview?view=office-js
-  - name: API JavaScript pour Word
+  - name: Vue d’ensemble des API JavaScript spécifiques à Word
     displayName: Word
     href: https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js
-  - name: API partagée
+  - name: Ensembles de conditions requises communs des API JavaScript
     displayName: PowerPoint, Project
     href: https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js
   - name: Spécifications ouvertes des API
@@ -428,9 +438,9 @@ items:
     href: https://docs.microsoft.com/javascript/office/openspec?view=office-js
 - name: Ressources
   href: resources/resources-links-help.md
-ms.openlocfilehash: b02b37aa7b85e2a2e1126c065636158928bd1ced
-ms.sourcegitcommit: 470d8212b256275587e651abaa6f28beafebcab4
+ms.openlocfilehash: 94cd41e7154e8ffc3cbb8c1ac95a249addc8da46
+ms.sourcegitcommit: 4efc08d69a965d7d8fc9cff70fed76fdee6134bb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "24062115"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "25348522"

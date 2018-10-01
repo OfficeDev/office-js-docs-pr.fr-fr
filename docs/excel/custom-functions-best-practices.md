@@ -1,81 +1,132 @@
 ---
-ms.date: 09/20/2018
+ms.date: 09/27/2018
 description: Découvrez les meilleures pratiques et modèles recommandés pour les fonctions personnalisées d’Excel.
 title: Meilleures pratiques pour les fonctions personnalisées
-ms.openlocfilehash: 4fe0ddc36ce1b08ea360bb556121e76cd57c3823
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+ms.openlocfilehash: 4590682a9efa3048605686763f9af28f2fad20a4
+ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25004909"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "25348113"
 ---
-# <a name="custom-functions-best-practices"></a><span data-ttu-id="c32b7-103">Meilleures pratiques pour les fonctions personnalisées</span><span class="sxs-lookup"><span data-stu-id="c32b7-103">Custom functions best practices</span></span>
+# <a name="custom-functions-best-practices-preview"></a><span data-ttu-id="f4532-103">Meilleures pratiques pour les fonctions personnalisées (aperçu)</span><span class="sxs-lookup"><span data-stu-id="f4532-103">Custom functions best practices</span></span>
 
-<span data-ttu-id="c32b7-104">Cet article décrit les meilleures pratiques pour le développement de fonctions personnalisées dans Excel.</span><span class="sxs-lookup"><span data-stu-id="c32b7-104">This article describes best practices for developing custom functions in Excel.</span></span>
+<span data-ttu-id="f4532-104">Cet article décrit les meilleures pratiques pour le développement de fonctions personnalisées dans Excel.</span><span class="sxs-lookup"><span data-stu-id="f4532-104">This article describes best practices for developing custom functions in Excel.</span></span>
 
-## <a name="error-handling"></a><span data-ttu-id="c32b7-105">Gestion des erreurs</span><span class="sxs-lookup"><span data-stu-id="c32b7-105">Error handling</span></span>
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-<span data-ttu-id="c32b7-106">Lorsque vous créez un complément qui définit des fonctions personnalisées, veillez à inclure la logique de gestion des erreurs pour prendre en compte les erreurs d’exécution.</span><span class="sxs-lookup"><span data-stu-id="c32b7-106">When you build an add-in using the Excel JavaScript API, be sure to include error handling logic to account for runtime errors.</span></span> <span data-ttu-id="c32b7-107">La gestion des erreurs pour les fonctions personnalisées est identique à la [gestion des erreurs pour l’API JavaScript d’Excel dans son ensemble](excel-add-ins-error-handling.md).</span><span class="sxs-lookup"><span data-stu-id="c32b7-107">Error handling for custom functions is the same as [error handling for the Excel JavaScript API at large](excel-add-ins-error-handling.md).</span></span> <span data-ttu-id="c32b7-108">Dans l’exemple de code suivant, `.catch` gère les erreurs qui se produisent précédemment dans le code.</span><span class="sxs-lookup"><span data-stu-id="c32b7-108">In the following code sample, `.catch` will handle any errors that occur previously in the code.</span></span>
+## <a name="error-handling"></a><span data-ttu-id="f4532-105">Gestion des erreurs</span><span class="sxs-lookup"><span data-stu-id="f4532-105">Error handling</span></span>
+
+<span data-ttu-id="f4532-106">Lorsque vous créez un complément qui définit des fonctions personnalisées, veillez à inclure la logique de gestion des erreurs pour prendre en compte les erreurs d’exécution.</span><span class="sxs-lookup"><span data-stu-id="f4532-106">When you build an add-in using the Excel JavaScript API, be sure to include error handling logic to account for runtime errors.</span></span> <span data-ttu-id="f4532-107">La gestion des erreurs pour les fonctions personnalisées est identique à la [gestion des erreurs pour l’API JavaScript d’Excel dans son ensemble](excel-add-ins-error-handling.md).</span><span class="sxs-lookup"><span data-stu-id="f4532-107">Error handling for custom functions is the same as [error handling for the Excel JavaScript API at large](excel-add-ins-error-handling.md).</span></span> <span data-ttu-id="f4532-108">Dans l’exemple de code suivant, `.catch` gère les erreurs qui se produisent précédemment dans le code.</span><span class="sxs-lookup"><span data-stu-id="f4532-108">In the following code sample, `.catch` will handle any errors that occur previously in the code.</span></span>
 
 ```js
 function getComment(x) {
-    let url = "https://yourhypotheticalapi.com/comments/" + x; 
-    return fetch(url)
-        .then(function (data) {
-            return data.json();
-        })
-        .then((json) => {
-            return json.body;
-        })
-        .catch(function (error) {
-            throw error;
-        })
+  let url = "https://www.contoso.com/comments/" + x;
+  return fetch(url)
+    .then(function (data) {
+      return data.json();
+    })
+    .then((json) => {
+      return json.body;
+    })
+    .catch(function (error) {
+      throw error;
+    })
 }
 ```
 
-## <a name="debugging"></a><span data-ttu-id="c32b7-109">Débogage</span><span class="sxs-lookup"><span data-stu-id="c32b7-109">Debugging</span></span>
-<span data-ttu-id="c32b7-110">Actuellement, la meilleure méthode pour le débogage des fonctions personnalisées Excel consiste à premier [sideload](../testing/sideload-office-add-ins-for-testing.md) votre complément dans **Excel Online**.</span><span class="sxs-lookup"><span data-stu-id="c32b7-110">Currently, the best method for debugging Excel custom functions is to first [sideload](../testing/sideload-office-add-ins-for-testing.md) your add-in within **Excel Online**.</span></span> <span data-ttu-id="c32b7-111">Ensuite, vous pouvez déboguer vos fonctions personnalisées à l’aide de l’[outil de débogage F12 natif de votre navigateur](../testing/debug-add-ins-in-office-online.md).</span><span class="sxs-lookup"><span data-stu-id="c32b7-111">You can then debug your custom functions by using the [F12 debugging tool native to your browser](../testing/debug-add-ins-in-office-online.md).</span></span> <span data-ttu-id="c32b7-112">Utiliser des instructions `console.log` dans votre code des fonctions personnalisées pour envoyer la sortie à la console en temps réel.</span><span class="sxs-lookup"><span data-stu-id="c32b7-112">Use `console.log` statements within your custom functions code to send output to the console in real time.</span></span>
+## <a name="debugging"></a><span data-ttu-id="f4532-109">Débogage</span><span class="sxs-lookup"><span data-stu-id="f4532-109">Debugging</span></span>
 
-<span data-ttu-id="c32b7-113">Si votre complément ne parvient pas à s’enregistrer, [vérifiez que les certificats SSL sont correctement configurés](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) pour le serveur web qui héberge votre application de complément.</span><span class="sxs-lookup"><span data-stu-id="c32b7-113">If your add-in fails to register, [verify that SSL certificates are correctly configured](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) for the web server that's hosting your add-in application.</span></span>
+<span data-ttu-id="f4532-p102">Actuellement, la meilleure méthode pour le débogage des fonctions personnalisées Excel consiste à d’abord [charger en parallèle](../testing/sideload-office-add-ins-for-testing.md) votre complément dans **Excel Online**. Vous pouvez ensuite déboguer vos fonctions personnalisées à l’aide de l' [outil F12 de débogage natif de votre navigateur](../testing/debug-add-ins-in-office-online.md) en combinaison avec les techniques suivantes :</span><span class="sxs-lookup"><span data-stu-id="f4532-p102">Currently, the best method for debugging Excel custom functions is to first [sideload](../testing/sideload-office-add-ins-for-testing.md) your add-in within **Excel Online**. You can then debug your custom functions by using the [F12 debugging tool native to your browser](../testing/debug-add-ins-in-office-online.md). Use  statements within your custom functions code to send output to the console in real time.</span></span>
 
-<span data-ttu-id="c32b7-114">Si vous testez votre complément dans Office 2016 bureau, vous pouvez activer la [journalisation runtime](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in) pour résoudre les problèmes du fichier manifeste XML de votre complément, ainsi que plusieurs conditions d’installation et d’exécution.</span><span class="sxs-lookup"><span data-stu-id="c32b7-114">If you are testing your add-in in Office 2016 desktop, you can enable [runtime logging](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in) to debug issues with your add-in's XML manifest file as well as several installation and runtime conditions.</span></span> 
+- <span data-ttu-id="f4532-112">Utiliser des instructions `console.log` dans votre code des fonctions personnalisées pour envoyer la sortie à la console en temps réel.</span><span class="sxs-lookup"><span data-stu-id="f4532-112">Use `console.log` statements within your custom functions code to send output to the console in real time.</span></span>
+
+- <span data-ttu-id="f4532-113">Utilisez les instructions `debugger;` au sein de votre code des fonctions personnalisées pour spécifier les points d’arrêt où l’exécution s’interrompra lorsque la fenêtre F12 est ouverte.</span><span class="sxs-lookup"><span data-stu-id="f4532-113">Use `debugger;` statements within your custom functions code to specify breakpoints where execution will pause when the F12 window is open.</span></span> <span data-ttu-id="f4532-114">Par exemple, si la fonction suivante s’exécute alors que la fenêtre F12 est ouverte, l’exécution s’interrompra sur l’instruction `debugger;`, ce qui vous permettra d’inspecter manuellement les valeurs de paramètre avant le retour de la fonction.</span><span class="sxs-lookup"><span data-stu-id="f4532-114">For example, if the following function runs while the F12 window is open, execution will pause on the `debugger;` statement, enabling you to manually inspect parameter values before the function returns.</span></span> <span data-ttu-id="f4532-115">L’instruction `debugger;` n’a aucun effet dans Excel Online lorsque la fenêtre F12 n’est pas ouverte.</span><span class="sxs-lookup"><span data-stu-id="f4532-115">The `debugger;` statement has no effect in Excel Online when the F12 window is not open.</span></span> <span data-ttu-id="f4532-116">Actuellement, les instructions `debugger;` n’ont aucun effet dans Excel pour Windows.</span><span class="sxs-lookup"><span data-stu-id="f4532-116">Currently, the `debugger;` statement has no effect in Excel for Windows.</span></span>
+
+    ```js
+    function add(first, second){
+      debugger;
+      return first + second;
+    }
+    ```
+
+<span data-ttu-id="f4532-117">Si votre complément ne parvient pas à s’enregistrer, [vérifiez que les certificats SSL sont correctement configurés](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) pour le serveur Web qui héberge votre application de complément.</span><span class="sxs-lookup"><span data-stu-id="f4532-117">If your add-in fails to register, [verify that SSL certificates are correctly configured](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) for the web server that's hosting your add-in application.</span></span>
+
+<span data-ttu-id="f4532-118">Si vous testez votre complément dans Office 2016 bureau, vous pouvez activer la [journalisation runtime](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in) pour résoudre les problèmes du fichier manifeste XML de votre complément, ainsi que plusieurs conditions d’installation et d’exécution.</span><span class="sxs-lookup"><span data-stu-id="f4532-118">If you are testing your add-in in Office 2016 desktop, you can enable [runtime logging](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in) to debug issues with your add-in's XML manifest file as well as several installation and runtime conditions.</span></span>
 
 
-## <a name="mapping-names"></a><span data-ttu-id="c32b7-115">Mappage de noms</span><span class="sxs-lookup"><span data-stu-id="c32b7-115">Mapping names</span></span>
+## <a name="mapping-function-names-to-json-metadata"></a><span data-ttu-id="f4532-119">Mappage des noms de fonction aux métadonnées JSON</span><span class="sxs-lookup"><span data-stu-id="f4532-119">Mapping function names to JSON metadata</span></span>
 
-<span data-ttu-id="c32b7-116">Par défaut, le nom d’une fonction personnalisée dans votre fichier JavaScript est déclaré généralement à l’aide de lettres toutes en majuscule et correspond exactement au nom de la fonction que l'utilisateur final voit dans Excel.</span><span class="sxs-lookup"><span data-stu-id="c32b7-116">By default, the name of a custom function in your JavaScript file is typically declared using entirely uppercase letters, and corresponds exactly to the function name that end users see in Excel.</span></span> <span data-ttu-id="c32b7-117">Toutefois, vous pouvez modifier ce mappage à l’aide de l'objet `CustomFunctionsMappings` pour mapper un ou plusieurs noms de fonction à partir du fichier JavaScript à des valeurs différentes que les utilisateurs finaux verront s’afficher comme noms de fonction dans Excel.</span><span class="sxs-lookup"><span data-stu-id="c32b7-117">However, you can change this by using the `CustomFunctionsMappings` object to map one or more function names from the JavaScript file to different values that end users will see as function names in Excel.</span></span> <span data-ttu-id="c32b7-118">Cela peut être utile si vous utilisez un uglifier, un webpack ou une syntaxe d’importation - qui ont tous des difficultés avec les noms de fonctions en majuscules.</span><span class="sxs-lookup"><span data-stu-id="c32b7-118">Although you're not required to use , it can be helpful if you are using an uglifier, webpack, or import syntax - all of which have difficulty with uppercase function names.</span></span> <span data-ttu-id="c32b7-119">`CustomFunctionsMappings` Il est éventuellement facultatif pour les projets utilisant JavaScript, mais vous devez vous en servir si votre projet utilise des caractères dactylographiés.</span><span class="sxs-lookup"><span data-stu-id="c32b7-119">`CustomFunctionsMappings` is possibly optional for projects using JavaScript but must be used if your project uses TypeScript.</span></span>  
-  
-<span data-ttu-id="c32b7-120">L’exemple de code suivant définit une seule paire clé-valeur qui mappe le nom de la fonction JavaScript `plusFortyTwo` au nom de la fonction `ADD42` dans l’interface utilisateur d’Excel.</span><span class="sxs-lookup"><span data-stu-id="c32b7-120">The following code sample defines a single key-value pair that maps the JavaScript function name `plusFortyTwo` to the `ADD42` function name in the Excel UI.</span></span> <span data-ttu-id="c32b7-121">Lorsque l’utilisateur final choisit la fonction `ADD42` dans Excel, la fonction JavaScript `plusFortyTwo` s’exécute.</span><span class="sxs-lookup"><span data-stu-id="c32b7-121">When the end user chooses the `ADD42` function in Excel, the `plusFortyTwo` JavaScript function will run.</span></span>
+<span data-ttu-id="f4532-120">Comme décrit dans l’article [vue d’ensemble des fonctions personnalisées](custom-functions-overview.md), un projet de fonctions personnalisées doit inclure un fichier de métadonnées JSON qui fournit les informations nécessaires à Excel pour enregistrer les fonctions personnalisées et les rendre disponibles pour les utilisateurs finaux.</span><span class="sxs-lookup"><span data-stu-id="f4532-120">As described in the [custom functions overview](custom-functions-overview.md) article, a custom functions project must include a JSON metadata file which provides the information that Excel requires to register the custom functions and make them available to end users.</span></span> <span data-ttu-id="f4532-121">En outre, dans le fichier JavaScript qui définit vos fonctions personnalisées, vous devez fournir les informations pour spécifier l’objet de fonction dans le fichier de métadonnées JSON correspondant à chaque fonction personnalisée dans le fichier JavaScript.</span><span class="sxs-lookup"><span data-stu-id="f4532-121">Additionally, within the JavaScript file that defines your custom functions, you must provide information to specify which function object in the JSON metadata file corresponds to each custom function in the JavaScript file.</span></span>
+
+<span data-ttu-id="f4532-122">Par exemple, l’exemple de code suivant définit la fonction personnalisée `add`, puis spécifie que la fonction `add` correspond à l’objet dans le fichier de métadonnées JSON où la valeur de la propriété `id` est **ADD**.</span><span class="sxs-lookup"><span data-stu-id="f4532-122">For example, the following code sample defines the custom function `add` and then specifies that the function `add` corresponds to the object in the JSON metadata file where the value of the `id` property is **ADD**.</span></span>
 
 ```js
-function plusFortyTwo(num) {
-    return num + 42;  
-}  
-  
-CustomFunctionsMappings = {
-    "plusFortyTwo" : ADD42
+function add(first, second){
+  return first + second;
 }
+
+CustomFunctionMappings.ADD = add;
 ```
 
-<span data-ttu-id="c32b7-122">L’exemple de code suivant définit deux paires clé-valeur.</span><span class="sxs-lookup"><span data-stu-id="c32b7-122">The following code sample defines a two key-value pairs.</span></span> <span data-ttu-id="c32b7-123">La première paire mappe le nom de la fonction JavaScript `plusFifty` au nom de la fonction `ADD50` dans l’interface utilisateur d’Excel et la seconde paire mappe le nom de la fonction JavaScript `plusOneHundred` au nom de la fonction `ADD100` dans l’interface utilisateur d’Excel.</span><span class="sxs-lookup"><span data-stu-id="c32b7-123">The first pair maps the JavaScript function name `plusFifty` to the `ADD50` function name in the Excel UI, and the second pair maps the JavaScript function name `plusOneHundred` to the `ADD100` function name in the Excel UI.</span></span> <span data-ttu-id="c32b7-124">Lorsque l’utilisateur final choisit la fonction `ADD50` dans Excel, la fonction JavaScript `plusFifty` s’exécute.</span><span class="sxs-lookup"><span data-stu-id="c32b7-124">When the end user chooses the `ADD50` function in Excel, the `plusFifty` JavaScript function will run.</span></span> <span data-ttu-id="c32b7-125">Lorsque l’utilisateur final choisit la fonction `ADD100` dans Excel, la fonction JavaScript `plusOneHundred` s’exécute.</span><span class="sxs-lookup"><span data-stu-id="c32b7-125">When the end user chooses the `ADD100` function in Excel, the `plusOneHundred` JavaScript function will run.</span></span>
+<span data-ttu-id="f4532-123">Gardez à l’esprit les meilleures pratiques suivantes lors de la création de fonctions personnalisées dans votre fichier JavaScript et en spécifiant les informations correspondantes dans le fichier de métadonnées JSON.</span><span class="sxs-lookup"><span data-stu-id="f4532-123">Keep in mind the following best practices when creating custom functions in your JavaScript file and specifying corresponding information in the JSON metadata file.</span></span>
 
-```js
-function plusFifty(num) {
-    return num + 50;  
-} 
+* <span data-ttu-id="f4532-124">Dans le fichier JavaScript, spécifiez les noms de fonction en CamelCase.</span><span class="sxs-lookup"><span data-stu-id="f4532-124">In the JavaScript file, specify function names in camelCase.</span></span> <span data-ttu-id="f4532-125">Par exemple, le nom de la fonction `addTenToInput` est écrit en CamelCase : le premier mot dans le nom commence par une lettre minuscule, et chaque mot suivant dans le nom commence par une lettre majuscule.</span><span class="sxs-lookup"><span data-stu-id="f4532-125">For example, the function name `addTenToInput` is written in camelCase: the first word in the name starts with a lowercase letter and each subsequent word in the name starts with an uppercase letter.</span></span>
 
-function plusOneHundred(num) {
-    return num + 100;  
-}  
-  
-CustomFunctionsMappings = {
-    "plusFifty" : ADD50,  
-    "plusOneHundred" : ADD100
-}
- ```
+* <span data-ttu-id="f4532-126">Dans le fichier de métadonnées JSON, spécifiez la valeur de chaque propriété `name` en majuscules.</span><span class="sxs-lookup"><span data-stu-id="f4532-126">In the JSON metadata file, specify the value of each `name` property in uppercase.</span></span> <span data-ttu-id="f4532-127">La propriété `name` définit le nom de la fonction que les utilisateurs finaux verront s’afficher dans Excel.</span><span class="sxs-lookup"><span data-stu-id="f4532-127">The `name` property defines the function name that end users will see in Excel.</span></span> <span data-ttu-id="f4532-128">L’utilisation de lettres majuscules pour le nom de chaque fonction personnalisée fournit une expérience cohérente pour les utilisateurs finaux dans Excel, où tous les noms de fonctions intégrées sont en majuscules.</span><span class="sxs-lookup"><span data-stu-id="f4532-128">Using uppercase letters for the name of each custom function provides a consistent experience for end users in Excel, where all built-in function names are uppercase.</span></span>
 
- ## <a name="see-also"></a><span data-ttu-id="c32b7-126">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c32b7-126">See also</span></span>
+* <span data-ttu-id="f4532-129">Dans le fichier de métadonnées JSON, spécifiez la valeur de chaque propriété `id` en majuscules.</span><span class="sxs-lookup"><span data-stu-id="f4532-129">In the JSON metadata file, specify the value of each `id` property in uppercase.</span></span> <span data-ttu-id="f4532-130">Ainsi, il évidente quelle partie de l’instruction `CustomFunctionMappings` dans votre code JavaScript correspond à la propriété `id` dans le fichier de métadonnées JSON (à condition que votre nom de la fonction utilise CamelCase, comme indiqué précédemment).</span><span class="sxs-lookup"><span data-stu-id="f4532-130">Doing so makes it obvious which part of the `CustomFunctionMappings` statement in your JavaScript code corresponds to the `id` property in the JSON metadata file (provided that your function name uses camelCase, as recommended earlier).</span></span>
 
-- [<span data-ttu-id="c32b7-127">Créer des fonctions personnalisées dans Excel</span><span class="sxs-lookup"><span data-stu-id="c32b7-127">Create custom functions in Excel (Preview)</span></span>](custom-functions-overview.md)
-- [<span data-ttu-id="c32b7-128">Métadonnées des fonctions personnalisées</span><span class="sxs-lookup"><span data-stu-id="c32b7-128">Custom functions metadata</span></span>](custom-functions-json.md)
-- [<span data-ttu-id="c32b7-129">Runtime pour les fonctions personnalisées Excel</span><span class="sxs-lookup"><span data-stu-id="c32b7-129">Runtime for Excel custom functions</span></span>](custom-functions-runtime.md)
+* <span data-ttu-id="f4532-131">Dans le fichier de métadonnées JSON, assurez-vous que la valeur de chaque propriété `id` est unique dans l’étendue du fichier.</span><span class="sxs-lookup"><span data-stu-id="f4532-131">In the JSON metadata file, ensure that the value of each `id` property is unique within the scope of the file.</span></span> <span data-ttu-id="f4532-132">Autrement dit, deux objets fonctions dans le fichier de métadonnées ne doivent pas avoir la même valeur `id`.</span><span class="sxs-lookup"><span data-stu-id="f4532-132">That is, no two function objects in the metadata file should have the same `id` value.</span></span> <span data-ttu-id="f4532-133">En outre, ne spécifiez pas deux valeurs `id` dans le fichier de métadonnées qui diffèrent uniquement par la casse.</span><span class="sxs-lookup"><span data-stu-id="f4532-133">Additionally, do not specify two `id` values in the metadata file that only differ by case.</span></span> <span data-ttu-id="f4532-134">Par exemple, ne définissez pas un objet fonction avec une valeur `id` à **add** et un autre objet fonction avec une valeur `id` à **ADD**.</span><span class="sxs-lookup"><span data-stu-id="f4532-134">For example, do not define one function object with an `id` value of **add** and another function object with an `id` value of **ADD**.</span></span>
+
+* <span data-ttu-id="f4532-135">Ne modifiez pas la valeur d’une propriété `id` dans le fichier de métadonnées JSON après qu’il a été mappé à un nom de fonction JavaScript correspondant.</span><span class="sxs-lookup"><span data-stu-id="f4532-135">Do not change the value of an `id` property in the JSON metadata file after it's been mapped to a corresponding JavaScript function name.</span></span> <span data-ttu-id="f4532-136">Vous pouvez modifier le nom de la fonction que les utilisateurs voient dans Excel en mettant à jour la propriété `name` dans le fichier de métadonnées JSON, mais vous ne devez jamais changer la valeur d’une propriété `id` une fois établie.</span><span class="sxs-lookup"><span data-stu-id="f4532-136">You can change the function name that end users see in Excel by updating the `name` property within the JSON metadata file, but you should never change the value of an `id` property after it's been established.</span></span>
+
+* <span data-ttu-id="f4532-137">Dans le fichier JavaScript, spécifiez tous les mappages de fonctions personnalisées au même endroit.</span><span class="sxs-lookup"><span data-stu-id="f4532-137">In the JavaScript file, specify all custom function mappings in the same location.</span></span> <span data-ttu-id="f4532-138">Par exemple, l’exemple de code suivant définit deux fonctions personnalisées puis spécifie les informations de mappage pour les deux fonctions.</span><span class="sxs-lookup"><span data-stu-id="f4532-138">For example, the following code sample defines two custom functions and then specifies the mapping information for both functions.</span></span>
+
+    ```js
+    function add(first, second){
+      return first + second;
+    }
+
+    function increment(incrementBy, callback) {
+      var result = 0;
+      var timer = setInterval(function() {
+        result += incrementBy;
+        callback.setResult(result);
+      }, 1000);
+
+      callback.onCanceled = function() {
+        clearInterval(timer);
+      };
+    }
+
+    // map `id` values in the JSON metadata file to JavaScript function names
+    CustomFunctionMappings.ADD = add;
+    CustomFunctionMappings.INCREMENT = increment;
+    ```
+
+    <span data-ttu-id="f4532-139">L’exemple suivant montre les métadonnées JSON qui correspondent aux fonctions définies dans cet exemple de code JavaScript.</span><span class="sxs-lookup"><span data-stu-id="f4532-139">The following sample shows the JSON metadata that corresponds to the functions defined in this JavaScript code sample.</span></span>
+
+    ```json
+    {
+      "$schema": "https://developer.microsoft.com/en-us/json-schemas/office-js/custom-functions.schema.json",
+      "functions": [
+        {
+          "id": "ADD",
+          "name": "ADD",
+          ...
+        },
+        {
+          "id": "INCREMENT",
+          "name": "INCREMENT",
+          ...
+        }
+      ]
+    }
+    ```
+
+## <a name="see-also"></a><span data-ttu-id="f4532-140">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f4532-140">See also</span></span>
+
+- [<span data-ttu-id="f4532-141">Créer des fonctions personnalisées dans Excel</span><span class="sxs-lookup"><span data-stu-id="f4532-141">Create custom functions in Excel (Preview)</span></span>](custom-functions-overview.md)
+- [<span data-ttu-id="f4532-142">Métadonnées des fonctions personnalisées</span><span class="sxs-lookup"><span data-stu-id="f4532-142">Custom functions metadata</span></span>](custom-functions-json.md)
+- [<span data-ttu-id="f4532-143">Runtime pour les fonctions personnalisées Excel</span><span class="sxs-lookup"><span data-stu-id="f4532-143">Runtime for Excel custom functions</span></span>](custom-functions-runtime.md)
