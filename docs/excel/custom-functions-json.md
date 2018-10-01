@@ -1,20 +1,21 @@
 ---
-ms.date: 09/20/2018
+ms.date: 09/27/2018
 description: Définir les métadonnées pour des fonctions personnalisées dans Excel.
 title: Métadonnées pour des fonctions personnalisées dans Excel
-ms.openlocfilehash: 815b0c6e65966867d9e5d953a40ffc705a63ee63
-ms.sourcegitcommit: 470d8212b256275587e651abaa6f28beafebcab4
+ms.openlocfilehash: 025be277a5e436a1ce2885815e9b8cbf9b206799
+ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "24062143"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "25348134"
 ---
-# <a name="custom-functions-metadata"></a>Métadonnées des fonctions personnalisées
+# <a name="custom-functions-metadata-preview"></a>Métadonnées des fonctions personnalisées (aperçu)
 
-Lorsque vous définissez des[fonctions personnalisées](custom-functions-overview.md) dans votre complément Excel, votre projet de complément doit inclure un fichier de métadonnées JSON qui fournit les informations nécessaires pour inscrire les fonctions personnalisées et de les rendre disponibles pour les utilisateurs finaux dans Excel. Cet article décrit le format du fichier de métadonnées JSON.
+Lorsque vous définissez des [fonctions personnalisées](custom-functions-overview.md) dans votre complément Excel, votre projet de complément doit inclure un fichier de métadonnées JSON qui fournit les informations nécessaires pour enregistrer les fonctions personnalisées et les rendre disponibles pour les utilisateurs finaux dans Excel. Cet article décrit le format du fichier de métadonnées JSON.
 
-> [!NOTE]
-> Pour plus d’informations sur les autres fichiers que vous devez inclure dans votre projet de complément pour activer les fonctions personnalisées, voir [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md#learn-the-basics).
+Pour plus d’informations sur les autres fichiers que vous devez inclure dans votre projet de complément pour activer les fonctions personnalisées, voir [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md).
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="example-metadata"></a>Métadonnées d’exemple
 
@@ -22,112 +23,82 @@ L’exemple suivant montre le contenu d’un fichier de métadonnées JSON pour 
 
 ```json
 {
-    "functions": [
+  "functions": [
+    {
+      "id": "ADD",
+      "name": "ADD",
+      "description": "Add two numbers",
+      "helpUrl": "http://www.contoso.com/help",
+      "result": {
+        "type": "number",
+        "dimensionality": "scalar"
+      },
+      "parameters": [
         {
-            "id": "ADD42",
-            "name": "ADD42",
-            "description":  "Adds 42 to the input number",
-            "helpUrl": "http://dev.office.com",
-            "result": {
-                "type": "number",
-                "dimensionality": "scalar"
-            },
-            "parameters": [
-                {
-                    "name": "num",
-                    "description": "Number",
-                    "type": "number",
-                    "dimensionality": "scalar"
-                }
-            ]
+          "name": "first",
+          "description": "first number to add",
+          "type": "number",
+          "dimensionality": "scalar"
         },
         {
-            "id": "ADD42ASYNC",
-            "name": "ADD42ASYNC",
-            "description":  "asynchronously wait 250ms, then add 42",
-            "helpUrl": "http://dev.office.com",
-            "result": {
-                "type": "number",
-                "dimensionality": "scalar"
-            },
-            "parameters": [
-                {
-                    "name": "num",
-                    "description": "Number",
-                    "type": "number",
-                    "dimensionality": "scalar"
-                }
-            ]
-        },
-        {
-            "id": "ISEVEN",
-            "name": "ISEVEN", 
-            "description":  "Determines whether a number is even",
-            "helpUrl": "http://dev.office.com",
-            "result": {
-                "type": "boolean",
-                "dimensionality": "scalar"
-            },
-            "parameters": [
-                {
-                    "name": "num",
-                    "description": "the number to be evaluated",
-                    "type": "number",
-                    "dimensionality": "scalar"
-                }
-            ]
-        },
-        {
-            "id": "GETDAY",
-            "name": "GETDAY",
-            "description": "Gets the day of the week",
-            "helpUrl": "http://dev.office.com",
-            "result": {
-                "type": "string"
-            },
-            "parameters": []
-        },
-        {
-            "id": "INCREMENTVALUE",
-            "name": "INCREMENTVALUE", 
-            "description":  "Counts up from zero",
-            "helpUrl": "http://dev.office.com",
-            "result": {
-                "type": "number",
-                "dimensionality": "scalar"
-            },
-            "parameters": [
-                {
-                    "name": "increment",
-                    "description": "the number to be added each time",
-                    "type": "number",
-                    "dimensionality": "scalar"
-                }
-            ],
-            "options": {
-                "stream": true,
-                "cancelable": true
-            }
-        },
-        {
-            "id": "SECONDHIGHEST",
-            "name": "SECONDHIGHEST", 
-            "description":  "gets the second highest number from a range",
-            "helpUrl": "http://dev.office.com",
-            "result": {
-                "type": "number",
-                "dimensionality": "scalar"
-            },
-            "parameters": [
-                {
-                    "name": "range",
-                    "description": "the input range",
-                    "type": "number",
-                    "dimensionality": "matrix"
-                }
-            ]
+          "name": "second",
+          "description": "second number to add",
+          "type": "number",
+          "dimensionality": "scalar"
         }
-    ]
+      ]
+    },
+    {
+      "id": "GETDAY",
+      "name": "GETDAY",
+      "description": "Get the day of the week",
+      "helpUrl": "http://www.contoso.com/help",
+      "result": {
+        "type": "string"
+      },
+      "parameters": []
+    },
+    {
+      "id": "INCREMENTVALUE",
+      "name": "INCREMENTVALUE", 
+      "description":  "Count up from zero",
+      "helpUrl": "http://www.contoso.com/help",
+      "result": {
+        "type": "number",
+        "dimensionality": "scalar"
+      },
+      "parameters": [
+        {
+          "name": "increment",
+          "description": "the number to be added each time",
+          "type": "number",
+          "dimensionality": "scalar"
+        }
+      ],
+      "options": {
+        "stream": true,
+        "cancelable": true
+      }
+    },
+    {
+      "id": "SECONDHIGHEST",
+      "name": "SECONDHIGHEST", 
+      "description":  "Get the second highest number from a range",
+      "helpUrl": "http://www.contoso.com/help",
+      "result": {
+        "type": "number",
+        "dimensionality": "scalar"
+      },
+      "parameters": [
+        {
+          "name": "range",
+          "description": "the input range",
+          "type": "number",
+          "dimensionality": "matrix"
+        }
+      ]
+    }
+  ]
 }
 ```
 
@@ -140,10 +111,10 @@ La propriété `functions` est un tableau d’objets de fonctions personnalisée
 
 |  Propriété  |  Type de données  |  Requis  |  Description  |
 |:-----|:-----|:-----|:-----|
-|  `description`  |  string  |  Non  |  Une description de la fonction apparaissant dans l’interface utilisateur Excel. Par exemple, **Convertit une valeur Celsius en Fahrenheit**. |
-|  `helpUrl`  |  string  |   Non  |  L’URL où vos utilisateurs peuvent obtenir de l’aide sur la fonction. (Elle est affichée dans un volet Office.) Par exemple, **http://contoso.com/help/convertcelsiustofahrenheit.html**. |
+|  `description`  |  string  |  Non  |  Description de la fonction que les utilisateurs voient dans Excel. Par exemple, **Convertit une valeur en Celsius en Fahrenheit**. |
+|  `helpUrl`  |  string  |   Non  |  URL qui fournit des informations sur la fonction. (Elle est affichée dans un volet Office.) Par exemple, **http://contoso.com/help/convertcelsiustofahrenheit.html**. |
 | `id`     | string | Oui | ID unique de la fonction. Cet ID ne doit pas être modifié après sa définition. |
-|  `name`  |  string  |  Oui  |  Le nom de la fonction telle qu'elle apparaîtra (préfixée d'un espace de nom) dans l'interface utilisateur Excel lorsqu'un utilisateur sélectionne une fonction. Il n’a pas besoin d’être le même que le nom de la fonction telle que définie dans le JavaScript. |
+|  `name`  |  string  |  Oui  |  Nom de la fonction que les utilisateurs voient dans Excel. Dans Excel, ce nom de fonction sera préfixé par l’espace de noms des fonctions personnalisées spécifié dans le fichier manifeste XML. |
 |  `options`  |  object  |  Non  |  Vous permet de personnaliser certains aspects de la façon dont Excel exécute la fonction, et quand. Voir [objet options](#options-object) pour plus de détails. |
 |  `parameters`  |  array  |  Oui  |  Tableau qui définit les paramètres d’entrée de la fonction. Voir[tableau parameters](#parameters-array) pour plus de détails. |
 |  `result`  |  object  |  Oui  |  Objet qui définit le type de l’information renvoyée par la fonction. Voir [objet result](#result-object) pour plus de détails. |
@@ -154,8 +125,8 @@ L’objet `options` vous permet de personnaliser certains aspects de la façon d
 
 |  Propriété  |  Type de données  |  Requis  |  Description  |
 |:-----|:-----|:-----|:-----|
-|  `cancelable`  |  boolean  |  Non, la valeur par défaut est `false`.  |  Lorsqu’`true`Excel appelle le `onCanceled` gestionnaire au moment où l'utilisateur prend une action visant par exemple à annuler la fonction, le déclenchement manuel du recalcul ou la modification d’une cellule est référencée par cette fonction. Si vous utilisez cette option, Excel appellera la fonction JavaScript avec un paramètre `caller` additionnel. (Ne ***pas*** enregistrer ce paramètre dans la propriété `parameters`). Dans le corps de la fonction, un gestionnaire doit être affecté au membre `caller.onCanceled`. Pour plus d’informations, voir [Annulation d’une fonction](custom-functions-overview.md#canceling-a-function). |
-|  `stream`  |  boolean  |  Non, la valeur par défaut est `false`.  |  Si `true`, la fonction peut générer une sortie plusieurs fois dans la cellule même lorsqu'elle n'est invoquée qu'une seule fois. Cette option est utile pour les sources de données en évolution rapide, telles que le cours d'une action. Si vous utilisez cette option, Excel appellera la fonction JavaScript avec un paramètre `caller` additionnel. (Ne ***pas*** enregistrer ce paramètre dans la propriété `parameters`). La fonction ne devrait pas avoir de `return` déclaration. Au lieu de cela, la valeur du résultat est passée comme argument à la méthode de rappel `caller.setResult`. Pour plus d’informations, voir [Fonctions de flux](custom-functions-overview.md#streamed-functions). |
+|  `cancelable`  |  boolean  |  Non<br/><br/>La valeur par défaut est `false`.  |  Si `true`, Excel appelle le gestionnaire `onCanceled` à chaque fois que l’utilisateur exécute une action qui a pour effet l’annulation de la fonction ; par exemple, déclencher manuellement le recalcul, ou modifier une cellule référencée par la fonction. Si vous utilisez cette option, Excel appellera la fonction JavaScript avec un paramètre `caller` additionnel. (Ne ***pas*** enregistrer ce paramètre dans la propriété `parameters`). Dans le corps de la fonction, un gestionnaire doit être affecté au membre `caller.onCanceled`. Pour plus d’informations, voir [Annulation d’une fonction](custom-functions-overview.md#canceling-a-function). |
+|  `stream`  |  boolean  |  Non<br/><br/>La valeur par défaut est `false`.  |  Si `true`, la fonction peut générer une sortie plusieurs fois dans la cellule même lorsqu’elle n’est invoquée qu’une seule fois. Cette option est utile pour les sources de données en évolution rapide, telles que le cours d'une action. Si vous utilisez cette option, Excel appellera la fonction JavaScript avec un paramètre `caller` additionnel. (Ne ***pas*** enregistrer ce paramètre dans la propriété `parameters`). La fonction ne devrait pas avoir d’instruction `return`. Au lieu de cela, la valeur du résultat est passée comme argument à la méthode de rappel `caller.setResult`. Pour plus d’informations, voir [Fonctions de flux](custom-functions-overview.md#streamed-functions). |
 
 ## <a name="parameters"></a>parameters
 
@@ -163,10 +134,10 @@ La propriété `parameters` est un tableau d’objets parameter. Le tableau suiv
 
 |  Propriété  |  Type de données  |  Requis  |  Description  |
 |:-----|:-----|:-----|:-----|
-|  `description`  |  string  |  Non |  Une description du paramètre.  |
+|  `description`  |  string  |  Non |  Description du paramètre.  |
 |  `dimensionality`  |  string  |  Non  |  Doit être **scalar** (une valeur non tableau) ou **matrix** (tableau à deux dimensions).  |
 |  `name`  |  string  |  Oui  |  Nom du paramètre. Ce nom est affiché dans l’IntelliSense d’Excel.  |
-|  `type`  |  string  |  Non  |  Le type de données du paramètre. Doit être **boolean**, **number** ou **string**.  |
+|  `type`  |  string  |  Non  |  Type de données du paramètre. Doit être **boolean**, **number** ou **string**.  |
 
 ## <a name="result"></a>result
 
@@ -175,7 +146,7 @@ L’objet `results` définit le type de l’information renvoyée par la fonctio
 |  Propriété  |  Type de données  |  Requis  |  Description  |
 |:-----|:-----|:-----|:-----|
 |  `dimensionality`  |  string  |  Non  |  Doit être **scalar** (une valeur non tableau) ou **matrix** (tableau à deux dimensions). |
-|  `type`  |  string  |  Oui  |  Le type de données du paramètre. Doit être **boolean**, **number** ou **string**.  |
+|  `type`  |  string  |  Oui  |  Type de données du paramètre. Doit être **boolean**, **number** ou **string**.  |
 
 ## <a name="see-also"></a>Voir aussi
 

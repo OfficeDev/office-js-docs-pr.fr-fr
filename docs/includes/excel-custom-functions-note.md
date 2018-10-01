@@ -1,0 +1,2 @@
+> [!NOTE]
+> Les fonctions personnalisées sont actuellement disponibles dans l'aperçu du développeur. Les fonctions personnalisées sont prises en charge dans Excel 2016 pour Windows (version 10827 ou ultérieure), Excel 2016 pour Mac (version 13.329 ou ultérieure) et Excel Online. En outre, vous devez rejoindre le programme [Office Insider](https://products.office.com/office-insider) pour utiliser les fonctions personnalisées. Les fonctions personnalisées sont actuellement désactivées dans toutes les versions d'Office, sauf si vous êtes membre du programme Office Insider.
