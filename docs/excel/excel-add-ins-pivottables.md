@@ -2,18 +2,18 @@
 title: Utilisation de tableaux croisés dynamiques à l’aide de l’API JavaScript pour Excel
 description: Utilisez l'API JavaScript pour Excel afin de créer des tableaux croisés dynamiques et d’interagir avec leurs composants.
 ms.date: 09/21/2018
-ms.openlocfilehash: b8704389ced3686858f488b2a50f80c22b1b8bd6
-ms.sourcegitcommit: e7e4d08569a01c69168bb005188e9a1e628304b9
+ms.openlocfilehash: 7178ae0d578e9f52bd9590c764c488c7fa4d2b43
+ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "24967668"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "25348183"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Utilisation de tableaux croisés dynamiques à l’aide de l’API JavaScript pour Excel
 
 Les tableaux croisés dynamiques rationalisent les jeux de données plus volumineux. Ils permettent la manipulation rapide des données groupées. L'API JavaScript pour Excel permet à votre complément de créer des tableaux croisés dynamiques et d'interagir avec leurs composants. 
 
-Si vous ne connaissez pas les fonctionnalités des tableaux croisés dynamiques, envisagez de les découvrir en tant qu’utilisateur final. Consultez [Créer un tableau croisé dynamique pour analyser les données d'une feuille de calcul](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) afin d'obtenir une présentation de ces outils. 
+|||UNTRANSLATED_CONTENT_START|||If you are unfamiliar with the functionality of PivotTables, consider exploring them as an end user. See [Create a PivotTable to analyze worksheet data](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) for a good primer on these tools.|||UNTRANSLATED_CONTENT_END||| 
 
 Cet article fournit des exemples de code pour des scénarios courants. Pour améliorer votre compréhension de l'API Tableau croisé dynamique, consultez [**Tableau croisé dynamique**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable) et [**Collection Tableau croisé dynamique**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable).
 

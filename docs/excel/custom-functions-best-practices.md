@@ -2,12 +2,12 @@
 ms.date: 09/27/2018
 description: Découvrez les meilleures pratiques et modèles recommandés pour les fonctions personnalisées d’Excel.
 title: Meilleures pratiques pour les fonctions personnalisées
-ms.openlocfilehash: 4590682a9efa3048605686763f9af28f2fad20a4
-ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
+ms.openlocfilehash: d157464a3a8bf453cd0970281f1a4fdd27df5d25
+ms.sourcegitcommit: 1852ae367de53deb91d03ca55d16eb69709340d3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "25348113"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "25348786"
 ---
 # <a name="custom-functions-best-practices-preview"></a>Meilleures pratiques pour les fonctions personnalisées (aperçu)
 
@@ -54,12 +54,11 @@ Si votre complément ne parvient pas à s’enregistrer, [vérifiez que les cert
 
 Si vous testez votre complément dans Office 2016 bureau, vous pouvez activer la [journalisation runtime](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in) pour résoudre les problèmes du fichier manifeste XML de votre complément, ainsi que plusieurs conditions d’installation et d’exécution.
 
-
 ## <a name="mapping-function-names-to-json-metadata"></a>Mappage des noms de fonction aux métadonnées JSON
 
 Comme décrit dans l’article [vue d’ensemble des fonctions personnalisées](custom-functions-overview.md), un projet de fonctions personnalisées doit inclure un fichier de métadonnées JSON qui fournit les informations nécessaires à Excel pour enregistrer les fonctions personnalisées et les rendre disponibles pour les utilisateurs finaux. En outre, dans le fichier JavaScript qui définit vos fonctions personnalisées, vous devez fournir les informations pour spécifier l’objet de fonction dans le fichier de métadonnées JSON correspondant à chaque fonction personnalisée dans le fichier JavaScript.
 
-Par exemple, l’exemple de code suivant définit la fonction personnalisée `add`, puis spécifie que la fonction `add` correspond à l’objet dans le fichier de métadonnées JSON où la valeur de la propriété `id` est **ADD**.
+Par exemple, l’exemple de code suivant définit la fonction personnalisée `add`, puis spécifie que la fonction `add` correspond à l’objet dans le fichier de métadonnées JSON où la valeur de la `id` propriété est **ADD**.
 
 ```js
 function add(first, second){
@@ -75,9 +74,9 @@ Gardez à l’esprit les meilleures pratiques suivantes lors de la création de 
 
 * Dans le fichier de métadonnées JSON, spécifiez la valeur de chaque propriété `name` en majuscules. La propriété `name` définit le nom de la fonction que les utilisateurs finaux verront s’afficher dans Excel. L’utilisation de lettres majuscules pour le nom de chaque fonction personnalisée fournit une expérience cohérente pour les utilisateurs finaux dans Excel, où tous les noms de fonctions intégrées sont en majuscules.
 
-* Dans le fichier de métadonnées JSON, spécifiez la valeur de chaque propriété `id` en majuscules. Ainsi, il évidente quelle partie de l’instruction `CustomFunctionMappings` dans votre code JavaScript correspond à la propriété `id` dans le fichier de métadonnées JSON (à condition que votre nom de la fonction utilise CamelCase, comme indiqué précédemment).
+* Dans le fichier de métadonnées JSON, spécifiez la valeur de chaque propriété `id` en majuscules. Ainsi, il est évident quelle partie de l’instruction `CustomFunctionMappings` dans votre code JavaScript correspond à la propriété `id` dans le fichier de métadonnées JSON (à condition que votre nom de la fonction utilise CamelCase, comme indiqué précédemment).
 
-* Dans le fichier de métadonnées JSON, assurez-vous que la valeur de chaque propriété `id` est unique dans l’étendue du fichier. Autrement dit, deux objets fonctions dans le fichier de métadonnées ne doivent pas avoir la même valeur `id`. En outre, ne spécifiez pas deux valeurs `id` dans le fichier de métadonnées qui diffèrent uniquement par la casse. Par exemple, ne définissez pas un objet fonction avec une valeur `id` à **add** et un autre objet fonction avec une valeur `id` à **ADD**.
+* Dans le fichier de métadonnées JSON, assurez-vous que la valeur de chaque propriété `id` est unique dans l’étendue du fichier. Autrement dit, deux objets fonctions dans le fichier de métadonnées ne doivent pas avoir la même valeur `id`. En outre, ne spécifiez pas deux valeurs `id` dans le fichier de métadonnées qui diffèrent uniquement par la casse. Par exemple, ne définissez pas un objet fonction avec une valeur `id` de **add** et un autre objet fonction avec une valeur `id` de **ADD**.
 
 * Ne modifiez pas la valeur d’une propriété `id` dans le fichier de métadonnées JSON après qu’il a été mappé à un nom de fonction JavaScript correspondant. Vous pouvez modifier le nom de la fonction que les utilisateurs voient dans Excel en mettant à jour la propriété `name` dans le fichier de métadonnées JSON, mais vous ne devez jamais changer la valeur d’une propriété `id` une fois établie.
 
@@ -127,6 +126,7 @@ Gardez à l’esprit les meilleures pratiques suivantes lors de la création de 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
-- [Métadonnées des fonctions personnalisées](custom-functions-json.md)
-- [Runtime pour les fonctions personnalisées Excel](custom-functions-runtime.md)
+* [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
+* [Métadonnées des fonctions personnalisées](custom-functions-json.md)
+* [Runtime de fonctions personnalisées Excel](custom-functions-runtime.md)
+* [Didacticiel sur les fonctions personnalisées d’Excel](excel-tutorial-custom-functions.md)

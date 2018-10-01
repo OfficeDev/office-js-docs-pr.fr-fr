@@ -2,12 +2,12 @@
 ms.date: 09/27/2018
 description: Créez une fonction personnalisée dans Excel à l’aide de JavaScript.
 title: Créer des fonctions personnalisées dans Excel (Aperçu)
-ms.openlocfilehash: c8a2d8755a68530ecf8743c4a8ab65a4bed5b849
-ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
+ms.openlocfilehash: 98e418f843f6f5574088cea9c7393afc4a42060b
+ms.sourcegitcommit: 1852ae367de53deb91d03ca55d16eb69709340d3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "25348155"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "25348800"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Créer des fonctions personnalisées dans Excel (aperçu)
 
@@ -15,7 +15,7 @@ Les fonctions personnalisées permettent aux développeurs d'ajouter de nouvelle
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-L’illustration suivante montre un utilisateur insérant une fonction personnalisée dans une cellule d’une feuille de calcul Excel. La fonction personnalisée `CONTOSO.ADD42` est conçue pour ajouter 42 à la paire de nombres spécifiée par l’utilisateur comme paramètres d’entrée de la fonction.
+L’illustration suivante montre un utilisateur final insérant une fonction personnalisée dans une cellule d’une feuille de calcul Excel. La fonction personnalisée `CONTOSO.ADD42` est conçue pour ajouter 42 à la paire de nombres spécifiée par l’utilisateur comme paramètres d’entrée de la fonction.
 
 <img alt="animated image showing an end user inserting the CONTOSO.ADD42 custom function into a cell of an Excel worksheet" src="../images/custom-function.gif" width="579" height="383" />
 
@@ -47,7 +47,7 @@ Les sections suivantes fournissent plus d’informations sur ces fichiers.
 
 Le fichier de script (**./src/customfunctions.js** ou **./src/customfunctions.ts** dans le projet que le générateur de Yo Office crée) contient le code qui définit les fonctions personnalisées et mappe les noms des fonctions personnalisées aux objets du [fichier de métadonnées JSON](#json-metadata-file). 
 
-Par exemple, le code suivant définit les fonctions personnalisées `add` et `increment` , puis spécifie les informations de mappage pour les deux fonctions. La fonction `add` est mappée à l'objet dans le fichier de métadonnées JSON où la valeur de la propriété `id` est **ADD**, et la fonction `increment` est mappée à l'objet dans le fichier de métadonnées où la valeur de la propriété `id` est **INCREMENT**. Pour plus d’informations sur le mappage des noms de fonction dans le fichier de script aux objets dans le fichier de métadonnées JSON, reportez-vous à la rubrique [Meilleures pratiques des fonctions personnalisées](custom-functions-best-practices.md#mapping-function-names-to-json-metadata) .
+Par exemple, le code suivant définit les fonctions personnalisées `add` et `increment`, puis spécifie les informations de mappage pour les deux fonctions. La fonction `add` est mappée à l'objet dans le fichier de métadonnées JSON où la valeur de la propriété `id` est **ADD**, et la fonction `increment` est mappée à l'objet dans le fichier de métadonnées où la valeur de la propriété `id` est **INCREMENT**. Pour plus d’informations sur le mappage des noms de fonction dans le fichier de script aux objets dans le fichier de métadonnées JSON, reportez-vous à la rubrique [Meilleures pratiques des fonctions personnalisées](custom-functions-best-practices.md#mapping-function-names-to-json-metadata).
 
 ```js
 function add(first, second){
@@ -73,12 +73,12 @@ CustomFunctionMappings.INCREMENT = increment;
 
 ### <a name="json-metadata-file"></a>Fichier de métadonnées JSON 
 
-Le fichier de métadonnées des fonctions personnalisées (**./config/customfunctions.json**  dans le projet que le générateur de Yo Office crée) fournit les informations dont Excel a besoin pour enregistrer les fonctions personnalisées et les rendre disponibles aux utilisateurs finaux. Les fonctions personnalisées sont enregistrées lorsqu’un utilisateur exécute un complément pour la première fois. Après cela, elles sont disponibles pour cet utilisateur dans tous les classeurs (autrement dit, pas seulement dans le classeur dans lequel le complément a été exécuté pour la première fois.)
+Le fichier de métadonnées des fonctions personnalisées (**./config/customfunctions.json** dans le projet que le générateur de Yo Office crée) fournit les informations dont Excel a besoin pour enregistrer les fonctions personnalisées et les rendre disponibles aux utilisateurs finaux. Les fonctions personnalisées sont enregistrées lorsqu’un utilisateur exécute un complément pour la première fois. Après cela, elles sont disponibles pour cet utilisateur dans tous les classeurs (autrement dit, pas seulement dans le classeur dans lequel le complément a été exécuté pour la première fois.)
 
 > [!TIP]
 > Parmi les paramètres de serveur sur le serveur qui héberge le fichier JSON, [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) doit être activé pour que les fonctions personnalisées fonctionnent correctement dans Excel Online.
 
-Le code suivant dans **customfunctions.json** spécifie les métadonnées de la fonction `add` et de la fonction `increment` décrites précédemment. Le tableau qui suit cet échantillon de code fournit des informations détaillées sur les propriétés individuelles dans cet objet JSON. Reportez-vous à la rubrique [Meilleures pratiques des fonctions personnalisées](custom-functions-best-practices.md#mapping-function-names-to-json-metadata) , pour plus d'informations sur la spécification de la valeur des propriétés `id` et `name` dans le fichier de métadonnées JSON.
+Le code suivant dans **customfunctions.json** spécifie les métadonnées de la fonction `add` et de la fonction `increment` décrites précédemment. Le tableau qui suit cet échantillon de code fournit des informations détaillées sur les propriétés individuelles dans cet objet JSON. Reportez-vous à la rubrique [Meilleures pratiques des fonctions personnalisées](custom-functions-best-practices.md#mapping-function-names-to-json-metadata), pour plus d'informations sur la spécification de la valeur des propriétés `id` et `name` dans le fichier de métadonnées JSON.
 
 ```json
 {
@@ -144,7 +144,7 @@ Le tableau suivant répertorie les propriétés qui sont généralement présent
 | `description` | Décrit ce que fait la fonction. Cette valeur s’affiche comme une info-bulle lorsque la fonction est l’élément sélectionné dans le menu de saisie semi-automatique dans Excel. |
 | `result`  | Objet qui définit le type de l’information renvoyée par la fonction. La valeur de la propriété enfant `type` peut être **string**, **number**ou **boolean**. La valeur de la propriété enfant `dimensionality` peut être **scalaire** ou **matrice** (un tableau à deux dimensions des valeurs de `type` spécifié). |
 | `parameters` | Tableau qui définit les paramètres d’entrée de la fonction. Les propriétés enfants `name` et `description` apparaissent dans l’intelliSense Excel. La valeur de la propriété enfant`type` peut être une **chaîne**, un **nombre**, ou une valeur **booléenne**. La valeur de la propriété enfant `dimensionality` peut être **scalaire** ou **matrice** (un tableau à deux dimensions des valeurs de `type` spécifié). |
-| `options` | Vous permet de personnaliser certains aspects de la façon dont Excel exécute la fonction, et quand. Pour plus d’informations sur l’utilisation de cette propriété, voir [Fonctions de flux](#streamed-functions) et [Annulation d'une fonction](#canceling-a-function) , plus loin dans cet article. |
+| `options` | Vous permet de personnaliser certains aspects de la façon dont Excel exécute la fonction et quand. Pour plus d’informations sur l’utilisation de cette propriété, voir [Fonctions de flux](#streamed-functions) et [Annulation d'une fonction](#canceling-a-function), plus loin dans cet article. |
 
 ### <a name="manifest-file"></a>Fichier manifeste
 
@@ -210,7 +210,7 @@ function getTemperature(thermometerID){
 
 ## <a name="streamed-functions"></a>Fonctions de flux
 
-Les fonctions de flux personnalisées vous permettent de transmettre des données aux cellules de manière répétée au fil du temps, sans qu'un utilisateur ait à demander explicitement une actualisation des données. L’échantillon de code suivant est une fonction personnalisée qui ajoute un nombre au résultat, toutes les secondes. Tenez compte des informations suivantes relatives à ce code :
+Les fonctions de flux personnalisées vous permettent de transmettre des données aux cellules de manière répétée au fil du temps, sans qu'un utilisateur ait à demander explicitement une actualisation des données. L’échantillon de code suivant est une fonction personnalisée qui ajoute un nombre au résultat toutes les secondes. Tenez compte des informations suivantes relatives à ce code :
 
 - Excel affiche automatiquement chaque nouvelle valeur en utilisant le rappel `setResult`.
 
@@ -232,7 +232,7 @@ function incrementValue(increment, handler){
 }
 ```
 
-Lorsque vous spécifiez des métadonnées pour une fonction de flux dans le fichier de métadonnées JSON, vous devez définir les propriétés `"cancelable": true` et `"stream": true` dans l'objet `options` , comme illustré dans l’exemple suivant.
+Lorsque vous spécifiez des métadonnées pour une fonction de flux dans le fichier de métadonnées JSON, vous devez définir les propriétés `"cancelable": true` et `"stream": true` dans l'objet `options`, comme illustré dans l’exemple suivant.
 
 ```json
 {
@@ -265,11 +265,11 @@ Dans certains cas, vous devrez peut-être annuler l’exécution d’une fonctio
 
 - Quand l’utilisateur modifie ou supprime une cellule qui fait référence à la fonction.
 
-- Quand un des arguments (entrées) de la fonction est modifié. Dans ce cas, un nouvel appel de fonction est déclenché après l’annulation.
+- Quand un des arguments (entrées) de la fonction est modifié. Dans ce cas, un nouvel appel de fonction est déclenché suite à l'annulation.
 
-- Lorsque l’utilisateur déclenche manuellement un nouveau calcul. Dans ce cas, un nouvel appel de fonction est déclenché après l’annulation.
+- Lorsque l’utilisateur déclenche manuellement un nouveau calcul. Dans ce cas, un nouvel appel de fonction est déclenché suite à l'annulation.
 
-Pour activer la possibilité d’annuler une fonction, vous devez implémenter un gestionnaire d’annulation dans la fonction JavaScript et spécifier la propriété `"cancelable": true` dans l'objet `options` dans les métadonnées JSON qui décrit la fonction. Les échantillons de code dans la section précédente de cet article fournissent un exemple de ces techniques.
+Pour activer la possibilité d’annuler une fonction, vous devez implémenter un gestionnaire d’annulation dans la fonction JavaScript et spécifier la propriété `"cancelable": true`   dans l'objet `options`   dans les métadonnées JSON qui décrit la fonction. Les échantillons de code dans la section précédente de cet article fournissent un exemple de ces techniques.
 
 ## <a name="saving-and-sharing-state"></a>Enregistrement et partage de l'état
 
@@ -378,3 +378,4 @@ function getComment(x) {
 * [Métadonnées des fonctions personnalisées](custom-functions-json.md)
 * [Exécution de fonctions personnalisées Excel](custom-functions-runtime.md)
 * [Meilleures pratiques pour les fonctions personnalisées](custom-functions-best-practices.md)
+* [Didacticiel sur les fonctions personnalisées d’Excel](excel-tutorial-custom-functions.md)
