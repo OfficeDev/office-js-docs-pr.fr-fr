@@ -2,12 +2,12 @@
 ms.date: 09/27/2018
 description: Définir les métadonnées pour des fonctions personnalisées dans Excel.
 title: Métadonnées pour des fonctions personnalisées dans Excel
-ms.openlocfilehash: 025be277a5e436a1ce2885815e9b8cbf9b206799
-ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
+ms.openlocfilehash: a179a9c4bc071200cab1377c5e48913bfc8358cf
+ms.sourcegitcommit: 1852ae367de53deb91d03ca55d16eb69709340d3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "25348134"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "25348793"
 ---
 # <a name="custom-functions-metadata-preview"></a>Métadonnées des fonctions personnalisées (aperçu)
 
@@ -111,10 +111,10 @@ La propriété `functions` est un tableau d’objets de fonctions personnalisée
 
 |  Propriété  |  Type de données  |  Requis  |  Description  |
 |:-----|:-----|:-----|:-----|
-|  `description`  |  string  |  Non  |  Description de la fonction que les utilisateurs voient dans Excel. Par exemple, **Convertit une valeur en Celsius en Fahrenheit**. |
-|  `helpUrl`  |  string  |   Non  |  URL qui fournit des informations sur la fonction. (Elle est affichée dans un volet Office.) Par exemple, **http://contoso.com/help/convertcelsiustofahrenheit.html**. |
-| `id`     | string | Oui | ID unique de la fonction. Cet ID ne doit pas être modifié après sa définition. |
-|  `name`  |  string  |  Oui  |  Nom de la fonction que les utilisateurs voient dans Excel. Dans Excel, ce nom de fonction sera préfixé par l’espace de noms des fonctions personnalisées spécifié dans le fichier manifeste XML. |
+|  `description`  |  chaîne  |  Non  |  Description de la fonction que les utilisateurs voient dans Excel. Par exemple, **Convertit une valeur en Celsius en Fahrenheit**. |
+|  `helpUrl`  |  chaîne  |   Non  |  URL qui fournit des informations sur la fonction. (Elle est affichée dans un volet Office.) Par exemple, **http://contoso.com/help/convertcelsiustofahrenheit.html**. |
+| `id`     | chaîne | Oui | ID unique de la fonction. Cet ID ne doit pas être modifié après sa définition. |
+|  `name`  |  chaîne  |  Oui  |  Nom de la fonction que les utilisateurs voient dans Excel. Dans Excel, ce nom de fonction sera préfixé par l’espace de noms des fonctions personnalisées spécifié dans le fichier manifeste XML. |
 |  `options`  |  object  |  Non  |  Vous permet de personnaliser certains aspects de la façon dont Excel exécute la fonction, et quand. Voir [objet options](#options-object) pour plus de détails. |
 |  `parameters`  |  array  |  Oui  |  Tableau qui définit les paramètres d’entrée de la fonction. Voir[tableau parameters](#parameters-array) pour plus de détails. |
 |  `result`  |  object  |  Oui  |  Objet qui définit le type de l’information renvoyée par la fonction. Voir [objet result](#result-object) pour plus de détails. |
@@ -134,10 +134,10 @@ La propriété `parameters` est un tableau d’objets parameter. Le tableau suiv
 
 |  Propriété  |  Type de données  |  Requis  |  Description  |
 |:-----|:-----|:-----|:-----|
-|  `description`  |  string  |  Non |  Description du paramètre.  |
-|  `dimensionality`  |  string  |  Non  |  Doit être **scalar** (une valeur non tableau) ou **matrix** (tableau à deux dimensions).  |
-|  `name`  |  string  |  Oui  |  Nom du paramètre. Ce nom est affiché dans l’IntelliSense d’Excel.  |
-|  `type`  |  string  |  Non  |  Type de données du paramètre. Doit être **boolean**, **number** ou **string**.  |
+|  `description`  |  chaîne  |  Non |  Description du paramètre.  |
+|  `dimensionality`  |  chaîne  |  Non  |  Doit être **scalar** (une valeur non tableau) ou **matrix** (tableau à deux dimensions).  |
+|  `name`  |  chaîne  |  Oui  |  Nom du paramètre. Ce nom est affiché dans l’IntelliSense d’Excel.  |
+|  `type`  |  chaîne  |  Non  |  Type de données du paramètre. Doit être **boolean**, **number** ou **string**.  |
 
 ## <a name="result"></a>result
 
@@ -145,11 +145,12 @@ L’objet `results` définit le type de l’information renvoyée par la fonctio
 
 |  Propriété  |  Type de données  |  Requis  |  Description  |
 |:-----|:-----|:-----|:-----|
-|  `dimensionality`  |  string  |  Non  |  Doit être **scalar** (une valeur non tableau) ou **matrix** (tableau à deux dimensions). |
-|  `type`  |  string  |  Oui  |  Type de données du paramètre. Doit être **boolean**, **number** ou **string**.  |
+|  `dimensionality`  |  chaîne  |  Non  |  Doit être **scalar** (une valeur non tableau) ou **matrix** (tableau à deux dimensions). |
+|  `type`  |  chaîne  |  Oui  |  Type de données du paramètre. Doit être **boolean**, **number** ou **string**.  |
 
 ## <a name="see-also"></a>Voir aussi
 
 * [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
 * [Runtime pour les fonctions personnalisées Excel](custom-functions-runtime.md)
 * [Meilleures pratiques pour les fonctions personnalisées](custom-functions-best-practices.md)
+* [Didacticiel sur les fonctions personnalisées d’Excel](excel-tutorial-custom-functions.md)

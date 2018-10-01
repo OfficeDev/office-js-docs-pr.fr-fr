@@ -2,12 +2,12 @@
 title: Chargement de version test des compléments Office sur iPad et Mac
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 48f685cc6c3f1a5193ad4dbd3f9ba27f5f855b05
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: e5ec6924917f2351da77c8b9a84eb8de77b3864e
+ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944445"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "25348127"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>Chargement de version test des compléments Office sur iPad et Mac
 
@@ -24,7 +24,7 @@ Pour voir comment votre complément s’exécutera dans Office pour iOS, vous po
 
 ## <a name="prerequisites-for-office-for-mac"></a>Configuration requise pour Office pour Mac
 
-- Un Mac fonctionnant sous OS X v10.10 « Yosemite » ou une version ultérieure, avec [Office pour Mac](https://products.office.com/buy/compare-microsoft-office-products?tab=omac) installé.
+- Un Mac fonctionnant sous OS X v10.10 « Yosemite » ou une version ultérieure, avec [Office pour Mac](https://products.office.com/buy/compare-microsoft-office-products?tab=omac) installé.
     
 - Word pour Mac version 15.18 (160109).
    
@@ -32,12 +32,12 @@ Pour voir comment votre complément s’exécutera dans Office pour iOS, vous po
 
 - PowerPoint pour Mac version 15.24 (160614)
     
-- Le fichier .xml de manifeste pour le complément que vous voulez tester.
+- The manifest .xml file for the add-in you want to test.
     
 
 ## <a name="sideload-an-add-in-on-excel-or-word-for-ipad"></a>Chargement d’une version test d’un complément dans Excel ou Word pour iPad
 
-1. Utilisez un câble de synchronisation pour connecter votre iPad à votre ordinateur. Lorsque vous connectez l’iPad à votre ordinateur pour la première fois, le message **Approuver cet ordinateur ?** s’affiche. Sélectionnez **Approuver** pour continuer.
+1. Utilisez un câble de synchronisation pour connecter votre iPad à votre ordinateur. Lorsque vous connectez l’iPad à votre ordinateur pour la première fois, le message **Approuver cet ordinateur ?** s’affiche. Sélectionnez **Approuver** pour continuer.
 
 2. Dans iTunes, sélectionnez l’icône **iPad** en dessous de la barre de menu.
     
@@ -47,7 +47,7 @@ Pour voir comment votre complément s’exécutera dans Office pour iOS, vous po
     
     ![Paramètres des applications iTunes](../images/file-settings-apps.png)
 
-4. Sur le côté droite d’iTunes, faites défiler vers  **Partage de fichiers**, puis sélectionnez  **Excel** ou **Word** dans la colonne **Compléments**.
+4. Sur le côté droit d’iTunes, faites défiler vers  **Partage de fichiers**, puis sélectionnez  **Excel** ou **Word** dans la colonne **Compléments**.
     
     ![Partage de fichiers iTunes](../images/file-sharing.png)
 
@@ -57,7 +57,7 @@ Pour voir comment votre complément s’exécutera dans Office pour iOS, vous po
     
 7. Ouvrez un document.
     
-8. Choisissez  **Compléments** dans l’onglet **Insérer**. La version test chargée de votre complément peut être insérée sous l’en-tête  **Développeur** dans l’interface utilisateur **Compléments**.
+8. Choisissez  **Compléments** dans l’onglet **Insérer**. La version test chargée de votre complément peut être insérée sous l’en-tête **Développeur** dans l’interface utilisateur **Compléments**.
     
     ![Insérer des compléments dans l’application Excel](../images/excel-insert-add-in.png)
 
@@ -69,9 +69,9 @@ Pour voir comment votre complément s’exécutera dans Office pour iOS, vous po
 
 1. Ouvrez **Terminal** et accédez à l’un des dossiers suivants, dans lequel vous enregistrerez le fichier manifeste de votre complément. Si le dossier `wef` n’existe pas sur votre ordinateur, créez-le.
     
-    - Pour Word :  `/Users/<username>/Library/Containers/com.microsoft.Word/Data/documents/wef`    
-    - Pour Excel :  `/Users/<username>/Library/Containers/com.microsoft.Excel/Data/documents/wef`
-    - Pour PowerPoint : `/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/documents/wef`
+    - Pour Word :  `/Users/<username>/Library/Containers/com.microsoft.Word/Data/documents/wef`    
+    - Pour Excel :  `/Users/<username>/Library/Containers/com.microsoft.Excel/Data/documents/wef`
+    - Pour PowerPoint : `/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/documents/wef`
     
 2. Ouvrez le dossier dans **Finder** à l’aide de la commande `open .` (sans oublier le point). Copier le fichier manifeste de votre complément dans ce dossier.
     
@@ -91,7 +91,7 @@ Pour voir comment votre complément s’exécutera dans Office pour iOS, vous po
     ![Complément Office affiché dans Office pour Mac](../images/lorem-ipsum-wikipedia.png)
     
     > [!NOTE]
-    > Les compléments sont souvent mis en cache dans Office pour Mac, pour des raisons de performances. Si vous avez besoin de forcer le rechargement de votre complément en cours de développement, vous pouvez effacer le dossier `Users/<usr>/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
+    > Les compléments sont souvent mis en cache dans Office pour Mac, pour des raisons de performances. Si vous avez besoin de forcer le rechargement de votre complément en cours de développement, vous pouvez effacer le dossier `Users/<usr>/Library/Containers/com.Microsoft.OsfWebHost/Data/`. Si ce dossier n’existe pas, effacez les fichiers dans le dossier `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`.
 
 ## <a name="see-also"></a>Voir aussi
 

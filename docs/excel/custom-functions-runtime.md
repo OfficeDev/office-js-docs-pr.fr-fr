@@ -1,21 +1,23 @@
 ---
-ms.date: 09/20/2018
+ms.date: 09/27/2018
 description: Les fonctions personnalisées Excel utilisent un nouveau runtime JavaScript, qui diffère du runtime de contrôle WebView de compléments standard.
-title: Runtime pour les fonctions personnalisées Excel
-ms.openlocfilehash: fa2b2030259e05f64b8b4660ded8b80c6af1eb5a
-ms.sourcegitcommit: 8ce9a8d7f41d96879c39cc5527a3007dff25bee8
+title: Runtime de fonctions personnalisées Excel
+ms.openlocfilehash: 7489cd66851d1e0c24ef573ffa920b794cf749c2
+ms.sourcegitcommit: 1852ae367de53deb91d03ca55d16eb69709340d3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "24985794"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "25348758"
 ---
-# <a name="runtime-for-excel-custom-functions-preview"></a>Runtime pour les fonctions personnalisées Excel (Aperçu)
+# <a name="runtime-for-excel-custom-functions-preview"></a>Runtime pour les fonctions personnalisées Excel (aperçu)
 
 Les fonctions personnalisées étendent les fonctionnalités d’Excel à l’aide d’un nouveau runtime JavaScript qui utilise un moteur de JavaScript en bac à sable plutôt que dans un navigateur web. Puisque les fonctions personnalisées n’ont pas besoin d’afficher des éléments d’interface utilisateur, le nouveau runtime JavaScript est optimisé pour l’exécution de calculs, ce qui vous permet d’exécuter simultanément des milliers de fonctions personnalisées.
 
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
 ## <a name="key-facts-about-the-new-javascript-runtime"></a>Points clés concernant le nouveau runtime JavaScript 
 
-Seules les fonctions personnalisées au sein d’un complément utiliseront le nouveau runtime JavaScript décrit dans cet article. Si un complément comprend d’autres composants tels que des volets Office et d’autres éléments d’interface utilisateur, en plus des fonctions personnalisées, ces autres composants du complément continueront à s’exécuter dans le module d’exécution WebView.  En outre : 
+Seules les fonctions personnalisées au sein d’un complément utiliseront le nouveau runtime JavaScript décrit dans cet article. Si un complément comprend d’autres composants tels que des volets Office et d’autres éléments d’interface utilisateur, en plus des fonctions personnalisées, ces autres composants du complément continueront à s’exécuter dans le module d’exécution WebView.  En outre : 
 
 - Le runtime JavaScript ne fournit pas d’accès au Document Object Model (DOM) ni ne prend en charge des bibliothèques telles que jQuery qui s’appuient sur le modèle DOM.
 
@@ -68,7 +70,7 @@ function sendWebRequest(thermometerID, data) {
 
 Comme indiqué dans l’exemple de code suivant, les fonctions personnalisées peuvent utiliser WebSocket. Dans cet exemple, le WebSocket enregistre chaque message qu’il reçoit.
 
-```ts
+```typescript
 const ws = new WebSocket('wss://bundles.office.com');
 ws.onmessage = (message) => {
     console.log(`Received: ${message}`);
@@ -80,7 +82,7 @@ ws.onerror = (error) => {
 
 ### <a name="asyncstorage"></a>AsyncStorage
 
-AsyncStorage est un système de stockage clé-valeur qui peut être utilisé pour stocker les jetons d’authentification. Il est :
+AsyncStorage est un système de stockage clé-valeur qui peut être utilisé pour stocker les jetons d’authentification. Il est :
 
 - Persistant
 - Non chiffré
@@ -104,7 +106,7 @@ Les méthodes suivantes sont disponibles sur l’objet `AsyncStorage` :
 
 L’exemple de code suivant appelle la fonction `AsyncStorage.getItem` pour récupérer une valeur stockée.
 
-```js
+```typescript
 _goGetData = async () => {
     try {
         const value = await AsyncStorage.getItem('toDoItem');
@@ -130,11 +132,11 @@ Dans l’exemple de code suivant, la méthode `getTokenViaDialog()` utilise la m
 function getStock (ticker) {
   return new Promise(function (resolve, reject) {
     // Get a token
-    getToken("https://myauthurl")
+    getToken("https://www.contoso.com/auth")
     .then(function (token) {
       
       // Use token to get stock price
-      fetch("https://myservice.com/?token=token&ticker= + ticker")
+      fetch("https://www.contoso.com/?token=token&ticker= + ticker")
       .then(function (result) {
 
         // Return stock price to cell
@@ -211,3 +213,4 @@ function getStock (ticker) {
 * [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
 * [Métadonnées des fonctions personnalisées](custom-functions-json.md)
 * [Meilleures pratiques pour les fonctions personnalisées](custom-functions-best-practices.md)
+* [Didacticiel sur les fonctions personnalisées d’Excel](excel-tutorial-custom-functions.md)
