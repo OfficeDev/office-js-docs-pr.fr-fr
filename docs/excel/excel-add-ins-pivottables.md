@@ -2,18 +2,18 @@
 title: Utilisation de tableaux croisés dynamiques à l’aide de l’API JavaScript pour Excel
 description: Utilisez l'API JavaScript pour Excel afin de créer des tableaux croisés dynamiques et d’interagir avec leurs composants.
 ms.date: 09/21/2018
-ms.openlocfilehash: 7178ae0d578e9f52bd9590c764c488c7fa4d2b43
-ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
+ms.openlocfilehash: 5245665bad2933df205bcda29e226a965de1c356
+ms.sourcegitcommit: 64da9ed76d22b14df745b1f0ef97a8f5194400e4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "25348183"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "25361023"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Utilisation de tableaux croisés dynamiques à l’aide de l’API JavaScript pour Excel
 
-Les tableaux croisés dynamiques rationalisent les jeux de données plus volumineux. Ils permettent la manipulation rapide des données groupées. L'API JavaScript pour Excel permet à votre complément de créer des tableaux croisés dynamiques et d'interagir avec leurs composants. 
+Les tableaux croisés dynamiques rationalisent les jeux de données plus volumineux. Ils permettent la manipulation rapide des données groupées. L’API JavaScript pour Excel permet à votre complément de créer des tableaux croisés dynamiques et d’interagir avec leurs composants. 
 
-|||UNTRANSLATED_CONTENT_START|||If you are unfamiliar with the functionality of PivotTables, consider exploring them as an end user. See [Create a PivotTable to analyze worksheet data](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) for a good primer on these tools.|||UNTRANSLATED_CONTENT_END||| 
+Si vous ne connaissez pas les fonctionnalités des tableaux croisés dynamiques, envisagez de les découvrir en tant qu’utilisateur final. Consultez [Créer un tableau croisé dynamique pour analyser les données d’une feuille de calcul](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) afin d’obtenir une présentation de ces outils. 
 
 Cet article fournit des exemples de code pour des scénarios courants. Pour améliorer votre compréhension de l'API Tableau croisé dynamique, consultez [**Tableau croisé dynamique**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable) et [**Collection Tableau croisé dynamique**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable).
 
@@ -48,9 +48,8 @@ Les tableaux croisés dynamiques nécessitent un nom, une source et une destinat
 
 ```typescript
 await Excel.run(async (context) => {
-    // creating a PivotTable named "Farm Sales" created on the current worksheet at cell A22 with data from the range A1:E21
-    context.workbook.worksheets.getActiveWorksheet()
-        .pivotTables.add("Farm Sales", "A1:E21", "A22");
+    // creating a PivotTable named "Farm Sales" on the current worksheet at cell A22 with data from the range A1:E21
+    context.workbook.worksheets.getActiveWorksheet().pivotTables.add("Farm Sales", "A1:E21", "A22");
 
     await context.sync();
 });
@@ -64,7 +63,8 @@ await Excel.run(async (context) => {
     // the data comes from the worksheet "DataWorksheet" across the range A1:E21
     const rangeToAnalyze = context.workbook.worksheets.getItem("DataWorksheet").getRange("A1:E21");
     const rangeToPlacePivot = context.workbook.worksheets.getItem("PivotWorksheet").getRange("A2");
-    context.workbook.worksheets.getItem("PivotWorksheet").pivotTables.add("Farm Sales", rangeToAnalyze, rangeToPlacePivot);
+    context.workbook.worksheets.getItem("PivotWorksheet").pivotTables.add(
+        "Farm Sales", rangeToAnalyze, rangeToPlacePivot);
     
     await context.sync();
 });
@@ -145,7 +145,8 @@ await Excel.run(async (context) => {
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Farm"));
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Type"));
 
-    // "Crates Sold at Farm" and "Crates Sold Wholesale" are the heirarchies that will have their data aggregated (summed in this case)
+    // "Crates Sold at Farm" and "Crates Sold Wholesale" are the hierarchies
+    // that will have their data aggregated (summed in this case)
     pivotTable.dataHierarchies.add(pivotTable.hierarchies.getItem("Crates Sold at Farm"));
     pivotTable.dataHierarchies.add(pivotTable.hierarchies.getItem("Crates Sold Wholesale"));
 
@@ -159,19 +160,77 @@ Les hiérarchies de données voient leurs valeurs agrégées. Pour les jeux de d
 
 Les types de fonctions d’agrégation actuellement prises en charge sont `Sum`, `Count`, `Average`, `Max`, `Min`, `Product`, `CountNumbers`, `StandardDeviation`, `StandardDeviationP`, `Variance`, `VarianceP` et `Automatic` (par défaut).
 
-Les exemples de code suivants modifient l'agrégation en moyennes des données.
+Les exemples de code suivants modifient l’agrégation en moyennes des données.
 
 ```typescript
-    await Excel.run(async (context) => {
-        const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
-        pivotTable.dataHierarchies.load("no-properties-needed");
-        await context.sync();
+await Excel.run(async (context) => {
+    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+    pivotTable.dataHierarchies.load("no-properties-needed");
+    await context.sync();
 
-        // changing the aggregation from the default sum to an average of all the values in the hierarchy
-        pivotTable.dataHierarchies.items[0].summarizeBy = Excel.AggregationFunction.average;
-        pivotTable.dataHierarchies.items[1].summarizeBy = Excel.AggregationFunction.average;
-        await context.sync();
-    });
+    // changing the aggregation from the default sum to an average of all the values in the hierarchy
+    pivotTable.dataHierarchies.items[0].summarizeBy = Excel.AggregationFunction.average;
+    pivotTable.dataHierarchies.items[1].summarizeBy = Excel.AggregationFunction.average;
+    await context.sync();
+});
+```
+
+## <a name="change-calculations-with-a-showasrule"></a>Modifier les calculs avec une propriété ShowAsRule
+
+Les tableaux croisés dynamiques agrègent par défaut les données de leurs hiérarchies de ligne et de colonne de manière indépendante. Un objet `ShowAsRule` modifie la hiérarchie de données pour produire des valeurs en fonction des autres éléments du tableau croisé dynamique.
+
+L’objet `ShowAsRule` contient possède trois propriétés :
+-   `calculation`: le type de calcul relatif à appliquer à la hiérarchie des données (la valeur par défaut est `none`).
+-   `baseField`: le champ dans la hiérarchie contenant les données de base avant le calcul est appliqué. L’objet `PivotField`porte généralement le même nom que sa hiérarchie parent.
+-   `baseItem`: l’élément individuel comparé aux valeurs des champs de base en fonction du type de calcul. Tous les calculs ne nécessitent pas ce champ.
+
+L’exemple suivant définit le calcul de la hiérarchie de données de la **Somme des caisses vendues à la ferme** comme un pourcentage du total de colonne. Nous voulons quand même que la granularité s’étende au niveau du type de fruits, nous allons donc utiliser la hiérarchie de ligne **Type** et son champ sous-jacent. L’exemple a également **Ferme** comme hiérarchie de la première ligne, afin que les entrées de total de la ferme affichent également le pourcentage que chaque ferme a la responsabilité de produire.
+
+![Un tableau croisé dynamique affichant les pourcentages des ventes de fruits par rapport à un total général pour les fermes individuelles et les types des fruits dans chaque ferme.](../images/excel-pivots-showas-percentage.png)
+
+``` TypeScript
+await Excel.run(async (context) => {
+    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+    const farmDataHierarchy = pivotTable.dataHierarchies.getItem("Sum of Crates Sold at Farm");
+
+    farmDataHierarchy.load("showAs");
+    await context.sync();
+
+    // show the crates of each fruit type sold at the farm as a percentage of the column's total
+    let farmShowAs = farmDataHierarchy.showAs;
+    farmShowAs.calculation = Excel.ShowAsCalculation.percentOfColumnTotal;
+    farmShowAs.baseField = pivotTable.rowHierarchies.getItem("Type").fields.getItem("Type");
+    farmDataHierarchy.showAs = farmShowAs; 
+    farmDataHierarchy.name = "Percentage of Total Farm Sales";
+
+    await context.sync();
+});
+```
+
+L’exemple précédent définit le calcul de la colonne, par rapport à une hiérarchie de ligne individuelle. Lorsque le calcul se rapporte à un élément individuel, utilisez la propriété  `baseItem`. 
+
+L'exemple suivant montre le calcul de la propriété `differenceFrom`. Il affiche la différence des entrées de la hiérarchie de données relative aux ventes de caisses des fermes par rapport à celles des « Fermes A ». La propriété `baseField` est **Ferme**, de sorte que nous voir les différences entre les autres fermes, ainsi que des répartitions pour chaque type de fruits comparables (**Type** est également une hiérarchie de ligne dans cet exemple).
+
+![Un tableau croisé dynamique affichant les différences des ventes de fruits entre les « Fermes A » et les autres. Il affiche à la fois la différence dans les ventes de fruits totales des fermes et les ventes des types de fruits. Si les « Fermes A » n’ont pas vendu un type de fruit particulier, « #N/A » s’affiche.](../images/excel-pivots-showas-differencefrom.png)
+
+``` TypeScript
+await Excel.run(async (context) => {
+    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+    const farmDataHierarchy = pivotTable.dataHierarchies.getItem("Sum of Crates Sold at Farm");
+
+    farmDataHierarchy.load("showAs");
+    await context.sync();
+
+    // show the difference between crate sales of the "A Farms" and the other farms
+    // this difference is both aggregated and shown for individual fruit types (where applicable)
+    let farmShowAs = farmDataHierarchy.showAs;
+    farmShowAs.calculation = Excel.ShowAsCalculation.differenceFrom;
+    farmShowAs.baseField = pivotTable.rowHierarchies.getItem("Farm").fields.getItem("Farm");
+    farmShowAs.baseItem = pivotTable.rowHierarchies.getItem("Farm").fields.getItem("Farm").items.getItem("A Farms");
+    farmDataHierarchy.showAs = farmShowAs;
+    farmDataHierarchy.name = "Difference from A Farms";
+    await context.sync();
+});
 ```
 
 ## <a name="pivottable-layouts"></a>Dispositions des tableaux croisés dynamiques
@@ -184,22 +243,21 @@ Le diagramme suivant présente la correspondance des appels de fonction de dispo
 
 Le code suivant indique comment récupérer la dernière ligne des données de tableau croisé dynamique via la disposition. Ces valeurs sont ensuite additionnées pour obtenir un total général.
 
-
 ```typescript
-    await Excel.run(async (context) => {
-        const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
-        
-        // get the totals for each data hierarchy from the layout
-        const range = pivotTable.layout.getDataBodyRange();
-        const grandTotalRange = range.getLastRow();
-        grandTotalRange.load("address");
-        await context.sync();
-        
-        // sum the totals from the PivotTable data hierarchies and place them in a new range
-        const masterTotalRange = context.workbook.worksheets.getActiveWorksheet().getRange("B27:C27");
-        masterTotalRange.formulas = [["All Crates", "=SUM(" + grandTotalRange.address + ")"]];
-        await context.sync();
-    });
+await Excel.run(async (context) => {
+    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+
+    // get the totals for each data hierarchy from the layout
+    const range = pivotTable.layout.getDataBodyRange();
+    const grandTotalRange = range.getLastRow();
+    grandTotalRange.load("address");
+    await context.sync();
+
+    // sum the totals from the PivotTable data hierarchies and place them in a new range
+    const masterTotalRange = context.workbook.worksheets.getActiveWorksheet().getRange("B27:C27");
+    masterTotalRange.formulas = [["All Crates", "=SUM(" + grandTotalRange.address + ")"]];
+    await context.sync();
+});
 ```
 
 Les tableaux croisés dynamiques ont trois styles de disposition : Compact, Plan et Tabulaire. Nous avons vu le style compact dans les exemples précédents. 
@@ -213,25 +271,6 @@ Les exemples suivants utilisent respectivement le style plan et tabulaire. L’e
 ### <a name="tabular-layout"></a>Disposition Tabulaire
 
 ![Tableau croisé dynamique utilisant la disposition tabulaire.](../images/excel-pivots-tabular-layout.png)
-
-```typescript
-await Excel.run(async (context) => {
-    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
-    pivotTable.layout.load("layoutType");
-    await context.sync();
-    
-    // cycling through layout styles
-    if (pivotTable.layout.layoutType === "Compact") {
-        pivotTable.layout.layoutType = "Outline";
-    } else if (pivotTable.layout.layoutType === "Outline") {
-        pivotTable.layout.layoutType = "Tabular";
-    } else {
-        pivotTable.layout.layoutType = "Compact";
-    }
-    
-    await context.sync();
-});
-```
 
 ## <a name="change-hierarchy-names"></a>Modifier les noms des hiérarchies
 
