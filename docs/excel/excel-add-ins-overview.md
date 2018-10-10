@@ -2,12 +2,12 @@
 title: Vue d’ensemble des compléments Excel
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: dac1b4e19f3773d4e21711b1585dfbbebc39784a
-ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
+ms.openlocfilehash: 8ce01df60489d05f1ba9f4b53f04fa99f61e1d36
+ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "25348148"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "25459097"
 ---
 # <a name="excel-add-ins-overview"></a>Vue d’ensemble des compléments Excel
 
@@ -24,16 +24,16 @@ La plateforme de compléments Office fournit la structure et les API JavaScript 
 * **Déploiement centralisé** : les administrateurs peuvent rapidement et facilement déployer des compléments Excel vers les utilisateurs d’une organisation.
 * **Authentification unique (SSO)** : intégrez facilement votre complément Excel à l’aide de Microsoft Graph.
 * **Utilisation de technologies web standard** : créez votre complément Excel en utilisant des technologies web connues telles qu’HTML, CSS et JavaScript.
-* **Distribution via AppSource** : partagez votre complément Excel avec un large public en le publiant sur [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office&page=1&src=office&corrid=53245fad-fcbe-41f8-9f97-b0840264f97c&omexanonuid=4a0102fb-b31a-4b9f-9bb0-39d4cc6b789d).
+* **Distribution via AppSource** : partagez votre complément Excel avec un large public en le publiant sur [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office&page=1&src=office&corrid=53245fad-fcbe-41f8-9f97-b0840264f97c&omexanonuid=4a0102fb-b31a-4b9f-9bb0-39d4cc6b789d).
 
 > [!NOTE]
-> Les compléments Excel sont différents des compléments COM ou VST, qui sont des solutions d’intégration Office antérieures s’exécutant uniquement sur Office pour Windows. Contrairement aux compléments COM, les compléments Excel ne nécessitent pas l’installation de code sur l’appareil d’un utilisateur ou dans Excel. 
+> Les compléments Excel diffèrent des compléments COM et VSTO, qui sont des solutions d’intégration d’Office antérieures qui s’exécutent uniquement sur Office pour Windows. Contrairement aux compléments COM, les compléments Excel ne nécessitent pas d’installer du code sur le périphérique d’un utilisateur ou dans Excel. 
 
 ## <a name="components-of-an-excel-add-in"></a>Composants d’un complément Excel 
 
-Un complément Excel comprend deux composants de base : une application web et un fichier de configuration, appelé fichier manifeste. 
+Un complément Excel comprend deux composants de base : une application web et un fichier de configuration, appelé fichier manifeste. 
 
-L’application web utilise l’[API JavaScript pour Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js) pour interagir avec des objets dans Excel et peut également faciliter l’interaction avec les ressources en ligne. Par exemple, un complément peut effectuer une des opérations suivantes :
+L’application web utilise l’[API JavaScript pour Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js) pour interagir avec des objets dans Excel et peut également faciliter l’interaction avec les ressources en ligne. Par exemple, un complément peut effectuer les tâches suivantes :
 
 * Créer, lire, mettre à jour et supprimer des données dans le classeur (feuilles de calcul, plages, tableaux, graphiques, éléments nommés, etc.).
 * Effectuer une autorisation utilisateur avec un service en ligne à l’aide du flux OAuth 2.0 standard.
@@ -76,7 +76,7 @@ Pour plus d’informations sur les volets Office, reportez-vous à [Volets Offic
 
 ### <a name="dialog-boxes"></a>Boîtes de dialogue
 
-Les boîtes de dialogue sont des surfaces qui flottent au-dessus de la fenêtre active de l’application Excel. Vous pouvez utiliser les boîtes de dialogue pour des tâches comme l’affichage de pages de connexion impossibles à ouvrir directement dans un volet Office, les demandes de confirmation d’une action par l’utilisateur ou l’hébergement de vidéos pouvant être trop petites si elles sont limitées à un volet Office. Utilisez l’[API de dialogue](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) pour ouvrir des boîtes de dialogue dans votre complément Excel.
+Les boîtes de dialogue sont des surfaces qui flottent au-dessus de la fenêtre active de l’application Excel. Vous pouvez utiliser les boîtes de dialogue pour des tâches telles que l’affichage des pages de connexion qui ne peuvent pas être ouvertes directement dans le volet Office, qui demandent à l’utilisateur de confirmer une action, ou telles que l’hébergement de vidéos qui serait trop petit s’il était limité à un volet Office. Pour ouvrir des boîtes de dialogue dans votre complément Excel, utilisez l’[API de boîte de dialogue](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js).
 
 **Boîte de dialogue**
 
@@ -86,7 +86,7 @@ Pour plus d’informations sur les boîtes de dialogue et l’API de dialogue, r
 
 ### <a name="content-add-ins"></a>Compléments de contenu
 
-Les compléments de contenu sont des surfaces que vous pouvez incorporer directement dans les documents Excel. Vous pouvez utiliser des compléments de contenu pour incorporer des objets riches, basés sur le web, tels que des graphiques, des visualisations de données ou des supports dans une feuille de calcul, ou autoriser l’accès des utilisateurs aux options d’interface qui exécutent le code pour modifier le document Excel ou afficher des données à partir d’une source de données. Utilisez les compléments de contenu lorsque vous souhaitez incorporer des fonctionnalités directement dans le document.
+Les compléments de contenu sont des surfaces que vous pouvez inclure directement dans des documents Excel. Vous pouvez utiliser des compléments de contenu pour incorporer des objets riches, basés sur le web, tels que des graphiques, des visualisations de données ou des supports dans une feuille de calcul, ou autoriser l’accès des utilisateurs aux options d’interface qui exécutent le code pour modifier le document Excel ou afficher des données à partir d’une source de données. Utilisez des compléments de contenu lorsque vous voulez incorporer une fonctionnalité directement dans le document.
 
 **Complément de contenu**
 
@@ -98,18 +98,18 @@ Pour plus d’informations sur les compléments de contenu, reportez-vous à [Co
 
 Un complément Excel interagit avec des objets dans Excel en utilisant l’[API JavaScript pour Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js), qui inclut deux modèles d’objets JavaScript :
 
-* **API JavaScript pour Excel** : incluse dans Office 2016, l’[API JavaScript pour Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js) fournit des objets Excel fortement typés que vous pouvez utiliser pour accéder aux feuilles de calcul, aux plages, aux tableaux, aux graphiques et bien plus encore. 
+* **API JavaScript pour Excel** : incluse dans Office 2016, l’[API JavaScript pour Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js) fournit des objets Excel fortement typés que vous pouvez utiliser pour accéder aux feuilles de calcul, aux plages, aux tableaux, aux graphiques et bien plus encore. 
 
-* **API partagée** : incluse dans Office 2013, l’API partagée vous permet d’accéder à des fonctionnalités, comme l’interface utilisateur, les boîtes de dialogue et les paramètres du client, qui sont communes à plusieurs types d’applications hôtes, telles que Word, Excel et PowerPoint. Étant donné que l’API partagée fournit des fonctionnalités limitées pour une interaction avec Excel, vous pouvez l’utiliser si votre complément doit s’exécuter sur Excel 2013.
+* **API partagée** : introduite dans Office 2013, l’API partagée vous permet d’accéder aux fonctionnalités telles que l’interface utilisateur, les boîtes de dialogue et les paramètres client qui sont communes à plusieurs types applications hôtes telles que Word, Excel et PowerPoint. Étant donné que l’API partagée fournit une fonctionnalité limitée pour l’interaction avec Excel, vous pouvez l’utiliser si votre complément doit s’exécuter dans Excel 2013.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Apprenez à [créer votre premier complément Excel](excel-add-ins-get-started-overview.md). Découvrez ensuite les [concepts fondamentaux](excel-add-ins-core-concepts.md) de la création de compléments Excel.
+Commencez par [créer votre premier complément Excel](excel-add-ins-get-started-overview.md). Ensuite, découvrez les [concepts fondamentaux](excel-add-ins-core-concepts.md) de la création de compléments Excel.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
 - [Meilleures pratiques en matière de développement de compléments Office](../concepts/add-in-development-best-practices.md)
 - [Instructions de conception pour les compléments Office](../design/add-in-design.md)
-- [Concepts de base de l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
-- [Référence de l’API JavaScript d’Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
+- [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
+- [Référence de l’API JavaScript pour Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)

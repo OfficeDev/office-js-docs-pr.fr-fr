@@ -49,8 +49,8 @@ Chaque complément nécessite un fichier manifeste pour définir ses paramètres
     ```
 
     - **Choisissez un type de projet :** `Office Add-in containing the manifest only`
-    - **Comment souhaitez-vous nommer votre complément ? :** `My Office Add-in`
-    - **Quelle application client Office voulez-vous prendre en charge ? :** `Excel`
+    - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
+    - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
 
     Après avoir terminé l'assistant, un fichier manifeste et un fichier de ressources sont disponibles pour vous permettre de générer votre projet.
 
@@ -190,7 +190,7 @@ Pour activer HTTPS pour votre application, ouvrez **package.json** à la racine 
 
 2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
-    ![Bouton Complément Excel](../images/excel-quickstart-addin-2a.png)
+    ![Bouton de Complément Excel](../images/excel-quickstart-addin-2a.png)
 
 3. Sélectionnez une plage de cellules dans la feuille de calcul.
 
@@ -208,6 +208,6 @@ Félicitations, vous avez créé un complément Excel à l’aide de Vue ! Déco
 ## <a name="see-also"></a>Voir aussi
 
 * [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial-create-table.md)
-* [Concepts de base de l’API JavaScript pour Excel](../excel/excel-add-ins-core-concepts.md)
+* [Concepts fondamentaux de programmation avec l’API JavaScript Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Référence de l’API JavaScript pour Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
+* [Référence de l’API JavaScript d’Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)

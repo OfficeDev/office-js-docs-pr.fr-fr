@@ -2,18 +2,18 @@
 title: Utilisation de tableaux croisés dynamiques à l’aide de l’API JavaScript pour Excel
 description: Utilisez l'API JavaScript pour Excel afin de créer des tableaux croisés dynamiques et d’interagir avec leurs composants.
 ms.date: 09/21/2018
-ms.openlocfilehash: 5245665bad2933df205bcda29e226a965de1c356
-ms.sourcegitcommit: 64da9ed76d22b14df745b1f0ef97a8f5194400e4
+ms.openlocfilehash: 00dd982d4ba4de0db34277cd546b572d4394e258
+ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "25361023"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "25459279"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Utilisation de tableaux croisés dynamiques à l’aide de l’API JavaScript pour Excel
 
 Les tableaux croisés dynamiques rationalisent les jeux de données plus volumineux. Ils permettent la manipulation rapide des données groupées. L’API JavaScript pour Excel permet à votre complément de créer des tableaux croisés dynamiques et d’interagir avec leurs composants. 
 
-Si vous ne connaissez pas les fonctionnalités des tableaux croisés dynamiques, envisagez de les découvrir en tant qu’utilisateur final. Consultez [Créer un tableau croisé dynamique pour analyser les données d’une feuille de calcul](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) afin d’obtenir une présentation de ces outils. 
+Si vous ne connaissez pas les fonctionnalités des tableaux croisés dynamiques, envisagez de les découvrir en tant qu’utilisateur final. Consultez la rubrique [Créer un tableau croisé dynamique pour analyser les données d’une feuille de calcul](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) afin d’obtenir une présentation de ces outils. 
 
 Cet article fournit des exemples de code pour des scénarios courants. Pour améliorer votre compréhension de l'API Tableau croisé dynamique, consultez [**Tableau croisé dynamique**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable) et [**Collection Tableau croisé dynamique**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable).
 
@@ -22,27 +22,27 @@ Cet article fournit des exemples de code pour des scénarios courants. Pour amé
 
 ## <a name="hierarchies"></a>Hiérarchies
 
-Les tableaux croisés dynamiques sont organisés en fonction de quatre catégories de hiérarchie : ligne, colonne, données et filtre. Les données suivantes décrivant des ventes de fruits provenant de différentes fermes seront utilisées dans cet article.
+Les tableaux croisés dynamiques sont organisés en fonction de quatre catégories de hiérarchie : ligne, colonne, données et filtre. Les données suivantes décrivant des ventes de fruits provenant de différentes fermes seront utilisées dans cet article.
 
 ![Collection de ventes de fruits de différents types provenant de différentes fermes.](../images/excel-pivots-raw-data.png)
 
-Ces données ont cinq hiérarchies : **Fermes**, **Type**, **Classification**, **Caisses vendues à la ferme** et **Caisses vendues en gros**. Chaque hiérarchie ne peut exister que dans l’une des quatre catégories. Si le **Type** est ajouté aux hiérarchies de colonnes puis aux hiérarchies de lignes, il ne reste que dans ces dernières.
+Ces données ont cinq hiérarchies : **Fermes**, **Type**, **Classification**, **Caisses vendues à la ferme** et **Caisses vendues en gros**. Chaque hiérarchie ne peut exister que dans l’une des quatre catégories. Si le ** Type** est ajouté aux hiérarchies de colonnes puis aux hiérarchies de lignes, il ne reste que dans ces dernières.
 
-Les hiérarchies de lignes et de colonnes définissent la façon dont les données sont regroupées. Par exemple, une hiérarchie de lignes de **Fermes** regroupe tous les jeux de données provenant de la même ferme. Le choix entre la hiérarchie de lignes et de colonnes définit l'orientation du tableau croisé dynamique.
+Les hiérarchies de lignes et de colonnes définissent la façon dont les données sont regroupées. Par exemple, une hiérarchie de lignes de **Fermes** regroupe tous les jeux de données provenant de la même ferme. Le choix entre la hiérarchie de lignes et de colonnes définit l’orientation du tableau croisé dynamique.
 
 Les hiérarchies de données sont les valeurs à agréger en fonction des hiérarchies de lignes et de colonnes. Un tableau croisé dynamique avec une hiérarchie de lignes de **Fermes** et une hiérarchie de données de **Caisses vendues en gros** affiche la somme totale (par défaut) de tous les différents fruits pour chaque ferme.
 
-Les hiérarchies de filtres incluent ou excluent les données provenant du pivot en fonction des valeurs dans ce type filtré. Une hiérarchie de filtres de **Classification** avec le type **Biologique** sélectionné n'affiche que les données pour les fruits biologiques.
+Les hiérarchies de filtres incluent ou excluent les données provenant du pivot en fonction des valeurs dans ce type filtré. Une hiérarchie de filtres de **Classification** avec le type **Biologique** sélectionné n’affiche que les données pour les fruits biologiques.
 
 Voici à nouveau les données des fermes, à côté d’un tableau croisé dynamique. Le tableau croisé dynamique utilise **Ferme** et **Type** en tant que hiérarchies de lignes, **Caisses vendues à la ferme** et **Caisses vendues en gros** en tant que hiérarchies de données (avec la fonction d’agrégation par défaut de la somme) et **Classification** en tant que hiérarchie de filtres (avec **Biologique** sélectionné). 
 
-![Sélection de données de ventes de fruits à côté d'un tableau croisé dynamique avec les hiérarches de lignes, de données et de filtres.](../images/excel-pivot-table-and-data.png)
+![Sélection de données de ventes de fruits à côté d'un tableau croisé dynamique avec les hiérarchies de lignes, de données et de filtres.](../images/excel-pivot-table-and-data.png)
 
 Ce tableau croisé dynamique peut être généré via l’API JavaScript ou l’interface utilisateur d’Excel. Les deux options permettent une manipulation plus poussée via les compléments.
 
 ## <a name="create-a-pivottable"></a>Créer un tableau croisé dynamique
 
-Les tableaux croisés dynamiques nécessitent un nom, une source et une destination. La source peut être une adresse de plage ou un nom de table (passés comme un type `Range`, `string` ou `Table`). La destination est une adresse de plage (donnée sous forme de `Range` ou `string`). Les exemples suivants présentent différentes techniques de création de tableau croisé dynamique.
+Les tableaux croisés dynamiques nécessitent un nom, une source et une destination. La source peut être une adresse de plage ou un nom de table (passés comme un type `Range`, `string` ou `Table`). La destination est une adresse de plage (donnée sous forme de `Range`  ou `string`). Les exemples suivants illustrent diverses techniques de création de tableau croisé dynamique.
 
 ### <a name="create-a-pivottable-with-range-addresses"></a>Créer un tableau croisé dynamique avec des adresses de plages
 
@@ -99,7 +99,7 @@ await Excel.run(async (context) => {
 
 Les lignes et les colonnes regroupent les données autour des valeurs de ces champs.
 
-L'ajout de la colonne **Ferme** regroupe toutes les ventes autour de chaque ferme. L'ajout des lignes **Type** et **Classification** décompose davantage les données en fonction du fruit vendu et de sa classification biologique ou non.
+L’ajout de la colonne **Ferme** regroupe toutes les ventes autour de chaque ferme. L'ajout des lignes **Type**  et **Classification**  décompose davantage les données en fonction du fruit vendu et de sa classification biologique ou non.
 
 ![Tableau croisé dynamique avec une colonne Ferme et des lignes Type et Classification.](../images/excel-pivots-table-rows-and-columns.png)
 
@@ -131,7 +131,7 @@ await Excel.run(async (context) => {
 
 ## <a name="add-data-hierarchies-to-the-pivottable"></a>Ajouter des hiérarchies de données au tableau croisé dynamique
 
-Les hiérarchies de données remplissent le tableau croisé dynamique avec des informations à combiner en fonction des lignes et des colonnes. L'ajout des hiérarchies de données de **Caisses vendues à la ferme** et **Caisses vendues en gros** donne les sommes de ces chiffres pour chaque ligne et chaque colonne. 
+Les hiérarchies de données remplissent le tableau croisé dynamique avec des informations à combiner en fonction des lignes et des colonnes. L’ajout des hiérarchies de données de **Caisses vendues à la ferme** et **Caisses vendues en gros** donne les sommes de ces chiffres pour chaque ligne et chaque colonne. 
 
 Dans l’exemple, **Ferme** et **Type** sont des lignes, tandis que les ventes de caisses sont les données. 
 
@@ -156,7 +156,7 @@ await Excel.run(async (context) => {
 
 ## <a name="change-aggregation-function"></a>Modifier la fonction d’agrégation
 
-Les hiérarchies de données voient leurs valeurs agrégées. Pour les jeux de données de nombres, il s’agit d’une somme par défaut. Le `summarizeBy` propriété définit ce comportement en fonction d'un `AggregrationFunction` type. 
+Les hiérarchies de données voient leurs valeurs agrégées. Pour les jeux de données de nombres, il s’agit d’une somme par défaut .La propriété `summarizeBy` définit ce comportement en fonction d’un type `AggregrationFunction`. 
 
 Les types de fonctions d’agrégation actuellement prises en charge sont `Sum`, `Count`, `Average`, `Max`, `Min`, `Product`, `CountNumbers`, `StandardDeviation`, `StandardDeviationP`, `Variance`, `VarianceP` et `Automatic` (par défaut).
 
@@ -179,12 +179,12 @@ await Excel.run(async (context) => {
 
 Les tableaux croisés dynamiques agrègent par défaut les données de leurs hiérarchies de ligne et de colonne de manière indépendante. Un objet `ShowAsRule` modifie la hiérarchie de données pour produire des valeurs en fonction des autres éléments du tableau croisé dynamique.
 
-L’objet `ShowAsRule` contient possède trois propriétés :
+L’objet `ShowAsRule` contient possède trois propriétés :
 -   `calculation`: le type de calcul relatif à appliquer à la hiérarchie des données (la valeur par défaut est `none`).
--   `baseField`: le champ dans la hiérarchie contenant les données de base avant le calcul est appliqué. L’objet `PivotField`porte généralement le même nom que sa hiérarchie parent.
--   `baseItem`: l’élément individuel comparé aux valeurs des champs de base en fonction du type de calcul. Tous les calculs ne nécessitent pas ce champ.
+-   `baseField`: le champ dans la hiérarchie contenant les données de base avant le calcul est appliqué. L’objet `PivotField` porte généralement le même nom que sa hiérarchie parent.
+-   `baseItem`:  l’élément individuel comparé aux valeurs des champs de base en fonction du type de calcul. Tous les calculs ne nécessitent pas ce champ.
 
-L’exemple suivant définit le calcul de la hiérarchie de données de la **Somme des caisses vendues à la ferme** comme un pourcentage du total de colonne. Nous voulons quand même que la granularité s’étende au niveau du type de fruits, nous allons donc utiliser la hiérarchie de ligne **Type** et son champ sous-jacent. L’exemple a également **Ferme** comme hiérarchie de la première ligne, afin que les entrées de total de la ferme affichent également le pourcentage que chaque ferme a la responsabilité de produire.
+L’exemple suivant définit le calcul de la hiérarchie de données de la **Somme des caisses vendues à la ferme**  comme un pourcentage du total de colonne. Nous voulons quand même que la granularité s’étende au niveau du type de fruits, nous allons donc utiliser la hiérarchie de ligne ** Type** et son champ sous-jacent. L’exemple a également ** Ferme** comme hiérarchie de la première ligne, afin que les entrées de total de la ferme affichent également le pourcentage que chaque ferme a la responsabilité de produire.
 
 ![Un tableau croisé dynamique affichant les pourcentages des ventes de fruits par rapport à un total général pour les fermes individuelles et les types des fruits dans chaque ferme.](../images/excel-pivots-showas-percentage.png)
 
@@ -209,7 +209,7 @@ await Excel.run(async (context) => {
 
 L’exemple précédent définit le calcul de la colonne, par rapport à une hiérarchie de ligne individuelle. Lorsque le calcul se rapporte à un élément individuel, utilisez la propriété  `baseItem`. 
 
-L'exemple suivant montre le calcul de la propriété `differenceFrom`. Il affiche la différence des entrées de la hiérarchie de données relative aux ventes de caisses des fermes par rapport à celles des « Fermes A ». La propriété `baseField` est **Ferme**, de sorte que nous voir les différences entre les autres fermes, ainsi que des répartitions pour chaque type de fruits comparables (**Type** est également une hiérarchie de ligne dans cet exemple).
+L’exemple ci-dessous illustre le calcul `differenceFrom`. Il affiche la différence des entrées de la hiérarchie de données relative aux ventes de caisses des fermes par rapport à celles des « Fermes A ». La propriété `baseField`  est **Ferme**, de sorte que nous voir les différences entre les autres fermes, ainsi que des répartitions pour chaque type de fruits comparables (**Type** est également une hiérarchie de ligne dans cet exemple).
 
 ![Un tableau croisé dynamique affichant les différences des ventes de fruits entre les « Fermes A » et les autres. Il affiche à la fois la différence dans les ventes de fruits totales des fermes et les ventes des types de fruits. Si les « Fermes A » n’ont pas vendu un type de fruit particulier, « #N/A » s’affiche.](../images/excel-pivots-showas-differencefrom.png)
 
@@ -235,7 +235,7 @@ await Excel.run(async (context) => {
 
 ## <a name="pivottable-layouts"></a>Dispositions des tableaux croisés dynamiques
 
-La disposition d'un tableau croisé dynamique définit le positionnement des hiérarchies et de leurs données. Accéder à la disposition permet de déterminer les plages de stockage des données. 
+La disposition d’un tableau croisé dynamique définit le positionnement des hiérarchies et de leurs données. Accéder à la disposition permet de déterminer les plages de stockage des données. 
 
 Le diagramme suivant présente la correspondance des appels de fonction de disposition avec les plages du tableau croisé dynamique.
 
@@ -260,9 +260,9 @@ await Excel.run(async (context) => {
 });
 ```
 
-Les tableaux croisés dynamiques ont trois styles de disposition : Compact, Plan et Tabulaire. Nous avons vu le style compact dans les exemples précédents. 
+Les tableaux croisés dynamiques ont trois styles de disposition : Compact, Plan et Tabulaire. Nous avons vu le style compact dans les exemples précédents. 
 
-Les exemples suivants utilisent respectivement le style plan et tabulaire. L’exemple de code montre comment passer d'une disposition à une autre.
+Les exemples suivants utilisent respectivement le style plan et tabulaire. L’exemple de code montre comment passer d’une disposition à une autre.
 
 ### <a name="outline-layout"></a>Disposition Plan
 
@@ -304,5 +304,5 @@ await Excel.run(async (context) => {
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Concepts de base de l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
+- [Concepts fondamentaux de programmation avec l’API JavaScript Excel](excel-add-ins-core-concepts.md)
 - [Référence de l’API JavaScript pour Excel](https://docs.microsoft.com/javascript/api/excel)

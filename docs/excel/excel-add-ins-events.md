@@ -2,12 +2,12 @@
 title: Utilisation d’événements à l’aide de l’API JavaScript pour Excel
 description: ''
 ms.date: 09/21/2018
-ms.openlocfilehash: 6da36938d13c540b310fb5870f310681364803e9
-ms.sourcegitcommit: e7e4d08569a01c69168bb005188e9a1e628304b9
+ms.openlocfilehash: b56d25e7e0306b4881115397d4136e63ddc03e5c
+ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "24967696"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "25459174"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Utilisation d’événements à l’aide de l’API JavaScript pour Excel 
 
@@ -31,7 +31,7 @@ Chaque fois que certains types de modifications se produisent dans un classeur E
 
 ### <a name="event-triggers"></a>Déclencheurs d’événements
 
-Événements au sein d’un classeur Excel pouvant être déclenchés par :
+Événements au sein d’un classeur Excel pouvant être déclenchés par :
 
 - Interaction de l’utilisateur via l’interface utilisateur Excel (IU) modifiant le classeur
 - Complément (JavaScript) Office modifiant le classeur
@@ -49,7 +49,7 @@ Avec la [co-création](co-authoring-in-excel-add-ins.md), plusieurs personnes pe
 
 ## <a name="register-an-event-handler"></a>Inscription d’un gestionnaire d’événements
 
-L’exemple de code suivant inscrit un gestionnaire d’événements pour l’événement `onChanged` dans la feuille de calcul **Sample**. Le code indique que la fonction `handleDataChange` doit être exécutée lorsque les données de la feuille de calcul sont modifiées.
+L’exemple de code suivant enregistre un gestionnaire d’événements pour le `onChanged` événement dans la feuille de calcul nommée **Sample**. Le code spécifie que lors de la modification des données dans cette feuille de calcul, la `handleDataChange` fonction doit s’exécuter.
 
 ```js
 Excel.run(function (context) {
@@ -147,4 +147,4 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Concepts de base de l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
+- [Concepts fondamentaux de programmation avec l’API JavaScript Excel](excel-add-ins-core-concepts.md)

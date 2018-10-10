@@ -2,12 +2,12 @@
 title: Appel de fonctions de feuille de calcul Excel intégrées à l’aide de l’API JavaScript pour Excel
 description: ''
 ms.date: 01/24/2017
-ms.openlocfilehash: e709884db0bef36f1ff9a59ebf25d000f160d043
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 4130f6cce3906e2d1f455ec82b5e250d84dcdf9d
+ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945805"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "25459321"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>Appel de fonctions de feuille de calcul Excel intégrées
 
@@ -18,7 +18,7 @@ Cet article explique comment appeler les fonctions de feuille de calcul Excel in
 
 ## <a name="calling-a-worksheet-function"></a>Appel d’une fonction de feuille de calcul
 
-L’extrait de code suivant montre comment appeler une fonction de feuille de calcul où `sampleFunction()` est un espace réservé devant être remplacé par le nom de la fonction à appeler et les paramètres d’entrée nécessitant la fonction. La propriété **value** de l’objet **FunctionResult** renvoyée par une fonction de feuille de calcul contient le résultat de la fonction spécifiée. Comme le montre cet exemple, vous devez charger (`load`) la propriété **value** de l’objet **FunctionResult** avant de pouvoir la lire. Dans cet exemple, le résultat de la fonction est simplement écrit sur la console. 
+L’extrait de code suivant montre comment appeler une fonction de feuille de calcul où `sampleFunction()` est un espace réservé devant être remplacé par le nom de la fonction à appeler et les paramètres d’entrée nécessitant la fonction. La propriété **value** de l’objet **FunctionResult** renvoyée par une fonction de feuille de calcul contient le résultat de la fonction spécifiée. As this example shows, you must the value property of the FunctionResult object before you can read it.Comme le montre cet exemple, vous devez `load` charger () la propriété **value**  de l’objet **FunctionResult**  avant de pouvoir la lire. Dans cet exemple, le résultat de la fonction est simplement écrit sur la console. 
 
 ```js
 var functionResult = context.workbook.functions.sampleFunction(); 
@@ -38,7 +38,7 @@ L’image suivante montre un tableau dans une feuille de calcul Excel contenant 
 
 ![Capture d’écran de données de ventes dans Excel pour les catégories Hammer (Marteau), Wrench (Clé) et Saw (Scie) en novembre, décembre et janvier](../images/worksheet-functions-chaining-results.jpg)
 
-## <a name="example-1-single-function"></a>Exemple 1 : Fonction unique
+## <a name="example-1-single-function"></a>Exemple 1 : Fonction unique
 
 L’exemple de code suivant applique la fonction `VLOOKUP` aux exemples de données décrits précédemment pour identifier le nombre de clés vendues au mois de novembre.
 
@@ -55,7 +55,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="example-2-nested-functions"></a>Exemple 2 : Fonctions imbriquées
+## <a name="example-2-nested-functions"></a>Exemple 2 : Fonctions imbriquées
 
 L’exemple de code suivant applique la fonction `VLOOKUP` pour les exemples de données décrits précédemment afin d’identifier le nombre de clés vendues au mois de novembre et le nombre de clés vendues en décembre, puis applique la fonction `SUM` pour calculer le nombre total de clés vendues au cours de ces deux mois. 
 
@@ -79,7 +79,7 @@ Excel.run(function (context) {
 
 ## <a name="supported-worksheet-functions"></a>Fonctions de feuille de calcul prises en charge
 
-Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être appelées à l’aide de l’API JavaScript pour Excel.
+Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être appelées à l’aide de l’API JavaScript pour Excel. 
 
 | Fonction | Type de retour | Description |
 |:---------------|:-------------|:-----------|
@@ -124,8 +124,8 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 | <a href="https://support.office.com/article/BITLSHIFT-function-c55bb27e-cacd-4c7c-b258-d80861a03c9c" target="_blank">Fonction BITLSHIFT</a> | FunctionResult | Renvoie un nombre décalé vers la gauche de total_décalage bits. |
 | <a href="https://support.office.com/article/BITOR-function-f6ead5c8-5b98-4c9e-9053-8ad5234919b2" target="_blank">Fonction BITOR</a> | FunctionResult | Renvoie une opération OR au niveau du bit de deux nombres |
 | <a href="https://support.office.com/article/BITRSHIFT-function-274d6996-f42c-4743-abdb-4ff95351222c" target="_blank">Fonction BITRSHIFT</a> | FunctionResult | Renvoie un nombre décalé vers la droite de total_décalage bits |
-| <a href="https://support.office.com/article/BITXOR-function-c81306a1-03f9-4e89-85ac-b86c3cba10e4" target="_blank">Fonction BITXOR</a> | FunctionResult | Renvoie une opération Exclusive Or au niveau du bit de deux nombres |
-| <a href="https://support.office.com/article/CEILINGMATH-function-80f95d2f-b499-4eee-9f16-f795a8e306c8" target="_blank">Fonction CEILING.MATH</a> | FunctionResult | Arrondit un nombre à l’entier ou au multiple supérieur le plus proche de l’argument de précision |
+| <a href="https://support.office.com/article/BITXOR-function-c81306a1-03f9-4e89-85ac-b86c3cba10e4" target="_blank">Fonction BITXOR</a> | FunctionResult | Renvoie une opération « Exclusive Or » au niveau du bit de deux nombres |
+| <a href="https://support.office.com/article/CEILINGMATH-function-80f95d2f-b499-4eee-9f16-f795a8e306c8" target="_blank">Fonctions CEILING.MATH, ECMA_CEILING</a> | FunctionResult | Arrondit un nombre à l’entier ou au multiple supérieur le plus proche de l’argument de précision |
 | <a href="https://support.office.com/article/CEILINGPRECISE-function-f366a774-527a-4c92-ba49-af0a196e66cb" target="_blank">Fonction CEILING.PRECISE</a> | FunctionResult | Arrondit un nombre à l’entier ou au multiple le plus proche de l’argument de précision. Quel que soit le signe du nombre, le nombre est arrondi à l’unité supérieure. |
 | <a href="https://support.office.com/article/CHAR-function-bbd249c8-b36e-4a91-8017-1c133f9b837a" target="_blank">Fonction CHAR</a> | FunctionResult | Renvoie le caractère spécifié par le code numérique |
 | <a href="https://support.office.com/article/CHISQDIST-function-8486b05e-5c05-4942-a9ea-f6b341518732" target="_blank">Fonction CHISQ.DIST</a> | FunctionResult | Renvoie la fonction de densité de probabilité bêta cumulative |
@@ -141,7 +141,7 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 | <a href="https://support.office.com/article/COMPLEX-function-f0b8f3a9-51cc-4d6d-86fb-3a9362fa4128" target="_blank">Fonction COMPLEX</a> | FunctionResult | Convertit des coefficients réels et imaginaires en nombre complexe |
 | <a href="https://support.office.com/article/CONCATENATE-function-8f8ae884-2ca8-4f7a-b093-75d702bea31d" target="_blank">Fonction CONCATENATE</a> | FunctionResult | Regroupe plusieurs éléments textuels en un élément textuel |
 | <a href="https://support.office.com/article/CONFIDENCENORM-function-7cec58a6-85bb-488d-91c3-63828d4fbfd4" target="_blank">Fonction CONFIDENCE.NORM</a> | FunctionResult | Renvoie l’intervalle de confiance pour la moyenne d’une population |
-| <a href="https://support.office.com/article/CONFIDENCET-function-e8eca395-6c3a-4ba9-9003-79ccc61d3c53" target="_blank">Fonction CONFIDENCE.T</a> | FunctionResult | Renvoie l’intervalle de confiance pour la moyenne d’une population, à l’aide de la probabilité d’une variable aléatoire suivant une loi T de Student |
+| <a href="https://support.office.com/article/CONFIDENCET-function-e8eca395-6c3a-4ba9-9003-79ccc61d3c53" target="_blank">Fonction CONFIDENCE.T</a> | FunctionResult | Renvoie l’intervalle de confiance pour la moyenne d’une population, à l’aide d'une distribution suivant la loi T de Student |
 | <a href="https://support.office.com/article/CONVERT-function-d785bef1-808e-4aac-bdcd-666c810f9af2" target="_blank">Fonction CONVERT</a> | FunctionResult | Convertit un nombre d’un système de mesure à un autre |
 | <a href="https://support.office.com/article/COS-function-0fb808a5-95d6-4553-8148-22aebdce5f05" target="_blank">Fonction COS</a> | FunctionResult | Renvoie le cosinus d’un nombre |
 | <a href="https://support.office.com/article/COSH-function-e460d426-c471-43e8-9540-a57ff3b70555" target="_blank">Fonction COSH</a> | FunctionResult | Renvoie le cosinus hyperbolique d’un nombre |
@@ -184,7 +184,7 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 | <a href="https://support.office.com/article/DISC-function-71fce9f3-3f05-4acf-a5a3-eac6ef4daa53" target="_blank">Fonction DISC</a> | FunctionResult | Renvoie le taux d’escompte d’un titre |
 | <a href="https://support.office.com/article/DMAX-function-f4e8209d-8958-4c3d-a1ee-6351665d41c2" target="_blank">Fonction DMAX</a> | FunctionResult | Renvoie la valeur maximale des entrées de base de données sélectionnées |
 | <a href="https://support.office.com/article/DMIN-function-4ae6f1d9-1f26-40f1-a783-6dc3680192a3" target="_blank">Fonction DMIN</a> | FunctionResult | Renvoie la valeur minimale des entrées de base de données sélectionnées |
-| <a href="https://support.office.com/article/DOLLAR-function-a6cd05d9-9740-4ad3-a469-8109d18ff611" target="_blank">Fonction DOLLAR</a> | FunctionResult | Convertit un nombre en texte en utilisant le format monétaire $ (dollar) |
+| <a href="https://support.office.com/article/DOLLAR-function-a6cd05d9-9740-4ad3-a469-8109d18ff611" target="_blank">Fonctions DOLLAR, USDOLLAR</a> | FunctionResult | Convertit un nombre en texte en utilisant le format monétaire $ (dollar) |
 | <a href="https://support.office.com/article/DOLLARDE-function-db85aab0-1677-428a-9dfd-a38476693427" target="_blank">Fonction DOLLARDE</a> | FunctionResult | Convertit un prix en dollars, exprimé sous forme de fraction, en un prix en dollars exprimé sous forme de nombre décimal |
 | <a href="https://support.office.com/article/DOLLARFR-function-0835d163-3023-4a33-9824-3042c5d4f495" target="_blank">Fonction DOLLARFR</a> | FunctionResult | Convertit un prix en dollars, exprimé sous forme de nombre décimal, en un prix en dollars exprimé sous forme de fraction |
 | <a href="https://support.office.com/article/DPRODUCT-function-4f96b13e-d49c-47a7-b769-22f6d017cb31" target="_blank">Fonction DPRODUCT</a> | FunctionResult | Multiplie les valeurs d’un champ particulier dans des enregistrements correspondant aux critères d’une base de données |
@@ -192,7 +192,7 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 | <a href="https://support.office.com/article/DSTDEVP-function-04b78995-da03-4813-bbd9-d74fd0f5d94b" target="_blank">Fonction DSTDEVP</a> | FunctionResult | Calcule l’écart type en fonction de l’ensemble des entrées de base de données sélectionnées |
 | <a href="https://support.office.com/article/DSUM-function-53181285-0c4b-4f5a-aaa3-529a322be41b" target="_blank">Fonction DSUM</a> | FunctionResult | Ajoute les nombres dans la colonne Champ des enregistrements de la base de données correspondant aux critères |
 | <a href="https://support.office.com/article/DURATION-function-b254ea57-eadc-4602-a86a-c8e369334038" target="_blank">Fonction DURATION</a> | FunctionResult | Renvoie la durée annuelle d’un titre dont les intérêts sont perçus périodiquement |
-| <a href="https://support.office.com/article/DVAR-function-d6747ca9-99c7-48bb-996e-9d7af00f3ed1" target="_blank">Fonction DVAR</a> | FunctionResult | Estime la variance en fonction d’un échantillon d’entrées de base de données sélectionnées |
+| <a href="https://support.office.com/article/DVAR-function-d6747ca9-99c7-48bb-996e-9d7af00f3ed1" target="_blank">Fonction DVAR</a> | FunctionResult | Fonction DVAR |
 | <a href="https://support.office.com/article/DVARP-function-eb0ba387-9cb7-45c8-81e9-0394912502fc" target="_blank">Fonction DVARP</a> | FunctionResult | Calcule la variance en fonction de l’ensemble des entrées de base de données sélectionnées |
 | <a href="https://support.office.com/article/EDATE-function-3c920eb2-6e66-44e7-a1f5-753ae47ee4f5" target="_blank">Fonction EDATE</a> | FunctionResult | Renvoie le numéro de série de la date qui représente le nombre indiqué de mois précédant ou suivant la date de début |
 | <a href="https://support.office.com/article/EFFECT-function-910d4e4c-79e2-4009-95e6-507e04f11bc4" target="_blank">Fonction EFFECT</a> | FunctionResult | Renvoie le taux d’intérêt annuel effectif |
@@ -217,15 +217,8 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 | <a href="https://support.office.com/article/FISHER-function-d656523c-5076-4f95-b87b-7741bf236c69" target="_blank">Fonction FISHER</a> | FunctionResult | Renvoie la transformation de Fisher |
 | <a href="https://support.office.com/article/FISHERINV-function-62504b39-415a-4284-a285-19c8e82f86bb" target="_blank">Fonction FISHERINV</a> | FunctionResult | Renvoie l’inverse de la transformation de Fisher |
 | <a href="https://support.office.com/article/FIXED-function-ffd5723c-324c-45e9-8b96-e41be2a8274a" target="_blank">Fonction FIXED</a> | FunctionResult | Convertit un nombre en texte avec un nombre de décimales fixe |
-| <a href="https://support.office.com/article/FLOOR-function-14bb497c-24f2-4e04-b327-b0b4de5a8886" target="_blank">Fonction FLOOR</a> | FunctionResult | Arrondit un nombre à la valeur d’arrondi la plus proche de zéro |
 | <a href="https://support.office.com/article/FLOORMATH-function-c302b599-fbdb-4177-ba19-2c2b1249a2f5" target="_blank">Fonction FLOOR.MATH</a> | FunctionResult | Arrondit un nombre à l’entier ou au multiple inférieur le plus proche de l’argument de précision |
 | <a href="https://support.office.com/article/FLOORPRECISE-function-f769b468-1452-4617-8dc3-02f842a0702e" target="_blank">Fonction FLOOR.PRECISE</a> | FunctionResult | Arrondit un nombre à l’entier ou au multiple inférieur le plus proche de l’argument de précision. Quel que soit le signe du nombre, le nombre est arrondi à l’unité inférieure. |
-| <a href="https://support.office.com/article/FORECAST-function-50ca49c9-7b40-4892-94e4-7ad38bbeda99" target="_blank">Fonction FORECAST</a> | FunctionResult | Renvoie une valeur par rapport à une tendance linéaire |
-| <a href="https://support.office.com/article/FORECASTETS-function-897a2fe9-6595-4680-a0b0-93e0308d5f6e" target="_blank">Fonction FORECAST.ETS</a> | FunctionResult | Renvoie une valeur future en fonction des valeurs (historiques) existantes en utilisant la version AAA de l’algorithme de lissage exponentiel |
-| <a href="https://support.office.com/article/FORECASTETSCONFINT-function-897a2fe9-6595-4680-a0b0-93e0308d5f6e" target="_blank">Fonction FORECAST.ETS.CONFINT</a> | FunctionResult | Renvoie un intervalle de confiance pour la valeur de prévision à la date cible spécifiée |
-| <a href="https://support.office.com/article/FORECASTETSSEASONALITY-function-897a2fe9-6595-4680-a0b0-93e0308d5f6e" target="_blank">Fonction FORECAST.ETS.SEASONALITY</a> | FunctionResult | Renvoie la longueur du motif répété qu’Excel détecte pour la série temporelle spécifiée |
-| <a href="https://support.office.com/article/FORECASTETSSTAT-function-897a2fe9-6595-4680-a0b0-93e0308d5f6e" target="_blank">Fonction FORECAST.ETS.STAT</a> | FunctionResult | Renvoie une valeur statistique suite à une prévision de série chronologique |
-| <a href="https://support.office.com/article/FORECASTLINEAR-function-897a2fe9-6595-4680-a0b0-93e0308d5f6e" target="_blank">Fonction FORECAST.LINEAR</a> | FunctionResult | Renvoie une valeur future en fonction des valeurs existantes |
 | <a href="https://support.office.com/article/FV-function-2eef9f44-a084-4c61-bdd8-4fe4bb1b71b3" target="_blank">Fonction FV</a> | FunctionResult | Renvoie la valeur future d’un investissement |
 | <a href="https://support.office.com/article/FVSCHEDULE-function-bec29522-bd87-4082-bab9-a241f3fb251d" target="_blank">Fonction FVSCHEDULE</a> | FunctionResult | Renvoie la valeur future d’un investissement en appliquant une série de taux d’intérêt composites |
 | <a href="https://support.office.com/article/GAMMA-function-ce1702b1-cf55-471d-8307-f83be0fc5297" target="_blank">Fonction GAMMA</a> | FunctionResult | Renvoie la valeur de la fonction Gamma |
@@ -355,7 +348,6 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 | <a href="https://support.office.com/article/PRICE-function-3ea9deac-8dfa-436f-a7c8-17ea02c21b0a" target="_blank">Fonction PRICE</a> | FunctionResult | Renvoie le prix par valeur faciale de 100 dollars d’un titre dont les intérêts sont payés périodiquement |
 | <a href="https://support.office.com/article/PRICEDISC-function-d06ad7c1-380e-4be7-9fd9-75e3079acfd3" target="_blank">Fonction PRICEDISC</a> | FunctionResult | Renvoie le prix par valeur faciale de 100 dollars pour un titre escompté |
 | <a href="https://support.office.com/article/PRICEMAT-function-52c3b4da-bc7e-476a-989f-a95f675cae77" target="_blank">Fonction PRICEMAT</a> | FunctionResult | Renvoie le prix par valeur faciale de 100 dollars d’un titre dont les intérêts sont payés à échéance |
-| <a href="https://support.office.com/article/PROB-function-9ac30561-c81c-4259-8253-34f0a238fc49" target="_blank">Fonction PROB</a> | FunctionResult | Renvoie la probabilité que des valeurs dans une plage soient comprises entre deux limites |
 | <a href="https://support.office.com/article/PRODUCT-function-8e6b5b24-90ee-4650-aeec-80982a0512ce" target="_blank">Fonction PRODUCT</a> | FunctionResult | Multiplie ses arguments |
 | <a href="https://support.office.com/article/PROPER-function-52a5a283-e8b2-49be-8506-b2887b889f94" target="_blank">Fonction PROPER</a> | FunctionResult | Met en majuscule la première lettre de chaque mot d’une valeur textuelle |
 | <a href="https://support.office.com/article/PV-function-23879d31-0e02-4321-be01-da16e8168cbd" target="_blank">Fonction PV</a> | FunctionResult | Renvoie la valeur actuelle d’un investissement |
@@ -378,7 +370,6 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 | <a href="https://support.office.com/article/ROUNDUP-function-f8bc9b23-e795-47db-8703-db171d0c42a7" target="_blank">Fonction ROUNDUP</a> | FunctionResult | Arrondit un nombre à la valeur d’arrondi la plus éloignée de zéro |
 | <a href="https://support.office.com/article/ROWS-function-b592593e-3fc2-47f2-bec1-bda493811597" target="_blank">Fonction ROWS</a> | FunctionResult | Renvoie le nombre de lignes dans une référence |
 | <a href="https://support.office.com/article/RRI-function-6f5822d8-7ef1-4233-944c-79e8172930f4" target="_blank">Fonction RRI</a> | FunctionResult | Renvoie un taux d’intérêt équivalent pour la croissance d’un investissement |
-| <a href="https://support.office.com/article/RTD-function-e0cc001a-56f0-470a-9b19-9455dc0eb593" target="_blank">Fonction RTD</a> | FunctionResult | Extrait les données en temps réel d’un programme qui prend en charge l’automatisation COM |
 | <a href="https://support.office.com/article/SEC-function-ff224717-9c87-4170-9b58-d069ced6d5f7" target="_blank">Fonction SEC</a> | FunctionResult | Renvoie la sécante d’un angle |
 | <a href="https://support.office.com/article/SECH-function-e05a789f-5ff7-4d7f-984a-5edb9b09556f" target="_blank">Fonction SECH</a> | FunctionResult | Renvoie la sécante hyperbolique d’un angle |
 | <a href="https://support.office.com/article/SECOND-function-740d1cfc-553c-4099-b668-80eaa24e8af1" target="_blank">Fonction SECOND</a> | FunctionResult | Convertit un numéro de série en seconde |
@@ -389,7 +380,7 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 | <a href="https://support.office.com/article/SIN-function-cf0e3432-8b9e-483c-bc55-a76651c95602" target="_blank">Fonction SIN</a> | FunctionResult | Renvoie le sinus d’un angle donné |
 | <a href="https://support.office.com/article/SINH-function-1e4e8b9f-2b65-43fc-ab8a-0a37f4081fa7" target="_blank">Fonction SINH</a> | FunctionResult | Renvoie le sinus hyperbolique d’un nombre |
 | <a href="https://support.office.com/article/SKEW-function-bdf49d86-b1ef-4804-a046-28eaea69c9fa" target="_blank">Fonction SKEW</a> | FunctionResult | Renvoie l’asymétrie d’une distribution |
-| <a href="https://support.office.com/article/SKEWP-function-76530a5c-99b9-48a1-8392-26632d542fcb" target="_blank">Fonction SKEW.P</a> | FunctionResult | Renvoie l’asymétrie d’une distribution en fonction d’une population : la caractérisation du degré d’asymétrie d’une distribution par rapport à sa moyenne |
+| <a href="https://support.office.com/article/SKEWP-function-76530a5c-99b9-48a1-8392-26632d542fcb" target="_blank">Fonction SKEW.P</a> | FunctionResult | Renvoie l’asymétrie d’une distribution en fonction d’une population : la caractérisation du degré d’asymétrie d’une distribution par rapport à sa moyenne |
 | <a href="https://support.office.com/article/SLN-function-cdb666e5-c1c6-40a7-806a-e695edc2f1c8" target="_blank">Fonction SLN</a> | FunctionResult | Renvoie l’amortissement linéaire d’une immobilisation pour une période |
 | <a href="https://support.office.com/article/SMALL-function-17da8222-7c82-42b2-961b-14c45384df07" target="_blank">Fonction SMALL</a> | FunctionResult | Renvoie la k-ième plus petite valeur d’un jeu de données |
 | <a href="https://support.office.com/article/SQRT-function-654975c2-05c4-4831-9a24-2c65e4040fdf" target="_blank">Fonction SQRT</a> | FunctionResult | Renvoie une racine carrée positive |
@@ -432,7 +423,7 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 | <a href="https://support.office.com/article/VALUE-function-257d0108-07dc-437d-ae1c-bc2d3953d8c2" target="_blank">Fonction VALUE</a> | FunctionResult | Convertit un argument textuel en nombre |
 | <a href="https://support.office.com/article/VARP-function-73d1285c-108c-4843-ba5d-a51f90656f3a" target="_blank">Fonction VAR.P</a> | FunctionResult | Calcule l’écart en fonction de la population entière |
 | <a href="https://support.office.com/article/VARS-function-913633de-136b-449d-813e-65a00b2b990b" target="_blank">Fonction VAR.S</a> | FunctionResult | Fournit une estimation de l’écart à partir d’un échantillon |
-| <a href="https://support.office.com/article/VARA-function-3de77469-fa3a-47b4-85fd-81758a1e1d07" target="_blank">Fonction VARA</a> | FunctionResult | Évalue la varianceen fonction d’un échantillon, y compris les nombres, le texte et les valeurs logiques |
+| <a href="https://support.office.com/article/VARA-function-3de77469-fa3a-47b4-85fd-81758a1e1d07" target="_blank">Fonction VARA</a> | FunctionResult | Évalue la variance en fonction d’un échantillon, y compris les nombres, le texte et les valeurs logiques |
 | <a href="https://support.office.com/article/VARPA-function-59a62635-4e89-4fad-88ac-ce4dc0513b96" target="_blank">Fonction VARPA</a> | FunctionResult | Calcule la variance en fonction de la population entière, y compris les nombres, le texte et les valeurs logiques |
 | <a href="https://support.office.com/article/VDB-function-dde4e207-f3fa-488d-91d2-66d55e861d73" target="_blank">Fonction VDB</a> | FunctionResult | Renvoie l’amortissement d’un bien durant une période spécifiée ou partielle en utilisant une méthode d’amortissement dégressif |
 | <a href="https://support.office.com/article/VLOOKUP-function-0bbc8083-26fe-4963-8ab8-93a18ad188a1" target="_blank">Fonction VLOOKUP</a> | FunctionResult | Cherche dans la première colonne d’un tableau et se déplace horizontalement pour renvoyer la valeur d’une cellule |
@@ -453,6 +444,6 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Concepts de base de l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
-- [Spécification d’ouverture d’API JavaScript pour Excel](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
-- [Objet de fonctions de feuille de calcul (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheet?view=office-js)
+- [Concepts fondamentaux de programmation avec l’API JavaScript Excel](excel-add-ins-core-concepts.md)
+- [Classe de fonctions (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.functions)
+- [Objet de fonctions Workbook (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.workbook#functions)

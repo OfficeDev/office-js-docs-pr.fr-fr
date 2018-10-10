@@ -2,16 +2,16 @@
 title: Utilisation de plages à l’aide de l’API JavaScript pour Excel
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: dea015c028d58a708bb83f79fcbfebc3cf3bfc1e
-ms.sourcegitcommit: e7e4d08569a01c69168bb005188e9a1e628304b9
+ms.openlocfilehash: 246b882a921b5a43ca747238262af7c4b23c97ee
+ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "24967710"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "25459167"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Utilisation de plages à l’aide de l’API JavaScript pour Excel
 
-Cet article fournit des exemples de code qui expliquent comment effectuer des tâches courantes avec des plages à l’aide de l’API JavaScript pour Excel. Pour obtenir une liste complète des propriétés et des méthodes prises en charge par l’objet **Range**, reportez-vous à la rubrique [Objet Range (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range).
+Cet article fournit des exemples de codes qui montrent comment effectuer des tâches courantes avec des plages à l’aide de l’API JavaScript pour Excel. Pour obtenir la liste complète des propriétés et méthodes que l’objet **Range** prend en charge , voir [l’objet Range (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range).
 
 ## <a name="get-a-range"></a>Obtenir une plage
 
@@ -53,7 +53,7 @@ Excel.run(function (context) {
 
 ### <a name="get-used-range"></a>Obtenir une plage utilisée
 
-L’exemple de code suivant obtient la plage  utilisée dans la feuille de calcul nommée **Sample**, charge sa propriété **address** et écrit un message dans la console. La plage utilisée est la plus petite plage qui englobe toutes les cellules de la feuille de calcul auxquelles une valeur ou un format est affecté. Si la feuille de calcul entière est vide, la méthode **getUsedRange()** renvoie une plage qui se compose d’uniquement de la cellule en haut à gauche de la feuille de calcul.
+L’exemple de code suivant obtient la plage utilisée dans la feuille de calcul nommée **Sample**charge sa propriété **address** et écrit un message dans la console. La plage utilisée est la plus petite plage qui englobe des cellules dans la feuille de calcul qui ont une valeur ou une mise en forme attribuée. Si la feuille de calcul entière est vide, la méthode **getUsedRange()** renvoie une plage qui comprend uniquement la cellule en haut à gauche dans la feuille de calcul.
 
 ```js
 Excel.run(function (context) {
@@ -171,11 +171,11 @@ Excel.run(function (context) {
 
 **Plage sélectionnée  B2:E6**
 
-![Plage sélectionnée dans Excel](../images/excel-ranges-set-selection.png)
+![Plage sélectionnée  B2:E6](../images/excel-ranges-set-selection.png)
 
 ## <a name="get-the-selected-range"></a>Obtenir la plage sélectionnée
 
-L’exemple de code suivant recherche la plage  sélectionnée, charge sa propriété **address** et écrit un message dans la console. 
+L’exemple de code suivant recherche la plage sélectionnée, charge sa propriété **address** et écrit un message dans la console. 
 
 ```js
 Excel.run(function (context) {
@@ -195,7 +195,7 @@ Les exemples suivants indiquent comment définir des valeurs et des formules pou
 
 ### <a name="set-value-for-a-single-cell"></a>Définir une valeur pour une cellule unique
 
-L’exemple de code suivant définit la valeur de la cellule **C3** sur « 5 », puis définit la largeur des colonnes pour mieux s’adapter aux données.
+L’exemple de code suivant définit la valeur de la cellule **C3** à « 5 », puis définit la largeur des colonnes pour mieux s’adapter aux données.
 
 ```js
 Excel.run(function (context) {
@@ -306,7 +306,7 @@ Ces exemples montrent comment obtenir des valeurs, du texte et des formules à p
 
 ### <a name="get-values-from-a-range-of-cells"></a>Obtenir des valeurs à partir d’une plage de cellules
 
-L’exemple de code suivant obtient la plage **B2:E6**, charge la propriété **values** et écrit les valeurs dans la console. La propriété **values** d’une plage spécifie les valeurs brutes contenues dans les cellules. Même si certaines cellules d’une plage contiennent des formules, la propriété **values** de la plage spécifie les valeurs brutes des cellules, et non des formules.
+L’exemple de code suivant obtient la plage **B2:E6**charge sa propriété  **values** et écrit les valeurs dans la console. La propriété **values** d'une plage indique les valeurs brutes que contiennent les cellules. Même si certaines cellules d’une plage contiennent des formules, la propriété **values** de la plage indique les valeurs brutes pour ces cellules, et non les formules.
 
 ```js
 Excel.run(function (context) {
@@ -364,7 +364,7 @@ Excel.run(function (context) {
 
 ### <a name="get-text-from-a-range-of-cells"></a>Obtenir du texte à partir d’une plage de cellules
 
-L’exemple de code suivant obtient la plage **B2:E6**, charge sa propriété **text** et l’écrit dans la console.  La propriété **text** d’une plage spécifie les valeurs d’affichage pour les cellules de la plage. Même si certaines cellules d’une plage contiennent des formules, la propriété **text** de la plage indique les valeurs d’affichage pour ces cellules, et non des formules.
+L’exemple de code suivant obtient la plage **B2:E6**, charge sa propriété **text** et écrit dans la console.  La propriété **text** d’une plage indique les valeurs d'affichage pour les cellules de la plage. Même si certaines cellules d’une plage contiennent des formules, la propriété **text** de la plage indique les valeurs d'affichage pour ces cellules, et non les formules.
 
 ```js
 Excel.run(function (context) {
@@ -422,7 +422,7 @@ Excel.run(function (context) {
 
 ### <a name="get-formulas-from-a-range-of-cells"></a>Obtenir des formules à partir d’une plage de cellules
 
-L’exemple de code suivant obtient la plage **B2:E6**, charge sa propriété **formulas** et l’écrit dans la console.  La propriété **formulas** d’une plage spécifie les formules pour les cellules de la plage contenant des formules et des valeurs brutes pour les cellules de la plage ne contenant pas de formule.
+L’exemple de code suivant obtient la plage **B2:E6**, charge sa propriété **formulas** et écrit dans la console.  La propriété **formulas** d’une plage indique les formules des cellules de la plage qui contiennent des formules et les valeurs brutes pour les cellules de la plage qui ne contiennent pas de formules.
 
 ```js
 Excel.run(function (context) {
@@ -500,7 +500,7 @@ Excel.run(function (context) {
 
 **Données de la plage avant la définition de la couleur de police et de la couleur de remplissage**
 
-![Données dans Excel de la plage avant la définition de la couleur de police et de la couleur de remplissage](../images/excel-ranges-format-before.png)
+![Données dans Excel de la plage avant la définition du format](../images/excel-ranges-format-before.png)
 
 **Données de la plage après la définition de la couleur de police et de la couleur de remplissage**
 
@@ -529,7 +529,7 @@ Excel.run(function (context) {
 
 **Données de la plage avant la définition du format de nombre**
 
-![Données dans Excel de la plage avant la définition de la couleur de police et de la couleur de remplissage](../images/excel-ranges-format-font-and-fill.png)
+![Données dans Excel de la plage avant la définition du format](../images/excel-ranges-format-font-and-fill.png)
 
 **Données de la plage après la définition du format de nombre**
 
@@ -538,10 +538,9 @@ Excel.run(function (context) {
 ## <a name="copy-and-paste"></a>Copier et coller
 
 > [!NOTE]
-> La fonction copyFrom est uniquement disponible en version d’évaluation (bêta). Pour utiliser cette fonctionnalité, vous devez utiliser la bibliothèque de la version bêta du CDN Office.js : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-> Si vous utilisez TypeScript ou si votre éditeur de code utilise un fichier de définition de type TypeScript pour IntelliSense, utilisez https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+> La fonction copyFrom est actuellement disponible dans la préversion publique (bêta) uniquement. Pour utiliser cette caractéristique, vous devez utiliser la bibliothèque de la version bêta du RDC Office.js : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js. Si vous utilisez TypeScript ou si votre éditeur de code utilise des fichiers de définition de type TypeScript pour IntelliSense, utilisez https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
 
-La fonction copyFrom d’une plage réplique le comportement de copie et collage de l’interface utilisateur d’Excel. L’objet plage sur lequel la fonction copyFrom est appelée est la destination. La source à copier est transmise en tant que plage ou adresse de type chaîne représentant une plage. L’exemple de code suivant copie les données de la plage **A1:E1** dans la plage qui commence à **G1** (ce qui revient à coller dans la plage **G1:K1**).
+La fonction copyFrom de la plage reproduit le comportement de copier-coller de l’interface utilisateur d’Excel. L'objet de la plage sur lequel copyFrom est sollicité représente la destination. La source de copie est transmise en tant que plage ou adresse de type chaîne représentant une plage. L’exemple de code suivant copie les données de **A1:E1** vers la plage qui commence à **G1** (finalement collées sur **G1:K1**).
 
 ```js
 Excel.run(function (context) {
@@ -558,13 +557,9 @@ Range.copyFrom comporte trois paramètres facultatifs.
 copyFrom(sourceRange: Range | string, copyType?: "All" | "Formulas" | "Values" | "Formats", skipBlanks?: boolean, transpose?: boolean): void;
 ``` 
 
-`copyType` spécifie quelles données sont copiées de la source à la destination. 
-`“Formulas”` transfère les formules dans les cellules de la source et conserve le positionnement relatif des plages de ces formules. Toutes les entrées sans formule sont copiées telles quelles. 
-`“Values”` copie les valeurs de données et, dans le cas des formules, le résultat de la formule. 
-`“Formats”` copie la mise en forme de la plage, notamment la police, la couleur et les autres paramètres de format, mais sans les valeurs. 
-`”All”` (l’option par défaut) copie les données et la mise en forme, en conservant les formules des cellules s’il y en a.
+`copyType` indique quelles données sont copiées de la source vers la destination.`“Formulas”` transfère les formules dans les cellules source et préserve la position relative de ces plages de formules. Aucune entrée sans formule n'est copiée tel quel. `“Values”` copie les valeurs des données et, dans le cas des formules, le résultat des formules.`“Formats”` copie le format de la plage, y compris la police, la couleur et les autres paramètres de format, mais non les valeurs. `”All”` (l'option par défaut) copie les données et le format, en préservant les formules des cellules le cas échéant.
 
-`skipBlanks` indique si les cellules vides sont copiées dans la destination. Lorsque cette condition est vraie, `copyFrom` ignore les cellules vides de la plage source. Les cellules ignorées ne remplacent pas les données existantes des cellules correspondantes dans la plage de destination. Faux est la condition par défaut.
+`skipBlanks` indique si les cellules vides sont copiées vers la destination. Lorsque c'est le cas, `copyFrom` ignore les cellules vides de la plage source. Les cellules ignorées ne remplacent pas les données existantes de leurs cellules correspondantes dans la plage de destination. La valeur par défaut est fausse.
 
 L’exemple de code et les images suivants illustrent ce comportement dans un scénario simple. 
 
@@ -593,10 +588,10 @@ Excel.run(function (context) {
 
 ![Données dans Excel après l’exécution de la méthode de copie de plage.](../images/excel-range-copyfrom-skipblanks-after.png)
 
-`transpose` détermine si les données sont transposées, ce qui signifie que ses lignes et colonnes sont interchangées, dans l’emplacement source. Une plage transposée est inversée le long de la diagonale principale, afin que les lignes **1**, **2**et **3** deviennent les colonnes **A**, **B**et **C**. 
+`transpose` détermine si les données sont transposées, ce qui signifie que ses lignes et colonnes sont activées, à l’emplacement source. Une plage transposée pivote le long de la diagonale principale, pour que les lignes **1**, **2**et **3** deviennent les colonnes **A**, **B**et **C**. 
 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Concepts de base de l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
+- [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
 

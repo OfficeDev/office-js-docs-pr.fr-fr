@@ -4,9 +4,9 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 
 ## <a name="environment"></a>Environnement
 
-- **Office pour ordinateur de bureau** : Assurez-vous de disposer de la dernière version d'Office. Les commandes du complément nécessitent la version 16.0.6769.0000 ou supérieure (la version **16.0.6868.0000** est conseillée). Apprenez à [Installer la dernière version des applications Office](http://aka.ms/latestoffice). 
+- **Office pour ordinateur de bureau**:  Assurez-vous de disposer de la dernière version d'Office. Les commandes du complément nécessitent la version 16.0.6769.0000 ou supérieure (la version**16.0.6868.0000** est conseillée). Apprenez à [Installer la dernière version des applications Office](http://aka.ms/latestoffice). 
  
-- **Office Online** : Aucune installation supplémentaire n'est nécessaire. Notez que la prise en charge des commandes au sein d'Office Online pour les comptes professionnels / scolaires est actuellement en préversion.
+- **Office Online**: Aucune installation supplémentaire n'est nécessaire. Notez que la prise en charge des commandes au sein d'Office Online pour les comptes professionnels / scolaires est actuellement en préversion.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -34,10 +34,10 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
     ```
 
     - **Choisissez un type de projet :** `Office Add-in project using React framework`
-    - **Comment souhaitez-vous nommer votre complément ? :** `My Office Add-in`
+    - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
     - **Quelle application client Office voulez-vous prendre en charge ? :** `Excel`
 
-    ![Le générateur Yeoman](../images/yo-office-excel-react.png)
+    ![Générateur Yeoman](../images/yo-office-excel-react.png)
     
     Une fois que vous avez terminé avec l'assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -59,7 +59,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 
 6. Effectuez les étapes décrites dans la rubrique relative à l’[Ajout de certificats auto-signés comme certificat racine approuvé](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) pour approuver le certificat pour le système d’exploitation de votre ordinateur de développement.
 
-7. Chargez une version test de votre complément afin qu’il apparaisse dans Excel. Dans le terminal, exécutez la commande suivante : 
+7. Chargez une version test de votre complément afin qu’il apparaisse dans Excel. Dans le terminal, exécutez la commande suivante : 
     
     ```bash
     npm run sideload
@@ -74,9 +74,9 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
     npm start
     ```
 
-2. |||UNTRANSLATED_CONTENT_START|||In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.|||UNTRANSLATED_CONTENT_END|||
+2. Dans Word, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
-    ![Bouton Complément Excel](../images/excel-quickstart-addin-2b.png)
+    ![Bouton de Complément Excel](../images/excel-quickstart-addin-2b.png)
 
 3. Sélectionnez une plage de cellules dans la feuille de calcul.
 
@@ -94,6 +94,6 @@ Félicitations, vous avez créé un complément Excel à l’aide de React ! Dé
 ## <a name="see-also"></a>Voir aussi
 
 * [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial-create-table.md)
-* [Concepts de base de l’API JavaScript pour Excel](../excel/excel-add-ins-core-concepts.md)
+* [Concepts fondamentaux de programmation avec l’API JavaScript Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Référence de l’API JavaScript pour Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
+* [Référence de l’API JavaScript d’Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
