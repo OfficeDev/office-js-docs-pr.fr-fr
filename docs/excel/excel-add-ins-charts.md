@@ -2,20 +2,20 @@
 title: Utiliser des graphiques à l’aide de l’API JavaScript pour Excel
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: c0f45892cb937a565a6855390344855f75e7473e
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 80b537ec66caf6e173dfe4453a257c5963156e6f
+ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437443"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "25459300"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Utiliser des graphiques à l’aide de l’API JavaScript pour Excel
 
-Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes à l’aide de graphiques utilisant l’API JavaScript pour Excel. Pour une liste complète des propriétés et des méthodes prises en charge par les objets **Chart** et **ChartCollection**, reportez-vous à la rubrique [Objet Chart (API JavaScript pour Excel)](https://dev.office.com/reference/add-ins/excel/chart) et [Objet ChartCollection (API JavaScript pour Excel)](https://dev.office.com/reference/add-ins/excel/chartcollection).
+Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes avec des graphiques à l’aide de l’API JavaScript Excel. Pour obtenir la liste complète des propriétés et méthodes prises en charge par les objets **Chart** et **ChartCollection**, voir l’[Objet Chart (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.chart?view=office-js) et l’[Objet Collection Graphique (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection?view=office-js).
 
 ## <a name="create-a-chart"></a>Créer un graphique
 
-L’exemple de code suivant crée un graphique dans la feuille de calcul nommée **Sample**. Il s’agit d’un graphique en **courbes** qui est fondé sur les données de la plage **A1:B13**.
+L’exemple de code suivant crée un graphique dans la feuille de calcul nommée **Sample**. Le graphique est un graphique en **courbes** basé sur des données de la plage **A1:B13**.
 
 ```js
 Excel.run(function (context) {
@@ -41,9 +41,6 @@ Excel.run(function (context) {
 ## <a name="add-a-data-series-to-a-chart"></a>Ajouter une série de données à un graphique
 
 L’exemple de code suivant ajoute une série de données au premier graphique de la feuille de calcul. La nouvelle série de données correspond à la colonne nommée **2016** et repose sur les données de la plage **D2:D5**.
-
-> [!NOTE]
-> Cet exemple utilise des API qui ne sont actuellement disponibles qu'en préversion publique (bêta). Pour exécuter cet exemple de code, vous devez utiliser la bibliothèque bêta du CDN Office.js : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
 ```js
 Excel.run(function (context) {
@@ -112,9 +109,6 @@ Excel.run(function (context) {
 
 L’exemple de code suivant définit l’unité d’affichage de l’axe des ordonnées pour le premier graphique de la feuille de calcul sur **Hundreds**.
 
-> [!NOTE]
-> Cet exemple utilise des API qui ne sont actuellement disponibles qu'en préversion publique (bêta). Pour exécuter cet exemple de code, vous devez utiliser la bibliothèque bêta du CDN Office.js : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-
 ```js
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
@@ -155,9 +149,6 @@ Excel.run(function (context) {
 
 L’exemple de code suivant ajoute une courbe de tendance de moyenne mobile à la première série du premier graphique de la feuille de calcul nommée **Sample**. La courbe de tendance affiche une moyenne mobile sur 5 périodes.
 
-> [!NOTE]
-> Cet exemple utilise des API qui ne sont actuellement disponibles qu'en préversion publique (bêta). Pour exécuter cet exemple de code, vous devez utiliser la bibliothèque bêta du CDN Office.js : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-
 ```js
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
@@ -178,9 +169,6 @@ Excel.run(function (context) {
 
 L’exemple de code suivant définit la courbe de tendance sur le type **Linear** pour la première série du premier graphique de la feuille de calcul nommée **Sample**.
 
-> [!NOTE]
-> Cet exemple utilise des API qui ne sont actuellement disponibles qu'en préversion publique (bêta). Pour exécuter cet exemple de code, vous devez utiliser la bibliothèque bêta du CDN Office.js : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-
 ```js
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
@@ -200,6 +188,4 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Concepts de base de l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
-- [Objet Chart (API JavaScript pour Excel)](https://dev.office.com/reference/add-ins/excel/chart) 
-- [Objet ChartCollection (API JavaScript pour Excel)](https://dev.office.com/reference/add-ins/excel/chartcollection)
+- [Concepts fondamentaux de programmation avec l’API JavaScript Excel](excel-add-ins-core-concepts.md)
