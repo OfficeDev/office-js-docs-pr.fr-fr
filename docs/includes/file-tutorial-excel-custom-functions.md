@@ -2,7 +2,7 @@
 
 ## <a name="introduction"></a>Introduction
 
-Les fonctions personnalisées vous permettent d’ajouter de nouvelles fonctions à Excel en définissant ces fonctions en JavaScript dans le cadre d’un complément. Les utilisateurs Excel peuvent accéder aux fonctions personnalisées comme toute autre fonction native dans Excel (par exemple, `SUM()`). Vous pouvez créer des fonctions personnalisées qui effectuent des tâches simples telles que des calculs personnalisés ou des tâches plus complexes, telles que la diffusion en continu des données en temps réel à partir du site web dans une feuille de calcul.
+Les fonctions personnalisées vous permettent d’ajouter de nouvelles fonctions à Excel en définissant ces fonctions dans JavaScript comme partie d’un complément. Les utilisateurs dans Excel peuvent accéder aux fonctions personnalisées de la même façon qu’une fonction native dans Excel, telle que `SUM()`. Vous pouvez créer des fonctions personnalisées qui effectuent des tâches simples comme des calculs personnalisés ou des tâches plus complexes, comme la diffusion en continu des données en temps réel à partir du site Web dans une feuille de calcul.
 
 Dans ce tutoriel, vous allez :
 > [!div class="checklist"]
@@ -45,7 +45,7 @@ Vous allez commencer ce tutoriel à l’aide du Générateur de Yo Office pour c
 
     ![Yo Office bash vous invite à fournir des fonctions personnalisées](../images/yo-office-cfs-stock-ticker-3.png)
 
-    Après avoir exécuté l’assistant, le générateur crée les fichiers du projet et installe les composants de nœud de la prise en charge.
+    Après avoir exécuté l’assistant, le générateur crée les fichiers du projet et installe les composants Node de prise en charge. Les fichiers de projet viennent du référentiel GitHub [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) .
 
 2. Accédez au dossier du projet.
 
@@ -55,13 +55,13 @@ Vous allez commencer ce tutoriel à l’aide du Générateur de Yo Office pour c
 
 3. Démarrez le serveur web local.
 
-    * Si vous utilisez Excel pour Windows pour tester vos fonctions personnalisées, exécutez la commande suivante pour démarrer le serveur web local, lancer Excel et charger en parallèle le complément :
+    * Si vous utilisez Excel pour Windows pour tester vos fonctions personnalisées, exécutez la commande suivante pour démarrer le serveur web local, lancer Excel et charger en parallèle le complément :
 
         ```bash
         npm start
         ```
 
-    * Si vous allez utiliser Excel Online pour tester vos fonctions personnalisées, exécutez la commande suivante pour démarrer le serveur web local : 
+    * Si vous allez utiliser Excel Online pour tester vos fonctions personnalisées, exécutez la commande suivante pour démarrer le serveur web local : 
 
         ```bash
         npm run start-web
@@ -73,14 +73,14 @@ Le projet de fonctions personnalisées que vous avez créé à l’aide du Gén�
 
 Avant de pouvoir utiliser une des fonctions personnalisées prédéfinies, vous devez enregistrer le complément fonctions personnalisées dans Excel. Faites cela en procédant comme pour la plateforme que vous utiliserez dans ce tutoriel.
 
-* Si vous utilisez Excel pour Windows pour tester vos fonctions personnalisées :
+* Si vous utilisez Excel pour Windows pour tester vos fonctions personnalisées :
 
     1. Dans Excel, sélectionnez l’onglet **Insertion**, puis choisissez la flèche située à droite de **Mes applications**.  ![Insérez un ruban dans Excel pour Windows avec la flèche de Mes applications mise en surbrillance](../images/excel-cf-register-add-in-1b.png)
 
     2. Dans la liste des compléments disponibles, recherchez la section de **Compléments pour développeurs** et sélectionnez le complément **Fonctions personnalisées d'Excel** pour l’enregistrer.
-        ![Insérez le ruban dans Excel pour Windows avec le complément des fonctions personnalisées d'Excel mis en surbrillance dans la liste du menu Mes applications](../images/excel-cf-register-add-in-2.png)
+        ![Insérez le ruban dans Excel pour Windows avec le complément des fonctions personnalisées d'Excel mis en surbrillance dans la liste du bouton Mes applications](../images/excel-cf-register-add-in-2.png)
 
-* Si vous utilisez Excel Online pour tester vos fonctions personnalisées : 
+* Si vous utilisez Excel Online pour tester vos fonctions personnalisées : 
 
     1. Dans Excel Online, choisissez l’onglet **Insertion** , puis choisissez **Compléments**.  ![Insérez le ruban dans Excel Online avec l'icône Mes applications mise en surbrillance](../images/excel-cf-online-register-add-in-1.png)
 
@@ -90,11 +90,11 @@ Avant de pouvoir utiliser une des fonctions personnalisées prédéfinies, vous 
 
     4. Sélectionnez le fichier **manifest.xml** et choisissez **Ouvrir**, puis cliquez sur **Télécharger**.
 
-À ce stade, les fonctions personnalisées prédéfinies dans votre projet sont chargés et disponibles dans Excel. Essayer la onction personnalisée `ADD` en effectuant les étapes suivantes dans Excel :
+À ce stade, les fonctions personnalisées prédéfinies dans votre projet sont chargés et disponibles dans Excel. Essayer la onction personnalisée `ADD` en effectuant les étapes suivantes dans Excel :
 
 1. Dans une cellule, tapez **= CONTOSO**. Notez que le menu de saisie semi-automatique affiche la liste de toutes les fonctions de le champ de noms pour `CONTOSO`.
 
-2. Exécutez la fonction `CONTOSO.ADD`, avec les numéros `10` et `200` comme paramètres d’entrée, en spécifiant la valeur suivante dans la cellule et en appuyant sur, entrez :
+2. Exécutez la fonction `CONTOSO.ADD`, avec les numéros `10` et `200` comme paramètres d’entrée, en spécifiant la valeur suivante dans la cellule et en appuyant sur, entrez :
 
     ```
     =CONTOSO.ADD(10,200)
@@ -104,7 +104,7 @@ La fonction personnalisée `ADD` calcule la somme de deux nombres que vous spéc
 
 ## <a name="create-a-custom-function-that-requests-data-from-the-web"></a>Créer une fonction personnalisée qui demande des données à partir du web
 
-Et si vous aviez besoin d’une fonction qui peut demander le prix d’une action à partir d’une API et afficher le résultat dans la cellule d’une feuille de calcul ? Les fonctions personnalisées sont conçues afin que vous puissiez aisément demander des données à partir du web de manière asynchrone.
+Et si vous aviez besoin d’une fonction qui peut demander le prix d’une action à partir d’une API et afficher le résultat dans la cellule d’une feuille de calcul ? Les fonctions personnalisées sont conçues afin que vous puissiez aisément demander des données à partir du web de manière asynchrone.
 
 Effectuez les étapes suivantes pour créer une fonction personnalisée nommée `stockPrice` qui a comme argument un symbole boursier (par exemple, **MSFT**) et renvoie le prix de l'action correspondante. Cette fonction personnalisée utilise l’API IEX Trading, qui est gratuite et ne nécessite pas d’authentification.
 
@@ -166,7 +166,7 @@ Effectuez les étapes suivantes pour créer une fonction personnalisée nommée 
         1. Dans la liste des compléments disponibles, recherchez la section de **Compléments pour développeurs** et sélectionnez le complément **Fonctions personnalisées d'Excel** pour l’enregistrer.
             ![Insérez le ruban dans Excel pour Windows avec le complément des fonctions personnalisées d'Excel mis en surbrillance dans la liste du menu Mes applications](../images/excel-cf-register-add-in-2.png)
 
-    * Si vous utilisez Excel Online : 
+    * Si vous utilisez Excel Online : 
 
         1. Dans Excel Online, choisissez l’onglet **Insertion** , puis choisissez **Compléments**.  ![Insérez le ruban dans Excel Online avec l'icône Mes applications mise en surbrillance](../images/excel-cf-online-register-add-in-1.png)
 
@@ -263,7 +263,7 @@ Effectuez les étapes suivantes pour créer une fonction personnalisée nommée 
         3. Dans la liste des compléments disponibles, recherchez la section de **Compléments pour développeurs** et sélectionnez le complément **Fonctions personnalisées d'Excel** pour l’enregistrer.
             ![Insérez le ruban dans Excel pour Windows avec le complément des fonctions personnalisées d'Excel mis en surbrillance dans la liste du menu Mes applications](../images/excel-cf-register-add-in-2.png)
 
-    * Si vous utilisez Excel Online : 
+    * Si vous utilisez Excel Online : 
 
         1. Dans Excel Online, choisissez l’onglet **Insertion** , puis choisissez **Compléments**.  ![Insérez le ruban dans Excel Online avec l'icône Mes applications mise en surbrillance](../images/excel-cf-online-register-add-in-1.png)
 
@@ -277,7 +277,7 @@ Effectuez les étapes suivantes pour créer une fonction personnalisée nommée 
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce tutoriel, vous avez créé un nouveau projet de fonctions personnalisées, essayé une fonction prédéfinie, créé une fonction personnalisée qui demande des données à partir du web et créé une fonction personnalisée qui récupère des flux de données en temps réel à partir du web. Pour en savoir plus sur les fonctions personnalisées dans Excel, passez à l’article suivant : 
+Dans ce tutoriel, vous avez créé un nouveau projet de fonctions personnalisées, essayé une fonction prédéfinie, créé une fonction personnalisée qui demande des données à partir du web et créé une fonction personnalisée qui récupère des flux de données en temps réel à partir du web. Pour en savoir plus sur les fonctions personnalisées dans Excel, passez à l’article suivant : 
 
 > [!div class="nextstepaction"]
 > [Créer des fonctions personnalisées dans Excel](../excel/custom-functions-overview.md)

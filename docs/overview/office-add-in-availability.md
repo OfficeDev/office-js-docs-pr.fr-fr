@@ -1,19 +1,19 @@
 ---
 title: Disponibilité des compléments Office sur les plateformes et les hôtes
 description: Ensembles de conditions requises pris en charge pour Excel, Word, Outlook, PowerPoint et OneNote.
-ms.date: 09/24/2018
-ms.openlocfilehash: b06602e35ec906866ad16d667036a4cbaff2d89e
-ms.sourcegitcommit: 8ce9a8d7f41d96879c39cc5527a3007dff25bee8
+ms.date: 10/03/2018
+ms.openlocfilehash: 6f7b5b565773457e6cd8a9eee69eb304784a29a9
+ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "24985822"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "25459314"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilité des compléments Office sur les plateformes et les hôtes
 
-Pour fonctionner comme prévu, il se peut que votre complément Office dépende d’un hôte Office spécifique, d’un ensemble de conditions requises, d’un membre d’API ou d’une version de l’API. Les tableaux suivants contiennent la plateforme disponible, les points d’extension, les ensembles de conditions requises de l’API et les ensembles de conditions requises des API communes qui sont actuellement pris en charge pour chaque application Office.
+Pour fonctionner comme prévu, votre complément Office peut dépendre d’un hôte Office spécifique, d’un ensemble de conditions requises, d’un membre d’API ou d’une version de l’API. Les tableaux suivants contiennent la plateforme disponible, les points d’extension, les ensembles d’API requis et les ensembles d’API courantes requis qui sont actuellement pris en charge pour chaque application Office.
 
-Si une cellule de tableau contient un astérisque (*), cela signifie que nous travaillons sur celle-ci. Pour les ensembles de conditions requises pour Project ou Access, consultez les [ensembles de conditions requises communs à Office](https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets).  
+Si une cellule de tableau contient un astérisque (*), cela signifie que nous travaillons dessus. Pour les ensembles de conditions requises pour Projet ou Access, voir [Ensembles de conditions requises communs à Office](https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets).  
 
 > [!NOTE]
 > Le numéro de build pour Office 2016 installé via MSI est 16.0.4266.1001. Cette version ne contient que les ensembles de conditions requises des API communes, ExcelApi 1.1 et WordApi 1.1.
@@ -22,7 +22,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
 
 <table style="width:80%">
   <tr>
-    <th style="width:10%">Plate-forme</th>
+    <th style="width:10%">Plateforme</th>
     <th style="width:10%">Points d’extension</th>
     <th style="width:20%">Ensembles de conditions requises de l’API</th>
     <th style="width:40%"><a href="https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets"><b>API communes</b></a></th>
@@ -41,6 +41,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.8</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>
         - BindingEvents<br>
@@ -89,6 +90,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.8</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
         - CompressedFile<br>
@@ -116,6 +118,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.8</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
         - CompressedFile<br>
@@ -142,6 +145,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.8</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
         - CompressedFile<br>
@@ -169,6 +173,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.8</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
         - CompressedFile<br>
@@ -197,6 +202,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.8</a><br>
         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
         - CompressedFile<br>
@@ -221,7 +227,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
 
 <table style="width:80%">
   <tr>
-    <th>Plate-forme</th>
+    <th>Plateforme</th>
     <th>Points d’extension</th>
     <th>Ensembles de conditions requises de l’API</th>
     <th><a href="https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets"><b>API communes</b></a></th>
@@ -236,7 +242,8 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
       - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
       - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
       - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
-      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a></td>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a></td>
     <td>Non disponible</td>
   </tr>
   <tr>
@@ -276,7 +283,8 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
       - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
       - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
       - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
-      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a></td>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a></td>
     <td>Non disponible</td>
   </tr>
   <tr>
@@ -335,7 +343,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
 
 <table style="width:80%">
   <tr>
-    <th>Plate-forme</th>
+    <th>Plateforme</th>
     <th>Points d’extension</th>
     <th>Ensembles de conditions requises de l’API</th>
     <th><a href="https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets"><b>API communes</b></a></th>
@@ -535,7 +543,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
 
 <table style="width:80%">
   <tr>
-    <th>Plate-forme</th>
+    <th>Plateforme</th>
     <th>Points d’extension</th>
     <th>Ensembles de conditions requises de l’API</th>
     <th><a href="https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets"><b>API communes</b></a></th>
@@ -614,7 +622,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
      <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
-         - File<br>
+         - Fichier<br>
          - PdfFile<br>
          - Sélection<br>
          - Settings<br>
@@ -661,7 +669,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
 
 <table style="width:80%">
   <tr>
-    <th>Plate-forme</th>
+    <th>Plateforme</th>
     <th>Points d’extension</th>
     <th>Ensembles de conditions requises de l’API</th>
     <th><a href="https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets"><b>API communes</b></a></th>
@@ -688,5 +696,5 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
 
 - [Vue d’ensemble de la plateforme des compléments Office](office-add-ins.md)
 - [Ensembles de conditions requises des API communes](https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets)
-- [Ensembles de conditions requises concernant les commandes de complément](https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets)
-- [Référence de l’API JavaScript pour Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office)
+- [Ensembles de conditions requises des commandes de complément](https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets)
+- [Référence de l’interface API JavaScript pour Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office)
