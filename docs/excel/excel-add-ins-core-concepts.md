@@ -1,17 +1,17 @@
 ---
-title: Concepts de base de l’API JavaScript Excel
-description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: 37d652d2ad2f323d0f94583e530e91e775e06ddf
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+title: Concepts fondamentaux de programmation avec l’API JavaScript Excel
+description: Utilisez l'API JavaScript d'Excel pour créer des compléments pour Excel.
+ms.date: 10/03/2018
+ms.openlocfilehash: c66d44b76fad9f1559da7514997b62670a0f9360
+ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925408"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "25459202"
 ---
-# <a name="excel-javascript-api-core-concepts"></a>Concepts de base de l’API JavaScript pour Excel
+# <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Concepts fondamentaux de programmation avec l’API JavaScript Excel
  
-Cet article décrit comment utiliser l’[API JavaScript pour Excel](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview) afin de créer des compléments pour Excel 2016. Il présente les concepts fondamentaux de l’utilisation des API et fournit des conseils pour effectuer des tâches spécifiques, comme la lecture ou l’écriture d’une grande plage, la mise à jour de toutes les cellules d’une plage, et bien plus encore.
+Cet article explique comment utiliser [l'API JavaScript d'Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js) pour créer des compléments pour Excel 2016 ou version ultérieure. Il présente les concepts fondamentaux de l’utilisation des API et fournit des conseils pour effectuer des tâches spécifiques, comme la lecture ou l’écriture d’une grande plage, la mise à jour de toutes les cellules d’une plage, et bien plus encore.
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Nature asynchrone des API Excel
 
@@ -115,13 +115,13 @@ Excel.run(function (context) {
 });
 ```
  
-Comme `format/font` n’est pas spécifié dans l’appel à **myRange.load()**, la propriété `format.font.color` ne peut pas être lue dans l’exemple précédent.
+Dans l'exemple précédent, `format/font` n'étant pas spécifié dans l'appel à **myRange.load()**, la propriété `format.font.color` ne peut pas être lue.
 
-Pour optimiser le niveau de performance, vous devez spécifier clairement les propriétés et les relations à charger lorsque vous utilisez la méthode **load()** sur un objet, comme le propose la rubrique [Optimisations des niveaux de performance de l’API JavaScript pour Excel](performance.md). Pour plus d’informations sur la méthode **load()**, reportez-vous à la rubrique [Concepts avancés pour l’API JavaScript pour Excel](excel-add-ins-advanced-concepts.md).
+Pour optimiser le niveau de performance, vous devez spécifier clairement les propriétés et les relations à charger lorsque vous utilisez la méthode **load()** sur un objet, comme le propose la rubrique [Optimisations des niveaux de performance de l’API JavaScript pour Excel](performance.md). Pour plus d’informations sur la méthode **load()** , reportez-vous à la rubrique [Concepts avancés de programmation avec l’API JavaScript Excel](excel-add-ins-advanced-concepts.md).
 
-## <a name="null-or-blank-property-values"></a>valeurs de propriété null ou vides
+## <a name="null-or-blank-property-values"></a>Valeurs de propriété null ou vides
  
-### <a name="null-input-in-2-d-array"></a>entrée de valeurs null dans un tableau 2D
+### <a name="null-input-in-2-d-array"></a>Entrée de valeurs null dans un tableau 2D
  
 Dans Excel, une plage est représentée par un tableau 2D, où les lignes représentent la première dimension et les colonnes la deuxième. Pour définir des valeurs, un format de nombre ou une formule uniquement pour des cellules spécifiques dans une plage, spécifiez des valeurs, un format de nombre ou une formule pour ces cellules dans le tableau 2D, et indiquez `null` pour toutes les autres cellules du tableau 2D.
  
@@ -146,16 +146,16 @@ De même, l’extrait de code suivant n’est pas valide, car `null` n’est pas
 range.format.fill.color =  null;
 ```
  
-### <a name="null-property-values-in-the-response"></a>valeurs de la propriété Null dans la réponse
+### <a name="null-property-values-in-the-response"></a>Valeurs de la propriété Null dans la réponse
  
-Les propriétés de mise en forme comme `size` et `color` contiendront des valeurs `null` dans la réponse lorsque différentes valeurs existent dans la plage spécifiée. Par exemple, si vous récupérez une plage et chargez sa propriété `format.font.color` :
+Les propriétés de mise en forme comme `size` et `color` contiendront des valeurs `null` dans la réponse lorsque différentes valeurs existent dans la plage spécifiée. Par exemple, si vous récupérez une plage et chargez sa propriété `format.font.color` :
  
 * Si toutes les cellules de la plage ont la même couleur de police, `range.format.font.color` spécifie cette couleur.
 * Si plusieurs couleurs de police sont présentes dans la plage, `range.format.font.color` est `null`.
  
 ### <a name="blank-input-for-a-property"></a>Entrée vide pour une propriété
  
-Lorsque vous spécifiez une valeur vide pour une propriété (c’est-à-dire deux guillemets droits sans espace entre `''`), cela est interprété comme une instruction d’effacement ou de réinitialisation de la propriété. Par exemple :
+Lorsque vous spécifiez une valeur vide pour une propriété (c’est-à-dire deux guillemets droits sans espace entre `''`), cela est interprété comme une instruction d’effacement ou de réinitialisation de la propriété. Par exemple :
  
 * Si vous spécifiez une valeur vide pour la propriété `values` d’une plage, le contenu de la plage est effacé.
  
@@ -179,10 +179,10 @@ range.formula = [['', '', '=Rand()']];
  
 ### <a name="read-an-unbounded-range"></a>Lire une plage non liée
  
-Une adresse de plage non liée est une adresse de plage qui spécifie des colonnes entières ou des lignes entières. Par exemple :
+Une adresse de plage non liée est une adresse de plage qui spécifie des colonnes entières ou des lignes entières. Par exemple :
  
-* Adresses de plage composées de colonnes entières :<ul><li>`C:C`</li><li>`A:F`</li></ul>
-* Adresses de plage composées de lignes entières :<ul><li>`2:2`</li><li>`1:4`</li></ul>
+* Adresses de plage composées de colonnes entières :<ul><li>`C:C`</li><li>`A:F`</li></ul>
+* Adresses de plage composées de lignes entières :<ul><li>`2:2`</li><li>`1:4`</li></ul>
  
 Lorsque l’API effectue une demande de récupération d’une plage non liée (par exemple, `getRange('C:C')`), la réponse contient des valeurs `null` pour les propriétés définies au niveau des cellules, telles que `values`, `text`, `numberFormat` et `formula`. Les autres propriétés de la plage, telles que `address` et `cellCount`, contiennent des valeurs valides pour la plage non liée.
  
@@ -258,5 +258,6 @@ Lorsqu’une erreur d’API se produit, l’API renvoie un objet **error** qui c
  
 * [Prise en main des compléments Excel](excel-add-ins-get-started-overview.md)
 * [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
-* [Optimisation des performances de l'API JavaScript pour Excel](https://docs.microsoft.com/office/dev/add-ins/excel/performance)
-* [Référence de l’API JavaScript pour Excel](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
+* [Concepts avancés de programmation avec l’API JavaScript Excel](excel-add-ins-advanced-concepts.md)
+* [Optimisation des performances de l'API JavaScript d'Excel](https://docs.microsoft.com/office/dev/add-ins/excel/performance)
+* [Référence de l’API JavaScript pour Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
