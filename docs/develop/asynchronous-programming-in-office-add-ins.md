@@ -2,12 +2,12 @@
 title: Programmation asynchrone dans des compléments Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: c4008eb2238e166095d017bb1477e24f118c0ea0
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: badaf14123c3a70d28394d0286377d7e0920d453
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945466"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505929"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Programmation asynchrone dans des compléments Office
 
@@ -398,5 +398,5 @@ Dans les deux exemples de paramètres facultatifs, le paramètre _callback_ est 
 ## <a name="see-also"></a>Voir aussi
 
 - [Présentation de l’API JavaScript pour Office](understanding-the-javascript-api-for-office.md) 
-- [Interface API JavaScript pour Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office)
+- [Interface API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)
      
