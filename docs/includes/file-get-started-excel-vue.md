@@ -208,6 +208,6 @@ Félicitations, vous avez créé un complément Excel à l’aide de Vue ! Déco
 ## <a name="see-also"></a>Voir aussi
 
 * [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial-create-table.md)
-* [Concepts fondamentaux de programmation avec l’API JavaScript Excel](../excel/excel-add-ins-core-concepts.md)
+* [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Référence de l’API JavaScript d’Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
+* [Référence de l’API JavaScript pour Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)

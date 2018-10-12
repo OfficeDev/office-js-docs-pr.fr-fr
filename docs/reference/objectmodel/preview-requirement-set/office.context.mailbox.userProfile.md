@@ -7,7 +7,7 @@
 
 |Condition requise| Valeur|
 |---|---|
-|[Version minimale requise de la boîte aux lettres](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Version minimale requise de la boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Niveau minimal d’autorisation](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
@@ -36,7 +36,7 @@ Obtient le type de compte de l’utilisateur associé à la boîte aux lettres. 
 | `office365` | La boîte aux lettres est associée avec un compte Office 365 professionnel ou scolaire. |
 | `outlookCom` | La boîte aux lettres est associée à un compte Outlook.com personnel. |
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type :
 
 *   Chaîne
 
@@ -44,7 +44,7 @@ Obtient le type de compte de l’utilisateur associé à la boîte aux lettres. 
 
 |Condition requise| Valeur|
 |---|---|
-|[Version minimale requise de la boîte aux lettres](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.6 |
+|[Version minimale de l’ensemble de conditions requises de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.6 |
 |[Niveau minimal d’autorisation](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
@@ -54,19 +54,19 @@ Obtient le type de compte de l’utilisateur associé à la boîte aux lettres. 
 console.log(Office.context.mailbox.userProfile.accountType);
 ```
 
-####  <a name="displayname-string"></a>displayName :String
+####  <a name="displayname-string"></a>displayName :String
 
 Obtient le nom d’affichage de l’utilisateur.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type :
 
 *   Chaîne
 
-##### <a name="requirements"></a>Conditions requises
+##### <a name="requirements"></a>Configurations requises
 
 |Condition requise| Valeur|
 |---|---|
-|[Version minimale requise de la boîte aux lettres](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Version minimale requise de la boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Niveau minimal d’autorisation](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
@@ -81,15 +81,15 @@ console.log(Office.context.mailbox.userProfile.displayName);
 
 Obtient l’adresse e-mail SMTP de l’utilisateur.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type :
 
 *   Chaîne
 
-##### <a name="requirements"></a>Conditions requises
+##### <a name="requirements"></a>Configurations requises
 
 |Condition requise| Valeur|
 |---|---|
-|[Version minimale requise de la boîte aux lettres](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Version minimale requise de la boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Niveau minimal d’autorisation](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
@@ -104,7 +104,7 @@ console.log(Office.context.mailbox.userProfile.emailAddress);
 
 Obtient le fuseau horaire par défaut de l’utilisateur.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type :
 
 *   Chaîne
 
@@ -112,7 +112,7 @@ Obtient le fuseau horaire par défaut de l’utilisateur.
 
 |Condition requise| Valeur|
 |---|---|
-|[Version minimale requise de la boîte aux lettres](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Version minimale requise de la boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Niveau minimal d’autorisation](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
