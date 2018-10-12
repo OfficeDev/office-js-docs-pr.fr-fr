@@ -2,12 +2,12 @@
 title: Optimisation des performances de l'API JavaScript d'Excel
 description: Optimiser les performances à l'aide de l'API JavaScript d'Excel
 ms.date: 03/28/2018
-ms.openlocfilehash: 50fac999093abb3fbfe1bd5be1cd6a77dc930399
-ms.sourcegitcommit: 78b28ae88d53bfef3134c09cc4336a5a8722c70b
+ms.openlocfilehash: ee1687fcb1a5db74e65f5e73994653df235b4823
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "23797314"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505376"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Optimisation des performances à l'aide de l'API JavaScript d'Excel
 
@@ -51,7 +51,7 @@ worksheet.getRange("A1").set({
 
 Dans l'API JavaScript d'Excel, vous devez charger explicitement les propriétés d'un objet proxy. Bien que vous puissiez charger toutes les propriétés en une fois avec un appel vide à ```load()```, cette approche peut avoir un surcoût significatif en termes de performances. A la place, nous vous suggérons de ne charger que les propriétés nécessaires, en particulier pour ceux des objets qui ont un nombre important de propriétés.
 
-Par exemple, si vous ne souhaitez lire que la propriété **address** d’un objet range, indiquez seulement cette propriété lorsque vous appelez la méthode **load()**  :
+Par exemple, si vous ne souhaitez lire que la propriété **address** d’un objet range, indiquez seulement cette propriété lorsque vous appelez la méthode **load()** :
  
 ```js
 range.load('address');
@@ -71,10 +71,10 @@ object.load({ loadOption });
  
 _Où :_
  
-* `properties` est la liste des propriétés à charger, sous forme de chaînes délimitées par des virgules ou sous forme de tableau de noms. Pour plus d’informations, reportez-vous aux méthodes **load()** définies pour les objets dans la rubrique [Référence de l’API JavaScript pour Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview).
+* `properties` est la liste des propriétés à charger, sous forme de chaînes délimitées par des virgules ou sous forme de tableau de noms. Pour plus d’informations, voir les méthodes **load()** définies pour les objets dans la [Référence de l’API JavaScript d'Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview).
 * `loadOption` spécifie un objet qui décrit les options select, expand, top et skip. Pour plus d’informations, reportez-vous aux [options](https://docs.microsoft.com/javascript/api/office/officeextension.loadoption) de chargement d’objet.
 
-SVP, soyez conscient que certaines des "propriétés" dans un objet peuvent avoir le même nom qu'un autre objet. Par exemple, `format` est une propriété dans l'objet plage, mais `format` lui-même est un objet aussi. Donc, si vous faites un appel tel que `range.load("format")`, c'est équivalent à `range.format.load()`, qui est un appel vide à load() qui peut engendrer des problèmes de performances comme résumé précédemment. Pour éviter cela, votre code ne devrait charger que les "nœuds feuilles" dans une arborescence d'objets. 
+SVP, soyez conscient que certaines des "propriétés" dans un objet peuvent avoir le même nom qu'un autre objet. Par exemple, `format` est une propriété dans l'objet plage, mais `format` lui-même est un objet aussi. Donc, si vous faites un appel tel que `range.load("format")`, c'est équivalent à `range.format.load()`, qui est un appel vide () qui peut engendrer des problèmes de performances comme résumé précédemment. Pour éviter cela, votre code ne devrait charger que les "nœuds feuilles" dans une arborescence d'objets. 
 
 ## <a name="suspend-calculation-temporarily"></a>Suspendre le calcul temporairement
 
@@ -136,7 +136,7 @@ Un scénario courant dans lequel vous pouvez appliquer cette approche est la dé
 
 Lorsque vous essayez d'importer un très grand volume de données directement dans un objet[Table](https://docs.microsoft.com/javascript/api/excel/excel.table) (par exemple, en utilisant `TableRowCollection.add()`), vous risquez de subir une performance lente. Si vous essayez d'ajouter une nouvelle table, vous devriez d'abord remplir les données en définissant `range.values`, puis appeler alors `worksheet.tables.add()` pour créer une table sur la plage. Si vous essayez d'écrire des données dans une table existante, écrivez les données dans un objet plage via `table.getDataBodyRange()`, et la table s'agrandira automatiquement. 
 
-Voici un exemple de cette approche :
+Voici un exemple de cette approche :
 
 ```js
 Excel.run(async (ctx) => {
@@ -168,7 +168,7 @@ Le niveau de performance d’un complément peut être amélioré en désactivan
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Concepts de base de l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
-- [Concepts avancés pour l’API JavaScript Excel](excel-add-ins-advanced-concepts.md)
+- [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
+- [Concepts avancés de programmation avec l’API JavaScript Excel](excel-add-ins-advanced-concepts.md)
 - [Spécification d’ouverture d’API JavaScript pour Excel](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
 - [Objet de fonctions de feuille de calcul (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.functions)
