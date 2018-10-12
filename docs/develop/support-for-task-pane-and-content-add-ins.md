@@ -2,17 +2,17 @@
 title: Prise en charge de l’API JavaScript pour Office pour les compléments de contenu et du volet Office dans Office 2013
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: cb4bb003966639fd5518fefcd3983ee9ca2fb101
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+ms.openlocfilehash: 86c5b0e19a767ae4715e48bef93465ab45a32e31
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25005012"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25506034"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>Prise en charge de l’API JavaScript pour Office pour les compléments de contenu et du volet Office dans Office 2013
 
 
-Vous pouvez utiliser l’[API JavaScript pour Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js) pour créer un complément du volet Office ou de contenu pour les applications hôtes d’Office 2013. Les méthodes et les objets pris en charge par les compléments du volet Office et de contenu sont classés de la manière suivante :
+Vous pouvez utiliser l’[API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) pour créer un complément du volet Office ou de contenu pour les applications hôtes d’Office 2013. Les méthodes et les objets pris en charge par les compléments du volet Office et de contenu sont classés de la manière suivante :
 
 
 1. **Objets communs partagés avec d’autres compléments Office.** Parmi ces objets figurent [Office](https://docs.microsoft.com/javascript/api/office?view=office-js), [Context](https://docs.microsoft.com/javascript/api/office/office.context?view=office-js) et [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js). L’objet **Office** est l’objet racine de l’interface API JavaScript pour Office. L’objet **Context** représente l’environnement d’exécution du complément. **Office** et **Context** sont les objets fondamentaux pour tout complément Office. L’objet **AsyncResult** représente les résultats d’une opération asynchrone, comme les données renvoyées vers la méthode **getSelectedDataAsync**, qui lit les éléments sélectionnés par un utilisateur dans un document.
@@ -23,11 +23,11 @@ Vous pouvez utiliser l’[API JavaScript pour Office](https://docs.microsoft.com
     
 3.  **Objets pour l’utilisation de fonctionnalités spécifiques.** Pour travailler avec des fonctionnalités spécifiques de l’API, utilisez les méthodes et les objets suivants :
     
-    - Les méthodes de l’objet [Bindings](https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js) pour créer ou obtenir des liaisons, et les méthodes et propriétés de l’objet [Binding](https://docs.microsoft.com/javascript/api/office/office.binding?view=office-js) pour utiliser des données.
+    - Les objets [CustomXmlParts](https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js), [CustomXmlPart](https://docs.microsoft.com/javascript/api/office/office.binding?view=office-js) et les objets associés pour créer et manipuler des parties XML personnalisées dans des documents Word.
     
-    - Les objets [CustomXmlParts](https://docs.microsoft.com/javascript/api/office/office.customxmlparts?view=office-js) et [CustomXmlPart](https://docs.microsoft.com/javascript/api/office/office.customxmlpart?view=office-js) et les objets associés pour créer et manipuler des parties XML personnalisées dans des documents Word.
+    - Les objets [CustomXmlParts](https://docs.microsoft.com/javascript/api/office/office.customxmlparts?view=office-js) et [CustomXmlPart](https://docs.microsoft.com/javascript/api/office/office.customxmlpart?view=office-js) et les objets associés pour créer et manipuler des parties XML personnalisées dans des documents Word.
     
-    - Les objets [File](https://docs.microsoft.com/javascript/api/office/office.file?view=office-js) et [Slice](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js) pour créer une copie de l’intégralité du document, le diviser en blocs ou en « sections », puis lire ou transmettre les données dans ces sections.
+    - Les objets [File](https://docs.microsoft.com/javascript/api/office/office.file?view=office-js) et [Slice](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js) pour créer une copie de l’intégralité du document, le diviser en blocs ou en « sections », puis lire ou transmettre les données dans ces sections.
     
     - L’objet [Settings](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js) pour enregistrer des données personnalisées, telles que des préférences utilisateur et l’état du complément.
     
@@ -40,7 +40,7 @@ Pour consulter un résumé de la prise en charge de l’API JavaScript pour Offi
 
 ## <a name="reading-and-writing-to-an-active-selection"></a>Lecture et écriture dans une sélection active
 
-Vous pouvez lire ou écrire dans la sélection en cours de l’utilisateur dans un document, une feuille de calcul ou une présentation. Selon l’application hôte de votre complément, vous pouvez spécifier le type de structure de données à lire ou à écrire en tant que paramètre dans les méthodes [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) et [setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#setselecteddataasync-data--options--callback-) de l’objet [Document](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js). Par exemple, vous pouvez indiquer n’importe quel type de données (HTML, données tabulaires, Office Open XML ou texte) pour Word, des données texte et tabulaires pour Excel et des données texte pour PowerPoint et Project. Vous pouvez également créer des gestionnaires d’événements pour détecter les modifications apportées à la sélection de l’utilisateur. L’exemple suivant obtient des données à partir de la sélection en tant que données texte à l’aide de la méthode **getSelectedDataAsync**.
+Vous pouvez lire ou écrire dans la sélection en cours de l’utilisateur dans un document, une feuille de calcul ou une présentation. Selon l’application hôte de votre complément, vous pouvez spécifier le type de structure de données à lire ou à écrire en tant que paramètre dans les méthodes [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) et [setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#setselecteddataasync-data--options--callback-) de l’objet [Document](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js). Par exemple, vous pouvez indiquer n’importe quel type de données (HTML, données tabulaires, Office Open XML ou texte) pour Word, des données texte et tabulaires pour Excel et des données texte pour PowerPoint et Project. Vous pouvez également créer des gestionnaires d’événements pour détecter les modifications apportées à la sélection de l’utilisateur. L’exemple suivant obtient des données à partir de la sélection en tant que données texte à l’aide de la méthode **getSelectedDataAsync**.
 
 
 ```js
@@ -98,16 +98,16 @@ Pour plus d’informations et d’exemples, reportez-vous à l’article [Liaiso
 
 Si votre complément du volet Office s’exécute dans PowerPoint ou Word, vous pouvez utiliser les méthodes [Document.getFileAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getfileasync-filetype--options--callback-), [File.getSliceAsync](https://docs.microsoft.com/javascript/api/office/office.file?view=office-js#getsliceasync-sliceindex--callback-) et [File.closeAsync](https://docs.microsoft.com/javascript/api/office/office.file?view=office-js#closeasync-callback-) pour obtenir la totalité d’une présentation ou d’un document.
 
-Lorsque vous appelez **Document.getFileAsync**, vous obtenez une copie du document dans un objet [File](https://docs.microsoft.com/javascript/api/office/office.file?view=office-js). L’objet **File** donne accès au document en « blocs » représenté sous la forme d’objets [Slice](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js). Lorsque vous appelez **getFileAsync**, vous pouvez spécifier le type de fichier (texte ou format Open Office XML compressé) et la taille des secteurs (jusqu’à 4 Mo). Pour accéder au contenu de l’objet **File**, appelez **File.getSliceAsync** qui renvoie les données brutes dans la propriété [Slice.data](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js#data). Si vous avez spécifié un format compressé, vous obtiendrez les données du fichier sous la forme d’un tableau d’octets. Si vous transférez le fichier à un service web, vous pouvez transformer les données brutes compressées dans une chaîne codée en Base64 avant l’envoi. Enfin, lorsque vous avez obtenu les sections du fichier, utilisez la méthode **File.closeAsync** pour fermer le document.
+Lorsque vous appelez **Document.getFileAsync**, vous obtenez une copie du document dans un objet [File](https://docs.microsoft.com/javascript/api/office/office.file?view=office-js). L’objet **File** donne accès au document en « blocs » représenté sous la forme d’objets [Slice](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js). Lorsque vous appelez **getFileAsync**, vous pouvez spécifier le type de fichier (texte ou format Open Office XML compressé) et la taille des secteurs (jusqu’à 4 Mo). Pour accéder au contenu de l’objet **File**, appelez **File.getSliceAsync** qui renvoie les données brutes dans la propriété [Slice.data](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js#data). Si vous avez spécifié un format compressé, vous obtiendrez les données du fichier sous la forme d’un tableau d’octets. Si vous transférez le fichier à un service web, vous pouvez transformer les données brutes compressées dans une chaîne codée en Base64 avant l’envoi. Enfin, lorsque vous avez obtenu les sections du fichier, utilisez la méthode **File.closeAsync** pour fermer le document.
 
 Pour plus d’informations, reportez-vous à l’article expliquant comment [obtenir l’intégralité d’un document à partir d’un complément pour PowerPoint ou Word](../word/get-the-whole-document-from-an-add-in-for-word.md). 
 
 
 ## <a name="reading-and-writing-custom-xml-parts-of-a-word-document"></a>Lecture et écriture des parties XML personnalisées d’un document Word
 
-Grâce aux contrôles de contenu et au format de fichier Office Open XML, vous pouvez ajouter des parties XML personnalisées à un document Word et lier des éléments dans les parties XML aux contrôles de contenu de ce document. Lorsque vous ouvrez le document, Word lit et remplit automatiquement les contrôles de contenu liés avec les données des parties XML personnalisées. Les utilisateurs peuvent également écrire des données dans les contrôles de contenu. Lorsqu’ils enregistrent le document, les données des contrôles sont alors enregistrées dans les parties XML liées. Si votre complément du volet Office s’exécute dans Word, vous pouvez utiliser la propriété [Document.customXmlParts](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js.customxmlparts), ainsi que les objets [CustomXmlParts](https://docs.microsoft.com/javascript/api/office/office.customxmlparts?view=office-js), [CustomXmlPart](https://docs.microsoft.com/javascript/api/office/office.customxmlpart?view=office-js) et [CustomXmlNode](https://docs.microsoft.com/javascript/api/office/office.customxmlnode?view=office-js) pour lire et écrire des données de manière dynamique dans le document.
+Grâce aux contrôles de contenu et au format de fichier Office Open XML, vous pouvez ajouter des parties XML personnalisées à un document Word et lier des éléments dans les parties XML aux contrôles de contenu de ce document. Lorsque vous ouvrez le document, Word lit et remplit automatiquement les contrôles de contenu liés avec les données des parties XML personnalisées. Les utilisateurs peuvent également écrire des données dans les contrôles de contenu. Lorsqu’ils enregistrent le document, les données des contrôles sont alors enregistrées dans les parties XML liées. Si votre complément du volet Office s’exécute dans Word, vous pouvez utiliser la propriété [Document.customXmlParts](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js.customxmlparts), ainsi que les objets [CustomXmlParts](https://docs.microsoft.com/javascript/api/office/office.customxmlparts?view=office-js), [CustomXmlPart](https://docs.microsoft.com/javascript/api/office/office.customxmlpart?view=office-js) et [CustomXmlNode](https://docs.microsoft.com/javascript/api/office/office.customxmlnode?view=office-js) pour lire et écrire des données de manière dynamique dans le document.
 
-Les parties XML personnalisées peuvent être associées à des espaces de noms. Pour obtenir des données à partir des parties XML personnalisées dans un espace de noms, utilisez la méthode [CustomXmlParts.getByNamespaceAsync](https://docs.microsoft.com/javascript/api/office/office.customxmlparts?view=office-js#getbynamespaceasync-ns--options--callback-).
+Les parties XML personnalisées peuvent être associées à des espaces de noms. Pour obtenir des données à partir des parties XML personnalisées dans un espace de noms, utilisez la méthode [CustomXmlParts.getByNamespaceAsync](https://docs.microsoft.com/javascript/api/office/office.customxmlparts?view=office-js#getbynamespaceasync-ns--options--callback-).
 
 Vous pouvez également utiliser la [CustomXmlParts.getByIdAsync](https://docs.microsoft.com/javascript/api/office/office.customxmlparts?view=office-js#getbyidasync-id--options--callback-) pour accéder aux parties XML personnalisées par leur GUID. Après avoir obtenu une partie XML personnalisée, utilisez la méthode [CustomXmlPart.getXmlAsync](https://docs.microsoft.com/javascript/api/office/office.customxmlpart?view=office-js#getxmlasync-options--callback-) pour obtenir les données XML.
 
@@ -164,7 +164,7 @@ Pour plus d’informations, consultez l’article [Demande d’autorisations pou
 
 ## <a name="see-also"></a>Voir aussi
 
-- [API JavaScript pour Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)
+- [API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)
 - [Référence de schéma pour les manifestes des compléments Office](../develop/add-in-manifests.md)
 - [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](../testing/testing-and-troubleshooting.md)
     

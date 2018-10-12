@@ -50,7 +50,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
     </body>
     ```
 
-2. Ouvrez le fichier **Home.js** à la racine du projet d’application web. Ce fichier spécifie le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier. 
+2. Ouvrez le fichier **Home.js** à la racine du projet d’application web. Ce fichier spécifie le script pour le complément. Remplacez l'intégralité du contenu par le code suivant et enregistrez le fichier. 
 
     ```js
     'use strict';
@@ -78,7 +78,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
     })();
     ```
 
-3. Ouvrez le fichier **Home.css** à la racine du projet d’application web. Ce fichier spécifie les styles personnalisés pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier. 
+3. Ouvrez le fichier **Home.css** à la racine du projet d’application web. Ce fichier spécifie les styles personnalisés pour le complément. Remplacez l'intégralité du contenu par le code suivant et enregistrez le fichier. 
 
     ```css
     #content-header {
@@ -111,11 +111,11 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 
 1. Ouvrez le fichier manifeste XML dans le projet de complément. Ce fichier définit les paramètres et les fonctionnalités du complément.
 
-2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-le par votre nom.
+2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-la par votre nom.
 
-3. L’attribut `DefaultValue` de l’élément `DisplayName` possède un espace réservé. Remplacez-le par **My Office Add-in**.
+3. L’attribut `DefaultValue` de l’élément `DisplayName` possède un espace réservé. Remplacez-le par **Mon complément Office**.
 
-4. L’attribut `DefaultValue` de l’élément `Description` possède un espace réservé. Remplacez-le par **A task pane add-in for Excel**.
+4. L’`DefaultValue`attribut  de l`Description`’élément  possède un espace réservé. Remplacez-le par** un complément volet Office pour Excel.**
 
 5. Enregistrez le fichier.
 
@@ -129,9 +129,9 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
     ...
     ```
 
-### <a name="try-it-out"></a>Essayez !
+### <a name="try-it-out"></a>Essayez-le !
 
-1. À l’aide de Visual Studio, testez le nouveau complément Excel en appuyant sur F5 ou en choisissant le bouton **Démarrer** pour lancer Excel avec le bouton du complément **Show Taskpane** (Afficher le volet Office) qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
+1. À l’aide de Visual Studio, testez le nouveau complément Excel en appuyant sur F5 ou en choisissant le bouton ** Démarrer** pour lancer Excel avec le bouton du complément **Afficher le volet Office** qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
 
 2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
@@ -164,15 +164,15 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
     cd my-addin
     ```
 
-3. Utilisez le générateur Yeoman pour générer le fichier manifeste de votre complément. Exécutez la commande suivante, puis répondez aux invites comme indiqué dans la capture d’écran suivante :
+3. Utilisez le générateur Yeoman pour générer le fichier manifeste de votre complément. Exécutez la commande suivante, puis répondez aux invites comme indiqué dans la capture d’écran suivante :
 
     ```bash
     yo office
     ```
 
-    - **Choisissez un type de projet :** `Office Add-in project using Jquery framework`
+    - **Choisissez un type de projet :** `Office Add-in project using Jquery framework`
     - **Choisissez un type de script :** `Javascript`
-    - **Comment souhaitez-vous nommer votre complément ? :** `My Office Add-in`
+    - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
     - **Quelle application client Office voulez-vous prendre en charge ? :** `Excel`
 
     ![Générateur Yeoman](../images/yo-office-jquery.png)
@@ -185,7 +185,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
     cd "My Office Add-in"
     ```
 
-5. Dans votre éditeur de code, ouvrez **index.html** à la racine du projet. Ce fichier spécifie le code HTML qui s’affichera dans le volet Office du complément. 
+5. Dans votre éditeur de code, ouvrez le fichier **index.html** à la racine du projet. Ce fichier spécifie le code HTML qui sera affiché dans volet de tâches du complément. 
  
 6. Dans **index.html**, remplacez la balise `header` générée par le balisage suivant.
  
@@ -210,7 +210,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
     </div>
     ```
 
-8. Ouvrez le fichier **src\index.js** pour spécifier le script du complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+8. Ouvrez le fichier **src\index.js** pour spécifier le script du complément. Remplacez l'intégralité du contenu par le code suivant et enregistrez le fichier.
 
     ```js
     'use strict';
@@ -238,7 +238,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
     })();
     ```
 
-9. Ouvrez le fichier **app.css** pour spécifier les styles personnalisés pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+9. Ouvrez le fichier **app.css** pour spécifier les styles personnalisés pour le complément. Remplacez l'intégralité du contenu par le code suivant et enregistrez le fichier.
 
     ```css
     #content-header {
@@ -271,11 +271,11 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 
 1. Ouvrez le fichier nommé **my-office-add-in-manifest.xml** pour définir les paramètres et les fonctionnalités du complément. 
 
-2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-le par votre nom.
+2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-la par votre nom.
 
-3. L’attribut `DefaultValue` de l’élément `DisplayName` possède un espace réservé. Remplacez-le par **My Office Add-in**.
+3. L’attribut `DefaultValue` de l’élément `DisplayName` possède un espace réservé. Remplacez-le par **mon complément Office**.
 
-4. L’attribut `DefaultValue` de l’élément `Description` possède un espace réservé. Remplacez-le par **A task pane add-in for Excel**.
+4. L’`DefaultValue`attribut  de l`Description`’élément  possède un espace réservé. Remplacez-le par** un complément volet Office pour Excel.**
 
 5. Enregistrez le fichier.
 
@@ -293,13 +293,13 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 
 [!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
-### <a name="try-it-out"></a>Essayez !
+### <a name="try-it-out"></a>Essayez-le !
 
 1. Suivez les instructions pour la plateforme que vous utiliserez afin d’exécuter votre complément en vue d’en charger une version test dans Excel.
 
-    - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online : [Chargement de versions test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Excel Online : [Chargement de versions test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+    - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
@@ -323,6 +323,6 @@ Félicitations, vous avez créé un complément Excel à l’aide de jQuery ! D�
 ## <a name="see-also"></a>Voir aussi
 
 * [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial-create-table.md)
-* [Concepts de base de l’API JavaScript pour Excel](../excel/excel-add-ins-core-concepts.md)
+* [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Référence de l’API JavaScript pour Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
