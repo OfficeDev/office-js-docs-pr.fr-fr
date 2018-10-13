@@ -1,17 +1,17 @@
 ---
-title: Concepts fondamentaux de programmation avec l’API JavaScript Excel
+title: Concepts fondamentaux de programmation avec l’API JavaScript pour Excel
 description: Utilisez l'API JavaScript d'Excel pour créer des compléments pour Excel.
 ms.date: 10/03/2018
-ms.openlocfilehash: c66d44b76fad9f1559da7514997b62670a0f9360
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.openlocfilehash: f93ec7b5e34f90f2d61f29d861b7e0c19f66f6e3
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459202"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505985"
 ---
-# <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Concepts fondamentaux de programmation avec l’API JavaScript Excel
+# <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Concepts fondamentaux de programmation avec l’API JavaScript pour Excel
  
-Cet article explique comment utiliser [l'API JavaScript d'Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js) pour créer des compléments pour Excel 2016 ou version ultérieure. Il présente les concepts fondamentaux de l’utilisation des API et fournit des conseils pour effectuer des tâches spécifiques, comme la lecture ou l’écriture d’une grande plage, la mise à jour de toutes les cellules d’une plage, et bien plus encore.
+Cet article explique comment utiliser [l’API JavaScript d’Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js) pour créer des compléments pour Excel 2016 ou version ultérieure. Il présente les concepts fondamentaux de l’utilisation des API et fournit des conseils pour effectuer des tâches spécifiques, comme la lecture ou l’écriture d’une grande plage, la mise à jour de toutes les cellules d’une plage, et bien plus encore.
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Nature asynchrone des API Excel
 
@@ -19,9 +19,9 @@ Les compléments Excel web s’exécutent dans un conteneur de navigateurs qui e
  
 ## <a name="excelrun"></a>Excel.run
  
-**Excel.Run** exécute une fonction dans laquelle vous spécifiez les actions à effectuer concernant le modèle objet Excel. **Excel.Run** crée automatiquement un contexte de la demande que vous pouvez utiliser pour interagir avec des objets Excel. Lorsque l’API **Excel.run** a fini, une promesse est résolue, et tous les objets alloués lors de l’exécution sont automatiquement publiés.
+**Excel.Run** exécute une fonction dans laquelle vous spécifiez les actions à effectuer concernant le modèle objet Excel. **Excel.Run** crée automatiquement un contexte de la demande que vous pouvez utiliser pour interagir avec des objets Excel. Lorsque l’API ** Excel.run** a fini, une promesse est résolue, et tous les objets alloués lors de l’exécution sont automatiquement publiés.
  
-L’exemple suivant montre comment utiliser **Excel.run**. L’instruction catch capture et enregistre les erreurs qui se produisent au sein de **Excel.run**.
+L’exemple suivant montre comment utiliser **Excel.run**. L’instruction catch intercepte et les journaux d’erreurs qui se produisent dans **Excel.run**.
  
 ```js
 Excel.run(function (context) {
@@ -42,7 +42,7 @@ Excel et votre complément sont exécutés dans deux processus distincts. Dans l
  
 ## <a name="proxy-objects"></a>Objets de proxy
  
-Les objets JavaScript pour Excel que vous déclarez et utilisez dans un complément sont des objets proxy. Les méthodes que vous appelez ou les propriétés que vous définissez ou chargez sur les objets proxy sont simplement ajoutées à une file d’attente de commandes en attente. Lorsque vous appelez la méthode **sync()** sur le contexte de demande (par exemple, `context.sync()`), les commandes en attente sont envoyées vers Excel et sont exécutées. L’API JavaScript pour Excel est fondamentalement centrée sur les lots. Vous pouvez mettre en file d’attente autant de modifications que vous le souhaitez dans le contexte de la demande, puis appeler la méthode **sync()** pour exécuter le lot de commandes mises en file d’attente.
+Les objets JavaScript pour Excel que vous déclarez et utilisez dans un complément sont des objets proxy. Les méthodes que vous appelez ou les propriétés que vous définissez ou chargez sur les objets proxy sont simplement ajoutées à une file d’attente de commandes en attente. Lorsque vous appelez la méthode **sync()** sur le contexte de demande (par exemple, `context.sync()`), les commandes en attente sont envoyées vers Excel et sont exécutées. L’interface API JavaScript Excel est fondamentalement centrées sur les commandes. Vous pouvez mettre en file d’attente autant de modifications que vous le souhaitez dans le contexte de la demande, puis appeler la méthode **sync()** pour exécuter le lot de commandes mises en file d’attente.
  
 Par exemple, l’extrait de code suivant déclare l’objet JavaScript local **selectedRange** pour référencer une plage sélectionnée dans le document Excel, puis définit des propriétés sur cet objet. L’objet **selectedRange** est un objet proxy. Les propriétés définies et la méthode appelée sur cet objet ne seront pas répercutées dans le document Excel tant que votre complément n’a pas appelé **context.sync()**.
  
@@ -53,7 +53,7 @@ selectedRange.format.font.color = "white";
 selectedRange.format.autofitColumns();
 ```
  
-### <a name="sync"></a>Sync
+### <a name="sync"></a>sync()
  
 Tout appel de la méthode **sync()** concernant le contexte de demande synchronise l’état entre les objets proxy et les objets du document Excel. La méthode **sync()** exécute les commandes mises en file d’attente concernant le contexte de demande et récupère des valeurs pour les propriétés qui doivent être chargées dans les objets proxy. La méthode **sync()** est exécutée de façon asynchrone et renvoie une [promesse](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise), qui est résolue lorsque la méthode **sync()** est terminée.
  
@@ -115,9 +115,9 @@ Excel.run(function (context) {
 });
 ```
  
-Dans l'exemple précédent, `format/font` n'étant pas spécifié dans l'appel à **myRange.load()**, la propriété `format.font.color` ne peut pas être lue.
+Comme `format/font` n’est pas spécifié dans l’appel à **myRange.load()**, la propriété `format.font.color` ne peut pas être lue dans l’exemple précédent.
 
-Pour optimiser le niveau de performance, vous devez spécifier clairement les propriétés et les relations à charger lorsque vous utilisez la méthode **load()** sur un objet, comme le propose la rubrique [Optimisations des niveaux de performance de l’API JavaScript pour Excel](performance.md). Pour plus d’informations sur la méthode **load()** , reportez-vous à la rubrique [Concepts avancés de programmation avec l’API JavaScript Excel](excel-add-ins-advanced-concepts.md).
+Pour optimiser le niveau de performance, vous devez spécifier clairement les propriétés et les relations à charger lorsque vous utilisez la méthode **load()** sur un objet, comme le propose la rubrique [Optimisations des niveaux de performance de l’API JavaScript pour Excel](performance.md). Pour plus d’informations sur la méthode **load()** , reportez-vous à la rubrique  [ Concepts avancés de programmation avec l’API JavaScript Excel](excel-add-ins-advanced-concepts.md).
 
 ## <a name="null-or-blank-property-values"></a>Valeurs de propriété null ou vides
  
@@ -155,7 +155,7 @@ Les propriétés de mise en forme comme `size` et `color` contiendront des valeu
  
 ### <a name="blank-input-for-a-property"></a>Entrée vide pour une propriété
  
-Lorsque vous spécifiez une valeur vide pour une propriété (c’est-à-dire deux guillemets droits sans espace entre `''`), cela est interprété comme une instruction d’effacement ou de réinitialisation de la propriété. Par exemple :
+Lorsque vous spécifiez une valeur vide pour une propriété (c’est-à-dire deux guillemets droits sans espace entre `''`), cela est interprété comme une instruction d’effacement ou de réinitialisation de la propriété. Par exemple :
  
 * Si vous spécifiez une valeur vide pour la propriété `values` d’une plage, le contenu de la plage est effacé.
  
@@ -179,16 +179,16 @@ range.formula = [['', '', '=Rand()']];
  
 ### <a name="read-an-unbounded-range"></a>Lire une plage non liée
  
-Une adresse de plage non liée est une adresse de plage qui spécifie des colonnes entières ou des lignes entières. Par exemple :
+Une adresse de plage non liée est une adresse de plage qui spécifie des colonnes entières ou des lignes entières. Par exemple :
  
-* Adresses de plage composées de colonnes entières :<ul><li>`C:C`</li><li>`A:F`</li></ul>
+* Adresses de plage composées de colonnes entières :<ul><li>`C:C`</li><li>`A:F`</li></ul>
 * Adresses de plage composées de lignes entières :<ul><li>`2:2`</li><li>`1:4`</li></ul>
  
 Lorsque l’API effectue une demande de récupération d’une plage non liée (par exemple, `getRange('C:C')`), la réponse contient des valeurs `null` pour les propriétés définies au niveau des cellules, telles que `values`, `text`, `numberFormat` et `formula`. Les autres propriétés de la plage, telles que `address` et `cellCount`, contiennent des valeurs valides pour la plage non liée.
  
 ### <a name="write-to-an-unbounded-range"></a>Écrire dans une plage non liée
  
-Vous ne pouvez pas définir des propriétés au niveau de la cellule telles que `values`, `numberFormat`, et `formula` sur plage non liée, car la demande d’entrée  est trop volumineuse. Par exemple, l’extrait de code suivant n’est pas valide, car il tente de spécifier `values` pour une plage non liée. L’API renvoie une erreur si vous tentez de définir des propriétés au niveau de la cellule pour une plage non liée.
+Vous ne pouvez pas définir des propriétés au niveau de la cellule telles que `values`, `numberFormat`, et `formula` sur plage non liée, car la demande d’entrée  est trop volumineuse. Par exemple, l’extrait de code suivant n’est pas valide, car il tente de spécifier `values`  pour une plage non liée. L’API renvoie une erreur si vous tentez de définir des propriétés au niveau de la cellule pour une plage non liée.
  
 ```js
 const range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
@@ -260,4 +260,4 @@ Lorsqu’une erreur d’API se produit, l’API renvoie un objet **error** qui c
 * [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
 * [Concepts avancés de programmation avec l’API JavaScript Excel](excel-add-ins-advanced-concepts.md)
 * [Optimisation des performances de l'API JavaScript d'Excel](https://docs.microsoft.com/office/dev/add-ins/excel/performance)
-* [Référence de l’API JavaScript pour Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
+* [Référence de l’API JavaScript pour Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)
