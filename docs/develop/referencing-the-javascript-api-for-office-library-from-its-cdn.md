@@ -2,26 +2,26 @@
 title: Référencement de la bibliothèque de l’interface API JavaScript pour Office à partir de son réseau de distribution de contenu (CDN)
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 422cbd947dde09a8cd19559db9a86ddacd5e2dba
-ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
+ms.openlocfilehash: 0ad589ee98342ee72259cddc0957277e9018f186
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "25348092"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505418"
 ---
 # <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a>Référencement de la bibliothèque de l’interface API JavaScript pour Office à partir de son réseau de distribution de contenu (CDN)
 
 > [!NOTE]
-> Outre les étapes décrites dans cet article, si vous souhaitez utiliser TypeScript, puis utiliser Intellisense vous devez exécuterez la commande suivante dans l’invite du système prenant en charge Node (ou la fenêtre git bash) à partir de la racine de votre dossier de projet. Vous devez avoir [Node.js](https://nodejs.org) installé (qui inclut npm).
+> Outre les étapes décrites dans cet article, si vous souhaitez utiliser TypeScript, puis utiliser Intellisense vous devez exécuter la commande suivante dans l’invite du système prenant en charge Node (ou la fenêtre git bash) à partir de la racine de votre dossier de projet. Vous devez avoir [Node.js installé](https://nodejs.org)  (qui inclut npm).
 > 
 > ```
 > npm install --save-dev @types/office-js
 > ```
 
-La bibliothèque de l’[interface API JavaScript pour Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js) comprend le fichier Office.js et des fichiers .js propres aux applications hôtes associées, comme Excel-15.js et Outlook15.js. 
+La bibliothèque de l’[API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) comprend le fichier Office.js et des fichiers .js propres aux applications hôtes associées, comme Excel-15.js et Outlook15.js. 
 
 
-La façon la plus simple de référencer l’interface API est d’utiliser notre CDN en ajoutant le `<script>` suivant à la balise `<head>` de votre page :  
+La façon la plus simple de référencer l’interface API est d’utiliser notre CDN en ajoutant le `<script>` suivant à la balise `<head>` de votre page :  
 
 ```html
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
@@ -37,5 +37,5 @@ Si vous envisagez de publier votre complément Office à partir d’AppSource, v
 ## <a name="see-also"></a>Voir aussi
 
 - [Présentation de l’interface API JavaScript pour Office](understanding-the-javascript-api-for-office.md)    
-- [Interface API JavaScript pour Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)
+- [Interface API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)
     
