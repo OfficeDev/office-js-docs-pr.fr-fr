@@ -20,7 +20,7 @@ Dans cet article, vous allez découvrir le processus de création d’un complé
 
 ## <a name="generate-a-new-angular-app"></a>Génération d’une nouvelle application Angular
 
-Utilisez l’interface de ligne de commande Angular pour générer votre application Angular. À partir du terminal, exécutez la commande suivante :
+Utilisez l’interface de ligne de commande Angular pour générer votre application Angular. À partir du terminal, exécutez la commande suivante :
 
 ```bash
 ng new my-addin
@@ -42,7 +42,7 @@ Le fichier manifeste d’un complément définit ses paramètres et ses fonction
     yo office 
     ```
 
-    - **Choisissez un type de projet :** `Office Add-in containing the manifest only`
+    - **Choisissez un type de projet :** `Office Add-in containing the manifest only`
     - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
     - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
 
@@ -59,7 +59,7 @@ Le fichier manifeste d’un complément définit ses paramètres et ses fonction
 
 Pour ce démarrage rapide, vous pouvez utiliser les certificats fournis par le **générateur Yeoman pour les compléments Office**. Vous avez déjà installé le générateur globalement (dans le cadre de la **Configuration requise** pour ce guide de démarrage rapide), il vous faudra donc uniquement copier les certificats à partir de l’emplacement d’installation dans le dossier de l’application. Les étapes suivantes expliquent comment effectuer cette procédure.
 
-1. À partir du terminal, exécutez la commande suivante pour identifier le dossier où les bibliothèques **npm** globales sont installées :
+1. À partir du terminal, exécutez la commande suivante pour identifier le dossier où les bibliothèques **npm** globales sont installées :
 
     ```bash 
     npm list -g 
@@ -224,9 +224,9 @@ Pour ce démarrage rapide, vous pouvez utiliser les certificats fournis par le *
 
 1. Suivez les instructions pour la plateforme que vous utiliserez pour exécuter votre complément et chargez une version test du complément dans Excel.
 
-    - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online : [Chargement de versions test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Excel Online : [Chargement de versions test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+    - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
    
 2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
@@ -241,7 +241,7 @@ Pour ce démarrage rapide, vous pouvez utiliser les certificats fournis par le *
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations, vous avez créé un complément Excel à l’aide d’Angular ! Découvrez à présent les fonctionnalités des compléments Excel et créez un complément plus complexe en continuant le didacticiel sur le complément Excel.
+Félicitations, vous avez créé un complément Excel à l’aide d’Angular ! Découvrez à présent les fonctionnalités des compléments Excel et créez un complément plus complexe en continuant le didacticiel sur le complément Excel.
 
 > [!div class="nextstepaction"]
 > [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial.yml)
@@ -251,4 +251,4 @@ Félicitations, vous avez créé un complément Excel à l’aide d’Angular !
 * [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial-create-table.md)
 * [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Référence de l’API JavaScript pour Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
+* [Référence de l’API JavaScript pour Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)
