@@ -8,14 +8,14 @@ L’espace de noms Office fournit des interfaces partagées qui sont utilisées 
 
 |Condition requise| Valeur|
 |---|---|
-|[Version minimale de l’ensemble des conditions requises de boîte aux lettres](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Version minimale des exigences de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
 ### <a name="namespaces"></a>Espaces de noms
 
-[context](office.context.md) : fournit des interfaces partagées à partir de l’espace de noms de contexte de l’API pour les compléments Office à utiliser dans l’API du complément Outlook.
+[context](office.context.md) : fournit des interfaces partagées à partir de l’espace de noms de contexte de l’API pour les compléments Office à utiliser dans l’API du complément Outlook.
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmenttype) : inclut les énumérations ItemType, EntityType, AttachmentType, RecipientType, ResponseType et ItemNotificationMessageType.
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmenttype) : inclut les énumérations ItemType, EntityType, AttachmentType, RecipientType, ResponseType et ItemNotificationMessageType.
 
 ### <a name="members"></a>Membres
 
@@ -27,7 +27,7 @@ Spécifie le résultat d’un appel asynchrone.
 
 *   String
 
-##### <a name="properties"></a>Propriétés :
+##### <a name="properties"></a>Propriétés :
 
 |Nom| Type| Description|
 |---|---|---|
@@ -38,7 +38,7 @@ Spécifie le résultat d’un appel asynchrone.
 
 |Condition requise| Valeur|
 |---|---|
-|[Version minimale de l’ensemble des conditions requises de boîte aux lettres](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Version minimale des exigences de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 ####  <a name="coerciontype-string"></a>CoercionType :String
 
@@ -48,7 +48,7 @@ Indique comment forcer le type des données retournées ou définies par la mét
 
 *   String
 
-##### <a name="properties"></a>Propriétés :
+##### <a name="properties"></a>Propriétés :
 
 |Nom| Type| Description|
 |---|---|---|
@@ -59,7 +59,7 @@ Indique comment forcer le type des données retournées ou définies par la mét
 
 |Condition requise| Valeur|
 |---|---|
-|[Version minimale de l’ensemble des conditions requises de boîte aux lettres](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Version minimale des exigences de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 ####  <a name="sourceproperty-string"></a>SourceProperty :String
 
@@ -69,16 +69,16 @@ Spécifie la source des données renvoyées par la méthode appelée.
 
 *   String
 
-##### <a name="properties"></a>Propriétés :
+##### <a name="properties"></a>Propriétés :
 
 |Nom| Type| Description|
 |---|---|---|
 |`Body`| String|La source de données est dans le corps d’un message.|
 |`Subject`| String|La source de données est dans l’objet d’un message.|
 
-##### <a name="requirements"></a>Conditions requises
+##### <a name="requirements"></a>Condition requise
 
 |Condition requise| Valeur|
 |---|---|
-|[Version minimale de l’ensemble des conditions requises de boîte aux lettres](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Version minimale des exigences de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|

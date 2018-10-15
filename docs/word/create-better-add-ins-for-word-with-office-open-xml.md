@@ -2,12 +2,12 @@
 title: Créer de meilleurs compléments pour Word avec Office Open XML
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 2e8545f175143c26b3f65af78ad4c47053e927cd
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 26a9db81931fdfe5872d31d79a9d46450a50f449
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925555"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945798"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Créer de meilleurs compléments pour Word avec Office Open XML
 
@@ -102,7 +102,7 @@ Office 2013 offre un large éventail de dispositions pour les diagrammes SmartAr
 
 ![Graphique dans Word 2013.](../images/office15-app-create-wd-app-using-ooxml-fig11.png)
 
-Vous pouvez insérer des graphiques Excel sous forme de graphiques dynamiques dans des documents Word, ce qui signifie également que vous pouvez les utiliser dans votre complément pour Word. Comme vous pouvez le constater avec les exemples précédents, vous pouvez utiliser le forçage Office Open XML pour insérer pratiquement n’importe quel type de contenu dans un document. Il existe deux façons simples d’obtenir le balisage Office Open XML dont vous avez besoin. Vous pouvez ajouter votre contenu riche à un document Word 2013 vierge, puis enregistrer ce fichier au format Document XML Word, ou utiliser un complément de test avec la méthode [getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) pour récupérer le balisage. Les deux approches fournissent globalement le même résultat.
+Vous pouvez insérer des graphiques Excel sous forme de graphiques dynamiques dans des documents Word, ce qui signifie également que vous pouvez les utiliser dans votre complément pour Word. Comme vous pouvez le constater avec les exemples précédents, vous pouvez utiliser le forçage Office Open XML pour insérer pratiquement n’importe quel type de contenu dans un document. Il existe deux façons simples d’obtenir le balisage Office Open XML dont vous avez besoin. Vous pouvez ajouter votre contenu riche à un document Word 2013 vierge, puis enregistrer ce fichier au format Document XML Word, ou utiliser un complément de test avec la méthode [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) pour récupérer le balisage. Les deux approches fournissent globalement le même résultat.
 
     
 > [!NOTE]
@@ -113,7 +113,7 @@ Si vous enregistrez le fichier sous un format XML à partir de Word, notez qu’
 ## <a name="exploring-the-office-open-xml-document-package"></a>Exploration du package de document Office Open XML
 
 
-Lorsque vous utilisez [getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) pour récupérer une sélection de contenu Office Open XML (ou lorsque vous enregistrez le document au format Document XML Word), ce que vous obtenez n’est pas seulement le balisage qui décrit le contenu sélectionné, mais un document entier avec de nombreux paramètres et options dont vous n’aurez certainement pas besoin. En fait, si vous utilisez cette méthode à partir d’un document qui contient un complément de volet de tâches, le balisage que vous obtenez comprend également votre volet de tâches.
+Lorsque vous utilisez [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) pour récupérer une sélection de contenu Office Open XML (ou lorsque vous enregistrez le document au format Document XML Word), ce que vous obtenez n’est pas seulement le balisage qui décrit le contenu sélectionné, mais un document entier avec de nombreux paramètres et options dont vous n’aurez certainement pas besoin. En fait, si vous utilisez cette méthode à partir d’un document qui contient un complément de volet de tâches, le balisage que vous obtenez comprend également votre volet de tâches.
 
 Même un simple package de document Word comprend des composants pour les propriétés du document, les styles, le thème (paramètres de mise en forme), les paramètres web, les polices, en plus d’autres composants pour le contenu réel.
 
@@ -218,7 +218,7 @@ Nous avons modifié l’exemple Office Open XML affiché ici, comme décrit dans
 
 Une fois que vous avez enregistré le code Office Open XML précédent dans un fichier XML accessible à partir de votre solution, vous pouvez utiliser la fonction suivante pour définir le contenu du texte mis en forme dans le document à l’aide du forçage Office Open XML. 
 
-Dans cette fonction, vous remarquerez que toutes les lignes sauf la dernière sont utilisées pour obtenir votre balisage enregistré afin de l’utiliser dans l’appel de méthode [setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) à la fin de la fonction. **setSelectedDataASync** exige seulement que vous indiquiez le contenu à insérer et le type de forçage.
+Dans cette fonction, vous remarquerez que toutes les lignes sauf la dernière sont utilisées pour obtenir votre balisage enregistré afin de l’utiliser dans l’appel de méthode [setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#setselecteddataasync-data--options--callback-) à la fin de la fonction. **setSelectedDataASync** exige seulement que vous indiquiez le contenu à insérer et le type de forçage.
 
 
 > [!NOTE]
@@ -552,9 +552,9 @@ function addAndBindControl() {
 Le code présenté ici effectue les étapes suivantes :
 
 
-- Tentative de création d’une liaison avec le contrôle de contenu nommé, à l’aide de [addFromNamedItemAsync](https://dev.office.com/reference/add-ins/shared/bindings.addfromnameditemasync). 
+- Tentative de création d’une liaison avec le contrôle de contenu nommé, à l’aide de [addFromNamedItemAsync](https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#addfromnameditemasync-itemname--bindingtype--options--callback-). 
     
-    Effectuez d’abord cette opération s’il est possible que le contrôle nommé existe déjà dans le document lors de l’exécution du code. Par exemple, vous devez procéder de cette façon si le complément a été inséré et enregistré dans un modèle conçu pour fonctionner avec le complément dans lequel le contrôle a été placé à l’avance. Vous devez également procéder ainsi si vous devez créer une liaison à un contrôle qui a été placé précédemment par le complément.
+  Effectuez d’abord cette opération s’il est possible que le contrôle nommé existe déjà dans le document lors de l’exécution du code. Par exemple, vous devez procéder de cette façon si le complément a été inséré et enregistré dans un modèle conçu pour fonctionner avec le complément dans lequel le contrôle a été placé à l’avance. Vous devez également procéder ainsi si vous devez créer une liaison à un contrôle qui a été placé précédemment par le complément.
     
 - Le rappel du premier appel de la méthode  **addFromNamedItemAsync** vérifie l’état du résultat pour voir si la liaison a échoué, car l’élément nommé n’existe pas dans le document (contrôle de contenu nommé MyContentControlTitle dans cet exemple). Dans ce cas, le code ajoute le contrôle au point de sélection actif (à l’aide de **setSelectedDataAsync** ), puis se lie à celui-ci.
     
@@ -854,7 +854,7 @@ Lorsque vous utilisez des modèles avec votre application, que le complément r�
 
 ## <a name="see-also"></a>Voir aussi
 
-- [API JavaScript pour Office ](https://dev.office.com/reference/add-ins/javascript-api-for-office) 
+- [API JavaScript pour Office ](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js) 
 - [Norme ECMA-376 : Formats de fichier Office Open XML](http://www.ecma-international.org/publications/standards/Ecma-376.htm) (accéder ici au guide de langage complet et à la documentation correspondante sur Open XML) 
 - [OpenXMLDeveloper.org](http://www.openxmldeveloper.org)
 - [Exploration de l’API JavaScript pour Office : liaisons de données et parties XML personnalisées](https://msdn.microsoft.com/magazine/dn166930.aspx)

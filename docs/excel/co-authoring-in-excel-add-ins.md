@@ -2,19 +2,19 @@
 title: Co-création dans des macros complémentaires Excel
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 1919f66a3c93c42ec24520f971eda33dac491355
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 47482ba74ef298add4cdb553d66904381123289d
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925240"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945728"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>Co-création dans des macros complémentaires Excel  
 
 Avec la [co-création](https://support.office.com/article/Collaborate-on-Excel-workbooks-at-the-same-time-with-co-authoring-7152aa8b-b791-414c-a3bb-3024e46fb104), plusieurs personnes peuvent travailler ensemble et modifier simultanément le même classeur Excel. Tous les co-auteurs d’un classeur peuvent voir les modifications d’un autre co-auteur dès que ce co-auteur enregistre le classeur. Pour co-créer un classeur Excel, le classeur doit être enregistré dans OneDrive, OneDrive Entreprise ou SharePoint Online.
 
 > [!IMPORTANT]
-> Dans Excel 2016 pour Office 365, vous remarquerez l’enregistrement automatique dans le coin supérieur gauche. Lorsque l’enregistrement automatique est activé, les co-auteurs visualisent vos modifications en temps réel. Prenez en considération l’impact de ce comportement sur la conception de votre complément Excel. Les utilisateurs peuvent désactiver l’enregistrement automatique via le commutateur dans le coin supérieur gauche de la fenêtre Excel.
+> Dans Excel pour Office 365, vous remarquerez AutoSave dans le coin supérieur gauche. Lorsque AutoSave est activé, les coauteurs voient vos modifications en temps réel. Considérez l'impact de ce comportement sur la conception de votre complément Excel. Les utilisateurs peuvent désactiver AutoSave via le commutateur en haut, à gauche de la fenêtre Excel.
 
 La co-création est disponible sur les plateformes suivantes :
 
@@ -26,7 +26,7 @@ La co-création est disponible sur les plateformes suivantes :
 
 ## <a name="coauthoring-overview"></a>Vue d’ensemble de la co-création
  
-Lorsque vous modifiez le contenu d’un classeur, Excel synchronise automatiquement ces modifications avec tous les co-auteurs. Les co-auteurs peuvent modifier le contenu d’un classeur, mais peuvent également exécuter du code dans un complément Excel. Par exemple, lorsque le code JavaScript suivant s’exécute dans un complément Office, la valeur de la plage est définie sur Contoso :
+Lorsque vous modifiez le contenu d'un classeur, Excel synchronise automatiquement ces modifications entre tous les coauteurs. Les coauteurs peuvent modifier le contenu d'un classeur, mais peuvent aussi exécuter du code dans un complément Excel. Par exemple, lorsque le code JavaScript suivant s'exécute dans un complément Office, la valeur d'une plage est définie sur Contoso :
 
 ```js
 range.values = [['Contoso']];
@@ -46,15 +46,15 @@ Par exemple, vous pouvez créer un complément de contenu qui affiche des visual
 - La feuille de calcul masquée de l’utilisateur A est mise à jour avec la nouvelle valeur Orange.
 - Les visualisations personnalisées de l’utilisateur A sont toujours bleues. 
 
-Si vous souhaitez que les visualisations personnalisées de l’utilisateur A répondent aux modifications apportées par les co-auteurs sur la feuille de calcul masquée, utilisez l’événement [BindingDataChanged](https://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent). Cela garantit que les modifications apportées au contenu du classeur par les co-auteurs sont répercutées à l’état de votre complément.
+Si vous souhaitez que les visualisations personnalisées de l’utilisateur A répondent aux modifications apportées par les co-auteurs sur la feuille de calcul masquée, utilisez l’événement [BindingDataChanged](https://docs.microsoft.com/javascript/api/office/office.bindingdatachangedeventargs?view=office-js). Cela garantit que les modifications apportées au contenu du classeur par les co-auteurs sont répercutées à l’état de votre complément.
 
 ## <a name="caveats-to-using-events-with-coauthoring"></a>Restrictions à l’utilisation des événements dans le cadre de la co-création 
 
 Comme indiqué précédemment, dans certains scénarios, le déclenchement d’événements pour tous les co-auteurs permet d’améliorer l’expérience utilisateur. Toutefois, sachez que, dans certains scénarios, ce comportement peut entraîner des expériences utilisateur médiocres. 
 
-Par exemple, dans les scénarios de validation de données, il est fréquent d’afficher l’interface utilisateur en réponse aux événements. L’événement [BindingDataChanged](https://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent) décrit dans la section précédente s’exécute lorsqu’un utilisateur local ou un co-auteur modifie (à distance) le contenu du classeur dans la liaison. Si le gestionnaire d’événements de l’événement **BindingDataChanged** affiche l’interface utilisateur, les utilisateurs verront une interface utilisateur qui n’est pas liée aux modifications sur lesquelles ils travaillaient dans le classeur, entraînant ainsi une expérience utilisateur médiocre. Évitez d’afficher l’interface utilisateur lorsque vous utilisez des événements dans votre complément.
+Par exemple, dans les scénarios de validation de données, il est fréquent d’afficher l’interface utilisateur en réponse aux événements. L’événement [BindingDataChanged](https://docs.microsoft.com/javascript/api/office/office.bindingdatachangedeventargs?view=office-js) décrit dans la section précédente s’exécute lorsqu’un utilisateur local ou un co-auteur modifie (à distance) le contenu du classeur dans la liaison. Si le gestionnaire d’événements de l’événement **BindingDataChanged** affiche l’interface utilisateur, les utilisateurs verront une interface utilisateur qui n’est pas liée aux modifications sur lesquelles ils travaillaient dans le classeur, entraînant ainsi une expérience utilisateur médiocre. Évitez d’afficher l’interface utilisateur lorsque vous utilisez des événements dans votre complément.
 
 ## <a name="see-also"></a>Voir aussi 
 
-- [À propos de la co-création dans Excel (VBA)](https://msdn.microsoft.com/vba/excel-vba/articles/about-coauthoring-in-excel) 
-- [Impact de l’enregistrement automatique sur les compléments et les macros (VBA)](https://msdn.microsoft.com/vba/office-shared-vba/articles/how-autosave-impacts-addins-and-macros) 
+- [À propos de la co-création dans Excel (VBA)](https://docs.microsoft.com/office/vba/excel/concepts/about-coauthoring-in-excel) 
+- [Impact de l’enregistrement automatique sur les compléments et les macros (VBA)](https://docs.microsoft.com/office/vba/library-reference/concepts/how-autosave-impacts-addins-and-macros) 

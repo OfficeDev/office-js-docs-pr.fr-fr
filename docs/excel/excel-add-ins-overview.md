@@ -2,12 +2,12 @@
 title: Vue d’ensemble des compléments Excel
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 8ce01df60489d05f1ba9f4b53f04fa99f61e1d36
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.openlocfilehash: 6d67cd05e7021c8b76fb69135000d4079024713a
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459097"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505957"
 ---
 # <a name="excel-add-ins-overview"></a>Vue d’ensemble des compléments Excel
 
@@ -24,16 +24,16 @@ La plateforme de compléments Office fournit la structure et les API JavaScript 
 * **Déploiement centralisé** : les administrateurs peuvent rapidement et facilement déployer des compléments Excel vers les utilisateurs d’une organisation.
 * **Authentification unique (SSO)** : intégrez facilement votre complément Excel à l’aide de Microsoft Graph.
 * **Utilisation de technologies web standard** : créez votre complément Excel en utilisant des technologies web connues telles qu’HTML, CSS et JavaScript.
-* **Distribution via AppSource** : partagez votre complément Excel avec un large public en le publiant sur [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office&page=1&src=office&corrid=53245fad-fcbe-41f8-9f97-b0840264f97c&omexanonuid=4a0102fb-b31a-4b9f-9bb0-39d4cc6b789d).
+* **Distribution via AppSource** : partagez votre complément Excel avec un large public en le publiant sur [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office&page=1&src=office&corrid=53245fad-fcbe-41f8-9f97-b0840264f97c&omexanonuid=4a0102fb-b31a-4b9f-9bb0-39d4cc6b789d).
 
 > [!NOTE]
 > Les compléments Excel diffèrent des compléments COM et VSTO, qui sont des solutions d’intégration d’Office antérieures qui s’exécutent uniquement sur Office pour Windows. Contrairement aux compléments COM, les compléments Excel ne nécessitent pas d’installer du code sur le périphérique d’un utilisateur ou dans Excel. 
 
 ## <a name="components-of-an-excel-add-in"></a>Composants d’un complément Excel 
 
-Un complément Excel comprend deux composants de base : une application web et un fichier de configuration, appelé fichier manifeste. 
+Un complément Excel comprend deux composants de base : une application web et un fichier de configuration, appelé fichier manifeste. 
 
-L’application web utilise l’[API JavaScript pour Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js) pour interagir avec des objets dans Excel et peut également faciliter l’interaction avec les ressources en ligne. Par exemple, un complément peut effectuer les tâches suivantes :
+L’application web utilise l’[API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) pour interagir avec des objets dans Excel et peut également faciliter l’interaction avec les ressources en ligne. Par exemple, un complément peut effectuer les tâches suivantes :
 
 * Créer, lire, mettre à jour et supprimer des données dans le classeur (feuilles de calcul, plages, tableaux, graphiques, éléments nommés, etc.).
 * Effectuer une autorisation utilisateur avec un service en ligne à l’aide du flux OAuth 2.0 standard.
@@ -96,11 +96,11 @@ Pour plus d’informations sur les compléments de contenu, reportez-vous à [Co
 
 ## <a name="javascript-apis-to-interact-with-workbook-content"></a>API JavaScript permettant d’interagir avec le contenu du classeur
 
-Un complément Excel interagit avec des objets dans Excel en utilisant l’[API JavaScript pour Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js), qui inclut deux modèles d’objets JavaScript :
+Un complément Excel interagit avec des objets dans Excel en utilisant l’[API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js), qui inclut deux modèles d’objets JavaScript :
 
-* **API JavaScript pour Excel** : incluse dans Office 2016, l’[API JavaScript pour Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js) fournit des objets Excel fortement typés que vous pouvez utiliser pour accéder aux feuilles de calcul, aux plages, aux tableaux, aux graphiques et bien plus encore. 
+* **API JavaScript pour Excel** : incluse dans Office 2016, l’[API JavaScript pour Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js) fournit des objets Excel fortement typés que vous pouvez utiliser pour accéder aux feuilles de calcul, aux plages, aux tableaux, aux graphiques et bien plus encore. 
 
-* **API partagée** : introduite dans Office 2013, l’API partagée vous permet d’accéder aux fonctionnalités telles que l’interface utilisateur, les boîtes de dialogue et les paramètres client qui sont communes à plusieurs types applications hôtes telles que Word, Excel et PowerPoint. Étant donné que l’API partagée fournit une fonctionnalité limitée pour l’interaction avec Excel, vous pouvez l’utiliser si votre complément doit s’exécuter dans Excel 2013.
+* **API partagée** : introduite dans Office 2013, l’API partagée vous permet d’accéder aux fonctionnalités telles que l’interface utilisateur, les boîtes de dialogue et les paramètres client qui sont communes à plusieurs types applications hôtes telles que Word, Excel et PowerPoint. Étant donné que l’API partagée fournit une fonctionnalité limitée pour l’interaction avec Excel, vous pouvez l’utiliser si votre complément doit s’exécuter dans Excel 2013.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
@@ -112,4 +112,4 @@ Commencez par [créer votre premier complément Excel](excel-add-ins-get-started
 - [Meilleures pratiques en matière de développement de compléments Office](../concepts/add-in-development-best-practices.md)
 - [Instructions de conception pour les compléments Office](../design/add-in-design.md)
 - [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
-- [Référence de l’API JavaScript pour Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
+- [Référence de l’API JavaScript pour Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)

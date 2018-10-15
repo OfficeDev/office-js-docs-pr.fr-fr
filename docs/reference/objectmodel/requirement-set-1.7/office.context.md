@@ -9,7 +9,7 @@ L’espace de noms Office.context fournit des interfaces partagées qui sont uti
 
 |Condition requise| Valeur|
 |---|---|
-|[Version minimale de l’ensemble des conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Version minimale de l’ensemble des conditions requises de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
 ##### <a name="members-and-methods"></a>Membres et méthodes
@@ -18,7 +18,7 @@ L’espace de noms Office.context fournit des interfaces partagées qui sont uti
 |--------|------|
 | [displayLanguage](#displaylanguage-string) | Membre |
 | [officeTheme](#officetheme-object) | Membre |
-| [roamingSettings](#roamingsettings-roamingsettingsjavascriptapioutlookofficeroamingsettings) | Membre |
+| [roamingSettings](#roamingsettings-roamingsettingsjavascriptapioutlook17officeroamingsettings) | Membre |
 
 ### <a name="namespaces"></a>Espaces de noms
 
@@ -26,7 +26,7 @@ L’espace de noms Office.context fournit des interfaces partagées qui sont uti
 
 ### <a name="members"></a>Membres
 
-####  <a name="displaylanguage-string"></a>displayLanguage : Chaîne
+####  <a name="displaylanguage-string"></a>displayLanguage :String
 
 Obtient les paramètres régionaux (langue) au format de balise de langue RFC 1766 spécifiés par l’utilisateur pour l’interface utilisateur de l’application hôte Office.
 
@@ -34,13 +34,13 @@ La valeur `displayLanguage` reflète le paramètre **Langue d’affichage** actu
 
 ##### <a name="type"></a>Type :
 
-*   String
+*   Chaîne
 
-##### <a name="requirements"></a>Configuration requise
+##### <a name="requirements"></a>Conditions requises
 
 |Condition requise| Valeur|
 |---|---|
-|[Version minimale de l’ensemble des conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Version minimale de l’ensemble des conditions requises de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
 ##### <a name="example"></a>Exemple
@@ -70,9 +70,9 @@ Permet d’accéder aux propriétés pour les couleurs du thème Office.
 > [!NOTE]
 > Ce membre n’est pas pris en charge par Outlook pour iOS ou Outlook pour Android.
 
-À l’aide des couleurs du thème Office, vous pouvez coordonner le modèle de couleurs de votre complément avec le thème Office actuel sélectionné par l’utilisateur dans **Fichier > Compte Office > Thème Office**, qui est appliqué à toutes les applications hôtes Office. Les couleurs du thème Office s’utilisent avec les compléments de messagerie et du volet Office.
+À l’aide des couleurs du thème Office, vous pouvez coordonner le modèle de couleurs de votre complément avec le thème Office actuel sélectionné par l’utilisateur dans **Fichier > Compte Office > Interface utilisateur Thème Office**, qui est appliqué à toutes les applications hôtes Office. Les couleurs du thème Office s’utilisent avec les compléments de messagerie et du volet Office.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type :
 
 *   Objet
 
@@ -80,16 +80,16 @@ Permet d’accéder aux propriétés pour les couleurs du thème Office.
 
 |Nom| Type| Description|
 |---|---|---|
-|`bodyBackgroundColor`| String|Obtient la couleur d’arrière-plan du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
-|`bodyForegroundColor`| String|Obtient la couleur de premier plan du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
-|`controlBackgroundColor`| String|Obtient la couleur d’arrière-plan du contrôle du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
-|`controlForegroundColor`| String|Obtient la couleur du contrôle du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
+|`bodyBackgroundColor`| Chaîne|Obtient la couleur d’arrière-plan du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
+|`bodyForegroundColor`| Chaîne|Obtient la couleur de premier plan du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
+|`controlBackgroundColor`| Chaîne|Obtient la couleur d’arrière-plan du contrôle du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
+|`controlForegroundColor`| Chaîne|Obtient la couleur du contrôle du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
 
 ##### <a name="requirements"></a>Conditions requises
 
 |Condition requise| Valeur|
 |---|---|
-|[Version minimale des exigences de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
+|[Version minimale de l’ensemble des conditions requises de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
 ##### <a name="example"></a>Exemple
@@ -107,7 +107,7 @@ function applyOfficeTheme(){
 }
 ```
 
-####  <a name="roamingsettings-roamingsettingsjavascriptapioutlookofficeroamingsettings"></a>roamingSettings :[RoamingSettings](/javascript/api/outlook/office.RoamingSettings)
+####  <a name="roamingsettings-roamingsettingsjavascriptapioutlook17officeroamingsettings"></a>roamingSettings :[RoamingSettings](/javascript/api/outlook_1_7/office.RoamingSettings)
 
 Obtient un objet qui représente les paramètres personnalisés ou l’état d’un complément de messagerie, enregistrés dans la boîte aux lettres d’un utilisateur.
 
@@ -115,12 +115,12 @@ L’objet `RoamingSettings` vous permet de stocker et d’accéder aux données 
 
 ##### <a name="type"></a>Type :
 
-*   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings)
+*   [RoamingSettings](/javascript/api/outlook_1_7/office.RoamingSettings)
 
 ##### <a name="requirements"></a>Conditions requises
 
 |Condition requise| Valeur|
 |---|---|
-|[Version minimale de l’ensemble des conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restreint|
+|[Version minimale des exigences de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Niveau minimal d’autorisation](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restreint|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|

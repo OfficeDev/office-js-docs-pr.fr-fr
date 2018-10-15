@@ -6,16 +6,16 @@
 L’espace de noms Office.context fournit des interfaces partagées qui sont utilisées par des compléments dans toutes les applications Office. Cette liste documente uniquement les interfaces utilisées par des compléments Outlook. Pour obtenir une liste complète des espaces de noms Office.context, consultez la page relative à la [référence Office.context dans l’interface API partagée](/javascript/api/office/office.context).
 
 
-##### <a name="requirements"></a>Configuration requise
+##### <a name="requirements"></a>Conditions requises
 
-|Conditions requises| Valeur|
+|Condition requise| Valeur|
 |---|---|
-|[Version minimale de l’ensemble des conditions de boîte aux lettres](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Version minimale de l’ensemble des conditions requises de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
 ### <a name="namespaces"></a>Espaces de noms
 
-[mailbox](office.context.mailbox.md) : permet d’accéder au modèle d’objet du complément Outlook pour Microsoft Outlook et Microsoft Outlook sur le Web.
+[mailbox](office.context.mailbox.md) : permet d’accéder au modèle d’objet du complément Outlook pour Microsoft Outlook et Microsoft Outlook sur le Web.
 
 ### <a name="members"></a>Membres
 
@@ -25,15 +25,15 @@ Obtient les paramètres régionaux (langue) au format de balise de langue RFC 17
 
 La valeur `displayLanguage` reflète le paramètre **Langue d’affichage** actuel spécifié dans **Fichier > Options > Langue** dans l’application hôte Office.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type :
 
-*   String
+*   Chaîne
 
-##### <a name="requirements"></a>Configuration requise
+##### <a name="requirements"></a>Conditions requises
 
-|Conditions requises| Valeur|
+|Condition requise| Valeur|
 |---|---|
-|[Version minimale de l’ensemble des conditions de boîte aux lettres](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Version minimale des exigences de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
 ##### <a name="example"></a>Exemple
@@ -58,18 +58,18 @@ function write(message){
 
 ####  <a name="roamingsettings-roamingsettingsjavascriptapioutlook11officeroamingsettings"></a>roamingSettings :[RoamingSettings](/javascript/api/outlook_1_1/office.RoamingSettings)
 
-Obtient un objet qui représente les paramètres personnalisés ou l’état d’un complément de messagerie enregistrés dans la boîte aux lettres d’un utilisateur.
+Obtient un objet qui représente les paramètres personnalisés ou l’état d’un complément de messagerie, enregistrés dans la boîte aux lettres d’un utilisateur.
 
 L’objet `RoamingSettings` vous permet de stocker et d’accéder aux données d’un complément de messagerie conservées dans la boîte aux lettres d’un utilisateur. Ainsi, cet objet est accessible par le complément de messagerie lors de son exécution à partir d’une application cliente hôte utilisée pour accéder à la boîte aux lettres.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type :
 
 *   [RoamingSettings](/javascript/api/outlook_1_1/office.RoamingSettings)
 
-##### <a name="requirements"></a>Configuration requise
+##### <a name="requirements"></a>Conditions requises
 
-|Conditions requises| Valeur|
+|Condition requise| Valeur|
 |---|---|
-|[Version minimale de l’ensemble des conditions de boîte aux lettres](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Version minimale de l’ensemble des conditions requises de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restreint|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
