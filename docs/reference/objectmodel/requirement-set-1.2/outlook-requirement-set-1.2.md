@@ -3,7 +3,7 @@
 Le sous-ensemble de l’API pour complément Outlook de l’interface API JavaScript pour Office comprend des objets, des méthodes, des propriétés et des événements à utiliser dans un complément Outlook.
 
 > [!NOTE]
-> Dans cette documentation, l’[ensemble de conditions requises](/javascript/office/requirement-sets/outlook-api-requirement-sets) présenté est différent de l’ensemble de conditions requises de la version précédente. 
+> Dans cette documentation, l’[ensemble de conditions requises](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) présenté est différent de l’ensemble de conditions requises de la version précédente. 
 
 ## <a name="whats-new-in-12"></a>Nouveautés de la version 1.2
 
@@ -11,10 +11,10 @@ L’ensemble de conditions requises de la version 1.2 comprend toutes les foncti
 
 ### <a name="change-log"></a>Journal des modifications
 
-- Ajouté [Office.context.mailbox.item.getSelectedDataAsync](office.context.mailbox.item.md#getselecteddataasynccoerciontype-options-callback--string) : retourne de manière asynchrone les données sélectionnées à partir de l’objet ou du corps du message.
-- Ajout de la méthode [Office.context.mailbox.item.setSelectedDataAsync](office.context.mailbox.item.md#setselecteddataasyncdata-options-callback) : Insère les données dans le corps ou l’objet d’un message de manière asynchrone.
-- Modification de la fonction [Office.context.mailbox.item.displayReplyAllForm](office.context.mailbox.item.md#displayreplyallformformdata) : Ajout de la propriété `attachments` dans le paramètre `formData`.
-- Modification de la fonction [Office.context.mailbox.item.displayReplyForm](office.context.mailbox.item.md#displayreplyformformdata) : Ajout de la propriété `attachments` dans le paramètre `formData`.
+- Ajouté [Office.context.mailbox.item.getSelectedDataAsync](office.context.mailbox.item.md#getselecteddataasynccoerciontype-options-callback--string) : retourne de manière asynchrone les données sélectionnées à partir de l’objet ou du corps du message.
+- Ajout de la méthode [Office.context.mailbox.item.setSelectedDataAsync](office.context.mailbox.item.md#setselecteddataasyncdata-options-callback) : Insère les données dans le corps ou l’objet d’un message de manière asynchrone.
+- Modification de la fonction [Office.context.mailbox.item.displayReplyAllForm](office.context.mailbox.item.md#displayreplyallformformdata) : Ajout de la propriété `attachments` dans le paramètre `formData`.
+- Modification de la fonction [Office.context.mailbox.item.displayReplyForm](office.context.mailbox.item.md#displayreplyformformdata) : Ajout de la propriété `attachments` dans le paramètre `formData`.
 
 ## <a name="see-also"></a>Voir aussi
 

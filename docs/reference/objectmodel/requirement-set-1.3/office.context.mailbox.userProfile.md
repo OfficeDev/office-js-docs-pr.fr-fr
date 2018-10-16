@@ -7,7 +7,7 @@
 
 |Condition requise| Valeur|
 |---|---|
-|[Version minimale des exigences de boîte aux lettres](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Version minimale de l’ensemble des conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
@@ -21,11 +21,11 @@ Obtient le nom d’affichage de l’utilisateur.
 
 *   Chaîne
 
-##### <a name="requirements"></a>Conditions requises
+##### <a name="requirements"></a>Configuration requise
 
 |Condition requise| Valeur|
 |---|---|
-|[Version minimale des exigences de boîte aux lettres](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Version minimale de l’ensemble des conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
@@ -46,9 +46,9 @@ Obtient l’adresse e-mail SMTP de l’utilisateur.
 
 ##### <a name="requirements"></a>Conditions requises
 
-|Condition requise| Valeur|
+|Conditions requises| Valeur|
 |---|---|
-|[Version minimale des exigences de boîte aux lettres](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Version minimale de l’ensemble des conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
@@ -69,9 +69,9 @@ Obtient le fuseau horaire par défaut de l’utilisateur.
 
 ##### <a name="requirements"></a>Conditions requises
 
-|Condition requise| Valeur|
+|Conditions requises| Valeur|
 |---|---|
-|[Version minimale des exigences de boîte aux lettres](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Version minimale de l’ensemble des conditions requises de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
