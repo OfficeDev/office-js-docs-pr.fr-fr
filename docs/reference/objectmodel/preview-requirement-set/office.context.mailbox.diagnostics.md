@@ -1,3 +1,4 @@
+
 # <a name="diagnostics"></a>diagnostics
 
 ### [Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md). diagnostics
@@ -9,7 +10,7 @@ Fournit des informations de diagnostic à un complément Outlook.
 |Condition requise| Valeur|
 |---|---|
 |[Version minimale des exigences de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau minimal d’autorisation](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
 ##### <a name="members-and-methods"></a>Membres et méthodes
@@ -26,9 +27,9 @@ Fournit des informations de diagnostic à un complément Outlook.
 
 Obtient une chaîne qui représente le nom de l’application hôte.
 
-Chaîne qui peut avoir l’une des valeurs suivantes : `Outlook`, `OutlookIOS` ou `OutlookWebApp`.
+Chaîne qui peut avoir l’une des valeurs suivantes : `Outlook`, `Mac Outlook`, `OutlookIOS` ou `OutlookWebApp`.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type :
 
 *   Chaîne
 
@@ -37,7 +38,7 @@ Chaîne qui peut avoir l’une des valeurs suivantes : `Outlook`, `OutlookIOS` o
 |Condition requise| Valeur|
 |---|---|
 |[Version minimale de l’ensemble des conditions requises de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Niveau minimal d’autorisation](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
 ####  <a name="hostversion-string"></a>hostVersion :String
@@ -55,7 +56,7 @@ Si le complément de messagerie s’exécute sur le client de bureau Outlook ou 
 |Condition requise| Valeur|
 |---|---|
 |[Version minimale des exigences de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Niveau minimal d’autorisation](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
 ####  <a name="owaview-string"></a>OWAView :String
