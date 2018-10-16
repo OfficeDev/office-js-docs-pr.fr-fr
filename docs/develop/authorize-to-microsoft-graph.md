@@ -2,20 +2,19 @@
 title: Autoriser Microsoft Graph dans votre complément Office
 description: ''
 ms.date: 04/10/2018
-ms.openlocfilehash: 83a9dd0beda9cb17a4f404c32cbe08a1e07f277e
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 6d0b6f2002b71c4680b72d2f40492fff1abf15e2
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944298"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505858"
 ---
 # <a name="authorize-to-microsoft-graph-in-your-office-add-in-preview"></a>Autorisez Microsoft Graph dans votre complément Office (préversion)
 
-Un utilisateur se connecte à Office (plates-formes de bureau, mobiles et en ligne) à l’aide de son compte Microsoft personnel ou professionnel ou d'école (Office 365). La meilleure façon pour un complément Office d'obtenir un accès autorisé à [Microsoft Graph](https://developer.microsoft.com/graph/docs) est d’utiliser les informations d’identification à partir de la connexion de l’utilisateur à Office. Cela lui permet d’accéder à ses données Microsoft Graph sans devoir se connecter une deuxième fois. 
+Les utilisateurs se connectent à Office (plateformes en ligne, mobiles et de bureau) à l’aide de leur compte Microsoft personnel ou de leur compte professionnel ou scolaire (Office 365). Le meilleur moyen pour un complément Office d'obtenir un accès autorisé à [Microsoft Graph](https://developer.microsoft.com/graph/docs) est d'utiliser les informations d'identification de connexion Office de l'utilisateur. Cela leur permet d’accéder à leurs données Microsoft Graph sans avoir besoin de se connecter une seconde fois. 
 
 > [!NOTE]
-> L’API d’authentification unique est actuellement en préversion pour Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur l’endroit où l’API d’authentification unique est actuellement prise en charge, consultez la rubrique [Ensembles de conditions requises de l’API d’identité](https://docs.microsoft.com/javascript/office/requirement-sets/identity-api-requirement-sets?view=office-js).
-> Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location d’Office 365. Pour plus d’informations sur la manière de procéder, consultez [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> L’API d’authentification unique est actuellement prise en charge en mode préversion pour Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur la prise en charge de l’API d’authentification unique reportez-vous à [Ensembles de conditions requises d’IdentityAPI](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets?view=office-js). Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location d’Office 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## <a name="add-in-architecture-for-sso-and-microsoft-graph"></a>Architecture de complément pour SSO et Microsoft Graph
 
@@ -29,9 +28,9 @@ Le diagramme suivant montre le fonctionnement du processus de connexion et d'acc
 
 ![Diagramme illustrant le processus d’authentification unique](../images/sso-access-to-microsoft-graph.png)
 
-1. Dans le complément, JavaScript appelle une nouvelle API Office.js [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference). Cela indique à l’application hôte Office qu’elle doit obtenir un jeton d’accès au complément. (Ci-après, cela s'appelle le **jeton d'accès de démarrage** car il est remplacé par un second jeton plus tard dans le processus. Pour un exemple de jeton d'accès de démarrage décodé, consultez la rubrique [Exemple de jeton d'accès](sso-in-office-add-ins.md#example-access-token).
+1. Dans le complément, JavaScript appelle une nouvelle API Office.js [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference). Cette option indique à l’application hôte Office qu'il faut obtenir un jeton d’accès pour le complément (ci-après, il s’agit du **jeton d’accès des données d’amorçage** , car il est remplacé par un deuxième jeton plus loin dans le processus. Pour obtenir un exemple d’un jeton d’accès d’amorçage décodé, voir [Exemple de jeton d’accès](sso-in-office-add-ins.md#example-access-token).)
 1. Si l’utilisateur n’est pas connecté, l’application hôte Office ouvre une fenêtre contextuelle pour que l’utilisateur se connecte.
-1. Si c’est la première fois que l’utilisateur actuel utilise votre complément, il est invité à donner son consentement.
+1. Si c’est la première fois que l’utilisateur utilise votre complément, il est invité à donner son consentement.
 1. L’application hôte Office demande le **jeton d'accès de démarrage** au point de terminaison Azure AD version 2.0 pour l’utilisateur actuel.
 1. Azure AD envoie le jeton de démarrage à l’application hôte Office.
 1. L’application hôte Office envoie le **jeton d'accès de démarrage** au complément en tant que partie de l’objet résultat renvoyé par l’appel `getAccessTokenAsync`.
@@ -44,21 +43,21 @@ Le diagramme suivant montre le fonctionnement du processus de connexion et d'acc
 1. Microsoft Graph renvoie des données au complément, qui peut les transmettre à l’interface utilisateur du complément.
 1. Lorsque le jeton d'accès à Microsoft Graph expire, le code côté serveur peut utiliser son jeton d'actualisation pour obtenir un nouveau jeton d'accès à Microsoft Graph.
 
-## <a name="develop-an-sso-add-in-that-accesses-microsoft-graph"></a>Développez un complément SSO qui accède à Microsoft Graph
+## <a name="develop-an-sso-add-in-that-accesses-microsoft-graph"></a>Développer un complément SSO qui accède à Microsoft Graph
 
-Vous développez un complément qui accède à Microsoft Graph comme vous le feriez pour tout autre complément utilisant l'authentification unique. Pour une description détaillée, voir [Activez la connexion unique pour les compléments Office](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins). La différence est qu'il est obligatoire pour le complément d'avoir une API Web côté serveur, et ce qu'on appelle le jeton d'accès dans cet article s'appelle le « jeton d'accès de démarrage ». 
+Vous développez un complément qui accède à Microsoft Graph, de la même façon que le feriez pour n’importe quel autre complément qui utilise l’authentification unique. Pour obtenir une description détaillée, voir [Activer l’authentification unique pour les compléments Office](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins). La différence est qu’il est obligatoire que le complément ait une API de Web côté serveur, et ce qu’on appelle le jeton d’accès appelé, dans cet article, le « jeton d’accès d’amorçage ». 
 
-Selon votre langage et votre environnement de travail, des bibliothèques peuvent être disponibles pour simplifier le code côté serveur que vous devez écrire. Votre code doit effectuer les opérations suivantes :
+Selon votre langage et votre infrastructure, des bibliothèques peuvent être disponibles pour simplifier le code côté serveur que vous devez écrire. Votre code doit effectuer les opérations suivantes :
 
-* Validez le jeton d'accès de démarrage du complément reçu du gestionnaire de jetons que vous avez créé précédemment. Pour plus d'informations, consultez la rubrique [Valider le jeton d'accès](sso-in-office-add-ins.md#validate-the-access-token). 
-* Démarrez le flux « de la part de » avec un appel au point de terminaison Azure AD version 2.0 qui inclut le jeton d'accès de démarrage, certaines métadonnées relatives à l’utilisateur et les informations d’identification du complément (ID et clé secrète).
-* Mettez en cache le jeton d'accès renvoyé à Microsoft Graph. Pour obtenir plus d'informations sur ce flux, consultez la rubrique[Azure Active Directory v2.0 et flux OAuth 2.0 « de la part de »](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of).
-* Créez une ou plusieurs méthodes d'API web qui obtiennent des données Microsoft Graph, en transmettant le jeton d'accès mis en cache vers Microsoft Graph.
+* Valider le jeton d’accès d’amorçage de complément qui est reçu à partir du gestionnaire de jeton que vous avez créé précédemment. Pour plus d’informations, voir [Valider le jeton d’accès](sso-in-office-add-ins.md#validate-the-access-token). 
+* Démarrer le flux « de la part de » avec un appel au point de terminaison Azure AD version 2.0 qui inclut le jeton d’accès d’amorçage, certaines métadonnées relatives à l’utilisateur et les informations d’identification du complément (ID et secret).
+* Mettre en cache le jeton d’accès renvoyé à Microsoft Graph. Pour plus d’informations sur ce flux voir [Azure Active Directory v2.0  et flux OAuth 2.0  « de la part de »](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of).
+* Créer une ou plusieurs méthodes d’API Web qui obtiennent des données Microsoft Graph, en transmettant le jeton d’accès mis en cache vers Microsoft Graph.
 
 > [!NOTE]
 > Pour des exemples de jetons d'accès décodés pour Microsoft Graph qui ont été obtenus « de la part du » flux, consultez la rubrique [Azure Active Directory version 2.0 et OAuth 2.0 de la part du lux](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of).
 
-Pour une aide détaillée pas à pas et des exemples de scénarios, consultez les rubriques suivantes :
+Pour une aide détaillée pas à pas et des exemples de scénarios, consultez les rubriques suivantes :
 
 * [Créer un complément Office Node.js qui utilise l’authentification unique](create-sso-office-add-ins-nodejs.md)
 * [Créer un complément Office ASP.NET qui utilise l’authentification unique](create-sso-office-add-ins-aspnet.md)
