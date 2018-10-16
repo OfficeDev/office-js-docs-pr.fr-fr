@@ -271,7 +271,7 @@ items:
       - name: Ranges
         displayName: Excel
         href: excel/excel-add-ins-ranges.md
-      - name: Tableaux
+      - name: tableaux ;
         displayName: Excel
         href: excel/excel-add-ins-tables.md
       - name: Utilisation de plusieurs plages
@@ -282,7 +282,7 @@ items:
         href: excel/excel-add-ins-worksheets.md
     - name: Vue d’ensemble de l’API JavaScript d’Excel
       displayName: Excel
-      href: https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js
+      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js
     - name: Référence de l’API JavaScript d’Excel
       displayName: Excel
       href: https://docs.microsoft.com/javascript/api/excel?view=office-js
@@ -316,7 +316,7 @@ items:
       href: word/search-option-guidance.md
     - name: Vue d’ensemble de l’utilisation de l’API JavaScript de Word
       displayName: Word
-      href: https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js
+      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js
     - name: Référence de l’API JavaScript de Word
       displayName: Word
       href: https://docs.microsoft.com/en-us/javascript/api/word?view=office-js
@@ -351,7 +351,7 @@ items:
       href: onenote/onenote-add-ins-page-content.md
     - name: Vue d’ensemble de l’API JavaScript de OneNote
       displayName: OneNote
-      href: https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js
+      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js
     - name: Référence de l’API JavaScript de OneNote
       displayName: OneNote
       href: https://docs.microsoft.com/en-us/javascript/api/onenote?view=office-js
@@ -611,7 +611,7 @@ items:
     items:
     - name: AllowSnapshot
       href: reference/manifest/allowsnapshot.md
-    - name: Alternaté
+    - name: AlternateId
       href: reference/manifest/alternateid.md
     - name: AppDomain
       href: reference/manifest/appdomain.md
@@ -627,7 +627,7 @@ items:
       href: reference/manifest/description.md
     - name: DesktopSettings
       href: reference/manifest/desktopsettings.md
-    - name: Dictionnaire
+    - name: Dictionary
       href: reference/manifest/dictionary.md
     - name: DictionaryHomePage
       href: reference/manifest/dictionaryhomepage.md
@@ -647,7 +647,7 @@ items:
       href: reference/manifest/hosts.md
     - name: IconUrl
       href: reference/manifest/iconurl.md
-    - name: ID
+    - name: Id
       href: reference/manifest/id.md
     - name: Métadonnées
       href: reference/manifest/metadata.md
@@ -673,7 +673,7 @@ items:
       href: reference/manifest/requestedheight.md
     - name: RequestedWidth
       href: reference/manifest/requestedwidth.md
-    - name: Configuration requise
+    - name: Conditions requises
       href: reference/manifest/requirements.md
     - name: Règle
       href: reference/manifest/rule.md
@@ -742,9 +742,9 @@ items:
         href: reference/manifest/webapplicationinfo.md
 - name: Ressources
   href: resources/resources-links-help.md
-ms.openlocfilehash: 0aecde804271ab187658129b478371363404eef5
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.openlocfilehash: e050a9d566314bc6dd7a8e146e6fd32733b92738
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459216"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25506279"
