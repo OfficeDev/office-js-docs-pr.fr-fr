@@ -2,21 +2,21 @@
 title: Utiliser l’API de dialogue dans vos compléments Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 148f4b564169e62f6444e87074c45cb8e4ce5c63
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+ms.openlocfilehash: 7d92609cbb4542d56a5bc5a28310b1d39d9c634b
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25005056"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25506237"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Utiliser l’API de dialogue dans vos compléments Office
 
 Vous pouvez utiliser l’[API de dialogue](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) pour ouvrir des boîtes de dialogue dans votre complément Office. Cet article fournit des conseils concernant l’utilisation de l’API de dialogue dans votre complément Office.
 
 > [!NOTE]
-> Pour plus d’informations sur les compléments où l’API de dialogue est actuellement prise en charge, consultez la rubrique relative aux [ensembles de conditions requises de l’API de dialogue](https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets?view=office-js). L’API de dialogue est actuellement prise en charge pour Word, Excel, PowerPoint et Outlook.
+> Pour plus d’informations sur les compléments où l’API de dialogue est actuellement prise en charge, consultez la rubrique relative aux [ensembles de conditions requises de l’API de dialogue](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets?view=office-js). L’API de dialogue est actuellement prise en charge pour Word, Excel, PowerPoint et Outlook.
 
-> Un scénario principal pour l’API de dialogue consiste à activer l’authentification pour une ressource telle que Google ou Facebook. Si votre complément nécessite les données relatives à l’utilisateur d’Office ou leurs ressources accessibles via Microsoft Graph, par exemple Office 365 ou OneDrive, nous vous recommandons d’utiliser l’API d’authentification unique chaque fois que possible. Si vous utilisez les API pour l’authentification unique, vous n’aurez pas besoin de l’API de dialogue. Pour plus d’informations, consultez la rubrique [Activer l’authentification unique pour des compléments Office](sso-in-office-add-ins.md).
+> Un scénario principal pour l’API de boîte de dialogue consiste à activer l’authentification avec une ressource comme Google ou Facebook. Si votre complément nécessite des données relatives à l’utilisateur d’Office ou leurs ressources accessibles par le biais de Microsoft Graph, telles que Office 365 ou OneDrive, nous vous recommandons d’utiliser l’API de session unique autant que possible. Si vous utilisez les API pour l’authentification unique, puis il sera inutile l’API de boîte de dialogue. Pour plus d’informations, voir [Activer l’authentification unique pour les compléments Office](sso-in-office-add-ins.md).
 
 Envisagez d’ouvrir une boîte de dialogue à partir d’un volet Office, d’un complément de contenu ou d’un [complément de commande](../design/add-in-commands.md) pour effectuer les opérations suivantes :
 
@@ -47,10 +47,10 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 
 > [!NOTE]
 > - L’URL utilise le protocole HTTP**S**. Ceci est obligatoire pour toutes les pages chargées dans une boîte de dialogue, pas seulement la première page chargée.
-> - Le domaine de la ressource de la boite de dialogue est le même que celui de la page hôte, qui peut être la page d’un volet Office ou le [fichier de fonctions](https://docs.microsoft.com/javascript/office/manifest/functionfile?view=office-js) d’une commande de complément. Obligatoire : la page, la méthode du contrôleur ou toute autre ressource qui est transmise à la méthode `displayDialogAsync` doit se trouver dans le même domaine que la page hôte.
+> - Le domaine de la ressource de la boite de dialogue est le même que celui de la page hôte, qui peut être la page d’un volet Office ou le [fichier de fonctions](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/functionfile?view=office-js) d’une commande de complément. Obligatoire : la page, la méthode du contrôleur ou toute autre ressource qui est transmise à la méthode `displayDialogAsync` doit se trouver dans le même domaine que la page hôte.
 
 > [!IMPORTANT]
-> La page hôte et les ressources de la boîte de dialogue doivent avoir le même domaine complet. Si vous essayez de passer à `displayDialogAsync` un sous-domaine du domaine du complément, cela ne fonctionnera pas. Le domaine complet et tout ses sous-domaines doivent correspondre.
+> La page hôte et les ressources de la boîte de dialogue doivent avoir le même domaine complet. Si vous essayez de passer `displayDialogAsync` un sous-domaine du domaine du add-in, il ne fonctionnera pas. Le domaine complet, y compris tout sous-domaine, doit correspondre.
 
 Une fois que la première page (ou toute autre ressource) est chargée, un utilisateur peut accéder à n’importe quel site web (ou n’importe quelle autre ressource) qui utilise le protocole HTTPS. Vous pouvez également concevoir la première page de façon à ce que l’utilisateur soit immédiatement redirigé vers un autre site.
 
@@ -75,7 +75,7 @@ La propriété `displayInIframe` est une propriété supplémentaire dans l’ob
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe: true});
 ```
 
-La valeur par défaut est `false`, ce qui revient à omettre entièrement la propriété. Si le complément n’est pas exécuté dans Office Online, le `displayInIframe` est ignoré.
+La valeur par défaut est `false`, qui est la même que si la propriété entièrement. Si le complément, ne fonctionne pas sur Office Online, les `displayInIframe` est ignorée.
 
 > [!NOTE]
 > Vous ne devez **pas** utiliser `displayInIframe: true` si la boîte de dialogue redirige à un moment donné l’utilisateur vers une page qui ne peut pas être ouverte dans un iFrame. Par exemple, les pages de connexion de nombreux services web connus, comme un compte Microsoft et Google, ne peuvent pas être ouvertes dans un iFrame.
@@ -122,7 +122,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 > [!NOTE]
 > - Office transmet un objet [AsyncResult]() au rappel. Il représente le résultat de la tentative d’ouverture de la boîte de dialogue. Il ne représente pas le résultat de tous les événements dans la boîte de dialogue. Pour plus d’informations sur cette distinction, consultez la section [Gestion des erreurs et des événements](#handle-errors-and-events).
 > - La propriété `value` de `asyncResult` est définie sur un objet [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog?view=office-js), qui existe dans la page hôte, pas dans le contexte d’exécution de la boîte de dialogue.
-> - est la fonction qui gère l’événement. Vous pouvez lui donner le nom que vous souhaitez.`processMessage`
+> - |||UNTRANSLATED_CONTENT_START|||The `processMessage` is the function that handles the event. You can give it any name you want.|||UNTRANSLATED_CONTENT_END|||
 > - La variable `dialog` est déclarée avec une portée plus large que le rappel, car elle est également référencée dans `processMessage`.
 
 Voici un exemple simple de gestionnaire pour l’événement `DialogMessageReceived` :
@@ -253,13 +253,13 @@ En plus des erreurs système et de plateforme générales, trois erreurs sont pr
 |12005|L’URL transmise à `displayDialogAsync` utilise le protocole HTTP. C’est le protocole HTTPS qui est requis. (Dans certaines versions d’Office, le message d’erreur renvoyé avec le code 12005 est identique à celui renvoyé avec le code 12004.)|
 |<span id="12007">12007</span>|Une boîte de dialogue est déjà ouverte à partir de cette fenêtre hôte. Une fenêtre hôte, par exemple un volet Office, ne peut avoir qu’une seule boîte de dialogue ouverte à la fois.|
 
-Lorsque `displayDialogAsync` est appelé, il transmet toujours un objet [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js) à sa fonction de rappel. Lorsque l’appel réussit (autrement dit, que la fenêtre de dialogue est ouverte), la propriété `value` de l’objet `AsyncResult` est un objet [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog?view=office-js). Vous trouverez un exemple dans la section [Envoi d’informations à la page hôte à partir de la boîte de dialogue](#send-information-from-the-dialog-box-to-the-host-page). Lorsque l’appel de `displayDialogAsync` échoue, la fenêtre n’est pas créée, la propriété `status` de l’objet `AsyncResult` est définie sur « failed » et la propriété `error` de l’objet est renseignée. Vous devez toujours disposer d’un rappel qui teste `status` et répond lorsqu’il s’agit d’une erreur. Voici un exemple de code qui signale simplement le message d’erreur, quel que soit son numéro de code :
+|||UNTRANSLATED_CONTENT_START|||When `displayDialogAsync` is called, it always passes an [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js) object to its callback function. When the call is successful - that is, the dialog window is opened - the `value` property of the `AsyncResult` object is a [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog?view=office-js) object. An example of this is in the section [Send information from the dialog box to the host page](#send-information-from-the-dialog-box-to-the-host-page). When the call to `displayDialogAsync` fails, the window is not created, the `status` property of the `AsyncResult` object is set to `Office.AsyncResultStatus.Failed`, and the `error` property of the object is populated. You should always have a callback that tests the `status` and responds when it's an error. For an example that simply reports the error message regardless of its code number, see the following code:|||UNTRANSLATED_CONTENT_END|||
 
 ```js
 var dialog;
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html',
 function (asyncResult) {
-    if (asyncResult.status === "failed") {
+    if (asyncResult.status === Office.AsyncResultStatus.Failed) {
         showNotification(asynceResult.error.code = ": " + asyncResult.error.message);
     } else {
         dialog = asyncResult.value;
@@ -274,7 +274,7 @@ Trois erreurs et événements, désignés par leur numéro de code, dans la boî
 
 |Numéro de code|Signification|
 |:-----|:-----|
-|12002|Un des éléments suivants :<br> - Aucune page n’existe à l’URL qui a été transmise à `displayDialogAsync`.<br> - La page qui a été transmise à `displayDialogAsync` a été chargée, mais la boîte de dialogue a été redirigée vers une page introuvable ou impossible à charger, ou a été redirigée vers une URL dont la syntaxe n’est pas valide.|
+|12002|Un des éléments suivants :<br> Aucune page n’existe à l’URL qui a été transmise à `displayDialogAsync`.<br> La page qui a été transmise à `displayDialogAsync` a été chargée, mais la boîte de dialogue a été redirigée vers une page introuvable ou impossible à charger, ou a été redirigée vers une URL dont la syntaxe n’est pas valide.|
 |12003|La boîte de dialogue a été redirigée vers une URL avec le protocole HTTP. C’est le protocole HTTPS qui est requis.|
 |12006|La boîte de dialogue a été fermée, généralement parce que l’utilisateur choisit le bouton **X**.|
 
@@ -394,8 +394,8 @@ Voici un flux d’authentification simple et standard :
 
 Pour voir des exemples de compléments qui utilisent ce modèle, consultez les pages suivantes :
 
-- [Insérer des graphiques Excel à l’aide de Microsoft Graph dans un complément PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) : la ressource qui s’ouvre initialement dans la fenêtre de la boîte de dialogue est une méthode du contrôleur qui ne dispose d’aucun affichage propre. Elle redirige vers la page de connexion Office 365.
-- [Authentification client Office 365 du complément Office pour AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth) : la ressource qui s’ouvre initialement dans la fenêtre de dialogue est une page.
+- [Insérer des graphiques Excel à l’aide de Microsoft Graph dans un complément PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart): La ressource qui s’ouvre initialement dans la fenêtre de la boîte de dialogue est une méthode du contrôleur qui ne dispose d’aucun affichage propre. Elle redirige l’utilisateur vers la page de connexion Office 365.
+- [Authentification client Office 365 du complément Office pour AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth) : La ressource qui s’ouvre initialement dans la fenêtre de dialogue est une page.
 
 #### <a name="support-multiple-identity-providers"></a>Prise en charge de plusieurs fournisseurs d’identité
 
@@ -417,8 +417,8 @@ Vous pouvez utiliser les API de dialogue pour gérer ce processus à l’aide d�
 - Si l’utilisateur n’a pas préalablement accordé à l’application les autorisations nécessaires, il est invité à le faire dans la boîte de dialogue après la connexion.
 - La fenêtre de dialogue envoie le jeton d’accès à la fenêtre hôte en utilisant `messageParent` pour envoyer le jeton d’accès converti en chaîne ou en stockant jeton d’accès à un emplacement où la fenêtre hôte peut le récupérer. Le jeton a une limite de temps, mais tant qu’elle n’est pas écoulée, la fenêtre hôte peut l’utiliser pour accéder directement aux ressources de l’utilisateur sans demander d’autre confirmation.
 
-Les exemples suivants utilisent les API de dialogue à cet effet :
-- [Insérer des graphiques Excel à l’aide de Microsoft Graph dans un complément PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) : stocke le jeton d’accès dans une base de données.
+Les exemples suivants utilisent les API de dialogue à cet effet :
+- [Insérer des graphiques Excel à l’aide de Microsoft Graph dans un complément PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) : stocke le jeton d’accès dans une base de données.
 - [Complément Office qui utilise le service OAuth.io pour simplifier l’accès aux services en ligne populaires](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 Pour plus d’informations sur l’authentification et l’autorisation dans des compléments, consultez les rubriques suivantes :

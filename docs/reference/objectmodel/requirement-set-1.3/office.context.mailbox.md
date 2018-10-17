@@ -5,32 +5,13 @@
 
 Donne accès au modèle objet du complément Outlook pour Microsoft Outlook et Microsoft Outlook sur le web.
 
-##### <a name="requirements"></a>Condition requise
+##### <a name="requirements"></a>Conditions requises
 
 |Condition requise| Valeur|
 |---|---|
 |[Version minimale des exigences de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restreint|
+|[Niveau minimal d’autorisation](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restreint|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
-
-##### <a name="members-and-methods"></a>Membres et méthodes
-
-| Membre | Type |
-|--------|------|
-| [ewsUrl](#ewsurl-string) | Membre |
-| [restUrl](#resturl-string) | Membre |
-| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | Méthode |
-| [convertToEwsId](#converttoewsiditemid-restversion--string) | Méthode |
-| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook15officelocalclienttime) | Méthode |
-| [convertToRestId](#converttorestiditemid-restversion--string) | Méthode |
-| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | Méthode |
-| [displayAppointmentForm](#displayappointmentformitemid) | Méthode |
-| [displayMessageForm](#displaymessageformitemid) | Méthode |
-| [displayNewAppointmentForm](#displaynewappointmentformparameters) | Méthode |
-| [getCallbackTokenAsync](#getcallbacktokenasyncoptions-callback) | Méthode |
-| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | Méthode |
-| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | Méthode |
-| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | Méthode |
 
 ### <a name="namespaces"></a>Espaces de noms
 
@@ -55,87 +36,19 @@ L’autorisation **ReadItem** doit être spécifiée dans le manifeste de votre 
 
 En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) avant de pouvoir utiliser le membre `ewsUrl`. Votre application doit disposer des autorisations **ReadWriteItem** pour appeler la méthode `saveAsync`.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type :
 
-*   Chaîne
+*   String
 
-##### <a name="requirements"></a>Configurations requises
-
-|Condition requise| Valeur|
-|---|---|
-|[Version minimale de l’ensemble des conditions requises de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
-
-#### <a name="resturl-string"></a>restUrl :String
-
-Obtient l’URL du point de terminaison REST de ce compte de courrier.
-
-La valeur `restUrl` peut être utilisée pour que l’[API REST](https://docs.microsoft.com/outlook/rest/) appelle la boîte aux lettres de l’utilisateur.
-
-L’autorisation **ReadItem** doit être spécifiée dans le manifeste de votre application pour appeler le membre `restUrl` en mode lecture.
-
-En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) avant de pouvoir utiliser le membre `restUrl`. Votre application doit disposer des autorisations **ReadWriteItem** pour appeler la méthode `saveAsync`.
-
-> [!NOTE]
-> Les clients Outlook connectés aux installations locales d’Exchange 2016 (ou version ultérieure) avec une URL REST personnalisée configurée renvoient une valeur non valide pour `restUrl`.
-
-##### <a name="type"></a>Type :
-
-*   Chaîne
-
-##### <a name="requirements"></a>Configurations requises
+##### <a name="requirements"></a>Conditions requises
 
 |Condition requise| Valeur|
 |---|---|
-|[Version minimale de la boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Version minimale des exigences de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Niveau minimal d’autorisation](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
 ### <a name="methods"></a>Méthodes
-
-####  <a name="addhandlerasynceventtype-handler-options-callback"></a>addHandlerAsync(eventType, handler, [options], [callback])
-
-Ajoute un gestionnaire d’événements pour un événement pris en charge.
-
-Actuellement, le seul type d’événement pris en charge est `Office.EventType.ItemChanged`, qui est appelé lorsque l’utilisateur sélectionne un nouvel élément. Cet événement est utilisé par les compléments qui implémentent un volet Office épinglable. Il les autorise à actualiser l’interface utilisateur du volet Office à partir de l’élément sélectionné.
-
-##### <a name="parameters"></a>Paramètres :
-
-| Nom | Type | Attributs | Description |
-|---|---|---|---|
-| `eventType` | [Office.EventType](office.md#eventtype-string) || L’événement qui doit invoquer le gestionnaire. |
-| `handler` | Fonction || La fonction permettant de gérer l’événement. Cette fonction doit accepter un seul paramètre, qui est un littéral d'objet. La propriété `type` sur le paramètre correspond au paramètre `eventType` transmis à `addHandlerAsync`. |
-| `options` | Objet | &lt;facultatif&gt; | Littéral d’objet contenant une ou plusieurs des propriétés suivantes. |
-| `options.asyncContext` | Objet | &lt;facultatif&gt; | Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel. |
-| `callback` | fonction| &lt;facultatif&gt;|Quand la méthode se termine, la fonction passée dans le paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).|
-
-##### <a name="requirements"></a>Condition requise
-
-|Condition requise| Valeur|
-|---|---|
-|[Version minimale de l’ensemble des conditions requises de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem |
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
-
-##### <a name="example"></a>Exemple
-
-```
-Office.initialize = function (reason) {
-  $(document).ready(function () {
-    Office.context.mailbox.addHandlerAsync(Office.EventType.ItemChanged, loadNewItem, function (result) {
-      if (result.status === Office.AsyncResultStatus.Failed) {
-        // Handle error
-      }
-    });
-  });
-};
-
-function loadNewItem(eventArgs) {
-  // Load the properties of the newly selected item
-  loadProps(Office.context.mailbox.item);
-};
-```
 
 ####  <a name="converttoewsiditemid-restversion--string"></a>convertToEwsId(itemId, restVersion) → {String}
 
@@ -146,19 +59,19 @@ Convertit un ID d’élément mis en forme pour REST au format EWS.
 
 Les ID d’éléments extraits via une API REST (telle que l’[API Courrier Outlook](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) ou [Microsoft Graph](http://graph.microsoft.io/)) utilisent un format différent de celui employé par les services Web Exchange (EWS). La méthode `convertToEwsId` convertit un ID mis en forme pour REST au format approprié pour EWS.
 
-##### <a name="parameters"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres :
 
 |Nom| Type| Description|
 |---|---|---|
-|`itemId`| Chaîne|Un ID d’élément mis en forme pour les API REST Outlook|
-|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_5/office.mailboxenums.restversion)|Valeur indiquant la version de l’API REST Outlook utilisée pour récupérer l’ID d’élément.|
+|`itemId`| String|Un ID d’élément mis en forme pour les API REST Outlook|
+|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_3/office.mailboxenums.restversion)|Valeur indiquant la version de l’API REST Outlook utilisée pour récupérer l’ID d’élément.|
 
-##### <a name="requirements"></a>Condition requise
+##### <a name="requirements"></a>Conditions requises
 
 |Condition requise| Valeur|
 |---|---|
 |[Version minimale des exigences de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restreint|
+|[Niveau minimal d’autorisation](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restreint|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
 ##### <a name="returns"></a>Retourne :
@@ -176,7 +89,7 @@ var restId = 'AAMkAGVlOTZjNTM3LW...';
 var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
-####  <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook15officelocalclienttime"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook_1_5/office.LocalClientTime)}
+####  <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook13officelocalclienttime"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook_1_3/office.LocalClientTime)}
 
 Obtient un dictionnaire contenant des informations d’heure dans l’heure locale du client.
 
@@ -184,7 +97,7 @@ Les dates et heures utilisées par une application de messagerie pour Outlook ou
 
 Si l’application de messagerie s'exécute dans Outlook, la méthode `convertToLocalClientTime` retournera un objet dictionnaire dont les valeurs seront définies pour le fuseau horaire de l’ordinateur client. Si l’application de messagerie s’exécute dans Outlook Web App, la méthode `convertToLocalClientTime` retournera un objet dictionnaire dont les valeurs seront définies pour le fuseau horaire spécifié dans le CAE.
 
-##### <a name="parameters"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres :
 
 |Nom| Type| Description|
 |---|---|---|
@@ -200,7 +113,7 @@ Si l’application de messagerie s'exécute dans Outlook, la méthode `convertTo
 
 ##### <a name="returns"></a>Retourne :
 
-Type : [LocalClientTime](/javascript/api/outlook_1_5/office.LocalClientTime)
+Type : [LocalClientTime](/javascript/api/outlook_1_3/office.LocalClientTime)
 
 ####  <a name="converttorestiditemid-restversion--string"></a>convertToRestId(itemId, restVersion) → {String}
 
@@ -211,19 +124,19 @@ Convertit un ID d’élément mis en forme pour EWS au format REST.
 
 Les ID d’éléments récupérés via EWS ou via la propriété `itemId` utilisent un format différent de celui employé par les API REST (telles que l’[API Courrier Outlook](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) ou [Microsoft Graph](http://graph.microsoft.io/)). La méthode `convertToRestId` convertit un ID mis en forme pour EWS dans un format adapté à REST.
 
-##### <a name="parameters"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres :
 
 |Nom| Type| Description|
 |---|---|---|
-|`itemId`| Chaîne|Un ID d’élément mis en forme pour les services Web Exchange (EWS)|
-|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_5/office.mailboxenums.restversion)|Valeur indiquant la version de l’API REST Outlook avec laquelle l’ID converti sera utilisé.|
+|`itemId`| String|Un ID d’élément mis en forme pour les services Web Exchange (EWS)|
+|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_3/office.mailboxenums.restversion)|Valeur indiquant la version de l’API REST Outlook avec laquelle l’ID converti sera utilisé.|
 
 ##### <a name="requirements"></a>Conditions requises
 
 |Condition requise| Valeur|
 |---|---|
 |[Version minimale des exigences de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restreint|
+|[Niveau minimal d’autorisation](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restreint|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
 ##### <a name="returns"></a>Retourne :
@@ -247,11 +160,11 @@ Obtient un objet Date à partir d’un dictionnaire contenant des informations d
 
 La méthode `convertToUtcClientTime` convertit un dictionnaire contenant une date et une heure locales en objet Date avec les valeurs correctes pour la date et l’heure locales.
 
-##### <a name="parameters"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres :
 
 |Nom| Type| Description|
 |---|---|---|
-|`input`| [LocalClientTime](/javascript/api/outlook_1_5/office.LocalClientTime)|Valeur en heure locale à convertir.|
+|`input`| [LocalClientTime](/javascript/api/outlook_1_3/office.LocalClientTime)|Valeur en heure locale à convertir.|
 
 ##### <a name="requirements"></a>Conditions requises
 
@@ -288,13 +201,13 @@ Dans Outlook Web App, cette méthode ouvre le formulaire spécifié seulement si
 
 Si l’identificateur d’élément indiqué n’identifie pas un rendez-vous existant, un volet vierge s’ouvre sur l’ordinateur ou l’appareil client, et aucun message d’erreur n'est retourné.
 
-##### <a name="parameters"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres :
 
 |Nom| Type| Description|
 |---|---|---|
-|`itemId`| Chaîne|L'identificateur EWS (services web Exchange) pour un rendez-vous de calendrier existant.|
+|`itemId`| String|L'identificateur EWS (services web Exchange) pour un rendez-vous de calendrier existant.|
 
-##### <a name="requirements"></a>Condition requise
+##### <a name="requirements"></a>Conditions requises
 
 |Condition requise| Valeur|
 |---|---|
@@ -323,18 +236,18 @@ Si l’identificateur d’élément indiqué n’identifie pas un message exista
 
 N’utilisez pas la méthode `displayMessageForm` avec un `itemId` qui représente un rendez-vous. Utilisez la méthode `displayAppointmentForm` pour afficher un rendez-vous existant, et `displayNewAppointmentForm` pour afficher un formulaire pour créer un nouveau rendez-vous.
 
-##### <a name="parameters"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres :
 
 |Nom| Type| Description|
 |---|---|---|
-|`itemId`| Chaîne|Identificateur EWS (services web Exchange) pour un message existant.|
+|`itemId`| String|Identificateur EWS (services web Exchange) pour un message existant.|
 
 ##### <a name="requirements"></a>Conditions requises
 
 |Condition requise| Valeur|
 |---|---|
-|[Version minimale de l’ensemble des conditions requises de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Version minimale des exigences de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Niveau minimal d’autorisation](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
 ##### <a name="example"></a>Exemple
@@ -358,31 +271,31 @@ Dans le client riche Outlook et Outlook RT, si vous indiquez des participants ou
 
 Si l’un des paramètres dépasse les limites de taille indiquées, ou si un nom de paramètre inconnu est indiqué, une exception est levée.
 
-##### <a name="parameters"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres :
 
 |Nom| Type| Description|
 |---|---|---|
-| `parameters` | Object | Un dictionnaire de paramètres décrivant le nouveau rendez-vous. |
-| `parameters.requiredAttendees` | Array.&lt;String&gt; | Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_5/office.emailaddressdetails)&gt; | Un tableau de chaînes contenant les adresses de messagerie ou un tableau contenant un objet `EmailAddressDetails` pour chacun des participants requis pour le rendez-vous. Le tableau est limité à un maximum de 100 entrées. |
-| `parameters.optionalAttendees` | Array.&lt;String&gt; | Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_5/office.emailaddressdetails)&gt; | Un tableau de chaînes contenant les adresses de messagerie ou tableau contenant un objet `EmailAddressDetails` pour chacun des participants facultatifs du rendez-vous. Le tableau est limité à un maximum de 100 entrées. |
+| `parameters` | Objet | Un dictionnaire de paramètres décrivant le nouveau rendez-vous. |
+| `parameters.requiredAttendees` | Array.&lt;String&gt; | Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_3/office.emailaddressdetails)&gt; | Un tableau de chaînes contenant les adresses de messagerie ou un tableau contenant un objet `EmailAddressDetails` pour chacun des participants requis pour le rendez-vous. Le tableau est limité à un maximum de 100 entrées. |
+| `parameters.optionalAttendees` | Array.&lt;String&gt; | Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_3/office.emailaddressdetails)&gt; | Un tableau de chaînes contenant les adresses de messagerie ou tableau contenant un objet `EmailAddressDetails` pour chacun des participants facultatifs du rendez-vous. Le tableau est limité à un maximum de 100 entrées. |
 | `parameters.start` | Date | Un objet `Date` indiquant la date et l’heure du début du rendez-vous. |
 | `parameters.end` | Date | Un objet `Date` indiquant la date et l’heure de la fin du rendez-vous. |
-| `parameters.location` | Chaîne | Une chaîne contenant le lieu du rendez-vous. La chaîne est limitée à un maximum de 255 caractères. |
+| `parameters.location` | String | Une chaîne contenant le lieu du rendez-vous. La chaîne est limitée à un maximum de 255 caractères. |
 | `parameters.resources` | Array.&lt;String&gt; | Un tableau de chaînes contenant les ressources requises pour le rendez-vous. Le tableau est limité à un maximum de 100 entrées. |
-| `parameters.subject` | Chaîne | Une chaîne contenant l’objet du rendez-vous. La chaîne est limitée à un maximum de 255 caractères. |
-| `parameters.body` | Chaîne | Le corps du rendez-vous. Le contenu du corps est limité à une taille maximale de 32 Ko. |
+| `parameters.subject` | String | Une chaîne contenant l’objet du rendez-vous. La chaîne est limitée à un maximum de 255 caractères. |
+| `parameters.body` | String | Le corps du rendez-vous. Le contenu du corps est limité à une taille maximale de 32 Ko. |
 
-##### <a name="requirements"></a>Condition requise
+##### <a name="requirements"></a>Conditions requises
 
 |Condition requise| Valeur|
 |---|---|
-|[Version minimale des exigences de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Version minimale de l’ensemble des conditions requises de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Niveau minimal d’autorisation](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Lecture|
 
 ##### <a name="example"></a>Exemple
 
-```js
+```
 var start = new Date();
 var end = new Date();
 end.setHours(start.getHours() + 1);
@@ -400,61 +313,6 @@ Office.context.mailbox.displayNewAppointmentForm(
   });
 ```
 
-#### <a name="getcallbacktokenasyncoptions-callback"></a>getCallbackTokenAsync([options], callback)
-
-Obtient une chaîne contenant un jeton utilisé pour appeler les API REST ou les services Web Exchange.
-
-La méthode `getCallbackTokenAsync` effectue un appel asynchrone pour obtenir un jeton opaque à partir de l’Exchange Server qui héberge la boîte aux lettres de l’utilisateur. La durée de vie du jeton de rappel est de 5 minutes.
-
-> [!NOTE]
-> Les compléments doivent, dans la mesure du possible, utiliser les API REST plutôt que les services Web Exchange. 
-
-**Jetons REST**
-
-Quand un jeton REST est demandé (`options.isRest = true`), le jeton fourni ne permet pas d’authentifier les appels des services Web Exchange. Le jeton peut seulement accéder à l’élément actif et à ses pièces jointes en lecture seule, sauf si l’autorisation [`ReadWriteMailbox`](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions#readwritemailbox-permission) est spécifiée dans le manifeste du complément. Si l’autorisation `ReadWriteMailbox` est spécifiée, le jeton fourni accorde un accès en lecture/écriture au courrier, au calendrier et aux contacts, ainsi que la possibilité d’envoyer des messages.
-
-Le complément doit utiliser la propriété `restUrl` pour déterminer l’URL à utiliser pendant les appels de l’API REST.
-
-**Jetons EWS**
-
-Lorsque un jeton EWS est demandé (`options.isRest = false`), le jeton fourni ne permet pas d’authentifier les appels de l’API REST. Le jeton à une étendue limitée à l’accès à l’élément actif.
-
-Le complément doit utiliser la propriété `ewsUrl` pour déterminer l’URL à utiliser pendant les appels EWS.
-
-##### <a name="parameters"></a>Paramètres :
-
-|Nom| Type| Attributs| Description|
-|---|---|---|---|
-| `options` | Object | &lt;facultatif&gt; | Littéral d'objet contenant une ou plusieurs des propriétés suivantes. |
-| `options.isRest` | Booléen |  &lt;facultatif&gt; | Détermine si le jeton fourni est utilisé pour les API REST Outlook ou les services Web Exchange. La valeur par défaut est `false`. |
-| `options.asyncContext` | Objet |  &lt;facultatif&gt; | Toute donnée d'état qui est passée à la méthode asynchrone. |
-|`callback`| fonction||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult). Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.|
-
-##### <a name="requirements"></a>Condition requise
-
-|Condition requise| Valeur|
-|---|---|
-|[Version minimale de l’ensemble de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition et lecture|
-
-##### <a name="example"></a>Exemple
-
-```js
-function getCallbackToken() {
-  var options = {
-    isRest: true,
-    asyncContext: { message: 'Hello World!' }
-  };
-
-  Office.context.mailbox.getCallbackTokenAsync(options, cb);
-}
-
-function cb(asyncResult) {
-  var token = asyncResult.value;
-}
-```
-
 #### <a name="getcallbacktokenasynccallback-usercontext"></a>getCallbackTokenAsync(callback, [userContext])
 
 Obtient une chaîne qui contient un jeton utilisé pour obtenir une pièce jointe ou un élément à partir d’un Exchange Server.
@@ -467,19 +325,19 @@ Votre application doit disposer de l’autorisation **ReadItem** spécifiée dan
 
 En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) permettant d’obtenir un identificateur de l’élément à transmettre à la méthode `getCallbackTokenAsync`. Votre application doit disposer des autorisations **ReadWriteItem** pour appeler la méthode `saveAsync`.
 
-##### <a name="parameters"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres :
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
-|`callback`| fonction||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult). Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.|
+|`callback`| function||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult). Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.|
 |`userContext`| Objet| &lt;facultatif&gt;|Toute donnée d’état qui est passée à la méthode asynchrone.|
 
-##### <a name="requirements"></a>Condition requise
+##### <a name="requirements"></a>Conditions requises
 
 |Condition requise| Valeur|
 |---|---|
-|[Version minimale des exigences de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Version minimale de l’ensemble des conditions requises de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
+|[Niveau minimal d’autorisation](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition et lecture|
 
 ##### <a name="example"></a>Exemple
@@ -500,19 +358,19 @@ Obtient un jeton identifiant l’utilisateur et le complément Office.
 
 La méthode `getUserIdentityTokenAsync` retourne un jeton que vous pouvez utiliser pour identifier et [authentifier le complément et l’utilisateur avec un système de tiers](https://docs.microsoft.com/outlook/add-ins/authentication).
 
-##### <a name="parameters"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres :
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
-|`callback`| fonction||Quand la méthode se termine, la fonction passée dans le paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Le jeton est fourni sous la forme d’une chaîne dans la propriété `asyncResult.value`.|
+|`callback`| function||Quand la méthode se termine, la fonction passée dans le paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Le jeton est fourni sous la forme d’une chaîne dans la propriété `asyncResult.value`.|
 |`userContext`| Objet| &lt;facultatif&gt;|Toute donnée d’état qui est passée à la méthode asynchrone.|
 
-##### <a name="requirements"></a>Condition requise
+##### <a name="requirements"></a>Conditions requises
 
 |Condition requise| Valeur|
 |---|---|
 |[Version minimale des exigences de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Niveau minimal d’autorisation](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
 ##### <a name="example"></a>Exemple
@@ -544,7 +402,7 @@ Vous ne pouvez pas demander les éléments associés au dossier avec la méthode
 
 La demande XML doit spécifier l’encodage UTF-8.
 
-```xml
+```
 <?xml version="1.0" encoding="utf-8"?>
 ```
 
@@ -557,26 +415,26 @@ Votre complément doit disposer de l’autorisation **ReadWriteMailbox** pour ut
 
 Lorsque vous utilisez la méthode `makeEwsRequestAsync` dans les applications de messagerie s'exécutant dans des versions d’Outlook antérieures à la version 15.0.4535.1004, vous devez définir la valeur d’encodage sur `ISO-8859-1`.
 
-```xml
+```
 <?xml version="1.0" encoding="iso-8859-1"?>
 ```
 
 Vous n’avez pas besoin de définir la valeur d’encodage quand votre application de messagerie s’exécute dans Outlook sur le Web. Vous pouvez déterminer si votre application de messagerie s’exécute dans Outlook ou Outlook sur le Web en utilisant la propriété mailbox.diagnostics.hostName. Vous pouvez déterminer quelle version d’Outlook est exécutée en utilisant la propriété mailbox.diagnostics.hostVersion.
 
-##### <a name="parameters"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres :
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
-|`data`| Chaîne||La demande EWS.|
-|`callback`| fonction||Quand la méthode se termine, la fonction passée dans le paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Le résultat XML de l’appel EWS est fourni comme une chaîne dans la propriété `asyncResult.value`. Si le résultat dépasse une taille de 1 Mo, un message d’erreur est renvoyé.|
+|`data`| String||La demande EWS.|
+|`callback`| function||Quand la méthode se termine, la fonction passée dans le paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Le résultat XML de l’appel EWS est fourni comme une chaîne dans la propriété `asyncResult.value`. Si le résultat dépasse une taille de 1 Mo, un message d’erreur est renvoyé.|
 |`userContext`| Objet| &lt;facultatif&gt;|Toute donnée d’état qui est passée à la méthode asynchrone.|
 
-##### <a name="requirements"></a>Condition requise
+##### <a name="requirements"></a>Conditions requises
 
 |Condition requise| Valeur|
 |---|---|
-|[Version minimale de l’ensemble des conditions requises de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteMailbox|
+|[Version minimale des exigences de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Niveau minimal d’autorisation](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteMailbox|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
 ##### <a name="example"></a>Exemple

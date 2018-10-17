@@ -2,12 +2,12 @@
 title: Utilisation de tableaux croisés dynamiques à l’aide de l’API JavaScript pour Excel
 description: Utilisez l'API JavaScript pour Excel afin de créer des tableaux croisés dynamiques et d’interagir avec leurs composants.
 ms.date: 09/21/2018
-ms.openlocfilehash: 00dd982d4ba4de0db34277cd546b572d4394e258
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.openlocfilehash: a3ff624f8e4e6652834f0a424b482b372c6f2401
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459279"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505908"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Utilisation de tableaux croisés dynamiques à l’aide de l’API JavaScript pour Excel
 
@@ -22,11 +22,11 @@ Cet article fournit des exemples de code pour des scénarios courants. Pour amé
 
 ## <a name="hierarchies"></a>Hiérarchies
 
-Les tableaux croisés dynamiques sont organisés en fonction de quatre catégories de hiérarchie : ligne, colonne, données et filtre. Les données suivantes décrivant des ventes de fruits provenant de différentes fermes seront utilisées dans cet article.
+Les tableaux croisés dynamiques sont organisés en fonction de quatre catégories de hiérarchie : ligne, colonne, données et filtre. Les données suivantes décrivant des ventes de fruits provenant de différentes fermes seront utilisées dans cet article.
 
 ![Collection de ventes de fruits de différents types provenant de différentes fermes.](../images/excel-pivots-raw-data.png)
 
-Ces données ont cinq hiérarchies : **Fermes**, **Type**, **Classification**, **Caisses vendues à la ferme** et **Caisses vendues en gros**. Chaque hiérarchie ne peut exister que dans l’une des quatre catégories. Si le ** Type** est ajouté aux hiérarchies de colonnes puis aux hiérarchies de lignes, il ne reste que dans ces dernières.
+Ces données ont cinq hiérarchies : **Fermes**, **Type**, **Classification**, **Caisses vendues à la ferme** et **Caisses vendues en gros**. Chaque hiérarchie ne peut exister que dans l’une des quatre catégories. Si le ** Type** est ajouté aux hiérarchies de colonnes puis aux hiérarchies de lignes, il ne reste que dans ces dernières.
 
 Les hiérarchies de lignes et de colonnes définissent la façon dont les données sont regroupées. Par exemple, une hiérarchie de lignes de **Fermes** regroupe tous les jeux de données provenant de la même ferme. Le choix entre la hiérarchie de lignes et de colonnes définit l’orientation du tableau croisé dynamique.
 
@@ -156,7 +156,7 @@ await Excel.run(async (context) => {
 
 ## <a name="change-aggregation-function"></a>Modifier la fonction d’agrégation
 
-Les hiérarchies de données voient leurs valeurs agrégées. Pour les jeux de données de nombres, il s’agit d’une somme par défaut .La propriété `summarizeBy` définit ce comportement en fonction d’un type `AggregrationFunction`. 
+|||UNTRANSLATED_CONTENT_START|||Data hierarchies have their values aggregated. For datasets of numbers, this is a sum by default. The `summarizeBy` property defines this behavior based on an [AggregrationFunction](https://docs.microsoft.com/javascript/api/excel/excel.aggregationfunction) type.|||UNTRANSLATED_CONTENT_END||| 
 
 Les types de fonctions d’agrégation actuellement prises en charge sont `Sum`, `Count`, `Average`, `Max`, `Min`, `Product`, `CountNumbers`, `StandardDeviation`, `StandardDeviationP`, `Variance`, `VarianceP` et `Automatic` (par défaut).
 
@@ -177,12 +177,12 @@ await Excel.run(async (context) => {
 
 ## <a name="change-calculations-with-a-showasrule"></a>Modifier les calculs avec une propriété ShowAsRule
 
-Les tableaux croisés dynamiques agrègent par défaut les données de leurs hiérarchies de ligne et de colonne de manière indépendante. Un objet `ShowAsRule` modifie la hiérarchie de données pour produire des valeurs en fonction des autres éléments du tableau croisé dynamique.
+|||UNTRANSLATED_CONTENT_START|||PivotTables, by default, aggregate the data of their row and column hierarchies independently. A [ShowAsRule](https://docs.microsoft.com/javascript/api/excel/excel.showasrule) changes the data hierarchy to output values based on other items in the PivotTable.|||UNTRANSLATED_CONTENT_END|||
 
 L’objet `ShowAsRule` contient possède trois propriétés :
 -   `calculation`: le type de calcul relatif à appliquer à la hiérarchie des données (la valeur par défaut est `none`).
--   `baseField`: le champ dans la hiérarchie contenant les données de base avant le calcul est appliqué. L’objet `PivotField` porte généralement le même nom que sa hiérarchie parent.
--   `baseItem`:  l’élément individuel comparé aux valeurs des champs de base en fonction du type de calcul. Tous les calculs ne nécessitent pas ce champ.
+-   `baseField`: le champ dans la hiérarchie contenant les données de base avant le calcul est appliqué. L’objet [](https://docs.microsoft.com/javascript/api/excel/excel.pivotfield) porte généralement le même nom que sa hiérarchie parent.
+-   `baseItem`|||UNTRANSLATED_CONTENT_START|||: The individual [PivotItem](https://docs.microsoft.com/javascript/api/excel/excel.pivotitem) compared against the values of the base fields based on the calculation type. Not all calculations require this field.|||UNTRANSLATED_CONTENT_END|||
 
 L’exemple suivant définit le calcul de la hiérarchie de données de la **Somme des caisses vendues à la ferme**  comme un pourcentage du total de colonne. Nous voulons quand même que la granularité s’étende au niveau du type de fruits, nous allons donc utiliser la hiérarchie de ligne ** Type** et son champ sous-jacent. L’exemple a également ** Ferme** comme hiérarchie de la première ligne, afin que les entrées de total de la ferme affichent également le pourcentage que chaque ferme a la responsabilité de produire.
 
@@ -209,9 +209,9 @@ await Excel.run(async (context) => {
 
 L’exemple précédent définit le calcul de la colonne, par rapport à une hiérarchie de ligne individuelle. Lorsque le calcul se rapporte à un élément individuel, utilisez la propriété  `baseItem`. 
 
-L’exemple ci-dessous illustre le calcul `differenceFrom`. Il affiche la différence des entrées de la hiérarchie de données relative aux ventes de caisses des fermes par rapport à celles des « Fermes A ». La propriété `baseField`  est **Ferme**, de sorte que nous voir les différences entre les autres fermes, ainsi que des répartitions pour chaque type de fruits comparables (**Type** est également une hiérarchie de ligne dans cet exemple).
+L’exemple ci-dessous illustre le calcul `differenceFrom`. Il affiche la différence des entrées de la hiérarchie de données relative aux ventes de caisses des fermes par rapport à celles des « Fermes A ». La propriété `baseField`  est **Ferme**, de sorte que nous voir les différences entre les autres fermes, ainsi que des répartitions pour chaque type de fruits comparables (**Type** est également une hiérarchie de ligne dans cet exemple).
 
-![Un tableau croisé dynamique affichant les différences des ventes de fruits entre les « Fermes A » et les autres. Il affiche à la fois la différence dans les ventes de fruits totales des fermes et les ventes des types de fruits. Si les « Fermes A » n’ont pas vendu un type de fruit particulier, « #N/A » s’affiche.](../images/excel-pivots-showas-differencefrom.png)
+![Un tableau croisé dynamique affichant les différences des ventes de fruits entre les « Fermes A » et les autres. Il affiche à la fois la différence dans les ventes de fruits totales des fermes et les ventes des types de fruits. Si les « Fermes A » n’ont pas vendu un type de fruit particulier, « #N/A » s’affiche.](../images/excel-pivots-showas-differencefrom.png)
 
 ``` TypeScript
 await Excel.run(async (context) => {
@@ -235,7 +235,7 @@ await Excel.run(async (context) => {
 
 ## <a name="pivottable-layouts"></a>Dispositions des tableaux croisés dynamiques
 
-La disposition d’un tableau croisé dynamique définit le positionnement des hiérarchies et de leurs données. Accéder à la disposition permet de déterminer les plages de stockage des données. 
+|||UNTRANSLATED_CONTENT_START|||A [PivotLayout](https://docs.microsoft.com/javascript/api/excel/excel.pivotlayout) defines the placement of hierarchies and their data. You access the layout to determine the ranges where data is stored.|||UNTRANSLATED_CONTENT_END||| 
 
 Le diagramme suivant présente la correspondance des appels de fonction de disposition avec les plages du tableau croisé dynamique.
 
@@ -260,7 +260,7 @@ await Excel.run(async (context) => {
 });
 ```
 
-Les tableaux croisés dynamiques ont trois styles de disposition : Compact, Plan et Tabulaire. Nous avons vu le style compact dans les exemples précédents. 
+Les tableaux croisés dynamiques ont trois styles de disposition : Compact, Plan et Tabulaire. Nous avons vu le style compact dans les exemples précédents. 
 
 Les exemples suivants utilisent respectivement le style plan et tabulaire. L’exemple de code montre comment passer d’une disposition à une autre.
 

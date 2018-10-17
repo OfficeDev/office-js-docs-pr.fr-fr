@@ -1,17 +1,17 @@
 ---
-ms.date: 09/27/2018
-description: Créez une fonction personnalisée dans Excel à l’aide de JavaScript.
+ms.date: 10/09/2018
+description: Créer des fonctions personnalisées dans Excel à l’aide de JavaScript.
 title: Créer des fonctions personnalisées dans Excel (Aperçu)
-ms.openlocfilehash: f6b658bbd119a785b342ec22bc1b341f6902da3f
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.openlocfilehash: e52039f2618f793f688cd89c5d62bac0a8632667
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459342"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25506118"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Créer des fonctions personnalisées dans Excel (aperçu)
 
-Les fonctions personnalisées permettent aux développeurs d’ajouter de nouvelles fonctions à Excel en définissant ces fonctions en JavaScript dans le cadre d’un complément. Les utilisateurs Excel peuvent accéder aux fonctions personnalisées comme toute autre fonction native dans Excel (par exemple, `SUM()`). Cet article décrit comment créer des fonctions personnalisées dans Excel.
+Les fonctions personnalisées permettent aux développeurs d'ajouter de nouvelles fonctions à Excel en définissant ces fonctions dans JavaScript comme partie d’un complément. Les utilisateurs d'Excel peuvent accéder à des fonctions personnalisées comme n'importe quelle fonction native d'Excel, telle que `SUM()`. Cet article explique comment créer des fonctions personnalisées dans Excel.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -78,8 +78,7 @@ Le fichier de métadonnées des fonctions personnalisées (**./config/customfunc
 > [!TIP]
 > Parmi les paramètres de serveur sur le serveur qui héberge le fichier JSON, [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) doit être activé pour que les fonctions personnalisées s'exécutent correctement dans Excel Online.
 
-Le code suivant dans le fichier **customfunctions.json** spécifie les métadonnées pour les fonctions 
-`add` et `increment` précédemment décrites. Le tableau qui suit cet exemple de code fournit des informations détaillées sur les propriétés de cet objet JSON. Consultez les [meilleures pratiques de fonctions personnalisées](custom-functions-best-practices.md#mapping-function-names-to-json-metadata) pour plus d’informations sur la spécification de la valeur des propriétés `id` et `name`  dans le fichier de métadonnées JSON.
+Le code suivant dans le fichier **customfunctions.json** spécifie les métadonnées pour les fonctions `add` et `increment` précédemment décrites. Le tableau qui suit cet exemple de code fournit des informations détaillées sur les propriétés de cet objet JSON. Consultez les [meilleures pratiques de fonctions personnalisées](custom-functions-best-practices.md#mapping-function-names-to-json-metadata) pour plus d’informations sur la spécification de la valeur des propriétés `id` et `name`  dans le fichier de métadonnées JSON.
 
 ```json
 {
@@ -145,7 +144,7 @@ Le tableau suivant répertorie les propriétés qui sont généralement présent
 | `description` | Décrit l'action de la fonction. Cette valeur s’affiche comme une info-bulle lorsque la fonction est l’élément sélectionné dans le menu de saisie semi-automatique dans Excel. |
 | `result`  | Objet qui définit le type d’informations renvoyées par la fonction. La valeur de la propriété enfant `type` peut être **string**, **number** ou **boolean**. La valeur de la propriété enfant `dimensionality` peut être **scalar** ou **matrix** (un tableau à deux dimensions des valeurs du `type` spécifié). |
 | `parameters` | Tableau qui définit les paramètres d’entrée de la fonction. Les propriétés enfant `name` et `description` s’affichent dans intelliSense d'Excel. La valeur de la propriété enfant `type` peut être **string**, **number** ou **boolean**. La valeur de la propriété enfant `dimensionality` peut être **scala** ou la **matrix** (un tableau à deux dimensions des valeurs du `type` spécifié). |
-| `options` | Permet de personnaliser en partie comment et quand Excel exécute la fonction. Pour plus d’informations sur l’utilisation de cette propriété, consultez les sections [Fonctions de diffusion en continu](#streaming-functions) et [Annulation d’une fonction](#canceling-a-function) plus loin dans cet article. |
+| `options` | Vous permet de personnaliser certains aspects de la façon dont Excel exécute la fonction et quand. Pour plus d’informations sur l’utilisation de cette propriété, voir [Fonctions de flux](#streaming-functions) et [Annulation d'une fonction](#canceling-a-function), plus loin dans cet article. |
 
 ### <a name="manifest-file"></a>Fichier manifeste
 
@@ -211,13 +210,13 @@ function getTemperature(thermometerID){
 
 ## <a name="streaming-functions"></a>Fonctions de diffusion en continu
 
-Les fonctions de diffusion en continu personnalisées permettent de générer des données dans des cellules de manière répétée dans le temps, sans qu’un utilisateur doive demander explicitement le recalcul. L’exemple de code suivant est une fonction personnalisée qui ajoute un nombre au résultat par seconde. Notez ce qui suit concernant ce code :
+Les fonctions de flux personnalisées vous permettent de transmettre des données aux cellules de manière répétée au fil du temps, sans qu'un utilisateur ait à demander explicitement une actualisation des données. L’échantillon de code suivant est une fonction personnalisée qui ajoute un nombre au résultat toutes les secondes. Tenez compte des informations suivantes :
 
 - Excel affiche automatiquement chaque nouvelle valeur en utilisant le rappel `setResult`.
 
 - Le second paramètre d’entrée, `handler`, n’est pas affiché pour les utilisateurs finaux dans Excel lorsqu’ils sélectionnent la fonction à partir du menu de saisie semi-automatique.
 
-- Le rappel `onCanceled`  définit la fonction qui s’exécute lorsque la fonction est annulée. Vous devez implémenter un gestionnaire d’annulation comme suit pour chaque fonction de diffusion en continu. Pour plus d’informations, voir [Annulation d’une fonction](#canceling-a-function). 
+- Le rappel `onCanceled` définit la fonction qui s’exécute lorsque la fonction est annulée. Vous devez implémenter un gestionnaire d'annulation comme celui-ci pour toute fonction de flux. Pour plus d’informations, voir [Annulation d’une fonction](#canceling-a-function).
 
 ```js
 function incrementValue(increment, handler){
@@ -262,7 +261,7 @@ Lorsque vous spécifiez des métadonnées pour une fonction de diffusion en cont
 
 ## <a name="canceling-a-function"></a>Annulation d’une fonction
 
-Dans certains cas, vous devrez peut-être annuler l’exécution d’une fonction personnalisée de diffusion continu pour réduire la consommation de la bande passante, de la mémoire et de la charge processeur. Excel annule l’exécution d’une fonction dans les situations suivantes :
+Dans certains cas, vous devrez peut-être annuler l’exécution d’une fonction personnalisée en flux continu pour réduire la consommation de la bande passante, de la mémoire et de la charge processeur. Excel annule l’exécution d’une fonction dans les situations suivantes :
 
 - Quand l’utilisateur modifie ou supprime une cellule qui fait référence à la fonction.
 
@@ -274,27 +273,34 @@ Pour activer la possibilité d’annuler une fonction, vous devez implémenter u
 
 ## <a name="saving-and-sharing-state"></a>Enregistrement et partage de l'état
 
-Les fonctions personnalisées permettent d'enregistrer les données dans des variables globales JavaScript. Dans les appels suivants, votre fonction personnalisée peut utiliser des valeurs enregistrées dans ces variables. L'état enregistré est utile lorsque les utilisateurs ajoutent la même fonction personnalisée à plusieurs cellules, car toutes les instances de la fonction peuvent partager l'état. Par exemple, vous pouvez enregistrer les données renvoyées par un appel à une ressource web pour éviter de passer des appels supplémentaires à la même ressource web.
+Fonctions personnalisées peuvent enregistrer les données dans les variables globales JavaScript, qui peuvent être utilisés dans les appels suivants. État enregistré est utile lorsque les utilisateurs appellent la même fonction personnalisée à partir de plusieurs cellules, car toutes les instances de la fonction peuvent accéder à l’état. Par exemple, vous pouvez enregistrer les données renvoyées par un appel à une ressource web pour éviter d’effectuer des appels à la même ressource web supplémentaires.
 
-L’exemple de code suivant illustre l'implémentation d’une fonction de diffusion en continu de température qui enregistre l’état de manière globale. Notez ce qui suit concernant ce code :
+L’exemple de code suivant illustre l'implémentation d’une fonction de diffusion en continu de température qui enregistre l’état de manière globale. Notez ce qui suit concernant ce code :
 
-- `refreshTemperature` est une fonction de diffusion en continu qui lit la température d’un thermomètre particulier chaque seconde. Les nouvelles températures sont enregistrées dans la variable `savedTemperatures`, mais cela ne met pas directement à jour la valeur de cellule. Elles ne doivent pas être appelées directement à partir d'une cellule de feuille de calcul, *de sorte qu'elles ne sont pas enregistrées dans le fichier JSON*.
+- Le `streamTemperature` fonction met à jour la valeur de température qui s’affiche dans la cellule par seconde et qu’il utilise le `savedTemperatures` variable comme source de données.
 
-- `streamTemperature` met à jour les valeurs de température affichées dans la cellule chaque seconde et utilise la variable `savedTemperatures` comme source de données. Il doit être enregistré dans le fichier JSON et intégralement nommé en lettres majuscules, `STREAMTEMPERATURE`.
+- Étant donné que `streamTemperature` est une fonction de diffusion en continu, il implémente un gestionnaire d’annulation qui s’exécute lorsque la fonction est annulée.
 
-- Les utilisateurs peuvent appeler `streamTemperature` à partir de plusieurs cellules dans l’interface utilisateur d’Excel. Chaque appel lit les données de la même variable `savedTemperatures`.
+- Si un utilisateur appelle le `streamTemperature` fonction à partir de plusieurs cellules dans Excel, les `streamTemperature` fonction lit les données de la même `savedTemperatures` variable chaque fois qu’elle s’exécute. 
+
+- Le `refreshTemperature` fonction lit la température d’un enregistreur particulier par seconde et stocke le résultat dans le `savedTemperatures` variable. Étant donné que la `refreshTemperature` fonction n’est pas exposée aux utilisateurs finaux dans Excel, il n’a pas besoin d’être enregistré dans le fichier JSON.
 
 ```js
 var savedTemperatures;
 
 function streamTemperature(thermometerID, handler){
   if(!savedTemperatures[thermometerID]){
-    refreshTemperatures(thermometerID); // starts fetching temperatures if the thermometer hasn't been read yet
+    refreshTemperature(thermometerID); // starts fetching temperatures if the thermometer hasn't been read yet
   }
 
   function getNextTemperature(){
     handler.setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
-    setTimeout(getNextTemperature, 1000); // Wait 1 second before updating Excel again.
+    var delayTime = 1000; // Amount of milliseconds to delay a request by.
+    setTimeout(getNextTemperature, delayTime); // Wait 1 second before updating Excel again.
+
+    handler.onCancelled() = function {
+      clearTimeout(delayTime);
+    }
   }
   getNextTemperature();
 }
@@ -369,8 +375,8 @@ function getComment(x) {
 - **7 novembre 2017 :** mise à disposition* de la préversion des fonctions personnalisées et d'exemples
 - **20 novembre 2017**: correction du bogue de compatibilité pour les utilisateurs de la version 8801 et ultérieure
 - **28 novembre 2017 :** mise à disposition* de la prise en charge de l’annulation sur des fonctions asynchrones (nécessite la modification des fonctions de flux)
-- **7 mai 2018** : support fourni*pour Mac, Excel Online et les fonctions synchrones en cours de traitement
-- **20 septembre 2018** : Support fourni pour les fonctions personnalisées à l'exécution de JavaScript. Pour plus d’informations, voir la section [Exécution des fonctions personnalisées d’Excel](custom-functions-runtime.md).
+- **7 mai 2018** : support fourni*pour Mac, Excel Online et les fonctions synchrones en cours de traitement
+- **20 septembre 2018** : Support fourni pour les fonctions personnalisées à l'exécution de JavaScript. Pour plus d’informations, voir la section [Exécution des fonctions personnalisées d’Excel](custom-functions-runtime.md).
 
 \* vers le canal Office Insiders
 

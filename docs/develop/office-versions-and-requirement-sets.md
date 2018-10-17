@@ -2,16 +2,16 @@
 title: Versions d’Office et ensembles de conditions requises
 description: ''
 ms.date: 03/29/2018
-ms.openlocfilehash: b1829f91f3f3ae93f646ca2debf9040d0344c34c
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: ac3ae4fa3eeca9cfbd56b15168fc39d67139680d
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23943956"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505992"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Versions d’Office et ensembles de conditions requises
 
-Il existe de nombreuses versions d’Office sur plusieurs plateformes, celles-ci ne prenant pas forcément en charge toutes les API dans l’interface API JavaScript pour Office (Office.js). Vous n’avez pas toujours le contrôle sur la version d’Office que vos utilisateurs ont installée.  Pour gérer cette situation, nous fournissons un système nommé ensembles de conditions requises pour vous aider à déterminer si un hôte Office prend en charge les fonctionnalités dont vous avez besoin dans votre complément Office. 
+Il existe plusieurs versions d’Office sur plusieurs plateformes, et elles ne tous prennent en charge toutes les API dans l’API JavaScript pour Office (Office.js). Vous n’avez pas toujours contrôler la version d’Office, vos utilisateurs ont installé.  Pour gérer cette situation, nous fournissons un système appelé ensembles de ressources pour vous aider à déterminer si un hôte Office prend en charge les fonctionnalités que vous avez besoin dans votre complément Office. 
 
 > [!NOTE]
 > - Office peut être exécuté sur plusieurs plateformes, notamment Office pour Windows, Office Online, Office pour Mac et Office pour iPad.  
@@ -21,40 +21,40 @@ Il existe de nombreuses versions d’Office sur plusieurs plateformes, celles-ci
 
 ## <a name="how-to-check-your-office-version"></a>Vérification de votre version d’Office
 
-Pour identifier la version d’Office que vous utilisez, à partir d’une application Office, sélectionnez le menu **Fichier**, puis sélectionnez **Compte**. La version d’Office s’affiche dans la section **Informations sur le produit**. Par exemple, la capture d’écran suivante indique la version 1802 d’Office (build 9026.1000) :
+Pour identifier la version d’Office que vous utilisez, à partir d’au sein d’une application Office, sélectionnez le menu **fichier** , puis cliquez sur **compte**. La version d’Office s’affiche dans la section **Informations sur le produit** . Par exemple, la capture d’écran suivante indique Office Version 1802 (Build 9026.1000) :
 
 ![Vérification de votre version d’Office](../images/office-version-number-ui.jpg)
 
 
 ## <a name="office-requirement-sets-availability"></a>Disponibilité des ensembles de conditions requises Office
 
-Les compléments Office peuvent utiliser des ensembles de conditions requises d’API pour déterminer si l’hôte Office prend en charge les membres d’API nécessaires. La prise en charge des ensembles de conditions requises varie selon l’hôte Office et la version de ce dernier (voir la section précédente).
+Compléments Office permet de déterminer si l’hôte Office prend en charge les membres de l’API il faut utiliser ensembles d’API. Prise en charge du jeu requise varie en fonction hôte Office et la version d’hôte Office (voir la section précédente).
 
-Certains hôtes Office ont leurs propres ensembles de conditions requises d’API. Par exemple, le premier ensemble de conditions requises pour l’API Excel était `ExcelApi 1.1` et le premier ensemble de conditions requises pour l’API Word était `WordApi 1.1`. Depuis lors, de nombreux ensembles de conditions requises d’API Excel et d’API Word ont été ajoutés pour proposer des fonctionnalités d’API supplémentaires.
+Certains hôtes Office ont leurs propres ensembles d’API. Par exemple, la première condition définie pour l’API Excel a `ExcelApi 1.1` et de la première demande défini pour l’API de Word a été `WordApi 1.1`. Depuis, plusieurs nouveaux ensembles ExcelApi et ensembles WordApi ont été ajoutées pour fournir des fonctionnalités supplémentaires API.
 
-Par ailleurs, d’autres fonctionnalités telles que les commandes de complément (extensibilité du ruban) et la possibilité de lancer des boîtes de dialogue (API de boîte de dialogue) ont été ajoutées à l’API commune. Les commandes de complément et les ensembles de conditions requises d’API de boîte de dialogue sont des exemples d’ensembles de conditions requises d’API que les différents hôtes Office ont en commun.
+En outre, les autres fonctionnalités telles que les commandes de complément (extensibilité du ruban) et la possibilité de lancer des boîtes de dialogue (boîte de dialogue API) ont été ajoutés à l’API courantes. Dans Ajouter des commandes et des ensembles d’API de boîte de dialogue sont des exemples de jeux d’API que les hôtes Office différents ont en commun.
 
-Un complément peut utiliser uniquement des API dans les ensembles de conditions requises qui sont prises en charge par la version de l’hôte Office sur lequel le complément est exécuté. Pour savoir exactement quels ensembles de conditions requises sont disponibles pour une version spécifique de l’hôte Office, reportez-vous aux articles suivants sur les ensembles de conditions requises propres aux hôtes :
+Un complément peut uniquement utiliser API dans les ensembles sont prises en charge par la version de l’hôte Office où le complément est en cours d’exécution. Pour savoir exactement quels ensembles sont disponibles pour une version d’hôte Office spécifique, reportez-vous aux articles set exigence spécifique à l’hôte suivantes :
 
-- [Ensembles de conditions requises de l’API JavaScript pour Excel](https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets?view=office-js) (ExcelApi)
-- [Ensembles de conditions requises de l’API JavaScript pour Word](https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets?view=office-js) (WordApi)
-- [Ensembles de conditions requises de l’API JavaScript pour OneNote](https://docs.microsoft.com/javascript/office/requirement-sets/onenote-api-requirement-sets?view=office-js) (OneNoteApi)
-- [Présentation de l’ensemble de conditions requises pour les API Outlook](https://docs.microsoft.com/javascript/office/requirement-sets/outlook-api-requirement-sets?view=office-js) (MailBox)
+- [Ensembles de conditions requises de l’API JavaScript pour Excel](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets?view=office-js) (ExcelApi)
+- [Ensembles de conditions requises de l’API JavaScript pour Word](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets?view=office-js) (WordApi)
+- [Ensembles de conditions requises de l’API JavaScript pour OneNote](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets?view=office-js) (OneNoteApi)
+- [Présentation de l’ensemble de conditions requises pour les API Outlook](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets?view=office-js) (MailBox)
 
-Certains ensembles de conditions requises contiennent des API qui peuvent être utilisées par n’importe quel hôte Office. Pour plus d’informations sur ces ensembles de conditions requises, reportez-vous aux articles suivants :
+Certains ensembles contiennent les API qui peut être utilisé par n’importe quel hôte Office. Pour plus d’informations sur ces ensembles, consultez les articles suivants :
 
-- [Ensembles de conditions requises communes pour Office](https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js)
-- [Ensembles de conditions requises concernant les commandes de complément](https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets?view=office-js)
-- [Ensembles de conditions requises de l’API de boîte de dialogue](https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets?view=office-js)
-- [Ensembles de conditions requises de l’API d’identité](https://docs.microsoft.com/javascript/office/requirement-sets/identity-api-requirement-sets?view=office-js)
+- [Ensembles de conditions requises communes pour Office](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets?view=office-js)
+- [Ensembles de conditions requises concernant les commandes de complément](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets?view=office-js)
+- [Ensembles de conditions requises de l’API de boîte de dialogue](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets?view=office-js)
+- [Ensembles de conditions requises de l’API d’identité](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets?view=office-js)
 
-Le numéro de version d’un ensemble de conditions requises, par exemple « 1.1 » dans `ExcelApi 1.1`, est défini par rapport à l’hôte d’Office. Le numéro de version d’un ensemble donné de conditions requises (par exemple, `ExcelApi 1.1`) ne correspond pas au numéro de version d’Office.js, ni aux ensembles de conditions requises pour d’autres hôtes Office (comme Word, Outlook, etc.).  Les ensembles de conditions requises pour les différents hôtes Office sont publiés à des moments et à des rythmes différents. Par exemple, `ExcelApi 1.5` a été publié avant l’ensemble de conditions requises `WordApi 1.3`.
+Définie le numéro de version d’une spécification, telles que le « 1.1 » dans `ExcelApi 1.1`, est relative à l’hôte Office. Le numéro de version d’un ensemble donné d’exigence (par exemple, `ExcelApi 1.1`) ne correspond pas au numéro de version d’Office.js ou aux ensembles de conditions pour les autres hôtes Office (par exemple, Word, Outlook, etc.).  Ensembles de ressources pour les hôtes Office différents sont publiés à des dates et des différentes vitesses. Par exemple, `ExcelApi 1.5` a été publié avant la `WordApi 1.3` ensemble de conditions requises.
 
-L’API JavaScript pour la bibliothèque Office (Office.js) inclut tous les ensembles de conditions requises actuellement disponibles. Alors qu’il existe des ensembles de conditions requises `ExcelApi 1.3` et `WordApi 1.3`, il n’existe pas d’ensemble de conditions requises `Office.js 1.3`. La dernière version d’Office.js est gérée comme un point de terminaison Office unique remis via le réseau de distribution de contenu (CDN). Pour plus d’informations sur le CDN Office.js, notamment sur la gestion des versions et la compatibilité avec les anciennes versions, reportez-vous à [Présentation de l’interface API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/develop/understanding-the-javascript-api-for-office).
+L’API JavaScript pour la bibliothèque Office (Office.js) inclut tous les ensembles qui sont actuellement disponibles. S’il existe une telle chose comme ensembles `ExcelApi 1.3` et `WordApi 1.3`, il est sans `Office.js 1.3` ensemble de conditions requises. La dernière version d’Office.js est conservée en tant qu’un seul point de terminaison Office remis via le réseau de distribution de contenu (CDN). Pour plus d’informations autour du CDN Office.js, notamment comment le contrôle de version et la compatibilité descendante est géré, voir [Présentation de l’API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/develop/understanding-the-javascript-api-for-office).
 
 ## <a name="specify-office-hosts-and-requirement-sets"></a>Spécification des ensembles de conditions requises et des hôtes Office
 
-Il existe différentes méthodes pour spécifier les hôtes Office et les ensembles de conditions qui sont requis par un complément.  Pour plus d’informations, consultez la rubrique [Spécifier les hôtes Office et la configuration requise d’API](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements).
+Il existe différentes façons de spécifier les hôtes Office et les ensembles requis par un complément.  Pour plus d’informations, voir [hôtes Office spécifier et exigences de l’API](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
 
 
 ## <a name="see-also"></a>Voir aussi

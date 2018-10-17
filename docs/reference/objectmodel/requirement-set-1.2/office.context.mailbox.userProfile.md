@@ -7,8 +7,8 @@
 
 |Condition requise| Valeur|
 |---|---|
-|[Version minimale de l’ensemble des conditions de boîte aux lettres](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Version minimale requise de la boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Niveau minimal d’autorisation](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
 ### <a name="members"></a>Membres
@@ -17,7 +17,7 @@
 
 Obtient le nom d’affichage de l’utilisateur.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type :
 
 *   Chaîne
 
@@ -25,8 +25,8 @@ Obtient le nom d’affichage de l’utilisateur.
 
 |Condition requise| Valeur|
 |---|---|
-|[Version minimale de l’ensemble des conditions de boîte aux lettres](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Version minimale de l’ensemble des conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Niveau minimal d’autorisation](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
 ##### <a name="example"></a>Exemple
@@ -48,8 +48,8 @@ Obtient l’adresse e-mail SMTP de l’utilisateur.
 
 |Condition requise| Valeur|
 |---|---|
-|[Version minimale de l’ensemble des conditions de boîte aux lettres](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Version minimale requise de la boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Niveau minimal d’autorisation](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
 ##### <a name="example"></a>Exemple
@@ -71,8 +71,8 @@ Obtient le fuseau horaire par défaut de l’utilisateur.
 
 |Condition requise| Valeur|
 |---|---|
-|[Version minimale de l’ensemble des conditions de boîte aux lettres](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Version minimale de l’ensemble des conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Niveau minimal d’autorisation](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
 
 ##### <a name="example"></a>Exemple

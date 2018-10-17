@@ -2,12 +2,12 @@
 title: Cycle de vie du développement des compléments Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 713daff9a0d16f904209f8b4561f3cf51bd9a9c9
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 5b056527deaf03beb51d755b582be715fbd14233
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944281"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505894"
 ---
 # <a name="office-add-ins-development-lifecycle"></a>Cycle de vie du développement des compléments Office
 
@@ -53,7 +53,7 @@ Tenez compte des informations suivantes pour identifier les scénarios :
     
 - Les clients utiliseront-ils le complément pour améliorer l’affichage ou l’expérience de création d’un document ? Si c’est le cas, vous pouvez créer un **complément de volet Office**. 
 
-La prise en charge pour certaines API de complément peut-être différente entre les applications Office et leur plateforme d’exécution (Windows, Mac, Web, Mobile). Pour afficher la couverture API actuelle par le client et la plateforme, consultez notre page [Disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md).  
+La prise en charge pour certaines API de complément peut être différente entre les applications Office et la plateforme d’exécution (Windows, Mac, Web, Mobile). Pour afficher la couverture API actuelle par le client et la plateforme, consultez la page concernant la [disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md).  
 
     
 ## <a name="4-design-and-implement-the-user-experience-and-user-interface-for-the-add-in"></a>4. Concevoir et implémenter l’expérience utilisateur et l’interface utilisateur pour le complément
@@ -84,7 +84,7 @@ Vous pouvez envoyer le complément à AppSource, à partir duquel les clients pe
     
 ## <a name="8-maintain-the-add-in"></a>8. Mettre à jour le complément
     
-Si votre complément lance un service web, et si vous apportez des mises à jour au service web après avoir publié le complément, vous n’avez pas besoin de republier le complément. Toutefois, si vous modifiez des éléments ou des données que vous avez soumis pour votre complément, comme le fichier manifeste du complément, les captures d’écran, les icônes, les fichiers HTML ou JavaScript, vous devrez republier le complément. 
+Si votre complément appelle un service web, et si vous effectuez des mises à jour pour le service web après la publication du complément, vous n’êtes pas obligé de republier le complément. Toutefois, si vous modifiez des éléments ou des données que vous avez soumise pour votre complément, tels que le manifeste de l’application add-in, captures d’écran, icônes, fichiers HTML ou JavaScript, vous devez republier le complément. 
     
-En particulier si vous avez publié le complément sur AppSource, vous devez soumettre à nouveau votre complément afin qu’AppSource puisse implémenter les modifications. Vous devez soumettre à nouveau votre complément avec un manifeste de complément mis à jour qui inclut un nouveau numéro de version. Vous devez également veiller à mettre à jour le numéro de version du complément dans le formulaire d’envoi afin qu’il corresponde au numéro de version du nouveau manifeste. Pour les compléments Outlook, vous devez vous assurer que l’élément [Id](https://docs.microsoft.com/javascript/office/manifest/id?view=office-js) contient un autre UUID dans le manifeste de complément.
+En particulier si vous avez publié le complément sur AppSource, vous devez soumettre à nouveau votre complément afin qu’AppSource puisse implémenter les modifications. Vous devez soumettre à nouveau votre complément avec un manifeste de complément mis à jour qui inclut un nouveau numéro de version. Vous devez également veiller à mettre à jour le numéro de version du complément dans le formulaire d’envoi afin qu’il corresponde au numéro de version du nouveau manifeste. Pour les compléments Outlook, vous devez vous assurer que l’élément [Id](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/id?view=office-js) contient un autre UUID dans le manifeste de complément.
     

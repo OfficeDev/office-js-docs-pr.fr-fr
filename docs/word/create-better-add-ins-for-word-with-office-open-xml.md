@@ -2,12 +2,12 @@
 title: Créer de meilleurs compléments pour Word avec Office Open XML
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 26a9db81931fdfe5872d31d79a9d46450a50f449
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 5c393b820fb2b725da1c3c9525eb561fe49059cc
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945798"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25506384"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Créer de meilleurs compléments pour Word avec Office Open XML
 
@@ -350,7 +350,7 @@ Le balisage suivant présente le composant document.xml, qui contient notre exem
  
 N’oubliez pas que si vous utilisez les fonctionnalités de co-création dans Word (comme la possibilité de modifier simultanément des documents avec d’autres personnes), vous devez activer à nouveau la fonctionnalité lorsque la génération de balisage pour votre complément est terminée.
    
-Pour désactiver les attributs RSID dans Word pour les documents que vous créerez à l’avenir, procédez comme suit : 
+Pour désactiver les attributs RSID dans Word pour les documents que vous créez à l’avenir, procédez comme suit : 
 
 1. Dans Word 2013, sélectionnez **Fichier**, puis **Options**.
 2. Dans la boîte de dialogue Options Word, choisissez **Centre de gestion de la confidentialité**, puis **Paramètres du Centre de gestion de la confidentialité**.
@@ -475,7 +475,7 @@ L’utilisation des liaisons dans votre complément Word est traitée dans la se
 
 Comme mentionné précédemment, les contrôles de contenu, comme le texte mis en forme, ne nécessitent aucun composant de document supplémentaire, de sorte que seules les versions modifiées des composants .rels et document.xml sont incluses. 
 
-La balise **w:sdt** dans le corps de document.xml représente le contrôle de contenu. Si vous générez le balisage Office Open XML pour un contrôle de contenu, vous verrez que plusieurs attributs ont été supprimés de cet exemple, y compris la balise et les propriétés de composant de document. Seuls les éléments essentiels (et quelques éléments recommandés) ont été conservés, notamment les éléments suivants :
+La balise **w:sdt** que vous voyez dans le corps document.xml représente le contrôle de contenu. Si vous générez le balisage Office Open XML pour un contrôle de contenu, vous verrez que plusieurs attributs ont été supprimés de cet exemple, y compris les propriétés du composant document et de la balise. Uniquement essentiels (et quelques meilleures pratiques) éléments ont été conservés, notamment les suivants :
 
 
 
@@ -854,7 +854,7 @@ Lorsque vous utilisez des modèles avec votre application, que le complément r�
 
 ## <a name="see-also"></a>Voir aussi
 
-- [API JavaScript pour Office ](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js) 
+- [Interface API JavaScript pour Office ](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) 
 - [Norme ECMA-376 : Formats de fichier Office Open XML](http://www.ecma-international.org/publications/standards/Ecma-376.htm) (accéder ici au guide de langage complet et à la documentation correspondante sur Open XML) 
 - [OpenXMLDeveloper.org](http://www.openxmldeveloper.org)
 - [Exploration de l’API JavaScript pour Office : liaisons de données et parties XML personnalisées](https://msdn.microsoft.com/magazine/dn166930.aspx)

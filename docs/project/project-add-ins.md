@@ -2,19 +2,19 @@
 title: Compléments du volet Office pour Project
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 2aa8a88878082357949935305b9d39d203f5fb5d
-ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
+ms.openlocfilehash: 1b7554920c0f6e76ec0b351e103781e152c70a9d
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "25348162"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25506104"
 ---
-# <a name="task-pane-add-ins-for-project"></a>Compléments du volet de tâches pour Project
+# <a name="task-pane-add-ins-for-project"></a>Compléments du volet Office pour Projet
 
-Project Standard 2013 et Project Professional 2013 (version 15.1 ou ultérieure) comprennent tous les deux la prise en charge des compléments de volet Office. Vous pouvez exécuter les compléments de volet Office généraux qui sont développés pour Word 2013 ou Excel 2013. Vous pouvez également développer des compléments personnalisés qui gèrent les événements de sélection de projet et intégrer des tâches, ressources, affichage et autres données au niveau des cellules dans un projet avec les listes SharePoint, les compléments SharePoint, les composants Web Part, les services Web et les applications d’entreprise.
+Project Standard 2013 et Project Professionnel 2013 (version 15.1 ou au dessus) incluent tous les deux une prise en charge des compléments du volet Office. Vous pouvez exécuter des compléments généraux du volet Office, développés pour Word 2013 ou Excel 2013. Vous pouvez également développer des compléments personnalisés qui gèrent des événements de sélection dans Project et intègrent des tâches, des ressources, des affichages, et d’autres données au niveau des cellules dans un projet avec les listes SharePoint, les compléments SharePoint, Web Parts, les services web et les applications d’entreprise.
 
 > [!NOTE]
-> Le [téléchargement du kit de développement logiciel (SDK) de Project 2013](https://www.microsoft.com/download/details.aspx?id=30435%20) inclut des exemples de compléments qui montrent comment utiliser le modèle objet du complément pour Project et le service OData pour la création de rapports de données dans Project Server 2013. Après avoir extrait et installé le SDK, accédez au sous-dossier `\Samples\Apps\`.
+> |||UNTRANSLATED_CONTENT_START|||The [Project 2013 SDK download](https://www.microsoft.com/download/details.aspx?id=30435%20) includes sample add-ins that show how to use the add-in object model for Project, and how to use the OData service for reporting data in Project Server 2013. When you extract and install the SDK, see the `\Samples\Apps\` subdirectory.|||UNTRANSLATED_CONTENT_END|||
 
 Pour une introduction aux compléments Office, reportez-vous à [Vue d’ensemble de la plateforme des compléments pour Office](../overview/office-add-ins.md).
 
@@ -49,9 +49,9 @@ Les scénarios des compléments pour Project comprennent les fonctionnalités su
 
 La bibliothèque JavaScript pour les compléments Project comprend des extensions de l’alias de l’espace de nom **Office** qui permet aux développeurs d’accéder aux propriétés de l’application Project, ainsi qu’aux tâches, ressources et vues dans un projet. Les extensions de la bibliothèque JavaScript du fichier Project-15.js sont utilisées dans un complément Project créé avec Visual Studio 2015. Les fichiers Office.js, Office.debug.js, Project-15.js, Project-15.debug.js et autres fichiers associés sont également fournis dans le téléchargement du Kit de développement logiciel (SDK) Project 2013.
 
-Pour créer un complément, vous pouvez utiliser un éditeur de texte simple afin de créer une page Web HTML avec les fichiers JavaScript associés, les fichiers CSS et les requêtes REST. Outre une page HTML ou une application Web, le complément nécessite un fichier manifeste XML pour la configuration. Project peut utiliser un fichier manifeste qui inclut un attribut  **type** spécifié comme **TaskPaneExtension**. Le fichier manifeste peut être utilisé par plusieurs applications clientes Office 2013, ou vous pouvez créer un fichier manifeste spécifique pour Project 2013. Pour plus d’informations, voir la section  _Notions fondamentales de développement_ dans [Vue d’ensemble de la plateforme des compléments pour Office](../overview/office-add-ins.md).
+Pour créer un complément, vous pouvez utiliser un éditeur de texte simple afin de créer une page web HTML avec les fichiers JavaScript associés, les fichiers CSS et les requêtes REST. Outre une page HTML ou une application web, le complément nécessite un fichier manifeste XML pour la configuration. Project peut utiliser un fichier manifeste qui inclut un attribut  **type** spécifié comme **TaskPaneExtension**. Le fichier manifeste peut être utilisé par plusieurs applications clientes Office 2013, ou vous pouvez créer un fichier manifeste spécifique pour Project 2013. Pour plus d’informations, voir la section  _Notions fondamentales de développement_ dans [Vue d’ensemble de la plateforme des compléments pour Office](../overview/office-add-ins.md).
 
-Pour les applications complexes personnalisées, et pour un débogage plus facile, nous vous recommandons d’utiliser Visual Studio 2015 pour développer des sites Web pour les compléments. Visual Studio 2015 contient des modèles pour les projets de compléments qui permettent de choisir le type de complément (volet Office, contenu ou messagerie) et l’application hôte (Project, Word, Excel ou Outlook). Pour obtenir un exemple qui intègre des données de Project Online, reportez-vous à l’article relatif à la [connexion d’un complément du volet Office Project à PWA](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx) dans le blog Project Programmability sur MSDN.
+Pour les applications complexes personnalisées, et pour un débogage plus facile, nous vous recommandons d’utiliser Visual Studio 2015 pour développer des sites web pour les compléments. Visual Studio 2015 contient des modèles pour les projets de compléments qui permettent de choisir le type de complément (volet Office, contenu ou messagerie) et l’application hôte (Project, Word, Excel ou Outlook). Pour obtenir un exemple qui intègre des données de Project Online, reportez-vous à l’article relatif à la [connexion d’un complément du volet Office Project à PWA](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx) dans le blog Project Programmability sur MSDN.
 
 Lorsque vous installez le Kit de développement logiciel (SDK) de Project 2013, le sous-répertoire `\Samples\Apps\` inclut les exemples de compléments suivants :
 
@@ -66,7 +66,7 @@ Lorsque vous installez le Kit de développement logiciel (SDK) de Project 2013, 
 ### <a name="creating-an-add-in-manifest-file"></a>Création d’un fichier manifeste de complément
 
 
-Le fichier manifeste spécifie l’URL de la page Web du complément ou l’application Web, le type de complément (volet Office pour Project), les URL facultatives de contenus pour d’autres langues ou paramètres régionaux, et d’autres propriétés.
+Le fichier manifeste spécifie l’URL de la page web du complément ou l’application Web, le type de complément (volet Office pour Project), les URL facultatives de contenus pour d’autres langues ou paramètres régionaux, et d’autres propriétés.
 
 
 ### <a name="procedure-1-to-create-the-add-in-manifest-file-for-bing-search"></a>Procédure 1. Créer le fichier manifeste du complément pour Bing Search
@@ -107,8 +107,8 @@ Le fichier manifeste spécifie l’URL de la page Web du complément ou l’appl
   - L’élément  **DisplayName** correspond au nom qui s’affiche dans la liste déroulante **Complément du volet Office** de l’onglet **AFFICHAGE**, dans le ruban de Project 2013. La valeur du nom peut contenir jusqu’à 32 caractères.
   - L’élément  **Description** contient la description du complément pour les paramètres régionaux par défaut. La valeur peut contenir jusqu’à 2 000 caractères.
   - L’élément  **Capabilities** contient un ou plusieurs éléments enfants **Capability** qui spécifient l’application hôte.
-  - L’élément  **DefaultSettings** inclut l’élément **SourceLocation**, qui spécifie le chemin d’accès d’un fichier HTML sur un partage de fichiers ou l’URL d’une page Web que le complément utilise. Un complément du volet Office ignore l’élément **RequestedHeight** et l’élément **RequestedWidth**.
-  - L’élément **IconUrl** est facultatif. Il peut être une icône sur un partage de fichiers ou l’URL d’une icône dans une application Web.
+  - L’élément  **DefaultSettings** inclut l’élément **SourceLocation**, qui spécifie le chemin d’accès d’un fichier HTML sur un partage de fichiers ou l’URL d’une page web que le complément utilise. Un complément du volet Office ignore l’élément **RequestedHeight** et l’élément **RequestedWidth**.
+  - L’élément **IconUrl** est facultatif. Il peut être une icône sur un partage de fichiers ou l’URL d’une icône dans une application web.
     
 - (Facultatif) Ajoutez des éléments  **Override** qui ont des valeurs pour les autres paramètres régionaux. Par exemple, le manifeste suivant fournit des éléments **Override** pour les valeurs françaises de **DisplayName**,  **Description**,  **IconUrl** et **SourceLocation**.
     
@@ -148,7 +148,7 @@ Le fichier manifeste spécifie l’URL de la page Web du complément ou l’appl
 
 Dans Project 2013, vous pouvez installer des compléments comme solutions autonomes sur un partage de fichiers ou dans un catalogue de compléments privé. Vous pouvez également consulter et acheter des compléments dans AppSource.
 
-Un partage de fichiers peut contenir plusieurs fichiers manifestes XML de complément et sous-répertoires. Vous pouvez ajouter ou supprimer des catalogues et des emplacements de répertoire Manifest à l’aide de l’onglet  **Catalogues de compléments approuvés** dans la boîte de dialogue **Centre de gestion de la confidentialité** dans Project 2013. Pour afficher un complément dans Project, l’élément **SourceLocation** dans un manifeste doit pointer vers un site Web existant ou un fichier source HTML.
+Un partage de fichiers peut contenir plusieurs fichiers manifestes XML de complément et sous-répertoires. Vous pouvez ajouter ou supprimer des catalogues et des emplacements de répertoire Manifest à l’aide de l’onglet  **Catalogues de compléments approuvés** dans la boîte de dialogue **Centre de gestion de la confidentialité** dans Project 2013. Pour afficher un complément dans Project, l’élément **SourceLocation** dans un manifeste doit pointer vers un site web existant ou un fichier source HTML.
 
 
 > [!NOTE]
@@ -204,7 +204,7 @@ Vous pouvez distribuer des compléments via un partage de fichiers, un catalogue
 
 - [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
 - [Manifeste XML des compléments Office](../develop/add-in-manifests.md)
-- [Interface API JavaScript pour Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)
+- [Interface API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)
 - [Créez votre premier complément du volet Office pour Project 2013 à l’aide d’un éditeur de texte](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [Créer un complément Project qui utilise REST avec un service OData Project Server local](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
 - [Connexion d’un complément du volet Office Project à PWA](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx)
