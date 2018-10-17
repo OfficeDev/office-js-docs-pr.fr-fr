@@ -16,13 +16,17 @@ Cet article décrit le processus de création d’un complément OneNote à l’
 
 1. Créez un dossier sur votre lecteur local et nommez-le `my-onenote-addin`. Il s’agit de l’endroit où vous allez créer les fichiers de votre application.
 
+    ```bash
+    mkdir my-onenote-addin
+    ```
+
 2. Accédez à votre nouveau dossier.
 
     ```bash
     cd my-onenote-addin
     ```
 
-3. Utilisez le générateur Yeoman pour créer un projet de complément de OneNote. Exécutez la commande suivante, puis répondez aux invites de commandes comme suit :
+3. Utilisez le générateur Yeoman pour créer un projet de complément de OneNote. Exécutez la commande suivante, puis répondez aux invites de commandes comme suit :
 
     ```bash
     yo office
@@ -35,7 +39,7 @@ Cet article décrit le processus de création d’un complément OneNote à l’
 
     ![Capture d’écran des invites et des réponses pour le générateur Yeoman](../images/yo-office-onenote-jquery.png)
     
-    Une fois que vous avez terminé avec l'assistant, le générateur crée le projet et installe les composants Node de prise en charge.
+    Une fois que vous avez terminé avec l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
     
 4. Accédez au dossier racine du projet d’application web.
 
@@ -47,71 +51,152 @@ Cet article décrit le processus de création d’un complément OneNote à l’
 
 1. Dans votre éditeur de code, ouvrez le fichier **index.html** à la racine du projet. Ce fichier contient le code HTML qui sera affiché dans le volet de tâches du complément.
 
-2. Remplacez l’élément `<main>` dans l’élément `<body>` par le balisage suivant et enregistrez le fichier. Cette option ajoute une zone de texte et un bouton à l’aide des [composants de la structure de l’interface utilisateur d’Office](https://developer.microsoft.com/en-us/fabric#/components).
+2. Dans Home.html, remplacez l’élément `<body>` par le balisage suivant et enregistrez le fichier. 
 
     ```html
-    <main class="ms-welcome__main">
-        <br />
-        <p class="ms-font-l">Enter content below</p>
-        <div class="ms-TextField ms-TextField--placeholder">
-            <textarea id="textBox" rows="5"></textarea>
-        </div>
-        <button id="addOutline" class="ms-welcome__action ms-Button ms-Button--hero ms-u-slideUpIn20">
-            <span class="ms-Button-label">Add Outline</span>
-            <span class="ms-Button-icon"><i class="ms-Icon"></i></span>
-            <span class="ms-Button-description">Adds the content above to the current page.</span>
-        </button>
-    </main>
+    <body class="ms-font-m ms-welcome">
+        <header class="ms-welcome__header ms-bgColor-themeDark ms-u-fadeIn500">
+            <h2 class="ms-fontSize-xxl ms-fontWeight-regular ms-fontColor-white">OneNote Add-in</h1>
+        </header>
+        <main id="app-body" class="ms-welcome__main">
+            <br />
+            <p class="ms-font-m">Enter HTML content here:</p>
+            <div class="ms-TextField ms-TextField--placeholder">
+                <textarea id="textBox" rows="8" cols="30"></textarea>
+            </div>
+            <button id="addOutline" class="ms-Button ms-Button--primary">
+                <span class="ms-Button-label">Add outline</span>
+            </button>
+        </main>
+        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
+    </body>
     ```
 
 3. Ouvrez le fichier **src\index.js** pour spécifier le script du complément. Remplacez l'intégralité du contenu par le code suivant et enregistrez le fichier.
 
     ```js
-    'use strict';
+    import * as OfficeHelpers from "@microsoft/office-js-helpers";
 
-    (function () {
-
-        Office.initialize = function (reason) {
-            $(document).ready(function () {
-                // Set up event handler for the UI.
-                $('#addOutline').click(addOutlineToPage);
-            });
-        };
-
-        // Add the contents of the text area to the page.
-        function addOutlineToPage() {        
-            OneNote.run(function (context) {
-                var html = '<p>' + $('#textBox').val() + '</p>';
+    Office.initialize = (reason) => {
+        $(document).ready(() => {
+            $('#addOutline').click(addOutlineToPage);
+        });
+    };
+    
+    async function addOutlineToPage() {
+        try {
+            await OneNote.run(async context => {
+                var html = "<p>" + $("#textBox").val() + "</p>";
 
                 // Get the current page.
                 var page = context.application.getActivePage();
 
-                // Queue a command to load the page with the title property.             
-                page.load('title'); 
+                // Queue a command to load the page with the title property.
+                page.load("title");
 
-                // Add an outline with the specified HTML to the page.
+                // Add text to the page by using the specified HTML.
                 var outline = page.addOutline(40, 90, html);
 
                 // Run the queued commands, and return a promise to indicate task completion.
                 return context.sync()
                     .then(function() {
-                        console.log('Added outline to page ' + page.title);
+                        console.log("Added outline to page " + page.title);
                     })
                     .catch(function(error) {
-                        app.showNotification("Error: " + error); 
-                        console.log("Error: " + error); 
-                        if (error instanceof OfficeExtension.Error) { 
-                            console.log("Debug info: " + JSON.stringify(error.debugInfo)); 
-                        } 
-                    }); 
-            });
+                        app.showNotification("Error: " + error);
+                        console.log("Error: " + error);
+                        if (error instanceof OfficeExtension.Error) {
+                            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+                        }
+                    });
+                });
+        } catch (error) {
+            OfficeHelpers.UI.notify(error);
+            OfficeHelpers.Utilities.log(error);
         }
-    })();
+    }
+    ```
+
+4. Ouvrez le fichier **app.css** pour spécifier les styles personnalisés pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+
+    ```css
+    html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul, p, h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .ms-welcome {
+        position: relative;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        min-height: 500px;
+        min-width: 320px;
+        overflow: auto;
+        overflow-x: hidden;
+    }
+
+    .ms-welcome__header {
+        min-height: 30px;
+        padding: 0px;
+        padding-bottom: 5px;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-justify-content: flex-end;
+        justify-content: flex-end;
+    }
+
+    .ms-welcome__header > h1 {
+        margin-top: 5px;
+        text-align: center;
+    }
+
+    .ms-welcome__main {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-align-items: center;
+        align-items: left;
+        -webkit-flex: 1 0 0;
+        flex: 1 0 0;
+        padding: 30px 20px;
+    }
+
+    .ms-welcome__main > h2 {
+        width: 100%;
+        text-align: left;
+    }
+
+    @media (min-width: 0) and (max-width: 350px) {
+        .ms-welcome__features {
+            width: 100%;
+        }
+    }
     ```
 
 ## <a name="update-the-manifest"></a>Mise à jour du manifeste
 
-1. Ouvrez le fichier nommé **one-note-add-in-manifest.xml** pour définir les paramètres et les fonctionnalités du complément.
+1. Ouvrez le fichier nommé **my-office-add-in-manifest.xml** pour définir les paramètres et les fonctionnalités du complément.
 
 2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-la par votre nom.
 
@@ -124,7 +209,7 @@ Cet article décrit le processus de création d’un complément OneNote à l’
     <ProviderName>John Doe</ProviderName>
     <DefaultLocale>en-US</DefaultLocale>
     <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
-    <DisplayName DefaultValue="OneNote Add-in" />
+    <DisplayName DefaultValue="My Office Add-in" />
     <Description DefaultValue="A task pane add-in for OneNote"/>
     ...
     ```
@@ -147,13 +232,24 @@ Cet article décrit le processus de création d’un complément OneNote à l’
 
     <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
 
-3. Dans la boîte de dialogue Télécharger le complément, accédez à **one-note-add-in-manifest.xml** dans le dossier de projet, puis choisissez **Télécharger**. 
+3. Dans la boîte de dialogue Télécharger le complément, accédez à **my-office-add-in-manifest.xml** dans le dossier de projet, puis choisissez **Télécharger**. 
 
 4. À partir de l’onglet **Accueil** , cliquez sur le bouton **Afficher le volet Office** dans le ruban. Le volet Office de complément s’ouvre dans un iFrame en regard de la page OneNote.
 
-5. Entrez du texte dans la zone de texte, puis choisissez **Ajouter un sommaire**. Le texte entré est ajouté à la page. 
+5. Entrez le contenu HTML suivant dans la zone de texte, puis choisissez **Ajouter un contour**.  
 
-    ![Complément OneNote généré à partir de cette procédure pas à pas](../images/onenote-first-add-in.png)
+    ```html
+    <ol>
+    <li>Item #1</li>
+    <li>Item #2</li>
+    <li>Item #3</li>
+    <li>Item #4</li>
+    </ol>
+    ```
+
+    Le contour que vous avez spécifié est ajouté à la page.
+
+    ![Complément OneNote généré à partir de cette procédure pas à pas](../images/onenote-first-add-in-3.png)
 
 ## <a name="troubleshooting-and-tips"></a>Conseils et résolution des problèmes
 

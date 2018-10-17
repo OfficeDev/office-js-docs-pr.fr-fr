@@ -2,12 +2,12 @@
 ms.date: 10/03/2018
 description: Découvrez les meilleures pratiques et modèles recommandés pour les fonctions personnalisées d’Excel.
 title: Meilleures pratiques pour les fonctions personnalisées
-ms.openlocfilehash: f6781de97f912df70800532032162187ae9f9344
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.openlocfilehash: 218e62cd074ccf3f3708bba90c938f7ddef059cb
+ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459111"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "25579820"
 ---
 # <a name="custom-functions-best-practices-preview"></a>Meilleures pratiques pour les fonctions personnalisées (aperçu)
 
@@ -37,7 +37,7 @@ function getComment(x) {
 
 ## <a name="debugging"></a>Débogage
 
-Actuellement, la meilleure méthode pour le débogage des fonctions personnalisées Excel consiste à premier [sideload](../testing/sideload-office-add-ins-for-testing.md) votre complément dans **Excel Online**. Ensuite, vous pouvez déboguer vos fonctions personnalisées à l’aide de l’[outil de débogage F12 natif de votre navigateur](../testing/debug-add-ins-in-office-online.md) en combinaison avec les techniques suivantes :
+Actuellement, la meilleure méthode pour le débogage des fonctions personnalisées Excel consiste à d’abord [charger en parallèle](../testing/sideload-office-add-ins-for-testing.md) votre complément dans **Excel Online**. Vous pouvez ensuite déboguer vos fonctions personnalisées à l’aide de l' [outil F12 de débogage natif de votre navigateur](../testing/debug-add-ins-in-office-online.md) en combinaison avec les techniques suivantes :
 
 - Utiliser des instructions `console.log` dans votre code des fonctions personnalisées pour envoyer la sortie à la console en temps réel.
 
@@ -70,11 +70,13 @@ CustomFunctionMappings.ADD = add;
 
 Gardez à l’esprit les meilleures pratiques suivantes lors de la création de fonctions personnalisées dans votre fichier JavaScript et en spécifiant les informations correspondantes dans le fichier de métadonnées JSON.
 
-* Dans le fichier JavaScript, spécifiez les noms de fonction en casse mixte. Par exemple, le nom de la fonction `addTenToInput` est écrit en casse mixte : le premier mot dans le nom commence par une lettre minuscule, et chaque mot suivant dans le nom commence par une lettre majuscule.
+* Dans le fichier JavaScript, spécifiez les noms de fonction en casse mixte. Par exemple, le nom de la fonction `addTenToInput` est écrit en casse mixte : le premier mot dans le nom commence par une lettre minuscule, et chaque mot suivant dans le nom commence par une lettre majuscule.
 
 * Dans le fichier de métadonnées JSON, spécifiez la valeur de chaque propriété `name` en majuscules. La propriété `name`  définit le nom de la fonction que les utilisateurs finaux verront s’afficher dans Excel. L’utilisation de lettres majuscules pour le nom de chaque fonction personnalisée fournit une expérience cohérente pour les utilisateurs finaux dans Excel, où tous les noms de fonctions intégrées sont en majuscules.
 
 * Dans le fichier de métadonnées JSON, spécifiez la valeur de chaque propriété `id` en majuscules. Ainsi, il est évident quelle partie de l’instruction `CustomFunctionMappings`  dans votre code JavaScript correspond à la propriété `id`    dans le fichier de métadonnées JSON (à condition que votre nom de la fonction utilise CamelCase, comme indiqué précédemment).
+
+* Dans le fichier de métadonnées JSON, assurez-vous que la valeur de chaque propriété`id` contient uniquement des caractères alphanumériques et des points. 
 
 * Dans le fichier de métadonnées JSON, assurez-vous que la valeur de chaque propriété `id` est unique dans l’étendue du fichier. Autrement dit, deux objets fonctions dans le fichier de métadonnées ne doivent pas avoir la même valeur `id`. En outre, ne spécifiez pas deux valeurs `id`  dans le fichier de métadonnées qui diffèrent uniquement par la casse. Par exemple, ne définissez pas un objet fonction avec une valeur `id`  de **add** et un autre objet fonction avec une valeur `id`  de **ADD**.
 
@@ -126,7 +128,7 @@ Gardez à l’esprit les meilleures pratiques suivantes lors de la création de 
 
 ## <a name="additional-considerations"></a>Considérations supplémentaires
 
-Pour créer un complément qui s’exécute sur plusieurs plates-formes (l’un des principaux clients des compléments Office), vous ne devez pas accéder au DOM (Document Object Model) dans des fonctions personnalisées ni utiliser des bibliothèques telles que jQuery qui s’appuient sur le modèle DOM. Dans Excel pour Windows, où les fonctions personnalisées utilisent le [runtime JavaScript](custom-functions-runtime.md), des fonctions personnalisées ne peuvent pas accéder au DOM.
+Pour créer un complément qui s’exécute sur plusieurs plates-formes (l’un des principaux clients des compléments Office), vous ne devez pas accéder au DOM (Document Object Model) dans les fonctions personnalisées ni utiliser des bibliothèques comme jQuery qui s’appuient sur le modèle DOM. Dans Excel pour Windows, où les fonctions personnalisées utilisent le [runtime JavaScript](custom-functions-runtime.md), des fonctions personnalisées ne peuvent pas accéder au DOM.
 
 ## <a name="see-also"></a>Voir aussi
 

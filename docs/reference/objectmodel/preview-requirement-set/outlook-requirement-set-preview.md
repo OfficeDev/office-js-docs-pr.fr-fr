@@ -3,7 +3,7 @@
 Le sous-ensemble de l’API de complément Outlook de l’interface API JavaScript pour Office comprend des objets, des méthodes, des propriétés et des événements à utiliser dans un complément Outlook.
 
 > [!NOTE]
-> Cette documentation est pour un **Aperçu** [exigence](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets). Cet ensemble de conditions requises n’est pas totalement implémenté encore et clients ne signaleront pas correctement prise en charge pour celui-ci. Vous ne devez pas spécifier cette exigence définie dans le manifeste de votre complément. Méthodes et propriétés qui sont introduites dans cet ensemble de conditions requises doivent être individuellement tester disponibilité avant de les utiliser.
+> Dans cette documentation, **l’ensemble de conditions est présenté en aperçu** [exigence](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets). Ces conditions n’ont pas encore été toutes implémentées, par conséquent les clients ne pourront pas demander une aide précise concernant ces conditions. Vous ne devez pas spécifier cet ensemble de conditions requises dans le manifeste de votre complément. La disponibilité des méthodes et des propriétés présentées dans cet ensemble de conditions requises doit être testée avant de les utiliser.
 
 L’ensemble de conditions requises présenté en aperçu comprend toutes les fonctionnalités de l’[ensemble de conditions requises de la version 1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md).
 
@@ -19,6 +19,7 @@ Les fonctionnalités suivantes sont disponibles en aperçu.
 - [Office.context.auth.getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) - Ajout d’un accès à `getAccessTokenAsync`, qui permet aux compléments d’[obtenir un jeton d’accès](https://docs.microsoft.com/outlook/add-ins/authenticate-a-user-with-an-sso-token) pour l’API Microsoft Graph.
 - [Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions) - Ajout d’une nouvelle valeur de bit indicateur qui spécifie les autorisations accordées au délégué.
 - [Office.EventType](/javascript/api/office/office.eventtype) - Modifié pour prendre en charge l’événement OfficeThemeChanged grâce à l’ajout de l’entrée `OfficeThemeChanged`.
+- [Élément de manifeste SupportsSharedFolders](../../manifest/supportssharedfolders.md) - Ajout d’un élément enfant à l’élément de manifeste [DesktopFormFactor](../../manifest/desktopformfactor.md). Il définit si le complément est disponible dans les scénarios de délégué.
 
 ## <a name="see-also"></a>Voir aussi
 

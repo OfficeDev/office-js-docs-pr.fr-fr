@@ -230,7 +230,7 @@ items:
       - name: Appeler des fonctions intégrées
         displayName: Excel
         href: excel/excel-add-ins-worksheet-functions.md
-      - name: graphiques ;
+      - name: Graphiques
         displayName: Excel
         href: excel/excel-add-ins-charts.md
       - name: Co-création dans des macros complémentaires Excel
@@ -271,7 +271,7 @@ items:
       - name: Ranges
         displayName: Excel
         href: excel/excel-add-ins-ranges.md
-      - name: tableaux ;
+      - name: Tableaux
         displayName: Excel
         href: excel/excel-add-ins-tables.md
       - name: Utilisation de plusieurs plages
@@ -593,7 +593,7 @@ items:
         href: /javascript/api/word
     - name: API commune
       items:
-      - name: Ensembles de conditions requises des API communes pour Office
+      - name: Ensembles des conditions requises des API communes pour Office
         href: reference/requirement-sets/office-add-in-requirement-sets.md
       - name: Ensembles de conditions requises concernant les commandes de complément
         href: reference/requirement-sets/add-in-commands-requirement-sets.md
@@ -611,7 +611,7 @@ items:
     items:
     - name: AllowSnapshot
       href: reference/manifest/allowsnapshot.md
-    - name: AlternateId
+    - name: Alternaté
       href: reference/manifest/alternateid.md
     - name: AppDomain
       href: reference/manifest/appdomain.md
@@ -627,7 +627,7 @@ items:
       href: reference/manifest/description.md
     - name: DesktopSettings
       href: reference/manifest/desktopsettings.md
-    - name: Dictionary
+    - name: Dictionnaire
       href: reference/manifest/dictionary.md
     - name: DictionaryHomePage
       href: reference/manifest/dictionaryhomepage.md
@@ -738,13 +738,15 @@ items:
         href: reference/manifest/customfunctionssourcelocation.md
       - name: Supertip
         href: reference/manifest/supertip.md
+      - name: SupportsSharedFolders
+        href: reference/manifest/supportssharedfolders.md
       - name: WebApplicationInfo
         href: reference/manifest/webapplicationinfo.md
 - name: Ressources
   href: resources/resources-links-help.md
-ms.openlocfilehash: e050a9d566314bc6dd7a8e146e6fd32733b92738
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.openlocfilehash: 554141ecd56a9f08e38b0d579f96a6d239ac7a22
+ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25506279"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "25579883"

@@ -2,12 +2,12 @@
 title: Disponibilité des compléments Office sur les plateformes et les hôtes
 description: Ensembles de conditions requises pris en charge pour Excel, Word, Outlook, PowerPoint et OneNote.
 ms.date: 10/03/2018
-ms.openlocfilehash: bc7ac5c97c041a546c160c05cffc2c80db1ff1b1
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.openlocfilehash: 39a80f322c282e29e6e8c4363f0c82522b33b75d
+ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25506349"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "25579925"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilité des compléments Office sur les plateformes et les hôtes
 
@@ -51,7 +51,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
         - MatrixBindings<br>
         - MatrixCoercion<br>
         - Selection<br>
-        - Settings<br>
+        - Paramètres<br>
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
@@ -72,7 +72,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
         - MatrixBindings<br>
         - MatrixCoercion<br>
         - Selection<br>
-        - Settings<br>
+        - Paramètres<br>
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
@@ -100,7 +100,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
         - MatrixBindings<br>
         - MatrixCoercion<br>
         - Selection<br>
-        - Settings<br>
+        - Paramètres<br>
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
@@ -128,7 +128,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
         - MatrixBindings<br>
         - MatrixCoercion<br>
         - Selection<br>
-        - Settings<br>
+        - Paramètres<br>
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
@@ -155,7 +155,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
         - MatrixBindings<br>
         - MatrixCoercion<br>
         - Selection<br>
-        - Settings<br>
+        - Paramètres<br>
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
@@ -184,7 +184,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
         - MatrixCoercion<br>
         - PdfFile<br>
         - Sélection<br>
-        - Settings<br>
+        - Paramètres<br>
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
@@ -213,7 +213,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
         - MatrixCoercion<br>
         - PdfFile<br>
         - Sélection<br>
-        - Settings<br>
+        - Paramètres<br>
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
@@ -289,7 +289,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
   </tr>
   <tr>
     <td>Office pour iOS</td>
-    <td> - Lecture de message<br>
+    <td> - Lecture du courrier<br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
@@ -300,7 +300,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
   </tr>
   <tr>
     <td>Office 2016 pour Mac</td>
-    <td> - Lecture de message<br>
+    <td> - Lecture du courrier<br>
       - Composition de message<br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
@@ -321,7 +321,8 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
       - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
-      - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a></td>
+      - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a><br>
+      - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a></td>
     <td>Non disponible</td>
   </tr>
   <tr>
@@ -368,7 +369,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
          - OoxmlCoercion<br>
          - PdfFile<br>
          - Sélection<br>
-         - Settings<br>
+         - Paramètres<br>
          - TableBindings<br>
          - TableCoercion<br>
          - TextBindings<br>
@@ -391,7 +392,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
          - OoxmlCoercion<br>
          - PdfFile<br>
          - Sélection<br>
-         - Settings<br>
+         - Paramètres<br>
          - TableBindings<br>
          - TableCoercion<br>
          - TextBindings<br>
@@ -418,7 +419,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
          - OoxmlCoercion<br>
          - PdfFile<br>
          - Sélection<br>
-         - Settings<br>
+         - Paramètres<br>
          - TableBindings<br>
          - TableCoercion<br>
          - TextBindings<br>
@@ -445,7 +446,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
          - OoxmlCoercion<br>
          - PdfFile<br>
          - Sélection<br>
-         - Settings<br>
+         - Paramètres<br>
          - TableBindings<br>
          - TableCoercion<br>
          - TextBindings<br>
@@ -472,7 +473,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
          - OoxmlCoercion<br>
          - PdfFile<br>
          - Sélection<br>
-         - Settings<br>
+         - Paramètres<br>
          - TableBindings<br>
          - TableCoercion<br>
          - TextBindings<br>
@@ -500,7 +501,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
          - OoxmlCoercion<br>
          - PdfFile<br>
          - Sélection<br>
-         - Settings<br>
+         - Paramètres<br>
          - TableBindings<br>
          - TableCoercion<br>
          - TextBindings<br>
@@ -528,7 +529,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
          - OoxmlCoercion<br>
          - PdfFile<br>
          - Sélection<br>
-         - Settings<br>
+         - Paramètres<br>
          - TableBindings<br>
          - TableCoercion<br>
          - TextBindings<br>
@@ -562,7 +563,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
          - ImageCoercion<br>
          - PdfFile<br>
          - Sélection<br>
-         - Settings<br>
+         - Paramètres<br>
          - TextCoercion</td>
   </tr>
   <tr>
@@ -579,7 +580,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
          - ImageCoercion<br>
          - PdfFile<br>
          - Sélection<br>
-         - Settings<br>
+         - Paramètres<br>
          - TextCoercion</td>
   </tr>
   <tr>
@@ -595,7 +596,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
          - ImageCoercion<br>
          - PdfFile<br>
          - Sélection<br>
-         - Settings<br>
+         - Paramètres<br>
          - TextCoercion</td>
   </tr>
   <tr>
@@ -611,7 +612,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
          - ImageCoercion<br>
          - PdfFile<br>
          - Sélection<br>
-         - Settings<br>
+         - Paramètres<br>
          - TextCoercion</td>
   </tr>
   <tr>
@@ -625,7 +626,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
          - Fichier<br>
          - PdfFile<br>
          - Sélection<br>
-         - Settings<br>
+         - Paramètres<br>
          - TextCoercion<br>
          - ImageCoercion</td>
   </tr>
@@ -642,7 +643,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
          - ImageCoercion<br>
          - PdfFile<br>
          - Sélection<br>
-         - Settings<br>
+         - Paramètres<br>
          - TextCoercion</td>
   </tr>
   <tr>
@@ -658,7 +659,7 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
          - ImageCoercion<br>
          - PdfFile<br>
          - Sélection<br>
-         - Settings<br>
+         - Paramètres<br>
          - TextCoercion</td>
   </tr>
 </table>
@@ -679,13 +680,13 @@ Si une cellule de tableau contient un astérisque (*), cela signifie que nous tr
     <td>Office Online</td>
     <td> - Contenu<br>
          - Volet Office<br>
-         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
+         - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de compléments</a></td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets">OneNoteApi 1.1</a><br>
          - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - DocumentEvents<br>
          - HtmlCoercion<br>
          - ImageCoercion<br>
-         - Settings<br>
+         - Paramètres<br>
          - TextCoercion</td>
   </tr>
 </table>

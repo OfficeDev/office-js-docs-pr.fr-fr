@@ -2,12 +2,12 @@
 ms.date: 10/09/2018
 description: Créer des fonctions personnalisées dans Excel à l’aide de JavaScript.
 title: Créer des fonctions personnalisées dans Excel (Aperçu)
-ms.openlocfilehash: e52039f2618f793f688cd89c5d62bac0a8632667
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.openlocfilehash: 75d6bd6db28207323027f6f4470c06e7c0ccb29b
+ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25506118"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "25579911"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Créer des fonctions personnalisées dans Excel (aperçu)
 
@@ -138,7 +138,7 @@ Le tableau suivant répertorie les propriétés qui sont généralement présent
 
 | Propriété  | Description |
 |---------|---------|
-| `id` | ID unique de la fonction. Cet ID ne doit pas être modifié après sa définition. |
+| `id` | ID unique de la fonction. Ce code ne peut contenir que des caractères alphanumériques et des périodes et ne doit pas être modifié après sa définition. |
 | `name` | Nom de la fonction que l’utilisateur final voit dans Excel. Dans Excel, ce nom de fonction aura pour préfixe l’espace de noms des fonctions personnalisées qui est spécifié dans le [fichier manifeste XML](#manifest-file). |
 | `helpUrl` | URL de la page qui s’affiche lorsqu’un utilisateur demande de l’aide. |
 | `description` | Décrit l'action de la fonction. Cette valeur s’affiche comme une info-bulle lorsque la fonction est l’élément sélectionné dans le menu de saisie semi-automatique dans Excel. |
@@ -177,14 +177,14 @@ Le fichier manifeste XML pour un complément qui définit les fonctions personna
             <bt:Url id="HTML-URL" DefaultValue="http://127.0.0.1:8080/index.html" /> <!--specifies the location of your HTML file-->
         </bt:Urls>
         <bt:ShortStrings>
-            <bt:String id="namespace" DefaultValue="CONTOSO" /> <!--specifies the namespace that will be prepended to a function's name when it is called in Excel. -->
+            <bt:String id="namespace" DefaultValue="CONTOSO" /> <!--specifies the namespace that will be prepended to a function's name when it is called in Excel. Can only contain alphanumeric characters and periods.-->
         </bt:ShortStrings>
     </Resources>
 </VersionOverrides>
 ```
 
 > [!NOTE]
-> Les fonctions d’Excel sont précédées de l'espace de noms spécifié dans votre fichier manifeste XML. L'espace de noms d’une fonction précède le nom de la fonction et ils sont séparés par un point. Par exemple, pour appeler la fonction `ADD42` dans une cellule de feuille de calcul Excel, vous devez saisir `=CONTOSO.ADD42`, étant donné que CONTOSO est l’espace de noms et `ADD42` est le nom de la fonction spécifiée dans le fichier JSON. L’espace de noms est destiné à être utilisé en tant qu’identificateur pour votre entreprise ou le complément. 
+> |||UNTRANSLATED_CONTENT_START|||Functions in Excel are prepended by the namespace specified in your XML manifest file. A function's namespace comes before the function name and they are separated by a period. For example, to call the function `ADD42` in the cell of an Excel worksheet, you would type `=CONTOSO.ADD42`, because `CONTOSO` is the namespace and `ADD42` is the name of the function specified in the JSON file. The namespace is intended to be used as an identifier for your company or the add-in. A namespace can only contain alphanumeric characters and periods.|||UNTRANSLATED_CONTENT_END|||
 
 ## <a name="functions-that-return-data-from-external-sources"></a>Fonctions qui retournent des données provenant de sources externes
 
@@ -273,7 +273,7 @@ Pour activer la possibilité d’annuler une fonction, vous devez implémenter u
 
 ## <a name="saving-and-sharing-state"></a>Enregistrement et partage de l'état
 
-Fonctions personnalisées peuvent enregistrer les données dans les variables globales JavaScript, qui peuvent être utilisés dans les appels suivants. État enregistré est utile lorsque les utilisateurs appellent la même fonction personnalisée à partir de plusieurs cellules, car toutes les instances de la fonction peuvent accéder à l’état. Par exemple, vous pouvez enregistrer les données renvoyées par un appel à une ressource web pour éviter d’effectuer des appels à la même ressource web supplémentaires.
+Fonctions personnalisées peuvent enregistrer les données dans les variables globales JavaScript, qui peuvent être utilisés dans les appels suivants. L'état enregistré est utile lorsque les utilisateurs ajoutent la même fonction personnalisée à plusieurs cellules, car toutes les instances de la fonction peuvent partager l'état. Par exemple, vous pouvez enregistrer les données renvoyées par un appel à une ressource web pour éviter de passer des appels supplémentaires à la même ressource web.
 
 L’exemple de code suivant illustre l'implémentation d’une fonction de diffusion en continu de température qui enregistre l’état de manière globale. Notez ce qui suit concernant ce code :
 

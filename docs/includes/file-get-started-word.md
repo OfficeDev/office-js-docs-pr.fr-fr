@@ -1,6 +1,6 @@
 # <a name="build-your-first-word-add-in"></a>Créer votre premier complément Word
 
-_S’applique à : Word 2016, Word pour iPad, Word pour Mac_
+_S’applique à : Word 2016, Word pour iPad, Word pour Mac_
 
 Cet article décrit le processus de création d’un complément Word à l’aide de jQuery et de l’API JavaScript pour Word. 
 
@@ -212,7 +212,7 @@ Cet article décrit le processus de création d’un complément Word à l’aid
 
 1. À l’aide de Visual Studio, testez le nouveau complément en appuyant sur F5 ou en choisissant le bouton **Démarrer** pour lancer Word avec le bouton du complément **Afficher le volet Office** qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
 
-2. Dans Word, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément. (Si vous utilisez la version sans abonnement d’Office 2016, au lieu de la version d’Office 365, les boutons personnalisés ne sont pas pris en charge. Au lieu de cela, le volet Office s’ouvre immédiatement.)
+2. Dans Word, choisissez l’onglet **accueil** , puis cliquez sur le bouton **Afficher le volet Office** dans le ruban pour ouvrir le volet Office de complément. (Si vous utilisez la version sans abonnement de 2016 Office, au lieu de la version d’Office 365, puis boutons personnalisés ne sont pas pris en charge. Au lieu de cela, le volet Office s’ouvre immédiatement.)
 
     ![Capture d’écran de l’application Word avec le bouton Afficher le volet Office mis en surbrillance](../images/word-quickstart-addin-0.png)
 
@@ -234,7 +234,11 @@ Cet article décrit le processus de création d’un complément Word à l’aid
 
 ### <a name="create-the-add-in-project"></a>Création du projet de complément
 
-1. Créez un dossier sur votre lecteur local et nommez-le `my-word-addin`. Il s’agit de l’emplacement dans lequel vous allez créer les fichiers de votre complément.
+1. Créez un dossier sur votre lecteur local et nommez-le `my-word-addin`. Il s’agit de l’endroit où vous allez créer les fichiers de votre application.
+
+    ```bash
+    mkdir my-word-addin
+    ```
 
 2. Accédez à votre nouveau dossier.
 
@@ -242,7 +246,7 @@ Cet article décrit le processus de création d’un complément Word à l’aid
     cd my-word-addin
     ```
 
-3. Utilisez le générateur Yeoman afin de créer un projet de complément Word. Exécutez la commande suivante, puis répondez aux invites comme suit :
+3. Utilisez le générateur Yeoman pour créer un projet de complément de OneNote. Exécutez la commande suivante, puis répondez aux invites de commandes comme suit :
 
     ```bash
     yo office
@@ -265,44 +269,37 @@ Cet article décrit le processus de création d’un complément Word à l’aid
 
 ### <a name="update-the-code"></a>Mise à jour du code
 
-1. Dans votre éditeur de code, ouvrez **index.html** à la racine du projet. Ce fichier contient le code HTML qui s’affichera dans le volet Office du complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier. Ce complément affichera trois boutons et, lorsque l’un d’eux sera choisi, du texte réutilisable sera ajouté au document.
+1. Dans votre éditeur de code, ouvrez le fichier **index.html** à la racine du projet. Ce fichier contient le code HTML qui sera affiché dans le volet de tâches du complément. 
+
+2. |||UNTRANSLATED_CONTENT_START|||Replace the `<body>` element with the following markup and save the file.|||UNTRANSLATED_CONTENT_END|||
 
     ```html
-    <!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset="UTF-8" />
-            <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-            <title>Boilerplate text app</title>
-            <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
-            <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
-            <link href="app.css" rel="stylesheet" type="text/css" />
-        </head>
-        <body>
-            <div id="content-header">
-                <div class="padding">
-                    <h1>Welcome</h1>
-                </div>
-            </div>    
-            <div id="content-main">
-                <div class="padding">
-                    <p>Choose the buttons below to add boilerplate text to the document by using the Word JavaScript API.</p>
-                    <br />
-                    <h3>Try it out</h3>
-                    <button id="emerson">Add quote from Ralph Waldo Emerson</button>
-                    <br /><br />
-                    <button id="checkhov">Add quote from Anton Chekhov</button>
-                    <br /><br />
-                    <button id="proverb">Add Chinese proverb</button>
-                </div>
+    <body>
+        <div id="content-header">
+            <div class="padding">
+                <h1>Welcome</h1>
             </div>
-            <br />
-            <div id="supportedVersion"/>
-        </body>
-    </html>
+        </div>
+        <div id="content-main">
+            <div class="padding">
+                <p>Choose the buttons below to add boilerplate text to the document by using the Word JavaScript API.</p>
+                <br />
+                <h3>Try it out</h3>
+                <button id="emerson">Add quote from Ralph Waldo Emerson</button>
+                <br /><br />
+                <button id="checkhov">Add quote from Anton Chekhov</button>
+                <br /><br />
+                <button id="proverb">Add Chinese proverb</button>
+            </div>
+        </div>
+        <br />
+        <div id="supportedVersion" />
+        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
+    </body>
     ```
 
-2. Ouvrez le fichier **src/index.js** pour spécifier le script du complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier. Ce script contient le code d’initialisation ainsi que le code qui apporte des modifications au document Word en insérant du texte dans le document lorsqu’un bouton est choisi. 
+2. |||UNTRANSLATED_CONTENT_START|||Open the file **src/index.js** to specify the script for the add-in.|||UNTRANSLATED_CONTENT_END||| Remplacez tout le contenu par le code suivant, puis enregistrez le fichier. Ce script contient le code d’initialisation ainsi que le code qui apporte des modifications au document Word en insérant du texte dans le document lorsqu’un bouton est choisi. 
 
     ```js
     'use strict';
@@ -436,9 +433,9 @@ Cet article décrit le processus de création d’un complément Word à l’aid
 
 1. Ouvrez le fichier nommé **my-office-add-in-manifest.xml** pour définir les paramètres et les fonctionnalités du complément.
 
-2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-le par votre nom.
+2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-la par votre nom.
 
-3. L’attribut `DefaultValue` de l’élément `Description` possède un espace réservé. Remplacez-le par **Un complément de volet Office pour Word**.
+3. L’attribut `DefaultValue`  de l’élément `Description`  possède un espace réservé. Remplacez-le par **un complément volet Office pour Word**.
 
 4. Enregistrez le fichier.
 
@@ -460,9 +457,9 @@ Cet article décrit le processus de création d’un complément Word à l’aid
 
 1. Suivez les instructions pour la plateforme que vous utiliserez afin d’exécuter votre complément en vue d’en charger une version test dans Word.
 
-    - Windows : [Chargement d’une version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Word Online : [Chargement d’une version test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad et Mac : [Chargement d’une version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    - Windows : [Chargement d’une version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Word Online : [Chargement d’une version test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+    - iPad et Mac : [Chargement d’une version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 2. Dans Word, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 

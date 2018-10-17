@@ -1,13 +1,13 @@
 ---
-title: Concepts fondamentaux de programmation avec l’API JavaScript pour Excel
+title: Concepts fondamentaux de programmation avec l’API JavaScript Excel
 description: Utilisez l'API JavaScript d'Excel pour créer des compléments pour Excel.
-ms.date: 10/03/2018
-ms.openlocfilehash: f93ec7b5e34f90f2d61f29d861b7e0c19f66f6e3
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.date: 10/16/2018
+ms.openlocfilehash: 21fcbc32dab2057f6d1f5e97a62a6b00bf1f7f03
+ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25505985"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "25579890"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Concepts fondamentaux de programmation avec l’API JavaScript pour Excel
  
@@ -148,7 +148,7 @@ range.format.fill.color =  null;
  
 ### <a name="null-property-values-in-the-response"></a>Valeurs de la propriété Null dans la réponse
  
-Les propriétés de mise en forme comme `size` et `color` contiendront des valeurs `null` dans la réponse lorsque différentes valeurs existent dans la plage spécifiée. Par exemple, si vous récupérez une plage et chargez sa propriété `format.font.color` :
+Les propriétés de mise en forme comme `size` et `color` contiendront des valeurs `null` dans la réponse lorsque différentes valeurs existent dans la plage spécifiée. Par exemple, si vous récupérez une plage et chargez sa propriété `format.font.color` :
  
 * Si toutes les cellules de la plage ont la même couleur de police, `range.format.font.color` spécifie cette couleur.
 * Si plusieurs couleurs de police sont présentes dans la plage, `range.format.font.color` est `null`.
@@ -182,7 +182,7 @@ range.formula = [['', '', '=Rand()']];
 Une adresse de plage non liée est une adresse de plage qui spécifie des colonnes entières ou des lignes entières. Par exemple :
  
 * Adresses de plage composées de colonnes entières :<ul><li>`C:C`</li><li>`A:F`</li></ul>
-* Adresses de plage composées de lignes entières :<ul><li>`2:2`</li><li>`1:4`</li></ul>
+* Adresses de plage composées de lignes entières :<ul><li>`2:2`</li><li>`1:4`</li></ul>
  
 Lorsque l’API effectue une demande de récupération d’une plage non liée (par exemple, `getRange('C:C')`), la réponse contient des valeurs `null` pour les propriétés définies au niveau des cellules, telles que `values`, `text`, `numberFormat` et `formula`. Les autres propriétés de la plage, telles que `address` et `cellCount`, contiennent des valeurs valides pour la plage non liée.
  
@@ -228,31 +228,9 @@ Excel.run(function (context) {
 });
 ```
  
-## <a name="error-messages"></a>Messages d’erreur
- 
-Lorsqu’une erreur d’API se produit, l’API renvoie un objet **error** qui contient un code et un message. Le tableau suivant définit une liste des erreurs que l’API peut renvoyer.
- 
-|error.code | error.message |
-|:----------|:--------------|
-|InvalidArgument |L’argument est manquant ou non valide, ou a un format incorrect.|
-|InvalidRequest  |Impossible de traiter la demande.|
-|InvalidReference|Cette référence n’est pas valide pour l’opération en cours.|
-|InvalidBinding  |Cette liaison d’objets n’est plus valide en raison de mises à jour précédentes.|
-|InvalidSelection|La sélection en cours est incorrecte pour cette action.|
-|Unauthenticated |Les informations d’authentification requises sont manquantes ou incorrectes.|
-|AccessDenied |Vous ne pouvez pas effectuer l’opération demandée.|
-|ItemNotFound |La ressource demandée n’existe pas.|
-|ActivityLimitReached|La limite d’activité a été atteinte.|
-|GeneralException|Une erreur interne s’est produite lors du traitement de la demande.|
-|NotImplemented  |La fonctionnalité demandée n’est pas implémentée|
-|ServiceNotAvailable|Le service n’est pas disponible.|
-|Conflict              |La demande n’a pas pu être traitée en raison d’un conflit.|
-|ItemAlreadyExists|La ressource en cours de création existe déjà.|
-|UnsupportedOperation|L’opération tentée n’est pas prise en charge.|
-|RequestAborted|La demande a été interrompue pendant l’exécution.|
-|ApiNotAvailable|L’API demandée n’est pas disponible.|
-|InsertDeleteConflict|L’opération d’insertion ou de suppression tentée a créé un conflit.|
-|InvalidOperation|L’opération tentée n’est pas valide sur l’objet.|
+##<a name="handle-errors"></a>Gestion des erreurs
+
+Lorsqu’une erreur d’API se produit, l’API renvoie un objet **error** contenant un code et un message. Pour plus d’informations sur la gestion des erreurs, y compris une liste des erreurs de l’API, consultez la rubrique [Gestion des erreurs](excel-add-ins-error-handling.md).
  
 ## <a name="see-also"></a>Voir aussi
  

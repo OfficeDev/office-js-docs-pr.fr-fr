@@ -1,13 +1,13 @@
 ---
 title: Gestion des erreurs
 description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: b07012516cbe15374d0707c157738117a9c8fe96
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.date: 10/16/2018
+ms.openlocfilehash: caba29f7d6949cc6d9df1498ac0a3d4f5de6c4ee
+ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459230"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "25579813"
 ---
 # <a name="error-handling"></a>Gestion des erreurs
 
@@ -39,12 +39,38 @@ Quand une demande d’API JavaScript pour Excel ne parvient pas à s’exécuter
 
 - **code**: la propriété  `code` d’un message d’erreur contient une chaîne qui fait partie de la liste `OfficeExtension.ErrorCodes` ou `Excel.ErrorCodes`. Par exemple, le code d’erreur «InvalidReference» indique que la référence n’est pas valide pour l’opération spécifiée. Les codes d’erreur ne sont pas localisés. 
 
-- **message**: la propriété  `message` d’un message d’erreur contient un résumé de l’erreur dans la chaîne localisée. Le message d’erreur n’est pas destiné à la consommation par les utilisateurs finaux ; Vous devez utiliser le code d’erreur et la logique métier appropriée pour déterminer le message d’erreur que votre complément affiche aux utilisateurs finaux.
+- **message**: la propriété  `message` d’un message d’erreur contient un résumé de l’erreur dans la chaîne localisée. Le message d’erreur n’est pas destiné à la consommation par les utilisateurs finaux ; Vous devez utiliser le code d’erreur et la logique métier appropriée pour déterminer le message d’erreur que votre complément affiche aux utilisateurs finaux.
 
 - **debugInfo** : le cas échéant, la propriété `debugInfo` du message d’erreur fournit des informations supplémentaires que vous pouvez utiliser pour comprendre la cause première de l’erreur. 
 
 > [!NOTE]
 > Si vous utilisez `console.log()` pour imprimer des messages d’erreur sur la console, ces messages ne seront visibles que sur le serveur. Les utilisateurs finaux ne verront pas ces messages d’erreur dans le panneau de tâches du complément ou ailleurs dans l'application hôte.
+
+## <a name="error-messages"></a>Messages d’erreur
+
+Le tableau suivant est une liste des erreurs que l’API peut renvoyer.
+
+|error.code | error.message |
+|:----------|:--------------|
+|InvalidArgument |L’argument est manquant ou non valide, ou a un format incorrect.|
+|InvalidRequest  |Impossible de traiter la demande.|
+|InvalidReference|Cette référence n’est pas valide pour l’opération en cours.|
+|InvalidBinding  |Cette liaison d’objets n’est plus valide en raison de mises à jour précédentes.|
+|InvalidSelection|La sélection en cours est incorrecte pour cette action.|
+|Unauthenticated |Les informations d’authentification requises sont manquantes ou incorrectes.|
+|AccessDenied |Vous ne pouvez pas effectuer l’opération demandée.|
+|ItemNotFound |La ressource demandée n’existe pas.|
+|ActivityLimitReached|La limite d’activité a été atteinte.|
+|GeneralException|Une erreur interne s’est produite lors du traitement de la demande.|
+|NotImplemented  |La fonctionnalité demandée n’est pas implémentée|
+|ServiceNotAvailable|Le service n’est pas disponible.|
+|Conflict|La demande n’a pas pu être traitée en raison d’un conflit.|
+|ItemAlreadyExists|La ressource en cours de création existe déjà.|
+|UnsupportedOperation|L’opération tentée n’est pas prise en charge.|
+|RequestAborted|La demande a été interrompue pendant l’exécution.|
+|ApiNotAvailable|L’API demandée n’est pas disponible.|
+|InsertDeleteConflict|L’opération d’insertion ou de suppression tentée a créé un conflit.|
+|InvalidOperation|L’opération tentée n’est pas valide sur l’objet.|
 
 ## <a name="see-also"></a>Voir aussi
 

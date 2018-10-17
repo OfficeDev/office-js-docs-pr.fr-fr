@@ -4,10 +4,6 @@ Spécifie les paramètres d’un complément en fonction du facteur de forme pou
 
 Chaque définition de facteur de forme pour bureau contient l’élément **FunctionFile** et au moins un élément **ExtensionPoint**. Pour plus d’informations, voir [Élément FunctionFile](functionfile.md) et [Élément ExtensionPoint](extensionpoint.md).
 
-> [!IMPORTANT]
-> L'élément SupportsSharedFolders est disponible uniquement dans le complément Outlook Preview Requirement Set sur Exchange Online.
-> Les compléments qui utilisent cet élément ne sont pas autorisés dans l’Office Store ou le Déploiement centralisé.
-
 ## <a name="child-elements"></a>Éléments enfants
 
 | Élément                               | Obligatoire | Description  |
@@ -15,7 +11,7 @@ Chaque définition de facteur de forme pour bureau contient l’élément **Func
 | [ExtensionPoint](extensionpoint.md)   | Oui      | Définit l’emplacement où se trouvent les fonctionnalités d’un complément |
 | [FunctionFile](functionfile.md)       | Oui      | URL pointant vers un fichier qui contient les fonctions JavaScript.|
 | [GetStarted](getstarted.md)           | Non       | Définit la légende qui s’affiche lorsque vous installez le complément dans des hôtes Word, Excel ou PowerPoint. |
-| SupportsSharedFolders                 | Non       | Définit si le complément Outlook est disponible dans les scénarios délégués et est défini sur *false* par défaut. Aperçu de l'ensemble d'exigences.|
+| [SupportsSharedFolders](supportssharedfolders.md) | Non | Définit si le complément Outlook est disponible dans les scénarios délégués et est défini sur *false* par défaut.<br><br>**Important** : cet élément est disponible uniquement dans l'ensemble des conditions requises de la préversion des compléments Outlook sur Exchange Online. Les compléments qui utilisent cet élément ne peuvent pas être publiés sur AppSource ou déployés via un déploiement centralisé. |
 
 ## <a name="desktopformfactor-example"></a>Exemple pour DesktopFormFactor
 
