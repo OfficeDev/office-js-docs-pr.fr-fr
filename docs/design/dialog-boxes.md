@@ -2,12 +2,12 @@
 title: Boîtes de dialogue dans les compléments Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: f18f603d76a902bdce56152ecb3f63bbafad56fb
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 3d2fe2767f2f0d2d044dd2a4c5b309ff35202384
+ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945749"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "24016268"
 ---
 # <a name="dialog-boxes-in-office-add-ins"></a>Boîtes de dialogue dans les compléments Office
  
@@ -30,7 +30,6 @@ Pour voir un exemple relatif à l’implémentation d’une boîte de dialogue, 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemple de modèle UX](https://office.visualstudio.com/DefaultCollection/OC/_git/GettingStarted-FabricReact)
 - [Ressources de développement GitHub](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
 - [Objet Dialogue](https://docs.microsoft.com/javascript/api/office/office.dialog?view=office-js)
 
