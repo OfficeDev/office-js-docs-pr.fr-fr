@@ -2,9 +2,13 @@
 title: Chargement du DOM et de l’environnement d’exécution
 description: ''
 ms.date: 01/23/2018
+ms.openlocfilehash: a5458df9ef266f6ec2811e0f7004125d50d18c22
+ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "19437331"
 ---
-
-
 # <a name="loading-the-dom-and-runtime-environment"></a>Chargement du DOM et de l’environnement d’exécution
 
 
@@ -17,7 +21,7 @@ La figure suivante illustre le flux des événements impliqués au démarrage d�
 
 ![Flux des événements au démarrage d’un complément de contenu ou du volet Office](../images/office15-app-sdk-loading-dom-agave-runtime.png)
 
-Les événements suivants se produisent lors du démarrage d’un complément de contenu ou du volet Office : 
+Les événements suivants se produisent lors du démarrage d’un complément de contenu ou du volet Office : 
 
 
 
@@ -36,25 +40,25 @@ Les événements suivants se produisent lors du démarrage d’un complément de
 6. Lorsque le chargement du modèle objet de document (DOM) et du corps HTML est terminé et que le complément s’est initialisé, la fonction principale de l’application peut s’exécuter.
     
 
-## <a name="startup-of-an-outlook-add-in"></a>Démarrage d’un complément Outlook
+## <a name="startup-of-an-outlook-add-in"></a>Démarrage d’un complément Outlook
 
 
 
-La figure suivante illustre le flux des événements impliqués au démarrage d’un complément Outlook exécuté sur un ordinateur de bureau, une tablette ou un smartphone.
+La figure suivante illustre le flux des événements impliqués au démarrage d’un complément Outlook exécuté sur un ordinateur de bureau, une tablette ou un smartphone.
 
 ![Flux des événements au démarrage du complément Outlook](../images/outlook15-loading-dom-agave-runtime.png)
 
-Les événements suivants se produisent lors du démarrage d’un complément Outlook : 
+Les événements suivants se produisent lors du démarrage d’un complément Outlook : 
 
 
 
-1. Lorsqu’Outlook démarre, il lit les manifestes XML pour les compléments Outlook qui ont été installés pour le compte de messagerie de l’utilisateur.
+1. Lorsqu’Outlook démarre, il lit les manifestes XML pour les compléments Outlook qui ont été installés pour le compte de messagerie de l’utilisateur.
     
 2. L’utilisateur sélectionne un élément dans Outlook.
     
-3. Si l’élément sélectionné répond aux conditions d’activation d’un complément Outlook, Outlook active le complément et affiche son bouton dans l’interface utilisateur.
+3. Si l’élément sélectionné répond aux conditions d’activation d’un complément Outlook, Outlook active le complément et affiche son bouton dans l’interface utilisateur.
     
-4. Si l’utilisateur clique sur le bouton pour démarrer le complément Outlook, Outlook ouvre la page HTML dans un contrôle de navigateur. Les deux étapes suivantes, 5 et 6, se produisent en parallèle.
+4. Si l’utilisateur clique sur le bouton pour démarrer le complément Outlook, Outlook ouvre la page HTML dans un contrôle de navigateur. Les deux étapes suivantes, 5 et 6, se produisent en parallèle.
     
 5. Le contrôle de navigateur charge le modèle objet de document (DOM) et le corps HTML, puis appelle le gestionnaire d’événements pour l’événement  **onload**.
     
@@ -83,7 +87,7 @@ Office.initialize = function () {
 
 Il est possible d’utiliser cette même technique dans le gestionnaire  **initialize** de toute Complément Office.
 
-Le numéroteur téléphonique fourni comme exemple de complément Outlook présente une approche légèrement différente, puisqu’il utilise uniquement JavaScript pour vérifier ces mêmes conditions. 
+Le numéroteur téléphonique fourni comme exemple de complément Outlook présente une approche légèrement différente, puisqu’il utilise uniquement JavaScript pour vérifier ces mêmes conditions. 
 
 > [!IMPORTANT]
 > Même si aucune tâche d’initialisation n’est à effectuer dans votre complément, vous devez inclure au moins une fonction de gestionnaire d’événements **Office.initialize** minimale comme l’exemple suivant.

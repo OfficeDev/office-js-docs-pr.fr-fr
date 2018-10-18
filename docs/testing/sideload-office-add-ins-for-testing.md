@@ -2,12 +2,12 @@
 title: Chargement de version test des compléments Office dans Office Online
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 69b255545525ff667618c9f8bd1e1b7953592967
-ms.sourcegitcommit: 58af795c3d0393a4b1f6425fa1cbdca1e48fb473
+ms.openlocfilehash: 10e236366012bb402b968d0f61ea64326bb9172d
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "20138848"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925303"
 ---
 # <a name="sideload-office-add-ins-in-office-online-for-testing"></a>Chargement de version test des compléments Office dans Office Online
 
@@ -17,7 +17,7 @@ Lorsque vous chargez une version test d’un complément, le manifeste du compl�
 
 
 > [!NOTE]
-> Tel que décrit dans cet article, le chargement de version test est pris en charge dans Word, Excel et PowerPoint. Pour charger une version test de complément Outlook, voir la rubrique relative au [chargement de version test des compléments Outlook](https://docs.microsoft.com/en-us/outlook/add-ins/sideload-outlook-add-ins-for-testing).
+> Tel que décrit dans cet article, le chargement de version test est pris en charge dans Word, Excel et PowerPoint. Pour charger une version test de complément Outlook, voir la rubrique relative au [chargement de version test des compléments Outlook](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing).
 
 La vidéo suivante présente la procédure de chargement de version test de votre complément dans la version de bureau Office ou Office Online.  
 
@@ -64,9 +64,9 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 6. Vérifiez que votre complément est installé. S’il s’agit d’une commande de complément, elle doit apparaître dans le ruban ou dans le menu contextuel. S’il s’agit d’un complément du volet Office, le volet doit apparaître.
 
 > [!NOTE]
->Pour tester votre complément Office avec Edge, entrez « **about:flags**   » dans la barre de recherche Edge pour afficher les options des paramètres de développement.  Vérifiez l'option « **Autoriser le bouclage localhost** » et redémarrez Edge.
+>Pour tester votre complément Office avec Edge, entrez « **about:flags**   » dans la barre de recherche Edge pour afficher les options des paramètres de développement.  Vérifiez l'option « **Autoriser le bouclage localhost** » et redémarrez Edge.
 
->    ![L'option d'Edge « Autoriser le bouclage localhost » avec la case cochée.](../images/allow-localhost-loopback.png)
+>    ![L'option d'Edge « Autoriser le bouclage localhost » avec la case cochée.](../images/allow-localhost-loopback.png)
 
 ## <a name="sideload-an-add-in-when-using-visual-studio"></a>Chargement d’une version test d’un complément lors de l’utilisation de Visual Studio
 

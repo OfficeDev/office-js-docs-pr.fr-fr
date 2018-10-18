@@ -2,9 +2,13 @@
 title: Boîtes de dialogue dans les compléments Office
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: f18f603d76a902bdce56152ecb3f63bbafad56fb
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945749"
 ---
-
-
 # <a name="dialog-boxes-in-office-add-ins"></a>Boîtes de dialogue dans les compléments Office
  
 Les boîtes de dialogue sont des surfaces qui flottent au-dessus de la fenêtre active de l’application Office. Vous pouvez utiliser les boîtes de dialogue afin de fournir un espace supplémentaire sur l’écran pour les tâches comme les pages de connexion impossibles à ouvrir directement dans un volet des tâches, ou pour les demandes de confirmation d’une action effectuée par un utilisateur, ou pour afficher des vidéos qui peuvent être trop petites si confinées à un volet des tâches.
@@ -28,6 +32,6 @@ Pour voir un exemple relatif à l’implémentation d’une boîte de dialogue, 
 
 - [Exemple de modèle UX](https://office.visualstudio.com/DefaultCollection/OC/_git/GettingStarted-FabricReact)
 - [Ressources de développement GitHub](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
-- [Objet Dialogue](https://dev.office.com/reference/add-ins/shared/officeui.dialog)
+- [Objet Dialogue](https://docs.microsoft.com/javascript/api/office/office.dialog?view=office-js)
 
 

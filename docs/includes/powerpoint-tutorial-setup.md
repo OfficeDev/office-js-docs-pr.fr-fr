@@ -5,27 +5,27 @@ Vous commencerez ce didacticiel par la configuration de votre projet de dévelop
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-[!include[Quickstart prerequisites](../includes/quickstart-vs-prerequisites.md)]
+[!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
 ## <a name="setup"></a>Installation
 
-Dans ce didacticiel, vous allez créer un complément à l’aide de Visual Studio.
+Dans ce didacticiel, vous allez créer un complément à l’aide de Visual Studio.
 
 ### <a name="create-the-add-in-project"></a>Création du projet de complément
 
 1. Dans la barre de menu de Visual Studio, choisissez successivement **Fichier** > **Nouveau** > **Projet**.
     
-2. Dans la liste des types de projet sous **Visual C#** ou **Visual Basic**, développez **Office/SharePoint**, choisissez **Compléments**, puis **Complément web PowerPoint** pour le type de projet. 
+2. Dans la liste des types de projet sous **Visual C#** ou **Visual Basic**, développez **Office/SharePoint**, choisissez **Compléments**, puis **Complément web PowerPoint** pour le type de projet. 
 
 3. Nommez le projet **HelloWorld**, puis sélectionnez le bouton **OK**.
 
 4. Dans la fenêtre de la boîte de dialogue **Créer un complément Office**, choisissez **Ajouter de nouvelles fonctionnalités à PowerPoint**, puis sélectionnez **Terminer** pour créer le projet.
 
-5. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
+5. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
 
-     ![Didacticiel PowerPoint - Fenêtre de l’explorateur de solutions Visual Studio qui affiche les 2 projets dans la solution HelloWorld](../images/powerpoint-tutorial-solution-explorer.png)
+     ![Didacticiel PowerPoint - Fenêtre de l’explorateur de solutions Visual Studio qui affiche les 2 projets dans la solution HelloWorld](../images/powerpoint-tutorial-solution-explorer.png)
 
-### <a name="explore-the-visual-studio-solution"></a>Explorer la solution Visual Studio
+### <a name="explore-the-visual-studio-solution"></a>Explorer la solution Visual Studio
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
@@ -33,7 +33,7 @@ Dans ce didacticiel, vous allez créer un complément à l’aide de Visual Stu
 
 Modifiez le code de complément comme suit pour créer la structure que vous utiliserez pour implémenter la fonctionnalité de complément dans les étapes suivantes de ce didacticiel.
 
-1. **Home.html** spécifie le code HTML qui s’affichera dans le volet Office du complément. Dans **Home.html**, localisez la balise **div** avec `id="content-main"`, remplacez l’intégralité de la balise **div** avec le balisage suivant et enregistrez le fichier.
+1. **Home.html** spécifie le code HTML qui s’affichera dans le volet Office du complément. Dans **Home.html**, localisez la balise **div** avec `id="content-main"`, remplacez l’intégralité de la balise **div** avec le balisage suivant et enregistrez le fichier.
 
     ```html
     <!-- TODO2: Create the content-header div. -->

@@ -13,7 +13,7 @@ Pour aligner votre texte avec les principes de la voix Office :
 
 ## <a name="see-also"></a>Voir aussi
 
-- Conseils pour [écrire pour toutes les compétences](https://docs.microsoft.com/en-us/style-guide/accessibility/writing-all-abilities)
-- [Les 10 meilleures conseils pour le style et la ton de Microsoft](https://docs.microsoft.com/en-us/style-guide/top-10-tips-style-voice)
-- Conseils sur [le choix des mots](https://docs.microsoft.com/en-us/style-guide/word-choice/)
--  [Politiques de validation](https://docs.microsoft.com/en-us/office/dev/store/validation-policies) des compléments Office
+- Conseils pour [écrire pour toutes les compétences](https://docs.microsoft.com/style-guide/accessibility/writing-all-abilities)
+- [Les 10 meilleures conseils pour le style et la ton de Microsoft](https://docs.microsoft.com/style-guide/top-10-tips-style-voice)
+- Conseils sur [le choix des mots](https://docs.microsoft.com/style-guide/word-choice/)
+-  [Politiques de validation](https://docs.microsoft.com/office/dev/store/validation-policies) des compléments Office

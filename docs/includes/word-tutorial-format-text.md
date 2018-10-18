@@ -7,7 +7,7 @@ Dans cette étape du didacticiel, vous modifierez la police du texte, et utilise
 
 1. Ouvrez le projet dans votre éditeur de code. 
 2. Ouvrez le fichier index.html.
-3. Juste en dessous de la balise `div` qui contient le bouton `insert-paragraph`, ajoutez le balisage suivant :
+3. Juste en dessous de la balise `div` qui contient le bouton `insert-paragraph`, ajoutez le balisage suivant :
 
     ```html
     <div class="padding">            
@@ -17,13 +17,13 @@ Dans cette étape du didacticiel, vous modifierez la police du texte, et utilise
 
 4. Ouvrez le fichier app.js.
 
-5. Juste en dessous de la ligne qui attribue un gestionnaire de clic au bouton `insert-paragraph`, ajoutez le code suivant :
+5. Juste en dessous de la ligne qui attribue un gestionnaire de clic au bouton `insert-paragraph`, ajoutez le code suivant :
 
     ```js
     $('#apply-style').click(applyStyle);
     ```
 
-6. Ajoutez la fonction suivante juste après la fonction `insertParagraph` :
+6. Ajoutez la fonction suivante juste après la fonction `insertParagraph` :
 
     ```js
     function applyStyle() {
@@ -52,7 +52,7 @@ Dans cette étape du didacticiel, vous modifierez la police du texte, et utilise
 ## <a name="apply-a-custom-style-to-text"></a>Appliquer un style personnalisé au texte
 
 1. Ouvrez le fichier index.html.
-2. En dessous de la balise `div` qui contient le bouton `apply-style`, ajoutez le balisage suivant :
+2. En dessous de la balise `div` qui contient le bouton `apply-style`, ajoutez le balisage suivant :
 
     ```html
     <div class="padding">            
@@ -62,13 +62,13 @@ Dans cette étape du didacticiel, vous modifierez la police du texte, et utilise
 
 3. Ouvrez le fichier app.js.
 
-4. Sous la ligne qui attribue un gestionnaire de clics au bouton `apply-style`, ajoutez le code suivant :
+4. Sous la ligne qui attribue un gestionnaire de clics au bouton `apply-style`, ajoutez le code suivant :
 
     ```js
     $('#apply-custom-style').click(applyCustomStyle);
     ```
 
-5. Sous la fonction `applyStyle`, ajoutez la fonction suivante :
+5. Sous la fonction `applyStyle`, ajoutez la fonction suivante :
 
     ```js
     function applyCustomStyle() {
@@ -97,7 +97,7 @@ Dans cette étape du didacticiel, vous modifierez la police du texte, et utilise
 ## <a name="change-the-font-of-text"></a>Modifier la police du texte
 
 1. Ouvrez le fichier index.html.
-2. En dessous de la balise `div` qui contient le bouton `apply-custom-style`, ajoutez le balisage suivant :
+2. En dessous de la balise `div` qui contient le bouton `apply-custom-style`, ajoutez le balisage suivant :
 
     ```html
     <div class="padding">            
@@ -107,13 +107,13 @@ Dans cette étape du didacticiel, vous modifierez la police du texte, et utilise
 
 3. Ouvrez le fichier app.js.
 
-4. Sous la ligne qui attribue un gestionnaire de clics au bouton `apply-custom-style`, ajoutez le code suivant :
+4. Sous la ligne qui attribue un gestionnaire de clics au bouton `apply-custom-style`, ajoutez le code suivant :
 
     ```js
     $('#change-font').click(changeFont);
     ```
 
-5. Sous la fonction `applyCustomStyle`, ajoutez la fonction suivante :
+5. Sous la fonction `applyCustomStyle`, ajoutez la fonction suivante :
 
     ```js
     function changeFont() {
@@ -145,7 +145,7 @@ Dans cette étape du didacticiel, vous modifierez la police du texte, et utilise
 
 ## <a name="test-the-add-in"></a>Test du complément
 
-1. Si la fenêtre Git Bash, ou l’invite système Node.JS, de l’étape précédente du didacticiel est encore ouverte, appuyez sur Ctrl+C à deux reprises pour arrêter le serveur web en cours d’exécution. Sinon, ouvrez une fenêtre Git Bash, ou une invite système Node.JS, et accédez au dossier **Start** du projet.
+1. Si la fenêtre Git Bash, ou l’invite système Node.JS, de l’étape précédente du didacticiel est encore ouverte, appuyez sur Ctrl+C à deux reprises pour arrêter le serveur web en cours d’exécution. Sinon, ouvrez une fenêtre Git Bash, ou une invite système Node.JS, et accédez au dossier **Start** du projet.
 
      > [!NOTE]
      > Bien que le serveur synchronisé au navigateur recharge votre complément dans le volet Office chaque fois que vous apportez une modification à un fichier, y compris le fichier app.js, il ne retranspile pas le code JavaScript. Vous devez donc de nouveau utiliser la commande build afin que les modifications apportées à app.js prennent effet. Pour ce faire, vous devez arrêter le processus du serveur pour pouvoir obtenir une invite et saisir la commande build. Après la commande build, redémarrez le serveur. Les prochaines étapes vous permettent d’effectuer ce processus.
@@ -154,9 +154,9 @@ Dans cette étape du didacticiel, vous modifierez la police du texte, et utilise
 3. Exécutez la commande `npm start` pour démarrer un serveur web en cours d’exécution sur localhost.   
 4. Rechargez le volet des tâches en le fermant, puis dans le menu **Accueil**, sélectionnez **Afficher le volet des tâches** pour rouvrir le complément.
 5. Assurez-vous qu’il existe au moins trois paragraphes dans le document. Vous pouvez sélectionner trois fois l’option **Insérer un paragraphe**. *Vérifiez attentivement qu’aucun paragraphe vide n’apparaît à la fin du document. S’il y en a un, supprimez-le.*
-6. Dans Word, créez un style personnalisé nommé « MyCustomStyle ». Vous pouvez y appliquer la mise en forme que vous souhaitez.
+6. Dans Word, créez un style personnalisé nommé « MyCustomStyle ». Vous pouvez y appliquer la mise en forme que vous souhaitez.
 7. Sélectionnez le bouton **Appliquer le style**. Le style prédéfini **Référence intense** est appliqué au premier paragraphe.
 8. Sélectionnez le bouton **Appliquer un style personnalisé**. Votre style personnalisé est appliqué au dernier paragraphe. (Si rien ne semble se produire, le dernier paragraphe est peut-être vide. Si c’est le cas, ajoutez-y du texte.)
-9. Sélectionnez le bouton **Modifier la police**. La police Courier New, 18 pt, en gras, est appliquée au deuxième paragraphe.
+9. Sélectionnez le bouton **Modifier la police**. La police Courier New, 18 pt, en gras, est appliquée au deuxième paragraphe.
 
     ![Didacticiel Word - Appliquer des styles et une police](../images/word-tutorial-apply-styles-and-font.png)

@@ -2,9 +2,13 @@
 title: Résolutions des limites de stratégie d’origine identique dans les compléments Office
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: cfd61a78bf3dc1602ce140296d3a3d8afa9845eb
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944054"
 ---
-
-
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>Résolutions des limites de stratégie d’origine identique dans les compléments Office
 
 
@@ -12,7 +16,7 @@ La stratégie de même origine appliquée par le navigateur empêche un script c
 
 Comme les Compléments Office sont hébergés dans un contrôle de navigateur, la stratégie de même origine s’applique également aux scripts exécutés dans leurs pages web.
 
-Il existe de nombreuses manières d’annuler le complément de la stratégie de même origine lorsque vous développez des compléments :
+Il existe de nombreuses manières d’annuler le complément de la stratégie de même origine lorsque vous développez des compléments :
 
 - Utilisation de JSON/P pour un accès anonyme. 
     
@@ -51,9 +55,7 @@ function loadVideoDetails(videoIndex) {
 
 Une autre manière de résoudre les limitations de la stratégie de même origine consiste à implémenter la page web du complément sous la forme d’une page ASP qui utilise OAuth ou met en cache les informations d’identification dans des cookies.
 
-Pour un exemple d’utilisation d’OAuth pour l’authentification, reportez-vous à [Composant WebPart Twitter SharePoint avec OAuth](http://aidangarnish.net/post/Twitter-SharePoint-Web-Part-With-OAuth).
-
-Pour un exemple de code côté serveur qui illustre comment utiliser l’objet `Cookie` dans `System.Net` pour obtenir et définir des valeurs de cookie, voir la propriété [Value](https://msdn.microsoft.com/fr-fr/library/4f772twc).
+Pour un exemple de code côté serveur qui illustre comment utiliser l’objet `Cookie` dans `System.Net` pour obtenir et définir des valeurs de cookie, voir la propriété [Value](https://docs.microsoft.com/dotnet/api/system.net.cookie.value?view=netframework-4.7.2).
 
 
 ## <a name="using-cross-origin-resource-sharing-cors"></a>Utilisation du partage de ressources cross-origin (CORS)

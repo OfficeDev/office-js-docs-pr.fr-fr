@@ -2,12 +2,12 @@
 title: Confidentialité et sécurité pour les compléments Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 76408abe96b07e793a72a8cbd177a29428366dd0
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: e627c847f203205b808918acf3af3154bdbe04ce
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925527"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945578"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Confidentialité et sécurité pour les compléments Office
 
@@ -102,9 +102,9 @@ Les compléments Outlook fournissent des fonctionnalités supplémentaires de s�
 
 ### <a name="developer-guidelines-to-handle-pii"></a>Recommandations à l’intention des développeurs en matière de gestion des PII
 
-Voici quelques recommandations en matière de protection de PII pour les développeurs de compléments Office :
+Voici quelques recommandations en matière de protection de PII pour les développeurs de compléments Office :
 
-- L’objet [Settings](https://dev.office.com/reference/add-ins/shared/settings) est conçu pour conserver les paramètres de complément et les données d’état entre les sessions pour un complément de contenu ou du volet Office, mais il ne stocke pas les mots de passe et autres informations d’identification personnelle confidentielles dans l’objet **Settings**. Les données contenues dans l’objet **Settings** ne sont pas visibles par les utilisateurs finaux, mais elles sont stockées en tant que partie du format de fichier du document, qui est facilement accessible. Vous devez limiter l’utilisation par votre complément des informations d’identification personnelle et stocker celles qu’il exige sur le serveur hébergeant votre complément en tant que ressource sécurisée par l’utilisateur.
+- L’objet [Settings](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js) est conçu pour conserver les paramètres de complément et les données d’état entre les sessions pour un complément de contenu ou du volet Office, mais il ne stocke pas les mots de passe et autres informations d’identification personnelle confidentielles dans l’objet **Settings**. Les données contenues dans l’objet **Settings** ne sont pas visibles par les utilisateurs finaux, mais elles sont stockées en tant que partie du format de fichier du document, qui est facilement accessible. Vous devez limiter l’utilisation par votre complément des informations d’identification personnelle et stocker celles qu’il exige sur le serveur hébergeant votre complément en tant que ressource sécurisée par l’utilisateur.
 
 - Certaines applications peuvent exposer les informations d’identification personnelle dans le cadre de leur utilisation. Faites en sorte de stocker les données de vos utilisateurs de manière sécurisée, notamment l’identité, la situation géographique, les heures d’accès et autres informations d’identification, pour éviter que d’autres utilisateurs du complément puissent y accéder.
 
@@ -118,7 +118,7 @@ Suivez les recommandations générales suivantes pour prendre en charge le modè
 
 ### <a name="permissions-choices"></a>Choix des autorisations
 
-La plateforme de complément fournit un modèle d’autorisations que votre complément utilise pour déclarer le niveau d’accès aux données d’un utilisateur dont il a besoin pour ses fonctionnalités. Chaque niveau d’autorisation correspond au sous-ensemble de l’interface API JavaScript pour Office que votre complément est autorisé à utiliser dans le cadre de ses fonctionnalités. Par exemple, l’autorisation **WriteDocument** pour les compléments de contenu de volet Office donne l’accès à la méthode [Document.setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) qui permet à un complément d’écrire dans le document de l’utilisateur, mais ne permet pas l’accès à l’une des méthodes de lecture des données du document. Ce niveau d’autorisation est utile pour les compléments qui ont seulement besoin d’écrire dans un document, comme un complément dans lequel l’utilisateur peut rechercher des données à insérer dans son document.
+La plateforme de complément fournit un modèle d’autorisations que votre complément utilise pour déclarer le niveau d’accès aux données d’un utilisateur dont il a besoin pour ses fonctionnalités. Chaque niveau d’autorisation correspond au sous-ensemble de l’interface API JavaScript pour Office que votre complément est autorisé à utiliser dans le cadre de ses fonctionnalités. Par exemple, l’autorisation **WriteDocument** pour les compléments de contenu de volet Office donne l’accès à la méthode [Document.setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js) qui permet à un complément d’écrire dans le document de l’utilisateur, mais ne permet pas l’accès à l’une des méthodes de lecture des données du document. Ce niveau d’autorisation est utile pour les compléments qui ont seulement besoin d’écrire dans un document, comme un complément dans lequel l’utilisateur peut rechercher des données à insérer dans son document.
 
 Nous vous recommandons vivement de demander des autorisations sur la base du  _principe de privilège minimal_. Autrement dit, vous ne devez demander l’autorisation d’accès qu’au sous-ensemble minimal de l’API que votre complément requiert pour fonctionner correctement. Par exemple, si votre complément a seulement besoin de lire des données dans le document d’un utilisateur pour ses fonctionnalités, vous ne devez pas demander plus que l’autorisation **ReadDocument**. (Gardez toutefois à l’esprit qu’en cas de demande d’autorisations insuffisantes, la plateforme du complément bloquera l’utilisation de certaines API par votre complément et des erreurs seront générées lors de l’exécution.)
 

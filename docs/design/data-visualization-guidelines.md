@@ -2,15 +2,18 @@
 title: Règles de style de visualisation de données pour les compléments Office
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 27de6b6b2f4352488ad8f63c3b6e1250cbfbb324
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945791"
 ---
-
-
-
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Règles de style de visualisation de données pour les compléments Office
 
 Une bonne visualisation des données permet aux utilisateurs de rechercher des informations dans leurs données. Ils peuvent utiliser ces informations pour raconter des histoires qui informent et persuadent. Cet article fournit des instructions pour vous aider à créer des visualisations de données efficaces dans vos compléments pour Excel et d’autres applications Office.
 
-Nous vous recommandons d’utiliser [Office UI Fabric](http://dev.office.com/fabric) pour créer l’apparence de vos visualisations de données. Office UI Fabric comprend des styles et des composants qui s’intègrent parfaitement à l’apparence Office. 
+Nous vous recommandons d’utiliser [Office UI Fabric](https://developer.microsoft.com/fabric) pour créer l’apparence de vos visualisations de données. Office UI Fabric comprend des styles et des composants qui s’intègrent parfaitement à l’apparence Office. 
 
 <!--The following figure shows a data visualization in an add-in that uses Fabric.
 
@@ -27,23 +30,23 @@ Les visualisations de données partagent un cadre général et des éléments vi
 
 ### <a name="chart-titles"></a>Titres de graphique
 
-Suivez ces instructions pour les titres de graphique :
+Suivez ces instructions pour les titres de graphique :
 
 - Faites en sorte que vos titres de graphique soient lisibles. Positionnez-les pour créer une hiérarchie visuelle claire par rapport au reste du graphique.
 - En règle générale, utilisez la mise en majuscule de phrase (premier mot en majuscule). Pour créer un contraste ou accentuer des hiérarchies, vous pouvez mettre tout en majuscules, mais faites-le avec parcimonie.
-- Intégrez les [recommandations relatives aux polices d’Office UI Fabric](http://dev.office.com/fabric#/styles/typography) pour harmoniser vos graphiques avec l’interface utilisateur Office, qui utilise la police Segoe. Vous pouvez également utiliser une autre police pour différencier le contenu du graphique de l’interface utilisateur.
+- Intégrez les [recommandations relatives aux polices d’Office UI Fabric](https://developer.microsoft.com/fabric#/styles/typography) pour harmoniser vos graphiques avec l’interface utilisateur Office, qui utilise la police Segoe. Vous pouvez également utiliser une autre police pour différencier le contenu du graphique de l’interface utilisateur.
 - Utilisez des polices sans-serif avec des compteurs de grande taille.
 
 Les exemples suivants illustrent des polices serif et sans-serif utilisées dans les titres de graphique. Remarquez comment le contraste d’échelle et une utilisation efficace des espaces blancs créent une hiérarchie visuelle forte.
 
-![Image d’une visualisation de données avec une police avec serif](../images/data-visualization-serif.png)
-![Image d’une visualisation de données avec une police sans serif](../images/data-visualization-sans-serif.png)
+![Image d’une visualisation de données avec une police serif](../images/data-visualization-serif.png)
+![Image d’une visualisation de données avec une police sans-serif](../images/data-visualization-sans-serif.png)
 
 ### <a name="axis-labels"></a>Étiquettes d’axe
 
 Rendez vos étiquettes d’axe suffisamment foncées pour qu’elles soient lisibles, avec des taux de contraste adéquats entre les couleurs de texte et d’arrière-plan. Veillez à ce qu’elles ne soient pas trop foncées pour ne pas se confondre avec l’encre de données.
 
-Les nuances de gris clair sont les plus efficaces pour les étiquettes d’axe. Si vous utilisez Fabric, consultez la [palette de couleurs neutres](http://dev.office.com/fabric#/styles/colors).
+Les nuances de gris clair sont les plus efficaces pour les étiquettes d’axe. Si vous utilisez Fabric, consultez la [palette de couleurs neutres](https://developer.microsoft.com/fabric#/styles/colors).
 
 ### <a name="data-ink"></a>Encre de données
 
@@ -53,18 +56,18 @@ Les pixels qui représentent les données réelles dans un graphique sont appel�
 
 Choisissez des couleurs qui respectent les thèmes du système d’exploitation ou de l’application plutôt que des couleurs codées en dur. En même temps, assurez-vous que les couleurs que vous appliquez ne faussent pas les données. Une utilisation abusive des couleurs dans les visualisations de données peut provoquer une distorsion des données et une lecture incorrecte des informations.
 
-Pour des recommandations sur l’utilisation des couleurs dans les visualisations de données, voir les rubriques suivantes :
+Pour des recommandations sur l’utilisation des couleurs dans les visualisations de données, voir les rubriques suivantes :
 
 
-- [Pourquoi les couleurs de l’arc-en-ciel ne constituent pas la meilleure option pour les visualisations de données ?](http://www.poynter.org/2013/why-rainbow-colors-arent-always-the-best-options-for-data-visualizations/224413/)
-- [Color Brewer 2.0 : Conseils en matière de couleur pour la cartographie](http://colorbrewer2.org/)
+- [Pourquoi les couleurs de l’arc-en-ciel ne constituent pas la meilleure option pour les visualisations de données ?](http://www.poynter.org/2013/why-rainbow-colors-arent-always-the-best-options-for-data-visualizations/224413/)
+- [Color Brewer 2.0 : Conseils en matière de couleur pour la cartographie](http://colorbrewer2.org/)
 - [Je veux une teinte](http://tools.medialab.sciences-po.fr/iwanthue/)
 
 ### <a name="gridlines"></a>Quadrillage
 
 Le quadrillage est souvent nécessaire pour une lecture précise d’un graphique, mais il doit être présenté comme un élément visuel secondaire, qui améliore l’encre de données, sans se confondre avec elle. Créez un quadrillage statique fin et léger, sauf s’il est conçu spécifiquement pour un contraste élevé. Vous pouvez également utiliser une interaction pour créer un quadrillage dynamique ponctuel qui s’affiche dans le contexte lorsqu’un utilisateur interagit avec un graphique.
 
-Les nuances de gris clair sont les plus efficaces pour les quadrillages. Si vous utilisez Fabric, consultez la [palette de couleurs neutres](http://dev.office.com/fabric#/styles/colors).
+Les nuances de gris clair sont les plus efficaces pour les quadrillages. Si vous utilisez Fabric, consultez la [palette de couleurs neutres](https://developer.microsoft.com/fabric#/styles/colors).
 
 L’image suivante montre une visualisation de données avec le quadrillage.
 
@@ -72,12 +75,12 @@ L’image suivante montre une visualisation de données avec le quadrillage.
 
 ### <a name="legends"></a>Légendes
 
-Ajoutez des légendes si nécessaire pour :
+Ajoutez des légendes si nécessaire pour :
 
 - Faire une distinction entre les séries
 - Présenter des modifications d’échelle ou de valeur
 
-Assurez-vous que vos légendes améliorent l’encre de données et ne rivalisent pas avec elle. Placez les légendes :
+Assurez-vous que vos légendes améliorent l’encre de données et ne rivalisent pas avec elle. Placez les légendes :
 
 
 - Alignées à gauche, au-dessus de la zone de traçage par défaut, si tous les éléments de légende tiennent au-dessus du graphique.
@@ -109,7 +112,7 @@ Pour plus d’informations sur la conception de visualisations de données inter
 
 ### <a name="motion-design-principles"></a>Principes de conception de mouvements
 
-Le mouvement suit un stimulus. Les éléments visuels doivent se déplacer dans la même direction à la même vitesse. Cela s’applique à :
+Le mouvement suit un stimulus. Les éléments visuels doivent se déplacer dans la même direction à la même vitesse. Cela s’applique à :
 
 - Création de graphique
 - Transition d’un type de graphique à un autre
@@ -119,12 +122,12 @@ Le mouvement suit un stimulus. Les éléments visuels doivent se déplacer dans 
 - Brossage ou segmentation des données
 - Redimensionnement d’un graphique
 
-Créez une perception de causalité. Lors de la préparation des animations :
+Créez une perception de causalité. Lors de la préparation des animations :
 
 - Préparez une chose à la fois. 
 - Préparez les modifications des axes avant les modifications de l’encre de données.
 - Préparez et animez des objets en tant que groupes s’ils se déplacent à la même vitesse dans la même direction.
-- Préparez les éléments de données en groupes de 4 à 5 objets maximum. Les visionneuses ont des difficultés à suivre plus de 4 à 5 objets indépendamment.
+- Préparez les éléments de données en groupes de 4 à 5 objets maximum. Les visionneuses ont des difficultés à suivre plus de 4 à 5 objets indépendamment.
 
 Le mouvement ajoute une signification.
 
@@ -146,6 +149,6 @@ Le mouvement suit les données.
 
 ## <a name="see-also"></a>Voir aussi 
 
-- [Données + Conception : une introduction simple à la préparation et à la visualisation des informations](https://infoactive.co/data-design)
+- [Données + Conception : une introduction simple à la préparation et à la visualisation des informations](https://infoactive.co/data-design)
 - [Les cinq meilleures bibliothèques pour créer des visualisations de données](http://www.fastcompany.com/3029760/the-five-best-libraries-for-building-data-vizualizations)
 - [Affichage visuel des informations quantitatives](https://www.edwardtufte.com/tufte/books_vdqi)
