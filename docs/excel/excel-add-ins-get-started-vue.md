@@ -1,13 +1,13 @@
 ---
 title: Développement d’un complément Excel à l’aide de Vue
 description: ''
-ms.date: 02/13/2018
+ms.date: 10/18/2018
 ROBOTS: NOINDEX
-ms.openlocfilehash: 2a378e6cfdd58796ea742825ecbb3d2159d91963
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.openlocfilehash: a5be97fc76741c1e638e5266e8cae9db3ef62ff4
+ms.sourcegitcommit: a6d6348075c1abed76d2146ddfc099b0151fe403
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "19437149"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "25639930"
 ---
 [!include[Excel add-ins get started Vue](../includes/file-get-started-excel-vue.md)]
