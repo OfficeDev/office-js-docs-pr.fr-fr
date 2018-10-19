@@ -115,7 +115,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 
 3. L’attribut `DefaultValue` de l’élément `DisplayName` possède un espace réservé. Remplacez-le par **Mon complément Office**.
 
-4. L’attribut  de l’élément  possède un espace réservé. Remplacez-le par un complément volet Office pour Excel.`DefaultValue``Description`****
+4. L’attribut `DefaultValue`  de l’élément `Description`  possède un espace réservé. Remplacez-le par **un complément volet Office pour Excel**.
 
 5. Enregistrez le fichier.
 
@@ -158,6 +158,10 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 
 1. Créez un dossier sur votre lecteur local et nommez-le **my-addin**. Il s’agit de l’endroit où vous allez créer les fichiers de votre application.
 
+    ```bash
+    mkdir my-addin
+    ```
+
 2. Accédez au dossier de votre application.
 
     ```bash
@@ -185,32 +189,33 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
     cd "My Office Add-in"
     ```
 
-5. Dans votre éditeur de code, ouvrez le fichier **index.html** à la racine du projet. Ce fichier spécifie le code HTML qui sera affiché dans volet de tâches du complément. 
+### <a name="update-the-code"></a>Mise à jour du code 
+
+1. Dans votre éditeur de code, ouvrez le fichier **index.html** à la racine du projet. Ce fichier spécifie le code HTML qui sera affiché dans volet de tâches du complément. 
  
-6. Dans **index.html**, remplacez la balise `header` générée par le balisage suivant.
+2. Dans **index.html**, remplacez la balise `body` par le balisage suivant et enregistrez le fichier.
  
     ```html
-    <div id="content-header">
-        <div class="padding">
-            <h1>Welcome</h1>
+    <body class="ms-font-m ms-welcome">
+        <div id="content-header">
+            <div class="padding">
+                <h1>Welcome</h1>
+            </div>
         </div>
-    </div>
+        <div id="content-main">
+            <div class="padding">
+                <p>Choose the button below to set the color of the selected range to green.</p>
+                <br />
+                <h3>Try it out</h3>
+                <button class="ms-Button" id="set-color">Set color</button>
+            </div>
+        </div>
+        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
+    </body>    
     ```
 
-7. Dans **index.html**, remplacez la balise `main` générée par le balisage suivant et enregistrez le fichier.
-
-    ```html
-    <div id="content-main">
-        <div class="padding">
-            <p>Choose the button below to set the color of the selected range to green.</p>
-            <br />
-            <h3>Try it out</h3>
-            <button class="ms-Button" id="set-color">Set color</button>
-        </div>
-    </div>
-    ```
-
-8. Ouvrez le fichier **src\index.js** pour spécifier le script du complément. Remplacez l'intégralité du contenu par le code suivant et enregistrez le fichier.
+3. Ouvrez le fichier **src\index.js** pour spécifier le script du complément. Remplacez l’intégralité du contenu par le code suivant et enregistrez le fichier.
 
     ```js
     'use strict';
@@ -238,7 +243,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
     })();
     ```
 
-9. Ouvrez le fichier **app.css** pour spécifier les styles personnalisés pour le complément. Remplacez l'intégralité du contenu par le code suivant et enregistrez le fichier.
+4. Ouvrez le fichier **app.css** pour spécifier les styles personnalisés pour le complément. Remplacez l'intégralité du contenu par le code suivant et enregistrez le fichier.
 
     ```css
     #content-header {
@@ -269,15 +274,13 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 
 ### <a name="update-the-manifest"></a>Mise à jour du manifeste
 
-1. Ouvrez le fichier nommé **my-office-add-in-manifest.xml** pour définir les paramètres et les fonctionnalités du complément. 
+1. Ouvrez le fichier nommé **one-note-add-in-manifest.xml** pour définir les paramètres et les fonctionnalités du complément. 
 
 2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-la par votre nom.
 
-3. L’attribut `DefaultValue` de l’élément `DisplayName` possède un espace réservé. Remplacez-le par **Mon complément Office**.
+3. L’attribut `DefaultValue`  de l’élément `Description`  possède un espace réservé. Remplacez-le par **un complément volet Office pour Excel**.
 
-4. L’attribut  de l’élément  possède un espace réservé. Remplacez-le par un complément volet Office pour Excel.`DefaultValue``Description`****
-
-5. Enregistrez le fichier.
+4. Enregistrez le fichier.
 
     ```xml
     ...
