@@ -4,6 +4,8 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 
 ## <a name="prerequisites"></a>Conditions préalables
 
+- [Node.js](https://nodejs.org)
+
 - Installez l’[interface de ligne de commande Vue](https://github.com/vuejs/vue-cli) globalement.
 
     ```bash
@@ -50,20 +52,17 @@ Chaque complément nécessite un fichier manifeste pour définir ses paramètres
 
     - **Choisissez un type de projet :** `Office Add-in containing the manifest only`
     - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
-    - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
-
-    Après avoir terminé l'assistant, un fichier manifeste et un fichier de ressources sont disponibles pour vous permettre de générer votre projet.
+    - **Quelle application client Office voulez-vous prendre en charge ? :** `Excel`
 
     ![Générateur Yeoman](../images/yo-office.png)
     
-    > [!NOTE]
-    > Si vous êtes invité à remplacer **package.json**, répondez **Non** (ne pas remplacer).
+    Une fois que vous en avez terminé avec l'assistant, le générateur crée le fichier manifeste.
 
 ## <a name="secure-the-app"></a>Sécurisation de l’application
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-Pour activer HTTPS pour votre application, ouvrez **package.json** à la racine du projet, modifiez le script `dev` pour ajouter le marqueur `--https` et enregistrez le fichier.
+Pour activer HTTPS pour votre application, ouvrez le fichier **package.json** dans le dossier racine du projet Vue, modifiez le script `dev` pour ajouter le marqueur `--https` et enregistrez le fichier.
 
 ```json
 "dev": "webpack-dev-server --https --inline --progress --config build/webpack.dev.conf.js"
@@ -71,15 +70,17 @@ Pour activer HTTPS pour votre application, ouvrez **package.json** à la racine 
 
 ## <a name="update-the-app"></a>Mettre à jour l’application
 
-1. Dans votre éditeur de code, ouvrez le fichier manifeste (c’est-à-dire, le fichier situé dans le répertoire racine de votre application dont le nom se termine par « manifest.xml »). Remplacez toutes les occurrences de `https://localhost:3000` par `https://localhost:8080` et enregistrez le fichier.
+1. Dans votre éditeur de code, ouvrez le dossier **My Office Add-in** que Yo Office a créé à la racine de votre projet Vue. Dans ce dossier, vous verrez le fichier manifeste qui définit les paramètres de votre complément : **manifest.xml**.
 
-2. Ouvrez **index.html**, ajoutez la balise `<script>` suivante immédiatement avant la balise `</head>`, puis enregistrez le fichier.
+2. Ouvrez le fichier manifeste, remplacez toutes les occurrences de `https://localhost:3000` avec `https://localhost:8080`, puis enregistrez le fichier.
+
+3. Ouvrez le fichier **index.html** (situé à la racine de votre projet de Vue), ajoutez la balise `<script>` suivante immédiatement avant la balise `</head>`, puis enregistrez le fichier.
 
     ```html
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     ```
 
-3. Ouvrez **src/main.js** et *supprimez* le bloc de code suivant :
+3. Ouvrez **src/main.js** et *supprimez* le bloc de code suivant :
 
     ```js
     new Vue({
