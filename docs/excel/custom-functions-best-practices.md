@@ -1,13 +1,13 @@
 ---
-ms.date: 10/03/2018
+ms.date: 10/17/2018
 description: Découvrez les meilleures pratiques et modèles recommandés pour les fonctions personnalisées d’Excel.
 title: Meilleures pratiques pour les fonctions personnalisées
-ms.openlocfilehash: 218e62cd074ccf3f3708bba90c938f7ddef059cb
-ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
+ms.openlocfilehash: 10ba29966c1e991ca23674ce3e5da88de2772e00
+ms.sourcegitcommit: a6d6348075c1abed76d2146ddfc099b0151fe403
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "25579820"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "25640000"
 ---
 # <a name="custom-functions-best-practices-preview"></a>Meilleures pratiques pour les fonctions personnalisées (aperçu)
 
@@ -128,7 +128,7 @@ Gardez à l’esprit les meilleures pratiques suivantes lors de la création de 
 
 ## <a name="additional-considerations"></a>Considérations supplémentaires
 
-Pour créer un complément qui s’exécute sur plusieurs plates-formes (l’un des principaux clients des compléments Office), vous ne devez pas accéder au DOM (Document Object Model) dans les fonctions personnalisées ni utiliser des bibliothèques comme jQuery qui s’appuient sur le modèle DOM. Dans Excel pour Windows, où les fonctions personnalisées utilisent le [runtime JavaScript](custom-functions-runtime.md), des fonctions personnalisées ne peuvent pas accéder au DOM.
+Afin de créer un complément qui sera exécuté sur plusieurs plateformes (parmi les locataires clés des compléments Office), vous ne devez pas accéder au Document Object Model (DOM) dans des fonctions personnalisées ou utiliser des bibliothèques telles que jQuery qui s’appuient sur le modèle DOM. Dans Excel pour Windows, où les fonctions personnalisées utilisent le [runtime JavaScript](custom-functions-runtime.md), les fonctions personnalisées ne peuvent pas accéder au DOM.
 
 ## <a name="see-also"></a>Voir aussi
 

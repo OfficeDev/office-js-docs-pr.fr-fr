@@ -2,20 +2,20 @@
 title: Valider et résoudre des problèmes avec votre manifeste
 description: Utiliser ces méthodes pour valider le manifeste des compléments Office.
 ms.date: 12/04/2017
-ms.openlocfilehash: c3eed1a74cf4830556d977e6217a89c1fd016548
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+ms.openlocfilehash: 51d644f7cfb7fbad5c9b66be41dc57015202b9be
+ms.sourcegitcommit: a6d6348075c1abed76d2146ddfc099b0151fe403
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25004951"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "25639986"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>Valider et résoudre des problèmes avec votre manifeste
 
-Utiliser les méthodes suivantes pour valider et résoudre les problèmes rencontrés dans votre manifeste pour compléments Office : 
+Utilisez les méthodes suivantes pour valider et résoudre les problèmes rencontrés dans votre manifeste pour compléments Office : 
 
 - [Validation du manifeste à l’aide du validateur de complément Office](#validate-your-manifest-with-the-office-add-in-validator)   
 - [Validation de votre manifeste par rapport au schéma XML](#validate-your-manifest-against-the-xml-schema)
-- [Utilisation de la journalisation runtime pour déboguer le manifeste de votre complément](#use-runtime-logging-to-debug-your-add-in-manifest)
+- [Utilisation de la journalisation à l’exécution pour déboguer le manifeste de votre complément](#use-runtime-logging-to-debug-your-add-in-manifest)
 
 
 ## <a name="validate-your-manifest-with-the-office-add-in-validator"></a>Validation du manifeste à l’aide du validateur de complément Office
@@ -26,14 +26,14 @@ Pour vous assurer que le fichier manifeste qui décrit votre complément Office 
 
 1. Installez [Node.js](https://nodejs.org/download/). 
 
-2. Ouvrez une invite de commandes/un terminal en tant qu’administrateur, puis installez le validateur de complément Office et ses dépendances de façon globale à l’aide de la commande suivante :
+2. Ouvrez une invite de commandes/un terminal en tant qu’administrateur, puis installez le validateur de complément Office et ses dépendances de façon globale à l’aide de la commande suivante :
 
     ```bash
     npm install -g office-addin-validator
     ```
     
     > [!NOTE]
-    > Si Yo Office est déjà installé, effectuez une mise à niveau vers la dernière version ; le validateur sera installé en tant que dépendance.
+    > Si Yo Office est déjà installé, effectuez une mise à niveau vers la dernière version ; le validateur sera installé en tant que dépendance.
 
 3. Exécutez la commande suivante pour valider votre manifeste. Remplacez MANIFEST.XML par le chemin d’accès au fichier XML de manifeste.
 
@@ -43,11 +43,11 @@ Pour vous assurer que le fichier manifeste qui décrit votre complément Office 
 
 ## <a name="validate-your-manifest-against-the-xml-schema"></a>Validation de votre manifeste par rapport au schéma XML
 
-Cette opération vous permet de vérifier que le fichier manifeste suit le schéma approprié, y compris les espaces de noms pour les éléments que vous utilisez. Si vous avez copié des éléments à partir d’autres exemples de manifestes, vérifiez par deux fois que vous avez également **inclut les espaces de noms appropriés**. Vous pouvez valider un manifeste par rapport aux fichiers de [définition de schéma XML (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas). Pour ce faire, vous pouvez utiliser un outil de validation de schéma XML. 
+Pour garantir que le manifeste de fichier suive le schéma correct, y compris les espaces de noms pour les éléments que vous utilisez. Si vous avez copié des éléments des manifestes des autres exemples,vérifiez que vous avez également **inclut les espaces de noms appropriés**. Vous pouvez valider un manifeste contre les fichiers de [Définition de schéma XML (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) . Vous pouvez utiliser un outil de validation de schéma XML pour effectuer cette validation. 
 
 
 
-### <a name="to-use-a-command-line-xml-schema-validation-tool-to-validate-your-manifest"></a>Pour utiliser un outil de validation de schéma XML à ligne de commande pour valider votre manifeste
+### <a name="to-use-a-command-line-xml-schema-validation-tool-to-validate-your-manifest"></a>Pour utiliser un outil de validation de schéma XML en ligne de commande pour valider votre manifeste
 
 1.  Installez [tar](https://www.gnu.org/software/tar/) et [libxml](http://xmlsoft.org/FAQ.html), si vous ne l’avez pas déjà fait.
 
@@ -57,19 +57,19 @@ Cette opération vous permet de vérifier que le fichier manifeste suit le sché
     xmllint --noout --schema XSD_FILE XML_FILE
     ```
 
-## <a name="use-runtime-logging-to-debug-your-add-in"></a>Utilisation de la journalisation runtime pour déboguer le manifeste de votre complément 
+## <a name="use-runtime-logging-to-debug-your-add-in"></a>Utilisation de la journalisation à l’exécution pour déboguer le manifeste de votre complément 
 
-Vous pouvez utiliser la journalisation runtime pour déboguer le manifeste de votre complément, ainsi que plusieurs erreurs d’installation. Cette fonctionnalité peut vous aider à identifier et à résoudre les problèmes avec votre manifeste qui ne sont pas détectés par la validation de schéma XSD, comme une incompatibilité entre les ID de ressources. La journalisation runtime est particulièrement utile pour le débogage des compléments implémentant des commandes de complément et des fonctions Excel personnalisées.   
+Vous pouvez utiliser la journalisation à l’exécution pour déboguer le manifeste de votre complément, ainsi que plusieurs erreurs d’installation. Cette fonctionnalité peut vous aider à identifier et résoudre les problèmes avec votre manifeste qui ne sont pas détectés par la validation de schéma XSD, par exemple une incohérence entre les IDs de ressource. La journalisation à l’exécution est particulièrement utile pour le débogage des compléments qui implémentent les commandes des compléments et les fonctions Excel personnalisées.   
 
 > [!NOTE]
-> La fonctionnalité de journalisation runtime est actuellement disponible pour Office 2016 pour ordinateur de bureau.
+> La fonctionnalité de journalisation à l’exécution est actuellement disponible pour Office 2016 pour ordinateur de bureau.
 
-### <a name="to-turn-on-runtime-logging"></a>Pour activer la journalisation runtime
+### <a name="to-turn-on-runtime-logging"></a>Pour activer la journalisation à l’exécution
 
 > [!IMPORTANT]
-> La journalisation runtime réduit les performances. Activez-la uniquement lorsque vous avez besoin de déboguer des problèmes avec votre manifeste de complément.
+> La journalisation à l’exécution réduit les performances. Activez-la uniquement lorsque vous avez besoin de déboguer des problèmes avec votre manifeste de complément.
 
-Pour activer la journalisation runtime, procédez comme suit :
+Pour activer la journalisation à l’exécution, procédez comme suit :
 
 1. Vérifiez que vous exécutez la version Bureau d’Office 2016 **16.0.7019** ou une version ultérieure. 
 
@@ -80,14 +80,14 @@ Pour activer la journalisation runtime, procédez comme suit :
     > [!NOTE]
     > Le répertoire dans lequel le fichier journal sera écrit doit déjà exister et vous devez disposer des autorisations d’écriture correspondantes. 
  
-L’image suivante indique à quoi doit ressembler le registre. Pour désactiver la fonctionnalité, supprimez la clé de registre `RuntimeLogging`. 
+L’image suivante montre à quoi doit ressembler le registre. Pour désactiver la fonctionnalité, supprimez la clé `RuntimeLogging` du Registre. 
 
 ![Capture d’écran de l’Éditeur du Registre avec la clé de registre RuntimeLogging](http://i.imgur.com/Sa9TyI6.png)
 
 
 ### <a name="to-troubleshoot-issues-with-your-manifest"></a>Résolution des problèmes avec votre manifeste
 
-Pour utiliser la journalisation runtime pour résoudre les problèmes de chargement d’un complément, procédez comme suit :
+Pour utiliser la journalisation à l’exécution pour résoudre les problèmes de chargement d’un complément, procédez comme suit :
  
 1. [Chargez une version test de votre complément](sideload-office-add-ins-for-testing.md). 
 
@@ -96,15 +96,15 @@ Pour utiliser la journalisation runtime pour résoudre les problèmes de chargem
 
 2. Si rien ne se produit et que votre complément n’apparaît pas (et ne s’affiche pas dans la boîte de dialogue des compléments), ouvrez le fichier journal.
 
-3. Recherchez le fichier journal pour l’ID de votre complément, que vous définissez dans votre manifeste. Dans le fichier journal, cet ID est intitulé `SolutionId`. 
+3. Recherchez l’ID de votre complément dans le fichier journal, que vous définissez dans votre manifeste. Dans le fichier journal, cet ID est intitulé `SolutionId`. 
 
 Dans l’exemple suivant, le fichier journal identifie un contrôle qui pointe vers un fichier de ressources qui n’existe pas. Pour cet exemple, la correction consistera à corriger la faute de frappe dans le manifeste ou à ajouter la ressource manquante.
 
 ![Capture d’écran d’un fichier journal avec une entrée qui spécifie un ID de ressource qui est introuvable](http://i.imgur.com/f8bouLA.png) 
 
-### <a name="known-issues-with-runtime-logging"></a>Problèmes connus avec la journalisation runtime
+### <a name="known-issues-with-runtime-logging"></a>Problèmes connus avec la journalisation à l’exécution
 
-Vous pouvez afficher des messages dans le fichier journal qui sont source de confusion ou classés de façon incorrecte. Par exemple :
+Il est possible de voir des messages dans le fichier journal qui sont source de confusion ou classés de façon incorrecte. Par exemple :
 
 - Le message `Medium Current host not in add-in's host list` suivi de `Unexpected Parsed manifest targeting different host` est classé incorrectement en tant qu’erreur.
 
@@ -116,17 +116,17 @@ Vous pouvez afficher des messages dans le fichier journal qui sont source de con
 
 Si les modifications apportées au manifeste, par exemple aux noms de fichier des icônes de bouton dans le ruban ou au texte des commandes de complément, ne semblent pas appliquées, essayez de vider le cache Office de votre ordinateur. 
 
-#### <a name="for-windows"></a>Pour Windows :
+#### <a name="for-windows"></a>Pour Windows :
 Supprimez le contenu du dossier `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
-#### <a name="for-mac"></a>Pour Mac :
+#### <a name="for-mac"></a>Pour Mac :
 Supprimez le contenu du dossier `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
 
-#### <a name="for-ios"></a>Pour iOS :
+#### <a name="for-ios"></a>Pour iOS :
 Appelez `window.location.reload(true)` à partir de JavaScript dans le complément pour forcer le rechargement. Vous pouvez également choisir de réinstaller Office.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Manifeste XML des compléments Office](../develop/add-in-manifests.md)
-- [Chargement de la version test des compléments Office](sideload-office-add-ins-for-testing.md)
+- [Chargement de version test de compléments Office](sideload-office-add-ins-for-testing.md)
 - [Débogage des compléments Office](debug-add-ins-using-f12-developer-tools-on-windows-10.md)

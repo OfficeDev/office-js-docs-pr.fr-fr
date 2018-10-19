@@ -73,7 +73,7 @@ Cet article décrit le processus de création d’un complément OneNote à l’
     </body>
     ```
 
-3. Ouvrez le fichier **src\index.js** pour spécifier le script du complément. Remplacez l'intégralité du contenu par le code suivant et enregistrez le fichier.
+3. Ouvrez le fichier **src\index.js** pour spécifier le script du complément. Remplacez l’intégralité du contenu par le code suivant et enregistrez le fichier.
 
     ```js
     import * as OfficeHelpers from "@microsoft/office-js-helpers";
@@ -118,7 +118,7 @@ Cet article décrit le processus de création d’un complément OneNote à l’
     }
     ```
 
-4. Ouvrez le fichier **app.css** pour spécifier les styles personnalisés pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+4. Ouvrez le fichier **app.css** pour spécifier les styles personnalisés pour le complément. Remplacez l’intégralité du contenu par le code suivant et enregistrez le fichier.
 
     ```css
     html, body {
@@ -196,7 +196,7 @@ Cet article décrit le processus de création d’un complément OneNote à l’
 
 ## <a name="update-the-manifest"></a>Mise à jour du manifeste
 
-1. Ouvrez le fichier nommé **my-office-add-in-manifest.xml** pour définir les paramètres et les fonctionnalités du complément.
+1. Ouvrez le fichier nommé **one-note-add-in-manifest.xml** pour définir les paramètres et les fonctionnalités du complément.
 
 2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-la par votre nom.
 
@@ -232,7 +232,7 @@ Cet article décrit le processus de création d’un complément OneNote à l’
 
     <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
 
-3. Dans la boîte de dialogue Télécharger le complément, accédez à **my-office-add-in-manifest.xml** dans le dossier de projet, puis choisissez **Télécharger**. 
+3. Dans la boîte de dialogue Télécharger le complément, accédez à **one-note-add-in-manifest.xml** dans le dossier de projet, puis choisissez **Télécharger**. 
 
 4. À partir de l’onglet **Accueil** , cliquez sur le bouton **Afficher le volet Office** dans le ruban. Le volet Office de complément s’ouvre dans un iFrame en regard de la page OneNote.
 
