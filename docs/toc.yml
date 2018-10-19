@@ -34,7 +34,7 @@ items:
     href: quickstarts/onenote-quickstart.md
   - name: Créer un complément Outlook
     displayName: Outlook
-    href: https://docs.microsoft.com/outlook/add-ins/quick-start
+    href: /outlook/add-ins/quick-start
   - name: Créer un complément PowerPoint
     displayName: PowerPoint
     href: quickstarts/powerpoint-quickstart.md
@@ -87,7 +87,7 @@ items:
         href: design/add-in-typography.md
       - name: Couleur
         href: design/add-in-color.md
-      - name: Disposition
+      - name: Mise en page
         href: design/add-in-layout.md
       - name: Icônes
         href: design/add-in-icons.md
@@ -282,10 +282,10 @@ items:
         href: excel/excel-add-ins-worksheets.md
     - name: Vue d’ensemble de l’API JavaScript d’Excel
       displayName: Excel
-      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js
+      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview
     - name: Référence de l’API JavaScript d’Excel
       displayName: Excel
-      href: https://docs.microsoft.com/javascript/api/excel?view=office-js
+      href: /javascript/api/excel
   - name: Compléments Word
     displayName: Word
     href: word/word-add-ins-programming-overview.md
@@ -316,13 +316,13 @@ items:
       href: word/search-option-guidance.md
     - name: Vue d’ensemble de l’utilisation de l’API JavaScript de Word
       displayName: Word
-      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js
+      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview
     - name: Référence de l’API JavaScript de Word
       displayName: Word
-      href: https://docs.microsoft.com/en-us/javascript/api/word?view=office-js
+      href: /javascript/api/word
   - name: Compléments Outlook
     displayName: Outlook
-    href: https://docs.microsoft.com/outlook/add-ins/
+    href: /outlook/add-ins/
   - name: Compléments PowerPoint
     displayName: PowerPoint
     href: powerpoint/powerpoint-add-ins.md
@@ -351,10 +351,10 @@ items:
       href: onenote/onenote-add-ins-page-content.md
     - name: Vue d’ensemble de l’API JavaScript de OneNote
       displayName: OneNote
-      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js
+      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference
     - name: Référence de l’API JavaScript de OneNote
       displayName: OneNote
-      href: https://docs.microsoft.com/en-us/javascript/api/onenote?view=office-js
+      href: /javascript/api/onenote
   - name: Compléments Project
     displayName: Project
     href: project/project-add-ins.md
@@ -411,9 +411,9 @@ items:
     - name: Publier les compléments dans un catalogue SharePoint
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
     - name: Publication de compléments sur AppSource
-      href: https://docs.microsoft.com/office/dev/store/submit-to-the-office-store
+      href: /office/dev/store/submit-to-the-office-store
     - name: Stratégies de contrôle AppSource
-      href: https://docs.microsoft.com/office/dev/store/validation-policies
+      href: /office/dev/store/validation-policies
 - name: Référence
   items:
   - name: Interface API JavaScript pour Office
@@ -597,7 +597,7 @@ items:
         href: reference/requirement-sets/office-add-in-requirement-sets.md
       - name: Ensembles de conditions requises concernant les commandes de complément
         href: reference/requirement-sets/add-in-commands-requirement-sets.md
-      - name: Ensembles de conditions requises de l’API de boîte de dialogue
+      - name: Ensembles de conditions requises de l’API de Dialog
         href: reference/requirement-sets/dialog-api-requirement-sets.md
       - name: Ensembles de conditions requises de l’API d’identité
         href: reference/requirement-sets/identity-api-requirement-sets.md
@@ -744,9 +744,9 @@ items:
         href: reference/manifest/webapplicationinfo.md
 - name: Ressources
   href: resources/resources-links-help.md
-ms.openlocfilehash: 554141ecd56a9f08e38b0d579f96a6d239ac7a22
-ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
+ms.openlocfilehash: 1102af4ae8618cd2c2ced018bffa7e64c4fb2ece
+ms.sourcegitcommit: a6d6348075c1abed76d2146ddfc099b0151fe403
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "25579883"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "25640084"
