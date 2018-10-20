@@ -1,13 +1,13 @@
 ---
 title: Utilisation d’événements à l’aide de l’API JavaScript pour Excel
 description: ''
-ms.date: 09/21/2018
-ms.openlocfilehash: b56d25e7e0306b4881115397d4136e63ddc03e5c
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.date: 10/17/2018
+ms.openlocfilehash: c3fbdf27dcbedf0d006973e6ebc2e01b02e6cec2
+ms.sourcegitcommit: a6d6348075c1abed76d2146ddfc099b0151fe403
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459174"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "25639937"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Utilisation d’événements à l’aide de l’API JavaScript pour Excel 
 
@@ -31,7 +31,7 @@ Chaque fois que certains types de modifications se produisent dans un classeur E
 
 ### <a name="event-triggers"></a>Déclencheurs d’événements
 
-Événements au sein d’un classeur Excel pouvant être déclenchés par :
+Événements au sein d’un classeur Excel pouvant être déclenchés par :
 
 - Interaction de l’utilisateur via l’interface utilisateur Excel (IU) modifiant le classeur
 - Complément (JavaScript) Office modifiant le classeur
@@ -41,7 +41,10 @@ Toute modification conforme aux comportements par défaut d’Excel déclenche l
 
 ### <a name="lifecycle-of-an-event-handler"></a>Cycle de vie d’un gestionnaire d’événements
 
-Un gestionnaire d’événements est créé lorsqu’un complément inscrit le gestionnaire d’événements et est détruit lorsque le complément désinscrit le gestionnaire d’événements ou que le complément est fermé. Les gestionnaires d’événements ne persistent pas en tant que partie du fichier Excel.
+Un gestionnaire d’événements est créé lorsqu’un complément inscrit le Gestionnaire d’événements. Il est détruit lorsque le complément annule l’inscription du Gestionnaire d’événements ou lorsque le complément est actualisé, rechargé ou fermé. Les gestionnaires d’événements ne sont pas conservés dans le cadre du fichier Excel ou dans les sessions avec Excel Online.
+
+> [!CAUTION]
+> Lors de la suppression d’un objet auquel des événements sont enregistrés (par exemple, un tableau avec un événement `onChanged` inscrit), le Gestionnaire d’événements ne se déclenche plus mais reste en mémoire jusqu'à ce que le complément ou la session Excel s’actualise ou se ferme.
 
 ### <a name="events-and-coauthoring"></a>Événements et co-création
 
@@ -147,4 +150,4 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Concepts fondamentaux de programmation avec l’API JavaScript Excel](excel-add-ins-core-concepts.md)
+- [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
