@@ -26,13 +26,13 @@ Cet article décrit le processus de création d’un complément Project à l’
     cd my-project-addin
     ```
 
-3. Utilisez le générateur Yeoman pour créer un projet de complément Project. Exécutez la commande suivante, puis répondez aux invites de commandes comme suit :
+3. Utilisez le générateur Yeoman pour créer un projet de complément Project. Exécutez la commande suivante, puis répondez aux invites de commandes comme suit :
 
     ```bash
     yo office
     ```
 
-    - **Choisissez un type de projet :** `Office Add-in project using Jquery framework`
+    - **Choisissez un type de projet :** `Office Add-in project using Jquery framework`
     - **Choisissez un type de script :** `Javascript`
     - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
     - **Quelle application client Office voulez-vous prendre en charge ?** `Project`
@@ -51,7 +51,7 @@ Cet article décrit le processus de création d’un complément Project à l’
 
 1. Dans votre éditeur de code, ouvrez le fichier **index.html** à la racine du projet. Ce fichier contient le code HTML qui sera affiché dans le volet de tâches du complément.
 
-2. Remplacez l'élément`<body>` par le codage suivant :
+2. Remplacez l’élément `<body>` par le codage suivant :
 
     ```html
     <body class="ms-font-m ms-welcome">
@@ -77,7 +77,7 @@ Cet article décrit le processus de création d’un complément Project à l’
     </body>
     ```
 
-3. Ouvrez le fichier **src/index.js** pour spécifier le script du complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+3. Ouvrez le fichier **src/index.js** pour spécifier le script pour le complément. Remplacez le contenu entier par le code suivant et enregistrez le fichier.
 
     ```js
     'use strict';
@@ -130,7 +130,7 @@ Cet article décrit le processus de création d’un complément Project à l’
     })();
     ```
 
-4. Ouvrez le fichier **app.css** à la racine du projet pour spécifier les styles personnalisés du complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+4. Ouvrez le fichier **app.css** à la racine du projet pour spécifier les styles personnalisés pour le complément. Remplacez l’intégralité du contenu par le code suivant et enregistrez le fichier.
 
     ```css
     #content-header {
@@ -161,11 +161,11 @@ Cet article décrit le processus de création d’un complément Project à l’
 
 ## <a name="update-the-manifest"></a>Mise à jour du manifeste
 
-1. Ouvrez le fichier nommé **my-office-add-in-manifest.xml** pour définir les paramètres et les fonctionnalités du complément.
+1. Ouvrez le fichier nommé **one-note-add-in-manifest.xml** pour définir les paramètres et les fonctionnalités du complément.
 
 2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-la par votre nom.
 
-3. L’attribut `DefaultValue` de l’élément `Description` possède un espace réservé. Remplacez-le par **Un complément de volet Office pour Project**.
+3. L’attribut `DefaultValue`  de l’élément `Description`  possède un espace réservé. Remplacez-le par **un complément volet Office pour Project**.
 
 4. Enregistrez le fichier.
 
@@ -183,14 +183,14 @@ Cet article décrit le processus de création d’un complément Project à l’
 
 [!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
-## <a name="try-it-out"></a>Essayez !
+## <a name="try-it-out"></a>Essayez !
 
 1. Dans Project, créez un projet simple comportant au moins une tâche.
 
 2. Suivez les instructions pour la plateforme que vous utiliserez afin d’exécuter votre complément en vue d’en charger une version test dans Project.
 
     - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Project Online : [Chargement de version test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+    - Project Online : [Chargement de version test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
     - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 3. Dans Project, sélectionnez une tâche.
@@ -207,7 +207,7 @@ Cet article décrit le processus de création d’un complément Project à l’
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations, vous avez créé un complément Project ! Ensuite, découvrez les fonctionnalités d’un complément Project et explorez des scénarios plus courants.
+Félicitations, vous avez créé un complément Project ! Maintenant, découvrez les fonctionnalités d’un complément Project et explorez des scénarios courants.
 
 > [!div class="nextstepaction"]
 > [Compléments Project](../project/project-add-ins.md)
