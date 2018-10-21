@@ -212,7 +212,7 @@ Cet article décrit le processus de création d’un complément Word à l’aid
 
 1. À l’aide de Visual Studio, testez le nouveau complément en appuyant sur F5 ou en choisissant le bouton **Démarrer** pour lancer Word avec le bouton du complément **Afficher le volet Office** qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
 
-2. Dans Word, choisissez l’onglet **accueil** , puis cliquez sur le bouton **Afficher le volet Office** dans le ruban pour ouvrir le volet Office de complément. (Si vous utilisez la version sans abonnement de 2016 Office, au lieu de la version d’Office 365, puis boutons personnalisés ne sont pas pris en charge. Au lieu de cela, le volet Office s’ouvre immédiatement.)
+2. Dans Word, choisissez l’onglet **Accueil**, puis cliquez sur le bouton **Afficher le volet Office** dans le ruban pour ouvrir le volet Office de complément. (Si vous utilisez la version sans abonnement de Office 2016, au lieu de la version d’Office 365, alors les boutons personnalisés ne sont pas pris en charge. Au lieu de cela, le volet Office s’ouvre immédiatement.)
 
     ![Capture d’écran de l’application Word avec le bouton Afficher le volet Office mis en surbrillance](../images/word-quickstart-addin-0.png)
 
@@ -246,7 +246,7 @@ Cet article décrit le processus de création d’un complément Word à l’aid
     cd my-word-addin
     ```
 
-3. Utilisez le générateur Yeoman pour créer un projet de complément de OneNote. Exécutez la commande suivante, puis répondez aux invites de commandes comme suit :
+3. Utilisez le générateur Yeoman pour créer un projet de complément Word. Exécutez la commande suivante, puis répondez aux invites de commandes comme suit :
 
     ```bash
     yo office
@@ -271,7 +271,7 @@ Cet article décrit le processus de création d’un complément Word à l’aid
 
 1. Dans votre éditeur de code, ouvrez le fichier **index.html** à la racine du projet. Ce fichier contient le code HTML qui sera affiché dans le volet de tâches du complément. 
 
-2. |||UNTRANSLATED_CONTENT_START|||Replace the `<body>` element with the following markup and save the file.|||UNTRANSLATED_CONTENT_END|||
+2. Dans Home.html, remplacez l’élément `<body>` par le balisage suivant et enregistrez le fichier.
 
     ```html
     <body>
@@ -299,7 +299,7 @@ Cet article décrit le processus de création d’un complément Word à l’aid
     </body>
     ```
 
-2. |||UNTRANSLATED_CONTENT_START|||Open the file **src/index.js** to specify the script for the add-in.|||UNTRANSLATED_CONTENT_END||| Remplacez tout le contenu par le code suivant, puis enregistrez le fichier. Ce script contient le code d’initialisation ainsi que le code qui apporte des modifications au document Word en insérant du texte dans le document lorsqu’un bouton est choisi. 
+2. Ouvrez le fichier **src/index.js** pour spécifier le script pour le complément et remplacez le contenu par le code suivant, puis enregistrez le fichier. Ce script contient le code d’initialisation, ainsi que le code qui modifie le document Word, en insérant du texte dans le document lorsqu’un bouton est sélectionné. 
 
     ```js
     'use strict';
@@ -400,7 +400,7 @@ Cet article décrit le processus de création d’un complément Word à l’aid
     })();
     ```
 
-3. Ouvrez le fichier **app.css** à la racine du projet pour spécifier les styles personnalisés du complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+3. Ouvrez le fichier **app.css** à la racine du projet pour spécifier les styles personnalisés pour le complément. Remplacez l’intégralité du contenu par le code suivant et enregistrez le fichier.
 
     ```css
     #content-header {
@@ -431,7 +431,7 @@ Cet article décrit le processus de création d’un complément Word à l’aid
 
 ### <a name="update-the-manifest"></a>Mise à jour du manifeste
 
-1. Ouvrez le fichier nommé **my-office-add-in-manifest.xml** pour définir les paramètres et les fonctionnalités du complément.
+1. Ouvrez le fichier nommé **one-note-add-in-manifest.xml** pour définir les paramètres et les fonctionnalités du complément.
 
 2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-la par votre nom.
 
@@ -473,7 +473,7 @@ Cet article décrit le processus de création d’un complément Word à l’aid
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations, vous avez créé un complément Word à l’aide de jQuery ! Découvrez maintenant les fonctionnalités d’un complément Word et créez-en un plus complexe en suivant le didacticiel sur le complément Word.
+Félicitations, vous avez créé un complément Word à l’aide de jQuery ! Découvrez à présent les fonctionnalités des compléments Word et créez un complément plus complexe en continuant le didacticiel sur le complément Word.
 
 > [!div class="nextstepaction"]
 > [Didacticiel sur les compléments Word](../tutorials/word-tutorial.yml)
