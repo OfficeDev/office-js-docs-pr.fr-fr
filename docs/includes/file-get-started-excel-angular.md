@@ -4,13 +4,7 @@ Dans cet article, vous allez découvrir le processus de création d’un complé
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-- Assurez-vous que vous avez la [configuration requise pour l’interface de ligne de commande Angular](https://github.com/angular/angular-cli#prerequisites) et installez tous les composants manquants.
-
-- Installez l’[interface de ligne de commande Angular](https://github.com/angular/angular-cli) globalement. 
-
-    ```bash
-    npm install -g @angular/cli
-    ```
+- [Node.js](https://nodejs.org)
 
 - Installez la dernière version de [Yeoman](https://github.com/yeoman/yo) et le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) globalement.
 
@@ -18,142 +12,32 @@ Dans cet article, vous allez découvrir le processus de création d’un complé
     npm install -g yo generator-office
     ```
 
-## <a name="generate-a-new-angular-app"></a>Génération d’une nouvelle application Angular
+## <a name="create-the-web-app"></a>Création de l’application web
 
-Utilisez l’interface de ligne de commande Angular pour générer votre application Angular. À partir du terminal, exécutez la commande suivante :
-
-```bash
-ng new my-addin
-```
-
-## <a name="generate-the-manifest-file"></a>Génération du fichier manifeste
-
-Le fichier manifeste d’un complément définit ses paramètres et ses fonctionnalités.
-
-1. Accédez au dossier de votre application.
+1. Utilisez le générateur Yeoman afin de créer un projet de complément Excel. Exécutez la commande suivante, puis répondez aux invites comme suit :
 
     ```bash
-    cd my-addin
+    yo office
     ```
 
-2. Utilisez le générateur Yeoman pour générer le fichier manifeste de votre complément. Exécutez la commande suivante, puis répondez aux invites comme indiqué ci-dessous.
-
-    ```bash
-    yo office 
-    ```
-
-    - **Choisissez un type de projet :** `Office Add-in containing the manifest only`
+    - **Choisissez un type de projet :** `Office Add-in project using Angular framework`
+    - **Choisissez un type de script :** `Typescript`
     - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
-    - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
+    - **Quelle application client Office voulez-vous prendre en charge ? :** `Excel`
 
-    Après avoir terminé l'assistant, un fichier manifeste et un fichier de ressources sont disponibles pour vous permettre de générer votre projet.
-
-    ![Générateur Yeoman](../images/yo-office.png)
+    ![Générateur Yeoman](../images/yo-office-excel-angular.png)
     
-    > [!NOTE]
-    > Si vous êtes invité à remplacer **package.json**, répondez **Non** (ne pas remplacer).
+    Une fois que vous avez terminé avec l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
-## <a name="secure-the-app"></a>Sécurisation de l’application
+2. Accédez au dossier racine du projet.
 
-[!include[HTTPS guidance](../includes/https-guidance.md)]
-
-Pour ce démarrage rapide, vous pouvez utiliser les certificats fournis par le **générateur Yeoman pour les compléments Office**. Vous avez déjà installé le générateur globalement (dans le cadre de la **Configuration requise** pour ce guide de démarrage rapide), il vous faudra donc uniquement copier les certificats à partir de l’emplacement d’installation dans le dossier de l’application. Les étapes suivantes expliquent comment effectuer cette procédure.
-
-1. À partir du terminal, exécutez la commande suivante pour identifier le dossier où les bibliothèques **npm** globales sont installées :
-
-    ```bash 
-    npm list -g 
-    ``` 
-    
-    > [!TIP]    
-    > La première ligne de la sortie générée par cette commande spécifie le dossier où les bibliothèques **npm** globales sont installées.          
-    
-2. À l’aide de l’Explorateur de fichiers, accédez au dossier `{global libraries folder}/node_modules/generator-office/generators/app/templates/js/base`. À partir de cet emplacement, copiez le dossier `certs` dans le presse-papiers.
-
-3. Accédez au dossier racine de l’application Angular que vous avez créée à l’étape 1 de la section précédente et collez le dossier `certs` (qui se trouve dans votre presse-papiers) dans ce dossier.
-
-## <a name="update-the-app"></a>Mise à jour de l’application
-
-1. Dans votre éditeur de code, ouvrez **package.json** dans la racine du projet. Modifiez le script `start` pour spécifier que le serveur doit s’exécuter en utilisant SSL et le port 3000 puis enregistrez le fichier.
-
-    ```json
-    "start": "ng serve --ssl true --port 3000"
+    ```bash
+    cd "My Office Add-in"
     ```
 
-2. Ouvrez **.angular-cli.json** à la racine du projet. Modifiez l’objet **defaults** pour spécifier l’emplacement des fichiers de certificat et enregistrez le fichier.
+## <a name="update-the-code"></a>Mise à jour du code
 
-    ```json
-    "defaults": {
-      "styleExt": "css",
-      "component": {},
-      "serve": {
-        "sslKey": "certs/server.key",
-        "sslCert": "certs/server.crt"
-      }
-    }
-    ```
-
-3. Ouvrez **src/index.html**, ajoutez la balise `<script>` suivante immédiatement avant la balise `</head>`, puis enregistrez le fichier.
-
-    ```html
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
-    ```
-
-4. Ouvrez **src/main.ts**, remplacez `platformBrowserDynamic().bootstrapModule(AppModule).catch(err => console.log(err));` par le code suivant, puis enregistrez le fichier. 
-
-    ```typescript 
-    declare const Office: any;
-
-    Office.initialize = () => {
-    platformBrowserDynamic().bootstrapModule(AppModule)
-        .catch(err => console.log(err));
-    };
-    ```
-
-5. Ouvrez **src/polyfills.ts**, ajoutez la ligne de code suivante au-dessus de toutes les instructions `import` existantes, puis enregistrez le fichier.
-
-    ```typescript
-    import 'core-js/client/shim';
-    ```
-
-6. Dans **src/polyfills.ts**, supprimez les commentaires des lignes suivantes, puis enregistrez le fichier.
-
-    ```typescript
-    import 'core-js/es6/symbol';
-    import 'core-js/es6/object';
-    import 'core-js/es6/function';
-    import 'core-js/es6/parse-int';
-    import 'core-js/es6/parse-float';
-    import 'core-js/es6/number';
-    import 'core-js/es6/math';
-    import 'core-js/es6/string';
-    import 'core-js/es6/date';
-    import 'core-js/es6/array';
-    import 'core-js/es6/regexp';
-    import 'core-js/es6/map';
-    import 'core-js/es6/weak-map';
-    import 'core-js/es6/set';
-    ```
-
-7. Ouvrez **src/app/app.component.html**, remplacez le contenu du fichier par le code HTML suivant, puis enregistrez le fichier. 
-
-    ```html
-    <div id="content-header">
-        <div class="padding">
-            <h1>Welcome</h1>
-        </div>
-    </div>
-    <div id="content-main">
-        <div class="padding">
-            <p>Choose the button below to set the color of the selected range to green.</p>
-            <br />
-            <h3>Try it out</h3>
-            <button (click)="onSetColor()">Set color</button>
-        </div>
-    </div>
-    ```
-
-8. Ouvrez **src/app/app.component.css**, remplacez le contenu du fichier par le code CSS suivant, puis enregistrez le fichier.
+1. Dans votre éditeur de code, ouvrez le fichier **src/app.css**, ajoutez les styles suivants à la fin du fichier et enregistrez le fichier.
 
     ```css
     #content-header {
@@ -165,6 +49,8 @@ Pour ce démarrage rapide, vous pouvez utiliser les certificats fournis par le *
         width: 100%;
         height: 80px; 
         overflow: hidden;
+        font-family: Arial;
+        padding-top: 25px;
     }
 
     #content-main {
@@ -175,50 +61,101 @@ Pour ce démarrage rapide, vous pouvez utiliser les certificats fournis par le *
         right: 0;
         bottom: 0;
         overflow: auto; 
+        font-family: Arial;
     }
 
     .padding {
         padding: 15px;
     }
+
+    .padding-sm {
+        padding: 4px;
+    }
+
+    .normal-button {
+        width: 80px;
+        padding: 2px;
+    }
     ```
 
-9. Ouvrez **src/app/app.component.ts**, remplacez le contenu du fichier par le code suivant, puis enregistrez le fichier. 
+2. Ouvrez le fichier **src/app/app.component.html**, remplacez la totalité du contenu par le code suivant et enregistrez le fichier.
+
+    ```html
+    <div id="content-header">
+        <div class="padding">
+            <h1>{{welcomeMessage}}</h1>
+        </div>
+    </div>
+    <div id="content-main">
+        <div class="padding">
+            <p>Choose the button below to set the color of the selected range to green.</p>
+            <br />
+            <h3>Try it out</h3>
+            <br />
+            <div role="button" class="ms-Button" (click)="setColor()">
+                <span class="ms-Button-label">Set color</span>
+                <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--ChevronRight"></i></span>
+            </div>
+        </div>
+    </div>
+    ```
+
+3. Ouvrez **src/app/app.component.ts**, remplacez la totalité du contenu par le code suivant, puis enregistrez le fichier.
 
     ```typescript
     import { Component } from '@angular/core';
+    import * as OfficeHelpers from '@microsoft/office-js-helpers';
 
-    declare const Excel: any;
+    const template = require('./app.component.html');
 
     @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
+        selector: 'app-home',
+        template
     })
-    export class AppComponent {
-    onSetColor() {
-        Excel.run(async (context) => {
-        const range = context.workbook.getSelectedRange();
-        range.format.fill.color = 'green';
-        await context.sync();
-        });
+    export default class AppComponent {
+        welcomeMessage = 'Welcome';
+
+        async setColor() {
+            try {
+                await Excel.run(async context => {
+                    const range = context.workbook.getSelectedRange();
+                    range.load('address');
+                    range.format.fill.color = 'green';
+                    await context.sync();
+                    console.log(`The range address was ${range.address}.`);
+                });
+            } catch (error) {
+                OfficeHelpers.UI.notify(error);
+                OfficeHelpers.Utilities.log(error);
+            }
+        }
+
     }
-    }
+    ```
+
+## <a name="update-the-manifest"></a>Mise à jour du manifeste
+
+1. Ouvrez le fichier nommé **one-note-add-in-manifest.xml** pour définir les paramètres et les fonctionnalités du complément. 
+
+2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-la par votre nom.
+
+3. L’attribut `DefaultValue`  de l’élément `Description`  possède un espace réservé. Remplacez-le par **un complément volet Office pour Excel**.
+
+4. Enregistrez le fichier.
+
+    ```xml
+    ...
+    <ProviderName>John Doe</ProviderName>
+    <DefaultLocale>en-US</DefaultLocale>
+    <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
+    <DisplayName DefaultValue="My Office Add-in" />
+    <Description DefaultValue="A task pane add-in for Excel"/>
+    ...
     ```
 
 ## <a name="start-the-dev-server"></a>Démarrage du serveur de développement
 
-1. À partir du terminal, exécutez la commande suivante pour démarrer le serveur dev.
-
-    ```bash
-    npm run start
-    ```
-
-2. Dans un navigateur Web, accédez à `https://localhost:3000`. Si votre navigateur indique que le certificat du site n’est pas approuvé, vous devrez ajouter le certificat en tant que certificat approuvé. Consultez la rubrique relative à l’[Ajout de certificats auto-signés en tant que certificats racine approuvés](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) pour obtenir plus de détails.
-
-    > [!NOTE]
-    > Chrome (navigateur Web) peut continuer à indiquer que le certificat du site n’est pas approuvé, même une fois que vous avez terminé la procédure décrite dans l’[Ajout de certificats auto-signés en tant que certificats racine approuvés](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md). Vous pouvez ignorer cet avertissement dans Chrome et pouvez vérifier que le certificat est approuvé en accédant à `https://localhost:3000` dans Internet Explorer ou Microsoft Edge. 
-
-3. Une fois que votre navigateur a chargé la page du complément sans erreurs de certificat, vous pouvez tester votre complément. 
+[!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
 ## <a name="try-it-out"></a>Essayez !
 
@@ -231,7 +168,7 @@ Pour ce démarrage rapide, vous pouvez utiliser les certificats fournis par le *
    
 2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
-    ![Bouton de Complément Excel](../images/excel-quickstart-addin-2a.png)
+    ![Bouton de Complément Excel](../images/excel-quickstart-addin-2b.png)
 
 3. Sélectionnez une plage de cellules dans la feuille de calcul.
 
