@@ -208,7 +208,7 @@ Cet article décrit le processus de création d’un complément Word à l’aid
     ...
     ```
 
-### <a name="try-it-out"></a>Essayez-le
+### <a name="try-it-out"></a>Essayez !
 
 1. À l’aide de Visual Studio, testez le nouveau complément en appuyant sur F5 ou en choisissant le bouton **Démarrer** pour lancer Word avec le bouton du complément **Afficher le volet Office** qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
 
@@ -234,19 +234,7 @@ Cet article décrit le processus de création d’un complément Word à l’aid
 
 ### <a name="create-the-add-in-project"></a>Création du projet de complément
 
-1. Créez un dossier sur votre lecteur local et nommez-le `my-word-addin`. Il s’agit de l’endroit où vous allez créer les fichiers de votre application.
-
-    ```bash
-    mkdir my-word-addin
-    ```
-
-2. Accédez à votre nouveau dossier.
-
-    ```bash
-    cd my-word-addin
-    ```
-
-3. Utilisez le générateur Yeoman pour créer un projet de complément Word. Exécutez la commande suivante, puis répondez aux invites de commandes comme suit :
+1. Utilisez le générateur Yeoman pour créer un projet de complément Word. Exécutez la commande suivante, puis répondez aux invites de commandes comme suit :
 
     ```bash
     yo office
@@ -261,7 +249,7 @@ Cet article décrit le processus de création d’un complément Word à l’aid
     
     Une fois que vous avez terminé avec l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
     
-4. Accédez au dossier racine du projet d’application web.
+2. Accédez au dossier racine du projet.
 
     ```bash
     cd "My Office Add-in"
@@ -299,7 +287,7 @@ Cet article décrit le processus de création d’un complément Word à l’aid
     </body>
     ```
 
-2. Ouvrez le fichier **src/index.js** pour spécifier le script pour le complément et remplacez le contenu par le code suivant, puis enregistrez le fichier. Ce script contient le code d’initialisation, ainsi que le code qui modifie le document Word, en insérant du texte dans le document lorsqu’un bouton est sélectionné. 
+2. Ouvrez le fichier **src/index.js** pour spécifier le script du complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier. Ce script contient le code d’initialisation ainsi que le code qui apporte des modifications au document Word en insérant du texte dans le document lorsqu’un bouton est choisi. 
 
     ```js
     'use strict';
@@ -400,7 +388,7 @@ Cet article décrit le processus de création d’un complément Word à l’aid
     })();
     ```
 
-3. Ouvrez le fichier **app.css** à la racine du projet pour spécifier les styles personnalisés pour le complément. Remplacez l’intégralité du contenu par le code suivant et enregistrez le fichier.
+3. Ouvrez le fichier **app.css** dans la racine du projet pour spécifier les styles personnalisés du complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
 
     ```css
     #content-header {
@@ -473,7 +461,7 @@ Cet article décrit le processus de création d’un complément Word à l’aid
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations, vous avez créé un complément Word à l’aide de jQuery ! Découvrez à présent les fonctionnalités des compléments Word et créez un complément plus complexe en continuant le didacticiel sur le complément Word.
+Félicitations, vous avez créé un complément Word à l’aide de jQuery ! Découvrez maintenant les fonctionnalités d’un complément Word et créez-en un plus complexe en suivant le didacticiel sur le complément Word.
 
 > [!div class="nextstepaction"]
 > [Didacticiel sur les compléments Word](../tutorials/word-tutorial.yml)
