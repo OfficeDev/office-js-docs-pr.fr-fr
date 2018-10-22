@@ -1,159 +1,43 @@
-# <a name="build-an-excel-add-in-using-angular"></a><span data-ttu-id="74197-101">Créer un complément Excel à l’aide d’Angular</span><span class="sxs-lookup"><span data-stu-id="74197-101">Build an Excel add-in using Angular</span></span>
+# <a name="build-an-excel-add-in-using-angular"></a><span data-ttu-id="b42c7-101">Créer un complément Excel à l’aide d’Angular</span><span class="sxs-lookup"><span data-stu-id="b42c7-101">Build an Excel add-in using Angular</span></span>
 
-<span data-ttu-id="74197-102">Dans cet article, vous allez découvrir le processus de création d’un complément Excel à l’aide d’Angular et de l’API JavaScript pour Excel.</span><span class="sxs-lookup"><span data-stu-id="74197-102">In this article, you'll walk you through the process of building an Excel add-in using Angular and the Excel JavaScript API.</span></span>
+<span data-ttu-id="b42c7-102">Dans cet article, vous allez découvrir le processus de création d’un complément Excel à l’aide d’Angular et de l’API JavaScript pour Excel.</span><span class="sxs-lookup"><span data-stu-id="b42c7-102">In this article, you'll walk you through the process of building an Excel add-in using Angular and the Excel JavaScript API.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="74197-103">Conditions préalables</span><span class="sxs-lookup"><span data-stu-id="74197-103">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="b42c7-103">Conditions préalables</span><span class="sxs-lookup"><span data-stu-id="b42c7-103">Prerequisites</span></span>
 
-- <span data-ttu-id="74197-104">Assurez-vous que vous avez la [configuration requise pour l’interface de ligne de commande Angular](https://github.com/angular/angular-cli#prerequisites) et installez tous les composants manquants.</span><span class="sxs-lookup"><span data-stu-id="74197-104">Check whether you already have the [Angular CLI prerequisites](https://github.com/angular/angular-cli#prerequisites) and install any prerequistes that you are missing.</span></span>
+- [<span data-ttu-id="b42c7-104">Node.js</span><span class="sxs-lookup"><span data-stu-id="b42c7-104">Node.js</span></span>](https://nodejs.org)
 
-- <span data-ttu-id="74197-105">Installez l’[interface de ligne de commande Angular](https://github.com/angular/angular-cli) globalement.</span><span class="sxs-lookup"><span data-stu-id="74197-105">Install the [Angular CLI](https://github.com/angular/angular-cli) globally.</span></span> 
-
-    ```bash
-    npm install -g @angular/cli
-    ```
-
-- <span data-ttu-id="74197-106">Installez la dernière version de [Yeoman](https://github.com/yeoman/yo) et le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) globalement.</span><span class="sxs-lookup"><span data-stu-id="74197-106">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
+- <span data-ttu-id="b42c7-105">Installez la dernière version de [Yeoman](https://github.com/yeoman/yo) et le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) globalement.</span><span class="sxs-lookup"><span data-stu-id="b42c7-105">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
 
     ```bash
     npm install -g yo generator-office
     ```
 
-## <a name="generate-a-new-angular-app"></a><span data-ttu-id="74197-107">Génération d’une nouvelle application Angular</span><span class="sxs-lookup"><span data-stu-id="74197-107">Generate a new Angular app</span></span>
+## <a name="create-the-web-app"></a><span data-ttu-id="b42c7-106">Création de l’application web</span><span class="sxs-lookup"><span data-stu-id="b42c7-106">Create the web app</span></span>
 
-<span data-ttu-id="74197-p101">Utilisez l’interface de ligne de commande Angular pour générer votre application Angular. À partir du terminal, exécutez la commande suivante :</span><span class="sxs-lookup"><span data-stu-id="74197-p101">Use the Angular CLI to generate your Angular app. From the terminal, run the following command:</span></span>
-
-```bash
-ng new my-addin
-```
-
-## <a name="generate-the-manifest-file"></a><span data-ttu-id="74197-110">Génération du fichier manifeste</span><span class="sxs-lookup"><span data-stu-id="74197-110">Generate the manifest file</span></span>
-
-<span data-ttu-id="74197-111">Le fichier manifeste d’un complément définit ses paramètres et ses fonctionnalités.</span><span class="sxs-lookup"><span data-stu-id="74197-111">An add-in's manifest file defines its settings and capabilities.</span></span>
-
-1. <span data-ttu-id="74197-112">Accédez au dossier de votre application.</span><span class="sxs-lookup"><span data-stu-id="74197-112">Navigate to your app folder.</span></span>
+1. <span data-ttu-id="b42c7-107">Utilisez le générateur Yeoman afin de créer un projet de complément Excel.</span><span class="sxs-lookup"><span data-stu-id="b42c7-107">Use the Yeoman generator to create an Outlook add-in project.</span></span> <span data-ttu-id="b42c7-108">Exécutez la commande suivante, puis répondez aux invites comme suit :</span><span class="sxs-lookup"><span data-stu-id="b42c7-108">Run the following command and then answer the prompts as follows:</span></span>
 
     ```bash
-    cd my-addin
+    yo office
     ```
 
-2. <span data-ttu-id="74197-p102">Utilisez le générateur Yeoman pour générer le fichier manifeste de votre complément. Exécutez la commande suivante, puis répondez aux invites comme indiqué ci-dessous.</span><span class="sxs-lookup"><span data-stu-id="74197-p102">Use the Yeoman generator to generate the manifest file for your add-in. Run the following command and then answer the prompts as shown below.</span></span>
+    - <span data-ttu-id="b42c7-109">**Choisissez un type de projet :** `Office Add-in project using Angular framework`</span><span class="sxs-lookup"><span data-stu-id="b42c7-109">**Choose a project type:** `Office Add-in project using Angular framework`</span></span>
+    - <span data-ttu-id="b42c7-110">**Choisissez un type de script :** `Typescript`</span><span class="sxs-lookup"><span data-stu-id="b42c7-110">**Choose a script type:** `Typescript`</span></span>
+    - <span data-ttu-id="b42c7-111">**Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="b42c7-111">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
+    - <span data-ttu-id="b42c7-112">**Quelle application client Office voulez-vous prendre en charge ? :** `Excel`</span><span class="sxs-lookup"><span data-stu-id="b42c7-112">**Which Office client application would you like to support?:** `Excel`</span></span>
+
+    ![Générateur Yeoman](../images/yo-office-excel-angular.png)
+    
+    <span data-ttu-id="b42c7-114">Une fois que vous avez terminé avec l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.</span><span class="sxs-lookup"><span data-stu-id="b42c7-114">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
+
+2. <span data-ttu-id="b42c7-115">Accédez au dossier racine du projet.</span><span class="sxs-lookup"><span data-stu-id="b42c7-115">Navigate to the root folder of the web application project.</span></span>
 
     ```bash
-    yo office 
+    cd "My Office Add-in"
     ```
 
-    - <span data-ttu-id="74197-115">**Choisissez un type de projet :** `Office Add-in containing the manifest only`</span><span class="sxs-lookup"><span data-stu-id="74197-115">**Choose a project type:** `Office Add-in containing the manifest only`</span></span>
-    - <span data-ttu-id="74197-116">**Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="74197-116">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
-    - <span data-ttu-id="74197-117">**Quelle application client Office voulez-vous prendre en charge ?** `Excel`</span><span class="sxs-lookup"><span data-stu-id="74197-117">**Which Office client application would you like to support?:** `Excel`</span></span>
+## <a name="update-the-code"></a><span data-ttu-id="b42c7-116">Mise à jour du code</span><span class="sxs-lookup"><span data-stu-id="b42c7-116">Update the code</span></span>
 
-    <span data-ttu-id="74197-118">Après avoir terminé l'assistant, un fichier manifeste et un fichier de ressources sont disponibles pour vous permettre de générer votre projet.</span><span class="sxs-lookup"><span data-stu-id="74197-118">After you complete the wizard, a manifest file and resource file are available for you to build your project.</span></span>
-
-    ![Générateur Yeoman](../images/yo-office.png)
-    
-    > [!NOTE]
-    > <span data-ttu-id="74197-120">Si vous êtes invité à remplacer **package.json**, répondez **Non** (ne pas remplacer).</span><span class="sxs-lookup"><span data-stu-id="74197-120">If you're prompted to overwrite **package.json**, answer **No** (do not overwrite).</span></span>
-
-## <a name="secure-the-app"></a><span data-ttu-id="74197-121">Sécurisation de l’application</span><span class="sxs-lookup"><span data-stu-id="74197-121">Secure the app</span></span>
-
-[!include[HTTPS guidance](../includes/https-guidance.md)]
-
-<span data-ttu-id="74197-p103">Pour ce démarrage rapide, vous pouvez utiliser les certificats fournis par le **générateur Yeoman pour les compléments Office**. Vous avez déjà installé le générateur globalement (dans le cadre de la **Configuration requise** pour ce guide de démarrage rapide), il vous faudra donc uniquement copier les certificats à partir de l’emplacement d’installation dans le dossier de l’application. Les étapes suivantes expliquent comment effectuer cette procédure.</span><span class="sxs-lookup"><span data-stu-id="74197-p103">For this quick start, you can use the certificates that the **Yeoman generator for Office Add-ins** provides. You've already installed the generator globally (as part of the **Prerequisites** for this quick start), so you'll just need to copy the certificates from the global install location into your app folder. The following steps describe how to complete this process.</span></span>
-
-1. <span data-ttu-id="74197-125">À partir du terminal, exécutez la commande suivante pour identifier le dossier où les bibliothèques **npm** globales sont installées :</span><span class="sxs-lookup"><span data-stu-id="74197-125">From the terminal, run the following command to identify the folder where global **npm** libraries are installed:</span></span>
-
-    ```bash 
-    npm list -g 
-    ``` 
-    
-    > [!TIP]    
-    > <span data-ttu-id="74197-126">La première ligne de la sortie générée par cette commande spécifie le dossier où les bibliothèques **npm** globales sont installées.</span><span class="sxs-lookup"><span data-stu-id="74197-126">The first line of output that's generated by this command specifies the folder where global **npm** libraries are installed.</span></span>          
-    
-2. <span data-ttu-id="74197-p104">À l’aide de l’Explorateur de fichiers, accédez au dossier `{global libraries folder}/node_modules/generator-office/generators/app/templates/js/base`. À partir de cet emplacement, copiez le dossier `certs` dans le presse-papiers.</span><span class="sxs-lookup"><span data-stu-id="74197-p104">Using File Explorer, navigate to the `{global libraries folder}/node_modules/generator-office/generators/app/templates/js/base` folder. From that location, copy the `certs` folder to your clipboard.</span></span>
-
-3. <span data-ttu-id="74197-129">Accédez au dossier racine de l’application Angular que vous avez créée à l’étape 1 de la section précédente et collez le dossier `certs` (qui se trouve dans votre presse-papiers) dans ce dossier.</span><span class="sxs-lookup"><span data-stu-id="74197-129">Navigate to the root folder of the Angular app that you created in step 1 of the previous section, and paste the `certs` folder from your clipboard into that folder.</span></span>
-
-## <a name="update-the-app"></a><span data-ttu-id="74197-130">Mise à jour de l’application</span><span class="sxs-lookup"><span data-stu-id="74197-130">Update the app</span></span>
-
-1. <span data-ttu-id="74197-p105">Dans votre éditeur de code, ouvrez **package.json** dans la racine du projet. Modifiez le script `start` pour spécifier que le serveur doit s’exécuter en utilisant SSL et le port 3000 puis enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="74197-p105">In your code editor, open **package.json** in the root of the project. Modify the `start` script to specify that the server should run using SSL and port 3000, and save the file.</span></span>
-
-    ```json
-    "start": "ng serve --ssl true --port 3000"
-    ```
-
-2. <span data-ttu-id="74197-p106">Ouvrez **.angular-cli.json** à la racine du projet. Modifiez l’objet **defaults** pour spécifier l’emplacement des fichiers de certificat et enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="74197-p106">Open **.angular-cli.json** in the root of the project. Modify the **defaults** object to specify the location of the certificate files, and save the file.</span></span>
-
-    ```json
-    "defaults": {
-      "styleExt": "css",
-      "component": {},
-      "serve": {
-        "sslKey": "certs/server.key",
-        "sslCert": "certs/server.crt"
-      }
-    }
-    ```
-
-3. <span data-ttu-id="74197-135">Ouvrez **src/index.html**, ajoutez la balise `<script>` suivante immédiatement avant la balise `</head>`, puis enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="74197-135">Open **src/index.html**, add the following `<script>` tag immediately before the `</head>` tag, and save the file.</span></span>
-
-    ```html
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
-    ```
-
-4. <span data-ttu-id="74197-136">Ouvrez **src/main.ts**, remplacez `platformBrowserDynamic().bootstrapModule(AppModule).catch(err => console.log(err));` par le code suivant, puis enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="74197-136">Open **src/main.ts**, replace `platformBrowserDynamic().bootstrapModule(AppModule).catch(err => console.log(err));` with the following code, and save the file.</span></span> 
-
-    ```typescript 
-    declare const Office: any;
-
-    Office.initialize = () => {
-    platformBrowserDynamic().bootstrapModule(AppModule)
-        .catch(err => console.log(err));
-    };
-    ```
-
-5. <span data-ttu-id="74197-137">Ouvrez **src/polyfills.ts**, ajoutez la ligne de code suivante au-dessus de toutes les instructions `import` existantes, puis enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="74197-137">Open **src/polyfills.ts**, add the following line of code above all other existing `import` statements, and save the file.</span></span>
-
-    ```typescript
-    import 'core-js/client/shim';
-    ```
-
-6. <span data-ttu-id="74197-138">Dans **src/polyfills.ts**, supprimez les commentaires des lignes suivantes, puis enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="74197-138">In **src/polyfills.ts**, uncomment the following lines, and save the file.</span></span>
-
-    ```typescript
-    import 'core-js/es6/symbol';
-    import 'core-js/es6/object';
-    import 'core-js/es6/function';
-    import 'core-js/es6/parse-int';
-    import 'core-js/es6/parse-float';
-    import 'core-js/es6/number';
-    import 'core-js/es6/math';
-    import 'core-js/es6/string';
-    import 'core-js/es6/date';
-    import 'core-js/es6/array';
-    import 'core-js/es6/regexp';
-    import 'core-js/es6/map';
-    import 'core-js/es6/weak-map';
-    import 'core-js/es6/set';
-    ```
-
-7. <span data-ttu-id="74197-139">Ouvrez **src/app/app.component.html**, remplacez le contenu du fichier par le code HTML suivant, puis enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="74197-139">Open **src/app/app.component.html**, replace file contents with the following HTML, and save the file.</span></span> 
-
-    ```html
-    <div id="content-header">
-        <div class="padding">
-            <h1>Welcome</h1>
-        </div>
-    </div>
-    <div id="content-main">
-        <div class="padding">
-            <p>Choose the button below to set the color of the selected range to green.</p>
-            <br />
-            <h3>Try it out</h3>
-            <button (click)="onSetColor()">Set color</button>
-        </div>
-    </div>
-    ```
-
-8. <span data-ttu-id="74197-140">Ouvrez **src/app/app.component.css**, remplacez le contenu du fichier par le code CSS suivant, puis enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="74197-140">Open **src/app/app.component.css**, replace file contents with the following CSS code, and save the file.</span></span>
+1. <span data-ttu-id="b42c7-117">Dans votre éditeur de code, ouvrez le fichier **src/app.css**, ajoutez les styles suivants à la fin du fichier et enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="b42c7-117">In your code editor, open the file **app.css**, add the following styles to the end of the file, and save the file.</span></span>
 
     ```css
     #content-header {
@@ -165,6 +49,8 @@ ng new my-addin
         width: 100%;
         height: 80px; 
         overflow: hidden;
+        font-family: Arial;
+        padding-top: 25px;
     }
 
     #content-main {
@@ -175,80 +61,131 @@ ng new my-addin
         right: 0;
         bottom: 0;
         overflow: auto; 
+        font-family: Arial;
     }
 
     .padding {
         padding: 15px;
     }
+
+    .padding-sm {
+        padding: 4px;
+    }
+
+    .normal-button {
+        width: 80px;
+        padding: 2px;
+    }
     ```
 
-9. <span data-ttu-id="74197-141">Ouvrez **src/app/app.component.ts**, remplacez le contenu du fichier par le code suivant, puis enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="74197-141">Open **src/app/app.component.ts**, replace file contents with the following code, and save the file.</span></span> 
+2. <span data-ttu-id="b42c7-118">Ouvrez le fichier **src/app/app.component.html**, remplacez la totalité du contenu par le code suivant et enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="b42c7-118">Open **src/app/app.component.html**, replace file contents with the following HTML, and save the file.</span></span>
+
+    ```html
+    <div id="content-header">
+        <div class="padding">
+            <h1>{{welcomeMessage}}</h1>
+        </div>
+    </div>
+    <div id="content-main">
+        <div class="padding">
+            <p>Choose the button below to set the color of the selected range to green.</p>
+            <br />
+            <h3>Try it out</h3>
+            <br />
+            <div role="button" class="ms-Button" (click)="setColor()">
+                <span class="ms-Button-label">Set color</span>
+                <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--ChevronRight"></i></span>
+            </div>
+        </div>
+    </div>
+    ```
+
+3. <span data-ttu-id="b42c7-119">Ouvrez **src/app/app.component.ts**, remplacez la totalité du contenu par le code suivant, puis enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="b42c7-119">Open **src/app/app.component.ts**, replace file contents with the following code, and save the file.</span></span>
 
     ```typescript
     import { Component } from '@angular/core';
+    import * as OfficeHelpers from '@microsoft/office-js-helpers';
 
-    declare const Excel: any;
+    const template = require('./app.component.html');
 
     @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
+        selector: 'app-home',
+        template
     })
-    export class AppComponent {
-    onSetColor() {
-        Excel.run(async (context) => {
-        const range = context.workbook.getSelectedRange();
-        range.format.fill.color = 'green';
-        await context.sync();
-        });
-    }
+    export default class AppComponent {
+        welcomeMessage = 'Welcome';
+
+        async setColor() {
+            try {
+                await Excel.run(async context => {
+                    const range = context.workbook.getSelectedRange();
+                    range.load('address');
+                    range.format.fill.color = 'green';
+                    await context.sync();
+                    console.log(`The range address was ${range.address}.`);
+                });
+            } catch (error) {
+                OfficeHelpers.UI.notify(error);
+                OfficeHelpers.Utilities.log(error);
+            }
+        }
+
     }
     ```
 
-## <a name="start-the-dev-server"></a><span data-ttu-id="74197-142">Démarrage du serveur de développement</span><span class="sxs-lookup"><span data-stu-id="74197-142">Start the dev server</span></span>
+## <a name="update-the-manifest"></a><span data-ttu-id="b42c7-120">Mise à jour du manifeste</span><span class="sxs-lookup"><span data-stu-id="b42c7-120">Update the manifest</span></span>
 
-1. <span data-ttu-id="74197-143">À partir du terminal, exécutez la commande suivante pour démarrer le serveur dev.</span><span class="sxs-lookup"><span data-stu-id="74197-143">From the terminal, run the following command to start the dev server.</span></span>
+1. <span data-ttu-id="b42c7-121">Ouvrez le fichier nommé **one-note-add-in-manifest.xml** pour définir les paramètres et les fonctionnalités du complément.</span><span class="sxs-lookup"><span data-stu-id="b42c7-121">Open the file **my-office-add-in-manifest.xml** to define the add-in's settings and capabilities.</span></span> 
 
-    ```bash
-    npm run start
+2. <span data-ttu-id="b42c7-p102">L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-la par votre nom.</span><span class="sxs-lookup"><span data-stu-id="b42c7-p102">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
+
+3. <span data-ttu-id="b42c7-p103">L’attribut `DefaultValue`  de l’élément `Description`  possède un espace réservé. Remplacez-le par **un complément volet Office pour Excel**.</span><span class="sxs-lookup"><span data-stu-id="b42c7-p103">The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Excel**.</span></span>
+
+4. <span data-ttu-id="b42c7-126">Enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="b42c7-126">Save the file.</span></span>
+
+    ```xml
+    ...
+    <ProviderName>John Doe</ProviderName>
+    <DefaultLocale>en-US</DefaultLocale>
+    <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
+    <DisplayName DefaultValue="My Office Add-in" />
+    <Description DefaultValue="A task pane add-in for Excel"/>
+    ...
     ```
 
-2. <span data-ttu-id="74197-p107">Dans un navigateur Web, accédez à `https://localhost:3000`. Si votre navigateur indique que le certificat du site n’est pas approuvé, vous devrez ajouter le certificat en tant que certificat approuvé. Consultez la rubrique relative à l’[Ajout de certificats auto-signés en tant que certificats racine approuvés](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) pour obtenir plus de détails.</span><span class="sxs-lookup"><span data-stu-id="74197-p107">In a web browser, navigate to `https://localhost:3000`. If your browser indicates that the site's certificate is not trusted, you will need to add the certificate as a trusted certificate. See [Adding Self-Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) for details.</span></span>
+## <a name="start-the-dev-server"></a><span data-ttu-id="b42c7-127">Démarrage du serveur de développement</span><span class="sxs-lookup"><span data-stu-id="b42c7-127">Start the dev server</span></span>
 
-    > [!NOTE]
-    > <span data-ttu-id="74197-p108">Chrome (navigateur Web) peut continuer à indiquer que le certificat du site n’est pas approuvé, même une fois que vous avez terminé la procédure décrite dans l’[Ajout de certificats auto-signés en tant que certificats racine approuvés](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md). Vous pouvez ignorer cet avertissement dans Chrome et pouvez vérifier que le certificat est approuvé en accédant à `https://localhost:3000` dans Internet Explorer ou Microsoft Edge.</span><span class="sxs-lookup"><span data-stu-id="74197-p108">Chrome (web browser) may continue to indicate the the site's certificate is not trusted, even after you have completed the process described in [Adding Self-Signed Certificates as Trusted Root Certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md). You can disregard this warning in Chrome and can verify that the certificate is trusted by navigating to `https://localhost:3000` in either Internet Explorer or Microsoft Edge.</span></span> 
+[!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
-3. <span data-ttu-id="74197-149">Une fois que votre navigateur a chargé la page du complément sans erreurs de certificat, vous pouvez tester votre complément.</span><span class="sxs-lookup"><span data-stu-id="74197-149">After your browser loads the add-in page without any certificate errors, you're ready test your add-in.</span></span> 
+## <a name="try-it-out"></a><span data-ttu-id="b42c7-128">Essayez !</span><span class="sxs-lookup"><span data-stu-id="b42c7-128">Try it out</span></span>
 
-## <a name="try-it-out"></a><span data-ttu-id="74197-150">Essayez !</span><span class="sxs-lookup"><span data-stu-id="74197-150">Try it out</span></span>
+1. <span data-ttu-id="b42c7-129">Suivez les instructions pour la plateforme que vous utiliserez pour exécuter votre complément et chargez une version test du complément dans Excel.</span><span class="sxs-lookup"><span data-stu-id="b42c7-129">Follow the instructions for the platform you'll be using to run your add-in and sideload the add-in within Excel.</span></span>
 
-1. <span data-ttu-id="74197-151">Suivez les instructions pour la plateforme que vous utiliserez pour exécuter votre complément et chargez une version test du complément dans Excel.</span><span class="sxs-lookup"><span data-stu-id="74197-151">Follow the instructions for the platform you'll be using to run your add-in and sideload the add-in within Excel.</span></span>
-
-    - <span data-ttu-id="74197-152">Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="74197-152">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
-    - <span data-ttu-id="74197-153">Excel Online : [Chargement de versions test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)</span><span class="sxs-lookup"><span data-stu-id="74197-153">Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)</span></span>
-    - <span data-ttu-id="74197-154">iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="74197-154">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
+    - <span data-ttu-id="b42c7-130">Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="b42c7-130">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
+    - <span data-ttu-id="b42c7-131">Excel Online : [Chargement de versions test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)</span><span class="sxs-lookup"><span data-stu-id="b42c7-131">Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)</span></span>
+    - <span data-ttu-id="b42c7-132">iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="b42c7-132">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
 
    
-2. <span data-ttu-id="74197-155">Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.</span><span class="sxs-lookup"><span data-stu-id="74197-155">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="b42c7-133">Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.</span><span class="sxs-lookup"><span data-stu-id="b42c7-133">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
-    ![Bouton de Complément Excel](../images/excel-quickstart-addin-2a.png)
+    ![Bouton de Complément Excel](../images/excel-quickstart-addin-2b.png)
 
-3. <span data-ttu-id="74197-157">Sélectionnez une plage de cellules dans la feuille de calcul.</span><span class="sxs-lookup"><span data-stu-id="74197-157">Select any range of cells in the worksheet.</span></span>
+3. <span data-ttu-id="b42c7-135">Sélectionnez une plage de cellules dans la feuille de calcul.</span><span class="sxs-lookup"><span data-stu-id="b42c7-135">Select any range of cells in the worksheet.</span></span>
 
-4. <span data-ttu-id="74197-158">Dans le volet Office, cliquez sur le bouton **Définir couleur** pour définir la couleur de la plage sélectionnée en vert.</span><span class="sxs-lookup"><span data-stu-id="74197-158">In the task pane, choose the **Set color** button to set the color of the selected range to green.</span></span>
+4. <span data-ttu-id="b42c7-136">Dans le volet Office, cliquez sur le bouton **Définir couleur** pour définir la couleur de la plage sélectionnée en vert.</span><span class="sxs-lookup"><span data-stu-id="b42c7-136">In the task pane, choose the **Set color** button to set the color of the selected range to green.</span></span>
 
     ![Complément Excel](../images/excel-quickstart-addin-2c.png)
 
-## <a name="next-steps"></a><span data-ttu-id="74197-160">Étapes suivantes</span><span class="sxs-lookup"><span data-stu-id="74197-160">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="b42c7-138">Étapes suivantes</span><span class="sxs-lookup"><span data-stu-id="b42c7-138">Next steps</span></span>
 
-<span data-ttu-id="74197-p109">Félicitations, vous avez créé un complément Excel à l’aide d’Angular ! Découvrez à présent les fonctionnalités des compléments Excel et créez un complément plus complexe en continuant le didacticiel sur le complément Excel.</span><span class="sxs-lookup"><span data-stu-id="74197-p109">Congratulations, you've successfully created an Excel add-in using Angular! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.</span></span>
+<span data-ttu-id="b42c7-p104">Félicitations, vous avez créé un complément Excel à l’aide d’Angular ! Découvrez à présent les fonctionnalités des compléments Excel et créez un complément plus complexe en continuant le didacticiel sur le complément Excel.</span><span class="sxs-lookup"><span data-stu-id="b42c7-p104">Congratulations, you've successfully created an Excel add-in using Angular! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="74197-163">Didacticiel sur les compléments Excel</span><span class="sxs-lookup"><span data-stu-id="74197-163">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial.yml)
+> [<span data-ttu-id="b42c7-141">Didacticiel sur les compléments Excel</span><span class="sxs-lookup"><span data-stu-id="b42c7-141">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial.yml)
 
-## <a name="see-also"></a><span data-ttu-id="74197-164">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="74197-164">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b42c7-142">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b42c7-142">See also</span></span>
 
-* [<span data-ttu-id="74197-165">Didacticiel sur les compléments Excel</span><span class="sxs-lookup"><span data-stu-id="74197-165">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial-create-table.md)
-* [<span data-ttu-id="74197-166">Concepts fondamentaux de programmation avec l’API JavaScript pour Excel</span><span class="sxs-lookup"><span data-stu-id="74197-166">Fundamental programming concepts with the Excel JavaScript API</span></span>](../excel/excel-add-ins-core-concepts.md)
-* [<span data-ttu-id="74197-167">Exemples de code pour les compléments Excel</span><span class="sxs-lookup"><span data-stu-id="74197-167">Excel add-in code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [<span data-ttu-id="74197-168">Référence de l’API JavaScript pour Excel</span><span class="sxs-lookup"><span data-stu-id="74197-168">Excel JavaScript API reference</span></span>](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)
+* [<span data-ttu-id="b42c7-143">Didacticiel sur les compléments Excel</span><span class="sxs-lookup"><span data-stu-id="b42c7-143">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial-create-table.md)
+* [<span data-ttu-id="b42c7-144">Concepts fondamentaux de programmation avec l’API JavaScript pour Excel</span><span class="sxs-lookup"><span data-stu-id="b42c7-144">Fundamental programming concepts with the Excel JavaScript API</span></span>](../excel/excel-add-ins-core-concepts.md)
+* [<span data-ttu-id="b42c7-145">Exemples de code pour les compléments Excel</span><span class="sxs-lookup"><span data-stu-id="b42c7-145">Excel add-in code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [<span data-ttu-id="b42c7-146">Référence de l’API JavaScript pour Excel</span><span class="sxs-lookup"><span data-stu-id="b42c7-146">Excel JavaScript API reference</span></span>](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)
