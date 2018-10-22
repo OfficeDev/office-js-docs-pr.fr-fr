@@ -14,19 +14,7 @@ Cet article décrit le processus de création d’un complément OneNote à l’
 
 ## <a name="create-the-add-in-project"></a>Création du projet de complément
 
-1. Créez un dossier sur votre lecteur local et nommez-le `my-onenote-addin`. Il s’agit de l’endroit où vous allez créer les fichiers de votre application.
-
-    ```bash
-    mkdir my-onenote-addin
-    ```
-
-2. Accédez à votre nouveau dossier.
-
-    ```bash
-    cd my-onenote-addin
-    ```
-
-3. Utilisez le générateur Yeoman pour créer un projet de complément de OneNote. Exécutez la commande suivante, puis répondez aux invites de commandes comme suit :
+1. Utilisez le générateur Yeoman pour créer un projet de complément de OneNote. Exécutez la commande suivante, puis répondez aux invites de commandes comme suit :
 
     ```bash
     yo office
@@ -41,7 +29,7 @@ Cet article décrit le processus de création d’un complément OneNote à l’
     
     Une fois que vous avez terminé avec l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
     
-4. Accédez au dossier racine du projet d’application web.
+2. Accédez au dossier racine du projet.
 
     ```bash
     cd "My Office Add-in"
@@ -73,7 +61,7 @@ Cet article décrit le processus de création d’un complément OneNote à l’
     </body>
     ```
 
-3. Ouvrez le fichier **src\index.js** pour spécifier le script du complément. Remplacez l’intégralité du contenu par le code suivant et enregistrez le fichier.
+3. Ouvrez le fichier **src\index.js** pour spécifier le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
 
     ```js
     import * as OfficeHelpers from "@microsoft/office-js-helpers";

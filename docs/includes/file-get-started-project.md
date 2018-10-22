@@ -14,19 +14,7 @@ Cet article décrit le processus de création d’un complément Project à l’
 
 ## <a name="create-the-add-in"></a>Créer le complément
 
-1. Créez un dossier sur votre lecteur local et nommez-le `my-project-addin`. Il s’agit de l’endroit où vous allez créer les fichiers de votre application.
-
-    ```bash
-    mkdir my-project-addin
-    ```
-
-2. Accédez à votre nouveau dossier.
-
-    ```bash
-    cd my-project-addin
-    ```
-
-3. Utilisez le générateur Yeoman pour créer un projet de complément Project. Exécutez la commande suivante, puis répondez aux invites de commandes comme suit :
+1. Utilisez le générateur Yeoman pour créer un projet de complément Project. Exécutez la commande suivante, puis répondez aux invites de commandes comme suit :
 
     ```bash
     yo office
@@ -41,7 +29,7 @@ Cet article décrit le processus de création d’un complément Project à l’
     
     Une fois que vous avez terminé avec l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
     
-4. Accédez au dossier racine du projet d’application web.
+2. Accédez au dossier racine du projet.
 
     ```bash
     cd "My Office Add-in"
@@ -51,7 +39,7 @@ Cet article décrit le processus de création d’un complément Project à l’
 
 1. Dans votre éditeur de code, ouvrez le fichier **index.html** à la racine du projet. Ce fichier contient le code HTML qui sera affiché dans le volet de tâches du complément.
 
-2. Remplacez l’élément `<body>` par le codage suivant :
+2. Remplacez l'élément`<body>` par le codage suivant :
 
     ```html
     <body class="ms-font-m ms-welcome">
@@ -77,7 +65,7 @@ Cet article décrit le processus de création d’un complément Project à l’
     </body>
     ```
 
-3. Ouvrez le fichier **src/index.js** pour spécifier le script pour le complément. Remplacez le contenu entier par le code suivant et enregistrez le fichier.
+3. Ouvrez le fichier **src/index.js** pour spécifier le script du complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
 
     ```js
     'use strict';
@@ -130,7 +118,7 @@ Cet article décrit le processus de création d’un complément Project à l’
     })();
     ```
 
-4. Ouvrez le fichier **app.css** à la racine du projet pour spécifier les styles personnalisés pour le complément. Remplacez l’intégralité du contenu par le code suivant et enregistrez le fichier.
+4. Ouvrez le fichier **app.css** à la racine du projet pour spécifier les styles personnalisés du complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
 
     ```css
     #content-header {
@@ -207,7 +195,7 @@ Cet article décrit le processus de création d’un complément Project à l’
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations, vous avez créé un complément Project ! Maintenant, découvrez les fonctionnalités d’un complément Project et explorez des scénarios courants.
+Félicitations, vous avez créé un complément Project ! Maintenant, découvrez les fonctionnalités d’un complément Project et explorez des scénarios courants.
 
 > [!div class="nextstepaction"]
 > [Compléments Project](../project/project-add-ins.md)

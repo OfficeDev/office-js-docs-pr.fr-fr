@@ -115,7 +115,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 
 3. L’attribut `DefaultValue` de l’élément `DisplayName` possède un espace réservé. Remplacez-le par **Mon complément Office**.
 
-4. L’attribut `DefaultValue`  de l’élément `Description`  possède un espace réservé. Remplacez-le par **un complément volet Office pour Excel**.
+4. L’`DefaultValue`attribut  de l`Description`’élément  possède un espace réservé. Remplacez-le par** un complément volet Office pour Excel.**
 
 5. Enregistrez le fichier.
 
@@ -156,19 +156,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 
 ### <a name="create-the-web-app"></a>Création de l’application web
 
-1. Créez un dossier sur votre lecteur local et nommez-le **my-addin**. Il s’agit de l’endroit où vous allez créer les fichiers de votre application.
-
-    ```bash
-    mkdir my-addin
-    ```
-
-2. Accédez au dossier de votre application.
-
-    ```bash
-    cd my-addin
-    ```
-
-3. Utilisez le générateur Yeoman pour générer le fichier manifeste de votre complément. Exécutez la commande suivante, puis répondez aux invites comme indiqué dans la capture d’écran suivante :
+1. Utilisez le générateur Yeoman afin de créer un projet de complément Excel. Exécutez la commande suivante, puis répondez aux invites comme suit :
 
     ```bash
     yo office
@@ -181,9 +169,9 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 
     ![Générateur Yeoman](../images/yo-office-jquery.png)
     
-    Une fois que vous avez terminé avec l'assistant, le générateur crée le projet et installe les composants Node de prise en charge.
+    Une fois que vous avez terminé avec l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
-4. Accédez au dossier racine du projet d’application web.
+2. Accédez au dossier racine du projet.
 
     ```bash
     cd "My Office Add-in"
