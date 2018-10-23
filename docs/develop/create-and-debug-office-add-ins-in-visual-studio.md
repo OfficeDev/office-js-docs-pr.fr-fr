@@ -2,16 +2,16 @@
 title: Créer et déboguer des compléments Office dans Visual Studio
 description: ''
 ms.date: 10/01/2018
-ms.openlocfilehash: 0bbc1b167924ce4b7a1310f04b41751173312cd6
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.openlocfilehash: 224a4781b894e9bf165d279c30ca16d18bea956d
+ms.sourcegitcommit: c400a220783b03a739449e2d3ff00bbffe5ec7c1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25506125"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "25681839"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Créer et déboguer des compléments Office dans Visual Studio
 
-Cet article explique comment utiliser Visual Studio pour créer votre premier complément Office. Les étapes décrites dans cet article concernent Visual Studio 2015. Si vous utilisez une autre version de Visual Studio, les procédures peuvent légèrement varier.
+Cet article explique comment utiliser Visual Studio pour créer votre premier complément Office. Les étapes décrites dans cet article concernent Visual Studio 2017. Si vous utilisez une autre version de Visual Studio, les procédures peuvent légèrement varier.
 
 > [!NOTE]
 > Si vous débutez avec les compléments pour OneNote, reportez-vous à [Créer votre premier complément OneNote](../onenote/onenote-add-ins-getting-started.md).
@@ -25,7 +25,7 @@ Pour commencer, vérifiez que les [outils de développement Office](https://www.
 2. Dans la liste des types de projets sous **Visual C#** ou **Visual Basic**, développez **Office/SharePoint**, choisissez **Compléments**, puis sélectionnez un des projets de compléments.
 3. Nommez le projet, puis cliquez sur **OK** pour créer le projet.
 
-Dans Visual Studio 2017, les modèles de projet suivants ont des choix supplémentaires une fois que vous cliquez sur **OK** :
+Dans Visual Studio 2017, les modèles de projet suivants ont des choix supplémentaires une fois que vous cliquez sur **OK** :
 
 **PowerPoint**
 - Vous pouvez choisir d’ **Ajouter de nouvelles fonctionnalités dans PowerPoint**, ce qui crée un complément de volet Office.
@@ -34,39 +34,39 @@ Dans Visual Studio 2017, les modèles de projet suivants ont des choix suppléme
 **Excel** 
 - Vous pouvez choisir d’ **Ajouter de nouvelles fonctionnalités dans Excel**, ce qui crée un complément de volet Office.
 - Ou vous pouvez choisir d’ **Insérer du contenu dans la feuille de calcul Excel**, ce qui crée un complément de contenu.
-    - Si vous créez un complément de contenu, vous avez un choix supplémentaire : **Complément de base**, qui crée un projet de complément de contenu avec un code de démarrage minimal.
+    - Si vous créez un complément de contenu, vous avez un choix supplémentaire : **Complément de base**, qui crée un projet de complément de contenu avec un code de démarrage minimal.
     - Ou vous pouvez choisir un **Complément de visualisation de documents** qui inclut le code de démarrage pour visualiser et lier des données.
 
-Après avoir terminé l’assistant, Visual Studio crée une solution qui contient deux projets. Vous verrez s’ouvrir la page Home.html par défaut.
+Après avoir terminé l’assistant, Visual Studio crée une solution qui contient deux projets. Vous verrez ouvrir la page Home.html par défaut.
 
 |**Projet**|**Description**|
 |:-----|:-----|
 |Projet de complément|Contient seulement un fichier de manifeste XML, qui contient tous les paramètres qui décrivent votre complément. Ces paramètres aident l’hôte Office à déterminer quand votre complément doit être activé et où il doit apparaître. Visual Studio génère le contenu de ce fichier pour vous afin que vous puissiez exécuter le projet et utiliser immédiatement votre complément. Vous pouvez modifier ces paramètres à tout moment à l’aide de l’éditeur de manifeste.|
-|Projet d’application Web|Contient les pages de contenu de votre complément, notamment tous les fichiers et références de fichier dont vous avez besoin pour développer des pages HTML et JavaScript compatibles avec Office. Pendant que vous développez votre complément, Visual Studio héberge l’application Web sur votre serveur IIS local. Lorsque vous êtes prêt à publier, vous devrez trouver un serveur pour héberger ce projet. Pour en savoir plus sur les projets d’applications Web ASP.NET, voir [Projets Web ASP.NET](http://msdn.microsoft.com/library/cdcd712f-96b0-4165-8b5d-9d0566650a28%28Office.15%29.aspx).|
+|Projet d’application Web|Contient les pages de contenu de votre complément, notamment tous les fichiers et références de fichiers dont vous avez besoin pour développer des pages HTML et JavaScript compatibles avec Office. Pendant que vous développez votre complément, Visual Studio héberge l’application web sur votre serveur local IIS. Lorsque vous êtes prêt à la publier, vous devez trouver un serveur pour héberger ce projet.Pour en savoir plus sur les projets d’applications web ASP.NET, voir [Projets web ASP.NET](http://msdn.microsoft.com/library/cdcd712f-96b0-4165-8b5d-9d0566650a28%28Office.15%29.aspx).|
 
 ## <a name="modify-your-add-in-settings"></a>Modifier les paramètres de votre complément
 
 
-Pour modifier les paramètres de votre complément, modifiez le fichier manifeste XML du projet. Dans l’**Explorateur de solutions**, développez le nœud de projet du complément et le dossier contenant le manifeste XML, puis sélectionnez le manifeste XML. Vous pouvez pointer sur n’importe quel élément du fichier pour afficher une info-bulle qui décrit l’objectif de l’élément. Pour plus d’informations sur le fichier manifeste, voir l’article [Manifeste XML de compléments Office](../develop/add-in-manifests.md).
+Pour modifier les paramètres de votre complément, modifiez le fichier manifeste XML du projet. Dans l’**Explorateur de solutions**, développez le nœud de projet du complément et le dossier contenant le manifeste XML, puis sélectionnez le manifeste XML. Vous pouvez pointer sur n’importe quel élément du fichier pour afficher une info-bulle qui décrit l’objectif de l’élément. Pour plus d’informations sur le fichier manifeste, voir l’article sur le [manifeste XML de compléments Office](../develop/add-in-manifests.md).
 
 
 ## <a name="develop-the-contents-of-your-add-in"></a>Développer le contenu de votre complément
 
 Alors que le projet de complément vous permet de modifier les paramètres qui décrivent le complément, l’application Web fournit le contenu qui apparaît dans le complément. 
 
-Le projet d’application Web contient une page HTML par défaut et le fichier JavaScript que vous pouvez utiliser pour commencer. Ces fichiers contiennent des références aux autres bibliothèques JavaScript, y compris l’interface API JavaScript pour Office. Vous pouvez développer votre complément en mettant à jour ces fichiers et en ajoutant plus de fichiers HTML et JavaScript. Le tableau suivant décrit les fichiers HTML et JavaScript par défaut.
+Le projet d’application web contient une page HTML par défaut et le fichier JavaScript que vous pouvez utiliser pour commencer. Ces fichiers contiennent des références aux autres bibliothèques JavaScript, y compris l’API JavaScript pour Office. Vous pouvez développer votre complément par en mettant à jour ces fichiers et en ajoutant plusieurs fichiers HTML et JavaScript. Le tableau suivant décrit les fichiers HTML et JavaScript par défaut.
 
 > [!NOTE]
 > Les fichiers dans le tableau ci-dessous peuvent être dans le dossier racine du projet Web, ou dans le dossier **Home** en fonction du type de modèle de projet que vous avez utilisé.
 
 |**Fichier**|**Description**|
 |:-----|:-----|
-|**Home.html**|La page HTML par défaut du complément. Cette page s’affiche en tant que la première page à l’intérieur du complément lorsqu’elle est activée dans un document, un message électronique ou un élément de rendez-vous. Ce fichier contient toutes les références de fichier dont vous avez besoin pour commencer. Vous pouvez commencer à développer votre complément en ajoutant votre code HTML à ce fichier.|
-|**Home.js**|Le fichier JavaScript associé à la page Home.html. Vous pouvez placer n’importe quel code spécifique au comportement de la page Home.html dans le fichier Home.js. Le fichier Home.js contient des exemples de code pour vous aider à démarrer.|
-|**Home.css**|Définit les styles par défaut à appliquer à votre complément. Nous recommandons l’utilisation de Office UI Fabric pour la conception et les styles. Pour plus d’informations, voir [Office UI Fabric dans les compléments Office](../design/office-ui-fabric.md).|
+|**Home.html**|La page HTML par défaut du complément. Cette page s’affiche en tant que la première page à l’intérieur du complément lorsqu’il est activé dans un document, un message électronique ou un élément de rendez-vous. Ce fichier contient toutes les références de fichier dont vous avez besoin pour commencer. Vous pouvez commencer à développer votre complément en ajoutant le code HTML à ce fichier.|
+|**Home.js**|Le fichier JavaScript associé à la page Home.html. Vous pouvez placer n’importe quel code spécifique au comportement de la page Home.html dans le fichier Home.js. Le fichier Home.js contient des exemples de code pour vous aider.|
+|**Home.css**|Définit les styles par défaut à appliquer à votre complément. Nous recommandons l’utilisation de la structure de l’interface utilisateur Office pour la conception et les styles. Pour plus d’informations, voir [Office UI Fabric dans les compléments Office](../design/office-ui-fabric.md).|
 
 > [!NOTE]
-> Vous n’êtes pas obligé d’utiliser ces fichiers. Sentez-vous libre d’ajouter d’autres fichiers au projet et de les utiliser à la place. Si vous souhaitez qu’un autre fichier HTML apparaisse comme page initiale du complément, ouvrez l’éditeur de manifeste, puis définissez la propriété **SourceLocation** sur le nom du fichier.
+> Vous n’êtes pas obligé d’utiliser ces fichiers. N’hésitez pas à ajouter d’autres fichiers au projet et à les utiliser à la place. Si vous souhaitez voir apparaître un autre fichier HTML comme page initiale du complément, ouvrez l’éditeur de manifeste et définissez la propriété **SourceLocation** sur le nom du fichier.
 
 ## <a name="debug-your-add-in"></a>Déboguer votre complément
 
@@ -91,7 +91,7 @@ Le tableau suivant décrit les propriétés du projet.
 |**Document de démarrage** (compléments de contenu et du volet Office uniquement)|Spécifie le document à ouvrir lors du démarrage du projet.|
 |**Projet Web**|Spécifie le nom du projet Web associé au complément.|
 |**Adresse e-mail** (compléments Outlook uniquement)|Spécifie l’adresse e-mail du compte d’utilisateur dans Exchange Server ou Exchange Online avec lequel vous souhaitez tester votre complément Outlook.|
-|**URL EWS** (compléments Outlook uniquement)|URL de service Web Exchange (par exemple : https://www.contoso.com/ews/exchange.aspx). |
+|**URL EWS** (compléments Outlook uniquement)|URL de service Web Exchange (par exemple : https://www.contoso.com/ews/exchange.aspx). |
 |**URL OWA** (compléments Outlook uniquement)|URL d’application Web Outlook (par exemple : https://www.contoso.com/owa).|
 |**Nom d’utilisateur** (compléments Outlook uniquement)|Spécifie le nom de votre compte d’utilisateur dans Exchange Server ou Exchange Online.|
 |**Fichier projet**|Indique le nom du fichier contenant la version, la configuration et d’autres informations sur le projet.|
@@ -138,11 +138,11 @@ Visual Studio effectue ensuite les actions suivantes :
     
 3. Il ouvre l’application hôte. 
     
-Visual Studio n’affiche pas les erreurs de validation dans la fenêtre  **OUTPUT** lorsque vous générez le projet. Visual Studio signale au fur et à mesure les erreurs et les avertissements dans la fenêtre **ERRORLIST**. Visual Studio signale également les erreurs de validation en affichant des traits de soulignement ondulés (appelés aussi zigzags) de différentes couleurs dans le code et l’éditeur de texte. Ces marques sont là pour vous indiquer les problèmes détectés par Visual Studio dans votre code. Pour plus d’informations, voir la page relative au [Code et Éditeur de texte](https://msdn.microsoft.com/library/se2f663y(v=vs.140).aspx). Pour plus d’informations sur l’activation ou la désactivation de la validation, voir les rubriques suivantes : 
+Visual Studio n’affiche pas les erreurs de validation dans la fenêtre  **OUTPUT** lorsque vous générez le projet. Visual Studio signale au fur et à mesure les erreurs et les avertissements dans la fenêtre **ERRORLIST**. Visual Studio signale également les erreurs de validation en affichant des traits de soulignement ondulés (appelés aussi zigzags) de différentes couleurs dans le code et l’éditeur de texte. Ces marques sont là pour vous indiquer les problèmes détectés par Visual Studio dans votre code. Pour plus d’informations, voir la page relative au [Code et Éditeur de texte](https://msdn.microsoft.com/library/se2f663y(v=vs.140).aspx). Pour plus d’informations sur l’activation ou la désactivation de la validation, voir les rubriques suivantes : 
 
 - [Options, Éditeur de texte, JavaScript, IntelliSense](https://docs.microsoft.com/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2015)
     
-- [Procédure : définir des options de validation pour l’édition HTML dans Visual Web Developer](https://msdn.microsoft.com/library/0byxkfet(v=vs.100).aspx)
+- [Procédure : définir des options de validation pour l’édition HTML dans Visual Web Developer](https://msdn.microsoft.com/library/0byxkfet(v=vs.100).aspx)
     
 - [CSS, voir Validation, CSS, Éditeur de texte, Boîte de dialogue Options](https://msdn.microsoft.com/library/se2f663y(v=vs.140).aspx)
     
@@ -150,9 +150,9 @@ Pour réviser les règles de validation du fichier manifeste XML dans votre proj
 
 ### <a name="show-an-add-in-in-excel-or-word-and-step-through-your-code"></a>Afficher un complément dans Excel ou Word, et parcourir votre code
 
-Si vous définissez la propriété **Document de démarrage** du projet de complément sur Excel ou Word, Visual Studio crée un nouveau document et le complément apparaît. Si vous définissez la propriété **Document de démarrage** du projet de complément pour utiliser un document existant, Visual Studio ouvre le document, mais vous devez insérer le complément manuellement.
+Si vous définissez la propriété **Document de démarrage** du projet de complément pour Excel ou Word, Visual Studio crée un nouveau document et le complément apparaît. Si vous définissez la propriété **Document de démarrage** du projet de complément pour utiliser un document existant, Visual Studio ouvre le document, mais vous devez insérer le complément manuellement.
 
-1. Dans Excel ou Word, sous l’onglet **Insérer** , choisissez la liste déroulante **Mes compléments**. Sélectionnez la liste par la flèche déroulante, pas sur le bouton qui ouvre la boîte de dialogue **compléments Office**.
+1. Dans Excel ou Word, sous l’onglet **Insérer** , choisissez la zone de liste déroulante **Mes compléments** . Sélectionnez la liste à partir de la flèche déroulante, non le bouton lui-même qui ouvre la boîte de dialogue **Compléments Office**.
 2. Sous **Compléments pour les développeurs**, choisissez votre complément.
 
 Dans Visual Studio, vous pouvez définir des points d’arrêt et interagir avec votre complément et parcourir le code dans vos fichiers HTML ou JavaScript.
@@ -172,7 +172,7 @@ Vous pouvez également modifier votre code et vérifier les effets de ces modifi
 
 ### <a name="modify-code-and-continue-to-debug-the-add-in-without-having-to-start-the-project-again"></a>Modifier le code et continuer le débogage du complément sans redémarrer le projet
 
-Vous pouvez modifier votre code et vérifier les effets de ces modifications dans votre complément sans avoir à fermer l’application hôte et redémarrer le projet. Une fois que vous modifiez et enregistrez votre code, ouvrez le menu contextuel pour le complément, puis choisissez **Recharger**.
+Vous pouvez modifier votre code et passer en revue les effets de ces modifications dans votre complément sans avoir à fermer l’application hôte et redémarrer le projet. Une fois que vous modifiez et enregistrez votre code, ouvrez le menu contextuel pour le complément, puis choisissez **Recharger**.
     
 
 ## <a name="next-steps"></a>Étapes suivantes
