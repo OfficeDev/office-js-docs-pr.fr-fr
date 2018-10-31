@@ -2,6 +2,12 @@
 
 Cet article décrit le processus de création d’un complément Excel à l’aide de React et de l’API JavaScript pour Excel.
 
+## <a name="environment"></a>Environnement
+
+- **Office pour ordinateur de bureau** : Assurez-vous de disposer de la dernière version d'Office. Les commandes du complément nécessitent la version 16.0.6769.0000 ou supérieure (la version **16.0.6868.0000** est conseillée). Apprenez à [Installer la dernière version des applications Office](http://aka.ms/latestoffice). 
+ 
+- **Office Online** : Aucune installation supplémentaire n'est nécessaire. Notez que la prise en charge des commandes au sein d'Office Online pour les comptes professionnels / scolaires est actuellement en préversion.
+
 ## <a name="prerequisites"></a>Conditions préalables
 
 - [Node.js](https://nodejs.org)
@@ -11,235 +17,70 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
     npm install -g yo generator-office
     ```
 
-## <a name="create-the-web-app"></a>Création de l’application web
+### <a name="create-the-web-app"></a>Création de l’application web
 
-1. Utilisez le générateur Yeoman afin de créer un projet de complément Excel. Exécutez la commande suivante, puis répondez aux invites comme suit :
+1. Créez un dossier sur votre lecteur local et nommez-le **my-addin**. Il s’agit de l’endroit où vous allez créer les fichiers de votre application.
+
+2. Accédez au dossier de votre application.
+
+    ```bash
+    cd my-addin
+    ```
+
+3. Utilisez le générateur Yeoman pour générer le fichier manifeste de votre complément. Exécutez la commande suivante, puis répondez aux invites comme indiqué dans la capture d’écran suivante.
 
     ```bash
     yo office
     ```
 
-    - **Choisissez un type de projet :** `Office Add-in project using React framework`
-    - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
+    - **Choisissez un type de projet :** `Office Add-in project using React framework`
+    - **Comment souhaitez-vous nommer votre complément ? :** `My Office Add-in`
     - **Quelle application client Office voulez-vous prendre en charge ? :** `Excel`
 
-    ![Générateur Yeoman](../images/yo-office-excel-react.png)
+    ![Le générateur Yeoman](../images/yo-office-excel-react.png)
     
-    Une fois que vous avez terminé avec l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
+    Une fois que vous avez terminé avec l'assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
-2. Accédez au dossier racine du projet.
+4.  Ouvrez **src/components/App.tsx**, recherchez le commentaire « Mettre à jour la couleur de remplissage », puis modifiez la couleur de remplissage de « jaune » à « bleu » avant d'enregistrer le fichier. 
 
+    ```js
+    range.format.fill.color = 'blue'
+
+    ```
+
+5. Dans le bloc `return` de la fonction `render` au sein de **src/components/App.tsx**, mettez le `<Herolist>` à jour avec le code ci-dessous, puis enregistrez le fichier. 
+
+    ```js
+      <HeroList message='Discover what My Office Add-in can do for you today!' items={this.state.listItems}>
+        <p className='ms-font-l'>Choose the button below to set the color of the selected range to blue. <b>Set color</b>.</p>
+        <Button className='ms-welcome__action' buttonType={ButtonType.hero} iconProps={{ iconName: 'ChevronRight' }} onClick={this.click}>Run</Button>
+    </HeroList>
+    ```
+
+6. Effectuez les étapes décrites dans la rubrique relative à l’[Ajout de certificats auto-signés comme certificat racine approuvé](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) pour approuver le certificat pour le système d’exploitation de votre ordinateur de développement.
+
+7. Chargez une version test de votre complément afin qu’il apparaisse dans Excel. Dans le terminal, exécutez la commande suivante : 
+    
     ```bash
-    cd "My Office Add-in"
+    npm run sideload
     ```
 
-## <a name="update-the-code"></a>Mise à jour du code
+## <a name="try-it-out"></a>Essayez
 
-1. Dans votre éditeur de code, ouvrez le fichier **src/styles.less**, ajoutez les styles suivants à la fin du fichier et enregistrez le fichier.
+1. À partir du terminal, exécutez la commande suivante pour démarrer le serveur dev.
 
-    ```css
-    #content-header {
-        background: #2a8dd4;
-        color: #fff;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 80px; 
-        overflow: hidden;
-        font-family: Arial;
-        padding-top: 25px;
-    }
-
-    #content-main {
-        background: #fff;
-        position: fixed;
-        top: 80px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        overflow: auto; 
-        font-family: Arial;
-    }
-
-    .padding {
-        padding: 15px;
-    }
-
-    .padding-sm {
-        padding: 4px;
-    }
-
-    .normal-button {
-        width: 80px;
-        padding: 2px;
-    }
+    Windows :
+    ```bash
+    npm start
     ```
 
-2. Le modèle de projet qui a été créé par le Générateur Yeoman de compléments Office inclut un composant React qui n’est pas nécessaire pour ce guide de démarrage rapide. Supprimez le fichier **src/components/HeroList.tsx**.
+2. Dans Word, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
-3. Ouvrez le fichier **src/components/Header.tsx**, remplacez le contenu par le code suivant et enregistrez le fichier.
-
-    ```typescript
-    import * as React from 'react';
-
-    export interface HeaderProps {
-        title: string;
-    }
-
-    export class Header extends React.Component<HeaderProps, any> {
-        constructor(props, context) {
-            super(props, context);
-        }
-
-        render() {
-            return (
-                <div id='content-header'>
-                    <div className='padding'>
-                        <h1>{this.props.title}</h1>
-                    </div>
-                </div>
-            );
-        }
-    }
-    ```
-
-4. Créez un nouveau composant React nommé **Content.tsx** dans le dossier **src/components** , ajoutez le code suivant et enregistrez le fichier.
-
-    ```typescript
-    import * as React from 'react';
-    import { Button, ButtonType } from 'office-ui-fabric-react';
-
-    export interface ContentProps {
-        message: string;
-        buttonLabel: string;
-        click: any;
-    }
-
-    export class Content extends React.Component<ContentProps, any> {
-        constructor(props, context) {
-            super(props, context);
-        }
-
-        render() {
-            return (
-                <div id='content-main'>
-                    <div className='padding'>
-                        <p>{this.props.message}</p>
-                        <br />
-                        <h3>Try it out</h3>
-                        <br/>
-                        <Button className='normal-button' buttonType={ButtonType.hero} onClick={this.props.click}>{this.props.buttonLabel}</Button>
-                    </div>
-                </div>
-            );
-        }
-    }
-    ```
-
-5. Ouvrez le fichier **src/components/App.tsx**, remplacez le contenu par le code suivant et enregistrez le fichier.
-
-    ```typescript
-    import * as React from 'react';
-    import { Header } from './Header';
-    import { Content } from './Content';
-    import Progress from './Progress';
-
-    import * as OfficeHelpers from '@microsoft/office-js-helpers';
-
-    export interface AppProps {
-        title: string;
-        isOfficeInitialized: boolean;
-    }
-
-    export interface AppState {
-    }
-
-    export default class App extends React.Component<AppProps, AppState> {
-        constructor(props, context) {
-            super(props, context);
-        }
-
-        setColor = async () => {
-            try {
-                await Excel.run(async context => {
-                    const range = context.workbook.getSelectedRange();
-                    range.load('address');
-                    range.format.fill.color = 'green';
-                    await context.sync();
-                    console.log(`The range address was ${range.address}.`);
-                });
-            } catch (error) {
-                OfficeHelpers.UI.notify(error);
-                OfficeHelpers.Utilities.log(error);
-            }
-        }
-
-        render() {
-            const {
-                title,
-                isOfficeInitialized,
-            } = this.props;
-
-            if (!isOfficeInitialized) {
-                return (
-                    <Progress
-                        title={title}
-                        logo='assets/logo-filled.png'
-                        message='Please sideload your addin to see app body.'
-                    />
-                );
-            }
-
-            return (
-                <div className='ms-welcome'>
-                    <Header title='Welcome' />
-                    <Content message='Choose the button below to set the color of the selected range to green.' buttonLabel='Set color' click={this.setColor} />
-                </div>
-            );
-        }
-    }
-    ```
-
-## <a name="update-the-manifest"></a>Mise à jour du manifeste
-
-1. Ouvrez le fichier nommé **one-note-add-in-manifest.xml** pour définir les paramètres et les fonctionnalités du complément. 
-
-2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-la par votre nom.
-
-3. L’attribut `DefaultValue`  de l’élément `Description`  possède un espace réservé. Remplacez-le par **un complément volet Office pour Excel**.
-
-4. Enregistrez le fichier.
-
-    ```xml
-    ...
-    <ProviderName>John Doe</ProviderName>
-    <DefaultLocale>en-US</DefaultLocale>
-    <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
-    <DisplayName DefaultValue="My Office Add-in" />
-    <Description DefaultValue="A task pane add-in for Excel"/>
-    ...
-    ```
-
-## <a name="start-the-dev-server"></a>Démarrage du serveur de développement
-
-[!include[Start server section](../includes/quickstart-yo-start-server.md)] 
-
-## <a name="try-it-out"></a>Essayez-le !
-
-1. Suivez les instructions pour la plateforme que vous utiliserez afin d’exécuter votre complément en vue d’en charger une version test dans Excel.
-
-    - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online : [Chargement de versions test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
-
-2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
-
-    ![Bouton de Complément Excel](../images/excel-quickstart-addin-2b.png)
+    ![Bouton Complément Excel](../images/excel-quickstart-addin-2b.png)
 
 3. Sélectionnez une plage de cellules dans la feuille de calcul.
 
-4. Dans le volet Office, cliquez sur le bouton **Définir couleur** pour définir la couleur de la plage sélectionnée en vert.
+4. Dans le volet Office, cliquez sur le bouton **Définir couleur** pour définir la couleur de la plage sélectionnée en bleu.
 
     ![Complément Excel](../images/excel-quickstart-addin-2c.png)
 
@@ -253,6 +94,6 @@ Félicitations, vous avez créé un complément Excel à l’aide de React ! Dé
 ## <a name="see-also"></a>Voir aussi
 
 * [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial-create-table.md)
-* [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](../excel/excel-add-ins-core-concepts.md)
+* [Concepts de base de l’API JavaScript pour Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Référence de l’API JavaScript pour Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)
+* [Référence de l’API JavaScript pour Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
