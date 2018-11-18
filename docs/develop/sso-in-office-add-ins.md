@@ -2,79 +2,79 @@
 title: Activer l’authentification unique pour des compléments Office
 description: ''
 ms.date: 09/26/2018
-ms.openlocfilehash: 1a75f7d619d2375a2f7fcb07f6afb7e0d6261ead
-ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
+ms.openlocfilehash: ca8280b72ab863d0e34330585fb307475e3aa9b9
+ms.sourcegitcommit: 2ac7d64bb2db75ace516a604866850fce5cb2174
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "25579904"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "26298564"
 ---
-# <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Activer l’authentification unique pour des compléments Office (préversion)
+# <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Activer l’authentification unique pour des compléments Office (aperçu)
 
-Les utilisateurs d'Office se connectent à leur service à l’aide de leur compte Microsoft personnel, professionnel ou scolaire. Vous pouvez profiter de cette procédure et utiliser notre système d'authentification unique (SSO) pour permettre à l’utilisateur de votre complément de se connecter sans avoir a s'identifier une nouvelle fois.
+Users sign in to Office (online, mobile, and desktop platforms) using either their personal Microsoft account or their work or school (Office 365) account. You can take advantage of this and use single sign-on (SSO) to authorize the user to your add-in without requiring the user to sign in a second time.
 
 ![Image illustrant le processus de connexion pour un complément](../images/office-host-title-bar-sign-in.png)
 
-### <a name="preview-status"></a>Mode de prévisualisation
+### <a name="preview-status"></a>État de Prévisualisation
 
-L’API d'authentification unique (SSO) est prise en charge seulement en préversion. Elle est disponible pour les développeurs pour expérimenter ; mais elle ne doit pas être utilisé dans un complément en production. En outre, les compléments qui utilisent l’authentification unique ne sont pas acceptés dans [AppSource](https://appsource.microsoft.com).
+L’API de l’authentification unique est actuellement prise en charge uniquement en prévisualisation. Elle est disponible pour les développeurs à des fins d’expérimentation ; mais elle ne doit pas être utilisée dans un complément de production. Par ailleurs, les compléments qui utilisent l’authentification unique SSO ne sont pas acceptés dans [AppSource](https://appsource.microsoft.com).
 
-Certaines applications sur Office ne prennent pas le mode prévisualisation SSO. Ce mode est disponible dans Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur l’API SSO et les applications qui la supporte, veuillez consulter [Exigences pour IdentityAPI](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets?view=office-js).
+Toutes les applications Office ne prennent pas en charge la prévisualisation de l’authentification unique (SSO). Elle est disponible dans Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur l’endroit où l’API d’authentification unique est actuellement prise en charge, consultez la rubrique [Ensembles de conditions requises de l’API d’identité](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets?view=office-js).
 
-### <a name="requirements-and-best-practices"></a>Conditions requises et meilleures pratiques
+### <a name="requirements-and-best-practices"></a>Meilleures Pratiques et Conditions Requises
 
-Pour utiliser l’authentification unique, vous devez charger la version bêta de la bibliothèque de JavaScript Office `https://appsforoffice.microsoft.com/lib/beta/hosted/office.js` dans la page de démarrage HTML du complément.
+Pour utiliser l’authentification unique SSO, vous devez télécharger la version bêta de la bibliothèque JavaScript d’Office à partir de `https://appsforoffice.microsoft.com/lib/beta/hosted/office.js` dans la page de démarrage HTML du complément.
 
-Pour utiliser l’authentification unique avec un complément **Outlook** , vous devez activer l’authentification moderne pour la location Office 365. Pour plus d’informations sur la procédure à suivre, consultez [Exchange Online : activation de l’authentification moderne pour votre client](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+Si vous utilisez un complément** Outlook**, veillez à activer l’Authentification Moderne pour la location d’Office 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
-Ne dépendez *pas*  seulement sur le système SSO comme méthode unique d’authentification pour votre complément. Vous devez aussi implémenter un autre  système d’authentification au cas ou une erreur surviendrait. Par exemple, vous pouvez utiliser un système d’authentification et de tables utilisateur, ou vous pouvez exploiter l'un des fournisseurs de connexion de mise en réseau. Pour plus d’informations sur la procédure a suivre, consultez [Autorisation de services externes dans votre complément pour Office](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/auth-external-add-ins). Pour *Outlook*, il existe un système de secours recommandé. Pour plus d’informations sur ce système, consultez [Scénario : implémentation de l’authentification unique à votre service dans un complément Outlook](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in).
+Vous ne devez*pas* dépendre de l’authentification unique SSO comme seule méthode de votre complément d’authentification. Vous devez implémenter un système d’authentification secondaire vers lequel votre complément peut revenir dans certaines situations d’erreur. Vous pouvez utiliser un système de tableaux d’utilisateur et d’authentification, ou vous pouvez tirer parti d’un des fournisseurs de connexion sociale. Pour plus d’informations sur la procédure à suivre avec un complément Office, voir[Services externes autorisées dans votre complément Office](https://docs.microsoft.com/fr-FR/office/dev/add-ins/develop/auth-external-add-ins). Concernant*Outlook*, il existe un système fall back recommandé. Pour plus d’informations, voir[Scénario : Implémenter l’authentification unique sur votre service dans un complément Outlook](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in).
 
-### <a name="how-sso-works-at-runtime"></a>Fonctionnement de l’authentification unique au moment de l’exécution
+### <a name="how-sso-works-at-runtime"></a>Mode de fonctionnement de l’authentification unique SSO en cours d’exécution
 
-Le diagramme suivant illustre le mode de fonctionnement du processus d’authentification unique.
+Le diagramme suivant illustre le mode de fonctionnement du processus d’authentification unique SSO.
 
-![Diagramme illustrant le processus d’authentification unique](../images/sso-overview-diagram.png)
+![Un diagramme illustrant le processus d’authentification unique SSO](../images/sso-overview-diagram.png)
 
-1. Dans le complément, JavaScript appelle une nouvelle API Office.js [getAccessTokenAsync](#sso-api-reference). Cela indique à l'application hôte Office d'obtenir un jeton d'accès au complément. Voir [Exemple de jeton d'accès](#example-access-token).
+1. Dans le complément, JavaScript appelle une nouvelle API[getAccessTokenAsync](#sso-api-reference). Cela indique à l’application hôte Office qu’elle doit obtenir un jeton d’accès au complément. Voir [Exemple de token](#example-access-token).
 2. Si l’utilisateur n’est pas connecté, l’application hôte Office ouvre une fenêtre contextuelle pour que l’utilisateur se connecte.
-3. Si c’est la première fois que l’utilisateur utilise votre complément, il est invité à donner son consentement.
+3. Si c’est la première fois que l’utilisateur actuel utilise votre complément, il est invité à donner son consentement.
 4. L’application hôte Office demande le **jeton de complément** au point de terminaison Azure AD v2.0 pour l’utilisateur actuel.
 5. Azure AD envoie le jeton de complément à l’application hôte Office.
-6. L’application hôte Office envoie le **jeton de complément** au complément dans le cadre de l’objet de résultat renvoyé par l’appel `getAccessTokenAsync`.
-7. Dans le complément, JavaScript peut analyser le jeton et extraire les informations dont il a besoin, telles que l'adresse e-mail de l'utilisateur. 
-8. Si vous le souhaitez, le complément peut envoyer une demande HTTP à son côté serveur pour plus de données relatives à l’utilisateur ; comme les préférences de l’utilisateur. Le jeton d’accès pourrait également être envoyé au côté serveur pour être analysé et validé. 
+6. L’application hôte Office envoie le**jeton de complément (token)** au complément dans le cadre de l’objet de résultat renvoyé par l’appel`getAccessTokenAsync`.
+7. Dans le compl?ment, JavaScript peut analyser le token et extraire les informations dont il a besoin, telles que l'adresse e-mail de l'utilisateur. 
+8. Optionnellement, le compl?ment peut envoyer une requ?te HTTP ? son serveur pour obtenir plus de donn?es sur l'utilisateur, notamment les pr?f?rences de l'utilisateur. Alternativement, le token lui-m?me pourrait ?tre envoy? au serveur pour analyse et validation. 
 
-## <a name="develop-an-sso-add-in"></a>Développer un complément d’authentification unique
+## <a name="develop-an-sso-add-in"></a>Développer un complément d’authentification unique SSO
 
-Cette section décrit les tâches impliquées dans la création d’un complément pour Office qui utilise l’authentification unique. Ces tâches seront décrites indépendamment  de la langue ou de la structure que vous utilisez. Pour obtenir des exemples de procédures détaillées, consultez :
+Cette section décrit les tâches impliquées dans la création d’un complément Office qui utilise l’authentification unique. Ces tâches sont décrites ici indépendamment du langage et de l’infrastructure. Pour obtenir des exemples de procédures pas à pas détaillées, consultez les rubriques suivantes :
 
 * [Créer un complément Office Node.js qui utilise l’authentification unique](create-sso-office-add-ins-nodejs.md)
 * [Créer un complément Office ASP.NET qui utilise l’authentification unique](create-sso-office-add-ins-aspnet.md)
 
 ### <a name="create-the-service-application"></a>Créer l’application de service
 
-Enregistrez le complément sur le portail d’inscription pour le point de terminaison Azure v2.0 :https://apps.dev.microsoft.com. Il s’agit d’un processus de 5 à 10 minutes qui inclut les tâches suivantes :
+Enregistrez le complément sur le portail d’inscription pour le point de terminaison Azure v2.0:https://apps.dev.microsoft.com. Il s’agit d’un processus de 5 à 10 minutes qui inclut les tâches suivantes:
 
-* Obtenir un identificateur de client et une clé secrète pour le complément.
-* Spécifier les autorisations nécessaires à votre complément pour le point de terminaison AADv. 2.0 (et facultativement pour Microsoft Graph). Ce « profil » d'autorisation est toujours nécessaire.
-* Attribuez à votre complément la possibilité de faire confiance à l'application hôte d'Office.
-* Pré-autorisez l’application hôte Office pour le complément avec l’autorisation par défaut *access_as_user*.
+* Obtenez un ID client et un code secret pour le complément.
+* Spécifiez les autorisations dont votre complément a besoin pour AAD v.  Point de terminaison 2.0 (et ?ventuellement Microsoft Graph). L'autorisation "profil" est toujours n?cessaire.
+* Accordez la confiance de l’application hôte Office au complément.
+* Pré-autorisez l’application hôte Office pour le complément avec l’autorisation par défaut*access_as_user*.
 
-Pour plus de détails sur ce processus, voir [Enregistrer un complément Office qui utilise l'authentification unique auprès du point de terminaison Azure AD v2.0](register-sso-add-in-aad-v2.md).
+Pour plus de d?tails sur ce processus, voir [Enregistrer un compl?ment Office qui utilise l'authentification unique aupr?s du point de terminaison Azure AD v2.0](register-sso-add-in-aad-v2.md).
 
-### <a name="configure-the-add-in"></a>Configurez le complément
+### <a name="configure-the-add-in"></a>Configurer le complément
 
-Ajoutez un nouveau balisage au manifeste du complément :
+Ajoutez un nouveau balisage au manifeste du complément :
 
-* **WebApplicationInfo** : le parent des éléments suivants.
-* **Id** - l’identificateur du client du complément. C'est un identificateur d’application que vous obtenez dans le cadre de l'enregistrement du complément. Voir [Enregistrer un complément Office qui utilise l’authentification unique avec le point de terminaison v2.0 Azure AD](register-sso-add-in-aad-v2.md).
-* **Resource** : l'URL du complément.
-* **Scopes** : parent d’un ou plusieurs éléments **Scope**.
-* **Scope** - spécifie une autorisation dont le complément a besoin pour AAD. L' `profile` autorisation est toujours nécessaire et peut être la seule autorisation nécessaire, si votre complément n’a pas accès à Microsoft Graph. Si c’est le cas, vous devez également des éléments **Scope** pour les autorisations de Microsoft Graph requises ; par exemple, `User.Read`, `Mail.Read`. Les bibliothèques à utiliser dans votre code pour accéder à Microsoft Graph peuvent avoir besoin d'autorisations supplémentaires. Par exemple, la bibliothèque de l’authentification de Microsoft (MSAL) pour .NET nécessite `offline_access` autorisation. Pour plus d’informations, consulter [Autoriser Microsoft Graph à partir d’un complément Office](authorize-to-microsoft-graph.md).
+* **WebApplicationInfo**: le parent des éléments suivants.
+* **Id** - ID du client du compl?ment : il  s'agit d'un ID d'application que vous obtenez lors de l'enregistrement du compl?ment. Voir[Enregistrer un complément Office utilisant une SSO (authentification unique) avec le point de terminaison Azure AD v2.0](register-sso-add-in-aad-v2.md).
+* **Ressource**: l’URL du complément. Il s’agit du même URI (y compris le protocole`api:`) que vous avez utilisé lors de l’inscription du complément dans AAD. Le domaine et les sous-domaines doivent être les mêmes que ceux utilisés dans les URLs dans la section`<Resources>` du manifeste du complément.
+* **Scopes**: le parent d’un ou plusieurs éléments **Scope**.
+* **Scope**: spécifie une autorisation nécessaire pour le complément dans l’AAD. L' `profile` autorisation est toujours n?cessaire et il peut s'agir de la seule autorisation n?cessaire si votre compl?ment n'acc?de pas ? Microsoft Graph. Si c'est le cas, vous avez ?galement besoin des ?l?ments d'une **?tendue**pour obtenir les autorisations Microsoft Graph requises; par exemple, `User.Read`, `Mail.Read`. Les biblioth?ques que vous utilisez dans votre code pour acc?der ? Microsoft Graph peuvent avoir des besoin d'autorisations suppl?mentaires. Par exemple, Microsoft Authentication Library (MSAL) pour .NET n?cessite `offline_access` une autorisation. Pour plus d'informations, voir [Autoriser Microsoft Graph ? partir d'un compl?ment Office](authorize-to-microsoft-graph.md).
 
 Pour les hôtes Office autres qu’Outlook, ajoutez le balisage à la fin de la section `<VersionOverrides ... xsi:type="VersionOverridesV1_0">`. Pour Outlook, ajoutez le balisage à la fin de la section `<VersionOverrides ... xsi:type="VersionOverridesV1_1">`.
 
-Voici un exemple de balise :
+Voici un exemple de marques de révision :
 
 ```xml
 <WebApplicationInfo>
@@ -90,16 +90,16 @@ Voici un exemple de balise :
 
 ### <a name="add-client-side-code"></a>Ajouter du code côté client
 
-Ajoutez un code JavaScript pour le complément à :
+Ajoutez un code JavaScript pour le complément à :
 
-* Appelez [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference).
+* Appelez[getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference).
 
-* Analyser le jeton ou le transmettre au code côté serveur du complément. 
+* Analyser le jeton d’accès ou le transmettre au code côté serveur du complément. 
 
-Voici un exemple simple d'un appel à `getAccessTokenAsync`. 
+Voici un exemple simple d’un appel à`getAccessTokenAsync`. 
 
 > [!NOTE]
-> Cet exemple gère explicitement un seul type d’erreur. Pour obtenir des exemples de gestion d'erreurs plus complexes, consultez [Home.js dans Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/Home.js) et [program.js dans Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/public/program.js). Vous pouvez aussi consulter [Résoudre les messages d’erreur pour l’authentification unique (SSO)](troubleshoot-sso-in-office-add-ins.md).
+> Cet exemple ne pr?sente explicitement qu'un seul type d'erreur. Pour avoir des exemples de traitement des erreurs plus ?labor?s, voir [Home.js in Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/Home.js) et [program.js in Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/public/program.js). Et voir [Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)](troubleshoot-sso-in-office-add-ins.md).
  
 
 ```js
@@ -119,7 +119,7 @@ Office.context.auth.getAccessTokenAsync(function (result) {
 });
 ```
 
-Voici un exemple simple de transmission de jeton du complément au côté serveur. Le jeton est inclus en tant qu’un `Authorization` en-tête lors de l’envoi d’une demande au côté serveur. Cet exemple envisage l’envoi des données JSON, donc il utilise la méthode  `POST` , mais `GET` est suffisant pour envoyer le jeton d’accès lorsque vous n'écrivez pas sur le serveur.
+Voici un exemple simple d?un passage de token du compl?ment vers le serveur. Le token est inclus en tant qu' `Authorization` en-t?te lors de l'envoi d'une demande au serveur. Dans cet exemple, l'envoi de donn?es JSON se fait en utilisant la m?thode `POST`, mais `GET` est suffisant pour envoyer le token d'acc?s lorsque vous n'?crivez pas sur le serveur.
 
 ```js
 $.ajax({
@@ -141,54 +141,54 @@ $.ajax({
 
 #### <a name="when-to-call-the-method"></a>Quand appeler la méthode
 
-Si votre complément ne peut pas être utilisé quand aucun utilisateur n’est connecté à Office, vous devez appeler `getAccessTokenAsync` *au lancement du complément*.
+Si votre complément ne peut pas être utilisé lorsqu’ aucun utilisateur n’est connecté à Office, vous devez alors appeler`getAccessTokenAsync` * au lancement du complément*.
 
-Si le complément a certaines fonctionnalités qui ne nécessitent pas une connexion, alors vous devez appeler `getAccessTokenAsync` *lorsque l’utilisateur exécute une action qui nécessite d’être connecté*. Il n’existe aucune dégradation significative de performances avec des appels superflus `getAccessTokenAsync` , car Office met en cache le jeton d’accès pour le réutiliser, jusqu'à ce qu’il expire, sans effectuer un autre appel au point de terminaison de AAD v. 2.0 chaque fois que `getAccessTokenAsync` est appelée. Ainsi, vous pouvez ajouter des appels de `getAccessTokenAsync` à toutes les fonctions et les gestionnaires qui déclenchent une action dans laquelle le jeton est nécessaire.
+Si le complément possède certaines fonctionnalités qui ne nécessitent pas un accès à l’utilisateur, ensuite appelez`getAccessTokenAsync`* lorsque l’utilisateur effectue une action qui requiert un utilisateur connecté*. Les appels répétés à `getAccessTokenAsync` ne causent aucune dégradation importante des performances, car Office met en cache le jeton d’accès et le réutilise jusqu'à ce qu’il arrive à expiration, sans effectuer un autre appel à l’AAD V. Point de terminaison 2.0 dès que `getAccessTokenAsync` est appelé. Ainsi, vous pouvez ajouter des appels de `getAccessTokenAsync` à l’ensemble des fonctions et gestionnaires qui lancent une action dans laquelle le jeton est nécessaire.
 
 ### <a name="add-server-side-code"></a>Ajouter du code côté serveur
 
-Dans la plupart des scénarios, il n'y a guère de raison d'obtenir le jeton d’accès, si votre complément ne le transmet pas du côté serveur pour l'utiliser. Voici certaines tâches côté serveur que votre complément peut faire :
+Dans la plupart des scénarios, il n’est pas vraiment utile d’obtenir le jeton d’accès si votre complément ne le transmet pas côté serveur et ne l’utilise pas à cet emplacement. Quelques t?ches c?t? serveur que votre compl?ment pourrait faire :
 
-* Créer une ou plusieurs méthodes pour l’API Web qui utilisent des informations sur l’utilisateur extrait du jeton ; par exemple, une méthode qui recherche des préférences de l’utilisateur dans votre base de données. (Voir **Utiliser le jeton d’authentification unique comme une identité** ci-dessous). En fonction de votre langue et de votre infrastructure, certaines bibliothèques peuvent être disponibles qui simplifieront le codage à effectuer.
-* Obtenir des données de Microsoft Graph. Votre code côté serveur devrait procéder comme suit :
+* Cr?er d'une ou plusieurs m?thodes d'API Web qui utilisent des informations sur l'utilisateur qui sont extraitent du token ; par exemple, une m?thode qui recherche les pr?f?rences de l'utilisateur dans votre base de donn?es h?berg?e. (Voir **Utilisation du token SSO en tant qu'identit?** ci-dessous). En fonction de votre langue et de votre structure, des biblioth?ques peuvent ?tre disponibles pour simplifier le code que vous devez ?crire.
+* Obtenir des donn?es Microsoft Graph. Votre code côté serveur doit effectuer les opérations suivantes :
 
-    * Valider le jeton (voir **Valider le jeton d’accès** ci-dessous).
-    * Démarrer le flux « de la part de » par un appel au point de terminaison Azure AD v2.0 qui inclut le jeton d’accès, certaines métadonnées relatives à l’utilisateur et les informations d’identification du complément (son identificateur et sa clé secrète). Dans ce contexte, le jeton d’accès est appelé le jeton d’amorçage.
-    * Mettre en cache le nouveau jeton renvoyé le flux « de la part de ».
+    * Valider le jeton d’accès (voir**Valider du jeton d’accès** ci-dessous).
+    * Démarrer le flux « de la part de » avec un appel du point de terminaison Azure AD v2.0 qui inclut le jeton d’accès du complément, certaines métadonnées relatives à l’utilisateur et les informations d’identification du complément (ID et code secret). Dans ce contexte, le jeton d’accès est appelé le jeton bootstrap.
+    * Mettre en cache le nouveau token renvoy? par le flux ? de la part de ?.
     * Obtenir des données à partir de Microsoft Graph en utilisant le nouveau jeton.
 
- Pour plus de détails sur l'obtention d'un accès autorisé aux données Microsoft Graph de l'utilisateur, voir [Autoriser Microsoft Graph dans votre complément Office](authorize-to-microsoft-graph.md).
+ Pour plus de d?tails sur l'obtention d'un acc?s autoris? aux donn?es Microsoft Graph de l'utilisateur, voir [Autoriser Microsoft Graph dans votre compl?ment Office](authorize-to-microsoft-graph.md).
 
 #### <a name="validate-the-access-token"></a>Valider le jeton d’accès
 
-Une fois que l’API Web reçoit le jeton d’accès, elle doit le valider avant de l'utiliser. Le jeton est un JSON Web Token (JWT), ce qui signifie que la validation fonctionne comme la validation des jetons dans la plupart des flux OAuth. Il existe un certain nombre de bibliothèques qui peuvent gérer la validation de JWT, mais les concepts de base sont :
+Quand l’API web reçoit le jeton d’accès, elle doit valider son fonctionnement avant de l’utiliser. Le jeton est un jeton JWT. En d’autres termes, la validation se déroule comme dans la plupart des flux OAuth standard. Il existe un certain nombre de bibliothèques pouvant gérer la validation JWT qui sont toutes, au minimum, chargées de :
 
-- Vérifier que le jeton est bien formé ;
-- vérifier que le jeton a été émis par l’autorité souhaitée ;
+- vérifier que le jeton est bien formé ;
+- vérifier que le jeton a été émis par l’autorité souhaitée ;
 - vérifier que le jeton est destiné à l’API web.
 
-Suivez les recommandations suivantes quand vous validez le jeton :
+Suivez les recommandations suivantes quand vous validez le jeton :
 
-- Les jetons d’authentification unique valides seront délivrés par l’autorité Azure, `https://login.microsoftonline.com`. La revendication `iss` dans le jeton doit commencer par cette valeur.
-- Le paramètre `aud` du jeton devra correspondre à l’identificateur d’application de l’enregistrement du complément.
+- Les jetons SSO valides doivent être émis par l’autorité Azure `https://login.microsoftonline.com`. La revendication `iss` dans le jeton doit commencer par cette valeur.
+- Le paramètre `aud` du jeton devra correspondre à l’ID d’application de l’enregistrement du complément.
 - Le paramètre `scp` du jeton devra correspondre à `access_as_user`.
 
-#### <a name="using-the-sso-token-as-an-identity"></a>L'utilisation du jeton SSO comme identité
+#### <a name="using-the-sso-token-as-an-identity"></a>Utilisation du jeton SSO comme identité
 
-Si votre complément doit vérifier l’identité de l’utilisateur, le jeton d’authentification unique contient des informations qui peuvent être utilisées pour établir l’identité. Ces revendications dans le jeton sont associées à l’identité:
+Si votre complément doit vérifier l’identité de l’utilisateur, le jeton SSO contient des informations utiles pour établir son identité. Les revendications suivantes présentes dans le jeton concernent l’identité de l’utilisateur.
 
-- `name` - Le nom de l’utilisateur.
-- `preferred_username` -  L'adresse e-mail de l'utilisateur.
-- `oid` - Un GUID représentant l'ID de l’utilisateur dans Azure Active Directory.
-- `tid` - Un GUID représentant l'ID de l'organisation de l'utilisateur dans Azure Active Directory.
+- `name`: le nom d’affichage de l’utilisateur.
+- `preferred_username`: l’adresse de messagerie de l’utilisateur.
+- `oid` : un GUID représentant l’ID de l’utilisateur dans Azure Active Directory.
+- `tid`: un GUID représentant l’ID de l’organisation de l’utilisateur dans Azure Active Directory.
 
-Étant donné que les valeurs `name` et `preferred_username` peuvent être amenées à changer, nous vous recommandons d’utiliser les valeurs `oid` et `tid` pour corréler l’identité de l’utilisateur avec le service d’autorisation de votre API.
+Étant donné que les valeurs `name` et `preferred_username` peuvent être amenées à changer, nous vous recommandons d’utiliser les valeurs `oid` et `tid` pour corréler l’identité de l’utilisateur avec le service d’autorisation de votre API principale.
 
-Par exemple, votre service peut mettre rassembler ces valeurs comme `{oid-value}@{tid-value}`, puis les stocker en tant que valeur dans l’entrée de l’utilisateur dans votre base de données d'utilisateurs internes. Ainsi pour les demandes ultérieures, l’utilisateur pourra être récupéré à l’aide de la même valeur. De même, l'accès à des ressources spécifiques pourra être déterminé en fonction de vos mécanismes de contrôle d’accès existant.
+Par exemple, votre service peut mettre en forme ces valeurs de la façon suivante `{oid-value}@{tid-value}`, puis stocker cette mise en forme sous forme de valeur dans l’enregistrement de l’utilisateur dans votre base de données utilisateur interne. Lors des demandes ultérieures, l’utilisateur pourra être récupéré grâce à cette valeur et l’accès à certaines ressources pourra être déterminé selon les mécanismes de contrôle d’accès existants.
 
-### <a name="example-access-token"></a>Exemple de jeton d’accès
+### <a name="example-access-token"></a>Exemple de token
 
-Vous trouverez ci-dessous une charge décodée typique d’un jeton d’accès. Pour plus d’informations sur les propriétés, consulter [référence de jetons Azure Active Directory v2.0](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-tokens).
+Voici une charge utile d?cod?e typique de token. Pour plus d’informations sur les propriétés, voir[jetons référence (token) version 2.0 Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-tokens).
 
 
 ```js
@@ -213,21 +213,21 @@ Vous trouverez ci-dessous une charge décodée typique d’un jeton d’accès. 
 }
 ```
 
-## <a name="using-sso-with-an-outlook-add-in"></a>L'utilisation de l'authentification unique (SSO) avec un complément Outlook
+## <a name="using-sso-with-an-outlook-add-in"></a>Utilisation de l’authentification unique SSO en accompagnement d’un complément Outlook
 
-Il y a quelques petites, mais importantes différences entre l'utilisation du SSO dans un complément Outlook et son utilisation dans un complément Excel, PowerPoint ou Word. Veillez lire [Authentifier un utilisateur avec un jeton d’authentification unique dans un complément Outlook](https://docs.microsoft.com/outlook/add-ins/authenticate-a-user-with-an-sso-token) et [Scénario : Implémenter la connexion unique à votre service dans un complément Outlook](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in).
+Il existe quelques différences mineures, mais importantes, en ce qui concerne l'utilisation de la connexion unique SSO dans un complément Outlook à partir de son utilisation dans un complément Excel, PowerPoint ou Word. Assurez-vous de lire [Authentifier un utilisateur avec un token unique log? dans le compl?ment Outlook](https://docs.microsoft.com/outlook/add-ins/authenticate-a-user-with-an-sso-token) et l' [?tude de cas : Impl?menter la connexion unique ? votre service dans un compl?ment Outlook](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in).
 
-## <a name="sso-api-reference"></a>Référence de l’API de l’authentification unique
+## <a name="sso-api-reference"></a>RÉFÉRENCE D’API D’AUTHENTIFICATION UNIQUE SSO
 
 ### <a name="getaccesstokenasync"></a>getAccessTokenAsync
 
-L’espace de noms Office Auth, `Office.context.auth`, fournit une méthode, `getAccessTokenAsync` qui permet à l’hôte Office d'obtenir un jeton d’accès a l'application web de votre complément. Indirectement, cela permet également le complément d'accéder aux données de Microsoft Graph de l’utilisateur connecté sans que l’utilisateur aie se connecter une deuxième fois.
+L’espace de noms d’authentification Office,`Office.context.auth`, fournit une méthode,`getAccessTokenAsync` qui permet à l’hôte Office d’obtenir le jeton d’accès à l’application web du complément. Indirectement, ceci active également le complément pour accéder aux données de Microsoft Graph de l’utilisateur sans que l’utilisateur ne doive se connecter une deuxième fois.
 
 ```typescript
 getAccessTokenAsync(options?: AuthOptions, callback?: (result: AsyncResult<string>) => void): void;
 ```
 
-La méthode contacte le point de terminaison Azure Active Directory V 2.0 pour obtenir un jeton d’accès à l’application web de votre complément. Cela permet aux compléments d’identifier les utilisateurs. Le code côté serveur peut utiliser ce jeton pour accéder à Microsoft Graph pour l’application web du complément à l’aide du [flux d’OAuth « de la part de »](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of).
+Cette méthode appelle le point de terminaison Azure Active Directory V 2.0 pour obtenir un jeton d’accès à l’application web de votre complément. Ceci permet à des compléments d’identifier les utilisateurs. Le Code côté serveur peut utiliser ce jeton pour accéder à Microsoft Graph pour l’application web du complément à l’aide du [flux OAuth « Pour le compte de »](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of).
 
 > [!NOTE]
 > Dans Outlook, cette API n'est pas prise en charge si le complément est chargé dans une boîte aux lettres Outlook.com ou Gmail.
@@ -238,11 +238,11 @@ La méthode contacte le point de terminaison Azure Active Directory V 2.0 pour o
 
 #### <a name="parameters"></a>Paramètres
 
-`options` - Facultatif. Accepte un objet `AuthOptions` (voir ci-dessous) pour définir les comportements de connexion.
+`options`: Facultatif. Accepte un objet `AuthOptions` (voir ci-dessous) pour définir les comportements d’authentification unique.
 
-`callback` - Facultatif. Accepte une méthode de rappel qui peut analyser le jeton pour l’ID de l’utilisateur ou utiliser le jeton dans le flux "de la part de" pour accéder à Microsoft Graph. Si  [ AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult)`.status`  a "réussi", alors `AsyncResult.value`est le jeton d’accès au format AAD v. 2.0 brut.
+`callback`: Facultatif. Accepte une méthode de rappel qui peut analyser le jeton pour l’ID de l’utilisateur ou utilisez le jeton dans le flux de « de la part de » pour accéder à Microsoft Graph. Si[AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult) `.status` est « Réussi », puis`AsyncResult.value` est le AAD v brut. 2.0: le jeton d’accès mis en forme.
 
-L'interface  `AuthOptions` fournit des options pour l'expérience utilisateur, lorsque Office obtient un jeton d'accès au complément d'AAD v. 2.0 avec lamethod `getAccessTokenAsync` .
+L’interface`AuthOptions` fournit des options pour l’expérience utilisateur lorsqu’Office obtient un jeton d’accès pour le complément à partir d’AAD v. 2.0 avec la méthode`getAccessTokenAsync`.
 
 ```typescript
 interface AuthOptions {
