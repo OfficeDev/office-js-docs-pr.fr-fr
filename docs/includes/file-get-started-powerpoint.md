@@ -6,7 +6,7 @@ Cet article décrit le processus de création d’un complément PowerPoint à l
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
 ### <a name="prerequisites"></a>Conditions préalables
 
@@ -16,21 +16,21 @@ Cet article décrit le processus de création d’un complément PowerPoint à l
 
 1. Dans la barre de menu de Visual Studio, choisissez successivement **Fichier** > **Nouveau** > **Projet**.
     
-2. Dans la liste des types de projet sous **Visual C#** ou **Visual Basic**, développez **Office/SharePoint**, choisissez **Compléments**, puis **Complément web PowerPoint** pour le type de projet. 
+2. Dans la liste des types de projet sous **Visual C#** ou **Visual Basic**, développez **Office/SharePoint**, choisissez **Compléments**, puis **Complément web PowerPoint** pour le type de projet. 
 
 3. Nommez le projet, puis cliquez sur **OK**.
 
 4. Dans la fenêtre de la boîte de dialogue **Créer un complément Office**, choisissez **Ajouter de nouvelles fonctionnalités à PowerPoint**, puis sélectionnez **Terminer** pour créer le projet.
 
-5. Visual Studio crée une solution et ses deux projets apparaissent dans l’**Explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
+5. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
     
-### <a name="explore-the-visual-studio-solution"></a>Explorer la solution Visual Studio
+### <a name="explore-the-visual-studio-solution"></a>Explorer la solution Visual Studio
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
 ### <a name="update-the-code"></a>Mise à jour du code
 
-1. **Home.html** spécifie le code HTML qui s’affichera dans le volet Office du complément. Dans **Home.html**, remplacez l’élément `<body>` par le balisage suivant et enregistrez le fichier.
+1. **Home.html** spécifie le code HTML qui s’affichera dans le volet Office du complément. Dans **Home.html**, remplacez l’élément `<body>` par le balisage suivant et enregistrez le fichier.
  
     ```html
     <body class="ms-font-m ms-welcome">
@@ -52,7 +52,7 @@ Cet article décrit le processus de création d’un complément PowerPoint à l
     </body>
     ```
 
-2. Ouvrez le fichier **Home.js** à la racine du projet d’application web. Ce fichier spécifie le script pour le complément. Remplacez l'intégralité du contenu par le code suivant et enregistrez le fichier.
+2. Ouvrez le fichier **Home.js** à la racine du projet d’application web. Ce fichier spécifie le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
 
     ```js
     'use strict';
@@ -97,7 +97,7 @@ Cet article décrit le processus de création d’un complément PowerPoint à l
     })();
     ```
 
-3. Ouvrez le fichier **Home.css** à la racine du projet d’application web. Ce fichier spécifie les styles personnalisés pour le complément. Remplacez l'intégralité du contenu par le code suivant et enregistrez le fichier.
+3. Ouvrez le fichier **Home.css** à la racine du projet d’application web. Ce fichier spécifie les styles personnalisés pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
 
     ```css
     #content-header {
@@ -130,11 +130,11 @@ Cet article décrit le processus de création d’un complément PowerPoint à l
 
 1. Ouvrez le fichier manifeste XML dans le projet de complément. Ce fichier définit les paramètres et les fonctionnalités du complément.
 
-2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-la par votre nom.
+2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-le par votre nom.
 
-3. L’attribut `DefaultValue` de l’élément `DisplayName` possède un espace réservé. Remplacez-le par **Mon complément Office**.
+3. L’attribut `DefaultValue` de l’élément `DisplayName` possède un espace réservé. Remplacez-le par **My Office Add-in**.
 
-4. L’attribut `DefaultValue`  de l’élément `Description`  possède un espace réservé. Remplacez-le par **un complément volet Office pour PowerPoint**.
+4. L’attribut `DefaultValue` de l’élément `Description` possède un espace réservé. Remplacez-le par **A task pane add-in for PowerPoint**.
 
 5. Enregistrez le fichier.
 
@@ -148,11 +148,11 @@ Cet article décrit le processus de création d’un complément PowerPoint à l
     ...
     ```
 
-### <a name="try-it-out"></a>Essayez !
+### <a name="try-it-out"></a>Essayez !
 
-1. À l’aide de Visual Studio, testez le nouveau complément PowerPoint en appuyant sur F5 ou en choisissant le bouton **Démarrer** pour lancer PowerPoint avec le bouton du complément **Show Taskpane** (Afficher le volet Office) qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
+1. À l’aide de Visual Studio, testez le nouveau complément PowerPoint en appuyant sur F5 ou en choisissant le bouton **Démarrer** pour lancer PowerPoint avec le bouton du complément **Show Taskpane** (Afficher le volet Office) qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
 
-2. Dans Excel, insérez une diapositive vierge, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
+2. Dans Excel, insérez une diapositive vierge, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
     ![Capture d’écran de PowerPoint avec le bouton Afficher le volet Office mis en évidence](../images/powerpoint_quickstart_addin_1.png)
 
@@ -162,7 +162,7 @@ Cet article décrit le processus de création d’un complément PowerPoint à l
 
 4. Dans le volet Office, sélectionnez le bouton **Insérer du texte** pour ajouter du texte à la diapositive sélectionnée.
 
-    ![Capture d’écran de PowerPoint avec l’image d’un chien et le texte « Hello World » affichés sur la diapositive](../images/powerpoint_quickstart_addin_3.png)
+    ![Capture d’écran de PowerPoint avec l’image d’un chien et le texte « Hello World » affichés sur la diapositive](../images/powerpoint_quickstart_addin_3.png)
 
 # <a name="any-editortabvisual-studio-code"></a>[Tous les éditeurs](#tab/visual-studio-code)
 
@@ -170,7 +170,7 @@ Cet article décrit le processus de création d’un complément PowerPoint à l
 
 - [Node.js](https://nodejs.org)
 
-- Installez la dernière version de [Yeoman](https://github.com/yeoman/yo) et le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) globalement.
+- Installez la dernière version de [Yeoman](https://github.com/yeoman/yo) et le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) globalement.
 
     ```bash
     npm install -g yo generator-office
@@ -178,20 +178,20 @@ Cet article décrit le processus de création d’un complément PowerPoint à l
 
 ### <a name="create-the-add-in-project"></a>Création du projet de complément
 
-1. Utilisez le générateur Yeoman pour créer un projet de complément PowerPoint. Exécutez la commande suivante, puis répondez aux invites de commandes comme suit :
+1. Utilisez le générateur Yeoman afin de créer un projet de complément PowerPoint. Exécutez la commande suivante, puis répondez aux invites comme suit :
 
     ```bash
     yo office
     ```
 
-    - **Choisissez un type de projet :** `Office Add-in project using Jquery framework`
-    - **Choisissez un type de script :** `Javascript`
-    - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
-    - **Quelle application client Office voulez-vous prendre en charge ?** `PowerPoint`
+    - **Sélectionnez un type de projet :** `Office Add-in project using Jquery framework`
+    - **Sélectionnez un type de script :** `Javascript`
+    - **Comment souhaitez-vous nommer votre complément ? :** `My Office Add-in`
+    - **Quelle application client Office voulez-vous prendre en charge ? :** `PowerPoint`
 
-    ![Capture d’écran des invites et des réponses pour le générateur Yeoman](../images/yo-office-powerpoint-jquery.png)
+    ![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yo-office-powerpoint-jquery.png)
     
-    Une fois que vous avez terminé avec l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
+    Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants de nœud de la prise en charge.
     
 2. Accédez au dossier racine du projet.
 
@@ -201,9 +201,9 @@ Cet article décrit le processus de création d’un complément PowerPoint à l
 
 ### <a name="update-the-code"></a>Mise à jour du code
 
-1. Dans votre éditeur de code, ouvrez le fichier **index.html** à la racine du projet. Ce fichier contient le code HTML qui sera affiché dans le volet de tâches du complément.
+1. Dans votre éditeur de code, ouvrez **index.html** à la racine du projet. Ce fichier contient le code HTML qui s’affichera dans le volet Office du complément.
 
-2. Remplacez l’élément `<body>` par la balise suivante :
+2. Remplacez l’élément `<body>` par le balisage suivant.
 
     ```html
     <body class="ms-font-m ms-welcome">
@@ -227,7 +227,7 @@ Cet article décrit le processus de création d’un complément PowerPoint à l
     </body>
     ```
 
-3. Ouvrez le fichier **src\index.js** pour spécifier le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+3. Ouvrez le fichier **src/index.js** pour spécifier le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
 
     ```js
     'use strict';
@@ -272,7 +272,7 @@ Cet article décrit le processus de création d’un complément PowerPoint à l
     })();
     ```
 
-4. Ouvrez le fichier **app.css** dans la racine du projet pour spécifier les styles personnalisés du complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+4. Ouvrez le fichier **app.css** à la racine du projet pour spécifier les styles personnalisés du complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
 
     ```css
     #content-header {
@@ -303,11 +303,11 @@ Cet article décrit le processus de création d’un complément PowerPoint à l
 
 ### <a name="update-the-manifest"></a>Mise à jour du manifeste
 
-1. Ouvrez le fichier nommé **one-note-add-in-manifest.xml** pour définir les paramètres et les fonctionnalités du complément.
+1. Ouvrez le fichier nommé **manifest.xml** pour définir les paramètres et les fonctionnalités du complément.
 
-2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-la par votre nom.
+2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-le par votre nom.
 
-3. L’attribut `DefaultValue`  de l’élément `Description`  possède un espace réservé. Remplacez-le par **un complément volet Office pour PowerPoint**.
+3. L’attribut `DefaultValue` de l’élément `Description` possède un espace réservé. Remplacez-le par **A task pane add-in for PowerPoint**.
 
 4. Enregistrez le fichier.
 
@@ -325,15 +325,15 @@ Cet article décrit le processus de création d’un complément PowerPoint à l
 
 [!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
-### <a name="try-it-out"></a>Essayez !
+### <a name="try-it-out"></a>Essayez !
 
 1. Suivez les instructions pour la plateforme que vous utiliserez afin d’exécuter votre complément en vue d’en charger une version test dans PowerPoint.
 
-    - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - PowerPoint Online : [Chargement de versions test de compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    - Windows : [Chargement de versions test de compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - PowerPoint Online : [Chargement de versions test de compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
+    - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-2. Dans Excel, insérez une diapositive vierge, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
+2. Dans Excel, insérez une diapositive vierge, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
     ![Capture d’écran de PowerPoint avec le bouton Afficher le volet Office mis en évidence](../images/powerpoint_quickstart_addin_1b.png)
 
@@ -343,13 +343,13 @@ Cet article décrit le processus de création d’un complément PowerPoint à l
 
 4. Dans le volet Office, sélectionnez le bouton **Insérer du texte** pour ajouter du texte à la diapositive sélectionnée.
 
-    ![Capture d’écran de PowerPoint avec l’image d’un chien et le texte « Hello World » affichés sur la diapositive](../images/powerpoint_quickstart_addin_3b.png)
+    ![Capture d’écran de PowerPoint avec l’image d’un chien et le texte « Hello World » affichés sur la diapositive](../images/powerpoint_quickstart_addin_3b.png)
 
 ---
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations, vous avez créé un complément PowerPoint ! Ensuite, découvrez les fonctionnalités d’un complément PowerPoint et créez-en un plus complexe en suivant le didacticiel sur les compléments PowerPoint.
+Félicitations, vous avez créé un complément PowerPoint ! Maintenant, découvrez les fonctionnalités d’un complément PowerPoint et créez un complément plus complexe en suivant le didacticiel dédié.
 
 > [!div class="nextstepaction"]
 > [Didacticiel sur les compléments PowerPoint](../tutorials/powerpoint-tutorial.yml)

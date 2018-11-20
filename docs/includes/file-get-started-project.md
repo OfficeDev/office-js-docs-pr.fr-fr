@@ -6,7 +6,7 @@ Cet article décrit le processus de création d’un complément Project à l’
 
 - [Node.js](https://nodejs.org)
 
-- Installez la dernière version de [Yeoman](https://github.com/yeoman/yo) et le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) globalement.
+- Installez la dernière version de [Yeoman](https://github.com/yeoman/yo) et le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) globalement.
 
     ```bash
     npm install -g yo generator-office
@@ -14,20 +14,20 @@ Cet article décrit le processus de création d’un complément Project à l’
 
 ## <a name="create-the-add-in"></a>Créer le complément
 
-1. Utilisez le générateur Yeoman pour créer un projet de complément Project. Exécutez la commande suivante, puis répondez aux invites de commandes comme suit :
+1. Utilisez le générateur Yeoman afin de créer un projet de complément Project. Exécutez la commande suivante, puis répondez aux invites comme suit :
 
     ```bash
     yo office
     ```
 
-    - **Choisissez un type de projet :** `Office Add-in project using Jquery framework`
-    - **Choisissez un type de script :** `Javascript`
-    - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
-    - **Quelle application client Office voulez-vous prendre en charge ?** `Project`
+    - **Sélectionnez un type de projet :** `Office Add-in project using Jquery framework`
+    - **Sélectionnez un type de script :** `Javascript`
+    - **Comment souhaitez-vous nommer votre complément ? :** `My Office Add-in`
+    - **Quelle application client Office voulez-vous prendre en charge ? :** `Project`
 
-    ![Capture d’écran des invites et des réponses pour le générateur Yeoman](../images/yo-office-project-jquery.png)
+    ![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yo-office-project-jquery.png)
     
-    Une fois que vous avez terminé avec l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
+    Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants de nœud de la prise en charge.
     
 2. Accédez au dossier racine du projet.
 
@@ -37,9 +37,9 @@ Cet article décrit le processus de création d’un complément Project à l’
 
 ## <a name="update-the-code"></a>Mise à jour du code
 
-1. Dans votre éditeur de code, ouvrez le fichier **index.html** à la racine du projet. Ce fichier contient le code HTML qui sera affiché dans le volet de tâches du complément.
+1. Dans votre éditeur de code, ouvrez **index.html** à la racine du projet. Ce fichier contient le code HTML qui s’affichera dans le volet Office du complément.
 
-2. Remplacez l'élément`<body>` par le codage suivant :
+2. Remplacez l’élément `<body>` par le balisage suivant.
 
     ```html
     <body class="ms-font-m ms-welcome">
@@ -65,7 +65,7 @@ Cet article décrit le processus de création d’un complément Project à l’
     </body>
     ```
 
-3. Ouvrez le fichier **src/index.js** pour spécifier le script du complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+3. Ouvrez le fichier **src/index.js** afin de spécifier le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
 
     ```js
     'use strict';
@@ -149,11 +149,11 @@ Cet article décrit le processus de création d’un complément Project à l’
 
 ## <a name="update-the-manifest"></a>Mise à jour du manifeste
 
-1. Ouvrez le fichier nommé **one-note-add-in-manifest.xml** pour définir les paramètres et les fonctionnalités du complément.
+1. Ouvrez le fichier nommé **manifest.xml** pour définir les paramètres et les fonctionnalités du complément.
 
-2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-la par votre nom.
+2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-le par votre nom.
 
-3. L’attribut `DefaultValue`  de l’élément `Description`  possède un espace réservé. Remplacez-le par **un complément volet Office pour Project**.
+3. L’attribut `DefaultValue` de l’élément `Description` possède un espace réservé. Remplacez-le par **A task pane add-in for Project**.
 
 4. Enregistrez le fichier.
 
@@ -171,15 +171,15 @@ Cet article décrit le processus de création d’un complément Project à l’
 
 [!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
-## <a name="try-it-out"></a>Essayez !
+## <a name="try-it-out"></a>Essayez !
 
 1. Dans Project, créez un projet simple comportant au moins une tâche.
 
 2. Suivez les instructions pour la plateforme que vous utiliserez afin d’exécuter votre complément en vue d’en charger une version test dans Project.
 
-    - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Project Online : [Chargement de version test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Project Online : [Chargement de version test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
+    - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 3. Dans Project, sélectionnez une tâche.
 
@@ -195,7 +195,7 @@ Cet article décrit le processus de création d’un complément Project à l’
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations, vous avez créé un complément Project ! Maintenant, découvrez les fonctionnalités d’un complément Project et explorez des scénarios courants.
+Félicitations, vous avez créé un complément Project ! Ensuite, découvrez les fonctionnalités d’un complément Project et explorez des scénarios plus courants.
 
 > [!div class="nextstepaction"]
 > [Compléments Project](../project/project-add-ins.md)

@@ -2,27 +2,27 @@
 title: Commandes de complément pour Excel, Word et PowerPoint
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 3db846e9d28e063d959fd617bf8c50ab5cb5ec86
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.openlocfilehash: 698fd4b77ea90430a141db1c791856f4f57fa29b
+ms.sourcegitcommit: 9b021af6cb23a58486d6c5c7492be425e309bea1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25506265"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "26533664"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Commandes de complément pour Excel, Word et PowerPoint
 
-Les commandes de complément sont des éléments d’interface utilisateur qui étendent l’interface utilisateur d’Office et lancent des actions dans votre complément. Vous pouvez les utiliser pour ajouter un bouton sur le ruban ou un élément dans le menu contextuel. Lorsque les utilisateurs sélectionnent une commande de complément, ils lancent des actions telles que l’exécution de code JavaScript ou l’affichage d’une page du complément dans le volet Office. Les commandes de complément aident les utilisateurs à trouver et utiliser votre complément, ce qui favorise l’adoption et la réutilisation de votre complément, et améliore la fidélisation des clients.
+Les commandes de complément sont des éléments d’interface utilisateur qui étendent l’interface utilisateur d’Office et lancent des actions dans votre complément. Vous pouvez les utiliser pour ajouter un bouton sur le ruban ou un élément dans le menu contextuel. Lorsque les utilisateurs sélectionnent une commande de complément, ils lancent des actions telles que l’exécution de code JavaScript ou l’affichage d’une page du complément dans le volet Office. Les commandes de complément aident les utilisateurs à trouver et utiliser votre complément, ce qui favorise l’adoption et la réutilisation de votre complément, et améliore la fidélisation des clients.
 
-Pour en savoir plus sur les fonctionnalités, regardez la vidéo sur les [Commandes de complément du ruban Office](https://channel9.msdn.com/events/Build/2016/P551).
+Pour en savoir plus sur les fonctionnalités, regardez la vidéo sur les [commandes de complément du ruban Office](https://channel9.msdn.com/events/Build/2016/P551).
 
 > [!NOTE]
-> Les catalogues SharePoint n’acceptent pas les commandes de complément. Vous pouvez déployer des commandes de complément via le [Déploiement centralisé](../publish/centralized-deployment.md) ou [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store), ou utiliser le [Chargement de version test](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) pour déployer votre commande de complément à des fins de test. 
+> Les catalogues SharePoint n’acceptent pas les commandes de complément. Vous pouvez déployer des commandes de complément via le [déploiement centralisé](../publish/centralized-deployment.md) ou [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store), ou utiliser le [chargement de version test](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) pour déployer votre commande de complément à des fins de test. 
 
-*Figure 1. Complément incluant des commandes en cours d’exécution dans Excel en version de bureau*
+*Figure 1. Complément incluant des commandes en cours d’exécution dans Excel (version de bureau)*
 
 ![Capture d’écran d’une commande de complément dans Excel](../images/add-in-commands-1.png)
 
-*Figure 2. Complément incluant des commandes en cours d’exécution dans Excel Online*
+*Figure 2. Complément incluant des commandes en cours d’exécution dans Excel Online*
 
 ![Capture d’écran d’une commande de complément dans Excel Online](../images/add-in-commands-2.png)
 
@@ -35,7 +35,7 @@ Les fonctionnalités de commande suivantes sont actuellement prises en charge.
 **Points d’extension**
 
 - Onglets de ruban - Permet d’étendre les onglets prédéfinis ou de créer un onglet personnalisé.
-- Menus contextuels - Permet d’étendre les menus contextuels sélectionnés. 
+- Menus contextuels - Permet d’étendre les menus contextuels sélectionnés.
 
 **Types de contrôles**
 
@@ -51,9 +51,9 @@ Les fonctionnalités de commande suivantes sont actuellement prises en charge.
 
 Les commandes de complément sont actuellement prises en charge sur les plateformes suivantes :
 
-- Office pour bureau Windows 2016 (build 16.0.6769+)
-- Office pour Mac (build 15.33+)
-- Office Online 
+- Office 2016 ou version ultérieure pour Windows (build 16.0.6769+)
+- Office pour Mac (build 15.33+)
+- Office Online
 
 D’autres plateformes seront bientôt disponibles.
 
@@ -74,19 +74,15 @@ Appliquez les meilleures pratiques suivantes lorsque vous développez des comman
      > Les compléments qui occupent trop d’espace peuvent ne pas obtenir la [validation d’AppSource](https://docs.microsoft.com/office/dev/store/validation-policies).
 
 - Pour toutes les icônes, suivez les [règles de conception d’icône](add-in-icons.md).
-- Proposez une version de complément qui fonctionne aussi sur les hôtes qui ne prennent pas en charge les commandes. Un seul manifeste de complément peut fonctionner sur les hôtes tenant compte ou non des commandes (par exemple, un volet de tâches dans le second cas).
+- Proposez une version de complément qui fonctionne aussi sur les hôtes qui ne prennent pas en charge les commandes. Un seul manifeste de complément peut fonctionner sur les hôtes tenant compte ou non des commandes (par exemple, un volet Office dans le second cas).
 
-   *Figure 3. Complément du volet Office dans Office 2013 et le même complément utilisant des commandes de complément dans Office 2016*
+   *Figure 3. Complément du volet Office dans Office 2013 et le même complément utilisant des commandes de complément dans Office 2016*
 
-   ![Capture d’écran illustrant un complément du volet Office dans Office 2013 et le même complément utilisant des commandes de complément dans Office 2016](../images/office-task-pane-add-ins.png)
+   ![Capture d’écran illustrant un complément du volet Office dans Office 2013 et le même complément utilisant des commandes de complément dans Office 2016](../images/office-task-pane-add-ins.png)
 
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-La meilleure façon de commencer à utiliser des commandes de complément consiste à consulter les [Exemples de commandes de complément Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) sur GitHub.
+La meilleure façon de commencer à utiliser des commandes de complément consiste à consulter des [exemples de commandes de complément Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) sur GitHub.
 
-Pour plus d’informations sur la spécification des commandes de complément dans votre manifeste, reportez-vous à l’article expliquant comment [Créer des commandes de complément dans votre manifeste](../develop/create-addin-commands.md) et au contenu de référence sur [VersionOverrides](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/versionoverrides?view=office-js).
-
-
-
-
+Pour plus d’informations sur la spécification des commandes de complément dans votre manifeste, reportez-vous à l’article expliquant comment [créer des commandes de complément dans votre manifeste](../develop/create-addin-commands.md) et au contenu de référence sur [VersionOverrides](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/versionoverrides?view=office-js).

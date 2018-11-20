@@ -5,13 +5,13 @@ Lorsqu’un tableau est tellement long que l’utilisateur doit le faire défile
 
 ## <a name="freeze-the-tables-header-row"></a>Figer la ligne d’en-tête du tableau
 
-1. Ouvrez le projet dans votre éditeur de code. 
+1. Ouvrez le projet dans votre éditeur de code.
 2. Ouvrez le fichier index.html.
-3. En dessous de la balise `div` qui contient le bouton `create-chart`, ajoutez le balisage suivant :
+3. En dessous de la balise `div` qui contient le bouton `create-chart`, ajoutez le balisage suivant :
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="freeze-header">Freeze Header</button>            
+    <div class="padding">
+        <button class="ms-Button" id="freeze-header">Freeze Header</button>
     </div>
     ```
 
@@ -28,7 +28,7 @@ Lorsqu’un tableau est tellement long que l’utilisateur doit le faire défile
     ```js
     function freezeHeader() {
         Excel.run(function (context) {
-            
+
             // TODO1: Queue commands to keep the header visible when the user scrolls.
 
             return context.sync();
@@ -40,7 +40,7 @@ Lorsqu’un tableau est tellement long que l’utilisateur doit le faire défile
             }
         });
     }
-    ``` 
+    ```
 
 7. Remplacez `TODO1` par le code suivant. Tenez compte des informations suivantes :
    - La collection `Worksheet.freezePanes` est un ensemble de volets de la feuille de calcul qui sont épinglés, c’est-à-dire figés, lorsque vous faites défiler la feuille de calcul.
@@ -49,20 +49,20 @@ Lorsqu’un tableau est tellement long que l’utilisateur doit le faire défile
     ```js
     const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
     currentWorksheet.freezePanes.freezeRows(1);
-    ``` 
+    ```
 
 ## <a name="test-the-add-in"></a>Tester le complément
 
-1. Si la fenêtre Git Bash, ou l’invite système Node.JS, de l’étape précédente du didacticiel est encore ouverte, appuyez sur Ctrl+C à deux reprises pour arrêter le serveur web en cours d’exécution. Sinon, ouvrez une fenêtre Git Bash, ou une invite système Node.JS, et accédez au dossier **Start** du projet.
+1. Si la fenêtre Git Bash, ou l’invite système Node.JS, de l’étape précédente du didacticiel est encore ouverte, appuyez sur Ctrl+C à deux reprises pour arrêter le serveur web en cours d’exécution. Sinon, ouvrez une fenêtre Git Bash, ou une invite système Node.JS, et accédez au dossier **Start** du projet.
 
      > [!NOTE]
      > Bien que le serveur synchronisé au navigateur recharge votre complément dans le volet Office chaque fois que vous apportez une modification à un fichier, y compris le fichier app.js, il ne retranspile pas le code JavaScript. Vous devez donc de nouveau utiliser la commande build afin que les modifications apportées à app.js prennent effet. Pour ce faire, vous devez arrêter le processus du serveur pour pouvoir obtenir une invite et saisir la commande build. Une fois la commande build exécutée, redémarrez le serveur. Les prochaines étapes vous permettent d’effectuer ce processus.
 
-1. Exécutez la commande `npm run build` pour transpiler votre code source ES6 vers une version antérieure de JavaScript prise en charge par Internet Explorer (qui est utilisé en arrière-plan par Excel pour exécuter les compléments Excel).
+1. Exécutez la commande `npm run build` pour transpiler votre code source ES6 vers une version antérieure de JavaScript prise en charge par Internet Explorer (qui est utilisé en arrière-plan par Excel pour exécuter les compléments Excel).
 2. Exécutez la commande `npm start` pour démarrer un serveur web en cours d’exécution sur localhost.
 4. Rechargez le volet Office en le fermant, puis dans le menu **Accueil**, sélectionnez **Afficher le volet Office** pour rouvrir le complément.
 6. Si le tableau est dans la feuille de calcul, supprimez-le.
-7. Dans le volet Office, sélectionnez **Créer un tableau**. 
+7. Dans le volet Office, sélectionnez **Créer un tableau**.
 8. Sélectionnez le bouton **Freeze Header**.
 9. Faites suffisamment défiler la feuille de calcul vers le bas pour voir que l’en-tête du tableau est toujours visible dans la partie supérieure même lorsque les lignes du haut sont masquées.
 

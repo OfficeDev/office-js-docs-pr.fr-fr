@@ -1,12 +1,12 @@
 # <a name="get-the-whole-document-from-an-add-in-for-powerpoint-or-word"></a>Obtention de l’intégralité d’un document pour un complément pour PowerPoint ou Word
 
-Vous pouvez créer un Complément Office pour permettre l’envoi ou la publication en un clic d’un document Word 2013 ou PowerPoint 2013 sur un emplacement distant. Cet article explique comment créer un complément du volet de tâches pour PowerPoint 2013 qui envoie les données d’une présentation sous la forme d’un objet de données à un serveur web via une requête HTTP.
+Vous pouvez créer un Complément Office pour permettre l’envoi ou la publication en un clic d’un document Word 2013 ou PowerPoint 2013 sur un emplacement distant. Cet article explique comment créer un complément du volet de tâches pour PowerPoint 2013 qui envoie les données d’une présentation sous la forme d’un objet de données à un serveur web via une requête HTTP.
 
 ## <a name="prerequisites-for-creating-an-add-in-for-powerpoint-or-word"></a>Éléments requis pour créer un complément pour PowerPoint ou Word
 
-Dans cet article, vous utilisez un éditeur de texte pour créer le complément du volet Office pour PowerPoint ou Word. Pour créer le complément du volet Office, vous devez créer les fichiers suivants :
+Dans cet article, vous utilisez un éditeur de texte pour créer le complément du volet Office pour PowerPoint ou Word. Pour créer le complément du volet Office, vous devez créer les fichiers suivants :
 
-- Sur un dossier réseau partagé ou sur un serveur web, vous avez besoin des fichiers suivants :
+- Sur un dossier réseau partagé ou sur un serveur web, vous avez besoin des fichiers suivants :
     
     - Un fichier HTML (GetDoc_App.html) qui contient l’interface utilisateur, ainsi que les liens vers les fichiers JavaScript (notamment office.js et fichiers .js propres à l’hôte) et les fichiers CSS (Cascading Style Sheet).
            
@@ -16,7 +16,7 @@ Dans cet article, vous utilisez un éditeur de texte pour créer le complément 
     
 - Un fichier manifeste XML (GetDoc_App.xml) pour le complément, disponible dans un dossier réseau partagé ou un catalogue de compléments. Le fichier manifeste doit pointer vers l’emplacement du fichier HTML mentionné précédemment.
     
-Vous pouvez également créer un complément pour PowerPoint à l’aide de [Visual Studio](../quickstarts/powerpoint-quickstart.md?tabs=visual-studio) ou de [n’importe quel éditeur](../quickstarts/powerpoint-quickstart.md?tabs=visual-studio-code), ou pour Word à l’aide de [Visual Studio](../quickstarts/word-quickstart.md?tabs=visual-studio) ou de [n’importe quel éditeur](../quickstarts/word-quickstart.md?tabs=visual-studio-code). 
+Vous pouvez également créer un complément pour PowerPoint à l’aide de [Visual Studio](../quickstarts/powerpoint-quickstart.md?tabs=visual-studio) ou de [n’importe quel éditeur](../quickstarts/powerpoint-quickstart.md?tabs=visual-studio-code), ou pour Word à l’aide de [Visual Studio](../quickstarts/word-quickstart.md?tabs=visual-studio) ou de [n’importe quel éditeur](../quickstarts/word-quickstart.md?tabs=visual-studio-code). 
 
 ### <a name="core-concepts-to-know-for-creating-a-task-pane-add-in"></a>Concepts fondamentaux à connaître pour créer un complément du volet Office
 
@@ -25,7 +25,7 @@ Avant de commencer à créer ce complément pour PowerPoint ou Word, vous devez 
 ## <a name="create-the-manifest-for-the-add-in"></a>Créer le manifeste pour le complément
 
 
-Le fichier manifeste XML pour le complément PowerPoint fournit des informations importantes sur le complément : les applications qui peuvent l’héberger, l’emplacement du fichier HTML, le titre et la description du complément, et bien d’autres caractéristiques.
+Le fichier manifeste XML pour le complément PowerPoint fournit des informations importantes sur le complément : les applications qui peuvent l’héberger, l’emplacement du fichier HTML, le titre et la description du complément, et bien d’autres caractéristiques.
 
 1. Dans l’éditeur de texte, ajoutez le code suivant au fichier manifeste.
     
@@ -187,7 +187,7 @@ function sendFile() {
 
 La fonction locale  `getSlice` appelle la méthode **File.getSliceAsync** pour extraire une tranche de l’objet **File**. La méthode  **getSliceAsync** retourne un objet **Slice** de la collection de tranches. Elle a deux paramètres requis, _sliceIndex_ et _callback_. Le paramètre  _sliceIndex_ utilise un entier comme indexeur dans la collection de tranches. Comme d’autres fonctions de l’API JavaScript pour Office, la méthode **getSliceAsync** prend également une fonction de rappel comme paramètre pour gérer les résultats de l’appel de la méthode.
 
-L’objet **Section** vous donne accès aux données contenues dans le fichier. Sauf indication contraire dans le paramètre _options_ de la méthode **getFileAsync** , l’objet **Section** a une taille de 4 Mo. L’objet **Section**  expose trois propriétés : [taille](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js#size), [données](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js#data), et [index](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js#index). La propriété **taille** obtient la taille, en octets, de la section. La propriété **index** obtient un entier qui représente la position de la section dans la collection de sections.
+L’objet **Slice** vous permet d’accéder aux données figurant dans le fichier. Sauf indication contraire dans le paramètre _options_ de la méthode **getFileAsync**, l’objet **Slice** fait 4 Mo. L’objet **Slice** expose trois propriétés : [size](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js#size), [data](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js#data) et [index](https://docs.microsoft.com/javascript/api/office/office.slice?view=office-js#index). La propriété **size** obtient la taille, en octets, de la tranche. La propriété **index** obtient un entier qui représente la position de la tranche dans la collection de tranches.
 
 ```js
 // Get a slice from the file and then call sendSlice.

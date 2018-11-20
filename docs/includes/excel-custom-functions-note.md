@@ -1,2 +1,11 @@
 > [!NOTE]
-> Les fonctions personnalisées sont actuellement disponibles dans la préversion pour les développeurs. Les fonctions personnalisées sont prises en charge dans Excel 2016 pour Windows (version 10827 ou ultérieure), Excel 2016 pour Mac (version 13.329 ou ultérieure) et Excel Online. En outre, vous devez joindre le programme [Office Insider](https://products.office.com/office-insider) (niveau**Insider** --anciennement appelé « Insider Fast ») pour pouvoir utiliser les fonctions personnalisées. Les fonctions personnalisées sont actuellement désactivées dans toutes les versions d’Office, sauf si vous êtes membre du programme Office Insider (niveau**Insider** ).
+> Des fonctions personnalisées sont actuellement disponibles dans la préversion pour les développeurs et sont prises en charge sur les plateformes suivantes :
+> - Excel Online
+> - Excel pour Windows (1810 ou version ultérieure)
+> - Excel pour Mac (13.329 ou version ultérieure)
+> 
+> Pour utiliser des fonctions personnalisées dans Excel Online, connectez-vous à l’aide de votre abonnement Office 365 ou d’un [compte Microsoft](https://account.microsoft.com/account).
+> 
+> Pour utiliser des fonctions personnalisées dans Excel pour Windows ou Excel pour Mac, il faut être abonné à Office 365, rejoindre le programme [Office Insider](https://products.office.com/office-insider) (niveau **Insider** – anciennement appelé « Insider Fast ») et utiliser un build d’Excel suffisamment récent (comme indiqué précédemment dans cette remarque). 
+>
+> Si vous n’avez pas d’abonnement Office 365, vous pouvez en obtenir un en rejoignant le [programme pour les développeurs Office 365](https://developer.microsoft.com/fr-FR/office/dev-program).

@@ -5,9 +5,9 @@ Dans cette étape du didacticiel, vous devez tester par programme que votre comp
 
 ## <a name="code-the-add-in"></a>Codage du complément
 
-1. Ouvrez le projet dans votre éditeur de code. 
+1. Ouvrez le projet dans votre éditeur de code.
 2. Ouvrez le fichier index.html.
-3. Remplacez `TODO1` par le codage suivant :
+3. Remplacez `TODO1` par le codage suivant :
 
     ```html
     <button class="ms-Button" id="insert-paragraph">Insert Paragraph</button>
@@ -19,16 +19,16 @@ Dans cette étape du didacticiel, vous devez tester par programme que votre comp
     ```js
     if (!Office.context.requirements.isSetSupported('WordApi', 1.3)) {
         console.log('Sorry. The tutorial add-in uses Word.js APIs that are not available in your version of Office.');
-    } 
+    }
     ```
 
-6. Remplacez `TODO2` par le code suivant :
+6. Remplacez `TODO2` par le code suivant :
 
     ```js
     $('#insert-paragraph').click(insertParagraph);
     ```
 
-7. Remplacez `TODO3` par le code suivant : Remarques :
+7. Remplacez `TODO3` par le code suivant : Remarques :
    - Votre logique métier Word.js est ajoutée à la fonction qui est transmise à `Word.run`. Cette logique n’est pas exécutée immédiatement. Au lieu de cela, elle est ajoutée à une file d’attente de commandes.
    - La méthode `context.sync` envoie toutes les commandes en file d’attente vers Word pour exécution.
    - L’élément `Word.run` est suivi par un bloc `catch`. Il s’agit d’une meilleure pratique que vous devez toujours suivre. 
@@ -36,7 +36,7 @@ Dans cette étape du didacticiel, vous devez tester par programme que votre comp
     ```js
     function insertParagraph() {
         Word.run(function (context) {
-            
+
             // TODO4: Queue commands to insert a paragraph into the document.
 
             return context.sync();
@@ -48,30 +48,30 @@ Dans cette étape du didacticiel, vous devez tester par programme que votre comp
             }
         });
     }
-    ``` 
+    ```
 
-8. Remplacez `TODO4` par le code suivant. Veuillez noter les informations suivantes :
+8. Remplacez `TODO4` par le code suivant. Veuillez noter les informations suivantes :
    - Le premier paramètre de la méthode `insertParagraph` correspond au texte pour le nouveau paragraphe.
-   - Le deuxième paramètre correspond à l’emplacement dans le corps où sera inséré le paragraphe. Les autres options d’insertion de paragraphe, lorsque l’objet parent est le corps, sont « Fin » et « Remplacer ». 
+   - Le deuxième paramètre correspond à l’emplacement dans le corps où sera inséré le paragraphe. Les autres options d’insertion de paragraphe, lorsque l’objet parent est le corps, sont « Fin » et « Remplacer ».
 
     ```js
     const docBody = context.document.body;
     docBody.insertParagraph("Office has several versions, including Office 2016, Office 365 Click-to-Run, and Office Online.",
-                            "Start");   
-    ``` 
+                            "Start");
+    ```
 
 ## <a name="test-the-add-in"></a>Test du complément
 
-1. Ouvrez une fenêtre Git Bash, ou une invite système Node.JS, et accédez au dossier **Start** du projet.
+1. Ouvrez une fenêtre Git Bash, ou une invite système Node.JS, et accédez au dossier **Start** du projet.
 2. Exécutez la commande `npm run build` afin de transpiler votre code source ES6 vers une version antérieure de JavaScript prise en charge par tous les hôtes sur lesquels les compléments Office peuvent être exécutés.
-3. Exécutez la commande `npm start` pour démarrer un serveur web en cours d’exécution sur localhost.   
-4. Chargez une version test du complément en utilisant l’une des méthodes suivantes :
-    - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Word Online : [Chargement d’une version test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+3. Exécutez la commande `npm start` pour démarrer un serveur web en cours d’exécution sur localhost.
+4. Chargez une version test du complément en utilisant l’une des méthodes suivantes :
+    - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Word Online : [Chargement d’une version test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
+    - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 5. Dans le menu **Accueil** de Word, sélectionnez **Afficher le volet des tâches**.
-6. Dans le volet des tâches, sélectionnez **Insérer un paragraphe**.
-7. Apportez une modification au paragraphe. 
-8. Sélectionnez à nouveau **Insérer un paragraphe**. Notez que le nouveau paragraphe se trouve au-dessus du paragraphe précédent, car la méthode `insertParagraph` effectue l’insertion au « début » du corps du document.
+6. Dans le volet Office, sélectionnez **Insérer un paragraphe**.
+7. Apportez une modification au paragraphe.
+8. Sélectionnez à nouveau **Insérer un paragraphe**. Notez que le nouveau paragraphe se trouve au-dessus du paragraphe précédent, car la méthode `insertParagraph` effectue l’insertion au « début » du corps du document.
 
     ![Didacticiel Word - Insérer un paragraphe](../images/word-tutorial-insert-paragraph.png)

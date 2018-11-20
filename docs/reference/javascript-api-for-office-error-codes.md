@@ -1,32 +1,43 @@
+---
+title: Codes d’erreur de l’API JavaScript pour Office
+description: ''
+ms.date: 10/31/2018
+ms.openlocfilehash: d32323e18c13fb91c2e54ae7d8b0daa9ab4990be
+ms.sourcegitcommit: 161a0625646a8c2ebaf1773c6369ee7cc96aa07b
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "25891948"
+---
 # <a name="javascript-api-for-office-error-codes"></a>Codes d’erreur de l’API JavaScript pour Office
 
 Cet article décrit les messages d’erreur que vous pouvez rencontrer lors de l’utilisation de l’API JavaScript pour Office (Office.js).
 
-**S’applique à :** Compléments Office | Compléments SharePoint | Excel | Outlook | PowerPoint | Project | Word
+**S’applique à :** Compléments Office | Compléments SharePoint | Excel | Outlook | PowerPoint | Project | Word
 
 ## <a name="error-codes"></a>Codes d’erreur
 
 Le tableau suivant répertorie les codes d’erreur, les noms et les messages affichés, ainsi que les conditions qu’ils indiquent.
 
-|**Error.code**|**Error.Name**|**Error.message**|**Condition**|
+|**Code d’erreur**|**Nom de l’erreur**|**Message de l’erreur**|**Condition**|
 |:-----|:-----|:-----|:-----|
-|1000|Le type de forçage de type est incorrect|Le type de forçage de type spécifié n’est pas pris en charge.|Le type de forçage de type n’est pas pris en charge dans l’application hôte. (Par exemple, les types de forçage de type OOXML et  HTML ne sont pas pris en charge dans Excel.)|
-|1001|Une erreur s’est produite lors de la lecture des données|La sélection actuelle n’est pas prise en charge.|La sélection actuelle de l’utilisateur n’est pas prise en charge. (Autrement dit, elle présente une différence par rapport aux types de forçage de type pris en charge.)|
+|1 000|Le type de forçage de type est incorrect|Le type de forçage de type spécifié n’est pas pris en charge.|Le type de forçage de type n’est pas pris en charge dans l’application hôte. (Par exemple, les types de forçage de type OOXML et  HTML ne sont pas pris en charge dans Excel.)|
+|1001|Une erreur s’est produite lors de la lecture des données|La sélection actuelle n’est pas prise en charge.|La sélection actuelle de l’utilisateur n’est pas prise en charge. (Autrement dit, il y a quelque chose de différent des types de forçage de type pris en charge.)|
 |1002|Le type de forçage de type est incorrect|Le type de forçage de type spécifié n’est pas compatible avec ce type de liaison.|Le développeur de solutions a fourni une combinaison incompatible de type de forçage de type et de type de liaison.|
 |1003|Une erreur s’est produite lors de la lecture des données|Les valeurs rowCount ou columnCount spécifiées sont incorrectes.|L’utilisateur fournit un nombre de lignes ou de colonnes incorrect.|
 |1004|Une erreur s’est produite lors de la lecture des données|La sélection actuelle n’est pas compatible avec le type de forçage de type spécifié.|La sélection actuelle n’est pas prise en charge pour le type de forçage de type spécifié par cette application.|
 |1005|Une erreur s’est produite lors de la lecture des données|Les valeurs startRow ou startColumn spécifiées sont incorrectes.|L’utilisateur fournit des valeurs startRow ou startCol incorrectes.|
-|1006|Une erreur s’est produite lors de la lecture des données|Les paramètres de coordonnées ne peuvent pas être utilisés avec le type de forçage de type « Tableau » lorsque le tableau contient des cellules fusionnées.|L’utilisateur essaie d’obtenir des données partielles à partir d’un tableau non uniforme (c’est-à-dire un tableau qui contient des cellules fusionnées.) |
+|1006|Une erreur s’est produite lors de la lecture des données|Les paramètres de coordonnées ne peuvent pas être utilisés avec le type de forçage de type « Tableau » lorsque le tableau contient des cellules fusionnées.|L’utilisateur essaie d’obtenir des données partielles à partir d’un tableau non uniforme (c’est-à-dire un tableau qui contient des cellules fusionnées.) |
 |1007|Une erreur s’est produite lors de la lecture des données|La taille du document est trop importante.|L’utilisateur tente d’obtenir un document plus grand que la taille actuellement prise en charge.|
 |1008|Une erreur s’est produite lors de la lecture des données|La taille du jeu de données demandé est trop importante.|L’utilisateur demande à lire des données au-delà des limites de données définies par les compléments hôte.|
 |1009|Une erreur s’est produite lors de la lecture des données|Le type de fichier spécifié n’est pas pris en charge.|L’utilisateur envoie un type de fichier incorrect.|
 |2000|Une erreur s’est produite lors de l’écriture des données|Le type d’objet de données fourni n’est pas pris en charge. |Un objet de données non pris en charge est fourni.|
 |2001|Une erreur s’est produite lors de l’écriture des données|Impossible d’écrire dans la sélection actuelle.|La sélection actuelle de l’utilisateur n’est pas prise en charge pour une opération d’écriture. (Par exemple, lorsque l’utilisateur sélectionne une image.)|
 |2002|Une erreur s’est produite lors de l’écriture des données|L’objet de données fourni n’est pas compatible avec la forme ou les dimensions de la sélection actuelle.|Plusieurs cellules sont sélectionnées (et la forme de la sélection ne correspond pas à la forme des données.)Plusieurs cellules sont sélectionnées (et les dimensions de la sélection ne correspondent pas aux dimensions des données.)|
-|2003|Une erreur s’est produite lors de l’écriture des données|L’opération ensembliste a échoué, car l’objet de données fourni remplacera les données.|Une seule cellule est sélectionnée et l’objet de données fourni remplace les données dans la feuille de calcul.|
+|2003|Une erreur s’est produite lors de l’écriture des données|L’opération SET a échoué, car l’objet de données fourni remplacera les données.|Une seule cellule est sélectionnée et l’objet de données fourni remplace les données dans la feuille de calcul.|
 |2004|Une erreur s’est produite lors de l’écriture des données|L’objet de données fourni ne correspond pas à la taille de la sélection actuelle.|L’utilisateur fournit un objet plus grand que la taille de la sélection actuelle.|
 |2005|Une erreur s’est produite lors de l’écriture des données|Les valeurs startRow ou startColumn spécifiées sont incorrectes.|L’utilisateur fournit des valeurs startRow ou startCol incorrectes.|
-|2006|Une erreur de format incorrect s’est produite|Le format de l’objet de données spécifié est incorrect.|Le développeur de solutions fournit une chaîne HTML ou OOXML incorrecte, une chaîne HTML au format incorrect ou une chaîne  OOXML incorrecte.|
+|2006|Une erreur de format incorrect s’est produite|Le format de l’objet de données spécifié est incorrect.|Le développeur de solutions fournit une chaîne HTML ou OOXML incorrecte, une chaîne HTML au format incorrect ou une chaîne  OOXML incorrecte.|
 |2007|L’objet de données est incorrect|Le type de l’objet de données spécifié n’est pas compatible avec la sélection actuelle.|Le développeur de solutions fournit un objet de données qui n’est pas compatible avec le type de forçage de type spécifié.|
 |2008|Une erreur s’est produite lors de l’écriture des données|TBD|TBD|
 |2009|Une erreur s’est produite lors de l’écriture des données|L’objet de données spécifié est trop volumineux.|L’utilisateur tente de définir des données au-delà des limites de données définies par les compléments hôte.|
@@ -41,13 +52,13 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 |3007|Une erreur s’est produite lors de la création de la liaison|Nous avons trouvé plusieurs objets du même nom.|Erreur de collision : plus d’un contrôle de contenu du même nom existe, et l’échec en cas de collision est défini sur  **true**.|
 |3008|Une erreur s’est produite lors de la création de la liaison|Le type de liaison spécifié n’est pas compatible avec l’élément nommé fourni.|L’élément nommé ne peut pas être lié au type. Par exemple, un contrôle de contenu contient du texte, mais le développeur a tenté d’effectuer une liaison à l’aide du type de forçage de type  _tableau_.|
 |3009|Opération de liaison incorrecte|Le type de liaison n’est pas pris en charge.|Utilisé pour la compatibilité descendante.|
-|3010|Opération de liaison non prise en charge|Le contenu sélectionné doit être au format Tableau. Organisez les données sous forme de tableau et réessayez.|Le développeur tente d’utiliser la méthode **addRowsAsynch** ou **deleteAllDataValuesAsynch** de l’objet **TableBinding** sur les données du type de forçage _matrice_.|
+|3010|Opération de liaison non prise en charge|Le contenu sélectionné doit être dans un format de tableau. Placez les données sous forme de tableau, puis réessayez.|Le développeur tente d’utiliser les méthodes  **addRowsAsynch** ou **deleteAllDataValuesAsynch** de l’objet **TableBinding** sur les données du type de forçage de type _matrice_.|
 |4000|Une erreur s’est produite lors de la lecture des paramètres|Le nom de paramètre spécifié n’existe pas.|Un nom de paramètre non existant est fourni.|
 |4001|Une erreur s’est produite lors de l’enregistrement des paramètres|Les paramètres n’ont pas pu être enregistrés.|Les paramètres n’ont pas pu être enregistrés.|
 |4002|Une erreur relative à des paramètres périmés s’est produite|Les paramètres n’ont pas pu être enregistrés car ils sont périmés.|Les paramètres sont périmés et le développeur a indiqué de ne pas les remplacer.|
 |5000|Une erreur relative à des paramètres périmés s’est produite|L’opération n’est pas prise en charge.|L’opération n’est pas prise en charge dans l’hôte actuel. Par exemple,  **document.getSelectionAsync** est appelé à partir d’Outlook.|
-|5001|Erreur interne|Une erreur interne s’est produite.|Fait référence à une condition d’erreur interne, qui peut se produire pour l’une des raisons suivantes :<br/><table><tr><td>Un complément utilisé par un autre utilisateur partageant le classeur a créé une liaison quasiment au même moment et votre complément doit recommencer le processus de liaison.</tr></td><tr><td>Une erreur inconnue s’est produite.</tr></td><tr><td>L’opération a échoué.</tr></td><tr><td>L’accès a été refusé car l’utilisateur n’est pas membre d’un rôle autorisé.</tr></td><tr><td>L’accès a été refusé car une communication chiffrée sécurisée est exigée.</tr></td><tr><td>Les données sont obsolètes et l’utilisateur doit confirmer l’activation des requêtes pour les actualiser.</tr></td><tr><td>Le quota d’UC de la collection de sites est dépassé.</tr></td><tr><td>Le quota de mémoire de la collection de sites est dépassé.</tr></td><tr><td>Le quota de mémoire de la session est dépassé.</tr></td><tr><td>Le classeur est dans un état non valide et l’opération ne peut pas être effectuée.</tr></td><tr><td>La session a expiré car elle était inactive et l’utilisateur doit recharger le classeur.</tr></td><tr><td>Le nombre maximal de sessions autorisées par utilisateur est dépassé.</tr></td><tr><td>L’opération a été annulée par l’utilisateur.</tr></td><tr><td>L’opération ne peut pas aboutir car elle prend trop de temps.</tr></td><tr><td>La demande ne peut pas aboutir et une nouvelle tentative doit être effectuée.</tr></td><tr><td>La période d’évaluation du produit a expiré.</tr></td><tr><td>La session a expiré car elle était inactive.</tr></td><tr><td>L’utilisateur n’est pas autorisé à effectuer l’opération sur la plage spécifiée.</tr></td><tr><td>Les paramètres régionaux de l’utilisateur ne correspondent pas à la session de collaboration active.</tr></td><tr><td>L’utilisateur n’est plus connecté et doit actualiser ou rouvrir le classeur.</tr></td><tr><td>La plage demandée n’existe pas dans la feuille.</tr></td><tr><td>L’utilisateur n’est pas autorisé à modifier le classeur.</tr></td><tr><td>Le classeur ne peut pas être modifié car il est verrouillé.</tr></td><tr><td>La session ne peut pas enregistrer automatiquement le classeur.</tr></td><tr><td>La session ne peut pas actualiser son verrouillage du fichier du classeur.</tr></td><tr><td>La demande ne peut pas être traitée et une nouvelle tentative doit être effectuée.</tr></td><tr><td>Les informations de connexion de l’utilisateur n’ont pas pu être vérifiées et doivent être saisies de nouveau.</tr></td><tr><td>L’accès a été refusé à l’utilisateur.</tr></td><tr><td>Le classeur partagé doit être mis à jour.</tr></td></table>|
-|5002|Autorisation refusée|L’opération demandée n’est pas autorisée sur le mode de document actuel.|Le développeur de solutions soumet une opération de définition, mais le document est dans un mode qui n’autorise pas de modifications, tel que « Restreindre la modification ».|
+|5001|Erreur interne|Une erreur interne s’est produite.|Fait référence à une condition d’erreur interne, qui peut se produire pour l’une des raisons suivantes :<br/><table><tr><td>Un complément utilisé par un autre utilisateur partageant le classeur a créé une liaison quasiment au même moment et votre complément doit recommencer le processus de liaison.</tr></td><tr><td>Une erreur inconnue s’est produite.</tr></td><tr><td>L’opération a échoué.</tr></td><tr><td>L’accès a été refusé car l’utilisateur n’est pas membre d’un rôle autorisé.</tr></td><tr><td>L’accès a été refusé car une communication chiffrée sécurisée est exigée.</tr></td><tr><td>Les données sont obsolètes et l’utilisateur doit confirmer l’activation des requêtes pour les actualiser.</tr></td><tr><td>Le quota d’UC de la collection de sites est dépassé.</tr></td><tr><td>Le quota de mémoire de la collection de sites est dépassé.</tr></td><tr><td>Le quota de mémoire de la session est dépassé.</tr></td><tr><td>Le classeur est dans un état non valide et l’opération ne peut pas être effectuée.</tr></td><tr><td>La session a expiré car elle était inactive et l’utilisateur doit recharger le classeur.</tr></td><tr><td>Le nombre maximal de sessions autorisées par utilisateur est dépassé.</tr></td><tr><td>L’opération a été annulée par l’utilisateur.</tr></td><tr><td>L’opération ne peut pas aboutir car elle prend trop de temps.</tr></td><tr><td>La demande ne peut pas aboutir et une nouvelle tentative doit être effectuée.</tr></td><tr><td>La période d’évaluation du produit a expiré.</tr></td><tr><td>La session a expiré car elle était inactive.</tr></td><tr><td>L’utilisateur n’est pas autorisé à effectuer l’opération sur la plage spécifiée.</tr></td><tr><td>Les paramètres régionaux de l’utilisateur ne correspondent pas à la session de collaboration active.</tr></td><tr><td>L’utilisateur n’est plus connecté et doit actualiser ou rouvrir le classeur.</tr></td><tr><td>La plage demandée n’existe pas dans la feuille.</tr></td><tr><td>L’utilisateur n’est pas autorisé à modifier le classeur.</tr></td><tr><td>Le classeur ne peut pas être modifié car il est verrouillé.</tr></td><tr><td>La session ne peut pas enregistrer automatiquement le classeur.</tr></td><tr><td>La session ne peut pas actualiser son verrouillage du fichier du classeur.</tr></td><tr><td>La demande ne peut pas être traitée et une nouvelle tentative doit être effectuée.</tr></td><tr><td>Les informations de connexion de l’utilisateur n’ont pas pu être vérifiées et doivent être saisies de nouveau.</tr></td><tr><td>L’accès a été refusé à l’utilisateur.</tr></td><tr><td>Le classeur partagé doit être mis à jour.</tr></td></table>|
+|5002|Autorisation refusée|L’opération demandée n’est pas autorisée sur le mode de document actuel.|Le développeur de solutions soumet une opération de définition, mais le document est dans un mode qui n’autorise pas de modifications, telles que « Restreindre la modification ».|
 |5003|Une erreur s’est produite lors de l’enregistrement de l’événement|Le type d’événement spécifié n’est pas pris en charge par l’objet actuel.|Le développeur de solutions tente d’inscrire ou d’annuler l’inscription d’un gestionnaire pour un événement qui n’existe pas.|
 |5004|L’appel d’API est incorrect|L’appel d’API n’est pas correct dans le contexte actuel.|Un appel incorrect est effectué pour le contexte, par exemple, en essayant d’utiliser un objet  **CustomXMLPart** dans Excel.|
 |5005|Données périmées|Échec de l’opération car les données sur le serveur sont périmées.|Les données sur le serveur doivent être actualisées.|
@@ -55,7 +66,7 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 |5007|L’appel d’API est incorrect|L’énumération n’est pas prise en charge dans le contexte actuel.|L’énumération n’est pas prise en charge dans le contexte actuel.|
 |5009|Autorisation refusée|Accès refusé|Le complément n’est pas autorisé à appeler l’API spécifique.|
 |6000|Nœud incorrect|Le nœud spécifié est introuvable.|Le nœud **CustomXmlPart** est introuvable.|
-|6100|Une erreur relative à du code XML personnalisé s’est produite.|Une erreur relative à du code XML personnalisé s’est produite.|L’appel d’API est incorrect|
+|6100|Une erreur relative à du code XML personnalisé s’est produite.|Une erreur relative à du code XML personnalisé s’est produite.|L’appel d’API est incorrect|
 |7000|ID incorrect|L’ID spécifié n’existe pas.|ID incorrect|
 |7001|Navigation non valide|L’objet se trouve à un emplacement dans lequel la navigation n’est pas prise en charge.|L’utilisateur peut trouver l’objet, mais ne peut pas naviguer jusqu’à celui-ci. (Par exemple, dans Word, la liaison est effectuée avec l’en-tête, le pied de page ou un commentaire.)|
 |7002|Navigation non valide|L’objet est verrouillé ou protégé.|L’utilisateur tente d’accéder à une plage verrouillée ou protégée.|
@@ -68,13 +79,14 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 |8021|En dehors de la plage|La valeur d’index de colonne se trouve en dehors de la plage autorisée. Utilisez une valeur (supérieure ou égale à 0) inférieure au nombre de colonnes.|L’index de colonne est supérieur à l’index de colonne le plus élevé du tableau ou est inférieur à 0.|
 |8022|En dehors de la plage|La valeur se trouve en dehors de la plage autorisée.|Certaines des valeurs dans le format se trouvent en dehors des plages prises en charge.|
 |9016|Autorisation refusée|Autorisation refusée|L’accès est refusé.|
-|12002|||Un des éléments suivants :<br> Aucune page n’existe à l’URL qui a été transmise à `displayDialogAsync`.<br> - La page qui a été transmise à `displayDialogAsync` a été chargée, mais la boîte de dialogue a été redirigée vers une page introuvable ou impossible à charger, ou a été redirigée vers une URL dont la syntaxe n’est pas valide. Levée dans la boîte de dialogue et déclenche un événement  `DialogEventReceived` dans la page hôte.|
-|12003|||La boîte de dialogue a été redirigée vers une URL avec le protocole HTTP. C'est le protocole HTTPS qui est requis. Levée dans la boîte de dialogue et déclenche un événement  `DialogEventReceived` dans la page hôte.|
-|12004|||Le domaine de l’URL transmis à `displayDialogAsync` n’est pas approuvé. Le domaine doit être le même domaine que la page hôte (y compris le protocole et le numéro de port). Levée par l’appel de `displayDialogAsync`.|
-|12005|||L’URL transmis à `displayDialogAsync` utilise le protocole HTTP. C'est le protocole HTTPS qui est requis. Levée par l’appel de `displayDialogAsync`. (Dans certaines versions de Microsoft Office, le message d’erreur renvoyé avec 12005 est le même que celui renvoyé pour 12004.)|
-|12006|||La boîte de dialogue a été fermée, généralement parce que l’utilisateur choisit le bouton **X**. Levée dans la boîte de dialogue et déclenche un événement  `DialogEventReceived` dans la page hôte.|
-|12007|||Une boîte de dialogue est déjà ouverte à partir de cette fenêtre hôte. Une fenêtre hôte, par exemple un volet Office, peut ouvrir une seule boîte de dialogue à la fois. Levée par l’appel de `displayDialogAsync`.|
-|13000 - 13010|||Voir la section [Causes et gestion des erreurs de getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/troubleshoot-sso-in-office-add-ins#causes-and-handling-of-errors-from-getaccesstokenasync).|
+|12002|||Un des éléments suivants :<br> - Aucune page n’existe à l’URL qui a été transmise à `displayDialogAsync`.<br> - La page qui a été transmise à `displayDialogAsync` a été chargée, mais la boîte de dialogue a été redirigée vers une page introuvable ou impossible à charger, ou a été redirigée vers une URL dont la syntaxe n’est pas valide. Erreur signalée dans la boîte de dialogue. Elle déclenche un événement `DialogEventReceived` dans la page hôte.|
+|12003|||La boîte de dialogue a été redirigée vers une URL avec le protocole HTTP. C’est le protocole HTTPS qui est requis. Erreur signalée dans la boîte de dialogue. Elle déclenche un événement `DialogEventReceived` dans la page hôte.|
+|12004|||Le domaine de l’URL transmis à `displayDialogAsync` n’est pas approuvé. Le domaine doit être le même domaine que celui de la page hôte (y compris le protocole et le numéro de port). Erreur générée par l’appel de `displayDialogAsync`.|
+|12005|||L’URL transmise à `displayDialogAsync` utilise le protocole HTTP. C’est le protocole HTTPS qui est requis. Erreur générée par l’appel de `displayDialogAsync`. (Dans certaines versions d’Office, le message d’erreur renvoyé avec le code 12005 est identique à celui renvoyé avec le code 12004.)|
+|12006|||La boîte de dialogue a été fermée, généralement parce que l’utilisateur choisit le bouton **X**. Erreur signalée dans la boîte de dialogue. Elle déclenche un événement `DialogEventReceived` dans la page hôte.|
+|12007|||Une boîte de dialogue est déjà ouverte à partir de cette fenêtre hôte. Une fenêtre hôte, par exemple un volet Office, ne peut avoir qu’une seule boîte de dialogue ouverte à la fois. Erreur générée par l’appel de `displayDialogAsync`.|
+|12009|||L’utilisateur a choisi d’ignorer la boîte de dialogue. Cette erreur peut se produire dans les versions en ligne d’Office, quand les utilisateurs peuvent choisir d’autoriser ou non un complément à afficher une boîte de dialogue. Erreur générée par l’appel de `displayDialogAsync`.|
+|13000 – 13010|||Reportez-vous à l’article [Causes et gestion des erreurs de getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/troubleshoot-sso-in-office-add-ins#causes-and-handling-of-errors-from-getaccesstokenasync).|
 
 ## <a name="binding-creation-error-conditions"></a>Conditions d’erreur de création de liaison
 
@@ -91,7 +103,7 @@ Le tableau suivant résume le comportement de liaison dans Excel.
 |Matrice|Sélection multiple/sélection incorrecte (par exemple, l’utilisateur sélectionne une image, un objet ou un objet Word Art.)|Impossible de créer la liaison.|
 |Tableau|Plage de cellules (y compris une cellule unique)|Impossible de créer la liaison.|
 |Tableau|Plage de cellules dans un tableau (comprend une seule cellule dans un tableau, le tableau entier, ou du texte dans la cellule d’un tableau)|Une liaison est créée dans le tableau entier.|
-|Tableau|Demie sélection dans un tableau et demie sélection en dehors du tableau|Impossible de créer la liaison.|
+|Tableau|Demi-sélection dans un tableau et demie sélection en dehors du tableau|Impossible de créer la liaison.|
 |Tableau|Texte sélectionné dans la cellule (pas dans le tableau)|Impossible de créer la liaison.|
 |Tableau|Sélection multiple/sélection incorrecte (par exemple, l’utilisateur sélectionne une image, un objet, un objet Word Art, etc.)|Impossible de créer la liaison.|
 |Texte|Plage de cellules|Impossible de créer la liaison.|
@@ -107,7 +119,7 @@ Le tableau suivant résume le comportement de liaison dans Word.
 |**Type de liaison spécifié**|**Sélection réelle**|**Comportement**|
 |:-----|:-----|:-----|
 |Matrice|Texte|Impossible de créer la liaison.|
-|Matrice|Tableau entier|Une liaison de type  _matrice_ est créée. Le document est modifié et un contrôle de contenu doit encapsuler le tableau. |
+|Matrice|Tableau entier|Une liaison de type  _matrice_ est créée.Le document est modifié et un contrôle de contenu doit encapsuler le tableau. |
 |Matrice|Plage dans un tableau|Impossible de créer la liaison.|
 |Matrice|Sélection non valide (par exemple, objets multiples, incorrects, etc.)|Impossible de créer la liaison.|
 |Tableau|Texte|Impossible de créer la liaison.|
@@ -121,5 +133,5 @@ Le tableau suivant résume le comportement de liaison dans Word.
 
 ## <a name="see-also"></a>Voir aussi
    
-- [Cycle de vie du développement des compléments Office](https://docs.microsoft.com/office/dev/add-ins/concepts/add-in-development-lifecycle)
+- [Cycle de vie du développement des compléments Office](https://docs.microsoft.com/office/dev/add-ins/concepts/add-in-development-lifecycle)
     

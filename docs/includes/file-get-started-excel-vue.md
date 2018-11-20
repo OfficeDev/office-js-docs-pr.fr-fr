@@ -12,7 +12,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
     npm install -g vue-cli
     ```
 
-- Installez la dernière version de [Yeoman](https://github.com/yeoman/yo) et le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) globalement.
+- Installez la dernière version de [Yeoman](https://github.com/yeoman/yo) et le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) globalement.
 
     ```bash
     npm install -g yo generator-office
@@ -26,11 +26,11 @@ Utilisez l’interface de ligne de commande Vue pour générer une nouvelle appl
 vue init webpack my-add-in
 ```
 
-Lorsque vous répondez aux invites générées par la commande précédente, remplacez les réponses par défaut des 3 invites ci-dessous. Vous pouvez accepter les réponses par défaut de toutes les autres invites.
+Lorsque vous répondez aux invites générées par la commande précédente, remplacez les réponses par défaut des 3 invites ci-dessous. Vous pouvez accepter les réponses par défaut de toutes les autres invites.
 
-- **Installer vue-router ?** `No`
-- **Configurer des tests d’unités :** `No`
-- **Configurer des tests e2e avec Nightwatch ?** `No`
+- **Installer vue-router ?** `No`
+- **Configurer des tests d’unités :** `No`
+- **Configurer des tests e2e avec Nightwatch ?** `No`
 
 ![Invites de l’interface de ligne de commande Vue](../images/vue-cli-prompts.png)
 
@@ -50,13 +50,13 @@ Chaque complément nécessite un fichier manifeste pour définir ses paramètres
     yo office 
     ```
 
-    - **Choisissez un type de projet :** `Office Add-in containing the manifest only`
-    - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
-    - **Quelle application client Office voulez-vous prendre en charge ? :** `Excel`
+    - **Sélectionnez un type de projet :** `Office Add-in containing the manifest only`
+    - **Comment souhaitez-vous nommer votre complément ? :** `My Office Add-in`
+    - **Quelle application client Office voulez-vous prendre en charge ? :**`Excel`
 
     ![Générateur Yeoman](../images/yo-office.png)
     
-    Une fois que vous en avez terminé avec l'assistant, le générateur crée le fichier manifeste.
+    Une fois l’Assistant exécuté, le générateur crée le fichier manifeste.
 
 ## <a name="secure-the-app"></a>Sécurisation de l’application
 
@@ -70,11 +70,11 @@ Pour activer HTTPS pour votre application, ouvrez le fichier **package.json** da
 
 ## <a name="update-the-app"></a>Mettre à jour l’application
 
-1. Dans votre éditeur de code, ouvrez le dossier **My Office Add-in** que Yo Office a créé à la racine de votre projet Vue. Dans ce dossier, vous verrez le fichier manifeste qui définit les paramètres de votre complément : **manifest.xml**.
+1. Dans votre éditeur de code, ouvrez le dossier **My Office Add-in** créé par Yo Office à la racine de votre projet Vue. Dans ce dossier, vous verrez le fichier manifeste qui définit les paramètres de votre complément : **manifest.xml**.
 
-2. Ouvrez le fichier manifeste, remplacez toutes les occurrences de `https://localhost:3000` avec `https://localhost:8080`, puis enregistrez le fichier.
+2. Ouvrir le fichier manifeste, remplacez toutes les occurrences de `https://localhost:3000` par `https://localhost:8080` et enregistrez le fichier.
 
-3. Ouvrez le fichier **index.html** (situé à la racine de votre projet de Vue), ajoutez la balise `<script>` suivante immédiatement avant la balise `</head>`, puis enregistrez le fichier.
+3. Ouvrez le fichier **index.html** (situé à la racine de votre projet Vue), ajoutez la balise `<script>` suivante immédiatement avant la balise `</head>`, puis enregistrez le fichier.
 
     ```html
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
@@ -181,27 +181,27 @@ Pour activer HTTPS pour votre application, ouvrez le fichier **package.json** da
 
 3. Une fois que votre navigateur a chargé la page du complément sans erreurs de certificat, vous pouvez tester votre complément. 
 
-## <a name="try-it-out"></a>Essayez !
+## <a name="try-it-out"></a>Essayez !
 
 1. Suivez les instructions pour la plateforme que vous utiliserez pour exécuter votre complément et chargez une version test du complément dans Excel.
 
-    - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online : [Chargement de versions test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Excel Online : [Chargement de versions test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
+    - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
+2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
-    ![Bouton de Complément Excel](../images/excel-quickstart-addin-2a.png)
+    ![Bouton Complément Excel](../images/excel-quickstart-addin-2a.png)
 
 3. Sélectionnez une plage de cellules dans la feuille de calcul.
 
-4. Dans le volet Office, cliquez sur le bouton **Définir couleur** pour définir la couleur de la plage sélectionnée en vert.
+4. Dans le volet Office, cliquez sur le bouton **Définir couleur** pour définir la couleur de la plage sélectionnée en vert.
 
     ![Complément Excel](../images/excel-quickstart-addin-2c.png)
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations, vous avez créé un complément Excel à l’aide de Vue ! Découvrez à présent les fonctionnalités des compléments Excel et créez un complément plus complexe en continuant le didacticiel sur le complément Excel.
+Félicitations, vous avez créé un complément Excel à l’aide de Vue ! Découvrez à présent les fonctionnalités des compléments Excel et créez un complément plus complexe en continuant le didacticiel sur le complément Excel.
 
 > [!div class="nextstepaction"]
 > [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial.yml)

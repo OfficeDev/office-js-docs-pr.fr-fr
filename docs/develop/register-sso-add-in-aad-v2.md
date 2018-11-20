@@ -1,24 +1,24 @@
 ---
-title: Enregistrer un complément Office utilisant une SSO (authentification unique) au point de terminaison Azure AD v2.0
+title: Enregistrer un complément Office utilisant une SSO (authentification unique) au point de terminaison Azure AD v2.0
 description: ''
 ms.date: 04/10/2018
-ms.openlocfilehash: 95b690e21bddf7f2754cc308c8b771e629bbc630
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 7b9c0dbcdf8a892ffcb810972c4d3674acbc31f7
+ms.sourcegitcommit: 2ac7d64bb2db75ace516a604866850fce5cb2174
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437254"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "26298536"
 ---
-# <a name="register-an-office-add-in-that-uses-sso-with-the-azure-ad-v20-endpoint"></a>Enregistrer un complément Office utilisant une SSO (authentification unique) au point de terminaison Azure AD v2.0
+# <a name="register-an-office-add-in-that-uses-sso-with-the-azure-ad-v20-endpoint"></a>Enregistrer un complément Office utilisant une SSO (authentification unique) au point de terminaison Azure AD v2.0
 
-Cet article explique comment enregistrer un complément Office au point de terminaison Azure AD v2.0. Vous devez inscrire le complément dès le début de son développement. Lorsque vous passez à la phase de test ou de production, vous pouvez modifier l'enregistrement existant ou créer des enregistrements distincts pour chaque version de développement, de test et de production du complément. 
+This article explains how to register an Office Add-in with the Azure AD v2.0 endpoint. You need to register the add-in when you begin developing it. When you progress to testing or production, you can change the existing registration or create separate registrations for development, testing, and production versions of the add-in.
 
-Le tableau suivant détaille les informations nécessaires pour effectuer cette procédure, ainsi que les espaces réservés correspondant tels qu'ils apparaissent dans les instructions. 
+Le tableau suivant d?taille les informations n?cessaires pour effectuer cette proc?dure, ainsi que les espaces r?serv?s correspondant tels qu'ils apparaissent dans les instructions. 
 
-|Information  |Exemples  |Espace réservé  |
+|Informations  |Exemples  |Espace réservé  |
 |---------|---------|---------|
-|Un nom contrôlable de visu pour le complément. (Caractère unique recommandée, mais pas obligatoire)    |`Contoso Marketing Excel Add-in (Prod)`        |**$ADD-IN-NAME$**         |
-|Le nom de domaine complet du complément (sauf pour le protocole). *Vous devez utiliser un domaine que vous possédez.* C'est pourquoi il n'est pas possible d'utiliser certains domaines connus comme `azurewebsites.net` ou `cloudapp.net`.   |`localhost:6789`, `addins.contoso.com`         |**$FQDN-WITHOUT-PROTOCOL$**         |
-|Les autorisations dont votre complément a besoin pour AAD et Microsoft Graph. (`profile` est toujours requis.)    |`profile`, `Files.Read.All`         |N/A         |
+|A human readable name for the add-in. (Uniqueness recommended, but not required.)    |`Contoso Marketing Excel Add-in (Prod)`        |**$ADD-IN-NAME$**         |
+|Le nom de domaine complet du compl?ment (sauf pour le protocole). *Vous devez utiliser un domaine que vous poss?dez.* C'est pourquoi il n'est pas possible d'utiliser certains domaines connus comme `azurewebsites.net` ou `cloudapp.net`. Le domaine et les sous-domaines doivent être les mêmes que ceux utilisés dans les URL dans la section `<Resources>` du manifeste du complément.  |`localhost:6789`, `addins.contoso.com`         |**$FQDN-WITHOUT-PROTOCOL$**         |
+|Les autorisations dont votre compl?ment a besoin pour AAD et Microsoft Graph. (`profile` est toujours requis.)    |`profile`, `Files.Read.All`         |S/O         |
 
 [!INCLUDE[](../includes/register-sso-add-in-aad-v2-include.md)]
