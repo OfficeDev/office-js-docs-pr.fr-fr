@@ -2,12 +2,12 @@
 title: Manifeste XML des compléments Office
 description: ''
 ms.date: 02/09/2018
-ms.openlocfilehash: e25d465b39cea0a13a890fec95fafdbeafff0ca5
-ms.sourcegitcommit: 9b021af6cb23a58486d6c5c7492be425e309bea1
+ms.openlocfilehash: 85791b40e17095248eb47e6e9eda40dba70e7cdf
+ms.sourcegitcommit: 3e84d616e69f39eeeeea773f2431e7d674c4a9f5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "26533706"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "26644731"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifeste XML des compléments Office
 
@@ -33,6 +33,10 @@ Un fichier de manifeste XML basé sur ce schéma permet à un Complément Office
 ## <a name="required-elements"></a>Éléments requis
 
 Le tableau suivant spécifie les éléments qui sont requis pour les trois types de compléments Office.
+
+> [!NOTE]
+> Il existe également un ordre obligatoire d’apparition des éléments au sein de leur élément parent. Pour plus d’informations, reportez-vous à la rubrique [Comment trouver l’ordre approprié d’éléments manifeste](manifest-element-ordering.md).
+
 
 ### <a name="required-elements-by-office-add-in-type"></a>Éléments requis par type de complément Office
 
