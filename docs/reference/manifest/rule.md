@@ -82,7 +82,7 @@ Définit une règle qui donne la valeur true si une correspondance de l’expres
 |:-----|:-----|:-----|
 | **RegExName** | Oui | Spécifie le nom de l’expression régulière afin que vous puissiez vous référer à l’expression dans le code de votre complément. |
 | **RegExValue** | Oui | Spécifie l’expression régulière qui sera évaluée pour déterminer si le complément de messagerie doit être affiché. |
-| **PropertyName** | Oui | Spécifie le nom de la propriété par rapport à laquelle l’expression sera évaluée. Les options disponibles sont les suivantes : `Subject`, `BodyAsPlaintext`, `BodyAsHTML` ou `SenderSTMPAddress`. |
+| **PropertyName** | Oui | Spécifie le nom de la propriété par rapport à laquelle l’expression sera évaluée. Les options disponibles sont les suivantes : `Subject`, `BodyAsPlaintext`, `BodyAsHTML` ou `SenderSMTPAddress`. |
 | **IgnoreCase** | Non | Indique d’ignorer la casse lors de l’exécution de l’expression régulière. |
 | **Highlight** | Non | **Remarque :** cela s’applique uniquement aux éléments **Rule** au sein des éléments **ExtensionPoint**. Spécifie comment le client doit mettre en surbrillance le texte correspondant. Peut correspondre à l’une des valeurs suivantes : `all` ou `none`. Si non spécifié, la valeur par défaut est `all`. |
 
