@@ -1,24 +1,24 @@
 ---
 title: Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: 9ceb2187cdd7f503fb39171e420adabcc2f13041
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.date: 11/27/2018
+ms.openlocfilehash: ef74dc622f3e857314874763a54df67bcff1d8ff
+ms.sourcegitcommit: 026437bd3819f4e9cd4153ebe60c98ab04e18f4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459132"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "26992225"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 
-Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes à l’aide de feuilles de calcul utilisant l’API JavaScript pour Excel. Pour une liste complète des propriétés et des méthodes prises en charge par les objets **Worksheet** et **WorksheetCollection**, reportez-vous aux rubriques [Objet Worksheet (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheet?view=office-js) et [Objet WorksheetCollection (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection?view=office-js).
+Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes à l’aide de feuilles de calcul utilisant l’API JavaScript pour Excel. Pour une liste complète des propriétés et des méthodes prises en charge par les objets **Worksheet** et **WorksheetCollection**, reportez-vous aux rubriques [Objet Worksheet (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) et [Objet WorksheetCollection (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection).
 
 > [!NOTE]
-> Les informations contenues dans cet article s’appliquent uniquement aux feuilles de calcul standard. Elles ne concernent pas les feuilles « chart » ou « macro ».
+> les informations contenues dans cet article s’appliquent uniquement aux feuilles de calcul standard. Elles ne concernent pas les feuilles « chart » ou « macro ».
 
 ## <a name="get-worksheets"></a>Obtenir des feuilles de calcul
 
-L’exemple de code suivant récupère la collection de feuilles de calcul, charge la propriété **name** de chaque feuille de calcul et écrit un message dans la console.
+L’exemple de code suivant obtient la collection de feuilles de calcul, charge la propriété **name** de chaque feuille de calcul et écrit un message dans la console.
 
 ```js
 Excel.run(function (context) {
@@ -44,7 +44,7 @@ Excel.run(function (context) {
 
 ## <a name="get-the-active-worksheet"></a>Obtenir la feuille de calcul active
 
-L’exemple de code suivant permet de récupérer la feuille de calcul active, charge sa propriété **name** et écrit un message dans la console.
+L’exemple de code suivant obtient la feuille de calcul active, charge sa propriété **name** et écrit un message dans la console.
 
 ```js
 Excel.run(function (context) {
@@ -81,7 +81,7 @@ Ces exemples montrent comment référencer une feuille de calcul en fonction de 
 
 ### <a name="get-the-first-worksheet"></a>Obtenir la première feuille de calcul
 
-L’exemple de code suivant permet de récupérer la première feuille de calcul du classeur, charge sa propriété **name** et écrit un message dans la console.
+L’exemple de code suivant obtient la première feuille de calcul du classeur, charge sa propriété **name** et écrit un message dans la console.
 
 ```js
 Excel.run(function (context) {
@@ -97,7 +97,7 @@ Excel.run(function (context) {
 
 ### <a name="get-the-last-worksheet"></a>Obtenir la dernière feuille de calcul
 
-L’exemple de code suivant permet de récupérer la dernière feuille de calcul du classeur, charge sa propriété **name** et écrit un message dans la console.
+L’exemple de code suivant obtient la dernière feuille de calcul du classeur, charge sa propriété **name** et écrit un message dans la console.
 
 ```js
 Excel.run(function (context) {
@@ -113,7 +113,7 @@ Excel.run(function (context) {
 
 ### <a name="get-the-next-worksheet"></a>Obtenir la feuille de calcul suivante
 
-L’exemple de code suivant permet d'obtenir la feuille de calcul qui suit la feuille de calcul active du classeur, charge sa propriété **name** et écrit un message dans la console. S’il n’existe aucune feuille de calcul après la feuille de calcul active, la méthode **getNext()** lève une erreur **ItemNotFound**.
+L’exemple de code suivant obtient la feuille de calcul qui suit la feuille de calcul active du classeur, charge sa propriété **name** et écrit un message dans la console. S’il n’existe aucune feuille de calcul après la feuille de calcul active, la méthode **getNext()** lève une erreur **ItemNotFound**.
 
 ```js
  Excel.run(function (context) {
@@ -130,7 +130,7 @@ L’exemple de code suivant permet d'obtenir la feuille de calcul qui suit la fe
 
 ### <a name="get-the-previous-worksheet"></a>Obtenir la feuille de calcul précédente
 
-L’exemple de code suivant permet d'obtenir la feuille de calcul qui précède la feuille de calcul active du classeur, charge sa propriété **name** et écrit un message dans la console. S’il n’existe aucune feuille de calcul avant la feuille de calcul active, la méthode **getPrevious()** lève une erreur **ItemNotFound**.
+L’exemple de code suivant obtient la feuille de calcul qui précède la feuille de calcul active du classeur, charge sa propriété **name** et écrit un message dans la console. S’il n’existe aucune feuille de calcul avant la feuille de calcul active, la méthode **getPrevious()** lève une erreur **ItemNotFound**.
 
 ```js
 Excel.run(function (context) {
@@ -190,7 +190,7 @@ Excel.run(function (context) {
 
 ## <a name="rename-a-worksheet"></a>Renommer une feuille de calcul
 
-L’exemple de code suivant renomme la feuille de calcul en **Nouveau Nom**.
+L’exemple de code suivant renomme la feuille de calcul active comme suit : **New Name**.
 
 ```js
 Excel.run(function (context) {
@@ -260,7 +260,7 @@ Excel.run(function (context) {
 
 ## <a name="get-a-cell-within-a-worksheet"></a>Obtenir une cellule dans une feuille de calcul
 
-L’exemple de code suivant permet d'obtenir la cellule située ligne 2, colonne 5 de la feuille de calcul nommée **Sample**, charge ses propriétés **address** et **values**, et écrit un message dans la console. Les valeurs transmises par la méthode **getCell(row: number, column:number)** sont le numéro de ligne avec indice zéro et le numéro de colonne pour la cellule en cours d’extraction.
+L’exemple de code suivant obtient la cellule située ligne 2, colonne 5 de la feuille de calcul nommée **Sample**, charge ses propriétés **address** et **values**, et écrit un message dans la console. Les valeurs transmises par la méthode **getCell(row: number, column:number)** sont le numéro de ligne avec indice zéro et le numéro de colonne pour la cellule en cours d’extraction.
 
 ```js
 Excel.run(function (context) {
@@ -278,6 +278,30 @@ Excel.run(function (context) {
 ## <a name="get-a-range-within-a-worksheet"></a>Obtenir une plage dans une feuille de calcul
 
 Pour obtenir des exemples qui montrent comment obtenir une plage dans une feuille de calcul, reportez-vous à la rubrique [Utiliser des plages à l’aide de l’API JavaScript pour Excel](excel-add-ins-ranges.md).
+
+## <a name="data-protection"></a>Protection des données
+
+Votre complément permet de contrôler la possibilité qu’a un utilisateur de modifier des données dans une feuille de calcul. La propriété `protection` de la feuille de calcul est un objet [WorksheetProtection](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotection) avec une méthode `protect()`. L’exemple suivant illustre un scénario de base permettant d’activer/de désactiver la protection complète de la feuille de calcul active.
+
+```js
+Excel.run(function (context) {
+    var activeSheet = context.workbook.worksheets.getActiveWorksheet();
+    activeSheet.load("protection/protected");
+
+    return context.sync().then(function() {
+        if (!activeSheet.protection.protected) {
+            activeSheet.protection.protect();
+        }
+    })
+}).catch(errorHandlerFunction);
+```
+
+La méthode `protect` présente deux paramètres facultatifs :
+
+ - `options` : objet [WorksheetProtectionOptions](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotectionoptions) définissant des restrictions de modification spécifiques.
+ - `password` : chaîne représentant le mot de passe nécessaire pour qu’un utilisateur puisse ignorer la protection et modifier la feuille de calcul.
+
+L’article [Protéger une feuille de calcul](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6) comporte davantage d’informations sur la protection des feuilles de calcul et leur modification via l’interface utilisateur Excel.
 
 ## <a name="see-also"></a>Voir aussi
 
