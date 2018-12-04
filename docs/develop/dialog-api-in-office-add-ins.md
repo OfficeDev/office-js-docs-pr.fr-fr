@@ -1,13 +1,13 @@
 ---
 title: Utiliser l’API de dialogue dans vos compléments Office
 description: ''
-ms.date: 10/31/2018
-ms.openlocfilehash: bf93a6aeb4d0b92015351d924d417be0631daf37
-ms.sourcegitcommit: 86724e980f720ed05359c9525948cb60b6f10128
+ms.date: 11/28/2018
+ms.openlocfilehash: 0b6879f9c91ef6443718b032f9ec53c9a9c3afa0
+ms.sourcegitcommit: 026437bd3819f4e9cd4153ebe60c98ab04e18f4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "26237527"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "26992232"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Utiliser l’API de dialogue dans vos compléments Office
 
@@ -80,6 +80,17 @@ La valeur par défaut est `false`, ce qui revient à omettre entièrement la pro
 > [!NOTE]
 > Vous ne devez **pas** utiliser `displayInIframe: true` si la boîte de dialogue redirige à un moment donné l’utilisateur vers une page qui ne peut pas être ouverte dans un iFrame. Par exemple, les pages de connexion de nombreux services web connus, comme un compte Microsoft et Google, ne peuvent pas être ouvertes dans un iFrame.
 
+### <a name="handling-pop-up-blockers-with-office-online"></a>Gestion des bloqueurs de fenêtres publicitaires avec Office Online
+
+Une tentative d’ouverture d’une boîte de dialogue lorsqu’Office Online est en cours d’utilisation peut entraîner le blocage de celle-ci par le bloqueur de fenêtres publicitaires du navigateur. Il est possible de contourner le bloqueur si l’utilisateur de votre complément accepte d’abord une invite du complément. L’objet [DialogOptions](/javascript/api/office/office.dialogoptions) de la méthode `displayDialogAsync` possède la propriété `promptBeforeOpen` permettant de déclencher l’ouverture de ce type de fenêtre contextuelle. `promptBeforeOpen` est une valeur booléenne qui est associée au comportement suivant :
+ 
+ - `true` -L’infrastructure affiche une fenêtre contextuelle pour déclencher la navigation et éviter le bloqueur de fenêtres publicitaires du navigateur. 
+ - `false` -La boîte de dialogue n’est pas affichée et le développeur doit gérer les fenêtres contextuelles (en fournissant un artefact d’interface utilisateur pour déclencher la navigation). 
+ 
+La fenêtre contextuelle est semblable à la capture d’écran suivante :
+
+![Invite pouvant être générée par une boîte de dialogue de complément pour éviter les bloqueurs de fenêtres publicitaires dans le navigateur.](../images/dialog-prompt-before-open.png)
+ 
 ### <a name="send-information-from-the-dialog-box-to-the-host-page"></a>Envoi d’informations à la page hôte à partir de la boîte de dialogue
 
 La boîte de dialogue ne peut pas communiquer avec la page hôte dans le volet Office, sauf si :
