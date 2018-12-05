@@ -1,13 +1,13 @@
 ---
 title: Manifeste XML des compléments Office
 description: ''
-ms.date: 02/09/2018
-ms.openlocfilehash: 85791b40e17095248eb47e6e9eda40dba70e7cdf
-ms.sourcegitcommit: 3e84d616e69f39eeeeea773f2431e7d674c4a9f5
+ms.date: 12/04/2018
+ms.openlocfilehash: 97e454347d3ab4ee94b4ee43f088962f117e8924
+ms.sourcegitcommit: e2ba9d7210c921d068f40d9f689314c73ad5ab4a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "26644731"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "27156599"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifeste XML des compléments Office
 
@@ -408,7 +408,7 @@ Les sections suivantes présentent des exemples de fichiers manifeste XML versio
   </Description>
   <!-- Change the following lines to specify    -->
   <!-- the web server that hosts the icon files. -->
-  <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
+  <IconUrl DefaultValue="https://contoso.com/assets/icon-64.png" />
   <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
 
   <Hosts>
