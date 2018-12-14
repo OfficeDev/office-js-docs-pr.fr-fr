@@ -3,7 +3,7 @@
 
 ### [Office](Office.md)[.context](Office.context.md). mailbox
 
-Permet d’accéder au modèle d’objet du complément Outlook pour Microsoft Outlook et Microsoft Outlook sur le web.
+Permet d’accéder au modèle objet du complément Outlook pour Microsoft Outlook et Microsoft Outlook sur le web.
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -57,7 +57,7 @@ Convertit un ID d’élément mis en forme pour REST au format EWS.
 > [!NOTE]
 > Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.
 
-Les ID d’élément extraits via une API REST (telle que l’[API Courrier Outlook](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) ou [Microsoft Graph](http://graph.microsoft.io/)) utilisent un format différent de celui employé par les services web Exchange (EWS). La méthode `convertToEwsId` convertit un ID mis en forme pour REST au format approprié pour EWS.
+Les ID d’élément extraits via une API REST (telle que l’[API Courrier Outlook](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) ou [Microsoft Graph](https://graph.microsoft.io/)) utilisent un format différent de celui employé par les services web Exchange (EWS). La méthode `convertToEwsId` convertit un ID mis en forme pour REST au format approprié pour EWS.
 
 ##### <a name="parameters"></a>Paramètres :
 
@@ -122,7 +122,7 @@ Convertit un ID d’élément mis en forme pour EWS au format REST.
 > [!NOTE]
 > Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.
 
-Les ID d’élément récupérés via EWS ou la propriété `itemId` utilisent un format différent de celui employé par les API REST (telles que l’[API Courrier Outlook](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) ou [Microsoft Graph](http://graph.microsoft.io/)). La méthode `convertToRestId` convertit un ID mis en forme pour EWS au format approprié pour REST.
+Les ID d’élément récupérés via EWS ou la propriété `itemId` utilisent un format différent de celui employé par les API REST (telles que l’[API Courrier Outlook](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) ou [Microsoft Graph](https://graph.microsoft.io/)). La méthode `convertToRestId` convertit un ID mis en forme pour EWS au format approprié pour REST.
 
 ##### <a name="parameters"></a>Paramètres :
 
@@ -391,12 +391,12 @@ Envoie une demande asynchrone à un des services web Exchange (EWS) sur le serve
 
 > [!NOTE]
 > Cette méthode n’est pas prise en charge dans les cas suivants :
-> - Dans Outlook pour iOS ou Outlook pour Android
-> - Lorsque le complément est chargé dans une boîte aux lettres Gmail
+> - dans Outlook pour iOS ou Outlook pour Android ;
+> - quand le complément est chargé dans une boîte aux lettres Gmail.
 > 
 > Dans ces cas de figure, les compléments doivent [utiliser les API REST](https://docs.microsoft.com/outlook/add-ins/use-rest-api) pour accéder à la boîte aux lettres de l’utilisateur.
 
-La méthode `makeEwsRequestAsync` envoie une demande EWS à Exchange de la part du complément. Pour obtenir la liste des opérations EWS prises en charge, reportez-vous à la rubrique [Appeler des services web à partir d’un complément Outlook](https://docs.microsoft.com/outlook/add-ins/web-services#ews-operations-that-add-ins-support).
+La méthode `makeEwsRequestAsync` envoie une demande EWS à Exchange de la part du complément. Pour obtenir la liste des opérations EWS prises en charge, reportez-vous à l’article [Appeler des services web à partir d’un complément Outlook](https://docs.microsoft.com/outlook/add-ins/web-services#ews-operations-that-add-ins-support).
 
 Vous ne pouvez pas demander des éléments associés à un dossier avec la méthode `makeEwsRequestAsync`.
 

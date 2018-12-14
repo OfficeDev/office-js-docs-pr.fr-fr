@@ -2,12 +2,12 @@
 title: Meilleures pratiques en matière de développement de compléments Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 93af27de1f5e22aada7caf9ded97ab6fb200b332
-ms.sourcegitcommit: 86724e980f720ed05359c9525948cb60b6f10128
+ms.openlocfilehash: 5f412de24f1210259ec4255c1776f5e572f0529e
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "26237513"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270767"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Meilleures pratiques en matière de développement de compléments Office
 
@@ -43,7 +43,7 @@ Des compléments efficaces proposent des fonctionnalités uniques et attrayantes
 
    ![Capture d’écran illustrant un complément de contenu avec des données en regard d’un complément de contenu sans données](../images/add-in-title.png)
 
-- Offrez des [essais gratuits](https://docs.microsoft.com/office/dev/store/decide-on-a-pricing-model#office-store-pricing-options). Si votre complément nécessite un abonnement, proposez certaines fonctionnalités gratuitement.
+- Offrez des [essais gratuits](https://docs.microsoft.com/office/dev/store/decide-on-a-pricing-model). Si votre complément nécessite un abonnement, proposez certaines fonctionnalités gratuitement.
 
 - Facilitez l’inscription. Préremplissez les informations (e-mail, nom d’affichage) et ignorez les vérifications d’adresses e-mail.
 

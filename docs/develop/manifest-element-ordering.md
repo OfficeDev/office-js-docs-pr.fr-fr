@@ -2,12 +2,12 @@
 title: Comment trouver l’ordre approprié d’éléments manifeste
 description: Découvrez comment trouver l’ordre correct dans lequel placer les éléments enfants dans un élément parent.
 ms.date: 11/16/2018
-ms.openlocfilehash: 6627a32b8a29bc8b0aa12550a61f43295713ecdb
-ms.sourcegitcommit: 3e84d616e69f39eeeeea773f2431e7d674c4a9f5
+ms.openlocfilehash: 3efc95926b7562b0e68bbb6f4b13c47cc4ae6824
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "26649874"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270613"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>Comment trouver l’ordre approprié d’éléments manifeste
 
@@ -18,7 +18,7 @@ Le classement requis est spécifié dans les fichiers XSD dans le dossier [sché
 Par exemple, dans l’`<OfficeApp>` élément, le `<Id>`, `<Version>`, `<ProviderName>` doit apparaître dans cet ordre. Si un élément `<AlternateId>` est ajouté, il doit être compris entre l’élément `<Id>` et `<Version>`. Votre manifeste ne sera pas valide et votre complément ne sera pas chargé, si un élément n’est pas dans l’ordre.
 
 > [!NOTE]
-> Le [validateur complément Office](/office/dev/add-ins/testing/troubleshoot-manifest?branch=manifest-element-ordering#validate-your-manifest-with-the-office-add-in-validator) utilise le même message d’erreur lorsqu’un élément est dans le mauvais ordre que lorsqu’un élément est sous le mauvais parent. L’erreur indique que l’élément enfant n’est pas un enfant valide de l’élément parent. Si vous recevez un message d’erreur mais que la documentation de référence pour l’élément enfant indique qu’elle *est* valide pour le parent, alors le problème est probablement que l’enfant a été placé dans l’ordre incorrect.
+> Le [validateur complément Office](/office/dev/add-ins/testing/troubleshoot-manifest#validate-your-manifest-with-the-office-add-in-validator) utilise le même message d’erreur lorsqu’un élément est dans le mauvais ordre que lorsqu’un élément est sous le mauvais parent. L’erreur indique que l’élément enfant n’est pas un enfant valide de l’élément parent. Si vous recevez un message d’erreur mais que la documentation de référence pour l’élément enfant indique qu’elle *est* valide pour le parent, alors le problème est probablement que l’enfant a été placé dans l’ordre incorrect.
 
 Pour rechercher l’ordre correct pour les éléments enfants d’un élément parent donné, procédez comme suit. (C’est un processus simplifié, car les fichiers XSD sont relativement complexes. L’analyse entière des fichiers XSD est hors de l’étendue de ce document.)
 

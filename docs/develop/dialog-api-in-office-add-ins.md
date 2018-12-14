@@ -2,12 +2,12 @@
 title: Utiliser l’API de dialogue dans vos compléments Office
 description: ''
 ms.date: 11/28/2018
-ms.openlocfilehash: 0b6879f9c91ef6443718b032f9ec53c9a9c3afa0
-ms.sourcegitcommit: 026437bd3819f4e9cd4153ebe60c98ab04e18f4e
+ms.openlocfilehash: b19d56d3f4fb831eb8c0ca16af53ee309989d223
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "26992232"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270956"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Utiliser l’API de dialogue dans vos compléments Office
 
@@ -131,7 +131,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 ```
 
 > [!NOTE]
-> - Office transmet un objet [AsyncResult]() au rappel. Il représente le résultat de la tentative d’ouverture de la boîte de dialogue. Il ne représente pas le résultat de tous les événements dans la boîte de dialogue. Pour plus d’informations sur cette distinction, consultez la section [Gestion des erreurs et des événements](#handle-errors-and-events).
+> - Office transmet un objet [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js) au rappel. Il représente le résultat de la tentative d’ouverture de la boîte de dialogue. Il ne représente pas le résultat de tous les événements dans la boîte de dialogue. Pour plus d’informations sur cette distinction, consultez la section [Gestion des erreurs et des événements](#handle-errors-and-events).
 > - La propriété `value` de `asyncResult` est définie sur un objet [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog?view=office-js), qui existe dans la page hôte, pas dans le contexte d’exécution de la boîte de dialogue.
 > - `processMessage` est la fonction qui gère l’événement. Vous pouvez lui donner le nom que vous souhaitez.
 > - La variable `dialog` est déclarée avec une portée plus large que le rappel, car elle est également référencée dans `processMessage`.
