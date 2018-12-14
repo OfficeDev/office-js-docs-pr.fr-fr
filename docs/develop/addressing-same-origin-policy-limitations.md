@@ -2,12 +2,12 @@
 title: Résolutions des limites de stratégie d’origine identique dans les compléments Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 054a01d554c529579917218361bcb8aeebb04c3c
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+ms.openlocfilehash: e5aa329eb3f073f3544d8446683debed3239fd00
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25004881"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270599"
 ---
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>Résolutions des limites de stratégie d’origine identique dans les compléments Office
 
@@ -16,7 +16,7 @@ La stratégie de même origine appliquée par le navigateur empêche un script c
 
 Comme les Compléments Office sont hébergés dans un contrôle de navigateur, la stratégie de même origine s’applique également aux scripts exécutés dans leurs pages web.
 
-Il existe de nombreuses manières d’annuler le complément de la stratégie de même origine lorsque vous développez des compléments :
+Il existe de nombreuses manières d’annuler le complément de la stratégie de même origine lorsque vous développez des compléments :
 
 - Utilisation de JSON/P pour un accès anonyme. 
     
@@ -61,7 +61,7 @@ Pour un exemple de code côté serveur qui illustre comment utiliser l’objet `
 ## <a name="using-cross-origin-resource-sharing-cors"></a>Utilisation du partage de ressources cross-origin (CORS)
 
 
-Pour un exemple de la fonctionnalité de partage de ressources cross-origin de [XmlHttpRequest2](http://dvcs.w3.org/hg/xhr/raw-file/tip/Overview.html), voir la section « Partage de ressources cross-origin (CORS) » de [Nouvelles astuces dans XMLHttpRequest2](http://www.html5rocks.com/en/tutorials/file/xhr2/).
+Pour un exemple de la fonctionnalité de partage de ressources cross-origin de [XmlHttpRequest2](https://dvcs.w3.org/hg/xhr/raw-file/tip/Overview.html), voir la section « Partage de ressources cross-origin (CORS) » de [Nouvelles astuces dans XMLHttpRequest2](https://www.html5rocks.com/en/tutorials/file/xhr2/).
 
 
 ## <a name="building-your-own-proxy-using-iframe-and-post-message"></a>Construction de votre propre proxy à l’aide d’IFRAME et de POSTMESSAGE
