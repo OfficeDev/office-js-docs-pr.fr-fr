@@ -1,13 +1,13 @@
 ---
 title: Localisation des compléments Office
 description: Vous pouvez utiliser l’API JavaScript pour Office afin de déterminer des paramètres régionaux et d’afficher des chaînes basées sur les paramètres régionaux de l’application hôte, ou afin d’interpréter ou d’afficher des données en fonction des paramètres régionaux des données.
-ms.date: 01/23/2018
-ms.openlocfilehash: a727ff87a7a92960a28c0077c1bcbf2cebeb2d0d
-ms.sourcegitcommit: 9b021af6cb23a58486d6c5c7492be425e309bea1
+ms.date: 12/11/2018
+ms.openlocfilehash: 0455c28913dd1a7eb8cb0853cd872a4284f44270
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "26533832"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270998"
 ---
 # <a name="localization-for-office-add-ins"></a>Localisation des compléments Office
 
@@ -38,7 +38,7 @@ L’API JavaScript pour Office offre deux propriétés qui prennent en charge l
     }
     ```
 
-- [Context.contentLanguage][contentLanguage] spécifie le paramètre régional (ou langue) des données. Le fait d’étendre le dernier exemple de code, au lieu de vérifier la propriété [displayLanguage], attribue `myLanguage` à la propriété [contentLanguage] et utilise le reste du code pour afficher un message de bienvenue correspondant aux paramètres régionaux des données :
+- [Context.contentLanguage][contentLanguage] spécifie le paramètre régional (ou langue) des données. Le fait d’étendre le dernier exemple de code, au lieu de vérifier la propriété [displayLanguage], attribue la valeur`myLanguage` de la propriété [contentLanguage] et utilise le reste du code pour afficher un message de bienvenue correspondant aux paramètres régionaux des données :
 
     ```js
     var myLanguage = Office.context.contentLanguage;
@@ -49,7 +49,7 @@ L’API JavaScript pour Office offre deux propriétés qui prennent en charge l
 
 Chaque complément Office indique un élément [DefaultLocale] élément et un paramètre régional dans son manifeste. Par défaut, la plateforme de complément Office et les applications hôtes Office appliquent les valeurs des éléments [Description], [DisplayName], [IconUrl], [HighResolutionIconUrl] et [SourceLocation] à tous les paramètres régionaux. Vous pouvez éventuellement prendre en charge des valeurs spécifiques pour les paramètres régionaux spécifiques, en spécifiant un élément enfant [Override] pour chaque paramètre régional supplémentaire, pour chacun des cinq éléments. La valeur de l’élément [DefaultLocale] et de l’attribut `Locale` de l’élément [Override] est spécifiée en fonction de la norme [RFC 3066] relative aux balises pour l’identification des langues (« Tags for the Identification of Languages »). Le tableau 1 décrit la prise en charge de localisation de ces éléments.
 
-**Tableau 1. Prise en charge de localisation**
+*Tableau 1. Prise en charge de localisation*
 
 
 |**Élément**|**Prise en charge de localisation**|
@@ -161,41 +161,37 @@ Vous pouvez obtenir les paramètres régionaux des données de l’application d
 
 Si vous utilisez Visual Studio pour créer des Compléments Office, .NET Framework et Ajax offrent des moyens d’internationaliser et de localiser les fichiers de script client.
 
-Vous pouvez internationaliser et utiliser les extensions de type JavaScript [Date](http://msdn.microsoft.com/library/caf98d32-2de2-4704-8198-692350343681.aspx) et [Number](http://msdn.microsoft.com/library/c216d3a1-12ae-47d1-bca1-c3666d04572f.aspx) ainsi que l’objet JavaScript [Date](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date) dans le code JavaScript pour qu’une Complément Office affiche les valeurs en fonction des paramètres régionaux du navigateur actuel. Pour plus d’informations, voir [Walkthrough: Globalizing a Date by Using Client Script](http://msdn.microsoft.com/library/69b34e6d-d590-4d03-a763-b7ae54b47d74.aspx).
+Vous pouvez internationaliser et utiliser les extensions de type JavaScript [Date](https://msdn.microsoft.com/library/caf98d32-2de2-4704-8198-692350343681.aspx) et [Number](https://msdn.microsoft.com/library/c216d3a1-12ae-47d1-bca1-c3666d04572f.aspx) ainsi que l’objet JavaScript [Date](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date) dans le code JavaScript pour qu’une Complément Office affiche les valeurs en fonction des paramètres régionaux du navigateur actuel. Pour plus d’informations, voir [Walkthrough: Globalizing a Date by Using Client Script](https://msdn.microsoft.com/library/69b34e6d-d590-4d03-a763-b7ae54b47d74.aspx).
 
 Vous pouvez inclure des chaînes de ressources localisées directement dans des fichiers JavaScript autonomes pour fournir des fichiers de script client pour les différents paramètres régionaux, qui sont définis dans le navigateur ou fournis par l’utilisateur. Créez un fichier de script distinct pour chaque paramètre régional pris en charge. Dans chaque fichier de script, incluez un objet au format JSON contenant les chaînes de ressources pour ce paramètre régional. Les valeurs localisées sont appliquées lorsque le script s’exécute dans le navigateur.
 
 
 ## <a name="example-build-a-localized-office-add-in"></a>Exemple : créer un complément Office localisé
 
-Cette section inclut des exemples expliquant comment localiser la description, le nom d’affichage et l’interface utilisateur d’une Complément Office.
-
-Pour exécuter l’exemple de code fourni, configurez Microsoft Office 2013 sur votre ordinateur pour utiliser des langues supplémentaires et pouvoir tester votre complément en basculant d’une langue à l’autre pour l’affichage des menus et des commandes, l’édition et la vérification, ou les deux.
-
-En outre, vous devez créer un projet de complément Office Visual Studio 2015.
+Cette section inclut des exemples expliquant comment localiser la description, le nom d’affichage et l’interface utilisateur d’une Complément Office. 
 
 > [!NOTE]
-> Pour télécharger Visual Studio 2015, reportez-vous à la [page Outils de développement Office](https://www.visualstudio.com/features/office-tools-vs). Cette page contient également un lien pour les outils de développement Office.
+> Pour télécharger Visual Studio 2017, voir la [Page Visual Studio IDE](https://visualstudio.microsoft.com/vs/). Lors de l’installation, vous devez sélectionner la charge de travail de développement Office/SharePoint.
 
-### <a name="configure-office-2013-to-use-additional-languages-for-display-or-editing"></a>Configurer Office 2013 pour utiliser des langues supplémentaires pour l’affichage ou l’édition
+### <a name="configure-office-to-use-additional-languages-for-display-or-editing"></a>Configurer Office pour utiliser des langues supplémentaires pour l’affichage ou l’édition
 
-Vous pouvez utiliser un module linguistique Office 2013 pour installer des langues supplémentaires. Pour plus d’informations sur les modules linguistiques et comment les obtenir, voir [Options de langue Office 2013](http://office.microsoft.com/language-packs/).
+Pour exécuter l’exemple de code fourni, configurez Microsoft Office sur votre ordinateur pour utiliser des langues supplémentaires pour pouvoir tester votre complément en basculant d’une langue à l’autre pour l’affichage des menus et des commandes, l’édition et la vérification, ou les deux.
 
-> [!NOTE]
-> Si vous êtes un abonné MSDN, les modules linguistiques Office 2013 sont peut-être déjà disponibles pour vous. Pour déterminer si votre abonnement offre des modules linguistiques Office 2013 en téléchargement, accédez à la [page d’accueil des Abonnements MSDN](https://msdn.microsoft.com/subscriptions/manage/), entrez le module linguistique Office 2013 dans **téléchargements de logiciels**, sélectionnez **Recherche**, puis choisissez **Produits disponibles avec mon abonnement**. Sous **Langue**, activez la case à cocher du module linguistique que vous voulez télécharger, puis choisissez **Accédez**.
+Vous pouvez utiliser un module linguistique Office pour installer une autre langue. Pour plus d’informations sur les Modules linguistiques et où les obtenir, voir [Pack d’accessoires linguistiques pour Office](https://office.microsoft.com/language-packs/).
 
-Une fois le module linguistique installé, vous pouvez configurer Office 2013 pour utiliser la langue installée pour l’affichage de l’interface utilisateur, pour l’édition du contenu du document, ou les deux. Dans cet exemple, le module linguistique espagnol a été installé sur Office 2013.
+Après avoir installé le Pack d’accessoires linguistiques, vous pouvez configurer Office pour utiliser la langue installée pour l’affichage dans l’interface utilisateur, pour modifier du contenu de document, ou les deux. L’exemple dans cet article utilise une installation d’Office qui contient le module linguistique espagnol.
 
 ### <a name="create-an-office-add-in-project"></a>Créer un projet de complément Office
 
+Vous devez créer un projet de complément Office Visual Studio 2017. 
+
+> [!NOTE]
+> Si vous n’avez pas installé Visual Studio 2017, voir la [Page Visual Studio IDE](https://visualstudio.microsoft.com/vs/) pour obtenir des instructions de téléchargement. Lors de l’installation, vous devez sélectionner la charge de travail de développement Office/SharePoint. Si vous avez déjà installé Visual Studio 2017, [utilisez Visual Studio Installer](https://docs.microsoft.com/visualstudio/install/modify-visual-studio/) pour vérifier que la charge de travail de développement Office/SharePoint est bien installée.
+
+
 1. Dans Visual Studio, choisissez **Fichier** > **Nouveau projet**.
-
-2. Dans la boîte de dialogue **Nouveau projet**, sous **Modèles**, développez **Visual Basic** ou **Visual C#**, développez **Office/SharePoint**, puis sélectionnez **Compléments Office**.
-
-3. Choisissez **Complément Office** et donnez un nom à votre complément, par exemple WorldReadyApp. Cliquez sur **OK**.
-
-4. Dans la boîte de dialogue **Créer un complément Office**, sélectionnez **Volet Office** et cliquez sur **Suivant**. Sur la page suivante, désactivez les cases à cocher pour toutes les applications hôtes à l’exception de Word. Cliquez sur **Terminer** pour créer le projet.
-
+2. Dans la boîte de dialogue **Nouveau projet**, développez **Visual Basic** ou **Visual C#**, développez **Office/SharePoint**, puis sélectionnez **Compléments**.
+3. Choisissez **Complément Word** et nommez votre complément **WorldReadyAddIn**. Cliquez sur **OK**.
 
 ### <a name="localize-the-text-used-in-your-add-in"></a>Localiser le texte utilisé dans votre complément
 
@@ -227,51 +223,29 @@ Pour localiser le nom d’affichage et la description du complément :
 
 Pour mettre en page l’interface utilisateur du complément :
 
-1. Dans Visual Studio, dans l’**Explorateur de solutions**, choisissez  **Home.html**.
+1. Dans Visual Studio, dans l’**Explorateur de solutions**, choisissez **Home.html**.
 
-2. Remplacez le code HTML dans Home.html par le code HTML suivant.
+2. Remplacez le contenu de l’élément `<body>` dans Home.html par le HTML suivant et enregistrez le fichier.
 
     ```html
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <title></title>
-        <script src="../../Scripts/jquery-1.8.2.js" type="text/javascript"></script>
-
-        <link href="../../Content/Office.css" rel="stylesheet" type="text/css" />
-        <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
-
-        <!-- To enable offline debugging using a local reference to Office.js, use:                        -->
-        <!-- <script src="../../Scripts/Office/MicrosoftAjax.js" type="text/javascript"></script>          -->
-        <!--    <script src="../../Scripts/Office/1.0/office.js" type="text/javascript"></script>          -->
-
-        <link href="../App.css" rel="stylesheet" type="text/css" />
-        <script src="../App.js" type="text/javascript"></script>
-
-        <link href="Home.css" rel="stylesheet" type="text/css" />
-        <script src="Home.js" type="text/javascript"></script> <body>
+    <body>
         <!-- Page content -->
-        <div id="content-header">
+        <div id="content-header" class="ms-bgColor-themePrimary ms-font-xl">
             <div class="padding">
-                <h1 id="greeting"></h1>
+                <h1 id="greeting" class="ms-fontColor-white"></h1>
             </div>
         </div>
         <div id="content-main">
             <div class="padding">
-                <div>
+                <div class="ms-font-m">
                     <p id="about"></p>
                 </div>
             </div>
         </div>
-    </head>
-    </html>
+    </body>
     ```
 
-3. Dans Visual Studio, choisissez  **Fichier**,  **Enregistrer App\Home\Home.html**.
-
-La figure suivante montre l’élément titre (h1) et l’élément paragraphe (p) qui afficheront le texte localisé lors de l’exécution de l’exemple de complément.
+La figure suivante montre l’élément titre (h1) et l’élément paragraphe (p) qui afficheront le texte localisé lorsque vous terminez les étapes restantes et exécutez le complément.
 
 *Figure 1. Interface utilisateur du complément*
 
@@ -279,17 +253,19 @@ La figure suivante montre l’élément titre (h1) et l’élément paragraphe (
 
 ### <a name="add-the-resource-file-that-contains-the-localized-strings"></a>Ajouter le fichier de ressources qui contient les chaînes localisées
 
-Le fichier de ressources JavaScript contient les chaînes utilisées pour l’interface utilisateur du complément. L’interface utilisateur de l’exemple de complément comprend un élément h1 qui affiche un message de bienvenue et un élément p qui présente le complément à l’utilisateur. 
+Le fichier de ressource JavaScript contient les chaînes utilisées pour l’interface utilisateur du complément. Le code HTML pour l’exemple d’interface utilisateur du complément contient un `<h1>` élément qui affiche un message d’accueil et un `<p>` élément qui présente le complément à l’utilisateur. 
 
 Pour activer les chaînes localisées pour le titre et le paragraphe, placez les chaînes dans un fichier de ressources distinct. Le fichier de ressources crée un objet JavaScript qui contient un objet JavaScript Object Notation (JSON) individuel pour chaque ensemble de chaînes localisées. Le fichier de ressources fournit une méthode pour obtenir l’objet JSON approprié pour des paramètres régionaux donnés.
 
 Pour ajouter le fichier de ressources au projet de complément :
 
-1. Dans l’**Explorateur de solutions** de Visual Studio, sélectionnez le dossier **Complément** dans le projet web pour l’exemple de complément et choisissez **Ajouter** > **Fichier JavaScript**.
+1. Dans **l’Explorateur de solutions** dans Visual Studio, cliquez avec le bouton droit sur le projet**WorldReadyAddInWeb**, puis choisissez **Ajouter** > **Nouvel élément**. 
 
-2. Dans la boîte de dialogue **Spécifier le nom de l’élément**, saisissez UIStrings.js.
+2. Dans la boîte de dialogue**Ajouter un nouvel élément**, choisissez **Fichier JavaScript**.
 
-3. Ajoutez le code suivant au fichier UIStrings.js.
+3. Entrez **UIStrings.js** comme nom de fichier puis sélectionnez **Ajouter**.
+
+4. Ajoutez le code suivant au fichier UIStrings.js et enregistrez le fichier.
 
     ```js
     /* Store the locale-specific strings */
@@ -376,8 +352,6 @@ Remplacez le code du fichier Home.js par le code suivant. Le code montre comment
     {
 
         $(document).ready(function () {
-            app.initialize();
-
             // Get the language setting for editing document content.
             // To test this, uncomment the following line and then comment out the
             // line that uses Office.context.displayLanguage.
@@ -394,7 +368,7 @@ Remplacez le code du fichier Home.js par le code suivant. Le code montre comment
 
             // Set localized text for UI elements.
             $("#greeting").text(UIText.Greeting);
-            $("#about").text(UIText.Instruction);
+            $("#about").text(UIText.Introduction);
         });
     };
 })();
@@ -406,20 +380,24 @@ Pour tester votre complément localisé, changez la langue utilisée pour l’af
 
 Pour changer la langue utilisée pour l’affichage ou l’édition dans votre complément :
 
-1. Dans Word 2013, sélectionnez **Fichier** > **Options** > **Langue**. La figure suivante montre la boîte de dialogue **Options Word** ouverte sur l’onglet Langue.
+1. Dans Word, sélectionnez **Fichier** > **Options** > **Langue**. La figure suivante montre la boîte de dialogue **Options Word** ouverte sous l’onglet Langue.
 
-    *Figure 2. Options de langue dans la boîte de dialogue Options Word 2013*
+    *Figure 2. Options de langue dans la boîte de dialogue Options Word*
 
-    ![Boîte de dialogue Options Word 2013](../images/office15-app-how-to-localize-fig04.png)
+    ![Boîte de dialogue Options Word](../images/office15-app-how-to-localize-fig04.png)
 
-2. Sous **Choisir les langues de l’interface utilisateur et de l’Aide**, sélectionnez la langue souhaitée pour l’affichage, par exemple l’espagnol, puis cliquez sur la flèche vers le haut pour déplacer l’espagnol tout en haut de la liste. Pour changer la langue utilisée pour l’édition, sous **Choisir les langues d’édition**, choisissez la langue à utiliser pour l’édition, par exemple l’espagnol, puis choisissez **Définir par défaut**.
+2. Sous **Choisir la langue d’affichage**, sélectionnez la langue que vous souhaitez afficher, par exemple espagnol, puis sélectionnez la flèche vers le haut pour déplacer la langue Espagnol en première position dans la liste. Vous pouvez également modifier la langue utilisée pour l’édition, sous **Choisir les langues d’édition**, sélectionnez la langue que vous voulez utiliser pour l’édition, par exemple, espagnol, puis **Définir par défaut**.
 
 3. Sélectionnez **OK** pour confirmer votre choix, puis fermez Word.
 
-Exécutez l’exemple de complément. Le complément de volet de tâches est chargé dans Word 2013 et les chaînes de l’interface utilisateur du complément changent pour correspondre à la langue utilisée par l’application hôte, comme indiqué dans la figure suivante.
+4. Appuyez sur F5 dans Visual Studio pour exécuter le complément exemple ou sélectionnez**Déboguer** > **Démarrer le débogage** dans la barre de menus.
+
+5. Dans Word, sélectionnez **Accueil** > **Afficher le volet de tâches**.
+
+Lors de l’exécution, les chaînes de l’interface utilisateur du complément changent pour correspondre à la langue utilisée par l’application hôte, comme indiqué dans la figure suivante.
 
 
-*Figure 3. Interface utilisateur du complément avec le texte localisé*
+*Figure 3. Interface utilisateur du complément avec texte localisé*
 
 ![Application avec le texte de l’interface utilisateur localisé](../images/office15-app-how-to-localize-fig05.png)
 
