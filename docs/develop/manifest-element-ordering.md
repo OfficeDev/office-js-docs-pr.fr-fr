@@ -2,12 +2,12 @@
 title: Comment trouver l’ordre approprié d’éléments manifeste
 description: Découvrez comment trouver l’ordre correct dans lequel placer les éléments enfants dans un élément parent.
 ms.date: 11/16/2018
-ms.openlocfilehash: 3efc95926b7562b0e68bbb6f4b13c47cc4ae6824
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: d460cc57eed2ce4e1b226fe5fe6434a25bbc455b
+ms.sourcegitcommit: 09f124fac7b2e711e1a8be562a99624627c0699e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270613"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "27283066"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>Comment trouver l’ordre approprié d’éléments manifeste
 
@@ -15,7 +15,7 @@ Les éléments XML dans le fichier manifeste d’un complément Office doivent �
 
 Le classement requis est spécifié dans les fichiers XSD dans le dossier [schémas](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas). Les fichiers XSD sont classés dans des sous-dossiers pour volet de tâches, contenu et compléments de courrier.
 
-Par exemple, dans l’`<OfficeApp>` élément, le `<Id>`, `<Version>`, `<ProviderName>` doit apparaître dans cet ordre. Si un élément `<AlternateId>` est ajouté, il doit être compris entre l’élément `<Id>` et `<Version>`. Votre manifeste ne sera pas valide et votre complément ne sera pas chargé, si un élément n’est pas dans l’ordre.
+Par exemple, dans l’`<OfficeApp>`élément, le `<Id>`,`<Version>` ,`<ProviderName>` doit apparaître dans cet ordre. Si un élément `<AlternateId>` est ajouté, il doit être compris entre l’élément `<Id>` et `<Version>`. Votre manifeste ne sera pas valide et votre complément ne sera pas chargé, si un élément n’est pas dans l’ordre.
 
 > [!NOTE]
 > Le [validateur complément Office](/office/dev/add-ins/testing/troubleshoot-manifest#validate-your-manifest-with-the-office-add-in-validator) utilise le même message d’erreur lorsqu’un élément est dans le mauvais ordre que lorsqu’un élément est sous le mauvais parent. L’erreur indique que l’élément enfant n’est pas un enfant valide de l’élément parent. Si vous recevez un message d’erreur mais que la documentation de référence pour l’élément enfant indique qu’elle *est* valide pour le parent, alors le problème est probablement que l’enfant a été placé dans l’ordre incorrect.
@@ -43,7 +43,7 @@ Pour rechercher l’ordre correct pour les éléments enfants d’un élément p
 
 Le `<xs:sequence>` répertorie les éléments enfants possibles *dans l’ordre dans lequel ils doivent apparaître*. Cette option ne signifie *pas* qu’ils sont tous sont obligatoires. Si la`minOccurs` valeur pour un élément enfant est **0**, alors l’élément enfant est facultatif. *Mais s’il apparaît, il doit être dans l’ordre spécifié par l’ `<xs:sequence>` élément*.
 
-S’il n’y a aucun `<xs:sequence>` élément, ou qu’il *est* présent mais l’élément enfant n’est pas listé (même si la documentation de référence pour l’élément enfant indique qu’il *est* valide pour le parent) ; alors la définition de l’élément parent type complexe a été étendue avec des éléments enfants supplémentaires ailleurs dans le fichier XSD. Par exemple, la définition pour le `OfficeApp` type complexe ne répertorie pas `Requirements` comme enfant possible. Mais plus loin dans le fichier (au sein de la définition pour le `TaskPaneApp` type complexe), la définition de `OfficeApp` est prolongée et `Requirements` est ajoutée comme un enfant valide supplémentaire.
+S’il n’y a aucun`<xs:sequence>` élément, ou qu’il *est* présent mais l’élément enfant n’est pas listé (même si la documentation de référence pour l’élément enfant indique qu’il *est* valide pour le parent) ; alors la définition de l’élément parent type complexe a été étendue avec des éléments enfants supplémentaires ailleurs dans le fichier XSD. Par exemple, la définition pour le `OfficeApp` type complexe ne répertorie pas `Requirements` comme enfant possible. Mais plus loin dans le fichier (au sein de la définition pour le `TaskPaneApp` type complexe), la définition de `OfficeApp` est prolongée et `Requirements` est ajoutée comme un enfant valide supplémentaire.
 
 Pour trouver les définitions étendues procédez comme suit :
 
