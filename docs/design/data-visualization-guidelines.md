@@ -2,18 +2,18 @@
 title: Règles de style de visualisation de données pour les compléments Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 27de6b6b2f4352488ad8f63c3b6e1250cbfbb324
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 686ae69c4bfdbd5f8623a80c9e1b61548a3f2bda
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945791"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270690"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Règles de style de visualisation de données pour les compléments Office
 
 Une bonne visualisation des données permet aux utilisateurs de rechercher des informations dans leurs données. Ils peuvent utiliser ces informations pour raconter des histoires qui informent et persuadent. Cet article fournit des instructions pour vous aider à créer des visualisations de données efficaces dans vos compléments pour Excel et d’autres applications Office.
 
-Nous vous recommandons d’utiliser [Office UI Fabric](https://developer.microsoft.com/fabric) pour créer l’apparence de vos visualisations de données. Office UI Fabric comprend des styles et des composants qui s’intègrent parfaitement à l’apparence Office. 
+Nous vous recommandons d’utiliser [Office UI Fabric](https://developer.microsoft.com/fabric) pour créer l’apparence de vos visualisations de données. Office UI Fabric comprend des styles et des composants qui s’intègrent parfaitement à l’apparence Office. 
 
 <!--The following figure shows a data visualization in an add-in that uses Fabric.
 
@@ -30,11 +30,11 @@ Les visualisations de données partagent un cadre général et des éléments vi
 
 ### <a name="chart-titles"></a>Titres de graphique
 
-Suivez ces instructions pour les titres de graphique :
+Suivez ces instructions pour les titres de graphique :
 
 - Faites en sorte que vos titres de graphique soient lisibles. Positionnez-les pour créer une hiérarchie visuelle claire par rapport au reste du graphique.
 - En règle générale, utilisez la mise en majuscule de phrase (premier mot en majuscule). Pour créer un contraste ou accentuer des hiérarchies, vous pouvez mettre tout en majuscules, mais faites-le avec parcimonie.
-- Intégrez les [recommandations relatives aux polices d’Office UI Fabric](https://developer.microsoft.com/fabric#/styles/typography) pour harmoniser vos graphiques avec l’interface utilisateur Office, qui utilise la police Segoe. Vous pouvez également utiliser une autre police pour différencier le contenu du graphique de l’interface utilisateur.
+- Intégrez les [recommandations relatives aux polices d’Office UI Fabric](https://developer.microsoft.com/fabric#/styles/typography) pour harmoniser vos graphiques avec l’interface utilisateur Office, qui utilise la police Segoe. Vous pouvez également utiliser une autre police pour différencier le contenu du graphique de l’interface utilisateur.
 - Utilisez des polices sans-serif avec des compteurs de grande taille.
 
 Les exemples suivants illustrent des polices serif et sans-serif utilisées dans les titres de graphique. Remarquez comment le contraste d’échelle et une utilisation efficace des espaces blancs créent une hiérarchie visuelle forte.
@@ -56,11 +56,11 @@ Les pixels qui représentent les données réelles dans un graphique sont appel�
 
 Choisissez des couleurs qui respectent les thèmes du système d’exploitation ou de l’application plutôt que des couleurs codées en dur. En même temps, assurez-vous que les couleurs que vous appliquez ne faussent pas les données. Une utilisation abusive des couleurs dans les visualisations de données peut provoquer une distorsion des données et une lecture incorrecte des informations.
 
-Pour des recommandations sur l’utilisation des couleurs dans les visualisations de données, voir les rubriques suivantes :
+Pour des recommandations sur l’utilisation des couleurs dans les visualisations de données, voir les rubriques suivantes :
 
 
-- [Pourquoi les couleurs de l’arc-en-ciel ne constituent pas la meilleure option pour les visualisations de données ?](http://www.poynter.org/2013/why-rainbow-colors-arent-always-the-best-options-for-data-visualizations/224413/)
-- [Color Brewer 2.0 : Conseils en matière de couleur pour la cartographie](http://colorbrewer2.org/)
+- [Pourquoi les couleurs de l’arc-en-ciel ne constituent pas la meilleure option pour les visualisations de données ?](https://www.poynter.org/2013/why-rainbow-colors-arent-always-the-best-options-for-data-visualizations/224413/)
+- [Color Brewer 2.0 : Conseils en matière de couleur pour la cartographie](http://colorbrewer2.org/)
 - [Je veux une teinte](http://tools.medialab.sciences-po.fr/iwanthue/)
 
 ### <a name="gridlines"></a>Quadrillage
@@ -75,12 +75,12 @@ L’image suivante montre une visualisation de données avec le quadrillage.
 
 ### <a name="legends"></a>Légendes
 
-Ajoutez des légendes si nécessaire pour :
+Ajoutez des légendes si nécessaire pour :
 
 - Faire une distinction entre les séries
 - Présenter des modifications d’échelle ou de valeur
 
-Assurez-vous que vos légendes améliorent l’encre de données et ne rivalisent pas avec elle. Placez les légendes :
+Assurez-vous que vos légendes améliorent l’encre de données et ne rivalisent pas avec elle. Placez les légendes :
 
 
 - Alignées à gauche, au-dessus de la zone de traçage par défaut, si tous les éléments de légende tiennent au-dessus du graphique.
@@ -108,11 +108,11 @@ L’équipe de conception d’Office a élaboré l’ensemble suivant de princip
 - Autorisez les interactions directes avec des objets qui révèlent de nouvelles perspectives (tri par glissement, par exemple).
 - Utilisez des modèles d’interaction simples, directs et familiers.
 
-Pour plus d’informations sur la conception de visualisations de données interactives et conviviales, voir [Fondements et pièges de l’interface utilisateur](http://uitraps.com/).
+Pour plus d’informations sur la conception de visualisations de données interactives et conviviales, voir [Fondements et pièges de l’interface utilisateur](https://uitraps.com/).
 
 ### <a name="motion-design-principles"></a>Principes de conception de mouvements
 
-Le mouvement suit un stimulus. Les éléments visuels doivent se déplacer dans la même direction à la même vitesse. Cela s’applique à :
+Le mouvement suit un stimulus. Les éléments visuels doivent se déplacer dans la même direction à la même vitesse. Cela s’applique à :
 
 - Création de graphique
 - Transition d’un type de graphique à un autre
@@ -122,18 +122,18 @@ Le mouvement suit un stimulus. Les éléments visuels doivent se déplacer dans 
 - Brossage ou segmentation des données
 - Redimensionnement d’un graphique
 
-Créez une perception de causalité. Lors de la préparation des animations :
+Créez une perception de causalité. Lors de la préparation des animations :
 
-- Préparez une chose à la fois. 
+- Préparez une chose à la fois. 
 - Préparez les modifications des axes avant les modifications de l’encre de données.
 - Préparez et animez des objets en tant que groupes s’ils se déplacent à la même vitesse dans la même direction.
-- Préparez les éléments de données en groupes de 4 à 5 objets maximum. Les visionneuses ont des difficultés à suivre plus de 4 à 5 objets indépendamment.
+- Préparez les éléments de données en groupes de 4 à 5 objets maximum. Les visionneuses ont des difficultés à suivre plus de 4 à 5 objets indépendamment.
 
 Le mouvement ajoute une signification.
 
 - Les animations augmentent la compréhension par l’utilisateur des modifications apportées aux données, fournissent du contexte et agissent comme un calque d’annotation non verbal.
 - Le mouvement doit se produire dans un espace de coordonnées significatif de la visualisation.
-- Adaptez l’animation en fonction du visuel. 
+- Adaptez l’animation en fonction du visuel. 
 - Évitez les animations gratuites.
 
 Le mouvement suit les données.
@@ -149,6 +149,5 @@ Le mouvement suit les données.
 
 ## <a name="see-also"></a>Voir aussi 
 
-- [Données + Conception : une introduction simple à la préparation et à la visualisation des informations](https://infoactive.co/data-design)
-- [Les cinq meilleures bibliothèques pour créer des visualisations de données](http://www.fastcompany.com/3029760/the-five-best-libraries-for-building-data-vizualizations)
+- [Les cinq meilleures bibliothèques pour créer des visualisations de données](https://www.fastcompany.com/3029760/the-five-best-libraries-for-building-data-vizualizations)
 - [Affichage visuel des informations quantitatives](https://www.edwardtufte.com/tufte/books_vdqi)

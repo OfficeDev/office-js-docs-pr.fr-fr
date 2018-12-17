@@ -1,35 +1,36 @@
 ---
-title: Utilisez les options de recherche pour trouver du texte dans votre complément Word
+title: Utilisation d’options de recherche pour trouver du texte dans votre complément Word
 description: ''
-ms.date: 7/20/2018
-ms.openlocfilehash: ca5c819edb7f3c183379d9df997e41eb56a4de51
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.date: 07/20/2018
+ms.openlocfilehash: d2c0fa2d542cd64986c2fd82f8a50a813f14610a
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25505369"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270620"
 ---
-# <a name="use-search-options-to-find-text-in-your-word-add-in"></a>Utilisez les options de recherche pour trouver du texte dans votre complément Word 
+# <a name="use-search-options-to-find-text-in-your-word-add-in"></a>Utilisation d’options de recherche pour trouver du texte dans votre complément Word 
 
-Les compléments doivent fréquemment agir sur la base du texte d'un document. Une fonction de recherche est exposée par chaque contrôle de contenu (ceci inclut [le corps](https://docs.microsoft.com/javascript/api/word/word.body?view=office-js), [le paragraphe](https://docs.microsoft.com/javascript/api/word/word.paragraph?view=office-js), [la plage](https://docs.microsoft.com/javascript/api/word/word.range?view=office-js), [la table](https://docs.microsoft.com/javascript/api/word/word.table?view=office-js), [TableRow](https://docs.microsoft.com/javascript/api/word/word.tablerow?view=office-js)et l'objet [ContentControl](https://docs.microsoft.com/javascript/api/word/word.contentcontrol?view=office-js) de base). Cette fonction prend une chaîne (ou une expression en caractère générique) représentant le texte que vous recherchez et [un objet](https://docs.microsoft.com/javascript/api/word/word.searchoptions?view=office-js) SearchOptions. Elle renvoie une collection de plages correspondant au texte recherché.
+Les compléments doivent fréquemment agir en fonction du texte d’un document.
+Une fonction de recherche est exposée par contrôle de contenu (cela inclut [Body](https://docs.microsoft.com/javascript/api/word/word.body?view=office-js), [Paragraph](https://docs.microsoft.com/javascript/api/word/word.paragraph?view=office-js), [Range](https://docs.microsoft.com/javascript/api/word/word.range?view=office-js), [Table](https://docs.microsoft.com/javascript/api/word/word.table?view=office-js), [TableRow](https://docs.microsoft.com/javascript/api/word/word.tablerow?view=office-js) et l’objet de base [ContentControl](https://docs.microsoft.com/javascript/api/word/word.contentcontrol?view=office-js)). Cette fonction utilise une chaîne (ou une expression générique) représentant le texte que vous recherchez et un objet [SearchOptions](https://docs.microsoft.com/javascript/api/word/word.searchoptions?view=office-js). Elle renvoie une collection de plages correspondant au texte de recherche.
 
 ## <a name="search-options"></a>Options de recherche
-Les options de recherche sont une collection de valeurs booléennes définissant comment le paramètre de recherche doit être traité. 
+Les options de recherche sont une collection de valeurs booléennes qui définissent comment le paramètre de recherche doit être traité. 
 
 | Propriété     | Description|
 |:---------------|:----|
-|ignorePunct|Obtient ou définit une valeur indiquant s’il faut ignorer tous les signes de ponctuation entre les mots. Correspond à la case à cocher « Ignorer les signes de ponctuation » dans la boîte de dialogue Rechercher et remplacer.|
-|ignoreSpace|Obtient ou définit une valeur indiquant s’il faut ignorer toutes les espaces entre les mots. Correspond à la case à cocher « Ignorer les espaces blancs » dans la boîte de dialogue Rechercher et remplacer.|
-|matchCase|Obtient ou définit une valeur indiquant s’il faut effectuer une recherche sensible à la casse. Correspond à la case « Respecter la casse » dans la boîte de dialogue Rechercher et remplacer.|
-|matchPrefix|Obtient ou définit une valeur indiquant s’il faut faire correspondre les mots qui commencent par la chaîne de recherche.Correspond à la case à cocher « Faire correspondre le préfixe » dans la boîte de dialogue Rechercher et remplacer.|
-|matchSuffix|Obtient ou définit une valeur indiquant s’il faut faire correspondre les mots qui se terminent par la chaîne de recherche. Correspond à la case à cocher « Faire correspondre le suffixe » dans la boîte de dialogue Rechercher et remplacer.|
-|matchWholeWord|Obtient ou définit une valeur indiquant si la recherche doit uniquement porter sur des mots entiers et exclure le texte s’il est inclus dans un mot plus long. Correspond à la case à cocher « Ne rechercher que des mots entiers » de la boîte de dialogue Rechercher et remplacer.|
-|matchWildCards|Obtient ou définit une valeur indiquant si la recherche est effectuée à l’aide d’opérateurs de recherche spéciaux. Correspond à la case « Utiliser des caractères génériques » de la boîte de dialogue Rechercher et remplacer.|
+|ignorePunct|Obtient ou définit une valeur indiquant s’il faut ignorer tous les caractères de ponctuation entre les mots. Correspond à la case à cocher « Ignorer les caractères de ponctuation » dans la boîte de dialogue Rechercher et remplacer.|
+|ignoreSpace|Obtient ou définit une valeur indiquant s’il faut ignorer tous les espaces entre les mots. Correspond à la case à cocher « Ignorer les caractères d’espacement » dans la boîte de dialogue Rechercher et remplacer.|
+|matchCase|Obtient ou définit une valeur indiquant si la recherche respecte la casse. Correspond à la case à cocher « Respecter la casse » dans la boîte de dialogue Rechercher et remplacer.|
+|matchPrefix|Obtient ou définit une valeur indiquant si la recherche doit porter sur les mots qui commencent par la chaîne entrée. Correspond à la case à cocher « Préfixe » dans la boîte de dialogue Rechercher et remplacer.|
+|matchSuffix|Obtient ou définit une valeur indiquant si la recherche doit porter sur les mots qui se terminent par la chaîne entrée. Correspond à la case à cocher « Suffixe » dans la boîte de dialogue Rechercher et remplacer.|
+|matchWholeWord|Obtient ou définit une valeur indiquant si la recherche doit porter uniquement sur les mots complets et non pas sur du texte qui fait partie d’un mot plus long. Correspond à la case à cocher « Mot entier » dans la boîte de dialogue Rechercher et remplacer.|
+|matchWildCards|Obtient ou définit une valeur indiquant si la recherche est effectuée à l’aide d’opérateurs de recherche spéciaux. Correspond à la case « Utiliser les caractères génériques » dans la boîte de dialogue Rechercher et remplacer.|
 
 ## <a name="wildcard-guidance"></a>Aide concernant les caractères génériques
-Le tableau suivant fournit des indications sur les caractères génériques de recherche de l'API JavaScript Word.
+Le tableau suivant fournit une aide concernant les caractères génériques de l’API JavaScript pour Word.
 
-| Pour rechercher :         | Caractère générique |  Exemple |
+| Pour trouver :         | Caractère générique |  Exemple |
 |:-----------------|:--------|:----------|
 | Un seul caractère| ? |s?t trouve sot et set. |
 |Une chaîne de caractères| * |s*n son et solution.|
@@ -38,10 +39,10 @@ Le tableau suivant fournit des indications sur les caractères génériques de r
 |Un des caractères spécifiés|[ ] |l[ea]s trouve les et las.|
 |Tout caractère de cette plage| [-] |[b-d]arder trouve barder, carder et darder. Les plages doivent être définies dans l’ordre alphabétique ou croissant.|
 |Tout caractère à l’exception de ceux de la plage entre les crochets|[!x-z] |p[!a-m]re trouve pore et pure, mais pas pare et pire.|
-|Exactement n occurrences de l’expression ou du caractère précédent|{n} |fe{2}d trouve feed et non fed.|
-|Au moins n occurrences de l’expression ou du caractère qui précéde|{n,} |fe{1,}d trouve fed et feed.|
-|De n à m occurrences de l’expression ou du caractère qui précéde|{n,m} |10{1,3} trouve 10, 100 et 1000.|
-|Une ou plusieurs occurrences de l’expression ou du caractère qui précéde|@ |mar@e trouve mare et marre.|
+|Exactement n occurrences de l’expression ou du caractère précédent|n |bal{2}ade trouve ballade mais pas balade.|
+|Au moins n occurrences de l’expression ou du caractère précédent|{n,} |bal{1,}ade recherche balade et ballade.|
+|Entre n et m occurrences de l’expression ou du caractère précédent|{n,m} |10{1,3} trouve 10, 100 et 1 000.|
+|Une ou plusieurs occurrences de l’expression ou du caractère précédent|@ |mar@e trouve mare et marre.|
 
 ### <a name="escaping-the-special-characters"></a>Échappement des caractères spéciaux
 
@@ -199,4 +200,4 @@ Word.run(function (context) {
 });
 ```
 
-Pour en savoir plus, allez dans [l'API de référence JavaScript Word](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js).
+Vous trouverez plus d’informations dans l’[API JavaScript de référence pour Word](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js).

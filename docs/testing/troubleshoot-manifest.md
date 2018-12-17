@@ -2,12 +2,12 @@
 title: Valider et résoudre des problèmes avec votre manifeste
 description: Utiliser ces méthodes pour valider le manifeste des compléments Office.
 ms.date: 11/02/2018
-ms.openlocfilehash: 710a06108206675a6c4fe523137f12a5d12f1da4
-ms.sourcegitcommit: c6723a31b48945ca4c466ba016a3dfc7b6267f5c
+ms.openlocfilehash: c166220f0ddd5002efcb2805b5e50ee20a48b4fe
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "25942243"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270788"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>Valider et résoudre des problèmes avec votre manifeste
 
@@ -16,7 +16,7 @@ Utiliser les méthodes suivantes pour valider et résoudre les problèmes rencon
 - [Validation du manifeste à l’aide du validateur de complément Office](#validate-your-manifest-with-the-office-add-in-validator)   
 - [Validation de votre manifeste par rapport au schéma XML](#validate-your-manifest-against-the-xml-schema)
 - [Validation de votre manifeste avec le générateur Yeoman pour les compléments Office](#validate-your-manifest-with-the-yeoman-generator-for-office-add-ins)
-- [Utilisation de la journalisation runtime pour déboguer le manifeste de votre complément](#use-runtime-logging-to-debug-your-add-in-manifest)
+- [Utilisation de la journalisation runtime pour déboguer votre complément](#use-runtime-logging-to-debug-your-add-in)
 
 
 ## <a name="validate-your-manifest-with-the-office-add-in-validator"></a>Validation du manifeste à l’aide du validateur de complément Office
