@@ -1,12 +1,13 @@
 ---
 title: Création d’un complément Office Node.js qui utilise l’authentification unique
-description: 23/01/2018
-ms.openlocfilehash: a6e91b84de69e4b2da5cc10277f0ca3579287b96
-ms.sourcegitcommit: 9b021af6cb23a58486d6c5c7492be425e309bea1
+description: ''
+ms.date: 12/07/2018
+ms.openlocfilehash: 793d68dd3f1794c997a85bd5be682037aecca89f
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "26533762"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270991"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office Node.js qui utilise l’authentification unique (aperçu)
 
@@ -196,14 +197,14 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
             // TODO3: Handle the case where the user's sign-in or consent was aborted.
     
             // TODO4: Handle the case where the user is logged in with an account that is neither work or school, 
-            //        nor Micrososoft Account.
+            //        nor Microsoft Account.
     
             // TODO5: Handle an unspecified error from the Office host.
     
             // TODO6: Handle the case where the Office host cannot get an access token to the add-ins 
             //        web service/application.
     
-            // TODO7: Handle the case where the user tiggered an operation that calls `getAccessTokenAsync` 
+            // TODO7: Handle the case where the user triggered an operation that calls `getAccessTokenAsync` 
             //        before a previous call of it completed.
     
             // TODO8: Handle the case where the add-in does not support forcing consent.
@@ -260,7 +261,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
         break;      
     ```
 
-1. Remplacez `getAccessTokenAsync` par le code suivant. L’erreur 13008 se produit lorsque l’utilisateur a déclenché une opération qui appelle `TODO7` avant la fin de l’appel précédent.
+1. Remplacez `TODO7` par le code suivant. L’erreur 13008 se produit lorsque l’utilisateur a déclenché une opération qui appelle `getAccessTokenAsync` avant que la fin de l’appel précédent.
 
     ```javascript
     case 13008:
@@ -331,13 +332,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
     else if (result.responseJSON.error.innerError
             && result.responseJSON.error.innerError.error_codes
             && result.responseJSON.error.innerError.error_codes[0] === 65001){
-        showResult(['Please grant consent to this add-in to access your Microsoft Graph data.']);        
-        /*
-            THE FORCE CONSENT OPTION IS NOT AVAILABLE IN DURING PREVIEW. WHEN SSO FOR
-            OFFICE ADD-INS IS RELEASED, REMOVE THE showResult LINE ABOVE AND UNCOMMENT
-            THE FOLLOWING LINE.
-        */
-        // getDataWithToken({ forceConsent: true });
+        getDataWithToken({ forceConsent: true });
     }
     ```
 
@@ -406,7 +401,7 @@ Il existe deux fichiers côté serveur qui doivent être modifiés.
 
     * Le paramètre `jwt` est le jeton d’accès à l’application. Dans le flux « de la part de », il est échangé avec AAD contre un jeton d’accès à la ressource.
     * Le paramètre scopes a une valeur par défaut, mais dans cet exemple, elle sera remplacée par le code appelant.
-    * Le paramètre de ressource est facultatif. Il ne doit pas être utilisé lorsque le STS est le point de terminaison AAD V 2.0. Le point de terminaison AAD V 2.0 déduit la ressource des étendues et renvoie une erreur si une ressource est envoyée dans la requête HTTP. 
+    * Le paramètre de ressource est facultatif. Il ne doit pas être utilisé lorsque le [service STS (Secure Token Service)](https://docs.microsoft.com/previous-versions/windows-identity-foundation/ee748490(v=msdn.10)) est le point de terminaison AAD V2.0. Le point de terminaison V2.0 déduit la ressource des étendues et renvoie une erreur si une ressource est envoyée dans la requête HTTP. 
     * La génération d’une exception dans le bloc `catch` ne provoquera *pas* l’envoi immédiat du message « 500 Erreur interne du serveur » au client. L’appel de code dans le fichier server.js interceptera cette exception et la convertira en un message d’erreur qui sera envoyé au client.
 
         ```typescript
@@ -521,9 +516,9 @@ Il existe deux fichiers côté serveur qui doivent être modifiés.
     })); 
     ```
 
-3. Ajoutez la méthode suivante en bas du fichier. Cette méthode traite toutes les requêtes concernant l’API `onedriveitems`.
+3. Ajoutez la méthode suivante en bas du fichier. Cette méthode traite toutes les requêtes concernant l’API `values`.
     ```typescript
-    app.get('/api/onedriveitems', handler(async (req, res) => {
+    app.get('/api/values', handler(async (req, res) => {
         // TODO7: Initialize the AuthModule object and validate the access token 
         //        that the client-side received from the Office host.
         // TODO8: Get a token to Microsoft Graph from either persistent storage 
