@@ -1,13 +1,13 @@
 ---
 title: Utiliser les classeurs utilisant l’API JavaScript Excel
 description: ''
-ms.date: 11/27/2018
-ms.openlocfilehash: 1cfde9bfdf306e35f47595f936679d9fa6e1814e
-ms.sourcegitcommit: 026437bd3819f4e9cd4153ebe60c98ab04e18f4e
+ms.date: 12/13/2018
+ms.openlocfilehash: 388e061f72055b557a9da822391a9c0cd64a2c24
+ms.sourcegitcommit: 09f124fac7b2e711e1a8be562a99624627c0699e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "27002338"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "27283122"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Utiliser les classeurs utilisant l’API JavaScript Excel
 
@@ -92,7 +92,7 @@ La méthode`protect` accepte un paramètre de chaîne facultatif. Cette chaîne 
 
 La protection peut également être définie au niveau de la feuille de calcul pour empêcher la modification de données non souhaitée. Pour plus d’informations, voir la section**protection des données** de l’article[manipuler des feuilles de calcul à l’aide de l’API JavaScript Excel](excel-add-ins-worksheets.md#data-protection).
 
-> [!NOTE] 
+> [!NOTE]
 > Pour plus d’informations sur la protection du classeur dans Excel, voir l’article [protéger un classeur](https://support.office.com/article/Protect-a-workbook-7E365A4D-3E89-4616-84CA-1931257C1517).
 
 ## <a name="access-document-properties"></a>Accès aux propriétés du document
@@ -148,6 +148,53 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
+## <a name="add-custom-xml-data-to-the-workbook"></a>Ajouter des données XML personnalisées au classeur
+
+Le format de fichier Open XML d’Excel **.xlsx** permet à votre complément d’incorporer des données XML personnalisées dans le classeur. Ces données continuent de s’afficher avec le classeur, indépendamment du complément.
+
+Un classeur contient un[CustomXmlPartCollection](/javascript/api/excel/excel.customxmlpartcollection), c'est-à-dire, une liste de[CustomXmlParts](/javascript/api/excel/excel.customxmlpart). Ceci octroie l’accès aux chaînes XML et ID correspondantes uniques. En stockant ces ID en tant que paramètres, votre complément peut stocker les touches de ses parties XML entre les sessions.
+
+Les exemples suivants montrent comment utiliser des éléments XML personnalisés. Le premier bloc de code montre comment incorporer des données XML dans le document. Il contient une liste de relecteurs, puis en utilisant les paramètres du classeur pour enregistrer le fichier XML`id` pour leur récupération future. Le deuxième bloc montre comment accéder à ce XML ultérieurement. Le paramètre « ContosoReviewXmlPartId » est chargé et transmis au classeur`customXmlParts`. Les données XML sont imprimées puis dans la console.
+
+```js
+Excel.run(async (context) => {
+    // Add reviewer data to the document as XML
+    var originalXml = "<Reviewers xmlns='http://schemas.contoso.com/review/1.0'><Reviewer>Juan</Reviewer><Reviewer>Hong</Reviewer><Reviewer>Sally</Reviewer></Reviewers>";
+    var customXmlPart = context.workbook.customXmlParts.add(originalXml);
+    customXmlPart.load("id");
+
+    return context.sync().then(function() {
+        // Store the XML part's ID in a setting
+        var settings = context.workbook.settings;
+        settings.add("ContosoReviewXmlPartId", customXmlPart.id);
+    });
+}).catch(errorHandlerFunction);
+```
+
+```js
+Excel.run(async (context) => {
+    // Retrieve the XML part's id from the setting
+    var settings = context.workbook.settings;
+    var xmlPartIDSetting = settings.getItemOrNullObject("ContosoReviewXmlPartId").load("value");
+
+    return context.sync().then(function () {
+        if (xmlPartIDSetting.value) {
+            var customXmlPart = context.workbook.customXmlParts.getItem(xmlPartIDSetting.value);
+            var xmlBlob = customXmlPart.getXml();
+
+            return context.sync().then(function () {
+                // Add spaces to make more human readable in the console
+                var readableXML = xmlBlob.value.replace(/></g, "> <");
+                console.log(readableXML);
+            });
+        }
+    });
+}).catch(errorHandlerFunction);
+```
+
+> [!NOTE]
+> `CustomXMLPart.namespaceUri` est renseigné uniquement si l’élément XML personnalisé niveau supérieur contient l’attribut`xmlns`.
+
 ## <a name="control-calculation-behavior"></a>Contrôler le comportement de calcul
 
 ### <a name="set-calculation-mode"></a>Définir le mode de calcul
@@ -158,7 +205,7 @@ Par défaut, Excel recalcule les résultats d’une formule chaque fois qu’une
  - `automatic`: Le comportement de recalcul par défaut dans lequel Excel calcule les résultats d’une nouvelle formule chaque fois que les données pertinentes sont modifiées.
  - `automaticExceptTables`: Identique `automatic`, sauf que les modifications apportées à des valeurs dans les tableaux sont ignorées.
  - `manual`: Calculs sont uniquement effectués lorsque l’utilisateur ou un complément les demande.
- 
+
 ### <a name="set-calculation-type"></a>Définir le type de calcul
 
 L’objet [Application](/javascript/api/excel/excel.application) fournit une méthode pour forcer un nouveau calcul immédiat. `Application.calculate(calculationType)` démarre un recalcul manuel basé sur la valeur `calculationType`. Les valeurs suivantes peuvent être utilisées :
@@ -167,7 +214,7 @@ L’objet [Application](/javascript/api/excel/excel.application) fournit une mé
  - `fullRebuild`: Revérifier les formules dépendantes, puis recalculer toutes les formules de tous les classeurs ouverts, qu’elles aient changé depuis le dernier recalcul ou non.
  - `recalculate`: Recalculer des formules qui ont changé (ou marqués par programme pour le recalcul) depuis le dernier calcul et les formules dépendantes, dans tous les classeurs actifs.
  
-> [!NOTE] 
+> [!NOTE]
 > Pour plus d’informations sur le recalcul, voir l’article [recalcul de modification, l’itération ou la précision](https://support.office.com/article/change-formula-recalculation-iteration-or-precision-73fc7dac-91cf-4d36-86e8-67124f6bcce4).
 
 ### <a name="temporarily-suspend-calculations"></a>Suspendre temporairement les calculs
