@@ -32,6 +32,6 @@ Lorsque vous concevez et développez des compléments Office, il est important d
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Web Content Accessibility Guidelines (WCAG) 2.0](https://www.w3.org/TR/wcag2ict/#REF-WCAG20)
-- [Conseils sur l’application de WCAG 2.0 aux technologies d’information et de communication non web (WCAG2ICT)](https://www.w3.org/TR/wcag2ict/)
-- [Norme européenne sur les conditions d’accessibilité pour les technologies d’information et de communication (ICT)](http://www.etsi.org/deliver/etsi_en/301500_301599/301549/01.00.00_20/en_301549v010000c.pdf) 
+- [Web Content Accessibility Guidelines (WCAG) 2.0](https://www.w3.org/TR/wcag2ict/#REF-WCAG20)
+- [Conseils sur l’application de WCAG 2.0 aux technologies d’information et de communication non web (WCAG2ICT)](https://www.w3.org/TR/wcag2ict/)
+- [Norme européenne sur les conditions d’accessibilité pour les technologies d’information et de communication (ICT)](https://www.etsi.org/deliver/etsi_en/301500_301599/301549/01.00.00_20/en_301549v010000c.pdf) 
