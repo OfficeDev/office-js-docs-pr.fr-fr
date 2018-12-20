@@ -1,17 +1,20 @@
 ---
-title: Utilisation de plages à l’aide de l’API JavaScript pour Excel
+title: Utilisation de plages à l’aide de l’API JavaScript pour Excel (fondamental)
 description: ''
-ms.date: 10/19/2018
-ms.openlocfilehash: 9ac2ce808390dce90572aa27f3f8da2bce9cb572
-ms.sourcegitcommit: 8b079005eb042035328e89b29bf2ec775dd08a96
+ms.date: 12/14/2018
+ms.openlocfilehash: 4c64abec1f79bd1194a106e46b8a6fe6c4b71d07
+ms.sourcegitcommit: 09f124fac7b2e711e1a8be562a99624627c0699e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "25772248"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "27283101"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Utilisation de plages à l’aide de l’API JavaScript pour Excel
 
 Cet article fournit des exemples de code qui expliquent comment effectuer des tâches courantes avec des plages à l’aide de l’API JavaScript pour Excel. Pour obtenir une liste complète des propriétés et des méthodes prises en charge par l’objet **Range**, reportez-vous à la rubrique [Objet Range (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range).
+
+> [!NOTE]
+> Pour plus d’exemples de code qui montrent comment effectuer des tâches plus avancées avec des plages, consultez l’article [Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)](excel-add-ins-ranges-advanced.md).
 
 ## <a name="get-a-range"></a>Obtenir une plage
 
@@ -537,70 +540,9 @@ Excel.run(function (context) {
 
 ### <a name="conditional-formatting-of-ranges"></a>Mise en forme conditionnelle de plages
 
-Des plages peuvent présenter une mise en forme de cellules individuelles en fonction de certaines conditions. Pour plus d’informations à ce sujet, voir [Appliquer une mise en forme conditionnelle à des plages Excel](excel-add-ins-conditional-formatting.md).
-
-## <a name="copy-and-paste"></a>Copier et coller
-
-> [!NOTE]
-> Le fonction copyFrom est actuellement disponible uniquement en préversion publique (bêta). Pour utiliser cette fonctionnalité, vous devez utiliser la bibliothèque bêta du CDN Office.js : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-> Si vous utilisez TypeScript ou si votre éditeur de code utilise des fichiers de définition de type TypeScript pour IntelliSense, utilisez https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
-
-La fonction copyFrom de la plage reproduit le comportement de copier-coller de l’interface utilisateur Excel. L’objet plage sur lequel copyFrom est appelé est la destination. La source à copier est transmise en tant que plage ou qu’adresse de chaîne représentant une plage. L’exemple de code suivant copie les données de la plage **A1:E1** dans la plage commençant en **G1** (ce qui aboutit à un collage dans la plage **G1:K1**).
-
-```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    // copy a range starting at a single cell destination
-    sheet.getRange("G1").copyFrom("A1:E1");
-    return context.sync();
-}).catch(errorHandlerFunction);
-```
-
-Range.copyFrom a trois paramètres facultatifs.
-
-```ts
-copyFrom(sourceRange: Range | string, copyType?: "All" | "Formulas" | "Values" | "Formats", skipBlanks?: boolean, transpose?: boolean): void;
-``` 
-
-`copyType` spécifie les données copiées de la source vers la destination. 
-`“Formulas”` transfère les formules dans les cellules sources en préservant le positionnement relatif des plages de ces formules. Les entrées autres que des formules sont copiées telles quelles. 
-`“Values”` copie les valeurs des données et, s’il s’agit d’une formule, le résultat de celle-ci. 
-`“Formats”` copie la mise en forme de la plage, y compris la police, la couleur et d’autres paramètres de mise en forme, mais aucune valeur. 
-`”All”` (option par défaut) copie les données et la mise en forme, en conservant les formules éventuelles des cellules.
-
-`skipBlanks` définit si les cellules vides sont copiées dans la destination. Quand la valeur est true, `copyFrom` ignore les cellules vides de la plage source. Les cellules ignorées ne remplacent pas les données existantes dans les cellules correspondantes de la plage de destination. La valeur par défaut est false.
-
-L’exemple de code et les images suivants illustrent ce comportement dans un scénario simple. 
-
-```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    // copy a range, omitting the blank cells so existing data is not overwritten in those cells
-    sheet.getRange("D1").copyFrom("A1:C1",
-        Excel.RangeCopyType.all,
-        true, // skipBlanks
-        false); // transpose
-    // copy a range, including the blank cells which will overwrite existing data in the target cells
-    sheet.getRange("D2").copyFrom("A2:C2",
-        Excel.RangeCopyType.all,
-        false, // skipBlanks
-        false); // transpose
-    return context.sync();
-}).catch(errorHandlerFunction);
-```
-
-*Avant exécution de la fonction précédente.*
-
-![Données dans Excel avant exécution de la méthode de copie de la plage.](../images/excel-range-copyfrom-skipblanks-before.png)
-
-*Après exécution de la fonction précédente.*
-
-![Données dans Excel après exécution de la méthode de copie de la plage.](../images/excel-range-copyfrom-skipblanks-after.png)
-
-`transpose` détermine si les données sont ou non transposées, ce qui signifie que ses lignes et colonnes sont permutées dans l’emplacement source. Une plage transposée est renversée le long de la diagonale principale, de sorte que les lignes **1**, **2** et **3** deviennent les colonnes **A**, **B** et **C**. 
-
+Des plages peuvent présenter une mise en forme de cellules individuelles en fonction de certaines conditions. Pour plus d’informations à ce sujet, consultez l’article [Appliquer une mise en forme conditionnelle à des plages Excel](excel-add-ins-conditional-formatting.md).
 
 ## <a name="see-also"></a>Voir aussi
 
+- [Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)](excel-add-ins-ranges-advanced.md)
 - [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
-
