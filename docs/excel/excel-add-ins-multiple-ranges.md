@@ -2,12 +2,12 @@
 title: Travailler simultanément avec plusieurs plages dans des compléments Excel
 description: ''
 ms.date: 09/04/2018
-ms.openlocfilehash: 37f9c8a9f3127d78e1cc794aea9e6d1502cdeaf9
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: f1217fc76d14269882a73ec5eb7758e519563456
+ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270977"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "27383224"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins-preview"></a>Travailler simultanément avec plusieurs plages dans des compléments Excel (Prévisualisation)
 
@@ -97,8 +97,7 @@ Une fois que vous avez un`RangeAreas`objet, vous pouvez en créer d’autres à 
 > [!NOTE]
 > Vous ne pouvez pas ajouter directement des plages supplémentaires à un objet`RangeAreas`. Par exemple, la collection dans`RangeAreas.areas`n’a pas une méthode`add`.
 
-
-> [!WARNING] 
+> [!WARNING]
 > N’essayez pas d’ajouter ou de supprimer directement les membres du tableau`RangeAreas.areas.items`. Cela mènera à un comportement indésirable dans votre code. Par exemple, il est possible de pousser un objet`Range` supplémentaire sur le tableau, mais ceci entrainera des erreurs car les propriétés`RangeAreas`et les méthodes se comportent comme si le nouvel élément n’existait pas. Par exemple, la propriété`areaCount`n’inclut pas les plages poussées de cette manière, et le `RangeAreas.getItemAt(index)` lance une erreur si`index`est plus grand que`areasCount-1`. De la même façon, supprimer un objet`Range`dans la plage`RangeAreas.areas.items`en obtenant une référence liée à celui-ci et en appelant sa méthode`Range.delete` entraîne des bogues: bien que `Range`l’objet*soit*supprimé, les propriétés et les méthodes de l’objet`RangeAreas`parent se comporte, ou tente de le faire, comme s’il existait encore. Par exemple, si votre code appelle`RangeAreas.calculate`, Office essaiera de calculer la plage, mais comprendra une erreur car l’objet de la plage n’est plus là.
 
 Paramétrer une propriété sur un`RangeAreas`établit une propriété correspondante sur toutes les plages dans la collection`RangeAreas.areas`.
@@ -107,8 +106,8 @@ Le suivant est un exemple de paramétrage d’une propriété sur des plages mul
 
 ```js
 Excel.run(function (context) {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
-    const rangeAreas = sheet.getRanges("F3:F5, H3:H5");
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var rangeAreas = sheet.getRanges("F3:F5, H3:H5");
     rangeAreas.format.fill.color = "pink";
 
     return context.sync();
@@ -142,9 +141,9 @@ Voici un exemple d’utilisation de la première. Tenez compte du code suivant:
 
 ```js
 Excel.run(function (context) {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
-    const usedRange = sheet.getUsedRange();
-    const formulaRanges = usedRange.getSpecialCells("Formulas");
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var usedRange = sheet.getUsedRange();
+    var formulaRanges = usedRange.getSpecialCells("Formulas");
     formulaRanges.format.fill.color = "pink";
 
     return context.sync();
@@ -161,8 +160,8 @@ Mais dans les scénarios dans lesquels cela est normal, mais peut-être gênant,
 
 ```js
 Excel.run(function (context) {
-    const range = context.workbook.getSelectedRange();
-    const formulaRanges = range.getSpecialCellsOrNullObject("Formulas");
+    var range = context.workbook.getSelectedRange();
+    var formulaRanges = range.getSpecialCellsOrNullObject("Formulas");
     return context.sync()
         .then(function() {
             if (formulaRanges.isNullObject) {
@@ -187,9 +186,9 @@ Il existe un paramètre secondaire optionnel, de type enum`Excel.SpecialCellValu
 
 ```js
 Excel.run(function (context) {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
-    const usedRange = sheet.getUsedRange();
-    const constantNumberRanges = usedRange.getSpecialCells("Constants", "Numbers");
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var usedRange = sheet.getUsedRange();
+    var constantNumberRanges = usedRange.getSpecialCells("Constants", "Numbers");
     constantNumberRanges.format.fill.color = "pink";
 
     return context.sync();
@@ -200,9 +199,9 @@ Parfois, vous avez besoin d’exécuter plus d’un type de valeur de cellule, t
 
 ```js
 Excel.run(function (context) {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
-    const usedRange = sheet.getUsedRange();
-    const formulaLogicalNumberRanges = usedRange.getSpecialCells("Formulas", "LogicalNumbers");
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var usedRange = sheet.getUsedRange();
+    var formulaLogicalNumberRanges = usedRange.getSpecialCells("Formulas", "LogicalNumbers");
     formulaLogicalNumberRanges.format.fill.color = "pink";
 
     return context.sync();
@@ -222,10 +221,10 @@ La lecture des valeurs de propriété de `RangeAreas` nécessite un soin, car un
 
 ```js
 Excel.run(function (context) {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
 
     // The ranges are the F column and the H column.
-    const rangeAreas = sheet.getRanges("F:F, H:H");  
+    var rangeAreas = sheet.getRanges("F:F, H:H");  
     rangeAreas.format.fill.color = "pink";
 
     rangeAreas.load("format/fill/color, isEntireColumn");
@@ -249,10 +248,10 @@ Par exemple, le code suivante crée un`RangeAreas`dans lequel seule une plage es
 
 ```js
 Excel.run(function (context) {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
-    const rangeAreas = sheet.getRanges("F3:F5, H:H");
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var rangeAreas = sheet.getRanges("F3:F5, H:H");
 
-    const pinkColumnRange = sheet.getRange("H:H");
+    var pinkColumnRange = sheet.getRange("H:H");
     pinkColumnRange.format.fill.color = "pink";
 
     rangeAreas.load("format/fill/color, isEntireColumn, address");
