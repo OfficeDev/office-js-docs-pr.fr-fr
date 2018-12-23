@@ -2,12 +2,12 @@
 title: Création d’un complément Office Node.js qui utilise l’authentification unique
 description: ''
 ms.date: 12/07/2018
-ms.openlocfilehash: 793d68dd3f1794c997a85bd5be682037aecca89f
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: 6579549fbad4a44d73edfacefe53875e2a6e0918
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270991"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433333"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office Node.js qui utilise l’authentification unique (aperçu)
 
@@ -196,7 +196,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
     
             // TODO3: Handle the case where the user's sign-in or consent was aborted.
     
-            // TODO4: Handle the case where the user is logged in with an account that is neither work or school, 
+            // TODO4: Handle the case where the user is logged in with an account that is neither work or school,
             //        nor Microsoft Account.
     
             // TODO5: Handle an unspecified error from the Office host.
@@ -300,7 +300,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
 
         // TODO12: Handle the case where an invalid scope (permission) was used in the on-behalf-of flow
 
-        // TODO13: Handle the case where the token that the add-in's client-side sends to it's 
+        // TODO13: Handle the case where the token that the add-in's client-side sends to its
         //         server-side is not valid because it is missing `access_as_user` scope (permission).
 
         // TODO14: Handle the case where the token sent to Microsoft Graph in the request for 
@@ -492,7 +492,7 @@ Il existe deux fichiers côté serveur qui doivent être modifiés.
     ```typescript
     async acquireTokenOnBehalfOf(jwt: string, scopes: string[] = ['openid'], resource?: string) {
         const resourceTokenExpirationTime = ServerStorage.retrieve('ResourceTokenExpiresAt');
-        if (moment().add(1, 'minute').diff(resourceTokenExpirationTime) < 1 ) {
+        if (moment().add(1, 'minute').diff(await resourceTokenExpirationTime) < 1 ) {
             return ServerStorage.retrieve('ResourceToken');
         } else if (resource) {
             return this.exchangeForToken(jwt, scopes, resource);
