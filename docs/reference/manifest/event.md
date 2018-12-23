@@ -1,9 +1,20 @@
+---
+title: Élément Event dans le fichier manifeste
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: eda895b01e106d67eef70f199be64086e9372bef
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432738"
+---
 # <a name="event-element"></a>Élément Event
 
 Définit un gestionnaire d’événements dans un complément.
 
 > [!NOTE] 
-> L’élément `Event` est actuellement uniquement pris en charge par Outlook sur le web dans Office 365.
+> L’élément `Event` est actuellement uniquement pris en charge par Outlook sur le web dans Office 365.
 
 ## <a name="attributes"></a>Attributs
 
@@ -30,5 +41,5 @@ Obligatoire. DOIT être défini sur `synchronous`.
 Obligatoire. Indique le nom de la fonction du gestionnaire d’événements. Cette valeur doit correspondre au nom d’une fonction dans le [fichier de fonction](functionfile.md) du complément.
 
 ```xml
-<Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" /> 
+<Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" /> 
 ```
