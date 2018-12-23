@@ -1,3 +1,14 @@
+---
+title: Ensemble de conditions requises de l’API du complément Outlook 1.5
+description: ''
+ms.date: 11/14/2018
+ms.openlocfilehash: dc6432c3e55ed75c120c2872233ca0f275010e73
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433928"
+---
 # <a name="outlook-add-in-api-requirement-set-15"></a>Ensemble de conditions requises de l’API du complément Outlook 1.5
 
 Le sous-ensemble de l’API pour le complément Outlook de l’interface API JavaScript pour Office comprend des objets, des méthodes, des propriétés et des événements à utiliser dans un complément Outlook.
