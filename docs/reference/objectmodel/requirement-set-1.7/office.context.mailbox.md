@@ -1,7 +1,17 @@
-
+---
+title: Office.context-ensemble de conditions requises 1.7
+description: ''
+ms.date: 10/31/2018
+ms.openlocfilehash: 3f4cee427e49a691b42d47d6821c54cd428207d9
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433340"
+---
 # <a name="mailbox"></a>boîte aux lettres
 
-### [Office](Office.md)[.context](Office.context.md). mailbox
+### <a name="officeofficemdcontextofficecontextmdmailbox"></a>[Office](Office.md)[.context](Office.context.md).mailbox
 
 Permet d’accéder au modèle objet du complément Outlook pour Microsoft Outlook et Microsoft Outlook sur le web.
 
@@ -424,10 +434,10 @@ Si l’un des paramètres dépasse les limites définies en matière de taille o
 | `parameters.subject` | String | Chaîne contenant l’objet du message. La chaîne est limitée à 255 caractères maximum. |
 | `parameters.htmlBody` | String | Corps du message HTML. La taille du corps du message est limitée à 32 Ko. |
 | `parameters.attachments` | Array.&lt;Object&gt; | Tableau d’objets JSON qui sont des pièces jointes de fichier ou d’élément. |
-| `parameters.attachments.type` | String | Indique le type de pièce jointe. Doit être `file` pour une pièce jointe de fichier ou `item` pour une pièce jointe d’élément. |
+| `parameters.attachments.type` | Chaîne | Indique le type de pièce jointe. Doit être `file` pour une pièce jointe de fichier ou `item` pour une pièce jointe d’élément. |
 | `parameters.attachments.name` | String | Chaîne qui contient le nom de la pièce jointe et comporte jusqu'à 255 caractères.|
-| `parameters.attachments.url` | String | Utilisé uniquement si `type` est défini sur `file`. Il s’agit de l’URI de l’emplacement du fichier. |
-| `parameters.attachments.isInline` | Boolean | Utilisé uniquement si `type` est défini sur `file`. Si elle est définie sur `true`, cette valeur indique que la pièce jointe est incorporée dans le corps du message et qu’elle ne doit pas figurer dans la liste des pièces jointes. |
+| `parameters.attachments.url` | Chaîne | Utilisé uniquement si `type` est défini sur `file`. Il s’agit de l’URI de l’emplacement du fichier. |
+| `parameters.attachments.isInline` | Booléen | Utilisé uniquement si `type` est défini sur `file`. Si elle est définie sur `true`, cette valeur indique que la pièce jointe est incorporée dans le corps du message et qu’elle ne doit pas figurer dans la liste des pièces jointes. |
 | `parameters.attachments.itemId` | String | Utilisé uniquement si `type` est défini sur `item`. ID d’élément EWS du courrier électronique existant à joindre au nouveau message. Il s’agit d’une chaîne comportant un maximum de 100 caractères. |
 
 
