@@ -1,6 +1,17 @@
-# <a name="resources-element"></a>Élément Resources
+---
+title: Élément Ressources dans le fichier manifest
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 0707df137d075a9922836e5d960216d089c56675
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433900"
+---
+# <a name="resources-element"></a>Élément Ressources
 
-Contient des icônes, des chaînes et des URL pour le nœud [VersionOverrides](versionoverrides.md). Un élément de manifeste indique une ressource à l’aide de l’**id** de la ressource. Cela permet de conserver une taille de manifeste raisonnable, surtout lorsque les ressources sont disponibles en plusieurs versions selon les paramètres régionaux. Un **id** doit être unique au sein du manifeste et doit comporter 32 caractères au maximum.
+Contient des icônes, des chaînes et des URL pour le nœud [VersionOverrides](versionoverrides.md). Un élément de manifeste indique une ressource à l’aide de l’**Id** de la ressource. Cela permet de conserver une taille de manifeste raisonnable, surtout lorsque les ressources sont disponibles en plusieurs versions selon les paramètres régionaux. Un **Id** doit être unique au sein du manifeste et doit comporter 32 caractères au maximum.
 
 Chaque ressource peut avoir plusieurs éléments enfants **Override** afin que vous puissiez définir une ressource différente pour un paramètre régional spécifique.
 
@@ -9,9 +20,9 @@ Chaque ressource peut avoir plusieurs éléments enfants **Override** afin que v
 |  Élément |  Type  |  Description  |
 |:-----|:-----|:-----|
 |  [Images](#images)            |  image   |  Fournit l’URL HTTPS de l’image d’une icône. |
-|  **Urls**                |  url     |  Fournit un URL HTTPS d’emplacement. Une URL peut comporter jusqu’à 2 048 caractères. |
-|  **ShortStrings** |  string  |  Texte pour les éléments **Label** et **Title**. Chaque élément **String** comporte 125 caractères au maximum.|
-|  **LongStrings**  |  string  | Texte pour les attributs **Description**. Chaque **String** comporte 250 caractères au maximum.|
+|  **URL**                |  url     |  Fournit l’URL HTTPS. Une URL peut comporter jusqu’à 2 048 caractères. |
+|  **ShortStrings** |  chaîne  |  Texte pour les éléments **Label** et **Title**. Chaque élément **String** comporte 125 caractères au maximum.|
+|  **LongStrings**  |  chaîne  | Texte pour les attributs **Description**. Chaque **chaîne** comporte 250 caractères au maximum.|
 
 > [!NOTE]
 > Vous devez utiliser le protocole SSL (Secure Sockets Layer) pour toutes les URL dans les éléments **Image** et **Url**.
@@ -32,7 +43,7 @@ Les tailles supplémentaires suivantes sont également prises en charge, mais ne
 - 64x64
 
 > [!IMPORTANT] 
-> Outlook doit pouvoir mettre en cache les ressources d’image pour des raisons de performances. Par conséquent, le serveur qui héberge une ressource d’image ne doit pas ajouter les directives CACHE-CONTROL à l’en-tête de réponse. Outlook la remplacerait alors automatiquement par une image générique ou par défaut.    
+> Outlook doit pouvoir mettre en cache les ressources d’image pour des raisons de performances. Par conséquent, le serveur qui héberge une ressource d’image ne doit pas ajouter les directives CACHE-CONTROL à l’en-tête de réponse. Outlook remplacera alors automatiquement une image générique ou par défaut.    
 
 ## <a name="resources-examples"></a>Exemples de ressources 
 

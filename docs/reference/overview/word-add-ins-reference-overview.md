@@ -1,4 +1,15 @@
-# <a name="word-javascript-api-overview"></a>Présentation des API JavaScript pour Word
+---
+title: Présentation des API JavaScript pour Word
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: fb45b4197b464f1bf9799a557be0dd3c2881c63d
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433851"
+---
+# <a name="word-javascript-api-overview"></a>Présentation des APIs JavaScript pour Word
 
 Word propose un ensemble complet d’API que vous pouvez utiliser pour créer des compléments qui interagissent avec les métadonnées et le contenu du document. Ces API permettent de créer des expériences attrayantes qui s’intègrent à Word et l’étendent. Vous pouvez importer et exporter du contenu, assembler de nouveaux documents provenant de différentes sources de données et réaliser une intégration avec des flux de travail de document pour créer des solutions de document personnalisées.
 

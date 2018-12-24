@@ -1,13 +1,13 @@
 ---
-ms.date: 12/14/2018
+ms.date: 12/21/2018
 description: Créer des fonctions personnalisées dans Excel à l’aide de JavaScript.
 title: Créer des fonctions personnalisées dans Excel (Aperçu)
-ms.openlocfilehash: be90f1f16b2e32b1b835781df95a1872516e4cfb
-ms.sourcegitcommit: 1b90ec48be51629625d21ca04e3b8880399c0116
+ms.openlocfilehash: 8f30ee32168147b8beeb6e60372cd631237ce993
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "27378084"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433039"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Créer des fonctions personnalisées dans Excel (aperçu)
 
@@ -419,6 +419,7 @@ function getComment(x) {
 - Les fonctions personnalisées dans Excel Online peuvent cesser de fonctionner pendant une session après une période d’inactivité. Actualiser la page du navigateur (F5), puis entrez une fonction personnalisée pour restaurer la fonctionnalité.
 - Vous pouvez voir le **## CHARGEMENT_DONNEES** résultat temporaire au sein des cellules d’une feuille de calcul si vous avez plusieurs compléments en cours d’exécution sur Excel pour Windows. Fermez toutes les fenêtres Excel et redémarrez Excel.
 - Des outils de débogage spécifiques aux fonctions personnalisées seront peut-être disponibles à l’avenir. En attendant, vous pouvez déboguer sur Excel Online à l’aide des outils de développement F12. Plus de détails dans [Meilleures pratiques de fonctions personnalisées](custom-functions-best-practices.md).
+- Dans la version 32 bits d’Office 365*décembre*Insiders version 1901 (Build 11128.20000), les Fonctions Personnalisées ne peuvent pas correctement fonctionner. Dans certains cas, vous pouvez résoudre ce bug en téléchargeant le fichier surhttps://github.com/OfficeDev/Excel-Custom-Functions/blob/december-insiders-workaround/excel-udf-host.win32.bundle. Puis copiez votre dossier « C:\Program Files (x86)\Microsoft Office\root\Office16».
 
 ## <a name="changelog"></a>Journal des modifications
 

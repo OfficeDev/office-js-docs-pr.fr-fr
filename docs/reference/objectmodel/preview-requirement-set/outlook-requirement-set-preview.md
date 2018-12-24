@@ -1,3 +1,14 @@
+---
+title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
+description: ''
+ms.date: 10/31/2018
+ms.openlocfilehash: e1ed6cae6ac3753f420763b63de0d05283a8fac5
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433662"
+---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
 Le sous-ensemble de l’API pour le complément Outlook de l’interface API JavaScript pour Office comprend des objets, des méthodes, des propriétés et des événements à utiliser dans un complément Outlook.

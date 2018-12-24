@@ -1,9 +1,19 @@
-
+---
+title: Office.context.mailbox.userProfile-ensemble de conditions requises 1.7
+description: ''
+ms.date: 10/31/2018
+ms.openlocfilehash: 866bf063cf4ad8bf040753714986a7b2db05b6d6
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433858"
+---
 # <a name="userprofile"></a>userProfile
 
-### [Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md). userProfile
+### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmduserprofile"></a>[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile
 
-##### <a name="requirements"></a>Configuration requise
+##### <a name="requirements"></a>Configurations requises
 
 |Conditions requises| Valeur|
 |---|---|

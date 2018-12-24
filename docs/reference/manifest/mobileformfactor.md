@@ -1,3 +1,14 @@
+---
+title: Élément MobileFormFactor dans le fichier manifest
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: f0a68c7127f7872207a58ed252def7a2977c33ed
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433691"
+---
 # <a name="mobileformfactor-element"></a>Élément MobileFormFactor
 
 Spécifie les paramètres d’un complément pour le facteur de forme pour environnement mobile. Il contient toutes les informations de complément pour ce facteur de forme pour environnement mobile pour le nœud **Resources**.

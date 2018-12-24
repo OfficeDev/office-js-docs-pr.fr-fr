@@ -1,3 +1,14 @@
+---
+title: Ensembles de conditions requises de l’API JavaScript pour Outlook
+description: ''
+ms.date: 12/04/2018
+ms.openlocfilehash: 3d2b17de4e1bc8510b06901b4cfd1949d9490564
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433025"
+---
 # <a name="outlook-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Outlook
 
 Les versions API requises pour les compléments Outlook sont indiquées à l’aide de l’élément [Requirements](/office/dev/add-ins/reference/manifest/requirements) dans leur [manifeste](https://docs.microsoft.com/office/dev/add-ins/develop/add-in-manifests). Les compléments Outlook contiennent toujours un élément [Set](/office/dev/add-ins/reference/manifest/set) avec un attribut `Name` défini sur `Mailbox` et un attribut `MinVersion` défini sur l’ensemble minimal de conditions requises de l’API qui prend en charge les scénarios du complément.
@@ -54,4 +65,4 @@ Les clients suivants prennent en charge des compléments Outlook.
 | Outlook Web App (Exchange 2019 en local) | [1.1](/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1), [1.2](/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2), [1.3](/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3), [1.4](/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4), [1.5](/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5) |
 
 > [!NOTE]
-> La prise en charge de la version 1.3 dans Outlook 2013 a été ajoutée dans le cadre de la [mise à jour du 8 décembre 2015 pour Outlook 2013 (KB3114349)](https://support.microsoft.com/kb/3114349). La prise en charge de la version 1.4 dans Outlook 2013 a été ajoutée dans le cadre de la [mise à jour du 13 septembre 2016 pour Outlook 2013 (KB3118280)](https://support.microsoft.com/help/3118280).
+> La prise en charge de la version 1.3 dans Outlook 2013 a été ajoutée dans le cadre de la [mise à jour du 8 décembre 2015 pour Outlook 2013 (KB3114349)](https://support.microsoft.com/kb/3114349). La prise en charge de la version 1.4 dans Outlook 2013 a été ajoutée dans le cadre de la [mise à jour du 13 septembre 2016 pour Outlook 2013 (KB3118280)](https://support.microsoft.com/help/3118280). La prise en charge 1.4 dans Outlook 2016 (MSI) a été ajouté dans le cadre de la [mise à jour du 3 juillet 2018, pour Office 2016 (KB4022223)](https://support.microsoft.com/help/4022223).

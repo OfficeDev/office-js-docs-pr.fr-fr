@@ -1,3 +1,14 @@
+---
+title: Élément OfficeTab dans le fichier manifest
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 721064687c3c892b565a94e418815726cc0817f5
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432871"
+---
 # <a name="officetab-element"></a>Élément OfficeTab
 
 Définit l’onglet du ruban sur lequel votre commande de complément s’affiche. Il peut s’agir de l’onglet par défaut (soit **Accueil**, **Message** ou **Réunion**), ou d’un onglet personnalisé défini par le complément. Cet élément est obligatoire.
@@ -6,9 +17,9 @@ Définit l’onglet du ruban sur lequel votre commande de complément s’affich
 
 |  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
-|  Groupe      | Oui |  Définit un groupe de commandes. Vous ne pouvez ajouter qu’un seul groupe par complément à l’onglet par défaut.  |
+|  Group      | Oui |  Définit un groupe de commandes. Vous ne pouvez ajouter qu’un seul groupe par complément à l’onglet par défaut.  |
 
-Les valeurs suivantes sont des valeurs `id` d’onglet valides par hôte. Les valeurs en **gras** sont prises en charge à la fois sur le bureau et en ligne (par exemple, Word 2016 ou versions ultérieures pour Windows et Word Online).
+Les valeurs suivantes sont des valeurs `id` d’onglet valides par l’hôte. Les valeurs en **gras** sont prises en charge à la fois sur le bureau et en ligne (par exemple, Word 2016 pour Windows et Word Online).
 
 ### <a name="outlook"></a>Outlook
 
@@ -79,9 +90,9 @@ Les valeurs suivantes sont des valeurs `id` d’onglet valides par hôte. Les va
 - TabDeveloper
 - TabAddIns
 
-## <a name="group"></a>Groupe
+## <a name="group"></a>Group
 
-|||UNTRANSLATED_CONTENT_START|||A group of UI extension points in a tab. A group can have up to six controls. The  **id** attribute is required and each **id** must be unique within the manifest. The **id** is a string with a maximum of 125 characters. See [Group element](group.md).|||UNTRANSLATED_CONTENT_END|||
+Groupe de points d’extension d’interface utilisateur dans un onglet. Un groupe peut contenir jusqu’à six contrôles. L’attribut **id** est requis et chaque **id** doit être unique au sein du manifeste. L’**ID** est une chaîne avec un maximum de 125 caractères. Voir l’[élément group](group.md).
 
 ## <a name="officetab-example"></a>Exemple OfficeTab
 

@@ -1,3 +1,14 @@
+---
+title: Appliquer la mise en forme conditionnelle aux plages avec l’API Excel JavaScript
+description: ''
+ms.date: 10/22/2018
+ms.openlocfilehash: f4baaea04ef487c26721ecfb2a90b8609ee96777
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433179"
+---
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>Appliquer une mise en forme conditionnelle à des plages Excel
 
 La bibliothèque JavaScript Excel fournit des API pour appliquer une mise en forme conditionnelle aux plages de données dans vos feuilles de calcul. Cette fonctionnalité simplifie l’analyse visuelle de grands ensembles de données. La mise en forme effectue également des mises à jour dynamiques en fonction des changements dans la plage. 

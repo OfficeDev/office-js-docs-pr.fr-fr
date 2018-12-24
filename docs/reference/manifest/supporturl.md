@@ -1,3 +1,14 @@
+---
+title: Élément SupportUrl dans le fichier manifest
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 00234ef9fe8960b9956e6a2595e2e2e71bfb97c6
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432668"
+---
 # <a name="supporturl-element"></a>Élément SupportUrl
 
 Spécifie l’URL d’une page qui fournit des informations de prise en charge pour votre complément.
@@ -29,7 +40,7 @@ Spécifie l’URL d’une page qui fournit des informations de prise en charge p
 
 |  Élément | Obligatoire | Description  |
 |:-----|:-----|:-----|
-|  [Remplacement](override.md)   | Non | Spécifie le paramètre pour les URL de paramètres régionaux supplémentaires |
+|  [Override](override.md)   | Non | Spécifie le paramètre pour les URL de paramètres régionaux supplémentaires |
 
 ## <a name="attributes"></a>Attributs
 

@@ -1,3 +1,14 @@
+---
+title: Conception de lignes directrices relatives à l’authentification pour les compléments Office
+description: ''
+ms.date: 11/02/2018
+ms.openlocfilehash: a812a1fe6feaa1c6744205db6bfd4ed81793fefe
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432976"
+---
 # <a name="authentication-patterns"></a>Modèles d’authentification
 
 Des compléments peuvent exiger que des utilisateurs se connectent ou s’inscrivent pour pouvoir accéder à certaines fonctions et fonctionnalités. Des zones de saisie pour le nom d’utilisateur et le mot de passe, ou des boutons qui lancent des flux d’informations d’identification tiers sont des contrôles d’interface courants dans les expériences d’authentification. Une expérience d’authentification simple et efficace est une première étape importante pour inciter des utilisateurs à commencer à utiliser votre complément.
