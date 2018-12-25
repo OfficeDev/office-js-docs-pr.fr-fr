@@ -1,3 +1,14 @@
+---
+title: Élément Control dans le fichier manifeste
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: e5d8574e322c21e768fb9f66fe9bbb0c12a34ed4
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433935"
+---
 # <a name="control-element"></a>Élément Control
 
 Définit une fonction JavaScript qui exécute une action ou lance un volet Office. Un élément **Control** peut être une option de bouton ou de menu. Au moins un élément **Control** doit être inclus dans un élément [Group](group.md).
@@ -7,7 +18,7 @@ Définit une fonction JavaScript qui exécute une action ou lance un volet Offic
 |  Attribut  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 |**xsi:type**|Oui|Type de contrôle défini. Peut être `Button`, `Menu` ou `MobileButton`. |
-|**id**|Non|ID de l’élément de contrôle. Il doit comporter 125 caractères au maximum.|
+|**id**|Non|ID de l’élément Control. Il doit comporter 125 caractères au maximum.|
 
 > [!NOTE]
 > La valeur `MobileButton` de **xsi:type** est définie dans le schéma VersionOverrides 1.1. Elle s’applique uniquement aux éléments **Control** contenus dans un élément [MobileFormFactor](mobileformfactor.md).
@@ -19,10 +30,10 @@ Un bouton effectue une action unique quand il est sélectionné. Il peut exécut
 ### <a name="child-elements"></a>Éléments enfants
 |  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
-|  **Étiquette**     | Oui |  Texte du bouton. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md).        |
-|  **Info-bulle**  |Non|Info-bulle pour le bouton. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String**. **String** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément [Resources](resources.md).|        
+|  **Label**     | Oui |  Texte du bouton. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md).        |
+|  **ToolTip**  |Non|Info-bulle pour le bouton. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String**. **String** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément [Resources](resources.md).|        
 |  [Supertip](supertip.md)  | Oui |  Info-bulle pour le bouton.    |
-|  [Icône](icon.md)      | Oui |  Image du bouton.         |
+|  [Icon](icon.md)      | Oui |  Image du bouton.         |
 |  [Action](action.md)    | Oui |  Spécifie l’action à effectuer.  |
 
 ### <a name="executefunction-button-example"></a>Exemple du bouton ExecuteFunction
@@ -67,15 +78,15 @@ Un bouton effectue une action unique quand il est sélectionné. Il peut exécut
 
 ## <a name="menu-dropdown-button-controls"></a>Contrôles de menu (bouton déroulant)
 
-Un menu définit une liste statique d’options. Chaque élément de menu exécute une fonction ou affiche un volet Office. Les sous-menus ne sont pas pris en charge. 
+Un menu définit une liste statique d’options. Chaque option de menu exécute une fonction ou affiche un volet Office. Les sous-menus ne sont pas pris en charge. 
 
 Lorsqu’il est utilisé avec un [point d’extension](extensionpoint.md) **PrimaryCommandSurface** ou **ContextMenu**, le contrôle de menu définit les éléments suivants :
 
-- un élément de menu de niveau racine.
+- une option de menu de niveau racine.
 
 - une liste de sous-menus.
 
-Lorsqu’il est utilisé avec  **PrimaryCommandSurface**, l’élément de menu racine apparaît sous forme de bouton sur le ruban. Lorsque ce bouton est sélectionné, ce menu s’affiche comme une liste déroulante. Lorsqu’il est utilisé avec  **ContextMenu**, un élément de menu comportant un sous-menu est inséré dans le menu contextuel. Dans les deux cas, les éléments de sous-menu individuels peuvent soit exécuter une fonction JavaScript, soit afficher un volet de tâches. Un seul niveau de sous-menus est actuellement pris en charge.
+Lorsqu’il est utilisé avec  **PrimaryCommandSurface**, l’élément de menu racine apparaît sous forme de bouton sur le ruban. Lorsque ce bouton est sélectionné, ce menu s’affiche comme une liste déroulante. Lorsqu’il est utilisé avec  **ContextMenu**, une option de menu comportant un sous-menu est inséré dans le menu contextuel. Dans les deux cas, les éléments de sous-menu individuels peuvent soit exécuter une fonction JavaScript, soit afficher un volet de tâches. Un seul niveau de sous-menus est actuellement pris en charge.
 
 L’exemple suivant montre comment définir un élément de menu avec deux éléments de sous-menu. Le premier élément de sous-menu affiche un volet Office et le deuxième élément de sous-menu exécute une fonction JavaScript.
 
@@ -133,11 +144,11 @@ L’exemple suivant montre comment définir un élément de menu avec deux élé
 
 |  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
-|  **Étiquette**     | Oui |  Texte du bouton. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md).      |
-|  **Info-bulle**  |Non|Info-bulle pour le bouton. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String**. **String** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément [Resources](resources.md).|        
+|  **Label**     | Oui |  Texte du bouton. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md).      |
+|  **ToolTip**  |Non|Info-bulle pour le bouton. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String**. **String** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément [Resources](resources.md).|        
 |  [Supertip](supertip.md)  | Oui |  Info-bulle pour ce bouton.    |
-|  [Icône](icon.md)      | Oui |  Image du bouton.         |
-|  **Éléments**     | Oui |  Ensemble de boutons à afficher dans le menu. Contient les éléments **Item** pour chaque élément de sous-menu. Chaque élément **Item** contient les éléments enfants du [contrôle de bouton](#button-control).|
+|  [Icon](icon.md)      | Oui |  Image du bouton.         |
+|  **Items**     | Oui |  Ensemble de boutons à afficher dans le menu Contient les éléments **Item** pour chaque élément de sous-menu. Chaque élément **Item** contient les éléments enfants du [contrôle de bouton](#button-control).|
 
 ### <a name="menu-control-examples"></a>Exemples de contrôle de menu
 
@@ -232,8 +243,8 @@ La valeur `MobileButton` de **xsi:type** est définie dans le schéma VersionOve
 ### <a name="child-elements"></a>Éléments enfants
 |  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
-|  **Étiquette**     | Oui |  Texte du bouton. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md).        |
-|  [Icône](icon.md)      | Oui |  Image du bouton.         |
+|  **Label**     | Oui |  Texte du bouton. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md).        |
+|  [Icon](icon.md)      | Oui |  Image du bouton.         |
 |  [Action](action.md)    | Oui |  Spécifie l’action à effectuer.  |
 
 ### <a name="executefunction-mobile-button-example"></a>Exemple de bouton mobile ExecuteFunction
