@@ -1,70 +1,81 @@
-# <a name="first-run-experience-patterns"></a><span data-ttu-id="23b67-101">Modèles d'expérience de première exécution</span><span class="sxs-lookup"><span data-stu-id="23b67-101">First-run experience patterns</span></span>
+---
+title: Modèles de première expérience d’utilisation des complément Office
+description: ''
+ms.date: 06/26/2018
+ms.openlocfilehash: 6915864d27e2cd241b3d5b1c94b0da80cdf4769c
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432920"
+---
+# <a name="first-run-experience-patterns"></a><span data-ttu-id="5f92e-102">Modèles de première expérience d’utilisation</span><span class="sxs-lookup"><span data-stu-id="5f92e-102">First-run experience patterns</span></span>
 
-<span data-ttu-id="23b67-102">Une première expérience d'exécution (FRE) est la première prise en main de votre complément par un utilisateur.</span><span class="sxs-lookup"><span data-stu-id="23b67-102">A First-run Experience (FRE) is a user's introduction to your add-in.</span></span> <span data-ttu-id="23b67-103">Une FRE est présentée lorsqu'un utilisateur ouvre un complément pour la première fois et elle lui fournit un aperçu des fonctions, fonctionnalités ou avantages du complément.</span><span class="sxs-lookup"><span data-stu-id="23b67-103">An FRE is presented when a user opens an add-in for the first time and provides them with insight into the functions, features, and/or benefits of the add-in.</span></span> <span data-ttu-id="23b67-104">Cette expérience aide à façonner l'impression de l'utilisateur sur un complément et peut fortement l'influencer pour qu'il revienne et continue à utiliser votre complément.</span><span class="sxs-lookup"><span data-stu-id="23b67-104">This experience helps shape the user's impression of an add-in and can strongly influence their likelihood to come back to and continue using your add-in..</span></span>
+<span data-ttu-id="5f92e-103">Une première expérience d’utilisation (FRE) correspond à l’introduction d’un utilisateur à votre complément.</span><span class="sxs-lookup"><span data-stu-id="5f92e-103">A First-run Experience (FRE) is a user's introduction to your add-in.</span></span> <span data-ttu-id="5f92e-104">Une FRE existe quand un utilisateur ouvre un complément pour la première fois et lui fournit des informations sur les fonctions, les fonctionnalités et/ou les avantages du complément.</span><span class="sxs-lookup"><span data-stu-id="5f92e-104">An FRE is presented when a user opens an add-in for the first time and provides them with insight into the functions, features, and/or benefits of the add-in.</span></span> <span data-ttu-id="5f92e-105">Cette expérience vous permet de modeler la première impression qu’un utilisateur va avoir d’un complément. Elle peut grandement influencer la probabilité qu’il y revienne et continue à utiliser votre complément...</span><span class="sxs-lookup"><span data-stu-id="5f92e-105">This experience helps shape the user's impression of an add-in and can strongly influence their likelihood to come back to and continue using your add-in..</span></span>
 
-## <a name="best-practices"></a><span data-ttu-id="23b67-105">Meilleures pratiques</span><span class="sxs-lookup"><span data-stu-id="23b67-105">Best practices</span></span>
+## <a name="best-practices"></a><span data-ttu-id="5f92e-106">Meilleures pratiques</span><span class="sxs-lookup"><span data-stu-id="5f92e-106">Best practices</span></span>
 
 
-<span data-ttu-id="23b67-106">Suivez ces bonnes pratiques pour développer votre première expérience d'exécution :</span><span class="sxs-lookup"><span data-stu-id="23b67-106">Follow these best practices when crafting your first-run experience:</span></span>
+<span data-ttu-id="5f92e-107">Suivez ces meilleures pratiques lors de la personnalisation de la première expérience d’utilisation :</span><span class="sxs-lookup"><span data-stu-id="5f92e-107">Follow these best practices when crafting your first-run experience:</span></span>
 
-|<span data-ttu-id="23b67-107">À faire</span><span class="sxs-lookup"><span data-stu-id="23b67-107">Do</span></span>|<span data-ttu-id="23b67-108">À ne pas faire</span><span class="sxs-lookup"><span data-stu-id="23b67-108">Don't</span></span>|
+|<span data-ttu-id="5f92e-108">À faire</span><span class="sxs-lookup"><span data-stu-id="5f92e-108">Do</span></span>|<span data-ttu-id="5f92e-109">À ne pas faire</span><span class="sxs-lookup"><span data-stu-id="5f92e-109">Don't</span></span>|
 |:------|:------|
-|<span data-ttu-id="23b67-109">Fournir une présentation simple et brève des principales actions du complément.</span><span class="sxs-lookup"><span data-stu-id="23b67-109">Provide a simple and brief introduction to the main actions in the add-in.</span></span> | <span data-ttu-id="23b67-110">Exclure les informations et les appels qui ne sont pas utiles pour commencer.</span><span class="sxs-lookup"><span data-stu-id="23b67-110">Don't include information and call-outs that are not relevant to getting started.</span></span>
-|<span data-ttu-id="23b67-111">Donner aux utilisateurs l'opportunité d'effectuer une action qui aura un impact positif sur leur utilisation du complément.</span><span class="sxs-lookup"><span data-stu-id="23b67-111">Give users the opportunity to complete an action that will positively impact their use of the add-in.</span></span> | <span data-ttu-id="23b67-112">Ne pas vous attendre pas à ce que les utilisateurs apprennent tout à la fois.</span><span class="sxs-lookup"><span data-stu-id="23b67-112">Don't expect users to learn everything at once.</span></span> <span data-ttu-id="23b67-113">Se concentrer sur l'action qui apporte le plus de valeur.</span><span class="sxs-lookup"><span data-stu-id="23b67-113">Focus on the action that provides the most value.</span></span>
-|<span data-ttu-id="23b67-114">Créer une expérience attrayante que les utilisateurs voudront effectuer.</span><span class="sxs-lookup"><span data-stu-id="23b67-114">Create an engaging experience that users will want to complete.</span></span> | <span data-ttu-id="23b67-115">Ne pas obliger les utilisateurs à cliquer au cours de la première expérience d'exécution.</span><span class="sxs-lookup"><span data-stu-id="23b67-115">Don't force the users to click through the first-run experience.</span></span> <span data-ttu-id="23b67-116">Donner aux utilisateurs une option pour contourner l'expérience de première exécution.</span><span class="sxs-lookup"><span data-stu-id="23b67-116">Give users an option to bypass the first-run experience.</span></span> |
+|<span data-ttu-id="5f92e-110">Proposer une simple et courte introduction aux actions principales disponibles dans le complément.</span><span class="sxs-lookup"><span data-stu-id="5f92e-110">Provide a simple and brief introduction to the main actions in the add-in.</span></span> | <span data-ttu-id="5f92e-111">Ne pas inclure des informations et des détails qui ne sont pas pertinents pour la prise en main.</span><span class="sxs-lookup"><span data-stu-id="5f92e-111">Don't include information and call-outs that are not relevant to getting started.</span></span>
+|<span data-ttu-id="5f92e-112">Donner aux utilisateurs la possibilité d’effectuer une action qui aura un impact positif sur leur utilisation du complément.</span><span class="sxs-lookup"><span data-stu-id="5f92e-112">Give users the opportunity to complete an action that will positively impact their use of the add-in.</span></span> | <span data-ttu-id="5f92e-113">Ne pas espérer que les utilisateurs découvrent tous les éléments en même temps.</span><span class="sxs-lookup"><span data-stu-id="5f92e-113">Don't expect users to learn everything at once.</span></span> <span data-ttu-id="5f92e-114">Concentrer les efforts sur le type ’action qui fournit le meilleur rendement.</span><span class="sxs-lookup"><span data-stu-id="5f92e-114">Focus on the action that provides the most value.</span></span>
+|<span data-ttu-id="5f92e-115">Créer une expérience utilisateur attrayante que les utilisateurs vont vouloir compléter.</span><span class="sxs-lookup"><span data-stu-id="5f92e-115">Create an engaging experience that users will want to complete.</span></span> | <span data-ttu-id="5f92e-116">Ne pas forcer les utilisateurs à parcourir toute l’expérience de première utilisation.</span><span class="sxs-lookup"><span data-stu-id="5f92e-116">Don't force the users to click through the first-run experience.</span></span> <span data-ttu-id="5f92e-117">Donner aux utilisateurs une option leur permettant d’ignorer l’expérience de première exécution.</span><span class="sxs-lookup"><span data-stu-id="5f92e-117">Give users an option to bypass the first-run experience.</span></span> |
 
 
 
-<span data-ttu-id="23b67-117">Déterminer s’il convient de montrer aux utilisateurs la première expérience d’utilisation une ou plusieurs fois (tout dépend de son importance pour votre scénario).</span><span class="sxs-lookup"><span data-stu-id="23b67-117">Consider whether showing users the first-run experience once or many times is important to your scenario.</span></span> <span data-ttu-id="23b67-118">Par exemple, si votre complément n'est utilisé que périodiquement, les utilisateurs peuvent devenir moins familiers et une nouvelle interaction avec l'expérience de première exécution peut être utile.</span><span class="sxs-lookup"><span data-stu-id="23b67-118">For example, if your add-in is only utilized periodically, users may become less familiar with your add-in and may benefit from another interaction with the first-run experience.</span></span>
+<span data-ttu-id="5f92e-118">Déterminer s’il convient de montrer l’expérience de première utilisation une fois ou plusieurs fois (tout dépend de son importance pour votre scénario).</span><span class="sxs-lookup"><span data-stu-id="5f92e-118">Consider whether showing users the first-run experience once or many times is important to your scenario.</span></span> <span data-ttu-id="5f92e-119">Par exemple, si votre complément est uniquement utilisé de temps en temps, les utilisateurs peuvent devenir moins familiarisés avec le complément. Ils pourraient alors bénéficier d’une autre interaction avec l’expérience de première exécution.</span><span class="sxs-lookup"><span data-stu-id="5f92e-119">For example, if your add-in is only utilized periodically, users may become less familiar with your add-in and may benefit from another interaction with the first-run experience.</span></span>
 
 
 
-<span data-ttu-id="23b67-119">Appliquer les modèles suivants, le cas échéant, pour créer ou améliorer la première expérience d'exécution de votre complément.</span><span class="sxs-lookup"><span data-stu-id="23b67-119">Apply the following patterns as applicable to create or enhance the first-run experience for your add-in.</span></span>
+<span data-ttu-id="5f92e-120">Appliquer les modèles suivants le cas échéant pour créer ou optimisez l’expérience de première exécution de votre complément.</span><span class="sxs-lookup"><span data-stu-id="5f92e-120">Apply the following patterns as applicable to create or enhance the first-run experience for your add-in.</span></span>
 
 
 
-## <a name="carousel"></a><span data-ttu-id="23b67-120">Carrousel</span><span class="sxs-lookup"><span data-stu-id="23b67-120">Carousel</span></span>
+## <a name="carousel"></a><span data-ttu-id="5f92e-121">Carrousel</span><span class="sxs-lookup"><span data-stu-id="5f92e-121">Carousel</span></span>
 
 
-<span data-ttu-id="23b67-121">Le carrousel présente aux utilisateurs une série de fonctionnalités ou de pages d'informations avant qu'ils commencent à utiliser le complément.</span><span class="sxs-lookup"><span data-stu-id="23b67-121">Walkthrough takes users through a series of features or information before they start using the add-in. (PDF, code)</span></span>
+<span data-ttu-id="5f92e-122">Le carrousel présente aux utilisateurs une série de fonctionnalités ou d’informations avant qu’ils ne commencent à utiliser le complément.</span><span class="sxs-lookup"><span data-stu-id="5f92e-122">Walkthrough takes users through a series of features or information before they start using the add-in. (PDF, code)</span></span>
 
-<span data-ttu-id="23b67-122">*Figure 1 : Autoriser les utilisateurs à dérouler ou à ignorer les premières pages du flux du carrousel.*
-![Carrousel de première exécution - Spécifications pour le volet des tâches de bureau](../images/add-in-FRE-step-1.png)</span><span class="sxs-lookup"><span data-stu-id="23b67-122">*Figure 1: Allow users to advance or skip the beginning pages of the carousel flow.*
+<span data-ttu-id="5f92e-123">\*Figure 1 : autoriser les utilisateurs à faire avancer ou ignorer les pages d’introduction du flux du carrousel. \* 
+ ![Première exécution – Carrousel – spécifications pour le volet des tâches](../images/add-in-FRE-step-1.png)</span><span class="sxs-lookup"><span data-stu-id="5f92e-123">*Figure 1: Allow users to advance or skip the beginning pages of the carousel flow.*
 ![First Run - Carousel - Specifications for desktop task pane](../images/add-in-FRE-step-1.png)</span></span>
 
 
 
-<span data-ttu-id="23b67-123">*Figure 2 : Limiter au maximum le nombre d'écrans de carrousel afin de ne présenter à l'utilisateur que ce qui est nécessaire pour faire passer efficacement votre message*
-![Carrousel de première exécution - Spécifications pour le volet des tâches de bureau](../images/add-in-FRE-step-2.png)</span><span class="sxs-lookup"><span data-stu-id="23b67-123">*Figure 2: Minimize the number of carousel screens you present to the user to only what is needed to effectively communicate your message*
+<span data-ttu-id="5f92e-124">*Figure 2 : Minimiser le nombre d’écrans carrousel que va voir l’utilisateur, pour n’afficher que ce qui est nécessaire pour communiquer efficacement votre message de*
+![première exécution – carrousel – spécifications pour le volet de tâches du bureau](../images/add-in-FRE-step-2.png)</span><span class="sxs-lookup"><span data-stu-id="5f92e-124">*Figure 2: Minimize the number of carousel screens you present to the user to only what is needed to effectively communicate your message*
 ![First Run - Carousel - Specifications for desktop task pane](../images/add-in-FRE-step-2.png)</span></span>
 
 
-<span data-ttu-id="23b67-124">*Figure 3: Fournir un appel clair à l'action pour quitter l'expérience de première exécution.*
-![Carrousel de première exécution - Spécifications pour le volet des tâches de bureau](../images/add-in-FRE-step-3.png)</span><span class="sxs-lookup"><span data-stu-id="23b67-124">*Figure 3: Provide a clear call to action to exit the first-run-experience.*
+<span data-ttu-id="5f92e-125">\*Figure 3 : Fournir un point d’appel bien visible pour permettre à l’utilisateur de quitter l’expérience de première exécution. \* 
+ ![Première exécution – carrousel – spécifications pour le volet de tâches du bureau](../images/add-in-FRE-step-3.png)</span><span class="sxs-lookup"><span data-stu-id="5f92e-125">*Figure 3: Provide a clear call to action to exit the first-run-experience.*
 ![First Run - Carousel - Specifications for desktop task pane](../images/add-in-FRE-step-3.png)</span></span>
 
 
 
-## <a name="value-placemat"></a><span data-ttu-id="23b67-125">Canevas de valeur</span><span class="sxs-lookup"><span data-stu-id="23b67-125">Value Placemat</span></span>
+## <a name="value-placemat"></a><span data-ttu-id="5f92e-126">Mise en place de la valeur</span><span class="sxs-lookup"><span data-stu-id="5f92e-126">Value Placemat</span></span>
 
-<span data-ttu-id="23b67-126">Le canevas de valeur illustre la proposition de valeur de votre complément par l'intermédiaire d'un logo, d'une proposition de valeur clairement énoncée, de faits saillants ou d'un résumé de caractéristiques, et d'une incitation à l'action.</span><span class="sxs-lookup"><span data-stu-id="23b67-126">The value placement communicates your add-in's value proposition through logo placement, a clearly stated value proposition, feature highlights or summary, and a call-to-action.</span></span>
+<span data-ttu-id="5f92e-127">La mise en place de la valeur communique la proposition de valeur de votre complément en faisant appel au positionnement de votre logo, à une proposition de valeur clairement déclarée, à une présentation ou un résumé des fonctionnalités et à une fonctionnalité claire d’appel à l’action.</span><span class="sxs-lookup"><span data-stu-id="5f92e-127">The value placement communicates your add-in's value proposition through logo placement, a clearly stated value proposition, feature highlights or summary, and a call-to-action.</span></span>
 
 
 
-<span data-ttu-id="23b67-127">![Première exécution - Canevas de valeur - Spécifications pour le volet des tâches de bureau](../images/add-in-FRE-value.png)
-*Un canevas de valeur avec logo, proposition de valeur claire, résumé des fonctionnalités et appel à l'action.*</span><span class="sxs-lookup"><span data-stu-id="23b67-127">![First Run - Value Placemat - Specifications for desktop task pane](../images/add-in-FRE-value.png)
+<span data-ttu-id="5f92e-128">![Première exécution – Mise en place de la valeur – spécifications pour le volet des tâches du bureau](../images/add-in-FRE-value.png)
+*Une mise en place de la valeur en faisant appel au logo, à une proposition de valeur clairement déclarée, résumé des fonctionnalités et une fonctionnalité claire d’appel à l’action.*</span><span class="sxs-lookup"><span data-stu-id="5f92e-128">![First Run - Value Placemat - Specifications for desktop task pane](../images/add-in-FRE-value.png)
 *A value placemat with logo, clear value proposition, feature summary, and call to action.*</span></span>
 
 
-### <a name="video-placemat"></a><span data-ttu-id="23b67-128">Canevas vidéo</span><span class="sxs-lookup"><span data-stu-id="23b67-128">Video Placemat</span></span>
+### <a name="video-placemat"></a><span data-ttu-id="5f92e-129">Mise en place vidéo</span><span class="sxs-lookup"><span data-stu-id="5f92e-129">Video Placemat</span></span>
 
-<span data-ttu-id="23b67-129">Le canevas vidéo montre une vidéo aux utilisateurs avant qu’ils commencent à utiliser votre complément.</span><span class="sxs-lookup"><span data-stu-id="23b67-129">Video shows users a video before they start using your add-in. (spec, code)</span></span>
-
-
-<span data-ttu-id="23b67-130">*Figure 1 : Canevas première exécution - L'écran contient une image fixe extraite de la vidéo avec un bouton de lecture et efface le bouton d'appel à l'action.*![Canevas vidéo - Spécifications pour le volet des tâches de bureau](../images/add-in-FRE-video.png)</span><span class="sxs-lookup"><span data-stu-id="23b67-130">*Figure 1: First Run Placemat - The screen contains a still image from the video with a play button and clear call to action button.*![Video Placemat - Specifications for desktop task pane](../images/add-in-FRE-video.png)</span></span>
+<span data-ttu-id="5f92e-130">La mise en place vidéo montre une vidéo aux utilisateurs avant qu’ils ne commencent à utiliser votre complément.</span><span class="sxs-lookup"><span data-stu-id="5f92e-130">Video shows users a video before they start using your add-in. (spec, code)</span></span>
 
 
+<span data-ttu-id="5f92e-131">\*Figure 1 : Mise en place de la première exécution – l’écran contient une image fixe tirées de la vidéo avec un bouton de lecture et ainsi que des boutons d’action clairs. \* ![Mise en place vidéo – spécifications pour le volet de tâches du bureau](../images/add-in-FRE-video.png)</span><span class="sxs-lookup"><span data-stu-id="5f92e-131">*Figure 1: First Run Placemat - The screen contains a still image from the video with a play button and clear call to action button.*![Video Placemat - Specifications for desktop task pane](../images/add-in-FRE-video.png)</span></span>
 
-<span data-ttu-id="23b67-131">*Figure 2 : Lecteur vidéo - Une vidéo est présentée aux utilisateurs dans une fenêtre de dialogue.*
-![Canevas vidéo - Spécifications pour le volet des tâches de bureau](../images/add-in-FRE-video-dialog.png)</span><span class="sxs-lookup"><span data-stu-id="23b67-131">*Figure 2: Video Player - Users are presented with a video within a dialog window.*
+
+
+<span data-ttu-id="5f92e-132">\*Figure 2 : Lecteur vidéo – on présente aux utilisateurs une vidéo incluse dans une boite de dialogue. \*
+![Mise en place vidéo – spécifications pour le volet de tâches du bureau](../images/add-in-FRE-video-dialog.png)</span><span class="sxs-lookup"><span data-stu-id="5f92e-132">*Figure 2: Video Player - Users are presented with a video within a dialog window.*
 ![Video Placemat - Specifications for desktop task pane](../images/add-in-FRE-video-dialog.png)</span></span>
