@@ -1,65 +1,76 @@
-# <a name="first-run-experience-patterns"></a>Modèles d'expérience de première exécution
+---
+title: Modèles de première expérience d’utilisation des complément Office
+description: ''
+ms.date: 06/26/2018
+ms.openlocfilehash: 6915864d27e2cd241b3d5b1c94b0da80cdf4769c
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432920"
+---
+# <a name="first-run-experience-patterns"></a>Modèles de première expérience d’utilisation
 
-Une première expérience d'exécution (FRE) est la première prise en main de votre complément par un utilisateur. Une FRE est présentée lorsqu'un utilisateur ouvre un complément pour la première fois et elle lui fournit un aperçu des fonctions, fonctionnalités ou avantages du complément. Cette expérience aide à façonner l'impression de l'utilisateur sur un complément et peut fortement l'influencer pour qu'il revienne et continue à utiliser votre complément.
+Une première expérience d’utilisation (FRE) correspond à l’introduction d’un utilisateur à votre complément. Une FRE existe quand un utilisateur ouvre un complément pour la première fois et lui fournit des informations sur les fonctions, les fonctionnalités et/ou les avantages du complément. Cette expérience vous permet de modeler la première impression qu’un utilisateur va avoir d’un complément. Elle peut grandement influencer la probabilité qu’il y revienne et continue à utiliser votre complément...
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
 
-Suivez ces bonnes pratiques pour développer votre première expérience d'exécution :
+Suivez ces meilleures pratiques lors de la personnalisation de la première expérience d’utilisation :
 
 |À faire|À ne pas faire|
 |:------|:------|
-|Fournir une présentation simple et brève des principales actions du complément. | Exclure les informations et les appels qui ne sont pas utiles pour commencer.
-|Donner aux utilisateurs l'opportunité d'effectuer une action qui aura un impact positif sur leur utilisation du complément. | Ne pas vous attendre pas à ce que les utilisateurs apprennent tout à la fois. Se concentrer sur l'action qui apporte le plus de valeur.
-|Créer une expérience attrayante que les utilisateurs voudront effectuer. | Ne pas obliger les utilisateurs à cliquer au cours de la première expérience d'exécution. Donner aux utilisateurs une option pour contourner l'expérience de première exécution. |
+|Proposer une simple et courte introduction aux actions principales disponibles dans le complément. | Ne pas inclure des informations et des détails qui ne sont pas pertinents pour la prise en main.
+|Donner aux utilisateurs la possibilité d’effectuer une action qui aura un impact positif sur leur utilisation du complément. | Ne pas espérer que les utilisateurs découvrent tous les éléments en même temps. Concentrer les efforts sur le type ’action qui fournit le meilleur rendement.
+|Créer une expérience utilisateur attrayante que les utilisateurs vont vouloir compléter. | Ne pas forcer les utilisateurs à parcourir toute l’expérience de première utilisation. Donner aux utilisateurs une option leur permettant d’ignorer l’expérience de première exécution. |
 
 
 
-Déterminer s’il convient de montrer aux utilisateurs la première expérience d’utilisation une ou plusieurs fois (tout dépend de son importance pour votre scénario). Par exemple, si votre complément n'est utilisé que périodiquement, les utilisateurs peuvent devenir moins familiers et une nouvelle interaction avec l'expérience de première exécution peut être utile.
+Déterminer s’il convient de montrer l’expérience de première utilisation une fois ou plusieurs fois (tout dépend de son importance pour votre scénario). Par exemple, si votre complément est uniquement utilisé de temps en temps, les utilisateurs peuvent devenir moins familiarisés avec le complément. Ils pourraient alors bénéficier d’une autre interaction avec l’expérience de première exécution.
 
 
 
-Appliquer les modèles suivants, le cas échéant, pour créer ou améliorer la première expérience d'exécution de votre complément.
+Appliquer les modèles suivants le cas échéant pour créer ou optimisez l’expérience de première exécution de votre complément.
 
 
 
 ## <a name="carousel"></a>Carrousel
 
 
-Le carrousel présente aux utilisateurs une série de fonctionnalités ou de pages d'informations avant qu'ils commencent à utiliser le complément.
+Le carrousel présente aux utilisateurs une série de fonctionnalités ou d’informations avant qu’ils ne commencent à utiliser le complément.
 
-*Figure 1 : Autoriser les utilisateurs à dérouler ou à ignorer les premières pages du flux du carrousel.*
-![Carrousel de première exécution - Spécifications pour le volet des tâches de bureau](../images/add-in-FRE-step-1.png)
-
-
-
-*Figure 2 : Limiter au maximum le nombre d'écrans de carrousel afin de ne présenter à l'utilisateur que ce qui est nécessaire pour faire passer efficacement votre message*
-![Carrousel de première exécution - Spécifications pour le volet des tâches de bureau](../images/add-in-FRE-step-2.png)
-
-
-*Figure 3: Fournir un appel clair à l'action pour quitter l'expérience de première exécution.*
-![Carrousel de première exécution - Spécifications pour le volet des tâches de bureau](../images/add-in-FRE-step-3.png)
+*Figure 1 : autoriser les utilisateurs à faire avancer ou ignorer les pages d’introduction du flux du carrousel. * 
+ ![Première exécution – Carrousel – spécifications pour le volet des tâches](../images/add-in-FRE-step-1.png)
 
 
 
-## <a name="value-placemat"></a>Canevas de valeur
-
-Le canevas de valeur illustre la proposition de valeur de votre complément par l'intermédiaire d'un logo, d'une proposition de valeur clairement énoncée, de faits saillants ou d'un résumé de caractéristiques, et d'une incitation à l'action.
-
+*Figure 2 : Minimiser le nombre d’écrans carrousel que va voir l’utilisateur, pour n’afficher que ce qui est nécessaire pour communiquer efficacement votre message de*
+![première exécution – carrousel – spécifications pour le volet de tâches du bureau](../images/add-in-FRE-step-2.png)
 
 
-![Première exécution - Canevas de valeur - Spécifications pour le volet des tâches de bureau](../images/add-in-FRE-value.png)
-*Un canevas de valeur avec logo, proposition de valeur claire, résumé des fonctionnalités et appel à l'action.*
-
-
-### <a name="video-placemat"></a>Canevas vidéo
-
-Le canevas vidéo montre une vidéo aux utilisateurs avant qu’ils commencent à utiliser votre complément.
-
-
-*Figure 1 : Canevas première exécution - L'écran contient une image fixe extraite de la vidéo avec un bouton de lecture et efface le bouton d'appel à l'action.*![Canevas vidéo - Spécifications pour le volet des tâches de bureau](../images/add-in-FRE-video.png)
+*Figure 3 : Fournir un point d’appel bien visible pour permettre à l’utilisateur de quitter l’expérience de première exécution. * 
+ ![Première exécution – carrousel – spécifications pour le volet de tâches du bureau](../images/add-in-FRE-step-3.png)
 
 
 
-*Figure 2 : Lecteur vidéo - Une vidéo est présentée aux utilisateurs dans une fenêtre de dialogue.*
-![Canevas vidéo - Spécifications pour le volet des tâches de bureau](../images/add-in-FRE-video-dialog.png)
+## <a name="value-placemat"></a>Mise en place de la valeur
+
+La mise en place de la valeur communique la proposition de valeur de votre complément en faisant appel au positionnement de votre logo, à une proposition de valeur clairement déclarée, à une présentation ou un résumé des fonctionnalités et à une fonctionnalité claire d’appel à l’action.
+
+
+
+![Première exécution – Mise en place de la valeur – spécifications pour le volet des tâches du bureau](../images/add-in-FRE-value.png)
+*Une mise en place de la valeur en faisant appel au logo, à une proposition de valeur clairement déclarée, résumé des fonctionnalités et une fonctionnalité claire d’appel à l’action.*
+
+
+### <a name="video-placemat"></a>Mise en place vidéo
+
+La mise en place vidéo montre une vidéo aux utilisateurs avant qu’ils ne commencent à utiliser votre complément.
+
+
+*Figure 1 : Mise en place de la première exécution – l’écran contient une image fixe tirées de la vidéo avec un bouton de lecture et ainsi que des boutons d’action clairs. * ![Mise en place vidéo – spécifications pour le volet de tâches du bureau](../images/add-in-FRE-video.png)
+
+
+
+*Figure 2 : Lecteur vidéo – on présente aux utilisateurs une vidéo incluse dans une boite de dialogue. *
+![Mise en place vidéo – spécifications pour le volet de tâches du bureau](../images/add-in-FRE-video-dialog.png)
