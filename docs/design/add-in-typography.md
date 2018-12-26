@@ -1,3 +1,14 @@
+---
+title: Instructions concernant la typographie pour les compléments Office
+description: ''
+ms.date: 06/27/2018
+ms.openlocfilehash: b9c5a957411a7c2df078be54df514237280cd150
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432955"
+---
 # <a name="typography"></a>Typographie
 
 Segoe est la police standard pour Office. Utilisez-la dans votre complément pour être en adéquation avec les volets des tâches, les boîtes de dialogue et les objets de contenu d’Office. Office UI Fabric vous donne accès à Segoe. Il fournit un dégradé de polices complet de Segoe avec de nombreuses variations, d’épaisseur de police et de taille, dans des classes CSS pratiques. Toutes les tailles et épaisseurs de police d’Office UI Fabric n’ont pas une belle apparence dans un complément Office. Pour une intégration harmonieuse ou pour éviter les incompatibilités, envisagez d’utiliser un sous-ensemble du dégradé de polices de Fabric. Voici une liste des classes de base de la structure que nous vous recommandons d’utiliser dans les compléments Office.
@@ -12,4 +23,4 @@ Segoe est la police standard pour Office. Utilisez-la dans votre complément pou
 |![Image de texte Hero](../images/add-in-typeramp-annotation.png)|.ms-font-mi |10 px |Segoe Semibold |<ul><li>Le plus petit niveau dans le dégradé de polices doit être rarement utilisé. Il est disponible lorsque la lisibilité n’est pas requise.</li><ul>|
 
 > [!NOTE]
-> La couleur du texte n’est pas incluse dans ces classes de base. Utilisez le « neutre primaire » de Fabric pour la plupart du texte sur des arrière-plans blancs.
+> La couleur du texte n’est pas incluse dans ces classes de base. Utilisez le « neutre primaire » de Fabric pour la plupart du texte affichés sur des arrière-plans blancs.

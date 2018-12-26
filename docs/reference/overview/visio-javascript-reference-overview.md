@@ -1,22 +1,33 @@
-# <a name="visio-javascript-api-overview"></a>Vue d’ensemble des API JavaScript spécifiques à Visio
+---
+title: Présentation des API JavaScript pour Visio
+description: ''
+ms.date: 10/11/2018
+ms.openlocfilehash: f530e1541146fb2f38209845791132b789577640
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432934"
+---
+# <a name="visio-javascript-api-overview"></a>Présentation des API JavaScript pour Visio
 
-Vous pouvez utiliser les interfaces API JavaScript pour Visio pour intégrer des diagrammes Visio dans SharePoint Online. Les diagrammes Visio incorporés sont stockés dans une bibliothèque de documents SharePoint et sont affichés sur une page SharePoint. Pour incorporer un diagramme Visio, affichez-le dans un élément HTML `<iframe>`iframe. Ensuite, vous pouvez utiliser les interfaces API JavaScript pour Visio pour programmer le diagramme incorporé.
+Vous pouvez utiliser les interfaces API JavaScript pour Visio pour intégrer des diagrammes Visio dans SharePoint Online. Les diagrammes Visio incorporés sont stockés dans une bibliothèque de documents SharePoint et sont affichés sur une page SharePoint. Pour incorporer un diagramme Visio, affichez-le dans un élément HTML`<iframe>`. Ensuite, vous pouvez utiliser les interfaces API JavaScript pour Visio pour programmer le diagramme incorporé.
 
-![Diagramme Visio dans un iframe sur la page SharePoint et composant WebPart de Script Editor.](../images/visio-api-block-diagram.png)
+![Diagramme Visio dans un iframe sur la page SharePoint et composant WebPart de Script Editor.](../images/visio-api-block-diagram.png)
 
 
-Vous pouvez utiliser les interfaces API JavaScript pour Visio pour :
+Vous pouvez utiliser les interfaces API JavaScript pour Visio pour :
 
 * interagir avec les éléments du diagramme Visio, tels que les pages et les formes ;
-* créer une marque de révision sur la zone du diagramme Visio ;
-* écrire des gestionnaires personnalisés pour les événements de souris dans le dessin ;
+* créer une marque de révision sur la zone du diagramme Visio ;
+* écrire des gestionnaires personnalisés pour les événements de souris dans le dessin ;
 * exposer les données du diagramme, tels que le texte de la forme, les données de forme et des liens hypertexte sur votre solution.
 
-Cet article décrit comment utiliser les interfaces API JavaScript pour Visio avec Visio Online pour créer des solutions pour SharePoint Online. Il présente des concepts fondamentaux pour l’utilisation des API, notamment concernant les objets **EmbeddedSession**, **RequestContext**, les objets de proxy JavaScript, ainsi que les méthodes **sync()**, **Visio.run()** et **load()**. Les exemples de code vous montrent comment appliquer ces concepts.
+Cet article décrit comment utiliser les interfaces API JavaScript pour Visio avec Visio Online pour créer des solutions pour SharePoint Online. Il présente des concepts fondamentaux pour l’utilisation des API, notamment concernant les objets **EmbeddedSession**, **RequestContext**, les objets de proxy JavaScript, ainsi que les méthodes **sync()**, **Visio.run()** et **load()**. Les exemples de code vous montrent comment appliquer ces concepts.
 
 ## <a name="embeddedsession"></a>EmbeddedSession
 
-L’objet EmbeddedSession initialise la communication entre le cadre du développeur et le cadre de Visio Online.
+L’objet EmbeddedSession initialise la communication entre le cadre du développeur et le cadre de Visio Online.
 
 ```js
 var session = new OfficeExtension.EmbeddedSession(url, { id: "embed-iframe",container: document.getElementById("iframeHost") });
@@ -25,15 +36,15 @@ session.init().then(function () {
 });
 ```
 
-## <a name="visiorunsession-functioncontext--batch-"></a>Visio.Run (session function(context) {lot})
+## <a name="visiorunsession-functioncontext--batch-"></a>Visio.run(session, function(context) { batch })
 
 **Visio.run()** exécute un script de commandes qui effectue des actions sur le modèle objet Visio. Les commandes de traitement par lots incluent les définitions des objets de proxy JavaScript locaux et des méthodes **sync()** qui synchronisent l’état entre les objets locaux et Visio, ainsi que la résolution de la promesse. L’avantage de traiter les demandes par lots avec **Visio.run()** est que, une fois la promesse résolue, tous les objets de page suivis qui ont été alloués lors de l’exécution sont automatiquement publiés.
 
-La méthode run extrait de session et l’objet RequestContext et renvoie une promesse (juste en règle générale, le résultat de **context.sync()**). Il est possible d’exécuter l’opération par lots en dehors de la méthode **Visio.run()**. Toutefois, dans ce cas, toutes les références d’objet de page doivent être suivies et gérées manuellement.
+La méthode d’exécution utilise les objets session et RequestContext et renvoie une promesse (en général, le résultat de la méthode **context.sync()**). Il est possible d’exécuter l’opération par lots en dehors de la méthode **Visio.run()**. Toutefois, dans ce cas, toutes les références d’objet de page doivent être suivies et gérées manuellement.
 
 ## <a name="requestcontext"></a>RequestContext
 
-L’objet RequestContext facilite les demandes à l’application Visio. Car le cadre de développeur et de l’application Visio en ligne s’exécute dans deux iframes différents, l’objet RequestContext (contexte dans l’exemple suivant) est requis pour accéder à Visio et les objets associés tels que les pages et les formes, dans le cadre du développement.
+L’objet RequestContext facilite les demandes auprès de l’application Visio. Étant donné que le cadre du développeur et l’application Visio Online s’exécutent dans deux iframes différents, l’objet RequestContext (context dans les exemples suivants) est nécessaire pour accéder à Visio et aux objets associés (par exemple, des pages et des formes) depuis le cadre du développeur.
 
 ```js
 function hideToolbars() {
@@ -54,15 +65,15 @@ function hideToolbars() {
 
 Les objets JavaScript pour Visio déclarés et utilisés dans un complément sont des objets de proxy correspondant aux objets réels d’un document Visio. Toutes les actions effectuées sur les objets de proxy ne sont pas réalisées dans Visio et l’état du document Visio n’est pas répercuté sur les objets de proxy tant que cet état n’a pas été synchronisé. L’état de document est synchronisé lors de l’exécution de la méthode `context.sync()`.
 
-Par exemple, l’objet  JavaScript local est déclaré pour référencer la plage sélectionnée. Cela permet par exemple de mettre en file d’attente la valeur de ses propriétés et méthodes d’appel. |||UNTRANSLATED_CONTENT_START|||The actions on such objects are not realized until the **sync()** method is run.|||UNTRANSLATED_CONTENT_END|||
+Par exemple, l’objet JavaScript local getActivePage est déclaré pour référencer la page sélectionnée. Cela permet par exemple de mettre en file d’attente la valeur de ses propriétés et méthodes d’appel. Les actions appliquées à ces objets ne sont pas réalisées jusqu’à l’exécution de la méthode **sync()**.
 
 ```js
 var activePage = context.document.getActivePage();
 ```
 
-## <a name="sync"></a>Sync
+## <a name="sync"></a>Sync()
 
-La méthode **sync()**, disponible dans le contexte de demande, synchronise l’état des objets de proxy JavaScript et des objets réels de Visio en exécutant les instructions mises en file d’attente sur le contexte et en récupérant les propriétés des objets Office chargés à utiliser dans votre code. Cette méthode renvoie une promesse, qui est résolue à la fin de la synchronisation. 
+La méthode **sync()** synchronise l’état des objets de proxy JavaScript et des objets réels de Visio en exécutant les instructions mises en file d’attente sur le contexte et en récupérant les propriétés des objets Office chargés pour les utiliser dans votre code. Cette méthode renvoie une promesse, qui est résolue à la fin de la synchronisation. 
 
 ## <a name="load"></a>load()
 
@@ -74,16 +85,16 @@ L’exemple suivant montre la syntaxe de la méthode **load()**.
 object.load(string: properties); //or object.load(array: properties); //or object.load({loadOption});
 ```
 
-1. **Propriétés** est la liste des noms de propriété pour être chargés, spécifiés en tant que chaînes délimitées par des virgules ou tableau de noms. Pour plus d’informations, consultez les méthodes **.load()** décrites sous chaque objet.
+1. **properties** est la liste des noms de propriétés à charger, fournis sous forme de chaînes séparées par des virgules ou de tableau de noms. Pour plus d’informations, consultez les méthodes **.load()** décrites sous chaque objet.
 
 2. **loadOption** spécifie un objet qui décrit les propriétés select, expand, top et skip. Pour plus d’informations, reportez-vous aux [options](/javascript/api/office/officeextension.loadoption) de chargement d’objet.
 
-## <a name="example-printing-all-shapes-text-in-active-page"></a>Exemple : impression du texte de toutes les formes de la page active
+## <a name="example-printing-all-shapes-text-in-active-page"></a>Exemple : impression du texte de toutes les formes de la page active
 
 L’exemple suivant montre comment imprimer la valeur du texte de la forme d’un objet de formes de tableau.
 La méthode **Visio.run()** contient un lot d’instructions. Dans le cadre de ce traitement par lots, un objet de proxy faisant référence à des formes est créé dans le document actif.
 
-Toutes ces commandes sont mises en file d’attente et sont exécutées lorsque la méthode **ctx.sync()** est appelée. La méthode **sync()** renvoie une promesse qui peut être utilisée pour y adjoindre d’autres opérations.
+Toutes ces commandes sont mises en file d’attente et sont exécutées lorsque la méthode **context.sync()** est appelée. La méthode **sync()** renvoie une promesse qui peut être utilisée pour y adjoindre d’autres opérations.
 
 ```js
 Visio.run(session, function (context) {
@@ -119,7 +130,7 @@ Les erreurs sont renvoyées à l’aide d’un objet d’erreur qui se compose d
 
 ## <a name="get-started"></a>Prise en main
 
-Vous pouvez utiliser l’exemple dans cette section pour commencer. Cet exemple montre comment afficher par programme le texte de la forme de la forme sélectionnée dans un diagramme Visio. Pour commencer, créez une page classique dans SharePoint Online ou modifier une page existante. Ajouter un composant webpart éditeur de script sur la page et copier-coller le code suivant.
+Vous pouvez utiliser l’exemple de cette section pour commencer. Cet exemple montre comment programmer l’affichage du texte de la forme de la forme sélectionnée dans un diagramme Visio. Pour commencer, créez une page classique dans SharePoint Online ou modifiez une page existante. Ajoutez un composant WebPart Script Editor sur la page, puis copiez-collez le code suivant.
 
 ```js
 <script src='https://appsforoffice.microsoft.com/embedded/1.0/visio-web-embedded.js' type='text/javascript'></script>
@@ -181,16 +192,16 @@ function getSelectedShapeText() {
 </script>
 ```
 
-Après cela, il vous suffit est l’URL d’un diagramme Visio que vous souhaitez utiliser. Simplement télécharger le diagramme Visio dans SharePoint Online et ouvrez-le dans Visio en ligne. À partir de là, ouvrez la boîte de dialogue incorporer et utiliser l’URL d’incorporer dans l’exemple ci-dessus.
+Après cela, vous n’avez plus besoin que de l’URL d’un diagramme Visio que vous voulez utiliser. Téléchargez simplement le diagramme Visio dans SharePoint Online et ouvrez-le dans Visio Online. À partir de là, ouvrez la boîte de dialogue Incorporer et utilisez l’URL à incorporer de l’exemple ci-dessus.
 
-![Copiez l’URL du fichier Visio à partir de la boîte de dialogue incorporer](../images/Visio-embed-url.png)
+![Copiez l’URL du fichier Visio de la boîte de dialogue Incorporer](../images/Visio-embed-url.png)
 
-Si vous utilisez Visio en ligne en mode édition, ouvrez la boîte de dialogue incorporer en choisissant **fichier** > **partage** > **Embed**. Si vous utilisez Visio en ligne en mode d’affichage, ouvrez la boîte de dialogue incorporer en choisissant «... », puis sur **Embed**.
+Si vous utilisez Visio Online en mode d’édition, ouvrez la boîte de dialogue Incorporer en sélectionnant **Fichier** > **Partager** > **Incorporer**. Si vous utilisez Visio Online en mode Affichage, ouvrez la boîte de dialogue Incorporer en sélectionnant « ... » puis **Incorporer**.
 
 ## <a name="open-api-specifications"></a>Spécifications d’ouverture de l’API
 
 Au fur et à mesure que nous concevons et développons de nouvelles API, nous les mettons à votre disposition sur notre page de [spécifications d’ouverture de l’API](../openspec.md) pour que vous puissiez nous faire part de vos commentaires. Découvrez les nouvelles fonctionnalités du pipeline et donnez-nous votre avis sur nos spécifications de conception.
 
-## <a name="visio-javascript-api-reference"></a>Référence de l’API de JavaScript Visio
+## <a name="visio-javascript-api-reference"></a>Référence de l’API JavaScript pour Visio
 
-Pour plus d’informations sur l’interface API JavaScript Visio, voir la [documentation de référence API JavaScript de Visio](/javascript/api/visio).
+Pour en savoir plus sur l’API JavaScript pour Visio, consultez la [documentation de référence de l’API JavaScript pour Visio](/javascript/api/visio).

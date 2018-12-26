@@ -1,8 +1,19 @@
+---
+title: Élément Set dans le fichier manifeste
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 0f137f7b08d6f1d0b0d972173c8085713b0f979d
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432766"
+---
 # <a name="set-element"></a>Élément Set
 
-Spécifie un ensemble de conditions requises de l’interface API JavaScript pour Office nécessaires à l’activation de votre complément Office.
+Spécifie un ensemble de conditions requises de l’API JavaScript pour Office nécessaires à l’activation de votre complément Office.
 
-**Type de complément :** contenu, volet Office, messagerie
+**Type de complément :** application de contenu, de volet Office, de messagerie
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -12,20 +23,20 @@ Spécifie un ensemble de conditions requises de l’interface API JavaScript pou
 
 ## <a name="contained-in"></a>Contenu dans
 
-[Sets](sets.md)
+[Ensembles](sets.md)
 
 ## <a name="attributes"></a>Attributs
 
 |**Attribut**|**Type**|**Obligatoire**|**Description**|
 |:-----|:-----|:-----|:-----|
-|Name|string|obligatoire|Nom d’un [ensemble de conditions requises](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).|
-|MinVersion|string|facultatif|Spécifie la version minimale de l’ensemble d’API requis par votre complément. Remplace la valeur de **DefaultMinVersion**, si elle est spécifiée dans l’élément parent [Sets](sets.md).|
+|Nom|string|obligatoire|Nom d’un [ensemble de conditions requises](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).|
+|MinVersion|chaîne|facultatif|Spécifie la version minimale de l’ensemble d’API requis par votre complément. Remplace la valeur de **DefaultMinVersion**, si elle est spécifiée dans l’élément parent [Sets](sets.md).|
 
 ## <a name="remarks"></a>Remarques
 
-Pour plus d’informations sur les ensembles de configurations requises, voir [Versions d’Office et ensembles de conditions requises](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Pour plus d’informations concernant les ensembles de conditions requises, voir [Versions d’Office et ensembles de conditions requises](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
-Pour plus d’informations sur l’attribut **MinVersion** de l’élément **Set** et sur l’attribut **DefaultMinVersion** de l’élément **Sets**, voir l’article relatif à la [Définition de l’élément Requirements dans le manifeste](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements#set-the-requirements-element-in-the-manifest).
+Pour plus d'informations sur l’attribut **MinVersion** de l’élément **Set** et sur l’attribut **DefaultMinVersion** de l’élément **Sets**, voir l’article relatif à la [définition de l’élément Requirements dans le manifeste](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements#set-the-requirements-element-in-the-manifest).
 
 > [!IMPORTANT] 
-> Pour les compléments de messagerie, il n’existe qu’un ensemble de conditions requises `"Mailbox"` disponible. Cet ensemble de conditions requises contient le sous-ensemble complet de l’API pris en charge dans les compléments de messagerie pour Outlook, et vous devez spécifier l’ensemble de conditions requises `"Mailbox"` dans le manifeste de votre complément de messagerie (ce n’est pas facultatif, comme c’est le cas pour les compléments de contenu et de volet Office). De même, vous ne pouvez pas déclarer une prise en charge pour des méthodes spécifiques dans les compléments de messagerie.
+> Pour les compléments de messagerie, il n'existe qu’un seul `"Mailbox"`ensemble de conditions requises disponible. Cet ensemble de conditions requises contient le sous-ensemble complet de l’API pris en charge dans les compléments de messagerie pour Outlook, et vous devez spécifier `"Mailbox"`l’ensemble de conditions requises dans le manifeste de votre complément de messagerie (ce n’est pas facultatif, comme c’est le cas pour les compléments de contenu et de volet Office).  De même, vous ne pouvez pas déclarer une prise en charge pour des méthodes spécifiques dans les compléments de messagerie.

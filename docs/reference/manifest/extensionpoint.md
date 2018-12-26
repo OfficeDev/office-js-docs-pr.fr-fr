@@ -1,28 +1,39 @@
+---
+title: Élément Extension dans le fichier manifeste
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 21def2de7168ff06c1eda26add07c33d366ec296
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433963"
+---
 # <a name="extensionpoint-element"></a>Élément ExtensionPoint
 
- Définit l'emplacement auquel un complément affiche une fonctionnalité dans l’interface utilisateur Office. L’élément **ExtensionPoint** est un élément enfant de [AllFormFactors](allformfactors.md), [DesktopFormFactor](desktopformfactor.md) ou [MobileFormFactor](mobileformfactor.md). 
+ Définit l’emplacement où se trouvent les fonctionnalités d’un complément dans l’interface utilisateur Office. L’élément **ExtensionPoint** est un élément enfant de [AllFormFactors](allformfactors.md) ou [DesktopFormFactor](desktopformfactor.md) ou [MobileFormFactor](mobileformfactor.md). 
 
 ## <a name="attributes"></a>Attributs
 
 |  Attribut  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
-|  **xsi:type**  |  Oui  | Le point d'extension est entrain d'être défini.|
+|  **xsi:type**  |  Oui  | Type de point d’extension défini.|
 
 ## <a name="extension-points-for-excel-only"></a>Points d’extension pour Excel uniquement
 
-- **CustomFunctions**- Une fonction personnalisée écrite en JavaScript pour Excel.
+- **CustomFunctions** – fonction personnalisée écrite en JavaScript pour Excel.
 
-[Cet exemple de code XML](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/customfunctions.xml) montre comment utiliser l’élément **ExtensionPoint** avec la valeur d’attribut **CustomFunctions**, ainsi que les éléments enfants à utiliser.
+[L’exemple de code XML](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/customfunctions.xml) montre comment utiliser l’élément **ExtensionPoint** avec la valeur d’attribut **CustomFunctions** et les éléments enfants à utiliser.
 
 ## <a name="extension-points-for-word-excel-powerpoint-and-onenote-add-in-commands"></a>Points d’extension pour les commandes de complément Word, Excel, PowerPoint et OneNote
 
-- **PrimaryCommandSurface** - Le ruban dans Office.
-- **ContextMenu**- Le menu contextuel qui apparaît lorsque vous cliquez avec le bouton droit de la souris dans l’interface utilisateur Office.
+- **PrimaryCommandSurface** : ruban dans Office.
+- **ContextMenu** : menu contextuel qui apparaît lorsque vous cliquez avec le bouton droit de la souris dans l’interface utilisateur Office.
 
 Les exemples suivants montrent comment utiliser l’élément  **ExtensionPoint** avec les valeurs d’attribut **PrimaryCommandSurface** et **ContextMenu**, ainsi que les éléments enfants qui doivent être utilisés avec chacune d’elles.
 
 > [!IMPORTANT] 
-> Pour les éléments qui contiennent un attribut ID, veillez à fournir un ID unique. Nous recommandons d’utiliser le nom de votre société en même temps que votre identifiant. Par exemple, utilisez la syntaxe suivante. <CustomTab id="mycompanyname.mygroupname">
+> Pour les éléments qui contiennent un attribut ID, veillez à fournir un ID unique. Nous recommandons d’utiliser le nom de votre société, ainsi que votre identifiant. Par exemple, utilisez la syntaxe suivante. <CustomTab id="mycompanyname.mygroupname">
 
 ```XML
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
@@ -61,16 +72,16 @@ Les exemples suivants montrent comment utiliser l’élément  **ExtensionPoint*
  
 |**Élément**|**Description**|
 |:-----|:-----|
-|**CustomTab**|Obligatoire si vous voulez ajouter un onglet personnalisé au ruban (en utilisant**PrimaryCommandSurface**). Si vous utilisez l’élément  **CustomTab**, vous ne pouvez pas utiliser l’élément **OfficeTab**. L’attribut  **id** est requis.|
-|**OfficeTab**|Obligatoire pour étendre un onglet par défaut du ruban Office (en utilisant **PrimaryCommandSurface**). Si vous utilisez l’élément **OfficeTab**, vous ne pouvez pas utiliser l’élément **CustomTab**. Pour plus d’informations, voir [OfficeTab](officetab.md).|
-|**OfficeMenu**|Obligatoire si vous voulez ajouter des commandes de complément à un menu contextuel par défaut (en utilisant **ContextMenu**). L’attribut **id** doit être défini sur : <br/> - **ContextMenuText** pour Excel ou Word. Affiche l’élément dans le menu contextuel lorsque du texte est sélectionné et que l’utilisateur clique dessus avec le bouton droit de la souris. <br/> - **ContextMenuCell** pour Excel. Affiche l’élément dans le menu contextuel lorsque l’utilisateur clique avec le bouton droit de la souris dans une cellule de la feuille de calcul.|
-|**Groupe**|Groupe de points d’extension de l’interface utilisateur sur un onglet. Un groupe peut comporter jusqu’à six contrôles. L’attribut  **id** est requis. Il s’agit d’une chaîne contenant un maximum de 125 caractères.|
+|**CustomTab**|Obligatoire pour ajouter un onglet personnalisé au ruban (en utilisant  **PrimaryCommandSurface**). Si vous utilisez l’élément  **CustomTab**, vous ne pouvez pas utiliser l’élément  **OfficeTab**. L’attribut  **id** est requis.|
+|**OfficeTab**|Obligatoire pour étendre un onglet du ruban Office par défaut (en utilisant **PrimaryCommandSurface**). Si vous utilisez l’élément **OfficeTab**, vous ne pouvez pas utiliser l’élément **CustomTab**. Pour plus d’informations, voir [OfficeTab](officetab.md).|
+|**OfficeMenu**|Obligatoire pour ajouter des commandes de complément à un menu contextuel par défaut (en utilisant **ContextMenu**). L’attribut **id** doit être défini sur : <br/> - **ContextMenuText** pour Excel ou Word. Affiche l’élément dans le menu contextuel lorsque du texte est sélectionné et que l’utilisateur clique dessus avec le bouton droit de la souris. <br/> - **ContextMenuCell** pour Excel. Affiche l’élément dans le menu contextuel lorsque l’utilisateur clique avec le bouton droit de la souris dans une cellule de la feuille de calcul.|
+|**Group**|Groupe de points d’extension de l’interface utilisateur sur un onglet. Un groupe peut comporter jusqu’à six contrôles. L’attribut  **id** est requis. Il s’agit d’une chaîne contenant un maximum de 125 caractères.|
 |**Label**|Obligatoire. Libellé du groupe. L’attribut  **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String**. L’élément  **String** est un enfant de l’élément **ShortStrings**, qui est lui-même un enfant de l’élément  **Resources**.|
-|**Icône**|Obligatoire. Indique l’icône du groupe qui doit être utilisée sur les périphériques de facteur de petite forme ou lorsque les boutons sont affichés en trop grand nombre. L’attribut  **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Image**. L’élément  **Image** est un enfant de l’élément **Images**, qui est lui-même un enfant de l’élément  **Resources**. L’attribut **size** donne la taille, en pixels, de l’image. Trois tailles d’image, en pixels, sont obligatoires : 16, 32 et 80. Cinq tailles facultatives, en pixels, sont également prises en charge : 20, 24, 40, 48 et 64.|
+|**Icon**|Obligatoire. Indique l’icône du groupe qui doit être utilisée sur les périphériques de petit facteur de forme ou lorsque les boutons sont affichés en trop grand nombre. L’attribut  **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Image**. L’élément  **Image** est un enfant de l’élément **Images**, qui est lui-même un enfant de l’élément  **Resources**. L’attribut **size** donne la taille, en pixels, de l’image. Trois tailles d’image, en pixels, sont obligatoires : 16, 32 et 80. Cinq tailles facultatives, en pixels, sont également prises en charge : 20, 24, 40, 48 et 64.|
 |**Tooltip**|Facultatif. Info-bulle du groupe. L’attribut  **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String**. L’élément  **String** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément  **Resources**.|
-|**Contrôle**|Chaque groupe requiert au moins un contrôle. Un élément **Control** peut être un **bouton** ou un **menu**. Utilisez **Menu** pour spécifier une liste déroulante de contrôles de bouton. Actuellement, seuls les boutons et les menus sont pris en charge. Pour plus d’informations, reportez-vous aux sections [Contrôles de bouton](control.md#button-control) et [Contrôles de menu](control.md#menu-dropdown-button-controls).<br/>**Remarque**  Pour faciliter les opérations de dépannage, nous vous recommandons d’ajouter un élément **Control** et les éléments enfants **Resources** associés un à un.|
+|**Control**|Chaque groupe requiert au moins un contrôle. Un élément **Control** peut être un **bouton** ou un **menu**. Utilisez un **menu** pour spécifier une liste déroulante de contrôles de bouton. Actuellement, seuls les boutons et les menus sont pris en charge. Pour plus d’informations, reportez-vous aux sections [Contrôles de bouton](control.md#button-control) et [Contrôles de menu](control.md#menu-dropdown-button-controls).<br/>**Remarque :**  pour faciliter les opérations de dépannage, nous vous recommandons d’ajouter un élément **Control** et les éléments enfants **Resources** associés un par un.|
 |**Script**|Liens vers le fichier JavaScript avec la définition de la fonction personnalisée et le code d’inscription. Cet élément n’est pas utilisé dans l’aperçu pour les développeurs. À la place, la page HTML est responsable du chargement de tous les fichiers JavaScript.|
-|**Page**|Liens vers la page HTML pour vos fonctions personnalisées.|
+|**Page**|Liens vers la page HTML de vos fonctions personnalisées.|
 
 ## <a name="extension-points-for-outlook"></a>Points d’extension pour Outlook
 
@@ -84,16 +95,16 @@ Les exemples suivants montrent comment utiliser l’élément  **ExtensionPoint*
 - [DetectedEntity](#detectedentity)
 
 ### <a name="messagereadcommandsurface"></a>MessageReadCommandSurface
-Ce point d’extension place des boutons dans la surface de commande pour le mode de lecture de courrier électronique. Dans l’application de bureau Outlook, cela apparaît dans le ruban.
+Ce point d’extension place des boutons dans la surface de commande pour le mode de lecture de courrier électronique. Dans l’application de bureau Outlook, cela apparaît dans le ruban.
 
 #### <a name="child-elements"></a>Éléments enfants
 
 |  Élément |  Description  |
 |:-----|:-----|
-|  [OfficeTab](officetab.md) |  Ajoute les commande(s) à l’onglet de ruban par défaut.  |
-|  [CustomTab](customtab.md) |  Ajoute les commande(s) à l’onglet de ruban personnalisé.  |
+|  [OfficeTab](officetab.md) |  Ajoute les commandes à l’onglet de ruban par défaut.  |
+|  [CustomTab](customtab.md) |  Ajoute les commandes à l’onglet de ruban personnalisé.  |
 
-#### <a name="officetab-example"></a>Exemple d'OfficeTab
+#### <a name="officetab-example"></a>Exemple OfficeTab
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
   <OfficeTab id="TabDefault">
@@ -102,7 +113,7 @@ Ce point d’extension place des boutons dans la surface de commande pour le mod
 </ExtensionPoint>
 ```
 
-#### <a name="customtab-example"></a>Exemple de CustomTab
+#### <a name="customtab-example"></a>Exemple CustomTab
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
   <CustomTab id="TabCustom1">
@@ -118,10 +129,10 @@ Ce point d’extension place des boutons sur le ruban pour les compléments à l
 
 |  Élément |  Description  |
 |:-----|:-----|
-|  [OfficeTab](officetab.md) |  Ajoute les commande(s) à l’onglet de ruban par défaut.  |
-|  [CustomTab](customtab.md) |  Ajoute les commande(s) à l’onglet de ruban personnalisé.  |
+|  [OfficeTab](officetab.md) |  Ajoute les commandes à l’onglet de ruban par défaut.  |
+|  [CustomTab](customtab.md) |  Ajoute les commandes à l’onglet de ruban personnalisé.  |
 
-#### <a name="officetab-example"></a>Exemple d'OfficeTab
+#### <a name="officetab-example"></a>Exemple OfficeTab
 ```xml
 <ExtensionPoint xsi:type="MessageComposeCommandSurface">
   <OfficeTab id="TabDefault">
@@ -130,7 +141,7 @@ Ce point d’extension place des boutons sur le ruban pour les compléments à l
 </ExtensionPoint>
 ```
 
-#### <a name="customtab-example"></a>Exemple de CustomTab
+#### <a name="customtab-example"></a>Exemple CustomTab
 
 ```xml
 <ExtensionPoint xsi:type="MessageComposeCommandSurface">
@@ -148,10 +159,10 @@ Ce point d’extension place des boutons sur le ruban pour le formulaire qui est
 
 |  Élément |  Description  |
 |:-----|:-----|
-|  [OfficeTab](officetab.md) |  Ajoute les commande(s) à l’onglet de ruban par défaut.  |
-|  [CustomTab](customtab.md) |  Ajoute les commande(s) à l’onglet de ruban personnalisé.  |
+|  [OfficeTab](officetab.md) |  Ajoute les commandes à l’onglet de ruban par défaut.  |
+|  [CustomTab](customtab.md) |  Ajoute les commandes à l’onglet de ruban personnalisé.  |
 
-#### <a name="officetab-example"></a>Exemple d'OfficeTab
+#### <a name="officetab-example"></a>Exemple OfficeTab
 ```xml
 <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
   <OfficeTab id="TabDefault">
@@ -160,7 +171,7 @@ Ce point d’extension place des boutons sur le ruban pour le formulaire qui est
 </ExtensionPoint>
 ```
 
-#### <a name="customtab-example"></a>Exemple de CustomTab
+#### <a name="customtab-example"></a>Exemple CustomTab
 ```xml
 <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
   <CustomTab id="TabCustom1">
@@ -177,10 +188,10 @@ Ce point d’extension place des boutons sur le ruban pour le formulaire qui est
 
 |  Élément |  Description  |
 |:-----|:-----|
-|  [OfficeTab](officetab.md) |  Ajoute les commande(s) à l’onglet de ruban par défaut.  |
-|  [CustomTab](customtab.md) |  Ajoute les commande(s) à l’onglet de ruban personnalisé.  |
+|  [OfficeTab](officetab.md) |  Ajoute les commandes à l’onglet de ruban par défaut.  |
+|  [CustomTab](customtab.md) |  Ajoute les commandes à l’onglet de ruban personnalisé.  |
 
-#### <a name="officetab-example"></a>Exemple d'OfficeTab
+#### <a name="officetab-example"></a>Exemple OfficeTab
 ```xml
 <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
   <OfficeTab id="TabDefault">
@@ -189,7 +200,7 @@ Ce point d’extension place des boutons sur le ruban pour le formulaire qui est
 </ExtensionPoint>
 ```
 
-#### <a name="customtab-example"></a>Exemple de CustomTab
+#### <a name="customtab-example"></a>Exemple CustomTab
 ```xml
 <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
   <CustomTab id="TabCustom1">
@@ -206,8 +217,8 @@ Ce point d’extension place des boutons sur le ruban pour l’extension de modu
 
 |  Élément |  Description  |
 |:-----|:-----|
-|  [OfficeTab](officetab.md) |  Ajoute les commande(s) à l’onglet de ruban par défaut.  |
-|  [CustomTab](customtab.md) |  Ajoute les commande(s) à l’onglet de ruban personnalisé.  |
+|  [OfficeTab](officetab.md) |  Ajoute les commandes à l’onglet de ruban par défaut.  |
+|  [CustomTab](customtab.md) |  Ajoute les commandes à l’onglet de ruban personnalisé.  |
 
 ### <a name="mobilemessagereadcommandsurface"></a>MobileMessageReadCommandSurface
 Ce point d’extension place des boutons dans la surface de commande pour le mode de lecture de courrier électronique dans le facteur de forme pour environnement mobile.
@@ -216,11 +227,11 @@ Ce point d’extension place des boutons dans la surface de commande pour le mod
 
 |  Élément |  Description  |
 |:-----|:-----|
-|  [Groupe](group.md) |  Ajoute un groupe de boutons à la surface de commande.  |
+|  [Group](group.md) |  Ajoute un groupe de boutons à la surface de commande.  |
 
-Les éléments **ExtensionPoint** de ce type peuvent uniquement avoir un élément enfant : à savoir un élément **Group**.
+Les éléments **ExtensionPoint** de ce type peuvent uniquement avoir un élément enfant, à savoir un élément **Group**.
 
-Les éléments **Control** contenus dans ce point d’extension doivent avoir l’attribut **xsi:type** défini sur `MobileButton`.
+Pour les éléments **Control** contenus dans ce point d’extension, l’attribut **xsi:type** doit avoir la valeur `MobileButton`.
 
 #### <a name="example"></a>Exemple
 ```xml
@@ -239,49 +250,49 @@ Les éléments **Control** contenus dans ce point d’extension doivent avoir l�
 Ce point d’extension ajoute un gestionnaire d’événements pour un événement spécifié.
 
 > [!NOTE]
-> Ce type d’élément est uniquement pris en charge par Outlook sur le web dans Office 365.
+> Ce type d’élément est uniquement pris en charge par Outlook sur le web dans Office 365.
 
 | Élément | Description  |
 |:-----|:-----|
-|  [Événement](event.md) |  Indique l’événement et la fonction gestionnaire d’événements.  |
+|  [Event](event.md) |  Indique l’événement et la fonction gestionnaire d’événements.  |
 
 #### <a name="itemsend-event-example"></a>Exemple d’événement ItemSend
 
 ```xml
-<ExtensionPoint xsi:type="Events"> 
-  <Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" /> 
-</ExtensionPoint> 
+<ExtensionPoint xsi:type="Events"> 
+  <Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" /> 
+</ExtensionPoint> 
 ```
 
 ### <a name="detectedentity"></a>DetectedEntity
 
-Ce point d’extension ajoute une activation de complément contextuel sur un type d’entité spécifique.
+Ce point d’extension ajoute une activation de complément contextuel sur un type d’entité spécifié.
 
-L’élément contenant [VersionOverrides](versionoverrides.md) doit avoir `xsi:type` une valeur d'attribut de `VersionOverridesV1_1`.
+Pour les éléments [VersionOverrides](versionoverrides.md) la contenant, `xsi:type`l’attribut doit avoir la valeur `VersionOverridesV1_1`.
 
 > [!NOTE]
-> Ce type d’élément est uniquement pris en charge par Outlook sur le web dans Office 365.
+> Ce type d’élément est uniquement pris en charge par Outlook sur le web dans Office 365.
 
 |  Élément |  Description  |
 |:-----|:-----|
-|  [Label](#label) |  Spécifie le libellé pour le complément dans la fenêtre contextuelle.  |
+|  [Label](#label) |  Spécifie l’étiquette pour le complément dans la fenêtre contextuelle.  |
 |  [SourceLocation](sourcelocation.md) |  Spécifie l’URL de la fenêtre contextuelle.  |
 |  [Règle](rule.md) |  Spécifie la ou les règles qui déterminent lorsqu’un complément s’active.  |
 
-#### <a name="label"></a>Label
+#### <a name="label"></a>Étiquette
 
 Obligatoire. Libellé du groupe. L’attribut  **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md).
 
-#### <a name="highlight-requirements"></a>Exigences de la mise en surbrillance
+#### <a name="highlight-requirements"></a>Exigences relatives à la mise en surbrillance
 
-Le seul moyen pour qu’un utilisateur puisse activer un complément contextuel consiste à interagir avec une entité en surbrillance. Les développeurs peuvent contrôler les entités qui sont mises en surbrillance à l’aide de `Highlight` l’attribut de `Rule` l’élément pour les types de règles `ItemHasKnownEntity` et `ItemHasRegularExpressionMatch`.
+Le seul moyen pour qu’un utilisateur puisse activer un complément contextuel consiste à interagir avec une entité en surbrillance. Les développeurs peuvent contrôler les entités qui sont mises en surbrillance à l’aide de l’attribut `Highlight` de l’élément `Rule` pour les types de règles `ItemHasKnownEntity` et `ItemHasRegularExpressionMatch`.
 
 Toutefois, il existe certaines limitations à connaître. Ces limitations sont en place pour vous assurer qu’il y aura toujours une entité en surbrillance dans les messages ou rendez-vous applicables pour permettre à l’utilisateur d’activer le complément.
 
 - Les types d’entité `EmailAddress` et `Url` ne peuvent pas être mis en surbrillance et par conséquent ne peuvent pas être utilisés pour activer un complément.
 - Si vous utilisez une seule règle, la valeur `Highlight` DOIT être définie sur `all`.
-- Si vous utilisez un type de règle `RuleCollection` avec `Mode="AND"` pour combiner plusieurs règles, au moins l’une des règles DOIT être `Highlight` définie sur`all`.
-- Si vous utilisez un type de règle `RuleCollection` avec `Mode="OR"` pour combiner plusieurs règles, toutes les règles DOIVENT être `Highlight` définies sur `all`.
+- Si vous utilisez un type de règle `RuleCollection` avec `Mode="AND"` pour combiner plusieurs règles, au moins l’une des règles DOIT définir `Highlight` sur la valeur `all`.
+- Si vous utilisez un type de règle `RuleCollection` avec `Mode="OR"` pour combiner plusieurs règles, toutes les règles DOIVENT définir `Highlight` sur la valeur `all`.
 
 #### <a name="detectedentity-event-example"></a>Exemple d’événement DetectedEntity
 

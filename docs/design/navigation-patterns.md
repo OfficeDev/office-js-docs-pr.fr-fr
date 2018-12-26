@@ -1,33 +1,44 @@
+---
+title: Modèles de navigation pour les compléments Office
+description: ''
+ms.date: 06/26/2018
+ms.openlocfilehash: b7fee6fad703ce7c8f4c5f8b848d6bf28b239b09
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432969"
+---
 # <a name="navigation-patterns"></a>Modèles de navigation
 
-Les principales fonctionnalités d’un complément sont accessibles via des types de commandes spécifiques et une zone d’écran limitée. Il est important que la navigation soit intuitive, qu'elle fournisse un contexte et permette à l‘utilisateur de se déplacer facilement dans toute l'étendue du complément.
+Les principales fonctionnalités d’un complément sont accessibles via les types de commande spécifique et la zone de l’écran limitée. Il est important que la navigation soit intuitive, fournisse du contexte et permette à l’utilisateur de se déplacer facilement au sein du complément.
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
 | À faire    | À ne pas faire |
 | :---- | :---- |
-| Assurez-vous que l’utilisateur dispose d’une option de navigation clairement visible. | Ne compliquez pas le processus de navigation en utilisant une interface utilisateur non standard.
-| Utilisez les composants suivants, le cas échéant, pour permettre aux utilisateurs de naviguer sur l'étendue de votre complément. | L’utilisateur doit comprendre sa place ou son contexte actuel dans le complément, c’est pourquoi vous ne devez pas lui compliquer la tâche
+| Vérifiez que l’utilisateur dispose d’une option de navigation clairement visible. | Ne compliquez pas le processus de navigation en utilisant des éléments d’interface utilisateur non standard.
+| Servez-vous des composants suivants le cas échéant pour permettre aux utilisateurs de parcourir le complément. | N’ajoutez pas de difficultés qui empêcherait l’utilisateur de savoir où il se trouve ou de comprendre le contexte au sein du complément
 
 
 
 ## <a name="command-bar"></a>Barre de commandes
 
-La barre de commandes est une surface qui héberge des commandes qui agissent sur le contenu de la fenêtre, du panneau ou de la région parent au-dessus de laquelle elle réside. Les caractéristiques facultatives comprennent le point d’accès au menu hamburger, la recherche et des commandes latérales.
+CommandBar est une surface qui héberge les commandes qui fonctionnent sur le contenu de la fenêtre, du panneau de configuration ou de la région parent située au-dessous. Exemples de fonctionnalités facultatives : point d’accès au menu « hamburger », recherche et commandes sur le côté.
 
-![Commandes — Spécifications pour le volet des tâches de bureau](../images/add-in-command-bar.png)
+![Commandes – spécifications pour le volet Office du bureau](../images/add-in-command-bar.png)
 
 
 
 ## <a name="tab-bar"></a>Barre d’onglets
 
-Barre d’onglets — Affiche la navigation à l’aide de boutons avec du texte et des icônes verticalement empilés. Utiliser la barre d’onglets pour permettre la navigation à l’aide des onglets avec des titres courts et explicites.
+Affiche la navigation à l’aide de boutons avec du texte et des icônes empilés verticalement. Utilisez la barre d’onglets pour permettre la navigation à l’aide des onglets avec des titres courts et explicites.
 
-![Barre d’onglets — Spécifications du volet des tâches de bureau](../images/add-in-tab-bar.png)
+![Barre d’onglets – spécifications pour le volet Office du bureau](../images/add-in-tab-bar.png)
 
 
-## <a name="back-button"></a>Retour
+## <a name="back-button"></a>Bouton Précédent
 
-Le bouton Précédent permet aux utilisateurs de revenir au stade intial après avoir exécuté une action de navigation détaillée. Utilisez ce modèle pour vous assurer que les utilisateurs suivent une série d’étapes ordonnées.  
+Le bouton Précédent permet aux utilisateurs de revenir en arrière après avoir navigué dans l’interface. Ce modèle permet de vous assurer que les utilisateurs suivent une série d’étapes ordonnées.  
 
-![Bouton Précédent — Spécifications du volet des tâches de bureau](../images/add-in-back-button.png)
+![Bouton Précédent – spécifications pour le volet Office du bureau](../images/add-in-back-button.png)

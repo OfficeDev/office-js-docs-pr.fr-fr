@@ -1,3 +1,14 @@
+---
+title: Utilisation du mouvement dans les compléments Office
+description: ''
+ms.date: 03/23/2018
+ms.openlocfilehash: 0003f7c52da190852dbd13ad58be26fa6e86911d
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432962"
+---
 # <a name="using-motion-in-office-add-ins"></a>Utilisation du mouvement dans les compléments Office
 
 Lorsque vous concevez un complément Office, vous pouvez utiliser le mouvement pour améliorer l’expérience utilisateur. Les composants, contrôles et éléments de l’interface utilisateur ont souvent des comportements interactifs qui nécessitent des transitions, du mouvement ou de l’animation. Les caractéristiques de mouvement communes dans les éléments de l’interface utilisateur définissent les aspects d’animation d’un langage de création. 
@@ -49,7 +60,7 @@ Prenez en compte la taille de la zone de dessin HTML (volet des tâches, boîte 
 |À faire|À ne pas faire|
 |:-----|:-----|
 | Utilisez les [durées recommandées de mouvement](https://developer.microsoft.com/fabric#/styles/animations). | N’utilisez pas trop d’animations. Évitez de créer des expériences qui enjolivent seulement l’interface utilisateur et détournent l’attention de vos clients.
-| Suivez les [courbes d’accélération recommandées](https://docs.microsoft.com/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion).  |Ne mettez pas en mouvement les éléments de manière saccadée ou décousue. Évitez les anticipations, les rebonds, les élastiques ou autres effets qui émulent la physique du monde naturel.|
+| Suivez [les courbes d’accélération recommandées](https://docs.microsoft.com/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion).  |Ne mettez pas en mouvement les éléments de manière saccadée ou décousue. Évitez les anticipations, les rebonds, les élastiques ou autres effets qui émulent la physique du monde naturel.|
 
 ![GIF affichant le chargement de mosaïques avec un fondu léger en regard d’un GIF affichant le chargement de mosaïques avec un effet de rebond](../images/add-in-motion-character.gif)
 

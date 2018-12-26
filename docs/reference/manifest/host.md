@@ -1,3 +1,14 @@
+---
+title: Élément Host dans le fichier manifeste
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 37b772261ad82b4f899e73314a08ffd1dd03b442
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432808"
+---
 # <a name="host-element"></a>Élément Host
 
 Spécifie un type d’application Office individuel dans lequel le complément doit s’activer.
@@ -11,11 +22,11 @@ Lorsqu’il est défini dans le manifeste base (sous [OfficeApp](officeapp.md)),
 
 ### <a name="attributes"></a>Attributs
 
-| Attribut     | Type   | Obligatoire | Description                                      |
+| Attribut     | Type   | Requis | Description                                      |
 |:--------------|:-------|:---------|:-------------------------------------------------|
-| [Name](#name) | string | obligatoire | Nom du type d’application hôte Office. |
+| [Name](#name) | chaîne | obligatoire | Nom du type d’application hôte Office. |
 
-### <a name="name"></a>Name
+### <a name="name"></a>Nom
 Spécifie le type d’hôte ciblé par ce complément. La valeur doit être l’une des suivantes :
 
 - `Document` (Word)
@@ -47,8 +58,8 @@ Lorsqu’il est défini dans [VersionOverrides](versionoverrides.md), le type d�
 
 |  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
-|  [DesktopFormFactor](desktopformfactor.md)    |  Oui   |  Définit les paramètres pour le facteur de forme bureau. |
-|  [MobileFormFactor](mobileformfactor.md)    |  Non   |  Définit les paramètres pour le facteur de forme mobile. **Remarque :** cet élément est uniquement pris en charge dans Outlook pour iOS. |
+|  [DesktopFormFactor](desktopformfactor.md)    |  Oui   |  Définit les paramètres pour le facteur de forme pour bureau. |
+|  [MobileFormFactor](mobileformfactor.md)    |  Non   |  Définit les paramètres pour le facteur de forme pour environnement mobile. **Remarque :** cet élément est uniquement pris en charge dans Outlook pour iOS. |
 |  [AllFormFactors](allformfactors.md)    |  Non   |  Définit les paramètres de tous les facteurs de forme. Utilisé uniquement par des fonctions personnalisées dans Excel. |
 
 ### <a name="xsitype"></a>xsi:type

@@ -1,12 +1,23 @@
+---
+title: Interface API JavaScript pour Office
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: d1f57ec9e4420a17ef0997d8d293c484887d5d79
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432773"
+---
 # <a name="javascript-api-for-office"></a>Interface API JavaScript pour Office
 
-L’interface API JavaScript pour Office vous permet de créer des applications Web qui interagissent avec les modèles objets dans des applications hôtes Office. Votre application référencera la bibliothèque office.js, qui est un chargeur de script. La bibliothèque office.js charge les modèles objets applicables à l’application Office qui exécute le complément. Vous pouvez utiliser les modèles objets JavaScript suivants :
+L’interface API JavaScript pour Office vous permet de créer des applications web qui interagissent avec les modèles objet dans les applications hôtes Office. Votre application fera référence à la bibliothèque office.js, qui est un chargeur de script. La bibliothèque office.js charge les modèles objet applicables à l’application Office qui exécute le complément. Vous pouvez utiliser les modèles objet JavaScript suivants :
 
-- **API communes** - API qui ont été introduites dans **Office 2013**. Elles sont chargées pour **toutes les applications hôtes Office** et connecte votre complément application avec l’application cliente Office. Le modèle objet contient les API qui sont propres aux clients Office et qui s’appliquent à plusieurs applications hôtes clientes Office. Tout ce contenu est sous **API partagée**. 
+- **API courantes** – API qui ont été introduites avec **Office 2013**. Il est chargé pour **toutes les applications hôtes Office** et connecte votre application de complément à l’application cliente Office. Le modèle objet contient les API propres aux clients Office et les API applicables à plusieurs applications hôtes clientes Office. Tout ce contenu se trouve sous **API partagées**. 
 
-  **Outlook** utilise également la syntaxe de l’API commune. Tout ce qui se trouve sous l’alias Office contient des objets que vous pouvez utiliser pour écrire des scripts qui interagissent avec le contenu des documents Office, des feuilles de travail, des présentations, des éléments de courrier et des projets à partir de vos compléments Office. Vous devez utiliser ces API communes si votre complément cible Office 2013 et les versions ultérieures. Ce modèle objet utilise les rappels.
+  **Outlook** utilise également la syntaxe des API courantes. Tous les éléments sous l’alias Office dans le code contiennent des objets que vous pouvez utiliser pour écrire un script qui interagit avec le contenu dans les documents, feuilles de calcul, présentations, éléments de courrier et projets de vos compléments Office. Vous devez utiliser ces API communes si le complément est destiné pour Office 2013 ou ultérieur. Ce modèle objet utilise des rappels.
 
-- **API propres aux hôtes** - API qui ont été introduites avec **Office 2016**. Ce modèle objet fournit des objets fortement typés propres aux hôtes qui correspondent aux objets familiers que vous voyez lorsque vous utilisez des clients Office et représente l’avenir des API JavaScript Office. Les API propres aux hôtes incluent actuellement les API JavaScript de Word et Excel.
+- **API propres à l’hôte** – API qui ont été introduites avec **Office 2016**. Ce modèle objet fournit des objets propres à l’hôte fortement typés qui correspondent aux objets habituels que vous voyez lorsque vous utilisez des clients Office. Il représente l’avenir des API JavaScript Office. Les API propres à l’hôte incluent actuellement l’API JavaScript Word et l’API JavaScript Excel.
 
 ## <a name="supported-host-applications"></a>Applications hôtes prises en charge
 
@@ -15,17 +26,17 @@ L’interface API JavaScript pour Office vous permet de créer des applications 
 - [Outlook](requirement-sets/outlook-api-requirement-sets.md)
 - [Visio](overview/visio-javascript-reference-overview.md)
 - [Word](overview/word-add-ins-reference-overview.md)
-- [API partagée](requirement-sets/office-add-in-requirement-sets.md)
+- [Shared API](requirement-sets/office-add-in-requirement-sets.md)
 
 > [!NOTE] 
-> [PowerPoint et Project](requirement-sets/powerpoint-and-project-note.md) prennent en charge des compléments créés avec l’API JavaScript. Toutefois, ils n’ont actuellement pas d’API propre aux hôtes. Vous interagissez avec ces hôtes par le biais de l’API partagée.
+> [PowerPoint et Project](requirement-sets/powerpoint-and-project-note.md) prennent en charge des compléments conçus à l’aide de l’API JavaScript. Toutefois, ils ne disposent pas actuellement des API propres à l’hôte spécifiques. Vous pouvez interagir avec ces hôtes via l’API partagée.
 
-En savoir plus sur les [hôtes pris en charge et les autres conditions requises](https://docs.microsoft.com/office/dev/add-ins/concepts/requirements-for-running-office-add-ins)
+En savoir plus sur les [hôtes pris en charge et les autres exigences](https://docs.microsoft.com/office/dev/add-ins/concepts/requirements-for-running-office-add-ins).
 
-## <a name="open-api-specifications"></a>Spécifications d’API ouvertes
+## <a name="open-api-specifications"></a>Spécifications d’ouverture de l’API
 
-Au fur et à mesure que nous concevons et développons de nouvelles API pour les compléments Office, nous les mettons à votre disposition sur notre page de [spécifications d’API ouvertes](openspec.md) pour que vous puissiez fournir vos commentaires. Découvrez les nouvelles fonctionnalités dans le pipeline et donnez votre avis sur nos spécifications de conception.
+Au fur et à mesure que nous concevons et développons de nouvelles API pour les compléments Office, nous les mettons à votre disposition sur notre page de [spécifications d’ouverture de l’API](openspec.md) pour que vous puissiez fournir vos commentaires. Découvrez les nouvelles fonctionnalités dans le pipeline et donnez votre avis sur nos spécifications de conception.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence de l’API JavaScript Office](https://docs.microsoft.com/javascript/api/overview/office?view=office-js)
+- [Référence de l’API JavaScript d’Office](https://docs.microsoft.com/javascript/api/overview/office?view=office-js)

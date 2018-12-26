@@ -1,8 +1,19 @@
+---
+title: Élément defaultSettings dans le fichier manifeste
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 0c109d5d893cf9d3502f1cbf1724007f01e623e6
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433753"
+---
 # <a name="defaultsettings-element"></a>Élément DefaultSettings
 
-Spécifie l’emplacement source par défaut et d’autres paramètres par défaut pour votre complément de contenu ou de volet Office.
+Spécifie l’emplacement de la source par défaut et d’autres paramètres par défaut pour votre complément de contenu ou de volet des tâches.
 
-**Type de complément :** contenu, volet Office
+**Type de complément :** Application de contenu et de volet Office
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -18,7 +29,7 @@ Spécifie l’emplacement source par défaut et d’autres paramètres par défa
 
 ## <a name="can-contain"></a>Peut contenir
 
-|**Élément**|**Contenu**|**Courrier**|**Volet Office**|
+|**Élément**|**Contenu**|**Messagerie**|**TaskPane**|
 |:-----|:-----|:-----|:-----|
 |[SourceLocation](sourcelocation.md)|x||x|
 |[RequestedWidth](requestedwidth.md)|x|||
