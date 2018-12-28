@@ -2,20 +2,20 @@
 title: Utilisation de tableaux à l’aide de l’API JavaScript pour Excel
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 18b9a4413d8478d548fc4abf4e4df5479ef2cf23
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.openlocfilehash: 1dccb19cc39b3e765107a462669342d444000343
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25505684"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457837"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Utilisation de tableaux à l’aide de l’API JavaScript pour Excel
 
-Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes avec des tableaux à l’aide de l’API JavaScript Excel. Pour obtenir la liste complète des propriétés et méthodes qui prennent en charge par les objets **Table** et **TableCollection** , voir [L’objet Table (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.table?view=office-js) et [TableCollection, objet (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.tablecollection?view=office-js).
+Cet article fournit des exemples de code qui expliquent comment effectuer des tâches courantes avec des tableaux à l’aide de l’API JavaScript pour Excel. Pour obtenir une liste complète des propriétés et des méthodes prises en charge par les objets **Table** et **TableCollection**, reportez-vous à la rubrique [Objet Table (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.table) et [Objet TableCollection (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.tablecollection).
 
 ## <a name="create-a-table"></a>Créer un tableau
 
-L’exemple de code suivant crée une table dans la feuille de calcul nommée **Sample**. Le tableau comporte des en-têtes et contient quatre colonnes et sept lignes de données. Si l’application hôte Excel dans laquelle le code est en cours d’exécution prend en charge [exigence](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets?view=office-js) **ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes est définie à mieux ajuste les données actuelles de la table.
+L’exemple de code suivant crée un tableau dans la feuille de calcul nommée **Sample**. Le tableau comporte des en-têtes et contient quatre colonnes et sept lignes de données. Si l’application hôte Excel dans laquelle le code est en cours d’exécution prend en charge [l’ensemble de conditions requises](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour s’ajuster au mieux aux données actuelles du tableau.
 
 > [!NOTE]
 > Pour spécifier le nom d’un tableau, vous devez d’abord créer le tableau, puis définir sa propriété **name**, comme indiqué dans l’exemple ci-dessous.
@@ -55,10 +55,10 @@ Excel.run(function (context) {
 
 ## <a name="add-rows-to-a-table"></a>Ajouter des lignes dans un tableau
 
-L’exemple de code suivant ajoute les sept nouvelles lignes à la table nommée **ExpensesTable** dans la feuille de calcul nommée **Sample**. Les nouvelles lignes sont ajoutées à la fin de la table. Si l’application hôte Excel dans laquelle le code est en cours d’exécution prend en charge [exigence](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets?view=office-js)**ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes est définie à mieux ajuste les données actuelles de la table.
+L’exemple de code suivant ajoute sept nouvelles lignes au tableau nommé **ExpensesTable** au sein de la feuille de calcul **Sample**. Les nouvelles lignes sont ajoutées à la fin du tableau. Si l’application hôte Excel dans laquelle le code est en cours d’exécution prend en charge [l’ensemble de conditions requises](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour s’ajuster au mieux aux données actuelles du tableau.
 
 > [!NOTE]
-> La propriété **index** d’un objet [TableRow](https://docs.microsoft.com/javascript/api/excel/excel.tablerow?view=office-js) indique le numéro d’index de la ligne dans la collection de lignes du tableau. Un objet **TableRow** ne contient pas d’une propriété **d’id** qui peut être utilisée comme clé unique pour identifier la ligne.
+> La propriété **index** d’un objet [TableRow](https://docs.microsoft.com/javascript/api/excel/excel.tablerow) indique le numéro d’index de la ligne dans la collection de lignes du tableau. Un objet **TableRow** ne contient pas de propriété **id** qui peut être utilisée comme clé unique pour identifier la ligne.
 
 ```js
 Excel.run(function (context) {
@@ -90,14 +90,14 @@ Excel.run(function (context) {
 
 ## <a name="add-a-column-to-a-table"></a>Ajouter une colonne à un tableau
 
-Les exemples suivants montrent comment ajouter une colonne à un tableau. Le premier exemple remplit la nouvelle colonne avec des valeurs statiques ; le deuxième exemple remplit la nouvelle colonne de formules.
+Ces exemples montrent comment ajouter une colonne à un tableau. Le premier exemple remplit la nouvelle colonne avec des valeurs statiques ; le second exemple remplit la nouvelle colonne avec des formules.
 
 > [!NOTE]
-> La propriété **index** d’un objet [TableColumn](https://docs.microsoft.com/javascript/api/excel/excel.tablecolumn?view=office-js) indique le numéro d’index de la colonne dans la collection columns de la table. La propriété **id** d’un objet **TableColumn** contient une clé unique qui identifie la colonne.
+> La propriété **index** d’un objet [TableColumn](https://docs.microsoft.com/javascript/api/excel/excel.tablecolumn) indique le numéro d’index de la colonne dans la collection de colonnes du tableau. La propriété **id** d’un objet **TableColumn** contient une clé unique qui identifie la colonne.
 
 ### <a name="add-a-column-that-contains-static-values"></a>Ajouter une colonne qui contient des valeurs statiques
 
-L’exemple de code suivant ajoute une nouvelle colonne à la table nommée **ExpensesTable** dans la feuille de calcul nommée **Sample**. La nouvelle colonne est ajoutée existant une fois toutes les colonnes du tableau et contient un en-tête (« jour de la semaine ») ainsi que les données pour remplir les cellules de la colonne. Si l’application hôte Excel dans laquelle le code est en cours d’exécution prend en charge [exigence](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets?view=office-js)**ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes est définie à mieux ajuste les données actuelles de la table.
+L’exemple de code suivant ajoute une nouvelle colonne à la table nommée **ExpensesTable** au sein de la feuille de calcul **Sample**. La nouvelle colonne est ajoutée après les colonnes existantes du tableau et contient un en-tête (« Day of the Week ») ainsi que des données pour remplir les cellules de la colonne. Si l’application hôte Excel dans laquelle le code est en cours d’exécution prend en charge [l’ensemble de conditions requises](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour s’ajuster au mieux aux données actuelles du tableau.
 
 ```js
 Excel.run(function (context) {
@@ -130,7 +130,7 @@ Excel.run(function (context) {
 
 ### <a name="add-a-column-that-contains-formulas"></a>Ajouter une colonne qui contient des formules
 
-L’exemple de code suivant ajoute une nouvelle colonne à la table nommée **ExpensesTable** dans la feuille de calcul nommée **Sample**. La nouvelle colonne est ajoutée à la fin de la table contient un en-tête (« Type de la journée ») et utilise une formule pour remplir chaque cellule dans la colonne de données. Si l’application hôte Excel dans laquelle le code est en cours d’exécution prend en charge [exigence](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets?view=office-js)**ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes est définie à mieux ajuste les données actuelles de la table.
+L’exemple de code suivant ajoute une nouvelle colonne à la table nommée **ExpensesTable** au sein de la feuille de calcul **Sample**. La nouvelle colonne est ajoutée à la fin du tableau, contient un en-tête («Type of the Day ») et utilise une formule pour remplir chaque cellule de données dans la colonne. Si l’application hôte Excel dans laquelle le code est en cours d’exécution prend en charge [l’ensemble de conditions requises](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour s’ajuster au mieux aux données actuelles du tableau.
 
 ```js
 Excel.run(function (context) {
@@ -163,7 +163,7 @@ Excel.run(function (context) {
 
 ## <a name="update-column-name"></a>Mettre à jour un nom de colonne
 
-L’exemple de code suivant remplace le nom de la première colonne du tableau par **Purchase date**. Si l’application hôte Excel dans laquelle le code est en cours d’exécution prend en charge [l’ensemble de conditions requises](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets?view=office-js) **ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour s’ajuster au mieux aux données actuelles du tableau.
+L’exemple de code suivant remplace le nom de la première colonne du tableau par **Purchase date**. Si l’application hôte Excel dans laquelle le code est en cours d’exécution prend en charge [l’ensemble de conditions requises](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour s’ajuster au mieux aux données actuelles du tableau.
 
 ```js
 Excel.run(function (context) {
@@ -265,7 +265,7 @@ Excel.run(function (context) {
 
 ## <a name="apply-filters-to-a-table"></a>Appliquer des filtres à un tableau
 
-L’exemple de code suivant applique des filtres à la colonne de la **quantité** et de la colonne **catégorie** dans une table. À la suite les filtres, seules les lignes où la **catégorie** est une des valeurs spécifiées et **quantité** est inférieure à la valeur moyenne de toutes les lignes est affichée.
+L’exemple de code suivant applique des filtres aux colonnes **Amount** et **Category** d’un tableau. Grâce à l’utilisation des filtres, seules les lignes dans lesquelles **Category** est une des valeurs spécifiées et la valeur de **Amount** est inférieure à la valeur moyenne de toutes les lignes sont affichées.
 
 ```js
 Excel.run(function (context) {
@@ -316,7 +316,7 @@ Excel.run(function (context) {
 
 ## <a name="get-the-visible-range-from-a-filtered-table"></a>Obtenir la plage visible à partir d’une table filtrée
 
-L’exemple de code suivant obtient une plage qui contient des données uniquement pour les cellules qui sont actuellement visibles dans la table spécifiée, puis écrit les valeurs de cette plage dans la console. Vous pouvez utiliser la méthode **getVisibleView()** comme indiqué ci-dessous pour obtenir le contenu d’une table visible chaque fois que les filtres de colonnes qui ont été appliquées.
+L’exemple de code suivant recherche une plage qui contient des données uniquement pour des cellules qui sont actuellement visibles dans le tableau spécifié, et écrit ensuite les valeurs de la plage dans la console. Vous pouvez utiliser la méthode **getVisibleView()** comme indiqué ci-dessous pour rechercher le contenu d’un tableau visible dès que les filtres de colonne ont été appliqués.
 
 ```js
 Excel.run(function (context) {
@@ -335,7 +335,7 @@ Excel.run(function (context) {
 
 ## <a name="format-a-table"></a>Mettre en forme un tableau
 
-L’exemple de code suivant applique la mise en forme à un tableau. Il spécifie les couleurs de remplissage différents pour la ligne d’en-tête de la table, le corps de la table, la deuxième ligne du tableau, la première colonne du tableau. Pour plus d’informations sur les propriétés que vous pouvez utiliser pour spécifier le format, voir [RangeFormat objet (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.rangeformat?view=office-js).
+L’exemple de code suivant applique une mise en forme à un tableau. Il indique différentes couleurs de remplissage pour la ligne d’en-tête, le corps, la deuxième ligne et la première colonne du tableau. Pour plus d’informations sur les propriétés que vous pouvez utiliser pour spécifier un format, reportez-vous à la rubrique [Objet RangeFormat (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.rangeformat).
 
 ```js
 Excel.run(function (context) {
@@ -401,7 +401,7 @@ Excel.run(function (context) {
 
 ## <a name="import-json-data-into-a-table"></a>Importer des données JSON dans un tableau
 
-L’exemple de code suivant crée une table dans la feuille de calcul nommée **Sample** , puis remplit la table à l’aide d’un objet JSON qui définit deux lignes de données. Si l’application hôte Excel dans laquelle le code est en cours d’exécution prend en charge [exigence](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets?view=office-js)**ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes est définie à mieux ajuste les données actuelles de la table.
+L’exemple de code suivant crée un tableau dans la feuille de calcul nommée **Sample** , puis remplit le tableau à l’aide d’un objet JSON qui définit les deux lignes de données. Si l’application hôte Excel dans laquelle le code est en cours d’exécution prend en charge [l’ensemble de conditions requises](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour s’ajuster au mieux aux données actuelles du tableau.
 
 ```js
 Excel.run(function (context) {

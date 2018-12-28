@@ -2,18 +2,18 @@
 title: Office.context-ensemble de conditions requises 1.6
 description: ''
 ms.date: 10/11/2018
-ms.openlocfilehash: 9d4e11f207f86a8e3950c2472e9e0a03d7fe8feb
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: 7e883111d7466fd0627915719d209fe3d549963a
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432850"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457809"
 ---
 # <a name="context"></a>context
 
 ### <a name="officeofficemdcontext"></a>[Office](Office.md).context
 
-L’espace de noms Office.context fournit des interfaces partagées qui sont utilisées par des compléments dans toutes les applications Office. Cette liste documente uniquement les interfaces utilisées par des compléments Outlook. Pour obtenir une liste complète des espaces de noms Office.context, consultez la page relative à la [référence Office.context de l’interface API partagée](/javascript/api/office/office.context).
+L’espace de noms Office.context fournit des interfaces partagées qui sont utilisées par des compléments dans toutes les applications Office. Cette liste documente uniquement les interfaces utilisées par des compléments Outlook. Pour obtenir une liste complète des espaces de noms Office.context, consultez la page relative à la [référence Office.context de l’interface API commune](/javascript/api/office/office.context).
 
 ##### <a name="requirements"></a>Configuration requise
 
