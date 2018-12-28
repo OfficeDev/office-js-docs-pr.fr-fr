@@ -2,12 +2,12 @@
 title: Créer et déboguer des compléments Office dans Visual Studio
 description: Utiliser Visual Studio pour créer et déboguer des compléments Office dans le client de bureau Office pour Windows
 ms.date: 11/02/2018
-ms.openlocfilehash: eccdde75c60d30dce28320b820df9c187f6eb7a3
-ms.sourcegitcommit: 9b021af6cb23a58486d6c5c7492be425e309bea1
+ms.openlocfilehash: 99b642804cb662d66106d3a599e5d84dbab8c4a3
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "26533720"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27458026"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Créer et déboguer des compléments Office dans Visual Studio
 
@@ -186,7 +186,7 @@ Visual Studio génère le projet et effectue les actions suivantes :
     
 Visual Studio effectue ensuite les actions suivantes :
 
-1. Il modifie l’élément [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation?view=office-js) du fichier manifeste XML en remplaçant le jeton`~remoteAppUrl`par l’adresse complète de la page de démarrage (par exemple`https://localhost:44302/Home.html`).
+1. Il modifie l’élément [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation) du fichier manifeste XML en remplaçant le jeton`~remoteAppUrl`par l’adresse complète de la page de démarrage (par exemple`https://localhost:44302/Home.html`).
     
 2. Il démarre le projet d’application web dans IIS Express.
     

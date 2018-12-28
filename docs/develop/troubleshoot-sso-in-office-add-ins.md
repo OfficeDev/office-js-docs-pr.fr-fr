@@ -2,12 +2,12 @@
 title: Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)
 description: ''
 ms.date: 12/08/2017
-ms.openlocfilehash: 42f0bf50e65e10f21df11403f53942cc4753a79b
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: d0235f767dd6c41b10d7d594425da603d6a523da
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270893"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457935"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>Résolution des messages d’erreur pour l’authentification unique (SSO) (aperçu)
 
@@ -43,7 +43,7 @@ Pour consulter des exemples de la gestion des erreurs décrite dans cette sectio
 L’API [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) n’est pas prise en charge par le complément ou la version d’Office.
 
 - La version d’office ne prend pas en charge SSO. La version requise est Office 2016, version 1710, build 8629.nnnn ou version ultérieure (la version par abonnement Office 365, parfois appelée « Démarrer en un clic »). Vous devrez peut-être participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à la rubrique [Participer au programme Office Insider](https://products.office.com/office-insider?tab=tab-1). 
-- Le manifeste de complément n’inclut pas la section [WebApplicationInfo](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/webapplicationinfo?view=office-js) appropriée.
+- Le manifeste de complément n’inclut pas la section [WebApplicationInfo](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/webapplicationinfo) appropriée.
 
 Votre complément doit corriger cette erreur en basculant vers un autre système d’authentification des utilisateurs. Pour plus d’informations, voir [Meilleures Pratiques et Conditions Requises](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#requirements-and-best-practices).
 
@@ -133,7 +133,7 @@ Si AAD ne détient aucune trace qu’un consentement (à la ressource Microsoft 
 ### <a name="invalid-or-missing-scope-permission-errors"></a>Erreurs d’étendue (permission) non valide ou manquante
 
 - Votre code côté serveur doit envoyer une réponse `403 Forbidden` au client, qui doit présenter un message amical à l’utilisateur. Si possible, consignez l’erreur dans la console ou enregistrez-la dans un journal.
-- Assurez-vous que la section [Scopes](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/scopes?view=office-js) du manifeste de votre complément indique toutes les autorisations nécessaires. Vérifiez également que l’alignement du service web de votre complément spécifie les mêmes autorisations. Vérifiez les fautes d’orthographe. Pour plus d’informations, consultez la rubrique sur l’[enregistrement du complément avec le point de terminaison Azure AD v2.0](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) ou sur l’[enregistrement du complément avec le point de terminaison Azure AD v2.0](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (nœud JS), et sur la [configuration du complément](create-sso-office-add-ins-aspnet.md#configure-the-add-in)(ASP.NET) ou sur la [configuration du complément](create-sso-office-add-ins-nodejs.md#configure-the-add-in) (nœud JS).
+- Assurez-vous que la section [Scopes](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/scopes) du manifeste de votre complément indique toutes les autorisations nécessaires. Vérifiez également que l’alignement du service web de votre complément spécifie les mêmes autorisations. Vérifiez les fautes d’orthographe. Pour plus d’informations, consultez la rubrique sur l’[enregistrement du complément avec le point de terminaison Azure AD v2.0](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) ou sur l’[enregistrement du complément avec le point de terminaison Azure AD v2.0](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (nœud JS), et sur la [configuration du complément](create-sso-office-add-ins-aspnet.md#configure-the-add-in)(ASP.NET) ou sur la [configuration du complément](create-sso-office-add-ins-nodejs.md#configure-the-add-in) (nœud JS).
 
 ### <a name="expired-or-invalid-token-errors-when-calling-microsoft-graph"></a>Erreurs de jetons expirés ou invalides lors de l’appel à Microsoft Graph
 

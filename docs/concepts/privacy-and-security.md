@@ -2,12 +2,12 @@
 title: Confidentialité et sécurité pour les compléments Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 339726df186860ba23a51e842d55231d2e8797f0
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: 6723ef757772a992b134d4f2a9d4590cc74965c2
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270872"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27458131"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Confidentialité et sécurité pour les compléments Office
 
@@ -104,7 +104,7 @@ Les compléments Outlook fournissent des fonctionnalités supplémentaires de s�
 
 En tant que développeur de compléments Office, nous vous fournissons ci-dessous une liste de conseils de protection PII spécifiques :
 
-- L’objet [Settings](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js) est conçu pour conserver les paramètres de complément et les données d’état entre les sessions pour un complément de contenu ou du volet Office, mais il ne stocke pas les mots de passe et autres informations d’identification personnelle confidentielles dans l’objet **Settings**. Les données contenues dans l’objet **Settings** ne sont pas visibles par les utilisateurs finaux, mais elles sont stockées en tant que partie du format de fichier du document, qui est facilement accessible. Vous devez limiter l’utilisation par votre complément des informations d’identification personnelle et stocker celles qu’il exige sur le serveur hébergeant votre complément en tant que ressource sécurisée par l’utilisateur.
+- L’objet [Settings](https://docs.microsoft.com/javascript/api/office/office.settings) est conçu pour conserver les paramètres de complément et les données d’état entre les sessions pour un complément de contenu ou du volet Office, mais il ne stocke pas les mots de passe et autres informations d’identification personnelle confidentielles dans l’objet **Settings**. Les données contenues dans l’objet **Settings** ne sont pas visibles par les utilisateurs finaux, mais elles sont stockées en tant que partie du format de fichier du document, qui est facilement accessible. Vous devez limiter l’utilisation par votre complément des informations d’identification personnelle et stocker celles qu’il exige sur le serveur hébergeant votre complément en tant que ressource sécurisée par l’utilisateur.
 
 - Certaines applications peuvent exposer les informations d’identification personnelle dans le cadre de leur utilisation. Faites en sorte de stocker les données de vos utilisateurs de manière sécurisée, notamment l’identité, la situation géographique, les heures d’accès et autres informations d’identification, pour éviter que d’autres utilisateurs du complément puissent y accéder.
 
@@ -118,7 +118,7 @@ Suivez les recommandations générales suivantes pour prendre en charge le modè
 
 ### <a name="permissions-choices"></a>Choix des autorisations
 
-La plateforme de complément fournit un modèle d’autorisations que votre complément utilise pour déclarer le niveau d’accès aux données d’un utilisateur qui sont requises pour ses fonctionnalités. Chaque niveau d’autorisation correspond au sous-ensemble de l’interface API JavaScript pour Office que votre complément est autorisé à utiliser pour ses fonctionnalités. Par exemple, l’autorisation **WriteDocument** pour les compléments du volet Office et de contenu permet d’accéder à la méthode [Document.setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js) qui permet à un complément d’écrire dans le document de l’utilisateur, mais n’autorise l’accès à aucune des méthodes pour la lecture des données à partir du document. Ce niveau d’autorisation est utile pour les compléments qui doivent uniquement écrire dans un document, comme par exemple un complément où l’utilisateur peut requérir des données à insérer dans son document.
+La plateforme de complément fournit un modèle d’autorisations que votre complément utilise pour déclarer le niveau d’accès aux données d’un utilisateur qui sont requises pour ses fonctionnalités. Chaque niveau d’autorisation correspond au sous-ensemble de l’interface API JavaScript pour Office que votre complément est autorisé à utiliser pour ses fonctionnalités. Par exemple, l’autorisation **WriteDocument** pour les compléments du volet Office et de contenu permet d’accéder à la méthode [Document.setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document) qui permet à un complément d’écrire dans le document de l’utilisateur, mais n’autorise l’accès à aucune des méthodes pour la lecture des données à partir du document. Ce niveau d’autorisation est utile pour les compléments qui doivent uniquement écrire dans un document, comme par exemple un complément où l’utilisateur peut requérir des données à insérer dans son document.
 
 Nous vous recommandons vivement de demander des autorisations sur la base du  _principe de privilège minimal_. Autrement dit, vous ne devez demander l’autorisation d’accès qu’au sous-ensemble minimal de l’API que votre complément requiert pour fonctionner correctement. Par exemple, si votre complément a seulement besoin de lire des données dans le document d’un utilisateur pour ses fonctionnalités, vous ne devez pas demander plus que l’autorisation **ReadDocument**. (Gardez toutefois à l’esprit qu’en cas de demande d’autorisations insuffisantes, la plateforme du complément bloquera l’utilisation de certaines API par votre complément et des erreurs seront générées lors de l’exécution.)
 
@@ -188,7 +188,7 @@ Un utilisateur mal intentionné pourrait attaquer l’origine d’un complément
 
 - Si vous utilisez jQuery, utilisez la méthode [.text()](https://api.jquery.com/text/) au lieu de la méthode [.html()](https://api.jquery.com/html/).
 
-- Utilisez la méthode [toStaticHTML](https://developer.mozilla.org/fr-FR/docs/Web/HTML/Reference) pour supprimer les éléments et attributs HTML dynamiques des entrées des utilisateurs avant de les transmettre à **innerHTML**.
+- Utilisez la méthode [toStaticHTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) pour supprimer les éléments et attributs HTML dynamiques des entrées des utilisateurs avant de les transmettre à **innerHTML**.
 
 - Utilisez la fonction [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) ou [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) pour encoder le texte qui représente une URL ayant pour origine ou contenant une entrée utilisateur.
 

@@ -2,12 +2,12 @@
 title: Utiliser du contenu de page OneNote
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: f44c58ac9cb3502889e280c63538603901b63a88
-ms.sourcegitcommit: 86724e980f720ed05359c9525948cb60b6f10128
+ms.openlocfilehash: aef9d80ebb37dacd2c3b5f2ec9d33cb0164d8452
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "26237410"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457613"
 ---
 # <a name="work-with-onenote-page-content"></a>Utiliser du contenu de page OneNote 
 
@@ -22,14 +22,14 @@ Dans l’API JavaScript des compléments OneNote, le contenu de page est représ
 
 Pour créer une page OneNote vide, utilisez l’une des méthodes suivantes :
 
-- [Section.addPage](https://docs.microsoft.com/javascript/api/onenote/onenote.section?view=office-js#addpage-title-)
-- [Page.insertPageAsSibling](https://docs.microsoft.com/javascript/api/onenote/onenote.section?view=office-js#insertsectionassibling-location--title-)
+- [Section.addPage](https://docs.microsoft.com/javascript/api/onenote/onenote.section#addpage-title-)
+- [Page.insertPageAsSibling](https://docs.microsoft.com/javascript/api/onenote/onenote.section#insertsectionassibling-location--title-)
 
 Utilisez ensuite les méthodes dans les objets suivants pour travailler avec le contenu de la page, comme Page.addOutline et Outline.appendHtml. 
 
-- [Page](https://docs.microsoft.com/javascript/api/onenote/onenote.page?view=office-js)
-- [Outline](https://docs.microsoft.com/javascript/api/onenote/onenote.outline?view=office-js)
-- [Paragraph](https://docs.microsoft.com/javascript/api/onenote/onenote.paragraph?view=office-js)
+- [Page](https://docs.microsoft.com/javascript/api/onenote/onenote.page)
+- [Outline](https://docs.microsoft.com/javascript/api/onenote/onenote.outline)
+- [Paragraph](https://docs.microsoft.com/javascript/api/onenote/onenote.paragraph)
 
 Le contenu et la structure d’une page OneNote sont représentés par du code HTML. Seul un sous-ensemble de code HTML est pris en charge pour créer ou mettre à jour du contenu de page, comme décrit ci-dessous.
 
@@ -58,6 +58,6 @@ Des métadonnées, telles que le titre, peuvent toujours être interrogées pour
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d’ensemble de la programmation de l’API JavaScript de OneNote](onenote-add-ins-programming-overview.md)
-- [Référence de l’API JavaScript de OneNote](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js)
+- [Référence de l’API JavaScript de OneNote](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Exemple de grille d’évaluation](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)

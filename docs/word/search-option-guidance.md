@@ -2,17 +2,17 @@
 title: Utilisation d’options de recherche pour trouver du texte dans votre complément Word
 description: ''
 ms.date: 07/20/2018
-ms.openlocfilehash: d2c0fa2d542cd64986c2fd82f8a50a813f14610a
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: 36946f7b9bbcb4c8b5ceca1e8b88e7588c0814ce
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270620"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457725"
 ---
 # <a name="use-search-options-to-find-text-in-your-word-add-in"></a>Utilisation d’options de recherche pour trouver du texte dans votre complément Word 
 
 Les compléments doivent fréquemment agir en fonction du texte d’un document.
-Une fonction de recherche est exposée par contrôle de contenu (cela inclut [Body](https://docs.microsoft.com/javascript/api/word/word.body?view=office-js), [Paragraph](https://docs.microsoft.com/javascript/api/word/word.paragraph?view=office-js), [Range](https://docs.microsoft.com/javascript/api/word/word.range?view=office-js), [Table](https://docs.microsoft.com/javascript/api/word/word.table?view=office-js), [TableRow](https://docs.microsoft.com/javascript/api/word/word.tablerow?view=office-js) et l’objet de base [ContentControl](https://docs.microsoft.com/javascript/api/word/word.contentcontrol?view=office-js)). Cette fonction utilise une chaîne (ou une expression générique) représentant le texte que vous recherchez et un objet [SearchOptions](https://docs.microsoft.com/javascript/api/word/word.searchoptions?view=office-js). Elle renvoie une collection de plages correspondant au texte de recherche.
+Une fonction de recherche est exposée par contrôle de contenu (cela inclut [Body](https://docs.microsoft.com/javascript/api/word/word.body), [Paragraph](https://docs.microsoft.com/javascript/api/word/word.paragraph), [Range](https://docs.microsoft.com/javascript/api/word/word.range), [Table](https://docs.microsoft.com/javascript/api/word/word.table), [TableRow](https://docs.microsoft.com/javascript/api/word/word.tablerow) et l’objet de base [ContentControl](https://docs.microsoft.com/javascript/api/word/word.contentcontrol)). Cette fonction utilise une chaîne (ou une expression générique) représentant le texte que vous recherchez et un objet [SearchOptions](https://docs.microsoft.com/javascript/api/word/word.searchoptions). Elle renvoie une collection de plages correspondant au texte de recherche.
 
 ## <a name="search-options"></a>Options de recherche
 Les options de recherche sont une collection de valeurs booléennes qui définissent comment le paramètre de recherche doit être traité. 
@@ -200,4 +200,4 @@ Word.run(function (context) {
 });
 ```
 
-Vous trouverez plus d’informations dans l’[API JavaScript de référence pour Word](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js).
+Vous trouverez plus d’informations dans l’[API JavaScript de référence pour Word](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview).

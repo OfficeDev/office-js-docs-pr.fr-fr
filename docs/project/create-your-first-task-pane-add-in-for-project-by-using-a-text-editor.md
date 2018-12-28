@@ -2,12 +2,12 @@
 title: Créer votre premier complément de volet des tâches pour Microsoft Project à l’aide d’un éditeur de texte
 description: ''
 ms.date: 12/17/2018
-ms.openlocfilehash: 46d632684c9d2fa301ab398b36e778d7543d1749
-ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
+ms.openlocfilehash: 6370895311f341acd0d65826b2fc721587cf8e4a
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "27383273"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457956"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>Créer votre premier complément de volet des tâches pour Microsoft Project à l’aide d’un éditeur de texte
 
@@ -106,7 +106,7 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
 
    Le code suivant obtient le contexte d’application et les informations de document en utilisant des fonctions dans le fichier Office.js. L’objet **text** est l’identifiant du contrôle **textarea** dans le fichier HTML.
     
-   La variable **\_projDoc** est initialisée avec un objet **ProjectDocument**. Le code inclut des fonctions de gestion des erreurs simples, ainsi que la fonction **getContextValues** qui extrait les propriétés de contexte d’application et de contexte de document de projet. Pour plus d’informations sur le modèle d’objet JavaScript pour Project, reportez-vous à la rubrique [API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js).
+   La variable **\_projDoc** est initialisée avec un objet **ProjectDocument**. Le code inclut des fonctions de gestion des erreurs simples, ainsi que la fonction **getContextValues** qui extrait les propriétés de contexte d’application et de contexte de document de projet. Pour plus d’informations sur le modèle d’objet JavaScript pour Project, reportez-vous à la rubrique [API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office).
 
     ```javascript
     /*
@@ -168,11 +168,11 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
     }
     ```
 
-   Pour plus d’informations sur les fonctions dans le fichier Office.debug.js, voir [JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js). Par exemple, la fonction **getDocumentUrl** obtient l’URL ou le chemin de fichier du projet ouvert.
+   Pour plus d’informations sur les fonctions dans le fichier Office.debug.js, voir [JavaScript API for Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office). Par exemple, la fonction **getDocumentUrl** obtient l’URL ou le chemin de fichier du projet ouvert.
     
 3. Ajoutez les fonctions JavaScript qui appellent des fonctions asynchrones dans Office.js et Project-15.js pour obtenir les données sélectionnées :
     
-   - Par exemple, **getSelectedDataAsync** est une fonction générale d’Office.js qui recherche du texte non formaté pour les données sélectionnées. Pour plus d’informations, reportez-vous à la rubrique sur l’[objet AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js).
+   - Par exemple, **getSelectedDataAsync** est une fonction générale d’Office.js qui recherche du texte non formaté pour les données sélectionnées. Pour plus d’informations, reportez-vous à la rubrique sur l’[objet AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult).
     
    - La fonction  **getSelectedTaskAsync** dans Project-15.js recherche le GUID de la tâche sélectionnée. De même, la fonction **getSelectedResourceAsync** recherche le GUID de la ressource sélectionnée. Si vous appelez ces fonctions lorsqu’une tâche ou une ressource n’est pas sélectionnée, les fonctions produisent une erreur non définie.
     
@@ -188,7 +188,7 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
    - Si le projet est synchronisé avec une liste de tâches SharePoint, la fonction  **getWSSUrlAsync** obtient l’URL et le nom de la liste des tâches. Si le projet n’est pas synchronisé avec une liste des tâches SharePoint, la fonction **getWSSUrlAsync** génère une erreur.
     
      > [!NOTE]
-     > Pour obtenir l’URL de SharePoint et le nom de la liste des tâches, nous vous recommandons d’utiliser la fonction **getProjectFieldAsync** avec les constantes **WSSUrl** et **WSSList** dans l’énumération [ProjectProjectFields](https://docs.microsoft.com/javascript/api/office/office.projectprojectfields?view=office-js).
+     > Pour obtenir l’URL de SharePoint et le nom de la liste des tâches, nous vous recommandons d’utiliser la fonction **getProjectFieldAsync** avec les constantes **WSSUrl** et **WSSList** dans l’énumération [ProjectProjectFields](https://docs.microsoft.com/javascript/api/office/office.projectprojectfields).
 
    Chacune des fonctions utilisées dans le code suivant inclut une fonction anonyme représentée par `function (asyncResult)` et qui est un rappel qui obtient le résultat asynchrone. Au lieu de fonctions anonymes, vous pouvez utiliser les fonctions nommées, qui peuvent améliorer la maintenabilité des compléments complexes.
 
@@ -1094,7 +1094,7 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 
 - [Compléments du volet Office pour Project](../project/project-add-ins.md)
 - [Présentation de l’API JavaScript pour compléments](../develop/understanding-the-javascript-api-for-office.md)
-- [API JavaScript pour les compléments Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)
+- [API JavaScript pour les compléments Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)
 - [Référence de schéma pour les manifestes des compléments Office (version 1.1)](../develop/add-in-manifests.md)     
 - [Téléchargement du Kit de développement logiciel (SDK) de Project 2013](https://www.microsoft.com/download/details.aspx?id=30435%20)
     

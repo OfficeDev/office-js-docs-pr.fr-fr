@@ -2,12 +2,12 @@
 title: Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: fb1b15236214056e6e15b4581a3813d42e31dc54
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: 6106b138eabb0360b11671eeb2a467e93311321e
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270774"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457914"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 
@@ -86,7 +86,7 @@ Pour ajouter une URL à votre liste de sites de confiance :
 3. Entrez l’URL qui apparaît dans le message d’erreur, puis choisissez **Ajouter**.
 4. Essayez d’utiliser le complément à nouveau. Si le problème persiste, vérifiez les paramètres pour les autres zones de sécurité et assurez-vous que le domaine du complément se trouve dans la même zone que l’URL qui s’affiche dans la barre d’adresse de l’application Office.
 
-Ce problème se produit lorsque l’API de la boîte de dialogue est utilisée en mode contextuel. Pour éviter ce problème, utilisez l’indicateur [displayInFrame](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js). Cela nécessite que votre page prenne en charge l’affichage dans un iframe. L’exemple suivant montre comment utiliser l’indicateur.
+Ce problème se produit lorsque l’API de la boîte de dialogue est utilisée en mode contextuel. Pour éviter ce problème, utilisez l’indicateur [displayInFrame](https://docs.microsoft.com/javascript/api/office/office.ui). Cela nécessite que votre page prenne en charge l’affichage dans un iframe. L’exemple suivant montre comment utiliser l’indicateur.
 
 ```js
 

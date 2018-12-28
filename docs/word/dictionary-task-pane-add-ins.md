@@ -2,48 +2,48 @@
 title: Créer un complément dictionnaire du volet Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 1032ad2312faabf4c1956078d2db4028521b5eb6
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+ms.openlocfilehash: 814dcc94f08a81ab01f96e5af487b4f7708c1aa5
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25004993"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457851"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>Créer un complément dictionnaire du volet Office
 
 
-Cet article présente un exemple de complément du volet Office et d’un service web associé qui fournissent des définitions de dictionnaire ou des entrées du dictionnaire des synonymes sur la sélection actuelle de l’utilisateur dans un document Word 2013. 
+Cet article présente un exemple de complément du volet Office et d’un service web associé qui fournissent des définitions de dictionnaire ou des entrées du dictionnaire des synonymes sur la sélection actuelle de l’utilisateur dans un document Word 2013. 
 
 Une Complément Office de dictionnaire est basée sur le complément du volet Office standard avec des fonctionnalités supplémentaires pour prendre en charge l’interrogation et l’affichage de définitions à partir d’un service web XML de dictionnaire à des endroits supplémentaires dans l’interface utilisateur du complément Office. 
 
-Dans un complément du volet Office classique, un utilisateur sélectionne un mot ou une expression dans son document, puis la logique JavaScript sous-jacente du complément transmet cette sélection au service web XML du fournisseur de dictionnaire. La page web du fournisseur de dictionnaire s’actualise ensuite pour afficher les définitions de la sélection pour l’utilisateur. Le composant du service web XML renvoie jusqu’à trois définitions dans le format défini par le schéma XML OfficeDefinitions, qui sont ensuite affichées à l’utilisateur à d’autres endroits dans l’interface utilisateur de l’application Office d’hébergement. La figure 1 illustre l’expérience de sélection et d’affichage pour un complément de dictionnaire Bing s’exécutant dans Word 2013.
+Dans un complément du volet Office classique, un utilisateur sélectionne un mot ou une expression dans son document, puis la logique JavaScript sous-jacente du complément transmet cette sélection au service web XML du fournisseur de dictionnaire. La page web du fournisseur de dictionnaire s’actualise ensuite pour afficher les définitions de la sélection pour l’utilisateur. Le composant du service web XML renvoie jusqu’à trois définitions dans le format défini par le schéma XML OfficeDefinitions, qui sont ensuite affichées à l’utilisateur à d’autres endroits dans l’interface utilisateur de l’application Office d’hébergement. La figure 1 illustre l’expérience de sélection et d’affichage pour un complément de dictionnaire Bing s’exécutant dans Word 2013.
 
-*Figure 1. Complément de dictionnaire affichant des définitions pour le mot sélectionné*
+*Figure 1. Complément de dictionnaire affichant des définitions pour le mot sélectionné*
 
 ![Application de dictionnaire affichant une définition](../images/dictionary-agave-01.jpg)
 
-Il vous incombe de déterminer si le fait de cliquer sur le lien **Afficher d’autres résultats** dans l’interface utilisateur HTML du complément de dictionnaire affiche d’autres informations dans le volet Office ou ouvre une fenêtre de navigateur séparée dans la page web complète pour le mot ou l’expression sélectionné. La figure 2 illustre la commande de menu contextuel **Définir** qui permet aux utilisateurs de lancer rapidement des dictionnaires installés. Les figures 3 à 5 montrent les endroits dans l’interface utilisateur d’Office où les services XML de dictionnaire sont utilisés pour fournir des définitions dans Word 2013.
+Il vous incombe de déterminer si le fait de cliquer sur le lien **Afficher d’autres résultats** dans l’interface utilisateur HTML du complément de dictionnaire affiche d’autres informations dans le volet Office ou ouvre une fenêtre de navigateur séparée dans la page web complète pour le mot ou l’expression sélectionné. La figure 2 illustre la commande de menu contextuel **Définir** qui permet aux utilisateurs de lancer rapidement des dictionnaires installés. Les figures 3 à 5 montrent les endroits dans l’interface utilisateur d’Office où les services XML de dictionnaire sont utilisés pour fournir des définitions dans Word 2013.
 
-*Figure 2. Commande Définir dans le menu contextuel*
+*Figure 2. Commande Définir dans le menu contextuel*
 
 ![Menu contextuel Définir](../images/dictionary-agave-02.jpg)
 
 
-*Figure 3. Définitions dans les volets Orthographe et Grammaire*
+*Figure 3. Définitions dans les volets Orthographe et Grammaire*
 
 ![Définitions dans les volets Orthographe et Grammaire](../images/dictionary-agave-03.jpg)
 
 
-*Figure 4. Définitions dans le volet Synonymes*
+*Figure 4. Définitions dans le volet Synonymes*
 
 ![Définitions dans le volet Synonymes](../images/dictionary-agave-04.jpg)
 
 
-*Figure 5. Définitions dans le mode Lecture*
+*Figure 5. Définitions dans le mode Lecture*
 
 ![Définitions dans le mode Lecture](../images/dictionary-agave-05.jpg)
 
-Pour créer un complément du volet Office qui fournit une recherche de dictionnaire, vous créez deux composants principaux : 
+Pour créer un complément du volet Office qui fournit une recherche de dictionnaire, vous créez deux composants principaux : 
 
 
 - Un service web XML qui recherche des définitions dans un service de dictionnaire, puis renvoie ces valeurs dans un format XML pouvant être consommé et affiché par le complément de dictionnaire.
@@ -183,7 +183,7 @@ public class WebService : System.Web.Services.WebService {
 ## <a name="creating-the-components-of-a-dictionary-add-in"></a>Création des composants d’un complément de dictionnaire
 
 
-Un complément de dictionnaire est composé de trois fichiers de composants principaux :
+Un complément de dictionnaire est composé de trois fichiers de composants principaux :
 
 
 - Un fichier de manifeste XML qui décrit le complément.
@@ -271,7 +271,7 @@ Spécifie les paramètres pour les compléments de dictionnaire.
 
  `<TargetDialects>`,  `<QueryUri>`,  `<CitationText>`,  `<DictionaryName>`,  `<DictionaryHomePage>`
 
- **Notes**
+ **Remarques**
 
 L’élément **Dictionary** et ses éléments enfants sont ajoutés au manifeste d’un complément du volet Office quand vous créez un complément de dictionnaire.
 
@@ -289,9 +289,9 @@ Indique les langues régionales prises en charge par ce dictionnaire. Requis pou
 
  `<TargetDialect>`
 
- **Notes**
+ **Remarques**
 
-L’élément **TargetDialects** et ses éléments enfant indiquent l’ensemble de langues régionales disponibles dans votre dictionnaire. Par exemple, si votre dictionnaire s’applique à l’espagnol (Mexique) et à l’espagnol (Pérou), mais pas à l’espagnol (Espagne), vous pouvez le préciser dans cet élément. N’indiquez pas plus d’une langue (par exemple, espagnol et anglais) dans ce manifeste. Publiez les langues distinctes dans des dictionnaires différents.
+L’élément **TargetDialects** et ses éléments enfant indiquent l’ensemble de langues régionales disponibles dans votre dictionnaire. Par exemple, si votre dictionnaire s’applique à l’espagnol (Mexique) et à l’espagnol (Pérou), mais pas à l’espagnol (Espagne), vous pouvez le préciser dans cet élément. N’indiquez pas plus d’une langue (par exemple, espagnol et anglais) dans ce manifeste. Publiez les langues distinctes dans des dictionnaires différents.
 
  **Exemple**
 
@@ -328,9 +328,9 @@ Spécifie une langue régionale prise en charge par ce dictionnaire. Requis pour
 
  `<TargetDialects>`
 
- **Notes**
+ **Remarques**
 
-Spécifie la valeur pour une langue régionale dans le format de balise RFC1766 `language`, comme EN-US.
+Spécifie la valeur pour une langue régionale dans le format de balise RFC1766 `language`, comme EN-US.
 
  **Exemple**
 
@@ -349,7 +349,7 @@ Spécifie le point d’extrémité pour le service de requête de dictionnaire. 
 
  `<Dictionary>`
 
- **Notes**
+ **Remarques**
 
 C’est l’URI du service web XML pour le fournisseur de dictionnaire. La requête correctement formulée sera ajoutée à cette URI. 
 
@@ -370,9 +370,9 @@ Spécifie le texte à utiliser dans les citations. Requis pour les compléments 
 
  `<Dictionary>`
 
- **Notes**
+ **Remarques**
 
-Cet élément spécifie le début du texte de citation qui sera affiché sur une ligne sous le contenu qui est renvoyé du service web (par exemple, « Résultats par : » ou « Optimisé par : »).
+Cet élément spécifie le début du texte de citation qui sera affiché sur une ligne sous le contenu qui est renvoyé du service web (par exemple, « Résultats par : » ou « Optimisé par : »).
 
 Pour cet élément, vous pouvez spécifier des valeurs pour des paramètres régionaux supplémentaires en utilisant l’élément  **Override**. Par exemple si un utilisateur exécute le SKU espagnol d’Office, mais utilise un dictionnaire anglais, ceci permet à la ligne de citation de prendre la valeur « Resultados por: Bing » et non « Results by: Bing ». Pour plus d’informations sur la spécification de valeurs pour des paramètres régionaux supplémentaires, voir la section « Fourniture de paramètres pour différents paramètres régionaux » dans [Manifeste XML des compléments Office](../develop/add-in-manifests.md).
 
@@ -393,7 +393,7 @@ Spécifie le nom de ce dictionnaire. Requis pour les compléments de dictionnair
 
  `<Dictionary>`
 
- **Notes**
+ **Remarques**
 
 Cet élément spécifie le texte du lien dans le texte de citation. Le texte de citation s’affiche sur une ligne sous le contenu qui est renvoyé du service web.
 
@@ -415,7 +415,7 @@ Spécifie l’URL de la page d’accueil pour le dictionnaire. Requis pour les c
 
  `<Dictionary>`
 
- **Notes**
+ **Remarques**
 
 Cet élément spécifie l’URL du lien dans le texte de citation. Le texte de citation s’affiche sur une ligne sous le contenu qui est renvoyé du service web.
 
@@ -431,7 +431,7 @@ Pour cet élément, vous pouvez spécifier des valeurs pour des paramètres rég
 
 ### <a name="creating-a-dictionary-add-ins-html-user-interface"></a>Création de l’interface utilisateur HTML du complément de dictionnaire
 
-Les deux exemples suivants montrent les fichiers HTML et CSS pour l’interface utilisateur du complément de dictionnaire de démonstration. Pour découvrir comment l’interface utilisateur s’affiche dans le volet Office du complément, voir la figure 6 à la suite du code. Pour voir comment l’implémentation du JavaScript dans le fichier Dictionary.js fournit la logique de programmation de cette interface utilisateur HTML, voir « Écriture de l’implémentation JavaScript » immédiatement à la suite de cette section.
+Les deux exemples suivants montrent les fichiers HTML et CSS pour l’interface utilisateur du complément de dictionnaire de démonstration. Pour découvrir comment l’interface utilisateur s’affiche dans le volet Office du complément, voir la figure 6 à la suite du code. Pour voir comment l’implémentation du JavaScript dans le fichier Dictionary.js fournit la logique de programmation de cette interface utilisateur HTML, voir « Écriture de l’implémentation JavaScript » immédiatement à la suite de cette section.
 
 ```HTML
 <!DOCTYPE html>
@@ -513,7 +513,7 @@ a:hover, a:active
 }
 ```
 
-*Figure 6. Interface utilisateur du dictionnaire de démonstration*
+*Figure 6. Interface utilisateur du dictionnaire de démonstration*
 
 ![Interface utilisateur du dictionnaire de démonstration](../images/dictionary-agave-06.jpg)
 
@@ -523,16 +523,16 @@ a:hover, a:active
 
 L’exemple suivant montre l’implémentation JavaScript dans le fichier Dictionary.js qui est appelé dans la page HTML du complément pour fournir la logique de programmation du complément de dictionnaire de démonstration. Ce script réutilise le service web XML décrit précédemment. Lorsqu’il est placé dans le même répertoire que l’exemple de service web, le script obtient des définitions de ce service. Il peut être utilisé avec un service web XML conforme au schéma OfficeDefinitions public en modifiant la variable  `xmlServiceURL` en haut du fichier, et en remplaçant ensuite la clé de l’API Bing pour obtenir des prononciations adéquates.
 
-Les principaux membres de l’API JavaScript pour Office (Office.js) qui sont appelés à partir de cette implémentation sont les suivants :
+Les principaux membres de l’API JavaScript pour Office (Office.js) qui sont appelés à partir de cette implémentation sont les suivants :
 
 
-- L’événement [initialize](https://docs.microsoft.com/javascript/api/office?view=office-js) de l’objet **Office**, qui est déclenché lors de l’initialisation du contexte complément et donne accès à une instance de l’objet [Document](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js), qui représente le document avec lequel complément interagit.
+- L’événement [initialize](https://docs.microsoft.com/javascript/api/office) de l’objet **Office**, qui est déclenché lors de l’initialisation du contexte complément et donne accès à une instance de l’objet [Document](https://docs.microsoft.com/javascript/api/office/office.document), qui représente le document avec lequel complément interagit.
     
-- La méthode [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#addhandlerasync-eventtype--handler--options--callback-) de l’objet **Document**, qui est appelée dans la fonction  **initialize** afin d’ajouter un gestionnaire d’événements pour l’événement [SelectionChanged](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs?view=office-js) du document dans le but de surveiller les changements de sélection de l’utilisateur.
+- La méthode [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) de l’objet **Document**, qui est appelée dans la fonction  **initialize** afin d’ajouter un gestionnaire d’événements pour l’événement [SelectionChanged](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs) du document dans le but de surveiller les changements de sélection de l’utilisateur.
     
-- La méthode [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) de l’objet **Document** qui est appelée dans la fonction `tryUpdatingSelectedWord()` lorsque le gestionnaire d’événements **SelectionChanged** est déclenché pour obtenir le mot ou la phrase que l’utilisateur a sélectionné, appliquer le texte brut, puis exécuter la fonction de rappel asynchrone `selectedTextCallback`.
+- La méthode [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) de l’objet **Document** qui est appelée dans la fonction `tryUpdatingSelectedWord()` lorsque le gestionnaire d’événements **SelectionChanged** est déclenché pour obtenir le mot ou la phrase que l’utilisateur a sélectionné, appliquer le texte brut, puis exécuter la fonction de rappel asynchrone `selectedTextCallback`.
     
-- Lorsque la fonction de rappel asynchrone  `selectTextCallback` qui est transmise comme l’argument _callback_ de la méthode **getSelectedDataAsync** s’exécute, elle obtient la valeur du texte sélectionné lors du renvoi du rappel. Elle obtient la valeur de l’argument _selectedText_ du rappel (qui est de type [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js)) en utilisant la propriété [value](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js#status) de l’objet **AsyncResult** renvoyé.
+- Lorsque la fonction de rappel asynchrone  `selectTextCallback` qui est transmise comme l’argument _callback_ de la méthode **getSelectedDataAsync** s’exécute, elle obtient la valeur du texte sélectionné lors du renvoi du rappel. Elle obtient la valeur de l’argument _selectedText_ du rappel (qui est de type [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult)) en utilisant la propriété [value](https://docs.microsoft.com/javascript/api/office/office.asyncresult#status) de l’objet **AsyncResult** renvoyé.
     
 - Le reste du code dans la fonction  `selectedTextCallback` interroge le service web XML pour obtenir des définitions. Il appelle également les API de Microsoft Translator pour fournir l’URL d’un fichier .wav produisant la prononciation du mot sélectionné.
     

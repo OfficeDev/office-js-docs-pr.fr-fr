@@ -2,12 +2,12 @@
 title: Créer un complément Project qui utilise REST avec un service OData Project Server local
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 0bd11e15d2742db12ecbe88d60e02f4e1fa87867
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: 9fc6e526587a6256e5ee51effe3bdb5cfe27af47
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27271026"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27458033"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>Créer un complément Project qui utilise REST avec un service OData Project Server local
 
@@ -316,7 +316,7 @@ Le reste du fichier HelloProjectOData.js comprend deux fonctions : la fonction  
     }
     ```
 
-2. Ajoutez  **setOdataUrl** et les fonctions connexes. La fonction **setOdataUrl** appelle **getProjectGuid** et **getDocumentUrl** pour initialiser les variables globales. Dans la [méthode getProjectFieldAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js), la fonction anonyme du paramètre  _callback_ active le bouton **Comparer tous les projets** en utilisant la méthode **removeAttr** de la bibliothèque jQuery, puis affiche l’URL du service **ProjectData**. Si Project n’est pas connecté à Project Web App, la fonction génère une erreur, ce qui entraîne l’affichage d’un message d’erreur dans une fenêtre contextuelle. Le fichier SurfaceErrors.js inclut la méthode  **throwError**.
+2. Ajoutez  **setOdataUrl** et les fonctions connexes. La fonction **setOdataUrl** appelle **getProjectGuid** et **getDocumentUrl** pour initialiser les variables globales. Dans la [méthode getProjectFieldAsync](https://docs.microsoft.com/javascript/api/office/office.document), la fonction anonyme du paramètre  _callback_ active le bouton **Comparer tous les projets** en utilisant la méthode **removeAttr** de la bibliothèque jQuery, puis affiche l’URL du service **ProjectData**. Si Project n’est pas connecté à Project Web App, la fonction génère une erreur, ce qui entraîne l’affichage d’un message d’erreur dans une fenêtre contextuelle. Le fichier SurfaceErrors.js inclut la méthode  **throwError**.
     
    > [!NOTE]
    > Si vous exécutez Visual Studio sur l’ordinateur Project Server, pour utiliser le débogage **F5**, supprimez le commentaire du code après la ligne qui initialise la variable globale **_pwa**. Pour permettre l’utilisation de la méthode **ajax** jQuery lors du débogage sur l’ordinateur Project Server, vous devez définir la valeur **localhost** pour l’URL PWA. Si vous exécutez Visual Studio sur un ordinateur distant, l’URL **localhost** n’est pas nécessaire. Avant de déployer le complément, commentez le code.

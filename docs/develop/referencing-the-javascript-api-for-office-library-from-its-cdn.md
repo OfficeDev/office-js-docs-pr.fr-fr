@@ -2,12 +2,12 @@
 title: Référencement de la bibliothèque de l’API JavaScript pour Office à partir de son réseau de distribution de contenu
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: fec75531997a6b496b442b72d8139a9c98f37cd5
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: 9943af86419652e5f5e89b1741b32b4e0da15e77
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270837"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457620"
 ---
 # <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a>Référencement de la bibliothèque de l’API JavaScript pour Office à partir de son réseau de distribution de contenu
 
@@ -18,7 +18,7 @@ ms.locfileid: "27270837"
 > npm install --save-dev @types/office-js
 > ```
 
-La bibliothèque de l’[API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) comprend le fichier Office.js et des fichiers .js propres aux applications hôtes associées, comme Excel-15.js et Outlook15.js. 
+La bibliothèque de l’[API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office) comprend le fichier Office.js et des fichiers .js propres aux applications hôtes associées, comme Excel-15.js et Outlook15.js. 
 
 
 La façon la plus simple pour référencer l’interface API est d’utiliser notre CDN en ajoutant le `<script>` suivant à la balise `<head>` de votre page :  
@@ -37,5 +37,5 @@ Si vous envisagez de publier votre complément Office à partir d’AppSource, v
 ## <a name="see-also"></a>Voir aussi
 
 - [Présentation de l’API JavaScript pour Office](understanding-the-javascript-api-for-office.md)    
-- [Interface API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)
+- [Interface API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)
     
