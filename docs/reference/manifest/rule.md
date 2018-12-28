@@ -2,12 +2,12 @@
 title: Élément Rule dans le fichier manifeste
 description: ''
 ms.date: 11/30/2018
-ms.openlocfilehash: ce7763ecb4ef81587ccacbd4090a6f412baf99b2
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: 2c5ae07e5d0a3c9c8979abcada3d758c415e2e59
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433112"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457452"
 ---
 # <a name="rule-element"></a>Élément Rule
 
@@ -74,7 +74,7 @@ Définit une règle qui donne la valeur true si l’élément contient dans son 
 | **EntityType** | Oui | Spécifie le type d’entité à rechercher pour que la règle donne la valeur True. Il peut s’agir de l’un des éléments suivants : `MeetingSuggestion`, `TaskSuggestion`, `Address`, `Url`, `PhoneNumber`, `EmailAddress` ou `Contact`. |
 | **RegExFilter** | Non | Spécifie une expression régulière à exécuter par rapport à cette entité à des fins d’activation. |
 | **FilterName** | Non | Spécifie le nom du filtre d’expression régulière, afin qu’il soit possible par la suite de s’y référer dans le code de votre complément. |
-| **IgnoreCase** | Non | Indique d’ignorer la casse lors de l’exécution de l’expression régulière spécifiée par l’attribut **RegExFilter**. |
+| **IgnoreCase** | Non | Spécifie s’il faut ignorer la casse pour la correspondance avec l’expression régulière spécifiée par l’attribut **RegExFilter**. |
 | **Highlight** | Non | **Remarque :** cela s’applique uniquement aux éléments **Rule** au sein des éléments **ExtensionPoint**. Spécifie comment le client doit mettre en surbrillance les entités correspondantes. Peut correspondre à l’une des valeurs suivantes : `all` ou `none`. Si non spécifié, la valeur par défaut est `all`. |
 
 ### <a name="example"></a>Exemple
@@ -93,9 +93,10 @@ Définit une règle qui donne la valeur true si une correspondance de l’expres
 |:-----|:-----|:-----|
 | **RegExName** | Oui | Spécifie le nom de l’expression régulière afin que vous puissiez vous référer à l’expression dans le code de votre complément. |
 | **RegExValue** | Oui | Spécifie l’expression régulière qui sera évaluée pour déterminer si le complément de messagerie doit être affiché. |
-| **PropertyName** | Oui | Spécifie le nom de la propriété par rapport à laquelle l’expression sera évaluée. Les options disponibles sont les suivantes : `Subject`, `BodyAsPlaintext`, `BodyAsHTML` ou `SenderSMTPAddress`. |
-| **IgnoreCase** | Non | Indique d’ignorer la casse lors de l’exécution de l’expression régulière. |
-| **Highlight** | Non | **Remarque :** cela s’applique uniquement aux éléments **Rule** au sein des éléments **ExtensionPoint**. Spécifie comment le client doit mettre en surbrillance le texte correspondant. Peut correspondre à l’une des valeurs suivantes : `all` ou `none`. Si non spécifié, la valeur par défaut est `all`. |
+| **PropertyName** | Oui | Spécifie le nom de la propriété par rapport à laquelle l’expression sera évaluée. Les options disponibles sont les suivantes : `Subject`, `BodyAsPlaintext`, `BodyAsHTML` ou `SenderSMTPAddress`.<br/><br/>Si vous spécifiez `BodyAsHTML`, Outlook applique seulement l’expression régulière si le corps de l’élément est du code HTML. Si ce n’est pas le cas, Outlook ne renvoie aucune correspondance pour cette expression régulière.<br/><br/>Si vous spécifiez `BodyAsPlaintext`, Outlook applique toujours l’expression régulière au corps de l’élément.<br/><br/>**Remarque :** vous devez donner la valeur `BodyAsPlaintext` à l’attribut **PropertyName** si vous spécifiez l’attribut **Highlight** pour l’élément **Rule**.|
+| **IgnoreCase** | Non | Spécifie s’il faut ignorer la casse pour la correspondance avec l’expression régulière spécifiée par l’attribut **RegExName**. |
+| **Highlight** | Non | Spécifie comment le client doit mettre en surbrillance le texte correspondant. Cet attribut ne peut être appliqué qu’aux éléments **Rule** au sein des éléments **ExtensionPoint**. Peut correspondre à l’une des valeurs suivantes : `all` ou `none`. Si non spécifié, la valeur par défaut est `all`.<br/><br/>**Remarque :** vous devez donner la valeur `BodyAsPlaintext` à l’attribut **PropertyName** si vous spécifiez l’attribut **Highlight** pour l’élément **Rule**.
+|
 
 ### <a name="example"></a>Exemple
 
