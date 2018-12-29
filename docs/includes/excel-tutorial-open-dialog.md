@@ -123,7 +123,7 @@ Dans cette étape finale du didacticiel, vous allez ouvrir une boîte de dialogu
 
     ```js
     function openDialog() {
-        // TODO1: Call the Office Shared API that opens a dialog
+        // TODO1: Call the Office Common API that opens a dialog
     }
     ```
 
