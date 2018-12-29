@@ -1,13 +1,13 @@
 ---
 title: Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 description: ''
-ms.date: 11/27/2018
-ms.openlocfilehash: ef74dc622f3e857314874763a54df67bcff1d8ff
-ms.sourcegitcommit: 026437bd3819f4e9cd4153ebe60c98ab04e18f4e
+ms.date: 12/28/2018
+ms.openlocfilehash: 804d047270f5236209c1555190f465a760548875
+ms.sourcegitcommit: d75295cc4f47d8d872e7a361fdb5526f0f145dd2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "26992225"
+ms.lasthandoff: 12/29/2018
+ms.locfileid: "27460862"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 
@@ -50,7 +50,7 @@ L’exemple de code suivant obtient la feuille de calcul active, charge sa propr
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.load("name");
-    
+
     return context.sync()
         .then(function () {
             console.log(`The active worksheet is "${sheet.name}"`);
@@ -155,7 +155,7 @@ Excel.run(function (context) {
 
     var sheet = sheets.add("Sample");
     sheet.load("name, position");
-    
+
     return context.sync()
         .then(function () {
             console.log(`Added worksheet named "${sheet.name}" in position ${sheet.position}`);
@@ -258,16 +258,16 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="get-a-cell-within-a-worksheet"></a>Obtenir une cellule dans une feuille de calcul
+## <a name="get-a-single-cell-within-a-worksheet"></a>Obtenir une cellule simple dans une feuille de calcul
 
-L’exemple de code suivant obtient la cellule située ligne 2, colonne 5 de la feuille de calcul nommée **Sample**, charge ses propriétés **address** et **values**, et écrit un message dans la console. Les valeurs transmises par la méthode **getCell(row: number, column:number)** sont le numéro de ligne avec indice zéro et le numéro de colonne pour la cellule en cours d’extraction.
+L’exemple de code suivant obtient la cellule située ligne 2, colonne 5 de la feuille de calcul nommée **Sample**, charge ses propriétés **address** et **values**, et écrit un message dans la console. Les valeurs transmises par la méthode `getCell(row: number, column:number)` sont le numéro de ligne avec indice zéro et le numéro de colonne pour la cellule en cours d’extraction.
 
 ```js
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
     var cell = sheet.getCell(1, 4);
     cell.load("address, values");
-    
+
     return context.sync()
         .then(function() {
             console.log(`The value of the cell in row 2, column 5 is "${cell.values[0][0]}" and the address of that cell is "${cell.address}"`);
@@ -275,9 +275,34 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="get-a-range-within-a-worksheet"></a>Obtenir une plage dans une feuille de calcul
+## <a name="find-all-cells-with-matching-text-preview"></a>Trouver toutes les cellules avec texte correspondant (Aperçu)
 
-Pour obtenir des exemples qui montrent comment obtenir une plage dans une feuille de calcul, reportez-vous à la rubrique [Utiliser des plages à l’aide de l’API JavaScript pour Excel](excel-add-ins-ranges.md).
+> [!NOTE]
+> La fonction`findAll` de l’objet de la Feuille de calcul est actuellement disponible uniquement en préversion publique (bêta). Pour utiliser cette fonctionnalité, vous devez utiliser la bibliothèque bêta du CDN Office.js : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> Si vous utilisez TypeScript ou si votre éditeur de code utilise des fichiers de définition de type TypeScript pour IntelliSense, utilisez https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+
+L’objet `Worksheet` dispose d’une méthode`find` pour rechercher une chaîne spécifiée dans la feuille de calcul. Il renvoie un objet`RangeAreas`, qui est une collection d’objets `Range` qui peuvent être modifiés tous en même temps. L’exemple de code suivant recherche toutes les cellules contenant des valeurs égales à la chaîne **Complète** et les colore en vert. Notez que `findAll` génère une erreur `ItemNotFound` si la chaîne spécifiée n’existe pas dans la feuille de calcul. Si vous pensez que la chaîne spécifiée peut ne pas exister dans la feuille de calcul, utilisez la méthode[findAllOrNullObject](excel-add-ins-advanced-concepts.md#42ornullobject-methods) à la place, pour que votre code gère ce scénario plus facilement.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    var foundRanges = sheet.findAll("Complete", {
+        completeMatch: true, // findAll will match the whole cell value
+        matchCase: false // findAll will not match case
+    });
+
+    return context.sync()
+        .then(function() {
+            foundRanges.format.fill.color = "green"
+    });
+}).catch(errorHandlerFunction);
+```
+
+> [!NOTE]
+> Cette section décrit comment rechercher des cellules et plages à l’aide des `Worksheet` fonctions de l’objet. Plus d’informations sur l’extraction de plage sont disponibles dans les articles spécifiques.
+> - Pour obtenir des exemples qui montrent comment obtenir une plage dans une feuille de calcul à l’aide de l’objet `Range`, reportez-vous à la rubrique [Utiliser des plages à l’aide de l’API JavaScript pour Excel](excel-add-ins-ranges.md).
+> - Pour obtenir des exemples qui montrent comment obtenir une plage dans un objet `Table`, reportez-vous à la rubrique [Utiliser des tableaux à l’aide de l’API JavaScript pour Excel](excel-add-ins-tables.md).
+> - Pour consulter des exemples qui montrent comment rechercher une grande plage pour plusieurs sous-plages basées sur les caractéristiques de cellule, voir [Travailler avec plusieurs plages simultanément dans des compléments Excel](excel-add-ins-multiple-ranges.md).
 
 ## <a name="data-protection"></a>Protection des données
 
@@ -298,12 +323,11 @@ Excel.run(function (context) {
 
 La méthode `protect` présente deux paramètres facultatifs :
 
- - `options` : objet [WorksheetProtectionOptions](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotectionoptions) définissant des restrictions de modification spécifiques.
- - `password` : chaîne représentant le mot de passe nécessaire pour qu’un utilisateur puisse ignorer la protection et modifier la feuille de calcul.
+- `options` : objet [WorksheetProtectionOptions](https://docs.microsoft.com/javascript/api/excel/excel.worksheetprotectionoptions) définissant des restrictions de modification spécifiques.
+- `password` : chaîne représentant le mot de passe nécessaire pour qu’un utilisateur puisse ignorer la protection et modifier la feuille de calcul.
 
 L’article [Protéger une feuille de calcul](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6) comporte davantage d’informations sur la protection des feuilles de calcul et leur modification via l’interface utilisateur Excel.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
-
