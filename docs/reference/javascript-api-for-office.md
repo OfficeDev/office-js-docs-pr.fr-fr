@@ -2,20 +2,20 @@
 title: Interface API JavaScript pour Office
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: d1f57ec9e4420a17ef0997d8d293c484887d5d79
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: 87ad98f8233e4ff6fb2fe15d09daff6b7b422b08
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432773"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457711"
 ---
 # <a name="javascript-api-for-office"></a>Interface API JavaScript pour Office
 
 L’interface API JavaScript pour Office vous permet de créer des applications web qui interagissent avec les modèles objet dans les applications hôtes Office. Votre application fera référence à la bibliothèque office.js, qui est un chargeur de script. La bibliothèque office.js charge les modèles objet applicables à l’application Office qui exécute le complément. Vous pouvez utiliser les modèles objet JavaScript suivants :
 
-- **API courantes** – API qui ont été introduites avec **Office 2013**. Il est chargé pour **toutes les applications hôtes Office** et connecte votre application de complément à l’application cliente Office. Le modèle objet contient les API propres aux clients Office et les API applicables à plusieurs applications hôtes clientes Office. Tout ce contenu se trouve sous **API partagées**. 
+- **API courantes** – API qui ont été introduites avec **Office 2013**. Il est chargé pour **toutes les applications hôtes Office** et connecte votre application de complément à l’application cliente Office. Le modèle objet contient les API propres aux clients Office et les API applicables à plusieurs applications hôtes clientes Office. Tout ce contenu se trouve sous **API partagé**. Ce modèle objet utilise des rappels. 
 
-  **Outlook** utilise également la syntaxe des API courantes. Tous les éléments sous l’alias Office dans le code contiennent des objets que vous pouvez utiliser pour écrire un script qui interagit avec le contenu dans les documents, feuilles de calcul, présentations, éléments de courrier et projets de vos compléments Office. Vous devez utiliser ces API communes si le complément est destiné pour Office 2013 ou ultérieur. Ce modèle objet utilise des rappels.
+  **Outlook** utilise également la syntaxe des API courantes. Tous les éléments sous l’alias Office dans le code contiennent des objets que vous pouvez utiliser pour écrire un script qui interagit avec le contenu dans les documents, feuilles de calcul, présentations, éléments de courrier et projets de vos compléments Office. Vous devez utiliser ces API communes si le complément est destiné pour Office 2013 ou une version récente. Ce modèle objet utilise des rappels.
 
 - **API propres à l’hôte** – API qui ont été introduites avec **Office 2016**. Ce modèle objet fournit des objets propres à l’hôte fortement typés qui correspondent aux objets habituels que vous voyez lorsque vous utilisez des clients Office. Il représente l’avenir des API JavaScript Office. Les API propres à l’hôte incluent actuellement l’API JavaScript Word et l’API JavaScript Excel.
 
@@ -26,12 +26,12 @@ L’interface API JavaScript pour Office vous permet de créer des applications 
 - [Outlook](requirement-sets/outlook-api-requirement-sets.md)
 - [Visio](overview/visio-javascript-reference-overview.md)
 - [Word](overview/word-add-ins-reference-overview.md)
-- [Shared API](requirement-sets/office-add-in-requirement-sets.md)
+- [API communes](requirement-sets/office-add-in-requirement-sets.md)
 
 > [!NOTE] 
-> [PowerPoint et Project](requirement-sets/powerpoint-and-project-note.md) prennent en charge des compléments conçus à l’aide de l’API JavaScript. Toutefois, ils ne disposent pas actuellement des API propres à l’hôte spécifiques. Vous pouvez interagir avec ces hôtes via l’API partagée.
+> [PowerPoint et Project](requirement-sets/powerpoint-and-project-note.md) prennent en charge des compléments conçus à l’aide de l’API JavaScript. Toutefois, ils ne disposent pas actuellement des APIs propres à l’hôte spécifiques. Vous pouvez interagir avec ces hôtes via l’API commune.
 
-En savoir plus sur les [hôtes pris en charge et les autres exigences](https://docs.microsoft.com/office/dev/add-ins/concepts/requirements-for-running-office-add-ins).
+En savoir plus sur les [hôtes pris en charge et les autres exigences](../concepts/requirements-for-running-office-add-ins.md).
 
 ## <a name="open-api-specifications"></a>Spécifications d’ouverture de l’API
 
@@ -39,4 +39,4 @@ Au fur et à mesure que nous concevons et développons de nouvelles API pour les
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence de l’API JavaScript d’Office](https://docs.microsoft.com/javascript/api/overview/office?view=office-js)
+- [Référence de l’API JavaScript d’Office](https://docs.microsoft.com/javascript/api/overview/office)
