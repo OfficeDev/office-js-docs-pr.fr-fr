@@ -2,20 +2,20 @@
 title: Utiliser des graphiques à l’aide de l’API JavaScript pour Excel
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 80b537ec66caf6e173dfe4453a257c5963156e6f
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.openlocfilehash: b804e2130e30626a9caf21bca1f3955c57a3f94c
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459300"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457550"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Utiliser des graphiques à l’aide de l’API JavaScript pour Excel
 
-Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes avec des graphiques à l’aide de l’API JavaScript Excel. Pour obtenir la liste complète des propriétés et méthodes prises en charge par les objets **Chart** et **ChartCollection**, voir l’[Objet Chart (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.chart?view=office-js) et l’[Objet Collection Graphique (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection?view=office-js).
+This article provides code samples that show how to perform common tasks with charts using the Excel JavaScript API. For the complete list of properties and methods that the **Chart** and **ChartCollection** objects support, see [Chart Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.chart) and [Chart Collection Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection).
 
-## <a name="create-a-chart"></a>Créer un graphique
+## <a name="create-a-chart"></a>Création d’un graphique
 
-L’exemple de code suivant crée un graphique dans la feuille de calcul nommée **Sample**. Le graphique est un graphique en **courbes** basé sur des données de la plage **A1:B13**.
+The following code sample creates a chart in the worksheet named **Sample**. The chart is a **Line** chart that is based upon data in the range **A1:B13**.
 
 ```js
 Excel.run(function (context) {
@@ -40,7 +40,7 @@ Excel.run(function (context) {
 
 ## <a name="add-a-data-series-to-a-chart"></a>Ajouter une série de données à un graphique
 
-L’exemple de code suivant ajoute une série de données au premier graphique de la feuille de calcul. La nouvelle série de données correspond à la colonne nommée **2016** et repose sur les données de la plage **D2:D5**.
+The following code sample adds a data series to the first chart in the worksheet. The new data series corresponds to the column named **2016** and is based upon data in the range **D2:D5**.
 
 ```js
 Excel.run(function (context) {
@@ -147,7 +147,7 @@ Excel.run(function (context) {
 
 ### <a name="add-a-trendline"></a>Ajouter une courbe de tendance
 
-L’exemple de code suivant ajoute une courbe de tendance de moyenne mobile à la première série du premier graphique de la feuille de calcul nommée **Sample**. La courbe de tendance affiche une moyenne mobile sur 5 périodes.
+L’exemple de code suivant ajoute une courbe de tendance de moyenne mobile à la première série du premier graphique de la feuille de calcul nommée **Sample**. La courbe de tendance affiche une moyenne mobile sur 5 périodes.
 
 ```js
 Excel.run(function (context) {
@@ -188,4 +188,4 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Concepts fondamentaux de programmation avec l’API JavaScript Excel](excel-add-ins-core-concepts.md)
+- [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)

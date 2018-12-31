@@ -2,12 +2,12 @@
 title: Présentation des compléments Excel
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: b8fc1aadaf47195f55fb3ed3c6281d33b32f2e4e
-ms.sourcegitcommit: 86724e980f720ed05359c9525948cb60b6f10128
+ms.openlocfilehash: ecc581a0ddb19d6c5351fd4b4e251aad8136a2e1
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "26237457"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457473"
 ---
 # <a name="excel-add-ins-overview"></a>Présentation des compléments Excel
 
@@ -32,7 +32,7 @@ La plateforme de compléments Office fournit la structure et les API JavaScript 
 
 Un complément Excel comprend deux composants de base : une application web et un fichier de configuration, appelé fichier manifeste. 
 
-L’application web utilise l’[API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) pour interagir avec des objets dans Excel et peut également faciliter l’interaction avec les ressources en ligne. Par exemple, un complément peut effectuer une des opérations suivantes :
+L’application web utilise l’[API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office) pour interagir avec des objets dans Excel et peut également faciliter l’interaction avec les ressources en ligne. Par exemple, un complément peut effectuer une des opérations suivantes :
 
 * Créer, lire, mettre à jour et supprimer des données dans le classeur (feuilles de calcul, plages, tableaux, graphiques, éléments nommés, etc.).
 * Effectuer une autorisation utilisateur avec un service en ligne à l’aide du flux OAuth 2.0 standard.
@@ -75,7 +75,7 @@ Pour plus d’informations sur les volets Office, reportez-vous à [Volets Off
 
 ### <a name="dialog-boxes"></a>Boîtes de dialogue
 
-Les boîtes de dialogue sont des surfaces qui flottent au-dessus de la fenêtre active de l’application Excel. Vous pouvez utiliser les boîtes de dialogue pour des tâches comme l’affichage de pages de connexion impossibles à ouvrir directement dans un volet Office, les demandes de confirmation d’une action par l’utilisateur ou l’hébergement de vidéos pouvant être trop petites si elles sont limitées à un volet Office. Utilisez l’[API de dialogue](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) pour ouvrir des boîtes de dialogue dans votre complément Excel.
+Les boîtes de dialogue sont des surfaces qui flottent au-dessus de la fenêtre active de l’application Excel. Vous pouvez utiliser les boîtes de dialogue pour des tâches comme l’affichage de pages de connexion impossibles à ouvrir directement dans un volet Office, les demandes de confirmation d’une action par l’utilisateur ou l’hébergement de vidéos pouvant être trop petites si elles sont limitées à un volet Office. Utilisez l’[API de dialogue](https://docs.microsoft.com/javascript/api/office/office.ui) pour ouvrir des boîtes de dialogue dans votre complément Excel.
 
 **Boîte de dialogue**
 
@@ -95,11 +95,11 @@ Pour plus d’informations sur les compléments de contenu, reportez-vous à [Co
 
 ## <a name="javascript-apis-to-interact-with-workbook-content"></a>API JavaScript permettant d’interagir avec le contenu du classeur
 
-Un complément Excel interagit avec des objets dans Excel en utilisant l’[API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js), qui inclut deux modèles d’objets JavaScript :
+Un complément Excel interagit avec des objets dans Excel en utilisant l’[API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office), qui inclut deux modèles d’objets JavaScript :
 
-* **API JavaScript pour Excel** : incluse dans Office 2016, l’[API JavaScript pour Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js) fournit des objets Excel fortement typés que vous pouvez utiliser pour accéder aux feuilles de calcul, aux plages, aux tableaux, aux graphiques et bien plus encore. 
+* **API JavaScript pour Excel** : incluse dans Office 2016, l’[API JavaScript pour Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) fournit des objets Excel fortement typés que vous pouvez utiliser pour accéder aux feuilles de calcul, aux plages, aux tableaux, aux graphiques et bien plus encore. 
 
-* **API partagée** : incluse dans Office 2013, l’API partagée vous permet d’accéder à des fonctionnalités, comme l’interface utilisateur, les boîtes de dialogue et les paramètres du client, qui sont communes à plusieurs types d’applications hôtes, telles que Word, Excel et PowerPoint. Étant donné que l’API partagée fournit des fonctionnalités limitées pour une interaction avec Excel, vous pouvez l’utiliser si votre complément doit s’exécuter sur Excel 2013.
+* **API commune** : Introduite avec Office 2013, l'API commune vous permet d'accéder à des fonctionnalités telles que l'interface utilisateur, les boîtes de dialogue et les paramètres client qui sont communs à plusieurs types d'applications hôtes telles que Word, Excel et PowerPoint. Étant donné que l’API commune fournit des fonctionnalités limitées pour une interaction avec Excel, vous pouvez l’utiliser si votre complément doit s’exécuter sur Excel 2013.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
@@ -111,4 +111,4 @@ Apprenez à [créer votre premier complément Excel](excel-add-ins-get-started-o
 - [Meilleures pratiques en matière de développement de compléments Office](../concepts/add-in-development-best-practices.md)
 - [Instructions de conception pour les compléments Office](../design/add-in-design.md)
 - [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
-- [Référence de l’API JavaScript pour Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)
+- [Référence de l’API JavaScript pour Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
