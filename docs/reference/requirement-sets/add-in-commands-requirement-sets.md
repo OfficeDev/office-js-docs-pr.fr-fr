@@ -1,3 +1,14 @@
+---
+title: Ensembles de conditions requises concernant les commandes de complément
+description: ''
+ms.date: 11/21/2018
+ms.openlocfilehash: c308112a923483ac9ac82cd08b42d7744d93c8e3
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457606"
+---
 # <a name="add-in-commands-requirement-sets"></a>Ensembles de conditions requises concernant les commandes de complément
 
 Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
@@ -18,7 +29,7 @@ Le tableau suivant répertorie les ensembles de conditions requises des commande
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | AddinCommands 1.1  | S/O | 16.0.4678.1000 *Pris en charge uniquement dans Outlook*  | Version 1705 (build 8121.1000) ou ultérieure | S/O | 15.34 ou version ultérieure\*| Mai 2017 |
 
->\* La méthode [Office.context.requirements.isSetSupported](https://docs.microsoft.com/javascript/api/office/office.requirementsetsupport?view=office-js#issetsupported-name--minversion-) renverra `false` par erreur pour les versions 16.9 &ndash; 16.14 (incluse), mais l’ensemble de conditions requises *est* pris en charge sur ces versions.
+>\* La méthode [Office.context.requirements.isSetSupported](https://docs.microsoft.com/javascript/api/office/office.requirementsetsupport#issetsupported-name--minversion-) renverra `false` par erreur pour les versions 16.9 &ndash; 16.14 (incluse), mais l’ensemble de conditions requises *est* pris en charge sur ces versions.
 
 Pour en savoir plus sur les versions, les numéros de build et Office Online Server, voir :
 

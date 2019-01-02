@@ -1,20 +1,20 @@
 ---
 title: Utiliser l’API de dialogue dans vos compléments Office
 description: ''
-ms.date: 11/28/2018
-ms.openlocfilehash: b19d56d3f4fb831eb8c0ca16af53ee309989d223
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.date: 12/20/2018
+ms.openlocfilehash: c96fa69e5bd3d1c6c028921ec9e4f7f220e710c9
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270956"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27458082"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Utiliser l’API de dialogue dans vos compléments Office
 
-Vous pouvez utiliser l’[API de dialogue](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) pour ouvrir des boîtes de dialogue dans votre complément Office. Cet article fournit des conseils concernant l’utilisation de l’API de dialogue dans votre complément Office.
+Vous pouvez utiliser l’[API de dialogue](https://docs.microsoft.com/javascript/api/office/office.ui) pour ouvrir des boîtes de dialogue dans votre complément Office. Cet article fournit des conseils concernant l’utilisation de l’API de dialogue dans votre complément Office.
 
 > [!NOTE]
-> Pour plus d’informations sur les compléments où l’API de dialogue est actuellement prise en charge, consultez la rubrique relative aux [ensembles de conditions requises de l’API de dialogue](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets?view=office-js). L’API de dialogue est actuellement prise en charge pour Word, Excel, PowerPoint et Outlook.
+> Pour plus d’informations sur les compléments où l’API de dialogue est actuellement prise en charge, consultez la rubrique relative aux [ensembles de conditions requises de l’API de dialogue](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets). L’API de dialogue est actuellement prise en charge pour Word, Excel, PowerPoint et Outlook.
 
 > Un scénario principal pour l’API de dialogue consiste à activer l’authentification pour une ressource telle que Google ou Facebook.
 
@@ -35,11 +35,11 @@ Notez que la boîte de dialogue s’ouvre toujours au centre de l’écran. L’
 
 ## <a name="dialog-api-scenarios"></a>Scénarios de l’API de dialogue
 
-Les API JavaScript Office prennent en charge les scénarios suivants avec un objet [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog?view=office-js) et deux fonctions dans l’[espace de noms Office.context.ui](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js).
+Les API JavaScript Office prennent en charge les scénarios suivants avec un objet [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog) et deux fonctions dans l’[espace de noms Office.context.ui](https://docs.microsoft.com/javascript/api/office/office.ui).
 
 ### <a name="open-a-dialog-box"></a>Ouvrir une boîte de dialogue.
 
-Pour ouvrir une boîte de dialogue, votre code dans le volet Office appelle la méthode [displayDialogAsync](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) et lui transmet l’URL de la ressource que vous voulez ouvrir. Il s’agit généralement d’une page, mais ce peut être une méthode du contrôleur dans une application MVC, un itinéraire, une méthode de service web ou toute autre ressource. Dans cet article, les termes « page » ou « site web » font référence à la ressource dans la boîte de dialogue. Le code suivant est un exemple simple.
+Pour ouvrir une boîte de dialogue, votre code dans le volet Office appelle la méthode [displayDialogAsync](https://docs.microsoft.com/javascript/api/office/office.ui) et lui transmet l’URL de la ressource que vous voulez ouvrir. Il s’agit généralement d’une page, mais ce peut être une méthode du contrôleur dans une application MVC, un itinéraire, une méthode de service web ou toute autre ressource. Dans cet article, les termes « page » ou « site web » font référence à la ressource dans la boîte de dialogue. Le code suivant est un exemple simple.
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
@@ -47,7 +47,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 
 > [!NOTE]
 > - L’URL utilise le protocole HTTP**S**. Ceci est obligatoire pour toutes les pages chargées dans une boîte de dialogue, pas seulement la première page chargée.
-> - Le domaine de la ressource figurant dans la boîte de dialogue est le même que celui de la page hôte, qui peut être la page d’un volet Office ou le [fichier de fonctions](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/functionfile?view=office-js) d’une commande de complément. Obligatoire : la page, la méthode du contrôleur ou toute autre ressource qui est transmise à la méthode `displayDialogAsync` doit se trouver dans le même domaine que la page hôte.
+> - Le domaine de la ressource figurant dans la boîte de dialogue est le même que celui de la page hôte, qui peut être la page d’un volet Office ou le [fichier de fonctions](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/functionfile) d’une commande de complément. Obligatoire : la page, la méthode du contrôleur ou toute autre ressource qui est transmise à la méthode `displayDialogAsync` doit se trouver dans le même domaine que la page hôte.
 
 > [!IMPORTANT]
 > La page hôte et les ressources de la boîte de dialogue doivent avoir le même domaine complet. Si vous tentez de transmettre `displayDialogAsync` à un sous-domaine du domaine du complément, cela ne fonctionnera pas. Le domaine complet et tous les sous-domaines doivent être exactement les mêmes.
@@ -131,8 +131,8 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 ```
 
 > [!NOTE]
-> - Office transmet un objet [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js) au rappel. Il représente le résultat de la tentative d’ouverture de la boîte de dialogue. Il ne représente pas le résultat de tous les événements dans la boîte de dialogue. Pour plus d’informations sur cette distinction, consultez la section [Gestion des erreurs et des événements](#handle-errors-and-events).
-> - La propriété `value` de `asyncResult` est définie sur un objet [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog?view=office-js), qui existe dans la page hôte, pas dans le contexte d’exécution de la boîte de dialogue.
+> - Office transmet un objet [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult) au rappel. Il représente le résultat de la tentative d’ouverture de la boîte de dialogue. Il ne représente pas le résultat de tous les événements dans la boîte de dialogue. Pour plus d’informations sur cette distinction, consultez la section [Gestion des erreurs et des événements](#handle-errors-and-events).
+> - La propriété `value` de `asyncResult` est définie sur un objet [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog), qui existe dans la page hôte, pas dans le contexte d’exécution de la boîte de dialogue.
 > - `processMessage` est la fonction qui gère l’événement. Vous pouvez lui donner le nom que vous souhaitez.
 > - La variable `dialog` est déclarée avec une portée plus large que le rappel, car elle est également référencée dans `processMessage`.
 
@@ -219,6 +219,9 @@ function processMessage(arg) {
 }
 ```
 
+> [!NOTE]
+> L'implémentation `showNotification` n'est pas montrée dans l'exemple de code fourni par cet article. Pour un exemple d'implémentation de cette fonction dans votre complément, voir [Exemple d'API de dialogue de complément Office](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).
+
 ### <a name="closing-the-dialog-box"></a>Fermeture de la boîte de dialogue
 
 Vous pouvez implémenter un bouton de fermeture dans la boîte de dialogue. Pour ce faire, le gestionnaire d’événements Click du bouton doit utiliser `messageParent` pour indiquer à la page hôte que vous avez cliqué sur le bouton. Voici un exemple :
@@ -265,7 +268,7 @@ En plus des erreurs système et de plateforme générales, trois erreurs sont pr
 |<span id="12007">12007</span>|Une boîte de dialogue est déjà ouverte à partir de cette fenêtre hôte. Une fenêtre hôte, par exemple un volet Office, ne peut avoir qu’une seule boîte de dialogue ouverte à la fois.|
 |12009|L’utilisateur a choisi d’ignorer la boîte de dialogue. Cette erreur peut se produire dans les versions en ligne d’Office, quand les utilisateurs peuvent choisir d’autoriser ou non un complément à afficher une boîte de dialogue.|
 
-Lorsque `displayDialogAsync` est appelé, il transmet toujours un objet [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js) à sa fonction de rappel. Lorsque l’appel est réussi (autrement dit, que la fenêtre de dialogue est ouverte), la propriété `value` de l’objet `AsyncResult` est un objet [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog?view=office-js). Vous trouverez un exemple dans la section [Envoi d’informations à la page hôte à partir de la boîte de dialogue](#send-information-from-the-dialog-box-to-the-host-page). Quand l’appel de `displayDialogAsync` échoue, la fenêtre n’est pas créée, la propriété `status` de l’objet `AsyncResult` est définie sur `Office.AsyncResultStatus.Failed` et la propriété `error` de l’objet est remplie. Vous devez toujours disposer d’un rappel qui teste le `status` et répond lorsqu’il s’agit d’une erreur. Pour voir un exemple qui signale simplement le message d’erreur, quel que soit son numéro de code, consultez le code suivant :
+Lorsque `displayDialogAsync` est appelé, il transmet toujours un objet [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult) à sa fonction de rappel. Lorsque l’appel est réussi (autrement dit, que la fenêtre de dialogue est ouverte), la propriété `value` de l’objet `AsyncResult` est un objet [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog). Vous trouverez un exemple dans la section [Envoi d’informations à la page hôte à partir de la boîte de dialogue](#send-information-from-the-dialog-box-to-the-host-page). Quand l’appel de `displayDialogAsync` échoue, la fenêtre n’est pas créée, la propriété `status` de l’objet `AsyncResult` est définie sur `Office.AsyncResultStatus.Failed` et la propriété `error` de l’objet est remplie. Vous devez toujours disposer d’un rappel qui teste le `status` et répond lorsqu’il s’agit d’une erreur. Pour voir un exemple qui signale simplement le message d’erreur, quel que soit son numéro de code, consultez le code suivant :
 
 ```js
 var dialog;
@@ -440,7 +443,7 @@ Pour plus d’informations sur l’authentification et l’autorisation dans des
 
 ## <a name="use-the-office-dialog-api-with-single-page-applications-and-client-side-routing"></a>Utilisation de l’API de dialogue Office avec des applications à page unique et routage côté client
 
-Si votre complément utilise le routage côté client, comme le font les applications à page unique en règle générale, vous avez la possibilité de transmettre l’URL d’un itinéraire à la méthode [displayDialogAsync](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js), au lieu de l’URL de la page HTML complète et distincte.
+Si votre complément utilise le routage côté client, comme le font les applications à page unique en règle générale, vous avez la possibilité de transmettre l’URL d’un itinéraire à la méthode [displayDialogAsync](https://docs.microsoft.com/javascript/api/office/office.ui), au lieu de l’URL de la page HTML complète et distincte.
 
 > [!IMPORTANT]
 >La boîte de dialogue se trouve dans une nouvelle fenêtre avec son propre contexte d’exécution. Si vous transmettez un itinéraire, votre page de base et son code d’initialisation et d’amorçage s’exécutent à nouveau dans ce nouveau contexte, et toutes les variables sont définies sur leurs valeurs initiales dans la fenêtre de dialogue. Par conséquent, cette technique lance une deuxième instance de votre application dans la fenêtre de dialogue. Le code qui modifie des variables dans la fenêtre de dialogue ne change pas la version du volet Office des mêmes variables. De même, la fenêtre de dialogue possède son propre stockage de session, qui n’est pas accessible à partir du code dans le volet Office.

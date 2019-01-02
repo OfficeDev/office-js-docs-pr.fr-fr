@@ -1,8 +1,17 @@
- 
+---
+title: Espace de noms Office – ensemble de conditions requises
+description: ''
+ms.date: 11/08/2018
+ms.openlocfilehash: f4a4f0d7a4ce0de433d4e70b6a4675b5f63f26f0
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457928"
+---
+# <a name="office"></a>Office
 
-# <a name="office"></a>Bureau
-
-L’espace de noms Office fournit des interfaces partagées qui sont utilisées par des compléments dans toutes les applications Office. Cette liste documente uniquement les interfaces utilisées par des compléments Outlook. Pour obtenir une liste complète des espaces de noms Office, consultez la page relative à l’[interface API partagée](/javascript/api/office).
+L’espace de noms Office fournit des interfaces partagées qui sont utilisées par des compléments dans toutes les applications Office. Cette liste documente uniquement les interfaces utilisées par des compléments Outlook. Pour obtenir une liste complète des espaces de noms Office, consultez la page relative à l’[interface API commune](/javascript/api/office).
 
 ##### <a name="requirements"></a>Configuration requise
 

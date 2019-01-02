@@ -1,17 +1,17 @@
 ---
 title: Compléments du volet Office pour Project
 description: ''
-ms.date: 01/23/2018
-ms.openlocfilehash: 024b7d1c7e05e8b7a7a71871eec4b088d45afdc1
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.date: 12/17/2018
+ms.openlocfilehash: 33067fc048be9a69c76d34e19928f5a4bf5bf166
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270781"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457942"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Compléments du volet Office pour Project
 
-Project Standard 2013 et Project Professionnel 2013 (version 15.1 ou une version ultérieure) incluent la prise en charge des compléments du volet Office. Vous pouvez exécuter les compléments du volet Office généraux qui sont développés pour Word 2013 ou Excel 2013. Vous pouvez également développer des compléments personnalisés qui gèrent des événements de sélection dans Project et intégrer des tâches, ressources, affichages et autres données au niveau de la cellule dans un projet avec des listes SharePoint, compléments SharePoint, composants WebPart, services web et applications d’entreprise.
+Project Standard 2013 et Project Professionnel 2013 (version 15.1 ou une version ultérieure) incluent la prise en charge des compléments du volet des tâches. Vous pouvez exécuter les compléments du volet des tâches qui sont développés pour Word ou Excel. Vous pouvez également développer des compléments personnalisés qui gèrent des événements de sélection dans Project et intégrer des tâches, ressources, affichages et autres données au niveau de la cellule dans un projet avec des listes SharePoint, compléments SharePoint, composants WebPart, services web et applications d’entreprise.
 
 > [!NOTE]
 > Le [téléchargement du kit de développement logiciel (SDK) de Project 2013](https://www.microsoft.com/download/details.aspx?id=30435%20) inclut des exemples de compléments qui montrent comment utiliser le modèle objet du complément pour Project et le service OData pour la création de rapports de données dans Project Server 2013. Après avoir extrait et installé le SDK, accédez au sous-dossier `\Samples\Apps\`.
@@ -51,9 +51,7 @@ La bibliothèque JavaScript pour les compléments Project comprend des extension
 
 Pour créer un complément, vous pouvez utiliser un éditeur de texte simple afin de créer une page web HTML avec les fichiers JavaScript associés, les fichiers CSS et les requêtes REST. Outre une page HTML ou une application web, le complément nécessite un fichier manifeste XML pour la configuration. Project peut utiliser un fichier manifeste qui inclut un attribut  **type** spécifié comme **TaskPaneExtension**. Le fichier manifeste peut être utilisé par plusieurs applications clientes Office 2013, ou vous pouvez créer un fichier manifeste spécifique pour Project 2013. Pour plus d’informations, voir la section  _Notions fondamentales de développement_ dans [Vue d’ensemble de la plateforme des compléments pour Office](../overview/office-add-ins.md).
 
-Pour les applications complexes personnalisées, et pour un débogage plus facile, nous vous recommandons d’utiliser Visual Studio 2015 afin de développer des sites web pour les compléments. Visual Studio 2015 contient des modèles pour les projets de compléments qui permettent de choisir le type de complément (volet Office, contenu ou messagerie) et l’application hôte (Project, Word, Excel ou Outlook).
-
-Lorsque vous installez le Kit de développement logiciel (SDK) de Project 2013, le sous-répertoire `\Samples\Apps\` inclut les exemples de compléments suivants :
+Lorsque vous installez le Kit de développement logiciel (SDK) de Project 2013, le sous-répertoire `\Samples\Apps\` inclut les exemples de compléments suivants:
 
 
 -  **Bing Search :**  le fichier manifeste BingSearch.xml pointe vers la page de recherche Bing pour les périphériques mobiles. Comme l’application web Bing existe déjà sur Internet, le complément de recherche Bing n’utilise pas d’autres fichiers de code source ou le modèle objet de complément pour Project.
@@ -204,7 +202,7 @@ Vous pouvez distribuer des compléments via un partage de fichiers, un catalogue
 
 - [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
 - [Manifeste XML des compléments Office](../develop/add-in-manifests.md)
-- [API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)
+- [API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)
 - [Créer votre premier complément du volet Office pour Project 2013 à l’aide d’un éditeur de texte](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [Créer un complément Project qui utilise REST avec un service OData Project Server local](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
 - [Téléchargement du Kit de développement logiciel (SDK) de Project 2013](https://www.microsoft.com/download/details.aspx?id=30435%20)
