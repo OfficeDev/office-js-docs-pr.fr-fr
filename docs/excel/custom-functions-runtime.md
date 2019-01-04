@@ -2,12 +2,12 @@
 ms.date: 12/5/2018
 description: Comprendre les scénarios clés dans le développement de fonctions personnalisées Excel qui utilisent le nouveau runtime JavaScript.
 title: Runtime pour les fonctions personnalisées Excel
-ms.openlocfilehash: 715690c5cba2466e4a50ba2a33d2324a1abe02f5
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: a2e59c24addecbf0159b816b15c3bf6faf623475
+ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270830"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "27724843"
 ---
 # <a name="runtime-for-excel-custom-functions-preview"></a>Runtime pour les fonctions personnalisées Excel (aperçu)
 
@@ -199,4 +199,4 @@ Pour créer un complément qui s’exécute sur plusieurs plateformes (l’un de
 * [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
 * [Métadonnées fonctions personnalisées](custom-functions-json.md)
 * [Meilleures pratiques de fonctions personnalisées](custom-functions-best-practices.md)
-* [Didacticiel de fonctions personnalisées Excel](excel-tutorial-custom-functions.md)
+* [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md)

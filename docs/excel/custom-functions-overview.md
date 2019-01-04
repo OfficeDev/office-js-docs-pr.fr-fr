@@ -2,12 +2,12 @@
 ms.date: 12/21/2018
 description: Créer des fonctions personnalisées dans Excel à l’aide de JavaScript.
 title: Créer des fonctions personnalisées dans Excel (Aperçu)
-ms.openlocfilehash: 8f30ee32168147b8beeb6e60372cd631237ce993
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: bee981d11f8c05948795867f2d759936bfe16d82
+ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433039"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "27724871"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Créer des fonctions personnalisées dans Excel (aperçu)
 
@@ -428,7 +428,7 @@ function getComment(x) {
 - **28 novembre 2017 :** prise en charge de l’annulation sur des fonctions asynchrones (nécessite la modification des fonctions de flux)
 - **7 mai 2018**: prise en charge pour Mac, Excel Online et fonctions synchrones dans les processus en cours d’exécution
 - **20 septembre 2018**: prise en charge de fonctions personnalisées lors de l’exécution de JavaScript. Pour plus d’informations, voir [Runtime pour les fonctions personnalisées Excel](custom-functions-runtime.md).
-- **20 octobre 2018**: avec le programme[October Insiders build](https://support.office.com/fr-FR/article/what-s-new-for-office-insiders-c152d1e2-96ff-4ce9-8c14-e74e13847a24), les fonctions personnalisées nécessitent désormais le paramètre « id » dans votre[métadonnées fonctions personnalisées](custom-functions-json.md) pour les versions Windows Bureau et Online. Sur Mac, ce paramètre doit être ignoré.
+- **20 octobre 2018**: avec le programme[October Insiders build](https://support.office.com/en-us/article/what-s-new-for-office-insiders-c152d1e2-96ff-4ce9-8c14-e74e13847a24), les fonctions personnalisées nécessitent désormais le paramètre « id » dans votre[métadonnées fonctions personnalisées](custom-functions-json.md) pour les versions Windows Bureau et Online. Sur Mac, ce paramètre doit être ignoré.
 
 
 \* pour la chaîne [Office Insider](https://products.office.com/office-insider) (anciennement appelée « Insider Fast »)
@@ -438,4 +438,4 @@ function getComment(x) {
 * [Métadonnées fonctions personnalisées](custom-functions-json.md)
 * [Exécution de fonctions personnalisées Excel](custom-functions-runtime.md)
 * [Meilleures pratiques de fonctions personnalisées](custom-functions-best-practices.md)
-* [Didacticiel de fonctions personnalisées Excel](excel-tutorial-custom-functions.md)
+* [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md)
