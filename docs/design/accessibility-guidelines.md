@@ -1,3 +1,14 @@
+---
+title: Instructions d’accessibilité pour les compléments Office
+description: ''
+ms.date: 09/24/2018
+ms.openlocfilehash: d23041e874792a5718708c2171b1fdbe0675cddf
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433389"
+---
 # <a name="accessibility-guidelines"></a>Conseils sur l’accessibilité
 
 Lorsque vous concevez et développez des compléments Office, il est important de faire en sorte que tous les utilisateurs et clients potentiels puissent utiliser votre complément. Appliquez les instructions suivantes pour vous assurer que votre solution est accessible à tous les publics.

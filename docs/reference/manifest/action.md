@@ -1,3 +1,14 @@
+---
+title: Élément Action dans le fichier manifeste
+description: ''
+ms.date: 11/14/2018
+ms.openlocfilehash: 04c081a02768446fcf587b8b6a7c4e1dcd66012f
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433270"
+---
 # <a name="action-element"></a>Action, élément
 
 Indique l’action à réaliser lorsque l’utilisateur sélectionne des contrôles de [bouton](control.md#button-control) ou de [menu](control.md#menu-dropdown-button-controls).

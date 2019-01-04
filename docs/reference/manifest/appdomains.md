@@ -1,4 +1,15 @@
-# <a name="appdomains-element"></a>Élément AppDomains
+---
+title: Élément AppDomains dans le fichier manifeste
+description: ''
+ms.date: 12/13/2018
+ms.openlocfilehash: cc2f5ade0bdda214c85490f8e474b42f921edbe8
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433677"
+---
+# <a name="appdomains-element"></a>AppDomains, élément
 
 Répertorie tout domaine supplémentaire qui sera utilisé par votre complément Office pour charger des pages en plus du domaine spécifié dans l’élément SourceLocation. Pour chaque domaine supplémentaire, indiquez un élément AppDomain.
 

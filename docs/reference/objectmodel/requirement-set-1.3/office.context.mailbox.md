@@ -1,7 +1,17 @@
-
+---
+title: Office.context – ensemble de conditions requises 1.3
+description: ''
+ms.date: 10/31/2018
+ms.openlocfilehash: eb4a69b6119644f288f90a80b161911ab4311339
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433354"
+---
 # <a name="mailbox"></a>boîte aux lettres
 
-### [Office](Office.md)[.context](Office.context.md). mailbox
+### <a name="officeofficemdcontextofficecontextmdmailbox"></a>[Office](Office.md)[.context](Office.context.md).mailbox
 
 Permet d’accéder au modèle objet du complément Outlook pour Microsoft Outlook et Microsoft Outlook sur le web.
 

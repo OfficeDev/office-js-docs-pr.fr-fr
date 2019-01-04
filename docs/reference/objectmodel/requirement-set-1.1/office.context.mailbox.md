@@ -1,9 +1,19 @@
-
+---
+title: Office.context.mailbox – ensemble de conditions requises 1.1
+description: ''
+ms.date: 10/31/2018
+ms.openlocfilehash: 352132fcc4645463b922cd3bab200fb8efb167b4
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433326"
+---
 # <a name="mailbox"></a>boîte aux lettres
 
-### [Office](Office.md)[.context](Office.context.md). mailbox
+### <a name="officeofficemdcontextofficecontextmdmailbox"></a>[Office](Office.md)[.context](Office.context.md).mailbox
 
-Permet d’accéder au modèle d’objet du complément Outlook pour Microsoft Outlook et Microsoft Outlook sur le web.
+Permet d’accéder au modèle objet du complément Outlook pour Microsoft Outlook et Microsoft Outlook sur le web.
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -307,12 +317,12 @@ Envoie une demande asynchrone à un des services web Exchange (EWS) sur le serve
 
 > [!NOTE]
 > Cette méthode n’est pas prise en charge dans les cas suivants :
-> - Dans Outlook pour iOS ou Outlook pour Android
-> - Lorsque le complément est chargé dans une boîte aux lettres Gmail
+> - dans Outlook pour iOS ou Outlook pour Android ;
+> - quand le complément est chargé dans une boîte aux lettres Gmail.
 > 
 > Dans ces cas de figure, les compléments doivent [utiliser les API REST](https://docs.microsoft.com/outlook/add-ins/use-rest-api) pour accéder à la boîte aux lettres de l’utilisateur.
 
-La méthode `makeEwsRequestAsync` envoie une demande EWS à Exchange de la part du complément. Pour obtenir la liste des opérations EWS prises en charge, reportez-vous à la rubrique [Appeler des services web à partir d’un complément Outlook](https://docs.microsoft.com/outlook/add-ins/web-services#ews-operations-that-add-ins-support).
+La méthode `makeEwsRequestAsync` envoie une demande EWS à Exchange de la part du complément. Pour obtenir la liste des opérations EWS prises en charge, reportez-vous à l’article [Appeler des services web à partir d’un complément Outlook](https://docs.microsoft.com/outlook/add-ins/web-services#ews-operations-that-add-ins-support).
 
 Vous ne pouvez pas demander des éléments associés à un dossier avec la méthode `makeEwsRequestAsync`.
 

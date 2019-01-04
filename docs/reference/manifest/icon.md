@@ -1,4 +1,15 @@
-# <a name="icon-element"></a>Élément d’icône
+---
+title: Élément Icon dans le fichier manifeste
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 476e5720e4959c3c766a7ae6206f2bf12731bfd2
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432269"
+---
+# <a name="icon-element"></a>Icon, élément
 
 Définit les éléments **Image** pour les contrôles de [bouton](control.md#button-control) ou de [menu](control.md#menu-dropdown-button-controls).
 
@@ -28,7 +39,7 @@ Image du bouton. L’attribut  **resid** doit être défini sur la valeur de l�
 
 ## <a name="additional-requirements-for-mobile-form-factors"></a>Configuration requise supplémentaire pour les facteurs de forme pour environnement mobile
 
-Lorsque l’élément **Icon** parent est un descendant de l’élément [MobileFormFactor](mobileformfactor.md), la taille minimale requise est légèrement différente. Le manifeste doit fournir au minimum les tailles 25, 32 et 48 pixels. Chaque taille fournie doit apparaître trois fois, avec un ensemble d’attributs `scale` défini sur `1`, `2` ou `3`.
+Lorsque l’élément **Icon** parent est un descendant de l’élément [MobileFormFactor](mobileformfactor.md), la taille minimale requise est légèrement différente. Le manifeste doit fournir au minimum les tailles 25, 32 et 48 pixels. Chaque taille fournie doit apparaître trois fois, avec un ensemble d’attributs `scale` défini sur `1`, `2` ou `3`.
 
 ```xml
 <Icon xsi:type="bt:MobileIconList">

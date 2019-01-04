@@ -1,4 +1,15 @@
-# <a name="formsettings-element"></a>Élément FormSettings
+---
+title: Élément FormSettings dans le fichier manifeste
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 99fd793798e850e3255b4269c7df0dc025549e3c
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433298"
+---
+# <a name="formsettings-element"></a>FormSettings, élément
 
 Spécifie l’emplacement source et les paramètres de contrôle de votre complément de messagerie.
 
@@ -18,5 +29,5 @@ Spécifie l’emplacement source et les paramètres de contrôle de votre compl�
 
 ## <a name="can-contain"></a>Peut contenir
 
-[Formulaire](form.md)
+[Form](form.md)
 

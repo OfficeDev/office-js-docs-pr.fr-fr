@@ -1,8 +1,19 @@
+---
+title: Instructions relatives au ton pour les compléments Office
+description: ''
+ms.date: 06/27/2018
+ms.openlocfilehash: afd8d63095661634052c51ea528502368023140d
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433284"
+---
 # <a name="voice-guidelines"></a>Conseils sur le ton
 
 Lorsque vous concevez vos compléments Office, tenez compte du ton que vous utilisez dans le texte de l’interface utilisateur et des éléments. Tâchez de suivre la voix et le ton de l’interface utilisateur d’Office, à savoir un ton informel, amical et accessible aux utilisateurs. 
 
-Pour aligner votre texte avec les principes de la voix Office :
+Pour aligner votre texte avec les principes de la voix Office :
 
 - **Utilisez un style naturel.** Écrivez de la façon dont vous parlez. Évitez l’utilisation de jargon et de mots ou phrases trop techniques. Utilisez des termes que vos utilisateurs connaissent.
 - **Utilisez un langage simple et direct.** Utilisez la voix active, ainsi que des phrases et des mots courts. 
@@ -13,7 +24,7 @@ Pour aligner votre texte avec les principes de la voix Office :
 
 ## <a name="see-also"></a>Voir aussi
 
-- Conseils pour [écrire pour toutes les compétences](https://docs.microsoft.com/style-guide/accessibility/writing-all-abilities)
-- [Les 10 meilleures conseils pour le style et la ton de Microsoft](https://docs.microsoft.com/style-guide/top-10-tips-style-voice)
-- Conseils sur [le choix des mots](https://docs.microsoft.com/style-guide/word-choice/)
--  [Politiques de validation](https://docs.microsoft.com/office/dev/store/validation-policies) des compléments Office
+- Instructions relatives à l’[écriture pour toutes les capacités](https://docs.microsoft.com/style-guide/accessibility/writing-all-abilities)
+- [10 conseils concernant le style et le ton de Microsoft](https://docs.microsoft.com/style-guide/top-10-tips-style-voice)
+- Instructions concernant le [choix des mots](https://docs.microsoft.com/style-guide/word-choice/)
+-  [Stratégies de validation](https://docs.microsoft.com/office/dev/store/validation-policies) pour les compléments Office

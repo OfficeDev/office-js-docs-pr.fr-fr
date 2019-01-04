@@ -1,31 +1,31 @@
 ---
-title: Utiliser des thèmes de document dans vos compléments PowerPoint
+title: Utiliser des thèmes de document dans vos compléments PowerPoint
 description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: d3cc52d965765c80a692075fe3c6aad4ec64a8ae
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.date: 12/17/2018
+ms.openlocfilehash: 5caa274ae8774e8a30c416085ab4a431d6907944
+ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925443"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "27383252"
 ---
-# <a name="use-document-themes-in-your-powerpoint-add-ins"></a>Utiliser des thèmes de document dans vos compléments PowerPoint
+# <a name="use-document-themes-in-your-powerpoint-add-ins"></a>Utiliser des thèmes de document dans vos compléments PowerPoint
 
 Un [thème Office](https://support.office.com/Article/What-is-a-theme--7528ccc2-4327-4692-8bf5-9b5a3f2a5ef5) est constitué, en partie, d’un jeu de polices et de couleurs visuellement assortis que vous pouvez appliquer à des présentations, des documents, des feuilles de calcul et des courriers électroniques. Pour appliquer ou personnaliser le thème d’une présentation dans PowerPoint, utilisez les groupes **Thèmes** et **Variantes** dans l’onglet **Conception** du ruban. PowerPoint affecte le **thème Office** par défaut à chaque nouvelle présentation vierge, mais vous pouvez choisir parmi les autres thèmes disponibles dans l’onglet **Conception**, télécharger des thèmes supplémentaires à partir d’Office.com, ou créer et personnaliser votre propre thème.
 
-OfficeThemes.css vous permet de concevoir des compléments coordonnés à PowerPoint de deux façons :
+OfficeThemes.css vous permet de concevoir des compléments coordonnés à PowerPoint de deux façons :
 
-- **Dans les compléments de contenu pour PowerPoint**. Utilisez les classes de thèmes du document d’OfficeThemes.css pour spécifier les polices et les couleurs correspondant au thème de la présentation dans laquelle votre contenu complément est inséré ; ces polices et couleurs seront mises à jour dynamiquement si un utilisateur modifie ou personnalise le thème de la présentation.
+- **Dans les compléments de contenu pour PowerPoint**. Utilisez les classes de thèmes du document d’OfficeThemes.css pour spécifier les polices et les couleurs correspondant au thème de la présentation dans laquelle votre contenu complément est inséré ; ces polices et couleurs seront mises à jour dynamiquement si un utilisateur modifie ou personnalise le thème de la présentation.
     
-- **Dans les compléments du volet Office pour PowerPoint**. Utilisez les classes de thèmes de l’interface utilisateur Office d’OfficeThemes.css pour spécifier les mêmes polices et couleurs d’arrière-plan que celles utilisées dans l’interface utilisateur, de sorte que vos compléments du volet Office correspondent aux couleurs des volets Office intégrés ; ces couleurs seront mises à jour dynamiquement si un utilisateur modifie le thème de l’interface utilisateur Office.
+- **Dans les compléments du volet Office pour PowerPoint**. Utilisez les classes de thèmes de l’interface utilisateur Office d’OfficeThemes.css pour spécifier les mêmes polices et couleurs d’arrière-plan que celles utilisées dans l’interface utilisateur, de sorte que vos compléments du volet Office correspondent aux couleurs des volets Office intégrés ; ces couleurs seront mises à jour dynamiquement si un utilisateur modifie le thème de l’interface utilisateur Office.
 
 ### <a name="document-theme-colors"></a>Couleurs de thème de document
 
-Chaque thème de document Office définit 12 couleurs. Dix de ces couleurs sont disponibles lorsque vous définissez la police, l’arrière-plan et d’autres paramètres de couleur dans une présentation grâce au sélecteur de couleurs.
+Chaque thème de document Office définit 12 couleurs. Dix de ces couleurs sont disponibles lorsque vous définissez la police, l’arrière-plan et d’autres paramètres de couleur dans une présentation grâce au sélecteur de couleurs.
 
 ![Palette de couleurs](../images/office15-app-color-palette.png)
 
-Pour afficher ou personnaliser l’intégralité des 12 couleurs de thème dans PowerPoint, dans le groupe **Variantes** de l’onglet **Conception**, cliquez sur le menu déroulant **Plus**, puis choisissez **Couleur** et cliquez sur **Personnaliser les couleurs** pour afficher la boîte de dialogue **Créer de nouvelles couleurs de thème**.
+Pour afficher ou personnaliser l’intégralité des 12 couleurs de thème dans PowerPoint, dans le groupe **Variantes** de l’onglet **Conception**, cliquez sur le menu déroulant **Plus**, puis choisissez **Couleur** > **Personnaliser les couleurs** pour afficher la boîte de dialogue **Créer de nouvelles couleurs de thème**.
 
 ![Boîte de dialogue Créer de nouvelles couleurs de thème](../images/office15-app-create-new-theme-colors.png)
 
@@ -33,11 +33,11 @@ Les quatre premières couleurs sont pour le texte et les arrière-plans. Un text
 
 ### <a name="document-theme-fonts"></a>Polices de thème de document
 
-Chaque thème de document Office définit également deux polices : une pour les titres et l’autre pour le corps de texte. PowerPoint utilise ces polices pour créer des styles de texte automatiques. En outre, les galeries **Styles rapides** pour le texte et **WordArt** utilisent ces mêmes polices de thème. Ces deux polices sont les deux premières proposées lorsque vous sélectionnez des polices avec le sélecteur de polices.
+Chaque thème de document Office définit également deux polices : une pour les titres et l’autre pour le corps de texte. PowerPoint utilise ces polices pour créer des styles de texte automatiques. En outre, les galeries **Styles rapides** pour le texte et **WordArt** utilisent ces mêmes polices de thème. Ces deux polices sont les deux premières proposées lorsque vous sélectionnez des polices avec le sélecteur de polices.
 
 ![Sélecteur de polices](../images/office15-app-font-picker.png)
 
-Pour afficher ou personnaliser les polices de thème dans PowerPoint, dans le groupe **Variantes** de l’onglet **Conception**, cliquez sur le menu déroulant **Plus**. Ensuite, pointez vers **Polices** et cliquez sur **Personnaliser les polices** pour afficher la boîte de dialogue **Créer de nouvelles polices de thème**.
+Pour afficher ou personnaliser les polices de thème dans PowerPoint, dans le groupe **Variantes** de l’onglet **Conception**, cliquez sur le menu déroulant **Plus**. Ensuite, sélectionnez **Polices** > **Personnaliser les polices** pour afficher la boîte de dialogue **Créer de nouvelles polices de thème**.
 
 ![Boîte de dialogue Créer de nouvelles polices de thème](../images/office15-app-create-new-theme-fonts.png)
 
@@ -57,9 +57,12 @@ En utilisant le fichier OfficeThemes.css avec vos compléments de contenu pour P
 
 Suivez la procédure suivante pour ajouter et référencer le fichier OfficeThemes.css dans votre projet complément.
 
-#### <a name="to-add-officethemescss-to-your-visual-studio-project"></a>Pour ajouter le fichier OfficeThemes.css à votre projet Visual Studio
+#### <a name="to-add-officethemescss-to-your-visual-studio-project"></a>Pour ajouter le fichier OfficeThemes.css à votre projet Visual Studio
 
-1. Dans l’**explorateur de solutions**, cliquez avec le bouton droit de la souris sur le dossier **Contenu** dans le projet _**project_name**_**Web**, pointez sur **Ajouter** et sélectionnez **Feuille de style**.
+> [!NOTE]
+> Les étapes décrites dans cette procédure s’appliquent uniquement à Visual Studio 2015. Si vous utilisez Visual Studio 2017, le fichier OfficeThemes.css est créé automatiquement pour les nouveaux projets de complément PowerPoint que vous créez.
+
+1. Dans l’**explorateur de solutions**, cliquez avec le bouton droit de la souris sur le dossier **Contenu** dans le projet _**project_name**_**Web**, sélectionnez **Ajouter** et **Feuille de style**.
     
 2. Nommez la nouvelle feuille de style **OfficeThemes**.
     
@@ -125,29 +128,29 @@ Suivez la procédure suivante pour ajouter et référencer le fichier OfficeThem
     .office-officeTheme-secondary-fontColor { color:#262626; } 
     .office-officeTheme-secondary-bgColor { background-color:#ffffff; }
     ```
-4. Si vous utilisez un autre outil que Visual Studio pour créer votre complément, copiez le code CSS de l’étape 3 dans un fichier texte, en vous assurant que le fichier est enregistré sous le nom OfficeThemes.css.   
+4. Si vous utilisez un autre outil que Visual Studio pour créer votre complément, copiez le code CSS de l’étape 3 dans un fichier texte, en vous assurant que le fichier est enregistré sous le nom OfficeThemes.css.   
 
 ### <a name="referencing-officethemescss-in-your-add-ins-html-pages"></a>Référencement d’OfficeThemes.css dans les pages HTML de votre complément
 
-Pour utiliser le fichier OfficeThemes.css dans votre projet de complément, ajoutez une balise `<link>` référençant le fichier OfficeThemes.css à l’intérieur de la balise `<head>` des pages web (par exemple, un fichier .html, .aspx ou .php) qui implémentent l’interface utilisateur de votre complément au format suivant :
+Pour utiliser le fichier OfficeThemes.css dans votre projet de complément, ajoutez une balise `<link>` référençant le fichier OfficeThemes.css à l’intérieur de la balise `<head>` des pages web (par exemple, un fichier .html, .aspx ou .php) qui implémentent l’interface utilisateur de votre complément au format suivant :
 
 ```HTML
 <link href="<local_path_to_OfficeThemes.css>" rel="stylesheet" type="text/css" />
 ```
 
-Pour effectuer cette opération dans Visual Studio, procédez comme suit.
+Pour effectuer cette opération dans Visual Studio, procédez comme suit.
 
 #### <a name="to-reference-officethemescss-in-your-add-in-for-powerpoint"></a>Pour référencer OfficeThemes.css dans votre complément PowerPoint
 
-1. Dans Visual Studio 2015, ouvrez ou créez un projet de **complément Office**.
+1. Dans Visual Studio 2017, ouvrez ou créez un projet de **complément Office**.
     
-2. Dans les pages HTML qui implémentent l’interface utilisateur de votre complément, telles que Home.html dans le modèle par défaut, ajoutez la balise `<link>` suivante à l’intérieur de la balise `<head>` qui référence le fichier OfficeThemes.css :
+2. Dans les pages HTML qui implémentent l’interface utilisateur de votre complément, telles que Home.html dans le modèle par défaut, ajoutez la balise `<link>` suivante à l’intérieur de la balise `<head>` qui référence le fichier OfficeThemes.css :
     
     ```HTML
     <link href="../../Content/OfficeThemes.css" rel="stylesheet" type="text/css" />
     ```
 
-Si vous créez votre complément avec un outil autre que Visual Studio, ajoutez une balise `<link>` avec le même format spécifiant un chemin d’accès relatif vers la copie d’OfficeThemes.css qui sera déployée avec votre complément.
+Si vous créez votre complément avec un outil autre que Visual Studio, ajoutez une balise `<link>` avec le même format spécifiant un chemin d’accès relatif vers la copie d’OfficeThemes.css qui sera déployée avec votre complément.
 
 ### <a name="using-officethemescss-document-theme-classes-in-your-content-add-ins-html-page"></a>Utilisation de classes de thèmes de document OfficeThemes.css dans la page HTML de votre complément de contenu
 
@@ -221,14 +224,14 @@ Le fichier OfficeThemes.css contient deux jeux de classes que vous pouvez utilis
 
 ### <a name="theme-classes-for-content-add-ins"></a>Classes de thèmes pour les compléments de contenu
 
-Le fichier OfficeThemes.css fournit des classes qui correspondent aux 12 couleurs et aux 2 polices utilisées dans un thème de document. Ces classes sont adaptées aux compléments de contenu pour PowerPoint, de sorte que les polices et les couleurs de votre complément seront en harmonie avec la présentation dans laquelle votre complément est inséré.
+Le fichier OfficeThemes.css fournit des classes qui correspondent aux 12 couleurs et aux 2 polices utilisées dans un thème de document. Ces classes sont adaptées aux compléments de contenu pour PowerPoint, de sorte que les polices et les couleurs de votre complément seront en harmonie avec la présentation dans laquelle votre complément est inséré.
 
 #### <a name="theme-fonts-for-content-add-ins"></a>Polices de thème pour les compléments de contenu
 
 |**Classe**|**Description**|
 |:-----|:-----|
 | `office-bodyFont-eastAsian`|Nom en langues d’Asie de l’Est de la police du corps de texte.|
-| `office-bodyFont-latin`|Nom latin de la police du corps de texte (par défaut, « Calibri »).|
+| `office-bodyFont-latin`|Nom latin de la police du corps de texte (par défaut, « Calibri »).|
 | `office-bodyFont-script`|Nom de script de la police du corps de texte.|
 | `office-bodyFont-localized`|Nom localisé de la police du corps de texte. Spécifie le nom de la police par défaut en fonction de la culture actuellement utilisée dans Office.|
 | `office-headerFont-eastAsian`|Nom en langues d’Asie de l’Est de la police des en-têtes.|
@@ -242,30 +245,30 @@ Le fichier OfficeThemes.css fournit des classes qui correspondent aux 12 couleur
 
 |**Classe**|**Description**|
 |:-----|:-----|
-| `office-docTheme-primary-fontColor`|Couleur de police principale. Par défaut : #000000|
-| `office-docTheme-primary-bgColor`|Couleur d’arrière-plan de police principale. Par défaut : #FFFFFF|
-| `office-docTheme-secondary-fontColor`|Couleur de police secondaire. Par défaut : #000000|
-| `office-docTheme-secondary-bgColor`|Couleur d’arrière-plan de police secondaire. Par défaut : #FFFFFF|
-| `office-contentAccent1-color`|Couleur d’accentuation de police 1. Par défaut : #5B9BD5|
-| `office-contentAccent2-color`|Couleur d’accentuation de police 2. Par défaut : #ED7D31|
-| `office-contentAccent3-color`|Couleur d’accentuation de police 3. Par défaut : #A5A5A5|
-| `office-contentAccent4-color`|Couleur d’accentuation de police 4. Par défaut : #FFC000|
-| `office-contentAccent5-color`|Couleur d’accentuation de police 5. Par défaut : #4472C4|
-| `office-contentAccent6-color`|Couleur d’accentuation de police 6. Par défaut : #70AD47|
-| `office-contentAccent1-bgColor`|Couleur d’accentuation d’arrière-plan 1. Par défaut : #5B9BD5|
-| `office-contentAccent2-bgColor`|Couleur d’accentuation d’arrière-plan 2. Par défaut : #ED7D31|
-| `office-contentAccent3-bgColor`|Couleur d’accentuation d’arrière-plan 3. Par défaut : #A5A5A5|
-| `office-contentAccent4-bgColor`|Couleur d’accentuation d’arrière-plan 4. Par défaut : #FFC000|
-| `office-contentAccent5-bgColor`|Couleur d’accentuation d’arrière-plan 5. Par défaut : #4472C4|
-| `office-contentAccent6-bgColor`|Couleur d’accentuation d’arrière-plan 6. Par défaut : #70AD47|
-| `office-contentAccent1-borderColor`|Couleur d’accentuation de bordure 1. Par défaut : #5B9BD5|
-| `office-contentAccent2-borderColor`|Couleur d’accentuation de bordure 2. Par défaut : #ED7D31|
-| `office-contentAccent3-borderColor`|Couleur d’accentuation de bordure 3. Par défaut : #A5A5A5|
-| `office-contentAccent4-borderColor`|Couleur d’accentuation de bordure 4. Par défaut : #FFC000|
-| `office-contentAccent5-borderColor`|Couleur d’accentuation de bordure 5. Par défaut : #4472C4|
-| `office-contentAccent6-borderColor`|Couleur d’accentuation de bordure 6. Par défaut : #70AD47|
-| `office-a`|Couleur de lien hypertexte. Par défaut : #0563C1|
-| `office-a:visited`|Couleur de lien hypertexte visité. Par défaut : #954F72|
+| `office-docTheme-primary-fontColor`|Couleur de police principale. Par défaut : #000000|
+| `office-docTheme-primary-bgColor`|Couleur d’arrière-plan de police principale. Par défaut : #FFFFFF|
+| `office-docTheme-secondary-fontColor`|Couleur de police secondaire. Par défaut : #000000|
+| `office-docTheme-secondary-bgColor`|Couleur d’arrière-plan de police secondaire. Par défaut : #FFFFFF|
+| `office-contentAccent1-color`|Couleur d’accentuation de police 1. Par défaut : #5B9BD5|
+| `office-contentAccent2-color`|Couleur d’accentuation de police 2. Par défaut : #ED7D31|
+| `office-contentAccent3-color`|Couleur d’accentuation de police 3. Par défaut : #A5A5A5|
+| `office-contentAccent4-color`|Couleur d’accentuation de police 4. Par défaut : #FFC000|
+| `office-contentAccent5-color`|Couleur d’accentuation de police 5. Par défaut : #4472C4|
+| `office-contentAccent6-color`|Couleur d’accentuation de police 6. Par défaut : #70AD47|
+| `office-contentAccent1-bgColor`|Couleur d’accentuation d’arrière-plan 1. Par défaut : #5B9BD5|
+| `office-contentAccent2-bgColor`|Couleur d’accentuation d’arrière-plan 2. Par défaut : #ED7D31|
+| `office-contentAccent3-bgColor`|Couleur d’accentuation d’arrière-plan 3. Par défaut : #A5A5A5|
+| `office-contentAccent4-bgColor`|Couleur d’accentuation d’arrière-plan 4. Par défaut : #FFC000|
+| `office-contentAccent5-bgColor`|Couleur d’accentuation d’arrière-plan 5. Par défaut : #4472C4|
+| `office-contentAccent6-bgColor`|Couleur d’accentuation d’arrière-plan 6. Par défaut : #70AD47|
+| `office-contentAccent1-borderColor`|Couleur d’accentuation de bordure 1. Par défaut : #5B9BD5|
+| `office-contentAccent2-borderColor`|Couleur d’accentuation de bordure 2. Par défaut : #ED7D31|
+| `office-contentAccent3-borderColor`|Couleur d’accentuation de bordure 3. Par défaut : #A5A5A5|
+| `office-contentAccent4-borderColor`|Couleur d’accentuation de bordure 4. Par défaut : #FFC000|
+| `office-contentAccent5-borderColor`|Couleur d’accentuation de bordure 5. Par défaut : #4472C4|
+| `office-contentAccent6-borderColor`|Couleur d’accentuation de bordure 6. Par défaut : #70AD47|
+| `office-a`|Couleur de lien hypertexte. Par défaut : #0563C1|
+| `office-a:visited`|Couleur de lien hypertexte visité. Par défaut : #954F72|
 
 <br/>
 
@@ -276,16 +279,16 @@ La capture d’écran suivante montre des exemples de toutes les classes de coul
 
 ### <a name="theme-classes-for-task-pane-add-ins"></a>Classes de thèmes pour les compléments du volet Office
 
-Le fichier OfficeThemes.css fournit des classes qui correspondent aux 4 couleurs affectées aux polices et aux arrière-plans utilisés par le thème de l’interface utilisateur de l’application Office. Ces classes peuvent être utilisées avec les compléments de tâche pour PowerPoint afin que les couleurs de votre complément soient en harmonie avec les autres volets Office intégrés.
+Le fichier OfficeThemes.css fournit des classes qui correspondent aux 4 couleurs affectées aux polices et aux arrière-plans utilisés par le thème de l’interface utilisateur de l’application Office. Ces classes peuvent être utilisées avec les compléments de tâche pour PowerPoint afin que les couleurs de votre complément soient en harmonie avec les autres volets Office intégrés.
 
 #### <a name="theme-font-and-background-colors-for-task-pane-add-ins"></a>Couleurs de police et d’arrière-plan de thème pour les compléments du volet Office
 
 |**Classe**|**Description**|
 |:-----|:-----|
-| `office-officeTheme-primary-fontColor`|Couleur de police principale. Par défaut : #B83B1D|
-| `office-officeTheme-primary-bgColor`|Couleur d’arrière-plan principale. Par défaut : #DEDEDE|
-| `office-officeTheme-secondary-fontColor`|Couleur de police secondaire. Par défaut : #262626.|
-| `office-officeTheme-secondary-bgColor`|Couleur d’arrière-plan secondaire. Par défaut : #FFFFFF|
+| `office-officeTheme-primary-fontColor`|Couleur de police principale. Par défaut : #B83B1D|
+| `office-officeTheme-primary-bgColor`|Couleur d’arrière-plan principale. Par défaut : #DEDEDE|
+| `office-officeTheme-secondary-fontColor`|Couleur de police secondaire. Par défaut : #262626.|
+| `office-officeTheme-secondary-bgColor`|Couleur d’arrière-plan secondaire. Par défaut : #FFFFFF|
 
 ## <a name="see-also"></a>Voir aussi
 
