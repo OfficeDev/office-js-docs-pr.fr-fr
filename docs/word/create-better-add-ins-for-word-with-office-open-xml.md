@@ -1,13 +1,13 @@
 ---
 title: Créer de meilleurs compléments pour Word avec Office Open XML
 description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: f178a9ee05661e69cc5e08857bbdf8f5081553e0
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.date: 12/17/2018
+ms.openlocfilehash: ed9009df0f192c0a8da76ae78263ad8c68caef95
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27271047"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27458054"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Créer de meilleurs compléments pour Word avec Office Open XML
 
@@ -50,7 +50,7 @@ Vous pouvez utiliser la même méthode pour insérer n’importe quel format d�
 *Figure 4. Image mise en forme avec des styles d’image et des effets*
 
 
-![Image mise en forme dans Word 2013.](../images/office15-app-create-wd-app-using-ooxml-fig04.png)
+![Image mise en forme dans Word.](../images/office15-app-create-wd-app-using-ooxml-fig04.png)
 
 
 L’ajout d’une mise en forme et d’effets de haute qualité à vos images nécessite beaucoup moins de balises que vous ne le pensez.
@@ -72,37 +72,37 @@ Les effets de texte sont disponibles dans Word pour le texte situé à l’inté
 *Figure 7. Forme*
 
 
-![Forme de dessin Office 2013 dans Word 2013.](../images/office15-app-create-wd-app-using-ooxml-fig07.png)
+![Un objet de dessin Microsoft Office dans Word.](../images/office15-app-create-wd-app-using-ooxml-fig07.png)
 
 Vous pouvez insérer des formes de dessin intégrées ou personnalisées, avec ou sans texte et effets de mise en forme.
 
 *Figure 8. Tableau avec une mise en forme directe*
 
 
-![Tableau mis en forme dans Word 2013.](../images/office15-app-create-wd-app-using-ooxml-fig08.png)
+![Tableau mis en forme dans Word.](../images/office15-app-create-wd-app-using-ooxml-fig08.png)
 
 Vous pouvez inclure la mise en forme du texte, des bordures, une trame de fond, le dimensionnement des cellules ou toute mise en forme de tableau dont vous avez besoin.
 
 *Figure 9. Tableau mis en forme avec un style de tableau*
 
 
-![Tableau mis en forme dans Word 2013.](../images/office15-app-create-wd-app-using-ooxml-fig09.png)
+![Tableau mis en forme dans Word.](../images/office15-app-create-wd-app-using-ooxml-fig09.png)
 
 Vous pouvez utiliser des styles de tableau intégrés ou personnalisés aussi facilement pour un paragraphe de texte.
 
 *Figure 10. Graphique SmartArt*
 
 
-![Graphique SmartArt dynamique dans Word 2013.](../images/office15-app-create-wd-app-using-ooxml-fig10.png)
+![Graphique SmartArt dynamique dans Word.](../images/office15-app-create-wd-app-using-ooxml-fig10.png)
 
-Office 2013 offre un large éventail de dispositions pour les diagrammes SmartArt (et vous pouvez utiliser Office Open XML pour créer les vôtres).
+Microsoft Office offre un large éventail de dispositions pour les diagrammes SmartArt (et vous pouvez utiliser Office Open XML pour créer les vôtres).
 
 *Figure 11. Graphique*
 
 
-![Graphique dans Word 2013.](../images/office15-app-create-wd-app-using-ooxml-fig11.png)
+![Graphique dans Word.](../images/office15-app-create-wd-app-using-ooxml-fig11.png)
 
-Vous pouvez insérer des graphiques Excel sous forme de graphiques dynamiques dans des documents Word, ce qui signifie également que vous pouvez les utiliser dans votre complément pour Word. Comme vous pouvez le constater avec les exemples précédents, vous pouvez utiliser le forçage Office Open XML pour insérer pratiquement n’importe quel type de contenu dans un document. Il existe deux façons simples d’obtenir le balisage Office Open XML dont vous avez besoin. Vous pouvez ajouter votre contenu riche à un document Word 2013 vierge, puis enregistrer ce fichier au format Document XML Word, ou utiliser un complément de test avec la méthode [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) pour récupérer le balisage. Les deux approches fournissent globalement le même résultat.
+Vous pouvez insérer des graphiques Excel sous forme de graphiques dynamiques dans des documents Word, ce qui signifie également que vous pouvez les utiliser dans votre complément pour Word. Comme vous pouvez le constater avec les exemples précédents, vous pouvez utiliser le forçage Office Open XML pour insérer pratiquement n’importe quel type de contenu dans un document. Il existe deux façons simples d’obtenir le balisage Office Open XML dont vous avez besoin. Vous pouvez ajouter votre contenu riche à un document Word vierge, puis enregistrer ce fichier au format Document XML Word, ou utiliser un complément de test avec la méthode [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) pour récupérer le balisage. Les deux approches fournissent globalement le même résultat.
 
 
 > [!NOTE]
@@ -113,18 +113,18 @@ Si vous enregistrez le fichier sous un format XML à partir de Word, notez qu�
 ## <a name="exploring-the-office-open-xml-document-package"></a>Exploration du package de document Office Open XML
 
 
-Lorsque vous utilisez [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) pour récupérer une sélection de contenu Office Open XML (ou lorsque vous enregistrez le document au format Document XML Word), ce que vous obtenez n’est pas seulement le balisage qui décrit le contenu sélectionné, mais un document entier avec de nombreux paramètres et options dont vous n’aurez certainement pas besoin. En fait, si vous utilisez cette méthode à partir d’un document qui contient un complément de volet de tâches, le balisage que vous obtenez comprend également votre volet de tâches.
+Lorsque vous utilisez [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) pour récupérer une sélection de contenu Office Open XML (ou lorsque vous enregistrez le document au format Document XML Word), ce que vous obtenez n’est pas seulement le balisage qui décrit le contenu sélectionné, mais un document entier avec de nombreux paramètres et options dont vous n’aurez certainement pas besoin. En fait, si vous utilisez cette méthode à partir d’un document qui contient un complément de volet de tâches, le balisage que vous obtenez comprend également votre volet de tâches.
 
 Même un simple package de document Word comprend des composants pour les propriétés du document, les styles, le thème (paramètres de mise en forme), les paramètres web, les polices, en plus d’autres composants pour le contenu réel.
 
-Par exemple, supposons que vous voulez insérer uniquement un paragraphe de texte avec une mise en forme directe, comme indiqué précédemment sur la figure 1. Lorsque vous récupérez le contenu Office Open XML pour le texte mis en forme à l’aide de  **getSelectedDataAsync**, un grand nombre de balises s’affichent. Ce balisage comprend un élément de package qui représente un document entier, formé de plusieurs parties (communément appelées composants de document ou, dans Office Open XML, composants de package), listées dans la figure 13. Chaque composant représente un fichier distinct du package.
+Par exemple, supposons que vous voulez insérer uniquement un paragraphe de texte avec une mise en forme directe, comme indiqué précédemment sur la figure 1. Lorsque vous récupérez le contenu Office Open XML pour le texte mis en forme à l’aide de  **getSelectedDataAsync**, un grand nombre de balises s’affichent. Ce balisage comprend un élément de package qui représente un document entier, formé de plusieurs parties (communément appelées composants de document ou, dans Office Open XML, composants de package), listées dans la figure 13. Chaque composant représente un fichier distinct du package.
 
 
 > [!TIP]
-> Vous pouvez modifier le balisage Office Open XML dans un éditeur de texte comme le Bloc-notes. Si vous l’ouvrez dans Visual Studio 2015, vous pouvez utiliser les options **Édition > Avancé > Mettre le document en forme** (Ctrl+K, Ctrl+D) pour mettre en forme le package afin de faciliter la modification. Ensuite, vous pouvez réduire ou développer des parties de document ou des sections de celles-ci, comme indiqué dans la figure 12, pour vérifier et modifier plus facilement le contenu du package Office Open XML. Chaque composant du document commence par une balise **pkg:part**.
+> Vous pouvez modifier le balisage Office Open XML dans un éditeur de texte comme le Bloc-notes. Si vous l’ouvrez dans Visual Studio, vous pouvez utiliser les options **Édition > Avancé > Mettre le document en forme** (Ctrl+K, Ctrl+D) pour mettre en forme le package afin de faciliter la modification. Ensuite, vous pouvez réduire ou développer des parties de document ou des sections de celles-ci, comme indiqué dans la figure 12, pour vérifier et modifier plus facilement le contenu du package Office Open XML. Chaque composant du document commence par une balise **pkg:part**.
 
 
-*Figure 12. Réduction et développement des composants de package pour faciliter la modification dans Visual Studio 2015*
+*Figure 12. Réduction et développement des composants de package pour faciliter la modification dans Visual Studio*
 
 ![Extrait de code Office Open XML pour un composant de package.](../images/office15-app-create-wd-app-using-ooxml-fig12.png)
 
@@ -207,7 +207,7 @@ Nous avons modifié l’exemple Office Open XML affiché ici, comme décrit da
 
 
 > [!NOTE]
-> Si vous ajoutez le balisage représenté ici à un fichier XML avec les balises de déclaration XML pour version et mso-application au début du fichier (figure 13), vous pouvez l’ouvrir dans Word comme un document Word. Sinon, en l’absence de ces balises, vous pouvez toujours l’ouvrir via **Fichier > Ouvrir** dans Word. **Mode de compatibilité** s’affiche sur la barre de titre dans Word 2013, car vous avez supprimé les paramètres qui indiquent à Word qu’il s’agit d’un document de la version 2013. Puisque vous ajoutez ce balisage à un document Word 2013 existant, cela n’affectera aucunement votre contenu.
+> Si vous ajoutez le balisage représenté ici à un fichier XML avec les balises de déclaration XML pour version et mso-application au début du fichier (figure 13), vous pouvez l’ouvrir dans Word comme un document Word. Sinon, en l’absence de ces balises, vous pouvez toujours l’ouvrir via **Fichier > Ouvrir** dans Word. **Mode de compatibilité** s’affiche sur la barre de titre dans Word, car vous avez supprimé les paramètres qui indiquent à Word qu’il s’agit d’un document Word. Puisque vous ajoutez ce balisage à un document Word existant, cela n’affectera aucunement votre contenu.
 
 
 ### <a name="javascript-for-using-setselecteddataasync"></a>JavaScript pour l’utilisation de setSelectedDataAsync
@@ -215,7 +215,7 @@ Nous avons modifié l’exemple Office Open XML affiché ici, comme décrit da
 
 Une fois que vous avez enregistré le code Office Open XML précédent dans un fichier XML accessible à partir de votre solution, vous pouvez utiliser la fonction suivante pour définir le contenu du texte mis en forme dans le document à l’aide du forçage Office Open XML. 
 
-Dans cette fonction, vous remarquerez que toutes les lignes sauf la dernière sont utilisées pour obtenir votre balisage enregistré afin de l’utiliser dans l’appel de méthode [setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#setselecteddataasync-data--options--callback-) à la fin de la fonction. **setSelectedDataASync** exige seulement que vous indiquiez le contenu à insérer et le type de forçage.
+Dans cette fonction, vous remarquerez que toutes les lignes sauf la dernière sont utilisées pour obtenir votre balisage enregistré afin de l’utiliser dans l’appel de méthode [setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) à la fin de la fonction. **setSelectedDataASync** exige seulement que vous indiquiez le contenu à insérer et le type de forçage.
 
 
 > [!NOTE]
@@ -317,7 +317,7 @@ Le balisage suivant présente le composant document.xml, qui contient notre exem
 
 
 > [!TIP]
-> Si vous modifiez votre balisage dans Visual Studio 2015, après la suppression d’espaces de noms dans un composant, examinez toutes les balises de ce composant. Si vous avez supprimé un espace de noms requis pour votre balisage, un soulignement rouge ondulé apparaît au niveau du préfixe en question pour les balises affectées. Si vous supprimez l’espace de noms **xmlns:mc**, vous devez aussi supprimer l’attribut **mc:Ignorable** qui précède les listes d’espaces de noms.
+> Si vous modifiez votre balisage dans Visual Studio, après la suppression d’espaces de noms dans un composant, examinez toutes les balises de ce composant. Si vous avez supprimé un espace de noms requis pour votre balisage, un soulignement rouge ondulé apparaît au niveau du préfixe en question pour les balises affectées. Si vous supprimez l’espace de noms **xmlns:mc**, vous devez aussi supprimer l’attribut **mc:Ignorable** qui précède les listes d’espaces de noms.
 
 
 - Dans la balise Body de début, se trouve une balise de paragraphe (**w:p**) qui comprend le contenu de cet exemple.
@@ -333,7 +333,7 @@ Le balisage suivant présente le composant document.xml, qui contient notre exem
 
     Notez que, du fait que la mise en forme incluse dans cet exemple est une mise en forme de police (mise en forme qui peut être appliquée à un seul caractère), elle apparaît également dans les propriétés d’exécution individuelle.
 
-- Examinez également les balises du signet masqué « _GoBack » (**w:bookmarkStart** et **w:bookmarkEnd**), qui apparaissent dans les documents Word 2013 par défaut. Vous pouvez toujours supprimer les balises de début et de fin pour le signet GoBack dans votre balisage.
+- Examinez également les balises du signet masqué « _GoBack » (**w:bookmarkStart** et **w:bookmarkEnd**), qui apparaissent dans les documents Word par défaut. Vous pouvez toujours supprimer les balises de début et de fin pour le signet GoBack dans votre balisage.
 
 - La dernière partie du corps du document est la balise **w:sectPr**, ou propriétés de section. Cette balise inclut des paramètres tels que les marges et l’orientation de la page. Le contenu que vous insérez à l’aide de **setSelectedDataAsync** applique les propriétés de section actives dans le document de destination par défaut. Ainsi, sauf si votre contenu comprend un saut de section (dans ce cas, vous devez voir plusieurs balises **w:sectPr**), vous pouvez supprimer cette balise.
 
@@ -349,9 +349,9 @@ N’oubliez pas que si vous utilisez les fonctionnalités de co-création dans W
 
 Pour désactiver les attributs RSID dans Word pour les documents que vous créerez à l’avenir, procédez comme suit : 
 
-1. Dans Word 2013, sélectionnez **Fichier**, puis **Options**.
+1. Dans Word, sélectionnez**Fichier**, puis sélectionnez **Options**.
 2. Dans la boîte de dialogue Options Word, choisissez **Centre de gestion de la confidentialité**, puis **Paramètres du Centre de gestion de la confidentialité**.
-3. Dans la boîte de dialogue Centre de gestion de la confidentialité, choisissez **Options de confidentialité**, puis désactivez le paramètre **Stocker un nombre aléatoire pour améliorer l’exactitude de la combinaison**.
+3. Dans la boîte de dialogue Centre de gestion de la confidentialité, sélectionnez **Options de confidentialité**, puis désactivez le paramètre **Stocker un nombre aléatoire pour améliorer l’exactitude de la combinaison**.
 
 Pour supprimer les balises RSID d’un document existant, essayez le raccourci suivant avec le document ouvert dans Office Open XML :
 
@@ -378,7 +378,7 @@ Si le balisage pour votre forme ou zone de texte semble beaucoup plus complexe q
 
 Donc, pour prendre en charge les formes et les zones de texte dans des documents Word au format Office Open XML sous Word 2007, les formes (y compris les zones de texte) nécessitent un balisage VML de secours.
 
-En général, comme vous pouvez le voir pour les exemples de forme et de zone de texte inclus dans l’exemple de code [Word-Add-in-Load-and-write-Open-XML](https://github.com/OfficeDev/Word-Add-in-Load-and-write-Open-XML), le balisage de secours peut être supprimé. Word 2013 ajoute automatiquement le balisage de secours manquant aux formes lorsqu’un document est enregistré. Mais si vous préférez conserver le balisage de secours pour garantir la prise en charge de tous les scénarios utilisateur, c’est tout à fait possible.
+En général, comme vous pouvez le voir pour les exemples de forme et de zone de texte inclus dans l’exemple de code [Word-Add-in-Load-and-write-Open-XML](https://github.com/OfficeDev/Word-Add-in-Load-and-write-Open-XML), le balisage de secours peut être supprimé. Word ajoute automatiquement le balisage de secours manquant aux formes lorsqu’un document est enregistré. Mais si vous préférez conserver le balisage de secours pour garantir la prise en charge de tous les scénarios utilisateur, c’est tout à fait possible.
 
 Si vous avez regroupé des objets dessin inclus dans votre contenu, un balisage supplémentaire (apparemment répétitif) s’affiche. Celui-ci doit être conservé. Des portions du balisage pour les formes de dessin sont dupliquées lorsque l’objet est inclus dans un groupe.
 
@@ -396,14 +396,14 @@ La forme de ces exemples de code est positionnée par rapport aux marges droite 
 
 ### <a name="working-with-content-controls"></a>Utilisation des contrôles de contenu
 
-Les contrôles de contenu représentent une fonctionnalité importante dans Word 2013, car ils peuvent grandement améliorer la puissance de votre complément pour Word de multiples façons, y compris en vous donnant la possibilité d’insérer du contenu à des endroits désignés dans le document plutôt qu’à l’emplacement de sélection uniquement.
+Les contrôles de contenu représentent une fonctionnalité importante dans Word, car ils peuvent grandement améliorer la puissance de votre complément pour Word de multiples façons, y compris en vous donnant la possibilité d’insérer du contenu à des endroits désignés dans le document plutôt qu’à l’emplacement de sélection uniquement.
 
 Dans Word, retrouvez les contrôles de contenu sur l’onglet Développeur du ruban, comme indiqué dans la figure 15.
 
 
 *Figure 15. Groupe Contrôles de l’onglet Développeur dans Word*
 
-![Groupe de contrôles de contenu sur le ruban Word 2013.](../images/office15-app-create-wd-app-using-ooxml-fig15.png)
+![Groupe de contrôles de contenu sur le ruban Word.](../images/office15-app-create-wd-app-using-ooxml-fig15.png)
 
 Les types de contrôles de contenu dans Word comprennent du texte enrichi, du texte brut, des images, des galeries de blocs de construction, des cases à cocher, des listes déroulantes, des zones de liste modifiable, un sélecteur de dates et des sections extensibles.
 
@@ -478,9 +478,10 @@ La balise **w:sdt** dans le corps de document.xml représente le contrôle de co
 
 - **alias** est la propriété du titre de la boîte de dialogue Propriétés du contrôle de contenu dans Word. Cette propriété est obligatoire (elle représente le nom de l’élément) si vous envisagez une liaison au contrôle à partir de votre complément.
 
-- **id** (unique) est une propriété obligatoire. Si vous liez le contrôle à partir de votre complément, l’ID est la propriété que la liaison utilise dans le document pour identifier le contrôle de contenu nommé applicable.
+- 
+            **id** (unique) est une propriété obligatoire. Si vous liez le contrôle à partir de votre complément, l’ID est la propriété que la liaison utilise dans le document pour identifier le contrôle de contenu nommé applicable.
 
-- L’attribut  **appearance** est utilisé pour masquer le conteneur de contrôle, pour une apparence plus nette. Il s’agit d’une nouvelle fonctionnalité de Word 2013, comme vous le voyez par l’utilisation de l’espace de noms w15. Cette propriété étant utilisée, l’espace de noms w15 est conservé au début du composant document.xml.
+- L’attribut**appearance** est utilisé pour masquer le conteneur de contrôle, pour une apparence plus nette. Il s’agit d’une nouvelle fonctionnalité de Word 2013, comme vous le voyez par l’utilisation de l’espace de noms w15. Cette propriété étant utilisée, l’espace de noms w15 est conservé au début du composant document.xml.
 
 - L’attribut  **showingPlcHdr** est un paramètre facultatif qui définit le contenu par défaut que vous incluez dans le contrôle (du texte dans cet exemple) en tant que contenu d’espace réservé. Ainsi, si l’utilisateur clique ou appuie dans la zone de contrôle, tout le contenu est sélectionné au lieu de se comporter comme du contenu modifiable dans lequel l’utilisateur peut apporter des modifications.
 
@@ -549,7 +550,7 @@ function addAndBindControl() {
 Le code présenté ici effectue les étapes suivantes :
 
 
-- Tentative de création d’une liaison avec le contrôle de contenu nommé, à l’aide de [addFromNamedItemAsync](https://docs.microsoft.com/javascript/api/office/office.bindings?view=office-js#addfromnameditemasync-itemname--bindingtype--options--callback-).
+- Tentative de création d’une liaison avec le contrôle de contenu nommé, à l’aide de [addFromNamedItemAsync](https://docs.microsoft.com/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-).
 
   Effectuez d’abord cette opération s’il est possible que le contrôle nommé existe déjà dans le document lors de l’exécution du code. Par exemple, vous devez procéder de cette façon si le complément a été inséré et enregistré dans un modèle conçu pour fonctionner avec le complément dans lequel le contrôle a été placé à l’avance. Vous devez également procéder ainsi si vous devez créer une liaison à un contrôle qui a été placé précédemment par le complément.
 
@@ -672,7 +673,7 @@ Ainsi, par exemple, le seul contenu que nous devions conserver dans le composant
 
 
 > [!NOTE]
-> Une définition Word 2013 complète pour le style Heading 1 a été conservée dans cet exemple.
+> Une définition Word complète pour le style Heading 1 a été conservée dans cet exemple.
 
 
 
@@ -797,7 +798,7 @@ Comme les diagrammes SmartArt, les graphiques contiennent plusieurs composants s
 
     Il existe trois fichiers référencés dans chart1.xml.rels, mais un seul est requis. Ils comprennent les données de classeur Excel binaires (requises) et les composants de couleurs et de styles (colors1.xml et styles1.xml), que vous pouvez supprimer.
 
-Les graphiques que vous pouvez créer et modifier en mode natif dans Word 2013 sont des graphiques Excel 2013. Leurs données sont conservées sur une feuille de calcul Excel qui est incorporée sous forme de données binaires dans votre package Office Open XML. Comme les composants de données binaires pour les images, ces données binaires Excel sont obligatoires, mais rien n’est à modifier dans ce composant. Ainsi, vous pouvez simplement réduire le composant dans l’éditeur pour éviter de devoir tout faire défiler manuellement afin d’examiner le reste de votre package Office Open XML.
+Les graphiques que vous pouvez créer et modifier en mode natif dans Word sont des graphiques Excel. Leurs données sont conservées sur une feuille de calcul Excel qui est incorporée sous forme de données binaires dans votre package Office Open XML. Comme les composants de données binaires pour les images, ces données binaires Excel sont obligatoires, mais rien n’est à modifier dans ce composant. Ainsi, vous pouvez simplement réduire le composant dans l’éditeur pour éviter de devoir tout faire défiler manuellement afin d’examiner le reste de votre package Office Open XML.
 
 Toutefois, comme pour SmartArt, vous pouvez supprimer les composants de couleurs et de styles. Si vous avez utilisé les styles de graphique et les styles de couleurs disponibles dans pour mettre en forme votre graphique, celui-ci adoptera automatiquement la mise en forme applicable lors de son insertion dans le document de destination.
 
@@ -814,7 +815,7 @@ Nous avons déjà vu comment identifier et modifier le contenu de votre balisage
 > N’oubliez pas que vous pouvez utiliser tous les composants .rels du package comme une carte pour rechercher rapidement les composants de document que vous pouvez supprimer.
 
 
-1. Ouvrez le fichier XML aplati dans Visual Studio 2015 et appuyez sur Ctrl+K ou Ctrl+D pour mettre en forme le fichier. Ensuite, utilisez les boutons Réduire/Développer situés sur la gauche pour réduire les composants que vous devez supprimer. Vous pouvez également réduire les longs composants dont vous avez besoin, mais que vous n’avez pas à modifier (par exemple, les données binaires encodées en base64 pour un fichier image), cela vous permet de lire le balisage plus rapidement et plus facilement.
+1. Ouvrez le fichier XML aplati dans Visual Studio et appuyez sur Ctrl+K ou Ctrl+D pour mettre en forme le fichier. Ensuite, utilisez les boutons Réduire/Développer situés sur la gauche pour réduire les composants que vous devez supprimer. Vous pouvez également réduire les longs composants dont vous avez besoin, mais que vous n’avez pas à modifier (par exemple, les données binaires encodées en base64 pour un fichier image), cela vous permet de lire le balisage plus rapidement et plus facilement.
 
 2. Plusieurs composants du package de document peuvent être quasi systématiquement supprimés quand vous préparez le balisage Office Open XML pour l’utiliser dans votre complément. Commencez d’abord par supprimer ces composants (et leurs définitions de relation associées). Ceci va déjà considérablement réduire la taille du package. Parmi ces composants figurent theme1, fontTable, settings, webSettings, la miniature, les fichiers de propriétés principales et de complément, et tous les composants `taskpane` ou `webExtension`.
 
@@ -834,7 +835,7 @@ Que vous vous arrêtiez à cette étape ou que vous décidiez de continuer à ex
 
 
 > [!TIP]
-> Si vous mettez à jour un extrait Office Open XML dans une solution existante lors du développement, effacez les fichiers Internet temporaires avant d’exécuter à nouveau la solution pour mettre à jour le balisage Office Open XML utilisé par votre code. Le balisage qui est inclus dans votre solution pour les fichiers XML est mis en cache sur votre ordinateur. Vous pouvez évidemment effacer les fichiers Internet temporaires à partir de votre navigateur web par défaut. Pour accéder aux options Internet et supprimer ces paramètres à partir de Visual Studio 2015, dans le menu **Débogage**, choisissez **Options et paramètres**. Ensuite, sous **Environnement**, choisissez **Navigateur web**, puis **Options Internet Explorer**.
+> Si vous mettez à jour un extrait Office Open XML dans une solution existante lors du développement, effacez les fichiers Internet temporaires avant d’exécuter à nouveau la solution pour mettre à jour le balisage Office Open XML utilisé par votre code. Le balisage qui est inclus dans votre solution pour les fichiers XML est mis en cache sur votre ordinateur. Vous pouvez évidemment effacer les fichiers Internet temporaires à partir de votre navigateur web par défaut. Pour accéder aux options Internet et supprimer ces paramètres à partir de Visual Studio 2017, dans le menu **Débogage**, choisissez **Options et paramètres**. Ensuite, sous **Environnement**, choisissez **Navigateur web**, puis **Options Internet Explorer**.
 
 
 ## <a name="creating-an-add-in-for-both-template-and-stand-alone-use"></a>Création d’un complément pour une utilisation autonome et en modèle
@@ -851,6 +852,6 @@ Lorsque vous utilisez des modèles avec votre application, que le complément r�
 
 ## <a name="see-also"></a>Voir aussi
 
-- [API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)
+- [API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)
 - [Norme ECMA-376 : Formats de fichier Office Open XML](https://www.ecma-international.org/publications/standards/Ecma-376.htm) (accéder ici au guide de langage complet et à la documentation correspondante sur Open XML)
 - [Exploration de l’API JavaScript pour Office : liaisons de données et parties XML personnalisées](https://msdn.microsoft.com/magazine/dn166930.aspx)
