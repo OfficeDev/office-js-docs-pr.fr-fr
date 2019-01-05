@@ -204,7 +204,7 @@ Pour activer HTTPS pour votre application, ouvrez le fichier **package.json** da
 Félicitations, vous avez créé un complément Excel à l’aide de Vue ! Découvrez à présent les fonctionnalités des compléments Excel et créez un complément plus complexe en continuant le didacticiel sur le complément Excel.
 
 > [!div class="nextstepaction"]
-> [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial.yml)
+> [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial.md)
 
 ## <a name="see-also"></a>Voir aussi
 

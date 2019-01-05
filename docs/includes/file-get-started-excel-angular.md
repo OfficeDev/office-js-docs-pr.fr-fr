@@ -181,7 +181,7 @@ Dans cet article, vous allez découvrir le processus de création d’un complé
 Félicitations, vous avez créé un complément Excel à l’aide d’Angular ! Découvrez à présent les fonctionnalités des compléments Excel et créez un complément plus complexe en continuant le didacticiel sur le complément Excel.
 
 > [!div class="nextstepaction"]
-> [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial.yml)
+> [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial.md)
 
 ## <a name="see-also"></a>Voir aussi
 
