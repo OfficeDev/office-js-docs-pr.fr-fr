@@ -1,13 +1,13 @@
 ---
-ms.date: 10/24/2018
-description: Découvrez les meilleures pratiques et modèles recommandés pour les fonctions Excel personnalisées.
-title: Meilleures pratiques de fonctions personnalisées
-ms.openlocfilehash: 0408318227e1f89726ed7c0e4dfbb8e6340abef4
-ms.sourcegitcommit: 52d18dd8a60e0cec1938394669d577570700e61e
+ms.date: 11/29/2018
+description: Découvrez les meilleures pratiques pour le développement des fonctions personnalisées dans Excel.
+title: Meilleures pratiques des fonctions personnalisées
+ms.openlocfilehash: c1be1d01a88d50bb0f3aee8af1aea7c47658bc10
+ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "25797398"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "27724885"
 ---
 # <a name="custom-functions-best-practices-preview"></a>Meilleures pratiques de fonctions personnalisées (aperçu)
 
@@ -39,7 +39,7 @@ function getComment(x) {
 
 Si vous testez votre complément dans Office sur Windows, vous devez autoriser la ** [connexion d’exécution](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in) ** à résoudre les problèmes XML du fichier manifeste de votre complément, ainsi que plusieurs conditions d’installation et exécution. La connexion d’exécution écrit les`console.log`instructions vers un fichier journal pour vous aider à découvrir des problèmes.
 
-Pour signaler des commentaires à l’équipe Excel des fonctions personnalisées sur cette méthode de résolution des problèmes, envoyez des commentaires à l’équipe. Pour ce faire, sélectionnez **Fichier | Commentaires | Envoyer un smiley mécontent**. Envoyer un smiley mécontent fournira les journaux nécessaires pour comprendre le problème que vous rencontrez. 
+Pour signaler des commentaires à l’équipe Excel des fonctions personnalisées sur cette méthode de résolution des problèmes, envoyez des commentaires à l’équipe. Pour ce faire, sélectionnez **Fichier | Commentaires | Envoyer un smiley mécontent**. Envoyer un smiley mécontent fournira les journaux nécessaires pour comprendre le problème que vous rencontrez.
 
 ## <a name="debugging"></a>Débogage
 
@@ -130,6 +130,66 @@ N’oubliez pas les meilleures pratiques suivantes lors de la création de fonct
     }
     ```
 
+## <a name="declaring-optional-parameters"></a>Déclarer des paramètres facultatifs 
+Dans Excel pour Windows (version 1812 ou version ultérieure), vous pouvez déclarer des paramètres facultatifs pour vos fonctions personnalisées. Lorsqu’un utilisateur appelle une fonction dans Excel, les paramètres facultatifs apparaissent entre parenthèses. Par exemple, une fonction `FOO` avec un paramètre obligatoire appelé`parameter1` et un autre paramètre facultatif appelé `parameter2` apparaîtra sous la forme `=FOO(parameter1, [parameter2])` dans Excel.
+
+Pour rendre un paramètre facultatif, ajouter `"optional": true` au paramètre dans le fichier de métadonnées JSON qui définit la fonction. L’exemple suivant montre comment cela peut se présenter pour la fonction `=ADD(first, second, [third])`. Vous pouvez remarquer que le paramètre facultatif `[third]` suit deux paramètres requis. Les paramètres obligatoires apparaissent en premier dans l’interface utilisateur formule d’Excel.
+
+```json
+{
+    "id": "add",
+    "name": "ADD",
+    "description": "Add two numbers",
+    "helpUrl": "http://www.contoso.com",
+    "result": {
+        "type": "number",
+        "dimensionality": "scalar"
+        },
+    "parameters": [
+        {
+            "name": "first",
+            "description": "first number to add",
+            "type": "number",
+            "dimensionality": "scalar"
+        },
+        {
+            "name": "second",
+            "description": "second number to add",
+            "type": "number",
+            "dimensionality": "scalar",
+        },
+        {
+            "name": "third",
+            "description": "third optional number to add",
+            "type": "number",
+            "dimensionality": "scalar",
+            "optional": true
+        }
+    ],
+    "options": {
+        "sync": false
+    }
+}
+```
+
+Lorsque vous définissez une fonction qui contient un ou plusieurs paramètres facultatifs, vous devez spécifier ce qu’il se passe lorsque les paramètres facultatifs ne sont pas définis. Dans l’exemple suivant, `zipCode` et `dayOfWeek` sont deux paramètres facultatifs pour la fonction`getWeatherReport`. Si le paramètre`zipCode` n’est pas défini, la valeur par défaut est définie sur 98052. Si le paramètre`dayOfWeek` n’est pas défini, la valeur par défaut est définie à mercredi.
+
+```js
+function getWeatherReport(zipCode, dayOfWeek)
+{
+  if (zipCode === undefined) {
+      zipCode = "98052";
+  }
+
+  if (dayOfWeek === undefined) {
+    dayOfWeek = "Wednesday";
+  }
+
+  // Get weather report for specified zipCode and dayOfWeek
+  // ...
+}
+```
+
 ## <a name="additional-considerations"></a>Considérations supplémentaires
 
 Pour créer un complément qui s’exécute sur plusieurs plateformes (l’un des clients clés des compléments Office), vous ne devez pas accéder au Document DOM (Object Model) dans les fonctions personnalisées ou utiliser de bibliothèques comme jQuery qui dépendent du DOM. Sur Excel pour Windows, où les fonctions personnalisées utilisent l’[exécution JavaScript](custom-functions-runtime.md), les fonctions personnalisées ne peuvent pas accéder au DOM.
@@ -139,4 +199,4 @@ Pour créer un complément qui s’exécute sur plusieurs plateformes (l’un de
 * [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
 * [Métadonnées fonctions personnalisées](custom-functions-json.md)
 * [Exécution de fonctions personnalisées Excel](custom-functions-runtime.md)
-* [Didacticiel de fonctions personnalisées Excel](excel-tutorial-custom-functions.md)
+* [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md)
