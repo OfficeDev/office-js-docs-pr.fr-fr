@@ -2,12 +2,12 @@
 title: Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
 description: ''
 ms.date: 10/30/2018
-ms.openlocfilehash: d2a092cb48864cb9a4c9e791e3485963d0329ed2
-ms.sourcegitcommit: 161a0625646a8c2ebaf1773c6369ee7cc96aa07b
+ms.openlocfilehash: 9ea1cf421ce94d7756595950604ab3279e049c95
+ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "25891801"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "27724850"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
 
@@ -106,7 +106,7 @@ Vous pouvez utiliser le modèle de complément Office dans Visual Studio pour cr
 
 ## <a name="run-the-converted-add-in-project"></a>Exécuter le projet de complément converti
 
-1. Dans Visual Studio, appuyez sur F5 ou sélectionnez le bouton **Démarrer** pour lancer Excel avec le bouton du complément **Show Taskpane** (Afficher le volet Office) affiché dans le ruban. Le complément sera hébergé localement sur IIS.
+1. Dans Visual Studio, appuyez sur**F5** ou sélectionnez le bouton**Démarrer** pour lancer Excel avec le bouton du complément **Show Taskpane** affiché dans le ruban. Le complément sera hébergé localement sur IIS.
 
 2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
