@@ -2,12 +2,12 @@
 title: Localisation des compléments Office
 description: Vous pouvez utiliser l’API JavaScript pour Office afin de déterminer des paramètres régionaux et d’afficher des chaînes basées sur les paramètres régionaux de l’application hôte, ou afin d’interpréter ou d’afficher des données en fonction des paramètres régionaux des données.
 ms.date: 12/11/2018
-ms.openlocfilehash: e86421ac0b201e6092a3d112c04de57a6b6cc1dd
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+ms.openlocfilehash: 050880d8b2d5091cc0e5ab3e3dc14e632e0014f1
+ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457998"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "27724892"
 ---
 # <a name="localization-for-office-add-ins"></a>Localisation des compléments Office
 
@@ -390,7 +390,7 @@ Pour changer la langue utilisée pour l’affichage ou l’édition dans votre c
 
 3. Sélectionnez **OK** pour confirmer votre choix, puis fermez Word.
 
-4. Appuyez sur F5 dans Visual Studio pour exécuter le complément exemple ou sélectionnez**Déboguer** > **Démarrer le débogage** dans la barre de menus.
+4. Appuyez sur **F5** dans Visual Studio pour exécuter le complément d’exemple ou choisissez **Déboguer** > **Démarrer le débogage** dans la barre de menus.
 
 5. Dans Word, sélectionnez **Accueil** > **Afficher le volet de tâches**.
 

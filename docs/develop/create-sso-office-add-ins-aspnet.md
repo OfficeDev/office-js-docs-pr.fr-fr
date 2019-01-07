@@ -2,12 +2,12 @@
 title: Créer un complément Office ASP.NET qui utilise l’authentification unique
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 9ccabfcb2f3dc071ab9be181dda1ed5cadadd763
-ms.sourcegitcommit: 979e8d2b0fbc537f9c01527062767c026592aa62
+ms.openlocfilehash: 295d586e363345c819584c3e04dd59c2c98f90b8
+ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "25852944"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "27724899"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office ASP.NET qui utilise l’authentification unique (aperçu)
 
@@ -132,7 +132,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
 
         1. Commentez la section `<WebApplicationInfo>` du manifeste juste au-dessus de la fin de `</VersionOverrides>`.
 
-        2. Appuyez sur F5 pour démarrer une session de débogage. Cette opération entraîne la création d’une copie du manifeste dans le dossier suivant (qui est plus facile d’accès dans l’**Explorateur de fichiers** que dans Visual Studio) :`Office-Add-in-ASP.NET-SSO\Complete\Office-Add-in-ASPNET-SSO\bin\Debug\OfficeAppManifests`
+        2. Appuyez sur **F5** pour démarrer une session de débogage. Cette opération entraîne la création d’une copie du manifeste dans le dossier suivant (auquel il est plus facile d’accéder dans l’**Explorateur de fichiers** que dans Visual Studio) : `Office-Add-in-ASP.NET-SSO\Complete\Office-Add-in-ASPNET-SSO\bin\Debug\OfficeAppManifests`
 
         3. Dans la copie du manifeste, supprimez la syntaxe de commentaire autour de la section `<WebApplicationInfo>`.
 

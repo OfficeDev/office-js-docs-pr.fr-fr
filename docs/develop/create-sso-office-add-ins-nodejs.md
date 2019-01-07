@@ -2,12 +2,12 @@
 title: Création d’un complément Office Node.js qui utilise l’authentification unique
 description: ''
 ms.date: 12/07/2018
-ms.openlocfilehash: 6579549fbad4a44d73edfacefe53875e2a6e0918
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: b05ef90000da7fda3a72d2ba873c169a469731a6
+ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433333"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "27724906"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office Node.js qui utilise l’authentification unique (aperçu)
 
@@ -658,7 +658,7 @@ Il existe deux manières de créer et d’exécuter le projet selon que vous uti
 2. Si vous utilisez VS Code :
  1. Ouvrez le projet dans VS Code.
  2. Appuyez sur CTRL-MAJ-B pour générer le projet.
- 3. Appuyez sur F5 pour exécuter le projet dans une session de débogage.
+ 3. Appuyez sur **F5** pour exécuter le projet dans une session de débogage.
 
 
 ## <a name="add-the-add-in-to-an-office-document"></a>Ajouter le complément à un document Office
