@@ -148,9 +148,9 @@ Cet article décrit le processus de création d’un complément PowerPoint à l
     ...
     ```
 
-### <a name="try-it-out"></a>Essayez !
+### <a name="try-it-out"></a>Essayez
 
-1. À l’aide de Visual Studio, testez le nouveau complément PowerPoint en appuyant sur F5 ou en choisissant le bouton **Démarrer** pour lancer PowerPoint avec le bouton du complément **Show Taskpane** (Afficher le volet Office) qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
+1. À l’aide de Visual Studio, testez le nouveau complément PowerPoint en appuyant sur **F5** ou en choisissant le bouton **Démarrer** pour lancer PowerPoint avec le bouton du complément **Show Taskpane** (Afficher le volet Office) qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
 
 2. Dans Excel, insérez une diapositive vierge, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
@@ -352,4 +352,4 @@ Cet article décrit le processus de création d’un complément PowerPoint à l
 Félicitations, vous avez créé un complément PowerPoint ! Maintenant, découvrez les fonctionnalités d’un complément PowerPoint et créez un complément plus complexe en suivant le didacticiel dédié.
 
 > [!div class="nextstepaction"]
-> [Didacticiel sur les compléments PowerPoint](../tutorials/powerpoint-tutorial.yml)
+> [Didacticiel sur les compléments PowerPoint](../tutorials/powerpoint-tutorial.md)

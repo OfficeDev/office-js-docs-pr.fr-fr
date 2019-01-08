@@ -129,9 +129,9 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
     ...
     ```
 
-### <a name="try-it-out"></a>Essayez !
+### <a name="try-it-out"></a>Essayez
 
-1. À l’aide de Visual Studio, testez le nouveau complément Excel en appuyant sur F5 ou en choisissant le bouton **Démarrer** pour lancer Excel avec le bouton du complément **Show Taskpane** (Afficher le volet Office) qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
+1. À l’aide de Visual Studio, testez le nouveau complément Excel en appuyant sur** F5** ou en choisissant le bouton **Démarrer** pour lancer Excel avec le bouton du complément **Show Taskpane **(Afficher le volet Office) qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
 
 2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
@@ -309,11 +309,12 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 Félicitations, vous avez créé un complément Excel à l’aide de jQuery ! Découvrez à présent les fonctionnalités des compléments Excel et créez un complément plus complexe en continuant le didacticiel sur le complément Excel.
 
 > [!div class="nextstepaction"]
-> [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial.yml)
+> [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial.md)
 
 ## <a name="see-also"></a>Voir aussi
 
 * [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial-create-table.md)
 * [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](../excel/excel-add-ins-core-concepts.md)
-* [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* 
+  [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Référence de l’API JavaScript pour Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

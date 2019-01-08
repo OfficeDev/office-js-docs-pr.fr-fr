@@ -208,9 +208,9 @@ Cet article décrit le processus de création d’un complément Word à l’aid
     ...
     ```
 
-### <a name="try-it-out"></a>Essayez !
+### <a name="try-it-out"></a>Essayez
 
-1. À l’aide de Visual Studio, testez le nouveau complément en appuyant sur F5 ou en choisissant le bouton **Démarrer** pour lancer Word avec le bouton du complément **Show Taskpane** (Afficher le volet Office) qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
+1. À l’aide de Visual Studio, testez le nouveau complément en appuyant sur **F5** ou en choisissant le bouton**Démarrer** pour lancer Word avec le bouton du complément **Show Taskpane **(Afficher le volet Office) qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
 
 2. Dans Word, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément. (Si vous utilisez la version sans abonnement d’Office 2016 au lieu de la version d’Office 365, les boutons personnalisés ne sont pas pris en charge. Le volet Office s’ouvre immédiatement.)
 
@@ -464,7 +464,7 @@ Cet article décrit le processus de création d’un complément Word à l’aid
 Félicitations, vous avez créé un complément Word à l’aide de jQuery ! Maintenant, découvrez les fonctionnalités d’un complément Word et créez un complément plus complexe en suivant le didacticiel dédié.
 
 > [!div class="nextstepaction"]
-> [Didacticiel sur les compléments Word](../tutorials/word-tutorial.yml)
+> [Didacticiel sur les compléments Word](../tutorials/word-tutorial.md)
 
 ## <a name="see-also"></a>Voir aussi
 
