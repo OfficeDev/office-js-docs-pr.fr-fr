@@ -1,13 +1,13 @@
 ---
-ms.date: 11/29/2018
+ms.date: 01/08/2019
 description: Découvrez les meilleures pratiques pour le développement des fonctions personnalisées dans Excel.
-title: Meilleures pratiques des fonctions personnalisées
-ms.openlocfilehash: c1be1d01a88d50bb0f3aee8af1aea7c47658bc10
-ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
+title: Meilleures pratiques de fonctions personnalisées (aperçu)
+ms.openlocfilehash: 45618a61d0d1fdd0398ecec3aa0db21e493787fd
+ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "27724885"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "27770650"
 ---
 # <a name="custom-functions-best-practices-preview"></a>Meilleures pratiques de fonctions personnalisées (aperçu)
 
@@ -58,31 +58,29 @@ Pour l’instant, la méthode optimale pour le débogage de fonctions personnali
 
 Si votre complément ne parvient pas à s’enregistrer, [vérifier que les certificats SSL sont correctement configurés](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) pour le serveur web hébergeant votre application complément.
 
-## <a name="mapping-function-names-to-json-metadata"></a>Mappage des noms de fonction aux métadonnées JSON
+## <a name="associating-function-names-with-json-metadata"></a>Mappage des noms de fonction aux métadonnées JSON
 
-Comme décrit dans l’article [vue d’ensemble des fonctions personnalisées](custom-functions-overview.md), un projet de fonctions personnalisées doit inclure un fichier de métadonnées JSON qui fournit les informations dont Excel a besoin pour enregistrer les fonctions personnalisées et les rendre disponibles aux utilisateurs finaux. Par ailleurs, dans le fichier JavaScript qui définit vos fonctions personnalisées, vous devez fournir des informations pour spécifier quel objet fonction dans le fichier de métadonnées JSON correspond à chaque fonction personnalisée dans le fichier JavaScript.
+Comme décrit dans l’article[vue d’ensemble de fonctions personnalisées](custom-functions-overview.md), un projet de fonctions personnalisées doit inclure un fichier de métadonnées JSON et un fichier de script (JavaScript ou machine à écrire) pour former une fonction complète. Pour qu’une fonction s’exécute correctement, vous devez lier le nom de la fonction dans le fichier de script à l’id répertorié dans le fichier JSON. Ce processus est appelé association. Pensez à inclure les associations à la fin de vos fichiers de code JavaScript ; dans le cas contraire, les fonctions ne fonctionneront pas.
 
-Par exemple, l’exemple de code suivant définit la fonction personnalisée `add` et puis indique que la fonction `add` correspond à l’objet dans le fichier de métadonnées JSON où la valeur de la `id` propriété est **Ajouter**.
+L’exemple de code suivant montre comment procéder à cette association. L’exemple définit la fonction personnalisée `add` et associe à l’objet dans le fichier de métadonnées JSON où la valeur de la propriété`id`est**AJOUTER**.
 
 ```js
 function add(first, second){
   return first + second;
 }
 
-CustomFunctionMappings.ADD = add;
+CustomFunctions.associate("ADD", add); 
 ```
 
 N’oubliez pas les meilleures pratiques suivantes lors de la création de fonctions personnalisées dans votre fichier JavaScript et spécifiez les informations correspondantes dans le fichier de métadonnées JSON.
 
-* Dans le fichier JavaScript, spécifiez les noms de fonction dans camelCase. Par exemple, le nom de fonction `addTenToInput` écrit dans camelCase : le premier mot dans le nom commence par une lettre en minuscule et chaque mot suivant dans le nom commence par une lettre en majuscule.
+* Utilisez uniquement des lettres majuscules d’une fonction `name` et `id` dans le fichier de métadonnées JSON. N’utilisez pas un mélange de cas ou uniquement des lettres minuscules. Si vous le faites, vous risquez de finir avec deux valeurs différentes uniquement par la casse ,cela entraînera un remplacement involontaire de vos fonctions. Par exemple, un objet de fonction à une `id` valeur**ajouter** peut être remplacé par déclaration plus loin dans le fichier d’objet de fonction avec une`id` valeur**AJOUTER**. De plus, la `name` propriété définit le nom de la fonction que les utilisateurs finaux verront dans Excel. Utiliser des lettres majuscules pour le nom de chaque fonction personnalisée fournit une expérience cohérente pour les utilisateurs finaux dans Excel, où tous les noms de fonction intégrée sont en majuscules.
 
-* Dans le fichier de métadonnées JSON, spécifiez la valeur de chaque `name` propriété en majuscules. La `name` propriété définit le nom de la fonction que les utilisateurs finaux verront dans Excel. Utiliser des lettres majuscules pour le nom de chaque fonction personnalisée fournit une expérience cohérente pour les utilisateurs finaux dans Excel, où tous les noms de fonction intégrée sont en majuscules.
+* Toutefois, il n’est pas nécessaire de tirer profit de la fonction `name` lors de l’association. Dans l’exemple,`CustomFunctions.associate("add", add)`équivaut à`CustomFunctions.associate("ADD", add)`.
 
-* Dans le fichier de métadonnées JSON, spécifiez la valeur de chaque `id` propriété en majuscules. Cette opération souligne quelle partie de l’`CustomFunctionMappings` instruction dans votre code JavaScript correspond à la `id` propriété dans le fichier métadonnées JSON (à condition que votre nom de fonction utilise camelCase, comme recommandé précédemment).
+* Dans le fichier de métadonnées JSON, vérifiez que la valeur de chaque `id` propriété contient uniquement des points et des caractères alphanumériques.
 
-* Dans le fichier de métadonnées JSON, vérifiez que la valeur de chaque `id` propriété contient uniquement des points et des caractères alphanumériques. 
-
-* Dans le fichier de métadonnées JSON, vérifiez que la valeur de chaque `id` propriété est unique dans l’étendue du fichier. Autrement dit, aucun objet fonction dans le fichier de métadonnées ne doit avoir la même`id` valeur. En outre, n’indiquez pas deux `id` valeurs dans le fichier de métadonnées qui diffèrent uniquement par la casse. Par exemple, ne définissez pas un objet fonction avec une `id` valeur **ajouter** et un autre objet fonction avec une`id` valeur de **AJOUTER**.
+* Dans le fichier de métadonnées JSON, vérifiez que la valeur de chaque `id` propriété est unique dans l’étendue du fichier. Autrement dit, aucun objet fonction dans le fichier de métadonnées ne doit pas avoir la même`id`valeur. 
 
 * Ne modifiez pas la valeur d’une`id` propriété dans le fichier de métadonnées JSON après qu’elle ait été mappée à un nom de fonction JavaScript correspondante. Vous pouvez modifier le nom de fonction que voient les utilisateurs finaux dans Excel en mettant à jour la `name` propriété dans le fichier de métadonnées JSON, mais vous ne devez jamais changer la valeur d’une `id` propriété après qu’elle a été établie.
 
@@ -105,12 +103,12 @@ N’oubliez pas les meilleures pratiques suivantes lors de la création de fonct
       };
     }
 
-    // map `id` values in the JSON metadata file to JavaScript function names
-    CustomFunctionMappings.ADD = add;
-    CustomFunctionMappings.INCREMENT = increment;
+    // associate `id` values in the JSON metadata file to JavaScript function names
+    CustomFunctions.associate("ADD", add);
+    CustomFunctions.associate("INCREMENT", increment);
     ```
 
-    L’exemple suivant montre les métadonnées JSON correspondant aux fonctions définies dans cet exemple de code JavaScript.
+    L’exemple suivant montre les métadonnées JSON correspondant aux fonctions définies dans cet exemple de code JavaScript. Notez que les propriétés`id` et `name`sont en majuscules dans ce fichier. 
 
     ```json
     {
@@ -137,7 +135,7 @@ Pour rendre un paramètre facultatif, ajouter `"optional": true` au paramètre d
 
 ```json
 {
-    "id": "add",
+    "id": "ADD",
     "name": "ADD",
     "description": "Add two numbers",
     "helpUrl": "http://www.contoso.com",
@@ -199,4 +197,5 @@ Pour créer un complément qui s’exécute sur plusieurs plateformes (l’un de
 * [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
 * [Métadonnées fonctions personnalisées](custom-functions-json.md)
 * [Exécution de fonctions personnalisées Excel](custom-functions-runtime.md)
+* [Fonctions personnalisées changelog](custom-functions-changelog.md)
 * [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md)

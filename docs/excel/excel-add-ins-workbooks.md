@@ -1,13 +1,13 @@
 ---
 title: Utiliser les classeurs utilisant l’API JavaScript Excel
 description: ''
-ms.date: 12/13/2018
-ms.openlocfilehash: 388e061f72055b557a9da822391a9c0cd64a2c24
-ms.sourcegitcommit: 09f124fac7b2e711e1a8be562a99624627c0699e
+ms.date: 1/7/2019
+ms.openlocfilehash: db32cf0c847d578fb909d9ad97a3a75ef3f97eee
+ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "27283122"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "27770587"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Utiliser les classeurs utilisant l’API JavaScript Excel
 
@@ -50,7 +50,7 @@ Excel.createWorkbook();
 
 La `createWorkbook` méthode peut également créer une copie d’un classeur existant. La méthode accepte comme un paramètre facultatif une représentation de chaîne codée en base 64 d’un fichier .xlsx. Le classeur résultant sera une copie de ce fichier, en supposant que l’argument de chaîne est un fichier .xlsx valide.
 
-Vous pouvez accéder au classeur actif de votre complément en tant que chaîne codée en base 64 via [fichier découpage](/javascript/api/office/office.document#getfileasync-filetype--options--callback-). La classe [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) peut être utilisée pour convertir un fichier dans la chaîne codée en base 64 requise, comme indiqué dans l’exemple suivant. 
+Vous pouvez accéder au classeur actif de votre complément en tant que chaîne codée en base 64 via [fichier découpage](/javascript/api/office/office.document#getfileasync-filetype--options--callback-). La classe [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) peut être utilisée pour convertir un fichier dans la chaîne codée en base 64 requise, comme indiqué dans l’exemple suivant.
 
 ```js
 var myFile = document.getElementById("file");
@@ -60,9 +60,9 @@ reader.onload = (function (event) {
     Excel.run(function (context) {
         // strip off the metadata before the base64-encoded string
         var startIndex = event.target.result.indexOf("base64,");
-        var mybase64 = event.target.result.substr(startIndex + 7);
+        var workbookContents = event.target.result.substr(startIndex + 7);
 
-        Excel.createWorkbook(mybase64);
+        Excel.createWorkbook(workbookContents);
         return context.sync();
     }).catch(errorHandlerFunction);
 });
@@ -71,9 +71,48 @@ reader.onload = (function (event) {
 reader.readAsDataURL(myFile.files[0]);
 ```
 
+### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one"></a>Insérer une copie d’un classeur existant dans l’offre actuelle
+
+> [!NOTE]
+> La fonction`WorksheetCollection.addFromBase64` est actuellement disponible uniquement en prévisualisation publique (bêta). Pour utiliser cette fonctionnalité, vous devez utiliser la bibliothèque bêta du CDN Office.js : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> Si vous utilisez TypeScript ou si votre éditeur de code utilise des fichiers de définition de type TypeScript pour IntelliSense, utilisez https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+
+L’exemple précédent montre un nouveau classeur créé à partir d’un classeur existant. Vous pouvez également copier la totalité ou une partie d’un classeur existant dans le tableau actuellement associé à votre complément. Un classeur[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) a la `addFromBase64`méthode pour insérer des copies de feuilles de calcul du classeur cible dans lui-même. Le fichier de l’autre classeur est passé en tant que chaîne codé en base 64, comme le `Excel.createWorkbook` appel.
+
+```TypeScript
+addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet | string): OfficeExtension.ClientResult<string[]>;
+```
+
+L’exemple suivant montre des feuilles de calcul d’un classeur en cours d’insertion dans le classeur actif, juste après la feuille de calcul active. Notez que`null` est passé pour le`sheetNamesToInsert?: string[]` paramètre. Cela signifie que les feuilles de calcul sont insérées.
+
+```js
+var myFile = <HTMLInputElement>document.getElementById("file");
+var reader = new FileReader();
+
+reader.onload = (event) => {
+    Excel.run((context) => {
+        // strip off the metadata before the base64-encoded string
+        var startIndex = (<string>(<FileReader>event.target).result).indexOf("base64,");
+        var workbookContents = (<string>(<FileReader>event.target).result).substr(startIndex + 7);
+
+        var sheets = context.workbook.worksheets;
+        sheets.addFromBase64(
+            workbookContents,
+            null, // get all the worksheets
+            Excel.WorksheetPositionType.after, // insert them after the worksheet specified by the next parameter
+            sheets.getActiveWorksheet() // insert them after the active worksheet
+        );
+        return context.sync();
+    });
+};
+
+// read in the file as a data URL so we can parse the base64-encoded string
+reader.readAsDataURL(myFile.files[0]);
+```
+
 ## <a name="protect-the-workbooks-structure"></a>Protéger la structure du classeur
 
-Votre complément permet de contrôler la possibilité d’un utilisateur de modifier la structure du classeur. La propriété de l’objet classeur `protection` est un objet[WorkbookProtection](/javascript/api/excel/excel.workbookprotection) avec une méthode`protect()`. L’exemple suivant illustre un scénario de base activer/désactiver la protection de la structure du classeur. 
+Votre complément permet de contrôler la possibilité d’un utilisateur de modifier la structure du classeur. La propriété de l’objet classeur `protection` est un objet[WorkbookProtection](/javascript/api/excel/excel.workbookprotection) avec une méthode`protect()`. L’exemple suivant illustre un scénario de base activer/désactiver la protection de la structure du classeur.
 
 ```js
 Excel.run(function (context) {
@@ -202,18 +241,18 @@ Excel.run(async (context) => {
 Par défaut, Excel recalcule les résultats d’une formule chaque fois qu’une cellule référencée est modifiée. Le performances de votre complément peuvent profiter de l’ajustement de ce comportement de calcul. L’objet Application a une `calculationMode` propriété de type `CalculationMode`. Peut être défini à l'aide des valeurs suivantes :
 
 
- - `automatic`: Le comportement de recalcul par défaut dans lequel Excel calcule les résultats d’une nouvelle formule chaque fois que les données pertinentes sont modifiées.
- - `automaticExceptTables`: Identique `automatic`, sauf que les modifications apportées à des valeurs dans les tableaux sont ignorées.
- - `manual`: Calculs sont uniquement effectués lorsque l’utilisateur ou un complément les demande.
+- `automatic`: Le comportement de recalcul par défaut dans lequel Excel calcule les résultats d’une nouvelle formule chaque fois que les données pertinentes sont modifiées.
+- `automaticExceptTables`: Identique `automatic`, sauf que les modifications apportées à des valeurs dans les tableaux sont ignorées.
+- `manual`: Calculs sont uniquement effectués lorsque l’utilisateur ou un complément les demande.
 
 ### <a name="set-calculation-type"></a>Définir le type de calcul
 
 L’objet [Application](/javascript/api/excel/excel.application) fournit une méthode pour forcer un nouveau calcul immédiat. `Application.calculate(calculationType)` démarre un recalcul manuel basé sur la valeur `calculationType`. Les valeurs suivantes peuvent être utilisées :
 
- - `full`: Recalculer toutes les formules dans tous les classeurs ouverts, qu’elles aient changé depuis le dernier recalcul ou non.
- - `fullRebuild`: Revérifier les formules dépendantes, puis recalculer toutes les formules de tous les classeurs ouverts, qu’elles aient changé depuis le dernier recalcul ou non.
- - `recalculate`: Recalculer des formules qui ont changé (ou marqués par programme pour le recalcul) depuis le dernier calcul et les formules dépendantes, dans tous les classeurs actifs.
- 
+- `full`: Recalculer toutes les formules dans tous les classeurs ouverts, qu’elles aient changé depuis le dernier recalcul ou non.
+- `fullRebuild`: Revérifier les formules dépendantes, puis recalculer toutes les formules de tous les classeurs ouverts, qu’elles aient changé depuis le dernier recalcul ou non.
+- `recalculate`: Recalculer des formules qui ont changé (ou marqués par programme pour le recalcul) depuis le dernier calcul et les formules dépendantes, dans tous les classeurs actifs.
+
 > [!NOTE]
 > Pour plus d’informations sur le recalcul, voir l’article [recalcul de modification, l’itération ou la précision](https://support.office.com/article/change-formula-recalculation-iteration-or-precision-73fc7dac-91cf-4d36-86e8-67124f6bcce4).
 
