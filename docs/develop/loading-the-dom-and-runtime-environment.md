@@ -1,13 +1,13 @@
 ---
 title: Chargement du DOM et de l’environnement d’exécution
 description: ''
-ms.date: 01/23/2018
-ms.openlocfilehash: 0de9acf842d28002ec134998c36224f98574cf8f
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+ms.date: 01/09/2019
+ms.openlocfilehash: 2e829fbdb73b8ea450486fe2fef3e839213c970b
+ms.sourcegitcommit: 384e217fd51d73d13ccfa013bfc6e049b66bd98c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457690"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "27896342"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>Chargement du DOM et de l’environnement d’exécution
 
@@ -35,9 +35,9 @@ Les événements suivants se produisent lors du démarrage d’un complément de
     
 4. Le contrôle de navigateur charge le DOM et le corps HTML, puis demande au gestionnaire d’événements l’événement  **window.onload**.
     
-5. L’application hôte Office charge l’environnement d’exécution, lequel télécharge et met en cache l’API JavaScript pour les fichiers de bibliothèque JavaScript à partir du serveur de réseau de distribution de contenu, puis appelle le gestionnaire d’événements du complément pour l’événement [initialize](https://docs.microsoft.com/javascript/api/office) de l’objet [Office](https://docs.microsoft.com/javascript/api/office).
+5. L’application hôte Office charge l’environnement d’exécution, lequel télécharge et met en cache l’API JavaScript pour les fichiers de bibliothèque JavaScript à partir du serveur de réseau de distribution de contenu, puis appelle le gestionnaire d’événements du complément pour l’événement [initialize](/javascript/api/office#initialize-reason-) de l’objet [Office](/javascript/api/office) si un gestionnaire lui a été affecté. Il vérifie alors également si des rappels (ou des fonctions `then()` chaînées) ont été transmis (ou chaînées) au gestionnaire `Office.onReady`. Pour plus d’informations sur la distinction entre `Office.initialize` et `Office.onReady`, voir [Initialisation de votre complément](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in).
     
-6. Lorsque le chargement du modèle objet de document (DOM) et du corps HTML est terminé et que le complément s’est initialisé, la fonction principale de l’application peut s’exécuter.
+6. Lorsque le chargement du DOM et du corps HTML est terminé et que le complément finit de s’initialiser, la fonction principale du complément peut poursuivre.
     
 
 ## <a name="startup-of-an-outlook-add-in"></a>Démarrage d’un complément Outlook
@@ -62,16 +62,29 @@ Les événements suivants se produisent lors du démarrage d’un complément Ou
     
 5. Le contrôle de navigateur charge le modèle objet de document (DOM) et le corps HTML, puis appelle le gestionnaire d’événements pour l’événement  **onload**.
     
-6. Outlook appelle le gestionnaire d’événements pour l’événement [initialize](https://docs.microsoft.com/javascript/api/office) de l’objet [Office](https://docs.microsoft.com/javascript/api/office) du complément.
+6. Outlook charge l’environnement d’exécution, lequel télécharge et met en cache l’API JavaScript pour les fichiers de bibliothèque JavaScript à partir du serveur de réseau de distribution de contenu, puis appelle le gestionnaire d’événements du complément pour l’événement [initialize](/javascript/api/office#initialize-reason-) de l’objet [Office](/javascript/api/office) du complément si un gestionnaire lui a été affecté. Il vérifie alors également si des rappels (ou des fonctions `then()` chaînées) ont été transmis (ou chaînées) au gestionnaire `Office.onReady`. Pour plus d’informations sur la distinction entre `Office.initialize` et `Office.onReady`, voir [Initialisation de votre complément](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in).
     
 7. Lorsque le chargement du DOM et du corps HTML est terminé et que le complément finit de s’initialiser, la fonction principale du complément peut poursuivre.
     
 
 ## <a name="checking-the-load-status"></a>Vérification du statut de chargement
 
+Vous pouvez vérifier que le chargement du DOM et de l’environnement d’exécution est bien terminé en utilisant la fonction jQuery [.ready()](http://api.jquery.com/ready/) : `$(document).ready()`. Par exemple, le gestionnaire d'événements **onReady** suivant s'assure que le DOM est d'abord chargé avant le code spécifique à l'initialisation du complément. Par la suite, le gestionnaire **onReady** utilise la propriété [mailbox.item](https://docs.microsoft.com/javascript/api/outlook/office.mailbox?view=office-js) pour obtenir l'élément sélectionné dans Outlook, et appelle la fonction principale du complément, `initDialer`.
 
-Pour vérifier que le chargement du modèle objet de document (DOM) et de l’environnement d’exécution des est terminé, il est notamment possible d’utiliser la fonction jQuery [.ready()](https://api.jquery.com/ready/) :  `$(document).ready()`. Par exemple, la fonction de gestionnaire d’événements  **initialize** ci-dessous s’assure d’abord que le DOM est bien chargé avant l’exécution du code d’initialisation du complément. Par conséquent, le gestionnaire d’événements **initialize** utilise la propriété [mailbox.item](https://docs.microsoft.com/javascript/api/outlook/office.mailbox) pour obtenir l’élément actuellement sélectionné dans Outlook, puis appelle la fonction principale du complément, `initDialer`.
+```js
+Office.onReady()
+    .then(
+        // Checks for the DOM to load.
+        $(document).ready(function () {
+            // After the DOM is loaded, add-in-specific code can run.
+            var mailbox = Office.context.mailbox;
+            _Item = mailbox.item;
+            initDialer();
+        });
+);
+```
 
+Vous pouvez également utiliser le même code dans un gestionnaire d’événements **initialize** comme illustré dans l’exemple suivant.
 
 ```js
 Office.initialize = function () {
@@ -85,22 +98,24 @@ Office.initialize = function () {
 }
 ```
 
-Il est possible d’utiliser cette même technique dans le gestionnaire  **initialize** de toute Complément Office.
+Il est possible d’utiliser cette même technique dans les gestionnaires **onReady** ou **initialize** de tout complément Office.
 
 Le numéroteur téléphonique fourni comme exemple de complément Outlook présente une approche légèrement différente, puisqu’il utilise uniquement JavaScript pour vérifier ces mêmes conditions. 
 
 > [!IMPORTANT]
-> Même si aucune tâche d’initialisation n’est à effectuer dans votre complément, vous devez inclure au moins une fonction de gestionnaire d’événements **Office.initialize** minimale comme l’exemple suivant.
-
-```js
-Office.initialize = function () {
-};
-```
-
-Si vous n’incluez pas de gestionnaire d’événements  **Office.initialize**, votre complément peut générer une erreur au démarrage. En outre, si un utilisateur tente d’utiliser votre complément avec un client web Office Online, comme Excel Online, PowerPoint Online ou Outlook Web App, il n’est pas exécuté.
-
-Si votre complément comprend plusieurs pages, chaque fois qu’il charge une nouvelle page, celle-ci doit inclure ou appeler un gestionnaire d’événements  **Office.initialize**.
-
+> Même si aucune tâche d’initialisation n’est à effectuer dans votre complément, vous devez inclure au moins un appel **Office.onReady** ou affecter une fonction de gestionnaire d’événements **Office.initialize** minimale comme dans l’exemple suivant.
+>
+>```js
+>Office.onReady();
+>```
+>
+>```js
+>Office.initialize = function () {};
+>```
+>
+> Si vous n’appelez pas **Office.onReady** ou n’affectez pas un Gestionnaire d’événements **Office.initialize**, votre complément peut déclencher une erreur lors de son démarrage. En outre, si un utilisateur essaie d’utiliser votre complément avec un client web Office Online, notamment Excel Online, PowerPoint Online ou Outlook Web App, l’exécution du complément échouera.
+>
+> Si votre complément comprend plusieurs pages, chaque fois qu’il charge une nouvelle page, celle-ci doit soit appeler **Office.onReady**, soit affecter un gestionnaire d’événements **Office.initialize**.
 
 ## <a name="see-also"></a>Voir aussi
 

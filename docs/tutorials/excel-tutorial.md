@@ -1,14 +1,14 @@
 ---
 title: Didacticiel sur le complément Excel
 description: Dans ce didacticiel, vous allez développer un complément Excel qui crée, remplit, filtre et trie un tableau, crée un graphique, fige un en-tête de tableau, protège une feuille de calcul et ouvre une boîte de dialogue.
-ms.date: 12/31/2018
+ms.date: 01/09/2019
 ms.topic: tutorial
-ms.openlocfilehash: fe4350f5f3fdbe34250c1739c7651a1dde1e28ef
-ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
+ms.openlocfilehash: de5a08be53d7a6c2f4df4d9419e3713266800f7e
+ms.sourcegitcommit: 384e217fd51d73d13ccfa013bfc6e049b66bd98c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "27724946"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "27896356"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 
@@ -801,23 +801,23 @@ Dans cette étape finale du didacticiel, vous allez ouvrir une boîte de dialogu
 
 4. Créez un fichier à la racine du projet et nommez-le popup.js.
 
-5. Ajoutez le code suivant au fichier popup.js. Remarque :
+5. Ajoutez le code suivant au fichier popup.js. Tenez compte des informations suivantes :
 
-   - *Toutes les pages qui appellent des API dans la bibliothèque Office.JS doivent affecter une fonction à la propriété `Office.initialize`.* Si aucune initialisation n’est nécessaire, la fonction peut avoir un corps vide, mais la propriété ne doit pas être laissée indéfinie, affectée à null ni à une valeur qui n’est pas une fonction. Pour voir un exemple, affichez le fichier app.js à la racine du projet. Le code qui exécute l’affectation doit être exécuté avant tout appel à Office.JS ; l’affectation se trouve donc dans un fichier de script chargé par la page, comme dans ce cas.
-   
-   - La fonction `ready` jQuery est appelée à l’intérieur de la méthode `initialize`. Une règle quasi-universelle veut que le code de chargement, d’initialisation ou d’amorçage des autres bibliothèques JavaScript se trouve à l’intérieur de la fonction `Office.initialize`.
+   - *Toutes les pages appellent les API dans la bibliothèque Office.JS doivent tout d’abord vérifier que la bibliothèque est entièrement initialisée.* La meilleure façon de procéder consiste à appeler la méthode `Office.onReady()`. Si votre complément dispose de ses propres tâches d’initialisation, le code doit passer dans une méthode `then()` chaînée à l’appel de `Office.onReady()`. Pour voir un exemple, affichez le fichier app.js à la racine du projet. Le code qui appelle `Office.onReady()` doit être exécuté avant tout appel à Office.JS ; l’affectation se trouve donc dans un fichier de script chargé par la page, comme dans ce cas.
+   - La fonction `ready` jQuery est appelée à l’intérieur de la méthode `then()`. Dans la plupart des cas, le code de chargement, d’initialisation ou d’amorçage d’autres bibliothèques JavaScript se trouve à l’intérieur de la méthode `then()` chaînée à l’appel de `Office.onReady()`.
 
     ```js
     (function () {
     "use strict";
 
-        Office.initialize = function() {
-            $(document).ready(function () {  
+        Office.onReady()
+            .then(function() {
+                $(document).ready(function () {  
 
-                // TODO1: Assign handler to the OK button.
+                    // TODO1: Assign handler to the OK button.
 
+                });
             });
-        }
 
         // TODO2: Create the OK button handler
 

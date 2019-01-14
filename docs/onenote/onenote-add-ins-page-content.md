@@ -1,15 +1,15 @@
 ---
 title: Utiliser du contenu de page OneNote
 description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: aef9d80ebb37dacd2c3b5f2ec9d33cb0164d8452
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+ms.date: 1/10/2019
+ms.openlocfilehash: 617c30f2a9a0c72b1c309ce299f388b5a16b983f
+ms.sourcegitcommit: 384e217fd51d73d13ccfa013bfc6e049b66bd98c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457613"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "27896335"
 ---
-# <a name="work-with-onenote-page-content"></a>Utiliser du contenu de page OneNote 
+# <a name="work-with-onenote-page-content"></a>Utiliser du contenu de page OneNote
 
 Dans l’API JavaScript des compléments OneNote, le contenu de page est représenté par le modèle objet suivant.
 
@@ -25,7 +25,7 @@ Pour créer une page OneNote vide, utilisez l’une des méthodes suivantes :
 - [Section.addPage](https://docs.microsoft.com/javascript/api/onenote/onenote.section#addpage-title-)
 - [Page.insertPageAsSibling](https://docs.microsoft.com/javascript/api/onenote/onenote.section#insertsectionassibling-location--title-)
 
-Utilisez ensuite les méthodes dans les objets suivants pour travailler avec le contenu de la page, comme Page.addOutline et Outline.appendHtml. 
+Utilisez ensuite les méthodes dans les objets suivants pour travailler avec le contenu de la page, comme `Page.addOutline` et `Outline.appendHtml`.
 
 - [Page](https://docs.microsoft.com/javascript/api/onenote/onenote.page)
 - [Outline](https://docs.microsoft.com/javascript/api/onenote/onenote.outline)
@@ -37,17 +37,19 @@ Le contenu et la structure d’une page OneNote sont représentés par du code H
 
 L’API JavaScript des compléments OneNote prend en charge le code HTML suivant pour créer et mettre à jour du contenu de page :
 
-- `<html>`, `<body>`, `<div>`, `<span>`, `<br/>` 
+- `<html>`, `<body>`, `<div>`, `<span>`, `<br/>`
 - `<p>`
 - `<img>`
 - `<a>`
-- `<ul>`, `<ol>`, `<li>` 
+- `<ul>`, `<ol>`, `<li>`
 - `<table>`, `<tr>`, `<td>`
 - `<h1>` ... `<h6>`
 - `<b>`, `<em>`, `<strong>`, `<i>`, `<u>`, `<del>`, `<sup>`, `<sub>`, `<cite>`
 
 > [!NOTE]
 > L’importation du code HTML dans OneNote consolide les espaces blancs. Le contenu obtenu est collé dans un plan.
+
+OneNote fait de son mieux pour traduire le code HTML en contenu de page tout en assurant la sécurité des utilisateurs. Les normes HTML et CSS ne correspondent pas exactement au modèle de contenu de OneNote, il y aura donc des différences d'apparence, en particulier avec les styles CSS. Nous vous recommandons d’utiliser les objets JavaScript si une mise en forme spécifique est nécessaire.
 
 ## <a name="accessing-page-contents"></a>Accès au contenu de la page
 
