@@ -2,12 +2,13 @@
 title: Confidentialité et sécurité pour les compléments Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 6723ef757772a992b134d4f2a9d4590cc74965c2
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: 0edde27eebed667040ae3aded5bbc4268f0f5d58
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27458131"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388814"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Confidentialité et sécurité pour les compléments Office
 
@@ -188,7 +189,7 @@ Un utilisateur mal intentionné pourrait attaquer l’origine d’un complément
 
 - Si vous utilisez jQuery, utilisez la méthode [.text()](https://api.jquery.com/text/) au lieu de la méthode [.html()](https://api.jquery.com/html/).
 
-- Utilisez la méthode [toStaticHTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) pour supprimer les éléments et attributs HTML dynamiques des entrées des utilisateurs avant de les transmettre à **innerHTML**.
+- Utilisez la méthode [toStaticHTML](https://developer.mozilla.org/fr-FR/docs/Web/HTML/Reference) pour supprimer les éléments et attributs HTML dynamiques des entrées des utilisateurs avant de les transmettre à **innerHTML**.
 
 - Utilisez la fonction [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) ou [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) pour encoder le texte qui représente une URL ayant pour origine ou contenant une entrée utilisateur.
 

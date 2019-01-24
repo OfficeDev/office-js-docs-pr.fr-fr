@@ -2,12 +2,13 @@
 title: Éléments d’interface utilisateur Office pour les compléments Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 8282caff412a9a258e54092bc77e07571f0d8ac1
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+localization_priority: Priority
+ms.openlocfilehash: 444aca7b75e35ef502075876a7d1324fcdca0603
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437303"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388100"
 ---
 # <a name="office-ui-elements-for-office-add-ins"></a>Éléments d’interface utilisateur Office pour les compléments Office
 
@@ -26,7 +27,7 @@ Utilisez des [commandes de complément](add-in-commands.md) pour ajouter des poi
 |Onglets, menus et boutons du ruban|Permet d’ajouter des boutons personnalisés, des menus (déroulants) ou des onglets au ruban par défaut dans Office. Utilisez les boutons et menus pour déclencher une action dans Office. Utilisez les onglets pour regrouper et organiser des boutons et menus.|
 |Menus contextuels| Permet de développer le menu contextuel par défaut. Les menus contextuels s’affichent lorsque les utilisateurs cliquent avec le bouton droit de la souris sur du texte dans un document Office ou un tableau dans Excel.| 
 
-## <a name="html-containers"></a>Conteneurs HTML
+## <a name="html-containers"></a>Conteneurs HTML
 
 Utilisez les conteneurs HTML pour intégrer du code de l’interface utilisateur basé sur HTML dans les clients Office. Ces pages web peuvent ensuite référencer l’API JavaScript Office pour interagir avec du contenu dans le document. Vous pouvez créer trois types de conteneurs HTML.
 
