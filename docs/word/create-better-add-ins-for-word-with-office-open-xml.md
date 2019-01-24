@@ -2,12 +2,13 @@
 title: Créer de meilleurs compléments pour Word avec Office Open XML
 description: ''
 ms.date: 12/17/2018
-ms.openlocfilehash: ed9009df0f192c0a8da76ae78263ad8c68caef95
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: ce27c326b5e4ac9dd7e4966f72348d2c4cfbac60
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27458054"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29387302"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Créer de meilleurs compléments pour Word avec Office Open XML
 
@@ -243,7 +244,7 @@ function writeContent() {
 
 Étudions de plus près le balisage que vous devez insérer dans l’exemple de texte mis en forme précédent.
 
-Pour cet exemple, commencez par supprimer simplement tous les composants de document du package autres que .rels et document.xml.  Nous modifierons ensuite les deux composants requis pour les simplifier davantage.
+Pour cet exemple, commencez par supprimer simplement tous les composants de document du package autres que .rels et document.xml. Nous modifierons ensuite les deux composants requis pour les simplifier davantage.
 
 
 > [!IMPORTANT]

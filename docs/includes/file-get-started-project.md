@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 838db9c0e4a65a8b3ee95deeff5dc04fb0907355
+ms.sourcegitcommit: 984c425e2ad58577af8f494079923cab165ad36c
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "28726981"
+---
 # <a name="build-your-first-project-add-in"></a>Création de votre premier complément Project
 
 Cet article décrit le processus de création d’un complément Project à l’aide de jQuery et de l’API JavaScript pour Office.
@@ -74,13 +82,14 @@ Cet article décrit le processus de création d’un complément Project à l’
 
         var taskGuid;
 
-        // The initialize function must be run each time a new page is loaded
-        Office.initialize = function (reason) {
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
+                // The document is ready
                 $('#get-task-guid').click(getTaskGUID);
                 $('#get-task').click(getTask);
             });
-        };
+        });
 
         function getTaskGUID() {
             Office.context.document.getSelectedTaskAsync(function (asyncResult) {

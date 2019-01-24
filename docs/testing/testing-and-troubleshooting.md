@@ -2,12 +2,13 @@
 title: Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 6106b138eabb0360b11671eeb2a467e93311321e
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: 8996cab27fc2ad9368d959086cd9ca53902e9be1
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457914"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388947"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 

@@ -2,12 +2,13 @@
 title: Résolutions des limites de stratégie d’origine identique dans les compléments Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: e5aa329eb3f073f3544d8446683debed3239fd00
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+localization_priority: Priority
+ms.openlocfilehash: 75bc42cd7d2a7acc8cb57ee08807a8486e21f467
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270599"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29387754"
 ---
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>Résolutions des limites de stratégie d’origine identique dans les compléments Office
 

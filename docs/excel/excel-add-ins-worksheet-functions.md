@@ -2,12 +2,13 @@
 title: Appel de fonctions de feuille de calcul Excel intégrées à l’aide de l’API JavaScript pour Excel
 description: ''
 ms.date: 01/24/2017
-ms.openlocfilehash: 4130f6cce3906e2d1f455ec82b5e250d84dcdf9d
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 5ce8ac0c56a7d6a499f601fcc0767a1e76ea14cc
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459321"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388611"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>Appel de fonctions de feuille de calcul Excel intégrées
 
@@ -18,7 +19,7 @@ Cet article explique comment appeler les fonctions de feuille de calcul Excel in
 
 ## <a name="calling-a-worksheet-function"></a>Appel d’une fonction de feuille de calcul
 
-L’extrait de code suivant montre comment appeler une fonction de feuille de calcul où `sampleFunction()` est un espace réservé devant être remplacé par le nom de la fonction à appeler et les paramètres d’entrée nécessitant la fonction. La propriété **value** de l’objet **FunctionResult** renvoyée par une fonction de feuille de calcul contient le résultat de la fonction spécifiée. As this example shows, you must the value property of the FunctionResult object before you can read it.Comme le montre cet exemple, vous devez `load` charger () la propriété **value**  de l’objet **FunctionResult**  avant de pouvoir la lire. Dans cet exemple, le résultat de la fonction est simplement écrit sur la console. 
+L’extrait de code suivant montre comment appeler une fonction de feuille de calcul où `sampleFunction()` est un espace réservé devant être remplacé par le nom de la fonction à appeler et les paramètres d’entrée nécessitant la fonction. La propriété **value** de l’objet **FunctionResult** renvoyée par une fonction de feuille de calcul contient le résultat de la fonction spécifiée. Comme le montre cet exemple, vous devez charger (`load`) la propriété **value** de l’objet **FunctionResult** avant de pouvoir la lire. Dans cet exemple, le résultat de la fonction est simplement écrit sur la console. 
 
 ```js
 var functionResult = context.workbook.functions.sampleFunction(); 
@@ -38,7 +39,7 @@ L’image suivante montre un tableau dans une feuille de calcul Excel contenant 
 
 ![Capture d’écran de données de ventes dans Excel pour les catégories Hammer (Marteau), Wrench (Clé) et Saw (Scie) en novembre, décembre et janvier](../images/worksheet-functions-chaining-results.jpg)
 
-## <a name="example-1-single-function"></a>Exemple 1 : Fonction unique
+## <a name="example-1-single-function"></a>Exemple 1 : Fonction unique
 
 L’exemple de code suivant applique la fonction `VLOOKUP` aux exemples de données décrits précédemment pour identifier le nombre de clés vendues au mois de novembre.
 
@@ -55,7 +56,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="example-2-nested-functions"></a>Exemple 2 : Fonctions imbriquées
+## <a name="example-2-nested-functions"></a>Exemple 2 : Fonctions imbriquées
 
 L’exemple de code suivant applique la fonction `VLOOKUP` pour les exemples de données décrits précédemment afin d’identifier le nombre de clés vendues au mois de novembre et le nombre de clés vendues en décembre, puis applique la fonction `SUM` pour calculer le nombre total de clés vendues au cours de ces deux mois. 
 
@@ -83,7 +84,7 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 
 | Fonction | Type de retour | Description |
 |:---------------|:-------------|:-----------|
-| <a href="https://support.office.com/article/ABS-function-3420200f-5628-4e8c-99da-c99d7c87713c" target="_blank">Fonction ABS</a> | FunctionResult | Renvoie la valeur absolue d’un nombre |
+| Fonction ABS | FunctionResult | Renvoie la valeur absolue d’un nombre |
 | <a href="https://support.office.com/article/ACCRINT-function-fe45d089-6722-4fb3-9379-e1f911d8dc74" target="_blank">Fonction ACCRINT</a> | FunctionResult | Renvoie l’intérêt couru non échu d’un titre dont l’intérêt est perçu périodiquement |
 | <a href="https://support.office.com/article/ACCRINTM-function-f62f01f9-5754-4cc4-805b-0e70199328a7" target="_blank">Fonction ACCRINTM</a> | FunctionResult | Renvoie l’intérêt couru non échu d’un titre dont l’intérêt est perçu à l’échéance |
 | <a href="https://support.office.com/article/ACOS-function-cb73173f-d089-4582-afa1-76e5524b5d5b" target="_blank">Fonction ACOS</a> | FunctionResult | Renvoie l’arccosinus d’un nombre |
@@ -92,8 +93,8 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 | <a href="https://support.office.com/article/ACOTH-function-cc49480f-f684-4171-9fc5-73e4e852300f" target="_blank">Fonction ACOTH</a> | FunctionResult | Renvoie l’arccotangente hyperbolique d’un nombre |
 | <a href="https://support.office.com/article/AMORDEGRC-function-a14d0ca1-64a4-42eb-9b3d-b0dededf9e51" target="_blank">Fonction AMORDEGRC</a> | FunctionResult | Renvoie l’amortissement correspondant à chaque période comptable en utilisant un coefficient d’amortissement |
 | <a href="https://support.office.com/article/AMORLINC-function-7d417b45-f7f5-4dba-a0a5-3451a81079a8" target="_blank">Fonction AMORLINC</a> | FunctionResult | Renvoie l’amortissement correspondant à chaque période comptable |
-| <a href="https://support.office.com/article/AND-function-5f19b2e8-e1df-4408-897a-ce285a19e9d9" target="_blank">Fonction AND</a> | FunctionResult | Renvoie `TRUE` si tous les arguments ont la valeur True |
-| <a href="https://support.office.com/article/ARABIC-function-9a8da418-c17b-4ef9-a657-9370a30a674f" target="_blank">Fonction ARABIC</a> | FunctionResult | Convertit un nombre romain en chiffre arabe |
+| <a href="https://support.office.com/article/AND-function-5f19b2e8-e1df-4408-897a-ce285a19e9d9" target="_blank">Fonction AND</a> | FunctionResult | Cette propriété renvoie `TRUE` si tous ses arguments sont trues |
+| Fonction ARABIC | FunctionResult | Convertit un nombre en caractères romains en arabe, en tant que nombre |
 | <a href="https://support.office.com/article/AREAS-function-8392ba32-7a41-43b3-96b0-3695d2ec6152" target="_blank">Fonction AREAS</a> | FunctionResult | Renvoie le nombre de zones dans une référence |
 | <a href="https://support.office.com/article/ASC-function-0b6abf1c-c663-4004-a964-ebc00b723266" target="_blank">Fonction ASC</a> | FunctionResult | Convertit les caractères anglais pleine chasse (codés sur deux octets) ou katakana dans une chaîne de caractères en caractères à demi-chasse (codés sur un octet) |
 | <a href="https://support.office.com/article/ASIN-function-81fb95e5-6d6f-48c4-bc45-58f955c6d347" target="_blank">Fonction ASIN</a> | FunctionResult | Renvoie l’arcsinus d’un nombre |
@@ -103,20 +104,20 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 | <a href="https://support.office.com/article/ATANH-function-3cd65768-0de7-4f1d-b312-d01c8c930d90" target="_blank">Fonction ATANH</a> | FunctionResult | Renvoie la tangente hyperbolique inverse d’un nombre |
 | <a href="https://support.office.com/article/AVEDEV-function-58fe8d65-2a84-4dc7-8052-f3f87b5c6639" target="_blank">Fonction AVEDEV</a> | FunctionResult | Renvoie la moyenne des écarts absolus des points de données par rapport à leur moyenne |
 | <a href="https://support.office.com/article/AVERAGE-function-047bac88-d466-426c-a32b-8f33eb960cf6" target="_blank">Fonction AVERAGE</a> | FunctionResult | Renvoie la moyenne de ses arguments |
-| <a href="https://support.office.com/article/AVERAGEA-function-f5f84098-d453-4f4c-bbba-3d2c66356091" target="_blank">Fonction AVERAGEA</a> | FunctionResult | Renvoie la moyenne de ses arguments, y compris les nombres, le texte et les valeurs logiques |
+| <a href="https://support.office.com/article/AVERAGEA-function-f5f84098-d453-4f4c-bbba-3d2c66356091" target="_blank">Fonction AVERAGEA</a> | FunctionResult | Renvoie la moyenne de ses arguments, nombres, texte et des valeurs logiques |
 | <a href="https://support.office.com/article/AVERAGEIF-function-faec8e2e-0dec-4308-af69-f5576d8ac642" target="_blank">Fonction AVERAGEIF</a> | FunctionResult | Renvoie la moyenne (arithmétique) de toutes les cellules d’une plage respectant un critère donné |
 | <a href="https://support.office.com/article/AVERAGEIFS-function-48910c45-1fc0-4389-a028-f7c5c3001690" target="_blank">Fonction AVERAGEIFS</a> | FunctionResult | Renvoie la moyenne (arithmétique) de toutes les cellules qui répondent à plusieurs critères |
 | <a href="https://support.office.com/article/BAHTTEXT-function-5ba4d0b4-abd3-4325-8d22-7a92d59aab9c" target="_blank">Fonction BAHTTEXT</a> | FunctionResult | Convertit un nombre en texte en utilisant le format monétaire ß (baht) |
 | <a href="https://support.office.com/article/BASE-function-2ef61411-aee9-4f29-a811-1c42456c6342" target="_blank">Fonction BASE</a> | FunctionResult | Convertit un nombre en représentation textuelle avec la base spécifiée |
 | <a href="https://support.office.com/article/BESSELI-function-8d33855c-9a8d-444b-98e0-852267b1c0df" target="_blank">Fonction BESSELI</a> | FunctionResult | Renvoie la fonction de Bessel modifiée In(x) |
-| <a href="https://support.office.com/article/BESSELJ-function-839cb181-48de-408b-9d80-bd02982d94f7" target="_blank">Fonction BESSELJ</a> | FunctionResult | Renvoie la fonction de Bessel Jn(x) |
+| <a href="https://support.office.com/article/BESSELJ-function-839cb181-48de-408b-9d80-bd02982d94f7" target="_blank">Fonction BESSELJ</a> | FunctionResult | Renvoie la fonction de Bessel Jn (x) |
 | <a href="https://support.office.com/article/BESSELK-function-606d11bc-06d3-4d53-9ecb-2803e2b90b70" target="_blank">Fonction BESSELK</a> | FunctionResult | Renvoie la fonction de Bessel modifiée Kn(x) |
-| <a href="https://support.office.com/article/BESSELY-function-f3a356b3-da89-42c3-8974-2da54d6353a2" target="_blank">Fonction BESSELY</a> | FunctionResult | Renvoie la fonction de Bessel Yn(x) |
+| <a href="https://support.office.com/article/BESSELY-function-f3a356b3-da89-42c3-8974-2da54d6353a2" target="_blank">Fonction BESSELY</a> | FunctionResult | Renvoie la fonction de Bessel Yn (x) |
 | <a href="https://support.office.com/article/BETADIST-function-11188c9c-780a-42c7-ba43-9ecb5a878d31" target="_blank">Fonction BETA.DIST</a> | FunctionResult | Renvoie la fonction de distribution cumulée suivant une loi Bêta |
 | <a href="https://support.office.com/article/BETAINV-function-e84cb8aa-8df0-4cf6-9892-83a341d252eb" target="_blank">Fonction BETA.INV</a> | FunctionResult | Renvoie l’inverse de la fonction de distribution cumulée pour une distribution bêta spécifiée |
 | <a href="https://support.office.com/article/BIN2DEC-function-63905b57-b3a0-453d-99f4-647bb519cd6c" target="_blank">Fonction BIN2DEC</a> | FunctionResult | Convertit un nombre binaire en nombre décimal |
 | <a href="https://support.office.com/article/BIN2HEX-function-0375e507-f5e5-4077-9af8-28d84f9f41cc" target="_blank">Fonction BIN2HEX</a> | FunctionResult | Convertit un nombre binaire en nombre hexadécimal |
-| <a href="https://support.office.com/article/BIN2OCT-function-0a4e01ba-ac8d-4158-9b29-16c25c4c23fd" target="_blank">Fonction BIN2OCT</a> | FunctionResult | Convertit un nombre binaire en nombre octal |
+| <a href="https://support.office.com/article/BIN2OCT-function-0a4e01ba-ac8d-4158-9b29-16c25c4c23fd" target="_blank">Fonction BIN2OCT</a> | FunctionResult | Convertit un nombre binaire en octal. |
 | <a href="https://support.office.com/article/BINOMDIST-function-c5ae37b6-f39c-4be2-94c2-509a1480770c" target="_blank">Fonction BINOM.DIST</a> | FunctionResult | Renvoie la probabilité d’une variable aléatoire discrète suivant la loi binomiale |
 | <a href="https://support.office.com/article/BINOMDISTRANGE-function-17331329-74c7-4053-bb4c-6653a7421595" target="_blank">Fonction BINOM.DIST.RANGE</a> | FunctionResult | Renvoie la probabilité d’un résultat de tirage en suivant une distribution binomiale |
 | <a href="https://support.office.com/article/BINOMINV-function-80a0370c-ada6-49b4-83e7-05a91ba77ac9" target="_blank">Fonction BINOM.INV</a> | FunctionResult | Renvoie la plus petite valeur pour laquelle la distribution binomiale cumulée est inférieure ou égale à une valeur critère |
@@ -124,8 +125,8 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 | <a href="https://support.office.com/article/BITLSHIFT-function-c55bb27e-cacd-4c7c-b258-d80861a03c9c" target="_blank">Fonction BITLSHIFT</a> | FunctionResult | Renvoie un nombre décalé vers la gauche de total_décalage bits. |
 | <a href="https://support.office.com/article/BITOR-function-f6ead5c8-5b98-4c9e-9053-8ad5234919b2" target="_blank">Fonction BITOR</a> | FunctionResult | Renvoie une opération OR au niveau du bit de deux nombres |
 | <a href="https://support.office.com/article/BITRSHIFT-function-274d6996-f42c-4743-abdb-4ff95351222c" target="_blank">Fonction BITRSHIFT</a> | FunctionResult | Renvoie un nombre décalé vers la droite de total_décalage bits |
-| <a href="https://support.office.com/article/BITXOR-function-c81306a1-03f9-4e89-85ac-b86c3cba10e4" target="_blank">Fonction BITXOR</a> | FunctionResult | Renvoie une opération « Exclusive Or » au niveau du bit de deux nombres |
-| <a href="https://support.office.com/article/CEILINGMATH-function-80f95d2f-b499-4eee-9f16-f795a8e306c8" target="_blank">Fonctions CEILING.MATH, ECMA_CEILING</a> | FunctionResult | Arrondit un nombre à l’entier ou au multiple supérieur le plus proche de l’argument de précision |
+| <a href="https://support.office.com/article/BITXOR-function-c81306a1-03f9-4e89-85ac-b86c3cba10e4" target="_blank">Fonction BITXOR</a> | FunctionResult | Renvoie une opération Exclusive Or au niveau du bit de deux nombres |
+| <a href="https://support.office.com/article/CEILINGMATH-function-80f95d2f-b499-4eee-9f16-f795a8e306c8" target="_blank">CEILING. MATH, fonctions ECMA_CEILING</a> | FunctionResult | Arrondit un nombre à l’entier ou au multiple supérieur le plus proche de l’argument de précision |
 | <a href="https://support.office.com/article/CEILINGPRECISE-function-f366a774-527a-4c92-ba49-af0a196e66cb" target="_blank">Fonction CEILING.PRECISE</a> | FunctionResult | Arrondit un nombre à l’entier ou au multiple le plus proche de l’argument de précision. Quel que soit le signe du nombre, le nombre est arrondi à l’unité supérieure. |
 | <a href="https://support.office.com/article/CHAR-function-bbd249c8-b36e-4a91-8017-1c133f9b837a" target="_blank">Fonction CHAR</a> | FunctionResult | Renvoie le caractère spécifié par le code numérique |
 | <a href="https://support.office.com/article/CHISQDIST-function-8486b05e-5c05-4942-a9ea-f6b341518732" target="_blank">Fonction CHISQ.DIST</a> | FunctionResult | Renvoie la fonction de densité de probabilité bêta cumulative |
@@ -141,7 +142,7 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 | <a href="https://support.office.com/article/COMPLEX-function-f0b8f3a9-51cc-4d6d-86fb-3a9362fa4128" target="_blank">Fonction COMPLEX</a> | FunctionResult | Convertit des coefficients réels et imaginaires en nombre complexe |
 | <a href="https://support.office.com/article/CONCATENATE-function-8f8ae884-2ca8-4f7a-b093-75d702bea31d" target="_blank">Fonction CONCATENATE</a> | FunctionResult | Regroupe plusieurs éléments textuels en un élément textuel |
 | <a href="https://support.office.com/article/CONFIDENCENORM-function-7cec58a6-85bb-488d-91c3-63828d4fbfd4" target="_blank">Fonction CONFIDENCE.NORM</a> | FunctionResult | Renvoie l’intervalle de confiance pour la moyenne d’une population |
-| <a href="https://support.office.com/article/CONFIDENCET-function-e8eca395-6c3a-4ba9-9003-79ccc61d3c53" target="_blank">Fonction CONFIDENCE.T</a> | FunctionResult | Renvoie l’intervalle de confiance pour la moyenne d’une population, à l’aide d'une distribution suivant la loi T de Student |
+| <a href="https://support.office.com/article/CONFIDENCET-function-e8eca395-6c3a-4ba9-9003-79ccc61d3c53" target="_blank">Fonction CONFIDENCE.T</a> | FunctionResult | Renvoie l’intervalle de confiance pour la moyenne d’une population, à l’aide de la probabilité d’une variable aléatoire suivant une loi T de Student |
 | <a href="https://support.office.com/article/CONVERT-function-d785bef1-808e-4aac-bdcd-666c810f9af2" target="_blank">Fonction CONVERT</a> | FunctionResult | Convertit un nombre d’un système de mesure à un autre |
 | <a href="https://support.office.com/article/COS-function-0fb808a5-95d6-4553-8148-22aebdce5f05" target="_blank">Fonction COS</a> | FunctionResult | Renvoie le cosinus d’un nombre |
 | <a href="https://support.office.com/article/COSH-function-e460d426-c471-43e8-9540-a57ff3b70555" target="_blank">Fonction COSH</a> | FunctionResult | Renvoie le cosinus hyperbolique d’un nombre |
@@ -184,7 +185,7 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 | <a href="https://support.office.com/article/DISC-function-71fce9f3-3f05-4acf-a5a3-eac6ef4daa53" target="_blank">Fonction DISC</a> | FunctionResult | Renvoie le taux d’escompte d’un titre |
 | <a href="https://support.office.com/article/DMAX-function-f4e8209d-8958-4c3d-a1ee-6351665d41c2" target="_blank">Fonction DMAX</a> | FunctionResult | Renvoie la valeur maximale des entrées de base de données sélectionnées |
 | <a href="https://support.office.com/article/DMIN-function-4ae6f1d9-1f26-40f1-a783-6dc3680192a3" target="_blank">Fonction DMIN</a> | FunctionResult | Renvoie la valeur minimale des entrées de base de données sélectionnées |
-| <a href="https://support.office.com/article/DOLLAR-function-a6cd05d9-9740-4ad3-a469-8109d18ff611" target="_blank">Fonctions DOLLAR, USDOLLAR</a> | FunctionResult | Convertit un nombre en texte en utilisant le format monétaire $ (dollar) |
+| <a href="https://support.office.com/article/DOLLAR-function-a6cd05d9-9740-4ad3-a469-8109d18ff611" target="_blank">DOLLAR, fonctions USDOLLAR</a> | FunctionResult | Convertit un nombre en texte en utilisant le format monétaire $ (dollar) |
 | <a href="https://support.office.com/article/DOLLARDE-function-db85aab0-1677-428a-9dfd-a38476693427" target="_blank">Fonction DOLLARDE</a> | FunctionResult | Convertit un prix en dollars, exprimé sous forme de fraction, en un prix en dollars exprimé sous forme de nombre décimal |
 | <a href="https://support.office.com/article/DOLLARFR-function-0835d163-3023-4a33-9824-3042c5d4f495" target="_blank">Fonction DOLLARFR</a> | FunctionResult | Convertit un prix en dollars, exprimé sous forme de nombre décimal, en un prix en dollars exprimé sous forme de fraction |
 | <a href="https://support.office.com/article/DPRODUCT-function-4f96b13e-d49c-47a7-b769-22f6d017cb31" target="_blank">Fonction DPRODUCT</a> | FunctionResult | Multiplie les valeurs d’un champ particulier dans des enregistrements correspondant aux critères d’une base de données |
@@ -192,7 +193,7 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 | <a href="https://support.office.com/article/DSTDEVP-function-04b78995-da03-4813-bbd9-d74fd0f5d94b" target="_blank">Fonction DSTDEVP</a> | FunctionResult | Calcule l’écart type en fonction de l’ensemble des entrées de base de données sélectionnées |
 | <a href="https://support.office.com/article/DSUM-function-53181285-0c4b-4f5a-aaa3-529a322be41b" target="_blank">Fonction DSUM</a> | FunctionResult | Ajoute les nombres dans la colonne Champ des enregistrements de la base de données correspondant aux critères |
 | <a href="https://support.office.com/article/DURATION-function-b254ea57-eadc-4602-a86a-c8e369334038" target="_blank">Fonction DURATION</a> | FunctionResult | Renvoie la durée annuelle d’un titre dont les intérêts sont perçus périodiquement |
-| <a href="https://support.office.com/article/DVAR-function-d6747ca9-99c7-48bb-996e-9d7af00f3ed1" target="_blank">Fonction DVAR</a> | FunctionResult | Fonction DVAR |
+| <a href="https://support.office.com/article/DVAR-function-d6747ca9-99c7-48bb-996e-9d7af00f3ed1" target="_blank">Fonction DVAR</a> | FunctionResult | Estime la variance en fonction d’un échantillon d’entrées de base de données sélectionnées |
 | <a href="https://support.office.com/article/DVARP-function-eb0ba387-9cb7-45c8-81e9-0394912502fc" target="_blank">Fonction DVARP</a> | FunctionResult | Calcule la variance en fonction de l’ensemble des entrées de base de données sélectionnées |
 | <a href="https://support.office.com/article/EDATE-function-3c920eb2-6e66-44e7-a1f5-753ae47ee4f5" target="_blank">Fonction EDATE</a> | FunctionResult | Renvoie le numéro de série de la date qui représente le nombre indiqué de mois précédant ou suivant la date de début |
 | <a href="https://support.office.com/article/EFFECT-function-910d4e4c-79e2-4009-95e6-507e04f11bc4" target="_blank">Fonction EFFECT</a> | FunctionResult | Renvoie le taux d’intérêt annuel effectif |
@@ -212,22 +213,22 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 | <a href="https://support.office.com/article/FINVRT-function-d371aa8f-b0b1-40ef-9cc2-496f0693ac00" target="_blank">Fonction F.INVERT.RT</a> | FunctionResult | Renvoie l’inverse de la distribution de probabilité F |
 | <a href="https://support.office.com/article/FACT-function-ca8588c2-15f2-41c0-8e8c-c11bd471a4f3" target="_blank">Fonction FACT</a> | FunctionResult | Renvoie la factorielle d’un nombre |
 | <a href="https://support.office.com/article/FACTDOUBLE-function-e67697ac-d214-48eb-b7b7-cce2589ecac8" target="_blank">Fonction FACTDOUBLE</a> | FunctionResult | Renvoie la factorielle double d’un nombre |
-| <a href="https://support.office.com/article/FALSE-function-2d58dfa5-9c03-4259-bf8f-f0ae14346904" target="_blank">Fonction FALSE</a> | FunctionResult | Renvoie la valeur logique `FALSE` |
-| <a href="https://support.office.com/article/FIND-FINDB-functions-c7912941-af2a-4bdf-a553-d0d89b0a0628" target="_blank">Fonctions FIND, FINDB</a> | FunctionResult | Cherche une valeur textuelle dans une autre (en respectant la casse) |
+| <a href="https://support.office.com/article/FALSE-function-2d58dfa5-9c03-4259-bf8f-f0ae14346904" target="_blank">Fonction FALSE</a> | FunctionResult | Renvoie la valeur logique`FALSE` |
+| Fonctions FIND, FINDB | FunctionResult | Recherche une valeur de texte dans une autre (en respectant la casse) |
 | <a href="https://support.office.com/article/FISHER-function-d656523c-5076-4f95-b87b-7741bf236c69" target="_blank">Fonction FISHER</a> | FunctionResult | Renvoie la transformation de Fisher |
 | <a href="https://support.office.com/article/FISHERINV-function-62504b39-415a-4284-a285-19c8e82f86bb" target="_blank">Fonction FISHERINV</a> | FunctionResult | Renvoie l’inverse de la transformation de Fisher |
 | <a href="https://support.office.com/article/FIXED-function-ffd5723c-324c-45e9-8b96-e41be2a8274a" target="_blank">Fonction FIXED</a> | FunctionResult | Convertit un nombre en texte avec un nombre de décimales fixe |
-| <a href="https://support.office.com/article/FLOORMATH-function-c302b599-fbdb-4177-ba19-2c2b1249a2f5" target="_blank">Fonction FLOOR.MATH</a> | FunctionResult | Arrondit un nombre à l’entier ou au multiple inférieur le plus proche de l’argument de précision |
+| Fonction FLOOR.MATH | FunctionResult | Arrondit un nombre à l’entier ou au multiple inférieur le plus proche de l’argument de précision |
 | <a href="https://support.office.com/article/FLOORPRECISE-function-f769b468-1452-4617-8dc3-02f842a0702e" target="_blank">Fonction FLOOR.PRECISE</a> | FunctionResult | Arrondit un nombre à l’entier ou au multiple inférieur le plus proche de l’argument de précision. Quel que soit le signe du nombre, le nombre est arrondi à l’unité inférieure. |
-| <a href="https://support.office.com/article/FV-function-2eef9f44-a084-4c61-bdd8-4fe4bb1b71b3" target="_blank">Fonction FV</a> | FunctionResult | Renvoie la valeur future d’un investissement |
+| Fonction FV | FunctionResult | Renvoie la valeur future d’un investissement |
 | <a href="https://support.office.com/article/FVSCHEDULE-function-bec29522-bd87-4082-bab9-a241f3fb251d" target="_blank">Fonction FVSCHEDULE</a> | FunctionResult | Renvoie la valeur future d’un investissement en appliquant une série de taux d’intérêt composites |
 | <a href="https://support.office.com/article/GAMMA-function-ce1702b1-cf55-471d-8307-f83be0fc5297" target="_blank">Fonction GAMMA</a> | FunctionResult | Renvoie la valeur de la fonction Gamma |
-| <a href="https://support.office.com/article/GAMMADIST-function-9b6f1538-d11c-4d5f-8966-21f6a2201def" target="_blank">Fonction GAMMA.DIST</a> | FunctionResult | Renvoie la distribution suivant une loi Gamma |
+| <a href="https://support.office.com/article/GAMMADIST-function-9b6f1538-d11c-4d5f-8966-21f6a2201def" target="_blank">Fonction GAMMA.DIST</a> | FunctionResult | Renvoie la distribution gamma |
 | <a href="https://support.office.com/article/GAMMAINV-function-74991443-c2b0-4be5-aaab-1aa4d71fbb18" target="_blank">Fonction GAMMA.INV</a> | FunctionResult | Renvoie l’inverse de la distribution cumulée suivant une loi Gamma |
 | <a href="https://support.office.com/article/GAMMALN-function-b838c48b-c65f-484f-9e1d-141c55470eb9" target="_blank">Fonction GAMMALN</a> | FunctionResult | Renvoie le logarithme népérien de la fonction gamma, Γ(x) |
 | <a href="https://support.office.com/article/GAMMALNPRECISE-function-5cdfe601-4e1e-4189-9d74-241ef1caa599" target="_blank">Fonction GAMMALN.PRECISE</a> | FunctionResult | Renvoie le logarithme népérien de la fonction gamma, Γ(x) |
 | <a href="https://support.office.com/article/GAUSS-function-069f1b4e-7dee-4d6a-a71f-4b69044a6b33" target="_blank">Fonction GAUSS</a> | FunctionResult | Renvoie 0,5 de moins que la distribution cumulée suivant une loi normale centrée réduite |
-| <a href="https://support.office.com/article/GCD-function-d5107a51-69e3-461f-8e4c-ddfc21b5073a" target="_blank">Fonction GCD</a> | FunctionResult | Renvoie le plus grand diviseur commun |
+| <a href="https://support.office.com/article/GCD-function-d5107a51-69e3-461f-8e4c-ddfc21b5073a" target="_blank">Fonction GCD</a> | FunctionResult | Renvoie le plus grand commun diviseur |
 | <a href="https://support.office.com/article/GEOMEAN-function-db1ac48d-25a5-40a0-ab83-0b38980e40d5" target="_blank">Fonction GEOMEAN</a> | FunctionResult | Renvoie la moyenne géométrique |
 | <a href="https://support.office.com/article/GESTEP-function-f37e7d2a-41da-4129-be95-640883fca9df" target="_blank">Fonction GESTEP</a> | FunctionResult | Vérifie si un nombre est supérieur à une valeur seuil |
 | <a href="https://support.office.com/article/HARMEAN-function-5efd9184-fab5-42f9-b1d3-57883a1d3bc6" target="_blank">Fonction HARMEAN</a> | FunctionResult | Renvoie la moyenne harmonique |
@@ -254,7 +255,7 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 | <a href="https://support.office.com/article/IMLOG10-function-58200fca-e2a2-4271-8a98-ccd4360213a5" target="_blank">Fonction IMLOG10</a> | FunctionResult | Calcule le logarithme d’un nombre complexe en base 10 |
 | <a href="https://support.office.com/article/IMLOG2-function-152e13b4-bc79-486c-a243-e6a676878c51" target="_blank">Fonction IMLOG2</a> | FunctionResult | Calcule le logarithme d’un nombre complexe en base 2 |
 | <a href="https://support.office.com/article/IMPOWER-function-210fd2f5-f8ff-4c6a-9d60-30e34fbdef39" target="_blank">Fonction IMPOWER</a> | FunctionResult | Renvoie un nombre complexe élevé à une puissance entière |
-| <a href="https://support.office.com/article/IMPRODUCT-function-2fb8651a-a4f2-444f-975e-8ba7aab3a5ba" target="_blank">Fonction IMPRODUCT</a> | FunctionResult | Renvoie le produit de 2 à 255 nombres complexes |
+| <a href="https://support.office.com/article/IMPRODUCT-function-2fb8651a-a4f2-444f-975e-8ba7aab3a5ba" target="_blank">Fonction IMPRODUCT</a> | FunctionResult | Renvoie le produit de 2 à 255 nombres complexes |
 | <a href="https://support.office.com/article/IMREAL-function-d12bc4c0-25d0-4bb3-a25f-ece1938bf366" target="_blank">Fonction IMREAL</a> | FunctionResult | Renvoie le coefficient réel d’un nombre complexe |
 | <a href="https://support.office.com/article/IMSEC-function-6df11132-4411-4df4-a3dc-1f17372459e0" target="_blank">Fonction IMSEC</a> | FunctionResult | Renvoie la sécante d’un nombre complexe |
 | <a href="https://support.office.com/article/IMSECH-function-f250304f-788b-4505-954e-eb01fa50903b" target="_blank">Fonction IMSECH</a> | FunctionResult | Renvoie la sécante hyperbolique d’un nombre complexe |
@@ -262,27 +263,27 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 | <a href="https://support.office.com/article/IMSINH-function-dfb9ec9e-8783-4985-8c42-b028e9e8da3d" target="_blank">Fonction IMSINH</a> | FunctionResult | Renvoie le sinus hyperbolique d’un nombre complexe |
 | <a href="https://support.office.com/article/IMSQRT-function-e1753f80-ba11-4664-a10e-e17368396b70" target="_blank">Fonction IMSQRT</a> | FunctionResult | Renvoie la racine carrée d’un nombre complexe |
 | <a href="https://support.office.com/article/IMSUB-function-2e404b4d-4935-4e85-9f52-cb08b9a45054" target="_blank">Fonction IMSUB</a> | FunctionResult | Renvoie la différence entre deux nombres complexes |
-| <a href="https://support.office.com/article/IMSUM-function-81542999-5f1c-4da6-9ffe-f1d7aaa9457f" target="_blank">Fonction IMSUM</a> | FunctionResult | Renvoie la somme de plusieurs nombres complexes |
+| <a href="https://support.office.com/article/IMSUM-function-81542999-5f1c-4da6-9ffe-f1d7aaa9457f" target="_blank">Fonction IMSUM</a> | FunctionResult | Renvoie la somme des nombres complexes |
 | <a href="https://support.office.com/article/IMTAN-function-8478f45d-610a-43cf-8544-9fc0b553a132" target="_blank">Fonction IMTAN</a> | FunctionResult | Renvoie la tangente d’un nombre complexe |
 | <a href="https://support.office.com/article/INT-function-a6c4af9e-356d-4369-ab6a-cb1fd9d343ef" target="_blank">Fonction INT</a> | FunctionResult | Arrondit un nombre à l’entier inférieur le plus proche |
 | <a href="https://support.office.com/article/INTRATE-function-5cb34dde-a221-4cb6-b3eb-0b9e55e1316f" target="_blank">Fonction INTRATE</a> | FunctionResult | Renvoie le taux d’intérêt pour un titre totalement investi |
 | <a href="https://support.office.com/article/IPMT-function-5cce0ad6-8402-4a41-8d29-61a0b054cb6f" target="_blank">Fonction IPMT</a> | FunctionResult | Renvoie le montant des intérêts d’un investissement pour une période donnée |
 | <a href="https://support.office.com/article/IRR-function-64925eaa-9988-495b-b290-3ad0c163c1bc" target="_blank">Fonction IRR</a> | FunctionResult | Renvoie le taux de rendement interne pour une série de mouvements de trésorerie |
 | <a href="https://support.office.com/article/ISERR-function-0f2d7971-6019-40a0-a171-f2d869135665" target="_blank">Fonction ISERR</a> | FunctionResult | Renvoie `TRUE` si la valeur est une valeur d’erreur, sauf #N/A |
-| <a href="https://support.office.com/article/ISERROR-function-0f2d7971-6019-40a0-a171-f2d869135665" target="_blank">Fonction ISERROR</a> | FunctionResult | Renvoie `TRUE` si la valeur est une valeur d’erreur |
-| <a href="https://support.office.com/article/ISEVEN-function-aa15929a-d77b-4fbb-92f4-2f479af55356" target="_blank">Fonction ISEVEN</a> | FunctionResult | Renvoie `TRUE` si le nombre est pair |
-| <a href="https://support.office.com/article/ISFORMULA-function-e4d1355f-7121-4ef2-801e-3839bfd6b1e5" target="_blank">Fonction ISFORMULA</a> | FunctionResult | Renvoie `TRUE` s’il existe une référence à une cellule qui contient une formule |
-| <a href="https://support.office.com/article/ISLOGICAL-function-0f2d7971-6019-40a0-a171-f2d869135665" target="_blank">Fonction ISLOGICAL</a> | FunctionResult | Renvoie `TRUE` si la valeur est une valeur logique |
-| <a href="https://support.office.com/article/ISNA-function-0f2d7971-6019-40a0-a171-f2d869135665" target="_blank">Fonction ISNA</a> | FunctionResult | Renvoie `TRUE` si la valeur est la valeur d’erreur #N/A |
-| <a href="https://support.office.com/article/ISNONTEXT-function-0f2d7971-6019-40a0-a171-f2d869135665" target="_blank">Fonction ISNONTEXT</a> | FunctionResult | Renvoie `TRUE` si la valeur n’est pas textuelle |
-| <a href="https://support.office.com/article/ISNUMBER-function-0f2d7971-6019-40a0-a171-f2d869135665" target="_blank">Fonction ISNUMBER</a> | FunctionResult | Renvoie `TRUE` si la valeur est un nombre |
-| <a href="https://support.office.com/article/ISOCEILING-function-e587bb73-6cc2-4113-b664-ff5b09859a83" target="_blank">Fonction ISO.CEILING</a> | FunctionResult | Renvoie un nombre arrondi à l’entier ou au multiple supérieur le plus proche de l’argument de précision |
-| <a href="https://support.office.com/article/ISODD-function-0f2d7971-6019-40a0-a171-f2d869135665" target="_blank">Fonction ISODD</a> | FunctionResult | Renvoie `TRUE` si le nombre est impair |
-| <a href="https://support.office.com/article/ISOWEEKNUM-function-1c2d0afe-d25b-4ab1-8894-8d0520e90e0e" target="_blank">Fonction ISOWEEKNUM</a> | FunctionResult | Renvoie le numéro de la semaine ISO de l’année pour une date donnée |
+| Fonction ISERROR | FunctionResult | Renvoie `TRUE` si la valeur est une valeur d’erreur |
+| Fonction ISEVEN | FunctionResult | Cette propriété renvoie `TRUE` si le nombre est pair |
+| Fonction ISFORMULA | FunctionResult | Renvoie `TRUE` s’il existe une référence à une cellule qui contient une formule |
+| Fonction ISLOGICAL | FunctionResult | Cette propriété renvoie `TRUE` si la valeur est une valeur logique |
+| Fonction ISNA | FunctionResult | Renvoie `TRUE` si la valeur est la valeur d’erreur #N/A |
+| Fonction ISNONTEXT | FunctionResult | Renvoie `TRUE` si la valeur n’est pas textuelle |
+| Fonction ISNUMBER | FunctionResult | Cette propriété renvoie `TRUE` si la valeur est un nombre |
+| Fonction ISO.CEILING | FunctionResult | Renvoie un nombre arrondi à l’entier ou au multiple supérieur le plus proche de l’argument de précision |
+| <a href="https://support.office.com/article/ISODD-function-0f2d7971-6019-40a0-a171-f2d869135665" target="_blank">Fonction ISODD</a> | FunctionResult | Cette propriété renvoie `TRUE` si le nombre est impair |
+| Fonction ISOWEEKNUM | FunctionResult | Renvoie le numéro de la semaine ISO de l’année pour une date donnée |
 | <a href="https://support.office.com/article/ISPMT-function-fa58adb6-9d39-4ce0-8f43-75399cea56cc" target="_blank">Fonction ISPMT</a> | FunctionResult | Calcule le montant des intérêts payés au cours d’une période spécifique d’un investissement |
 | <a href="https://support.office.com/article/ISREF-function-0f2d7971-6019-40a0-a171-f2d869135665" target="_blank">Fonction ISREF</a> | FunctionResult | Renvoie `TRUE` si la valeur est une référence |
-| <a href="https://support.office.com/article/ISTEXT-function-0f2d7971-6019-40a0-a171-f2d869135665" target="_blank">Fonction ISTEXT</a> | FunctionResult | Renvoie `TRUE` si la valeur est textuelle |
-| <a href="https://support.office.com/article/KURT-function-bc3a265c-5da4-4dcb-b7fd-c237789095ab" target="_blank">Fonction KURT</a> | FunctionResult | Renvoie le kurtosis d’un jeu de données |
+| Fonction ISTEXT | FunctionResult | Cette propriété renvoie `TRUE` si la valeur est le texte |
+| Fonction KURT | FunctionResult | Renvoie le kurtosis d’un jeu de données |
 | <a href="https://support.office.com/article/LARGE-function-3af0af19-1190-42bb-bb8b-01672ec00a64" target="_blank">Fonction LARGE</a> | FunctionResult | Renvoie la k-ième plus grande valeur d’un jeu de données |
 | <a href="https://support.office.com/article/LCM-function-7152b67a-8bb5-4075-ae5c-06ede5563c94" target="_blank">Fonction LCM</a> | FunctionResult | Renvoie le plus petit dénominateur commun |
 | <a href="https://support.office.com/article/LEFT-LEFTB-functions-9203d2d2-7960-479b-84c6-1ea52b99640c" target="_blank">Fonctions LEFT, LEFTB</a> | FunctionResult | Renvoie les caractères les plus à gauche d’une valeur textuelle |
@@ -292,12 +293,12 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 | <a href="https://support.office.com/article/LOG10-function-c75b881b-49dd-44fb-b6f4-37e3486a0211" target="_blank">Fonction LOG10</a> | FunctionResult | Renvoie le logarithme d’un nombre en base 10 |
 | <a href="https://support.office.com/article/LOGNORMDIST-function-eb60d00b-48a9-4217-be2b-6074aee6b070" target="_blank">Fonction LOGNORM.DIST</a> | FunctionResult | Renvoie la distribution suivant une loi lognormale cumulée |
 | <a href="https://support.office.com/article/LOGNORMINV-function-fe79751a-f1f2-4af8-a0a1-e151b2d4f600" target="_blank">Fonction LOGNORM.INV</a> | FunctionResult | Renvoie l’inverse de la distribution cumulée suivant une loi lognormale |
-| <a href="https://support.office.com/article/LOOKUP-function-446d94af-663b-451d-8251-369d5e3864cb" target="_blank">Fonction LOOKUP</a> | FunctionResult | Cherche des valeurs dans un vecteur ou un tableau |
+| <a href="https://support.office.com/article/LOOKUP-function-446d94af-663b-451d-8251-369d5e3864cb" target="_blank">Fonction LOOKUP</a> | FunctionResult | Recherche des valeurs dans un vecteur ou un tableau |
 | <a href="https://support.office.com/article/LOWER-function-3f21df02-a80c-44b2-afaf-81358f9fdeb4" target="_blank">Fonction LOWER</a> | FunctionResult | Convertit le texte en minuscules |
 | <a href="https://support.office.com/article/MATCH-function-e8dffd45-c762-47d6-bf89-533f4a37673a" target="_blank">Fonction MATCH</a> | FunctionResult | Cherche des valeurs dans une référence ou un tableau |
 | <a href="https://support.office.com/article/MAX-function-e0012414-9ac8-4b34-9a47-73e662c08098" target="_blank">Fonction MAX</a> | FunctionResult | Renvoie la valeur maximale contenue dans une liste d’arguments |
 | <a href="https://support.office.com/article/MAXA-function-814bda1e-3840-4bff-9365-2f59ac2ee62d" target="_blank">Fonction MAXA</a> | FunctionResult | Renvoie la valeur maximale contenue dans une liste d’arguments, y compris les nombres, le texte et les valeurs logiques |
-| <a href="https://support.office.com/article/MDURATION-function-b3786a69-4f20-469a-94ad-33e5b90a763c" target="_blank">Fonction MDURATION</a> | FunctionResult | Renvoie la durée modifiée de Macauley pour un titre avec une valeur estimée à 100 dollars |
+| <a href="https://support.office.com/article/MDURATION-function-b3786a69-4f20-469a-94ad-33e5b90a763c" target="_blank">Fonction MDURATION</a> | FunctionResult | Renvoie la durée modifiée de Macauley pour un titre avec une valeur estimée à 100 dollars |
 | <a href="https://support.office.com/article/MEDIAN-function-d0916313-4753-414c-8537-ce85bdd967d2" target="_blank">Fonction MEDIAN</a> | FunctionResult | Renvoie la valeur médiane des nombres donnés |
 | <a href="https://support.office.com/article/MID-MIDB-functions-d5f9e25c-d7d6-472e-b568-4ecb12433028" target="_blank">Fonction MID, MIDB</a> | FunctionResult | Renvoie un nombre déterminé de caractères d’une chaîne de texte en commençant à la position indiquée |
 | <a href="https://support.office.com/article/MIN-function-61635d12-920f-4ce2-a70f-96f202dcc152" target="_blank">Fonction MIN</a> | FunctionResult | Renvoie la valeur minimale contenue dans une liste d’arguments |
@@ -318,21 +319,21 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 | <a href="https://support.office.com/article/NORMINV-function-54b30935-fee7-493c-bedb-2278a9db7e13" target="_blank">Fonction NORM.INV</a> | FunctionResult | Renvoie l’inverse de la distribution cumulée suivant une loi normale |
 | <a href="https://support.office.com/article/NORMSDIST-function-1e787282-3832-4520-a9ae-bd2a8d99ba88" target="_blank">Fonction NORM.S.DIST</a> | FunctionResult | Renvoie la distribution cumulée suivant une loi normale centrée réduite |
 | <a href="https://support.office.com/article/NORMSINV-function-d6d556b4-ab7f-49cd-b526-5a20918452b1" target="_blank">Fonction NORM.S.INV</a> | FunctionResult | Renvoie l’inverse de la distribution cumulée suivant une loi normale centrée réduite |
-| <a href="https://support.office.com/article/NOT-function-9cfc6011-a054-40c7-a140-cd4ba2d87d77" target="_blank">Fonction NOT</a> | FunctionResult | Inverse la logique de son argument |
+| <a href="https://support.office.com/article/NOT-function-9cfc6011-a054-40c7-a140-cd4ba2d87d77" target="_blank">Fonction NOT</a> | FunctionResult | Inverse la logique de l’argument |
 | <a href="https://support.office.com/article/NOW-function-3337fd29-145a-4347-b2e6-20c904739c46" target="_blank">Fonction NOW</a> | FunctionResult | Renvoie le numéro de série de la date et de l’heure actuelles |
 | <a href="https://support.office.com/article/NPER-function-240535b5-6653-4d2d-bfcf-b6a38151d815" target="_blank">Fonction NPER</a> | FunctionResult | Renvoie le nombre de paiements d’un investissement |
 | <a href="https://support.office.com/article/NPV-function-8672cb67-2576-4d07-b67b-ac28acf2a568" target="_blank">Fonction NPV</a> | FunctionResult | Renvoie la valeur nette actuelle d’un investissement, en fonction d’une série de flux de trésorerie périodiques et d’un taux d’escompte |
 | <a href="https://support.office.com/article/NUMBERVALUE-function-1b05c8cf-2bfa-4437-af70-596c7ea7d879" target="_blank">Fonction NUMBERVALUE</a> | FunctionResult | Convertit le texte en nombre quels que soient les paramètres régionaux |
-| <a href="https://support.office.com/article/OCT2BIN-function-55383471-3c56-4d27-9522-1a8ec646c589" target="_blank">Fonction OCT2BIN</a> | FunctionResult | Convertit un nombre octal en nombre binaire |
+| <a href="https://support.office.com/article/OCT2BIN-function-55383471-3c56-4d27-9522-1a8ec646c589" target="_blank">Fonction OCT2BIN</a> | FunctionResult | Convertit un nombre octal en nombre binaire. |
 | <a href="https://support.office.com/article/OCT2DEC-function-87606014-cb98-44b2-8dbb-e48f8ced1554" target="_blank">Fonction OCT2DEC</a> | FunctionResult | Convertit un nombre octal en nombre décimal |
 | <a href="https://support.office.com/article/OCT2HEX-function-912175b4-d497-41b4-a029-221f051b858f" target="_blank">Fonction OCT2HEX</a> | FunctionResult | Convertit un nombre octal en nombre hexadécimal |
 | <a href="https://support.office.com/article/ODD-function-deae64eb-e08a-4c88-8b40-6d0b42575c98" target="_blank">Fonction ODD</a> | FunctionResult | Arrondit un nombre à l’entier impair supérieur le plus proche |
-| <a href="https://support.office.com/article/ODDFPRICE-function-d7d664a8-34df-4233-8d2b-922bcf6a69e1" target="_blank">Fonction ODDFPRICE</a> | FunctionResult | Renvoie le prix par valeur faciale de 100 dollars d’un titre dont la première période est irrégulière |
+| <a href="https://support.office.com/article/ODDFPRICE-function-d7d664a8-34df-4233-8d2b-922bcf6a69e1" target="_blank">Fonction ODDFPRICE</a> | FunctionResult | Renvoie le prix par valeur faciale de 100 dollars d’un titre dont la première période est irrégulière |
 | <a href="https://support.office.com/article/ODDFYIELD-function-66bc8b7b-6501-4c93-9ce3-2fd16220fe37" target="_blank">Fonction ODDFYIELD</a> | FunctionResult | Renvoie le rendement d’un titre dont la première période est irrégulière |
-| <a href="https://support.office.com/article/ODDLPRICE-function-fb657749-d200-4902-afaf-ed5445027fc4" target="_blank">Fonction ODDLPRICE</a> | FunctionResult | Renvoie le prix par valeur faciale de 100 dollars d’un titre dont la dernière période est irrégulière |
+| <a href="https://support.office.com/article/ODDLPRICE-function-fb657749-d200-4902-afaf-ed5445027fc4" target="_blank">Fonction ODDLPRICE</a> | FunctionResult | Renvoie le prix par valeur faciale de 100 dollars d’un titre dont la dernière période est irrégulière |
 | <a href="https://support.office.com/article/ODDLYIELD-function-c873d088-cf40-435f-8d41-c8232fee9238" target="_blank">Fonction ODDLYIELD</a> | FunctionResult | Renvoie le rendement d’un titre dont la dernière période est irrégulière |
-| <a href="https://support.office.com/article/OR-function-7d17ad14-8700-4281-b308-00b131e22af0" target="_blank">Fonction OR</a> | FunctionResult | Renvoie `TRUE` si un argument a la valeur True |
-| <a href="https://support.office.com/article/PDURATION-function-44f33460-5be5-4c90-b857-22308892adaf" target="_blank">Fonction PDURATION</a> | FunctionResult | Renvoie le nombre de périodes requises par un investissement pour atteindre une valeur spécifiée |
+| <a href="https://support.office.com/article/OR-function-7d17ad14-8700-4281-b308-00b131e22af0" target="_blank">Fonction OR</a> | FunctionResult | Cette propriété renvoie `TRUE` si un argument n’est true |
+| Fonction PDURATION | FunctionResult | Renvoie le nombre de périodes requises par un investissement pour atteindre une valeur spécifiée |
 | <a href="https://support.office.com/article/PERCENTILEEXC-function-bbaa7204-e9e1-4010-85bf-c31dc5dce4ba" target="_blank">Fonction PERCENTILE.EXC</a> | FunctionResult | Renvoie le k-ième centile de valeur d’une plage, où k se trouve dans la plage de 0 à 1 exclus |
 | <a href="https://support.office.com/article/PERCENTILEINC-function-680f9539-45eb-410b-9a5e-c1355e5fe2ed" target="_blank">Fonction PERCENTILE.INC</a> | FunctionResult | Renvoie le k-ième centile des valeurs d’une plage |
 | <a href="https://support.office.com/article/PERCENTRANKEXC-function-d8afee96-b7e2-4a2f-8c01-8fcdedaa6314" target="_blank">Fonction PERCENTRANK.EXC</a> | FunctionResult | Renvoie le rang d’une valeur dans un ensemble de données défini comme pourcentage (0..1, exclus) de cet ensemble |
@@ -342,13 +343,13 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 | <a href="https://support.office.com/article/PHI-function-23e49bc6-a8e8-402d-98d3-9ded87f6295c" target="_blank">Fonction PHI</a> | FunctionResult | Renvoie la valeur de la fonction de densité pour une distribution suivant une loi normale centrée réduite |
 | <a href="https://support.office.com/article/PI-function-264199d0-a3ba-46b8-975a-c4a04608989b" target="_blank">Fonction PI</a> | FunctionResult | Renvoie la valeur de pi |
 | <a href="https://support.office.com/article/PMT-function-0214da64-9a63-4996-bc20-214433fa6441" target="_blank">Fonction PMT</a> | FunctionResult | Renvoie le montant périodique d’une annuité |
-| <a href="https://support.office.com/article/POISSONDIST-function-8fe148ff-39a2-46cb-abf3-7772695d9636" target="_blank">Fonction POISSON.DIST</a> | FunctionResult | Renvoie la distribution suivant une loi de Poisson |
+| <a href="https://support.office.com/article/POISSONDIST-function-8fe148ff-39a2-46cb-abf3-7772695d9636" target="_blank">Fonction POISSON.DIST</a> | FunctionResult | Renvoie la loi de Poisson |
 | <a href="https://support.office.com/article/POWER-function-d3f2908b-56f4-4c3f-895a-07fb519c362a" target="_blank">Fonction POWER</a> | FunctionResult | Renvoie le résultat d’un nombre élevé à une puissance |
 | <a href="https://support.office.com/article/PPMT-function-c370d9e3-7749-4ca4-beea-b06c6ac95e1b" target="_blank">Fonction PPMT</a> | FunctionResult | Renvoie la part de remboursement du principal d’un emprunt pour une période donnée |
-| <a href="https://support.office.com/article/PRICE-function-3ea9deac-8dfa-436f-a7c8-17ea02c21b0a" target="_blank">Fonction PRICE</a> | FunctionResult | Renvoie le prix par valeur faciale de 100 dollars d’un titre dont les intérêts sont payés périodiquement |
-| <a href="https://support.office.com/article/PRICEDISC-function-d06ad7c1-380e-4be7-9fd9-75e3079acfd3" target="_blank">Fonction PRICEDISC</a> | FunctionResult | Renvoie le prix par valeur faciale de 100 dollars pour un titre escompté |
-| <a href="https://support.office.com/article/PRICEMAT-function-52c3b4da-bc7e-476a-989f-a95f675cae77" target="_blank">Fonction PRICEMAT</a> | FunctionResult | Renvoie le prix par valeur faciale de 100 dollars d’un titre dont les intérêts sont payés à échéance |
-| <a href="https://support.office.com/article/PRODUCT-function-8e6b5b24-90ee-4650-aeec-80982a0512ce" target="_blank">Fonction PRODUCT</a> | FunctionResult | Multiplie ses arguments |
+| <a href="https://support.office.com/article/PRICE-function-3ea9deac-8dfa-436f-a7c8-17ea02c21b0a" target="_blank">Fonction PRICE</a> | FunctionResult | Renvoie le prix par valeur faciale de 100 dollars d’un titre dont les intérêts sont payés périodiquement |
+| <a href="https://support.office.com/article/PRICEDISC-function-d06ad7c1-380e-4be7-9fd9-75e3079acfd3" target="_blank">Fonction PRICEDISC</a> | FunctionResult | Renvoie le prix par valeur faciale de 100 dollars pour un titre escompté |
+| <a href="https://support.office.com/article/PRICEMAT-function-52c3b4da-bc7e-476a-989f-a95f675cae77" target="_blank">Fonction PRICEMAT</a> | FunctionResult | Renvoie le prix par valeur faciale de 100 dollars d’un titre dont les intérêts sont payés à échéance |
+| Fonction PRODUCT | FunctionResult | Multiplie ses arguments |
 | <a href="https://support.office.com/article/PROPER-function-52a5a283-e8b2-49be-8506-b2887b889f94" target="_blank">Fonction PROPER</a> | FunctionResult | Met en majuscule la première lettre de chaque mot d’une valeur textuelle |
 | <a href="https://support.office.com/article/PV-function-23879d31-0e02-4321-be01-da16e8168cbd" target="_blank">Fonction PV</a> | FunctionResult | Renvoie la valeur actuelle d’un investissement |
 | <a href="https://support.office.com/article/QUARTILEEXC-function-5a355b7a-840b-4a01-b0f1-f538c2864cad" target="_blank">Fonction QUARTILE.EXC</a> | FunctionResult | Renvoie le quartile de l’ensemble de données d’après des valeurs de centile comprises entre 0 et 1, exclus |
@@ -370,7 +371,7 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 | <a href="https://support.office.com/article/ROUNDUP-function-f8bc9b23-e795-47db-8703-db171d0c42a7" target="_blank">Fonction ROUNDUP</a> | FunctionResult | Arrondit un nombre à la valeur d’arrondi la plus éloignée de zéro |
 | <a href="https://support.office.com/article/ROWS-function-b592593e-3fc2-47f2-bec1-bda493811597" target="_blank">Fonction ROWS</a> | FunctionResult | Renvoie le nombre de lignes dans une référence |
 | <a href="https://support.office.com/article/RRI-function-6f5822d8-7ef1-4233-944c-79e8172930f4" target="_blank">Fonction RRI</a> | FunctionResult | Renvoie un taux d’intérêt équivalent pour la croissance d’un investissement |
-| <a href="https://support.office.com/article/SEC-function-ff224717-9c87-4170-9b58-d069ced6d5f7" target="_blank">Fonction SEC</a> | FunctionResult | Renvoie la sécante d’un angle |
+| Fonction SEC | FunctionResult | Renvoie la sécante d’un angle |
 | <a href="https://support.office.com/article/SECH-function-e05a789f-5ff7-4d7f-984a-5edb9b09556f" target="_blank">Fonction SECH</a> | FunctionResult | Renvoie la sécante hyperbolique d’un angle |
 | <a href="https://support.office.com/article/SECOND-function-740d1cfc-553c-4099-b668-80eaa24e8af1" target="_blank">Fonction SECOND</a> | FunctionResult | Convertit un numéro de série en seconde |
 | <a href="https://support.office.com/article/SERIESSUM-function-a3ab25b5-1093-4f5b-b084-96c49087f637" target="_blank">Fonction SERIESSUM</a> | FunctionResult | Renvoie le total d’une série de puissance basé sur la formule |
@@ -400,41 +401,41 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 | <a href="https://support.office.com/article/T-function-fb83aeec-45e7-4924-af95-53e073541228" target="_blank">Fonction T</a> | FunctionResult | Convertit ses arguments en texte |
 | <a href="https://support.office.com/article/TDIST-function-4329459f-ae91-48c2-bba8-1ead1c6c21b2" target="_blank">Fonction T.DIST</a> | FunctionResult | Renvoie les points de pourcentage (probabilité) pour la distribution suivant la loi T de Student |
 | <a href="https://support.office.com/article/TDIST2T-function-198e9340-e360-4230-bd21-f52f22ff5c28" target="_blank">Fonction T.DIST.2T</a> | FunctionResult | Renvoie les points de pourcentage (probabilité) pour la distribution suivant la loi T de Student |
-| <a href="https://support.office.com/article/TDISTRT-function-20a30020-86f9-4b35-af1f-7ef6ae683eda" target="_blank">Fonction T.DIST.RT</a> | FunctionResult | Renvoie la distribution suivant la loi T de Student |
-| <a href="https://support.office.com/article/TINV-function-2908272b-4e61-4942-9df9-a25fec9b0e2e" target="_blank">Fonction T.INV</a> | FunctionResult | Renvoie la valeur t de la distribution suivant la loi T de Student sous forme de fonction de probabilité et de degrés de liberté |
+| <a href="https://support.office.com/article/TDISTRT-function-20a30020-86f9-4b35-af1f-7ef6ae683eda" target="_blank">Fonction T.DIST.RT</a> | FunctionResult | Renvoie le de t de Student |
+| <a href="https://support.office.com/article/TINV-function-2908272b-4e61-4942-9df9-a25fec9b0e2e" target="_blank">Fonction T.INV</a> | FunctionResult | Renvoie la valeur t de la distribution suivant la loi T de Student sous forme de fonction de probabilité et de degrés de liberté |
 | <a href="https://support.office.com/article/TINV2T-function-ce72ea19-ec6c-4be7-bed2-b9baf2264f17" target="_blank">Fonction T.INV.2T</a> | FunctionResult | Renvoie l’inverse de la distribution suivant la loi T de Student |
 | <a href="https://support.office.com/article/TAN-function-08851a40-179f-4052-b789-d7f699447401" target="_blank">Fonction TAN</a> | FunctionResult | Renvoie la tangente d’un nombre |
 | <a href="https://support.office.com/article/TANH-function-017222f0-a0c3-4f69-9787-b3202295dc6c" target="_blank">Fonction TANH</a> | FunctionResult | Renvoie la tangente hyperbolique d’un nombre |
 | <a href="https://support.office.com/article/TBILLEQ-function-2ab72d90-9b4d-4efe-9fc2-0f81f2c19c8c" target="_blank">Fonction TBILLEQ</a> | FunctionResult | Renvoie le rapport lié aux titres pour un bon du Trésor |
-| <a href="https://support.office.com/article/TBILLPRICE-function-eacca992-c29d-425a-9eb8-0513fe6035a2" target="_blank">Fonction TBILLPRICE</a> | FunctionResult | Renvoie le prix par valeur faciale de 100 dollars pour un bon du Trésor |
+| <a href="https://support.office.com/article/TBILLPRICE-function-eacca992-c29d-425a-9eb8-0513fe6035a2" target="_blank">Fonction TBILLPRICE</a> | FunctionResult | Renvoie le prix par valeur faciale de 100 dollars pour un bon du Trésor |
 | <a href="https://support.office.com/article/TBILLYIELD-function-6d381232-f4b0-4cd5-8e97-45b9c03468ba" target="_blank">Fonction TBILLYIELD</a> | FunctionResult | Renvoie le rapport pour un bon du Trésor |
-| <a href="https://support.office.com/article/TEXT-function-20d5ac4d-7b94-49fd-bb38-93d29371225c" target="_blank">Fonction TEXT</a> | FunctionResult | Met en forme un nombre et le convertit en texte |
+| <a href="https://support.office.com/article/TEXT-function-20d5ac4d-7b94-49fd-bb38-93d29371225c" target="_blank">Fonction TEXT</a> | FunctionResult | Met en forme un nombre et la convertit en texte |
 | <a href="https://support.office.com/article/TIME-function-9a5aff99-8f7d-4611-845e-747d0b8d5457" target="_blank">Fonction TIME</a> | FunctionResult | Renvoie le numéro de série d’une heure précise |
 | <a href="https://support.office.com/article/TIMEVALUE-function-0b615c12-33d8-4431-bf3d-f3eb6d186645" target="_blank">Fonction TIMEVALUE</a> | FunctionResult | Convertit une heure au format texte en numéro de série |
 | <a href="https://support.office.com/article/TODAY-function-5eb3078d-a82c-4736-8930-2f51a028fdd9" target="_blank">Fonction TODAY</a> | FunctionResult | Renvoie le numéro de série de la date du jour |
-| <a href="https://support.office.com/article/TRIM-function-410388fa-c5df-49c6-b16c-9e5630b479f9" target="_blank">Fonction TRIM</a> | FunctionResult | Supprime les espaces du texte |
+| <a href="https://support.office.com/article/TRIM-function-410388fa-c5df-49c6-b16c-9e5630b479f9" target="_blank">Fonction TRIM</a> | FunctionResult | Supprime les espaces de texte |
 | <a href="https://support.office.com/article/TRIMMEAN-function-d90c9878-a119-4746-88fa-63d988f511d3" target="_blank">Fonction TRIMMEAN</a> | FunctionResult | Renvoie la moyenne de la partie intérieure d’un jeu de données |
-| <a href="https://support.office.com/article/TRUE-function-7652c6e3-8987-48d0-97cd-ef223246b3fb" target="_blank">Fonction TRUE</a> | FunctionResult | Renvoie la valeur logique `TRUE` |
-| <a href="https://support.office.com/article/TRUNC-function-8b86a64c-3127-43db-ba14-aa5ceb292721" target="_blank">Fonction TRUNC</a> | FunctionResult | Tronque un nombre en entier |
+| <a href="https://support.office.com/article/TRUE-function-7652c6e3-8987-48d0-97cd-ef223246b3fb" target="_blank">Fonction TRUE</a> | FunctionResult | Renvoie la valeur logique`TRUE` |
+| Fonction TRUNC | FunctionResult | Tronque un nombre entier |
 | <a href="https://support.office.com/article/TYPE-function-45b4e688-4bc3-48b3-a105-ffa892995899" target="_blank">Fonction TYPE</a> | FunctionResult | Renvoie un nombre indiquant le type de données d’une valeur |
 | <a href="https://support.office.com/article/UNICHAR-function-ffeb64f5-f131-44c6-b332-5cd72f0659b8" target="_blank">Fonction UNICHAR</a> | FunctionResult | Renvoie le caractère unicode référencé par la valeur numérique donnée |
 | <a href="https://support.office.com/article/UNICODE-function-adb74aaa-a2a5-4dde-aff6-966e4e81f16f" target="_blank">Fonction UNICODE</a> | FunctionResult | Renvoie le nombre (point de code) qui correspond au premier caractère du texte |
 | <a href="https://support.office.com/article/UPPER-function-c11f29b3-d1a3-4537-8df6-04d0049963d6" target="_blank">Fonction UPPER</a> | FunctionResult | Convertit le texte en majuscules |
-| <a href="https://support.office.com/article/VALUE-function-257d0108-07dc-437d-ae1c-bc2d3953d8c2" target="_blank">Fonction VALUE</a> | FunctionResult | Convertit un argument textuel en nombre |
+| <a href="https://support.office.com/article/VALUE-function-257d0108-07dc-437d-ae1c-bc2d3953d8c2" target="_blank">Fonction VALUE</a> | FunctionResult | Convertit un argument de type texte en nombre |
 | <a href="https://support.office.com/article/VARP-function-73d1285c-108c-4843-ba5d-a51f90656f3a" target="_blank">Fonction VAR.P</a> | FunctionResult | Calcule l’écart en fonction de la population entière |
 | <a href="https://support.office.com/article/VARS-function-913633de-136b-449d-813e-65a00b2b990b" target="_blank">Fonction VAR.S</a> | FunctionResult | Fournit une estimation de l’écart à partir d’un échantillon |
-| <a href="https://support.office.com/article/VARA-function-3de77469-fa3a-47b4-85fd-81758a1e1d07" target="_blank">Fonction VARA</a> | FunctionResult | Évalue la variance en fonction d’un échantillon, y compris les nombres, le texte et les valeurs logiques |
+| <a href="https://support.office.com/article/VARA-function-3de77469-fa3a-47b4-85fd-81758a1e1d07" target="_blank">Fonction VARA</a> | FunctionResult | Évalue la varianceen fonction d’un échantillon, y compris les nombres, le texte et les valeurs logiques |
 | <a href="https://support.office.com/article/VARPA-function-59a62635-4e89-4fad-88ac-ce4dc0513b96" target="_blank">Fonction VARPA</a> | FunctionResult | Calcule la variance en fonction de la population entière, y compris les nombres, le texte et les valeurs logiques |
 | <a href="https://support.office.com/article/VDB-function-dde4e207-f3fa-488d-91d2-66d55e861d73" target="_blank">Fonction VDB</a> | FunctionResult | Renvoie l’amortissement d’un bien durant une période spécifiée ou partielle en utilisant une méthode d’amortissement dégressif |
 | <a href="https://support.office.com/article/VLOOKUP-function-0bbc8083-26fe-4963-8ab8-93a18ad188a1" target="_blank">Fonction VLOOKUP</a> | FunctionResult | Cherche dans la première colonne d’un tableau et se déplace horizontalement pour renvoyer la valeur d’une cellule |
 | <a href="https://support.office.com/article/WEEKDAY-function-60e44483-2ed1-439f-8bd0-e404c190949a" target="_blank">Fonction WEEKDAY</a> | FunctionResult | Convertit un numéro de série en jour de la semaine |
 | <a href="https://support.office.com/article/WEEKNUM-function-e5c43a03-b4ab-426c-b411-b18c13c75340" target="_blank">Fonction WEEKNUM</a> | FunctionResult | Convertit un numéro de série en un numéro de semaine correspondant à l’année |
-| <a href="https://support.office.com/article/WEIBULLDIST-function-4e783c39-9325-49be-bbc9-a83ef82b45db" target="_blank">Fonction WEIBULL.DIST</a> | FunctionResult | Renvoie la distribution suivant la loi de Weibull |
+| <a href="https://support.office.com/article/WEIBULLDIST-function-4e783c39-9325-49be-bbc9-a83ef82b45db" target="_blank">Fonction WEIBULL.DIST</a> | FunctionResult | Renvoie la distribution de Weibull |
 | <a href="https://support.office.com/article/WORKDAY-function-f764a5b7-05fc-4494-9486-60d494efbf33" target="_blank">Fonction WORKDAY</a> | FunctionResult | Renvoie le numéro de série de la date précédant ou suivant un nombre de jours ouvrés spécifié |
 | <a href="https://support.office.com/article/WORKDAYINTL-function-a378391c-9ba7-4678-8a39-39611a9bf81d" target="_blank">Fonction WORKDAY.INTL</a> | FunctionResult | Renvoie le numéro de série de la date précédant ou suivant un nombre spécifié de jours ouvrés à l’aide de paramètres indiquant le nombre de jours compris dans un week-end |
 | <a href="https://support.office.com/article/XIRR-function-de1242ec-6477-445b-b11b-a303ad9adc9d" target="_blank">Fonction XIRR</a> | FunctionResult | Renvoie le taux de rendement interne d’une planification de flux financiers qui n’est pas nécessairement périodique |
 | <a href="https://support.office.com/article/XNPV-function-1b42bbf6-370f-4532-a0eb-d67c16b664b7" target="_blank">Fonction XNPV</a> | FunctionResult | Renvoie la valeur actuelle nette d’une planification de flux financiers qui n’est pas nécessairement périodique |
-| <a href="https://support.office.com/article/XOR-function-1548d4c2-5e47-4f77-9a92-0533bba14f37" target="_blank">Fonction XOR</a> | FunctionResult | Renvoie une valeur logique exclusive OR de tous les arguments |
+| <a href="https://support.office.com/article/XOR-function-1548d4c2-5e47-4f77-9a92-0533bba14f37" target="_blank">Fonction XOR</a> | FunctionResult | Renvoie un opérateur logique OR exclusif de tous les arguments |
 | <a href="https://support.office.com/article/YEAR-function-c64f017a-1354-490d-981f-578e8ec8d3b9" target="_blank">Fonction YEAR</a> | FunctionResult | Convertit un numéro de série en année |
 | <a href="https://support.office.com/article/YEARFRAC-function-3844141e-c76d-4143-82b6-208454ddc6a8" target="_blank">Fonction YEARFRAC</a> | FunctionResult | Renvoie la fraction de l’année représentant le nombre de jours entiers compris entre start_date et end_date |
 | <a href="https://support.office.com/article/YIELD-function-f5f5ca43-c4bd-434f-8bd2-ed3c9727a4fe" target="_blank">Fonction YIELD</a> | FunctionResult | Renvoie le rendement d’un titre rapportant des intérêts périodiquement |
@@ -444,6 +445,6 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Concepts fondamentaux de programmation avec l’API JavaScript Excel](excel-add-ins-core-concepts.md)
+- [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
 - [Classe de fonctions (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.functions)
-- [Objet de fonctions Workbook (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.workbook#functions)
+- [Fonctions de classeur objet (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.workbook#functions)

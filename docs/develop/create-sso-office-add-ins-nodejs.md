@@ -2,12 +2,13 @@
 title: Création d’un complément Office Node.js qui utilise l’authentification unique
 description: ''
 ms.date: 12/07/2018
-ms.openlocfilehash: b05ef90000da7fda3a72d2ba873c169a469731a6
-ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
+localization_priority: Priority
+ms.openlocfilehash: 0e47b8a577e337a40542f38509b6da325df299ba
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "27724906"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29387337"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office Node.js qui utilise l’authentification unique (aperçu)
 
@@ -537,7 +538,7 @@ Il existe deux fichiers côté serveur qui doivent être modifiés.
     ```
 
     > [!NOTE]
-    > Vous ne pouvez utiliser l’étendue `access_as_user` que pour autoriser l’API qui gère le flux « de la part de » pour les compléments Office. D’autres API dans votre service peuvent avoir leurs propres exigences d’étendue. Cela permet de limiter ce à quoi donnent accès les jetons acquis par Office.
+    > Vous devez uniquement utiliser l’étendue `access_as_user` pour autoriser l’API qui gère le flux « de la part de » pour les compléments Office. Les autres API de votre service peuvent avoir leurs propres exigences d’étendue. Cela limite les possibilités d’accès avec les jetons acquis par Office.
 
 5. Remplacez `TODO8` par le code suivant. Tenez compte des informations suivantes :
 

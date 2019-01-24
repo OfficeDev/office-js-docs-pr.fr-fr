@@ -1,13 +1,14 @@
 ---
 title: Élémznr VersionOverrides dans le fichier manifest
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: a8bdc18b289d8d83336b0ce270f36d71170aecbf
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 01/15/2019
+localization_priority: Normal
+ms.openlocfilehash: 197a636169b7f00edd44019cee21686065845800
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433879"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29387799"
 ---
 # <a name="versionoverrides-element"></a>Élément VersionOverrides
 
@@ -34,9 +35,10 @@ ms.locfileid: "27433879"
 |  **VersionOverrides**    |  Non  | Définit des commandes de complément sous une version plus récente du schéma. Voir [Mise en œuvre de plusieurs versions](#implementing-multiple-versions) pour plus d’informations. |
 |  **WebApplicationInfo**    |  Non  | Fournit des détails sur l’application web associée au complément. |
 
-
-
 ### <a name="versionoverrides-example"></a>Exemple VersionOverrides
+
+Voici un exemple d’un type `<VersionOverrides>` élément, y compris des éléments enfants qui ne sont pas requis mais qui sont généralement utilisés.
+
 ```xml
 <OfficeApp>
 ...
@@ -97,6 +99,7 @@ Pour mettre en œuvre à la fois les schémas VersionOverrides v1.0 et v1.1, le 
         <!-- add information on resources -->
       </Resources>
     </VersionOverrides>  
+  </VersionOverrides>
 ...
 </OfficeApp>
 ```

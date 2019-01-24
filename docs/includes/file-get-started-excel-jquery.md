@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: cc6c19614ae1cc7e2eb0ff8ef49d0f9f62da634f
+ms.sourcegitcommit: 984c425e2ad58577af8f494079923cab165ad36c
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "28726988"
+---
 # <a name="build-an-excel-add-in-using-jquery"></a>Développement d’un complément Excel à l’aide de jQuery
 
 Cet article décrit le processus de création d’un complément Excel à l’aide de jQuery et de l’API JavaScript pour Excel. 
@@ -56,11 +64,14 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
     'use strict';
 
     (function () {
-        Office.initialize = function (reason) {
+
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
+                // The document is ready
                 $('#set-color').click(setColor);
             });
-        };
+        });
 
         function setColor() {
             Excel.run(function (context) {
@@ -209,11 +220,13 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
     'use strict';
     
     (function () {
-        Office.initialize = function (reason) {
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
+                // The document is ready
                 $('#set-color').click(setColor);
             });
-        };
+        });
 
         function setColor() {
             Excel.run(function (context) {

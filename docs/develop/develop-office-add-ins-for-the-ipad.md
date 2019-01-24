@@ -2,12 +2,13 @@
 title: Développer des compléments Office pour iPad
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 18fb7be558671cc30e7419ac451b8ae24add25c4
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 7aaae96377c58656d82802e44c964f651e7accbc
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457592"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388114"
 ---
 # <a name="develop-office-add-ins-for-the-ipad"></a>Développer des compléments Office pour iPad
 
@@ -23,7 +24,7 @@ Le tableau suivant répertorie les tâches à effectuer pour développer un comp
 |Optimisez votre complément pour les écrans tactiles.|Concevez une interface utilisateur optimisée pour les écrans tactiles, en plus de la souris et du clavier.|[Application des principes de conception de l’expérience utilisateur](../concepts/add-in-development-best-practices.md#apply-ux-design-principles)|
 |Proposez un complément gratuit.|Office pour iPad vous permet de communiquer avec davantage d’utilisateurs et de promouvoir vos services. Ces nouveaux utilisateurs peuvent devenir vos clients.|[Stratégie de validation 10.8](https://docs.microsoft.com/office/dev/store/validation-policies#10-apps-and-add-ins-utilize-supported-capabilities)|
 |Proposez un commerce de complément gratuit.|Votre complément ne doit pas comporter de services payants, d’offres d’essai, une interface utilisateur destinée à inciter à la vente, ni de liens vers des magasins en ligne où les utilisateurs peuvent acheter ou acquérir d’autres contenus, applications ou compléments. Vos pages Politique de confidentialité et Conditions d’utilisation ne doivent pas non plus comporter de liens vers une interface utilisateur commerciale ou AppSource.|[Stratégie de validation 3.4](https://docs.microsoft.com/office/dev/store/validation-policies#3-apps-and-add-ins-can-sell-additional-features-or-content-through-purchases-within-the-app-or-add-in)|
-|Envoyez à nouveau votre complément à AppSource.|Dans le tableau de bord vendeur, cochez la case **Ajouter ce complément au catalogue des compléments Office sur iPad**. Indiquez votre ID de développeur Apple dans la case Identifiant Apple. Lisez le [contrat de fournisseur d’application](https://sellerdashboard.microsoft.com/Assets/Content/Agreements/fr-FR/Office_Store_Seller_Agreement_20120927.htm) pour connaître les termes du contrat.|[Mise à disposition de vos solutions sur AppSource et dans Office](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)|
+|Envoyez à nouveau votre complément à AppSource.|Dans le tableau de bord vendeur, cochez la case **Ajouter ce complément au catalogue des compléments Office sur iPad**. Indiquez votre ID de développeur Apple dans la case Identifiant Apple. Lisez le [contrat de fournisseur d’application](https://sellerdashboard.microsoft.com/Assets/Content/Agreements/en-US/Office_Store_Seller_Agreement_20120927.htm) pour connaître les termes du contrat.|[Mise à disposition de vos solutions sur AppSource et dans Office](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)|
 
 Votre complément peut rester en l’état pour les applications Office exécutées sur d’autres plateformes. Vous pouvez également proposer une interface utilisateur différente en fonction du navigateur ou de l’appareil qui utilise votre complément. Pour savoir si votre complément est exécuté sur un iPad, vous pouvez utiliser les API suivantes :
 - var isTouchEnabled = [Office.context.touchEnabled](https://docs.microsoft.com/javascript/api/office/office.context#touchenabled)

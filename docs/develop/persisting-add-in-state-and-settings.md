@@ -2,12 +2,13 @@
 title: Conservation de l’état et des paramètres des compléments
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: ce2b9ffce97e6338d62cdf07d722ffa384283d28
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: 7739dd46499c3ab5ccda13d362950ec86d761660
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27458068"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388240"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>Conservation de l’état et des paramètres des compléments
 
@@ -37,7 +38,7 @@ L’interface API JavaScript pour Office fournit les objets [Settings](https://d
 > [!NOTE]
 > Les deux sections suivantes abordent les paramètres dans le contexte de l’API JavaScript courante pour Office. L’API JavaScript pour Excel propre à un hôte propose également un accès aux paramètres personnalisés. Les API Excel et les modes de programmation sont légèrement différents. Pour plus d’informations, reportez-vous à l’article sur l’objet [SettingCollection pour Excel](https://docs.microsoft.com/javascript/api/excel/excel.settingcollection).
 
-En interne, les données dans le conteneur de propriétés accessibles avec les objets**Settings**, **CustomProperties**et**RoamingSettings**sont stockées en tant qu’objet JSON (JavaScript Object Notation) sérialisé contenant des paires nom/valeur. Le nom (clé) pour chaque valeur doit être une **chaîne**, et la valeur stockée peut être une**chaîne**JavaScript, un**nombre**, une**date**, ou un**objet**, mais pas une **fonction**.
+En interne, les données dans le conteneur de propriétés accessibles avec les objets  **Settings**,  **CustomProperties** et **RoamingSettings** sont stockées en tant qu’objet JSON (JavaScript Object Notation) sérialisé contenant des paires nom/valeur. Le nom (clé) de chaque valeur doit être une **string** et la valeur stockée peut être un élément JavaScript **string**,  **number**,  **date** ou **object**, mais pas  **function**.
 
 Cet exemple de structure de conteneur des propriétés contient trois valeurs**string** définies nommées `firstName`,  `location` et `defaultView`.
 
@@ -49,11 +50,11 @@ Cet exemple de structure de conteneur des propriétés contient trois valeurs**s
 }
 ```
 
-Une fois le sac de propriété paramètres enregistré durant la session de complément précédente, il peut être chargé lorsque le complément est initialisé ou à tout moment après pendant la session en cours du complément. Lors de la session, les paramètres sont gérés dans entièrement en mémoire à l’aide des méthodes**obtenir**, **définir**, et **supprimer**de l’objet qui correspond aux paramètres de type que vous créez (**Paramètres**, **CustomProperties**, ou **RoamingSettings**). 
+Une fois le conteneur de propriétés des paramètres enregistré lors de la session de complément précédente, il peut être chargé lorsque le complément est initialisé ou à tout moment par la suite pendant la session active du complément. Pendant cette session, les paramètres sont gérés entièrement en mémoire à l’aide des méthodes  **get**,  **set** et **remove** de l’objet qui correspond aux paramètres de type créés ( **Settings**,  **CustomProperties** ou **RoamingSettings**). 
 
 
 > [!IMPORTANT]
-> Pour conserver les ajouts, les mises à jour ou les suppressions apportées pendant la session actuelle du complément à l’emplacement de stockage, vous devez appeler la méthode**saveAsync**de l’objet correspondant utilisé pour le fonctionnement de ce genre de paramètres. Les méthodes**obtenir**, **définir**, et **supprimer** fonctionnent uniquement sur la copie en mémoire du sac de propriété de paramètres. Si votre complément est fermé sans appels**saveAsync**, les modifications apportées aux paramètres pendant cette session seront perdues. 
+> Pour rendre persistants les ajouts, les mises à jour ou les suppressions pendant la session active du complément dans l’emplacement de stockage, vous devez appeler la méthode **saveAsync** de l’objet correspondant utilisé pour avoir recours à ce type de paramètres. Les méthodes **get**, **set** et **remove** fonctionnent uniquement sur la copie en mémoire du conteneur des propriétés des paramètres. Si votre complément est fermé sans appel à **saveAsync**, les modifications apportées aux paramètres pendant la session sont perdues. 
 
 
 ## <a name="how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins"></a>Enregistrement de l’état et des paramètres d’un complément par document pour les compléments de contenu et du volet Office

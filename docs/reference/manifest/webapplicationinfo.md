@@ -2,12 +2,13 @@
 title: Élément WebApplicationInfo dans le fichier manifeste
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: ae1f2ea43e795d8f4ac2f634785fc69b0ca7a3d0
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 1328dc40e98c321c9c4b7d3d692da8c8bdd29492
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457627"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29389196"
 ---
 # <a name="webapplicationinfo-element"></a>Élément WebApplicationInfo
 

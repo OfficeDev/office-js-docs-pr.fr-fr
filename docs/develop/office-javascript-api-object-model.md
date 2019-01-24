@@ -2,12 +2,13 @@
 title: Modèle d’objet API JavaScript Office
 description: ''
 ms.date: 07/27/2018
-ms.openlocfilehash: 2947ae2bf0da4f1a0e5151ae8d6d8a723cf6d4b9
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: 5530b77fb25a9decc5f4ae02008808811e7e6513
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27458019"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388527"
 ---
 # <a name="office-javascript-api-object-model"></a>Modèle d’objet API JavaScript Office
 Les compléments JavaScript Office donnent accès aux fonctionnalités sous-jacentes de l'hôte. La majeure partie de cet accès passe par quelques objets importants. L’objet [Context](#context-object) donne accès à l’environnement d’exécution après l’initialisation. L’objet [Document](#document-object)donne à l’utilisateur le contrôle d’un document Excel, PowerPoint ou Word. L’objet [Mailbox](#mailbox-object) permet à un complément Outlook d’accéder aux messages et aux profils utilisateur. La compréhension des relations entre ces objets de haut niveau constitue le fondement d’un complément JavaScript.

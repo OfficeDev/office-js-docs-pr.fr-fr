@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: f090023acbeae8bab9e25a36b64669c7d033daea
+ms.sourcegitcommit: 319780e4fb77b97d16d5657950e4eb84415eb7eb
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "28725527"
+---
 # <a name="build-an-excel-add-in-using-react"></a>Développement d’un complément Excel à l’aide de React
 
 Cet article décrit le processus de création d’un complément Excel à l’aide de React et de l’API JavaScript pour Excel.
@@ -140,6 +148,8 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 5. Ouvrez le fichier **src/components/App.tsx**, remplacez-en tout le contenu par le code suivant et enregistrez le fichier.
 
     ```typescript
+    /* global Office, Excel */
+
     import * as React from 'react';
     import { Header } from './Header';
     import { Content } from './Content';

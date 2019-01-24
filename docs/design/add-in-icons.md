@@ -2,12 +2,13 @@
 title: Instructions concernant les îcones pour les compléments Office
 description: ''
 ms.date: 06/27/2018
-ms.openlocfilehash: 853f47d5ce8d9ce7efd5e7e048f4f3151448887e
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+localization_priority: Priority
+ms.openlocfilehash: d6e98014227250420c34c63afa85e06a351ba4a1
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433942"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388093"
 ---
 # <a name="icons"></a>Icônes
 Les icônes sont la représentation visuelle d’un comportement ou d’un concept. Elles sont souvent utilisées pour ajouter une signification aux contrôles et commandes. Les visuels, qu’ils soient réalistes ou symboliques, permettent à l’utilisateur de naviguer dans l’interface utilisateur de la même façon que les signes l’aident à naviguer dans son environnement. Ils doivent être simples, clairs et contenir uniquement les informations nécessaires pour permettre aux clients d’analyser rapidement l’action qui se produit lorsqu’ils choisissent un contrôle.

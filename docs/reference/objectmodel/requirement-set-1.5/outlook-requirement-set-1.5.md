@@ -1,13 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook 1.5
 description: ''
-ms.date: 11/14/2018
-ms.openlocfilehash: dc6432c3e55ed75c120c2872233ca0f275010e73
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 01/16/2019
+localization_priority: Normal
+ms.openlocfilehash: fde394ff4b75e0f6b160f5d56cb73adc9da9dede
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433928"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388378"
 ---
 # <a name="outlook-add-in-api-requirement-set-15"></a>Ensemble de conditions requises de l’API du complément Outlook 1.5
 
@@ -28,7 +29,7 @@ L’ensemble de conditions requises de la version 1.5 comprend toutes les fonct
 ### <a name="change-log"></a>Journal des modifications
 
 - Ajout de la méthode [Office.context.mailbox.addHandlerAsync](office.context.mailbox.md#addhandlerasynceventtype-handler-options-callback) : ajoute un gestionnaire d’événements pour un événement pris en charge.
-- Ajout de la méthode [Office.context.mailbox.removeHandlerAsync](office.context.mailbox.md#removehandlerasynceventtype-handler-options-callback) : retire un gestionnaire d’événements pour un événement pris en charge.
+- Ajouté [Office.context.mailbox.removeHandlerAsync](office.context.mailbox.md#removehandlerasynceventtype-options-callback): supprime les gestionnaires d’événements pour un type d’événement pris en charge.
 - Ajout de l’énumération [Office.EventType](office.md#eventtype-string) : spécifie l’événement associé à un gestionnaire d’événements et prend en charge l’événement ItemChanger.
 - Ajout de la propriété [Office.context.mailbox.restUrl](office.context.mailbox.md#resturl-string) : obtient l’URL du point de terminaison REST de ce compte de messagerie.
 - Modification de la méthode [Office.context.mailbox.getCallbackTokenAsync](office.context.mailbox.md#getcallbacktokenasyncoptions-callback) : cette nouvelle version comprend une nouvelle signature (`getCallbackTokenAsync([options], callback)`). La version d’origine est toujours disponible et reste inchangée.

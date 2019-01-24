@@ -2,12 +2,13 @@
 title: Compléments du volet Office pour Project
 description: ''
 ms.date: 12/17/2018
-ms.openlocfilehash: 33067fc048be9a69c76d34e19928f5a4bf5bf166
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: d262437b256c6b14d8dcae01437c866b8eecf6ff
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457942"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29389472"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Compléments du volet Office pour Project
 

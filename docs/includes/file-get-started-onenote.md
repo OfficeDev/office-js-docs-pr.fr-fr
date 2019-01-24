@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 5d5640a2c7c04817ab5ad87fc1b01e6866917830
+ms.sourcegitcommit: 984c425e2ad58577af8f494079923cab165ad36c
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "28726967"
+---
 # <a name="build-your-first-onenote-add-in"></a>Créer votre premier complément OneNote
 
 Cet article décrit le processus de création d’un complément OneNote à l’aide de jQuery et de l’API JavaScript pour Office.
@@ -66,11 +74,13 @@ Cet article décrit le processus de création d’un complément OneNote à l’
     ```js
     import * as OfficeHelpers from "@microsoft/office-js-helpers";
 
-    Office.initialize = (reason) => {
+    Office.onReady(() => {
+        // Office is ready
         $(document).ready(() => {
+            // The document is ready
             $('#addOutline').click(addOutlineToPage);
         });
-    };
+    });
     
     async function addOutlineToPage() {
         try {

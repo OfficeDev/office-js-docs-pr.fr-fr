@@ -2,12 +2,13 @@
 title: Créer et déboguer des compléments Office dans Visual Studio
 description: Utiliser Visual Studio pour créer et déboguer des compléments Office dans le client de bureau Office pour Windows
 ms.date: 11/02/2018
-ms.openlocfilehash: 99b642804cb662d66106d3a599e5d84dbab8c4a3
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: 377c65d089ef43814bbc419435d2b817e80b3fcc
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27458026"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29389451"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Créer et déboguer des compléments Office dans Visual Studio
 
