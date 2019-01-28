@@ -1,29 +1,30 @@
 ---
-title: Chargement de version test de compléments Office
+title: Chargement de compléments Office pour des tests
 description: ''
 ms.date: 10/17/2018
-ms.openlocfilehash: 6ee8e4e9a2413b34cb8991b09d61e16888a0e6a6
-ms.sourcegitcommit: a6d6348075c1abed76d2146ddfc099b0151fe403
+localization_priority: Priority
+ms.openlocfilehash: 7d7aa136e7268183c5a064f16315d433ee53a38b
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "25640021"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388842"
 ---
-# <a name="sideload-office-add-ins-for-testing"></a>Chargement de version test de compléments Office
+# <a name="sideload-office-add-ins-for-testing"></a>Chargement de compléments Office pour des tests
 
-Vous pouvez installer un complément Office à tester dans un client Office s’exécutant sous Windows en publiant le manifeste sur un partage de fichiers réseau (instructions ci-dessous).
+Vous pouvez installer un complément Office à des fins de test dans un client Office s’exécutant sur Windows à l’aide d’un catalogue de dossiers partagés pour publier le manifeste sur un partage de fichiers réseau.
 
 > [!NOTE]
-> Si votre projet de complément a été créé avec l’outil [**Yo Office**](https://github.com/OfficeDev/generator-office), il existe une façon alternative de charger la version test correspondante qui pourrait fonctionner pour vous. Pour plus de détails, voir [Charger une version test des compléments Office à l’aide de la commande de chargement indépendant](sideload-office-addin-using-sideload-command.md).
+> Si votre projet de complément a été créé avec l’outil [**yo office** ](https://github.com/OfficeDev/generator-office), il existe une autre méthode de chargement de version test pouvant vous convenir. Pour plus de détails, reportez-vous à [Chargement de versions test de compléments Office à l’aide de la commande sideload](sideload-office-addin-using-sideload-command.md).
 
-Cet article s’applique uniquement aux tests des compléments Word, Excel ou PowerPoint sur Windows. Si vous souhaitez tester sur une autre plateforme ou si vous souhaitez tester un complément Outlook, consultez l'une des rubriques suivantes pour charger la version test de votre complément :
+Cet article s’applique uniquement aux tests de compléments Word, Excel ou PowerPoint sur Windows. Si vous souhaitez tester sur une autre plateforme ou tester un complément Outlook, consultez une des rubriques suivantes pour charger une version de votre complément :
 
-- [Chargement de version test des compléments Office dans Office Online](sideload-office-add-ins-for-testing.md)
-- [Chargement de version test des compléments Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
-- [Chargement de version test des compléments Outlook](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)
+- [Chargement de version test des compléments Office dans Office Online pour les tester](sideload-office-add-ins-for-testing.md)
+- [Chargement de version test des compléments Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
+- [Chargement de version test des compléments Outlook pour les tester](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 
 
-La vidéo suivante vous guide à travers la procédure de chargement indépendant de votre complément dans la version de bureau Office ou Office Online à l’aide du catalogue d’un dossier partagé.  
+La vidéo suivante présente la procédure de chargement de version test de votre complément dans la version de bureau Office ou Office Online à l’aide d’un catalogue de dossiers partagés.  
 
 
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
@@ -31,21 +32,21 @@ La vidéo suivante vous guide à travers la procédure de chargement indépendan
 
 ## <a name="share-a-folder"></a>Partager un dossier
 
-1. Dans l’Explorateur de fichiers sur l’ordinateur Windows sur lequel vous voulez héberger votre complément, accédez au dossier parent ou à la lettre de lecteur du dossier que vous souhaitez utiliser comme catalogue de dossiers partagés.
+1. Sur l’ordinateur Windows sur lequel vous voulez héberger votre complément, accédez au dossier parent ou à la lettre de lecteur du dossier que vous souhaitez utiliser comme catalogue de dossiers partagés.
 
-2. Ouvrez le menu contextuel du dossier que vous souhaitez utiliser comme catalogue de dossiers partagés (cliquez avec le bouton droit sur le dossier) et sélectionnez **Propriétés**.
+2. Ouvrez le menu contextuel pour le dossier que vous souhaitez utiliser comme catalogue de dossiers partagés (cliquez sur le dossier avec le bouton droit) et choisissez **Propriétés**.
 
-3. Dans la boîte de dialogue **Propriétés** , cliquez sur l’onglet **Partage** , puis choisissez le bouton **Partager**.
+3. Dans la boîte de dialogue **Propriétés**, ouvrez l’onglet **Partage**, puis choisissez le bouton **Partager**.
 
-    ![boîte de dialogue Propriétés du dossier avec l’onglet Partage et le bouton Partager en surbrillance](../images/sideload-windows-properties-dialog.png)
+    ![Boîte de dialogue Propriétés du dossier avec l’onglet Partage et le bouton Partager mis en évidence](../images/sideload-windows-properties-dialog.png)
 
-4. Dans la boîte de dialogue **de l’accès réseau**, ajoutez-vous ainsi que tous les autres utilisateurs et/ou groupes avec lesquels vous souhaitez partager votre complément. Vous aurez besoin d’au moins une autorisation d’accès en **lecture/écriture** au dossier. Après avoir terminé de choisir les personnes avec qui vous partagez, cliquez sur le bouton **Partager**.
+4. Dans la boîte de dialogue **Accès réseau**, ajoutez-vous ainsi que les autres utilisateurs et/ou groupes avec lesquels vous souhaitez partager votre complément. Vous aurez besoin d’au moins une autorisation d’accès en **lecture/écriture** au dossier. Une fois que vous avez choisi les utilisateurs avec lesquels vous souhaitez effectuer le partage, sélectionnez le bouton **Partager**.
 
-5. Lorsque vous voyez la confirmation que **votre dossier est partagé**, notez le chemin d’accès complet du réseau qui s’affiche immédiatement après le nom du dossier. (Vous devrez saisir cette valeur comme **URL de catalogue** lorsque vous [spécifiez que ce dossier partagé est un catalogue approuvé](#specify-the-shared-folder-as-a-trusted-catalog), comme le décrit la section suivante de cet article.) Cliquez sur le bouton **Terminé** pour fermer la boîte de dialogue **Accès réseau**.
+5. Lorsqu’un message de confirmation indiquant que **votre dossier est partagé** apparaît, notez le chemin d’accès complet du réseau qui s’affiche juste après le nom du dossier. (Vous devrez entrer cette valeur comme **URL du catalogue** lorsque vous [spécifierez le dossier partagé comme un catalogue approuvé](#specify-the-shared-folder-as-a-trusted-catalog), tel que décrit dans la section suivante de cet article.) Sélectionnez le bouton **Terminé** pour fermer la boîte de dialogue **Accès réseau**.
 
-   ![Boîte de dialogue Accès réseau avec le chemin d’accès de partage en surbrillance](../images/sideload-windows-network-access-dialog.png)
+   ![Boîte de dialogue Accès réseau avec le chemin d’accès partagé mis en évidence](../images/sideload-windows-network-access-dialog.png)
 
-6. Cliquez sur le bouton **Fermer** pour fermer la boîte de dialogue **Propriétés** .
+6. Choisissez le bouton **Fermer** pour fermer la boîte de dialogue **Propriétés**.
 
 ## <a name="specify-the-shared-folder-as-a-trusted-catalog"></a>Spécifier le dossier partagé en tant que catalogue approuvé
       
@@ -53,21 +54,21 @@ La vidéo suivante vous guide à travers la procédure de chargement indépendan
     
 2. Choisissez l’onglet **Fichier**, puis choisissez **Options**.
     
-3. Choisissez l’onglet **Centre de gestion de la confidentialité**, puis choisissez le bouton **Paramètres du Centre de gestion de la confidentialité**.
+3. Choisissez l’onglet **Fichier**, puis choisissez **Options**.
     
 4. Choisissez **Catalogues de compléments approuvés**.
     
-5. Dans la zone **URL du catalogue** , entrez le chemin d’accès complet du réseau vers le dossier que vous avez auparavant [partagé](#share-a-folder). Si vous n’avez pas noté le chemin réseau complet du réseau lorsque vous avez partagé le dossier, vous pouvez le récupérer dans la boîte de dialogue **Propriétés** du dossier, comme illustré dans la capture d’écran suivante. 
+5. Dans la zone **URL du catalogue**, entrez le chemin d’accès complet du réseau vers le dossier que vous avez [partagé](#share-a-folder) précédemment. Si vous n’avez pas noté le chemin d’accès complet du réseau lorsque vous avez partagé le dossier, vous pouvez le récupérer dans la boîte de dialogue **Propriétés** du dossier, comme illustré dans la capture d’écran suivante. 
 
-    ![boîte de dialogue Propriétés du dossier avec l'onglet Partage et le chemin d’accès réseau en surbrillance](../images/sideload-windows-properties-dialog-2.png)
+    ![Boîte de dialogue Propriétés du dossier avec l’onglet Partage et le chemin d’accès du réseau mis en évidence](../images/sideload-windows-properties-dialog-2.png)
     
-6. Une fois que vous avez saisi le chemin d’accès réseau complet du dossier dans la zone **URL du catalogue**, cliquez sur le bouton **Ajouter un catalogue**.
+6. Après avoir entré le chemin d’accès complet du réseau du dossier dans la zone **URL du catalogue**, choisissez le bouton **Ajouter un catalogue**.
 
-7. Sélectionnez la case à cocher **Afficher dans le Menu** de l’élément nouvellement ajouté, puis cliquez sur le bouton **OK** pour fermer la boîte de dialogue **Centre de gestion de la confidentialité** . 
+7. Cochez la case **Afficher dans le menu** pour l’élément nouvellement ajouté, puis choisissez le bouton **OK** pour fermer la boîte de dialogue **Centre de gestion de la confidentialité**. 
 
-    ![Boîte de dialogue Centre de gestion de la confidentialité avec catalogue sélectionné](../images/sideload-windows-trust-center-dialog.png)
+    ![Boîte de dialogue Centre de gestion de la confidentialité avec le catalogue sélectionné](../images/sideload-windows-trust-center-dialog.png)
 
-8. Choisissez le bouton **OK** pour fermer la boîte de dialogue **Options Word** .
+8. Sélectionnez le bouton **OK** pour fermer la boîte de dialogue **Options Word**.
 
 9. Fermez et ouvrez de nouveau l’application Office afin que vos modifications prennent effet.
     
@@ -75,7 +76,7 @@ La vidéo suivante vous guide à travers la procédure de chargement indépendan
 ## <a name="sideload-your-add-in"></a>Charger une version test de votre complément
 
 
-1. Placez le fichier manifeste XML d’un complément en cours de test dans le catalogue de dossiers partagés. Notez que vous déployez l’application web elle-même sur un serveur web. Veillez à spécifier l’URL dans l’élément **SourceLocation** du fichier manifeste.
+1. Placez le fichier XML manifeste d’un complément en cours de test dans le catalogue de dossiers partagés. Notez que vous déployez l’application web sur un serveur web. Veillez à spécifier l’URL dans l’élément **SourceLocation** du fichier manifeste.
 
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)]

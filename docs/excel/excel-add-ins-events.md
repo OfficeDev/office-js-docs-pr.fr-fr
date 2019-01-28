@@ -2,12 +2,13 @@
 title: Utilisation d’événements à l’aide de l’API JavaScript pour Excel
 description: ''
 ms.date: 10/17/2018
-ms.openlocfilehash: c3fbdf27dcbedf0d006973e6ebc2e01b02e6cec2
-ms.sourcegitcommit: a6d6348075c1abed76d2146ddfc099b0151fe403
+localization_priority: Priority
+ms.openlocfilehash: 58bb6c01babc19840444a4bee9daef03ad9a7df5
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "25639937"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29386525"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Utilisation d’événements à l’aide de l’API JavaScript pour Excel 
 
@@ -15,7 +16,7 @@ Cet article décrit des concepts importants relatifs à l’utilisation des év�
 
 ## <a name="events-in-excel"></a>Événements dans Excel
 
-Chaque fois que certains types de modifications se produisent dans un classeur Excel, une notification d’événement se déclenche. En utilisant l’API JavaScript pour Excel, vous pouvez inscrire les gestionnaires d’événements autorisant votre complément à exécuter automatiquement une fonction désignée lorsqu’un événement spécifique se produit. Les événements suivants sont actuellement pris en charge.
+Each time certain types of changes occur in an Excel workbook, an event notification fires. By using the Excel JavaScript API, you can register event handlers that allow your add-in to automatically run a designated function when a specific event occurs. The following events are currently supported.
 
 | Événement | Description | Objets pris en charge |
 |:---------------|:-------------|:-----------|
@@ -23,15 +24,15 @@ Chaque fois que certains types de modifications se produisent dans un classeur E
 | `onDeleted` | Événement se produisant lorsqu’un objet est supprimé. | [**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection), [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
 | `onActivated` | Événement se produisant lorsqu’un objet est activé. | [**Chart**](https://docs.microsoft.com/javascript/api/excel/excel.chart), [**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection), [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection), [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
 | `onDeactivated` | Événement se produisant lorsqu’un objet est désactivé. | [**Chart**](https://docs.microsoft.com/javascript/api/excel/excel.chart), [**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection), [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection), [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
-| `onCalculated` | Événement qui se produit lorsqu'une feuille de calcul a terminé le calcul (ou que toutes les feuilles de calcul de la collection sont terminées). | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection), [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
-| `onChanged` | Événement se produisant lorsque les données au sein des cellules sont modifiées. | [**Feuille de calcul**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet), [**Table**](https://docs.microsoft.com/javascript/api/excel/excel.table), [**TableCollection**](https://docs.microsoft.com/javascript/api/excel/excel.tablecollection) |
-| `onDataChanged` | Événement se produisant lors de la modification des données ou de la mise en forme dans la liaison. | [**Liaison**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
-| `onSelectionChanged` | Événement se produisant lorsque la cellule active ou la plage sélectionnée est modifiée. | [**Feuille de calcul**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet), [**Table**](https://docs.microsoft.com/javascript/api/excel/excel.table), [**Liaison**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
-| `onSettingsChanged` | Événement qui se produit lorsque les Paramètres dans le document sont modifiés. | [**SettingCollection**](https://docs.microsoft.com/javascript/api/excel/excel.settingcollection) |
+| `onCalculated` | Événement se produisant lorsqu’une feuille de calcul a terminé un calcul (ou toutes les feuilles de calcul de la collection ont terminé). | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection), [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
+| `onChanged` | Événement se produisant lorsque les données au sein des cellules sont modifiées. | [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet), [**Table**](https://docs.microsoft.com/javascript/api/excel/excel.table), [**TableCollection**](https://docs.microsoft.com/javascript/api/excel/excel.tablecollection) |
+| `onDataChanged` | Événement se produisant lors de la modification des données ou de la mise en forme dans la liaison. | [**Binding**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
+| `onSelectionChanged` | Événement se produisant lorsque la cellule active ou la plage sélectionnée est modifiée. | [**Worksheet**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet), [**Table**](https://docs.microsoft.com/javascript/api/excel/excel.table), [**Binding**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
+| `onSettingsChanged` | Événement se produisant lorsque les paramètres dans le document sont modifiés. | [**SettingCollection**](https://docs.microsoft.com/javascript/api/excel/excel.settingcollection) |
 
 ### <a name="event-triggers"></a>Déclencheurs d’événements
 
-Événements au sein d’un classeur Excel pouvant être déclenchés par :
+Événements au sein d’un classeur Excel pouvant être déclenchés par :
 
 - Interaction de l’utilisateur via l’interface utilisateur Excel (IU) modifiant le classeur
 - Complément (JavaScript) Office modifiant le classeur
@@ -41,10 +42,10 @@ Toute modification conforme aux comportements par défaut d’Excel déclenche l
 
 ### <a name="lifecycle-of-an-event-handler"></a>Cycle de vie d’un gestionnaire d’événements
 
-Un gestionnaire d’événements est créé lorsqu’un complément inscrit le Gestionnaire d’événements. Il est détruit lorsque le complément annule l’inscription du Gestionnaire d’événements ou lorsque le complément est actualisé, rechargé ou fermé. Les gestionnaires d’événements ne sont pas conservés dans le cadre du fichier Excel ou dans les sessions avec Excel Online.
+Un gestionnaire d’événements est créé lorsqu’un complément inscrit le gestionnaire d’événements. Il est détruit lorsque le complément annule l’inscription du gestionnaire d’événements ou lorsque le complément est actualisé, rechargé ou fermé. Les gestionnaires d’événements ne sont pas conservés dans le fichier Excel ou entre des sessions avec Excel Online.
 
 > [!CAUTION]
-> Lors de la suppression d’un objet auquel des événements sont enregistrés (par exemple, un tableau avec un événement `onChanged` inscrit), le Gestionnaire d’événements ne se déclenche plus mais reste en mémoire jusqu'à ce que le complément ou la session Excel s’actualise ou se ferme.
+> Lorsqu’un objet dans lequel des événements sont inscrits est supprimé (par exemple, un tableau avec un événement `onChanged`), le gestionnaire d’événements n’est plus déclenché mais reste en mémoire jusqu’à ce que le complément ou la session Excel soit actualisé(e) ou se ferme.
 
 ### <a name="events-and-coauthoring"></a>Événements et co-création
 
@@ -52,7 +53,7 @@ Avec la [co-création](co-authoring-in-excel-add-ins.md), plusieurs personnes pe
 
 ## <a name="register-an-event-handler"></a>Inscription d’un gestionnaire d’événements
 
-L’exemple de code suivant enregistre un gestionnaire d’événements pour le `onChanged` événement dans la feuille de calcul nommée **Sample**. Le code spécifie que lors de la modification des données dans cette feuille de calcul, la `handleDataChange` fonction doit s’exécuter.
+L’exemple de code suivant inscrit un gestionnaire d’événements pour l’événement `onChanged` dans la feuille de calcul **Sample**. Le code indique que la fonction `handleDataChange` doit être exécutée lorsque les données de la feuille de calcul sont modifiées.
 
 ```js
 Excel.run(function (context) {
@@ -124,13 +125,13 @@ function remove() {
 }
 ```
 
-## <a name="enable-and-disable-events"></a>Activer et désactiver des événements
+## <a name="enable-and-disable-events"></a>Activation et désactivation d’événements
 
-Le niveau de performance d’un complément peut être amélioré en désactivant des événements. Par exemple, votre application pourrait ne jamais avoir besoin de recevoir des événements, ou bien elle pourrait ignorer les événements lors de l’exécution de lots de modifications de plusieurs entités. 
+La performance d’un complément peut être améliorée en désactivant les événements. Par exemple, il se peut que votre application ne doive jamais recevoir d’événements, ou elle peut ignorer des événements lors de modifications par lots de plusieurs entités. 
 
-Les événements sont activés et désactivés au niveau de [l’exécution](https://docs.microsoft.com/javascript/api/excel/excel.runtime). La propriété `enableEvents` détermine si les événements sont déclenchés et si leurs gestionnaires sont activés. 
+Les événements sont activés et désactivés au niveau [runtime](https://docs.microsoft.com/javascript/api/excel/excel.runtime). La propriété `enableEvents` détermine si les événements sont déclenchés et leurs gestionnaires activés. 
 
-L’exemple de code suivant montre comment activer ou désactiver les événements.
+L’exemple de code suivant montre comment activer et désactiver des événements.
 
 ```js
 Excel.run(function (context) {

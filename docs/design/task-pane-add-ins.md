@@ -1,15 +1,16 @@
 ---
-title: Volets Office dans les compléments Office
-description: Les volets Office donnent aux utilisateurs l’accès aux commandes de l’interface qui exécutent le code pour modifier des documents ou des emails, ou affichent des données à partir d’une source de données.
+title: Volets des tâches dans les compléments Office
+description: Les volets des tâches permettent aux utilisateurs d’accéder aux contrôles d’interface qui exécutent le code pour modifier des documents ou des e-mails, ou afficher des données d’une source de données.
 ms.date: 12/04/2017
-ms.openlocfilehash: fefba14528a4fc3a75b0936c8f5e2ae1bf01ca1b
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+localization_priority: Priority
+ms.openlocfilehash: f9cbbf3a696eb4b3b6a8622f275c2b1808aff643
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23943942"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29389318"
 ---
-# <a name="task-panes-in-office-add-ins"></a>Volets Office dans les compléments Office
+# <a name="task-panes-in-office-add-ins"></a>Volets des tâches dans les compléments Office
  
 Les volets des tâches sont des surfaces d’interface qui s’affichent généralement sur le côté droit de la fenêtre dans Word, PowerPoint, Excel et Outlook. Les volets des tâches permettent aux utilisateurs d’accéder aux contrôles d’interface qui exécutent le code pour modifier des documents ou des e-mails, ou afficher des données d’une source de données. Utilisez les volets des tâches lorsque vous n’avez pas besoin d’incorporer des fonctionnalités directement dans le document.
 
@@ -22,18 +23,18 @@ Les volets des tâches sont des surfaces d’interface qui s’affichent génér
 |**À faire**|**À ne pas faire**|
 |:-----|:--------|
 |<ul><li>Inclure le nom de votre complément dans le titre.</li></ul>|<ul><li>Ne pas ajouter le nom de votre société au titre.</li></ul>|
-|<ul><li>Utiliser des noms descriptifs courts dans le titre.</li></ul>|<ul><li>Ne pas ajouter de chaînes telles que « Complément », « pour Word » ou « pour Office » au titre de votre complément.</li></ul>|
-|<ul><li>Inclure un élément de navigation ou de commande comme la CommandBar ou le Pivot en haut de votre complément.</li></ul>||
+|<ul><li>Utiliser des noms descriptifs courts dans le titre.</li></ul>|<ul><li>Ne pas ajouter de chaînes telles que « complément », « pour Word » ou « pour Office » au titre de votre complément.</li></ul>|
+|<ul><li>Inclure un élément de navigation ou de commande comme le CommandBar ou le tableau croisé dynamique en haut de votre complément.</li></ul>||
 |<ul><li>Inclure un élément de la marque tel que le BrandBar en bas de votre complément, sauf si votre complément doit être utilisé dans Outlook.</li></ul>||
 
 
 ## <a name="variants"></a>Variantes
 
-Les images suivantes montrent les différentes tailles de volet des tâches avec le ruban Office à une résolution de 1 366 x 768. Pour Excel, l’espace vertical supplémentaire est requis pour s’adapter à la barre de formule.  
+Les images suivantes montrent les différentes tailles de volet des tâches avec le ruban Office à une résolution de 1 366 x 768. Pour Excel, l’espace vertical supplémentaire est requis pour s’adapter à la barre de formule.  
 
-*Figure 2. Tailles de volet des tâches du bureau Office 2016*
+*Figure 2. Tailles de volet des tâches du bureau Office 2016*
 
-![Image affichant les tailles de volet des tâches du bureau à une résolution de 1 366 x 768](../images/add-in-taskpane-sizes-desktop.png)
+![Image affichant les tailles de volet des tâches du bureau à une résolution de 1 366 x 768](../images/add-in-taskpane-sizes-desktop.png)
 
 - Excel - 320 x 455
 - PowerPoint - 320 x 531
@@ -42,9 +43,9 @@ Les images suivantes montrent les différentes tailles de volet des tâches avec
 
 <br/>
 
-*Figure 3. Tailles de volet des tâches Office 365*
+*Figure 3. Tailles de volet des tâches Office 365*
 
-![Image affichant les tailles de volet des tâches du bureau à une résolution de 1 366 x 768](../images/add-in-taskpane-sizes-online.png)
+![Image affichant les tailles de volet des tâches du bureau à une résolution de 1 366 x 768](../images/add-in-taskpane-sizes-online.png)
 
 - Excel - 350 x 378
 - PowerPoint - 348 x 391
@@ -75,6 +76,6 @@ Pour consulter un exemple qui implémente un volet des tâches, reportez-vous à
 ## <a name="see-also"></a>Voir aussi
 
 - [Office UI Fabric dans des compléments Office](office-ui-fabric.md) 
-- [Modèles de conception de l’expérience utilisateur pour les compléments Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+- [Modèles de conception de l’expérience utilisateur pour les compléments Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
 
 

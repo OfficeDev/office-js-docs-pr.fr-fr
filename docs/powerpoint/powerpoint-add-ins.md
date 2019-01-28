@@ -1,14 +1,14 @@
 ---
 title: Compléments PowerPoint
 description: ''
-ms.date: 10/16/2018
+ms.date: 01/24/2019
 localization_priority: Priority
-ms.openlocfilehash: 022bed349dde061b61a8db0711a94a0a4d77f2e1
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: da60c87993bc67057aeec6a4e754f57ae376ddd4
+ms.sourcegitcommit: b3812245ee1426c299e6484fdd2096a9212ce823
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388632"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "29539862"
 ---
 # <a name="powerpoint-add-ins"></a>Compléments PowerPoint
 
@@ -30,7 +30,7 @@ Les exemples de code figurant dans l’article vous présentent certaines tâche
 
 ## <a name="detect-the-presentations-active-view-and-handle-the-activeviewchanged-event"></a>Détecter l’affichage actif de la présentation et gérer l’événement ActiveViewChanged
 
-Si vous créez un complément de contenu, vous devrez obtenir la vue active de la présentation et gérer`ActiveViewChanged`l’événement ActiveViewChanged dans le cadre de votre`Office.Initialize`gestionnaire. 
+Si vous créez un complément de contenu, vous devrez obtenir la vue active de la présentation et gérer`ActiveViewChanged`l’événement ActiveViewChanged dans le cadre de votre`Office.Initialize`gestionnaire.
 
 > [!NOTE]
 > Dans PowerPoint Online, l’événement [Document.ActiveViewChanged](https://docs.microsoft.com/javascript/api/office/office.document) ne se déclenche jamais, car le mode diaporama est considéré comme une nouvelle session. Dans ce cas, le complément doit extraire la vue active lors du chargement, comme indiqué ci-dessous.
@@ -39,7 +39,7 @@ Collez le code suivant:
 
 - La fonction`getActiveFileView` appelle la méthode [Document.getActiveViewAsync](https://docs.microsoft.com/javascript/api/office/office.document#getactiveviewasync-options--callback-) afin de renvoyer si la vue actuelle de la présentation est une vue de « modification » (toutes les vues dans lesquelles vous modifiez des diapositives, telles que les vues **Normal** ou **Mode Plan**) ou « lecture » ( **Diaporama**ou**Mode Lecture**).
 
-- La fonction`registerActiveViewChanged`appelle la méthode [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) afin d’inscrire un gestionnaire pour l’événement [Document.ActiveViewChanged](https://docs.microsoft.com/javascript/api/office/office.document). 
+- La fonction`registerActiveViewChanged`appelle la méthode [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) afin d’inscrire un gestionnaire pour l’événement [Document.ActiveViewChanged](https://docs.microsoft.com/javascript/api/office/office.document).
 
 
 ```js
@@ -74,7 +74,7 @@ function registerActiveViewChanged() {
         app.showNotification(JSON.stringify(args));
     }
 
-    Office.context.document.addHandlerAsync(Office.EventType.ActiveViewChanged, Globals.activeViewHandler, 
+    Office.context.document.addHandlerAsync(Office.EventType.ActiveViewChanged, Globals.activeViewHandler,
         function (asyncResult) {
             if (asyncResult.status == "failed") {
                 app.showNotification("Action failed with error: " + asyncResult.error.message);
@@ -163,13 +163,37 @@ function getFileUrl() {
 }
 ```
 
+## <a name="create-a-presentation"></a>Créer une présentation
 
+Votre complément peut créer un nouveau classeur, distinct de l’instance de PowerPoint dans laquelle le complément est en cours d’exécution. L’espace de noms PowerPoint a la `createPresentation` méthode à cet effet. Lorsque cette méthode est appelée, la nouvelle présentation est immédiatement ouverte et affichée dans une nouvelle instance de PowerPoint. Votre complément reste ouvert et en cours d’exécution avec la présentation précédente.
+
+```js
+PowerPoint.createPresentation();
+```
+
+La `createPresentation` méthode peut également créer une copie d’une présentation existante. La méthode accepte comme un paramètre facultatif une représentation de chaîne codée en base 64 d’un fichier .pptx. La présentation résultante sera une copie de ce fichier, en supposant que l’argument de chaîne est un fichier .pptx valide. La catégorie[FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) peut être utilisée pour convertir un fichier dans la chaîne codée en base 64 requise, comme indiqué dans l’exemple suivant.
+
+```js
+var myFile = document.getElementById("file");
+var reader = new FileReader();
+
+reader.onload = function (event) {
+    // strip off the metadata before the base64-encoded string
+    var startIndex = event.target.result.indexOf("base64,");
+    var copyBase64 = event.target.result.substr(startIndex + 7);
+
+    PowerPoint.createPresentation(copyBase64);
+};
+
+// read in the file as a data URL so we can parse the base64-encoded string
+reader.readAsDataURL(myFile.files[0]);
+```
 
 ## <a name="see-also"></a>Voir aussi
+
 - 
   [Exemples de code PowerPoint](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,PowerPoint)
 - [Enregistrement de l’état et des paramètres d’un complément par document pour les compléments de contenu et du volet Office](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 - [Lecture et écriture de données dans la sélection active d’un document ou d’une feuille de calcul](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
 - [Obtention de l’intégralité d’un document pour un complément pour PowerPoint ou Word](../powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md)
 - [Utiliser des thèmes de document dans vos compléments PowerPoint](use-document-themes-in-your-powerpoint-add-ins.md)
-    

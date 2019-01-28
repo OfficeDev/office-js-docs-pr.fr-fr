@@ -1,13 +1,14 @@
 ---
 title: Office.context – ensemble de conditions requises 1.5
 description: ''
-ms.date: 10/31/2018
-ms.openlocfilehash: c80ed3837315f3bf51da302d91f08e2114af3b2f
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.date: 01/16/2019
+localization_priority: Priority
+ms.openlocfilehash: fb84d1e7a5ffd1a5549f213e63ae827f8a883d34
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433956"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29389430"
 ---
 # <a name="mailbox"></a>boîte aux lettres
 
@@ -41,7 +42,7 @@ Permet d’accéder au modèle objet du complément Outlook pour Microsoft Out
 | [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | Méthode |
 | [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | Méthode |
 | [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | Méthode |
-| [removeHandlerAsync](#removehandlerasynceventtype-handler-options-callback) | Méthode |
+| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | Méthode |
 
 ### <a name="namespaces"></a>Espaces de noms
 
@@ -636,9 +637,9 @@ function callback(asyncResult)  {
 }
 ```
 
-####  <a name="removehandlerasynceventtype-handler-options-callback"></a>removeHandlerAsync(eventType, handler, [options], [callback])
+####  <a name="removehandlerasynceventtype-options-callback"></a>removeHandlerAsync(eventType, [options], [callback])
 
-Retire un gestionnaire d’événements pour un événement pris en charge.
+Supprime les gestionnaires d’événements pour un type d’événement pris en charge.
 
 Actuellement, seul le type d’événement `Office.EventType.ItemChanged` est pris en charge.
 
@@ -647,7 +648,6 @@ Actuellement, seul le type d’événement `Office.EventType.ItemChanged` est pr
 | Nom | Type | Attributs | Description |
 |---|---|---|---|
 | `eventType` | [Office.EventType](office.md#eventtype-string) || Événement qui doit révoquer le gestionnaire. |
-| `handler` | Fonction || Fonction qui gère l’événement. Cette fonction doit accepter un seul paramètre, qui est un littéral d’objet. La propriété `type` sur le paramètre correspond au paramètre `eventType` transmis à `addHandlerAsync`. |
 | `options` | Objet | &lt;optional&gt; | Littéral d’objet contenant une ou plusieurs des propriétés suivantes. |
 | `options.asyncContext` | Objet | &lt;optional&gt; | Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel. |
 | `callback` | fonction| &lt;optional&gt;|Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).|
