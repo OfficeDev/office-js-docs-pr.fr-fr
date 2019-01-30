@@ -2,18 +2,19 @@
 title: Office.context.mailbox.userProfile-ensemble de conditions requises 1.7
 description: ''
 ms.date: 10/31/2018
-ms.openlocfilehash: 866bf063cf4ad8bf040753714986a7b2db05b6d6
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: b07ff5bee3adc18cc1006bb574e373182b29f5fe
+ms.sourcegitcommit: 2e4b97f0252ff3dd908a3aa7a9720f0cb50b855d
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433858"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "29635901"
 ---
 # <a name="userprofile"></a>userProfile
 
 ### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmduserprofile"></a>[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile
 
-##### <a name="requirements"></a>Configurations requises
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
@@ -25,7 +26,7 @@ ms.locfileid: "27433858"
 
 | Membre | Type |
 |--------|------|
-| [accountType](#accounttype-string) | Member |
+| [accountType](#accounttype-string) | Membre |
 | [displayName](#displayname-string) | Membre |
 | [emailAddress](#emailaddress-string) | Membre |
 | [timeZone](#timezone-string) | Membre |
@@ -35,7 +36,7 @@ ms.locfileid: "27433858"
 ####  <a name="accounttype-string"></a>accountType :String
 
 > [!NOTE]
-> Actuellement, ce membre est uniquement pris en charge dans Outlook 2016 pour Mac, build 16.9.1212 et supérieur.
+> Ce membre est uniquement pris en charge par 2016 Outlook pour Mac (build 16.9.1212 ou version ultérieure).
 
 Obtient le type de compte de l’utilisateur associé à la boîte aux lettres. Les valeurs possibles sont répertoriées dans le tableau suivant.
 

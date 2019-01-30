@@ -1,14 +1,14 @@
 ---
 title: Élémznr VersionOverrides dans le fichier manifest
 description: ''
-ms.date: 01/15/2019
+ms.date: 01/29/2019
 localization_priority: Normal
-ms.openlocfilehash: 197a636169b7f00edd44019cee21686065845800
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 897c2203ef6ae84911b7f269ee8a2c88aec36bd0
+ms.sourcegitcommit: 2e4b97f0252ff3dd908a3aa7a9720f0cb50b855d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29387799"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "29635908"
 ---
 # <a name="versionoverrides-element"></a>Élément VersionOverrides
 
@@ -22,7 +22,7 @@ ms.locfileid: "29387799"
 |  **xsi:type**  |  Oui  | La version du schéma. À ce stade, les seules valeurs valides sont `VersionOverridesV1_0` et `VersionOverridesV1_1`. |
 
 > [!NOTE]
-> Actuellement, seul Outlook 2016 prend en charge le schéma VersionOverrides v1.1 et le type `VersionOverridesV1_1`.
+> Actuellement, seul Outlook 2016 ou version ultérieure prend en charge le schéma version 1.1 VersionOverrides et `VersionOverridesV1_1` type.
 
 ## <a name="child-elements"></a>Éléments enfants
 

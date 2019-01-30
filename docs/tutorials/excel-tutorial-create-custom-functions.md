@@ -3,12 +3,13 @@ title: Didacticiel de fonctions personnalisées Excel (aperçu)
 description: Dans ce didacticiel, vous allez créer un complément Excel qui contient une fonction personnalisée qui effectue des calculs, requiert des données web ou lance un flux de données web.
 ms.date: 01/08/2019
 ms.topic: tutorial
-ms.openlocfilehash: 46a9883e9dbc2e3bfbbe170665d82826bdfb26f9
-ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 9491b29094eb486f7efbe7e128a7a77be43bff39
+ms.sourcegitcommit: 2e4b97f0252ff3dd908a3aa7a9720f0cb50b855d
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "27770643"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "29635950"
 ---
 # <a name="tutorial-create-custom-functions-in-excel-preview"></a>Didacticiel : créer des fonctions personnalisées dans Excel (aperçu)
 
@@ -146,6 +147,10 @@ Intégration de données à partir du Web est un excellent moyen pour étendre E
         // Note: in case of an error, the returned rejected Promise
         //    will be bubbled up to Excel to indicate an error.
     }
+
+> [!NOTE]
+> In the January Insiders 1901 Build, there is a bug preventing fetch calls from executing which will result in #VALUE!.
+> To workaround this please use the [XMLHTTPRequest API](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/custom-functions-runtime#requesting-external-data) to make the web request.
 
 3. In **customfunctions.js**, locate the line `CustomFunctions.associate("INCREMENT", increment);`. Add the following line of code immediately after that line, and save the file.
 

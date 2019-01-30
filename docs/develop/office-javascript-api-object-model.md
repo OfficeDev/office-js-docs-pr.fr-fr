@@ -3,12 +3,12 @@ title: Modèle d’objet API JavaScript Office
 description: ''
 ms.date: 07/27/2018
 localization_priority: Priority
-ms.openlocfilehash: 5530b77fb25a9decc5f4ae02008808811e7e6513
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 7e93a46019816daa236c986aac921a2962ca1af2
+ms.sourcegitcommit: 2e4b97f0252ff3dd908a3aa7a9720f0cb50b855d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388527"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "29635957"
 ---
 # <a name="office-javascript-api-object-model"></a>Modèle d’objet API JavaScript Office
 Les compléments JavaScript Office donnent accès aux fonctionnalités sous-jacentes de l'hôte. La majeure partie de cet accès passe par quelques objets importants. L’objet [Context](#context-object) donne accès à l’environnement d’exécution après l’initialisation. L’objet [Document](#document-object)donne à l’utilisateur le contrôle d’un document Excel, PowerPoint ou Word. L’objet [Mailbox](#mailbox-object) permet à un complément Outlook d’accéder aux messages et aux profils utilisateur. La compréhension des relations entre ces objets de haut niveau constitue le fondement d’un complément JavaScript.
@@ -87,7 +87,7 @@ Les méthodes d’accès aux données des objets **Document** et [Binding](https
 > [!TIP]
 > **Quand devez-vous utiliser la matrice ou le paramètre coercionType de tableau pour accéder aux données ?** Si les données tabulaires doivent croître de façon dynamique lors de l’ajout de lignes et de colonnes, et que vous devez travailler avec des en-têtes de tableaux, vous devez utiliser le type de données de tableau (en spécifiant le paramètre _coercionType_ de la méthode d’accès aux données d’objet **Document** ou **Binding** en tant que `"table"` ou **Office.CoercionType.Table**). L’ajout de lignes et de colonnes au sein de la structure de données est pris en charge dans les données de tableau et de matrice, mais l’ajout de lignes et de colonnes à la fin est pris en charge uniquement pour les données de tableau. Si vous ne prévoyez pas d’ajouter des lignes et des colonnes, et que vos données ne nécessitent pas la fonctionnalité d’en-tête, vous devez utiliser le type de données de matrice (en spécifiant le paramètre _coercionType_ de la méthode d’accès aux données en tant que `"matrix"` ou **Office.CoercionType.Matrix**), qui fournit un modèle plus simple d’interaction avec les données.
 
-Si les données sont d’un type qui ne peut pas être forcé vers le type spécifié, la propriété [AsyncResult.status](https://docs.microsoft.com/javascript/api/office/office.asyncresult.error) du rappel renvoie `"failed"`. Par ailleurs, vous pouvez utiliser la propriété [AsyncResult.error](https://docs.microsoft.com/javascript/api/office/office.asyncresult.context) pour accéder à un objet [Error](https://docs.microsoft.com/javascript/api/office/office.error) incluant des informations sur la raison de l’échec de l’appel de la méthode.
+Si les données sont d’un type qui ne peut pas être forcé vers le type spécifié, la propriété [AsyncResult.status](https://docs.microsoft.com/javascript/api/office/office.asyncresult#status) du rappel renvoie `"failed"`. Par ailleurs, vous pouvez utiliser la propriété [AsyncResult.error](https://docs.microsoft.com/javascript/api/office/office.asyncresult#error) pour accéder à un objet [Error](https://docs.microsoft.com/javascript/api/office/office.error) incluant des informations sur la raison de l’échec de l’appel de la méthode.
 
 
 ## <a name="working-with-selections-using-the-document-object"></a>Utilisation des sélections à l’aide de l’objet Document
