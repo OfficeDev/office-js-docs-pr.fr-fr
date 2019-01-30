@@ -1,4 +1,15 @@
-
+---
+title: Office.Context.Mailbox.Item - exigence défini 1.1
+description: ''
+ms.date: 12/18/2018
+localization_priority: Normal
+ms.openlocfilehash: 63460494a049bb83d3af69f6808396e426842f1e
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29389577"
+---
 # <a name="item"></a>élément
 
 ### [Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md). item
@@ -78,7 +89,7 @@ if (_Item.attachments.length > 0) {
 
 ####  <a name="bcc-recipientsjavascriptapioutlook11officerecipients"></a>bcc :[Recipients](/javascript/api/outlook_1_1/office.recipients)
 
-Obtient un objet qui fournit des méthodes permettant d’obtenir ou de mettre à jour les destinataires figurant sur la ligne Cci (copie carbone invisible) d’un message. Mode composition uniquement.
+Permet d’obtenir un objet qui fournit des méthodes permettant d’obtenir ou de mettre à jour les destinataires figurant sur la ligne Cci (copie carbone invisible) d’un message. Mode composition uniquement.
 
 ##### <a name="type"></a>Type :
 
@@ -122,9 +133,9 @@ Obtient un objet qui fournit des méthodes permettant de manipuler le corps d’
 
 ####  <a name="cc-arrayemailaddressdetailsjavascriptapioutlook11officeemailaddressdetailsrecipientsjavascriptapioutlook11officerecipients"></a>cc :Array.<[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_1/office.recipients)
 
-Permet d’accéder aux destinataires en copie carbone (Cc) d’un message. Le type d’objet et le niveau d’accès varie selon le mode de l’élément actif.
+Permet d’accéder aux destinataires en copie carbone (Cc) d’un message. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
-##### <a name="read-mode"></a>Mode Lecture
+##### <a name="read-mode"></a>mode Lecture
 
 La propriété `cc` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque destinataire répertorié sur la ligne **Cc** du message. La collection est limitée à 100 membres.
 
@@ -200,7 +211,7 @@ var created = Office.context.mailbox.item.dateTimeCreated;
 
 #### <a name="datetimemodified-date"></a>dateTimeModified :Date
 
-Obtient la date et l’heure de la dernière modification d’un élément. Mode lecture uniquement.
+Permet d’obtenir la date et l’heure de la dernière modification d’un élément. Mode lecture uniquement.
 
 > [!NOTE]
 > Ce membre n’est pas pris en charge dans Outlook pour iOS ou Outlook pour Android.
@@ -279,7 +290,7 @@ Obtient l’adresse de messagerie de l’expéditeur d’un message. Mode lectur
 Les propriétés `from` et [`sender`](#sender-emailaddressdetailsjavascriptapioutlook11officeemailaddressdetails) représentent la même personne, sauf si le message est envoyé par un délégué. Dans ce cas, la propriété `from` représente le délégant et la propriété sender représente le délégué.
 
 > [!NOTE]
-> La propriété `recipientType` de l’objet `EmailAddressDetails` dans la propriété `from` est `undefined`.
+> la propriété `recipientType` de l’objet `EmailAddressDetails` dans la propriété `from` est `undefined`.
 
 ##### <a name="type"></a>Type :
 
@@ -348,7 +359,7 @@ var itemClass = Office.context.mailbox.item.itemClass;
 
 #### <a name="nullable-itemid-string"></a>(nullable) itemId :String
 
-Obtient l’identificateur de l’élément des services web Exchange pour l’élément actif. Mode lecture uniquement.
+Permet d’obtenir l’identificateur de l’élément des services web Exchange pour l’élément actif. Mode lecture uniquement.
 
 > [!NOTE]
 > L’identificateur renvoyé par la propriété `itemId` est identique à celui de l’élément des services web Exchange. La propriété `itemId` n’est pas identique à l’ID d’entrée Outlook ni à l’ID utilisé par l’API REST Outlook. Avant d’effectuer des appels d’API REST avec cette valeur, elle doit être convertie à l’aide de la commande `Office.context.mailbox.convertToRestId`, qui est disponible à partir de l’ensemble de conditions requises 1.3. Pour plus d’informations, consultez la rubrique [Utilisation des API REST Outlook à partir d’un complément Outlook](https://docs.microsoft.com/outlook/add-ins/use-rest-api#get-the-item-id).
@@ -467,9 +478,9 @@ var normalizedSubject = Office.context.mailbox.item.normalizedSubject;
 
 ####  <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlook11officeemailaddressdetailsrecipientsjavascriptapioutlook11officerecipients"></a>optionalAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_1/office.recipients)
 
-Permet d’accéder aux participants facultatifs d’un événement. Le type d’objet et le niveau d’accès varie selon le mode de l’élément actif.
+Permet d’accéder aux participants facultatifs d’un événement. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
-##### <a name="read-mode"></a>Mode Lecture
+##### <a name="read-mode"></a>mode Lecture
 
 La propriété `optionalAttendees` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque participant facultatif à la réunion.
 
@@ -526,9 +537,9 @@ var organizerAddress = Office.context.mailbox.item.organizer.emailAddress;
 
 ####  <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlook11officeemailaddressdetailsrecipientsjavascriptapioutlook11officerecipients"></a>requiredAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_1/office.recipients)
 
-Permet d’accéder aux participants requis à un événement. Le type d’objet et le niveau d’accès varie selon le mode de l’élément actif.
+Permet d’accéder aux participants requis à un événement. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
-##### <a name="read-mode"></a>Mode Lecture
+##### <a name="read-mode"></a>mode Lecture
 
 La propriété `requiredAttendees` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque participant requis à la réunion.
 
@@ -567,7 +578,7 @@ Obtient l’adresse de messagerie de l’expéditeur d’un message électroniqu
 Les propriétés [`from`](#from-emailaddressdetailsjavascriptapioutlook11officeemailaddressdetails) et `sender` représentent la même personne, sauf si le message est envoyé par un délégué. Dans ce cas, la propriété `from` représente le délégant et la propriété sender représente le délégué.
 
 > [!NOTE]
-> La propriété `recipientType` de l’objet `EmailAddressDetails` dans la propriété `from` est `undefined`.
+> la propriété `recipientType` de l’objet `EmailAddressDetails` dans la propriété `from` est `undefined`.
 
 ##### <a name="type"></a>Type :
 
@@ -677,9 +688,9 @@ function callback(asyncResult) {
 
 ####  <a name="to-arrayemailaddressdetailsjavascriptapioutlook11officeemailaddressdetailsrecipientsjavascriptapioutlook11officerecipients"></a>to :Array.<[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_1/office.recipients)
 
-Permet d’accéder aux destinataires figurant sur la ligne **À** d’un message. Le type d’objet et le niveau d’accès varie selon le mode de l’élément actif.
+Permet d’accéder aux destinataires figurant sur la ligne **À** d’un message. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
-##### <a name="read-mode"></a>Mode Lecture
+##### <a name="read-mode"></a>mode Lecture
 
 La propriété `to` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque destinataire répertorié sur la ligne **À** du message. La collection est limitée à 100 membres.
 
@@ -962,7 +973,7 @@ Office.context.mailbox.item.displayReplyForm(
 
 #### <a name="getentities--entitiesjavascriptapioutlook11officeentities"></a>getEntities() → {[Entities](/javascript/api/outlook_1_1/office.entities)}
 
-Obtient les entités figurant dans le corps de l’élément sélectionné.
+Permet d’obtenir les entités figurant dans le corps de l’élément sélectionné.
 
 > [!NOTE]
 > Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.
@@ -989,7 +1000,7 @@ var contacts = Office.context.mailbox.item.getEntities().contacts;
 
 #### <a name="getentitiesbytypeentitytype--nullable-arraystringcontactjavascriptapioutlook11officecontactmeetingsuggestionjavascriptapioutlook11officemeetingsuggestionphonenumberjavascriptapioutlook11officephonenumbertasksuggestionjavascriptapioutlook11officetasksuggestion"></a>getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook_1_1/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_1/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_1/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_1/office.tasksuggestion))>}
 
-Obtient un tableau de toutes les entités du type spécifié trouvées dans le corps de l’élément sélectionné.
+Permet d’obtenir un tableau de toutes les entités du type spécifié trouvées dans le corps de l’élément sélectionné.
 
 > [!NOTE]
 > Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.
@@ -1241,7 +1252,7 @@ La méthode `removeAttachmentAsync` supprime la pièce jointe avec l’identific
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
-|`attachmentId`| String||Identificateur de la pièce jointe à supprimer. La longueur maximale de la chaîne est de 100 caractères.|
+|`attachmentId`| String||Identificateur de la pièce jointe à supprimer.|
 |`options`| Objet| &lt;optional&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
 |`options.asyncContext`| Objet| &lt;optional&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
 |`callback`| fonction| &lt;optional&gt;|Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult). <br/>En cas d’échec de la suppression de la pièce jointe, la propriété `asyncResult.error` contient un code d’erreur et la raison de l’échec.|
