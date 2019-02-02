@@ -1,14 +1,14 @@
 ---
 title: Office.Context.Mailbox.Item - exigence défini 1.1
 description: ''
-ms.date: 12/18/2018
+ms.date: 01/30/2019
 localization_priority: Normal
-ms.openlocfilehash: 63460494a049bb83d3af69f6808396e426842f1e
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: ce8c10987c08609eba90a3a957b372114e62cd81
+ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389577"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "29701875"
 ---
 # <a name="item"></a>élément
 
@@ -135,7 +135,7 @@ Obtient un objet qui fournit des méthodes permettant de manipuler le corps d’
 
 Permet d’accéder aux destinataires en copie carbone (Cc) d’un message. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
-##### <a name="read-mode"></a>mode Lecture
+##### <a name="read-mode"></a>Mode Lecture
 
 La propriété `cc` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque destinataire répertorié sur la ligne **Cc** du message. La collection est limitée à 100 membres.
 
@@ -175,7 +175,7 @@ Vous pouvez obtenir un nombre entier de cette propriété si votre application d
 
 Cette propriété obtient une valeur null lorsqu’un élément est ajouté à un formulaire de composition. Si l’utilisateur définit la ligne Objet et enregistre l’élément, la propriété `conversationId` renvoie une valeur.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type :
 
 *   Chaîne
 
@@ -290,7 +290,7 @@ Obtient l’adresse de messagerie de l’expéditeur d’un message. Mode lectur
 Les propriétés `from` et [`sender`](#sender-emailaddressdetailsjavascriptapioutlook11officeemailaddressdetails) représentent la même personne, sauf si le message est envoyé par un délégué. Dans ce cas, la propriété `from` représente le délégant et la propriété sender représente le délégué.
 
 > [!NOTE]
-> la propriété `recipientType` de l’objet `EmailAddressDetails` dans la propriété `from` est `undefined`.
+> La propriété `recipientType` de l’objet `EmailAddressDetails` dans la propriété `from` est `undefined`.
 
 ##### <a name="type"></a>Type :
 
@@ -308,7 +308,7 @@ Les propriétés `from` et [`sender`](#sender-emailaddressdetailsjavascriptapiou
 
 Obtient l’identificateur de message Internet d’un message électronique. Mode lecture uniquement.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type :
 
 *   Chaîne
 
@@ -334,12 +334,12 @@ La propriété `itemClass` spécifie la classe de message de l’élément séle
 
 | Type | Description | Classe de l’élément |
 | --- | --- | --- |
-| Éléments de rendez-vous | Ce sont les éléments de calendrier de la classe de l’élément `IPM.Appointment` ou `IPM.Appointment.Occurence`. | `IPM.Appointment`<br />`IPM.Appointment.Occurence` |
+| Éléments de rendez-vous | Ce sont les éléments de calendrier de la classe de l’élément `IPM.Appointment` ou `IPM.Appointment.Occurrence`. | `IPM.Appointment`<br />`IPM.Appointment.Occurrence` |
 | Éléments de message | Ces éléments incluent les messages électroniques dont la classe de message par défaut est `IPM.Note`, ainsi que les demandes de réunion, les réponses et les annulations qui utilisent `IPM.Schedule.Meeting` comme classe de message de base. | `IPM.Note`<br />`IPM.Schedule.Meeting.Request`<br />`IPM.Schedule.Meeting.Neg`<br />`IPM.Schedule.Meeting.Pos`<br />`IPM.Schedule.Meeting.Tent`<br />`IPM.Schedule.Meeting.Canceled` |
 
 Vous pouvez créer des classes de message personnalisées qui étendent une classe de message par défaut, par exemple, une classe de message de rendez-vous personnalisée `IPM.Appointment.Contoso`.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type :
 
 *   Chaîne
 
@@ -362,7 +362,7 @@ var itemClass = Office.context.mailbox.item.itemClass;
 Permet d’obtenir l’identificateur de l’élément des services web Exchange pour l’élément actif. Mode lecture uniquement.
 
 > [!NOTE]
-> L’identificateur renvoyé par la propriété `itemId` est identique à celui de l’élément des services web Exchange. La propriété `itemId` n’est pas identique à l’ID d’entrée Outlook ni à l’ID utilisé par l’API REST Outlook. Avant d’effectuer des appels d’API REST avec cette valeur, elle doit être convertie à l’aide de la commande `Office.context.mailbox.convertToRestId`, qui est disponible à partir de l’ensemble de conditions requises 1.3. Pour plus d’informations, consultez la rubrique [Utilisation des API REST Outlook à partir d’un complément Outlook](https://docs.microsoft.com/outlook/add-ins/use-rest-api#get-the-item-id).
+> L’identificateur renvoyé par la propriété `itemId` est identique à celui de l’élément des services web Exchange. La propriété `itemId` n’est pas identique à l’ID d’entrée Outlook ni à l’ID utilisé par l’API REST Outlook. Avant d’effectuer des appels d’API REST avec cette valeur, elle doit être convertie à l’aide de la commande `Office.context.mailbox.convertToRestId`, qui est disponible à partir de l’ensemble de conditions requises 1.3. Pour plus d’informations, voir [Utilisation des API REST Outlook à partir d’un complément Outlook](https://docs.microsoft.com/outlook/add-ins/use-rest-api#get-the-item-id).
 
 ##### <a name="type"></a>Type :
 
@@ -420,7 +420,7 @@ else
 
 Obtient ou définit le lieu d’un rendez-vous.
 
-##### <a name="read-mode"></a>Mode lecture
+##### <a name="read-mode"></a>Mode Lecture
 
 La propriété `location` renvoie une chaîne contenant le lieu du rendez-vous.
 
@@ -458,7 +458,7 @@ Obtient l’objet d’un élément, sans les préfixes (y compris `RE:` et `FWD:
 
 La propriété normalizedSubject obtient l’objet de l’élément, sans les préfixes standard (par exemple, `RE:` et `FW:`) qui sont ajoutés par les programmes de messagerie électronique. Pour obtenir l’objet de l’élément avec les préfixes intacts, utilisez la propriété [`subject`](#subject-stringsubjectjavascriptapioutlook11officesubject).
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type :
 
 *   Chaîne
 
@@ -480,7 +480,7 @@ var normalizedSubject = Office.context.mailbox.item.normalizedSubject;
 
 Permet d’accéder aux participants facultatifs d’un événement. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
-##### <a name="read-mode"></a>mode Lecture
+##### <a name="read-mode"></a>Mode Lecture
 
 La propriété `optionalAttendees` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque participant facultatif à la réunion.
 
@@ -539,7 +539,7 @@ var organizerAddress = Office.context.mailbox.item.organizer.emailAddress;
 
 Permet d’accéder aux participants requis à un événement. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
-##### <a name="read-mode"></a>mode Lecture
+##### <a name="read-mode"></a>Mode Lecture
 
 La propriété `requiredAttendees` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque participant requis à la réunion.
 
@@ -578,7 +578,7 @@ Obtient l’adresse de messagerie de l’expéditeur d’un message électroniqu
 Les propriétés [`from`](#from-emailaddressdetailsjavascriptapioutlook11officeemailaddressdetails) et `sender` représentent la même personne, sauf si le message est envoyé par un délégué. Dans ce cas, la propriété `from` représente le délégant et la propriété sender représente le délégué.
 
 > [!NOTE]
-> la propriété `recipientType` de l’objet `EmailAddressDetails` dans la propriété `from` est `undefined`.
+> La propriété `recipientType` de l’objet `EmailAddressDetails` dans la propriété `from` est `undefined`.
 
 ##### <a name="type"></a>Type :
 
@@ -605,7 +605,7 @@ Obtient ou définit la date et l’heure de début du rendez-vous.
 
 La propriété `start` est exprimée en date et heure UTC (temps universel coordonné). Vous pouvez utiliser la méthode [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook11officelocalclienttime) pour convertir la valeur à la date et à l’heure du client.
 
-##### <a name="read-mode"></a>Mode lecture
+##### <a name="read-mode"></a>Mode Lecture
 
 La propriété `start` renvoie un objet `Date`.
 
@@ -654,7 +654,7 @@ Obtient ou définit la description qui apparaît dans le champ d’objet d’un 
 
 La propriété `subject` obtient ou définit l’intégralité de l’objet de l’élément, tel qu’il est envoyé par le serveur de messagerie.
 
-##### <a name="read-mode"></a>Mode lecture
+##### <a name="read-mode"></a>Mode Lecture
 
 La propriété `subject` renvoie une chaîne. Utilisez la propriété [`normalizedSubject`](#normalizedsubject-string) pour obtenir l’objet sans les préfixes tels que `RE:` et `FW:`.
 
@@ -690,7 +690,7 @@ function callback(asyncResult) {
 
 Permet d’accéder aux destinataires figurant sur la ligne **À** d’un message. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
-##### <a name="read-mode"></a>mode Lecture
+##### <a name="read-mode"></a>Mode Lecture
 
 La propriété `to` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque destinataire répertorié sur la ligne **À** du message. La collection est limitée à 100 membres.
 
@@ -794,8 +794,8 @@ Si votre complément Office est exécuté dans Outlook Web App, la méthode `
 |---|---|---|---|
 |`itemId`| String||Identificateur Exchange de l’élément à joindre. La taille maximale est de 100 caractères.|
 |`attachmentName`| String||Objet de l’élément à joindre. La longueur maximale est de 255 caractères.|
-|`options`| Objet| &lt;optional&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
-|`options.asyncContext`| Objet| &lt;optional&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
+|`options`| Object| &lt;facultatif&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
+|`options.asyncContext`| Objet| &lt;facultatif&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
 |`callback`| fonction| &lt;optional&gt;|Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult). <br/>En cas de réussite, l’identificateur de pièce jointe est fourni dans la propriété `asyncResult.value`.<br/>En cas d’échec de l’ajout de la pièce jointe, l’objet `asyncResult` contient un objet `Error` indiquant une description de l’erreur.|
 
 ##### <a name="errors"></a>Erreurs
@@ -1136,7 +1136,7 @@ Un objet qui contient les tableaux des chaînes correspondant aux expressions r�
 
 <dt>Type</dt>
 
-<dd>Object</dd>
+<dd>Objet</dd>
 
 </dl>
 
@@ -1163,7 +1163,7 @@ Si vous spécifiez une règle `ItemHasRegularExpressionMatch` pour la propriét�
 
 ##### <a name="parameters"></a>Paramètres :
 
-|Nom| Type| Description|
+|Nom| Type| object|
 |---|---|---|
 |`name`| String|Nom de l’élément de règle `ItemHasRegularExpressionMatch` qui définit le filtre à respecter.|
 
