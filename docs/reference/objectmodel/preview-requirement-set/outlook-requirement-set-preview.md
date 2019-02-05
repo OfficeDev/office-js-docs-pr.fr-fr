@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: ''
-ms.date: 10/31/2018
+ms.date: 01/30/2019
 localization_priority: Priority
-ms.openlocfilehash: bb920224f9ceb39b334b5f489442da695004f22c
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 47db6824fa328a61e47d577a85375f43e73f16df
+ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386399"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "29701784"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -24,10 +24,14 @@ L’ensemble de conditions requises présenté en aperçu comprend toutes les fo
 Les fonctionnalités suivantes sont disponibles en aperçu.
 
 - [AttachmentContent](/javascript/api/outlook/office.attachmentcontent) : ajout d’un nouvel objet représentant le contenu d’une pièce jointe.
+- [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) : ajout d’un nouvel objet représentant l’ensemble des emplacements sur un rendez-vous.
 - [InternetHeaders](/javascript/api/outlook/office.internetheaders) : ajout d’un nouvel objet représentant les en-têtes Internet d’un élément de message.
+- [LocationDetails](/javascript/api/outlook/office.locationdetails) : ajout d’un nouvel objet représentant un emplacement. En lecture seule.
+- [LocationIdentifier](/javascript/api/outlook/office.locationidentifier) : ajout d’un nouvel objet représentant l’ID d’un emplacement.
 - [SharedProperties](/javascript/api/outlook/office.sharedproperties) : ajout d’un nouvel objet qui représente les propriétés d’un élément rendez-vous ou message dans un dossier, un calendrier ou une boîte aux lettres partagés.
 - [Event.Completed](/javascript/api/office/office.addincommands.event#completed-options-) : nouveau paramètre facultatif `options`, qui est un dictionnaire ayant comme seule valeur valide `allowEvent`. Cette valeur est utilisée pour annuler l’exécution d’un événement.
 - [Office.context.mailbox.item.addFileAttachmentFromBase64Async](office.context.mailbox.item.md#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) : ajout d’une nouvelle méthode qui vous permet de joindre un fichier représenté par une chaîne encodée en base 64 à un message ou à un rendez-vous.
+- [Office.context.mailbox.item.enhancedLocation](office.context.mailbox.item.md#enhancedlocation-enhancedlocationjavascriptapioutlookofficeenhancedlocation) : ajout d’une nouvelle propriété représentant l’ensemble des emplacements sur un rendez-vous.
 - [Office.context.mailbox.item.getAttachmentContentAsync](office.context.mailbox.item.md#getattachmentcontentasyncattachmentid-options-callback--attachmentcontentjavascriptapioutlookofficeattachmentcontent) : ajout d’une nouvelle méthode pour obtenir le contenu d’une pièce jointe spécifique.
 - [Office.context.mailbox.item.getAttachmentsAsync](office.context.mailbox.item.md#getattachmentsasyncoptions-callback--arrayattachmentdetailsjavascriptapioutlookofficeattachmentdetails) : ajout d’une nouvelle méthode qui récupère les pièces jointes à un élément en mode composition.
 - [Office.context.mailbox.item.getInitializationContextAsync](office.context.mailbox.item.md#getinitializationcontextasyncoptions-callback) : ajout d’une fonction qui renvoie les données d’initialisation transmises quand le complément est [activé par un message actionnable](https://docs.microsoft.com/outlook/actionable-messages/invoke-add-in-from-actionable-message).
@@ -36,7 +40,8 @@ Les fonctionnalités suivantes sont disponibles en aperçu.
 - [Office.context.auth.getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) : ajout d’un accès à `getAccessTokenAsync`, qui permet aux compléments d’[obtenir un jeton d’accès](https://docs.microsoft.com/outlook/add-ins/authenticate-a-user-with-an-sso-token) pour l’API Microsoft Graph.
 - [Office.MailboxEnums.AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat) : ajout d’une nouvelle enum qui spécifie la mise en forme qui s’applique au contenu d’une pièce jointe.
 - [Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus) : ajout d’une nouvelle enum qui spécifie si une pièce jointe a été ajoutée à un élément ou supprimée d’un élément.
-- [Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions) : ajout d’un nouvelle enum d’indicateur binaire qui spécifie les autorisations accordées aux délégués.
+- [Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions) : ajout d’une nouvelle énumération d’indicateur binaire qui spécifie les autorisations accordées aux délégués.
+- [Office.MailboxEnums.LocationType](/javascript/api/outlook/office.mailboxenums.locationtype) : ajout d’une nouvelle énumération qui spécifie le type d’emplacement d’un rendez-vous.
 - [Office.EventType](/javascript/api/office/office.eventtype) : modification de la prise en charge des événements AttachmentsChanged et OfficeThemeChanged via l’ajout respectivement d’entrées `AttachmentsChanged` et `OfficeThemeChanged`.
 - [Élément de manifeste SupportsSharedFolders](../../manifest/supportssharedfolders.md) : ajout d’un élément enfant à l’élément de manifeste [DesktopFormFactor](../../manifest/desktopformfactor.md). Définit si le complément est disponible dans les scénarios de délégué.
 

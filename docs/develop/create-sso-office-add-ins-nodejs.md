@@ -3,12 +3,12 @@ title: Création d’un complément Office Node.js qui utilise l’authentificat
 description: ''
 ms.date: 12/07/2018
 localization_priority: Priority
-ms.openlocfilehash: 0e47b8a577e337a40542f38509b6da325df299ba
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: cf249e47709a325f22fc1fda49ee76b7a3357b4f
+ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29387337"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "29701931"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office Node.js qui utilise l’authentification unique (aperçu)
 
@@ -27,9 +27,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 * TypeScript version 2.2.2 ou ultérieure.
 
-* Office 2016, version 1708, build 8424.nnnn ou version ultérieure (la version par abonnement Office 365, parfois appelée « Démarrer en un clic »).
-
-  Il vous sera peut-être demandé de participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, consultez la page [Participez au programme Office Insider](https://products.office.com/office-insider?tab=tab-1).
+* Office 365 (version par abonnement, également appelée « Démarrer en un clic »). Dernière version mensuelle et build du canal du programme Insider. Vous devez participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à [Participez au programme Office Insider](https://products.office.com/office-insider?tab=tab-1). Veuillez noter que lorsqu’un build passe au canal semi-annuel de production, la prise en charge des fonctionnalités d’aperçu, y compris l’authentification unique, est désactivée pour ce build.
 
 ## <a name="set-up-the-starter-project"></a>Configurer le projet de démarrage
 
@@ -538,7 +536,7 @@ Il existe deux fichiers côté serveur qui doivent être modifiés.
     ```
 
     > [!NOTE]
-    > Vous devez uniquement utiliser l’étendue `access_as_user` pour autoriser l’API qui gère le flux « de la part de » pour les compléments Office. Les autres API de votre service peuvent avoir leurs propres exigences d’étendue. Cela limite les possibilités d’accès avec les jetons acquis par Office.
+    > Vous ne pouvez utiliser l’étendue `access_as_user` que pour autoriser l’API qui gère le flux « de la part de » pour les compléments Office. D’autres API dans votre service peuvent avoir leurs propres exigences d’étendue. Cela permet de limiter ce à quoi donnent accès les jetons acquis par Office.
 
 5. Remplacez `TODO8` par le code suivant. Tenez compte des informations suivantes :
 

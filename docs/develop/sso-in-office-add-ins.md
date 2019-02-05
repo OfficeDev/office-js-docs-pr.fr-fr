@@ -3,12 +3,12 @@ title: Activer l’authentification unique pour des compléments Office
 description: ''
 ms.date: 09/26/2018
 localization_priority: Priority
-ms.openlocfilehash: 96370072e29262c70f421ced9a90ca9422a12243
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: f76a1394bb55a260af9bbde2d18cd330bbf2688b
+ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388107"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "29701791"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Activer l’authentification unique pour des compléments Office (aperçu)
 
@@ -20,6 +20,8 @@ Users sign in to Office (online, mobile, and desktop platforms) using either the
 
 L’API de l’authentification unique est actuellement prise en charge uniquement en prévisualisation. Elle est disponible pour les développeurs à des fins d’expérimentation ; mais elle ne doit pas être utilisée dans un complément de production. Par ailleurs, les compléments qui utilisent l’authentification unique SSO ne sont pas acceptés dans [AppSource](https://appsource.microsoft.com).
 
+L’authentification unique SSO requiert Office 365 (la version par abonnement d’Office, également appelée « Démarrer en un clic »). Vous devez utiliser la version et le build mensuels les plus récents du canal du programme Insider. Vous devez participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à [Participez au programme Office Insider](https://products.office.com/office-insider?tab=tab-1). Veuillez noter que lorsqu’un build passe au canal semi-annuel de production, la prise en charge des fonctionnalités d’aperçu, y compris l’authentification unique, est désactivée pour ce build.
+
 Toutes les applications Office ne prennent pas en charge la prévisualisation de l’authentification unique (SSO). Elle est disponible dans Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur l’endroit où l’API d’authentification unique est actuellement prise en charge, consultez la rubrique [Ensembles de conditions requises de l’API d’identité](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets).
 
 ### <a name="requirements-and-best-practices"></a>Meilleures Pratiques et Conditions Requises
@@ -28,7 +30,7 @@ Pour utiliser l’authentification unique SSO, vous devez télécharger la versi
 
 Si vous utilisez un complément** Outlook**, veillez à activer l’Authentification Moderne pour la location d’Office 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
-Vous ne devez*pas* dépendre de l’authentification unique SSO comme seule méthode de votre complément d’authentification. Vous devez implémenter un système d’authentification secondaire vers lequel votre complément peut revenir dans certaines situations d’erreur. Vous pouvez utiliser un système de tableaux d’utilisateur et d’authentification, ou vous pouvez tirer parti d’un des fournisseurs de connexion sociale. Pour plus d’informations sur la procédure à suivre avec un complément Office, voir[Services externes autorisées dans votre complément Office](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/auth-external-add-ins). Concernant*Outlook*, il existe un système fall back recommandé. Pour plus d’informations, voir[Scénario : Implémenter l’authentification unique sur votre service dans un complément Outlook](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in).
+Vous ne devez*pas* dépendre de l’authentification unique SSO comme seule méthode de votre complément d’authentification. Vous devez implémenter un système d’authentification secondaire vers lequel votre complément peut revenir dans certaines situations d’erreur. Vous pouvez utiliser un système de tableaux d’utilisateur et d’authentification, ou vous pouvez tirer parti d’un des fournisseurs de connexion sociale. Pour plus d’informations sur la procédure à suivre avec un complément Office, voir[Services externes autorisées dans votre complément Office](https://docs.microsoft.com/fr-FR/office/dev/add-ins/develop/auth-external-add-ins). Concernant*Outlook*, il existe un système fall back recommandé. Pour plus d’informations, voir[Scénario : Implémenter l’authentification unique sur votre service dans un complément Outlook](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in).
 
 ### <a name="how-sso-works-at-runtime"></a>Mode de fonctionnement de l’authentification unique SSO en cours d’exécution
 
@@ -43,7 +45,7 @@ Le diagramme suivant illustre le mode de fonctionnement du processus d’authent
 5. Azure AD envoie le jeton de complément à l’application hôte Office.
 6. L’application hôte Office envoie le**jeton de complément (token)** au complément dans le cadre de l’objet de résultat renvoyé par l’appel`getAccessTokenAsync`.
 7. Dans le compl?ment, JavaScript peut analyser le token et extraire les informations dont il a besoin, telles que l'adresse e-mail de l'utilisateur. 
-8. Optionnellement, le compl?ment peut envoyer une requ?te HTTP ? son serveur pour obtenir plus de donn?es sur l'utilisateur, notamment les pr?f?rences de l'utilisateur. Alternativement, le token lui-m?me pourrait ?tre envoy? au serveur pour analyse et validation. 
+8. Optionnellement, le compl?ment peut envoyer une requ?te HTTP ? son serveur pour obtenir plus de donn?es sur l'utilisateur, notamment les pr?f?rences de l'utilisateur. Alternativement, le token lui-m?me pourrait ?tre envoy? au serveur pour analyse et validation.
 
 ## <a name="develop-an-sso-add-in"></a>Développer un complément d’authentification unique SSO
 

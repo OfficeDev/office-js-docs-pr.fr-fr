@@ -3,12 +3,12 @@ title: Créer un complément Office ASP.NET qui utilise l’authentification uni
 description: ''
 ms.date: 01/23/2018
 localization_priority: Priority
-ms.openlocfilehash: 94976e47d2bce15e224d837a11cab6b08bd80cda
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: d79dde68b8222a8aafa01a01dc21a4f932f101a9
+ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388303"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "29701819"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office ASP.NET qui utilise l’authentification unique (aperçu)
 
@@ -21,9 +21,9 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-* Version la plus récente disponible de Visual Studio 2017 Preview.
+* Version la plus récente disponible de Visual Studio 2017.
 
-* Office 2016, Version 1708, build 8424.nnnn ou version ultérieure (la version par abonnement Office 365, parfois appelée « Démarrer en un clic »). Vous devrez peut-être participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, voir [Participez au programme Office Insider](https://products.office.com/office-insider?tab=tab-1).
+* Office 365 (version par abonnement, également appelée « Démarrer en un clic »). Dernière version mensuelle et build du canal du programme Insider. Vous devez participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à [Participez au programme Office Insider](https://products.office.com/office-insider?tab=tab-1). Veuillez noter que lorsqu’un build passe au canal semi-annuel de production, la prise en charge des fonctionnalités d’aperçu, y compris l’authentification unique, est désactivée pour ce build.
 
 ## <a name="set-up-the-starter-project"></a>Configurer le projet de démarrage
 
@@ -39,7 +39,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     > [!NOTE]
     > Vous obtiendrez une erreur relative à l’espace de noms Identity. Il s’agit d’un effet indésirable dû à un problème de configuration qui sera corrigé à la prochaine étape. Le plus important est que les packages soient bien installés.
 
-1. Pour l’instant, la version de la bibliothèque MSAL (Microsoft.Identity.Client) dont vous avez besoin pour l’authentification unique (version `1.1.4-preview0002`) ne fait pas partie du catalogue NuGet standard, elle n’est donc pas répertoriée dans package.config et doit être installée séparément. 
+1. Pour l’instant, la version de la bibliothèque MSAL (Microsoft.Identity.Client) dont vous avez besoin pour l’authentification unique (version `1.1.4-preview0002`) ne fait pas partie du catalogue NuGet standard, elle n’est donc pas répertoriée dans package.config et doit être installée séparément.
 
    > 1. Dans le menu **Outils**, accédez à **Gestionnaire de package NuGet** > **Console du Gestionnaire de package**. 
 
