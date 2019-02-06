@@ -3,12 +3,12 @@ title: Prise en main des compléments Excel
 description: ''
 ms.date: 01/23/2018
 localization_priority: Priority
-ms.openlocfilehash: b75a25f986d4dd141a3858a357592c5ba9c28bd8
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: ad0c948be710f6274d50c341854e43fc42639ee8
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388968"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742260"
 ---
 # <a name="get-started-with-excel-add-ins"></a>Prise en main des compléments Excel
 
@@ -16,7 +16,7 @@ Vous pouvez créer un complément Excel en utilisant des technologies web connue
 
 ## <a name="create-your-first-excel-add-in"></a>Créer votre premier complément Excel
 
-Pour commencer, effectuez l’une des procédures pas à pas de cette section pour créer un complément Excel à l’aide de [React](excel-add-ins-get-started-react.md), [Angular](excel-add-ins-get-started-angular.md) ou [jQuery](excel-add-ins-get-started-jquery.md). Chaque procédure fournit des instructions pas à pas concernant la création d’un complément simple de volet Office qui utilise l’API JavaScript pour Excel afin d’interagir avec une feuille de calcul. 
+Pour commencer, effectuez l’une des procédures pas à pas de cette section pour créer un complément Excel à l’aide de [React](../quickstarts/excel-quickstart-react.md), [Angular](../quickstarts/excel-quickstart-angular.md) ou [jQuery](../quickstarts/excel-quickstart-jquery.md) ou[Vue](../quickstarts/excel-quickstart-vue.md). Chaque procédure fournit des instructions pas à pas concernant la création d’un complément simple de volet Office qui utilise l’API JavaScript pour Excel afin d’interagir avec une feuille de calcul. 
 
 ## <a name="explore-snippets-with-script-lab"></a>Explorer les extraits avec Script Lab
 
