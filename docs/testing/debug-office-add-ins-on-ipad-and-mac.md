@@ -1,47 +1,20 @@
 ---
 title: Débogage des compléments Office sur iPad et Mac
 description: ''
-ms.date: 03/21/2018
+ms.date: 02/01/2019
 localization_priority: Priority
-ms.openlocfilehash: 058f3cb4a4acc77a5c4fcd4559970187842c2c4b
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: b283cf14563345834e7076cdd4de4f15a26692b6
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388030"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742330"
 ---
 # <a name="debug-office-add-ins-on-ipad-and-mac"></a>Débogage des compléments Office sur iPad et Mac
 
-Vous pouvez utiliser Visual Studio pour le développement et le débogage des compléments sur Windows. Toutefois, vous ne pouvez pas l’utiliser pour déboguer les compléments sur iPad ou sur Mac. Dans la mesure où les compléments sont développés dans le code HTML et Javascript, ils devraient fonctionner sur différentes plateformes. Il peut toutefois exister de légères différences dans l’affichage du code HTML dans les différents navigateurs. Cette rubrique explique comment déboguer les compléments en exécution sur iPad ou sur Mac. 
+Vous pouvez utiliser Visual Studio pour le développement et le débogage des compléments sur Windows. Toutefois, vous ne pouvez pas l’utiliser pour déboguer les compléments sur iPad ou sur Mac. Dans la mesure où les compléments sont développés dans le code HTML et Javascript, ils devraient fonctionner sur différentes plateformes. Il peut toutefois exister de légères différences dans l’affichage du code HTML dans les différents navigateurs. Cette rubrique explique comment déboguer les compléments en exécution sur iPad ou sur Mac.
 
-## <a name="debugging-with-safari-web-inspector-on-a-mac"></a>Débogage avec l’inspecteur web Safari sur Mac
-
-Si votre complément affiche une interface utilisateur dans un volet des tâches ou dans un complément de contenu, vous pouvez déboguer un complément Office à l’aide de avec l’inspecteur web Safari.
-
-Pour pouvoir déboguer des compléments Office sur Mac, vous devez disposer de Mac OS High Sierra ET de Mac Office version 16.9.1 (build 18012504) ou version ultérieure. Si vous n’avez pas de build Mac Office, vous pouvez en obtenir une en rejoignant le [programme pour les développeurs Office 365](https://aka.ms/o365devprogram).
-
-Pour commencer, ouvrez un terminal, puis définissez la propriété `OfficeWebAddinDeveloperExtras` pour l’application Office pertinente comme suit :
-
-- `defaults write com.microsoft.Word OfficeWebAddinDeveloperExtras -bool true`
-
-- `defaults write com.microsoft.Excel OfficeWebAddinDeveloperExtras -bool true`
-
-- `defaults write com.microsoft.Powerpoint OfficeWebAddinDeveloperExtras -bool true`
-
-- `defaults write com.microsoft.Outlook OfficeWebAddinDeveloperExtras -bool true`
-
-Ensuite, ouvrez l’application Office et insérez votre complément. Cliquez sur le complément. Vous devriez voir l’option **Inspecter l’élément** s’afficher dans le menu contextuel.  Sélectionnez cette option pour afficher l’inspecteur dans lequel vous pouvez définir des points d’arrêt et déboguer votre complément.
-
-> [!NOTE]
-> Notez qu’il s’agit d’une fonctionnalité expérimentale et qu’il n’existe aucune garantie que nous conserverons cette fonctionnalité dans les versions futures des applications Office.
->
-> Si vous essayez d’utiliser l’inspecteur et que la boîte de dialogue scintille, essayez la solution de contournement suivante :
-> 1. Pour réduire la taille de la boîte de dialogue.
-> 2. Sélectionnez l’option **Inspecter l’élément** qui ouvre une nouvelle fenêtre.
-> 3. Redimensionner la boîte de dialogue à sa taille d’origine.
-> 4. Utiliser l’inspecteur comme requis.
-
-## <a name="debugging-with-vorlonjs-on-a-ipad-or-mac"></a>Débogage avec Vorlon.JS sur un iPad ou un Mac
+## <a name="debugging-with-vorlonjs-on-ipad-or-mac"></a>Débogage avec Vorlon.JS sur un iPad ou un Mac
 
 Pour déboguer un complément sur iPad ou Mac, vous pouvez utiliser Vorlon.JS, un débogueur pour pages web ressemblant aux outils F12. Il est conçu pour fonctionner à distance et déboguer des pages web sur différents appareils. Pour plus d’informations, consultez le [site web de Vorlon](http://www.vorlonjs.com).  
 
@@ -133,7 +106,35 @@ L’outil Vorlon intègre plusieur plug-ins. Ceux qui sont actuellement activés
 Un plug-in **Complément Office** permet d’ajouter des fonctionnalités supplémentaires pour Office.js, telles que l’exploration du modèle objet, l’exécution d’appels Office.js et la lecture des valeurs des propriétés de l’objet. Pour plus d’informations, reportez-vous à l’article relatif à l’utilisation du [plug-in VorlonJS pour déboguer un complément Office](https://blogs.msdn.microsoft.com/mim/2016/02/18/vorlonjs-plugin-for-debugging-office-addin/).
 
 > [!NOTE]
-> il n’existe aucun moyen de définir des points d’arrêt dans Vorlon.JS.
+> Il n’existe aucun moyen de définir des points d’arrêt dans Vorlon.JS.
+
+## <a name="debugging-with-safari-web-inspector-on-a-mac"></a>Débogage avec l’inspecteur web Safari sur Mac
+
+> [!IMPORTANT]
+> Notez que la fonctionnalité**Inspecter l’Élément** est expérimentale et qu’il n’existe aucune garantie que nous conserverons cette fonctionnalité dans les versions futures des applications Office.
+
+Si votre complément affiche une interface utilisateur dans un volet des tâches ou dans un complément de contenu, vous pouvez déboguer un complément Office à l’aide de avec l’inspecteur web Safari.
+
+Pour pouvoir déboguer des compléments Office sur Mac, vous devez disposer de Mac OS High Sierra ET de Mac Office version 16.9.1 (build 18012504) ou version ultérieure. Si vous n’avez pas de build Office pour Mac, vous pouvez en obtenir une en rejoignant le [programme pour les développeurs Office 365](https://aka.ms/o365devprogram).
+
+Pour commencer, ouvrez un terminal, puis définissez la propriété `OfficeWebAddinDeveloperExtras` pour l’application Office pertinente comme suit :
+
+- `defaults write com.microsoft.Word OfficeWebAddinDeveloperExtras -bool true`
+
+- `defaults write com.microsoft.Excel OfficeWebAddinDeveloperExtras -bool true`
+
+- `defaults write com.microsoft.Powerpoint OfficeWebAddinDeveloperExtras -bool true`
+
+- `defaults write com.microsoft.Outlook OfficeWebAddinDeveloperExtras -bool true`
+
+Ensuite, ouvrez l’application Office et[insérez votre complément](sideload-an-office-add-in-on-ipad-and-mac.md). Cliquez sur le complément. Vous devriez voir l’option **Inspecter l’élément** s’afficher dans le menu contextuel.  Sélectionnez cette option pour afficher l’inspecteur dans lequel vous pouvez définir des points d’arrêt et déboguer votre complément.
+
+> [!NOTE]
+> Si vous essayez d’utiliser l’inspecteur et que la boîte de dialogue scintille, essayez la solution de contournement suivante :
+> 1. Pour réduire la taille de la boîte de dialogue.
+> 2. Sélectionnez l’option **Inspecter l’élément** qui ouvre une nouvelle fenêtre.
+> 3. Redimensionner la boîte de dialogue à sa taille d’origine.
+> 4. Utiliser l’inspecteur comme requis.
 
 
 ## <a name="clearing-the-office-applications-cache-on-a-mac-or-ipad"></a>Effacement du cache de l’application Office sur un ordinateur Mac ou un iPad
