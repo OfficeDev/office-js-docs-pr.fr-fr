@@ -2,12 +2,14 @@
 title: Ensembles de conditions requises de l’API de dialogue
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: be8d8fd8d3f459e236d1acc0e4fb5a2f0bdcfd22
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+ms.prod: non-product-specific
+localization_priority: Normal
+ms.openlocfilehash: 95528b0973ef479dca109b159a3d623f945c14e6
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457977"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742274"
 ---
 # <a name="dialog-api-requirement-sets"></a>Ensembles de conditions requises de l’API de dialogue
 

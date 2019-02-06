@@ -2,13 +2,14 @@
 title: Vue d’ensemble de l’API JavaScript pour Excel
 description: ''
 ms.date: 11/01/2018
+ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 34183c561b3da3e01a996f08761c753f204c766b
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: e5d32e583dd89cd22f80687cdd273375ab3a815c
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388751"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742309"
 ---
 # <a name="excel-javascript-api-overview"></a>Vue d’ensemble de l’API JavaScript pour Excel
 

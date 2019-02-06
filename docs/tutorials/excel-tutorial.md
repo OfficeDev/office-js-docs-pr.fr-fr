@@ -2,14 +2,15 @@
 title: Didacticiel sur le complément Excel
 description: Dans ce didacticiel, vous allez développer un complément Excel qui crée, remplit, filtre et trie un tableau, crée un graphique, fige un en-tête de tableau, protège une feuille de calcul et ouvre une boîte de dialogue.
 ms.date: 01/28/2019
+ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 6fe72a9170862dbb0c422db7d8efd3f187bf45ae
-ms.sourcegitcommit: 2e4b97f0252ff3dd908a3aa7a9720f0cb50b855d
+ms.openlocfilehash: 410b2391d207f7c83f9accb349448dbc0c92a0e2
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "29635964"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742449"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 

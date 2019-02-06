@@ -2,12 +2,13 @@
 ms.date: 01/08/2019
 description: Comprendre les scénarios clés dans le développement de fonctions personnalisées Excel qui utilisent le nouveau runtime JavaScript.
 title: Runtime pour les fonctions personnalisées Excel (aperçu)
-ms.openlocfilehash: 2610be95ea255d14c577d8b9215f32a79ab04463
-ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: dd8158da4ebcccac61b8ab6958a101489bf5a668
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "27770580"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742316"
 ---
 # <a name="runtime-for-excel-custom-functions-preview"></a>Runtime pour les fonctions personnalisées Excel (aperçu)
 
@@ -17,7 +18,7 @@ Les fonctions personnalisées utilisent un nouveau runtime JavaScript différent
 
 ## <a name="requesting-external-data"></a>Demande de données externes
 
-Dans une fonction personnalisée, vous pouvez demander des données externes à l’aide d’une API comme [Récupérer](https://developer.mozilla.org/fr-FR/docs/Web/API/Fetch_API) ou de [XmlHttpRequest (XHR)](https://developer.mozilla.org/fr-FR/docs/Web/API/XMLHttpRequest), une API web standard qui émet des demandes HTTP pour interagir avec les serveurs. Dans le runtime JavaScript, XHR implémente des mesures de sécurité supplémentaires en exigeant la [politique de même origine (same-origin policy)](https://developer.mozilla.org/fr-FR/docs/Web/Security/Same-origin_policy) et le partage [CORS (partage des ressources cross-origin)](https://www.w3.org/TR/cors/) simple.  
+Dans une fonction personnalisée, vous pouvez demander des données externes à l’aide d’une API comme [Récupérer](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) ou de [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), une API web standard qui émet des demandes HTTP pour interagir avec les serveurs. Dans le runtime JavaScript, XHR implémente des mesures de sécurité supplémentaires en exigeant la [politique de même origine (same-origin policy)](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) et le partage [CORS (partage des ressources cross-origin)](https://www.w3.org/TR/cors/) simple.  
 
 ### <a name="xhr-example"></a>Exemple avec XHR
 
@@ -51,7 +52,7 @@ function sendWebRequest(thermometerID, data) {
 
 ## <a name="receiving-data-via-websockets"></a>Réception de données via WebSockets
 
-Dans une fonction personnalisée, vous pouvez utiliser [WebSockets](https://developer.mozilla.org/fr-FR/docs/Web/API/WebSockets_API) afin d’échanger des données avec un serveur via une connexion permanente. Grâce à WebSockets, votre fonction personnalisée peut ouvrir une connexion avec un serveur, puis recevoir automatiquement des messages du serveur lorsque certains événements se produisent, sans avoir à interroger explicitement le serveur pour obtenir les données.
+Dans une fonction personnalisée, vous pouvez utiliser [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) afin d’échanger des données avec un serveur via une connexion permanente. Grâce à WebSockets, votre fonction personnalisée peut ouvrir une connexion avec un serveur, puis recevoir automatiquement des messages du serveur lorsque certains événements se produisent, sans avoir à interroger explicitement le serveur pour obtenir les données.
 
 ### <a name="websockets-example"></a>Exemple avec WebSockets
 
@@ -69,7 +70,7 @@ ws.onerror = (error) => {
 
 ## <a name="storing-and-accessing-data"></a>Accès aux données et stockage
 
-Dans une fonction personnalisée (ou tout autre partie d’un complément), vous pouvez accéder aux données et les stocker à l’aide de l’objet `OfficeRuntime.AsyncStorage`. `AsyncStorage` est un système de stockage clé-valeur permanent et non chiffré qui permet de remplacer [localStorage](https://developer.mozilla.org/fr-FR/docs/Web/API/Window/localStorage), qui ne peut pas être utilisé au sein de fonctions personnalisées. Un complément peut stocker jusqu’à 10 Mo de données à l’aide de l’objet `AsyncStorage`.
+Dans une fonction personnalisée (ou tout autre partie d’un complément), vous pouvez accéder aux données et les stocker à l’aide de l’objet `OfficeRuntime.AsyncStorage`. `AsyncStorage` est un système de stockage clé-valeur permanent et non chiffré qui permet de remplacer [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), qui ne peut pas être utilisé au sein de fonctions personnalisées. Un complément peut stocker jusqu’à 10 Mo de données à l’aide de l’objet `AsyncStorage`.
 
 `AsyncStorage` est conçu comme une solution de stockage partagé, ce qui signifie que plusieurs parties d’un complément ont accès aux mêmes données. Par exemple, les jetons destinés à l’authentification utilisateur peuvent être stockés dans `AsyncStorage`, car ce système de stockage est accessible à la fois par le biais d’une fonction personnalisée et via des éléments d’interface utilisateur de complément, par exemple, un volet des tâches. De même, si deux compléments partagent le même domaine (par exemple, www.contoso.com/addin1, www.contoso.com/addin2), ils sont également autorisés à partager des informations entre eux via `AsyncStorage`. Notez que les compléments ayant différents sous-domaines possèdent différentes instances de l’objet `AsyncStorage` (par exemple, subdomain.contoso.com/addin1, differentsubdomain.contoso.com/addin2). 
 
@@ -105,11 +106,11 @@ _goGetData = async () => {
 
 ## <a name="displaying-a-dialog-box"></a>Affichage d’une boîte de dialogue
 
-Dans une fonction personnalisée (ou tout autre partie d’un complément), vous pouvez utiliser l’API `OfficeRuntime.displayWebDialogOptions` pour afficher une boîte de dialogue. Cette API de boîte de dialogue permet de remplacer l’[API Boîte de dialogue](../develop/dialog-api-in-office-add-ins.md), qui peut être utilisée dans des volets des tâches et des commandes de complément, mais pas au sein de fonctions personnalisées.
+Dans une fonction personnalisée (ou tout autre partie d’un complément), vous pouvez utiliser l’API `OfficeRuntime.displayWebDialog` pour afficher une boîte de dialogue. Cette API de boîte de dialogue permet de remplacer l’[API Boîte de dialogue](../develop/dialog-api-in-office-add-ins.md), qui peut être utilisée dans des volets des tâches et des commandes de complément, mais pas au sein de fonctions personnalisées.
 
 ### <a name="dialog-api-example"></a>Exemple d’API Boîte de dialogue
 
-Dans l’exemple de code suivant, la fonction `getTokenViaDialog` utilise la fonction `displayWebDialogOptions` de l’API Boîte de dialogue pour afficher une boîte de dialogue.
+Dans l’exemple de code suivant, la fonction `getTokenViaDialog` utilise la fonction `displayWebDialog` de l’API Boîte de dialogue pour afficher une boîte de dialogue.
 
 ```js
 // Get auth token before calling my service, a hypothetical API that will deliver a stock price based on stock ticker string, such as "MSFT"
@@ -169,13 +170,13 @@ function getStock (ticker) {
         }, 1000);
       } else {
         _dialogOpen = true;
-        OfficeRuntime.displayWebDialogOptions(url, {
+        OfficeRuntime.displayWebDialog(url, {
           height: '50%',
           width: '50%',
           onMessage: function (message, dialog) {
             _cachedToken = message;
             resolve(message);
-            dialog.closeDialog();
+            dialog.close();
             return;
           },
           onRuntimeError: function(error, dialog) {

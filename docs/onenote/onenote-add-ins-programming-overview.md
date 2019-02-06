@@ -3,12 +3,12 @@ title: Vue d’ensemble de la programmation de l’API JavaScript de OneNote
 description: ''
 ms.date: 01/23/2018
 localization_priority: Priority
-ms.openlocfilehash: 94b233e3694f5b066025a567837c82aad38a7cd8
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 86c59e8453dc94129a9c96606c1fe06247421e66
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29387960"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742288"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>Vue d’ensemble de la programmation de l’API JavaScript de OneNote
 
@@ -130,7 +130,7 @@ Le diagramme suivant représente ce qui est actuellement disponible dans l’API
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Créer votre premier complément OneNote](onenote-add-ins-getting-started.md)
+- [Créer votre premier complément OneNote](../quickstarts/onenote-quickstart.md)
 - [Référence de l’API JavaScript de OneNote](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Exemple de grille d’évaluation](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)

@@ -2,12 +2,14 @@
 title: Ensembles de conditions requises de l’API d’identité
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 4ed3fde5b3cef6dd6633d9eafbd098b24cc27308
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+ms.prod: non-product-specific
+localization_priority: Normal
+ms.openlocfilehash: 8db095c54322f04781b7dfa7bfadd857800678e3
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457662"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742197"
 ---
 # <a name="identity-api-requirement-sets"></a>Ensembles de conditions requises de l’API d’identité
 
@@ -19,7 +21,7 @@ Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tab
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | IdentityAPI 1.1  | S/O | Aperçu **&#42;** | Bientôt disponible | Aperçu **&#42;**| Aperçu | Aperçu| Bientôt disponible | Bientôt disponible |
 
-> **&#42;** Lors de la phase d’aperçu, l’API d’identité est compatible avec Windows 2016 et Mac uniquement pour les utilisateurs dans le programme Insiders à l’aide de l’option Fast. Pour participer au programme Insiders, voir[Participer au programme Office Insider](https://products.office.com/office-insider?tab=tab-1). Pour basculer vers le circuit Fast, voir [Insider Fast](https://answers.microsoft.com/fr-FR/msoffice/forum/msoffice_officeinsider-mso_win10-msoinsider_reg/its-here-office-insider-fast-for-office-2016-on/dbe8e7bb-9523-44a4-948b-9436fedfd961).
+> **&#42;** Lors de la phase d’aperçu, l’API d’identité est compatible avec Windows 2016 et Mac uniquement pour les utilisateurs dans le programme Insiders à l’aide de l’option Fast. Pour participer au programme Insiders, voir[Participer au programme Office Insider](https://products.office.com/office-insider?tab=tab-1). Pour basculer vers le circuit Fast, voir [Insider Fast](https://answers.microsoft.com/en-us/msoffice/forum/msoffice_officeinsider-mso_win10-msoinsider_reg/its-here-office-insider-fast-for-office-2016-on/dbe8e7bb-9523-44a4-948b-9436fedfd961).
 
 Pour en savoir plus sur les versions, les numéros de build et Office Online Server, voir:
 
