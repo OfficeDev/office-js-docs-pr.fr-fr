@@ -4,10 +4,10 @@ description: ''
 ms.date: 12/26/2018
 localization_priority: Normal
 ms.openlocfilehash: ba171026f410e59e81d3bbb6bc0f799c929a25a3
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
+ms.lasthandoff: 02/13/2019
 ms.locfileid: "29387869"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins-preview"></a>Travailler simultanément avec plusieurs plages dans des compléments Excel (prévisualisation)
