@@ -5,12 +5,12 @@ ms.date: 01/08/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 5ec99be6aec35ab659f5ddb6bdd270aa892a45eb
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 4ac735e6fc19f13859d07df6cb3d2443e6dfe2fd
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742428"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "29982019"
 ---
 # <a name="tutorial-create-custom-functions-in-excel-preview"></a>Didacticiel : créer des fonctions personnalisées dans Excel (aperçu)
 
@@ -89,7 +89,7 @@ npm run start
 Cette commande démarre le serveur web et le complément sideloads de votre fonction personnalisée dans Excel pour Windows.
 
 > [!NOTE]
-> Si vous complément ne charge pas, vérifiez que vous avez correctement terminé l’étape 3.
+> Si vous complément ne charge pas, vérifiez que vous avez correctement terminé l’étape 3. Vous pouvez également activer la **[journalisation de l’exécution](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** résoudre les problèmes de fichier de manifeste XML du votre complément, ainsi que les problèmes d’installation ou d’exécution. Connexion à l’exécution écritures `console.log` instructions dans un fichier journal pour vous aider à trouver et résoudre les problèmes.
 
 # <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
@@ -316,6 +316,7 @@ La fonction`stockPrice`que vous venez de créer renvoie le prix d’une action �
 <ol start="4">
 <li>Essayez la nouvelle fonction. Dans la cellule <strong>C1</strong>, tapez le texte <strong>= CONTOSO. STOCKPRICE("MSFT")</strong> et appuyez sur ENTRÉE. Si le marché est ouvert, vous devriez voir que le résultat dans la cellule <strong>C1</strong> constamment mis à jour pour refléter le prix en temps réel pour un partage d’actions Microsoft.</li>
 </ol>
+
 
 ## <a name="next-steps"></a>Étapes suivantes
 

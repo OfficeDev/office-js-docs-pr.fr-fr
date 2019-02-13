@@ -1,14 +1,14 @@
 ---
-ms.date: 01/08/2019
+ms.date: 02/06/2019
 description: Comprendre les scénarios clés dans le développement de fonctions personnalisées Excel qui utilisent le nouveau runtime JavaScript.
 title: Runtime pour les fonctions personnalisées Excel (aperçu)
 localization_priority: Normal
-ms.openlocfilehash: dd8158da4ebcccac61b8ab6958a101489bf5a668
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: d891a41dc9e142ef3cfaa00c8b54d8d27913c57d
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742316"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "29982040"
 ---
 # <a name="runtime-for-excel-custom-functions-preview"></a>Runtime pour les fonctions personnalisées Excel (aperçu)
 
@@ -18,7 +18,11 @@ Les fonctions personnalisées utilisent un nouveau runtime JavaScript différent
 
 ## <a name="requesting-external-data"></a>Demande de données externes
 
-Dans une fonction personnalisée, vous pouvez demander des données externes à l’aide d’une API comme [Récupérer](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) ou de [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), une API web standard qui émet des demandes HTTP pour interagir avec les serveurs. Dans le runtime JavaScript, XHR implémente des mesures de sécurité supplémentaires en exigeant la [politique de même origine (same-origin policy)](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) et le partage [CORS (partage des ressources cross-origin)](https://www.w3.org/TR/cors/) simple.  
+Dans une fonction personnalisée, vous pouvez demander des données externes à l’aide d’une API comme [Récupérer](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) ou de [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), une API web standard qui émet des demandes HTTP pour interagir avec les serveurs.
+
+Dans le runtime JavaScript utilisé par les fonctions personnalisées, XHR implémente des mesures de sécurité supplémentaires en exigeant la [Même stratégie d’origine](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) et simple [CORS](https://www.w3.org/TR/cors/).
+
+Notez qu’une implémentation CORS simple ne peuvent pas utiliser les cookies et prend uniquement en charge les méthodes simples (GET, HEAD, POST). Simple CORS accepte les en-têtes simples avec des noms de champs `Accept`, `Accept-Language`, `Content-Language`. Vous pouvez également utiliser un `Content-Type` en-tête dans CORS simple, sous réserve que le type de contenu `application/x-www-form-urlencoded`, `text/plain`, ou `multipart/form-data`.
 
 ### <a name="xhr-example"></a>Exemple avec XHR
 
@@ -44,6 +48,9 @@ function sendWebRequest(thermometerID, data) {
         if (this.readyState == 4 && this.status == 200) {
            data.temperature = JSON.parse(xhttp.responseText).temperature
         };
+        
+        //set Content-Type to application/text. Application/json is not currently supported with Simple CORS
+        xhttp.setRequestHeader("Content-Type", "application/text");
         xhttp.open("GET", "https://contoso.com/temperature/" + thermometerID), true)
         xhttp.send();  
     }

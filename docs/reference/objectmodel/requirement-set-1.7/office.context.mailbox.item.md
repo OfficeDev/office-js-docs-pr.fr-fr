@@ -3,12 +3,12 @@ title: Office.Context.Mailbox.Item - exigence défini 1.7
 description: ''
 ms.date: 01/30/2019
 localization_priority: Normal
-ms.openlocfilehash: 6ac795d426cf80071d7b83d5e10714f4d3a6036b
-ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
+ms.openlocfilehash: e4bfbd9629913f775edff66f4592c220c4e5d580
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "29701889"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "29982054"
 ---
 # <a name="item"></a>élément
 
@@ -51,7 +51,7 @@ L’espace de noms `item` est utilisé pour accéder au message, à la demande d
 | [sender](#sender-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetails) | Membre |
 | [seriesId](#nullable-seriesid-string) | Membre |
 | [start](#start-datetimejavascriptapioutlook17officetime) | Membre |
-| [subject](#subject-stringsubjectjavascriptapioutlook17officesubject) | Membre |
+| [subject](#subject-stringsubjectjavascriptapioutlook17officesubject) | Member |
 | [to](#to-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients) | Membre |
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | Méthode |
 | [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | Méthode |
@@ -346,7 +346,7 @@ Les propriétés `from` et [`sender`](#sender-emailaddressdetailsjavascriptapiou
 La propriété `from` renvoie un objet `EmailAddressDetails`.
 
 ```js
-var subject = Office.context.mailbox.item.from;
+var from = Office.context.mailbox.item.from;
 ```
 
 ##### <a name="compose-mode"></a>Mode composition
@@ -880,7 +880,7 @@ L’identificateur peut être utilisé avec la méthode [`removeAttachmentAsync`
 ##### <a name="parameters"></a>Paramètres :
 |Nom|Type|Attributs|Description|
 |---|---|---|---|
-|`uri`|String||URI indiquant l’emplacement du fichier à joindre au message ou au rendez-vous. La longueur maximale est de 2 048 caractères.|
+|`uri`|Chaîne||URI indiquant l’emplacement du fichier à joindre au message ou au rendez-vous. La longueur maximale est de 2 048 caractères.|
 |`attachmentName`|String||Nom de la pièce jointe affiché lors de son chargement. La taille maximale est de 255 caractères.|
 |`options`|Objet|&lt;facultatif&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
 |`options.asyncContext`|Objet|&lt;facultatif&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
@@ -1005,7 +1005,7 @@ Si votre complément Office est exécuté dans Outlook Web App, la méthode `
 |Nom|Type|Attributs|Description|
 |---|---|---|---|
 |`itemId`|String||Identificateur Exchange de l’élément à joindre. La taille maximale est de 100 caractères.|
-|`attachmentName`|String||Objet de l’élément à joindre. La longueur maximale est de 255 caractères.|
+|`attachmentName`|Chaîne||Objet de l’élément à joindre. La longueur maximale est de 255 caractères.|
 |`options`|Object|&lt;facultatif&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
 |`options.asyncContext`|Objet|&lt;facultatif&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
 |`callback`|fonction|&lt;optional&gt;|Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult). <br/>En cas de réussite, l’identificateur de pièce jointe est fourni dans la propriété `asyncResult.value`.<br/>En cas d’échec de l’ajout de la pièce jointe, l’objet `asyncResult` contient un objet `Error` indiquant une description de l’erreur.|
@@ -1086,7 +1086,7 @@ Lorsque des pièces jointes sont spécifiées dans le paramètre `formData.attac
 |Nom|Type|Attributs|Description|
 |---|---|---|---|
 |`formData`|String &#124; Object||Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.<br/>**OU**<br/>Objet qui contient les données du corps du message ou des pièces jointes et une fonction de rappel. L’objet est défini de la manière suivante :|
-|`formData.htmlBody`|String|&lt;optional&gt;|Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.
+|`formData.htmlBody`|Chaîne|&lt;optional&gt;|Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.
 |`formData.attachments`|Array.&lt;Object&gt;|&lt;optional&gt;|Tableau d’objets JSON qui sont des pièces jointes de fichier ou d’élément.|
 |`formData.attachments.type`|Chaîne||Indique le type de pièce jointe. Doit être `file` pour une pièce jointe de fichier ou `item` pour une pièce jointe d’élément.|
 |`formData.attachments.name`|String||Chaîne qui contient le nom de la pièce jointe et comporte jusqu'à 255 caractères.|
@@ -1205,9 +1205,9 @@ Lorsque des pièces jointes sont spécifiées dans le paramètre `formData.attac
 |Nom|Type|Attributs|Description|
 |---|---|---|---|
 |`formData`|String &#124; Object||Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.<br/>**OU**<br/>Objet qui contient les données du corps du message ou des pièces jointes et une fonction de rappel. L’objet est défini de la manière suivante :|
-|`formData.htmlBody`|String|&lt;optional&gt;|Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.
+|`formData.htmlBody`|Chaîne|&lt;optional&gt;|Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.
 |`formData.attachments`|Array.&lt;Object&gt;|&lt;optional&gt;|Tableau d’objets JSON qui sont des pièces jointes de fichier ou d’élément.|
-|`formData.attachments.type`|String||Indique le type de pièce jointe. Doit être `file` pour une pièce jointe de fichier ou `item` pour une pièce jointe d’élément.|
+|`formData.attachments.type`|Chaîne||Indique le type de pièce jointe. Doit être `file` pour une pièce jointe de fichier ou `item` pour une pièce jointe d’élément.|
 |`formData.attachments.name`|String||Chaîne qui contient le nom de la pièce jointe et comporte jusqu'à 255 caractères.|
 |`formData.attachments.url`|Chaîne||Utilisé uniquement si `type` est défini sur `file`. Il s’agit de l’URI de l’emplacement du fichier.|
 |`formData.attachments.isInline`|Boolean||Utilisé uniquement si `type` est défini sur `file`. Si elle est définie sur `true`, cette valeur indique que la pièce jointe est incorporée dans le corps du message et qu’elle ne doit pas figurer dans la liste des pièces jointes.|
@@ -1403,7 +1403,7 @@ La méthode `getFilteredEntitiesByName` renvoie les entités qui correspondent �
 
 |Nom|Type|object|
 |---|---|---|
-|`name`|String|Nom de l’élément de règle `ItemHasKnownEntity` qui définit le filtre à respecter.|
+|`name`|Chaîne|Nom de l’élément de règle `ItemHasKnownEntity` qui définit le filtre à respecter.|
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -1496,7 +1496,7 @@ Si vous spécifiez une règle `ItemHasRegularExpressionMatch` pour la propriét�
 
 |Nom|Type|object|
 |---|---|---|
-|`name`|String|Nom de l’élément de règle `ItemHasRegularExpressionMatch` qui définit le filtre à respecter.|
+|`name`|Chaîne|Nom de l’élément de règle `ItemHasRegularExpressionMatch` qui définit le filtre à respecter.|
 
 ##### <a name="requirements"></a>Configuration requise
 
