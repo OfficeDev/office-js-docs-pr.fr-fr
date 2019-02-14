@@ -1,14 +1,14 @@
 ---
 title: Utiliser l’API de dialogue dans vos compléments Office
 description: ''
-ms.date: 12/20/2018
+ms.date: 02/12/2019
 localization_priority: Priority
-ms.openlocfilehash: fa6524e36319d2031ab005c8dec2fc8b5c50d7cd
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: d53fa5ddbafae5afb0e925762f9d738b9b78c9b0
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386966"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "29982033"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Utiliser l’API de dialogue dans vos compléments Office
 
@@ -200,10 +200,6 @@ if (loginSuccess) {
 > - L’implémentation des fonctions `getProfile` et `getError` n’est pas affichée. Chacune obtient des données à partir d’un paramètre de requête ou du corps de la réponse HTTP.
 > - Des objets anonymes de différents types sont envoyés selon que la connexion a réussi ou non. Tous deux ont une propriété `messageType`, mais un a une propriété `profile` et l’autre une propriété `error`.
 
-Pour obtenir des exemples qui utilisent la messagerie conditionnelle, consultez les rubriques suivantes :
-- [Complément Office qui utilise le service Auth0 pour simplifier la connexion sociale](https://github.com/OfficeDev/Office-Add-in-Auth0)
-- [Complément Office qui utilise le service OAuth.io pour simplifier l’accès aux services en ligne populaires](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
-
 Le code du gestionnaire dans la page hôte utilise la valeur de la propriété `messageType` pour créer une branche comme le montre l’exemple suivant. Notez que la fonction `showUserName` est identique à celle de l’exemple précédent et que la fonction `showNotification` affiche l’erreur dans l’interface utilisateur de la page hôte.
 
 ```js
@@ -352,11 +348,6 @@ var clientID = localStorage.getItem("clientID");
 // var clientID = localStorage.clientID;
 ```
 
-Pour obtenir des exemples de compléments qui utilisent le stockage local de cette façon, consultez les rubriques suivantes :
-
-- [Complément Office qui utilise le service Auth0 pour simplifier la connexion sociale](https://github.com/OfficeDev/Office-Add-in-Auth0)
-- [Complément Office qui utilise le service OAuth.io pour simplifier l’accès aux services en ligne populaires](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
-
 ### <a name="use-query-parameters"></a>Utiliser les paramètres de requête
 
 L’exemple suivant montre comment transmettre des données à l’aide d’un paramètre de requête :
@@ -417,8 +408,6 @@ Pour voir des exemples de compléments qui utilisent ce modèle, consultez les p
 
 Si votre complément offre à l’utilisateur le choix entre plusieurs fournisseurs, tels qu’un compte Microsoft, Google ou Facebook, vous avez besoin d’une première page locale (voir section précédente) qui fournit une IU permettant à l’utilisateur de sélectionner un fournisseur. La sélection déclenche la construction de l’URL de connexion et la redirection vers celle-ci.
 
-Pour voir un exemple qui utilise ce modèle, consultez la rubrique relative à l’exemple [Complément Office qui utilise le service Auth0 pour simplifier la connexion aux réseaux sociaux](https://github.com/OfficeDev/Office-Add-in-Auth0).
-
 #### <a name="authorization-of-the-add-in-to-an-external-resource"></a>Autorisation du complément pour une ressource externe
 
 Sur le web nouvelle génération, les applications web sont des principaux de sécurité au même titre que les utilisateurs, et l’application a sa propre identité et ses propres autorisations pour une ressource en ligne comme Office 365, Google Plus, Facebook ou LinkedIn. L’application est inscrite auprès du fournisseur de ressources avant d’être déployée. L’inscription inclut :
@@ -435,7 +424,6 @@ Vous pouvez utiliser les API de dialogue pour gérer ce processus à l’aide d�
 
 Les exemples suivants utilisent les API de dialogue à cet effet :
 - [Insérer des graphiques Excel à l’aide de Microsoft Graph dans un complément PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) : stocke le jeton d’accès dans une base de données.
-- [Complément Office qui utilise le service OAuth.io pour simplifier l’accès aux services en ligne populaires](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 Pour plus d’informations sur l’authentification et l’autorisation dans des compléments, consultez les rubriques suivantes :
 - [Autoriser des services externes dans votre complément Office](auth-external-add-ins.md)

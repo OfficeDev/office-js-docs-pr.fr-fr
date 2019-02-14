@@ -1,37 +1,26 @@
 ---
 title: Résolutions des limites de stratégie d’origine identique dans les compléments Office
 description: ''
-ms.date: 12/04/2017
+ms.date: 02/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 75bc42cd7d2a7acc8cb57ee08807a8486e21f467
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 52af2eef2881b48feb141182233bc194ae406aa0
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29387754"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "29981991"
 ---
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>Résolutions des limites de stratégie d’origine identique dans les compléments Office
-
 
 La stratégie de même origine appliquée par le navigateur empêche un script chargé à partir d’un domaine d’obtenir ou de manipuler les propriétés d’une page web issue d’un autre domaine. Cela signifie que, par défaut, le domaine d’une URL demandée doit correspondre au domaine de la page web actuelle. Par exemple, cette stratégie empêche une page web d’un domaine d’effectuer des appels de service web [XmlHttpRequest](https://www.w3.org/TR/XMLHttpRequest/) à un domaine autre que celui où elle est hébergée.
 
 Comme les Compléments Office sont hébergés dans un contrôle de navigateur, la stratégie de même origine s’applique également aux scripts exécutés dans leurs pages web.
 
-Il existe de nombreuses manières d’annuler le complément de la stratégie de même origine lorsque vous développez des compléments :
+La stratégie de la même origine peut être un handicap inutile dans de nombreuses situations, par exemple, quand une application web héberge du contenu et des API au sein de plusieurs sous-domaines. Il existe quelques techniques permettant de surmonter le renforcement de la stratégie de la même origine. Cet article peut fournir uniquement l’introduction la plus courte à certains d'entre eux. Utilisez des liens fournis pour commencer à utiliser vos recherches des techniques suivantes.
 
-- Utilisation de JSON/P pour un accès anonyme. 
-    
-- Implémentation d’un script coté serveur à l’aide d’un schéma d’authentification basé sur les jetons.
-    
-- Utilisation du partage de ressources cross-origin (CORS).
-    
-- Construction de votre propre proxy à l’aide d’IFRAME et de POSTMESSAGE.
-    
+## <a name="use-jsonp-for-anonymous-access"></a>Utilisation de JSON/P pour un accès anonyme
 
-## <a name="using-jsonp-for-anonymous-access"></a>Utilisation de JSON/P pour un accès anonyme
-
-
-Une façon de contourner cette limitation consiste à utiliser JSON/P afin de fournir un proxy pour le service web. Pour ce faire, incluez une balise `script` avec un attribut `src` qui pointe vers un script hébergé sur n’importe quel domaine. Vous pouvez créer les balises `script` par programmation, créer dynamiquement l’URL vers laquelle pointer l’attribut `src`, puis passer des paramètres à l’URL au moyen de paramètres de requête URI. Les fournisseurs de services web créent et hébergent du code JavaScript sur des URL spécifiques et renvoient des scripts différents selon les paramètres de requête URI. Ces scripts s’exécutent ensuite là où ils sont insérés et fonctionnent comme prévu.
+Une façon de contourner cette limitation consiste à utiliser [JSON/P](https://www.w3schools.com/js/js_json_jsonp.asp) afin de fournir un proxy pour le service web. Pour ce faire, incluez une balise `script` avec un attribut `src` qui pointe vers un script hébergé sur n’importe quel domaine. Vous pouvez créer les balises `script` par programmation, créer dynamiquement l’URL vers laquelle pointer l’attribut `src`, puis passer des paramètres à l’URL au moyen de paramètres de requête URI. Les fournisseurs de services web créent et hébergent du code JavaScript sur des URL spécifiques et renvoient des scripts différents selon les paramètres de requête URI. Ces scripts s’exécutent ensuite là où ils sont insérés et fonctionnent comme prévu.
 
 L’exemple suivant illustre JSON/P utilisant une technique qui fonctionne dans n’importe quel Complément Office.
 
@@ -51,21 +40,18 @@ function loadVideoDetails(videoIndex) {
 ```
 
 
-## <a name="implementing-server-side-script-using-a-token-based-authentication-scheme"></a>Implémentation d’un script coté serveur à l’aide d’un schéma d’authentification basé sur les jetons
+## <a name="implement-server-side-code-using-a-token-based-authorization-scheme"></a>Implémentation d’un script coté serveur à l’aide d’un schéma d’authentification basé sur les jetons.
+
+Une autre méthode d’aborder les limitations spécifiques de stratégie de la même origine fournit le code côté serveur qui utilise les flux[OAuth 2.0](https://oauth.net/2/)pour activer un domaine autorisé afin d’accéder aux ressources hébergées sur un autre. 
 
 
-Une autre manière de résoudre les limitations de la stratégie de même origine consiste à implémenter la page web du complément sous la forme d’une page ASP qui utilise OAuth ou met en cache les informations d’identification dans des cookies.
-
-Pour un exemple de code côté serveur qui illustre comment utiliser l’objet `Cookie` dans `System.Net` pour obtenir et définir des valeurs de cookie, voir la propriété [Value](https://docs.microsoft.com/dotnet/api/system.net.cookie.value?view=netframework-4.7.2).
+## <a name="use-cross-origin-resource-sharing-cors"></a>Utilisation du partage de ressources cross-origin (CORS)
 
 
-## <a name="using-cross-origin-resource-sharing-cors"></a>Utilisation du partage de ressources cross-origin (CORS)
+Pour un exemple de la fonctionnalité de partage de ressources cross-origin de [XmlHttpRequest2](https://dvcs.w3.org/hg/xhr/raw-file/tip/Overview.html), voir la section « Partage de ressources cross-origin (CORS) » de [Nouvelles astuces dans XMLHttpRequest2](https://www.html5rocks.com/en/tutorials/file/xhr2/).
 
 
-Pour un exemple de la fonctionnalité de partage de ressources cross-origin de [XmlHttpRequest2](https://dvcs.w3.org/hg/xhr/raw-file/tip/Overview.html), voir la section « Partage de ressources cross-origin (CORS) » de [Nouvelles astuces dans XMLHttpRequest2](https://www.html5rocks.com/en/tutorials/file/xhr2/).
-
-
-## <a name="building-your-own-proxy-using-iframe-and-post-message"></a>Construction de votre propre proxy à l’aide d’IFRAME et de POSTMESSAGE
+## <a name="build-your-own-proxy-using-iframe-and-post-message-cross-window-messaging"></a>Construction de votre propre proxy à l’aide d’IFRAME et de POSTMESSAGE (Messagerie entre-fenêtre).
 
 
 Pour un exemple de construction de votre propre proxy à l’aide d’IFRAME et de POSTMESSAGE, reportez-vous à [Messagerie entre fenêtres](http://ejohn.org/blog/cross-window-messaging/).

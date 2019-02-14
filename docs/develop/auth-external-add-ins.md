@@ -1,14 +1,14 @@
 ---
 title: Autoriser des services externes dans votre complément Office
 description: ''
-ms.date: 12/04/2017
+ms.date: 02/12/2019
 localization_priority: Priority
-ms.openlocfilehash: 4c045c28d62993db630c27553e8f52b8da5a0ee1
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 6420107f29fd285e52839cd737f19472194b835f
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388786"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "29981998"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>Autoriser des services externes dans votre complément Office
 
@@ -16,7 +16,7 @@ Les services en ligne populaires, y compris Office 365, Google, Facebook, Linke
 
 L’infrastructure standard dans le secteur permettant d’activer l’accès d’une application web à un service en ligne est appelée **OAuth 2.0**. En règle générale, vous n’avez pas besoin de connaître les détails du fonctionnement de l’infrastructure pour pouvoir l’utiliser dans votre complément. Ces détails sont simplifiés pour vous dans de nombreuses bibliothèques disponibles.
 
-L’un des fondements d’OAuth est qu’une application peut être un principal de sécurité en elle-même, de la même façon qu’un utilisateur ou un groupe, avec sa propre identité et son ensemble d’autorisations. Dans les scénarios les plus courants, lorsque l’utilisateur exécute une action dans le complément Office ayant besoin du service en ligne, le complément envoie une demande au service portant sur un ensemble spécifique d’autorisations pour le compte de l’utilisateur. Le service invite ensuite l’utilisateur à octroyer ces autorisations au complément. Une fois que les autorisations sont accordées, le service envoie un petit *jeton d’accès* codé au complément. Le complément peut utiliser le service en incluant le jeton dans toutes ses demandes aux API du service. Toutefois, le complément agit uniquement dans la limite des autorisations que l’utilisateur lui a accordées. En outre, le jeton expire après un certain délai.
+L’un des fondements d’OAuth est qu’une application peut être un principal de sécurité en elle-même, de la même façon qu’un utilisateur ou un groupe, avec sa propre identité et son ensemble d’autorisations. Le plus souvent, quand l’utilisateur exécute une action dans le complément Office ayant besoin du service en ligne, le complément envoie une demande au service portant sur un ensemble spécifique d’autorisations pour le compte de l’utilisateur. Le service invite ensuite l’utilisateur à octroyer ces autorisations au complément. Une fois que les autorisations sont accordées, le service envoie un petit *jeton d’accès* codé au complément. Le complément peut utiliser le service en incluant le jeton dans toutes ses demandes aux API du service. Toutefois, le complément agit uniquement dans la limite des autorisations que l’utilisateur lui a accordées. En outre, le jeton expire après un certain délai.
 
 Plusieurs modèles OAuth, appelés *flux* ou *types d’accès accordé*, sont conçus pour différents scénarios. Les deux modèles suivants sont les plus couramment implémentés :
 
@@ -66,13 +66,9 @@ Des bibliothèques sont disponibles dans de nombreuses langues et sur de nombreu
 
 ## <a name="middleman-services"></a>Services intermédiaires
 
-Votre complément peut utiliser un service intermédiaire tel qu’OAuth.io ou Auth0 pour gérer des autorisations. Un service intermédiaire peut fournir des jetons d’accès pour de nombreux services en ligne populaires ou simplifier la procédure de connexion aux réseaux sociaux pour votre complément, ou qui effectue ces deux opérations. Avec très peu de code, votre complément peut utiliser un script côté client ou du code côté serveur pour se connecter au service intermédiaire et envoyer les jetons requis à votre complément pour le service en ligne. L’ensemble du code de mise en œuvre des autorisations se trouve dans le service intermédiaire.
+Votre complément peut utiliser un service intermédiaire tel qu’[OAuth.io](https://oauth.io) ou [Auth0](https://auth0.com) pour gérer des autorisations. Un service intermédiaire peut fournir des jetons d’accès pour de nombreux services en ligne populaires ou simplifier la procédure de connexion aux réseaux sociaux pour votre complément, ou qui effectue ces deux opérations. Avec très peu de code, votre complément peut utiliser un script côté client ou du code côté serveur pour se connecter au service intermédiaire et envoyer les jetons requis à votre complément pour le service en ligne. L’ensemble du code de mise en œuvre des autorisations se trouve dans le service intermédiaire. 
 
-Pour obtenir des exemples de compléments qui utilisent un service intermédiaire d’autorisation, voir les exemples suivants :
-
-- [Office-Add-in-Auth0](https://github.com/OfficeDev/Office-Add-in-Auth0) utilise Auth0 pour activer la connexion aux réseaux sociaux avec les comptes Facebook, Google et Microsoft.
-
-- [Office-Add-in-OAuth.io](https://github.com/OfficeDev/Office-Add-in-OAuth.io) utilise OAuth.io pour obtenir des jetons d’accès à partir de Facebook et Google.
+Nous vous recommandons que l’interface utilisateur de l’authentification/autorisation dans votre complément utilise nos boîte de dialogue API pour ouvrir une page de connexion. Voir[ Utilisation des API de dialogue dans un flux d’authentification](dialog-api-in-office-add-ins.md#use-the-dialog-apis-in-an-authentication-flow)pour plus d’informations. Lorsque vous ouvrez une boîte de dialogue Office de cette façon, la boîte de dialogue a une instance distincte et complètement nouvelle du moteur JavaScript à partir de l’instance de navigateur et dans la page parent (par exemple, volet Office du complément ou FunctionFile). Un jeton et toute autre information peut être converti(e) en chaîne, est transmis(e) au parent à l’aide d’une API appelée `messageParent`. La page parent peut ensuite utiliser le jeton pour passer des appels autorisés à la ressource. En raison de cette architecture, vous devez être vigilant de l’utilisation API fournis par un service intermédiaires. Le service fournit souvent une API définir dans lequel votre code crée un type d’objet de contexte qui obtient un jeton et utilise ce jeton afin de passer des appels conséquents à la ressource. Souvent le service a une méthode API unique qui effectue l’appel initiale *et* crée l’objet de contexte. Un objet comme suit ne peut pas être complètement mis sous forme de chaîne, il ne peut donc pas être transmis à partir de la boîte de dialogue Office à la page parent. En règle générale, le service intermédiaires fournit un ensemble de second API, du niveau inférieur d’abstraction, par exemple, une API REST. Cette seconde série comportera une API qui récupère un jeton à partir du service et autres API qui passe le jeton au service lorsque vous utilisez pour accéder à la ressource autorisée. Vous devez travailler avec une API à ce niveau inférieur d’abstraction afin que vous puissiez obtenir le jeton dans la boîte de dialogue Office, puis utiliser `messageParent` afin de le passer à la page parent. 
 
 ## <a name="what-is-cors"></a>Que signifie l’acronyme CORS ?
 

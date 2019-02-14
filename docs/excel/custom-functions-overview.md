@@ -3,12 +3,12 @@ ms.date: 01/30/2019
 description: Créer des fonctions personnalisées dans Excel à l’aide de JavaScript.
 title: Créer des fonctions personnalisées dans Excel (aperçu)
 localization_priority: Priority
-ms.openlocfilehash: 7df07d7abda182c5b9413047f74a5cc31f7d4057
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 3359962f3419f35692829444ab835d3f5cdc915a
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742358"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "29982026"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Créer des fonctions personnalisées dans Excel (aperçu)
 
@@ -423,14 +423,7 @@ function getComment(x) {
 
 ## <a name="known-issues"></a>Problèmes connus
 
-- Les descriptions de paramètre et les URL d’aide ne sont pas encore utilisés par Excel.
-- Les fonctions personnalisées ne sont actuellement pas disponibles dans Excel pour les clients mobiles.
-- Les fonctions volatiles (celles qui sont recalculées à chaque fois que des données autonomes sont modifiées dans la feuille de calcul) ne sont pas encore prises en charge.
-- Le déploiement via le portail d’administration Office 365 et AppSource n’est pas encore activé.
-- Les fonctions personnalisées dans Excel Online peuvent cesser de fonctionner pendant une session après une période d’inactivité. Actualiser la page du navigateur (F5), puis entrez une fonction personnalisée pour restaurer la fonctionnalité.
-- Vous pouvez voir le **## CHARGEMENT_DONNEES** résultat temporaire au sein des cellules d’une feuille de calcul si vous avez plusieurs compléments en cours d’exécution sur Excel pour Windows. Fermez toutes les fenêtres Excel et redémarrez Excel.
-- Des outils de débogage spécifiques aux fonctions personnalisées seront peut-être disponibles à l’avenir. En attendant, vous pouvez déboguer sur Excel Online à l’aide des outils de développement F12. Plus de détails dans [Meilleures pratiques de fonctions personnalisées](custom-functions-best-practices.md).
-- Dans la version 32 bits d’Office 365*décembre*Insiders version 1901 (Build 11128.20000), les Fonctions Personnalisées ne peuvent pas correctement fonctionner. Dans certains cas, vous pouvez résoudre ce bug en téléchargeant le fichier surhttps://github.com/OfficeDev/Excel-Custom-Functions/blob/december-insiders-workaround/excel-udf-host.win32.bundle. Puis copiez votre dossier « C:\Program Files (x86)\Microsoft Office\root\Office16».
+Consulter les problèmes connus sur notre[repo GitHub Fonctions Excel Personnalisées](https://github.com/OfficeDev/Excel-Custom-Functions/issues). 
 
 ## <a name="see-also"></a>Voir aussi
 
