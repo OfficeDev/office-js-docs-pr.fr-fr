@@ -3,12 +3,12 @@ title: Chargement du DOM et de l’environnement d’exécution
 description: ''
 ms.date: 01/09/2019
 localization_priority: Priority
-ms.openlocfilehash: ce56518759740e20f2643bb675274602b3d968a4
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: c569825ae73d32259fc1554aa8233461bbbe9813
+ms.sourcegitcommit: 70ef38a290c18a1d1a380fd02b263470207a5dc6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389227"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "30052748"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>Chargement du DOM et de l’environnement d’exécution
 
@@ -70,7 +70,7 @@ Les événements suivants se produisent lors du démarrage d’un complément Ou
 
 ## <a name="checking-the-load-status"></a>Vérification du statut de chargement
 
-Vous pouvez vérifier que le chargement du DOM et de l’environnement d’exécution est bien terminé en utilisant la fonction jQuery [.ready()](http://api.jquery.com/ready/) : `$(document).ready()`. Par exemple, le gestionnaire d'événements **onReady** suivant s'assure que le DOM est d'abord chargé avant le code spécifique à l'initialisation du complément. Par la suite, le gestionnaire **onReady** utilise la propriété [mailbox.item](https://docs.microsoft.com/javascript/api/outlook/office.mailbox?view=office-js) pour obtenir l'élément sélectionné dans Outlook, et appelle la fonction principale du complément, `initDialer`.
+Vous pouvez vérifier que le chargement du DOM et de l’environnement d’exécution est bien terminé en utilisant la fonction jQuery [.ready()](https://api.jquery.com/ready/) : `$(document).ready()`. Par exemple, le gestionnaire d'événements **onReady** suivant s'assure que le DOM est d'abord chargé avant le code spécifique à l'initialisation du complément. Par la suite, le gestionnaire **onReady** utilise la propriété [mailbox.item](https://docs.microsoft.com/javascript/api/outlook/office.mailbox) pour obtenir l'élément sélectionné dans Outlook, et appelle la fonction principale du complément, `initDialer`.
 
 ```js
 Office.onReady()

@@ -4,12 +4,12 @@ description: ''
 ms.date: 10/09/2018
 ms.prod: onenote
 localization_priority: Normal
-ms.openlocfilehash: 87bc16f77c14871044fa628f9903ea6ae05f3e0e
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: f8fed0104412f60ec59146ef7820be958047d1f3
+ms.sourcegitcommit: 70ef38a290c18a1d1a380fd02b263470207a5dc6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742421"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "30052741"
 ---
 # <a name="onenote-javascript-api-overview"></a>Référence de l’API JavaScript pour OneNote
 
@@ -62,6 +62,6 @@ Pour en savoir plus sur l’API JavaScript pour OneNote, consultez la [document
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d’ensemble de la programmation de l’API JavaScript de OneNote](https://docs.microsoft.com/office/dev/add-ins/onenote/onenote-add-ins-programming-overview)
-- [Créer votre premier complément OneNote](https://docs.microsoft.com/office/dev/add-ins/onenote/onenote-add-ins-getting-started)
+- [Créer votre premier complément OneNote](../../quickstarts/onenote-quickstart.md)
 - [Exemple de grille d’évaluation](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Vue d’ensemble de la plateforme des compléments Office](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins)

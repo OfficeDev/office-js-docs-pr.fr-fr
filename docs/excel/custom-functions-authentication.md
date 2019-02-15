@@ -1,57 +1,57 @@
 ---
-ms.date: 1/29/2019
-description: Authentifier les utilisateurs à l’aide des fonctions personnalisées dans Excel.
+ms.date: 01/29/2019
+description: Authentifier les utilisateurs à l'aide de fonctions personnalisées dans Excel.
 title: Authentification pour les fonctions personnalisées
-ms.openlocfilehash: 0e42dbc93cb545660a8dbaae5bdb48724f3b7376
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 260f15c39758b82a2145474f543c3c9ff5edd132
+ms.sourcegitcommit: 70ef38a290c18a1d1a380fd02b263470207a5dc6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29745408"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "30052734"
 ---
 # <a name="authentication"></a>Authentification
 
-Dans certains scénarios, à que votre fonction personnalisée a besoin d’authentifier l’utilisateur pour accéder des ressources protégées. Alors que les fonctions personnalisées ne nécessite pas une méthode d’authentification spécifique, sachez que les fonctions personnalisées s’exécute dans une exécution distincte dans le volet de tâches et d’autres éléments de l’interface utilisateur de votre complément. Pour cette raison, vous devez passer des données aller-retour entre les deux runtimes à l’aide de la `AsyncStorage` objet et l’API de boîte de dialogue.
+Dans certains scénarios, votre fonction personnalisée doit authentifier l'utilisateur afin d'accéder aux ressources protégées. Bien que les fonctions personnalisées ne nécessitent pas une méthode d'authentification spécifique, vous devez savoir que les fonctions personnalisées s'exécutent dans un Runtime distinct à partir du volet Office et d'autres éléments d'interface utilisateur de votre complément. Pour cette raison, vous devez transmettre les données entre les deux runtimes à l'aide de l' `AsyncStorage` objet et de l'API Dialog.
   
-## <a name="asyncstorage-object"></a>Objet AsyncStorage
+## <a name="asyncstorage-object"></a>Objet Dansasyncstorage
 
-Le module d’exécution des fonctions personnalisées ne possède pas une `localStorage` objet disponible dans la fenêtre globale, où vous pouvez généralement stocker des données. Au lieu de cela, vous devez partager des données entre des fonctions personnalisées et des volets de tâches, à l’aide de [OfficeRuntime.AsyncStorage](https://docs.microsoft.com/javascript/api/office-runtime/officeruntime.asyncstorage) pour définir et obtenir des données. 
+Le runtime des fonctions personnalisées ne `localStorage` dispose pas d'un objet disponible dans la fenêtre globale, dans laquelle vous pouvez généralement stocker des données. Au lieu de cela, vous devez partager des données entre des fonctions personnalisées et des volets Office à l'aide de [OfficeRuntime. dansasyncstorage](https://docs.microsoft.com/javascript/api/office-runtime/officeruntime.asyncstorage) pour définir et obtenir des données. 
 
-En outre, il est un avantage à l’aide de `AsyncStorage`; Il utilise un environnement de bac à sable sécurisé afin que vos données ne sont pas accessibles par les autres compléments.  
+Par ailleurs, il est intéressant d'utiliser `AsyncStorage`; Il utilise un environnement de bac à sable (sandbox) sécurisé afin que les autres compléments ne puissent pas accéder à vos données.  
 
 ### <a name="suggested-usage"></a>Utilisation suggérée
 
-Lorsque vous avez besoin authentifier à partir du volet Office ou une fonction personnalisée, vérifiez AsyncStorage pour voir si le jeton d’accès a été déjà acquises. Si ce n’est pas le cas, utilisez la boîte de dialogue API pour authentifier l’utilisateur, extraire le jeton d’accès, puis enregistrez le jeton dans AsyncStorage pour une utilisation future.
+Lorsque vous devez vous authentifier à partir du volet Office ou d'une fonction personnalisée, vérifiez Dansasyncstorage pour voir si le jeton d'accès a déjà été acquis. Si ce n'est pas le cas, utilisez l'API de boîte de dialogue pour authentifier l'utilisateur, récupérer le jeton d'accès, puis stocker le jeton dans Dansasyncstorage pour une utilisation ultérieure.
 
-## <a name="dialog-api"></a>API de boîte de dialogue
+## <a name="dialog-api"></a>API de dialogue
 
-Si un jeton n’existe pas, vous devez utiliser l’API de boîte de dialogue pour demander à l’utilisateur de se connecter. Lorsqu’un utilisateur entre ses informations d’identification, le jeton d’accès qui en résulte peut être stocké dans `AsyncStorage`.
+Si un jeton n'existe pas, vous devez utiliser l'API de boîte de dialogue pour demander à l'utilisateur de se connecter. Une fois qu'un utilisateur a entré ses informations d'identification, le jeton d'accès `AsyncStorage`résultant peut être stocké dans.
 
 > [!NOTE]
-> Le runtime de fonctions personnalisées utilise un objet Dialog est légèrement différent de l’objet Dialog dans le module d’exécution utilisé par les volets de tâches. Ils sont tous deux appelés « L’API de boîte de dialogue », mais utilisez `Officeruntime.Dialog` pour authentifier les utilisateurs dans le module d’exécution des fonctions personnalisées.
+> Le runtime des fonctions personnalisées utilise un objet Dialog légèrement différent de l'objet Dialog dans le runtime utilisé par les volets des tâches. Ils sont tous deux appelés «API de dialogue», mais utilisent `Officeruntime.Dialog` pour authentifier les utilisateurs dans le runtime des fonctions personnalisées.
 
-Pour plus d’informations sur l’utilisation de la `OfficeRuntime.Dialog`, voir [exécution des fonctions personnalisées](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/custom-functions-runtime?view=office-js#displaying-a-dialog-box).
+Pour plus d'informations sur l'utilisation `OfficeRuntime.Dialog`du, voir [Custom Functions Runtime](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/custom-functions-runtime?view=office-js#displaying-a-dialog-box).
 
-Lors de la prévision de l’ensemble du processus d’authentification, il peut être utile de considérer le volet de tâches et les éléments d’interface utilisateur de votre complément et personnalisé fonctionne portions de votre complément en tant qu’entités distinctes qui peuvent communiquer les uns avec les autres via `AsyncStorage`.
+Lors de l'identification de l'ensemble du processus d'authentification, il peut être utile de considérer le volet Office et les éléments de l'interface utilisateur de votre complément, ainsi que les parties fonctions personnalisées de votre complément en tant qu'entités distinctes pouvant communiquer les `AsyncStorage`uns avec les autres.
 
-Le diagramme suivant présente le processus de base. Notez que la ligne en pointillés indique que tout en exécutant des actions distinctes, des fonctions personnalisées et du volet de tâches de votre complément sont les deux composants de votre complément dans sa globalité.
+Le diagramme suivant décrit ce processus de base. Notez que la ligne pointillée indique que lorsqu'ils effectuent des actions distinctes, les fonctions personnalisées et le volet Office de votre complément sont des parties de votre complément dans son ensemble.
 
-1. Vous émettez un appel de fonction personnalisée à partir d’une cellule dans un classeur Excel.
-2. Utilise la fonction personnalisée `Officeruntime.Dialog` à transmettre vos informations d’identification de l’utilisateur à un site Web.
-3. Ce site Web puis renvoie un jeton d’accès à la fonction personnalisée.
-4. Votre fonction personnalisée définit ensuite ce jeton d’accès la `AsyncStorage`.
-5. Volet de tâches de votre complément accède au jeton de `AsyncStorage`.
+1. Vous émettez un appel de fonction personnalisée à partir d'une cellule dans un classeur Excel.
+2. La fonction personnalisée utilise `Officeruntime.Dialog` pour transmettre les informations d'identification de votre utilisateur à un site Web.
+3. Ce site Web renvoie ensuite un jeton d'accès à la fonction personnalisée.
+4. Votre fonction personnalisée définit ensuite le jeton d'accès sur `AsyncStorage`le.
+5. Le volet Office de votre complément accède au jeton à partir de `AsyncStorage`.
 
-![Diagramme des fonctions personnalisées, OfficeRuntime et volets collaborer.] (../images/Authdiagram.png "Diagramme d’authentification.")
+![Diagramme de fonctions personnalisées, d'OfficeRuntime et de volets de tâches qui fonctionnent ensemble.] (../images/Authdiagram.png "Diagramme d'authentification.")
 
-## <a name="general-guidance"></a>Conseils d’ordre général
+## <a name="general-guidance"></a>Conseils généraux
 
-Compléments Office sont basés sur le web et vous pouvez utiliser les techniques d’authentification web. Il n’existe aucun modèle particulier ou une méthode à suivre pour implémenter votre propre authentification avec des fonctions personnalisées. Vous pouvez souhaiter, consultez la documentation sur les différents modèles d’authentification, en commençant par [cet article sur l’autorisation par le biais des services externes](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/auth-external-add-ins?view=office-js).  
+Les compléments Office sont basés sur le Web et vous pouvez utiliser n'importe quelle technique d'authentification Web. Il n'existe pas de modèle ni de méthode particulier à respecter pour implémenter votre propre authentification avec des fonctions personnalisées. Vous pouvez consulter la documentation sur les différents modèles d'authentification, en commençant par [cet article sur la création via des services externes](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/auth-external-add-ins?view=office-js).  
 
-Évitez d’utiliser des emplacements suivants pour stocker les données lors du développement de fonctions personnalisées :  
+Évitez d'utiliser les emplacements suivants pour stocker des données lors du développement de fonctions personnalisées:  
 
-- `localStorage`: Fonctions personnalisées n’ont pas accès au modèle global `window` objet et par conséquent, n’ont pas accès aux données stockées dans `localStorage`.
-- `Office.context.document.settings`: Cet emplacement n’est pas sécurisé et informations pouvant être extraites par une personne à l’aide de la macro complémentaire.
+- `localStorage`: Les fonctions personnalisées n'ont pas accès à `window` l'objet global et, par conséquent, n'ont `localStorage`pas accès aux données stockées dans.
+- `Office.context.document.settings`: Cet emplacement n'est pas sécurisé et les informations peuvent être extraites par quiconque utilisant le complément.
 
 ## <a name="see-also"></a>Voir aussi
 
