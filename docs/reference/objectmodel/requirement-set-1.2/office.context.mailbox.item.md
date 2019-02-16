@@ -1,111 +1,111 @@
 ---
-title: Office.Context.Mailbox.Item - exigence défini 1.2
+title: Office. Context. Mailbox. Item-ensemble de conditions requises 1,2
 description: ''
-ms.date: 01/30/2019
+ms.date: 02/15/2019
 localization_priority: Normal
-ms.openlocfilehash: 2ac3df2a8daae00e64bb66247e66834f9da4243c
-ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
+ms.openlocfilehash: c0b956cac0410ef7d8e8e0d59a69e221e29c540a
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "29701868"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30068041"
 ---
-# <a name="item"></a><span data-ttu-id="650db-102">élément</span><span class="sxs-lookup"><span data-stu-id="650db-102">item</span></span>
+# <a name="item"></a><span data-ttu-id="d4d70-102">élément</span><span class="sxs-lookup"><span data-stu-id="d4d70-102">item</span></span>
 
-### <span data-ttu-id="650db-p101">[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md). item</span><span class="sxs-lookup"><span data-stu-id="650db-p101">[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md). item</span></span>
+### <span data-ttu-id="d4d70-p101">[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md). item</span><span class="sxs-lookup"><span data-stu-id="d4d70-p101">[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md). item</span></span>
 
-<span data-ttu-id="650db-p102">L’espace de noms `item` est utilisé pour accéder au message, à la demande de réunion ou au rendez-vous actuellement sélectionné. Vous pouvez déterminer le type de l’élément `item` à l’aide de la propriété [itemType](#itemtype-officemailboxenumsitemtypejavascriptapioutlook12officemailboxenumsitemtype).</span><span class="sxs-lookup"><span data-stu-id="650db-p102">The `item` namespace is used to access the currently selected message, meeting request, or appointment. You can determine the type of the `item` by using the [itemType](#itemtype-officemailboxenumsitemtypejavascriptapioutlook12officemailboxenumsitemtype) property.</span></span>
+<span data-ttu-id="d4d70-p102">L’espace de noms `item` est utilisé pour accéder au message, à la demande de réunion ou au rendez-vous actuellement sélectionné. Vous pouvez déterminer le type de l’élément `item` à l’aide de la propriété [itemType](#itemtype-officemailboxenumsitemtypejavascriptapioutlook12officemailboxenumsitemtype).</span><span class="sxs-lookup"><span data-stu-id="d4d70-p102">The `item` namespace is used to access the currently selected message, meeting request, or appointment. You can determine the type of the `item` by using the [itemType](#itemtype-officemailboxenumsitemtypejavascriptapioutlook12officemailboxenumsitemtype) property.</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="650db-107">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-107">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-107">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-107">Requirements</span></span>
 
-|<span data-ttu-id="650db-108">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-108">Requirement</span></span>| <span data-ttu-id="650db-109">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-109">Value</span></span>|
+|<span data-ttu-id="d4d70-108">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-108">Requirement</span></span>| <span data-ttu-id="d4d70-109">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-109">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-110">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-110">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-111">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-111">1.0</span></span>|
-|[<span data-ttu-id="650db-112">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-112">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-113">Restreinte</span><span class="sxs-lookup"><span data-stu-id="650db-113">Restricted</span></span>|
-|[<span data-ttu-id="650db-114">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-114">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-115">Composition ou lecture</span><span class="sxs-lookup"><span data-stu-id="650db-115">Compose or read</span></span>|
+|[<span data-ttu-id="d4d70-110">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-110">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-111">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-111">1.0</span></span>|
+|[<span data-ttu-id="d4d70-112">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-112">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-113">Restreinte</span><span class="sxs-lookup"><span data-stu-id="d4d70-113">Restricted</span></span>|
+|[<span data-ttu-id="d4d70-114">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-114">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-115">Composition ou lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-115">Compose or Read</span></span>|
 
-### <a name="example"></a><span data-ttu-id="650db-116">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-116">Example</span></span>
+### <a name="example"></a><span data-ttu-id="d4d70-116">Exemple</span><span class="sxs-lookup"><span data-stu-id="d4d70-116">Example</span></span>
 
-<span data-ttu-id="650db-117">L’exemple de code JavaScript suivant montre comment accéder à la propriété `subject` de l’élément actif dans Outlook.</span><span class="sxs-lookup"><span data-stu-id="650db-117">The following JavaScript code example shows how to access the `subject` property of the current item in Outlook.</span></span>
+<span data-ttu-id="d4d70-117">L’exemple de code JavaScript suivant montre comment accéder à la propriété `subject` de l’élément actif dans Outlook.</span><span class="sxs-lookup"><span data-stu-id="d4d70-117">The following JavaScript code example shows how to access the `subject` property of the current item in Outlook.</span></span>
 
-```JavaScript
+```javascript
 // The initialize function is required for all apps.
 Office.initialize = function () {
-    // Checks for the DOM to load using the jQuery ready function.
-    $(document).ready(function () {
+  // Checks for the DOM to load using the jQuery ready function.
+  $(document).ready(function () {
     // After the DOM is loaded, app-specific code can run.
     var item = Office.context.mailbox.item;
     var subject = item.subject;
     // Continue with processing the subject of the current item,
     // which can be a message or appointment.
-    });
-}
+  });
+};
 ```
 
-### <a name="members"></a><span data-ttu-id="650db-118">Membres</span><span class="sxs-lookup"><span data-stu-id="650db-118">Members</span></span>
+### <a name="members"></a><span data-ttu-id="d4d70-118">Membres</span><span class="sxs-lookup"><span data-stu-id="d4d70-118">Members</span></span>
 
-#### <a name="attachments-arrayattachmentdetailsjavascriptapioutlook12officeattachmentdetails"></a><span data-ttu-id="650db-119">attachments :Array.<[AttachmentDetails](/javascript/api/outlook_1_2/office.attachmentdetails)></span><span class="sxs-lookup"><span data-stu-id="650db-119">attachments :Array.<[AttachmentDetails](/javascript/api/outlook_1_2/office.attachmentdetails)></span></span>
+#### <a name="attachments-arrayattachmentdetailsjavascriptapioutlook12officeattachmentdetails"></a><span data-ttu-id="d4d70-119">attachments :Array.<[AttachmentDetails](/javascript/api/outlook_1_2/office.attachmentdetails)></span><span class="sxs-lookup"><span data-stu-id="d4d70-119">attachments :Array.<[AttachmentDetails](/javascript/api/outlook_1_2/office.attachmentdetails)></span></span>
 
-<span data-ttu-id="650db-p103">Obtient un tableau des pièces jointes de l’élément. Mode lecture uniquement.</span><span class="sxs-lookup"><span data-stu-id="650db-p103">Gets an array of attachments for the item. Read mode only.</span></span>
+<span data-ttu-id="d4d70-p103">Obtient un tableau des pièces jointes de l’élément. Mode lecture uniquement.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p103">Gets an array of attachments for the item. Read mode only.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="650db-122">Certains types de fichiers sont bloqués par Outlook car ils présentent des problèmes de sécurité potentiels. Dans ce cas, ils ne sont pas renvoyés.</span><span class="sxs-lookup"><span data-stu-id="650db-122">Certain types of files are blocked by Outlook due to potential security issues and are therefore not returned.</span></span> <span data-ttu-id="650db-123">Pour en savoir plus, consultez l’article [Pièces jointes bloquées dans Outlook](https://support.office.com/article/Blocked-attachments-in-Outlook-434752E1-02D3-4E90-9124-8B81E49A8519).</span><span class="sxs-lookup"><span data-stu-id="650db-123">For more information, see [Blocked attachments in Outlook](https://support.office.com/article/Blocked-attachments-in-Outlook-434752E1-02D3-4E90-9124-8B81E49A8519).</span></span>
+> <span data-ttu-id="d4d70-122">Certains types de fichiers sont bloqués par Outlook car ils présentent des problèmes de sécurité potentiels. Dans ce cas, ils ne sont pas renvoyés.</span><span class="sxs-lookup"><span data-stu-id="d4d70-122">Certain types of files are blocked by Outlook due to potential security issues and are therefore not returned.</span></span> <span data-ttu-id="d4d70-123">Pour en savoir plus, consultez l’article [Pièces jointes bloquées dans Outlook](https://support.office.com/article/Blocked-attachments-in-Outlook-434752E1-02D3-4E90-9124-8B81E49A8519).</span><span class="sxs-lookup"><span data-stu-id="d4d70-123">For more information, see [Blocked attachments in Outlook](https://support.office.com/article/Blocked-attachments-in-Outlook-434752E1-02D3-4E90-9124-8B81E49A8519).</span></span>
 
-##### <a name="type"></a><span data-ttu-id="650db-124">Type :</span><span class="sxs-lookup"><span data-stu-id="650db-124">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="d4d70-124">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-124">Type</span></span>
 
-*   <span data-ttu-id="650db-125">Array.<[AttachmentDetails](/javascript/api/outlook_1_2/office.attachmentdetails)></span><span class="sxs-lookup"><span data-stu-id="650db-125">Array.<[AttachmentDetails](/javascript/api/outlook_1_2/office.attachmentdetails)></span></span>
+*   <span data-ttu-id="d4d70-125">Array.<[AttachmentDetails](/javascript/api/outlook_1_2/office.attachmentdetails)></span><span class="sxs-lookup"><span data-stu-id="d4d70-125">Array.<[AttachmentDetails](/javascript/api/outlook_1_2/office.attachmentdetails)></span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="650db-126">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-126">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-126">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-126">Requirements</span></span>
 
-|<span data-ttu-id="650db-127">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-127">Requirement</span></span>| <span data-ttu-id="650db-128">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-128">Value</span></span>|
+|<span data-ttu-id="d4d70-127">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-127">Requirement</span></span>| <span data-ttu-id="d4d70-128">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-128">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-129">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-129">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-130">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-130">1.0</span></span>|
-|[<span data-ttu-id="650db-131">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-131">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-132">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-132">ReadItem</span></span>|
-|[<span data-ttu-id="650db-133">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-133">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-134">Lecture</span><span class="sxs-lookup"><span data-stu-id="650db-134">Read</span></span>|
+|[<span data-ttu-id="d4d70-129">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-129">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-130">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-130">1.0</span></span>|
+|[<span data-ttu-id="d4d70-131">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-131">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-132">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-132">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-133">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-133">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-134">Lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-134">Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="650db-135">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-135">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="d4d70-135">Exemple</span><span class="sxs-lookup"><span data-stu-id="d4d70-135">Example</span></span>
 
-<span data-ttu-id="650db-136">Le code suivant génère une chaîne HTML avec les détails de toutes les pièces jointes de l’élément actif.</span><span class="sxs-lookup"><span data-stu-id="650db-136">The following code builds an HTML string with details of all attachments on the current item.</span></span>
+<span data-ttu-id="d4d70-136">Le code suivant génère une chaîne HTML avec les détails de toutes les pièces jointes de l’élément actif.</span><span class="sxs-lookup"><span data-stu-id="d4d70-136">The following code builds an HTML string with details of all attachments on the current item.</span></span>
 
-```JavaScript
-var _Item = Office.context.mailbox.item;
+```javascript
+var item = Office.context.mailbox.item;
 var outputString = "";
 
-if (_Item.attachments.length > 0) {
-  for (i = 0 ; i < _Item.attachments.length ; i++) {
-    var _att = _Item.attachments[i];
+if (item.attachments.length > 0) {
+  for (i = 0 ; i < item.attachments.length ; i++) {
+    var attachment = item.attachments[i];
     outputString += "<BR>" + i + ". Name: ";
-    outputString += _att.name;
-    outputString += "<BR>ID: " + _att.id;
-    outputString += "<BR>contentType: " + _att.contentType;
-    outputString += "<BR>size: " + _att.size;
-    outputString += "<BR>attachmentType: " + _att.attachmentType;
-    outputString += "<BR>isInline: " + _att.isInline;
+    outputString += attachment.name;
+    outputString += "<BR>ID: " + attachment.id;
+    outputString += "<BR>contentType: " + attachment.contentType;
+    outputString += "<BR>size: " + attachment.size;
+    outputString += "<BR>attachmentType: " + attachment.attachmentType;
+    outputString += "<BR>isInline: " + attachment.isInline;
   }
 }
 
-// Do something with outputString
+console.log(outputString);
 ```
 
-####  <a name="bcc-recipientsjavascriptapioutlook12officerecipients"></a><span data-ttu-id="650db-137">bcc :[Recipients](/javascript/api/outlook_1_2/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="650db-137">bcc :[Recipients](/javascript/api/outlook_1_2/office.recipients)</span></span>
+####  <a name="bcc-recipientsjavascriptapioutlook12officerecipients"></a><span data-ttu-id="d4d70-137">bcc :[Recipients](/javascript/api/outlook_1_2/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="d4d70-137">bcc :[Recipients](/javascript/api/outlook_1_2/office.recipients)</span></span>
 
-<span data-ttu-id="650db-138">Permet d’obtenir un objet qui fournit des méthodes permettant d’obtenir ou de mettre à jour les destinataires figurant sur la ligne Cci (copie carbone invisible) d’un message.</span><span class="sxs-lookup"><span data-stu-id="650db-138">Gets an object that provides methods to get or update the recipients on the Bcc (blind carbon copy) line of a message.</span></span> <span data-ttu-id="650db-139">Mode composition uniquement.</span><span class="sxs-lookup"><span data-stu-id="650db-139">Compose mode only.</span></span>
+<span data-ttu-id="d4d70-138">Permet d’obtenir un objet qui fournit des méthodes permettant d’obtenir ou de mettre à jour les destinataires figurant sur la ligne Cci (copie carbone invisible) d’un message.</span><span class="sxs-lookup"><span data-stu-id="d4d70-138">Gets an object that provides methods to get or update the recipients on the Bcc (blind carbon copy) line of a message.</span></span> <span data-ttu-id="d4d70-139">Mode composition uniquement.</span><span class="sxs-lookup"><span data-stu-id="d4d70-139">Compose mode only.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="650db-140">Type :</span><span class="sxs-lookup"><span data-stu-id="650db-140">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="d4d70-140">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-140">Type</span></span>
 
-*   [<span data-ttu-id="650db-141">Destinataires</span><span class="sxs-lookup"><span data-stu-id="650db-141">Recipients</span></span>](/javascript/api/outlook_1_2/office.recipients)
+*   [<span data-ttu-id="d4d70-141">Destinataires</span><span class="sxs-lookup"><span data-stu-id="d4d70-141">Recipients</span></span>](/javascript/api/outlook_1_2/office.recipients)
 
-##### <a name="requirements"></a><span data-ttu-id="650db-142">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-142">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-142">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-142">Requirements</span></span>
 
-|<span data-ttu-id="650db-143">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-143">Requirement</span></span>| <span data-ttu-id="650db-144">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-144">Value</span></span>|
+|<span data-ttu-id="d4d70-143">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-143">Requirement</span></span>| <span data-ttu-id="d4d70-144">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-144">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-145">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-145">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-146">1.1</span><span class="sxs-lookup"><span data-stu-id="650db-146">1.1</span></span>|
-|[<span data-ttu-id="650db-147">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-147">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-148">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-148">ReadItem</span></span>|
-|[<span data-ttu-id="650db-149">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-149">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-150">Composition</span><span class="sxs-lookup"><span data-stu-id="650db-150">Compose</span></span>|
+|[<span data-ttu-id="d4d70-145">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-145">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-146">1.1</span><span class="sxs-lookup"><span data-stu-id="d4d70-146">1.1</span></span>|
+|[<span data-ttu-id="d4d70-147">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-147">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-148">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-148">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-149">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-149">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-150">Composition</span><span class="sxs-lookup"><span data-stu-id="d4d70-150">Compose</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="650db-151">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-151">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="d4d70-151">Exemple</span><span class="sxs-lookup"><span data-stu-id="d4d70-151">Example</span></span>
 
-```JavaScript
+```javascript
 Office.context.mailbox.item.bcc.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
 Office.context.mailbox.item.bcc.addAsync( ['jason@contoso.com'] );
 Office.context.mailbox.item.bcc.getAsync(callback);
@@ -115,49 +115,63 @@ function callback(asyncResult) {
 }
 ```
 
-####  <a name="body-bodyjavascriptapioutlook12officebody"></a><span data-ttu-id="650db-152">body :[Body](/javascript/api/outlook_1_2/office.body)</span><span class="sxs-lookup"><span data-stu-id="650db-152">body :[Body](/javascript/api/outlook_1_2/office.body)</span></span>
+####  <a name="body-bodyjavascriptapioutlook12officebody"></a><span data-ttu-id="d4d70-152">body :[Body](/javascript/api/outlook_1_2/office.body)</span><span class="sxs-lookup"><span data-stu-id="d4d70-152">body :[Body](/javascript/api/outlook_1_2/office.body)</span></span>
 
-<span data-ttu-id="650db-153">Obtient un objet qui fournit des méthodes permettant de manipuler le corps d’un élément.</span><span class="sxs-lookup"><span data-stu-id="650db-153">Gets an object that provides methods for manipulating the body of an item.</span></span>
+<span data-ttu-id="d4d70-153">Obtient un objet qui fournit des méthodes permettant de manipuler le corps d’un élément.</span><span class="sxs-lookup"><span data-stu-id="d4d70-153">Gets an object that provides methods for manipulating the body of an item.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="650db-154">Type :</span><span class="sxs-lookup"><span data-stu-id="650db-154">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="d4d70-154">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-154">Type</span></span>
 
-*   [<span data-ttu-id="650db-155">Corps</span><span class="sxs-lookup"><span data-stu-id="650db-155">Body</span></span>](/javascript/api/outlook_1_2/office.body)
+*   [<span data-ttu-id="d4d70-155">Corps</span><span class="sxs-lookup"><span data-stu-id="d4d70-155">Body</span></span>](/javascript/api/outlook_1_2/office.body)
 
-##### <a name="requirements"></a><span data-ttu-id="650db-156">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-156">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-156">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-156">Requirements</span></span>
 
-|<span data-ttu-id="650db-157">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-157">Requirement</span></span>| <span data-ttu-id="650db-158">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-158">Value</span></span>|
+|<span data-ttu-id="d4d70-157">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-157">Requirement</span></span>| <span data-ttu-id="d4d70-158">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-158">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-159">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-159">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-160">1.1</span><span class="sxs-lookup"><span data-stu-id="650db-160">1.1</span></span>|
-|[<span data-ttu-id="650db-161">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-161">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-162">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-162">ReadItem</span></span>|
-|[<span data-ttu-id="650db-163">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-163">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-164">Composition ou lecture</span><span class="sxs-lookup"><span data-stu-id="650db-164">Compose or read</span></span>|
+|[<span data-ttu-id="d4d70-159">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-159">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-160">1.1</span><span class="sxs-lookup"><span data-stu-id="d4d70-160">1.1</span></span>|
+|[<span data-ttu-id="d4d70-161">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-161">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-162">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-162">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-163">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-163">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-164">Composition ou lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-164">Compose or Read</span></span>|
 
-####  <a name="cc-arrayemailaddressdetailsjavascriptapioutlook12officeemailaddressdetailsrecipientsjavascriptapioutlook12officerecipients"></a><span data-ttu-id="650db-165">cc :Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_2/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="650db-165">cc :Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_2/office.recipients)</span></span>
+##### <a name="example"></a><span data-ttu-id="d4d70-165">Exemple</span><span class="sxs-lookup"><span data-stu-id="d4d70-165">Example</span></span>
 
-<span data-ttu-id="650db-166">Permet d’accéder aux destinataires en copie carbone (Cc) d’un message.</span><span class="sxs-lookup"><span data-stu-id="650db-166">Provides access to the Cc (carbon copy) recipients of a message.</span></span> <span data-ttu-id="650db-167">Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.</span><span class="sxs-lookup"><span data-stu-id="650db-167">The type of object and level of access depends on the mode of the current item.</span></span>
+<span data-ttu-id="d4d70-166">Cet exemple obtient le corps du message en texte brut.</span><span class="sxs-lookup"><span data-stu-id="d4d70-166">This example gets the body of the message in plain text.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="650db-168">Mode Lecture</span><span class="sxs-lookup"><span data-stu-id="650db-168">Read mode</span></span>
+```javascript
+Office.context.mailbox.item.body.getAsync(
+  "text",
+  { asyncContext: "This is passed to the callback" },
+  function callback(result) {
+    // Do something with the result.
+  });
 
-<span data-ttu-id="650db-p107">La propriété `cc` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque destinataire répertorié sur la ligne **Cc** du message. La collection est limitée à 100 membres.</span><span class="sxs-lookup"><span data-stu-id="650db-p107">The `cc` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **Cc** line of the message. The collection is limited to a maximum of 100 members.</span></span>
+```
 
-##### <a name="compose-mode"></a><span data-ttu-id="650db-171">Mode composition</span><span class="sxs-lookup"><span data-stu-id="650db-171">Compose mode</span></span>
+<span data-ttu-id="d4d70-167">Voici un exemple du paramètre result transmis à la fonction de rappel.</span><span class="sxs-lookup"><span data-stu-id="d4d70-167">The following is an example of the result parameter passed to the callback function.</span></span>
 
-<span data-ttu-id="650db-172">La propriété `cc` renvoie un objet `Recipients` qui fournit des méthodes permettant d’obtenir ou de mettre à jour les destinataires figurant sur la ligne **Cc** du message.</span><span class="sxs-lookup"><span data-stu-id="650db-172">The `cc` property returns a `Recipients` object that provides methods to get or update the recipients on the **Cc** line of the message.</span></span>
+```json
+{
+  "value": "TEXT of whole body (including threads below)",
+  "status": "succeeded",
+  "asyncContext": "This is passed to the callback"
+}
+```
 
-##### <a name="type"></a><span data-ttu-id="650db-173">Type :</span><span class="sxs-lookup"><span data-stu-id="650db-173">Type:</span></span>
+####  <a name="cc-arrayemailaddressdetailsjavascriptapioutlook12officeemailaddressdetailsrecipientsjavascriptapioutlook12officerecipients"></a><span data-ttu-id="d4d70-168">cc :Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_2/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="d4d70-168">cc :Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_2/office.recipients)</span></span>
 
-*   <span data-ttu-id="650db-174">Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_2/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="650db-174">Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_2/office.recipients)</span></span>
+<span data-ttu-id="d4d70-169">Permet d’accéder aux destinataires en copie carbone (Cc) d’un message.</span><span class="sxs-lookup"><span data-stu-id="d4d70-169">Provides access to the Cc (carbon copy) recipients of a message.</span></span> <span data-ttu-id="d4d70-170">Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.</span><span class="sxs-lookup"><span data-stu-id="d4d70-170">The type of object and level of access depends on the mode of the current item.</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="650db-175">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-175">Requirements</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="d4d70-171">Mode Lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-171">Read mode</span></span>
 
-|<span data-ttu-id="650db-176">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-176">Requirement</span></span>| <span data-ttu-id="650db-177">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-177">Value</span></span>|
-|---|---|
-|[<span data-ttu-id="650db-178">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-178">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-179">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-179">1.0</span></span>|
-|[<span data-ttu-id="650db-180">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-180">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-181">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-181">ReadItem</span></span>|
-|[<span data-ttu-id="650db-182">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-182">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-183">Composition ou lecture</span><span class="sxs-lookup"><span data-stu-id="650db-183">Compose or read</span></span>|
+<span data-ttu-id="d4d70-p107">La propriété `cc` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque destinataire répertorié sur la ligne **Cc** du message. La collection est limitée à 100 membres.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p107">The `cc` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **Cc** line of the message. The collection is limited to a maximum of 100 members.</span></span>
 
-##### <a name="example"></a><span data-ttu-id="650db-184">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-184">Example</span></span>
+```javascript
+console.log(JSON.stringify(Office.context.mailbox.item.cc));
+```
 
-```JavaScript
+##### <a name="compose-mode"></a><span data-ttu-id="d4d70-174">Mode composition</span><span class="sxs-lookup"><span data-stu-id="d4d70-174">Compose mode</span></span>
+
+<span data-ttu-id="d4d70-175">La propriété `cc` renvoie un objet `Recipients` qui fournit des méthodes permettant d’obtenir ou de mettre à jour les destinataires figurant sur la ligne **Cc** du message.</span><span class="sxs-lookup"><span data-stu-id="d4d70-175">The `cc` property returns a `Recipients` object that provides methods to get or update the recipients on the **Cc** line of the message.</span></span>
+
+```javascript
 Office.context.mailbox.item.cc.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
 Office.context.mailbox.item.cc.addAsync( ['jason@contoso.com'] );
 Office.context.mailbox.item.cc.getAsync(callback);
@@ -167,282 +181,305 @@ function callback(asyncResult) {
 }
 ```
 
-####  <a name="nullable-conversationid-string"></a><span data-ttu-id="650db-185">(nullable) conversationId :String</span><span class="sxs-lookup"><span data-stu-id="650db-185">(nullable) conversationId :String</span></span>
+##### <a name="type"></a><span data-ttu-id="d4d70-176">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-176">Type</span></span>
 
-<span data-ttu-id="650db-186">Obtient l’identificateur de la conversation qui contient un message particulier.</span><span class="sxs-lookup"><span data-stu-id="650db-186">Gets an identifier for the email conversation that contains a particular message.</span></span>
+*   <span data-ttu-id="d4d70-177">Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_2/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="d4d70-177">Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_2/office.recipients)</span></span>
 
-<span data-ttu-id="650db-p108">Vous pouvez obtenir un nombre entier de cette propriété si votre application de messagerie est activée dans les formulaires de lecture ou les réponses des formulaires de composition. Si, par la suite, l’utilisateur modifie l’objet du message de réponse, lors de l’envoi de la réponse, l’ID de conversation de ce message va changer et la valeur que vous avez obtenue plus tôt ne sera plus applicable.</span><span class="sxs-lookup"><span data-stu-id="650db-p108">You can get an integer for this property if your mail app is activated in read forms or responses in compose forms. If subsequently the user changes the subject of the reply message, upon sending the reply, the conversation ID for that message will change and that value you obtained earlier will no longer apply.</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-178">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-178">Requirements</span></span>
 
-<span data-ttu-id="650db-p109">Cette propriété obtient une valeur null lorsqu’un élément est ajouté à un formulaire de composition. Si l’utilisateur définit la ligne Objet et enregistre l’élément, la propriété `conversationId` renvoie une valeur.</span><span class="sxs-lookup"><span data-stu-id="650db-p109">You get null for this property for a new item in a compose form. If the user sets a subject and saves the item, the `conversationId` property will return a value.</span></span>
-
-##### <a name="type"></a><span data-ttu-id="650db-191">Type :</span><span class="sxs-lookup"><span data-stu-id="650db-191">Type:</span></span>
-
-*   <span data-ttu-id="650db-192">Chaîne</span><span class="sxs-lookup"><span data-stu-id="650db-192">String</span></span>
-
-##### <a name="requirements"></a><span data-ttu-id="650db-193">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-193">Requirements</span></span>
-
-|<span data-ttu-id="650db-194">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-194">Requirement</span></span>| <span data-ttu-id="650db-195">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-195">Value</span></span>|
+|<span data-ttu-id="d4d70-179">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-179">Requirement</span></span>| <span data-ttu-id="d4d70-180">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-180">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-196">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-196">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-197">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-197">1.0</span></span>|
-|[<span data-ttu-id="650db-198">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-198">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-199">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-199">ReadItem</span></span>|
-|[<span data-ttu-id="650db-200">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-200">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-201">Composition ou lecture</span><span class="sxs-lookup"><span data-stu-id="650db-201">Compose or read</span></span>|
+|[<span data-ttu-id="d4d70-181">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-181">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-182">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-182">1.0</span></span>|
+|[<span data-ttu-id="d4d70-183">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-183">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-184">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-184">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-185">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-185">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-186">Composition ou lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-186">Compose or Read</span></span>|
 
-#### <a name="datetimecreated-date"></a><span data-ttu-id="650db-202">dateTimeCreated :Date</span><span class="sxs-lookup"><span data-stu-id="650db-202">dateTimeCreated :Date</span></span>
+####  <a name="nullable-conversationid-string"></a><span data-ttu-id="d4d70-187">(nullable) conversationId :String</span><span class="sxs-lookup"><span data-stu-id="d4d70-187">(nullable) conversationId :String</span></span>
 
-<span data-ttu-id="650db-p110">Obtient la date et l’heure de création d’un élément. Mode lecture uniquement.</span><span class="sxs-lookup"><span data-stu-id="650db-p110">Gets the date and time that an item was created. Read mode only.</span></span>
+<span data-ttu-id="d4d70-188">Obtient l’identificateur de la conversation qui contient un message particulier.</span><span class="sxs-lookup"><span data-stu-id="d4d70-188">Gets an identifier for the email conversation that contains a particular message.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="650db-205">Type :</span><span class="sxs-lookup"><span data-stu-id="650db-205">Type:</span></span>
+<span data-ttu-id="d4d70-p108">Vous pouvez obtenir un nombre entier de cette propriété si votre application de messagerie est activée dans les formulaires de lecture ou les réponses des formulaires de composition. Si, par la suite, l’utilisateur modifie l’objet du message de réponse, lors de l’envoi de la réponse, l’ID de conversation de ce message va changer et la valeur que vous avez obtenue plus tôt ne sera plus applicable.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p108">You can get an integer for this property if your mail app is activated in read forms or responses in compose forms. If subsequently the user changes the subject of the reply message, upon sending the reply, the conversation ID for that message will change and that value you obtained earlier will no longer apply.</span></span>
 
-*   <span data-ttu-id="650db-206">Date</span><span class="sxs-lookup"><span data-stu-id="650db-206">Date</span></span>
+<span data-ttu-id="d4d70-p109">Cette propriété obtient une valeur null lorsqu’un élément est ajouté à un formulaire de composition. Si l’utilisateur définit la ligne Objet et enregistre l’élément, la propriété `conversationId` renvoie une valeur.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p109">You get null for this property for a new item in a compose form. If the user sets a subject and saves the item, the `conversationId` property will return a value.</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="650db-207">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-207">Requirements</span></span>
+##### <a name="type"></a><span data-ttu-id="d4d70-193">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-193">Type</span></span>
 
-|<span data-ttu-id="650db-208">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-208">Requirement</span></span>| <span data-ttu-id="650db-209">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-209">Value</span></span>|
+*   <span data-ttu-id="d4d70-194">Chaîne</span><span class="sxs-lookup"><span data-stu-id="d4d70-194">String</span></span>
+
+##### <a name="requirements"></a><span data-ttu-id="d4d70-195">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-195">Requirements</span></span>
+
+|<span data-ttu-id="d4d70-196">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-196">Requirement</span></span>| <span data-ttu-id="d4d70-197">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-197">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-210">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-210">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-211">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-211">1.0</span></span>|
-|[<span data-ttu-id="650db-212">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-212">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-213">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-213">ReadItem</span></span>|
-|[<span data-ttu-id="650db-214">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-214">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-215">Lecture</span><span class="sxs-lookup"><span data-stu-id="650db-215">Read</span></span>|
+|[<span data-ttu-id="d4d70-198">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-198">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-199">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-199">1.0</span></span>|
+|[<span data-ttu-id="d4d70-200">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-200">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-201">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-201">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-202">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-202">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-203">Composition ou lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-203">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="650db-216">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-216">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="d4d70-204">Exemple</span><span class="sxs-lookup"><span data-stu-id="d4d70-204">Example</span></span>
 
-```JavaScript
-var created = Office.context.mailbox.item.dateTimeCreated;
+```javascript
+var conversationId = Office.context.mailbox.item.conversationId;
+console.log("conversationId: " + conversationId);
 ```
 
-#### <a name="datetimemodified-date"></a><span data-ttu-id="650db-217">dateTimeModified :Date</span><span class="sxs-lookup"><span data-stu-id="650db-217">dateTimeModified :Date</span></span>
+#### <a name="datetimecreated-date"></a><span data-ttu-id="d4d70-205">dateTimeCreated :Date</span><span class="sxs-lookup"><span data-stu-id="d4d70-205">dateTimeCreated :Date</span></span>
 
-<span data-ttu-id="650db-p111">Permet d’obtenir la date et l’heure de la dernière modification d’un élément. Mode lecture uniquement.</span><span class="sxs-lookup"><span data-stu-id="650db-p111">Gets the date and time that an item was last modified. Read mode only.</span></span>
+<span data-ttu-id="d4d70-p110">Obtient la date et l’heure de création d’un élément. Mode lecture uniquement.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p110">Gets the date and time that an item was created. Read mode only.</span></span>
+
+##### <a name="type"></a><span data-ttu-id="d4d70-208">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-208">Type</span></span>
+
+*   <span data-ttu-id="d4d70-209">Date</span><span class="sxs-lookup"><span data-stu-id="d4d70-209">Date</span></span>
+
+##### <a name="requirements"></a><span data-ttu-id="d4d70-210">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-210">Requirements</span></span>
+
+|<span data-ttu-id="d4d70-211">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-211">Requirement</span></span>| <span data-ttu-id="d4d70-212">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-212">Value</span></span>|
+|---|---|
+|[<span data-ttu-id="d4d70-213">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-213">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-214">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-214">1.0</span></span>|
+|[<span data-ttu-id="d4d70-215">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-215">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-216">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-216">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-217">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-217">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-218">Lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-218">Read</span></span>|
+
+##### <a name="example"></a><span data-ttu-id="d4d70-219">Exemple</span><span class="sxs-lookup"><span data-stu-id="d4d70-219">Example</span></span>
+
+```javascript
+var dateTimeCreated = Office.context.mailbox.item.dateTimeCreated;
+console.log("Date and time created: " + dateTimeCreated);
+```
+
+#### <a name="datetimemodified-date"></a><span data-ttu-id="d4d70-220">dateTimeModified :Date</span><span class="sxs-lookup"><span data-stu-id="d4d70-220">dateTimeModified :Date</span></span>
+
+<span data-ttu-id="d4d70-p111">Permet d’obtenir la date et l’heure de la dernière modification d’un élément. Mode lecture uniquement.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p111">Gets the date and time that an item was last modified. Read mode only.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="650db-220">Ce membre n’est pas pris en charge dans Outlook pour iOS ou Outlook pour Android.</span><span class="sxs-lookup"><span data-stu-id="650db-220">This member is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="d4d70-223">Ce membre n’est pas pris en charge dans Outlook pour iOS ou Outlook pour Android.</span><span class="sxs-lookup"><span data-stu-id="d4d70-223">This member is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="650db-221">Type :</span><span class="sxs-lookup"><span data-stu-id="650db-221">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="d4d70-224">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-224">Type</span></span>
 
-*   <span data-ttu-id="650db-222">Date</span><span class="sxs-lookup"><span data-stu-id="650db-222">Date</span></span>
+*   <span data-ttu-id="d4d70-225">Date</span><span class="sxs-lookup"><span data-stu-id="d4d70-225">Date</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="650db-223">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-223">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-226">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-226">Requirements</span></span>
 
-|<span data-ttu-id="650db-224">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-224">Requirement</span></span>| <span data-ttu-id="650db-225">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-225">Value</span></span>|
+|<span data-ttu-id="d4d70-227">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-227">Requirement</span></span>| <span data-ttu-id="d4d70-228">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-228">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-226">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-226">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-227">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-227">1.0</span></span>|
-|[<span data-ttu-id="650db-228">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-228">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-229">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-229">ReadItem</span></span>|
-|[<span data-ttu-id="650db-230">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-230">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-231">Lecture</span><span class="sxs-lookup"><span data-stu-id="650db-231">Read</span></span>|
+|[<span data-ttu-id="d4d70-229">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-229">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-230">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-230">1.0</span></span>|
+|[<span data-ttu-id="d4d70-231">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-231">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-232">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-232">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-233">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-233">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-234">Lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-234">Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="650db-232">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-232">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="d4d70-235">Exemple</span><span class="sxs-lookup"><span data-stu-id="d4d70-235">Example</span></span>
 
-```JavaScript
-var modified = Office.context.mailbox.item.dateTimeModified;
+```javascript
+var dateTimeModified = Office.context.mailbox.item.dateTimeModified;
+console.log("Date and time modified: " + dateTimeModified);
 ```
 
-####  <a name="end-datetimejavascriptapioutlook12officetime"></a><span data-ttu-id="650db-233">end :Date|[Time](/javascript/api/outlook_1_2/office.time)</span><span class="sxs-lookup"><span data-stu-id="650db-233">end :Date|[Time](/javascript/api/outlook_1_2/office.time)</span></span>
+####  <a name="end-datetimejavascriptapioutlook12officetime"></a><span data-ttu-id="d4d70-236">end :Date|[Time](/javascript/api/outlook_1_2/office.time)</span><span class="sxs-lookup"><span data-stu-id="d4d70-236">end :Date|[Time](/javascript/api/outlook_1_2/office.time)</span></span>
 
-<span data-ttu-id="650db-234">Obtient ou définit la date et l’heure de fin du rendez-vous.</span><span class="sxs-lookup"><span data-stu-id="650db-234">Gets or sets the date and time that the appointment is to end.</span></span>
+<span data-ttu-id="d4d70-237">Obtient ou définit la date et l’heure de fin du rendez-vous.</span><span class="sxs-lookup"><span data-stu-id="d4d70-237">Gets or sets the date and time that the appointment is to end.</span></span>
 
-<span data-ttu-id="650db-p112">La propriété `end` est exprimée en date et heure UTC (temps universel coordonné). Vous pouvez utiliser la méthode [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook12officelocalclienttime) pour convertir la valeur de fin de la propriété à la date et à l’heure du client.</span><span class="sxs-lookup"><span data-stu-id="650db-p112">The `end` property is expressed as a Coordinated Universal Time (UTC) date and time value. You can use the [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook12officelocalclienttime) method to convert the end property value to the client’s local date and time.</span></span>
+<span data-ttu-id="d4d70-p112">La propriété `end` est exprimée en date et heure UTC (temps universel coordonné). Vous pouvez utiliser la méthode [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook12officelocalclienttime) pour convertir la valeur de fin de la propriété à la date et à l’heure du client.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p112">The `end` property is expressed as a Coordinated Universal Time (UTC) date and time value. You can use the [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook12officelocalclienttime) method to convert the end property value to the client’s local date and time.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="650db-237">Mode lecture</span><span class="sxs-lookup"><span data-stu-id="650db-237">Read mode</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="d4d70-240">Mode lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-240">Read mode</span></span>
 
-<span data-ttu-id="650db-238">La propriété `end` renvoie un objet `Date`.</span><span class="sxs-lookup"><span data-stu-id="650db-238">The `end` property returns a `Date` object.</span></span>
+<span data-ttu-id="d4d70-241">La propriété `end` renvoie un objet `Date`.</span><span class="sxs-lookup"><span data-stu-id="d4d70-241">The `end` property returns a `Date` object.</span></span>
 
-##### <a name="compose-mode"></a><span data-ttu-id="650db-239">Mode composition</span><span class="sxs-lookup"><span data-stu-id="650db-239">Compose mode</span></span>
+```javascript
+var end = Office.context.mailbox.item.end;
+console.log("Appointment end: " + end);
+```
 
-<span data-ttu-id="650db-240">La propriété `end` renvoie un objet `Time`.</span><span class="sxs-lookup"><span data-stu-id="650db-240">The `end` property returns a `Time` object.</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="d4d70-242">Mode composition</span><span class="sxs-lookup"><span data-stu-id="d4d70-242">Compose mode</span></span>
 
-<span data-ttu-id="650db-241">Quand vous utilisez la méthode [`Time.setAsync`](/javascript/api/outlook_1_2/office.time#setasync-datetime--options--callback-) pour définir l’heure de fin, nous vous recommandons d’utiliser la méthode [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) pour convertir l’heure locale du client au format UTC pour le serveur.</span><span class="sxs-lookup"><span data-stu-id="650db-241">When you use the [`Time.setAsync`](/javascript/api/outlook_1_2/office.time#setasync-datetime--options--callback-) method to set the end time, you should use the [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) method to convert the local time on the client to UTC for the server.</span></span>
+<span data-ttu-id="d4d70-243">La propriété `end` renvoie un objet `Time`.</span><span class="sxs-lookup"><span data-stu-id="d4d70-243">The `end` property returns a `Time` object.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="650db-242">Type :</span><span class="sxs-lookup"><span data-stu-id="650db-242">Type:</span></span>
+<span data-ttu-id="d4d70-244">Quand vous utilisez la méthode [`Time.setAsync`](/javascript/api/outlook_1_2/office.time#setasync-datetime--options--callback-) pour définir l’heure de fin, nous vous recommandons d’utiliser la méthode [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) pour convertir l’heure locale du client au format UTC pour le serveur.</span><span class="sxs-lookup"><span data-stu-id="d4d70-244">When you use the [`Time.setAsync`](/javascript/api/outlook_1_2/office.time#setasync-datetime--options--callback-) method to set the end time, you should use the [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) method to convert the local time on the client to UTC for the server.</span></span>
 
-*   <span data-ttu-id="650db-243">Date | [Time](/javascript/api/outlook_1_2/office.time)</span><span class="sxs-lookup"><span data-stu-id="650db-243">Date | [Time](/javascript/api/outlook_1_2/office.time)</span></span>
+<span data-ttu-id="d4d70-245">L'exemple suivant définit l'heure de fin d'un rendez- [`setAsync`](/javascript/api/outlook_1_2/office.time#setasync-datetime--options--callback-) vous à l' `Time` aide de la méthode de l'objet.</span><span class="sxs-lookup"><span data-stu-id="d4d70-245">The following example sets the end time of an appointment by using the [`setAsync`](/javascript/api/outlook_1_2/office.time#setasync-datetime--options--callback-) method of the `Time` object.</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="650db-244">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-244">Requirements</span></span>
-
-|<span data-ttu-id="650db-245">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-245">Requirement</span></span>| <span data-ttu-id="650db-246">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-246">Value</span></span>|
-|---|---|
-|[<span data-ttu-id="650db-247">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-247">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-248">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-248">1.0</span></span>|
-|[<span data-ttu-id="650db-249">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-249">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-250">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-250">ReadItem</span></span>|
-|[<span data-ttu-id="650db-251">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-251">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-252">Composition ou lecture</span><span class="sxs-lookup"><span data-stu-id="650db-252">Compose or read</span></span>|
-
-##### <a name="example"></a><span data-ttu-id="650db-253">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-253">Example</span></span>
-
-<span data-ttu-id="650db-254">L’exemple suivant définit l’heure de fin d’un rendez-vous en mode composition à l’aide de la méthode [`setAsync`](/javascript/api/outlook_1_2/office.time#setasync-datetime--options--callback-) de l’objet `Time`.</span><span class="sxs-lookup"><span data-stu-id="650db-254">The following example sets the end time of an appointment in compose mode by using the [`setAsync`](/javascript/api/outlook_1_2/office.time#setasync-datetime--options--callback-) method of the `Time` object.</span></span>
-
-```JavaScript
+```javascript
 var endTime = new Date("3/14/2015");
 var options = {
-  // Pass information that can be used
-  // in the callback
-  asyncContext: {verb:"Set"}
-}
+  // Pass information that can be used in the callback.
+  asyncContext: {verb: "Set"}
+};
 Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
   if (result.error) {
     console.debug(result.error);
   } else {
-    // Access the asyncContext that was passed to the setAsync function
+    // Access the asyncContext that was passed to the setAsync function.
     console.debug("End Time " + result.asyncContext.verb);
   }
 });
 ```
 
-#### <a name="from-emailaddressdetailsjavascriptapioutlook12officeemailaddressdetails"></a><span data-ttu-id="650db-255">from :[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)</span><span class="sxs-lookup"><span data-stu-id="650db-255">from :[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)</span></span>
+##### <a name="type"></a><span data-ttu-id="d4d70-246">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-246">Type</span></span>
 
-<span data-ttu-id="650db-p113">Obtient l’adresse de messagerie de l’expéditeur d’un message. Mode lecture uniquement.</span><span class="sxs-lookup"><span data-stu-id="650db-p113">Gets the email address of the sender of a message. Read mode only.</span></span>
+*   <span data-ttu-id="d4d70-247">Date | [Time](/javascript/api/outlook_1_2/office.time)</span><span class="sxs-lookup"><span data-stu-id="d4d70-247">Date | [Time](/javascript/api/outlook_1_2/office.time)</span></span>
 
-<span data-ttu-id="650db-p114">Les propriétés `from` et [`sender`](#sender-emailaddressdetailsjavascriptapioutlook12officeemailaddressdetails) représentent la même personne, sauf si le message est envoyé par un délégué. Dans ce cas, la propriété `from` représente le délégant et la propriété sender représente le délégué.</span><span class="sxs-lookup"><span data-stu-id="650db-p114">The `from` and [`sender`](#sender-emailaddressdetailsjavascriptapioutlook12officeemailaddressdetails) properties represent the same person unless the message is sent by a delegate. In that case, the `from` property represents the delegator, and the sender property represents the delegate.</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-248">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-248">Requirements</span></span>
+
+|<span data-ttu-id="d4d70-249">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-249">Requirement</span></span>| <span data-ttu-id="d4d70-250">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-250">Value</span></span>|
+|---|---|
+|[<span data-ttu-id="d4d70-251">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-251">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-252">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-252">1.0</span></span>|
+|[<span data-ttu-id="d4d70-253">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-253">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-254">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-254">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-255">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-255">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-256">Composition ou lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-256">Compose or Read</span></span>|
+
+#### <a name="from-emailaddressdetailsjavascriptapioutlook12officeemailaddressdetails"></a><span data-ttu-id="d4d70-257">from :[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)</span><span class="sxs-lookup"><span data-stu-id="d4d70-257">from :[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)</span></span>
+
+<span data-ttu-id="d4d70-p113">Obtient l’adresse de messagerie de l’expéditeur d’un message. Mode lecture uniquement.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p113">Gets the email address of the sender of a message. Read mode only.</span></span>
+
+<span data-ttu-id="d4d70-p114">Les propriétés `from` et [`sender`](#sender-emailaddressdetailsjavascriptapioutlook12officeemailaddressdetails) représentent la même personne, sauf si le message est envoyé par un délégué. Dans ce cas, la propriété `from` représente le délégant et la propriété sender représente le délégué.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p114">The `from` and [`sender`](#sender-emailaddressdetailsjavascriptapioutlook12officeemailaddressdetails) properties represent the same person unless the message is sent by a delegate. In that case, the `from` property represents the delegator, and the sender property represents the delegate.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="650db-260">La propriété `recipientType` de l’objet `EmailAddressDetails` dans la propriété `from` est `undefined`.</span><span class="sxs-lookup"><span data-stu-id="650db-260">The `recipientType` property of the `EmailAddressDetails` object in the `from` property is `undefined`.</span></span>
+> <span data-ttu-id="d4d70-262">La propriété `recipientType` de l’objet `EmailAddressDetails` dans la propriété `from` est `undefined`.</span><span class="sxs-lookup"><span data-stu-id="d4d70-262">The `recipientType` property of the `EmailAddressDetails` object in the `from` property is `undefined`.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="650db-261">Type :</span><span class="sxs-lookup"><span data-stu-id="650db-261">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="d4d70-263">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-263">Type</span></span>
 
-*   [<span data-ttu-id="650db-262">EmailAddressDetails</span><span class="sxs-lookup"><span data-stu-id="650db-262">EmailAddressDetails</span></span>](/javascript/api/outlook_1_2/office.emailaddressdetails)
+*   [<span data-ttu-id="d4d70-264">EmailAddressDetails</span><span class="sxs-lookup"><span data-stu-id="d4d70-264">EmailAddressDetails</span></span>](/javascript/api/outlook_1_2/office.emailaddressdetails)
 
-##### <a name="requirements"></a><span data-ttu-id="650db-263">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-263">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-265">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-265">Requirements</span></span>
 
-|<span data-ttu-id="650db-264">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-264">Requirement</span></span>| <span data-ttu-id="650db-265">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-265">Value</span></span>|
+|<span data-ttu-id="d4d70-266">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-266">Requirement</span></span>| <span data-ttu-id="d4d70-267">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-267">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-266">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-266">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-267">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-267">1.0</span></span>|
-|[<span data-ttu-id="650db-268">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-268">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-269">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-269">ReadItem</span></span>|
-|[<span data-ttu-id="650db-270">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-270">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-271">Lecture</span><span class="sxs-lookup"><span data-stu-id="650db-271">Read</span></span>|
+|[<span data-ttu-id="d4d70-268">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-268">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-269">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-269">1.0</span></span>|
+|[<span data-ttu-id="d4d70-270">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-270">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-271">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-271">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-272">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-272">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-273">Lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-273">Read</span></span>|
 
-#### <a name="internetmessageid-string"></a><span data-ttu-id="650db-272">internetMessageId :String</span><span class="sxs-lookup"><span data-stu-id="650db-272">internetMessageId :String</span></span>
+##### <a name="example"></a><span data-ttu-id="d4d70-274">Exemple</span><span class="sxs-lookup"><span data-stu-id="d4d70-274">Example</span></span>
 
-<span data-ttu-id="650db-p115">Obtient l’identificateur de message Internet d’un message électronique. Mode lecture uniquement.</span><span class="sxs-lookup"><span data-stu-id="650db-p115">Gets the Internet message identifier for an email message. Read mode only.</span></span>
+```javascript
+var from = Office.context.mailbox.item.from;
+console.log("From " + from);
+```
 
-##### <a name="type"></a><span data-ttu-id="650db-275">Type :</span><span class="sxs-lookup"><span data-stu-id="650db-275">Type:</span></span>
+#### <a name="internetmessageid-string"></a><span data-ttu-id="d4d70-275">internetMessageId :String</span><span class="sxs-lookup"><span data-stu-id="d4d70-275">internetMessageId :String</span></span>
 
-*   <span data-ttu-id="650db-276">Chaîne</span><span class="sxs-lookup"><span data-stu-id="650db-276">String</span></span>
+<span data-ttu-id="d4d70-p115">Obtient l’identificateur de message Internet d’un message électronique. Mode lecture uniquement.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p115">Gets the Internet message identifier for an email message. Read mode only.</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="650db-277">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-277">Requirements</span></span>
+##### <a name="type"></a><span data-ttu-id="d4d70-278">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-278">Type</span></span>
 
-|<span data-ttu-id="650db-278">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-278">Requirement</span></span>| <span data-ttu-id="650db-279">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-279">Value</span></span>|
+*   <span data-ttu-id="d4d70-279">Chaîne</span><span class="sxs-lookup"><span data-stu-id="d4d70-279">String</span></span>
+
+##### <a name="requirements"></a><span data-ttu-id="d4d70-280">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-280">Requirements</span></span>
+
+|<span data-ttu-id="d4d70-281">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-281">Requirement</span></span>| <span data-ttu-id="d4d70-282">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-282">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-280">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-280">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-281">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-281">1.0</span></span>|
-|[<span data-ttu-id="650db-282">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-282">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-283">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-283">ReadItem</span></span>|
-|[<span data-ttu-id="650db-284">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-284">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-285">Lecture</span><span class="sxs-lookup"><span data-stu-id="650db-285">Read</span></span>|
+|[<span data-ttu-id="d4d70-283">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-283">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-284">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-284">1.0</span></span>|
+|[<span data-ttu-id="d4d70-285">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-285">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-286">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-286">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-287">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-287">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-288">Lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-288">Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="650db-286">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-286">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="d4d70-289">Exemple</span><span class="sxs-lookup"><span data-stu-id="d4d70-289">Example</span></span>
 
-```JavaScript
+```javascript
 var internetMessageId = Office.context.mailbox.item.internetMessageId;
 ```
 
-#### <a name="itemclass-string"></a><span data-ttu-id="650db-287">itemClass :String</span><span class="sxs-lookup"><span data-stu-id="650db-287">itemClass :String</span></span>
+#### <a name="itemclass-string"></a><span data-ttu-id="d4d70-290">itemClass :String</span><span class="sxs-lookup"><span data-stu-id="d4d70-290">itemClass :String</span></span>
 
-<span data-ttu-id="650db-p116">Obtient la classe de l’élément des services web Exchange de l’élément sélectionné. Mode lecture uniquement.</span><span class="sxs-lookup"><span data-stu-id="650db-p116">Gets the Exchange Web Services item class of the selected item. Read mode only.</span></span>
+<span data-ttu-id="d4d70-p116">Obtient la classe de l’élément des services web Exchange de l’élément sélectionné. Mode lecture uniquement.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p116">Gets the Exchange Web Services item class of the selected item. Read mode only.</span></span>
 
-<span data-ttu-id="650db-p117">La propriété `itemClass` spécifie la classe de message de l’élément sélectionné. Les éléments suivants sont les classes de message par défaut du message ou de l’élément de rendez-vous.</span><span class="sxs-lookup"><span data-stu-id="650db-p117">The `itemClass` property specifies the message class of the selected item. The following are the default message classes for the message or appointment item.</span></span>
+<span data-ttu-id="d4d70-p117">La propriété `itemClass` spécifie la classe de message de l’élément sélectionné. Les éléments suivants sont les classes de message par défaut du message ou de l’élément de rendez-vous.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p117">The `itemClass` property specifies the message class of the selected item. The following are the default message classes for the message or appointment item.</span></span>
 
-| <span data-ttu-id="650db-292">Type</span><span class="sxs-lookup"><span data-stu-id="650db-292">Type</span></span> | <span data-ttu-id="650db-293">Description</span><span class="sxs-lookup"><span data-stu-id="650db-293">Description</span></span> | <span data-ttu-id="650db-294">Classe de l’élément</span><span class="sxs-lookup"><span data-stu-id="650db-294">item class</span></span> |
+| <span data-ttu-id="d4d70-295">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-295">Type</span></span> | <span data-ttu-id="d4d70-296">Description</span><span class="sxs-lookup"><span data-stu-id="d4d70-296">Description</span></span> | <span data-ttu-id="d4d70-297">Classe de l’élément</span><span class="sxs-lookup"><span data-stu-id="d4d70-297">item class</span></span> |
 | --- | --- | --- |
-| <span data-ttu-id="650db-295">Éléments de rendez-vous</span><span class="sxs-lookup"><span data-stu-id="650db-295">Appointment items</span></span> | <span data-ttu-id="650db-296">Ce sont les éléments de calendrier de la classe de l’élément `IPM.Appointment` ou `IPM.Appointment.Occurrence`.</span><span class="sxs-lookup"><span data-stu-id="650db-296">These are calendar items of the item class `IPM.Appointment` or `IPM.Appointment.Occurrence`.</span></span> | `IPM.Appointment`<br />`IPM.Appointment.Occurrence` |
-| <span data-ttu-id="650db-297">Éléments de message</span><span class="sxs-lookup"><span data-stu-id="650db-297">Message items</span></span> | <span data-ttu-id="650db-298">Ces éléments incluent les messages électroniques dont la classe de message par défaut est `IPM.Note`, ainsi que les demandes de réunion, les réponses et les annulations qui utilisent `IPM.Schedule.Meeting` comme classe de message de base.</span><span class="sxs-lookup"><span data-stu-id="650db-298">These include email messages that have the default message class `IPM.Note`, and meeting requests, responses, and cancellations, that use `IPM.Schedule.Meeting` as the base message class.</span></span> | `IPM.Note`<br />`IPM.Schedule.Meeting.Request`<br />`IPM.Schedule.Meeting.Neg`<br />`IPM.Schedule.Meeting.Pos`<br />`IPM.Schedule.Meeting.Tent`<br />`IPM.Schedule.Meeting.Canceled` |
+| <span data-ttu-id="d4d70-298">Éléments de rendez-vous</span><span class="sxs-lookup"><span data-stu-id="d4d70-298">Appointment items</span></span> | <span data-ttu-id="d4d70-299">Ce sont les éléments de calendrier de la classe de l’élément `IPM.Appointment` ou `IPM.Appointment.Occurrence`.</span><span class="sxs-lookup"><span data-stu-id="d4d70-299">These are calendar items of the item class `IPM.Appointment` or `IPM.Appointment.Occurrence`.</span></span> | `IPM.Appointment`<br />`IPM.Appointment.Occurrence` |
+| <span data-ttu-id="d4d70-300">Éléments de message</span><span class="sxs-lookup"><span data-stu-id="d4d70-300">Message items</span></span> | <span data-ttu-id="d4d70-301">Ces éléments incluent les messages électroniques dont la classe de message par défaut est `IPM.Note`, ainsi que les demandes de réunion, les réponses et les annulations qui utilisent `IPM.Schedule.Meeting` comme classe de message de base.</span><span class="sxs-lookup"><span data-stu-id="d4d70-301">These include email messages that have the default message class `IPM.Note`, and meeting requests, responses, and cancellations, that use `IPM.Schedule.Meeting` as the base message class.</span></span> | `IPM.Note`<br />`IPM.Schedule.Meeting.Request`<br />`IPM.Schedule.Meeting.Neg`<br />`IPM.Schedule.Meeting.Pos`<br />`IPM.Schedule.Meeting.Tent`<br />`IPM.Schedule.Meeting.Canceled` |
 
-<span data-ttu-id="650db-299">Vous pouvez créer des classes de message personnalisées qui étendent une classe de message par défaut, par exemple, une classe de message de rendez-vous personnalisée `IPM.Appointment.Contoso`.</span><span class="sxs-lookup"><span data-stu-id="650db-299">You can create custom message classes that extends a default message class, for example, a custom appointment message class `IPM.Appointment.Contoso`.</span></span>
+<span data-ttu-id="d4d70-302">Vous pouvez créer des classes de message personnalisées qui étendent une classe de message par défaut, par exemple, une classe de message de rendez-vous personnalisée `IPM.Appointment.Contoso`.</span><span class="sxs-lookup"><span data-stu-id="d4d70-302">You can create custom message classes that extends a default message class, for example, a custom appointment message class `IPM.Appointment.Contoso`.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="650db-300">Type :</span><span class="sxs-lookup"><span data-stu-id="650db-300">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="d4d70-303">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-303">Type</span></span>
 
-*   <span data-ttu-id="650db-301">Chaîne</span><span class="sxs-lookup"><span data-stu-id="650db-301">String</span></span>
+*   <span data-ttu-id="d4d70-304">Chaîne</span><span class="sxs-lookup"><span data-stu-id="d4d70-304">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="650db-302">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-302">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-305">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-305">Requirements</span></span>
 
-|<span data-ttu-id="650db-303">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-303">Requirement</span></span>| <span data-ttu-id="650db-304">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-304">Value</span></span>|
+|<span data-ttu-id="d4d70-306">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-306">Requirement</span></span>| <span data-ttu-id="d4d70-307">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-307">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-305">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-305">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-306">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-306">1.0</span></span>|
-|[<span data-ttu-id="650db-307">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-307">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-308">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-308">ReadItem</span></span>|
-|[<span data-ttu-id="650db-309">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-309">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-310">Lecture</span><span class="sxs-lookup"><span data-stu-id="650db-310">Read</span></span>|
+|[<span data-ttu-id="d4d70-308">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-308">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-309">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-309">1.0</span></span>|
+|[<span data-ttu-id="d4d70-310">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-310">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-311">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-311">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-312">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-312">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-313">Lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-313">Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="650db-311">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-311">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="d4d70-314">Exemple</span><span class="sxs-lookup"><span data-stu-id="d4d70-314">Example</span></span>
 
-```JavaScript
+```javascript
 var itemClass = Office.context.mailbox.item.itemClass;
+console.log("Item class: " + itemClass);
 ```
 
-#### <a name="nullable-itemid-string"></a><span data-ttu-id="650db-312">(nullable) itemId :String</span><span class="sxs-lookup"><span data-stu-id="650db-312">(nullable) itemId :String</span></span>
+#### <a name="nullable-itemid-string"></a><span data-ttu-id="d4d70-315">(nullable) itemId :String</span><span class="sxs-lookup"><span data-stu-id="d4d70-315">(nullable) itemId :String</span></span>
 
-<span data-ttu-id="650db-p118">Permet d’obtenir l’identificateur de l’élément des services web Exchange pour l’élément actif. Mode lecture uniquement.</span><span class="sxs-lookup"><span data-stu-id="650db-p118">Gets the Exchange Web Services item identifier for the current item. Read mode only.</span></span>
+<span data-ttu-id="d4d70-p118">Permet d’obtenir l’identificateur de l’élément des services web Exchange pour l’élément actif. Mode lecture uniquement.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p118">Gets the Exchange Web Services item identifier for the current item. Read mode only.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="650db-315">L’identificateur renvoyé par la propriété `itemId` est identique à celui de l’élément des services web Exchange.</span><span class="sxs-lookup"><span data-stu-id="650db-315">The identifier returned by the `itemId` property is the same as the Exchange Web Services item identifier.</span></span> <span data-ttu-id="650db-316">La propriété `itemId` n’est pas identique à l’ID d’entrée Outlook ni à l’ID utilisé par l’API REST Outlook.</span><span class="sxs-lookup"><span data-stu-id="650db-316">The `itemId` property is not identical to the Outlook Entry ID or the ID used by the Outlook REST API.</span></span> <span data-ttu-id="650db-317">Avant d’effectuer des appels d’API REST avec cette valeur, elle doit être convertie à l’aide de la commande `Office.context.mailbox.convertToRestId`, qui est disponible à partir de l’ensemble de conditions requises 1.3.</span><span class="sxs-lookup"><span data-stu-id="650db-317">Before making REST API calls using this value, it should be converted using `Office.context.mailbox.convertToRestId`, which is available starting in requirement set 1.3.</span></span> <span data-ttu-id="650db-318">Pour plus d’informations, voir [Utilisation des API REST Outlook à partir d’un complément Outlook](https://docs.microsoft.com/outlook/add-ins/use-rest-api#get-the-item-id).</span><span class="sxs-lookup"><span data-stu-id="650db-318">For more details, see [Use the Outlook REST APIs from an Outlook add-in](https://docs.microsoft.com/outlook/add-ins/use-rest-api#get-the-item-id).</span></span>
+> <span data-ttu-id="d4d70-318">L’identificateur renvoyé par la propriété `itemId` est identique à celui de l’élément des services web Exchange.</span><span class="sxs-lookup"><span data-stu-id="d4d70-318">The identifier returned by the `itemId` property is the same as the Exchange Web Services item identifier.</span></span> <span data-ttu-id="d4d70-319">La propriété `itemId` n’est pas identique à l’ID d’entrée Outlook ni à l’ID utilisé par l’API REST Outlook.</span><span class="sxs-lookup"><span data-stu-id="d4d70-319">The `itemId` property is not identical to the Outlook Entry ID or the ID used by the Outlook REST API.</span></span> <span data-ttu-id="d4d70-320">Avant d’effectuer des appels d’API REST avec cette valeur, elle doit être convertie à l’aide de la commande `Office.context.mailbox.convertToRestId`, qui est disponible à partir de l’ensemble de conditions requises 1.3.</span><span class="sxs-lookup"><span data-stu-id="d4d70-320">Before making REST API calls using this value, it should be converted using `Office.context.mailbox.convertToRestId`, which is available starting in requirement set 1.3.</span></span> <span data-ttu-id="d4d70-321">Pour plus d’informations, voir [Utilisation des API REST Outlook à partir d’un complément Outlook](https://docs.microsoft.com/outlook/add-ins/use-rest-api#get-the-item-id).</span><span class="sxs-lookup"><span data-stu-id="d4d70-321">For more details, see [Use the Outlook REST APIs from an Outlook add-in](https://docs.microsoft.com/outlook/add-ins/use-rest-api#get-the-item-id).</span></span>
 
-##### <a name="type"></a><span data-ttu-id="650db-319">Type :</span><span class="sxs-lookup"><span data-stu-id="650db-319">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="d4d70-322">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-322">Type</span></span>
 
-*   <span data-ttu-id="650db-320">Chaîne</span><span class="sxs-lookup"><span data-stu-id="650db-320">String</span></span>
+*   <span data-ttu-id="d4d70-323">Chaîne</span><span class="sxs-lookup"><span data-stu-id="d4d70-323">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="650db-321">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-321">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-324">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-324">Requirements</span></span>
 
-|<span data-ttu-id="650db-322">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-322">Requirement</span></span>| <span data-ttu-id="650db-323">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-323">Value</span></span>|
+|<span data-ttu-id="d4d70-325">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-325">Requirement</span></span>| <span data-ttu-id="d4d70-326">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-326">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-324">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-324">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-325">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-325">1.0</span></span>|
-|[<span data-ttu-id="650db-326">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-326">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-327">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-327">ReadItem</span></span>|
-|[<span data-ttu-id="650db-328">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-328">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-329">Lecture</span><span class="sxs-lookup"><span data-stu-id="650db-329">Read</span></span>|
+|[<span data-ttu-id="d4d70-327">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-327">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-328">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-328">1.0</span></span>|
+|[<span data-ttu-id="d4d70-329">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-329">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-330">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-330">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-331">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-331">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-332">Lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-332">Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="650db-330">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-330">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="d4d70-333">Exemple</span><span class="sxs-lookup"><span data-stu-id="d4d70-333">Example</span></span>
 
-<span data-ttu-id="650db-p120">Le code suivant vérifie la présence d’un identificateur d’élément. Si la propriété `itemId` renvoie `null` ou `undefined`, il enregistre l’élément sur le magasin et obtient l’identificateur de l’élément à partir du résultat asynchrone.</span><span class="sxs-lookup"><span data-stu-id="650db-p120">The following code checks for the presence of an item identifier. If the `itemId` property returns `null` or `undefined`, it saves the item to the store and gets the item identifier from the asynchronous result.</span></span>
+<span data-ttu-id="d4d70-p120">Le code suivant vérifie la présence d’un identificateur d’élément. Si la propriété `itemId` renvoie `null` ou `undefined`, il enregistre l’élément sur le magasin et obtient l’identificateur de l’élément à partir du résultat asynchrone.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p120">The following code checks for the presence of an item identifier. If the `itemId` property returns `null` or `undefined`, it saves the item to the store and gets the item identifier from the asynchronous result.</span></span>
 
-```JavaScript
+```javascript
 var itemId = Office.context.mailbox.item.itemId;
 if (itemId === null || itemId == undefined) {
-  Office.context.mailbox.item.saveAsync(function(result){
+  Office.context.mailbox.item.saveAsync(function(result) {
     itemId = result.value;
   });
 }
 ```
 
-####  <a name="itemtype-officemailboxenumsitemtypejavascriptapioutlook12officemailboxenumsitemtype"></a><span data-ttu-id="650db-333">itemType :[Office.MailboxEnums.ItemType](/javascript/api/outlook_1_2/office.mailboxenums.itemtype)</span><span class="sxs-lookup"><span data-stu-id="650db-333">itemType :[Office.MailboxEnums.ItemType](/javascript/api/outlook_1_2/office.mailboxenums.itemtype)</span></span>
+####  <a name="itemtype-officemailboxenumsitemtypejavascriptapioutlook12officemailboxenumsitemtype"></a><span data-ttu-id="d4d70-336">itemType :[Office.MailboxEnums.ItemType](/javascript/api/outlook_1_2/office.mailboxenums.itemtype)</span><span class="sxs-lookup"><span data-stu-id="d4d70-336">itemType :[Office.MailboxEnums.ItemType](/javascript/api/outlook_1_2/office.mailboxenums.itemtype)</span></span>
 
-<span data-ttu-id="650db-334">Obtient le type d’élément représenté par une instance.</span><span class="sxs-lookup"><span data-stu-id="650db-334">Gets the type of item that an instance represents.</span></span>
+<span data-ttu-id="d4d70-337">Obtient le type d’élément représenté par une instance.</span><span class="sxs-lookup"><span data-stu-id="d4d70-337">Gets the type of item that an instance represents.</span></span>
 
-<span data-ttu-id="650db-335">La propriété `itemType` renvoie une des valeurs d’énumération `ItemType` indiquant si l’instance d’objet `item` est un message ou un rendez-vous.</span><span class="sxs-lookup"><span data-stu-id="650db-335">The `itemType` property returns one of the `ItemType` enumeration values, indicating whether the `item` object instance is a message or an appointment.</span></span>
+<span data-ttu-id="d4d70-338">La propriété `itemType` renvoie une des valeurs d’énumération `ItemType` indiquant si l’instance d’objet `item` est un message ou un rendez-vous.</span><span class="sxs-lookup"><span data-stu-id="d4d70-338">The `itemType` property returns one of the `ItemType` enumeration values, indicating whether the `item` object instance is a message or an appointment.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="650db-336">Type :</span><span class="sxs-lookup"><span data-stu-id="650db-336">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="d4d70-339">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-339">Type</span></span>
 
-*   [<span data-ttu-id="650db-337">Office.MailboxEnums.ItemType</span><span class="sxs-lookup"><span data-stu-id="650db-337">Office.MailboxEnums.ItemType</span></span>](/javascript/api/outlook_1_2/office.mailboxenums.itemtype)
+*   [<span data-ttu-id="d4d70-340">Office.MailboxEnums.ItemType</span><span class="sxs-lookup"><span data-stu-id="d4d70-340">Office.MailboxEnums.ItemType</span></span>](/javascript/api/outlook_1_2/office.mailboxenums.itemtype)
 
-##### <a name="requirements"></a><span data-ttu-id="650db-338">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-338">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-341">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-341">Requirements</span></span>
 
-|<span data-ttu-id="650db-339">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-339">Requirement</span></span>| <span data-ttu-id="650db-340">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-340">Value</span></span>|
+|<span data-ttu-id="d4d70-342">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-342">Requirement</span></span>| <span data-ttu-id="d4d70-343">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-343">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-341">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-341">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-342">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-342">1.0</span></span>|
-|[<span data-ttu-id="650db-343">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-343">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-344">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-344">ReadItem</span></span>|
-|[<span data-ttu-id="650db-345">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-345">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-346">Composition ou lecture</span><span class="sxs-lookup"><span data-stu-id="650db-346">Compose or read</span></span>|
+|[<span data-ttu-id="d4d70-344">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-344">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-345">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-345">1.0</span></span>|
+|[<span data-ttu-id="d4d70-346">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-346">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-347">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-347">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-348">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-348">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-349">Composition ou lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-349">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="650db-347">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-347">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="d4d70-350">Exemple</span><span class="sxs-lookup"><span data-stu-id="d4d70-350">Example</span></span>
 
-```JavaScript
-if (Office.context.mailbox.item.itemType == Office.MailboxEnums.ItemType.Message)
-  // do something
-else
-  // do something else
+```javascript
+if (Office.context.mailbox.item.itemType === Office.MailboxEnums.ItemType.Message) {
+  // Do something.
+} else {
+  // Do something else.
+}
 ```
 
-####  <a name="location-stringlocationjavascriptapioutlook12officelocation"></a><span data-ttu-id="650db-348">location :String|[Location](/javascript/api/outlook_1_2/office.location)</span><span class="sxs-lookup"><span data-stu-id="650db-348">location :String|[Location](/javascript/api/outlook_1_2/office.location)</span></span>
+####  <a name="location-stringlocationjavascriptapioutlook12officelocation"></a><span data-ttu-id="d4d70-351">location :String|[Location](/javascript/api/outlook_1_2/office.location)</span><span class="sxs-lookup"><span data-stu-id="d4d70-351">location :String|[Location](/javascript/api/outlook_1_2/office.location)</span></span>
 
-<span data-ttu-id="650db-349">Obtient ou définit le lieu d’un rendez-vous.</span><span class="sxs-lookup"><span data-stu-id="650db-349">Gets or sets the location of an appointment.</span></span>
+<span data-ttu-id="d4d70-352">Obtient ou définit le lieu d’un rendez-vous.</span><span class="sxs-lookup"><span data-stu-id="d4d70-352">Gets or sets the location of an appointment.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="650db-350">Mode Lecture</span><span class="sxs-lookup"><span data-stu-id="650db-350">Read mode</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="d4d70-353">Mode Lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-353">Read mode</span></span>
 
-<span data-ttu-id="650db-351">La propriété `location` renvoie une chaîne contenant le lieu du rendez-vous.</span><span class="sxs-lookup"><span data-stu-id="650db-351">The `location` property returns a string that contains the location of the appointment.</span></span>
+<span data-ttu-id="d4d70-354">La propriété `location` renvoie une chaîne contenant le lieu du rendez-vous.</span><span class="sxs-lookup"><span data-stu-id="d4d70-354">The `location` property returns a string that contains the location of the appointment.</span></span>
 
-##### <a name="compose-mode"></a><span data-ttu-id="650db-352">Mode composition</span><span class="sxs-lookup"><span data-stu-id="650db-352">Compose mode</span></span>
+```javascript
+var location = Office.context.mailbox.item.location;
+console.log("location: " + location);
+```
 
-<span data-ttu-id="650db-353">La propriété `location` renvoie un objet `Location` qui fournit les méthodes utilisées pour obtenir et définir le lieu du rendez-vous.</span><span class="sxs-lookup"><span data-stu-id="650db-353">The `location` property returns a `Location` object that provides methods that are used to get and set the location of the appointment.</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="d4d70-355">Mode composition</span><span class="sxs-lookup"><span data-stu-id="d4d70-355">Compose mode</span></span>
 
-##### <a name="type"></a><span data-ttu-id="650db-354">Type :</span><span class="sxs-lookup"><span data-stu-id="650db-354">Type:</span></span>
+<span data-ttu-id="d4d70-356">La propriété `location` renvoie un objet `Location` qui fournit les méthodes utilisées pour obtenir et définir le lieu du rendez-vous.</span><span class="sxs-lookup"><span data-stu-id="d4d70-356">The `location` property returns a `Location` object that provides methods that are used to get and set the location of the appointment.</span></span>
 
-*   <span data-ttu-id="650db-355">String | [Location](/javascript/api/outlook_1_2/office.location)</span><span class="sxs-lookup"><span data-stu-id="650db-355">String | [Location](/javascript/api/outlook_1_2/office.location)</span></span>
-
-##### <a name="requirements"></a><span data-ttu-id="650db-356">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-356">Requirements</span></span>
-
-|<span data-ttu-id="650db-357">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-357">Requirement</span></span>| <span data-ttu-id="650db-358">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-358">Value</span></span>|
-|---|---|
-|[<span data-ttu-id="650db-359">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-359">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-360">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-360">1.0</span></span>|
-|[<span data-ttu-id="650db-361">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-361">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-362">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-362">ReadItem</span></span>|
-|[<span data-ttu-id="650db-363">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-363">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-364">Composition ou lecture</span><span class="sxs-lookup"><span data-stu-id="650db-364">Compose or read</span></span>|
-
-##### <a name="example"></a><span data-ttu-id="650db-365">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-365">Example</span></span>
-
-```JavaScript
+```javascript
 var userContext = { value : 1 };
 Office.context.mailbox.item.location.getAsync( { context: userContext}, callback);
 
@@ -452,57 +489,61 @@ function callback(asyncResult) {
 }
 ```
 
-#### <a name="normalizedsubject-string"></a><span data-ttu-id="650db-366">normalizedSubject :String</span><span class="sxs-lookup"><span data-stu-id="650db-366">normalizedSubject :String</span></span>
+##### <a name="type"></a><span data-ttu-id="d4d70-357">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-357">Type</span></span>
 
-<span data-ttu-id="650db-p121">Obtient l’objet d’un élément, sans les préfixes (y compris `RE:` et `FWD:`). Mode lecture uniquement.</span><span class="sxs-lookup"><span data-stu-id="650db-p121">Gets the subject of an item, with all prefixes removed (including `RE:` and `FWD:`). Read mode only.</span></span>
+*   <span data-ttu-id="d4d70-358">String | [Location](/javascript/api/outlook_1_2/office.location)</span><span class="sxs-lookup"><span data-stu-id="d4d70-358">String | [Location](/javascript/api/outlook_1_2/office.location)</span></span>
 
-<span data-ttu-id="650db-p122">La propriété normalizedSubject obtient l’objet de l’élément, sans les préfixes standard (par exemple, `RE:` et `FW:`) qui sont ajoutés par les programmes de messagerie électronique. Pour obtenir l’objet de l’élément avec les préfixes intacts, utilisez la propriété [`subject`](#subject-stringsubjectjavascriptapioutlook12officesubject).</span><span class="sxs-lookup"><span data-stu-id="650db-p122">The normalizedSubject property gets the subject of the item, with any standard prefixes (such as `RE:` and `FW:`) that are added by email programs. To get the subject of the item with the prefixes intact, use the [`subject`](#subject-stringsubjectjavascriptapioutlook12officesubject) property.</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-359">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-359">Requirements</span></span>
 
-##### <a name="type"></a><span data-ttu-id="650db-371">Type :</span><span class="sxs-lookup"><span data-stu-id="650db-371">Type:</span></span>
-
-*   <span data-ttu-id="650db-372">Chaîne</span><span class="sxs-lookup"><span data-stu-id="650db-372">String</span></span>
-
-##### <a name="requirements"></a><span data-ttu-id="650db-373">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-373">Requirements</span></span>
-
-|<span data-ttu-id="650db-374">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-374">Requirement</span></span>| <span data-ttu-id="650db-375">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-375">Value</span></span>|
+|<span data-ttu-id="d4d70-360">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-360">Requirement</span></span>| <span data-ttu-id="d4d70-361">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-361">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-376">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-376">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-377">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-377">1.0</span></span>|
-|[<span data-ttu-id="650db-378">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-378">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-379">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-379">ReadItem</span></span>|
-|[<span data-ttu-id="650db-380">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-380">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-381">Lecture</span><span class="sxs-lookup"><span data-stu-id="650db-381">Read</span></span>|
+|[<span data-ttu-id="d4d70-362">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-362">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-363">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-363">1.0</span></span>|
+|[<span data-ttu-id="d4d70-364">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-364">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-365">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-365">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-366">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-366">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-367">Composition ou lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-367">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="650db-382">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-382">Example</span></span>
+#### <a name="normalizedsubject-string"></a><span data-ttu-id="d4d70-368">normalizedSubject :String</span><span class="sxs-lookup"><span data-stu-id="d4d70-368">normalizedSubject :String</span></span>
 
-```JavaScript
+<span data-ttu-id="d4d70-p121">Obtient l’objet d’un élément, sans les préfixes (y compris `RE:` et `FWD:`). Mode lecture uniquement.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p121">Gets the subject of an item, with all prefixes removed (including `RE:` and `FWD:`). Read mode only.</span></span>
+
+<span data-ttu-id="d4d70-p122">La propriété normalizedSubject obtient l’objet de l’élément, sans les préfixes standard (par exemple, `RE:` et `FW:`) qui sont ajoutés par les programmes de messagerie électronique. Pour obtenir l’objet de l’élément avec les préfixes intacts, utilisez la propriété [`subject`](#subject-stringsubjectjavascriptapioutlook12officesubject).</span><span class="sxs-lookup"><span data-stu-id="d4d70-p122">The normalizedSubject property gets the subject of the item, with any standard prefixes (such as `RE:` and `FW:`) that are added by email programs. To get the subject of the item with the prefixes intact, use the [`subject`](#subject-stringsubjectjavascriptapioutlook12officesubject) property.</span></span>
+
+##### <a name="type"></a><span data-ttu-id="d4d70-373">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-373">Type</span></span>
+
+*   <span data-ttu-id="d4d70-374">Chaîne</span><span class="sxs-lookup"><span data-stu-id="d4d70-374">String</span></span>
+
+##### <a name="requirements"></a><span data-ttu-id="d4d70-375">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-375">Requirements</span></span>
+
+|<span data-ttu-id="d4d70-376">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-376">Requirement</span></span>| <span data-ttu-id="d4d70-377">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-377">Value</span></span>|
+|---|---|
+|[<span data-ttu-id="d4d70-378">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-378">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-379">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-379">1.0</span></span>|
+|[<span data-ttu-id="d4d70-380">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-380">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-381">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-381">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-382">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-382">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-383">Lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-383">Read</span></span>|
+
+##### <a name="example"></a><span data-ttu-id="d4d70-384">Exemple</span><span class="sxs-lookup"><span data-stu-id="d4d70-384">Example</span></span>
+
+```javascript
 var normalizedSubject = Office.context.mailbox.item.normalizedSubject;
+console.log("Normalized subject: " + normalizedSubject);
 ```
 
-####  <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlook12officeemailaddressdetailsrecipientsjavascriptapioutlook12officerecipients"></a><span data-ttu-id="650db-383">optionalAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_2/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="650db-383">optionalAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_2/office.recipients)</span></span>
+####  <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlook12officeemailaddressdetailsrecipientsjavascriptapioutlook12officerecipients"></a><span data-ttu-id="d4d70-385">optionalAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_2/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="d4d70-385">optionalAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_2/office.recipients)</span></span>
 
-<span data-ttu-id="650db-384">Permet d’accéder aux participants facultatifs d’un événement.</span><span class="sxs-lookup"><span data-stu-id="650db-384">Provides access to the optional attendees of an event.</span></span> <span data-ttu-id="650db-385">Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.</span><span class="sxs-lookup"><span data-stu-id="650db-385">The type of object and level of access depends on the mode of the current item.</span></span>
+<span data-ttu-id="d4d70-386">Permet d’accéder aux participants facultatifs d’un événement.</span><span class="sxs-lookup"><span data-stu-id="d4d70-386">Provides access to the optional attendees of an event.</span></span> <span data-ttu-id="d4d70-387">Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.</span><span class="sxs-lookup"><span data-stu-id="d4d70-387">The type of object and level of access depends on the mode of the current item.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="650db-386">Mode Lecture</span><span class="sxs-lookup"><span data-stu-id="650db-386">Read mode</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="d4d70-388">Mode Lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-388">Read mode</span></span>
 
-<span data-ttu-id="650db-387">La propriété `optionalAttendees` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque participant facultatif à la réunion.</span><span class="sxs-lookup"><span data-stu-id="650db-387">The `optionalAttendees` property returns an array that contains an `EmailAddressDetails` object for each optional attendee to the meeting.</span></span>
+<span data-ttu-id="d4d70-389">La propriété `optionalAttendees` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque participant facultatif à la réunion.</span><span class="sxs-lookup"><span data-stu-id="d4d70-389">The `optionalAttendees` property returns an array that contains an `EmailAddressDetails` object for each optional attendee to the meeting.</span></span>
 
-##### <a name="compose-mode"></a><span data-ttu-id="650db-388">Mode composition</span><span class="sxs-lookup"><span data-stu-id="650db-388">Compose mode</span></span>
+```javascript
+var optionalAttendees = Office.context.mailbox.item.optionalAttendees;
+console.log("Optional attendees: " + JSON.stringify(optionalAttendees));
+```
 
-<span data-ttu-id="650db-389">La propriété `optionalAttendees` renvoie un objet `Recipients` qui fournit des méthodes permettant d’obtenir ou de mettre à jour les participants facultatifs d’une réunion.</span><span class="sxs-lookup"><span data-stu-id="650db-389">The `optionalAttendees` property returns a `Recipients` object that provides methods to get or update the optional attendees for a meeting.</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="d4d70-390">Mode composition</span><span class="sxs-lookup"><span data-stu-id="d4d70-390">Compose mode</span></span>
 
-##### <a name="type"></a><span data-ttu-id="650db-390">Type :</span><span class="sxs-lookup"><span data-stu-id="650db-390">Type:</span></span>
+<span data-ttu-id="d4d70-391">La propriété `optionalAttendees` renvoie un objet `Recipients` qui fournit des méthodes permettant d’obtenir ou de mettre à jour les participants facultatifs d’une réunion.</span><span class="sxs-lookup"><span data-stu-id="d4d70-391">The `optionalAttendees` property returns a `Recipients` object that provides methods to get or update the optional attendees for a meeting.</span></span>
 
-*   <span data-ttu-id="650db-391">Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_2/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="650db-391">Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_2/office.recipients)</span></span>
-
-##### <a name="requirements"></a><span data-ttu-id="650db-392">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-392">Requirements</span></span>
-
-|<span data-ttu-id="650db-393">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-393">Requirement</span></span>| <span data-ttu-id="650db-394">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-394">Value</span></span>|
-|---|---|
-|[<span data-ttu-id="650db-395">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-395">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-396">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-396">1.0</span></span>|
-|[<span data-ttu-id="650db-397">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-397">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-398">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-398">ReadItem</span></span>|
-|[<span data-ttu-id="650db-399">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-399">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-400">Composition ou lecture</span><span class="sxs-lookup"><span data-stu-id="650db-400">Compose or read</span></span>|
-
-##### <a name="example"></a><span data-ttu-id="650db-401">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-401">Example</span></span>
-
-```JavaScript
+```javascript
 Office.context.mailbox.item.optionalAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
 Office.context.mailbox.item.optionalAttendees.addAsync( ['jason@contoso.com'] );
 Office.context.mailbox.item.optionalAttendees.getAsync(callback);
@@ -512,207 +553,218 @@ function callback(asyncResult) {
 }
 ```
 
-#### <a name="organizer-emailaddressdetailsjavascriptapioutlook12officeemailaddressdetails"></a><span data-ttu-id="650db-402">organizer :[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)</span><span class="sxs-lookup"><span data-stu-id="650db-402">organizer :[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)</span></span>
+##### <a name="type"></a><span data-ttu-id="d4d70-392">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-392">Type</span></span>
 
-<span data-ttu-id="650db-p124">Obtient l’adresse de messagerie de l’organisateur de la réunion spécifiée. Mode lecture uniquement.</span><span class="sxs-lookup"><span data-stu-id="650db-p124">Gets the email address of the meeting organizer for a specified meeting. Read mode only.</span></span>
+*   <span data-ttu-id="d4d70-393">Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_2/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="d4d70-393">Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_2/office.recipients)</span></span>
 
-##### <a name="type"></a><span data-ttu-id="650db-405">Type :</span><span class="sxs-lookup"><span data-stu-id="650db-405">Type:</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-394">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-394">Requirements</span></span>
 
-*   [<span data-ttu-id="650db-406">EmailAddressDetails</span><span class="sxs-lookup"><span data-stu-id="650db-406">EmailAddressDetails</span></span>](/javascript/api/outlook_1_2/office.emailaddressdetails)
-
-##### <a name="requirements"></a><span data-ttu-id="650db-407">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-407">Requirements</span></span>
-
-|<span data-ttu-id="650db-408">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-408">Requirement</span></span>| <span data-ttu-id="650db-409">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-409">Value</span></span>|
+|<span data-ttu-id="d4d70-395">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-395">Requirement</span></span>| <span data-ttu-id="d4d70-396">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-396">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-410">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-410">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-411">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-411">1.0</span></span>|
-|[<span data-ttu-id="650db-412">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-412">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-413">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-413">ReadItem</span></span>|
-|[<span data-ttu-id="650db-414">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-414">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-415">Lecture</span><span class="sxs-lookup"><span data-stu-id="650db-415">Read</span></span>|
+|[<span data-ttu-id="d4d70-397">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-397">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-398">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-398">1.0</span></span>|
+|[<span data-ttu-id="d4d70-399">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-399">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-400">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-400">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-401">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-401">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-402">Composition ou lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-402">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="650db-416">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-416">Example</span></span>
+#### <a name="organizer-emailaddressdetailsjavascriptapioutlook12officeemailaddressdetails"></a><span data-ttu-id="d4d70-403">organizer :[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)</span><span class="sxs-lookup"><span data-stu-id="d4d70-403">organizer :[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)</span></span>
 
-```JavaScript
+<span data-ttu-id="d4d70-p124">Obtient l’adresse de messagerie de l’organisateur de la réunion spécifiée. Mode lecture uniquement.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p124">Gets the email address of the meeting organizer for a specified meeting. Read mode only.</span></span>
+
+##### <a name="type"></a><span data-ttu-id="d4d70-406">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-406">Type</span></span>
+
+*   [<span data-ttu-id="d4d70-407">EmailAddressDetails</span><span class="sxs-lookup"><span data-stu-id="d4d70-407">EmailAddressDetails</span></span>](/javascript/api/outlook_1_2/office.emailaddressdetails)
+
+##### <a name="requirements"></a><span data-ttu-id="d4d70-408">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-408">Requirements</span></span>
+
+|<span data-ttu-id="d4d70-409">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-409">Requirement</span></span>| <span data-ttu-id="d4d70-410">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-410">Value</span></span>|
+|---|---|
+|[<span data-ttu-id="d4d70-411">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-411">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-412">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-412">1.0</span></span>|
+|[<span data-ttu-id="d4d70-413">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-413">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-414">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-414">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-415">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-415">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-416">Lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-416">Read</span></span>|
+
+##### <a name="example"></a><span data-ttu-id="d4d70-417">Exemple</span><span class="sxs-lookup"><span data-stu-id="d4d70-417">Example</span></span>
+
+```javascript
 var organizerName = Office.context.mailbox.item.organizer.displayName;
 var organizerAddress = Office.context.mailbox.item.organizer.emailAddress;
+console.log("Organizer: " + organizerName + " (" + organizerAddress + ")");
 ```
 
-####  <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlook12officeemailaddressdetailsrecipientsjavascriptapioutlook12officerecipients"></a><span data-ttu-id="650db-417">requiredAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_2/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="650db-417">requiredAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_2/office.recipients)</span></span>
+####  <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlook12officeemailaddressdetailsrecipientsjavascriptapioutlook12officerecipients"></a><span data-ttu-id="d4d70-418">requiredAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_2/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="d4d70-418">requiredAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_2/office.recipients)</span></span>
 
-<span data-ttu-id="650db-418">Permet d’accéder aux participants requis à un événement.</span><span class="sxs-lookup"><span data-stu-id="650db-418">Provides access to the required attendees of an event.</span></span> <span data-ttu-id="650db-419">Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.</span><span class="sxs-lookup"><span data-stu-id="650db-419">The type of object and level of access depends on the mode of the current item.</span></span>
+<span data-ttu-id="d4d70-419">Permet d’accéder aux participants requis à un événement.</span><span class="sxs-lookup"><span data-stu-id="d4d70-419">Provides access to the required attendees of an event.</span></span> <span data-ttu-id="d4d70-420">Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.</span><span class="sxs-lookup"><span data-stu-id="d4d70-420">The type of object and level of access depends on the mode of the current item.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="650db-420">Mode Lecture</span><span class="sxs-lookup"><span data-stu-id="650db-420">Read mode</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="d4d70-421">Mode Lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-421">Read mode</span></span>
 
-<span data-ttu-id="650db-421">La propriété `requiredAttendees` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque participant requis à la réunion.</span><span class="sxs-lookup"><span data-stu-id="650db-421">The `requiredAttendees` property returns an array that contains an `EmailAddressDetails` object for each required attendee to the meeting.</span></span>
+<span data-ttu-id="d4d70-422">La propriété `requiredAttendees` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque participant requis à la réunion.</span><span class="sxs-lookup"><span data-stu-id="d4d70-422">The `requiredAttendees` property returns an array that contains an `EmailAddressDetails` object for each required attendee to the meeting.</span></span>
 
-##### <a name="compose-mode"></a><span data-ttu-id="650db-422">Mode composition</span><span class="sxs-lookup"><span data-stu-id="650db-422">Compose mode</span></span>
+```javascript
+var requiredAttendees = Office.context.mailbox.item.requiredAttendees;
+console.log("Required attendees: " + JSON.stringify(requiredAttendees));
+```
 
-<span data-ttu-id="650db-423">La propriété `requiredAttendees` renvoie un objet `Recipients` qui fournit des méthodes permettant d’obtenir ou de mettre à jour les participants requis à une réunion.</span><span class="sxs-lookup"><span data-stu-id="650db-423">The `requiredAttendees` property returns a `Recipients` object that provides methods to get or update the required attendees for a meeting.</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="d4d70-423">Mode composition</span><span class="sxs-lookup"><span data-stu-id="d4d70-423">Compose mode</span></span>
 
-##### <a name="type"></a><span data-ttu-id="650db-424">Type :</span><span class="sxs-lookup"><span data-stu-id="650db-424">Type:</span></span>
+<span data-ttu-id="d4d70-424">La propriété `requiredAttendees` renvoie un objet `Recipients` qui fournit des méthodes permettant d’obtenir ou de mettre à jour les participants requis à une réunion.</span><span class="sxs-lookup"><span data-stu-id="d4d70-424">The `requiredAttendees` property returns a `Recipients` object that provides methods to get or update the required attendees for a meeting.</span></span>
 
-*   <span data-ttu-id="650db-425">Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_2/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="650db-425">Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_2/office.recipients)</span></span>
-
-##### <a name="requirements"></a><span data-ttu-id="650db-426">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-426">Requirements</span></span>
-
-|<span data-ttu-id="650db-427">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-427">Requirement</span></span>| <span data-ttu-id="650db-428">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-428">Value</span></span>|
-|---|---|
-|[<span data-ttu-id="650db-429">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-429">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-430">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-430">1.0</span></span>|
-|[<span data-ttu-id="650db-431">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-431">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-432">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-432">ReadItem</span></span>|
-|[<span data-ttu-id="650db-433">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-433">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-434">Composition ou lecture</span><span class="sxs-lookup"><span data-stu-id="650db-434">Compose or read</span></span>|
-
-##### <a name="example"></a><span data-ttu-id="650db-435">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-435">Example</span></span>
-
-```JavaScript
+```javascript
 Office.context.mailbox.item.requiredAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
 Office.context.mailbox.item.requiredAttendees.addAsync( ['jason@contoso.com'] );
 Office.context.mailbox.item.requiredAttendees.getAsync(callback);
 
 function callback(asyncResult) {
   var arrayOfRequiredAttendeesRecipients = asyncResult.value;
+  console.log(JSON.stringify(arrayOfRequiredAttendeesRecipients));
 }
 ```
 
-#### <a name="sender-emailaddressdetailsjavascriptapioutlook12officeemailaddressdetails"></a><span data-ttu-id="650db-436">sender :[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)</span><span class="sxs-lookup"><span data-stu-id="650db-436">sender :[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)</span></span>
+##### <a name="type"></a><span data-ttu-id="d4d70-425">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-425">Type</span></span>
 
-<span data-ttu-id="650db-p126">Obtient l’adresse de messagerie de l’expéditeur d’un message électronique. Mode lecture uniquement.</span><span class="sxs-lookup"><span data-stu-id="650db-p126">Gets the email address of the sender of an email message. Read mode only.</span></span>
+*   <span data-ttu-id="d4d70-426">Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_2/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="d4d70-426">Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_2/office.recipients)</span></span>
 
-<span data-ttu-id="650db-p127">Les propriétés [`from`](#from-emailaddressdetailsjavascriptapioutlook12officeemailaddressdetails) et `sender` représentent la même personne, sauf si le message est envoyé par un délégué. Dans ce cas, la propriété `from` représente le délégant et la propriété sender représente le délégué.</span><span class="sxs-lookup"><span data-stu-id="650db-p127">The [`from`](#from-emailaddressdetailsjavascriptapioutlook12officeemailaddressdetails) and `sender` properties represent the same person unless the message is sent by a delegate. In that case, the `from` property represents the delegator, and the sender property represents the delegate.</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-427">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-427">Requirements</span></span>
+
+|<span data-ttu-id="d4d70-428">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-428">Requirement</span></span>| <span data-ttu-id="d4d70-429">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-429">Value</span></span>|
+|---|---|
+|[<span data-ttu-id="d4d70-430">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-430">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-431">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-431">1.0</span></span>|
+|[<span data-ttu-id="d4d70-432">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-432">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-433">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-433">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-434">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-434">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-435">Composition ou lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-435">Compose or Read</span></span>|
+
+#### <a name="sender-emailaddressdetailsjavascriptapioutlook12officeemailaddressdetails"></a><span data-ttu-id="d4d70-436">sender :[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)</span><span class="sxs-lookup"><span data-stu-id="d4d70-436">sender :[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)</span></span>
+
+<span data-ttu-id="d4d70-p126">Obtient l’adresse de messagerie de l’expéditeur d’un message électronique. Mode lecture uniquement.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p126">Gets the email address of the sender of an email message. Read mode only.</span></span>
+
+<span data-ttu-id="d4d70-p127">Les propriétés [`from`](#from-emailaddressdetailsjavascriptapioutlook12officeemailaddressdetails) et `sender` représentent la même personne, sauf si le message est envoyé par un délégué. Dans ce cas, la propriété `from` représente le délégant et la propriété sender représente le délégué.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p127">The [`from`](#from-emailaddressdetailsjavascriptapioutlook12officeemailaddressdetails) and `sender` properties represent the same person unless the message is sent by a delegate. In that case, the `from` property represents the delegator, and the sender property represents the delegate.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="650db-441">La propriété `recipientType` de l’objet `EmailAddressDetails` dans la propriété `sender` est `undefined`.</span><span class="sxs-lookup"><span data-stu-id="650db-441">The `recipientType` property of the `EmailAddressDetails` object in the `sender` property is `undefined`.</span></span>
+> <span data-ttu-id="d4d70-441">La propriété `recipientType` de l’objet `EmailAddressDetails` dans la propriété `sender` est `undefined`.</span><span class="sxs-lookup"><span data-stu-id="d4d70-441">The `recipientType` property of the `EmailAddressDetails` object in the `sender` property is `undefined`.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="650db-442">Type :</span><span class="sxs-lookup"><span data-stu-id="650db-442">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="d4d70-442">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-442">Type</span></span>
 
-*   [<span data-ttu-id="650db-443">EmailAddressDetails</span><span class="sxs-lookup"><span data-stu-id="650db-443">EmailAddressDetails</span></span>](/javascript/api/outlook_1_2/office.emailaddressdetails)
+*   [<span data-ttu-id="d4d70-443">EmailAddressDetails</span><span class="sxs-lookup"><span data-stu-id="d4d70-443">EmailAddressDetails</span></span>](/javascript/api/outlook_1_2/office.emailaddressdetails)
 
-##### <a name="requirements"></a><span data-ttu-id="650db-444">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-444">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-444">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-444">Requirements</span></span>
 
-|<span data-ttu-id="650db-445">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-445">Requirement</span></span>| <span data-ttu-id="650db-446">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-446">Value</span></span>|
+|<span data-ttu-id="d4d70-445">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-445">Requirement</span></span>| <span data-ttu-id="d4d70-446">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-446">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-447">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-447">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-448">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-448">1.0</span></span>|
-|[<span data-ttu-id="650db-449">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-449">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-450">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-450">ReadItem</span></span>|
-|[<span data-ttu-id="650db-451">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-451">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-452">Lecture</span><span class="sxs-lookup"><span data-stu-id="650db-452">Read</span></span>|
+|[<span data-ttu-id="d4d70-447">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-447">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-448">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-448">1.0</span></span>|
+|[<span data-ttu-id="d4d70-449">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-449">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-450">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-450">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-451">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-451">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-452">Lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-452">Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="650db-453">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-453">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="d4d70-453">Exemple</span><span class="sxs-lookup"><span data-stu-id="d4d70-453">Example</span></span>
 
-```JavaScript
+```javascript
 var senderName = Office.context.mailbox.item.sender.displayName;
 var senderAddress = Office.context.mailbox.item.sender.emailAddress;
+console.log("Sender: " + senderName + " (" + senderAddress + ")");
 ```
 
-####  <a name="start-datetimejavascriptapioutlook12officetime"></a><span data-ttu-id="650db-454">start :Date|[Time](/javascript/api/outlook_1_2/office.time)</span><span class="sxs-lookup"><span data-stu-id="650db-454">start :Date|[Time](/javascript/api/outlook_1_2/office.time)</span></span>
+####  <a name="start-datetimejavascriptapioutlook12officetime"></a><span data-ttu-id="d4d70-454">start :Date|[Time](/javascript/api/outlook_1_2/office.time)</span><span class="sxs-lookup"><span data-stu-id="d4d70-454">start :Date|[Time](/javascript/api/outlook_1_2/office.time)</span></span>
 
-<span data-ttu-id="650db-455">Obtient ou définit la date et l’heure de début du rendez-vous.</span><span class="sxs-lookup"><span data-stu-id="650db-455">Gets or sets the date and time that the appointment is to begin.</span></span>
+<span data-ttu-id="d4d70-455">Obtient ou définit la date et l’heure de début du rendez-vous.</span><span class="sxs-lookup"><span data-stu-id="d4d70-455">Gets or sets the date and time that the appointment is to begin.</span></span>
 
-<span data-ttu-id="650db-p128">La propriété `start` est exprimée en date et heure UTC (temps universel coordonné). Vous pouvez utiliser la méthode [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook12officelocalclienttime) pour convertir la valeur à la date et à l’heure du client.</span><span class="sxs-lookup"><span data-stu-id="650db-p128">The `start` property is expressed as a Coordinated Universal Time (UTC) date and time value. You can use the [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook12officelocalclienttime) method to convert the value to the client’s local date and time.</span></span>
+<span data-ttu-id="d4d70-p128">La propriété `start` est exprimée en date et heure UTC (temps universel coordonné). Vous pouvez utiliser la méthode [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook12officelocalclienttime) pour convertir la valeur à la date et à l’heure du client.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p128">The `start` property is expressed as a Coordinated Universal Time (UTC) date and time value. You can use the [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook12officelocalclienttime) method to convert the value to the client’s local date and time.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="650db-458">Mode Lecture</span><span class="sxs-lookup"><span data-stu-id="650db-458">Read mode</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="d4d70-458">Mode Lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-458">Read mode</span></span>
 
-<span data-ttu-id="650db-459">La propriété `start` renvoie un objet `Date`.</span><span class="sxs-lookup"><span data-stu-id="650db-459">The `start` property returns a `Date` object.</span></span>
+<span data-ttu-id="d4d70-459">La propriété `start` renvoie un objet `Date`.</span><span class="sxs-lookup"><span data-stu-id="d4d70-459">The `start` property returns a `Date` object.</span></span>
 
-##### <a name="compose-mode"></a><span data-ttu-id="650db-460">Mode composition</span><span class="sxs-lookup"><span data-stu-id="650db-460">Compose mode</span></span>
+```javascript
+var start = Office.context.mailbox.item.start;
+console.log("Appointment start: " + JSON.stringify(start));
+```
 
-<span data-ttu-id="650db-461">La propriété `start` renvoie un objet `Time`.</span><span class="sxs-lookup"><span data-stu-id="650db-461">The `start` property returns a `Time` object.</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="d4d70-460">Mode composition</span><span class="sxs-lookup"><span data-stu-id="d4d70-460">Compose mode</span></span>
 
-<span data-ttu-id="650db-462">Quand vous utilisez la méthode [`Time.setAsync`](/javascript/api/outlook_1_2/office.time#setasync-datetime--options--callback-) pour définir l’heure de début, nous vous recommandons d’utiliser la méthode [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) pour convertir l’heure locale du client au format UTC pour le serveur.</span><span class="sxs-lookup"><span data-stu-id="650db-462">When you use the [`Time.setAsync`](/javascript/api/outlook_1_2/office.time#setasync-datetime--options--callback-) method to set the start time, you should use the [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) method to convert the local time on the client to UTC for the server.</span></span>
+<span data-ttu-id="d4d70-461">La propriété `start` renvoie un objet `Time`.</span><span class="sxs-lookup"><span data-stu-id="d4d70-461">The `start` property returns a `Time` object.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="650db-463">Type :</span><span class="sxs-lookup"><span data-stu-id="650db-463">Type:</span></span>
+<span data-ttu-id="d4d70-462">Quand vous utilisez la méthode [`Time.setAsync`](/javascript/api/outlook_1_2/office.time#setasync-datetime--options--callback-) pour définir l’heure de début, nous vous recommandons d’utiliser la méthode [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) pour convertir l’heure locale du client au format UTC pour le serveur.</span><span class="sxs-lookup"><span data-stu-id="d4d70-462">When you use the [`Time.setAsync`](/javascript/api/outlook_1_2/office.time#setasync-datetime--options--callback-) method to set the start time, you should use the [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) method to convert the local time on the client to UTC for the server.</span></span>
+<span data-ttu-id="d4d70-463">L’exemple suivant définit l’heure de début d’un rendez-vous en mode composition à l’aide de la méthode [`setAsync`](/javascript/api/outlook_1_2/office.time#setasync-datetime--options--callback-) de l’objet `Time`.</span><span class="sxs-lookup"><span data-stu-id="d4d70-463">The following example sets the start time of an appointment in compose mode by using the [`setAsync`](/javascript/api/outlook_1_2/office.time#setasync-datetime--options--callback-) method of the `Time` object.</span></span>
 
-*   <span data-ttu-id="650db-464">Date | [Time](/javascript/api/outlook_1_2/office.time)</span><span class="sxs-lookup"><span data-stu-id="650db-464">Date | [Time](/javascript/api/outlook_1_2/office.time)</span></span>
-
-##### <a name="requirements"></a><span data-ttu-id="650db-465">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-465">Requirements</span></span>
-
-|<span data-ttu-id="650db-466">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-466">Requirement</span></span>| <span data-ttu-id="650db-467">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-467">Value</span></span>|
-|---|---|
-|[<span data-ttu-id="650db-468">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-468">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-469">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-469">1.0</span></span>|
-|[<span data-ttu-id="650db-470">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-470">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-471">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-471">ReadItem</span></span>|
-|[<span data-ttu-id="650db-472">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-472">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-473">Composition ou lecture</span><span class="sxs-lookup"><span data-stu-id="650db-473">Compose or read</span></span>|
-
-##### <a name="example"></a><span data-ttu-id="650db-474">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-474">Example</span></span>
-
-<span data-ttu-id="650db-475">L’exemple suivant définit l’heure de début d’un rendez-vous en mode composition à l’aide de la méthode [`setAsync`](/javascript/api/outlook_1_2/office.time#setasync-datetime--options--callback-) de l’objet `Time`.</span><span class="sxs-lookup"><span data-stu-id="650db-475">The following example sets the start time of an appointment in compose mode by using the [`setAsync`](/javascript/api/outlook_1_2/office.time#setasync-datetime--options--callback-) method of the `Time` object.</span></span>
-
-```JavaScript
+```javascript
 var startTime = new Date("3/14/2015");
 var options = {
-  // Pass information that can be used
-  // in the callback
-  asyncContext: {verb:"Set"}
-}
+  // Pass information that can be used in the callback.
+  asyncContext: {verb: "Set"}
+};
 Office.context.mailbox.item.start.setAsync(startTime, options, function(result) {
   if (result.error) {
     console.debug(result.error);
   } else {
-    // Access the asyncContext that was passed to the setAsync function
+    // Access the asyncContext that was passed to the setAsync function.
     console.debug("Start Time " + result.asyncContext.verb);
   }
 });
 ```
 
-####  <a name="subject-stringsubjectjavascriptapioutlook12officesubject"></a><span data-ttu-id="650db-476">subject :String|[Subject](/javascript/api/outlook_1_2/office.subject)</span><span class="sxs-lookup"><span data-stu-id="650db-476">subject :String|[Subject](/javascript/api/outlook_1_2/office.subject)</span></span>
+##### <a name="type"></a><span data-ttu-id="d4d70-464">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-464">Type</span></span>
 
-<span data-ttu-id="650db-477">Obtient ou définit la description qui apparaît dans le champ d’objet d’un élément.</span><span class="sxs-lookup"><span data-stu-id="650db-477">Gets or sets the description that appears in the subject field of an item.</span></span>
+*   <span data-ttu-id="d4d70-465">Date | [Time](/javascript/api/outlook_1_2/office.time)</span><span class="sxs-lookup"><span data-stu-id="d4d70-465">Date | [Time](/javascript/api/outlook_1_2/office.time)</span></span>
 
-<span data-ttu-id="650db-478">La propriété `subject` obtient ou définit l’intégralité de l’objet de l’élément, tel qu’il est envoyé par le serveur de messagerie.</span><span class="sxs-lookup"><span data-stu-id="650db-478">The `subject` property gets or sets the entire subject of the item, as sent by the email server.</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-466">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-466">Requirements</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="650db-479">Mode Lecture</span><span class="sxs-lookup"><span data-stu-id="650db-479">Read mode</span></span>
+|<span data-ttu-id="d4d70-467">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-467">Requirement</span></span>| <span data-ttu-id="d4d70-468">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-468">Value</span></span>|
+|---|---|
+|[<span data-ttu-id="d4d70-469">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-469">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-470">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-470">1.0</span></span>|
+|[<span data-ttu-id="d4d70-471">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-471">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-472">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-472">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-473">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-473">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-474">Composition ou lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-474">Compose or Read</span></span>|
 
-<span data-ttu-id="650db-p129">La propriété `subject` renvoie une chaîne. Utilisez la propriété [`normalizedSubject`](#normalizedsubject-string) pour obtenir l’objet sans les préfixes tels que `RE:` et `FW:`.</span><span class="sxs-lookup"><span data-stu-id="650db-p129">The `subject` property returns a string. Use the [`normalizedSubject`](#normalizedsubject-string) property to get the subject minus any leading prefixes such as `RE:` and `FW:`.</span></span>
+####  <a name="subject-stringsubjectjavascriptapioutlook12officesubject"></a><span data-ttu-id="d4d70-475">subject :String|[Subject](/javascript/api/outlook_1_2/office.subject)</span><span class="sxs-lookup"><span data-stu-id="d4d70-475">subject :String|[Subject](/javascript/api/outlook_1_2/office.subject)</span></span>
 
-```js
+<span data-ttu-id="d4d70-476">Obtient ou définit la description qui apparaît dans le champ d’objet d’un élément.</span><span class="sxs-lookup"><span data-stu-id="d4d70-476">Gets or sets the description that appears in the subject field of an item.</span></span>
+
+<span data-ttu-id="d4d70-477">La propriété `subject` obtient ou définit l’intégralité de l’objet de l’élément, tel qu’il est envoyé par le serveur de messagerie.</span><span class="sxs-lookup"><span data-stu-id="d4d70-477">The `subject` property gets or sets the entire subject of the item, as sent by the email server.</span></span>
+
+##### <a name="read-mode"></a><span data-ttu-id="d4d70-478">Mode Lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-478">Read mode</span></span>
+
+<span data-ttu-id="d4d70-p130">La propriété `subject` renvoie une chaîne. Utilisez la propriété [`normalizedSubject`](#normalizedsubject-string) pour obtenir l’objet sans les préfixes tels que `RE:` et `FW:`.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p130">The `subject` property returns a string. Use the [`normalizedSubject`](#normalizedsubject-string) property to get the subject minus any leading prefixes such as `RE:` and `FW:`.</span></span>
+
+```javascript
 var subject = Office.context.mailbox.item.subject;
+console.log(subject);
 ```
 
-##### <a name="compose-mode"></a><span data-ttu-id="650db-482">Mode composition</span><span class="sxs-lookup"><span data-stu-id="650db-482">Compose mode</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="d4d70-481">Mode composition</span><span class="sxs-lookup"><span data-stu-id="d4d70-481">Compose mode</span></span>
 
-<span data-ttu-id="650db-483">La propriété `subject` renvoie un objet `Subject` qui fournit des méthodes pour obtenir et définir l’objet.</span><span class="sxs-lookup"><span data-stu-id="650db-483">The `subject` property returns a `Subject` object that provides methods to get and set the subject.</span></span>
+<span data-ttu-id="d4d70-482">La propriété `subject` renvoie un objet `Subject` qui fournit des méthodes pour obtenir et définir l’objet.</span><span class="sxs-lookup"><span data-stu-id="d4d70-482">The `subject` property returns a `Subject` object that provides methods to get and set the subject.</span></span>
 
-```JavaScript
+```javascript
 Office.context.mailbox.item.subject.getAsync(callback);
 
 function callback(asyncResult) {
   var subject = asyncResult.value;
+  console.log(subject);
 }
 ```
 
-##### <a name="type"></a><span data-ttu-id="650db-484">Type :</span><span class="sxs-lookup"><span data-stu-id="650db-484">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="d4d70-483">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-483">Type</span></span>
 
-*   <span data-ttu-id="650db-485">String | [Subject](/javascript/api/outlook_1_2/office.subject)</span><span class="sxs-lookup"><span data-stu-id="650db-485">String | [Subject](/javascript/api/outlook_1_2/office.subject)</span></span>
+*   <span data-ttu-id="d4d70-484">String | [Subject](/javascript/api/outlook_1_2/office.subject)</span><span class="sxs-lookup"><span data-stu-id="d4d70-484">String | [Subject](/javascript/api/outlook_1_2/office.subject)</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="650db-486">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-486">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-485">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-485">Requirements</span></span>
 
-|<span data-ttu-id="650db-487">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-487">Requirement</span></span>| <span data-ttu-id="650db-488">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-488">Value</span></span>|
+|<span data-ttu-id="d4d70-486">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-486">Requirement</span></span>| <span data-ttu-id="d4d70-487">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-487">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-489">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-489">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-490">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-490">1.0</span></span>|
-|[<span data-ttu-id="650db-491">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-491">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-492">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-492">ReadItem</span></span>|
-|[<span data-ttu-id="650db-493">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-493">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-494">Composition ou lecture</span><span class="sxs-lookup"><span data-stu-id="650db-494">Compose or read</span></span>|
+|[<span data-ttu-id="d4d70-488">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-488">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-489">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-489">1.0</span></span>|
+|[<span data-ttu-id="d4d70-490">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-490">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-491">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-491">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-492">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-492">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-493">Composition ou lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-493">Compose or Read</span></span>|
 
-####  <a name="to-arrayemailaddressdetailsjavascriptapioutlook12officeemailaddressdetailsrecipientsjavascriptapioutlook12officerecipients"></a><span data-ttu-id="650db-495">to :Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_2/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="650db-495">to :Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_2/office.recipients)</span></span>
+####  <a name="to-arrayemailaddressdetailsjavascriptapioutlook12officeemailaddressdetailsrecipientsjavascriptapioutlook12officerecipients"></a><span data-ttu-id="d4d70-494">to :Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_2/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="d4d70-494">to :Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_2/office.recipients)</span></span>
 
-<span data-ttu-id="650db-496">Permet d’accéder aux destinataires figurant sur la ligne **À** d’un message.</span><span class="sxs-lookup"><span data-stu-id="650db-496">Provides access to the recipients on the **To** line of a message.</span></span> <span data-ttu-id="650db-497">Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.</span><span class="sxs-lookup"><span data-stu-id="650db-497">The type of object and level of access depends on the mode of the current item.</span></span>
+<span data-ttu-id="d4d70-495">Permet d’accéder aux destinataires figurant sur la ligne **À** d’un message.</span><span class="sxs-lookup"><span data-stu-id="d4d70-495">Provides access to the recipients on the **To** line of a message.</span></span> <span data-ttu-id="d4d70-496">Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.</span><span class="sxs-lookup"><span data-stu-id="d4d70-496">The type of object and level of access depends on the mode of the current item.</span></span>
 
-##### <a name="read-mode"></a><span data-ttu-id="650db-498">Mode Lecture</span><span class="sxs-lookup"><span data-stu-id="650db-498">Read mode</span></span>
+##### <a name="read-mode"></a><span data-ttu-id="d4d70-497">Mode Lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-497">Read mode</span></span>
 
-<span data-ttu-id="650db-p131">La propriété `to` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque destinataire répertorié sur la ligne **À** du message. La collection est limitée à 100 membres.</span><span class="sxs-lookup"><span data-stu-id="650db-p131">The `to` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **To** line of the message. The collection is limited to a maximum of 100 members.</span></span>
+<span data-ttu-id="d4d70-p132">La propriété `to` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque destinataire répertorié sur la ligne **À** du message. La collection est limitée à 100 membres.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p132">The `to` property returns an array that contains an `EmailAddressDetails` object for each recipient listed on the **To** line of the message. The collection is limited to a maximum of 100 members.</span></span>
 
-##### <a name="compose-mode"></a><span data-ttu-id="650db-501">Mode composition</span><span class="sxs-lookup"><span data-stu-id="650db-501">Compose mode</span></span>
+```javascript
+console.log(JSON.stringify(Office.context.mailbox.item.to));
+```
 
-<span data-ttu-id="650db-502">La propriété `to` renvoie un objet `Recipients` qui fournit des méthodes permettant d’obtenir ou de mettre à jour les destinataires figurant sur la ligne **À** du message.</span><span class="sxs-lookup"><span data-stu-id="650db-502">The `to` property returns a `Recipients` object that provides methods to get or update the recipients on the **To** line of the message.</span></span>
+##### <a name="compose-mode"></a><span data-ttu-id="d4d70-500">Mode composition</span><span class="sxs-lookup"><span data-stu-id="d4d70-500">Compose mode</span></span>
 
-##### <a name="type"></a><span data-ttu-id="650db-503">Type :</span><span class="sxs-lookup"><span data-stu-id="650db-503">Type:</span></span>
+<span data-ttu-id="d4d70-501">La propriété `to` renvoie un objet `Recipients` qui fournit des méthodes permettant d’obtenir ou de mettre à jour les destinataires figurant sur la ligne **À** du message.</span><span class="sxs-lookup"><span data-stu-id="d4d70-501">The `to` property returns a `Recipients` object that provides methods to get or update the recipients on the **To** line of the message.</span></span>
 
-*   <span data-ttu-id="650db-504">Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_2/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="650db-504">Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_2/office.recipients)</span></span>
-
-##### <a name="requirements"></a><span data-ttu-id="650db-505">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-505">Requirements</span></span>
-
-|<span data-ttu-id="650db-506">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-506">Requirement</span></span>| <span data-ttu-id="650db-507">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-507">Value</span></span>|
-|---|---|
-|[<span data-ttu-id="650db-508">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-508">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-509">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-509">1.0</span></span>|
-|[<span data-ttu-id="650db-510">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-510">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-511">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-511">ReadItem</span></span>|
-|[<span data-ttu-id="650db-512">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-512">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-513">Composition ou lecture</span><span class="sxs-lookup"><span data-stu-id="650db-513">Compose or read</span></span>|
-
-##### <a name="example"></a><span data-ttu-id="650db-514">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-514">Example</span></span>
-
-```JavaScript
+```javascript
 Office.context.mailbox.item.to.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
 Office.context.mailbox.item.to.addAsync( ['jason@contoso.com'] );
 Office.context.mailbox.item.to.getAsync(callback);
@@ -722,55 +774,67 @@ function callback(asyncResult) {
 }
 ```
 
-### <a name="methods"></a><span data-ttu-id="650db-515">Méthodes</span><span class="sxs-lookup"><span data-stu-id="650db-515">Methods</span></span>
+##### <a name="type"></a><span data-ttu-id="d4d70-502">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-502">Type</span></span>
 
-####  <a name="addfileattachmentasyncuri-attachmentname-options-callback"></a><span data-ttu-id="650db-516">addFileAttachmentAsync(uri, attachmentName, [options], [callback])</span><span class="sxs-lookup"><span data-stu-id="650db-516">addFileAttachmentAsync(uri, attachmentName, [options], [callback])</span></span>
+*   <span data-ttu-id="d4d70-503">Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_2/office.recipients)</span><span class="sxs-lookup"><span data-stu-id="d4d70-503">Array.<[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook_1_2/office.recipients)</span></span>
 
-<span data-ttu-id="650db-517">Ajoute un fichier à un message ou un rendez-vous en pièce jointe.</span><span class="sxs-lookup"><span data-stu-id="650db-517">Adds a file to a message or appointment as an attachment.</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-504">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-504">Requirements</span></span>
 
-<span data-ttu-id="650db-518">La méthode `addFileAttachmentAsync` charge le fichier depuis l’URI spécifié et le joint à l’élément dans le formulaire de composition.</span><span class="sxs-lookup"><span data-stu-id="650db-518">The `addFileAttachmentAsync` method uploads the file at the specified URI and attaches it to the item in the compose form.</span></span>
-
-<span data-ttu-id="650db-519">L’identificateur peut être utilisé avec la méthode [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) pour supprimer la pièce jointe dans la même session.</span><span class="sxs-lookup"><span data-stu-id="650db-519">You can subsequently use the identifier with the [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) method to remove the attachment in the same session.</span></span>
-
-##### <a name="parameters"></a><span data-ttu-id="650db-520">Paramètres :</span><span class="sxs-lookup"><span data-stu-id="650db-520">Parameters:</span></span>
-
-|<span data-ttu-id="650db-521">Nom</span><span class="sxs-lookup"><span data-stu-id="650db-521">Name</span></span>| <span data-ttu-id="650db-522">Type</span><span class="sxs-lookup"><span data-stu-id="650db-522">Type</span></span>| <span data-ttu-id="650db-523">Attributs</span><span class="sxs-lookup"><span data-stu-id="650db-523">Attributes</span></span>| <span data-ttu-id="650db-524">Description</span><span class="sxs-lookup"><span data-stu-id="650db-524">Description</span></span>|
-|---|---|---|---|
-|`uri`| <span data-ttu-id="650db-525">String</span><span class="sxs-lookup"><span data-stu-id="650db-525">String</span></span>||<span data-ttu-id="650db-p132">URI indiquant l’emplacement du fichier à joindre au message ou au rendez-vous. La longueur maximale est de 2 048 caractères.</span><span class="sxs-lookup"><span data-stu-id="650db-p132">The URI that provides the location of the file to attach to the message or appointment. The maximum length is 2048 characters.</span></span>|
-|`attachmentName`| <span data-ttu-id="650db-528">String</span><span class="sxs-lookup"><span data-stu-id="650db-528">String</span></span>||<span data-ttu-id="650db-p133">Nom de la pièce jointe affiché lors de son chargement. La taille maximale est de 255 caractères.</span><span class="sxs-lookup"><span data-stu-id="650db-p133">The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.</span></span>|
-|`options`| <span data-ttu-id="650db-531">Objet</span><span class="sxs-lookup"><span data-stu-id="650db-531">Object</span></span>| <span data-ttu-id="650db-532">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="650db-532">&lt;optional&gt;</span></span>|<span data-ttu-id="650db-533">Littéral d’objet contenant une ou plusieurs des propriétés suivantes.</span><span class="sxs-lookup"><span data-stu-id="650db-533">An object literal that contains one or more of the following properties.</span></span>|
-|`options.asyncContext`| <span data-ttu-id="650db-534">Objet</span><span class="sxs-lookup"><span data-stu-id="650db-534">Object</span></span>| <span data-ttu-id="650db-535">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="650db-535">&lt;optional&gt;</span></span>|<span data-ttu-id="650db-536">Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.</span><span class="sxs-lookup"><span data-stu-id="650db-536">Developers can provide any object they wish to access in the callback method.</span></span>|
-|`callback`| <span data-ttu-id="650db-537">fonction</span><span class="sxs-lookup"><span data-stu-id="650db-537">function</span></span>| <span data-ttu-id="650db-538">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="650db-538">&lt;optional&gt;</span></span>|<span data-ttu-id="650db-539">Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).</span><span class="sxs-lookup"><span data-stu-id="650db-539">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span> <br/><span data-ttu-id="650db-540">En cas de réussite, l’identificateur de pièce jointe est fourni dans la propriété `asyncResult.value`.</span><span class="sxs-lookup"><span data-stu-id="650db-540">On success, the attachment identifier will be provided in the `asyncResult.value` property.</span></span><br/><span data-ttu-id="650db-541">En cas d’échec du téléchargement de la pièce jointe, l’objet `asyncResult` contient un objet `Error` indiquant une description de l’erreur.</span><span class="sxs-lookup"><span data-stu-id="650db-541">If uploading the attachment fails, the `asyncResult` object will contain an `Error` object that provides a description of the error.</span></span>|
-
-##### <a name="errors"></a><span data-ttu-id="650db-542">Erreurs</span><span class="sxs-lookup"><span data-stu-id="650db-542">Errors</span></span>
-
-| <span data-ttu-id="650db-543">Code d'erreur</span><span class="sxs-lookup"><span data-stu-id="650db-543">Error code</span></span> | <span data-ttu-id="650db-544">Description</span><span class="sxs-lookup"><span data-stu-id="650db-544">Description</span></span> |
-|------------|-------------|
-| `AttachmentSizeExceeded` | <span data-ttu-id="650db-545">La pièce jointe dépasse la taille autorisée.</span><span class="sxs-lookup"><span data-stu-id="650db-545">The attachment is larger than allowed.</span></span> |
-| `FileTypeNotSupported` | <span data-ttu-id="650db-546">La pièce jointe comporte une extension qui n’est pas autorisée.</span><span class="sxs-lookup"><span data-stu-id="650db-546">The attachment has an extension that is not allowed.</span></span> |
-| `NumberOfAttachmentsExceeded` | <span data-ttu-id="650db-547">Le message ou le rendez-vous comporte un trop grand nombre de pièces jointes.</span><span class="sxs-lookup"><span data-stu-id="650db-547">The message or appointment has too many attachments.</span></span> |
-
-##### <a name="requirements"></a><span data-ttu-id="650db-548">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-548">Requirements</span></span>
-
-|<span data-ttu-id="650db-549">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-549">Requirement</span></span>| <span data-ttu-id="650db-550">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-550">Value</span></span>|
+|<span data-ttu-id="d4d70-505">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-505">Requirement</span></span>| <span data-ttu-id="d4d70-506">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-506">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-551">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-551">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-552">1.1</span><span class="sxs-lookup"><span data-stu-id="650db-552">1.1</span></span>|
-|[<span data-ttu-id="650db-553">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-553">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-554">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="650db-554">ReadWriteItem</span></span>|
-|[<span data-ttu-id="650db-555">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-555">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-556">Composition</span><span class="sxs-lookup"><span data-stu-id="650db-556">Compose</span></span>|
+|[<span data-ttu-id="d4d70-507">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-507">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-508">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-508">1.0</span></span>|
+|[<span data-ttu-id="d4d70-509">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-509">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-510">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-510">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-511">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-511">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-512">Composition ou lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-512">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="650db-557">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-557">Example</span></span>
+### <a name="methods"></a><span data-ttu-id="d4d70-513">Méthodes</span><span class="sxs-lookup"><span data-stu-id="d4d70-513">Methods</span></span>
 
-```JavaScript
+####  <a name="addfileattachmentasyncuri-attachmentname-options-callback"></a><span data-ttu-id="d4d70-514">addFileAttachmentAsync(uri, attachmentName, [options], [callback])</span><span class="sxs-lookup"><span data-stu-id="d4d70-514">addFileAttachmentAsync(uri, attachmentName, [options], [callback])</span></span>
+
+<span data-ttu-id="d4d70-515">Ajoute un fichier à un message ou un rendez-vous en pièce jointe.</span><span class="sxs-lookup"><span data-stu-id="d4d70-515">Adds a file to a message or appointment as an attachment.</span></span>
+
+<span data-ttu-id="d4d70-516">La méthode `addFileAttachmentAsync` charge le fichier depuis l’URI spécifié et le joint à l’élément dans le formulaire de composition.</span><span class="sxs-lookup"><span data-stu-id="d4d70-516">The `addFileAttachmentAsync` method uploads the file at the specified URI and attaches it to the item in the compose form.</span></span>
+
+<span data-ttu-id="d4d70-517">L’identificateur peut être utilisé avec la méthode [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) pour supprimer la pièce jointe dans la même session.</span><span class="sxs-lookup"><span data-stu-id="d4d70-517">You can subsequently use the identifier with the [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) method to remove the attachment in the same session.</span></span>
+
+##### <a name="parameters"></a><span data-ttu-id="d4d70-518">Paramètres</span><span class="sxs-lookup"><span data-stu-id="d4d70-518">Parameters</span></span>
+
+|<span data-ttu-id="d4d70-519">Nom</span><span class="sxs-lookup"><span data-stu-id="d4d70-519">Name</span></span>| <span data-ttu-id="d4d70-520">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-520">Type</span></span>| <span data-ttu-id="d4d70-521">Attributs</span><span class="sxs-lookup"><span data-stu-id="d4d70-521">Attributes</span></span>| <span data-ttu-id="d4d70-522">Description</span><span class="sxs-lookup"><span data-stu-id="d4d70-522">Description</span></span>|
+|---|---|---|---|
+|`uri`| <span data-ttu-id="d4d70-523">String</span><span class="sxs-lookup"><span data-stu-id="d4d70-523">String</span></span>||<span data-ttu-id="d4d70-p133">URI indiquant l’emplacement du fichier à joindre au message ou au rendez-vous. La longueur maximale est de 2 048 caractères.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p133">The URI that provides the location of the file to attach to the message or appointment. The maximum length is 2048 characters.</span></span>|
+|`attachmentName`| <span data-ttu-id="d4d70-526">String</span><span class="sxs-lookup"><span data-stu-id="d4d70-526">String</span></span>||<span data-ttu-id="d4d70-p134">Nom de la pièce jointe affiché lors de son chargement. La taille maximale est de 255 caractères.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p134">The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.</span></span>|
+|`options`| <span data-ttu-id="d4d70-529">Objet</span><span class="sxs-lookup"><span data-stu-id="d4d70-529">Object</span></span>| <span data-ttu-id="d4d70-530">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="d4d70-530">&lt;optional&gt;</span></span>|<span data-ttu-id="d4d70-531">Littéral d’objet contenant une ou plusieurs des propriétés suivantes.</span><span class="sxs-lookup"><span data-stu-id="d4d70-531">An object literal that contains one or more of the following properties.</span></span>|
+|`options.asyncContext`| <span data-ttu-id="d4d70-532">Objet</span><span class="sxs-lookup"><span data-stu-id="d4d70-532">Object</span></span>| <span data-ttu-id="d4d70-533">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="d4d70-533">&lt;optional&gt;</span></span>|<span data-ttu-id="d4d70-534">Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.</span><span class="sxs-lookup"><span data-stu-id="d4d70-534">Developers can provide any object they wish to access in the callback method.</span></span>|
+|`callback`| <span data-ttu-id="d4d70-535">fonction</span><span class="sxs-lookup"><span data-stu-id="d4d70-535">function</span></span>| <span data-ttu-id="d4d70-536">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="d4d70-536">&lt;optional&gt;</span></span>|<span data-ttu-id="d4d70-537">Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).</span><span class="sxs-lookup"><span data-stu-id="d4d70-537">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span> <br/><span data-ttu-id="d4d70-538">En cas de réussite, l’identificateur de pièce jointe est fourni dans la propriété `asyncResult.value`.</span><span class="sxs-lookup"><span data-stu-id="d4d70-538">On success, the attachment identifier will be provided in the `asyncResult.value` property.</span></span><br/><span data-ttu-id="d4d70-539">En cas d’échec du téléchargement de la pièce jointe, l’objet `asyncResult` contient un objet `Error` indiquant une description de l’erreur.</span><span class="sxs-lookup"><span data-stu-id="d4d70-539">If uploading the attachment fails, the `asyncResult` object will contain an `Error` object that provides a description of the error.</span></span>|
+
+##### <a name="errors"></a><span data-ttu-id="d4d70-540">Erreurs</span><span class="sxs-lookup"><span data-stu-id="d4d70-540">Errors</span></span>
+
+| <span data-ttu-id="d4d70-541">Code d'erreur</span><span class="sxs-lookup"><span data-stu-id="d4d70-541">Error code</span></span> | <span data-ttu-id="d4d70-542">Description</span><span class="sxs-lookup"><span data-stu-id="d4d70-542">Description</span></span> |
+|------------|-------------|
+| `AttachmentSizeExceeded` | <span data-ttu-id="d4d70-543">La pièce jointe dépasse la taille autorisée.</span><span class="sxs-lookup"><span data-stu-id="d4d70-543">The attachment is larger than allowed.</span></span> |
+| `FileTypeNotSupported` | <span data-ttu-id="d4d70-544">La pièce jointe comporte une extension qui n’est pas autorisée.</span><span class="sxs-lookup"><span data-stu-id="d4d70-544">The attachment has an extension that is not allowed.</span></span> |
+| `NumberOfAttachmentsExceeded` | <span data-ttu-id="d4d70-545">Le message ou le rendez-vous comporte un trop grand nombre de pièces jointes.</span><span class="sxs-lookup"><span data-stu-id="d4d70-545">The message or appointment has too many attachments.</span></span> |
+
+##### <a name="requirements"></a><span data-ttu-id="d4d70-546">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-546">Requirements</span></span>
+
+|<span data-ttu-id="d4d70-547">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-547">Requirement</span></span>| <span data-ttu-id="d4d70-548">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-548">Value</span></span>|
+|---|---|
+|[<span data-ttu-id="d4d70-549">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-549">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-550">1.1</span><span class="sxs-lookup"><span data-stu-id="d4d70-550">1.1</span></span>|
+|[<span data-ttu-id="d4d70-551">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-551">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-552">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-552">ReadWriteItem</span></span>|
+|[<span data-ttu-id="d4d70-553">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-553">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-554">Composition</span><span class="sxs-lookup"><span data-stu-id="d4d70-554">Compose</span></span>|
+
+##### <a name="example"></a><span data-ttu-id="d4d70-555">Exemple</span><span class="sxs-lookup"><span data-stu-id="d4d70-555">Example</span></span>
+
+```javascript
 function callback(result) {
   if (result.error) {
-    showMessage(result.error);
+    console.log(result.error);
   } else {
-    showMessage("Attachment added");
+    console.log("Attachment added");
   }
 }
 
 function addAttachment() {
-  // The values in asyncContext can be accessed in the callback
+  // The values in asyncContext can be accessed in the callback.
   var options = { 'asyncContext': { var1: 1, var2: 2 } };
 
   var attachmentURL = "https://contoso.com/rtm/icon.png";
@@ -778,126 +842,125 @@ function addAttachment() {
 }
 ```
 
-####  <a name="additemattachmentasyncitemid-attachmentname-options-callback"></a><span data-ttu-id="650db-558">addItemAttachmentAsync(itemId, attachmentName, [options], [callback])</span><span class="sxs-lookup"><span data-stu-id="650db-558">addItemAttachmentAsync(itemId, attachmentName, [options], [callback])</span></span>
+####  <a name="additemattachmentasyncitemid-attachmentname-options-callback"></a><span data-ttu-id="d4d70-556">addItemAttachmentAsync(itemId, attachmentName, [options], [callback])</span><span class="sxs-lookup"><span data-stu-id="d4d70-556">addItemAttachmentAsync(itemId, attachmentName, [options], [callback])</span></span>
 
-<span data-ttu-id="650db-559">Ajoute un élément Exchange, comme un message, en pièce jointe au message ou au rendez-vous.</span><span class="sxs-lookup"><span data-stu-id="650db-559">Adds an Exchange item, such as a message, as an attachment to the message or appointment.</span></span>
+<span data-ttu-id="d4d70-557">Ajoute un élément Exchange, comme un message, en pièce jointe au message ou au rendez-vous.</span><span class="sxs-lookup"><span data-stu-id="d4d70-557">Adds an Exchange item, such as a message, as an attachment to the message or appointment.</span></span>
 
-<span data-ttu-id="650db-p134">La méthode `addItemAttachmentAsync` joint l’élément avec l’identificateur Exchange spécifié à l’élément du formulaire de composition. Si vous spécifiez une méthode de rappel, la méthode est appelée avec un paramètre, `asyncResult`, qui contient l’identificateur de pièce jointe ou un code indiquant toute erreur survenue lors de l’ajout de l’élément en tant que pièce jointe. Si nécessaire, vous pouvez utiliser le paramètre `options` pour transmettre des informations d’état à la méthode de rappel.</span><span class="sxs-lookup"><span data-stu-id="650db-p134">The `addItemAttachmentAsync` method attaches the item with the specified Exchange identifier to the item in the compose form. If you specify a callback method, the method is called with one parameter, `asyncResult`, which contains either the attachment identifier or a code that indicates any error that occurred while attaching the item. You can use the `options` parameter to pass state information to the callback method, if needed.</span></span>
+<span data-ttu-id="d4d70-p135">La méthode `addItemAttachmentAsync` joint l’élément avec l’identificateur Exchange spécifié à l’élément du formulaire de composition. Si vous spécifiez une méthode de rappel, la méthode est appelée avec un paramètre, `asyncResult`, qui contient l’identificateur de pièce jointe ou un code indiquant toute erreur survenue lors de l’ajout de l’élément en tant que pièce jointe. Si nécessaire, vous pouvez utiliser le paramètre `options` pour transmettre des informations d’état à la méthode de rappel.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p135">The `addItemAttachmentAsync` method attaches the item with the specified Exchange identifier to the item in the compose form. If you specify a callback method, the method is called with one parameter, `asyncResult`, which contains either the attachment identifier or a code that indicates any error that occurred while attaching the item. You can use the `options` parameter to pass state information to the callback method, if needed.</span></span>
 
-<span data-ttu-id="650db-563">L’identificateur peut être utilisé avec la méthode [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) pour supprimer la pièce jointe dans la même session.</span><span class="sxs-lookup"><span data-stu-id="650db-563">You can subsequently use the identifier with the [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) method to remove the attachment in the same session.</span></span>
+<span data-ttu-id="d4d70-561">L’identificateur peut être utilisé avec la méthode [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) pour supprimer la pièce jointe dans la même session.</span><span class="sxs-lookup"><span data-stu-id="d4d70-561">You can subsequently use the identifier with the [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) method to remove the attachment in the same session.</span></span>
 
-<span data-ttu-id="650db-564">Si votre complément Office est exécuté dans Outlook Web App, la méthode `addItemAttachmentAsync` peut joindre des éléments à des éléments autres que ceux que vous modifiez ; mais cette action n’est pas prise en charge et est déconseillée.</span><span class="sxs-lookup"><span data-stu-id="650db-564">If your Office Add-in is running in Outlook Web App, the `addItemAttachmentAsync` method can attach items to items other than the item that you are editing; however, this is not supported and is not recommended.</span></span>
+<span data-ttu-id="d4d70-562">Si votre complément Office est exécuté dans Outlook Web App, la méthode `addItemAttachmentAsync` peut joindre des éléments à des éléments autres que ceux que vous modifiez ; mais cette action n’est pas prise en charge et est déconseillée.</span><span class="sxs-lookup"><span data-stu-id="d4d70-562">If your Office Add-in is running in Outlook Web App, the `addItemAttachmentAsync` method can attach items to items other than the item that you are editing; however, this is not supported and is not recommended.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="650db-565">Paramètres :</span><span class="sxs-lookup"><span data-stu-id="650db-565">Parameters:</span></span>
+##### <a name="parameters"></a><span data-ttu-id="d4d70-563">Paramètres</span><span class="sxs-lookup"><span data-stu-id="d4d70-563">Parameters</span></span>
 
-|<span data-ttu-id="650db-566">Nom</span><span class="sxs-lookup"><span data-stu-id="650db-566">Name</span></span>| <span data-ttu-id="650db-567">Type</span><span class="sxs-lookup"><span data-stu-id="650db-567">Type</span></span>| <span data-ttu-id="650db-568">Attributs</span><span class="sxs-lookup"><span data-stu-id="650db-568">Attributes</span></span>| <span data-ttu-id="650db-569">Description</span><span class="sxs-lookup"><span data-stu-id="650db-569">Description</span></span>|
+|<span data-ttu-id="d4d70-564">Nom</span><span class="sxs-lookup"><span data-stu-id="d4d70-564">Name</span></span>| <span data-ttu-id="d4d70-565">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-565">Type</span></span>| <span data-ttu-id="d4d70-566">Attributs</span><span class="sxs-lookup"><span data-stu-id="d4d70-566">Attributes</span></span>| <span data-ttu-id="d4d70-567">Description</span><span class="sxs-lookup"><span data-stu-id="d4d70-567">Description</span></span>|
 |---|---|---|---|
-|`itemId`| <span data-ttu-id="650db-570">String</span><span class="sxs-lookup"><span data-stu-id="650db-570">String</span></span>||<span data-ttu-id="650db-p135">Identificateur Exchange de l’élément à joindre. La taille maximale est de 100 caractères.</span><span class="sxs-lookup"><span data-stu-id="650db-p135">The Exchange identifier of the item to attach. The maximum length is 100 characters.</span></span>|
-|`attachmentName`| <span data-ttu-id="650db-573">String</span><span class="sxs-lookup"><span data-stu-id="650db-573">String</span></span>||<span data-ttu-id="650db-p136">Objet de l’élément à joindre. La longueur maximale est de 255 caractères.</span><span class="sxs-lookup"><span data-stu-id="650db-p136">The sujbect of the item to be attached. The maximum length is 255 characters.</span></span>|
-|`options`| <span data-ttu-id="650db-576">Object</span><span class="sxs-lookup"><span data-stu-id="650db-576">Object</span></span>| <span data-ttu-id="650db-577">&lt;facultatif&gt;</span><span class="sxs-lookup"><span data-stu-id="650db-577">&lt;optional&gt;</span></span>|<span data-ttu-id="650db-578">Littéral d’objet contenant une ou plusieurs des propriétés suivantes.</span><span class="sxs-lookup"><span data-stu-id="650db-578">An object literal that contains one or more of the following properties.</span></span>|
-|`options.asyncContext`| <span data-ttu-id="650db-579">Objet</span><span class="sxs-lookup"><span data-stu-id="650db-579">Object</span></span>| <span data-ttu-id="650db-580">&lt;facultatif&gt;</span><span class="sxs-lookup"><span data-stu-id="650db-580">&lt;optional&gt;</span></span>|<span data-ttu-id="650db-581">Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.</span><span class="sxs-lookup"><span data-stu-id="650db-581">Developers can provide any object they wish to access in the callback method.</span></span>|
-|`callback`| <span data-ttu-id="650db-582">fonction</span><span class="sxs-lookup"><span data-stu-id="650db-582">function</span></span>| <span data-ttu-id="650db-583">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="650db-583">&lt;optional&gt;</span></span>|<span data-ttu-id="650db-584">Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).</span><span class="sxs-lookup"><span data-stu-id="650db-584">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span> <br/><span data-ttu-id="650db-585">En cas de réussite, l’identificateur de pièce jointe est fourni dans la propriété `asyncResult.value`.</span><span class="sxs-lookup"><span data-stu-id="650db-585">On success, the attachment identifier will be provided in the `asyncResult.value` property.</span></span><br/><span data-ttu-id="650db-586">En cas d’échec de l’ajout de la pièce jointe, l’objet `asyncResult` contient un objet `Error` indiquant une description de l’erreur.</span><span class="sxs-lookup"><span data-stu-id="650db-586">If adding the attachment fails, the `asyncResult` object will contain an `Error` object that provides a description of the error.</span></span>|
+|`itemId`| <span data-ttu-id="d4d70-568">String</span><span class="sxs-lookup"><span data-stu-id="d4d70-568">String</span></span>||<span data-ttu-id="d4d70-p136">Identificateur Exchange de l’élément à joindre. La taille maximale est de 100 caractères.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p136">The Exchange identifier of the item to attach. The maximum length is 100 characters.</span></span>|
+|`attachmentName`| <span data-ttu-id="d4d70-571">String</span><span class="sxs-lookup"><span data-stu-id="d4d70-571">String</span></span>||<span data-ttu-id="d4d70-572">Objet de l'élément à joindre.</span><span class="sxs-lookup"><span data-stu-id="d4d70-572">The subject of the item to be attached.</span></span> <span data-ttu-id="d4d70-573">La longueur maximale est de 255 caractères.</span><span class="sxs-lookup"><span data-stu-id="d4d70-573">The maximum length is 255 characters.</span></span>|
+|`options`| <span data-ttu-id="d4d70-574">Object</span><span class="sxs-lookup"><span data-stu-id="d4d70-574">Object</span></span>| <span data-ttu-id="d4d70-575">&lt;facultatif&gt;</span><span class="sxs-lookup"><span data-stu-id="d4d70-575">&lt;optional&gt;</span></span>|<span data-ttu-id="d4d70-576">Littéral d’objet contenant une ou plusieurs des propriétés suivantes.</span><span class="sxs-lookup"><span data-stu-id="d4d70-576">An object literal that contains one or more of the following properties.</span></span>|
+|`options.asyncContext`| <span data-ttu-id="d4d70-577">Objet</span><span class="sxs-lookup"><span data-stu-id="d4d70-577">Object</span></span>| <span data-ttu-id="d4d70-578">&lt;facultatif&gt;</span><span class="sxs-lookup"><span data-stu-id="d4d70-578">&lt;optional&gt;</span></span>|<span data-ttu-id="d4d70-579">Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.</span><span class="sxs-lookup"><span data-stu-id="d4d70-579">Developers can provide any object they wish to access in the callback method.</span></span>|
+|`callback`| <span data-ttu-id="d4d70-580">fonction</span><span class="sxs-lookup"><span data-stu-id="d4d70-580">function</span></span>| <span data-ttu-id="d4d70-581">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="d4d70-581">&lt;optional&gt;</span></span>|<span data-ttu-id="d4d70-582">Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).</span><span class="sxs-lookup"><span data-stu-id="d4d70-582">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span> <br/><span data-ttu-id="d4d70-583">En cas de réussite, l’identificateur de pièce jointe est fourni dans la propriété `asyncResult.value`.</span><span class="sxs-lookup"><span data-stu-id="d4d70-583">On success, the attachment identifier will be provided in the `asyncResult.value` property.</span></span><br/><span data-ttu-id="d4d70-584">En cas d’échec de l’ajout de la pièce jointe, l’objet `asyncResult` contient un objet `Error` indiquant une description de l’erreur.</span><span class="sxs-lookup"><span data-stu-id="d4d70-584">If adding the attachment fails, the `asyncResult` object will contain an `Error` object that provides a description of the error.</span></span>|
 
-##### <a name="errors"></a><span data-ttu-id="650db-587">Erreurs</span><span class="sxs-lookup"><span data-stu-id="650db-587">Errors</span></span>
+##### <a name="errors"></a><span data-ttu-id="d4d70-585">Erreurs</span><span class="sxs-lookup"><span data-stu-id="d4d70-585">Errors</span></span>
 
-| <span data-ttu-id="650db-588">Code d'erreur</span><span class="sxs-lookup"><span data-stu-id="650db-588">Error code</span></span> | <span data-ttu-id="650db-589">Description</span><span class="sxs-lookup"><span data-stu-id="650db-589">Description</span></span> |
+| <span data-ttu-id="d4d70-586">Code d'erreur</span><span class="sxs-lookup"><span data-stu-id="d4d70-586">Error code</span></span> | <span data-ttu-id="d4d70-587">Description</span><span class="sxs-lookup"><span data-stu-id="d4d70-587">Description</span></span> |
 |------------|-------------|
-| `NumberOfAttachmentsExceeded` | <span data-ttu-id="650db-590">Le message ou le rendez-vous comporte un trop grand nombre de pièces jointes.</span><span class="sxs-lookup"><span data-stu-id="650db-590">The message or appointment has too many attachments.</span></span> |
+| `NumberOfAttachmentsExceeded` | <span data-ttu-id="d4d70-588">Le message ou le rendez-vous comporte un trop grand nombre de pièces jointes.</span><span class="sxs-lookup"><span data-stu-id="d4d70-588">The message or appointment has too many attachments.</span></span> |
 
-##### <a name="requirements"></a><span data-ttu-id="650db-591">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-591">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-589">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-589">Requirements</span></span>
 
-|<span data-ttu-id="650db-592">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-592">Requirement</span></span>| <span data-ttu-id="650db-593">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-593">Value</span></span>|
+|<span data-ttu-id="d4d70-590">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-590">Requirement</span></span>| <span data-ttu-id="d4d70-591">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-591">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-594">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-594">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-595">1.1</span><span class="sxs-lookup"><span data-stu-id="650db-595">1.1</span></span>|
-|[<span data-ttu-id="650db-596">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-596">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-597">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="650db-597">ReadWriteItem</span></span>|
-|[<span data-ttu-id="650db-598">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-598">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-599">Composition</span><span class="sxs-lookup"><span data-stu-id="650db-599">Compose</span></span>|
+|[<span data-ttu-id="d4d70-592">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-592">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-593">1.1</span><span class="sxs-lookup"><span data-stu-id="d4d70-593">1.1</span></span>|
+|[<span data-ttu-id="d4d70-594">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-594">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-595">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-595">ReadWriteItem</span></span>|
+|[<span data-ttu-id="d4d70-596">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-596">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-597">Composition</span><span class="sxs-lookup"><span data-stu-id="d4d70-597">Compose</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="650db-600">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-600">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="d4d70-598">Exemple</span><span class="sxs-lookup"><span data-stu-id="d4d70-598">Example</span></span>
 
-<span data-ttu-id="650db-601">L’exemple suivant ajoute un élément Outlook existant en tant que pièce jointe avec le nom `My Attachment`.</span><span class="sxs-lookup"><span data-stu-id="650db-601">The following example adds an existing Outlook item as an attachment with the name `My Attachment`.</span></span>
+<span data-ttu-id="d4d70-599">L’exemple suivant ajoute un élément Outlook existant en tant que pièce jointe avec le nom `My Attachment`.</span><span class="sxs-lookup"><span data-stu-id="d4d70-599">The following example adds an existing Outlook item as an attachment with the name `My Attachment`.</span></span>
 
-```JavaScript
+```javascript
 function callback(result) {
   if (result.error) {
-    showMessage(result.error);
+    console.log(result.error);
   } else {
-    showMessage("Attachment added");
+    console.log("Attachment added");
   }
 }
 
 function addAttachment() {
-  // EWS ID of item to attach
-  // (Shortened for readability)
+  // EWS ID of item to attach (shortened for readability).
   var itemId = "AAMkADI1...AAA=";
 
-  // The values in asyncContext can be accessed in the callback
+  // The values in asyncContext can be accessed in the callback.
   var options = { 'asyncContext': { var1: 1, var2: 2 } };
 
   Office.context.mailbox.item.addItemAttachmentAsync(itemId, "My Attachment", options, callback);
 }
 ```
 
-#### <a name="displayreplyallformformdata"></a><span data-ttu-id="650db-602">displayReplyAllForm(formData)</span><span class="sxs-lookup"><span data-stu-id="650db-602">displayReplyAllForm(formData)</span></span>
+#### <a name="displayreplyallformformdata-callback"></a><span data-ttu-id="d4d70-600">displayReplyAllForm (Formulairemode, [callback])</span><span class="sxs-lookup"><span data-stu-id="d4d70-600">displayReplyAllForm(formData, [callback])</span></span>
 
-<span data-ttu-id="650db-603">Affiche un formulaire de réponse qui inclut, soit l’expéditeur et tous les destinataires du message sélectionné, soit l’organisateur et tous les participants du rendez-vous sélectionné.</span><span class="sxs-lookup"><span data-stu-id="650db-603">Displays a reply form that includes the sender and all recipients of the selected message or the organizer and all attendees of the selected appointment.</span></span>
+<span data-ttu-id="d4d70-601">Affiche un formulaire de réponse qui inclut, soit l’expéditeur et tous les destinataires du message sélectionné, soit l’organisateur et tous les participants du rendez-vous sélectionné.</span><span class="sxs-lookup"><span data-stu-id="d4d70-601">Displays a reply form that includes the sender and all recipients of the selected message or the organizer and all attendees of the selected appointment.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="650db-604">Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.</span><span class="sxs-lookup"><span data-stu-id="650db-604">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="d4d70-602">Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.</span><span class="sxs-lookup"><span data-stu-id="d4d70-602">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-<span data-ttu-id="650db-605">Dans Outlook Web App, le formulaire de réponse s’affiche sous forme de formulaire isolé dans l’affichage à 3 colonnes et sous forme de formulaire contextuel dans l’affichage à 1 ou 2 colonnes.</span><span class="sxs-lookup"><span data-stu-id="650db-605">In Outlook Web App, the reply form is displayed as a pop-out form in the 3-column view and a pop-up form in the 2- or 1-column view.</span></span>
+<span data-ttu-id="d4d70-603">Dans Outlook Web App, le formulaire de réponse s’affiche sous forme de formulaire isolé dans l’affichage à 3 colonnes et sous forme de formulaire contextuel dans l’affichage à 1 ou 2 colonnes.</span><span class="sxs-lookup"><span data-stu-id="d4d70-603">In Outlook Web App, the reply form is displayed as a pop-out form in the 3-column view and a pop-up form in the 2- or 1-column view.</span></span>
 
-<span data-ttu-id="650db-606">Si un des paramètres de chaîne dépasse la limite, `displayReplyAllForm` génère une exception.</span><span class="sxs-lookup"><span data-stu-id="650db-606">If any of the string parameters exceed their limits, `displayReplyAllForm` throws an exception.</span></span>
+<span data-ttu-id="d4d70-604">Si un des paramètres de chaîne dépasse la limite, `displayReplyAllForm` génère une exception.</span><span class="sxs-lookup"><span data-stu-id="d4d70-604">If any of the string parameters exceed their limits, `displayReplyAllForm` throws an exception.</span></span>
 
-<span data-ttu-id="650db-p137">Lorsque des pièces jointes sont spécifiées dans le paramètre `formData.attachments`, Outlook et Outlook Web App tentent de télécharger toutes les pièces jointes et de les joindre au formulaire de réponse. Si aucune pièce jointe n’est ajoutée, une erreur s’affiche dans l’interface utilisateur du formulaire. Si ce n’est pas possible, aucun message d’erreur n’est généré.</span><span class="sxs-lookup"><span data-stu-id="650db-p137">When attachments are specified in the `formData.attachments` parameter, Outlook and Outlook Web App attempt to download all attachments and attach them to the reply form. If any attachments fail to be added, an error is shown in the form UI. If this isn't possible, then no error message is thrown.</span></span>
+<span data-ttu-id="d4d70-p138">Lorsque des pièces jointes sont spécifiées dans le paramètre `formData.attachments`, Outlook et Outlook Web App tentent de télécharger toutes les pièces jointes et de les joindre au formulaire de réponse. Si aucune pièce jointe n’est ajoutée, une erreur s’affiche dans l’interface utilisateur du formulaire. Si ce n’est pas possible, aucun message d’erreur n’est généré.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p138">When attachments are specified in the `formData.attachments` parameter, Outlook and Outlook Web App attempt to download all attachments and attach them to the reply form. If any attachments fail to be added, an error is shown in the form UI. If this isn't possible, then no error message is thrown.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="650db-610">Paramètres :</span><span class="sxs-lookup"><span data-stu-id="650db-610">Parameters:</span></span>
+##### <a name="parameters"></a><span data-ttu-id="d4d70-608">Paramètres</span><span class="sxs-lookup"><span data-stu-id="d4d70-608">Parameters</span></span>
 
-|<span data-ttu-id="650db-611">Nom</span><span class="sxs-lookup"><span data-stu-id="650db-611">Name</span></span>| <span data-ttu-id="650db-612">Type</span><span class="sxs-lookup"><span data-stu-id="650db-612">Type</span></span>| <span data-ttu-id="650db-613">Description</span><span class="sxs-lookup"><span data-stu-id="650db-613">Description</span></span>|
+|<span data-ttu-id="d4d70-609">Nom</span><span class="sxs-lookup"><span data-stu-id="d4d70-609">Name</span></span>| <span data-ttu-id="d4d70-610">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-610">Type</span></span>| <span data-ttu-id="d4d70-611">Description</span><span class="sxs-lookup"><span data-stu-id="d4d70-611">Description</span></span>|
 |---|---|---|
-|`formData`| <span data-ttu-id="650db-614">String &#124; Object</span><span class="sxs-lookup"><span data-stu-id="650db-614">String &#124; Object</span></span>| |<span data-ttu-id="650db-p138">Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.</span><span class="sxs-lookup"><span data-stu-id="650db-p138">A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</span></span><br/><span data-ttu-id="650db-617">**OU**</span><span class="sxs-lookup"><span data-stu-id="650db-617">**OR**</span></span><br/><span data-ttu-id="650db-p139">Objet qui contient les données du corps du message ou des pièces jointes et une fonction de rappel. L’objet est défini de la manière suivante :</span><span class="sxs-lookup"><span data-stu-id="650db-p139">An object that contains body or attachment data and a callback function. The object is defined as follows.</span></span> |
-| `formData.htmlBody` | <span data-ttu-id="650db-620">String</span><span class="sxs-lookup"><span data-stu-id="650db-620">String</span></span> | <span data-ttu-id="650db-621">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="650db-621">&lt;optional&gt;</span></span> | <span data-ttu-id="650db-p140">Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.</span><span class="sxs-lookup"><span data-stu-id="650db-p140">A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</span></span>
-| `formData.attachments` | <span data-ttu-id="650db-624">Array.&lt;Object&gt;</span><span class="sxs-lookup"><span data-stu-id="650db-624">Array.&lt;Object&gt;</span></span> | <span data-ttu-id="650db-625">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="650db-625">&lt;optional&gt;</span></span> | <span data-ttu-id="650db-626">Tableau d’objets JSON qui sont des pièces jointes de fichier ou d’élément.</span><span class="sxs-lookup"><span data-stu-id="650db-626">An array of JSON objects that are either file or item attachments.</span></span> |
-| `formData.attachments.type` | <span data-ttu-id="650db-627">String</span><span class="sxs-lookup"><span data-stu-id="650db-627">String</span></span> | | <span data-ttu-id="650db-p141">Indique le type de pièce jointe. Doit être `file` pour une pièce jointe de fichier ou `item` pour une pièce jointe d’élément.</span><span class="sxs-lookup"><span data-stu-id="650db-p141">Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment.</span></span> |
-| `formData.attachments.name` | <span data-ttu-id="650db-630">String</span><span class="sxs-lookup"><span data-stu-id="650db-630">String</span></span> | | <span data-ttu-id="650db-631">Chaîne qui contient le nom de la pièce jointe et comporte jusqu'à 255 caractères.</span><span class="sxs-lookup"><span data-stu-id="650db-631">A string that contains the name of the attachment, up to 255 characters in length.</span></span>|
-| `formData.attachments.url` | <span data-ttu-id="650db-632">String</span><span class="sxs-lookup"><span data-stu-id="650db-632">String</span></span> | | <span data-ttu-id="650db-p142">Utilisé uniquement si `type` est défini sur `file`. Il s’agit de l’URI de l’emplacement du fichier.</span><span class="sxs-lookup"><span data-stu-id="650db-p142">Only used if `type` is set to `file`. The URI of the location for the file.</span></span> |
-| `formData.attachments.itemId` | <span data-ttu-id="650db-635">String</span><span class="sxs-lookup"><span data-stu-id="650db-635">String</span></span> | | <span data-ttu-id="650db-p143">Utilisé uniquement si `type` est défini sur `item`. Il s’agit de l’ID de l’élément EWS de la pièce jointe. Il s’agit d’une chaîne comportant un maximum de 100 caractères.</span><span class="sxs-lookup"><span data-stu-id="650db-p143">Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters.</span></span> |
-| `callback` | <span data-ttu-id="650db-639">function</span><span class="sxs-lookup"><span data-stu-id="650db-639">function</span></span> | <span data-ttu-id="650db-640">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="650db-640">&lt;optional&gt;</span></span> | <span data-ttu-id="650db-641">Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [AsyncResult](/javascript/api/office/office.asyncresult).</span><span class="sxs-lookup"><span data-stu-id="650db-641">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object.</span></span> |
+|`formData`| <span data-ttu-id="d4d70-612">String &#124; Object</span><span class="sxs-lookup"><span data-stu-id="d4d70-612">String &#124; Object</span></span>| |<span data-ttu-id="d4d70-p139">Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p139">A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</span></span><br/><span data-ttu-id="d4d70-615">**OU**</span><span class="sxs-lookup"><span data-stu-id="d4d70-615">**OR**</span></span><br/><span data-ttu-id="d4d70-p140">Objet qui contient les données du corps du message ou des pièces jointes et une fonction de rappel. L’objet est défini de la manière suivante :</span><span class="sxs-lookup"><span data-stu-id="d4d70-p140">An object that contains body or attachment data and a callback function. The object is defined as follows.</span></span> |
+| `formData.htmlBody` | <span data-ttu-id="d4d70-618">String</span><span class="sxs-lookup"><span data-stu-id="d4d70-618">String</span></span> | <span data-ttu-id="d4d70-619">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="d4d70-619">&lt;optional&gt;</span></span> | <span data-ttu-id="d4d70-p141">Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p141">A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</span></span>
+| `formData.attachments` | <span data-ttu-id="d4d70-622">Array.&lt;Object&gt;</span><span class="sxs-lookup"><span data-stu-id="d4d70-622">Array.&lt;Object&gt;</span></span> | <span data-ttu-id="d4d70-623">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="d4d70-623">&lt;optional&gt;</span></span> | <span data-ttu-id="d4d70-624">Tableau d’objets JSON qui sont des pièces jointes de fichier ou d’élément.</span><span class="sxs-lookup"><span data-stu-id="d4d70-624">An array of JSON objects that are either file or item attachments.</span></span> |
+| `formData.attachments.type` | <span data-ttu-id="d4d70-625">String</span><span class="sxs-lookup"><span data-stu-id="d4d70-625">String</span></span> | | <span data-ttu-id="d4d70-p142">Indique le type de pièce jointe. Doit être `file` pour une pièce jointe de fichier ou `item` pour une pièce jointe d’élément.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p142">Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment.</span></span> |
+| `formData.attachments.name` | <span data-ttu-id="d4d70-628">String</span><span class="sxs-lookup"><span data-stu-id="d4d70-628">String</span></span> | | <span data-ttu-id="d4d70-629">Chaîne qui contient le nom de la pièce jointe et comporte jusqu'à 255 caractères.</span><span class="sxs-lookup"><span data-stu-id="d4d70-629">A string that contains the name of the attachment, up to 255 characters in length.</span></span>|
+| `formData.attachments.url` | <span data-ttu-id="d4d70-630">String</span><span class="sxs-lookup"><span data-stu-id="d4d70-630">String</span></span> | | <span data-ttu-id="d4d70-p143">Utilisé uniquement si `type` est défini sur `file`. Il s’agit de l’URI de l’emplacement du fichier.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p143">Only used if `type` is set to `file`. The URI of the location for the file.</span></span> |
+| `formData.attachments.itemId` | <span data-ttu-id="d4d70-633">String</span><span class="sxs-lookup"><span data-stu-id="d4d70-633">String</span></span> | | <span data-ttu-id="d4d70-p144">Utilisé uniquement si `type` est défini sur `item`. Il s’agit de l’ID de l’élément EWS de la pièce jointe. Il s’agit d’une chaîne comportant un maximum de 100 caractères.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p144">Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters.</span></span> |
+| `callback` | <span data-ttu-id="d4d70-637">function</span><span class="sxs-lookup"><span data-stu-id="d4d70-637">function</span></span> | <span data-ttu-id="d4d70-638">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="d4d70-638">&lt;optional&gt;</span></span> | <span data-ttu-id="d4d70-639">Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [AsyncResult](/javascript/api/office/office.asyncresult).</span><span class="sxs-lookup"><span data-stu-id="d4d70-639">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object.</span></span> |
 
-##### <a name="requirements"></a><span data-ttu-id="650db-642">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-642">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-640">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-640">Requirements</span></span>
 
-|<span data-ttu-id="650db-643">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-643">Requirement</span></span>| <span data-ttu-id="650db-644">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-644">Value</span></span>|
+|<span data-ttu-id="d4d70-641">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-641">Requirement</span></span>| <span data-ttu-id="d4d70-642">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-642">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-645">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-645">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-646">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-646">1.0</span></span>|
-|[<span data-ttu-id="650db-647">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-647">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-648">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-648">ReadItem</span></span>|
-|[<span data-ttu-id="650db-649">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-649">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-650">Lecture</span><span class="sxs-lookup"><span data-stu-id="650db-650">Read</span></span>|
+|[<span data-ttu-id="d4d70-643">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-643">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-644">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-644">1.0</span></span>|
+|[<span data-ttu-id="d4d70-645">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-645">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-646">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-646">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-647">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-647">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-648">Lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-648">Read</span></span>|
 
-##### <a name="examples"></a><span data-ttu-id="650db-651">Exemples</span><span class="sxs-lookup"><span data-stu-id="650db-651">Examples</span></span>
+##### <a name="examples"></a><span data-ttu-id="d4d70-649">Exemples</span><span class="sxs-lookup"><span data-stu-id="d4d70-649">Examples</span></span>
 
-<span data-ttu-id="650db-652">Le code suivant transmet une chaîne à la fonction `displayReplyAllForm`.</span><span class="sxs-lookup"><span data-stu-id="650db-652">The following code passes a string to the `displayReplyAllForm` function.</span></span>
+<span data-ttu-id="d4d70-650">Le code suivant transmet une chaîne à la fonction `displayReplyAllForm`.</span><span class="sxs-lookup"><span data-stu-id="d4d70-650">The following code passes a string to the `displayReplyAllForm` function.</span></span>
 
-```JavaScript
+```javascript
 Office.context.mailbox.item.displayReplyAllForm('hello there');
 Office.context.mailbox.item.displayReplyAllForm('<b>hello there</b>');
 ```
 
-<span data-ttu-id="650db-653">Réponse avec un corps vide.</span><span class="sxs-lookup"><span data-stu-id="650db-653">Reply with an empty body.</span></span>
+<span data-ttu-id="d4d70-651">Réponse avec un corps vide.</span><span class="sxs-lookup"><span data-stu-id="d4d70-651">Reply with an empty body.</span></span>
 
-```JavaScript
+```javascript
 Office.context.mailbox.item.displayReplyAllForm({});
 ```
 
-<span data-ttu-id="650db-654">Réponse avec un corps.</span><span class="sxs-lookup"><span data-stu-id="650db-654">Reply with just a body.</span></span>
+<span data-ttu-id="d4d70-652">Réponse avec un corps.</span><span class="sxs-lookup"><span data-stu-id="d4d70-652">Reply with just a body.</span></span>
 
-```JavaScript
+```javascript
 Office.context.mailbox.item.displayReplyAllForm(
 {
   'htmlBody' : 'hi'
 });
 ```
 
-<span data-ttu-id="650db-655">Réponse avec un corps et la pièce jointe d’un fichier.</span><span class="sxs-lookup"><span data-stu-id="650db-655">Reply with a body and a file attachment.</span></span>
+<span data-ttu-id="d4d70-653">Réponse avec un corps et la pièce jointe d’un fichier.</span><span class="sxs-lookup"><span data-stu-id="d4d70-653">Reply with a body and a file attachment.</span></span>
 
-```JavaScript
+```javascript
 Office.context.mailbox.item.displayReplyAllForm(
 {
   'htmlBody' : 'hi',
@@ -912,9 +975,9 @@ Office.context.mailbox.item.displayReplyAllForm(
 });
 ```
 
-<span data-ttu-id="650db-656">Réponse avec un corps et la pièce jointe d’un élément.</span><span class="sxs-lookup"><span data-stu-id="650db-656">Reply with a body and an item attachment.</span></span>
+<span data-ttu-id="d4d70-654">Réponse avec un corps et la pièce jointe d’un élément.</span><span class="sxs-lookup"><span data-stu-id="d4d70-654">Reply with a body and an item attachment.</span></span>
 
-```JavaScript
+```javascript
 Office.context.mailbox.item.displayReplyAllForm(
 {
   'htmlBody' : 'hi',
@@ -929,9 +992,9 @@ Office.context.mailbox.item.displayReplyAllForm(
 });
 ```
 
-<span data-ttu-id="650db-657">Réponse avec un corps, la pièce jointe d’un fichier, la pièce jointe d’un élément et un rappel.</span><span class="sxs-lookup"><span data-stu-id="650db-657">Reply with a body, file attachment, item attachment, and a callback.</span></span>
+<span data-ttu-id="d4d70-655">Réponse avec un corps, la pièce jointe d’un fichier, la pièce jointe d’un élément et un rappel.</span><span class="sxs-lookup"><span data-stu-id="d4d70-655">Reply with a body, file attachment, item attachment, and a callback.</span></span>
 
-```JavaScript
+```javascript
 Office.context.mailbox.item.displayReplyAllForm(
 {
   'htmlBody' : 'hi',
@@ -955,67 +1018,67 @@ Office.context.mailbox.item.displayReplyAllForm(
 });
 ```
 
-#### <a name="displayreplyformformdata"></a><span data-ttu-id="650db-658">displayReplyForm(formData)</span><span class="sxs-lookup"><span data-stu-id="650db-658">displayReplyForm(formData)</span></span>
+#### <a name="displayreplyformformdata-callback"></a><span data-ttu-id="d4d70-656">displayReplyForm (Formulairemode, [callback])</span><span class="sxs-lookup"><span data-stu-id="d4d70-656">displayReplyForm(formData, [callback])</span></span>
 
-<span data-ttu-id="650db-659">Affiche un formulaire de réponse qui comprend uniquement l’expéditeur du message sélectionné ou l’organisateur du rendez-vous sélectionné.</span><span class="sxs-lookup"><span data-stu-id="650db-659">Displays a reply form that includes only the sender of the selected message or the organizer of the selected appointment.</span></span>
+<span data-ttu-id="d4d70-657">Affiche un formulaire de réponse qui comprend uniquement l’expéditeur du message sélectionné ou l’organisateur du rendez-vous sélectionné.</span><span class="sxs-lookup"><span data-stu-id="d4d70-657">Displays a reply form that includes only the sender of the selected message or the organizer of the selected appointment.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="650db-660">Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.</span><span class="sxs-lookup"><span data-stu-id="650db-660">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="d4d70-658">Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.</span><span class="sxs-lookup"><span data-stu-id="d4d70-658">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-<span data-ttu-id="650db-661">Dans Outlook Web App, le formulaire de réponse s’affiche sous forme de formulaire isolé dans l’affichage à 3 colonnes et sous forme de formulaire contextuel dans l’affichage à 1 ou 2 colonnes.</span><span class="sxs-lookup"><span data-stu-id="650db-661">In Outlook Web App, the reply form is displayed as a pop-out form in the 3-column view and a pop-up form in the 2- or 1-column view.</span></span>
+<span data-ttu-id="d4d70-659">Dans Outlook Web App, le formulaire de réponse s’affiche sous forme de formulaire isolé dans l’affichage à 3 colonnes et sous forme de formulaire contextuel dans l’affichage à 1 ou 2 colonnes.</span><span class="sxs-lookup"><span data-stu-id="d4d70-659">In Outlook Web App, the reply form is displayed as a pop-out form in the 3-column view and a pop-up form in the 2- or 1-column view.</span></span>
 
-<span data-ttu-id="650db-662">Si un des paramètres de chaîne dépasse la limite, `displayReplyForm` génère une exception.</span><span class="sxs-lookup"><span data-stu-id="650db-662">If any of the string parameters exceed their limits, `displayReplyForm` throws an exception.</span></span>
+<span data-ttu-id="d4d70-660">Si un des paramètres de chaîne dépasse la limite, `displayReplyForm` génère une exception.</span><span class="sxs-lookup"><span data-stu-id="d4d70-660">If any of the string parameters exceed their limits, `displayReplyForm` throws an exception.</span></span>
 
-<span data-ttu-id="650db-p144">Lorsque des pièces jointes sont spécifiées dans le paramètre `formData.attachments`, Outlook et Outlook Web App tentent de télécharger toutes les pièces jointes et de les joindre au formulaire de réponse. Si aucune pièce jointe n’est ajoutée, une erreur s’affiche dans l’interface utilisateur du formulaire. Si ce n’est pas possible, aucun message d’erreur n’est généré.</span><span class="sxs-lookup"><span data-stu-id="650db-p144">When attachments are specified in the `formData.attachments` parameter, Outlook and Outlook Web App attempt to download all attachments and attach them to the reply form. If any attachments fail to be added, an error is shown in the form UI. If this isn't possible, then no error message is thrown.</span></span>
+<span data-ttu-id="d4d70-p145">Lorsque des pièces jointes sont spécifiées dans le paramètre `formData.attachments`, Outlook et Outlook Web App tentent de télécharger toutes les pièces jointes et de les joindre au formulaire de réponse. Si aucune pièce jointe n’est ajoutée, une erreur s’affiche dans l’interface utilisateur du formulaire. Si ce n’est pas possible, aucun message d’erreur n’est généré.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p145">When attachments are specified in the `formData.attachments` parameter, Outlook and Outlook Web App attempt to download all attachments and attach them to the reply form. If any attachments fail to be added, an error is shown in the form UI. If this isn't possible, then no error message is thrown.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="650db-666">Paramètres :</span><span class="sxs-lookup"><span data-stu-id="650db-666">Parameters:</span></span>
+##### <a name="parameters"></a><span data-ttu-id="d4d70-664">Paramètres</span><span class="sxs-lookup"><span data-stu-id="d4d70-664">Parameters</span></span>
 
-|<span data-ttu-id="650db-667">Nom</span><span class="sxs-lookup"><span data-stu-id="650db-667">Name</span></span>| <span data-ttu-id="650db-668">Type</span><span class="sxs-lookup"><span data-stu-id="650db-668">Type</span></span>| <span data-ttu-id="650db-669">Description</span><span class="sxs-lookup"><span data-stu-id="650db-669">Description</span></span>|
+|<span data-ttu-id="d4d70-665">Nom</span><span class="sxs-lookup"><span data-stu-id="d4d70-665">Name</span></span>| <span data-ttu-id="d4d70-666">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-666">Type</span></span>| <span data-ttu-id="d4d70-667">Description</span><span class="sxs-lookup"><span data-stu-id="d4d70-667">Description</span></span>|
 |---|---|---|
-|`formData`| <span data-ttu-id="650db-670">String &#124; Object</span><span class="sxs-lookup"><span data-stu-id="650db-670">String &#124; Object</span></span>| | <span data-ttu-id="650db-p145">Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.</span><span class="sxs-lookup"><span data-stu-id="650db-p145">A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</span></span><br/><span data-ttu-id="650db-673">**OU**</span><span class="sxs-lookup"><span data-stu-id="650db-673">**OR**</span></span><br/><span data-ttu-id="650db-p146">Objet qui contient les données du corps du message ou des pièces jointes et une fonction de rappel. L’objet est défini de la manière suivante :</span><span class="sxs-lookup"><span data-stu-id="650db-p146">An object that contains body or attachment data and a callback function. The object is defined as follows.</span></span> |
-| `formData.htmlBody` | <span data-ttu-id="650db-676">String</span><span class="sxs-lookup"><span data-stu-id="650db-676">String</span></span> | <span data-ttu-id="650db-677">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="650db-677">&lt;optional&gt;</span></span> | <span data-ttu-id="650db-p147">Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.</span><span class="sxs-lookup"><span data-stu-id="650db-p147">A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</span></span>
-| `formData.attachments` | <span data-ttu-id="650db-680">Array.&lt;Object&gt;</span><span class="sxs-lookup"><span data-stu-id="650db-680">Array.&lt;Object&gt;</span></span> | <span data-ttu-id="650db-681">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="650db-681">&lt;optional&gt;</span></span> | <span data-ttu-id="650db-682">Tableau d’objets JSON qui sont des pièces jointes de fichier ou d’élément.</span><span class="sxs-lookup"><span data-stu-id="650db-682">An array of JSON objects that are either file or item attachments.</span></span> |
-| `formData.attachments.type` | <span data-ttu-id="650db-683">String</span><span class="sxs-lookup"><span data-stu-id="650db-683">String</span></span> | | <span data-ttu-id="650db-p148">Indique le type de pièce jointe. Doit être `file` pour une pièce jointe de fichier ou `item` pour une pièce jointe d’élément.</span><span class="sxs-lookup"><span data-stu-id="650db-p148">Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment.</span></span> |
-| `formData.attachments.name` | <span data-ttu-id="650db-686">String</span><span class="sxs-lookup"><span data-stu-id="650db-686">String</span></span> | | <span data-ttu-id="650db-687">Chaîne qui contient le nom de la pièce jointe et comporte jusqu'à 255 caractères.</span><span class="sxs-lookup"><span data-stu-id="650db-687">A string that contains the name of the attachment, up to 255 characters in length.</span></span>|
-| `formData.attachments.url` | <span data-ttu-id="650db-688">String</span><span class="sxs-lookup"><span data-stu-id="650db-688">String</span></span> | | <span data-ttu-id="650db-p149">Utilisé uniquement si `type` est défini sur `file`. Il s’agit de l’URI de l’emplacement du fichier.</span><span class="sxs-lookup"><span data-stu-id="650db-p149">Only used if `type` is set to `file`. The URI of the location for the file.</span></span> |
-| `formData.attachments.itemId` | <span data-ttu-id="650db-691">String</span><span class="sxs-lookup"><span data-stu-id="650db-691">String</span></span> | | <span data-ttu-id="650db-p150">Utilisé uniquement si `type` est défini sur `item`. Il s’agit de l’ID de l’élément EWS de la pièce jointe. Il s’agit d’une chaîne comportant un maximum de 100 caractères.</span><span class="sxs-lookup"><span data-stu-id="650db-p150">Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters.</span></span> |
-| `callback` | <span data-ttu-id="650db-695">function</span><span class="sxs-lookup"><span data-stu-id="650db-695">function</span></span> | <span data-ttu-id="650db-696">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="650db-696">&lt;optional&gt;</span></span> | <span data-ttu-id="650db-697">Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [AsyncResult](/javascript/api/office/office.asyncresult).</span><span class="sxs-lookup"><span data-stu-id="650db-697">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object.</span></span> |
+|`formData`| <span data-ttu-id="d4d70-668">String &#124; Object</span><span class="sxs-lookup"><span data-stu-id="d4d70-668">String &#124; Object</span></span>| | <span data-ttu-id="d4d70-p146">Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p146">A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</span></span><br/><span data-ttu-id="d4d70-671">**OU**</span><span class="sxs-lookup"><span data-stu-id="d4d70-671">**OR**</span></span><br/><span data-ttu-id="d4d70-p147">Objet qui contient les données du corps du message ou des pièces jointes et une fonction de rappel. L’objet est défini de la manière suivante :</span><span class="sxs-lookup"><span data-stu-id="d4d70-p147">An object that contains body or attachment data and a callback function. The object is defined as follows.</span></span> |
+| `formData.htmlBody` | <span data-ttu-id="d4d70-674">String</span><span class="sxs-lookup"><span data-stu-id="d4d70-674">String</span></span> | <span data-ttu-id="d4d70-675">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="d4d70-675">&lt;optional&gt;</span></span> | <span data-ttu-id="d4d70-p148">Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p148">A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.</span></span>
+| `formData.attachments` | <span data-ttu-id="d4d70-678">Array.&lt;Object&gt;</span><span class="sxs-lookup"><span data-stu-id="d4d70-678">Array.&lt;Object&gt;</span></span> | <span data-ttu-id="d4d70-679">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="d4d70-679">&lt;optional&gt;</span></span> | <span data-ttu-id="d4d70-680">Tableau d’objets JSON qui sont des pièces jointes de fichier ou d’élément.</span><span class="sxs-lookup"><span data-stu-id="d4d70-680">An array of JSON objects that are either file or item attachments.</span></span> |
+| `formData.attachments.type` | <span data-ttu-id="d4d70-681">String</span><span class="sxs-lookup"><span data-stu-id="d4d70-681">String</span></span> | | <span data-ttu-id="d4d70-p149">Indique le type de pièce jointe. Doit être `file` pour une pièce jointe de fichier ou `item` pour une pièce jointe d’élément.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p149">Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment.</span></span> |
+| `formData.attachments.name` | <span data-ttu-id="d4d70-684">String</span><span class="sxs-lookup"><span data-stu-id="d4d70-684">String</span></span> | | <span data-ttu-id="d4d70-685">Chaîne qui contient le nom de la pièce jointe et comporte jusqu'à 255 caractères.</span><span class="sxs-lookup"><span data-stu-id="d4d70-685">A string that contains the name of the attachment, up to 255 characters in length.</span></span>|
+| `formData.attachments.url` | <span data-ttu-id="d4d70-686">String</span><span class="sxs-lookup"><span data-stu-id="d4d70-686">String</span></span> | | <span data-ttu-id="d4d70-p150">Utilisé uniquement si `type` est défini sur `file`. Il s’agit de l’URI de l’emplacement du fichier.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p150">Only used if `type` is set to `file`. The URI of the location for the file.</span></span> |
+| `formData.attachments.itemId` | <span data-ttu-id="d4d70-689">String</span><span class="sxs-lookup"><span data-stu-id="d4d70-689">String</span></span> | | <span data-ttu-id="d4d70-p151">Utilisé uniquement si `type` est défini sur `item`. Il s’agit de l’ID de l’élément EWS de la pièce jointe. Il s’agit d’une chaîne comportant un maximum de 100 caractères.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p151">Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters.</span></span> |
+| `callback` | <span data-ttu-id="d4d70-693">function</span><span class="sxs-lookup"><span data-stu-id="d4d70-693">function</span></span> | <span data-ttu-id="d4d70-694">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="d4d70-694">&lt;optional&gt;</span></span> | <span data-ttu-id="d4d70-695">Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [AsyncResult](/javascript/api/office/office.asyncresult).</span><span class="sxs-lookup"><span data-stu-id="d4d70-695">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object.</span></span> |
 
-##### <a name="requirements"></a><span data-ttu-id="650db-698">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-698">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-696">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-696">Requirements</span></span>
 
-|<span data-ttu-id="650db-699">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-699">Requirement</span></span>| <span data-ttu-id="650db-700">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-700">Value</span></span>|
+|<span data-ttu-id="d4d70-697">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-697">Requirement</span></span>| <span data-ttu-id="d4d70-698">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-698">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-701">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-701">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-702">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-702">1.0</span></span>|
-|[<span data-ttu-id="650db-703">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-703">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-704">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-704">ReadItem</span></span>|
-|[<span data-ttu-id="650db-705">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-705">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-706">Lecture</span><span class="sxs-lookup"><span data-stu-id="650db-706">Read</span></span>|
+|[<span data-ttu-id="d4d70-699">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-699">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-700">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-700">1.0</span></span>|
+|[<span data-ttu-id="d4d70-701">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-701">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-702">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-702">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-703">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-703">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-704">Lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-704">Read</span></span>|
 
-##### <a name="examples"></a><span data-ttu-id="650db-707">Exemples</span><span class="sxs-lookup"><span data-stu-id="650db-707">Examples</span></span>
+##### <a name="examples"></a><span data-ttu-id="d4d70-705">Exemples</span><span class="sxs-lookup"><span data-stu-id="d4d70-705">Examples</span></span>
 
-<span data-ttu-id="650db-708">Le code suivant transmet une chaîne à la fonction `displayReplyForm`.</span><span class="sxs-lookup"><span data-stu-id="650db-708">The following code passes a string to the `displayReplyForm` function.</span></span>
+<span data-ttu-id="d4d70-706">Le code suivant transmet une chaîne à la fonction `displayReplyForm`.</span><span class="sxs-lookup"><span data-stu-id="d4d70-706">The following code passes a string to the `displayReplyForm` function.</span></span>
 
-```JavaScript
+```javascript
 Office.context.mailbox.item.displayReplyForm('hello there');
 Office.context.mailbox.item.displayReplyForm('<b>hello there</b>');
 ```
 
-<span data-ttu-id="650db-709">Réponse avec un corps vide.</span><span class="sxs-lookup"><span data-stu-id="650db-709">Reply with an empty body.</span></span>
+<span data-ttu-id="d4d70-707">Réponse avec un corps vide.</span><span class="sxs-lookup"><span data-stu-id="d4d70-707">Reply with an empty body.</span></span>
 
-```JavaScript
+```javascript
 Office.context.mailbox.item.displayReplyForm({});
 ```
 
-<span data-ttu-id="650db-710">Réponse avec un corps.</span><span class="sxs-lookup"><span data-stu-id="650db-710">Reply with just a body.</span></span>
+<span data-ttu-id="d4d70-708">Réponse avec un corps.</span><span class="sxs-lookup"><span data-stu-id="d4d70-708">Reply with just a body.</span></span>
 
-```JavaScript
+```javascript
 Office.context.mailbox.item.displayReplyForm(
 {
   'htmlBody' : 'hi'
 });
 ```
 
-<span data-ttu-id="650db-711">Réponse avec un corps et la pièce jointe d’un fichier.</span><span class="sxs-lookup"><span data-stu-id="650db-711">Reply with a body and a file attachment.</span></span>
+<span data-ttu-id="d4d70-709">Réponse avec un corps et la pièce jointe d’un fichier.</span><span class="sxs-lookup"><span data-stu-id="d4d70-709">Reply with a body and a file attachment.</span></span>
 
-```JavaScript
+```javascript
 Office.context.mailbox.item.displayReplyForm(
 {
   'htmlBody' : 'hi',
@@ -1030,9 +1093,9 @@ Office.context.mailbox.item.displayReplyForm(
 });
 ```
 
-<span data-ttu-id="650db-712">Réponse avec un corps et la pièce jointe d’un élément.</span><span class="sxs-lookup"><span data-stu-id="650db-712">Reply with a body and an item attachment.</span></span>
+<span data-ttu-id="d4d70-710">Réponse avec un corps et la pièce jointe d’un élément.</span><span class="sxs-lookup"><span data-stu-id="d4d70-710">Reply with a body and an item attachment.</span></span>
 
-```JavaScript
+```javascript
 Office.context.mailbox.item.displayReplyForm(
 {
   'htmlBody' : 'hi',
@@ -1047,9 +1110,9 @@ Office.context.mailbox.item.displayReplyForm(
 });
 ```
 
-<span data-ttu-id="650db-713">Réponse avec un corps, la pièce jointe d’un fichier, la pièce jointe d’un élément et un rappel.</span><span class="sxs-lookup"><span data-stu-id="650db-713">Reply with a body, file attachment, item attachment, and a callback.</span></span>
+<span data-ttu-id="d4d70-711">Réponse avec un corps, la pièce jointe d’un fichier, la pièce jointe d’un élément et un rappel.</span><span class="sxs-lookup"><span data-stu-id="d4d70-711">Reply with a body, file attachment, item attachment, and a callback.</span></span>
 
-```JavaScript
+```javascript
 Office.context.mailbox.item.displayReplyForm(
 {
   'htmlBody' : 'hi',
@@ -1073,77 +1136,77 @@ Office.context.mailbox.item.displayReplyForm(
 });
 ```
 
-#### <a name="getentities--entitiesjavascriptapioutlook12officeentities"></a><span data-ttu-id="650db-714">getEntities() → {[Entities](/javascript/api/outlook_1_2/office.entities)}</span><span class="sxs-lookup"><span data-stu-id="650db-714">getEntities() → {[Entities](/javascript/api/outlook_1_2/office.entities)}</span></span>
+#### <a name="getentities--entitiesjavascriptapioutlook12officeentities"></a><span data-ttu-id="d4d70-712">getEntities() → {[Entities](/javascript/api/outlook_1_2/office.entities)}</span><span class="sxs-lookup"><span data-stu-id="d4d70-712">getEntities() → {[Entities](/javascript/api/outlook_1_2/office.entities)}</span></span>
 
-<span data-ttu-id="650db-715">Permet d’obtenir les entités figurant dans le corps de l’élément sélectionné.</span><span class="sxs-lookup"><span data-stu-id="650db-715">Gets the entities found in the selected item's body.</span></span>
+<span data-ttu-id="d4d70-713">Permet d’obtenir les entités figurant dans le corps de l’élément sélectionné.</span><span class="sxs-lookup"><span data-stu-id="d4d70-713">Gets the entities found in the selected item's body.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="650db-716">Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.</span><span class="sxs-lookup"><span data-stu-id="650db-716">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="d4d70-714">Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.</span><span class="sxs-lookup"><span data-stu-id="d4d70-714">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="650db-717">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-717">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-715">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-715">Requirements</span></span>
 
-|<span data-ttu-id="650db-718">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-718">Requirement</span></span>| <span data-ttu-id="650db-719">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-719">Value</span></span>|
+|<span data-ttu-id="d4d70-716">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-716">Requirement</span></span>| <span data-ttu-id="d4d70-717">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-717">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-720">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-720">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-721">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-721">1.0</span></span>|
-|[<span data-ttu-id="650db-722">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-722">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-723">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-723">ReadItem</span></span>|
-|[<span data-ttu-id="650db-724">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-724">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-725">Lecture</span><span class="sxs-lookup"><span data-stu-id="650db-725">Read</span></span>|
+|[<span data-ttu-id="d4d70-718">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-718">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-719">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-719">1.0</span></span>|
+|[<span data-ttu-id="d4d70-720">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-720">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-721">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-721">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-722">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-722">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-723">Lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-723">Read</span></span>|
 
-##### <a name="returns"></a><span data-ttu-id="650db-726">Renvoie :</span><span class="sxs-lookup"><span data-stu-id="650db-726">Returns:</span></span>
+##### <a name="returns"></a><span data-ttu-id="d4d70-724">Renvoie :</span><span class="sxs-lookup"><span data-stu-id="d4d70-724">Returns:</span></span>
 
-<span data-ttu-id="650db-727">Type : [Entities](/javascript/api/outlook_1_2/office.entities)</span><span class="sxs-lookup"><span data-stu-id="650db-727">Type: [Entities](/javascript/api/outlook_1_2/office.entities)</span></span>
+<span data-ttu-id="d4d70-725">Type : [Entities](/javascript/api/outlook_1_2/office.entities)</span><span class="sxs-lookup"><span data-stu-id="d4d70-725">Type: [Entities](/javascript/api/outlook_1_2/office.entities)</span></span>
 
-##### <a name="example"></a><span data-ttu-id="650db-728">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-728">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="d4d70-726">Exemple</span><span class="sxs-lookup"><span data-stu-id="d4d70-726">Example</span></span>
 
-<span data-ttu-id="650db-729">L’exemple suivant accède aux entités des contacts dans le corps de l’élément actif.</span><span class="sxs-lookup"><span data-stu-id="650db-729">The following example accesses the contacts entities in the current item's body.</span></span>
+<span data-ttu-id="d4d70-727">L’exemple suivant accède aux entités des contacts dans le corps de l’élément actif.</span><span class="sxs-lookup"><span data-stu-id="d4d70-727">The following example accesses the contacts entities in the current item's body.</span></span>
 
-```js
+```javascript
 var contacts = Office.context.mailbox.item.getEntities().contacts;
 ```
 
-#### <a name="getentitiesbytypeentitytype--nullable-arraystringcontactjavascriptapioutlook12officecontactmeetingsuggestionjavascriptapioutlook12officemeetingsuggestionphonenumberjavascriptapioutlook12officephonenumbertasksuggestionjavascriptapioutlook12officetasksuggestion"></a><span data-ttu-id="650db-730">getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook_1_2/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_2/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_2/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_2/office.tasksuggestion))>}</span><span class="sxs-lookup"><span data-stu-id="650db-730">getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook_1_2/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_2/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_2/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_2/office.tasksuggestion))>}</span></span>
+#### <a name="getentitiesbytypeentitytype--nullable-arraystringcontactjavascriptapioutlook12officecontactmeetingsuggestionjavascriptapioutlook12officemeetingsuggestionphonenumberjavascriptapioutlook12officephonenumbertasksuggestionjavascriptapioutlook12officetasksuggestion"></a><span data-ttu-id="d4d70-728">getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook_1_2/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_2/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_2/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_2/office.tasksuggestion))>}</span><span class="sxs-lookup"><span data-stu-id="d4d70-728">getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook_1_2/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_2/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_2/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_2/office.tasksuggestion))>}</span></span>
 
-<span data-ttu-id="650db-731">Permet d’obtenir un tableau de toutes les entités du type spécifié trouvées dans le corps de l’élément sélectionné.</span><span class="sxs-lookup"><span data-stu-id="650db-731">Gets an array of all the entities of the specified entity type found in the selected item's body.</span></span>
+<span data-ttu-id="d4d70-729">Permet d’obtenir un tableau de toutes les entités du type spécifié trouvées dans le corps de l’élément sélectionné.</span><span class="sxs-lookup"><span data-stu-id="d4d70-729">Gets an array of all the entities of the specified entity type found in the selected item's body.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="650db-732">Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.</span><span class="sxs-lookup"><span data-stu-id="650db-732">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="d4d70-730">Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.</span><span class="sxs-lookup"><span data-stu-id="d4d70-730">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="650db-733">Paramètres :</span><span class="sxs-lookup"><span data-stu-id="650db-733">Parameters:</span></span>
+##### <a name="parameters"></a><span data-ttu-id="d4d70-731">Paramètres</span><span class="sxs-lookup"><span data-stu-id="d4d70-731">Parameters</span></span>
 
-|<span data-ttu-id="650db-734">Nom</span><span class="sxs-lookup"><span data-stu-id="650db-734">Name</span></span>| <span data-ttu-id="650db-735">Type</span><span class="sxs-lookup"><span data-stu-id="650db-735">Type</span></span>| <span data-ttu-id="650db-736">Description</span><span class="sxs-lookup"><span data-stu-id="650db-736">Description</span></span>|
+|<span data-ttu-id="d4d70-732">Nom</span><span class="sxs-lookup"><span data-stu-id="d4d70-732">Name</span></span>| <span data-ttu-id="d4d70-733">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-733">Type</span></span>| <span data-ttu-id="d4d70-734">Description</span><span class="sxs-lookup"><span data-stu-id="d4d70-734">Description</span></span>|
 |---|---|---|
-|`entityType`| [<span data-ttu-id="650db-737">Office.MailboxEnums.EntityType</span><span class="sxs-lookup"><span data-stu-id="650db-737">Office.MailboxEnums.EntityType</span></span>](/javascript/api/outlook_1_2/office.mailboxenums.entitytype)|<span data-ttu-id="650db-738">Une des valeurs d’énumération EntityType.</span><span class="sxs-lookup"><span data-stu-id="650db-738">One of the EntityType enumeration values.</span></span>|
+|`entityType`| [<span data-ttu-id="d4d70-735">Office.MailboxEnums.EntityType</span><span class="sxs-lookup"><span data-stu-id="d4d70-735">Office.MailboxEnums.EntityType</span></span>](/javascript/api/outlook_1_2/office.mailboxenums.entitytype)|<span data-ttu-id="d4d70-736">Une des valeurs d’énumération EntityType.</span><span class="sxs-lookup"><span data-stu-id="d4d70-736">One of the EntityType enumeration values.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="650db-739">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-739">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-737">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-737">Requirements</span></span>
 
-|<span data-ttu-id="650db-740">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-740">Requirement</span></span>| <span data-ttu-id="650db-741">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-741">Value</span></span>|
+|<span data-ttu-id="d4d70-738">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-738">Requirement</span></span>| <span data-ttu-id="d4d70-739">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-739">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-742">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-742">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-743">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-743">1.0</span></span>|
-|[<span data-ttu-id="650db-744">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-744">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-745">Restreinte</span><span class="sxs-lookup"><span data-stu-id="650db-745">Restricted</span></span>|
-|[<span data-ttu-id="650db-746">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-746">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-747">Lecture</span><span class="sxs-lookup"><span data-stu-id="650db-747">Read</span></span>|
+|[<span data-ttu-id="d4d70-740">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-740">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-741">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-741">1.0</span></span>|
+|[<span data-ttu-id="d4d70-742">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-742">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-743">Restreinte</span><span class="sxs-lookup"><span data-stu-id="d4d70-743">Restricted</span></span>|
+|[<span data-ttu-id="d4d70-744">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-744">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-745">Lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-745">Read</span></span>|
 
-##### <a name="returns"></a><span data-ttu-id="650db-748">Renvoie :</span><span class="sxs-lookup"><span data-stu-id="650db-748">Returns:</span></span>
+##### <a name="returns"></a><span data-ttu-id="d4d70-746">Renvoie :</span><span class="sxs-lookup"><span data-stu-id="d4d70-746">Returns:</span></span>
 
-<span data-ttu-id="650db-749">Si la valeur transmise à `entityType` n’est pas un membre valide de l’énumération `EntityType`, la méthode renvoie la valeur null.</span><span class="sxs-lookup"><span data-stu-id="650db-749">If the value passed in `entityType` is not a valid member of the `EntityType` enumeration, the method returns null.</span></span> <span data-ttu-id="650db-750">Si aucune entité du type spécifié n’est présente dans le corps de l’élément, la méthode renvoie un tableau vide.</span><span class="sxs-lookup"><span data-stu-id="650db-750">If no entities of the specified type are present in the item's body, the method returns an empty array.</span></span> <span data-ttu-id="650db-751">Sinon, le type des objets dans le tableau renvoyé dépend du type d’entité demandé dans le paramètre `entityType`.</span><span class="sxs-lookup"><span data-stu-id="650db-751">Otherwise, the type of the objects in the returned array depends on the type of entity requested in the `entityType` parameter.</span></span>
+<span data-ttu-id="d4d70-747">Si la valeur transmise à `entityType` n’est pas un membre valide de l’énumération `EntityType`, la méthode renvoie la valeur null.</span><span class="sxs-lookup"><span data-stu-id="d4d70-747">If the value passed in `entityType` is not a valid member of the `EntityType` enumeration, the method returns null.</span></span> <span data-ttu-id="d4d70-748">Si aucune entité du type spécifié n’est présente dans le corps de l’élément, la méthode renvoie un tableau vide.</span><span class="sxs-lookup"><span data-stu-id="d4d70-748">If no entities of the specified type are present in the item's body, the method returns an empty array.</span></span> <span data-ttu-id="d4d70-749">Sinon, le type des objets dans le tableau renvoyé dépend du type d’entité demandé dans le paramètre `entityType`.</span><span class="sxs-lookup"><span data-stu-id="d4d70-749">Otherwise, the type of the objects in the returned array depends on the type of entity requested in the `entityType` parameter.</span></span>
 
-<span data-ttu-id="650db-752">Alors que le niveau d’autorisation minimal **Restricted** suffit pour utiliser cette méthode, certains types d’entité nécessitent le niveau **ReadItem** pour pouvoir y accéder, comme indiqué dans le tableau suivant.</span><span class="sxs-lookup"><span data-stu-id="650db-752">While the minimum permission level to use this method is **Restricted**, some entity types require **ReadItem** to access, as specified in the following table.</span></span>
+<span data-ttu-id="d4d70-750">Alors que le niveau d’autorisation minimal **Restricted** suffit pour utiliser cette méthode, certains types d’entité nécessitent le niveau **ReadItem** pour pouvoir y accéder, comme indiqué dans le tableau suivant.</span><span class="sxs-lookup"><span data-stu-id="d4d70-750">While the minimum permission level to use this method is **Restricted**, some entity types require **ReadItem** to access, as specified in the following table.</span></span>
 
-| <span data-ttu-id="650db-753">Valeur de `entityType`</span><span class="sxs-lookup"><span data-stu-id="650db-753">Value of `entityType`</span></span> | <span data-ttu-id="650db-754">Type des objets du tableau renvoyé</span><span class="sxs-lookup"><span data-stu-id="650db-754">Type of objects in returned array</span></span> | <span data-ttu-id="650db-755">Niveau d’autorisation requis</span><span class="sxs-lookup"><span data-stu-id="650db-755">Required Permission Level</span></span> |
+| <span data-ttu-id="d4d70-751">Valeur de `entityType`</span><span class="sxs-lookup"><span data-stu-id="d4d70-751">Value of `entityType`</span></span> | <span data-ttu-id="d4d70-752">Type des objets du tableau renvoyé</span><span class="sxs-lookup"><span data-stu-id="d4d70-752">Type of objects in returned array</span></span> | <span data-ttu-id="d4d70-753">Niveau d’autorisation requis</span><span class="sxs-lookup"><span data-stu-id="d4d70-753">Required Permission Level</span></span> |
 | --- | --- | --- |
-| `Address` | <span data-ttu-id="650db-756">String</span><span class="sxs-lookup"><span data-stu-id="650db-756">String</span></span> | <span data-ttu-id="650db-757">**Restricted**</span><span class="sxs-lookup"><span data-stu-id="650db-757">**Restricted**</span></span> |
-| `Contact` | <span data-ttu-id="650db-758">Contact</span><span class="sxs-lookup"><span data-stu-id="650db-758">Contact</span></span> | <span data-ttu-id="650db-759">**ReadItem**</span><span class="sxs-lookup"><span data-stu-id="650db-759">**ReadItem**</span></span> |
-| `EmailAddress` | <span data-ttu-id="650db-760">String</span><span class="sxs-lookup"><span data-stu-id="650db-760">String</span></span> | <span data-ttu-id="650db-761">**ReadItem**</span><span class="sxs-lookup"><span data-stu-id="650db-761">**ReadItem**</span></span> |
-| `MeetingSuggestion` | <span data-ttu-id="650db-762">MeetingSuggestion</span><span class="sxs-lookup"><span data-stu-id="650db-762">MeetingSuggestion</span></span> | <span data-ttu-id="650db-763">**ReadItem**</span><span class="sxs-lookup"><span data-stu-id="650db-763">**ReadItem**</span></span> |
-| `PhoneNumber` | <span data-ttu-id="650db-764">PhoneNumber</span><span class="sxs-lookup"><span data-stu-id="650db-764">PhoneNumber</span></span> | <span data-ttu-id="650db-765">**Restricted**</span><span class="sxs-lookup"><span data-stu-id="650db-765">**Restricted**</span></span> |
-| `TaskSuggestion` | <span data-ttu-id="650db-766">TaskSuggestion</span><span class="sxs-lookup"><span data-stu-id="650db-766">TaskSuggestion</span></span> | <span data-ttu-id="650db-767">**ReadItem**</span><span class="sxs-lookup"><span data-stu-id="650db-767">**ReadItem**</span></span> |
-| `URL` | <span data-ttu-id="650db-768">String</span><span class="sxs-lookup"><span data-stu-id="650db-768">String</span></span> | <span data-ttu-id="650db-769">**Restricted**</span><span class="sxs-lookup"><span data-stu-id="650db-769">**Restricted**</span></span> |
+| `Address` | <span data-ttu-id="d4d70-754">String</span><span class="sxs-lookup"><span data-stu-id="d4d70-754">String</span></span> | <span data-ttu-id="d4d70-755">**Restricted**</span><span class="sxs-lookup"><span data-stu-id="d4d70-755">**Restricted**</span></span> |
+| `Contact` | <span data-ttu-id="d4d70-756">Contact</span><span class="sxs-lookup"><span data-stu-id="d4d70-756">Contact</span></span> | <span data-ttu-id="d4d70-757">**ReadItem**</span><span class="sxs-lookup"><span data-stu-id="d4d70-757">**ReadItem**</span></span> |
+| `EmailAddress` | <span data-ttu-id="d4d70-758">String</span><span class="sxs-lookup"><span data-stu-id="d4d70-758">String</span></span> | <span data-ttu-id="d4d70-759">**ReadItem**</span><span class="sxs-lookup"><span data-stu-id="d4d70-759">**ReadItem**</span></span> |
+| `MeetingSuggestion` | <span data-ttu-id="d4d70-760">MeetingSuggestion</span><span class="sxs-lookup"><span data-stu-id="d4d70-760">MeetingSuggestion</span></span> | <span data-ttu-id="d4d70-761">**ReadItem**</span><span class="sxs-lookup"><span data-stu-id="d4d70-761">**ReadItem**</span></span> |
+| `PhoneNumber` | <span data-ttu-id="d4d70-762">PhoneNumber</span><span class="sxs-lookup"><span data-stu-id="d4d70-762">PhoneNumber</span></span> | <span data-ttu-id="d4d70-763">**Restricted**</span><span class="sxs-lookup"><span data-stu-id="d4d70-763">**Restricted**</span></span> |
+| `TaskSuggestion` | <span data-ttu-id="d4d70-764">TaskSuggestion</span><span class="sxs-lookup"><span data-stu-id="d4d70-764">TaskSuggestion</span></span> | <span data-ttu-id="d4d70-765">**ReadItem**</span><span class="sxs-lookup"><span data-stu-id="d4d70-765">**ReadItem**</span></span> |
+| `URL` | <span data-ttu-id="d4d70-766">String</span><span class="sxs-lookup"><span data-stu-id="d4d70-766">String</span></span> | <span data-ttu-id="d4d70-767">**Restricted**</span><span class="sxs-lookup"><span data-stu-id="d4d70-767">**Restricted**</span></span> |
 
-<span data-ttu-id="650db-770">Type : Array.<(String|[Contact](/javascript/api/outlook_1_2/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_2/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_2/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_2/office.tasksuggestion))></span><span class="sxs-lookup"><span data-stu-id="650db-770">Type: Array.<(String|[Contact](/javascript/api/outlook_1_2/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_2/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_2/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_2/office.tasksuggestion))></span></span>
+<span data-ttu-id="d4d70-768">Type : Array.<(String|[Contact](/javascript/api/outlook_1_2/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_2/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_2/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_2/office.tasksuggestion))></span><span class="sxs-lookup"><span data-stu-id="d4d70-768">Type: Array.<(String|[Contact](/javascript/api/outlook_1_2/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_2/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_2/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_2/office.tasksuggestion))></span></span>
 
-##### <a name="example"></a><span data-ttu-id="650db-771">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-771">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="d4d70-769">Exemple</span><span class="sxs-lookup"><span data-stu-id="d4d70-769">Example</span></span>
 
-<span data-ttu-id="650db-772">L’exemple suivant montre comment accéder à un tableau de chaînes qui représente des adresses postales dans le corps de l’élément actif.</span><span class="sxs-lookup"><span data-stu-id="650db-772">The following example shows how to access an array of strings that represent postal addresses in the current item's body.</span></span>
+<span data-ttu-id="d4d70-770">L’exemple suivant montre comment accéder à un tableau de chaînes qui représente des adresses postales dans le corps de l’élément actif.</span><span class="sxs-lookup"><span data-stu-id="d4d70-770">The following example shows how to access an array of strings that represent postal addresses in the current item's body.</span></span>
 
-```JavaScript
+```javascript
 // The initialize function is required for all apps.
 Office.initialize = function () {
   // Checks for the DOM to load using the jQuery ready function.
@@ -1157,45 +1220,45 @@ Office.initialize = function () {
 }
 ```
 
-#### <a name="getfilteredentitiesbynamename--nullable-arraystringcontactjavascriptapioutlook12officecontactmeetingsuggestionjavascriptapioutlook12officemeetingsuggestionphonenumberjavascriptapioutlook12officephonenumbertasksuggestionjavascriptapioutlook12officetasksuggestion"></a><span data-ttu-id="650db-773">getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook_1_2/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_2/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_2/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_2/office.tasksuggestion))>}</span><span class="sxs-lookup"><span data-stu-id="650db-773">getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook_1_2/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_2/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_2/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_2/office.tasksuggestion))>}</span></span>
+#### <a name="getfilteredentitiesbynamename--nullable-arraystringcontactjavascriptapioutlook12officecontactmeetingsuggestionjavascriptapioutlook12officemeetingsuggestionphonenumberjavascriptapioutlook12officephonenumbertasksuggestionjavascriptapioutlook12officetasksuggestion"></a><span data-ttu-id="d4d70-771">getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook_1_2/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_2/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_2/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_2/office.tasksuggestion))>}</span><span class="sxs-lookup"><span data-stu-id="d4d70-771">getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook_1_2/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_2/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_2/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_2/office.tasksuggestion))>}</span></span>
 
-<span data-ttu-id="650db-774">Renvoie des entités reconnues dans l’élément sélectionné, qui transmettent le filtre nommé défini au fichier manifeste XML.</span><span class="sxs-lookup"><span data-stu-id="650db-774">Returns well-known entities in the selected item that pass the named filter defined in the manifest XML file.</span></span>
+<span data-ttu-id="d4d70-772">Renvoie des entités reconnues dans l’élément sélectionné, qui transmettent le filtre nommé défini au fichier manifeste XML.</span><span class="sxs-lookup"><span data-stu-id="d4d70-772">Returns well-known entities in the selected item that pass the named filter defined in the manifest XML file.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="650db-775">Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.</span><span class="sxs-lookup"><span data-stu-id="650db-775">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="d4d70-773">Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.</span><span class="sxs-lookup"><span data-stu-id="d4d70-773">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-<span data-ttu-id="650db-776">La méthode `getFilteredEntitiesByName` renvoie les entités qui correspondent à l’expression régulière définie dans l’élément de règle [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) du fichier manifeste XML ayant la valeur de l’élément `FilterName` spécifié.</span><span class="sxs-lookup"><span data-stu-id="650db-776">The `getFilteredEntitiesByName` method returns the entities that match the regular expression defined in the [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) rule element in the manifest XML file with the specified `FilterName` element value.</span></span>
+<span data-ttu-id="d4d70-774">La méthode `getFilteredEntitiesByName` renvoie les entités qui correspondent à l’expression régulière définie dans l’élément de règle [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) du fichier manifeste XML ayant la valeur de l’élément `FilterName` spécifié.</span><span class="sxs-lookup"><span data-stu-id="d4d70-774">The `getFilteredEntitiesByName` method returns the entities that match the regular expression defined in the [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) rule element in the manifest XML file with the specified `FilterName` element value.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="650db-777">Paramètres :</span><span class="sxs-lookup"><span data-stu-id="650db-777">Parameters:</span></span>
+##### <a name="parameters"></a><span data-ttu-id="d4d70-775">Paramètres</span><span class="sxs-lookup"><span data-stu-id="d4d70-775">Parameters</span></span>
 
-|<span data-ttu-id="650db-778">Nom</span><span class="sxs-lookup"><span data-stu-id="650db-778">Name</span></span>| <span data-ttu-id="650db-779">Type</span><span class="sxs-lookup"><span data-stu-id="650db-779">Type</span></span>| <span data-ttu-id="650db-780">Description</span><span class="sxs-lookup"><span data-stu-id="650db-780">Description</span></span>|
+|<span data-ttu-id="d4d70-776">Nom</span><span class="sxs-lookup"><span data-stu-id="d4d70-776">Name</span></span>| <span data-ttu-id="d4d70-777">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-777">Type</span></span>| <span data-ttu-id="d4d70-778">Description</span><span class="sxs-lookup"><span data-stu-id="d4d70-778">Description</span></span>|
 |---|---|---|
-|`name`| <span data-ttu-id="650db-781">String</span><span class="sxs-lookup"><span data-stu-id="650db-781">String</span></span>|<span data-ttu-id="650db-782">Nom de l’élément de règle `ItemHasKnownEntity` qui définit le filtre à respecter.</span><span class="sxs-lookup"><span data-stu-id="650db-782">The name of the `ItemHasKnownEntity` rule element that defines the filter to match.</span></span>|
+|`name`| <span data-ttu-id="d4d70-779">String</span><span class="sxs-lookup"><span data-stu-id="d4d70-779">String</span></span>|<span data-ttu-id="d4d70-780">Nom de l’élément de règle `ItemHasKnownEntity` qui définit le filtre à respecter.</span><span class="sxs-lookup"><span data-stu-id="d4d70-780">The name of the `ItemHasKnownEntity` rule element that defines the filter to match.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="650db-783">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-783">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-781">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-781">Requirements</span></span>
 
-|<span data-ttu-id="650db-784">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-784">Requirement</span></span>| <span data-ttu-id="650db-785">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-785">Value</span></span>|
+|<span data-ttu-id="d4d70-782">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-782">Requirement</span></span>| <span data-ttu-id="d4d70-783">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-783">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-786">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-786">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-787">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-787">1.0</span></span>|
-|[<span data-ttu-id="650db-788">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-788">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-789">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-789">ReadItem</span></span>|
-|[<span data-ttu-id="650db-790">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-790">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-791">Lecture</span><span class="sxs-lookup"><span data-stu-id="650db-791">Read</span></span>|
+|[<span data-ttu-id="d4d70-784">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-784">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-785">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-785">1.0</span></span>|
+|[<span data-ttu-id="d4d70-786">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-786">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-787">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-787">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-788">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-788">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-789">Lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-789">Read</span></span>|
 
-##### <a name="returns"></a><span data-ttu-id="650db-792">Renvoie :</span><span class="sxs-lookup"><span data-stu-id="650db-792">Returns:</span></span>
+##### <a name="returns"></a><span data-ttu-id="d4d70-790">Renvoie :</span><span class="sxs-lookup"><span data-stu-id="d4d70-790">Returns:</span></span>
 
-<span data-ttu-id="650db-p152">Si aucun élément `ItemHasKnownEntity` dans le manifeste n’a une valeur d’élément `FilterName` qui correspond au paramètre `name`, la méthode renvoie `null`. Si le paramètre `name` correspond à un élément `ItemHasKnownEntity` dans le manifeste, mais qu’aucune entité dans l’élément actif ne correspond, la méthode renvoie un tableau vide.</span><span class="sxs-lookup"><span data-stu-id="650db-p152">If there is no `ItemHasKnownEntity` element in the manifest with a `FilterName` element value that matches the `name` parameter, the method returns `null`. If the `name` parameter does match an `ItemHasKnownEntity` element in the manifest, but there are no entities in the current item that match, the method return an empty array.</span></span>
+<span data-ttu-id="d4d70-p153">Si aucun élément `ItemHasKnownEntity` dans le manifeste n’a une valeur d’élément `FilterName` qui correspond au paramètre `name`, la méthode renvoie `null`. Si le paramètre `name` correspond à un élément `ItemHasKnownEntity` dans le manifeste, mais qu’aucune entité dans l’élément actif ne correspond, la méthode renvoie un tableau vide.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p153">If there is no `ItemHasKnownEntity` element in the manifest with a `FilterName` element value that matches the `name` parameter, the method returns `null`. If the `name` parameter does match an `ItemHasKnownEntity` element in the manifest, but there are no entities in the current item that match, the method return an empty array.</span></span>
 
-<span data-ttu-id="650db-795">Type : Array.<(String|[Contact](/javascript/api/outlook_1_2/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_2/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_2/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_2/office.tasksuggestion))></span><span class="sxs-lookup"><span data-stu-id="650db-795">Type: Array.<(String|[Contact](/javascript/api/outlook_1_2/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_2/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_2/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_2/office.tasksuggestion))></span></span>
+<span data-ttu-id="d4d70-793">Type : Array.<(String|[Contact](/javascript/api/outlook_1_2/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_2/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_2/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_2/office.tasksuggestion))></span><span class="sxs-lookup"><span data-stu-id="d4d70-793">Type: Array.<(String|[Contact](/javascript/api/outlook_1_2/office.contact)|[MeetingSuggestion](/javascript/api/outlook_1_2/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook_1_2/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook_1_2/office.tasksuggestion))></span></span>
 
-#### <a name="getregexmatches--object"></a><span data-ttu-id="650db-796">getRegExMatches() → {Object}</span><span class="sxs-lookup"><span data-stu-id="650db-796">getRegExMatches() → {Object}</span></span>
+#### <a name="getregexmatches--object"></a><span data-ttu-id="d4d70-794">getRegExMatches() → {Object}</span><span class="sxs-lookup"><span data-stu-id="d4d70-794">getRegExMatches() → {Object}</span></span>
 
-<span data-ttu-id="650db-797">Renvoie des valeurs de chaîne dans l’élément sélectionné, qui correspondent aux expressions régulières définies dans le fichier manifeste XML.</span><span class="sxs-lookup"><span data-stu-id="650db-797">Returns string values in the selected item that match the regular expressions defined in the manifest XML file.</span></span>
+<span data-ttu-id="d4d70-795">Renvoie des valeurs de chaîne dans l’élément sélectionné, qui correspondent aux expressions régulières définies dans le fichier manifeste XML.</span><span class="sxs-lookup"><span data-stu-id="d4d70-795">Returns string values in the selected item that match the regular expressions defined in the manifest XML file.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="650db-798">Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.</span><span class="sxs-lookup"><span data-stu-id="650db-798">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="d4d70-796">Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.</span><span class="sxs-lookup"><span data-stu-id="d4d70-796">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-<span data-ttu-id="650db-p153">La méthode `getRegExMatches` renvoie les chaînes qui correspondent à l’expression régulière définie dans chaque élément de règle `ItemHasRegularExpressionMatch` ou `ItemHasKnownEntity` du fichier manifeste XML. Pour une règle `ItemHasRegularExpressionMatch`, une chaîne correspondante doit être présente dans la propriété de l’élément spécifié par cette règle. Le type simple `PropertyName` définit les propriétés prises en charge.</span><span class="sxs-lookup"><span data-stu-id="650db-p153">The `getRegExMatches` method returns the strings that match the regular expression defined in each `ItemHasRegularExpressionMatch` or `ItemHasKnownEntity` rule element in the manifest XML file. For an `ItemHasRegularExpressionMatch` rule, a matching string has to occur in the property of the item that is specified by that rule. The `PropertyName` simple type defines the supported properties.</span></span>
+<span data-ttu-id="d4d70-p154">La méthode `getRegExMatches` renvoie les chaînes qui correspondent à l’expression régulière définie dans chaque élément de règle `ItemHasRegularExpressionMatch` ou `ItemHasKnownEntity` du fichier manifeste XML. Pour une règle `ItemHasRegularExpressionMatch`, une chaîne correspondante doit être présente dans la propriété de l’élément spécifié par cette règle. Le type simple `PropertyName` définit les propriétés prises en charge.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p154">The `getRegExMatches` method returns the strings that match the regular expression defined in each `ItemHasRegularExpressionMatch` or `ItemHasKnownEntity` rule element in the manifest XML file. For an `ItemHasRegularExpressionMatch` rule, a matching string has to occur in the property of the item that is specified by that rule. The `PropertyName` simple type defines the supported properties.</span></span>
 
-<span data-ttu-id="650db-802">Par exemple, supposons qu’un manifeste de complément contienne l’élément `Rule` suivant :</span><span class="sxs-lookup"><span data-stu-id="650db-802">For example, consider an add-in manifest has the following `Rule` element:</span></span>
+<span data-ttu-id="d4d70-800">Par exemple, supposons qu’un manifeste de complément contienne l’élément `Rule` suivant :</span><span class="sxs-lookup"><span data-stu-id="d4d70-800">For example, consider an add-in manifest has the following `Rule` element:</span></span>
 
 ```xml
 <Rule xsi:type="RuleCollection" Mode="And">
@@ -1207,7 +1270,7 @@ Office.initialize = function () {
 </Rule>
 ```
 
-<span data-ttu-id="650db-803">L’objet renvoyé depuis `getRegExMatches` aurait deux propriétés : `fruits` et `veggies`.</span><span class="sxs-lookup"><span data-stu-id="650db-803">The object returned from `getRegExMatches` would have two properties: `fruits` and `veggies`.</span></span>
+<span data-ttu-id="d4d70-801">L’objet renvoyé depuis `getRegExMatches` aurait deux propriétés : `fruits` et `veggies`.</span><span class="sxs-lookup"><span data-stu-id="d4d70-801">The object returned from `getRegExMatches` would have two properties: `fruits` and `veggies`.</span></span>
 
 ```json
 {
@@ -1217,175 +1280,175 @@ Office.initialize = function () {
 ```
 
 > [!NOTE]
-> <span data-ttu-id="650db-p154">Si vous spécifiez une règle `ItemHasRegularExpressionMatch` pour la propriété de corps d’un élément, l’expression régulière doit filtrer davantage le corps. Par ailleurs, elle ne doit pas tenter de renvoyer l’intégralité du corps de l’élément. L’utilisation d’une expression régulière telle que `.*` pour obtenir l’intégralité du corps d’un élément ne renvoie pas toujours les résultats attendus.</span><span class="sxs-lookup"><span data-stu-id="650db-p154">If you specify an `ItemHasRegularExpressionMatch` rule on the body property of an item, the regular expression should further filter the body and should not attempt to return the entire body of the item. Using a regular expression such as `.*` to obtain the entire body of an item does not always return the expected results.</span></span>
+> <span data-ttu-id="d4d70-p155">Si vous spécifiez une règle `ItemHasRegularExpressionMatch` pour la propriété de corps d’un élément, l’expression régulière doit filtrer davantage le corps. Par ailleurs, elle ne doit pas tenter de renvoyer l’intégralité du corps de l’élément. L’utilisation d’une expression régulière telle que `.*` pour obtenir l’intégralité du corps d’un élément ne renvoie pas toujours les résultats attendus.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p155">If you specify an `ItemHasRegularExpressionMatch` rule on the body property of an item, the regular expression should further filter the body and should not attempt to return the entire body of the item. Using a regular expression such as `.*` to obtain the entire body of an item does not always return the expected results.</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="650db-806">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-806">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-804">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-804">Requirements</span></span>
 
-|<span data-ttu-id="650db-807">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-807">Requirement</span></span>| <span data-ttu-id="650db-808">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-808">Value</span></span>|
+|<span data-ttu-id="d4d70-805">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-805">Requirement</span></span>| <span data-ttu-id="d4d70-806">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-806">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-809">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-809">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-810">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-810">1.0</span></span>|
-|[<span data-ttu-id="650db-811">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-811">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-812">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-812">ReadItem</span></span>|
-|[<span data-ttu-id="650db-813">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-813">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-814">Lecture</span><span class="sxs-lookup"><span data-stu-id="650db-814">Read</span></span>|
+|[<span data-ttu-id="d4d70-807">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-807">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-808">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-808">1.0</span></span>|
+|[<span data-ttu-id="d4d70-809">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-809">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-810">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-810">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-811">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-811">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-812">Lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-812">Read</span></span>|
 
-##### <a name="returns"></a><span data-ttu-id="650db-815">Renvoie :</span><span class="sxs-lookup"><span data-stu-id="650db-815">Returns:</span></span>
+##### <a name="returns"></a><span data-ttu-id="d4d70-813">Renvoie :</span><span class="sxs-lookup"><span data-stu-id="d4d70-813">Returns:</span></span>
 
-<span data-ttu-id="650db-p155">Un objet qui contient les tableaux des chaînes correspondant aux expressions régulières définies dans le fichier manifeste XML. Le nom de chaque tableau est égal à la valeur correspondante de l’attribut `RegExName` de la règle `ItemHasRegularExpressionMatch` correspondante ou de l’attribut `FilterName` de la règle `ItemHasKnownEntity` correspondante.</span><span class="sxs-lookup"><span data-stu-id="650db-p155">An object that contains arrays of strings that match the regular expressions defined in the manifest XML file. The name of each array is equal to the corresponding value of the `RegExName` attribute of the matching `ItemHasRegularExpressionMatch` rule or the `FilterName` attribute of the matching `ItemHasKnownEntity` rule.</span></span>
+<span data-ttu-id="d4d70-p156">Un objet qui contient les tableaux des chaînes correspondant aux expressions régulières définies dans le fichier manifeste XML. Le nom de chaque tableau est égal à la valeur correspondante de l’attribut `RegExName` de la règle `ItemHasRegularExpressionMatch` correspondante ou de l’attribut `FilterName` de la règle `ItemHasKnownEntity` correspondante.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p156">An object that contains arrays of strings that match the regular expressions defined in the manifest XML file. The name of each array is equal to the corresponding value of the `RegExName` attribute of the matching `ItemHasRegularExpressionMatch` rule or the `FilterName` attribute of the matching `ItemHasKnownEntity` rule.</span></span>
 
-<dl class="param-type"><span data-ttu-id="650db-818">
-
-<dt>Type</dt>
-
-</span><span class="sxs-lookup"><span data-stu-id="650db-818">
+<dl class="param-type"><span data-ttu-id="d4d70-816">
 
 <dt>Type</dt>
 
-</span></span><dd><span data-ttu-id="650db-819">Objet</span><span class="sxs-lookup"><span data-stu-id="650db-819">Object</span></span></dd>
+</span><span class="sxs-lookup"><span data-stu-id="d4d70-816">
+
+<dt>Type</dt>
+
+</span></span><dd><span data-ttu-id="d4d70-817">Objet</span><span class="sxs-lookup"><span data-stu-id="d4d70-817">Object</span></span></dd>
 
 </dl>
 
-##### <a name="example"></a><span data-ttu-id="650db-820">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-820">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="d4d70-818">Exemple</span><span class="sxs-lookup"><span data-stu-id="d4d70-818">Example</span></span>
 
-<span data-ttu-id="650db-821">L’exemple suivant montre comment accéder au tableau de correspondances pour les éléments<rule> d’expression régulière `fruits` et `veggies`, spécifiés dans le manifeste.</rule></span><span class="sxs-lookup"><span data-stu-id="650db-821">The following example shows how to access the array of matches for the regular expression <rule>elements `fruits` and `veggies`, which are specified in the manifest.</rule></span></span>
+<span data-ttu-id="d4d70-819">L’exemple suivant montre comment accéder au tableau de correspondances pour les éléments<rule> d’expression régulière `fruits` et `veggies`, spécifiés dans le manifeste.</rule></span><span class="sxs-lookup"><span data-stu-id="d4d70-819">The following example shows how to access the array of matches for the regular expression <rule>elements `fruits` and `veggies`, which are specified in the manifest.</rule></span></span>
 
-```JavaScript
+```javascript
 var allMatches = Office.context.mailbox.item.getRegExMatches();
 var fruits = allMatches.fruits;
-var veges = allMatches.veggies;
+var veggies = allMatches.veggies;
 ```
 
-#### <a name="getregexmatchesbynamename--nullable-array-string-"></a><span data-ttu-id="650db-822">getRegExMatchesByName(name) → (nullable) {Array.< String >}</span><span class="sxs-lookup"><span data-stu-id="650db-822">getRegExMatchesByName(name) → (nullable) {Array.< String >}</span></span>
+#### <a name="getregexmatchesbynamename--nullable-array-string-"></a><span data-ttu-id="d4d70-820">getRegExMatchesByName(name) → (nullable) {Array.< String >}</span><span class="sxs-lookup"><span data-stu-id="d4d70-820">getRegExMatchesByName(name) → (nullable) {Array.< String >}</span></span>
 
-<span data-ttu-id="650db-823">Renvoie des valeurs de chaîne dans l’élément sélectionné, qui correspondent aux expressions régulières nommées définies dans le fichier manifeste XML.</span><span class="sxs-lookup"><span data-stu-id="650db-823">Returns string values in the selected item that match the named regular expression defined in the manifest XML file.</span></span>
+<span data-ttu-id="d4d70-821">Renvoie des valeurs de chaîne dans l’élément sélectionné, qui correspondent aux expressions régulières nommées définies dans le fichier manifeste XML.</span><span class="sxs-lookup"><span data-stu-id="d4d70-821">Returns string values in the selected item that match the named regular expression defined in the manifest XML file.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="650db-824">Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.</span><span class="sxs-lookup"><span data-stu-id="650db-824">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
+> <span data-ttu-id="d4d70-822">Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.</span><span class="sxs-lookup"><span data-stu-id="d4d70-822">This method is not supported in Outlook for iOS or Outlook for Android.</span></span>
 
-<span data-ttu-id="650db-825">La méthode `getRegExMatchesByName` renvoie les chaînes qui correspondent à l’expression régulière définie dans l’élément de règle `ItemHasRegularExpressionMatch` du fichier manifeste XML ayant la valeur de l’élément `RegExName` spécifié.</span><span class="sxs-lookup"><span data-stu-id="650db-825">The `getRegExMatchesByName` method returns the strings that match the regular expression defined in the `ItemHasRegularExpressionMatch` rule element in the manifest XML file with the specified `RegExName` element value.</span></span>
+<span data-ttu-id="d4d70-823">La méthode `getRegExMatchesByName` renvoie les chaînes qui correspondent à l’expression régulière définie dans l’élément de règle `ItemHasRegularExpressionMatch` du fichier manifeste XML ayant la valeur de l’élément `RegExName` spécifié.</span><span class="sxs-lookup"><span data-stu-id="d4d70-823">The `getRegExMatchesByName` method returns the strings that match the regular expression defined in the `ItemHasRegularExpressionMatch` rule element in the manifest XML file with the specified `RegExName` element value.</span></span>
 
-<span data-ttu-id="650db-p156">Si vous spécifiez une règle `ItemHasRegularExpressionMatch` pour la propriété de corps d’un élément, l’expression régulière doit filtrer davantage le corps. Par ailleurs, elle ne doit pas tenter de renvoyer l’intégralité du corps de l’élément. L’utilisation d’une expression régulière telle que `.*` pour obtenir l’intégralité du corps d’un élément ne renvoie pas toujours les résultats attendus.</span><span class="sxs-lookup"><span data-stu-id="650db-p156">If you specify an `ItemHasRegularExpressionMatch` rule on the body property of an item, the regular expression should further filter the body and should not attempt to return the entire body of the item. Using a regular expression such as `.*` to obtain the entire body of an item does not always return the expected results.</span></span>
+<span data-ttu-id="d4d70-p157">Si vous spécifiez une règle `ItemHasRegularExpressionMatch` pour la propriété de corps d’un élément, l’expression régulière doit filtrer davantage le corps. Par ailleurs, elle ne doit pas tenter de renvoyer l’intégralité du corps de l’élément. L’utilisation d’une expression régulière telle que `.*` pour obtenir l’intégralité du corps d’un élément ne renvoie pas toujours les résultats attendus.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p157">If you specify an `ItemHasRegularExpressionMatch` rule on the body property of an item, the regular expression should further filter the body and should not attempt to return the entire body of the item. Using a regular expression such as `.*` to obtain the entire body of an item does not always return the expected results.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="650db-828">Paramètres :</span><span class="sxs-lookup"><span data-stu-id="650db-828">Parameters:</span></span>
+##### <a name="parameters"></a><span data-ttu-id="d4d70-826">Paramètres</span><span class="sxs-lookup"><span data-stu-id="d4d70-826">Parameters</span></span>
 
-|<span data-ttu-id="650db-829">Nom</span><span class="sxs-lookup"><span data-stu-id="650db-829">Name</span></span>| <span data-ttu-id="650db-830">Type</span><span class="sxs-lookup"><span data-stu-id="650db-830">Type</span></span>| <span data-ttu-id="650db-831">object</span><span class="sxs-lookup"><span data-stu-id="650db-831">Description</span></span>|
+|<span data-ttu-id="d4d70-827">Nom</span><span class="sxs-lookup"><span data-stu-id="d4d70-827">Name</span></span>| <span data-ttu-id="d4d70-828">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-828">Type</span></span>| <span data-ttu-id="d4d70-829">object</span><span class="sxs-lookup"><span data-stu-id="d4d70-829">Description</span></span>|
 |---|---|---|
-|`name`| <span data-ttu-id="650db-832">String</span><span class="sxs-lookup"><span data-stu-id="650db-832">String</span></span>|<span data-ttu-id="650db-833">Nom de l’élément de règle `ItemHasRegularExpressionMatch` qui définit le filtre à respecter.</span><span class="sxs-lookup"><span data-stu-id="650db-833">The name of the `ItemHasRegularExpressionMatch` rule element that defines the filter to match.</span></span>|
+|`name`| <span data-ttu-id="d4d70-830">String</span><span class="sxs-lookup"><span data-stu-id="d4d70-830">String</span></span>|<span data-ttu-id="d4d70-831">Nom de l’élément de règle `ItemHasRegularExpressionMatch` qui définit le filtre à respecter.</span><span class="sxs-lookup"><span data-stu-id="d4d70-831">The name of the `ItemHasRegularExpressionMatch` rule element that defines the filter to match.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="650db-834">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-834">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-832">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-832">Requirements</span></span>
 
-|<span data-ttu-id="650db-835">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-835">Requirement</span></span>| <span data-ttu-id="650db-836">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-836">Value</span></span>|
+|<span data-ttu-id="d4d70-833">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-833">Requirement</span></span>| <span data-ttu-id="d4d70-834">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-834">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-837">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-837">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-838">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-838">1.0</span></span>|
-|[<span data-ttu-id="650db-839">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-839">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-840">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-840">ReadItem</span></span>|
-|[<span data-ttu-id="650db-841">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-841">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-842">Lecture</span><span class="sxs-lookup"><span data-stu-id="650db-842">Read</span></span>|
+|[<span data-ttu-id="d4d70-835">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-835">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-836">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-836">1.0</span></span>|
+|[<span data-ttu-id="d4d70-837">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-837">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-838">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-838">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-839">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-839">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-840">Lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-840">Read</span></span>|
 
-##### <a name="returns"></a><span data-ttu-id="650db-843">Renvoie :</span><span class="sxs-lookup"><span data-stu-id="650db-843">Returns:</span></span>
+##### <a name="returns"></a><span data-ttu-id="d4d70-841">Renvoie :</span><span class="sxs-lookup"><span data-stu-id="d4d70-841">Returns:</span></span>
 
-<span data-ttu-id="650db-844">Un tableau qui contient les chaînes correspondant à l’expression régulière définie dans le fichier manifeste XML.</span><span class="sxs-lookup"><span data-stu-id="650db-844">An array that contains the strings that match the regular expression defined in the manifest XML file.</span></span>
+<span data-ttu-id="d4d70-842">Un tableau qui contient les chaînes correspondant à l’expression régulière définie dans le fichier manifeste XML.</span><span class="sxs-lookup"><span data-stu-id="d4d70-842">An array that contains the strings that match the regular expression defined in the manifest XML file.</span></span>
 
-<dl class="param-type"><span data-ttu-id="650db-845">
-
-<dt>Type</dt>
-
-</span><span class="sxs-lookup"><span data-stu-id="650db-845">
+<dl class="param-type"><span data-ttu-id="d4d70-843">
 
 <dt>Type</dt>
 
-</span></span><dd><span data-ttu-id="650db-846">Array.< String ></span><span class="sxs-lookup"><span data-stu-id="650db-846">Array.< String ></span></span></dd>
+</span><span class="sxs-lookup"><span data-stu-id="d4d70-843">
+
+<dt>Type</dt>
+
+</span></span><dd><span data-ttu-id="d4d70-844">Array.< String ></span><span class="sxs-lookup"><span data-stu-id="d4d70-844">Array.< String ></span></span></dd>
 
 </dl>
 
-##### <a name="example"></a><span data-ttu-id="650db-847">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-847">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="d4d70-845">Exemple</span><span class="sxs-lookup"><span data-stu-id="d4d70-845">Example</span></span>
 
-```JavaScript
+```javascript
 var fruits = Office.context.mailbox.item.getRegExMatchesByName("fruits");
 var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 ```
 
-####  <a name="getselecteddataasynccoerciontype-options-callback--string"></a><span data-ttu-id="650db-848">getSelectedDataAsync(coercionType, [options], callback) → {String}</span><span class="sxs-lookup"><span data-stu-id="650db-848">getSelectedDataAsync(coercionType, [options], callback) → {String}</span></span>
+####  <a name="getselecteddataasynccoerciontype-options-callback--string"></a><span data-ttu-id="d4d70-846">getSelectedDataAsync(coercionType, [options], callback) → {String}</span><span class="sxs-lookup"><span data-stu-id="d4d70-846">getSelectedDataAsync(coercionType, [options], callback) → {String}</span></span>
 
-<span data-ttu-id="650db-849">Renvoie de manière asynchrone les données sélectionnées à partir de l’objet ou du corps d’un message.</span><span class="sxs-lookup"><span data-stu-id="650db-849">Asynchronously returns selected data from the subject or body of a message.</span></span>
+<span data-ttu-id="d4d70-847">Renvoie de manière asynchrone les données sélectionnées à partir de l’objet ou du corps d’un message.</span><span class="sxs-lookup"><span data-stu-id="d4d70-847">Asynchronously returns selected data from the subject or body of a message.</span></span>
 
-<span data-ttu-id="650db-p157">Si aucune sélection n’est effectuée, mais que le curseur est placé dans le corps ou l’objet, la méthode renvoie la valeur null pour les données sélectionnées. Si un champ autre que le corps ou l’objet est sélectionné, la méthode renvoie l’erreur `InvalidSelection`.</span><span class="sxs-lookup"><span data-stu-id="650db-p157">If there is no selection but the cursor is in the body or subject, the method returns null for the selected data. If a field other than the body or subject is selected, the method returns the `InvalidSelection` error.</span></span>
+<span data-ttu-id="d4d70-p158">Si aucune sélection n’est effectuée, mais que le curseur est placé dans le corps ou l’objet, la méthode renvoie la valeur null pour les données sélectionnées. Si un champ autre que le corps ou l’objet est sélectionné, la méthode renvoie l’erreur `InvalidSelection`.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p158">If there is no selection but the cursor is in the body or subject, the method returns null for the selected data. If a field other than the body or subject is selected, the method returns the `InvalidSelection` error.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="650db-852">Paramètres :</span><span class="sxs-lookup"><span data-stu-id="650db-852">Parameters:</span></span>
+##### <a name="parameters"></a><span data-ttu-id="d4d70-850">Paramètres</span><span class="sxs-lookup"><span data-stu-id="d4d70-850">Parameters</span></span>
 
-|<span data-ttu-id="650db-853">Nom</span><span class="sxs-lookup"><span data-stu-id="650db-853">Name</span></span>| <span data-ttu-id="650db-854">Type</span><span class="sxs-lookup"><span data-stu-id="650db-854">Type</span></span>| <span data-ttu-id="650db-855">Attributs</span><span class="sxs-lookup"><span data-stu-id="650db-855">Attributes</span></span>| <span data-ttu-id="650db-856">Description</span><span class="sxs-lookup"><span data-stu-id="650db-856">Description</span></span>|
+|<span data-ttu-id="d4d70-851">Nom</span><span class="sxs-lookup"><span data-stu-id="d4d70-851">Name</span></span>| <span data-ttu-id="d4d70-852">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-852">Type</span></span>| <span data-ttu-id="d4d70-853">Attributs</span><span class="sxs-lookup"><span data-stu-id="d4d70-853">Attributes</span></span>| <span data-ttu-id="d4d70-854">Description</span><span class="sxs-lookup"><span data-stu-id="d4d70-854">Description</span></span>|
 |---|---|---|---|
-|`coercionType`| [<span data-ttu-id="650db-857">Office.CoercionType</span><span class="sxs-lookup"><span data-stu-id="650db-857">Office.CoercionType</span></span>](office.md#coerciontype-string)||<span data-ttu-id="650db-p158">Demande un format à attribuer aux données. S’il s’agit de texte, la méthode renvoie le texte brut en tant que chaîne, en retirant toutes les balises HTML présentes. S’il s’agit de langage HTML, la méthode renvoie le texte sélectionné, qu’il s’agisse de texte brut ou de langage HTML.</span><span class="sxs-lookup"><span data-stu-id="650db-p158">Requests a format for the data. If Text, the method returns the plain text as a string , removing any HTML tags present. If HTML, the method returns the selected text, whether it is plaintext or HTML.</span></span>|
-|`options`| <span data-ttu-id="650db-861">Objet</span><span class="sxs-lookup"><span data-stu-id="650db-861">Object</span></span>| <span data-ttu-id="650db-862">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="650db-862">&lt;optional&gt;</span></span>|<span data-ttu-id="650db-863">Littéral d’objet contenant une ou plusieurs des propriétés suivantes.</span><span class="sxs-lookup"><span data-stu-id="650db-863">An object literal that contains one or more of the following properties.</span></span>|
-|`options.asyncContext`| <span data-ttu-id="650db-864">Objet</span><span class="sxs-lookup"><span data-stu-id="650db-864">Object</span></span>| <span data-ttu-id="650db-865">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="650db-865">&lt;optional&gt;</span></span>|<span data-ttu-id="650db-866">Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.</span><span class="sxs-lookup"><span data-stu-id="650db-866">Developers can provide any object they wish to access in the callback method.</span></span>|
-|`callback`| <span data-ttu-id="650db-867">fonction</span><span class="sxs-lookup"><span data-stu-id="650db-867">function</span></span>||<span data-ttu-id="650db-868">Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).</span><span class="sxs-lookup"><span data-stu-id="650db-868">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span><br/><br/><span data-ttu-id="650db-869">Pour accéder aux données sélectionnées via la méthode de rappel, appelez la méthode `asyncResult.value.data`.</span><span class="sxs-lookup"><span data-stu-id="650db-869">To access the selected data from the callback method, call `asyncResult.value.data`.</span></span> <span data-ttu-id="650db-870">Pour accéder à la propriété source dont la sélection est issue, appelez la méthode `asyncResult.value.sourceProperty`, qui correspond à `body` ou `subject`.</span><span class="sxs-lookup"><span data-stu-id="650db-870">To access the source property that the selection comes from, call `asyncResult.value.sourceProperty`, which will be either `body` or `subject`.</span></span>|
+|`coercionType`| [<span data-ttu-id="d4d70-855">Office.CoercionType</span><span class="sxs-lookup"><span data-stu-id="d4d70-855">Office.CoercionType</span></span>](office.md#coerciontype-string)||<span data-ttu-id="d4d70-p159">Demande un format à attribuer aux données. S’il s’agit de texte, la méthode renvoie le texte brut en tant que chaîne, en retirant toutes les balises HTML présentes. S’il s’agit de langage HTML, la méthode renvoie le texte sélectionné, qu’il s’agisse de texte brut ou de langage HTML.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p159">Requests a format for the data. If Text, the method returns the plain text as a string , removing any HTML tags present. If HTML, the method returns the selected text, whether it is plaintext or HTML.</span></span>|
+|`options`| <span data-ttu-id="d4d70-859">Objet</span><span class="sxs-lookup"><span data-stu-id="d4d70-859">Object</span></span>| <span data-ttu-id="d4d70-860">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="d4d70-860">&lt;optional&gt;</span></span>|<span data-ttu-id="d4d70-861">Littéral d’objet contenant une ou plusieurs des propriétés suivantes.</span><span class="sxs-lookup"><span data-stu-id="d4d70-861">An object literal that contains one or more of the following properties.</span></span>|
+|`options.asyncContext`| <span data-ttu-id="d4d70-862">Objet</span><span class="sxs-lookup"><span data-stu-id="d4d70-862">Object</span></span>| <span data-ttu-id="d4d70-863">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="d4d70-863">&lt;optional&gt;</span></span>|<span data-ttu-id="d4d70-864">Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.</span><span class="sxs-lookup"><span data-stu-id="d4d70-864">Developers can provide any object they wish to access in the callback method.</span></span>|
+|`callback`| <span data-ttu-id="d4d70-865">fonction</span><span class="sxs-lookup"><span data-stu-id="d4d70-865">function</span></span>||<span data-ttu-id="d4d70-866">Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).</span><span class="sxs-lookup"><span data-stu-id="d4d70-866">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span><br/><br/><span data-ttu-id="d4d70-867">Pour accéder aux données sélectionnées via la méthode de rappel, appelez la méthode `asyncResult.value.data`.</span><span class="sxs-lookup"><span data-stu-id="d4d70-867">To access the selected data from the callback method, call `asyncResult.value.data`.</span></span> <span data-ttu-id="d4d70-868">Pour accéder à la propriété source dont la sélection est issue, appelez la méthode `asyncResult.value.sourceProperty`, qui correspond à `body` ou `subject`.</span><span class="sxs-lookup"><span data-stu-id="d4d70-868">To access the source property that the selection comes from, call `asyncResult.value.sourceProperty`, which will be either `body` or `subject`.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="650db-871">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-871">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-869">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-869">Requirements</span></span>
 
-|<span data-ttu-id="650db-872">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-872">Requirement</span></span>| <span data-ttu-id="650db-873">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-873">Value</span></span>|
+|<span data-ttu-id="d4d70-870">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-870">Requirement</span></span>| <span data-ttu-id="d4d70-871">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-871">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-874">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-874">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-875">1.2</span><span class="sxs-lookup"><span data-stu-id="650db-875">1.2</span></span>|
-|[<span data-ttu-id="650db-876">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-876">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-877">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="650db-877">ReadWriteItem</span></span>|
-|[<span data-ttu-id="650db-878">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-878">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-879">Composition</span><span class="sxs-lookup"><span data-stu-id="650db-879">Compose</span></span>|
+|[<span data-ttu-id="d4d70-872">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-872">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-873">1.2</span><span class="sxs-lookup"><span data-stu-id="d4d70-873">1.2</span></span>|
+|[<span data-ttu-id="d4d70-874">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-874">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-875">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-875">ReadWriteItem</span></span>|
+|[<span data-ttu-id="d4d70-876">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-876">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-877">Composition</span><span class="sxs-lookup"><span data-stu-id="d4d70-877">Compose</span></span>|
 
-##### <a name="returns"></a><span data-ttu-id="650db-880">Renvoie :</span><span class="sxs-lookup"><span data-stu-id="650db-880">Returns:</span></span>
+##### <a name="returns"></a><span data-ttu-id="d4d70-878">Renvoie :</span><span class="sxs-lookup"><span data-stu-id="d4d70-878">Returns:</span></span>
 
-<span data-ttu-id="650db-881">Les données sélectionnées en tant que chaîne dont le format est déterminé par `coercionType`.</span><span class="sxs-lookup"><span data-stu-id="650db-881">The selected data as a string with format determined by `coercionType`.</span></span>
+<span data-ttu-id="d4d70-879">Les données sélectionnées en tant que chaîne dont le format est déterminé par `coercionType`.</span><span class="sxs-lookup"><span data-stu-id="d4d70-879">The selected data as a string with format determined by `coercionType`.</span></span>
 
-<dl class="param-type"><span data-ttu-id="650db-882">
-
-<dt>Type</dt>
-
-</span><span class="sxs-lookup"><span data-stu-id="650db-882">
+<dl class="param-type"><span data-ttu-id="d4d70-880">
 
 <dt>Type</dt>
 
-</span></span><dd><span data-ttu-id="650db-883">String</span><span class="sxs-lookup"><span data-stu-id="650db-883">String</span></span></dd>
+</span><span class="sxs-lookup"><span data-stu-id="d4d70-880">
+
+<dt>Type</dt>
+
+</span></span><dd><span data-ttu-id="d4d70-881">String</span><span class="sxs-lookup"><span data-stu-id="d4d70-881">String</span></span></dd>
 
 </dl>
 
-##### <a name="example"></a><span data-ttu-id="650db-884">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-884">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="d4d70-882">Exemple</span><span class="sxs-lookup"><span data-stu-id="d4d70-882">Example</span></span>
 
-```JavaScript
-// getting selected data
+```javascript
+// Get selected data.
 Office.initialize = function () {
-    Office.context.mailbox.item.getSelectedDataAsync(Office.CoercionType.Text, {}, getCallback);
-}
+  Office.context.mailbox.item.getSelectedDataAsync(Office.CoercionType.Text, {}, getCallback);
+};
 
 function getCallback(asyncResult) {
-    var text = asyncResult.value.data;
-    var prop = asyncResult.value.sourceProperty;
+  var text = asyncResult.value.data;
+  var prop = asyncResult.value.sourceProperty;
 
-    Office.context.mailbox.item.setSelectedDataAsync('Setting ' + prop + ': ' + text, {}, setCallback);
+  Office.context.mailbox.item.setSelectedDataAsync('Setting ' + prop + ': ' + text, {}, setCallback);
 }
 
 function setCallback(asyncResult) {
-    // check for errors
+  // Check for errors.
 }
 ```
 
-####  <a name="loadcustompropertiesasynccallback-usercontext"></a><span data-ttu-id="650db-885">loadCustomPropertiesAsync(callback, [userContext])</span><span class="sxs-lookup"><span data-stu-id="650db-885">loadCustomPropertiesAsync(callback, [userContext])</span></span>
+####  <a name="loadcustompropertiesasynccallback-usercontext"></a><span data-ttu-id="d4d70-883">loadCustomPropertiesAsync(callback, [userContext])</span><span class="sxs-lookup"><span data-stu-id="d4d70-883">loadCustomPropertiesAsync(callback, [userContext])</span></span>
 
-<span data-ttu-id="650db-886">Charge de manière asynchrone les propriétés personnalisées de ce complément vers l’élément sélectionné.</span><span class="sxs-lookup"><span data-stu-id="650db-886">Asynchronously loads custom properties for this add-in on the selected item.</span></span>
+<span data-ttu-id="d4d70-884">Charge de manière asynchrone les propriétés personnalisées de ce complément vers l’élément sélectionné.</span><span class="sxs-lookup"><span data-stu-id="d4d70-884">Asynchronously loads custom properties for this add-in on the selected item.</span></span>
 
-<span data-ttu-id="650db-p160">Les propriétés personnalisées sont stockées sous la forme de paires clé/valeur qui s’appliquent à une application ou un élément. Cette méthode renvoie un objet `CustomProperties` dans le rappel, qui fournit des méthodes pour accéder aux propriétés personnalisées propres à l’élément et au complément actifs. Les propriétés personnalisées ne sont pas chiffrées dans l’élément, par conséquent elles ne doivent pas servir d’espace de stockage sécurisé.</span><span class="sxs-lookup"><span data-stu-id="650db-p160">Custom properties are stored as key/value pairs on a per-app, per-item basis. This method returns a `CustomProperties` object in the callback, which provides methods to access the custom properties specific to the current item and the current add-in. Custom properties are not encrypted on the item, so this should not be used as secure storage.</span></span>
+<span data-ttu-id="d4d70-p161">Les propriétés personnalisées sont stockées sous la forme de paires clé/valeur qui s’appliquent à une application ou un élément. Cette méthode renvoie un objet `CustomProperties` dans le rappel, qui fournit des méthodes pour accéder aux propriétés personnalisées propres à l’élément et au complément actifs. Les propriétés personnalisées ne sont pas chiffrées dans l’élément, par conséquent elles ne doivent pas servir d’espace de stockage sécurisé.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p161">Custom properties are stored as key/value pairs on a per-app, per-item basis. This method returns a `CustomProperties` object in the callback, which provides methods to access the custom properties specific to the current item and the current add-in. Custom properties are not encrypted on the item, so this should not be used as secure storage.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="650db-890">Paramètres :</span><span class="sxs-lookup"><span data-stu-id="650db-890">Parameters:</span></span>
+##### <a name="parameters"></a><span data-ttu-id="d4d70-888">Paramètres</span><span class="sxs-lookup"><span data-stu-id="d4d70-888">Parameters</span></span>
 
-|<span data-ttu-id="650db-891">Nom</span><span class="sxs-lookup"><span data-stu-id="650db-891">Name</span></span>| <span data-ttu-id="650db-892">Type</span><span class="sxs-lookup"><span data-stu-id="650db-892">Type</span></span>| <span data-ttu-id="650db-893">Attributs</span><span class="sxs-lookup"><span data-stu-id="650db-893">Attributes</span></span>| <span data-ttu-id="650db-894">Description</span><span class="sxs-lookup"><span data-stu-id="650db-894">Description</span></span>|
+|<span data-ttu-id="d4d70-889">Nom</span><span class="sxs-lookup"><span data-stu-id="d4d70-889">Name</span></span>| <span data-ttu-id="d4d70-890">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-890">Type</span></span>| <span data-ttu-id="d4d70-891">Attributs</span><span class="sxs-lookup"><span data-stu-id="d4d70-891">Attributes</span></span>| <span data-ttu-id="d4d70-892">Description</span><span class="sxs-lookup"><span data-stu-id="d4d70-892">Description</span></span>|
 |---|---|---|---|
-|`callback`| <span data-ttu-id="650db-895">function</span><span class="sxs-lookup"><span data-stu-id="650db-895">function</span></span>||<span data-ttu-id="650db-896">Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).</span><span class="sxs-lookup"><span data-stu-id="650db-896">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span><br/><br/><span data-ttu-id="650db-897">Les propriétés personnalisées sont fournies sous la forme d’un objet [`CustomProperties`](/javascript/api/outlook_1_2/office.customproperties) dans la propriété `asyncResult.value`.</span><span class="sxs-lookup"><span data-stu-id="650db-897">The custom properties are provided as a [`CustomProperties`](/javascript/api/outlook_1_2/office.customproperties) object in the `asyncResult.value` property.</span></span> <span data-ttu-id="650db-898">Cet objet peut être utilisé pour obtenir, définir et supprimer des propriétés personnalisées à partir de l’élément et réenregistrer les modifications apportées au jeu de propriétés personnalisées sur le serveur.</span><span class="sxs-lookup"><span data-stu-id="650db-898">This object can be used to get, set, and remove custom properties from the item and save changes to the custom property set back to the server.</span></span>|
-|`userContext`| <span data-ttu-id="650db-899">Objet</span><span class="sxs-lookup"><span data-stu-id="650db-899">Object</span></span>| <span data-ttu-id="650db-900">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="650db-900">&lt;optional&gt;</span></span>|<span data-ttu-id="650db-901">Les développeurs peuvent fournir un objet auquel ils souhaitent accéder dans la fonction de rappel.</span><span class="sxs-lookup"><span data-stu-id="650db-901">Developers can provide any object they wish to access in the callback function.</span></span> <span data-ttu-id="650db-902">Cet objet est accessible via la propriété `asyncResult.asyncContext` dans la fonction de rappel.</span><span class="sxs-lookup"><span data-stu-id="650db-902">This object can be accessed by the `asyncResult.asyncContext` property in the callback function.</span></span>|
+|`callback`| <span data-ttu-id="d4d70-893">function</span><span class="sxs-lookup"><span data-stu-id="d4d70-893">function</span></span>||<span data-ttu-id="d4d70-894">Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).</span><span class="sxs-lookup"><span data-stu-id="d4d70-894">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span><br/><br/><span data-ttu-id="d4d70-895">Les propriétés personnalisées sont fournies sous la forme d’un objet [`CustomProperties`](/javascript/api/outlook_1_2/office.customproperties) dans la propriété `asyncResult.value`.</span><span class="sxs-lookup"><span data-stu-id="d4d70-895">The custom properties are provided as a [`CustomProperties`](/javascript/api/outlook_1_2/office.customproperties) object in the `asyncResult.value` property.</span></span> <span data-ttu-id="d4d70-896">Cet objet peut être utilisé pour obtenir, définir et supprimer des propriétés personnalisées à partir de l’élément et réenregistrer les modifications apportées au jeu de propriétés personnalisées sur le serveur.</span><span class="sxs-lookup"><span data-stu-id="d4d70-896">This object can be used to get, set, and remove custom properties from the item and save changes to the custom property set back to the server.</span></span>|
+|`userContext`| <span data-ttu-id="d4d70-897">Objet</span><span class="sxs-lookup"><span data-stu-id="d4d70-897">Object</span></span>| <span data-ttu-id="d4d70-898">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="d4d70-898">&lt;optional&gt;</span></span>|<span data-ttu-id="d4d70-899">Les développeurs peuvent fournir un objet auquel ils souhaitent accéder dans la fonction de rappel.</span><span class="sxs-lookup"><span data-stu-id="d4d70-899">Developers can provide any object they wish to access in the callback function.</span></span> <span data-ttu-id="d4d70-900">Cet objet est accessible via la propriété `asyncResult.asyncContext` dans la fonction de rappel.</span><span class="sxs-lookup"><span data-stu-id="d4d70-900">This object can be accessed by the `asyncResult.asyncContext` property in the callback function.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="650db-903">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-903">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-901">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-901">Requirements</span></span>
 
-|<span data-ttu-id="650db-904">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-904">Requirement</span></span>| <span data-ttu-id="650db-905">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-905">Value</span></span>|
+|<span data-ttu-id="d4d70-902">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-902">Requirement</span></span>| <span data-ttu-id="d4d70-903">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-903">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-906">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-906">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-907">1.0</span><span class="sxs-lookup"><span data-stu-id="650db-907">1.0</span></span>|
-|[<span data-ttu-id="650db-908">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-908">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-909">ReadItem</span><span class="sxs-lookup"><span data-stu-id="650db-909">ReadItem</span></span>|
-|[<span data-ttu-id="650db-910">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-910">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-911">Composition ou lecture</span><span class="sxs-lookup"><span data-stu-id="650db-911">Compose or read</span></span>|
+|[<span data-ttu-id="d4d70-904">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-904">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-905">1.0</span><span class="sxs-lookup"><span data-stu-id="d4d70-905">1.0</span></span>|
+|[<span data-ttu-id="d4d70-906">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-906">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-907">ReadItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-907">ReadItem</span></span>|
+|[<span data-ttu-id="d4d70-908">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-908">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-909">Composition ou lecture</span><span class="sxs-lookup"><span data-stu-id="d4d70-909">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="650db-912">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-912">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="d4d70-910">Exemple</span><span class="sxs-lookup"><span data-stu-id="d4d70-910">Example</span></span>
 
-<span data-ttu-id="650db-p163">L’exemple de code suivant montre comment utiliser la méthode `loadCustomPropertiesAsync` pour charger de manière asynchrone des propriétés personnalisées spécifiques vers l’élément actif. L’exemple montre également comment utiliser la méthode `CustomProperties.saveAsync` pour réenregistrer ces propriétés sur le serveur. Une fois le chargement des propriétés personnalisées terminé, l’exemple de code utilise la méthode `CustomProperties.get` pour lire la propriété personnalisée `myProp`, utilise la méthode `CustomProperties.set` pour écrire la propriété personnalisée `otherProp`, puis appelle enfin la méthode `saveAsync` pour enregistrer les propriétés personnalisées.</span><span class="sxs-lookup"><span data-stu-id="650db-p163">The following code example shows how to use the `loadCustomPropertiesAsync` method to asynchronously load custom properties that are specific to the current item. The example also shows how to use the `CustomProperties.saveAsync` method to save these properties back to the server. After loading the custom properties, the code sample uses the `CustomProperties.get` method to read the custom property `myProp`, the `CustomProperties.set` method to write the custom property `otherProp`, and then finally calls the `saveAsync` method to save the custom properties.</span></span>
+<span data-ttu-id="d4d70-p164">L’exemple de code suivant montre comment utiliser la méthode `loadCustomPropertiesAsync` pour charger de manière asynchrone des propriétés personnalisées spécifiques vers l’élément actif. L’exemple montre également comment utiliser la méthode `CustomProperties.saveAsync` pour réenregistrer ces propriétés sur le serveur. Une fois le chargement des propriétés personnalisées terminé, l’exemple de code utilise la méthode `CustomProperties.get` pour lire la propriété personnalisée `myProp`, utilise la méthode `CustomProperties.set` pour écrire la propriété personnalisée `otherProp`, puis appelle enfin la méthode `saveAsync` pour enregistrer les propriétés personnalisées.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p164">The following code example shows how to use the `loadCustomPropertiesAsync` method to asynchronously load custom properties that are specific to the current item. The example also shows how to use the `CustomProperties.saveAsync` method to save these properties back to the server. After loading the custom properties, the code sample uses the `CustomProperties.get` method to read the custom property `myProp`, the `CustomProperties.set` method to write the custom property `otherProp`, and then finally calls the `saveAsync` method to save the custom properties.</span></span>
 
-```JavaScript
+```javascript
 // The initialize function is required for all add-ins.
 Office.initialize = function () {
   // Checks for the DOM to load using the jQuery ready function.
@@ -1408,40 +1471,40 @@ function saveCallback(asyncResult) {
 }
 ```
 
-####  <a name="removeattachmentasyncattachmentid-options-callback"></a><span data-ttu-id="650db-916">removeAttachmentAsync(attachmentId, [options], [callback])</span><span class="sxs-lookup"><span data-stu-id="650db-916">removeAttachmentAsync(attachmentId, [options], [callback])</span></span>
+####  <a name="removeattachmentasyncattachmentid-options-callback"></a><span data-ttu-id="d4d70-914">removeAttachmentAsync(attachmentId, [options], [callback])</span><span class="sxs-lookup"><span data-stu-id="d4d70-914">removeAttachmentAsync(attachmentId, [options], [callback])</span></span>
 
-<span data-ttu-id="650db-917">Supprime une pièce jointe d’un message ou d’un rendez-vous.</span><span class="sxs-lookup"><span data-stu-id="650db-917">Removes an attachment from a message or appointment.</span></span>
+<span data-ttu-id="d4d70-915">Supprime une pièce jointe d’un message ou d’un rendez-vous.</span><span class="sxs-lookup"><span data-stu-id="d4d70-915">Removes an attachment from a message or appointment.</span></span>
 
-<span data-ttu-id="650db-p164">La méthode `removeAttachmentAsync` supprime la pièce jointe avec l’identificateur spécifié de l’élément. Nous vous recommandons vivement de supprimer une pièce jointe à l’aide de son identificateur uniquement si la même application de messagerie a ajouté cette pièce jointe au cours de la même session. Dans Outlook Web App et OWA pour les périphériques, l’identificateur de pièce jointe n’est valable que dans la même session. Une session est terminée lorsque l’utilisateur ferme l’application, ou si celui-ci commence à composer dans un formulaire en ligne qu’il fait ensuite apparaître dans une fenêtre séparée.</span><span class="sxs-lookup"><span data-stu-id="650db-p164">The `removeAttachmentAsync` method removes the attachment with the specified identifier from the item. As a best practice, you should use the attachment identifier to remove an attachment only if the same mail app has added that attachment in the same session. In Outlook Web App and OWA for Devices, the attachment identifier is valid only within the same session. A session is over when the user closes the app, or if the user starts composing in an inline form and subsequently pops out the inline form to continue in a separate window.</span></span>
+<span data-ttu-id="d4d70-p165">La méthode `removeAttachmentAsync` supprime la pièce jointe avec l’identificateur spécifié de l’élément. Nous vous recommandons vivement de supprimer une pièce jointe à l’aide de son identificateur uniquement si la même application de messagerie a ajouté cette pièce jointe au cours de la même session. Dans Outlook Web App et OWA pour les périphériques, l’identificateur de pièce jointe n’est valable que dans la même session. Une session est terminée lorsque l’utilisateur ferme l’application, ou si celui-ci commence à composer dans un formulaire en ligne qu’il fait ensuite apparaître dans une fenêtre séparée.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p165">The `removeAttachmentAsync` method removes the attachment with the specified identifier from the item. As a best practice, you should use the attachment identifier to remove an attachment only if the same mail app has added that attachment in the same session. In Outlook Web App and OWA for Devices, the attachment identifier is valid only within the same session. A session is over when the user closes the app, or if the user starts composing in an inline form and subsequently pops out the inline form to continue in a separate window.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="650db-922">Paramètres :</span><span class="sxs-lookup"><span data-stu-id="650db-922">Parameters:</span></span>
+##### <a name="parameters"></a><span data-ttu-id="d4d70-920">Paramètres</span><span class="sxs-lookup"><span data-stu-id="d4d70-920">Parameters</span></span>
 
-|<span data-ttu-id="650db-923">Nom</span><span class="sxs-lookup"><span data-stu-id="650db-923">Name</span></span>| <span data-ttu-id="650db-924">Type</span><span class="sxs-lookup"><span data-stu-id="650db-924">Type</span></span>| <span data-ttu-id="650db-925">Attributs</span><span class="sxs-lookup"><span data-stu-id="650db-925">Attributes</span></span>| <span data-ttu-id="650db-926">Description</span><span class="sxs-lookup"><span data-stu-id="650db-926">Description</span></span>|
+|<span data-ttu-id="d4d70-921">Nom</span><span class="sxs-lookup"><span data-stu-id="d4d70-921">Name</span></span>| <span data-ttu-id="d4d70-922">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-922">Type</span></span>| <span data-ttu-id="d4d70-923">Attributs</span><span class="sxs-lookup"><span data-stu-id="d4d70-923">Attributes</span></span>| <span data-ttu-id="d4d70-924">Description</span><span class="sxs-lookup"><span data-stu-id="d4d70-924">Description</span></span>|
 |---|---|---|---|
-|`attachmentId`| <span data-ttu-id="650db-927">String</span><span class="sxs-lookup"><span data-stu-id="650db-927">String</span></span>||<span data-ttu-id="650db-928">Identificateur de la pièce jointe à supprimer.</span><span class="sxs-lookup"><span data-stu-id="650db-928">The identifier of the attachment to remove.</span></span>|
-|`options`| <span data-ttu-id="650db-929">Objet</span><span class="sxs-lookup"><span data-stu-id="650db-929">Object</span></span>| <span data-ttu-id="650db-930">&lt;facultatif&gt;</span><span class="sxs-lookup"><span data-stu-id="650db-930">&lt;optional&gt;</span></span>|<span data-ttu-id="650db-931">Littéral d’objet contenant une ou plusieurs des propriétés suivantes.</span><span class="sxs-lookup"><span data-stu-id="650db-931">An object literal that contains one or more of the following properties.</span></span>|
-|`options.asyncContext`| <span data-ttu-id="650db-932">Objet</span><span class="sxs-lookup"><span data-stu-id="650db-932">Object</span></span>| <span data-ttu-id="650db-933">&lt;facultatif&gt;</span><span class="sxs-lookup"><span data-stu-id="650db-933">&lt;optional&gt;</span></span>|<span data-ttu-id="650db-934">Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.</span><span class="sxs-lookup"><span data-stu-id="650db-934">Developers can provide any object they wish to access in the callback method.</span></span>|
-|`callback`| <span data-ttu-id="650db-935">fonction</span><span class="sxs-lookup"><span data-stu-id="650db-935">function</span></span>| <span data-ttu-id="650db-936">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="650db-936">&lt;optional&gt;</span></span>|<span data-ttu-id="650db-937">Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).</span><span class="sxs-lookup"><span data-stu-id="650db-937">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span> <br/><span data-ttu-id="650db-938">En cas d’échec de la suppression de la pièce jointe, la propriété `asyncResult.error` contient un code d’erreur et la raison de l’échec.</span><span class="sxs-lookup"><span data-stu-id="650db-938">If removing the attachment fails, the `asyncResult.error` property will contain an error code with the reason for the failure.</span></span>|
+|`attachmentId`| <span data-ttu-id="d4d70-925">String</span><span class="sxs-lookup"><span data-stu-id="d4d70-925">String</span></span>||<span data-ttu-id="d4d70-926">Identificateur de la pièce jointe à supprimer.</span><span class="sxs-lookup"><span data-stu-id="d4d70-926">The identifier of the attachment to remove.</span></span>|
+|`options`| <span data-ttu-id="d4d70-927">Objet</span><span class="sxs-lookup"><span data-stu-id="d4d70-927">Object</span></span>| <span data-ttu-id="d4d70-928">&lt;facultatif&gt;</span><span class="sxs-lookup"><span data-stu-id="d4d70-928">&lt;optional&gt;</span></span>|<span data-ttu-id="d4d70-929">Littéral d’objet contenant une ou plusieurs des propriétés suivantes.</span><span class="sxs-lookup"><span data-stu-id="d4d70-929">An object literal that contains one or more of the following properties.</span></span>|
+|`options.asyncContext`| <span data-ttu-id="d4d70-930">Objet</span><span class="sxs-lookup"><span data-stu-id="d4d70-930">Object</span></span>| <span data-ttu-id="d4d70-931">&lt;facultatif&gt;</span><span class="sxs-lookup"><span data-stu-id="d4d70-931">&lt;optional&gt;</span></span>|<span data-ttu-id="d4d70-932">Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.</span><span class="sxs-lookup"><span data-stu-id="d4d70-932">Developers can provide any object they wish to access in the callback method.</span></span>|
+|`callback`| <span data-ttu-id="d4d70-933">fonction</span><span class="sxs-lookup"><span data-stu-id="d4d70-933">function</span></span>| <span data-ttu-id="d4d70-934">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="d4d70-934">&lt;optional&gt;</span></span>|<span data-ttu-id="d4d70-935">Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).</span><span class="sxs-lookup"><span data-stu-id="d4d70-935">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span> <br/><span data-ttu-id="d4d70-936">En cas d’échec de la suppression de la pièce jointe, la propriété `asyncResult.error` contient un code d’erreur et la raison de l’échec.</span><span class="sxs-lookup"><span data-stu-id="d4d70-936">If removing the attachment fails, the `asyncResult.error` property will contain an error code with the reason for the failure.</span></span>|
 
-##### <a name="errors"></a><span data-ttu-id="650db-939">Erreurs</span><span class="sxs-lookup"><span data-stu-id="650db-939">Errors</span></span>
+##### <a name="errors"></a><span data-ttu-id="d4d70-937">Erreurs</span><span class="sxs-lookup"><span data-stu-id="d4d70-937">Errors</span></span>
 
-| <span data-ttu-id="650db-940">Code d'erreur</span><span class="sxs-lookup"><span data-stu-id="650db-940">Error code</span></span> | <span data-ttu-id="650db-941">Description</span><span class="sxs-lookup"><span data-stu-id="650db-941">Description</span></span> |
+| <span data-ttu-id="d4d70-938">Code d'erreur</span><span class="sxs-lookup"><span data-stu-id="d4d70-938">Error code</span></span> | <span data-ttu-id="d4d70-939">Description</span><span class="sxs-lookup"><span data-stu-id="d4d70-939">Description</span></span> |
 |------------|-------------|
-| `InvalidAttachmentId` | <span data-ttu-id="650db-942">L’identificateur de la pièce jointe n’existe pas.</span><span class="sxs-lookup"><span data-stu-id="650db-942">The attachment identifier does not exist.</span></span> |
+| `InvalidAttachmentId` | <span data-ttu-id="d4d70-940">L’identificateur de la pièce jointe n’existe pas.</span><span class="sxs-lookup"><span data-stu-id="d4d70-940">The attachment identifier does not exist.</span></span> |
 
-##### <a name="requirements"></a><span data-ttu-id="650db-943">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-943">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-941">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-941">Requirements</span></span>
 
-|<span data-ttu-id="650db-944">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-944">Requirement</span></span>| <span data-ttu-id="650db-945">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-945">Value</span></span>|
+|<span data-ttu-id="d4d70-942">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-942">Requirement</span></span>| <span data-ttu-id="d4d70-943">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-943">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-946">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-946">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-947">1.1</span><span class="sxs-lookup"><span data-stu-id="650db-947">1.1</span></span>|
-|[<span data-ttu-id="650db-948">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-948">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-949">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="650db-949">ReadWriteItem</span></span>|
-|[<span data-ttu-id="650db-950">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-950">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-951">Composition</span><span class="sxs-lookup"><span data-stu-id="650db-951">Compose</span></span>|
+|[<span data-ttu-id="d4d70-944">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-944">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-945">1.1</span><span class="sxs-lookup"><span data-stu-id="d4d70-945">1.1</span></span>|
+|[<span data-ttu-id="d4d70-946">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-946">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-947">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-947">ReadWriteItem</span></span>|
+|[<span data-ttu-id="d4d70-948">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-948">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-949">Composition</span><span class="sxs-lookup"><span data-stu-id="d4d70-949">Compose</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="650db-952">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-952">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="d4d70-950">Exemple</span><span class="sxs-lookup"><span data-stu-id="d4d70-950">Example</span></span>
 
-<span data-ttu-id="650db-953">Le code suivant supprime une pièce jointe dont l’identificateur est « 0 ».</span><span class="sxs-lookup"><span data-stu-id="650db-953">The following code removes an attachment with an identifier of '0'.</span></span>
+<span data-ttu-id="d4d70-951">Le code suivant supprime une pièce jointe dont l’identificateur est « 0 ».</span><span class="sxs-lookup"><span data-stu-id="d4d70-951">The following code removes an attachment with an identifier of '0'.</span></span>
 
-```JavaScript
+```javascript
 Office.context.mailbox.item.removeAttachmentAsync(
   '0',
   { asyncContext : null },
@@ -1452,33 +1515,33 @@ Office.context.mailbox.item.removeAttachmentAsync(
 );
 ```
 
-####  <a name="setselecteddataasyncdata-options-callback"></a><span data-ttu-id="650db-954">setSelectedDataAsync(data, [options], callback)</span><span class="sxs-lookup"><span data-stu-id="650db-954">setSelectedDataAsync(data, [options], callback)</span></span>
+####  <a name="setselecteddataasyncdata-options-callback"></a><span data-ttu-id="d4d70-952">setSelectedDataAsync(data, [options], callback)</span><span class="sxs-lookup"><span data-stu-id="d4d70-952">setSelectedDataAsync(data, [options], callback)</span></span>
 
-<span data-ttu-id="650db-955">Insère les données dans le corps ou l’objet d’un message de manière asynchrone.</span><span class="sxs-lookup"><span data-stu-id="650db-955">Asynchronously inserts data into the body or subject of a message.</span></span>
+<span data-ttu-id="d4d70-953">Insère les données dans le corps ou l’objet d’un message de manière asynchrone.</span><span class="sxs-lookup"><span data-stu-id="d4d70-953">Asynchronously inserts data into the body or subject of a message.</span></span>
 
-<span data-ttu-id="650db-p165">La méthode `setSelectedDataAsync` insère la chaîne spécifiée à l’emplacement du curseur dans le corps ou l’objet de l’élément. En revanche, si du texte est sélectionné dans l’éditeur, il remplace le texte sélectionné. Si le curseur ne se trouve pas dans le champ du corps ou de l’objet, une erreur est renvoyée. Après l’insertion, le curseur est placé à la fin du contenu inséré.</span><span class="sxs-lookup"><span data-stu-id="650db-p165">The `setSelectedDataAsync` method inserts the specified string at the cursor location in the subject or body of the item, or, if text is selected in the editor, it replaces the selected text. If the cursor is not in the body or subject field, an error is returned. After insertion, the cursor is placed at the end of the inserted content.</span></span>
+<span data-ttu-id="d4d70-p166">La méthode `setSelectedDataAsync` insère la chaîne spécifiée à l’emplacement du curseur dans le corps ou l’objet de l’élément. En revanche, si du texte est sélectionné dans l’éditeur, il remplace le texte sélectionné. Si le curseur ne se trouve pas dans le champ du corps ou de l’objet, une erreur est renvoyée. Après l’insertion, le curseur est placé à la fin du contenu inséré.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p166">The `setSelectedDataAsync` method inserts the specified string at the cursor location in the subject or body of the item, or, if text is selected in the editor, it replaces the selected text. If the cursor is not in the body or subject field, an error is returned. After insertion, the cursor is placed at the end of the inserted content.</span></span>
 
-##### <a name="parameters"></a><span data-ttu-id="650db-959">Paramètres :</span><span class="sxs-lookup"><span data-stu-id="650db-959">Parameters:</span></span>
+##### <a name="parameters"></a><span data-ttu-id="d4d70-957">Paramètres</span><span class="sxs-lookup"><span data-stu-id="d4d70-957">Parameters</span></span>
 
-|<span data-ttu-id="650db-960">Nom</span><span class="sxs-lookup"><span data-stu-id="650db-960">Name</span></span>| <span data-ttu-id="650db-961">Type</span><span class="sxs-lookup"><span data-stu-id="650db-961">Type</span></span>| <span data-ttu-id="650db-962">Attributs</span><span class="sxs-lookup"><span data-stu-id="650db-962">Attributes</span></span>| <span data-ttu-id="650db-963">Description</span><span class="sxs-lookup"><span data-stu-id="650db-963">Description</span></span>|
+|<span data-ttu-id="d4d70-958">Nom</span><span class="sxs-lookup"><span data-stu-id="d4d70-958">Name</span></span>| <span data-ttu-id="d4d70-959">Type</span><span class="sxs-lookup"><span data-stu-id="d4d70-959">Type</span></span>| <span data-ttu-id="d4d70-960">Attributs</span><span class="sxs-lookup"><span data-stu-id="d4d70-960">Attributes</span></span>| <span data-ttu-id="d4d70-961">Description</span><span class="sxs-lookup"><span data-stu-id="d4d70-961">Description</span></span>|
 |---|---|---|---|
-|`data`| <span data-ttu-id="650db-964">String</span><span class="sxs-lookup"><span data-stu-id="650db-964">String</span></span>||<span data-ttu-id="650db-p166">Données à insérer. Les données ne doivent pas dépasser 1 000 000 caractères. Si elles contiennent plus de 1 000 000 caractères, une exception `ArgumentOutOfRange` est générée.</span><span class="sxs-lookup"><span data-stu-id="650db-p166">The data to be inserted. Data is not to exceed 1,000,000 characters. If more than 1,000,000 characters are passed in, an `ArgumentOutOfRange` exception is thrown.</span></span>|
-|`options`| <span data-ttu-id="650db-968">Objet</span><span class="sxs-lookup"><span data-stu-id="650db-968">Object</span></span>| <span data-ttu-id="650db-969">&lt;facultatif&gt;</span><span class="sxs-lookup"><span data-stu-id="650db-969">&lt;optional&gt;</span></span>|<span data-ttu-id="650db-970">Littéral d’objet contenant une ou plusieurs des propriétés suivantes.</span><span class="sxs-lookup"><span data-stu-id="650db-970">An object literal that contains one or more of the following properties.</span></span>|
-|`options.asyncContext`| <span data-ttu-id="650db-971">Objet</span><span class="sxs-lookup"><span data-stu-id="650db-971">Object</span></span>| <span data-ttu-id="650db-972">&lt;facultatif&gt;</span><span class="sxs-lookup"><span data-stu-id="650db-972">&lt;optional&gt;</span></span>|<span data-ttu-id="650db-973">Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.</span><span class="sxs-lookup"><span data-stu-id="650db-973">Developers can provide any object they wish to access in the callback method.</span></span>|
-|`options.coercionType`| [<span data-ttu-id="650db-974">Office.CoercionType</span><span class="sxs-lookup"><span data-stu-id="650db-974">Office.CoercionType</span></span>](office.md#coerciontype-string)| <span data-ttu-id="650db-975">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="650db-975">&lt;optional&gt;</span></span>|<span data-ttu-id="650db-p167">Si `text`, le style existant est appliqué dans Outlook Web App et Outlook. Si le champ est un éditeur HTML, seules les données de texte sont insérées, même si les données sont au format HTML.</span><span class="sxs-lookup"><span data-stu-id="650db-p167">If `text`, the current style is applied in Outlook Web App and Outlook. If the field is an HTML editor, only the text data is inserted, even if the data is HTML.</span></span><br/><br/><span data-ttu-id="650db-p168">Avec `html` et si le champ prend en charge le langage HTML (contrairement à l’objet), le style existant est appliqué dans Outlook Web App et le style par défaut dans Outlook. Si le champ est au format texte, une erreur `InvalidDataFormat` est renvoyée.</span><span class="sxs-lookup"><span data-stu-id="650db-p168">If `html` and the field supports HTML (the subject doesn't), the current style is applied in Outlook Web App and the default style is applied in Outlook. If the field is a text field, an `InvalidDataFormat` error is returned.</span></span><br/><br/><span data-ttu-id="650db-980">Si la propriété `coercionType` n’est pas définie, le résultat dépend du champ : si le champ est au format HTML, le langage HTML est utilisé ; si le champ est au format texte, le texte brut est utilisé.</span><span class="sxs-lookup"><span data-stu-id="650db-980">If `coercionType` is not set, the result depends on the field: if the field is HTML then HTML is used; if the field is text, then plain text is used.</span></span>|
-|`callback`| <span data-ttu-id="650db-981">fonction</span><span class="sxs-lookup"><span data-stu-id="650db-981">function</span></span>||<span data-ttu-id="650db-982">Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).</span><span class="sxs-lookup"><span data-stu-id="650db-982">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span> |
+|`data`| <span data-ttu-id="d4d70-962">String</span><span class="sxs-lookup"><span data-stu-id="d4d70-962">String</span></span>||<span data-ttu-id="d4d70-p167">Données à insérer. Les données ne doivent pas dépasser 1 000 000 caractères. Si elles contiennent plus de 1 000 000 caractères, une exception `ArgumentOutOfRange` est générée.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p167">The data to be inserted. Data is not to exceed 1,000,000 characters. If more than 1,000,000 characters are passed in, an `ArgumentOutOfRange` exception is thrown.</span></span>|
+|`options`| <span data-ttu-id="d4d70-966">Objet</span><span class="sxs-lookup"><span data-stu-id="d4d70-966">Object</span></span>| <span data-ttu-id="d4d70-967">&lt;facultatif&gt;</span><span class="sxs-lookup"><span data-stu-id="d4d70-967">&lt;optional&gt;</span></span>|<span data-ttu-id="d4d70-968">Littéral d’objet contenant une ou plusieurs des propriétés suivantes.</span><span class="sxs-lookup"><span data-stu-id="d4d70-968">An object literal that contains one or more of the following properties.</span></span>|
+|`options.asyncContext`| <span data-ttu-id="d4d70-969">Objet</span><span class="sxs-lookup"><span data-stu-id="d4d70-969">Object</span></span>| <span data-ttu-id="d4d70-970">&lt;facultatif&gt;</span><span class="sxs-lookup"><span data-stu-id="d4d70-970">&lt;optional&gt;</span></span>|<span data-ttu-id="d4d70-971">Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.</span><span class="sxs-lookup"><span data-stu-id="d4d70-971">Developers can provide any object they wish to access in the callback method.</span></span>|
+|`options.coercionType`| [<span data-ttu-id="d4d70-972">Office.CoercionType</span><span class="sxs-lookup"><span data-stu-id="d4d70-972">Office.CoercionType</span></span>](office.md#coerciontype-string)| <span data-ttu-id="d4d70-973">&lt;optional&gt;</span><span class="sxs-lookup"><span data-stu-id="d4d70-973">&lt;optional&gt;</span></span>|<span data-ttu-id="d4d70-p168">Si `text`, le style existant est appliqué dans Outlook Web App et Outlook. Si le champ est un éditeur HTML, seules les données de texte sont insérées, même si les données sont au format HTML.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p168">If `text`, the current style is applied in Outlook Web App and Outlook. If the field is an HTML editor, only the text data is inserted, even if the data is HTML.</span></span><br/><br/><span data-ttu-id="d4d70-p169">Avec `html` et si le champ prend en charge le langage HTML (contrairement à l’objet), le style existant est appliqué dans Outlook Web App et le style par défaut dans Outlook. Si le champ est au format texte, une erreur `InvalidDataFormat` est renvoyée.</span><span class="sxs-lookup"><span data-stu-id="d4d70-p169">If `html` and the field supports HTML (the subject doesn't), the current style is applied in Outlook Web App and the default style is applied in Outlook. If the field is a text field, an `InvalidDataFormat` error is returned.</span></span><br/><br/><span data-ttu-id="d4d70-978">Si la propriété `coercionType` n’est pas définie, le résultat dépend du champ : si le champ est au format HTML, le langage HTML est utilisé ; si le champ est au format texte, le texte brut est utilisé.</span><span class="sxs-lookup"><span data-stu-id="d4d70-978">If `coercionType` is not set, the result depends on the field: if the field is HTML then HTML is used; if the field is text, then plain text is used.</span></span>|
+|`callback`| <span data-ttu-id="d4d70-979">fonction</span><span class="sxs-lookup"><span data-stu-id="d4d70-979">function</span></span>||<span data-ttu-id="d4d70-980">Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).</span><span class="sxs-lookup"><span data-stu-id="d4d70-980">When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](/javascript/api/office/office.asyncresult) object.</span></span> |
 
-##### <a name="requirements"></a><span data-ttu-id="650db-983">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="650db-983">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="d4d70-981">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d4d70-981">Requirements</span></span>
 
-|<span data-ttu-id="650db-984">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="650db-984">Requirement</span></span>| <span data-ttu-id="650db-985">Valeur</span><span class="sxs-lookup"><span data-stu-id="650db-985">Value</span></span>|
+|<span data-ttu-id="d4d70-982">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="d4d70-982">Requirement</span></span>| <span data-ttu-id="d4d70-983">Valeur</span><span class="sxs-lookup"><span data-stu-id="d4d70-983">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="650db-986">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="650db-986">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="650db-987">1.2</span><span class="sxs-lookup"><span data-stu-id="650db-987">1.2</span></span>|
-|[<span data-ttu-id="650db-988">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="650db-988">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="650db-989">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="650db-989">ReadWriteItem</span></span>|
-|[<span data-ttu-id="650db-990">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="650db-990">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="650db-991">Composition</span><span class="sxs-lookup"><span data-stu-id="650db-991">Compose</span></span>|
+|[<span data-ttu-id="d4d70-984">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="d4d70-984">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="d4d70-985">1.2</span><span class="sxs-lookup"><span data-stu-id="d4d70-985">1.2</span></span>|
+|[<span data-ttu-id="d4d70-986">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="d4d70-986">Minimum permission level</span></span>](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="d4d70-987">ReadWriteItem</span><span class="sxs-lookup"><span data-stu-id="d4d70-987">ReadWriteItem</span></span>|
+|[<span data-ttu-id="d4d70-988">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="d4d70-988">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="d4d70-989">Composition</span><span class="sxs-lookup"><span data-stu-id="d4d70-989">Compose</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="650db-992">Exemple</span><span class="sxs-lookup"><span data-stu-id="650db-992">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="d4d70-990">Exemple</span><span class="sxs-lookup"><span data-stu-id="d4d70-990">Example</span></span>
 
-```JavaScript
+```javascript
 Office.context.mailbox.item.setSelectedDataAsync("Hello World!");
 Office.context.mailbox.item.setSelectedDataAsync("<b>Hello World!</b>", { coercionType : "html" });
 ```
