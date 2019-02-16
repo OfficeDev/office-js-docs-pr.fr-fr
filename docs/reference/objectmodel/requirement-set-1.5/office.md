@@ -1,13 +1,14 @@
 ---
 title: Espace de noms Office-ensemble de conditions requises 1.5
 description: ''
-ms.date: 11/08/2018
-ms.openlocfilehash: 11b9ea439e659f0aefdcd15ae9a73ac128aee98b
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+ms.date: 02/15/2019
+localization_priority: Normal
+ms.openlocfilehash: c9f769550ad2c4994545e51d140b6ea6e67761bc
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27458005"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30067936"
 ---
 # <a name="office"></a>Office
 
@@ -33,7 +34,7 @@ L’espace de noms Office fournit des interfaces partagées qui sont utilisées 
 
 [context](office.context.md) : fournit des interfaces partagées à partir de l’espace de noms de contexte de l’API pour les compléments Office à utiliser dans l’API du complément Outlook.
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmenttype) : inclut les énumérations ItemType, EntityType, AttachmentType, RecipientType, ResponseType et ItemNotificationMessageType.
+[MailboxEnums](/javascript/api/outlook_1_5/office.mailboxenums.attachmenttype) : inclut les énumérations ItemType, EntityType, AttachmentType, RecipientType, ResponseType et ItemNotificationMessageType.
 
 ### <a name="members"></a>Membres
 
@@ -41,7 +42,7 @@ L’espace de noms Office fournit des interfaces partagées qui sont utilisées 
 
 Spécifie le résultat d’un appel asynchrone.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type
 
 *   String
 
@@ -65,7 +66,7 @@ Spécifie le résultat d’un appel asynchrone.
 
 Indique comment forcer le type des données retournées ou définies par la méthode appelée.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type
 
 *   String
 
@@ -89,7 +90,7 @@ Indique comment forcer le type des données retournées ou définies par la mét
 
 spécifie l’événement associé à un gestionnaire d’événements.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type
 
 *   String
 
@@ -112,7 +113,7 @@ spécifie l’événement associé à un gestionnaire d’événements.
 
 Spécifie la source des données renvoyées par la méthode appelée.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type
 
 *   String
 

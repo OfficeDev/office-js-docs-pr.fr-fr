@@ -1,13 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook 1.2
 description: ''
-ms.date: 10/11/2018
-ms.openlocfilehash: a77c9c0399d42029b86595f119c51071dc3bf4ac
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 02/15/2019
+localization_priority: Normal
+ms.openlocfilehash: 1767b1b93f13de2c8a0731d2f08a1141b709b734
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433543"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30068027"
 ---
 # <a name="outlook-add-in-api-requirement-set-12"></a>Ensemble de conditions requises de l’API du complément Outlook 1.2
 
@@ -24,8 +25,8 @@ L’ensemble de conditions requises de la version 1.2 comprend toutes les fonct
 
 - Ajout de la méthode [Office.context.mailbox.item.getSelectedDataAsync](office.context.mailbox.item.md#getselecteddataasynccoerciontype-options-callback--string): retourne de façon asynchrone des données sélectionnées à partir de l’objet ou du corps d’un message.
 - Ajout de la méthode [Office.context.mailbox.item.setSelectedDataAsync](office.context.mailbox.item.md#setselecteddataasyncdata-options-callback) : insère les données dans le corps ou l’objet d’un message de manière asynchrone.
-- Modification de la fonction [Office.context.mailbox.item.displayReplyAllForm](office.context.mailbox.item.md#displayreplyallformformdata) : Ajout de la propriété `attachments` dans le paramètre `formData`.
-- Modification de la fonction [Office.context.mailbox.item.displayReplyForm](office.context.mailbox.item.md#displayreplyformformdata) : Ajout de la propriété `attachments` dans le paramètre `formData`.
+- Modification de la fonction [Office.context.mailbox.item.displayReplyAllForm](office.context.mailbox.item.md#displayreplyallformformdata-callback) : Ajout de la propriété `attachments` dans le paramètre `formData`.
+- Modification de la fonction [Office.context.mailbox.item.displayReplyForm](office.context.mailbox.item.md#displayreplyformformdata-callback) : Ajout de la propriété `attachments` dans le paramètre `formData`.
 
 ## <a name="see-also"></a>Voir aussi
 

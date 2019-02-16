@@ -1,13 +1,14 @@
 ---
 title: Office.context-ensemble de conditions requises 1.1
 description: ''
-ms.date: 10/11/2018
-ms.openlocfilehash: a736588233db33b04e64c517f4b0802c17084d99
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+ms.date: 02/15/2019
+localization_priority: Normal
+ms.openlocfilehash: 2fd94c8a140df1d0701efca0e9ce4307bbea6c2f
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457984"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30067838"
 ---
 # <a name="context"></a>context
 
@@ -35,7 +36,7 @@ Obtient les paramètres régionaux (langue) au format de balise de langue RFC 1
 
 La valeur `displayLanguage` reflète le paramètre **Langue d’affichage** actuel spécifié dans **Fichier > Options > Langue** dans l’application hôte Office.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type
 
 *   Chaîne
 
@@ -48,7 +49,7 @@ La valeur `displayLanguage` reflète le paramètre **Langue d’affichage** actu
 
 ##### <a name="example"></a>Exemple
 
-```js
+```javascript
 function sayHelloWithDisplayLanguage() {
   var myDisplayLanguage = Office.context.displayLanguage;
   switch (myDisplayLanguage) {
@@ -60,6 +61,7 @@ function sayHelloWithDisplayLanguage() {
       break;
   }
 }
+
 // Function that writes to a div with id='message' on the page.
 function write(message){
   document.getElementById('message').innerText += message;
@@ -72,7 +74,7 @@ Obtient un objet qui représente les paramètres personnalisés ou l’état d�
 
 L’objet `RoamingSettings` vous permet de stocker et d’accéder aux données d’un complément de messagerie conservées dans la boîte aux lettres d’un utilisateur. Ainsi, cet objet est accessible par le complément de messagerie lors de son exécution à partir d’une application cliente hôte utilisée pour accéder à la boîte aux lettres.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type
 
 *   [RoamingSettings](/javascript/api/outlook_1_1/office.RoamingSettings)
 

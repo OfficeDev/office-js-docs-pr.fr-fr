@@ -1,17 +1,18 @@
 ---
 title: Espace de noms Office-ensemble de conditions requises 1.1
 description: ''
-ms.date: 11/08/2018
-ms.openlocfilehash: af2a48d5bc943d4f443c32777fefaf8ed4a30032
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+ms.date: 02/15/2019
+localization_priority: Normal
+ms.openlocfilehash: b98f8fa01e2cfdf17d6105beab67199a2cec4317
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457431"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30068020"
 ---
 # <a name="office"></a>Office
 
-L’espace de noms Office fournit des interfaces partagées qui sont utilisées par des compléments dans toutes les applications Office. Cette liste documente uniquement les interfaces utilisées par des compléments Outlook. Pour obtenir une liste complète des espaces de noms Office, consultez la page relative à l’[interface API communes](/javascript/api/office).
+L’espace de noms Office fournit des interfaces partagées qui sont utilisées par des compléments dans toutes les applications Office. Cette liste documente uniquement les interfaces utilisées par des compléments Outlook. Pour obtenir une liste complète des espaces de noms Office, consultez la page relative à l’[interface API commune](/javascript/api/office).
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -24,7 +25,7 @@ L’espace de noms Office fournit des interfaces partagées qui sont utilisées 
 
 [context](office.context.md) : fournit des interfaces partagées à partir de l’espace de noms de contexte de l’API pour les compléments Office à utiliser dans l’API du complément Outlook.
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmenttype) : inclut les énumérations ItemType, EntityType, AttachmentType, RecipientType, ResponseType et ItemNotificationMessageType.
+[MailboxEnums](/javascript/api/outlook_1_1/office.mailboxenums.attachmenttype) : inclut les énumérations ItemType, EntityType, AttachmentType, RecipientType, ResponseType et ItemNotificationMessageType.
 
 ### <a name="members"></a>Membres
 
@@ -32,7 +33,7 @@ L’espace de noms Office fournit des interfaces partagées qui sont utilisées 
 
 Spécifie le résultat d’un appel asynchrone.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type
 
 *   String
 
@@ -41,7 +42,7 @@ Spécifie le résultat d’un appel asynchrone.
 |Nom| Type| Description|
 |---|---|---|
 |`Succeeded`| String|L’appel a réussi.|
-|`Failed`| Chaîne|L’appel n’a pas réussi.|
+|`Failed`| String|L’appel n’a pas réussi.|
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -49,11 +50,12 @@ Spécifie le résultat d’un appel asynchrone.
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+
 ####  <a name="coerciontype-string"></a>CoercionType :String
 
 Indique comment forcer le type des données retournées ou définies par la méthode appelée.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type
 
 *   String
 
@@ -61,7 +63,7 @@ Indique comment forcer le type des données retournées ou définies par la mét
 
 |Nom| Type| Description|
 |---|---|---|
-|`Html`| Chaîne|Demande que les données soient renvoyées au format HTML.|
+|`Html`| String|Demande que les données soient renvoyées au format HTML.|
 |`Text`| Chaîne|Demande que les données soient renvoyées au format texte.|
 
 ##### <a name="requirements"></a>Configuration requise
@@ -70,11 +72,12 @@ Indique comment forcer le type des données retournées ou définies par la mét
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+
 ####  <a name="sourceproperty-string"></a>SourceProperty :String
 
 Spécifie la source des données renvoyées par la méthode appelée.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type
 
 *   String
 

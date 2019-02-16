@@ -1,13 +1,14 @@
 ---
 title: Office.context.mailbox.diagnostics – ensemble de conditions requises 1.7
 description: ''
-ms.date: 10/11/2018
-ms.openlocfilehash: a15698a33e6cea68dcf221a48da84570fe552e5b
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 02/15/2019
+localization_priority: Normal
+ms.openlocfilehash: d67f5bd4d30f78f6d21d78ad366a7058bd4a2c9b
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432598"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30067880"
 ---
 # <a name="diagnostics"></a>diagnostics
 
@@ -39,7 +40,7 @@ Obtient une chaîne qui représente le nom de l’application hôte.
 
 Chaîne qui peut avoir l’une des valeurs suivantes : `Outlook`, `Mac Outlook`, `OutlookIOS` ou `OutlookWebApp`.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type
 
 *   Chaîne
 
@@ -57,7 +58,7 @@ Obtient une chaîne qui représente la version de l’application hôte ou du se
 
 Si le complément de messagerie s’exécute sur le client de bureau Outlook ou sur Outlook pour iOS, la propriété `hostVersion` renvoie la version de l’application hôte, Outlook. Dans Outlook Web App, la propriété renvoie la version du serveur Exchange. Exemple : la chaîne `15.0.468.0`.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type
 
 *   Chaîne
 
@@ -83,7 +84,7 @@ Outlook Web App a trois modes d’affichage qui correspondent à la largeur de
 *   `TwoColumns`, qui est affiché lorsque l’écran est plus large. Outlook Web App utilise ce mode sur la plupart des tablettes.
 *   `ThreeColumns`, qui est affiché lorsque l’écran est large. Par exemple, Outlook Web App utilise ce mode dans une fenêtre en mode Plein écran sur un ordinateur de bureau.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type
 
 *   Chaîne
 

@@ -1,13 +1,14 @@
 ---
 title: Espace de noms Office – ensemble de conditions requises 1.7
 description: ''
-ms.date: 11/08/2018
-ms.openlocfilehash: 6afaca31dd941b9c6a4b23fa08018de51278cbbd
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+ms.date: 02/15/2019
+localization_priority: Normal
+ms.openlocfilehash: d6422e470864d5a02db37e1fef295e8cbb82a213
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457739"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30067894"
 ---
 # <a name="office"></a>Office
 
@@ -41,7 +42,7 @@ L’espace de noms Office fournit des interfaces partagées qui sont utilisées 
 
 Spécifie le résultat d’un appel asynchrone.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type
 
 *   String
 
@@ -65,7 +66,7 @@ Spécifie le résultat d’un appel asynchrone.
 
 Indique comment forcer le type des données retournées ou définies par la méthode appelée.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type
 
 *   String
 
@@ -89,7 +90,7 @@ Indique comment forcer le type des données retournées ou définies par la mét
 
 spécifie l’événement associé à un gestionnaire d’événements.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type
 
 *   String
 
@@ -115,7 +116,7 @@ spécifie l’événement associé à un gestionnaire d’événements.
 
 Spécifie la source des données renvoyées par la méthode appelée.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type
 
 *   String
 

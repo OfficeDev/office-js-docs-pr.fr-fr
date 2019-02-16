@@ -1,13 +1,14 @@
 ---
 title: Office.context.mailbox.userProfile- prévisualisations d’ensemble de conditions requises
 description: ''
-ms.date: 10/31/2018
-ms.openlocfilehash: 061ee8367005f4af0795c4d9e1236d0b2443521a
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 02/15/2019
+localization_priority: Normal
+ms.openlocfilehash: 214434c988c01ecb1aef93f4067cd95bfe768ae9
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432815"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30068174"
 ---
 # <a name="userprofile"></a>userProfile
 
@@ -25,7 +26,7 @@ ms.locfileid: "27432815"
 
 | Membre | Type |
 |--------|------|
-| [accountType](#accounttype-string) | Member |
+| [accountType](#accounttype-string) | Membre |
 | [displayName](#displayname-string) | Membre |
 | [emailAddress](#emailaddress-string) | Membre |
 | [timeZone](#timezone-string) | Membre |
@@ -46,7 +47,7 @@ Obtient le type de compte de l’utilisateur associé à la boîte aux lettres. 
 | `office365` | La boîte aux lettres est associée à un compte professionnel ou scolaire Office 365. |
 | `outlookCom` | La boîte aux lettres est associée à un compte Outlook.com personnel. |
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type
 
 *   Chaîne
 
@@ -60,7 +61,7 @@ Obtient le type de compte de l’utilisateur associé à la boîte aux lettres. 
 
 ##### <a name="example"></a>Exemple
 
-```js
+```javascript
 console.log(Office.context.mailbox.userProfile.accountType);
 ```
 
@@ -68,7 +69,7 @@ console.log(Office.context.mailbox.userProfile.accountType);
 
 Obtient le nom d’affichage de l’utilisateur.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type
 
 *   Chaîne
 
@@ -82,7 +83,7 @@ Obtient le nom d’affichage de l’utilisateur.
 
 ##### <a name="example"></a>Exemple
 
-```js
+```javascript
 // Example: Allie Bellew
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
@@ -91,7 +92,7 @@ console.log(Office.context.mailbox.userProfile.displayName);
 
 Obtient l’adresse de messagerie SMTP de l’utilisateur.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type
 
 *   Chaîne
 
@@ -105,7 +106,7 @@ Obtient l’adresse de messagerie SMTP de l’utilisateur.
 
 ##### <a name="example"></a>Exemple
 
-```js
+```javascript
 // Example: allieb@contoso.com
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
@@ -114,7 +115,7 @@ console.log(Office.context.mailbox.userProfile.emailAddress);
 
 Obtient le fuseau horaire par défaut de l’utilisateur.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type
 
 *   Chaîne
 
@@ -128,7 +129,7 @@ Obtient le fuseau horaire par défaut de l’utilisateur.
 
 ##### <a name="example"></a>Exemple
 
-```js
+```javascript
 // Example: Pacific Standard Time
 console.log(Office.context.mailbox.userProfile.timeZone);
 ```

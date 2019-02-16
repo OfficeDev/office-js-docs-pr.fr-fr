@@ -1,13 +1,14 @@
 ---
 title: Office.context-ensemble de conditions requises 1.3
 description: ''
-ms.date: 10/11/2018
-ms.openlocfilehash: 9652a1d4dcd48c437bb1156e9abc4c2aff575d59
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+ms.date: 02/15/2019
+localization_priority: Normal
+ms.openlocfilehash: 749210e8cbe496bfe0fd9c1a810685eb0dfee8ff
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457543"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30068055"
 ---
 # <a name="context"></a>context
 
@@ -34,7 +35,7 @@ Obtient les paramètres régionaux (langue) au format de balise de langue RFC 1
 
 La valeur `displayLanguage` reflète le paramètre **Langue d’affichage** actuel spécifié dans **Fichier > Options > Langue** dans l’application hôte Office.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type
 
 *   Chaîne
 
@@ -47,7 +48,7 @@ La valeur `displayLanguage` reflète le paramètre **Langue d’affichage** actu
 
 ##### <a name="example"></a>Exemple
 
-```js
+```javascript
 function sayHelloWithDisplayLanguage() {
   var myDisplayLanguage = Office.context.displayLanguage;
   switch (myDisplayLanguage) {
@@ -59,6 +60,7 @@ function sayHelloWithDisplayLanguage() {
       break;
   }
 }
+
 // Function that writes to a div with id='message' on the page.
 function write(message){
   document.getElementById('message').innerText += message;
@@ -74,7 +76,7 @@ Permet d’accéder aux propriétés pour les couleurs du thème Office.
 
 À l’aide des couleurs du thème Office, vous pouvez coordonner le modèle de couleurs de votre complément avec le thème Office actuel sélectionné par l’utilisateur dans **Fichier > Compte Office > Thème Office**, qui est appliqué à toutes les applications hôtes Office. Les couleurs du thème Office s’utilisent avec les compléments de messagerie et du volet Office.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type
 
 *   Objet
 
@@ -82,7 +84,7 @@ Permet d’accéder aux propriétés pour les couleurs du thème Office.
 
 |Nom| Type| Description|
 |---|---|---|
-|`bodyBackgroundColor`| String|Obtient la couleur d’arrière-plan du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
+|`bodyBackgroundColor`| Chaîne|Obtient la couleur d’arrière-plan du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
 |`bodyForegroundColor`| String|Obtient la couleur de premier plan du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
 |`controlBackgroundColor`| String|Obtient la couleur d’arrière-plan du contrôle du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
 |`controlForegroundColor`| String|Obtient la couleur du contrôle du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
@@ -96,7 +98,7 @@ Permet d’accéder aux propriétés pour les couleurs du thème Office.
 
 ##### <a name="example"></a>Exemple
 
-```js
+```javascript
 function applyOfficeTheme(){
   // Get office theme colors.
   var bodyBackgroundColor = Office.context.officeTheme.bodyBackgroundColor;
@@ -115,7 +117,7 @@ Obtient un objet qui représente les paramètres personnalisés ou l’état d�
 
 L’objet `RoamingSettings` vous permet de stocker et d’accéder aux données d’un complément de messagerie conservées dans la boîte aux lettres d’un utilisateur. Ainsi, cet objet est accessible par le complément de messagerie lors de son exécution à partir d’une application cliente hôte utilisée pour accéder à la boîte aux lettres.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type
 
 *   [RoamingSettings](/javascript/api/outlook_1_3/office.RoamingSettings)
 
