@@ -6,4 +6,4 @@
 - Office 2016 ou version ultérieure
     
     > [!NOTE]
-    > Si vous n’avez pas encore Office, vous pouvez vous [inscrire pour obtenir un essai gratuit d’un mois](https://products.office.com/en-US/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735).
+    > Si vous ne disposez pas encore d’Office, vous pouvez [rejoindre le programme pour les développeurs Office](https://developer.microsoft.com/fr-FR/office/dev-program) pour obtenir une licence afin de développer des compléments et de les tester.

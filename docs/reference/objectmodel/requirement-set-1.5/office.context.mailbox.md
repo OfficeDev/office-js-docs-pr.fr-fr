@@ -1,14 +1,14 @@
 ---
 title: Office.context – ensemble de conditions requises 1.5
 description: ''
-ms.date: 01/16/2019
+ms.date: 02/15/2019
 localization_priority: Priority
-ms.openlocfilehash: fb84d1e7a5ffd1a5549f213e63ae827f8a883d34
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 511d4353998ff46f9402865453d8e7b29b6d0758
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389430"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30068048"
 ---
 # <a name="mailbox"></a>boîte aux lettres
 
@@ -22,7 +22,7 @@ Permet d’accéder au modèle objet du complément Outlook pour Microsoft Out
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restreinte|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ##### <a name="members-and-methods"></a>Membres et méthodes
 
@@ -67,9 +67,9 @@ Votre application doit avoir l’autorisation **ReadItem** spécifiée dans son 
 
 En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) avant de pouvoir utiliser le membre `ewsUrl`. Votre application doit disposer des autorisations **ReadWriteItem** pour appeler la méthode `saveAsync`.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type
 
-*   Chaîne
+*   String
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -77,7 +77,7 @@ En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 #### <a name="resturl-string"></a>restUrl :String
 
@@ -92,9 +92,9 @@ En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context
 > [!NOTE]
 > Les clients Outlook connectés aux installations locales d’Exchange 2016 ou version ultérieure avec une URL REST personnalisée configurée renvoient une valeur non valide pour `restUrl`.
 
-##### <a name="type"></a>Type :
+##### <a name="type"></a>Type
 
-*   Chaîne
+*   String
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -102,7 +102,7 @@ En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1,5 |
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ### <a name="methods"></a>Méthodes
 
@@ -112,7 +112,7 @@ ajoute un gestionnaire d’événements pour un événement pris en charge.
 
 Actuellement, le seul type d’événement pris en charge est `Office.EventType.ItemChanged`, qui est appelé quand l’utilisateur sélectionne un nouvel élément. Cet événement est utilisé par les compléments qui implémentent un volet Office épinglable. Il les autorise à actualiser l’IU du volet Office à partir de l’élément sélectionné.
 
-##### <a name="parameters"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres
 
 | Nom | Type | Attributs | Description |
 |---|---|---|---|
@@ -128,23 +128,23 @@ Actuellement, le seul type d’événement pris en charge est `Office.EventType.
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1,5 |
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem |
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 
-```js
+```javascript
 Office.initialize = function (reason) {
   $(document).ready(function () {
     Office.context.mailbox.addHandlerAsync(Office.EventType.ItemChanged, loadNewItem, function (result) {
       if (result.status === Office.AsyncResultStatus.Failed) {
-        // Handle error
+        // Handle error.
       }
     });
   });
 };
 
 function loadNewItem(eventArgs) {
-  // Load the properties of the newly selected item
+  // Load the properties of the newly selected item.
   loadProps(Office.context.mailbox.item);
 };
 ```
@@ -158,7 +158,7 @@ Convertit un ID d’élément mis en forme pour REST au format EWS.
 
 Les ID d’élément extraits via une API REST (telle que l’[API Courrier Outlook](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) ou [Microsoft Graph](https://graph.microsoft.io/)) utilisent un format différent de celui employé par les services web Exchange (EWS). La méthode `convertToEwsId` convertit un ID mis en forme pour REST au format approprié pour EWS.
 
-##### <a name="parameters"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres
 
 |Nom| Type| Description|
 |---|---|---|
@@ -171,7 +171,7 @@ Les ID d’élément extraits via une API REST (telle que l’[API Courrier Outl
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restreinte|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ##### <a name="returns"></a>Renvoie :
 
@@ -179,12 +179,11 @@ Type : String
 
 ##### <a name="example"></a>Exemple
 
-```js
-// Get an item's ID from a REST API
+```javascript
+// Get an item's ID from a REST API.
 var restId = 'AAMkAGVlOTZjNTM3LW...';
 
-// Treat restId as coming from the v2.0 version of the
-// Outlook Mail API
+// Treat restId as coming from the v2.0 version of the Outlook Mail API.
 var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
@@ -196,7 +195,7 @@ Les dates et heures utilisées par une application de messagerie pour Outlook ou
 
 Si l’application de messagerie est en cours d’exécution dans Outlook, la méthode `convertToLocalClientTime` renvoie un objet de dictionnaire dont les valeurs sont définies pour le fuseau horaire de l’ordinateur client. Si l’application de messagerie est en cours d’exécution dans Outlook Web App, la méthode `convertToLocalClientTime` renvoie un objet de dictionnaire dont les valeurs sont définies pour le fuseau horaire spécifié dans le CAE.
 
-##### <a name="parameters"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres
 
 |Nom| Type| Description|
 |---|---|---|
@@ -208,7 +207,7 @@ Si l’application de messagerie est en cours d’exécution dans Outlook, la m�
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ##### <a name="returns"></a>Renvoie :
 
@@ -223,7 +222,7 @@ Convertit un ID d’élément mis en forme pour EWS au format REST.
 
 Les ID d’élément récupérés via EWS ou la propriété `itemId` utilisent un format différent de celui employé par les API REST (telles que l’[API Courrier Outlook](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) ou [Microsoft Graph](https://graph.microsoft.io/)). La méthode `convertToRestId` convertit un ID mis en forme pour EWS au format approprié pour REST.
 
-##### <a name="parameters"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres
 
 |Nom| Type| Description|
 |---|---|---|
@@ -236,7 +235,7 @@ Les ID d’élément récupérés via EWS ou la propriété `itemId` utilisent u
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restreinte|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ##### <a name="returns"></a>Renvoie :
 
@@ -244,12 +243,11 @@ Type : String
 
 ##### <a name="example"></a>Exemple
 
-```js
-// Get the currently selected item's ID
+```javascript
+// Get the currently selected item's ID.
 var ewsId = Office.context.mailbox.item.itemId;
 
-// Convert to a REST ID for the v2.0 version of the
-// Outlook Mail API
+// Convert to a REST ID for the v2.0 version of the Outlook Mail API.
 var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
@@ -259,7 +257,7 @@ Obtient un objet Date à partir d’un dictionnaire contenant des informations d
 
 La méthode `convertToUtcClientTime` convertit un dictionnaire contenant une date et une heure locales en objet Date avec les valeurs appropriées pour la date et l’heure locales.
 
-##### <a name="parameters"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres
 
 |Nom| Type| Description|
 |---|---|---|
@@ -271,7 +269,7 @@ La méthode `convertToUtcClientTime` convertit un dictionnaire contenant une dat
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ##### <a name="returns"></a>Renvoie :
 
@@ -300,7 +298,7 @@ Dans Outlook Web App, cette méthode ouvre le formulaire spécifié uniquement
 
 Si l’identificateur de l’élément spécifié n’identifie aucun rendez-vous existant, un volet vierge s’ouvre sur l’ordinateur ou l’appareil client. Par ailleurs, aucun message d’erreur n’est retourné.
 
-##### <a name="parameters"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres
 
 |Nom| Type| Description|
 |---|---|---|
@@ -312,11 +310,11 @@ Si l’identificateur de l’élément spécifié n’identifie aucun rendez-vou
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 
-```js
+```javascript
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
 
@@ -335,7 +333,7 @@ Si l’identificateur de l’élément spécifié n’identifie aucun message ex
 
 N’utilisez pas la méthode `displayMessageForm` ayant une valeur `itemId` qui représente un rendez-vous. Utilisez la méthode `displayAppointmentForm` pour afficher un rendez-vous existant, et `displayNewAppointmentForm` pour afficher un formulaire afin de créer un nouveau rendez-vous.
 
-##### <a name="parameters"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres
 
 |Nom| Type| Description|
 |---|---|---|
@@ -347,11 +345,11 @@ N’utilisez pas la méthode `displayMessageForm` ayant une valeur `itemId` qui 
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 
-```js
+```javascript
 Office.context.mailbox.displayMessageForm(messageId);
 ```
 
@@ -370,7 +368,7 @@ Dans le client riche Outlook et Outlook RT, si vous indiquez des participants ou
 
 Si l’un des paramètres dépasse les limites définies en matière de taille ou si un nom de paramètre inconnu est spécifié, une exception est levée.
 
-##### <a name="parameters"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres
 
 |Nom| Type| Description|
 |---|---|---|
@@ -394,7 +392,7 @@ Si l’un des paramètres dépasse les limites définies en matière de taille o
 
 ##### <a name="example"></a>Exemple
 
-```js
+```javascript
 var start = new Date();
 var end = new Date();
 end.setHours(start.getHours() + 1);
@@ -433,7 +431,7 @@ Quand un jeton EWS est demandé (`options.isRest = false`), le jeton fourni ne 
 
 Le complément doit utiliser la propriété `ewsUrl` pour déterminer l’URL à utiliser pendant les appels EWS.
 
-##### <a name="parameters"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
@@ -452,7 +450,7 @@ Le complément doit utiliser la propriété `ewsUrl` pour déterminer l’URL à
 
 ##### <a name="example"></a>Exemple
 
-```js
+```javascript
 function getCallbackToken() {
   var options = {
     isRest: true,
@@ -479,7 +477,7 @@ Votre application doit disposer de l’autorisation **ReadItem** spécifiée dan
 
 En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) permettant d’obtenir un identificateur de l’élément à transmettre à la méthode `getCallbackTokenAsync`. Votre application doit disposer des autorisations **ReadWriteItem** pour appeler la méthode `saveAsync`.
 
-##### <a name="parameters"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
@@ -496,7 +494,7 @@ En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context
 
 ##### <a name="example"></a>Exemple
 
-```js
+```javascript
 function getCallbackToken() {
   Office.context.mailbox.getCallbackTokenAsync(cb);
 }
@@ -512,7 +510,7 @@ Obtient un jeton qui identifie l’utilisateur et le complément Office.
 
 La méthode `getUserIdentityTokenAsync` renvoie un jeton qui vous permet d’identifier et d’[authentifier le complément et l’utilisateur à l’aide d’un système tiers](https://docs.microsoft.com/outlook/add-ins/authentication).
 
-##### <a name="parameters"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
@@ -525,11 +523,11 @@ La méthode `getUserIdentityTokenAsync` renvoie un jeton qui vous permet d’ide
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 
-```js
+```javascript
 function getIdentityToken() {
   Office.context.mailbox.getUserIdentityTokenAsync(cb);
 }
@@ -575,7 +573,7 @@ Lorsque vous utilisez la méthode `makeEwsRequestAsync` dans les applications de
 
 Lorsque votre application de messagerie s’exécute dans Outlook sur le web, vous n’avez pas à définir la valeur d’encodage. Pour déterminer si votre application de messagerie s’exécute dans Outlook ou Outlook sur le web, utilisez la propriété mailbox.diagnostics.hostName. Pour déterminer la version d’Outlook qui est exécutée, utilisez la propriété mailbox.diagnostics.hostVersion.
 
-##### <a name="parameters"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
@@ -589,16 +587,16 @@ Lorsque votre application de messagerie s’exécute dans Outlook sur le web,
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteMailbox|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 
 L’exemple suivant appelle la méthode `makeEwsRequestAsync` pour utiliser l’opération `GetItem` pour obtenir l’objet d’un élément.
 
-```js
+```javascript
 function getSubjectRequest(id) {
-   // Return a GetItem operation request for the subject of the specified item.
-   var request =
+  // Return a GetItem operation request for the subject of the specified item.
+  var request =
     '<?xml version="1.0" encoding="utf-8"?>' +
     '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"' +
     '               xmlns:xsd="http://www.w3.org/2001/XMLSchema"' +
@@ -620,20 +618,20 @@ function getSubjectRequest(id) {
     '  </soap:Body>' +
     '</soap:Envelope>';
 
-   return request;
+  return request;
 }
 
 function sendRequest() {
-   // Create a local variable that contains the mailbox.
-   Office.context.mailbox.makeEwsRequestAsync(
+  // Create a local variable that contains the mailbox.
+  Office.context.mailbox.makeEwsRequestAsync(
     getSubjectRequest(mailbox.item.itemId), callback);
 }
 
 function callback(asyncResult)  {
-   var result = asyncResult.value;
-   var context = asyncResult.asyncContext;
+  var result = asyncResult.value;
+  var context = asyncResult.asyncContext;
 
-   // Process the returned response here.
+  // Process the returned response here.
 }
 ```
 
@@ -643,7 +641,7 @@ Supprime les gestionnaires d’événements pour un type d’événement pris en
 
 Actuellement, seul le type d’événement `Office.EventType.ItemChanged` est pris en charge.
 
-##### <a name="parameters"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres
 
 | Nom | Type | Attributs | Description |
 |---|---|---|---|
@@ -658,4 +656,4 @@ Actuellement, seul le type d’événement `Office.EventType.ItemChanged` est pr
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1,5 |
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem |
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Rédaction ou lecture|
