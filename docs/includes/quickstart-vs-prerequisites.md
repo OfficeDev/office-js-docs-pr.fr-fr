@@ -6,4 +6,4 @@
 - Office 2016 ou version ultérieure
     
     > [!NOTE]
-    > Si vous ne disposez pas encore d’Office, vous pouvez [rejoindre le programme pour les développeurs Office](https://developer.microsoft.com/fr-FR/office/dev-program) pour obtenir une licence afin de développer des compléments et de les tester.
+    > Si vous ne disposez pas encore d’Office, vous pouvez [rejoindre le programme pour les développeurs Office](https://developer.microsoft.com/office/dev-program) pour obtenir une licence afin de développer des compléments et de les tester.
