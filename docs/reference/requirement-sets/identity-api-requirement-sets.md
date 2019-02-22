@@ -4,12 +4,12 @@ description: ''
 ms.date: 02/18/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: e0a04f084deb0b366600b4f2597658d1f54ab7f5
-ms.sourcegitcommit: 03773fef3d2a380028ba0804739d2241d4b320e5
+ms.openlocfilehash: e627576d328dabafe6301c142519cb80befb9f77
+ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "30091238"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "30199556"
 ---
 # <a name="identity-api-requirement-sets"></a>Ensembles de conditions requises de l’API d’identité
 
@@ -17,7 +17,7 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 
 Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tableau suivant répertorie les ensembles de conditions requises de l’API de boîte de dialogue, les applications Office hôtes qui prennent en charge ces conditions et les numéros de build ou de version de l’application Office.
 
-|  Ensemble de conditions requises  | Office 2013/2016/2019 pour Windows | Office 365 pour Windows   |  Office 365 pour iPad  |  Office 365 pour Mac  | Office Online  | SharePoint Online | OneDrive.com |Outlook.com et Exchange Online|
+|  Ensemble de conditions requises  | Office 2013 ou version ultérieure pour Windows | Office 365 pour Windows   |  Office 365 pour iPad  |  Office 365 pour Mac  | Office Online  | SharePoint Online | OneDrive.com |Outlook.com et Exchange Online|
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | IdentityAPI 1.1  | N/A **& # 42;** | Aperçu **&#42;** | Bientôt disponible | Aperçu **&#42;**| Aperçu | Aperçu| Bientôt disponible | Bientôt disponible |
 
