@@ -1,14 +1,14 @@
 ---
 title: Optimisation des performances API JavaScript Excel
 description: Optimisation des performances à l’aide de l’API JavaScript d’Excel
-ms.date: 12/06/2018
+ms.date: 02/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 0c288f3e29d2a956238d9597730312ae0608a7ec
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: d15a4b3ad4ae44399572282889855b1cdc32bc39
+ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389122"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "30199577"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Optimisation des performances à l’aide de l’API JavaScript d’Excel
 
@@ -106,7 +106,7 @@ Excel.run(async function(ctx) {
     // Range value should be [1, 2, 3] now
     console.log(rangeToGet.values);
 
-    // Suspending recalc
+    // Suspending recalculation
     app.suspendApiCalculationUntilNextSync();
     rangeToSet = sheet.getRange("A1:B1");
     rangeToSet.values = [[10, 20]];
@@ -116,7 +116,7 @@ Excel.run(async function(ctx) {
     await ctx.sync();
     // Range value should be [10, 20, 3] when we load the property, because calculation is suspended at that point
     console.log(rangeToGet.values);
-    // Calculation mode should still be "Automatic" even with supend recalc
+    // Calculation mode should still be "Automatic" even with suspend recalculation
     console.log(app.calculationMode);
 
     rangeToGet.load("values");
@@ -129,7 +129,7 @@ Excel.run(async function(ctx) {
 ### <a name="suspend-screen-updating"></a>Suspendre la mise à jour de l’écran
 
 > [!NOTE]
-> La méthode `suspendScreenUpdatingUntilNextSync()` décrite dans cet article requiert la version bêta de la bibliothèque JavaScript Office à partir du [CDN Office.js](https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). Le [fichier de définition du type] (https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) se trouve également dans le CDN. Pour plus d’informations sur nos API à venir, visitez la page sur leurs [spécifications](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec) sur GitHub.
+> La méthode`suspendScreenUpdatingUntilNextSync`décrit dans cet article est actuellement disponible uniquement dans la version d’affichage publique. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 Excel affiche les modifications effectuées par votre complément à peu près au moment où elles ont lieu dans le code. Dans le cas de grands ensembles de données itératifs, il se peut que vous ne deviez pas afficher cette progression sur l’écran en temps réel. `Application.suspendScreenUpdatingUntilNextSync()` interrompt les mises à jour visuelles vers Excel tant que le complément n’appelle pas `context.sync()`, ou tant que `Excel.run` ne se termine pas (appelant implicitement `context.sync`). N’oubliez pas qu'Excel n’affiche aucun signe d’activité jusqu'à la synchronisation suivante. Votre complément doit donner des conseils aux utilisateurs pour les préparer à ce délai ou fournir une barre d’état pour démontrer l’activité.
 
@@ -137,7 +137,7 @@ Excel affiche les modifications effectuées par votre complément à peu près a
 
 La performance d’un complément peut être améliorée en désactivant les événements. Un exemple de code montrant comment activer et désactiver les événements dans l’article[manipuler les événements](excel-add-ins-events.md#enable-and-disable-events).
 
-## <a name="update-all-cells-in-a-range"></a>Mettre à jour toutes les cellules d’une plage 
+## <a name="update-all-cells-in-a-range"></a>Mettre à jour toutes les cellules d’une plage
 
 Lorsque vous devez mettre à jour toutes les cellules dans une plage avec la même valeur ou propriété, il peut être lent de le faire via une matrice 2 dimensions indiquant à plusieurs reprises la même valeur étant donné que cette approche nécessite qu’Excel le répète sur toutes les cellules dans la plage pour définir chacune séparément. Excel propose une méthode plus efficace pour mettre à jour toutes les cellules dans une plage avec la même valeur ou propriété.
 
@@ -182,7 +182,7 @@ Excel.run(async (ctx) => {
 
 La couche JavaScript crée des objets proxy pour votre complément pour interagir avec le classeur Excel et les sous-jacentes. Ces objets sont conservés en mémoire jusqu'à `context.sync()` soit appelé. Les opérations par lots volumineux peuvent générer un grand nombre d’objets proxy qui sont uniquement utiles une fois pour le complément et peuvent être publiés à partir de la mémoire avant l’exécution du lot.
 
-La méthode [Range.untrack()](/javascript/api/excel/excel.range#untrack--) libère un objet plage Excel à partir de la mémoire. Appeler cette méthode une fois que votre complément a terminé avec la plage doit créer une amélioration notable des performances lors de l’utilisation d’un grand nombre d’objets de plage. 
+La méthode [Range.untrack()](/javascript/api/excel/excel.range#untrack--) libère un objet plage Excel à partir de la mémoire. Appeler cette méthode une fois que votre complément a terminé avec la plage doit créer une amélioration notable des performances lors de l’utilisation d’un grand nombre d’objets de plage.
 
 > [!NOTE]
 > `Range.untrack()` est un raccourci pour [ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove-object-). N’importe quel objet proxy peut être non suivi en le supprimant de la liste d’objets suivis dans le contexte. En règle générale, les objets Plage sont les seuls objets Excel utilisés dans une quantité suffisante pour justifier le non suivi.
