@@ -7,7 +7,7 @@ ms.openlocfilehash: ce4440798fdd23106ef0357df47cf850a5a5be71
 ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/22/2019
+ms.lasthandoff: 02/28/2019
 ms.locfileid: "30199598"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)
@@ -181,7 +181,7 @@ Excel.run(function (context) {
 ## <a name="copy-and-paste-preview"></a>Copier et coller(prévisualisation)
 
 > [!NOTE]
-> La `Range.copyFrom` fonction est actuellement disponible uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> La fonction`Range.copyFrom` est actuellement disponible uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 La fonction`copyFrom`de la plage reproduit le comportement de copier-coller de l’interface utilisateur Excel. L’objet plage sur lequel`copyFrom`est appelé est la destination.
 La source à copier est transmise en tant que plage ou qu’adresse de chaîne représentant une plage.

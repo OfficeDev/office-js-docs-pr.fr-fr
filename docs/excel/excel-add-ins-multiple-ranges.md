@@ -1,25 +1,25 @@
 ---
 title: Travailler simultanément avec plusieurs plages dans des compléments Excel
 description: ''
-ms.date: 12/26/2018
+ms.date: 02/20/2019
 localization_priority: Normal
-ms.openlocfilehash: ba171026f410e59e81d3bbb6bc0f799c929a25a3
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: c6bbbaee6f6cbfda5d495f533caf3dbe1325401b
+ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "29387869"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "30199605"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins-preview"></a>Travailler simultanément avec plusieurs plages dans des compléments Excel (prévisualisation)
 
 La bibliothèque JavaScript Excel permet à votre complément d’effectuer des opérations et définir des propriétés, de manière simultanée sur plusieurs plages. Les plages n’ont pas besoin d’être contigus. En plus de rendre votre code plus simple, cette manière de paramétrer une propriété s’exécute beaucoup plus rapidement que paramétrer la même propriété pour chaque les plages de manière individuelle.
 
 > [!NOTE]
-> Les APIs décrits dans cet article nécessitent**la version Office 2016 «Démarrer en un Clic» 1809 Build 10820.20000**ou ultérieure. (Vous devrez peut-être rejoindre le[programme Office Insider](https://products.office.com/office-insider) pour obtenir une build appropriée.) Par ailleurs, vous devez charger la version bêta de la bibliothèque JavaScript Office à partir de [Office.js CDN](https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). Enfin, nous n’avons pas encore les pages de référence pour ces APIs. Mais le fichier de type définition suivant comporte des descriptions à leur place: [office.d.ts bêta](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts).
+> Les APIs décrits dans cet article nécessitent**la version Office 2016 «Démarrer en un Clic» 1809 Build 10820.20000**ou ultérieure. (Vous devrez peut-être rejoindre le [programme Office](https://products.office.com/office-insider) Insider pour obtenir une build appropriée.)[!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 ## <a name="rangeareas"></a>RangeAreas
 
-Un ensemble de plages (voire non contiguës) est représenté par un `Excel.RangeAreas` objet. Il possède des propriétés et des méthodes similaires au type`Range` (bon nombre des noms identiques ou similaires,), mais les ajustements ont été apportées à:
+Un ensemble de plages (éventuellement discontinues) est représenté par un objet [RangeAreas](/javascript/api/excel/excel.rangeareas) . Il possède des propriétés et des méthodes similaires au type`Range` (bon nombre des noms identiques ou similaires,), mais les ajustements ont été apportées à:
 
 - Les types de données pour les propriétés et le comportement des méthodes et des getters.
 - Les types de données de paramètres et des comportements de la méthode.
@@ -90,7 +90,7 @@ Le `RangeAreas` type possède des propriétés et des méthodes qui ne sont pas 
 
 Vous pouvez créer`RangeAreas`l’objet selon deux méthodes de base:
 
-- Appeler`Worksheet.getRanges()` et de transmettre une chaîne comportant des adresses de plage séparées par des virgules. Si une plage que vous souhaitez inclure a été modifiée en[NamedItem](https://docs.microsoft.com/javascript/api/excel/excel.nameditem), vous pouvez inclure le nom, au lieu de l’adresse, dans la chaîne.
+- Appeler`Worksheet.getRanges()` et de transmettre une chaîne comportant des adresses de plage séparées par des virgules. Si une plage que vous souhaitez inclure a été modifiée en[NamedItem](/javascript/api/excel/excel.nameditem), vous pouvez inclure le nom, au lieu de l’adresse, dans la chaîne.
 - Appel `Workbook.getSelectedRanges()`. Cette méthode renvoie une`RangeAreas`représentation de toutes les plages qui sont sélectionnées sur la feuille de calcul active actuelle.
 
 Une fois que vous avez un`RangeAreas`objet, vous pouvez en créer d’autres à l’aide des méthodes sur l’objet qui renvoie`RangeAreas`tel que`getOffsetRangeAreas`et`getIntersection`.
