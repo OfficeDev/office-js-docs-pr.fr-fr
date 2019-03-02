@@ -2,12 +2,13 @@
 ms.date: 01/08/2019
 description: Découvrez les meilleures pratiques pour le développement des fonctions personnalisées dans Excel.
 title: Meilleures pratiques de fonctions personnalisées (aperçu)
-ms.openlocfilehash: 45618a61d0d1fdd0398ecec3aa0db21e493787fd
-ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 24c73ec643df073ac97dc399343a7feb0b0b4168
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "27770650"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359260"
 ---
 # <a name="custom-functions-best-practices-preview"></a>Meilleures pratiques de fonctions personnalisées (aperçu)
 
@@ -37,9 +38,12 @@ function getComment(x) {
 
 ## <a name="troubleshooting"></a>Résolution des problèmes
 
-Si vous testez votre complément dans Office sur Windows, vous devez autoriser la ** [connexion d’exécution](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in) ** à résoudre les problèmes XML du fichier manifeste de votre complément, ainsi que plusieurs conditions d’installation et exécution. La connexion d’exécution écrit les`console.log`instructions vers un fichier journal pour vous aider à découvrir des problèmes.
+1. Si vous testez votre complément dans Office sur Windows, vous devez autoriser la ** [connexion d’exécution](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in) ** à résoudre les problèmes XML du fichier manifeste de votre complément, ainsi que plusieurs conditions d’installation et exécution. La connexion d’exécution écrit les`console.log`instructions vers un fichier journal pour vous aider à découvrir des problèmes.
 
-Pour signaler des commentaires à l’équipe Excel des fonctions personnalisées sur cette méthode de résolution des problèmes, envoyez des commentaires à l’équipe. Pour ce faire, sélectionnez **Fichier | Commentaires | Envoyer un smiley mécontent**. Envoyer un smiley mécontent fournira les journaux nécessaires pour comprendre le problème que vous rencontrez.
+2. Votre complément ne se charge pas si une ou plusieurs fonctions personnalisées sont en conflit avec les fonctions personnalisées d'un complément enregistré précédemment. Dans ce cas, vous pouvez supprimer le complément existant ou, si vous rencontrez cette erreur lors du développement d'un complément, vous pouvez spécifier un autre nom d'espace de noms dans votre manifeste.
+
+3. Pour signaler des commentaires à l’équipe Excel des fonctions personnalisées sur cette méthode de résolution des problèmes, envoyez des commentaires à l’équipe. Pour ce faire, sélectionnez **Fichier | Commentaires | Envoyer un smiley mécontent**. Envoyer un smiley mécontent fournira les journaux nécessaires pour comprendre le problème que vous rencontrez.
+
 
 ## <a name="debugging"></a>Débogage
 

@@ -1,14 +1,14 @@
 ---
 title: Volets des tâches dans les compléments Office
 description: Les volets des tâches permettent aux utilisateurs d’accéder aux contrôles d’interface qui exécutent le code pour modifier des documents ou des e-mails, ou afficher des données d’une source de données.
-ms.date: 12/04/2017
+ms.date: 2/28/2019
 localization_priority: Priority
-ms.openlocfilehash: f9cbbf3a696eb4b3b6a8622f275c2b1808aff643
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 93210a4725e9878a214f1113f68644756f539fbc
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389318"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359225"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Volets des tâches dans les compléments Office
  
@@ -76,6 +76,5 @@ Pour consulter un exemple qui implémente un volet des tâches, reportez-vous à
 ## <a name="see-also"></a>Voir aussi
 
 - [Office UI Fabric dans des compléments Office](office-ui-fabric.md) 
-- [Modèles de conception de l’expérience utilisateur pour les compléments Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
-
+- [Modèles de conception de l’expérience utilisateur pour les compléments Office](../design/ux-design-pattern-templates.md)
 

@@ -1,14 +1,14 @@
 ---
 title: Chargement de version test des compléments Office sur iPad et Mac
 description: ''
-ms.date: 12/04/2017
+ms.date: 02/25/2019
 localization_priority: Priority
-ms.openlocfilehash: cf27b72fe744358f902d36ebd2b89a432aa305f5
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: dc0fad24d7f4f062fb0115edcc58a37d8d9052da
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388191"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359253"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>Chargement de version test des compléments Office sur iPad et Mac
 
@@ -41,18 +41,12 @@ Pour voir comment votre complément s’exécutera dans Office pour iOS, vous po
 1. Utilisez un câble de synchronisation pour connecter votre iPad à votre ordinateur. Lorsque vous connectez l’iPad à votre ordinateur pour la première fois, le message **Approuver cet ordinateur ?** s’affiche. Sélectionnez **Approuver** pour continuer.
 
 2. Dans iTunes, sélectionnez l’icône **iPad** en dessous de la barre de menu.
-    
-    ![Icône iPad dans iTunes](../images/ipad.png)
 
 3. Sous  **Réglages** sur le côté gauche d’iTunes, sélectionnez **Applications**.
-    
-    ![Paramètres des applications iTunes](../images/file-settings-apps.png)
 
 4. Sur le côté droite d’iTunes, faites défiler vers  **Partage de fichiers**, puis sélectionnez  **Excel** ou **Word** dans la colonne **Compléments**.
-    
-    ![Partage de fichiers iTunes](../images/file-sharing.png)
 
-5. Au bas de la colonne  **Excel** ou **Documents Word**, sélectionnez  **Ajouter un fichier**, puis sélectionnez le fichier .xml de manifeste du complément dont vous voulez charger une version test. 
+5. Au bas de la colonne  **Excel** ou **Documents Word**, sélectionnez  **Ajouter un fichier**, puis sélectionnez le fichier .xml de manifeste du complément dont vous voulez charger une version test. 
     
 6. Ouvrez l'application Excel ou Word sur votre iPad. Si l'application Excel ou Word est déjà en cours d'exécution, choisissez le bouton  **Home**, puis fermez et redémarrez l'application.
     
@@ -97,4 +91,3 @@ Pour voir comment votre complément s’exécutera dans Office pour iOS, vous po
 ## <a name="see-also"></a>Voir aussi
 
 - [Débogage des compléments Office sur iPad et Mac](debug-office-add-ins-on-ipad-and-mac.md)
-    
