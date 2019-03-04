@@ -1,14 +1,14 @@
 ---
 title: Utiliser les classeurs utilisant l’API JavaScript Excel
 description: ''
-ms.date: 02/20/2019
+ms.date: 02/28/2019
 localization_priority: Priority
-ms.openlocfilehash: 3d0cbc21d7e6b5c987df5a29d1aa83790c5685bc
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: eb647fe7f82dc669f071de53f6bac705e303c652
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "30199591"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359267"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Utiliser les classeurs utilisant l’API JavaScript Excel
 
@@ -86,14 +86,14 @@ addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: 
 L’exemple suivant montre des feuilles de calcul d’un classeur en cours d’insertion dans le classeur actif, juste après la feuille de calcul active. Notez que`null` est passé pour le`sheetNamesToInsert?: string[]` paramètre. Cela signifie que les feuilles de calcul sont insérées.
 
 ```js
-var myFile = <HTMLInputElement>document.getElementById("file");
+var myFile = document.getElementById("file");
 var reader = new FileReader();
 
 reader.onload = (event) => {
     Excel.run((context) => {
         // strip off the metadata before the base64-encoded string
-        var startIndex = (<string>(<FileReader>event.target).result).indexOf("base64,");
-        var workbookContents = (<string>(<FileReader>event.target).result).substr(startIndex + 7);
+        var startIndex = event.target.result.indexOf("base64,");
+        var workbookContents = event.target.result.substr(startIndex + 7);
 
         var sheets = context.workbook.worksheets;
         sheets.addFromBase64(
@@ -262,6 +262,37 @@ L’API Excel vous permet également de désactiver les compléments calculs jus
 
 ```js
 context.application.suspendApiCalculationUntilNextSync();
+```
+
+## <a name="save-the-workbook"></a>Enregistrer le classeur
+
+> [!NOTE]
+> La fonction`Workbook.save(saveBehavior)` est actuellement disponible uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+
+`Workbook.save(saveBehavior)` enregistre le classeur dans un espace de stockage permanent. La méthode `save` accepte un paramètre unique et facultatif qui peut être l’une des valeurs suivantes :
+
+- `Excel.SaveBehavior.save` (par défaut) : le fichier est enregistré sans inviter l’utilisateur à spécifier le nom de fichier et l’emplacement d’enregistrement. Si le fichier n’a pas été enregistré précédemment, il est enregistré dans l’emplacement par défaut. Si le fichier a été enregistré précédemment, il est enregistré au même emplacement.
+- `Excel.SaveBehavior.prompt` : si le fichier n’a pas été enregistré précédemment, l’utilisateur sera invité à spécifier le nom de fichier et l’emplacement d’enregistrement. Si le fichier a été enregistré précédemment, il est enregistré dans le même emplacement et l’utilisateur ne reçoit pas d’invite.
+
+> [!CAUTION]
+> Si l’utilisateur est invité à enregistrer mais annule alors l’opération, `save` renvoie une erreur.
+
+```js
+context.workbook.save(Excel.SaveBehavior.prompt);
+```
+
+## <a name="close-the-workbook"></a>Fermer le classeur
+
+> [!NOTE]
+> La fonction`Workbook.close(closeBehavior)` est actuellement disponible uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+
+`Workbook.close(closeBehavior)` ferme le classeur, ainsi que des compléments qui sont associées au classeur (l’application Excel reste ouverte). La méthode `close` accepte un paramètre unique et facultatif qui peut être l’une des valeurs suivantes :
+
+- `Excel.CloseBehavior.save` (par défaut) : le fichier est enregistré avant d’être fermé. Si le fichier n’a pas été enregistré précédemment, l’utilisateur sera invité à spécifier le nom de fichier et l’emplacement d’enregistrement.
+- `Excel.CloseBehavior.skipSave` : le fichier est fermé immédiatement, sans enregistrer. Les modifications non enregistrées sont perdues.
+
+```js
+context.workbook.close(Excel.CloseBehavior.save);
 ```
 
 ## <a name="see-also"></a>Voir aussi

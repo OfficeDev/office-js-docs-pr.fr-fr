@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: ''
-ms.date: 01/30/2019
+ms.date: 02/26/2019
 localization_priority: Priority
-ms.openlocfilehash: 47db6824fa328a61e47d577a85375f43e73f16df
-ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
+ms.openlocfilehash: 233bc6770faefaa0e101fd01c353e7ce0df972a1
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "29701784"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359246"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -42,7 +42,7 @@ Les fonctionnalités suivantes sont disponibles en aperçu.
 - [Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus) : ajout d’une nouvelle enum qui spécifie si une pièce jointe a été ajoutée à un élément ou supprimée d’un élément.
 - [Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions) : ajout d’une nouvelle énumération d’indicateur binaire qui spécifie les autorisations accordées aux délégués.
 - [Office.MailboxEnums.LocationType](/javascript/api/outlook/office.mailboxenums.locationtype) : ajout d’une nouvelle énumération qui spécifie le type d’emplacement d’un rendez-vous.
-- [Office.EventType](/javascript/api/office/office.eventtype) : modification de la prise en charge des événements AttachmentsChanged et OfficeThemeChanged via l’ajout respectivement d’entrées `AttachmentsChanged` et `OfficeThemeChanged`.
+- [Office.EventType](/javascript/api/office/office.eventtype) : modifié pour prendre en charge des événements AttachmentsChanged, EnhancedLocationsChanged et OfficeThemeChanged via l’ajout respectivement d’entrées `AttachmentsChanged`, `EnhancedLocationsChanged` et `OfficeThemeChanged`.
 - [Élément de manifeste SupportsSharedFolders](../../manifest/supportssharedfolders.md) : ajout d’un élément enfant à l’élément de manifeste [DesktopFormFactor](../../manifest/desktopformfactor.md). Définit si le complément est disponible dans les scénarios de délégué.
 
 ## <a name="see-also"></a>Voir aussi
