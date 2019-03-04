@@ -1,18 +1,18 @@
 ---
 title: Utilisation de plages à l’aide de l’API JavaScript pour Excel (fondamental)
 description: ''
-ms.date: 12/28/2018
+ms.date: 02/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 505c22d2a3230aeafaf4d0c62a371a2ab93b3a9a
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: c911bf6e908d06298e768bdaf047262d78808321
+ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386784"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "30199584"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Utilisation de plages à l’aide de l’API JavaScript pour Excel
 
-Cet article fournit des exemples de code qui expliquent comment effectuer des tâches courantes avec des plages à l’aide de l’API JavaScript pour Excel. Pour obtenir une liste complète des propriétés et des méthodes prises en charge par l’objet **Range**, reportez-vous à la rubrique [Objet Range (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range).
+Cet article fournit des exemples de code qui expliquent comment effectuer des tâches courantes avec des plages à l’aide de l’API JavaScript pour Excel. Pour obtenir une liste complète des propriétés et des méthodes prises en charge par l’objet **Range**, reportez-vous à la rubrique [Objet Range (API JavaScript pour Excel)](/javascript/api/excel/excel.range).
 
 > [!NOTE]
 > Pour plus d’exemples de code qui montrent comment effectuer des tâches plus avancées avec des plages, consultez l’article [Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)](excel-add-ins-ranges-advanced.md).
@@ -546,8 +546,7 @@ Des plages peuvent présenter une mise en forme de cellules individuelles en fon
 ## <a name="find-a-cell-using-string-matching-preview"></a>Rechercher une cellule en utilisant la correspondance de chaîne (Aperçu)
 
 > [!NOTE]
-> La fonction`find` de l’objet Plage est actuellement disponible uniquement en préversion publique (bêta). Pour utiliser cette fonctionnalité, vous devez utiliser la bibliothèque bêta du CDN Office.js : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-> Si vous utilisez TypeScript ou si votre éditeur de code utilise des fichiers de définition de type TypeScript pour IntelliSense, utilisez https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+> La fonction `find` de l’objet Range est actuellement disponible uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 L’objet `Range` dispose d’une méthode`find` pour rechercher une chaîne spécifiée dans la plage. Elle renvoie la plage de la première cellule avec le texte correspondant. L’exemple de code suivant trouve la première cellule contenant une valeur égale à la chaîne **Nourriture** et connecte son adresse à la console. Notez que `find` génère une erreur `ItemNotFound` si la chaîne spécifiée n’existe pas dans la plage. Si vous pensez que la chaîne spécifiée peut ne pas exister dans la plage, utilisez la méthode[findAllOrNullObject](excel-add-ins-advanced-concepts.md#42ornullobject-methods) à la place, pour que votre code gère ce scénario plus facilement.
 
