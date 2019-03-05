@@ -1,14 +1,14 @@
 ---
 title: Utiliser l’API de dialogue dans vos compléments Office
 description: ''
-ms.date: 02/13/2019
+ms.date: 02/28/2019
 localization_priority: Priority
-ms.openlocfilehash: 81154f039a87973e222188d894d5e4289d0bf647
-ms.sourcegitcommit: 70ef38a290c18a1d1a380fd02b263470207a5dc6
+ms.openlocfilehash: c474e0f3bf27b70565174b797d726a1651a55952
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "30052769"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359288"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Utiliser l’API de dialogue dans vos compléments Office
 
@@ -243,8 +243,6 @@ function processMessage(arg) {
 }
 ```
 
-Pour voir un exemple qui utilise cette technique, consultez le [modèle de conception de navigation de boîte de dialogue](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/navigation) dans le référentiel de [modèles de conception de l’expérience utilisateur pour compléments Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
-
 Même lorsque vous ne disposez pas de votre propre IU de fermeture de boîte de dialogue, un utilisateur final peut fermer la boîte de dialogue en choisissant le **X** dans le coin supérieur droit. Cette action déclenche l’événement `DialogEventReceived`. Si votre volet hôte a besoin de savoir quand cela se produit, il doit déclarer un gestionnaire pour cet événement. Pour plus d’informations, consultez la section [Erreurs et événements dans la fenêtre de dialogue](#errors-and-events-in-the-dialog-window).
 
 ## <a name="handle-errors-and-events"></a>Gestion des erreurs et des événements
@@ -380,7 +378,7 @@ Pour afficher une vidéo dans une boîte de dialogue :
 3.  Utilisez un appel de `displayDialogAsync` dans la page hôte pour ouvrir video.dialogbox.html.
 4.  Si votre complément a besoin de savoir quand l’utilisateur ferme la boîte de dialogue, inscrivez un gestionnaire pour l’événement `DialogEventReceived` et gérez l’événement 12006. Pour plus d’informations, consultez la section [Erreurs et événements dans la fenêtre de dialogue](#errors-and-events-in-the-dialog-window).
 
-Pour voir un exemple qui affiche une vidéo dans une boîte de dialogue, consultez le [modèle de conception de maquette de vidéo](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/video-placemat) dans le référentiel de [modèles de conception de l’expérience utilisateur pour compléments Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
+Pour un échantillon qui affiche une vidéo dans une boîte de dialogue, voir le [modèle de conception de maquette vidéo](https://docs.microsoft.com/office/dev/add-ins/design/first-run-experience-patterns#video-placemat).
 
 ![Capture d’écran d’une vidéo s’affichant dans une boîte de dialogue de complément](../images/video-placemats-dialog-open.png)
 

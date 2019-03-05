@@ -1,14 +1,14 @@
 ---
 title: Meilleures pratiques en matière de développement de compléments Office
 description: ''
-ms.date: 01/23/2018
+ms.date: 02/28/2019
 localization_priority: Priority
-ms.openlocfilehash: 774dacc2fa48a75a95b88740d65eca88ad7dcfdd
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 0227b73223d5d2284d697f98ff598dc4cf5dce81
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388980"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359281"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Meilleures pratiques en matière de développement de compléments Office
 
@@ -50,7 +50,7 @@ Des compléments efficaces proposent des fonctionnalités uniques et attrayantes
 
 - Évitez d’utiliser des fenêtres contextuelles. Si vous devez les utiliser, aidez les utilisateurs à les activer.
 
-Pour obtenir les modèles illustrant les modèles de conception à appliquer lors du développement de votre première expérience d’utilisation, reportez-vous à la section [Modèles de conception de l’expérience utilisateur pour les compléments Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
+Pour les modèles de conception à appliquer lors du développement de votre première expérience d’utilisation, reportez-vous à la section [Modèles de conception de l’expérience utilisateur pour les compléments Office](https://docs.microsoft.com/office/dev/add-ins/design/first-run-experience-patterns).
 
 ## <a name="use-add-in-commands"></a>Utilisation des commandes de complément
 
@@ -75,8 +75,6 @@ Pour obtenir les modèles illustrant les modèles de conception à appliquer lor
 - Soulignez l’accessibilité : votre complément doit être facile à utiliser pour tous les utilisateurs et s’accommoder de technologies d’assistance telles que les lecteurs d’écran.
 
 - Adaptez-le à toutes les plateformes et méthodes d’entrée, y compris la souris/le clavier et la [fonction tactile](#optimize-for-touch). Assurez-vous que votre interface utilisateur réagit à différents formats.
-
-Pour les modèles appliquant des principes de conception que vous pouvez utiliser et personnaliser lors du développement de votre complément, voir [Modèles de conception de l’expérience utilisateur pour les compléments Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
 
 ### <a name="optimize-for-touch"></a>Optimisation de la fonction tactile
 
