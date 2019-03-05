@@ -1,14 +1,14 @@
 ---
 title: Utilisation d’Office UI Fabric React dans des compléments Office
 description: ''
-ms.date: 12/04/2017
+ms.date: 2/28/2019
 localization_priority: Priority
-ms.openlocfilehash: 6013275a9a7a4d5d01f37bbbd268a9258cc82f17
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 7d3e280298ee6761be9e7ced96d3490defeef7f0
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389283"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359239"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>Utilisation d’Office UI Fabric React dans des compléments Office
 
@@ -114,7 +114,7 @@ Enregistrez vos modifications. Toutes les instances de navigateur ouvertes, y co
 ## <a name="see-also"></a>Voir aussi
 
 - [Office UI Fabric React](https://developer.microsoft.com/fabric)
+- [Modèles de conception de l’expérience utilisateur pour les compléments Office](../design/ux-design-pattern-templates.md)
 - [Démarrer avec un exemple de code Fabric React](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)
-- [Modèles de conception de l’expérience utilisateur (utilise Fabric 2.6.1)](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
 - [Exemples d’éléments d’interface utilisateur Fabric pour les compléments Office (utilise Fabric 1.0)](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample)
 - [Générateur Yeoman pour Office](https://github.com/OfficeDev/generator-office)
