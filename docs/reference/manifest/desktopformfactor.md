@@ -1,13 +1,14 @@
 ---
 title: Élément DesktopFormFactor dans le fichier manifeste
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: dea632f7f8afa5d9b69f257798022e9e520e9394
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/01/2019
+localization_priority: Normal
+ms.openlocfilehash: cddf76af01ec9f3016b28a3f7692aa6dfeb9bd60
+ms.sourcegitcommit: 7ebd383f16ae5809bb6980a5f213b695d410e62c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433739"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "30413621"
 ---
 # <a name="desktopformfactor-element"></a>DesktopFormFactor, élément
 
@@ -17,12 +18,12 @@ Chaque définition de facteur de forme pour bureau contient l’élément **Func
 
 ## <a name="child-elements"></a>Éléments enfants
 
-| Élément                               | Obligatoire | Description  |
+| Élément                               | Requis | Description  |
 |:--------------------------------------|:--------:|:-------------|
 | [ExtensionPoint](extensionpoint.md)   | Oui      | Définit l’emplacement où se trouvent les fonctionnalités d’un complément |
 | [FunctionFile](functionfile.md)       | Oui      | URL pointant vers un fichier qui contient les fonctions JavaScript.|
 | [GetStarted](getstarted.md)           | Non       | Définit la légende qui s’affiche lorsque vous installez le complément dans des hôtes Word, Excel ou PowerPoint. |
-| [SupportsSharedFolders](supportssharedfolders.md) | Non | Définit si le complément Outlook est disponible dans les scénarios de délégation et est défini sur *false* par défaut.<br><br>**Important **: cet élément est disponible uniquement dans l’ensemble d’exigences d’aperçu des compléments Outlook par rapport à Exchange Online. Les compléments qui utilisent cet élément ne peuvent pas être publiés dans AppSource ou déployés via la fonctionnalité de déploiement centralisée. |
+| [SupportsSharedFolders](supportssharedfolders.md) | Non | Définit si le complément Outlook est disponible dans les scénarios de délégation et est défini sur *false* par défaut.<br><br>**Important**: étant donné que l'accès délégué pour les compléments Outlook est actuellement en préversion, les `SupportSharedFolders` compléments qui utilisent l'élément ne peuvent pas être publiés dans AppSource ou déployés via un déploiement centralisé. |
 
 ## <a name="desktopformfactor-example"></a>Exemple pour DesktopFormFactor
 
