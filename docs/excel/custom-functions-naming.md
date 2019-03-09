@@ -3,12 +3,12 @@ ms.date: 02/08/2019
 description: Découvrez les conditions requises pour les noms des fonctions personnalisées Excel et éviter les pièges de dénomination courants.
 title: Instructions d'affectation de noms pour les fonctions personnalisées dans Excel (aperçu)
 localization_priority: Normal
-ms.openlocfilehash: bdf31879fb6e750fb9dea51f66c55dbc83a2dc90
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: 954753c35d2df59093661e3b8e92adfa1302e595
+ms.sourcegitcommit: 8e7b7b0cfb68b91a3a95585d094cf5f5ffd00178
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "30203846"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "30512838"
 ---
 # <a name="naming-guidelines"></a>Instructions d'affectation de noms
 
@@ -16,7 +16,9 @@ Une fonction personnalisée est identifiée par un **ID** et une propriété de 
 
 Les noms de fonction et les ID de fonction partagent des exigences communes:
 
-- Elles doivent uniquement utiliser des caractères alphanumériques (y compris Unicode), les chiffres 0 à 9, des traits de soulignement et des points.
+- Les ID de fonction ne peuvent utiliser que les caractères A à Z, les chiffres 0 à 9, les traits de soulignement et les points.
+
+- Les noms de fonction peuvent utiliser n'importe quel caractère alphabétique Unicode, des traits de soulignement et des points.
 
 - Ils doivent commencer par une lettre et avoir une limite minimale de trois caractères.
 
