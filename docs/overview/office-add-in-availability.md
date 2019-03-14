@@ -1,14 +1,14 @@
 ---
 title: Disponibilité des compléments Office sur les plateformes et les hôtes
 description: Ensembles de conditions requises pris en charge pour Excel, Word, Outlook, PowerPoint, OneNote et Project.
-ms.date: 02/20/2019
+ms.date: 03/07/2019
 localization_priority: Priority
-ms.openlocfilehash: a3e9c508a5bae0e7eb660458835b9242d0602818
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: 636c6290d8c67901beb195990593727485467460
+ms.sourcegitcommit: 8e7b7b0cfb68b91a3a95585d094cf5f5ffd00178
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "30199612"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "30512880"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilité des compléments Office sur les plateformes et les hôtes
 
@@ -203,6 +203,8 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
         - TextCoercion</td>
   </tr>
 </table>
+
+*&ast; : ajouté avec les mises à jour après la publication.*
 
 <br/>
 
@@ -511,6 +513,8 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
   </tr>
 </table>
 
+*&ast; : ajouté avec les mises à jour après la publication.*
+
 <br/>
 
 ## <a name="powerpoint"></a>PowerPoint
@@ -632,6 +636,8 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
   </tr>
 </table>
 
+*&ast; : ajouté avec les mises à jour après la publication.*
+
 <br/>
 
 ## <a name="onenote"></a>OneNote
@@ -657,11 +663,10 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
          - TextCoercion</td>
   </tr>
 </table>
-*&ast; : ajouté avec les mises à jour après la publication.*
 
 <br/>
 
-## <a name="project"></a>Project
+## <a name="project"></a>Projet
 
 <table style="width:80%">
   <tr>
