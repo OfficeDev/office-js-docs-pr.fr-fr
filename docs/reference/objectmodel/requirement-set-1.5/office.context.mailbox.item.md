@@ -3,18 +3,18 @@ title: Office.context.mailbox.item - ensemble de conditions requises 1.5
 description: ''
 ms.date: 02/15/2019
 localization_priority: Priority
-ms.openlocfilehash: b95985f7ed76b9952e5698e9190ff4c1fa00a7cb
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: 999a9b732a7efd3f4a9c289e5ff0b97e87278e60
+ms.sourcegitcommit: 8fb60c3a31faedaea8b51b46238eb80c590a2491
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30068237"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "30600276"
 ---
 # <a name="item"></a>élément
 
 ### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmditem"></a>[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item
 
-L’espace de noms `item` est utilisé pour accéder au message, à la demande de réunion ou au rendez-vous actuellement sélectionné. Vous pouvez déterminer le type de l’élément `item` à l’aide de la propriété [itemType](#itemtype-officemailboxenumsitemtypejavascriptapioutlook15officemailboxenumsitemtype).
+L’espace de noms `item` est utilisé pour accéder au message, à la demande de réunion ou au rendez-vous actuellement sélectionné. Vous pouvez déterminer le type de l’élément `item` à l’aide de la propriété [itemType](#itemtype-officemailboxenumsitemtype).
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -28,37 +28,37 @@ L’espace de noms `item` est utilisé pour accéder au message, à la demande d
 
 | Membre | Type |
 |--------|------|
-| [attachments](#attachments-arrayattachmentdetailsjavascriptapioutlook15officeattachmentdetails) | Membre |
-| [bcc](#bcc-recipientsjavascriptapioutlook15officerecipients) | Membre |
-| [body](#body-bodyjavascriptapioutlook15officebody) | Membre |
-| [cc](#cc-arrayemailaddressdetailsjavascriptapioutlook15officeemailaddressdetailsrecipientsjavascriptapioutlook15officerecipients) | Membre |
+| [attachments](#attachments-arrayattachmentdetails) | Membre |
+| [bcc](#bcc-recipients) | Membre |
+| [body](#body-body) | Membre |
+| [cc](#cc-arrayemailaddressdetails) | Membre |
 | [conversationId](#nullable-conversationid-string) | Membre |
 | [dateTimeCreated](#datetimecreated-date) | Membre |
 | [dateTimeModified](#datetimemodified-date) | Membre |
-| [end](#end-datetimejavascriptapioutlook15officetime) | Membre |
-| [from](#from-emailaddressdetailsjavascriptapioutlook15officeemailaddressdetails) | Membre |
+| [end](#end-datetime) | Membre |
+| [from](#from-emailaddressdetails) | Membre |
 | [internetMessageId](#internetmessageid-string) | Membre |
 | [itemClass](#itemclass-string) | Membre |
 | [itemId](#nullable-itemid-string) | Membre |
-| [itemType](#itemtype-officemailboxenumsitemtypejavascriptapioutlook15officemailboxenumsitemtype) | Membre |
-| [location](#location-stringlocationjavascriptapioutlook15officelocation) | Membre |
+| [itemType](#itemtype-officemailboxenumsitemtype) | Membre |
+| [location](#location-stringlocation) | Membre |
 | [normalizedSubject](#normalizedsubject-string) | Membre |
-| [notificationMessages](#notificationmessages-notificationmessagesjavascriptapioutlook15officenotificationmessages) | Membre |
-| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsjavascriptapioutlook15officeemailaddressdetailsrecipientsjavascriptapioutlook15officerecipients) | Membre |
-| [organizer](#organizer-emailaddressdetailsjavascriptapioutlook15officeemailaddressdetails) | Membre |
-| [requiredAttendees](#requiredattendees-arrayemailaddressdetailsjavascriptapioutlook15officeemailaddressdetailsrecipientsjavascriptapioutlook15officerecipients) | Member |
-| [sender](#sender-emailaddressdetailsjavascriptapioutlook15officeemailaddressdetails) | Membre |
-| [start](#start-datetimejavascriptapioutlook15officetime) | Membre |
-| [subject](#subject-stringsubjectjavascriptapioutlook15officesubject) | Membre |
-| [to](#to-arrayemailaddressdetailsjavascriptapioutlook15officeemailaddressdetailsrecipientsjavascriptapioutlook15officerecipients) | Membre |
+| [notificationMessages](#notificationmessages-notificationmessages) | Membre |
+| [optionalAttendees](#optionalattendees-arrayemailaddressdetails) | Membre |
+| [organizer](#organizer-emailaddressdetails) | Membre |
+| [requiredAttendees](#requiredattendees-arrayemailaddressdetails) | Member |
+| [sender](#sender-emailaddressdetails) | Membre |
+| [start](#start-datetime) | Membre |
+| [subject](#subject-stringsubject) | Membre |
+| [to](#to-arrayemailaddressdetails) | Membre |
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | Méthode |
 | [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | Méthode |
 | [close](#close) | Méthode |
 | [displayReplyAllForm](#displayreplyallformformdata-callback) | Méthode |
 | [displayReplyForm](#displayreplyformformdata-callback) | Méthode |
-| [getEntities](#getentities--entitiesjavascriptapioutlook15officeentities) | Méthode |
-| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactjavascriptapioutlook15officecontactmeetingsuggestionjavascriptapioutlook15officemeetingsuggestionphonenumberjavascriptapioutlook15officephonenumbertasksuggestionjavascriptapioutlook15officetasksuggestion) | Méthode |
-| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactjavascriptapioutlook15officecontactmeetingsuggestionjavascriptapioutlook15officemeetingsuggestionphonenumberjavascriptapioutlook15officephonenumbertasksuggestionjavascriptapioutlook15officetasksuggestion) | Méthode |
+| [getEntities](#getentities--entities) | Méthode |
+| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontact) | Méthode |
+| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontact) | Méthode |
 | [getRegExMatches](#getregexmatches--object) | Méthode |
 | [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | Méthode |
 | [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | Méthode |
@@ -316,7 +316,7 @@ console.log("Date and time modified: " + dateTimeModified);
 
 Obtient ou définit la date et l’heure de fin du rendez-vous.
 
-La propriété `end` est exprimée en date et heure UTC (temps universel coordonné). Vous pouvez utiliser la méthode [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook15officelocalclienttime) pour convertir la valeur de fin de la propriété à la date et à l’heure du client.
+La propriété `end` est exprimée en date et heure UTC (temps universel coordonné). Vous pouvez utiliser la méthode [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttime) pour convertir la valeur de fin de la propriété à la date et à l’heure du client.
 
 ##### <a name="read-mode"></a>Mode lecture
 
@@ -367,7 +367,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 
 Obtient l’adresse de messagerie de l’expéditeur d’un message. Mode lecture uniquement.
 
-Les propriétés `from` et [`sender`](#sender-emailaddressdetailsjavascriptapioutlook15officeemailaddressdetails) représentent la même personne, sauf si le message est envoyé par un délégué. Dans ce cas, la propriété `from` représente le délégant et la propriété sender représente le délégué.
+Les propriétés `from` et [`sender`](#sender-emailaddressdetails) représentent la même personne, sauf si le message est envoyé par un délégué. Dans ce cas, la propriété `from` représente le délégant et la propriété sender représente le délégué.
 
 > [!NOTE]
 > La propriété `recipientType` de l’objet `EmailAddressDetails` dans la propriété `from` est `undefined`.
@@ -550,7 +550,7 @@ function callback(asyncResult) {
 
 Obtient l’objet d’un élément, sans les préfixes (y compris `RE:` et `FWD:`). Mode lecture uniquement.
 
-La propriété normalizedSubject obtient l’objet de l’élément, sans les préfixes standard (par exemple, `RE:` et `FW:`) qui sont ajoutés par les programmes de messagerie électronique. Pour obtenir l’objet de l’élément avec les préfixes intacts, utilisez la propriété [`subject`](#subject-stringsubjectjavascriptapioutlook15officesubject).
+La propriété normalizedSubject obtient l’objet de l’élément, sans les préfixes standard (par exemple, `RE:` et `FW:`) qui sont ajoutés par les programmes de messagerie électronique. Pour obtenir l’objet de l’élément avec les préfixes intacts, utilisez la propriété [`subject`](#subject-stringsubject).
 
 ##### <a name="type"></a>Type
 
@@ -705,7 +705,7 @@ function callback(asyncResult) {
 
 Obtient l’adresse de messagerie de l’expéditeur d’un message électronique. Mode lecture uniquement.
 
-Les propriétés [`from`](#from-emailaddressdetailsjavascriptapioutlook15officeemailaddressdetails) et `sender` représentent la même personne, sauf si le message est envoyé par un délégué. Dans ce cas, la propriété `from` représente le délégant et la propriété sender représente le délégué.
+Les propriétés [`from`](#from-emailaddressdetails) et `sender` représentent la même personne, sauf si le message est envoyé par un délégué. Dans ce cas, la propriété `from` représente le délégant et la propriété sender représente le délégué.
 
 > [!NOTE]
 > La propriété `recipientType` de l’objet `EmailAddressDetails` dans la propriété `sender` est `undefined`.
@@ -734,7 +734,7 @@ console.log("Sender: " + senderName + " (" + senderAddress + ")");
 
 Obtient ou définit la date et l’heure de début du rendez-vous.
 
-La propriété `start` est exprimée en date et heure UTC (temps universel coordonné). Vous pouvez utiliser la méthode [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook15officelocalclienttime) pour convertir la valeur à la date et à l’heure du client.
+La propriété `start` est exprimée en date et heure UTC (temps universel coordonné). Vous pouvez utiliser la méthode [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttime) pour convertir la valeur à la date et à l’heure du client.
 
 ##### <a name="read-mode"></a>Mode lecture
 
