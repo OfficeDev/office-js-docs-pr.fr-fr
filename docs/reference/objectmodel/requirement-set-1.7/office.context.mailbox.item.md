@@ -3,18 +3,18 @@ title: Office. Context. Mailbox. Item-ensemble de conditions requises 1,7
 description: ''
 ms.date: 02/15/2019
 localization_priority: Normal
-ms.openlocfilehash: 87ac31deaabda5fe1d2ca024972e326cfa168ea7
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: 94fcb090fb7e676ed0c30caef342e1d6cfc6e9f9
+ms.sourcegitcommit: 8fb60c3a31faedaea8b51b46238eb80c590a2491
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30068251"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "30600290"
 ---
 # <a name="item"></a>élément
 
 ### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmditem"></a>[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item
 
-L’espace de noms `item` est utilisé pour accéder au message, à la demande de réunion ou au rendez-vous actuellement sélectionné. Vous pouvez déterminer le type de l’élément `item` à l’aide de la propriété [itemType](#itemtype-officemailboxenumsitemtypejavascriptapioutlook17officemailboxenumsitemtype).
+L’espace de noms `item` est utilisé pour accéder au message, à la demande de réunion ou au rendez-vous actuellement sélectionné. Vous pouvez déterminer le type de l’élément `item` à l’aide de la propriété [itemType](#itemtype-officemailboxenumsitemtype).
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -22,50 +22,50 @@ L’espace de noms `item` est utilisé pour accéder au message, à la demande d
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|Restreinte|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Rédaction ou lecture|
 
 ##### <a name="members-and-methods"></a>Membres et méthodes
 
-| Membre | Type |
+| Membre	 | Type |
 |--------|------|
-| [attachments](#attachments-arrayattachmentdetailsjavascriptapioutlook17officeattachmentdetails) | Membre |
-| [bcc](#bcc-recipientsjavascriptapioutlook17officerecipients) | Membre |
-| [body](#body-bodyjavascriptapioutlook17officebody) | Membre |
-| [cc](#cc-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients) | Membre |
-| [conversationId](#nullable-conversationid-string) | Membre |
-| [dateTimeCreated](#datetimecreated-date) | Membre |
-| [dateTimeModified](#datetimemodified-date) | Membre |
-| [end](#end-datetimejavascriptapioutlook17officetime) | Membre |
-| [from](#from-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsfromjavascriptapioutlook17officefrom) | Membre |
-| [internetMessageId](#internetmessageid-string) | Membre |
-| [itemClass](#itemclass-string) | Membre |
-| [itemId](#nullable-itemid-string) | Membre |
-| [itemType](#itemtype-officemailboxenumsitemtypejavascriptapioutlook17officemailboxenumsitemtype) | Membre |
-| [location](#location-stringlocationjavascriptapioutlook17officelocation) | Membre |
-| [normalizedSubject](#normalizedsubject-string) | Membre |
-| [notificationMessages](#notificationmessages-notificationmessagesjavascriptapioutlook17officenotificationmessages) | Membre |
-| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients) | Membre |
-| [organizer](#organizer-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsorganizerjavascriptapioutlook17officeorganizer) | Membre |
-| [recurrence](#nullable-recurrence-recurrencejavascriptapioutlook17officerecurrence) | Member |
-| [requiredAttendees](#requiredattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients) | Membre |
-| [sender](#sender-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetails) | Membre |
-| [seriesId](#nullable-seriesid-string) | Membre |
-| [start](#start-datetimejavascriptapioutlook17officetime) | Membre |
-| [subject](#subject-stringsubjectjavascriptapioutlook17officesubject) | Membre |
-| [to](#to-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients) | Membre |
+| [attachments](#attachments-arrayattachmentdetails) | Member |
+| [bcc](#bcc-recipients) | Member |
+| [body](#body-body) | Member |
+| [cc](#cc-arrayemailaddressdetails) | Member |
+| [conversationId](#nullable-conversationid-string) | Member |
+| [dateTimeCreated](#datetimecreated-date) | Member |
+| [dateTimeModified](#datetimemodified-date) | Member |
+| [end](#end-datetime) | Member |
+| [from](#from-emailaddressdetailsfrom) | Member |
+| [internetMessageId](#internetmessageid-string) | Member |
+| [itemClass](#itemclass-string) | Member |
+| [itemId](#nullable-itemid-string) | Member |
+| [itemType](#itemtype-officemailboxenumsitemtype) | Member |
+| [location](#location-stringlocation) | Member |
+| [normalizedSubject](#normalizedsubject-string) | Member |
+| [notificationMessages](#notificationmessages-notificationmessages) | Member |
+| [optionalAttendees](#optionalattendees-arrayemailaddressdetails) | Member |
+| [organizer](#organizer-emailaddressdetailsorganizer) | Member |
+| [recurrence](#nullable-recurrence-recurrence) | Member |
+| [requiredAttendees](#requiredattendees-arrayemailaddressdetails) | Member |
+| [sender](#sender-emailaddressdetails) | Member |
+| [seriesId](#nullable-seriesid-string) | Member |
+| [start](#start-datetime) | Member |
+| [subject](#subject-stringsubject) | Member |
+| [to](#to-arrayemailaddressdetails) | Membre |
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | Méthode |
 | [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | Méthode |
 | [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | Méthode |
 | [close](#close) | Méthode |
 | [displayReplyAllForm](#displayreplyallformformdata-callback) | Méthode |
 | [displayReplyForm](#displayreplyformformdata-callback) | Méthode |
-| [getEntities](#getentities--entitiesjavascriptapioutlook17officeentities) | Méthode |
-| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactjavascriptapioutlook17officecontactmeetingsuggestionjavascriptapioutlook17officemeetingsuggestionphonenumberjavascriptapioutlook17officephonenumbertasksuggestionjavascriptapioutlook17officetasksuggestion) | Méthode |
-| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactjavascriptapioutlook17officecontactmeetingsuggestionjavascriptapioutlook17officemeetingsuggestionphonenumberjavascriptapioutlook17officephonenumbertasksuggestionjavascriptapioutlook17officetasksuggestion) | Méthode |
+| [getEntities](#getentities--entities) | Méthode |
+| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontact) | Méthode |
+| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontact) | Méthode |
 | [getRegExMatches](#getregexmatches--object) | Méthode |
 | [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | Méthode |
 | [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | Méthode |
-| [getSelectedEntities](#getselectedentities--entitiesjavascriptapioutlook17officeentities) | Méthode |
+| [getSelectedEntities](#getselectedentities--entities) | Méthode |
 | [getSelectedRegExMatches](#getselectedregexmatches--object) | Méthode |
 | [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | Méthode |
 | [removeAttachmentAsync](#removeattachmentasyncattachmentid-options-callback) | Méthode |
@@ -170,7 +170,7 @@ Obtient un objet qui fournit des méthodes permettant de manipuler le corps d’
 
 ##### <a name="type"></a>Type
 
-*   [Corps](/javascript/api/outlook_1_7/office.body)
+*   [Body](/javascript/api/outlook_1_7/office.body)
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -178,7 +178,7 @@ Obtient un objet qui fournit des méthodes permettant de manipuler le corps d’
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.1|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 
@@ -194,7 +194,7 @@ Office.context.mailbox.item.body.getAsync(
 
 ```
 
-Voici un exemple du paramètre result transmis à la fonction de rappel.
+L’exemple suivant présente le paramètre de résultat transmis à la fonction de rappel.
 
 ```json
 {
@@ -240,7 +240,7 @@ function callback(asyncResult) {
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Rédaction ou lecture|
 
 ####  <a name="nullable-conversationid-string"></a>(nullable) conversationId :String
 
@@ -252,15 +252,15 @@ Cette propriété obtient une valeur null lorsqu’un élément est ajouté à u
 
 ##### <a name="type"></a>Type
 
-*   Chaîne
+*   String
 
 ##### <a name="requirements"></a>Configuration requise
 
-|Requirement|Valeur|
+|Conditions requises|Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 
@@ -279,7 +279,7 @@ Obtient la date et l’heure de création d’un élément. Mode lecture uniquem
 
 ##### <a name="requirements"></a>Configuration requise
 
-|Requirement|Valeur|
+|Conditions requises|Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
@@ -305,7 +305,7 @@ Permet d’obtenir la date et l’heure de la dernière modification d’un él�
 
 ##### <a name="requirements"></a>Configuration requise
 
-|Requirement|Valeur|
+|Conditions requises|Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
@@ -322,7 +322,7 @@ console.log("Date and time modified: " + dateTimeModified);
 
 Obtient ou définit la date et l’heure de fin du rendez-vous.
 
-La propriété `end` est exprimée en date et heure UTC (temps universel coordonné). Vous pouvez utiliser la méthode [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook17officelocalclienttime) pour convertir la valeur de fin de la propriété à la date et à l’heure du client.
+La propriété `end` est exprimée en date et heure UTC (temps universel coordonné). Vous pouvez utiliser la méthode [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttime) pour convertir la valeur de fin de la propriété à la date et à l’heure du client.
 
 ##### <a name="read-mode"></a>Mode lecture
 
@@ -339,7 +339,7 @@ La propriété `end` renvoie un objet `Time`.
 
 Quand vous utilisez la méthode [`Time.setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) pour définir l’heure de fin, nous vous recommandons d’utiliser la méthode [`convertToUtcClientTime`](office.context.mailbox.md#converttoutcclienttimeinput--date) pour convertir l’heure locale du client au format UTC pour le serveur.
 
-L'exemple suivant définit l'heure de fin d'un rendez- [`setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) vous à l' `Time` aide de la méthode de l'objet.
+L’exemple suivant définit l’heure de fin d’un rendez-vous en utilisant la méthode [`setAsync`](/javascript/api/outlook_1_7/office.time#setasync-datetime--options--callback-) de l’objet `Time`.
 
 ```javascript
 var endTime = new Date("3/14/2015");
@@ -363,24 +363,24 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 
 ##### <a name="requirements"></a>Configuration requise
 
-|Requirement|Valeur|
+|Conditions requises|Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Rédaction ou lecture|
 
-#### <a name="from-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsfromjavascriptapioutlook17officefrom"></a>from :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[From](/javascript/api/outlook_1_7/office.from)
+#### <a name="from-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsfromjavascriptapioutlook17officefrom"></a>from:[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[from](/javascript/api/outlook_1_7/office.from)
 
-Permet d’obtenir l’adresse de messagerie de l’expéditeur d’un message.
+Obtient l’adresse de messagerie de l’expéditeur d’un message.
 
-Les propriétés `from` et [`sender`](#sender-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetails) représentent la même personne, sauf si le message est envoyé par un délégué. Dans ce cas, la propriété `from` représente le délégant et la propriété sender représente le délégué.
+Les propriétés `from` et [`sender`](#sender-emailaddressdetails) représentent la même personne, sauf si le message est envoyé par un délégué. Dans ce cas, la propriété `from` représente le délégant et la propriété sender représente le délégué.
 
 > [!NOTE]
-> la propriété `recipientType` de l’objet `EmailAddressDetails` dans la propriété `from` est `undefined`.
+> La propriété `recipientType` de l’objet `EmailAddressDetails` dans la propriété `from` est `undefined`.
 
-##### <a name="read-mode"></a>Mode lecture
+##### <a name="read-mode"></a>mode Lecture
 
-La propriété `from` renvoie un objet `EmailAddressDetails`.
+La `from` propriété renvoie un `EmailAddressDetails` objet.
 
 ```javascript
 var from = Office.context.mailbox.item.from;
@@ -389,7 +389,7 @@ console.log("From " + from);
 
 ##### <a name="compose-mode"></a>Mode composition
 
-La propriété `from` renvoie un objet `From` qui fournit une méthode pour obtenir la valeur from.
+La `from` propriété renvoie un `From` objet qui fournit une méthode pour obtenir la valeur de.
 
 ```javascript
 Office.context.mailbox.item.from.getAsync(callback);
@@ -401,7 +401,7 @@ function callback(asyncResult) {
 
 ##### <a name="type"></a>Type
 
-*   [EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) | [From](/javascript/api/outlook_1_7/office.from)
+*   [EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) | [à partir de](/javascript/api/outlook_1_7/office.from)
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -417,11 +417,11 @@ Obtient l’identificateur de message Internet d’un message électronique. Mod
 
 ##### <a name="type"></a>Type
 
-*   Chaîne
+*   String
 
 ##### <a name="requirements"></a>Configuration requise
 
-|Requirement|Valeur|
+|Conditions requises|Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
@@ -448,7 +448,7 @@ Vous pouvez créer des classes de message personnalisées qui étendent une clas
 
 ##### <a name="type"></a>Type
 
-*   Chaîne
+*   String
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -476,7 +476,7 @@ La propriété `itemId` n’est pas disponible en mode composition. Si l’ident
 
 ##### <a name="type"></a>Type
 
-*   Chaîne
+*   String
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -515,7 +515,7 @@ La propriété `itemType` renvoie une des valeurs d’énumération `ItemType` i
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 
@@ -531,7 +531,7 @@ if (Office.context.mailbox.item.itemType === Office.MailboxEnums.ItemType.Messag
 
 Obtient ou définit le lieu d’un rendez-vous.
 
-##### <a name="read-mode"></a>Mode Lecture
+##### <a name="read-mode"></a>Mode lecture
 
 La propriété `location` renvoie une chaîne contenant le lieu du rendez-vous.
 
@@ -564,17 +564,17 @@ function callback(asyncResult) {
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Rédaction ou lecture|
 
 #### <a name="normalizedsubject-string"></a>normalizedSubject :String
 
 Obtient l’objet d’un élément, sans les préfixes (y compris `RE:` et `FWD:`). Mode lecture uniquement.
 
-La propriété normalizedSubject obtient l’objet de l’élément, sans les préfixes standard (par exemple, `RE:` et `FW:`) qui sont ajoutés par les programmes de messagerie électronique. Pour obtenir l’objet de l’élément avec les préfixes intacts, utilisez la propriété [`subject`](#subject-stringsubjectjavascriptapioutlook17officesubject).
+La propriété normalizedSubject obtient l’objet de l’élément, sans les préfixes standard (par exemple, `RE:` et `FW:`) qui sont ajoutés par les programmes de messagerie électronique. Pour obtenir l’objet de l’élément avec les préfixes intacts, utilisez la propriété [`subject`](#subject-stringsubject).
 
 ##### <a name="type"></a>Type
 
-*   Chaîne
+*   String
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -605,7 +605,7 @@ Obtient les messages de notification pour un élément.
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.3|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 
@@ -651,19 +651,19 @@ function callback(asyncResult) {
 
 ##### <a name="requirements"></a>Configuration requise
 
-|Requirement|Valeur|
+|Conditions requises|Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Rédaction ou lecture|
 
-#### <a name="organizer-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsorganizerjavascriptapioutlook17officeorganizer"></a>organizer :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[Organizer](/javascript/api/outlook_1_7/office.organizer)
+#### <a name="organizer-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsorganizerjavascriptapioutlook17officeorganizer"></a>Organisateur:[](/javascript/api/outlook_1_7/office.emailaddressdetails)|[organisateur](/javascript/api/outlook_1_7/office.organizer) EmailAddressDetails
 
-Permet d’obtenir l’adresse de messagerie de l’organisateur d’une réunion spécifiée.
+Obtient l'adresse de messagerie de l'organisateur d'une réunion spécifiée.
 
-##### <a name="read-mode"></a>Mode lecture
+##### <a name="read-mode"></a>mode Lecture
 
-La propriété `organizer` renvoie un objet [EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) qui représente l’organisateur de la réunion.
+La `organizer` propriété renvoie un objet [EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) qui représente l'organisateur de la réunion.
 
 ```javascript
 var organizerName = Office.context.mailbox.item.organizer.displayName;
@@ -673,7 +673,7 @@ console.log("Organizer: " + organizerName + " (" + organizerAddress + ")");
 
 ##### <a name="compose-mode"></a>Mode composition
 
-La propriété `organizer` renvoie un objet [Organizer](/javascript/api/outlook_1_7/office.organizer) qui fournit une méthode pour obtenir la valeur organizer.
+La `organizer` propriété renvoie un objet [organisateur](/javascript/api/outlook_1_7/office.organizer) qui fournit une méthode pour obtenir la valeur de l'organisateur.
 
 ```javascript
 Office.context.mailbox.item.organizer.getAsync(
@@ -685,7 +685,7 @@ Office.context.mailbox.item.organizer.getAsync(
 
 ##### <a name="type"></a>Type
 
-*   [EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails) | [Organizer](/javascript/api/outlook_1_7/office.organizer)
+*   [](/javascript/api/outlook_1_7/office.emailaddressdetails) | [Organisateur](/javascript/api/outlook_1_7/office.organizer) EmailAddressDetails
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -695,17 +695,17 @@ Office.context.mailbox.item.organizer.getAsync(
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|ReadWriteItem|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Lecture|Composition|
 
-#### <a name="nullable-recurrence-recurrencejavascriptapioutlook17officerecurrence"></a>(nullable) recurrence :[Recurrence](/javascript/api/outlook_1_7/office.recurrence)
+#### <a name="nullable-recurrence-recurrencejavascriptapioutlook17officerecurrence"></a>(Nullable) récurrence:[périodicité](/javascript/api/outlook_1_7/office.recurrence)
 
-Permet d’obtenir ou définit la périodicité d’un rendez-vous. Permet d’obtenir la périodicité d’une demande de réunion. Modes lecture et composition pour les éléments de rendez-vous. Mode lecture pour les éléments de demande de réunion.
+Obtient ou définit la périodicité d'un rendez-vous. Obtient la périodicité d'une demande de réunion. Modes lecture et composition pour les éléments de rendez-vous. Mode lecture pour les éléments de demande de réunion.
 
-La propriété `recurrence` renvoie un objet [périodicité](/javascript/api/outlook_1_7/office.recurrence) pour des demandes de réunions ou de rendez-vous périodiques si un élément est une série ou une instance dans une série. La valeur `null` est renvoyée pour les rendez-vous uniques et les demandes de réunion de rendez-vous uniques. La valeur `undefined` est renvoyée pour les messages qui ne sont pas des demandes de réunion.
+La `recurrence` propriété renvoie un objet [Recurrence](/javascript/api/outlook_1_7/office.recurrence) pour les demandes de réunion ou de rendez-vous périodiques si un élément est une série ou une instance dans une série. `null`est renvoyé pour les rendez-vous uniques et les demandes de réunion de rendez-vous uniques. `undefined`est renvoyée pour les messages qui ne sont pas des demandes de réunion.
 
-> Remarque : les demandes de réunion ont une valeur `itemClass` d’IPM. Schedule.Meeting.Request.
+> Remarque: les demandes de réunion `itemClass` ont la valeur IPM. Schedule. Meeting. Request.
 
-> Remarque : si l’objet de périodicité est `null`, cela indique que l’objet est un rendez-vous unique ou une demande de réunion de rendez-vous unique, et NON une partie d’une série.
+> Remarque: si l'objet de périodicité `null`est, cela indique que l'objet est un rendez-vous unique ou une demande de réunion d'un seul rendez-vous et non d'une série.
 
-##### <a name="read-mode"></a>Mode Lecture
+##### <a name="read-mode"></a>mode Lecture
 
 La `recurrence` propriété renvoie un objet [Recurrence](/javascript/api/outlook_1_7/office.recurrence) qui représente la périodicité du rendez-vous. Elle est disponible pour les rendez-vous et les demandes de réunion.
 
@@ -745,13 +745,13 @@ Recurrence = {
 
 ##### <a name="type"></a>Type
 
-* [Recurrence](/javascript/api/outlook_1_7/office.recurrence)
+* [Instances](/javascript/api/outlook_1_7/office.recurrence)
 
 |Conditions requises|Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.7|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Rédaction ou lecture|
 
 ####  <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a>requiredAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)
 
@@ -787,17 +787,17 @@ function callback(asyncResult) {
 
 ##### <a name="requirements"></a>Configuration requise
 
-|Requirement|Valeur|
+|Conditions requises|Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Rédaction ou lecture|
 
 #### <a name="sender-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetails"></a>sender :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)
 
 Obtient l’adresse de messagerie de l’expéditeur d’un message électronique. Mode lecture uniquement.
 
-Les propriétés [`from`](#from-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsfromjavascriptapioutlook17officefrom) et `sender` représentent la même personne, sauf si le message est envoyé par un délégué. Dans ce cas, la propriété `from` représente le délégant et la propriété sender représente le délégué.
+Les propriétés [`from`](#from-emailaddressdetails) et `sender` représentent la même personne, sauf si le message est envoyé par un délégué. Dans ce cas, la propriété `from` représente le délégant et la propriété sender représente le délégué.
 
 > [!NOTE]
 > La propriété `recipientType` de l’objet `EmailAddressDetails` dans la propriété `sender` est `undefined`.
@@ -808,7 +808,7 @@ Les propriétés [`from`](#from-emailaddressdetailsjavascriptapioutlook17officee
 
 ##### <a name="requirements"></a>Configuration requise
 
-|Requirement|Valeur|
+|Conditions requises|Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
@@ -822,20 +822,20 @@ var senderAddress = Office.context.mailbox.item.sender.emailAddress;
 console.log("Sender: " + senderName + " (" + senderAddress + ")");
 ```
 
-#### <a name="nullable-seriesid-string"></a>(nullable) seriesId :String
+#### <a name="nullable-seriesid-string"></a>(Nullable) seriesId: chaîne
 
-Permet d’obtenir l’ID de la série à laquelle une instance appartient.
+Obtient l'ID de la série à laquelle une instance appartient.
 
-Dans OWA et Outlook, `seriesId` renvoie l’identificateur de services web Exchange (EWS) de l’élément (series) parent auquel cet élément appartient. Dans iOS et Android, `seriesId` renvoie l’ID REST de l’élément parent.
+Dans OWA et Outlook, le `seriesId` renvoie l'ID des services Web Exchange (EWS) de l'élément parent (série) auquel cet élément appartient. Toutefois, dans iOS et Android, le `seriesId` renvoie l'ID REST de l'élément parent.
 
 > [!NOTE]
-> L’identificateur renvoyé par la propriété `seriesId` est identique à celui de l’élément des services web Exchange. La propriété `seriesId` n’est pas identique aux ID Outlook utilisés par l’API REST Outlook. Avant que vous ne puissiez effectuer des appels d’API REST avec cette valeur, elle doit être convertie à l’aide de la commande [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string). Pour plus d’informations, voir [Utilisation des API REST Outlook à partir d’un complément Outlook](https://docs.microsoft.com/outlook/add-ins/use-rest-api).
+> L’identificateur renvoyé par la propriété `seriesId` est identique à celui de l’élément des services web Exchange. La `seriesId` propriété n'est pas identique aux ID Outlook utilisés par l'API REST Outlook. Avant que vous ne puissiez effectuer des appels d’API REST avec cette valeur, elle doit être convertie à l’aide de la commande [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string). Pour plus d’informations, voir [Utilisation des API REST Outlook à partir d’un complément Outlook](https://docs.microsoft.com/outlook/add-ins/use-rest-api).
 
-La propriété `seriesId` renvoie `null` pour les éléments qui n’ont pas d’élément parent, tels que des rendez-vous uniques, des éléments de séries ou des demandes de réunion, et renvoie `undefined` pour tous les autres éléments qui ne sont pas des demandes de réunion.
+La `seriesId` propriété renvoie `null` pour les éléments qui n'ont pas d'éléments parents, tels que les rendez-vous uniques, les `undefined` éléments de série ou les demandes de réunion, et les retours pour tous les autres éléments qui ne sont pas des demandes de réunion.
 
 ##### <a name="type"></a>Type
 
-* Chaîne
+* String
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -843,7 +843,7 @@ La propriété `seriesId` renvoie `null` pour les éléments qui n’ont pas d�
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.7|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 
@@ -862,9 +862,9 @@ console.log("SeriesId is " + seriesId + " and isSeriesInstance is " + isSeriesIn
 
 Obtient ou définit la date et l’heure de début du rendez-vous.
 
-La propriété `start` est exprimée en date et heure UTC (temps universel coordonné). Vous pouvez utiliser la méthode [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook17officelocalclienttime) pour convertir la valeur à la date et à l’heure du client.
+La propriété `start` est exprimée en date et heure UTC (temps universel coordonné). Vous pouvez utiliser la méthode [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttime) pour convertir la valeur à la date et à l’heure du client.
 
-##### <a name="read-mode"></a>Mode Lecture
+##### <a name="read-mode"></a>mode Lecture
 
 La propriété `start` renvoie un objet `Date`.
 
@@ -907,7 +907,7 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Rédaction ou lecture|
 
 ####  <a name="subject-stringsubjectjavascriptapioutlook17officesubject"></a>subject :String|[Subject](/javascript/api/outlook_1_7/office.subject)
 
@@ -915,7 +915,7 @@ Obtient ou définit la description qui apparaît dans le champ d’objet d’un 
 
 La propriété `subject` obtient ou définit l’intégralité de l’objet de l’élément, tel qu’il est envoyé par le serveur de messagerie.
 
-##### <a name="read-mode"></a>Mode Lecture
+##### <a name="read-mode"></a>Mode lecture
 
 La propriété `subject` renvoie une chaîne. Utilisez la propriété [`normalizedSubject`](#normalizedsubject-string) pour obtenir l’objet sans les préfixes tels que `RE:` et `FW:`.
 
@@ -949,7 +949,7 @@ function callback(asyncResult) {
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Rédaction ou lecture|
 
 ####  <a name="to-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a>to :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)
 
@@ -987,7 +987,7 @@ function callback(asyncResult) {
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Rédaction ou lecture|
 
 ### <a name="methods"></a>Méthodes
 
@@ -1004,7 +1004,7 @@ L’identificateur peut être utilisé avec la méthode [`removeAttachmentAsync`
 |---|---|---|---|
 |`uri`|String||URI indiquant l’emplacement du fichier à joindre au message ou au rendez-vous. La longueur maximale est de 2 048 caractères.|
 |`attachmentName`|String||Nom de la pièce jointe affiché lors de son chargement. La taille maximale est de 255 caractères.|
-|`options`|Objet|&lt;facultatif&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
+|`options`|Object|&lt;facultatif&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
 |`options.asyncContext`|Objet|&lt;facultatif&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
 |`options.isInline`|Boolean|&lt;optional&gt;|Si elle est définie sur `true`, cette valeur indique que la pièce jointe est incorporée dans le corps du message et qu’elle ne doit pas figurer dans la liste des pièces jointes.|
 |`callback`|fonction|&lt;optional&gt;|Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult). <br/>En cas de réussite, l’identificateur de pièce jointe est fourni dans la propriété `asyncResult.value`.<br/>En cas d’échec du téléchargement de la pièce jointe, l’objet `asyncResult` contient un objet `Error` indiquant une description de l’erreur.|
@@ -1068,9 +1068,9 @@ Office.context.mailbox.item.addFileAttachmentAsync(
 
 ####  <a name="addhandlerasynceventtype-handler-options-callback"></a>addHandlerAsync(eventType, handler, [options], [callback])
 
-Ajoute un gestionnaire d’événements pour un événement pris en charge.
+ajoute un gestionnaire d’événements pour un événement pris en charge.
 
-Pour l’instant, les types d’événement pris en charge sont `Office.EventType.AppointmentTimeChanged`, `Office.EventType.RecipientsChanged` et `Office.EventType.RecurrenceChanged`.
+Actuellement, les types d'événement `Office.EventType.AppointmentTimeChanged`pris `Office.EventType.RecipientsChanged`en charge sont, et`Office.EventType.RecurrenceChanged`
 
 ##### <a name="parameters"></a>Paramètres
 
@@ -1078,8 +1078,8 @@ Pour l’instant, les types d’événement pris en charge sont `Office.EventTyp
 |---|---|---|---|
 | `eventType` | [Office.EventType](office.md#eventtype-string) || Événement qui doit appeler le gestionnaire. |
 | `handler` | Fonction || Fonction qui gère l’événement. Cette fonction doit accepter un seul paramètre, qui est un littéral d’objet. La propriété `type` sur le paramètre correspond au paramètre `eventType` transmis à `addHandlerAsync`. |
-| `options` | Objet | &lt;optional&gt; | Littéral d’objet contenant une ou plusieurs des propriétés suivantes. |
-| `options.asyncContext` | Objet | &lt;optional&gt; | Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel. |
+| `options` | Objet | &lt;facultatif&gt; | Littéral d’objet contenant une ou plusieurs des propriétés suivantes. |
+| `options.asyncContext` | Objet | &lt;facultatif&gt; | Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel. |
 | `callback` | fonction| &lt;optional&gt;|Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).|
 
 ##### <a name="requirements"></a>Configuration requise
@@ -1088,7 +1088,7 @@ Pour l’instant, les types d’événement pris en charge sont `Office.EventTyp
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.7 |
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem |
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture |
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Rédaction ou lecture |
 
 ##### <a name="example"></a>Exemple
 
@@ -1119,9 +1119,9 @@ Si votre complément Office est exécuté dans Outlook Web App, la méthode `
 |Nom|Type|Attributs|Description|
 |---|---|---|---|
 |`itemId`|String||Identificateur Exchange de l’élément à joindre. La taille maximale est de 100 caractères.|
-|`attachmentName`|String||Objet de l'élément à joindre. La longueur maximale est de 255 caractères.|
-|`options`|Object|&lt;optional&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
-|`options.asyncContext`|Objet|&lt;optional&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
+|`attachmentName`|String||Objet de l’élément à joindre. La longueur maximale est de 255 caractères.|
+|`options`|Objet|&lt;facultatif&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
+|`options.asyncContext`|Objet|&lt;facultatif&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
 |`callback`|fonction|&lt;optional&gt;|Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult). <br/>En cas de réussite, l’identificateur de pièce jointe est fourni dans la propriété `asyncResult.value`.<br/>En cas d’échec de l’ajout de la pièce jointe, l’objet `asyncResult` contient un objet `Error` indiquant une description de l’erreur.|
 
 ##### <a name="errors"></a>Erreurs
@@ -1181,7 +1181,7 @@ Dans le client de bureau Outlook, si le message est une réponse instantanée, l
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|Restreinte|
 |[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composition|
 
-#### <a name="displayreplyallformformdata-callback"></a>displayReplyAllForm (Formulairemode, [callback])
+#### <a name="displayreplyallformformdata-callback"></a>displayReplyAllForm(formData, [callback])
 
 Affiche un formulaire de réponse qui inclut, soit l’expéditeur et tous les destinataires du message sélectionné, soit l’organisateur et tous les participants du rendez-vous sélectionné.
 
@@ -1201,7 +1201,7 @@ Lorsque des pièces jointes sont spécifiées dans le paramètre `formData.attac
 |`formData`|String &#124; Object||Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.<br/>**OU**<br/>Objet qui contient les données du corps du message ou des pièces jointes et une fonction de rappel. L’objet est défini de la manière suivante :|
 |`formData.htmlBody`|String|&lt;optional&gt;|Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.
 |`formData.attachments`|Array.&lt;Object&gt;|&lt;optional&gt;|Tableau d’objets JSON qui sont des pièces jointes de fichier ou d’élément.|
-|`formData.attachments.type`|String||Indique le type de pièce jointe. Doit être `file` pour une pièce jointe de fichier ou `item` pour une pièce jointe d’élément.|
+|`formData.attachments.type`|Chaîne||Indique le type de pièce jointe. Doit être `file` pour une pièce jointe de fichier ou `item` pour une pièce jointe d’élément.|
 |`formData.attachments.name`|String||Chaîne qui contient le nom de la pièce jointe et comporte jusqu'à 255 caractères.|
 |`formData.attachments.url`|Chaîne||Utilisé uniquement si `type` est défini sur `file`. Il s’agit de l’URI de l’emplacement du fichier.|
 |`formData.attachments.isInline`|Booléen||Utilisé uniquement si `type` est défini sur `file`. Si elle est définie sur `true`, cette valeur indique que la pièce jointe est incorporée dans le corps du message et qu’elle ne doit pas figurer dans la liste des pièces jointes.|
@@ -1300,7 +1300,7 @@ Office.context.mailbox.item.displayReplyAllForm(
 });
 ```
 
-#### <a name="displayreplyformformdata-callback"></a>displayReplyForm (Formulairemode, [callback])
+#### <a name="displayreplyformformdata-callback"></a>displayReplyForm(formData, [callback])
 
 Affiche un formulaire de réponse qui comprend uniquement l’expéditeur du message sélectionné ou l’organisateur du rendez-vous sélectionné.
 
@@ -1320,7 +1320,7 @@ Lorsque des pièces jointes sont spécifiées dans le paramètre `formData.attac
 |`formData`|String &#124; Object||Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.<br/>**OU**<br/>Objet qui contient les données du corps du message ou des pièces jointes et une fonction de rappel. L’objet est défini de la manière suivante :|
 |`formData.htmlBody`|String|&lt;optional&gt;|Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.
 |`formData.attachments`|Array.&lt;Object&gt;|&lt;optional&gt;|Tableau d’objets JSON qui sont des pièces jointes de fichier ou d’élément.|
-|`formData.attachments.type`|String||Indique le type de pièce jointe. Doit être `file` pour une pièce jointe de fichier ou `item` pour une pièce jointe d’élément.|
+|`formData.attachments.type`|Chaîne||Indique le type de pièce jointe. Doit être `file` pour une pièce jointe de fichier ou `item` pour une pièce jointe d’élément.|
 |`formData.attachments.name`|String||Chaîne qui contient le nom de la pièce jointe et comporte jusqu'à 255 caractères.|
 |`formData.attachments.url`|Chaîne||Utilisé uniquement si `type` est défini sur `file`. Il s’agit de l’URI de l’emplacement du fichier.|
 |`formData.attachments.isInline`|Booléen||Utilisé uniquement si `type` est défini sur `file`. Si elle est définie sur `true`, cette valeur indique que la pièce jointe est incorporée dans le corps du message et qu’elle ne doit pas figurer dans la liste des pièces jointes.|
@@ -1475,11 +1475,11 @@ Alors que le niveau d’autorisation minimal **Restricted** suffit pour utiliser
 
 |Valeur de `entityType`|Type des objets du tableau renvoyé|Niveau d’autorisation requis|
 |---|---|---|
-|`Address`|String|**Restricted**|
+|`Address`|String|**Restreinte**|
 |`Contact`|Contact|**ReadItem**|
 |`EmailAddress`|String|**ReadItem**|
 |`MeetingSuggestion`|MeetingSuggestion|**ReadItem**|
-|`PhoneNumber`|PhoneNumber|**Restricted**|
+|`PhoneNumber`|PhoneNumber|**Restreinte**|
 |`TaskSuggestion`|TaskSuggestion|**ReadItem**|
 |`URL`|String|**Restricted**|
 
@@ -1580,7 +1580,7 @@ Un objet qui contient les tableaux des chaînes correspondant aux expressions r�
 
 <dt>Type</dt>
 
-<dd>Object</dd>
+<dd>Objet</dd>
 
 </dl>
 
@@ -1669,7 +1669,7 @@ Les données sélectionnées en tant que chaîne dont le format est déterminé 
 
 <dt>Type</dt>
 
-<dd>Chaîne</dd>
+<dd>String</dd>
 
 </dl>
 
@@ -1695,7 +1695,7 @@ function setCallback(asyncResult) {
 
 #### <a name="getselectedentities--entitiesjavascriptapioutlook17officeentities"></a>getSelectedEntities() → {[Entities](/javascript/api/outlook_1_7/office.entities)}
 
-Permet d’obtenir les entités figurant dans une correspondance en surbrillance qu’un utilisateur a sélectionné. Les correspondances en surbrillance s’appliquent aux [compléments contextuels](https://docs.microsoft.com/outlook/add-ins/contextual-outlook-add-ins).
+Obtient les entités figurant dans une correspondance en surbrillance qu’un utilisateur a sélectionné. Les correspondances en surbrillance s’appliquent aux [compléments contextuels](https://docs.microsoft.com/outlook/add-ins/contextual-outlook-add-ins).
 
 > [!NOTE]
 > Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.
@@ -1793,7 +1793,7 @@ Les propriétés personnalisées sont stockées sous la forme de paires clé/val
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composition ou lecture|
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 
@@ -1833,8 +1833,8 @@ La méthode `removeAttachmentAsync` supprime la pièce jointe avec l’identific
 |Nom|Type|Attributs|Description|
 |---|---|---|---|
 |`attachmentId`|String||Identificateur de la pièce jointe à supprimer.|
-|`options`|Objet|&lt;optional&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
-|`options.asyncContext`|Objet|&lt;optional&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
+|`options`|Objet|&lt;facultatif&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
+|`options.asyncContext`|Objet|&lt;facultatif&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
 |`callback`|fonction|&lt;optional&gt;|Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult). <br/>En cas d’échec de la suppression de la pièce jointe, la propriété `asyncResult.error` contient un code d’erreur et la raison de l’échec.|
 
 ##### <a name="errors"></a>Erreurs
@@ -1870,7 +1870,7 @@ Office.context.mailbox.item.removeAttachmentAsync(
 
 Supprime les gestionnaires d’événements pour un type d’événement pris en charge.
 
-Pour l’instant, les types d’événement pris en charge sont `Office.EventType.AppointmentTimeChanged`, `Office.EventType.RecipientsChanged` et `Office.EventType.RecurrenceChanged`.
+Actuellement, les types d'événement `Office.EventType.AppointmentTimeChanged`pris `Office.EventType.RecipientsChanged`en charge sont, et`Office.EventType.RecurrenceChanged`
 
 ##### <a name="parameters"></a>Paramètres
 
@@ -1887,7 +1887,7 @@ Pour l’instant, les types d’événement pris en charge sont `Office.EventTyp
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.7 |
 |[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem |
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture |
+|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Rédaction ou lecture |
 
 ##### <a name="example"></a>Exemple
 
