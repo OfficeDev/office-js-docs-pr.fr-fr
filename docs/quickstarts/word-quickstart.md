@@ -1,23 +1,23 @@
 ---
 title: Créer votre premier complément Word
 description: ''
-ms.date: 01/17/2019
+ms.date: 03/19/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 20f63c7e61fd4b576eda7c1d737d377439055fe2
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 9da974ff604570367771c98e47d549ecc70eee7b
+ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742322"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "30691173"
 ---
 # <a name="build-your-first-word-add-in"></a>Créer votre premier complément Word
 
-_S’applique à : Word 2016, Word pour iPad, Word pour Mac_
+_S’applique à : Word 2016 ou version ultérieure pour Windows, Word pour iPad, Word pour Mac_
 
-Cet article décrit le processus de création d’un complément Word à l’aide de jQuery et de l’API JavaScript pour Word. 
+Cet article décrit le processus de création d’un complément Word à l’aide de jQuery et de l’API JavaScript pour Word.
 
-## <a name="create-the-add-in"></a>Créer le complément 
+## <a name="create-the-add-in"></a>Créer le complément
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
@@ -30,13 +30,13 @@ Cet article décrit le processus de création d’un complément Word à l’aid
 ### <a name="create-the-add-in-project"></a>Création du projet de complément
 
 1. Dans la barre de menu de Visual Studio, choisissez successivement **Fichier** > **Nouveau** > **Projet**.
-    
+
 2. Dans la liste des types de projets, sous **Visual C#** ou **Visual Basic**, développez **Office/SharePoint**, choisissez **Compléments**, puis **Complément Word Web** pour le type de projet. 
 
 3. Nommez le projet, puis cliquez sur **OK**.
 
 4. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
-    
+
 ### <a name="explore-the-visual-studio-solution"></a>Explorer la solution Visual Studio
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
@@ -44,14 +44,14 @@ Cet article décrit le processus de création d’un complément Word à l’aid
 ### <a name="update-the-code"></a>Mise à jour du code
 
 1. **Home.html** spécifie le code HTML qui s’affichera dans le volet Office du complément. Dans **Home.html**, remplacez l’élément `<body>` par le balisage suivant et enregistrez le fichier.
- 
+
     ```html
     <body>
         <div id="content-header">
             <div class="padding">
                 <h1>Welcome</h1>
             </div>
-        </div>    
+        </div>
         <div id="content-main">
             <div class="padding">
                 <p>Choose the buttons below to add boilerplate text to the document by using the Word JavaScript API.</p>
@@ -73,7 +73,7 @@ Cet article décrit le processus de création d’un complément Word à l’aid
 
     ```js
     'use strict';
-    
+
     (function () {
 
         Office.onReady(function() {
@@ -191,7 +191,7 @@ Cet article décrit le processus de création d’un complément Word à l’aid
         left: 0;
         right: 0;
         bottom: 0;
-        overflow: auto; 
+        overflow: auto;
     }
 
     .padding {
@@ -225,7 +225,7 @@ Cet article décrit le processus de création d’un complément Word à l’aid
 
 1. À l’aide de Visual Studio, testez le nouveau complément en appuyant sur **F5** ou en choisissant le bouton**Démarrer** pour lancer Word avec le bouton du complément **Show Taskpane **(Afficher le volet Office) qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
 
-2. Dans Word, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément. (Si vous utilisez la version sans abonnement d’Office 2016 au lieu de la version d’Office 365, les boutons personnalisés ne sont pas pris en charge. Le volet Office s’ouvre immédiatement.)
+2. Dans Word, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément. (Si vous utilisez la version d’Office en achat définitif au lieu de la version d’Office 365, les boutons personnalisés ne sont pas pris en charge. Le volet Office s’ouvre immédiatement.)
 
     ![Capture d’écran de l’application Word avec le bouton Afficher le volet Office mis en évidence](../images/word-quickstart-addin-0.png)
 
@@ -259,9 +259,9 @@ Cet article décrit le processus de création d’un complément Word à l’aid
     - **Quelle application client Office voulez-vous prendre en charge ? :** `Word`
 
     ![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yo-office-word-jquery.png)
-    
+
     Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants de nœud de la prise en charge.
-    
+
 2. Accédez au dossier racine du projet.
 
     ```bash
@@ -270,7 +270,7 @@ Cet article décrit le processus de création d’un complément Word à l’aid
 
 ### <a name="update-the-code"></a>Mise à jour du code
 
-1. Dans votre éditeur de code, ouvrez **index.html** à la racine du projet. Ce fichier contient le code HTML qui s’affichera dans le volet Office du complément. 
+1. Dans votre éditeur de code, ouvrez **index.html** à la racine du projet. Ce fichier contient le code HTML qui s’affichera dans le volet Office du complément.
 
 2. Remplacez l’élément `<body>` par le balisage suivant et enregistrez le fichier.
 
@@ -300,11 +300,11 @@ Cet article décrit le processus de création d’un complément Word à l’aid
     </body>
     ```
 
-2. Ouvrez le fichier **src/index.js** afin de spécifier le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier. Ce script contient le code d’initialisation ainsi que le code qui apporte des modifications au document Word en insérant du texte dans le document lorsqu’un bouton est choisi. 
+3. Ouvrez le fichier **src/index.js** afin de spécifier le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier. Ce script contient le code d’initialisation ainsi que le code qui apporte des modifications au document Word en insérant du texte dans le document lorsqu’un bouton est choisi.
 
     ```js
     'use strict';
-    
+
     (function () {
 
         Office.onReady(function() {
@@ -401,7 +401,7 @@ Cet article décrit le processus de création d’un complément Word à l’aid
     })();
     ```
 
-3. Ouvrez le fichier **app.css** à la racine du projet pour spécifier les styles personnalisés du complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+4. Ouvrez le fichier **app.css** à la racine du projet pour spécifier les styles personnalisés du complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
 
     ```css
     #content-header {
@@ -422,7 +422,7 @@ Cet article décrit le processus de création d’un complément Word à l’aid
         left: 0;
         right: 0;
         bottom: 0;
-        overflow: auto; 
+        overflow: auto;
     }
 
     .padding {
@@ -484,5 +484,4 @@ Félicitations, vous avez créé un complément Word à l’aide de jQuery ! Ma
 * [Présentation des compléments Word](../word/word-add-ins-programming-overview.md)
 * 
   [Exemples de code pour les compléments Word](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
-* [Référence d’API JavaScript pour Word](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)
-
+* [Référence d’API JavaScript pour Word](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)

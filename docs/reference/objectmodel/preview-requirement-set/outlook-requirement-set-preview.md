@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: ''
-ms.date: 03/07/2019
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: b1a3f5c675b2bcb43003ad15b3358e3febd80260
-ms.sourcegitcommit: 8e7b7b0cfb68b91a3a95585d094cf5f5ffd00178
+ms.openlocfilehash: d24c4647116b4af56d85a434f3ece5ccf4662a39
+ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "30512859"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "30691166"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -37,43 +37,43 @@ Ajout d’un nouveau paramètre facultatif `options`, qui est un dictionnaire ay
 
 Ajout d’un nouvel objet représentant le contenu d’une pièce jointe.
 
-**Disponible dans** : Outlook 2019 pour Windows (abonnement Office 365)
+**Disponible dans** : Outlook pour Windows (Office 365)
 
 #### <a name="officecontextmailboxitemaddfileattachmentfrombase64asyncofficecontextmailboxitemmdaddfileattachmentfrombase64asyncbase64file-attachmentname-options-callback"></a>[Office.context.mailbox.item.addFileAttachmentFromBase64Async](office.context.mailbox.item.md#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback)
 
 Ajout d’une nouvelle méthode qui vous permet de joindre un fichier représenté par une chaîne encodée en base 64 à un message ou à un rendez-vous.
 
-**Disponible dans** : Outlook 2019 pour Windows (abonnement Office 365)
+**Disponible dans** : Outlook pour Windows (Office 365)
 
-#### <a name="officecontextmailboxitemgetattachmentcontentasyncofficecontextmailboxitemmdgetattachmentcontentasyncattachmentid-options-callback--attachmentcontentjavascriptapioutlookofficeattachmentcontent"></a>[Office.context.mailbox.item.getAttachmentContentAsync](office.context.mailbox.item.md#getattachmentcontentasyncattachmentid-options-callback--attachmentcontentjavascriptapioutlookofficeattachmentcontent)
+#### <a name="officecontextmailboxitemgetattachmentcontentasyncofficecontextmailboxitemmdgetattachmentcontentasyncattachmentid-options-callback--attachmentcontent"></a>[Office.context.mailbox.item.getAttachmentContentAsync](office.context.mailbox.item.md#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent)
 
 Ajout d’une nouvelle méthode pour obtenir le contenu d’une pièce jointe spécifique.
 
-**Disponible dans** : Outlook 2019 pour Windows (abonnement Office 365)
+**Disponible dans** : Outlook pour Windows (Office 365)
 
-#### <a name="officecontextmailboxitemgetattachmentsasyncofficecontextmailboxitemmdgetattachmentsasyncoptions-callback--arrayattachmentdetailsjavascriptapioutlookofficeattachmentdetails"></a>[Office.context.mailbox.item.getAttachmentsAsync](office.context.mailbox.item.md#getattachmentsasyncoptions-callback--arrayattachmentdetailsjavascriptapioutlookofficeattachmentdetails)
+#### <a name="officecontextmailboxitemgetattachmentsasyncofficecontextmailboxitemmdgetattachmentsasyncoptions-callback--arrayattachmentdetails"></a>[Office.context.mailbox.item.getAttachmentsAsync](office.context.mailbox.item.md#getattachmentsasyncoptions-callback--arrayattachmentdetails)
 
 Ajout d’une nouvelle méthode qui obtient les pièces jointes d’un élément en mode composition.
 
-**Disponible dans** : Outlook 2019 pour Windows (abonnement Office 365)
+**Disponible dans** : Outlook pour Windows (Office 365)
 
 #### <a name="officemailboxenumsattachmentcontentformatjavascriptapioutlookofficemailboxenumsattachmentcontentformat"></a>[Office.MailboxEnums.AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat)
 
 Ajout d’une nouvelle énumération qui spécifie la mise en forme qui s’applique au contenu d’une pièce jointe.
 
-**Disponible dans** : Outlook 2019 pour Windows (abonnement Office 365)
+**Disponible dans** : Outlook pour Windows (Office 365)
 
 #### <a name="officemailboxenumsattachmentstatusjavascriptapioutlookofficemailboxenumsattachmentstatus"></a>[Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus)
 
 Ajout d’une nouvelle énumération qui spécifie si une pièce jointe a été ajoutée à un élément ou supprimée d’un élément.
 
-**Disponible dans** : Outlook 2019 pour Windows (abonnement Office 365)
+**Disponible dans** : Outlook pour Windows (Office 365)
 
 #### <a name="officeeventtypeattachmentschangedjavascriptapiofficeofficeeventtype"></a>[Office.EventType.AttachmentsChanged](/javascript/api/office/office.eventtype)
 
 Ajout de l’événement `AttachmentsChanged` à `Item`.
 
-**Disponible dans** : Outlook 2019 pour Windows (abonnement Office 365)
+**Disponible dans** : Outlook pour Windows (Office 365)
 
 ### <a name="delegate-access"></a>Accès délégué
 
@@ -81,25 +81,25 @@ Ajout de l’événement `AttachmentsChanged` à `Item`.
 
 Ajout d’un nouvel objet qui représente les propriétés d’un élément rendez-vous ou message dans un dossier, un calendrier ou une boîte aux lettres partagés.
 
-**Disponible dans** : Outlook 2019 pour Windows (abonnement Office 365)
+**Disponible dans** : Outlook pour Windows (Office 365)
 
 #### <a name="officecontextmailboxitemgetsharedpropertiesasyncofficecontextmailboxitemmdgetsharedpropertiesasyncoptions-callback"></a>[Office.context.mailbox.item.getSharedPropertiesAsync](office.context.mailbox.item.md#getsharedpropertiesasyncoptions-callback)
 
 Ajout d’une nouvelle méthode qui obtient un objet qui représente les sharedProperties d’un élément rendez-vous ou message.
 
-**Disponible dans** : Outlook 2019 pour Windows (abonnement Office 365)
+**Disponible dans** : Outlook pour Windows (Office 365)
 
 #### <a name="officemailboxenumsdelegatepermissionsjavascriptapioutlookofficemailboxenumsdelegatepermissions"></a>[Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions)
 
 Ajout d’une nouvelle énumération d’indicateur binaire qui spécifie les autorisations accordées aux délégués.
 
-**Disponible dans** : Outlook 2019 pour Windows (abonnement Office 365)
+**Disponible dans** : Outlook pour Windows (Office 365)
 
 #### <a name="supportssharedfolders-manifest-elementmanifestsupportssharedfoldersmd"></a>[Élément de manifeste SupportsSharedFolders](../../manifest/supportssharedfolders.md)
 
 Ajout d’un élément enfant à l’élément de manifeste [DesktopFormFactor](../../manifest/desktopformfactor.md). Définit si le complément est disponible dans les scénarios de délégué.
 
-**Disponible dans** : Outlook 2019 pour Windows (abonnement Office 365)
+**Disponible dans** : Outlook pour Windows (Office 365)
 
 ### <a name="enhanced-location"></a>Emplacement amélioré
 
@@ -107,45 +107,45 @@ Ajout d’un élément enfant à l’élément de manifeste [DesktopFormFactor](
 
 Ajout d’un nouvel objet représentant l’ensemble des emplacements sur un rendez-vous.
 
-**Disponible dans** : Outlook 2019 pour Windows (abonnement Office 365)
+**Disponible dans** : Outlook pour Windows (Office 365)
 
 #### <a name="locationdetailsjavascriptapioutlookofficelocationdetails"></a>[LocationDetails](/javascript/api/outlook/office.locationdetails)
 
 Ajout d’un nouvel objet représentant un emplacement. En lecture seule.
 
-**Disponible dans** : Outlook 2019 pour Windows (abonnement Office 365)
+**Disponible dans** : Outlook pour Windows (Office 365)
 
 #### <a name="locationidentifierjavascriptapioutlookofficelocationidentifier"></a>[LocationIdentifier](/javascript/api/outlook/office.locationidentifier)
 
 Ajout d’un nouvel objet représentant l’ID d’un emplacement.
 
-**Disponible dans** : Outlook 2019 pour Windows (abonnement Office 365)
+**Disponible dans** : Outlook pour Windows (Office 365)
 
-#### <a name="officecontextmailboxitemenhancedlocationofficecontextmailboxitemmdenhancedlocation-enhancedlocationjavascriptapioutlookofficeenhancedlocation"></a>[Office.context.mailbox.item.enhancedLocation](office.context.mailbox.item.md#enhancedlocation-enhancedlocationjavascriptapioutlookofficeenhancedlocation)
+#### <a name="officecontextmailboxitemenhancedlocationofficecontextmailboxitemmdenhancedlocation-enhancedlocation"></a>[Office.context.mailbox.item.enhancedLocation](office.context.mailbox.item.md#enhancedlocation-enhancedlocation)
 
 Ajout d’une nouvelle propriété représentant l’ensemble des emplacements sur un rendez-vous.
 
-**Disponible dans** : Outlook 2019 pour Windows (abonnement Office 365)
+**Disponible dans** : Outlook pour Windows (Office 365)
 
 #### <a name="officemailboxenumslocationtypejavascriptapioutlookofficemailboxenumslocationtype"></a>[Office.MailboxEnums.LocationType](/javascript/api/outlook/office.mailboxenums.locationtype)
 
 Ajout d’une nouvelle énumération qui spécifie le type d’emplacement d’un rendez-vous.
 
-**Disponible dans** : Outlook 2019 pour Windows (abonnement Office 365)
+**Disponible dans** : Outlook pour Windows (Office 365)
 
 #### <a name="officeeventtypeenhancedlocationschangedjavascriptapiofficeofficeeventtype"></a>[Office.EventType.EnhancedLocationsChanged](/javascript/api/office/office.eventtype)
 
 Ajout de l’événement `EnhancedLocationsChanged` à `Item`.
 
-**Disponible dans** : Outlook 2019 pour Windows (abonnement Office 365)
+**Disponible dans** : Outlook pour Windows (Office 365)
 
 ### <a name="integration-with-actionable-messages"></a>Intégration avec les messages actionnables
 
 #### <a name="officecontextmailboxitemgetinitializationcontextasyncofficecontextmailboxitemmdgetinitializationcontextasyncoptions-callback"></a>[Office.context.mailbox.item.getInitializationContextAsync](office.context.mailbox.item.md#getinitializationcontextasyncoptions-callback)
 
-Ajout d’une nouvelle fonction qui renvoie les données d’initialisation transmises lorsque le complément est [activé par un message actionnable](https://docs.microsoft.com/outlook/actionable-messages/invoke-add-in-from-actionable-message).
+Ajout d’une nouvelle fonction qui renvoie les données d’initialisation transmises lorsque le complément est [activé par un message actionnable](/outlook/actionable-messages/invoke-add-in-from-actionable-message).
 
-**Disponible dans** : Office 2019 pour Windows (abonnement Office 365), Outlook sur le web (classique)
+**Disponible dans** : Outlook pour Windows (Office 365), Outlook sur le web (classique)
 
 ### <a name="internet-headers"></a>En-têtes Internet
 
@@ -153,13 +153,13 @@ Ajout d’une nouvelle fonction qui renvoie les données d’initialisation tran
 
 Ajout d’un nouvel objet représentant les en-têtes Internet d’un élément de message.
 
-**Disponible dans** : Outlook 2019 pour Windows (abonnement Office 365)
+**Disponible dans** : Outlook pour Windows (Office 365)
 
-#### <a name="officecontextmailboxiteminternetheadersofficecontextmailboxitemmdinternetheaders-internetheadersjavascriptapioutlookofficeinternetheaders"></a>[Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#internetheaders-internetheadersjavascriptapioutlookofficeinternetheaders)
+#### <a name="officecontextmailboxiteminternetheadersofficecontextmailboxitemmdinternetheaders-internetheaders"></a>[Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#internetheaders-internetheaders)
 
 Ajout d’une nouvelle propriété représentant les en-têtes Internet d’un élément de message.
 
-**Disponible dans** : Outlook 2019 pour Windows (abonnement Office 365)
+**Disponible dans** : Outlook pour Windows (Office 365)
 
 ### <a name="office-theme"></a>Thème Office
 
@@ -167,24 +167,24 @@ Ajout d’une nouvelle propriété représentant les en-têtes Internet d’un �
 
 Ajout de la possibilité d’obtenir un thème Office.
 
-**Disponible dans** : Outlook 2019 pour Windows (abonnement Office 365)
+**Disponible dans** : Outlook pour Windows (Office 365)
 
 #### <a name="officeeventtypeofficethemechangedjavascriptapiofficeofficeeventtype"></a>[Office.EventType.OfficeThemeChanged](/javascript/api/office/office.eventtype)
 
 Ajout de l’événement `OfficeThemeChanged` à `Mailbox`.
 
-**Disponible dans** : Outlook 2019 pour Windows (abonnement Office 365)
+**Disponible dans** : Outlook pour Windows (Office 365)
 
 ### <a name="sso"></a>Authentification unique
 
-#### <a name="officecontextauthgetaccesstokenasynchttpsdocsmicrosoftcomofficedevadd-insdevelopsso-in-office-add-inssso-api-reference"></a>[Office.context.auth.getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference)
+#### <a name="officecontextauthgetaccesstokenasyncofficedevadd-insdevelopsso-in-office-add-inssso-api-reference"></a>[Office.context.auth.getAccessTokenAsync](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference)
 
-Ajout d’un accès à `getAccessTokenAsync`, qui permet aux compléments d’[obtenir un jeton d’accès](https://docs.microsoft.com/outlook/add-ins/authenticate-a-user-with-an-sso-token) pour l’API Microsoft Graph.
+Ajout d’un accès à `getAccessTokenAsync`, qui permet aux compléments d’[obtenir un jeton d’accès](/outlook/add-ins/authenticate-a-user-with-an-sso-token) pour l’API Microsoft Graph.
 
-**Disponible dans** : Outlook 2019 pour Windows (abonnement Office 365), Outlook 2019 pour Mac, Outlook sur le web (Office 365 et Outlook.com), Outlook sur le web (classique)
+**Disponible dans** : Outlook pour Windows (Office 365), Outlook pour Mac (Office 365), Outlook sur le web (Office 365 et Outlook.com), Outlook sur le web (classique)
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Compléments Outlook](https://docs.microsoft.com/outlook/add-ins/)
+- [Compléments Outlook](/outlook/add-ins/)
 - [Exemples de code pour les compléments Outlook](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [Prise en main](https://docs.microsoft.com/outlook/add-ins/quick-start)
+- [Prise en main](/outlook/add-ins/quick-start)
