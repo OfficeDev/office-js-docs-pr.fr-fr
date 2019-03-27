@@ -1,14 +1,14 @@
 ---
 title: Commandes de complément pour Excel, Word et PowerPoint
 description: ''
-ms.date: 01/23/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: f375a7f59a6918e812fb03b46c55bf964e62419d
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: e255e6e517f6292b7e7cb7df7b59476b21306911
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388408"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872248"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Commandes de complément pour Excel, Word et PowerPoint
 
@@ -17,7 +17,7 @@ Les commandes de complément sont des éléments d’interface utilisateur qui �
 Pour en savoir plus sur les fonctionnalités, regardez la vidéo sur les [commandes de complément du ruban Office](https://channel9.msdn.com/events/Build/2016/P551).
 
 > [!NOTE]
-> Les catalogues SharePoint n’acceptent pas les commandes de complément. Vous pouvez déployer des commandes de complément via le [déploiement centralisé](../publish/centralized-deployment.md) ou [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store), ou utiliser le [chargement de version test](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) pour déployer votre commande de complément à des fins de test. 
+> Les catalogues SharePoint n’acceptent pas les commandes de complément. Vous pouvez déployer des commandes de complément via le [déploiement centralisé](../publish/centralized-deployment.md) ou [AppSource](/office/dev/store/submit-to-the-office-store), ou utiliser le [chargement de version test](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) pour déployer votre commande de complément à des fins de test. 
 
 *Figure 1. Complément incluant des commandes en cours d’exécution dans Excel (version de bureau)*
 
@@ -28,6 +28,7 @@ Pour en savoir plus sur les fonctionnalités, regardez la vidéo sur les [comman
 ![Capture d’écran d’une commande de complément dans Excel Online](../images/add-in-commands-2.png)
 
 ## <a name="command-capabilities"></a>Fonctionnalités de commande
+
 Les fonctionnalités de commande suivantes sont actuellement prises en charge.
 
 > [!NOTE]
@@ -46,7 +47,7 @@ Les fonctionnalités de commande suivantes sont actuellement prises en charge.
 **Actions**
 
 - ShowTaskpane - Affiche un ou plusieurs volets où sont chargées des pages HTML personnalisées.
-- ExecuteFunction - Charge une page HTML invisible, puis y exécute une fonction JavaScript. Pour afficher l’interface utilisateur au sein de votre fonction (par exemple, erreurs, avancement, entrées supplémentaires), vous pouvez utiliser l’API [displayDialog](https://docs.microsoft.com/javascript/api/office/office.ui).  
+- ExecuteFunction - Charge une page HTML invisible, puis y exécute une fonction JavaScript. Pour afficher l’interface utilisateur au sein de votre fonction (par exemple, erreurs, avancement, entrées supplémentaires), vous pouvez utiliser l’API [displayDialog](/javascript/api/office/office.ui).  
 
 ## <a name="supported-platforms"></a>Plateformes prises en charge
 
@@ -67,12 +68,12 @@ Appliquez les meilleures pratiques suivantes lorsque vous développez des comman
 - Pour placer vos commandes dans le ruban Office :
     - Placez les commandes sur un onglet existant (Insertion, Révision, etc.) si la fonctionnalité ajoutée lui correspond. Par exemple, si votre complément permet aux utilisateurs d’insérer un élément multimédia, ajoutez un groupe à l’onglet Insertion. Notez que l’ensemble des onglets ne sont pas nécessairement disponibles dans toutes les versions d’Office. Pour plus d’informations, voir le [manifeste XML de compléments Office](../develop/add-in-manifests.md). 
     - Placez les commandes sous l’onglet Accueil si la fonctionnalité ne correspond à aucun autre onglet, et si vous avez moins de six commandes de niveau supérieur. Vous pouvez également ajouter des commandes à l’onglet Accueil si votre complément doit fonctionner sur toutes les versions d’Office (par exemple, Office Desktop et Office Online) et si un onglet n’est pas disponible dans toutes les versions (par exemple, si l’onglet Création n’existe pas dans Office Online).  
-    - Placez des commandes dans un onglet personnalisé si vous avez plus de six commandes de niveau supérieur. 
+    - Placez des commandes dans un onglet personnalisé si vous avez plus de six commandes de niveau supérieur.
     - Nommez votre groupe en fonction du nom de votre complément. Si vous avez plusieurs groupes, nommez chaque groupe en fonction de la fonctionnalité offerte par les commandes de ce groupe.
     - N’ajoutez pas de boutons superflus pour augmenter la valeur de votre complément.
 
      > [!NOTE]
-     > Les compléments qui occupent trop d’espace peuvent ne pas obtenir la [validation d’AppSource](https://docs.microsoft.com/office/dev/store/validation-policies).
+     > Les compléments qui occupent trop d’espace peuvent ne pas obtenir la [validation d’AppSource](/office/dev/store/validation-policies).
 
 - Pour toutes les icônes, suivez les [règles de conception d’icône](add-in-icons.md).
 - Proposez une version de complément qui fonctionne aussi sur les hôtes qui ne prennent pas en charge les commandes. Un seul manifeste de complément peut fonctionner sur les hôtes tenant compte ou non des commandes (par exemple, un volet Office dans le second cas).
@@ -86,4 +87,4 @@ Appliquez les meilleures pratiques suivantes lorsque vous développez des comman
 
 La meilleure façon de commencer à utiliser des commandes de complément consiste à consulter des [exemples de commandes de complément Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) sur GitHub.
 
-Pour plus d’informations sur la spécification des commandes de complément dans votre manifeste, reportez-vous à l’article expliquant comment [créer des commandes de complément dans votre manifeste](../develop/create-addin-commands.md) et au contenu de référence sur [VersionOverrides](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/versionoverrides).
+Pour plus d’informations sur la spécification des commandes de complément dans votre manifeste, reportez-vous à l’article expliquant comment [créer des commandes de complément dans votre manifeste](../develop/create-addin-commands.md) et au contenu de référence sur [VersionOverrides](/office/dev/add-ins/reference/manifest/versionoverrides).

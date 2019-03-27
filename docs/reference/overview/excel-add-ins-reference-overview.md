@@ -1,15 +1,15 @@
 ---
 title: Vue d’ensemble de l’API JavaScript pour Excel
 description: ''
-ms.date: 11/01/2018
+ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: e5d32e583dd89cd22f80687cdd273375ab3a815c
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: bf1d4642a7ceeb34eab51722a398887bb5c03fec
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742309"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871128"
 ---
 # <a name="excel-javascript-api-overview"></a>Vue d’ensemble de l’API JavaScript pour Excel
 
@@ -62,6 +62,6 @@ Pour en savoir plus sur l’API JavaScript pour Excel, consultez la [documentat
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Présentation des compléments Excel](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-overview)
-- [Vue d’ensemble de la plateforme des compléments Office](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins)
+- [Présentation des compléments Excel](/office/dev/add-ins/excel/excel-add-ins-overview)
+- [Vue d’ensemble de la plateforme des compléments Office](/office/dev/add-ins/overview/office-add-ins)
 - [Exemples de compléments Excel sur GitHub](https://github.com/OfficeDev?utf8=%E2%9C%93&q=Excel)

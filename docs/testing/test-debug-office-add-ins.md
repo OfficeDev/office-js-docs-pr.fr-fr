@@ -1,14 +1,14 @@
 ---
 title: Test et débogage de compléments Office
 description: ''
-ms.date: 11/24/2017
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 7ffa281807ca1541f8ebcc5f722c1043db115509
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: c51823684dab4e85e2cf9e621365ea6230f21b8a
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388835"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872080"
 ---
 # <a name="test-and-debug-office-add-ins"></a>Test et débogage de compléments Office
 
@@ -24,7 +24,7 @@ Vous pouvez utiliser le chargement de version test pour installer un complément
 
 - [Chargement de version test de compléments Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
 
-- [Chargement de version test des compléments Outlook](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)
+- [Chargement de version test des compléments Outlook](/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 
 ## <a name="debug-an-office-add-in"></a>Débogage d’un complément Office
 

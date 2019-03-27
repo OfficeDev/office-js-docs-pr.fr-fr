@@ -1,14 +1,14 @@
 ---
 title: Référencement de la bibliothèque de l’API JavaScript pour Office à partir de son réseau de distribution de contenu
 description: ''
-ms.date: 01/23/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 1d19121c5f641b509c1e32d74b20f7095abe7d8d
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 4993a6a36004ced94ad37487f8e63d6b9f3f3f48
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388023"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871590"
 ---
 # <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a>Référencement de la bibliothèque de l’API JavaScript pour Office à partir de son réseau de distribution de contenu
 
@@ -19,7 +19,7 @@ ms.locfileid: "29388023"
 > npm install --save-dev @types/office-js
 > ```
 
-La bibliothèque de l’[API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office) comprend le fichier Office.js et des fichiers .js propres aux applications hôtes associées, comme Excel-15.js et Outlook15.js. 
+La bibliothèque de l’[API JavaScript pour Office](/office/dev/add-ins/reference/javascript-api-for-office) comprend le fichier Office.js et des fichiers .js propres aux applications hôtes associées, comme Excel-15.js et Outlook15.js. 
 
 
 La façon la plus simple pour référencer l’interface API est d’utiliser notre CDN en ajoutant le `<script>` suivant à la balise `<head>` de votre page :  
@@ -33,10 +33,9 @@ La valeur `/1/` devant `office.js` dans l’URL CDN indique la dernière version
 Si vous envisagez de publier votre complément Office à partir d’AppSource, vous devez utiliser cette référence au CDN. Les références locales sont adaptées uniquement au développement interne et au débogage des scénarios.
 
 > [!IMPORTANT]
->  Lorsque vous développez un complément pour une application hôte Office, référencez l’API JavaScript pour Office à partir de l’intérieur de la section `<head>` de la page. Ainsi, l’API est entièrement initialisée avant les éléments Body. Les hôtes Office exigent que les compléments soient initialisés 5 secondes après l’activation. Si votre complément n’est pas activé dans ce délai, il sera déclaré comme bloqué et un message d’erreur sera affiché à l’utilisateur.       
+> Lorsque vous développez un complément pour une application hôte Office, référencez l’API JavaScript pour Office à partir de l’intérieur de la section `<head>` de la page. Ainsi, l’API est entièrement initialisée avant les éléments Body. Les hôtes Office exigent que les compléments soient initialisés 5 secondes après l’activation. Si votre complément n’est pas activé dans ce délai, il sera déclaré comme bloqué et un message d’erreur sera affiché à l’utilisateur.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Présentation de l’API JavaScript pour Office](understanding-the-javascript-api-for-office.md)    
-- [Interface API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)
-    
+- [Présentation de l’API JavaScript pour Office](understanding-the-javascript-api-for-office.md)
+- [Interface API JavaScript pour Office](/office/dev/add-ins/reference/javascript-api-for-office)

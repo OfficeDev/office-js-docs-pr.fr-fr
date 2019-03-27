@@ -3,12 +3,12 @@ title: Utiliser les classeurs utilisant l’API JavaScript Excel
 description: ''
 ms.date: 02/28/2019
 localization_priority: Priority
-ms.openlocfilehash: eb647fe7f82dc669f071de53f6bac705e303c652
-ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
+ms.openlocfilehash: 4ced2fe36e4429b3dc0836f18ef0bdc7a823b3bf
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "30359267"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870309"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Utiliser les classeurs utilisant l’API JavaScript Excel
 
@@ -75,7 +75,7 @@ reader.readAsDataURL(myFile.files[0]);
 ### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one"></a>Insérer une copie d’un classeur existant dans l’offre actuelle
 
 > [!NOTE]
-> La fonction`WorksheetCollection.addFromBase64` est actuellement disponible uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> La fonction`WorksheetCollection.addFromBase64` est actuellement disponible uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 L’exemple précédent montre un nouveau classeur créé à partir d’un classeur existant. Vous pouvez également copier la totalité ou une partie d’un classeur existant dans le tableau actuellement associé à votre complément. Un classeur[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) a la `addFromBase64`méthode pour insérer des copies de feuilles de calcul du classeur cible dans lui-même. Le fichier de l’autre classeur est passé en tant que chaîne codé en base 64, comme le `Excel.createWorkbook` appel.
 
@@ -267,7 +267,7 @@ context.application.suspendApiCalculationUntilNextSync();
 ## <a name="save-the-workbook"></a>Enregistrer le classeur
 
 > [!NOTE]
-> La fonction`Workbook.save(saveBehavior)` est actuellement disponible uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> La fonction`Workbook.save(saveBehavior)` est actuellement disponible uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 `Workbook.save(saveBehavior)` enregistre le classeur dans un espace de stockage permanent. La méthode `save` accepte un paramètre unique et facultatif qui peut être l’une des valeurs suivantes :
 
@@ -284,7 +284,7 @@ context.workbook.save(Excel.SaveBehavior.prompt);
 ## <a name="close-the-workbook"></a>Fermer le classeur
 
 > [!NOTE]
-> La fonction`Workbook.close(closeBehavior)` est actuellement disponible uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> La fonction`Workbook.close(closeBehavior)` est actuellement disponible uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 `Workbook.close(closeBehavior)` ferme le classeur, ainsi que des compléments qui sont associées au classeur (l’application Excel reste ouverte). La méthode `close` accepte un paramètre unique et facultatif qui peut être l’une des valeurs suivantes :
 

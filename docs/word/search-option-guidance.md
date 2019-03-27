@@ -1,22 +1,23 @@
 ---
 title: Utilisation d’options de recherche pour trouver du texte dans votre complément Word
 description: ''
-ms.date: 07/20/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 3e97a9ff41ac2969eddafe8c5b4e762bcc70289b
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 343271b0863379d799c22f9b63a47a9acfd67b93
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386763"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870680"
 ---
-# <a name="use-search-options-to-find-text-in-your-word-add-in"></a>Utilisation d’options de recherche pour trouver du texte dans votre complément Word 
+# <a name="use-search-options-to-find-text-in-your-word-add-in"></a>Utilisation d’options de recherche pour trouver du texte dans votre complément Word
 
 Les compléments doivent fréquemment agir en fonction du texte d’un document.
-Une fonction de recherche est exposée par contrôle de contenu (cela inclut [Body](https://docs.microsoft.com/javascript/api/word/word.body), [Paragraph](https://docs.microsoft.com/javascript/api/word/word.paragraph), [Range](https://docs.microsoft.com/javascript/api/word/word.range), [Table](https://docs.microsoft.com/javascript/api/word/word.table), [TableRow](https://docs.microsoft.com/javascript/api/word/word.tablerow) et l’objet de base [ContentControl](https://docs.microsoft.com/javascript/api/word/word.contentcontrol)). Cette fonction utilise une chaîne (ou une expression générique) représentant le texte que vous recherchez et un objet [SearchOptions](https://docs.microsoft.com/javascript/api/word/word.searchoptions). Elle renvoie une collection de plages correspondant au texte de recherche.
+Une fonction de recherche est exposée par contrôle de contenu (cela inclut [Body](/javascript/api/word/word.body), [Paragraph](/javascript/api/word/word.paragraph), [Range](/javascript/api/word/word.range), [Table](/javascript/api/word/word.table), [TableRow](/javascript/api/word/word.tablerow) et l’objet de base [ContentControl](/javascript/api/word/word.contentcontrol)). Cette fonction utilise une chaîne (ou une expression générique) représentant le texte que vous recherchez et un objet [SearchOptions](/javascript/api/word/word.searchoptions). Elle renvoie une collection de plages correspondant au texte de recherche.
 
 ## <a name="search-options"></a>Options de recherche
-Les options de recherche sont une collection de valeurs booléennes qui définissent comment le paramètre de recherche doit être traité. 
+
+Les options de recherche sont une collection de valeurs booléennes qui définissent comment le paramètre de recherche doit être traité.
 
 | Propriété     | Description|
 |:---------------|:----|
@@ -29,6 +30,7 @@ Les options de recherche sont une collection de valeurs booléennes qui définis
 |matchWildCards|Obtient ou définit une valeur indiquant si la recherche est effectuée à l’aide d’opérateurs de recherche spéciaux. Correspond à la case « Utiliser les caractères génériques » dans la boîte de dialogue Rechercher et remplacer.|
 
 ## <a name="wildcard-guidance"></a>Aide concernant les caractères génériques
+
 Le tableau suivant fournit une aide concernant les caractères génériques de l’API JavaScript pour Word.
 
 | Pour trouver :         | Caractère générique |  Exemple |
@@ -50,6 +52,7 @@ Le tableau suivant fournit une aide concernant les caractères génériques de l
 La recherche avec des caractères génériques est essentiellement la même que la recherche sur une expression régulière. Il existe des caractères spéciaux dans les expressions régulières, notamment « [ », « ] », « ( »,« ) », « { », « } », « \* », « ? », « < », « > », « ! » et « @ ». Si l’un de ces caractères fait partie de la chaîne littérale que recherche le code, il doit être échappé, afin que Word sache qu’il faut le traiter littéralement et non dans le cadre de la logique de l’expression régulière. Pour échapper un caractère dans la fonction de recherche de l’interface utilisateur de Word, faites-le précéder d’un « \' », mais pour un échappement par programme, placez-le entre les caractères « [] ». Par exemple, « [\*]\* » recherche une chaîne qui commence par « \* », suivie d’autres caractères. 
 
 ## <a name="examples"></a>Exemples
+
 Les exemples suivants illustrent des scénarios courants.
 
 ### <a name="ignore-punctuation-search"></a>Ignorer les signes de ponctuation dans la recherche
@@ -57,14 +60,14 @@ Les exemples suivants illustrent des scénarios courants.
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Queue a command to search the document and ignore punctuation.
     var searchResults = context.document.body.search('video you', {ignorePunct: true});
 
     // Queue a command to load the search results and get the font property values.
     context.load(searchResults, 'font');
-    
-    // Synchronize the document state by executing the queued commands, 
+
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Found count: ' + searchResults.items.length);
@@ -75,8 +78,8 @@ Word.run(function (context) {
             searchResults.items[i].font.highlightColor = '#FFFF00'; //Yellow
             searchResults.items[i].font.bold = true;
         }
-        
-        // Synchronize the document state by executing the queued commands, 
+
+        // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync();
     });  
@@ -94,13 +97,13 @@ Word.run(function (context) {
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Queue a command to search the document based on a prefix.
     var searchResults = context.document.body.search('vid', {matchPrefix: true});
 
     // Queue a command to load the search results and get the font property values.
     context.load(searchResults, 'font');
-    
+
     // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
@@ -112,8 +115,8 @@ Word.run(function (context) {
             searchResults.items[i].font.highlightColor = '#FFFF00'; //Yellow
             searchResults.items[i].font.bold = true;
         }
-        
-        // Synchronize the document state by executing the queued commands, 
+
+        // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync();
     });  
@@ -137,8 +140,8 @@ Word.run(function (context) {
 
     // Queue a command to load the search results and get the font property values.
     context.load(searchResults, 'font');
-    
-    // Synchronize the document state by executing the queued commands, 
+
+    // Synchronize the document state by executing the queued commands,
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
         console.log('Found count: ' + searchResults.items.length);
@@ -149,8 +152,8 @@ Word.run(function (context) {
             searchResults.items[i].font.highlightColor = 'black';
             searchResults.items[i].font.bold = true;
         }
-        
-        // Synchronize the document state by executing the queued commands, 
+
+        // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync();
     });  
@@ -168,14 +171,14 @@ Word.run(function (context) {
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
-    
+
     // Queue a command to search the document with a wildcard
     // for any string of characters that starts with 'to' and ends with 'n'.
     var searchResults = context.document.body.search('to*n', {matchWildCards: true});
 
     // Queue a command to load the search results and get the font property values.
     context.load(searchResults, 'font');
-    
+
     // Synchronize the document state by executing the queued commands, 
     // and return a promise to indicate task completion.
     return context.sync().then(function () {
@@ -187,8 +190,8 @@ Word.run(function (context) {
             searchResults.items[i].font.highlightColor = 'pink';
             searchResults.items[i].font.bold = true;
         }
-        
-        // Synchronize the document state by executing the queued commands, 
+
+        // Synchronize the document state by executing the queued commands,
         // and return a promise to indicate task completion.
         return context.sync();
     });  
@@ -201,4 +204,4 @@ Word.run(function (context) {
 });
 ```
 
-Vous trouverez plus d’informations dans l’[API JavaScript de référence pour Word](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview).
+Vous trouverez plus d’informations dans l’[API JavaScript de référence pour Word](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview).

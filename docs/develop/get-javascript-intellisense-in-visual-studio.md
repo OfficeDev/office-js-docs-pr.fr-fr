@@ -1,18 +1,18 @@
 ---
 title: Obtenir JavaScript IntelliSense dans Visual Studio 2017
 description: ''
-ms.date: 12/04/2017
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: acbdd3e7bec080509cf957f8de42bfe585ed6f31
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 7a4e2962933ccef0912ba3f96ed67af580fab60b
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388051"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870974"
 ---
-# <a name="get-javascript-intellisense-in-visual-studio-2017"></a>Obtenir JavaScript IntelliSense dans Visual Studio 2017 
+# <a name="get-javascript-intellisense-in-visual-studio-2017"></a>Obtenir JavaScript IntelliSense dans Visual Studio 2017
 
-Lorsque vous utilisez Visual Studio 2017 pour développer des compléments Office, vous pouvez utiliser JSDoc pour activer IntelliSense pour vos variables, objets, paramètres et valeurs renvoyées JavaScript. Cet article fournit une vue d’ensemble de JSDoc et explique comment vous pouvez l’utiliser pour créer IntellSense dans Visual Studio. Pour plus d’informations, voir [JavaScript IntelliSense](https://docs.microsoft.com/visualstudio/ide/javascript-intellisense) et [Prise en charge de JSDoc dans JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript). 
+Lorsque vous utilisez Visual Studio 2017 pour développer des compléments Office, vous pouvez utiliser JSDoc pour activer IntelliSense pour vos variables, objets, paramètres et valeurs renvoyées JavaScript. Cet article fournit une vue d’ensemble de JSDoc et explique comment vous pouvez l’utiliser pour créer IntellSense dans Visual Studio. Pour plus d’informations, voir [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense) et [Prise en charge de JSDoc dans JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript). 
 
 ## <a name="officejs-type-definitions"></a>Définitions de type Office.js
 
@@ -22,7 +22,7 @@ Vous devez fournir les définitions des types dans Office.js pour Visual Studio.
 - Utiliser une version en ligne de Office.js en ajoutant un fichier tsconfig.json à la racine du projet d’application Web dans la solution de complément. Le fichier doit inclure le contenu suivant.
 
     ```json
-        {        
+        {
             "compilerOptions": {
                 "allowJs": true,            // These settings apply to JavaScript files also.
                 "noEmit":  true             // Do not compile the JS (or TS) files in this project.

@@ -1,29 +1,29 @@
 ---
 title: Spécification des exigences en matière d’hôtes Office et d’API
 description: ''
-ms.date: 12/04/2017
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 3ea0116d8c8e9dcf685db349d78ed43af91b1620
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 9e1f92ae6708392157ccaa061cf0a064f3b5ece0
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386819"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870288"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>Spécification des exigences en matière d’hôtes Office et d’API
 
 Il se peut que votre complément Office dépende d’un hôte Office spécifique, d’un ensemble de conditions requises, d’un membre d’API ou d’une version de l’API pour fonctionner correctement. Par exemple, votre complément peut :
 
 - exécuter une ou plusieurs application Office (Word ou Excel) ;
-    
-- utiliser des API JavaScript disponibles uniquement dans certaines versions d’Office. Par exemple, vous pouvez utiliser les API JavaScript d’Excel dans un complément qui fonctionne dans Excel 2016 ; 
-    
+
+- utiliser des API JavaScript disponibles uniquement dans certaines versions d’Office. Par exemple, vous pouvez utiliser les API JavaScript d’Excel dans un complément qui fonctionne dans Excel 2016 ;
+
 - s’exécuter uniquement dans les versions d’Office qui prennent en charge les membres d’API utilisés par votre complément.
-    
+
 Cet article vous aidera à comprendre les options que vous devez choisir afin de vous assurer que votre complément fonctionne comme prévu et atteint l’audience la plus large possible.
 
 > [!NOTE]
-> Pour savoir de manière détaillée quelle version d’Office prend en charge les compléments Office, consultez la page relative à la [disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md). 
+> Pour savoir de manière détaillée quelle version d’Office prend en charge les compléments Office, consultez la page relative à la [disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md).
 
 Le tableau suivant répertorie les concepts principaux décrits dans cet article.
 
@@ -31,7 +31,7 @@ Le tableau suivant répertorie les concepts principaux décrits dans cet article
 |:-----|:-----|
 |Application Office, application hôte Office ou hôte Office|Application Office utilisée pour exécuter votre complément. Par exemple, Word, Word Online ou Excel.|
 |Plateforme|Application sur laquelle l’hôte Office est exécuté, comme Office Online ou Office pour iPad.|
-|Ensemble de conditions requises|Groupe nommé de membres d’API associés. Les compléments utilisent des ensembles de conditions requises pour déterminer si l’hôte Office prend en charge les membres d’API utilisés par votre complément. Il est plus facile de tester la prise en charge d’un ensemble de conditions requises, plutôt que la prise en charge de membres individuels d’API. La prise en charge de l’ensemble des conditions requises varie selon l’hôte Office et la version de ce dernier. <br >Les ensembles de conditions requises sont spécifiés dans le fichier manifeste. Quand vous définissez des ensembles de conditions requises dans le fichier manifeste, vous définissez le niveau minimal de prise en charge de l’API que l’hôte Office doit fournir pour exécuter votre complément. Les hôtes Office qui ne prennent pas en charge les ensembles de conditions requises spécifiés dans le manifeste ne peuvent pas exécuter votre complément, et votre complément ne sera pas affiché dans <span class="ui">Mes compléments</span>. Cela limite les emplacements où votre complément sera disponible. Dans le code utilisant les vérifications à l’exécution. Pour obtenir la liste complète des ensembles de conditions requises, voir [Ensemble de conditions requises pour les compléments Office](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).|
+|Ensemble de conditions requises|Groupe nommé de membres d’API associés. Les compléments utilisent des ensembles de conditions requises pour déterminer si l’hôte Office prend en charge les membres d’API utilisés par votre complément. Il est plus facile de tester la prise en charge d’un ensemble de conditions requises, plutôt que la prise en charge de membres individuels d’API. La prise en charge de l’ensemble des conditions requises varie selon l’hôte Office et la version de ce dernier. <br >Les ensembles de conditions requises sont spécifiés dans le fichier manifeste. Quand vous définissez des ensembles de conditions requises dans le fichier manifeste, vous définissez le niveau minimal de prise en charge de l’API que l’hôte Office doit fournir pour exécuter votre complément. Les hôtes Office qui ne prennent pas en charge les ensembles de conditions requises spécifiés dans le manifeste ne peuvent pas exécuter votre complément, et votre complément ne sera pas affiché dans <span class="ui">Mes compléments</span>. Cela limite les emplacements où votre complément sera disponible. Dans le code utilisant les vérifications à l’exécution. Pour obtenir la liste complète des ensembles de conditions requises, voir [Ensemble de conditions requises pour les compléments Office](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).|
 |Vérification à l’exécution|Test effectué à l’exécution pour déterminer si l’hôte Office qui exécute votre complément prend en charge les ensembles de conditions requises ou les méthodes utilisés par votre complément. Pour effectuer une vérification à l’exécution, vous pouvez utiliser une instruction **if** avec la méthode **isSetSupported**, les ensembles de conditions requises ou les noms de méthode qui ne font pas partie d’un ensemble de conditions requises. Les vérifications à l’exécution permettent de veiller à ce que votre complément atteigne le plus grand nombre possible de clients. Contrairement aux ensembles de conditions requises, les vérifications à l’exécution ne précisent pas le niveau minimal de prise en charge de l’API que l’hôte Office doit fournir pour l’exécution de votre complément. Au lieu de cela, vous devez utiliser l’instruction **if** afin de déterminer si un membre d’API est pris en charge. Si c’est le cas, vous pouvez fournir des fonctionnalités supplémentaires dans votre complément. Votre complément s’affiche toujours dans **Mes compléments** quand vous effectuez des vérifications à l’exécution.|
 
 ## <a name="before-you-begin"></a>Avant de commencer
@@ -61,11 +61,11 @@ Lors de la spécification des hôtes Office ou des conditions requises d’API,
 ![Optez pour la meilleure solution pour votre complément lorsque vous spécifiez des hôtes Office ou des exigences d’API](../images/options-for-office-hosts.png)
 
 - Si votre complément s’exécute dans un hôte Office, définissez l’élément **Hosts** dans le manifeste. Pour plus d’informations, consultez [Définition de l’élément Hosts](#set-the-hosts-element).
-    
+
 - Pour définir l’ensemble minimal de conditions requises ou les membres minimaux d’API qu’un hôte Office doit prendre en charge pour exécuter votre complément, définissez l’élément **Requirements** dans le manifeste. Pour plus d’informations, consultez la section [ Définition de l’élément Requirements dans le manifeste](#set-the-requirements-element-in-the-manifest).
-    
+
 - Si vous souhaitez proposer des fonctionnalités supplémentaires lorsque des ensembles de conditions requises spécifiques ou des membres d’API sont disponibles dans l’hôte Office, effectuez une vérification à l’exécution dans le code JavaScript de votre complément. Par exemple, si votre complément est exécuté dans Excel 2016, utilisez les membres d’API de la nouvelle API JavaScript pour Excel pour fournir des fonctionnalités supplémentaires. Pour plus d’informations, consultez la section [Utilisation des vérifications à l’exécution dans votre code JavaScript](#use-runtime-checks-in-your-javascript-code).
-    
+
 ## <a name="set-the-hosts-element"></a>Définition de l’élément Hosts
 
 Pour exécuter votre complément dans une application hôte Office, utilisez les éléments **Hosts** et **Host** dans le manifeste. Si vous ne définissez pas l’élément **Hosts**, votre complément sera exécuté dans tous les hôtes.
@@ -84,7 +84,7 @@ L’élément  **Hosts** peut contenir un ou plusieurs éléments  **Host**. L�
 |:--------------|:----------------------------------------------|
 | Base de données      | applications web Access                               |
 | Document      | Word pour Windows, Mac, iPad et Online        |
-| Boîte aux lettres       | Outlook pour Windows, Mac, Web et Outlook.com | 
+| Boîte aux lettres       | Outlook pour Windows, Mac, Web et Outlook.com |
 | Présentation  | PowerPoint pour Windows, Mac, iPad et Online  |
 | Projet       | Projet                                       |
 | Classeur      | Excel pour Windows, Mac, iPad et Online           |
@@ -103,9 +103,9 @@ L’élément **Requirements** indique les ensembles de conditions minimales req
 Cet exemple de code illustre un complément qui se charge dans toutes les applications hôtes Office qui prennent en charge les éléments suivants :
 
 -  Un ensemble de conditions requises **TableBindings**, dont la version minimale est 1.1.
-    
+
 -  Un ensemble de conditions requises **OOXML**, dont la version minimale est 1.1.
-    
+
 -  La méthode **Document.getSelectedDataAsync**.
 
 ```XML
@@ -121,15 +121,15 @@ Cet exemple de code illustre un complément qui se charge dans toutes les applic
 ```
 
 - L’élément **Requirements** contient les éléments enfants **Sets** et **Methods**.
-    
+
 - L’élément  **Sets** peut contenir un ou plusieurs éléments  **Set**.  **DefaultMinVersion** indique la valeur **MinVersion** par défaut de tous les éléments  **Set** enfants.
-    
-- L’élément **Set** spécifie l’ensemble de conditions requises que l’hôte Office doit prendre en charge pour pouvoir exécuter le complément. L’attribut **Name** spécifie le nom de l’ensemble de conditions requises. **MinVersion** spécifie la version minimale de l’ensemble de conditions requises. **MinVersion** remplace la valeur de **DefaultMinVersion**. Pour plus d’informations sur les ensembles de conditions requises et sur les versions des ensembles de conditions requises dont font partie les membres de votre API, voir [Ensembles de conditions requises des compléments Office](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).
-    
+
+- L’élément **Set** spécifie l’ensemble de conditions requises que l’hôte Office doit prendre en charge pour pouvoir exécuter le complément. L’attribut **Name** spécifie le nom de l’ensemble de conditions requises. **MinVersion** spécifie la version minimale de l’ensemble de conditions requises. **MinVersion** remplace la valeur de **DefaultMinVersion**. Pour plus d’informations sur les ensembles de conditions requises et sur les versions des ensembles de conditions requises dont font partie les membres de votre API, voir [Ensembles de conditions requises des compléments Office](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).
+
 - L’élément **Methods** peut contenir un ou plusieurs éléments **Method**. Vous ne pouvez pas utiliser l’élément **Methods** avec des compléments Outlook.
-    
+
 - L’élément  **Method** spécifie une méthode individuelle qui doit être prise en charge dans l’hôte Office où votre complément est exécuté. L’attribut **Name** est obligatoire et indique le nom de la méthode qualifiée avec son objet parent.
-    
+
 
 ## <a name="use-runtime-checks-in-your-javascript-code"></a>Utilisation des vérifications à l’exécution dans votre code JavaScript
 
@@ -145,8 +145,7 @@ if (Office.context.requirements.isSetSupported(RequirementSetName , VersionNumbe
 
 ```
 
-
--  _RequirementSetName_ (obligatoire) est une chaîne qui représente le nom de l’ensemble de la configuration requise. Pour plus d’informations concernant les ensembles de conditions requises disponibles, voir [Ensembles de conditions requises pour complément Office](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).
+-  _RequirementSetName_ (obligatoire) est une chaîne qui représente le nom de l’ensemble de la configuration requise. Pour plus d’informations concernant les ensembles de conditions requises disponibles, voir [Ensembles de conditions requises pour complément Office](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).
     
 -  _VersionNumber_ (facultatif) correspond à la version de l’ensemble de conditions requises.
     
@@ -158,9 +157,6 @@ Dans Excel 2016 ou Word 2016, utilisez **isSetSupported** avec les ensembles de 
 
 L’exemple de code suivant montre comment un complément peut fournir des fonctionnalités différentes pour divers hôtes Office qui peuvent prendre en charge plusieurs ensembles de conditions requises ou membres d’API.
 
-
-
-
 ```js
 if (Office.context.requirements.isSetSupported('WordApi', 1.1))
 {
@@ -168,9 +164,9 @@ if (Office.context.requirements.isSetSupported('WordApi', 1.1))
 }
 else if (Office.context.requirements.isSetSupported('CustomXmlParts'))
 {
-      // Run code that uses API members from the CustomXmlParts requirement set.
+    // Run code that uses API members from the CustomXmlParts requirement set.
 }
-else 
+else
 {
     // Run additional code when the Office host is not Word 2016, and when the Office host does not support the CustomXmlParts requirement set.
 }
@@ -180,17 +176,12 @@ else
 
 ## <a name="runtime-checks-using-methods-not-in-a-requirement-set"></a>Vérifications à l’exécution à l’aide de méthodes ne faisant pas partie d’un ensemble de conditions requises
 
-
-Certains membres API n’appartiennent pas à des ensembles de conditions requises. Cela s’applique uniquement aux membres d’API qui font partie de l’espace de noms de l’[interface API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office) (rien sous Office), et non aux membres d’API qui appartiennent à l’espace de noms de l’interface API JavaScript pour Word (rien dans Word) ou de la [référence de l’API JavaScript pour les compléments Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) (rien dans Excel). Lorsque votre complément dépend d’une méthode qui ne fait pas partie d’un ensemble de conditions requises, vous pouvez utiliser la vérification à l’exécution pour déterminer si la méthode est prise en charge par l’hôte Office, comme indiqué dans l’exemple suivant. Pour consulter la liste complète des méthodes qui n’appartiennent pas à un ensemble de conditions requises, voir [Ensemble de conditions requises pour les compléments Office](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).
-
+Certains membres API n’appartiennent pas à des ensembles de conditions requises. Cela s’applique uniquement aux membres d’API qui font partie de l’espace de noms de l’[interface API JavaScript pour Office](/office/dev/add-ins/reference/javascript-api-for-office) (rien sous Office), et non aux membres d’API qui appartiennent à l’espace de noms de l’interface API JavaScript pour Word (rien dans Word) ou de la [référence de l’API JavaScript pour les compléments Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) (rien dans Excel). Lorsque votre complément dépend d’une méthode qui ne fait pas partie d’un ensemble de conditions requises, vous pouvez utiliser la vérification à l’exécution pour déterminer si la méthode est prise en charge par l’hôte Office, comme indiqué dans l’exemple suivant. Pour consulter la liste complète des méthodes qui n’appartiennent pas à un ensemble de conditions requises, voir [Ensemble de conditions requises pour les compléments Office](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).
 
 > [!NOTE]
 > Nous vous recommandons de limiter l’utilisation de ce type de vérification à l’exécution dans le code de votre complément.
 
 L’exemple de code suivant vérifie si l’hôte prend en charge **document.setSelectedDataAsync**.
-
-
-
 
 ```js
 if (Office.context.document.setSelectedDataAsync)
@@ -203,5 +194,5 @@ if (Office.context.document.setSelectedDataAsync)
 ## <a name="see-also"></a>Voir aussi
 
 - [Manifeste XML des compléments Office](add-in-manifests.md)
-- [Ensembles de conditions requises pour les compléments Office](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
+- [Ensembles de conditions requises pour les compléments Office](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
 - [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML)

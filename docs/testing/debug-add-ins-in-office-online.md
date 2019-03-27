@@ -1,14 +1,14 @@
 ---
 title: Débogage de compléments dans Office Online
 description: Découvrez comment utiliser Office Online pour tester et déboguer vos compléments.
-ms.date: 03/14/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 6252a713444f7ec8bf955c3283a650f72cbcbed1
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: ff77f3d8b3e332288d4ccb3e2d2305d1b1c4a825
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386553"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871149"
 ---
 # <a name="debug-add-ins-in-office-online"></a>Débogage de compléments dans Office Online
 
@@ -22,7 +22,7 @@ Mise en route :
 - Si vous n’en avez pas encore, créez un compte de développeur Office 365, ou accédez à un site SharePoint.
     
   > [!NOTE]
-  > Pour vous inscrire et obtenir gratuitement un abonnement Office 365 Développeur, participez à notre [programme pour les développeurs Office 365](https://developer.microsoft.com/office/dev-program). Consultez la [documentation relative au programme pour les développeurs Office 365](https://docs.microsoft.com/office/developer-program/office-365-developer-program) pour obtenir des instructions détaillées sur la manière de rejoindre le programme, de vous inscrire et de configurer votre abonnement.
+  > Pour vous inscrire et obtenir gratuitement un abonnement Office 365 Développeur, participez à notre [programme pour les développeurs Office 365](https://developer.microsoft.com/office/dev-program). Consultez la [documentation relative au programme pour les développeurs Office 365](/office/developer-program/office-365-developer-program) pour obtenir des instructions détaillées sur la manière de rejoindre le programme, de vous inscrire et de configurer votre abonnement.
      
 - Configurez un catalogue de compléments sur Office 365 (SharePoint Online). Un catalogue de compléments est une collection de sites dédiée dans SharePoint Online qui héberge des bibliothèques de documents pour des compléments Office. Si vous disposez de votre propre site SharePoint, vous pouvez configurer une bibliothèque de document de catalogue de compléments. Pour plus d’informations, voir [Publier des compléments de contenu et du volet Office dans un catalogue de compléments sur SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
     
@@ -63,7 +63,7 @@ Voici certains problèmes que vous pouvez rencontrer lorsque vous effectuez des 
 ## <a name="see-also"></a>Voir aussi
 
 - [Bonnes pratiques en matière de développement de compléments Office](../concepts/add-in-development-best-practices.md)
-- [Stratégies de validation AppSource](https://docs.microsoft.com/office/dev/store/validation-policies)  
-- [Création d’applications et de compléments AppSource efficaces](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings)  
+- [Stratégies de validation AppSource](/office/dev/store/validation-policies)  
+- [Création d’applications et de compléments AppSource efficaces](/office/dev/store/create-effective-office-store-listings)  
 - [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](testing-and-troubleshooting.md)
     

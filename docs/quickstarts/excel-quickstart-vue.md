@@ -1,15 +1,15 @@
 ---
 title: Développement d’un complément Excel à l’aide de Vue
 description: ''
-ms.date: 10/18/2018
+ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: d68c30cbff61de9374dff483aa259864a1d86baf
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 1925c9fcde0bb2f07cce4c0bcb0be99cc1c6061c
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742204"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870995"
 ---
 # <a name="build-an-excel-add-in-using-vue"></a>Développement d’un complément Excel à l’aide de Vue
 
@@ -60,7 +60,7 @@ Chaque complément nécessite un fichier manifeste pour définir ses paramètres
 2. Utilisez le générateur Yeoman pour générer le fichier manifeste de votre complément. Exécutez la commande suivante, puis répondez aux invites comme indiqué ci-dessous.
 
     ```bash
-    yo office 
+    yo office
     ```
 
     - **Sélectionnez un type de projet :** `Office Add-in containing the manifest only`
@@ -68,7 +68,7 @@ Chaque complément nécessite un fichier manifeste pour définir ses paramètres
     - **Quelle application client Office voulez-vous prendre en charge ? :**`Excel`
 
     ![Générateur Yeoman](../images/yo-office.png)
-    
+
     Une fois l’Assistant exécuté, le générateur crée le fichier manifeste.
 
 ## <a name="secure-the-app"></a>Sécurisation de l’application
@@ -224,5 +224,5 @@ Félicitations, vous avez créé un complément Excel à l’aide de Vue ! Déc
 * [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial-create-table.md)
 * [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Référence de l’API JavaScript pour Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [Référence de l’API JavaScript pour Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
 

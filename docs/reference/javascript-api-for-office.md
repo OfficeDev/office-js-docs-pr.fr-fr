@@ -1,18 +1,18 @@
 ---
 title: Interface API JavaScript pour Office
 description: ''
-ms.date: 10/09/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 51ae2a2391a63ab20a33e8ae590834f33311230a
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: c8b33bbf9d0107786c0272410c59b1a3fe998cba
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29387841"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870617"
 ---
 # <a name="javascript-api-for-office"></a>Interface API JavaScript pour Office
 
-L’interface API JavaScript pour Office vous permet de créer des applications web qui interagissent avec les modèles objet dans les applications hôtes Office. Votre application fera référence à la bibliothèque office.js, qui est un chargeur de script. La bibliothèque office.js charge les modèles objet applicables à l’application Office qui exécute le complément. Vous pouvez utiliser les modèles objet JavaScript suivants :
+L’interface API JavaScript pour Office vous permet de créer des applications web qui interagissent avec les modèles objet dans les applications hôtes Office. Votre application fera référence à la bibliothèque office.js, qui est un chargeur de script. La bibliothèque office.js charge les modèles objet applicables à l’application Office qui exécute le complément. Vous pouvez utiliser les modèles objet JavaScript suivants :
 
 - **API courantes** – API qui ont été introduites avec **Office 2013**. Il est chargé pour **toutes les applications hôtes Office** et connecte votre application de complément à l’application cliente Office. Le modèle objet contient les API propres aux clients Office et les API applicables à plusieurs applications hôtes clientes Office. Tout ce contenu se trouve sous **API partagé**. Ce modèle objet utilise des rappels. 
 
@@ -40,4 +40,4 @@ Au fur et à mesure que nous concevons et développons de nouvelles API pour les
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence de l’API JavaScript d’Office](https://docs.microsoft.com/javascript/api/overview/office)
+- [Référence de l’API JavaScript d’Office](/javascript/api/overview/office)

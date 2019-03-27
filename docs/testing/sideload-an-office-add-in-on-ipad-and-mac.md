@@ -1,14 +1,14 @@
 ---
 title: Chargement de version test des compléments Office sur iPad et Mac
 description: ''
-ms.date: 02/25/2019
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: dc0fad24d7f4f062fb0115edcc58a37d8d9052da
-ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
+ms.openlocfilehash: e2f9ee912395e0f54130f0e78109cab4479b6567
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "30359253"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871975"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>Chargement de version test des compléments Office sur iPad et Mac
 
@@ -60,7 +60,7 @@ Pour voir comment votre complément s’exécutera dans Office pour iOS, vous po
 ## <a name="sideload-an-add-in-on-office-for-mac"></a>Chargement d’une version test de complément dans Office pour Mac
 
 > [!NOTE]
-> Pour charger une version test d’un complément Outlook pour Mac, consultez [Chargement de version test des compléments Outlook](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing).
+> Pour charger une version test d’un complément Outlook pour Mac, consultez [Chargement de version test des compléments Outlook](/outlook/add-ins/sideload-outlook-add-ins-for-testing).
 
 1. Ouvrez **Terminal** et accédez à l’un des dossiers suivants, dans lequel vous enregistrerez le fichier manifeste de votre complément. Si le dossier `wef` n’existe pas sur votre ordinateur, créez-le.
     

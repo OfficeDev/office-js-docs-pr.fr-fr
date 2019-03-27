@@ -1,13 +1,14 @@
 ---
 title: Ajout de validation des données à des plages Excel
 description: ''
-ms.date: 10/03/2018
-ms.openlocfilehash: e584d80403969ca15527afb69251832a96f3003e
-ms.sourcegitcommit: 979e8d2b0fbc537f9c01527062767c026592aa62
+ms.date: 03/19/2019
+localization_priority: Priority
+ms.openlocfilehash: b0b2d886ceb9026ebe41414fed4ef8be1b59cc95
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "25852916"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872150"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>Ajout de validation des données à des plages Excel
 
@@ -19,11 +20,11 @@ La bibliothèque JavaScript Excel fournit des API pour autoriser votre compléme
 
 ## <a name="programmatic-control-of-data-validation"></a>Contrôle par programme de validation des données
 
-La propriété `Range.dataValidation`, qui récupère un objet [DataValidation](https://docs.microsoft.com/javascript/api/excel/excel.datavalidation), constitue le point d’entrée pour le contrôle par programmation de la validation des données dans Excel. Il existe cinq propriétés pour l’objet `DataValidation` :
+La propriété `Range.dataValidation`, qui récupère un objet [DataValidation](/javascript/api/excel/excel.datavalidation), constitue le point d’entrée pour le contrôle par programmation de la validation des données dans Excel. Il existe cinq propriétés pour l’objet `DataValidation` :
 
-- `rule` &#8212;Définit ce qui constitue des données valides pour la plage. Voir [DataValidationRule](https://docs.microsoft.com/javascript/api/excel/excel.datavalidationrule).
-- `errorAlert` &#8212;Spécifie si une erreur s’affiche si l’utilisateur entre des données non valides et définit le texte de l’alerte, le titre et le style ; par exemple, **Information**, **Avertissement**, et **Stop**. Voir [DataValidationErrorAlert](https://docs.microsoft.com/javascript/api/excel/excel.datavalidationerroralert).
-- `prompt` &#8212;Spécifie si une demande s’affiche lorsque l’utilisateur pointe sur la plage et définit le message. Voir [DataValidationPrompt](https://docs.microsoft.com/javascript/api/excel/excel.datavalidationprompt).
+- `rule` &#8212;Définit ce qui constitue des données valides pour la plage. Voir [DataValidationRule](/javascript/api/excel/excel.datavalidationrule).
+- `errorAlert` &#8212;Spécifie si une erreur s’affiche si l’utilisateur entre des données non valides et définit le texte de l’alerte, le titre et le style ; par exemple, **Information**, **Avertissement**, et **Stop**. Voir [DataValidationErrorAlert](/javascript/api/excel/excel.datavalidationerroralert).
+- `prompt` &#8212;Spécifie si une demande s’affiche lorsque l’utilisateur pointe sur la plage et définit le message. Voir [DataValidationPrompt](/javascript/api/excel/excel.datavalidationprompt).
 - `ignoreBlanks` &#8212;Spécifie si la règle de validation des données s’applique à des cellules vides dans la plage. Par défaut `true`.
 - `type` &#8212;Identification accessible en lecture seule du type de validation, par exemple, WholeNumber, Date, TextLength, etc. Elle est définie indirectement lorsque vous définissez la propriété `rule`.
 
@@ -32,11 +33,11 @@ La propriété `Range.dataValidation`, qui récupère un objet [DataValidation](
 
 ## <a name="creating-validation-rules"></a>Créer les règles de validation
 
-Pour ajouter la validation des données à une plage, votre code doit définir la propriété `rule` de l’objet `DataValidation` dans `Range.dataValidation`. Cela saisit un objet [DataValidationRule](https://docs.microsoft.com/javascript/api/excel/excel.datavalidationrule) contenant les sept propriétés facultatives. *Une seule de ces propriétés peut être présente dans un objet `DataValidationRule`.* La propriété que vous incluez détermine le type de validation.
+Pour ajouter la validation des données à une plage, votre code doit définir la propriété `rule` de l’objet `DataValidation` dans `Range.dataValidation`. Cela saisit un objet [DataValidationRule](/javascript/api/excel/excel.datavalidationrule) contenant les sept propriétés facultatives. *Une seule de ces propriétés peut être présente dans un objet `DataValidationRule`.* La propriété que vous incluez détermine le type de validation.
 
 ### <a name="basic-and-datetime-validation-rule-types"></a>Règles de validation Basic et DateTime
 
-Les trois premières propriétés `DataValidationRule` (c'est-à-dire les types de règles de validation) prennent un objet [BasicDataValidation](https://docs.microsoft.com/javascript/api/excel/excel.basicdatavalidation) comme valeur.
+Les trois premières propriétés `DataValidationRule` (c'est-à-dire les types de règles de validation) prennent un objet [BasicDataValidation](/javascript/api/excel/excel.basicdatavalidation) comme valeur.
 
 - `wholeNumber` &#8212;Nécessite un nombre entier en plus de toute autre validation spécifiée par l’objet `BasicDataValidation`.
 - `decimal` &#8212;Nécessite un nombre décimal en plus de toute autre validation spécifiée par l’objet `BasicDataValidation`.
@@ -51,7 +52,7 @@ Voici un exemple de création d’une règle de validation. Voici quelques carac
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
     var range = sheet.getRange("B2:C5");
-   
+
     range.dataValidation.rule = {
             wholeNumber: {
                 formula1: 0,
@@ -63,7 +64,7 @@ Excel.run(function (context) {
 })
 ```
 
-Voir [BasicDataValidation](https://docs.microsoft.com/javascript/api/excel/excel.basicdatavalidation) pour obtenir la liste des autres opérateurs binaires. 
+Voir [BasicDataValidation](/javascript/api/excel/excel.basicdatavalidation) pour obtenir la liste des autres opérateurs binaires. 
 
 Il existe également deux opérateurs ternaires : « Between » et « NotBetween ». Pour les utiliser, vous devez spécifier la propriété `formula2` facultative. Les valeurs`formula1` et `formula2` sont les opérandes englobantes. La valeur que l’utilisateur essaie d’entrer dans la cellule est la troisième opérande (évaluée). Voici un exemple d’utilisation de l’opérateur « Between » :
 
@@ -71,7 +72,7 @@ Il existe également deux opérateurs ternaires : « Between » et « NotBet
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
     var range = sheet.getRange("B2:C5");
-   
+
     range.dataValidation.rule = {
             decimal: {
                 formula1: 0,
@@ -84,7 +85,7 @@ Excel.run(function (context) {
 })
 ```
 
-Les deux propriétés de règle suivantes prennent un objet[DateTimeDataValidation](https://docs.microsoft.com/javascript/api/excel/excel.datetimedatavalidation) comme valeur.
+Les deux propriétés de règle suivantes prennent un objet[DateTimeDataValidation](/javascript/api/excel/excel.datetimedatavalidation) comme valeur.
 
 - `date`
 - `time`
@@ -95,7 +96,7 @@ La structure de l’objet `DateTimeDataValidation` est similaire à celle de `Ba
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
     var range = sheet.getRange("B2:C5");
-   
+
     range.dataValidation.rule = {
             date: {
                 formula1: "2018-04-01",
@@ -110,7 +111,7 @@ Excel.run(function (context) {
 
 ### <a name="list-validation-rule-type"></a>Type de règle de validation de liste
 
-Utilisez la propriété `list` dans l’objet `DataValidationRule` pour spécifier que les seules valeurs valides sont celles d’une liste de remise. Voici un exemple. Voici quelques caractéristiques notables de ce code :
+Utilisez la propriété `list` dans l’objet `DataValidationRule` pour spécifier que les seules valeurs valides sont celles d’une liste de remise. Voici un exemple. Tenez compte des informations suivantes :
 
 - Il part du principe qu’il existe une feuille de calcul nommée « Noms » et que les valeurs dans la plage « A1:A3 » sont des noms.
 - La propriété `source` indique la liste des valeurs valides. L’argument de chaîne fait référence à une plage de cellules contenant les noms. Vous pouvez également affecter une liste délimitée par des virgules ; par exemple : « Sue, Ricky, Florence ». 
@@ -135,7 +136,7 @@ Excel.run(function (context) {
 
 ### <a name="custom-validation-rule-type"></a>Type de règle de validation personnalisée
 
-Utilisez la propriété `custom` dans l’objet `DataValidationRule` pour spécifier une formule de validation personnalisée. Voici un exemple. Voici quelques caractéristiques notables de ce code :
+Utilisez la propriété `custom` dans l’objet `DataValidationRule` pour spécifier une formule de validation personnalisée. Voici un exemple. Tenez compte des informations suivantes :
 
 - Il part du principe qu’il existe un tableau de deux colonnes avec des colonnes **nom athlète** et **commentaires** dans les colonnes A et B de la feuille de calcul.
 - Pour réduire le niveau de détail dans la colonne**commentaires**, il rend les données qui incluent le nom de l’athlète invalides.
@@ -144,7 +145,7 @@ Utilisez la propriété `custom` dans l’objet `DataValidationRule` pour spéci
 ```js
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var range = sheet.getRange("B2:C5");   
+    var range = sheet.getRange("B2:C5");
     var commentsRange = sheet.tables.getItem("AthletesTable").columns.getItem("Comments").getDataBodyRange();
 
     commentsRange.dataValidation.rule = {
@@ -159,31 +160,30 @@ Excel.run(function (context) {
 
 ## <a name="create-validation-error-alerts"></a>Créer des alertes d’erreur de validation
 
-Vous pouvez créer une alerte d’erreur personnalisée qui s’affiche lorsqu’un utilisateur tente d’entrer des données non valides dans une cellule. Voici un exemple simple. Voici quelques caractéristiques notables de ce code :
+Vous pouvez créer une alerte d’erreur personnalisée qui s’affiche lorsqu’un utilisateur tente d’entrer des données non valides dans une cellule. Voici un exemple simple. Tenez compte des informations suivantes :
 
 - La propriété `style` détermine si l’utilisateur reçoit une alerte d’information, un avertissement ou une alerte « Stop ». Seule l'alerte `Stop` empêche l’utilisateur d’ajouter des données non valides. La fenêtre contextuelle pour `Warning` et `Information` affiche des options qui autorisent l’utilisateur à entrer tout de même les données non valides.
 - La propriété `showAlert` est définie par défaut sur `true`. Cela signifie que l’hôte Excel affichera une fenêtre contextuelle d’alerte générique (de type `Stop`), sauf si vous créez une alerte personnalisée qui définit `showAlert` à `false` ou un message, titre et style personnalisés. Ce code définit un message et un titre personnalisés.
-
 
 ```js
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
     var range = sheet.getRange("B2:C5");
-   
+
     range.dataValidation.errorAlert = {
             message: "Sorry, only positive whole numbers are allowed",
             showAlert: true, // default is 'true'
             style: "Stop", // other possible values: Warning, Information
             title: "Negative or Decimal Number Entered"
         };
-    
+
     // Set range.dataValidation.rule and optionally .prompt here.
 
     return context.sync();
 })
 ```
 
-Pour plus d’informations, voir [DataValidationErrorAlert](https://docs.microsoft.com/javascript/api/excel/excel.datavalidationerroralert).
+Pour plus d’informations, voir [DataValidationErrorAlert](/javascript/api/excel/excel.datavalidationerroralert).
 
 ## <a name="create-validation-prompts"></a>Créer des demandes de validation
 
@@ -193,24 +193,24 @@ Vous pouvez créer une invite de commandes instructive qui s’affiche lorsqu’
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
     var range = sheet.getRange("B2:C5");
-   
+
     range.dataValidation.prompt = {
             message: "Please enter a positive whole number.",
             showPrompt: true, // default is 'false'
             title: "Positive Whole Numbers Only."
         };
-    
+
     // Set range.dataValidation.rule and optionally .errorAlert here.
 
     return context.sync();
 })
 ```
 
-Pour plus d’informations, voir [DataValidationPrompt](https://docs.microsoft.com/javascript/api/excel/excel.datavalidationprompt).
+Pour plus d’informations, voir [DataValidationPrompt](/javascript/api/excel/excel.datavalidationprompt).
 
 ## <a name="remove-data-validation-from-a-range"></a>Supprimer la validation des données d’une plage
 
-Pour supprimer la validation des données d’une plage, appelez la méthode [Range.dataValidation.clear()](https://docs.microsoft.com/javascript/api/excel/excel.datavalidation#clear--).
+Pour supprimer la validation des données d’une plage, appelez la méthode [Range.dataValidation.clear()](/javascript/api/excel/excel.datavalidation#clear--).
 
 ```js
 myrange.dataValidation.clear()
@@ -224,9 +224,5 @@ La plage que vous désactivez ne sera pas nécessairement exactement la même pl
 ## <a name="see-also"></a>Voir aussi
 
 - [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
-- [Objet DataValidation (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.datavalidation)
-- [Objet de plage (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range)
-
-
-
- 
+- [Objet DataValidation (API JavaScript pour Excel)](/javascript/api/excel/excel.datavalidation)
+- [Objet de plage (API JavaScript pour Excel)](/javascript/api/excel/excel.range)

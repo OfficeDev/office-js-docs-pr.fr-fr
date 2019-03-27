@@ -1,14 +1,14 @@
 ---
 title: Attacher un débogueur à partir du volet Office
 description: ''
-ms.date: 10/17/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 1c2be843fcd911c1bfd87408d603bb750d6e738a
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 941a67695f573cbf0955038916cb1e7ada9cc08f
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386476"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870428"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>Attacher un débogueur à partir du volet Office
 
@@ -37,8 +37,8 @@ Dans Visual Studio, les fichiers de code s’affichent dans **l’Explorateur de
 Pour plus d’informations sur le débogage dans Visual Studio, consultez les rubriques suivantes :
 
 -   Pour lancer et utiliser l’explorateur DOM dans Visual Studio, consultez le conseil 4 dans la section relative aux [conseils et astuces](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates/#tips_tricks) du billet de blog sur la [création d’applications attrayantes pour Office à l’aide de nouveaux modèles de projet](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates).
--   Pour définir des points d’arrêt, consultez la rubrique [Utilisation des points d’arrêt](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints?view=vs-2015).
--   Pour utiliser F12, consultez la rubrique [Utilisation des outils de développement F12](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85)).
+-   Pour définir des points d’arrêt, consultez la rubrique [Utilisation des points d’arrêt](/visualstudio/debugger/using-breakpoints?view=vs-2015).
+-   Pour utiliser F12, consultez la rubrique [Utilisation des outils de développement F12](/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85)).
 
 ## <a name="see-also"></a>Voir aussi
 

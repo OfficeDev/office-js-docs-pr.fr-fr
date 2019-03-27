@@ -1,21 +1,21 @@
 ---
 title: Meilleures pratiques en matière de développement de compléments Office
 description: ''
-ms.date: 02/28/2019
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 0227b73223d5d2284d697f98ff598dc4cf5dce81
-ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
+ms.openlocfilehash: b5f5595d9109df10e910459b2fc61a71d5180bbf
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "30359281"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872255"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Meilleures pratiques en matière de développement de compléments Office
 
 Des compléments efficaces proposent des fonctionnalités uniques et attrayantes qui étendent les applications Office d’une manière visuellement attractive. Pour créer un complément intéressant, offrez une première expérience attractive à vos utilisateurs, concevez une interface utilisateur de premier choix et optimisez les performances de votre complément. Appliquez les meilleures pratiques décrites dans cet article pour créer des compléments permettant aux utilisateurs d’accomplir leurs tâches rapidement et efficacement.
 
 > [!NOTE]
-> Si vous prévoyez de [publier](../publish/publish.md) votre complément sur AppSource et de le rendre disponible dans l’expérience Office, assurez-vous que vous respectez les [stratégies de validation AppSource](https://docs.microsoft.com/office/dev/store/validation-policies). Par exemple, pour réussir la validation, votre complément doit fonctionner sur toutes les plateformes prenant en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) et la [page relative à la disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md)). 
+> Si vous prévoyez de [publier](../publish/publish.md) votre complément sur AppSource et de le rendre disponible dans l’expérience Office, assurez-vous que vous respectez les [stratégies de validation AppSource](/office/dev/store/validation-policies). Par exemple, pour réussir la validation, votre complément doit fonctionner sur toutes les plateformes prenant en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) et la [page relative à la disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md)). 
 
 ## <a name="provide-clear-value"></a>Indication d’une valeur claire
 
@@ -25,7 +25,7 @@ Des compléments efficaces proposent des fonctionnalités uniques et attrayantes
  - Intégrez des services complémentaires dans des hôtes Office.
  - Améliorez l’expérience Office pour accroître la productivité.
 - Assurez-vous que la valeur de votre complément apparaîtra clairement aux utilisateurs dès la première utilisation en créant une [première expérience enrichissante](#create-an-engaging-first-run-experience).
-- Rédigez une [description claire pour AppSource](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings). Soulignez les avantages de votre complément dans votre titre et votre description. Ne comptez pas sur votre marque pour communiquer sur les fonctionnalités de votre complément.
+- Rédigez une [description claire pour AppSource](/office/dev/store/create-effective-office-store-listings). Soulignez les avantages de votre complément dans votre titre et votre description. Ne comptez pas sur votre marque pour communiquer sur les fonctionnalités de votre complément.
 
 
 ## <a name="create-an-engaging-first-run-experience"></a>Création d’une première expérience intéressante
@@ -44,13 +44,13 @@ Des compléments efficaces proposent des fonctionnalités uniques et attrayantes
 
    ![Capture d’écran illustrant un complément de contenu avec des données en regard d’un complément de contenu sans données](../images/add-in-title.png)
 
-- Offrez des [essais gratuits](https://docs.microsoft.com/office/dev/store/decide-on-a-pricing-model). Si votre complément nécessite un abonnement, proposez certaines fonctionnalités gratuitement.
+- Offrez des [essais gratuits](/office/dev/store/decide-on-a-pricing-model). Si votre complément nécessite un abonnement, proposez certaines fonctionnalités gratuitement.
 
 - Facilitez l’inscription. Préremplissez les informations (e-mail, nom d’affichage) et ignorez les vérifications d’adresses e-mail.
 
 - Évitez d’utiliser des fenêtres contextuelles. Si vous devez les utiliser, aidez les utilisateurs à les activer.
 
-Pour les modèles de conception à appliquer lors du développement de votre première expérience d’utilisation, reportez-vous à la section [Modèles de conception de l’expérience utilisateur pour les compléments Office](https://docs.microsoft.com/office/dev/add-ins/design/first-run-experience-patterns).
+Pour les modèles de conception à appliquer lors du développement de votre première expérience d’utilisation, reportez-vous à la section [Modèles de conception de l’expérience utilisateur pour les compléments Office](/office/dev/add-ins/design/first-run-experience-patterns).
 
 ## <a name="use-add-in-commands"></a>Utilisation des commandes de complément
 
@@ -78,7 +78,7 @@ Pour les modèles de conception à appliquer lors du développement de votre pre
 
 ### <a name="optimize-for-touch"></a>Optimisation de la fonction tactile
 
-- Utilisez la propriété [Context.touchEnabled](https://docs.microsoft.com/javascript/api/office/office.context) pour déterminer si l’application hôte sur laquelle votre complément est exécuté est compatible avec la fonction tactile.
+- Utilisez la propriété [Context.touchEnabled](/javascript/api/office/office.context) pour déterminer si l’application hôte sur laquelle votre complément est exécuté est compatible avec la fonction tactile.
 
   > [!NOTE]
   > Cette propriété n’est pas prise en charge dans Outlook.
@@ -125,7 +125,7 @@ Pour les modèles de conception à appliquer lors du développement de votre pre
 
 ## <a name="market-your-add-in"></a>Commercialisation de votre complément
 
-- Publiez votre complément dans [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store) et [faites sa promotion](https://docs.microsoft.com/office/dev/store/promote-your-office-store-solution) sur votre site web. Créez un [référencement AppSource efficace](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings).
+- Publiez votre complément dans [AppSource](/office/dev/store/submit-to-the-office-store) et [faites sa promotion](/office/dev/store/promote-your-office-store-solution) sur votre site web. Créez un [référencement AppSource efficace](/office/dev/store/create-effective-office-store-listings).
 
 - Utilisez des titres et des descriptifs courts pour le complément. Ils ne doivent pas comporter plus de 128 caractères.
 

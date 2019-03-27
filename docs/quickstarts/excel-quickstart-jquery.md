@@ -1,21 +1,21 @@
 ---
 title: Développement de votre premier complément Excel à l’aide de jQuery
 description: ''
-ms.date: 01/17/2019
+ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 7931e06899a94a0dcda2a5ab442d37ce21c119c0
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 09c3819efde35b9f35847c8ca3bca558b391d98a
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742442"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872122"
 ---
 # <a name="build-an-excel-add-in-using-jquery"></a>Développement d’un complément Excel à l’aide de jQuery
 
 Cet article décrit le processus de création d’un complément Excel à l’aide de jQuery et de l’API JavaScript pour Excel. 
 
-## <a name="create-the-add-in"></a>Créer le complément 
+## <a name="create-the-add-in"></a>Créer le complément
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
@@ -28,7 +28,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 ### <a name="create-the-add-in-project"></a>Création du projet de complément
 
 1. Dans la barre de menu de Visual Studio, choisissez successivement **Fichier** > **Nouveau** > **Projet**.
-    
+
 2. Dans la liste des types de projet, sous **Visual C#** ou **Visual Basic**, développez **Office/SharePoint**, choisissez **Compléments**, puis **Complément Excel Web** pour le type de projet. 
 
 3. Nommez le projet, puis cliquez sur **OK**.
@@ -36,7 +36,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 4. Dans la fenêtre de dialogue **Créer un complément Office**, sélectionnez **Ajouter de nouvelles fonctionnalités à Excel**, puis sélectionnez **Terminer** pour créer le projet.
 
 5. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
-    
+
 ### <a name="explore-the-visual-studio-solution"></a>Explorer la solution Visual Studio
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
@@ -44,7 +44,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 ### <a name="update-the-code"></a>Mise à jour du code
 
 1. **Home.html** spécifie le code HTML qui s’affichera dans le volet Office du complément. Dans **Home.html**, remplacez l’élément `<body>` par le balisage suivant et enregistrez le fichier.
- 
+
     ```html
     <body class="ms-font-m ms-welcome">
         <div id="content-header">
@@ -184,7 +184,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
     - **Quelle application client Office voulez-vous prendre en charge ? :**`Excel`
 
     ![Générateur Yeoman](../images/yo-office-jquery.png)
-    
+
     Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants de nœud de la prise en charge.
 
 2. Accédez au dossier racine du projet.
@@ -196,9 +196,9 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 ### <a name="update-the-code"></a>Mise à jour du code 
 
 1. Dans votre éditeur de code, ouvrez **index.html** à la racine du projet. Ce fichier spécifie le code HTML qui s’affichera dans le volet Office du complément. 
- 
+
 2. Dans **index.html**, remplacez la balise `body` par le balisage suivant et enregistrez le fichier.
- 
+
     ```html
     <body class="ms-font-m ms-welcome">
         <div id="content-header">
@@ -216,14 +216,14 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
         </div>
         <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
         <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
-    </body>    
+    </body>
     ```
 
 3. Ouvrez le fichier **src/index.js** pour spécifier le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
 
     ```js
     'use strict';
-    
+
     (function () {
         Office.onReady(function() {
             // Office is ready
@@ -259,7 +259,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
         top: 0;
         left: 0;
         width: 100%;
-        height: 80px; 
+        height: 80px;
         overflow: hidden;
     }
 
@@ -270,7 +270,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
         left: 0;
         right: 0;
         bottom: 0;
-        overflow: auto; 
+        overflow: auto;
     }
 
     .padding {
@@ -280,7 +280,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 
 ### <a name="update-the-manifest"></a>Mise à jour du manifeste
 
-1. Ouvrez le fichier nommé **manifest.xml** pour définir les paramètres et les fonctionnalités du complément. 
+1. Ouvrez le fichier nommé **manifest.xml** pour définir les paramètres et les fonctionnalités du complément.
 
 2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-le par votre nom.
 
@@ -334,5 +334,4 @@ Félicitations, vous avez créé un complément Excel à l’aide de jQuery ! D
 * [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial-create-table.md)
 * [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Référence de l’API JavaScript pour Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
-
+* [Référence de l’API JavaScript pour Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

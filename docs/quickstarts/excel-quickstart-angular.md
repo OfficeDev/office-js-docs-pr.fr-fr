@@ -1,15 +1,15 @@
 ---
 title: Créer un complément Excel à l’aide d’Angular
 description: ''
-ms.date: 10/19/2018
+ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: da3e0ce9c6cb075ff828344956cfe25fb579a8fa
-ms.sourcegitcommit: 03773fef3d2a380028ba0804739d2241d4b320e5
+ms.openlocfilehash: e814fb2a1dd24a272a24ca9debead2d836aed5c8
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "30091252"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870988"
 ---
 # <a name="build-an-excel-add-in-using-angular"></a>Créer un complément Excel à l’aide d’Angular
 
@@ -39,7 +39,7 @@ Dans cet article, vous allez découvrir le processus de création d’un complé
     - **Quelle application client Office voulez-vous prendre en charge ? :**`Excel`
 
     ![Générateur Yeoman](../images/yo-office-excel-angular.png)
-    
+
     Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants de nœud de la prise en charge.
 
 2. Accédez au dossier racine du projet.
@@ -60,7 +60,7 @@ Dans cet article, vous allez découvrir le processus de création d’un complé
         top: 0;
         left: 0;
         width: 100%;
-        height: 80px; 
+        height: 80px;
         overflow: hidden;
         font-family: Arial;
         padding-top: 25px;
@@ -73,7 +73,7 @@ Dans cet article, vous allez découvrir le processus de création d’un complé
         left: 0;
         right: 0;
         bottom: 0;
-        overflow: auto; 
+        overflow: auto;
         font-family: Arial;
     }
 
@@ -178,7 +178,6 @@ Dans cet article, vous allez découvrir le processus de création d’un complé
     - Excel Online : [Chargement de versions test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
     - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-   
 2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
     ![Bouton Complément Excel](../images/excel-quickstart-addin-2b.png)
@@ -201,5 +200,4 @@ Félicitations, vous avez créé un complément Excel à l’aide d’Angular !
 * [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial-create-table.md)
 * [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Référence de l’API JavaScript pour Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
-
+* [Référence de l’API JavaScript pour Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

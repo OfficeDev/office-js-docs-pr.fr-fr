@@ -3,12 +3,12 @@ ms.date: 03/19/2019
 description: Créer des fonctions personnalisées dans Excel à l’aide de JavaScript.
 title: Créer des fonctions personnalisées dans Excel (aperçu)
 localization_priority: Priority
-ms.openlocfilehash: 4a9e240646b41b737652b6e64eb83e03d0824178
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.openlocfilehash: ac3410267da415c4d567092da2e653fcffd10b72
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691201"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870449"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Créer des fonctions personnalisées dans Excel (aperçu)
 
@@ -203,91 +203,6 @@ Le fichier manifeste XML pour un complément qui définit les fonctions personna
 > [!NOTE]
 > Les fonctions dans Excel sont précédées par l’espace de noms spécifié dans votre fichier manifeste XML. L’espace de noms d’une fonction vient avant le nom de fonction et les deux sont séparés par un point. Par exemple, pour appeler la fonction `ADD42` dans la cellule de feuille de calcul Excel, vous saisiriez `=CONTOSO.ADD42`, car `CONTOSO` est l’espace de noms et `ADD42` est le nom de la fonction spécifié dans le fichier JSON. L’espace de noms est destiné à être utilisé comme identificateur de votre entreprise ou du complément. Un espace de noms ne peut contenir que des points et des caractères alphanumériques.
 
-## <a name="functions-that-return-data-from-external-sources"></a>Fonctions qui retournent des données provenant de sources externes
-
-Si une fonction personnalisée récupère des données d’une source externe comme le web, elle doit :
-
-1. Renvoyer une promesse JavaScript à Excel.
-
-2. Résoudre la promesse avec la valeur finale à l’aide de la fonction de rappel.
-
-Les fonctions personnalisées affichent un `#GETTING_DATA`résultat temporaire dans la cellule, tandis qu’ Excel attend que le résultat final. Les utilisateurs peuvent interagir normalement avec le reste de la feuille de calcul pendant qu’ils attendent le résultat.
-
-Le code suivant indique un exemple de`getTemperature()`fonction personnalisée qui récupère la température d’un thermomètre. Notez que `sendWebRequest` est une fonction hypothétique (non spécifiée ici) qui utilise [XHR](custom-functions-runtime.md#xhr-example) pour appeler un service web de température.
-
-```js
-function getTemperature(thermometerID){
-    return new Promise(function(setResult){
-        sendWebRequest(thermometerID, function(data){
-            setResult(data.temperature);
-        });
-    });
-}
-```
-
-## <a name="streaming-functions"></a>Fonctions de diffusion en continu
-
-Les fonctions personnalisées de diffusion en continu vous aident à copier des données à des cellules à plusieurs reprises au fil du temps, sans exiger qu’un utilisateur demande explicitement l’actualisation des données. L’exemple de code suivant est une fonction personnalisée qui ajoute un nombre au résultat chaque seconde. Tenez compte des informations suivantes à propos de ce code :
-
-- Excel affiche chaque nouvelle valeur automatiquement à l’aide du `setResult` rappel.
-
-- Le deuxième paramètre d’entrée `handler`, n’est pas visible aux utilisateurs finaux dans Excel lorsqu’ils sélectionnent la fonction à partir du menu de saisie semi-automatique.
-
-- Le `onCanceled` rappel définit la fonction qui s’exécute lorsque la fonction est annulée. Vous devez implémenter un gestionnaire d’annulation comme suit pour n’importe quelle fonction de diffusion en continu. Pour plus d’informations, voir [Annuler une fonction](#canceling-a-function).
-
-```js
-function incrementValue(increment, handler){
-  var result = 0;
-  setInterval(function(){
-    result += increment;
-    handler.setResult(result);
-  }, 1000);
-
-  handler.onCanceled = function(){
-    clearInterval(timer);
-  }
-}
-```
-
-Lorsque vous spécifiez des métadonnées pour une fonction de diffusion en continu dans le fichier de métadonnées JSON, vous devez définir les propriétés `"cancelable": true` et `"stream": true` au sein de l’objet`options`, comme illustré dans l’exemple suivant.
-
-```json
-{
-  "id": "INCREMENT",
-  "name": "INCREMENT",
-  "description": "Periodically increment a value",
-  "helpUrl": "http://www.contoso.com",
-  "result": {
-    "type": "number",
-    "dimensionality": "scalar"
-  },
-  "parameters": [
-    {
-      "name": "increment",
-      "description": "Amount to increment",
-      "type": "number",
-      "dimensionality": "scalar"
-    }
-  ],
-  "options": {
-    "cancelable": true,
-    "stream": true
-  }
-}
-```
-
-## <a name="canceling-a-function"></a>Annulation d’une fonction
-
-Dans certains cas, vous devrez annuler l’exécution d’une fonction personnalisée de diffusion en continu pour réduire la consommation de bande passante, de la mémoire de travail et la charge du CPU. Excel annule l’exécution d’une fonction dans les situations suivantes :
-
-- L’utilisateur modifie ou supprime une cellule qui fait référence à la fonction.
-
-- Un des arguments (entrées) de la fonction est modifié. Dans ce cas, un appel de nouvelle fonction est déclenché en plus de l’annulation.
-
-- L’utilisateur déclenche manuellement le recalcul. Dans ce cas, un appel de nouvelle fonction est déclenché en plus de l’annulation.
-
-Pour activer la possibilité d’annuler une fonction, vous devez implémenter un gestionnaire d’annulation au sein de la fonction JavaScript et spécifier la propriété `"cancelable": true` au sein de l’objet`options` dans les métadonnées JSON décrivant la fonction. Les exemples de code dans la section précédente de cet article fournissent un exemple de ces techniques.
-
 ## <a name="declaring-a-volatile-function"></a>Déclaration d’une fonction volatile
 
 Les [fonctions volatiles](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions) sont des fonctions dont la valeur change d’un moment à l’autre, même si aucun des arguments de la fonction n’a été modifié. Ces fonctions sont recalculées à chaque recalcul d’Excel. Par exemple, imaginons une cellule qui appelle la fonction `NOW`. Chaque fois que la fonction `NOW` est appelée, elle renvoie automatiquement la date et l’heure actuelles.
@@ -359,6 +274,7 @@ function refreshTemperature(thermometerID){
 ```
 
 ## <a name="coauthoring"></a>Co-création
+
 Excel Online et Excel pour Windows avec un abonnement Office 365 vous permettent de co-créer des documents et cette fonctionnalité est disponible avec les fonctions personnalisées. Si votre classeur utilise une fonction personnalisée, votre collègue sera invité à charger le complément de la fonction personnalisée. Quand vous avez tous les deux chargé le complément, la fonction personnalisée peut partager les résultats via la co-création.
 
 Pour plus d’informations sur la co-création, voir [À propos de la co-création dans Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
@@ -433,7 +349,7 @@ Par défaut, les valeurs renvoyées par une fonction `getAddress` ont le format 
 
 ## <a name="known-issues"></a>Problèmes connus
 
-Consulter les problèmes connus sur notre[repo GitHub Fonctions Excel Personnalisées](https://github.com/OfficeDev/Excel-Custom-Functions/issues). 
+Consulter les problèmes connus sur notre[repo GitHub Fonctions Excel Personnalisées](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
 ## <a name="see-also"></a>Voir aussi
 

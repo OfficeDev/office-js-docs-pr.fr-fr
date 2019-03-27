@@ -1,14 +1,14 @@
 ---
 title: Limites des ressources et optimisation des performances pour les compléments Office
 description: ''
-ms.date: 01/23/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 4ad6b45c9f7797b5f47ef52ce604710b3d6b4853
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: ead376bb12701f7ee810cfc4e536ae4866d2f1b5
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388891"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872178"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites des ressources et optimisation des performances pour les compléments Office
 
@@ -21,23 +21,23 @@ Par ailleurs, cette rubrique suggère des techniques de conception et d’implé
 Les limites d’utilisation des ressources d’exécution s’appliquent à tous les compléments Office. Elles permettent à l’utilisateur de bénéficier de bonnes performances et contribuent également à atténuer les attaques par déni de service. Vous devez suffisamment tester votre complément Office sur l’application hôte cible à l’aide d’un large éventail de données possibles et mesurer ses performances par rapport aux limites ci-après :
 
 - **Utilisation du cœur du processeur** - Seuil d’utilisation d’un seul cœur de processeur de 90 %, observé à trois reprises dans des intervalles par défaut de 5 secondes.
-    
+
    L’intervalle par défaut de vérification de l’utilisation du cœur du processeur par un client enrichi de l’hôte est de 5 secondes. Si le client de l’hôte détecte que l’utilisation du cœur du processeur d’un complément dépasse la valeur du seuil, il affiche un message demandant à l’utilisateur s’il souhaite continuer à exécuter le complément. Si l’utilisateur choisit de continuer, le client de l’hôte ne redemande pas à l’utilisateur s’il souhaite continuer au cours de cette session de modification. Les administrateurs peuvent souhaiter utiliser la clé de registre **AlertInterval** pour augmenter le seuil et réduire l’affichage de ce message d’avertissement si les utilisateurs exécutent des compléments faisant appel au processeur de manière intensive.
-    
+
 - **Utilisation de la mémoire** - Seuil d’utilisation de mémoire par défaut, qui est déterminé de manière dynamique en fonction de la mémoire physique disponible de l’appareil.
-    
+
    Par défaut, lorsqu’un client enrichi de l’hôte détecte que l’utilisation de la mémoire physique d’un appareil dépasse 80 % de la mémoire disponible, le client commence à surveiller l’utilisation de la mémoire du complément, au niveau du document pour les compléments du contenu et du volet des tâches, et au niveau de la boîte aux lettres pour les compléments Outlook. À un intervalle de 5 secondes par défaut, le client avertit l’utilisateur si l’utilisation de la mémoire physique pour un ensemble de compléments au niveau du document ou de la boîte aux lettres est supérieure à 50 %. Cette limite d’utilisation de la mémoire utilise la mémoire physique plutôt que la mémoire virtuelle pour garantir des performances sur des appareils dont la mémoire vive est limitée, comme les tablettes. Les administrateurs peuvent remplacer ce paramètre dynamique par une limite explicite en utilisant la clé de registre Windows **MemoryAlertThreshold** comme paramètre global, ou ajuster l’intervalle d’alerte en utilisant la clé **AlertInterval** comme paramètre global.
-    
+
 - **Tolérance d’incident** - Limite par défaut de 4 incidents pour un complément.
-    
+
    Les administrateurs peuvent ajuster le seuil relatif aux incidents en utilisant la clé de registre **RestartManagerRetryLimit**.
-    
+
 - **Blocage d’application** - Limitation à 5 secondes du seuil de blocage prolongé d’un complément.
-    
+
    Cette option affecte l’expérience utilisateur relative au complément et à l’application hôte. Dans ce cas, l’application hôte redémarre automatiquement tous les compléments actifs d’un document ou d’une boîte aux lettres (le cas échéant), et indique à l’utilisateur le complément qui ne répond pas. Les compléments peuvent atteindre ce seuil lorsqu’ils ne cèdent pas régulièrement le traitement lors de l’exécution de tâches longues. Il existe des techniques permettant de garantir qu’aucun blocage ne se produira. Les administrateurs ne peuvent pas remplacer ce seuil.
-    
+
 ### <a name="outlook-add-ins"></a>Compléments Outlook
-    
+
 §LTA Si un complément Outlook dépasse les seuils précédents en matière d’utilisation du cœur du processeur ou de la mémoire, ou en matière de tolérance d’incident, Outlook désactive le complément. Le Centre d’administration Exchange indique que l’état de l’application est désactivé.
 
 > [!NOTE]
@@ -54,7 +54,7 @@ En plus du cœur du processeur, de la mémoire et des règles de fiabilité, les
     À l’aide d’une stratégie de groupe ou d’un paramètre propre à l’application dans le registre Windows, les administrateurs peuvent ajuster ce nombre de tentatives d’évaluation dans le paramètre **OutlookActivationManagerRetryLimit**.
 
 ### <a name="task-pane-and-content-add-ins"></a>Compléments de volet Office et de contenu
-    
+
 Si un complément de contenu ou de volet de tâches dépasse les seuils précédents en matière d’utilisation du cœur du processeur ou de la mémoire, ou en matière de tolérance d’incident, l’application hôte correspondante affiche un avertissement pour l’utilisateur. À ce stade, l’utilisateur peut effectuer l’une des actions suivantes :
 
 - Redémarrer le complément.
@@ -86,7 +86,7 @@ Le tableau suivant répertorie les événements que le journal de télémétrie 
 |19|Le complément a rencontré une erreur d’exécution|Critique|L’Complément Office a rencontré un problème qui l’a empêchée de s’exécuter. Pour plus de détails, consultez le journal  **Alertes Microsoft Office** à l’aide de l’Observateur d’événements Windows sur l’ordinateur sur lequel l’erreur s’est produite.|
 |20|Le complément n’a pas pu vérifier la licence|Critique|Les informations de licence de l’Complément Office n’ont pas pu être vérifiées et la licence a peut-être expiré. Pour plus de détails, consultez le journal  **Alertes Microsoft Office** à l’aide de l’Observateur d’événements Windows sur l’ordinateur sur lequel l’erreur s’est produite.|
 
-Pour plus d’informations, consultez [Déployer le Tableau de bord de télémétrie](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219431(v=office.15)) et [Dépannage des fichiers et des solutions personnalisées d’Office avec le journal de télémétrie](https://docs.microsoft.com/office/client-developer/shared/troubleshooting-office-files-and-custom-solutions-with-the-telemetry-log)
+Pour plus d’informations, consultez [Déployer le Tableau de bord de télémétrie](/previous-versions/office/office-2013-resource-kit/jj219431(v=office.15)) et [Dépannage des fichiers et des solutions personnalisées d’Office avec le journal de télémétrie](/office/client-developer/shared/troubleshooting-office-files-and-custom-solutions-with-the-telemetry-log)
 
 
 ## <a name="design-and-implementation-techniques"></a>Techniques de conception et d’implémentation
@@ -94,19 +94,18 @@ Pour plus d’informations, consultez [Déployer le Tableau de bord de télémé
 Bien que les limites en matière d’utilisation des ressources de l’UC et de la mémoire, de tolérance d’incident et de réactivité de l’interface utilisateur s’appliquent aux Compléments Office qui s’exécutent uniquement sur les clients enrichis, l’optimisation de l’utilisation de ces ressources et de la batterie doit constituer une priorité si vous voulez que votre complément s’exécute de manière satisfaisante sur tous les clients et appareils de prise en charge. L’optimisation est particulièrement importante si votre complément effectue des opérations de longue durée ou manipule de grands jeux de données. La liste suivante suggère quelques techniques à suivre pour réduire la taille des opérations qui utilisent beaucoup de ressources d’UC ou de données afin de permettre à votre complément d’éviter une consommation excessive des ressources et à l’application hôte de rester réactive :
 
 - Dans un scénario où votre complément a besoin de lire un important volume de données à partir d’un jeu de données illimité, vous pouvez appliquer la pagination lors de la lecture des données dans une table ou réduire la taille des données à chaque opération de lecture raccourcie, plutôt que de tenter de terminer la lecture en une seule opération. 
-    
+
    For a JavaScript and jQuery code sample that shows breaking up a potentially long-running and CPU-intensive series of inputting and outputting operations on unbounded data, see [How can I give control back (briefly) to the browser during intensive JavaScript processing?](https://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript). This example uses the [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) method of the global object to limit the duration of input and output. It also handles the data in defined chunks instead of randomly unbounded data.
-    
+
 - Si votre complément utilise un algorithme qui sollicite l’UC de manière intensive pour traiter un important volume de données, vous pouvez recourir aux API Web Worker afin d’effectuer une tâche de longue durée en arrière-plan pendant qu’un script distinct s’exécute au premier plan (par exemple, l’affichage de la progression d’une opération dans l’interface utilisateur). Les API Web Worker ne bloquent pas les activités des utilisateurs. En outre, elles permettent à la page HTML de rester réactive. Pour obtenir un exemple d’API Web Worker, voir les [bases des API Web Worker](https://www.html5rocks.com/en/tutorials/workers/basics/). Pour plus d’informations sur l’API Web Worker Internet Explorer, voir [API Web Worker](https://developer.mozilla.org/docs/Web/API/Web_Workers_API).
-    
+
 - Si votre complément utilise un algorithme qui sollicite l’UC de manière intensive et si vous pouvez décomposer les entrées ou sorties de données en jeux de données de plus petite taille, créez un service web afin de lui passer les données et d’alléger la charge de l’UC, puis attendez un rappel asynchrone.
-    
+
 - Veillez à tester votre complément par rapport au volume de données le plus important possible, puis limitez votre complément pour lui permettre d’atteindre cette limite.
-    
+
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Confidentialité et sécurité pour les compléments Office](../concepts/privacy-and-security.md)
-- [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
+- [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
 - [Optimisation des performances à l’aide de l’API JavaScript d’Excel](../excel/performance.md)
-    

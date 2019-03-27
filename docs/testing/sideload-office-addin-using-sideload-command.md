@@ -1,14 +1,14 @@
 ---
 title: Chargement de versions test de compléments Office à l’aide de la commande sideload
 description: ''
-ms.date: 07/24/2018
+ms.date: 03/19/201907/24/2018
 localization_priority: Priority
-ms.openlocfilehash: 2231e05d798dce4f4b5428627a3653ddcdecfc65
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: dfa231374133ad857554afaf343362f1415788f4
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29387673"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870113"
 ---
 # <a name="sideload-office-add-ins-for-testing-using-the-sideload-command"></a>Chargement de versions test de compléments Office pour les tester à l’aide de la **commande sideload**
  >[!NOTE]
@@ -18,7 +18,7 @@ ms.locfileid: "29387673"
 > 
 > - [Chargement de version test des compléments Office dans Office Online](sideload-office-add-ins-for-testing.md)
 > - [Chargement de version test des compléments Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
-> - [Chargement de version test des compléments Outlook pour les tester](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)
+> - [Chargement de version test des compléments Outlook pour les tester](/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 
 1. Ouvrez une invite de commandes en tant qu’administrateur.
 

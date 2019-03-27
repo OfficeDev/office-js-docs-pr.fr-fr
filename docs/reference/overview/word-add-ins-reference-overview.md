@@ -1,15 +1,15 @@
 ---
 title: Présentation des API JavaScript pour Word
 description: ''
-ms.date: 10/09/2018
+ms.date: 03/19/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 9a884e0e092779cc5959aa9b32ae6a5c4f3c0893
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 19e3b7732fb5372228ea1458c57df5e79b08078a
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742302"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870575"
 ---
 # <a name="word-javascript-api-overview"></a>Présentation des APIs JavaScript pour Word
 
@@ -37,7 +37,7 @@ Si vous utilisez TypeScript et que vous avez npm, vous pouvez obtenir les défin
 
 ## <a name="running-word-add-ins"></a>Exécution de compléments Word
 
-Pour exécuter votre complément, utilisez un gestionnaire d’événements Office.initialize. Pour plus d’informations sur l’initialisation du complément, reportez-vous à la section [Présentation de l’API](https://docs.microsoft.com/office/dev/add-ins/develop/understanding-the-javascript-api-for-office).
+Pour exécuter votre complément, utilisez un gestionnaire d’événements Office.initialize. Pour plus d’informations sur l’initialisation du complément, reportez-vous à la section [Présentation de l’API](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office).
 
 Les compléments qui ciblent Word 2016 ou version ultérieure s’exécutent en transmettant une fonction dans la méthode **Word.run()**. La fonction transmise dans la méthode **run** doit contenir un argument de contexte. Cet [objet de contexte](/javascript/api/word/word.requestcontext) est différent de celui que vous obtenez de l’objet Office, même s’il sert également à interagir avec l’environnement d’exécution de Word. L’objet de contexte permet d’accéder au modèle objet de l’API JavaScript pour Word. L’exemple suivant montre comment initialiser et exécuter un complément Word à l’aide de la méthode **Word.run()**.
 
@@ -137,6 +137,6 @@ Pour en savoir plus sur l’API JavaScript pour Word, consultez la [documentati
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Présentation des compléments Word](https://docs.microsoft.com/office/dev/add-ins/word/word-add-ins-programming-overview)
-* [Vue d’ensemble de la plateforme des compléments Office](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins)
+* [Présentation des compléments Word](/office/dev/add-ins/word/word-add-ins-programming-overview)
+* [Vue d’ensemble de la plateforme des compléments Office](/office/dev/add-ins/overview/office-add-ins)
 * [Exemples de compléments Word sur GitHub](https://github.com/OfficeDev?utf8=%E2%9C%93&q=Word)
