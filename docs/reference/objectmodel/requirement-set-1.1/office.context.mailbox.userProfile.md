@@ -1,14 +1,14 @@
 ---
-title: Office.context.mailbox.userProfile-ensemble de conditions requises 1.1
+title: Office. Context. Mailbox. userProfile-ensemble de conditions requises 1,1
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 265102f42161ffcb326dbeffb7936af78876a41c
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: 7a10a35887d31a8803d0662eedbe190543d2326a
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30068279"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870190"
 ---
 # <a name="userprofile"></a>userProfile
 
@@ -19,8 +19,8 @@ ms.locfileid: "30068279"
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ### <a name="members"></a>Membres
 
@@ -30,15 +30,15 @@ Obtient le nom d’affichage de l’utilisateur.
 
 ##### <a name="type"></a>Type
 
-*   Chaîne
+*   String
 
 ##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 
@@ -53,15 +53,15 @@ Obtient l’adresse de messagerie SMTP de l’utilisateur.
 
 ##### <a name="type"></a>Type
 
-*   Chaîne
+*   String
 
 ##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 
@@ -76,15 +76,15 @@ Obtient le fuseau horaire par défaut de l’utilisateur.
 
 ##### <a name="type"></a>Type
 
-*   Chaîne
+*   String
 
 ##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 

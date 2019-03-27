@@ -1,14 +1,14 @@
 ---
 title: Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)
 description: ''
-ms.date: 02/20/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: ce4440798fdd23106ef0357df47cf850a5a5be71
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: bca6ec8656450b4753287be95c047496b5d40435
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "30199598"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871828"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)
 
@@ -53,7 +53,7 @@ Excel.run(function (context) {
         var nowMoment = moment.fromOADate(nowMS);
         console.log(`get (moment): ${JSON.stringify(nowMoment)}`);
 
-        // log the date as a UNIX-style timestamp 
+        // log the date as a UNIX-style timestamp
         var now = nowMoment.unix();
         console.log(`get (timestamp): ${now}`);
     });
@@ -65,14 +65,14 @@ Votre complément devra mettre en forme les plages pour afficher les dates dans 
 ## <a name="work-with-multiple-ranges-simultaneously-preview"></a>Travailler avec plusieurs plages simultanément (prévisualisation)
 
 > [!NOTE]
-> L' `RangeAreas` objet est actuellement disponible uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> L' `RangeAreas` objet est actuellement disponible uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 L’`RangeAreas`objet laisse votre complément exécuter des opérations sur plusieurs plages en même temps. Ces plages peuvent être adjacentes, mais cela n’est pas obligatoire. `RangeAreas`sont abordés plus loin dans l’article[Travailler simultanément avec plusieurs plages dans des compléments Excel](excel-add-ins-multiple-ranges.md).
 
 ## <a name="find-special-cells-within-a-range-preview"></a>Rechercher des cellules spéciaux dans une plage (prévisualisation)
 
 > [!NOTE]
-> Les `getSpecialCells` méthodes `getSpecialCellsOrNullObject` et sont actuellement disponibles uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> Les `getSpecialCells` méthodes `getSpecialCellsOrNullObject` et sont actuellement disponibles uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 Les méthodes`Range.getSpecialCells()` et `Range.getSpecialCellsOrNullObject()`recherchent des plages basées sur les caractéristiques de leurs cellules et les types de valeurs de leurs cellules. Ces deux méthodes renvoient à des`RangeAreas`objets. Voici les signatures des méthodes à partir des types de fichiers de données TypeScript:
 
@@ -84,7 +84,7 @@ getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCe
 getSpecialCellsOrNullObject(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
 ```
 
-L’exemple suivant utilise la méthode`getSpecialCells`pour rechercher toutes les cellules contenant les formules. Tenez compte du code suivant:
+L’exemple suivant utilise la méthode`getSpecialCells`pour rechercher toutes les cellules contenant les formules. Tenez compte des informations suivantes :
 
 - Cela limite la partie de la feuille qui nécessite d’être recherchée en appelant d’abord`Worksheet.getUsedRange`et en appelant`getSpecialCells`uniquement pour cette plage.
 - La`getSpecialCells`méthode renvoie un`RangeAreas`objet, toutes les cellules alors dotées de formules seront colorées en rose même si elles ne sont pas adjacentes.
@@ -102,10 +102,10 @@ Excel.run(function (context) {
 
 Si aucune cellule avec la caractéristique ciblée n’existe dans la plage `getSpecialCells` lève une erreur**ItemNotFound**. Cela dévie le flux de contrôle vers un(e)`catch`bloc/méthode, s’il en existe. S’il n’existe pas`catch`, l’erreur arrête la fonction.
 
-Si vous attendez que des cellules avec la caractéristique ciblée existent toujours, vous souhaiterez probablement que votre code  lève une erreur si ces cellules ne sont pas là. Mais dans les scénarios où les cellules ne correspondent pas; votre code doit vérifier cette possibilité et le gérer gracieusement sans émettre d’erreur. Vous pouvez obtenir ce comportement avec la `getSpecialCellsOrNullObject`méthode et sa propriété renvoyée`isNullObject`. Cet exemple utilise les valeurs suivantes. Tenez compte du code suivant:
+Si vous attendez que des cellules avec la caractéristique ciblée existent toujours, vous souhaiterez probablement que votre code  lève une erreur si ces cellules ne sont pas là. Mais dans les scénarios où les cellules ne correspondent pas; votre code doit vérifier cette possibilité et le gérer gracieusement sans émettre d’erreur. Vous pouvez obtenir ce comportement avec la `getSpecialCellsOrNullObject`méthode et sa propriété renvoyée`isNullObject`. Cet exemple utilise les valeurs suivantes. Tenez compte des informations suivantes :
 
 - La méthode`getSpecialCellsOrNullObject`renvoie toujours un objet proxy, donc il ne s’agit jamais du sens`null`JavaScript ordinaire. Mais si les cellules non correspondantes sont introuvables, la propriété`isNullObject` de l’objet est établi à`true`.
-- Il appelle`context.sync`*avant*de tester la propriété`isNullObject`. Il s’agit d’une condition avec toutes les méthodes et propriétés`*OrNullObject`, car vous devez toujours télécharger et synchroniser une propriété afin de le lire.  Cependant, il n’est pas nécessaire de télécharger*de manière explicite*la propriété`isNullObject`. Il est automatiquement téléchargé par le`context.sync`même si`load`n’est pas appelé sur l’objet. Pour plus d'informations, consultez le[\*OrNullObject](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods).
+- Il appelle`context.sync`*avant*de tester la propriété`isNullObject`. Il s’agit d’une condition avec toutes les méthodes et propriétés`*OrNullObject`, car vous devez toujours télécharger et synchroniser une propriété afin de le lire.  Cependant, il n’est pas nécessaire de télécharger*de manière explicite*la propriété`isNullObject`. Il est automatiquement téléchargé par le`context.sync`même si`load`n’est pas appelé sur l’objet. Pour plus d'informations, consultez le[\*OrNullObject](/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods).
 - Vous pouvez tester ce code en sélectionnant d’abord une plage qui n’a pas de cellules de formule et en l’exécutant. Puis sélectionnez une plage qui dispose au moins d’une cellule dotée d’une formule et en l’exécutant à nouveau.
 
 ```js
@@ -181,7 +181,7 @@ Excel.run(function (context) {
 ## <a name="copy-and-paste-preview"></a>Copier et coller(prévisualisation)
 
 > [!NOTE]
-> La fonction`Range.copyFrom` est actuellement disponible uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> La fonction`Range.copyFrom` est actuellement disponible uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 La fonction`copyFrom`de la plage reproduit le comportement de copier-coller de l’interface utilisateur Excel. L’objet plage sur lequel`copyFrom`est appelé est la destination.
 La source à copier est transmise en tant que plage ou qu’adresse de chaîne représentant une plage.
@@ -245,7 +245,7 @@ Excel.run(function (context) {
 ## <a name="remove-duplicates-preview"></a>Supprimer les doublons
 
 > [!NOTE]
-> La fonction de `removeDuplicates` l'objet Range est actuellement disponible uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> La fonction `removeDuplicates` de l’objet Range est actuellement disponible uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 La fonction`removeDuplicates`de l’objet de la plage retire les rangées avec les entrées en doublon dans les colonnes spécifiées. La fonction circule à travers chaque rangée de la plage de l’index à la valeur la plus basse à l’index à la valeur la plus haute de la plage ( du haut vers le bas). Une rangée est supprimée si une valeur dans sa/ses colonne(s) spécifiée(s) apparue(s) plus tôt dans la plage. Les rangées de la plage en-dessous de la rangée supprimée sont déplacées. `removeDuplicates` n’affecte pas la position des cellules en dehors de la rangée.
 

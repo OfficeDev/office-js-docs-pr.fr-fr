@@ -1,14 +1,14 @@
 ---
-title: Office.context-ensemble de conditions requises 1.1
+title: Office. Context-ensemble de conditions requises 1,1
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 2fd94c8a140df1d0701efca0e9ce4307bbea6c2f
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: c7c33f31a63fc2a57b9457fc788a80c925d3eef1
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30067838"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871198"
 ---
 # <a name="context"></a>context
 
@@ -22,11 +22,11 @@ L’espace de noms Office.context fournit des interfaces partagées qui sont uti
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ### <a name="namespaces"></a>Espaces de noms
 
-[mailbox](office.context.mailbox.md)- Permet d’accéder au modèle d’objet de complément Outlook pour Microsoft Outlook et Microsoft Outlook sur le web.
+[Mailbox](office.context.mailbox.md): permet d'accéder au modèle d'objet du complément Outlook pour Microsoft Outlook et Microsoft Outlook sur le Web.
 
 ### <a name="members"></a>Membres
 
@@ -38,14 +38,14 @@ La valeur `displayLanguage` reflète le paramètre **Langue d’affichage** actu
 
 ##### <a name="type"></a>Type
 
-*   Chaîne
+*   String
 
 ##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 
@@ -83,5 +83,5 @@ L’objet `RoamingSettings` vous permet de stocker et d’accéder aux données 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restreinte|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restreinte|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|

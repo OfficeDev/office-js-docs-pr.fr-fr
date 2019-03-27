@@ -1,14 +1,14 @@
 ---
-title: Office.context.mailbox.diagnostics – ensemble de conditions requises 1.7
+title: Office. Context. Mailbox. Diagnostics-ensemble de conditions requises 1,7
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: d67f5bd4d30f78f6d21d78ad366a7058bd4a2c9b
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: 552278d25482f07e4e16a84cf5ba760a9cc8ff2f
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30067880"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872241"
 ---
 # <a name="diagnostics"></a>diagnostics
 
@@ -21,15 +21,15 @@ Fournit des informations de diagnostic à un complément Outlook.
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ##### <a name="members-and-methods"></a>Membres et méthodes
 
 | Membre | Type |
 |--------|------|
-| [hostName](#hostname-string) | Membre |
-| [hostVersion](#hostversion-string) | Membre |
+| [Nom-d'hôte](#hostname-string) | Member |
+| [hostVersion](#hostversion-string) | Member |
 | [OWAView](#owaview-string) | Membre |
 
 ### <a name="members"></a>Membres
@@ -42,15 +42,15 @@ Chaîne qui peut avoir l’une des valeurs suivantes : `Outlook`, `Mac Outlook`
 
 ##### <a name="type"></a>Type
 
-*   Chaîne
+*   String
 
 ##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ####  <a name="hostversion-string"></a>hostVersion :String
 
@@ -60,15 +60,15 @@ Si le complément de messagerie s’exécute sur le client de bureau Outlook ou 
 
 ##### <a name="type"></a>Type
 
-*   Chaîne
+*   String
 
 ##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ####  <a name="owaview-string"></a>OWAView :String
 
@@ -86,12 +86,12 @@ Outlook Web App a trois modes d’affichage qui correspondent à la largeur de
 
 ##### <a name="type"></a>Type
 
-*   Chaîne
+*   String
 
 ##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|

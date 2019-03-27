@@ -1,13 +1,14 @@
 ---
 title: Élément QueryUri dans le fichier manifeste
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: 824c29bb19e4430aa062a4fb3c7a1d1764a96a90
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 8695b87f84cf85f83b46f9abfa4cd412e9abe1ec
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432885"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870120"
 ---
 # <a name="queryuri-element"></a>Élément QueryUri
 
@@ -27,5 +28,5 @@ Spécifie l’URL du point de terminaison du service de requête de dictionnaire
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Créer un complément dictionnaire du volet Office](https://docs.microsoft.com/office/dev/add-ins/word/dictionary-task-pane-add-ins)
+- [Créer un complément dictionnaire du volet Office](/office/dev/add-ins/word/dictionary-task-pane-add-ins)
     

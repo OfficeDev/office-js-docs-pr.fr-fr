@@ -1,16 +1,16 @@
 ---
 title: Didacticiel de fonctions personnalisées Excel (aperçu)
 description: Dans ce didacticiel, vous allez créer un complément Excel qui contient une fonction personnalisée qui effectue des calculs, requiert des données web ou lance un flux de données web.
-ms.date: 01/08/2019
+ms.date: 03/19/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 4ac735e6fc19f13859d07df6cb3d2443e6dfe2fd
-ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
+ms.openlocfilehash: 328d4da7a4dfcc2098f7c5425f84b851bd9dd9d6
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "29982019"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870673"
 ---
 # <a name="tutorial-create-custom-functions-in-excel-preview"></a>Didacticiel : créer des fonctions personnalisées dans Excel (aperçu)
 
@@ -89,7 +89,7 @@ npm run start
 Cette commande démarre le serveur web et le complément sideloads de votre fonction personnalisée dans Excel pour Windows.
 
 > [!NOTE]
-> Si vous complément ne charge pas, vérifiez que vous avez correctement terminé l’étape 3. Vous pouvez également activer la **[journalisation de l’exécution](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** résoudre les problèmes de fichier de manifeste XML du votre complément, ainsi que les problèmes d’installation ou d’exécution. Connexion à l’exécution écritures `console.log` instructions dans un fichier journal pour vous aider à trouver et résoudre les problèmes.
+> Si vous complément ne charge pas, vérifiez que vous avez correctement terminé l’étape 3. Vous pouvez également activer la journalisation de l' **[exécution](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** pour résoudre les problèmes liés au fichier manifeste XML de votre complément, ainsi que tous les problèmes d'installation ou d'exécution. La journalisation `console.log` de l'exécution écrit les instructions dans un fichier journal pour vous aider à trouver et à résoudre les problèmes.
 
 # <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
@@ -151,7 +151,7 @@ Intégration de données à partir du Web est un excellent moyen pour étendre E
 
 > [!NOTE]
 > In the January Insiders 1901 Build, there is a bug preventing fetch calls from executing which will result in #VALUE!.
-> To workaround this please use the [XMLHTTPRequest API](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/custom-functions-runtime#requesting-external-data) to make the web request.
+> To workaround this please use the [XMLHTTPRequest API](/office/dev/add-ins/excel/custom-functions-runtime#requesting-external-data) to make the web request.
 
 3. In **customfunctions.js**, locate the line `CustomFunctions.associate("INCREMENT", increment);`. Add the following line of code immediately after that line, and save the file.
 

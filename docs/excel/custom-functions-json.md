@@ -2,12 +2,13 @@
 ms.date: 01/08/2019
 description: Définissez des métadonnées pour des fonctions personnalisées dans Excel.
 title: Métadonnées pour des fonctions personnalisées dans Excel (aperçu)
-ms.openlocfilehash: 79fb5ac0ebcbe91b154c48cb10aad65451b6e5ee
-ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 43ec436d15d118346bb04dcd4d16f5eb180ecbd3
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "27770629"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872087"
 ---
 # <a name="custom-functions-metadata-preview"></a>Métadonnées de fonctions personnalisées (aperçu)
 
@@ -109,7 +110,7 @@ L’exemple suivant montre le contenu d’un fichier de métadonnées JSON pour 
 
 La propriété `functions` est un tableau d’objets de fonction personnalisés. Le tableau suivant répertorie les propriétés de chaque objet.
 
-|  Propriété  |  Type de données  |  Obligatoire  |  Description  |
+|  Propriété  |  Type de données  |  Requis  |  Description  |
 |:-----|:-----|:-----|:-----|
 |  `description`  |  string  |  Non  |  Description de la fonction que voient les utilisateurs finaux dans Excel. Par exemple, **convertit une valeur Celsius en valeur Fahrenheit**. |
 |  `helpUrl`  |  string  |   Non  |  URL fournissant des informations sur la fonction (elle est affichée dans un volet des tâches). Par exemple, **http://contoso.com/help/convertcelsiustofahrenheit.html**. |
@@ -123,17 +124,17 @@ La propriété `functions` est un tableau d’objets de fonction personnalisés.
 
 L’objet `options` vous permet de personnaliser certains aspects de comment et quand Excel exécute la fonction. Le tableau suivant répertorie les propriétés de l’objet `options`.
 
-|  Propriété  |  Type de données  |  Obligatoire  |  Description  |
+|  Propriété  |  Type de données  |  Requis  |  Description  |
 |:-----|:-----|:-----|:-----|
-|  `cancelable`  |  boolean  |  Non<br/><br/>La valeur par défaut est `false`.  |  Si la valeur est `true`, Excel appelle le gestionnaire `onCanceled` chaque fois que l’utilisateur effectue une action ayant pour effet d’annuler la fonction, par exemple, en déclenchant manuellement un recalcul ou en modifiant une cellule référencée par la fonction. Si vous utilisez cette option, Excel appelle la fonction JavaScript avec un paramètre `caller` supplémentaire (n’enregistrez ***pas*** ce paramètre dans la propriété `parameters`). Dans le corps de la fonction, un gestionnaire doit être attribué au membre `caller.onCanceled`. Pour plus d’informations, voir [Annuler une fonction](custom-functions-overview.md#canceling-a-function). |
-|  `stream`  |  boolean  |  Non<br/><br/>La valeur par défaut est `false`.  |  Si la valeur est `true`, la fonction peut envoyer une sortie à la cellule à plusieurs reprises, même en cas d’appel unique. Cette option est utile pour des sources de données qui changent rapidement, telles que des valeurs boursières. Si vous utilisez cette option, Excel appelle la fonction JavaScript avec un paramètre `caller` supplémentaire (n’enregistrez ***pas*** ce paramètre dans la propriété `parameters`). La fonction ne doit pas utiliser d’instruction `return`. Au lieu de cela, la valeur obtenue est transmise en tant qu’argument de la méthode de rappel `caller.setResult`. Pour plus d’informations, voir [Diffusion en continu de fonctions](custom-functions-overview.md#streaming-functions). |
+|  `cancelable`  |  boolean  |  Non<br/><br/>La valeur par défaut est `false`.  |  Si la valeur est `true`, Excel appelle le gestionnaire `onCanceled` chaque fois que l’utilisateur effectue une action ayant pour effet d’annuler la fonction, par exemple, en déclenchant manuellement un recalcul ou en modifiant une cellule référencée par la fonction. Si vous utilisez cette option, Excel appelle la fonction JavaScript avec un paramètre `caller` supplémentaire (n’enregistrez ***pas*** ce paramètre dans la propriété `parameters`). Dans le corps de la fonction, un gestionnaire doit être attribué au membre `caller.onCanceled`. Pour plus d’informations, voir [Annuler une fonction](custom-functions-web-reqs.md#canceling-a-function). |
+|  `stream`  |  boolean  |  Non<br/><br/>La valeur par défaut est `false`.  |  Si la valeur est `true`, la fonction peut envoyer une sortie à la cellule à plusieurs reprises, même en cas d’appel unique. Cette option est utile pour des sources de données qui changent rapidement, telles que des valeurs boursières. Si vous utilisez cette option, Excel appelle la fonction JavaScript avec un paramètre `caller` supplémentaire (n’enregistrez ***pas*** ce paramètre dans la propriété `parameters`). La fonction ne doit pas utiliser d’instruction `return`. Au lieu de cela, la valeur obtenue est transmise en tant qu’argument de la méthode de rappel `caller.setResult`. Pour plus d’informations, voir [Diffusion en continu de fonctions](custom-functions-web-reqs.md#streaming-functions). |
 |  `volatile`  | boolean | Non <br/><br/>La valeur par défaut est `false`. | <br /><br /> Si la valeur est `true`, la fonction est recalculée à chaque recalcul d’Excel, et plus à chaque fois que les valeurs dépendantes de la formules sont modifiées. Une fonction ne peut pas être à la fois diffusée en continu et volatile. Si les propriétés `stream` et `volatile` sont toutes les deux définies sur `true`, l’option volatile est ignorée. |
 
 ## <a name="parameters"></a>paramètres
 
 La propriété `parameters` est un tableau d’objets paramètre. Le tableau suivant répertorie les propriétés de chaque objet.
 
-|  Propriété  |  Type de données  |  Obligatoire  |  Description  |
+|  Propriété  |  Type de données  |  Requis  |  Description  |
 |:-----|:-----|:-----|:-----|
 |  `description`  |  string  |  Non |  Description du paramètre. S’affiche dans intelliSense d’Excel.  |
 |  `dimensionality`  |  string  |  Non  |  Doit être **scalaire** (valeur autre que de tableau) ou **matrice** (tableau bidimensionnel).  |
@@ -148,7 +149,7 @@ La propriété `parameters` est un tableau d’objets paramètre. Le tableau sui
 
 L’objet `result` définit le type des informations renvoyées par la fonction. Le tableau suivant répertorie les propriétés de l’objet `result`.
 
-|  Propriété  |  Type de données  |  Obligatoire  |  Description  |
+|  Propriété  |  Type de données  |  Requis  |  Description  |
 |:-----|:-----|:-----|:-----|
 |  `dimensionality`  |  string  |  Non  |  Doit être **scalaire** (valeur autre que de tableau) ou **matrice** (tableau bidimensionnel). |
 |  `type`  |  string  |  Oui  |  Type de données du paramètre. Doit être **boolean**, **number**, **string** ou **any** qui vous permet d’utiliser n’importe lequel des trois types précédents. |

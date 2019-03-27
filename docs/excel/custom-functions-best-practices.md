@@ -3,38 +3,18 @@ ms.date: 01/08/2019
 description: Découvrez les meilleures pratiques pour le développement des fonctions personnalisées dans Excel.
 title: Meilleures pratiques de fonctions personnalisées (aperçu)
 localization_priority: Normal
-ms.openlocfilehash: 24c73ec643df073ac97dc399343a7feb0b0b4168
-ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
+ms.openlocfilehash: ae04169044336f7e42d341c1e904090e55d568af
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "30359260"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871345"
 ---
 # <a name="custom-functions-best-practices-preview"></a>Meilleures pratiques de fonctions personnalisées (aperçu)
 
 Cet article décrit les meilleures pratiques pour le développement des fonctions personnalisées dans Excel.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
-
-## <a name="error-handling"></a>Gestion des erreurs
-
-Lorsque vous créez un complément à l’aide des fonctions personnalisées, veillez à inclure la logique de gestion des erreurs pour prendre en compte les erreurs d’exécution. La gestion des erreurs pour fonctions personnalisées est identique à la[gestion des erreurs pour l’API JavaScript Excel](excel-add-ins-error-handling.md). Dans l’exemple de code suivant, `.catch` gère les erreurs qui se produisent précédemment dans le code.
-
-```js
-function getComment(x) {
-  let url = "https://www.contoso.com/comments/" + x;
-  return fetch(url)
-    .then(function (data) {
-      return data.json();
-    })
-    .then((json) => {
-      return json.body;
-    })
-    .catch(function (error) {
-      throw error;
-    })
-}
-```
 
 ## <a name="troubleshooting"></a>Résolution des problèmes
 
@@ -43,7 +23,6 @@ function getComment(x) {
 2. Votre complément ne se charge pas si une ou plusieurs fonctions personnalisées sont en conflit avec les fonctions personnalisées d'un complément enregistré précédemment. Dans ce cas, vous pouvez supprimer le complément existant ou, si vous rencontrez cette erreur lors du développement d'un complément, vous pouvez spécifier un autre nom d'espace de noms dans votre manifeste.
 
 3. Pour signaler des commentaires à l’équipe Excel des fonctions personnalisées sur cette méthode de résolution des problèmes, envoyez des commentaires à l’équipe. Pour ce faire, sélectionnez **Fichier | Commentaires | Envoyer un smiley mécontent**. Envoyer un smiley mécontent fournira les journaux nécessaires pour comprendre le problème que vous rencontrez.
-
 
 ## <a name="debugging"></a>Débogage
 
@@ -73,7 +52,7 @@ function add(first, second){
   return first + second;
 }
 
-CustomFunctions.associate("ADD", add); 
+CustomFunctions.associate("ADD", add);
 ```
 
 N’oubliez pas les meilleures pratiques suivantes lors de la création de fonctions personnalisées dans votre fichier JavaScript et spécifiez les informations correspondantes dans le fichier de métadonnées JSON.
@@ -133,6 +112,7 @@ N’oubliez pas les meilleures pratiques suivantes lors de la création de fonct
     ```
 
 ## <a name="declaring-optional-parameters"></a>Déclarer des paramètres facultatifs 
+
 Dans Excel pour Windows (version 1812 ou version ultérieure), vous pouvez déclarer des paramètres facultatifs pour vos fonctions personnalisées. Lorsqu’un utilisateur appelle une fonction dans Excel, les paramètres facultatifs apparaissent entre parenthèses. Par exemple, une fonction `FOO` avec un paramètre obligatoire appelé`parameter1` et un autre paramètre facultatif appelé `parameter2` apparaîtra sous la forme `=FOO(parameter1, [parameter2])` dans Excel.
 
 Pour rendre un paramètre facultatif, ajouter `"optional": true` au paramètre dans le fichier de métadonnées JSON qui définit la fonction. L’exemple suivant montre comment cela peut se présenter pour la fonction `=ADD(first, second, [third])`. Vous pouvez remarquer que le paramètre facultatif `[third]` suit deux paramètres requis. Les paramètres obligatoires apparaissent en premier dans l’interface utilisateur formule d’Excel.

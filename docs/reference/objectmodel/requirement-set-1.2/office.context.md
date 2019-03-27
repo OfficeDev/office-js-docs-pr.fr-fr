@@ -1,14 +1,14 @@
 ---
 title: Office.context-ensemble de conditions requises 1.2
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 8e8d83500e1cb9de730f6a7bac75c3bcc0012b4e
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: 8c0c84d4c763e125992b06abfb33985085a56210
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30068132"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870302"
 ---
 # <a name="context"></a>context
 
@@ -22,7 +22,7 @@ L’espace de noms Office.context fournit des interfaces partagées qui sont uti
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ### <a name="namespaces"></a>Espaces de noms
 
@@ -38,14 +38,14 @@ La valeur `displayLanguage` reflète le paramètre **Langue d’affichage** actu
 
 ##### <a name="type"></a>Type
 
-*   Chaîne
+*   String
 
 ##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 
@@ -83,5 +83,5 @@ L’objet `RoamingSettings` vous permet de stocker et d’accéder aux données 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restreinte|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restreinte|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|

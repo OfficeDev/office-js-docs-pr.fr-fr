@@ -1,13 +1,14 @@
 ---
 title: Élément Override dans le fichier manifest
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: d1d2400312f12116b1ac5f4010135541e783dcc7
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 020ae490dacbb9b8c493dc022c23d0ebf311a1b9
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432864"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870057"
 ---
 # <a name="override-element"></a>Élément Override
 
@@ -40,10 +41,10 @@ Fournit une manière de spécifier la valeur d’un paramètre pour d’autres p
 
 |**Attribut**|**Type**|**Obligatoire**|**Description**|
 |:-----|:-----|:-----|:-----|
-|Locale|string|obligatoire|Spécifie le nom de culture des paramètres régionaux pour ce remplacement au format de balise de langue BCP 47, comme `"en-US"`.|
+|Paramètres régionaux|string|obligatoire|Spécifie le nom de culture des paramètres régionaux pour ce remplacement au format de balise de langue BCP 47, comme `"en-US"`.|
 |Valeur|string|obligatoire|Spécifie la valeur du paramètre exprimée pour les paramètres régionaux spécifiés.|
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Localisation des compléments Office](https://docs.microsoft.com/office/dev/add-ins/develop/localization)
+- [Localisation des compléments Office](/office/dev/add-ins/develop/localization)
     

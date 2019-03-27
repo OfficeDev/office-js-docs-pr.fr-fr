@@ -1,13 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook 1.6
 description: ''
-ms.date: 10/11/2018
-ms.openlocfilehash: e780cff1a4cfe0751fccc9192784d143ab9c483f
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 0e1f920c259ca1ef8a137bab07132b015d9c75d2
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433681"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871325"
 ---
 # <a name="outlook-add-in-api-requirement-set-16"></a>Ensemble de conditions requises de l’API du complément Outlook 1.6
 
@@ -26,13 +27,13 @@ L’ensemble de conditions requises de la version 1.6 comprend toutes les fonct
 
 ### <a name="change-log"></a>Journal des modifications
 
-- [Office.context.mailbox.item.getSelectedEntities](office.context.mailbox.item.md#getselectedentities--entitiesjavascriptapioutlook16officeentities) ajouté: ajout d’une fonction qui obtient les entités figurant dans une correspondance en surbrillance sélectionnée par un utilisateur. Les correspondances en surbrillance s’appliquent aux compléments contextuels.
+- [Office.context.mailbox.item.getSelectedEntities](office.context.mailbox.item.md#getselectedentities--entities) ajouté: ajout d’une fonction qui obtient les entités figurant dans une correspondance en surbrillance sélectionnée par un utilisateur. Les correspondances en surbrillance s’appliquent aux compléments contextuels.
 - [Office.context.mailbox.item.getSelectedRegExMatches](office.context.mailbox.item.md#getselectedregexmatches--object) ajouté: ajout d’une fonction qui renvoie les valeurs de chaîne dans une correspondance en surbrillance qui correspondent aux expressions régulières définies dans le fichier manifeste XML. Les correspondances en surbrillance s’appliquent aux compléments contextuels.
 - [Office.context.mailbox.displayNewMessageForm](office.context.mailbox.md#displaynewmessageformparameters)-Ajout d’une nouvelle fonction qui ouvre un nouveau formulaire de message.
 - [Office.context.mailbox.userProfile.accountType](office.context.mailbox.userprofile.md#accounttype-string) ajouté: ajout d’un nouveau membre dans le profil d’utilisateur qui indique le type de compte d’utilisateur.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Compléments Outlook](https://docs.microsoft.com/outlook/add-ins/)
+- [Compléments Outlook](/outlook/add-ins/)
 - [Exemples de code pour les compléments Outlook](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [Prise en main](https://docs.microsoft.com/outlook/add-ins/quick-start)
+- [Prise en main](/outlook/add-ins/quick-start)

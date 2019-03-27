@@ -1,13 +1,14 @@
 ---
 title: Utilisation du mouvement dans les compléments Office
 description: ''
-ms.date: 03/23/2018
-ms.openlocfilehash: 0003f7c52da190852dbd13ad58be26fa6e86911d
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: d3be2454b36fe1003c0697f0bca3c29d743e5330
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432962"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871534"
 ---
 # <a name="using-motion-in-office-add-ins"></a>Utilisation du mouvement dans les compléments Office
 
@@ -22,8 +23,6 @@ Le mouvement doit avoir un objectif qui transmet une valeur supplémentaire à l
 
 Les éléments standard utilisés dans un complément peuvent intégrer du mouvement permettant de se concentrer sur l’utilisateur, d’afficher les relations entre les éléments et de valider les actions de l’utilisateur. Chorégraphiez les éléments pour renforcer la hiérarchie et les modèles mentaux.
 
-
-
 ### <a name="best-practices"></a>Meilleures pratiques
 
 |À faire|À ne pas faire|
@@ -33,20 +32,18 @@ Les éléments standard utilisés dans un complément peuvent intégrer du mouve
 
 ![GIF indiquant l’ouverture d’un panneau avec des éléments qui présentent peu de mouvements en regard d’un GIF indiquant l’ouverture d’un panneau avec un grand nombre d’éléments en mouvement.](../images/add-in-motion-purpose.gif)
 
-
-
 ## <a name="use-expected-motions"></a>Utiliser des mouvements attendus
+
 Nous vous recommandons d’utiliser la [structure de l’interface utilisateur Office](https://developer.microsoft.com/fabric) (Office UI Fabric) pour créer une connexion visuelle avec la plateforme Office et nous encourageons également l’utilisation d’[animations de la structure Fabric](https://developer.microsoft.com/fabric#/styles/animations) pour créer des mouvements qui s’alignent sur le langage de mouvement Fabric. 
 
 Elle permet l’intégration en toute transparence dans Office. Elle vous aide à créer des expériences davantage ressenties qu’observées. Les classes CSS d’animation fournissent des informations de direction, d’entrée/sortie et de durée qui renforcent les modèles mentaux d’Office et offrent aux clients la possibilité d’apprendre à interagir avec votre complément.
 
 ### <a name="best-practices"></a>Meilleures pratiques
 
-
 |À faire|À ne pas faire|
 |:-----|:-----|
-|Utilisez un mouvement qui s’aligne sur les comportements dans la structure Fabric.| Ne créez pas de mouvements qui interfèrent ou entrent en conflit avec les modèles courants de mouvement dans Office. 
-|Veillez à ce que le mouvement soit appliqué de manière cohérente entre les différents éléments.| N’utilisez pas de mouvements différents pour animer le même composant ou le même objet.|
+|Utilisez un mouvement qui s’aligne sur les comportements dans la structure Fabric.| Ne créez pas de mouvements qui interfèrent ou entrent en conflit avec les modèles courants de mouvement dans Office.
+|Assurez-vous qu'il existe une application cohérente de motion sur des éléments similaires.| N’utilisez pas de mouvements différents pour animer le même composant ou le même objet.|
 |Assurez la cohérence de la direction dans l’animation. Par exemple, un panneau qui s’ouvre depuis le côté droit doit fermer vers le côté droit.|N’animez pas un élément en utilisant plusieurs directions.
 
 ![GIF indiquant l’ouverture d’une fenêtre modale d’une manière attendue en regard d’un GIF indiquant l’ouverture d’une fenêtre modale d’une manière inattendue](../images/add-in-motion-expected.gif)
@@ -60,12 +57,11 @@ Prenez en compte la taille de la zone de dessin HTML (volet des tâches, boîte 
 |À faire|À ne pas faire|
 |:-----|:-----|
 | Utilisez les [durées recommandées de mouvement](https://developer.microsoft.com/fabric#/styles/animations). | N’utilisez pas trop d’animations. Évitez de créer des expériences qui enjolivent seulement l’interface utilisateur et détournent l’attention de vos clients.
-| Suivez [les courbes d’accélération recommandées](https://docs.microsoft.com/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion).  |Ne mettez pas en mouvement les éléments de manière saccadée ou décousue. Évitez les anticipations, les rebonds, les élastiques ou autres effets qui émulent la physique du monde naturel.|
+| Suivez [les courbes d’accélération recommandées](/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion).  |Ne mettez pas en mouvement les éléments de manière saccadée ou décousue. Évitez les anticipations, les rebonds, les élastiques ou autres effets qui émulent la physique du monde naturel.|
 
 ![GIF affichant le chargement de mosaïques avec un fondu léger en regard d’un GIF affichant le chargement de mosaïques avec un effet de rebond](../images/add-in-motion-character.gif)
 
 ## <a name="see-also"></a>Voir aussi
 
 * [Recommandations sur l’animation dans la structure Fabric](https://developer.microsoft.com/fabric#/styles/animations)
-* [Mouvement pour les applications de la plateforme Windows universelle](https://docs.microsoft.com/windows/uwp/design/motion)
-
+* [Mouvement pour les applications de la plateforme Windows universelle](/windows/uwp/design/motion)

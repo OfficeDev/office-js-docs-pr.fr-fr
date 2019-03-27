@@ -1,13 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook 1.3
 description: ''
-ms.date: 10/11/2018
-ms.openlocfilehash: c34be8f30a2c674035e5ab0ca223f630d9bb5e5a
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 276096870b128896e987bcb303b4cccdb77e0e50
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432626"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871275"
 ---
 # <a name="outlook-add-in-api-requirement-set-13"></a>Ensemble de conditions requises de l’API du complément Outlook 1.3
 
@@ -20,7 +21,7 @@ Le sous-ensemble de l’API pour le complément Outlook de l’interface API Ja
 
 L’ensemble de conditions requises de la version 1.3 comprend toutes les fonctionnalités de l’[ensemble de conditions requises de la version 1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md). Les fonctionnalités suivantes ont été ajoutées :
 
-- Prise en charge des [commandes de complément](https://docs.microsoft.com/outlook/add-ins/add-in-commands-for-outlook).
+- Prise en charge des [commandes de complément](/outlook/add-ins/add-in-commands-for-outlook).
 - Possibilité d’enregistrer ou de fermer un élément en cours de composition.
 - Amélioration de l’objet [Body](/javascript/api/outlook_1_3/office.body) pour autoriser les compléments à obtenir ou à définir la totalité du corps du message.
 - Nouvelles méthodes de conversion pour convertir les ID aux formats EWS et REST.
@@ -34,7 +35,7 @@ L’ensemble de conditions requises de la version 1.3 comprend toutes les fonct
 - Ajout de l’objet [Event](/javascript/api/office/office.addincommands.event) : transmis comme paramètre aux fonctions de commande sans IU dans un complément Outlook. Utilisé pour signaler la fin du traitement de l’événement.
 - Ajout de la méthode [Office.context.mailbox.item.close](office.context.mailbox.item.md#close) : Ferme l’élément en cours qui est composé.
 - Ajout de la méthode [Office.context.mailbox.item.saveAsync](office.context.mailbox.item.md#saveasyncoptions-callback) : Enregistre un élément de manière asynchrone.
-- Ajout de l’objet [Office.context.mailbox.item.notificationMessages](office.context.mailbox.item.md#notificationmessages-notificationmessagesjavascriptapioutlook13officenotificationmessages) : Obtient les messages de notification pour un élément.
+- Ajout de l’objet [Office.context.mailbox.item.notificationMessages](office.context.mailbox.item.md#notificationmessages-notificationmessages) : Obtient les messages de notification pour un élément.
 - Ajout de la méthode [Office.context.mailbox.convertToEwsId](office.context.mailbox.md#converttoewsiditemid-restversion--string) : Convertit un ID d’élément mis en forme pour REST au format EWS.
 - Ajout de la méthode [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string) : Convertit un ID d’élément mis en forme pour EWS au format REST.
 - Ajout de l’énumération [Office.MailboxEnums.ItemNotificationMessageType](/javascript/api/outlook_1_3/office.mailboxenums.itemnotificationmessagetype) : Spécifie le type de message de notification pour un rendez-vous ou un message.
@@ -44,6 +45,6 @@ L’ensemble de conditions requises de la version 1.3 comprend toutes les fonct
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Compléments Outlook](https://docs.microsoft.com/outlook/add-ins/)
+- [Compléments Outlook](/outlook/add-ins/)
 - [Exemples de code pour les compléments Outlook](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [Prise en main](https://docs.microsoft.com/outlook/add-ins/quick-start)
+- [Prise en main](/outlook/add-ins/quick-start)

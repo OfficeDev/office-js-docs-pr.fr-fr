@@ -1,13 +1,14 @@
 ---
 title: Tests d’utilisation pour les compléments Office
 description: ''
-ms.date: 01/23/2018
-ms.openlocfilehash: 38f0416d56f3fc43c6d5f68df9b5c84586b03c8c
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 9c5536e74133a51fb73dbfc609e252968ee3bc55
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270928"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870638"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Tests d’utilisation pour les compléments Office
 
@@ -24,7 +25,7 @@ Ces services de test vous aident à simplifier la création d’un plan de test 
 Vous avez seulement besoin de cinq participants pour révéler la plupart des problèmes d’utilisation dans votre conception. Incorporez régulièrement des petits tests dans votre cycle de développement pour vous assurer que votre produit est centré sur l’utilisateur.
 
 > [!NOTE]
-> Nous vous recommandons de tester l’utilisation de votre complément sur plusieurs plateformes. Pour [publier votre complément dans AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store), il doit fonctionner sur toutes les [plateformes qui prennent en charge les méthodes que vous définissez](../overview/office-add-in-availability.md).
+> Nous vous recommandons de tester l’utilisation de votre complément sur plusieurs plateformes. Pour [publier votre complément dans AppSource](/office/dev/store/submit-to-the-office-store), il doit fonctionner sur toutes les [plateformes qui prennent en charge les méthodes que vous définissez](../overview/office-add-in-availability.md).
 
 ## <a name="1---sign-up-for-a-testing-service"></a>1.   Inscrivez-vous à un service de test
 
@@ -36,19 +37,19 @@ Les questions de recherche définissent les objectifs de votre recherche et guid
  
 Voici quelques exemples de questions de recherche :
   
-**Spécifiques**  
+**Spécifiques**
 
  - Les utilisateurs remarquent-ils le lien indiquant « version d’évaluation gratuite » sur la page d’accueil ?
  - Lorsque les utilisateurs insèrent du contenu dans leur document à partir du complément, savent-ils où il est inséré dans le document ?
 
-**Larges**  
+**Larges**
 
  - Quelles sont les difficultés majeurs pour l’utilisateur dans notre complément ?
  - Les utilisateurs comprennent-ils la signification des icônes dans notre barre de commandes avant de cliquer dessus ?
  - Le menu des paramètres est-il facilement accessible pour les utilisateurs ?
 
 Il est important d’obtenir des données sur l’intégralité du parcours des utilisateurs, de la découverte de votre complément jusqu’à son installation et son utilisation. Envisagez de rédiger des questions de recherche qui abordent les aspects suivants de l’expérience utilisateur dans le complément :
- 
+
  - Recherche de votre complément dans AppSource
  - Décision d’installation de votre complément
  - Première exécution
@@ -57,16 +58,16 @@ Il est important d’obtenir des données sur l’intégralité du parcours des 
  - Interaction du complément avec l’espace dédié aux documents de l’application Office
  - Niveau de contrôle de l’utilisateur sur les flux d’insertion de contenu
 
-Pour plus d’informations, reportez-vous à la rubrique relative à la [collecte des réponses factuelles et des données subjectives](https://help.usertesting.com/hc/fr-FR/articles/115003378572-Writing-effective-questions).
- 
+Pour plus d’informations, reportez-vous à la rubrique relative à la [collecte des réponses factuelles et des données subjectives](https://help.usertesting.com/hc/en-us/articles/115003378572-Writing-effective-questions).
+
 ## <a name="3-identify-participants-to-target"></a>3. Identifiez les participants à cibler
- 
+
 Les services de test à distance peuvent permettre de contrôler de nombreuses caractéristiques de vos participants aux tests. Réfléchissez soigneusement aux types d’utilisateurs que vous souhaitez cibler. Lors des premières étapes de collecte de données, il peut être préférable de recruter un large éventail de participants différents pour identifier les problèmes d’utilisation plus évidents. Plus tard, vous pourrez décider de cibler des groupes comme les utilisateurs Office avancés, des professions en particulier ou des tranches d’âge spécifiques.
- 
+
 ## <a name="4-create-the-participant-screener"></a>4. Créez le filtre de participants
- 
+
 Le filtre est l’ensemble de questions et d’exigences que vous allez présenter aux participants potentiels des tests afin de les filtrer. N’oubliez pas que les participants pour les services tels que UserTesting.com sont financièrement motivés pour être sélectionnés pour votre test. Il est conseillé d’inclure des questions piège dans votre filtre si vous souhaitez exclure certains utilisateurs des tests. 
- 
+
 Par exemple, si vous recherchez des participants qui connaissent GitHub, pour exclure les utilisateurs qui mentent, incluez des réponses qui ne vous intéressent pas dans la liste des réponses possibles.
 
 **Parmi les référentiels de code source suivants, lesquels connaissez-vous ?**  
@@ -76,7 +77,7 @@ Par exemple, si vous recherchez des participants qui connaissent GitHub, pour ex
  d. BitBucket  [*Peut sélectionner cette réponse*]  
  e. CloudForge  [*Peut sélectionner cette réponse*]  
 
-Si vous envisagez de tester une version déjà en ligne de votre complément, les questions suivantes peuvent permettre de sélectionner les utilisateurs qui seront en mesure de le faire. 
+Si vous envisagez de tester une version déjà en ligne de votre complément, les questions suivantes peuvent permettre de sélectionner les utilisateurs qui seront en mesure de le faire.
 
 **Pour ce test, vous devez avoir la dernière version de Microsoft PowerPoint. Avez-vous la dernière version de PowerPoint ?**  
  a. Oui [*Doit sélectionner cette réponse*]  
@@ -87,36 +88,36 @@ Si vous envisagez de tester une version déjà en ligne de votre complément, le
  a. Oui [*Doit sélectionner cette réponse*]  
  b. Non [*Réponse disqualifiante*]  
 
-Pour plus d’informations, consultez les [meilleures pratiques en matière de questions de filtrage](https://help.usertesting.com/hc/fr-FR/articles/115003370731-Screener-question-best-practices).
- 
+Pour plus d’informations, consultez les [meilleures pratiques en matière de questions de filtrage](https://help.usertesting.com/hc/en-us/articles/115003370731-Screener-question-best-practices).
+
 ## <a name="5-create-tasks-and-questions-for-participants"></a>5. Créez des tâches et des questions pour les participants
- 
+
 Essayez de classer ce que vous voulez tester par ordre de priorité afin de limiter le nombre de tâches et de questions pour le participant. Certains services paient les participants uniquement pour une certaine durée ; veillez donc à ne pas dépasser ce temps.
 
 Autant que possible, essayez d’observer les comportements des participants au lieu de les interroger sur leurs comportements. Si vous avez besoin les interroger sur leurs comportements, demandez-leur ce qu’ils ont déjà fait, plutôt que ce qu’ils feraient dans telle ou telle situation. De cette façon, les résultats seront plus fiables.
- 
-La principale difficulté lors des tests sans modérateur consiste à s’assurer que vos participants comprennent vos tâches et vos scénarios. Vos instructions doivent être *claires et concises*. Inévitablement, si vos instructions ne sont pas claires, certains participants ne les comprendront pas. 
 
-Ne supposez jamais que l’utilisateur sera sur l’écran où il est censé être pendant le test. Vous pouvez lui indiquer l’écran sur lequel il doit se trouver au début de la tâche suivante. 
+La principale difficulté lors des tests sans modérateur consiste à s’assurer que vos participants comprennent vos tâches et vos scénarios. Vos instructions doivent être *claires et concises*. Inévitablement, si vos instructions ne sont pas claires, certains participants ne les comprendront pas.
 
-Pour plus d’informations, consultez la section expliquant [comment rédiger des instructions efficaces pour les tâches](https://help.usertesting.com/hc/fr-FR/articles/115003371651-Writing-great-tasks).
+Ne supposez jamais que l’utilisateur sera sur l’écran où il est censé être pendant le test. Vous pouvez lui indiquer l’écran sur lequel il doit se trouver au début de la tâche suivante.
+
+Pour plus d’informations, consultez la section expliquant [comment rédiger des instructions efficaces pour les tâches](https://help.usertesting.com/hc/en-us/articles/115003371651-Writing-great-tasks).
 
 ## <a name="6-create-a-prototype-to-match-the-tasks-and-questions"></a>6. Créez un prototype pour faire correspondre les tâches et les questions
  
-Vous pouvez faire tester votre complément déjà en ligne ou vous pouvez faire tester un prototype. N’oubliez pas que si vous souhaitez tester un complément déjà en ligne, vous devez filtrer les participants pour ne sélectionner que ceux qui ont la dernière version d’Office, qui sont prêts à installer le complément et qui sont prêts à créer un compte (sauf si vous leur fournissez des informations d’identification). Vous devez ensuite vous assurer qu’ils installent correctement votre complément. 
+Vous pouvez faire tester votre complément déjà en ligne ou vous pouvez faire tester un prototype. N’oubliez pas que si vous souhaitez tester un complément déjà en ligne, vous devez filtrer les participants pour ne sélectionner que ceux qui ont la dernière version d’Office, qui sont prêts à installer le complément et qui sont prêts à créer un compte (sauf si vous leur fournissez des informations d’identification). Vous devez ensuite vous assurer qu’ils installent correctement votre complément.
 
 En moyenne, aider un utilisateur à installer un complément prend environ 5 minutes. Voici un exemple d’étapes d’installation claires et concises. Modifiez-les en fonction des caractéristiques propres à votre test.
 
-**Installez le complément (indiquez le nom de votre nom complément ici) pour PowerPoint, en suivant les instructions suivantes :** 
+**Installez le complément (indiquez le nom de votre nom complément ici) pour PowerPoint, en suivant les instructions suivantes :**
 
 1. Ouvrez Microsoft PowerPoint.
-2. Sélectionnez **Nouvelle présentation**.
-3. Accédez à **Insérer > Mes compléments**.
-5. Dans la fenêtre contextuelle, choisissez **Magasin**.
-6. Saisissez (nom du complément) dans la zone de recherche.
-7. Choisissez (nom du complément).
-8. Prenez quelques instants pour examiner la page du magasin et pour vous familiariser avec le complément.
-9. Choisissez **Ajouter** pour installer le complément.
+1. Sélectionnez **Nouvelle présentation**.
+1. Accédez à **Insérer > Mes compléments**.
+1. Dans la fenêtre contextuelle, choisissez **Magasin**.
+1. Saisissez (nom du complément) dans la zone de recherche.
+1. Choisissez (nom du complément).
+1. Prenez quelques instants pour examiner la page du magasin et pour vous familiariser avec le complément.
+1. Choisissez **Ajouter** pour installer le complément.
 
 Vous pouvez tester un prototype à n’importe quel niveau d’interaction et de fidélité visuelle. Pour une liaison et une interactivité plus complexes, pensez à utiliser un outil de prototypage tel que [InVision](https://www.invisionapp.com). Si vous souhaitez simplement tester des écrans statiques, vous pouvez héberger les images en ligne et envoyer l’URL correspondante aux participants, ou leur donner un lien vers une présentation PowerPoint en ligne. 
 
@@ -135,10 +136,10 @@ Vous devez maintenant essayer d’interpréter les données que vous avez collec
 Un problème d’utilisation rencontré par un seul participant n’est pas suffisant pour justifier une modification de la conception. Deux ou plusieurs participants rencontrant le même problème suggère que d’autres utilisateurs dans la population globale rencontreront également ce problème.
 
 En règle générale, soyez prudent lorsque vous utilisez vos données pour tirer des conclusions. N’essayez pas d’interpréter les données de sorte qu’elles aillent dans un sens en particulier. Ne tombez pas dans ce piège. Soyez honnête lorsque vous identifiez ce que les données prouvent réellement ou ne prouvent pas, et n’hésitez pas à reconnaître que, parfois, elles ne procurent aucune information exploitable. Gardez l’esprit ouvert. Les comportements des utilisateurs vont souvent à l’encontre des attentes du concepteur.
- 
+
 
 ## <a name="see-also"></a>Voir aussi
- 
+
  - [Réalisation de tests d’utilisation](https://whatpixel.com/howto-conduct-usability-testing/)  
- - [Meilleures pratiques pour les tests d’utilisation](https://help.usertesting.com/hc/fr-FR/articles/115003370231-Best-practices-for-UserTesting)  
+ - [Meilleures pratiques pour les tests d’utilisation](https://help.usertesting.com/hc/en-us/articles/115003370231-Best-practices-for-UserTesting)  
  - [Réduction de la subjectivité](https://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)  

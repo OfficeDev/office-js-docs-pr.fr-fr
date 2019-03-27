@@ -1,13 +1,14 @@
 ---
 title: Codes d’erreur de l’API JavaScript pour Office
 description: ''
-ms.date: 11/27/2018
-ms.openlocfilehash: 1e7d479b9b6f6f8f619f799c34ba18ac83bd3afd
-ms.sourcegitcommit: 3f8eee355579f9234a8e46ae88090342002b4681
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 5e18a82c2536d5f5284588227b1cf767ebd2749e
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "26734020"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871942"
 ---
 # <a name="javascript-api-for-office-error-codes"></a>Codes d’erreur de l’API JavaScript pour Office
 
@@ -21,7 +22,7 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 
 |**Code d’erreur**|**Nom de l’erreur**|**Message de l’erreur**|**Condition**|
 |:-----|:-----|:-----|:-----|
-|1 000|Le type de forçage de type est incorrect|Le type de forçage de type spécifié n’est pas pris en charge.|Le type de forçage de type n’est pas pris en charge dans l’application hôte. (Par exemple, les types de forçage de type OOXML et  HTML ne sont pas pris en charge dans Excel.)|
+|1000|Le type de forçage de type est incorrect|Le type de forçage de type spécifié n’est pas pris en charge.|Le type de forçage de type n’est pas pris en charge dans l’application hôte. (Par exemple, les types de forçage de type OOXML et  HTML ne sont pas pris en charge dans Excel.)|
 |1001|Une erreur s’est produite lors de la lecture des données|La sélection actuelle n’est pas prise en charge.|La sélection actuelle de l’utilisateur n’est pas prise en charge (autrement dit, cela ne correspond pas aux types de forçage de type pris en charge).|
 |1002|Le type de forçage de type est incorrect|Le type de forçage de type spécifié n’est pas compatible avec ce type de liaison.|Le développeur de solutions a fourni une combinaison incompatible de type de forçage de type et de type de liaison.|
 |1003|Une erreur s’est produite lors de la lecture des données|Les valeurs rowCount ou columnCount spécifiées sont incorrectes.|L’utilisateur fournit un nombre de lignes ou de colonnes incorrect.|
@@ -39,10 +40,10 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 |2005|Une erreur s’est produite lors de l’écriture des données|Les valeurs startRow ou startColumn spécifiées sont incorrectes.|L’utilisateur fournit des valeurs startRow ou startCol incorrectes.|
 |2006|Une erreur de format incorrect s’est produite|Le format de l’objet de données spécifié est incorrect.|Le développeur de solutions fournit une chaîne HTML ou OOXML incorrecte, une chaîne HTML au format incorrect ou une chaîne  OOXML incorrecte.|
 |2007|L’objet de données est incorrect|Le type de l’objet de données spécifié n’est pas compatible avec la sélection actuelle.|Le développeur de solutions fournit un objet de données qui n’est pas compatible avec le type de forçage de type spécifié.|
-|2008|Une erreur s’est produite lors de l’écriture des données|TBD|TBD|
+|2008|Une erreur s’est produite lors de l’écriture des données|À déterminer|À déterminer|
 |2009|Une erreur s’est produite lors de l’écriture des données|L’objet de données spécifié est trop volumineux.|L’utilisateur tente de définir des données au-delà des limites de données définies par les compléments hôte.|
 |2010|Une erreur s’est produite lors de l’écriture des données|Les paramètres de coordonnées ne peuvent pas être utilisés avec le type de forçage de type Tableau lorsque le tableau contient des cellules fusionnées.|L’utilisateur tente de définir des données partielles à partir d’un tableau non uniforme (c’est-à-dire un tableau qui contient des cellules fusionnées.)|
-|3 000|Une erreur s’est produite lors de la création de la liaison|Impossible d’effectuer de liaison avec la sélection actuelle.|La sélection de l’utilisateur n’est pas prise en charge pour la liaison. (Par exemple, l’utilisateur sélectionne une image ou un autre objet non pris en charge.)|
+|3000|Une erreur s’est produite lors de la création de la liaison|Impossible d’effectuer de liaison avec la sélection actuelle.|La sélection de l’utilisateur n’est pas prise en charge pour la liaison. (Par exemple, l’utilisateur sélectionne une image ou un autre objet non pris en charge.)|
 |3001|Une erreur s’est produite lors de la création de la liaison|TBD|TBD|
 |3002|Erreur de liaison incorrecte|La liaison spécifiée n’existe pas.|Le développeur tente de créer une liaison avec une liaison non existante ou supprimée.|
 |3003|Une erreur s’est produite lors de la création de la liaison|Les sélections non contiguës ne sont pas prises en charge.|L’utilisateur effectue des sélections multiples.|
@@ -87,7 +88,7 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 |12006|||La boîte de dialogue a été fermée, généralement parce que l’utilisateur choisit le bouton **X**. Erreur signalée dans la boîte de dialogue. Elle déclenche un événement `DialogEventReceived` dans la page hôte.|
 |12007|||Une boîte de dialogue est déjà ouverte à partir de cette fenêtre hôte. Une fenêtre hôte, par exemple un volet Office, ne peut avoir qu’une seule boîte de dialogue ouverte à la fois. Erreur générée par l’appel de `displayDialogAsync`.|
 |12009|||L’utilisateur a choisi d’ignorer la boîte de dialogue. Cette erreur peut se produire dans les versions en ligne d’Office, quand les utilisateurs peuvent choisir d’autoriser ou non un complément à afficher une boîte de dialogue. Erreur générée par l’appel de `displayDialogAsync`.|
-|13000 – 13010|||Reportez-vous à l’article [Causes et gestion des erreurs de getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/troubleshoot-sso-in-office-add-ins#causes-and-handling-of-errors-from-getaccesstokenasync).|
+|13000 – 13010|||Reportez-vous à l’article [Causes et gestion des erreurs de getAccessTokenAsync](/office/dev/add-ins/develop/troubleshoot-sso-in-office-add-ins#causes-and-handling-of-errors-from-getaccesstokenasync).|
 
 ## <a name="binding-creation-error-conditions"></a>Conditions d’erreur de création de liaison
 
@@ -134,5 +135,5 @@ Le tableau suivant résume le comportement de liaison dans Word.
 
 ## <a name="see-also"></a>Voir aussi
    
-- [Cycle de vie du développement des compléments Office](https://docs.microsoft.com/office/dev/add-ins/concepts/add-in-development-lifecycle)
+- [Cycle de vie du développement des compléments Office](/office/dev/add-ins/concepts/add-in-development-lifecycle)
     

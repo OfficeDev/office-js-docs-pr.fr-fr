@@ -1,19 +1,20 @@
 ---
 title: Élément Method dans le fichier manifeste
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: fded84344182bb45597b00a794f18defaa44d3b3
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 19234b35e1faf8a8cc52a9e893fcc720793cadae
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432822"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870421"
 ---
 # <a name="method-element"></a>Method, élément
 
 Spécifie une méthode individuelle de l’API JavaScript pour Office requise pour l’activation de votre complément Office.
 
-**Type de complément :** application de contenu et de volet Office
+**Type de complément :** Application de contenu et de volet Office
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -33,8 +34,8 @@ Spécifie une méthode individuelle de l’API JavaScript pour Office requise po
 
 ## <a name="remarks"></a>Remarques
 
-Les éléments **Methods** et **Method** ne sont pas pris en charge par les compléments de messagerie. Pour plus d’informations sur les ensembles de spécifications, voir l’article [Versions Office et jeux de conditions requises](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Les éléments **Methods** et **Method** ne sont pas pris en charge par les compléments de messagerie. Pour plus d’informations sur les ensembles de spécifications, voir l’article [Versions Office et jeux de conditions requises](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
 > [!IMPORTANT] 
-> Étant donné qu’il n’existe aucun moyen de spécifier la version minimale requise pour les différentes méthodes, afin de vous assurer qu’une méthode est disponible lors de l’exécution, vous devez également utiliser une instruction **if** lorsque vous appelez cette méthode dans le script de votre complément. Pour plus d’informations sur la procédure à suivre, consultez l’article décrivant l’[API JavaScript pour Office](https://docs.microsoft.com/office/dev/add-ins/develop/understanding-the-javascript-api-for-office).
+> Étant donné qu’il n’existe aucun moyen de spécifier la version minimale requise pour les différentes méthodes, afin de vous assurer qu’une méthode est disponible lors de l’exécution, vous devez également utiliser une instruction **if** lorsque vous appelez cette méthode dans le script de votre complément. Pour plus d’informations sur la procédure à suivre, consultez l’article décrivant l’[API JavaScript pour Office](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office).
 

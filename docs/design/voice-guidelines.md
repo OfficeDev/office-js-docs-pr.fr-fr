@@ -1,13 +1,14 @@
 ---
 title: Instructions relatives au ton pour les compléments Office
 description: ''
-ms.date: 06/27/2018
-ms.openlocfilehash: afd8d63095661634052c51ea528502368023140d
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 2982c8a09ba1f2f1265681dfb5850c3a324d704c
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433284"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871765"
 ---
 # <a name="voice-guidelines"></a>Conseils sur le ton
 
@@ -16,7 +17,7 @@ Lorsque vous concevez vos compléments Office, tenez compte du ton que vous util
 Pour aligner votre texte avec les principes de la voix Office :
 
 - **Utilisez un style naturel.** Écrivez de la façon dont vous parlez. Évitez l’utilisation de jargon et de mots ou phrases trop techniques. Utilisez des termes que vos utilisateurs connaissent.
-- **Utilisez un langage simple et direct.** Utilisez la voix active, ainsi que des phrases et des mots courts. 
+- **Utilisez un langage simple et direct.** Utilisez la voix active, ainsi que des phrases et des mots courts.
 - **Soyez cohérent.** Utilisez toujours les mêmes mots pour faire référence à des concepts.
 - **Établissez un lien avec l’utilisateur.** Adressez-vous directement à l’utilisateur. Évitez d’utiliser la troisième personne. Utilisez des impératifs pour les tâches à effectuer.
 - **Aidez l’utilisateur et soyez compréhensif.** Votre texte doit être positif, poli et encourageant. Mettez l’accent sur ce que les utilisateurs peuvent accomplir, et non sur ce qu’ils ne peuvent pas faire.
@@ -24,7 +25,7 @@ Pour aligner votre texte avec les principes de la voix Office :
 
 ## <a name="see-also"></a>Voir aussi
 
-- Instructions relatives à l’[écriture pour toutes les capacités](https://docs.microsoft.com/style-guide/accessibility/writing-all-abilities)
-- [10 conseils concernant le style et le ton de Microsoft](https://docs.microsoft.com/style-guide/top-10-tips-style-voice)
-- Instructions concernant le [choix des mots](https://docs.microsoft.com/style-guide/word-choice/)
--  [Stratégies de validation](https://docs.microsoft.com/office/dev/store/validation-policies) pour les compléments Office
+- Instructions relatives à l’[écriture pour toutes les capacités](/style-guide/accessibility/writing-all-abilities)
+- [10 conseils concernant le style et le ton de Microsoft](/style-guide/top-10-tips-style-voice)
+- Instructions concernant le [choix des mots](/style-guide/word-choice/)
+- [Stratégies de validation](/office/dev/store/validation-policies) pour les compléments Office

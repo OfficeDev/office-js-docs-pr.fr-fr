@@ -1,13 +1,14 @@
 ---
 title: Élément Sets dans le fichier manifeste
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: b7e78ae05f8409f38c885a1d6a328347d00d0df1
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 13777e54ec6bd2d97fa35609ebe194ed85ffa1b8
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433655"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871772"
 ---
 # <a name="sets-element"></a>Sets, élément
 
@@ -39,7 +40,7 @@ Spécifie le sous-ensemble minimal de l’API JavaScript pour Office nécessaire
 
 ## <a name="remarks"></a>Remarques
 
-Pour plus d’informations concernant les ensembles de conditions requises, voir [Versions d’Office et ensembles de conditions requises](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Pour plus d’informations concernant les ensembles de conditions requises, voir [Versions d’Office et ensembles de conditions requises](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
-Pour plus d'informations sur l’attribut **MinVersion** de l’élément **Set** et sur l’attribut **DefaultMinVersion** de l’élément **Sets**, voir l’article relatif à la [définition de l’élément Requirements dans le manifeste](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements#set-the-requirements-element-in-the-manifest).
+Pour plus d'informations sur l’attribut **MinVersion** de l’élément **Set** et sur l’attribut **DefaultMinVersion** de l’élément **Sets**, voir l’article relatif à la [définition de l’élément Requirements dans le manifeste](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements#set-the-requirements-element-in-the-manifest).
 

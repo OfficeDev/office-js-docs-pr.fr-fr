@@ -1,14 +1,14 @@
 ---
 title: Élément Rule dans le fichier manifeste
 description: ''
-ms.date: 12/27/2018
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 38e724e6962c48efd0902be315c49ebb4cf6c798
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 07037c43c111f735a7354a048066e4c4a88f7637
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388499"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871513"
 ---
 # <a name="rule-element"></a>Élément Rule
 
@@ -43,9 +43,9 @@ Définit une règle qui donne la valeur true si l’élément sélectionné est 
 
 | Attribut | Obligatoire | Description |
 |:-----|:-----|:-----|
-| **ItemType** | Oui | Spécifie le type d’élément avec lequel établir une correspondance. Peut être `Message` ou `Appointment`. Le type d’élément `Message` inclue les e-mails, les demandes de réunion, les réponses à une demande de réunion et les annulations de réunion. |
+| **ItemType** | Oui | Spécifie le type d’élément à mettre en correspondance. Peut être `Message` ou `Appointment`. Le type d’élément `Message` inclut e-mails, demandes de réunion, réponses à une demande de réunion et annulations de réunion. |
 | **FormType** | Non (dans [ExtensionPoint](extensionpoint.md)), Oui (dans [App_office](officeapp.md)) | Spécifie si l’application doit apparaître dans le formulaire de lecture ou de modification pour l’élément. Peut correspondre à l’une des valeurs suivantes : `Read`, `Edit`, `ReadOrEdit`. Si spécifiée dans un `Rule` dans un `ExtensionPoint`, cette valeur DOIT être `Read`. |
-| **ItemClass** | Non | Spécifie la classe de message personnalisé à mettre en correspondance. Pour plus d’informations, voir l’article relatif à l’[activation d’un complément de messagerie dans Outlook pour une classe de message spécifique](https://docs.microsoft.com/outlook/add-ins/activation-rules). |
+| **ItemClass** | Non | Spécifie la classe de message personnalisé à mettre en correspondance. Pour plus d’informations, voir l’article relatif à l’[activation d’un complément de messagerie dans Outlook pour une classe de message spécifique](/outlook/add-ins/activation-rules). |
 | **IncludeSubClasses** | Non | Spécifie si la règle doit donner la valeur true si l’élément est une sous-classe de la classe de message spécifiée ; par défaut, la valeur est `false`. |
 
 ### <a name="example"></a>Exemple
@@ -72,7 +72,7 @@ Définit une règle qui donne la valeur true si l’élément contient dans son 
 
 | Attribut | Obligatoire | Description |
 |:-----|:-----|:-----|
-| **EntityType** | Oui | Spécifie le type d’entité à rechercher pour que la règle donne la valeur True. Il peut s’agir de l’un des éléments suivants : `MeetingSuggestion`, `TaskSuggestion`, `Address`, `Url`, `PhoneNumber`, `EmailAddress` ou `Contact`. |
+| **EntityType** | Oui | Spécifie le type d’entité à rechercher pour que la règle donne la valeur true. Peut correspondre à l’une des valeurs suivantes : `MeetingSuggestion`, `TaskSuggestion`, `Address`, `Url`, `PhoneNumber`, `EmailAddress` ou `Contact`. |
 | **RegExFilter** | Non | Spécifie une expression régulière à exécuter par rapport à cette entité à des fins d’activation. |
 | **FilterName** | Non | Spécifie le nom du filtre d’expression régulière, afin qu’il soit possible par la suite de s’y référer dans le code de votre complément. |
 | **IgnoreCase** | Non | Spécifie s’il faut ignorer la casse pour la correspondance avec l’expression régulière spécifiée par l’attribut **RegExFilter**. |
@@ -127,6 +127,6 @@ Définit une collection de règles et l’opérateur logique à utiliser lors de
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Règles d’activation pour les compléments Outlook](https://docs.microsoft.com/outlook/add-ins/activation-rules)
-- [Mettre en correspondance des chaînes dans un élément Outlook en tant qu’entités connues](https://docs.microsoft.com/outlook/add-ins/match-strings-in-an-item-as-well-known-entities)    
-- [Utiliser des règles d’activation d’expression régulière pour afficher un complément Outlook](https://docs.microsoft.com/outlook/add-ins/use-regular-expressions-to-show-an-outlook-add-in)
+- [Règles d’activation pour les compléments Outlook](/outlook/add-ins/activation-rules)
+- [Mettre en correspondance des chaînes dans un élément Outlook en tant qu’entités connues](/outlook/add-ins/match-strings-in-an-item-as-well-known-entities)    
+- [Utiliser des règles d’activation d’expression régulière pour afficher un complément Outlook](/outlook/add-ins/use-regular-expressions-to-show-an-outlook-add-in)

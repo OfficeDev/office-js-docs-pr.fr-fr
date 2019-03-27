@@ -1,14 +1,14 @@
 ---
-title: Office.context-ensemble de conditions requises 1.5
+title: Office. Context-ensemble de conditions requises 1,5
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 12c9c83e8bd879284b4ba2adbdaff123c7ea78b1
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: 4c923010aee7ae62eaef28b64b72140328a1e510
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30067908"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871268"
 ---
 # <a name="context"></a>context
 
@@ -21,19 +21,19 @@ L’espace de noms Office.context fournit des interfaces partagées qui sont uti
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ##### <a name="members-and-methods"></a>Membres et méthodes
 
 | Membre | Type |
 |--------|------|
-| [displayLanguage](#displaylanguage-string) | Membre |
-| [officeTheme](#officetheme-object) | Membre |
-| [roamingSettings](#roamingsettings-roamingsettingsjavascriptapioutlook15officeroamingsettings) | Membre |
+| [displayLanguage](#displaylanguage-string) | Member |
+| [officeTheme](#officetheme-object) | Member |
+| [roamingSettings](#roamingsettings-roamingsettings) | Membre |
 
 ### <a name="namespaces"></a>Espaces de noms
 
-[mailbox](office.context.mailbox.md)- Permet d’accéder au modèle d’objet de complément Outlook pour Microsoft Outlook et Microsoft Outlook sur le web.
+[Mailbox](office.context.mailbox.md): permet d'accéder au modèle d'objet du complément Outlook pour Microsoft Outlook et Microsoft Outlook sur le Web.
 
 ### <a name="members"></a>Membres
 
@@ -45,14 +45,14 @@ La valeur `displayLanguage` reflète le paramètre **Langue d’affichage** actu
 
 ##### <a name="type"></a>Type
 
-*   Chaîne
+*   String
 
 ##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 
@@ -93,7 +93,7 @@ Permet d’accéder aux propriétés pour les couleurs du thème Office.
 |Nom| Type| Description|
 |---|---|---|
 |`bodyBackgroundColor`| Chaîne|Obtient la couleur d’arrière-plan du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
-|`bodyForegroundColor`| String|Obtient la couleur de premier plan du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
+|`bodyForegroundColor`| Chaîne|Obtient la couleur de premier plan du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
 |`controlBackgroundColor`| String|Obtient la couleur d’arrière-plan du contrôle du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
 |`controlForegroundColor`| String|Obtient la couleur du contrôle du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
 
@@ -102,7 +102,7 @@ Permet d’accéder aux propriétés pour les couleurs du thème Office.
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 
@@ -134,5 +134,5 @@ L’objet `RoamingSettings` vous permet de stocker et d’accéder aux données 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restreinte|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restreinte|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|

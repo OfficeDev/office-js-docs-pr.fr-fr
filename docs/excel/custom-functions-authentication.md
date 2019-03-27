@@ -1,13 +1,13 @@
 ---
-ms.date: 03/06/2019
+ms.date: 03/19/2019
 description: Authentifier les utilisateurs à l'aide de fonctions personnalisées dans Excel.
 title: Authentification pour les fonctions personnalisées
-ms.openlocfilehash: 4358d9f570ef8b31db98b1886c01ff4a89a6b1be
-ms.sourcegitcommit: 8e7b7b0cfb68b91a3a95585d094cf5f5ffd00178
+ms.openlocfilehash: 7db46e40758ea0282a2fd7c4d40739304a874e76
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "30512852"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871492"
 ---
 # <a name="authentication"></a>Authentification
 
@@ -15,7 +15,7 @@ Dans certains scénarios, votre fonction personnalisée doit authentifier l'util
   
 ## <a name="asyncstorage-object"></a>Objet Dansasyncstorage
 
-Le runtime des fonctions personnalisées ne `localStorage` dispose pas d'un objet disponible dans la fenêtre globale, dans laquelle vous pouvez généralement stocker des données. Au lieu de cela, vous devez partager des données entre des fonctions personnalisées et des volets Office à l'aide de [OfficeRuntime. dansasyncstorage](https://docs.microsoft.com/javascript/api/office-runtime/officeruntime.asyncstorage) pour définir et obtenir des données.
+Le runtime des fonctions personnalisées ne `localStorage` dispose pas d'un objet disponible dans la fenêtre globale, dans laquelle vous pouvez généralement stocker des données. Au lieu de cela, vous devez partager des données entre des fonctions personnalisées et des volets Office à l'aide de [OfficeRuntime. dansasyncstorage](/javascript/api/office-runtime/officeruntime.asyncstorage) pour définir et obtenir des données.
 
 Par ailleurs, il est intéressant d'utiliser `AsyncStorage`; Il utilise un environnement de bac à sable (sandbox) sécurisé afin que les autres compléments ne puissent pas accéder à vos données.
 
@@ -30,7 +30,7 @@ Si un jeton n'existe pas, vous devez utiliser l'API de boîte de dialogue pour d
 > [!NOTE]
 > Le runtime des fonctions personnalisées utilise un objet Dialog légèrement différent de l'objet Dialog dans le moteur d'exécution du moteur de navigateur utilisé par les volets des tâches. Ils sont tous deux appelés «API de dialogue», mais utilisent `Officeruntime.Dialog` pour authentifier les utilisateurs dans le runtime des fonctions personnalisées.
 
-Pour plus d'informations sur l'utilisation `OfficeRuntime.Dialog`du, voir [Custom Functions Runtime](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/custom-functions-runtime?view=office-js#displaying-a-dialog-box).
+Pour plus d'informations sur l'utilisation `OfficeRuntime.Dialog`du, voir [Custom Functions Runtime](/office/dev/add-ins/excel/custom-functions-runtime?view=office-js#displaying-a-dialog-box).
 
 Lors de l'identification de l'ensemble du processus d'authentification, il peut s'avérer utile de considérer le volet des tâches et les éléments de l'interface utilisateur de votre complément, ainsi que les fonctions personnalisées de votre complément en tant qu'entités distinctes pouvant communiquer `AsyncStorage`les uns avec les autres.
 
@@ -42,7 +42,7 @@ Le diagramme suivant décrit ce processus de base. Notez que la ligne pointillé
 4. Votre fonction personnalisée définit ensuite le jeton d'accès sur `AsyncStorage`le.
 5. Le volet Office de votre complément accède au jeton à partir de `AsyncStorage`.
 
-![Diagramme de fonctions personnalisées, d'OfficeRuntime et de volets de tâches qui fonctionnent ensemble.] (../images/Authdiagram.png "Diagramme d'authentification.")
+![Diagramme de la fonction personnalisée à l'aide de l'API de boîte de dialogue pour obtenir le jeton d'accès, puis partager le jeton avec le volet de tâches via l'API dansasyncstorage.] (../images/authentication-diagram.png "Diagramme d'authentification.")
 
 ## <a name="storing-the-token"></a>Stockage du jeton
 
@@ -77,7 +77,7 @@ function ReceiveTokenFromCustomFunction() {
 
 ## <a name="general-guidance"></a>Conseils généraux
 
-Les compléments Office sont basés sur le Web et vous pouvez utiliser n'importe quelle technique d'authentification Web. Il n'existe pas de modèle ni de méthode particulier à respecter pour implémenter votre propre authentification avec des fonctions personnalisées. Vous pouvez consulter la documentation sur les différents modèles d'authentification, en commençant par [cet article sur la création via des services externes](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/auth-external-add-ins?view=office-js).  
+Les compléments Office sont basés sur le Web et vous pouvez utiliser n'importe quelle technique d'authentification Web. Il n'existe pas de modèle ni de méthode particulier à respecter pour implémenter votre propre authentification avec des fonctions personnalisées. Vous pouvez consulter la documentation sur les différents modèles d'authentification, en commençant par [cet article sur la création via des services externes](/office/dev/add-ins/develop/auth-external-add-ins?view=office-js).  
 
 Évitez d'utiliser les emplacements suivants pour stocker des données lors du développement de fonctions personnalisées:  
 

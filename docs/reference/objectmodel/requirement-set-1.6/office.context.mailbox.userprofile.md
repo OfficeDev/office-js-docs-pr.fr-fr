@@ -1,14 +1,14 @@
 ---
-title: Office.context.mailbox.userProfile - requirement set 1.6
+title: Office. Context. Mailbox. userProfile-ensemble de conditions requises 1,6
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 09457a41fe68ae03e035d3d3f4b80b139be348e0
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: 9bb4335690236bdbbf2004f04f9af924747366d4
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30067873"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871569"
 ---
 # <a name="userprofile"></a>userProfile
 
@@ -19,45 +19,45 @@ ms.locfileid: "30067873"
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ##### <a name="members-and-methods"></a>Membres et méthodes
 
 | Membre | Type |
 |--------|------|
-| [accountType](#accounttype-string) | Membre |
-| [displayName](#displayname-string) | Membre |
-| [emailAddress](#emailaddress-string) | Membre |
+| [accountType](#accounttype-string) | Member |
+| [displayName](#displayname-string) | Member |
+| [emailAddress](#emailaddress-string) | Member |
 | [timeZone](#timezone-string) | Membre |
 
-### <a name="members"></a>Members
+### <a name="members"></a>Membres
 
-####  <a name="accounttype-string"></a>accountType :String
+####  <a name="accounttype-string"></a>accountType: chaîne
 
 > [!NOTE]
-> Actuellement, ce membre est uniquement pris en charge dans Outlook 2016 ou version ultérieure pour Mac (build 16.9.1212 ou ultérieur).
+> Actuellement, ce membre est uniquement pris en charge dans Outlook 2016 ou version ultérieure pour Mac (Build 16.9.1212 ou version ultérieure).
 
-Obtient le type de compte de l’utilisateur associé à la boîte aux lettres. Les valeurs possibles sont répertoriées dans le tableau suivant.
+Obtient le type de compte de l'utilisateur associé à la boîte aux lettres. Les valeurs possibles sont répertoriées dans le tableau suivant.
 
 | Valeur | Description |
 |-------|-------------|
-| `enterprise` | La boîte aux lettres se trouve sur un serveur Exchange local. |
-| `gmail` | La boîte aux lettres est associée à un compte Gmail. |
-| `office365` | La boîte aux lettres est associée à un compte professionnel ou scolaire Office 365. |
-| `outlookCom` | La boîte aux lettres est associée à un compte Outlook.com personnel. |
+| `enterprise` | La boîte aux lettres se trouve sur un serveur Exchange local. |
+| `gmail` | La boîte aux lettres est associée à un compte gmail. |
+| `office365` | La boîte aux lettres est associée à un compte professionnel ou scolaire Office 365. |
+| `outlookCom` | La boîte aux lettres est associée à un compte Outlook.com personnel. |
 
 ##### <a name="type"></a>Type
 
-*   Chaîne
+*   String
 
 ##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.6 |
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 
@@ -71,15 +71,15 @@ Obtient le nom d’affichage de l’utilisateur.
 
 ##### <a name="type"></a>Type
 
-*   Chaîne
+*   String
 
 ##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 
@@ -94,15 +94,15 @@ Obtient l’adresse de messagerie SMTP de l’utilisateur.
 
 ##### <a name="type"></a>Type
 
-*   Chaîne
+*   String
 
 ##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 
@@ -117,15 +117,15 @@ Obtient le fuseau horaire par défaut de l’utilisateur.
 
 ##### <a name="type"></a>Type
 
-*   Chaîne
+*   String
 
 ##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 

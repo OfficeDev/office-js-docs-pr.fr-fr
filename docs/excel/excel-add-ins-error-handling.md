@@ -1,14 +1,14 @@
 ---
 title: Gestion des erreurs
 description: ''
-ms.date: 10/16/2018
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 8c6de5d2a22fdb4614742ddfb7fbf566780c0f0f
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: 87401773ad4a27bf0a30bc80b229d2879dd5234f
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "29388961"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871065"
 ---
 # <a name="error-handling"></a>Gestion des erreurs
 
@@ -76,4 +76,4 @@ Le tableau suivant contient la liste des erreurs que l’API peut renvoyer.
 ## <a name="see-also"></a>Voir aussi
 
 - [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
-- [Objet OfficeExtension.Error (API JavaScript pour Excel)](https://docs.microsoft.com/javascript/api/office/officeextension.error)
+- [Objet OfficeExtension.Error (API JavaScript pour Excel)](/javascript/api/office/officeextension.error)

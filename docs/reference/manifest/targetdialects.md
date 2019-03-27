@@ -1,13 +1,14 @@
 ---
 title: Élément TargetDialects dans le fichier manifeste
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: 9dab79e10d332181da39f49f572597b7c24d9d88
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: e5824f21144a86c700395b06b386ef5fdc28e16e
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433774"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870204"
 ---
 # <a name="targetdialects-element"></a>Élément TargetDialects
 
@@ -29,5 +30,5 @@ Définit les langues régionales prises en charge par ce dictionnaire.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Créer un complément dictionnaire du volet Office](https://docs.microsoft.com/office/dev/add-ins/word/dictionary-task-pane-add-ins)
+- [Créer un complément dictionnaire du volet Office](/office/dev/add-ins/word/dictionary-task-pane-add-ins)
     

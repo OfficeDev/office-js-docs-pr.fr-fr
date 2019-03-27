@@ -3,19 +3,19 @@ title: Travailler simultanément avec plusieurs plages dans des compléments Exc
 description: ''
 ms.date: 02/20/2019
 localization_priority: Normal
-ms.openlocfilehash: c6bbbaee6f6cbfda5d495f533caf3dbe1325401b
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: d284f3cb12153b1c05cff0b7f7a66bbf98961443
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "30199605"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870820"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins-preview"></a>Travailler simultanément avec plusieurs plages dans des compléments Excel (prévisualisation)
 
 La bibliothèque JavaScript Excel permet à votre complément d’effectuer des opérations et définir des propriétés, de manière simultanée sur plusieurs plages. Les plages n’ont pas besoin d’être contigus. En plus de rendre votre code plus simple, cette manière de paramétrer une propriété s’exécute beaucoup plus rapidement que paramétrer la même propriété pour chaque les plages de manière individuelle.
 
 > [!NOTE]
-> Les APIs décrits dans cet article nécessitent**la version Office 2016 «Démarrer en un Clic» 1809 Build 10820.20000**ou ultérieure. (Vous devrez peut-être rejoindre le [programme Office](https://products.office.com/office-insider) Insider pour obtenir une build appropriée.)[!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> Les APIs décrits dans cet article nécessitent**la version Office 2016 «Démarrer en un Clic» 1809 Build 10820.20000**ou ultérieure. (Vous devrez peut-être rejoindre le [programme Office](https://products.office.com/office-insider) Insider pour obtenir une build appropriée.)[!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 ## <a name="rangeareas"></a>RangeAreas
 

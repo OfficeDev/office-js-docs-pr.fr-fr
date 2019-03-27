@@ -1,14 +1,14 @@
 ---
-title: Espace de noms Office – ensemble de conditions requises 1.3
+title: Espace de noms Office-ensemble de conditions requises 1,3
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: ad08895719d809436216d2f0bb455260dbca3b1e
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: ef01b7da3d447af852a5558853e0902eab815dd3
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30067887"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871219"
 ---
 # <a name="office"></a>Office
 
@@ -19,7 +19,7 @@ L’espace de noms Office fournit des interfaces partagées qui sont utilisées 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ### <a name="namespaces"></a>Espaces de noms
 
@@ -41,15 +41,15 @@ Spécifie le résultat d’un appel asynchrone.
 
 |Nom| Type| Description|
 |---|---|---|
-|`Succeeded`| String|L’appel a réussi.|
-|`Failed`| String|L’appel n’a pas réussi.|
+|`Succeeded`| Chaîne|L’appel a réussi.|
+|`Failed`| Chaîne|L’appel n’a pas réussi.|
 
 ##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ####  <a name="coerciontype-string"></a>CoercionType :String
 
@@ -63,7 +63,7 @@ Indique comment forcer le type des données retournées ou définies par la mét
 
 |Nom| Type| Description|
 |---|---|---|
-|`Html`| String|Demande que les données soient renvoyées au format HTML.|
+|`Html`| Chaîne|Demande que les données soient renvoyées au format HTML.|
 |`Text`| Chaîne|Demande que les données soient renvoyées au format texte.|
 
 ##### <a name="requirements"></a>Configuration requise
@@ -71,7 +71,7 @@ Indique comment forcer le type des données retournées ou définies par la mét
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ####  <a name="sourceproperty-string"></a>SourceProperty :String
 
@@ -86,11 +86,11 @@ Spécifie la source des données renvoyées par la méthode appelée.
 |Nom| Type| Description|
 |---|---|---|
 |`Body`| Chaîne|La source de données est dans le corps d’un message.|
-|`Subject`| String|La source de données est dans l’objet d’un message.|
+|`Subject`| Chaîne|La source de données est dans l’objet d’un message.|
 
 ##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|

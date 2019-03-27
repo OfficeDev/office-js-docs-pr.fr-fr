@@ -1,14 +1,14 @@
 ---
 title: Créer un complément dictionnaire du volet Office
 description: ''
-ms.date: 12/04/2017
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: a97c378092da783e748f014515de587383201818
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 5f48d4aa96609f92e7ea1e38dcdd93c91b61a755
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388212"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871205"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>Créer un complément dictionnaire du volet Office
 
@@ -272,7 +272,7 @@ Spécifie les paramètres pour les compléments de dictionnaire.
 
  `<TargetDialects>`,  `<QueryUri>`,  `<CitationText>`,  `<DictionaryName>`,  `<DictionaryHomePage>`
 
- **Remarques**
+ **Notes**
 
 L’élément **Dictionary** et ses éléments enfants sont ajoutés au manifeste d’un complément du volet Office quand vous créez un complément de dictionnaire.
 
@@ -290,9 +290,9 @@ Indique les langues régionales prises en charge par ce dictionnaire. Requis pou
 
  `<TargetDialect>`
 
- **Remarques**
+ **Notes**
 
-L’élément **TargetDialects** et ses éléments enfant indiquent l’ensemble de langues régionales disponibles dans votre dictionnaire. Par exemple, si votre dictionnaire s’applique à l’espagnol (Mexique) et à l’espagnol (Pérou), mais pas à l’espagnol (Espagne), vous pouvez le préciser dans cet élément. N’indiquez pas plus d’une langue (par exemple, espagnol et anglais) dans ce manifeste. Publiez les langues distinctes dans des dictionnaires différents.
+L’élément**TargetDialects** et ses éléments enfant indiquent l’ensemble de langues régionales disponibles dans votre dictionnaire. Par exemple, si votre dictionnaire s’applique à l’espagnol (Mexique) et à l’espagnol (Pérou), mais pas à l’espagnol (Espagne), vous pouvez le préciser dans cet élément. N’indiquez pas plus d’une langue (par exemple, espagnol et anglais) dans ce manifeste. Publiez les langues distinctes dans des dictionnaires différents.
 
  **Exemple**
 
@@ -331,7 +331,7 @@ Spécifie une langue régionale prise en charge par ce dictionnaire. Requis pour
 
  **Remarques**
 
-Spécifie la valeur pour une langue régionale dans le format de balise RFC1766 `language`, comme EN-US.
+Spécifie la valeur pour une langue régionale dans le format de balise RFC1766`language`, comme EN-US.
 
  **Exemple**
 
@@ -527,13 +527,13 @@ L’exemple suivant montre l’implémentation JavaScript dans le fichier Dictio
 Les principaux membres de l’API JavaScript pour Office (Office.js) qui sont appelés à partir de cette implémentation sont les suivants :
 
 
-- L’événement [initialize](https://docs.microsoft.com/javascript/api/office) de l’objet **Office**, qui est déclenché lors de l’initialisation du contexte complément et donne accès à une instance de l’objet [Document](https://docs.microsoft.com/javascript/api/office/office.document), qui représente le document avec lequel complément interagit.
+- L’événement [initialize](/javascript/api/office) de l’objet **Office**, qui est déclenché lors de l’initialisation du contexte complément et donne accès à une instance de l’objet [Document](/javascript/api/office/office.document), qui représente le document avec lequel complément interagit.
     
-- La méthode [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) de l’objet **Document**, qui est appelée dans la fonction  **initialize** afin d’ajouter un gestionnaire d’événements pour l’événement [SelectionChanged](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs) du document dans le but de surveiller les changements de sélection de l’utilisateur.
+- La méthode [addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) de l’objet **Document**, qui est appelée dans la fonction  **initialize** afin d’ajouter un gestionnaire d’événements pour l’événement [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) du document dans le but de surveiller les changements de sélection de l’utilisateur.
     
-- La méthode [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) de l’objet **Document** qui est appelée dans la fonction `tryUpdatingSelectedWord()` lorsque le gestionnaire d’événements **SelectionChanged** est déclenché pour obtenir le mot ou la phrase que l’utilisateur a sélectionné, appliquer le texte brut, puis exécuter la fonction de rappel asynchrone `selectedTextCallback`.
+- La méthode [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) de l’objet **Document** qui est appelée dans la fonction `tryUpdatingSelectedWord()` lorsque le gestionnaire d’événements **SelectionChanged** est déclenché pour obtenir le mot ou la phrase que l’utilisateur a sélectionné, appliquer le texte brut, puis exécuter la fonction de rappel asynchrone `selectedTextCallback`.
     
-- Lorsque la fonction de rappel asynchrone  `selectTextCallback` qui est transmise comme l’argument _callback_ de la méthode **getSelectedDataAsync** s’exécute, elle obtient la valeur du texte sélectionné lors du renvoi du rappel. Elle obtient la valeur de l’argument _selectedText_ du rappel (qui est de type [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult)) en utilisant la propriété [value](https://docs.microsoft.com/javascript/api/office/office.asyncresult#status) de l’objet **AsyncResult** renvoyé.
+- Lorsque la fonction de rappel asynchrone  `selectTextCallback` qui est transmise comme l’argument _callback_ de la méthode **getSelectedDataAsync** s’exécute, elle obtient la valeur du texte sélectionné lors du renvoi du rappel. Elle obtient la valeur de l’argument _selectedText_ du rappel (qui est de type [AsyncResult](/javascript/api/office/office.asyncresult)) en utilisant la propriété [value](/javascript/api/office/office.asyncresult#status) de l’objet **AsyncResult** renvoyé.
     
 - Le reste du code dans la fonction  `selectedTextCallback` interroge le service web XML pour obtenir des définitions. Il appelle également les API de Microsoft Translator pour fournir l’URL d’un fichier .wav produisant la prononciation du mot sélectionné.
     

@@ -1,14 +1,14 @@
 ---
 title: Conception de lignes directrices relatives à l’authentification pour les compléments Office
 description: ''
-ms.date: 11/02/2018
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 937f1a78dfb4276df4aa17ab48dfa15cfd937861
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: c8d61d42eabca0a57e1a09dda95ee8c0572d5ecb
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "29388863"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870218"
 ---
 # <a name="authentication-patterns"></a>Modèles d’authentification
 
@@ -26,6 +26,7 @@ Des compléments peuvent exiger que des utilisateurs se connectent ou s’inscri
 |Offrez aux utilisateurs un moyen de se déconnecter et de se ré-authentifier.    |Obligez les utilisateurs à se désinstaller pour changer d’identité.|
 
 ## <a name="authentication-flow"></a>Flux d’authentification
+
 Tant que l’authentification unique n’est pas disponible en aperçu, les compléments de production doivent donner aux utilisateurs la possibilité de se connecter directement à votre service ou à un fournisseur d’identité tel que Microsoft.
 
 1. Mise en place de la première expérience d’exécution : positionnez votre bouton de connexion en tant qu’appel à l’action clair dans l’interface de première exécution de votre complément.
@@ -36,7 +37,7 @@ Tant que l’authentification unique n’est pas disponible en aperçu, les comp
 
 
 
-3. Connexion au fournisseur d’identité : le fournisseur d’identité aura sa propre interface utilisateur. Microsoft Azure Active Directory vous permet de personnaliser les pages de connexion et d’accès afin d’uniformiser l’apparence de votre service.  [En savoir plus](https://docs.microsoft.com/azure/active-directory/fundamentals/customize-branding).
+3. Connexion au fournisseur d’identité : le fournisseur d’identité aura sa propre interface utilisateur. Microsoft Azure Active Directory vous permet de personnaliser les pages de connexion et d’accès afin d’uniformiser l’apparence de votre service.  [En savoir plus](/azure/active-directory/fundamentals/customize-branding).
 ![Capture d’écran de la boîte de dialogue de connexion au fournisseur d’identité dans une application Office](../images/add-in-auth-identity-sign-in.png)
 
 4. Progression : indiquez la progression du chargement des paramètres et de l’interface utilisateur.
@@ -48,7 +49,7 @@ Tant que l’authentification unique n’est pas disponible en aperçu, les comp
 ## <a name="single-sign-on-authentication-flow-preview"></a>Authentification unique (aperçu)
 
 > [!NOTE]
-> L’API d’authentification unique est actuellement prise en charge en préversion pour Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur la prise en charge de l’authentification unique, voir  [Ensembles de conditions requises de l’API d’identité](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets). Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location d’Office 365. Pour plus d’informations sur la manière de procéder, voir  [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> L’API d’authentification unique est actuellement prise en charge en préversion pour Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur la prise en charge de l’authentification unique, voir  [Ensembles de conditions requises de l’API d’identité](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets). Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location d’Office 365. Pour plus d’informations sur la manière de procéder, voir  [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 Une fois l’authentification unique généralement disponible pour les compléments de production, utilisez-la pour fluidifier l’expérience des utilisateurs finaux. L’identité de l’utilisateur au sein d’Office (compte Microsoft ou identité Office 365) est utilisée pour la connexion à votre complément. Par conséquent, les utilisateurs ne se connectent qu’une seule fois. Cela permet d’éliminer les frictions dans l’expérience, en facilitant la prise en main pour vos clients.
 
@@ -60,4 +61,5 @@ Une fois l’authentification unique généralement disponible pour les complém
 ![Capture d’écran d’une application Office avec les boutons de complément affichés dans le ruban](../images/add-in-ribbon.png)
 
 ## <a name="see-also"></a>Voir aussi
-- En savoir plus sur [développement de compléments d’authentification unique (aperçu)](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins)
+
+- En savoir plus sur [développement de compléments d’authentification unique (aperçu)](/office/dev/add-ins/develop/sso-in-office-add-ins)

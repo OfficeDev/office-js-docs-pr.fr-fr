@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook 1.5
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: edc34bd088c1e8a2e88732518dcb335d38b8ba21
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: d0489e4efa763b3963fcdc78ec894db46fa06362
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30067922"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870865"
 ---
 # <a name="outlook-add-in-api-requirement-set-15"></a>Ensemble de conditions requises de l’API du complément Outlook 1.5
 
@@ -21,8 +21,8 @@ Le sous-ensemble de l’API pour le complément Outlook de l’interface API Ja
 
 L’ensemble de conditions requises de la version 1.5 comprend toutes les fonctionnalités de l’[ensemble de conditions requises de la version 1.4](../requirement-set-1.4/outlook-requirement-set-1.4.md). Les fonctionnalités suivantes ont été ajoutées :
 
-- Prise en charge des [volets Office épinglables](https://docs.microsoft.com/outlook/add-ins/pinnable-taskpane).
-- Prise en charge de l’appel des [API REST](https://docs.microsoft.com/outlook/add-ins/use-rest-api).
+- Prise en charge des [volets Office épinglables](/outlook/add-ins/pinnable-taskpane).
+- Prise en charge de l’appel des [API REST](/outlook/add-ins/use-rest-api).
 - Possibilité de marquer une pièce jointe comme élément incorporé.
 - Possibilité de fermer un volet Office ou une boîte de dialogue.
 
@@ -40,6 +40,6 @@ L’ensemble de conditions requises de la version 1.5 comprend toutes les fonct
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Compléments Outlook](https://docs.microsoft.com/outlook/add-ins/)
+- [Compléments Outlook](/outlook/add-ins/)
 - [Exemples de code pour les compléments Outlook](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [Prise en main](https://docs.microsoft.com/outlook/add-ins/quick-start)
+- [Prise en main](/outlook/add-ins/quick-start)

@@ -1,14 +1,14 @@
 ---
-title: Espace de noms Office – ensemble de conditions requises 1.7
+title: Espace de noms Office-ensemble de conditions requises 1,7
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: d6422e470864d5a02db37e1fef295e8cbb82a213
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: 533e997fc7f8be6eb6d3aefefaf023e8c7666af2
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30067894"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870526"
 ---
 # <a name="office"></a>Office
 
@@ -19,15 +19,15 @@ L’espace de noms Office fournit des interfaces partagées qui sont utilisées 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ##### <a name="members-and-methods"></a>Membres et méthodes
 
 | Membre | Type |
 |--------|------|
-| [AsyncResultStatus](#asyncresultstatus-string) | Membre |
-| [CoercionType](#coerciontype-string) | Membre |
-| [EventType](#eventtype-string) | Membre |
+| [AsyncResultStatus](#asyncresultstatus-string) | Member |
+| [CoercionType](#coerciontype-string) | Member |
+| [EventType](#eventtype-string) | Member |
 | [SourceProperty](#sourceproperty-string) | Membre |
 
 ### <a name="namespaces"></a>Espaces de noms
@@ -50,7 +50,7 @@ Spécifie le résultat d’un appel asynchrone.
 
 |Nom| Type| Description|
 |---|---|---|
-|`Succeeded`| String|L’appel a réussi.|
+|`Succeeded`| Chaîne|L’appel a réussi.|
 |`Failed`| Chaîne|L’appel n’a pas réussi.|
 
 ##### <a name="requirements"></a>Configuration requise
@@ -58,7 +58,7 @@ Spécifie le résultat d’un appel asynchrone.
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ---
 
@@ -82,7 +82,7 @@ Indique comment forcer le type des données retournées ou définies par la mét
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ---
 
@@ -108,7 +108,7 @@ spécifie l’événement associé à un gestionnaire d’événements.
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1,5 |
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture |
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture |
 
 ---
 
@@ -125,11 +125,11 @@ Spécifie la source des données renvoyées par la méthode appelée.
 |Nom| Type| Description|
 |---|---|---|
 |`Body`| Chaîne|La source de données est dans le corps d’un message.|
-|`Subject`| String|La source de données est dans l’objet d’un message.|
+|`Subject`| Chaîne|La source de données est dans l’objet d’un message.|
 
 ##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Mode Outlook applicable](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composition ou lecture|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|

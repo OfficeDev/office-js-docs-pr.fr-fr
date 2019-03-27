@@ -1,14 +1,14 @@
 ---
 title: Élément Action dans le fichier manifeste
 description: ''
-ms.date: 11/14/2018
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 589a4af94c7abbcf61cd7a5210d5df29ba8a3a4e
-ms.sourcegitcommit: 2e4b97f0252ff3dd908a3aa7a9720f0cb50b855d
+ms.openlocfilehash: 59df6cce6af1277f365a1dd3cd0b3ef11230804e
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "29635894"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870827"
 ---
 # <a name="action-element"></a>Action, élément
 
@@ -60,7 +60,7 @@ Cet attribut indique le type d’action réalisée lorsque l’utilisateur séle
 
 ## <a name="taskpaneid"></a>TaskpaneId
 
-Élément facultatif quand  **xsi:type** a la valeur « ShowTaskpane ». Spécifie l’ID du conteneur de volet des tâches. Lorsque vous avez plusieurs actions « ShowTaskpane », utilisez un autre attribut **TaskpaneId** si vous souhaitez un volet indépendant pour chacun. Utilisez le même attribut **TaskpaneId** pour différentes actions qui partagent le même volet. Lorsque les utilisateurs choisissent des commandes qui partagent le même attribut **TaskpaneId**, le conteneur de volet reste ouvert, mais le contenu du volet sera remplacé par l’action correspondante « SourceLocation ».
+Élément facultatif quand  **xsi:type** a la valeur « ShowTaskpane ». Spécifie l’ID du conteneur de volet des tâches. Lorsque vous avez plusieurs actions « ShowTaskpane », utilisez un autre **TaskpaneId** si vous souhaitez un volet indépendant pour chacun. Utilisez le même **TaskpaneId** pour différentes actions qui partagent le même volet. Lorsque les utilisateurs choisissent des commandes qui partagent le même attribut **TaskpaneId**, le conteneur de volet reste ouvert, mais le contenu du volet sera remplacé par l’action correspondante « SourceLocation ».
 
 > [!NOTE]
 > Cet élément n’est pas pris en charge dans Outlook.
@@ -137,10 +137,10 @@ Les exemples ci-dessous illustrent deux différentes actions qui utilisent l’�
 
 ## <a name="supportspinning"></a>SupportsPinning
 
-Élément facultatif quand **xsi:type** a la valeur « ShowTaskpane ». Les éléments [VersionOverrides](versionoverrides.md) le contenant doivent avoir une valeur d’attribut `xsi:type` de `VersionOverridesV1_1`. Incluez cet élément avec une valeur `true` pour prendre en charge l’épinglage du volet Office. L’utilisateur pourra alors « épingler » le volet Office qui restera ouvert pendant que la sélection est modifiée. Pour en savoir plus, consultez l’article relatif à l’[implémentation d’un volet Office épinglable dans Outlook](https://docs.microsoft.com/outlook/add-ins/pinnable-taskpane).
+Élément facultatif quand **xsi:type** a la valeur « ShowTaskpane ». Les éléments [VersionOverrides](versionoverrides.md) le contenant doivent avoir une valeur d’attribut `xsi:type` de `VersionOverridesV1_1`. Incluez cet élément avec une valeur `true` pour prendre en charge l’épinglage du volet Office. L’utilisateur pourra alors « épingler » le volet Office qui restera ouvert pendant que la sélection est modifiée. Pour en savoir plus, consultez l’article relatif à l’[implémentation d’un volet Office épinglable dans Outlook](/outlook/add-ins/pinnable-taskpane).
 
 > [!NOTE]
-> SupportsPinning est uniquement pris en charge par Outlook 2016 pour Windows (version 7628.1000 ou version ultérieure) et 2016 Outlook pour Mac (build 16.13.503 ou version ultérieure).
+> Supportspinning n'est est actuellement uniquement pris en charge par Outlook 2016 pour Windows (Build 7628,1000 ou version ultérieure) et Outlook 2016 pour Mac (Build 16.13.503 ou version ultérieure).
 
 ```xml
 <Action xsi:type="ShowTaskpane">

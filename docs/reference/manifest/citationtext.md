@@ -1,13 +1,14 @@
 ---
 title: Élément CitationText dans le fichier manifeste
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: 36f491752eb49876b90fd23b23600980b3a661fc
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 7882f415467cb8d8233625897e84b6ba8a54e11a
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433361"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871303"
 ---
 # <a name="citationtext-element"></a>CitationText, élément
 
@@ -27,4 +28,4 @@ Spécifie le texte réutilisable de citation de ce dictionnaire.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Créer un complément dictionnaire du volet Office](https://docs.microsoft.com/office/dev/add-ins/word/dictionary-task-pane-add-ins)
+- [Créer un complément dictionnaire du volet Office](/office/dev/add-ins/word/dictionary-task-pane-add-ins)
