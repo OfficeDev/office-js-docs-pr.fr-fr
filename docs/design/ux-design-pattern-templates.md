@@ -1,14 +1,14 @@
 ---
 title: Modèles de conception de l’expérience utilisateur pour les compléments Office
 description: ''
-ms.date: 06/27/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 65875bced876bb20243e3f2f0a353aa10c158a79
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 40b36fb138169bdf848e5f58569e6fc3dee8c09b
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29387820"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871541"
 ---
 # <a name="ux-design-patterns-for-office-add-ins"></a>Modèles de conception de l’expérience utilisateur pour les compléments Office
 
@@ -28,7 +28,6 @@ Utiliser les modèles de motif expérience utilisateur pour :
 * Créer des compléments qui s’intègrent visuellement à l’interface utilisateur d’Office par défaut.
 * Imaginer et visualiser l’expérience utilisateur.
 
-
 ## <a name="getting-started"></a>Prise en main
 
 Les modèles sont organisés par les actions clés ou les expériences qui sont courantes dans un complément. Les groupes principaux sont :
@@ -40,15 +39,12 @@ Les modèles sont organisés par les actions clés ou les expériences qui sont 
 
 Étudiez chaque groupe pour apprendre comment concevoir votre complément en utilisant les meilleures pratiques.
 
-
-
->REMARQUE : les écrans exemple illustrés dans l’ensemble de cette documentation sont conçus et affichés à une résolution de **1366 x 768**.
-
-
-
+> [!NOTE]
+> Les écrans exemple illustrés dans l’ensemble de cette documentation sont conçus et affichés à une résolution de **1366 x 768**.
 
 ## <a name="see-also"></a>Voir aussi
+
 * [Kits de ressources de conception](design-toolkits.md)
 * [Office UI Fabric](https://developer.microsoft.com/fabric)
-* [Meilleures pratiques en matière de développement de compléments Office](https://docs.microsoft.com/office/dev/add-ins/concepts/add-in-development-best-practices)
-* [Prise en main de Fabric React](https://docs.microsoft.com/office/dev/add-ins/design/using-office-ui-fabric-react)
+* [Meilleures pratiques en matière de développement de compléments Office](/office/dev/add-ins/concepts/add-in-development-best-practices)
+* [Prise en main de Fabric React](/office/dev/add-ins/design/using-office-ui-fabric-react)

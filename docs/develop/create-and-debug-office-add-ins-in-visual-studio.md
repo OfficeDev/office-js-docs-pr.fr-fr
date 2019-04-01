@@ -1,14 +1,14 @@
 ---
 title: Créer et déboguer des compléments Office dans Visual Studio
 description: Utiliser Visual Studio pour créer et déboguer des compléments Office dans le client de bureau Office pour Windows
-ms.date: 11/02/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: eb7a64d9ad5096af7eb900a6d29b682e950c1bed
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: f9a52719ed7990063ed3f2dbb7d6bd5866e73760
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742379"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870715"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Créer et déboguer des compléments Office dans Visual Studio
 
@@ -17,7 +17,7 @@ Cet article décrit comment utiliser Visual Studio 2017 pour créer un compléme
 > [!NOTE]
 > Visual Studio ne prend pas en charge la création de compléments Office pour OneNote ou un projet, mais vous pouvez utiliser le [Yeoman Générateur de compléments Office](https://github.com/OfficeDev/generator-office) pour créer ce genre de compléments.
 > - Si vous débutez avec les compléments pour OneNote, reportez-vous à [Créer votre premier complément OneNote](../quickstarts/onenote-quickstart.md).
-> 
+>
 > - Pour commencer à utiliser un complément pour Project, voir [Créer votre premier complément Project](../quickstarts/project-quickstart.md).
 
 ## <a name="prerequisites"></a>Conditions préalables
@@ -25,7 +25,7 @@ Cet article décrit comment utiliser Visual Studio 2017 pour créer un compléme
 - [Visual Studio 2017](https://www.visualstudio.com/vs/) avec la charge de travail de **développement Office/SharePoint** installée
 
     > [!TIP]
-    > Si vous avez déjà installé Visual Studio 2017, [utilisez Visual Studio Installer](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) pour vérifier que la charge de travail de **développement Office/SharePoint** est bien installée. Si cette charge de travail n’est pas encore installée, utilisez Visual Studio Installer pour l’[installer](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio?view=vs-2017#modify-workloads).
+    > Si vous avez déjà installé Visual Studio 2017, [utilisez Visual Studio Installer](/visualstudio/install/modify-visual-studio) pour vérifier que la charge de travail de **développement Office/SharePoint** est bien installée. Si cette charge de travail n’est pas encore installée, utilisez Visual Studio Installer pour l’[installer](/visualstudio/install/modify-visual-studio?view=vs-2017#modify-workloads).
 
 - Office 2013 ou version ultérieure
 
@@ -157,13 +157,13 @@ Le tableau suivant décrit les propriétés du projet d’application web qui so
 Si vous avez un document qui contient les données de test à utiliser pendant le débogage de votre complément Excel, PowerPoint ou Word, Visual Studio peut être configuré pour ouvrir ce dernier lorsque vous démarrez le projet. Pour spécifier un document existant à utiliser pour déboguer le complément, procédez comme suit.
 
 1. Dans **l’Explorateur de solutions**, choisissez le projet de complément (*pas* le projet d’application web).
-    
+
 2. Dans la barre de menus, sélectionnez **Project** > **ajouter un élément existant**.
-    
+
 3. Dans la boîte de dialogue **Ajouter un élément existant**, recherchez et sélectionnez le document que vous souhaitez ajouter.
-    
+
 4. Choisissez le bouton**Ajouter** pour ajouter le document à votre projet.
-    
+
 5. Dans **l’Explorateur de solutions**, choisissez le projet de complément (*pas* le projet d’application web).
 
 6. Dans la barre de menu, choisissez **Affichage** > **Fenêtre Propriétés**.
@@ -180,21 +180,21 @@ Démarrez le projet en choisissant **déboguer** > **démarrer le débogage** à
 Visual Studio génère le projet et effectue les actions suivantes :
 
 1. Crée une copie du fichier manifeste XML et ajoute celui-ci au `_ProjectName_\bin\Debug\OfficeAppManifests` répertoire. L’application hôte consomme cette copie lorsque vous démarrez Visual Studio et débogue le complément.
-    
+
 2. Crée un ensemble d’entrées dans le registre de votre ordinateur qui permettent au complément d’apparaître dans l’application hôte.
-    
-3. Génère le projet d’application web, puis le déploie sur le serveur web IIS local (https://localhost). 
-    
+
+3. Génère le projet d’application web, puis le déploie sur le serveur web IIS local (https://localhost).
+
 Visual Studio effectue ensuite les actions suivantes :
 
-1. Il modifie l’élément [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation) du fichier manifeste XML en remplaçant le jeton`~remoteAppUrl`par l’adresse complète de la page de démarrage (par exemple`https://localhost:44302/Home.html`).
-    
+1. Il modifie l’élément [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) du fichier manifeste XML en remplaçant le jeton`~remoteAppUrl`par l’adresse complète de la page de démarrage (par exemple`https://localhost:44302/Home.html`).
+
 2. Il démarre le projet d’application web dans IIS Express.
-    
-3. Il ouvre l’application hôte. 
-    
-Visual Studio n’affiche pas les erreurs de validation dans la fenêtre **Output** lorsque vous créez le projet. Visual Studio signale les erreurs et avertissements dans la fenêtre **ERRORLIST** lorsqu’elles se produisent. Visual Studio signale également des erreurs de validation en affichant les soulignements ondulés de différentes couleurs (également connus sous soulignements ondulés) dans l’éditeur de code et de texte. Ces marques signalent l’arrivée de problèmes Visual Studio détectés dans votre code. Pour plus d’informations, voir [Éditeur de code et texte](https://msdn.microsoft.com/library/se2f663y(v=vs.140).aspx). Pour plus d’informations sur comment activer ou désactiver la validation, voir [Options, éditeur de texte, JavaScript, IntelliSense](https://docs.microsoft.com/en-us/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2017).
-    
+
+3. Il ouvre l’application hôte.
+
+Visual Studio n’affiche pas les erreurs de validation dans la fenêtre **Output** lorsque vous créez le projet. Visual Studio signale les erreurs et avertissements dans la fenêtre **ERRORLIST** lorsqu’elles se produisent. Visual Studio signale également des erreurs de validation en affichant les soulignements ondulés de différentes couleurs (également connus sous soulignements ondulés) dans l’éditeur de code et de texte. Ces marques signalent l’arrivée de problèmes Visual Studio détectés dans votre code. Pour plus d’informations, voir [Éditeur de code et texte](https://msdn.microsoft.com/library/se2f663y(v=vs.140).aspx). Pour plus d’informations sur comment activer ou désactiver la validation, voir [Options, éditeur de texte, JavaScript, IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2017).
+
 Pour réviser les règles de validation du fichier manifeste XML dans votre projet, voir [Manifeste XML des compléments Office](../develop/add-in-manifests.md).
 
 ### <a name="debug-the-code-for-an-excel-powerpoint-or-word-add-in"></a>Déboguer le code d’un complément Excel, PowerPoint ou Word
@@ -234,4 +234,3 @@ Vous pouvez modifier votre code et passer en revue les effets de ces modificatio
 ## <a name="next-steps"></a>Étapes suivantes
 
 Une fois que votre complément fonctionne comme vous le souhaitez, voir [Déployer et publier votre complément Office](../publish/publish.md) pour en savoir plus sur les méthodes avec lesquelles vous pouvez distribuer le complément aux utilisateurs.
-    

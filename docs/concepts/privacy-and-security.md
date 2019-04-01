@@ -1,14 +1,14 @@
 ---
 title: Confidentialité et sécurité pour les compléments Office
 description: ''
-ms.date: 01/23/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 0edde27eebed667040ae3aded5bbc4268f0f5d58
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 95188063ac133d6683478b1aed4d48b825cee87f
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388814"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872003"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Confidentialité et sécurité pour les compléments Office
 
@@ -34,7 +34,8 @@ De plus, l’utilisation des ressources de mémoire, de processeur et réseau pa
 
 Les sections suivantes décrivent brièvement comment l’architecture d’exécution prend en charge l’exécution de compléments dans les clients Office sur des appareils Windows ou Mac OS X, et dans les clients Office Online sur le web.
 
-> **REMARQUE**  Pour en savoir plus sur l’utilisation de la protection des informations Windows et d’Intune avec des compléments Office, reportez-vous à l’article relatif à l’[utilisation de la protection des informations Windows et d’Intune pour protéger des données d’entreprise dans les documents utilisant des compléments Office](https://docs.microsoft.com/microsoft-365/enterprise/office-add-ins-wip).
+> [!NOTE]
+> Pour en savoir plus sur l’utilisation de WIP et Intune avec les compléments Office, voir [Utiliser WIP et Intune pour protéger les données d’entreprise dans les documents en cours d’exécution avec les compléments Office](/microsoft-365/enterprise/office-add-ins-wip).
 
 ### <a name="clients-for-windows-and-os-x-devices"></a>Clients pour les appareils Windows et OS X
 
@@ -91,7 +92,7 @@ La plateforme du complément répond aux inquiétudes des utilisateurs finaux co
 
 - Lorsqu’ils partagent un document, les utilisateurs partagent également les compléments insérés dans ces documents ou qui y sont associés. Si un utilisateur ouvre un document qui contient un complément qu’il n’a jamais utilisé auparavant, l’application hôte demande à l’utilisateur d’accorder l’autorisation d’exécution du complément dans le document. Dans un environnement d’entreprise, l’application hôte Office demande également à l’utilisateur si le document provient d’une source externe.
 
-- Les utilisateurs peuvent activer ou désactiver l’accès à AppSource. Pour les compléments de contenu et du volet Office, les utilisateurs gèrent l’accès aux compléments et aux catalogues approuvés à partir du **Centre de gestion de la confidentialité** sur le client Office hôte (ouvert à partir de **Fichier** > **Options** > **Centre de gestion de la confidentialité** > **Paramètres du Centre de gestion de la confidentialité** > **Catalogues de compléments approuvés**). Pour les compléments Outlook, les utilisateurs peuvent gérer les compléments en sélectionnant le bouton **Gérer les compléments** ; dans Outlook pour Windows, choisissez **Fichier** > **Gérer les compléments**. Dans Outlook pour Mac, sélectionnez le bouton **Gérer les compléments** dans la barre des compléments. Dans Outlook Web App, choisissez le menu **Paramètres**(icône d’engrenage) > **Gérer les compléments**. Les administrateurs peuvent également gérer cet accès [à l’aide de la stratégie de groupe](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
+- Les utilisateurs peuvent activer ou désactiver l’accès à AppSource. Pour les compléments de contenu et du volet Office, les utilisateurs gèrent l’accès aux compléments et aux catalogues approuvés à partir du **Centre de gestion de la confidentialité** sur le client Office hôte (ouvert à partir de **Fichier** > **Options** > **Centre de gestion de la confidentialité** > **Paramètres du Centre de gestion de la confidentialité** > **Catalogues de compléments approuvés**). Pour les compléments Outlook, les utilisateurs peuvent gérer les compléments en sélectionnant le bouton **Gérer les compléments** ; dans Outlook pour Windows, choisissez **Fichier** > **Gérer les compléments**. Dans Outlook pour Mac, sélectionnez le bouton **Gérer les compléments** dans la barre des compléments. Dans Outlook Web App, choisissez le menu **Paramètres**(icône d’engrenage) > **Gérer les compléments**. Les administrateurs peuvent également gérer cet accès [à l’aide de la stratégie de groupe](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
 
 - La conception de la plateforme du complément offre sécurité et performance aux utilisateurs finals des façons suivantes :
 
@@ -99,13 +100,13 @@ La plateforme du complément répond aux inquiétudes des utilisateurs finaux co
 
   - L’exécution dans un contrôle de navigateur web permet au complément de faire quasiment tout ce qu’une page web ordinaire exécutée dans un navigateur peut faire mais, en même temps, oblige le complément à suivre la stratégie d’origine identique pour l’isolation du domaine et les zones de sécurité.
 
-Les compléments Outlook fournissent des fonctionnalités supplémentaires de sécurité et de performance grâce à une analyse de l’utilisation des ressources propres aux compléments Outlook. Pour en savoir plus, voir [Confidentialité, autorisations et sécurité pour les compléments Outlook](https://docs.microsoft.com/outlook/add-ins/privacy-and-security).
+Les compléments Outlook fournissent des fonctionnalités supplémentaires de sécurité et de performance grâce à une analyse de l’utilisation des ressources propres aux compléments Outlook. Pour en savoir plus, voir [Confidentialité, autorisations et sécurité pour les compléments Outlook](/outlook/add-ins/privacy-and-security).
 
 ### <a name="developer-guidelines-to-handle-pii"></a>Recommandations à l’intention des développeurs en matière de gestion des PII
 
 En tant que développeur de compléments Office, nous vous fournissons ci-dessous une liste de conseils de protection PII spécifiques :
 
-- L’objet [Settings](https://docs.microsoft.com/javascript/api/office/office.settings) est conçu pour conserver les paramètres de complément et les données d’état entre les sessions pour un complément de contenu ou du volet Office, mais il ne stocke pas les mots de passe et autres informations d’identification personnelle confidentielles dans l’objet **Settings**. Les données contenues dans l’objet **Settings** ne sont pas visibles par les utilisateurs finaux, mais elles sont stockées en tant que partie du format de fichier du document, qui est facilement accessible. Vous devez limiter l’utilisation par votre complément des informations d’identification personnelle et stocker celles qu’il exige sur le serveur hébergeant votre complément en tant que ressource sécurisée par l’utilisateur.
+- L’objet [Settings](/javascript/api/office/office.settings) est conçu pour conserver les paramètres de complément et les données d’état entre les sessions pour un complément de contenu ou du volet Office, mais il ne stocke pas les mots de passe et autres informations d’identification personnelle confidentielles dans l’objet **Settings**. Les données contenues dans l’objet **Settings** ne sont pas visibles par les utilisateurs finaux, mais elles sont stockées en tant que partie du format de fichier du document, qui est facilement accessible. Vous devez limiter l’utilisation par votre complément des informations d’identification personnelle et stocker celles qu’il exige sur le serveur hébergeant votre complément en tant que ressource sécurisée par l’utilisateur.
 
 - Certaines applications peuvent exposer les informations d’identification personnelle dans le cadre de leur utilisation. Faites en sorte de stocker les données de vos utilisateurs de manière sécurisée, notamment l’identité, la situation géographique, les heures d’accès et autres informations d’identification, pour éviter que d’autres utilisateurs du complément puissent y accéder.
 
@@ -119,7 +120,7 @@ Suivez les recommandations générales suivantes pour prendre en charge le modè
 
 ### <a name="permissions-choices"></a>Choix des autorisations
 
-La plateforme de complément fournit un modèle d’autorisations que votre complément utilise pour déclarer le niveau d’accès aux données d’un utilisateur qui sont requises pour ses fonctionnalités. Chaque niveau d’autorisation correspond au sous-ensemble de l’interface API JavaScript pour Office que votre complément est autorisé à utiliser pour ses fonctionnalités. Par exemple, l’autorisation **WriteDocument** pour les compléments du volet Office et de contenu permet d’accéder à la méthode [Document.setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document) qui permet à un complément d’écrire dans le document de l’utilisateur, mais n’autorise l’accès à aucune des méthodes pour la lecture des données à partir du document. Ce niveau d’autorisation est utile pour les compléments qui doivent uniquement écrire dans un document, comme par exemple un complément où l’utilisateur peut requérir des données à insérer dans son document.
+La plateforme de complément fournit un modèle d’autorisations que votre complément utilise pour déclarer le niveau d’accès aux données d’un utilisateur qui sont requises pour ses fonctionnalités. Chaque niveau d’autorisation correspond au sous-ensemble de l’interface API JavaScript pour Office que votre complément est autorisé à utiliser pour ses fonctionnalités. Par exemple, l’autorisation **WriteDocument** pour les compléments du volet Office et de contenu permet d’accéder à la méthode [Document.setSelectedDataAsync](/javascript/api/office/office.document) qui permet à un complément d’écrire dans le document de l’utilisateur, mais n’autorise l’accès à aucune des méthodes pour la lecture des données à partir du document. Ce niveau d’autorisation est utile pour les compléments qui doivent uniquement écrire dans un document, comme par exemple un complément où l’utilisateur peut requérir des données à insérer dans son document.
 
 Nous vous recommandons vivement de demander des autorisations sur la base du  _principe de privilège minimal_. Autrement dit, vous ne devez demander l’autorisation d’accès qu’au sous-ensemble minimal de l’API que votre complément requiert pour fonctionner correctement. Par exemple, si votre complément a seulement besoin de lire des données dans le document d’un utilisateur pour ses fonctionnalités, vous ne devez pas demander plus que l’autorisation **ReadDocument**. (Gardez toutefois à l’esprit qu’en cas de demande d’autorisations insuffisantes, la plateforme du complément bloquera l’utilisation de certaines API par votre complément et des erreurs seront générées lors de l’exécution.)
 
@@ -140,13 +141,13 @@ L’exemple suivant montre comment un complément du volet Office spécifie l’
 </OfficeApp>
 ```
 
-Pour plus d’informations sur les autorisations pour les compléments de contenu et du volet Office, reportez-vous à la rubrique [Demande d’autorisations d’utilisation de l’API dans des compléments de contenu et de volet des tâches](https://docs.microsoft.com/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins).
+Pour plus d’informations sur les autorisations pour les compléments de contenu et du volet Office, reportez-vous à la rubrique [Demande d’autorisations d’utilisation de l’API dans des compléments de contenu et de volet des tâches](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins).
 
 Pour plus d’informations sur les autorisations pour les compléments Outlook, reportez-vous aux rubriques suivantes :
 
-- [Confidentialité, autorisations et sécurité pour les compléments Outlook](https://docs.microsoft.com/outlook/add-ins/privacy-and-security)
+- [Confidentialité, autorisations et sécurité pour les compléments Outlook](/outlook/add-ins/privacy-and-security)
 
-- [Présentation des autorisations de complément Outlook](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)
+- [Présentation des autorisations de complément Outlook](/outlook/add-ins/understanding-outlook-add-in-permissions)
 
 ### <a name="same-origin-policy"></a>Stratégie d’origine identique
 
@@ -193,7 +194,7 @@ Un utilisateur mal intentionné pourrait attaquer l’origine d’un complément
 
 - Utilisez la fonction [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) ou [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) pour encoder le texte qui représente une URL ayant pour origine ou contenant une entrée utilisateur.
 
-- Consultez les informations relatives au [développement de compléments sécurisés](https://docs.microsoft.com/previous-versions/windows/apps/hh849625(v=win.10)) pour connaître d’autres meilleures pratiques en matière de création de solutions web plus sécurisées.
+- Consultez les informations relatives au [développement de compléments sécurisés](/previous-versions/windows/apps/hh849625(v=win.10)) pour connaître d’autres meilleures pratiques en matière de création de solutions web plus sécurisées.
 
 ### <a name="tips-to-prevent-clickjacking"></a>Conseils pour éviter les « détournements de clic »
 
@@ -242,19 +243,30 @@ Les développeurs doivent aussi tenir compte des pratiques de sécurité suivant
   - Produire une déclaration énonçant une stratégie de confidentialité conforme.
   - Être prêts à signer un accord contractuel lorsqu’ils soumettent le complément.
 
-Outre les règles d’utilisation des ressources, les développeurs de compléments Outlook doivent également s’assurer que leurs compléments respectent les limites de spécification des règles d’activation et l’utilisation de l’interface API JavaScript. Pour plus d’informations, voir [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins).
+Outre les règles d’utilisation des ressources, les développeurs de compléments Outlook doivent également s’assurer que leurs compléments respectent les limites de spécification des règles d’activation et l’utilisation de l’interface API JavaScript. Pour plus d’informations, voir [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins).
 
 ## <a name="it-administrators-control"></a>Contrôle des administrateurs informatiques
 
 Dans un environnement d’entreprise, les administrateurs informatiques ont l’autorité ultime pour accorder ou refuser l’accès à AppSource et aux catalogues privés.
 
+La gestion et l’application des paramètres Office s’effectuent avec des paramètres de stratégie de groupe. Vous pouvez les configurer via l’[outil de déploiement d’Office](https://docs.microsoft.com/deployoffice/overview-of-the-office-2016-deployment-tool), conjointement avec l’[outil de personnalisation Office](https://docs.microsoft.com/DeployOffice/overview-of-the-office-customization-tool-for-click-to-run).
+
+| Nom du paramètre | Description |
+|--------------|-------------|
+| Autoriser les compléments et les catalogues web non sécurisés | Permet aux utilisateurs d’exécuter des compléments non sécurisés, qui sont des compléments qui disposent d’une page Web ou à des emplacements de catalogue qui ne sont pas sécurisées par SSL (https://) et ne figurent pas dans les zones Internet des utilisateurs. |
+| Bloquer les compléments Web | Vous permet d’empêcher les utilisateurs d’utiliser des compléments web. |
+| Bloquer Office Store |  Vous permet d’empêcher les utilisateurs d’utiliser ou d’insérer des compléments web inclus dans Office Store. |
+
+> [!IMPORTANT]
+> Si vos groupes de travail utilisent plusieurs versions d’Office, les paramètres de stratégie de groupe doivent être configurés pour chaque version. Veuillez consulter [Utiliser les stratégies de groupe pour gérer la manière dont les utilisateurs peuvent installer et utiliser des applications pour Office](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office) de l’article [Vue d’ensemble des applications pour Office 2013](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v%3doffice.15)) pour plus d’informations sur les paramètres de stratégie de groupe pour Office 2013.
+
 ## <a name="see-also"></a>Voir aussi
 
-- [Demande d’autorisations d’utilisation de l’API dans des compléments de contenu et de volet des tâches](https://docs.microsoft.com/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
-- [Confidentialité, autorisations et sécurité pour les compléments Outlook](https://docs.microsoft.com/outlook/add-ins/privacy-and-security)
-- [Présentation des autorisations de complément Outlook](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)
-- [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
-- [Résolutions des limites de stratégie d’origine identique dans les compléments Office](https://docs.microsoft.com/office/dev/add-ins/develop/addressing-same-origin-policy-limitations)
+- [Demande d’autorisations d’utilisation de l’API dans des compléments de contenu et de volet des tâches](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
+- [Confidentialité, autorisations et sécurité pour les compléments Outlook](/outlook/add-ins/privacy-and-security)
+- [Présentation des autorisations de complément Outlook](/outlook/add-ins/understanding-outlook-add-in-permissions)
+- [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
+- [Résolutions des limites de stratégie d’origine identique dans les compléments Office](/office/dev/add-ins/develop/addressing-same-origin-policy-limitations)
 - [Stratégie d’origine identique](https://www.w3.org/Security/wiki/Same_Origin_Policy)
 - [Stratégie d’origine identique Partie 1 : Interdiction de regarder](https://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)
 - [Stratégie d’origine identique pour JavaScript](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)

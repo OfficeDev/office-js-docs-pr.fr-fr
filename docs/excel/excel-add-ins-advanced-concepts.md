@@ -1,14 +1,14 @@
 ---
 title: Concepts avancés de programmation avec l’API JavaScript Excel
 description: ''
-ms.date: 10/03/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 1e623e87cbda8b8aeb6e51104bec818d62bf489e
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: e7220a36293171fcc13a6311c297584ea51e9006
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388480"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871044"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>Concepts avancés de programmation avec l’API JavaScript Excel
 
@@ -18,19 +18,19 @@ Cet article s’appuie sur les informations contenues dans la rubrique [Concepts
 
 Un complément Excel interagit avec des objets dans Excel à l’aide de l’API JavaScript pour Office, qui inclut deux modèles d’objets JavaScript :
 
-* **API JavaScript pour Excel** : inclut dans Office 2016, l’[API JavaScript Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) fournit des objets fortement typés que vous pouvez utiliser pour accéder à des feuilles de calcul, des plages, des tableaux, des graphiques et bien plus encore. 
+* **API JavaScript pour Excel** : inclut dans Office 2016, l’[API JavaScript Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) fournit des objets fortement typés que vous pouvez utiliser pour accéder à des feuilles de calcul, des plages, des tableaux, des graphiques et bien plus encore. 
 
 * **API communes** : incluses dans Office 2013, les [API communes](../reference/javascript-api-for-office.md) peuvent être utilisées pour accéder à des fonctionnalités, telles que l’interface utilisateur, les boîtes de dialogue et les paramètres du client, qui sont communes à plusieurs types d’applications hôtes, comme Word, Excel et PowerPoint.
 
 Vous utiliserez probablement l’API JavaScript Excel pour développer la majorité des fonctionnalités des compléments destinés à Excel 2016 ou version ultérieure, vous utiliserez également des objets dans l’API commune. Par exemple :
 
-- [Context](https://docs.microsoft.com/javascript/api/office/office.context) : l’objet **Context** représente l’environnement d’exécution du complément et permet d’accéder à des objets clés de l’API. Il se compose de détails sur la configuration du classeur comme `contentLanguage` et `officeTheme`, et fournit des informations sur l’environnement d’exécution du complément comme `host` et `platform`. En outre, il fournit la méthode `requirements.isSetSupported()` que vous pouvez utiliser pour vérifier si l’ensemble de conditions requises spécifié est pris en charge par l’application Excel dans laquelle le complément est exécuté. 
+- [Context](/javascript/api/office/office.context) : l’objet **Context** représente l’environnement d’exécution du complément et permet d’accéder à des objets clés de l’API. Il se compose de détails sur la configuration du classeur comme `contentLanguage` et `officeTheme`, et fournit des informations sur l’environnement d’exécution du complément comme `host` et `platform`. En outre, il fournit la méthode `requirements.isSetSupported()` que vous pouvez utiliser pour vérifier si l’ensemble de conditions requises spécifié est pris en charge par l’application Excel dans laquelle le complément est exécuté. 
 
-- [Document](https://docs.microsoft.com/javascript/api/office/office.document) : L’objet **Document** fournit la méthode `getFileAsync()` que vous pouvez utiliser pour télécharger le fichier Excel dans lequel le complément est exécuté. 
+- [Document](/javascript/api/office/office.document) : L’objet **Document** fournit la méthode `getFileAsync()` que vous pouvez utiliser pour télécharger le fichier Excel dans lequel le complément est exécuté. 
 
 ## <a name="requirement-sets"></a>Ensembles de conditions requises
 
-Les ensembles de conditions requises sont des groupes nommés de membres d’API. Le complément Office peut effectuer une vérification à l’exécution ou utiliser des ensembles de conditions requises spécifiés dans le manifeste pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour identifier les ensembles de conditions requises spécifiques disponibles sur chaque plateforme prise en charge, reportez-vous à [Ensembles de conditions requises de l’API JavaScript pour Excel](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets).
+Les ensembles de conditions requises sont des groupes nommés de membres d’API. Le complément Office peut effectuer une vérification à l’exécution ou utiliser des ensembles de conditions requises spécifiés dans le manifeste pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour identifier les ensembles de conditions requises spécifiques disponibles sur chaque plateforme prise en charge, reportez-vous à [Ensembles de conditions requises de l’API JavaScript pour Excel](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets).
 
 ### <a name="checking-for-requirement-set-support-at-runtime"></a>Vérification de la prise en charge de l’ensemble de conditions requises à l’exécution
 
@@ -47,7 +47,7 @@ else {
 
 ### <a name="defining-requirement-set-support-in-the-manifest"></a>Définition de la prise en charge de l’ensemble de conditions requises dans le manifeste
 
-Vous pouvez utiliser l’[élément Requirements](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/requirements) dans le manifeste de complément pour spécifier les ensembles de conditions requises minimales et/ou les méthodes d’API que votre complément doit activer. Si la plateforme ou l’hôte Office ne prend pas en charge les ensembles de conditions requises ou les méthodes d’API spécifiées dans l’élément **Requirements** du manifeste, le complément ne s’exécute pas dans cet hôte ou cette plateforme et ne s’affiche pas dans des compléments dans **Mes compléments**. 
+Vous pouvez utiliser l’[élément Requirements](/office/dev/add-ins/reference/manifest/requirements) dans le manifeste de complément pour spécifier les ensembles de conditions requises minimales et/ou les méthodes d’API que votre complément doit activer. Si la plateforme ou l’hôte Office ne prend pas en charge les ensembles de conditions requises ou les méthodes d’API spécifiées dans l’élément **Requirements** du manifeste, le complément ne s’exécute pas dans cet hôte ou cette plateforme et ne s’affiche pas dans des compléments dans **Mes compléments**. 
 
 L’exemple de code suivant montre l’élément **Requirements** dans un manifeste indiquant que le complément doit être chargé dans toutes les applications hôtes Office prenant en charge l’ensemble de conditions requises ExcelApi version 1.3 ou ultérieure.
 
@@ -64,7 +64,7 @@ L’exemple de code suivant montre l’élément **Requirements** dans un manife
 
 ### <a name="requirement-sets-for-the-officejs-common-api"></a>Ensembles de conditions requises pour l’API commune Office.js
 
-Pour plus d’informations sur les ensembles de conditions requises des API communes, voir [Ensembles de conditions requises des API communes pour Office](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).
+Pour plus d’informations sur les ensembles de conditions requises des API communes, voir [Ensembles de conditions requises des API communes pour Office](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).
 
 ## <a name="loading-the-properties-of-an-object"></a>Chargement des propriétés d’un objet
 
@@ -91,7 +91,7 @@ object.load(param);
 |:------------|:-------|:----------|
 |`param`|objet|Facultatif. Accepte des noms de paramètre et de relation sous forme de tableau ou de chaîne délimitée par des virgules. Un objet peut également être transmis pour définir les propriétés de sélection et de navigation (comme illustré dans l’exemple ci-dessous).|
 
-#### <a name="returns"></a>Retourne
+#### <a name="returns"></a>Renvoie
 
 void
 
@@ -100,7 +100,7 @@ void
 L’exemple de code suivant définit les propriétés d’une plage Excel en copiant les propriétés d’une autre plage. L’objet source doit d’abord être chargé, avant que ses valeurs de propriété puissent être accessibles et écrites sur la plage cible. L’exemple suppose que les deux plages (**B2:E2** et **B7:E7**) comprennent des données, et que leur mise en forme initiale est différente.
 
 ```js
-Excel.run(function (ctx) { 
+Excel.run(function (ctx) {
     var sheet = ctx.workbook.worksheets.getItem("Sample");
     var sourceRange = sheet.getRange("B2:E2");
     sourceRange.load("format/fill/color, format/font/name, format/font/color");
@@ -108,7 +108,7 @@ Excel.run(function (ctx) {
     return ctx.sync()
         .then(function () {
             var targetRange = sheet.getRange("B7:E7");
-            targetRange.set(sourceRange); 
+            targetRange.set(sourceRange);
             targetRange.format.autofitColumns();
 
             return ctx.sync();
@@ -132,7 +132,7 @@ Au lieu de transmettre un tableau ou une chaîne délimitée par des virgules lo
 |`top`|int| Spécifie le nombre maximal d’éléments de collection qui peuvent être inclus dans le résultat. Facultatif. Vous pouvez utiliser cette option uniquement lorsque vous utilisez l’option de notation d’objet.|
 |`skip`|int|Indiquez le nombre d’éléments de la collection devant être ignorés et exclus du résultat. Si une valeur est définie pour `top`, la sélection du jeu de résultats démarre une fois que le nombre spécifié d’éléments a été ignoré. Facultatif. Vous pouvez utiliser cette option uniquement lorsque vous utilisez l’option de notation d’objet.|
 
-L’exemple de code suivant charge une collection en sélectionnant la propriété `name` et l’élément `address` de la plage utilisée pour chaque feuille de calcul dans la collection. Il indique également que seules les cinq premières feuilles de calcul de la collection doivent être chargées. Vous pouvez traiter l’ensemble suivant de cinq feuilles de calcul en spécifiant `top: 10` et `skip: 5` en tant que valeurs d’attribut. 
+L’exemple de code suivant charge une collection de feuilles de calcul en sélectionnant la propriété `name` et l’élément `address` de la plage utilisée pour chaque feuille de calcul dans la collection. Il indique également que seules les cinq premières feuilles de calcul de la collection doivent être chargées. Vous pouvez traiter l’ensemble suivant de cinq feuilles de calcul en spécifiant `top: 10` et `skip: 5` en tant que valeurs d’attribut.
 
 ```js 
 myWorksheets.load({
@@ -143,9 +143,9 @@ myWorksheets.load({
 });
 ```
 
-## <a name="scalar-and-navigation-properties"></a>Propriétés scalaires et de navigation 
+## <a name="scalar-and-navigation-properties"></a>Propriétés scalaires et de navigation
 
-Dans la documentation de référence de l’API JavaScript pour Excel, les membres de l’objet sont regroupés en deux catégories : les **propriétés** et les **relations**. Une propriété d’objet est un membre scalaire comme une chaîne, un nombre entier ou une valeur booléenne, alors qu’une relation d’objet (également appelée propriété de navigation) est un membre qui est un objet ou une collection d’objets. Par exemple, les membres `name` et `position` sur l’objet [Worksheet](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) sont des propriétés scalaires, tandis que `protection` et `tables` sont des relations (propriétés de navigation). 
+Dans la documentation de référence de l’API JavaScript pour Excel, les membres de l’objet sont regroupés en deux catégories : les **propriétés** et les **relations**. Une propriété d’objet est un membre scalaire comme une chaîne, un nombre entier ou une valeur booléenne, alors qu’une relation d’objet (également appelée propriété de navigation) est un membre qui est un objet ou une collection d’objets. Par exemple, les membres `name` et `position` sur l’objet [Worksheet](/javascript/api/excel/excel.worksheet) sont des propriétés scalaires, tandis que `protection` et `tables` sont des relations (propriétés de navigation). 
 
 ### <a name="scalar-properties-and-navigation-properties-with-objectload"></a>Propriétés scalaires et propriétés de navigation avec `object.load()`
 
@@ -184,14 +184,14 @@ object.set(properties[, options]);
 
 #### <a name="returns"></a>Retourne
 
-void    
+void
 
 #### <a name="example"></a>Exemple
 
 L’exemple de code suivant définit plusieurs propriétés de mise en forme d’une plage en appelant la méthode `set()` et en transmettant un objet JavaScript avec des noms et des types de propriétés reflétant la structure des propriétés dans l’objet **Range**. Cet exemple part du principe que des données sont présentes dans la plage **B2:E2**.
 
 ```js
-Excel.run(function (ctx) { 
+Excel.run(function (ctx) {
     var sheet = ctx.workbook.worksheets.getItem("Sample");
     var range = sheet.getRange("B2:E2");
     range.set({
@@ -207,7 +207,7 @@ Excel.run(function (ctx) {
     });
     range.format.autofitColumns();
 
-    return ctx.sync(); 
+    return ctx.sync();
 }).catch(function(error) {
     console.log("Error: " + error);
     if (error instanceof OfficeExtension.Error) {
@@ -215,6 +215,7 @@ Excel.run(function (ctx) {
     }
 });
 ```
+
 ## <a name="42ornullobject-methods"></a>Méthodes &#42;OrNullObject
 
 De nombreuses méthodes d’API JavaScript pour Excel renvoient une exception lorsque la condition de l’API n’est pas remplie. Par exemple, si vous tentez d’obtenir une feuille de calcul en spécifiant le nom d’une feuille de calcul qui n’existe pas dans le classeur, la méthode `getItem()` renvoie une exception `ItemNotFound`. 
@@ -224,11 +225,11 @@ Au lieu d’implémenter une logique complexe de gestion des exceptions pour des
 L’exemple de code suivant tente de récupérer une feuille de calcul nommée « Data » à l’aide de la méthode `getItemOrNullObject()`. Si la méthode renvoie un objet Null, une nouvelle feuille doit être créée pour pouvoir réaliser des actions sur la feuille.
 
 ```js
-var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data"); 
+var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
 
 return context.sync()
   .then(function() {
-    if (dataSheet.isNullObject) { 
+    if (dataSheet.isNullObject) {
         // Create the sheet
     }
 
@@ -238,9 +239,8 @@ return context.sync()
 ```
 
 ## <a name="see-also"></a>Voir aussi
- 
+
 * [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
-* 
-  [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Optimisation des performances à l’aide de l’API JavaScript d’Excel](performance.md)
-* [Référence de l’API JavaScript pour Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [Référence de l’API JavaScript pour Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

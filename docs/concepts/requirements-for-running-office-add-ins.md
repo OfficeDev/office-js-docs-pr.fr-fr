@@ -1,21 +1,21 @@
 ---
 title: Configuration requise pour exécuter des compléments Office
 description: ''
-ms.date: 02/09/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 3d3e9c16a9227f46d00f85ccfc74f6a5d8c5568c
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: c57534a8d00904336af518d9d32606373b2edab6
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386644"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872038"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Configuration requise pour exécuter des compléments Office
 
 Cet article décrit la configuration logicielle et matérielle requise pour l’exécution des compléments Office.
 
 > [!NOTE]
-> Si vous prévoyez de [publier](../publish/publish.md) votre complément sur AppSource et de le rendre disponible dans l’expérience Office, assurez-vous que vous respectez les [stratégies de validation AppSource](https://docs.microsoft.com/office/dev/store/validation-policies). Par exemple, pour réussir la validation, votre complément doit fonctionner sur toutes les plateformes prenant en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) et la [page relative à la disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md)). 
+> Si vous prévoyez de [publier](../publish/publish.md) votre complément sur AppSource et de le rendre disponible dans l’expérience Office, assurez-vous que vous respectez les [stratégies de validation AppSource](/office/dev/store/validation-policies). Par exemple, pour réussir la validation, votre complément doit fonctionner sur toutes les plateformes prenant en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) et la [page relative à la disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md)).
 
 Pour savoir de manière détaillée quelle version d’Office prend en charge les compléments Office, consultez la page relative à la [disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md).
 
@@ -45,10 +45,8 @@ Le logiciel suivant est requis pour développer un Complément Office pour les c
 - Pour les ordinateurs de bureau Windows x86 et x64 et les tablettes telles que Surface Pro :
     - La version 32 bits ou 64 bits d’Office 2013 ou une version ultérieure s’exécutant sur Windows 7 ou une version ultérieure.
     - Excel 2013, Outlook 2013, PowerPoint 2013, Project Professionnel 2013, Project 2013 SP1 ou Word 2013, ou une version ultérieure du client Office, si vous testez ou exécutez un Complément Office, notamment pour l’un de ces clients de bureau Office. Les clients de bureau Office peuvent être installés sur site ou par le biais de « Démarrer en un clic » sur l’ordinateur client.
-    
-  Si vous avez un abonnement Office 365 valide, mais que vous n’avez pas accès à Office 2013, vous pouvez le télécharger via l’un des liens CDN suivants :       
-    - [Office 2013 pour les entreprises (.exe)](https://c2rsetup.officeapps.live.com/c2r/download.aspx?productReleaseID=O365BusinessRetail&platform=X86&language=en-us&version=O15GA&source=O15OLSO365) 
-    - [Office 2013 pour les particuliers (.exe)](https://c2rsetup.officeapps.live.com/c2r/download.aspx?productReleaseID=O365HomePremRetail&platform=X86&language=en-us&version=O15GA&source=O15OLSO365) 
+
+  Si vous avez un abonnement Office 365 valide et vous n’avez pas accès au client Office, vous pouvez [télécharger et installer la dernière version d’Office](https://support.office.com/article/download-and-install-or-reinstall-office-365-or-office-2019-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658).
 
 - Internet Explorer 11 ou version ultérieure, qui doit être installé, mais ne doit pas être le navigateur par défaut. Pour prendre en charge les compléments Office, le client Office qui s’exécute en tant qu’hôte utilise des composants de navigateur qui font partie d’Internet Explorer 11 ou version ultérieure.
 
@@ -64,8 +62,8 @@ Outlook pour Mac, qui est distribué dans le cadre d’Office 365, prend en cha
 
 Les versions de client minimales d’Office pour Mac prenant en charge les compléments Office sont les suivantes :
 
-- Word pour Mac version 15.18 (160109) 
-- Excel pour Mac version 15.19 (160206) 
+- Word pour Mac version 15.18 (160109)
+- Excel pour Mac version 15.19 (160206)
 - PowerPoint pour Mac version 15.24 (160614)
 
 ## <a name="client-requirements-browser-support-for-office-online-web-clients-and-sharepoint"></a>Exigences en matière de client : prise en charge du navigateur pour les clients web Office Online et SharePoint
@@ -75,15 +73,17 @@ Tout navigateur qui prend en charge ECMAScript 5.1, HTML5 et CSS3, tel qu’Int
 
 ## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>Exigences en matière de client : smartphones et tablettes autres que Windows
 
-Plus particulièrement pour OWA pour périphériques et Outlook Web App exécutés dans un navigateur sur des smartphones et des tablettes non Windows, le logiciel suivant est requis pour tester et exécuter des compléments Outlook.
+Spécialement pour Outlook Web App dans un navigateur sur smartphones et tablettes non-Windows, le logiciel suivant est nécessaire pour tester et exécuter les compléments Outlook.
 
 
 | Application hôte | Appareil | Système d’exploitation | Compte Exchange | Navigateur mobile |
 |:-----|:-----|:-----|:-----|:-----|
-|OWA pour Android|Smartphones Android. D’un point de vue technique, ces appareils sont considérés comme « petits » ou « normaux » par [Android OS](https://developer.android.com/guide/practices/screens_support.html).|Android 4.4 Kitkat ou version ultérieure|Sur la dernière mise à jour d’Office 365 pour les entreprises ou d’Exchange Online|Complément natif pour Android, navigateur non applicable|
-|OWA pour iPad|iPad 2 ou version ultérieure|iOS 6 ou version ultérieure|Sur la dernière mise à jour d’Office 365 pour les entreprises ou d’Exchange Online|Complément natif pour iOS, navigateur non applicable|
-|OWA pour iPhone|iPhone 4S ou version ultérieure|iOS 6 ou version ultérieure|Sur la dernière mise à jour d’Office 365 pour les entreprises ou d’Exchange Online|Complément natif pour iOS, navigateur non applicable|
-|Outlook Web App|iPhone 4, iPad 2, iPod Touch 4 (ou version ultérieure de ces appareils)|iOS 5 ou version ultérieure|Sur Office 365, Exchange Online, ou localement sur Exchange Server 2013 ou version ultérieure|Safari|
+|Outlook pour Android|Tablettes et smartphones Android|Android KitKat 4.4 et version ultérieure|Sur la dernière mise à jour d’Office 365 pour les entreprises ou d’Exchange Online|Application native pour Android, navigateur non applicable|
+|Outlook pour iOS|Tablettes iPad, smartphones iPhone|iOS 11 ou version ultérieure|Sur la dernière mise à jour d’Office 365 pour les entreprises ou d’Exchange Online|Application native pour iOS, navigateur non applicable|
+|Outlook Web App|iPhone 4, iPad 2, iPod Touch 4 (ou version ultérieure de ces appareils)|iOS 5 ou version ultérieure|Dans Office 365, Exchange Online ou en local sur Exchange Server 2013 ou version ultérieure|Safari|
+
+> [!NOTE]
+> Les applications natives OWA pour Android, OWA pour iPad et OWA pour iPhone ont été [supprimées](https://support.office.com/article/Microsoft-OWA-mobile-apps-are-being-retired-076ec122-4576-4900-bc26-937f84d25a4b) et ne sont plus requises ou disponibles pour les tests des compléments Outlook.
 
 
 ## <a name="see-also"></a>Voir aussi

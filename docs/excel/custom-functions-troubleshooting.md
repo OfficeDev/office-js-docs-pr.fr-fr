@@ -1,14 +1,14 @@
 ---
-ms.date: 03/06/2019
+ms.date: 03/19/2019
 description: Résoudre des problèmes courants dans les fonctions personnalisées d’Excel.
 title: Résoudre des problèmes de fonctions personnalisées (préversion)
 localization_priority: Priority
-ms.openlocfilehash: ada60fb4184095f194ff425823b04456a7bf0e76
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.openlocfilehash: 19c3dcccce7618289dc49c3f61ce781744c24369
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30693757"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871338"
 ---
 # <a name="troubleshoot-custom-functions"></a>Résoudre des problèmes de fonctions personnalisées
 
@@ -18,11 +18,11 @@ Pour résoudre des problèmes, vous pouvez [activer la journalisation du runtime
 
 ## <a name="enable-runtime-logging"></a>Activer la journalisation du runtime
 
-Si vous testez votre complément dans Office sur Windows, vous devez [activer la journalisation du runtime](https://docs.microsoft.com/fr-FR/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in). La journalisation du runtime fournit des instructions `console.log` dans un fichier journal distinct que vous créez pour vous aider à découvrir des problèmes. Les instructions couvrent diverses erreurs, dont des erreurs liées au fichier manifeste XML de votre complément, aux conditions d’exécution ou à l’installation de vos fonctions personnalisées.  Pour plus d’informations sur la journalisation du runtime, voir [Utilisation de la journalisation du runtime pour déboguer votre complément](https://docs.microsoft.com/fr-FR/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in).  
+Si vous testez votre complément dans Office sur Windows, vous devez [activer la journalisation du runtime](/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in). La journalisation du runtime fournit des instructions `console.log` dans un fichier journal distinct que vous créez pour vous aider à découvrir des problèmes. Les instructions couvrent diverses erreurs, dont des erreurs liées au fichier manifeste XML de votre complément, aux conditions d’exécution ou à l’installation de vos fonctions personnalisées.  Pour plus d’informations sur la journalisation du runtime, voir [Utilisation de la journalisation du runtime pour déboguer votre complément](/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in).  
 
 ### <a name="check-for-excel-error-messages"></a>Rechercher les messages d’erreur Excel
 
-Excel dispose d’un certain nombre de messages d’erreur intégrés qui sont renvoyés à une cellule en cas d’erreur de calcul. Les fonctions personnalisées utilisent uniquement les messages d’erreur suivants : `#NULL!`, `#DIV/0!`, `#VALUE!`, `#REF!`, `#NAME?`, `#NUM!`, `#N/A` et `#GETTING_DATA`.
+Excel dispose d’un certain nombre de messages d’erreur intégrés qui sont renvoyés à une cellule en cas d’erreur de calcul. Les fonctions personnalisées utilisent uniquement les messages d’erreur suivants : `#NULL!`, `#DIV/0!`, `#VALUE!`, `#REF!`, `#NAME?`, `#NUM!`, `#N/A` et `#BUSY!`.
 
 ## <a name="common-issues"></a>Problèmes courants
 
@@ -44,11 +44,11 @@ function add(first, second){
 CustomFunctions.associate("ADD", add);
 ```
 
-Pour plus d’informations sur ce processus, voir [Mappage des noms de fonction aux métadonnées JSON](https://docs.microsoft.com/fr-FR/office/dev/add-ins/excel/custom-functions-best-practices#associating-function-names-with-json-metadata).
+Pour plus d’informations sur ce processus, voir [Mappage des noms de fonction aux métadonnées JSON](/office/dev/add-ins/excel/custom-functions-best-practices#associating-function-names-with-json-metadata).
 
 ### <a name="ensure-promises-return"></a>Veiller au renvoi de promesses
 
-Quand Excel attend la fin de l’exécution d’une fonction personnalisée, il affiche #CHARGEMENT_DONNEES dans la cellule. Si votre code de fonction personnalisée renvoie une promesse sans que celle-ci renvoie de résultat, Excel continue d’afficher #CHARGEMENT_DONNEES. Vérifiez vos fonctions pour vous assurer que les promesses renvoient correctement un résultat à une cellule.
+Quand Excel attend la fin de l’exécution d’une fonction personnalisée, il affiche #OCCUPÉ! dans la cellule. Si votre code de fonction personnalisée renvoie une promesse sans que celle-ci renvoie de résultat, Excel continue d’afficher #OCCUPÉ!. Vérifiez vos fonctions pour vous assurer que les promesses renvoient correctement un résultat à une cellule.
 
 ## <a name="reporting-feedback"></a>Formulation de commentaires
 

@@ -1,14 +1,14 @@
 ---
 title: Ouvrir automatiquement un volet Office avec un document
 description: ''
-ms.date: 05/02/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: dd0fb8befdfe41ec96f1f418b3e4eb43f6ba98da
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: a231255200d6edd1fc923a82711c8c24819bf914
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386756"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870239"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Ouvrir automatiquement un volet Office avec un document
 
@@ -25,7 +25,7 @@ Avec la fonctionnalité d’ouverture automatique, vous pouvez explicitement dé
 
 ## <a name="support-and-availability"></a>Prise en charge et disponibilité
 
-La fonctionnalité d’ouverture automatique est actuellement <!-- in **developer preview** and it is only --> prise en charge dans les plateformes et produits suivants.
+La fonctionnalité d’ouverture automatique est maintenant <!-- in **developer preview** and it is only --> prise en charge dans les produits et les plateformes suivantes.
 
 |**Produits**|**Plateformes**|
 |:-----------|:------------|
@@ -60,7 +60,7 @@ Pour implémenter la fonctionnalité d’ouverture automatique, procédez comme 
 
 ### <a name="step-1-specify-the-task-pane-to-open"></a>Étape 1 : Spécifier le volet des tâches à ouvrir
 
-Pour spécifier le volet de tâches à ouvrir automatiquement, définissez la valeur [TaskpaneId](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/action#taskpaneid) sur **Office.AutoShowTaskpaneWithDocument**. Vous pouvez uniquement définir cette valeur sur un seul volet de tâches. Si vous définissez cette valeur sur plusieurs volets de tâches, la première occurrence de la valeur sera reconnue et les autres seront ignorées.
+Pour spécifier le volet de tâches à ouvrir automatiquement, définissez la valeur [TaskpaneId](/office/dev/add-ins/reference/manifest/action#taskpaneid) sur **Office.AutoShowTaskpaneWithDocument**. Vous pouvez uniquement définir cette valeur sur un seul volet de tâches. Si vous définissez cette valeur sur plusieurs volets de tâches, la première occurrence de la valeur sera reconnue et les autres seront ignorées.
 
 L’exemple suivant illustre la valeur TaskPaneId définie sur Office.AutoShowTaskpaneWithDocument.
 
@@ -78,7 +78,7 @@ Vous pouvez baliser le document pour déclencher la fonctionnalité d’ouvertur
 
 #### <a name="tag-the-document-on-the-client-side"></a>Baliser le document côté client
 
-Utilisez la méthode Office.js [settings.set](https://docs.microsoft.com/javascript/api/office/office.settings) pour définir **Office.AutoShowTaskpaneWithDocument** sur **true**, comme illustré dans l’exemple suivant.
+Utilisez la méthode Office.js [settings.set](/javascript/api/office/office.settings) pour définir **Office.AutoShowTaskpaneWithDocument** sur **true**, comme illustré dans l’exemple suivant.
 
 ```js
 Office.context.document.settings.set("Office.AutoShowTaskpaneWithDocument", true);
@@ -159,10 +159,10 @@ Vous pouvez déployer une version de test de votre complément qui ouvrira autom
 </we:webextension>
 ```
 
-Pour tester l’exemple précédent, songez éventuellement à rejoindre le [programme pour les développeurs Office 365](https://docs.microsoft.com/office/developer-program/office-365-developer-program) et à créer un [compte développeur Office 365](https://developer.microsoft.com/office/dev-program) si vous ne possédez pas déjà un abonnement Office 365. Vous pouvez essayer le déploiement centralisé en conditions réelles et vérifier que votre complément fonctionne comme prévu.
+Pour tester l’exemple précédent, songez éventuellement à rejoindre le [programme pour les développeurs Office 365](/office/developer-program/office-365-developer-program) et à créer un [compte développeur Office 365](https://developer.microsoft.com/office/dev-program) si vous ne possédez pas déjà un abonnement Office 365. Vous pouvez essayer le déploiement centralisé en conditions réelles et vérifier que votre complément fonctionne comme prévu.
 
 
 ## <a name="see-also"></a>Voir aussi
 
 Pour voir un exemple illustrant comment utiliser la fonctionnalité d’ouverture automatique, reportez-vous à [Exemples de commandes de complément Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane).
-[Rejoindre le programme pour les développeurs Office 365](https://docs.microsoft.com/office/developer-program/office-365-developer-program).
+[Rejoindre le programme pour les développeurs Office 365](/office/developer-program/office-365-developer-program).
