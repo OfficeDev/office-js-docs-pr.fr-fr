@@ -1,22 +1,31 @@
 ---
-ms.date: 01/08/2019
+ms.date: 03/29/2019
 description: Définissez des métadonnées pour des fonctions personnalisées dans Excel.
 title: Métadonnées pour des fonctions personnalisées dans Excel (aperçu)
 localization_priority: Normal
-ms.openlocfilehash: 43ec436d15d118346bb04dcd4d16f5eb180ecbd3
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 28a9a0207f7439af164eb9ca7c4b9ed9e966b3ed
+ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30872087"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "31477550"
 ---
 # <a name="custom-functions-metadata-preview"></a>Métadonnées de fonctions personnalisées (aperçu)
 
-Lorsque vous définissez des [fonctions personnalisées](custom-functions-overview.md) dans votre complément Excel, votre projet de complément doit inclure un fichier de métadonnées JSON qui fournit les informations dont Excel a besoin pour enregistrer les fonctions personnalisées et les rendre disponibles aux utilisateurs finaux. Cet article décrit le format du fichier de métadonnées JSON.
+Lorsque vous définissez des [fonctions personnalisées](custom-functions-overview.md) dans votre complément Excel, votre projet de complément inclut un fichier de métadonnées JSON qui fournit les informations dont Excel a besoin pour enregistrer les fonctions personnalisées et les rendre accessibles aux utilisateurs finaux. Ce fichier est généré:
+
+- par vous-même, dans un fichier JSON manuscrit
+- à partir des commentaires JSDoc que vous entrez au début de votre fonction
+
+Les fonctions personnalisées sont inscrites lorsque l'utilisateur exécute le complément pour la première fois et après qu'il est disponible pour le même utilisateur dans tous les classeurs.
+
+Cet article décrit le format du fichier de métadonnées JSON, en supposant que vous l'écrivez manuellement. Pour plus d'informations sur la génération de fichiers JSON de commentaire JSDoc, voir [generate JSON Metadata for Custom Functions](custom-functions-json-autogeneration.md).
 
 Pour plus d’informations sur les autres fichiers à inclure dans votre projet de complément afin d’activer les fonctions personnalisées, voir [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md).
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+> Les paramètres du serveur qui héberge le fichier JSON doivent avoir [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) activée afin que les fonctions personnalisées s’exécutent correctement dans Excel Online.
 
 ## <a name="example-metadata"></a>Exemple de métadonnées
 
@@ -104,13 +113,13 @@ L’exemple suivant montre le contenu d’un fichier de métadonnées JSON pour 
 ```
 
 > [!NOTE]
-> Un exemple de fichier JSON complet est disponible dans le dépôt GitHub [OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/config/customfunctions.json).
+> Un exemple de fichier JSON complet est disponible dans le dépôt GitHub [OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/src/functions/functions.json).
 
 ## <a name="functions"></a>fonctions 
 
 La propriété `functions` est un tableau d’objets de fonction personnalisés. Le tableau suivant répertorie les propriétés de chaque objet.
 
-|  Propriété  |  Type de données  |  Requis  |  Description  |
+|  Propriété  |  Type de données  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|:-----|
 |  `description`  |  string  |  Non  |  Description de la fonction que voient les utilisateurs finaux dans Excel. Par exemple, **convertit une valeur Celsius en valeur Fahrenheit**. |
 |  `helpUrl`  |  string  |   Non  |  URL fournissant des informations sur la fonction (elle est affichée dans un volet des tâches). Par exemple, **http://contoso.com/help/convertcelsiustofahrenheit.html**. |
@@ -124,7 +133,7 @@ La propriété `functions` est un tableau d’objets de fonction personnalisés.
 
 L’objet `options` vous permet de personnaliser certains aspects de comment et quand Excel exécute la fonction. Le tableau suivant répertorie les propriétés de l’objet `options`.
 
-|  Propriété  |  Type de données  |  Requis  |  Description  |
+|  Propriété  |  Type de données  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|:-----|
 |  `cancelable`  |  boolean  |  Non<br/><br/>La valeur par défaut est `false`.  |  Si la valeur est `true`, Excel appelle le gestionnaire `onCanceled` chaque fois que l’utilisateur effectue une action ayant pour effet d’annuler la fonction, par exemple, en déclenchant manuellement un recalcul ou en modifiant une cellule référencée par la fonction. Si vous utilisez cette option, Excel appelle la fonction JavaScript avec un paramètre `caller` supplémentaire (n’enregistrez ***pas*** ce paramètre dans la propriété `parameters`). Dans le corps de la fonction, un gestionnaire doit être attribué au membre `caller.onCanceled`. Pour plus d’informations, voir [Annuler une fonction](custom-functions-web-reqs.md#canceling-a-function). |
 |  `stream`  |  boolean  |  Non<br/><br/>La valeur par défaut est `false`.  |  Si la valeur est `true`, la fonction peut envoyer une sortie à la cellule à plusieurs reprises, même en cas d’appel unique. Cette option est utile pour des sources de données qui changent rapidement, telles que des valeurs boursières. Si vous utilisez cette option, Excel appelle la fonction JavaScript avec un paramètre `caller` supplémentaire (n’enregistrez ***pas*** ce paramètre dans la propriété `parameters`). La fonction ne doit pas utiliser d’instruction `return`. Au lieu de cela, la valeur obtenue est transmise en tant qu’argument de la méthode de rappel `caller.setResult`. Pour plus d’informations, voir [Diffusion en continu de fonctions](custom-functions-web-reqs.md#streaming-functions). |
@@ -134,7 +143,7 @@ L’objet `options` vous permet de personnaliser certains aspects de comment et 
 
 La propriété `parameters` est un tableau d’objets paramètre. Le tableau suivant répertorie les propriétés de chaque objet.
 
-|  Propriété  |  Type de données  |  Requis  |  Description  |
+|  Propriété  |  Type de données  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|:-----|
 |  `description`  |  string  |  Non |  Description du paramètre. S’affiche dans intelliSense d’Excel.  |
 |  `dimensionality`  |  string  |  Non  |  Doit être **scalaire** (valeur autre que de tableau) ou **matrice** (tableau bidimensionnel).  |
@@ -149,7 +158,7 @@ La propriété `parameters` est un tableau d’objets paramètre. Le tableau sui
 
 L’objet `result` définit le type des informations renvoyées par la fonction. Le tableau suivant répertorie les propriétés de l’objet `result`.
 
-|  Propriété  |  Type de données  |  Requis  |  Description  |
+|  Propriété  |  Type de données  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|:-----|
 |  `dimensionality`  |  string  |  Non  |  Doit être **scalaire** (valeur autre que de tableau) ou **matrice** (tableau bidimensionnel). |
 |  `type`  |  string  |  Oui  |  Type de données du paramètre. Doit être **boolean**, **number**, **string** ou **any** qui vous permet d’utiliser n’importe lequel des trois types précédents. |

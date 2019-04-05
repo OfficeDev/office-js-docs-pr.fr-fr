@@ -2,12 +2,13 @@
 ms.date: 01/08/2019
 description: Découvrez les mises à jour les plus récentes aux fonctions Excel personnalisées.
 title: Fonctions personnalisées changelog (aperçu)
-ms.openlocfilehash: a450bf2f6a297fe0843f3b3b57a17be0c854905e
-ms.sourcegitcommit: d1b5966b157a262536699eeb26ac5029cb5bf7f5
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 03e4dd922ac3895e11a508f97e7ac3fa3e7b1cb0
+ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "27783295"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "31477536"
 ---
 # <a name="custom-functions-changelog-preview"></a>Fonctions personnalisées changelog (aperçu)
 
@@ -18,7 +19,7 @@ Les fonctions personnalisées Excel est toujours en version préliminaire et qui
 - **28 novembre 2017 :** prise en charge de l’annulation sur des fonctions asynchrones (nécessite la modification des fonctions de flux)
 - **7 mai 2018**: prise en charge pour Mac, Excel Online et fonctions synchrones dans les processus en cours d’exécution
 - **20 septembre 2018**: prise en charge de fonctions personnalisées lors de l’exécution de JavaScript. Pour plus d’informations, voir [Runtime pour les fonctions personnalisées Excel](custom-functions-runtime.md).
-- **20 octobre 2018**: avec le programme[October Insiders build](https://support.office.com/fr-FR/article/what-s-new-for-office-insiders-c152d1e2-96ff-4ce9-8c14-e74e13847a24), les fonctions personnalisées nécessitent désormais le paramètre « id » dans vos[métadonnées fonctions personnalisées](custom-functions-json.md) pour les versions Windows Bureau et Online. Sur Mac, ce paramètre doit être ignoré. Les fonctions personnalisées prennent également en charge maintenant des paramètres facultatifs et le `any` type return.
+- **20 octobre 2018**: avec le programme[October Insiders build](https://support.office.com/en-us/article/what-s-new-for-office-insiders-c152d1e2-96ff-4ce9-8c14-e74e13847a24), les fonctions personnalisées nécessitent désormais le paramètre « id » dans vos[métadonnées fonctions personnalisées](custom-functions-json.md) pour les versions Windows Bureau et Online. Sur Mac, ce paramètre doit être ignoré. Les fonctions personnalisées prennent également en charge maintenant des paramètres facultatifs et le `any` type return.
 - **12 décembre 2018**: les fonctions personnalisées incluent désormais un moyen de découvrir l’adresse d’une cellule. Pour plus d’informations, voir[Déterminer quelle cellule a appelé votre fonction personnalisée](custom-functions-overview.md#determine-which-cell-invoked-your-custom-function).
 - **Le 8 janvier 2019**: liaison méthode `CustomFunctionMapping()` a été modifié pour `CustomFunctions.associate()`. Pour plus d’informations, consultez les[Meilleures pratiques en matière de questions de fonctions personnalisées (aperçu)](custom-functions-best-practices.md).
 
@@ -33,3 +34,4 @@ Pour obtenir la liste des problèmes connus avec le produit, voir [Problèmes Co
 * [Exécution de fonctions personnalisées Excel](custom-functions-runtime.md)
 * [Meilleures pratiques de fonctions personnalisées](custom-functions-best-practices.md)
 * [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md)
+* [Débogage des fonctions personnalisées](custom-functions-debugging.md)
