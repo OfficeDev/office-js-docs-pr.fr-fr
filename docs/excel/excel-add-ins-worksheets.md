@@ -1,14 +1,14 @@
 ---
 title: Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 description: ''
-ms.date: 02/20/2019
+ms.date: 04/04/2019
 localization_priority: Priority
-ms.openlocfilehash: 825ae88afd98afbcd268716c93ddcb13d24a9a1e
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 0c66022112e6a6742753feb9945300a5d214e9bb
+ms.sourcegitcommit: 63219bcc1bb5e3bed7eb6c6b0adb73a4829c7e8f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871555"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "31479724"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 
@@ -279,6 +279,30 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
+## <a name="detect-data-changes"></a>Détecter les modifications de données
+
+Votre complément peut avoir besoin de réagir aux utilisateurs modifiant les données dans une feuille de calcul. Pour détecter ces modifications, vous pouvez [inscrire un gestionnaire d’événements](excel-add-ins-events.md#register-an-event-handler) à l’événement `onChanged` d’une feuille de calcul. Le gestionnaires d’événements de l’événement `onChanged` reçoit un objet [WorksheetChangedEventArgs](/javascript/api/excel/excel.worksheetchangedeventargs) lorsque l’événement se déclenche.
+
+L’objet `WorksheetChangedEventArgs` fournit des informations sur les modifications et la source. Puisque `onChanged` se déclenche lorsque le format ou la valeur des données sont modifiés, il peut être utile que votre complément vérifie si les valeurs ont réellement été modifiées. La propriété de `details` regroupe ces informations en tant qu’un [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail). L’exemple de code suivant illustre la procédure d’affichage des valeurs et des types d’une cellule qui a été modifiée, avant et après modification.
+
+> [!NOTE]
+> `WorksheetChangedEventArgs.details` est actuellement uniquement disponible en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+```js
+// This function would be used as an event handler for the Worksheet.onChanged event.
+function onWorksheetChanged(eventArgs) {
+    Excel.run(function (context) {
+        var details = eventArgs.details;
+        var address = eventArgs.address;
+
+        // Print the before and after types and values to the console.
+        console.log(`Change at ${address}: was ${details.valueBefore}(${details.valueTypeBefore}),`
+            + ` now is ${details.valueAfter}(${details.valueTypeAfter})`);
+        return context.sync();
+    });
+}
+```
+
 ## <a name="find-all-cells-with-matching-text-preview"></a>Trouver toutes les cellules avec du texte correspondant (préversion)
 
 > [!NOTE]
@@ -326,8 +350,8 @@ Excel.run(function (context) {
 
 La méthode `protect` présente deux paramètres facultatifs :
 
-- `options` : objet [WorksheetProtectionOptions](/javascript/api/excel/excel.worksheetprotectionoptions) définissant des restrictions de modification spécifiques.
-- `password` : chaîne représentant le mot de passe nécessaire pour qu’un utilisateur puisse ignorer la protection et modifier la feuille de calcul.
+- `options`: un objet [WorksheetProtectionOptions](/javascript/api/excel/excel.worksheetprotectionoptions) définissant des restrictions de modifications spécifiques.
+- `password`: une chaîne représentant le mot de passe nécessaire pour qu’un utilisateur puisse ignorer la protection et modifier la feuille de calcul.
 
 L’article [Protéger une feuille de calcul](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6) comporte davantage d’informations sur la protection des feuilles de calcul et leur modification via l’interface utilisateur Excel.
 

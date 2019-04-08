@@ -1,14 +1,14 @@
 ---
 title: Élément Extension dans le fichier manifeste
 description: ''
-ms.date: 10/09/2018
+ms.date: 03/11/2018
 localization_priority: Priority
-ms.openlocfilehash: 7555c5e4245da55fd4d01761e0484912fe54eccc
-ms.sourcegitcommit: 8e7b7b0cfb68b91a3a95585d094cf5f5ffd00178
+ms.openlocfilehash: 4473790a0dd0daeae8042f8ba15421b8e3f9dc64
+ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "30512873"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "31477564"
 ---
 # <a name="extensionpoint-element"></a>Élément ExtensionPoint
 
@@ -34,7 +34,7 @@ ms.locfileid: "30512873"
 Les exemples suivants montrent comment utiliser l’élément  **ExtensionPoint** avec les valeurs d’attribut **PrimaryCommandSurface** et **ContextMenu**, ainsi que les éléments enfants qui doivent être utilisés avec chacune d’elles.
 
 > [!IMPORTANT] 
-> Pour les éléments qui contiennent un attribut ID, veillez à fournir un ID unique. Nous recommandons d’utiliser le nom de votre société, ainsi que votre identifiant. Par exemple, utilisez la syntaxe suivante. <CustomTab id="mycompanyname.mygroupname">
+> Pour les éléments qui contiennent un attribut ID, assurez-vous que vous indiquez un ID unique. Nous vous recommandons d’utiliser le nom de votre organisation, ainsi que votre ID. Par exemple, utilisez le format suivant. <CustomTab id="mycompanyname.mygroupname">
 
 ```XML
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
@@ -76,11 +76,11 @@ Les exemples suivants montrent comment utiliser l’élément  **ExtensionPoint*
 |**CustomTab**|Obligatoire pour ajouter un onglet personnalisé au ruban (en utilisant  **PrimaryCommandSurface**). Si vous utilisez l’élément  **CustomTab**, vous ne pouvez pas utiliser l’élément  **OfficeTab**. L’attribut  **id** est requis.|
 |**OfficeTab**|Obligatoire pour étendre un onglet du ruban Office par défaut (en utilisant **PrimaryCommandSurface**). Si vous utilisez l’élément **OfficeTab**, vous ne pouvez pas utiliser l’élément **CustomTab**. Pour plus d’informations, voir [OfficeTab](officetab.md).|
 |**OfficeMenu**|Obligatoire pour ajouter des commandes de complément à un menu contextuel par défaut (en utilisant **ContextMenu**). L’attribut **id** doit être défini sur : <br/> - **ContextMenuText** pour Excel ou Word. Affiche l’élément dans le menu contextuel lorsque du texte est sélectionné et que l’utilisateur clique dessus avec le bouton droit de la souris. <br/> - **ContextMenuCell** pour Excel. Affiche l’élément dans le menu contextuel lorsque l’utilisateur clique avec le bouton droit de la souris dans une cellule de la feuille de calcul.|
-|**Group**|Groupe de points d’extension de l’interface utilisateur sur un onglet. Un groupe peut comporter jusqu’à six contrôles. L’attribut  **id** est requis. Il s’agit d’une chaîne contenant un maximum de 125 caractères.|
+|**Groupe**|Groupe de points d’extension de l’interface utilisateur sur un onglet. Un groupe peut comporter jusqu’à six contrôles. L’attribut  **id** est requis. Il s’agit d’une chaîne contenant un maximum de 125 caractères.|
 |**Label**|Obligatoire. Libellé du groupe. L’attribut  **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String**. L’élément  **String** est un enfant de l’élément **ShortStrings**, qui est lui-même un enfant de l’élément  **Resources**.|
-|**Icon**|Obligatoire. Indique l’icône du groupe qui doit être utilisée sur les périphériques de petit facteur de forme ou lorsque les boutons sont affichés en trop grand nombre. L’attribut  **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Image**. L’élément  **Image** est un enfant de l’élément **Images**, qui est lui-même un enfant de l’élément  **Resources**. L’attribut **size** donne la taille, en pixels, de l’image. Trois tailles d’image, en pixels, sont obligatoires : 16, 32 et 80. Cinq tailles facultatives, en pixels, sont également prises en charge : 20, 24, 40, 48 et 64.|
+|**Icône**|Obligatoire. Indique l’icône du groupe qui doit être utilisée sur les périphériques de petit facteur de forme ou lorsque les boutons sont affichés en trop grand nombre. L’attribut  **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Image**. L’élément  **Image** est un enfant de l’élément **Images**, qui est lui-même un enfant de l’élément  **Resources**. L’attribut **size** donne la taille, en pixels, de l’image. Trois tailles d’image, en pixels, sont obligatoires : 16, 32 et 80. Cinq tailles facultatives, en pixels, sont également prises en charge : 20, 24, 40, 48 et 64.|
 |**Tooltip**|Facultatif. Info-bulle du groupe. L’attribut  **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String**. L’élément  **String** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément  **Resources**.|
-|**Control**|Chaque groupe requiert au moins un contrôle. Un élément **Control** peut être un **bouton** ou un **menu**. Utilisez un **menu** pour spécifier une liste déroulante de contrôles de bouton. Actuellement, seuls les boutons et les menus sont pris en charge. Pour plus d’informations, reportez-vous aux sections [Contrôles de bouton](control.md#button-control) et [Contrôles de menu](control.md#menu-dropdown-button-controls).<br/>**Remarque :**  pour faciliter les opérations de dépannage, nous vous recommandons d’ajouter un élément **Control** et les éléments enfants **Resources** associés un par un.|
+|**Contrôle**|Chaque groupe requiert au moins un contrôle. Un élément **Control** peut être un **bouton** ou un **menu**. Utilisez un **menu** pour spécifier une liste déroulante de contrôles de bouton. Actuellement, seuls les boutons et les menus sont pris en charge. Pour plus d’informations, reportez-vous aux sections [Contrôles de bouton](control.md#button-control) et [Contrôles de menu](control.md#menu-dropdown-button-controls).<br/>**Remarque :**  pour faciliter les opérations de dépannage, nous vous recommandons d’ajouter un élément **Control** et les éléments enfants **Resources** associés un par un.|
 |**Script**|Liens vers le fichier JavaScript avec la définition de la fonction personnalisée et le code d’inscription. Cet élément n’est pas utilisé dans l’aperçu pour les développeurs. À la place, la page HTML est responsable du chargement de tous les fichiers JavaScript.|
 |**Page**|Liens vers la page HTML de vos fonctions personnalisées.|
 
@@ -228,7 +228,7 @@ Ce point d’extension place des boutons dans la surface de commande pour le mod
 
 |  Élément |  Description  |
 |:-----|:-----|
-|  [Group](group.md) |  Ajoute un groupe de boutons à la surface de commande.  |
+|  [Groupe](group.md) |  Ajoute un groupe de boutons à la surface de commande.  |
 
 Les éléments **ExtensionPoint** de ce type peuvent uniquement avoir un élément enfant, à savoir un élément **Group**.
 
@@ -255,7 +255,7 @@ Ce point d’extension ajoute un gestionnaire d’événements pour un événeme
 
 | Élément | Description  |
 |:-----|:-----|
-|  [Event](event.md) |  Indique l’événement et la fonction gestionnaire d’événements.  |
+|  [Événement](event.md) |  Indique l’événement et la fonction gestionnaire d’événements.  |
 
 #### <a name="itemsend-event-example"></a>Exemple d’événement ItemSend
 
@@ -276,7 +276,7 @@ Pour les éléments [VersionOverrides](versionoverrides.md) la contenant, `xsi:t
 
 |  Élément |  Description  |
 |:-----|:-----|
-|  [Label](#label) |  Spécifie l’étiquette pour le complément dans la fenêtre contextuelle.  |
+|  [Étiquette](#label) |  Spécifie l’étiquette pour le complément dans la fenêtre contextuelle.  |
 |  [SourceLocation](sourcelocation.md) |  Spécifie l’URL de la fenêtre contextuelle.  |
 |  [Règle](rule.md) |  Spécifie la ou les règles qui déterminent lorsqu’un complément s’active.  |
 

@@ -1,14 +1,14 @@
 ---
 title: Utilisation de tableaux à l’aide de l’API JavaScript pour Excel
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/04/2019
 localization_priority: Priority
-ms.openlocfilehash: a628c182ccb570fcda3db813f7debb237682b915
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 1b409e27c12d4741f59a027dd4962fdee65b96bf
+ms.sourcegitcommit: 63219bcc1bb5e3bed7eb6c6b0adb73a4829c7e8f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30869973"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "31479717"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Utilisation de tableaux à l’aide de l’API JavaScript pour Excel
 
@@ -237,6 +237,30 @@ Excel.run(function (context) {
 
 ![Données de tableau dans Excel](../images/excel-tables-get-data.png)
 
+## <a name="detect-data-changes"></a>Détecter les modifications de données
+
+Votre complément peut avoir besoin de réagir aux utilisateurs modifiant les données dans un tableau. Pour détecter ces modifications, vous pouvez [inscrire un gestionnaire d’événements](excel-add-ins-events.md#register-an-event-handler) à l’événement `onChanged` d’un tableau. Le gestionnaires d’événements de l’événement `onChanged` reçoit un objet [TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs) lorsque l’événement se déclenche.
+
+L’objet `TableChangedEventArgs` fournit des informations sur les modifications et la source. Puisque `onChanged` se déclenche lorsque le format ou la valeur des données sont modifiés, il peut être utile que votre complément vérifie si les valeurs ont réellement été modifiées. La propriété de `details` regroupe ces informations en tant qu’un [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail). L’exemple de code suivant illustre la procédure d’affichage des valeurs et des types d’une cellule qui a été modifiée, avant et après modification.
+
+> [!NOTE]
+> `TableChangedEventArgs.details` est actuellement uniquement disponible en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+```js
+// This function would be used as an event handler for the Table.onChanged event.
+function onTableChanged(eventArgs) {
+    Excel.run(function (context) {
+        var details = eventArgs.details;
+        var address = eventArgs.address;
+
+        // Print the before and after types and values to the console.
+        console.log(`Change at ${address}: was ${details.valueBefore}(${details.valueTypeBefore}),`
+            + ` now is ${details.valueAfter}(${details.valueTypeAfter})`);
+        return context.sync();
+    });
+}
+```
+
 ## <a name="sort-data-in-a-table"></a>Trier des données dans un tableau
 
 L’exemple de code suivant trie les données d’un tableau dans l’ordre décroissant en fonction des valeurs de la quatrième colonne du tableau.
@@ -260,7 +284,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Données de tableau triées par montant (décroissant)**
+**Données de tableau triées par Montant (décroissant)**
 
 ![Données de tableau dans Excel](../images/excel-tables-sort.png)
 
@@ -292,7 +316,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Données de tableau avec des filtres appliqués pour les colonnes Category et Amount**
+**Données de tableau avec des filtres appliqués pour les colonnes Catégorie et Montant**
 
 ![Données de tableau filtrées dans Excel](../images/excel-tables-filters-apply.png)
 
