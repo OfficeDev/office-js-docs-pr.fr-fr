@@ -1,14 +1,14 @@
 ---
-ms.date: 03/19/2019
+ms.date: 03/29/2019
 description: Créer des fonctions personnalisées dans Excel à l’aide de JavaScript.
 title: Créer des fonctions personnalisées dans Excel (aperçu)
 localization_priority: Priority
-ms.openlocfilehash: ac3410267da415c4d567092da2e653fcffd10b72
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 59620b19cb8613e411abb84ed6766da94cae02c4
+ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870449"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "31477557"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Créer des fonctions personnalisées dans Excel (aperçu)
 
@@ -33,123 +33,44 @@ function add42(a, b) {
 
 ## <a name="components-of-a-custom-functions-add-in-project"></a>Composants d’un projet de complément fonctions personnalisées
 
-Si vous utilisez le [générateur Yo Office](https://github.com/OfficeDev/generator-office) pour créer un projet complément de fonctions personnalisées Excel, vous verrez les fichiers suivants dans le projet crée par le générateur :
+Si vous utilisez le [générateur de Yo Office](https://github.com/OfficeDev/generator-office) pour créer un projet de complément de fonctions personnalisées Excel, vous constaterez qu’il crée des fichiers qui contrôlent totalement vos fonctions, votre volet des tâches et votre complément. Nous allons vous concentrer sur les fichiers importants pour les fonctions personnalisées : 
 
-| Fichier | Format de fichier | Description |
+| File | Format de fichier | Description |
 |------|-------------|-------------|
-| **./src/customfunctions.js**<br/>ou<br/>**./src/customfunctions.ts** | JavaScript<br/>ou<br/>TypeScript | Contient le code qui définit les fonctions personnalisées. |
-| **./config/customfunctions.json** | JSON | Contient les métadonnées qui décrivent les fonctions personnalisées et permettent à Excel d’enregistrer les fonctions personnalisées et les rendre accessibles aux utilisateurs finaux. |
-| **./index.html** | HTML | Fournit une référence&lt;script&gt; au fichier JavaScript qui définit les fonctions personnalisées. |
-| **./manifest.xml** | XML | Spécifie l’espace de noms pour toutes les fonctions personnalisées dans le complément et l’emplacement des fichiers HTML, JavaScript et JSON qui figurent précédemment dans ce tableau. |
-
-Les sections suivantes vous apportent plus d'informations sur ces fichiers.
+| **./src/functions/functions.js**<br/>ou<br/>**./src/functions/functions.ts** | JavaScript<br/>ou<br/>TypeScript | Contient le code qui définit les fonctions personnalisées. |
+| **./src/functions/functions.html** | HTML | Fournit une référence&lt;script&gt; au fichier JavaScript qui définit les fonctions personnalisées. |
+| **./manifest.xml** | XML | Spécifie l’espace de noms pour toutes les fonctions personnalisées dans le complément et l’emplacement des fichiers JavaScript et HTML qui figurent plus haut dans ce tableau. Répertorie également les emplacements des autres fichiers que votre complément pourrait utiliser, tels que les fichiers du volet des tâches et les fichiers de commande. |
 
 ### <a name="script-file"></a>Fichier de script
 
-Le fichier de script (**./src/customfunctions.js** ou **./src/customfunctions.ts** du projet créé par le Générateur de Yo Office) contient le code qui définit les fonctions personnalisées et mappe les noms des fonctions personnalisées aux objets dans le [fichier de métadonnées JSON](#json-metadata-file). 
+Le fichier de script (**./src/functions/functions.js** ou **./src/functions/functions.ts** dans le projet que crée le générateur de Yo Office) contient le code qui définit des fonctions personnalisées, des commentaires qui définissent la fonction, et associe les noms des fonctions personnalisées à des objets dans le [fichier de métadonnées JSON](#json-metadata-file).
 
-Par exemple, le code suivant définit les fonctions personnalisées `add` et `increment`indique ensuite les informations de mappage pour les deux fonctions. La fonction`add` mappée à l’objet dans le fichier de métadonnées JSON où la valeur de la `id` propriété est **AJOUTER**et la fonction`increment`mappée à l’objet dans le fichier de métadonnées dans laquelle la valeur de la `id` propriété est **INCRÉMENT**. Voir [Recommandations fonctions personnalisées](custom-functions-best-practices.md#associating-function-names-with-json-metadata) pour plus d’informations sur le mappage des noms de fonction dans le fichier de script pour objets dans le fichier de métadonnées JSON.
+Le code suivant définit la fonction personnalisée `add`, puis spécifie des informations d’association pour la fonction. Pour plus d’informations sur l’association de fonctions, voir [Meilleures pratiques des fonctions personnalisées](custom-functions-best-practices.md#associating-function-names-with-json-metadata).
+
+Le code suivant fournit également des commentaires de code qui définissent la fonction. Le commentaire obligatoire `@customfunction` est déclaré en premier, pour indiquer qu’il s’agit d’une fonction personnalisée. Vous pouvez également constater que deux paramètres sont déclarés, `first` et `second`, qui sont suivis de leurs propriétés `description`. Enfin, une description `returns` est fournie. Pour plus d’informations sur les commentaires requis pour votre fonction personnalisée, voir [Générer des métadonnées JSON pour des fonctions personnalisées](custom-functions-json-autogeneration.md).
 
 ```js
+/**
+ * Adds two numbers.
+ * @customfunction 
+ * @param first First number
+ * @param second Second number
+ * @returns The sum of the two numbers.
+ */
+
 function add(first, second){
   return first + second;
 }
 
-function increment(incrementBy, callback) {
-  var result = 0;
-  var timer = setInterval(function() {
-    result += incrementBy;
-    callback.setResult(result);
-  }, 1000);
-
-  callback.onCanceled = function() {
-    clearInterval(timer);
-  };
-}
-
 // associate `id` values in the JSON metadata file to the JavaScript function names
  CustomFunctions.associate("ADD", add);
- CustomFunctions.associate("INCREMENT", increment);
 ```
-
-### <a name="json-metadata-file"></a>Fichier de métadonnées JSON
-
-Le fichier de métadonnées fonctions personnalisées (**./config/customfunctions.json** du projet créé par le Générateur de Yo Office) fournit les informations dont Excel a besoin pour enregistrer les fonctions personnalisées et les rendre disponibles aux utilisateurs finaux. Les fonctions personnalisées sont enregistrées lorsqu’un utilisateur lance un complément pour la première fois. Après cela, elles sont disponibles pour cet utilisateur depuis tous les classeurs (c'est-à-dire pas seulement dans le classeur dans lequel le complément est initialement exécuté.)
-
-> [!TIP]
-> Les paramètres du serveur qui héberge le fichier JSON doivent avoir [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) activée afin que les fonctions personnalisées s’exécutent correctement dans Excel Online.
-
-Le code suivant de **customfunctions.json** spécifie les métadonnées pour la `add` fonction et la `increment` fonction qui ont été décrites précédemment. Le tableau qui suit cet exemple de code fournit des informations détaillées sur les propriétés individuelles au sein de cet objet JSON. Voir [Recommandations fonctions personnalisées](custom-functions-best-practices.md#associating-function-names-with-json-metadata) pour plus d’informations sur la spécification de la valeur de `id` et les propriétés`name`dans le fichier de métadonnées JSON.
-
-```json
-{
-  "$schema": "https://developer.microsoft.com/en-us/json-schemas/office-js/custom-functions.schema.json",
-  "functions": [
-    {
-      "id": "ADD",
-      "name": "ADD",
-      "description": "Add two numbers",
-      "helpUrl": "http://www.contoso.com",
-      "result": {
-        "type": "number",
-        "dimensionality": "scalar"
-      },
-      "parameters": [
-        {
-          "name": "first",
-          "description": "first number to add",
-          "type": "number",
-          "dimensionality": "scalar"
-        },
-        {
-          "name": "second",
-          "description": "second number to add",
-          "type": "number",
-          "dimensionality": "scalar"
-        }
-      ]
-    },
-    {
-      "id": "INCREMENT",
-      "name": "INCREMENT",
-      "description": "Periodically increment a value",
-      "helpUrl": "http://www.contoso.com",
-      "result": {
-          "type": "number",
-          "dimensionality": "scalar"
-    },
-    "parameters": [
-        {
-            "name": "increment",
-            "description": "Amount to increment",
-            "type": "number",
-            "dimensionality": "scalar"
-        }
-    ],
-    "options": {
-        "cancelable": true,
-        "stream": true
-      }
-    }
-  ]
-}
-```
-
-Le tableau suivant répertorie les propriétés généralement présentes dans le fichier de métadonnées JSON. Pour plus d’informations sur le fichier de métadonnées JSON, voir [métadonnées fonctions personnalisées](custom-functions-json.md).
-
-| Propriété  | Description |
-|---------|---------|
-| `id` | Un ID unique pour la fonction. Cet ID peut contenir uniquement des points et caractères alphanumériques et ne doit pas être modifié une fois défini. |
-| `name` | Nom de la fonction que voit l’utilisateur final dans Excel. Dans Excel, ce nom de la fonction sera précédé de l’espace de noms de fonctions personnalisées spécifié dans le [fichier manifeste XML](#manifest-file). |
-| `helpUrl` | URL de la page qui s’affiche quand un utilisateur demande de l’aide. |
-| `description` | Descriptif de la fonction. Cette valeur apparaît comme une info-bulle lorsque la fonction est l’élément sélectionné dans le menu de saisie semi-automatique des formules dans Excel. |
-| `result`  | Objet qui définit le type d’informations renvoyées par la fonction. Pour plus d’informations sur cet objet, voir [résultat](custom-functions-json.md#result). |
-| `parameters` | Tableau qui définit les paramètres d’entrée de la fonction. Pour plus d’informations sur cet objet, voir [paramètres](custom-functions-json.md#parameters). |
-| `options` | Vous permet de personnaliser certains aspects de comment et quand Excel exécute la fonction. Pour plus d’informations sur l’utilisation de cette propriété, consultez les sections [Fonctions de diffusion en continu](#streaming-functions) et [Annulation d’une fonction](#canceling-a-function). |
 
 ### <a name="manifest-file"></a>Fichier manifeste
 
-Le fichier manifeste XML pour un complément qui définit les fonctions personnalisées (**./manifest.xml** du projet créé par le Générateur de Yo Office) spécifie l’espace de noms pour toutes les fonctions personnalisées dans le complément et l’emplacement des fichiers HTML, JavaScript et JSON. Le balisage XML suivant montre un exemple des éléments`<ExtensionPoint>` et `<Resources>` que vous devez inclure dans manifeste d’un complément pour activer les fonctions personnalisées.  
+Le fichier manifeste XML pour un complément qui définit les fonctions personnalisées (**./manifest.xml** du projet créé par le Générateur de Yo Office) spécifie l’espace de noms pour toutes les fonctions personnalisées dans le complément et l’emplacement des fichiers HTML, JavaScript et JSON. 
+
+Le marquage XML suivant présente un exemple des éléments`<ExtensionPoint>` et `<Resources>` que vous devez inclure dans le manifeste d’un complément pour activer les fonctions personnalisées. Si vous utilisez le générateur de Yo Office, vos fichiers de fonction personnalisée générés contiennent un fichier manifeste plus complexe que vous pouvez comparer sur [ce dépôt Github](https://github.com/OfficeDev/Excel-Custom-Functions/blob/generate-metadata/manifest.xml).
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -337,7 +258,7 @@ Les informations relatives à l’adresse d’une cellule sont exposées uniquem
 }
 ```
 
-Dans le fichier de script (**./src/customfunctions.js** ou **./src/customfunctions.ts**), vous devrez également ajouter une fonction `getAddress` pour trouver l’adresse d’une cellule. Cette fonction peut utiliser des paramètres, comme illustré dans l’exemple suivant en tant que `parameter1`. Le dernier paramètre sera toujours `invocationContext`, un objet contenant l’emplacement de la cellule qu’Excel transmet lorsque `requiresAddress` est marqué comme `true` dans votre fichier de métadonnées JSON.
+Dans le fichier de script (**./src/functions/functions.js** ou **./src/functions/functions.ts**), vous devrez également ajouter une fonction `getAddress` pour trouver l’adresse d’une cellule. Cette fonction peut utiliser des paramètres, comme illustré dans l’exemple suivant en tant que `parameter1`. Le dernier paramètre sera toujours `invocationContext`, un objet contenant l’emplacement de la cellule qu’Excel transmet lorsque `requiresAddress` est marqué comme `true` dans votre fichier de métadonnées JSON.
 
 ```js
 function getAddress(parameter1, invocationContext) {
@@ -353,8 +274,9 @@ Consulter les problèmes connus sur notre[repo GitHub Fonctions Excel Personnali
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Métadonnées fonctions personnalisées](custom-functions-json.md)
-* [Exécution de fonctions personnalisées Excel](custom-functions-runtime.md)
-* [Meilleures pratiques de fonctions personnalisées](custom-functions-best-practices.md)
+* [Métadonnées des fonctions personnalisées](custom-functions-json.md)
+* [Runtime pour les fonctions personnalisées Excel](custom-functions-runtime.md)
+* [Meilleures pratiques des fonctions personnalisées](custom-functions-best-practices.md)
 * [Fonctions personnalisées changelog](custom-functions-changelog.md)
 * [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md)
+* [Débogage des métadonnées des fonctions personnalisées](custom-functions-debugging.md)
