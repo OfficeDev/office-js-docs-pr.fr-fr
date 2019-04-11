@@ -1,14 +1,14 @@
 ---
 title: Commandes de complément pour Excel, Word et PowerPoint
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/05/2019
 localization_priority: Priority
-ms.openlocfilehash: e255e6e517f6292b7e7cb7df7b59476b21306911
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 0a2a28e09061248851e8ee1037d0219c7fcda1a5
+ms.sourcegitcommit: fbe2a799fda71aab73ff1c5546c936edbac14e47
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30872248"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "31764396"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Commandes de complément pour Excel, Word et PowerPoint
 
@@ -23,7 +23,7 @@ Pour en savoir plus sur les fonctionnalités, regardez la vidéo sur les [comman
 
 ![Capture d’écran d’une commande de complément dans Excel](../images/add-in-commands-1.png)
 
-*Figure 2. Complément incluant des commandes en cours d’exécution dans Excel Online*
+*Figure 2. Complément incluant des commandes en cours d’exécution dans Excel (version Online)*
 
 ![Capture d’écran d’une commande de complément dans Excel Online](../images/add-in-commands-2.png)
 
@@ -59,6 +59,10 @@ Les commandes de complément sont actuellement prises en charge sur les platefor
 
 D’autres plateformes seront bientôt disponibles.
 
+## <a name="debugging"></a>Débogage
+
+Pour déboguer une commande de complément, vous devez l’exécuter dans Office Online. Pour plus de détails, voir [Débogage de compléments dans Office Online](../testing/debug-add-ins-in-office-online.md).
+
 ## <a name="best-practices"></a>Meilleures pratiques
 
 Appliquez les meilleures pratiques suivantes lorsque vous développez des commandes de complément :
@@ -78,7 +82,7 @@ Appliquez les meilleures pratiques suivantes lorsque vous développez des comman
 - Pour toutes les icônes, suivez les [règles de conception d’icône](add-in-icons.md).
 - Proposez une version de complément qui fonctionne aussi sur les hôtes qui ne prennent pas en charge les commandes. Un seul manifeste de complément peut fonctionner sur les hôtes tenant compte ou non des commandes (par exemple, un volet Office dans le second cas).
 
-   *Figure 3. Complément du volet Office dans Office 2013 et le même complément utilisant des commandes de complément dans Office 2016*
+   *Figure 3. Complément du volet Office dans Office 2013 et le même complément utilisant des commandes de complément dans Office 2016*
 
    ![Capture d’écran illustrant un complément du volet Office dans Office 2013 et le même complément utilisant des commandes de complément dans Office 2016](../images/office-task-pane-add-ins.png)
 

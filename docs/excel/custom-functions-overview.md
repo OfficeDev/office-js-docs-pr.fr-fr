@@ -3,12 +3,12 @@ ms.date: 03/29/2019
 description: Créer des fonctions personnalisées dans Excel à l’aide de JavaScript.
 title: Créer des fonctions personnalisées dans Excel (aperçu)
 localization_priority: Priority
-ms.openlocfilehash: 59620b19cb8613e411abb84ed6766da94cae02c4
-ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
+ms.openlocfilehash: 7a461728061ace532a11a8473d27ec4340eebb97
+ms.sourcegitcommit: fbe2a799fda71aab73ff1c5546c936edbac14e47
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "31477557"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "31764410"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Créer des fonctions personnalisées dans Excel (aperçu)
 
@@ -43,7 +43,7 @@ Si vous utilisez le [générateur de Yo Office](https://github.com/OfficeDev/gen
 
 ### <a name="script-file"></a>Fichier de script
 
-Le fichier de script (**./src/functions/functions.js** ou **./src/functions/functions.ts** dans le projet que crée le générateur de Yo Office) contient le code qui définit des fonctions personnalisées, des commentaires qui définissent la fonction, et associe les noms des fonctions personnalisées à des objets dans le [fichier de métadonnées JSON](#json-metadata-file).
+Le fichier de script (**./src/functions/functions.js** ou **./src/functions/functions.ts** dans le projet que crée le générateur de Yo Office) contient le code qui définit des fonctions personnalisées, des commentaires qui définissent la fonction, et associe les noms des fonctions personnalisées à des objets dans le fichier de métadonnées JSON.
 
 Le code suivant définit la fonction personnalisée `add`, puis spécifie des informations d’association pour la fonction. Pour plus d’informations sur l’association de fonctions, voir [Meilleures pratiques des fonctions personnalisées](custom-functions-best-practices.md#associating-function-names-with-json-metadata).
 
@@ -71,6 +71,9 @@ function add(first, second){
 Le fichier manifeste XML pour un complément qui définit les fonctions personnalisées (**./manifest.xml** du projet créé par le Générateur de Yo Office) spécifie l’espace de noms pour toutes les fonctions personnalisées dans le complément et l’emplacement des fichiers HTML, JavaScript et JSON. 
 
 Le marquage XML suivant présente un exemple des éléments`<ExtensionPoint>` et `<Resources>` que vous devez inclure dans le manifeste d’un complément pour activer les fonctions personnalisées. Si vous utilisez le générateur de Yo Office, vos fichiers de fonction personnalisée générés contiennent un fichier manifeste plus complexe que vous pouvez comparer sur [ce dépôt Github](https://github.com/OfficeDev/Excel-Custom-Functions/blob/generate-metadata/manifest.xml).
+
+> [!NOTE] 
+> Les URL spécifiées dans le fichier manifeste pour les fonctions personnalisées de fichiers HTML, JavaScript et JSON doivent avoir le même sous-domaine et être accessibles publiquement.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -109,9 +112,9 @@ Le marquage XML suivant présente un exemple des éléments`<ExtensionPoint>` et
     </Hosts>
     <Resources>
       <bt:Urls>
-        <bt:Url id="JSON-URL" DefaultValue="https://localhost:8081/config/customfunctions.json"/>
-        <bt:Url id="JS-URL" DefaultValue="https://localhost:8081/dist/win32/ship/index.win32.bundle"/>
-        <bt:Url id="HTML-URL" DefaultValue="https://localhost:8081/index.html"/>
+        <bt:Url id="JSON-URL" DefaultValue="https://subdomain.contoso.com/config/customfunctions.json"/>
+        <bt:Url id="JS-URL" DefaultValue="https://subdomain.contoso.com/dist/win32/ship/index.win32.bundle"/>
+        <bt:Url id="HTML-URL" DefaultValue="https://subdomain.contoso.com/index.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="namespace" DefaultValue="CONTOSO"/>
