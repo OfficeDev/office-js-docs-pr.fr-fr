@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API d’identité
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/09/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: e1f646df7756f16467d1191f926f831ba375752e
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.openlocfilehash: 9229483bcf2916d35bd1fc8961c2c2a73cf9caed
+ms.sourcegitcommit: fbe2a799fda71aab73ff1c5546c936edbac14e47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691159"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "31764389"
 ---
 # <a name="identity-api-requirement-sets"></a>Ensembles de conditions requises de l’API d’identité
 
@@ -19,7 +19,7 @@ Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tab
 
 |  Ensemble de conditions requises  | Office 2013 ou version ultérieure pour Windows | Office 365 pour Windows   |  Office 365 pour iPad  |  Office 365 pour Mac  | Office Online  | SharePoint Online | OneDrive.com |Outlook.com et Exchange Online|
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| IdentityAPI 1.1  | N/A **& # 42;** | Aperçu **&#42;** | Bientôt disponible | Aperçu **&#42;**| Aperçu | Aperçu| Bientôt disponible | Bientôt disponible |
+| IdentityAPI 1.1  | N/A | Préversion<b>*</b> | Bientôt disponible | Préversion<b>*</b> | Préversion<b>*</b> | Préversion<b>*</b>| Bientôt disponible | Bientôt disponible |
 
 > **& # 42;** Pendant la phase d'évaluation, l'API d'identité nécessite Office 365 (la version d'abonnement d'Office). Vous devez utiliser la version et le build mensuels les plus récents du canal du programme Insider. Vous devez participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à [Participez au programme Office Insider](https://products.office.com/office-insider?tab=tab-1). Veuillez noter que lorsqu’un build passe au canal semi-annuel de production, la prise en charge des fonctionnalités d’aperçu, y compris l’authentification unique, est désactivée pour ce build.
 
@@ -32,7 +32,7 @@ Pour en savoir plus sur les versions, les numéros de build et Office Online Ser
 
 ## <a name="office-common-api-requirement-sets"></a>Ensembles de conditions requises des API communes pour Office
 
-Pour plus d’informations sur les ensembles de conditions requises des APIs communes, voir[Ensembles de conditions requises des APIs communes pour Office](office-add-in-requirement-sets.md).
+Pour plus d’informations sur les ensembles de conditions requises des API communes, voir [Ensembles de conditions requises des API communes pour Office](office-add-in-requirement-sets.md).
 
 ## <a name="identityapi-11"></a>IdentityAPI 1.1
 

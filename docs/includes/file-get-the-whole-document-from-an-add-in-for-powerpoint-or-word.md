@@ -212,7 +212,7 @@ Une fois les données converties en Base64, vous pouvez les transmettre au serve
 Ajoutez le code suivant pour envoyer une tranche au service web.
 
 > [!NOTE]
-> Ce code envoie un fichier PowerPoint ou Word sur le serveur web en plusieurs tranches. Le serveur web ou le service doit compiler chaque tranche en un unique fichier .pptx avant de pouvoir l’utiliser.
+> Ce code envoie un fichier PowerPoint ou Word au serveur Web en plusieurs tranches. Le serveur Web ou le service doit ajouter chaque secteur individuel dans un seul fichier, puis l'enregistrer en tant que fichier. pptx ou. docx avant de pouvoir y effectuer des manipulations.
 
 ```js
 function sendSlice(slice, state) {
