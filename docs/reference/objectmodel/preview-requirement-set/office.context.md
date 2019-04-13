@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises pour Office. Context-preview
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 6be5ecd7effb08b18142a2bbc5c1ed1b823a94bc
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: a1e01142a4c0b84a4afcba89f76766d28595ba95
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871093"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838458"
 ---
 # <a name="context"></a>context
 
@@ -75,6 +75,9 @@ function write(message){
 }
 ```
 
+---
+---
+
 ####  <a name="officetheme-object"></a>officeTheme :Object
 
 Permet d’accéder aux propriétés pour les couleurs du thème Office.
@@ -92,8 +95,8 @@ Permet d’accéder aux propriétés pour les couleurs du thème Office.
 
 |Nom| Type| Description|
 |---|---|---|
-|`bodyBackgroundColor`| Chaîne|Obtient la couleur d’arrière-plan du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
-|`bodyForegroundColor`| Chaîne|Obtient la couleur de premier plan du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
+|`bodyBackgroundColor`| String|Obtient la couleur d’arrière-plan du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
+|`bodyForegroundColor`| String|Obtient la couleur de premier plan du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
 |`controlBackgroundColor`| String|Obtient la couleur d’arrière-plan du contrôle du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
 |`controlForegroundColor`| String|Obtient la couleur du contrôle du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
 
@@ -118,6 +121,9 @@ function applyOfficeTheme(){
   $('.body').css('background-color', bodyBackgroundColor);
 }
 ```
+
+---
+---
 
 ####  <a name="roamingsettings-roamingsettingsjavascriptapioutlookofficeroamingsettings"></a>roamingSettings :[RoamingSettings](/javascript/api/outlook/office.RoamingSettings)
 

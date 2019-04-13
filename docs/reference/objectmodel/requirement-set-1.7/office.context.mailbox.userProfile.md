@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. userProfile-ensemble de conditions requises 1,7
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 335c20a242d08031e6f21c48e99c8527dab6d714
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 8cfee874bbb5183d62cc3a9ce8b042a76617ec72
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871737"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838521"
 ---
 # <a name="userprofile"></a>userProfile
 
@@ -65,6 +65,9 @@ Obtient le type de compte de l'utilisateur associé à la boîte aux lettres. Le
 console.log(Office.context.mailbox.userProfile.accountType);
 ```
 
+---
+---
+
 ####  <a name="displayname-string"></a>displayName :String
 
 Obtient le nom d’affichage de l’utilisateur.
@@ -88,6 +91,9 @@ Obtient le nom d’affichage de l’utilisateur.
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
 
+---
+---
+
 ####  <a name="emailaddress-string"></a>emailAddress :String
 
 Obtient l’adresse de messagerie SMTP de l’utilisateur.
@@ -110,6 +116,9 @@ Obtient l’adresse de messagerie SMTP de l’utilisateur.
 // Example: allieb@contoso.com
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
+
+---
+---
 
 ####  <a name="timezone-string"></a>timeZone :String
 

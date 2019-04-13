@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox-ensemble de conditions requises 1,7
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 94f0bbf7d54bdbad3770862576592209508278b2
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 0f84e657644b198fbca722a0628a5bafcce84377
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871408"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838549"
 ---
 # <a name="mailbox"></a>boîte aux lettres
 
@@ -28,7 +28,7 @@ Permet d’accéder au modèle objet du complément Outlook pour Microsoft Out
 
 | Membre | Type |
 |--------|------|
-| [ewsUrl](#ewsurl-string) | Member |
+| [ewsUrl](#ewsurl-string) | Membre |
 | [restUrl](#resturl-string) | Membre |
 | [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | Méthode |
 | [convertToEwsId](#converttoewsiditemid-restversion--string) | Méthode |
@@ -79,6 +79,9 @@ En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
+
+---
+---
 
 #### <a name="resturl-string"></a>restUrl :String
 
@@ -147,6 +150,9 @@ function loadNewItem(eventArgs) {
 };
 ```
 
+---
+---
+
 ####  <a name="converttoewsiditemid-restversion--string"></a>convertToEwsId(itemId, restVersion) → {String}
 
 Convertit un ID d’élément mis en forme pour REST au format EWS.
@@ -160,7 +166,7 @@ Les ID d’élément extraits via une API REST (telle que l’[API Courrier Outl
 
 |Nom| Type| Description|
 |---|---|---|
-|`itemId`| Chaîne|ID d’élément mis en forme pour les API REST Outlook|
+|`itemId`| String|ID d’élément mis en forme pour les API REST Outlook|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_7/office.mailboxenums.restversion)|Valeur indiquant la version de l’API REST Outlook utilisée pour récupérer l’ID d’élément.|
 
 ##### <a name="requirements"></a>Configuration requise
@@ -184,6 +190,9 @@ var restId = 'AAMkAGVlOTZjNTM3LW...';
 // Treat restId as coming from the v2.0 version of the Outlook Mail API.
 var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.RestVersion.v2_0);
 ```
+
+---
+---
 
 ####  <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook17officelocalclienttime"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook_1_7/office.LocalClientTime)}
 
@@ -211,6 +220,9 @@ Si l’application de messagerie est en cours d’exécution dans Outlook, la m�
 
 Type : [LocalClientTime](/javascript/api/outlook_1_7/office.LocalClientTime)
 
+---
+---
+
 ####  <a name="converttorestiditemid-restversion--string"></a>convertToRestId(itemId, restVersion) → {String}
 
 Convertit un ID d’élément mis en forme pour EWS au format REST.
@@ -224,7 +236,7 @@ Les ID d’élément récupérés via EWS ou la propriété `itemId` utilisent u
 
 |Nom| Type| Description|
 |---|---|---|
-|`itemId`| Chaîne|ID d’élément mis en forme pour les services web Exchange (EWS)|
+|`itemId`| String|ID d’élément mis en forme pour les services web Exchange (EWS)|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_7/office.mailboxenums.restversion)|Valeur indiquant la version de l’API REST Outlook avec laquelle l’ID converti sera utilisé.|
 
 ##### <a name="requirements"></a>Configuration requise
@@ -248,6 +260,9 @@ var ewsId = Office.context.mailbox.item.itemId;
 // Convert to a REST ID for the v2.0 version of the Outlook Mail API.
 var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.RestVersion.v2_0);
 ```
+
+---
+---
 
 ####  <a name="converttoutcclienttimeinput--date"></a>convertToUtcClientTime(input) → {Date}
 
@@ -281,6 +296,9 @@ Objet Date avec l’heure exprimée au format UTC.
 
 </dl>
 
+---
+---
+
 ####  <a name="displayappointmentformitemid"></a>displayAppointmentForm(itemId)
 
 Affiche un rendez-vous de calendrier existant.
@@ -300,7 +318,7 @@ Si l’identificateur de l’élément spécifié n’identifie aucun rendez-vou
 
 |Nom| Type| Description|
 |---|---|---|
-|`itemId`| Chaîne|Identificateur des services web Exchange pour un rendez-vous du calendrier existant.|
+|`itemId`| String|Identificateur des services web Exchange pour un rendez-vous du calendrier existant.|
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -315,6 +333,9 @@ Si l’identificateur de l’élément spécifié n’identifie aucun rendez-vou
 ```javascript
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
+
+---
+---
 
 ####  <a name="displaymessageformitemid"></a>displayMessageForm(itemId)
 
@@ -335,7 +356,7 @@ N’utilisez pas la méthode `displayMessageForm` ayant une valeur `itemId` qui 
 
 |Nom| Type| Description|
 |---|---|---|
-|`itemId`| Chaîne|Identificateur des services web Exchange pour un message existant.|
+|`itemId`| String|Identificateur des services web Exchange pour un message existant.|
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -350,6 +371,9 @@ N’utilisez pas la méthode `displayMessageForm` ayant une valeur `itemId` qui 
 ```javascript
 Office.context.mailbox.displayMessageForm(messageId);
 ```
+
+---
+---
 
 #### <a name="displaynewappointmentformparameters"></a>displayNewAppointmentForm(parameters)
 
@@ -373,15 +397,15 @@ Si l’un des paramètres dépasse les limites définies en matière de taille o
 
 |Nom| Type| Description|
 |---|---|---|
-| `parameters` | Objet | Dictionnaire de paramètres décrivant le nouveau rendez-vous. |
-| `parameters.requiredAttendees` | Tableau.&lt;Chaîne&gt; &#124; Tableau.&lt;[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)&gt; | Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un objet `EmailAddressDetails` pour chacun des participants requis du rendez-vous. Le tableau est limité à 100 entrées maximum. |
+| `parameters` | Object | Dictionnaire de paramètres décrivant le nouveau rendez-vous. |
+| `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)&gt; | Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un objet `EmailAddressDetails` pour chacun des participants requis du rendez-vous. Le tableau est limité à 100 entrées maximum. |
 | `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)&gt; | Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un objet `EmailAddressDetails` pour chacun des participants facultatifs du rendez-vous. Le tableau est limité à 100 entrées maximum. |
 | `parameters.start` | Date | Objet `Date` spécifiant la date et l’heure de début du rendez-vous. |
 | `parameters.end` | Date | Objet `Date` spécifiant la date et l’heure de fin du rendez-vous. |
 | `parameters.location` | Chaîne | Chaîne contenant l’emplacement du rendez-vous. La chaîne est limitée à 255 caractères maximum. |
 | `parameters.resources` | Array.&lt;String&gt; | Tableau de chaînes contenant les ressources requises pour le rendez-vous. Le tableau est limité à 100 entrées maximum. |
 | `parameters.subject` | String | Chaîne contenant l’objet du rendez-vous. La chaîne est limitée à 255 caractères maximum. |
-| `parameters.body` | Chaîne | Corps du rendez-vous. La taille du corps du message est limitée à 32 Ko. |
+| `parameters.body` | String | Corps du rendez-vous. La taille du corps du message est limitée à 32 Ko. |
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -411,6 +435,9 @@ Office.context.mailbox.displayNewAppointmentForm(
   });
 ```
 
+---
+---
+
 #### <a name="displaynewmessageformparameters"></a>displayNewMessageForm (paramètres)
 
 Affiche un formulaire permettant de créer un message.
@@ -426,14 +453,14 @@ Si l’un des paramètres dépasse les limites définies en matière de taille o
 
 |Nom| Type| Description|
 |---|---|---|
-| `parameters` | Objet | Dictionnaire de paramètres décrivant le nouveau message. |
+| `parameters` | Object | Dictionnaire de paramètres décrivant le nouveau message. |
 | `parameters.toRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)&gt; | Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un `EmailAddressDetails` objet pour chacun des destinataires de la ligne à. Le tableau est limité à 100 entrées maximum. |
 | `parameters.ccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)&gt; | Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un `EmailAddressDetails` objet pour chacun des destinataires de la ligne CC. Le tableau est limité à 100 entrées maximum. |
 | `parameters.bccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)&gt; | Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un `EmailAddressDetails` objet pour chacun des destinataires de la ligne CCI. Le tableau est limité à 100 entrées maximum. |
-| `parameters.subject` | Chaîne | Chaîne contenant l'objet du message. La chaîne est limitée à 255 caractères maximum. |
+| `parameters.subject` | String | Chaîne contenant l'objet du message. La chaîne est limitée à 255 caractères maximum. |
 | `parameters.htmlBody` | Chaîne | Corps HTML du message. La taille du corps du message est limitée à 32 Ko. |
 | `parameters.attachments` | Array.&lt;Object&gt; | Tableau d’objets JSON qui sont des pièces jointes de fichier ou d’élément. |
-| `parameters.attachments.type` | String | Indique le type de pièce jointe. Doit être `file` pour une pièce jointe de fichier ou `item` pour une pièce jointe d’élément. |
+| `parameters.attachments.type` | Chaîne | Indique le type de pièce jointe. Doit être `file` pour une pièce jointe de fichier ou `item` pour une pièce jointe d’élément. |
 | `parameters.attachments.name` | String | Chaîne qui contient le nom de la pièce jointe et comporte jusqu'à 255 caractères.|
 | `parameters.attachments.url` | Chaîne | Utilisé uniquement si `type` est défini sur `file`. Il s’agit de l’URI de l’emplacement du fichier. |
 | `parameters.attachments.isInline` | Booléen | Utilisé uniquement si `type` est défini sur `file`. Si elle est définie sur `true`, cette valeur indique que la pièce jointe est incorporée dans le corps du message et qu’elle ne doit pas figurer dans la liste des pièces jointes. |
@@ -468,6 +495,9 @@ Office.context.mailbox.displayNewMessageForm(
     ]
   });
 ```
+
+---
+---
 
 #### <a name="getcallbacktokenasyncoptions-callback"></a>getCallbackTokenAsync([options], callback)
 
@@ -524,6 +554,9 @@ function cb(asyncResult) {
 }
 ```
 
+---
+---
+
 #### <a name="getcallbacktokenasynccallback-usercontext"></a>getCallbackTokenAsync(callback, [userContext])
 
 Obtient une chaîne qui contient un jeton servant à obtenir une pièce jointe ou un élément à partir d’un serveur Exchange.
@@ -540,7 +573,7 @@ En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
-|`callback`| function||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult). Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.|
+|`callback`| fonction||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult). Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.|
 |`userContext`| Objet| &lt;optional&gt;|Données d’état transmises à la méthode asynchrone.|
 
 ##### <a name="requirements"></a>Configuration requise
@@ -563,6 +596,9 @@ function cb(asyncResult) {
 }
 ```
 
+---
+---
+
 ####  <a name="getuseridentitytokenasynccallback-usercontext"></a>getUserIdentityTokenAsync(callback, [userContext])
 
 Obtient un jeton qui identifie l’utilisateur et le complément Office.
@@ -574,7 +610,7 @@ La méthode `getUserIdentityTokenAsync` renvoie un jeton qui vous permet d’ide
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
 |`callback`| function||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.|
-|`userContext`| Objet| &lt;optional&gt;|Données d’état transmises à la méthode asynchrone.|
+|`userContext`| Object| &lt;optional&gt;|Données d’état transmises à la méthode asynchrone.|
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -595,6 +631,9 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+---
+---
 
 ####  <a name="makeewsrequestasyncdata-callback-usercontext"></a>makeEwsRequestAsync(data, callback, [userContext])
 
@@ -636,8 +675,8 @@ Lorsque votre application de messagerie s’exécute dans Outlook sur le web,
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
-|`data`| Chaîne||Demande EWS.|
-|`callback`| fonction||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Le résultat XML de l’appel EWS est fourni sous forme de chaîne dans la propriété `asyncResult.value`. Si la taille du résultat est supérieure à 1 Mo, un message d’erreur est renvoyé.|
+|`data`| String||Demande EWS.|
+|`callback`| function||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Le résultat XML de l’appel EWS est fourni sous forme de chaîne dans la propriété `asyncResult.value`. Si la taille du résultat est supérieure à 1 Mo, un message d’erreur est renvoyé.|
 |`userContext`| Objet| &lt;optional&gt;|Données d’état transmises à la méthode asynchrone.|
 
 ##### <a name="requirements"></a>Configuration requise
@@ -693,6 +732,9 @@ function callback(asyncResult)  {
   // Process the returned response here.
 }
 ```
+
+---
+---
 
 ####  <a name="removehandlerasynceventtype-options-callback"></a>removeHandlerAsync(eventType, [options], [callback])
 

@@ -1,14 +1,14 @@
 ---
 title: Espace de noms Office – ensemble de conditions requises
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/12/2019
 localization_priority: Normal
-ms.openlocfilehash: e426ea87c14c4ad21ebdbfd3df05988ba848b906
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 7effc930d196aa009c3c779b702e082ae388fada
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30872234"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838514"
 ---
 # <a name="office"></a>Office
 
@@ -50,8 +50,8 @@ Spécifie le résultat d’un appel asynchrone.
 
 |Nom| Type| Description|
 |---|---|---|
-|`Succeeded`| Chaîne|L’appel a réussi.|
-|`Failed`| Chaîne|L’appel n’a pas réussi.|
+|`Succeeded`| String|L’appel a réussi.|
+|`Failed`| String|L’appel n’a pas réussi.|
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -60,6 +60,7 @@ Spécifie le résultat d’un appel asynchrone.
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
+---
 ---
 
 ####  <a name="coerciontype-string"></a>CoercionType :String
@@ -74,7 +75,7 @@ Indique comment forcer le type des données retournées ou définies par la mét
 
 |Nom| Type| Description|
 |---|---|---|
-|`Html`| Chaîne|Demande que les données soient renvoyées au format HTML.|
+|`Html`| String|Demande que les données soient renvoyées au format HTML.|
 |`Text`| Chaîne|Demande que les données soient renvoyées au format texte.|
 
 ##### <a name="requirements"></a>Configuration requise
@@ -84,6 +85,7 @@ Indique comment forcer le type des données retournées ou définies par la mét
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
+---
 ---
 
 ####  <a name="eventtype-string"></a>EventType :String
@@ -98,12 +100,12 @@ spécifie l’événement associé à un gestionnaire d’événements.
 
 | Nom | Type | Description | Ensemble de conditions requises minimales |
 |---|---|---|---|
-|`AppointmentTimeChanged`| Chaîne | La date ou l’heure de la série ou du rendez-vous sélectionné a été modifiée. | 1.7 |
-|`AttachmentsChanged`| Chaîne | Une pièce jointe a été ajoutée à l’élément ou supprimée de celui-ci. | Aperçu |
-|`EnhancedLocationsChanged`| Chaîne | L'emplacement du rendez-vous sélectionné a changé. | Aperçu |
-|`ItemChanged`| Chaîne | Un autre élément Outlook est sélectionné pour consultation pendant que le volet Office est épinglé. | 1,5 |
+|`AppointmentTimeChanged`| String | La date ou l’heure de la série ou du rendez-vous sélectionné a été modifiée. | 1.7 |
+|`AttachmentsChanged`| String | Une pièce jointe a été ajoutée à l’élément ou supprimée de celui-ci. | Aperçu |
+|`EnhancedLocationsChanged`| String | L'emplacement du rendez-vous sélectionné a changé. | Aperçu |
+|`ItemChanged`| String | Un autre élément Outlook est sélectionné pour consultation pendant que le volet Office est épinglé. | 1,5 |
 |`OfficeThemeChanged`| Chaîne | Le thème Office de la boîte aux lettres a été modifié. | Aperçu |
-|`RecipientsChanged`| Chaîne | La liste des destinataires de l’élément sélectionné ou du lieu de rendez-vous a été modifié. | 1.7 |
+|`RecipientsChanged`| String | La liste des destinataires de l’élément sélectionné ou du lieu de rendez-vous a été modifié. | 1.7 |
 |`RecurrenceChanged`| Chaîne | La périodicité de la série sélectionnée a été modifiée. | 1.7 |
 
 ##### <a name="requirements"></a>Configuration requise
@@ -113,6 +115,7 @@ spécifie l’événement associé à un gestionnaire d’événements.
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1,5 |
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture |
 
+---
 ---
 
 ####  <a name="sourceproperty-string"></a>SourceProperty :String
@@ -127,8 +130,8 @@ Spécifie la source des données renvoyées par la méthode appelée.
 
 |Nom| Type| Description|
 |---|---|---|
-|`Body`| Chaîne|La source de données est dans le corps d’un message.|
-|`Subject`| Chaîne|La source de données est dans l’objet d’un message.|
+|`Body`| String|La source de données est dans le corps d’un message.|
+|`Subject`| String|La source de données est dans l’objet d’un message.|
 
 ##### <a name="requirements"></a>Configuration requise
 
