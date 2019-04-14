@@ -35,7 +35,7 @@ De plus, l’utilisation des ressources de mémoire, de processeur et réseau pa
 Les sections suivantes décrivent brièvement comment l’architecture d’exécution prend en charge l’exécution de compléments dans les clients Office sur des appareils Windows ou Mac OS X, et dans les clients Office Online sur le web.
 
 > [!NOTE]
-> Pour en savoir plus sur l’utilisation de WIP et Intune avec les compléments Office, voir [Utiliser WIP et Intune pour protéger les données d’entreprise dans les documents en cours d’exécution avec les compléments Office](/microsoft-365/enterprise/office-add-ins-wip).
+> Pour en savoir plus sur l’utilisation de WIP et Intune avec les compléments Office, consultez la page [Utiliser WIP et Intune pour protéger les données de votre entreprise dans les document, en exécutant les compléments Office](/microsoft-365/enterprise/office-add-ins-wip).
 
 ### <a name="clients-for-windows-and-os-x-devices"></a>Clients pour les appareils Windows et OS X
 
@@ -253,12 +253,12 @@ La gestion et l’application des paramètres Office s’effectuent avec des par
 
 | Nom du paramètre | Description |
 |--------------|-------------|
-| Autoriser les compléments et les catalogues web non sécurisés | Permet aux utilisateurs d’exécuter des compléments non sécurisés, qui sont des compléments qui disposent d’une page Web ou à des emplacements de catalogue qui ne sont pas sécurisées par SSL (https://) et ne figurent pas dans les zones Internet des utilisateurs. |
-| Bloquer les compléments Web | Vous permet d’empêcher les utilisateurs d’utiliser des compléments web. |
+| Autoriser les compléments et les catalogues web non sécurisés | Permet aux utilisateurs d’exécuter des compléments non sécurisés, par exemple les compléments qui disposent d’une page web ou à des emplacements de catalogue qui ne sont pas sécurisées par SSL (https://) et ne figurent pas dans les zones Internet des utilisateurs. |
+| Bloquer les compléments web | Vous permet d’empêcher les utilisateurs d’utiliser des compléments web. |
 | Bloquer Office Store |  Vous permet d’empêcher les utilisateurs d’utiliser ou d’insérer des compléments web inclus dans Office Store. |
 
 > [!IMPORTANT]
-> Si vos groupes de travail utilisent plusieurs versions d’Office, les paramètres de stratégie de groupe doivent être configurés pour chaque version. Veuillez consulter [Utiliser les stratégies de groupe pour gérer la manière dont les utilisateurs peuvent installer et utiliser des applications pour Office](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office) de l’article [Vue d’ensemble des applications pour Office 2013](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v%3doffice.15)) pour plus d’informations sur les paramètres de stratégie de groupe pour Office 2013.
+> Si vos groupes de travail utilisent plusieurs versions d’Office, les paramètres de stratégie de groupe doivent être configurés pour chaque version. Veuillez consulter la rubrique [Utiliser les stratégies de groupe pour gérer la manière dont les utilisateurs peuvent installer et utiliser des applications pour Office](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office) dans l’article [Vue d’ensemble des applications pour Office 2013](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v%3doffice.15)) pour plus d’informations sur les paramètres de stratégie de groupe pour Office 2013.
 
 ## <a name="see-also"></a>Voir aussi
 
