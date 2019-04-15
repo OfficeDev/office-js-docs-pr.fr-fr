@@ -3,12 +3,12 @@ title: Créer et déboguer des compléments Office dans Visual Studio
 description: Utiliser Visual Studio pour créer et déboguer des compléments Office dans le client de bureau Office pour Windows
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: f9a52719ed7990063ed3f2dbb7d6bd5866e73760
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 74a1430482b507d04f1be60683242fd9ae4a4393
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870715"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838507"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Créer et déboguer des compléments Office dans Visual Studio
 
@@ -175,7 +175,7 @@ Si vous avez un document qui contient les données de test à utiliser pendant l
 Démarrez le projet en choisissant **déboguer** > **démarrer le débogage** à partir de la barre de menus. Visual Studio créera automatiquement la solution et démarrera Office pour héberger votre complément.
 
 > [!NOTE]
-> Lorsque vous commencez un projet de complément Outlook, vous serez invité à indiquer vos informations de connexion. Si vous êtes invité à vous connecter à plusieurs reprises, il se peut que l’authentification de base soit désactivée pour les comptes sur votre client Office 365. Dans ce cas, essayez d’utiliser un compte Microsoft à la place.
+> Lorsque vous commencez un projet de complément Outlook, vous serez invité à indiquer vos informations de connexion. Si vous êtes invité à vous connecter à plusieurs reprises ou si vous recevez un message d’erreur indiquant que vous n’êtes pas autorisé, il se peut que l’authentification de base soit désactivée pour les comptes sur votre client Office 365. Dans ce cas, essayez d’utiliser un compte Microsoft à la place. Il se peut également que vous deviez définir la propriété « Utiliser l’authentification multifacteur » sur Vrai dans la boîte de dialogue Propriétés du complément Outlook Web.
 
 Visual Studio génère le projet et effectue les actions suivantes :
 
@@ -184,6 +184,13 @@ Visual Studio génère le projet et effectue les actions suivantes :
 2. Crée un ensemble d’entrées dans le registre de votre ordinateur qui permettent au complément d’apparaître dans l’application hôte.
 
 3. Génère le projet d’application web, puis le déploie sur le serveur web IIS local (https://localhost).
+
+4. S’il s’agit du premier projet de complément que vous déployez sur un serveur web IIS local, il se peut que vous soyez invité à installer un certificat auto-signé pour le magasin de certificats racines de confiance de l’utilisateur actuel. Cela est nécessaire pour qu’IIS Express puisse afficher correctement le contenu de votre complément.
+
+
+> [!NOTE]
+> La dernière version d’Office peut utiliser un contrôle web plus récent pour afficher le contenu du complément lors de l’exécution de celui-ci sur Windows 10. Si tel est le cas, Visual Studio peut vous inviter à ajouter une exemption de bouclage de réseau local. Cela est nécessaire pour que le contrôle web dans l’application hôte Office puisse accéder au site web déployé sur le serveur web IIS local. Vous pouvez également modifier ce paramètre à tout moment dans Visual Studio sous **Outils** > **Options** > **Outils Office (web)** > **Débogage de compléments web**.
+
 
 Visual Studio effectue ensuite les actions suivantes :
 

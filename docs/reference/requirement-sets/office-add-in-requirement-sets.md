@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises des API communes pour Office
 description: ''
-ms.date: 04/09/2019
+ms.date: 04/10/2019
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 05b1c4a3dde09f223a3383b49bf2f48e15f1e3e7
-ms.sourcegitcommit: fbe2a799fda71aab73ff1c5546c936edbac14e47
+ms.openlocfilehash: f3aa63b65768ab27015d59687ec9929a82bc99ab
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/10/2019
-ms.locfileid: "31764403"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838598"
 ---
 # <a name="office-common-api-requirement-sets"></a>Ensembles de conditions requises des API communes pour Office
 
@@ -129,7 +129,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| Excel<br>Excel Online<br>Excel pour iPad<br>Excel pour Mac<br>Word<br>Word Online<br>Word pour iPad<br>Word pour Mac|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsyncMatrix<br>Binding.getDataAsyncMatrix<br>Binding.setDataAsync|
+| Excel<br>Excel Online<br>Excel pour iPad<br>Excel pour Mac<br>Word<br>Word Online<br>Word pour iPad<br>Word pour Mac|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
 
 ---
 
@@ -185,7 +185,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| Applications web Access<br>Excel<br>Excel Online<br>Excel pour iPad<br>Excel pour Mac<br>Word 2013 et versions ultérieures<br>Word 2016 pour Mac et versions ultérieures<br>Word Online<br>Word pour iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsyncTable<br>Binding.addColumnsAsyncTable<br>Binding.addRowsAsyncTable<br>Binding.deleteAllDataValuesAsyncTable<br>Binding.getDataAsyncTable<br>Binding.setDataAsync|
+| Applications web Access<br>Excel<br>Excel Online<br>Excel pour iPad<br>Excel pour Mac<br>Word 2013 et versions ultérieures<br>Word 2016 pour Mac et versions ultérieures<br>Word Online<br>Word pour iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.addColumnsAsync<br>Binding.addRowsAsync<br>Binding.deleteAllDataValuesAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
 
 ---
 
@@ -201,7 +201,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| Excel<br>Excel Online<br>Excel pour iPad<br>Excel pour Mac<br>Word 2013 et versions ultérieures<br>Word 2016 pour Mac et versions ultérieures<br>Word Online<br>Word pour iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsyncText<br>Binding.getDataAsyncText<br>Binding.setDataAsync|
+| Excel<br>Excel Online<br>Excel pour iPad<br>Excel pour Mac<br>Word 2013 et versions ultérieures<br>Word 2016 pour Mac et versions ultérieures<br>Word Online<br>Word pour iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
 
 ---
 

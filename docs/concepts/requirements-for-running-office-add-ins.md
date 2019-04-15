@@ -46,7 +46,7 @@ Le logiciel suivant est requis pour développer un Complément Office pour les c
     - La version 32 bits ou 64 bits d’Office 2013 ou une version ultérieure s’exécutant sur Windows 7 ou une version ultérieure.
     - Excel 2013, Outlook 2013, PowerPoint 2013, Project Professionnel 2013, Project 2013 SP1 ou Word 2013, ou une version ultérieure du client Office, si vous testez ou exécutez un Complément Office, notamment pour l’un de ces clients de bureau Office. Les clients de bureau Office peuvent être installés sur site ou par le biais de « Démarrer en un clic » sur l’ordinateur client.
 
-  Si vous avez un abonnement Office 365 valide et vous n’avez pas accès au client Office, vous pouvez [télécharger et installer la dernière version d’Office](https://support.office.com/article/download-and-install-or-reinstall-office-365-or-office-2019-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658).
+  Si votre abonnement Office 365 est valide, mais que n’avez pas accès au client Office, nous vous conseillons de [télécharger et installer la dernière version d’Office](https://support.office.com/article/download-and-install-or-reinstall-office-365-or-office-2019-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658).
 
 - Internet Explorer 11 ou version ultérieure, qui doit être installé, mais ne doit pas être le navigateur par défaut. Pour prendre en charge les compléments Office, le client Office qui s’exécute en tant qu’hôte utilise des composants de navigateur qui font partie d’Internet Explorer 11 ou version ultérieure.
 
@@ -73,14 +73,14 @@ Tout navigateur qui prend en charge ECMAScript 5.1, HTML5 et CSS3, tel qu’Int
 
 ## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>Exigences en matière de client : smartphones et tablettes autres que Windows
 
-Spécialement pour Outlook Web App dans un navigateur sur smartphones et tablettes non-Windows, le logiciel suivant est nécessaire pour tester et exécuter les compléments Outlook.
+L’installation du logiciel suivant est nécessaire pour tester et exécuter les compléments Outlook. Ce logiciel est conçu spécialement pour les versions d’Outlook Web App exécutées dans des navigateurs sur smartphones et tablettes utilisant d’autres systèmes d’exploitation que Windows.
 
 
 | Application hôte | Appareil | Système d’exploitation | Compte Exchange | Navigateur mobile |
 |:-----|:-----|:-----|:-----|:-----|
-|Outlook pour Android|Tablettes et smartphones Android|Android KitKat 4.4 et version ultérieure|Sur la dernière mise à jour d’Office 365 pour les entreprises ou d’Exchange Online|Application native pour Android, navigateur non applicable|
-|Outlook pour iOS|Tablettes iPad, smartphones iPhone|iOS 11 ou version ultérieure|Sur la dernière mise à jour d’Office 365 pour les entreprises ou d’Exchange Online|Application native pour iOS, navigateur non applicable|
-|Outlook Web App|iPhone 4, iPad 2, iPod Touch 4 (ou version ultérieure de ces appareils)|iOS 5 ou version ultérieure|Dans Office 365, Exchange Online ou en local sur Exchange Server 2013 ou version ultérieure|Safari|
+|Outlook pour Android|Tablettes et smartphones Android|Android KitKat 4.4 et version ultérieure|Sur la dernière mise à jour d’Office 365 pour les entreprises ou d’Exchange Online|Application native pour Android, navigateur non applicable|
+|Outlook pour iOS|Tablettes iPad, smartphones iPhone|iOS 11 ou version ultérieure|Sur la dernière mise à jour d’Office 365 pour les entreprises ou d’Exchange Online|Application native pour iOS, navigateur non applicable|
+|Outlook Web App|iPhone 4, iPad 2, iPod Touch 4 (ou version ultérieure de ces appareils)|iOS 5 ou version ultérieure|Sur Office 365, Exchange Online ou en local sur Exchange Server 2013 ou version ultérieure|Safari|
 
 > [!NOTE]
 > Les applications natives OWA pour Android, OWA pour iPad et OWA pour iPhone ont été [supprimées](https://support.office.com/article/Microsoft-OWA-mobile-apps-are-being-retired-076ec122-4576-4900-bc26-937f84d25a4b) et ne sont plus requises ou disponibles pour les tests des compléments Outlook.
