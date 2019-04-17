@@ -12,18 +12,18 @@ ms.locfileid: "31478955"
 ---
 # <a name="create-json-metadata-for-custom-functions-preview"></a>Créer les métadonnées JSON pour des fonctions personnalisées (aperçu)
 
-Lorsqu’ une fonction personnalisée Excel est écrite dans JavaScript ou TypeScript, les balises JSDoc servent à fournir des informations supplémentaires sur la fonction personnalisée. Les balises JSDoc sont ensuite utilisées au moment de build pour créer le [fichier de métadonnées JSON](custom-functions-json.md). Utiliser des balises JSDoc vous évite des efforts pour modifier manuellement le fichier de métadonnées JSON.
+Si vous écrivez une fonction Excel personnalisée en JavaScript ou TypeScript, vous pouvez utiliser les balises JSDoc pour la détailler en ajoutant des informations supplémentaires. Les balises JSDoc sont ensuite utilisées lors de la génération pour créer le [fichier de métadonnées JSON](custom-functions-json.md). En utilisant des balises JSDoc, vous n’avez plus besoin de modifier manuellement le fichier de métadonnées JSON.
 
-Ajouter la`@customfunction` balise dans les commentaires du code d’une fonction JavaScript ou TypeScript pour la marquer comme une fonction personnalisée.
+Ajoutez la balise `@customfunction` dans les commentaires du code d’une fonction JavaScript ou TypeScript pour indiquer qu’il s’agit d’une fonction personnalisée.
 
-La fonction types de paramètre peut être fournie à l’aide de la [@param ](#param) balise dans JavaScript, ou via la [fonction type](http://www.typescriptlang.org/docs/handbook/functions.html) dans TypeScript. Pour plus d’informations, consultez la [@param](#param) balise et la section[Types](#Types).
+Vous pouvez fournir les types de paramètres de la fonction en utilisant la balise [@param](#param) dans JavaScript, ou en précisant le [type de fonction](http://www.typescriptlang.org/docs/handbook/functions.html) dans TypeScript. Si vous voulez en savoir plus, veuillez consulter les sections relatives à la balise [@param](#param) et aux [types](#Types).
 
 ## <a name="jsdoc-tags"></a>Balises JSDoc
-Les balises JSDoc suivants sont prises en charge dans les fonctions personnalisées Excel :
+Voici quelles sont les balises JSDoc prises en charge dans les fonctions Excel personnalisées :
 * [@cancelable](#cancelable)
-* [@customfunction](#customfunction) nom d’ID
-* [@helpurl](#helpurl)URL
-* [@param](#param) _{type}_ description nom
+* [@customfunction](#customfunction) id name
+* [@helpurl](#helpurl) url
+* [@param](#param) _{type}_ name description
 * [@requiresAddress](#requiresAddress)
 * [@returns](#returns) _{type}_
 * [@streaming](#streaming)
@@ -35,46 +35,46 @@ Les balises JSDoc suivants sont prises en charge dans les fonctions personnalis�
 
 Indique qu’une fonction personnalisée souhaite effectuer une action lorsque la fonction est annulée.
 
-Le dernier paramètre de la fonction doit être de type `CustomFunctions.CancelableInvocation`. La fonction peut affecter une fonction à la `oncanceled` propriété pour désigner l’action à effectuer lorsque la fonction est annulée.
+Le dernier paramètre de la fonction doit être de type `CustomFunctions.CancelableInvocation`. La fonction peut attribuer une fonction à la propriété `oncanceled` pour désigner l’action à effectuer lors de l’annulation de la fonction.
 
-Si le dernier paramètre de fonction est de type `CustomFunctions.CancelableInvocation`, sera considéré comme `@cancelable` même si la balise n’apparaît pas.
+Si le dernier paramètre de fonction est de type `CustomFunctions.CancelableInvocation`, il sera considéré comme `@cancelable`, même si la balise n’apparaît pas.
 
-Une fonction ne peut pas contenir les deux balises`@cancelable` et `@streaming`.
+Une fonction ne peut pas contenir les deux balises `@cancelable` et `@streaming`.
 
 ---
 ### <a name="customfunction"></a>@customfunction
 <a id="customfunction"/>
 
-Syntaxe : @customfunction _id_ _nom_
+Syntaxe : @customfunction _id_ _name_
 
-Spécifier cette balise pour traiter la fonction JavaScript/TypeScript comme une fonction personnalisée Excel.
+Spécifiez cette balise pour traiter la fonction JavaScript/TypeScript comme une fonction Excel personnalisée.
 
 Cette balise est requise pour créer des métadonnées pour la fonction personnalisée.
 
-Il doit également être un appel au `CustomFunctions.associate("id", functionName);`
+Vous devez également insérer un appel vers `CustomFunctions.associate("id", functionName);`
 
 #### <a name="id"></a>id 
 
-L’id est utilisé en tant qu’identificateur indifférent pour la fonction personnalisée stockée dans le document. Elle ne doit pas changer.
+L’id est utilisé en tant qu’identificateur invariant pour la fonction personnalisée stockée dans le document. Elle ne doit pas changer.
 
-* Si l’id n’est pas inclus, le nom de la fonction JavaScript/TypeScript est convertie en majuscules, les caractères rejetés sont supprimés.
+* Si l’id n’est pas fourni, le nom de la fonction JavaScript/TypeScript est convertie en majuscules, et les caractères rejetés sont supprimés.
 * L’id doit être unique pour toutes les fonctions personnalisées.
-* Les caractères autorisés sont limités aux : A-Z, a-z, 0-9 et point (.).
+* Seuls les caractères alphanumériques majuscules et minuscules (A-Z, a-z, 0-9) et le point (.) sont autorisés.
 
-#### <a name="name"></a>nom
+#### <a name="name"></a>name
 
-Fournit le nom d’affichage pour la fonction personnalisée. 
+Fournit le nom d’affichage de la fonction personnalisée. 
 
-* Si aucun nom n’est fourni, l’id est également utilisé comme le nom.
-* Caractères autorisés : lettres [caractère Unicode alphabétique](https://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic), nombres, point (.) et un trait de soulignement (\_).
+* Si aucun nom n’est fourni, l’id servira aussi de nom.
+* Caractères autorisés : [caractères alphanumériques Unicode](https://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic) (lettres, chiffres), point (.) et trait de soulignement (\_).
 * Doit commencer par une lettre.
-* La longueur maximale est de 128 caractères.
+* Sa longueur maximale est limitée à 128 caractères.
 
 ---
 ### <a name="helpurl"></a>@helpurl
 <a id="helpurl"/>
 
-Syntaxe: @helpurl_url_
+Syntaxe : @helpurl _url_
 
 L’_url_ fournie est affichée dans Excel.
 
@@ -84,29 +84,29 @@ L’_url_ fournie est affichée dans Excel.
 
 #### <a name="javascript"></a>JavaScript
 
-Syntaxe JavaScript : @param nom {type} _description_
+Syntaxe JavaScript : @param {type} name _description_
 
-* `{type}` doit spécifier les informations de type au sein des accolades. Voir les[Types](##types) pour plus d’informations sur les types qui peuvent être utilisés. Facultatif: Si aucun serveur n'est spécifié, le type`any` sera utilisé.
-* `name` spécifie le paramètre auquel la@parambalise s’applique. Obligatoire.
-* `description` fournit la description qui s’affiche dans Excel pour le paramètre de fonction. Facultatif.
+* `{type}` doit spécifier les informations de type entre deux accolades. Consultez la section [Types](##types) pour savoir quels types peuvent être utilisés. Facultatif : si aucun serveur n’est spécifié, le type `any` sera utilisé.
+* `name` spécifie le paramètre auquel s’applique la balise @param. Obligatoire.
+* `description` fournit la description qui s’affiche dans Excel pour le paramètre de la fonction. Facultatif.
 
-Pour désigner un paramètre de fonction personnalisée comme étant facultatif:
-* Placez les crochets autour du paramètre de nom. Par exemple : `@param {string} [text] Optional text`.
+Pour désigner un paramètre de fonction personnalisée comme étant facultatif :
+* Placez les crochets autour du nom du paramètre. Par exemple : `@param {string} [text] Optional text`.
 
 #### <a name="typescript"></a>TypeScript
 
-Syntaxe JavaScript : @paramnom_description_
+Syntaxe TypeScript : @param name _description_
 
-* `name` spécifie le paramètre auquel la@parambalise s’applique. Obligatoire.
-* `description` fournit la description qui s’affiche dans Excel pour le paramètre de fonction. Facultatif.
+* `name` spécifie le paramètre auquel s’applique la balise @param. Obligatoire.
+* `description` fournit la description qui s’affiche dans Excel pour le paramètre de la fonction. Facultatif.
 
-Voir les[Types](##types) pour plus d’informations sur les types de paramètre de fonction qui peuvent être utilisés.
+Consultez la section [Types](##types) pour savoir quels types de paramètres de fonction peuvent être utilisés.
 
-Pour désigner un paramètre de fonction personnalisée comme étant facultatif, effectuez l’une des actions suivantes:
+Pour désigner un paramètre de fonction personnalisée comme étant facultatif, effectuez l’une des actions suivantes :
 * Utilisez un paramètre facultatif. Par exemple : `function f(text?: string)`
-* Donne une valeur par défaut au paramètre. Par exemple : `function f(text: string = "abc")`
+* Définissez ce paramètre sur une valeur par défaut. Par exemple : `function f(text: string = "abc")`
 
-Pour une description détaillée du @paramvoir:[JSDoc](http://usejsdoc.org/tags-param.html)
+Pour consulter une description détaillée du paramètre @param, reportez-vous à la page suivante : [JSDoc](http://usejsdoc.org/tags-param.html) (contenu en anglais)
 
 ---
 ### <a name="requiresaddress"></a>@requiresAddress
@@ -114,7 +114,7 @@ Pour une description détaillée du @paramvoir:[JSDoc](http://usejsdoc.org/tags-
 
 Indique que l’adresse de la cellule dans laquelle la fonction est évaluée doit être fournie. 
 
-Le dernier paramètre de la fonction doit être de type `CustomFunctions.Invocation` ou un type dérivé. Lorsque la fonction est appelée, la`address` propriété contiendra l’adresse.
+Le dernier paramètre de la fonction doit être de type `CustomFunctions.Invocation` ou un type dérivé. Lorsque la fonction est appelée, la propriété `address` contiendra l’adresse.
 
 ---
 ### <a name="returns"></a>@returns
@@ -122,9 +122,9 @@ Le dernier paramètre de la fonction doit être de type `CustomFunctions.Invocat
 
 Syntaxe : @returns {_type_}
 
-Fournit le type pour la valeur de retour.
+Fournit le type pour la valeur renvoyée.
 
-Si `{type}` est omis, les informations de type TypeScript seront utilisées. S’il n’existe aucune information type, le type sera `any`.
+Si `{type}` est omis, les informations de type TypeScript seront utilisées. S’il n’existe aucune information définissant le type, ce dernier sera `any`.
 
 ---
 ### <a name="streaming"></a>@streaming
@@ -133,55 +133,55 @@ Si `{type}` est omis, les informations de type TypeScript seront utilisées. S�
 Utilisé pour indiquer qu’une fonction personnalisée est une fonction diffusion en continu. 
 
 Le dernier paramètre doit être de type `CustomFunctions.StreamingInvocation<ResultType>`.
-La fonction doit retourner `void`.
+La fonction doit renvoyer `void`.
 
-Les fonctions de diffusion en continu ne retournent pas de valeurs directement, mais doivent plutôt appeler `setResult(result: ResultType)` en utilisant le dernier paramètre.
+Les fonctions de diffusion en continu ne renvoient pas de valeurs directement, mais doivent plutôt appeler `setResult(result: ResultType)` en utilisant le dernier paramètre.
 
-Les exceptions levées par une fonction en continu sont ignorées. `setResult()` peut être appelée avec l’erreur pour indiquer un résultat de l’erreur.
+Les exceptions levées par une fonction en continu sont ignorées. `setResult()` peut être appelée avec Error pour indiquer un résultat erroné.
 
-Les fonctions en continu ne peuvent pas être marquées comme étant [ @volatile ](#volatile).
+Vous ne pouvez pas utiliser la balise [@volatile](#volatile) pour les fonctions de diffusion en continu.
 
 ---
 ### <a name="volatile"></a>@volatile
 <a id="volatile"/>
 
-Une fonction volatile est une dont le résultat ne peut pas être considéré comme le même à partir d’un moment à l’autre même si elle ne prend aucun argument ou les arguments n’ont pas changé. Excel réévalue les cellules contenant des fonctions volatiles, ainsi que toutes les cellules dépendantes, chaque fois qu’il effectue un recalcul. C’est pourquoi trop de dépendance des fonctions volatiles peut ralentir le recalcul.
+Une fonction volatile est une fonction dont le résultat peut changer d’un moment à l’autre, même si elle ne récupère pas d’argument ou si ses arguments ne changent pas. À chaque calcul, Excel réévalue les cellules contenant des fonctions volatiles, ainsi que toutes leurs cellules dépendantes. C’est pourquoi, un trop grand nombre de dépendances de fonctions volatiles risque de ralentir les calculs. Nous vous recommandons d’en utiliser aussi peu que possible.
 
-Les fonctions en continu ne peuvent pas être volatiles.
+Les fonctions de diffusion en continu ne peuvent pas être volatiles.
 
 ---
 
 ## <a name="types"></a>Types
 
-En spécifiant un type de paramètre, Excel convertit les valeurs dans ce type avant d’appeler la fonction. Si le type est`any`, aucune opération de conversion n’est effectuée.
+En spécifiant un type de paramètre, Excel convertit les valeurs en ce type, avant d’appeler la fonction. Si le type est `any`, Excel n’effectue pas de conversion.
 
 ### <a name="value-types"></a>Types de valeur
 
-Une valeur unique peut être représentée à l’aide d’un des types suivants : `boolean`, `number`, `string`.
+Une valeur unique peut être représentée à l’aide d’un des types suivants : `boolean`, `number` ou `string`.
 
 ### <a name="matrix-type"></a>Type matrice
 
-Utilisez une matrice à deux dimensions pour lesquels le paramètre ou la valeur de retour peut être une matrice de valeurs. Par exemple, le type `number[][]` indique une matrice de nombres. `string[][]` Indique une matrice de chaînes. 
+Utilisez une matrice à deux dimensions pour que le paramètre ou la valeur renvoyée soit une matrice de valeurs. Par exemple, le type `number[][]` indique une matrice de nombres. `string[][]` Indique une matrice de chaînes. 
 
 ### <a name="error-type"></a>Type d’erreur
 
-Une fonction en non continu peut indiquer une erreur en retournant un type d’erreur.
+Une fonction qui n’est pas une fonction de diffusion en continu peut indiquer une erreur en renvoyant un type Error.
 
-Une fonction en continu peut indiquer une erreur en retournant un type d’erreur().
+Une fonction de diffusion en continu peut indiquer une erreur en appelant la méthode setResult() avec un type Error.
 
-### <a name="promise"></a>Promesse
+### <a name="promise"></a>Promise
 
-Une fonction peut renvoyer une promesse qui fournit la valeur lorsque la promesse aura été résolue. Si la promesse est refusée, alors elle est considérée comme une erreur.
+Une fonction peut renvoyer un objet Promise (pour « promesse »). Ce dernier fournit une valeur lors de sa résolution. Si la résolution de l’objet Promise est refusée, cela entraîne une erreur.
 
 ### <a name="other-types"></a>Autres types
 
-Un autre type sera traité comme une erreur.
+Tout autre type sera traité comme une erreur.
 
 ## <a name="see-also"></a>Voir aussi
 
 * [Métadonnées des fonctions personnalisées](custom-functions-json.md)
 * [Runtime pour les fonctions personnalisées Excel](custom-functions-runtime.md)
-* [Meilleures pratiques des fonctions personnalisées](custom-functions-best-practices.md)
-* [Fonctions personnalisées changelog](custom-functions-changelog.md)
-* [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md)
-* [Débogage des métadonnées des fonctions personnalisées](custom-functions-debugging.md)
+* [Meilleures pratiques pour l’utilisation des fonctions personnalisées](custom-functions-best-practices.md)
+* [Journal des modifications des fonctions personnalisées](custom-functions-changelog.md)
+* [Didacticiel sur les fonctions Excel personnalisées](../tutorials/excel-tutorial-create-custom-functions.md)
+* [Débogage des fonctions personnalisées](custom-functions-debugging.md)
