@@ -3,12 +3,12 @@ ms.date: 03/13/2019
 description: DéBoguez vos fonctions personnalisées dans Excel.
 title: Débogage des fonctions personnalisées (aperçu)
 localization_priority: Normal
-ms.openlocfilehash: 66b55855fdbdc3b3cfc7a316cb8fd7e06f073213
-ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
+ms.openlocfilehash: 08563ef630ebc457219c4c622328b84d13e6acab
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "31478956"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914388"
 ---
 # <a name="custom-functions-debugging-preview"></a>Débogage des fonctions personnalisées (aperçu)
 
@@ -27,18 +27,18 @@ Sur Mac:
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 > [!NOTE]
-> Par souci de simplicité, cet article présente le débogage dans le contexte de l'utilisation de Visual Studio code pour modifier, exécuter des tâches et, dans certains cas, utiliser l'affichage débogage. Si vous utilisez un autre éditeur ou outil de ligne de commande, consultez les [instructions de ligne de commande](#Use-the-command-line-tools-to-debug) à la fin de cet article.
+> Par souci de simplicité, cet article présente le débogage dans le contexte de l'utilisation de Visual Studio code pour modifier, exécuter des tâches et, dans certains cas, utiliser l'affichage débogage. Si vous utilisez un autre éditeur ou outil de ligne de commande, consultez les [instructions de ligne de commande](#use-the-command-line-tools-to-debug) à la fin de cet article.
 
 ## <a name="requirements"></a>Configuration requise
 
-Avant de commencer le débogage, vous devez créer un projet de complément de fonctions personnalisées à l'aide du générateur Yo Office et vous assurer que vous disposez de certificats auto-signés approuvés pour votre projet. Pour obtenir des instructions sur la création d'un projet, consultez le didacticiel sur les [fonctions personnalisées](https://review.docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions). Pour obtenir des instructions sur l'approbation des certificats, consultez la rubrique [Ajout de certificats auto-signés en tant que certificats racines approuvés](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
+Avant de commencer le débogage, vous devez créer un projet de complément de fonctions personnalisées à l'aide du générateur Yo Office et vous assurer que vous disposez de certificats auto-signés approuvés pour votre projet. Pour obtenir des instructions sur la création d'un projet, consultez le didacticiel sur les [fonctions personnalisées](../tutorials/excel-tutorial-create-custom-functions.md). Pour obtenir des instructions sur l'approbation des certificats, consultez la rubrique [Ajout de certificats auto-signés en tant que certificats racines approuvés](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
 
 ## <a name="use-the-vs-code-debugger-for-excel-desktop"></a>Utiliser le débogueur de code VS pour le bureau Excel
 
 Vous pouvez utiliser le code VS pour déboguer des fonctions personnalisées dans Office Excel sur le bureau.
 
 > [!NOTE]
-> Le débogage de bureau pour Mac n'est pas disponible, mais peut être réalisé [à l'aide des outils de navigation pour déboguEr Excel Online](#debug-in-excel-online-by-using-the-browser-developer-tools).
+> Le débogage de bureau pour Mac n'est pas disponible, mais peut être réalisé [à l'aide des outils de navigation pour déboguEr Excel Online](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-online).
 
 ### <a name="run-your-add-in-from-vs-code"></a>Exécuter votre complément à partir du code VS
 
@@ -145,7 +145,7 @@ Si vous n'utilisez pas le code VS, vous pouvez utiliser la ligne de commande (pa
     
     `npm run start web`
     
-    Pour Excel Online, vous devez également chargement votre complément. Suivez les étapes décrites dans [chargement votre complément](#Sideload-your-add-in) pour chargement votre complément. Ensuite, passez à la section suivante pour commencer le débogage.
+    Pour Excel Online, vous devez également chargement votre complément. Suivez les étapes décrites dans [chargement votre complément](#sideload-your-add-in) pour chargement votre complément. Ensuite, passez à la section suivante pour commencer le débogage.
     
 4. Ouvrez outils de développement dans le navigateur. Pour le chrome et la plupart des navigateurs F12 ouvre les outils de développement.
 5. Dans outils de développement, ouvrez votre fichier de script de code source (functions. js ou functions. TS). Votre code de fonctions personnalisées peut être situé à la fin du fichier.

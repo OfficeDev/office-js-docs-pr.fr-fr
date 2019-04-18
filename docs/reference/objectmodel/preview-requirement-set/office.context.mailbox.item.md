@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Item-Preview ensemble de conditions requises
 description: ''
-ms.date: 04/12/2019
+ms.date: 04/17/2019
 localization_priority: Normal
-ms.openlocfilehash: b74b3aa3c455d33d17767163c960adef7cf783fa
-ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
+ms.openlocfilehash: cb9c298302bf0df9d7842fde4706d9d0c9710ae4
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "31838584"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914346"
 ---
 # <a name="item"></a>élément
 
@@ -31,6 +31,7 @@ L’espace de noms `item` est utilisé pour accéder au message, à la demande d
 | [attachments](#attachments-arrayattachmentdetails) | Membre |
 | [bcc](#bcc-recipients) | Membre |
 | [body](#body-body) | Membre |
+| [catégories](#categories-categories) | Membre |
 | [cc](#cc-arrayemailaddressdetailsrecipients) | Membre |
 | [conversationId](#nullable-conversationid-string) | Membre |
 | [dateTimeCreated](#datetimecreated-date) | Membre |
@@ -45,14 +46,14 @@ L’espace de noms `item` est utilisé pour accéder au message, à la demande d
 | [itemType](#itemtype-officemailboxenumsitemtype) | Membre |
 | [location](#location-stringlocation) | Membre |
 | [normalizedSubject](#normalizedsubject-string) | Membre |
-| [notificationMessages](#notificationmessages-notificationmessages) | Membre |
-| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | Member |
+| [notificationMessages](#notificationmessages-notificationmessages) | Member |
+| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | Membre |
 | [organizer](#organizer-emailaddressdetailsorganizer) | Membre |
 | [recurrence](#nullable-recurrence-recurrence) | Membre |
 | [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | Membre |
 | [sender](#sender-emailaddressdetails) | Membre |
-| [seriesId](#nullable-seriesid-string) | Member |
-| [start](#start-datetime) | Member |
+| [seriesId](#nullable-seriesid-string) | Membre |
+| [start](#start-datetime) | Membre |
 | [subject](#subject-stringsubject) | Membre |
 | [to](#to-arrayemailaddressdetailsrecipients) | Membre |
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | Méthode |
@@ -215,6 +216,42 @@ L’exemple suivant présente le paramètre de résultat transmis à la fonction
   "status": "succeeded",
   "asyncContext": "This is passed to the callback"
 }
+```
+
+---
+---
+
+####  <a name="categories-categoriesjavascriptapioutlookofficecategories"></a>Catégories:[catégories](/javascript/api/outlook/office.categories)
+
+Obtient un objet qui fournit des méthodes pour la gestion des catégories de l'élément.
+
+> [!NOTE]
+> Ce membre n’est pas pris en charge dans Outlook pour iOS ou Outlook pour Android.
+
+##### <a name="type"></a>Type
+
+*   [Categories](/javascript/api/outlook/office.categories)
+
+##### <a name="requirements"></a>Configuration requise
+
+|Conditions requises|Valeur|
+|---|---|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Aperçu|
+|[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)|Rédaction ou lecture|
+
+##### <a name="example"></a>Exemple
+
+Cet exemple obtient les catégories de l'élément.
+
+```javascript
+Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
+  if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+    console.log("Action failed with error: " + asyncResult.error.message);
+  } else {
+    console.log("Categories: " + JSON.stringify(asyncResult.value));
+  }
+});
 ```
 
 ---

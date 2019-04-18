@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox-Preview-ensemble de conditions requises
 description: ''
-ms.date: 04/12/2019
+ms.date: 04/17/2019
 localization_priority: Normal
-ms.openlocfilehash: d19cb7c664cda42469cf7cde31d69f87101278c8
-ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
+ms.openlocfilehash: 557dedf3943be12fbb9e384873d0b9079b251c2f
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "31838535"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914332"
 ---
 # <a name="mailbox"></a>boîte aux lettres
 
@@ -29,6 +29,7 @@ Permet d’accéder au modèle objet du complément Outlook pour Microsoft Out
 | Membre | Type |
 |--------|------|
 | [ewsUrl](#ewsurl-string) | Membre |
+| [masterCategories](#mastercategories-mastercategories) | Membre |
 | [restUrl](#resturl-string) | Membre |
 | [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | Méthode |
 | [convertToEwsId](#converttoewsiditemid-restversion--string) | Méthode |
@@ -79,6 +80,42 @@ En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
+
+---
+---
+
+#### <a name="mastercategories-mastercategoriesjavascriptapioutlookofficemastercategories"></a>masterCategories:[masterCategories](/javascript/api/outlook/office.mastercategories)
+
+Obtient un objet qui fournit des méthodes pour gérer la liste de formes de base des catégories sur cette boîte aux lettres.
+
+> [!NOTE]
+> Ce membre n’est pas pris en charge dans Outlook pour iOS ou Outlook pour Android.
+
+##### <a name="type"></a>Type
+
+*   [MasterCategories](/javascript/api/outlook/office.mastercategories)
+
+##### <a name="requirements"></a>Configuration requise
+
+|Conditions requises| Valeur|
+|---|---|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| Aperçu |
+|[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteMailbox |
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture |
+
+##### <a name="example"></a>Exemple
+
+Cet exemple obtient la liste principale des catégories pour cette boîte aux lettres.
+
+```javascript
+Office.context.mailbox.masterCategories.getAsync(function (asyncResult) {
+  if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+    console.log("Action failed with error: " + asyncResult.error.message);
+  } else {
+    console.log("Master categories: " + JSON.stringify(asyncResult.value));
+  }
+});
+```
 
 ---
 ---
@@ -453,14 +490,14 @@ Si l’un des paramètres dépasse les limites définies en matière de taille o
 
 |Nom| Type| Description|
 |---|---|---|
-| `parameters` | Object | Dictionnaire de paramètres décrivant le nouveau message. |
+| `parameters` | Objet | Dictionnaire de paramètres décrivant le nouveau message. |
 | `parameters.toRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un `EmailAddressDetails` objet pour chacun des destinataires de la ligne à. Le tableau est limité à 100 entrées maximum. |
 | `parameters.ccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un `EmailAddressDetails` objet pour chacun des destinataires de la ligne CC. Le tableau est limité à 100 entrées maximum. |
 | `parameters.bccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un `EmailAddressDetails` objet pour chacun des destinataires de la ligne CCI. Le tableau est limité à 100 entrées maximum. |
 | `parameters.subject` | String | Chaîne contenant l'objet du message. La chaîne est limitée à 255 caractères maximum. |
 | `parameters.htmlBody` | Chaîne | Corps HTML du message. La taille du corps du message est limitée à 32 Ko. |
 | `parameters.attachments` | Array.&lt;Object&gt; | Tableau d’objets JSON qui sont des pièces jointes de fichier ou d’élément. |
-| `parameters.attachments.type` | Chaîne | Indique le type de pièce jointe. Doit être `file` pour une pièce jointe de fichier ou `item` pour une pièce jointe d’élément. |
+| `parameters.attachments.type` | String | Indique le type de pièce jointe. Doit être `file` pour une pièce jointe de fichier ou `item` pour une pièce jointe d’élément. |
 | `parameters.attachments.name` | String | Chaîne qui contient le nom de la pièce jointe et comporte jusqu'à 255 caractères.|
 | `parameters.attachments.url` | Chaîne | Utilisé uniquement si `type` est défini sur `file`. Il s’agit de l’URI de l’emplacement du fichier. |
 | `parameters.attachments.isInline` | Booléen | Utilisé uniquement si `type` est défini sur `file`. Si elle est définie sur `true`, cette valeur indique que la pièce jointe est incorporée dans le corps du message et qu’elle ne doit pas figurer dans la liste des pièces jointes. |
@@ -573,7 +610,7 @@ En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
-|`callback`| fonction||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult). Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.|
+|`callback`| function||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult). Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.|
 |`userContext`| Objet| &lt;optional&gt;|Données d’état transmises à la méthode asynchrone.|
 
 ##### <a name="requirements"></a>Configuration requise

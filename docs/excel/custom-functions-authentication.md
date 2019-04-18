@@ -1,13 +1,13 @@
 ---
-ms.date: 03/19/2019
+ms.date: 04/15/2019
 description: Authentifier les utilisateurs à l'aide de fonctions personnalisées dans Excel.
 title: Authentification pour les fonctions personnalisées
-ms.openlocfilehash: 7db46e40758ea0282a2fd7c4d40739304a874e76
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 75ffb82c0dc9350c35b22b1d1676990598ea0c44
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871492"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914185"
 ---
 # <a name="authentication"></a>Authentification
 
@@ -30,7 +30,7 @@ Si un jeton n'existe pas, vous devez utiliser l'API de boîte de dialogue pour d
 > [!NOTE]
 > Le runtime des fonctions personnalisées utilise un objet Dialog légèrement différent de l'objet Dialog dans le moteur d'exécution du moteur de navigateur utilisé par les volets des tâches. Ils sont tous deux appelés «API de dialogue», mais utilisent `Officeruntime.Dialog` pour authentifier les utilisateurs dans le runtime des fonctions personnalisées.
 
-Pour plus d'informations sur l'utilisation `OfficeRuntime.Dialog`du, voir [Custom Functions Runtime](/office/dev/add-ins/excel/custom-functions-runtime?view=office-js#displaying-a-dialog-box).
+Pour plus d'informations sur l'utilisation `OfficeRuntime.Dialog`de l', voir [Custom Functions Dialog](/office/dev/add-ins/excel/custom-functions-dialog).
 
 Lors de l'identification de l'ensemble du processus d'authentification, il peut s'avérer utile de considérer le volet des tâches et les éléments de l'interface utilisateur de votre complément, ainsi que les fonctions personnalisées de votre complément en tant qu'entités distinctes pouvant communiquer `AsyncStorage`les uns avec les autres.
 

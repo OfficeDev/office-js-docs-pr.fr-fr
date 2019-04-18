@@ -1,14 +1,14 @@
 ---
 title: Appliquer la mise en forme conditionnelle aux plages avec l’API Excel JavaScript
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: 1c601782ca048fe1488f4ce578a7ee4d896b6b26
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 7c6b5b5433e2dc59259eb937ef553ff265443f75
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870379"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914381"
 ---
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>Appliquer une mise en forme conditionnelle à des plages Excel
 
@@ -33,7 +33,7 @@ La `Range.conditionalFormats` propriété est un ensemble d’objets [Conditiona
 -   `topBottom`
 
 > [!NOTE]
-> Chacune de ces propriétés de mise en forme a une variante correspondante`*OrNullObject`. En savoir plus sur ce modèle dans la section[* OrNullObject méthodes](/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods).
+> Chacune de ces propriétés de mise en forme a une variante correspondante`*OrNullObject`. En savoir plus sur ce modèle dans la section[* OrNullObject méthodes](/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#ornullobject-methods).
 
 Un seul type de format peut être défini pour l’objet ConditionalFormat. Cela est déterminé par la `type` propriété, c'est-à-dire une [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) valeur enum. `type` est défini lorsque vous ajoutez une mise en forme conditionnelle à une plage. 
 
