@@ -1,14 +1,14 @@
 ---
 title: Créer un complément Office ASP.NET qui utilise l’authentification unique
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/15/2019
 localization_priority: Priority
-ms.openlocfilehash: 3dd78866c53863a5847fe6f6cf1083d804b2ca2f
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.openlocfilehash: ebcf5cd72f841f5d97093e3b5f43833e97fa9947
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691110"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914304"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office ASP.NET qui utilise l’authentification unique (aperçu)
 
@@ -69,7 +69,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
 
 ## <a name="configure-the-add-in"></a>Configurer le complément
 
-1. Dans la chaîne suivante, remplacez l’espace réservé « {tenant_ID} » par votre ID de client Office 365. Pour obtenir de celui-ci, utilisez l’une des méthodes décrites dans [Trouver votre ID de client Office 365](/onedrive/find-your-office-365-tenant-id).
+1. Dans la chaîne suivante, remplacez l’espace réservé “{tenant_ID}” par votre ID de client Office 365. Si vous n’avez pas copié l’ID de client lorsque vous avez inscrit le complément auprès d’AAD, utilisez une des méthodes dans [Trouver votre ID de client Office 365](/onedrive/find-your-office-365-tenant-id) pour l’obtenir.
 
     `https://login.microsoftonline.com/{tenant_ID}/v2.0`
 

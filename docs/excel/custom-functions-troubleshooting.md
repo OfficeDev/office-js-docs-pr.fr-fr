@@ -1,20 +1,20 @@
 ---
-ms.date: 03/19/2019
+ms.date: 04/15/2019
 description: Résoudre des problèmes courants dans les fonctions personnalisées d’Excel.
 title: Résoudre des problèmes de fonctions personnalisées (préversion)
 localization_priority: Priority
-ms.openlocfilehash: 19c3dcccce7618289dc49c3f61ce781744c24369
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 6a11b733c528028a2ea9fc48b08e9308a2cf6e97
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871338"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914220"
 ---
 # <a name="troubleshoot-custom-functions"></a>Résoudre des problèmes de fonctions personnalisées
 
 Dans le cadre du développement de fonctions personnalisées, vous pouvez rencontrer des erreurs dans le produit lors de la création et des tests de vos fonctions.
 
-Pour résoudre des problèmes, vous pouvez [activer la journalisation du runtime pour capturer les erreurs](#enable-runtime-logging) et vous référer aux [messages d’erreur natifs d’Excel](#check-for-excel-error-messages). Recherchez également des erreurs courantes telles qu’une [vérification des certificats SSL](#verify-ssl-certificates) incorrecte, l’[abandon de promesses non résolues](#ensure-promises-return) et l’oubli d’[associer votre fonctions](#associate-your-functions).
+Pour résoudre des problèmes, vous pouvez [activer la journalisation du runtime pour capturer les erreurs](#enable-runtime-logging) et vous référer aux [messages d’erreur natifs d’Excel](#check-for-excel-error-messages). Recherchez également des erreurs courantes telles qu’une [vérification des certificats SSL](#my-add-in-wont-load-verify-certificates) incorrecte, l’[abandon de promesses non résolues](#ensure-promises-return) et l’oubli d’[associer votre fonctions](#my-functions-wont-load-associate-functions).
 
 ## <a name="enable-runtime-logging"></a>Activer la journalisation du runtime
 
@@ -26,7 +26,7 @@ Excel dispose d’un certain nombre de messages d’erreur intégrés qui sont r
 
 ## <a name="common-issues"></a>Problèmes courants
 
-### <a name="my-add-in-wont-load-verify-certifications"></a>Mon complément ne se charge pas : vérifiez les certifications
+### <a name="my-add-in-wont-load-verify-certificates"></a>Mon complément ne se charge pas : vérifiez les certificats
 
 Si l’installation de votre complément échoue, vérifiez que les certificats SSL sont correctement configurés pour le serveur web hébergeant votre complément. Généralement, en cas de problème avec des certificats SSL, un message d’erreur dans Excel vous avertit que votre complément n’a pas pu être installé correctement. Pour plus d’informations, voir la rubrique relative à l’[ajout de certificats auto-signés en tant que certificats racine approuvés](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
 

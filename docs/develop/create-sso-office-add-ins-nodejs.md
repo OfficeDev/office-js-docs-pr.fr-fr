@@ -1,14 +1,14 @@
 ---
 title: Création d’un complément Office Node.js qui utilise l’authentification unique
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/15/2019
 localization_priority: Priority
-ms.openlocfilehash: e304813422dea5917202ed8933c9e53df18ba9de
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.openlocfilehash: 2050f20139389ed1459cea7aba5e5e92858d00bc
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691215"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914325"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office Node.js qui utilise l’authentification unique (aperçu)
 
@@ -77,7 +77,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
 
 1. Pour la propriété `audience`, remplacez l’espace réservé `{audience GUID}` par l’ID d’application que vous avez enregistré lorsque vous avez inscrit le complément. (La même valeur que celle affectée à la propriété `client_id`.)
   
-1. Dans la chaîne affectée à la propriété `issuer`, vous verrez l’espace réservé *{O365 tenant GUID}*. Remplacez-le par l’ID de client Office 365. Pour obtenir de celui-ci, utilisez l’une des méthodes décrites dans [Trouver votre ID de client Office 365](/onedrive/find-your-office-365-tenant-id). Lorsque vous avez terminé, la valeur de la propriété `issuer` doit ressembler à ceci :
+1. Dans la chaîne affectée à la propriété `issuer`, vous verrez l’espace réservé *{O365 tenant GUID}*. Remplacez-le par l’ID de client Office 365. Si vous n’avez pas copié l’ID de client lorsque vous avez inscrit le complément auprès d’AAD, utilisez une des méthodes dans [Trouver votre ID de client Office 365](/onedrive/find-your-office-365-tenant-id) pour l’obtenir. Lorsque vous avez terminé, la valeur de la propriété `issuer` doit ressembler à ceci :
 
     `https://login.microsoftonline.com/12345678-1234-1234-1234-123456789012/v2.0`
 
