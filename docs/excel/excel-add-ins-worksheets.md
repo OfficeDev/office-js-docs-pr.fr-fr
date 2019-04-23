@@ -1,14 +1,14 @@
 ---
 title: Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 description: ''
-ms.date: 04/04/2019
+ms.date: 04/18/2019
 localization_priority: Priority
-ms.openlocfilehash: 0c66022112e6a6742753feb9945300a5d214e9bb
-ms.sourcegitcommit: 63219bcc1bb5e3bed7eb6c6b0adb73a4829c7e8f
+ms.openlocfilehash: 5df0bbdd1b6cf1cf3ef7a6aa14b7e00dee7ad9b2
+ms.sourcegitcommit: 44c61926d35809152cbd48f7b97feb694c7fa3de
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "31479724"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "31959117"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 
@@ -286,7 +286,7 @@ Votre complément peut avoir besoin de réagir aux utilisateurs modifiant les do
 L’objet `WorksheetChangedEventArgs` fournit des informations sur les modifications et la source. Puisque `onChanged` se déclenche lorsque le format ou la valeur des données sont modifiés, il peut être utile que votre complément vérifie si les valeurs ont réellement été modifiées. La propriété de `details` regroupe ces informations en tant qu’un [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail). L’exemple de code suivant illustre la procédure d’affichage des valeurs et des types d’une cellule qui a été modifiée, avant et après modification.
 
 > [!NOTE]
-> `WorksheetChangedEventArgs.details` est actuellement uniquement disponible en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> `WorksheetChangedEventArgs.details`est actuellement uniquement disponible en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 ```js
 // This function would be used as an event handler for the Worksheet.onChanged event.
@@ -306,7 +306,7 @@ function onWorksheetChanged(eventArgs) {
 ## <a name="find-all-cells-with-matching-text-preview"></a>Trouver toutes les cellules avec du texte correspondant (préversion)
 
 > [!NOTE]
-> La fonction`findAll` de l’objet Worksheet est actuellement disponible uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> La fonction`findAll` de l’objet Worksheet est actuellement disponible uniquement en préversion publique.[!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 L’objet `Worksheet` dispose d’une méthode`find` pour rechercher une chaîne spécifiée dans la feuille de calcul. Il renvoie un objet`RangeAreas`, qui est une collection d’objets `Range` qui peuvent être modifiés tous en même temps. L’exemple de code suivant recherche toutes les cellules contenant des valeurs égales à la chaîne **Complète** et les colore en vert. Notez que `findAll` génère une erreur `ItemNotFound` si la chaîne spécifiée n’existe pas dans la feuille de calcul. Si vous pensez que la chaîne spécifiée peut ne pas exister dans la feuille de calcul, utilisez la méthode[findAllOrNullObject](excel-add-ins-advanced-concepts.md#ornullobject-methods) à la place, pour que votre code gère ce scénario plus facilement.
 
@@ -331,6 +331,52 @@ Excel.run(function (context) {
 > - Pour obtenir des exemples qui montrent comment obtenir une plage dans un objet `Table`, reportez-vous à la rubrique [Utiliser des tableaux à l’aide de l’API JavaScript pour Excel](excel-add-ins-tables.md).
 > - Pour consulter des exemples qui montrent comment rechercher une grande plage pour plusieurs sous-plages basées sur les caractéristiques de cellule, voir [Travailler avec plusieurs plages simultanément dans des compléments Excel](excel-add-ins-multiple-ranges.md).
 
+## <a name="filter-data"></a>Filtrer les données
+
+> [!NOTE]
+> `AutoFilter`est actuellement uniquement disponible en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+Un [filtre automatique](/javascript/api/excel/excel.autofilter) applique des filtres de données sur une plage de cellules dans la feuille de calcul. Cela a été créé avec `Worksheet.autoFilter.apply`, qui comporte les paramètres suivants:
+
+- `range`: La plage à laquelle le filtre est appliqué, spécifiée sous la forme d’un`Range` objet ou d’une chaîne.
+- `columnIndex`: L’index de colonne de base zéro par rapport à laquelle les critères de filtre sont évaluées.
+- `criteria`: Un objet[FilterCriteria](/javascript/api/excel/excel.filtercriteria)afin de déterminer les lignes doivent être filtrées en fonction de la cellule de la colonne.
+
+Le premier exemple de code montre comment ajouter un filtre à la plage utilisée de la feuille de calcul. Ce filtre masque les entrées qui ne sont pas dans les premiers 25%, basé sur les valeurs de colonne **3**.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var farmData = sheet.getUsedRange();
+
+    // This filter will only show the rows with the top 25% of values in column 3.
+    sheet.autoFilter.apply(farmData, 3, { criterion1: "25", filterOn: Excel.FilterOn.topPercent });
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+L’exemple de code suivant montre comment actualiser le filtre automatique à l’aide de la méthode`reapply`. Cette opération doit être effectuée lorsque les données dans la plage changent.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    sheet.autoFilter.reapply();
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+L’exemple de code de filtre automatique final montre comment supprimer le filtre automatique de la feuille de calcul avec la méthode`remove`.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    sheet.autoFilter.remove();
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+Un `AutoFilter` peut également être appliqué aux tableaux individuels. Pour plus d’informations, consultez [Utiliser des tableaux avec l’API JavaScript Excel](excel-add-ins-tables.md#autofilter).
+
 ## <a name="data-protection"></a>Protection des données
 
 Votre complément permet de contrôler la possibilité qu’a un utilisateur de modifier des données dans une feuille de calcul. La propriété `protection` de la feuille de calcul est un objet [WorksheetProtection](/javascript/api/excel/excel.worksheetprotection) avec une méthode `protect()`. L’exemple suivant illustre un scénario de base permettant d’activer/de désactiver la protection complète de la feuille de calcul active.
@@ -350,8 +396,8 @@ Excel.run(function (context) {
 
 La méthode `protect` présente deux paramètres facultatifs :
 
-- `options`: un objet [WorksheetProtectionOptions](/javascript/api/excel/excel.worksheetprotectionoptions) définissant des restrictions de modifications spécifiques.
-- `password`: une chaîne représentant le mot de passe nécessaire pour qu’un utilisateur puisse ignorer la protection et modifier la feuille de calcul.
+- `options` : objet [WorksheetProtectionOptions](/javascript/api/excel/excel.worksheetprotectionoptions) définissant des restrictions de modification spécifiques.
+- `password` : chaîne représentant le mot de passe nécessaire pour qu’un utilisateur puisse ignorer la protection et modifier la feuille de calcul.
 
 L’article [Protéger une feuille de calcul](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6) comporte davantage d’informations sur la protection des feuilles de calcul et leur modification via l’interface utilisateur Excel.
 

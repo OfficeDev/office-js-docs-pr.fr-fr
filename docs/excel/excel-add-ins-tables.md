@@ -1,14 +1,14 @@
 ---
 title: Utilisation de tableaux à l’aide de l’API JavaScript pour Excel
 description: ''
-ms.date: 04/04/2019
+ms.date: 04/18/2019
 localization_priority: Priority
-ms.openlocfilehash: 1b409e27c12d4741f59a027dd4962fdee65b96bf
-ms.sourcegitcommit: 63219bcc1bb5e3bed7eb6c6b0adb73a4829c7e8f
+ms.openlocfilehash: ba48fce1bee28bf4cad8b5d0ab91d9c1fb12fea8
+ms.sourcegitcommit: 44c61926d35809152cbd48f7b97feb694c7fa3de
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "31479717"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "31959131"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Utilisation de tableaux à l’aide de l’API JavaScript pour Excel
 
@@ -244,7 +244,7 @@ Votre complément peut avoir besoin de réagir aux utilisateurs modifiant les do
 L’objet `TableChangedEventArgs` fournit des informations sur les modifications et la source. Puisque `onChanged` se déclenche lorsque le format ou la valeur des données sont modifiés, il peut être utile que votre complément vérifie si les valeurs ont réellement été modifiées. La propriété de `details` regroupe ces informations en tant qu’un [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail). L’exemple de code suivant illustre la procédure d’affichage des valeurs et des types d’une cellule qui a été modifiée, avant et après modification.
 
 > [!NOTE]
-> `TableChangedEventArgs.details` est actuellement uniquement disponible en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> `TableChangedEventArgs.details`est actuellement uniquement disponible en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 ```js
 // This function would be used as an event handler for the Table.onChanged event.
@@ -284,7 +284,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Données de tableau triées par Montant (décroissant)**
+**Données de tableau triées par montant (décroissant)**
 
 ![Données de tableau dans Excel](../images/excel-tables-sort.png)
 
@@ -316,7 +316,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Données de tableau avec des filtres appliqués pour les colonnes Catégorie et Montant**
+**Données de tableau avec des filtres appliqués pour les colonnes Category et Amount**
 
 ![Données de tableau filtrées dans Excel](../images/excel-tables-filters-apply.png)
 
@@ -357,6 +357,35 @@ Excel.run(function (context) {
         });
 }).catch(errorHandlerFunction);
 ```
+
+## <a name="autofilter"></a>Filtre automatique
+
+> [!NOTE]
+> `Table.autoFilter`est actuellement uniquement disponible en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+Un complément peut utiliser l’objet[filtre automatique](/javascript/api/excel/excel.autofilter) du tableau pour filtrer des données. Un `AutoFilter` objet figure la structure de filtre entière d’une tableau ou d’une plage. Toutes les opérations de filtrage décrites précédemment dans cet article sont compatibles avec le filtre automatique. Le point d’accès unique rend plus facile l’accès et la gestion de plusieurs filtres.
+
+L’exemple de code suivant montre le même [filtrage que celui de l’exemple de code antérieur des données](#apply-filters-to-a-table), mais effectué efficacement et entièrement via le filtre automatique.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    var expensesTable = sheet.tables.getItem("ExpensesTable");
+
+    expensesTable.autoFilter.apply(expensesTable.getRange(), 2, {
+        filterOn: Excel.FilterOn.values,
+        values: ["Restaurant", "Groceries"]
+    });
+    expensesTable.autoFilter.apply(expensesTable.getRange(), 3, {
+        filterOn: Excel.FilterOn.dynamic,
+        dynamicCriteria: Excel.DynamicFilterCriteria.belowAverage
+    });
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+Un `AutoFilter` peut également être appliqué à une plage au niveau de la feuille de calcul. Pour plus d’informations, consultez [Travailler avec des feuilles de calcul avec l’API JavaScript Excel](excel-add-ins-worksheets.md#filter-data).
 
 ## <a name="format-a-table"></a>Mettre en forme un tableau
 
