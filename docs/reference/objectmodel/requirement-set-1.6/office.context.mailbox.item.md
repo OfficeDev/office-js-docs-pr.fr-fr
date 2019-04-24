@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/12/2019
 localization_priority: Normal
 ms.openlocfilehash: cc7897f791c5a07ed5c17a686b6601a1a7633f00
-ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "31838542"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451772"
 ---
 # <a name="item"></a>élément
 

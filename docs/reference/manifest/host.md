@@ -2,12 +2,13 @@
 title: Élément Host dans le fichier manifeste
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 37b772261ad82b4f899e73314a08ffd1dd03b442
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: f496e3e0c16f24d20e1d1db76208e61267235131
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432808"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450505"
 ---
 # <a name="host-element"></a>Élément Host
 
@@ -24,9 +25,9 @@ Lorsqu’il est défini dans le manifeste base (sous [OfficeApp](officeapp.md)),
 
 | Attribut     | Type   | Requis | Description                                      |
 |:--------------|:-------|:---------|:-------------------------------------------------|
-| [Name](#name) | chaîne | obligatoire | Nom du type d’application hôte Office. |
+| [Nom](#name) | string | obligatoire | Nom du type d’application hôte Office. |
 
-### <a name="name"></a>Nom
+### <a name="name"></a>Name
 Spécifie le type d’hôte ciblé par ce complément. La valeur doit être l’une des suivantes :
 
 - `Document` (Word)

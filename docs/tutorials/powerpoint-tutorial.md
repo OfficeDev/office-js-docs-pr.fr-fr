@@ -6,11 +6,11 @@ ms.prod: powerpoint
 ms.topic: tutorial
 localization_priority: Normal
 ms.openlocfilehash: 9f5e30929c0881c0216b7ca77fbfa4b989fabc6e
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742414"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451667"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de PowerPoint
 
@@ -241,7 +241,7 @@ Procédez comme suit pour ajouter le code qui récupère la photo[Bing](https://
 
 Procédez comme suit pour ajouter des marques de révision qui personnalisent l’interface utilisateur du volet de tâche.
 
-1. Dans le fichier **Home.html**, remplacez `TODO2` par le balisage suivant pour ajouter une section d’en-tête et un titre au volet de tâches. Remarque :
+1. Dans le fichier **Home.html**, remplacez `TODO2` par le balisage suivant pour ajouter une section d’en-tête et un titre au volet Office. Remarque :
 
     - Les styles qui commencent par `ms-` sont définis par la [structure Fabric de l’interface utilisateur Office](../design/office-ui-fabric.md), une infrastructure frontale JavaScript pour créer des expériences utilisateur pour Office et Office 365. Le fichier **Home.html** inclut une référence à la feuille de style Fabric.
 
@@ -259,7 +259,7 @@ Procédez comme suit pour ajouter des marques de révision qui personnalisent l�
 
 ### <a name="test-the-add-in"></a>Test du complément
 
-1. À l’aide de Visual Studio, testez le nouveau complément PowerPoint en appuyant sur**F5**ou en choisissant le bouton **Démarrer** pour lancer PowerPoint avec le bouton du complément**Afficher le volet Office** qui apparaît dans le ruban. Le complément est hébergé localement sur IIS.
+1. À l’aide de Visual Studio, testez le nouveau complément PowerPoint en appuyant sur**F5**ou en choisissant le bouton **Démarrer** pour lancer PowerPoint avec le bouton du complément**Afficher le volet Office** qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
 
     ![Capture d’écran de Visual Studio avec le bouton Démarrer mis en évidence](../images/powerpoint-tutorial-start.png)
 

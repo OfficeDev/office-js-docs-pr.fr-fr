@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: dc98d4c2da6e8f9ca294a6c686cf081478e1bb24
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870785"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450309"
 ---
 # <a name="office"></a>Office
 
@@ -41,8 +41,8 @@ Spécifie le résultat d’un appel asynchrone.
 
 |Nom| Type| Description|
 |---|---|---|
-|`Succeeded`| Chaîne|L’appel a réussi.|
-|`Failed`| Chaîne|L’appel n’a pas réussi.|
+|`Succeeded`| String|L’appel a réussi.|
+|`Failed`| String|L’appel n’a pas réussi.|
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -63,7 +63,7 @@ Indique comment forcer le type des données retournées ou définies par la mét
 
 |Nom| Type| Description|
 |---|---|---|
-|`Html`| Chaîne|Demande que les données soient renvoyées au format HTML.|
+|`Html`| String|Demande que les données soient renvoyées au format HTML.|
 |`Text`| Chaîne|Demande que les données soient renvoyées au format texte.|
 
 ##### <a name="requirements"></a>Configuration requise
@@ -85,8 +85,8 @@ Spécifie la source des données renvoyées par la méthode appelée.
 
 |Nom| Type| Description|
 |---|---|---|
-|`Body`| Chaîne|La source de données est dans le corps d’un message.|
-|`Subject`| Chaîne|La source de données est dans l’objet d’un message.|
+|`Body`| String|La source de données est dans le corps d’un message.|
+|`Subject`| String|La source de données est dans l’objet d’un message.|
 
 ##### <a name="requirements"></a>Configuration requise
 

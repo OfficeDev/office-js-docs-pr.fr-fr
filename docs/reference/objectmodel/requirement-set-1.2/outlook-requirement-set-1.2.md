@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: dfd61738fe9e941d7d0f3a70173ab1f087f9f552
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30869931"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451891"
 ---
 # <a name="outlook-add-in-api-requirement-set-12"></a>Ensemble de conditions requises de l’API du complément Outlook 1.2
 

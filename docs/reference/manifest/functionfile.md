@@ -2,12 +2,13 @@
 title: Élément FunctionFile dans le fichier manifest
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 634d383498698b55990dc73e66ec11616396f968
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 5f87d10428b58adfb89f1119ba5741599079afba
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432696"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450582"
 ---
 # <a name="functionfile-element"></a>Élément FunctionFile
 
@@ -75,4 +76,4 @@ function writeText(event) {
 ```
 
 > [!IMPORTANT]
-> L’appel de l’élément**event.completed**indique que vous avez correctement géré l’événement. Lorsqu’une fonction est appelée à plusieurs reprises, par exemple, lorsque l’utilisateur clique plusieurs fois sur une même commande de complément, tous les événements sont automatiquement mis en file d’attente. Le premier événement s’exécute automatiquement, tandis que les autres événements restent dans la file d’attente. Lorsque votre fonction appelle**event.completed**, l’appel suivant de cette fonction s’exécute. Vous devez appeler**event.completed** pour que votre fonction s’exécute correctement.
+> L’appel de l’élément**event.completed**indique que vous avez correctement géré l’événement. Lorsqu’une fonction est appelée à plusieurs reprises, par exemple, lorsque l’utilisateur clique plusieurs fois sur une même commande de complément, tous les événements sont automatiquement mis en file d’attente. Le premier événement s’exécute automatiquement, tandis que les autres événements restent dans la file d’attente. Lorsque votre fonction appelle **event.completed**, l’appel suivant de cette fonction s’exécute. Vous devez appeler **event.completed** pour que votre fonction s’exécute correctement.

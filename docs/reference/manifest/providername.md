@@ -2,12 +2,13 @@
 title: Élément ProviderName dans le fichier manifeste
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 95fd71357c3c21ba2fc3de24be7acc6232e9f2ce
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: c198c25aa4d882d6e73307d9ca1fea6d7e18343d
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432878"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450428"
 ---
 # <a name="providername-element"></a>ProviderName, élément
 

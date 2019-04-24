@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: 5e18a82c2536d5f5284588227b1cf767ebd2749e
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871942"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450729"
 ---
 # <a name="javascript-api-for-office-error-codes"></a>Codes d’erreur de l’API JavaScript pour Office
 
@@ -104,10 +104,10 @@ Le tableau suivant résume le comportement de liaison dans Excel.
 |Matrice|Texte sélectionné dans la cellule|Une liaison de type _matrice_ est créée dans la cellule entière. Aucune modification dans le document n’est attendue.|
 |Matrice|Sélection multiple/sélection incorrecte (par exemple, l’utilisateur sélectionne une image, un objet ou un objet Word Art.)|Impossible de créer la liaison.|
 |Tableau|Plage de cellules (y compris une cellule unique)|Impossible de créer la liaison.|
-|Tableau|Plage de cellules dans un tableau (comprend une seule cellule dans un tableau, le tableau entier, ou du texte dans la cellule d’un tableau)|Une liaison est créée dans le tableau entier.|
-|Tableau|Demi-sélection dans un tableau et demie sélection en dehors du tableau|Impossible de créer la liaison.|
-|Tableau|Texte sélectionné dans la cellule (pas dans le tableau)|Impossible de créer la liaison.|
-|Tableau|Sélection multiple/sélection incorrecte (par exemple, l’utilisateur sélectionne une image, un objet, un objet Word Art, etc.)|Impossible de créer la liaison.|
+|Table|Plage de cellules dans un tableau (comprend une seule cellule dans un tableau, le tableau entier, ou du texte dans la cellule d’un tableau)|Une liaison est créée dans le tableau entier.|
+|Table|Demi-sélection dans un tableau et demie sélection en dehors du tableau|Impossible de créer la liaison.|
+|Table|Texte sélectionné dans la cellule (pas dans le tableau)|Impossible de créer la liaison.|
+|Table|Sélection multiple/sélection incorrecte (par exemple, l’utilisateur sélectionne une image, un objet, un objet Word Art, etc.)|Impossible de créer la liaison.|
 |Texte|Plage de cellules|Impossible de créer la liaison.|
 |Texte|Plage de cellules dans un tableau|Impossible de créer la liaison.|
 |Texte|Cellule unique|Une liaison de type  _texte_ est créée.|
@@ -124,8 +124,8 @@ Le tableau suivant résume le comportement de liaison dans Word.
 |Matrice|Tableau entier|Une liaison de type  _matrice_ est créée.Le document est modifié et un contrôle de contenu doit encapsuler le tableau. |
 |Matrice|Plage dans un tableau|Impossible de créer la liaison.|
 |Matrice|Sélection non valide (par exemple, objets multiples, incorrects, etc.)|Impossible de créer la liaison.|
-|Tableau|Texte|Impossible de créer la liaison.|
-|Tableau|Tableau entier|Une liaison de type  _texte_ est créée.|
+|Table|Texte|Impossible de créer la liaison.|
+|Table|Tableau entier|Une liaison de type  _texte_ est créée.|
 |Tableau|Plage dans un tableau|Impossible de créer la liaison.|
 |Tableau|Sélection non valide (par exemple, objets multiples, incorrects, etc.)|Impossible de créer la liaison.|
 |Texte|Tableau entier|Une liaison de type  _texte_ est créée.|

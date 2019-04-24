@@ -5,11 +5,11 @@ ms.date: 04/09/2019
 ms.prod: non-product-specific
 localization_priority: Normal
 ms.openlocfilehash: 9229483bcf2916d35bd1fc8961c2c2a73cf9caed
-ms.sourcegitcommit: fbe2a799fda71aab73ff1c5546c936edbac14e47
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/10/2019
-ms.locfileid: "31764389"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451583"
 ---
 # <a name="identity-api-requirement-sets"></a>Ensembles de conditions requises de l’API d’identité
 

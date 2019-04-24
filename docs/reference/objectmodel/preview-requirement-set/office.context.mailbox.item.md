@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/17/2019
 localization_priority: Normal
 ms.openlocfilehash: cb9c298302bf0df9d7842fde4706d9d0c9710ae4
-ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "31914346"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450393"
 ---
 # <a name="item"></a>élément
 
@@ -51,9 +51,9 @@ L’espace de noms `item` est utilisé pour accéder au message, à la demande d
 | [organizer](#organizer-emailaddressdetailsorganizer) | Membre |
 | [recurrence](#nullable-recurrence-recurrence) | Membre |
 | [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | Membre |
-| [sender](#sender-emailaddressdetails) | Membre |
-| [seriesId](#nullable-seriesid-string) | Membre |
-| [start](#start-datetime) | Membre |
+| [sender](#sender-emailaddressdetails) | Member |
+| [seriesId](#nullable-seriesid-string) | Member |
+| [start](#start-datetime) | Member |
 | [subject](#subject-stringsubject) | Membre |
 | [to](#to-arrayemailaddressdetailsrecipients) | Membre |
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | Méthode |

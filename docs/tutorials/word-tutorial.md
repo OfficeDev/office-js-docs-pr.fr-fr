@@ -6,11 +6,11 @@ ms.prod: word
 ms.topic: tutorial
 localization_priority: Normal
 ms.openlocfilehash: 019329db156e63148a047466b9b3770128cb7fbf
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742400"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451178"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches Word
 
@@ -77,7 +77,7 @@ Dans cette étape du tutoriel, vous devez tester par programme que votre complé
     $('#insert-paragraph').click(insertParagraph);
     ```
 
-7. Remplacez `TODO3` par le code suivant. Remarque:
+7. Remplacez `TODO3` par le code suivant. Remarque :
 
    - Votre logique métier Word.js est ajoutée à la fonction qui est transmise à `Word.run`. Cette logique n’est pas exécutée immédiatement. Au lieu de cela, elle est ajoutée à une file d’attente de commandes.
 
@@ -116,7 +116,7 @@ Dans cette étape du tutoriel, vous devez tester par programme que votre complé
 
 ### <a name="test-the-add-in"></a>Test du complément
 
-1. Ouvrez une fenêtre Git Bash, ou une invite système Node.JS, et accédez au dossier **Start** du projet.
+1. Ouvrez une fenêtre Git Bash ou une invite système activée par Node.JS, et accédez au dossier **Démarrer** du projet.
 
 2. Exécutez la commande `npm run build` afin de transpiler votre code source ES6 vers une version antérieure de JavaScript prise en charge par tous les hôtes sur lesquels les compléments Office peuvent être exécutés.
 
@@ -166,7 +166,7 @@ Dans cette étape du didacticiel, vous devez appliquer un style intégré au tex
     $('#apply-style').click(applyStyle);
     ```
 
-6. Ajoutez la fonction suivante juste après la fonction `insertParagraph` :
+6. Ajoutez la fonction suivante juste après la fonction `insertParagraph`:
 
     ```js
     function applyStyle() {
@@ -559,7 +559,7 @@ function insertTextIntoRange() {
 
 3. Ouvrez le fichier app.js.
 
-4. Sous la ligne qui attribue un gestionnaire de clics au bouton `insert-text-outside-range`, ajoutez le code suivant :
+4. En dessous de la ligne qui attribue un gestionnaire de clic au bouton `insert-text-outside-range`, ajoutez le code suivant :
 
     ```js
     $('#replace-text').click(replaceText);
@@ -692,7 +692,7 @@ Dans cette étape du didacticiel, vous allez découvrir comment insérer des ima
 
 3. Ouvrez le fichier app.js.
 
-4. Sous la ligne qui attribue un gestionnaire de clics au bouton `insert-image`, ajoutez le code suivant :
+4. En dessous de la ligne qui attribue un gestionnaire de clic au bouton `insert-image`, ajoutez le code suivant :
 
     ```js
     $('#insert-html').click(insertHTML);
@@ -721,7 +721,7 @@ Dans cette étape du didacticiel, vous allez découvrir comment insérer des ima
 
    - La première ligne ajoute un paragraphe vide à la fin du document. 
 
-   - La deuxième ligne insère une chaîne de code HTML à la fin du paragraphe. Plus précisément, deux paragraphes : un paragraphe avec la police Verdana, et l’autre avec le style par défaut du document Word. (Comme dans la méthode `insertImage` précédente, l’objet `context.document.body` dispose également des méthodes `insert*`.)
+   - La deuxième ligne insère une chaîne de code HTML à la fin du paragraphe. Plus précisément, deux paragraphes : un paragraphe avec la police Verdana, et l’autre avec le style par défaut du document Word. (Comme pour la méthode `insertImage` précédente, l’objet `context.document.body` contient également les méthodes `insert*`.)
 
     ```js
     var blankParagraph = context.document.body.paragraphs.getLast().insertParagraph("", "After");
@@ -742,7 +742,7 @@ Dans cette étape du didacticiel, vous allez découvrir comment insérer des ima
 
 3. Ouvrez le fichier app.js.
 
-4. Sous la ligne qui attribue un gestionnaire de clics au bouton `insert-html`, ajoutez le code suivant :
+4. En dessous de la ligne qui attribue un gestionnaire de clic au bouton `insert-html`, ajoutez le code suivant :
 
     ```js
     $('#insert-table').click(insertTable);
@@ -806,7 +806,7 @@ Dans cette étape du didacticiel, vous allez découvrir comment insérer des ima
 
 3. Exécutez la commande `npm start` pour démarrer un serveur web en cours d’exécution sur localhost.
 
-4. Rechargez le volet des tâches en le fermant, puis dans le menu **Accueil**, sélectionnez **Afficher le volet des tâches** pour rouvrir le complément.
+4. Recharger le volet Office en le fermant, puis, dans le menu **Accueil**, sélectionnez **Afficher le volet des pages** pour rouvrir le complément.
 
 5. Dans le volet Office, sélectionnez **Insérer un paragraphe** au moins trois fois pour vous assurer qu’il existe quelques paragraphes dans le document.
 
@@ -843,7 +843,7 @@ Dans cette étape du didacticiel, vous découvrirez comment créer des contrôle
 
 4. Ouvrez le fichier app.js.
 
-5. Sous la ligne qui attribue un gestionnaire de clics au bouton `insert-table`, ajoutez le code suivant :
+5. En dessous de la ligne qui attribue un gestionnaire de clic au bouton `insert-table`, ajoutez le code suivant :
 
     ```js
     $('#create-content-control').click(createContentControl);
@@ -903,7 +903,7 @@ Dans cette étape du didacticiel, vous découvrirez comment créer des contrôle
 
 3. Ouvrez le fichier app.js.
 
-4. Sous la ligne qui attribue un gestionnaire de clics au bouton `create-content-control`, ajoutez le code suivant :
+4. En dessous de la ligne qui attribue un gestionnaire de clic au bouton `create-content-control`, ajoutez le code suivant :
 
     ```js
     $('#replace-content-in-control').click(replaceContentInControl);
@@ -949,7 +949,7 @@ Dans cette étape du didacticiel, vous découvrirez comment créer des contrôle
 
 3. Exécutez la commande `npm start` pour démarrer un serveur web en cours d’exécution sur localhost.
 
-4. Rechargez le volet des tâches en le fermant, puis dans le menu **Accueil**, sélectionnez **Afficher le volet des tâches** pour rouvrir le complément.
+4. Recharger le volet Office en le fermant, puis, dans le menu **Accueil**, sélectionnez **Afficher le volet des pages** pour rouvrir le complément.
 
 5. Dans le volet des tâches, sélectionnez **Insérer un paragraphe** pour vous assurer qu’il existe un paragraphe contenant « Office 365 » en haut du document.
 

@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: 629d0e5cde637ef209736dd9359ea59d0f6e0e47
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870603"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450351"
 ---
 # <a name="mailbox"></a>boîte aux lettres
 
@@ -134,7 +134,7 @@ Si l’identificateur de l’élément spécifié n’identifie aucun rendez-vou
 
 |Nom| Type| Description|
 |---|---|---|
-|`itemId`| Chaîne|Identificateur des services web Exchange pour un rendez-vous du calendrier existant.|
+|`itemId`| String|Identificateur des services web Exchange pour un rendez-vous du calendrier existant.|
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -169,7 +169,7 @@ N’utilisez pas la méthode `displayMessageForm` ayant une valeur `itemId` qui 
 
 |Nom| Type| Description|
 |---|---|---|
-|`itemId`| Chaîne|Identificateur des services web Exchange pour un message existant.|
+|`itemId`| String|Identificateur des services web Exchange pour un message existant.|
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -205,7 +205,7 @@ Si l’un des paramètres dépasse les limites définies en matière de taille o
 |Nom| Type| Description|
 |---|---|---|
 | `parameters` | Objet | Dictionnaire de paramètres décrivant le nouveau rendez-vous. |
-| `parameters.requiredAttendees` | Tableau.&lt;Chaîne&gt; &#124; Tableau.&lt;[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)&gt; | Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un objet `EmailAddressDetails` pour chacun des participants requis du rendez-vous. Le tableau est limité à 100 entrées maximum. |
+| `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)&gt; | Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un objet `EmailAddressDetails` pour chacun des participants requis du rendez-vous. Le tableau est limité à 100 entrées maximum. |
 | `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)&gt; | Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un objet `EmailAddressDetails` pour chacun des participants facultatifs du rendez-vous. Le tableau est limité à 100 entrées maximum. |
 | `parameters.start` | Date | Objet `Date` spécifiant la date et l’heure de début du rendez-vous. |
 | `parameters.end` | Date | Objet `Date` spécifiant la date et l’heure de fin du rendez-vous. |
@@ -352,8 +352,8 @@ Lorsque votre application de messagerie s’exécute dans Outlook sur le web,
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
-|`data`| Chaîne||Demande EWS.|
-|`callback`| fonction||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Le résultat XML de l’appel EWS est fourni sous forme de chaîne dans la propriété `asyncResult.value`. Si la taille du résultat est supérieure à 1 Mo, un message d’erreur est renvoyé.|
+|`data`| String||Demande EWS.|
+|`callback`| function||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Le résultat XML de l’appel EWS est fourni sous forme de chaîne dans la propriété `asyncResult.value`. Si la taille du résultat est supérieure à 1 Mo, un message d’erreur est renvoyé.|
 |`userContext`| Objet| &lt;optional&gt;|Données d’état transmises à la méthode asynchrone.|
 
 ##### <a name="requirements"></a>Configuration requise

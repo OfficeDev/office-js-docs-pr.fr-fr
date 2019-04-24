@@ -2,12 +2,13 @@
 title: Élément SourceLocation dans le fichier manifeste
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 878a8184984e31fdbcf46192a2f56507edaf4b37
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: b2b78065fc8bde6fc827ddcb21e2bc700ed5bf49
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432405"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450687"
 ---
 # <a name="sourcelocation-element"></a>SourceLocation, élément
 

@@ -4,11 +4,11 @@ description: ''
 ms.date: 01/29/2019
 localization_priority: Normal
 ms.openlocfilehash: 897c2203ef6ae84911b7f269ee8a2c88aec36bd0
-ms.sourcegitcommit: 2e4b97f0252ff3dd908a3aa7a9720f0cb50b855d
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "29635908"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32452066"
 ---
 # <a name="versionoverrides-element"></a>Élément VersionOverrides
 
@@ -19,10 +19,10 @@ ms.locfileid: "29635908"
 |  Attribut  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 |  **xmlns**       |  Oui  |  Emplacement du schéma, qui doit être `http://schemas.microsoft.com/office/mailappversionoverrides` lorsque `xsi:type` est `VersionOverridesV1_0`, et `http://schemas.microsoft.com/office/mailappversionoverrides/1.1` lorsque `xsi:type` est `VersionOverridesV1_1`.|
-|  **xsi:type**  |  Oui  | La version du schéma. À ce stade, les seules valeurs valides sont `VersionOverridesV1_0` et `VersionOverridesV1_1`. |
+|  **xsi:type**  |  Oui  | Version du schéma. À ce stade, les seules valeurs valides sont `VersionOverridesV1_0` et `VersionOverridesV1_1`. |
 
 > [!NOTE]
-> Actuellement, seul Outlook 2016 ou version ultérieure prend en charge le schéma version 1.1 VersionOverrides et `VersionOverridesV1_1` type.
+> Actuellement, seul Outlook 2016 ou version ultérieure prend en charge le schéma VersionOverrides `VersionOverridesV1_1` v 1.1 et le type.
 
 ## <a name="child-elements"></a>Éléments enfants
 
@@ -37,7 +37,7 @@ ms.locfileid: "29635908"
 
 ### <a name="versionoverrides-example"></a>Exemple VersionOverrides
 
-Voici un exemple d’un type `<VersionOverrides>` élément, y compris des éléments enfants qui ne sont pas requis mais qui sont généralement utilisés.
+Voici un exemple d'un élément typique `<VersionOverrides>` , y compris des éléments enfants qui ne sont pas obligatoires, mais qui sont généralement utilisés.
 
 ```xml
 <OfficeApp>

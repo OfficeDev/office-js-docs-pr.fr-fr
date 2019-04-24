@@ -2,12 +2,13 @@
 title: Élément Control dans le fichier manifeste
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: e5d8574e322c21e768fb9f66fe9bbb0c12a34ed4
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: d77b464fde9898ef216ef9e47c651fb5750e4453
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433935"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450638"
 ---
 # <a name="control-element"></a>Élément Control
 
@@ -80,7 +81,7 @@ Un bouton effectue une action unique quand il est sélectionné. Il peut exécut
 
 Un menu définit une liste statique d’options. Chaque option de menu exécute une fonction ou affiche un volet Office. Les sous-menus ne sont pas pris en charge. 
 
-Lorsqu’il est utilisé avec un [point d’extension](extensionpoint.md) **PrimaryCommandSurface** ou **ContextMenu**, le contrôle de menu définit les éléments suivants :
+Lorsqu’il est utilisé avec un **point d’extension** **PrimaryCommandSurface** ou [ContextMenu](extensionpoint.md), le contrôle de menu définit les éléments suivants :
 
 - une option de menu de niveau racine.
 
@@ -147,8 +148,8 @@ L’exemple suivant montre comment définir un élément de menu avec deux élé
 |  **Label**     | Oui |  Texte du bouton. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md).      |
 |  **ToolTip**  |Non|Info-bulle pour le bouton. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String**. **String** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément [Resources](resources.md).|        
 |  [Supertip](supertip.md)  | Oui |  Info-bulle pour ce bouton.    |
-|  [Icon](icon.md)      | Oui |  Image du bouton.         |
-|  **Items**     | Oui |  Ensemble de boutons à afficher dans le menu Contient les éléments **Item** pour chaque élément de sous-menu. Chaque élément **Item** contient les éléments enfants du [contrôle de bouton](#button-control).|
+|  [Icône](icon.md)      | Oui |  Image du bouton.         |
+|  **Éléments**     | Oui |  Ensemble de boutons à afficher dans le menu Contient les éléments **Item** pour chaque élément de sous-menu. Chaque élément **Item** contient les éléments enfants du [contrôle de bouton](#button-control).|
 
 ### <a name="menu-control-examples"></a>Exemples de contrôle de menu
 

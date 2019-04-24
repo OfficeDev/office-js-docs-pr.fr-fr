@@ -2,19 +2,20 @@
 title: Élément Event dans le fichier manifeste
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: eda895b01e106d67eef70f199be64086e9372bef
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 51bbcd5a3d5abe60b850e88e4063e6bbc2da37bc
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432738"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450589"
 ---
 # <a name="event-element"></a>Élément Event
 
 Définit un gestionnaire d’événements dans un complément.
 
 > [!NOTE] 
-> L’élément `Event` est actuellement uniquement pris en charge par Outlook sur le web dans Office 365.
+> L' `Event` élément est actuellement uniquement pris en charge par Outlook sur le Web dans Office 365.
 
 ## <a name="attributes"></a>Attributs
 

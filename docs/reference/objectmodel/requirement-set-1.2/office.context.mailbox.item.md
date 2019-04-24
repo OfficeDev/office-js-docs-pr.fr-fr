@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: 8e411ac1ce58dd59ad3bfc6590a310289bbe686d
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870512"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450267"
 ---
 # <a name="item"></a>élément
 
@@ -800,7 +800,7 @@ L’identificateur peut être utilisé avec la méthode [`removeAttachmentAsync`
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
-|`uri`| Chaîne||URI indiquant l’emplacement du fichier à joindre au message ou au rendez-vous. La longueur maximale est de 2 048 caractères.|
+|`uri`| String||URI indiquant l’emplacement du fichier à joindre au message ou au rendez-vous. La longueur maximale est de 2 048 caractères.|
 |`attachmentName`| String||Nom de la pièce jointe affiché lors de son chargement. La taille maximale est de 255 caractères.|
 |`options`| Objet| &lt;facultatif&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
 |`options.asyncContext`| Objet| &lt;facultatif&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
@@ -856,7 +856,7 @@ Si votre complément Office est exécuté dans Outlook Web App, la méthode `
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
-|`itemId`| Chaîne||Identificateur Exchange de l’élément à joindre. La taille maximale est de 100 caractères.|
+|`itemId`| String||Identificateur Exchange de l’élément à joindre. La taille maximale est de 100 caractères.|
 |`attachmentName`| String||Objet de l’élément à joindre. La longueur maximale est de 255 caractères.|
 |`options`| Object| &lt;facultatif&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
 |`options.asyncContext`| Objet| &lt;facultatif&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
@@ -1192,7 +1192,7 @@ Alors que le niveau d’autorisation minimal **Restricted** suffit pour utiliser
 
 | Valeur de `entityType` | Type des objets du tableau renvoyé | Niveau d’autorisation requis |
 | --- | --- | --- |
-| `Address` | Chaîne | **Restricted** |
+| `Address` | String | **Restricted** |
 | `Contact` | Contact | **ReadItem** |
 | `EmailAddress` | String | **ReadItem** |
 | `MeetingSuggestion` | MeetingSuggestion | **ReadItem** |
@@ -1233,7 +1233,7 @@ La méthode `getFilteredEntitiesByName` renvoie les entités qui correspondent �
 
 |Nom| Type| Description|
 |---|---|---|
-|`name`| Chaîne|Nom de l’élément de règle `ItemHasKnownEntity` qui définit le filtre à respecter.|
+|`name`| String|Nom de l’élément de règle `ItemHasKnownEntity` qui définit le filtre à respecter.|
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -1327,7 +1327,7 @@ Si vous spécifiez une règle `ItemHasRegularExpressionMatch` pour la propriét�
 
 |Nom| Type| Description|
 |---|---|---|
-|`name`| Chaîne|Nom de l’élément de règle `ItemHasRegularExpressionMatch` qui définit le filtre à respecter.|
+|`name`| String|Nom de l’élément de règle `ItemHasRegularExpressionMatch` qui définit le filtre à respecter.|
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -1469,7 +1469,7 @@ La méthode `removeAttachmentAsync` supprime la pièce jointe avec l’identific
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
-|`attachmentId`| Chaîne||Identificateur de la pièce jointe à supprimer.|
+|`attachmentId`| String||Identificateur de la pièce jointe à supprimer.|
 |`options`| Objet| &lt;facultatif&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
 |`options.asyncContext`| Objet| &lt;facultatif&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
 |`callback`| fonction| &lt;optional&gt;|Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult). <br/>En cas d’échec de la suppression de la pièce jointe, la propriété `asyncResult.error` contient un code d’erreur et la raison de l’échec.|

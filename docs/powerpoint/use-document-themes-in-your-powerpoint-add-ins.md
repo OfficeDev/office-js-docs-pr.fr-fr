@@ -1,13 +1,14 @@
 ---
-title: Utiliser des thèmes de document dans vos compléments PowerPoint
+title: Utiliser des thèmes de document dans vos compléments PowerPoint
 description: ''
 ms.date: 12/17/2018
-ms.openlocfilehash: 5caa274ae8774e8a30c416085ab4a431d6907944
-ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: f98fe4b7d99bef2ab4c684a09490ed73f0ed3bb1
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "27383252"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451473"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>Utiliser des thèmes de document dans vos compléments PowerPoint
 
@@ -43,7 +44,7 @@ Pour afficher ou personnaliser les polices de thème dans PowerPoint, dans le gr
 
 ### <a name="office-ui-theme-fonts-and-colors"></a>Couleurs et polices de thème de l’interface utilisateur Office
 
-Office vous permet également de choisir entre plusieurs thèmes prédéfinis qui spécifient certaines des couleurs et des polices utilisées dans l’interface utilisateur de toutes les applications Office. Pour cela, utilisez le menu déroulant  **Fichier**  >   **Compte**  >   **Thème Office** (dans toutes les applications Office).
+Office vous permet également de choisir entre plusieurs thèmes prédéfinis qui spécifient certaines des couleurs et des polices utilisées dans l’interface utilisateur de toutes les applications Office. Pour cela, utilisez le menu déroulant  **Fichier** > **Compte** > **Thème Office** (dans toutes les applications Office).
 
 ![Liste déroulante de thèmes Office](../images/office15-app-office-theme-picker.png)
 

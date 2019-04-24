@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: 2ab06b7ec21bccf13039badcc94b9de0ce7b8600
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870274"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450386"
 ---
 # <a name="webapplicationinfo-element"></a>Élément WebApplicationInfo
 
@@ -24,7 +24,7 @@ Prend en charge l’authentification unique (SSO) dans des compléments Office. 
 
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Requis  |  Description  |
+|  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 |  **Id**    |  Oui   |  **ID d’application** du service associé au complément, tel qu’inscrit dans le point de terminaison Azure Active Directory (Azure AD) v2.0.|
 |  **Resource**  |  Oui   |  Spécifie l’**URI de l’ID d’application** du complément, tel qu’inscrit dans le point de terminaison Azure AD v2.0.|

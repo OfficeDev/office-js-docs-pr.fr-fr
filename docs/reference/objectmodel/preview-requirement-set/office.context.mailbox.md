@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/17/2019
 localization_priority: Normal
 ms.openlocfilehash: 557dedf3943be12fbb9e384873d0b9079b251c2f
-ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "31914332"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450519"
 ---
 # <a name="mailbox"></a>boîte aux lettres
 
@@ -93,7 +93,7 @@ Obtient un objet qui fournit des méthodes pour gérer la liste de formes de bas
 
 ##### <a name="type"></a>Type
 
-*   [MasterCategories](/javascript/api/outlook/office.mastercategories)
+*   [Catégoriesmaître](/javascript/api/outlook/office.mastercategories)
 
 ##### <a name="requirements"></a>Configuration requise
 

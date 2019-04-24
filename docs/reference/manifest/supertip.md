@@ -2,12 +2,13 @@
 title: Élément Supertip dans le fichier manifest
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: bae997eda8e1055c5be76382456ba83acca7b91c
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: cdbba342fa591ddff3faf94ecd63a4740fb904da
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433669"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450540"
 ---
 # <a name="supertip"></a>Supertip
 
@@ -17,7 +18,7 @@ Définit une info-bulle enrichie (titre et description). Il est utilisé par les
 
 |  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
-|  [Title](#title)        | Oui |   Texte de l’info-bulle.         |
+|  [Titre](#title)        | Oui |   Texte de l’info-bulle.         |
 |  [Description](#description)  | Oui |  Description de l’info-bulle.    |
 
 ### <a name="title"></a>Titre

@@ -4,11 +4,11 @@ description: Utilisez l'API JavaScript pour Excel pour créer des tableaux crois
 ms.date: 03/21/2019
 localization_priority: Normal
 ms.openlocfilehash: b53d734e676417a6438f1008bac720a38a244d1f
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870323"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449356"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Utilisation des tableaux croisés dynamiques avec l'API JavaScript pour Excel
 

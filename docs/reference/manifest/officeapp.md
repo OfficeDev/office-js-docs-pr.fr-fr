@@ -2,12 +2,13 @@
 title: Élément OfficeApp dans le fichier manifeste
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 42b6fe2e1c33322b90016d5e7ceec7b1bfe5b72d
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 86f38ab77e98bb01370e40c8ada38bae171e0c2d
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433165"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450456"
 ---
 # <a name="officeapp-element"></a>OfficeApp, élément
 
@@ -32,7 +33,7 @@ ms.locfileid: "27433165"
 
 ## <a name="must-contain"></a>Doit contenir
 
-|**Élément**|**Contenu**|**Messagerie**|**TaskPane**|
+|**Élément**|**Content**|**Messagerie**|**TaskPane**|
 |:-----|:-----|:-----|:-----|
 |[Id](id.md)|x|x|x|
 |[Version](version.md)|x|x|x|
@@ -43,19 +44,19 @@ ms.locfileid: "27433165"
 |[Description](description.md)|x|x|x|
 |[FormSettings](formsettings.md)||x||
 |[Permissions](permissions.md)|x||x|
-|[Rule](rule.md)||x||
+|[Règle](rule.md)||x||
 
 ## <a name="can-contain"></a>Peut contenir
 
-|**Élément**|**Contenu**|**Messagerie**|**TaskPane**|
+|**Element**|**Content**|**Messagerie**|**TaskPane**|
 |:-----|:-----|:-----|:-----|
 |[AlternateId](alternateid.md)|x|x|x|
 |[IconUrl](iconurl.md)|x|x|x|
 |[HighResolutionIconUrl](highresolutioniconurl.md)|x|x|x|
 |[SupportUrl](supporturl.md)|x|x|x|
 |[AppDomains](appdomains.md)|x|x|x|
-|[Hosts](hosts.md)|x|x|x|
-|[Requirements](requirements.md)|x|x|x|
+|[Hôtes](hosts.md)|x|x|x|
+|[Configuration requise](requirements.md)|x|x|x|
 |[AllowSnapshot](allowsnapshot.md)|x|||
 |[Permissions](permissions.md)||x||
 |[DisableEntityHighlighting](disableentityhighlighting.md)||x||

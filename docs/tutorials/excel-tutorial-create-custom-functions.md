@@ -6,11 +6,11 @@ ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
 ms.openlocfilehash: 76f4d88b9da39a4d71927982836ee061b329a9b3
-ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "31477571"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451407"
 ---
 # <a name="tutorial-create-custom-functions-in-excel-preview"></a>Didacticiel : créer des fonctions personnalisées dans Excel (aperçu)
 
@@ -54,8 +54,8 @@ Dans ce didacticiel, vous allez :
     yo office
     ```
     
-    * Sélectionnez un type de projet : `Excel Custom Functions Add-in project (...)`
-    * Sélectionnez un type de script : `JavaScript`
+    * Choisissez un type de projet : `Excel Custom Functions Add-in project (...)`
+    * Choisissez un type de script : `JavaScript`
     * Comment souhaitez-vous nommer votre complément ? `stock-ticker`
     
     ![Le générateur de yeoman pour les compléments Office vous invite pour les fonctions personnalisées](../images/12-10-fork-cf-pic.jpg)
@@ -78,7 +78,7 @@ Dans ce didacticiel, vous allez :
 
 5. Démarrez le serveur web local qui est exécuté dans Node.js. Vous pouvez tester le complément de fonction personnalisée dans Excel pour Windows ou Excel Online.
 
-# [<a name="excel-for-windows"></a>Excel pour Windows](#tab/excel-windows)
+# <a name="excel-for-windowstabexcel-windows"></a>[Excel pour Windows](#tab/excel-windows)
 
 Exécutez la commande suivante.
 
@@ -91,7 +91,7 @@ Cette commande démarre le serveur web et le complément sideloads de votre fonc
 > [!NOTE]
 > Si vous complément ne charge pas, vérifiez que vous avez correctement terminé l’étape 3. Vous pouvez également activer la journalisation de l' **[exécution](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** pour résoudre les problèmes liés au fichier manifeste XML de votre complément, ainsi que tous les problèmes d'installation ou d'exécution. La journalisation `console.log` de l'exécution écrit les instructions dans un fichier journal pour vous aider à trouver et à résoudre les problèmes.
 
-# [<a name="excel-online"></a>Excel Online](#tab/excel-online)
+# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
 Exécutez la commande suivante.
 
@@ -191,7 +191,7 @@ Intégration de données à partir du Web est un excellent moyen pour étendre E
 
 5. Enregistrez de nouveau le complément dans Excel afin que la nouvelle fonction soit disponible. 
 
-# [<a name="excel-for-windows"></a>Excel pour Windows](#tab/excel-windows)
+# <a name="excel-for-windowstabexcel-windows"></a>[Excel pour Windows](#tab/excel-windows)
 
 1. Fermez Excel, puis ouvrez de nouveau Excel.
 
@@ -200,7 +200,7 @@ Intégration de données à partir du Web est un excellent moyen pour étendre E
 3. Dans la liste des compléments disponibles, recherchez la section **Compléments Développeur** et sélectionnez votre complément**bourse** pour effectuer cette opération.
     ![Insérer du ruban dans Excel pour Windows avec le complément Fonctions personnalisées Excel mis en évidence dans la liste Mes compléments](../images/excel-cf-register-add-in-2.png)
 
-# [<a name="excel-online"></a>Excel Online](#tab/excel-online)
+# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
 1. Dans Excel Online, sélectionnez l’onglet **insérer**, puis **compléments**. ![Insérer du ruban dans Excel Online avec l’icône Mes compléments mis en évidence](../images/excel-cf-online-register-add-in-1.png)
 
@@ -292,7 +292,7 @@ La fonction`stockPrice`que vous venez de créer renvoie le prix d’une action �
 
 3. Enregistrez de nouveau le complément dans Excel afin que la nouvelle fonction soit disponible.
 
-# [<a name="excel-for-windows"></a>Excel pour Windows](#tab/excel-windows)
+# <a name="excel-for-windowstabexcel-windows"></a>[Excel pour Windows](#tab/excel-windows)
 
 1. Fermez Excel, puis ouvrez de nouveau Excel.
 
@@ -301,7 +301,7 @@ La fonction`stockPrice`que vous venez de créer renvoie le prix d’une action �
 3. Dans la liste des compléments disponibles, recherchez la section **Compléments Développeur** et sélectionnez votre complément**bourse** pour effectuer cette opération.
     ![Insérer du ruban dans Excel pour Windows avec le complément Fonctions personnalisées Excel mis en évidence dans la liste Mes compléments](../images/excel-cf-register-add-in-2.png)
 
-# [<a name="excel-online"></a>Excel Online](#tab/excel-online)
+# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
 1. Dans Excel Online, sélectionnez l’onglet **insérer**, puis **compléments**. ![Insérer du ruban dans Excel Online avec l’icône Mes compléments mis en évidence](../images/excel-cf-online-register-add-in-1.png)
 

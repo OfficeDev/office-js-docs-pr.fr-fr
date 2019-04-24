@@ -2,12 +2,13 @@
 title: Élément Ressources dans le fichier manifest
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 0707df137d075a9922836e5d960216d089c56675
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: e29e7e36585be8fd728eb46128d7ead538ea8069
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433900"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32452052"
 ---
 # <a name="resources-element"></a>Élément Ressources
 
@@ -21,7 +22,7 @@ Chaque ressource peut avoir plusieurs éléments enfants **Override** afin que v
 |:-----|:-----|:-----|
 |  [Images](#images)            |  image   |  Fournit l’URL HTTPS de l’image d’une icône. |
 |  **URL**                |  url     |  Fournit l’URL HTTPS. Une URL peut comporter jusqu’à 2 048 caractères. |
-|  **ShortStrings** |  chaîne  |  Texte pour les éléments **Label** et **Title**. Chaque élément **String** comporte 125 caractères au maximum.|
+|  **ShortStrings** |  string  |  Texte pour les éléments **Label** et **Title**. Chaque élément **String** comporte 125 caractères au maximum.|
 |  **LongStrings**  |  chaîne  | Texte pour les attributs **Description**. Chaque **chaîne** comporte 250 caractères au maximum.|
 
 > [!NOTE]

@@ -2,12 +2,13 @@
 title: Élément Icon dans le fichier manifeste
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 476e5720e4959c3c766a7ae6206f2bf12731bfd2
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 45f3dcda8e74430cf70aa765efc6b3aae0e2b448
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432269"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450617"
 ---
 # <a name="icon-element"></a>Icon, élément
 

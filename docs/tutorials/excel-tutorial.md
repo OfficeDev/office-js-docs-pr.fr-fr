@@ -6,11 +6,11 @@ ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
 ms.openlocfilehash: 410b2391d207f7c83f9accb349448dbc0c92a0e2
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742449"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451293"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 
@@ -34,7 +34,7 @@ Pour utiliser ce didacticiel, les logiciels suivants doivent être installés.
 
 - [Git Bash](https://git-scm.com/downloads) (ou un autre client Git)
 
-- Vous devez disposer d’une connexion Internet pour tester le complément dans ce didacticiel.
+- Vous devez disposer d'une connexion Internet pour tester le complément dans ce didacticiel.
 
 ## <a name="create-your-add-in-project"></a>Créer votre projet de complément
 
@@ -80,7 +80,7 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
     $('#create-table').click(createTable);
     ```
 
-7. Remplacez `TODO3` par le code suivant. Remarque :
+7. Remplacez `TODO3` par le code suivant. Remarque:
 
    - Votre logique métier Excel.js est ajoutée à la fonction qui est transmise à `Excel.run`. Cette logique n’est pas exécutée immédiatement. Au lieu de cela, elle est ajoutée à une file d’attente de commandes.
 
@@ -109,7 +109,7 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
     }
     ```
 
-8. Remplacez `TODO4` par le code suivant. Tenez compte des informations suivantes :
+8. Remplacez `TODO4` par le code suivant. Remarque :
 
    - Le code crée un tableau à l’aide de la méthode `add` de collection de tableau d’une feuille de calcul, qui existe toujours même si elle est vide. Il s’agit de la méthode standard de création d’objets Excel.js. Il n’existe aucune API pour le constructeur de classe API. De plus, vous n’utilisez jamais d’opérateur `new` pour créer un objet Excel. Au lieu de cela, vous l’ajoutez à un objet de la collection parent.
 
@@ -149,7 +149,7 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
    - Le code recherche une référence à la colonne **Amount** en transmettant son index de base zéro à la méthode `getItemAt` de collection de colonnes du tableau.
 
      > [!NOTE]
-     > Les objets de collection Excel.js, tels que `TableCollection`, `WorksheetCollection` et `TableColumnCollection` ont une propriété `items` qui correspond à un tableau de types d’objet enfant, comme `Table` ou `Worksheet` ou `TableColumn` ; mais un objet `*Collection` n’est pas lui-même un tableau.
+     > Les objets de collection Excel.js, tels que `TableCollection`, `WorksheetCollection` et `TableColumnCollection` ont une propriété `items` qui correspond à un tableau de types d’objet enfant, comme `Table` ou `Worksheet` ou `TableColumn`; mais un objet `*Collection` n’est pas lui-même un tableau.
 
    - Le code définit ensuite la plage de la colonne **Amount** sous la forme Euros à la deuxième décimale. 
 
@@ -171,11 +171,11 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
 
 4. Chargez une version test du complément en utilisant l’une des méthodes suivantes :
 
-    - Windows : [Chargement de versions test de compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 
     - Excel Online : [Chargement de versions test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
 
-    - iPad et Mac : [Chargement de versions test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 5. Dans le menu **Accueil**, sélectionnez **Afficher le volet Office**.
 
@@ -229,7 +229,7 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
     }
     ```
 
-7. Remplacez `TODO1` par le code suivant. Tenez compte des informations suivantes :
+7. Remplacez `TODO1` par le code suivant. Remarque :
 
    - Le code obtient tout d’abord une référence à la colonne à filtrer en transférant le nom de la colonne à la méthode `getItem`, au lieu de transmettre son index à la méthode `getItemAt` comme le fait la méthode `createTable`. Puisque les utilisateurs peuvent déplacer des colonnes de tableau, la colonne d’un index donné peut être modifiée après la création du tableau. Par conséquent, il est préférable d’utiliser le nom de la colonne pour obtenir une référence de la colonne. Dans le didacticiel précédent, nous avons utilisé la méthode `getItemAt` en toute sécurité, car nous l’avons utilisée dans la même méthode que celle qui crée le tableau, il n’y a donc aucune chance qu’un utilisateur ait déplacé la colonne.
 
@@ -347,7 +347,7 @@ Dans cette étape du didacticiel, vous créerez un graphique à l’aide de donn
     $('#create-chart').click(createChart);
     ```
 
-6. Sous la fonction `sortTable`, ajoutez la fonction suivante.
+6. Ajoutez la fonction suivante après la fonction `sortTable`.
 
     ```js
     function createChart() {
@@ -608,7 +608,7 @@ Dans cette étape du didacticiel, vous allez ajouter un autre bouton au ruban qu
 
 1. Ouvrez le fichier \function-file\function-file.js.
 
-2. Le fichier possède déjà une expression de fonction appelée immédiatement (IIFE). *En dehors de la IIFE*, ajoutez le code suivant. Notez que nous spécifions un paramètre `args` pour la méthode et que la toute dernière ligne de la méthode appelle `args.completed`. Il s’agit d’une condition requise pour toutes les commandes de type **ExecuteFunction**. Elle signale à l’application hôte Office que la fonction est terminée et que l’interface utilisateur est à nouveau réactive.
+2. Le fichier possède déjà une expression de fonction appelée immédiatement (IIFE). À l' *extérieur du IIFE*, ajoutez le code suivant. Notez que nous spécifions un paramètre `args` pour la méthode et que la toute dernière ligne de la méthode appelle `args.completed`. Il s’agit d’une condition requise pour toutes les commandes de type **ExecuteFunction**. Elle signale à l’application hôte Office que la fonction est terminée et que l’interface utilisateur est à nouveau réactive.
 
     ```js
     function toggleProtection(args) {
@@ -738,7 +738,7 @@ Ouvrez le fichier /function-file/function-file.html. Il s’agit d’un fichier�
 
 4. À l’aide de la nouvelle version du fichier manifeste modifié, répétez le processus de chargement de version test en utilisant l’une des méthodes suivantes. *Vous devez remplacer la copie précédente du fichier manifeste.*
 
-    - Windows : [Chargement de version test des compléments Office](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 
     - Excel Online : [Chargement de versions test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
 
