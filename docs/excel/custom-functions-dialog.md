@@ -4,11 +4,11 @@ description: Créer des boîtes de dialogue via des fonctions personnalisées da
 title: Les boîtes de dialogue fonctions personnalisées (aperçu)
 localization_priority: Priority
 ms.openlocfilehash: 0f596825a7a32525a68ef45656f1390196146706
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30926656"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449259"
 ---
 # <a name="display-a-dialog-box-in-custom-functions"></a>Affichent une boîte de dialogue dans les fonctions personnalisées
 

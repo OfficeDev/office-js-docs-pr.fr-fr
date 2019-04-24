@@ -5,11 +5,11 @@ ms.date: 04/10/2019
 ms.prod: non-product-specific
 localization_priority: Priority
 ms.openlocfilehash: 16f77e81d149aa2323760013f64fbf36f4ce7d8f
-ms.sourcegitcommit: 44c61926d35809152cbd48f7b97feb694c7fa3de
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "31959124"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450106"
 ---
 # <a name="office-common-api-requirement-sets"></a>Ensembles de conditions requises des API communes pour Office
 

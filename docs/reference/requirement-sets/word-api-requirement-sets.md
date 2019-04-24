@@ -5,11 +5,11 @@ ms.date: 03/19/2019
 ms.prod: word
 localization_priority: Priority
 ms.openlocfilehash: 21bd99dda479c0c2181f546303e79e50f33ded00
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870799"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451520"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Word
 

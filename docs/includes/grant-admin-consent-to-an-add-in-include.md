@@ -6,7 +6,7 @@ Exécutez cette procédure *après* avoir [enregistré le complément](../develo
 
 1. Accédez à la page [Azure portal-inscriptions aux applications](https://go.microsoft.com/fwlink/?linkid=2083908) pour afficher l'inscription de votre application.
 
-1. Connectez-vous avec les informations d'identification d' ***administrateur*** à votre location Office 365. Par exemple, MyName@contoso.onmicrosoft.com.
+1. Connectez-vous à votre client Office 365 en utilisant les informations d’identification d’***administrateur***. Par exemple, MonNom@contoso.onmicrosoft.com.
 
 1. Sélectionnez l'application dont le nom d'affichage est **$Add-in-Name $**.
 

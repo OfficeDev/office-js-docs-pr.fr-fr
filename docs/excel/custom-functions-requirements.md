@@ -4,11 +4,11 @@ description: Découvrez comment utiliser les fonctions personnalisées sur les d
 title: Configuration requise de fonctions personnalisées (aperçu)
 localization_priority: Priority
 ms.openlocfilehash: 0226c5e129794e8105966e753e791ec20766e10c
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29745407"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449245"
 ---
 # <a name="custom-functions-requirements"></a>Configuration requise de fonctions personnalisées 
 

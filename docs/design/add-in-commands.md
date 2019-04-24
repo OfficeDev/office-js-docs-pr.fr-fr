@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/05/2019
 localization_priority: Priority
 ms.openlocfilehash: 0a2a28e09061248851e8ee1037d0219c7fcda1a5
-ms.sourcegitcommit: fbe2a799fda71aab73ff1c5546c936edbac14e47
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/10/2019
-ms.locfileid: "31764396"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448729"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Commandes de complément pour Excel, Word et PowerPoint
 
@@ -23,7 +23,7 @@ Pour en savoir plus sur les fonctionnalités, regardez la vidéo sur les [comman
 
 ![Capture d’écran d’une commande de complément dans Excel](../images/add-in-commands-1.png)
 
-*Figure 2. Complément incluant des commandes en cours d’exécution dans Excel (version Online)*
+*Figure 2. Complément incluant des commandes en cours d’exécution dans Excel Online*
 
 ![Capture d’écran d’une commande de complément dans Excel Online](../images/add-in-commands-2.png)
 
@@ -82,7 +82,7 @@ Appliquez les meilleures pratiques suivantes lorsque vous développez des comman
 - Pour toutes les icônes, suivez les [règles de conception d’icône](add-in-icons.md).
 - Proposez une version de complément qui fonctionne aussi sur les hôtes qui ne prennent pas en charge les commandes. Un seul manifeste de complément peut fonctionner sur les hôtes tenant compte ou non des commandes (par exemple, un volet Office dans le second cas).
 
-   *Figure 3. Complément du volet Office dans Office 2013 et le même complément utilisant des commandes de complément dans Office 2016*
+   *Figure 3. Complément du volet Office dans Office 2013 et le même complément utilisant des commandes de complément dans Office 2016*
 
    ![Capture d’écran illustrant un complément du volet Office dans Office 2013 et le même complément utilisant des commandes de complément dans Office 2016](../images/office-task-pane-add-ins.png)
 

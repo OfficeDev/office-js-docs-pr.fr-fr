@@ -4,11 +4,11 @@ description: Demander, flux de données et annuler la diffusion en continu de do
 title: Requêtes Web et autres données gestion avec les fonctions personnalisées (aperçu)
 localization_priority: Priority
 ms.openlocfilehash: 9256e2aa87ec6d7b314314a1e4bc2b3793f1df5c
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30926652"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449707"
 ---
 # <a name="receiving-and-handling-data-with-custom-functions"></a>Recevoir et gérer des données à l’aide de fonctions personnalisées
 

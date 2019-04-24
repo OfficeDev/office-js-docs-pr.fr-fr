@@ -1,14 +1,14 @@
 ---
 title: Versions d’Office et ensembles de conditions requises
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 1af4840e965d7043505aedc8330cebacacc4d203
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: e1047501cdac8dc88ab9f7778b846e171ee02d44
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30872206"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449696"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Versions d’Office et ensembles de conditions requises
 
@@ -40,7 +40,7 @@ Un complément peut utiliser uniquement des API dans les ensembles de conditions
 - [Ensembles de conditions requises de l’API JavaScript pour Excel](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) (ExcelApi)
 - [Ensembles de conditions requises de l’API JavaScript pour Word](/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets) (WordApi)
 - [Ensembles de conditions requises de l’API JavaScript pour OneNote](/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets) (OneNoteApi)
-- [Présentation de l’ensemble de conditions requises pour les API Outlook](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) (MailBox)
+- [Présentation de l’ensemble de conditions requises pour les API Outlook](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) (Mailbox)
 
 Certains ensembles de conditions requises contiennent des API qui peuvent être utilisées par n’importe quel hôte Office. Pour plus d’informations sur ces ensembles de conditions requises, reportez-vous aux articles suivants :
 

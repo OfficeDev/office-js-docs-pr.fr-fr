@@ -4,11 +4,11 @@ description: Déploiement de votre projet web et empaquetage de votre complémen
 ms.date: 03/19/2019
 localization_priority: Priority
 ms.openlocfilehash: 9233ebed217c9e4cc5def0dace67043f29462296
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871261"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451086"
 ---
 # <a name="package-your-add-in-using-visual-studio-to-prepare-for-publishing"></a>Créer le package de votre complément à l’aide de Visual Studio pour préparer la publication
 
