@@ -2,12 +2,13 @@
 title: Instructions concernant la typographie pour les compléments Office
 description: ''
 ms.date: 06/27/2018
-ms.openlocfilehash: b9c5a957411a7c2df078be54df514237280cd150
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 5e43d538f87da3a318ce24e14f48acd8f7e15b88
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432955"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32446947"
 ---
 # <a name="typography"></a>Typographie
 
