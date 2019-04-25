@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/03/2019
 localization_priority: Priority
 ms.openlocfilehash: 7f05263f5220c2d60d0cebcfc686e1fed3f07900
-ms.sourcegitcommit: 63219bcc1bb5e3bed7eb6c6b0adb73a4829c7e8f
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "31479710"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449266"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Utilisation d’événements à l’aide de l’API JavaScript pour Excel
 
@@ -24,7 +24,7 @@ Each time certain types of changes occur in an Excel workbook, an event notifica
 | `onAdded` | Se produit lorsqu’un objet est ajouté. | [**ChartCollection**](/javascript/api/excel/excel.chartcollection), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 | `onCalculated` | Se produit lorsqu’une feuille de calcul a terminé un calcul (ou que toutes les feuilles de calcul de la collection ont terminé). | [**Worksheet**](/javascript/api/excel/excel.worksheet), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 | `onChanged` | Se produit lorsque les données au sein des cellules sont modifiées. | [**Table**](/javascript/api/excel/excel.table), [**TableCollection**](/javascript/api/excel/excel.tablecollection), [**Worksheet**](/javascript/api/excel/excel.worksheet) |
-| `onDataChanged` | Se produit lors de la modification des données ou de la mise en forme dans la liaison. | [**Liaison**](/javascript/api/excel/excel.binding) |
+| `onDataChanged` | Se produit lors de la modification des données ou de la mise en forme dans la liaison. | [**Binding**](/javascript/api/excel/excel.binding) |
 | `onDeactivated` | Se produit lorsqu’un objet est désactivé. | [**Chart**](/javascript/api/excel/excel.chart), [**ChartCollection**](/javascript/api/excel/excel.chartcollection), [**Worksheet**](/javascript/api/excel/excel.worksheet), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 | `onDeleted` | Se produit lorsqu’un objet est supprimé. | [**ChartCollection**](/javascript/api/excel/excel.chartcollection), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 | `onSelectionChanged` | Se produit lorsque la cellule active ou la plage sélectionnée est modifiée. | [**Liaison**](/javascript/api/excel/excel.binding), [**Tableau**](/javascript/api/excel/excel.table),  [**Feuille de calcul**](/javascript/api/excel/excel.worksheet) |
@@ -37,11 +37,11 @@ Each time certain types of changes occur in an Excel workbook, an event notifica
 
 | Événement | Description | Objets pris en charge |
 |:---------------|:-------------|:-----------|
-| `onActivated` | Se produit lorsque la forme est activée. | [**Forme**](/javascript/api/excel/excel.shape)|
+| `onActivated` | Se produit lorsque la forme est activée. | [**Shape**](/javascript/api/excel/excel.shape)|
 | `onAdded` | Se produit lorsque le nouveau tableau est ajouté dans un classeur. | [**TableCollection**](/javascript/api/excel/excel.tablecollection)|
 | `onAutoSaveSettingChanged` | Se produit lorsque le paramètre de `autoSave` est modifié dans le classeur. | [**Classeur**](/javascript/api/excel/excel.workbook) |
 | `onChanged` | Se produit lorsqu’une feuille de calcul dans le classeur est modifiée. | [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection)|
-| `onDeactivated` | Se produit lorsque la forme est désactivée. | [**Forme**](/javascript/api/excel/excel.shape)|
+| `onDeactivated` | Se produit lorsque la forme est désactivée. | [**Shape**](/javascript/api/excel/excel.shape)|
 | `onDeleted` | Se produit lorsque le tableau spécifié est supprimé dans un classeur. | [**TableCollection**](/javascript/api/excel/excel.tablecollection)|
 | `onFiltered` | Se produit lorsque le filtre est appliqué sur un objet. | [**Table**](/javascript/api/excel/excel.table), [**TableCollection**](/javascript/api/excel/excel.tablecollection), [**Worksheet**](/javascript/api/excel/excel.worksheet), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 | `onFormatChanged` | Se produit lorsque le format est modifié sur une feuille de calcul. | [**Worksheet**](/javascript/api/excel/excel.worksheet), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |

@@ -4,11 +4,11 @@ description: Découvrez comment exécuter les fonctions personnalisées dans Exc
 title: Architecture de fonctions personnalisées (aperçu)
 localization_priority: Priority
 ms.openlocfilehash: b3f3d6c5eda51639a734c6d0f162c596f0c1e41b
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30926651"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448601"
 ---
 # <a name="custom-functions-architecture"></a>Architecture de fonctions
 

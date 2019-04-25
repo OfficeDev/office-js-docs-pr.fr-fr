@@ -4,11 +4,11 @@ description: Les volets des tâches permettent aux utilisateurs d’accéder aux
 ms.date: 02/28/2019
 localization_priority: Priority
 ms.openlocfilehash: 7720f476333f9fd3ed654574f612bf7da735867f
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691117"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32446272"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Volets des tâches dans les compléments Office
  
