@@ -4,11 +4,11 @@ description: Comprendre les scénarios clés dans le développement de fonctions
 title: Runtime pour les fonctions personnalisées Excel (aperçu)
 localization_priority: Normal
 ms.openlocfilehash: 85024b6c3559e2a5f32bae9297787f8052bba38d
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871779"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448216"
 ---
 # <a name="runtime-for-excel-custom-functions-preview"></a>Runtime pour les fonctions personnalisées Excel (aperçu)
 
@@ -22,7 +22,7 @@ Dans une fonction personnalisée, vous pouvez demander des données externes à 
 
 Dans le runtime JavaScript utilisé par les fonctions personnalisées, XHR implémente des mesures de sécurité supplémentaires en imposant une [stratégie de même origine](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) et un simple [cors](https://www.w3.org/TR/cors/).
 
-Notez qu'une implémentation CORS simple ne peut pas utiliser les cookies et ne prend en charge que des méthodes simples (GET, HEAD, POST). La fonction CORS simple accepte des en-têtes `Accept`simples `Accept-Language`avec `Content-Language`des noms de champs,,. Vous pouvez également utiliser un `Content-Type` en-tête dans un simple cors, à condition que `application/x-www-form-urlencoded`le `text/plain`type de `multipart/form-data`contenu soit,, ou.
+Notez qu’une implémentation CORS simples ne peut pas utiliser les cookies et prend uniquement en charge les méthodes simples (GET, HEAD, POST). Le simple CORS accepte des en-têtes simples avec des noms de champs `Accept`, `Accept-Language`, `Content-Language`. Vous pouvez également utiliser un `Content-Type` en-tête dans un simple cors, à condition que `application/x-www-form-urlencoded`le `text/plain`type de `multipart/form-data`contenu soit,, ou.
 
 ### <a name="xhr-example"></a>Exemple avec XHR
 

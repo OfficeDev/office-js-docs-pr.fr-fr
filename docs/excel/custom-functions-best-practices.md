@@ -4,11 +4,11 @@ description: Découvrez les meilleures pratiques pour le développement des fonc
 title: Meilleures pratiques de fonctions personnalisées (aperçu)
 localization_priority: Normal
 ms.openlocfilehash: 4efcd0ba5efb0dc7450192694e8f0750de43b8a8
-ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "31477543"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448608"
 ---
 # <a name="custom-functions-best-practices-preview"></a>Meilleures pratiques de fonctions personnalisées (aperçu)
 
