@@ -1,26 +1,19 @@
-items:
 - name: Office
   tocHref: /office/
   topicHref: /office/index
   items:
-  - name: Compléments
-    tocHref: /office/dev/add-ins/
-    topicHref: /office/dev/add-ins
-    items:
-    - name: Didacticiels
+    - name: Compléments
+      tocHref: /office/dev/add-ins/
+      topicHref: /office/dev/add-ins
       items:
-      - name: Didacticiel sur les macros complémentaires Excel
-        tocHref: /office/dev/add-ins/tutorials/excel-tutorial
-        topicHref: /office/dev/add-ins/tutorials/excel-tutorial
-      - name: Didacticiel sur les compléments PowerPoint
-        tocHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
-        topicHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
-      - name: Didacticiel sur les compléments Word
-        tocHref: /office/dev/add-ins/tutorials/word-tutorial
-        topicHref: /office/dev/add-ins/tutorials/word-tutorial
-ms.openlocfilehash: 511598e67445df99eafbf04e9aaa0b6e52081492
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
-ms.translationtype: HT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437345"
+        - name: Didacticiels
+          items:
+            - name: Didacticiel sur le complément Excel
+              tocHref: /office/dev/add-ins/tutorials/excel-tutorial
+              topicHref: /office/dev/add-ins/tutorials/excel-tutorial
+            - name: Didacticiel sur les compléments PowerPoint
+              tocHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
+              topicHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
+            - name: Didacticiel sur les compléments Word
+              tocHref: /office/dev/add-ins/tutorials/word-tutorial
+              topicHref: /office/dev/add-ins/tutorials/word-tutorial

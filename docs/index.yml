@@ -1,14 +1,8 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 7967c6d41aa1d974bfb092ec4bed56cb25e60dae
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871023"
 documentType: LandingData
 title: Documentation pour compléments Office
 metadata:
-  title: Documentation sur les compl?ments Office - D?marrages rapides, r?f?rence de l?API
+  title: 'Documentation sur les compl?ments Office - D?marrages rapides, r?f?rence de l?API'
   meta.description: Learn how to build Office Add-ins.
   author: o365devx
   ms.topic: landing-page
@@ -16,80 +10,80 @@ metadata:
   ms.date: 12/04/2017
   ms.author: o365devx
 abstract:
-  description: The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platform</a> allows you to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad. Learn how to create Office Add-ins with our quick starts, how-to guides, and API reference documentation.<br/><br/><b>Note :</b> pour plus d’informations sur les compléments COM ou VSTO, consultez la documentation sur le <a href="/office/client-developer/office-client-development" target="_blank">développement du client Office</a>.
+  description: 'The <a href="/office/dev/add-ins/overview/office-add-ins">Office Add-ins platform</a> allows you to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Office for Windows, Office Online, Office for the Mac, and Office for the iPad. Learn how to create Office Add-ins with our quick starts, how-to guides, and API reference documentation.<br/><br/><b>Note :</b> pour plus d’informations sur les compléments COM ou VSTO, consultez la documentation sur le <a href="/office/client-developer/office-client-development" target="_blank">développement du client Office</a>.'
   aside:
     image:
-      alt: 
+      alt: null
       height: 130
-      src: https://docs.microsoft.com/office/dev/add-ins/images/office-add-ins-video-thumbnail.png
+      src: 'https://docs.microsoft.com/office/dev/add-ins/images/office-add-ins-video-thumbnail.png'
       width: 250
-    title: Prise en main des compléments Office. (14:10)
-    href: https://channel9.msdn.com/Events/Connect/2017/T192
+    title: 'Prise en main des compléments Office. (14:10)'
+    href: 'https://channel9.msdn.com/Events/Connect/2017/T192'
     width: 250
 sections:
-- title: D?marrages rapides de 5?minutes
-  items:
-  - type: paragraph
-    text: 'Apprenez à créer votre premier complément Office :'
-  - type: list
-    style: icon48
+  - title: D?marrages rapides de 5?minutes
     items:
-    - image:
-        src: https://docs.microsoft.com/office/dev/add-ins/images/index/ExcelLogoColor.svg
-        alt: Logo Excel
-      text: Excel
-      href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/excel-quickstart-jquery
-    - image:
-        src: https://docs.microsoft.com/office/dev/add-ins/images/index/WordLogoColor.svg
-        alt: Logo Word
-      text: Word
-      href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/word-quickstart
-    - image:
-        src: https://docs.microsoft.com/office/dev/add-ins/images/index/OneNoteLogoColor.svg
-        alt: Logo OneNote
-      text: OneNote
-      href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/onenote-quickstart
-    - image:
-        src: https://docs.microsoft.com/office/dev/add-ins/images/index/OutlookLogoColor.svg
-        alt: Logo Outlook
-      text: Outlook
-      href: https://docs.microsoft.com/outlook/add-ins/quick-start
-    - image:
-        src: https://docs.microsoft.com/office/dev/add-ins/images/index/PowerPointLogoColor.svg
-        alt: Logo PowerPoint
-      text: PowerPoint
-      href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/powerpoint-quickstart
-    - image:
-        src: https://docs.microsoft.com/office/dev/add-ins/images/index/ProjectLogoColor.svg
-        alt: Logo du projet
-      text: Projet
-      href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/project-quickstart
-- title: Guides d’utilisation
-  items:
-  - type: paragraph
-    text: Découvrez comment concevoir, développer, tester, déboguer et publier des compléments Office.
-  - type: list
-    style: unordered
-    className: spaced bullet
+      - type: paragraph
+        text: "Apprenez à créer votre premier complément Office\_:"
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: 'https://docs.microsoft.com/office/dev/add-ins/images/index/ExcelLogoColor.svg'
+              alt: Logo Excel
+            text: Excel
+            href: 'https://docs.microsoft.com/office/dev/add-ins/quickstarts/excel-quickstart-jquery'
+          - image:
+              src: 'https://docs.microsoft.com/office/dev/add-ins/images/index/WordLogoColor.svg'
+              alt: Logo Word
+            text: Word
+            href: 'https://docs.microsoft.com/office/dev/add-ins/quickstarts/word-quickstart'
+          - image:
+              src: 'https://docs.microsoft.com/office/dev/add-ins/images/index/OneNoteLogoColor.svg'
+              alt: Logo OneNote
+            text: OneNote
+            href: 'https://docs.microsoft.com/office/dev/add-ins/quickstarts/onenote-quickstart'
+          - image:
+              src: 'https://docs.microsoft.com/office/dev/add-ins/images/index/OutlookLogoColor.svg'
+              alt: Logo Outlook
+            text: Outlook
+            href: 'https://docs.microsoft.com/outlook/add-ins/quick-start'
+          - image:
+              src: 'https://docs.microsoft.com/office/dev/add-ins/images/index/PowerPointLogoColor.svg'
+              alt: Logo PowerPoint
+            text: PowerPoint
+            href: 'https://docs.microsoft.com/office/dev/add-ins/quickstarts/powerpoint-quickstart'
+          - image:
+              src: 'https://docs.microsoft.com/office/dev/add-ins/images/index/ProjectLogoColor.svg'
+              alt: Logo du projet
+            text: Projet
+            href: 'https://docs.microsoft.com/office/dev/add-ins/quickstarts/project-quickstart'
+  - title: Guides d’utilisation
     items:
-    - html: <a href="/office/dev/add-ins/design/add-in-design">Concevoir l?interface utilisateur d'un compl?ment Office</a>
-    - html: <a href="/office/dev/add-ins/excel/excel-add-ins-overview">D?veloppement de compl?ments Excel</a>
-    - html: <a href="/office/dev/add-ins/word/word-add-ins-programming-overview">Développement de compléments Word</a>
-    - html: <a href="/office/dev/add-ins/onenote/onenote-add-ins-programming-overview">D?veloppement de compl?ments OneNote</a>
-    - html: <a href="/outlook/add-ins">D?veloppement de compl?ments Outlook</a>
-    - html: <a href="/office/dev/add-ins/powerpoint/powerpoint-add-ins">D?veloppement de compl?ments PowerPoint</a>
-    - html: <a href="/office/dev/add-ins/project/project-add-ins">D?veloppement de compl?ments Project</a>
-    - html: <a href="/office/dev/add-ins/testing/test-debug-office-add-ins">Test et d?bogage d?un compl?ment Office</a>
-    - html: <a href="/office/dev/add-ins/publish/publish">Publier un complément Office</a>
-- title: Référence
-  items:
-  - type: list
-    style: cards
-    className: cardsD
+      - type: paragraph
+        text: 'Découvrez comment concevoir, développer, tester, déboguer et publier des compléments Office.'
+      - type: list
+        style: unordered
+        className: spaced bullet
+        items:
+          - html: <a href="/office/dev/add-ins/design/add-in-design">Concevoir l?interface utilisateur d'un compl?ment Office</a>
+          - html: <a href="/office/dev/add-ins/excel/excel-add-ins-overview">D?veloppement de compl?ments Excel</a>
+          - html: <a href="/office/dev/add-ins/word/word-add-ins-programming-overview">Développement de compléments Word</a>
+          - html: <a href="/office/dev/add-ins/onenote/onenote-add-ins-programming-overview">D?veloppement de compl?ments OneNote</a>
+          - html: <a href="/outlook/add-ins">D?veloppement de compl?ments Outlook</a>
+          - html: <a href="/office/dev/add-ins/powerpoint/powerpoint-add-ins">D?veloppement de compl?ments PowerPoint</a>
+          - html: <a href="/office/dev/add-ins/project/project-add-ins">D?veloppement de compl?ments Project</a>
+          - html: <a href="/office/dev/add-ins/testing/test-debug-office-add-ins">Test et d?bogage d?un compl?ment Office</a>
+          - html: <a href="/office/dev/add-ins/publish/publish">Publier un complément Office</a>
+  - title: Référence
     items:
-    - title: API communes (2013)
-      html: <p><a href="/office/dev/add-ins/reference/javascript-api-for-office" target="_blank">API JavaScript pour Office</a></p>
-    - title: API propres à des hôtes (2016)
-      html: <p><a href="/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview" target="_blank">API JavaScript pour Excel</a></p><p><a href="/office/dev/add-ins/reference/overview/word-add-ins-reference-overview" target="_blank">API JavaScript pour Word</a></p><p><a href="/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference" target="_blank">API JavaScript pour OneNote</a></p><p><a href="/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets" target="_blank">API JavaScript pour Outlook</a></p>
-    - title: Autre
-      html: <p><a href="/office/dev/add-ins/reference/openspec" target="_blank">Sp?cifications ouvertes des API</a></p><p><a href="/office/dev/add-ins/reference/manifest/allowsnapshot" target="_blank">Manifeste des compl?ments Office</a></p>
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: API communes (2013)
+            html: <p><a href="/office/dev/add-ins/reference/javascript-api-for-office" target="_blank">API JavaScript pour Office</a></p>
+          - title: API propres à des hôtes (2016)
+            html: <p><a href="/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview" target="_blank">API JavaScript pour Excel</a></p><p><a href="/office/dev/add-ins/reference/overview/word-add-ins-reference-overview" target="_blank">API JavaScript pour Word</a></p><p><a href="/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference" target="_blank">API JavaScript pour OneNote</a></p><p><a href="/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets" target="_blank">API JavaScript pour Outlook</a></p>
+          - title: Autre
+            html: <p><a href="/office/dev/add-ins/reference/openspec" target="_blank">Sp?cifications ouvertes des API</a></p><p><a href="/office/dev/add-ins/reference/manifest/allowsnapshot" target="_blank">Manifeste des compl?ments Office</a></p>
