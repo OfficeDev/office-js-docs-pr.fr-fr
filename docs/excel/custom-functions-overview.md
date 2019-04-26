@@ -4,11 +4,11 @@ description: Créer des fonctions personnalisées dans Excel à l’aide de Java
 title: Créer des fonctions personnalisées dans Excel (aperçu)
 localization_priority: Priority
 ms.openlocfilehash: 7a461728061ace532a11a8473d27ec4340eebb97
-ms.sourcegitcommit: fbe2a799fda71aab73ff1c5546c936edbac14e47
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/10/2019
-ms.locfileid: "31764410"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448471"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Créer des fonctions personnalisées dans Excel (aperçu)
 
@@ -277,9 +277,9 @@ Consulter les problèmes connus sur notre[repo GitHub Fonctions Excel Personnali
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Métadonnées des fonctions personnalisées](custom-functions-json.md)
-* [Runtime pour les fonctions personnalisées Excel](custom-functions-runtime.md)
-* [Meilleures pratiques des fonctions personnalisées](custom-functions-best-practices.md)
+* [Métadonnées fonctions personnalisées](custom-functions-json.md)
+* [Exécution de fonctions personnalisées Excel](custom-functions-runtime.md)
+* [Meilleures pratiques de fonctions personnalisées](custom-functions-best-practices.md)
 * [Fonctions personnalisées changelog](custom-functions-changelog.md)
 * [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md)
-* [Débogage des métadonnées des fonctions personnalisées](custom-functions-debugging.md)
+* [Débogage des fonctions personnalisées](custom-functions-debugging.md)
