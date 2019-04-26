@@ -3,12 +3,12 @@ title: Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Ex
 description: ''
 ms.date: 04/18/2019
 localization_priority: Priority
-ms.openlocfilehash: 5df0bbdd1b6cf1cf3ef7a6aa14b7e00dee7ad9b2
-ms.sourcegitcommit: 44c61926d35809152cbd48f7b97feb694c7fa3de
+ms.openlocfilehash: 002c5763ebcfbbecbcfc5cb416d200b357c45bf2
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "31959117"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448461"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 
@@ -400,6 +400,45 @@ La méthode `protect` présente deux paramètres facultatifs :
 - `password` : chaîne représentant le mot de passe nécessaire pour qu’un utilisateur puisse ignorer la protection et modifier la feuille de calcul.
 
 L’article [Protéger une feuille de calcul](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6) comporte davantage d’informations sur la protection des feuilles de calcul et leur modification via l’interface utilisateur Excel.
+
+## <a name="page-layout-and-print-settings"></a>Mise en page et paramètres d’impression
+
+> [!NOTE]
+> Les API dans cette section associés à la mise en page sont actuellement disponibles uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+Les compléments ont accès aux paramètres de mise en page à un niveau de feuille de calcul. Ils contrôlent comment la feuille est imprimée. Un `Worksheet` objet a trois propriétés de mise en page : `horizontalPageBreaks`, `verticalPageBreaks`, `pageLayout`.
+
+`Worksheet.horizontalPageBreaks` et `Worksheet.verticalPageBreaks` sont [PageBreakCollections](/javascript/api/excel/excel.pagebreakcollection). Il s’agit de collections de [PageBreaks](/javascript/api/excel/excel.pagebreak), lequel spécifient des plages dans lesquelles les sauts de page manuels sont insérés. Exemple de code suivant ajoute un saut de page horizontal au-dessus de la ligne **21**.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    sheet.horizontalPageBreaks.add("A21:E21"); // The page break is added above this range.
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+`Worksheet.pageLayout` est un objet [PageLayout](/javascript/api/excel/excel.pagelayout). Cet objet contient les paramètres de mise en page et impression qui ne dépendent pas d’une implémentation spécifique à l’imprimante. Ces paramètres incluent marges, orientation, numérotation, lignes de titre et zone d’impression.
+
+Exemple de code suivant centre la page (horizontalement et verticalement), définit une ligne de titre qui est imprimée en haut de chaque page et définit la zone imprimée sur une sous-section de la feuille de calcul.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+
+    // Center the page in both directions.
+    sheet.pageLayout.centerHorizontally = true;
+    sheet.pageLayout.centerVertically = true;
+
+    // Set the first row as the title row for every page.
+    sheet.pageLayout.setPrintTitleRows("$1:$1");
+
+    // Limit the area to be printed to the range "A1:D100".
+    sheet.pageLayout.setPrintArea("A1:D100");
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
 
 ## <a name="see-also"></a>Voir aussi
 
