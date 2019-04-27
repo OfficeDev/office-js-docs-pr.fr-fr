@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. userProfile-ensemble de conditions requises 1,7
 description: ''
-ms.date: 04/12/2019
+ms.date: 04/24/2019
 localization_priority: Normal
-ms.openlocfilehash: 8cfee874bbb5183d62cc3a9ce8b042a76617ec72
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 036f18e4cb98cfe510a19d85a5a79f393ca8bd17
+ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451807"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "33353292"
 ---
 # <a name="userprofile"></a>userProfile
 
@@ -33,7 +33,7 @@ ms.locfileid: "32451807"
 
 ### <a name="members"></a>Membres
 
-####  <a name="accounttype-string"></a>accountType: chaîne
+#### <a name="accounttype-string"></a>accountType: chaîne
 
 > [!NOTE]
 > Actuellement, ce membre est uniquement pris en charge par Outlook 2016 pour Mac (Build 16.9.1212 ou version ultérieure).
@@ -68,7 +68,7 @@ console.log(Office.context.mailbox.userProfile.accountType);
 ---
 ---
 
-####  <a name="displayname-string"></a>displayName :String
+#### <a name="displayname-string"></a>displayName: String
 
 Obtient le nom d’affichage de l’utilisateur.
 
@@ -94,7 +94,7 @@ console.log(Office.context.mailbox.userProfile.displayName);
 ---
 ---
 
-####  <a name="emailaddress-string"></a>emailAddress :String
+#### <a name="emailaddress-string"></a>emailAddress: chaîne
 
 Obtient l’adresse de messagerie SMTP de l’utilisateur.
 
@@ -120,7 +120,7 @@ console.log(Office.context.mailbox.userProfile.emailAddress);
 ---
 ---
 
-####  <a name="timezone-string"></a>timeZone :String
+#### <a name="timezone-string"></a>timeZone: chaîne
 
 Obtient le fuseau horaire par défaut de l’utilisateur.
 

@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Item-ensemble de conditions requises 1,7
 description: ''
-ms.date: 04/12/2019
+ms.date: 04/24/2019
 localization_priority: Normal
-ms.openlocfilehash: cbcb770a9037694fa4094f389adda6ffd4b84af8
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: dec949e635532a281f2e2c1aee1ecc1ea9d7da3a
+ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451751"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "33353607"
 ---
 # <a name="item"></a>élément
 
@@ -93,7 +93,7 @@ Office.initialize = function () {
 
 ### <a name="members"></a>Membres
 
-#### <a name="attachments-arrayattachmentdetailsjavascriptapioutlook17officeattachmentdetails"></a>attachments :Array.<[AttachmentDetails](/javascript/api/outlook_1_7/office.attachmentdetails)>
+#### <a name="attachments-arrayattachmentdetailsjavascriptapioutlook17officeattachmentdetails"></a>pièces jointes: tableau. <[AttachmentDetails](/javascript/api/outlook_1_7/office.attachmentdetails)>
 
 Obtient un tableau des pièces jointes de l’élément. Mode lecture uniquement.
 
@@ -139,7 +139,7 @@ console.log(outputString);
 ---
 ---
 
-####  <a name="bcc-recipientsjavascriptapioutlook17officerecipients"></a>bcc :[Recipients](/javascript/api/outlook_1_7/office.recipients)
+#### <a name="bcc-recipientsjavascriptapioutlook17officerecipients"></a>CCI: [destinataires](/javascript/api/outlook_1_7/office.recipients)
 
 Permet d’obtenir un objet qui fournit des méthodes permettant d’obtenir ou de mettre à jour les destinataires figurant sur la ligne Cci (copie carbone invisible) d’un message. Mode composition uniquement.
 
@@ -170,7 +170,7 @@ function callback(asyncResult) {
 ---
 ---
 
-####  <a name="body-bodyjavascriptapioutlook17officebody"></a>body :[Body](/javascript/api/outlook_1_7/office.body)
+#### <a name="body-bodyjavascriptapioutlook17officebody"></a>Body: [Body](/javascript/api/outlook_1_7/office.body)
 
 Obtient un objet qui fournit des méthodes permettant de manipuler le corps d’un élément.
 
@@ -213,7 +213,7 @@ L’exemple suivant présente le paramètre de résultat transmis à la fonction
 ---
 ---
 
-####  <a name="cc-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a>cc :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)
+#### <a name="cc-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a>CC: Array. <[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)
 
 Permet d’accéder aux destinataires en copie carbone (Cc) d’un message. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
@@ -254,7 +254,7 @@ function callback(asyncResult) {
 ---
 ---
 
-####  <a name="nullable-conversationid-string"></a>(nullable) conversationId :String
+#### <a name="nullable-conversationid-string"></a>(Nullable) conversationId: chaîne
 
 Obtient l’identificateur de la conversation qui contient un message particulier.
 
@@ -284,7 +284,7 @@ console.log("conversationId: " + conversationId);
 ---
 ---
 
-#### <a name="datetimecreated-date"></a>dateTimeCreated :Date
+#### <a name="datetimecreated-date"></a>dateTimeCreated: date
 
 Obtient la date et l’heure de création d’un élément. Mode lecture uniquement.
 
@@ -310,7 +310,7 @@ console.log("Date and time created: " + dateTimeCreated);
 ---
 ---
 
-#### <a name="datetimemodified-date"></a>dateTimeModified :Date
+#### <a name="datetimemodified-date"></a>dateTimeModified: date
 
 Permet d’obtenir la date et l’heure de la dernière modification d’un élément. Mode lecture uniquement.
 
@@ -339,7 +339,7 @@ console.log("Date and time modified: " + dateTimeModified);
 ---
 ---
 
-####  <a name="end-datetimejavascriptapioutlook17officetime"></a>end :Date|[Time](/javascript/api/outlook_1_7/office.time)
+#### <a name="end-datetimejavascriptapioutlook17officetime"></a>fin: date | [Fois](/javascript/api/outlook_1_7/office.time)
 
 Obtient ou définit la date et l’heure de fin du rendez-vous.
 
@@ -393,7 +393,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 ---
 ---
 
-#### <a name="from-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsfromjavascriptapioutlook17officefrom"></a>from:[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[from](/javascript/api/outlook_1_7/office.from)
+#### <a name="from-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsfromjavascriptapioutlook17officefrom"></a>from: [EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)|[from](/javascript/api/outlook_1_7/office.from)
 
 Obtient l’adresse de messagerie de l’expéditeur d’un message.
 
@@ -438,7 +438,7 @@ function callback(asyncResult) {
 ---
 ---
 
-#### <a name="internetmessageid-string"></a>internetMessageId :String
+#### <a name="internetmessageid-string"></a>internetMessageId: chaîne
 
 Obtient l’identificateur de message Internet d’un message électronique. Mode lecture uniquement.
 
@@ -463,7 +463,7 @@ var internetMessageId = Office.context.mailbox.item.internetMessageId;
 ---
 ---
 
-#### <a name="itemclass-string"></a>itemClass :String
+#### <a name="itemclass-string"></a>itemClass: chaîne
 
 Obtient la classe de l’élément des services web Exchange de l’élément sélectionné. Mode lecture uniquement.
 
@@ -498,7 +498,7 @@ console.log("Item class: " + itemClass);
 ---
 ---
 
-#### <a name="nullable-itemid-string"></a>(nullable) itemId :String
+#### <a name="nullable-itemid-string"></a>(Nullable) itemId: String
 
 Permet d’obtenir l’identificateur de l’élément des services web Exchange pour l’élément actif. Mode lecture uniquement.
 
@@ -535,7 +535,7 @@ if (itemId === null || itemId == undefined) {
 ---
 ---
 
-####  <a name="itemtype-officemailboxenumsitemtypejavascriptapioutlook17officemailboxenumsitemtype"></a>itemType :[Office.MailboxEnums.ItemType](/javascript/api/outlook_1_7/office.mailboxenums.itemtype)
+#### <a name="itemtype-officemailboxenumsitemtypejavascriptapioutlook17officemailboxenumsitemtype"></a>itemType: [Office. MailboxEnums. ItemType](/javascript/api/outlook_1_7/office.mailboxenums.itemtype)
 
 Obtient le type d’élément représenté par une instance.
 
@@ -566,7 +566,7 @@ if (Office.context.mailbox.item.itemType === Office.MailboxEnums.ItemType.Messag
 ---
 ---
 
-####  <a name="location-stringlocationjavascriptapioutlook17officelocation"></a>location :String|[Location](/javascript/api/outlook_1_7/office.location)
+#### <a name="location-stringlocationjavascriptapioutlook17officelocation"></a>Location: String | [Emplacement](/javascript/api/outlook_1_7/office.location)
 
 Obtient ou définit le lieu d’un rendez-vous.
 
@@ -608,7 +608,7 @@ function callback(asyncResult) {
 ---
 ---
 
-#### <a name="normalizedsubject-string"></a>normalizedSubject :String
+#### <a name="normalizedsubject-string"></a>normalizedSubject: chaîne
 
 Obtient l’objet d’un élément, sans les préfixes (y compris `RE:` et `FWD:`). Mode lecture uniquement.
 
@@ -636,7 +636,7 @@ console.log("Normalized subject: " + normalizedSubject);
 ---
 ---
 
-####  <a name="notificationmessages-notificationmessagesjavascriptapioutlook17officenotificationmessages"></a>notificationMessages :[NotificationMessages](/javascript/api/outlook_1_7/office.notificationmessages)
+#### <a name="notificationmessages-notificationmessagesjavascriptapioutlook17officenotificationmessages"></a>notificationMessages: [notificationMessages](/javascript/api/outlook_1_7/office.notificationmessages)
 
 Obtient les messages de notification pour un élément.
 
@@ -666,7 +666,7 @@ Office.context.mailbox.item.notificationMessages.getAllAsync(
 ---
 ---
 
-####  <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a>optionalAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)
+#### <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a>optionalAttendees: les destinataires[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[](/javascript/api/outlook_1_7/office.recipients) Array. <
 
 Permet d’accéder aux participants facultatifs d’un événement. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
@@ -708,7 +708,7 @@ function callback(asyncResult) {
 ---
 ---
 
-#### <a name="organizer-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsorganizerjavascriptapioutlook17officeorganizer"></a>Organisateur:[](/javascript/api/outlook_1_7/office.emailaddressdetails)|[organisateur](/javascript/api/outlook_1_7/office.organizer) EmailAddressDetails
+#### <a name="organizer-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsorganizerjavascriptapioutlook17officeorganizer"></a>Organisateur: [](/javascript/api/outlook_1_7/office.emailaddressdetails)|[organisateur](/javascript/api/outlook_1_7/office.organizer) EmailAddressDetails
 
 Obtient l'adresse de messagerie de l'organisateur d'une réunion spécifiée.
 
@@ -749,7 +749,7 @@ Office.context.mailbox.item.organizer.getAsync(
 ---
 ---
 
-#### <a name="nullable-recurrence-recurrencejavascriptapioutlook17officerecurrence"></a>(Nullable) récurrence:[périodicité](/javascript/api/outlook_1_7/office.recurrence)
+#### <a name="nullable-recurrence-recurrencejavascriptapioutlook17officerecurrence"></a>(Nullable) récurrence: [périodicité](/javascript/api/outlook_1_7/office.recurrence)
 
 Obtient ou définit la périodicité d'un rendez-vous. Obtient la périodicité d'une demande de réunion. Modes lecture et composition pour les éléments de rendez-vous. Mode lecture pour les éléments de demande de réunion.
 
@@ -810,7 +810,7 @@ Recurrence = {
 ---
 ---
 
-####  <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a>requiredAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)
+#### <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a>requiredAttendees: les destinataires[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[](/javascript/api/outlook_1_7/office.recipients) Array. <
 
 Permet d’accéder aux participants requis à un événement. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
@@ -853,7 +853,7 @@ function callback(asyncResult) {
 ---
 ---
 
-#### <a name="sender-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetails"></a>sender :[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)
+#### <a name="sender-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetails"></a>expéditeur: [EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)
 
 Obtient l’adresse de messagerie de l’expéditeur d’un message électronique. Mode lecture uniquement.
 
@@ -924,7 +924,7 @@ console.log("SeriesId is " + seriesId + " and isSeriesInstance is " + isSeriesIn
 ---
 ---
 
-####  <a name="start-datetimejavascriptapioutlook17officetime"></a>start :Date|[Time](/javascript/api/outlook_1_7/office.time)
+#### <a name="start-datetimejavascriptapioutlook17officetime"></a>début: date | [Fois](/javascript/api/outlook_1_7/office.time)
 
 Obtient ou définit la date et l’heure de début du rendez-vous.
 
@@ -978,7 +978,7 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 ---
 ---
 
-####  <a name="subject-stringsubjectjavascriptapioutlook17officesubject"></a>subject :String|[Subject](/javascript/api/outlook_1_7/office.subject)
+#### <a name="subject-stringsubjectjavascriptapioutlook17officesubject"></a>Subject: String | [Objet](/javascript/api/outlook_1_7/office.subject)
 
 Obtient ou définit la description qui apparaît dans le champ d’objet d’un élément.
 
@@ -1023,7 +1023,7 @@ function callback(asyncResult) {
 ---
 ---
 
-####  <a name="to-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a>to :Array.<[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)
+#### <a name="to-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a>to: Array. <[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)
 
 Permet d’accéder aux destinataires figurant sur la ligne **À** d’un message. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
@@ -1063,7 +1063,7 @@ function callback(asyncResult) {
 
 ### <a name="methods"></a>Méthodes
 
-####  <a name="addfileattachmentasyncuri-attachmentname-options-callback"></a>addFileAttachmentAsync(uri, attachmentName, [options], [callback])
+#### <a name="addfileattachmentasyncuri-attachmentname-options-callback"></a>addFileAttachmentAsync(uri, attachmentName, [options], [callback])
 
 Ajoute un fichier à un message ou un rendez-vous en pièce jointe.
 
@@ -1141,7 +1141,7 @@ Office.context.mailbox.item.addFileAttachmentAsync(
 ---
 ---
 
-####  <a name="addhandlerasynceventtype-handler-options-callback"></a>addHandlerAsync(eventType, handler, [options], [callback])
+#### <a name="addhandlerasynceventtype-handler-options-callback"></a>addHandlerAsync(eventType, handler, [options], [callback])
 
 ajoute un gestionnaire d’événements pour un événement pris en charge.
 
@@ -1182,7 +1182,7 @@ Office.context.mailbox.item.addHandlerAsync(Office.EventType.AttachmentsChanged,
 ---
 ---
 
-####  <a name="additemattachmentasyncitemid-attachmentname-options-callback"></a>addItemAttachmentAsync(itemId, attachmentName, [options], [callback])
+#### <a name="additemattachmentasyncitemid-attachmentname-options-callback"></a>addItemAttachmentAsync(itemId, attachmentName, [options], [callback])
 
 Ajoute un élément Exchange, comme un message, en pièce jointe au message ou au rendez-vous.
 
@@ -1243,7 +1243,7 @@ function addAttachment() {
 ---
 ---
 
-####  <a name="close"></a>close()
+#### <a name="close"></a>close()
 
 Ferme l’élément en cours qui est composé.
 
@@ -1743,7 +1743,7 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 ---
 ---
 
-####  <a name="getselecteddataasynccoerciontype-options-callback--string"></a>getSelectedDataAsync(coercionType, [options], callback) → {String}
+#### <a name="getselecteddataasynccoerciontype-options-callback--string"></a>getSelectedDataAsync(coercionType, [options], callback) → {String}
 
 Renvoie de manière asynchrone les données sélectionnées à partir de l’objet ou du corps d’un message.
 
@@ -1888,7 +1888,7 @@ var veggies = selectedMatches.veggies;
 ---
 ---
 
-####  <a name="loadcustompropertiesasynccallback-usercontext"></a>loadCustomPropertiesAsync(callback, [userContext])
+#### <a name="loadcustompropertiesasynccallback-usercontext"></a>loadCustomPropertiesAsync(callback, [userContext])
 
 Charge de manière asynchrone les propriétés personnalisées de ce complément vers l’élément sélectionné.
 
@@ -1939,7 +1939,7 @@ function saveCallback(asyncResult) {
 ---
 ---
 
-####  <a name="removeattachmentasyncattachmentid-options-callback"></a>removeAttachmentAsync(attachmentId, [options], [callback])
+#### <a name="removeattachmentasyncattachmentid-options-callback"></a>removeAttachmentAsync(attachmentId, [options], [callback])
 
 Supprime une pièce jointe d’un message ou d’un rendez-vous.
 
@@ -1986,7 +1986,7 @@ Office.context.mailbox.item.removeAttachmentAsync(
 ---
 ---
 
-####  <a name="removehandlerasynceventtype-options-callback"></a>removeHandlerAsync(eventType, [options], [callback])
+#### <a name="removehandlerasynceventtype-options-callback"></a>removeHandlerAsync(eventType, [options], [callback])
 
 Supprime les gestionnaires d’événements pour un type d’événement pris en charge.
 
@@ -2026,7 +2026,7 @@ Office.initialize = function (reason) {
 ---
 ---
 
-####  <a name="saveasyncoptions-callback"></a>saveAsync([options], callback)
+#### <a name="saveasyncoptions-callback"></a>saveAsync([options], callback)
 
 Enregistre un élément de manière asynchrone.
 
@@ -2080,7 +2080,7 @@ Voici un exemple du paramètre `result` transmis à la fonction de rappel. La pr
 ---
 ---
 
-####  <a name="setselecteddataasyncdata-options-callback"></a>setSelectedDataAsync(data, [options], callback)
+#### <a name="setselecteddataasyncdata-options-callback"></a>setSelectedDataAsync(data, [options], callback)
 
 Insère les données dans le corps ou l’objet d’un message de manière asynchrone.
 
