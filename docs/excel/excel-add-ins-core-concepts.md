@@ -1,14 +1,14 @@
 ---
 title: Concepts fondamentaux de programmation avec l’API JavaScript pour Excel
 description: Utilisez l’API JavaScript pour Excel afin de créer des compléments pour Excel.
-ms.date: 03/19/2019
+ms.date: 04/25/2019
 localization_priority: Priority
-ms.openlocfilehash: c6552ff5df3a8cf9c6c329dcfbbbe001a6a2ed6b
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 26822d9caa91f4a65a9dbb82f82db989b4409214
+ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448188"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "33353257"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Concepts fondamentaux de programmation avec l’API JavaScript pour Excel
 
@@ -26,14 +26,14 @@ L’exemple suivant montre comment utiliser **Excel.run**. L’instruction catch
 
 ```js
 Excel.run(function (context) {
-  // You can use the Excel JavaScript API here in the batch function
-  // to execute actions on the Excel object model.
-  console.log('Your code goes here.');
+    // You can use the Excel JavaScript API here in the batch function
+    // to execute actions on the Excel object model.
+    console.log('Your code goes here.');
 }).catch(function (error) {
-  console.log('error: ' + error);
-  if (error instanceof OfficeExtension.Error) {
-    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-  }
+    console.log('error: ' + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
 });
 ```
 
@@ -41,7 +41,7 @@ Excel.run(function (context) {
 
 **Excel.Run** est associé à une surcharge liée à un objet [RunOptions](/javascript/api/excel/excel.runoptions). Celui-ci contient un ensemble de propriétés qui ont une incidence sur le comportement de la plateforme lorsque la fonction est en cours d’exécution. La propriété suivante est actuellement prise en charge :
 
- - `delayForCellEdit` : détermine si Excel diffère la demande de lot jusqu'à ce que l’utilisateur quitte le mode de modification de cellule. Lorsque la valeur est **true**, la demande de lot est différée et s’exécute lorsque l’utilisateur quitte le mode de modification de cellule. Lorsque la valeur est **false**, la demande de lot échoue automatiquement si l’utilisateur est en mode de modification de cellule (entraînant une erreur de contact de l’utilisateur). Le comportement par défaut sans propriété `delayForCellEdit` spécifiée est identique au comportement lorsque la valeur est **false**.
+- `delayForCellEdit` : détermine si Excel diffère la demande de lot jusqu'à ce que l’utilisateur quitte le mode de modification de cellule. Lorsque la valeur est **true**, la demande de lot est différée et s’exécute lorsque l’utilisateur quitte le mode de modification de cellule. Lorsque la valeur est **false**, la demande de lot échoue automatiquement si l’utilisateur est en mode de modification de cellule (entraînant une erreur de contact de l’utilisateur). Le comportement par défaut sans propriété `delayForCellEdit` spécifiée est identique au comportement lorsque la valeur est **false**.
 
 ```js
 Excel.run({ delayForCellEdit: true }, function (context) { ... })
@@ -58,7 +58,7 @@ Les objets JavaScript pour Excel que vous déclarez et utilisez dans un complém
 Par exemple, l’extrait de code suivant déclare l’objet JavaScript local **selectedRange** pour référencer une plage sélectionnée dans le document Excel, puis définit des propriétés sur cet objet. L’objet **selectedRange** est un objet proxy. Les propriétés définies et la méthode appelée sur cet objet ne seront pas répercutées dans le document Excel tant que votre complément n’a pas appelé **context.sync()**.
 
 ```js
-const selectedRange = context.workbook.getSelectedRange();
+var selectedRange = context.workbook.getSelectedRange();
 selectedRange.format.fill.color = "#4472C4";
 selectedRange.format.font.color = "white";
 selectedRange.format.autofitColumns();
@@ -72,17 +72,17 @@ L’exemple suivant montre une fonction de traitement par lot qui définit un ob
 
 ```js
 Excel.run(function (context) {
-  const selectedRange = context.workbook.getSelectedRange();
-  selectedRange.load('address');
-  return context.sync()
-    .then(function () {
-      console.log('The selected range is: ' + selectedRange.address);
-  });
+    var selectedRange = context.workbook.getSelectedRange();
+    selectedRange.load('address');
+    return context.sync()
+      .then(function () {
+        console.log('The selected range is: ' + selectedRange.address);
+    });
 }).catch(function (error) {
-  console.log('error: ' + error);
-  if (error instanceof OfficeExtension.Error) {
-    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-  }
+    console.log('error: ' + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
 });
 ```
 
@@ -103,26 +103,26 @@ Dans l’exemple suivant, seules les propriétés spécifiques de la plage sont 
 
 ```js
 Excel.run(function (context) {
-  const sheetName = 'Sheet1';
-  const rangeAddress = 'A1:B2';
-  const myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+    var sheetName = 'Sheet1';
+    var rangeAddress = 'A1:B2';
+    var myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 
-  myRange.load(['address', 'format/*', 'format/fill', 'entireRow' ]);
+    myRange.load(['address', 'format/*', 'format/fill', 'entireRow' ]);
 
-  return context.sync()
-    .then(function () {
-      console.log (myRange.address);              // ok
-      console.log (myRange.format.wrapText);      // ok
-      console.log (myRange.format.fill.color);    // ok
-      //console.log (myRange.format.font.color);  // not ok as it was not loaded
-  });
-}).then(function () {
-  console.log('done');
+    return context.sync()
+      .then(function () {
+        console.log (myRange.address);              // ok
+        console.log (myRange.format.wrapText);      // ok
+        console.log (myRange.format.fill.color);    // ok
+        //console.log (myRange.format.font.color);  // not ok as it was not loaded
+        });
+    }).then(function () {
+        console.log('done');
 }).catch(function (error) {
-  console.log('Error: ' + error);
-  if (error instanceof OfficeExtension.Error) {
-    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-  }
+    console.log('Error: ' + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
 });
 ```
 
@@ -161,18 +161,18 @@ range.format.fill.color =  null;
 
 Les propriétés de mise en forme comme `size` et `color` contiendront des valeurs `null` dans la réponse lorsque différentes valeurs existent dans la plage spécifiée. Par exemple, si vous récupérez une plage et chargez sa propriété `format.font.color`:
 
-* Si toutes les cellules de la plage ont la même couleur de police, `range.format.font.color` spécifie cette couleur.
-* Si plusieurs couleurs de police sont présentes dans la plage, `range.format.font.color` est `null`.
+- Si toutes les cellules de la plage ont la même couleur de police, `range.format.font.color` spécifie cette couleur.
+- Si plusieurs couleurs de police sont présentes dans la plage, `range.format.font.color` est `null`.
 
 ### <a name="blank-input-for-a-property"></a>Entrée vide pour une propriété
 
 Lorsque vous spécifiez une valeur vide pour une propriété (c’est-à-dire deux guillemets droits sans espace entre `''`), cela est interprété comme une instruction d’effacement ou de réinitialisation de la propriété. Par exemple :
 
-* Si vous spécifiez une valeur vide pour la propriété `values` d’une plage, le contenu de la plage est effacé.
+- Si vous spécifiez une valeur vide pour la propriété `values` d’une plage, le contenu de la plage est effacé.
 
-* Si vous spécifiez une valeur vide pour la propriété `numberFormat`, le format de nombre est réinitialisé sur `General`.
+- Si vous spécifiez une valeur vide pour la propriété `numberFormat`, le format de nombre est réinitialisé sur `General`.
 
-* Si vous spécifiez une valeur vide pour les propriétés `formula` et `formulaLocale`, les valeurs de la formule sont effacées.
+- Si vous spécifiez une valeur vide pour les propriétés `formula` et `formulaLocale`, les valeurs de la formule sont effacées.
 
 ### <a name="blank-property-values-in-the-response"></a>Valeurs de propriété vides dans la réponse
 
@@ -191,9 +191,9 @@ range.formula = [['', '', '=Rand()']];
 ### <a name="read-an-unbounded-range"></a>Lire une plage non liée
 
 Une adresse de plage non liée est une adresse de plage qui spécifie des colonnes entières ou des lignes entières. Par exemple :
- 
-* Adresses de plage composées de colonnes entières :<ul><li>`C:C`</li><li>`A:F`</li></ul>
-* Adresses de plage composées de lignes entières :<ul><li>`2:2`</li><li>`1:4`</li></ul>
+
+- Adresses de plage composées de colonnes entières :<ul><li>`C:C`</li><li>`A:F`</li></ul>
+- Adresses de plage composées de lignes entières :<ul><li>`2:2`</li><li>`1:4`</li></ul>
 
 Lorsque l’API effectue une demande de récupération d’une plage non liée (par exemple, `getRange('C:C')`), la réponse contient des valeurs `null` pour les propriétés définies au niveau des cellules, telles que `values`, `text`, `numberFormat` et `formula`. Les autres propriétés de la plage, telles que `address` et `cellCount`, contiennent des valeurs valides pour la plage non liée.
 
@@ -202,13 +202,16 @@ Lorsque l’API effectue une demande de récupération d’une plage non liée (
 Vous ne pouvez pas définir des propriétés au niveau de la cellule telles que `values`, `numberFormat`, et `formula` sur plage non liée, car la demande d’entrée  est trop volumineuse. Par exemple, l’extrait de code suivant n’est pas valide, car il tente de spécifier `values` pour une plage non liée. L’API renvoie une erreur si vous tentez de définir des propriétés au niveau de la cellule pour une plage non liée.
 
 ```js
-const range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
+var range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
 range.values = 'Due Date';
 ```
 
 ## <a name="read-or-write-to-a-large-range"></a>Lire ou écrire dans une grande plage
 
 Si une plage contient un grand nombre de cellules, de valeurs, de formats de nombre et/ou de formules, il n’est peut-être pas possible d’exécuter des opérations d’API sur cette plage. L’API essaie toujours d’exécuter au mieux l’opération demandée sur une plage (par exemple, pour extraire ou écrire des données spécifiées), mais essayer d’effectuer des opérations de lecture ou d’écriture pour une grande plage peut provoquer une erreur d’API en raison de l’utilisation des ressources excessive. Pour éviter ces erreurs, nous vous recommandons d’exécuter des opérations de lecture ou d’écriture distinctes pour des sous-ensembles plus petits d’une grande plage, au lieu d’essayer d’exécuter une seule opération de lecture ou d’écriture sur une grande plage.
+
+> [!IMPORTANT]
+> Excel Online a une limite de taille de charge utile de **5 Mo** pour les demandes et les réponses. L’erreur `RichAPI.Error` est déclenchée en cas de dépassement de cette limite.
 
 ## <a name="update-all-cells-in-a-range"></a>Mettre à jour toutes les cellules d’une plage
 
@@ -218,24 +221,24 @@ L’exemple suivant obtient une plage qui contient 20 cellules, puis définit l
 
 ```js
 Excel.run(function (context) {
-  const sheetName = 'Sheet1';
-  const rangeAddress = 'A1:A20';
-  const worksheet = context.workbook.worksheets.getItem(sheetName);
+    var sheetName = 'Sheet1';
+    var rangeAddress = 'A1:A20';
+    var worksheet = context.workbook.worksheets.getItem(sheetName);
 
-  const range = worksheet.getRange(rangeAddress);
-  range.numberFormat = 'm/d/yyyy';
-  range.values = '3/11/2015';
-  range.load('text');
+    var range = worksheet.getRange(rangeAddress);
+    range.numberFormat = 'm/d/yyyy';
+    range.values = '3/11/2015';
+    range.load('text');
 
-  return context.sync()
-    .then(function () {
-      console.log(range.text);
-  });
+    return context.sync()
+      .then(function () {
+        console.log(range.text);
+    });
 }).catch(function (error) {
-  console.log('Error: ' + error);
-  if (error instanceof OfficeExtension.Error) {
-    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-  }
+    console.log('Error: ' + error);
+    if (error instanceof OfficeExtension.Error) {
+      console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
 });
 ```
 
@@ -245,8 +248,8 @@ Lorsqu’une erreur d’API se produit, l’API renvoie un objet **error** qui c
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Prise en main des compléments Excel](excel-add-ins-get-started-overview.md)
-* [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
-* [Concepts avancés de programmation avec l’API JavaScript Excel](excel-add-ins-advanced-concepts.md)
-* [Optimisation des performances à l’aide de l’API JavaScript d’Excel](/office/dev/add-ins/excel/performance)
-* [Référence de l’API JavaScript pour Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+- [Prise en main des compléments Excel](excel-add-ins-get-started-overview.md)
+- [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
+- [Concepts avancés de programmation avec l’API JavaScript Excel](excel-add-ins-advanced-concepts.md)
+- [Optimisation des performances à l’aide de l’API JavaScript d’Excel](/office/dev/add-ins/excel/performance)
+- [Référence de l’API JavaScript pour Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

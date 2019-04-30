@@ -1,14 +1,14 @@
 ---
-ms.date: 04/03/2019
+ms.date: 04/25/2019
 description: Utiliser les balises JSDOC pour créer dynamiquement vos fonctions personnalisées de métadonnées JSON.
 title: Créer les métadonnées JSON pour des fonctions personnalisées (aperçu)
 localization_priority: Priority
-ms.openlocfilehash: 2efe2a9a5a83ba60ef327273d5bd599f82916d48
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: f13c9b2ff0adfd1bda493433761dc74cb9ea37dc
+ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449252"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "33353271"
 ---
 # <a name="create-json-metadata-for-custom-functions-preview"></a>Créer les métadonnées JSON pour des fonctions personnalisées (aperçu)
 
@@ -53,7 +53,7 @@ Cette balise est requise pour créer des métadonnées pour la fonction personna
 
 Vous devez également insérer un appel vers`CustomFunctions.associate("id", functionName);`
 
-#### <a name="id"></a>id 
+#### <a name="id"></a>id
 
 L’id est utilisé en tant qu’identificateur invariant pour la fonction personnalisée stockée dans le document. Elle ne doit pas changer.
 
@@ -63,7 +63,7 @@ L’id est utilisé en tant qu’identificateur invariant pour la fonction perso
 
 #### <a name="name"></a>name
 
-Fournit le nom d’affichage de la fonction personnalisée. 
+Fournit le nom d’affichage de la fonction personnalisée.
 
 * Si aucun nom n’est fourni, l’id servira aussi de nom.
 * Caractères autorisés : [caractères alphanumériques Unicode](https://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic) (lettres, chiffres), point (.) et trait de soulignement (\_).
@@ -93,6 +93,9 @@ Syntaxe JavaScript : @param {type} nom_description_
 Pour désigner un paramètre de fonction personnalisée comme étant facultatif :
 * Placez les crochets autour du nom du paramètre. Par exemple : `@param {string} [text] Optional text`.
 
+> [!NOTE]
+> La valeur par défaut pour les paramètres facultatifs est `null`.
+
 #### <a name="typescript"></a>TypeScript
 
 Syntaxe TypeScript : nom @param_description_
@@ -107,6 +110,9 @@ Pour désigner un paramètre de fonction personnalisée comme étant facultatif,
 * Définissez ce paramètre sur une valeur par défaut. Par exemple : `function f(text: string = "abc")`
 
 Pour consulter une description détaillée du @param, reportez-vous à la page suivante : [JSDoc](http://usejsdoc.org/tags-param.html)
+
+> [!NOTE]
+> La valeur par défaut pour les paramètres facultatifs est `null`.
 
 ---
 ### <a name="requiresaddress"></a>@requièreuneadresse
