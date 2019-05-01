@@ -1,14 +1,14 @@
 ---
-ms.date: 03/21/2019
+ms.date: 04/20/2019
 description: Demander, flux de données et annuler la diffusion en continu de données externes à votre classeur avec des fonctions personnalisées dans Excel
 title: Requêtes Web et autres données gestion avec les fonctions personnalisées (aperçu)
 localization_priority: Priority
-ms.openlocfilehash: 9256e2aa87ec6d7b314314a1e4bc2b3793f1df5c
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 2942ec56e46d6eb586b516eedab17c1eeb98d9c8
+ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449707"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "33353264"
 ---
 # <a name="receiving-and-handling-data-with-custom-functions"></a>Recevoir et gérer des données à l’aide de fonctions personnalisées
 
@@ -148,32 +148,7 @@ function incrementValue(increment, handler){
 CustomFunctions.associate("INCREMENTVALUE", incrementValue);
 ```
 
-Lorsque vous spécifiez des métadonnées pour une fonction de diffusion en continu dans le fichier de métadonnées JSON, vous devez définir les propriétés «annulable»: vrai et «flux»: vrai au sein de l’objet, comme illustré dans l’exemple suivant.
-
-```JSON
-{
-  "id": "INCREMENT",
-  "name": "INCREMENT",
-  "description": "Periodically increment a value",
-  "helpUrl": "http://www.contoso.com",
-  "result": {
-    "type": "number",
-    "dimensionality": "scalar"
-  },
-  "parameters": [
-    {
-      "name": "increment",
-      "description": "Amount to increment",
-      "type": "number",
-      "dimensionality": "scalar"
-    }
-  ],
-  "options": {
-    "cancelable": true,
-    "stream": true
-  }
-}
-```
+Lorsque vous spécifiez des métadonnées pour une fonction de diffusion en continu dans le fichier de métadonnées JSON, vous pouvez générer automatiquement celui-ci à l’aide d’une balise de commentaire JSDOC `@streaming` dans le fichier script de votre fonction. Pour plus d’informations, voir [Créer des métadonnées JSON pour des fonctions personnalisées](custom-functions-json-autogeneration.md).
 
 ## <a name="canceling-a-function"></a>Annulation d’une fonction
 
@@ -183,12 +158,13 @@ Dans certains cas, vous devrez annuler l’exécution d’une fonction personnal
 - Un des arguments (entrées) de la fonction est modifié. Dans ce cas, un appel de nouvelle fonction est déclenché en plus de l’annulation.
 - L’utilisateur déclenche manuellement le recalcul. Dans ce cas, un appel de nouvelle fonction est déclenché en plus de l’annulation.
 
-Pour rendre une fonction annulable, implémentez un gestionnaire de code de fonction pour savoir comment procéder lorsque celui-ci est annulé. En outre, spécifiez spécifier la propriété `"cancelable": true` au sein de l’objet options dans les métadonnées JSON décrivant la fonction. Les exemples de code dans la section précédente de cet article fournissent un exemple de ces techniques.
+Pour rendre une fonction annulable, implémentez un gestionnaire de code de fonction pour savoir comment procéder lorsque celui-ci est annulé. Utilisez également la balise de commentaire JSDOC `@cancelable` dans le fichier script de votre fonction. Pour plus d’informations, voir [Créer des métadonnées JSON pour des fonctions personnalisées](custom-functions-json-autogeneration.md).
 
 ## <a name="see-also"></a>Voir aussi
 
 * [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md)
 * [Métadonnées fonctions personnalisées](custom-functions-json.md)
+* [Créer des métadonnées JSON pour des fonctions personnalisées](custom-functions-json-autogeneration.md)
 * [Exécution de fonctions personnalisées Excel](custom-functions-runtime.md)
 * [Meilleures pratiques de fonctions personnalisées](custom-functions-best-practices.md)
 * [Fonctions personnalisées changelog](custom-functions-changelog.md)

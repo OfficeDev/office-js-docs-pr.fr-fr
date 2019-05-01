@@ -1,14 +1,14 @@
 ---
-ms.date: 03/29/2019
+ms.date: 04/20/2019
 description: Créer des fonctions personnalisées dans Excel à l’aide de JavaScript.
 title: Créer des fonctions personnalisées dans Excel (aperçu)
 localization_priority: Priority
-ms.openlocfilehash: 7a461728061ace532a11a8473d27ec4340eebb97
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 634b76ed90a30c7aa8252da346ba3f95684967a4
+ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448471"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "33353250"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Créer des fonctions personnalisées dans Excel (aperçu)
 
@@ -47,7 +47,7 @@ Le fichier de script (**./src/functions/functions.js** ou **./src/functions/func
 
 Le code suivant définit la fonction personnalisée `add`, puis spécifie des informations d’association pour la fonction. Pour plus d’informations sur l’association de fonctions, voir [Meilleures pratiques des fonctions personnalisées](custom-functions-best-practices.md#associating-function-names-with-json-metadata).
 
-Le code suivant fournit également des commentaires de code qui définissent la fonction. Le commentaire obligatoire `@customfunction` est déclaré en premier, pour indiquer qu’il s’agit d’une fonction personnalisée. Vous pouvez également constater que deux paramètres sont déclarés, `first` et `second`, qui sont suivis de leurs propriétés `description`. Enfin, une description `returns` est fournie. Pour plus d’informations sur les commentaires requis pour votre fonction personnalisée, voir [Générer des métadonnées JSON pour des fonctions personnalisées](custom-functions-json-autogeneration.md).
+Le code suivant fournit également des commentaires de code qui définissent la fonction. Le commentaire obligatoire `@customfunction` est déclaré en premier, pour indiquer qu’il s’agit d’une fonction personnalisée. Vous pouvez également constater que deux paramètres sont déclarés, `first` et `second`, qui sont suivis de leurs propriétés `description`. Enfin, une description `returns` est fournie. Pour plus d’informations sur les commentaires requis pour votre fonction personnalisée, voir [Créer des métadonnées JSON pour des fonctions personnalisées](custom-functions-json-autogeneration.md).
 
 ```js
 /**
@@ -235,7 +235,7 @@ Dans certains cas, vous devez récupérer l’adresse de la cellule qui a appel�
 - Affichage de valeurs mises en cache : si votre fonction est utilisée en mode hors connexion, affichez les valeurs mises en cache à partir de l’élément `AsyncStorage` à l’aide de `onCalculated`.
 - Rapprochement : utilisez l’adresse de la cellule pour découvrir la cellule d’origine afin de vous aider à réaliser un rapprochement lors du traitement.
 
-Les informations relatives à l’adresse d’une cellule sont exposées uniquement si `requiresAddress` est marqué comme `true` dans le fichier de métadonnées JSON de la fonction. L’exemple de code suivant illustre ce concept :
+Les informations relatives à l’adresse d’une cellule sont exposées uniquement si `requiresAddress` est marqué comme `true` dans le fichier de métadonnées JSON de la fonction. L’exemple suivant illustre cela dans le cas où vous devez écrire ce fichier JSON à la main. Vous pouvez également utiliser la balise `@requiresAddress` en cas de génération automatique de votre fichier JSON. Pour plus d’informations, voir [Génération automatique de JSON](custom-functions-json-autogeneration.md).
 
 ```JSON
 {
