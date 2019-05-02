@@ -4,96 +4,96 @@ description: ''
 ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 1925c9fcde0bb2f07cce4c0bcb0be99cc1c6061c
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: b3c65d2594e2d260f3e332fd20cdee2e56b02fcf
+ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450857"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "33517050"
 ---
-# <a name="build-an-excel-add-in-using-vue"></a><span data-ttu-id="533e3-102">Développement d’un complément Excel à l’aide de Vue</span><span class="sxs-lookup"><span data-stu-id="533e3-102">Build an Excel add-in using Vue</span></span>
+# <a name="build-an-excel-add-in-using-vue"></a><span data-ttu-id="827ab-102">Développement d’un complément Excel à l’aide de Vue</span><span class="sxs-lookup"><span data-stu-id="827ab-102">Build an Excel add-in using Vue</span></span>
 
-<span data-ttu-id="533e3-103">Cet article décrit le processus de création d’un complément Excel à l’aide de Vue et de l’API JavaScript pour Excel.</span><span class="sxs-lookup"><span data-stu-id="533e3-103">In this article, you'll walk through the process of building an Excel add-in using Vue and the Excel JavaScript API.</span></span>
+<span data-ttu-id="827ab-103">Cet article décrit le processus de création d’un complément Excel à l’aide de Vue et de l’API JavaScript pour Excel.</span><span class="sxs-lookup"><span data-stu-id="827ab-103">In this article, you'll walk through the process of building an Excel add-in using Vue and the Excel JavaScript API.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="533e3-104">Conditions préalables</span><span class="sxs-lookup"><span data-stu-id="533e3-104">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="827ab-104">Conditions préalables</span><span class="sxs-lookup"><span data-stu-id="827ab-104">Prerequisites</span></span>
 
-- [<span data-ttu-id="533e3-105">Node.js</span><span class="sxs-lookup"><span data-stu-id="533e3-105">Node.js</span></span>](https://nodejs.org)
+- [<span data-ttu-id="827ab-105">Node.js</span><span class="sxs-lookup"><span data-stu-id="827ab-105">Node.js</span></span>](https://nodejs.org)
 
-- <span data-ttu-id="533e3-106">Installez l’[interface de ligne de commande Vue](https://github.com/vuejs/vue-cli) globalement.</span><span class="sxs-lookup"><span data-stu-id="533e3-106">Install the [Vue CLI](https://github.com/vuejs/vue-cli) globally.</span></span>
+- <span data-ttu-id="827ab-106">Installez l’[interface de ligne de commande Vue](https://github.com/vuejs/vue-cli) globalement.</span><span class="sxs-lookup"><span data-stu-id="827ab-106">Install the [Vue CLI](https://github.com/vuejs/vue-cli) globally.</span></span>
 
-    ```bash
+    ```command&nbsp;line
     npm install -g vue-cli
     ```
 
-- <span data-ttu-id="533e3-107">Installez la dernière version de [Yeoman](https://github.com/yeoman/yo) et le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) globalement.</span><span class="sxs-lookup"><span data-stu-id="533e3-107">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
+- <span data-ttu-id="827ab-107">Installez la dernière version de [Yeoman](https://github.com/yeoman/yo) et le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) globalement.</span><span class="sxs-lookup"><span data-stu-id="827ab-107">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
 
-    ```bash
+    ```command&nbsp;line
     npm install -g yo generator-office
     ```
 
-## <a name="generate-a-new-vue-app"></a><span data-ttu-id="533e3-108">Génération d’une nouvelle application Vue</span><span class="sxs-lookup"><span data-stu-id="533e3-108">Generate a new Vue app</span></span>
+## <a name="generate-a-new-vue-app"></a><span data-ttu-id="827ab-108">Génération d’une nouvelle application Vue</span><span class="sxs-lookup"><span data-stu-id="827ab-108">Generate a new Vue app</span></span>
 
-<span data-ttu-id="533e3-p101">Utilisez l’interface de ligne de commande Vue pour générer une nouvelle application Vue. À partir du terminal, exécutez la commande suivante, puis répondez aux invites comme décrit ci-dessous.</span><span class="sxs-lookup"><span data-stu-id="533e3-p101">Use the Vue CLI to generate a new Vue app. From the terminal, run the following command and then answer the prompts as described below.</span></span>
+<span data-ttu-id="827ab-p101">Utilisez l’interface de ligne de commande Vue pour générer une nouvelle application Vue. À partir du terminal, exécutez la commande suivante, puis répondez aux invites comme décrit ci-dessous.</span><span class="sxs-lookup"><span data-stu-id="827ab-p101">Use the Vue CLI to generate a new Vue app. From the terminal, run the following command and then answer the prompts as described below.</span></span>
 
-```bash
+```command&nbsp;line
 vue init webpack my-add-in
 ```
 
-<span data-ttu-id="533e3-p102">Lorsque vous répondez aux invites générées par la commande précédente, remplacez les réponses par défaut des 3 invites ci-dessous. Vous pouvez accepter les réponses par défaut de toutes les autres invites.</span><span class="sxs-lookup"><span data-stu-id="533e3-p102">When responding to the prompts that are generated by the previous command, override the default answers for the following 3 prompts. You can accept the default answers for all other prompts.</span></span>
+<span data-ttu-id="827ab-p102">Lorsque vous répondez aux invites générées par la commande précédente, remplacez les réponses par défaut des 3 invites ci-dessous. Vous pouvez accepter les réponses par défaut de toutes les autres invites.</span><span class="sxs-lookup"><span data-stu-id="827ab-p102">When responding to the prompts that are generated by the previous command, override the default answers for the following 3 prompts. You can accept the default answers for all other prompts.</span></span>
 
-- <span data-ttu-id="533e3-113">**Installer vue-router ?**</span><span class="sxs-lookup"><span data-stu-id="533e3-113">**Install vue-router?**</span></span> `No`
-- <span data-ttu-id="533e3-114">**Configurer des tests d’unités :** `No`</span><span class="sxs-lookup"><span data-stu-id="533e3-114">**Set up unit tests:** `No`</span></span>
-- <span data-ttu-id="533e3-115">**Configurer des tests e2e avec Nightwatch ?**</span><span class="sxs-lookup"><span data-stu-id="533e3-115">**Setup e2e tests with Nightwatch?**</span></span> `No`
+- <span data-ttu-id="827ab-113">**Installer vue-router ?**</span><span class="sxs-lookup"><span data-stu-id="827ab-113">**Install vue-router?**</span></span> `No`
+- <span data-ttu-id="827ab-114">**Configurer des tests d’unités :** `No`</span><span class="sxs-lookup"><span data-stu-id="827ab-114">**Set up unit tests:** `No`</span></span>
+- <span data-ttu-id="827ab-115">**Configurer des tests e2e avec Nightwatch ?**</span><span class="sxs-lookup"><span data-stu-id="827ab-115">**Setup e2e tests with Nightwatch?**</span></span> `No`
 
 ![Invites de l’interface de ligne de commande Vue](../images/vue-cli-prompts.png)
 
-## <a name="generate-the-manifest-file"></a><span data-ttu-id="533e3-117">Génération du fichier manifeste</span><span class="sxs-lookup"><span data-stu-id="533e3-117">Generate the manifest file</span></span>
+## <a name="generate-the-manifest-file"></a><span data-ttu-id="827ab-117">Génération du fichier manifeste</span><span class="sxs-lookup"><span data-stu-id="827ab-117">Generate the manifest file</span></span>
 
-<span data-ttu-id="533e3-118">Chaque complément nécessite un fichier manifeste pour définir ses paramètres et ses fonctionnalités.</span><span class="sxs-lookup"><span data-stu-id="533e3-118">Each add-in requires a manifest file to define its settings and capabilities.</span></span>
+<span data-ttu-id="827ab-118">Chaque complément nécessite un fichier manifeste pour définir ses paramètres et ses fonctionnalités.</span><span class="sxs-lookup"><span data-stu-id="827ab-118">Each add-in requires a manifest file to define its settings and capabilities.</span></span>
 
-1. <span data-ttu-id="533e3-119">Accédez au dossier de votre application.</span><span class="sxs-lookup"><span data-stu-id="533e3-119">Navigate to your app folder.</span></span>
+1. <span data-ttu-id="827ab-119">Accédez au dossier de votre application.</span><span class="sxs-lookup"><span data-stu-id="827ab-119">Navigate to your app folder.</span></span>
 
-    ```bash
+    ```command&nbsp;line
     cd my-add-in
     ```
 
-2. <span data-ttu-id="533e3-p103">Utilisez le générateur Yeoman pour générer le fichier manifeste de votre complément. Exécutez la commande suivante, puis répondez aux invites comme indiqué ci-dessous.</span><span class="sxs-lookup"><span data-stu-id="533e3-p103">Use the Yeoman generator to generate the manifest file for your add-in. Run the following command and then answer the prompts as shown below.</span></span>
+2. <span data-ttu-id="827ab-p103">Utilisez le générateur Yeoman pour générer le fichier manifeste de votre complément. Exécutez la commande suivante, puis répondez aux invites comme indiqué ci-dessous.</span><span class="sxs-lookup"><span data-stu-id="827ab-p103">Use the Yeoman generator to generate the manifest file for your add-in. Run the following command and then answer the prompts as shown below.</span></span>
 
-    ```bash
+    ```command&nbsp;line
     yo office
     ```
 
-    - <span data-ttu-id="533e3-122">**Sélectionnez un type de projet :** `Office Add-in containing the manifest only`</span><span class="sxs-lookup"><span data-stu-id="533e3-122">**Choose a project type:** `Office Add-in containing the manifest only`</span></span>
-    - <span data-ttu-id="533e3-123">**Comment souhaitez-vous nommer votre complément ? :** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="533e3-123">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
-    - <span data-ttu-id="533e3-124">**Quelle application client Office voulez-vous prendre en charge ? :**`Excel`</span><span class="sxs-lookup"><span data-stu-id="533e3-124">**Which Office client application would you like to support?:** `Excel`</span></span>
+    - <span data-ttu-id="827ab-122">**Sélectionnez un type de projet :** `Office Add-in containing the manifest only`</span><span class="sxs-lookup"><span data-stu-id="827ab-122">**Choose a project type:** `Office Add-in containing the manifest only`</span></span>
+    - <span data-ttu-id="827ab-123">**Comment souhaitez-vous nommer votre complément ? :** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="827ab-123">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
+    - <span data-ttu-id="827ab-124">**Quelle application client Office voulez-vous prendre en charge ? :**`Excel`</span><span class="sxs-lookup"><span data-stu-id="827ab-124">**Which Office client application would you like to support?:** `Excel`</span></span>
 
     ![Générateur Yeoman](../images/yo-office.png)
 
-    <span data-ttu-id="533e3-126">Une fois l’Assistant exécuté, le générateur crée le fichier manifeste.</span><span class="sxs-lookup"><span data-stu-id="533e3-126">After you complete the wizard, the generator creates the manifest file.</span></span>
+    <span data-ttu-id="827ab-126">Une fois l’Assistant exécuté, le générateur crée le fichier manifeste.</span><span class="sxs-lookup"><span data-stu-id="827ab-126">After you complete the wizard, the generator creates the manifest file.</span></span>
 
-## <a name="secure-the-app"></a><span data-ttu-id="533e3-127">Sécurisation de l’application</span><span class="sxs-lookup"><span data-stu-id="533e3-127">Secure the app</span></span>
+## <a name="secure-the-app"></a><span data-ttu-id="827ab-127">Sécurisation de l’application</span><span class="sxs-lookup"><span data-stu-id="827ab-127">Secure the app</span></span>
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-<span data-ttu-id="533e3-128">Pour activer HTTPS pour votre application, ouvrez le fichier **package.json** dans le dossier racine du projet Vue, modifiez le script `dev` pour ajouter le marqueur `--https` et enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="533e3-128">To enable HTTPS for your app, open the file **package.json** in the root folder of the Vue project, modify the `dev` script to add the `--https` flag, and save the file.</span></span>
+<span data-ttu-id="827ab-128">Pour activer HTTPS pour votre application, ouvrez le fichier **package.json** dans le dossier racine du projet Vue, modifiez le script `dev` pour ajouter le marqueur `--https` et enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="827ab-128">To enable HTTPS for your app, open the file **package.json** in the root folder of the Vue project, modify the `dev` script to add the `--https` flag, and save the file.</span></span>
 
 ```json
 "dev": "webpack-dev-server --https --inline --progress --config build/webpack.dev.conf.js"
 ```
 
-## <a name="update-the-app"></a><span data-ttu-id="533e3-129">Mettre à jour l’application</span><span class="sxs-lookup"><span data-stu-id="533e3-129">Update the app</span></span>
+## <a name="update-the-app"></a><span data-ttu-id="827ab-129">Mettre à jour l’application</span><span class="sxs-lookup"><span data-stu-id="827ab-129">Update the app</span></span>
 
-1. <span data-ttu-id="533e3-130">Dans votre éditeur de code, ouvrez le dossier **My Office Add-in** créé par Yo Office à la racine de votre projet Vue.</span><span class="sxs-lookup"><span data-stu-id="533e3-130">In your code editor, open the folder **My Office Add-in** that Yo Office created at the root of your Vue project.</span></span> <span data-ttu-id="533e3-131">Dans ce dossier, vous verrez le fichier manifeste qui définit les paramètres de votre complément : **manifest.xml**.</span><span class="sxs-lookup"><span data-stu-id="533e3-131">In that folder, you'll see the manifest file that defines the settings for your add-in: **manifest.xml**.</span></span>
+1. <span data-ttu-id="827ab-130">Dans votre éditeur de code, ouvrez le dossier **My Office Add-in** créé par Yo Office à la racine de votre projet Vue.</span><span class="sxs-lookup"><span data-stu-id="827ab-130">In your code editor, open the folder **My Office Add-in** that Yo Office created at the root of your Vue project.</span></span> <span data-ttu-id="827ab-131">Dans ce dossier, vous verrez le fichier manifeste qui définit les paramètres de votre complément : **manifest.xml**.</span><span class="sxs-lookup"><span data-stu-id="827ab-131">In that folder, you'll see the manifest file that defines the settings for your add-in: **manifest.xml**.</span></span>
 
-2. <span data-ttu-id="533e3-132">Ouvrir le fichier manifeste, remplacez toutes les occurrences de `https://localhost:3000` par `https://localhost:8080` et enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="533e3-132">Open the manifest file, replace all occurrences of `https://localhost:3000` with `https://localhost:8080`, and save the file.</span></span>
+2. <span data-ttu-id="827ab-132">Ouvrir le fichier manifeste, remplacez toutes les occurrences de `https://localhost:3000` par `https://localhost:8080` et enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="827ab-132">Open the manifest file, replace all occurrences of `https://localhost:3000` with `https://localhost:8080`, and save the file.</span></span>
 
-3. <span data-ttu-id="533e3-133">Ouvrez le fichier **index.html** (situé à la racine de votre projet Vue), ajoutez la balise `<script>` suivante immédiatement avant la balise `</head>`, puis enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="533e3-133">Open the file **index.html** (located at the root of your Vue project), add the following `<script>` tag immediately before the `</head>` tag, and save the file.</span></span>
+3. <span data-ttu-id="827ab-133">Ouvrez le fichier **index.html** (situé à la racine de votre projet Vue), ajoutez la balise `<script>` suivante immédiatement avant la balise `</head>`, puis enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="827ab-133">Open the file **index.html** (located at the root of your Vue project), add the following `<script>` tag immediately before the `</head>` tag, and save the file.</span></span>
 
     ```html
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     ```
 
-3. <span data-ttu-id="533e3-134">Ouvrez **src/main.js** et *supprimez* le bloc de code suivant :</span><span class="sxs-lookup"><span data-stu-id="533e3-134">Open **src/main.js** and *remove* the following block of code:</span></span>
+3. <span data-ttu-id="827ab-134">Ouvrez **src/main.js** et *supprimez* le bloc de code suivant :</span><span class="sxs-lookup"><span data-stu-id="827ab-134">Open **src/main.js** and *remove* the following block of code:</span></span>
 
     ```js
     new Vue({
@@ -103,7 +103,7 @@ vue init webpack my-add-in
     })
     ```
     
-    <span data-ttu-id="533e3-135">Ajoutez le code suivant à ce même emplacement, puis enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="533e3-135">Then add the following code in that same location, and save the file.</span></span> 
+    <span data-ttu-id="827ab-135">Ajoutez le code suivant à ce même emplacement, puis enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="827ab-135">Then add the following code in that same location, and save the file.</span></span> 
                                                          
     ```js
     const Office = window.Office
@@ -116,7 +116,7 @@ vue init webpack my-add-in
     }
     ```
 
-4. <span data-ttu-id="533e3-136">Ouvrez **src/App.vue**, remplacez le contenu du fichier par le code suivant, ajoutez un saut de ligne à la fin du fichier (c’est-à-dire, après la balise `</style>`) et enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="533e3-136">Open **src/App.vue**, replace file contents with the following code, add a line break at the end of the file (i.e., after the `</style>` tag), and save the file.</span></span> 
+4. <span data-ttu-id="827ab-136">Ouvrez **src/App.vue**, remplacez le contenu du fichier par le code suivant, ajoutez un saut de ligne à la fin du fichier (c’est-à-dire, après la balise `</style>`) et enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="827ab-136">Open **src/App.vue**, replace file contents with the following code, add a line break at the end of the file (i.e., after the `</style>` tag), and save the file.</span></span> 
 
     ```html
     <template>
@@ -182,47 +182,47 @@ vue init webpack my-add-in
     </style>
     ```
 
-## <a name="start-the-dev-server"></a><span data-ttu-id="533e3-137">Démarrage du serveur de développement</span><span class="sxs-lookup"><span data-stu-id="533e3-137">Start the dev server</span></span>
+## <a name="start-the-dev-server"></a><span data-ttu-id="827ab-137">Démarrage du serveur de développement</span><span class="sxs-lookup"><span data-stu-id="827ab-137">Start the dev server</span></span>
 
-1. <span data-ttu-id="533e3-138">À partir du terminal, exécutez la commande suivante pour démarrer le serveur dev.</span><span class="sxs-lookup"><span data-stu-id="533e3-138">From the terminal, run the following command to start the dev server.</span></span>
+1. <span data-ttu-id="827ab-138">À partir du terminal, exécutez la commande suivante pour démarrer le serveur dev.</span><span class="sxs-lookup"><span data-stu-id="827ab-138">From the terminal, run the following command to start the dev server.</span></span>
 
-    ```bash
+    ```command&nbsp;line
     npm start
     ```
 
-2. <span data-ttu-id="533e3-p105">Dans un navigateur web, accédez à `https://localhost:8080`. Si votre navigateur indique que le certificat de site n’est pas approuvé, vous devez configurer votre ordinateur pour qu’il approuve le certificat.</span><span class="sxs-lookup"><span data-stu-id="533e3-p105">In a web browser, navigate to `https://localhost:8080`. If your browser indicates that the site's certificate is not trusted, you will need to configure your computer to trust the certificate.</span></span> 
+2. <span data-ttu-id="827ab-p105">Dans un navigateur web, accédez à `https://localhost:8080`. Si votre navigateur indique que le certificat de site n’est pas approuvé, vous devez configurer votre ordinateur pour qu’il approuve le certificat.</span><span class="sxs-lookup"><span data-stu-id="827ab-p105">In a web browser, navigate to `https://localhost:8080`. If your browser indicates that the site's certificate is not trusted, you will need to configure your computer to trust the certificate.</span></span> 
 
-3. <span data-ttu-id="533e3-141">Une fois que votre navigateur a chargé la page du complément sans erreurs de certificat, vous pouvez tester votre complément.</span><span class="sxs-lookup"><span data-stu-id="533e3-141">After your browser loads the add-in page without any certificate errors, you're ready test your add-in.</span></span> 
+3. <span data-ttu-id="827ab-141">Une fois que votre navigateur a chargé la page du complément sans erreurs de certificat, vous pouvez tester votre complément.</span><span class="sxs-lookup"><span data-stu-id="827ab-141">After your browser loads the add-in page without any certificate errors, you're ready test your add-in.</span></span> 
 
-## <a name="try-it-out"></a><span data-ttu-id="533e3-142">Essayez !</span><span class="sxs-lookup"><span data-stu-id="533e3-142">Try it out</span></span>
+## <a name="try-it-out"></a><span data-ttu-id="827ab-142">Essayez !</span><span class="sxs-lookup"><span data-stu-id="827ab-142">Try it out</span></span>
 
-1. <span data-ttu-id="533e3-143">Suivez les instructions pour la plateforme que vous utiliserez pour exécuter votre complément et chargez une version test du complément dans Excel.</span><span class="sxs-lookup"><span data-stu-id="533e3-143">Follow the instructions for the platform you'll be using to run your add-in and sideload the add-in within Excel.</span></span>
+1. <span data-ttu-id="827ab-143">Suivez les instructions pour la plateforme que vous utiliserez pour exécuter votre complément et chargez une version test du complément dans Excel.</span><span class="sxs-lookup"><span data-stu-id="827ab-143">Follow the instructions for the platform you'll be using to run your add-in and sideload the add-in within Excel.</span></span>
 
-    - <span data-ttu-id="533e3-144">Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="533e3-144">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
-    - <span data-ttu-id="533e3-145">Excel Online : [Chargement de versions test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)</span><span class="sxs-lookup"><span data-stu-id="533e3-145">Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)</span></span>
-    - <span data-ttu-id="533e3-146">iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="533e3-146">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
+    - <span data-ttu-id="827ab-144">Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="827ab-144">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
+    - <span data-ttu-id="827ab-145">Excel Online : [Chargement de versions test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)</span><span class="sxs-lookup"><span data-stu-id="827ab-145">Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)</span></span>
+    - <span data-ttu-id="827ab-146">iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="827ab-146">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
 
-2. <span data-ttu-id="533e3-147">Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.</span><span class="sxs-lookup"><span data-stu-id="533e3-147">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="827ab-147">Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.</span><span class="sxs-lookup"><span data-stu-id="827ab-147">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![Bouton Complément Excel](../images/excel-quickstart-addin-2a.png)
 
-3. <span data-ttu-id="533e3-149">Sélectionnez une plage de cellules dans la feuille de calcul.</span><span class="sxs-lookup"><span data-stu-id="533e3-149">Select any range of cells in the worksheet.</span></span>
+3. <span data-ttu-id="827ab-149">Sélectionnez une plage de cellules dans la feuille de calcul.</span><span class="sxs-lookup"><span data-stu-id="827ab-149">Select any range of cells in the worksheet.</span></span>
 
-4. <span data-ttu-id="533e3-150">Dans le volet Office, cliquez sur le bouton **Définir couleur** pour définir la couleur de la plage sélectionnée en vert.</span><span class="sxs-lookup"><span data-stu-id="533e3-150">In the task pane, choose the **Set color** button to set the color of the selected range to green.</span></span>
+4. <span data-ttu-id="827ab-150">Dans le volet Office, cliquez sur le bouton **Définir couleur** pour définir la couleur de la plage sélectionnée en vert.</span><span class="sxs-lookup"><span data-stu-id="827ab-150">In the task pane, choose the **Set color** button to set the color of the selected range to green.</span></span>
 
     ![Complément Excel](../images/excel-quickstart-addin-2c.png)
 
-## <a name="next-steps"></a><span data-ttu-id="533e3-152">Étapes suivantes</span><span class="sxs-lookup"><span data-stu-id="533e3-152">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="827ab-152">Étapes suivantes</span><span class="sxs-lookup"><span data-stu-id="827ab-152">Next steps</span></span>
 
-<span data-ttu-id="533e3-p106">Félicitations, vous avez créé un complément Excel à l’aide de Vue ! Découvrez à présent les fonctionnalités des compléments Excel et créez un complément plus complexe en continuant le didacticiel sur le complément Excel.</span><span class="sxs-lookup"><span data-stu-id="533e3-p106">Congratulations, you've successfully created an Excel add-in using Vue! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.</span></span>
+<span data-ttu-id="827ab-p106">Félicitations, vous avez créé un complément Excel à l’aide de Vue ! Découvrez à présent les fonctionnalités des compléments Excel et créez un complément plus complexe en continuant le didacticiel sur le complément Excel.</span><span class="sxs-lookup"><span data-stu-id="827ab-p106">Congratulations, you've successfully created an Excel add-in using Vue! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="533e3-155">Didacticiel sur les compléments Excel</span><span class="sxs-lookup"><span data-stu-id="533e3-155">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial.md)
+> [<span data-ttu-id="827ab-155">Didacticiel sur les compléments Excel</span><span class="sxs-lookup"><span data-stu-id="827ab-155">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial.md)
 
-## <a name="see-also"></a><span data-ttu-id="533e3-156">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="533e3-156">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="827ab-156">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="827ab-156">See also</span></span>
 
-* [<span data-ttu-id="533e3-157">Didacticiel sur les compléments Excel</span><span class="sxs-lookup"><span data-stu-id="533e3-157">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial-create-table.md)
-* [<span data-ttu-id="533e3-158">Concepts fondamentaux de programmation avec l’API JavaScript pour Excel</span><span class="sxs-lookup"><span data-stu-id="533e3-158">Fundamental programming concepts with the Excel JavaScript API</span></span>](../excel/excel-add-ins-core-concepts.md)
-* [<span data-ttu-id="533e3-159">Exemples de code pour les compléments Excel</span><span class="sxs-lookup"><span data-stu-id="533e3-159">Excel add-in code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [<span data-ttu-id="533e3-160">Référence de l’API JavaScript pour Excel</span><span class="sxs-lookup"><span data-stu-id="533e3-160">Excel JavaScript API reference</span></span>](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [<span data-ttu-id="827ab-157">Didacticiel sur les compléments Excel</span><span class="sxs-lookup"><span data-stu-id="827ab-157">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial-create-table.md)
+* [<span data-ttu-id="827ab-158">Concepts fondamentaux de programmation avec l’API JavaScript pour Excel</span><span class="sxs-lookup"><span data-stu-id="827ab-158">Fundamental programming concepts with the Excel JavaScript API</span></span>](../excel/excel-add-ins-core-concepts.md)
+* [<span data-ttu-id="827ab-159">Exemples de code pour les compléments Excel</span><span class="sxs-lookup"><span data-stu-id="827ab-159">Excel add-in code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [<span data-ttu-id="827ab-160">Référence de l’API JavaScript pour Excel</span><span class="sxs-lookup"><span data-stu-id="827ab-160">Excel JavaScript API reference</span></span>](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
 
