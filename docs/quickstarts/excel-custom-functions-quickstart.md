@@ -1,19 +1,19 @@
 ---
 ms.date: 03/06/2019
-description: Développement de fonctions personnalisées dans le Guide de démarrage rapide d'Excel.
+description: Développement de fonctions personnalisées dans le Guide de démarrage rapide d’Excel.
 title: Démarrage rapide des fonctions personnalisées (aperçu)
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 80c500e1e30e8751a7d969d33cd7e13b7943b1b5
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 3ea7ec4c2089aaa4e9f193a45e7c4a31c691f213
+ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450837"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "33517071"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Prise en main du développement de fonctions personnalisées Excel
 
-Avec les fonctions personnalisées, les développeurs peuvent désormais ajouter de nouvelles fonctions à Excel en les définissant en JavaScript ou en une machine à écrire dans le cadre d'un complément. Les utilisateurs d'Excel peuvent accéder aux fonctions personnalisées comme ils le feraient pour n'importe `SUM()`quelle fonction native dans Excel, comme.
+Avec les fonctions personnalisées, les développeurs peuvent désormais ajouter de nouvelles fonctions à Excel en les définissant en JavaScript ou en une machine à écrire dans le cadre d’un complément. Les utilisateurs d’Excel peuvent accéder aux fonctions personnalisées comme ils le feraient pour n’importe `SUM()`quelle fonction native dans Excel, comme.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -27,7 +27,7 @@ Vous aurez besoin des outils et ressources connexes suivants pour commencer à c
 
 - La dernière version de[Yeoman](https://yeoman.io/) et de [Yeoman Générateur de compléments Office](https://www.npmjs.com/package/generator-office). Pour installer ces outils globalement, exécutez la commande suivante à partir de l’invite de commande :
 
-    ```
+    ```command&nbsp;line
     npm install -g yo generator-office
     ```
 
@@ -40,7 +40,7 @@ Pour commencer, vous utiliserez le Yeoman Générateur pour créer le projet de 
 
 1. Exécutez la commande suivante, puis répondez aux invitations comme suit.
 
-    ```
+    ```command&nbsp;line
     yo office
     ```
 
@@ -54,9 +54,9 @@ Pour commencer, vous utiliserez le Yeoman Générateur pour créer le projet de 
 
     Le générateur crée le projet et installe les composants Node.js de la prise en charge.
 
-2. Naviguez jusqu'au dossier de projet que vous venez de créer.
+2. Naviguez jusqu’au dossier de projet que vous venez de créer.
 
-    ```
+    ```command&nbsp;line
     cd stock-ticker
     ```
 
@@ -64,7 +64,7 @@ Pour commencer, vous utiliserez le Yeoman Générateur pour créer le projet de 
 
 4. Construire le projet.
 
-    ```
+    ```command&nbsp;line
     npm run build
     ```
 
@@ -72,20 +72,20 @@ Pour commencer, vous utiliserez le Yeoman Générateur pour créer le projet de 
 
     - Si vous utilisez Excel pour Windows pour tester vos fonctions personnalisées, exécutez la commande suivante pour démarrer le serveur Web local, lancez Excel et chargement le complément:
 
-        ```
+        ```command&nbsp;line
          npm run start
         ```
         Après avoir exécuté cette commande, votre invite de commandes affiche des détails sur le démarrage du serveur Web. Excel commence avec votre complément chargé. Si vous complément ne charge pas, vérifiez que vous avez correctement terminé l’étape 3.
 
     - Si vous utilisez Excel Online pour tester vos fonctions personnalisées, exécutez la commande suivante pour démarrer le serveur Web local:
 
-        ```
+        ```command&nbsp;line
         npm run start-web
         ```
 
          Après avoir exécuté cette commande, votre invite de commandes affiche des détails sur le démarrage du serveur Web. Pour utiliser vos fonctions, ouvrez un nouveau classeur dans Excel online. Dans ce classeur, vous devrez charger votre complément. 
 
-        Pour ce faire, sélectionnez l'onglet **Insérer** sur le ruban et sélectionnez **Get Add-ins**. Dans la nouvelle fenêtre qui s'affiche, vérifiez que vous êtes dans l'onglet **mes compléments** . Ensuite, sélectionnez **gérer mes compléments _GT_ Télécharger mon complément**. Recherchez votre fichier manifeste et téléchargez-le. Si votre complément ne se charge pas, vérifiez que vous avez correctement terminé l'étape 3.
+        Pour ce faire, sélectionnez l’onglet **Insérer** sur le ruban et sélectionnez **Get Add-ins**. Dans la nouvelle fenêtre qui s’affiche, vérifiez que vous êtes dans l’onglet **mes compléments** . Ensuite, sélectionnez **gérer mes compléments _GT_ Télécharger mon complément**. Recherchez votre fichier manifeste et téléchargez-le. Si votre complément ne se charge pas, vérifiez que vous avez correctement terminé l’étape 3.
 
 ## <a name="try-out-the-prebuilt-custom-functions"></a>Tester les fonctions personnalisées prédéfinies
 
@@ -95,7 +95,7 @@ Dans votre classeur Excel, essayez la `ADD` fonction personnalisée en procédan
 
 1. Sélectionnez une cellule et tapez `=CONTOSO`. Notez que le menu de saisie semi-automatique affiche la liste de toutes les fonctions dans l’espace de noms `CONTOSO`.
 
-2. Exécutez la `CONTOSO.ADD` fonction, en utilisant `10` des `200` nombres et comme paramètres d'entrée, en `=CONTOSO.ADD(10,200)` tapant la valeur dans la cellule et en appuyant sur entrée.
+2. Exécutez la `CONTOSO.ADD` fonction, en utilisant `10` des `200` nombres et comme paramètres d’entrée, en `=CONTOSO.ADD(10,200)` tapant la valeur dans la cellule et en appuyant sur entrée.
 
 Le `ADD` fonction personnalisée calcule la somme des deux nombres que vous avez spécifiés comme paramètres d’entrée. La saisie de`=CONTOSO.ADD(10,200)` doit générer le résultat **210** dans la cellule une fois que vous appuyez sur ENTRÉE.
 
