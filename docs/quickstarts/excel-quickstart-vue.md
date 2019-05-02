@@ -4,12 +4,12 @@ description: ''
 ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 1925c9fcde0bb2f07cce4c0bcb0be99cc1c6061c
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: b3c65d2594e2d260f3e332fd20cdee2e56b02fcf
+ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450857"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "33517050"
 ---
 # <a name="build-an-excel-add-in-using-vue"></a>Développement d’un complément Excel à l’aide de Vue
 
@@ -21,13 +21,13 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 
 - Installez l’[interface de ligne de commande Vue](https://github.com/vuejs/vue-cli) globalement.
 
-    ```bash
+    ```command&nbsp;line
     npm install -g vue-cli
     ```
 
 - Installez la dernière version de [Yeoman](https://github.com/yeoman/yo) et le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) globalement.
 
-    ```bash
+    ```command&nbsp;line
     npm install -g yo generator-office
     ```
 
@@ -35,7 +35,7 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 
 Utilisez l’interface de ligne de commande Vue pour générer une nouvelle application Vue. À partir du terminal, exécutez la commande suivante, puis répondez aux invites comme décrit ci-dessous.
 
-```bash
+```command&nbsp;line
 vue init webpack my-add-in
 ```
 
@@ -53,13 +53,13 @@ Chaque complément nécessite un fichier manifeste pour définir ses paramètres
 
 1. Accédez au dossier de votre application.
 
-    ```bash
+    ```command&nbsp;line
     cd my-add-in
     ```
 
 2. Utilisez le générateur Yeoman pour générer le fichier manifeste de votre complément. Exécutez la commande suivante, puis répondez aux invites comme indiqué ci-dessous.
 
-    ```bash
+    ```command&nbsp;line
     yo office
     ```
 
@@ -186,7 +186,7 @@ Pour activer HTTPS pour votre application, ouvrez le fichier **package.json** da
 
 1. À partir du terminal, exécutez la commande suivante pour démarrer le serveur dev.
 
-    ```bash
+    ```command&nbsp;line
     npm start
     ```
 
