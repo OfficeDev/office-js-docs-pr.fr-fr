@@ -5,12 +5,12 @@ ms.date: 01/28/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 410b2391d207f7c83f9accb349448dbc0c92a0e2
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: d32b5b03b29ddfa2213b0dd91d9f02e72b173fbf
+ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451293"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33619069"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 
@@ -34,7 +34,7 @@ Pour utiliser ce didacticiel, les logiciels suivants doivent être installés.
 
 - [Git Bash](https://git-scm.com/downloads) (ou un autre client Git)
 
-- Vous devez disposer d'une connexion Internet pour tester le complément dans ce didacticiel.
+- Vous devez disposer d’une connexion Internet pour tester le complément dans ce didacticiel.
 
 ## <a name="create-your-add-in-project"></a>Créer votre projet de complément
 
@@ -46,7 +46,7 @@ Procédez comme suit pour créer le projet de complément Excel que vous souhait
 
 3. Exécutez la commande `npm install` pour installer les outils et les bibliothèques répertoriées dans le fichier package.json. 
 
-4. Effectuez les étapes décrites dans la rubrique relative à l’[ajout de certificats auto-signés comme certificat racine approuvé](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) pour approuver le certificat pour le système d’exploitation de votre ordinateur de développement.
+4. Suivez les étapes de l' [installation du certificat auto-signé](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) pour approuver le certificat pour le système d’exploitation de votre ordinateur de développement.
 
 ## <a name="create-a-table"></a>Créer un tableau
 

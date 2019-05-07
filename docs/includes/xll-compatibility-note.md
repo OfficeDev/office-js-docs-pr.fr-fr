@@ -1,0 +1,2 @@
+> [!IMPORTANT]
+> Le complément COM et la compatibilité UDF XLL sont actuellement en version préliminaire et peuvent être modifiés. Elle n’est actuellement pas prise en charge dans les environnements de production. Pour plus d’informations, consultez la rubrique [conditions requises pour la compatibilité des compléments COM et XLL](../excel/xll-compatibility-requirements.md).

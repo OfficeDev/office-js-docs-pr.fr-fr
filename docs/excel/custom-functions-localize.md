@@ -1,22 +1,27 @@
 ---
-ms.date: 04/30/2019
+ms.date: 05/03/2019
 description: Localisez vos fonctions personnalisées Excel.
-title: Localiser des fonctions personnalisées (aperçu)
+title: Localiser des fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: 1c7fba297996c8cf050eb23b34823debf87b4e88
-ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
+ms.openlocfilehash: 5dbe2f78f1d24c3d8c8214f4e604e66f097adba3
+ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "33527308"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33628031"
 ---
 # <a name="localize-custom-functions"></a>Localiser des fonctions personnalisées
 
-Pour faire fonctionner vos fonctions personnalisées dans le monde entier, localisez-les dans différentes langues. Pour localiser des fonctions personnalisées, vous devez fournir des noms de fonctions localisés dans le fichier JSON des fonctions et fournir des informations de paramètres régionaux dans le fichier manifeste XML. Les métadonnées générées automatiquement ne fonctionnent pas pour la localisation, c’est pourquoi vous devez mettre à jour le fichier JSON manuellement.
+Vous pouvez localiser votre complément et vos noms de fonctions personnalisées. Vous devez fournir des noms de fonctions localisées dans le fichier JSON des fonctions et fournir des informations de paramètres régionaux dans le fichier manifeste XML.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+>[!IMPORTANT]
+> Les métadonnées générées automatiquement ne fonctionnent pas pour la localisation, c’est pourquoi vous devez mettre à jour le fichier JSON manuellement.
 
 ## <a name="localize-function-names"></a>Noms des fonctions de localisation
 
-Pour localiser vos fonctions personnalisées, créez un nouveau fichier de métadonnées JSON pour chaque langue. Dans chaque fichier JSON de langue, `name` créez `description` et des propriétés dans la langue cible. Le fichier par défaut pour l’anglais est nommé **functions. JSON**. Il est recommandé d’utiliser les paramètres régionaux dans le nom de fichier de chaque fichier JSON supplémentaire, comme les **fonctions-de-JSON** pour les identifier. 
+Pour localiser vos fonctions personnalisées, créez un nouveau fichier de métadonnées JSON pour chaque langue. Dans chaque fichier JSON de langue, `name` créez `description` et des propriétés dans la langue cible. Le fichier par défaut pour l’anglais est nommé **functions. JSON**. Il est recommandé d’utiliser les paramètres régionaux dans le nom de fichier de chaque fichier JSON supplémentaire, comme les **fonctions-de-JSON** pour les identifier.
 
 Le `name` et `description` s’affichent dans Excel et sont localisés. Toutefois, la `id` de chaque fonction n’est pas localisée. La `id` propriété indique comment Excel identifie votre fonction comme étant unique et ne doit pas être modifiée une fois qu’elle a été définie.
 
@@ -91,13 +96,14 @@ Après avoir créé un fichier JSON pour chaque langue, vous devez mettre à jou
 </Resources>
 ```
 
-
 Pour plus d’informations sur le processus de localisation d’un complément, reportez-vous à la rubrique [Localization for Office Add-ins](../develop/localization.md#control-localization-from-the-manifest).
+
+## <a name="next-steps"></a>Étapes suivantes
+Découvrez [les conventions d’affectation de noms pour les fonctions personnalisées](custom-functions-naming.md) ou découvrir les [meilleures pratiques en matière de gestion des erreurs](custom-functions-errors.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
 * [Métadonnées fonctions personnalisées](custom-functions-json.md)
+* [Générer automatiquement des métadonnées JSON pour les fonctions personnalisées](custom-functions-json-autogeneration.md)
 * [Meilleures pratiques de fonctions personnalisées](custom-functions-best-practices.md)
-* [Fonctions personnalisées changelog](custom-functions-changelog.md)
-* [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md)
+* [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
