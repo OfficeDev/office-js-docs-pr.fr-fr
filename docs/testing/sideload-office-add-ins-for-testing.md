@@ -1,14 +1,14 @@
 ---
 title: Chargement de version test des compléments Office dans Office Online
 description: Tester votre complément Office dans Office Online par chargement de version test
-ms.date: 03/19/2019
+ms.date: 04/29/2019
 localization_priority: Priority
-ms.openlocfilehash: 8870e955ca30c4a3b35f2b51e0e16a3ee634960d
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 2bcab7b41fa7f5b9590aacc19645253ee822eeb8
+ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451428"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "33517085"
 ---
 # <a name="sideload-office-add-ins-in-office-online-for-testing"></a>Chargement de version test des compléments Office dans Office Online
 
@@ -25,28 +25,7 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
 
-## <a name="sideload-an-office-add-in-in-office-365"></a>Chargement de version test d’un complément Office dans Office 365
-
-
-1. Connectez-vous à votre compte Office 365.
-    
-2. Ouvrez le lanceur d’applications à l’extrémité gauche de la barre d’outils et sélectionnez **Excel**,  **Word** ou **PowerPoint**, puis créez un document.
-    
-3. Ouvrez l’onglet **Insérer** dans le ruban, puis dans la section **Compléments**, choisissez **Compléments Office**.
-    
-4. Dans la boîte de dialogue **Compléments Office**, sélectionnez l’onglet **MON ORGANISATION**, puis **Télécharger mon complément**.
-    
-    ![Boîte de dialogue intitulée Complément Office avec un lien dans le coin supérieur gauche indiquant « Charger mon complément ».](../images/office-add-ins.png)
-
-5.  **Accédez** au fichier manifeste du complément, puis sélectionnez **Télécharger**.
-    
-    ![Boîte de dialogue de chargement de complément avec des boutons pour parcourir, télécharger et annuler.](../images/upload-add-in.png)
-
-6. Verify that your complément is installed. For example, if it is an add-in command, it should appear on either the ribbon or the context menu. If it is a task pane add-in the pane should appear.
-    
-
 ## <a name="sideload-an-office-add-in-in-office-online"></a>Chargement de version test d’un complément Office dans Office Online
-
 
 1. Ouvrez [Microsoft Office Online](https://office.live.com/).
     
@@ -72,6 +51,16 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 > - Entrez « **about:flags** » dans la barre de recherche Edge pour afficher les options des Paramètres de développeur.  Activez l’option « **Autoriser le bouclage localhost** », puis redémarrez Edge.
 
 >    ![Option Autoriser le bouclage localhost de Edge avec la case à cocher activée.](../images/allow-localhost-loopback.png)
+
+
+## <a name="sideload-an-office-add-in-in-office-365"></a>Chargement de version test d’un complément Office dans Office 365
+
+1. Connectez-vous à votre compte Office 365.
+    
+2. Ouvrez le lanceur d’applications à l’extrémité gauche de la barre d’outils et sélectionnez **Excel**,  **Word** ou **PowerPoint**, puis créez un document.
+    
+3. Les étapes 3 à 6 sont identiques à celles de la section précédente, **Chargement d’une version de test d’un complément Office dans Office Online**.
+
 
 ## <a name="sideload-an-add-in-when-using-visual-studio"></a>Chargement d’une version test d’un complément lors de l’utilisation de Visual Studio
 
