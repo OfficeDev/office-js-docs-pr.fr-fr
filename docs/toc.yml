@@ -16,19 +16,19 @@
   items:
     - name: Créer un complément Excel
       items:
-        - name: Utilisation de l’angle
-          href: quickstarts/excel-quickstart-angular.md
-          displayName: Excel
-        - name: Utiliser jQuery
+        - name: Volet de tâches
           href: quickstarts/excel-quickstart-jquery.md
           displayName: Excel
-        - name: Utiliser REACT
+        - name: Volet Office (angulaire)
+          href: quickstarts/excel-quickstart-angular.md
+          displayName: Excel
+        - name: Volet Office (REACT)
           href: quickstarts/excel-quickstart-react.md
           displayName: Excel
-        - name: Utiliser vue
+        - name: Volet Office (vue)
           href: quickstarts/excel-quickstart-vue.md
           displayName: Excel
-        - name: Créer une fonction personnalisée
+        - name: Fonctions personnalisées
           href: quickstarts/excel-custom-functions-quickstart.md
           displayName: Excel
     - name: Créer un complément Word
@@ -64,6 +64,8 @@
   items:
     - name: Configuration requise pour exécuter des compléments
       href: concepts/requirements-for-running-office-add-ins.md
+    - name: Visionneuses Web utilisées par des compléments Office
+      href: concepts/web-viewers-used-by-office-web-add-ins.md
     - name: Meilleures pratiques en matière de développement de compléments
       href: concepts/add-in-development-best-practices.md
     - name: Cycle de vie du développement des compléments
@@ -223,17 +225,20 @@
             - name: Prise en main des compléments Excel
               href: excel/excel-add-ins-get-started-overview.md
               displayName: Excel
-            - name: Utilisation de l’angle
-              href: quickstarts/excel-quickstart-angular.md
-              displayName: Excel
-            - name: Utiliser jQuery
+            - name: Volet de tâches
               href: quickstarts/excel-quickstart-jquery.md
               displayName: Excel
-            - name: Utiliser REACT
+            - name: Volet Office (angulaire)
+              href: quickstarts/excel-quickstart-angular.md
+              displayName: Excel
+            - name: Volet Office (REACT)
               href: quickstarts/excel-quickstart-react.md
               displayName: Excel
-            - name: Utiliser vue
+            - name: Volet Office (vue)
               href: quickstarts/excel-quickstart-vue.md
+              displayName: Excel
+            - name: Fonctions personnalisées
+              href: quickstarts/excel-custom-functions-quickstart.md
               displayName: Excel
         - name: Didacticiel sur le complément Excel
           href: tutorials/excel-tutorial.md
@@ -264,32 +269,20 @@
                 - name: Vue d’ensemble
                   href: excel/custom-functions-overview.md
                   displayName: Excel
-                - name: Architecture
-                  href: excel/custom-functions-architecture.md
-                  displayName: Excel
                 - name: Démarrage rapide
                   href: quickstarts/excel-custom-functions-quickstart.md
                   displayName: Excel
                 - name: Didacticiel
                   href: tutorials/excel-tutorial-create-custom-functions.md
                   displayName: Excel
-                - name: Demandes Web
-                  href: excel/custom-functions-web-reqs.md
+                - name: Architecture
+                  href: excel/custom-functions-architecture.md
                   displayName: Excel
-                - name: Runtime
-                  href: excel/custom-functions-runtime.md
+                - name: Authentification
+                  href: excel/custom-functions-authentication.md
                   displayName: Excel
-                - name: Fonctions volatiles
-                  href: excel/custom-functions-volatile.md
-                  displayName: Excel
-                - name: Options des paramètres de fonctions personnalisées
-                  href: excel/custom-functions-parameter-options.md
-                  displayName: Excel
-                - name: Métadonnées
-                  href: excel/custom-functions-json.md
-                  displayName: Excel
-                - name: Génération de métadonnées
-                  href: excel/custom-functions-json-autogeneration.md
+                - name: Traitement par lots
+                  href: excel/custom-functions-batching.md
                   displayName: Excel
                 - name: Meilleures pratiques
                   href: excel/custom-functions-best-practices.md
@@ -297,35 +290,47 @@
                 - name: Débogage
                   href: excel/custom-functions-debugging.md
                   displayName: Excel
-                - name: Authentification
-                  href: excel/custom-functions-authentication.md
-                  displayName: Excel
                 - name: Dialog
                   href: excel/custom-functions-dialog.md
-                  displayName: Excel
-                - name: Journal des modifications
-                  href: excel/custom-functions-changelog.md
                   displayName: Excel
                 - name: Gestion des erreurs
                   href: excel/custom-functions-errors.md
                   displayName: Excel
-                - name: Configuration requise
-                  href: excel/custom-functions-requirements.md
-                  displayName: Excel
-                - name: Instructions d’affectation de noms
-                  href: excel/custom-functions-naming.md
+                - name: Identifier un XLL équivalent
+                  href: excel/make-custom-functions-compatible-with-xll-udf.md
                   displayName: Excel
                 - name: Localisation
                   href: excel/custom-functions-localize.md
                   displayName: Excel
-                - name: Identifier un XLL équivalent
-                  href: excel/make-custom-functions-compatible-with-xll-udf.md
+                - name: Métadonnées
+                  href: excel/custom-functions-json.md
                   displayName: Excel
-                - name: Traitement par lots
-                  href: excel/custom-functions-batching.md
+                - name: Génération de métadonnées
+                  href: excel/custom-functions-json-autogeneration.md
+                  displayName: Excel
+                - name: Instructions d’affectation de noms
+                  href: excel/custom-functions-naming.md
+                  displayName: Excel
+                - name: Options de paramètre
+                  href: excel/custom-functions-parameter-options.md
+                  displayName: Excel
+                - name: Configuration requise
+                  href: excel/custom-functions-requirements.md
+                  displayName: Excel
+                - name: Runtime
+                  href: excel/custom-functions-runtime.md
+                  displayName: Excel
+                - name: État d’enregistrement et de partage
+                  href: excel/custom-functions-save-state.md
                   displayName: Excel
                 - name: Résolution des problèmes
                   href: excel/custom-functions-troubleshooting.md
+                  displayName: Excel
+                - name: Fonctions volatiles
+                  href: excel/custom-functions-volatile.md
+                  displayName: Excel
+                - name: Demandes Web
+                  href: excel/custom-functions-web-reqs.md
                   displayName: Excel
             - name: Validation des données
               href: excel/excel-add-ins-data-validation.md
@@ -549,7 +554,7 @@
               items:
                 - name: Vue d’ensemble
                   href: reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md
-                - name: Bureau
+                - name: Office
                   href: reference/objectmodel/preview-requirement-set/office.md
                 - name: Office. Context
                   href: reference/objectmodel/preview-requirement-set/Office.context.md
@@ -567,7 +572,7 @@
               items:
                 - name: Vue d’ensemble
                   href: reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7.md
-                - name: Bureau
+                - name: Office
                   href: reference/objectmodel/requirement-set-1.7/office.md
                 - name: Office. Context
                   href: reference/objectmodel/requirement-set-1.7/Office.context.md
@@ -585,7 +590,7 @@
               items:
                 - name: Vue d’ensemble
                   href: reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md
-                - name: Bureau
+                - name: Office
                   href: reference/objectmodel/requirement-set-1.6/office.md
                 - name: Office. Context
                   href: reference/objectmodel/requirement-set-1.6/Office.context.md
@@ -603,7 +608,7 @@
               items:
                 - name: Vue d’ensemble
                   href: reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md
-                - name: Bureau
+                - name: Office
                   href: reference/objectmodel/requirement-set-1.5/office.md
                 - name: Office. Context
                   href: reference/objectmodel/requirement-set-1.5/Office.context.md
@@ -621,7 +626,7 @@
               items:
                 - name: Vue d’ensemble
                   href: reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md
-                - name: Bureau
+                - name: Office
                   href: reference/objectmodel/requirement-set-1.4/office.md
                 - name: Office. Context
                   href: reference/objectmodel/requirement-set-1.4/Office.context.md
@@ -639,7 +644,7 @@
               items:
                 - name: Vue d’ensemble
                   href: reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md
-                - name: Bureau
+                - name: Office
                   href: reference/objectmodel/requirement-set-1.3/office.md
                 - name: Office. Context
                   href: reference/objectmodel/requirement-set-1.3/Office.context.md
@@ -657,7 +662,7 @@
               items:
                 - name: Vue d’ensemble
                   href: reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md
-                - name: Bureau
+                - name: Office
                   href: reference/objectmodel/requirement-set-1.2/office.md
                 - name: Office. Context
                   href: reference/objectmodel/requirement-set-1.2/Office.context.md
@@ -675,7 +680,7 @@
               items:
                 - name: Vue d’ensemble
                   href: reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md
-                - name: Bureau
+                - name: Office
                   href: reference/objectmodel/requirement-set-1.1/office.md
                 - name: Office. Context
                   href: reference/objectmodel/requirement-set-1.1/Office.context.md
@@ -699,7 +704,7 @@
           href: /javascript/api/excel
         - name: Référence de l’API OneNote
           href: /javascript/api/onenote
-        - name: Référence de l’API Outlook
+        - name: Documentation de référence de l’API Outlook
           href: /javascript/api/outlook
         - name: Référence de l’API Visio
           href: /javascript/api/visio
