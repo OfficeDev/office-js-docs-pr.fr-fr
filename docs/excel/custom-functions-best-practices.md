@@ -1,14 +1,14 @@
 ---
-ms.date: 05/06/2019
+ms.date: 05/08/2019
 description: Découvrez les meilleures pratiques pour le développement des fonctions personnalisées dans Excel.
 title: Meilleures pratiques pour l’utilisation des fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: 7369faa463966dd309258bf431eae8719407be38
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: d825f5a9f14e240ca5af3c3325cb646248d99ca9
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628139"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952102"
 ---
 # <a name="custom-functions-best-practices"></a>Meilleures pratiques pour l’utilisation des fonctions personnalisées
 
@@ -99,7 +99,7 @@ L’exemple suivant montre les métadonnées JSON correspondant aux fonctions d�
 
 ## <a name="additional-considerations"></a>Considérations supplémentaires
 
-Évitez d’accéder directement ou indirectement au modèle DOM (Document Object Model) (par exemple, à l’aide de jQuery) à partir de votre fonction personnalisée. Sur Excel pour Windows, où les fonctions personnalisées utilisent l’[exécution JavaScript](custom-functions-runtime.md), les fonctions personnalisées ne peuvent pas accéder au DOM.
+Évitez d’accéder directement ou indirectement au modèle DOM (Document Object Model) (par exemple, à l’aide de jQuery) à partir de votre fonction personnalisée. Dans Excel sur Windows, où les fonctions personnalisées utilisent le [Runtime JavaScript](custom-functions-runtime.md), les fonctions personnalisées ne peuvent pas accéder au DOM.
 
 ## <a name="next-steps"></a>Étapes suivantes
 Découvrez comment [effectuer des requêtes Web avec des fonctions personnalisées](custom-functions-web-reqs.md).

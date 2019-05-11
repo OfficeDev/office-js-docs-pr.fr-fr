@@ -1,18 +1,18 @@
 ---
 title: Étendre des fonctions personnalisées avec des fonctions XLL définies par l’utilisateur
 description: Activer la compatibilité avec les fonctions Excel XLL définies par l’utilisateur qui offrent une fonctionnalité équivalente à vos fonctions personnalisées (aperçu)
-ms.date: 05/06/2019
+ms.date: 05/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 93e1b52606fca7ea6fbbb9ae3545e4edd7f78742
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: 3e1782c5df227d3e173f4291ba88f2057200b1c5
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628104"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33951885"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions-preview"></a>Étendre les fonctions personnalisées avec les fonctions XLL définies par l’utilisateur (aperçu)
 
-Si vous avez des XLL Excel existantes, vous pouvez créer des fonctions personnalisées équivalentes dans un complément Excel pour étendre les fonctionnalités de votre solution à d’autres plateformes, comme Online ou macOS. Toutefois, les compléments Excel ne disposent pas de toutes les fonctionnalités disponibles dans les XLL. En fonction de la fonctionnalité utilisée par votre solution, le XLL peut offrir une meilleure expérience que les fonctions personnalisées de complément Excel sur Excel pour Windows.
+Si vous avez des XLL Excel existantes, vous pouvez créer des fonctions personnalisées équivalentes dans un complément Excel pour étendre les fonctionnalités de votre solution à d’autres plateformes, comme Online ou macOS. Toutefois, les compléments Excel ne disposent pas de toutes les fonctionnalités disponibles dans les XLL. En fonction de la fonctionnalité utilisée par votre solution, le XLL peut offrir une meilleure expérience que les fonctions personnalisées de complément Excel dans Excel sur Windows.
 
 [!include[COM add-in and XLL UDF compatibility note](../includes/xll-compatibility-note.md)]
 

@@ -1,14 +1,14 @@
 ---
 title: Co-création dans des macros complémentaires Excel
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 774eee0c81f9fb99424070be0ee42860e44e46f5
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 281f981bd7248b68c60563f02746ba68d88617b8
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449287"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952046"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>Co-création dans des macros complémentaires Excel  
 
@@ -21,9 +21,9 @@ La co-création est disponible sur les plateformes suivantes :
 
 - Excel Online
 - Excel pour Android
-- Excel pour iOS
-- Excel Mobile pour Windows 10
-- Excel pour bureau Windows pour les clients Office 365 (bureau Windows version 16.0.8326.2076 ou ultérieure, disponible pour les clients à compter d’août 2017)
+- Excel pour iPad
+- Excel Mobile sur Windows 10
+- Excel sur les clients de bureau Windows pour Office 365 (Windows Desktop Build 16.0.8326.2076 ou version ultérieure, qui est disponible pour les clients du canal actuel à compter du 1er août 2017)
 
 ## <a name="coauthoring-overview"></a>Vue d’ensemble de la co-création
 

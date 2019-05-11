@@ -1,15 +1,15 @@
 ---
-ms.date: 05/02/2019
+ms.date: 05/08/2019
 description: Développement de fonctions personnalisées dans le Guide de démarrage rapide d’Excel.
 title: Démarrage rapide des fonctions personnalisées
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 8eb2630526ce939273024eebd533bd99fa5e94a1
-ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
+ms.openlocfilehash: 233e1b608eda4a696b14d833fe4e071b2fcffd67
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33619893"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952382"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Prise en main du développement de fonctions personnalisées Excel
 
@@ -19,7 +19,7 @@ Avec les fonctions personnalisées, les développeurs peuvent désormais ajouter
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel pour Windows (version 64 bits 1810 ou ultérieure) ou Excel Online
+* Excel sur Windows (64 bits version 1810 ou ultérieure) ou Excel Online
 
 * Rejoignez le[programme Office Insider](https://products.office.com/office-insider)(** niveau**Insider, anciennement appelé « Insider Fast »)
 
@@ -53,14 +53,14 @@ Pour commencer, vous utiliserez le Yeoman Générateur pour créer le projet de 
     npm run build
     ```
 
-4. Démarrez le serveur web local qui est exécuté dans Node.js. Vous pouvez tester le complément de fonction personnalisée dans Excel pour Windows ou Excel online. Vous serez peut-être invité à ouvrir le volet Office du complément, bien que ce soit facultatif. Vous pouvez toujours exécuter vos fonctions personnalisées sans ouvrir le volet Office de votre complément.
+4. Démarrez le serveur web local qui est exécuté dans Node.js. Vous pouvez essayer le complément de fonction personnalisée dans Excel sur Windows ou Excel online. Vous serez peut-être invité à ouvrir le volet Office du complément, bien que ce soit facultatif. Vous pouvez toujours exécuter vos fonctions personnalisées sans ouvrir le volet Office de votre complément.
 
 > [!NOTE]
 > Les compléments Office doivent utiliser le protocole HTTPs, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après l’avoir exécuté `npm run start:desktop`, acceptez l’invite pour installer le certificat fourni par le générateur Yeoman.
 
-# <a name="excel-for-windowstabexcel-windows"></a>[Excel pour Windows](#tab/excel-windows)
+# <a name="excel-on-windowstabexcel-windows"></a>[Excel sur Windows](#tab/excel-windows)
 
-Pour tester votre complément dans Excel pour Windows, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur Web local démarre et Excel s’ouvre avec votre complément chargé.
+Pour tester votre complément dans Excel sous Windows, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur Web local démarre et Excel s’ouvre avec votre complément chargé.
 
 ```command&nbsp;line
 npm run start:desktop

@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API de dialogue
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: ebbd10e65894a7d038e54ffbaac20c973adf4a9f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: f6f0b0184736bfd0f6b417198ade4c621d8d8b6b
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450085"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952200"
 ---
 # <a name="dialog-api-requirement-sets"></a>Ensembles de conditions requises de l’API de dialogue
 
@@ -17,7 +17,7 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 
 Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tableau suivant répertorie les ensembles de conditions requises de l’API de boîte de dialogue, les applications Office hôte qui prennent en charge ces conditions et les numéros de build ou de version de l’application Office.
 
-|  Ensemble de conditions requises  | Office 2013 pour Windows | Office 2016 ou version ultérieure pour Windows   | Office 365 pour Windows |  Office 365 pour iPad  |  Office 365 pour Mac  | Office Online  |  Office Online Server  |
+|  Ensemble de conditions requises  | Office 2013 sur Windows<br>(achat unique) | Office 2016 ou version ultérieure sur Windows<br>(achat unique)   | Office sur Windows<br>(connecté à Office 365) |  Office pour iPad<br>(connecté à Office 365)  |  Office pour Mac<br>(connecté à Office 365)  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | DialogApi 1.1  | Build 15.0.4855.1000 ou version ultérieure | Build 16.0.4390.1000 ou version ultérieure | Version 1602 (Build 6741.0000) ou version ultérieure | 1.22 ou version ultérieure | 15.20 ou version ultérieure| Janvier 2017 | Version 1608 (Build 7601.6800) ou version ultérieure|
 

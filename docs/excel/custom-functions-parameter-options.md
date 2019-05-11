@@ -1,21 +1,23 @@
 ---
-ms.date: 04/30/2019
+ms.date: 05/09/2019
 description: Découvrez comment utiliser différents paramètres dans vos fonctions personnalisées, telles que les plages Excel, les paramètres facultatifs, le contexte d’appel, et bien plus encore.
-title: Options pour les fonctions personnalisées Excel (aperçu)
+title: Options pour les fonctions personnalisées Excel
 localization_priority: Normal
-ms.openlocfilehash: b5dba59431f4c6ec4ee08c563e7cb3affeb06608
-ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
+ms.openlocfilehash: ba437f3a49ec3129b72f3396e85fcbd46af82cb7
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "33527306"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952074"
 ---
 # <a name="custom-functions-parameter-options"></a>Options des paramètres de fonctions personnalisées
 
-Les fonctions personnalisées peuvent être configurées avec de nombreuses options différentes pour les paramètres: 
+Les fonctions personnalisées peuvent être configurées avec de nombreuses options différentes pour les paramètres:
 - [Paramètres facultatifs](#custom-functions-optional-parameters)
 - [Paramètres de plage](#range-parameters)
 - [Paramètre de contexte d’invocation](#invocation-parameter)
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="custom-functions-optional-parameters"></a>Paramètres facultatifs de fonctions personnalisées
 
@@ -74,7 +76,7 @@ Par exemple, supposons que votre fonction renvoie la seconde valeur la plus éle
 /**
  * Returns the second highest value in a matrixed range of values.
  * @customfunction
- * @param {[][]} values Multiple ranges of values.  
+ * @param {number[][]} values Multiple ranges of values.  
  */
 function secondHighest(values){
   let highest = values[0][0], secondHighest = values[0][0];
@@ -118,10 +120,10 @@ Le paramètre vous permet d’obtenir le contexte de la cellule d’appel, ce qu
 
 ### <a name="addressing-cells-context-parameter"></a>Paramètre de contexte de la cellule d’adressage
 
-Dans certains cas, vous devez obtenir l’adresse de la cellule qui a appelé votre fonction personnalisée. Cela est utile dans les types de scénarios suivants:
+Dans certains cas, vous devez obtenir l’adresse de la cellule qui a appelé votre fonction personnalisée. Cela est utile dans les scénarios suivants:
 
-- Mise en forme des plages: utilisez l’adresse de la cellule comme clé pour stocker des informations dans [Office. Storage](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Utilisez ensuite [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) dans Excel pour charger la clé à partir de l’élément `Office.storage`.
-- Affichage de valeurs mises en cache : si votre fonction est utilisée en mode hors connexion, affichez les valeurs mises en cache à partir de l’élément `Office.storage` à l’aide de `onCalculated`.
+- Mise en forme des plages: utilisez l’adresse de la cellule comme clé pour stocker des informations dans [OfficeRuntime. Storage](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Utilisez ensuite [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) dans Excel pour charger la clé à partir de l’élément `OfficeRuntime.storage`.
+- Affichage de valeurs mises en cache : si votre fonction est utilisée en mode hors connexion, affichez les valeurs mises en cache à partir de l’élément `OfficeRuntime.storage` à l’aide de `onCalculated`.
 - Rapprochement : utilisez l’adresse de la cellule pour découvrir la cellule d’origine afin de vous aider à réaliser un rapprochement lors du traitement.
 
 Pour demander le contexte d’une cellule d’adressage dans une fonction, vous devez utiliser une fonction pour Rechercher l’adresse de la cellule, comme dans l’exemple suivant. Les informations relatives à l’adresse d’une cellule ne sont `@requiresAddress` exposées que si elles sont balisées dans les commentaires de la fonction.
@@ -143,10 +145,14 @@ CustomFunctions.associate("GETADDRESS", getAddress);
 
 Par défaut, les valeurs renvoyées par une fonction `getAddress` ont le format suivant : `SheetName!CellNumber`. Par exemple, si une fonction a été appelée à partir d’une feuille de calcul appelée Dépenses dans la cellule B2, la valeur renvoyée serait `Expenses!B2`.
 
+## <a name="next-steps"></a>Étapes suivantes
+Découvrez comment [enregistrer l’État dans vos fonctions personnalisées](custom-functions-save-state.md) ou utiliser des [valeurs volatiles dans vos fonctions personnalisées](custom-functions-volatile.md).
+
 ## <a name="see-also"></a>Voir aussi
 
-* [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
-* [Métadonnées fonctions personnalisées](custom-functions-json.md)
+* [Recevoir et gérer des données avec des fonctions personnalisées](custom-functions-web-reqs.md)
 * [Meilleures pratiques de fonctions personnalisées](custom-functions-best-practices.md)
-* [Fonctions personnalisées changelog](custom-functions-changelog.md)
+* [Métadonnées fonctions personnalisées](custom-functions-json.md)
+* [Générer automatiquement des métadonnées JSON pour les fonctions personnalisées](custom-functions-json-autogeneration.md)
+* [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
 * [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md)
