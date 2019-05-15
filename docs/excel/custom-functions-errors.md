@@ -1,14 +1,14 @@
 ---
-ms.date: 02/08/2019
+ms.date: 05/03/2019
 description: Gérez les erreurs dans vos fonctions personnalisées Excel.
-title: Gestion des erreurs pour des fonctions personnalisées dans Excel (aperçu)
+title: Gestion des erreurs liées aux fonctions personnalisées dans Excel
 localization_priority: Priority
-ms.openlocfilehash: 6c1c7f780aea125977510e4eb0e320933cd6ed9c
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 188ece6c77bc2cafad6f22448fb698e0c0370ef8
+ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448321"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33628157"
 ---
 # <a name="error-handling-within-custom-functions"></a>Gestion des erreurs dans des fonctions personnalisées
 
@@ -19,6 +19,11 @@ Lorsque vous créez un complément à l’aide des fonctions personnalisées, ve
 Dans l’exemple de code suivant, `.catch` gère les erreurs qui se produisent précédemment dans le code.
 
 ```js
+/**
+ * Gets a comment from the hypothetical contoso.com/comments API.
+ * @customfunction
+ * @param {number} commentID ID of a comment.
+ */
 function getComment(commentID) {
   let url = "https://www.contoso.com/comments/" + x;
 
@@ -35,10 +40,11 @@ function getComment(commentID) {
 }
 ```
 
+## <a name="next-steps"></a>Étapes suivantes
+Découvrez comment [résoudre les problèmes liés à vos fonctions personnalisées](custom-functions-troubleshooting.md).
+
 ## <a name="see-also"></a>Voir aussi
 
-* [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md)
-* [Métadonnées fonctions personnalisées](custom-functions-json.md)
-* [Exécution de fonctions personnalisées Excel](custom-functions-runtime.md)
-* [Meilleures pratiques de fonctions personnalisées](custom-functions-best-practices.md)
-* [Fonctions personnalisées changelog](custom-functions-changelog.md)
+* [Débogage des fonctions personnalisées](custom-functions-debugging.md)
+* [Configuration requise de fonctions personnalisées](custom-functions-requirements.md)
+* [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)

@@ -1,34 +1,28 @@
 ---
-title: Développement d’un complément Excel à l’aide de Vue
+title: Créer un complément de volet de tâches Excel à l’aide de Vue
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/02/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: b3c65d2594e2d260f3e332fd20cdee2e56b02fcf
-ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
+ms.openlocfilehash: 228301b9711f4ac33fb5435e66cfcd0254041e19
+ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "33517050"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33619584"
 ---
-# <a name="build-an-excel-add-in-using-vue"></a>Développement d’un complément Excel à l’aide de Vue
+# <a name="build-an-excel-task-pane-add-in-using-vue"></a>Créer un complément de volet de tâches Excel à l’aide de Vue
 
-Cet article décrit le processus de création d’un complément Excel à l’aide de Vue et de l’API JavaScript pour Excel.
+Cet article décrit le processus de création d’un complément de volet de tâches Excel à l’aide de Vue et de l’API JavaScript pour Excel.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-- [Node.js](https://nodejs.org)
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 - Installez l’[interface de ligne de commande Vue](https://github.com/vuejs/vue-cli) globalement.
 
     ```command&nbsp;line
     npm install -g vue-cli
-    ```
-
-- Installez la dernière version de [Yeoman](https://github.com/yeoman/yo) et le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) globalement.
-
-    ```command&nbsp;line
-    npm install -g yo generator-office
     ```
 
 ## <a name="generate-a-new-vue-app"></a>Génération d’une nouvelle application Vue
@@ -63,11 +57,11 @@ Chaque complément nécessite un fichier manifeste pour définir ses paramètres
     yo office
     ```
 
-    - **Sélectionnez un type de projet :** `Office Add-in containing the manifest only`
-    - **Comment souhaitez-vous nommer votre complément ? :** `My Office Add-in`
-    - **Quelle application client Office voulez-vous prendre en charge ? :**`Excel`
+    - **Sélectionnez un type de projet :** `Office Add-in project containing the manifest only`
+    - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
+    - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
 
-    ![Générateur Yeoman](../images/yo-office.png)
+    ![Générateur Yeoman](../images/yo-office-manifest-only-vue.png)
 
     Une fois l’Assistant exécuté, le générateur crée le fichier manifeste.
 
@@ -214,7 +208,7 @@ Pour activer HTTPS pour votre application, ouvrez le fichier **package.json** da
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations, vous avez créé un complément Excel à l’aide de Vue ! Découvrez à présent les fonctionnalités des compléments Excel et créez un complément plus complexe en continuant le didacticiel sur le complément Excel.
+Félicitations, vous avez créé un complément de volet de tâches Excel à l’aide de Vue ! Ensuite, découvrez les fonctionnalités d’un complément Excel et créez-en un plus complexe en suivant le didacticiel sur les compléments Excel.
 
 > [!div class="nextstepaction"]
 > [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial.md)

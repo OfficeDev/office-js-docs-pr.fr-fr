@@ -1,18 +1,20 @@
 ---
-ms.date: 04/25/2019
+ms.date: 05/03/2019
 description: Utiliser les balises JSDOC pour créer dynamiquement vos fonctions personnalisées de métadonnées JSON.
-title: Créer les métadonnées JSON pour des fonctions personnalisées (aperçu)
+title: Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 localization_priority: Priority
-ms.openlocfilehash: f13c9b2ff0adfd1bda493433761dc74cb9ea37dc
-ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
+ms.openlocfilehash: df1c0114597e2aa98a15db48c515469fb9db6cd9
+ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "33353271"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33628087"
 ---
-# <a name="create-json-metadata-for-custom-functions-preview"></a>Créer les métadonnées JSON pour des fonctions personnalisées (aperçu)
+# <a name="autogenerate-json-metadata-for-custom-functions"></a>Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 
 Si vous écrivez une fonction Excel personnalisée en JavaScript ou TypeScript, vous pouvez utiliser les balises JSDoc pour la détailler en ajoutant des informations supplémentaires. Les balises JSDoc sont ensuite utilisées lors de la génération pour créer le [fichier de métadonnées JSON](custom-functions-json.md). En utilisant des balises JSDoc, vous n’avez plus besoin de modifier manuellement le fichier de métadonnées JSON.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 Ajoutez la balise `@customfunction` dans les commentaires du code d’une fonction JavaScript ou TypeScript pour indiquer qu’il s’agit d’une fonction personnalisée.
 
@@ -109,7 +111,7 @@ Pour désigner un paramètre de fonction personnalisée comme étant facultatif,
 * Utilisez un paramètre facultatif. Par exemple : `function f(text?: string)`
 * Définissez ce paramètre sur une valeur par défaut. Par exemple : `function f(text: string = "abc")`
 
-Pour consulter une description détaillée du @param, reportez-vous à la page suivante : [JSDoc](http://usejsdoc.org/tags-param.html)
+Pour consulter une description détaillée du @param, reportez-vous à la page suivante : [JSDoc](https://usejsdoc.org/tags-param.html)
 
 > [!NOTE]
 > La valeur par défaut pour les paramètres facultatifs est `null`.
@@ -183,11 +185,11 @@ Une fonction peut renvoyer un objet Promise (pour « promesse »). Ce dernier 
 
 Tout autre type sera traité comme une erreur.
 
+## <a name="next-steps"></a>Étapes suivantes
+Découvrez les [conventions d’affectation des noms des fonctions personnalisées](custom-functions-naming.md). Découvrez également comment [localiser vos fonctions](custom-functions-localize.md), ce qui implique que vous [écriviez votre fichier JSON à la main](custom-functions-json.md).
+
 ## <a name="see-also"></a>Voir aussi
 
 * [Métadonnées fonctions personnalisées](custom-functions-json.md)
-* [Exécution de fonctions personnalisées Excel](custom-functions-runtime.md)
 * [Meilleures pratiques de fonctions personnalisées](custom-functions-best-practices.md)
-* [Fonctions personnalisées changelog](custom-functions-changelog.md)
-* [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md)
-* [Débogage des fonctions personnalisées](custom-functions-debugging.md)
+* [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)

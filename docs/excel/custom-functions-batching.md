@@ -1,22 +1,26 @@
 ---
-ms.date: 04/22/2019
+ms.date: 05/03/2019
 description: Traitez ensemble les fonctions personnalisées pour réduire les appels réseau à un service à distance.
 title: Le traitement par lots de fonctions personnalisées nécessite un service à distance
 localization_priority: Priority
-ms.openlocfilehash: 2e31d6aa212e27967448f07fdcb2bd024a7511f9
-ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
+ms.openlocfilehash: da9f3ee3243b52df5d49f32c8ab6cbada97e17ca
+ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "33356866"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33628129"
 ---
 # <a name="batching-custom-function-calls-for-a-remote-service"></a>Le traitement par lots de fonctions personnalisées nécessite un service à distance
 
-Si vos fonctions personnalisées appellent un service à distance, vous pouvez utiliser un modèle le traitement par lots pour réduire le nombre d’appels réseau au service à distance. Pour réduire les boucles réseau, traitez par lots tous les appels en un seul appel du service web. Cette procédure est idéale lorsque la feuille de calcul est recalculée. Par exemple, si une personne a utilisé votre fonction personnalisée dans 100 cellules d’une feuille de calcul et a ensuite recalculé la feuille de calcul, votre fonction personnalisée s’exécute 100 fois et effectue 100 appels réseau. Si vous utilisez un modèle de traitement par lots, les appels peuvent être combinés pour rassembler l’ensemble des 100 calculs en un seul appel réseau.
+Si vos fonctions personnalisées appellent un service à distance, vous pouvez utiliser un modèle le traitement par lots pour réduire le nombre d’appels réseau au service à distance. Pour réduire les boucles réseau, traitez par lots tous les appels en un seul appel du service web. Cette procédure est idéale lorsque la feuille de calcul est recalculée.
+
+Par exemple, si une personne a utilisé votre fonction personnalisée dans 100 cellules d’une feuille de calcul et a ensuite recalculé la feuille de calcul, votre fonction personnalisée s’exécute 100 fois et effectue 100 appels réseau. Si vous utilisez un modèle de traitement par lots, les appels peuvent être combinés pour rassembler l’ensemble des 100 calculs en un seul appel réseau.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="view-the-completed-sample"></a>Afficher l’exemple terminé
 
-Vous pouvez suivre cet article et coller les exemples de code dans votre propre projet. Par exemple, vous pouvez utiliser votre bureau pour créer un projet de fonction personnalisée pour TypeScript, puis ajouter l’ensemble du code de cet article au projet. Vous pouvez exécuter le code, puis le tester.
+Vous pouvez suivre cet article et coller les exemples de code dans votre propre projet. Par exemple, vous pouvez utiliser le [générateur Yo Office](https://github.com/OfficeDev/generator-office)pour créer un projet de fonction personnalisée pour TypeScript, puis ajouter l’ensemble du code de cet article au projet. Vous pouvez alors exécuter le code, puis le tester.
 
 Vous pouvez également télécharger ou afficher l’exemple de projet complet dans [Modèle de traitement par lots de fonction personnalisée](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/Batching). Si vous voulez afficher l’ensemble du code avant de poursuivre la lecture, examinez le [fichier de script](https://github.com/OfficeDev/PnP-OfficeAddins/blob/master/Excel-custom-functions/Batching/src/functions/functions.ts).
 
@@ -28,7 +32,7 @@ Pour configurer le traitement par lots pour vos fonctions personnalisées, vous 
 2. Une fonction pour créer la demande à distance lorsque le traitement par lots est prêt.
 3. Du code serveur pour répondre à la demande de traitement par lots, calculer tous les résultats de l’opération et retourner les valeurs.
 
-Les sections suivantes vous montrent comment construire le premier exemple de code pas à pas. Vous ajoutez chaque exemple de code à votre fichier functions.ts. Il est recommandé de créer un projet de fonctions personnalisées à l’aide de votre bureau. Pour créer un projet, consultez [Prise en main du développement de fonctions personnalisées Excel](../quickstarts/excel-custom-functions-quickstart.md) et utilisez TypeScript au lieu de JavaScript.
+Les sections suivantes vous montrent comment construire le premier exemple de code pas à pas. Vous ajoutez chaque exemple de code à votre fichier **functions.ts**. Il est recommandé de créer un projet de fonctions personnalisées à l’aide du générateur Yo Office. Pour créer un projet, consultez [Prise en main du développement de fonctions personnalisées Excel](../quickstarts/excel-custom-functions-quickstart.md) et utilisez TypeScript au lieu de JavaScript.
 
 ## <a name="batch-each-call-to-your-custom-function"></a>Traiter par lots chaque appel de votre fonction personnalisée
 
@@ -67,7 +71,7 @@ interface IBatchEntry {
 }
 ```
 
-Ensuite, créez le tableau de traitement par lots qui utilise l’interface précédente. Pour suivre si un traitement par lots est prévu ou non, créez une variable `_isBatchedRequestSchedule.  Cette opération s’avère importante pour plus tard pour minuter les appels au service à distance.
+Ensuite, créez le tableau de traitement par lots qui utilise l’interface précédente. Pour savoir si un traitement par lots est prévu ou non, créez une variable `_isBatchedRequestSchedule`. Cette opération s’avère importante pour plus tard pour minuter les appels au service à distance.
 
 ```typescript
 const _batch: IBatchEntry[] = [];
@@ -114,7 +118,7 @@ function _pushOperation(op: string, args: any[]) {
 
 ## <a name="make-the-remote-request"></a>Créer la demande à distance
 
-L’objectif de la fonction `_makeRemoteRequest` consiste à transmettre le traitement par lots d’opérations au service à distance, puis de renvoyer les résultats à chaque fonction personnalisée. Elle crée tout d’abord une copie du tableau de traitement par lots. Cela permet aux appels simultanés de fonctions personnalisées à partir d’Excel de commencer immédiatement le traitement par lots dans un nouveau tableau. La copie est ensuite transformée en un tableau plus simple qui ne contient pas les informations sur la promesse. Transmettre les promesses à un service à distance n’aurait aucun sens, car elles ne fonctionneraient pas. `_makeRemoteRequest rejette ou résout chaque promesse en fonction de ce que le service à distance renvoie.
+L’objectif de la fonction `_makeRemoteRequest` consiste à transmettre le traitement par lots d’opérations au service à distance, puis de renvoyer les résultats à chaque fonction personnalisée. Elle crée tout d’abord une copie du tableau de traitement par lots. Cela permet aux appels simultanés de fonctions personnalisées à partir d’Excel de commencer immédiatement le traitement par lots dans un nouveau tableau. La copie est ensuite transformée en un tableau plus simple qui ne contient pas les informations sur la promesse. Transmettre les promesses à un service à distance n’aurait aucun sens, car elles ne fonctionneraient pas. `_makeRemoteRequest` rejette ou résout chaque promesse en fonction de ce que le service à distance renvoie.
 
 ### <a name="add-the-following-makeremoterequest-method-to-functionsts"></a>Ajouter la méthode `_makeRemoteRequest` suivante à functions.ts
 
@@ -157,7 +161,7 @@ La fonction `_makeRemoteRequest` appelle `_fetchFromRemoteService` qui, comme vo
 
 ## <a name="process-the-batch-call-on-the-remote-service"></a>Traiter l’appel de traitement par lots sur le service à distance
 
-La dernière étape consiste à gérer l’appel de traitement par lots dans le service à distance. L’exemple de code suivant affiche la fonction `_fetchFromRemoteService`. Cette fonction décompresse chaque opération, effectue l’opération spécifiée et renvoie les résultats. À des fins d’apprentissage dans cet article, la fonction `_fetchFromRemoteService` est conçue de manière à s’exécuter dans votre complément web et à imiter un service à distance. Vous pouvez ajouter ce code à votre fichier functions.ts afin de pouvoir étudier et exécuter l’ensemble du code de cet article sans devoir configurer de service à distance réel.
+La dernière étape consiste à gérer l’appel de traitement par lots dans le service à distance. L’exemple de code suivant affiche la fonction `_fetchFromRemoteService`. Cette fonction décompresse chaque opération, effectue l’opération spécifiée et renvoie les résultats. À des fins d’apprentissage dans cet article, la fonction `_fetchFromRemoteService` est conçue de manière à s’exécuter dans votre complément web et à imiter un service à distance. Vous pouvez ajouter ce code à votre fichier **functions.ts** afin d’examiner et d’exécuter l’ensemble du code de cet article sans devoir configurer de service à distance réel.
 
 ### <a name="add-the-following-fetchfromremoteservice-function-to-functionsts"></a>Ajouter la fonction `_fetchFromRemoteService` suivante à functions.ts
 
@@ -213,9 +217,12 @@ Pour modifier la fonction `_fetchFromRemoteService` de manière à l’exécuter
 - Appliquez un mécanisme d’authentification approprié. Veillez à ce que seuls les appelants corrects puissent accéder à la fonction.
 - Placez le code dans le service à distance.
 
+## <a name="next-steps"></a>Étapes suivantes
+Découvrez [les différents paramètres](custom-functions-parameter-options.md) que vous pouvez utiliser dans vos fonctions personnalisées. Ou parcourez les concepts de base d’un [appel web via une fonction personnalisée](custom-functions-web-reqs.md).
+
 ## <a name="see-also"></a>Voir aussi
 
-* [Meilleures pratiques de fonctions personnalisées](custom-functions-best-practices.md)
-* [Métadonnées fonctions personnalisées](custom-functions-json.md)
-* [Fonctions personnalisées changelog](custom-functions-changelog.md)
+* [Valeurs volatiles dans les fonctions](custom-functions-volatile.md)
+* [Meilleures pratiques pour l’utilisation des fonctions personnalisées](custom-functions-best-practices.md)
+* [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
 * [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md)
