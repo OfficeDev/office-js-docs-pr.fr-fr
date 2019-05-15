@@ -359,7 +359,7 @@
             - name: Formes
               href: excel/excel-add-ins-shapes.md
               displayName: Excel
-            - name: Tableaux
+            - name: Tables
               href: excel/excel-add-ins-tables.md
               displayName: Excel
             - name: Classeurs
@@ -478,7 +478,7 @@
               href: testing/attach-debugger-from-task-pane.md
             - name: Débogage à l’aide des outils de développement F12
               href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
-        - name: Office Online
+        - name: "Office\_Online"
           items:
             - name: "Chargement de version test des compléments\_Office dans Office\_Online"
               href: testing/sideload-office-add-ins-for-testing.md
@@ -711,7 +711,9 @@
         - name: Référence de l’API Word
           href: /javascript/api/word
     - name: Spécifications d’ouverture d’API
-      href: reference/openspec.md
+      items:
+        - name: Vue d’ensemble
+          href: reference/openspec/openspec.md
     - name: Codes d’erreur
       href: reference/javascript-api-for-office-error-codes.md
     - name: Référence de manifeste de complément Office
