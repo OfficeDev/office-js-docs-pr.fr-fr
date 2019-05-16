@@ -3,12 +3,12 @@ title: Visionneuses web utilisées par les compléments Office
 description: ''
 ms.date: 05/03/2019
 localization_priority: Priority
-ms.openlocfilehash: 632f62cbc02917d9e28ab260f3710498156194db
-ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
+ms.openlocfilehash: 6cb0d6e97dd559727b6a1e140d8417e1146e479a
+ms.sourcegitcommit: 944cbb5c6ce055f6db1833182b24d490d1dce01d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33630404"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "33992125"
 ---
 # <a name="web-viewers-used-by-office-add-ins"></a>Visionneuses web utilisées par les compléments Office
 
@@ -30,12 +30,12 @@ Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes e
 |Windows/Office 2013 sans abonnement ou version ultérieure|Internet Explorer 11|
 |Windows 10 version < 1903/Office 365|Internet Explorer 11|
 |Windows 10 version >= 1903/Office 365 version < 16.0.11629|Internet Explorer 11|
-|Windows 10 version >= 1903/Office 365 version >= 16.0.11629|Edge\*|
+|Windows 10 version >= 1903/Office 365 version >= 16.0.11629|Microsoft Edge\*|
 
-\*Si Edge est utilisé, le Narrateur Windows 10 (parfois appelé « lecteur d’écran ») lit la balise `<title>` de la page qui s’ouvre dans le volet Office. Si Internet Explorer 11 est utilisé, le Narrateur lit la barre de titre du volet Office, qui provient de la valeur `<DisplayName>` du manifeste du complément.
+\*Si Microsoft Edge est utilisé, le Narrateur Windows 10 (parfois appelé « lecteur d’écran ») lit la balise `<title>` de la page qui s’ouvre dans le volet Office. Si Internet Explorer 11 est utilisé, le Narrateur lit la barre de titre du volet Office, qui provient de la valeur `<DisplayName>` du manifeste du complément.
 
 > [!IMPORTANT]
-> Internet Explorer 11 ne prend pas en charge les versions de JavaScript ultérieures à la version ES5. Si un des utilisateurs de votre complément dispose d’une plateforme utilisant Internet Explorer 11, vous devez transpiler JavaScript vers la version ES5 ou utiliser un polyfill pour lui permettre d’utiliser la syntaxe et les fonctionnalités d’ECMAScript 2015 ou version ultérieure. Par ailleurs, Internet Explorer 11 ne prend pas en charge certaines fonctionnalités HTML 5 telles que les éléments multimédias, l’enregistrement et l’emplacement.
+> Internet Explorer 11 ne prend pas en charge les versions de JavaScript ultérieures à la version ES5. Si un des utilisateurs de votre complément dispose d’une plateforme utilisant Internet Explorer 11, vous devez transpiler JavaScript vers la version ES5 ou utiliser un polyfill pour lui permettre d’utiliser la syntaxe et les fonctionnalités d’ECMAScript 2015 ou version ultérieure. Par ailleurs, Internet Explorer 11 ne prend pas en charge certaines fonctionnalités HTML5 telles que les éléments multimédias, l’enregistrement et l’emplacement.
 
 > [!NOTE]
 > En attendant leur mise à la disposition générale, vous devez participer au programme Windows Insider pour obtenir Windows 1903 ou version ultérieure, ainsi qu’au programme Office Insider pour obtenir la version 16.0.11629 ou ultérieure.

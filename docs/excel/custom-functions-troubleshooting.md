@@ -1,14 +1,14 @@
 ---
-ms.date: 05/03/2019
+ms.date: 05/08/2019
 description: Résoudre des problèmes courants dans les fonctions personnalisées d’Excel.
 title: Résoudre des problèmes de fonctions personnalisées
 localization_priority: Priority
-ms.openlocfilehash: 04da6d58c2610130961a1b89d2b9a1101b54bcb2
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: 999b1fb9b89050ab5c6bcf87e1aac9d2fce13702
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628010"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952053"
 ---
 # <a name="troubleshoot-custom-functions"></a>Résoudre des problèmes de fonctions personnalisées
 
@@ -80,7 +80,7 @@ Si vous rencontrez des problèmes non abordés ici, faites-le nous savoir. Il ex
 
 ### <a name="in-excel-on-windows-or-mac"></a>Dans Excel sur Windows ou Mac
 
-Si vous utilisez Excel pour Windows ou Mac, vous pouvez adresser un commentaire à l’équipe chargée de l’extensibilité d’Office directement à partir d’Excel. Pour ce faire, sélectionnez **Fichier -> Commentaires -> Envoyer un smiley mécontent**. Envoyer un smiley mécontent fournira les journaux nécessaires pour comprendre le problème que vous rencontrez.
+Si vous utilisez Excel sur Windows ou Mac, vous pouvez adresser un commentaire à l’équipe chargée de l’extensibilité d’Office directement à partir d’Excel. Pour ce faire, sélectionnez **Fichier -> Commentaires -> Envoyer un smiley mécontent**. Envoyer un smiley mécontent fournira les journaux nécessaires pour comprendre le problème que vous rencontrez.
 
 ### <a name="in-github"></a>Dans Github
 

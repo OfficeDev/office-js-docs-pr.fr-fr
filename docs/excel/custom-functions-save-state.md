@@ -1,18 +1,18 @@
 ---
-ms.date: 05/03/2019
+ms.date: 05/08/2019
 description: Utilisez `OfficeRuntime.storage` pour enregistrer l’état des fonctions personnalisées.
 title: Enregistrer et partager l’état des fonctions personnalisées
 localization_priority: Priority
-ms.openlocfilehash: e7229637705425198d3905c1ff4102022fb99f1e
-ms.sourcegitcommit: 95cf577178c1c88ebbffa77367634658eb7fe925
+ms.openlocfilehash: b1472b0623d15882dabff16f8be3f74756e3b3de
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33643826"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33951969"
 ---
 ## <a name="save-and-share-state-in-custom-functions"></a>Enregistrer et partager l’état des fonctions personnalisées
 
-Utilisez l’objet `OfficeRuntime.storage` pour enregistrer l’état lié aux fonctions personnalisées ou au volet Office dans votre complément. L’espace de stockage est limité à 10 Mo par domaine (avec possibilité de partage entre plusieurs compléments). Dans Excel pour Windows, l’objet `storage` correspond à un emplacement dans l’exécution de fonctions personnalisées, mais pour Excel Online et Excel pour Mac, l’objet `storage` est le même que l’objet `localStorage` du navigateur.
+Utilisez l’objet `OfficeRuntime.storage` pour enregistrer l’état lié aux fonctions personnalisées ou au volet Office dans votre complément. L’espace de stockage est limité à 10 Mo par domaine (avec possibilité de partage entre plusieurs compléments). Dans Excel sur Windows, l’objet `storage` correspond à un emplacement dans l’exécution de fonctions personnalisées, mais pour Excel Online et Excel pour Mac, l’objet `storage` est le même que l’objet `localStorage` du navigateur.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
