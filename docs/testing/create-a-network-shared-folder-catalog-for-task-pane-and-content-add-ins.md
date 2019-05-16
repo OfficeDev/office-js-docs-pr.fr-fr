@@ -3,32 +3,29 @@ title: Chargement de compléments Office pour des tests
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 79d1bfc9332208e59e750e94a14abd6f1192ebe6
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 24c7719969ddc59d8bb6e525af804515331a51ad
+ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450195"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33619043"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>Chargement de compléments Office pour des tests
 
 Vous pouvez installer un complément Office à des fins de test dans un client Office s’exécutant sur Windows à l’aide d’un catalogue de dossiers partagés pour publier le manifeste sur un partage de fichiers réseau.
 
 > [!NOTE]
-> Si votre projet de complément a été créé avec l’outil [**yo office** ](https://github.com/OfficeDev/generator-office), il existe une autre méthode de chargement de version test pouvant vous convenir. Pour plus de détails, reportez-vous à [Chargement de versions test de compléments Office à l’aide de la commande sideload](sideload-office-addin-using-sideload-command.md).
+> Si votre projet de complément a été créé avec le [générateur Yeoman pour compléments Office](https://github.com/OfficeDev/generator-office), il existe une autre méthode de chargement indépendant pouvant vous convenir. Pour plus de détails, reportez-vous à [Chargement de versions test de compléments Office à l’aide de la commande sideload](sideload-office-addin-using-sideload-command.md).
 
-Cet article s’applique uniquement aux tests de compléments Word, Excel ou PowerPoint sur Windows. Si vous souhaitez tester sur une autre plateforme ou tester un complément Outlook, consultez une des rubriques suivantes pour charger une version de votre complément :
+Cet article s’applique uniquement aux tests de compléments Word, Excel, PowerPoint ou Project sur Windows. Si vous souhaitez tester sur une autre plateforme ou tester un complément Outlook, consultez une des rubriques suivantes pour charger une version de votre complément :
 
 - [Chargement de version test des compléments Office dans Office Online pour les tester](sideload-office-add-ins-for-testing.md)
 - [Chargement de version test des compléments Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
 - [Chargement de version test des compléments Outlook pour les tester](/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 
-
 La vidéo suivante présente la procédure de chargement de version test de votre complément dans la version de bureau Office ou Office Online à l’aide d’un catalogue de dossiers partagés.  
 
-
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
-
 
 ## <a name="share-a-folder"></a>Partager un dossier
 
@@ -50,7 +47,7 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 
 ## <a name="specify-the-shared-folder-as-a-trusted-catalog"></a>Spécifier le dossier partagé en tant que catalogue approuvé
       
-1. Ouvrez un nouveau document dans Excel, Word ou PowerPoint.
+1. Ouvrez un nouveau document dans Excel, Word, PowerPoint ou Project.
     
 2. Choisissez l’onglet **Fichier**, puis choisissez **Options**.
     
@@ -81,12 +78,11 @@ La vidéo suivante présente la procédure de chargement de version test de votr
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-2. Dans Excel, Word ou PowerPoint, sélectionnez **Mes compléments** dans l’onglet **Insérer** du ruban.
+2. Dans Excel, Word ou PowerPoint, sélectionnez **Mes compléments** dans l’onglet **Insérer** du ruban. Dans Project, sélectionnez **Mes compléments** sous l’onglet **Project** du ruban. 
 
 3. Choisissez **DOSSIER PARTAGÉ** dans la boîte de dialogue **Compléments Office**.
 
 4. Sélectionnez le nom du complément, puis choisissez **OK** pour insérer le complément.
-
 
 ## <a name="see-also"></a>Voir aussi
 
