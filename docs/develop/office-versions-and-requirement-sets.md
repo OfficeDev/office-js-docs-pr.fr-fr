@@ -1,14 +1,14 @@
 ---
 title: Versions d’Office et ensembles de conditions requises
 description: ''
-ms.date: 04/19/2019
+ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: e1047501cdac8dc88ab9f7778b846e171ee02d44
-ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
+ms.openlocfilehash: 6d0952c32c08c9a4a3e9b07ee8bbcf209084c3d0
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "33440037"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952116"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Versions d’Office et ensembles de conditions requises
 
@@ -26,7 +26,6 @@ Pour identifier la version d’Office que vous utilisez, à partir d’une appli
 
 ![Vérification de votre version d’Office](../images/office-version-number-ui.jpg)
 
-
 ## <a name="office-requirement-sets-availability"></a>Disponibilité des ensembles de conditions requises Office
 
 Les compléments Office peuvent utiliser des ensembles de conditions requises d’API pour déterminer si l’hôte Office prend en charge les membres d’API nécessaires. La prise en charge des ensembles de conditions requises varie selon l’hôte Office et la version de ce dernier (voir la section précédente).
@@ -37,7 +36,7 @@ Par ailleurs, d’autres fonctionnalités telles que les commandes de complémen
 
 Un complément peut utiliser uniquement des API dans les ensembles de conditions requises qui sont prises en charge par la version de l’hôte Office sur lequel le complément est exécuté. Pour savoir exactement quels ensembles de conditions requises sont disponibles pour une version spécifique de l’hôte Office, reportez-vous aux articles suivants sur les ensembles de conditions requises propres aux hôtes :
 
-- [Ensembles de conditions requises de l’API JavaScript pour Excel](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) (ExcelApi)
+- [Ensembles de conditions requises de l’API JavaScript pour Excel](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) (ExcelApi, [CustomFunctionsRuntime](../excel/custom-functions-architecture.md))
 - [Ensembles de conditions requises de l’API JavaScript pour Word](/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets) (WordApi)
 - [Ensembles de conditions requises de l’API JavaScript pour OneNote](/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets) (OneNoteApi)
 - [Présentation de l’ensemble de conditions requises pour les API Outlook](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) (Mailbox)

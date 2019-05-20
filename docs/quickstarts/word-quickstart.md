@@ -1,21 +1,21 @@
 ---
-title: Créer votre premier complément Word
+title: Créer votre premier complément du volet des tâches de Word
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 9da974ff604570367771c98e47d549ecc70eee7b
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: f0fda0c7dcdebdc1fd1b6daf4e35c1794a56e950
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451122"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952263"
 ---
-# <a name="build-your-first-word-add-in"></a>Créer votre premier complément Word
+# <a name="build-your-first-word-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Word
 
 _S’applique à : Word 2016 ou version ultérieure pour Windows, Word pour iPad, Word pour Mac_
 
-Cet article décrit le processus de création d’un complément Word à l’aide de jQuery et de l’API JavaScript pour Word.
+Cet article décrit comment créer un complément du volet des tâches de Word.
 
 ## <a name="create-the-add-in"></a>Créer le complément
 
@@ -237,244 +237,69 @@ Cet article décrit le processus de création d’un complément Word à l’aid
 
 ### <a name="prerequisites"></a>Conditions préalables
 
-- [Node.js](https://nodejs.org)
-
-- Installez la dernière version de [Yeoman](https://github.com/yeoman/yo) et le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) globalement.
-
-    ```bash
-    npm install -g yo generator-office
-    ```
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 ### <a name="create-the-add-in-project"></a>Création du projet de complément
 
 1. Utilisez le générateur Yeoman afin de créer un projet de complément Word. Exécutez la commande suivante, puis répondez aux invites comme suit :
 
-    ```bash
+    ```command&nbsp;line
     yo office
     ```
 
-    - **Sélectionnez un type de projet :** `Office Add-in project using Jquery framework`
+    - **Sélectionnez un type de projet :** `Office Add-in Task Pane project`
     - **Sélectionnez un type de script :** `Javascript`
-    - **Comment souhaitez-vous nommer votre complément ? :** `My Office Add-in`
-    - **Quelle application client Office voulez-vous prendre en charge ? :** `Word`
+    - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
+    - **Quelle application client Office voulez-vous prendre en charge ?** `Word`
 
-    ![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yo-office-word-jquery.png)
+    ![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yo-office-word.png)
 
     Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants de nœud de la prise en charge.
 
 2. Accédez au dossier racine du projet.
 
-    ```bash
+    ```command&nbsp;line
     cd "My Office Add-in"
     ```
 
-### <a name="update-the-code"></a>Mise à jour du code
+### <a name="explore-the-project"></a>Explorer le projet
 
-1. Dans votre éditeur de code, ouvrez **index.html** à la racine du projet. Ce fichier contient le code HTML qui s’affichera dans le volet Office du complément.
-
-2. Remplacez l’élément `<body>` par le balisage suivant et enregistrez le fichier.
-
-    ```html
-    <body>
-        <div id="content-header">
-            <div class="padding">
-                <h1>Welcome</h1>
-            </div>
-        </div>
-        <div id="content-main">
-            <div class="padding">
-                <p>Choose the buttons below to add boilerplate text to the document by using the Word JavaScript API.</p>
-                <br />
-                <h3>Try it out</h3>
-                <button id="emerson">Add quote from Ralph Waldo Emerson</button>
-                <br /><br />
-                <button id="checkhov">Add quote from Anton Chekhov</button>
-                <br /><br />
-                <button id="proverb">Add Chinese proverb</button>
-            </div>
-        </div>
-        <br />
-        <div id="supportedVersion" />
-        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
-        <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
-    </body>
-    ```
-
-3. Ouvrez le fichier **src/index.js** afin de spécifier le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier. Ce script contient le code d’initialisation ainsi que le code qui apporte des modifications au document Word en insérant du texte dans le document lorsqu’un bouton est choisi.
-
-    ```js
-    'use strict';
-
-    (function () {
-
-        Office.onReady(function() {
-            // Office is ready
-            $(document).ready(function () {
-                // The document is ready
-                // Use this to check whether the API is supported in the Word client.
-                if (Office.context.requirements.isSetSupported('WordApi', 1.1)) {
-                    // Do something that is only available via the new APIs
-                    $('#emerson').click(insertEmersonQuoteAtSelection);
-                    $('#checkhov').click(insertChekhovQuoteAtTheBeginning);
-                    $('#proverb').click(insertChineseProverbAtTheEnd);
-                    $('#supportedVersion').html('This code is using Word 2016 or later.');
-                }
-                else {
-                    // Just letting you know that this code will not work with your version of Word.
-                    $('#supportedVersion').html('This code requires Word 2016 or later.');
-                }
-            });
-        });
-
-        function insertEmersonQuoteAtSelection() {
-            Word.run(function (context) {
-
-                // Create a proxy object for the document.
-                var thisDocument = context.document;
-
-                // Queue a command to get the current selection.
-                // Create a proxy range object for the selection.
-                var range = thisDocument.getSelection();
-
-                // Queue a command to replace the selected text.
-                range.insertText('"Hitch your wagon to a star."\n', Word.InsertLocation.replace);
-
-                // Synchronize the document state by executing the queued commands,
-                // and return a promise to indicate task completion.
-                return context.sync().then(function () {
-                    console.log('Added a quote from Ralph Waldo Emerson.');
-                });
-            })
-            .catch(function (error) {
-                console.log('Error: ' + JSON.stringify(error));
-                if (error instanceof OfficeExtension.Error) {
-                    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-                }
-            });
-        }
-
-        function insertChekhovQuoteAtTheBeginning() {
-            Word.run(function (context) {
-
-                // Create a proxy object for the document body.
-                var body = context.document.body;
-
-                // Queue a command to insert text at the start of the document body.
-                body.insertText('"Knowledge is of no value unless you put it into practice."\n', Word.InsertLocation.start);
-
-                // Synchronize the document state by executing the queued commands,
-                // and return a promise to indicate task completion.
-                return context.sync().then(function () {
-                    console.log('Added a quote from Anton Chekhov.');
-                });
-            })
-            .catch(function (error) {
-                console.log('Error: ' + JSON.stringify(error));
-                if (error instanceof OfficeExtension.Error) {
-                    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-                }
-            });
-        }
-
-        function insertChineseProverbAtTheEnd() {
-            Word.run(function (context) {
-
-                // Create a proxy object for the document body.
-                var body = context.document.body;
-
-                // Queue a command to insert text at the end of the document body.
-                body.insertText('"To know the road ahead, ask those coming back."\n', Word.InsertLocation.end);
-
-                // Synchronize the document state by executing the queued commands,
-                // and return a promise to indicate task completion.
-                return context.sync().then(function () {
-                    console.log('Added a quote from a Chinese proverb.');
-                });
-            })
-            .catch(function (error) {
-                console.log('Error: ' + JSON.stringify(error));
-                if (error instanceof OfficeExtension.Error) {
-                    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-                }
-            });
-        }
-    })();
-    ```
-
-4. Ouvrez le fichier **app.css** à la racine du projet pour spécifier les styles personnalisés du complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
-
-    ```css
-    #content-header {
-        background: #2a8dd4;
-        color: #fff;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 80px; 
-        overflow: hidden;
-    }
-
-    #content-main {
-        background: #fff;
-        position: fixed;
-        top: 80px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        overflow: auto;
-    }
-
-    .padding {
-        padding: 15px;
-    }
-    ```
-
-### <a name="update-the-manifest"></a>Mise à jour du manifeste
-
-1. Ouvrez le fichier nommé **manifest.xml** pour définir les paramètres et les fonctionnalités du complément.
-
-2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-le par votre nom.
-
-3. L’attribut `DefaultValue` de l’élément `Description` possède un espace réservé. Remplacez-le par **A task pane add-in for Word**.
-
-4. Enregistrez le fichier.
-
-    ```xml
-    ...
-    <ProviderName>John Doe</ProviderName>
-    <DefaultLocale>en-US</DefaultLocale>
-    <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
-    <DisplayName DefaultValue="My Office Add-in" />
-    <Description DefaultValue="A task pane add-in for Word"/>
-    ...
-    ```
-
-### <a name="start-the-dev-server"></a>Démarrage du serveur de développement
-
-[!include[Start server section](../includes/quickstart-yo-start-server.md)] 
+[!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-js.md)]
 
 ### <a name="try-it-out"></a>Essayez !
 
-1. Suivez les instructions pour la plateforme que vous utiliserez afin d’exécuter votre complément en vue d’en charger une version test dans Word.
+1. Démarrez le serveur web local et chargez indépendamment votre complément.
 
-    - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Word Online : [Chargement d’une version test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
-    - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    > [!NOTE]
+    > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté une des commandes suivantes, acceptez d’installer le certificat fourni par le générateur Yeoman. 
 
-2. Dans Word, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
+    - Pour tester votre complément dans Word, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local et Word s’ouvrent avec votre complément chargé.
 
-    ![Capture d’écran de l’application Word avec le bouton Afficher le volet Office mis en évidence](../images/word-quickstart-addin-2.png)
+        ```command&nbsp;line
+        npm start
+        ```
 
-3. Dans le volet Office, choisissez l’un des boutons pour ajouter du texte réutilisable dans le document.
+    - Pour tester votre complément dans Word Online, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local démarre.
 
-    ![Capture d’écran de l’application Word avec le complément de texte réutilisable chargé.](../images/word-quickstart-addin-1.png)
+        ```command&nbsp;line
+        npm run start:web
+        ```
+
+        Pour utiliser votre complément, ouvrez un nouveau document dans Word Online, puis chargez indépendamment votre complément en suivant les instructions de l’article relatif au [chargement indépendant de compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online).
+
+2. Dans Word, ouvrez un nouveau document, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet des tâches** du ruban pour ouvrir le volet des tâches du complément.
+
+    ![Capture d’écran de l’application Word avec le bouton Afficher le volet des tâches mis en évidence](../images/word-quickstart-addin-2b.png)
+
+3. En bas du volet Office, sélectionnez le lien **Exécuter** pour ajouter le texte en police de couleur bleue « Hello World » au document.
+
+    ![Capture d’écran de l’application Word avec le complément du volet des tâches chargé](../images/word-quickstart-addin-1c.png)
 
 ---
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations, vous avez créé un complément Word à l’aide de jQuery ! Maintenant, découvrez les fonctionnalités d’un complément Word et créez un complément plus complexe en suivant le didacticiel dédié.
+Félicitations, vous avez créé un complément du volet des tâches de Word ! Maintenant, découvrez les fonctionnalités d’un complément Word et créez un complément plus complexe en suivant le didacticiel dédié.
 
 > [!div class="nextstepaction"]
 > [Didacticiel sur les compléments Word](../tutorials/word-tutorial.md)
