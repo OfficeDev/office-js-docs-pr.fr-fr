@@ -1,14 +1,14 @@
 ---
 title: Spécification des exigences en matière d’hôtes Office et d’API
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 9e1f92ae6708392157ccaa061cf0a064f3b5ece0
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 7209998e488e56b66b206d50c7bceb1465fb7206
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449402"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952144"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>Spécification des exigences en matière d’hôtes Office et d’API
 
@@ -70,7 +70,7 @@ Lors de la spécification des hôtes Office ou des conditions requises d’API,
 
 Pour exécuter votre complément dans une application hôte Office, utilisez les éléments **Hosts** et **Host** dans le manifeste. Si vous ne définissez pas l’élément **Hosts**, votre complément sera exécuté dans tous les hôtes.
 
-Par exemple, les déclarations  **Hosts** et **Host** suivantes indiquent que le complément fonctionnera avec n’importe quelle version d’Excel, y compris Excel pour Windows, Excel Online et Excel pour iPad.
+Par exemple, les déclarations  **Hosts** et **Host** suivantes indiquent que le complément fonctionnera avec n’importe quelle version d’Excel, y compris Excel sur Windows, Excel Online et Excel pour iPad.
 
 ```xml
 <Hosts>
@@ -80,14 +80,14 @@ Par exemple, les déclarations  **Hosts** et **Host** suivantes indiquent que le
 
 L’élément  **Hosts** peut contenir un ou plusieurs éléments  **Host**. L’élément  **Host** indique l’hôte Office requis par votre complément. L’attribut **Name** est requis et peut être défini sur l’une des valeurs suivantes.
 
-| Name          | Applications hôtes Office                      |
-|:--------------|:----------------------------------------------|
-| Base de données      | applications web Access                               |
-| Document      | Word pour Windows, Mac, iPad et Online        |
-| Boîte aux lettres       | Outlook pour Windows, Mac, Web et Outlook.com |
-| Présentation  | PowerPoint pour Windows, Mac, iPad et Online  |
-| Projet       | Projet                                       |
-| Classeur      | Excel pour Windows, Mac, iPad et Online           |
+| Name          | Applications hôtes Office                                                              |
+|:--------------|:--------------------------------------------------------------------------------------|
+| Base de données      | applications web Access                                                                       |
+| Document      | Word pour Windows, Word pour Mac, Word pour iPad et Word Online                         |
+| Boîte aux lettres       | Outlook pour Windows, Outlook pour Mac, Outlook sur le web et Outlook.com              |
+| Présentation  | PowerPoint pour Windows, PowerPoint pour Mac, PowerPoint pour iPad et PowerPoint Online |
+| Project       | Projet                                                                               |
+| Classeur      | Excel pour Windows, Excel pour Mac, Excel pour iPad et Excel Online                     |
 
 > [!NOTE]
 > L’attribut `Name` spécifie l’application hôte Office pouvant exécuter votre complément. Les hôtes Office sont pris en charge sur différentes plateformes et sont exécutés sur les ordinateurs de bureau, les navigateurs web, les tablettes et les appareils mobiles. Vous ne pouvez pas indiquer quelle plateforme peut être utilisée pour exécuter votre complément. Par exemple, si vous spécifiez `Mailbox`, Outlook et Outlook Web App peuvent être utilisés pour exécuter votre complément. 
@@ -98,7 +98,7 @@ L’élément  **Hosts** peut contenir un ou plusieurs éléments  **Host**. L�
 L’élément **Requirements** indique les ensembles de conditions minimales requises ou les membres d’API qui doivent être pris en charge par l’hôte Office en vue d’exécuter votre complément. L’élément **Requirements** peut indiquer des ensembles de conditions requises et des méthodes individuelles utilisés dans votre complément. Dans la version 1.1 du schéma de manifeste du complément, l’élément **Requirements** est facultatif pour tous les compléments, sauf pour les compléments Outlook.
 
 > [!WARNING]
-> Utilisez uniquement l’élément **Requirements** pour spécifier des ensembles de conditions requises essentiels ou des membres d’API que votre complément doit utiliser. Si la plateforme ou l’hôte Office ne prend pas en charge les ensembles de conditions requises ou les membres d’API spécifiés dans l’élément **Requirements**, le complément ne s’exécute pas dans cet hôte ou cette plateforme et ne s’affiche pas dans **Mes compléments**. Nous vous recommandons plutôt de rendre votre complément disponible sur toutes les plateformes d’un hôte Office, comme Excel pour Windows, Excel Online et Excel pour iPad. Pour rendre votre complément disponible sur _tous_ les hôtes et plateformes Office, utilisez des vérifications à l’exécution à la place de l’élément **Requirements**.
+> Utilisez l’élément **Requirements** uniquement pour spécifier des ensembles de conditions requises essentiels ou des membres d’API que votre complément doit utiliser. Si la plateforme ou l’hôte Office ne prend pas en charge les ensembles de conditions requises ou les membres d’API spécifiés dans l’élément **Requirements**, le complément ne s’exécute pas dans cet hôte ou cette plateforme et ne s’affiche pas dans **Mes compléments**. Nous vous recommandons plutôt de rendre votre complément disponible sur toutes les plateformes d’un hôte Office, comme Excel pour Windows, Excel Online et Excel pour iPad. Pour rendre votre complément disponible sur _tous_ les hôtes et plateformes Office, utilisez des vérifications d’exécution à la place de l’élément **Requirements**.
 
 Cet exemple de code illustre un complément qui se charge dans toutes les applications hôtes Office qui prennent en charge les éléments suivants :
 

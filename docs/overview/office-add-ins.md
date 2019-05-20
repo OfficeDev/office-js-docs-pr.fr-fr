@@ -1,14 +1,14 @@
 ---
 title: Vue d’ensemble de la plateforme de compléments pour Office | Microsoft Docs
 description: Utilisez des technologies web que vous connaissez, telles que le code HTML, CSS et JavaScript, pour étendre Word, Excel, PowerPoint, OneNote, Project et Outlook, et interagir avec ces programmes.
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 480228c20b20de52a9e1224f6691696b5560986c
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: dc0a7755027e1d6a741e97928f3f2bc25f62f6c3
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448567"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952347"
 ---
 # <a name="office-add-ins-platform-overview"></a>Vue d’ensemble de la plateforme de compléments pour Office
 

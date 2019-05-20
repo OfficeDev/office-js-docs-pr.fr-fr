@@ -1,14 +1,14 @@
 ---
 title: Configuration requise pour exécuter des compléments Office
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/14/2019
 localization_priority: Priority
-ms.openlocfilehash: c57534a8d00904336af518d9d32606373b2edab6
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 2dcdfb2562233550016cd2d04571239318ffffa3
+ms.sourcegitcommit: 944cbb5c6ce055f6db1833182b24d490d1dce01d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448226"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "33992181"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Configuration requise pour exécuter des compléments Office
 
@@ -28,7 +28,7 @@ Pour tous les types de complément (compléments de contenu, Outlook et volet Of
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
 > [!TIP]
-> lorsque vous développez et déboguez un complément dans Visual Studio, Visual Studio déploie et exécute les fichiers de page web de votre complément localement avec IIS Express et ne nécessite aucun serveur web supplémentaires. 
+> lorsque vous développez et déboguez un complément dans Visual Studio, Visual Studio déploie et exécute les fichiers de page web de votre complément localement avec IIS Express et ne nécessite aucun serveur web supplémentaires.
 
 Pour les compléments du volet Office et de contenu, dans les applications hôtes Office prises en charge (applications web Access, Word, Excel, PowerPoint ou Project), vous avez également besoin d’un [catalogue de compléments](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) sur SharePoint pour télécharger les fichiers manifeste XML des compléments.
 
@@ -48,12 +48,12 @@ Le logiciel suivant est requis pour développer un Complément Office pour les c
 
   Si votre abonnement Office 365 est valide, mais que n’avez pas accès au client Office, nous vous conseillons de [télécharger et installer la dernière version d’Office](https://support.office.com/article/download-and-install-or-reinstall-office-365-or-office-2019-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658).
 
-- Internet Explorer 11 ou version ultérieure, qui doit être installé, mais ne doit pas être le navigateur par défaut. Pour prendre en charge les compléments Office, le client Office qui s’exécute en tant qu’hôte utilise des composants de navigateur qui font partie d’Internet Explorer 11 ou version ultérieure.
+- Internet Explorer 11 ou Microsoft Edge (selon les versions de Windows et Office) doit être installé, sans être nécessairement le navigateur par défaut. Pour prendre en charge les compléments Office, le client Office servant d’hôte utilise des composants de navigateur faisant partie d’Internet Explorer 11 ou de Microsoft Edge. Pour plus d’informations, voir [Visionneuses web utilisées par les compléments Office](web-viewers-used-by-office-web-add-ins.md).
 
   > [!NOTE]
   > La Configuration de sécurité renforcée d’Internet Explorer (ESC) doit être désactivée pour que les compléments web Office fonctionnent. Si vous utilisez un ordinateur Windows Server comme votre client lors du développement des compléments, notez qu’ESC est activée par défaut dans Windows Server.
 
-- L’un des éléments suivants en tant que navigateur par défaut : Internet Explorer 11 ou version ultérieure, ou la dernière version de Microsoft Edge, Chrome, Firefox ou Safari (Mac OS).
+- L’un des éléments suivants en tant que navigateur par défaut : Internet Explorer 11 ou la dernière version de Microsoft Edge, Chrome, Firefox ou Safari (Mac OS).
 - Un éditeur HTML et JavaScript tel que le Bloc-notes, [Visual Studio et les outils de développement Office ](https://www.visualstudio.com/features/office-tools-vs) ou un outil de développement web tiers.
 
 ## <a name="client-requirements-os-x-desktop"></a>Exigences en matière de client : ordinateur de bureau OS X
@@ -68,7 +68,7 @@ Les versions de client minimales d’Office pour Mac prenant en charge les compl
 
 ## <a name="client-requirements-browser-support-for-office-online-web-clients-and-sharepoint"></a>Exigences en matière de client : prise en charge du navigateur pour les clients web Office Online et SharePoint
 
-Tout navigateur qui prend en charge ECMAScript 5.1, HTML5 et CSS3, tel qu’Internet Explorer 11 ou version ultérieure, ou la dernière version de Microsoft Edge, Chrome, Firefox ou Safari (Mac OS).
+Tout navigateur prenant en charge ECMAScript 5.1, HTML5 et CSS3, tel qu’Internet Explorer 11 ou la dernière version de Microsoft Edge, Chrome, Firefox ou Safari (Mac OS).
 
 
 ## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>Exigences en matière de client : smartphones et tablettes autres que Windows
@@ -90,3 +90,4 @@ L’installation du logiciel suivant est nécessaire pour tester et exécuter le
 
 - [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
 - [Disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md)
+- [Visionneuses web utilisées par les compléments Office](web-viewers-used-by-office-web-add-ins.md)
