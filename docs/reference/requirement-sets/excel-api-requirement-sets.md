@@ -1,28 +1,28 @@
 ---
 title: Ensembles de conditions requises de l’API JavaScript pour Excel
 description: ''
-ms.date: 05/06/2019
+ms.date: 05/08/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 1735c01a8c17c31e632432d914770a800846508e
-ms.sourcegitcommit: 5b9c2b39dfe76cabd98bf28d5287d9718788e520
+ms.openlocfilehash: aebb85250743255cbc9c139d59e7e2fa5ef4e442
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "33659641"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952361"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Excel
 
 Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
-Les compléments Excel peuvent être exécutés dans différentes versions d’Office, notamment Office 2016 pour Windows, Office pour iPad, Office pour Mac et Office Online. Le tableau suivant répertorie les ensembles de conditions requises pour Excel, les applications hôtes Office qui prennent en charge chaque ensemble de conditions et les versions ou numéro de build de ces applications.
+Les compléments Excel peuvent être exécutés dans différentes versions d’Office, notamment Office 2016 ou version ultérieure pour Windows, Office pour iPad, Office pour Mac et Office Online. Le tableau suivant répertorie les ensembles de conditions requises pour Excel, les applications hôtes Office qui prennent en charge chaque ensemble de conditions et les versions ou numéro de build de ces applications.
 
 > [!NOTE]
 > Pour utiliser l’API dans un des jeux exigence numérotée, vous devez référencer la **production** de la bibliothèque sur le CDN : https://appsforoffice.microsoft.com/lib/1/hosted/office.js.
 >
 > Pour plus d’informations sur l’utilisation aperçu API, voir la section[JavaScript d’Excel preview API](#excel-javascript-preview-apis) dans cet article.
 
-|  Ensemble de conditions requises  |  Office 365 pour Windows  |  Office 365 pour iPad  |  Office 365 pour Mac  | Office Online  |  Office Online Server  |
+|  Ensemble de conditions requises  |  Office pour Windows<br>(connecté à Office 365)  |  Office pour iPad<br>(connecté à Office 365)  |  Office pour Mac<br>(connecté à Office 365)  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [Aperçu](/javascript/api/excel)  | Veuillez utiliser la dernière version d’Office pour tester la préversion API (vous devrez peut-être rejoindre la [programme Office Insider](https://products.office.com/office-insider)) |
 | ExcelApi 1.9  | Version 1903 (Build 11425.20204) ou version ultérieure | 2.24 ou version ultérieure | 16.24 ou version ultérieure | Mai 2019       | Bientôt disponible |
@@ -42,7 +42,7 @@ Les compléments Excel peuvent être exécutés dans différentes versions d’O
 
 [Fonctions personnalisées](../../excel/custom-functions-overview.md) utilisent des ensembles d’exigences distincts des API Excel JavaScript de base. Le tableau suivant répertorie les ensembles de conditions requises pour les fonctions personnalisées, les applications hôtes Office qui prennent en charge ces conditions et les version build ou le numéro pour ces applications.
 
-|  Ensemble de conditions requises  |  Office 365 pour Windows  |  Office 365 pour iPad  |  Office 365 pour Mac  | Office Online | Office Online Server |
+|  Ensemble de conditions requises  |  Office pour Windows<br>(connecté à Office 365)  |  Office pour iPad<br>(connecté à Office 365)  |  Office pour Mac<br>(connecté à Office 365)  | Office Online | Office Online Server |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | CustomFunctionsRuntime 1.1 | Version 1904 (Build 11601.20144) ou version ultérieure | Non pris en charge | 16.24 ou version ultérieure | Avril 2019 | Bientôt disponible |
 

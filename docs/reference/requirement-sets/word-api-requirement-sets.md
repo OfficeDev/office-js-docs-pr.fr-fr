@@ -1,28 +1,28 @@
 ---
 title: Ensembles de conditions requises de l’API JavaScript pour Word
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 21bd99dda479c0c2181f546303e79e50f33ded00
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 0f9d17669a8000f5d8d9f0b2d1da04eb0175315c
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451520"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952235"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Word
 
 Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
-Les compléments Word peuvent être exécutés dans différentes versions d’Office, notamment Office 2016 pour Windows ou version ultérieure, Office pour iPad, Office pour Mac et Office Online. Le tableau suivant répertorie les ensembles de conditions requises pour Word, les applications Office hôte qui prennent en charge ces conditions et les numéros de build ou de version de ces applications.
+Les compléments Word peuvent être exécutés dans différentes versions d’Office, notamment Office 2016 ou version ultérieure pour Windows, Office pour iPad, Office pour Mac et Office Online. Le tableau suivant répertorie les ensembles de conditions requises pour Word, les applications Office hôte qui prennent en charge ces conditions et les numéros de build ou de version de ces applications.
 
 > [!NOTE]
 > Pour les ensembles de conditions requises qui sont marqués comme Bêta, utilisez la version spécifiée (ou ultérieure) du logiciel Office et utilisez la bibliothèque bêta du CDN : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 > 
 > Les entrées qui ne sont pas répertoriées en version Bêta sont généralement disponibles et vous pouvez continuer à utiliser la bibliothèque CDN Production : https://appsforoffice.microsoft.com/lib/1/hosted/office.js
 
-|  Ensemble de conditions requises  |   Office 365 pour Windows\*  |  Office 365 pour iPad  |  Office 365 pour Mac  | Office Online  | Office Online Server  |
+|  Ensemble de conditions requises  |   Office pour Windows\*<br>(connecté à Office 365)  |  Office pour iPad<br>(connecté à Office 365)  |  Office pour Mac<br>(connecté à Office 365)  | Office Online  | Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | WordApi 1.3 | Version 1612 (Build 7668.1000) ou version ultérieure| Mars 2017, 2.22 ou version ultérieure | Mars 2017, 15.32 ou version ultérieure| Mars 2017 ||
 | WordApi 1.2  | Mise à jour de décembre 2015, version 1601 (Build 6568.1000) ou version ultérieure | Janvier 2016, 1.18 ou version ultérieure | Janvier 2016, 15.19 ou version ultérieure| Septembre 2016 | |

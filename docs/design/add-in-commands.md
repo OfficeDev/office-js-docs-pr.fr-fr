@@ -1,14 +1,14 @@
 ---
 title: Commandes de complément pour Excel, Word et PowerPoint
 description: ''
-ms.date: 04/05/2019
+ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 0a2a28e09061248851e8ee1037d0219c7fcda1a5
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 7b85d3016b195b353b1e7f314aceb761cf4e31b3
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448729"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952179"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Commandes de complément pour Excel, Word et PowerPoint
 
@@ -53,9 +53,12 @@ Les fonctionnalités de commande suivantes sont actuellement prises en charge.
 
 Les commandes de complément sont actuellement prises en charge sur les plateformes suivantes :
 
-- Office 2016 ou version ultérieure pour Windows (build 16.0.6769+)
-- Office pour Mac (build 15.33+)
-- Office Online
+- Outlook 2016 pour Windows (build 16.0.4678.1000+)
+- Office pour Windows connecté à Office 365 (build 16.0.6769+)
+- Office 2019 pour Windows
+- Office pour Mac connecté à Office 365 (build 15.33+)
+- Office 2019 pour Mac
+- Office Online
 
 D’autres plateformes seront bientôt disponibles.
 
@@ -70,7 +73,7 @@ Appliquez les meilleures pratiques suivantes lorsque vous développez des comman
 - Utilisez les commandes pour représenter une action spécifique avec un résultat clair et précis pour les utilisateurs. Ne combinez pas plusieurs actions dans un seul bouton.
 - Proposez des actions détaillées permettant de réaliser plus efficacement des tâches courantes dans votre complément. Réduisez le nombre d’étapes nécessaires à la réalisation d’une action.
 - Pour placer vos commandes dans le ruban Office :
-    - Placez les commandes sur un onglet existant (Insertion, Révision, etc.) si la fonctionnalité ajoutée lui correspond. Par exemple, si votre complément permet aux utilisateurs d’insérer un élément multimédia, ajoutez un groupe à l’onglet Insertion. Notez que l’ensemble des onglets ne sont pas nécessairement disponibles dans toutes les versions d’Office. Pour plus d’informations, voir le [manifeste XML de compléments Office](../develop/add-in-manifests.md). 
+    - Placez les commandes sur un onglet existant (Insertion, Révision, etc.) si la fonctionnalité ajoutée lui correspond. Par exemple, si votre complément permet aux utilisateurs d’insérer un élément multimédia, ajoutez un groupe à l’onglet Insertion. Notez que l’ensemble des onglets ne sont pas nécessairement disponibles dans toutes les versions d’Office. Pour plus d’informations, voir le [manifeste XML de compléments Office](../develop/add-in-manifests.md).
     - Placez les commandes sous l’onglet Accueil si la fonctionnalité ne correspond à aucun autre onglet, et si vous avez moins de six commandes de niveau supérieur. Vous pouvez également ajouter des commandes à l’onglet Accueil si votre complément doit fonctionner sur toutes les versions d’Office (par exemple, Office Desktop et Office Online) et si un onglet n’est pas disponible dans toutes les versions (par exemple, si l’onglet Création n’existe pas dans Office Online).  
     - Placez des commandes dans un onglet personnalisé si vous avez plus de six commandes de niveau supérieur.
     - Nommez votre groupe en fonction du nom de votre complément. Si vous avez plusieurs groupes, nommez chaque groupe en fonction de la fonctionnalité offerte par les commandes de ce groupe.

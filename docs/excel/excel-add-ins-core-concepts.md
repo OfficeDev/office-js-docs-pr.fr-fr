@@ -1,14 +1,14 @@
 ---
 title: Concepts fondamentaux de programmation avec l’API JavaScript pour Excel
 description: Utilisez l’API JavaScript pour Excel afin de créer des compléments pour Excel.
-ms.date: 04/25/2019
+ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 26822d9caa91f4a65a9dbb82f82db989b4409214
-ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
+ms.openlocfilehash: 3cd1abcb71eadbf9a5ec2ab8a27b1e427b24e83d
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "33353257"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33951927"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Concepts fondamentaux de programmation avec l’API JavaScript pour Excel
 
