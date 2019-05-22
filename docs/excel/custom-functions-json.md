@@ -3,12 +3,12 @@ ms.date: 05/03/2019
 description: Définissez des métadonnées pour des fonctions personnalisées dans Excel.
 title: Métadonnées pour les fonctions personnalisées dans Excel
 localization_priority: Normal
-ms.openlocfilehash: 92e2b1aaae46d376cc8033b304192d7ce8489fd8
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: d6cfd61eabc5b27105414082675b35d3ff0ceb41
+ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628073"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "34337166"
 ---
 # <a name="custom-functions-metadata"></a>Métadonnées des fonctions personnalisées
 
@@ -119,10 +119,10 @@ L’exemple suivant montre le contenu d’un fichier de métadonnées JSON pour 
 
 La propriété `functions` est un tableau d’objets de fonction personnalisés. Le tableau suivant répertorie les propriétés de chaque objet.
 
-|  Propriété  |  Type de données  |  Requis  |  Description  |
+|  Propriété  |  Type de données  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|:-----|
 |  `description`  |  string  |  Non  |  Description de la fonction que voient les utilisateurs finaux dans Excel. Par exemple, **convertit une valeur Celsius en valeur Fahrenheit**. |
-|  `helpUrl`  |  string  |   Non  |  URL fournissant des informations sur la fonction (elle est affichée dans un volet des tâches). Par exemple, **http://contoso.com/help/convertcelsiustofahrenheit.html**. |
+|  `helpUrl`  |  string  |   Non  |  URL fournissant des informations sur la fonction (elle est affichée dans un volet des tâches). Par exemple, `http://contoso.com/help/convertcelsiustofahrenheit.html`. |
 | `id`     | string | Oui | Un ID unique pour la fonction. Cet ID peut contenir uniquement des points et caractères alphanumériques et ne doit pas être modifié une fois défini. |
 |  `name`  |  string  |  Oui  |  Nom de la fonction que voient les utilisateurs finaux dans Excel. Dans Excel, le nom de la fonction sera précédé de l’espace de noms de fonctions personnalisées spécifié dans le fichier manifeste XML. |
 |  `options`  |  object  |  Non  |  Vous permet de personnaliser certains aspects de comment et quand Excel exécute la fonction. Reportez-vous aux [options](#options) pour plus d’informations. |
@@ -133,7 +133,7 @@ La propriété `functions` est un tableau d’objets de fonction personnalisés.
 
 L’objet `options` vous permet de personnaliser certains aspects de comment et quand Excel exécute la fonction. Le tableau suivant répertorie les propriétés de l’objet `options`.
 
-|  Propriété  |  Type de données  |  Requis  |  Description  |
+|  Propriété  |  Type de données  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|:-----|
 |  `cancelable`  |  boolean  |  Non<br/><br/>La valeur par défaut est `false`.  |  Si la valeur est `true`, Excel appelle le gestionnaire `onCanceled` chaque fois que l’utilisateur effectue une action ayant pour effet d’annuler la fonction, par exemple, en déclenchant manuellement un recalcul ou en modifiant une cellule référencée par la fonction. Si vous utilisez cette option, Excel appelle la fonction JavaScript avec un paramètre `caller` supplémentaire (n’enregistrez ***pas*** ce paramètre dans la propriété `parameters`). Dans le corps de la fonction, un gestionnaire doit être attribué au membre `caller.onCanceled`. Pour plus d’informations, voir [Annuler une fonction](custom-functions-web-reqs.md#stream-and-cancel-functions). |
 |  `requiresAddress`  | boolean | Non <br/><br/>La valeur par défaut est `false`. | <br /><br /> Si la valeur est true, votre fonction personnalisée peut accéder à l’adresse de la cellule qui a appelé votre fonction personnalisée. Pour obtenir l’adresse de la cellule qui a appelé votre fonction personnalisée, utilisez Context. Address dans votre fonction personnalisée. Pour plus d’informations, voir[Déterminer quelle cellule a appelé votre fonction personnalisée](/office/dev/add-ins/excel/custom-functions-overview#determine-which-cell-invoked-your-custom-function). Les fonctions personnalisées ne peuvent pas être définies à la fois en diffusion en continu et requiresAddress. Lorsque vous utilisez cette option, le paramètre «invocationContext» doit être le dernier paramètre passé dans options. |
@@ -144,7 +144,7 @@ L’objet `options` vous permet de personnaliser certains aspects de comment et 
 
 La propriété `parameters` est un tableau d’objets paramètre. Le tableau suivant répertorie les propriétés de chaque objet.
 
-|  Propriété  |  Type de données  |  Requis  |  Description  |
+|  Propriété  |  Type de données  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|:-----|
 |  `description`  |  string  |  Non |  Description du paramètre. S’affiche dans intelliSense d’Excel.  |
 |  `dimensionality`  |  string  |  Non  |  Doit être **scalaire** (valeur autre que de tableau) ou **matrice** (tableau bidimensionnel).  |
@@ -156,7 +156,7 @@ La propriété `parameters` est un tableau d’objets paramètre. Le tableau sui
 
 L’objet `result` définit le type des informations renvoyées par la fonction. Le tableau suivant répertorie les propriétés de l’objet `result`.
 
-|  Propriété  |  Type de données  |  Requis  |  Description  |
+|  Propriété  |  Type de données  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|:-----|
 |  `dimensionality`  |  string  |  Non  |  Doit être **scalaire** (valeur autre que de tableau) ou **matrice** (tableau bidimensionnel). |
 
@@ -165,7 +165,7 @@ Découvrez les [meilleures pratiques de dénomination de votre fonction](custom-
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Générer automatiquement des métadonnées JSON pour les fonctions personnalisées](custom-functions-json-autogeneration.md)
+* [Générer automatiquement des métadonnées JSON pour des fonctions personnalisées](custom-functions-json-autogeneration.md)
 * [Options des paramètres de fonctions personnalisées](custom-functions-parameter-options.md)
 * [Meilleures pratiques de fonctions personnalisées](custom-functions-best-practices.md)
 * [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)

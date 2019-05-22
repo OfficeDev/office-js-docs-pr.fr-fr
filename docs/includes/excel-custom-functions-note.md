@@ -1,2 +1,3 @@
 > [!IMPORTANT]
-> La fonctionnalité de fonctions personnalisées est actuellement en version préliminaire et peut faire l'objet de modifications. Elle n’est actuellement pas prise en charge dans les environnements de production. Pour plus d'informations, consultez la rubrique [Custom Function Requirements](../excel/custom-functions-requirements.md).
+> La fonctionnalité de fonctions personnalisées est publiée en production! Découvrez les dernières mises à jour apportées aux fonctions personnalisées [dans ce billet de blog](https://developer.microsoft.com/en-us/office/blogs/office-extensibility-build-2019/).
+
