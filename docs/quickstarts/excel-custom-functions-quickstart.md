@@ -1,15 +1,15 @@
 ---
-ms.date: 05/08/2019
+ms.date: 05/15/2019
 description: Développement de fonctions personnalisées dans le Guide de démarrage rapide d’Excel.
 title: Démarrage rapide des fonctions personnalisées
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 233e1b608eda4a696b14d833fe4e071b2fcffd67
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 372e493d85add0a942a8f18ad67f65d08c92f6f2
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952382"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432251"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Prise en main du développement de fonctions personnalisées Excel
 
@@ -21,8 +21,6 @@ Avec les fonctions personnalisées, les développeurs peuvent désormais ajouter
 
 * Excel sur Windows (64 bits version 1810 ou ultérieure) ou Excel Online
 
-* Rejoignez le[programme Office Insider](https://products.office.com/office-insider)(** niveau**Insider, anciennement appelé « Insider Fast »)
-
 ## <a name="build-your-first-custom-functions-project"></a>Création de votre premier projet de fonctions personnalisées
 
 Pour commencer, vous utiliserez le Yeoman Générateur pour créer le projet de fonctions personnalisées. Cette option définit votre projet, avec la structure de dossiers correct, les fichiers source et les dépendances pour commencer le codage de vos fonctions personnalisées.
@@ -33,11 +31,11 @@ Pour commencer, vous utiliserez le Yeoman Générateur pour créer le projet de 
     yo office
     ```
 
-    - **Sélectionnez un type de projet :** `Excel Custom Functions Add-in project (...)`
+    - **Sélectionnez un type de projet :** `Excel Custom Functions Add-in project`
     - **Sélectionnez un type de script :** `JavaScript`
     - **Comment souhaitez-vous nommer votre complément ?** `stock-ticker`
 
-    ![Le générateur de yeoman pour les compléments Office vous invite pour les fonctions personnalisées](../images/yo-office-excel-cf.png)
+    ![Le générateur de yeoman pour les compléments Office vous invite pour les fonctions personnalisées](../images/UpdatedYoOfficePrompt.png)
 
     Le générateur crée le projet et installe les composants Node.js de la prise en charge.
 
@@ -56,7 +54,7 @@ Pour commencer, vous utiliserez le Yeoman Générateur pour créer le projet de 
 4. Démarrez le serveur web local qui est exécuté dans Node.js. Vous pouvez essayer le complément de fonction personnalisée dans Excel sur Windows ou Excel online. Vous serez peut-être invité à ouvrir le volet Office du complément, bien que ce soit facultatif. Vous pouvez toujours exécuter vos fonctions personnalisées sans ouvrir le volet Office de votre complément.
 
 > [!NOTE]
-> Les compléments Office doivent utiliser le protocole HTTPs, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après l’avoir exécuté `npm run start:desktop`, acceptez l’invite pour installer le certificat fourni par le générateur Yeoman.
+> Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté `npm run start:desktop`, acceptez d’installer le certificat fourni par le générateur Yeoman.
 
 # <a name="excel-on-windowstabexcel-windows"></a>[Excel sur Windows](#tab/excel-windows)
 
@@ -68,14 +66,14 @@ npm run start:desktop
 
 # <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
-Pour tester votre complément dans Excel Online, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur Web local démarre.
+Pour tester votre complément dans Excel Online, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local démarre.
 
 ```command&nbsp;line
 npm run start:web
 ```
 
 > [!NOTE]
-> Les compléments Office doivent utiliser le protocole HTTPs, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après l’avoir exécuté `npm run start:web`, acceptez l’invite pour installer le certificat fourni par le générateur Yeoman.
+> Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté `npm run start:web`, acceptez d’installer le certificat fourni par le générateur Yeoman.
 
 Pour utiliser votre complément de fonctions personnalisées, ouvrez un nouveau classeur dans Excel online. Dans ce classeur, effectuez les étapes suivantes pour chargement votre complément.
 

@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: ''
-ms.date: 05/08/2019
+ms.date: 05/17/2019
 localization_priority: Priority
-ms.openlocfilehash: e4627699edad801ab4a3a5a65e6307d40d1b4ac9
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: d97efe8bbdfdadb252190458960b4356e0c8a564
+ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952354"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "34337173"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -22,16 +22,6 @@ L’ensemble de conditions requises présenté en aperçu comprend toutes les fo
 ## <a name="features-in-preview"></a>Fonctionnalités (aperçu) :
 
 Les fonctionnalités suivantes sont disponibles en aperçu.
-
-### <a name="add-in-commands"></a>Commandes de complément
-
-#### <a name="eventcompletedjavascriptapiofficeofficeaddincommandseventcompleted-options-"></a>[Event.completed](/javascript/api/office/office.addincommands.event#completed-options-)
-
-Ajout d’un nouveau paramètre facultatif `options`, qui est un dictionnaire ayant comme seule valeur valide `allowEvent`. Cette valeur est utilisée pour annuler l’exécution d’un événement.
-
-**Disponible dans** : Outlook sur le web (Classique)
-
----
 
 ### <a name="attachments"></a>Pièces jointes
 
@@ -76,6 +66,16 @@ Ajout d’une nouvelle énumération qui spécifie si une pièce jointe a été 
 Ajout de l’événement `AttachmentsChanged` à `Item`.
 
 **Disponible dans** : Outlook pour Windows (connecté à Office 365)
+
+---
+
+### <a name="block-on-send"></a>Blocage lors de l’envoi
+
+#### <a name="eventcompletedjavascriptapiofficeofficeaddincommandseventcompleted-options-"></a>[Event.completed](/javascript/api/office/office.addincommands.event#completed-options-)
+
+Ajout d’un nouveau paramètre facultatif `options`, qui est un dictionnaire ayant comme seule valeur valide `allowEvent`. Cette valeur est utilisée pour annuler l’exécution d’un événement.
+
+**Disponible dans** : Outlook sur le web (Classique)
 
 ---
 

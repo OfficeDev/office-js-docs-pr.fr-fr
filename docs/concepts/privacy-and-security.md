@@ -3,12 +3,12 @@ title: Confidentialité et sécurité pour les compléments Office
 description: ''
 ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 91d1a549ec2fd06addc7fcb92b791353ad5513f9
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 071cea42c90df30dce7cc2666136de616373bf06
+ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952165"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "34337208"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Confidentialité et sécurité pour les compléments Office
 
@@ -41,7 +41,7 @@ Les sections suivantes décrivent brièvement comment l’architecture d’exéc
 
 Dans les clients pris en charge pour les ordinateurs de bureau et les tablettes, comme Excel, Outlook et Outlook pour Mac, les complément Office sont pris en charge en intégrant un composant in-process, le runtime des compléments Office, qui gère le cycle de vie du complément et permet l’interopérabilité entre le complément et l’application cliente. La page web du complément elle-même est hébergée hors processus. Comme indiqué dans la figure 1, sur un ordinateur de bureau ou une tablette, la page web du complément est hébergée dans un contrôle Internet Explorer qui, à son tour, est hébergé dans un processus d’exécution du complément qui fournit la sécurité et l’isolation des performances.
 
-Sur le bureau Windows, Le mode protégé d’Internet Explorer doit être activé pour la zone de site sensible. En règle générale, il est activé par défaut. S’il est désactivé, une [erreur se produit](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer) lorsque vous essayez de lancer un complément.
+Sur le bureau Windows, le mode protégé d’Internet Explorer doit être activé pour la zone de site sensible. En règle générale, il est activé par défaut. S’il est désactivé, une [erreur se produit](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer) lorsque vous essayez de lancer un complément.
 
 *Figure 1. Environnement d’exécution des compléments Office dans les clients de bureau et de tablette Windows*
 
@@ -190,7 +190,7 @@ Un utilisateur mal intentionné pourrait attaquer l’origine d’un complément
 
 - Si vous utilisez jQuery, utilisez la méthode [.text()](https://api.jquery.com/text/) au lieu de la méthode [.html()](https://api.jquery.com/html/).
 
-- Utilisez la méthode [toStaticHTML](https://developer.mozilla.org/fr-FR/docs/Web/HTML/Reference) pour supprimer les éléments et attributs HTML dynamiques des entrées des utilisateurs avant de les transmettre à **innerHTML**.
+- Utilisez la méthode [toStaticHTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) pour supprimer les éléments et attributs HTML dynamiques des entrées des utilisateurs avant de les transmettre à **innerHTML**.
 
 - Utilisez la fonction [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) ou [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) pour encoder le texte qui représente une URL ayant pour origine ou contenant une entrée utilisateur.
 

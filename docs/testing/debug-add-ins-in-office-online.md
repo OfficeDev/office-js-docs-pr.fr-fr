@@ -1,14 +1,14 @@
 ---
 title: Débogage de compléments dans Office Online
 description: Découvrez comment utiliser Office Online pour tester et déboguer vos compléments.
-ms.date: 03/19/2019
+ms.date: 05/16/2019
 localization_priority: Priority
-ms.openlocfilehash: ff77f3d8b3e332288d4ccb3e2d2305d1b1c4a825
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 6d6ab8a6ca85a9f462bfe4e5ae283eb3dccd9425
+ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451527"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "34337180"
 ---
 # <a name="debug-add-ins-in-office-online"></a>Débogage de compléments dans Office Online
 
@@ -56,7 +56,7 @@ Voici certains problèmes que vous pouvez rencontrer lorsque vous effectuez des 
     
 - Certaines erreurs JavaScript peuvent provenir d’Office Online.
       
-- Le navigateur peut afficher une erreur liée à un certificat non valide que vous devrez contourner.
+- Le navigateur peut afficher une erreur liée à un certificat non valide que vous devrez contourner. Le processus d’exécution de cette opération varie en fonction du navigateur et des interfaces utilisateur des différents navigateurs permettant d’effectuer cette modification régulièrement. Vous devez effectuer une recherche dans l’aide du navigateur ou rechercher des instructions en ligne. (Par exemple, recherchez « Avertissement de certificat Microsoft Edge non valide ».) La plupart des navigateurs, sur la page d’avertissement, comportent un lien qui vous permet d’accéder à la page du complément. Par exemple, Microsoft Edge comporte un lien « Accéder à la page web (non recommandé) ». En général, vous devez passer par ce lien chaque fois que le complément est rechargé. Pour un contournement plus long, consultez l’aide comme suggéré.
       
 - Si vous définissez des points d’arrêt dans votre code, Office Online peut générer une erreur indiquant qu’il ne peut pas effectuer d’enregistrement.
 

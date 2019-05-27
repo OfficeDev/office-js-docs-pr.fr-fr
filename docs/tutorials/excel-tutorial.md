@@ -1,16 +1,16 @@
 ---
 title: Didacticiel sur le complément Excel
 description: Dans ce didacticiel, vous allez développer un complément Excel qui crée, remplit, filtre et trie un tableau, crée un graphique, fige un en-tête de tableau, protège une feuille de calcul et ouvre une boîte de dialogue.
-ms.date: 01/28/2019
+ms.date: 05/23/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: d32b5b03b29ddfa2213b0dd91d9f02e72b173fbf
-ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
+ms.openlocfilehash: 863c5720c9e23738ba907b722a50a974044cab11
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33619069"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432214"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 
@@ -165,7 +165,7 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
 
 1. Ouvrez une fenêtre Git Bash ou une invite système activée par Node.JS, et accédez au dossier **Démarrer** du projet.
 
-2. Exécutez la commande `npm run build` pour transpiler votre code source ES6 sur une version antérieure de JavaScript prise en charge par Internet Explorer (qui est utilisée en arrière-plan par Excel pour exécuter les compléments Excel).
+2. Exécutez la commande `npm run build` pour transpiler votre code source ES6 en une version antérieure de JavaScript prise en charge par Internet Explorer (utilisée par certaines versions d’Excel pour exécuter des compléments Excel).
 
 3. Exécutez la commande `npm start` pour démarrer un serveur web en cours d’exécution sur localhost.
 
@@ -309,7 +309,7 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
      > [!NOTE]
      > Bien que le serveur synchronisé au navigateur recharge votre complément dans le volet Office chaque fois que vous apportez une modification à un fichier, y compris le fichier app.js, il ne retranspile pas le code JavaScript. Vous devez donc de nouveau utiliser la commande build afin que les modifications apportées à app.js prennent effet. Pour ce faire, vous devez arrêter le processus du serveur pour pouvoir obtenir une invite et saisir la commande build. Une fois la commande build exécutée, redémarrez le serveur. Les prochaines étapes vous permettent d’effectuer ce processus.
 
-2. Exécutez la commande `npm run build` pour transpiler votre code source ES6 vers une version antérieure de JavaScript prise en charge par Internet Explorer (qui est utilisé en arrière-plan par Excel pour exécuter les compléments Excel).
+2. Exécutez la commande `npm run build` pour transpiler votre code source ES6 en une version antérieure de JavaScript prise en charge par Internet Explorer (utilisée par certaines versions d’Excel pour exécuter des compléments Excel).
 
 3. Exécutez la commande `npm start` pour démarrer un serveur web en cours d’exécution sur localhost.
 
@@ -413,7 +413,7 @@ Dans cette étape du didacticiel, vous créerez un graphique à l’aide de donn
      > [!NOTE]
      > Bien que le serveur synchronisé au navigateur recharge votre complément dans le volet Office chaque fois que vous apportez une modification à un fichier, y compris le fichier app.js, il ne retranspile pas le code JavaScript. Vous devez donc de nouveau utiliser la commande build afin que les modifications apportées à app.js prennent effet. Pour ce faire, vous devez arrêter le processus du serveur pour pouvoir obtenir une invite et saisir la commande build. Une fois la commande build exécutée, redémarrez le serveur. Les prochaines étapes vous permettent d’effectuer ce processus.
 
-2. Exécutez la commande `npm run build` pour transpiler votre code source ES6 vers une version antérieure de JavaScript prise en charge par Internet Explorer (qui est utilisé en arrière-plan par Excel pour exécuter les compléments Excel).
+2. Exécutez la commande `npm run build` pour transpiler votre code source ES6 en une version antérieure de JavaScript prise en charge par Internet Explorer (utilisée par certaines versions d’Excel pour exécuter des compléments Excel).
 
 3. Exécutez la commande `npm start` pour démarrer un serveur web en cours d’exécution sur localhost.
 
@@ -488,7 +488,7 @@ Lorsqu’un tableau est tellement long que l’utilisateur doit le faire défile
      > [!NOTE]
      > Bien que le serveur synchronisé au navigateur recharge votre complément dans le volet Office chaque fois que vous apportez une modification à un fichier, y compris le fichier app.js, il ne retranspile pas le code JavaScript. Vous devez donc de nouveau utiliser la commande build afin que les modifications apportées à app.js prennent effet. Pour ce faire, vous devez arrêter le processus du serveur pour pouvoir obtenir une invite et saisir la commande build. Une fois la commande build exécutée, redémarrez le serveur. Les prochaines étapes vous permettent d’effectuer ce processus.
 
-2. Exécutez la commande `npm run build` pour transpiler votre code source ES6 vers une version antérieure de JavaScript prise en charge par Internet Explorer (qui est utilisé en arrière-plan par Excel pour exécuter les compléments Excel).
+2. Exécutez la commande `npm run build` pour transpiler votre code source ES6 en une version antérieure de JavaScript prise en charge par Internet Explorer (utilisée par certaines versions d’Excel pour exécuter des compléments Excel).
 
 3. Exécutez la commande `npm start` pour démarrer un serveur web en cours d’exécution sur localhost.
 
@@ -732,7 +732,9 @@ Ouvrez le fichier /function-file/function-file.html. Il s’agit d’un fichier�
 
     - Pour Windows : `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
-    - Pour Mac : `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
+    - Pour Mac : `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
+    
+        [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
 3. Si, pour une quelconque raison, votre serveur n’est pas en cours d’exécution, accédez au dossier **Start** du projet et exécutez la commande `npm start` dans une fenêtre Git Bash ou une invite système Node.JS. Vous n’avez pas besoin de recréer le projet, car le seul fichier JavaScript que vous avez modifié ne fait pas partie du fichier bundle.js créé.
 
@@ -846,7 +848,7 @@ Dans cette étape finale du didacticiel, vous allez ouvrir une boîte de dialogu
 8. Enregistrez le fichier.
 
    > [!NOTE]
-   > Le fichier popup.html et le fichier popup.js qu’il charge s’exécutent dans un processus Internet Explorer entièrement séparé à partir du volet Office du complément. Si le popup.js était transpilé dans le même fichier bundle.js en tant que fichier app.js, le complément devrait charger deux copies du fichier bundle.js, ce qui irait à l’encontre de l’objectif de groupement. En outre, le fichier popup.js ne contient pas de code JavaScript car Internet Explorer ne prend pas en charge ce type de code. C’est pour ces deux raisons que ce complément ne transpile pas le fichier popup.js du tout.
+   > Le fichier Popup. html et le fichier Popup. js qu’il charge s’exécutent dans un processus de serveur Edge entièrement distinct ou Internet Explorer 11 à partir du volet Office du complément. Si le popup.js était transpilé dans le même fichier bundle.js en tant que fichier app.js, le complément devrait charger deux copies du fichier bundle.js, ce qui irait à l’encontre de l’objectif de groupement. En outre, le fichier Popup. js ne contient pas de code JavaScript qui n’est pas pris en charge par Internet Explorer 11. C’est pour ces deux raisons que ce complément ne transpile pas le fichier popup.js du tout.
 
 ### <a name="open-the-dialog-from-the-task-pane"></a>Ouverture de la boîte de dialogue à partir du volet Office
 
@@ -940,7 +942,7 @@ Dans cette étape finale du didacticiel, vous allez ouvrir une boîte de dialogu
      > [!NOTE]
      > Bien que le serveur synchronisé au navigateur recharge votre complément dans le volet Office chaque fois que vous apportez une modification à un fichier, y compris le fichier app.js, il ne retranspile pas le code JavaScript. Vous devez donc de nouveau utiliser la commande build afin que les modifications apportées à app.js prennent effet. Pour ce faire, vous devez arrêter le processus du serveur pour pouvoir obtenir une invite et saisir la commande build. Une fois la commande build exécutée, redémarrez le serveur. Les prochaines étapes vous permettent d’effectuer ce processus.
 
-2. Exécutez la commande `npm run build` pour transpiler votre code source ES6 vers une version antérieure de JavaScript prise en charge par Internet Explorer (qui est utilisé en arrière-plan par Excel pour exécuter les compléments Excel).
+2. Exécutez la commande `npm run build` pour transpiler votre code source ES6 en une version antérieure de JavaScript prise en charge par Internet Explorer (utilisée par certaines versions d’Excel pour exécuter des compléments Excel).
 
 3. Exécutez la commande `npm start` pour démarrer un serveur web en cours d’exécution sur localhost.
 
