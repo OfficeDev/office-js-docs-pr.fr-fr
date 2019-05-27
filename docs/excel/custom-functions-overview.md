@@ -1,14 +1,14 @@
 ---
-ms.date: 05/08/2019
+ms.date: 05/15/2019
 description: Créer des fonctions personnalisées dans Excel à l’aide de JavaScript.
 title: Créer des fonctions personnalisées dans Excel
 localization_priority: Priority
-ms.openlocfilehash: d939d91e2c3fad239436621ae2704309f4f0f868
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 3eeedd482a432166a7fa26eff6da4b075847a292
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952130"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432168"
 ---
 # <a name="create-custom-functions-in-excel"></a>Créer des fonctions personnalisées dans Excel 
 
@@ -18,7 +18,7 @@ Les fonctions personnalisées permettent aux développeurs d’ajouter de nouvel
 
 L’image animée suivante montre votre classeur appelant une fonction que vous avez créée avec JavaScript ou Typescript. Dans cet exemple, la fonction personnalisée `=MYFUNCTION.SPHEREVOLUME` calcule le volume d’une sphère.
 
-<img alt="animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet" src="../images/SphereVolume.gif" />
+<img alt="animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet" src="../images/SphereVolumeNew.gif" />
 
 Le code suivant définit la fonction personnalisée `=MYFUNCTION.SPHEREVOLUME`.
 
