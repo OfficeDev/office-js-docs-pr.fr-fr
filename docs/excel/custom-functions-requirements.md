@@ -1,14 +1,14 @@
 ---
-ms.date: 05/08/2019
+ms.date: 05/15/2019
 description: Découvrez comment utiliser les fonctions personnalisées sur les différentes plateformes.
 title: 'Configuration requise de fonctions personnalisées '
 localization_priority: Priority
-ms.openlocfilehash: 660230bd82fc31641199a2e3388f10b16c425104
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 3ae110bf32b260be1d480a9bce27fffbddee86f5
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33951983"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432200"
 ---
 # <a name="custom-functions-requirements"></a>Configuration requise de fonctions personnalisées 
 
@@ -22,9 +22,7 @@ Des fonctions personnalisées sont actuellement disponibles sur les plateformes 
 Pour utiliser des fonctions personnalisées dans Excel Online, connectez-vous à l’aide de votre abonnement Office 365 ou d’un [compte Microsoft](https://account.microsoft.com/account).
 
 ## <a name="excel-on-windows-and-excel-for-mac"></a>Excel pour Windows et Excel pour Mac
-Pour utiliser des fonctions personnalisées dans Excel sur Windows ou Excel pour Mac, il faut être abonné à Office 365, rejoindre le programme [Office Insider](https://products.office.com/office-insider) (niveau **Insider** – anciennement appelé « Insider Fast ») et utiliser un build d’Excel suffisamment récent (comme indiqué précédemment).
-
-Si vous utilisez une version d’Office sur votre ordinateur de bureau qui vous avez téléchargés via le Windows Store, vous devez faire partie du programme[Windows Insider](https://insider.windows.com/)au niveau**Insider** (anciennement appelé « Insider Fast »), en cours d’exécution avril 2018 version mise à jour ou version ultérieure pour utiliser les fonctions personnalisées. Il s’agit d’une nouvelle modification depuis janvier 2019.
+Pour utiliser des fonctions personnalisées dans Excel sur Windows ou Excel pour Mac, il faut être abonné à Office 365 et utiliser un build d’Excel suffisamment récent (comme indiqué précédemment).
 
 ## <a name="subscribe-to-office-365"></a>S’abonner à Office 365
 Si vous n’avez pas d’abonnement Office 365, vous pouvez en obtenir un en rejoignant le [programme pour les développeurs Office 365](https://developer.microsoft.com/fr-FR/office/dev-program).

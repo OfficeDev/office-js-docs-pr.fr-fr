@@ -1,14 +1,14 @@
 ---
 title: Chargement de version test des compléments Office sur iPad et Mac
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/21/2019
 localization_priority: Priority
-ms.openlocfilehash: e2f9ee912395e0f54130f0e78109cab4479b6567
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: f666ffee2c7c139ea18859d995384281a31238dd
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449936"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432221"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>Chargement de version test des compléments Office sur iPad et Mac
 
@@ -85,8 +85,13 @@ Pour voir comment votre complément s’exécutera dans Office pour iOS, vous po
     
     ![Complément Office affiché dans Office pour Mac](../images/lorem-ipsum-wikipedia.png)
     
-    > [!NOTE]
-    > Les compléments sont souvent mis en cache dans Office pour Mac, pour des raisons de performances. Si vous avez besoin de forcer le rechargement de votre complément en cours de développement, vous pouvez effacer le dossier `Users/<usr>/Library/Containers/com.Microsoft.OsfWebHost/Data/`. Si ce dossier n’existe pas, effacez les fichiers dans le dossier `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`.
+### <a name="clearing-the-office-applications-cache-on-a-mac"></a>Effacement du cache de l’application Office sur un ordinateur Mac
+
+Les compléments sont souvent mis en cache dans Office pour Mac, pour des raisons de performances. En règle générale, vous pouvez effacer le cache en rechargeant le complément. En présence de plusieurs compléments dans le même document, il se peut que le processus d’effacement automatique du cache lors du rechargement ne fonctionne pas systématiquement.
+
+Sur un ordinateur Mac, vous pouvez effacer le cache manuellement en supprimant le contenu du dossier `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
+
+[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
 ## <a name="see-also"></a>Voir aussi
 
