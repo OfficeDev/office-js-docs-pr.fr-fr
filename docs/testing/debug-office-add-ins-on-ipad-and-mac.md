@@ -1,14 +1,14 @@
 ---
 title: Déboguer des compléments Office sur un Mac
 description: ''
-ms.date: 04/24/2019
+ms.date: 05/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 6d77dd0d90e68c2147ffea67d12026fc194fa642
-ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
+ms.openlocfilehash: 0505dcc49ea98040f1c4891621c8e30a8cbeaff4
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "33517092"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432277"
 ---
 # <a name="debug-office-add-ins-on-a-mac"></a>Déboguer des compléments Office sur un Mac
 
@@ -30,7 +30,7 @@ Pour commencer, ouvrez un terminal, puis définissez la propriété `OfficeWebAd
 
 - `defaults write com.microsoft.Outlook OfficeWebAddinDeveloperExtras -bool true`
 
-Ensuite, ouvrez l’application Office et[insérez votre complément](sideload-an-office-add-in-on-ipad-and-mac.md). Cliquez sur le complément. Vous devriez voir l’option **Inspecter l’élément** s’afficher dans le menu contextuel.  Sélectionnez cette option pour afficher l’inspecteur dans lequel vous pouvez définir des points d’arrêt et déboguer votre complément.
+Ensuite, ouvrez l’application Office et[insérez votre complément](sideload-an-office-add-in-on-ipad-and-mac.md). Cliquez sur le complément. Vous devriez voir l’option **Inspecter l’élément** s’afficher dans le menu contextuel. Sélectionnez cette option pour afficher l’inspecteur dans lequel vous pouvez définir des points d’arrêt et déboguer votre complément.
 
 > [!NOTE]
 > Si vous essayez d’utiliser l’inspecteur et si la boîte de dialogue scintille, mettez Office à jour vers la dernière version. Si cela ne résout pas le problème de scintillement, essayez la solution de contournement suivante :
@@ -39,10 +39,10 @@ Ensuite, ouvrez l’application Office et[insérez votre complément](sideload-a
 > 3. Redimensionner la boîte de dialogue à sa taille d’origine.
 > 4. Utiliser l’inspecteur comme requis.
 
-## <a name="clearing-the-office-applications-cache-on-a-mac-or-ipad"></a>Effacement du cache de l’application Office sur un ordinateur Mac ou un iPad
+## <a name="clearing-the-office-applications-cache-on-a-mac"></a>Effacement du cache de l’application Office sur un ordinateur Mac
 
 Les compléments sont souvent mis en cache dans Office pour Mac, pour des raisons de performances. En règle générale, vous pouvez effacer le cache en rechargeant le complément. En présence de plusieurs compléments dans le même document, il se peut que le processus d’effacement automatique du cache lors du rechargement ne fonctionne pas systématiquement.
 
-Sur un ordinateur Mac, vous pouvez effacer le cache manuellement en supprimant tous les éléments contenus dans le dossier `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
+Sur un ordinateur Mac, vous pouvez effacer le cache manuellement en supprimant le contenu du dossier `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
 
-Sur un iPad, vous pouvez appeler `window.location.reload(true)` à partir de JavaScript dans le complément pour forcer le rechargement. Vous pouvez également choisir de réinstaller Office.
+[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]

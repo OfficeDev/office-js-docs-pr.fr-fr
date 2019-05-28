@@ -1,14 +1,14 @@
 ---
 title: Valider et résoudre des problèmes avec votre manifeste
 description: Utiliser ces méthodes pour valider le manifeste des compléments Office.
-ms.date: 11/02/2018
+ms.date: 05/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 921adf6f1f398887d96031790facc1fb1425af2b
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 5b9bd22ad724bac68587a41ad56f4290f3a6edbd
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451152"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432263"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>Valider et résoudre des problèmes avec votre manifeste
 
@@ -30,7 +30,7 @@ Pour vous assurer que le fichier manifeste qui décrit votre complément Office
 
 2. Ouvrez une invite de commandes/un terminal en tant qu’administrateur, puis installez le validateur de complément Office et ses dépendances de façon globale à l’aide de la commande suivante :
 
-    ```bash
+    ```command&nbsp;line
     npm install -g office-addin-validator
     ```
     
@@ -39,7 +39,7 @@ Pour vous assurer que le fichier manifeste qui décrit votre complément Office
 
 3. Exécutez la commande suivante pour valider votre manifeste. Remplacez MANIFEST.XML par le chemin d’accès au fichier XML de manifeste.
 
-    ```bash
+    ```command&nbsp;line
     validate-office-addin MANIFEST.XML
     ```
 
@@ -55,7 +55,7 @@ Assurez-vous que le fichier manifeste suit le schéma approprié, y compris les 
 
 2.  Exécutez la commande suivante. Remplacez `XSD_FILE` par le chemin d’accès au fichier XSD manifeste et `XML_FILE` par le chemin d’accès au fichier XML manifeste.
     
-    ```bash
+    ```command&nbsp;line
     xmllint --noout --schema XSD_FILE XML_FILE
     ```
 
@@ -63,7 +63,7 @@ Assurez-vous que le fichier manifeste suit le schéma approprié, y compris les 
 
 Si vous avez créé votre complément Office à l’aide du [générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office), vérifiez que le fichier manifeste suit le schéma correct en exécutant la commande suivante dans le répertoire racine de votre projet :
 
-```bash
+```command&nbsp;line
 npm run validate
 ```
 
@@ -134,13 +134,15 @@ Vous pouvez afficher des messages dans le fichier journal qui sont source de con
 
 ## <a name="clear-the-office-cache"></a>Vider le cache Office
 
-Si les modifications apportées au manifeste, par exemple aux noms de fichier des icônes de bouton dans le ruban ou au texte des commandes de complément, ne semblent pas appliquées, essayez de vider le cache Office de votre ordinateur. 
+Si les modifications apportées au manifeste, par exemple aux noms de fichier des icônes de bouton dans le ruban ou au texte des commandes de complément, ne semblent pas être appliquées, essayez de vider le cache Office de votre ordinateur. 
 
 #### <a name="for-windows"></a>Pour Windows :
-Supprimez le contenu du dossier `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
+Supprimer le contenu du dossier `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
 #### <a name="for-mac"></a>Pour Mac :
-Supprimez le contenu du dossier `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
+Supprimer le contenu du dossier `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
+
+[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
 #### <a name="for-ios"></a>Pour iOS :
 Appelez `window.location.reload(true)` à partir de JavaScript dans le complément pour forcer le rechargement. Vous pouvez également choisir de réinstaller Office.

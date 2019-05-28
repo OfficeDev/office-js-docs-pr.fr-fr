@@ -1,14 +1,14 @@
 ---
 title: Publication de compléments du volet Office et de contenu dans un catalogue SharePoint
 description: Pour rendre les compléments Office accessibles aux utilisateurs, les administrateurs peuvent charger des fichiers manifeste de compléments Office vers le catalogue de compléments pour leur organisation.
-ms.date: 03/19/2019
+ms.date: 05/22/2019
 localization_priority: Priority
-ms.openlocfilehash: ed4f9778e4cd7dccba00d2e8c019bd4441b70eeb
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: bffbf3e83a2e6d8d0c63252c27ba54826611f78b
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450799"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432242"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-catalog"></a>Publication de compléments du volet Office et de contenu dans un catalogue SharePoint
 
@@ -19,11 +19,11 @@ Un catalogue de compléments est une collection de sites dédiée dans une appli
 > - Si vous ciblez un environnement de cloud ou hybride, nous vous recommandons d’[utiliser un déploiement centralisé via le centre d’administration Office 365](../publish/centralized-deployment.md) pour publier vos compléments.
 > - Les catalogues SharePoint ne sont pas pris en charge dans Office pour Mac. Pour déployer des compléments Office sur les clients Mac, vous devez les envoyer à [AppSource](/office/dev/store/submit-to-the-office-store).   
 
-## <a name="set-up-an-add-in-catalog"></a>Configuration d’un catalogue de compléments
+## <a name="create-an-add-in-catalog"></a>Création d’un catalogue de compléments
 
-Suivez les étapes décrites dans l’une des sections suivantes pour configurer un catalogue de compléments sur SharePoint ou Office 365.
+Suivez les étapes décrites dans l’une des sections suivantes pour créer un catalogue de compléments sur SharePoint ou Office 365.
 
-### <a name="to-set-up-an-add-in-catalog-for-on-premises-sharepoint"></a>Configuration d’un catalogue de compléments sur SharePoint local
+### <a name="to-create-an-add-in-catalog-for-on-premises-sharepoint"></a>Création d’un catalogue de compléments sur SharePoint local
 
 > [!NOTE]
 > L’interface utilisateur dans SharePoint local fait toujours référence aux compléments en tant qu’**applications**.
@@ -46,45 +46,52 @@ Suivez les étapes décrites dans l’une des sections suivantes pour configurer
 
 9. Pour ajouter un complément au catalogue de compléments Office, choisissez **Applications pour Office**.
 
-### <a name="to-set-up-an-add-in-catalog-on-office-365"></a>Configuration d’un catalogue de compléments sur Office 365
+### <a name="to-create-an-app-catalog-on-office-365"></a>Pour créer catalogue d’applications Office 365
 
-1. Sur la page Centre d’administration Office 365, sélectionnez **Administrateur**, puis **SharePoint**.
+SharePoint l’appelle un catalogue d’« Applications », mais vous pouvez également enregistrer des compléments Office dans le catalogue.
 
-2. Dans le volet Office situé à gauche, cliquez sur  **Compléments**.
+1. Aller au Centre d’administration Microsoft 365. Pour plus d’informations sur comment accéder au centre d’administration, voir [À propos du centre d’administration Microsoft 365](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center).
 
-3. Sur la page  **Compléments**, cliquez sur  **Catalogue de compléments**.
+2. Dans la page Centre d’administration Microsoft 365, développez la liste des **centres d’administration**, puis sélectionnez **SharePoint**.
 
-4. Sur la page  **Site de catalogue de compléments**, cliquez sur  **OK** pour accepter l’option par défaut et créer un site de catalogue de compléments.
+    > [!NOTE]
+    > Vous devez utiliser le centre d’administration SharePoint classique pour créer le catalogue. Si c’est la première fois que vous accédez au centre d’administration SharePoint, sélectionnez **Centre d’administration SharePoint classique** dans le volet gauche.
 
-5. Sur la page  **Créer une collection de sites de catalogue de compléments**, indiquez le titre de votre site de catalogue de compléments.
+3. Dans le volet Office situé à gauche, choisissez **Applications**.
 
-6. Spécifiez l’adresse du site web.
+4. Dans la page d’**applications**, choisissez **Catalogue d’applications**.
+    > [!NOTE]
+    > Si un catalogue d’applications est déjà créé et apparaît dans cette page, vous pouvez ignorer le reste de ces étapes et accéder à la section suivante de cet article pour publier votre complément dans le catalogue.
 
-7. Définissez l’option  **Quota de stockage** sur la plus faible valeur possible (actuellement 110). Vous n’installerez que des packages de complément sur cette collection de sites et ils sont peu volumineux.
+5. Dans la page **Site de catalogue d’applications**, cliquez sur **OK** pour accepter l’option par défaut et créer un site de catalogue.
 
-8. Définissez l’option  **Quota de ressources du serveur** sur 0 (zéro). (Le quota de ressources du serveur est lié à la limitation des solutions bac à sable (sandbox) dont les performances sont médiocres, mais vous n’installerez aucune solution bac à sable (sandbox) sur votre site de catalogue de compléments.)
+6. Dans la page **Créer une collection de sites de catalogue d’applications**, indiquez le titre de votre site de catalogue.
 
-9. Sélectionnez **OK**.
+7. Spécifiez l’**adresse du site web**.
 
-10. Pour ajouter un complément au site de catalogue de compléments, accédez au site que vous venez de créer. Dans le volet de navigation de gauche, choisissez **Compléments Office**, puis, pour télécharger un fichier manifeste de complément Office, sélectionnez **Nouveau complément**.
+8. Précisez qui est l’**administrateur **.
 
-## <a name="publish-an-add-in-to-an-add-in-catalog"></a>Publication d’un complément dans un catalogue de compléments
+9. Choisissez 0 (zéro) comme **quota de ressources du serveur**. (Le quota de ressources du serveur est lié à la limitation des solutions bac à sable (sandbox) dont les performances sont médiocres, mais vous n’installerez aucune solution bac à sable (sandbox) sur votre site de catalogue d’applications.)
 
-Pour publier un complément dans un catalogue de compléments, procédez comme suit.
+10. Sélectionnez **OK**.
 
-1. Accédez au catalogue de compléments :
+Le catalogue d’applications est créé.
 
-    - Ouvrez la page principale de l’Administration centrale de SharePoint.
+## <a name="publish-an-add-in-to-an-app-catalog"></a>Publication d’un complément dans un catalogue d’applications
 
-    - Sélectionnez **Compléments**.
+Pour publier un complément dans un catalogue d’applications existant, procédez comme suit.
 
-    - Sélectionnez **Gérer le catalogue de compléments**.
-
-    - Sélectionnez le lien fourni, puis choisissez **Compléments Office** dans la barre de navigation située à gauche.
-
-2. Sélectionnez le lien **Cliquer pour ajouter un nouvel élément**.
-
-3. Choisissez **Parcourir**, puis spécifiez le [manifeste](../develop/add-in-manifests.md) à télécharger.
+1. Aller au Centre d’administration Microsoft 365. Pour plus d’informations sur comment accéder au centre d’administration, voir [À propos du centre d’administration Microsoft 365](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center).
+2. Dans la page Centre d’administration Microsoft 365, développez la liste des **centres d’administration**, puis sélectionnez **SharePoint**.
+    > [!NOTE]
+    > Vous devez utiliser le centre d’administration SharePoint classique pour créer le catalogue. Si c’est la première fois que vous accédez au centre d’administration SharePoint, sélectionnez **Centre d’administration SharePoint classique** dans le volet gauche.
+3. Dans le volet Office situé à gauche, choisissez **Applications**.
+4. Dans la page d’**applications**, choisissez **Catalogue d’applications**.
+5. Choisissez **Distribuer des applications pour Office**.
+6. Dans la page **Applications pour Office**, cliquez sur **Nouveau**.
+7. Dans la boîte de dialogue **Ajouter un document**, sélectionnez le bouton **Choisir un fichier**.
+8. Recherchez et spécifiez le fichier [manifeste](../develop/add-in-manifests.md) à télécharger, puis sélectionnez **Ouvrir**.
+9. Dans la boîte de dialogue **Ajouter un document**, cliquez sur **OK**.
 
     Les compléments de contenu et de volet Office de ce catalogue sont désormais disponibles dans la boîte de dialogue **Compléments Office**. Pour y accéder, choisissez **Mes compléments** sous l’onglet **Insérer**, puis choisissez **MON ORGANISATION**.
 
