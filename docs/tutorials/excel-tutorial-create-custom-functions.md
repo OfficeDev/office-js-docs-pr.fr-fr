@@ -5,12 +5,12 @@ ms.date: 05/16/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 63b5728057559e3c7190d1fb9645032a1b7cdc71
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: 7d4d87a6bb3910c1b46698d5a2ff211ea1bbc6dd
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432270"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589173"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Didacticiel : créer des fonctions personnalisées dans Excel
 
@@ -53,24 +53,24 @@ Dans ce didacticiel, vous allez :
     cd stock-ticker
     ```
 
-3. Construire le projet.
+3. Créez le projet.
     
     ```command&nbsp;line
     npm run build
     ```
 
+    > [!NOTE]
+    > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté `npm run build`, acceptez d’installer le certificat fourni par le générateur Yeoman.
+
 4. Démarrez le serveur web local qui est exécuté dans Node.js. Vous pouvez essayer le complément de fonction personnalisée dans Excel sur Windows ou Excel online.
 
 # <a name="excel-on-windowstabexcel-windows"></a>[Excel sur Windows](#tab/excel-windows)
 
-Pour tester votre complément dans Excel sous Windows, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur Web local démarre et Excel sur Windows s’ouvre avec votre complément chargé.
+Pour tester votre complément dans Excel sous Windows, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur Web local démarre et Excel s’ouvre avec votre complément chargé.
 
 ```command&nbsp;line
 npm run start:desktop
 ```
-
-> [!NOTE]
-> Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté `npm run start:desktop`, acceptez d’installer le certificat fourni par le générateur Yeoman.
 
 # <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
@@ -79,9 +79,6 @@ Pour tester votre complément dans Excel Online, exécutez la commande suivante.
 ```command&nbsp;line
 npm run start:web
 ```
-
-> [!NOTE]
-> Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté `npm run start:web`, acceptez d’installer le certificat fourni par le générateur Yeoman.
 
 Pour utiliser votre complément de fonctions personnalisées, ouvrez un nouveau classeur dans Excel online. Dans ce classeur, effectuez les étapes suivantes pour chargement votre complément.
 
