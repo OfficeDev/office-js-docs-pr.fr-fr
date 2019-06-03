@@ -4,12 +4,12 @@ description: ''
 ms.date: 05/02/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 01e2c961ad7bc9a50a6934732fa4cc57220f033c
-ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
+ms.openlocfilehash: 75b59e576ea0ed1a6012a08ab75e806cc68390f9
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33619740"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589229"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>Créer votre premier complément de volet de tâches PowerPoint
 
@@ -211,20 +211,27 @@ Dans cet article, vous découvrirez comment créer un complément de volet de t�
 
 [!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-js.md)]
 
-### <a name="try-it-out"></a>Essayez !
+### <a name="try-it-out"></a>Try it out
 
-1. Démarrez le serveur web local et chargez indépendamment votre complément.
+1. Pour démarrer le serveur web local et charger indépendamment votre complément, procédez comme suit.
 
     > [!NOTE]
-    > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté une des commandes suivantes, acceptez d’installer le certificat fourni par le générateur Yeoman. 
+    > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté une des commandes suivantes, acceptez d’installer le certificat fourni par le générateur Yeoman.
 
-    - Pour tester votre complément dans PowerPoint, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local et PowerPoint s’ouvrent avec votre complément chargé.
+    > [!TIP]
+    > Si vous testez votre complément sur Mac, exécutez la commande suivante avant de continuer. Lorsque vous exécutez cette commande, le serveur web local démarre.
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
+
+    - Pour tester votre complément dans PowerPoint, exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas encore en cours d’exécution), et PowerPoint s’ouvre avec votre complément chargé.
 
         ```command&nbsp;line
         npm start
         ```
 
-    - Pour tester votre complément dans PowerPoint Online, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local démarre.
+    - Pour tester votre complément dans PowerPoint Online, exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution).
 
         ```command&nbsp;line
         npm run start:web

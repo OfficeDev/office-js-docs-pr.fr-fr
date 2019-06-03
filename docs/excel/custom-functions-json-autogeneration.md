@@ -3,12 +3,12 @@ ms.date: 05/03/2019
 description: Utiliser les balises JSDOC pour créer dynamiquement vos fonctions personnalisées de métadonnées JSON.
 title: Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 localization_priority: Priority
-ms.openlocfilehash: df1c0114597e2aa98a15db48c515469fb9db6cd9
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: 67026e7c19580c3420638b4f37e333e50fce1b44
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628087"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589131"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 
@@ -61,7 +61,7 @@ L’id est utilisé en tant qu’identificateur invariant pour la fonction perso
 
 * Si l’id n’est pas fourni, le nom de la fonction JavaScript/TypeScript est convertie en majuscules, et les caractères rejetés sont supprimés.
 * L’id doit être unique pour toutes les fonctions personnalisées.
-* Seuls les caractères alphanumériques majuscules et minuscules (A-Z, a-z, 0-9) et le point (.) sont autorisés.
+* Les caractères autorisés sont les suivants : A-Z, a-z, 0-9, traits de soulignement (\_) et point (.).
 
 #### <a name="name"></a>name
 

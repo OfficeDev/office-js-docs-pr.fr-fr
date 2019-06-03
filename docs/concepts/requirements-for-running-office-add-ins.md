@@ -3,12 +3,12 @@ title: Configuration requise pour exécuter des compléments Office
 description: ''
 ms.date: 05/14/2019
 localization_priority: Priority
-ms.openlocfilehash: 2dcdfb2562233550016cd2d04571239318ffffa3
-ms.sourcegitcommit: 944cbb5c6ce055f6db1833182b24d490d1dce01d
+ms.openlocfilehash: 650f5555eb120cbb541370c2ea5e2b2078c98ad9
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "33992181"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589103"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Configuration requise pour exécuter des compléments Office
 
@@ -48,7 +48,7 @@ Le logiciel suivant est requis pour développer un Complément Office pour les c
 
   Si votre abonnement Office 365 est valide, mais que n’avez pas accès au client Office, nous vous conseillons de [télécharger et installer la dernière version d’Office](https://support.office.com/article/download-and-install-or-reinstall-office-365-or-office-2019-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658).
 
-- Internet Explorer 11 ou Microsoft Edge (selon les versions de Windows et Office) doit être installé, sans être nécessairement le navigateur par défaut. Pour prendre en charge les compléments Office, le client Office servant d’hôte utilise des composants de navigateur faisant partie d’Internet Explorer 11 ou de Microsoft Edge. Pour plus d’informations, voir [Visionneuses web utilisées par les compléments Office](web-viewers-used-by-office-web-add-ins.md).
+- Internet Explorer 11 ou Microsoft Edge (selon les versions de Windows et Office) doit être installé, sans être nécessairement le navigateur par défaut. Pour prendre en charge les compléments Office, le client Office servant d’hôte utilise des composants de navigateur faisant partie d’Internet Explorer 11 ou de Microsoft Edge. Pour plus d’informations, voir [Navigateurs utilisés par les compléments Office](browsers-used-by-office-web-add-ins.md).
 
   > [!NOTE]
   > La Configuration de sécurité renforcée d’Internet Explorer (ESC) doit être désactivée pour que les compléments web Office fonctionnent. Si vous utilisez un ordinateur Windows Server comme votre client lors du développement des compléments, notez qu’ESC est activée par défaut dans Windows Server.
@@ -90,4 +90,4 @@ L’installation du logiciel suivant est nécessaire pour tester et exécuter le
 
 - [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
 - [Disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md)
-- [Visionneuses web utilisées par les compléments Office](web-viewers-used-by-office-web-add-ins.md)
+- [Navigateurs utilisés par les compléments Office](browsers-used-by-office-web-add-ins.md)

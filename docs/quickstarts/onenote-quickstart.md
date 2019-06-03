@@ -1,231 +1,103 @@
 ---
-title: Créer votre premier complément OneNote
+title: Créer votre premier complément du volet Office de OneNote
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/02/2019
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 378d691d1994a2d22166afc5338007400f7a48af
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 48cd9395b269a83630608c52d972508828c5c007
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450888"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589215"
 ---
-# <a name="build-your-first-onenote-add-in"></a>Créer votre premier complément OneNote
+# <a name="build-your-first-onenote-task-pane-add-in"></a>Créer votre premier complément du volet Office de OneNote
 
-Cet article décrit le processus de création d’un complément OneNote à l’aide de jQuery et de l’API JavaScript pour Office.
+Cet article décrit comment créer un complément du volet Office de OneNote.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-- [Node.js](https://nodejs.org)
-
-- Installez la dernière version de [Yeoman](https://github.com/yeoman/yo) et le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) globalement.
-
-    ```bash
-    npm install -g yo generator-office
-    ```
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 ## <a name="create-the-add-in-project"></a>Création du projet de complément
 
 1. Utilisez le générateur Yeoman afin de créer un projet de complément OneNote. Exécutez la commande suivante, puis répondez aux invites comme suit :
 
-    ```bash
+    ```command&nbsp;line
     yo office
     ```
 
-    - **Sélectionnez un type de projet :** `Office Add-in project using Jquery framework`
+    - **Sélectionnez un type de projet :** `Office Add-in Task Pane project`
     - **Sélectionnez un type de script :** `Javascript`
-    - **Comment souhaitez-vous nommer votre complément ? :** `My Office Add-in`
-    - **Quelle application client Office voulez-vous prendre en charge ? :** `Onenote`
+    - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
+    - **Quelle application client Office voulez-vous prendre en charge ?** `OneNote`
 
-    ![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yo-office-onenote-jquery.png)
+    ![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yo-office-onenote.png)
     
     Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants de nœud de la prise en charge.
     
 2. Accédez au dossier racine du projet.
 
-    ```bash
+    ```command&nbsp;line
     cd "My Office Add-in"
     ```
 
-## <a name="update-the-code"></a>Mise à jour du code
+## <a name="explore-the-project"></a>Explorer le projet
 
-1. Dans votre éditeur de code, ouvrez **index.html** à la racine du projet. Ce fichier contient le code HTML qui s’affichera dans le volet Office du complément.
+Le projet de complément que vous avez créé à l’aide du générateur Yeoman contient un exemple de code pour un complément de volet de tâches très simple. 
 
-2. Remplacez l’élément `<body>` par le balisage suivant et enregistrez le fichier. 
+- Le fichier **./manifest.xml** du répertoire racine du projet définit les paramètres et fonctionnalités du complément.
+- Le fichier **./src/taskpane/taskpane.html** contient les balises HTML du volet Office.
+- Le fichier **./src/taskpane/taskpane.css** contient le style CSS appliqué au contenu du volet Office.
+- Le fichier **./src/taskpane/taskpane.js** contient le code de l’API JavaScript pour Office qui facilite l’interaction entre le volet Office et l’application hôte Office.
 
-    ```html
-    <body class="ms-font-m ms-welcome">
-        <header class="ms-welcome__header ms-bgColor-themeDark ms-u-fadeIn500">
-            <h2 class="ms-fontSize-xxl ms-fontWeight-regular ms-fontColor-white">OneNote Add-in</h1>
-        </header>
-        <main id="app-body" class="ms-welcome__main">
-            <br />
-            <p class="ms-font-m">Enter HTML content here:</p>
-            <div class="ms-TextField ms-TextField--placeholder">
-                <textarea id="textBox" rows="8" cols="30"></textarea>
-            </div>
-            <button id="addOutline" class="ms-Button ms-Button--primary">
-                <span class="ms-Button-label">Add outline</span>
-            </button>
-        </main>
-        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
-        <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
-    </body>
-    ```
+## <a name="update-the-code"></a>Mettre à jour le code
 
-3. Ouvrez le fichier **src/index.js** afin de spécifier le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+Dans votre éditeur de code, ouvrez le fichier **./src/taskpane/taskpane.js** et ajoutez le code suivant à la fonction **run**. Ce code utilise l’API JavaScript OneNote pour définir le titre de la page et ajouter un plan au corps de celle-ci.
 
-    ```js
-    import * as OfficeHelpers from "@microsoft/office-js-helpers";
+```js
+try {
+    await OneNote.run(async context => {
 
-    Office.onReady(() => {
-        // Office is ready
-        $(document).ready(() => {
-            // The document is ready
-            $('#addOutline').click(addOutlineToPage);
-        });
+        // Get the current page.
+        var page = context.application.getActivePage();
+
+        // Queue a command to set the page title.
+        page.title = "Hello World";
+
+        // Queue a command to add an outline to the page.
+        var html = "<p><ol><li>Item #1</li><li>Item #2</li></ol></p>";
+        page.addOutline(40, 90, html);
+
+        // Run the queued commands, and return a promise to indicate task completion.
+        return context.sync();
     });
-    
-    async function addOutlineToPage() {
-        try {
-            await OneNote.run(async context => {
-                var html = "<p>" + $("#textBox").val() + "</p>";
+} catch (error) {
+    console.log("Error: " + error);
+}
+```
 
-                // Get the current page.
-                var page = context.application.getActivePage();
+## <a name="try-it-out"></a>Essayez
 
-                // Queue a command to load the page with the title property.
-                page.load("title");
+> [!NOTE]
+> Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté une des commandes suivantes, acceptez d’installer le certificat fourni par le générateur Yeoman.
 
-                // Add text to the page by using the specified HTML.
-                var outline = page.addOutline(40, 90, html);
+> [!TIP]
+> Si vous testez votre complément sur Mac, exécutez la commande suivante avant de continuer. Lorsque vous exécutez cette commande, le serveur web local démarre.
+>
+> ```command&nbsp;line
+> npm run dev-server
+> ```
 
-                // Run the queued commands, and return a promise to indicate task completion.
-                return context.sync()
-                    .then(function() {
-                        console.log("Added outline to page " + page.title);
-                    })
-                    .catch(function(error) {
-                        app.showNotification("Error: " + error);
-                        console.log("Error: " + error);
-                        if (error instanceof OfficeExtension.Error) {
-                            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-                        }
-                    });
-                });
-        } catch (error) {
-            OfficeHelpers.UI.notify(error);
-            OfficeHelpers.Utilities.log(error);
-        }
-    }
+1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution).
+
+    ```command&nbsp;line
+    npm run start:web
     ```
 
-4. Ouvrez le fichier **app.css** pour spécifier les styles personnalisés pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+2. Dans [OneNote Online](https://www.onenote.com/notebooks), ouvrez un bloc-notes, puis créez une page.
 
-    ```css
-    html, body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
-
-    ul, p, h1, h2, h3, h4, h5, h6 {
-        margin: 0;
-        padding: 0;
-    }
-
-    .ms-welcome {
-        position: relative;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: column;
-        flex-direction: column;
-        -webkit-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-        min-height: 500px;
-        min-width: 320px;
-        overflow: auto;
-        overflow-x: hidden;
-    }
-
-    .ms-welcome__header {
-        min-height: 30px;
-        padding: 0px;
-        padding-bottom: 5px;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: column;
-        flex-direction: column;
-        -webkit-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-        -webkit-align-items: center;
-        align-items: center;
-        -webkit-justify-content: flex-end;
-        justify-content: flex-end;
-    }
-
-    .ms-welcome__header > h1 {
-        margin-top: 5px;
-        text-align: center;
-    }
-
-    .ms-welcome__main {
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: column;
-        flex-direction: column;
-        -webkit-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-        -webkit-align-items: center;
-        align-items: left;
-        -webkit-flex: 1 0 0;
-        flex: 1 0 0;
-        padding: 30px 20px;
-    }
-
-    .ms-welcome__main > h2 {
-        width: 100%;
-        text-align: left;
-    }
-
-    @media (min-width: 0) and (max-width: 350px) {
-        .ms-welcome__features {
-            width: 100%;
-        }
-    }
-    ```
-
-## <a name="update-the-manifest"></a>Mise à jour du manifeste
-
-1. Ouvrez le fichier nommé **manifest.xml** pour définir les paramètres et les fonctionnalités du complément.
-
-2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-le par votre nom.
-
-3. L’attribut `DefaultValue` de l’élément `Description` possède un espace réservé. Remplacez-le par **A task pane add-in for OneNote**.
-
-4. Enregistrez le fichier.
-
-    ```xml
-    ...
-    <ProviderName>John Doe</ProviderName>
-    <DefaultLocale>en-US</DefaultLocale>
-    <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
-    <DisplayName DefaultValue="My Office Add-in" />
-    <Description DefaultValue="A task pane add-in for OneNote"/>
-    ...
-    ```
-
-## <a name="start-the-dev-server"></a>Démarrage du serveur de développement
-
-[!include[Start server section](../includes/quickstart-yo-start-server.md)]
-
-## <a name="try-it-out"></a>Essayez !
-
-1. Dans [OneNote Online](https://www.onenote.com/notebooks), ouvrez un bloc-notes.
-
-2. Choisissez **Insertion > Compléments Office** pour ouvrir la boîte de dialogue Compléments Office.
+3. Choisissez **Insertion > Compléments Office** pour ouvrir la boîte de dialogue Compléments Office.
 
     - Si vous êtes connecté avec votre compte de consommateur, sélectionnez l’onglet **MES COMPLÉMENTS**, puis choisissez **Télécharger mon complément**.
 
@@ -239,36 +111,13 @@ Cet article décrit le processus de création d’un complément OneNote à l’
 
 4. Dans l’onglet **Accueil**, choisissez le bouton **Afficher le volet de tâches** du ruban. Le volet Office du complément s’ouvre dans un iFrame à côté de la page OneNote.
 
-5. Entrez le contenu HTML suivant dans la zone de texte, puis sélectionnez **Ajouter un plan**.  
+5. Au bas du volet Office, sélectionnez le lien **Exécuter** pour définir le titre de la page et ajouter un plan au corps de celle-ci.
 
-    ```html
-    <ol>
-    <li>Item #1</li>
-    <li>Item #2</li>
-    <li>Item #3</li>
-    <li>Item #4</li>
-    </ol>
-    ```
-
-    Le plan que vous avez spécifié est ajouté à la page.
-
-    ![Complément OneNote généré à partir de cette procédure pas à pas](../images/onenote-first-add-in-3.png)
-
-## <a name="troubleshooting-and-tips"></a>Conseils et résolution des problèmes
-
-- Vous pouvez déboguer le complément à l’aide des outils de développement de votre navigateur. Lorsque vous utilisez le serveur web Gulp et le débogage dans Internet Explorer ou Chrome, vous pouvez enregistrer les modifications localement et simplement actualiser l’iFrame du complément.
-
-- Lorsque vous examinez un objet OneNote, les propriétés qui sont actuellement disponibles affichent les valeurs réelles. Les propriétés qui doivent être chargées sont affichées comme *non définies*. Développez le nœud `_proto_` pour visualiser les propriétés qui sont définies sur l’objet, mais qui ne sont pas encore chargées.
-
-   ![Objet OneNote déchargé dans le débogueur](../images/onenote-debug.png)
-
-- Vous devez activer le contenu mixte dans le navigateur si votre complément utilise des ressources HTTP. Les compléments de production doivent uniquement utiliser des ressources HTTPS sécurisées.
-
-- Les compléments de volet Office peuvent être ouverts à partir de n’importe où, mais les compléments de contenu peuvent uniquement être insérés à l’intérieur de contenu de page normal (et non dans des titres, des images, des iFrames, etc.). 
+    ![Complément OneNote généré à partir de cette procédure pas à pas](../images/onenote-first-add-in-4.png)
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations, vous avez créé un complément OneNote ! Ensuite, vous allez étudier en détail les concepts fondamentaux de la création de compléments Excel.
+Félicitations ! Vous avez créé un complément du volet Office de OneNote ! Ensuite, vous allez étudier en détail les concepts fondamentaux de la création de compléments Excel.
 
 > [!div class="nextstepaction"]
 > [Vue d’ensemble de la programmation de l’API JavaScript de OneNote](../onenote/onenote-add-ins-programming-overview.md)

@@ -4,12 +4,12 @@ description: ''
 ms.date: 05/08/2019
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: d61f8d83b88dbe69ff0ba9cd4b0afef77a4f03d6
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 7a7c907eeeb85b2a686c49ebba0558f4ec20568d
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952247"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589208"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Project
 
@@ -95,16 +95,16 @@ Office.context.document.getSelectedTaskAsync(
 );
 ```
 
-## <a name="try-it-out"></a>Essayez !
+## <a name="try-it-out"></a>Try it out
 
-1. Démarrez le serveur web local en exécutant la commande suivante :
+> [!NOTE]
+> Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté la commande suivante, acceptez d’installer le certificat fourni par le générateur Yeoman.
+
+1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre.
 
     ```command&nbsp;line
     npm start
     ```
-
-    > [!NOTE]
-    > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté `npm start`, acceptez d’installer le certificat fourni par le générateur Yeoman. 
 
 2. Dans Project, créez un plan de projet simple.
 

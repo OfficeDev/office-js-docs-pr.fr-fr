@@ -4,12 +4,12 @@ description: ''
 ms.date: 05/08/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: f0fda0c7dcdebdc1fd1b6daf4e35c1794a56e950
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 5164d6cb49ea5c4aed0aeffb5b3f7a0ed96f07c9
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952263"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589222"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Word
 
@@ -266,20 +266,27 @@ Cet article décrit comment créer un complément du volet des tâches de Word.
 
 [!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-js.md)]
 
-### <a name="try-it-out"></a>Essayez !
+### <a name="try-it-out"></a>Essayez
 
-1. Démarrez le serveur web local et chargez indépendamment votre complément.
+1. Pour démarrer le serveur web local et charger indépendamment votre complément, procédez comme suit.
 
     > [!NOTE]
-    > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté une des commandes suivantes, acceptez d’installer le certificat fourni par le générateur Yeoman. 
+    > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté une des commandes suivantes, acceptez d’installer le certificat fourni par le générateur Yeoman.
 
-    - Pour tester votre complément dans Word, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local et Word s’ouvrent avec votre complément chargé.
+    > [!TIP]
+    > Si vous testez votre complément sur Mac, exécutez la commande suivante avant de continuer. Lorsque vous exécutez cette commande, le serveur web local démarre.
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
+
+    - Pour tester votre complément dans Word, exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas encore en cours d’exécution), et Word s’ouvre avec votre complément chargé.
 
         ```command&nbsp;line
         npm start
         ```
 
-    - Pour tester votre complément dans Word Online, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local démarre.
+    - Pour tester votre complément dans Word Online, exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution).
 
         ```command&nbsp;line
         npm run start:web
@@ -308,5 +315,5 @@ Félicitations, vous avez créé un complément du volet des tâches de Word ! 
 
 * [Présentation des compléments Word](../word/word-add-ins-programming-overview.md)
 * 
-  [Exemples de code pour les compléments Word](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
+  [Exemples de code pour les compléments Word](https://developer.microsoft.com/fr-FR/office/gallery/?filterBy=Samples,Word)
 * [Référence d’API JavaScript pour Word](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)

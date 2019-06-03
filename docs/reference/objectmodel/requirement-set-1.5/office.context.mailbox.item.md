@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox.item - ensemble de conditions requises 1.5
 description: ''
-ms.date: 04/12/2019
+ms.date: 05/30/2019
 localization_priority: Priority
-ms.openlocfilehash: 2f9394751180296d876d8c577d68adc1b5abb692
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 59e21676e670d8ba4da95319567364948f374790
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451828"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589180"
 ---
 # <a name="item"></a>élément
 
@@ -85,9 +85,9 @@ Office.initialize = function () {
 };
 ```
 
-### <a name="members"></a>Membres
+### <a name="members"></a>Members
 
-#### <a name="attachments-arrayattachmentdetailsjavascriptapioutlook15officeattachmentdetails"></a>attachments :Array.<[AttachmentDetails](/javascript/api/outlook_1_5/office.attachmentdetails)>
+#### <a name="attachments-arrayattachmentdetailsjavascriptapioutlook15officeattachmentdetails"></a>attachments: Array.<[AttachmentDetails](/javascript/api/outlook_1_5/office.attachmentdetails)>
 
 Obtient un tableau des pièces jointes de l’élément. Mode lecture uniquement.
 
@@ -130,7 +130,7 @@ if (item.attachments.length > 0) {
 console.log(outputString);
 ```
 
-####  <a name="bcc-recipientsjavascriptapioutlook15officerecipients"></a>bcc :[Recipients](/javascript/api/outlook_1_5/office.recipients)
+#### <a name="bcc-recipientsjavascriptapioutlook15officerecipients"></a>bcc: [Recipients](/javascript/api/outlook_1_5/office.recipients)
 
 Permet d’obtenir un objet qui fournit des méthodes permettant d’obtenir ou de mettre à jour les destinataires figurant sur la ligne Cci (copie carbone invisible) d’un message. Mode composition uniquement.
 
@@ -158,7 +158,7 @@ function callback(asyncResult) {
 }
 ```
 
-####  <a name="body-bodyjavascriptapioutlook15officebody"></a>body :[Body](/javascript/api/outlook_1_5/office.body)
+#### <a name="body-bodyjavascriptapioutlook15officebody"></a>body: [Body](/javascript/api/outlook_1_5/office.body)
 
 Obtient un objet qui fournit des méthodes permettant de manipuler le corps d’un élément.
 
@@ -198,7 +198,7 @@ L’exemple suivant présente le paramètre de résultat transmis à la fonction
 }
 ```
 
-####  <a name="cc-arrayemailaddressdetailsjavascriptapioutlook15officeemailaddressdetailsrecipientsjavascriptapioutlook15officerecipients"></a>cc :Array.<[EmailAddressDetails](/javascript/api/outlook_1_5/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_5/office.recipients)
+#### <a name="cc-arrayemailaddressdetailsjavascriptapioutlook15officeemailaddressdetailsrecipientsjavascriptapioutlook15officerecipients"></a>cc: Array.<[EmailAddressDetails](/javascript/api/outlook_1_5/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_5/office.recipients)
 
 Permet d’accéder aux destinataires en copie carbone (Cc) d’un message. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
@@ -236,7 +236,7 @@ function callback(asyncResult) {
 |[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
-####  <a name="nullable-conversationid-string"></a>(nullable) conversationId :String
+#### <a name="nullable-conversationid-string"></a>(nullable) conversationId: String
 
 Obtient l’identificateur de la conversation qui contient un message particulier.
 
@@ -263,7 +263,7 @@ var conversationId = Office.context.mailbox.item.conversationId;
 console.log("conversationId: " + conversationId);
 ```
 
-#### <a name="datetimecreated-date"></a>dateTimeCreated :Date
+#### <a name="datetimecreated-date"></a>dateTimeCreated: Date
 
 Obtient la date et l’heure de création d’un élément. Mode lecture uniquement.
 
@@ -286,7 +286,7 @@ var dateTimeCreated = Office.context.mailbox.item.dateTimeCreated;
 console.log("Date and time created: " + dateTimeCreated);
 ```
 
-#### <a name="datetimemodified-date"></a>dateTimeModified :Date
+#### <a name="datetimemodified-date"></a>dateTimeModified: Date
 
 Permet d’obtenir la date et l’heure de la dernière modification d’un élément. Mode lecture uniquement.
 
@@ -312,7 +312,7 @@ var dateTimeModified = Office.context.mailbox.item.dateTimeModified;
 console.log("Date and time modified: " + dateTimeModified);
 ```
 
-####  <a name="end-datetimejavascriptapioutlook15officetime"></a>end :Date|[Time](/javascript/api/outlook_1_5/office.time)
+#### <a name="end-datetimejavascriptapioutlook15officetime"></a>end: Date|[Time](/javascript/api/outlook_1_5/office.time)
 
 Obtient ou définit la date et l’heure de fin du rendez-vous.
 
@@ -363,7 +363,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 |[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
-#### <a name="from-emailaddressdetailsjavascriptapioutlook15officeemailaddressdetails"></a>from :[EmailAddressDetails](/javascript/api/outlook_1_5/office.emailaddressdetails)
+#### <a name="from-emailaddressdetailsjavascriptapioutlook15officeemailaddressdetails"></a>from: [EmailAddressDetails](/javascript/api/outlook_1_5/office.emailaddressdetails)
 
 Obtient l’adresse de messagerie de l’expéditeur d’un message. Mode lecture uniquement.
 
@@ -391,7 +391,7 @@ var from = Office.context.mailbox.item.from;
 console.log("From " + from);
 ```
 
-#### <a name="internetmessageid-string"></a>internetMessageId :String
+#### <a name="internetmessageid-string"></a>internetMessageId: String
 
 Obtient l’identificateur de message Internet d’un message électronique. Mode lecture uniquement.
 
@@ -413,7 +413,7 @@ Obtient l’identificateur de message Internet d’un message électronique. Mod
 var internetMessageId = Office.context.mailbox.item.internetMessageId;
 ```
 
-#### <a name="itemclass-string"></a>itemClass :String
+#### <a name="itemclass-string"></a>itemClass: String
 
 Obtient la classe de l’élément des services web Exchange de l’élément sélectionné. Mode lecture uniquement.
 
@@ -445,7 +445,7 @@ var itemClass = Office.context.mailbox.item.itemClass;
 console.log("Item class: " + itemClass);
 ```
 
-#### <a name="nullable-itemid-string"></a>(nullable) itemId :String
+#### <a name="nullable-itemid-string"></a>(nullable) itemId: String
 
 Permet d’obtenir l’identificateur de l’élément des services web Exchange pour l’élément actif. Mode lecture uniquement.
 
@@ -479,7 +479,7 @@ if (itemId === null || itemId == undefined) {
 }
 ```
 
-####  <a name="itemtype-officemailboxenumsitemtypejavascriptapioutlook15officemailboxenumsitemtype"></a>itemType :[Office.MailboxEnums.ItemType](/javascript/api/outlook_1_5/office.mailboxenums.itemtype)
+#### <a name="itemtype-officemailboxenumsitemtypejavascriptapioutlook15officemailboxenumsitemtype"></a>itemType: [Office.MailboxEnums.ItemType](/javascript/api/outlook_1_5/office.mailboxenums.itemtype)
 
 Obtient le type d’élément représenté par une instance.
 
@@ -507,7 +507,7 @@ if (Office.context.mailbox.item.itemType === Office.MailboxEnums.ItemType.Messag
 }
 ```
 
-####  <a name="location-stringlocationjavascriptapioutlook15officelocation"></a>location :String|[Location](/javascript/api/outlook_1_5/office.location)
+#### <a name="location-stringlocationjavascriptapioutlook15officelocation"></a>location: String|[Location](/javascript/api/outlook_1_5/office.location)
 
 Obtient ou définit le lieu d’un rendez-vous.
 
@@ -546,7 +546,7 @@ function callback(asyncResult) {
 |[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
-#### <a name="normalizedsubject-string"></a>normalizedSubject :String
+#### <a name="normalizedsubject-string"></a>normalizedSubject: String
 
 Obtient l’objet d’un élément, sans les préfixes (y compris `RE:` et `FWD:`). Mode lecture uniquement.
 
@@ -571,7 +571,7 @@ var normalizedSubject = Office.context.mailbox.item.normalizedSubject;
 console.log("Normalized subject: " + normalizedSubject);
 ```
 
-####  <a name="notificationmessages-notificationmessagesjavascriptapioutlook15officenotificationmessages"></a>notificationMessages :[NotificationMessages](/javascript/api/outlook_1_5/office.notificationmessages)
+#### <a name="notificationmessages-notificationmessagesjavascriptapioutlook15officenotificationmessages"></a>notificationMessages: [NotificationMessages](/javascript/api/outlook_1_5/office.notificationmessages)
 
 Obtient les messages de notification pour un élément.
 
@@ -598,7 +598,7 @@ Office.context.mailbox.item.notificationMessages.getAllAsync(
 );
 ```
 
-####  <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlook15officeemailaddressdetailsrecipientsjavascriptapioutlook15officerecipients"></a>optionalAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_5/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_5/office.recipients)
+#### <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlook15officeemailaddressdetailsrecipientsjavascriptapioutlook15officerecipients"></a>optionalAttendees: Array.<[EmailAddressDetails](/javascript/api/outlook_1_5/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_5/office.recipients)
 
 Permet d’accéder aux participants facultatifs d’un événement. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
@@ -637,7 +637,7 @@ function callback(asyncResult) {
 |[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
-#### <a name="organizer-emailaddressdetailsjavascriptapioutlook15officeemailaddressdetails"></a>organizer :[EmailAddressDetails](/javascript/api/outlook_1_5/office.emailaddressdetails)
+#### <a name="organizer-emailaddressdetailsjavascriptapioutlook15officeemailaddressdetails"></a>organizer: [EmailAddressDetails](/javascript/api/outlook_1_5/office.emailaddressdetails)
 
 Obtient l’adresse de messagerie de l’organisateur de la réunion spécifiée. Mode lecture uniquement.
 
@@ -661,7 +661,7 @@ var organizerAddress = Office.context.mailbox.item.organizer.emailAddress;
 console.log("Organizer: " + organizerName + " (" + organizerAddress + ")");
 ```
 
-####  <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlook15officeemailaddressdetailsrecipientsjavascriptapioutlook15officerecipients"></a>requiredAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook_1_5/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_5/office.recipients)
+#### <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlook15officeemailaddressdetailsrecipientsjavascriptapioutlook15officerecipients"></a>requiredAttendees: Array.<[EmailAddressDetails](/javascript/api/outlook_1_5/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_5/office.recipients)
 
 Permet d’accéder aux participants requis à un événement. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
@@ -701,7 +701,7 @@ function callback(asyncResult) {
 |[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
-#### <a name="sender-emailaddressdetailsjavascriptapioutlook15officeemailaddressdetails"></a>sender :[EmailAddressDetails](/javascript/api/outlook_1_5/office.emailaddressdetails)
+#### <a name="sender-emailaddressdetailsjavascriptapioutlook15officeemailaddressdetails"></a>sender: [EmailAddressDetails](/javascript/api/outlook_1_5/office.emailaddressdetails)
 
 Obtient l’adresse de messagerie de l’expéditeur d’un message électronique. Mode lecture uniquement.
 
@@ -730,7 +730,7 @@ var senderAddress = Office.context.mailbox.item.sender.emailAddress;
 console.log("Sender: " + senderName + " (" + senderAddress + ")");
 ```
 
-####  <a name="start-datetimejavascriptapioutlook15officetime"></a>start :Date|[Time](/javascript/api/outlook_1_5/office.time)
+#### <a name="start-datetimejavascriptapioutlook15officetime"></a>start: Date|[Time](/javascript/api/outlook_1_5/office.time)
 
 Obtient ou définit la date et l’heure de début du rendez-vous.
 
@@ -781,7 +781,7 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 |[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
-####  <a name="subject-stringsubjectjavascriptapioutlook15officesubject"></a>subject :String|[Subject](/javascript/api/outlook_1_5/office.subject)
+#### <a name="subject-stringsubjectjavascriptapioutlook15officesubject"></a>subject: String|[Subject](/javascript/api/outlook_1_5/office.subject)
 
 Obtient ou définit la description qui apparaît dans le champ d’objet d’un élément.
 
@@ -821,7 +821,7 @@ function callback(asyncResult) {
 |[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
-####  <a name="to-arrayemailaddressdetailsjavascriptapioutlook15officeemailaddressdetailsrecipientsjavascriptapioutlook15officerecipients"></a>to :Array.<[EmailAddressDetails](/javascript/api/outlook_1_5/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_5/office.recipients)
+#### <a name="to-arrayemailaddressdetailsjavascriptapioutlook15officeemailaddressdetailsrecipientsjavascriptapioutlook15officerecipients"></a>to: Array.<[EmailAddressDetails](/javascript/api/outlook_1_5/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_5/office.recipients)
 
 Permet d’accéder aux destinataires figurant sur la ligne **À** d’un message. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
@@ -861,7 +861,7 @@ function callback(asyncResult) {
 
 ### <a name="methods"></a>Méthodes
 
-####  <a name="addfileattachmentasyncuri-attachmentname-options-callback"></a>addFileAttachmentAsync(uri, attachmentName, [options], [callback])
+#### <a name="addfileattachmentasyncuri-attachmentname-options-callback"></a>addFileAttachmentAsync(uri, attachmentName, [options], [callback])
 
 Ajoute un fichier à un message ou un rendez-vous en pièce jointe.
 
@@ -937,7 +937,7 @@ Office.context.mailbox.item.addFileAttachmentAsync(
   });
 ```
 
-####  <a name="additemattachmentasyncitemid-attachmentname-options-callback"></a>addItemAttachmentAsync(itemId, attachmentName, [options], [callback])
+#### <a name="additemattachmentasyncitemid-attachmentname-options-callback"></a>addItemAttachmentAsync(itemId, attachmentName, [options], [callback])
 
 Ajoute un élément Exchange, comme un message, en pièce jointe au message ou au rendez-vous.
 
@@ -995,7 +995,7 @@ function addAttachment() {
 }
 ```
 
-####  <a name="close"></a>close()
+#### <a name="close"></a>close()
 
 Ferme l’élément en cours qui est composé.
 
@@ -1471,7 +1471,7 @@ var fruits = Office.context.mailbox.item.getRegExMatchesByName("fruits");
 var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 ```
 
-####  <a name="getselecteddataasynccoerciontype-options-callback--string"></a>getSelectedDataAsync(coercionType, [options], callback) → {String}
+#### <a name="getselecteddataasynccoerciontype-options-callback--string"></a>getSelectedDataAsync(coercionType, [options], callback) → {String}
 
 Renvoie de manière asynchrone les données sélectionnées à partir de l’objet ou du corps d’un message.
 
@@ -1526,7 +1526,7 @@ function setCallback(asyncResult) {
 }
 ```
 
-####  <a name="loadcustompropertiesasynccallback-usercontext"></a>loadCustomPropertiesAsync(callback, [userContext])
+#### <a name="loadcustompropertiesasynccallback-usercontext"></a>loadCustomPropertiesAsync(callback, [userContext])
 
 Charge de manière asynchrone les propriétés personnalisées de ce complément vers l’élément sélectionné.
 
@@ -1574,7 +1574,7 @@ function saveCallback(asyncResult) {
 }
 ```
 
-####  <a name="removeattachmentasyncattachmentid-options-callback"></a>removeAttachmentAsync(attachmentId, [options], [callback])
+#### <a name="removeattachmentasyncattachmentid-options-callback"></a>removeAttachmentAsync(attachmentId, [options], [callback])
 
 Supprime une pièce jointe d’un message ou d’un rendez-vous.
 
@@ -1618,7 +1618,7 @@ Office.context.mailbox.item.removeAttachmentAsync(
 );
 ```
 
-####  <a name="saveasyncoptions-callback"></a>saveAsync([options], callback)
+#### <a name="saveasyncoptions-callback"></a>saveAsync([options], callback)
 
 Enregistre un élément de manière asynchrone.
 
@@ -1632,7 +1632,7 @@ Dans la mesure où les rendez-vous n’ont pas d’état brouillon, si `saveAsyn
 > [!NOTE]
 > Les clients suivants ont un comportement différent avec `saveAsync` sur les rendez-vous en mode composition :
 >
-> - Outlook pour Mac ne prend pas en charge `saveAsync` sur une réunion en mode composition. Le fait d’appeler `saveAsync` sur une réunion dans Outlook pour Mac renvoie une erreur.
+> - Outlook pour Mac ne prend pas en charge `saveAsync` sur une réunion en mode composition. Ainsi, l’appel `saveAsync` dans ce scénario renvoie une erreur. Pour contourner ce problème, voir [Impossible d’enregistrer une réunion en tant que brouillon dans Outlook pour Mac à l’aide des API de JS Office](https://support.microsoft.com/help/4505745).
 > - Outlook sur le web envoie toujours une invitation ou une mise à jour quand `saveAsync` est appelée sur un rendez-vous en mode composition.
 
 ##### <a name="parameters"></a>Paramètres
@@ -1669,7 +1669,7 @@ Voici un exemple du paramètre `result` transmis à la fonction de rappel. La pr
 }
 ```
 
-####  <a name="setselecteddataasyncdata-options-callback"></a>setSelectedDataAsync(data, [options], callback)
+#### <a name="setselecteddataasyncdata-options-callback"></a>setSelectedDataAsync(data, [options], callback)
 
 Insère les données dans le corps ou l’objet d’un message de manière asynchrone.
 
