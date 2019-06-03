@@ -1,282 +1,131 @@
 ---
-title: Créer votre premier complément OneNote
+title: Créer votre premier complément du volet Office de OneNote
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/02/2019
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 378d691d1994a2d22166afc5338007400f7a48af
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 48cd9395b269a83630608c52d972508828c5c007
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450888"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589215"
 ---
-# <a name="build-your-first-onenote-add-in"></a><span data-ttu-id="29868-102">Créer votre premier complément OneNote</span><span class="sxs-lookup"><span data-stu-id="29868-102">Build your first OneNote add-in</span></span>
+# <a name="build-your-first-onenote-task-pane-add-in"></a><span data-ttu-id="0b9ea-102">Créer votre premier complément du volet Office de OneNote</span><span class="sxs-lookup"><span data-stu-id="0b9ea-102">Build your first Word task pane add-in</span></span>
 
-<span data-ttu-id="29868-103">Cet article décrit le processus de création d’un complément OneNote à l’aide de jQuery et de l’API JavaScript pour Office.</span><span class="sxs-lookup"><span data-stu-id="29868-103">In this article, you'll walk through the process of building a OneNote add-in by using jQuery and the Office JavaScript API.</span></span>
+<span data-ttu-id="0b9ea-103">Cet article décrit comment créer un complément du volet Office de OneNote.</span><span class="sxs-lookup"><span data-stu-id="0b9ea-103">In this article, you'll walk through the process of building a Project task pane add-in.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="29868-104">Conditions préalables</span><span class="sxs-lookup"><span data-stu-id="29868-104">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="0b9ea-104">Conditions préalables</span><span class="sxs-lookup"><span data-stu-id="0b9ea-104">Prerequisites</span></span>
 
-- [<span data-ttu-id="29868-105">Node.js</span><span class="sxs-lookup"><span data-stu-id="29868-105">Node.js</span></span>](https://nodejs.org)
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- <span data-ttu-id="29868-106">Installez la dernière version de [Yeoman](https://github.com/yeoman/yo) et le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) globalement.</span><span class="sxs-lookup"><span data-stu-id="29868-106">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
+## <a name="create-the-add-in-project"></a><span data-ttu-id="0b9ea-105">Création du projet de complément</span><span class="sxs-lookup"><span data-stu-id="0b9ea-105">Create the add-in project</span></span>
 
-    ```bash
-    npm install -g yo generator-office
-    ```
+1. <span data-ttu-id="0b9ea-106">Utilisez le générateur Yeoman afin de créer un projet de complément OneNote.</span><span class="sxs-lookup"><span data-stu-id="0b9ea-106">Use the Yeoman generator to create a OneNote add-in project.</span></span> <span data-ttu-id="0b9ea-107">Exécutez la commande suivante, puis répondez aux invites comme suit :</span><span class="sxs-lookup"><span data-stu-id="0b9ea-107">Run the following command and then answer the prompts as follows:</span></span>
 
-## <a name="create-the-add-in-project"></a><span data-ttu-id="29868-107">Création du projet de complément</span><span class="sxs-lookup"><span data-stu-id="29868-107">Create the add-in project</span></span>
-
-1. <span data-ttu-id="29868-108">Utilisez le générateur Yeoman afin de créer un projet de complément OneNote.</span><span class="sxs-lookup"><span data-stu-id="29868-108">Use the Yeoman generator to create a OneNote add-in project.</span></span> <span data-ttu-id="29868-109">Exécutez la commande suivante, puis répondez aux invites comme suit :</span><span class="sxs-lookup"><span data-stu-id="29868-109">Run the following command and then answer the prompts as follows:</span></span>
-
-    ```bash
+    ```command&nbsp;line
     yo office
     ```
 
-    - <span data-ttu-id="29868-110">**Sélectionnez un type de projet :** `Office Add-in project using Jquery framework`</span><span class="sxs-lookup"><span data-stu-id="29868-110">**Choose a project type:** `Office Add-in project using Jquery framework`</span></span>
-    - <span data-ttu-id="29868-111">**Sélectionnez un type de script :** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="29868-111">**Choose a script type:** `Javascript`</span></span>
-    - <span data-ttu-id="29868-112">**Comment souhaitez-vous nommer votre complément ? :** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="29868-112">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
-    - <span data-ttu-id="29868-113">**Quelle application client Office voulez-vous prendre en charge ? :** `Onenote`</span><span class="sxs-lookup"><span data-stu-id="29868-113">**Which Office client application would you like to support?:** `Onenote`</span></span>
+    - <span data-ttu-id="0b9ea-108">**Sélectionnez un type de projet :** `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="0b9ea-108">**Choose a project type:** `Office Add-in Task Pane project`</span></span>
+    - <span data-ttu-id="0b9ea-109">**Sélectionnez un type de script :** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="0b9ea-109">**Choose a script type:** `Javascript`</span></span>
+    - <span data-ttu-id="0b9ea-110">**Comment souhaitez-vous nommer votre complément ?**</span><span class="sxs-lookup"><span data-stu-id="0b9ea-110">**What do you want to name your add-in?**</span></span> `My Office Add-in`
+    - <span data-ttu-id="0b9ea-111">**Quelle application client Office voulez-vous prendre en charge ?**</span><span class="sxs-lookup"><span data-stu-id="0b9ea-111">**Which Office client application would you like to support?**</span></span> `OneNote`
 
-    ![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yo-office-onenote-jquery.png)
+    ![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yo-office-onenote.png)
     
-    <span data-ttu-id="29868-115">Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants de nœud de la prise en charge.</span><span class="sxs-lookup"><span data-stu-id="29868-115">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
+    <span data-ttu-id="0b9ea-113">Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants de nœud de la prise en charge.</span><span class="sxs-lookup"><span data-stu-id="0b9ea-113">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
     
-2. <span data-ttu-id="29868-116">Accédez au dossier racine du projet.</span><span class="sxs-lookup"><span data-stu-id="29868-116">Navigate to the root folder of the project.</span></span>
+2. <span data-ttu-id="0b9ea-114">Accédez au dossier racine du projet.</span><span class="sxs-lookup"><span data-stu-id="0b9ea-114">Navigate to the root folder of the project.</span></span>
 
-    ```bash
+    ```command&nbsp;line
     cd "My Office Add-in"
     ```
 
-## <a name="update-the-code"></a><span data-ttu-id="29868-117">Mise à jour du code</span><span class="sxs-lookup"><span data-stu-id="29868-117">Update the code</span></span>
+## <a name="explore-the-project"></a><span data-ttu-id="0b9ea-115">Explorer le projet</span><span class="sxs-lookup"><span data-stu-id="0b9ea-115">Explore the project</span></span>
 
-1. <span data-ttu-id="29868-p102">Dans votre éditeur de code, ouvrez **index.html** à la racine du projet. Ce fichier contient le code HTML qui s’affichera dans le volet Office du complément.</span><span class="sxs-lookup"><span data-stu-id="29868-p102">In your code editor, open **index.html** in the root of the project. This file contains the HTML that will be rendered in the add-in's task pane.</span></span>
+<span data-ttu-id="0b9ea-116">Le projet de complément que vous avez créé à l’aide du générateur Yeoman contient un exemple de code pour un complément de volet de tâches très simple.</span><span class="sxs-lookup"><span data-stu-id="0b9ea-116">The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in.</span></span> 
 
-2. <span data-ttu-id="29868-120">Remplacez l’élément `<body>` par le balisage suivant et enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="29868-120">Replace the `<body>` element with the following markup and save the file.</span></span> 
+- <span data-ttu-id="0b9ea-117">Le fichier **./manifest.xml** du répertoire racine du projet définit les paramètres et fonctionnalités du complément.</span><span class="sxs-lookup"><span data-stu-id="0b9ea-117">The **./manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.</span></span>
+- <span data-ttu-id="0b9ea-118">Le fichier **./src/taskpane/taskpane.html** contient les balises HTML du volet Office.</span><span class="sxs-lookup"><span data-stu-id="0b9ea-118">The **./src/taskpane/taskpane.html** file contains the HTML markup for the task pane.</span></span>
+- <span data-ttu-id="0b9ea-119">Le fichier **./src/taskpane/taskpane.css** contient le style CSS appliqué au contenu du volet Office.</span><span class="sxs-lookup"><span data-stu-id="0b9ea-119">The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.</span></span>
+- <span data-ttu-id="0b9ea-120">Le fichier **./src/taskpane/taskpane.js** contient le code de l’API JavaScript pour Office qui facilite l’interaction entre le volet Office et l’application hôte Office.</span><span class="sxs-lookup"><span data-stu-id="0b9ea-120">The **./src/taskpane/taskpane.js** file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office host application.</span></span>
 
-    ```html
-    <body class="ms-font-m ms-welcome">
-        <header class="ms-welcome__header ms-bgColor-themeDark ms-u-fadeIn500">
-            <h2 class="ms-fontSize-xxl ms-fontWeight-regular ms-fontColor-white">OneNote Add-in</h1>
-        </header>
-        <main id="app-body" class="ms-welcome__main">
-            <br />
-            <p class="ms-font-m">Enter HTML content here:</p>
-            <div class="ms-TextField ms-TextField--placeholder">
-                <textarea id="textBox" rows="8" cols="30"></textarea>
-            </div>
-            <button id="addOutline" class="ms-Button ms-Button--primary">
-                <span class="ms-Button-label">Add outline</span>
-            </button>
-        </main>
-        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
-        <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
-    </body>
-    ```
+## <a name="update-the-code"></a><span data-ttu-id="0b9ea-121">Mettre à jour le code</span><span class="sxs-lookup"><span data-stu-id="0b9ea-121">Update the code</span></span>
 
-3. <span data-ttu-id="29868-121">Ouvrez le fichier **src/index.js** afin de spécifier le script pour le complément.</span><span class="sxs-lookup"><span data-stu-id="29868-121">Open the file **src\index.js** to specify the script for the add-in.</span></span> <span data-ttu-id="29868-122">Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="29868-122">Replace the entire contents with the following code and save the file.</span></span>
+<span data-ttu-id="0b9ea-122">Dans votre éditeur de code, ouvrez le fichier **./src/taskpane/taskpane.js** et ajoutez le code suivant à la fonction **run**.</span><span class="sxs-lookup"><span data-stu-id="0b9ea-122">In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the **run** function.</span></span> <span data-ttu-id="0b9ea-123">Ce code utilise l’API JavaScript OneNote pour définir le titre de la page et ajouter un plan au corps de celle-ci.</span><span class="sxs-lookup"><span data-stu-id="0b9ea-123">This code uses the OneNote JavaScript API to set the page title and add an outline to the body of the page.</span></span>
 
-    ```js
-    import * as OfficeHelpers from "@microsoft/office-js-helpers";
+```js
+try {
+    await OneNote.run(async context => {
 
-    Office.onReady(() => {
-        // Office is ready
-        $(document).ready(() => {
-            // The document is ready
-            $('#addOutline').click(addOutlineToPage);
-        });
+        // Get the current page.
+        var page = context.application.getActivePage();
+
+        // Queue a command to set the page title.
+        page.title = "Hello World";
+
+        // Queue a command to add an outline to the page.
+        var html = "<p><ol><li>Item #1</li><li>Item #2</li></ol></p>";
+        page.addOutline(40, 90, html);
+
+        // Run the queued commands, and return a promise to indicate task completion.
+        return context.sync();
     });
-    
-    async function addOutlineToPage() {
-        try {
-            await OneNote.run(async context => {
-                var html = "<p>" + $("#textBox").val() + "</p>";
+} catch (error) {
+    console.log("Error: " + error);
+}
+```
 
-                // Get the current page.
-                var page = context.application.getActivePage();
+## <a name="try-it-out"></a><span data-ttu-id="0b9ea-124">Essayez</span><span class="sxs-lookup"><span data-stu-id="0b9ea-124">Try it out</span></span>
 
-                // Queue a command to load the page with the title property.
-                page.load("title");
+> [!NOTE]
+> <span data-ttu-id="0b9ea-125">Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez.</span><span class="sxs-lookup"><span data-stu-id="0b9ea-125">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="0b9ea-126">Si vous êtes invité à installer un certificat après avoir exécuté une des commandes suivantes, acceptez d’installer le certificat fourni par le générateur Yeoman.</span><span class="sxs-lookup"><span data-stu-id="0b9ea-126">If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
 
-                // Add text to the page by using the specified HTML.
-                var outline = page.addOutline(40, 90, html);
+> [!TIP]
+> <span data-ttu-id="0b9ea-127">Si vous testez votre complément sur Mac, exécutez la commande suivante avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="0b9ea-127">If you're testing your add-in on Mac, run the following command before proceeding.</span></span> <span data-ttu-id="0b9ea-128">Lorsque vous exécutez cette commande, le serveur web local démarre.</span><span class="sxs-lookup"><span data-stu-id="0b9ea-128">When you run this command, the local web server will start.</span></span>
+>
+> ```command&nbsp;line
+> npm run dev-server
+> ```
 
-                // Run the queued commands, and return a promise to indicate task completion.
-                return context.sync()
-                    .then(function() {
-                        console.log("Added outline to page " + page.title);
-                    })
-                    .catch(function(error) {
-                        app.showNotification("Error: " + error);
-                        console.log("Error: " + error);
-                        if (error instanceof OfficeExtension.Error) {
-                            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-                        }
-                    });
-                });
-        } catch (error) {
-            OfficeHelpers.UI.notify(error);
-            OfficeHelpers.Utilities.log(error);
-        }
-    }
+1. <span data-ttu-id="0b9ea-129">Exécutez la commande suivante dans le répertoire racine de votre projet.</span><span class="sxs-lookup"><span data-stu-id="0b9ea-129">Run the following command in the root directory of your project.</span></span> <span data-ttu-id="0b9ea-130">Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution).</span><span class="sxs-lookup"><span data-stu-id="0b9ea-130">When you run this command, the local web server will start.</span></span>
+
+    ```command&nbsp;line
+    npm run start:web
     ```
 
-4. <span data-ttu-id="29868-123">Ouvrez le fichier **app.css** pour spécifier les styles personnalisés pour le complément.</span><span class="sxs-lookup"><span data-stu-id="29868-123">Open the file **app.css** to specify the custom styles for the add-in.</span></span> <span data-ttu-id="29868-124">Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="29868-124">Replace the entire contents with the following and save the file.</span></span>
+2. <span data-ttu-id="0b9ea-131">Dans [OneNote Online](https://www.onenote.com/notebooks), ouvrez un bloc-notes, puis créez une page.</span><span class="sxs-lookup"><span data-stu-id="0b9ea-131">In [OneNote Online](https://www.onenote.com/notebooks), open a notebook and create a new page.</span></span>
 
-    ```css
-    html, body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
+3. <span data-ttu-id="0b9ea-132">Choisissez **Insertion > Compléments Office** pour ouvrir la boîte de dialogue Compléments Office.</span><span class="sxs-lookup"><span data-stu-id="0b9ea-132">Choose **Insert > Office Add-ins** to open the Office Add-ins dialog.</span></span>
 
-    ul, p, h1, h2, h3, h4, h5, h6 {
-        margin: 0;
-        padding: 0;
-    }
+    - <span data-ttu-id="0b9ea-133">Si vous êtes connecté avec votre compte de consommateur, sélectionnez l’onglet **MES COMPLÉMENTS**, puis choisissez **Télécharger mon complément**.</span><span class="sxs-lookup"><span data-stu-id="0b9ea-133">If you're signed in with your consumer account, select the **MY ADD-INS** tab, and then choose **Upload My Add-in**.</span></span>
 
-    .ms-welcome {
-        position: relative;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: column;
-        flex-direction: column;
-        -webkit-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-        min-height: 500px;
-        min-width: 320px;
-        overflow: auto;
-        overflow-x: hidden;
-    }
+    - <span data-ttu-id="0b9ea-134">Si vous êtes connecté avec votre compte professionnel ou scolaire, sélectionnez l’onglet **MON ORGANISATION**, puis choisissez **Télécharger mon complément**.</span><span class="sxs-lookup"><span data-stu-id="0b9ea-134">If you're signed in with your work or school account, select the **MY ORGANIZATION** tab, and then select **Upload My Add-in**.</span></span> 
 
-    .ms-welcome__header {
-        min-height: 30px;
-        padding: 0px;
-        padding-bottom: 5px;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: column;
-        flex-direction: column;
-        -webkit-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-        -webkit-align-items: center;
-        align-items: center;
-        -webkit-justify-content: flex-end;
-        justify-content: flex-end;
-    }
-
-    .ms-welcome__header > h1 {
-        margin-top: 5px;
-        text-align: center;
-    }
-
-    .ms-welcome__main {
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: column;
-        flex-direction: column;
-        -webkit-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-        -webkit-align-items: center;
-        align-items: left;
-        -webkit-flex: 1 0 0;
-        flex: 1 0 0;
-        padding: 30px 20px;
-    }
-
-    .ms-welcome__main > h2 {
-        width: 100%;
-        text-align: left;
-    }
-
-    @media (min-width: 0) and (max-width: 350px) {
-        .ms-welcome__features {
-            width: 100%;
-        }
-    }
-    ```
-
-## <a name="update-the-manifest"></a><span data-ttu-id="29868-125">Mise à jour du manifeste</span><span class="sxs-lookup"><span data-stu-id="29868-125">Update the manifest</span></span>
-
-1. <span data-ttu-id="29868-126">Ouvrez le fichier nommé **manifest.xml** pour définir les paramètres et les fonctionnalités du complément.</span><span class="sxs-lookup"><span data-stu-id="29868-126">Open the file **manifest.xml** to define the add-in's settings and capabilities.</span></span>
-
-2. <span data-ttu-id="29868-p105">L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-le par votre nom.</span><span class="sxs-lookup"><span data-stu-id="29868-p105">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
-
-3. <span data-ttu-id="29868-p106">L’attribut `DefaultValue` de l’élément `Description` possède un espace réservé. Remplacez-le par **A task pane add-in for OneNote**.</span><span class="sxs-lookup"><span data-stu-id="29868-p106">The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for OneNote**.</span></span>
-
-4. <span data-ttu-id="29868-131">Enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="29868-131">Save the file.</span></span>
-
-    ```xml
-    ...
-    <ProviderName>John Doe</ProviderName>
-    <DefaultLocale>en-US</DefaultLocale>
-    <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
-    <DisplayName DefaultValue="My Office Add-in" />
-    <Description DefaultValue="A task pane add-in for OneNote"/>
-    ...
-    ```
-
-## <a name="start-the-dev-server"></a><span data-ttu-id="29868-132">Démarrage du serveur de développement</span><span class="sxs-lookup"><span data-stu-id="29868-132">Start the dev server</span></span>
-
-[!include[Start server section](../includes/quickstart-yo-start-server.md)]
-
-## <a name="try-it-out"></a><span data-ttu-id="29868-133">Essayez !</span><span class="sxs-lookup"><span data-stu-id="29868-133">Try it out</span></span>
-
-1. <span data-ttu-id="29868-134">Dans [OneNote Online](https://www.onenote.com/notebooks), ouvrez un bloc-notes.</span><span class="sxs-lookup"><span data-stu-id="29868-134">In [OneNote Online](https://www.onenote.com/notebooks), open a notebook.</span></span>
-
-2. <span data-ttu-id="29868-135">Choisissez **Insertion > Compléments Office** pour ouvrir la boîte de dialogue Compléments Office.</span><span class="sxs-lookup"><span data-stu-id="29868-135">Choose **Insert > Office Add-ins** to open the Office Add-ins dialog.</span></span>
-
-    - <span data-ttu-id="29868-136">Si vous êtes connecté avec votre compte de consommateur, sélectionnez l’onglet **MES COMPLÉMENTS**, puis choisissez **Télécharger mon complément**.</span><span class="sxs-lookup"><span data-stu-id="29868-136">If you're signed in with your consumer account, select the **MY ADD-INS** tab, and then choose **Upload My Add-in**.</span></span>
-
-    - <span data-ttu-id="29868-137">Si vous êtes connecté avec votre compte professionnel ou scolaire, sélectionnez l’onglet **MON ORGANISATION**, puis choisissez **Télécharger mon complément**.</span><span class="sxs-lookup"><span data-stu-id="29868-137">If you're signed in with your work or school account, select the **MY ORGANIZATION** tab, and then select **Upload My Add-in**.</span></span> 
-
-    <span data-ttu-id="29868-138">L’image suivante montre l’onglet **MES COMPLÉMENTS** pour les blocs-notes de consommateurs.</span><span class="sxs-lookup"><span data-stu-id="29868-138">The following image shows the **MY ADD-INS** tab for consumer notebooks.</span></span>
+    <span data-ttu-id="0b9ea-135">L’image suivante montre l’onglet **MES COMPLÉMENTS** pour les blocs-notes de consommateurs.</span><span class="sxs-lookup"><span data-stu-id="0b9ea-135">The following image shows the **MY ADD-INS** tab for consumer notebooks.</span></span>
 
     <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
 
-3. <span data-ttu-id="29868-139">Dans la boîte de dialogue Télécharger le complément, accédez à **manifest.xml** dans le dossier de projet, puis choisissez **Télécharger**.</span><span class="sxs-lookup"><span data-stu-id="29868-139">In the Upload Add-in dialog, browse to **manifest.xml** in your project folder, and then choose **Upload**.</span></span> 
+3. <span data-ttu-id="0b9ea-136">Dans la boîte de dialogue Télécharger le complément, accédez à **manifest.xml** dans le dossier de projet, puis choisissez **Télécharger**.</span><span class="sxs-lookup"><span data-stu-id="0b9ea-136">In the Upload Add-in dialog, browse to **manifest.xml** in your project folder, and then choose **Upload**.</span></span> 
 
-4. <span data-ttu-id="29868-140">Dans l’onglet **Accueil**, choisissez le bouton **Afficher le volet de tâches** du ruban.</span><span class="sxs-lookup"><span data-stu-id="29868-140">From the **Home** tab, choose the **Show Taskpane** button in the ribbon.</span></span> <span data-ttu-id="29868-141">Le volet Office du complément s’ouvre dans un iFrame à côté de la page OneNote.</span><span class="sxs-lookup"><span data-stu-id="29868-141">The add-in task pane opens in an iFrame next to the OneNote page.</span></span>
+4. <span data-ttu-id="0b9ea-137">Dans l’onglet **Accueil**, choisissez le bouton **Afficher le volet de tâches** du ruban.</span><span class="sxs-lookup"><span data-stu-id="0b9ea-137">From the **Home** tab, choose the **Show Taskpane** button in the ribbon.</span></span> <span data-ttu-id="0b9ea-138">Le volet Office du complément s’ouvre dans un iFrame à côté de la page OneNote.</span><span class="sxs-lookup"><span data-stu-id="0b9ea-138">The add-in task pane opens in an iFrame next to the OneNote page.</span></span>
 
-5. <span data-ttu-id="29868-142">Entrez le contenu HTML suivant dans la zone de texte, puis sélectionnez **Ajouter un plan**.</span><span class="sxs-lookup"><span data-stu-id="29868-142">Enter the following HTML content in the text area, and then choose **Add outline**.</span></span>  
+5. <span data-ttu-id="0b9ea-139">Au bas du volet Office, sélectionnez le lien **Exécuter** pour définir le titre de la page et ajouter un plan au corps de celle-ci.</span><span class="sxs-lookup"><span data-stu-id="0b9ea-139">At the bottom of the task pane, choose the **Run** link to set the page title and add an outline to the body of the page.</span></span>
 
-    ```html
-    <ol>
-    <li>Item #1</li>
-    <li>Item #2</li>
-    <li>Item #3</li>
-    <li>Item #4</li>
-    </ol>
-    ```
+    ![Complément OneNote généré à partir de cette procédure pas à pas](../images/onenote-first-add-in-4.png)
 
-    <span data-ttu-id="29868-143">Le plan que vous avez spécifié est ajouté à la page.</span><span class="sxs-lookup"><span data-stu-id="29868-143">The outline that you specified is added to the page.</span></span>
+## <a name="next-steps"></a><span data-ttu-id="0b9ea-141">Étapes suivantes</span><span class="sxs-lookup"><span data-stu-id="0b9ea-141">Next steps</span></span>
 
-    ![Complément OneNote généré à partir de cette procédure pas à pas](../images/onenote-first-add-in-3.png)
-
-## <a name="troubleshooting-and-tips"></a><span data-ttu-id="29868-145">Conseils et résolution des problèmes</span><span class="sxs-lookup"><span data-stu-id="29868-145">Troubleshooting and tips</span></span>
-
-- <span data-ttu-id="29868-p108">Vous pouvez déboguer le complément à l’aide des outils de développement de votre navigateur. Lorsque vous utilisez le serveur web Gulp et le débogage dans Internet Explorer ou Chrome, vous pouvez enregistrer les modifications localement et simplement actualiser l’iFrame du complément.</span><span class="sxs-lookup"><span data-stu-id="29868-p108">You can debug the add-in using your browser's developer tools. When you're using the Gulp web server and debugging in Internet Explorer or Chrome, you can save your changes locally and then just refresh the add-in's iFrame.</span></span>
-
-- <span data-ttu-id="29868-p109">Lorsque vous examinez un objet OneNote, les propriétés qui sont actuellement disponibles affichent les valeurs réelles. Les propriétés qui doivent être chargées sont affichées comme *non définies*. Développez le nœud `_proto_` pour visualiser les propriétés qui sont définies sur l’objet, mais qui ne sont pas encore chargées.</span><span class="sxs-lookup"><span data-stu-id="29868-p109">When you inspect a OneNote object, the properties that are currently available for use display actual values. Properties that need to be loaded display *undefined*. Expand the `_proto_` node to see properties that are defined on the object but are not yet loaded.</span></span>
-
-   ![Objet OneNote déchargé dans le débogueur](../images/onenote-debug.png)
-
-- <span data-ttu-id="29868-p110">Vous devez activer le contenu mixte dans le navigateur si votre complément utilise des ressources HTTP. Les compléments de production doivent uniquement utiliser des ressources HTTPS sécurisées.</span><span class="sxs-lookup"><span data-stu-id="29868-p110">You need to enable mixed content in the browser if your add-in uses any HTTP resources. Production add-ins should use only secure HTTPS resources.</span></span>
-
-- <span data-ttu-id="29868-154">Les compléments de volet Office peuvent être ouverts à partir de n’importe où, mais les compléments de contenu peuvent uniquement être insérés à l’intérieur de contenu de page normal (et non dans des titres, des images, des iFrames, etc.).</span><span class="sxs-lookup"><span data-stu-id="29868-154">Task pane add-ins can be opened from anywhere, but content add-ins can only be inserted inside regular page content (i.e. not in titles, images, iFrames, etc.).</span></span> 
-
-## <a name="next-steps"></a><span data-ttu-id="29868-155">Étapes suivantes</span><span class="sxs-lookup"><span data-stu-id="29868-155">Next steps</span></span>
-
-<span data-ttu-id="29868-p111">Félicitations, vous avez créé un complément OneNote ! Ensuite, vous allez étudier en détail les concepts fondamentaux de la création de compléments Excel.</span><span class="sxs-lookup"><span data-stu-id="29868-p111">Congratulations, you've successfully created a OneNote add-in! Next, learn more about the core concepts of building OneNote add-ins.</span></span>
+<span data-ttu-id="0b9ea-142">Félicitations ! Vous avez créé un complément du volet Office de OneNote !</span><span class="sxs-lookup"><span data-stu-id="0b9ea-142">Congratulations, you've successfully created a Word task pane add-in!</span></span> <span data-ttu-id="0b9ea-143">Ensuite, vous allez étudier en détail les concepts fondamentaux de la création de compléments Excel.</span><span class="sxs-lookup"><span data-stu-id="0b9ea-143">Next, learn more about the core concepts of building OneNote add-ins.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="29868-158">Vue d’ensemble de la programmation de l’API JavaScript de OneNote</span><span class="sxs-lookup"><span data-stu-id="29868-158">OneNote JavaScript API programming overview</span></span>](../onenote/onenote-add-ins-programming-overview.md)
+> [<span data-ttu-id="0b9ea-144">Vue d’ensemble de la programmation de l’API JavaScript de OneNote</span><span class="sxs-lookup"><span data-stu-id="0b9ea-144">OneNote JavaScript API programming overview</span></span>](../onenote/onenote-add-ins-programming-overview.md)
 
-## <a name="see-also"></a><span data-ttu-id="29868-159">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="29868-159">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0b9ea-145">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0b9ea-145">See also</span></span>
 
-- [<span data-ttu-id="29868-160">Vue d’ensemble de la programmation de l’API JavaScript de OneNote</span><span class="sxs-lookup"><span data-stu-id="29868-160">OneNote JavaScript API programming overview</span></span>](../onenote/onenote-add-ins-programming-overview.md)
-- [<span data-ttu-id="29868-161">Référence de l’API JavaScript de OneNote</span><span class="sxs-lookup"><span data-stu-id="29868-161">OneNote JavaScript API reference</span></span>](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
-- [<span data-ttu-id="29868-162">Exemple de grille d’évaluation</span><span class="sxs-lookup"><span data-stu-id="29868-162">Rubric Grader sample</span></span>](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
-- [<span data-ttu-id="29868-163">Vue d’ensemble de la plateforme des compléments Office</span><span class="sxs-lookup"><span data-stu-id="29868-163">Office Add-ins platform overview</span></span>](../overview/office-add-ins.md)
+- [<span data-ttu-id="0b9ea-146">Vue d’ensemble de la programmation de l’API JavaScript de OneNote</span><span class="sxs-lookup"><span data-stu-id="0b9ea-146">OneNote JavaScript API programming overview</span></span>](../onenote/onenote-add-ins-programming-overview.md)
+- [<span data-ttu-id="0b9ea-147">Référence de l’API JavaScript de OneNote</span><span class="sxs-lookup"><span data-stu-id="0b9ea-147">OneNote JavaScript API reference</span></span>](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
+- [<span data-ttu-id="0b9ea-148">Exemple de grille d’évaluation</span><span class="sxs-lookup"><span data-stu-id="0b9ea-148">Rubric Grader sample</span></span>](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
+- [<span data-ttu-id="0b9ea-149">Vue d’ensemble de la plateforme des compléments Office</span><span class="sxs-lookup"><span data-stu-id="0b9ea-149">Office Add-ins platform overview</span></span>](../overview/office-add-ins.md)
 

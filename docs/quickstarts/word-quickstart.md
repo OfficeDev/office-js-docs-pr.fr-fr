@@ -4,46 +4,46 @@ description: ''
 ms.date: 05/08/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: f0fda0c7dcdebdc1fd1b6daf4e35c1794a56e950
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 5164d6cb49ea5c4aed0aeffb5b3f7a0ed96f07c9
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952263"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589222"
 ---
-# <a name="build-your-first-word-task-pane-add-in"></a><span data-ttu-id="c72bc-102">Créer votre premier complément du volet des tâches de Word</span><span class="sxs-lookup"><span data-stu-id="c72bc-102">Build your first Word add-in</span></span>
+# <a name="build-your-first-word-task-pane-add-in"></a><span data-ttu-id="0e4df-102">Créer votre premier complément du volet des tâches de Word</span><span class="sxs-lookup"><span data-stu-id="0e4df-102">Build your first Word task pane add-in</span></span>
 
-<span data-ttu-id="c72bc-103">_S’applique à : Word 2016 ou version ultérieure pour Windows, Word pour iPad, Word pour Mac_</span><span class="sxs-lookup"><span data-stu-id="c72bc-103">_Applies to: Word 2016 or later for Windows, Word for iPad, Word for Mac_</span></span>
+<span data-ttu-id="0e4df-103">_S’applique à : Word 2016 ou version ultérieure pour Windows, Word pour iPad, Word pour Mac_</span><span class="sxs-lookup"><span data-stu-id="0e4df-103">_Applies to: Word 2016 or later on Windows, Word for iPad, Word for Mac_</span></span>
 
-<span data-ttu-id="c72bc-104">Cet article décrit comment créer un complément du volet des tâches de Word.</span><span class="sxs-lookup"><span data-stu-id="c72bc-104">In this article, you'll walk through the process of building a Word add-in by using jQuery and the Word JavaScript API.</span></span>
+<span data-ttu-id="0e4df-104">Cet article décrit comment créer un complément du volet des tâches de Word.</span><span class="sxs-lookup"><span data-stu-id="0e4df-104">In this article, you'll walk through the process of building a Word task pane add-in.</span></span>
 
-## <a name="create-the-add-in"></a><span data-ttu-id="c72bc-105">Créer le complément</span><span class="sxs-lookup"><span data-stu-id="c72bc-105">Create the add-in</span></span>
+## <a name="create-the-add-in"></a><span data-ttu-id="0e4df-105">Créer le complément</span><span class="sxs-lookup"><span data-stu-id="0e4df-105">Create the add-in</span></span>
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="c72bc-106">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="c72bc-106">Visual Studio</span></span>](#tab/visual-studio)
+# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="0e4df-106">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="0e4df-106">Visual Studio</span></span>](#tab/visual-studio)
 
-### <a name="prerequisites"></a><span data-ttu-id="c72bc-107">Conditions préalables</span><span class="sxs-lookup"><span data-stu-id="c72bc-107">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="0e4df-107">Conditions préalables</span><span class="sxs-lookup"><span data-stu-id="0e4df-107">Prerequisites</span></span>
 
 [!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
-### <a name="create-the-add-in-project"></a><span data-ttu-id="c72bc-108">Création du projet de complément</span><span class="sxs-lookup"><span data-stu-id="c72bc-108">Create the add-in project</span></span>
+### <a name="create-the-add-in-project"></a><span data-ttu-id="0e4df-108">Création du projet de complément</span><span class="sxs-lookup"><span data-stu-id="0e4df-108">Create the add-in project</span></span>
 
-1. <span data-ttu-id="c72bc-109">Dans la barre de menu de Visual Studio, choisissez successivement **Fichier** > **Nouveau** > **Projet**.</span><span class="sxs-lookup"><span data-stu-id="c72bc-109">On the Visual Studio menu bar, choose  **File** > **New** > **Project**.</span></span>
+1. <span data-ttu-id="0e4df-109">Dans la barre de menu de Visual Studio, choisissez successivement **Fichier** > **Nouveau** > **Projet**.</span><span class="sxs-lookup"><span data-stu-id="0e4df-109">On the Visual Studio menu bar, choose  **File** > **New** > **Project**.</span></span>
 
-2. <span data-ttu-id="c72bc-110">Dans la liste des types de projets, sous **Visual C#** ou **Visual Basic**, développez **Office/SharePoint**, choisissez **Compléments**, puis **Complément Word Web** pour le type de projet.</span><span class="sxs-lookup"><span data-stu-id="c72bc-110">In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **Word Web Add-in** as the project type.</span></span> 
+2. <span data-ttu-id="0e4df-110">Dans la liste des types de projets, sous **Visual C#** ou **Visual Basic**, développez **Office/SharePoint**, choisissez **Compléments**, puis **Complément Word Web** pour le type de projet.</span><span class="sxs-lookup"><span data-stu-id="0e4df-110">In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **Word Web Add-in** as the project type.</span></span> 
 
-3. <span data-ttu-id="c72bc-111">Nommez le projet, puis cliquez sur **OK**.</span><span class="sxs-lookup"><span data-stu-id="c72bc-111">Name the project, and then choose **OK**.</span></span>
+3. <span data-ttu-id="0e4df-111">Nommez le projet, puis cliquez sur **OK**.</span><span class="sxs-lookup"><span data-stu-id="0e4df-111">Name the project, and then choose **OK**.</span></span>
 
-4. <span data-ttu-id="c72bc-p101">Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="c72bc-p101">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
+4. <span data-ttu-id="0e4df-p101">Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="0e4df-p101">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
 
-### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="c72bc-114">Explorer la solution Visual Studio</span><span class="sxs-lookup"><span data-stu-id="c72bc-114">Explore the Visual Studio solution</span></span>
+### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="0e4df-114">Explorer la solution Visual Studio</span><span class="sxs-lookup"><span data-stu-id="0e4df-114">Explore the Visual Studio solution</span></span>
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
-### <a name="update-the-code"></a><span data-ttu-id="c72bc-115">Mise à jour du code</span><span class="sxs-lookup"><span data-stu-id="c72bc-115">Update the code</span></span>
+### <a name="update-the-code"></a><span data-ttu-id="0e4df-115">Mise à jour du code</span><span class="sxs-lookup"><span data-stu-id="0e4df-115">Update the code</span></span>
 
-1. <span data-ttu-id="c72bc-p102">**Home.html** spécifie le code HTML qui s’affichera dans le volet Office du complément. Dans **Home.html**, remplacez l’élément `<body>` par le balisage suivant et enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="c72bc-p102">**Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.</span></span>
+1. <span data-ttu-id="0e4df-p102">**Home.html** spécifie le code HTML qui s’affichera dans le volet Office du complément. Dans **Home.html**, remplacez l’élément `<body>` par le balisage suivant et enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="0e4df-p102">**Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.</span></span>
 
     ```html
     <body>
@@ -69,7 +69,7 @@ ms.locfileid: "33952263"
     </body>
     ```
 
-2. <span data-ttu-id="c72bc-p103">Ouvrez le fichier **Home.js** à la racine du projet d’application web. Ce fichier spécifie le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="c72bc-p103">Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.</span></span>
+2. <span data-ttu-id="0e4df-p103">Ouvrez le fichier **Home.js** à la racine du projet d’application web. Ce fichier spécifie le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="0e4df-p103">Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.</span></span>
 
     ```js
     'use strict';
@@ -170,7 +170,7 @@ ms.locfileid: "33952263"
     })();
     ```
 
-3. <span data-ttu-id="c72bc-p104">Ouvrez le fichier **Home.css** à la racine du projet d’application web. Ce fichier spécifie les styles personnalisés pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="c72bc-p104">Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.</span></span>
+3. <span data-ttu-id="0e4df-p104">Ouvrez le fichier **Home.css** à la racine du projet d’application web. Ce fichier spécifie les styles personnalisés pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="0e4df-p104">Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.</span></span>
 
     ```css
     #content-header {
@@ -199,17 +199,17 @@ ms.locfileid: "33952263"
     }
     ```
 
-### <a name="update-the-manifest"></a><span data-ttu-id="c72bc-124">Mise à jour du manifeste</span><span class="sxs-lookup"><span data-stu-id="c72bc-124">Update the manifest</span></span>
+### <a name="update-the-manifest"></a><span data-ttu-id="0e4df-124">Mise à jour du manifeste</span><span class="sxs-lookup"><span data-stu-id="0e4df-124">Update the manifest</span></span>
 
-1. <span data-ttu-id="c72bc-125">Ouvrez le fichier manifeste XML dans le projet de complément.</span><span class="sxs-lookup"><span data-stu-id="c72bc-125">Open the XML manifest file in the add-in project.</span></span> <span data-ttu-id="c72bc-126">Ce fichier définit les paramètres et les fonctionnalités du complément.</span><span class="sxs-lookup"><span data-stu-id="c72bc-126">This file defines the add-in's settings and capabilities.</span></span>
+1. <span data-ttu-id="0e4df-125">Ouvrez le fichier manifeste XML dans le projet de complément.</span><span class="sxs-lookup"><span data-stu-id="0e4df-125">Open the XML manifest file in the add-in project.</span></span> <span data-ttu-id="0e4df-126">Ce fichier définit les paramètres et les fonctionnalités du complément.</span><span class="sxs-lookup"><span data-stu-id="0e4df-126">This file defines the add-in's settings and capabilities.</span></span>
 
-2. <span data-ttu-id="c72bc-p106">L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-le par votre nom.</span><span class="sxs-lookup"><span data-stu-id="c72bc-p106">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
+2. <span data-ttu-id="0e4df-p106">L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-le par votre nom.</span><span class="sxs-lookup"><span data-stu-id="0e4df-p106">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
 
-3. <span data-ttu-id="c72bc-p107">L’attribut `DefaultValue` de l’élément `DisplayName` possède un espace réservé. Remplacez-le par **My Office Add-in**.</span><span class="sxs-lookup"><span data-stu-id="c72bc-p107">The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.</span></span>
+3. <span data-ttu-id="0e4df-p107">L’attribut `DefaultValue` de l’élément `DisplayName` possède un espace réservé. Remplacez-le par **My Office Add-in**.</span><span class="sxs-lookup"><span data-stu-id="0e4df-p107">The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.</span></span>
 
-4. <span data-ttu-id="c72bc-p108">L’attribut `DefaultValue` de l’élément `Description` possède un espace réservé. Remplacez-le par **A task pane add-in for Word**.</span><span class="sxs-lookup"><span data-stu-id="c72bc-p108">The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Word**.</span></span>
+4. <span data-ttu-id="0e4df-p108">L’attribut `DefaultValue` de l’élément `Description` possède un espace réservé. Remplacez-le par **A task pane add-in for Word**.</span><span class="sxs-lookup"><span data-stu-id="0e4df-p108">The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Word**.</span></span>
 
-5. <span data-ttu-id="c72bc-133">Enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="c72bc-133">Save the file.</span></span>
+5. <span data-ttu-id="0e4df-133">Enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="0e4df-133">Save the file.</span></span>
 
     ```xml
     ...
@@ -221,92 +221,99 @@ ms.locfileid: "33952263"
     ...
     ```
 
-### <a name="try-it-out"></a><span data-ttu-id="c72bc-134">Essayez</span><span class="sxs-lookup"><span data-stu-id="c72bc-134">Try it out</span></span>
+### <a name="try-it-out"></a><span data-ttu-id="0e4df-134">Essayez</span><span class="sxs-lookup"><span data-stu-id="0e4df-134">Try it out</span></span>
 
-1. <span data-ttu-id="c72bc-p109">À l’aide de Visual Studio, testez le nouveau complément en appuyant sur **F5** ou en choisissant le bouton**Démarrer** pour lancer Word avec le bouton du complément \*\*Show Taskpane \*\*(Afficher le volet Office) qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.</span><span class="sxs-lookup"><span data-stu-id="c72bc-p109">Using Visual Studio, test the newly created Word add-in by pressing **F5** or choosing the **Start** button to launch Word with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
+1. <span data-ttu-id="0e4df-p109">À l’aide de Visual Studio, testez le nouveau complément en appuyant sur **F5** ou en choisissant le bouton**Démarrer** pour lancer Word avec le bouton du complément \*\*Show Taskpane \*\*(Afficher le volet Office) qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.</span><span class="sxs-lookup"><span data-stu-id="0e4df-p109">Using Visual Studio, test the newly created Word add-in by pressing **F5** or choosing the **Start** button to launch Word with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
 
-2. <span data-ttu-id="c72bc-137">Dans Word, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.</span><span class="sxs-lookup"><span data-stu-id="c72bc-137">In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span> <span data-ttu-id="c72bc-138">(Si vous utilisez la version d’Office en achat définitif au lieu de la version d’Office 365, les boutons personnalisés ne sont pas pris en charge.</span><span class="sxs-lookup"><span data-stu-id="c72bc-138">(If you are using the one-time purchase version of Office, instead of the Office 365 version, then custom buttons are not supported.</span></span> <span data-ttu-id="c72bc-139">Le volet Office s’ouvre immédiatement.)</span><span class="sxs-lookup"><span data-stu-id="c72bc-139">Instead, the task pane will open immediately.)</span></span>
+2. <span data-ttu-id="0e4df-137">Dans Word, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.</span><span class="sxs-lookup"><span data-stu-id="0e4df-137">In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span> <span data-ttu-id="0e4df-138">(Si vous utilisez la version d’Office en achat définitif au lieu de la version d’Office 365, les boutons personnalisés ne sont pas pris en charge.</span><span class="sxs-lookup"><span data-stu-id="0e4df-138">(If you are using the one-time purchase version of Office, instead of the Office 365 version, then custom buttons are not supported.</span></span> <span data-ttu-id="0e4df-139">Le volet Office s’ouvre immédiatement.)</span><span class="sxs-lookup"><span data-stu-id="0e4df-139">Instead, the task pane will open immediately.)</span></span>
 
     ![Capture d’écran de l’application Word avec le bouton Afficher le volet Office mis en évidence](../images/word-quickstart-addin-0.png)
 
-3. <span data-ttu-id="c72bc-141">Dans le volet Office, choisissez l’un des boutons pour ajouter du texte réutilisable dans le document.</span><span class="sxs-lookup"><span data-stu-id="c72bc-141">In the task pane, choose any of the buttons to add boilerplate text to the document.</span></span>
+3. <span data-ttu-id="0e4df-141">Dans le volet Office, choisissez l’un des boutons pour ajouter du texte réutilisable dans le document.</span><span class="sxs-lookup"><span data-stu-id="0e4df-141">In the task pane, choose any of the buttons to add boilerplate text to the document.</span></span>
 
     ![Capture d’écran de l’application Word avec le complément de texte réutilisable chargé.](../images/word-quickstart-addin-1b.png)
 
-# <a name="any-editortabvisual-studio-code"></a>[<span data-ttu-id="c72bc-143">Tous les éditeurs</span><span class="sxs-lookup"><span data-stu-id="c72bc-143">Any editor</span></span>](#tab/visual-studio-code)
+# <a name="any-editortabvisual-studio-code"></a>[<span data-ttu-id="0e4df-143">Tous les éditeurs</span><span class="sxs-lookup"><span data-stu-id="0e4df-143">Any editor</span></span>](#tab/visual-studio-code)
 
-### <a name="prerequisites"></a><span data-ttu-id="c72bc-144">Conditions préalables</span><span class="sxs-lookup"><span data-stu-id="c72bc-144">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="0e4df-144">Conditions préalables</span><span class="sxs-lookup"><span data-stu-id="0e4df-144">Prerequisites</span></span>
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-### <a name="create-the-add-in-project"></a><span data-ttu-id="c72bc-145">Création du projet de complément</span><span class="sxs-lookup"><span data-stu-id="c72bc-145">Create the add-in project</span></span>
+### <a name="create-the-add-in-project"></a><span data-ttu-id="0e4df-145">Création du projet de complément</span><span class="sxs-lookup"><span data-stu-id="0e4df-145">Create the add-in project</span></span>
 
-1. <span data-ttu-id="c72bc-146">Utilisez le générateur Yeoman afin de créer un projet de complément Word.</span><span class="sxs-lookup"><span data-stu-id="c72bc-146">Use the Yeoman generator to create a Word add-in project.</span></span> <span data-ttu-id="c72bc-147">Exécutez la commande suivante, puis répondez aux invites comme suit :</span><span class="sxs-lookup"><span data-stu-id="c72bc-147">Run the following command and then answer the prompts as follows:</span></span>
+1. <span data-ttu-id="0e4df-146">Utilisez le générateur Yeoman afin de créer un projet de complément Word.</span><span class="sxs-lookup"><span data-stu-id="0e4df-146">Use the Yeoman generator to create a Word add-in project.</span></span> <span data-ttu-id="0e4df-147">Exécutez la commande suivante, puis répondez aux invites comme suit :</span><span class="sxs-lookup"><span data-stu-id="0e4df-147">Run the following command and then answer the prompts as follows:</span></span>
 
     ```command&nbsp;line
     yo office
     ```
 
-    - <span data-ttu-id="c72bc-148">**Sélectionnez un type de projet :** `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="c72bc-148">**Choose a project type:** `Office Add-in Task Pane project`</span></span>
-    - <span data-ttu-id="c72bc-149">**Sélectionnez un type de script :** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="c72bc-149">**Choose a script type:** `Javascript`</span></span>
-    - <span data-ttu-id="c72bc-150">**Comment souhaitez-vous nommer votre complément ?**</span><span class="sxs-lookup"><span data-stu-id="c72bc-150">**What do you want to name your add-in?**</span></span> `My Office Add-in`
-    - <span data-ttu-id="c72bc-151">**Quelle application client Office voulez-vous prendre en charge ?**</span><span class="sxs-lookup"><span data-stu-id="c72bc-151">**Which Office client application would you like to support?**</span></span> `Word`
+    - <span data-ttu-id="0e4df-148">**Sélectionnez un type de projet :** `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="0e4df-148">**Choose a project type:** `Office Add-in Task Pane project`</span></span>
+    - <span data-ttu-id="0e4df-149">**Sélectionnez un type de script :** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="0e4df-149">**Choose a script type:** `Javascript`</span></span>
+    - <span data-ttu-id="0e4df-150">**Comment souhaitez-vous nommer votre complément ?**</span><span class="sxs-lookup"><span data-stu-id="0e4df-150">**What do you want to name your add-in?**</span></span> `My Office Add-in`
+    - <span data-ttu-id="0e4df-151">**Quelle application client Office voulez-vous prendre en charge ?**</span><span class="sxs-lookup"><span data-stu-id="0e4df-151">**Which Office client application would you like to support?**</span></span> `Word`
 
     ![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yo-office-word.png)
 
-    <span data-ttu-id="c72bc-153">Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants de nœud de la prise en charge.</span><span class="sxs-lookup"><span data-stu-id="c72bc-153">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
+    <span data-ttu-id="0e4df-153">Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants de nœud de la prise en charge.</span><span class="sxs-lookup"><span data-stu-id="0e4df-153">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
 
-2. <span data-ttu-id="c72bc-154">Accédez au dossier racine du projet.</span><span class="sxs-lookup"><span data-stu-id="c72bc-154">Navigate to the root folder of the project.</span></span>
+2. <span data-ttu-id="0e4df-154">Accédez au dossier racine du projet.</span><span class="sxs-lookup"><span data-stu-id="0e4df-154">Navigate to the root folder of the project.</span></span>
 
     ```command&nbsp;line
     cd "My Office Add-in"
     ```
 
-### <a name="explore-the-project"></a><span data-ttu-id="c72bc-155">Explorer le projet</span><span class="sxs-lookup"><span data-stu-id="c72bc-155">Explore the project</span></span>
+### <a name="explore-the-project"></a><span data-ttu-id="0e4df-155">Explorer le projet</span><span class="sxs-lookup"><span data-stu-id="0e4df-155">Explore the project</span></span>
 
 [!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-js.md)]
 
-### <a name="try-it-out"></a><span data-ttu-id="c72bc-156">Essayez !</span><span class="sxs-lookup"><span data-stu-id="c72bc-156">Try it out</span></span>
+### <a name="try-it-out"></a><span data-ttu-id="0e4df-156">Essayez</span><span class="sxs-lookup"><span data-stu-id="0e4df-156">Try it out</span></span>
 
-1. <span data-ttu-id="c72bc-157">Démarrez le serveur web local et chargez indépendamment votre complément.</span><span class="sxs-lookup"><span data-stu-id="c72bc-157">Start the local web server and sideload your add-in.</span></span>
+1. <span data-ttu-id="0e4df-157">Pour démarrer le serveur web local et charger indépendamment votre complément, procédez comme suit.</span><span class="sxs-lookup"><span data-stu-id="0e4df-157">Complete the following steps to start the local web server and sideload your add-in.</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="c72bc-158">Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez.</span><span class="sxs-lookup"><span data-stu-id="c72bc-158">Office Web Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="c72bc-159">Si vous êtes invité à installer un certificat après avoir exécuté une des commandes suivantes, acceptez d’installer le certificat fourni par le générateur Yeoman.</span><span class="sxs-lookup"><span data-stu-id="c72bc-159">If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.</span></span> 
+    > <span data-ttu-id="0e4df-158">Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez.</span><span class="sxs-lookup"><span data-stu-id="0e4df-158">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="0e4df-159">Si vous êtes invité à installer un certificat après avoir exécuté une des commandes suivantes, acceptez d’installer le certificat fourni par le générateur Yeoman.</span><span class="sxs-lookup"><span data-stu-id="0e4df-159">If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
 
-    - <span data-ttu-id="c72bc-160">Pour tester votre complément dans Word, exécutez la commande suivante.</span><span class="sxs-lookup"><span data-stu-id="c72bc-160">To test your add-in in Word, run the following command.</span></span> <span data-ttu-id="c72bc-161">Lorsque vous exécutez cette commande, le serveur web local et Word s’ouvrent avec votre complément chargé.</span><span class="sxs-lookup"><span data-stu-id="c72bc-161">When you run this command, the local web server will start and Word will open with your add-in loaded.</span></span>
+    > [!TIP]
+    > <span data-ttu-id="0e4df-160">Si vous testez votre complément sur Mac, exécutez la commande suivante avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="0e4df-160">If you're testing your add-in on Mac, run the following command before proceeding.</span></span> <span data-ttu-id="0e4df-161">Lorsque vous exécutez cette commande, le serveur web local démarre.</span><span class="sxs-lookup"><span data-stu-id="0e4df-161">When you run this command, the local web server will start.</span></span>
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
+
+    - <span data-ttu-id="0e4df-162">Pour tester votre complément dans Word, exécutez la commande suivante dans le répertoire racine de votre projet.</span><span class="sxs-lookup"><span data-stu-id="0e4df-162">To test your add-in in Word, run the following command in the root directory of your project.</span></span> <span data-ttu-id="0e4df-163">Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas encore en cours d’exécution), et Word s’ouvre avec votre complément chargé.</span><span class="sxs-lookup"><span data-stu-id="0e4df-163">When you run this command, the local web server will start and Word will open with your add-in loaded.</span></span>
 
         ```command&nbsp;line
         npm start
         ```
 
-    - <span data-ttu-id="c72bc-162">Pour tester votre complément dans Word Online, exécutez la commande suivante.</span><span class="sxs-lookup"><span data-stu-id="c72bc-162">To test your add-in in Word Online, run the following command.</span></span> <span data-ttu-id="c72bc-163">Lorsque vous exécutez cette commande, le serveur web local démarre.</span><span class="sxs-lookup"><span data-stu-id="c72bc-163">When you run this command, the local web server will start.</span></span>
+    - <span data-ttu-id="0e4df-164">Pour tester votre complément dans Word Online, exécutez la commande suivante dans le répertoire racine de votre projet.</span><span class="sxs-lookup"><span data-stu-id="0e4df-164">To test your add-in in Word Online, run the following command in the root directory of your project.</span></span> <span data-ttu-id="0e4df-165">Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution).</span><span class="sxs-lookup"><span data-stu-id="0e4df-165">When you run this command, the local web server will start.</span></span>
 
         ```command&nbsp;line
         npm run start:web
         ```
 
-        <span data-ttu-id="c72bc-164">Pour utiliser votre complément, ouvrez un nouveau document dans Word Online, puis chargez indépendamment votre complément en suivant les instructions de l’article relatif au [chargement indépendant de compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online).</span><span class="sxs-lookup"><span data-stu-id="c72bc-164">To use your add-in, open a new document in Word Online and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online).</span></span>
+        <span data-ttu-id="0e4df-166">Pour utiliser votre complément, ouvrez un nouveau document dans Word Online, puis chargez indépendamment votre complément en suivant les instructions de l’article relatif au [chargement indépendant de compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online).</span><span class="sxs-lookup"><span data-stu-id="0e4df-166">To use your add-in, open a new document in Word Online and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online).</span></span>
 
-2. <span data-ttu-id="c72bc-165">Dans Word, ouvrez un nouveau document, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet des tâches** du ruban pour ouvrir le volet des tâches du complément.</span><span class="sxs-lookup"><span data-stu-id="c72bc-165">In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="0e4df-167">Dans Word, ouvrez un nouveau document, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet des tâches** du ruban pour ouvrir le volet des tâches du complément.</span><span class="sxs-lookup"><span data-stu-id="0e4df-167">In Word, open a new document, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![Capture d’écran de l’application Word avec le bouton Afficher le volet des tâches mis en évidence](../images/word-quickstart-addin-2b.png)
 
-3. <span data-ttu-id="c72bc-167">En bas du volet Office, sélectionnez le lien **Exécuter** pour ajouter le texte en police de couleur bleue « Hello World » au document.</span><span class="sxs-lookup"><span data-stu-id="c72bc-167">At the bottom of the task pane, choose the **Run** link to add the text "Hello World" to the document in blue font.</span></span>
+3. <span data-ttu-id="0e4df-169">En bas du volet Office, sélectionnez le lien **Exécuter** pour ajouter le texte en police de couleur bleue « Hello World » au document.</span><span class="sxs-lookup"><span data-stu-id="0e4df-169">At the bottom of the task pane, choose the **Run** link to add the text "Hello World" to the document in blue font.</span></span>
 
     ![Capture d’écran de l’application Word avec le complément du volet des tâches chargé](../images/word-quickstart-addin-1c.png)
 
 ---
 
-## <a name="next-steps"></a><span data-ttu-id="c72bc-169">Étapes suivantes</span><span class="sxs-lookup"><span data-stu-id="c72bc-169">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="0e4df-171">Étapes suivantes</span><span class="sxs-lookup"><span data-stu-id="0e4df-171">Next steps</span></span>
 
-<span data-ttu-id="c72bc-170">Félicitations, vous avez créé un complément du volet des tâches de Word !</span><span class="sxs-lookup"><span data-stu-id="c72bc-170">Congratulations, you've successfully created a Word task pane add-in!</span></span> <span data-ttu-id="c72bc-171">Maintenant, découvrez les fonctionnalités d’un complément Word et créez un complément plus complexe en suivant le didacticiel dédié.</span><span class="sxs-lookup"><span data-stu-id="c72bc-171">Next, learn more about the capabilities of a Word add-in and build a more complex add-in by following along with the Word add-in tutorial.</span></span>
+<span data-ttu-id="0e4df-172">Félicitations, vous avez créé un complément du volet des tâches de Word !</span><span class="sxs-lookup"><span data-stu-id="0e4df-172">Congratulations, you've successfully created a Word task pane add-in!</span></span> <span data-ttu-id="0e4df-173">Maintenant, découvrez les fonctionnalités d’un complément Word et créez un complément plus complexe en suivant le didacticiel dédié.</span><span class="sxs-lookup"><span data-stu-id="0e4df-173">Next, learn more about the capabilities of a Word add-in and build a more complex add-in by following along with the Word add-in tutorial.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="c72bc-172">Didacticiel sur les compléments Word</span><span class="sxs-lookup"><span data-stu-id="c72bc-172">Word add-in tutorial</span></span>](../tutorials/word-tutorial.md)
+> [<span data-ttu-id="0e4df-174">Didacticiel sur les compléments Word</span><span class="sxs-lookup"><span data-stu-id="0e4df-174">Word add-in tutorial</span></span>](../tutorials/word-tutorial.md)
 
-## <a name="see-also"></a><span data-ttu-id="c72bc-173">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c72bc-173">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0e4df-175">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0e4df-175">See also</span></span>
 
-* [<span data-ttu-id="c72bc-174">Présentation des compléments Word</span><span class="sxs-lookup"><span data-stu-id="c72bc-174">Word add-ins overview</span></span>](../word/word-add-ins-programming-overview.md)
-* <span data-ttu-id="c72bc-175">
-  [Exemples de code pour les compléments Word](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)</span><span class="sxs-lookup"><span data-stu-id="c72bc-175">[Word add-in code samples](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)</span></span>
-* [<span data-ttu-id="c72bc-176">Référence d’API JavaScript pour Word</span><span class="sxs-lookup"><span data-stu-id="c72bc-176">Word JavaScript API reference</span></span>](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)
+* [<span data-ttu-id="0e4df-176">Présentation des compléments Word</span><span class="sxs-lookup"><span data-stu-id="0e4df-176">Word add-ins overview</span></span>](../word/word-add-ins-programming-overview.md)
+* <span data-ttu-id="0e4df-177">
+  [Exemples de code pour les compléments Word](https://developer.microsoft.com/fr-FR/office/gallery/?filterBy=Samples,Word)</span><span class="sxs-lookup"><span data-stu-id="0e4df-177">[Word add-in code samples](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)</span></span>
+* [<span data-ttu-id="0e4df-178">Référence d’API JavaScript pour Word</span><span class="sxs-lookup"><span data-stu-id="0e4df-178">Word JavaScript API reference</span></span>](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)
