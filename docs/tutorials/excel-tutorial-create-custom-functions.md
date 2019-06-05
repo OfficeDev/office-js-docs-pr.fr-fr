@@ -1,16 +1,16 @@
 ---
 title: Didacticiel de fonctions personnalisées Excel
 description: Dans ce didacticiel, vous allez créer un complément Excel qui contient une fonction personnalisée qui effectue des calculs, requiert des données web ou lance un flux de données web.
-ms.date: 05/16/2019
+ms.date: 05/30/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 7d4d87a6bb3910c1b46698d5a2ff211ea1bbc6dd
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: f167125fcc24e47f0805d6c46e5338455d94b277
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589173"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706371"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Didacticiel : créer des fonctions personnalisées dans Excel
 
@@ -27,7 +27,7 @@ Dans ce didacticiel, vous allez :
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel sur Windows (64 bits version 1810 ou ultérieure) ou Excel Online
+* Excel sur Windows (version 1810 ou ultérieure) ou Excel Online
 
 ## <a name="create-a-custom-functions-project"></a>Créer un projet de fonctions personnalisées
 

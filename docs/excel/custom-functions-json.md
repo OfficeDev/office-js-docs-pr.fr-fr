@@ -1,14 +1,14 @@
 ---
-ms.date: 05/03/2019
+ms.date: 05/30/2019
 description: Définissez des métadonnées pour des fonctions personnalisées dans Excel.
 title: Métadonnées pour les fonctions personnalisées dans Excel
 localization_priority: Normal
-ms.openlocfilehash: d6cfd61eabc5b27105414082675b35d3ff0ceb41
-ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
+ms.openlocfilehash: e51e4e8ee89eb1f345ee0c564e9b2ff8119806b2
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "34337166"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706122"
 ---
 # <a name="custom-functions-metadata"></a>Métadonnées des fonctions personnalisées
 
@@ -135,9 +135,9 @@ L’objet `options` vous permet de personnaliser certains aspects de comment et 
 
 |  Propriété  |  Type de données  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|:-----|
-|  `cancelable`  |  boolean  |  Non<br/><br/>La valeur par défaut est `false`.  |  Si la valeur est `true`, Excel appelle le gestionnaire `onCanceled` chaque fois que l’utilisateur effectue une action ayant pour effet d’annuler la fonction, par exemple, en déclenchant manuellement un recalcul ou en modifiant une cellule référencée par la fonction. Si vous utilisez cette option, Excel appelle la fonction JavaScript avec un paramètre `caller` supplémentaire (n’enregistrez ***pas*** ce paramètre dans la propriété `parameters`). Dans le corps de la fonction, un gestionnaire doit être attribué au membre `caller.onCanceled`. Pour plus d’informations, voir [Annuler une fonction](custom-functions-web-reqs.md#stream-and-cancel-functions). |
-|  `requiresAddress`  | boolean | Non <br/><br/>La valeur par défaut est `false`. | <br /><br /> Si la valeur est true, votre fonction personnalisée peut accéder à l’adresse de la cellule qui a appelé votre fonction personnalisée. Pour obtenir l’adresse de la cellule qui a appelé votre fonction personnalisée, utilisez Context. Address dans votre fonction personnalisée. Pour plus d’informations, voir[Déterminer quelle cellule a appelé votre fonction personnalisée](/office/dev/add-ins/excel/custom-functions-overview#determine-which-cell-invoked-your-custom-function). Les fonctions personnalisées ne peuvent pas être définies à la fois en diffusion en continu et requiresAddress. Lorsque vous utilisez cette option, le paramètre «invocationContext» doit être le dernier paramètre passé dans options. |
-|  `stream`  |  boolean  |  Non<br/><br/>La valeur par défaut est `false`.  |  Si la valeur est `true`, la fonction peut envoyer une sortie à la cellule à plusieurs reprises, même en cas d’appel unique. Cette option est utile pour des sources de données qui changent rapidement, telles que des valeurs boursières. Si vous utilisez cette option, Excel appelle la fonction JavaScript avec un paramètre `caller` supplémentaire (n’enregistrez ***pas*** ce paramètre dans la propriété `parameters`). La fonction ne doit pas utiliser d’instruction `return`. Au lieu de cela, la valeur obtenue est transmise en tant qu’argument de la méthode de rappel `caller.setResult`. Pour plus d’informations, voir [Diffusion en continu de fonctions](custom-functions-web-reqs.md#stream-and-cancel-functions). |
+|  `cancelable`  |  boolean  |  Non<br/><br/>La valeur par défaut est `false`.  |  Si la valeur est `true`, Excel appelle le gestionnaire `CancelableInvocation` chaque fois que l’utilisateur effectue une action ayant pour effet d’annuler la fonction, par exemple, en déclenchant manuellement un recalcul ou en modifiant une cellule référencée par la fonction. Les fonctions annulables sont généralement utilisées uniquement pour les fonctions asynchrones qui renvoient un seul résultat et doivent gérer l’annulation d’une demande de données. Une fonction ne peut pas être à la fois en continu et annulable. Pour plus d’informations, reportez-vous à la remarque à la fin de la [création d’une fonction de diffusion en continu](custom-functions-web-reqs.md#make-a-streaming-function). |
+|  `requiresAddress`  | boolean | Non <br/><br/>La valeur par défaut est `false`. | <br /><br /> Si la valeur est true, votre fonction personnalisée peut accéder à l’adresse de la cellule qui a appelé votre fonction personnalisée. Pour obtenir l’adresse de la cellule qui a appelé votre fonction personnalisée, utilisez Context. Address dans votre fonction personnalisée. Pour plus d’informations, voir[Déterminer quelle cellule a appelé votre fonction personnalisée](/office/dev/add-ins/excel/custom-functions-overview#determine-which-cell-invoked-your-custom-function). Les fonctions personnalisées ne peuvent pas être définies à la fois en diffusion en continu et requiresAddress. Lorsque vous utilisez cette option, le paramètre «invocation» doit être le dernier paramètre passé dans options. |
+|  `stream`  |  boolean  |  Non<br/><br/>La valeur par défaut est `false`.  |  Si la valeur est `true`, la fonction peut envoyer une sortie à la cellule à plusieurs reprises, même en cas d’appel unique. Cette option est utile pour des sources de données qui changent rapidement, telles que des valeurs boursières. La fonction ne doit pas utiliser d’instruction `return`. Au lieu de cela, la valeur obtenue est transmise en tant qu’argument de la méthode de rappel `StreamingInvocation.setResult`. Pour plus d’informations, voir [Diffusion en continu de fonctions](custom-functions-web-reqs.md#make-a-streaming-function). |
 |  `volatile`  | boolean | Non <br/><br/>La valeur par défaut est `false`. | <br /><br /> Si la valeur est `true`, la fonction est recalculée à chaque recalcul d’Excel, et plus à chaque fois que les valeurs dépendantes de la formules sont modifiées. Une fonction ne peut pas être à la fois diffusée en continu et volatile. Si les propriétés `stream` et `volatile` sont toutes les deux définies sur `true`, l’option volatile est ignorée. |
 
 ## <a name="parameters"></a>paramètres

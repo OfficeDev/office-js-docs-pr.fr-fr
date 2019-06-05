@@ -3,12 +3,12 @@ title: Office. Context. Mailbox. Item-ensemble de conditions requises 1,7
 description: ''
 ms.date: 05/30/2019
 localization_priority: Normal
-ms.openlocfilehash: 8895a27938bc6c72d929cf9423a377eaa2cc02a9
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: fd618b766a519c522f323e0a9d43105b3258c421
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589187"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706312"
 ---
 # <a name="item"></a>élément
 
@@ -213,7 +213,7 @@ L’exemple suivant présente le paramètre de résultat transmis à la fonction
 ---
 ---
 
-#### <a name="cc-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a>CC: Array. <[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_7/office.recipients)
+#### <a name="cc-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a>CC: Array. <[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[destinataires](/javascript/api/outlook_1_7/office.recipients)
 
 Permet d’accéder aux destinataires en copie carbone (Cc) d’un message. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
@@ -666,7 +666,7 @@ Office.context.mailbox.item.notificationMessages.getAllAsync(
 ---
 ---
 
-#### <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a>optionalAttendees: les destinataires[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[](/javascript/api/outlook_1_7/office.recipients) Array. <
+#### <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a>optionalAttendees: [EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[](/javascript/api/outlook_1_7/office.recipients) des destinataires de tableau. <
 
 Permet d’accéder aux participants facultatifs d’un événement. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
@@ -810,7 +810,7 @@ Recurrence = {
 ---
 ---
 
-#### <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a>requiredAttendees: les destinataires[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[](/javascript/api/outlook_1_7/office.recipients) Array. <
+#### <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients"></a>requiredAttendees: [EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)>|[](/javascript/api/outlook_1_7/office.recipients) des destinataires de tableau. <
 
 Permet d’accéder aux participants requis à un événement. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
@@ -2040,7 +2040,7 @@ Dans la mesure où les rendez-vous n’ont pas d’état brouillon, si `saveAsyn
 > [!NOTE]
 > Les clients suivants ont un comportement différent avec `saveAsync` sur les rendez-vous en mode composition :
 >
-> - Outlook pour Mac ne prend pas `saveAsync` en charge les réunions en mode composition. En tant que tel `saveAsync` , l’appel dans ce scénario renvoie une erreur. Consultez la rubrique [Impossible d’enregistrer une réunion en tant que brouillon dans Outlook pour Mac à l’aide de l’API Office js](https://support.microsoft.com/help/4505745) pour obtenir une solution de contournement.
+> - Outlook pour Mac ne prend pas en charge l’enregistrement d’une réunion. La `saveAsync` méthode échoue lorsqu’elle est appelée à partir d’une réunion en mode composition. Consultez la rubrique [Impossible d’enregistrer une réunion en tant que brouillon dans Outlook pour Mac à l’aide de l’API Office js](https://support.microsoft.com/help/4505745) pour obtenir une solution de contournement.
 > - Outlook sur le web envoie toujours une invitation ou une mise à jour quand `saveAsync` est appelée sur un rendez-vous en mode composition.
 
 ##### <a name="parameters"></a>Paramètres

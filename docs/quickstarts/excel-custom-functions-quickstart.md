@@ -1,15 +1,15 @@
 ---
-ms.date: 05/15/2019
+ms.date: 05/30/2019
 description: Développement de fonctions personnalisées dans le Guide de démarrage rapide d’Excel.
 title: Démarrage rapide des fonctions personnalisées
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 2ef7e05390750173c1679cdb53ed96ff19020e67
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: 4bf0d6a5bf020ee4196ce89d763fa994b3fd489c
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589110"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706041"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Prise en main du développement de fonctions personnalisées Excel
 
@@ -19,7 +19,7 @@ Avec les fonctions personnalisées, les développeurs peuvent désormais ajouter
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel sur Windows (64 bits version 1810 ou ultérieure) ou Excel Online
+* Excel sur Windows (version 1810 ou ultérieure) ou Excel Online
 
 ## <a name="build-your-first-custom-functions-project"></a>Création de votre premier projet de fonctions personnalisées
 

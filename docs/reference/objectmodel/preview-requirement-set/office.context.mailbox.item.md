@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Item-Preview ensemble de conditions requises
 description: ''
-ms.date: 05/30/2019
+ms.date: 06/03/2019
 localization_priority: Normal
-ms.openlocfilehash: 12ec5d5558b558c87587e34472c33116478d14b3
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: 3dad9133fb23f6190e58eab94dc1724c18ac9d40
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589201"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706357"
 ---
 # <a name="item"></a>élément
 
@@ -69,6 +69,7 @@ L’espace de noms `item` est utilisé pour accéder au message, à la demande d
 | [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Méthode |
 | [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Méthode |
 | [getInitializationContextAsync](#getinitializationcontextasyncoptions-callback) | Méthode |
+| [getItemIdAsync](#getitemidasyncoptions-callback) | Méthode |
 | [getRegExMatches](#getregexmatches--object) | Méthode |
 | [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | Méthode |
 | [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | Méthode |
@@ -257,7 +258,7 @@ Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
 ---
 ---
 
-#### <a name="cc-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients"></a>CC: Array. <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook/office.recipients)
+#### <a name="cc-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients"></a>CC: Array. <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)>|[destinataires](/javascript/api/outlook/office.recipients)
 
 Permet d’accéder aux destinataires en copie carbone (Cc) d’un message. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
@@ -786,7 +787,7 @@ Office.context.mailbox.item.notificationMessages.getAllAsync(
 ---
 ---
 
-#### <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients"></a>optionalAttendees: les destinataires[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)>|[](/javascript/api/outlook/office.recipients) Array. <
+#### <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients"></a>optionalAttendees: [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)>|[](/javascript/api/outlook/office.recipients) des destinataires de tableau. <
 
 Permet d’accéder aux participants facultatifs d’un événement. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
@@ -930,7 +931,7 @@ Recurrence = {
 ---
 ---
 
-#### <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients"></a>requiredAttendees: les destinataires[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)>|[](/javascript/api/outlook/office.recipients) Array. <
+#### <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients"></a>requiredAttendees: [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)>|[](/javascript/api/outlook/office.recipients) des destinataires de tableau. <
 
 Permet d’accéder aux participants requis à un événement. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
@@ -1757,8 +1758,8 @@ Obtient les pièces jointes de l’élément sous la forme d’un tableau. Mode 
 
 |Nom|Type|Attributs|Description|
 |---|---|---|---|
-|`options`|Objet|&lt;optional&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
-|`options.asyncContext`|Objet|&lt;optional&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
+|`options`|Objet|&lt;facultatif&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
+|`options.asyncContext`|Objet|&lt;facultatif&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
 |`callback`|fonction|&lt;optional&gt;|Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [AsyncResult](/javascript/api/office/office.asyncresult).|
 
 ##### <a name="requirements"></a>Configuration requise
@@ -1934,8 +1935,8 @@ Obtient les données d’initialisation transmises lorsque le complément est [a
 
 |Nom|Type|Attributs|Description|
 |---|---|---|---|
-|`options`|Objet|&lt;optional&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
-|`options.asyncContext`|Objet|&lt;optional&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
+|`options`|Objet|&lt;facultatif&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
+|`options.asyncContext`|Objet|&lt;facultatif&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
 |`callback`|fonction|&lt;optional&gt;|Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult). <br/>En cas de réussite, les données d’initialisation sont fournies `asyncResult.value` dans la propriété sous la forme d’une chaîne.<br/>S’il n’existe pas de contexte d’initialisation `asyncResult` , l’objet contient `Error` un objet dont `code` la propriété est `9020` définie sur `name` et sa propriété `GenericResponseError`est définie sur.|
 
 ##### <a name="requirements"></a>Configuration requise
@@ -1970,6 +1971,58 @@ Office.context.mailbox.item.getInitializationContextAsync(
     }
   }
 );
+```
+
+---
+---
+
+#### <a name="getitemidasyncoptions-callback"></a>getItemIdAsync ([options], rappel)
+
+Obtient de manière asynchrone l’ID d’un élément enregistré. Mode composition uniquement.
+
+Lorsqu’elle est appelée, cette méthode renvoie l’ID de l’élément par le biais de la méthode de rappel.
+
+> [!NOTE]
+> Si votre complément appelle `getItemIdAsync` sur un élément en mode composition (par exemple, pour obtenir un à utiliser avec `itemId` EWS ou l’API REST), sachez que lorsque Outlook est en mode mis en cache, l’élément peut prendre un certain temps avant la synchronisation de l’élément avec le serveur. Tant que l’élément n’est pas synchronisé `itemId` , le n’est pas reconnu et son utilisation renvoie une erreur.
+
+##### <a name="parameters"></a>Paramètres
+
+|Nom|Type|Attributs|Description|
+|---|---|---|---|
+|`options`|Objet|&lt;facultatif&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
+|`options.asyncContext`|Objet|&lt;facultatif&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
+|`callback`|fonction||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>En cas de réussite, l’identificateur de l’élément est fourni dans la propriété `asyncResult.value`.|
+
+##### <a name="errors"></a>Erreurs
+
+|Code d'erreur|Description|
+|------------|-------------|
+|`ItemNotSaved`|L’ID ne peut pas être récupéré tant que l’élément n’est pas enregistré.|
+
+##### <a name="requirements"></a>Configuration requise
+
+|Conditions requises|Valeur|
+|---|---|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Aperçu|
+|[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)|Composition|
+
+##### <a name="examples"></a>Exemples
+
+```javascript
+Office.context.mailbox.item.getItemIdAsync(
+  function callback(result) {
+    // Process the result.
+  });
+```
+
+L’exemple suivant montre la structure du `result` paramètre transmis à la fonction de rappel. La `value` propriété contient l’ID de l’élément.
+
+```json
+{
+  "value":"AAMkADI5...AAA=",
+  "status":"succeeded"
+}
 ```
 
 ---
@@ -2240,8 +2293,8 @@ Obtient les propriétés du rendez-vous ou du message sélectionné dans un doss
 
 |Nom|Type|Attributs|Description|
 |---|---|---|---|
-|`options`|Objet|&lt;optional&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
-|`options.asyncContext`|Objet|&lt;optional&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
+|`options`|Objet|&lt;facultatif&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
+|`options.asyncContext`|Objet|&lt;facultatif&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
 |`callback`|fonction||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Les propriétés partagées sont fournies sous [`SharedProperties`](/javascript/api/outlook/office.sharedproperties) la forme d' `asyncResult.value` un objet dans la propriété. Cet objet peut être utilisé pour obtenir les propriétés partagées de l’élément.|
 
 ##### <a name="requirements"></a>Configuration requise
@@ -2328,8 +2381,8 @@ La méthode `removeAttachmentAsync` supprime la pièce jointe avec l’identific
 |Nom|Type|Attributs|Description|
 |---|---|---|---|
 |`attachmentId`|String||Identificateur de la pièce jointe à supprimer.|
-|`options`|Objet|&lt;optional&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
-|`options.asyncContext`|Objet|&lt;optional&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
+|`options`|Objet|&lt;facultatif&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
+|`options.asyncContext`|Objet|&lt;facultatif&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
 |`callback`|fonction|&lt;optional&gt;|Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult). <br/>En cas d’échec de la suppression de la pièce jointe, la propriété `asyncResult.error` contient un code d’erreur et la raison de l’échec.|
 
 ##### <a name="errors"></a>Erreurs
@@ -2375,8 +2428,8 @@ Actuellement, les types d’événement `Office.EventType.AttachmentsChanged`pri
 | Nom | Type | Attributs | Description |
 |---|---|---|---|
 | `eventType` | [Office.EventType](office.md#eventtype-string) || Événement qui doit révoquer le gestionnaire. |
-| `options` | Objet | &lt;optional&gt; | Littéral d’objet contenant une ou plusieurs des propriétés suivantes. |
-| `options.asyncContext` | Objet | &lt;optional&gt; | Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel. |
+| `options` | Objet | &lt;facultatif&gt; | Littéral d’objet contenant une ou plusieurs des propriétés suivantes. |
+| `options.asyncContext` | Objet | &lt;facultatif&gt; | Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel. |
 | `callback` | fonction| &lt;optional&gt;|Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).|
 
 ##### <a name="requirements"></a>Configuration requise
@@ -2404,15 +2457,15 @@ Dans la mesure où les rendez-vous n’ont pas d’état brouillon, si `saveAsyn
 > [!NOTE]
 > Les clients suivants ont un comportement différent avec `saveAsync` sur les rendez-vous en mode composition :
 >
-> - Outlook pour Mac ne prend pas `saveAsync` en charge les réunions en mode composition. En tant que tel `saveAsync` , l’appel dans ce scénario renvoie une erreur. Consultez la rubrique [Impossible d’enregistrer une réunion en tant que brouillon dans Outlook pour Mac à l’aide de l’API Office js](https://support.microsoft.com/help/4505745) pour obtenir une solution de contournement.
+> - Outlook pour Mac ne prend pas en charge l’enregistrement d’une réunion. La `saveAsync` méthode échoue lorsqu’elle est appelée à partir d’une réunion en mode composition. Consultez la rubrique [Impossible d’enregistrer une réunion en tant que brouillon dans Outlook pour Mac à l’aide de l’API Office js](https://support.microsoft.com/help/4505745) pour obtenir une solution de contournement.
 > - Outlook sur le web envoie toujours une invitation ou une mise à jour quand `saveAsync` est appelée sur un rendez-vous en mode composition.
 
 ##### <a name="parameters"></a>Paramètres
 
 |Nom|Type|Attributs|Description|
 |---|---|---|---|
-|`options`|Object|&lt;optional&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
-|`options.asyncContext`|Objet|&lt;optional&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
+|`options`|Object|&lt;facultatif&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
+|`options.asyncContext`|Objet|&lt;facultatif&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
 |`callback`|fonction||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>En cas de réussite, l’identificateur de l’élément est fourni dans la propriété `asyncResult.value`.|
 
 ##### <a name="requirements"></a>Configuration requise
@@ -2455,8 +2508,8 @@ La méthode `setSelectedDataAsync` insère la chaîne spécifiée à l’emplace
 |Nom|Type|Attributs|Description|
 |---|---|---|---|
 |`data`|String||Données à insérer. Les données ne doivent pas dépasser 1 000 000 caractères. Si elles contiennent plus de 1 000 000 caractères, une exception `ArgumentOutOfRange` est générée.|
-|`options`|Objet|&lt;optional&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
-|`options.asyncContext`|Objet|&lt;optional&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
+|`options`|Objet|&lt;facultatif&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
+|`options.asyncContext`|Objet|&lt;facultatif&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
 |`options.coercionType`|[Office.CoercionType](office.md#coerciontype-string)|&lt;optional&gt;|Si `text`, le style existant est appliqué dans Outlook Web App et Outlook. Si le champ est un éditeur HTML, seules les données de texte sont insérées, même si les données sont au format HTML.<br/><br/>Avec `html` et si le champ prend en charge le langage HTML (contrairement à l’objet), le style existant est appliqué dans Outlook Web App et le style par défaut dans Outlook. Si le champ est au format texte, une erreur `InvalidDataFormat` est renvoyée.<br/><br/>Si la propriété `coercionType` n’est pas définie, le résultat dépend du champ : si le champ est au format HTML, le langage HTML est utilisé ; si le champ est au format texte, le texte brut est utilisé.|
 |`callback`|fonction||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).|
 

@@ -1,14 +1,14 @@
 ---
-ms.date: 05/09/2019
+ms.date: 05/30/2019
 description: Découvrez comment utiliser différents paramètres dans vos fonctions personnalisées, telles que les plages Excel, les paramètres facultatifs, le contexte d’appel, et bien plus encore.
 title: Options pour les fonctions personnalisées Excel
 localization_priority: Normal
-ms.openlocfilehash: 7bf195bbae696274518966e2a24bd9819e9c3f4b
-ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
+ms.openlocfilehash: 7bc907157810ce88330fe41b21ca6ff115525491
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "34337187"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706056"
 ---
 # <a name="custom-functions-parameter-options"></a>Options des paramètres de fonctions personnalisées
 
@@ -98,7 +98,7 @@ CustomFunctions.associate("SECONDHIGHEST", secondHighest);
 
 ## <a name="invocation-parameter"></a>Paramètre invocation
 
-Chaque fonction personnalisée reçoit automatiquement un `invocation` argument en tant que dernier argument. Cet argument peut être utilisé pour récupérer un contexte supplémentaire, comme l’adresse de la cellule d’appel. Ou elle peut être utilisée pour envoyer des informations à Excel, comme un gestionnaire de fonctions pour [annuler une fonction](custom-functions-web-reqs.md#stream-and-cancel-functions). Même si aucun paramètre n’est déclaré, votre fonction personnalisée a ce paramètre. Cet argument n’apparaît pas pour un utilisateur dans Excel. Si vous souhaitez utiliser `invocation` dans votre fonction personnalisée, déclarez-le comme dernier paramètre.
+Chaque fonction personnalisée reçoit automatiquement un `invocation` argument en tant que dernier argument. Cet argument peut être utilisé pour récupérer un contexte supplémentaire, comme l’adresse de la cellule d’appel. Ou elle peut être utilisée pour envoyer des informations à Excel, comme un gestionnaire de fonctions pour [annuler une fonction](custom-functions-web-reqs.md#make-a-streaming-function). Même si aucun paramètre n’est déclaré, votre fonction personnalisée a ce paramètre. Cet argument n’apparaît pas pour un utilisateur dans Excel. Si vous souhaitez utiliser `invocation` dans votre fonction personnalisée, déclarez-le comme dernier paramètre.
 
 Dans l’exemple de code suivant, `invocation` le contexte est explicitement indiqué pour votre référence.
 

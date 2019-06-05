@@ -3,14 +3,14 @@ ms.date: 05/03/2019
 description: Découvrez les conditions requises pour les noms des fonctions personnalisées Excel et éviter les pièges de dénomination courants.
 title: Instructions d’affectation de noms pour les fonctions personnalisées dans Excel
 localization_priority: Normal
-ms.openlocfilehash: 3abe04eebfa703666b70ecbde1c68ab0c942003c
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: 64420171a90b29732745891cb691b8cd4309c53d
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628045"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706077"
 ---
-# <a name="naming-guidelines"></a>Instructions d’affectation de noms
+# <a name="naming-guidelines"></a>Instructions d’attribution de noms
 
 Une fonction personnalisée est identifiée par un **ID** et une propriété de **nom** dans le fichier de métadonnées JSON.
 
@@ -49,6 +49,7 @@ Pour résoudre un conflit d’affectation de noms `name` , modifiez le dans votr
 - Les noms de fonction doivent indiquer l’action de la fonction, `=GETZIPCODE` par exemple `ZIPCODE`au lieu de.
 - Évitez les abréviations ambiguës dans les noms de fonction. La clarté est plus importante que la concision. Choisissez un nom tel `=INCREASETIME` que plutôt `=INC`que.
 - Utilisez régulièrement les mêmes verbes pour les fonctions qui effectuent des actions similaires. Par exemple, utilisez `=DELETEZIPCODE` and `=DELETEADDRESS`, et non `=DELETEZIPCODE` et `=REMOVEADDRESS`.
+- Lorsque vous nommez une fonction de diffusion en continu, envisagez d’ajouter une note à cet effet `STREAM` dans la description de la fonction ou d’ajouter à la fin du nom de la fonction.
 
 ## <a name="localizing-function-names"></a>Localisation des noms de fonction
 
