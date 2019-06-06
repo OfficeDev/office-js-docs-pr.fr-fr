@@ -1,14 +1,14 @@
 ---
-ms.date: 05/07/2019
+ms.date: 05/30/2019
 description: Demander, flux de données et annuler la diffusion en continu de données externes à votre classeur avec des fonctions personnalisées dans Excel
 title: Recevoir et gérer des données à l’aide de fonctions personnalisées
 localization_priority: Priority
-ms.openlocfilehash: 61f4d0fdaea4277faedddbe075a587fb23842c08
-ms.sourcegitcommit: 5b9c2b39dfe76cabd98bf28d5287d9718788e520
+ms.openlocfilehash: add6a3bc91b28ff7dbd0f0b298ed8f38ed5dd1bc
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "33659634"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706143"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>Recevoir et gérer des données à l’aide de fonctions personnalisées
 
@@ -25,9 +25,9 @@ Si une fonction personnalisée récupère des données d’une source externe co
 1. Renvoyer une promesse JavaScript à Excel.
 2. Résoudre la promesse avec la valeur finale à l’aide de la fonction de rappel.
 
-Dans une fonction personnalisée, vous pouvez demander des données externes à l’aide d’une API comme[`Fetch`](https://developer.mozilla.org/fr-FR/docs/Web/API/Fetch_API)Récupérer ou à l’aide de`XmlHttpRequest` [ (XHR)](https://developer.mozilla.org/fr-FR/docs/Web/API/XMLHttpRequest), une API web standard qui émet des demandes HTTP pour interagir avec les serveurs.
+Dans une fonction personnalisée, vous pouvez demander des données externes à l’aide d’une API comme[`Fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)Récupérer ou à l’aide de`XmlHttpRequest` [ (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), une API web standard qui émet des demandes HTTP pour interagir avec les serveurs.
 
-Dans le runtime JavaScript, XHR implémente des mesures de sécurité supplémentaires en exigeant la [politique de même origine (same-origin policy)](https://developer.mozilla.org/fr-FR/docs/Web/Security/Same-origin_policy) et le partage [CORS (partage des ressources cross-origin)](https://www.w3.org/TR/cors/) simple.
+Dans le runtime JavaScript, XHR implémente des mesures de sécurité supplémentaires en exigeant la [politique de même origine (same-origin policy)](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) et le partage [CORS (partage des ressources cross-origin)](https://www.w3.org/TR/cors/) simple.
 
 Notez qu’une implémentation CORS simples ne peut pas utiliser les cookies et prend uniquement en charge les méthodes simples (GET, HEAD, POST). Le simple CORS accepte des en-têtes simples avec des noms de champs `Accept`, `Accept-Language`, `Content-Language`. Vous pouvez également utiliser un en-tête de Type de contenu dans CORS simple, autant que le type de contenu est `application/x-www-form-urlencoded`, `text/plain`, ou `multipart/form-data`.
 
@@ -137,13 +137,37 @@ ws.onerror(error){
 }
 ```
 
-## <a name="stream-and-cancel-functions"></a>Fonctions de diffusion et annulables
+## <a name="make-a-streaming-function"></a>Créer une fonction de diffusion en continu
 
-Les fonctions personnalisées de diffusion vous aident à copier des données vers des cellules à plusieurs reprises, sans exiger qu’un utilisateur actualise explicitement quoi que ce soit.
+Les fonctions personnalisées de diffusion vous aident à copier des données vers des cellules à plusieurs reprises, sans exiger qu’un utilisateur actualise explicitement quoi que ce soit. Cela peut s’avérer utile pour vérifier des données actives d’un service en ligne, comme la fonction dans le [didacticiel sur les fonctions personnalisées](/tutorials/excel-tutorial-create-custom-functions).
 
-Les fonctions personnalisées annulables vous permettent d’annuler l’exécution d’une fonction personnalisée de diffusion pour réduire ses consommation de bande passante, de mémoire de travail et de temps processeur.
+Pour déclarer une fonction de diffusion en continu, utilisez la balise de commentaire JSDoc `@stream`. Pour attirer l’attention des utilisateurs sur le fait que votre fonction peut réévaluer sur la base de nouvelles informations, songez à placer un flux ou une formulation pour indiquer cela dans le nom ou la description de votre fonction.
 
-Pour déclarer une fonction comme étant de diffusion ou annulable, les indicateurs de commentaire JSDOC `@stream` ou `@cancelable`.
+L’exemple suivant illustre une fonction de diffusion en continu qui augmente un nombre donné à chaque seconde d’une valeur que vous spécifiez.
+
+```JS
+/**
+ * Increments a value once a second.
+ * @customfunction INC increment
+ * @param {number} incrementBy Amount to increment
+ * @param {CustomFunctions.StreamingInvocation<number>} invocation
+ */
+function increment(incrementBy, invocation) {
+  let result = 0;
+  const timer = setInterval(() => {
+    result += incrementBy;
+    invocation.setResult(result);
+  }, 1000);
+
+  invocation.onCanceled = () => {
+    clearInterval(timer);
+  };
+}
+CustomFunctions.associate("INC", increment);
+```
+
+>[!NOTE]
+> Notez qu’il existe également une catégorie de fonctions appelée fonctions annulables, qui ne *sont* pas liées à des fonctions de diffusion en continu. Les versions précédentes des fonctions personnalisées nécessitaient la déclaration manuelle de `"cancelable": true` et `"streaming": true` dans JSON. Depuis l’introduction des métadonnées générées automatiquement, seules les fonctions personnalisées asynchrones renvoyant une valeur sont annulables. Les fonctions annulables permettent de mettre fin à une requête web au milieu d’une demande, en utilisant une commande [`CancelableInvocation`](https://docs.microsoft.com/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation?view=office-js) pour décider de l’action à effectuer lors de l’annulation. Déclarez une fonction annulable à l’aide de la balise `@cancelable`.
 
 ### <a name="using-an-invocation-parameter"></a>Utilisation d’un paramètre d’appel
 

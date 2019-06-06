@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: ''
-ms.date: 05/17/2019
+ms.date: 06/03/2019
 localization_priority: Priority
-ms.openlocfilehash: d97efe8bbdfdadb252190458960b4356e0c8a564
-ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
+ms.openlocfilehash: 6d7dceba80929c2abace9daec859302c43913f98
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "34337173"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706350"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -129,6 +129,12 @@ Ajouté un nouvel enum qui spécifie les couleurs disponibles à associer à des
 #### <a name="sharedpropertiesjavascriptapioutlookofficesharedproperties"></a>[SharedProperties](/javascript/api/outlook/office.sharedproperties)
 
 Ajout d’un nouvel objet qui représente les propriétés d’un élément rendez-vous ou message dans un dossier, un calendrier ou une boîte aux lettres partagés.
+
+**Disponible dans** : Outlook pour Windows (connecté à Office 365)
+
+#### <a name="officecontextmailboxitemgetitemidasyncofficecontextmailboxitemmdgetitemidasyncoptions-callback"></a>[Office.context.mailbox.item.getItemIdAsync](office.context.mailbox.item.md#getitemidasyncoptions-callback)
+
+Ajout d’une nouvelle méthode qui obtient l’ID d’un rendez-vous ou d’un élément de message enregistré.
 
 **Disponible dans** : Outlook pour Windows (connecté à Office 365)
 

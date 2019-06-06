@@ -3,12 +3,12 @@ title: Office.context.mailbox.item - ensemble de conditions requises 1.5
 description: ''
 ms.date: 05/30/2019
 localization_priority: Priority
-ms.openlocfilehash: 59e21676e670d8ba4da95319567364948f374790
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: aba1590d570a55ed512f1eb223b7d927c953dbaf
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589180"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706336"
 ---
 # <a name="item"></a>élément
 
@@ -1632,7 +1632,7 @@ Dans la mesure où les rendez-vous n’ont pas d’état brouillon, si `saveAsyn
 > [!NOTE]
 > Les clients suivants ont un comportement différent avec `saveAsync` sur les rendez-vous en mode composition :
 >
-> - Outlook pour Mac ne prend pas en charge `saveAsync` sur une réunion en mode composition. Ainsi, l’appel `saveAsync` dans ce scénario renvoie une erreur. Pour contourner ce problème, voir [Impossible d’enregistrer une réunion en tant que brouillon dans Outlook pour Mac à l’aide des API de JS Office](https://support.microsoft.com/help/4505745).
+> - Outlook pour Mac ne prend pas en charge l’enregistrement d’une réunion. La méthode `saveAsync` échoue lorsqu’elle est appelée à partir d’une réunion en mode composition. Pour contourner ce problème, voir [Impossible d’enregistrer une réunion en tant que brouillon dans Outlook pour Mac à l’aide des API de JS Office](https://support.microsoft.com/help/4505745).
 > - Outlook sur le web envoie toujours une invitation ou une mise à jour quand `saveAsync` est appelée sur un rendez-vous en mode composition.
 
 ##### <a name="parameters"></a>Paramètres
