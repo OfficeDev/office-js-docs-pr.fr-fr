@@ -64,8 +64,8 @@
   items:
     - name: Configuration requise pour exécuter des compléments
       href: concepts/requirements-for-running-office-add-ins.md
-    - name: Visionneuses Web utilisées par des compléments Office
-      href: concepts/web-viewers-used-by-office-web-add-ins.md
+    - name: Navigateurs utilisés par les compléments Office
+      href: concepts/browsers-used-by-office-web-add-ins.md
     - name: Meilleures pratiques en matière de développement de compléments
       href: concepts/add-in-development-best-practices.md
     - name: Cycle de vie du développement des compléments
@@ -308,7 +308,7 @@
                 - name: Génération de métadonnées
                   href: excel/custom-functions-json-autogeneration.md
                   displayName: Excel
-                - name: Instructions d’affectation de noms
+                - name: Instructions d’attribution de noms
                   href: excel/custom-functions-naming.md
                   displayName: Excel
                 - name: Options de paramètre
@@ -338,7 +338,7 @@
             - name: Gestion des erreurs
               href: excel/excel-add-ins-error-handling.md
               displayName: Excel
-            - name: Events
+            - name: Événements
               href: excel/excel-add-ins-events.md
               displayName: Excel
             - name: Plages multiples
@@ -478,7 +478,7 @@
               href: testing/attach-debugger-from-task-pane.md
             - name: Débogage à l’aide des outils de développement F12
               href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
-        - name: "Office\_Online"
+        - name: Office Online
           items:
             - name: "Chargement de version test des compléments\_Office dans Office\_Online"
               href: testing/sideload-office-add-ins-for-testing.md
@@ -506,7 +506,7 @@
           href: publish/package-your-add-in-using-visual-studio.md
         - name: Publier des compléments via un déploiement centralisé
           href: publish/centralized-deployment.md
-        - name: Publier des compléments dans un catalogue SharePoint
+        - name: Publier des compléments dans un catalogue d’applications SharePoint
           href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
         - name: Publier des compléments dans AppSource
           href: /office/dev/store/submit-to-the-office-store
@@ -756,7 +756,7 @@
           href: reference/manifest/formsettings.md
         - name: HighResolutionIconUrl
           href: reference/manifest/highresolutioniconurl.md
-        - name: Host (Hôte)
+        - name: Hôte
           href: reference/manifest/host.md
         - name: Hôtes
           href: reference/manifest/hosts.md
