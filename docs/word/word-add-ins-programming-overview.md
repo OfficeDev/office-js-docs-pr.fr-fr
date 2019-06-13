@@ -3,12 +3,12 @@ title: Présentation des compléments Word
 description: ''
 ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 143f5b431aff2133c084b6d0f9c390562116dd4e
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 4b20b6007dba879b16ae8f6a586cf933f2f4fef0
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952172"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910279"
 ---
 # <a name="word-add-ins-overview"></a>Présentation des compléments Word
 
@@ -82,7 +82,7 @@ Une fois le développement de votre complément terminé, vous pouvez le [publie
 
 ## <a name="whats-coming-up-for-word-add-ins"></a>Nouveautés pour les compléments Word
 
-Au fur et à mesure que nous concevons et développons de nouvelles API pour les compléments Word, nous les mettons à votre disposition sur notre page de [spécifications ouvertes d’API](/office/dev/add-ins/reference/openspec) pour que vous puissiez fournir vos commentaires. Découvrez les nouvelles fonctionnalités dans le pipeline pour les API JavaScript pour Word et donnez votre avis sur nos spécifications de conception.
+Au fur et à mesure que nous concevons et développons de nouvelles API pour les compléments Word, nous les mettons à votre disposition sur notre page de [spécifications ouvertes d’API](/office/dev/add-ins/reference/openspec/openspec) pour que vous puissiez fournir vos commentaires. Découvrez les nouvelles fonctionnalités dans le pipeline pour les API JavaScript pour Word et donnez votre avis sur nos spécifications de conception.
 
 ## <a name="see-also"></a>Voir aussi
 

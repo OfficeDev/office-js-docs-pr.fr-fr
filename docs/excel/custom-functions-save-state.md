@@ -3,14 +3,14 @@ ms.date: 05/08/2019
 description: Utilisez `OfficeRuntime.storage` pour enregistrer l’état des fonctions personnalisées.
 title: Enregistrer et partager l’état des fonctions personnalisées
 localization_priority: Priority
-ms.openlocfilehash: b1472b0623d15882dabff16f8be3f74756e3b3de
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: fb73c349a9f1048ccc4e01a0958c8efd41cb2b78
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33951969"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910349"
 ---
-## <a name="save-and-share-state-in-custom-functions"></a>Enregistrer et partager l’état des fonctions personnalisées
+# <a name="save-and-share-state-in-custom-functions"></a>Enregistrer et partager l’état des fonctions personnalisées
 
 Utilisez l’objet `OfficeRuntime.storage` pour enregistrer l’état lié aux fonctions personnalisées ou au volet Office dans votre complément. L’espace de stockage est limité à 10 Mo par domaine (avec possibilité de partage entre plusieurs compléments). Dans Excel sur Windows, l’objet `storage` correspond à un emplacement dans l’exécution de fonctions personnalisées, mais pour Excel Online et Excel pour Mac, l’objet `storage` est le même que l’objet `localStorage` du navigateur.
 

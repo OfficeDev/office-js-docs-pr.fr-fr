@@ -3,12 +3,12 @@ ms.date: 05/30/2019
 description: Demander, flux de données et annuler la diffusion en continu de données externes à votre classeur avec des fonctions personnalisées dans Excel
 title: Recevoir et gérer des données à l’aide de fonctions personnalisées
 localization_priority: Priority
-ms.openlocfilehash: add6a3bc91b28ff7dbd0f0b298ed8f38ed5dd1bc
-ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
+ms.openlocfilehash: 22f79c8b4e7e39569d3b955477e9397a053e1a8f
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "34706143"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910335"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>Recevoir et gérer des données à l’aide de fonctions personnalisées
 
@@ -16,7 +16,7 @@ L’une des façon dont les fonctions personnalisées améliorent la puissance d
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-La documentation ci-dessous illustre certains exemples de requêtes web, mais pour créer une fonction diffusion en continu pour vous-même, essayez la [didacticiel relative aux fonctions personnalisées](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows).
+La documentation ci-dessous illustre certains exemples de requêtes web, mais pour créer une fonction diffusion en continu pour vous-même, essayez la [didacticiel relative aux fonctions personnalisées](../tutorials/excel-tutorial-create-custom-functions.md).
 
 ## <a name="functions-that-return-data-from-external-sources"></a>Fonctions qui retournent des données provenant de sources externes
 
@@ -72,7 +72,7 @@ Pour un autre exemple d’une demande XHR avec davantage de contexte, voir la `g
 
 ### <a name="fetch-example"></a>Exemple de récupération
 
-Dans l’exemple de code suivant, la fonction `stockPriceStream` utilise un symbole boursier pour obtenir le prix d’une action toutes les 1 000 millisecondes. Pour plus d’informations sur cet exemple voir le[didacticiel relatif aux fonctions personnalisées](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows#create-a-streaming-asynchronous-custom-function).
+Dans l’exemple de code suivant, la fonction `stockPriceStream` utilise un symbole boursier pour obtenir le prix d’une action toutes les 1 000 millisecondes. Pour plus d’informations sur cet exemple voir le[didacticiel relatif aux fonctions personnalisées](../tutorials/excel-tutorial-create-custom-functions.md#create-a-streaming-asynchronous-custom-function).
 
 ```js
 /**
@@ -139,7 +139,7 @@ ws.onerror(error){
 
 ## <a name="make-a-streaming-function"></a>Créer une fonction de diffusion en continu
 
-Les fonctions personnalisées de diffusion vous aident à copier des données vers des cellules à plusieurs reprises, sans exiger qu’un utilisateur actualise explicitement quoi que ce soit. Cela peut s’avérer utile pour vérifier des données actives d’un service en ligne, comme la fonction dans le [didacticiel sur les fonctions personnalisées](/tutorials/excel-tutorial-create-custom-functions).
+Les fonctions personnalisées de diffusion vous aident à copier des données vers des cellules à plusieurs reprises, sans exiger qu’un utilisateur actualise explicitement quoi que ce soit. Cela peut s’avérer utile pour vérifier des données actives d’un service en ligne, comme la fonction dans le [didacticiel sur les fonctions personnalisées](../tutorials/excel-tutorial-create-custom-functions.md).
 
 Pour déclarer une fonction de diffusion en continu, utilisez la balise de commentaire JSDoc `@stream`. Pour attirer l’attention des utilisateurs sur le fait que votre fonction peut réévaluer sur la base de nouvelles informations, songez à placer un flux ou une formulation pour indiquer cela dans le nom ou la description de votre fonction.
 
@@ -167,7 +167,7 @@ CustomFunctions.associate("INC", increment);
 ```
 
 >[!NOTE]
-> Notez qu’il existe également une catégorie de fonctions appelée fonctions annulables, qui ne *sont* pas liées à des fonctions de diffusion en continu. Les versions précédentes des fonctions personnalisées nécessitaient la déclaration manuelle de `"cancelable": true` et `"streaming": true` dans JSON. Depuis l’introduction des métadonnées générées automatiquement, seules les fonctions personnalisées asynchrones renvoyant une valeur sont annulables. Les fonctions annulables permettent de mettre fin à une requête web au milieu d’une demande, en utilisant une commande [`CancelableInvocation`](https://docs.microsoft.com/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation?view=office-js) pour décider de l’action à effectuer lors de l’annulation. Déclarez une fonction annulable à l’aide de la balise `@cancelable`.
+> Notez qu’il existe également une catégorie de fonctions appelée fonctions annulables, qui ne *sont* pas liées à des fonctions de diffusion en continu. Les versions précédentes des fonctions personnalisées nécessitaient la déclaration manuelle de `"cancelable": true` et `"streaming": true` dans JSON. Depuis l’introduction des métadonnées générées automatiquement, seules les fonctions personnalisées asynchrones renvoyant une valeur sont annulables. Les fonctions annulables permettent de mettre fin à une requête web au milieu d’une demande, en utilisant une commande [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) pour décider de l’action à effectuer lors de l’annulation. Déclarez une fonction annulable à l’aide de la balise `@cancelable`.
 
 ### <a name="using-an-invocation-parameter"></a>Utilisation d’un paramètre d’appel
 
