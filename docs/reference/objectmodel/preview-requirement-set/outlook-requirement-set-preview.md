@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: ''
-ms.date: 06/03/2019
+ms.date: 06/14/2019
 localization_priority: Priority
-ms.openlocfilehash: 6d7dceba80929c2abace9daec859302c43913f98
-ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
+ms.openlocfilehash: 346750557e68508f2a5707433dea122052bc2016
+ms.sourcegitcommit: e112a9b29376b1f574ee13b01c818131b2c7889d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "34706350"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "34997371"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -75,7 +75,7 @@ Ajout de l’événement `AttachmentsChanged` à `Item`.
 
 Ajout d’un nouveau paramètre facultatif `options`, qui est un dictionnaire ayant comme seule valeur valide `allowEvent`. Cette valeur est utilisée pour annuler l’exécution d’un événement.
 
-**Disponible dans** : Outlook sur le web (Classique)
+**Disponible dans** : Outlook sur le web (classique)
 
 ---
 
@@ -246,7 +246,7 @@ Ajout de l’événement `OfficeThemeChanged` à `Mailbox`.
 
 Ajout d’un accès à `getAccessTokenAsync`, qui permet aux compléments d’[obtenir un jeton d’accès](/outlook/add-ins/authenticate-a-user-with-an-sso-token) pour l’API Microsoft Graph.
 
-**Disponible dans** : Outlook pour Windows (connecté à Office 365), Outlook pour Mac (connecté à Office 365), Outlook sur le web (Outlook.com et connecté à Office 365), Outlook sur le web (classique)
+**Disponible dans** : Outlook pour Windows (connecté à Office 365), Outlook pour Mac (connecté à Office 365), Outlook sur le web (nouveau), Outlook sur le web (classique)
 
 ## <a name="see-also"></a>Voir aussi
 
