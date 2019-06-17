@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API JavaScript pour Word
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/11/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 0f9d17669a8000f5d8d9f0b2d1da04eb0175315c
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: be2c9834fbf3ceabcbbca6f2378b4356095ab387
+ms.sourcegitcommit: e112a9b29376b1f574ee13b01c818131b2c7889d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952235"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "34997392"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Word
 
@@ -19,11 +19,12 @@ Les compléments Word peuvent être exécutés dans différentes versions d’Of
 
 > [!NOTE]
 > Pour les ensembles de conditions requises qui sont marqués comme Bêta, utilisez la version spécifiée (ou ultérieure) du logiciel Office et utilisez la bibliothèque bêta du CDN : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-> 
+>
 > Les entrées qui ne sont pas répertoriées en version Bêta sont généralement disponibles et vous pouvez continuer à utiliser la bibliothèque CDN Production : https://appsforoffice.microsoft.com/lib/1/hosted/office.js
 
 |  Ensemble de conditions requises  |   Office pour Windows\*<br>(connecté à Office 365)  |  Office pour iPad<br>(connecté à Office 365)  |  Office pour Mac<br>(connecté à Office 365)  | Office Online  | Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
+| [Aperçu](/javascript/api/word)  | Veuillez utiliser la dernière version d’Office pour tester la préversion API (vous devrez peut-être rejoindre la [programme Office Insider](https://products.office.com/office-insider)) |
 | WordApi 1.3 | Version 1612 (Build 7668.1000) ou version ultérieure| Mars 2017, 2.22 ou version ultérieure | Mars 2017, 15.32 ou version ultérieure| Mars 2017 ||
 | WordApi 1.2  | Mise à jour de décembre 2015, version 1601 (Build 6568.1000) ou version ultérieure | Janvier 2016, 1.18 ou version ultérieure | Janvier 2016, 15.19 ou version ultérieure| Septembre 2016 | |
 | WordApi 1.1  | Version 1509 (Build 4266.1001) ou version ultérieure| Janvier 2016, 1.18 ou version ultérieure | Janvier 2016, 15.19 ou version ultérieure| Septembre 2016 | |
@@ -38,16 +39,86 @@ Pour en savoir plus sur les versions, les numéros de build et Office Online Ser
 - [Où trouver le numéro de version et de build pour une application cliente Office 365](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [Présentation d’Office Online Server](/officeonlineserver/office-online-server-overview)
 
-## <a name="office-common-api-requirement-sets"></a>Ensembles de conditions requises des API communes pour Office
+## <a name="word-javascript-preview-apis"></a>Version d’évaluation API JavaScript Word
 
-Pour plus d’informations sur les ensembles de conditions requises des API communes, voir [Ensembles de conditions requises des API communes pour Office](office-add-in-requirement-sets.md).
+Les nouvelles API JavaScript Word introduites dans « Aperçu » et versions ultérieures deviennent partie intégrante d’une exigence spécifique, numérotée définie après que suffisamment de tests et après acquisition des commentaires des utilisateurs.
 
-## <a name="whats-new-in-word-javascript-api-13"></a>Nouveautés de l’API JavaScript 1.3 pour Word 
+> [!NOTE]
+> L’aperçu API peut être modifiés et n’est pas destinés à utiliser dans un environnement de production. Nous vous recommandons de les tester uniquement dans les environnements de test et de développement. N’utilisez pas un aperçu d’API dans un environnement de production ou dans les documents commerciaux importants.
+>
+> Pour utiliser l’aperçu API, vous devez référencer la bibliothèque**bêta**sur le CDN : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) et vous devrez également participer au programme Office Insider pour obtenir un build Office suffisamment récent.
 
-Les ajouts apportés aux API JavaScript pour Word dans l’ensemble de conditions requises 1.3 sont présentés ci-dessous. 
+Les informations suivantes sont une liste complète des API actuellement en préversion.
 
-|Objet| Nouveautés| Description|Ensemble de conditions requises| 
-|:-----|-----|:----|:----| 
+| Class | Champs | Description |
+|:---|:---|:---|
+|[ContentControl](/javascript/api/word/word.contentcontrol)|[onDataChanged](/javascript/api/word/word.contentcontrol#ondatachanged)|Se produit lorsque des données du contrôle de contenu sont modifiées. Pour obtenir le nouveau texte, chargez ce contrôle de contenu dans le gestionnaire. Pour obtenir l’ancien texte, ne le chargez pas.|
+||[onDeleted](/javascript/api/word/word.contentcontrol#ondeleted)|Se produit lorsque le contrôle de contenu est supprimé. Ne chargez pas ce contrôle de contenu dans le gestionnaire, sans quoi vous ne pourrez pas obtenir ses propriétés d’origine.|
+||[onSelectionChanged](/javascript/api/word/word.contentcontrol#onselectionchanged)|Se produit lorsque la sélection dans le contrôle de contenu est modifiée.|
+|[ContentControlEventArgs](/javascript/api/word/word.contentcontroleventargs)|[contentControl](/javascript/api/word/word.contentcontroleventargs#contentcontrol)|Objet ayant déclenché l’événement. Chargez cet objet pour obtenir ses propriétés.|
+||[eventType](/javascript/api/word/word.contentcontroleventargs#eventtype)|Type d’événement. Pour plus d’informations, voir Word.EventType.|
+|[CustomXmlPart](/javascript/api/word/word.customxmlpart)|[delete()](/javascript/api/word/word.customxmlpart#delete--)|Supprime la partie XML personnalisée.|
+||[deleteAttribute(xpath: string, namespaceMappings: any, name: string)](/javascript/api/word/word.customxmlpart#deleteattribute-xpath--namespacemappings--name-)|Supprime un attribut avec le nom donné dans l’élément identifié par langage XPath.|
+||[deleteElement(xpath: string, namespaceMappings: any)](/javascript/api/word/word.customxmlpart#deleteelement-xpath--namespacemappings-)|Supprime l’élément identifié par XPath.|
+||[getXml()](/javascript/api/word/word.customxmlpart#getxml--)|Obtient l’intégralité du contenu XML de la partie XML personnalisée.|
+||[insertAttribute(xpath: string, namespaceMappings: any, name: string, value: string)](/javascript/api/word/word.customxmlpart#insertattribute-xpath--namespacemappings--name--value-)|Insère un attribut avec le nom et la valeur donné dans l’élément identifié par XPath.|
+||[insertElement(xpath: string, xml: string, namespaceMappings: any, index?: number)](/javascript/api/word/word.customxmlpart#insertelement-xpath--xml--namespacemappings--index-)|Insère le code XML donné sous l’élément parent identifié par XPath à l’index de position enfant.|
+||[query(xpath: string, namespaceMappings: any)](/javascript/api/word/word.customxmlpart#query-xpath--namespacemappings-)|Interroge le contenu XML de la partie XML personnalisée.|
+||[id](/javascript/api/word/word.customxmlpart#id)|Récupère l’ID de la partie XML personnalisée. En lecture seule.|
+||[namespaceUri](/javascript/api/word/word.customxmlpart#namespaceuri)|Récupère l’URI de l’espace de noms de la partie XML personnalisée. En lecture seule.|
+||[setXml(xml: string)](/javascript/api/word/word.customxmlpart#setxml-xml-)|Définit l’intégralité du contenu XML de la partie XML personnalisée.|
+||[updateAttribute(xpath: string, namespaceMappings: any, name: string, value: string)](/javascript/api/word/word.customxmlpart#updateattribute-xpath--namespacemappings--name--value-)|Met à jour la valeur d’un attribut avec le nom donné dans l’élément identifié par XPath.|
+||[updateElement(xpath: string, xml: string, namespaceMappings: any)](/javascript/api/word/word.customxmlpart#updateelement-xpath--xml--namespacemappings-)|Met à jour le code XML de l’élément identifié par XPath.|
+|[CustomXmlPartCollection](/javascript/api/word/word.customxmlpartcollection)|[add(xml: string)](/javascript/api/word/word.customxmlpartcollection#add-xml-)|Ajoute une nouvelle partie XML personnalisée au document.|
+||[getByNamespace(namespaceUri: string)](/javascript/api/word/word.customxmlpartcollection#getbynamespace-namespaceuri-)|Obtient une nouvelle collection limitée de parties XML personnalisées dont les espaces de noms correspondent à l’espace de noms donné.|
+||[getCount()](/javascript/api/word/word.customxmlpartcollection#getcount--)|Obtient le nombre d’éléments dans la collection.|
+||[getItem(id: string)](/javascript/api/word/word.customxmlpartcollection#getitem-id-)|Obtient une partie XML personnalisée en fonction de son ID. En lecture seule.|
+||[getItemOrNullObject(id: string)](/javascript/api/word/word.customxmlpartcollection#getitemornullobject-id-)|Obtient une partie XML personnalisée en fonction de son ID. Renvoie un objet null si la propriété CustomXmlPart n’existe pas.|
+||[items](/javascript/api/word/word.customxmlpartcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
+|[CustomXmlPartScopedCollection](/javascript/api/word/word.customxmlpartscopedcollection)|[getCount()](/javascript/api/word/word.customxmlpartscopedcollection#getcount--)|Obtient le nombre d’éléments dans la collection.|
+||[getItem(id: string)](/javascript/api/word/word.customxmlpartscopedcollection#getitem-id-)|Obtient une partie XML personnalisée en fonction de son ID. En lecture seule.|
+||[getItemOrNullObject(id: string)](/javascript/api/word/word.customxmlpartscopedcollection#getitemornullobject-id-)|Obtient une partie XML personnalisée en fonction de son ID. Renvoie un objet null si la propriété CustomXmlPart n’existe pas dans la collection.|
+||[getOnlyItem()](/javascript/api/word/word.customxmlpartscopedcollection#getonlyitem--)|Si la collection contient exactement un élément, cette méthode le renvoie. Dans le cas contraire, cette méthode génère une erreur.|
+||[getOnlyItemOrNullObject()](/javascript/api/word/word.customxmlpartscopedcollection#getonlyitemornullobject--)|Si la collection contient exactement un élément, cette méthode le renvoie. Sinon, cette méthode renvoie un objet null.|
+||[items](/javascript/api/word/word.customxmlpartscopedcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
+|[Document](/javascript/api/word/word.document)|[deleteBookmark(name: string)](/javascript/api/word/word.document#deletebookmark-name-)|Supprime un signet, le cas échéant, du document.|
+||[getBookmarkRange(name: string)](/javascript/api/word/word.document#getbookmarkrange-name-)|Obtient la plage d’un signet. Renvoie si le signet n’existe pas.|
+||[getBookmarkRangeOrNullObject(name: string)](/javascript/api/word/word.document#getbookmarkrangeornullobject-name-)|Obtient la plage d’un signet. Si le signet n’existe pas, renvoie un objet null.|
+||[customXmlParts](/javascript/api/word/word.document#customxmlparts)|Obtient les parties XML personnalisées dans le document. En lecture seule.|
+||[onContentControlAdded](/javascript/api/word/word.document#oncontentcontroladded)|Se produit quand un contrôle de contenu est ajouté. Exécutez context.sync() dans le gestionnaire pour obtenir les propriétés du contrôle de contenu.|
+||[settings](/javascript/api/word/word.document#settings)|Obtient les paramètres du complément dans le document. En lecture seule.|
+|[DocumentCreated](/javascript/api/word/word.documentcreated)|[deleteBookmark(name: string)](/javascript/api/word/word.documentcreated#deletebookmark-name-)|Supprime un signet, le cas échéant, du document.|
+||[getBookmarkRange(name: string)](/javascript/api/word/word.documentcreated#getbookmarkrange-name-)|Obtient la plage d’un signet. Renvoie si le signet n’existe pas.|
+||[getBookmarkRangeOrNullObject(name: string)](/javascript/api/word/word.documentcreated#getbookmarkrangeornullobject-name-)|Obtient la plage d’un signet. Si le signet n’existe pas, renvoie un objet null.|
+||[customXmlParts](/javascript/api/word/word.documentcreated#customxmlparts)|Obtient les parties XML personnalisées dans le document. En lecture seule.|
+||[settings](/javascript/api/word/word.documentcreated#settings)|Obtient les paramètres du complément dans le document. En lecture seule.|
+|[InlinePicture](/javascript/api/word/word.inlinepicture)|[imageFormat](/javascript/api/word/word.inlinepicture#imageformat)|Récupère le format de l’image incorporée. En lecture seule.|
+|[List](/javascript/api/word/word.list)|[getLevelFont(level: number)](/javascript/api/word/word.list#getlevelfont-level-)|Récupère la police de la puce, du numéro ou de l’image au niveau spécifié de la liste.|
+||[getLevelPicture(level: number)](/javascript/api/word/word.list#getlevelpicture-level-)|Récupère la représentation sous forme de chaîne codée au format base64 de l’image au niveau spécifié dans la liste.|
+||[resetLevelFont(level: number, resetFontName?: boolean)](/javascript/api/word/word.list#resetlevelfont-level--resetfontname-)|Réinitialise la police de la puce, du numéro ou de l’image au niveau spécifié de la liste.|
+||[setLevelPicture(level: number, base64EncodedImage?: string)](/javascript/api/word/word.list#setlevelpicture-level--base64encodedimage-)|Définit l’image au niveau spécifié de la liste.|
+|[Range](/javascript/api/word/word.range)|[getBookmarks(includeHidden?: boolean, includeAdjacent?: boolean)](/javascript/api/word/word.range#getbookmarks-includehidden--includeadjacent-)|Obtient le nom de tous les signets compris dans la plage ou qui la chevauchent. Un signet est masqué si son nom commence par le caractère de soulignement.|
+||[insertBookmark(name: string)](/javascript/api/word/word.range#insertbookmark-name-)|Insère un signet dans la plage. S’il existe un signet portant le même nom, celui-ci est supprimé en premier.|
+|[Paramètre](/javascript/api/word/word.setting)|[delete()](/javascript/api/word/word.setting#delete--)|Supprime le paramètre.|
+||[key](/javascript/api/word/word.setting#key)|Obtient la clé du paramètre. En lecture seule.|
+||[value](/javascript/api/word/word.setting#value)|Obtient ou définit la valeur du paramètre.|
+|[SettingCollection](/javascript/api/word/word.settingcollection)|[add(key: string, value: any)](/javascript/api/word/word.settingcollection#add-key--value-)|Crée un nouveau paramètre ou en définit un qui existe déjà.|
+||[deleteAll()](/javascript/api/word/word.settingcollection#deleteall--)|Supprime tous les paramètres de ce complément.|
+||[getCount()](/javascript/api/word/word.settingcollection#getcount--)|Obtient le nombre de paramètres.|
+||[getItem(key: string)](/javascript/api/word/word.settingcollection#getitem-key-)|Obtient un objet de paramètre par sa clé (sensible à la casse). Renvoie si le paramètre n’existe pas.|
+||[getItemOrNullObject(key: string)](/javascript/api/word/word.settingcollection#getitemornullobject-key-)|Obtient un objet de paramètre par sa clé (sensible à la casse). Si le paramètre n’existe pas, renvoie un objet null.|
+||[items](/javascript/api/word/word.settingcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
+|[Table](/javascript/api/word/word.table)|[mergeCells(topRow: number, firstCell: number, bottomRow: number, lastCell: number)](/javascript/api/word/word.table#mergecells-toprow--firstcell--bottomrow--lastcell-)|Fusionne les cellules liées de façon inclusive par une première et une dernière cellule.|
+|[TableCell](/javascript/api/word/word.tablecell)|[split(rowCount: number, columnCount: number)](/javascript/api/word/word.tablecell#split-rowcount--columncount-)|Fractionne la cellule dans le nombre spécifié de lignes et de colonnes.|
+|[TableRow](/javascript/api/word/word.tablerow)|[insertContentControl()](/javascript/api/word/word.tablerow#insertcontentcontrol--)|Insère un contrôle de contenu dans la ligne.|
+||[merge()](/javascript/api/word/word.tablerow#merge--)|Fusionne la ligne en une cellule.|
+
+## <a name="whats-new-in-word-javascript-api-13"></a>Nouveautés de l’API JavaScript 1.3 pour Word
+
+Les ajouts apportés aux API JavaScript pour Word dans l’ensemble de conditions requises 1.3 sont présentés ci-dessous.
+
+|Objet| Nouveautés| Description|Ensemble de conditions requises|
+|:-----|-----|:----|:----|
 |[application](/javascript/api/word/word.application)|_Méthode_ > createDocument(base64File: chaîne) | Crée un nouveau document à partir d’un fichier .docx encodé en base 64. En lecture seule.|1.3|
 |[body](/javascript/api/word/word.body)|_Relation_ > lists|Obtient la collection d’objets list dans le corps. En lecture seule.|1.3|
 |[body](/javascript/api/word/word.body)|_Relation_ > parentBody|Obtient le corps parent du corps. Par exemple, le corps parent du corps d’une cellule de tableau peut être un en-tête. En lecture seule.|1.3|
