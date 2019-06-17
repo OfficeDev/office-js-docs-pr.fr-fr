@@ -3,12 +3,12 @@ title: Chargement du DOM et de l’environnement d’exécution
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: b1f63d9fe012ed8c8a5cf4a0f7de862ddabcd4d3
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: e975db391276129e453d5001fe0bac8ad36f6080
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449839"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910216"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>Chargement du DOM et de l’environnement d’exécution
 
@@ -24,7 +24,7 @@ Les événements suivants se produisent lors du démarrage d’un complément de
 
 1. L’utilisateur ouvre un document qui contient déjà un complément ou insère un complément dans le document.
 
-2. L’application hôte Office lit le manifeste XML du complément à partir d’AppSource, d’un catalogue de compléments sur SharePoint ou du catalogue de dossiers partagés duquel il provient.
+2. L’application hôte Office lit le manifeste XML du complément à partir d’AppSource, d’un catalogue d’applications sur SharePoint ou du catalogue de dossiers partagés duquel il provient.
 
 3. L’application hôte Office ouvre la page HTML du complément dans un contrôle de navigateur.
 

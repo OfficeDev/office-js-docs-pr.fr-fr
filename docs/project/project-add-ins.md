@@ -3,12 +3,12 @@ title: Compléments du volet Office pour Project
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 668e7130d6ef478752f74468130139ca02b1d1e1
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 6f08f45e81fa40a869d07acea066b43c2720876a
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450970"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910328"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Compléments du volet Office pour Project
 
@@ -184,7 +184,7 @@ Dans la procédure 2, le complément Bing Search est installé sur l’ordinateu
 
 ## <a name="distributing-project-add-ins"></a>Distribution de compléments Project
 
-Vous pouvez distribuer des compléments via un partage de fichiers, un catalogue de compléments dans une bibliothèque SharePoint ou dans AppSource. Pour plus d’informations, reportez-vous à [Publier votre complément Office](../publish/publish.md).
+Vous pouvez distribuer des compléments via un partage de fichiers, un catalogue d’applications dans une bibliothèque SharePoint ou dans AppSource. Pour plus d’informations, reportez-vous à [Publier votre complément Office](../publish/publish.md).
 
 ## <a name="see-also"></a>Voir aussi
 

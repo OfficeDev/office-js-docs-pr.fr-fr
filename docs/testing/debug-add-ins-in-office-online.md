@@ -3,12 +3,12 @@ title: Débogage de compléments dans Office Online
 description: Découvrez comment utiliser Office Online pour tester et déboguer vos compléments.
 ms.date: 05/16/2019
 localization_priority: Priority
-ms.openlocfilehash: 6d6ab8a6ca85a9f462bfe4e5ae283eb3dccd9425
-ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
+ms.openlocfilehash: f6cdb1f0b92a8519315bcff272cd1bc235c57653
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "34337180"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910163"
 ---
 # <a name="debug-add-ins-in-office-online"></a>Débogage de compléments dans Office Online
 
@@ -24,7 +24,7 @@ Mise en route :
   > [!NOTE]
   > Pour vous inscrire et obtenir gratuitement un abonnement Office 365 Développeur, participez à notre [programme pour les développeurs Office 365](https://developer.microsoft.com/office/dev-program). Consultez la [documentation relative au programme pour les développeurs Office 365](/office/developer-program/office-365-developer-program) pour obtenir des instructions détaillées sur la manière de rejoindre le programme, de vous inscrire et de configurer votre abonnement.
      
-- Configurez un catalogue de compléments sur Office 365 (SharePoint Online). Un catalogue de compléments est une collection de sites dédiée dans SharePoint Online qui héberge des bibliothèques de documents pour des compléments Office. Si vous disposez de votre propre site SharePoint, vous pouvez configurer une bibliothèque de document de catalogue de compléments. Pour plus d’informations, voir [Publier des compléments de contenu et du volet Office dans un catalogue de compléments sur SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
+- Configurez un catalogue d’applications sur Office 365 (SharePoint Online). Un catalogue d’applications est une collection de sites dédiée dans SharePoint Online qui héberge des bibliothèques de documents pour des compléments Office. Si vous disposez de votre propre site SharePoint, vous pouvez configurer une bibliothèque de document de catalogue d’applications. Pour plus d’informations, voir [Publier des compléments de contenu et du volet Office dans un catalogue d’applications sur SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
     
 
 ## <a name="debug-your-add-in-from-excel-online-or-word-online"></a>Débogage de compléments à partir d’Excel Online ou de Word Online
@@ -42,7 +42,7 @@ Pour déboguer votre complément à l’aide d’Office Online, procédez comme 
     <SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />
     ```
     
-3. Téléchargez le manifeste dans la bibliothèque de compléments Office du catalogue de compléments sur SharePoint.
+3. Téléchargez le manifeste dans la bibliothèque de compléments Office du catalogue d’applications sur SharePoint.
     
 4. Lancez Excel Online ou Word Online à partir du lanceur d’applications dans Office 365, puis ouvrez un nouveau document.
     

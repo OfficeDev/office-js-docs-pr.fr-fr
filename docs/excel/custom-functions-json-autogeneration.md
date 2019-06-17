@@ -1,14 +1,14 @@
 ---
-ms.date: 05/03/2019
+ms.date: 06/10/2019
 description: Utiliser les balises JSDOC pour créer dynamiquement vos fonctions personnalisées de métadonnées JSON.
 title: Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 localization_priority: Priority
-ms.openlocfilehash: 67026e7c19580c3420638b4f37e333e50fce1b44
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: 960e1eca1e01aec21967733d802a5fdd48122cbc
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589131"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910300"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 
@@ -19,6 +19,23 @@ Si vous écrivez une fonction Excel personnalisée en JavaScript ou TypeScript, 
 Ajoutez la balise `@customfunction` dans les commentaires du code d’une fonction JavaScript ou TypeScript pour indiquer qu’il s’agit d’une fonction personnalisée.
 
 Vous pouvez fournir les types de paramètres de la fonction en utilisant la balise[@param](#param)dans JavaScript, ou en précisant le [type de fonction](https://www.typescriptlang.org/docs/handbook/functions.html) dans TypeScript. Si vous voulez en savoir plus, veuillez consulter les sections relatives à la balise[@param](#param) et aux sections[types](#types).
+
+### <a name="adding-a-description-to-a-function"></a>Ajout d’une description à une fonction
+
+La description s’affiche pour l’utilisateur sous forme de texte d’aide lorsqu’il a besoin d’aide pour comprendre le rôle de votre fonction personnalisée. La description ne nécessite aucune balise spécifique. Il vous suffit d’entrer une brève description dans le commentaire JSDoc. En général, la description est placée au début de la section commentaires JSDoc, mais elle fonctionnera peu importe son emplacement.
+
+Pour consulter des exemples de descriptions de fonction intégrées, ouvrez Excel, accédez à l’onglet**formules** , puis sélectionnez **insérer une fonction**. Vous pouvez ensuite parcourir toutes les descriptions de fonction et voir vos propres fonctions personnalisées répertoriées.
+
+Dans cet exemple, la phrase «calcule le volume d’une sphère.» est la description de la fonction personnalisée.
+
+```JS
+/**
+/* Calculates the volume of a sphere
+/* @customfunction VOLUME
+...
+ */
+```
+
 
 ## <a name="jsdoc-tags"></a>Balises JSDoc
 Voici quelles sont les balises JSDoc prises en charge dans les fonctions Excel personnalisées :
@@ -57,20 +74,32 @@ Vous devez également insérer un appel vers`CustomFunctions.associate("id", fun
 
 #### <a name="id"></a>id
 
-L’id est utilisé en tant qu’identificateur invariant pour la fonction personnalisée stockée dans le document. Elle ne doit pas changer.
+`id` Est un identificateur invariant pour la fonction personnalisée.
 
-* Si l’id n’est pas fourni, le nom de la fonction JavaScript/TypeScript est convertie en majuscules, et les caractères rejetés sont supprimés.
-* L’id doit être unique pour toutes les fonctions personnalisées.
+* Si`id`n’est pas fourni, le nom de la fonction JavaScript/TypeScript est converti en majuscules, et les caractères rejetés sont supprimés.
+* Le `id`doit être unique pour toutes les fonctions personnalisées.
 * Les caractères autorisés sont les suivants : A-Z, a-z, 0-9, traits de soulignement (\_) et point (.).
 
 #### <a name="name"></a>name
 
-Fournit le nom d’affichage de la fonction personnalisée.
+Fournit le nom d’affichage `name`de la fonction personnalisée.
 
 * Si aucun nom n’est fourni, l’id servira aussi de nom.
 * Caractères autorisés : [caractères alphanumériques Unicode](https://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic) (lettres, chiffres), point (.) et trait de soulignement (\_).
 * Doit commencer par une lettre.
 * Sa longueur maximale est limitée à 128 caractères.
+
+### <a name="description"></a>description
+
+Une description ne nécessite aucune balise spécifique. Ajoutez une description à une fonction personnalisée en ajoutant une expression pour décrire le rôle de la fonction dans le commentaire JSDoc. Par défaut, le texte non balisé dans la section commentaire JSDoc est la description de la fonction. La description s’affiche pour les utilisateurs dans Excel lors de la saisie de la fonction. Dans l’exemple suivant, l’expression «fonction qui calcule la somme de deux nombres» est la description de la fonction personnalisée dont la propriété ID est`SUM`.
+
+```JS
+/**
+/* @customfunction SUM
+/* A function that sums two numbers
+...
+ */
+```
 
 ---
 ### <a name="helpurl"></a>@urlaide
@@ -175,7 +204,7 @@ Utilisez une matrice à deux dimensions pour que le paramètre ou la valeur renv
 
 Une fonction qui n’est pas une fonction de diffusion en continu peut indiquer une erreur en renvoyant un type Error.
 
-Une fonction de diffusion en continu peut indiquer une erreur en appelant la méthode setResult() avec un type Error.
+Une fonction de diffusion en continu peut indiquer une erreur en appelant`setResult()`avec un type Error.
 
 ### <a name="promise"></a>Promise
 

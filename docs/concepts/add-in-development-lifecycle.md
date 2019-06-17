@@ -3,12 +3,12 @@ title: Cycle de vie du développement des compléments Office
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 86c384128640d64c47185a290bc224ffe7b59274
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: ec38bb3cfba98153d644431f5e6f23c1d37b0a06
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448363"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910162"
 ---
 # <a name="office-add-ins-development-lifecycle"></a>Cycle de vie du développement des compléments Office
 
@@ -80,7 +80,7 @@ Pour les compléments Outlook, installez-le dans une boîte aux lettres Exchange
 
 ## <a name="7-publish-the-add-in"></a>7. Publier le complément
 
-Vous pouvez envoyer le complément à AppSource, à partir duquel les clients peuvent installer le complément. En outre, vous pouvez publier le volet Office et les compléments du contenu dans le catalogue de compléments d’un dossier privé dans SharePoint ou dans un dossier réseau partagé, et vous pouvez déployer un complément Outlook directement sur un serveur Exchange pour votre organisation. Pour plus d’informations, consultez la rubrique [Publier votre complément Office](../publish/publish.md).
+Vous pouvez envoyer le complément à AppSource, à partir duquel les clients peuvent installer le complément. En outre, vous pouvez publier le volet Office et les compléments du contenu dans le catalogue d’applications dans SharePoint ou dans un dossier réseau partagé, et vous pouvez déployer un complément Outlook directement sur un serveur Exchange pour votre organisation. Pour plus d’informations, consultez la rubrique [Publier votre complément Office](../publish/publish.md).
 
 
 ## <a name="8-maintain-the-add-in"></a>8. Mettre à jour le complément

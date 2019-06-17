@@ -1,16 +1,16 @@
 ---
 title: Didacticiel de fonctions personnalisées Excel
 description: Dans ce didacticiel, vous allez créer un complément Excel qui contient une fonction personnalisée qui effectue des calculs, requiert des données web ou lance un flux de données web.
-ms.date: 05/30/2019
+ms.date: 06/15/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: f167125fcc24e47f0805d6c46e5338455d94b277
-ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
+ms.openlocfilehash: c2eedee19cf4a612c83b7a45f7c5c5dc3b3f6937
+ms.sourcegitcommit: e112a9b29376b1f574ee13b01c818131b2c7889d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "34706371"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "34997385"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Didacticiel : créer des fonctions personnalisées dans Excel
 
@@ -108,7 +108,10 @@ Le `ADD` fonction personnalisée calcule la somme des deux nombres que vous avez
 
 ## <a name="create-a-custom-function-that-requests-data-from-the-web"></a>Créer une fonction personnalisée qui demande les données à partir du web
 
-Intégration de données à partir du Web est un excellent moyen pour étendre Excel via les fonctions personnalisées. Vous allez ensuite créer une fonction personnalisée nommée `stockPrice` qui obtient des actions à partir d’une API Web et renvoie le résultat à la cellule d’une feuille de calcul. Cette fonction personnalisée utilise l’API de cotation IEX, qui est gratuit et ne requiert pas d’authentification.
+Intégration de données à partir du Web est un excellent moyen pour étendre Excel via les fonctions personnalisées. Vous allez ensuite créer une fonction personnalisée nommée `stockPrice` qui obtient des actions à partir d’une API Web et renvoie le résultat à la cellule d’une feuille de calcul. 
+
+> [!NOTE]
+> Le code suivant demande une cotation boursière à l’aide de l’API commerce IEX. Avant de pouvoir exécuter le code, vous devez [créer un compte gratuit avec le Cloud Iex](https://iexcloud.io/) afin que vous puissiez obtenir le jeton d’API requis dans la demande d’API.  
 
 1. Dans le projet **boursier** , recherchez le fichier **./SRC/Functions/functions.js** et ouvrez-le dans votre éditeur de code.
 
@@ -122,7 +125,8 @@ Intégration de données à partir du Web est un excellent moyen pour étendre E
     * @returns {number} The current stock price.
     */
     function stockPrice(ticker) {
-        var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
+        //Note: In the following line, replace <YOUR_TOKEN_HERE> with the API token that you've obtained through your IEX Cloud account.
+        var url = "https://cloud.iexapis.com/stable/stock/" + ticker + "/quote/latestPrice?token=<YOUR_TOKEN_HERE>"
         return fetch(url)
             .then(function(response) {
                 return response.text();
@@ -195,7 +199,8 @@ La fonction`stockPrice`que vous venez de créer renvoie le prix d’une action �
                 return;
             }
 
-            var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
+            //Note: In the following line, replace <YOUR_TOKEN_HERE> with the API token that you've obtained through your IEX Cloud account.
+            var url = "https://cloud.iexapis.com/stable/stock/" + ticker + "/quote/latestPrice?token=<YOUR_TOKEN_HERE>"
             isPending = true;
 
             fetch(url)
