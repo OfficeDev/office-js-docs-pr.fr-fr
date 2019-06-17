@@ -1,14 +1,14 @@
 ---
 title: Présentation des compléments Word
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/12/2019
 localization_priority: Priority
-ms.openlocfilehash: 4b20b6007dba879b16ae8f6a586cf933f2f4fef0
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: bf0b481ef9c982f06ea04aaecb70a76a790846d2
+ms.sourcegitcommit: ee5b4935b5ee1db567a13627b2f87471ee8b8165
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910279"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "34933771"
 ---
 # <a name="word-add-ins-overview"></a>Présentation des compléments Word
 
@@ -74,15 +74,11 @@ Utilisez l’API JavaScript partagé pour Office pour :
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Prêt à créer votre premier complément Word ? Consultez la page [Création de votre premier complément Word](word-add-ins.md). Vous pouvez également essayer notre procédure de [prise en main](/office/dev/add-ins/?product=Word) interactive. Utilisez le [manifeste de complément](../develop/add-in-manifests.md) pour décrire l’emplacement d’hébergement de votre complément et son affichage, et définir des autorisations et d’autres informations.
+Prêt à créer votre premier complément Word ? Consultez la page [Création de votre premier complément Word](word-add-ins.md). Utilisez le [manifeste de complément](../develop/add-in-manifests.md) pour décrire l’emplacement d’hébergement de votre complément et son affichage, et définir des autorisations et d’autres informations.
 
 Pour savoir comment concevoir un complément Word de qualité qui offre une expérience intéressante aux utilisateurs, consultez les [recommandations de conception](../design/add-in-design.md) et les [meilleures pratiques](../concepts/add-in-development-best-practices.md).
 
 Une fois le développement de votre complément terminé, vous pouvez le [publier](../publish/publish.md) sur un partage réseau, dans un catalogue d’applications ou dans AppSource.
-
-## <a name="whats-coming-up-for-word-add-ins"></a>Nouveautés pour les compléments Word
-
-Au fur et à mesure que nous concevons et développons de nouvelles API pour les compléments Word, nous les mettons à votre disposition sur notre page de [spécifications ouvertes d’API](/office/dev/add-ins/reference/openspec/openspec) pour que vous puissiez fournir vos commentaires. Découvrez les nouvelles fonctionnalités dans le pipeline pour les API JavaScript pour Word et donnez votre avis sur nos spécifications de conception.
 
 ## <a name="see-also"></a>Voir aussi
 
