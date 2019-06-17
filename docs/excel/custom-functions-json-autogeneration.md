@@ -1,195 +1,224 @@
 ---
-ms.date: 05/03/2019
+ms.date: 06/10/2019
 description: Utiliser les balises JSDOC pour créer dynamiquement vos fonctions personnalisées de métadonnées JSON.
 title: Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 localization_priority: Priority
-ms.openlocfilehash: 67026e7c19580c3420638b4f37e333e50fce1b44
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: 960e1eca1e01aec21967733d802a5fdd48122cbc
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589131"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910300"
 ---
-# <a name="autogenerate-json-metadata-for-custom-functions"></a><span data-ttu-id="a8458-103">Générer automatiquement des métadonnées JSON pour des fonctions personnalisées</span><span class="sxs-lookup"><span data-stu-id="a8458-103">Autogenerate JSON metadata for custom functions</span></span>
+# <a name="autogenerate-json-metadata-for-custom-functions"></a><span data-ttu-id="0d386-103">Générer automatiquement des métadonnées JSON pour des fonctions personnalisées</span><span class="sxs-lookup"><span data-stu-id="0d386-103">Autogenerate JSON metadata for custom functions</span></span>
 
-<span data-ttu-id="a8458-104">Si vous écrivez une fonction Excel personnalisée en JavaScript ou TypeScript, vous pouvez utiliser les balises JSDoc pour la détailler en ajoutant des informations supplémentaires.</span><span class="sxs-lookup"><span data-stu-id="a8458-104">When an Excel custom function is written in JavaScript or TypeScript, JSDoc tags are used to provide extra information about the custom function.</span></span> <span data-ttu-id="a8458-105">Les balises JSDoc sont ensuite utilisées lors de la génération pour créer le [fichier de métadonnées JSON](custom-functions-json.md).</span><span class="sxs-lookup"><span data-stu-id="a8458-105">The JSDoc tags are then used at build time to create the [JSON metadata file](custom-functions-json.md).</span></span> <span data-ttu-id="a8458-106">En utilisant des balises JSDoc, vous n’avez plus besoin de modifier manuellement le fichier de métadonnées JSON.</span><span class="sxs-lookup"><span data-stu-id="a8458-106">Using JSDoc tags saves you from the effort of manually editing the JSON metadata file.</span></span>
+<span data-ttu-id="0d386-104">Si vous écrivez une fonction Excel personnalisée en JavaScript ou TypeScript, vous pouvez utiliser les balises JSDoc pour la détailler en ajoutant des informations supplémentaires.</span><span class="sxs-lookup"><span data-stu-id="0d386-104">When an Excel custom function is written in JavaScript or TypeScript, JSDoc tags are used to provide extra information about the custom function.</span></span> <span data-ttu-id="0d386-105">Les balises JSDoc sont ensuite utilisées lors de la génération pour créer le [fichier de métadonnées JSON](custom-functions-json.md).</span><span class="sxs-lookup"><span data-stu-id="0d386-105">The JSDoc tags are then used at build time to create the [JSON metadata file](custom-functions-json.md).</span></span> <span data-ttu-id="0d386-106">En utilisant des balises JSDoc, vous n’avez plus besoin de modifier manuellement le fichier de métadonnées JSON.</span><span class="sxs-lookup"><span data-stu-id="0d386-106">Using JSDoc tags saves you from the effort of manually editing the JSON metadata file.</span></span>
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-<span data-ttu-id="a8458-107">Ajoutez la balise `@customfunction` dans les commentaires du code d’une fonction JavaScript ou TypeScript pour indiquer qu’il s’agit d’une fonction personnalisée.</span><span class="sxs-lookup"><span data-stu-id="a8458-107">Add the `@customfunction` tag in the code comments for a JavaScript or TypeScript function to mark it as a custom function.</span></span>
+<span data-ttu-id="0d386-107">Ajoutez la balise `@customfunction` dans les commentaires du code d’une fonction JavaScript ou TypeScript pour indiquer qu’il s’agit d’une fonction personnalisée.</span><span class="sxs-lookup"><span data-stu-id="0d386-107">Add the `@customfunction` tag in the code comments for a JavaScript or TypeScript function to mark it as a custom function.</span></span>
 
-<span data-ttu-id="a8458-108">Vous pouvez fournir les types de paramètres de la fonction en utilisant la balise[@param](#param)dans JavaScript, ou en précisant le [type de fonction](https://www.typescriptlang.org/docs/handbook/functions.html) dans TypeScript.</span><span class="sxs-lookup"><span data-stu-id="a8458-108">The function parameter types may be provided using the [@param](#param) tag in JavaScript, or from the [Function type](https://www.typescriptlang.org/docs/handbook/functions.html) in TypeScript.</span></span> <span data-ttu-id="a8458-109">Si vous voulez en savoir plus, veuillez consulter les sections relatives à la balise[@param](#param) et aux sections[types](#types).</span><span class="sxs-lookup"><span data-stu-id="a8458-109">For more information, see the [@param](#param) tag and [Types](#types) section.</span></span>
+<span data-ttu-id="0d386-108">Vous pouvez fournir les types de paramètres de la fonction en utilisant la balise[@param](#param)dans JavaScript, ou en précisant le [type de fonction](https://www.typescriptlang.org/docs/handbook/functions.html) dans TypeScript.</span><span class="sxs-lookup"><span data-stu-id="0d386-108">The function parameter types may be provided using the [@param](#param) tag in JavaScript, or from the [Function type](https://www.typescriptlang.org/docs/handbook/functions.html) in TypeScript.</span></span> <span data-ttu-id="0d386-109">Si vous voulez en savoir plus, veuillez consulter les sections relatives à la balise[@param](#param) et aux sections[types](#types).</span><span class="sxs-lookup"><span data-stu-id="0d386-109">For more information, see the [@param](#param) tag and [Types](#types) section.</span></span>
 
-## <a name="jsdoc-tags"></a><span data-ttu-id="a8458-110">Balises JSDoc</span><span class="sxs-lookup"><span data-stu-id="a8458-110">JSDoc Tags</span></span>
-<span data-ttu-id="a8458-111">Voici quelles sont les balises JSDoc prises en charge dans les fonctions Excel personnalisées :</span><span class="sxs-lookup"><span data-stu-id="a8458-111">The following JSDoc tags are supported in Excel custom functions:</span></span>
-* [<span data-ttu-id="a8458-112">@ annulable</span><span class="sxs-lookup"><span data-stu-id="a8458-112">@cancelable</span></span>](#cancelable)
-* <span data-ttu-id="a8458-113">[@fonctionpersonnalisée](#customfunction)nom id</span><span class="sxs-lookup"><span data-stu-id="a8458-113">[@customfunction](#customfunction) id name</span></span>
-* <span data-ttu-id="a8458-114">url[@urlaide](#helpurl)</span><span class="sxs-lookup"><span data-stu-id="a8458-114">[@helpurl](#helpurl) url</span></span>
-* <span data-ttu-id="a8458-115">[@param](#param) _{type}_ description nom</span><span class="sxs-lookup"><span data-stu-id="a8458-115">[@param](#param) _{type}_ name description</span></span>
-* [<span data-ttu-id="a8458-116">@requièreuneadresse</span><span class="sxs-lookup"><span data-stu-id="a8458-116">@requiresAddress</span></span>](#requiresAddress)
-* <span data-ttu-id="a8458-117">[@renvoie](#returns) _{type}_</span><span class="sxs-lookup"><span data-stu-id="a8458-117">[@returns](#returns) _{type}_</span></span>
-* [<span data-ttu-id="a8458-118">@diffusionencontinu</span><span class="sxs-lookup"><span data-stu-id="a8458-118">@streaming</span></span>](#streaming)
-* [<span data-ttu-id="a8458-119">@volatile</span><span class="sxs-lookup"><span data-stu-id="a8458-119">@volatile</span></span>](#volatile)
+### <a name="adding-a-description-to-a-function"></a><span data-ttu-id="0d386-110">Ajout d’une description à une fonction</span><span class="sxs-lookup"><span data-stu-id="0d386-110">Adding a description to a function</span></span>
+
+<span data-ttu-id="0d386-111">La description s’affiche pour l’utilisateur sous forme de texte d’aide lorsqu’il a besoin d’aide pour comprendre le rôle de votre fonction personnalisée.</span><span class="sxs-lookup"><span data-stu-id="0d386-111">The description is displayed to the user as help text when they need help to understand what your custom function does.</span></span> <span data-ttu-id="0d386-112">La description ne nécessite aucune balise spécifique.</span><span class="sxs-lookup"><span data-stu-id="0d386-112">The description doesn't require any specific tag.</span></span> <span data-ttu-id="0d386-113">Il vous suffit d’entrer une brève description dans le commentaire JSDoc.</span><span class="sxs-lookup"><span data-stu-id="0d386-113">Just enter a short text description in the JSDoc comment.</span></span> <span data-ttu-id="0d386-114">En général, la description est placée au début de la section commentaires JSDoc, mais elle fonctionnera peu importe son emplacement.</span><span class="sxs-lookup"><span data-stu-id="0d386-114">In general the description is placed at the start of the JSDoc comment section, but it will work no matter where it is placed.</span></span>
+
+<span data-ttu-id="0d386-115">Pour consulter des exemples de descriptions de fonction intégrées, ouvrez Excel, accédez à l’onglet**formules** , puis sélectionnez **insérer une fonction**.</span><span class="sxs-lookup"><span data-stu-id="0d386-115">To see examples of the built-in function descriptions, open Excel, go to the **Formulas** tab, and choose **Insert function**.</span></span> <span data-ttu-id="0d386-116">Vous pouvez ensuite parcourir toutes les descriptions de fonction et voir vos propres fonctions personnalisées répertoriées.</span><span class="sxs-lookup"><span data-stu-id="0d386-116">You can then browse through all the function descriptions, and also see your own custom functions listed.</span></span>
+
+<span data-ttu-id="0d386-117">Dans cet exemple, la phrase «calcule le volume d’une sphère.»</span><span class="sxs-lookup"><span data-stu-id="0d386-117">In the following example, the phrase "Calculates the volume of a sphere."</span></span> <span data-ttu-id="0d386-118">est la description de la fonction personnalisée.</span><span class="sxs-lookup"><span data-stu-id="0d386-118">is the description for the custom function.</span></span>
+
+```JS
+/**
+/* Calculates the volume of a sphere
+/* @customfunction VOLUME
+...
+ */
+```
+
+
+## <a name="jsdoc-tags"></a><span data-ttu-id="0d386-119">Balises JSDoc</span><span class="sxs-lookup"><span data-stu-id="0d386-119">JSDoc Tags</span></span>
+<span data-ttu-id="0d386-120">Voici quelles sont les balises JSDoc prises en charge dans les fonctions Excel personnalisées :</span><span class="sxs-lookup"><span data-stu-id="0d386-120">The following JSDoc tags are supported in Excel custom functions:</span></span>
+* [<span data-ttu-id="0d386-121">@ annulable</span><span class="sxs-lookup"><span data-stu-id="0d386-121">@cancelable</span></span>](#cancelable)
+* <span data-ttu-id="0d386-122">[@fonctionpersonnalisée](#customfunction)nom id</span><span class="sxs-lookup"><span data-stu-id="0d386-122">[@customfunction](#customfunction) id name</span></span>
+* <span data-ttu-id="0d386-123">url[@urlaide](#helpurl)</span><span class="sxs-lookup"><span data-stu-id="0d386-123">[@helpurl](#helpurl) url</span></span>
+* <span data-ttu-id="0d386-124">[@param](#param) _{type}_ description nom</span><span class="sxs-lookup"><span data-stu-id="0d386-124">[@param](#param) _{type}_ name description</span></span>
+* [<span data-ttu-id="0d386-125">@requièreuneadresse</span><span class="sxs-lookup"><span data-stu-id="0d386-125">@requiresAddress</span></span>](#requiresAddress)
+* <span data-ttu-id="0d386-126">[@renvoie](#returns) _{type}_</span><span class="sxs-lookup"><span data-stu-id="0d386-126">[@returns](#returns) _{type}_</span></span>
+* [<span data-ttu-id="0d386-127">@diffusionencontinu</span><span class="sxs-lookup"><span data-stu-id="0d386-127">@streaming</span></span>](#streaming)
+* [<span data-ttu-id="0d386-128">@volatile</span><span class="sxs-lookup"><span data-stu-id="0d386-128">@volatile</span></span>](#volatile)
 
 ---
-### <a name="cancelable"></a><span data-ttu-id="a8458-120">@ annulable</span><span class="sxs-lookup"><span data-stu-id="a8458-120">@cancelable</span></span>
+### <a name="cancelable"></a><span data-ttu-id="0d386-129">@ annulable</span><span class="sxs-lookup"><span data-stu-id="0d386-129">@cancelable</span></span>
 <a id="cancelable"/>
 
-<span data-ttu-id="a8458-121">Indique qu’une fonction personnalisée souhaite effectuer une action lorsque la fonction est annulée.</span><span class="sxs-lookup"><span data-stu-id="a8458-121">Indicates that a custom function wants to perform an action when the function is canceled.</span></span>
+<span data-ttu-id="0d386-130">Indique qu’une fonction personnalisée souhaite effectuer une action lorsque la fonction est annulée.</span><span class="sxs-lookup"><span data-stu-id="0d386-130">Indicates that a custom function wants to perform an action when the function is canceled.</span></span>
 
-<span data-ttu-id="a8458-122">Le dernier paramètre de la fonction doit être de type `CustomFunctions.CancelableInvocation`.</span><span class="sxs-lookup"><span data-stu-id="a8458-122">The last function parameter must be of type `CustomFunctions.CancelableInvocation`.</span></span> <span data-ttu-id="a8458-123">La fonction peut attribuer une fonction à la propriété `oncanceled` pour désigner l’action à effectuer lors de l’annulation de la fonction.</span><span class="sxs-lookup"><span data-stu-id="a8458-123">The function can assign a function to the `oncanceled` property to denote the action to perform when the function is canceled.</span></span>
+<span data-ttu-id="0d386-131">Le dernier paramètre de la fonction doit être de type `CustomFunctions.CancelableInvocation`.</span><span class="sxs-lookup"><span data-stu-id="0d386-131">The last function parameter must be of type `CustomFunctions.CancelableInvocation`.</span></span> <span data-ttu-id="0d386-132">La fonction peut attribuer une fonction à la propriété `oncanceled` pour désigner l’action à effectuer lors de l’annulation de la fonction.</span><span class="sxs-lookup"><span data-stu-id="0d386-132">The function can assign a function to the `oncanceled` property to denote the action to perform when the function is canceled.</span></span>
 
-<span data-ttu-id="a8458-124">Si le dernier paramètre de fonction est de type `CustomFunctions.CancelableInvocation`, il sera considéré comme `@cancelable`, même si la balise n’apparaît pas.</span><span class="sxs-lookup"><span data-stu-id="a8458-124">If the last function parameter is of type `CustomFunctions.CancelableInvocation`, it will be considered `@cancelable` even if the tag is not present.</span></span>
+<span data-ttu-id="0d386-133">Si le dernier paramètre de fonction est de type `CustomFunctions.CancelableInvocation`, il sera considéré comme `@cancelable`, même si la balise n’apparaît pas.</span><span class="sxs-lookup"><span data-stu-id="0d386-133">If the last function parameter is of type `CustomFunctions.CancelableInvocation`, it will be considered `@cancelable` even if the tag is not present.</span></span>
 
-<span data-ttu-id="a8458-125">Une fonction ne peut pas contenir les deux balises `@cancelable` et `@streaming`.</span><span class="sxs-lookup"><span data-stu-id="a8458-125">A function cannot have both `@cancelable` and `@streaming` tags.</span></span>
+<span data-ttu-id="0d386-134">Une fonction ne peut pas contenir les deux balises `@cancelable` et `@streaming`.</span><span class="sxs-lookup"><span data-stu-id="0d386-134">A function cannot have both `@cancelable` and `@streaming` tags.</span></span>
 
 ---
-### <a name="customfunction"></a><span data-ttu-id="a8458-126">@fonctionpersonnalisée</span><span class="sxs-lookup"><span data-stu-id="a8458-126">@customfunction</span></span>
+### <a name="customfunction"></a><span data-ttu-id="0d386-135">@fonctionpersonnalisée</span><span class="sxs-lookup"><span data-stu-id="0d386-135">@customfunction</span></span>
 <a id="customfunction"/>
 
-<span data-ttu-id="a8458-127">Syntaxe: @fonctionpersonnalisée_id_ _nom_</span><span class="sxs-lookup"><span data-stu-id="a8458-127">Syntax: @customfunction _id_ _name_</span></span>
+<span data-ttu-id="0d386-136">Syntaxe: @fonctionpersonnalisée_id_ _nom_</span><span class="sxs-lookup"><span data-stu-id="0d386-136">Syntax: @customfunction _id_ _name_</span></span>
 
-<span data-ttu-id="a8458-128">Spécifiez cette balise pour traiter la fonction JavaScript/TypeScript comme une fonction Excel personnalisée.</span><span class="sxs-lookup"><span data-stu-id="a8458-128">Specify this tag to treat the JavaScript/TypeScript function as an Excel custom function.</span></span>
+<span data-ttu-id="0d386-137">Spécifiez cette balise pour traiter la fonction JavaScript/TypeScript comme une fonction Excel personnalisée.</span><span class="sxs-lookup"><span data-stu-id="0d386-137">Specify this tag to treat the JavaScript/TypeScript function as an Excel custom function.</span></span>
 
-<span data-ttu-id="a8458-129">Cette balise est requise pour créer des métadonnées pour la fonction personnalisée.</span><span class="sxs-lookup"><span data-stu-id="a8458-129">This tag is required to create metadata for the custom function.</span></span>
+<span data-ttu-id="0d386-138">Cette balise est requise pour créer des métadonnées pour la fonction personnalisée.</span><span class="sxs-lookup"><span data-stu-id="0d386-138">This tag is required to create metadata for the custom function.</span></span>
 
-<span data-ttu-id="a8458-130">Vous devez également insérer un appel vers`CustomFunctions.associate("id", functionName);`</span><span class="sxs-lookup"><span data-stu-id="a8458-130">There should also be a call to `CustomFunctions.associate("id", functionName);`</span></span>
+<span data-ttu-id="0d386-139">Vous devez également insérer un appel vers`CustomFunctions.associate("id", functionName);`</span><span class="sxs-lookup"><span data-stu-id="0d386-139">There should also be a call to `CustomFunctions.associate("id", functionName);`</span></span>
 
-#### <a name="id"></a><span data-ttu-id="a8458-131">id</span><span class="sxs-lookup"><span data-stu-id="a8458-131">id</span></span>
+#### <a name="id"></a><span data-ttu-id="0d386-140">id</span><span class="sxs-lookup"><span data-stu-id="0d386-140">id</span></span>
 
-<span data-ttu-id="a8458-132">L’id est utilisé en tant qu’identificateur invariant pour la fonction personnalisée stockée dans le document.</span><span class="sxs-lookup"><span data-stu-id="a8458-132">The id is used as the invariant identifier for the custom function stored in the document.</span></span> <span data-ttu-id="a8458-133">Elle ne doit pas changer.</span><span class="sxs-lookup"><span data-stu-id="a8458-133">It should not change.</span></span>
+<span data-ttu-id="0d386-141">`id` Est un identificateur invariant pour la fonction personnalisée.</span><span class="sxs-lookup"><span data-stu-id="0d386-141">The id is used as the invariant identifier for the custom function stored in the document.</span></span>
 
-* <span data-ttu-id="a8458-134">Si l’id n’est pas fourni, le nom de la fonction JavaScript/TypeScript est convertie en majuscules, et les caractères rejetés sont supprimés.</span><span class="sxs-lookup"><span data-stu-id="a8458-134">If id is not provided, the JavaScript/TypeScript function name is converted to uppercase, disallowed characters are removed.</span></span>
-* <span data-ttu-id="a8458-135">L’id doit être unique pour toutes les fonctions personnalisées.</span><span class="sxs-lookup"><span data-stu-id="a8458-135">The id must be unique for all custom functions.</span></span>
-* <span data-ttu-id="a8458-136">Les caractères autorisés sont les suivants : A-Z, a-z, 0-9, traits de soulignement (\_) et point (.).</span><span class="sxs-lookup"><span data-stu-id="a8458-136">The characters allowed are limited to: A-Z, a-z, 0-9, and period (.).</span></span>
+* <span data-ttu-id="0d386-142">Si`id`n’est pas fourni, le nom de la fonction JavaScript/TypeScript est converti en majuscules, et les caractères rejetés sont supprimés.</span><span class="sxs-lookup"><span data-stu-id="0d386-142">If id is not provided, the JavaScript/TypeScript function name is converted to uppercase, disallowed characters are removed.</span></span>
+* <span data-ttu-id="0d386-143">Le `id`doit être unique pour toutes les fonctions personnalisées.</span><span class="sxs-lookup"><span data-stu-id="0d386-143">The id must be unique for all custom functions.</span></span>
+* <span data-ttu-id="0d386-144">Les caractères autorisés sont les suivants : A-Z, a-z, 0-9, traits de soulignement (\_) et point (.).</span><span class="sxs-lookup"><span data-stu-id="0d386-144">The characters allowed are limited to: A-Z, a-z, 0-9, and period (.).</span></span>
 
-#### <a name="name"></a><span data-ttu-id="a8458-137">name</span><span class="sxs-lookup"><span data-stu-id="a8458-137">name</span></span>
+#### <a name="name"></a><span data-ttu-id="0d386-145">name</span><span class="sxs-lookup"><span data-stu-id="0d386-145">name</span></span>
 
-<span data-ttu-id="a8458-138">Fournit le nom d’affichage de la fonction personnalisée.</span><span class="sxs-lookup"><span data-stu-id="a8458-138">Provides the display name for the custom function.</span></span>
+<span data-ttu-id="0d386-146">Fournit le nom d’affichage `name`de la fonction personnalisée.</span><span class="sxs-lookup"><span data-stu-id="0d386-146">Provides the display name for the custom function.</span></span>
 
-* <span data-ttu-id="a8458-139">Si aucun nom n’est fourni, l’id servira aussi de nom.</span><span class="sxs-lookup"><span data-stu-id="a8458-139">If name is not provided, the id is also used as the name.</span></span>
-* <span data-ttu-id="a8458-140">Caractères autorisés : [caractères alphanumériques Unicode](https://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic) (lettres, chiffres), point (.) et trait de soulignement (\_).</span><span class="sxs-lookup"><span data-stu-id="a8458-140">Allowed characters: Letters [Unicode Alphabetic character](https://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic), numbers, period (.), and underscore (\_).</span></span>
-* <span data-ttu-id="a8458-141">Doit commencer par une lettre.</span><span class="sxs-lookup"><span data-stu-id="a8458-141">Must start with a letter.</span></span>
-* <span data-ttu-id="a8458-142">Sa longueur maximale est limitée à 128 caractères.</span><span class="sxs-lookup"><span data-stu-id="a8458-142">Maximum length is 128 characters.</span></span>
+* <span data-ttu-id="0d386-147">Si aucun nom n’est fourni, l’id servira aussi de nom.</span><span class="sxs-lookup"><span data-stu-id="0d386-147">If name is not provided, the id is also used as the name.</span></span>
+* <span data-ttu-id="0d386-148">Caractères autorisés : [caractères alphanumériques Unicode](https://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic) (lettres, chiffres), point (.) et trait de soulignement (\_).</span><span class="sxs-lookup"><span data-stu-id="0d386-148">Allowed characters: Letters [Unicode Alphabetic character](https://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic), numbers, period (.), and underscore (\_).</span></span>
+* <span data-ttu-id="0d386-149">Doit commencer par une lettre.</span><span class="sxs-lookup"><span data-stu-id="0d386-149">Must start with a letter.</span></span>
+* <span data-ttu-id="0d386-150">Sa longueur maximale est limitée à 128 caractères.</span><span class="sxs-lookup"><span data-stu-id="0d386-150">Maximum length is 128 characters.</span></span>
+
+### <a name="description"></a><span data-ttu-id="0d386-151">description</span><span class="sxs-lookup"><span data-stu-id="0d386-151">description</span></span>
+
+<span data-ttu-id="0d386-152">Une description ne nécessite aucune balise spécifique.</span><span class="sxs-lookup"><span data-stu-id="0d386-152">A description doesn't require any specific tag.</span></span> <span data-ttu-id="0d386-153">Ajoutez une description à une fonction personnalisée en ajoutant une expression pour décrire le rôle de la fonction dans le commentaire JSDoc.</span><span class="sxs-lookup"><span data-stu-id="0d386-153">Add a description to a custom function by adding a phrase to describe what the function does inside the JSDoc comment.</span></span> <span data-ttu-id="0d386-154">Par défaut, le texte non balisé dans la section commentaire JSDoc est la description de la fonction.</span><span class="sxs-lookup"><span data-stu-id="0d386-154">By default, whatever text is untagged in the JSDoc comment section will be the description of the function.</span></span> <span data-ttu-id="0d386-155">La description s’affiche pour les utilisateurs dans Excel lors de la saisie de la fonction.</span><span class="sxs-lookup"><span data-stu-id="0d386-155">The description appears to users in Excel as they are entering the function.</span></span> <span data-ttu-id="0d386-156">Dans l’exemple suivant, l’expression «fonction qui calcule la somme de deux nombres» est la description de la fonction personnalisée dont la propriété ID est`SUM`.</span><span class="sxs-lookup"><span data-stu-id="0d386-156">In the following example, the phrase "A function that sums two numbers" is the description for the custom function with the id property of `SUM`.</span></span>
+
+```JS
+/**
+/* @customfunction SUM
+/* A function that sums two numbers
+...
+ */
+```
 
 ---
-### <a name="helpurl"></a><span data-ttu-id="a8458-143">@urlaide</span><span class="sxs-lookup"><span data-stu-id="a8458-143">@helpurl</span></span>
+### <a name="helpurl"></a><span data-ttu-id="0d386-157">@urlaide</span><span class="sxs-lookup"><span data-stu-id="0d386-157">@helpurl</span></span>
 <a id="helpurl"/>
 
-<span data-ttu-id="a8458-144">Syntaxe: @urlaide_url_</span><span class="sxs-lookup"><span data-stu-id="a8458-144">Syntax: @helpurl _url_</span></span>
+<span data-ttu-id="0d386-158">Syntaxe: @urlaide_url_</span><span class="sxs-lookup"><span data-stu-id="0d386-158">Syntax: @helpurl _url_</span></span>
 
-<span data-ttu-id="a8458-145">L’_url_ fournie est affichée dans Excel.</span><span class="sxs-lookup"><span data-stu-id="a8458-145">The provided _url_ is displayed in Excel.</span></span>
+<span data-ttu-id="0d386-159">L’_url_ fournie est affichée dans Excel.</span><span class="sxs-lookup"><span data-stu-id="0d386-159">The provided _url_ is displayed in Excel.</span></span>
 
 ---
-### <a name="param"></a><span data-ttu-id="a8458-146">@param</span><span class="sxs-lookup"><span data-stu-id="a8458-146">@param</span></span>
+### <a name="param"></a><span data-ttu-id="0d386-160">@param</span><span class="sxs-lookup"><span data-stu-id="0d386-160">@param</span></span>
 <a id="param"/>
 
-#### <a name="javascript"></a><span data-ttu-id="a8458-147">JavaScript</span><span class="sxs-lookup"><span data-stu-id="a8458-147">JavaScript</span></span>
+#### <a name="javascript"></a><span data-ttu-id="0d386-161">JavaScript</span><span class="sxs-lookup"><span data-stu-id="0d386-161">JavaScript</span></span>
 
-<span data-ttu-id="a8458-148">Syntaxe JavaScript : @param {type} nom_description_</span><span class="sxs-lookup"><span data-stu-id="a8458-148">JavaScript Syntax: @param {type} name _description_</span></span>
+<span data-ttu-id="0d386-162">Syntaxe JavaScript : @param {type} nom_description_</span><span class="sxs-lookup"><span data-stu-id="0d386-162">JavaScript Syntax: @param {type} name _description_</span></span>
 
-* <span data-ttu-id="a8458-149">`{type}`doit spécifier les informations de type entre deux accolades.</span><span class="sxs-lookup"><span data-stu-id="a8458-149">`{type}` should specify the type info within curly braces.</span></span> <span data-ttu-id="a8458-150">Consultez la section [Types](##types) pour savoir quels types peuvent être utilisés.</span><span class="sxs-lookup"><span data-stu-id="a8458-150">See the [Types](##types) for more information about the types which may be used.</span></span> <span data-ttu-id="a8458-151">Facultatif : si aucun serveur n’est spécifié, le type `any` sera utilisé.</span><span class="sxs-lookup"><span data-stu-id="a8458-151">Optional: if not specified, the type `any` will be used.</span></span>
-* <span data-ttu-id="a8458-152">`name`spécifie le paramètre auquel s’applique la balise.</span><span class="sxs-lookup"><span data-stu-id="a8458-152">`name` specifies which parameter the @param tag applies to.</span></span> <span data-ttu-id="a8458-153">Obligatoire.</span><span class="sxs-lookup"><span data-stu-id="a8458-153">Required.</span></span>
-* <span data-ttu-id="a8458-154">`description`fournit la description qui s’affiche dans Excel pour le paramètre de la fonction.</span><span class="sxs-lookup"><span data-stu-id="a8458-154">`description` provides the description which appears in Excel for the function parameter.</span></span> <span data-ttu-id="a8458-155">Facultatif.</span><span class="sxs-lookup"><span data-stu-id="a8458-155">Optional.</span></span>
+* <span data-ttu-id="0d386-163">`{type}`doit spécifier les informations de type entre deux accolades.</span><span class="sxs-lookup"><span data-stu-id="0d386-163">`{type}` should specify the type info within curly braces.</span></span> <span data-ttu-id="0d386-164">Consultez la section [Types](##types) pour savoir quels types peuvent être utilisés.</span><span class="sxs-lookup"><span data-stu-id="0d386-164">See the [Types](##types) for more information about the types which may be used.</span></span> <span data-ttu-id="0d386-165">Facultatif : si aucun serveur n’est spécifié, le type `any` sera utilisé.</span><span class="sxs-lookup"><span data-stu-id="0d386-165">Optional: if not specified, the type `any` will be used.</span></span>
+* <span data-ttu-id="0d386-166">`name`spécifie le paramètre auquel s’applique la balise.</span><span class="sxs-lookup"><span data-stu-id="0d386-166">`name` specifies which parameter the @param tag applies to.</span></span> <span data-ttu-id="0d386-167">Obligatoire.</span><span class="sxs-lookup"><span data-stu-id="0d386-167">Required.</span></span>
+* <span data-ttu-id="0d386-168">`description`fournit la description qui s’affiche dans Excel pour le paramètre de la fonction.</span><span class="sxs-lookup"><span data-stu-id="0d386-168">`description` provides the description which appears in Excel for the function parameter.</span></span> <span data-ttu-id="0d386-169">Facultatif.</span><span class="sxs-lookup"><span data-stu-id="0d386-169">Optional.</span></span>
 
-<span data-ttu-id="a8458-156">Pour désigner un paramètre de fonction personnalisée comme étant facultatif :</span><span class="sxs-lookup"><span data-stu-id="a8458-156">To denote a custom function parameter as optional:</span></span>
-* <span data-ttu-id="a8458-157">Placez les crochets autour du nom du paramètre.</span><span class="sxs-lookup"><span data-stu-id="a8458-157">Put square brackets around the parameter name.</span></span> <span data-ttu-id="a8458-158">Par exemple : `@param {string} [text] Optional text`.</span><span class="sxs-lookup"><span data-stu-id="a8458-158">For example: `@param {string} [text] Optional text`.</span></span>
-
-> [!NOTE]
-> <span data-ttu-id="a8458-159">La valeur par défaut pour les paramètres facultatifs est `null`.</span><span class="sxs-lookup"><span data-stu-id="a8458-159">The default value for optional parameters is `null`.</span></span>
-
-#### <a name="typescript"></a><span data-ttu-id="a8458-160">TypeScript</span><span class="sxs-lookup"><span data-stu-id="a8458-160">TypeScript</span></span>
-
-<span data-ttu-id="a8458-161">Syntaxe TypeScript : nom @param_description_</span><span class="sxs-lookup"><span data-stu-id="a8458-161">TypeScript Syntax: @param name _description_</span></span>
-
-* <span data-ttu-id="a8458-162">`name`spécifie le paramètre auquel s’applique la balise.</span><span class="sxs-lookup"><span data-stu-id="a8458-162">`name` specifies which parameter the @param tag applies to.</span></span> <span data-ttu-id="a8458-163">Obligatoire.</span><span class="sxs-lookup"><span data-stu-id="a8458-163">Required.</span></span>
-* <span data-ttu-id="a8458-164">`description`fournit la description qui s’affiche dans Excel pour le paramètre de la fonction.</span><span class="sxs-lookup"><span data-stu-id="a8458-164">`description` provides the description which appears in Excel for the function parameter.</span></span> <span data-ttu-id="a8458-165">Facultatif.</span><span class="sxs-lookup"><span data-stu-id="a8458-165">Optional.</span></span>
-
-<span data-ttu-id="a8458-166">Consultez la section [Types](##types) pour savoir quels types de paramètres de fonction peuvent être utilisés.</span><span class="sxs-lookup"><span data-stu-id="a8458-166">See the [Types](##types) for more information about the function parameter types which may be used.</span></span>
-
-<span data-ttu-id="a8458-167">Pour désigner un paramètre de fonction personnalisée comme étant facultatif, effectuez l’une des actions suivantes :</span><span class="sxs-lookup"><span data-stu-id="a8458-167">To denote a custom function parameter as optional, do one of the following:</span></span>
-* <span data-ttu-id="a8458-168">Utilisez un paramètre facultatif.</span><span class="sxs-lookup"><span data-stu-id="a8458-168">Use an optional parameter.</span></span> <span data-ttu-id="a8458-169">Par exemple : `function f(text?: string)`</span><span class="sxs-lookup"><span data-stu-id="a8458-169">For example: `function f(text?: string)`</span></span>
-* <span data-ttu-id="a8458-170">Définissez ce paramètre sur une valeur par défaut.</span><span class="sxs-lookup"><span data-stu-id="a8458-170">Give the parameter a default value.</span></span> <span data-ttu-id="a8458-171">Par exemple : `function f(text: string = "abc")`</span><span class="sxs-lookup"><span data-stu-id="a8458-171">For example: `function f(text: string = "abc")`</span></span>
-
-<span data-ttu-id="a8458-172">Pour consulter une description détaillée du @param, reportez-vous à la page suivante : [JSDoc](https://usejsdoc.org/tags-param.html)</span><span class="sxs-lookup"><span data-stu-id="a8458-172">For detailed description of the @param see: [JSDoc](https://usejsdoc.org/tags-param.html)</span></span>
+<span data-ttu-id="0d386-170">Pour désigner un paramètre de fonction personnalisée comme étant facultatif :</span><span class="sxs-lookup"><span data-stu-id="0d386-170">To denote a custom function parameter as optional:</span></span>
+* <span data-ttu-id="0d386-171">Placez les crochets autour du nom du paramètre.</span><span class="sxs-lookup"><span data-stu-id="0d386-171">Put square brackets around the parameter name.</span></span> <span data-ttu-id="0d386-172">Par exemple : `@param {string} [text] Optional text`.</span><span class="sxs-lookup"><span data-stu-id="0d386-172">For example: `@param {string} [text] Optional text`.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="a8458-173">La valeur par défaut pour les paramètres facultatifs est `null`.</span><span class="sxs-lookup"><span data-stu-id="a8458-173">The default value for optional parameters is `null`.</span></span>
+> <span data-ttu-id="0d386-173">La valeur par défaut pour les paramètres facultatifs est `null`.</span><span class="sxs-lookup"><span data-stu-id="0d386-173">The default value for optional parameters is `null`.</span></span>
+
+#### <a name="typescript"></a><span data-ttu-id="0d386-174">TypeScript</span><span class="sxs-lookup"><span data-stu-id="0d386-174">TypeScript</span></span>
+
+<span data-ttu-id="0d386-175">Syntaxe TypeScript : nom @param_description_</span><span class="sxs-lookup"><span data-stu-id="0d386-175">TypeScript Syntax: @param name _description_</span></span>
+
+* <span data-ttu-id="0d386-176">`name`spécifie le paramètre auquel s’applique la balise.</span><span class="sxs-lookup"><span data-stu-id="0d386-176">`name` specifies which parameter the @param tag applies to.</span></span> <span data-ttu-id="0d386-177">Obligatoire.</span><span class="sxs-lookup"><span data-stu-id="0d386-177">Required.</span></span>
+* <span data-ttu-id="0d386-178">`description`fournit la description qui s’affiche dans Excel pour le paramètre de la fonction.</span><span class="sxs-lookup"><span data-stu-id="0d386-178">`description` provides the description which appears in Excel for the function parameter.</span></span> <span data-ttu-id="0d386-179">Facultatif.</span><span class="sxs-lookup"><span data-stu-id="0d386-179">Optional.</span></span>
+
+<span data-ttu-id="0d386-180">Consultez la section [Types](##types) pour savoir quels types de paramètres de fonction peuvent être utilisés.</span><span class="sxs-lookup"><span data-stu-id="0d386-180">See the [Types](##types) for more information about the function parameter types which may be used.</span></span>
+
+<span data-ttu-id="0d386-181">Pour désigner un paramètre de fonction personnalisée comme étant facultatif, effectuez l’une des actions suivantes :</span><span class="sxs-lookup"><span data-stu-id="0d386-181">To denote a custom function parameter as optional, do one of the following:</span></span>
+* <span data-ttu-id="0d386-182">Utilisez un paramètre facultatif.</span><span class="sxs-lookup"><span data-stu-id="0d386-182">Use an optional parameter.</span></span> <span data-ttu-id="0d386-183">Par exemple : `function f(text?: string)`</span><span class="sxs-lookup"><span data-stu-id="0d386-183">For example: `function f(text?: string)`</span></span>
+* <span data-ttu-id="0d386-184">Définissez ce paramètre sur une valeur par défaut.</span><span class="sxs-lookup"><span data-stu-id="0d386-184">Give the parameter a default value.</span></span> <span data-ttu-id="0d386-185">Par exemple : `function f(text: string = "abc")`</span><span class="sxs-lookup"><span data-stu-id="0d386-185">For example: `function f(text: string = "abc")`</span></span>
+
+<span data-ttu-id="0d386-186">Pour consulter une description détaillée du @param, reportez-vous à la page suivante : [JSDoc](https://usejsdoc.org/tags-param.html)</span><span class="sxs-lookup"><span data-stu-id="0d386-186">For detailed description of the @param see: [JSDoc](https://usejsdoc.org/tags-param.html)</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="0d386-187">La valeur par défaut pour les paramètres facultatifs est `null`.</span><span class="sxs-lookup"><span data-stu-id="0d386-187">The default value for optional parameters is `null`.</span></span>
 
 ---
-### <a name="requiresaddress"></a><span data-ttu-id="a8458-174">@requièreuneadresse</span><span class="sxs-lookup"><span data-stu-id="a8458-174">@requiresAddress</span></span>
+### <a name="requiresaddress"></a><span data-ttu-id="0d386-188">@requièreuneadresse</span><span class="sxs-lookup"><span data-stu-id="0d386-188">@requiresAddress</span></span>
 <a id="requiresAddress"/>
 
-<span data-ttu-id="a8458-175">Indique que l’adresse de la cellule dans laquelle la fonction est évaluée doit être fournie.</span><span class="sxs-lookup"><span data-stu-id="a8458-175">Indicates that the address of the cell where the function is being evaluated should be provided.</span></span> 
+<span data-ttu-id="0d386-189">Indique que l’adresse de la cellule dans laquelle la fonction est évaluée doit être fournie.</span><span class="sxs-lookup"><span data-stu-id="0d386-189">Indicates that the address of the cell where the function is being evaluated should be provided.</span></span> 
 
-<span data-ttu-id="a8458-176">Le dernier paramètre de la fonction doit être de type `CustomFunctions.Invocation` ou un type dérivé.</span><span class="sxs-lookup"><span data-stu-id="a8458-176">The last function parameter must be of type `CustomFunctions.Invocation` or a derived type.</span></span> <span data-ttu-id="a8458-177">Lorsque la fonction est appelée, la propriété `address` contiendra l’adresse.</span><span class="sxs-lookup"><span data-stu-id="a8458-177">When the function is called, the `address` property will contain the address.</span></span>
+<span data-ttu-id="0d386-190">Le dernier paramètre de la fonction doit être de type `CustomFunctions.Invocation` ou un type dérivé.</span><span class="sxs-lookup"><span data-stu-id="0d386-190">The last function parameter must be of type `CustomFunctions.Invocation` or a derived type.</span></span> <span data-ttu-id="0d386-191">Lorsque la fonction est appelée, la propriété `address` contiendra l’adresse.</span><span class="sxs-lookup"><span data-stu-id="0d386-191">When the function is called, the `address` property will contain the address.</span></span>
 
 ---
-### <a name="returns"></a><span data-ttu-id="a8458-178">@renvoie :</span><span class="sxs-lookup"><span data-stu-id="a8458-178">@returns</span></span>
+### <a name="returns"></a><span data-ttu-id="0d386-192">@renvoie :</span><span class="sxs-lookup"><span data-stu-id="0d386-192">@returns</span></span>
 <a id="returns"/>
 
-<span data-ttu-id="a8458-179">Syntaxe: @renvoie {_type_}</span><span class="sxs-lookup"><span data-stu-id="a8458-179">Syntax: @returns {_type_}</span></span>
+<span data-ttu-id="0d386-193">Syntaxe: @renvoie {_type_}</span><span class="sxs-lookup"><span data-stu-id="0d386-193">Syntax: @returns {_type_}</span></span>
 
-<span data-ttu-id="a8458-180">Fournit le type pour la valeur renvoyée.</span><span class="sxs-lookup"><span data-stu-id="a8458-180">Provides the type for the return value.</span></span>
+<span data-ttu-id="0d386-194">Fournit le type pour la valeur renvoyée.</span><span class="sxs-lookup"><span data-stu-id="0d386-194">Provides the type for the return value.</span></span>
 
-<span data-ttu-id="a8458-181">Si `{type}` est omis, les informations de type TypeScript seront utilisées.</span><span class="sxs-lookup"><span data-stu-id="a8458-181">If `{type}` is omitted, the TypeScript type info will be used.</span></span> <span data-ttu-id="a8458-182">S’il n’existe aucune information définissant le type, ce dernier sera `any`.</span><span class="sxs-lookup"><span data-stu-id="a8458-182">If there is no type info, the type will be `any`.</span></span>
+<span data-ttu-id="0d386-195">Si `{type}` est omis, les informations de type TypeScript seront utilisées.</span><span class="sxs-lookup"><span data-stu-id="0d386-195">If `{type}` is omitted, the TypeScript type info will be used.</span></span> <span data-ttu-id="0d386-196">S’il n’existe aucune information définissant le type, ce dernier sera `any`.</span><span class="sxs-lookup"><span data-stu-id="0d386-196">If there is no type info, the type will be `any`.</span></span>
 
 ---
-### <a name="streaming"></a><span data-ttu-id="a8458-183">@diffusionencontinu</span><span class="sxs-lookup"><span data-stu-id="a8458-183">@streaming</span></span>
+### <a name="streaming"></a><span data-ttu-id="0d386-197">@diffusionencontinu</span><span class="sxs-lookup"><span data-stu-id="0d386-197">@streaming</span></span>
 <a id="streaming"/>
 
-<span data-ttu-id="a8458-184">Utilisé pour indiquer qu’une fonction personnalisée est une fonction diffusion en continu.</span><span class="sxs-lookup"><span data-stu-id="a8458-184">Used to indicate that a custom function is a streaming function.</span></span> 
+<span data-ttu-id="0d386-198">Utilisé pour indiquer qu’une fonction personnalisée est une fonction diffusion en continu.</span><span class="sxs-lookup"><span data-stu-id="0d386-198">Used to indicate that a custom function is a streaming function.</span></span> 
 
-<span data-ttu-id="a8458-185">Le dernier paramètre doit être de type `CustomFunctions.StreamingInvocation<ResultType>`.</span><span class="sxs-lookup"><span data-stu-id="a8458-185">The last parameter should be of type `CustomFunctions.StreamingInvocation<ResultType>`.</span></span>
-<span data-ttu-id="a8458-186">La fonction doit renvoyer `void`.</span><span class="sxs-lookup"><span data-stu-id="a8458-186">The function should return `void`.</span></span>
+<span data-ttu-id="0d386-199">Le dernier paramètre doit être de type `CustomFunctions.StreamingInvocation<ResultType>`.</span><span class="sxs-lookup"><span data-stu-id="0d386-199">The last parameter should be of type `CustomFunctions.StreamingInvocation<ResultType>`.</span></span>
+<span data-ttu-id="0d386-200">La fonction doit renvoyer `void`.</span><span class="sxs-lookup"><span data-stu-id="0d386-200">The function should return `void`.</span></span>
 
-<span data-ttu-id="a8458-187">Les fonctions de diffusion en continu ne renvoient pas de valeurs directement, mais doivent plutôt appeler `setResult(result: ResultType)` en utilisant le dernier paramètre.</span><span class="sxs-lookup"><span data-stu-id="a8458-187">Streaming functions do not return values directly, but rather should call `setResult(result: ResultType)` using the last parameter.</span></span>
+<span data-ttu-id="0d386-201">Les fonctions de diffusion en continu ne renvoient pas de valeurs directement, mais doivent plutôt appeler `setResult(result: ResultType)` en utilisant le dernier paramètre.</span><span class="sxs-lookup"><span data-stu-id="0d386-201">Streaming functions do not return values directly, but rather should call `setResult(result: ResultType)` using the last parameter.</span></span>
 
-<span data-ttu-id="a8458-188">Les exceptions levées par une fonction en continu sont ignorées.</span><span class="sxs-lookup"><span data-stu-id="a8458-188">Exceptions thrown by a streaming function are ignored.</span></span> <span data-ttu-id="a8458-189">`setResult()`peut être appelée avec Error pour indiquer un résultat erroné.</span><span class="sxs-lookup"><span data-stu-id="a8458-189">`setResult()` may be called with Error to indicate an error result.</span></span>
+<span data-ttu-id="0d386-202">Les exceptions levées par une fonction en continu sont ignorées.</span><span class="sxs-lookup"><span data-stu-id="0d386-202">Exceptions thrown by a streaming function are ignored.</span></span> <span data-ttu-id="0d386-203">`setResult()`peut être appelée avec Error pour indiquer un résultat erroné.</span><span class="sxs-lookup"><span data-stu-id="0d386-203">`setResult()` may be called with Error to indicate an error result.</span></span>
 
-<span data-ttu-id="a8458-190">Vous ne pouvez pas utiliser les balises en diffusion en continu comme [@volatile](#volatile).</span><span class="sxs-lookup"><span data-stu-id="a8458-190">Streaming functions cannot be marked as [@volatile](#volatile).</span></span>
+<span data-ttu-id="0d386-204">Vous ne pouvez pas utiliser les balises en diffusion en continu comme [@volatile](#volatile).</span><span class="sxs-lookup"><span data-stu-id="0d386-204">Streaming functions cannot be marked as [@volatile](#volatile).</span></span>
 
 ---
-### <a name="volatile"></a><span data-ttu-id="a8458-191">@volatile</span><span class="sxs-lookup"><span data-stu-id="a8458-191">@volatile</span></span>
+### <a name="volatile"></a><span data-ttu-id="0d386-205">@volatile</span><span class="sxs-lookup"><span data-stu-id="0d386-205">@volatile</span></span>
 <a id="volatile"/>
 
-<span data-ttu-id="a8458-192">Une fonction volatile est une fonction dont le résultat peut changer d’un moment à l’autre, même si elle ne récupère pas d’argument ou si ses arguments ne changent pas.</span><span class="sxs-lookup"><span data-stu-id="a8458-192">A volatile function is one whose result cannot be assumed to be the same from one moment to the next even if it takes no arguments or the arguments have not changed.</span></span> <span data-ttu-id="a8458-193">À chaque calcul, Excel réévalue les cellules contenant des fonctions volatiles, ainsi que toutes leurs cellules dépendantes.</span><span class="sxs-lookup"><span data-stu-id="a8458-193">Excel re-evaluates cells that contain volatile functions, together with all dependents, every time that a calculation is done.</span></span> <span data-ttu-id="a8458-194">C’est pourquoi, un trop grand nombre de dépendances de fonctions volatiles risque de ralentir les calculs. Nous vous recommandons d’en utiliser aussi peu que possible.</span><span class="sxs-lookup"><span data-stu-id="a8458-194">For this reason, too much reliance on volatile functions can make recalculation times slow, so use them sparingly.</span></span>
+<span data-ttu-id="0d386-206">Une fonction volatile est une fonction dont le résultat peut changer d’un moment à l’autre, même si elle ne récupère pas d’argument ou si ses arguments ne changent pas.</span><span class="sxs-lookup"><span data-stu-id="0d386-206">A volatile function is one whose result cannot be assumed to be the same from one moment to the next even if it takes no arguments or the arguments have not changed.</span></span> <span data-ttu-id="0d386-207">À chaque calcul, Excel réévalue les cellules contenant des fonctions volatiles, ainsi que toutes leurs cellules dépendantes.</span><span class="sxs-lookup"><span data-stu-id="0d386-207">Excel re-evaluates cells that contain volatile functions, together with all dependents, every time that a calculation is done.</span></span> <span data-ttu-id="0d386-208">C’est pourquoi, un trop grand nombre de dépendances de fonctions volatiles risque de ralentir les calculs. Nous vous recommandons d’en utiliser aussi peu que possible.</span><span class="sxs-lookup"><span data-stu-id="0d386-208">For this reason, too much reliance on volatile functions can make recalculation times slow, so use them sparingly.</span></span>
 
-<span data-ttu-id="a8458-195">Les fonctions de diffusion en continu ne peuvent pas être volatiles.</span><span class="sxs-lookup"><span data-stu-id="a8458-195">Streaming functions cannot be volatile.</span></span>
+<span data-ttu-id="0d386-209">Les fonctions de diffusion en continu ne peuvent pas être volatiles.</span><span class="sxs-lookup"><span data-stu-id="0d386-209">Streaming functions cannot be volatile.</span></span>
 
 ---
 
-## <a name="types"></a><span data-ttu-id="a8458-196">Types</span><span class="sxs-lookup"><span data-stu-id="a8458-196">Types</span></span>
+## <a name="types"></a><span data-ttu-id="0d386-210">Types</span><span class="sxs-lookup"><span data-stu-id="0d386-210">Types</span></span>
 
-<span data-ttu-id="a8458-197">En spécifiant un type de paramètre, Excel convertit les valeurs en ce type, avant d’appeler la fonction.</span><span class="sxs-lookup"><span data-stu-id="a8458-197">By specifying a parameter type, Excel will convert values into that type before calling the function.</span></span> <span data-ttu-id="a8458-198">Si le type est `any`, Excel n’effectue pas de conversion.</span><span class="sxs-lookup"><span data-stu-id="a8458-198">If the type is `any`, no conversion will be performed.</span></span>
+<span data-ttu-id="0d386-211">En spécifiant un type de paramètre, Excel convertit les valeurs en ce type, avant d’appeler la fonction.</span><span class="sxs-lookup"><span data-stu-id="0d386-211">By specifying a parameter type, Excel will convert values into that type before calling the function.</span></span> <span data-ttu-id="0d386-212">Si le type est `any`, Excel n’effectue pas de conversion.</span><span class="sxs-lookup"><span data-stu-id="0d386-212">If the type is `any`, no conversion will be performed.</span></span>
 
-### <a name="value-types"></a><span data-ttu-id="a8458-199">Types de valeur</span><span class="sxs-lookup"><span data-stu-id="a8458-199">Value types</span></span>
+### <a name="value-types"></a><span data-ttu-id="0d386-213">Types de valeur</span><span class="sxs-lookup"><span data-stu-id="0d386-213">Value types</span></span>
 
-<span data-ttu-id="a8458-200">Une valeur unique peut être représentée à l’aide d’un des types suivants : `boolean`, `number` ou `string`.</span><span class="sxs-lookup"><span data-stu-id="a8458-200">A single value may be represented using one of the following types: `boolean`, `number`, `string`.</span></span>
+<span data-ttu-id="0d386-214">Une valeur unique peut être représentée à l’aide d’un des types suivants : `boolean`, `number` ou `string`.</span><span class="sxs-lookup"><span data-stu-id="0d386-214">A single value may be represented using one of the following types: `boolean`, `number`, `string`.</span></span>
 
-### <a name="matrix-type"></a><span data-ttu-id="a8458-201">Type matrice</span><span class="sxs-lookup"><span data-stu-id="a8458-201">Matrix type</span></span>
+### <a name="matrix-type"></a><span data-ttu-id="0d386-215">Type matrice</span><span class="sxs-lookup"><span data-stu-id="0d386-215">Matrix type</span></span>
 
-<span data-ttu-id="a8458-202">Utilisez une matrice à deux dimensions pour que le paramètre ou la valeur renvoyée soit une matrice de valeurs.</span><span class="sxs-lookup"><span data-stu-id="a8458-202">Use a two-dimensional array type to have the parameter or return value be a matrix of values.</span></span> <span data-ttu-id="a8458-203">Par exemple, le type `number[][]` indique une matrice de nombres.</span><span class="sxs-lookup"><span data-stu-id="a8458-203">For example, the type `number[][]` indicates a matrix of numbers.</span></span> <span data-ttu-id="a8458-204">`string[][]`indique une matrice de chaînes.</span><span class="sxs-lookup"><span data-stu-id="a8458-204">`string[][]` indicates a matrix of strings.</span></span> 
+<span data-ttu-id="0d386-216">Utilisez une matrice à deux dimensions pour que le paramètre ou la valeur renvoyée soit une matrice de valeurs.</span><span class="sxs-lookup"><span data-stu-id="0d386-216">Use a two-dimensional array type to have the parameter or return value be a matrix of values.</span></span> <span data-ttu-id="0d386-217">Par exemple, le type `number[][]` indique une matrice de nombres.</span><span class="sxs-lookup"><span data-stu-id="0d386-217">For example, the type `number[][]` indicates a matrix of numbers.</span></span> <span data-ttu-id="0d386-218">`string[][]`indique une matrice de chaînes.</span><span class="sxs-lookup"><span data-stu-id="0d386-218">`string[][]` indicates a matrix of strings.</span></span> 
 
-### <a name="error-type"></a><span data-ttu-id="a8458-205">Type d’erreur</span><span class="sxs-lookup"><span data-stu-id="a8458-205">Error type</span></span>
+### <a name="error-type"></a><span data-ttu-id="0d386-219">Type d’erreur</span><span class="sxs-lookup"><span data-stu-id="0d386-219">Error type</span></span>
 
-<span data-ttu-id="a8458-206">Une fonction qui n’est pas une fonction de diffusion en continu peut indiquer une erreur en renvoyant un type Error.</span><span class="sxs-lookup"><span data-stu-id="a8458-206">A non-streaming function can indicate an error by returning an Error type.</span></span>
+<span data-ttu-id="0d386-220">Une fonction qui n’est pas une fonction de diffusion en continu peut indiquer une erreur en renvoyant un type Error.</span><span class="sxs-lookup"><span data-stu-id="0d386-220">A non-streaming function can indicate an error by returning an Error type.</span></span>
 
-<span data-ttu-id="a8458-207">Une fonction de diffusion en continu peut indiquer une erreur en appelant la méthode setResult() avec un type Error.</span><span class="sxs-lookup"><span data-stu-id="a8458-207">A streaming function can indicate an error by calling setResult() with an Error type.</span></span>
+<span data-ttu-id="0d386-221">Une fonction de diffusion en continu peut indiquer une erreur en appelant`setResult()`avec un type Error.</span><span class="sxs-lookup"><span data-stu-id="0d386-221">A streaming function can indicate an error by calling setResult() with an Error type.</span></span>
 
-### <a name="promise"></a><span data-ttu-id="a8458-208">Promise</span><span class="sxs-lookup"><span data-stu-id="a8458-208">Promise</span></span>
+### <a name="promise"></a><span data-ttu-id="0d386-222">Promise</span><span class="sxs-lookup"><span data-stu-id="0d386-222">Promise</span></span>
 
-<span data-ttu-id="a8458-209">Une fonction peut renvoyer un objet Promise (pour « promesse »). Ce dernier fournit une valeur lors de sa résolution.</span><span class="sxs-lookup"><span data-stu-id="a8458-209">A function can return a Promise, which will provide the value when the promise is resolved.</span></span> <span data-ttu-id="a8458-210">Si la résolution de l’objet Promise est refusée, cela entraîne une erreur.</span><span class="sxs-lookup"><span data-stu-id="a8458-210">If the promise is rejected, then it is an error.</span></span>
+<span data-ttu-id="0d386-223">Une fonction peut renvoyer un objet Promise (pour « promesse »). Ce dernier fournit une valeur lors de sa résolution.</span><span class="sxs-lookup"><span data-stu-id="0d386-223">A function can return a Promise, which will provide the value when the promise is resolved.</span></span> <span data-ttu-id="0d386-224">Si la résolution de l’objet Promise est refusée, cela entraîne une erreur.</span><span class="sxs-lookup"><span data-stu-id="0d386-224">If the promise is rejected, then it is an error.</span></span>
 
-### <a name="other-types"></a><span data-ttu-id="a8458-211">Autres types</span><span class="sxs-lookup"><span data-stu-id="a8458-211">Other types</span></span>
+### <a name="other-types"></a><span data-ttu-id="0d386-225">Autres types</span><span class="sxs-lookup"><span data-stu-id="0d386-225">Other types</span></span>
 
-<span data-ttu-id="a8458-212">Tout autre type sera traité comme une erreur.</span><span class="sxs-lookup"><span data-stu-id="a8458-212">Any other type will be treated as an error.</span></span>
+<span data-ttu-id="0d386-226">Tout autre type sera traité comme une erreur.</span><span class="sxs-lookup"><span data-stu-id="0d386-226">Any other type will be treated as an error.</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="a8458-213">Étapes suivantes</span><span class="sxs-lookup"><span data-stu-id="a8458-213">Next steps</span></span>
-<span data-ttu-id="a8458-214">Découvrez les [conventions d’affectation des noms des fonctions personnalisées](custom-functions-naming.md).</span><span class="sxs-lookup"><span data-stu-id="a8458-214">Learn about [naming conventions for custom functions](custom-functions-naming.md).</span></span> <span data-ttu-id="a8458-215">Découvrez également comment [localiser vos fonctions](custom-functions-localize.md), ce qui implique que vous [écriviez votre fichier JSON à la main](custom-functions-json.md).</span><span class="sxs-lookup"><span data-stu-id="a8458-215">Alternatively, learn how to [localize your functions](custom-functions-localize.md) which requires you to [write your JSON file by hand](custom-functions-json.md).</span></span>
+## <a name="next-steps"></a><span data-ttu-id="0d386-227">Étapes suivantes</span><span class="sxs-lookup"><span data-stu-id="0d386-227">Next steps</span></span>
+<span data-ttu-id="0d386-228">Découvrez les [conventions d’affectation des noms des fonctions personnalisées](custom-functions-naming.md).</span><span class="sxs-lookup"><span data-stu-id="0d386-228">Learn about [naming conventions for custom functions](custom-functions-naming.md).</span></span> <span data-ttu-id="0d386-229">Découvrez également comment [localiser vos fonctions](custom-functions-localize.md), ce qui implique que vous [écriviez votre fichier JSON à la main](custom-functions-json.md).</span><span class="sxs-lookup"><span data-stu-id="0d386-229">Alternatively, learn how to [localize your functions](custom-functions-localize.md) which requires you to [write your JSON file by hand](custom-functions-json.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="a8458-216">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a8458-216">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0d386-230">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0d386-230">See also</span></span>
 
-* [<span data-ttu-id="a8458-217">Métadonnées fonctions personnalisées</span><span class="sxs-lookup"><span data-stu-id="a8458-217">Custom functions metadata</span></span>](custom-functions-json.md)
-* [<span data-ttu-id="a8458-218">Meilleures pratiques de fonctions personnalisées</span><span class="sxs-lookup"><span data-stu-id="a8458-218">Custom functions best practices</span></span>](custom-functions-best-practices.md)
-* [<span data-ttu-id="a8458-219">Créer des fonctions personnalisées dans Excel</span><span class="sxs-lookup"><span data-stu-id="a8458-219">Create custom functions in Excel</span></span>](custom-functions-overview.md)
+* [<span data-ttu-id="0d386-231">Métadonnées fonctions personnalisées</span><span class="sxs-lookup"><span data-stu-id="0d386-231">Custom functions metadata</span></span>](custom-functions-json.md)
+* [<span data-ttu-id="0d386-232">Meilleures pratiques de fonctions personnalisées</span><span class="sxs-lookup"><span data-stu-id="0d386-232">Custom functions best practices</span></span>](custom-functions-best-practices.md)
+* [<span data-ttu-id="0d386-233">Créer des fonctions personnalisées dans Excel</span><span class="sxs-lookup"><span data-stu-id="0d386-233">Create custom functions in Excel</span></span>](custom-functions-overview.md)
