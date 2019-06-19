@@ -287,6 +287,9 @@
                 - name: Meilleures pratiques
                   href: excel/custom-functions-best-practices.md
                   displayName: Excel
+                - name: Exigences en matière de compatibilité des compléments COM et de FDU XLL
+                  href: excel/xll-compatibility-requirements.md
+                  displayName: Excel
                 - name: Débogage
                   href: excel/custom-functions-debugging.md
                   displayName: Excel
@@ -780,7 +783,7 @@
           href: reference/manifest/permissions.md
         - name: PhoneSettings
           href: reference/manifest/phonesettings.md
-        - name: ProgID
+        - name: ProgId
           href: reference/manifest/progid.md
         - name: ProviderName
           href: reference/manifest/providername.md

@@ -1,14 +1,14 @@
 ---
 title: Étendre des fonctions personnalisées avec des fonctions XLL définies par l’utilisateur
 description: Activer la compatibilité avec les fonctions Excel XLL définies par l’utilisateur qui offrent une fonctionnalité équivalente à vos fonctions personnalisées (aperçu)
-ms.date: 05/08/2019
+ms.date: 06/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 3e1782c5df227d3e173f4291ba88f2057200b1c5
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 8d476ecf777561b79b8bf9c5cf1e4712d7869d0e
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33951885"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059691"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions-preview"></a>Étendre les fonctions personnalisées avec les fonctions XLL définies par l’utilisateur (aperçu)
 
@@ -22,23 +22,22 @@ Pour activer la compatibilité avec un XLL existant, identifiez le XLL équivale
 
 Pour définir le XLL équivalent pour vos fonctions personnalisées, spécifiez l' `FileName` élément XLL. Lorsque l’utilisateur ouvre un classeur avec des fonctions à partir de la XLL, Excel convertit les fonctions en fonctions compatibles. Le classeur utilise ensuite le XLL lorsqu’il est ouvert dans Excel sur Windows et utilise des fonctions personnalisées à partir de votre complément Excel lorsqu’il est ouvert en ligne ou sur macOS.
 
-L’exemple suivant montre comment spécifier un complément COM et un XLL comme équivalent. Souvent, vous spécifierez à la fois de manière à ce que cet exemple montre les deux dans le contexte. Ils sont identifiés par leur `ProgID` et `FileName` respectivement. Pour plus d’informations sur la compatibilité des compléments COM, consultez [la rubrique faire en sorte que votre complément Excel soit compatible avec un complément COM existant](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
+L’exemple suivant montre comment spécifier un complément COM et un XLL comme équivalent. Souvent, vous spécifierez à la fois de manière à ce que cet exemple montre les deux dans le contexte. Ils sont identifiés par leur `ProgId` et `FileName` respectivement. L' `EquivalentAddins` élément doit être placé immédiatement avant la balise de fermeture `VersionOverrides` . Pour plus d’informations sur la compatibilité des compléments COM, consultez [la rubrique faire en sorte que votre complément Excel soit compatible avec un complément COM existant](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
 
 ```xml
 <VersionOverrides>
-...
-<EquivalentAddins>
-  <EquivalentAddin>
-    <ProgID>ContosoCOMAddin</ProgID>
-    <Type>COM</Type>
-  </EquivalentAddin>
+  ...
+  <EquivalentAddins>
+    <EquivalentAddin>
+      <ProgId>ContosoCOMAddin</ProgId>
+      <Type>COM</Type>
+    </EquivalentAddin>
 
-  <EquivalentAddin>
-    <FileName>contosofunctions.xll</FileName>
-    <Type>XLL</Type>
-  </EquivalentAddin>
-<EquivalentAddins>
-...
+    <EquivalentAddin>
+      <FileName>contosofunctions.xll</FileName>
+      <Type>XLL</Type>
+    </EquivalentAddin>
+  <EquivalentAddins>
 </VersionOverrides>
 ```
 

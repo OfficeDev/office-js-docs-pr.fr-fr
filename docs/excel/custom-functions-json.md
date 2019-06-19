@@ -1,20 +1,18 @@
 ---
-ms.date: 05/30/2019
+ms.date: 06/17/2019
 description: Définissez des métadonnées pour des fonctions personnalisées dans Excel.
 title: Métadonnées pour les fonctions personnalisées dans Excel
 localization_priority: Normal
-ms.openlocfilehash: e51e4e8ee89eb1f345ee0c564e9b2ff8119806b2
-ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
+ms.openlocfilehash: a7715bcdd125d44ec887f8b779ac0673b4a12af0
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "34706122"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059859"
 ---
 # <a name="custom-functions-metadata"></a>Métadonnées des fonctions personnalisées
 
 Lorsque vous définissez des [fonctions personnalisées](custom-functions-overview.md) dans votre complément Excel, votre projet de complément inclut un fichier de métadonnées JSON qui fournit les informations dont Excel a besoin pour enregistrer les fonctions personnalisées et les rendre accessibles aux utilisateurs finaux.
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 Ce fichier est généré:
 
@@ -113,7 +111,7 @@ L’exemple suivant montre le contenu d’un fichier de métadonnées JSON pour 
 ```
 
 > [!NOTE]
-> Un exemple de fichier JSON complet est disponible dans le dépôt GitHub [OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/src/functions/functions.json).
+> Un exemple de fichier JSON complet est disponible dans l’historique de validation du référentiel [OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/77760adb1dcc53469183049bea08196734dbc114/config/customfunctions.json) github. Lorsque le projet a été ajusté pour générer automatiquement JSON, un échantillon complet de JSON manuscrit est uniquement disponible dans les versions précédentes du projet.
 
 ## <a name="functions"></a>fonctions 
 

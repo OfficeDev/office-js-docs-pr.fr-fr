@@ -1,20 +1,18 @@
 ---
-ms.date: 05/03/2019
+ms.date: 06/17/2019
 description: Découvrez les conditions requises pour les noms des fonctions personnalisées Excel et éviter les pièges de dénomination courants.
 title: Instructions d’affectation de noms pour les fonctions personnalisées dans Excel
 localization_priority: Normal
-ms.openlocfilehash: 64420171a90b29732745891cb691b8cd4309c53d
-ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
+ms.openlocfilehash: 2c5b78b2ecd1ccdbdc3fcb5bf6601c06193a1ef1
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "34706077"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059824"
 ---
 # <a name="naming-guidelines"></a>Instructions d’attribution de noms
 
 Une fonction personnalisée est identifiée par un **ID** et une propriété de **nom** dans le fichier de métadonnées JSON.
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 - La fonction `id` est utilisée pour identifier des fonctions personnalisées de manière unique dans votre code JavaScript. 
 - La fonction `name` est utilisée comme nom complet qui s’affiche pour un utilisateur dans Excel. 
@@ -35,7 +33,7 @@ Une fonction `name` ne doit pas être nommée de la manière suivante:
 
 - Toutes les cellules comprises entre a1 et XFD1048576 ou toutes les cellules comprises entre R1C1 et R1048576C16384.
 
-- N’importe quelle fonction macro Excel 4,0 ( `RUN`telle `ECHO`que,).  Pour obtenir une liste complète de ces fonctions, consultez [cet article](https://www.microsoft.com/en-us/download/details.aspx?id=1465).
+- N’importe quelle fonction macro Excel 4,0 ( `RUN`telle `ECHO`que,).  Pour obtenir la liste complète de ces fonctions, consultez [le document de référence des fonctions de macro Excel](https://d13ot9o61jdzpp.cloudfront.net/files/Excel%204.0%20Macro%20Functions%20Reference.pdf).
 
 ## <a name="naming-conflicts"></a>Conflits de noms
 
