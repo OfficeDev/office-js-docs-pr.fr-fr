@@ -1,20 +1,18 @@
 ---
-ms.date: 05/06/2019
+ms.date: 06/17/2019
 description: Créez une boîte de dialogue via des fonctions personnalisées dans Excel à l’aide de JavaScript.
 title: Afficher la boîte de dialogue d’une fonction personnalisée
 localization_priority: Priority
-ms.openlocfilehash: 3d7a657402c319b2394c7331b69314b2e5591890
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: cdbd199e8d8484f317d78a91833088c69db18685
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628144"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059873"
 ---
 # <a name="display-a-dialog-box-from-a-custom-function"></a>Afficher la boîte de dialogue d’une fonction personnalisée
 
 Si votre fonction personnalisée doit interagir avec l’utilisateur, vous pouvez créer une boîte de dialogue à l’aide de l’[objet`Office.Dialog`](/javascript/api/office-runtime/officeruntime.dialog?view=office-js). Un scénario classique pour l’utilisation de la boîte de dialogue consiste à authentifier un utilisateur afin que votre fonction personnalisée puisse accéder à un service web. Pour plus d’informations sur l’authentification de fonctions personnalisées, voir[authentification des fonctions personnalisées](./custom-functions-authentication.md).
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 >[!NOTE]
 > L’objet `Office.Dialog` fait partie de l’exécution de fonctions personnalisées. Les volets Office n’utilisent pas l’objet `Dialog`. Pour créer une boîte de dialogue à partir d’un volet de tâches, consultez [API de boîte de dialogue](/office/dev/add-ins/develop/dialog-api-in-office-add-ins).

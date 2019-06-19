@@ -1,20 +1,18 @@
 ---
-ms.date: 06/10/2019
+ms.date: 06/17/2019
 description: Utiliser les balises JSDOC pour créer dynamiquement vos fonctions personnalisées de métadonnées JSON.
 title: Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 localization_priority: Priority
-ms.openlocfilehash: 960e1eca1e01aec21967733d802a5fdd48122cbc
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 246cd53c4ff151dce7422e67cf49e0b5508b672c
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910300"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059829"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 
 Si vous écrivez une fonction Excel personnalisée en JavaScript ou TypeScript, vous pouvez utiliser les balises JSDoc pour la détailler en ajoutant des informations supplémentaires. Les balises JSDoc sont ensuite utilisées lors de la génération pour créer le [fichier de métadonnées JSON](custom-functions-json.md). En utilisant des balises JSDoc, vous n’avez plus besoin de modifier manuellement le fichier de métadonnées JSON.
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 Ajoutez la balise `@customfunction` dans les commentaires du code d’une fonction JavaScript ou TypeScript pour indiquer qu’il s’agit d’une fonction personnalisée.
 
@@ -140,7 +138,7 @@ Pour désigner un paramètre de fonction personnalisée comme étant facultatif,
 * Utilisez un paramètre facultatif. Par exemple : `function f(text?: string)`
 * Définissez ce paramètre sur une valeur par défaut. Par exemple : `function f(text: string = "abc")`
 
-Pour consulter une description détaillée du @param, reportez-vous à la page suivante : [JSDoc](https://usejsdoc.org/tags-param.html)
+Pour consulter une description détaillée du @param, reportez-vous à la page suivante : [JSDoc](https://jsdoc.app/tags-param.html)
 
 > [!NOTE]
 > La valeur par défaut pour les paramètres facultatifs est `null`.

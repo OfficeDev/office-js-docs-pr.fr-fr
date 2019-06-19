@@ -1,20 +1,18 @@
 ---
-ms.date: 05/03/2019
+ms.date: 06/17/2019
 description: Gérez les erreurs dans vos fonctions personnalisées Excel.
 title: Gestion des erreurs liées aux fonctions personnalisées dans Excel
 localization_priority: Priority
-ms.openlocfilehash: 188ece6c77bc2cafad6f22448fb698e0c0370ef8
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: 5b94d3fc2570eaa310027ebc156aa78c359a56fa
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628157"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059852"
 ---
 # <a name="error-handling-within-custom-functions"></a>Gestion des erreurs dans des fonctions personnalisées
 
 Lorsque vous créez un complément à l’aide des fonctions personnalisées, veillez à inclure la logique de gestion des erreurs pour prendre en compte les erreurs d’exécution. La gestion des erreurs pour fonctions personnalisées est identique à la[gestion des erreurs pour l’API JavaScript Excel](excel-add-ins-error-handling.md).
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 Dans l’exemple de code suivant, `.catch` gère les erreurs qui se produisent précédemment dans le code.
 

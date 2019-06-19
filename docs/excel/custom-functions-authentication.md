@@ -1,20 +1,18 @@
 ---
-ms.date: 05/03/2019
+ms.date: 06/17/2019
 description: Authentifiez les utilisateurs à l’aide de fonctions personnalisées dans Excel.
 title: Authentification des fonctions personnalisées
 localization_priority: Priority
-ms.openlocfilehash: bfb3acde2e03c8fc13d312977a2ab3c85107a42f
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 30ff1b91db8bf7f0183a44f1e7e078a6308c1351
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910307"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059740"
 ---
 # <a name="authentication-for-custom-functions"></a>Authentification des fonctions personnalisées
 
 Dans certains scénarios, votre fonction personnalisée doit authentifier l’utilisateur pour accéder aux ressources protégées. Bien que les fonctions personnalisées ne nécessitent pas de méthode spécifique d’authentification, sachez que les fonctions personnalisées s’exécutent dans un autre temps d’exécution, à partir du volet Office et d’autres éléments d’interface utilisateur de votre complément. Pour cette raison, vous devez transférer les données entre les deux exécutions à l’aide de l'objet`OfficeRuntime.storage` et de l’API de boîte de dialogue.
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="officeruntimestorage-object"></a>Objet OfficeRuntime.storage
 
