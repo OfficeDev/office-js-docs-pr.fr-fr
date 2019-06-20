@@ -1,22 +1,25 @@
 ---
-ms.date: 05/15/2019
+ms.date: 06/17/2019
 description: Découvrez comment utiliser les fonctions personnalisées sur les différentes plateformes.
 title: 'Configuration requise de fonctions personnalisées '
 localization_priority: Priority
-ms.openlocfilehash: 3ae110bf32b260be1d480a9bce27fffbddee86f5
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: 0f1d18410f32620a168622ae7d9824cb2e785933
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432200"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059894"
 ---
 # <a name="custom-functions-requirements"></a>Configuration requise de fonctions personnalisées 
 
 Des fonctions personnalisées sont actuellement disponibles sur les plateformes suivantes :
 
-- Excel Online
-- Excel sur Windows (64 bits version 1810 ou ultérieure)
-- Excel pour Mac (version 13.329 ou ultérieure)
+- Excel sur le web
+- Excel sur Windows (1904 ou version ultérieure, connecté à un abonnement Office 365)
+- Excel sur Mac (16.24 ou version ultérieure, connecté à un abonnement Office 365)
+
+>[!NOTE]
+>Les fonctions personnalisées d’Excel ne sont pas prises en charge dans Office 2019 (achat unique).
 
 ## <a name="excel-online"></a>Excel Online
 Pour utiliser des fonctions personnalisées dans Excel Online, connectez-vous à l’aide de votre abonnement Office 365 ou d’un [compte Microsoft](https://account.microsoft.com/account).

@@ -1,21 +1,21 @@
 ---
-ms.date: 05/08/2019
+ms.date: 06/17/2019
 description: Découvrez la configuration requise pour utiliser le complément COM et les fonctionnalités de compatibilité XLL UDF.
 title: Complément COM et configuration XLL UDF requise
 localization_priority: Priority
-ms.openlocfilehash: a707f5413f05e4f3d65ca039e1ffbc88aecbe252
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: 133c9f20c2b82051ee3d42488596707e99a364bc
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432235"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059684"
 ---
 # <a name="com-add-in-and-xll-udf-compatibility-requirements-preview"></a>Complément COM et configuration XLL UDF requise (préversion)
 
-La compatibilité du complément COM et XLL UDF est actuellement disponible sur les plateformes suivantes :
+La compatibilité du complément COM et XLL UDF est actuellement disponible sur les plateformes suivantes qui requièrent toutes un abonnement Office 365 :
 
-- Excel Online
-- Excel sur Windows (64 bits version 1810 ou ultérieure)
+- Excel sur le web
+- Excel sur Windows (1904 ou version ultérieure)
 - Excel pour Mac (version 13.329 ou ultérieure)
 
 ## <a name="excel-online"></a>Excel Online
