@@ -481,11 +481,11 @@
               href: testing/attach-debugger-from-task-pane.md
             - name: Débogage à l’aide des outils de développement F12
               href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
-        - name: Office Online
+        - name: Navigateur Web
           items:
-            - name: "Chargement de version test des compléments\_Office dans Office\_Online"
+            - name: Compléments chargement dans Office sur le Web
               href: testing/sideload-office-add-ins-for-testing.md
-            - name: Débogage dans Office Online
+            - name: Débogage d’Office sur le Web
               href: testing/debug-add-ins-in-office-online.md
         - name: iPad et Mac
           items:

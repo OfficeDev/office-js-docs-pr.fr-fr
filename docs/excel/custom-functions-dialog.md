@@ -1,25 +1,27 @@
 ---
-ms.date: 06/17/2019
+ms.date: 06/18/2019
 description: Créez une boîte de dialogue via des fonctions personnalisées dans Excel à l’aide de JavaScript.
 title: Afficher la boîte de dialogue d’une fonction personnalisée
 localization_priority: Priority
-ms.openlocfilehash: cdbd199e8d8484f317d78a91833088c69db18685
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: e513aedd46f129371a5c858e84f7e230f8d7ae11
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059873"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127925"
 ---
-# <a name="display-a-dialog-box-from-a-custom-function"></a><span data-ttu-id="45fb9-103">Afficher la boîte de dialogue d’une fonction personnalisée</span><span class="sxs-lookup"><span data-stu-id="45fb9-103">Display a dialog box from a custom function</span></span>
+# <a name="display-a-dialog-box-from-a-custom-function"></a><span data-ttu-id="ff7fc-103">Afficher la boîte de dialogue d’une fonction personnalisée</span><span class="sxs-lookup"><span data-stu-id="ff7fc-103">Display a dialog box from a custom function</span></span>
 
-<span data-ttu-id="45fb9-104">Si votre fonction personnalisée doit interagir avec l’utilisateur, vous pouvez créer une boîte de dialogue à l’aide de l’[objet`Office.Dialog`](/javascript/api/office-runtime/officeruntime.dialog?view=office-js).</span><span class="sxs-lookup"><span data-stu-id="45fb9-104">If your custom function needs to interact with the user, you can create a dialog box using the [`Office.Dialog` object](/javascript/api/office-runtime/officeruntime.dialog?view=office-js).</span></span> <span data-ttu-id="45fb9-105">Un scénario classique pour l’utilisation de la boîte de dialogue consiste à authentifier un utilisateur afin que votre fonction personnalisée puisse accéder à un service web.</span><span class="sxs-lookup"><span data-stu-id="45fb9-105">A common scenario for using the dialog box is to authenticate a user so that your custom function can access a web service.</span></span> <span data-ttu-id="45fb9-106">Pour plus d’informations sur l’authentification de fonctions personnalisées, voir[authentification des fonctions personnalisées](./custom-functions-authentication.md).</span><span class="sxs-lookup"><span data-stu-id="45fb9-106">For more details about authentication with custom functions, see [Custom functions authentication](./custom-functions-authentication.md).</span></span>
+<span data-ttu-id="ff7fc-104">Si votre fonction personnalisée doit interagir avec l’utilisateur, vous pouvez créer une boîte de dialogue à l’aide de l’[objet`Office.Dialog`](/javascript/api/office-runtime/officeruntime.dialog?view=office-js).</span><span class="sxs-lookup"><span data-stu-id="ff7fc-104">If your custom function needs to interact with the user, you can create a dialog box using the [`Office.Dialog` object](/javascript/api/office-runtime/officeruntime.dialog?view=office-js).</span></span> <span data-ttu-id="ff7fc-105">Un scénario classique pour l’utilisation de la boîte de dialogue consiste à authentifier un utilisateur afin que votre fonction personnalisée puisse accéder à un service web.</span><span class="sxs-lookup"><span data-stu-id="ff7fc-105">A common scenario for using the dialog box is to authenticate a user so that your custom function can access a web service.</span></span> <span data-ttu-id="ff7fc-106">Pour plus d’informations sur l’authentification de fonctions personnalisées, voir[authentification des fonctions personnalisées](./custom-functions-authentication.md).</span><span class="sxs-lookup"><span data-stu-id="ff7fc-106">For more details about authentication with custom functions, see [Custom functions authentication](./custom-functions-authentication.md).</span></span>
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 >[!NOTE]
-> <span data-ttu-id="45fb9-107">L’objet `Office.Dialog` fait partie de l’exécution de fonctions personnalisées.</span><span class="sxs-lookup"><span data-stu-id="45fb9-107">The `Office.Dialog` object is part of the custom functions runtime.</span></span> <span data-ttu-id="45fb9-108">Les volets Office n’utilisent pas l’objet `Dialog`.</span><span class="sxs-lookup"><span data-stu-id="45fb9-108">Task panes don't use the `Dialog` object.</span></span> <span data-ttu-id="45fb9-109">Pour créer une boîte de dialogue à partir d’un volet de tâches, consultez [API de boîte de dialogue](/office/dev/add-ins/develop/dialog-api-in-office-add-ins).</span><span class="sxs-lookup"><span data-stu-id="45fb9-109">To create a dialog box from a task pane, see [Dialog API](/office/dev/add-ins/develop/dialog-api-in-office-add-ins).</span></span>
+> <span data-ttu-id="ff7fc-107">L’objet `Office.Dialog` fait partie de l’exécution de fonctions personnalisées.</span><span class="sxs-lookup"><span data-stu-id="ff7fc-107">The `Office.Dialog` object is part of the custom functions runtime.</span></span> <span data-ttu-id="ff7fc-108">Les volets Office n’utilisent pas l’objet `Dialog`.</span><span class="sxs-lookup"><span data-stu-id="ff7fc-108">Task panes don't use the `Dialog` object.</span></span> <span data-ttu-id="ff7fc-109">Pour créer une boîte de dialogue à partir d’un volet de tâches, consultez [API de boîte de dialogue](/office/dev/add-ins/develop/dialog-api-in-office-add-ins).</span><span class="sxs-lookup"><span data-stu-id="ff7fc-109">To create a dialog box from a task pane, see [Dialog API](/office/dev/add-ins/develop/dialog-api-in-office-add-ins).</span></span>
 
-## <a name="dialog-box-api-example"></a><span data-ttu-id="45fb9-110">Exemple d’API de boîte de dialogue</span><span class="sxs-lookup"><span data-stu-id="45fb9-110">dialog box API example</span></span>
+## <a name="dialog-box-api-example"></a><span data-ttu-id="ff7fc-110">Exemple d’API de boîte de dialogue</span><span class="sxs-lookup"><span data-stu-id="ff7fc-110">dialog box API example</span></span>
 
-<span data-ttu-id="45fb9-111">Dans l’exemple de code suivant, la fonction `getTokenViaDialog` utilise la fonction `Dialog` de l’API `displayWebDialogOptions` pour afficher une boîte de dialogue.</span><span class="sxs-lookup"><span data-stu-id="45fb9-111">In the following code sample, the function `getTokenViaDialog` uses the `Dialog` API’s `displayWebDialogOptions` function to display a dialog box.</span></span>
+<span data-ttu-id="ff7fc-111">Dans l’exemple de code suivant, la fonction `getTokenViaDialog` utilise la fonction `Dialog` de l’API `displayWebDialogOptions` pour afficher une boîte de dialogue.</span><span class="sxs-lookup"><span data-stu-id="ff7fc-111">In the following code sample, the function `getTokenViaDialog` uses the `Dialog` API’s `displayWebDialogOptions` function to display a dialog box.</span></span>
 
 ```js
 /**
@@ -65,11 +67,11 @@ function getTokenViaDialog(url) {
 }
 ```
 
-## <a name="next-steps"></a><span data-ttu-id="45fb9-112">Étapes suivantes</span><span class="sxs-lookup"><span data-stu-id="45fb9-112">Next steps</span></span>
-<span data-ttu-id="45fb9-113">Découvrez comment [rendre vos fonctions personnalisées compatibles avec les fonctions XLL définies par l’utilisateur](make-custom-functions-compatible-with-xll-udf.md).</span><span class="sxs-lookup"><span data-stu-id="45fb9-113">Learn how to [make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md).</span></span>
+## <a name="next-steps"></a><span data-ttu-id="ff7fc-112">Étapes suivantes</span><span class="sxs-lookup"><span data-stu-id="ff7fc-112">Next steps</span></span>
+<span data-ttu-id="ff7fc-113">Découvrez comment [rendre vos fonctions personnalisées compatibles avec les fonctions XLL définies par l’utilisateur](make-custom-functions-compatible-with-xll-udf.md).</span><span class="sxs-lookup"><span data-stu-id="ff7fc-113">Learn how to [make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="45fb9-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="45fb9-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ff7fc-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ff7fc-114">See also</span></span>
 
-* [<span data-ttu-id="45fb9-115">Authentification des fonctions personnalisées</span><span class="sxs-lookup"><span data-stu-id="45fb9-115">Custom functions authentication</span></span>](custom-functions-authentication.md)
-* [<span data-ttu-id="45fb9-116">Recevoir et gérer des données à l’aide de fonctions personnalisées</span><span class="sxs-lookup"><span data-stu-id="45fb9-116">Receive and handle data with custom functions</span></span>](custom-functions-web-reqs.md)
-* [<span data-ttu-id="45fb9-117">Créer des fonctions personnalisées dans Excel</span><span class="sxs-lookup"><span data-stu-id="45fb9-117">Create custom functions in Excel</span></span>](custom-functions-overview.md)
+* [<span data-ttu-id="ff7fc-115">Authentification des fonctions personnalisées</span><span class="sxs-lookup"><span data-stu-id="ff7fc-115">Custom functions authentication</span></span>](custom-functions-authentication.md)
+* [<span data-ttu-id="ff7fc-116">Recevoir et gérer des données à l’aide de fonctions personnalisées</span><span class="sxs-lookup"><span data-stu-id="ff7fc-116">Receive and handle data with custom functions</span></span>](custom-functions-web-reqs.md)
+* [<span data-ttu-id="ff7fc-117">Créer des fonctions personnalisées dans Excel</span><span class="sxs-lookup"><span data-stu-id="ff7fc-117">Create custom functions in Excel</span></span>](custom-functions-overview.md)
