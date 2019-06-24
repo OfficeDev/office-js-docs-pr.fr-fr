@@ -1,14 +1,14 @@
 ---
 title: Office. Context-ensemble de conditions requises 1,4
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 01b03a425460acf5fd6f68214fd93d346920086e
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: ad1887f32568f30cb87e52dd1f9457be2022beb2
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451835"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127337"
 ---
 # <a name="context"></a>context
 
@@ -25,11 +25,11 @@ L’espace de noms Office.context fournit des interfaces partagées qui sont uti
 
 ### <a name="namespaces"></a>Espaces de noms
 
-[Mailbox](office.context.mailbox.md): permet d'accéder au modèle d'objet du complément Outlook pour Microsoft Outlook et Microsoft Outlook sur le Web.
+[Mailbox](office.context.mailbox.md): permet d’accéder au modèle d’objet du complément Outlook pour Microsoft Outlook.
 
-### <a name="members"></a>Membres
+### <a name="members"></a>Members
 
-####  <a name="displaylanguage-string"></a>displayLanguage :String
+#### <a name="displaylanguage-string"></a>displayLanguage: chaîne
 
 Obtient les paramètres régionaux (langue) au format de balise de langue RFC 1766 spécifiés par l’utilisateur pour l’interface utilisateur de l’application hôte Office.
 
@@ -67,12 +67,12 @@ function write(message){
 }
 ```
 
-####  <a name="officetheme-object"></a>officeTheme :Object
+#### <a name="officetheme-object"></a>officeTheme: objet
 
 Permet d’accéder aux propriétés pour les couleurs du thème Office.
 
 > [!NOTE]
-> Ce membre n’est pas pris en charge dans Outlook pour iOS ou Outlook pour Android.
+> Ce membre n’est pas pris en charge dans Outlook sur iOS ou Android.
 
 À l’aide des couleurs du thème Office, vous pouvez coordonner le modèle de couleurs de votre complément avec le thème Office actuel sélectionné par l’utilisateur dans **Fichier > Compte Office > Thème Office**, qui est appliqué à toutes les applications hôtes Office. Les couleurs du thème Office s’utilisent avec les compléments de messagerie et du volet Office.
 
@@ -84,8 +84,8 @@ Permet d’accéder aux propriétés pour les couleurs du thème Office.
 
 |Nom| Type| Description|
 |---|---|---|
-|`bodyBackgroundColor`| String|Obtient la couleur d’arrière-plan du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
-|`bodyForegroundColor`| String|Obtient la couleur de premier plan du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
+|`bodyBackgroundColor`| Chaîne|Obtient la couleur d’arrière-plan du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
+|`bodyForegroundColor`| Chaîne|Obtient la couleur de premier plan du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
 |`controlBackgroundColor`| String|Obtient la couleur d’arrière-plan du contrôle du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
 |`controlForegroundColor`| String|Obtient la couleur du contrôle du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
 
@@ -111,7 +111,7 @@ function applyOfficeTheme(){
 }
 ```
 
-####  <a name="roamingsettings-roamingsettingsjavascriptapioutlook14officeroamingsettings"></a>roamingSettings :[RoamingSettings](/javascript/api/outlook_1_4/office.RoamingSettings)
+#### <a name="roamingsettings-roamingsettingsjavascriptapioutlook14officeroamingsettings"></a>roamingSettings: [roamingSettings](/javascript/api/outlook_1_4/office.RoamingSettings)
 
 Obtient un objet qui représente les paramètres personnalisés ou l’état d’un complément de messagerie enregistrés dans la boîte aux lettres d’un utilisateur.
 

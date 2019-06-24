@@ -1,14 +1,14 @@
 ---
 title: Co-création dans des macros complémentaires Excel
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 281f981bd7248b68c60563f02746ba68d88617b8
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 65401f30448db2edbefb42b3d64d580a79250404
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952046"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128002"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>Co-création dans des macros complémentaires Excel  
 
@@ -17,14 +17,6 @@ Avec la [co-création](https://support.office.com/article/Collaborate-on-Excel-w
 > [!IMPORTANT]
 > Dans Excel pour Office 365, vous remarquerez l’enregistrement automatique dans le coin supérieur gauche. Lorsque l’enregistrement automatique est activé, les co-auteurs visualisent vos modifications en temps réel. Prenez en considération l’impact de ce comportement sur la conception de votre complément Excel. Les utilisateurs peuvent désactiver l’enregistrement automatique via le commutateur dans le coin supérieur gauche de la fenêtre Excel.
 
-La co-création est disponible sur les plateformes suivantes :
-
-- Excel Online
-- Excel pour Android
-- Excel pour iPad
-- Excel Mobile sur Windows 10
-- Excel sur les clients de bureau Windows pour Office 365 (Windows Desktop Build 16.0.8326.2076 ou version ultérieure, qui est disponible pour les clients du canal actuel à compter du 1er août 2017)
-
 ## <a name="coauthoring-overview"></a>Vue d’ensemble de la co-création
 
 Lorsque vous modifiez le contenu d’un classeur, Excel synchronise automatiquement ces modifications avec tous les co-auteurs. Les co-auteurs peuvent modifier le contenu d’un classeur, mais peuvent également exécuter du code dans un complément Excel. Par exemple, lorsque le code JavaScript suivant s’exécute dans un complément Office, la valeur de la plage est définie sur Contoso:
@@ -32,7 +24,7 @@ Lorsque vous modifiez le contenu d’un classeur, Excel synchronise automatiquem
 ```js
 range.values = [['Contoso']];
 ```
-Après la synchronisation de « Contoso » avec tous les co-auteurs, tout utilisateur ou complément en cours d’exécution dans le même classeur visualisera la nouvelle valeur de la plage. 
+Après la synchronisation de « Contoso » avec tous les co-auteurs, tout utilisateur ou complément en cours d’exécution dans le même classeur visualisera la nouvelle valeur de la plage.
 
 La co-création permet uniquement la synchronisation du contenu dans le classeur partagé. Les valeurs copiées du classeur vers les variables JavaScript dans un complément Excel ne sont pas synchronisées. Par exemple, si votre complément enregistre la valeur d’une cellule (par exemple, « Contoso ») dans une variable JavaScript et qu’un co-auteur modifie ensuite la valeur de la cellule sur « Exemple », après la synchronisation, tous les co-auteurs verront « Exemple » dans la cellule. Toutefois, la valeur de la variable JavaScript sera toujours définie sur « Contoso ». En outre, lorsque plusieurs co-auteurs utilisent le même complément, chaque co-auteur possède sa propre copie de la variable, qui n’est pas synchronisée. Lorsque vous utilisez des variables qui utilisent le contenu du classeur, veillez à bien rechercher les valeurs mises à jour dans le classeur avant d’utiliser la variable.
 

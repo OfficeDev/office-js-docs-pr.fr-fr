@@ -1,19 +1,19 @@
 ---
 title: Développer des compléments Office pour iPad
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 3ac8f651ccb87b32679a28684f0d08fad53aa773
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: cdc35b83c2cb32984d0dc73d85af250bddfa8c0a
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952088"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128170"
 ---
 # <a name="develop-office-add-ins-for-the-ipad"></a>Développer des compléments Office pour iPad
 
 
-Le tableau suivant répertorie les tâches à effectuer pour développer un complément Office à exécuter dans Office pour iPad.
+Le tableau suivant répertorie les tâches à effectuer pour développer un complément Office à exécuter dans Office sur iPad.
 
 
 |**Tâche**|**Description**|**Ressources**|
@@ -38,7 +38,7 @@ Appliquez les meilleures pratiques suivantes pour développer des compléments p
 
 -  **Utilisez Visual Studio pour développer votre complément.**
 
-    Si vous développez votre complément avec Visual Studio, vous pouvez [définir des points d’arrêt et déboguer son code](../develop/create-and-debug-office-add-ins-in-visual-studio.md) dans une application hôte Office s’exécutant sous Windows, avant de charger votre complément sur iPad ou Mac. Étant donné qu’un complément qui s’exécute dans Office pour iOS ou Office pour Mac prend en charge les mêmes API qu’un complément s’exécutant dans Office sur Windows, le code de votre complément doit s’exécuter de la même manière sur les deux plateformes.
+    Si vous développez votre complément avec Visual Studio, vous pouvez [définir des points d’arrêt et déboguer son code](../develop/create-and-debug-office-add-ins-in-visual-studio.md) dans une application hôte Office s’exécutant sous Windows, avant de charger votre complément sur iPad ou Mac. Étant donné qu’un complément exécuté dans Office sur iOS ou Mac prend en charge les mêmes API qu’un complément s’exécutant dans Office sur Windows, le code de votre complément doit s’exécuter de la même manière sur les deux plateformes.
 
 -  **Précisez les conditions de fonctionnement de l’API dans le manifeste de votre complément ou avec des vérifications à l’exécution.**
 

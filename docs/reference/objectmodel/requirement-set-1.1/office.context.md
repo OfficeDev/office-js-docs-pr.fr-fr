@@ -1,14 +1,14 @@
 ---
 title: Office. Context-ensemble de conditions requises 1,1
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: c7c33f31a63fc2a57b9457fc788a80c925d3eef1
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 5806245f91d5c47efbeec936ecc06ee9c3b44391
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450288"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127449"
 ---
 # <a name="context"></a>context
 
@@ -26,11 +26,11 @@ L’espace de noms Office.context fournit des interfaces partagées qui sont uti
 
 ### <a name="namespaces"></a>Espaces de noms
 
-[Mailbox](office.context.mailbox.md): permet d'accéder au modèle d'objet du complément Outlook pour Microsoft Outlook et Microsoft Outlook sur le Web.
+[Mailbox](office.context.mailbox.md): permet d’accéder au modèle d’objet du complément Outlook pour Microsoft Outlook.
 
-### <a name="members"></a>Membres
+### <a name="members"></a>Members
 
-####  <a name="displaylanguage-string"></a>displayLanguage :String
+#### <a name="displaylanguage-string"></a>displayLanguage: chaîne
 
 Obtient les paramètres régionaux (langue) au format de balise de langue RFC 1766 spécifiés par l’utilisateur pour l’interface utilisateur de l’application hôte Office.
 
@@ -68,7 +68,7 @@ function write(message){
 }
 ```
 
-####  <a name="roamingsettings-roamingsettingsjavascriptapioutlook11officeroamingsettings"></a>roamingSettings :[RoamingSettings](/javascript/api/outlook_1_1/office.RoamingSettings)
+#### <a name="roamingsettings-roamingsettingsjavascriptapioutlook11officeroamingsettings"></a>roamingSettings: [roamingSettings](/javascript/api/outlook_1_1/office.RoamingSettings)
 
 Obtient un objet qui représente les paramètres personnalisés ou l’état d’un complément de messagerie enregistrés dans la boîte aux lettres d’un utilisateur.
 

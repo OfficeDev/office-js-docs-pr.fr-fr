@@ -1,14 +1,14 @@
 ---
-ms.date: 05/08/2019
+ms.date: 06/18/2019
 description: Découvrez les meilleures pratiques pour le développement des fonctions personnalisées dans Excel.
 title: Meilleures pratiques pour l’utilisation des fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: d825f5a9f14e240ca5af3c3325cb646248d99ca9
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 7c836119a783f5cc7e1e7f4f52f1d21b86091bfe
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952102"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127932"
 ---
 # <a name="custom-functions-best-practices"></a>Meilleures pratiques pour l’utilisation des fonctions personnalisées
 
@@ -106,6 +106,6 @@ Découvrez comment [effectuer des requêtes Web avec des fonctions personnalisé
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Générer automatiquement des métadonnées JSON pour les fonctions personnalisées](custom-functions-json-autogeneration.md)
+* [Générer automatiquement des métadonnées JSON pour des fonctions personnalisées](custom-functions-json-autogeneration.md)
 * [Métadonnées fonctions personnalisées](custom-functions-json.md)
 * [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)

@@ -1,14 +1,14 @@
 ---
 title: Élément Action dans le fichier manifeste
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 58dcbae57ea2c0e55c9e7708b122484b99e956fe
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 06b0e3aa9c25346135167ea8c34e69344ef9863d
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952403"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128523"
 ---
 # <a name="action-element"></a>Action, élément
 
@@ -140,7 +140,7 @@ Les exemples ci-dessous illustrent deux différentes actions qui utilisent l’�
 Élément facultatif quand **xsi:type** a la valeur « ShowTaskpane ». Les éléments [VersionOverrides](versionoverrides.md) le contenant doivent avoir une valeur d’attribut `xsi:type` de `VersionOverridesV1_1`. Incluez cet élément avec une valeur `true` pour prendre en charge l’épinglage du volet Office. L’utilisateur pourra alors « épingler » le volet Office qui restera ouvert pendant que la sélection est modifiée. Pour en savoir plus, consultez l’article relatif à l’[implémentation d’un volet Office épinglable dans Outlook](/outlook/add-ins/pinnable-taskpane).
 
 > [!NOTE]
-> Supportspinning n’est est actuellement uniquement pris en charge par Outlook 2016 sur Windows (Build 7628,1000 ou version ultérieure) et Outlook 2016 pour Mac (Build 16.13.503 ou version ultérieure).
+> Supportspinning n’est est actuellement uniquement pris en charge par Outlook 2016 ou version ultérieure sur Windows (Build 7628,1000 ou version ultérieure) et Outlook 2016 ou version ultérieure sur Mac (Build 16.13.503 ou version ultérieure).
 
 ```xml
 <Action xsi:type="ShowTaskpane">

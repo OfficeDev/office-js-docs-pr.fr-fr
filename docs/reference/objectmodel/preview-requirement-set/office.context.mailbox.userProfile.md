@@ -1,14 +1,14 @@
 ---
-title: Office. Context. Mailbox. userProfile-aperçu de l'ensemble de conditions requises
+title: Office. Context. Mailbox. userProfile-aperçu de l’ensemble de conditions requises
 description: ''
-ms.date: 04/12/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 29111314f16bb9c6518b350254a3036ffa125796
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 051615f28db420ad1d198e21d9a9eeb1cad3fe7a
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451961"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127526"
 ---
 # <a name="userprofile"></a>userProfile
 
@@ -33,12 +33,12 @@ ms.locfileid: "32451961"
 
 ### <a name="members"></a>Membres
 
-####  <a name="accounttype-string"></a>accountType: chaîne
+#### <a name="accounttype-string"></a>accountType: chaîne
 
 > [!NOTE]
-> Actuellement, ce membre est uniquement pris en charge dans Outlook 2016 ou version ultérieure pour Mac (Build 16.9.1212 ou version ultérieure).
+> Actuellement, ce membre est uniquement pris en charge dans Outlook 2016 ou version ultérieure sur Mac (Build 16.9.1212 ou version ultérieure).
 
-Obtient le type de compte de l'utilisateur associé à la boîte aux lettres. Les valeurs possibles sont répertoriées dans le tableau suivant.
+Obtient le type de compte de l’utilisateur associé à la boîte aux lettres. Les valeurs possibles sont répertoriées dans le tableau suivant.
 
 | Valeur | Description |
 |-------|-------------|
@@ -68,7 +68,7 @@ console.log(Office.context.mailbox.userProfile.accountType);
 ---
 ---
 
-####  <a name="displayname-string"></a>displayName :String
+#### <a name="displayname-string"></a>displayName: String
 
 Obtient le nom d’affichage de l’utilisateur.
 
@@ -94,7 +94,7 @@ console.log(Office.context.mailbox.userProfile.displayName);
 ---
 ---
 
-####  <a name="emailaddress-string"></a>emailAddress :String
+#### <a name="emailaddress-string"></a>emailAddress: chaîne
 
 Obtient l’adresse de messagerie SMTP de l’utilisateur.
 
@@ -120,7 +120,7 @@ console.log(Office.context.mailbox.userProfile.emailAddress);
 ---
 ---
 
-####  <a name="timezone-string"></a>timeZone :String
+#### <a name="timezone-string"></a>timeZone: chaîne
 
 Obtient le fuseau horaire par défaut de l’utilisateur.
 

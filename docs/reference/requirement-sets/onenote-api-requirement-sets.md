@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API JavaScript pour OneNote
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 ms.prod: onenote
 localization_priority: Normal
-ms.openlocfilehash: 287e405955477a98854b1df4a81fe90ec16e5bbc
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 4664cb042a9b641f2439d0979d2bf9947a2689f8
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450099"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127057"
 ---
 # <a name="onenote-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour OneNote
 
@@ -17,7 +17,7 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 
 Le tableau suivant répertorie les ensembles de conditions requises pour OneNote, les applications hôtes Office qui prennent en charge ces conditions et les numéros de version ou la date de disponibilité.
 
-|  Ensemble de conditions requises  |  Office Online | 
+|  Ensemble de conditions requises  |  Office sur le Web |
 |:-----|:-----|
 | OneNoteApi 1.1  | Septembre 2016 |  
 
@@ -25,20 +25,20 @@ Le tableau suivant répertorie les ensembles de conditions requises pour OneNote
 
 Pour plus d’informations sur les ensembles de conditions requises des API communes, voir [Ensembles de conditions requises des API communes pour Office](office-add-in-requirement-sets.md).
 
-## <a name="onenote-javascript-api-11"></a>API JavaScript pour OneNote 1.1 
+## <a name="onenote-javascript-api-11"></a>API JavaScript pour OneNote 1.1
 
 L’API JavaScript 1.1 pour OneNote est la première version de l’API. Pour plus d’informations sur l’API, consultez les rubriques de référence sur l’[Récapitulatif de programmation API JavaScript pour OneNote](/office/dev/add-ins/onenote/onenote-add-ins-programming-overview).
 
 ## <a name="runtime-requirement-support-check"></a>Vérification de la prise en charge d’un ensemble de conditions requises à l’exécution
 
-Lors de l’exécution, les compléments peuvent vérifier si un hôte particulier prend en charge un ensemble de conditions requises d’API en procédant comme suit : 
+Pendant l’exécution, les compléments peuvent vérifier si un hôte particulier prend en charge un ensemble de conditions requises de l’API en procédant comme suit.
 
 ```js
 if (Office.context.requirements.isSetSupported('OneNoteApi', 1.1) === true) {
-  /// perform actions
+  // Perform actions.
 }
 else {
-  /// provide alternate flow/logic
+  // Provide alternate flow/logic.
 }
 ```
 

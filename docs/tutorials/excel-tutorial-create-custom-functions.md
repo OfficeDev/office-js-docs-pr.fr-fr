@@ -1,16 +1,16 @@
 ---
 title: Didacticiel de fonctions personnalisées Excel
 description: Dans ce didacticiel, vous allez créer un complément Excel qui contient une fonction personnalisée qui effectue des calculs, requiert des données web ou lance un flux de données web.
-ms.date: 06/17/2019
+ms.date: 06/20/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 70c1d68f585bd4db43c8d66a6fafd142556bd03b
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: 3ae7896c082e7a1a45fb153dc69772f206a433de
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059803"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126980"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Didacticiel : créer des fonctions personnalisées dans Excel
 
@@ -27,7 +27,7 @@ Dans ce didacticiel, vous allez :
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel sur Windows (version 1904 ou ultérieure, connexion à l’abonnement Office 365) ou Excel sur le Web
+* Excel sur Windows (version 1904 ou ultérieure, connexion à l’abonnement Office 365) ou sur le Web
 
 ## <a name="create-a-custom-functions-project"></a>Créer un projet de fonctions personnalisées
 
@@ -62,7 +62,7 @@ Dans ce didacticiel, vous allez :
     > [!NOTE]
     > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté `npm run build`, acceptez d’installer le certificat fourni par le générateur Yeoman.
 
-4. Démarrez le serveur web local qui est exécuté dans Node.js. Vous pouvez essayer le complément de fonction personnalisée dans Excel sur Windows ou Excel online.
+4. Démarrez le serveur web local qui est exécuté dans Node.js. Vous pouvez essayer le complément de fonction personnalisée dans Excel sur le Web ou Windows.
 
 # <a name="excel-on-windowstabexcel-windows"></a>[Excel sur Windows](#tab/excel-windows)
 
@@ -72,19 +72,19 @@ Pour tester votre complément dans Excel sous Windows, exécutez la commande sui
 npm run start:desktop
 ```
 
-# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Excel sur le Web](#tab/excel-online)
 
-Pour tester votre complément dans Excel Online, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local démarre.
+Pour tester votre complément dans Excel sur un navigateur, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local démarre.
 
 ```command&nbsp;line
 npm run start:web
 ```
 
-Pour utiliser votre complément de fonctions personnalisées, ouvrez un nouveau classeur dans Excel online. Dans ce classeur, effectuez les étapes suivantes pour chargement votre complément.
+Pour utiliser votre complément de fonctions personnalisées, ouvrez un nouveau classeur dans Excel sur le Web. Dans ce classeur, effectuez les étapes suivantes pour chargement votre complément.
 
-1. Dans Excel Online, sélectionnez l’onglet **Insérer**, puis **Compléments**.
+1. Dans Excel, sélectionnez l’onglet **insertion** , puis **compléments**.
 
-   ![Insérer un ruban dans Excel Online avec l’icône mes compléments mise en surbrillance](../images/excel-cf-online-register-add-in-1.png)
+   ![Insérer un ruban dans Excel sur le Web avec l’icône mes compléments mise en surbrillance](../images/excel-cf-online-register-add-in-1.png)
    
 2. Sélectionnez**Gérer mes compléments** et sélectionnez **Télécharger mon complément**.
 
@@ -149,7 +149,7 @@ Intégration de données à partir du Web est un excellent moyen pour étendre E
     npm run build
     ```
 
-4. Procédez comme suit (pour Excel sur Windows ou Excel Online) pour réenregistrer le complément dans Excel. Vous devez effectuer ces étapes avant que la nouvelle fonction ne soit disponible. 
+4. Procédez comme suit (pour Excel sur le Web ou Windows) pour réenregistrer le complément dans Excel. Vous devez effectuer ces étapes avant que la nouvelle fonction ne soit disponible.
 
 # <a name="excel-on-windowstabexcel-windows"></a>[Excel sur Windows](#tab/excel-windows)
 
@@ -160,13 +160,13 @@ Intégration de données à partir du Web est un excellent moyen pour étendre E
 3. Dans la liste des compléments disponibles, recherchez la section **Compléments Développeur** et sélectionnez votre complément**bourse** pour effectuer cette opération.
     ![Insérer un ruban dans Excel sur Windows avec le complément de fonctions personnalisées Excel mis en surbrillance dans la liste mes compléments](../images/list-stock-ticker-red.png)
 
-# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Excel sur le Web](#tab/excel-online)
 
-1. Dans Excel Online, sélectionnez l’onglet **insérer**, puis **compléments**. ![Insérer du ruban dans Excel Online avec l’icône Mes compléments mis en évidence](../images/excel-cf-online-register-add-in-1.png)
+1. Dans Excel, sélectionnez l’onglet **insertion** , puis **compléments**.  ![Insérer un ruban dans Excel sur le Web avec l’icône mes compléments mise en surbrillance](../images/excel-cf-online-register-add-in-1.png)
 
-2. Sélectionnez**Gérer mes compléments** et sélectionnez **Télécharger mon complément**. 
+2. Sélectionnez**Gérer mes compléments** et sélectionnez **Télécharger mon complément**.
 
-3. Sélectionnez **Parcourir... ** et accédez au répertoire racine du projet créé par le Générateur de Yo Office. 
+3. Sélectionnez **Parcourir... ** et accédez au répertoire racine du projet créé par le Générateur de Yo Office.
 
 4. Sélectionnez le fichier**manifest.xml** puis sélectionnez**Ouvrir**, puis sélectionnez **Télécharger**.
 
@@ -233,7 +233,7 @@ La fonction`stockPrice`que vous venez de créer renvoie le prix d’une action �
     npm run build
     ```
 
-3. Procédez comme suit (pour Excel sur Windows ou Excel Online) pour réenregistrer le complément dans Excel. Vous devez effectuer ces étapes avant que la nouvelle fonction ne soit disponible. 
+3. Procédez comme suit (pour Excel sur le Web ou Windows) pour réenregistrer le complément dans Excel. Vous devez effectuer ces étapes avant que la nouvelle fonction ne soit disponible. 
 
 # <a name="excel-on-windowstabexcel-windows"></a>[Excel sur Windows](#tab/excel-windows)
 
@@ -244,9 +244,9 @@ La fonction`stockPrice`que vous venez de créer renvoie le prix d’une action �
 3. Dans la liste des compléments disponibles, recherchez la section **Compléments Développeur** et sélectionnez votre complément**bourse** pour effectuer cette opération.
     ![Insérer un ruban dans Excel sur Windows avec le complément de fonctions personnalisées Excel mis en surbrillance dans la liste mes compléments](../images/list-stock-ticker-red.png)
 
-# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Excel sur le Web](#tab/excel-online)
 
-1. Dans Excel Online, sélectionnez l’onglet **insérer**, puis **compléments**. ![Insérer du ruban dans Excel Online avec l’icône Mes compléments mis en évidence](../images/excel-cf-online-register-add-in-1.png)
+1. Dans Excel, sélectionnez l’onglet **insertion** , puis **compléments**.  ![Insérer un ruban dans Excel sur le Web avec l’icône mes compléments mise en surbrillance](../images/excel-cf-online-register-add-in-1.png)
 
 2. Sélectionnez**Gérer mes compléments** et sélectionnez **Télécharger mon complément**.
 

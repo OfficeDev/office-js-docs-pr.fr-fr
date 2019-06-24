@@ -1,15 +1,15 @@
 ---
-ms.date: 06/17/2019
+ms.date: 06/20/2019
 description: Développement de fonctions personnalisées dans le Guide de démarrage rapide d’Excel.
 title: Démarrage rapide des fonctions personnalisées
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f172139f3aafb374eec3c1350b127ed3194d00e0
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: 8e7fbf247df04a12c38ad24d9ba6335a7f7bdaf8
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059929"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128579"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Prise en main du développement de fonctions personnalisées Excel
 
@@ -58,7 +58,7 @@ Pour commencer, vous utiliserez le Yeoman Générateur pour créer le projet de 
     > [!NOTE]
     > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté `npm run build`, acceptez d’installer le certificat fourni par le générateur Yeoman.
 
-4. Démarrez le serveur web local qui est exécuté dans Node.js. Vous pouvez essayer le complément de fonction personnalisée dans Excel sur Windows ou Excel online. Vous serez peut-être invité à ouvrir le volet Office du complément, bien que ce soit facultatif. Vous pouvez toujours exécuter vos fonctions personnalisées sans ouvrir le volet Office de votre complément.
+4. Démarrez le serveur web local qui est exécuté dans Node.js. Vous pouvez essayer le complément de fonction personnalisée dans Excel sur le Web ou Windows. Vous serez peut-être invité à ouvrir le volet Office du complément, bien que ce soit facultatif. Vous pouvez toujours exécuter vos fonctions personnalisées sans ouvrir le volet Office de votre complément.
 
 # <a name="excel-on-windowstabexcel-windows"></a>[Excel sur Windows](#tab/excel-windows)
 
@@ -68,19 +68,19 @@ Pour tester votre complément dans Excel sous Windows, exécutez la commande sui
 npm run start:desktop
 ```
 
-# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Excel sur le Web](#tab/excel-online)
 
-Pour tester votre complément dans Excel Online, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local démarre.
+Pour tester votre complément dans Excel sur le Web, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local démarre.
 
 ```command&nbsp;line
 npm run start:web
 ```
 
-Pour utiliser votre complément de fonctions personnalisées, ouvrez un nouveau classeur dans Excel online. Dans ce classeur, effectuez les étapes suivantes pour chargement votre complément.
+Pour utiliser votre complément de fonctions personnalisées, ouvrez un nouveau classeur dans Excel dans un navigateur. Dans ce classeur, effectuez les étapes suivantes pour chargement votre complément.
 
-1. Dans Excel Online, sélectionnez l’onglet **Insérer**, puis **Compléments**.
+1. Dans Excel, sélectionnez l’onglet **insertion** , puis **compléments**.
 
-   ![Insérer un ruban dans Excel Online avec l’icône mes compléments mise en surbrillance](../images/excel-cf-online-register-add-in-1.png)
+   ![Insérer un ruban dans Excel sur le Web avec l’icône mes compléments mise en surbrillance](../images/excel-cf-online-register-add-in-1.png)
    
 2. Sélectionnez**Gérer mes compléments** et sélectionnez **Télécharger mon complément**.
 

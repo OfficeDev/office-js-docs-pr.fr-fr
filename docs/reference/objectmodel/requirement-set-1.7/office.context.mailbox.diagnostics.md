@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Diagnostics-ensemble de conditions requises 1,7
 description: ''
-ms.date: 04/12/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 967834ff254f1b10d7518a012410beb2f327be68
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 2a79dbe7d392b809cf0de0b5ee7096473ea3e197
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450358"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127190"
 ---
 # <a name="diagnostics"></a>diagnostics
 
@@ -28,13 +28,13 @@ Fournit des informations de diagnostic à un complément Outlook.
 
 | Membre | Type |
 |--------|------|
-| [Nom-d'hôte](#hostname-string) | Member |
+| [Nom-d’hôte](#hostname-string) | Member |
 | [hostVersion](#hostversion-string) | Member |
 | [OWAView](#owaview-string) | Membre |
 
 ### <a name="members"></a>Membres
 
-####  <a name="hostname-string"></a>hostName :String
+#### <a name="hostname-string"></a>NomHôte: chaîne
 
 Obtient une chaîne qui représente le nom de l’application hôte.
 
@@ -55,11 +55,11 @@ Chaîne qui peut avoir l’une des valeurs suivantes : `Outlook`, `Mac Outlook`
 ---
 ---
 
-####  <a name="hostversion-string"></a>hostVersion :String
+#### <a name="hostversion-string"></a>hostVersion: chaîne
 
 Obtient une chaîne qui représente la version de l’application hôte ou du serveur Exchange Server.
 
-Si le complément de messagerie s’exécute sur le client de bureau Outlook ou sur Outlook pour iOS, la propriété `hostVersion` renvoie la version de l’application hôte, Outlook. Dans Outlook Web App, la propriété renvoie la version du serveur Exchange. Exemple : la chaîne `15.0.468.0`.
+Si le complément de messagerie est en cours d’exécution sur le client de bureau Outlook ou `hostVersion` sur iOS, la propriété renvoie la version de l’application hôte, Outlook. Dans Outlook sur le Web, la propriété renvoie la version du serveur Exchange. Exemple : la chaîne `15.0.468.0`.
 
 ##### <a name="type"></a>Type
 
@@ -76,19 +76,19 @@ Si le complément de messagerie s’exécute sur le client de bureau Outlook ou 
 ---
 ---
 
-####  <a name="owaview-string"></a>OWAView :String
+#### <a name="owaview-string"></a>OWAView: chaîne
 
-Obtient une chaîne qui représente le mode d’affichage actuel dans Outlook Web App.
+Obtient une valeur de type String qui représente l’affichage actuel d’Outlook sur le Web.
 
 La chaîne renvoyée peut avoir une des valeurs suivantes : `OneColumn`, `TwoColumns`, ou `ThreeColumns`.
 
-Si l’application hôte n’est pas Outlook Web App, l’accès à cette propriété génère la valeur `undefined`.
+Si l’application hôte n’est pas Outlook sur le Web, l’accès à cette propriété génère `undefined`.
 
-Outlook Web App a trois modes d’affichage qui correspondent à la largeur de l’écran et de la fenêtre, ainsi qu’au nombre de colonnes pouvant être affichées :
+Outlook sur le Web possède trois modes d’affichage qui correspondent à la largeur de l’écran et de la fenêtre, ainsi qu’au nombre de colonnes pouvant être affichées:
 
-*   `OneColumn`, qui est affiché lorsque l’écran est étroit. Outlook Web App offre une mise en page à une colonne sur l’ensemble de l’écran d’un smartphone.
-*   `TwoColumns`, qui est affiché lorsque l’écran est plus large. Outlook Web App utilise ce mode sur la plupart des tablettes.
-*   `ThreeColumns`, qui est affiché lorsque l’écran est large. Par exemple, Outlook Web App utilise ce mode dans une fenêtre en mode Plein écran sur un ordinateur de bureau.
+*   `OneColumn`, qui est affiché lorsque l’écran est étroit. Outlook sur le Web utilise cette disposition sur une seule colonne sur la totalité de l’écran d’un smartphone.
+*   `TwoColumns`, qui est affiché lorsque l’écran est plus large. Outlook sur le Web utilise cet affichage sur la plupart des tablettes.
+*   `ThreeColumns`, qui est affiché lorsque l’écran est large. Par exemple, Outlook sur le Web utilise cet affichage dans une fenêtre plein écran sur un ordinateur de bureau.
 
 ##### <a name="type"></a>Type
 

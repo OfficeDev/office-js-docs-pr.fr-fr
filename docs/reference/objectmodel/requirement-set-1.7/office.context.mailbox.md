@@ -1,20 +1,20 @@
 ---
 title: Office. Context. Mailbox-ensemble de conditions requises 1,7
 description: ''
-ms.date: 04/12/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 0f84e657644b198fbca722a0628a5bafcce84377
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 95fb4ce6bcc3c44c77dc4623a12b140ca979949c
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450225"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127148"
 ---
 # <a name="mailbox"></a>boîte aux lettres
 
 ### <a name="officeofficemdcontextofficecontextmdmailbox"></a>[Office](Office.md)[.context](Office.context.md).mailbox
 
-Permet d’accéder au modèle objet du complément Outlook pour Microsoft Outlook et Microsoft Outlook sur le web.
+Permet d’accéder au modèle d’objet du complément Outlook pour Microsoft Outlook.
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -55,12 +55,12 @@ Permet d’accéder au modèle objet du complément Outlook pour Microsoft Out
 
 ### <a name="members"></a>Membres
 
-#### <a name="ewsurl-string"></a>ewsUrl :String
+#### <a name="ewsurl-string"></a>ewsUrl: chaîne
 
 Obtient l’URL du point de terminaison des services Web Exchange (EWS) pour ce compte de messagerie. Mode lecture uniquement.
 
 > [!NOTE]
-> Ce membre n’est pas pris en charge dans Outlook pour iOS ou Outlook pour Android.
+> Ce membre n’est pas pris en charge dans Outlook sur iOS ou Android.
 
 La valeur `ewsUrl` peut être utilisée par un service distant pour émettre des appels EWS vers la boîte aux lettres de l’utilisateur. Par exemple, vous pouvez créer un service distant pour [obtenir des pièces jointes à partir de l’élément sélectionné](/outlook/add-ins/get-attachments-of-an-outlook-item).
 
@@ -83,7 +83,7 @@ En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context
 ---
 ---
 
-#### <a name="resturl-string"></a>restUrl :String
+#### <a name="resturl-string"></a>restUrl: chaîne
 
 obtient l’URL du point de terminaison REST de ce compte de messagerie.
 
@@ -107,7 +107,7 @@ En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context
 
 ### <a name="methods"></a>Méthodes
 
-####  <a name="addhandlerasynceventtype-handler-options-callback"></a>addHandlerAsync(eventType, handler, [options], [callback])
+#### <a name="addhandlerasynceventtype-handler-options-callback"></a>addHandlerAsync(eventType, handler, [options], [callback])
 
 ajoute un gestionnaire d’événements pour un événement pris en charge.
 
@@ -153,12 +153,12 @@ function loadNewItem(eventArgs) {
 ---
 ---
 
-####  <a name="converttoewsiditemid-restversion--string"></a>convertToEwsId(itemId, restVersion) → {String}
+#### <a name="converttoewsiditemid-restversion--string"></a>convertToEwsId(itemId, restVersion) → {String}
 
 Convertit un ID d’élément mis en forme pour REST au format EWS.
 
 > [!NOTE]
-> Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.
+> Cette méthode n’est pas prise en charge dans Outlook sur iOS ou Android.
 
 Les ID d’élément extraits via une API REST (telle que l’[API Courrier Outlook](/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) ou [Microsoft Graph](https://graph.microsoft.io/)) utilisent un format différent de celui employé par les services web Exchange (EWS). La méthode `convertToEwsId` convertit un ID mis en forme pour REST au format approprié pour EWS.
 
@@ -194,13 +194,13 @@ var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.Re
 ---
 ---
 
-####  <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook17officelocalclienttime"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook_1_7/office.LocalClientTime)}
+#### <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook17officelocalclienttime"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook_1_7/office.LocalClientTime)}
 
 Obtient un dictionnaire contenant les informations d’heure dans l’heure locale du client.
 
-Les dates et heures utilisées par une application de messagerie pour Outlook ou Outlook Web App peuvent utiliser des fuseaux horaires différents. Outlook utilise le fuseau horaire de l’ordinateur ; Outlook Web App utilise le fuseau horaire défini dans le Centre d’administration Exchange (CAE). Vous devez gérer les valeurs de date et d’heure afin que les valeurs que vous affichez sur l’interface utilisateur soient toujours cohérentes avec le fuseau horaire attendu par l’utilisateur.
+Une application de messagerie pour Outlook sur un ordinateur de bureau ou sur le Web peut utiliser différents fuseaux horaires pour les dates et les heures. Outlook sur un ordinateur de bureau utilise le fuseau horaire de l’ordinateur client; Outlook sur le Web utilise le fuseau horaire défini dans le centre d’administration Exchange. Vous devez gérer les valeurs de date et d’heure afin que les valeurs que vous affichez sur l’interface utilisateur soient toujours cohérentes avec le fuseau horaire attendu par l’utilisateur.
 
-Si l’application de messagerie est en cours d’exécution dans Outlook, la méthode `convertToLocalClientTime` renvoie un objet de dictionnaire dont les valeurs sont définies pour le fuseau horaire de l’ordinateur client. Si l’application de messagerie est en cours d’exécution dans Outlook Web App, la méthode `convertToLocalClientTime` renvoie un objet de dictionnaire dont les valeurs sont définies pour le fuseau horaire spécifié dans le CAE.
+Si l’application de messagerie est en cours d’exécution dans Outlook sur un `convertToLocalClientTime` client de bureau, la méthode renvoie un objet Dictionary dont les valeurs sont définies sur le fuseau horaire de l’ordinateur client. Si l’application de messagerie est en cours d’exécution dans Outlook sur `convertToLocalClientTime` le Web, la méthode renvoie un objet Dictionary dont les valeurs sont définies sur le fuseau horaire spécifié dans le centre d’administration Exchange.
 
 ##### <a name="parameters"></a>Paramètres
 
@@ -223,12 +223,12 @@ Type : [LocalClientTime](/javascript/api/outlook_1_7/office.LocalClientTime)
 ---
 ---
 
-####  <a name="converttorestiditemid-restversion--string"></a>convertToRestId(itemId, restVersion) → {String}
+#### <a name="converttorestiditemid-restversion--string"></a>convertToRestId(itemId, restVersion) → {String}
 
 Convertit un ID d’élément mis en forme pour EWS au format REST.
 
 > [!NOTE]
-> Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.
+> Cette méthode n’est pas prise en charge dans Outlook sur iOS ou Android.
 
 Les ID d’élément récupérés via EWS ou la propriété `itemId` utilisent un format différent de celui employé par les API REST (telles que l’[API Courrier Outlook](/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) ou [Microsoft Graph](https://graph.microsoft.io/)). La méthode `convertToRestId` convertit un ID mis en forme pour EWS au format approprié pour REST.
 
@@ -236,7 +236,7 @@ Les ID d’élément récupérés via EWS ou la propriété `itemId` utilisent u
 
 |Nom| Type| Description|
 |---|---|---|
-|`itemId`| String|ID d’élément mis en forme pour les services web Exchange (EWS)|
+|`itemId`| Chaîne|ID d’élément mis en forme pour les services web Exchange (EWS)|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_7/office.mailboxenums.restversion)|Valeur indiquant la version de l’API REST Outlook avec laquelle l’ID converti sera utilisé.|
 
 ##### <a name="requirements"></a>Configuration requise
@@ -264,7 +264,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 ---
 ---
 
-####  <a name="converttoutcclienttimeinput--date"></a>convertToUtcClientTime(input) → {Date}
+#### <a name="converttoutcclienttimeinput--date"></a>convertToUtcClientTime(input) → {Date}
 
 Obtient un objet Date à partir d’un dictionnaire contenant des informations d’heure.
 
@@ -299,18 +299,18 @@ Objet Date avec l’heure exprimée au format UTC.
 ---
 ---
 
-####  <a name="displayappointmentformitemid"></a>displayAppointmentForm(itemId)
+#### <a name="displayappointmentformitemid"></a>displayAppointmentForm(itemId)
 
 Affiche un rendez-vous de calendrier existant.
 
 > [!NOTE]
-> Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.
+> Cette méthode n’est pas prise en charge dans Outlook sur iOS ou Android.
 
 La méthode `displayAppointmentForm` ouvre un rendez-vous du calendrier existant dans une nouvelle fenêtre du Bureau ou dans une boîte de dialogue sur les appareils mobiles.
 
-Dans Outlook pour Mac, vous pouvez utiliser cette méthode pour afficher un seul rendez-vous qui ne fait pas partie d’une série périodique, ou le rendez-vous principal d’une série périodique, mais vous ne pouvez pas afficher une instance de la série. En effet, dans Outlook pour Mac, vous ne pouvez pas accéder aux propriétés (notamment l’ID d’élément) des instances d’une série périodique.
+Dans Outlook sur Mac, vous pouvez utiliser cette méthode pour afficher un seul rendez-vous qui ne fait pas partie d’une série périodique ou le rendez-vous principal d’une série périodique, mais vous ne pouvez pas afficher une instance de la série. En effet, dans Outlook sur Mac, vous ne pouvez pas accéder aux propriétés (y compris l’ID d’élément) des instances d’une série périodique.
 
-Dans Outlook Web App, cette méthode ouvre le formulaire spécifié uniquement si le corps du formulaire comprend 32 Ko de caractères maximum.
+Dans Outlook sur le Web, cette méthode ouvre le formulaire spécifié uniquement si le corps du formulaire est inférieur ou égal à 32KO nombre de caractères.
 
 Si l’identificateur de l’élément spécifié n’identifie aucun rendez-vous existant, un volet vierge s’ouvre sur l’ordinateur ou l’appareil client. Par ailleurs, aucun message d’erreur n’est retourné.
 
@@ -337,16 +337,16 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 ---
 ---
 
-####  <a name="displaymessageformitemid"></a>displayMessageForm(itemId)
+#### <a name="displaymessageformitemid"></a>displayMessageForm(itemId)
 
 Affiche un message existant.
 
 > [!NOTE]
-> Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.
+> Cette méthode n’est pas prise en charge dans Outlook sur iOS ou Android.
 
 La méthode `displayMessageForm` ouvre un message existant dans une nouvelle fenêtre du Bureau ou dans une boîte de dialogue sur les appareils mobiles.
 
-Dans Outlook Web App, cette méthode ouvre le formulaire indiqué uniquement si le corps du formulaire comprend 32 Ko de caractères maximum.
+Dans Outlook sur le Web, cette méthode ouvre le formulaire spécifié uniquement si le corps du formulaire est inférieur ou égal à 32 Ko nombre de caractères.
 
 Si l’identificateur de l’élément spécifié n’identifie aucun message existant, aucun message ne s’affiche sur l’ordinateur client. Par ailleurs, aucun message d’erreur n’est retourné.
 
@@ -356,7 +356,7 @@ N’utilisez pas la méthode `displayMessageForm` ayant une valeur `itemId` qui 
 
 |Nom| Type| Description|
 |---|---|---|
-|`itemId`| String|Identificateur des services web Exchange pour un message existant.|
+|`itemId`| Chaîne|Identificateur des services web Exchange pour un message existant.|
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -380,11 +380,11 @@ Office.context.mailbox.displayMessageForm(messageId);
 Affiche un formulaire permettant de créer un rendez-vous du calendrier.
 
 > [!NOTE]
-> Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.
+> Cette méthode n’est pas prise en charge dans Outlook sur iOS ou Android.
 
 La méthode `displayNewAppointmentForm` ouvre un formulaire qui permet à l’utilisateur de créer un rendez-vous ou une réunion. Si des paramètres sont spécifiés, les champs du formulaire de rendez-vous sont remplis automatiquement avec le contenu des paramètres.
 
-Dans Outlook Web App et OWA pour les périphériques, cette méthode affiche toujours un formulaire contenant un champ Participants. Si vous ne spécifiez pas de participants comme arguments d’entrée, la méthode affiche un formulaire contenant le bouton **Enregistrer**. Si vous avez spécifié des participants, le formulaire inclut ces derniers, en plus du bouton **Envoyer**.
+Dans Outlook sur le Web et les appareils mobiles, cette méthode affiche toujours un formulaire avec un champ participants. Si vous ne spécifiez pas de participants comme arguments d’entrée, la méthode affiche un formulaire contenant le bouton **Enregistrer**. Si vous avez spécifié des participants, le formulaire inclut ces derniers, en plus du bouton **Envoyer**.
 
 Dans le client riche Outlook et Outlook RT, si vous indiquez des participants ou des ressources dans le paramètre `requiredAttendees`, `optionalAttendees`, ou `resources`, cette méthode affiche un formulaire de réunion comportant un bouton **Envoyer**. Si vous ne spécifiez aucun destinataire, cette méthode affiche un formulaire de rendez-vous avec un bouton **Enregistrer et fermer**.
 
@@ -404,7 +404,7 @@ Si l’un des paramètres dépasse les limites définies en matière de taille o
 | `parameters.end` | Date | Objet `Date` spécifiant la date et l’heure de fin du rendez-vous. |
 | `parameters.location` | Chaîne | Chaîne contenant l’emplacement du rendez-vous. La chaîne est limitée à 255 caractères maximum. |
 | `parameters.resources` | Array.&lt;String&gt; | Tableau de chaînes contenant les ressources requises pour le rendez-vous. Le tableau est limité à 100 entrées maximum. |
-| `parameters.subject` | String | Chaîne contenant l’objet du rendez-vous. La chaîne est limitée à 255 caractères maximum. |
+| `parameters.subject` | Chaîne | Chaîne contenant l’objet du rendez-vous. La chaîne est limitée à 255 caractères maximum. |
 | `parameters.body` | String | Corps du rendez-vous. La taille du corps du message est limitée à 32 Ko. |
 
 ##### <a name="requirements"></a>Configuration requise
@@ -442,7 +442,7 @@ Office.context.mailbox.displayNewAppointmentForm(
 
 Affiche un formulaire permettant de créer un message.
 
-La `displayNewMessageForm` méthode ouvre un formulaire qui permet à l'utilisateur de créer un message. Si les paramètres sont spécifiés, les champs du formulaire de message sont automatiquement renseignés avec le contenu des paramètres.
+La `displayNewMessageForm` méthode ouvre un formulaire qui permet à l’utilisateur de créer un message. Si les paramètres sont spécifiés, les champs du formulaire de message sont automatiquement renseignés avec le contenu des paramètres.
 
 Si l’un des paramètres dépasse les limites définies en matière de taille ou si un nom de paramètre inconnu est spécifié, une exception est levée.
 
@@ -453,18 +453,18 @@ Si l’un des paramètres dépasse les limites définies en matière de taille o
 
 |Nom| Type| Description|
 |---|---|---|
-| `parameters` | Object | Dictionnaire de paramètres décrivant le nouveau message. |
+| `parameters` | Objet | Dictionnaire de paramètres décrivant le nouveau message. |
 | `parameters.toRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)&gt; | Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un `EmailAddressDetails` objet pour chacun des destinataires de la ligne à. Le tableau est limité à 100 entrées maximum. |
 | `parameters.ccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)&gt; | Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un `EmailAddressDetails` objet pour chacun des destinataires de la ligne CC. Le tableau est limité à 100 entrées maximum. |
 | `parameters.bccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)&gt; | Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un `EmailAddressDetails` objet pour chacun des destinataires de la ligne CCI. Le tableau est limité à 100 entrées maximum. |
-| `parameters.subject` | String | Chaîne contenant l'objet du message. La chaîne est limitée à 255 caractères maximum. |
+| `parameters.subject` | Chaîne | Chaîne contenant l’objet du message. La chaîne est limitée à 255 caractères maximum. |
 | `parameters.htmlBody` | Chaîne | Corps HTML du message. La taille du corps du message est limitée à 32 Ko. |
 | `parameters.attachments` | Array.&lt;Object&gt; | Tableau d’objets JSON qui sont des pièces jointes de fichier ou d’élément. |
 | `parameters.attachments.type` | Chaîne | Indique le type de pièce jointe. Doit être `file` pour une pièce jointe de fichier ou `item` pour une pièce jointe d’élément. |
-| `parameters.attachments.name` | String | Chaîne qui contient le nom de la pièce jointe et comporte jusqu'à 255 caractères.|
+| `parameters.attachments.name` | Chaîne | Chaîne qui contient le nom de la pièce jointe et comporte jusqu'à 255 caractères.|
 | `parameters.attachments.url` | Chaîne | Utilisé uniquement si `type` est défini sur `file`. Il s’agit de l’URI de l’emplacement du fichier. |
 | `parameters.attachments.isInline` | Booléen | Utilisé uniquement si `type` est défini sur `file`. Si elle est définie sur `true`, cette valeur indique que la pièce jointe est incorporée dans le corps du message et qu’elle ne doit pas figurer dans la liste des pièces jointes. |
-| `parameters.attachments.itemId` | String | Utilisé uniquement si `type` est défini sur `item`. ID d'élément EWS du message électronique existant que vous souhaitez joindre au nouveau message. Il s’agit d’une chaîne comportant un maximum de 100 caractères. |
+| `parameters.attachments.itemId` | Chaîne | Utilisé uniquement si `type` est défini sur `item`. ID d’élément EWS du message électronique existant que vous souhaitez joindre au nouveau message. Il s’agit d’une chaîne comportant un maximum de 100 caractères. |
 
 
 ##### <a name="requirements"></a>Configuration requise
@@ -599,7 +599,7 @@ function cb(asyncResult) {
 ---
 ---
 
-####  <a name="getuseridentitytokenasynccallback-usercontext"></a>getUserIdentityTokenAsync(callback, [userContext])
+#### <a name="getuseridentitytokenasynccallback-usercontext"></a>getUserIdentityTokenAsync(callback, [userContext])
 
 Obtient un jeton qui identifie l’utilisateur et le complément Office.
 
@@ -635,13 +635,13 @@ function cb(asyncResult) {
 ---
 ---
 
-####  <a name="makeewsrequestasyncdata-callback-usercontext"></a>makeEwsRequestAsync(data, callback, [userContext])
+#### <a name="makeewsrequestasyncdata-callback-usercontext"></a>makeEwsRequestAsync(data, callback, [userContext])
 
 Envoie une demande asynchrone à un des services web Exchange (EWS) sur le serveur Exchange qui héberge la boîte aux lettres de l’utilisateur.
 
 > [!NOTE]
 > Cette méthode n’est pas prise en charge dans les cas suivants :
-> - dans Outlook pour iOS ou Outlook pour Android ;
+> - Dans Outlook sur iOS ou Android
 > - quand le complément est chargé dans une boîte aux lettres Gmail.
 > 
 > Dans ces cas de figure, les compléments doivent [utiliser les API REST](/outlook/add-ins/use-rest-api) pour accéder à la boîte aux lettres de l’utilisateur.
@@ -736,7 +736,7 @@ function callback(asyncResult)  {
 ---
 ---
 
-####  <a name="removehandlerasynceventtype-options-callback"></a>removeHandlerAsync(eventType, [options], [callback])
+#### <a name="removehandlerasynceventtype-options-callback"></a>removeHandlerAsync(eventType, [options], [callback])
 
 Supprime les gestionnaires d’événements pour un type d’événement pris en charge.
 

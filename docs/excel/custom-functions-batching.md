@@ -3,18 +3,20 @@ ms.date: 06/17/2019
 description: Traitez ensemble les fonctions personnalisées pour réduire les appels réseau à un service à distance.
 title: Le traitement par lots de fonctions personnalisées nécessite un service à distance
 localization_priority: Priority
-ms.openlocfilehash: 2e01c981dd71a4b6eebf0e191302ba2f8f71ef2a
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: aa1b9c956c0f54a4d59e49ca157dd67c8349b143
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059838"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127939"
 ---
 # <a name="batching-custom-function-calls-for-a-remote-service"></a>Le traitement par lots de fonctions personnalisées nécessite un service à distance
 
 Si vos fonctions personnalisées appellent un service à distance, vous pouvez utiliser un modèle le traitement par lots pour réduire le nombre d’appels réseau au service à distance. Pour réduire les boucles réseau, traitez par lots tous les appels en un seul appel du service web. Cette procédure est idéale lorsque la feuille de calcul est recalculée.
 
 Par exemple, si une personne a utilisé votre fonction personnalisée dans 100 cellules d’une feuille de calcul et a ensuite recalculé la feuille de calcul, votre fonction personnalisée s’exécute 100 fois et effectue 100 appels réseau. Si vous utilisez un modèle de traitement par lots, les appels peuvent être combinés pour rassembler l’ensemble des 100 calculs en un seul appel réseau.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="view-the-completed-sample"></a>Afficher l’exemple terminé
 

@@ -1,14 +1,14 @@
 ---
-ms.date: 06/17/2019
+ms.date: 06/18/2019
 description: Découvrez comment utiliser différents paramètres dans vos fonctions personnalisées, telles que les plages Excel, les paramètres facultatifs, le contexte d’appel, et bien plus encore.
 title: Options pour les fonctions personnalisées Excel
 localization_priority: Normal
-ms.openlocfilehash: f20fd00cb751cc1ab258db6442785f67f3460817
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: dca85df87f0153c03b2ddd027748e16d3ec79924
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059880"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128338"
 ---
 # <a name="custom-functions-parameter-options"></a>Options des paramètres de fonctions personnalisées
 
@@ -16,6 +16,8 @@ Les fonctions personnalisées peuvent être configurées avec de nombreuses opti
 - [Paramètres facultatifs](#custom-functions-optional-parameters)
 - [Paramètres de plage](#range-parameters)
 - [Paramètre de contexte d’invocation](#invocation-parameter)
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="custom-functions-optional-parameters"></a>Paramètres facultatifs de fonctions personnalisées
 

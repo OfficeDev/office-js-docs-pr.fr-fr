@@ -3,12 +3,12 @@ title: Créer un complément Office ASP.NET qui utilise l’authentification uni
 description: ''
 ms.date: 04/15/2019
 localization_priority: Priority
-ms.openlocfilehash: ebcf5cd72f841f5d97093e3b5f43833e97fa9947
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a28178fb309450f59435d678c013a7a73bb60978
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450162"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128155"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office ASP.NET qui utilise l’authentification unique (aperçu)
 
@@ -153,7 +153,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
 
         2. Renommez le fichier existant comme suit : `MailAppVersionOverridesV1_1.old`.
 
-        3. Copiez la version modifiée du fichier dans le dossier : [Schéma MailAppVersionOverrides modifié](https://github.com/OfficeDev/outlook-add-in-attachments-demo/blob/sso-conversion/manifest-schema-fix/MailAppVersionOverridesV1_1.xsd)
+        3. Copiez la version modifiée du fichier dans le dossier : [Schéma MailAppVersionOverrides modifié](https://github.com/OfficeDev/outlook-add-in-attachments-demo/blob/master/manifest-schema-fix/MailAppVersionOverridesV1_1.xsd)
 
 1. Enregistrez et fermez le fichier manifeste principal dans Visual Studio.
 

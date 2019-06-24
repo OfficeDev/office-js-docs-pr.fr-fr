@@ -1,14 +1,14 @@
 ---
 title: Élément Host dans le fichier manifeste
 description: ''
-ms.date: 10/09/2018
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: f496e3e0c16f24d20e1d1db76208e61267235131
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: debb4d59f75ce974ffb21d853c6b65a579c4e685
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450505"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127568"
 ---
 # <a name="host-element"></a>Élément Host
 
@@ -19,15 +19,15 @@ Spécifie un type d’application Office individuel dans lequel le complément d
 
 ## <a name="basic-manifest"></a>Manifeste de base
 
-Lorsqu’il est défini dans le manifeste base (sous [OfficeApp](officeapp.md)), le type d’hôte est déterminé par l’attribut `Name`.   
+Lorsqu’il est défini dans le manifeste base (sous [OfficeApp](officeapp.md)), le type d’hôte est déterminé par l’attribut `Name`.
 
 ### <a name="attributes"></a>Attributs
 
 | Attribut     | Type   | Requis | Description                                      |
 |:--------------|:-------|:---------|:-------------------------------------------------|
-| [Nom](#name) | string | obligatoire | Nom du type d’application hôte Office. |
+| [Name](#name) | string | obligatoire | Nom du type d’application hôte Office. |
 
-### <a name="name"></a>Name
+### <a name="name"></a>Nom
 Spécifie le type d’hôte ciblé par ce complément. La valeur doit être l’une des suivantes :
 
 - `Document` (Word)
@@ -60,7 +60,7 @@ Lorsqu’il est défini dans [VersionOverrides](versionoverrides.md), le type d�
 |  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 |  [DesktopFormFactor](desktopformfactor.md)    |  Oui   |  Définit les paramètres pour le facteur de forme pour bureau. |
-|  [MobileFormFactor](mobileformfactor.md)    |  Non   |  Définit les paramètres pour le facteur de forme pour environnement mobile. **Remarque :** cet élément est uniquement pris en charge dans Outlook pour iOS. |
+|  [MobileFormFactor](mobileformfactor.md)    |  Non   |  Définit les paramètres pour le facteur de forme pour environnement mobile. **Remarque:** Cet élément est pris en charge uniquement dans Outlook sur iOS. |
 |  [AllFormFactors](allformfactors.md)    |  Non   |  Définit les paramètres de tous les facteurs de forme. Utilisé uniquement par des fonctions personnalisées dans Excel. |
 
 ### <a name="xsitype"></a>xsi:type
@@ -68,7 +68,7 @@ Lorsqu’il est défini dans [VersionOverrides](versionoverrides.md), le type d�
 Contrôle à quel hôte Office (Word, Excel, PowerPoint, Outlook, OneNote) s’applique également les paramètres contenus. La valeur doit être l’une des suivantes :
 
 - `Document` (Word)
-- `MailHost` (Outlook)    
+- `MailHost` (Outlook)
 - `Notebook` (OneNote)
 - `Presentation` (PowerPoint)
 - `Workbook` (Excel)

@@ -1,14 +1,14 @@
 ---
 title: Rendre votre complément Office compatible avec un complément COM existant
 description: Activer la compatibilité entre votre complément Office et un complément COM équivalent
-ms.date: 06/19/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: a18adb9841a9580d77c5110a0346f365e38e3746
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: 3577b8fe4b4a26ac5d0af85cc5c2f96a7a8dc010
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059719"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128051"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in-preview"></a>Faire en sorte que votre complément Office soit compatible avec un complément COM existant (aperçu)
 
@@ -48,7 +48,7 @@ Lorsqu’un complément COM équivalent est spécifié dans le manifeste du comp
 - Comme entrée dans le gestionnaire de ruban
 
 > [!NOTE]
-> La spécification d’un complément COM équivalent dans le manifeste n’a aucun effet sur les autres plateformes comme Office sur le Web ou Office pour Mac.
+> La spécification d’un complément COM équivalent dans le manifeste n’a aucun effet sur les autres plateformes, comme Office sur le Web ou Mac.
 
 Les scénarios suivants décrivent ce qui se produit en fonction de la manière dont l’utilisateur acquiert le complément Office.
 

@@ -2,14 +2,14 @@
 title: Explorer l’API JavaScript pour Office à l’aide de script Lab
 description: Utilisez script Lab pour explorer l’API Office JS et pour prototyper les fonctionnalités.
 ms.topic: article
-ms.date: 06/07/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 0bab566b08ba25dd3c01cff72f331b2dc9ce304d
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 9ef81443fade450a7bea519a99cb607c320dd4f6
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910189"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128648"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>Explorer l’API JavaScript pour Office à l’aide de script Lab
 
@@ -17,26 +17,52 @@ Le [complément script Lab](https://store.office.com/app.aspx?assetid=WA10438086
 
 ## <a name="what-is-script-lab"></a>Qu’est-ce que script Lab?
 
-Script Lab est un outil destiné aux utilisateurs qui souhaitent apprendre à développer des compléments Office à l’aide de l’API JavaScript Office dans Excel, Word ou PowerPoint. Il fournit IntelliSense afin que vous puissiez voir ce qui est disponible et repose sur l’infrastructure Monaco, la même infrastructure utilisée par Visual Studio code. Grâce à script Lab, vous pouvez accéder à une bibliothèque d’exemples pour essayer rapidement des fonctionnalités ou vous pouvez choisir un exemple comme base pour votre propre code. Vous pouvez également développer l’exemple de bibliothèque en ajoutant des extraits de code dans la [référentiel Office-js-snippets](https://github.com/OfficeDev/office-js-snippets#office-js-snippets). Une autre fonctionnalité intéressante de script Lab est une fonctionnalité bêta ou d’aperçu que vous pouvez essayer.
-
-> [!TIP]
-> Pour participer à la version bêta ou à l’aperçu, vous devrez peut-être vous inscrire au [programme Office](https://products.office.com/office-insider)Insider.
+Script Lab est un outil destiné aux utilisateurs qui souhaitent apprendre à développer des compléments Office à l’aide de l’API JavaScript Office dans Excel, Word ou PowerPoint. Il fournit IntelliSense afin que vous puissiez voir ce qui est disponible et repose sur l’infrastructure Monaco, la même infrastructure utilisée par Visual Studio code. Grâce à script Lab, vous pouvez accéder à une bibliothèque d’exemples pour essayer rapidement des fonctionnalités ou vous pouvez utiliser un exemple comme point de départ pour votre propre code. Vous pouvez même utiliser l’atelier de script pour essayer les API d’aperçu.
 
 Le bruit est-il bien fait? Jetez un œil à cette vidéo d’une minute pour voir script Lab en action.
 
-[![Aperçu de la vidéo avec script Lab en cours d’exécution dans Excel, Word et PowerPoint online.] (../images/screenshot-wide-youtube.png 'Vidéo de l’aperçu de script Lab')](https://aka.ms/scriptlabvideo)
+[![Aperçu de la vidéo avec script Lab en cours d’exécution dans Excel, Word et PowerPoint.] (../images/screenshot-wide-youtube.png 'Vidéo de l’aperçu de script Lab')](https://aka.ms/scriptlabvideo)
 
-## <a name="script-lab-supported-clients"></a>Clients de script Lab pris en charge
+## <a name="key-features"></a>Principales fonctionnalités
+
+Script Lab offre un certain nombre de fonctionnalités pour vous aider à explorer l’API JavaScript Office et la fonctionnalité de complément prototype.
+
+### <a name="explore-samples"></a>Explorer les exemples
+
+Prise en main rapide avec une collection d’extraits de code intégrés qui montrent comment effectuer certaines tâches avec l’API. Vous pouvez exécuter les exemples pour voir instantanément le résultat dans le volet Office ou le document, examiner les exemples pour savoir comment fonctionne l’API, et même utiliser des extraits de code comme base pour les fonctionnalités de prototypage de votre propre complément.
+
+![Exemples](../images/script-lab-samples.jpg)
+
+### <a name="code-and-style"></a>Code et style
+
+En plus du code JavaScript ou de la machine à écrire qui appelle l’API Office JS, chaque extrait de code contient également un balisage HTML qui définit le contenu du volet de tâches et CSS qui définit l’apparence du volet Office. Vous pouvez personnaliser les balises HTML et CSS pour tester le positionnement et le style des éléments lorsque vous prototypez la conception de volet des tâches pour votre propre complément.
+
+> [!TIP]
+> Pour appeler les API d’aperçu dans un extrait de code, vous devez mettre à jour les bibliothèques de l’extrait de`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`code afin d’utiliser la version `@types/office-js-preview`bêta de CDN () et les définitions des types d’aperçu. En outre, certaines API d’aperçu ne sont accessibles que si vous vous êtes inscrit au [programme Office](https://products.office.com/office-insider) Insider et si vous exécutez une version Insider d’Office.
+
+### <a name="save-and-share-snippets"></a>Enregistrer et partager des extraits de code
+
+Par défaut, les extraits de code que vous ouvrez dans script Lab seront enregistrés dans le cache de votre navigateur. Pour enregistrer un extrait de code de manière permanente, vous pouvez l’exporter vers un [GitHub](https://gist.github.com). Créez un annuaire secret pour enregistrer un extrait de code exclusivement pour votre propre usage, ou créez un annuaire partagé si vous envisagez de le partager avec d’autres personnes.
+
+![Options de partage](../images/script-lab-share.jpg)
+
+### <a name="import-snippets"></a>Importer des extraits de code
+
+Vous pouvez importer un extrait de code dans script Lab en spécifiant l’URL du [GitHub](https://gist.github.com) public où l’extrait de code YAML est stocké ou en collant dans le YAML complet pour l’extrait de code. Cette fonctionnalité peut être utile dans les scénarios où quelqu’un d’autre a partagé son extrait de code avec vous en le publiant dans un GitHub ou en fournissant les YAML de son extrait de code.
+
+![Option Importer un extrait](../images/script-lab-import-snippet.jpg)
+
+## <a name="supported-clients"></a>Clients pris en charge
 
 Le script Lab est pris en charge pour Excel, Word et PowerPoint sur les clients suivants.
 
-- Office sur Windows (connecté à Office 365)
-- Office pour Mac (connecté à Office 365)
-- Office Online
 - Office 2013 ou version ultérieure sur Windows
-- Office 2016 ou version ultérieure pour Mac
+- Office 2016 ou version ultérieure sur Mac
+- Office sur le Web
 
 ## <a name="next-steps"></a>Étapes suivantes
+
+Vous pouvez développer l’exemple de bibliothèque dans script Lab en apposant de nouveaux extraits de code dans le référentiel GitHub [Office-js-snippets](https://github.com/OfficeDev/office-js-snippets#office-js-snippets) .
 
 Lorsque vous êtes prêt à créer votre complément Office, reportez-vous au [démarrage rapide de 5 minutes](/office/dev/add-ins/#5-minute-quick-starts) pour votre application Office par défaut.
 

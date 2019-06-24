@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API d’identité
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: c531fd6f7c77a02402bdd70b4f2cb091787a6a52
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: a2992569f6807499156ef13aa6663267839e1853
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952186"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127078"
 ---
 # <a name="identity-api-requirement-sets"></a>Ensembles de conditions requises de l’API d’identité
 
@@ -17,11 +17,11 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 
 Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tableau suivant répertorie les ensembles de conditions requises de l’API de boîte de dialogue, les applications Office hôtes qui prennent en charge ces conditions et les numéros de build ou de version de l’application Office.
 
-|  Ensemble de conditions requises  | Office 2013 ou version ultérieure sur Windows<br>(achat unique) | Office sur Windows<br>(connecté à Office 365) |  Office pour iPad<br>(connecté à Office 365)  |  Office pour Mac<br>(connecté à Office 365)  | Office Online  | SharePoint Online | OneDrive.com |Outlook.com et Exchange Online|
+|  Ensemble de conditions requises  | Office 2013 ou version ultérieure sur Windows<br>(achat définitif) | Office sur Windows<br>(connecté à l’abonnement Office 365) |  Office sur iPad<br>(connecté à l’abonnement Office 365)  |  Office sur Mac<br>(connecté à l’abonnement Office 365)  | Office sur le Web  | SharePoint Online | OneDrive.com |Outlook.com et Exchange Online|
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | IdentityAPI 1.1  | N/A | Préversion<b>*</b> | Bientôt disponible | Préversion<b>*</b> | Préversion<b>*</b> | Préversion<b>*</b>| Bientôt disponible | Bientôt disponible |
 
-> **& # 42;** Pendant la phase d’évaluation, l’API d’identité nécessite Office 365 (la version d’abonnement d’Office). Vous devez utiliser la version et le build mensuels les plus récents du canal du programme Insider. Vous devez participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à [Participez au programme Office Insider](https://products.office.com/office-insider?tab=tab-1). Veuillez noter que lorsqu’un build passe au canal semi-annuel de production, la prise en charge des fonctionnalités d’aperçu, y compris l’authentification unique, est désactivée pour ce build.
+> **&#42;** Pendant la phase d’évaluation, l’API d’identité nécessite Office 365 (la version d’abonnement d’Office). Vous devez utiliser la version et le build mensuels les plus récents du canal du programme Insider. Vous devez participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à [Participez au programme Office Insider](https://products.office.com/office-insider?tab=tab-1). Veuillez noter que lorsqu’un build passe au canal semi-annuel de production, la prise en charge des fonctionnalités d’aperçu, y compris l’authentification unique, est désactivée pour ce build.
 
 Pour en savoir plus sur les versions, les numéros de build et Office Online Server, voir :
 

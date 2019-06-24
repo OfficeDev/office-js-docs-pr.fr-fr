@@ -1,19 +1,19 @@
 ---
 title: Référence de l’API JavaScript pour OneNote
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 ms.prod: onenote
 localization_priority: Normal
-ms.openlocfilehash: 53b120fbe2bba3967c1b89699daef6bd452b5c24
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 68ac6f94921ba3b1ea14f364988b57ef86809890
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450253"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127127"
 ---
 # <a name="onenote-javascript-api-overview"></a>Référence de l’API JavaScript pour OneNote
 
-S’applique à : OneNote Online
+S’applique à: OneNote sur le Web
 
 Les liens suivants affichent les objets OneNote de niveau supérieur disponibles dans l’API. Chaque lien vers la page d’un objet contient une description des propriétés, des événements et des méthodes disponibles sur l’objet. Cliquez sur ces liens pour en savoir plus. 
     

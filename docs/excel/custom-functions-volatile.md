@@ -3,16 +3,18 @@ ms.date: 06/17/2019
 description: Apprenez à implémenter des fonctions personnalisées de diffusion en continu et volatiles.
 title: Valeurs volatiles dans les fonctions
 localization_priority: Normal
-ms.openlocfilehash: 0edf4071ce366c40300663233f1de318a544169b
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: bcaef092ec386a7d80760c1e2a567b9de1fdad21
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059845"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127816"
 ---
 # <a name="volatile-values-in-functions"></a>Valeurs volatiles dans les fonctions
 
 Les fonctions volatiles sont des fonctions dans lesquelles la valeur change chaque fois que la cellule est calculée. La valeur peut changer même si aucun des arguments de la fonction ne change. Ces fonctions sont recalculées à chaque recalcul d’Excel. Par exemple, imaginons une cellule qui appelle la fonction `NOW`. Chaque fois que la fonction `NOW` est appelée, elle renvoie automatiquement la date et l’heure actuelles.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 Excel contient plusieurs fonctions volatiles intégrées, comme `RAND` et `TODAY`. Pour obtenir la liste complète des fonctions volatiles d’Excel, reportez-vous à [Fonctions volatiles et non volatiles](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).
 

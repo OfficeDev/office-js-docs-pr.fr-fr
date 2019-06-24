@@ -1,14 +1,14 @@
 ---
 title: Codes d’erreur de l’API JavaScript pour Office
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 5e18a82c2536d5f5284588227b1cf767ebd2749e
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: b259d592d465dfae6569ecc2a442f249104916af
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450729"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128530"
 ---
 # <a name="javascript-api-for-office-error-codes"></a>Codes d’erreur de l’API JavaScript pour Office
 
@@ -66,7 +66,7 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 |5006|Expiration de la session|La session de document a expiré. Rechargez le document. |La session a expiré.|
 |5007|L’appel d’API est incorrect|L’énumération n’est pas prise en charge dans le contexte actuel.|L’énumération n’est pas prise en charge dans le contexte actuel.|
 |5009|Autorisation refusée|Accès refusé|Le complément n’est pas autorisé à appeler l’API spécifique.|
-|5012|Session non valide ou expirée|Votre session Office Online a expiré ou n’est pas valide. Pour continuer, actualisez la page.|La session entre le client Office et le serveur a expiré, ou la date, l’heure ou le fuseau horaire est incorrect sur votre ordinateur.|
+|5012|Session non valide ou expirée|Votre session de navigateur Office a expiré ou n’est pas valide. Pour continuer, actualisez la page.|La session entre le client Office et le serveur a expiré, ou la date, l’heure ou le fuseau horaire est incorrect sur votre ordinateur.|
 |6000|Nœud incorrect|Le nœud spécifié est introuvable.|Le nœud **CustomXmlPart** est introuvable.|
 |6100|Une erreur relative à du code XML personnalisé s’est produite.|Une erreur relative à du code XML personnalisé s’est produite.|L’appel d’API est incorrect.|
 |7000|ID incorrect|L’ID spécifié n’existe pas.|L’ID est incorrect.|
