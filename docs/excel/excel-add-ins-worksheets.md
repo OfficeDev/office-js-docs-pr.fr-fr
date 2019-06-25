@@ -1,14 +1,14 @@
 ---
 title: Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 description: ''
-ms.date: 04/18/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 002c5763ebcfbbecbcfc5cb416d200b357c45bf2
-ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
+ms.openlocfilehash: 6267c9f0ef46bda0beeed1612acce5d620f1e74f
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "33440030"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128345"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 
@@ -41,7 +41,7 @@ Excel.run(function (context) {
 ```
 
 > [!NOTE]
-> La propriété **id** d’une feuille de calcul identifie de manière unique la feuille de calcul dans un classeur donné et sa valeur ne change pas, même lorsque la feuille de calcul est renommée ou déplacée. Lorsqu’une feuille de calcul est supprimée d’un classeur dans Excel pour Mac, la propriété **id** de la feuille de calcul supprimée peut être réaffectée à une nouvelle feuille de calcul créée par la suite.
+> La propriété **id** d’une feuille de calcul identifie de manière unique la feuille de calcul dans un classeur donné et sa valeur ne change pas, même lorsque la feuille de calcul est renommée ou déplacée. Lorsqu’une feuille de calcul est supprimée d’un classeur dans Excel sur Mac, la propriété **id** de la feuille de calcul supprimée peut être réaffectée à une nouvelle feuille de calcul créée par la suite.
 
 ## <a name="get-the-active-worksheet"></a>Obtenir la feuille de calcul active
 
@@ -285,9 +285,6 @@ Votre complément peut avoir besoin de réagir aux utilisateurs modifiant les do
 
 L’objet `WorksheetChangedEventArgs` fournit des informations sur les modifications et la source. Puisque `onChanged` se déclenche lorsque le format ou la valeur des données sont modifiés, il peut être utile que votre complément vérifie si les valeurs ont réellement été modifiées. La propriété de `details` regroupe ces informations en tant qu’un [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail). L’exemple de code suivant illustre la procédure d’affichage des valeurs et des types d’une cellule qui a été modifiée, avant et après modification.
 
-> [!NOTE]
-> `WorksheetChangedEventArgs.details`est actuellement uniquement disponible en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-
 ```js
 // This function would be used as an event handler for the Worksheet.onChanged event.
 function onWorksheetChanged(eventArgs) {
@@ -303,10 +300,7 @@ function onWorksheetChanged(eventArgs) {
 }
 ```
 
-## <a name="find-all-cells-with-matching-text-preview"></a>Trouver toutes les cellules avec du texte correspondant (préversion)
-
-> [!NOTE]
-> La fonction`findAll` de l’objet Worksheet est actuellement disponible uniquement en préversion publique.[!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="find-all-cells-with-matching-text"></a>Trouver toutes les cellules avec du texte correspondant
 
 L’objet `Worksheet` dispose d’une méthode`find` pour rechercher une chaîne spécifiée dans la feuille de calcul. Il renvoie un objet`RangeAreas`, qui est une collection d’objets `Range` qui peuvent être modifiés tous en même temps. L’exemple de code suivant recherche toutes les cellules contenant des valeurs égales à la chaîne **Complète** et les colore en vert. Notez que `findAll` génère une erreur `ItemNotFound` si la chaîne spécifiée n’existe pas dans la feuille de calcul. Si vous pensez que la chaîne spécifiée peut ne pas exister dans la feuille de calcul, utilisez la méthode[findAllOrNullObject](excel-add-ins-advanced-concepts.md#ornullobject-methods) à la place, pour que votre code gère ce scénario plus facilement.
 
@@ -332,9 +326,6 @@ Excel.run(function (context) {
 > - Pour consulter des exemples qui montrent comment rechercher une grande plage pour plusieurs sous-plages basées sur les caractéristiques de cellule, voir [Travailler avec plusieurs plages simultanément dans des compléments Excel](excel-add-ins-multiple-ranges.md).
 
 ## <a name="filter-data"></a>Filtrer les données
-
-> [!NOTE]
-> `AutoFilter`est actuellement uniquement disponible en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 Un [filtre automatique](/javascript/api/excel/excel.autofilter) applique des filtres de données sur une plage de cellules dans la feuille de calcul. Cela a été créé avec `Worksheet.autoFilter.apply`, qui comporte les paramètres suivants:
 
@@ -402,9 +393,6 @@ La méthode `protect` présente deux paramètres facultatifs :
 L’article [Protéger une feuille de calcul](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6) comporte davantage d’informations sur la protection des feuilles de calcul et leur modification via l’interface utilisateur Excel.
 
 ## <a name="page-layout-and-print-settings"></a>Mise en page et paramètres d’impression
-
-> [!NOTE]
-> Les API dans cette section associés à la mise en page sont actuellement disponibles uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 Les compléments ont accès aux paramètres de mise en page à un niveau de feuille de calcul. Ils contrôlent comment la feuille est imprimée. Un `Worksheet` objet a trois propriétés de mise en page : `horizontalPageBreaks`, `verticalPageBreaks`, `pageLayout`.
 

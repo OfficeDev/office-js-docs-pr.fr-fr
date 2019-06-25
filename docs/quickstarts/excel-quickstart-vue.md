@@ -1,15 +1,15 @@
 ---
 title: Créer un complément de volet de tâches Excel à l’aide de Vue
 description: ''
-ms.date: 05/02/2019
+ms.date: 06/20/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 228301b9711f4ac33fb5435e66cfcd0254041e19
-ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
+ms.openlocfilehash: 8935a22a631699ac0314aac89936fbd8c2552212
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33619584"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128565"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>Créer un complément de volet de tâches Excel à l’aide de Vue
 
@@ -186,14 +186,14 @@ Pour activer HTTPS pour votre application, ouvrez le fichier **package.json** da
 
 2. Dans un navigateur web, accédez à `https://localhost:8080`. Si votre navigateur indique que le certificat de site n’est pas approuvé, vous devez configurer votre ordinateur pour qu’il approuve le certificat. 
 
-3. Une fois que votre navigateur a chargé la page du complément sans erreurs de certificat, vous pouvez tester votre complément. 
+3. Une fois que votre navigateur a chargé la page du complément sans erreurs de certificat, vous pouvez tester votre complément.
 
 ## <a name="try-it-out"></a>Essayez !
 
 1. Suivez les instructions pour la plateforme que vous utiliserez pour exécuter votre complément et chargez une version test du complément dans Excel.
 
     - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online : [Chargement de versions test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
+    - Navigateur web : [Chargement de version test des compléments Office dans Office sur le web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
     - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.

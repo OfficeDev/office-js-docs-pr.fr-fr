@@ -1,14 +1,14 @@
 ---
 title: Publier des compléments du volet Office et de contenu dans un catalogue d’applications SharePoint
 description: Pour rendre les compléments Office accessibles aux utilisateurs, les administrateurs peuvent charger des fichiers manifeste de compléments Office vers le catalogue d’applications pour leur organisation.
-ms.date: 06/05/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: eba503a9e3d46e8ef187ef564ffa82fa984f3726
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 20b97855ce50e3f70e602f511882761c6fd80655
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910317"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128558"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>Publier des compléments du volet Office et de contenu dans un catalogue d’applications SharePoint
 
@@ -17,7 +17,7 @@ Un catalogue d’applications est une collection de sites dédiée dans une appl
 > [!IMPORTANT]
 > - Les catalogues d’applications sur SharePoint ne prennent pas en charge les fonctionnalités de complément qui sont implémentées dans le nœud `VersionOverrides` du [manifeste de complément](../develop/add-in-manifests.md), comme les commandes de complément.
 > - Si vous ciblez un environnement de cloud ou hybride, nous vous recommandons d’[utiliser un déploiement centralisé via le centre d’administration Office 365](../publish/centralized-deployment.md) pour publier vos compléments.
-> - Les catalogues d’applications dans SharePoint ne sont pas pris en charge par Office pour Mac. Pour déployer des compléments Office sur les clients Mac, vous devez les envoyer à [AppSource](/office/dev/store/submit-to-the-office-store).
+> - Les catalogues d’applications dans SharePoint ne sont pas pris en charge par Office sur Mac. Pour déployer des compléments Office sur les clients Mac, vous devez les envoyer à [AppSource](/office/dev/store/submit-to-the-office-store).
 
 ## <a name="create-an-app-catalog"></a>Créer un catalogue d’applications
 

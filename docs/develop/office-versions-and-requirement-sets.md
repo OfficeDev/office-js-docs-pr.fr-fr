@@ -1,21 +1,21 @@
 ---
 title: Versions d’Office et ensembles de conditions requises
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 6d0952c32c08c9a4a3e9b07ee8bbcf209084c3d0
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 3f63d9f6d6ce62b39fa97efc62ceb964f2b55394
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952116"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128317"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Versions d’Office et ensembles de conditions requises
 
 Il existe de nombreuses versions d’Office sur plusieurs plateformes, celles-ci ne prenant pas forcément en charge toutes les API dans l’interface API JavaScript pour Office (Office.js). Vous n’avez pas toujours le contrôle sur la version d’Office que vos utilisateurs ont installée.  Pour gérer cette situation, nous fournissons un système nommé ensembles de conditions requises pour vous aider à déterminer si un hôte Office prend en charge les fonctionnalités dont vous avez besoin dans votre complément Office. 
 
 > [!NOTE]
-> - Office peut être exécuté sur plusieurs plateformes, notamment Office pour Windows, Office Online, Office pour Mac et Office pour iPad.
+> - Office s’exécute sur plusieurs plateformes, y compris sur Windows, dans un navigateur, un Mac et un iPad.
 > - Parmi les hôtes Office, voici quelques exemples de produits Office : Excel, Word, PowerPoint, Outlook, OneNote et autres.  
 > - Un ensemble de conditions requises est un groupe nommé de membres d’API, par exemple : `ExcelApi 1.5`, `WordApi 1.3`, et ainsi de suite.  
 

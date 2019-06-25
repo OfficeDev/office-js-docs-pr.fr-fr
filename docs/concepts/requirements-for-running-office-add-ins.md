@@ -1,14 +1,14 @@
 ---
 title: Configuration requise pour exécuter des compléments Office
 description: ''
-ms.date: 05/14/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: ed502900916fb2e780725af6f3840c7c2287c1a3
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 3a167777068b398c191f41adfa8dfa590d18edc2
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910097"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127701"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Configuration requise pour exécuter des compléments Office
 
@@ -58,29 +58,29 @@ Le logiciel suivant est requis pour développer un Complément Office pour les c
 
 ## <a name="client-requirements-os-x-desktop"></a>Exigences en matière de client : ordinateur de bureau OS X
 
-Outlook pour Mac, qui est distribué dans le cadre d’Office 365, prend en charge les compléments Outlook. L’exécution des compléments Outlook sur Outlook pour Mac a les mêmes exigences qu’Outlook pour Mac lui-même : le système d’exploitation doit être au minimum OS X v10.10 « Yosemite ». Comme Outlook pour Mac utilise WebKit comme moteur de disposition pour restituer les pages de complément, il n’existe pas de dépendance de navigateur supplémentaire.
+Outlook sur Mac, fourni dans le cadre d’Office 365, prend en charge les compléments Outlook. Les conditions requises d’exécution de ces compléments dans Outlook sur Mac sont les mêmes que celles d’Outlook sur Mac : la version du système d’exploitation doit au minimum être OS X v10.10 « Yosemite ». Comme Outlook sur Mac utilise WebKit comme moteur de disposition pour restituer les pages de complément, il n’existe pas de dépendance de navigateur supplémentaire.
 
-Les versions de client minimales d’Office pour Mac prenant en charge les compléments Office sont les suivantes :
+Les versions de client minimales d’Office pour Mac prenant en charge les compléments Office sont les suivantes.
 
-- Word pour Mac version 15.18 (160109)
-- Excel pour Mac version 15.19 (160206)
-- PowerPoint pour Mac version 15.24 (160614)
+- Version Word 15.18 (160109)
+- Version Excel 15.19 (160206)
+- Version PowerPoint 15.24 (160614)
 
-## <a name="client-requirements-browser-support-for-office-online-web-clients-and-sharepoint"></a>Exigences en matière de client : prise en charge du navigateur pour les clients web Office Online et SharePoint
+## <a name="client-requirements-browser-support-for-office-web-clients-and-sharepoint"></a>Exigences en matière de client : prise en charge du navigateur pour les clients web Office et SharePoint
 
 Tout navigateur prenant en charge ECMAScript 5.1, HTML5 et CSS3, tel qu’Internet Explorer 11 ou la dernière version de Microsoft Edge, Chrome, Firefox ou Safari (Mac OS).
 
 
 ## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>Exigences en matière de client : smartphones et tablettes autres que Windows
 
-L’installation du logiciel suivant est nécessaire pour tester et exécuter les compléments Outlook. Ce logiciel est conçu spécialement pour les versions d’Outlook Web App exécutées dans des navigateurs sur smartphones et tablettes utilisant d’autres systèmes d’exploitation que Windows.
+L’installation du logiciel suivant est nécessaire pour tester et exécuter les compléments Outlook. Ce logiciel est conçu spécialement pour les versions d’Outlook exécutées dans des navigateurs sur smartphones et tablettes utilisant d’autres systèmes d’exploitation que Windows.
 
 
 | Application hôte | Appareil | Système d’exploitation | Compte Exchange | Navigateur mobile |
 |:-----|:-----|:-----|:-----|:-----|
-|Outlook pour Android|Tablettes et smartphones Android|Android KitKat 4.4 et version ultérieure|Sur la dernière mise à jour d’Office 365 pour les entreprises ou d’Exchange Online|Application native pour Android, navigateur non applicable|
-|Outlook pour iOS|Tablettes iPad, smartphones iPhone|iOS 11 ou version ultérieure|Sur la dernière mise à jour d’Office 365 pour les entreprises ou d’Exchange Online|Application native pour iOS, navigateur non applicable|
-|Outlook Web App|iPhone 4, iPad 2, iPod Touch 4 (ou version ultérieure de ces appareils)|iOS 5 ou version ultérieure|Sur Office 365, Exchange Online ou en local sur Exchange Server 2013 ou version ultérieure|Safari|
+|Outlook sur Android|Tablettes et smartphones Android|Android KitKat 4.4 et version ultérieure|Sur la dernière mise à jour d’Office 365 pour les entreprises ou d’Exchange Online|Application native pour Android, navigateur non applicable|
+|Outlook sur iOS|Tablettes iPad, smartphones iPhone|iOS 11 ou version ultérieure|Sur la dernière mise à jour d’Office 365 pour les entreprises ou d’Exchange Online|Application native pour iOS, navigateur non applicable|
+|Outlook sur le web|iPhone 4, iPad 2, iPod Touch 4 (ou version ultérieure de ces appareils)|iOS 5 ou version ultérieure|Sur Office 365, Exchange Online ou en local sur Exchange Server 2013 ou version ultérieure|Safari|
 
 > [!NOTE]
 > Les applications natives OWA pour Android, OWA pour iPad et OWA pour iPhone ont été [supprimées](https://support.office.com/article/Microsoft-OWA-mobile-apps-are-being-retired-076ec122-4576-4900-bc26-937f84d25a4b) et ne sont plus requises ou disponibles pour les tests des compléments Outlook.

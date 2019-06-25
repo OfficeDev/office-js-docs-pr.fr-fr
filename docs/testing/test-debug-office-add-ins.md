@@ -1,14 +1,14 @@
 ---
 title: Test et débogage de compléments Office
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: c51823684dab4e85e2cf9e621365ea6230f21b8a
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 3c841608d36f5004a876bec2c899d0e5659d47a7
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451100"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126917"
 ---
 # <a name="test-and-debug-office-add-ins"></a>Test et débogage de compléments Office
 
@@ -20,7 +20,7 @@ Vous pouvez utiliser le chargement de version test pour installer un complément
 
 - [Chargement de version test des compléments Office sur Windows](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 
-- [Chargement de version test des compléments Office dans Office Online](sideload-office-add-ins-for-testing.md)
+- [Chargement de version test des compléments Office dans Office sur le web](sideload-office-add-ins-for-testing.md)
 
 - [Chargement de version test de compléments Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
 
@@ -34,7 +34,7 @@ La procédure pour le débogage d’un complément Office varie également selon
 
 - [Débogage de compléments avec les outils de développement F12 sur Windows 10](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
 
-- [Débogage de compléments dans Office Online](debug-add-ins-in-office-online.md)
+- [Débogage de compléments dans Office sur le web](debug-add-ins-in-office-online.md)
 
 - [Débogage des compléments Office sur iPad et Mac](debug-office-add-ins-on-ipad-and-mac.md)
 

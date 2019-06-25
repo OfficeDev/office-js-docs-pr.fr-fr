@@ -1,14 +1,14 @@
 ---
 title: Concepts avancés de programmation avec l’API JavaScript Excel
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 43d1f79b629b238afd227978e9c6dc90b9a6d992
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: da85bf8ec00134b86fcf6ae561366f9536f21303
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952158"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127797"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>Concepts avancés de programmation avec l’API JavaScript Excel
 
@@ -60,7 +60,7 @@ L’exemple de code suivant montre l’élément **Requirements** dans un manife
 ```
 
 > [!NOTE]
-> Pour rendre votre complément disponible sur toutes les plateformes d’un hôte Office, comme Excel sur Windows, Excel Online et Excel pour iPad, nous vous recommandons de vérifier la prise en charge des conditions requises lors de l’exécution au lieu de définir la prise en charge d’ensemble de conditions requises dans le manifeste.
+> Pour rendre votre complément disponible sur toutes les plateformes d’un hôte Office, comme Excel sur le web, Windows et iPad, nous vous recommandons de vérifier la prise en charge des conditions requises lors de l’exécution au lieu de définir la prise en charge d’ensemble de conditions requises dans le manifeste.
 
 ### <a name="requirement-sets-for-the-officejs-common-api"></a>Ensembles de conditions requises pour l’API commune Office.js
 

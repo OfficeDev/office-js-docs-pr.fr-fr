@@ -1,18 +1,18 @@
 ---
 title: Limites des ressources et optimisation des performances pour les compléments Office
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: ead376bb12701f7ee810cfc4e536ae4866d2f1b5
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 7feaef4d3b76cbef71a367099382f3f26ea50314
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448139"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127687"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites des ressources et optimisation des performances pour les compléments Office
 
-Afin d’offrir la meilleure expérience utilisateur, assurez-vous que votre complément Office fonctionne dans les limites prévues en matière d’utilisation du cœur du processeur et de la mémoire, ainsi qu’en matière de fiabilité et, pour les compléments Outlook, de temps de réponse lors de l’évaluation des expressions régulières. Ces limites propres à l’utilisation des ressources d’exécution s’appliquent aux compléments exécutés sur des clients Office pour Windows et OS X mais pas sur des clients Office Online, Outlook Web App ou OWA pour périphériques. 
+Afin d’offrir la meilleure expérience utilisateur, assurez-vous que votre complément Office fonctionne dans les limites prévues en matière d’utilisation du cœur du processeur et de la mémoire, ainsi qu’en matière de fiabilité et, pour les compléments Outlook, de temps de réponse lors de l’évaluation des expressions régulières. Ces limites propres à l’utilisation des ressources d’exécution s’appliquent aux compléments exécutés sur des clients Office sous Windows et OS X mais pas sur des applications mobiles, ni dans un navigateur.
 
 Par ailleurs, cette rubrique suggère des techniques de conception et d’implémentation de complément qui permettent de mieux contrôler les performances des compléments sur ordinateurs de bureau et périphériques mobiles.
 
@@ -41,7 +41,7 @@ Les limites d’utilisation des ressources d’exécution s’appliquent à tous
 §LTA Si un complément Outlook dépasse les seuils précédents en matière d’utilisation du cœur du processeur ou de la mémoire, ou en matière de tolérance d’incident, Outlook désactive le complément. Le Centre d’administration Exchange indique que l’état de l’application est désactivé.
 
 > [!NOTE]
-> Même si seuls les clients enrichis Outlook et non les clients Outlook Web App ou OWA pour périphériques contrôlent l’utilisation des ressources, si un client enrichi désactive un complément Outlook, ce complément est également désactivé pour une utilisation dans Outlook Web App et OWA pour périphériques.
+> Même si seuls les clients enrichis Outlook et non les clients non-Outlook sur le web ou les appareils mobiles contrôlent l’utilisation des ressources, si un client enrichi désactive un complément Outlook, ce complément est également désactivé pour une utilisation dans Outlook sur le web et les appareils mobiles.
 
 En plus du cœur du processeur, de la mémoire et des règles de fiabilité, les compléments Outlook doivent respecter les règles suivantes lors de l’activation :
 
@@ -49,7 +49,7 @@ En plus du cœur du processeur, de la mémoire et des règles de fiabilité, les
 
     À l’aide d’une stratégie de groupe ou d’un paramètre propre à l’application dans le registre Windows, les administrateurs peuvent ajuster cette valeur seuil par défaut de 1 000 millisecondes dans le paramètre **OutlookActivationAlertThreshold**.
 
-- **Réévaluation des expressions régulières** - Limite par défaut de trois tentatives pour permettre à Outlook de réévaluer toutes les expressions régulières contenues dans un manifeste. Si l’évaluation échoue à trois reprises en dépassant le seuil applicable (qui est soit la valeur par défaut de 1 000 millisecondes, soit une valeur spécifiée par  **OutlookActivationAlertThreshold**, si ce paramètre existe dans le Registre Windows), Outlook désactive le complément Outlook. Le Centre d’administration Exchange affiche l’état désactivé. Par ailleurs, l’utilisation du complément est désactivée dans les clients riches Outlook, Outlook Web App et OWA pour les appareils.
+- **Réévaluation des expressions régulières** - Limite par défaut de trois tentatives pour permettre à Outlook de réévaluer toutes les expressions régulières contenues dans un manifeste. Si l’évaluation échoue à trois reprises en dépassant le seuil applicable (qui est soit la valeur par défaut de 1 000 millisecondes, soit une valeur spécifiée par **OutlookActivationAlertThreshold**, si ce paramètre existe dans le Registre Windows), Outlook désactive le complément Outlook. Le Centre d’administration Exchange affiche l’état désactivé. Par ailleurs, l’utilisation du complément est désactivée dans les clients riches Outlook, Outlook sur le web et les appareils mobiles.
 
     À l’aide d’une stratégie de groupe ou d’un paramètre propre à l’application dans le registre Windows, les administrateurs peuvent ajuster ce nombre de tentatives d’évaluation dans le paramètre **OutlookActivationManagerRetryLimit**.
 

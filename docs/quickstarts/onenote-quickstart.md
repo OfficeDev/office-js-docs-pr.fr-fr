@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet Office de OneNote
 description: ''
-ms.date: 05/02/2019
+ms.date: 06/20/2019
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 48cd9395b269a83630608c52d972508828c5c007
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: ccbfa5ca976da507574821f53e1ea3d0422298c7
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589215"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128537"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>Créer votre premier complément du volet Office de OneNote
 
@@ -95,7 +95,7 @@ try {
     npm run start:web
     ```
 
-2. Dans [OneNote Online](https://www.onenote.com/notebooks), ouvrez un bloc-notes, puis créez une page.
+2. Dans [OneNote sur le web](https://www.onenote.com/notebooks), ouvrez un bloc-notes, puis créez une page.
 
 3. Choisissez **Insertion > Compléments Office** pour ouvrir la boîte de dialogue Compléments Office.
 

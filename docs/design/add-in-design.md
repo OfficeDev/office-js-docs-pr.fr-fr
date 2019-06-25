@@ -1,14 +1,14 @@
 ---
 title: Concevoir vos compléments Office
 description: ''
-ms.date: 12/04/2017
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 70faca768f5af70baf389c16fe8259427a85e8d9
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 766110b9b1ff9d22a783f592f1e38eb848b8b737
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448153"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127673"
 ---
 # <a name="design-your-office-add-ins"></a>Concevoir vos compléments Office
 
@@ -22,7 +22,7 @@ Les applications Office suivent un ensemble général de directives d’interact
 
 Suivez les principes de conception d’Office pour créer des expériences de compléments positives :
 
-- **Privilégiez une conception explicitement orientée vers Office.** La fonctionnalité et l’apparence d’un complément doivent compléter harmonieusement l’expérience Office. Les compléments doivent sembler natifs. Ils doivent s’intégrer de façon transparente dans Word sur un iPad ou PowerPoint Online. Un complément bien conçu sera une combinaison appropriée de votre expérience, de la plateforme et de l’application Office. Envisagez d’utiliser Office UI Fabric comme langage de création. Appliquez des thèmes de document et d’interface utilisateur le cas échéant.
+- **Privilégiez une conception explicitement orientée vers Office.** La fonctionnalité et l’apparence d’un complément doivent compléter harmonieusement l’expérience Office. Les compléments doivent sembler natifs. Ils doivent s’intégrer de façon transparente dans Word sur un iPad ou PowerPoint sur le web. Un complément bien conçu sera une combinaison appropriée de votre expérience, de la plateforme et de l’application Office. Envisagez d’utiliser Office UI Fabric comme langage de création. Appliquez des thèmes de document et d’interface utilisateur le cas échéant.
 
 - **Concentrez-vous sur quelques tâches clés et exécutez-les correctement.** Aidez les clients à mener leurs tâches à bien sans empiéter sur le reste de leur travail. Apportez une réelle valeur ajoutée aux clients. Concentrez-vous sur des scénarios d’utilisation courants, choisissez avec soin ceux qui profitent le plus aux utilisateurs lors de l’interaction avec les documents Office.
 
@@ -33,6 +33,7 @@ Suivez les principes de conception d’Office pour créer des expériences de co
 - **Prenez en compte toutes les plateformes et les méthodes d’entrée lors de la conception**. Les compléments sont conçus pour fonctionner sur toutes les plateformes prenant en charge Office ; aussi l’expérience utilisateur de votre complément doit-elle être optimisée pour fonctionner avec toutes les plateformes et tous les facteurs de forme. Veillez à ce que votre complément prenne aussi bien en charge les périphériques de type souris/clavier que les appareils et assurez-vous que votre interface utilisateur HTML personnalisée puisse s’adapter à différents facteurs de forme. Pour plus d’informations, consultez notre section relative aux [fonctions tactiles](../concepts/add-in-development-best-practices.md#optimize-for-touch). 
 
 ## <a name="see-also"></a>Voir aussi
-- [Office UI Fabric](https://developer.microsoft.com/fr-FR/fabric) 
+- 
+  [Office UI Fabric](https://developer.microsoft.com/fr-FR/fabric) 
 - [Bonnes pratiques en matière de développement de compléments](../concepts/add-in-development-best-practices.md)
 

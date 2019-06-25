@@ -1,14 +1,14 @@
 ---
 title: Publication de compléments Office à l’aide du déploiement centralisé via le centre d’administration Office 365
 description: ''
-ms.date: 04/16/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 5cecd9306bf3357d2f9b99cf01f8863ae3d3fe1f
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 5f3fc2a637a125e426f8943794be0a906b0887fb
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910181"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128586"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>Publication de compléments Office à l’aide du déploiement centralisé via le centre d’administration Office 365
 
@@ -17,7 +17,7 @@ Le centre d’administration Office 365 permet aux administrateurs de déployer
 Le centre d’administration Office 365 prend actuellement en charge les scénarios suivants :
 
 - Déploiement centralisé de nouveaux compléments et de ceux mis à jour pour des utilisateurs, des groupes ou une organisation.
-- Déploiement sur plusieurs plateformes, y compris Windows, Mac et Office Online.
+- Déploiement sur plusieurs plateformes, y compris Windows, Mac et sur le web.
 - Déploiement en anglais et pour les clients du monde entier.
 - Déploiement de compléments hébergés sur le cloud.
 - Déploiement de compléments hébergés au sein d’un pare-feu.

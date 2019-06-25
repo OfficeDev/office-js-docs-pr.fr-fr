@@ -1,14 +1,14 @@
 ---
 title: Manifeste XML des compléments Office
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: de7b2c991b149f1eb40080e3423044d24dfbf0b9
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: bf1b62c4ba6e9790cd70a7070dd3c8d682b2dc56
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449021"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127680"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifeste XML des compléments Office
 
@@ -116,9 +116,9 @@ Utilisez uniquement l’élément [AppDomains](/office/dev/add-ins/reference/man
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>Spécifier les domaines que vous souhaitez ouvrir dans la fenêtre de complément
 
-Quand vous exécutez Office Online, votre volet Office peut accéder à n’importe quelle URL. Cependant, sur les plateformes de bureau, si votre complément tente d’accéder à une URL située dans un autre domaine que celui qui héberge la page de démarrage (comme indiqué dans l’élément [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) du fichier manifeste), cette URL s’ouvre dans une nouvelle fenêtre de navigateur en dehors du volet de complément de l’application hôte Office.
+Quand vous exécutez Office sur le web, votre volet Office peut accéder à n’importe quelle URL. Cependant, sur les plateformes de bureau, si votre complément tente d’accéder à une URL située dans un autre domaine que celui qui héberge la page de démarrage (comme indiqué dans l’élément [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) du fichier manifeste), cette URL s’ouvre dans une nouvelle fenêtre de navigateur en dehors du volet de complément de l’application hôte Office.
 
-Pour remplacer ce comportement (version de bureau d’Office), spécifiez chaque domaine à ouvrir dans la fenêtre de complément dans la liste des domaines spécifiés dans l’élément [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) du fichier manifeste. Si le complément tente d’accéder à une URL située dans un domaine figurant dans cette liste, il s’ouvre dans le volet Office d’Office Online et de la version de bureau d’Office. S’il tente d’accéder à une URL qui ne figure pas dans la liste, dans la version de bureau d’Office, cette URL s’ouvre dans une nouvelle fenêtre de navigateur (en dehors du volet de complément).
+Pour remplacer ce comportement (version de bureau d’Office), spécifiez chaque domaine à ouvrir dans la fenêtre de complément dans la liste des domaines spécifiés dans l’élément [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) du fichier manifeste. Si le complément tente d’accéder à une URL située dans un domaine figurant dans cette liste, il s’ouvre dans le volet Office d’Office sur le web et de la version de bureau d’Office. S’il tente d’accéder à une URL qui ne figure pas dans la liste, dans la version de bureau d’Office, cette URL s’ouvre dans une nouvelle fenêtre de navigateur (en dehors du volet de complément).
 
 > [!NOTE]
 > Ce comportement s’applique uniquement au volet racine du complément. S’il existe un iframe incorporé dans la page de complément, l’iframe peut être dirigé vers n’importe quelle URL, qu’elle figure dans la liste des **AppDomains** ou non, y compris dans la version de bureau d’Office.
@@ -410,7 +410,7 @@ Les sections suivantes présentent des exemples de fichiers manifeste XML versio
     receive without leaving your email client.">
     <Override Locale="fr-fr" Value="Visualisez les vidéos
       YouTube références dans vos courriers électronique
-      directement depuis Outlook et Outlook Web App."/>
+      directement depuis Outlook."/>
   </Description>
   <!-- Change the following lines to specify    -->
   <!-- the web server that hosts the icon files. -->

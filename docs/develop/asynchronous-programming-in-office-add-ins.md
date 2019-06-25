@@ -1,14 +1,14 @@
 ---
 title: Programmation asynchrone dans des compléments Office
 description: ''
-ms.date: 04/15/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 6fad9030ecfbb89d515e6cd3b7bb3eeae0e17379
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 98247c401fa5214dc3c0e39ec9e1b4c409cfdc25
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448996"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127638"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Programmation asynchrone dans des compléments Office
 
@@ -16,13 +16,13 @@ Pourquoi l’API de Compléments Office a-t-elle recours à la programmation asy
 
 Le nom de toutes les méthodes asynchrones de l’API se terminent par « Async », comme pour les méthodes [Document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-), [Binding.getDataAsync](/javascript/api/office/office.binding#getdataasync-options--callback-) ou [Item.loadCustomPropertiesAsync](/javascript/api/outlook/office.item#loadcustompropertiesasync-callback--usercontext-). Lorsqu’une méthode « Async » est appelée, elle est exécutée immédiatement et toute exécution de script ultérieure peut se poursuivre normalement. La fonction de rappel facultative que vous transmettez à une méthode « Async » s’exécute dès que l’opération demandée ou les données sont prêtes. L’opération est généralement rapide, mais le retour pourrait présenter un léger retard.
 
-Le diagramme suivant présente le flux d’exécution d’un appel à une méthode « Async » qui lit les données sélectionnées par l’utilisateur dans un document ouvert dans l’instance Word Online ou Excel Online sur le serveur. Au moment où l’appel « Async » est effectué, le thread d’exécution JavaScript est libre d’effectuer tout traitement côté client supplémentaire (même si aucun n’est affiché dans le diagramme). Lors du retour de la méthode « Async », l’appel reprend l’exécution sur le thread et le complément peut accéder aux données, les exploiter et afficher le résultat. Le même motif d’exécution asynchrone est employé en cas d’utilisation des applications hôtes de client riche Office, telles que Word 2013 ou Excel 2013.
+Le diagramme suivant présente le flux d’exécution d’un appel à une méthode « Async » qui lit les données sélectionnées par l’utilisateur dans un document ouvert dans l’instance Word ou Excel sur le serveur. Au moment où l’appel « Async » est effectué, le thread d’exécution JavaScript est libre d’effectuer tout traitement côté client supplémentaire (même si aucun n’est affiché dans le diagramme). Lors du retour de la méthode « Async », l’appel reprend l’exécution sur le thread et le complément peut accéder aux données, les exploiter et afficher le résultat. Le même motif d’exécution asynchrone est employé en cas d’utilisation des applications hôtes de client riche Office, telles que Word 2013 ou Excel 2013.
 
 *Figure 1. Flux d’exécution de programmation asynchrone*
 
 ![Flux d’exécution de thread de programmation asynchrone](../images/office15-app-async-prog-fig01.png)
 
-La prise en charge de cette conception asynchrone dans les clients riches et les clients web fait partie des objectifs de conception « écriture unique-exécution multiplateforme » du modèle de développement des Compléments Office. Par exemple, vous pouvez créer un complément de contenu ou du volet de tâches avec une seule base de code qui sera exécutée sur Excel 2013 et Excel Online.
+La prise en charge de cette conception asynchrone dans les clients riches et les clients web fait partie des objectifs de conception « écriture unique-exécution multiplateforme » du modèle de développement des Compléments Office. Par exemple, vous pouvez créer un complément de contenu ou du volet de tâches avec une seule base de code qui sera exécutée sur Excel 2013 et Excel sur le web.
 
 ## <a name="writing-the-callback-function-for-an-async-method"></a>Écriture de la fonction de rappel pour une méthode « Async »
 

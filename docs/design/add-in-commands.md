@@ -1,14 +1,14 @@
 ---
 title: Commandes de complément pour Excel, Word et PowerPoint
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 7b85d3016b195b353b1e7f314aceb761cf4e31b3
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: cbdc01a439bf34b089806faf20fffa12c916fea1
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952179"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127736"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Commandes de complément pour Excel, Word et PowerPoint
 
@@ -23,9 +23,9 @@ Pour en savoir plus sur les fonctionnalités, regardez la vidéo sur les [comman
 
 ![Capture d’écran d’une commande de complément dans Excel](../images/add-in-commands-1.png)
 
-*Figure 2. Complément incluant des commandes en cours d’exécution dans Excel Online*
+*Figure 2. Complément incluant des commandes en cours d’exécution dans Excel sur le web*
 
-![Capture d’écran d’une commande de complément dans Excel Online](../images/add-in-commands-2.png)
+![Capture d’écran d’une commande de complément dans Excel sur le web](../images/add-in-commands-2.png)
 
 ## <a name="command-capabilities"></a>Fonctionnalités de commande
 
@@ -51,20 +51,20 @@ Les fonctionnalités de commande suivantes sont actuellement prises en charge.
 
 ## <a name="supported-platforms"></a>Plateformes prises en charge
 
-Les commandes de complément sont actuellement prises en charge sur les plateformes suivantes :
+Les commandes de complément sont actuellement prises en charge sur les plateformes suivantes.
 
 - Outlook 2016 pour Windows (build 16.0.4678.1000+)
-- Office pour Windows connecté à Office 365 (build 16.0.6769+)
+- Office sur Windows (build 16.0.6769+, connecté à l’abonnement Office 365)
 - Office 2019 pour Windows
-- Office pour Mac connecté à Office 365 (build 15.33+)
-- Office 2019 pour Mac
-- Office Online
+- Office sur Mac (build 15.33+, connecté à l’abonnement Office 365)
+- Office 2019 sur Mac
+- Office sur le web
 
 D’autres plateformes seront bientôt disponibles.
 
 ## <a name="debugging"></a>Débogage
 
-Pour déboguer une commande de complément, vous devez l’exécuter dans Office Online. Pour plus de détails, voir [Débogage de compléments dans Office Online](../testing/debug-add-ins-in-office-online.md).
+Pour déboguer une commande de complément, vous devez l’exécuter dans Office sur le web. Pour plus de détails, voir [Débogage de compléments dans Office sur le web](../testing/debug-add-ins-in-office-online.md).
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
@@ -74,7 +74,7 @@ Appliquez les meilleures pratiques suivantes lorsque vous développez des comman
 - Proposez des actions détaillées permettant de réaliser plus efficacement des tâches courantes dans votre complément. Réduisez le nombre d’étapes nécessaires à la réalisation d’une action.
 - Pour placer vos commandes dans le ruban Office :
     - Placez les commandes sur un onglet existant (Insertion, Révision, etc.) si la fonctionnalité ajoutée lui correspond. Par exemple, si votre complément permet aux utilisateurs d’insérer un élément multimédia, ajoutez un groupe à l’onglet Insertion. Notez que l’ensemble des onglets ne sont pas nécessairement disponibles dans toutes les versions d’Office. Pour plus d’informations, voir le [manifeste XML de compléments Office](../develop/add-in-manifests.md).
-    - Placez les commandes sous l’onglet Accueil si la fonctionnalité ne correspond à aucun autre onglet, et si vous avez moins de six commandes de niveau supérieur. Vous pouvez également ajouter des commandes à l’onglet Accueil si votre complément doit fonctionner sur toutes les versions d’Office (par exemple, Office Desktop et Office Online) et si un onglet n’est pas disponible dans toutes les versions (par exemple, si l’onglet Création n’existe pas dans Office Online).  
+    - Placez les commandes sous l’onglet Accueil si la fonctionnalité ne correspond à aucun autre onglet, et si vous avez moins de six commandes de niveau supérieur. Vous pouvez également ajouter des commandes à l’onglet Accueil si votre complément doit fonctionner sur toutes les versions d’Office (par exemple, Office sur le web ou le bureau) et si un onglet n’est pas disponible dans toutes les versions (par exemple, si l’onglet Création n’existe pas dans Office sur le web).  
     - Placez des commandes dans un onglet personnalisé si vous avez plus de six commandes de niveau supérieur.
     - Nommez votre groupe en fonction du nom de votre complément. Si vous avez plusieurs groupes, nommez chaque groupe en fonction de la fonctionnalité offerte par les commandes de ce groupe.
     - N’ajoutez pas de boutons superflus pour augmenter la valeur de votre complément.

@@ -1,39 +1,39 @@
 ---
 title: Ensembles de conditions requises de l’API JavaScript pour Excel
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 9123714dff894d01475563b4d960c1fad682789a
-ms.sourcegitcommit: e112a9b29376b1f574ee13b01c818131b2c7889d
+ms.openlocfilehash: a1710fcc89eeafa1e6314e06ded99b3527972244
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "34997413"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128446"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Excel
 
 Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
-Les compléments Excel peuvent être exécutés dans différentes versions d’Office, notamment Office 2016 ou version ultérieure pour Windows, Office pour iPad, Office pour Mac et Office Online. Le tableau suivant répertorie les ensembles de conditions requises pour Excel, les applications hôtes Office qui prennent en charge chaque ensemble de conditions et les versions ou numéro de build de ces applications.
+Les compléments Excel peuvent être exécutés dans différentes versions d’Office, notamment Office 2016 ou version ultérieure pour Windows, et Office sur le web, Mac et iPad. Le tableau suivant répertorie les ensembles de conditions requises pour Excel, les applications hôtes Office qui prennent en charge chaque ensemble de conditions et les versions ou numéro de build de ces applications.
 
 > [!NOTE]
 > Pour utiliser l’API dans un des jeux exigence numérotée, vous devez référencer la **production** de la bibliothèque sur le CDN : https://appsforoffice.microsoft.com/lib/1/hosted/office.js.
 >
 > Pour plus d’informations sur l’utilisation aperçu API, voir la section[JavaScript d’Excel preview API](#excel-javascript-preview-apis) dans cet article.
 
-|  Ensemble de conditions requises  |  Office pour Windows<br>(connecté à Office 365)  |  Office pour iPad<br>(connecté à Office 365)  |  Office pour Mac<br>(connecté à Office 365)  | Office Online  |  Office Online Server  |
+|  Ensemble de conditions requises  |  Office pour Windows<br>(connecté à l’abonnement Office 365)  |  Office sur iPad<br>(connecté à l’abonnement Office 365)  |  Office sur Mac<br>(connecté à l’abonnement Office 365)  | Office sur le web  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [Aperçu](/javascript/api/excel)  | Veuillez utiliser la dernière version d’Office pour tester la préversion API (vous devrez peut-être rejoindre la [programme Office Insider](https://products.office.com/office-insider)) |
-| ExcelApi 1.9  | Version 1903 (Build 11425.20204) ou version ultérieure | 2.24 ou version ultérieure | 16.24 ou version ultérieure | Mai 2019       | Bientôt disponible |
-| ExcelApi 1.8  | Version 1808 (build 10730.20102) ou ultérieure | 2.17 ou version ultérieure | 16.17 ou version ultérieure | Septembre 2018 | Bientôt disponible |
-| ExcelApi 1.7  | Version 1801 (build 9001.2171) ou ultérieure   | 2.9 ou version ultérieure  | 16.9 ou version ultérieure  | Avril 2018     | Bientôt disponible |
-| ExcelApi 1.6  | Version 1704 (Build 8201.2001) ou version ultérieure   | 2.2 ou version ultérieure  | 15.36 ou version ultérieure | Avril 2017     | Bientôt disponible |
-| ExcelApi 1.5  | Version 1703 (Build 8067.2070) ou version ultérieure   | 2.2 ou version ultérieure  | 15.36 ou version ultérieure | Mars 2017     | Bientôt disponible |
-| ExcelApi 1.4  | Version 1701 (Build 7870.2024) ou version ultérieure   | 2.2 ou version ultérieure  | 15.36 ou version ultérieure | Janvier 2017   | Bientôt disponible |
+| ExcelApi 1.9  | Version 1903 (Build 11425.20204) ou version ultérieure | 2.24 ou version ultérieure | 16.24 ou version ultérieure | Mai 2019       | S/O |
+| ExcelApi 1.8  | Version 1808 (build 10730.20102) ou ultérieure | 2.17 ou version ultérieure | 16.17 ou version ultérieure | Septembre 2018 | S/O |
+| ExcelApi 1.7  | Version 1801 (build 9001.2171) ou ultérieure   | 2.9 ou version ultérieure  | 16.9 ou version ultérieure  | Avril 2018     | S/O |
+| ExcelApi 1.6  | Version 1704 (Build 8201.2001) ou version ultérieure   | 2.2 ou version ultérieure  | 15.36 ou version ultérieure | Avril 2017     | S/O |
+| ExcelApi 1.5  | Version 1703 (Build 8067.2070) ou version ultérieure   | 2.2 ou version ultérieure  | 15.36 ou version ultérieure | Mars 2017     | S/O |
+| ExcelApi 1.4  | Version 1701 (Build 7870.2024) ou version ultérieure   | 2.2 ou version ultérieure  | 15.36 ou version ultérieure | Janvier 2017   | S/O |
 | ExcelApi 1.3  | Version 1608 (Build 7369.2055) ou version ultérieure   | 1.27 ou version ultérieure | 15.27 ou version ultérieure | Septembre 2016 | Version 1608 (Build 7601.6800) ou version ultérieure|
-| ExcelApi 1.2  | Version 1601 (Build 6741.2088) ou version ultérieure   | 1.21 ou version ultérieure | 15.22 ou version ultérieure | Janvier 2016   ||
-| ExcelApi 1.1  | Version 1509 (Build 4266.1001) ou version ultérieure   | 1.19 ou version ultérieure | 15.20 ou version ultérieure | Janvier 2016   ||
+| ExcelApi 1.2  | Version 1601 (Build 6741.2088) ou version ultérieure   | 1.21 ou version ultérieure | 15.22 ou version ultérieure | Janvier 2016   | S/O |
+| ExcelApi 1.1  | Version 1509 (Build 4266.1001) ou version ultérieure   | 1.19 ou version ultérieure | 15.20 ou version ultérieure | Janvier 2016   | S/O|
 
 > [!NOTE]
 > Le numéro de build d’Office 2016 installé via MSI est 16.0.4266.1001. Cette version ne contient que l’ensemble de conditions requises de l’ExcelApi 1.1.
@@ -42,9 +42,9 @@ Les compléments Excel peuvent être exécutés dans différentes versions d’O
 
 [Fonctions personnalisées](../../excel/custom-functions-overview.md) utilisent des ensembles d’exigences distincts des API Excel JavaScript de base. Le tableau suivant répertorie les ensembles de conditions requises pour les fonctions personnalisées, les applications hôtes Office qui prennent en charge ces conditions et les version build ou le numéro pour ces applications.
 
-|  Ensemble de conditions requises  |  Office pour Windows<br>(connecté à Office 365)  |  Office pour iPad<br>(connecté à Office 365)  |  Office pour Mac<br>(connecté à Office 365)  | Office Online | Office Online Server |
+|  Ensemble de conditions requises  |  Office pour Windows<br>(connecté à l’abonnement Office 365)  |  Office sur iPad<br>(connecté à l’abonnement Office 365)  |  Office sur Mac<br>(connecté à l’abonnement Office 365)  | Office sur le web | Office Online Server |
 |:-----|-----|:-----|:-----|:-----|:-----|
-| CustomFunctionsRuntime 1.1 | Version 1904 (Build 11601.20144) ou version ultérieure | Non pris en charge | 16.24 ou version ultérieure | Avril 2019 | Bientôt disponible |
+| CustomFunctionsRuntime 1.1 | Version 1904 (Build 11601.20144) ou version ultérieure | Non pris en charge | 16.24 ou version ultérieure | Avril 2019 | S/O |
 
 Pour en savoir plus sur les versions, les numéros de build et Office Online Server, voir :
 

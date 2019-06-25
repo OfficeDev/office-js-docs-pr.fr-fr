@@ -1,14 +1,14 @@
 ---
-ms.date: 05/30/2019
+ms.date: 06/21/2019
 description: Demander, flux de données et annuler la diffusion en continu de données externes à votre classeur avec des fonctions personnalisées dans Excel
 title: Recevoir et gérer des données à l’aide de fonctions personnalisées
 localization_priority: Priority
-ms.openlocfilehash: 22f79c8b4e7e39569d3b955477e9397a053e1a8f
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 39be2f0913e2eee4b1e5e7d5f704a47dee279cf5
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910335"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128254"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>Recevoir et gérer des données à l’aide de fonctions personnalisées
 
@@ -74,6 +74,9 @@ Pour un autre exemple d’une demande XHR avec davantage de contexte, voir la `g
 
 Dans l’exemple de code suivant, la fonction `stockPriceStream` utilise un symbole boursier pour obtenir le prix d’une action toutes les 1 000 millisecondes. Pour plus d’informations sur cet exemple voir le[didacticiel relatif aux fonctions personnalisées](../tutorials/excel-tutorial-create-custom-functions.md#create-a-streaming-asynchronous-custom-function).
 
+> [!NOTE]
+> Le code suivant demande une cotation boursière à l’aide de l’API IEX Trading. Avant d’exécuter le code, vous devez [créer un compte gratuit avec IEX Cloud](https://iexcloud.io/) de sorte que vous puissiez obtenir le jeton d’API requis dans la demande d’API.
+
 ```js
 /**
  * Streams a stock price.
@@ -91,7 +94,8 @@ function stockPriceStream(ticker, invocation) {
             return;
         }
 
-        var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
+        //Note: In the following line, replace <YOUR_TOKEN_HERE> with the API token that you've obtained through your IEX Cloud account.
+        var url = "https://cloud.iexapis.com/stable/stock/" + ticker + "/quote/latestPrice?token=<YOUR_TOKEN_HERE>"
         isPending = true;
 
         fetch(url)

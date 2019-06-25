@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises des API communes pour Office
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 1d7052ec5b790805abdf9a893855919ca685c404
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 71c59331e59ab508cf6a681bc9c594d5b30af9fe
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952223"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127029"
 ---
 # <a name="office-common-api-requirement-sets"></a>Ensembles de conditions requises des API communes pour Office
 
@@ -35,7 +35,7 @@ Les sections suivantes répertorient les ensembles de conditions requises commun
 
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| PowerPoint<br>PowerPoint Online<br>PowerPoint pour iPad<br>PowerPoint pour Mac|Document.getActiveViewAsync|
+| PowerPoint sur Windows<br>PowerPoint sur le web<br>PowerPoint sur iPad<br>PowerPoint sur Mac|Document.getActiveViewAsync|
 
 ---
 
@@ -49,7 +49,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| Applications web Access<br>Excel<br>Excel Online<br>Excel pour iPad<br>Excel pour Mac<br>Word 2013 et versions ultérieures<br>Word 2016 pour Mac et versions ultérieures<br>Word Online<br>Word pour iPad|Binding.addHandlerAsync<br>Binding.removeHandlerAsync|
+| Applications web Access<br>Excel sur Windows<br>Excel sur le web<br>Excel sur iPad<br>Excel sur Mac<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Binding.addHandlerAsync<br>Binding.removeHandlerAsync|
 
 ---
 
@@ -57,7 +57,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| Excel<br>Excel Online<br>Excel pour Mac<br>PowerPoint<br>PowerPoint Online<br>PowerPoint pour iPad<br>PowerPoint pour Mac<br>Word 2013 et versions ultérieures<br>Word 2016 pour Mac et versions ultérieures<br>Word Online<br>Word pour iPad|Prend en charge la sortie au format Office Open XML (OOXML) sous la forme d’un tableau d’octets<br>(Office.FileType.Compressed) lorsque vous utilisez la méthode Document.getFileAsync.|
+| Excel sur Windows<br>Excel sur le web<br>Excel sur Mac<br>PowerPoint sur Windows<br>PowerPoint sur le web<br>PowerPoint sur iPad<br>PowerPoint sur Mac<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Prend en charge la sortie au format Office Open XML (OOXML) sous la forme d’un tableau d’octets<br>(Office.FileType.Compressed) lorsque vous utilisez la méthode Document.getFileAsync.|
 
 ---
 
@@ -65,7 +65,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| Word 2013 et versions ultérieures<br>Word 2016 pour Mac et versions ultérieures<br>Word Online<br>Word pour iPad|CustomXmlNode.getNodesAsync<br>CustomXmlNode.getNodeValueAsync<br>CustomXmlNode.getTextAsync<br>CustomXmlNode.getXmlAsync<br>CustomXmlNode.setNodeValueAsync<br>CustomXmlNode.setTextAsync<br>CustomXmlNode.setXmlAsync<br>CustomXmlPart.addHandlerAsync<br>CustomXmlPart.deleteAsync<br>CustomXmlPart.getNodesAsync<br>CustomXmlPart.getXmlAsync<br>CustomXmlPart.removeHandlerAsync<br>CustomXmlParts.addAsync<br>CustomXmlParts.getByIdAsync<br>CustomXmlParts.getByNamespaceAsync<br>CustomXmlPrefixMappings.addNamespaceAsync<br>CustomXmlPrefixMappings.getNamespaceAsync<br>CustomXmlPrefixMappings.getPrefixAsync|
+| Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|CustomXmlNode.getNodesAsync<br>CustomXmlNode.getNodeValueAsync<br>CustomXmlNode.getTextAsync<br>CustomXmlNode.getXmlAsync<br>CustomXmlNode.setNodeValueAsync<br>CustomXmlNode.setTextAsync<br>CustomXmlNode.setXmlAsync<br>CustomXmlPart.addHandlerAsync<br>CustomXmlPart.deleteAsync<br>CustomXmlPart.getNodesAsync<br>CustomXmlPart.getXmlAsync<br>CustomXmlPart.removeHandlerAsync<br>CustomXmlParts.addAsync<br>CustomXmlParts.getByIdAsync<br>CustomXmlParts.getByNamespaceAsync<br>CustomXmlPrefixMappings.addNamespaceAsync<br>CustomXmlPrefixMappings.getNamespaceAsync<br>CustomXmlPrefixMappings.getPrefixAsync|
 
 ---
 
@@ -81,7 +81,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| Excel<br>Excel Online<br>Excel pour iPad<br>Excel pour Mac<br>OneNote Online<br>PowerPoint<br>PowerPoint Online<br>PowerPoint pour iPad<br>PowerPoint pour Mac<br>Word 2013 et versions ultérieures<br>Word 2016 pour Mac et versions ultérieures<br>Word Online<br>Word pour iPad|Document.addHandlerAsync<br>Document.removeHandlerAsync|
+| Excel sur Windows<br>Excel sur le web<br>Excel sur iPad<br>Excel sur Mac<br>OneNote sur le web<br>PowerPoint sur Windows<br>PowerPoint sur le web<br>PowerPoint sur iPad<br>PowerPoint sur Mac<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Document.addHandlerAsync<br>Document.removeHandlerAsync|
 
 ---
 
@@ -89,7 +89,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| Excel<br>Excel Online<br>Excel pour iPad<br>Excel pour Mac<br>PowerPoint<br>PowerPoint Online<br>PowerPoint pour iPad<br>PowerPoint pour Mac<br>Word 2013 et versions ultérieures<br>Word 2016 pour Mac et versions ultérieures<br>Word Online<br>Word pour iPad|Document.getFileAsync<br>File.closeAsync<br>File.getSliceAsync|
+| Excel sur Windows<br>Excel sur le web<br>Excel sur iPad<br>Excel sur Mac<br>PowerPoint sur Windows<br>PowerPoint sur le web<br>PowerPoint sur iPad<br>PowerPoint sur Mac<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Document.getFileAsync<br>File.closeAsync<br>File.getSliceAsync|
 
 ---
 
@@ -97,7 +97,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| OneNote Online<br>Word 2013 et versions ultérieures<br>Word 2016 pour Mac et versions ultérieures<br>Word Online<br>Word pour iPad|Prend en charge le forçage au format HTML (Office.CoercionType.Html) lors de la lecture et de l’écriture des données à l’aide des méthodes Document.getSelectedDataAsync,<br>Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
+| OneNote sur le web<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Prend en charge le forçage au format HTML (Office.CoercionType.Html) lors de la lecture et de l’écriture des données à l’aide des méthodes Document.getSelectedDataAsync,<br>Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
 
 ---
 
@@ -113,7 +113,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| Excel<br>Excel pour iPad<br>Excel pour Mac<br>OneNote Online<br>PowerPoint<br>PowerPoint Online<br>PowerPoint pour iPad<br>PowerPoint pour Mac<br>Word 2013 et versions ultérieures<br>Word 2016 pour Mac et versions ultérieures<br>Word Online<br>Word pour iPad|Prise en charge de la conversion en une image (Office.CoercionType.Image) lors de l’écriture des données à l’aide de la méthode Document.setSelectedDataAsync.|
+| Excel sur Windows<br>Excel sur iPad<br>Excel sur Mac<br>OneNote sur le web<br>PowerPoint sur Windows<br>PowerPoint sur le web<br>PowerPoint sur iPad<br>PowerPoint sur Mac<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Prise en charge de la conversion en une image (Office.CoercionType.Image) lors de l’écriture des données à l’aide de la méthode Document.setSelectedDataAsync.|
 
 ---
 
@@ -121,7 +121,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-|Outlook sur Windows<br>Outlook pour le web<br>Outlook pour Android<br>Outlook pour Mac<br>Outlook Web App |Voir [Présentation de l’ensemble de conditions requises pour les API Outlook](outlook-api-requirement-sets.md).|
+|Outlook sur Windows<br>Outlook sur le web<br>Outlook sur Android<br>Outlook sur Mac<br>Outlook sur iOS|Voir [Présentation de l’ensemble de conditions requises pour les API Outlook](outlook-api-requirement-sets.md).|
 
 ---
 
@@ -129,7 +129,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| Excel<br>Excel Online<br>Excel pour iPad<br>Excel pour Mac<br>Word<br>Word Online<br>Word pour iPad<br>Word pour Mac|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
+| Excel sur Windows<br>Excel sur le web<br>Excel sur iPad<br>Excel sur Mac<br>Word sur Windows<br>Word sur le web<br>Word sur iPad<br>Word sur Mac|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
 
 ---
 
@@ -137,7 +137,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| Excel<br>Excel Online<br>Excel pour iPad<br>Excel pour Mac<br>Word 2013 et versions ultérieures<br>Word 2016 pour Mac et versions ultérieures<br>Word Online<br>Word pour iPad|Prise en charge du forçage de type sur la structure de données (Office.CoercionType.Matrix) « matrice » (tableau de tableaux) lors de la lecture et de l’écriture de données à l’aide des méthodes Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
+| Excel sur Windows<br>Excel sur le web<br>Excel sur iPad<br>Excel sur Mac<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Prise en charge du forçage de type sur la structure de données (Office.CoercionType.Matrix) « matrice » (tableau de tableaux) lors de la lecture et de l’écriture de données à l’aide des méthodes Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
 
 ---
 
@@ -145,7 +145,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| Word 2013 et versions ultérieures<br>Word 2016 pour Mac et versions ultérieures<br>Word Online<br>Word pour iPad|Prise en charge du forçage de type au format Open Office XML (OOXML) (Office.CoercionType.Ooxml) lors de la lecture et de l’écriture de données à l’aide des méthodes Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
+| Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Prise en charge du forçage de type au format Open Office XML (OOXML) (Office.CoercionType.Ooxml) lors de la lecture et de l’écriture de données à l’aide des méthodes Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
 
 ---
 
@@ -161,7 +161,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| Excel pour Mac<br>PowerPoint<br>PowerPoint Online<br>PowerPoint pour iPad<br>PowerPoint pour Mac<br>Word 2013 et versions ultérieures<br>Word 2016 pour Mac et versions ultérieures<br>Word Online<br>Word pour iPad|Prend en charge la sortie au format PDF (Office.FileType.Pdf)<br>lorsque vous utilisez la méthode Document.getFileAsync.|
+| Excel sur Mac<br>PowerPoint sur Windows<br>PowerPoint sur le web<br>PowerPoint sur iPad<br>PowerPoint sur Mac<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Prend en charge la sortie au format PDF (Office.FileType.Pdf)<br>lorsque vous utilisez la méthode Document.getFileAsync.|
 
 ---
 
@@ -169,7 +169,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| Excel<br>Excel Online<br>Excel pour iPad<br>Excel pour Mac<br>PowerPoint<br>PowerPoint Online<br>PowerPoint pour iPad<br>PowerPoint pour Mac<br>Projet<br>Word 2013 et versions ultérieures<br>Word 2016 pour Mac et versions ultérieures<br>Word Online<br>Word pour iPad|Document.getSelectedDataAsync<br>Document.setSelectedDataAsync|
+| Excel sur Windows<br>Excel sur le web<br>Excel sur iPad<br>Excel sur Mac<br>PowerPoint sur Windows<br>PowerPoint sur le web<br>PowerPoint sur iPad<br>PowerPoint sur Mac<br>Project sur Windows<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Document.getSelectedDataAsync<br>Document.setSelectedDataAsync|
 
 ---
 
@@ -177,7 +177,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| Applications web Access<br>Excel<br>Excel Online<br>Excel pour iPad<br>Excel pour Mac<br>OneNote Online<br>PowerPoint<br>PowerPoint Online<br>PowerPoint pour iPad<br>PowerPoint pour Mac<br>Word 2013 et versions ultérieures<br>Word 2016 pour Mac et versions ultérieures<br>Word Online<br>Word pour iPad|Settings.get<br>Settings.remove<br>Settings.saveAsync<br>Settings.set|
+| Applications web Access<br>Excel sur Windows<br>Excel sur le web<br>Excel sur iPad<br>Excel sur Mac<br>OneNote sur le web<br>PowerPoint sur Windows<br>PowerPoint sur le web<br>PowerPoint sur iPad<br>PowerPoint sur Mac<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Settings.get<br>Settings.remove<br>Settings.saveAsync<br>Settings.set|
 
 ---
 
@@ -185,7 +185,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| Applications web Access<br>Excel<br>Excel Online<br>Excel pour iPad<br>Excel pour Mac<br>Word 2013 et versions ultérieures<br>Word 2016 pour Mac et versions ultérieures<br>Word Online<br>Word pour iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.addColumnsAsync<br>Binding.addRowsAsync<br>Binding.deleteAllDataValuesAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
+| Applications web Access<br>Excel sur Windows<br>Excel sur le web<br>Excel sur iPad<br>Excel sur Mac<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.addColumnsAsync<br>Binding.addRowsAsync<br>Binding.deleteAllDataValuesAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
 
 ---
 
@@ -193,7 +193,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| Applications web Access<br>Excel<br>Excel Online<br>Excel pour iPad<br>Excel pour Mac<br>Word 2013 et versions ultérieures<br>Word 2016 pour Mac et versions ultérieures<br>Word Online<br>Word pour iPad|Prise en charge du forçage de type sur la structure de données « tableau » (Office.CoercionType.Table) lors de la lecture et de l’écriture de données à l’aide des méthodes Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
+| Applications web Access<br>Excel sur Windows<br>Excel sur le web<br>Excel sur iPad<br>Excel sur Mac<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Prise en charge du forçage de type sur la structure de données « tableau » (Office.CoercionType.Table) lors de la lecture et de l’écriture de données à l’aide des méthodes Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
 
 ---
 
@@ -201,7 +201,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| Excel<br>Excel Online<br>Excel pour iPad<br>Excel pour Mac<br>Word 2013 et versions ultérieures<br>Word 2016 pour Mac et versions ultérieures<br>Word Online<br>Word pour iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
+| Excel sur Windows<br>Excel sur le web<br>Excel sur iPad<br>Excel sur Mac<br>Word 2013 ou version ultérieure et Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
 
 ---
 
@@ -209,7 +209,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| Excel<br>Excel Online<br>Excel pour iPad<br>OneNote Online<br>PowerPoint<br>PowerPoint Online<br>PowerPoint pour iPad<br>PowerPoint pour Mac<br>Projet<br>Word 2013 et versions ultérieures<br>Word 2016 pour Mac et versions ultérieures<br>Word Online<br>Word pour iPad|Prise en charge du forçage de type au format texte (Office.CoercionType.Text) lors de la lecture et de l’écriture de données à l’aide des méthodes Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
+| Excel sur Windows<br>Excel sur le web<br>Excel sur iPad<br>OneNote sur le web<br>PowerPoint sur Windows<br>PowerPoint sur le web<br>PowerPoint sur iPad<br>PowerPoint sur Mac<br>Project sur Windows<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Prise en charge du forçage de type au format texte (Office.CoercionType.Text) lors de la lecture et de l’écriture de données à l’aide des méthodes Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
 
 ---
 
@@ -217,7 +217,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| Word 2013 et versions ultérieures<br>Word 2016 pour Mac et versions ultérieures<br>Word Online<br>Word pour iPad|Prise en charge de sortie au format texte (Office.FileType.Text) lors de l’utilisation de la méthode Document.getFileAsync.|
+| Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Prise en charge de sortie au format texte (Office.FileType.Text) lors de l’utilisation de la méthode Document.getFileAsync.|
 
 ---
 
@@ -227,8 +227,8 @@ Les méthodes suivantes dans l’API JavaScript pour Office ne font pas partie d
 
 |**Nom de la méthode**|**Prise en charge des hôtes Office**|
 |:-----|:-----|
-|Bindings.addFromPromptAsync|Applications web Access, Excel, Excel Online, Excel pour iPad et Excel pour Mac|
-|Document.getFilePropertiesAsync|Excel, Excel Online, Excel pour iPad, Excel pour Mac, PowerPoint, PowerPoint Online, PowerPoint pour iPad, PowerPoint pour Mac, Word, Word Online, Word pour iPad et Word pour Mac|
+|Bindings.addFromPromptAsync|Accès aux applications web, Excel sur Windows, Excel sur le web, Excel sur iPad et Excel sur Mac|
+|Document.getFilePropertiesAsync|Excel sur Windows, Excel sur le web, Excel sur iPad, Excel sur Mac, PowerPoint sur Windows, PowerPoint sur le web, PowerPoint sur iPad, PowerPoint sur Mac, Word sur Windows, Word sur le web, Word sur iPad et Word sur Mac|
 |Document.getProjectFieldAsync|Project Standard 2013 et Project Professionnel 2013|
 |Document.getResourceFieldAsync|Project Standard 2013 et Project Professionnel 2013|
 |Document.getSelectedResourceAsync|Project Standard 2013 et Project Professionnel 2013|
@@ -236,13 +236,13 @@ Les méthodes suivantes dans l’API JavaScript pour Office ne font pas partie d
 |Document.getSelectedViewAsync|Project Standard 2013 et Project Professionnel 2013|
 |Document.getTaskAsync|Project Standard 2013 et Project Professionnel 2013|
 |Document.getTaskFieldAsync|Project Standard 2013 et Project Professionnel 2013|
-|Document.goToByIdAsync|Excel, Excel Online, Excel pour iPad, Excel pour Mac, PowerPoint, PowerPoint Online, PowerPoint pour iPad, PowerPoint pour Mac, Word, Word Online, Word pour iPad et Word pour Mac|
-|Settings.addHandlerAsync|Applications web Access, Excel et Excel Online|
-|Settings.refreshAsync|Applications web Access, Excel, Excel Online, PowerPoint, PowerPoint Online, Word et Word Online|
-|Settings.removeHandlerAsync|Applications web Access, Excel et Excel Online|
-|TableBinding.clearFormatsAsync|Excel, Excel Online, Excel pour iPad et Excel pour Mac|
-|TableBinding.setFormatsAsync|Excel, Excel Online, Excel pour iPad et Excel pour Mac|
-|TableBinding.setTableOptionsAsync|Excel, Excel Online, Excel pour iPad et Excel pour Mac|
+|Document.goToByIdAsync|Excel sur Windows, Excel sur le web, Excel sur iPad, Excel sur Mac, PowerPoint sur Windows, PowerPoint sur le web, PowerPoint sur iPad, PowerPoint sur Mac, Word sur Windows, Word sur le web, Word sur iPad et Word sur Mac|
+|Settings.addHandlerAsync|Accès aux applications web et Excel sur le web|
+|Settings.refreshAsync|Accès aux applications web, Excel sur Windows, Excel sur le web, PowerPoint sur Windows, PowerPoint sur le web, Word et Word sur le web|
+|Settings.removeHandlerAsync|Accès aux applications web et Excel sur le web|
+|TableBinding.clearFormatsAsync|Excel sur Windows, Excel sur le web, Excel sur iPad et Excel sur le web|
+|TableBinding.setFormatsAsync|Excel sur Windows, Excel sur le web, Excel sur iPad et Excel sur le web|
+|TableBinding.setTableOptionsAsync|Excel sur Windows, Excel sur le web, Excel sur iPad et Excel sur le web|
 
 ## <a name="see-also"></a>Voir aussi
 

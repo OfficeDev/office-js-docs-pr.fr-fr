@@ -1,14 +1,14 @@
 ---
-ms.date: 05/15/2019
+ms.date: 06/20/2019
 description: Créer des fonctions personnalisées dans Excel à l’aide de JavaScript.
 title: Créer des fonctions personnalisées dans Excel
 localization_priority: Priority
-ms.openlocfilehash: 3eeedd482a432166a7fa26eff6da4b075847a292
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: e8f53919ebd5e44fe04e45dfd05192c77324f3aa
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432168"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127890"
 ---
 # <a name="create-custom-functions-in-excel"></a>Créer des fonctions personnalisées dans Excel 
 
@@ -82,7 +82,7 @@ Notez que le fichier **functions.html** qui régit le chargement du runtime de f
 
 Le fichier manifeste XML pour un complément qui définit les fonctions personnalisées (**./manifest.xml** du projet créé par le Générateur de Yo Office) spécifie l’espace de noms pour toutes les fonctions personnalisées dans le complément et l’emplacement des fichiers HTML, JavaScript et JSON. 
 
-Le marquage XML suivant présente un exemple des éléments`<ExtensionPoint>` et `<Resources>` que vous devez inclure dans le manifeste d’un complément pour activer les fonctions personnalisées. Si vous utilisez le générateur de Yo Office, vos fichiers de fonction personnalisée générés contiennent un fichier manifeste plus complexe que vous pouvez comparer sur [ce dépôt Github](https://github.com/OfficeDev/Excel-Custom-Functions/blob/generate-metadata/manifest.xml).
+Le marquage XML suivant présente un exemple des éléments`<ExtensionPoint>` et `<Resources>` que vous devez inclure dans le manifeste d’un complément pour activer les fonctions personnalisées. Si vous utilisez le générateur de Yo Office, vos fichiers de fonction personnalisée générés contiennent un fichier manifeste plus complexe que vous pouvez comparer sur [ce dépôt Github](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/manifest.xml).
 
 > [!NOTE] 
 > Les URL spécifiées dans le fichier manifeste pour les fonctions personnalisées de fichiers HTML, JavaScript et JSON doivent avoir le même sous-domaine et être accessibles publiquement.
@@ -141,7 +141,7 @@ Le marquage XML suivant présente un exemple des éléments`<ExtensionPoint>` et
 
 ## <a name="coauthoring"></a>Co-création
 
-Excel Online et Excel sous Windows avec un abonnement Office 365 vous permettent de co-créer des documents et cette fonctionnalité est disponible avec les fonctions personnalisées. Si votre classeur utilise une fonction personnalisée, votre collègue sera invité à charger le complément de la fonction personnalisée. Quand vous avez tous les deux chargé le complément, la fonction personnalisée peut partager les résultats via la co-création.
+Excel sur le web et Windows avec un abonnement Office 365 vous permettent de co-créer des documents et cette fonctionnalité est disponible avec les fonctions personnalisées. Si votre classeur utilise une fonction personnalisée, votre collègue sera invité à charger le complément de la fonction personnalisée. Quand vous avez tous les deux chargé le complément, la fonction personnalisée peut partager les résultats via la co-création.
 
 Pour plus d’informations sur la co-création, voir [À propos de la co-création dans Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
 

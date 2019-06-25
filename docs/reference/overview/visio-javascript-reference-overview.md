@@ -1,15 +1,15 @@
 ---
 title: Présentation des API JavaScript pour Visio
 description: ''
-ms.date: 10/11/2018
+ms.date: 06/20/2019
 ms.prod: visio
 localization_priority: Priority
-ms.openlocfilehash: 22b22db1cc515145ef4f18a30de189a3bbd04f60
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 77a3b3f0b4535d366f492f265087bb4f5988c14f
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451792"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127113"
 ---
 # <a name="visio-javascript-api-overview"></a>Présentation des API JavaScript pour Visio
 
@@ -25,11 +25,11 @@ Vous pouvez utiliser les interfaces API JavaScript pour Visio pour :
 * écrire des gestionnaires personnalisés pour les événements de souris dans le dessin ;
 * exposer les données du diagramme, tels que le texte de la forme, les données de forme et des liens hypertexte sur votre solution.
 
-Cet article décrit comment utiliser les interfaces API JavaScript pour Visio avec Visio Online pour créer des solutions pour SharePoint Online. Il présente des concepts fondamentaux pour l’utilisation des API, notamment concernant les objets **EmbeddedSession**, **RequestContext**, les objets de proxy JavaScript, ainsi que les méthodes **sync()**, **Visio.run()** et **load()**. Les exemples de code vous montrent comment appliquer ces concepts.
+Cet article décrit comment utiliser les interfaces API JavaScript pour Visio avec Visio sur le web pour créer des solutions pour SharePoint Online. Il présente des concepts fondamentaux pour l’utilisation des API, notamment concernant les objets **EmbeddedSession**, **RequestContext**, les objets de proxy JavaScript, ainsi que les méthodes **sync()**, **Visio.run()** et **load()**. Les exemples de code vous montrent comment appliquer ces concepts.
 
 ## <a name="embeddedsession"></a>EmbeddedSession
 
-L’objet EmbeddedSession initialise la communication entre le cadre du développeur et le cadre de Visio Online.
+L’objet EmbeddedSession initialise la communication entre le cadre du développeur et le cadre de Visio dans le navigateur.
 
 ```js
 var session = new OfficeExtension.EmbeddedSession(url, { id: "embed-iframe",container: document.getElementById("iframeHost") });
@@ -46,7 +46,7 @@ La méthode d’exécution utilise les objets session et RequestContext et renvo
 
 ## <a name="requestcontext"></a>RequestContext
 
-L’objet RequestContext facilite les demandes auprès de l’application Visio. Étant donné que le cadre du développeur et l’application Visio Online s’exécutent dans deux iframes différents, l’objet RequestContext (context dans les exemples suivants) est nécessaire pour accéder à Visio et aux objets associés (par exemple, des pages et des formes) depuis le cadre du développeur.
+L’objet RequestContext facilite les demandes auprès de l’application Visio. Étant donné que le cadre du développeur et le client web Visio s’exécutent dans deux iframes différents, l’objet RequestContext (contexte dans l’exemple suivant) est nécessaire pour accéder à Visio et aux objets associés (par exemple, des pages et des formes) depuis le cadre du développeur.
 
 ```js
 function hideToolbars() {
@@ -194,15 +194,11 @@ function getSelectedShapeText() {
 </script>
 ```
 
-Après cela, vous n’avez plus besoin que de l’URL d’un diagramme Visio que vous voulez utiliser. Téléchargez simplement le diagramme Visio dans SharePoint Online et ouvrez-le dans Visio Online. À partir de là, ouvrez la boîte de dialogue Incorporer et utilisez l’URL à incorporer de l’exemple ci-dessus.
+Après cela, vous n’avez plus besoin que de l’URL d’un diagramme Visio que vous voulez utiliser. Téléchargez simplement le diagramme Visio dans SharePoint Online et ouvrez-le dans Visio sur le web. À partir de là, ouvrez la boîte de dialogue Incorporer et utilisez l’URL à incorporer de l’exemple ci-dessus.
 
 ![Copiez l’URL du fichier Visio de la boîte de dialogue Incorporer](../images/Visio-embed-url.png)
 
-Si vous utilisez Visio Online en mode d’édition, ouvrez la boîte de dialogue Incorporer en sélectionnant **Fichier** > **Partager** > **Incorporer**. Si vous utilisez Visio Online en mode Affichage, ouvrez la boîte de dialogue Incorporer en sélectionnant « ... » puis **Incorporer**.
-
-## <a name="open-api-specifications"></a>Spécifications d’ouverture de l’API
-
-Au fur et à mesure que nous concevons et développons de nouvelles API, nous les mettons à votre disposition sur notre page de [spécifications d’ouverture de l’API](../openspec.md) pour que vous puissiez nous faire part de vos commentaires. Découvrez les nouvelles fonctionnalités du pipeline et donnez-nous votre avis sur nos spécifications de conception.
+Si vous utilisez Visio sur le web en mode d’édition, ouvrez la boîte de dialogue Incorporer en sélectionnant **Fichier** > **Partager** > **Incorporer**. Si vous utilisez Visio sur le web en mode Affichage, ouvrez la boîte de dialogue Incorporer en sélectionnant « ... », puis **Incorporer**.
 
 ## <a name="visio-javascript-api-reference"></a>Référence de l’API JavaScript pour Visio
 

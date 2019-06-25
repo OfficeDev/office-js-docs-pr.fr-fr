@@ -1,33 +1,33 @@
 ---
 title: Ensembles de conditions requises de l’API JavaScript pour Word
 description: ''
-ms.date: 06/11/2019
+ms.date: 06/20/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: be2c9834fbf3ceabcbbca6f2378b4356095ab387
-ms.sourcegitcommit: e112a9b29376b1f574ee13b01c818131b2c7889d
+ms.openlocfilehash: 927dce7bc196c1871fd44d4b91e67ba04a3fbb16
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "34997392"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127001"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Word
 
 Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
-Les compléments Word peuvent être exécutés dans différentes versions d’Office, notamment Office 2016 ou version ultérieure pour Windows, Office pour iPad, Office pour Mac et Office Online. Le tableau suivant répertorie les ensembles de conditions requises pour Word, les applications Office hôte qui prennent en charge ces conditions et les numéros de build ou de version de ces applications.
+Les compléments Word peuvent être exécutés dans différentes versions d’Office, notamment Office 2016 ou version ultérieure sur Windows, et Office sur le web, iPad et Mac. Le tableau suivant répertorie les ensembles de conditions requises pour Word, les applications Office hôte qui prennent en charge ces conditions et les numéros de build ou de version de ces applications.
 
 > [!NOTE]
 > Pour les ensembles de conditions requises qui sont marqués comme Bêta, utilisez la version spécifiée (ou ultérieure) du logiciel Office et utilisez la bibliothèque bêta du CDN : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 >
 > Les entrées qui ne sont pas répertoriées en version Bêta sont généralement disponibles et vous pouvez continuer à utiliser la bibliothèque CDN Production : https://appsforoffice.microsoft.com/lib/1/hosted/office.js
 
-|  Ensemble de conditions requises  |   Office pour Windows\*<br>(connecté à Office 365)  |  Office pour iPad<br>(connecté à Office 365)  |  Office pour Mac<br>(connecté à Office 365)  | Office Online  | Office Online Server  |
+|  Ensemble de conditions requises  |   Office pour Windows\*<br>(connecté à l’abonnement Office 365)  |  Office sur iPad<br>(connecté à l’abonnement Office 365)  |  Office sur Mac<br>(connecté à l’abonnement Office 365)  | Office sur le web  | Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [Aperçu](/javascript/api/word)  | Veuillez utiliser la dernière version d’Office pour tester la préversion API (vous devrez peut-être rejoindre la [programme Office Insider](https://products.office.com/office-insider)) |
-| WordApi 1.3 | Version 1612 (Build 7668.1000) ou version ultérieure| Mars 2017, 2.22 ou version ultérieure | Mars 2017, 15.32 ou version ultérieure| Mars 2017 ||
-| WordApi 1.2  | Mise à jour de décembre 2015, version 1601 (Build 6568.1000) ou version ultérieure | Janvier 2016, 1.18 ou version ultérieure | Janvier 2016, 15.19 ou version ultérieure| Septembre 2016 | |
-| WordApi 1.1  | Version 1509 (Build 4266.1001) ou version ultérieure| Janvier 2016, 1.18 ou version ultérieure | Janvier 2016, 15.19 ou version ultérieure| Septembre 2016 | |
+| WordApi 1.3 | Version 1612 (Build 7668.1000) ou version ultérieure| Mars 2017, 2.22 ou version ultérieure | Mars 2017, 15.32 ou version ultérieure| Mars 2017 | S/O |
+| WordApi 1.2  | Mise à jour de décembre 2015, version 1601 (Build 6568.1000) ou version ultérieure | Janvier 2016, 1.18 ou version ultérieure | Janvier 2016, 15.19 ou version ultérieure| Septembre 2016 | S/O |
+| WordApi 1.1  | Version 1509 (Build 4266.1001) ou version ultérieure| Janvier 2016, 1.18 ou version ultérieure | Janvier 2016, 15.19 ou version ultérieure| Septembre 2016 | S/O |
 
 > [!NOTE]
 > Le numéro de build d’Office 2016 installé via MSI est 16.0.4266.1001. Cette version ne contient que l’ensemble d’exigences WordApi 1.1.

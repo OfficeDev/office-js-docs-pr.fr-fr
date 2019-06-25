@@ -1,14 +1,14 @@
 ---
 title: Présentation de l’API JavaScript pour Office
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: c1666745e9ffeb6c0e9ecf763b2a30c97c609b4f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 45cccadaa3d82f3435579650ae5161b20d7a425a
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449301"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127988"
 ---
 # <a name="understanding-the-javascript-api-for-office"></a>Présentation de l’API JavaScript pour Office
 
@@ -179,7 +179,7 @@ Ce tableau récapitule l’API et les fonctionnalités prises en charge dans les
 |||||||||
 |:-----|:-----|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
 ||**Nom de l’hôte**|Base de données|Classeur|Boîte aux lettres|Présentation|Document|Projet|
-||**Applications hôtes** **prises en charge**|Applications web Access|Excel,<br/>Excel Online|Outlook,<br/>Outlook Web App,<br/>OWA pour les périphériques|PowerPoint,<br/>PowerPoint Online|Word|Project|
+||**Applications hôtes** **prises en charge**|Applications web Access|Excel sur Windows,<br/>Excel sur le web|Outlook sur Windows,<br/>Outlook sur le web,<br/>Outlook sur Android,<br>Outlook sur iOS|PowerPoint sur Windows,<br/>PowerPoint sur le web|Word sur Windows|Project sur Windows|
 |**Types de compléments pris en charge**|Contenu|v|v||v|||
 ||Volet de tâches||v||v|v|v|
 ||Outlook|||O||||

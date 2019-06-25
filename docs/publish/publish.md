@@ -1,14 +1,14 @@
 ---
 title: Déploiement et publication de votre complément Office | Microsoft Docs
 description: Méthodes et options pour déployer votre complément Office à des fins de test ou de distribution auprès des utilisateurs.
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: ba32e0bbe594b8da8fad0d230b818faf59e64ce6
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 9fefdece308647dda79a769acc9e8493cbca06f8
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910153"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128551"
 ---
 # <a name="deploy-and-publish-your-office-add-in"></a>Déploiement et publication de votre complément Office
 
@@ -16,7 +16,7 @@ Vous pouvez utiliser l’une des méthodes pour déployer votre complément Offi
 
 |**Méthode**|**Use...**|
 |:---------|:------------|
-|[Chargement de version test](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|Dans le cadre de votre processus de développement, pour tester l’exécution de votre complément sur Windows, Office Online, iPad ou Mac.|
+|[Chargement de version test](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|Dans le cadre de votre processus de développement, pour tester l’exécution de votre complément sur Windows, iPad, Mac ou dans un navigateur.|
 |[Déploiement centralisé](centralized-deployment.md)|Dans un environnement de cloud ou hybride, utilisez cette méthode pour distribuer votre complément auprès des utilisateurs de votre organisation à l’aide du Centre d’administration Office 365.|
 |[Catalogue SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|Dans un environnement local, pour distribuer votre complément auprès des utilisateurs de votre organisation.|
 |[AppSource](/office/dev/store/submit-to-the-office-store)|Pour distribuer publiquement votre complément auprès des utilisateurs.|
@@ -38,7 +38,7 @@ Les options de déploiement disponibles dépendent de l’hôte Office que vous 
 | Volet Office       | X           | X                       | X          | X                    |
 | Commande         | X           | X                       | X          |                      |
 
-&#42; les catalogues SharePoint ne prennent pas en charge Office pour Mac.
+&#42; Les catalogues SharePoint ne prennent pas en charge Office sur Mac.
 
 ### <a name="deployment-options-for-outlook-add-ins"></a>Options de déploiement pour les compléments Outlook
 
@@ -66,7 +66,7 @@ Un catalogue d’applications SharePoint est une collection de sites spéciale q
 Si vous déployez des compléments dans un environnement local, utilisez un catalogue SharePoint. Pour obtenir des détails, voir l’article sur la [publication de compléments du volet des tâches et de contenu dans un catalogue SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
 > [!NOTE]
-> Les catalogues SharePoint ne prennent pas en charge Office pour Mac. Pour déployer des compléments Office sur les clients Mac, vous devez les envoyer à [AppSource](/office/dev/store/submit-to-the-office-store).
+> Les catalogues SharePoint ne prennent pas en charge Office sur Mac. Pour déployer des compléments Office sur les clients Mac, vous devez les envoyer à [AppSource](/office/dev/store/submit-to-the-office-store).
 
 ### <a name="outlook-add-in-deployment"></a>Déploiement de compléments Outlook
 

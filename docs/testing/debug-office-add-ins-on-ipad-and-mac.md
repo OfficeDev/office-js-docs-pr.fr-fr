@@ -1,14 +1,14 @@
 ---
 title: Déboguer des compléments Office sur un Mac
 description: ''
-ms.date: 05/21/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 0505dcc49ea98040f1c4891621c8e30a8cbeaff4
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: 88f7cbf6c944a0f6510306cfe2d07db59e40bdeb
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432277"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126931"
 ---
 # <a name="debug-office-add-ins-on-a-mac"></a>Déboguer des compléments Office sur un Mac
 
@@ -41,7 +41,7 @@ Ensuite, ouvrez l’application Office et[insérez votre complément](sideload-a
 
 ## <a name="clearing-the-office-applications-cache-on-a-mac"></a>Effacement du cache de l’application Office sur un ordinateur Mac
 
-Les compléments sont souvent mis en cache dans Office pour Mac, pour des raisons de performances. En règle générale, vous pouvez effacer le cache en rechargeant le complément. En présence de plusieurs compléments dans le même document, il se peut que le processus d’effacement automatique du cache lors du rechargement ne fonctionne pas systématiquement.
+Les compléments sont souvent mis en cache dans Office sur Mac, pour des raisons de performances. En règle générale, vous pouvez effacer le cache en rechargeant le complément. En présence de plusieurs compléments dans le même document, il se peut que le processus d’effacement automatique du cache lors du rechargement ne fonctionne pas systématiquement.
 
 Sur un ordinateur Mac, vous pouvez effacer le cache manuellement en supprimant le contenu du dossier `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
 

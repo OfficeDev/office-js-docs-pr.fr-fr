@@ -1,14 +1,14 @@
 ---
 title: Installer la dernière version d’Office
 description: Découvrez comment s’inscrire afin d’obtenir les dernières versions d’Office.
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 345b7ad49bab672b9e9dd3a055bd8bfeed2962e3
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: adfed2e5e35e2ad86295faafc2ffed91cf728bcd
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449892"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128324"
 ---
 # <a name="install-the-latest-version-of-office"></a>Installer la dernière version d’Office
 
@@ -21,7 +21,7 @@ Pour s’inscrire afin d’obtenir les dernières versions d’Office, procédez
 - Si vous êtes abonné à Office 365 Famille, Personnel ou Université, consultez la page [Participez au programme Office Insider](https://products.office.com/office-insider).
 - Si vous êtes un client d’Office 365 pour les entreprises, consultez l’article [Installer la version First Release pour Office 365 pour les entreprises](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead).
 - Si vous exécutez Office sur un Mac :
-    - démarrez un programme Office pour Mac.
+    - Démarrez une application Office.
     - Sélectionnez **Vérifier les mises à jour** dans le menu Aide.
     - Dans la zone Mise à jour automatique Microsoft (AutoUpdate), cochez la case pour participer au programme Office Insider.
 
