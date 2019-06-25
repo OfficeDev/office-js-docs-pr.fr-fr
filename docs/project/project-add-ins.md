@@ -1,14 +1,14 @@
 ---
 title: Compléments du volet Office pour Project
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 6f08f45e81fa40a869d07acea066b43c2720876a
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: c04b2d3d2da3f258751585e0d30a9c726af373e6
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910328"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128600"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Compléments du volet Office pour Project
 
@@ -24,7 +24,7 @@ Pour une introduction aux compléments Office, reportez-vous à [Vue d’ensemb
 Les gestionnaires de projet peuvent utiliser les compléments du volet Office dans Project pour les aider dans la gestion de leurs activités. Au lieu de quitter Project et d’ouvrir une nouvelle application pour rechercher les informations qu’ils utilisent fréquemment, les gestionnaires de projet peuvent accéder directement à ces informations à partir de Project. Le contenu d’un complément du volet Office peut être contextuel, basé sur la tâche sélectionnée, la ressource, la vue ou d’autres données dans une cellule de diagramme de Gantt, une vue Utilisation des tâches ou une vue Utilisation des ressources.
 
 > [!NOTE]
-> Avec Project Professionnel 2013, vous pouvez développer des compléments du volet Office qui accèdent aux installations locales de Project Server 2013 et Project Online, ainsi qu’aux versions locales ou en ligne de SharePoint 2013. Project Standard 2013 ne prend pas en charge l’intégration directe aux données Project Server ou aux listes de tâches SharePoint synchronisées avec Project Server.
+> Avec Project Professionnel 2013, vous pouvez développer des compléments du volet Office qui accèdent à Project sur le web, aux installations locales de Project Server 2013, ainsi qu’aux versions locales ou en ligne de SharePoint 2013. Project Standard 2013 ne prend pas en charge l’intégration directe aux données Project Server ou aux listes de tâches SharePoint synchronisées avec Project Server.
 
 Les scénarios des compléments pour Project comprennent les fonctionnalités suivantes :
 
@@ -184,7 +184,7 @@ Dans la procédure 2, le complément Bing Search est installé sur l’ordinateu
 
 ## <a name="distributing-project-add-ins"></a>Distribution de compléments Project
 
-Vous pouvez distribuer des compléments via un partage de fichiers, un catalogue d’applications dans une bibliothèque SharePoint ou dans AppSource. Pour plus d’informations, reportez-vous à [Publier votre complément Office](../publish/publish.md).
+Vous pouvez distribuer des compléments via un partage de fichiers, un catalogue d’applications dans une bibliothèque SharePoint ou dans AppSource. Pour plus d’informations, voir [Publier votre complément Office](../publish/publish.md).
 
 ## <a name="see-also"></a>Voir aussi
 

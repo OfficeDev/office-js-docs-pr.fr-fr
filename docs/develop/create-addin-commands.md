@@ -1,14 +1,14 @@
 ---
 title: Création de commandes de complément dans votre manifeste pour Excel, Word et PowerPoint
 description: Utilisez VersionOverrides dans votre manifeste pour définir des commandes de complément pour Excel, Word et PowerPoint. Utilisez les commandes de complément pour créer des éléments d’interface utilisateur, ajouter des boutons ou des listes, et effectuer des actions.
-ms.date: 04/15/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: a85d6a693995c8d0327c1b511e85e2159e51a042
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 9917eaa7b28ea843703a1de566b41277517b20fa
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448702"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128177"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-word-and-powerpoint"></a>Création de commandes de complément dans votre manifeste pour Excel, Word et PowerPoint
 
@@ -118,7 +118,7 @@ L’exemple suivant montre comment utiliser l’élément **VersionOverrides** e
 
 L’élément **Hôtes** contient un ou plusieurs éléments **Hôte**. Un élément **Hôte** spécifie un hôte Office particulier. L’élément **Hôte** contient des éléments enfants qui spécifient les commandes de complément à afficher une fois que votre complément est installé sur l’hôte Office. Pour afficher les mêmes commandes de complément dans deux ou plusieurs hôtes Office différents, vous devez dupliquer les éléments enfants dans chaque **hôte**.
 
-L’élément **DesktopFormFactor** spécifie les paramètres d’un complément exécuté dans Office sur un bureau Windows et dans Office Online (dans un navigateur).
+L’élément **DesktopFormFactor** spécifie les paramètres d’un complément exécuté dans Office sur le web (dans un navigateur) et Windows.
 
 L’exemple suivant illustre l’utilisation des éléments **Hôtes**, **Hôte** et **DesktopFormFactor**.
 

@@ -1,14 +1,14 @@
 ---
 title: Optimisation des performances API JavaScript Excel
 description: Optimisation des performances à l’aide de l’API JavaScript d’Excel
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: f48b62b47c4000b128043fe2e01f949af7179e73
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: bd3446b5bb33549002c2ad2325a11ea563c6b7d1
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449154"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128303"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Optimisation des performances à l’aide de l’API JavaScript d’Excel
 
@@ -16,7 +16,7 @@ Il existe plusieurs façons d’effectuer des tâches courantes avec l’API Jav
 
 ## <a name="minimize-the-number-of-sync-calls"></a>Limitez le nombre d’appels sync()
 
-Dans l’API JavaScript Excel, ```sync()``` est la seule opération asynchrone et elle peut être lente dans certaines circonstances, en particulier pour Excel Online. Pour optimiser les performances, vous devez limiter le nombre de fois que vous appelez ```sync()``` et mettre en file d’attente autant de modifications que possible avant d’appeler.
+Dans l’API JavaScript Excel, ```sync()``` est la seule opération asynchrone et elle peut être lente dans certaines circonstances, en particulier pour Excel sur le web. Pour optimiser les performances, vous devez limiter le nombre de fois que vous appelez ```sync()``` et mettre en file d’attente autant de modifications que possible avant d’appeler.
 
 Voir [Concepts principaux - sync()](excel-add-ins-core-concepts.md#sync) pour des exemples de code qui suivent cette pratique.
 
@@ -127,9 +127,6 @@ Excel.run(async function(ctx) {
 ```
 
 ### <a name="suspend-screen-updating"></a>Suspendre la mise à jour de l’écran
-
-> [!NOTE]
-> La méthode`suspendScreenUpdatingUntilNextSync`décrit dans cet article est actuellement disponible uniquement dans la version d’affichage publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 Excel affiche les modifications effectuées par votre complément à peu près au moment où elles ont lieu dans le code. Dans le cas de grands ensembles de données itératifs, il se peut que vous ne deviez pas afficher cette progression sur l’écran en temps réel. `Application.suspendScreenUpdatingUntilNextSync()` interrompt les mises à jour visuelles vers Excel tant que le complément n’appelle pas `context.sync()`, ou tant que `Excel.run` ne se termine pas (appelant implicitement `context.sync`). N’oubliez pas qu'Excel n’affiche aucun signe d’activité jusqu'à la synchronisation suivante. Votre complément doit donner des conseils aux utilisateurs pour les préparer à ce délai ou fournir une barre d’état pour démontrer l’activité.
 

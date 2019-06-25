@@ -1,14 +1,14 @@
 ---
 title: Chargement de versions test de compléments Office à l’aide de la commande sideload
 description: ''
-ms.date: 03/19/201907/24/2018
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 69d39c2736312653b5a362aefccd41629e6e3555
-ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
+ms.openlocfilehash: 38aa74963ca750d65e4be7bb17745a59eeed0c83
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33619076"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126889"
 ---
 # <a name="sideload-office-add-ins-for-testing-using-the-sideload-command"></a>Chargement indépendant de compléments Office pour les tester à l’aide de la commande sideload
  
@@ -37,7 +37,7 @@ Si votre projet de complément a été créé avec Visual Studio ou n’a pas l
 
 Si vous ne testez pas un complément Word, Excel ou PowerPoint sous Windows, consultez une des rubriques suivantes pour plus d’informations sur le chargement indépendant de votre complément :
  
-- [Chargement de version test des compléments Office dans Office Online pour les tester](sideload-office-add-ins-for-testing.md)
+- [Chargement de version test des compléments Office dans Office sur le web](sideload-office-add-ins-for-testing.md)
 - [Chargement de version test des compléments Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
 - [Chargement de version test des compléments Outlook pour les tester](/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 

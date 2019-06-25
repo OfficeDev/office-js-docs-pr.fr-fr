@@ -1,18 +1,18 @@
 ---
 title: Présentation des compléments Excel
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: cbeb1fa6ae0d88724b7da3fbcb45f8216b6010a6
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 696e1b3dfcab986125eb3f5f1d9f7547a59282e5
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33951920"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128233"
 ---
 # <a name="excel-add-ins-overview"></a>Présentation des compléments Excel
 
-Un complément Excel vous permet d’étendre les fonctionnalités de l’application Excel sur plusieurs plateformes, à savoir Office pour Windows, Office Online, Office pour Mac et Office pour iPad. Utilisez les compléments Excel dans un classeur pour :
+Un complément Excel vous permet d’étendre les fonctionnalités de l’application Excel sur plusieurs plateformes, notamment Windows, Mac et iPad, ainsi que dans un navigateur web. Utilisez les compléments Excel dans un classeur pour :
 
 - Interagir avec des objets Excel, lire et écrire des données Excel
 - Étendre les fonctionnalités à l’aide du volet Office web ou du volet de contenu
@@ -21,7 +21,7 @@ Un complément Excel vous permet d’étendre les fonctionnalités de l’applic
 
 La plateforme de compléments Office fournit la structure et les API JavaScript Office.js qui vous permettent de créer et d’exécuter des compléments Excel. En utilisant la plateforme de compléments Office pour créer votre complément Excel, vous bénéficierez des avantages suivants :
 
-* **Prise en charge multiplateforme** : les compléments Excel s’exécutent dans Office pour Windows, Mac, iOS et Office Online.
+* **Prise en charge sur plusieurs plateformes** : les compléments Excel s’exécutent sur Office sur le web, Windows, Mac et iPad.
 * **Déploiement centralisé** : les administrateurs peuvent rapidement et facilement déployer des compléments Excel vers les utilisateurs d’une organisation.
 * **Utilisation de technologies web standard** : créez votre complément Excel en utilisant des technologies web connues telles qu’HTML, CSS et JavaScript.
 * **Distribution via AppSource** : partagez votre complément Excel avec un large public en le publiant sur [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office&page=1&src=office&corrid=53245fad-fcbe-41f8-9f97-b0840264f97c&omexanonuid=4a0102fb-b31a-4b9f-9bb0-39d4cc6b789d).

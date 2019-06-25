@@ -1,14 +1,14 @@
 ---
 title: Lire et écrire des données dans la sélection active d’un document ou d’une feuille de calcul
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 2fe847fcc04e3670db294a421388dbd2faad6f2f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: b831de475a1946d6e0f9f13463e2750efe6cca5b
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449735"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128044"
 ---
 # <a name="read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet"></a>Lire et écrire des données dans la sélection active d’un document ou d’une feuille de calcul
 
@@ -74,7 +74,7 @@ Le passage de différents types d’objets pour le paramètre  _data_ produit di
 La fonction anonyme transmise dans la méthode [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) comme paramètre _callback_ est exécutée quand l’appel anonyme est terminé. Lorsque vous écrivez des données dans la sélection à l’aide de la méthode **setSelectedDataAsync**, le paramètre _asyncResult_ du rappel donne uniquement accès à l’état de l’appel et à l’objet [Error](/javascript/api/office/office.error) si l’appel échoue.
 
 > [!NOTE]
-> Depuis la publication d’Excel 2013 SP1 et de la version correspondante d’Excel Online, vous pouvez désormais [définir la mise en forme lors de l’écriture d’un tableau sur la sélection active](../excel/excel-add-ins-tables.md).
+> Depuis la publication d’Excel 2013 SP1 et de la version correspondante d’Excel sur le web, vous pouvez désormais [définir la mise en forme lors de l’écriture d’un tableau sur la sélection active](../excel/excel-add-ins-tables.md).
 
 
 ## <a name="detect-changes-in-the-selection"></a>Détection de modifications dans la sélection

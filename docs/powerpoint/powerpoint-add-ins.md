@@ -1,18 +1,18 @@
 ---
 title: Compléments PowerPoint
 description: ''
-ms.date: 04/15/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 6e518d0bfd37291e39ee17e96ded8debb183c19f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 78430c06757433ee2cce5155565ae57cc078d6eb
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450911"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128593"
 ---
 # <a name="powerpoint-add-ins"></a>Compléments PowerPoint
 
-Vous pouvez utiliser des compléments PowerPoint afin de créer des solutions attrayantes pour les présentations de vos utilisateurs sur toutes les plateformes, y compris Windows, iOS, Office Online et Mac. Vous pouvez créer deux types de commandes de complément PowerPoint:
+Vous pouvez utiliser des compléments PowerPoint afin de créer des solutions attrayantes pour les présentations de vos utilisateurs sur différentes plateformes, notamment Windows, iOS et Mac, ainsi que dans un navigateur. Vous pouvez créer deux types de commandes de complément PowerPoint:
 
 - Utilisez des **compléments de contenu** pour ajouter du contenu HTML5 dynamique à vos présentations. Par exemple, consultez le complément [Diagrammes LucidChart pour PowerPoint](https://appsource.microsoft.com/product/office/WA104380117), qui vous permet d’injecter un diagramme interactif de LucidChart dans votre support de présentation.
 
@@ -33,7 +33,7 @@ Les exemples de code figurant dans l’article vous présentent certaines tâche
 Si vous créez un complément de contenu, vous devrez obtenir la vue active de la présentation et gérer`ActiveViewChanged`l’événement ActiveViewChanged dans le cadre de votre`Office.Initialize`gestionnaire.
 
 > [!NOTE]
-> Dans PowerPoint Online, l’événement [Document.ActiveViewChanged](/javascript/api/office/office.document) ne se déclenche jamais, car le mode diaporama est considéré comme une nouvelle session. Dans ce cas, le complément doit extraire la vue active lors du chargement, comme indiqué ci-dessous.
+> Dans PowerPoint sur le web, l’événement [Document.ActiveViewChanged](/javascript/api/office/office.document) ne se déclenche jamais, car le mode Diaporama est considéré comme une nouvelle session. Dans ce cas, le complément doit extraire la vue active lors du chargement, comme indiqué ci-dessous.
 
 Collez le code suivant:
 

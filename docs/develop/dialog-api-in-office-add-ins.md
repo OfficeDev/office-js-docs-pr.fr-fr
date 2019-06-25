@@ -1,14 +1,14 @@
 ---
 title: Utiliser l’API de dialogue dans vos compléments Office
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 64740d6965209bf6e8b824cae7b149e3ee4f02e6
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 12e741650b7441557ac9b28306b6eba0f1894922
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448680"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128205"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Utiliser l’API de dialogue dans vos compléments Office
 
@@ -68,22 +68,22 @@ Définissez les deux valeurs sur 100 % pour bénéficier d’une réelle d’ex
 > [!NOTE]
 > Vous ne pouvez ouvrir qu’une seule boîte de dialogue à partir d’une fenêtre hôte. Toute tentative d’ouverture d’une autre boîte de dialogue génère une erreur. Par exemple, si un utilisateur ouvre une boîte de dialogue à partir d’un volet Office, il ne peut pas ouvrir une seconde boîte de dialogue à partir d’une autre page dans le volet Office. Toutefois, quand une boîte de dialogue est ouverte à partir d’une [commande de complément](../design/add-in-commands.md), la commande ouvre un nouveau fichier HTML (mais invisible) chaque fois qu’elle est sélectionnée. Cela crée une nouvelle fenêtre hôte (invisible), afin que chaque fenêtre de ce type puisse lancer sa propre boîte de dialogue. Pour plus d’informations, reportez-vous à [Erreurs provenant de displayDialogAsync](#errors-from-displaydialogasync).
 
-### <a name="take-advantage-of-a-performance-option-in-office-online"></a>Tirer parti d’une option de performances dans Office Online
+### <a name="take-advantage-of-a-performance-option-in-office-on-the-web"></a>Tirer parti d’une option de performances dans Office sur le web
 
-La propriété `displayInIframe` est une propriété supplémentaire dans l’objet de configuration que vous pouvez transmettre à `displayDialogAsync`. Lorsque cette propriété est définie sur `true` et que le complément est en cours d’exécution dans un document ouvert dans Office Online, la boîte de dialogue s’ouvre sous la forme d’un iFrame flottant et non d’une fenêtre indépendante. Elle s’ouvre ainsi plus rapidement. Voici un exemple :
+La propriété `displayInIframe` est une propriété supplémentaire dans l’objet de configuration que vous pouvez transmettre à `displayDialogAsync`. Lorsque cette propriété est définie sur `true` et que le complément est en cours d’exécution dans un document ouvert dans Office sur le web, la boîte de dialogue s’ouvre sous la forme d’un iFrame flottant et non d’une fenêtre indépendante. Elle s’ouvre ainsi plus rapidement. Voici un exemple :
 
 ```js
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe: true});
 ```
 
-La valeur par défaut est `false`, ce qui revient à omettre entièrement la propriété. Si le complément n’est pas exécuté dans Office Online, le `displayInIframe` est ignoré.
+La valeur par défaut est `false`, ce qui revient à omettre entièrement la propriété. Si le complément n’est pas exécuté dans Office sur le web, le `displayInIframe` est ignoré.
 
 > [!NOTE]
 > Vous ne devez **pas** utiliser `displayInIframe: true` si la boîte de dialogue redirige à un moment donné l’utilisateur vers une page qui ne peut pas être ouverte dans un iFrame. Par exemple, les pages de connexion de nombreux services web connus, comme un compte Microsoft et Google, ne peuvent pas être ouvertes dans un iFrame.
 
-### <a name="handling-pop-up-blockers-with-office-online"></a>Gestion des bloqueurs de fenêtres publicitaires avec Office Online
+### <a name="handling-pop-up-blockers-with-office-on-the-web"></a>Gestion des bloqueurs de fenêtres publicitaires avec Office sur le web
 
-Une tentative d’ouverture d’une boîte de dialogue lorsqu’Office Online est en cours d’utilisation peut entraîner le blocage de celle-ci par le bloqueur de fenêtres publicitaires du navigateur. Il est possible de contourner le bloqueur si l’utilisateur de votre complément accepte d’abord une invite du complément. L’objet [DialogOptions](/javascript/api/office/office.dialogoptions) de la méthode `displayDialogAsync` possède la propriété `promptBeforeOpen` permettant de déclencher l’ouverture de ce type de fenêtre contextuelle. `promptBeforeOpen` est une valeur booléenne qui est associée au comportement suivant :
+Une tentative d’ouverture d’une boîte de dialogue lorsqu’Office sur le web est en cours d’utilisation peut entraîner le blocage de celle-ci par le bloqueur de fenêtres publicitaires du navigateur. Il est possible de contourner le bloqueur si l’utilisateur de votre complément accepte d’abord une invite du complément. L’objet [DialogOptions](/javascript/api/office/office.dialogoptions) de la méthode `displayDialogAsync` possède la propriété `promptBeforeOpen` permettant de déclencher l’ouverture de ce type de fenêtre contextuelle. `promptBeforeOpen` est une valeur booléenne qui est associée au comportement suivant :
 
  - `true` -L’infrastructure affiche une fenêtre contextuelle pour déclencher la navigation et éviter le bloqueur de fenêtres publicitaires du navigateur. 
  - `false` -La boîte de dialogue n’est pas affichée et le développeur doit gérer les fenêtres contextuelles (en fournissant un artefact d’interface utilisateur pour déclencher la navigation). 
@@ -388,7 +388,7 @@ Pour un échantillon qui affiche une vidéo dans une boîte de dialogue, voir le
 Le scénario principal des API de dialogue consiste à activer l’authentification auprès d’un fournisseur de ressources ou d’identité qui n’autorise pas l’ouverture de sa page de connexion dans un iframe, comme un compte Microsoft, Office 365, Google et Facebook.
 
 > [!NOTE]
-> Lorsque vous utilisez les API de dialogue pour ce scénario, n’utilisez *pas* l’option `displayInIframe: true` dans l’appel de `displayDialogAsync`. Reportez-vous à la section [Tirer parti d’une option de performances dans Office Online](#take-advantage-of-a-performance-option-in-office-online) précédemment dans cet article pour plus d’informations sur cette option.
+> Lorsque vous utilisez les API de dialogue pour ce scénario, n’utilisez *pas* l’option `displayInIframe: true` dans l’appel de `displayDialogAsync`. Reportez-vous à la section [Tirer parti d’une option de performances dans Office sur le web](#take-advantage-of-a-performance-option-in-office-on-the-web) précédemment dans cet article pour plus d’informations sur cette option.
 
 Voici un flux d’authentification simple et standard :
 

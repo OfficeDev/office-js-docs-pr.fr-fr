@@ -1,14 +1,14 @@
 ---
 title: Ouvrir automatiquement un volet Office avec un document
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 6e7dbde7c6efbaacb5ba046678cc0df24446d31c
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: de848238979b68192bb8646e0ee6cb8d7c3879be
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952151"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127610"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Ouvrir automatiquement un volet Office avec un document
 
@@ -29,7 +29,7 @@ La fonctionnalité d’ouverture automatique est maintenant <!-- in **developer 
 
 |**Produits**|**Plateformes**|
 |:-----------|:------------|
-|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|Plateformes prises en charge pour tous les produits :<ul><li>Office pour bureau Windows. Build 16.0.8121.1000+</li><li>Office pour Mac. Build 15.34.17051500 et versions ultérieures</li><li>Office Online</li></ul>|
+|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|Plateformes prises en charge pour tous les produits :<ul><li>Office pour bureau Windows. Build 16.0.8121.1000+</li><li>Office sur Mac. Build 15.34.17051500+</li><li>Office sur le web</li></ul>|
 
 
 ## <a name="best-practices"></a>Meilleures pratiques

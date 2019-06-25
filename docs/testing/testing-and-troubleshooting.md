@@ -1,14 +1,14 @@
 ---
 title: Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 description: ''
-ms.date: 05/21/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 2e03e841253914a8ee1dd23aef201a38b4bea6d1
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: a82dc05789b4c35a954337a64197d3ac1a190b96
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432182"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126903"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 
@@ -73,7 +73,7 @@ Lorsqu’un utilisateur utilise un complément Office, il est invité à autoris
 
 |**Navigateurs concernés**|**Plateformes concernées**|
 |:--------------------|:---------------------|
-|Internet Explorer, Microsoft Edge|Office Online|
+|Internet Explorer, Microsoft Edge|Office sur le web|
 
 Pour résoudre le problème, les utilisateurs finals et les administrateurs peuvent ajouter le domaine du complément à la liste des sites de confiance dans Internet Explorer. Utilisez la même procédure, que vous utilisiez le navigateur Internet Explorer ou Microsoft Edge.
 
@@ -98,10 +98,10 @@ Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callba
 Si les modifications apportées au manifeste, par exemple aux noms de fichier des icônes de bouton dans le ruban ou au texte des éléments de menu, ne semblent pas appliquées, essayez de vider le cache Office de votre ordinateur. 
 
 #### <a name="for-windows"></a>Pour Windows :
-Supprimer le contenu du dossier`%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
+Supprimer le contenu du dossier `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
 #### <a name="for-mac"></a>Pour Mac :
-Supprimer le contenu du dossier`~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
+Supprimer le contenu du dossier `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
 
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
@@ -110,7 +110,7 @@ Appelez `window.location.reload(true)` à partir de JavaScript dans le compléme
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Débogage de compléments dans Office Online](debug-add-ins-in-office-online.md) 
+- [Débogage de compléments dans Office sur le web](debug-add-ins-in-office-online.md) 
 - [Charger une version test d’un complément Office sur iPad ou Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
 - [Débogage des compléments Office sur iPad et Mac](debug-office-add-ins-on-ipad-and-mac.md)  
 - [Valider et résoudre des problèmes avec votre manifeste](troubleshoot-manifest.md)

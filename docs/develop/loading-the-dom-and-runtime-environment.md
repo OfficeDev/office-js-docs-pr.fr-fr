@@ -1,14 +1,14 @@
 ---
 title: Chargement du DOM et de l’environnement d’exécution
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: e975db391276129e453d5001fe0bac8ad36f6080
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 78ddd10e9106e6668e2bb8cd40f58cbdb7b862d9
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910216"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128100"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>Chargement du DOM et de l’environnement d’exécution
 
@@ -106,7 +106,7 @@ Le numéroteur téléphonique fourni comme exemple de complément Outlook prés
 >Office.initialize = function () {};
 >```
 >
-> Si vous n’appelez pas **Office.onReady** ou n’affectez pas un Gestionnaire d’événements **Office.initialize**, votre complément peut déclencher une erreur lors de son démarrage. En outre, si un utilisateur essaie d’utiliser votre complément avec un client web Office Online, notamment Excel Online, PowerPoint Online ou Outlook Web App, l’exécution du complément échouera.
+> Si vous n’appelez pas **Office.onReady** ou n’affectez pas un Gestionnaire d’événements **Office.initialize**, votre complément peut déclencher une erreur lors de son démarrage. En outre, si un utilisateur essaie d’utiliser votre complément avec un client web Office, notamment Excel, PowerPoint ou Outlook, l’exécution du complément échouera.
 >
 > Si votre complément comprend plusieurs pages, chaque fois qu’il charge une nouvelle page, celle-ci doit soit appeler **Office.onReady**, soit affecter un gestionnaire d’événements **Office.initialize**.
 

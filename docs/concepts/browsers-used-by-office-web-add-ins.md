@@ -1,29 +1,29 @@
 ---
 title: Navigateurs utilisés par les compléments Office
 description: Indique comment le système d’exploitation et la version d’Office déterminent le navigateur utilisé par les compléments Office.
-ms.date: 05/28/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 92218bb012ae9031ebfc429606885a0ec0ea85b3
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: 56b74c0e43c8e9709ecd03a8c60a89d3869e44f8
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34592128"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128107"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navigateurs utilisés par les compléments Office
 
-Les compléments Office sont des applications web qui s’affichent à l’aide d’iFrames lorsqu’ils sont exécutés dans Office Online et utilisent des contrôles de navigateur incorporés dans Office pour les clients de bureau et mobiles. Les compléments ont également besoin d’un moteur JavaScript pour exécuter le code JavaScript. Le navigateur incorporé et le moteur sont fournis par un navigateur installé sur l’ordinateur de l’utilisateur.
+Les compléments Office sont des applications web qui s’affichent à l’aide d’iFrames lorsqu’ils sont exécutés dans Office sur le web et utilisent des contrôles de navigateur incorporés dans Office pour les clients de bureau et mobiles. Les compléments ont également besoin d’un moteur JavaScript pour exécuter le code JavaScript. Le navigateur incorporé et le moteur sont fournis par un navigateur installé sur l’ordinateur de l’utilisateur.
 
 Le navigateur utilisé dépend de ce qui suit :
 
 - Système d’exploitation de l’ordinateur.
-- Exécution du complément dans Office Online, Office 365, Office 2013 sans abonnement ou version ultérieure.
+- Exécution du complément dans Office sur le web, Office 365, Office 2013 sans abonnement ou version ultérieure.
 
 Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes et systèmes d’exploitation.
 
 |**Système d’exploitation/Plateforme**|**Navigateur**|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|Office Online|Navigateur dans lequel Office Online est ouvert.|
+|Office sur le web|Navigateur dans lequel Office sur le web est ouvert.|
 |Mac|Safari|
 |iOS|Safari|
 |Android|Chrome|

@@ -1,14 +1,14 @@
 ---
 title: Créer et déboguer des compléments Office dans Visual Studio
 description: Utiliser Visual Studio pour créer et déboguer des compléments Office dans le client de bureau Office sous Windows
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: c60599ed63c327d10b157e642e109542c3cefc47
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 9cc4d50d9b61daa4b1f55f7dd4c1e1156f8d959c
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952095"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128184"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Créer et déboguer des compléments Office dans Visual Studio
 
@@ -30,7 +30,7 @@ Cet article décrit comment utiliser Visual Studio 2017 pour créer un compléme
 - Office 2013 ou version ultérieure
 
     > [!TIP]
-    > Si vous n’avez pas Office, vous pouvez rejoindre le[programme Office 365 pour les développeurs](https://developer.microsoft.com/office/dev-program) pour obtenir un abonnement Office 365, ou vous pouvez[vous inscrire à un essai gratuit de 1 mois](https://products.office.com/en-US/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735).
+    > Si vous n’avez pas Office, vous pouvez rejoindre le[programme Office 365 pour les développeurs](https://developer.microsoft.com/office/dev-program) pour obtenir un abonnement Office 365, ou vous pouvez[vous inscrire à un essai gratuit de 1 mois](https://products.office.com/fr-FR/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735).
 
 ## <a name="create-the-add-in-project-in-visual-studio"></a>Créer un projet de complément Office dans Visual Studio
 
@@ -102,7 +102,7 @@ Vous pouvez utiliser Visual Studio pour déboguer votre complément dans le clie
 - [Déboguer le code d’un complément Outlook](#debug-the-code-for-an-outlook-add-in)
 
 > [!NOTE]
-> Vous ne pouvez pas utiliser Visual Studio pour déboguer des compléments Office dans Office Online ou Office pour Mac. Pour plus d’informations sur le débogage sur ces plateformes, voir [Déboguer les compléments Office dans Office Online](../testing/debug-add-ins-in-office-online.md) ou [Déboguer les compléments Office sur iPad et Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)
+> Vous ne pouvez pas utiliser Visual Studio pour déboguer des compléments Office dans Office sur le web ou Mac. Pour plus d’informations sur le débogage sur ces plateformes, voir [Déboguer les compléments Office dans Office sur le web](../testing/debug-add-ins-in-office-online.md) ou [Déboguer les compléments Office sur iPad et Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md).
 
 ### <a name="review-the-build-and-debug-properties"></a>Réviser les propriétés de création et de débogage
 
@@ -125,7 +125,7 @@ Le tableau suivant décrit les propriétés du projet de complément.
 |**Projet Web**|Spécifie le nom du projet web associé au complément.|
 |**Adresse e-mail**<br/>(Compléments Outlook uniquement)|Spécifie l’adresse de messagerie du compte utilisateur dans Exchange Server ou Exchange Online avec lequel vous souhaitez tester votre complément Outlook.|
 |**Url EWS**<br/>(Compléments Outlook uniquement)|URL de service web Exchange (par exemple :`https://www.contoso.com/ews/exchange.aspx`). |
-|**Url OWA**<br/>(Compléments Outlook uniquement)|URL d’application web Outlook (par exemple :`https://www.contoso.com/owa`).|
+|**Url OWA**<br/>(Compléments Outlook uniquement)|URL Outlook sur le web (par exemple : `https://www.contoso.com/owa`).|
 |**Utiliser l’authentification multi-facteur**<br/>(Compléments Outlook uniquement)|Valeur booléenne qui indique si l’authentification multi-facteur doit être utilisée.|
 |**Nom d'utilisateur**<br/>(Compléments Outlook uniquement)|Spécifie le nom du compte utilisateur dans Exchange Server ou Exchange Online avec lequel vous souhaitez tester votre complément Outlook.|
 |**Fichier du projet**|Indique le nom du fichier contenant la version, la configuration et d’autres informations sur le projet.|

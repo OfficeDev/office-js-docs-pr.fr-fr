@@ -1,14 +1,14 @@
 ---
 title: Disponibilité des compléments Office sur les plateformes et les hôtes
-description: Ensembles de conditions requises pris en charge pour Excel, Word, Outlook, PowerPoint, OneNote et Project.
-ms.date: 05/23/2019
+description: Ensembles de conditions requises pris en charge pour Excel, OneNote, Outlook, PowerPoint, Project et Word.
+ms.date: 06/13/2019
 localization_priority: Priority
-ms.openlocfilehash: 6fb1f0db839910e91d7a5215f8e21f5b33ff2165
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: 82c276c802cab66ae4f5443d0d556bc42ee57841
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432193"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128621"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilité des compléments Office sur les plateformes et les hôtes
 
@@ -27,7 +27,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     <th style="width:40%"><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>API communes</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office sur le web</td>
     <td> - Volet Office<br>
         - Contenu<br>
         - Fonctions personnalisées<br>
@@ -59,7 +59,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office sur Windows 10<br>(connecté à Office 365)</td>
+    <td>Office pour Windows<br>(connecté à l’abonnement Office 365)</td>
     <td> - Volet Office<br>
         - Contenu<br>
         - Fonctions personnalisées<br>
@@ -160,7 +160,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office pour iPad<br>(connecté à Office 365)</td>
+    <td>Office sur iPad<br>(connecté à l’abonnement Office 365)</td>
     <td>- Volet Office<br>
         - Contenu<br>
         - Fonctions personnalisées</td>
@@ -188,7 +188,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office pour Mac<br>(connecté à Office 365)</td>
+    <td>Office sur Mac<br>(connecté à l’abonnement Office 365)</td>
     <td>- Volet Office<br>
         - Contenu<br>
         - Fonctions personnalisées<br>
@@ -219,7 +219,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2019 pour Mac<br>(achat définitif)</td>
+    <td>Office 2019 sur Mac<br>(achat définitif)</td>
     <td>- Volet Office<br>
         - Contenu<br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
@@ -248,7 +248,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2016 pour Mac<br>(achat définitif)</td>
+    <td>Office 2016 sur Mac<br>(achat définitif)</td>
     <td>- Volet Office<br>
         - Contenu</td>
     <td>- <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
@@ -282,7 +282,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     <th style="width:40%"><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>API communes</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office sur le web</td>
     <td>
         - Fonctions personnalisées</td>
     <td>
@@ -291,16 +291,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     </td>
   </tr>
   <tr>
-    <td>Office sur Windows 10<br>(connecté à Office 365)</td>
-    <td>
-        - Fonctions personnalisées</td>
-    <td>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
-    <td>
-    </td>
-  </tr>
-  <tr>
-    <td>Office pour iPad<br>(connecté à Office 365)</td>
+    <td>Office pour Windows<br>(connecté à l’abonnement Office 365)</td>
     <td>
         - Fonctions personnalisées</td>
     <td>
@@ -329,7 +320,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     <th><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>API communes</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office sur le web<br>(nouveau)</td>
     <td> - Lecture de message<br>
       - Composition de message<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
@@ -343,7 +334,20 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     <td>Non disponible</td>
   </tr>
   <tr>
-    <td>Office sur Windows 10<br>(connecté à Office 365)</td>
+    <td>Office sur le web<br>(classique)</td>
+    <td> - Lecture de message<br>
+      - Composition de message<br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
+    <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a></td>
+    <td>Non disponible</td>
+  </tr>
+  <tr>
+    <td>Office pour Windows<br>(connecté à l’abonnement Office 365)</td>
     <td> - Lecture de message<br>
       - Composition de message<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a><br>
@@ -395,7 +399,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     <td>Non disponible</td>
   </tr>
   <tr>
-    <td>Office pour iOS<br>(connecté à Office 365)</td>
+    <td>Office sur iOS<br>(connecté à l’abonnement Office 365)</td>
     <td> - Lecture de message<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
@@ -406,7 +410,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     <td>Non disponible</td>
   </tr>
   <tr>
-    <td>Office pour Mac<br>(connecté à Office 365)</td>
+    <td>Office sur Mac<br>(connecté à l’abonnement Office 365)</td>
     <td> - Lecture de message<br>
       - Composition de message<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
@@ -420,7 +424,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     <td>Non disponible</td>
   </tr>
   <tr>
-    <td>Office 2019 pour Mac<br>(achat définitif)</td>
+    <td>Office 2019 sur Mac<br>(achat définitif)</td>
     <td> - Lecture de message<br>
       - Composition de message<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
@@ -433,7 +437,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     <td>Non disponible</td>
   </tr>
   <tr>
-    <td>Office 2016 pour Mac<br>(achat définitif)</td>
+    <td>Office 2016 sur Mac<br>(achat définitif)</td>
     <td> - Lecture de message<br>
       - Composition de message<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
@@ -446,7 +450,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     <td>Non disponible</td>
   </tr>
   <tr>
-    <td>Office pour Android<br>(connecté à Office 365)</td>
+    <td>Office sur Android<br>(connecté à l’abonnement Office 365)</td>
     <td> - Lecture de message<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
@@ -472,7 +476,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     <th><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>API communes</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office sur le web</td>
     <td> - Volet Office<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -498,7 +502,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
          - TextFile</td>
   </tr>
   <tr>
-    <td>Office sur Windows 10<br>(connecté à Office 365)</td>
+    <td>Office pour Windows<br>(connecté à l’abonnement Office 365)</td>
     <td> - Volet Office<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -599,7 +603,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
          - TextFile</td>
   </tr>
   <tr>
-    <td>Office pour iPad<br>(connecté à Office 365)</td>
+    <td>Office sur iPad<br>(connecté à l’abonnement Office 365)</td>
     <td> - Volet Office</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
@@ -626,7 +630,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
          - TextFile </td>
   </tr>
   <tr>
-    <td>Office pour Mac<br>(connecté à Office 365)</td>
+    <td>Office sur Mac<br>(connecté à l’abonnement Office 365)</td>
     <td> - Volet Office<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -654,7 +658,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
          - TextFile </td>
   </tr>
   <tr>
-    <td>Office 2019 pour Mac<br>(achat définitif)</td>
+    <td>Office 2019 sur Mac<br>(achat définitif)</td>
     <td> - Volet des tâches<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -682,7 +686,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
          - TextFile </td>
   </tr>
   <tr>
-    <td>Office 2016 pour Mac<br>(achat définitif)</td>
+    <td>Office 2016 sur Mac<br>(achat définitif)</td>
     <td> - Volet Office</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
@@ -721,7 +725,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     <th><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>API communes</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office sur le web</td>
     <td> - Contenu<br>
          - Volet Office<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
@@ -737,7 +741,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office sur Windows 10<br>(connecté à Office 365)</td>
+    <td>Office pour Windows<br>(connecté à l’abonnement Office 365)</td>
     <td> - Contenu<br>
          - Volet Office<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
@@ -800,7 +804,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office pour iPad<br>(connecté à Office 365)</td>
+    <td>Office sur iPad<br>(connecté à l’abonnement Office 365)</td>
     <td> - Contenu<br>
          - Volet Office</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
@@ -815,7 +819,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
          - ImageCoercion</td>
   </tr>
   <tr>
-    <td>Office pour Mac<br>(connecté à Office 365)</td>
+    <td>Office sur Mac<br>(connecté à l’abonnement Office 365)</td>
     <td> - Contenu<br>
          - Volet Office<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
@@ -831,7 +835,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2019 pour Mac<br>(achat définitif)</td>
+    <td>Office 2019 sur Mac<br>(achat définitif)</td>
     <td> - Contenu<br>
          - Volet Office<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
@@ -847,7 +851,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2016 pour Mac<br>(achat définitif)</td>
+    <td>Office 2016 sur Mac<br>(achat définitif)</td>
     <td> - Contenu<br>
          - Volet Office</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
@@ -877,7 +881,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     <th><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>API communes</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office sur le web</td>
     <td> - Contenu<br>
          - Volet Office<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
