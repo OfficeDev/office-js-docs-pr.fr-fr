@@ -1,14 +1,14 @@
 ---
-ms.date: 06/18/2019
+ms.date: 06/21/2019
 description: Utiliser les balises JSDOC pour créer dynamiquement vos fonctions personnalisées de métadonnées JSON.
 title: Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 localization_priority: Priority
-ms.openlocfilehash: a02ca5fd67f29e1997579385e04d045f01e63bdb
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: cc28eca4e1ab1a03186983c81380a00bcf5eb85a
+ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127904"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "35226761"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 
@@ -28,9 +28,9 @@ Pour consulter des exemples de descriptions de fonction intégrées, ouvrez Exce
 
 Dans cet exemple, la phrase «calcule le volume d’une sphère.» est la description de la fonction personnalisée.
 
-```JS
+```js
 /**
-/* Calculates the volume of a sphere
+/* Calculates the volume of a sphere.
 /* @customfunction VOLUME
 ...
  */
@@ -66,11 +66,21 @@ Une fonction ne peut pas contenir les deux balises `@cancelable` et `@streaming`
 
 Syntaxe: @fonctionpersonnalisée_id_ _nom_
 
-Spécifiez cette balise pour traiter la fonction JavaScript/TypeScript comme une fonction Excel personnalisée.
+Spécifiez cette balise pour traiter la fonction JavaScript/TypeScript comme une fonction Excel personnalisée. 
 
 Cette balise est requise pour créer des métadonnées pour la fonction personnalisée.
 
 Vous devez également insérer un appel vers`CustomFunctions.associate("id", functionName);`
+
+L’exemple suivant illustre la méthode la plus simple pour déclarer une fonction personnalisée.
+
+```js
+/**
+ * Increments a value once a second.
+ * @customfunction
+ * ...
+ */
+```
 
 #### <a name="id"></a>id
 
@@ -79,6 +89,16 @@ Vous devez également insérer un appel vers`CustomFunctions.associate("id", fun
 * Si`id`n’est pas fourni, le nom de la fonction JavaScript/TypeScript est converti en majuscules, et les caractères rejetés sont supprimés.
 * Le `id`doit être unique pour toutes les fonctions personnalisées.
 * Les caractères autorisés sont les suivants : A-Z, a-z, 0-9, traits de soulignement (\_) et point (.).
+
+Dans l’exemple suivant, Increment correspond à `id` et à `name` de la fonction.
+
+```js
+/**
+ * Increments a value once a second.
+ * @customfunction INCREMENT
+ * ...
+ */
+```
 
 #### <a name="name"></a>name
 
@@ -89,15 +109,27 @@ Fournit le nom d’affichage `name`de la fonction personnalisée.
 * Doit commencer par une lettre.
 * Sa longueur maximale est limitée à 128 caractères.
 
+Dans l’exemple suivant, Inc est la `id` de la fonction, et `increment` est le `name`.
+
+```js
+/**
+ * Increments a value once a second.
+ * @customfunction INC INCREMENT
+ * ...
+ */
+```
+
 ### <a name="description"></a>description
 
-Une description ne nécessite aucune balise spécifique. Ajoutez une description à une fonction personnalisée en ajoutant une expression pour décrire le rôle de la fonction dans le commentaire JSDoc. Par défaut, le texte non balisé dans la section commentaire JSDoc est la description de la fonction. La description s’affiche pour les utilisateurs dans Excel lors de la saisie de la fonction. Dans l’exemple suivant, l’expression «fonction qui calcule la somme de deux nombres» est la description de la fonction personnalisée dont la propriété ID est`SUM`.
+Une description ne nécessite aucune balise spécifique. Ajoutez une description à une fonction personnalisée en ajoutant une expression pour décrire le rôle de la fonction dans le commentaire JSDoc. Par défaut, le texte non balisé dans la section commentaire JSDoc est la description de la fonction. La description s’affiche pour les utilisateurs dans Excel lors de la saisie de la fonction. Dans l’exemple suivant, l’expression «fonction qui ajoute la somme de deux nombres» est la description de la fonction personnalisée dont la propriété ID est`ADD`.
 
-```JS
+Dans l’exemple suivant, la fonction Add est la `id`et la de la fonction et une description est indiquée.
+
+```js
 /**
-/* @customfunction SUM
-/* A function that sums two numbers
-...
+ * A function that adds two numbers.
+ * @customfunction ADD
+ * ...
  */
 ```
 
@@ -108,6 +140,17 @@ Une description ne nécessite aucune balise spécifique. Ajoutez une description
 Syntaxe: @urlaide_url_
 
 L’_url_ fournie est affichée dans Excel.
+
+Dans l’exemple suivant, l `helpurl` 'est www.contoso.com/weatherhelp.
+
+```js
+/**
+ * A function which streams the temperature in a town you specify.
+ * @customfunction getTemperature
+ * @helpurl www.contoso.com/weatherhelp
+ * ...
+ */
+```
 
 ---
 ### <a name="param"></a>@param
@@ -127,6 +170,19 @@ Pour désigner un paramètre de fonction personnalisée comme étant facultatif�
 > [!NOTE]
 > La valeur par défaut pour les paramètres facultatifs est `null`.
 
+L’exemple suivant montre une fonction ADD qui ajoute deux ou trois nombres, avec le troisième nombre comme paramètre facultatif.
+
+```js
+/**
+ * A function which sums two, or optionally three, numbers.
+ * @customfunction ADDNUMBERS
+ * @param firstNumber {number} First number to add.
+ * @param secondNumber {number} Second number to add.
+ * @param [thirdNumber] {number} Optional third number you wish to add.
+ * ...
+ */
+```
+
 #### <a name="typescript"></a>TypeScript
 
 Syntaxe TypeScript : nom @param_description_
@@ -145,13 +201,28 @@ Pour consulter une description détaillée du @param, reportez-vous à la page s
 > [!NOTE]
 > La valeur par défaut pour les paramètres facultatifs est `null`.
 
+L’exemple suivant illustre la fonction`add` qui ajoute deux nombres.
+
+```ts
+/**
+ * Adds two numbers.
+ * @customfunction 
+ * @param first First number
+ * @param second Second number
+ * @returns The sum of the two numbers.
+ */
+function add(first: number, second: number): number {
+  return first + second;
+}
+```
+
 ---
 ### <a name="requiresaddress"></a>@requièreuneadresse
 <a id="requiresAddress"/>
 
-Indique que l’adresse de la cellule dans laquelle la fonction est évaluée doit être fournie. 
+Indique que l’adresse de la cellule dans laquelle la fonction est évaluée doit être fournie.
 
-Le dernier paramètre de la fonction doit être de type `CustomFunctions.Invocation` ou un type dérivé. Lorsque la fonction est appelée, la propriété `address` contiendra l’adresse.
+Le dernier paramètre de la fonction doit être de type `CustomFunctions.Invocation` ou un type dérivé. Lorsque la fonction est appelée, la propriété `address` contiendra l’adresse. Pour obtenir un exemple d’une fonction qui utilise la balise`@requiresAddress`, voir [paramètre de contexte de la cellule adressage](./custom-functions-parameter-options.md#addressing-cells-context-parameter).
 
 ---
 ### <a name="returns"></a>@renvoie :
@@ -162,6 +233,21 @@ Syntaxe: @renvoie {_type_}
 Fournit le type pour la valeur renvoyée.
 
 Si `{type}` est omis, les informations de type TypeScript seront utilisées. S’il n’existe aucune information définissant le type, ce dernier sera `any`.
+
+L’exemple suivant illustre la fonction`add` qui utilise la balise`@returns`.
+
+```ts
+/**
+ * Adds two numbers.
+ * @customfunction 
+ * @param first First number
+ * @param second Second number
+ * @returns The sum of the two numbers.
+ */
+function add(first: number, second: number): number {
+  return first + second;
+}
+```
 
 ---
 ### <a name="streaming"></a>@diffusionencontinu
@@ -174,7 +260,7 @@ La fonction doit renvoyer `void`.
 
 Les fonctions de diffusion en continu ne renvoient pas de valeurs directement, mais doivent plutôt appeler `setResult(result: ResultType)` en utilisant le dernier paramètre.
 
-Les exceptions levées par une fonction en continu sont ignorées. `setResult()`peut être appelée avec Error pour indiquer un résultat erroné.
+Les exceptions levées par une fonction en continu sont ignorées. `setResult()`peut être appelée avec Error pour indiquer un résultat erroné. Pour obtenir un exemple d’une fonction de diffusion en continu et d’autres informations, voir [créer une fonction de diffusion en continu](./custom-functions-web-reqs.md#make-a-streaming-function).
 
 Vous ne pouvez pas utiliser les balises en diffusion en continu comme [@volatile](#volatile).
 
@@ -185,6 +271,19 @@ Vous ne pouvez pas utiliser les balises en diffusion en continu comme [@volatile
 Une fonction volatile est une fonction dont le résultat peut changer d’un moment à l’autre, même si elle ne récupère pas d’argument ou si ses arguments ne changent pas. À chaque calcul, Excel réévalue les cellules contenant des fonctions volatiles, ainsi que toutes leurs cellules dépendantes. C’est pourquoi, un trop grand nombre de dépendances de fonctions volatiles risque de ralentir les calculs. Nous vous recommandons d’en utiliser aussi peu que possible.
 
 Les fonctions de diffusion en continu ne peuvent pas être volatiles.
+
+La fonction suivante est volatile et utilise la balise `@volatile`.
+
+```js
+/**
+ * Simulates rolling a 6-sided dice.
+ * @customfunction
+ * @volatile
+ */
+function roll6sided(): number {
+  return Math.floor(Math.random() * 6) + 1;
+}
+```
 
 ---
 
