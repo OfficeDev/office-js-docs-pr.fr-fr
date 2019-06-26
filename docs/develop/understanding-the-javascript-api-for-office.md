@@ -1,14 +1,14 @@
 ---
 title: Présentation de l’API JavaScript pour Office
 description: ''
-ms.date: 06/20/2019
+ms.date: 06/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 45cccadaa3d82f3435579650ae5161b20d7a425a
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: afbb24cd056d3a11c8d19f9a4316caeaafc7f066
+ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127988"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "35226740"
 ---
 # <a name="understanding-the-javascript-api-for-office"></a>Présentation de l’API JavaScript pour Office
 
@@ -170,36 +170,3 @@ Pour plus d’informations, consultez les pages relatives à l’[événement Of
 ## <a name="office-javascript-api-object-model"></a>Modèle d’objet API JavaScript Office
 
 Une fois initialisé, le complément peut interagir avec l’hôte (par exemple, Excel, Outlook). La page [Modèle objet API JavaScript Office](office-javascript-api-object-model.md) comporte plus d’informations sur les modèles d’utilisation spécifiques. Il existe également une documentation de référence détaillée pour les deux[ APIs Communes](/office/dev/add-ins/reference/javascript-api-for-office) et spécifiques.
-
-## <a name="api-support-matrix"></a>Matrice de prise en charge d’API
-
-Ce tableau récapitule l’API et les fonctionnalités prises en charge dans les types de complément (contenu, volet Office et Outlook), ainsi que les applications Office qui peuvent les héberger lorsque vous indiquez les applications hôte Office prises en charge par votre complément à l’aide du [schéma de manifeste de complément 1.1 et des fonctionnalités prises en charge par la version 1.1 de l’interface API JavaScript pour Office](update-your-javascript-api-for-office-and-manifest-schema-version.md).
-
-
-|||||||||
-|:-----|:-----|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-||**Nom de l’hôte**|Base de données|Classeur|Boîte aux lettres|Présentation|Document|Projet|
-||**Applications hôtes** **prises en charge**|Applications web Access|Excel sur Windows,<br/>Excel sur le web|Outlook sur Windows,<br/>Outlook sur le web,<br/>Outlook sur Android,<br>Outlook sur iOS|PowerPoint sur Windows,<br/>PowerPoint sur le web|Word sur Windows|Project sur Windows|
-|**Types de compléments pris en charge**|Contenu|v|v||v|||
-||Volet de tâches||v||v|v|v|
-||Outlook|||O||||
-|**Fonctionnalités d’API prises en charge**|Lecture/écriture de texte||v||v|v|v<br/>(En lecture seule)|
-||Lecture/Écriture de matrice||v|||v||
-||Lecture/écriture de tableau||v|||v||
-||Lecture/écriture HTML|||||v||
-||Lecture/Écriture<br/>Office Open XML|||||v||
-||Lecture des propriétés de tâche, de ressource, de vue et de champ||||||v|
-||Événements modifiés de sélection||v|||v||
-||Obtention de l’ensemble du document||||v|v||
-||Liaisons et événements de liaison|v<br/>(Liaisons de tableau complètes et partielles uniquement)|v|||v||
-||Lecture/écriture des parties XML personnalisées|||||v||
-||Faire persister les données d’état de complément (paramètres)|v<br/>(Par complément hôte)|v<br/>(Par document)|v<br/>(Par boîte aux lettres)|v<br/>(Par document)|v<br/>(Par document)||
-||Événements modifiés de paramètres|v|v||v|v||
-||Obtention du mode de vue active<br/>et affichage des événements modifiés||||v|||
-||Accès à des emplacements<br/>dans le document||v||v|v||
-||Activation en fonction du contexte<br/>à l’aide de règles et de RegEx|||v||||
-||Lecture des propriétés d’élément|||v||||
-||Lecture de profil utilisateur|||v||||
-||Obtention des pièces jointes|||v||||
-||Obtention du jeton d’identité d’utilisateur|||v||||
-||Appel des services web Exchange|||v||||

@@ -3,20 +3,18 @@ title: Résolution des erreurs rencontrées par l’utilisateur avec des complé
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: a82dc05789b4c35a954337a64197d3ac1a190b96
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 3222e8b7bc46608996c73284e2ee9b7c26c7afbe
+ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35126903"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "35226782"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 
 Parfois, vos utilisateurs peuvent rencontrer des problèmes avec les compléments Office que vous développez. Par exemple, il se peut qu’un complément ne se charge pas ou soit inaccessible. Utilisez les informations de cet article pour résoudre les problèmes courants que vos utilisateurs rencontrent avec votre complément Office. 
 
 Vous pouvez également utiliser [Fiddler](https://www.telerik.com/fiddler) pour identifier et déboguer les problèmes avec vos compléments.
-
-Une fois le problème de l’utilisateur résolu, vous pouvez [répondre directement aux avis des clients dans AppSource](/office/dev/store/create-effective-office-store-listings).
 
 ## <a name="common-errors-and-troubleshooting-steps"></a>Erreurs courantes et étapes de dépannage
 

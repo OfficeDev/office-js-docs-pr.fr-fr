@@ -3,12 +3,12 @@ title: Conservation de l’état et des paramètres des compléments
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 5a6846133fc5aeed5eab84f961d76b93b31e562f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: bae485836b68f3b8b26aada60edd31cc66e1f64a
+ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449742"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "35226754"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>Conservation de l’état et des paramètres des compléments
 
@@ -170,7 +170,7 @@ Le code suivant montre comment récupérer la partie XML en obtenant d’abord s
 
  ```js
 function getReviewers() {
-    const reviewersXmlId = Office.context.document.settings.get('ReviewersID'));
+    const reviewersXmlId = Office.context.document.settings.get('ReviewersID');
     Office.context.document.customXmlParts.getByIdAsync(reviewersXmlId,
         (asyncResult) => {
             asyncResult.value.getXmlAsync(
