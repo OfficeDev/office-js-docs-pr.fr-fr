@@ -4,12 +4,12 @@ description: Utilisez script Lab pour explorer l’API Office JS et pour prototy
 ms.topic: article
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 9ef81443fade450a7bea519a99cb607c320dd4f6
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: b74a7787507aed1970ddcb06d3cb3eb79653615a
+ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128648"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "35226775"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>Explorer l’API JavaScript pour Office à l’aide de script Lab
 
@@ -42,7 +42,7 @@ En plus du code JavaScript ou de la machine à écrire qui appelle l’API Offic
 
 ### <a name="save-and-share-snippets"></a>Enregistrer et partager des extraits de code
 
-Par défaut, les extraits de code que vous ouvrez dans script Lab seront enregistrés dans le cache de votre navigateur. Pour enregistrer un extrait de code de manière permanente, vous pouvez l’exporter vers un [GitHub](https://gist.github.com). Créez un annuaire secret pour enregistrer un extrait de code exclusivement pour votre propre usage, ou créez un annuaire partagé si vous envisagez de le partager avec d’autres personnes.
+Par défaut, les extraits de code que vous ouvrez dans script Lab seront enregistrés dans le cache de votre navigateur. Pour enregistrer un extrait de code de manière permanente, vous pouvez l’exporter vers un [GitHub](https://gist.github.com). Créez un annuaire secret pour enregistrer un extrait de code exclusivement pour votre propre usage, ou créez un annuaire public si vous envisagez de le partager avec d’autres personnes.
 
 ![Options de partage](../images/script-lab-share.jpg)
 

@@ -3,12 +3,12 @@ title: Développer des compléments Office pour iPad
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: cdc35b83c2cb32984d0dc73d85af250bddfa8c0a
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 1b6d17fd264249dbc8000fe1b1f63605e68fd904
+ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128170"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "35226747"
 ---
 # <a name="develop-office-add-ins-for-the-ipad"></a>Développer des compléments Office pour iPad
 
@@ -18,7 +18,7 @@ Le tableau suivant répertorie les tâches à effectuer pour développer un comp
 
 |**Tâche**|**Description**|**Ressources**|
 |:-----|:-----|:-----|
-|Mettez à jour votre complément pour prendre en charge la version 1.1 d’Office.js.|Mettez à jour les fichiers JavaScript (Office.js et fichiers .js propres aux applications) et le fichier de validation du manifeste du complément utilisés dans votre projet Complément Office vers la version 1.1.|[Nouveautés de l’API JavaScript pour Office](/office/dev/add-ins/reference/what's-changed-in-the-javascript-api-for-office)|
+|Mettez à jour votre complément pour prendre en charge la version 1.1 d’Office.js.|Mettez à jour les fichiers JavaScript (Office.js et fichiers .js propres aux applications) et le fichier de validation du manifeste du complément utilisés dans votre projet Complément Office vers la version 1.1.|[Mettre à jour la version du manifeste et de l’API](update-your-javascript-api-for-office-and-manifest-schema-version.md)|
 |Appliquez les méthodes recommandées pour concevoir une interface utilisateur.|Intégrez l’interface utilisateur de votre complément de manière transparente avec iOS.|[Concevoir pour iOS](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/)|
 |Appliquez les méthodes recommandées pour concevoir un complément.|Assurez-vous que votre complément offre une valeur claire, une expérience conviviale et des performances optimales.|[Meilleures pratiques en matière de développement de compléments Office](../concepts/add-in-development-best-practices.md)|
 |Optimisez votre complément pour les écrans tactiles.|Concevez une interface utilisateur optimisée pour les écrans tactiles, en plus de la souris et du clavier.|[Application des principes de conception de l’expérience utilisateur](../concepts/add-in-development-best-practices.md#apply-ux-design-principles)|
