@@ -1,14 +1,14 @@
 ---
 title: Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)
 description: ''
-ms.date: 03/22/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 1b885834304ebedd62eea206f02dae4bacefba5c
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: f9c69eb937b8931dde3e702cf1f287e0e8c5fdbc
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449959"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128030"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>Résolution des messages d’erreur pour l’authentification unique (SSO) (aperçu)
 
@@ -52,7 +52,7 @@ Votre complément doit corriger cette erreur en basculant vers un autre système
 
 L’utilisateur n’est pas connecté à Office. Votre code doit rappeler la méthode `getAccessTokenAsync` et transmettre l’option `forceAddAccount: true` dans le paramètre [options](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference). Mais ne faites cela plus d’une fois. L’utilisateur peut avoir décidé ne pas se connecter.
 
-Cette erreur n’est jamais apparue dans Office Online. Si le cookie de l’utilisateur a expiré, Office Online renvoie l’erreur 13006.
+Cette erreur n’est jamais apparue dans Office sur le web. Si le cookie de l’utilisateur a expiré, Office renvoie l’erreur 13006.
 
 ### <a name="13002"></a>13002
 
@@ -75,7 +75,7 @@ Octroi non valide. Cela signifie généralement qu’Office n’a pas été pré
 
 ### <a name="13006"></a>13006
 
-Erreur client. Votre code doit suggérer à l’utilisateur de se déconnecter et de redémarrer Office, ou de redémarrer la session Office Online.
+Erreur client. Votre code doit suggérer à l’utilisateur de se déconnecter et de redémarrer Office, ou de redémarrer la session de navigateur Office.
 
 ### <a name="13007"></a>13007
 
@@ -101,7 +101,7 @@ Le complément a appelé la méthode `getAccessTokenAsync` avec l’option `forc
 
 ### <a name="13010"></a>13010
 
-L’utilisateur exécute le complément sur Office Online et utilise Edge ou Internet Explorer. Le domaine Office 365 de l’utilisateur et le domaine login.microsoftonline.com sont dans des zones de sécurité distinctes dans les paramètres de navigateur. Si cette erreur est renvoyée, l’utilisateur a déjà vu une erreur expliquant cela et menant vers une page sur la modification de la configuration de la zone. Si votre complément fournit des fonctions qui ne nécessitent pas que l’utilisateur soit connecté, votre code doit intercepter cette erreur et autoriser l’exécution du complément.
+L’utilisateur exécute le complément sur Office sur Microsoft Edge ou Internet Explorer. Le domaine Office 365 de l’utilisateur et le domaine login.microsoftonline.com sont dans des zones de sécurité distinctes dans les paramètres de navigateur. Si cette erreur est renvoyée, l’utilisateur a déjà vu une erreur expliquant cela et menant vers une page sur la modification de la configuration de la zone. Si votre complément fournit des fonctions qui ne nécessitent pas que l’utilisateur soit connecté, votre code doit intercepter cette erreur et autoriser l’exécution du complément.
 
 ### <a name="13012"></a>13012
 
