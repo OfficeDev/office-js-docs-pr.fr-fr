@@ -479,7 +479,7 @@
               href: testing/sideload-office-addin-using-sideload-command.md
             - name: Attacher un débogueur à partir du volet Office
               href: testing/attach-debugger-from-task-pane.md
-            - name: Débogage à l’aide des outils de développement F12
+            - name: Débogage à l’aide des outils de développement
               href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
         - name: Navigateur Web
           items:
