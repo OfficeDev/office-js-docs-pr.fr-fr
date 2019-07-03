@@ -1,14 +1,14 @@
 ---
 title: Élément Host dans le fichier manifeste
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/01/2019
 localization_priority: Normal
-ms.openlocfilehash: debb4d59f75ce974ffb21d853c6b65a579c4e685
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: e7b557034f70b03ed57598b7ffb9f43878db7392
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127568"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454894"
 ---
 # <a name="host-element"></a>Élément Host
 
@@ -28,7 +28,8 @@ Lorsqu’il est défini dans le manifeste base (sous [OfficeApp](officeapp.md)),
 | [Name](#name) | string | obligatoire | Nom du type d’application hôte Office. |
 
 ### <a name="name"></a>Nom
-Spécifie le type d’hôte ciblé par ce complément. La valeur doit être l’une des suivantes :
+
+Spécifie le type d’hôte ciblé par ce complément. La valeur doit être l’une des valeurs suivantes.
 
 - `Document` (Word)
 - `Database` (Access)
@@ -38,7 +39,11 @@ Spécifie le type d’hôte ciblé par ce complément. La valeur doit être l’
 - `Project` (Project)
 - `Workbook` (Excel)
 
+> [!IMPORTANT]
+> Nous ne vous recommandons plus de créer et d’utiliser les bases de données et les applications web Access dans SharePoint. Nous vous recommandons plutôt d’utiliser [Microsoft PowerApps](https://powerapps.microsoft.com/) pour créer des solutions professionnelles sans code pour des appareils mobiles et web.
+
 ### <a name="example"></a>Exemple
+
 ```xml
 <Hosts>
     <Host Name="Mailbox">
@@ -47,6 +52,7 @@ Spécifie le type d’hôte ciblé par ce complément. La valeur doit être l’
 ```
 
 ## <a name="versionoverrides-node"></a>Nœud VersionOverrides
+
 Lorsqu’il est défini dans [VersionOverrides](versionoverrides.md), le type d’hôte est déterminé par l’attribut `xsi:type`. 
 
 ### <a name="attributes"></a>Attributs
@@ -74,6 +80,7 @@ Contrôle à quel hôte Office (Word, Excel, PowerPoint, Outlook, OneNote) s’a
 - `Workbook` (Excel)
 
 ## <a name="host-example"></a>Exemple d’hôte 
+
 ```xml
 <Hosts>
     <Host xsi:type="MailHost">

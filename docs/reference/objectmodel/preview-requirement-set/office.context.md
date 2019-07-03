@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises pour Office. Context-preview
 description: ''
-ms.date: 06/20/2019
+ms.date: 06/25/2019
 localization_priority: Normal
-ms.openlocfilehash: 7e5d25c4788ec9f35a97f3bd3da6cca6a7314fb4
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 998e752cf2292eec4e05901325a0192e158c0b7f
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127484"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454831"
 ---
 # <a name="context"></a>context
 
@@ -83,9 +83,9 @@ function write(message){
 Permet d’accéder aux propriétés pour les couleurs du thème Office.
 
 > [!NOTE]
-> Ce membre n’est pas pris en charge dans Outlook sur iOS ou Android.
+> Ce membre est uniquement pris en charge dans Outlook sur Windows.
 
-À l’aide des couleurs du thème Office, vous pouvez coordonner le modèle de couleurs de votre complément avec le thème Office actuel sélectionné par l’utilisateur dans **Fichier > Compte Office > Thème Office**, qui est appliqué à toutes les applications hôtes Office. Les couleurs du thème Office s’utilisent avec les compléments de messagerie et du volet Office.
+L’utilisation des couleurs de thème Office vous permet de coordonner le jeu de couleurs de votre complément avec le thème Office actif sélectionné par l’utilisateur avec un **compte > le compte office > l’interface utilisateur de thème**Office, qui est appliquée à toutes les applications hôtes Office. Les couleurs du thème Office s’utilisent avec les compléments de messagerie et du volet Office.
 
 ##### <a name="type"></a>Type
 
@@ -104,7 +104,7 @@ Permet d’accéder aux propriétés pour les couleurs du thème Office.
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| Aperçu|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple

@@ -1,16 +1,16 @@
 ---
 title: Didacticiel de fonctions personnalisées Excel
 description: Dans ce didacticiel, vous allez créer un complément Excel qui contient une fonction personnalisée qui effectue des calculs, requiert des données web ou lance un flux de données web.
-ms.date: 06/20/2019
+ms.date: 06/27/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 3ae7896c082e7a1a45fb153dc69772f206a433de
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 1aa05581d1b0dfb1f5affa019e51b84126c8d199
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35126980"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454725"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Didacticiel : créer des fonctions personnalisées dans Excel
 
@@ -41,16 +41,16 @@ Dans ce didacticiel, vous allez :
     
     * **Sélectionnez un type de projet :** `Excel Custom Functions Add-in project`
     * **Sélectionnez un type de script :** `JavaScript`
-    * **Comment souhaitez-vous nommer votre complément ?** `stock-ticker`
+    * **Comment souhaitez-vous nommer votre complément ?** `starcount`
 
-    ![Le générateur de yeoman pour les compléments Office vous invite pour les fonctions personnalisées](../images/UpdatedYoOfficePrompt.png)
+    ![Le générateur de yeoman pour les compléments Office vous invite pour les fonctions personnalisées](../images/starcountPrompt.png)
     
     Le générateur crée le projet et installe les composants Node.js de la prise en charge.
 
 2. Accédez au dossier racine du projet.
     
     ```command&nbsp;line
-    cd stock-ticker
+    cd starcount
     ```
 
 3. Créez le projet.
@@ -108,40 +108,40 @@ Le `ADD` fonction personnalisée calcule la somme des deux nombres que vous avez
 
 ## <a name="create-a-custom-function-that-requests-data-from-the-web"></a>Créer une fonction personnalisée qui demande les données à partir du web
 
-Intégration de données à partir du Web est un excellent moyen pour étendre Excel via les fonctions personnalisées. Vous allez ensuite créer une fonction personnalisée nommée `stockPrice` qui obtient des actions à partir d’une API Web et renvoie le résultat à la cellule d’une feuille de calcul. 
+Intégration de données à partir du Web est un excellent moyen pour étendre Excel via les fonctions personnalisées. Ensuite, vous allez créer une fonction personnalisée `getStarCount` nommée qui indique le nombre d’étoiles dont dispose un référentiel GitHub donné.
 
-> [!NOTE]
-> Le code suivant demande une cotation boursière à l’aide de l’API commerce IEX. Avant de pouvoir exécuter le code, vous devez [créer un compte gratuit avec le Cloud Iex](https://iexcloud.io/) afin que vous puissiez obtenir le jeton d’API requis dans la demande d’API.  
+1. Dans le projet **starcount** , recherchez le fichier **./SRC/Functions/functions.js** et ouvrez-le dans votre éditeur de code. 
 
-1. Dans le projet **boursier** , recherchez le fichier **./SRC/Functions/functions.js** et ouvrez-le dans votre éditeur de code.
+2. Dans **Function. js**, ajoutez le code suivant: 
 
-2. Dans **functions. js**, recherchez `increment` la fonction et ajoutez le code suivant après cette fonction.
+```JS
+ /**
+   * Gets the star count for a given Github repository.
+   * @customfunction 
+   * @param {string} userName string name of Github user or organization.
+   * @param {string} repoName string name of the Github repository.
+   * @return {number} number of stars given to a Github repository.
+   */
+    async function getStarCount(userName, repoName) {
+      try {
+        //You can change this URL to any web request you want to work with.
+        const url = "https://api.github.com/repos/" + userName + "/" + repoName;
+        const response = await fetch(url);
+        //Expect that status code is in 200-299 range
+        if (!response.ok) {
+          throw new Error(response.statusText)
+        }
+          const jsonResponse = await response.json();
+          return jsonResponse.watchers_count;
+      }
+      catch (error) {
+        return error;
+      }
+      }
+    CustomFunctions.associate("GETSTARCOUNT", getStarCount);
+```
 
-    ```js
-    /**
-    * Fetches current stock price
-    * @customfunction 
-    * @param {string} ticker Stock symbol
-    * @returns {number} The current stock price.
-    */
-    function stockPrice(ticker) {
-        //Note: In the following line, replace <YOUR_TOKEN_HERE> with the API token that you've obtained through your IEX Cloud account.
-        var url = "https://cloud.iexapis.com/stable/stock/" + ticker + "/quote/latestPrice?token=<YOUR_TOKEN_HERE>"
-        return fetch(url)
-            .then(function(response) {
-                return response.text();
-            })
-            .then(function(text) {
-                return parseFloat(text);
-            });
-
-        // Note: in case of an error, the returned rejected Promise
-        //    will be bubbled up to Excel to indicate an error.
-    }
-    CustomFunctions.associate("STOCKPRICE", stockPrice);
-    ```
-
-    Le `CustomFunctions.associate` code associe le `id`de la fonction avec l’adresse de la fonction de `stockPrice` dans JavaScript afin qu’Excel peut appeler votre fonction.
+Le `CustomFunctions.associate` code associe le `id`de la fonction avec l’adresse de la fonction de `getStarCount` dans JavaScript afin qu’Excel peut appeler votre fonction.
 
 3. Exécutez la commande suivante pour regénérer le projet.
 
@@ -151,14 +151,15 @@ Intégration de données à partir du Web est un excellent moyen pour étendre E
 
 4. Procédez comme suit (pour Excel sur le Web ou Windows) pour réenregistrer le complément dans Excel. Vous devez effectuer ces étapes avant que la nouvelle fonction ne soit disponible.
 
-# <a name="excel-on-windowstabexcel-windows"></a>[Excel sur Windows](#tab/excel-windows)
+### <a name="excel-on-windowstabexcel-windows"></a>[Excel sur Windows](#tab/excel-windows)
 
 1. Fermez Excel, puis ouvrez de nouveau Excel.
 
 2. Dans Excel, sélectionnez l’onglet **Insérer** , puis cliquez sur la flèche vers le bas située à droite de **mes compléments**.  ![Insérer un ruban dans Excel sur Windows avec la flèche mes compléments mise en surbrillance](../images/select-insert.png)
 
-3. Dans la liste des compléments disponibles, recherchez la section **Compléments Développeur** et sélectionnez votre complément**bourse** pour effectuer cette opération.
-    ![Insérer un ruban dans Excel sur Windows avec le complément de fonctions personnalisées Excel mis en surbrillance dans la liste mes compléments](../images/list-stock-ticker-red.png)
+3. Dans la liste des compléments disponibles, recherchez la section **compléments pour développeurs** et sélectionnez le complément **starcount** pour l’enregistrer.
+    ![Insérer un ruban dans Excel sur Windows avec le complément de fonctions personnalisées Excel mis en surbrillance dans la liste mes compléments](../images/list-starcount.png)
+
 
 # <a name="excel-on-the-webtabexcel-online"></a>[Excel sur le Web](#tab/excel-online)
 
@@ -173,60 +174,48 @@ Intégration de données à partir du Web est un excellent moyen pour étendre E
 ---
 
 <ol start="5">
-<li> Essayez la nouvelle fonction. Dans la cellule <strong>B1</strong>, tapez le texte <strong>= CONTOSO. STOCKPRICE("MSFT")</strong> et appuyez sur ENTRÉE. Vous devriez voir que le résultat dans la cellule <strong>B1</strong> est le prix boursier actuel pour un partage de stock Microsoft.</li>
+<li> Essayez la nouvelle fonction. Dans la cellule <strong>B1</strong>, tapez le texte <strong>= contoso. GETSTARCOUNT ("OfficeDev", "Excel-Custom-Functions")</strong> et appuyez sur entrée. Vous devriez voir que le résultat dans la cellule <strong>B1</strong> est le nombre actuel d’étoiles attribuées au [référentiel GitHub de fonctions personnalisées Excel](https://github.com/OfficeDev/Excel-Custom-Functions).</li>
 </ol>
 
 ## <a name="create-a-streaming-asynchronous-custom-function"></a>Créer une fonction personnalisée asynchrone diffusion en continu
 
-La fonction`stockPrice`que vous venez de créer renvoie le prix d’une action à un moment donné, mais les prix des actions changent constamment. Vous allez ensuite créer une fonction personnalisée nommée `stockPriceStream` qui obtient le prix d’une action chaque 1000 millisecondes.
+La `getStarCount` fonction renvoie le nombre d’étoiles qu’un référentiel a à un moment donné. Les fonctions personnalisées peuvent également renvoyer des données qui changent en permanence. Ces fonctions sont appelées fonctions de diffusion en continu. Elles doivent inclure un `invocation` paramètre qui fait référence à la cellule à partir de laquelle la fonction a été appelée. Le `invocation` paramètre est utilisé pour mettre à jour le contenu de la cellule à tout moment.  
 
-1. Dans le projet **boursier** , ajoutez le code suivant à **./SRC/Functions/functions.js** et enregistrez le fichier.
+Dans l’exemple de code suivant, vous remarquerez qu’il existe deux `currentTime` fonctions `clock`, et. La `currentTime` fonction est une fonction statique qui n’utilise pas la diffusion en continu. Elle renvoie la date sous la forme d’une chaîne. La `clock` fonction utilise la `currentTime` fonction pour fournir la nouvelle fois toutes les secondes à une cellule dans Excel. Il utilise `invocation.setResult` pour fournir le temps à la cellule Excel et `invocation.onCanceled` pour gérer ce qui se produit lorsque la fonction est annulée.
 
-    ```js
-    /**
-    * Streams real time stock price
-    * @customfunction 
-    * @param {string} ticker Stock symbol
-    * @param {CustomFunctions.StreamingInvocation<number>} invocation
-    */
-    function stockPriceStream(ticker, invocation) {
-        var updateFrequency = 1000 /* milliseconds*/;
-        var isPending = false;
+1. Dans le projet **starcount** , ajoutez le code suivant à **./SRC/Functions/functions.js** et enregistrez le fichier.
 
-        var timer = setInterval(function() {
-            // If there is already a pending request, skip this iteration:
-            if (isPending) {
-                return;
-            }
+```JS
+/**
+ * Returns the current time
+ * @returns {string} String with the current time formatted for the current locale.
+ */
+function currentTime() {
+  return new Date().toLocaleTimeString();
+}
 
-            //Note: In the following line, replace <YOUR_TOKEN_HERE> with the API token that you've obtained through your IEX Cloud account.
-            var url = "https://cloud.iexapis.com/stable/stock/" + ticker + "/quote/latestPrice?token=<YOUR_TOKEN_HERE>"
-            isPending = true;
+CustomFunctions.associate("CURRENTTIME", currentTime); 
 
-            fetch(url)
-                .then(function(response) {
-                    return response.text();
-                })
-                .then(function(text) {
-                    invocation.setResult(parseFloat(text));
-                })
-                .catch(function(error) {
-                    invocation.setResult(error);
-                })
-                .then(function() {
-                    isPending = false;
-                });
-        }, updateFrequency);
+ /**
+ * Displays the current time once a second
+ * @customfunction
+ * @param {CustomFunctions.StreamingInvocation<string>} invocation Custom function invocation
+ */
+function clock(invocation) {
+  const timer = setInterval(() => {
+    const time = currentTime();
+    invocation.setResult(time);
+  }, 1000);
 
-        invocation.onCanceled = () => {
-            clearInterval(timer);
-        };
-    }
-    CustomFunctions.associate("STOCKPRICESTREAM", stockPriceStream);
-    ```
-    
-    Le `CustomFunctions.associate` code associe le `id`de la fonction avec l’adresse de la fonction de `stockPriceStream` dans JavaScript afin qu’Excel peut appeler votre fonction.
-    
+  invocation.onCanceled = () => {
+    clearInterval(timer);
+  };
+}
+CustomFunctions.associate("CLOCK", clock);
+```
+
+Le `CustomFunctions.associate` code associe le `id`de la fonction avec l’adresse de la fonction de `CLOCK` dans JavaScript afin qu’Excel peut appeler votre fonction.
+
 2. Exécutez la commande suivante pour regénérer le projet.
 
     ```command&nbsp;line
@@ -241,8 +230,8 @@ La fonction`stockPrice`que vous venez de créer renvoie le prix d’une action �
 
 2. Dans Excel, sélectionnez l’onglet **Insérer** , puis cliquez sur la flèche vers le bas située à droite de **mes compléments**.  ![Insérer un ruban dans Excel sur Windows avec la flèche mes compléments mise en surbrillance](../images/select-insert.png)
 
-3. Dans la liste des compléments disponibles, recherchez la section **Compléments Développeur** et sélectionnez votre complément**bourse** pour effectuer cette opération.
-    ![Insérer un ruban dans Excel sur Windows avec le complément de fonctions personnalisées Excel mis en surbrillance dans la liste mes compléments](../images/list-stock-ticker-red.png)
+3. Dans la liste des compléments disponibles, recherchez la section **compléments pour développeurs** et sélectionnez le complément **starcount** pour l’enregistrer.
+    ![Insérer un ruban dans Excel sur Windows avec le complément de fonctions personnalisées Excel mis en surbrillance dans la liste mes compléments](../images/list-starcount.png)
 
 # <a name="excel-on-the-webtabexcel-online"></a>[Excel sur le Web](#tab/excel-online)
 
@@ -257,16 +246,12 @@ La fonction`stockPrice`que vous venez de créer renvoie le prix d’une action �
 --- 
 
 <ol start="4">
-<li>Essayez la nouvelle fonction. Dans la cellule <strong>C1</strong>, tapez le texte <strong>= CONTOSO. STOCKPRICE("MSFT")</strong> et appuyez sur ENTRÉE. Si le marché est ouvert, vous devriez voir que le résultat dans la cellule <strong>C1</strong> constamment mis à jour pour refléter le prix en temps réel pour un partage d’actions Microsoft.</li>
+<li>Essayez la nouvelle fonction. Dans la cellule <strong>C1</strong>, tapez le texte <strong>= contoso. CLOCK ())</strong> , puis appuyez sur entrée. Vous devriez voir la date du jour, qui diffuse une mise à jour toutes les secondes. Bien que cette horloge constitue une seule horloge sur une boucle, vous pouvez utiliser la même idée de définir un minuteur sur des fonctions plus complexes qui effectuent des requêtes Web pour des données en temps réel.</li>
 </ol>
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations ! Vous avez créé un nouveau projet de fonctions personnalisées, essayé une fonction prédéfinie, créé une fonction personnalisée qui demande les données à partir du web et créé une fonction personnalisée qui diffuse les données en temps réel à partir du web. Vous pouvez également essayer de déboguer cette fonction à l’aide [des instructions de débogage de la fonction personnalisée](../excel/custom-functions-debugging.md). Pour en savoir plus sur les fonctions personnalisées dans Excel, passez à l’article suivant :
+Félicitations ! Vous avez créé un nouveau projet de fonctions personnalisées, testé une fonction prédéfinie, créé une fonction personnalisée qui demande des données à partir du Web et créé une fonction personnalisée qui diffuse les données. Vous pouvez également essayer de déboguer cette fonction à l’aide [des instructions de débogage de la fonction personnalisée](../excel/custom-functions-debugging.md). Pour en savoir plus sur les fonctions personnalisées dans Excel, passez à l’article suivant :
 
 > [!div class="nextstepaction"]
 > [Créer des fonctions personnalisées dans Excel](../excel/custom-functions-overview.md)
-
-### <a name="legal-information"></a>Informations légales
-
-Données fournies gratuitement par [IEX](https://iextrading.com/developer/). Afficher les [conditions d’utilisation de IEX](https://iextrading.com/api-exhibit-a/). L’utilisation de Microsoft de l’API IEX dans ce didacticiel est uniquement à des fins d’enseignement.

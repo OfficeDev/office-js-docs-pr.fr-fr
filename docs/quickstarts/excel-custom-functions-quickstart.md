@@ -4,12 +4,12 @@ description: Développement de fonctions personnalisées dans le Guide de démar
 title: Démarrage rapide des fonctions personnalisées
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 8e7fbf247df04a12c38ad24d9ba6335a7f7bdaf8
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: b0f32f2239ff25ef22a9b72908d30734f25741d6
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128579"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454908"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Prise en main du développement de fonctions personnalisées Excel
 
@@ -37,16 +37,16 @@ Pour commencer, vous utiliserez le Yeoman Générateur pour créer le projet de 
 
     - **Sélectionnez un type de projet :** `Excel Custom Functions Add-in project`
     - **Sélectionnez un type de script :** `JavaScript`
-    - **Comment souhaitez-vous nommer votre complément ?** `stock-ticker`
+    - **Comment souhaitez-vous nommer votre complément ?** `starcount`
 
-    ![Le générateur de yeoman pour les compléments Office vous invite pour les fonctions personnalisées](../images/UpdatedYoOfficePrompt.png)
+    ![Le générateur de yeoman pour les compléments Office vous invite pour les fonctions personnalisées](../images/starcountPrompt.png)
 
     Le générateur crée le projet et installe les composants Node.js de la prise en charge.
 
 2. Le générateur Yeoman vous donne des instructions dans votre ligne de commande sur ce qu’il faut faire du projet, mais il les ignore et continue de suivre nos instructions. Accédez au dossier racine du projet.
 
     ```command&nbsp;line
-    cd stock-ticker
+    cd starcount
     ```
 
 3. Créez le projet. 

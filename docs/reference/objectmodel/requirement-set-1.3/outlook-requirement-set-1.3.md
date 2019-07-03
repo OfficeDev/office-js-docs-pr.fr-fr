@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook 1.3
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/25/2019
 localization_priority: Normal
-ms.openlocfilehash: 276096870b128896e987bcb303b4cccdb77e0e50
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 6e1c8fade7a95cdac4fbcf5b571f4b9be9092e95
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450400"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454887"
 ---
 # <a name="outlook-add-in-api-requirement-set-13"></a>Ensemble de conditions requises de l’API du complément Outlook 1.3
 
@@ -31,7 +31,6 @@ L’ensemble de conditions requises de la version 1.3 comprend toutes les fonct
 
 - Ajout de la méthode [Body.getAsync](/javascript/api/outlook_1_3/office.body#getasync-coerciontype--options--callback-) : Renvoie le corps actif dans un format spécifié.
 - Ajout de la méthode [Body.setAsync](/javascript/api/outlook_1_3/office.body#setasync-data--options--callback-) : Remplace l’ensemble du corps avec le texte spécifié.
-- Ajout de la propriété [Office.context.officeTheme](office.context.md#officetheme-object) : permet d’accéder aux couleurs du thème Office.
 - Ajout de l’objet [Event](/javascript/api/office/office.addincommands.event) : transmis comme paramètre aux fonctions de commande sans IU dans un complément Outlook. Utilisé pour signaler la fin du traitement de l’événement.
 - Ajout de la méthode [Office.context.mailbox.item.close](office.context.mailbox.item.md#close) : Ferme l’élément en cours qui est composé.
 - Ajout de la méthode [Office.context.mailbox.item.saveAsync](office.context.mailbox.item.md#saveasyncoptions-callback) : Enregistre un élément de manière asynchrone.
