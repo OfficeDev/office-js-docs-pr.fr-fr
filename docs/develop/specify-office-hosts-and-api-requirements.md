@@ -1,14 +1,14 @@
 ---
 title: Spécification des exigences en matière d’hôtes Office et d’API
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/01/2019
 localization_priority: Priority
-ms.openlocfilehash: b08ef0a304190540ffc82acc4d5d08fc6783014e
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 4355f86b6173e84c80bbd0791f571e034c8ae12d
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128037"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454621"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>Spécification des exigences en matière d’hôtes Office et d’API
 
@@ -83,14 +83,17 @@ L’élément  **Hosts** peut contenir un ou plusieurs éléments  **Host**. L�
 | Name          | Applications hôtes Office                                                                  |
 |:--------------|:------------------------------------------------------------------------------------------|
 | Base de données      | applications web Access                                                                           |
-| Document      | Word pour Windows, Word pour Mac, Word pour iPad et Word sur le web                           |
+| Document      | Word pour Windows, Word pour Mac, Word pour iPad, Word sur le web                               |
 | Boîte aux lettres       | Outlook pour Windows, Outlook pour Mac, Outlook sur le web, Outlook pour Android, Outlook pour iOS|
-| Présentation  | PowerPoint pour Windows, PowerPoint pour Mac, PowerPoint pour iPad et PowerPoint sur le web   |
+| Présentation  | PowerPoint pour Windows, PowerPoint pour Mac, PowerPoint pour iPad, PowerPoint sur le web       |
 | Project       | Project sur Windows                                                                        |
-| Classeur      | Excel pour Windows, Excel pour Mac, Excel pour iPad et Excel sur le web                       |
+| Classeur      | Excel pour Windows, Excel pour Mac, Excel pour iPad, Excel sur le web                           |
 
 > [!NOTE]
 > L’attribut `Name` spécifie l’application hôte Office pouvant exécuter votre complément. Les hôtes Office sont pris en charge sur différentes plateformes et sont exécutés sur les ordinateurs de bureau, les navigateurs web, les tablettes et les appareils mobiles. Vous ne pouvez pas indiquer quelle plateforme peut être utilisée pour exécuter votre complément. Par exemple, si vous spécifiez `Mailbox`, Outlook sur le web et Outlook sur Windows peuvent être utilisés pour exécuter votre complément.
+
+> [!IMPORTANT]
+> Nous ne vous recommandons plus de créer et d’utiliser les bases de données et les applications web Access dans SharePoint. Nous vous recommandons plutôt d’utiliser [Microsoft PowerApps](https://powerapps.microsoft.com/) pour créer des solutions professionnelles sans code pour des appareils mobiles et web.
 
 
 ## <a name="set-the-requirements-element-in-the-manifest"></a>Définition de l’élément Requirements dans le manifeste

@@ -1,14 +1,14 @@
 ---
 title: Cycle de vie du développement des compléments Office
 description: ''
-ms.date: 03/19/2019
+ms.date: 07/01/2019
 localization_priority: Priority
-ms.openlocfilehash: ec38bb3cfba98153d644431f5e6f23c1d37b0a06
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 44e2792f030662bd89b272998ad47fd0a645d785
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910162"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454572"
 ---
 # <a name="office-add-ins-development-lifecycle"></a>Cycle de vie du développement des compléments Office
 
@@ -33,7 +33,7 @@ Déterminez les fonctionnalités et les scénarios les plus importants et réali
 
 ## <a name="2-identify-the-data-and-data-source-for-the-add-in"></a>2. Identifier les données et la source de données du complément
 
-- Les données figurent-elles dans un document, un classeur, une présentation, un projet ou une base de données Access basée sur un navigateur ?
+- Les données figurent-elles dans un document, une présentation ou un projet ?
 
 - Les données concernent-elles un ou plusieurs éléments d’une boîte aux lettres Exchange Server ou Exchange Online ?
 
@@ -44,11 +44,11 @@ Déterminez les fonctionnalités et les scénarios les plus importants et réali
 
 Tenez compte des informations suivantes pour identifier les scénarios :
 
-- Les clients utiliseront-ils le complément pour enrichir le contenu d’un document ou d’une base de données Access reposant sur navigateur ? Si c’est le cas, vous pouvez envisager de créer un **complément de contenu**.
+- Les clients utiliseront-ils le complément pour enrichir le contenu d’un document ? Si c’est le cas, vous pouvez envisager de créer un **complément de contenu**.
 
 - Les clients utiliseront-ils le complément lors de la visualisation ou de la composition d’un message électronique ou d’un rendez-vous ? Est-il important de pouvoir exposer le complément conformément au contexte actuel ? La possibilité de rendre le complément disponible non seulement sur le bureau mais également sur des tablettes ou des smartphones constitue-telle une priorité ?
 
-    Si vous répondez oui à l’une de ces questions, envisagez de créer un **complément Outlook**. Identifiez le contexte qui déclenchera votre complément (par exemple, un formulaire de composition utilisé par un utilisateur, des types de messages spécifiques, la présence d’une pièce jointe, l’adresse, la suggestion de tâche, la suggestion de réunion ou certains modèles de chaînes dans le contenu d’un courrier électronique ou d’un rendez-vous). 
+    Si vous répondez oui à l’une de ces questions, envisagez de créer un **complément Outlook**. Identifiez le contexte qui déclenchera votre complément (par exemple, un formulaire de composition utilisé par un utilisateur, des types de messages spécifiques, la présence d’une pièce jointe, l’adresse, la suggestion de tâche, la suggestion de réunion ou certains modèles de chaînes dans le contenu d’un courrier électronique ou d’un rendez-vous).
 
     Reportez-vous à l’article relatif aux [règles d’activation pour les compléments Outlook](/outlook/add-ins/activation-rules) pour savoir comment activer le complément Outlook en fonction du contexte.
 

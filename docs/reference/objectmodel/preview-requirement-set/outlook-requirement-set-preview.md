@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: ''
-ms.date: 06/20/2019
+ms.date: 06/25/2019
 localization_priority: Priority
-ms.openlocfilehash: b46fada2fa69f3526c929a0289341f7dab5b58b8
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: b59b4523bf0cc45a69a5c86e1670a0b224ad029c
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128474"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454852"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -212,13 +212,13 @@ Ajout d’une nouvelle fonction qui renvoie les données d’initialisation tran
 
 #### <a name="internetheadersjavascriptapioutlookofficeinternetheaders"></a>[InternetHeaders](/javascript/api/outlook/office.internetheaders)
 
-Ajout d’un nouvel objet représentant les en-têtes Internet d’un élément de message.
+Ajout d’un nouvel objet représentant les en-têtes Internet personnalisés d’un élément de message.
 
 **Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
 
 #### <a name="officecontextmailboxiteminternetheadersofficecontextmailboxitemmdinternetheaders-internetheaders"></a>[Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#internetheaders-internetheaders)
 
-Ajout d’une nouvelle propriété représentant les en-têtes Internet d’un élément de message.
+Ajout d’une nouvelle propriété représentant les en-têtes Internet personnalisés d’un élément de message.
 
 **Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
 
@@ -226,7 +226,7 @@ Ajout d’une nouvelle propriété représentant les en-têtes Internet d’un �
 
 ### <a name="office-theme"></a>Thème Office
 
-#### <a name="officecontextmailboxofficethemejavascriptapiofficeofficeofficetheme"></a>[Office.context.mailbox.officeTheme](/javascript/api/office/office.officetheme)
+#### <a name="officecontextofficethemejavascriptapiofficeofficecontextofficetheme"></a>[Office.context.officeTheme](/javascript/api/office/office.context#officetheme)
 
 Ajout de la possibilité d’obtenir un thème Office.
 

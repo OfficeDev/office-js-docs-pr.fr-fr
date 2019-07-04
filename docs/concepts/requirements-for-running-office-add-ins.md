@@ -1,14 +1,14 @@
 ---
 title: Configuration requise pour exécuter des compléments Office
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/01/2019
 localization_priority: Priority
-ms.openlocfilehash: 3a167777068b398c191f41adfa8dfa590d18edc2
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 5a33af6a3dc23739642a4ad0f6e3d29bff247f4d
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127701"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454614"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Configuration requise pour exécuter des compléments Office
 
@@ -30,7 +30,7 @@ Pour tous les types de complément (compléments de contenu, Outlook et volet Of
 > [!TIP]
 > lorsque vous développez et déboguez un complément dans Visual Studio, Visual Studio déploie et exécute les fichiers de page web de votre complément localement avec IIS Express et ne nécessite aucun serveur web supplémentaires.
 
-Pour les compléments du volet Office et de contenu, dans les applications hôtes Office prises en charge (applications web Access, Word, Excel, PowerPoint ou Project), vous avez également besoin d’un [catalogue d’applications](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) sur SharePoint pour télécharger les fichiers manifeste XML des compléments.
+Pour les compléments du volet Office et de contenu, dans les applications hôtes Office prises en charge (Excel, PowerPoint, Project ou Word), vous avez également besoin d’un [catalogue d’applications](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) sur SharePoint pour télécharger les fichiers manifeste XML des compléments.
 
 Pour tester et exécuter des compléments Outlook, le compte de messagerie Outlook de l’utilisateur doit être situé sur Exchange 2013 ou une version ultérieure, disponible par le biais d’Office 365, Exchange Online ou via une installation sur site. L’utilisateur ou l’administrateur installe les fichiers manifeste pour les compléments Outlook sur ce serveur.
 
