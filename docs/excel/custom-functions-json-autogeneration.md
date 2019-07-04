@@ -90,7 +90,7 @@ L’exemple suivant illustre la méthode la plus simple pour déclarer une fonct
 * Le `id`doit être unique pour toutes les fonctions personnalisées.
 * Les caractères autorisés sont les suivants : A-Z, a-z, 0-9, traits de soulignement (\_) et point (.).
 
-Dans l’exemple suivant, Increment correspond à `id` et à `name` de la fonction.
+Dans l’exemple suivant, Increments correspond à l’`id` et au `name` de la fonction.
 
 ```js
 /**
@@ -109,7 +109,7 @@ Fournit le nom d’affichage `name`de la fonction personnalisée.
 * Doit commencer par une lettre.
 * Sa longueur maximale est limitée à 128 caractères.
 
-Dans l’exemple suivant, Inc est la `id` de la fonction, et `increment` est le `name`.
+Dans l’exemple suivant, INC correspond à l’`id` de la fonction, tandis que `increment` correspond au `name`.
 
 ```js
 /**
@@ -121,9 +121,9 @@ Dans l’exemple suivant, Inc est la `id` de la fonction, et `increment` est le 
 
 ### <a name="description"></a>description
 
-Une description ne nécessite aucune balise spécifique. Ajoutez une description à une fonction personnalisée en ajoutant une expression pour décrire le rôle de la fonction dans le commentaire JSDoc. Par défaut, le texte non balisé dans la section commentaire JSDoc est la description de la fonction. La description s’affiche pour les utilisateurs dans Excel lors de la saisie de la fonction. Dans l’exemple suivant, l’expression «fonction qui ajoute la somme de deux nombres» est la description de la fonction personnalisée dont la propriété ID est`ADD`.
+Une description ne nécessite aucune balise spécifique. Ajoutez une description à une fonction personnalisée en ajoutant une expression pour décrire le rôle de la fonction dans le commentaire JSDoc. Par défaut, le texte non balisé dans la section commentaire JSDoc est la description de la fonction. La description s’affiche dans Excel lorsque l’utilisateur saisit la fonction. Dans l’exemple suivant, la phrase « A function that adds two numbers » (« Une fonction qui ajoute deux nombres ») est la description de la fonction personnalisée dont la propriété ID est `ADD`.
 
-Dans l’exemple suivant, la fonction Add est la `id`et la de la fonction et une description est indiquée.
+Dans l’exemple suivant, ADD correspond à l’`id` et au `name` de la fonction. Une description est indiquée.
 
 ```js
 /**
@@ -141,7 +141,7 @@ Syntaxe: @urlaide_url_
 
 L’_url_ fournie est affichée dans Excel.
 
-Dans l’exemple suivant, l `helpurl` 'est www.contoso.com/weatherhelp.
+Dans l’exemple suivant, l’`helpurl` est www.contoso.com/weatherhelp.
 
 ```js
 /**
@@ -170,7 +170,7 @@ Pour désigner un paramètre de fonction personnalisée comme étant facultatif�
 > [!NOTE]
 > La valeur par défaut pour les paramètres facultatifs est `null`.
 
-L’exemple suivant montre une fonction ADD qui ajoute deux ou trois nombres, avec le troisième nombre comme paramètre facultatif.
+L’exemple suivant représente une fonction ADD qui ajoute deux ou trois nombres, où le troisième nombre est un paramètre facultatif.
 
 ```js
 /**
@@ -201,7 +201,7 @@ Pour consulter une description détaillée du @param, reportez-vous à la page s
 > [!NOTE]
 > La valeur par défaut pour les paramètres facultatifs est `null`.
 
-L’exemple suivant illustre la fonction`add` qui ajoute deux nombres.
+L’exemple suivant représente la fonction `add` qui ajoute deux nombres.
 
 ```ts
 /**
@@ -222,7 +222,7 @@ function add(first: number, second: number): number {
 
 Indique que l’adresse de la cellule dans laquelle la fonction est évaluée doit être fournie.
 
-Le dernier paramètre de la fonction doit être de type `CustomFunctions.Invocation` ou un type dérivé. Lorsque la fonction est appelée, la propriété `address` contiendra l’adresse. Pour obtenir un exemple d’une fonction qui utilise la balise`@requiresAddress`, voir [paramètre de contexte de la cellule adressage](./custom-functions-parameter-options.md#addressing-cells-context-parameter).
+Le dernier paramètre de la fonction doit être de type `CustomFunctions.Invocation` ou un type dérivé. Lorsque la fonction est appelée, la propriété `address` contiendra l’adresse. Si vous souhaitez consulter un exemple de fonction utilisant la balise `@requiresAddress`, veuillez vous reporter à la section [Adressage du paramètre de contexte d’une cellule](./custom-functions-parameter-options.md#addressing-cells-context-parameter).
 
 ---
 ### <a name="returns"></a>@renvoie :
@@ -234,7 +234,7 @@ Fournit le type pour la valeur renvoyée.
 
 Si `{type}` est omis, les informations de type TypeScript seront utilisées. S’il n’existe aucune information définissant le type, ce dernier sera `any`.
 
-L’exemple suivant illustre la fonction`add` qui utilise la balise`@returns`.
+L’exemple suivant représente la fonction `add` qui utilise la balise `@returns`.
 
 ```ts
 /**
@@ -260,9 +260,9 @@ La fonction doit renvoyer `void`.
 
 Les fonctions de diffusion en continu ne renvoient pas de valeurs directement, mais doivent plutôt appeler `setResult(result: ResultType)` en utilisant le dernier paramètre.
 
-Les exceptions levées par une fonction en continu sont ignorées. `setResult()`peut être appelée avec Error pour indiquer un résultat erroné. Pour obtenir un exemple d’une fonction de diffusion en continu et d’autres informations, voir [créer une fonction de diffusion en continu](./custom-functions-web-reqs.md#make-a-streaming-function).
+Les exceptions levées par une fonction en continu sont ignorées. `setResult()`peut être appelée avec Error pour indiquer un résultat erroné. Si vous souhaitez consulter un exemple de fonction de diffusion en continu et obtenir d’autres informations, veuillez vous reporter à la section [Créer une fonction de diffusion en continu](./custom-functions-web-reqs.md#make-a-streaming-function).
 
-Vous ne pouvez pas utiliser les balises en diffusion en continu comme [@volatile](#volatile).
+Les fonctions de diffusion en continu ne peuvent pas être marquées comme étant [@volatile](#volatile).
 
 ---
 ### <a name="volatile"></a>@volatile
