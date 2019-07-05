@@ -1,35 +1,48 @@
 ---
-title: Débogage des compléments avec les outils de développement F12 sur Windows 10
+title: Débogage des compléments avec les outils de développement sur Windows 10
 description: ''
-ms.date: 03/19/2019
+ms.date: 07/01/2019
 localization_priority: Priority
-ms.openlocfilehash: 750411bea187a0ade9b3723e3198d82f7c482c9f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a2090eca41f59f0e7fab1a172aff96cbbca28ed7
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450143"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454880"
 ---
-# <a name="debug-add-ins-using-f12-developer-tools-on-windows-10"></a>Débogage des compléments avec les outils de développement F12 sur Windows 10
+# <a name="debug-add-ins-using-developer-tools-on-windows-10"></a>Débogage des compléments avec les outils de développement sur Windows 10
 
-Les outils de d?veloppement F12 inclus dans Windows 10 vous aident ? d?boguer, tester et acc?l?rer vos pages web. Ils vous aident ?galement ? d?velopper et d?boguer les compl?ments Office si vous n?utilisez pas un IDE comme Visual Studio ou si vous devez examiner un probl?me pendant l?ex?cution de votre compl?ment hors de l?IDE. Vous pouvez lancer les outils de d?veloppement F12 apr?s l?ex?cution de votre compl?ment.
+Il existe des outils de développement en dehors des IDE pour vous aider à déboguer vos compléments sous Windows 10. Ils sont utiles lorsque vous devez examiner un problème pendant l’exécution de votre complément hors de l’IDE.
+
+L’outil que vous utilisez dépend de l’exécution du complément dans Edge ou Internet Explorer. Cela est fonction de la version de Windows 10 et de la version d’Office qui sont installées sur l’ordinateur. Pour déterminer quel navigateur est utilisé sur votre ordinateur de développement, consultez [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md). 
+
 
 > [!NOTE]
 > Les instructions décrites dans cet article ne peuvent pas être utilisées pour déboguer un complément Outlook qui utilise des fonctions Exécuter. Pour déboguer un complément Outlook qui utilise des fonctions Exécuter, nous vous recommandons de l’attacher à Visual Studio en mode script ou à un autre débogueur de script.
 
-## <a name="prerequisites"></a>Conditions requises
+## <a name="when-the-add-in-is-running-in-edge"></a>Lorsque le complément s’exécute dans Edge
 
-Les logiciels suivants doivent être installés :
+Lorsque le complément s’exécute dans Edge, vous pouvez utiliser [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab). 
 
-- Les outils de développement F12, inclus dans Windows 10. 
-    
-- L’application cliente Office qui héberge votre complément. 
-    
-- Votre complément. 
+1. Exécutez le complément. 
 
-## <a name="using-the-debugger"></a>Utilisation du débogueur
+2. Exécutez Microsoft Edge DevTools.
 
-Dans cet article, vous d?couvrirez comment utiliser le d?bogueur des outils de d?veloppement F12 de Windows 10 pour tester votre compl?ment Office. Vous pouvez tester les compl?ments d?AppSource ou des compl?ments que vous avez ajout?s ? partir d?autres emplacements. Les outils F12 s?ouvrent dans une fen?tre s?par?e et n?utilisent pas Visual Studio. Vous pouvez lancer les outils de développement F12 après l’exécution de votre complément. Les outils F12 s’ouvrent dans une fenêtre distincte et n’utilisent pas Visual Studio.
+3. Dans les outils, ouvrez l’onglet **Local**. Votre complément est répertorié par son nom.
+
+4. Cliquez sur le nom du complément pour l’ouvrir dans les outils.
+
+5. Ouvrez l’onglet **Débogueur**. 
+
+6. Cliquez sur l’icône de dossier située au-dessus du volet (gauche) du **script**. Dans la liste des fichiers disponibles qui apparaît dans la liste déroulante, sélectionnez le fichier JavaScript que vous souhaitez déboguer.
+
+7. Pour définir un point d’arrêt, sélectionnez la ligne. Vous verrez un point rouge à gauche de la ligne et une ligne correspondante dans le volet **Pile d’appels** (en bas à droite).
+
+8. Exécutez les fonctions dans le complément, si nécessaire, afin de déclencher le point d’arrêt.
+
+## <a name="when-the-add-in-is-running-in-internet-explorer"></a>Lorsque le complément s’exécute dans Internet Explorer
+
+Lorsque le complément s’exécute dans Internet Explorer, vous pouvez utiliser le débogueur des outils de développement F12 sous Windows 10 pour tester votre complément. Vous pouvez lancer les outils de développement F12 après l’exécution du complément. Les outils F12 s’ouvrent dans une fenêtre distincte et n’utilisent pas Visual Studio.
 
 > [!NOTE]
 > Le débogueur fait partie des outils de développement F12 de Windows 10 et d’Internet Explorer. Il n’est pas inclus dans les versions antérieures de Windows. 
