@@ -1,67 +1,44 @@
 ---
 title: Référence de l’API JavaScript pour OneNote
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 ms.prod: onenote
 localization_priority: Normal
-ms.openlocfilehash: 68ac6f94921ba3b1ea14f364988b57ef86809890
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: b6e5cd5f083013a84e75dfd57b30af87eabb42e8
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127127"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575316"
 ---
 # <a name="onenote-javascript-api-overview"></a>Référence de l’API JavaScript pour OneNote
 
-S’applique à: OneNote sur le Web
+Un complément OneNote interagit avec des objets dans OneNote sur le Web à l’aide de l’API JavaScript pour Office, qui inclut deux modèles d’objets JavaScript:
 
-Les liens suivants affichent les objets OneNote de niveau supérieur disponibles dans l’API. Chaque lien vers la page d’un objet contient une description des propriétés, des événements et des méthodes disponibles sur l’objet. Cliquez sur ces liens pour en savoir plus. 
-    
-- [Application](/javascript/api/onenote/onenote.application) : Objet de niveau supérieur utilisé pour accéder à tous les objets OneNote globalement adressables, tels que le bloc-notes actif et la section active.
+* **API JavaScript pour OneNote**: introduite avec Office 2016, l' [API JavaScript pour OneNote](/javascript/api/onenote) fournit des objets fortement typés que vous pouvez utiliser pour accéder aux objets dans OneNote sur le Web. 
 
-- [Bloc-notes](/javascript/api/onenote/onenote.notebook) : Bloc-notes. Les blocs-notes contiennent des groupes de sections et des sections.
-    - [NotebookCollection](/javascript/api/onenote/onenote.notebookcollection) : Collection de blocs-notes.
+* **API communes**: introduite avec Office 2013, l' [API commune](/javascript/api/office) peut être utilisée pour accéder à des fonctionnalités telles que l’interface utilisateur, les boîtes de dialogue et les paramètres client qui sont communs à plusieurs types d’applications Office.
 
-- [SectionGroup](/javascript/api/onenote/onenote.sectiongroup) : Groupe de sections. Les groupes de sections contiennent des sections et des groupes de sections.
-    - [SectionGroupCollection](/javascript/api/onenote/onenote.sectiongroupcollection) : Collection de groupes de sections.
+Cette section de la documentation se concentre sur l’API JavaScript OneNote, que vous utiliserez pour développer la majorité des fonctionnalités dans les compléments ciblant OneNote sur le Web. Pour plus d’informations sur l’API commune, reportez-vous à [JavaScript API for Office](../javascript-api-for-office.md). 
 
-- [Section](/javascript/api/onenote/onenote.section) : Section. Les sections contiennent des pages.
-    - [SectionCollection](/javascript/api/onenote/onenote.sectioncollection) : Collection de sections.
+## <a name="learn-programming-concepts"></a>Apprendre les concepts de programmation
 
-- [Page](/javascript/api/onenote/onenote.page) : Page. Les pages contiennent des objets PageContent.
-    - [PageCollection](/javascript/api/onenote/onenote.pagecollection) : Collection de pages.
+Consultez les articles suivants pour obtenir des informations sur les concepts de programmation importants:
 
-- [PageContent](/javascript/api/onenote/onenote.pagecontent) : Zone de niveau supérieur sur une page qui contient des types de contenu tels que des plans ou des images. Un objet PageContent peut être affecté à une position sur la page.
-    - [PageContentCollection](/javascript/api/onenote/onenote.pagecontentcollection) : Collection d’objets PageContent qui représente le contenu d’une page.
+- [Vue d’ensemble de la programmation de l’API JavaScript de OneNote](../../onenote/onenote-add-ins-programming-overview.md)
 
-- [Outline](/javascript/api/onenote/onenote.outline) : Conteneur pour les objets Paragraph. Un plan est un enfant direct d’un objet PageContent.
+- [Utiliser du contenu de page OneNote](../../onenote/onenote-add-ins-page-content.md)
 
-- [Image](/javascript/api/onenote/onenote.image) : Objet Image. Une image peut être un enfant direct d’un objet Paragraph ou PageContent.
+## <a name="learn-about-api-capabilities"></a>En savoir plus sur les fonctionnalités de l’API
 
-- [Paragraph](/javascript/api/onenote/onenote.paragraph) : Conteneur pour le contenu visible d’une page. Un paragraphe est un enfant direct d’un plan.
-    - [ParagraphCollection](/javascript/api/onenote/onenote.paragraphcollection) : Collection d’objets Paragraph dans un plan.
+Pour une expérience pratique de l’utilisation de l’API JavaScript OneNote pour interagir avec le contenu dans OneNote sur le Web, exécutez le [démarrage rapide du complément OneNote](../../quickstarts/onenote-quickstart.md). 
 
-- [Richtext](/javascript/api/onenote/onenote.richtext) : Objet RichText.
-
-- [Table](/javascript/api/onenote/onenote.table) : Conteneur pour les objets TableRow.
-
-- [TableRow](/javascript/api/onenote/onenote.tablerow) : Conteneur pour les objets TableCell.
-    - [TableRowCollection](/javascript/api/onenote/onenote.tablerowcollection) : Collection d’objets TableRow dans un tableau.
- 
-- [TableCell](/javascript/api/onenote/onenote.tablecell) : Conteneur pour les objets Paragraph.
-    - [TableCellCollection](/javascript/api/onenote/onenote.tablecellcollection) : Collection d’objets TableCell dans un élément TableRow.
-
-## <a name="onenote-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour OneNote
-
-Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour en savoir plus sur les ensembles de conditions requises de l’API JavaScript pour OneNote, consultez l’article [Ensembles de conditions requises de l’API JavaScript pour OneNote](../requirement-sets/onenote-api-requirement-sets.md).
-
-## <a name="onenote-javascript-api-reference"></a>Référence de l’API JavaScript de OneNote
-
-Pour en savoir plus sur l’API JavaScript pour OneNote, consultez la [documentation de référence de l’API JavaScript pour OneNote](/javascript/api/onenote).
+Pour plus d’informations sur le modèle objet de l’API JavaScript pour OneNote, voir la documentation de référence de l' [API JavaScript pour OneNote](/javascript/api/onenote).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de la programmation de l’API JavaScript de OneNote](/office/dev/add-ins/onenote/onenote-add-ins-programming-overview)
-- [Créer votre premier complément OneNote](../../quickstarts/onenote-quickstart.md)
-- [Exemple de grille d’évaluation](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
-- [Vue d’ensemble de la plateforme des compléments Office](/office/dev/add-ins/overview/office-add-ins)
+- [Documentation sur les compléments OneNote](../../onenote/index.md)
+- [Vue d’ensemble des compléments OneNote](../../onenote/onenote-add-ins-programming-overview.md)
+- [Référence de l’API JavaScript de OneNote](/javascript/api/onenote)
+- [Disponibilité des compléments Office sur les plateformes et les hôtes](../../overview/office-add-in-availability.md)
+

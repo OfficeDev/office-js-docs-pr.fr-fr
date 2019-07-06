@@ -1,18 +1,18 @@
 ---
 title: Élément AppDomains dans le fichier manifeste
 description: ''
-ms.date: 12/13/2018
+ms.date: 07/03/2019
 localization_priority: Normal
-ms.openlocfilehash: 65391c9529e7ddaa9726d0b58accf90c5b9babef
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: b6db3d46d004021f25edd5733566544010abb457
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450645"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575330"
 ---
 # <a name="appdomains-element"></a>AppDomains, élément
 
-Répertorie tout domaine supplémentaire qui sera utilisé par votre complément Office pour charger des pages en plus du domaine spécifié dans l’élément SourceLocation. Pour chaque domaine supplémentaire, indiquez un élément AppDomain.
+Répertorie tous les domaines en plus du domaine spécifié dans `SourceLocation` l’élément qui sera utilisé par votre complément Office pour charger des pages. Il répertorie également les domaines approuvés à partir desquels les appels de l’API Office. js peuvent être effectués depuis des IFrames au sein du complément. Pour chaque domaine supplémentaire, indiquez un élément AppDomain.
 
  **Type de complément :** application de contenu, de volet Office, de messagerie
 
