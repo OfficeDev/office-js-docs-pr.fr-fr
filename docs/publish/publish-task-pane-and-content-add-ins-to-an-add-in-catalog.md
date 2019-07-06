@@ -3,12 +3,12 @@ title: Publier des compléments du volet Office et de contenu dans un catalogue 
 description: Pour rendre les compléments Office accessibles aux utilisateurs, les administrateurs peuvent charger des fichiers manifeste de compléments Office vers le catalogue d’applications pour leur organisation.
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 20b97855ce50e3f70e602f511882761c6fd80655
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: af1f96615c74065d9a194f4372e69853caa2c6e3
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128558"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575302"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>Publier des compléments du volet Office et de contenu dans un catalogue d’applications SharePoint
 
@@ -25,13 +25,13 @@ Suivez les étapes décrites dans l’une des sections suivantes pour créer un 
 
 ### <a name="to-create-an-app-catalog-for-on-premises-sharepoint-server"></a>Création d’un catalogue d’applications pour SharePoint Server local
 
-Pour créer le catalogue d’applications SharePoint, suivez les instructions de la section [Configurer le site de catalogue d'applications pour une application Web](https://docs.microsoft.com/fr-FR/sharepoint/administration/manage-the-app-catalog).
+Pour créer le catalogue d’applications SharePoint, suivez les instructions de la section [Configurer le site de catalogue d'applications pour une application Web](/sharepoint/administration/manage-the-app-catalog).
 
 Une fois que vous avez créé le catalogue d’applications, suivez les étapes pour [publier un complément Office](#publish-an-office-add-in).
 
 ### <a name="to-create-an-app-catalog-on-office-365"></a>Pour créer catalogue d’applications Office 365
 
-1. Aller au Centre d’administration Microsoft 365. Pour plus d’informations sur comment accéder au centre d’administration, voir [À propos du centre d’administration Microsoft 365](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center).
+1. Aller au Centre d’administration Microsoft 365. Pour plus d’informations sur comment accéder au centre d’administration, voir [À propos du centre d’administration Microsoft 365](/office365/admin/admin-overview/about-the-admin-center).
 
 2. Dans la page Centre d’administration Microsoft 365, développez la liste des **centres d’administration**, puis sélectionnez **SharePoint**.
 
@@ -62,7 +62,7 @@ Suivez les étapes décrites dans l’une des sections suivantes pour publier un
 
 ### <a name="to-publish-an-office-add-in-to-a-sharepoint-app-catalog-on-office-365"></a>Pour publier un complément Office dans un catalogue d’applications SharePoint sur Office 365
 
-1. Aller au Centre d’administration Microsoft 365. Pour plus d’informations sur comment accéder au centre d’administration, voir [À propos du centre d’administration Microsoft 365](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center).
+1. Aller au Centre d’administration Microsoft 365. Pour plus d’informations sur comment accéder au centre d’administration, voir [À propos du centre d’administration Microsoft 365](/office365/admin/admin-overview/about-the-admin-center).
 2. Dans la page Centre d’administration Microsoft 365, développez la liste des **centres d’administration**, puis sélectionnez **SharePoint**.
     > [!NOTE]
     > Vous devez utiliser le centre d’administration SharePoint classique pour créer le catalogue. Si c’est la première fois que vous accédez au centre d’administration SharePoint, sélectionnez **Centre d’administration SharePoint classique** dans le volet gauche.
