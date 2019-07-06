@@ -5,15 +5,3 @@
     - name: Compléments
       tocHref: /office/dev/add-ins/
       topicHref: /office/dev/add-ins
-      items:
-        - name: Didacticiels
-          items:
-            - name: Didacticiel sur le complément Excel
-              tocHref: /office/dev/add-ins/tutorials/excel-tutorial
-              topicHref: /office/dev/add-ins/tutorials/excel-tutorial
-            - name: Didacticiel sur les compléments PowerPoint
-              tocHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
-              topicHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
-            - name: Didacticiel sur les compléments Word
-              tocHref: /office/dev/add-ins/tutorials/word-tutorial
-              topicHref: /office/dev/add-ins/tutorials/word-tutorial
