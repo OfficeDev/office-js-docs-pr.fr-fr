@@ -1,14 +1,14 @@
 ---
 title: Compléments PowerPoint
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 78430c06757433ee2cce5155565ae57cc078d6eb
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 29b8a54584446cce77c22684d4d105f9391cfc5e
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128593"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575358"
 ---
 # <a name="powerpoint-add-ins"></a>Compléments PowerPoint
 
@@ -191,6 +191,7 @@ reader.readAsDataURL(myFile.files[0]);
 
 ## <a name="see-also"></a>Voir aussi
 
+- [Documentation sur les compléments PowerPoint](index.md)
 - [Exemples de code PowerPoint](https://developer.microsoft.com/office/gallery/?filterBy=Samples,PowerPoint)
 - [Enregistrement de l’état et des paramètres d’un complément par document pour les compléments de contenu et du volet Office](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 - [Lecture et écriture de données dans la sélection active d’un document ou d’une feuille de calcul](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)

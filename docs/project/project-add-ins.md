@@ -1,14 +1,14 @@
 ---
 title: Compléments du volet Office pour Project
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: c04b2d3d2da3f258751585e0d30a9c726af373e6
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 45f04b2404755d67f1c18c2ae9edcddd02ded7c5
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128600"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575379"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Compléments du volet Office pour Project
 
@@ -188,6 +188,7 @@ Vous pouvez distribuer des compléments via un partage de fichiers, un catalogue
 
 ## <a name="see-also"></a>Voir aussi
 
+- [Documentation sur les compléments Office](index.md)
 - [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
 - [Manifeste XML des compléments Office](../develop/add-in-manifests.md)
 - [API JavaScript pour Office](/office/dev/add-ins/reference/javascript-api-for-office)

@@ -1,14 +1,14 @@
 ---
-ms.date: 06/21/2019
+ms.date: 06/27/2019
 description: Utiliser les balises JSDOC pour créer dynamiquement vos fonctions personnalisées de métadonnées JSON.
 title: Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 localization_priority: Priority
-ms.openlocfilehash: cc28eca4e1ab1a03186983c81380a00bcf5eb85a
-ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
+ms.openlocfilehash: 1230e1bfdeead306531a218373c2756b29fa4abe
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "35226761"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454656"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 
@@ -160,7 +160,7 @@ Dans l’exemple suivant, l’`helpurl` est www.contoso.com/weatherhelp.
 
 Syntaxe JavaScript : @param {type} nom_description_
 
-* `{type}`doit spécifier les informations de type entre deux accolades. Consultez la section [Types](##types) pour savoir quels types peuvent être utilisés. Facultatif : si aucun serveur n’est spécifié, le type `any` sera utilisé.
+* `{type}`doit spécifier les informations de type entre deux accolades. Consultez la section [Types](#types) pour savoir quels types peuvent être utilisés. Facultatif : si aucun serveur n’est spécifié, le type `any` sera utilisé.
 * `name`spécifie le paramètre auquel s’applique la balise. Obligatoire.
 * `description`fournit la description qui s’affiche dans Excel pour le paramètre de la fonction. Facultatif.
 
@@ -190,7 +190,7 @@ Syntaxe TypeScript : nom @param_description_
 * `name`spécifie le paramètre auquel s’applique la balise. Obligatoire.
 * `description`fournit la description qui s’affiche dans Excel pour le paramètre de la fonction. Facultatif.
 
-Consultez la section [Types](##types) pour savoir quels types de paramètres de fonction peuvent être utilisés.
+Consultez la section [Types](#types) pour savoir quels types de paramètres de fonction peuvent être utilisés.
 
 Pour désigner un paramètre de fonction personnalisée comme étant facultatif, effectuez l’une des actions suivantes :
 * Utilisez un paramètre facultatif. Par exemple : `function f(text?: string)`
