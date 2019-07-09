@@ -1,0 +1,1 @@
+<b>Remarque</b> : pour accéder à l’ensemble des articles qui s’appliquent à tous les types de compléments Office, voir la section <a href="../overview/index.md">Guide des compléments Office</a> de cette documentation.
