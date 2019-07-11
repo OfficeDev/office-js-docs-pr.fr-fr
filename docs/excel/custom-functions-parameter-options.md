@@ -1,31 +1,30 @@
 ---
-ms.date: 06/18/2019
+ms.date: 07/01/2019
 description: Découvrez comment utiliser différents paramètres dans vos fonctions personnalisées, telles que les plages Excel, les paramètres facultatifs, le contexte d’appel, et bien plus encore.
 title: Options pour les fonctions personnalisées Excel
 localization_priority: Normal
-ms.openlocfilehash: dca85df87f0153c03b2ddd027748e16d3ec79924
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 9416653d697bdf36ca698271e00d9742ff0e75a9
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128338"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617043"
 ---
 # <a name="custom-functions-parameter-options"></a>Options des paramètres de fonctions personnalisées
 
-Les fonctions personnalisées peuvent être configurées avec de nombreuses options différentes pour les paramètres:
-- [Paramètres facultatifs](#custom-functions-optional-parameters)
-- [Paramètres de plage](#range-parameters)
-- [Paramètre de contexte d’invocation](#invocation-parameter)
+Les fonctions personnalisées peuvent être configurées avec de nombreuses options différentes pour les paramètres.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-## <a name="custom-functions-optional-parameters"></a>Paramètres facultatifs de fonctions personnalisées
+## <a name="optional-parameters"></a>Paramètres facultatifs
 
 Alors que les paramètres réguliers sont obligatoires, les paramètres facultatifs ne le sont pas. Lorsqu’un utilisateur appelle une fonction dans Excel, les paramètres facultatifs apparaissent entre parenthèses. Dans l’exemple suivant, la fonction Add peut éventuellement ajouter un troisième nombre. Cette fonction apparaît sous `=CONTOSO.ADD(first, second, [third])` la forme dans Excel.
 
+#### <a name="javascripttabjavascript"></a>[Script](#tab/javascript)
+
 ```js
 /**
- * Add two numbers
+ * Calculates the sum of the specified numbers
  * @customfunction 
  * @param {number} first First number.
  * @param {number} second Second number.
@@ -33,31 +32,58 @@ Alors que les paramètres réguliers sont obligatoires, les paramètres facultat
  * @returns {number} The sum of the numbers.
  */
 function add(first, second, third) {
-  if (third !== undefined) {
-    return first + second + third;
+  if (third === null) {
+    third = 0;
   }
-  return first + second;
+  return first + second + third;
 }
 CustomFunctions.associate("ADD", add);
 ```
 
-Lorsque vous définissez une fonction qui contient un ou plusieurs paramètres facultatifs, vous devez spécifier ce qu’il se passe lorsque les paramètres facultatifs ne sont pas définis. Dans l’exemple suivant, `zipCode` et `dayOfWeek` sont deux paramètres facultatifs pour la fonction`getWeatherReport`. Si le `zipCode` paramètre n’est pas défini, la valeur par défaut est définie `98052`sur. Si le paramètre`dayOfWeek` n’est pas défini, la valeur par défaut est définie à mercredi.
+#### <a name="typescripttabtypescript"></a>[TypeScript](#tab/typescript)
+
+```typescript
+/**
+ * Calculates the sum of the specified numbers
+ * @customfunction 
+ * @param first First number.
+ * @param second Second number.
+ * @param [third] Third number to add. If omitted, third = 0.
+ * @returns The sum of the numbers.
+ */
+function add(first: number, second: number, third?: number): number {
+  if (third === null) {
+    third = 0;
+  }
+  return first + second + third;
+}
+CustomFunctions.associate("ADD", add);
+```
+
+---
+
+> [!NOTE]
+> Lorsqu’aucune valeur n’est spécifiée pour un paramètre facultatif, Excel lui affecte la valeur `null`. Cela signifie que les paramètres initialisés par défaut dans la machine à écrire ne fonctionnent pas comme prévu. Par conséquent, n’utilisez pas `function add(first:number, second:number, third=0):number` la syntaxe car elle ne peut `third` pas être initialisée à 0. À la place, utilisez la syntaxe de la machine à écrire comme indiqué dans l’exemple précédent.
+
+Lorsque vous définissez une fonction qui contient un ou plusieurs paramètres facultatifs, vous devez spécifier ce qui se produit lorsque les paramètres facultatifs sont null. Dans l’exemple suivant, `zipCode` et `dayOfWeek` sont deux paramètres facultatifs pour la fonction`getWeatherReport`. Si le `zipCode` paramètre est null, la valeur par défaut est définie `98052`sur. Si le `dayOfWeek` paramètre est null, il est défini sur mercredi.
+
+#### <a name="javascripttabjavascript"></a>[Script](#tab/javascript)
 
 ```js
 /**
  * Gets a weather report for a specified zipCode and dayOfWeek
  * @customfunction
- * @param {number} zipCode Zip code. If omitted, zipCode = 98052.
- * @param {string} dayOfWeek Day of the week. If omitted, dayOfWeek = Wednesday.
+ * @param {number} [zipCode] Zip code. If omitted, zipCode = 98052.
+ * @param {string} [dayOfWeek] Day of the week. If omitted, dayOfWeek = Wednesday.
  * @returns {string} Weather report for the day of the week in that zip code.
  */
 function getWeatherReport(zipCode, dayOfWeek)
 {
-  if (zipCode === undefined) {
-      zipCode = "98052";
+  if (zipCode === null) {
+    zipCode = 98052;
   }
 
-  if (dayOfWeek === undefined) {
+  if (dayOfWeek === null) {
     dayOfWeek = "Wednesday";
   }
 
@@ -65,6 +91,33 @@ function getWeatherReport(zipCode, dayOfWeek)
   // ...
 }
 ```
+
+#### <a name="typescripttabtypescript"></a>[TypeScript](#tab/typescript)
+
+```typescript
+/**
+ * Gets a weather report for a specified zipCode and dayOfWeek
+ * @customfunction
+ * @param zipCode Zip code. If omitted, zipCode = 98052.
+ * @param [dayOfWeek] Day of the week. If omitted, dayOfWeek = Wednesday.
+ * @returns Weather report for the day of the week in that zip code.
+ */
+function getWeatherReport(zipCode?: number, dayOfWeek?: string): string
+{
+  if (zipCode === null) {
+    zipCode = 98052;
+  }
+
+  if (dayOfWeek === null) {
+    dayOfWeek = "Wednesday";
+  }
+
+  // Get weather report for specified zipCode and dayOfWeek.
+  // ...
+}
+```
+
+---
 
 ## <a name="range-parameters"></a>Paramètres de plage
 
