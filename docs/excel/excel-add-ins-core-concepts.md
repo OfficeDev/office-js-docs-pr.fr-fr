@@ -3,12 +3,12 @@ title: Concepts fondamentaux de programmation avec l’API JavaScript pour Excel
 description: Utilisez l’API JavaScript pour Excel afin de créer des compléments pour Excel.
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 08d4c22190e1493331397e390dc72b4dae6cf979
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: dad6aadf64b87ec799a17fb8efd0198be5af08b5
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128212"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617036"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Concepts fondamentaux de programmation avec l’API JavaScript pour Excel
 
@@ -248,8 +248,8 @@ Lorsqu’une erreur d’API se produit, l’API renvoie un objet **error** qui c
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Prise en main des compléments Excel](excel-add-ins-get-started-overview.md)
-- [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
+- [Création de votre premier complément Excel](../quickstarts/excel-quickstart-jquery.md)
+- [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 - [Concepts avancés de programmation avec l’API JavaScript Excel](excel-add-ins-advanced-concepts.md)
 - [Optimisation des performances à l’aide de l’API JavaScript d’Excel](/office/dev/add-ins/excel/performance)
 - [Référence de l’API JavaScript pour Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

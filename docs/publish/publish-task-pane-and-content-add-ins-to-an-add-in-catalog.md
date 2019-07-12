@@ -3,12 +3,12 @@ title: Publier des compléments du volet Office et de contenu dans un catalogue 
 description: Pour rendre les compléments Office accessibles aux utilisateurs, les administrateurs peuvent charger des fichiers manifeste de compléments Office vers le catalogue d’applications pour leur organisation.
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: af1f96615c74065d9a194f4372e69853caa2c6e3
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: 106dfd2b1610be92f1b53dc1644ff3f8c60c0543
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575302"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617029"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>Publier des compléments du volet Office et de contenu dans un catalogue d’applications SharePoint
 
@@ -110,6 +110,6 @@ Pour les applications Office sur le bureau, vous pouvez rechercher des compléme
 4. Fermez puis rouvrez l’application Office. 
 5. Sélectionnez **Insertion** > **Mes compléments**.
 4. Dans la boîte de dialogue Compléments Office, choisissez l’onglet **MON ORGANISATION** Les compléments Office sont alors affichés.
-5. Choisissez un complément Office, puis **Ajouter**.
+5. Choisissez un complément Office, puis sélectionnez **Ajouter**.
 
-Par ailleurs, un administrateur peut spécifier un catalogue d’applications sur SharePoint à l’aide d’une stratégie de groupe. Pour plus d’informations, reportez-vous à la section relative à l’[utilisation d’une stratégie de groupe pour gérer la manière dont les utilisateurs peuvent installer et utiliser des compléments Office](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
+Par ailleurs, un administrateur peut spécifier un catalogue d’applications sur SharePoint à l’aide d’une stratégie de groupe. Les paramètres de stratégie pertinents sont disponibles sur la page [Modèles de fichiers administratifs (ADMX/ADML) pour Office 365 ProPlus, Office 2019 et Office 2016](https://www.microsoft.com/download/details.aspx?id=49030) et se trouvent sous **User Configuration\Policies\Administrative Templates\Microsoft Office 2016 \ sécurité Settings\Trust Center\Trusted Catalogs**.

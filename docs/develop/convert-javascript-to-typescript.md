@@ -1,21 +1,21 @@
 ---
 title: Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
 description: ''
-ms.date: 03/19/2019
+ms.date: 07/10/2019
 localization_priority: Priority
-ms.openlocfilehash: 9b3916dc61fadb3b6d9bf61e43cb22bdc7ff68c8
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 3163052dde98122dceb0d8a1d550e3d8acf788db
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448769"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617008"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
 
 Vous pouvez utiliser le modèle de complément Office dans Visual Studio pour créer un complément qui utilise JavaScript, puis convertir le projet de complément au format TypeScript. Cet article décrit ce processus de conversion pour un complément Excel. Vous pouvez utiliser le même processus pour convertir les autres types de projet de complément Office de JavaScript au format TypeScript dans Visual Studio.
 
 > [!NOTE]
-> Pour créer un projet TypeScript de complément Office sans utiliser Visual Studio, suivez les instructions de la section « Tous les éditeurs » d’un [démarrage rapide en 5 minutes](../index.yml), puis sélectionnez `TypeScript` quand le [générateur Yeoman pour les compléments Office](https://github.com/officedev/generator-office) vous y invite.
+> Pour créer un projet TypeScript de complément Office sans utiliser Visual Studio, suivez les instructions de la section « Tous les éditeurs » d’un [démarrage rapide en 5 minutes](../index.md), puis sélectionnez `TypeScript` quand le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) vous y invite.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -72,7 +72,8 @@ Vous pouvez utiliser le modèle de complément Office dans Visual Studio pour cr
     {
         "compilerOptions": {
             "skipLibCheck": true,
-            "lib": [ "es5", "dom", "es2015.promise" ]
+            "lib": [ "es5", "dom", "es2015.promise" ],
+            "sourceMap": true
         }
     }
     ```
@@ -83,13 +84,22 @@ Vous pouvez utiliser le modèle de complément Office dans Visual Studio pour cr
     declare var fabric: any;
     ```
 
-12. Dans le fichier **Home.ts**, remplacez **'1.1'** par **1.1** (autrement dit, supprimez les guillemets) dans la ligne suivante :
+12. Dans le fichier **Home.ts**, recherchez la ligne `Office.initialize = function (reason) {` et ajoutez une ligne immédiatement après celle-ci pour ajouter un polyfill à l’ensemble de `window.Promise`, comme illustré ici:
+
+    ```typescript
+    Office.initialize = function (reason) {
+        // add the following line
+        (window as any).Promise = OfficeExtension.Promise;
+        ...
+    ```
+
+13. Dans le fichier **Home.ts**, remplacez **'1.1'** par **1.1** (autrement dit, supprimez les guillemets) dans la ligne suivante :
 
     ```typescript
     if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
     ```
 
-13. Dans le fichier **Home.ts**, recherchez la fonction `displaySelectedCells`, remplacez-la par le code suivant, puis enregistrez le fichier :
+14. Dans le fichier **Home.ts**, recherchez la fonction `displaySelectedCells`, remplacez-la par le code suivant, puis enregistrez le fichier :
 
     ```typescript
     function displaySelectedCells() {
@@ -130,6 +140,8 @@ declare var fabric: any;
 
     // The initialize function must be run each time a new page is loaded.
     Office.initialize = function (reason) {
+        (window as any).Promise = OfficeExtension.Promise;
+
         $(document).ready(function () {
             // Initialize the FabricUI notification mechanism and hide it
             var element = document.querySelector('.ms-MessageBanner');
