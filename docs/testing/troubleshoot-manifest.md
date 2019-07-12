@@ -1,67 +1,22 @@
 ---
 title: Valider et résoudre des problèmes avec votre manifeste
 description: Utiliser ces méthodes pour valider le manifeste des compléments Office.
-ms.date: 05/21/2019
+ms.date: 07/01/2019
 localization_priority: Priority
-ms.openlocfilehash: 5b9bd22ad724bac68587a41ad56f4290f3a6edbd
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: b6d95f6c5658e33c2f52cc46d7bba686bea5cc44
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432263"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617057"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>Valider et résoudre des problèmes avec votre manifeste
 
-Utiliser les méthodes suivantes pour valider et résoudre les problèmes rencontrés dans votre manifeste pour compléments Office : 
+Vous souhaitez peut-être valider le fichier manifeste de votre complément pour vous assurer que celui-ci est correct et complet. La validation peut également identifier les problèmes à l’origine de l’erreur « Votre manifeste de complément n’est pas valide » lorsque vous essayez de charger une version test de votre complément. Cet article décrit plusieurs méthodes de validation du fichier manifeste et de résolution des problèmes liés à votre complément.
 
-- [Validation du manifeste à l’aide du validateur de complément Office](#validate-your-manifest-with-the-office-add-in-validator)   
-- [Validation de votre manifeste par rapport au schéma XML](#validate-your-manifest-against-the-xml-schema)
-- [Validation de votre manifeste avec le générateur Yeoman pour les compléments Office](#validate-your-manifest-with-the-yeoman-generator-for-office-add-ins)
-- [Utilisation de la journalisation runtime pour déboguer votre complément](#use-runtime-logging-to-debug-your-add-in)
+## <a name="validate-your-manifest-with-the-yeoman-generator-for-office-add-ins"></a>Valider votre manifeste avec le générateur Yeoman pour les compléments Office
 
-
-## <a name="validate-your-manifest-with-the-office-add-in-validator"></a>Validation du manifeste à l’aide du validateur de complément Office
-
-Pour vous assurer que le fichier manifeste qui décrit votre complément Office est correct et complet, vérifiez-le à l’aide du [validateur de complément Office](https://github.com/OfficeDev/office-addin-validator).
-
-### <a name="to-use-the-office-add-in-validator-to-validate-your-manifest"></a>Pour utiliser le validateur de complément Office afin de valider votre manifeste
-
-1. Installez [Node.js](https://nodejs.org/download/). 
-
-2. Ouvrez une invite de commandes/un terminal en tant qu’administrateur, puis installez le validateur de complément Office et ses dépendances de façon globale à l’aide de la commande suivante :
-
-    ```command&nbsp;line
-    npm install -g office-addin-validator
-    ```
-    
-    > [!NOTE]
-    > Si Yo Office est déjà installé, effectuez une mise à niveau vers la dernière version ; le validateur sera installé en tant que dépendance.
-
-3. Exécutez la commande suivante pour valider votre manifeste. Remplacez MANIFEST.XML par le chemin d’accès au fichier XML de manifeste.
-
-    ```command&nbsp;line
-    validate-office-addin MANIFEST.XML
-    ```
-
-## <a name="validate-your-manifest-against-the-xml-schema"></a>Validation de votre manifeste par rapport au schéma XML
-
-Assurez-vous que le fichier manifeste suit le schéma approprié, y compris les espaces de noms pour les éléments que vous utilisez. Si vous avez copié des éléments à partir d’autres exemples de manifestes, vérifiez par deux fois que vous avez également **inclus les espaces de noms appropriés**. Vous pouvez valider un manifeste par rapport aux fichiers de [définition de schéma XML (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas). Pour ce faire, vous pouvez utiliser un outil de validation de schéma XML. 
-
-
-
-### <a name="to-use-a-command-line-xml-schema-validation-tool-to-validate-your-manifest"></a>Pour utiliser un outil de validation de schéma XML à ligne de commande pour valider votre manifeste
-
-1.  Installez [tar](https://www.gnu.org/software/tar/) et [libxml](http://xmlsoft.org/FAQ.html), si vous ne l’avez pas déjà fait.
-
-2.  Exécutez la commande suivante. Remplacez `XSD_FILE` par le chemin d’accès au fichier XSD manifeste et `XML_FILE` par le chemin d’accès au fichier XML manifeste.
-    
-    ```command&nbsp;line
-    xmllint --noout --schema XSD_FILE XML_FILE
-    ```
-
-## <a name="validate-your-manifest-with-the-yeoman-generator-for-office-add-ins"></a>Validation de votre manifeste avec le générateur Yeoman pour les compléments Office
-
-Si vous avez créé votre complément Office à l’aide du [générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office), vérifiez que le fichier manifeste suit le schéma correct en exécutant la commande suivante dans le répertoire racine de votre projet :
+Si vous avez utilisé le générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) pour créer votre complément, vous pouvez également l’utiliser pour valider le fichier manifeste de votre projet. Exécutez la commande suivante dans le répertoire racine de votre projet :
 
 ```command&nbsp;line
 npm run validate
@@ -72,7 +27,33 @@ npm run validate
 > [!NOTE]
 > Pour accéder à cette fonctionnalité, votre projet de complément doit être créé à l’aide du [générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) (version 1.1.17 ou ultérieure).
 
-## <a name="use-runtime-logging-to-debug-your-add-in"></a>Utilisation de la journalisation runtime pour déboguer votre complément 
+## <a name="validate-your-manifest-with-office-toolbox"></a>Valider votre manifeste avec la boîte à outils Office
+
+Si vous n’avez pas utilisé [le générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) pour créer votre complément, vous pouvez valider le fichier manifeste à l’aide de la [boîte à outils Office](https://www.npmjs.com/package/office-toolbox).
+
+1. Installez [Node.js](https://nodejs.org/download/).
+
+2. Exécutez la commande suivante dans le répertoire racine de votre projet. Remplacez `MANIFEST_FILE` par le nom du fichier manifeste.
+
+    ```command&nbsp;line
+    npx office-toolbox validate -m MANIFEST_FILE
+    ```
+
+## <a name="validate-your-manifest-against-the-xml-schema"></a>Validez votre manifeste par rapport au schéma XML
+
+Vous pouvez valider le fichier manifeste par rapport aux fichiers de [définition de schéma XML (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas). Cela permet de s’assurer que le fichier manifeste suit le schéma approprié, y compris les espaces de noms pour les éléments que vous utilisez. Si vous avez copié des éléments à partir d’autres exemples de manifestes, vérifiez par deux fois que vous avez également **inclus les espaces de noms appropriés**. Pour ce faire, vous pouvez utiliser un outil de validation de schéma XML.
+
+### <a name="to-use-a-command-line-xml-schema-validation-tool-to-validate-your-manifest"></a>Pour utiliser un outil de validation de schéma XML à ligne de commande pour valider votre manifeste
+
+1. Installez [tar](https://www.gnu.org/software/tar/) et [libxml](http://xmlsoft.org/FAQ.html), si vous ne l’avez pas déjà fait.
+
+2. Exécutez la commande suivante. Remplacez `XSD_FILE` par le chemin d’accès au fichier XSD manifeste et `XML_FILE` par le chemin d’accès au fichier XML manifeste.
+    
+    ```command&nbsp;line
+    xmllint --noout --schema XSD_FILE XML_FILE
+    ```
+
+## <a name="use-runtime-logging-to-debug-your-add-in"></a>Utilisation de la journalisation runtime pour déboguer votre complément
 
 Vous pouvez utiliser la journalisation runtime pour déboguer le manifeste de votre complément ainsi que plusieurs erreurs d’installation. Cette fonctionnalité peut vous aider à identifier et à résoudre les problèmes avec votre manifeste qui ne sont pas détectés par la validation de schéma XSD, comme une incompatibilité entre les ID de ressources. La journalisation runtime est particulièrement utile pour déboguer des compléments qui implémentent des commandes de complément et des fonctions personnalisées Excel.   
 
@@ -103,7 +84,6 @@ Pour activer la journalisation runtime, procédez comme suit :
 L’image suivante indique à quoi doit ressembler le registre. Pour désactiver la fonctionnalité, supprimez la clé de registre `RuntimeLogging`. 
 
 ![Capture d’écran de l’Éditeur du Registre avec la clé de registre RuntimeLogging](http://i.imgur.com/Sa9TyI6.png)
-
 
 ### <a name="to-troubleshoot-issues-with-your-manifest"></a>Résolution des problèmes avec votre manifeste
 
