@@ -3,12 +3,12 @@ ms.date: 06/18/2019
 description: Gérez les erreurs dans vos fonctions personnalisées Excel.
 title: Gestion des erreurs liées aux fonctions personnalisées dans Excel
 localization_priority: Priority
-ms.openlocfilehash: 3818d33121ed26bb7d65c56bf6c504f2fb049c72
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 30c83ea930b16e717b48b9c02ffa0e278eb78b36
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127918"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771574"
 ---
 # <a name="error-handling-within-custom-functions"></a>Gestion des erreurs dans des fonctions personnalisées
 
@@ -46,5 +46,5 @@ Découvrez comment [résoudre les problèmes liés à vos fonctions personnalis�
 ## <a name="see-also"></a>Voir aussi
 
 * [Débogage des fonctions personnalisées](custom-functions-debugging.md)
-* [Configuration requise de fonctions personnalisées](custom-functions-requirements.md)
+* [Configuration requise de fonctions personnalisées](custom-functions-requirement-sets.md)
 * [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)

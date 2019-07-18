@@ -4,12 +4,12 @@ description: ''
 ms.date: 06/20/2019
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: ffd6cb33c0b3c21d769b8551d798bed3ab3390fb
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 1d4c703a9a62e316b2bed9d3fcdd631eb4aec81e
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127008"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771890"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Outlook
 
@@ -36,7 +36,7 @@ La définition d’un ensemble de conditions requises ne limite pas votre compl�
 Pour utiliser une nouvelle API, les développeurs peuvent vérifier si un hôte particulier prend en charge un ensemble de conditions requises en procédant comme suit.
 
 ```js
-if (Office.context.requirements.isSetSupported('Mailbox', 1.3) === true) {
+if (Office.context.requirements.isSetSupported('Mailbox', '1.3') === true) {
   // Perform actions.
 }
 else {

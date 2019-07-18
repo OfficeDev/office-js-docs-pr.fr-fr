@@ -1,14 +1,14 @@
 ---
-ms.date: 06/27/2019
+ms.date: 07/10/2019
 description: Demander, flux de données et annuler la diffusion en continu de données externes à votre classeur avec des fonctions personnalisées dans Excel
 title: Recevoir et gérer des données à l’aide de fonctions personnalisées
 localization_priority: Priority
-ms.openlocfilehash: 42281b8a98b1172ba32b1525176fd8cadd0f094c
-ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
+ms.openlocfilehash: 1e73898b068ba4ae2d49db7e8de17d5cd8883b24
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "35617050"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771511"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>Recevoir et gérer des données à l’aide de fonctions personnalisées
 
@@ -47,8 +47,6 @@ function webRequest() {
       })
   })
 }
-
-CustomFunctions.associate("WEBREQUEST", webRequest);
 ```
 
 >[!NOTE]
@@ -130,7 +128,6 @@ function increment(incrementBy, invocation) {
     clearInterval(timer);
   };
 }
-CustomFunctions.associate("INC", increment);
 ```
 
 En plus de connaître le rappel `onCanceled`, vous devez également savoir qu’Excel annule l’exécution d’une fonction dans les situations suivantes :
@@ -181,6 +178,5 @@ ws.onerror(error){
 - [Créer des métadonnées JSON pour des fonctions personnalisées](custom-functions-json-autogeneration.md)
 - [Métadonnées fonctions personnalisées](custom-functions-json.md)
 - [Exécution de fonctions personnalisées Excel](custom-functions-runtime.md)
-- [Meilleures pratiques pour l’utilisation des fonctions personnalisées](custom-functions-best-practices.md)
 - [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
 - [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md)

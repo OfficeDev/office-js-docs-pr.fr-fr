@@ -1,14 +1,14 @@
 ---
-ms.date: 06/17/2019
+ms.date: 07/10/2019
 description: Traitez ensemble les fonctions personnalisées pour réduire les appels réseau à un service à distance.
 title: Le traitement par lots de fonctions personnalisées nécessite un service à distance
 localization_priority: Priority
-ms.openlocfilehash: aa1b9c956c0f54a4d59e49ca157dd67c8349b143
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 185e6434f963a6dbcc4eefbcb8bbee4d922662e6
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127939"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771396"
 ---
 # <a name="batching-custom-function-calls-for-a-remote-service"></a>Le traitement par lots de fonctions personnalisées nécessite un service à distance
 
@@ -56,8 +56,6 @@ function div2(dividend: number, divisor: number) {
     [dividend, divisor]
   );
 }
-
-CustomFunctions.associate("DIV2", div2);
 ```
 
 Ensuite, vous allez définir le tableau de traitement par lots qui va stocker toutes les opérations à transmettre en un seul appel réseau. Le code suivant montre comment définir une interface en décrivant chaque entrée de traitement par lots dans le tableau. L’interface définit une opération, qui est un nom de chaîne de l’opération à exécuter. Par exemple, si vous aviez deux fonctions personnalisées nommées `multiply` et `divide`, vous pouvez les réutiliser comme noms d’opération dans vos entrées de traitement par lots. `args` contient les arguments transmis à votre fonction personnalisée à partir d’Excel. Et enfin, `resolve` ou `reject` stocke une promesse en conservant les informations que le service à distance renvoie.
@@ -223,6 +221,5 @@ Découvrez [les différents paramètres](custom-functions-parameter-options.md) 
 ## <a name="see-also"></a>Voir aussi
 
 * [Valeurs volatiles dans les fonctions](custom-functions-volatile.md)
-* [Meilleures pratiques pour l’utilisation des fonctions personnalisées](custom-functions-best-practices.md)
 * [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
 * [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md)

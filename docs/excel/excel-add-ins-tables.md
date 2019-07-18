@@ -1,14 +1,14 @@
 ---
 title: Utilisation de tableaux à l’aide de l’API JavaScript pour Excel
 description: ''
-ms.date: 04/18/2019
+ms.date: 04/30/2019
 localization_priority: Priority
-ms.openlocfilehash: ba48fce1bee28bf4cad8b5d0ab91d9c1fb12fea8
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 572e4d5d83d60932ec463962d74868848452dad4
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449529"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771729"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Utilisation de tableaux à l’aide de l’API JavaScript pour Excel
 
@@ -39,7 +39,7 @@ Excel.run(function (context) {
         ["1/15/2017", "Best For You Organics Company", "Groceries", "$97"]
     ]);
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", 1.2)) {
+    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
         sheet.getUsedRange().format.autofitColumns();
         sheet.getUsedRange().format.autofitRows();
     }
@@ -243,9 +243,6 @@ Votre complément peut avoir besoin de réagir aux utilisateurs modifiant les do
 
 L’objet `TableChangedEventArgs` fournit des informations sur les modifications et la source. Puisque `onChanged` se déclenche lorsque le format ou la valeur des données sont modifiés, il peut être utile que votre complément vérifie si les valeurs ont réellement été modifiées. La propriété de `details` regroupe ces informations en tant qu’un [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail). L’exemple de code suivant illustre la procédure d’affichage des valeurs et des types d’une cellule qui a été modifiée, avant et après modification.
 
-> [!NOTE]
-> `TableChangedEventArgs.details`est actuellement uniquement disponible en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-
 ```js
 // This function would be used as an event handler for the Table.onChanged event.
 function onTableChanged(eventArgs) {
@@ -359,9 +356,6 @@ Excel.run(function (context) {
 ```
 
 ## <a name="autofilter"></a>Filtre automatique
-
-> [!NOTE]
-> `Table.autoFilter`est actuellement uniquement disponible en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 Un complément peut utiliser l’objet[filtre automatique](/javascript/api/excel/excel.autofilter) du tableau pour filtrer des données. Un `AutoFilter` objet figure la structure de filtre entière d’une tableau ou d’une plage. Toutes les opérations de filtrage décrites précédemment dans cet article sont compatibles avec le filtre automatique. Le point d’accès unique rend plus facile l’accès et la gestion de plusieurs filtres.
 
