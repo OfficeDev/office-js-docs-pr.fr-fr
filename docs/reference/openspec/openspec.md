@@ -3,12 +3,12 @@ title: Spécifications ouvertes de l’API JavaScript Office
 description: ''
 ms.date: 06/10/2019
 localization_priority: Normal
-ms.openlocfilehash: f3212e411363abce0aca824dc82bbb4921b80d1d
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: c7681ad307f290819a3f65185855dfb9c234ce38
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910265"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771778"
 ---
 # <a name="api-open-specifications"></a>Spécifications d’ouverture d’API
 
@@ -24,7 +24,7 @@ Actuellement, nous n’avons aucune API dans la phase de spécification ouverte 
 ## <a name="see-also"></a>Voir aussi
 
 - [Référence de l’API d’aperçu Excel](/javascript/api/excel)
-- [Ensemble de conditions requises pour l’API JavaScript pour Excel](../requirement-sets/excel-api-requirement-sets.md#excel-javascript-preview-apis)
+- [Ensemble de conditions requises pour l’API JavaScript pour Excel](../requirement-sets/excel-preview-apis.md)
 - [Référence de l’API aperçu Outlook](/javascript/api/outlook)
 - [Ensemble de conditions requises pour l’API JavaScript pour Outlook](..//objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)
 - [Référence de l’API aperçu Word](/javascript/api/word)

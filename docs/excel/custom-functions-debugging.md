@@ -1,14 +1,14 @@
 ---
-ms.date: 06/20/2019
+ms.date: 07/10/2019
 description: Déboguez vos fonctions personnalisées dans Excel.
 title: Débogage des fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: d7c7f44ffcb22f66e8dccc58c12e957eefe07524
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 987df4fc638b94b7a5002c99aee6e36642f4e4a4
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128390"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771455"
 ---
 # <a name="custom-functions-debugging"></a>Débogage des fonctions personnalisées
 
@@ -172,6 +172,5 @@ Découvrez les [pratiques d’authentification dans les fonctions personnalisée
 ## <a name="see-also"></a>Voir aussi
 
 * [Dépannage des fonctions personnalisées](custom-functions-troubleshooting.md)
-* [Meilleures pratiques de fonctions personnalisées](custom-functions-best-practices.md)
 * [Rendre vos fonctions personnalisées compatibles avec les fonctions XLL définies par l’utilisateur](make-custom-functions-compatible-with-xll-udf.md)
 * [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)

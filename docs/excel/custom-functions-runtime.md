@@ -3,12 +3,12 @@ ms.date: 05/08/2019
 description: Comprendre les scénarios clés dans le développement de fonctions personnalisées Excel qui utilisent le nouveau runtime JavaScript.
 title: Runtime pour les fonctions personnalisées Excel
 localization_priority: Normal
-ms.openlocfilehash: bc8635e370a7b48af07bc169c2d2334ef0fba8ef
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: e0246170bc80ec63705031cb32a36b5033d42f3a
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33951976"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771389"
 ---
 # <a name="runtime-for-excel-custom-functions"></a>Runtime pour les fonctions personnalisées Excel
 
@@ -118,7 +118,7 @@ function StoreValue(key, value) {
 Pour créer un complément qui s’exécute sur plusieurs plateformes (l’un des clients clés des compléments Office), vous ne devez pas accéder au Document DOM (Object Model) dans les fonctions personnalisées ou utiliser de bibliothèques comme jQuery qui dépendent du DOM. Dans Excel sur Windows, où les fonctions personnalisées utilisent le runtime JavaScript, les fonctions personnalisées ne peuvent pas accéder au DOM.
 
 ## <a name="next-steps"></a>Étapes suivantes
-Découvrez [les meilleures pratiques essentielles pour les fonctions personnalisées](custom-functions-best-practices.md).
+Découvrez comment [effectuer des requêtes Web avec des fonctions personnalisées](custom-functions-web-reqs.md).
 
 ## <a name="see-also"></a>Voir aussi
 

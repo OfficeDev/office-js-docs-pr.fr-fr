@@ -16,7 +16,7 @@ Dans cet article, vous utilisez un éditeur de texte pour créer le complément 
 
 - Un fichier manifeste XML (GetDoc_App.xml) pour le complément, disponible dans un dossier réseau partagé ou un catalogue de compléments. Le fichier manifeste doit pointer vers l’emplacement du fichier HTML mentionné précédemment.
 
-Vous pouvez également créer un complément pour PowerPoint à l’aide de [Visual Studio](../quickstarts/powerpoint-quickstart.md?tabs=visual-studio) ou de [n’importe quel éditeur](../quickstarts/powerpoint-quickstart.md?tabs=visual-studio-code), ou pour Word à l’aide de [Visual Studio](../quickstarts/word-quickstart.md?tabs=visual-studio) ou de [n’importe quel éditeur](../quickstarts/word-quickstart.md?tabs=visual-studio-code). 
+Vous pouvez également créer un complément pour PowerPoint à l’aide de [Visual Studio](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio) ou du [Générateur Yeoman pour les compléments Office](../quickstarts/powerpoint-quickstart.md?tabs=yeomangenerator) ou pour Word à l’aide de [Visual Studio](../quickstarts/word-quickstart.md?tabs=visualstudio) ou du [Générateur Yeoman pour les compléments Office](../quickstarts/word-quickstart.md?tabs=yeomangenerator).
 
 ### <a name="core-concepts-to-know-for-creating-a-task-pane-add-in"></a>Concepts fondamentaux à connaître pour créer un complément du volet Office
 
@@ -212,7 +212,7 @@ Une fois les données converties en Base64, vous pouvez les transmettre au serve
 Ajoutez le code suivant pour envoyer une tranche au service web.
 
 > [!NOTE]
-> Ce code envoie un fichier PowerPoint ou Word au serveur Web en plusieurs tranches. Le serveur Web ou le service doit ajouter chaque secteur individuel dans un seul fichier, puis l'enregistrer en tant que fichier. pptx ou. docx avant de pouvoir y effectuer des manipulations.
+> Ce code envoie un fichier PowerPoint ou Word au serveur Web en plusieurs tranches. Le serveur Web ou le service doit ajouter chaque secteur individuel dans un seul fichier, puis l’enregistrer en tant que fichier. pptx ou. docx avant de pouvoir y effectuer des manipulations.
 
 ```js
 function sendSlice(slice, state) {

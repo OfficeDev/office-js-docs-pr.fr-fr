@@ -1,15 +1,15 @@
 ---
-ms.date: 06/20/2019
+ms.date: 07/10/2019
 description: Développement de fonctions personnalisées dans le Guide de démarrage rapide d’Excel.
 title: Démarrage rapide des fonctions personnalisées
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: b0f32f2239ff25ef22a9b72908d30734f25741d6
-ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
+ms.openlocfilehash: 3b7ca82a618ef686b14604f96c17dd43b484f901
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "35454908"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771827"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Prise en main du développement de fonctions personnalisées Excel
 
@@ -115,4 +115,3 @@ Félicitations, vous avez créé une fonction personnalisée dans un complément
 * [Vue d’ensemble des fonctions personnalisées](../excel/custom-functions-overview.md)
 * [Métadonnées fonctions personnalisées](../excel/custom-functions-json.md)
 * [Exécution de fonctions personnalisées Excel](../excel/custom-functions-runtime.md)
-* [Meilleures pratiques de fonctions personnalisées](../excel/custom-functions-best-practices.md)

@@ -3,12 +3,12 @@ title: Étendre des fonctions personnalisées avec des fonctions XLL définies p
 description: Activer la compatibilité avec les fonctions Excel XLL définies par l’utilisateur qui offrent une fonctionnalité équivalente à vos fonctions personnalisées (aperçu)
 ms.date: 06/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 8d476ecf777561b79b8bf9c5cf1e4712d7869d0e
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: fa80597d48859a29bcdbb5b900c251382dc87caa
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059691"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771652"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions-preview"></a>Étendre les fonctions personnalisées avec les fonctions XLL définies par l’utilisateur (aperçu)
 
@@ -69,5 +69,4 @@ Le tableau suivant compare les fonctionnalités des fonctions définies par l’
 ## <a name="see-also"></a>Voir aussi
 
 - [Faire en sorte que votre complément Excel soit compatible avec un complément COM existant](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
-- [Meilleures pratiques de fonctions personnalisées](custom-functions-best-practices.md)
 - [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md)

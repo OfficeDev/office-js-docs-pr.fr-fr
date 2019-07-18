@@ -5,12 +5,12 @@ ms.date: 06/20/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: afd5d06e08a899d4441da51fc619d86de45e52d3
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 9efbd1380587244fae60551fe104f859d22b4aa2
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35126987"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771883"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 
@@ -69,7 +69,7 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
 5. Remplacez `TODO1` par le code suivant. Ce code détermine si la version Excel de l’utilisateur prend en charge une version d’Excel.js qui inclut toutes les API utilisées dans cette série de didacticiels. Dans un complément de production, utilisez le corps du bloc conditionnel pour masquer ou désactiver l’interface utilisateur appelant des API non prises en charge. Cela permet à l’utilisateur de toujours utiliser les parties du complément prises en charge par leur version d’Excel.
 
     ```js
-    if (!Office.context.requirements.isSetSupported('ExcelApi', 1.7)) {
+    if (!Office.context.requirements.isSetSupported('ExcelApi', '1.7')) {
         console.log('Sorry. The tutorial add-in uses Excel.js APIs that are not available in your version of Office.');
     }
     ```
@@ -848,7 +848,7 @@ Dans cette étape finale du didacticiel, vous allez ouvrir une boîte de dialogu
 8. Enregistrez le fichier.
 
    > [!NOTE]
-   > Le fichier Popup. html et le fichier Popup. js qu’il charge s’exécutent dans un processus de serveur Edge entièrement distinct ou Internet Explorer 11 à partir du volet Office du complément. Si le popup.js était transpilé dans le même fichier bundle.js en tant que fichier app.js, le complément devrait charger deux copies du fichier bundle.js, ce qui irait à l’encontre de l’objectif de groupement. En outre, le fichier Popup. js ne contient pas de code JavaScript qui n’est pas pris en charge par Internet Explorer 11. C’est pour ces deux raisons que ce complément ne transpile pas le fichier popup.js du tout.
+   > Le fichier Popup. html et le fichier Popup. js qu’il charge s’exécutent dans un processus Microsoft Edge ou Internet Explorer 11 totalement distinct à partir du volet Office du complément. Si le popup.js était transpilé dans le même fichier bundle.js en tant que fichier app.js, le complément devrait charger deux copies du fichier bundle.js, ce qui irait à l’encontre de l’objectif de groupement. En outre, le fichier Popup. js ne contient pas de code JavaScript qui n’est pas pris en charge par Internet Explorer 11. C’est pour ces deux raisons que ce complément ne transpile pas le fichier popup.js du tout.
 
 ### <a name="open-the-dialog-from-the-task-pane"></a>Ouverture de la boîte de dialogue à partir du volet Office
 

@@ -1,14 +1,14 @@
 ---
-ms.date: 06/18/2019
+ms.date: 07/10/2019
 description: Localisez vos fonctions personnalisées Excel.
 title: Localiser des fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: 7348562a232f87607d5f9becad85e897f22ad99d
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: cbb8e3bf5bc12e9df6ff77cbede4c9f0a8deca78
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127862"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771567"
 ---
 # <a name="localize-custom-functions"></a>Localiser des fonctions personnalisées
 
@@ -105,5 +105,4 @@ Découvrez [les conventions d’affectation de noms pour les fonctions personnal
 
 * [Métadonnées fonctions personnalisées](custom-functions-json.md)
 * [Générer automatiquement des métadonnées JSON pour des fonctions personnalisées](custom-functions-json-autogeneration.md)
-* [Meilleures pratiques de fonctions personnalisées](custom-functions-best-practices.md)
 * [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
