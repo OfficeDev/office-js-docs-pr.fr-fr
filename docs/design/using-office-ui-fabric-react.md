@@ -1,43 +1,95 @@
 ---
 title: Utilisation d’Office UI Fabric React dans des compléments Office
-description: ''
-ms.date: 02/28/2019
+description: Découvrez comment utiliser Office UI Fabric React dans les compléments Office.
+ms.date: 07/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 11bb9daf99d85f1c4551363e9f04056870631378
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 7166e9a13c89a1ef2a52659bf31561574f544420
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449028"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771339"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>Utilisation d’Office UI Fabric React dans des compléments Office
 
 Office UI Fabric est l’infrastructure frontale JavaScript permettant de créer des expériences pour Office et Office 365. Si vous créez votre complément à l’aide de React, envisagez d’utiliser Fabric React pour créer votre expérience utilisateur. Fabric fournit plusieurs composants UX basés sur React, tels que des boutons ou cases à cocher, que vous pouvez utiliser dans votre complément.
 
-Pour commencer à utiliser les composants de Fabric React dans votre complément, procédez comme suit.
+Cet article décrit la création d’un complément conçu avec la fonction React et utilise les composants Fabric React. 
 
 > [!NOTE]
-> Si vous suivez les étapes de cet article, Fabric Core est également disponible dans votre complément.
+> [Fabric Core](office-ui-fabric.md#use-fabric-core-icons-fonts-colors) est inclus dans Fabric React, ce qui signifie que votre complément aura également accès à Fabric Core une fois que vous aurez effectué les étapes décrites dans cet article.
 
-## <a name="step-1---create-your-project-with-the-yeoman-generator-for-office"></a>Étape 1 : créez votre projet avec le générateur Yeoman pour Office
+## <a name="create-an-add-in-project"></a>Création d’un projet de complément
 
-Pour créer un complément qui utilise Fabric React, nous recommandons d’utiliser le générateur Yeoman pour Office. Le générateur Yeoman pour Office fournit la génération automatique de modèles de projet et la gestion de création nécessaires au développement d’un complément Office.
+Vous utiliserez le générateur Yeoman pour les compléments Office pour créer un projet de complément utilisant React.
 
-Pour créer votre projet, procédez comme suit à l’aide de **Windows PowerShell** (pas l’invite de commande) :
+### <a name="install-the-prerequisites"></a>Installez les composants requis
 
-1. Installez les éléments prérequis.
-2. Exécutez `yo office` pour créer les fichiers de projet pour votre complément.
-3. Lorsque vous êtes invité à sélectionner une application client Office, choisissez **Word**.
-4. Vérifiez que vous êtes dans le répertoire contenant les fichiers de projet, puis exécutez `npm start`. Une fenêtre du navigateur affichant un bouton fléché s’ouvre automatiquement.
-5. [Chargez une version test de votre manifeste](../testing/test-debug-office-add-ins.md) pour afficher l’interface utilisateur complète du complément.
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-## <a name="step-2---add-a-fabric-react-component"></a>Étape 2 : ajoutez un composant Fabric React
+### <a name="create-the-project"></a>Créez le projet
 
-Ensuite, ajoutez des composants Fabric React à votre complément. Créez un nouveau composant REACT, appelé `ButtonPrimaryExample`, constitué d’une étiquette et d’un PrimaryButton de Fabric React. Pour créer `ButtonPrimaryExample` :
+Utilisez le générateur Yeoman afin de créer un projet de complément Word. Exécutez la commande suivante, puis répondez aux invites comme suit :
 
-1. Ouvrez le dossier du projet créé par le générateur Yeoman et accédez à **src\components**.
-2. Créez **button.tsx**.
-3. Dans **button.tsx**, entrez le code suivant pour créer le composant `ButtonPrimaryExample`.
+```command&nbsp;line
+yo office
+```
+
+- **Sélectionnez un type de projet :** `Office Add-in Task Pane project using React framework`
+- **Sélectionnez un type de script :** `TypeScript`
+- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
+- **Quelle application client Office voulez-vous prendre en charge ?** `Word`
+
+![Générateur Yeoman](../images/yo-office-word-react.png)
+
+Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
+
+### <a name="try-it-out"></a>Essayez
+
+1. Accédez au dossier racine du projet.
+
+    ```command&nbsp;line
+    cd "My Office Add-in"
+    ```
+
+2. Pour démarrer le serveur web local et charger indépendamment votre complément, procédez comme suit.
+
+    > [!NOTE]
+    > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté une des commandes suivantes, acceptez d’installer le certificat fourni par le générateur Yeoman.
+
+    > [!TIP]
+    > Si vous testez votre complément sur Mac, exécutez la commande suivante avant de continuer. Lorsque vous exécutez cette commande, le serveur web local démarre.
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
+
+    - Pour tester votre complément dans Word, exécutez la commande suivante dans le répertoire racine de votre projet. Cela a pour effet de démarrer le serveur web local (s’il n’est pas déjà en cours d’exécution) et d’ouvrir Word avec votre complément chargé.
+
+        ```command&nbsp;line
+        npm start
+        ```
+
+    - Pour tester votre complément dans Word sur un navigateur, exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution).
+
+        ```command&nbsp;line
+        npm run start:web
+        ```
+
+        Pour utiliser votre complément, ouvrez un nouveau document dans Word sur le web, puis chargez la version test de votre complément en suivant les instructions de l’article relatif au [chargement de version test des compléments Office dans Office sur le web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
+
+3. Dans Word, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément. Remarquez le texte par défaut et le bouton **Exécuter** en bas du volet Office. Ensuite, vous redéfinirez ce texte et ce bouton en créant un composant React qui utilise les composants UX de Fabric React.
+
+    ![Capture d’écran de l’application Word avec le bouton Afficher le ruban du volet Office en surbrillance et le bouton Exécuter et le texte précédent mis en surbrillance dans le volet Office](../images/word-task-pane-yo-default.png)
+
+
+## <a name="create-a-react-component-that-uses-fabric-react"></a>Créer un composant React utilisant Fabric React
+
+À ce stade, vous avez créé un complément très rudimentaire du volet Office standard en utilisant React. Ensuite, procédez comme suit pour créer un nouveau composant React (`ButtonPrimaryExample`) dans le projet de complément. Le composant utilise les composants `Label` et `PrimaryButton` de Fabric React.
+
+1. Ouvrez le dossier du projet créé par le générateur Yeoman et accédez à **src\taskpane\components**.
+2. Dans ce dossier, créez un fichier nommé **Button.tsx**.
+3. Dans **Button.tsx**, ajoutez le code suivant pour définir le composant `ButtonPrimaryExample`.
 
 ```typescript
 import * as React from 'react';
@@ -45,18 +97,18 @@ import { PrimaryButton, IButtonProps } from 'office-ui-fabric-react/lib/Button';
 import { Label } from 'office-ui-fabric-react/lib/Label';
 
 export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
-  public constructor() {
-    super();
+  public constructor(props) {
+    super(props);
   }
 
-   insertText = async () => {
-        // In the click event, write text to the document.
-        await Word.run(async (context) => {
-            let body = context.document.body;
-            body.insertParagraph('Hello Office UI Fabric React!', Word.InsertLocation.end);
-            await context.sync();
-        });
-    }
+  insertText = async () => {
+    // In the click event, write text to the document.
+    await Word.run(async (context) => {
+      let body = context.document.body;
+      body.insertParagraph('Hello Office UI Fabric React!', Word.InsertLocation.end);
+      await context.sync();
+    });
+  }
 
   public render() {
     let { disabled } = this.props;
@@ -77,44 +129,57 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 Ce code effectue les opérations suivantes :
 
 - Fait référence à la bibliothèque React en utilisant `import * as React from 'react';`.
-- Fait référence aux composants Fabric (PrimaryButton, IButtonProps, étiquette) qui sont utilisés pour créer `ButtonPrimaryExample`.
-- Déclare et publie le nouveau composant `ButtonPrimaryExample` à l’aide de `export class ButtonPrimaryExample extends React.Component`.
-- Déclare la fonction `insertText` pour gérer l’événement `onClick`.
-- Définit l’interface utilisateur du composant React dans la fonction `render`. Cette fonction définit la structure du composant. Dans `render`, vous associez l’événement `this.insertText` en utilisant `onClick`.
+- Référence les composants de Fabric (`PrimaryButton`, `IButtonProps`, `Label`) utilisés pour créer `ButtonPrimaryExample`.
+- Déclare le nouveau composant `ButtonPrimaryExample` en utilisant `export class ButtonPrimaryExample extends React.Component`.
+- Déclare la fonction `insertText` qui gère l’événement du bouton `onClick`.
+- Définit l’interface utilisateur du composant React dans la fonction `render`. Le balisage HTML utilise les composants `Label` et `PrimaryButton` de Fabric React et spécifie que lorsque l’événement `onClick` se déclenche, la fonction `insertText` s’exécute.
 
-## <a name="step-3---add-the-react-component-to-your-add-in"></a>Étape 3 : ajoutez le composant React à votre complément
+## <a name="add-the-react-component-to-your-add-in"></a>Ajoutez le composant React à votre complément
 
-Ajoutez `ButtonPrimaryExample` à votre complément en ouvrant **src\components\app.tsx** et en effectuant les opérations suivantes :
+Ajoutez le composant `ButtonPrimaryExample` à votre complément en ouvrant **src\components\App.tsx** et en effectuant les opérations suivantes :
 
-- Ajoutez l’instruction d’importation suivante pour faire référence à `ButtonPrimaryExample` depuis le **button.tsx** créé à l’étape 2 (aucune extension de fichier n’est nécessaire).
+1. Ajoutez l’instruction importation suivante pour référencer `ButtonPrimaryExample` dans **Button.tsx**.
 
-  ```typescript
-  import {ButtonPrimaryExample} from './button';
-  ```
+    ```typescript
+    import {ButtonPrimaryExample} from './Button';
+    ```
 
-- Remplacez la fonction `render()` par défaut par le code suivant qui utilise `<ButtonPrimaryExample />`.
+2. Supprimez les deux instructions d’importation suivantes.
 
-  ```typescript
-  render() {
+    ```typescript
+    import { Button, ButtonType } from 'office-ui-fabric-react';
+    ...
+    import Progress from './Progress';
+    ```
+
+3. Remplacez la fonction `render()` par défaut par le code suivant qui utilise `ButtonPrimaryExample`.
+
+    ```typescript
+    render() {
       return (
-          <div className="ms-welcome">
-          <Header logo="assets/logo-filled.png" title={this.props.title} message="Welcome" />
-          <HeroList message="Discover what this add-in can do for you today!" items={this.state.listItems} >
-              <ButtonPrimaryExample />
-          </HeroList>
-          </div>
+        <div className="ms-welcome">
+        <Header logo="assets/logo-filled.png" title={this.props.title} message="Welcome" />
+        <HeroList message="Discover what this add-in can do for you today!" items={this.state.listItems} >
+          <ButtonPrimaryExample />
+        </HeroList>
+        </div>
       );
-  }
-  ```
+    }
+    ```
 
-Enregistrez vos modifications. Toutes les instances de navigateur ouvertes, y compris le complément, sont mises à jour automatiquement et affichent le composant React `ButtonPrimaryExample`. Vous pouvez remarquer que le texte par défaut et le bouton sont remplacés par le texte et le bouton principal définis dans `ButtonPrimaryExample`.
+  4. Enregistrez les modifications apportées à **App.tsx**.
 
+## <a name="see-the-result"></a>Regardez le résultat
 
+Dans Word, le volet Office complément se met automatiquement à jour lorsque vous enregistrez les modifications apportées à **App.tsx**. Le texte et le bouton par défaut en bas du volet Office indiquent désormais l’interface utilisateur définie par le composant `ButtonPrimaryExample`. Sélectionnez le bouton **Insérer un texte...** pour insérer du texte dans le document.
+
+![Capture d’écran de l’application Word avec le bouton Insérer un texte... et le texte précédent mis en surbrillance](../images/word-task-pane-with-react-component.png)
+
+Félicitations, vous avez créé un complément de volet Office à l’aide de React et Office UI Fabric React ! 
 
 ## <a name="see-also"></a>Voir aussi
 
+- [Office UI Fabric dans des compléments Office](office-ui-fabric.md)
 - [Office UI Fabric React](https://developer.microsoft.com/fabric)
-- [Modèles de conception de l’expérience utilisateur pour les compléments Office](../design/ux-design-pattern-templates.md)
+- [Modèles de conception de l’expérience utilisateur pour les compléments Office](ux-design-pattern-templates.md)
 - [Démarrer avec un exemple de code Fabric React](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)
-- [Exemples d’éléments d’interface utilisateur Fabric pour les compléments Office (utilise Fabric 1.0)](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample)
-- [Générateur Yeoman pour Office](https://github.com/OfficeDev/generator-office)
