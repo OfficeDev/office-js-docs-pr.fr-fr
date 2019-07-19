@@ -3,12 +3,12 @@ title: Concepts avancés de programmation avec l’API JavaScript Excel
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: da85bf8ec00134b86fcf6ae561366f9536f21303
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 4439ecf494a5d619e0d57604170c771e07b2e2b6
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127797"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771497"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>Concepts avancés de programmation avec l’API JavaScript Excel
 
@@ -20,7 +20,7 @@ Un complément Excel interagit avec des objets dans Excel à l’aide de l’API
 
 * **API JavaScript pour Excel** : inclut dans Office 2016, l’[API JavaScript Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) fournit des objets fortement typés que vous pouvez utiliser pour accéder à des feuilles de calcul, des plages, des tableaux, des graphiques et bien plus encore. 
 
-* **API communes** : incluses dans Office 2013, les [API communes](../reference/javascript-api-for-office.md) peuvent être utilisées pour accéder à des fonctionnalités, telles que l’interface utilisateur, les boîtes de dialogue et les paramètres du client, qui sont communes à plusieurs types d’applications hôtes, comme Word, Excel et PowerPoint.
+* **API communes** : incluses dans Office 2013, les [API communes](/javascript/api/office) peuvent être utilisées pour accéder à des fonctionnalités telles qu’une interface utilisateur, des boîtes de dialogue et des paramètres du client, qui sont communes à plusieurs types d’applications Office.
 
 Vous utiliserez probablement l’API JavaScript Excel pour développer la majorité des fonctionnalités des compléments destinés à Excel 2016 ou version ultérieure, vous utiliserez également des objets dans l’API commune. Par exemple :
 
@@ -37,7 +37,7 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 L’exemple de code suivant montre comment déterminer si l’application hôte dans laquelle le complément est en cours d’exécution prend en charge l’ensemble spécifié de conditions requises pour l’API.
 
 ```js
-if (Office.context.requirements.isSetSupported('ExcelApi', 1.3) === true) {
+if (Office.context.requirements.isSetSupported('ExcelApi', '1.3') === true) {
   /// perform actions
 }
 else {

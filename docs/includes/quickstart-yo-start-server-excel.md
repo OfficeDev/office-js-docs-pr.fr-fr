@@ -11,7 +11,7 @@ Pour démarrer le serveur web local et charger indépendamment votre complément
 > npm run dev-server
 > ```
 
-- Pour tester votre complément dans Excel, exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution) et Excel s’ouvre avec votre complément chargé.
+- Pour tester votre complément dans Excel, exécutez la commande suivante dans le répertoire racine de votre projet. Cela a pour effet de démarrer le serveur web local (s’il n’est pas déjà en cours d’exécution) et d’ouvrir Excel avec votre complément chargé.
 
     ```command&nbsp;line
     npm start

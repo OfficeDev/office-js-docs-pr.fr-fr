@@ -1,14 +1,14 @@
 ---
-ms.date: 06/21/2019
+ms.date: 07/15/2019
 description: Résoudre des problèmes courants dans les fonctions personnalisées d’Excel.
 title: Résoudre des problèmes de fonctions personnalisées
 localization_priority: Priority
-ms.openlocfilehash: f42e9e6ac3e2d868f90ab4f5129684308750b8e2
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 10d54cc19700cb7d1dbb72f17f57b8149500d186
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128282"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771382"
 ---
 # <a name="troubleshoot-custom-functions"></a>Résoudre des problèmes de fonctions personnalisées
 
@@ -16,7 +16,7 @@ Dans le cadre du développement de fonctions personnalisées, vous pouvez rencon
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-Pour résoudre des problèmes, vous pouvez [activer la journalisation du runtime pour capturer les erreurs](#enable-runtime-logging) et vous référer aux [messages d’erreur natifs d’Excel](#check-for-excel-error-messages). Recherchez également des erreurs courantes telles que l’[abandon de promesses non résolues](#ensure-promises-return) et l’oubli d’[associer vos fonctions](#my-functions-wont-load-associate-functions).
+Pour résoudre des problèmes, vous pouvez [activer la journalisation du runtime pour capturer les erreurs](#enable-runtime-logging) et vous référer aux [messages d’erreur natifs d’Excel](#check-for-excel-error-messages). Recherchez également des erreurs courantes telles que l’[abandon de promesses non résolues](#ensure-promises-return).
 
 ## <a name="enable-runtime-logging"></a>Activer la journalisation du runtime
 
@@ -29,19 +29,35 @@ Excel dispose d’un certain nombre de messages d’erreur intégrés qui sont r
 En règle générale, ces erreurs correspondent aux erreurs que vous devez déjà connaître dans Excel. Il existe quelques exceptions spécifiques aux fonctions personnalisées et répertoriées ici :
 
 - Une erreur `#NAME` indique généralement un problème d’inscription de vos fonctions.
-- Une erreur `#VALUE` indique généralement une erreur dans le fichier de script des fonctions.
 - Une erreur `#N/A` peut également indiquer que l’exécution d’une fonction, bien qu’enregistrée, a échoué. Cet échec est généralement dû à une commande `CustomFunctions.associate` manquante.
+- Une erreur `#VALUE` indique généralement une erreur dans le fichier de script des fonctions.
 - Une erreur `#REF!` peut indiquer que le nom de votre fonction est identique au nom d’une fonction de complément déjà présent.
 
 ## <a name="clear-the-office-cache"></a>Vider le cache Office
 
-Les informations relatives aux fonctions personnalisées sont mises en cache par Office. Lorsque vous développez et rechargez de manière répétée un complément avec des fonctions personnalisées, il peut arriver que modifications n’apparaissent pas. Pour y remédier, videz le cache Office. Pour plus d’informations, consultez la section « Vider le cache Office » de l’article [Valider et résoudre des problèmes avec votre manifeste](https://docs.microsoft.com/office/dev/add-ins/testing/troubleshoot-manifest?branch=master#clear-the-office-cache).
+Les informations relatives aux fonctions personnalisées sont mises en cache par Office. Lorsque vous développez et rechargez de manière répétée un complément avec des fonctions personnalisées, il peut arriver que modifications n’apparaissent pas. Pour y remédier, videz le cache Office. Pour plus d’informations, consultez la section « Vider le cache Office » de l’article [Valider et résoudre des problèmes avec votre manifeste](../testing/troubleshoot-manifest.md#clear-the-office-cache).
 
 ## <a name="common-issues"></a>Problèmes courants
 
-### <a name="my-functions-wont-load-associate-functions"></a>Mon fonctions ne se chargent pas : associez les fonctions
+### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exception"></a>Impossible d’ouvrir les compléments d’hôte local : utiliser une exception de bouclage local
 
-Dans le fichier de script de vos fonctions personnalisées, vous devez associer chacune de celles-ci à son ID spécifié dans le [fichier de métadonnées JSON](custom-functions-json.md). Cette opération est effectuée à l’aide de la méthode `CustomFunctions.associate()`. Cette méthode est généralement appelée après chaque fonction ou à la fin du fichier de script. Si une fonction personnalisée n’est pas associée, elle ne fonctionne pas.
+Si vous voyez le message d’erreur « Nous ne pouvons pas ouvrir ce complément à partir de l’hôte local », vous devez activer une exception de bouclage local. Pour plus d’informations sur la façon de procéder, voir [cet article du support Microsoft](https://support.microsoft.com/fr-FR/help/4490419/local-loopback-exemption-does-not-work).
+
+### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Rapports de journalisation d’exécution « TypeError: Network request failed » (« TypeError : échec de la requête réseau ») dans Excel sur Windows
+
+Si le message d’erreur « TypeError: Network request failed » (« TypeError : échec de la requête réseau ») figure dans votre [journal d’exécution](custom-functions-troubleshooting.md#enable-runtime-logging) lorsque vous appelez votre serveur localhost, vous devez activer une exception de bouclage locale. Pour plus d’informations sur la façon de procéder, voir la *deuxième option* décrite dans [cet article du support Microsoft](https://support.microsoft.com/fr-FR/help/4490419/local-loopback-exemption-does-not-work).
+
+### <a name="ensure-promises-return"></a>Veiller au renvoi de promesses
+
+Quand Excel attend la fin de l’exécution d’une fonction personnalisée, il affiche #OCCUPÉ! dans la cellule. Si votre code de fonction personnalisée renvoie une promesse sans que celle-ci renvoie de résultat, Excel continue d’afficher `#BUSY!`. Vérifiez vos fonctions pour vous assurer que les promesses renvoient correctement un résultat à une cellule.
+
+### <a name="error-the-dev-server-is-already-running-on-port-3000"></a>Erreur : le serveur de développement est déjà en cours d’exécution sur le port 3000
+
+Lorsque vous exécutez `npm start`, une erreur indiquant que le serveur de développement est déjà en cours d’exécution sur le port 3000 (ou le port utilisé par votre complément) peut s’afficher. Vous pouvez arrêter le serveur de développement en exécutant `npm stop` ou en fermant la fenêtre Node.js. Notez que l’arrêt du serveur de développement peut prendre quelques minutes.
+
+### <a name="my-functions-wont-load-associate-functions"></a>Mon fonctions ne se chargent pas : associer les fonctions
+
+Dans les cas où votre JSON n’a pas été inscrit et que vous avez créé vos propres métadonnées JSON, il se peut qu’un erreur `#VALUE!` s’affiche ou que vous receviez une notification indiquant que votre complément ne peut pas être chargé. Cela signifie généralement que vous devez associer chacune de vos fonctions personnalisées à sa propriété `id` spécifiée dans le [fichier de métadonnées JSON](custom-functions-json.md). Cette opération est effectuée à l’aide de la méthode `CustomFunctions.associate()`. Cette méthode est généralement appelée après chaque fonction ou à la fin du fichier de script. Si une fonction personnalisée n’est pas associée, elle ne fonctionne pas.
 
 L’exemple suivant présente une fonction d’ajout, suivie du nom de la fonction `add` associé à l’id JSON correspondant `ADD`.
 
@@ -60,23 +76,7 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-Pour plus d’informations sur ce processus, voir [Mappage des noms de fonction aux métadonnées JSON](/office/dev/add-ins/excel/custom-functions-best-practices#associating-function-names-with-json-metadata).
-
-### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exception"></a>Impossible d’ouvrir les compléments d’hôte local : utiliser une exception de bouclage local
-
-Si vous voyez le message d’erreur « Nous ne pouvons pas ouvrir ce complément à partir de l’hôte local », vous devez activer une exception de bouclage local. Pour plus d’informations sur la façon de procéder, voir [cet article du support Microsoft](https://support.microsoft.com/fr-FR/help/4490419/local-loopback-exemption-does-not-work).
-
-### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Rapports de journalisation d’exécution « TypeError: Network request failed » (« TypeError : échec de la requête réseau ») dans Excel sur Windows
-
-Si le message d’erreur « TypeError: Network request failed » (« TypeError : échec de la requête réseau ») figure dans votre [journal d’exécution](custom-functions-troubleshooting.md#enable-runtime-logging) lorsque vous appelez votre serveur localhost, vous devez activer une exception de bouclage locale. Pour plus d’informations sur la façon de procéder, voir la *deuxième option* décrite dans [cet article du support Microsoft](https://support.microsoft.com/fr-FR/help/4490419/local-loopback-exemption-does-not-work).
-
-### <a name="ensure-promises-return"></a>Veiller au renvoi de promesses
-
-Quand Excel attend la fin de l’exécution d’une fonction personnalisée, il affiche #OCCUPÉ! dans la cellule. Si votre code de fonction personnalisée renvoie une promesse sans que celle-ci renvoie de résultat, Excel continue d’afficher #OCCUPÉ!. Vérifiez vos fonctions pour vous assurer que les promesses renvoient correctement un résultat à une cellule.
-
-### <a name="error-the-dev-server-is-already-running-on-port-3000"></a>Erreur : le serveur de développement est déjà en cours d’exécution sur le port 3000
-
-Lorsque vous exécutez `npm start`, une erreur indiquant que le serveur de développement est déjà en cours d’exécution sur le port 3000 (ou le port utilisé par votre complément) peut s’afficher. Vous pouvez arrêter le serveur de développement en exécutant `npm stop` ou en fermant la fenêtre Node.js. Notez que l’arrêt du serveur de développement peut prendre quelques minutes.
+Pour plus d’informations sur ce processus, voir [Mappage des noms de fonction aux métadonnées JSON](/office/dev/add-ins/excel/custom-functions-json#associating-function-names-with-json-metadata).
 
 ## <a name="reporting-feedback"></a>Formulation de commentaires
 
@@ -97,6 +97,5 @@ Découvrez comment [déboguer vos fonctions personnalisées](custom-functions-de
 
 * [Génération automatique de métadonnées de fonctions personnalisées](custom-functions-json-autogeneration.md)
 * [Exécution de fonctions personnalisées Excel](custom-functions-runtime.md)
-* [Meilleures pratiques de fonctions personnalisées](custom-functions-best-practices.md)
 * [Rendre vos fonctions personnalisées compatibles avec les fonctions XLL définies par l’utilisateur](make-custom-functions-compatible-with-xll-udf.md)
 * [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)

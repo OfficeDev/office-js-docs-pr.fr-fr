@@ -1,18 +1,18 @@
 ---
-ms.date: 06/27/2019
+ms.date: 07/15/2019
 description: Utiliser les balises JSDOC pour créer dynamiquement vos fonctions personnalisées de métadonnées JSON.
 title: Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 localization_priority: Priority
-ms.openlocfilehash: 1230e1bfdeead306531a218373c2756b29fa4abe
-ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
+ms.openlocfilehash: afcfb6ff869acf1d508ebda7fc242dd9724bf165
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "35454656"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771315"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 
-Si vous écrivez une fonction Excel personnalisée en JavaScript ou TypeScript, vous pouvez utiliser les balises JSDoc pour la détailler en ajoutant des informations supplémentaires. Les balises JSDoc sont ensuite utilisées lors de la génération pour créer le [fichier de métadonnées JSON](custom-functions-json.md). En utilisant des balises JSDoc, vous n’avez plus besoin de modifier manuellement le fichier de métadonnées JSON.
+Si vous écrivez une fonction Excel personnalisée en JavaScript ou TypeScript, vous pouvez utiliser les [balises JSDoc](https://jsdoc.app/) pour la détailler en ajoutant des informations supplémentaires. Les balises JSDoc sont ensuite utilisées lors de la génération pour créer le [fichier de métadonnées JSON](custom-functions-json.md). En utilisant des balises JSDoc, vous n’avez plus besoin de modifier manuellement le fichier de métadonnées JSON.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -66,11 +66,9 @@ Une fonction ne peut pas contenir les deux balises `@cancelable` et `@streaming`
 
 Syntaxe: @fonctionpersonnalisée_id_ _nom_
 
-Spécifiez cette balise pour traiter la fonction JavaScript/TypeScript comme une fonction Excel personnalisée. 
+Spécifiez cette balise pour traiter la fonction JavaScript/TypeScript comme une fonction Excel personnalisée.
 
 Cette balise est requise pour créer des métadonnées pour la fonction personnalisée.
-
-Vous devez également insérer un appel vers`CustomFunctions.associate("id", functionName);`
 
 L’exemple suivant illustre la méthode la plus simple pour déclarer une fonction personnalisée.
 
@@ -222,7 +220,7 @@ function add(first: number, second: number): number {
 
 Indique que l’adresse de la cellule dans laquelle la fonction est évaluée doit être fournie.
 
-Le dernier paramètre de la fonction doit être de type `CustomFunctions.Invocation` ou un type dérivé. Lorsque la fonction est appelée, la propriété `address` contiendra l’adresse. Si vous souhaitez consulter un exemple de fonction utilisant la balise `@requiresAddress`, veuillez vous reporter à la section [Adressage du paramètre de contexte d’une cellule](./custom-functions-parameter-options.md#addressing-cells-context-parameter).
+Le dernier paramètre de la fonction doit être de type `CustomFunctions.Invocation` ou un type dérivé. Lorsque la fonction est appelée, la propriété `address` contiendra l’adresse. Si vous souhaitez consulter un exemple de fonction utilisant la balise `@requiresAddress`, veuillez vous reporter à la section [Adressage du paramètre de contexte d’une cellule](custom-functions-parameter-options.md#addressing-cells-context-parameter).
 
 ---
 ### <a name="returns"></a>@renvoie :
@@ -297,7 +295,7 @@ Une valeur unique peut être représentée à l’aide d’un des types suivants
 
 ### <a name="matrix-type"></a>Type matrice
 
-Utilisez une matrice à deux dimensions pour que le paramètre ou la valeur renvoyée soit une matrice de valeurs. Par exemple, le type `number[][]` indique une matrice de nombres. `string[][]`indique une matrice de chaînes. 
+Utilisez une matrice à deux dimensions pour que le paramètre ou la valeur renvoyée soit une matrice de valeurs. Par exemple, le type `number[][]` indique une matrice de nombres. `string[][]`indique une matrice de chaînes.
 
 ### <a name="error-type"></a>Type d’erreur
 
@@ -319,5 +317,4 @@ Découvrez les [conventions d’affectation des noms des fonctions personnalisé
 ## <a name="see-also"></a>Voir aussi
 
 * [Métadonnées fonctions personnalisées](custom-functions-json.md)
-* [Meilleures pratiques de fonctions personnalisées](custom-functions-best-practices.md)
 * [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)

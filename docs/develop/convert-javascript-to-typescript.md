@@ -1,21 +1,21 @@
 ---
 title: Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
 description: ''
-ms.date: 07/10/2019
+ms.date: 07/17/2019
 localization_priority: Priority
-ms.openlocfilehash: 3163052dde98122dceb0d8a1d550e3d8acf788db
-ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
+ms.openlocfilehash: 7c51479c1a5d1df5d9b0622dbae4fe9f01ad0c2c
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "35617008"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771305"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
 
 Vous pouvez utiliser le modèle de complément Office dans Visual Studio pour créer un complément qui utilise JavaScript, puis convertir le projet de complément au format TypeScript. Cet article décrit ce processus de conversion pour un complément Excel. Vous pouvez utiliser le même processus pour convertir les autres types de projet de complément Office de JavaScript au format TypeScript dans Visual Studio.
 
 > [!NOTE]
-> Pour créer un projet TypeScript de complément Office sans utiliser Visual Studio, suivez les instructions de la section « Tous les éditeurs » d’un [démarrage rapide en 5 minutes](../index.md), puis sélectionnez `TypeScript` quand le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) vous y invite.
+> Pour créer un projet TypeScript de complément Office sans utiliser Visual Studio, suivez les instructions de la section « Générateur Yeoman » d’un [démarrage rapide en 5 minutes](../index.md), puis sélectionnez `TypeScript` quand le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) vous y invite.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -149,7 +149,7 @@ declare var fabric: any;
             messageBanner.hideBanner();
 
             // If not using Excel 2016, use fallback logic.
-            if (!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
+            if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
                 $("#template-description").text("This sample will display the value of the cells that you have selected in the spreadsheet.");
                 $('#button-text').text("Display!");
                 $('#button-desc').text("Display the selection");
