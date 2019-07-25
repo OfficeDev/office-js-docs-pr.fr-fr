@@ -1,25 +1,72 @@
 ---
-title: Développement de votre premier complément Excel à l’aide de jQuery
-description: ''
-ms.date: 03/19/2019
+title: Créer votre premier complément du volet des tâches d’Excel
+description: Découvrez comment créer un complément de volet des tâches Excel simple à l’aide de l’API JavaScript pour Office.
+ms.date: 07/17/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: d1783d257b0d46c42f16cf5e1f261407a355a63d
-ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
+ms.openlocfilehash: 568f27a596fda77f263a53b551eefebc287e68e3
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "33517078"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771862"
 ---
-# <a name="build-an-excel-add-in-using-jquery"></a>Développement d’un complément Excel à l’aide de jQuery
+# <a name="build-an-excel-task-pane-add-in"></a>Créer un complément de volet de tâches Excel
 
-Cet article décrit le processus de création d’un complément Excel à l’aide de jQuery et de l’API JavaScript pour Excel. 
+Dans cet article, vous découvrirez comment créer un complément de volet de tâches Excel. 
 
 ## <a name="create-the-add-in"></a>Créer le complément
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+# <a name="yeoman-generatortabyeomangenerator"></a>[Générateur Yeoman](#tab/yeomangenerator)
+
+### <a name="prerequisites"></a>Conditions préalables
+
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
+
+### <a name="create-the-add-in-project"></a>Création du projet de complément
+
+Utilisez le générateur Yeoman pour créer un projet de complément Excel. Exécutez la commande suivante, puis répondez aux invites comme suit :
+
+```command&nbsp;line
+yo office
+```
+
+- **Sélectionnez un type de projet :** `Office Add-in Task Pane project`
+- **Sélectionnez un type de script :** `Javascript`
+- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
+- **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
+
+![Générateur Yeoman](../images/yo-office-excel.png)
+
+Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
+
+### <a name="explore-the-project"></a>Explorer le projet
+
+[!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-js.md)]
+
+### <a name="try-it-out"></a>Essayez
+
+1. Accédez au dossier racine du projet.
+
+    ```command&nbsp;line
+    cd "My Office Add-in"
+    ```
+
+2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
+
+3. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
+
+    ![Bouton Complément Excel](../images/excel-quickstart-addin-3b.png)
+
+4. Sélectionnez une plage de cellules dans la feuille de calcul.
+
+5. En bas du volet Office, cliquez sélectionnez le lien **Exécuter** pour définir la couleur de la plage sélectionnée sur jaune.
+
+    ![Complément Excel](../images/excel-quickstart-addin-3c.png)
+
+# <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
 
 ### <a name="prerequisites"></a>Conditions préalables
 
@@ -159,172 +206,11 @@ Cet article décrit le processus de création d’un complément Excel à l’ai
 
     ![Complément Excel](../images/excel-quickstart-addin-2c.png)
 
-# <a name="any-editortabvisual-studio-code"></a>[Tous les éditeurs](#tab/visual-studio-code)
-
-### <a name="prerequisites"></a>Conditions préalables
-
-- [Node.js](https://nodejs.org)
-
-- Installez la dernière version de [Yeoman](https://github.com/yeoman/yo) et le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) globalement.
-    ```command&nbsp;line
-    npm install -g yo generator-office
-    ```
-
-### <a name="create-the-web-app"></a>Création de l’application web
-
-1. Utilisez le générateur Yeoman pour créer un projet de complément Excel. Exécutez la commande suivante, puis répondez aux invites comme suit :
-
-    ```command&nbsp;line
-    yo office
-    ```
-
-    - **Sélectionnez un type de projet :** `Office Add-in project using Jquery framework`
-    - **Sélectionnez un type de script :** `Javascript`
-    - **Comment souhaitez-vous nommer votre complément ? :** `My Office Add-in`
-    - **Quelle application client Office voulez-vous prendre en charge ? :**`Excel`
-
-    ![Générateur Yeoman](../images/yo-office-jquery.png)
-
-    Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants de nœud de la prise en charge.
-
-2. Accédez au dossier racine du projet.
-
-    ```command&nbsp;line
-    cd "My Office Add-in"
-    ```
-
-### <a name="update-the-code"></a>Mise à jour du code 
-
-1. Dans votre éditeur de code, ouvrez **index.html** à la racine du projet. Ce fichier spécifie le code HTML qui s’affichera dans le volet Office du complément. 
-
-2. Dans **index.html**, remplacez la balise `body` par le balisage suivant et enregistrez le fichier.
-
-    ```html
-    <body class="ms-font-m ms-welcome">
-        <div id="content-header">
-            <div class="padding">
-                <h1>Welcome</h1>
-            </div>
-        </div>
-        <div id="content-main">
-            <div class="padding">
-                <p>Choose the button below to set the color of the selected range to green.</p>
-                <br />
-                <h3>Try it out</h3>
-                <button class="ms-Button" id="set-color">Set color</button>
-            </div>
-        </div>
-        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
-        <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
-    </body>
-    ```
-
-3. Ouvrez le fichier **src/index.js** pour spécifier le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
-
-    ```js
-    'use strict';
-
-    (function () {
-        Office.onReady(function() {
-            // Office is ready
-            $(document).ready(function () {
-                // The document is ready
-                $('#set-color').click(setColor);
-            });
-        });
-
-        function setColor() {
-            Excel.run(function (context) {
-                var range = context.workbook.getSelectedRange();
-                range.format.fill.color = 'green';
-
-                return context.sync();
-            }).catch(function (error) {
-                console.log("Error: " + error);
-                if (error instanceof OfficeExtension.Error) {
-                    console.log("Debug info: " + JSON.stringify(error.debugInfo));
-                }
-            });
-        }
-    })();
-    ```
-
-4. Ouvrez le fichier **app.css** pour spécifier les styles personnalisés pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
-
-    ```css
-    #content-header {
-        background: #2a8dd4;
-        color: #fff;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 80px;
-        overflow: hidden;
-    }
-
-    #content-main {
-        background: #fff;
-        position: fixed;
-        top: 80px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        overflow: auto;
-    }
-
-    .padding {
-        padding: 15px;
-    }
-    ```
-
-### <a name="update-the-manifest"></a>Mise à jour du manifeste
-
-1. Ouvrez le fichier nommé **manifest.xml** pour définir les paramètres et les fonctionnalités du complément.
-
-2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-le par votre nom.
-
-3. L’attribut `DefaultValue` de l’élément `Description` possède un espace réservé. Remplacez-le par **A task pane add-in for Excel**.
-
-4. Enregistrez le fichier.
-
-    ```xml
-    ...
-    <ProviderName>John Doe</ProviderName>
-    <DefaultLocale>en-US</DefaultLocale>
-    <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
-    <DisplayName DefaultValue="My Office Add-in" />
-    <Description DefaultValue="A task pane add-in for Excel"/>
-    ...
-    ```
-
-### <a name="start-the-dev-server"></a>Démarrage du serveur de développement
-
-[!include[Start server section](../includes/quickstart-yo-start-server.md)] 
-
-### <a name="try-it-out"></a>Essayez !
-
-1. Suivez les instructions pour la plateforme que vous utiliserez afin d’exécuter votre complément en vue d’en charger une version test dans Excel.
-
-    - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online : [Chargement de versions test des compléments Office dans Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
-    - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
-
-2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
-
-    ![Bouton Complément Excel](../images/excel-quickstart-addin-2b.png)
-
-3. Sélectionnez une plage de cellules dans la feuille de calcul.
-
-4. Dans le volet Office, cliquez sur le bouton **Définir couleur** pour définir la couleur de la plage sélectionnée en vert.
-
-    ![Complément Excel](../images/excel-quickstart-addin-2c.png)
-
 ---
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations, vous avez créé un complément Excel à l’aide de jQuery ! Découvrez à présent les fonctionnalités des compléments Excel et créez un complément plus complexe en continuant le didacticiel sur le complément Excel.
+Félicitations, vous avez créé un complément de volet de tâches Excel ! Ensuite, découvrez les fonctionnalités d’un complément Excel et créez-en un plus complexe en suivant le didacticiel sur les compléments Excel.
 
 > [!div class="nextstepaction"]
 > [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial.md)

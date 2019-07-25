@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet des tâches de Word
-description: ''
-ms.date: 06/20/2019
+description: Découvrez comment créer un complément de volet des tâches Word simple à l’aide de l’API JavaScript pour Office.
+ms.date: 07/17/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 24b6dd035ae25f97f08e3b8e68154a1f4a1a1769
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 9f3c345257bb222e2fdf1aab0b558442d830e89a
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128572"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771816"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Word
 
@@ -21,7 +21,76 @@ Cet article décrit comment créer un complément du volet des tâches de Word.
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+# <a name="yeoman-generatortabyeomangenerator"></a>[Générateur Yeoman](#tab/yeomangenerator)
+
+### <a name="prerequisites"></a>Conditions préalables
+
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
+
+### <a name="create-the-add-in-project"></a>Création du projet de complément
+
+Utilisez le générateur Yeoman afin de créer un projet de complément Word. Exécutez la commande suivante, puis répondez aux invites comme suit :
+
+```command&nbsp;line
+yo office
+```
+
+- **Sélectionnez un type de projet :** `Office Add-in Task Pane project`
+- **Sélectionnez un type de script :** `Javascript`
+- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
+- **Quelle application client Office voulez-vous prendre en charge ?** `Word`
+
+![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yo-office-word.png)
+
+Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
+
+### <a name="explore-the-project"></a>Explorer le projet
+
+[!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-js.md)]
+
+### <a name="try-it-out"></a>Essayez
+
+1. Accédez au dossier racine du projet.
+
+    ```command&nbsp;line
+    cd "My Office Add-in"
+    ```
+
+2. Pour démarrer le serveur web local et charger indépendamment votre complément, procédez comme suit.
+
+    > [!NOTE]
+    > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté une des commandes suivantes, acceptez d’installer le certificat fourni par le générateur Yeoman.
+
+    > [!TIP]
+    > Si vous testez votre complément sur Mac, exécutez la commande suivante avant de continuer. Lorsque vous exécutez cette commande, le serveur web local démarre.
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
+
+    - Pour tester votre complément dans Word, exécutez la commande suivante dans le répertoire racine de votre projet. Cela a pour effet de démarrer le serveur web local (s’il n’est pas déjà en cours d’exécution) et d’ouvrir Word avec votre complément chargé.
+
+        ```command&nbsp;line
+        npm start
+        ```
+
+    - Pour tester votre complément dans Word sur un navigateur, exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution).
+
+        ```command&nbsp;line
+        npm run start:web
+        ```
+
+        Pour utiliser votre complément, ouvrez un nouveau document dans Word sur le web, puis chargez la version test de votre complément en suivant les instructions de l’article relatif au [chargement de version test des compléments Office dans Office sur le web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
+
+3. Dans Word, ouvrez un nouveau document, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet des tâches** du ruban pour ouvrir le volet des tâches du complément.
+
+    ![Capture d’écran de l’application Word avec le bouton Afficher le volet des tâches mis en évidence](../images/word-quickstart-addin-2b.png)
+
+4. En bas du volet Office, sélectionnez le lien **Exécuter** pour ajouter le texte en police de couleur bleue « Hello World » au document.
+
+    ![Capture d’écran de l’application Word avec le complément du volet des tâches chargé](../images/word-quickstart-addin-1c.png)
+
+# <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
 
 ### <a name="prerequisites"></a>Conditions préalables
 
@@ -81,7 +150,7 @@ Cet article décrit comment créer un complément du volet des tâches de Word.
             $(document).ready(function () {
                 // The document is ready
                 // Use this to check whether the API is supported in the Word client.
-                if (Office.context.requirements.isSetSupported('WordApi', 1.1)) {
+                if (Office.context.requirements.isSetSupported('WordApi', '1.1')) {
                     // Do something that is only available via the new APIs
                     $('#emerson').click(insertEmersonQuoteAtSelection);
                     $('#checkhov').click(insertChekhovQuoteAtTheBeginning);
@@ -232,75 +301,6 @@ Cet article décrit comment créer un complément du volet des tâches de Word.
 3. Dans le volet Office, choisissez l’un des boutons pour ajouter du texte réutilisable dans le document.
 
     ![Capture d’écran de l’application Word avec le complément de texte réutilisable chargé.](../images/word-quickstart-addin-1b.png)
-
-# <a name="any-editortabvisual-studio-code"></a>[Tous les éditeurs](#tab/visual-studio-code)
-
-### <a name="prerequisites"></a>Conditions préalables
-
-[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
-
-### <a name="create-the-add-in-project"></a>Création du projet de complément
-
-1. Utilisez le générateur Yeoman afin de créer un projet de complément Word. Exécutez la commande suivante, puis répondez aux invites comme suit :
-
-    ```command&nbsp;line
-    yo office
-    ```
-
-    - **Sélectionnez un type de projet :** `Office Add-in Task Pane project`
-    - **Sélectionnez un type de script :** `Javascript`
-    - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
-    - **Quelle application client Office voulez-vous prendre en charge ?** `Word`
-
-    ![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yo-office-word.png)
-
-    Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants de nœud de la prise en charge.
-
-2. Accédez au dossier racine du projet.
-
-    ```command&nbsp;line
-    cd "My Office Add-in"
-    ```
-
-### <a name="explore-the-project"></a>Explorer le projet
-
-[!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-js.md)]
-
-### <a name="try-it-out"></a>Essayez
-
-1. Pour démarrer le serveur web local et charger indépendamment votre complément, procédez comme suit.
-
-    > [!NOTE]
-    > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté une des commandes suivantes, acceptez d’installer le certificat fourni par le générateur Yeoman.
-
-    > [!TIP]
-    > Si vous testez votre complément sur Mac, exécutez la commande suivante avant de continuer. Lorsque vous exécutez cette commande, le serveur web local démarre.
-    >
-    > ```command&nbsp;line
-    > npm run dev-server
-    > ```
-
-    - Pour tester votre complément dans Word, exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution) et Word s’ouvre avec votre complément chargé.
-
-        ```command&nbsp;line
-        npm start
-        ```
-
-    - Pour tester votre complément dans Word sur un navigateur, exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution).
-
-        ```command&nbsp;line
-        npm run start:web
-        ```
-
-        Pour utiliser votre complément, ouvrez un nouveau document dans Word sur le web, puis chargez la version test de votre complément en suivant les instructions de l’article relatif au [chargement de version test des compléments Office dans Office sur le web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
-
-2. Dans Word, ouvrez un nouveau document, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet des tâches** du ruban pour ouvrir le volet des tâches du complément.
-
-    ![Capture d’écran de l’application Word avec le bouton Afficher le volet des tâches mis en évidence](../images/word-quickstart-addin-2b.png)
-
-3. En bas du volet Office, sélectionnez le lien **Exécuter** pour ajouter le texte en police de couleur bleue « Hello World » au document.
-
-    ![Capture d’écran de l’application Word avec le complément du volet des tâches chargé](../images/word-quickstart-addin-1c.png)
 
 ---
 

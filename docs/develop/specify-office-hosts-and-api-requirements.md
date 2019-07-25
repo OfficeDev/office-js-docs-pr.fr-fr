@@ -1,14 +1,14 @@
 ---
 title: Spécification des exigences en matière d’hôtes Office et d’API
 description: ''
-ms.date: 07/01/2019
+ms.date: 07/18/2019
 localization_priority: Priority
-ms.openlocfilehash: 4355f86b6173e84c80bbd0791f571e034c8ae12d
-ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
+ms.openlocfilehash: 9699379d39e4c1a9f4e1380cf6360eaf027f05f0
+ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "35454621"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "35804617"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>Spécification des exigences en matière d’hôtes Office et d’API
 
@@ -105,9 +105,9 @@ L’élément **Requirements** indique les ensembles de conditions minimales req
 
 Cet exemple de code illustre un complément qui se charge dans toutes les applications hôtes Office qui prennent en charge les éléments suivants :
 
--  Un ensemble de conditions requises **TableBindings**, dont la version minimale est 1.1.
+-  Un ensemble de conditions requises **TableBindings**, dont la version minimale est « 1.1 ».
 
--  Un ensemble de conditions requises **OOXML**, dont la version minimale est 1.1.
+-  Un ensemble de conditions requises **OOXML**, dont la version minimale est « 1.1 ».
 
 -  La méthode **Document.getSelectedDataAsync**.
 
@@ -166,7 +166,7 @@ La méthode **isSetSupported**, ainsi que les ensembles de conditions requises p
 L’exemple de code suivant montre comment un complément peut fournir des fonctionnalités différentes pour divers hôtes Office qui peuvent prendre en charge plusieurs ensembles de conditions requises ou membres d’API.
 
 ```js
-if (Office.context.requirements.isSetSupported('WordApi', 1.1))
+if (Office.context.requirements.isSetSupported('WordApi', '1.1'))
 {
     // Run code that provides additional functionality using the Word JavaScript API when the add-in runs in Word 2016 or later.
 }

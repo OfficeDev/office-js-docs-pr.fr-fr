@@ -4,12 +4,12 @@ description: ''
 ms.date: 05/08/2019
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 7a7c907eeeb85b2a686c49ebba0558f4ec20568d
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: ccc243b17b25dbdf4142e4a11086df78ef4a2670
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589208"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771736"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Project
 
@@ -23,26 +23,20 @@ Cet article décrit comment créer un complément du volet des tâches de Projec
 
 ## <a name="create-the-add-in"></a>Créer le complément
 
-1. Utilisez le générateur Yeoman afin de créer un projet de complément Project. Exécutez la commande suivante, puis répondez aux invites comme suit :
+Utilisez le générateur Yeoman afin de créer un projet de complément Project. Exécutez la commande suivante, puis répondez aux invites comme suit :
 
-    ```command&nbsp;line
-    yo office
-    ```
+```command&nbsp;line
+yo office
+```
 
-    - **Sélectionnez un type de projet :** `Office Add-in Task Pane project`
-    - **Sélectionnez un type de script :** `Javascript`
-    - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
-    - **Quelle application client Office voulez-vous prendre en charge ?** `Project`
+- **Sélectionnez un type de projet :** `Office Add-in Task Pane project`
+- **Sélectionnez un type de script :** `Javascript`
+- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
+- **Quelle application client Office voulez-vous prendre en charge ?** `Project`
 
-    ![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yo-office-project.png)
-    
-    Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants de nœud de la prise en charge.
-    
-2. Accédez au dossier racine du projet.
+![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yo-office-project.png)
 
-    ```command&nbsp;line
-    cd "My Office Add-in"
-    ```
+Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
 ## <a name="explore-the-project"></a>Explorer le projet
 
@@ -95,24 +89,32 @@ Office.context.document.getSelectedTaskAsync(
 );
 ```
 
-## <a name="try-it-out"></a>Try it out
+## <a name="try-it-out"></a>Essayez
 
-> [!NOTE]
-> Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté la commande suivante, acceptez d’installer le certificat fourni par le générateur Yeoman.
+1. Accédez au dossier racine du projet.
 
-1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre.
+    ```command&nbsp;line
+    cd "My Office Add-in"
+    ```
+
+2. Démarrez le serveur web local.
+
+    > [!NOTE]
+    > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté la commande suivante, acceptez d’installer le certificat fourni par le générateur Yeoman.
+
+    Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre.
 
     ```command&nbsp;line
     npm start
     ```
 
-2. Dans Project, créez un plan de projet simple.
+3. Dans Project, créez un plan de projet simple.
 
-3. Chargez votre complément dans Project en suivant les instructions fournies dans [Chargement de versions test de compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
+4. Chargez votre complément dans Project en suivant les instructions fournies dans [Chargement de versions test de compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
 
-4. Sélectionnez une seule tâche dans le projet.
+5. Sélectionnez une seule tâche dans le projet.
 
-5. Au bas du volet des tâches, sélectionnez le lien **Exécuter** pour renommer la tâche sélectionnée et ajouter des notes à la tâche sélectionnée.
+6. Au bas du volet des tâches, sélectionnez le lien **Exécuter** pour renommer la tâche sélectionnée et ajouter des notes à la tâche sélectionnée.
 
     ![Capture d’écran de l’application Project avec le complément du volet des tâches chargé](../images/project-quickstart-addin-1.png)
 
