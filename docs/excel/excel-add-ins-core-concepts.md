@@ -3,12 +3,12 @@ title: Concepts fondamentaux de programmation avec l’API JavaScript pour Excel
 description: Utilisez l’API JavaScript pour Excel afin de créer des compléments pour Excel.
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: dad6aadf64b87ec799a17fb8efd0198be5af08b5
-ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
+ms.openlocfilehash: cd811a61ccd74496ab31c8b9a59ecd1c6e42aa42
+ms.sourcegitcommit: 5e90a90175909e0f4f392f5c98bd1273f444fe49
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "35617036"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "35851580"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Concepts fondamentaux de programmation avec l’API JavaScript pour Excel
 
@@ -128,7 +128,7 @@ Excel.run(function (context) {
 
 Comme `format/font` n’est pas spécifié dans l’appel à **myRange.load()**, la propriété `format.font.color` ne peut pas être lue dans l’exemple précédent.
 
-Pour optimiser les performances, vous devez spécifier explicitement les propriétés et les relations à charger lorsque vous utilisez la méthode **load()** sur un objet, comme abordé dans la rubrique [Optimisation des performances à l’aide de l’API JavaScript d’Excel](performance.md). Pour plus d’informations sur la méthode **load()**, consultez la rubrique [Concepts avancés de programmation avec l’API JavaScript Excel](excel-add-ins-advanced-concepts.md).
+Pour optimiser les performances, vous devez spécifier explicitement les propriétés à charger lorsque vous utilisez la méthode **load()** sur un objet, comme abordé dans la rubrique [Optimisation des performances à l’aide de l’API JavaScript d’Excel](performance.md). Pour plus d’informations sur la méthode **load()**, consultez la rubrique [Concepts avancés de programmation avec l’API JavaScript Excel](excel-add-ins-advanced-concepts.md).
 
 ## <a name="null-or-blank-property-values"></a>valeurs de propriété null ou vides
 
