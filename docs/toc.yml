@@ -802,6 +802,9 @@
         - name: Vue d’ensemble
           href: reference/overview/powerpoint-add-ins-reference-overview.md
           displayName: PowerPoint
+        - name: Ensembles de conditions requises de l’API
+          href: reference/requirement-sets/powerpoint-api-requirement-sets.md
+          displayName: PowerPoint
         - name: Référence d’API
           href: /javascript/api/powerpoint
           displayName: PowerPoint
