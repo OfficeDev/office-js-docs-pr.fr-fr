@@ -1,15 +1,15 @@
 ---
 title: Ensemble de conditions requises de l’API JavaScript pour Excel 1,2
 description: Détails sur l’ensemble de conditions requises ExcelApi 1,2
-ms.date: 07/11/2019
+ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 887c0430feab71b3ff1c644074d35811e544861c
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: b3d4e7a7596ad47a728ffe6c7b6fd6272e8893ad
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35772057"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940779"
 ---
 # <a name="whats-new-in-excel-javascript-api-12"></a>Nouveautés de l’API JavaScript 1.2 pour Excel
 
@@ -17,7 +17,7 @@ ExcelApi 1,2 Ajout de la prise en charge du filtrage de table et de l’accès a
 
 ## <a name="api-list"></a>Liste des API
 
-| Class | Champs | Description |
+|| Class | Champs | Description |
 |:---|:---|:---|
 |[Binding](/javascript/api/excel/excel.binding)|[onDataChanged](/javascript/api/excel/excel.binding#ondatachanged)|Se produit lors de la modification des données ou de la mise en forme dans la liaison.|
 ||[onSelectionChanged](/javascript/api/excel/excel.binding#onselectionchanged)|Se produit lorsque le contenu sélectionné dans la liaison est modifié.|
@@ -27,18 +27,13 @@ ExcelApi 1,2 Ajout de la prise en charge du filtrage de table et de l’accès a
 ||[Stopp](/javascript/api/excel/excel.bindingselectionchangedeventargs#rowcount)|Obtient le nombre de lignes sélectionnées.|
 ||[startColumn](/javascript/api/excel/excel.bindingselectionchangedeventargs#startcolumn)|Obtient l’index de la première colonne de la sélection (de base zéro).|
 ||[startRow](/javascript/api/excel/excel.bindingselectionchangedeventargs#startrow)|Obtient l’index de la première ligne de la sélection (de base zéro).|
-|[Chart](/javascript/api/excel/excel.chart)|[getImage (largeur?: nombre, hauteur?: nombre, fittingMode?: "ajuster" \| "FitAndCenter" \| "Fill")](/javascript/api/excel/excel.chart#getimage-width--height--fittingmode-)|Affiche le graphique sous forme d’image codée en Base64 ajustée aux dimensions spécifiées.|
-||[getImage (largeur?: nombre, hauteur?: nombre, fittingMode?: Excel. ImageFittingMode)](/javascript/api/excel/excel.chart#getimage-width--height--fittingmode-)|Affiche le graphique sous forme d’image codée en Base64 ajustée aux dimensions spécifiées.|
+|[Chart](/javascript/api/excel/excel.chart)|[getImage (largeur?: nombre, hauteur?: nombre, fittingMode?: Excel. ImageFittingMode)](/javascript/api/excel/excel.chart#getimage-width--height--fittingmode-)|Affiche le graphique sous forme d’image codée en Base64 ajustée aux dimensions spécifiées.|
 ||[worksheet](/javascript/api/excel/excel.chart#worksheet)|Feuille de calcul contenant le graphique actuel. En lecture seule.|
-|[ChartCollectionLoadOptions](/javascript/api/excel/excel.chartcollectionloadoptions)|[worksheet](/javascript/api/excel/excel.chartcollectionloadoptions#worksheet)|Pour chaque élément de la collection: feuille de calcul contenant le graphique actif.|
-|[ChartLoadOptions](/javascript/api/excel/excel.chartloadoptions)|[worksheet](/javascript/api/excel/excel.chartloadoptions#worksheet)|Feuille de calcul contenant le graphique actuel.|
 |[Filtre](/javascript/api/excel/excel.filter)|[Apply (Criteria: Excel. FilterCriteria)](/javascript/api/excel/excel.filter#apply-criteria-)|Appliquer les critères de filtre donnés à la colonne indiquée.|
 ||[applyBottomItemsFilter(count: number)](/javascript/api/excel/excel.filter#applybottomitemsfilter-count-)|Appliquer un filtre « Élément inférieur » à la colonne pour le nombre d’éléments donné.|
 ||[applyBottomPercentFilter(percent: number)](/javascript/api/excel/excel.filter#applybottompercentfilter-percent-)|Appliquer un filtre « Pourcentage inférieur » à la colonne pour le pourcentage d’éléments donné.|
 ||[applyCellColorFilter(color: string)](/javascript/api/excel/excel.filter#applycellcolorfilter-color-)|Appliquer un filtre « Couleur de cellule » à la colonne pour la couleur donnée.|
-||[applyCustomFilter (Criteria1: chaîne, Criteria2?: String, oper?: "et" \| "ou")](/javascript/api/excel/excel.filter#applycustomfilter-criteria1--criteria2--oper-)|Appliquer un filtre «icône» à la colonne pour les chaînes de critères données.|
 ||[applyCustomFilter (Criteria1: chaîne, Criteria2?: String, oper?: Excel. FilterOperator)](/javascript/api/excel/excel.filter#applycustomfilter-criteria1--criteria2--oper-)|Appliquer un filtre «icône» à la colonne pour les chaînes de critères données.|
-||[applyDynamicFilter (Criteria: "Unknown \| " \| "AboveAverage" \| "AllDatesInPeriodApril" \| "AllDatesInPeriodAugust" \| "AllDatesInPeriodDecember" \| "AllDatesInPeriodFebruray" " AllDatesInPeriodJanuary " \| " AllDatesInPeriodJuly " \| " AllDatesInPeriodJune " \| " AllDatesInPeriodMarch " \| " AllDatesInPeriodMay " \| " AllDatesInPeriodNovember " \| " AllDatesInPeriodOctober " \| "AllDatesInPeriodQuarter1" \| "AllDatesInPeriodQuarter2" \| "AllDatesInPeriodQuarter3" \| "AllDatesInPeriodQuarter4" \| "AllDatesInPeriodSeptember" \| "BelowAverage \| " " LastMonth " \| " LastQuarter " \| " LastWeek " \| " LastYear " \| " NextMonth " \| " NextQuarter " \| " NextWeek " \| " NextYear " \| " ThisMonth " \| " ThisQuarter " \| " ThisWeek " \| " ThisYear " \| " Today " \| " demain " \| " YearToDate " \| " hier ")](/javascript/api/excel/excel.filter#applydynamicfilter-criteria-)|Appliquer un filtre « Dynamique » à la colonne.|
 ||[applyDynamicFilter (Criteria: Excel. DynamicFilterCriteria)](/javascript/api/excel/excel.filter#applydynamicfilter-criteria-)|Appliquer un filtre « Dynamique » à la colonne.|
 ||[applyFontColorFilter(color: string)](/javascript/api/excel/excel.filter#applyfontcolorfilter-color-)|Appliquer un filtre « Couleur de police » à la colonne pour la couleur donnée.|
 ||[applyIconFilter (icône: Excel. Icon)](/javascript/api/excel/excel.filter#applyiconfilter-icon-)|Appliquer un filtre «icône» à la colonne pour l’icône donnée.|
@@ -55,29 +50,12 @@ ExcelApi 1,2 Ajout de la prise en charge du filtrage de table et de l’accès a
 ||[icon](/javascript/api/excel/excel.filtercriteria#icon)|Icône utilisée pour filtrer des cellules. Utilisé avec le filtrage « Icon ».|
 ||[is](/javascript/api/excel/excel.filtercriteria#operator)|Opérateur utilisé pour combiner les critères 1 et 2 lorsque vous utilisez le filtrage « Custom ».|
 ||[values](/javascript/api/excel/excel.filtercriteria#values)|Valeurs à utiliser pour le filtrage « Values ».|
-|[FilterData](/javascript/api/excel/excel.filterdata)|[criteria](/javascript/api/excel/excel.filterdata#criteria)|Le filtre actuellement appliqué à la colonne donnée. En lecture seule.|
 |[FilterDatetime](/javascript/api/excel/excel.filterdatetime)|[date](/javascript/api/excel/excel.filterdatetime#date)|Date au format ISO8601 utilisée pour filtrer des données.|
 ||[specificity](/javascript/api/excel/excel.filterdatetime#specificity)|Utilisation de la date pour conserver des données. Par exemple, si la date est 2005-04-02 et la spécificité est définie sur « mois », le filtre conservera toutes les lignes dont la date correspond au mois d’avril 2009.|
-|[FilterLoadOptions](/javascript/api/excel/excel.filterloadoptions)|[$all](/javascript/api/excel/excel.filterloadoptions#$all)||
-||[criteria](/javascript/api/excel/excel.filterloadoptions#criteria)|Le filtre actuellement appliqué à la colonne donnée. En lecture seule.|
 |[FormatProtection](/javascript/api/excel/excel.formatprotection)|[formulaHidden](/javascript/api/excel/excel.formatprotection#formulahidden)|Indique si Excel masque la formule des cellules dans la plage. Une valeur null indique que les paramètres de formule masquée ne sont pas les mêmes sur l’ensemble de la plage.|
 ||[locked](/javascript/api/excel/excel.formatprotection#locked)|Indique si Excel verrouille les cellules dans l’objet. Une valeur null indique que les paramètres de verrouillage ne sont pas les mêmes sur l’ensemble de la plage.|
-||[Set (propriétés: Excel. FormatProtection)](/javascript/api/excel/excel.formatprotection#set-properties-)|Définit plusieurs propriétés de l’objet en même temps, en fonction d’un objet chargé existant.|
-||[Set (propriétés: interfaces. FormatProtectionUpdateData, Options?: objet officeextension. UpdateOptions)](/javascript/api/excel/excel.formatprotection#set-properties--options-)|Définit plusieurs propriétés d’un objet en même temps. Vous pouvez transmettre un objet plain avec les propriétés appropriées, ou un autre objet API du même type.|
-|[FormatProtectionData](/javascript/api/excel/excel.formatprotectiondata)|[formulaHidden](/javascript/api/excel/excel.formatprotectiondata#formulahidden)|Indique si Excel masque la formule des cellules dans la plage. Une valeur null indique que les paramètres de formule masquée ne sont pas les mêmes sur l’ensemble de la plage.|
-||[locked](/javascript/api/excel/excel.formatprotectiondata#locked)|Indique si Excel verrouille les cellules dans l’objet. Une valeur null indique que les paramètres de verrouillage ne sont pas les mêmes sur l’ensemble de la plage.|
-|[FormatProtectionLoadOptions](/javascript/api/excel/excel.formatprotectionloadoptions)|[$all](/javascript/api/excel/excel.formatprotectionloadoptions#$all)||
-||[formulaHidden](/javascript/api/excel/excel.formatprotectionloadoptions#formulahidden)|Indique si Excel masque la formule des cellules dans la plage. Une valeur null indique que les paramètres de formule masquée ne sont pas les mêmes sur l’ensemble de la plage.|
-||[locked](/javascript/api/excel/excel.formatprotectionloadoptions#locked)|Indique si Excel verrouille les cellules dans l’objet. Une valeur null indique que les paramètres de verrouillage ne sont pas les mêmes sur l’ensemble de la plage.|
-|[FormatProtectionUpdateData](/javascript/api/excel/excel.formatprotectionupdatedata)|[formulaHidden](/javascript/api/excel/excel.formatprotectionupdatedata#formulahidden)|Indique si Excel masque la formule des cellules dans la plage. Une valeur null indique que les paramètres de formule masquée ne sont pas les mêmes sur l’ensemble de la plage.|
-||[locked](/javascript/api/excel/excel.formatprotectionupdatedata#locked)|Indique si Excel verrouille les cellules dans l’objet. Une valeur null indique que les paramètres de verrouillage ne sont pas les mêmes sur l’ensemble de la plage.|
 |[FunctionResult](/javascript/api/excel/excel.functionresult)|[error](/javascript/api/excel/excel.functionresult#error)|Valeur d’erreur (par exemple «#DIV/0») représentant l’erreur. Si la chaîne d’erreur n’est pas définie, la fonction a réussi et son résultat est écrit dans le champ valeur. L’erreur est toujours en anglais.|
 ||[value](/javascript/api/excel/excel.functionresult#value)|Valeur de l’évaluation de la fonction. Le champ valeur est renseigné uniquement si aucune erreur n’est survenue (autrement dit, la propriété Error n’est pas définie).|
-|[FunctionResultData](/javascript/api/excel/excel.functionresultdata)|[error](/javascript/api/excel/excel.functionresultdata#error)|Valeur d’erreur (par exemple «#DIV/0») représentant l’erreur. Si la chaîne d’erreur n’est pas définie, la fonction a réussi et son résultat est écrit dans le champ valeur. L’erreur est toujours en anglais.|
-||[value](/javascript/api/excel/excel.functionresultdata#value)|Valeur de l’évaluation de la fonction. Le champ valeur est renseigné uniquement si aucune erreur n’est survenue (autrement dit, la propriété Error n’est pas définie).|
-|[FunctionResultLoadOptions](/javascript/api/excel/excel.functionresultloadoptions)|[$all](/javascript/api/excel/excel.functionresultloadoptions#$all)||
-||[error](/javascript/api/excel/excel.functionresultloadoptions#error)|Valeur d’erreur (par exemple «#DIV/0») représentant l’erreur. Si la chaîne d’erreur n’est pas définie, la fonction a réussi et son résultat est écrit dans le champ valeur. L’erreur est toujours en anglais.|
-||[value](/javascript/api/excel/excel.functionresultloadoptions#value)|Valeur de l’évaluation de la fonction. Le champ valeur est renseigné uniquement si aucune erreur n’est survenue (autrement dit, la propriété Error n’est pas définie).|
 |[Functions](/javascript/api/excel/excel.functions)|[ABS (Number: Number \| Excel. Range \| Excel. RéférencePlage \| Excel. FunctionResult<any>)](/javascript/api/excel/excel.functions#abs-number-)|Renvoie la valeur absolue d’un nombre, un nombre sans son signe.|
 ||[Interet (émission: valeur \| de \| chaîne \| booléenne Excel. \| Range Excel. \| RéférencePlage Excel.<any>FunctionResult, firstInterest: \| valeur \| de \| chaîne booléenne Excel \| . Range Excel. RéférencePlage \| Excel. FunctionResult<any>, liquidation: \| nombre \| chaîne \| booléenne Excel. \| Range Excel. \| RéférencePlage Excel.<any>FunctionResult, rate: Number \| chaîne \| Boolean \| Excel. Range \| Excel. RéférencePlage \| Excel. FunctionResult<any>, par: chaîne \| \| numérique booléen \| Excel. Range \| Excel. RéférencePlage \| Excel. FunctionResult<any>, Frequency: Number \| String \| Boolean \| Excel. Range \| Excel. RéférencePlage \| Excel. FunctionResult<any>, base?: Number \| chaîne \| Boolean \| Excel. Range \| Excel. RéférencePlage \| Excel. FunctionResult<any>, calcMethod?: nombre \| de \| chaînes \| booléenne Excel. \| Range Excel. RéférencePlage \| Excel. FunctionResult<any>)](/javascript/api/excel/excel.functions#accrint-issue--firstinterest--settlement--rate--par--frequency--basis--calcmethod-)|Renvoie l'intérêt couru non échu d'un titre dont l'intérêt est perçu périodiquement.|
 ||[Interet (émission: valeur \| de \| chaîne \| booléenne Excel. \| Range Excel. \| RéférencePlage Excel.<any>FunctionResult, liquidation \| : \| nombre \| chaîne booléen Excel \| . Range Excel. RéférencePlage \| Excel. FunctionResult<any>, rate: Number \| String \| Boolean \| Excel. Range \| Excel. RéférencePlage \| Excel. FunctionResult<any>, by: Number \|chaîne \| Boolean \| Excel. Range \| Excel. RéférencePlage \| Excel. FunctionResult<any>, base?: chaîne \| \| de nombres \| booléen Excel. \| Range Excel. RéférencePlage \| Excel. FunctionResult<any>)](/javascript/api/excel/excel.functions#accrintm-issue--settlement--rate--par--basis-)|Cette méthode renvoie l'intérêt couru non échu d'un titre dont l'intérêt est perçu à l'échéance.|
@@ -445,7 +423,6 @@ ExcelApi 1,2 Ajout de la prise en charge du filtrage de table et de l’accès a
 ||[yieldMat (liquidation: \| valeur \| de \| chaîne booléenne Excel \| . Range Excel \| . RéférencePlage Excel<any>. FunctionResult, échéance \| : \| nombre \| chaîne booléenne Excel \| . Range Excel. RéférencePlage \| Excel. FunctionResult<any>, issue: chaîne \| \| numérique Boolean \| Excel. Range \| Excel. RéférencePlage \| Excel. FunctionResult<any>, rate: Number \|chaîne \| Boolean \| Excel. Range \| Excel. RéférencePlage \| Excel. FunctionResult<any>, PR: nombre \| chaîne \| Boolean \| Excel. Range \| Excel. RéférencePlage \| Excel. FunctionResult<any>, base?: chaîne \| \| de nombre \| booléen Excel. \| Range Excel. \| RéférencePlage Excel.<any>FunctionResult)](/javascript/api/excel/excel.functions#yieldmat-settlement--maturity--issue--rate--pr--basis-)|Renvoie le rapport annuel d'un titre pour lequel des intérêts sont payés à l'échéance.|
 ||[z_Test (Array: Number \| Excel. Range \| Excel. RéférencePlage \| Excel. FunctionResult<any>, x: Number \| Excel. Range \| Excel. RéférencePlage \| Excel. FunctionResult<any>, Sigma?: Number \| Excel. Range \| Excel. RéférencePlage \| Excel. FunctionResult<any>)](/javascript/api/excel/excel.functions#z_test-array--x--sigma-)|Renvoie la valeur P unilatérale d’un test z.|
 |[Icon](/javascript/api/excel/excel.icon)|[index](/javascript/api/excel/excel.icon#index)|Représente l’index de l’icône dans l’ensemble donné.|
-||[set](/javascript/api/excel/excel.icon#set)|Représente l’ensemble dont fait partie l’icône.|
 |[Range](/javascript/api/excel/excel.range)|[columnHidden](/javascript/api/excel/excel.range#columnhidden)|Indique si toutes les colonnes de la plage active sont masquées.|
 ||[formulasR1C1](/javascript/api/excel/excel.range#formulasr1c1)|Représente la formule dans le style de notation R1C1.|
 ||[getColumnsAfter (Count?: nombre)](/javascript/api/excel/excel.range#getcolumnsafter-count-)|Obtient un certain nombre de colonnes à droite de l’objet de plage actuel.|
@@ -459,34 +436,13 @@ ExcelApi 1,2 Ajout de la prise en charge du filtrage de table et de l’accès a
 ||[sort](/javascript/api/excel/excel.range#sort)|Représente le tri de plage de la plage actuelle. En lecture seule.|
 ||[rowHidden](/javascript/api/excel/excel.range#rowhidden)|Indique si toutes les lignes de la plage active sont masquées.|
 ||[unmerge()](/javascript/api/excel/excel.range#unmerge--)|Annule la fusion de la plage de cellules et les sépare dans des cellules distinctes.|
-|[RangeData](/javascript/api/excel/excel.rangedata)|[columnHidden](/javascript/api/excel/excel.rangedata#columnhidden)|Indique si toutes les colonnes de la plage active sont masquées.|
-||[formulasR1C1](/javascript/api/excel/excel.rangedata#formulasr1c1)|Représente la formule dans le style de notation R1C1.|
-||[hidden](/javascript/api/excel/excel.rangedata#hidden)|Indique si toutes les cellules de la plage active sont masquées. En lecture seule.|
-||[rowHidden](/javascript/api/excel/excel.rangedata#rowhidden)|Indique si toutes les lignes de la plage active sont masquées.|
 |[RangeFormat](/javascript/api/excel/excel.rangeformat)|[autofitColumns()](/javascript/api/excel/excel.rangeformat#autofitcolumns--)|Modifie la largeur des colonnes de la plage active pour obtenir le meilleur ajustement, en fonction des données présentes dans les colonnes.|
 ||[autofitRows()](/javascript/api/excel/excel.rangeformat#autofitrows--)|Modifie la hauteur des lignes de la plage active pour obtenir le meilleur ajustement, en fonction des données présentes dans les colonnes.|
 ||[columnWidth](/javascript/api/excel/excel.rangeformat#columnwidth)|Obtient ou définit la largeur de toutes les colonnes de la plage. Si les largeurs de colonne ne sont pas uniformes, la valeur « null » est renvoyée.|
 ||[protection](/javascript/api/excel/excel.rangeformat#protection)|Renvoie l’objet de protection du format pour une plage. En lecture seule.|
 ||[rowHeight](/javascript/api/excel/excel.rangeformat#rowheight)|Obtient ou définit la hauteur de toutes les lignes de la plage. Si les hauteurs de ligne ne sont pas uniformes, la valeur null est renvoyée.|
-|[RangeFormatData](/javascript/api/excel/excel.rangeformatdata)|[columnWidth](/javascript/api/excel/excel.rangeformatdata#columnwidth)|Obtient ou définit la largeur de toutes les colonnes de la plage. Si les largeurs de colonne ne sont pas uniformes, la valeur « null » est renvoyée.|
-||[protection](/javascript/api/excel/excel.rangeformatdata#protection)|Renvoie l’objet de protection du format pour une plage. En lecture seule.|
-||[rowHeight](/javascript/api/excel/excel.rangeformatdata#rowheight)|Obtient ou définit la hauteur de toutes les lignes de la plage. Si les hauteurs de ligne ne sont pas uniformes, la valeur null est renvoyée.|
-|[RangeFormatLoadOptions](/javascript/api/excel/excel.rangeformatloadoptions)|[columnWidth](/javascript/api/excel/excel.rangeformatloadoptions#columnwidth)|Obtient ou définit la largeur de toutes les colonnes de la plage. Si les largeurs de colonne ne sont pas uniformes, la valeur « null » est renvoyée.|
-||[protection](/javascript/api/excel/excel.rangeformatloadoptions#protection)|Renvoie l’objet de protection du format pour une plage.|
-||[rowHeight](/javascript/api/excel/excel.rangeformatloadoptions#rowheight)|Obtient ou définit la hauteur de toutes les lignes de la plage. Si les hauteurs de ligne ne sont pas uniformes, la valeur null est renvoyée.|
-|[RangeFormatUpdateData](/javascript/api/excel/excel.rangeformatupdatedata)|[columnWidth](/javascript/api/excel/excel.rangeformatupdatedata#columnwidth)|Obtient ou définit la largeur de toutes les colonnes de la plage. Si les largeurs de colonne ne sont pas uniformes, la valeur « null » est renvoyée.|
-||[protection](/javascript/api/excel/excel.rangeformatupdatedata#protection)|Renvoie l’objet de protection du format pour une plage.|
-||[rowHeight](/javascript/api/excel/excel.rangeformatupdatedata#rowheight)|Obtient ou définit la hauteur de toutes les lignes de la plage. Si les hauteurs de ligne ne sont pas uniformes, la valeur null est renvoyée.|
-|[RangeLoadOptions](/javascript/api/excel/excel.rangeloadoptions)|[columnHidden](/javascript/api/excel/excel.rangeloadoptions#columnhidden)|Indique si toutes les colonnes de la plage active sont masquées.|
-||[formulasR1C1](/javascript/api/excel/excel.rangeloadoptions#formulasr1c1)|Représente la formule dans le style de notation R1C1.|
-||[hidden](/javascript/api/excel/excel.rangeloadoptions#hidden)|Indique si toutes les cellules de la plage active sont masquées. En lecture seule.|
-||[rowHidden](/javascript/api/excel/excel.rangeloadoptions#rowhidden)|Indique si toutes les lignes de la plage active sont masquées.|
 |[RéférencePlage](/javascript/api/excel/excel.rangereference)|[adresse](/javascript/api/excel/excel.rangereference#address)|Obtient ou définit l’adresse de la plage; par exemple’Nom_feuille! A1: B5.|
-|[RangeSort](/javascript/api/excel/excel.rangesort)|[Apply (Fields: Excel. SortField [], RespecterCasse?: Boolean, hasHeaders?: Boolean, orientation?: "rows \| " "Columns", Method?: " \| pinyin" "StrokeCount")](/javascript/api/excel/excel.rangesort#apply-fields--matchcase--hasheaders--orientation--method-)|Effectue une opération de tri.|
-||[Apply (Fields: Excel. SortField [], RespecterCasse?: Boolean, hasHeaders?: Boolean, orientation?: Excel. SortOrientation, Method?: Excel. SortMethod)](/javascript/api/excel/excel.rangesort#apply-fields--matchcase--hasheaders--orientation--method-)|Effectue une opération de tri.|
-|[RangeUpdateData](/javascript/api/excel/excel.rangeupdatedata)|[columnHidden](/javascript/api/excel/excel.rangeupdatedata#columnhidden)|Indique si toutes les colonnes de la plage active sont masquées.|
-||[formulasR1C1](/javascript/api/excel/excel.rangeupdatedata#formulasr1c1)|Représente la formule dans le style de notation R1C1.|
-||[rowHidden](/javascript/api/excel/excel.rangeupdatedata#rowhidden)|Indique si toutes les lignes de la plage active sont masquées.|
+|[RangeSort](/javascript/api/excel/excel.rangesort)|[Apply (Fields: Excel. SortField [], RespecterCasse?: Boolean, hasHeaders?: Boolean, orientation?: Excel. SortOrientation, Method?: Excel. SortMethod)](/javascript/api/excel/excel.rangesort#apply-fields--matchcase--hasheaders--orientation--method-)|Effectue une opération de tri.|
 |[SelectionChangedEventArgs](/javascript/api/excel/excel.selectionchangedeventargs)|[workbook](/javascript/api/excel/excel.selectionchangedeventargs#workbook)|Renvoie l’objet de classeur ayant déclenché l’événement SelectionChanged.|
 |[SortField](/javascript/api/excel/excel.sortfield)|[ascending](/javascript/api/excel/excel.sortfield#ascending)|Indique si le tri s’effectue dans l’ordre croissant.|
 ||[color](/javascript/api/excel/excel.sortfield#color)|Couleur ciblée par la condition si le tri est appliqué à la couleur ou à la police de la cellule.|
@@ -499,44 +455,20 @@ ExcelApi 1,2 Ajout de la prise en charge du filtrage de table et de l’accès a
 ||[sort](/javascript/api/excel/excel.table#sort)|Représente le tri du tableau. En lecture seule.|
 ||[worksheet](/javascript/api/excel/excel.table#worksheet)|Feuille de calcul contenant le tableau actif. En lecture seule.|
 ||[reapplyFilters ()](/javascript/api/excel/excel.table#reapplyfilters--)|Applique de nouveau tous les filtres actuellement appliqués sur le tableau.|
-|[TableCollectionLoadOptions](/javascript/api/excel/excel.tablecollectionloadoptions)|[sort](/javascript/api/excel/excel.tablecollectionloadoptions#sort)|Pour chaque élément de la collection: représente le tri du tableau.|
-||[worksheet](/javascript/api/excel/excel.tablecollectionloadoptions#worksheet)|Pour chaque élément de la collection: feuille de calcul contenant le tableau actuel.|
 |[TableColumn](/javascript/api/excel/excel.tablecolumn)|[filter](/javascript/api/excel/excel.tablecolumn#filter)|Extrait le filtre appliqué à la colonne. En lecture seule.|
-|[TableColumnCollectionLoadOptions](/javascript/api/excel/excel.tablecolumncollectionloadoptions)|[filter](/javascript/api/excel/excel.tablecolumncollectionloadoptions#filter)|Pour chaque élément de la collection: récupérez le filtre appliqué à la colonne.|
-|[TableColumnData](/javascript/api/excel/excel.tablecolumndata)|[filter](/javascript/api/excel/excel.tablecolumndata#filter)|Extrait le filtre appliqué à la colonne. En lecture seule.|
-|[TableColumnLoadOptions](/javascript/api/excel/excel.tablecolumnloadoptions)|[filter](/javascript/api/excel/excel.tablecolumnloadoptions#filter)|Extrait le filtre appliqué à la colonne.|
-|[TableData](/javascript/api/excel/excel.tabledata)|[sort](/javascript/api/excel/excel.tabledata#sort)|Représente le tri du tableau. En lecture seule.|
-|[TableLoadOptions](/javascript/api/excel/excel.tableloadoptions)|[sort](/javascript/api/excel/excel.tableloadoptions#sort)|Représente le tri du tableau.|
-||[worksheet](/javascript/api/excel/excel.tableloadoptions#worksheet)|Feuille de calcul contenant le tableau actif.|
-|[TableSort](/javascript/api/excel/excel.tablesort)|[Apply (Fields: Excel. SortField [], RespecterCasse?: Boolean, Method?: "PinYin \| " "StrokeCount")](/javascript/api/excel/excel.tablesort#apply-fields--matchcase--method-)|Effectue une opération de tri.|
-||[Apply (Fields: Excel. SortField [], RespecterCasse?: Boolean, Method?: Excel. SortMethod)](/javascript/api/excel/excel.tablesort#apply-fields--matchcase--method-)|Effectue une opération de tri.|
+|[TableSort](/javascript/api/excel/excel.tablesort)|[Apply (Fields: Excel. SortField [], RespecterCasse?: Boolean, Method?: Excel. SortMethod)](/javascript/api/excel/excel.tablesort#apply-fields--matchcase--method-)|Effectue une opération de tri.|
 ||[clear()](/javascript/api/excel/excel.tablesort#clear--)|Efface le tri actuellement appliqué au tableau. Même si le classement du tableau n’est pas modifié, l’état des boutons d’en-tête est rétabli.|
 ||[fields](/javascript/api/excel/excel.tablesort#fields)|Dernières conditions utilisées pour trier le tableau. En lecture seule.|
 ||[matchCase](/javascript/api/excel/excel.tablesort#matchcase)|Indique si la casse a influé sur le dernier tri du tableau. En lecture seule.|
 ||[method](/javascript/api/excel/excel.tablesort#method)|Dernière méthode de classement des caractères chinois utilisée pour trier le tableau. En lecture seule.|
 ||[reapply()](/javascript/api/excel/excel.tablesort#reapply--)|Applique à nouveau les paramètres actuels de tri au tableau.|
-|[TableSortData](/javascript/api/excel/excel.tablesortdata)|[fields](/javascript/api/excel/excel.tablesortdata#fields)|Dernières conditions utilisées pour trier le tableau. En lecture seule.|
-||[matchCase](/javascript/api/excel/excel.tablesortdata#matchcase)|Indique si la casse a influé sur le dernier tri du tableau. En lecture seule.|
-||[method](/javascript/api/excel/excel.tablesortdata#method)|Dernière méthode de classement des caractères chinois utilisée pour trier le tableau. En lecture seule.|
-|[TableSortLoadOptions](/javascript/api/excel/excel.tablesortloadoptions)|[$all](/javascript/api/excel/excel.tablesortloadoptions#$all)||
-||[fields](/javascript/api/excel/excel.tablesortloadoptions#fields)|Dernières conditions utilisées pour trier le tableau. En lecture seule.|
-||[matchCase](/javascript/api/excel/excel.tablesortloadoptions#matchcase)|Indique si la casse a influé sur le dernier tri du tableau. En lecture seule.|
-||[method](/javascript/api/excel/excel.tablesortloadoptions#method)|Dernière méthode de classement des caractères chinois utilisée pour trier le tableau. En lecture seule.|
 |[Workbook](/javascript/api/excel/excel.workbook)|[fonctionne](/javascript/api/excel/excel.workbook#functions)|Représente une collection de fonctions de feuille de calcul qui peuvent être utilisées pour le calcul. En lecture seule.|
 ||[onSelectionChanged](/javascript/api/excel/excel.workbook#onselectionchanged)|Se produit quand la sélection change dans le document.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[getUsedRange (valuesOnly?: booléen)](/javascript/api/excel/excel.worksheet#getusedrange-valuesonly-)|La plage utilisée est la plus petite plage qui englobe toutes les cellules auxquelles une valeur ou un format est affecté. Si la feuille de calcul entière est vide, cette fonction renvoie la cellule supérieure gauche (autrement dit, elle ne génère *pas* d’erreur).|
 ||[protection](/javascript/api/excel/excel.worksheet#protection)|Renvoie un objet de protection de feuille pour une feuille de calcul. En lecture seule.|
-|[WorksheetCollectionLoadOptions](/javascript/api/excel/excel.worksheetcollectionloadoptions)|[protection](/javascript/api/excel/excel.worksheetcollectionloadoptions#protection)|Pour chaque élément de la collection: renvoie un objet de protection de feuille pour une feuille de calcul.|
-|[WorksheetData](/javascript/api/excel/excel.worksheetdata)|[protection](/javascript/api/excel/excel.worksheetdata#protection)|Renvoie un objet de protection de feuille pour une feuille de calcul. En lecture seule.|
-|[WorksheetLoadOptions](/javascript/api/excel/excel.worksheetloadoptions)|[protection](/javascript/api/excel/excel.worksheetloadoptions#protection)|Renvoie un objet de protection de feuille pour une feuille de calcul.|
 |[WorksheetProtection](/javascript/api/excel/excel.worksheetprotection)|[Protect (options?: Excel. WorksheetProtectionOptions, password?: String)](/javascript/api/excel/excel.worksheetprotection#protect-options--password-)|Protège une feuille de calcul. Échoue si la feuille de calcul a déjà été protégée.|
 ||[options](/javascript/api/excel/excel.worksheetprotection#options)|Options de protection de feuille. En lecture seule.|
 ||[sécurisé](/javascript/api/excel/excel.worksheetprotection#protected)|Indique si la feuille de calcul est protégée. En lecture seule.|
-|[WorksheetProtectionData](/javascript/api/excel/excel.worksheetprotectiondata)|[options](/javascript/api/excel/excel.worksheetprotectiondata#options)|Options de protection de feuille. En lecture seule.|
-||[sécurisé](/javascript/api/excel/excel.worksheetprotectiondata#protected)|Indique si la feuille de calcul est protégée. En lecture seule.|
-|[WorksheetProtectionLoadOptions](/javascript/api/excel/excel.worksheetprotectionloadoptions)|[$all](/javascript/api/excel/excel.worksheetprotectionloadoptions#$all)||
-||[options](/javascript/api/excel/excel.worksheetprotectionloadoptions#options)|Options de protection de feuille. En lecture seule.|
-||[sécurisé](/javascript/api/excel/excel.worksheetprotectionloadoptions#protected)|Indique si la feuille de calcul est protégée. En lecture seule.|
 |[WorksheetProtectionOptions](/javascript/api/excel/excel.worksheetprotectionoptions)|[allowAutoFilter](/javascript/api/excel/excel.worksheetprotectionoptions#allowautofilter)|Représente l’option de protection de feuille de calcul qui autorise l’utilisation de la fonctionnalité Filtre automatique.|
 ||[allowDeleteColumns](/javascript/api/excel/excel.worksheetprotectionoptions#allowdeletecolumns)|Représente l’option de protection de feuille de calcul qui autorise la suppression des colonnes.|
 ||[allowDeleteRows](/javascript/api/excel/excel.worksheetprotectionoptions#allowdeleterows)|Représente l’option de protection de feuille de calcul qui autorise la suppression des lignes.|

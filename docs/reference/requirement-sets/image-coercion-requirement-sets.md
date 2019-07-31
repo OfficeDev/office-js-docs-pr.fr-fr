@@ -4,12 +4,12 @@ description: Prise en charge des ensembles de conditions requises de forçage d�
 ms.date: 07/11/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 046a3f1f16d8b48cddbd64bddf80a31ed1e50583
-ms.sourcegitcommit: 61f8f02193ce05da957418d938f0d94cb12c468d
+ms.openlocfilehash: bffe6c074d9e0734299d0087f2488524875931ed
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "35633990"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940844"
 ---
 # <a name="image-coercion-requirement-sets"></a>Ensembles de conditions requises de forçage d’image
 
@@ -19,7 +19,7 @@ Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tab
 
 ## <a name="imagecoercion-11"></a>ImageCoercion 1,1
 
-ImageCoercion 1,1 permet la conversion en image (`Office.CoercionType.Image`) lors de l’écriture de [`Document.setSelectedDataAsync`](/javascript/api/office/document#setselecteddataasync-data--options--callback-) données à l’aide de la méthode. Les hôtes suivants sont pris en charge:
+ImageCoercion 1,1 permet la conversion en image (`Office.CoercionType.Image`) lors de l’écriture de [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) données à l’aide de la méthode. Les hôtes suivants sont pris en charge:
 
 - Excel 2013 et versions ultérieures sur Windows
 - Excel 2016 et versions ultérieures sur Mac
@@ -37,7 +37,7 @@ ImageCoercion 1,1 permet la conversion en image (`Office.CoercionType.Image`) lo
 
 ## <a name="imagecoercion-12"></a>ImageCoercion 1,2
 
-ImageCoercion 1,2 permet d’effectuer une conversion au`Office.CoercionType.XmlSvg`format SVG () lors de [`Document.setSelectedDataAsync`](/javascript/api/office/document#setselecteddataasync-data--options--callback-) l’écriture de données à l’aide de la méthode. Les hôtes suivants sont pris en charge:
+ImageCoercion 1,2 permet d’effectuer une conversion au`Office.CoercionType.XmlSvg`format SVG () lors de [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) l’écriture de données à l’aide de la méthode. Les hôtes suivants sont pris en charge:
 
 - Excel sur Windows (connecté à un abonnement Office 365)
 - Excel sur Mac (connecté à un abonnement Office 365)
