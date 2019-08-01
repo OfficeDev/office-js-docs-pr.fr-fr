@@ -1,23 +1,26 @@
 ---
 title: Rendre votre complément Office compatible avec un complément COM existant
 description: Activer la compatibilité entre votre complément Office et un complément COM équivalent
-ms.date: 06/20/2019
+ms.date: 07/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 3577b8fe4b4a26ac5d0af85cc5c2f96a7a8dc010
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 8d826dec35bbbca91a1606d902d563f1a794e688
+ms.sourcegitcommit: d49643c4218ed8ad57575d58170dfcdbaf312d14
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128051"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "36048280"
 ---
-# <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in-preview"></a>Faire en sorte que votre complément Office soit compatible avec un complément COM existant (aperçu)
+# <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Rendre votre complément Office compatible avec un complément COM existant
 
 Si vous disposez d’un complément COM existant, vous pouvez créer une fonctionnalité équivalente dans votre complément Office, ce qui permet à votre solution de s’exécuter sur d’autres plateformes, telles qu’Office sur le Web ou Office sur Mac. Dans certains cas, votre complément Office peut ne pas être en mesure de fournir toutes les fonctionnalités disponibles dans le complément COM correspondant. Dans ce cas, votre complément COM peut fournir une meilleure expérience utilisateur sur Windows que le complément Office correspondant.
 
 Vous pouvez configurer votre complément Office de sorte que, lorsque le complément COM équivalent est déjà installé sur l’ordinateur d’un utilisateur, Office sur Windows exécute le complément COM au lieu du complément Office. Le complément COM est appelé «équivalent», car Office effectuera une transition transparente entre le complément COM et le complément Office en fonction de celui sur lequel est installé l’ordinateur d’un utilisateur.
 
 > [!NOTE]
-> Cette fonctionnalité est actuellement en préversion et n’est pas prise en charge dans les environnements de production. Elle est disponible dans Excel, Word et PowerPoint version 16.0.11629.20214 ou ultérieure. Pour accéder à cette version, vous devez disposer d’un abonnement Office 365 et rejoindre le programme [Office](https://products.office.com/office-insider) Insider au niveau Insider. ****
+> Cette fonctionnalité est prise en charge par les plateformes suivantes, lorsqu’elle est connectée à un abonnement Office 365:
+> - Excel, Word et PowerPoint sur le Web
+> - Excel, Word et PowerPoint sur Windows (version 1904 ou ultérieure)
+> - Excel, Word et PowerPoint sur Mac (version 13,329 ou ultérieure)
 
 ## <a name="specify-an-equivalent-com-add-in-in-the-manifest"></a>Spécifier un complément COM équivalent dans le manifeste
 
