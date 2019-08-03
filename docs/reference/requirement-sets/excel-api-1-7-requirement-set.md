@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1,7
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 7a4d0dde78a290de61fb6edc1966ea66dc2ba3b0
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 5e923cb096c7335fbe65d18b6af0280d78be1fb2
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940695"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064857"
 ---
 # <a name="whats-new-in-excel-javascript-api-17"></a>Nouveautés de l’API JavaScript 1.7 pour Excel
 
@@ -64,6 +64,8 @@ De plus :
 * Obtenir la cellule active : utilisez cet API pour obtenir la cellule active d’un classeur.
 
 ## <a name="api-list"></a>Liste des API
+
+Le tableau suivant répertorie les API dans l’ensemble de conditions requises de l’API JavaScript pour Excel 1,7. Pour afficher la documentation de référence de l’API pour toutes les API prises en charge par l’ensemble de conditions requises de l’API JavaScript pour Excel 1,7 ou antérieure, voir [API Excel dans l’ensemble de conditions requises 1,7 ou version antérieure](/javascript/api/excel?view=excel-js-1.7).
 
 | Class | Champs | Description |
 |:---|:---|:---|
@@ -334,5 +336,5 @@ De plus :
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Documentation de référence de l’API JavaScript pour Excel](/javascript/api/excel)
+- [Documentation de référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.7)
 - [Ensembles de conditions requises de l’API JavaScript pour Excel](./excel-api-requirement-sets.md)

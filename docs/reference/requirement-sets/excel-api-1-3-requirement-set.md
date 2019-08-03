@@ -4,18 +4,20 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1,3
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 684b802a32e58591d43d46a37ecc8b53395b652c
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: d0ab1e0a1c41d6da0104c03355f64f5f5abbb3b2
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940758"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064731"
 ---
 # <a name="whats-new-in-excel-javascript-api-13"></a>Nouveautés de l’API JavaScript 1.3 pour Excel
 
 ExcelApi 1,3 Ajout de la prise en charge de la liaison de données et de l’accès aux tableaux croisés dynamiques.
 
 ## <a name="api-list"></a>Liste des API
+
+Le tableau suivant répertorie les API dans l’ensemble de conditions requises de l’API JavaScript pour Excel 1,3. Pour afficher la documentation de référence de l’API pour toutes les API prises en charge par l’ensemble de conditions requises de l’API JavaScript pour Excel 1,3 ou antérieure, voir [API Excel dans l’ensemble de conditions requises 1,3 ou version antérieure](/javascript/api/excel?view=excel-js-1.3).
 
 | Class | Champs | Description |
 |:---|:---|:---|
@@ -55,5 +57,5 @@ ExcelApi 1,3 Ajout de la prise en charge de la liaison de données et de l’acc
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Documentation de référence de l’API JavaScript pour Excel](/javascript/api/excel)
+- [Documentation de référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.3)
 - [Ensembles de conditions requises de l’API JavaScript pour Excel](./excel-api-requirement-sets.md)

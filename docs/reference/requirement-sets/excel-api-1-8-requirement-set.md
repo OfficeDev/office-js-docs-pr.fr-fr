@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1,8
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 297e84a5e86eae42696e5a1c067f81e137d4779a
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 6849ccb3dc83275509d26c63054a518d41cb060e
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940653"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064892"
 ---
 # <a name="whats-new-in-excel-javascript-api-18"></a>Nouveautés de l’API JavaScript pour Excel 1,8
 
@@ -32,6 +32,8 @@ Une autre série de graphiques API apporte un meilleur contrôle par programme d
 Plus d’[événements](/office/dev/add-ins/excel/excel-add-ins-events) ont été ajoutés pour les graphiques. Votre complément réagit aux interactions des utilisateurs avec le graphique. Vous pouvez également [Activer ou désactiver les événements](/office/dev/add-ins/excel/performance#enable-and-disable-events) sur l’ensemble du classeur.
 
 ## <a name="api-list"></a>Liste des API
+
+Le tableau suivant répertorie les API dans l’ensemble de conditions requises de l’API JavaScript pour Excel 1,8. Pour afficher la documentation de référence de l’API pour toutes les API prises en charge par l’ensemble de conditions requises de l’API JavaScript pour Excel 1,8 ou antérieure, voir [API Excel dans l’ensemble de conditions requises 1,8 ou version antérieure](/javascript/api/excel?view=excel-js-1.8).
 
 | Class | Champs | Description |
 |:---|:---|:---|
@@ -285,5 +287,5 @@ Plus d’[événements](/office/dev/add-ins/excel/excel-add-ins-events) ont ét�
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Documentation de référence de l’API JavaScript pour Excel](/javascript/api/excel)
+- [Documentation de référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.8)
 - [Ensembles de conditions requises de l’API JavaScript pour Excel](./excel-api-requirement-sets.md)

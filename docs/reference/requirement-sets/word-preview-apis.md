@@ -1,15 +1,15 @@
 ---
 title: API de prévisualisation JavaScript pour Word
 description: Informations détaillées sur les API JavaScript pour Word à venir
-ms.date: 07/17/2019
+ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 3a539f0e69db7c4c567b6fda14f30d6d41a420cf
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: 584b6ade9e4ae2d28b13eb717027361d85c4aa45
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35805283"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064843"
 ---
 # <a name="word-javascript-preview-apis"></a>API de prévisualisation JavaScript pour Word
 
@@ -22,7 +22,7 @@ De nouvelles API JavaScript pour Word sont introduites pour la première fois da
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les API actuellement en mode aperçu.
+Le tableau suivant répertorie les API JavaScript pour Word actuellement en version préliminaire. Pour afficher la liste complète de toutes les API JavaScript Word (y compris les API d’aperçu et les API précédemment publiées), voir [toutes les API JavaScript pour Word](/javascript/api/word?view=word-js-preview).
 
 | Class | Champs | Description |
 |:---|:---|:---|

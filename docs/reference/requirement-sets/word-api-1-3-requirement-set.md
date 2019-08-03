@@ -1,15 +1,15 @@
 ---
 title: Ensemble de conditions requises de l’API JavaScript pour Word 1,3
 description: Détails sur l’ensemble de conditions requises WordApi 1,3
-ms.date: 07/17/2019
+ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: ca18822a60a384f15149531a59245a7b57ea39c3
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: 24a960b5ddab1ba96b0b45d155e1f70cb0f1a35c
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35805297"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064878"
 ---
 # <a name="whats-new-in-word-javascript-api-13"></a>Nouveautés de l’API JavaScript 1.3 pour Word
 
@@ -17,7 +17,7 @@ WordApi 1,3 Ajout de la prise en charge supplémentaire des contrôles de conten
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les API ajoutées dans le cadre de l’ensemble de conditions requises WordApi 1,3.
+Le tableau suivant répertorie les API dans l’ensemble de conditions requises de l’API JavaScript pour Word 1,3. Pour afficher la documentation de référence de l’API pour toutes les API prises en charge par l’API JavaScript pour Word, ensemble de conditions requises 1,3 ou antérieure, voir [API Word dans l’ensemble de conditions requises 1,3 ou version antérieure](/javascript/api/word?view=word-js-1.3).
 
 | Class | Champs | Description |
 |:---|:---|:---|

@@ -3,12 +3,12 @@ title: Office. Context. Mailbox-ensemble de conditions requises 1,2
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 879b6440a91f63568d282b6659aafdf49a5cdb37
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: de7c48faf966f9b3f5d1bb76f69aa16810a5381f
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128439"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064367"
 ---
 # <a name="mailbox"></a>boîte aux lettres
 
@@ -57,7 +57,7 @@ La valeur `ewsUrl` peut être utilisée par un service distant pour émettre des
 
 ### <a name="methods"></a>Méthodes
 
-#### <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook12officelocalclienttime"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook_1_2/office.LocalClientTime)}
+#### <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlookofficelocalclienttimeviewoutlook-js-12"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.2)}
 
 Obtient un dictionnaire contenant les informations d’heure dans l’heure locale du client.
 
@@ -81,7 +81,7 @@ Si l’application de messagerie est en cours d’exécution dans Outlook sur un
 
 ##### <a name="returns"></a>Renvoie :
 
-Type : [LocalClientTime](/javascript/api/outlook_1_2/office.LocalClientTime)
+Type : [LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.2)
 
 #### <a name="converttoutcclienttimeinput--date"></a>convertToUtcClientTime(input) → {Date}
 
@@ -93,7 +93,7 @@ La méthode `convertToUtcClientTime` convertit un dictionnaire contenant une dat
 
 |Nom| Type| Description|
 |---|---|---|
-|`input`| [LocalClientTime](/javascript/api/outlook_1_2/office.LocalClientTime)|Valeur de l’heure locale à convertir.|
+|`input`| [LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.2)|Valeur de l’heure locale à convertir.|
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -205,8 +205,8 @@ Si l’un des paramètres dépasse les limites définies en matière de taille o
 |Nom| Type| Description|
 |---|---|---|
 | `parameters` | Objet | Dictionnaire de paramètres décrivant le nouveau rendez-vous. |
-| `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)&gt; | Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un objet `EmailAddressDetails` pour chacun des participants requis du rendez-vous. Le tableau est limité à 100 entrées maximum. |
-| `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)&gt; | Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un objet `EmailAddressDetails` pour chacun des participants facultatifs du rendez-vous. Le tableau est limité à 100 entrées maximum. |
+| `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)&gt; | Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un objet `EmailAddressDetails` pour chacun des participants requis du rendez-vous. Le tableau est limité à 100 entrées maximum. |
+| `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.2)&gt; | Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un objet `EmailAddressDetails` pour chacun des participants facultatifs du rendez-vous. Le tableau est limité à 100 entrées maximum. |
 | `parameters.start` | Date | Objet `Date` spécifiant la date et l’heure de début du rendez-vous. |
 | `parameters.end` | Date | Objet `Date` spécifiant la date et l’heure de fin du rendez-vous. |
 | `parameters.location` | Chaîne | Chaîne contenant l’emplacement du rendez-vous. La chaîne est limitée à 255 caractères maximum. |
