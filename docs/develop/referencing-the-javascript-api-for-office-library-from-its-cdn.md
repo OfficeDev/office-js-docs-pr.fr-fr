@@ -3,19 +3,19 @@ title: Référencement de la bibliothèque de l’API JavaScript pour Office à 
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 4993a6a36004ced94ad37487f8e63d6b9f3f3f48
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 249d367c7a7032d8ec165661da1d182df4047199
+ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449749"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "33517386"
 ---
 # <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a>Référencement de la bibliothèque de l’API JavaScript pour Office à partir de son réseau de distribution de contenu
 
 > [!NOTE]
 > Outre les étapes décrites dans cet article, si vous souhaitez utiliser TypeScript pour obtenir Intellisense vous devrez exécuter la commande suivante dans une invite de commandes Node (ou une fenêtre Git Bash) à partir de la racine du dossier de votre projet. [Node.js](https://nodejs.org) doit être installé (qui inclut npm).
 > 
-> ```bash
+> ```command&nbsp;line
 > npm install --save-dev @types/office-js
 > ```
 

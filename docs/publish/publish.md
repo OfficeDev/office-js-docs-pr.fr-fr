@@ -3,12 +3,12 @@ title: Déploiement et publication de votre complément Office | Microsoft Docs
 description: Méthodes et options pour déployer votre complément Office à des fins de test ou de distribution auprès des utilisateurs.
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 9fefdece308647dda79a769acc9e8493cbca06f8
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 9515157f0e6f3d294d381013442f958c903a63c0
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128551"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575645"
 ---
 # <a name="deploy-and-publish-your-office-add-in"></a>Déploiement et publication de votre complément Office
 
@@ -87,5 +87,5 @@ Pour affecter des compléments à des clients, utilisez le centre d’administra
 - [Création de descriptions efficaces dans AppSource](/office/dev/store/create-effective-office-store-listings)
 - [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](../testing/testing-and-troubleshooting.md)
 
-[AppSource]: https://docs.microsoft.com/office/dev/store/submit-to-the-office-store
+[AppSource]: /office/dev/store/submit-to-the-office-store
 [Office Add-in host and platform availability]: ../overview/office-add-in-availability
