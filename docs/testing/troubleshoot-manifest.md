@@ -1,14 +1,14 @@
 ---
 title: Valider et résoudre des problèmes avec votre manifeste
 description: Utiliser ces méthodes pour valider le manifeste des compléments Office.
-ms.date: 07/01/2019
+ms.date: 07/29/2019
 localization_priority: Priority
-ms.openlocfilehash: b6d95f6c5658e33c2f52cc46d7bba686bea5cc44
-ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
+ms.openlocfilehash: 70ebe8be4b669167d1ba230d9dcbf19cb2289efe
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "35617057"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940665"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>Valider et résoudre des problèmes avec votre manifeste
 
@@ -16,7 +16,7 @@ Vous souhaitez peut-être valider le fichier manifeste de votre complément pour
 
 ## <a name="validate-your-manifest-with-the-yeoman-generator-for-office-add-ins"></a>Valider votre manifeste avec le générateur Yeoman pour les compléments Office
 
-Si vous avez utilisé le générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) pour créer votre complément, vous pouvez également l’utiliser pour valider le fichier manifeste de votre projet. Exécutez la commande suivante dans le répertoire racine de votre projet :
+Si vous avez utilisé [le générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) pour créer votre complément, vous pouvez également l’utiliser pour valider le fichier manifeste de votre projet. Exécutez la commande suivante dans le répertoire racine de votre projet :
 
 ```command&nbsp;line
 npm run validate
@@ -120,7 +120,6 @@ Si les modifications apportées au manifeste, par exemple aux noms de fichier de
 Supprimer le contenu du dossier `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
 #### <a name="for-mac"></a>Pour Mac :
-Supprimer le contenu du dossier `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
 
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 

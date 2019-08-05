@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises des API communes pour Office
 description: ''
-ms.date: 07/11/2019
+ms.date: 07/17/2019
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: bd03113b7a91a4cc713cd00336a9582d2e47db5f
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: bd06b1955d426db4c2c777fe3a370ccaea774bb4
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771897"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940828"
 ---
 # <a name="office-common-api-requirement-sets"></a>Ensembles de conditions requises des API communes pour Office
 
@@ -19,9 +19,10 @@ Vous avez besoin d’informations sur l’endroit où les compléments sont pris
 
 Vous recherchez l’ensemble de conditions requises de l’API *propres à l’hôte* ? Reportez-vous aux ensembles de conditions requises des API suivants :
 
-- [Ensembles de conditions requises de l’API JavaScript pour Excel](./excel-api-requirement-sets.md) (ExcelApi)
+- [Ensembles de conditions requises de l’API JavaScript pour Excel](excel-api-requirement-sets.md) (ExcelApi)
 - [Ensembles de conditions requises de l’API JavaScript pour Word](word-api-requirement-sets.md) (WordApi)
 - [Ensembles de conditions requises de l’API JavaScript pour OneNote](onenote-api-requirement-sets.md) (OneNoteApi)
+- [Ensembles de conditions requises de l’API JavaScript pour PowerPoint](powerpoint-api-requirement-sets.md) (PowerPointApi)
 - [Présentation de l’ensemble de conditions requises pour les API Outlook](outlook-api-requirement-sets.md) (Mailbox)
 
 > [!IMPORTANT]
@@ -29,7 +30,7 @@ Vous recherchez l’ensemble de conditions requises de l’API *propres à l’h
 
 ## <a name="common-api-requirement-sets"></a>Ensembles de conditions requises des API communes
 
-Les sections suivantes répertorient les ensembles de conditions requises communs, les méthodes de chaque ensemble et les applications hôtes Office qui les prennent en charge. Tous ces ensembles de conditions requises d’API sont à la version 1.1, sauf indication contraire.
+Les sections suivantes répertorient les ensembles communs de conditions requises, les méthodes de chaque ensemble et les applications hôtes Office qui les prennent en charge. Tous ces ensembles de conditions requises d’API sont à la version 1.1., sauf indication contraire.
 
 ### <a name="activeview"></a>ActiveView
 
