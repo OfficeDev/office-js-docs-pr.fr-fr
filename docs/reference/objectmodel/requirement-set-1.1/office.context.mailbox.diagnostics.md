@@ -3,12 +3,12 @@ title: Office.context.mailbox.diagnostics – ensemble de conditions requises 1.
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 0f0f23b28d32e1a4910082269e27138262262706
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 32c4d7389555bf6dab7cff3822abb4a4edbebe80
+ms.sourcegitcommit: dc78ee2a89fe3d4cd6f748be1eec9081c1077502
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127442"
+ms.lasthandoff: 08/07/2019
+ms.locfileid: "36231297"
 ---
 # <a name="diagnostics"></a>diagnostics
 
@@ -48,7 +48,7 @@ Une chaîne qui peut avoir l’une des valeurs suivantes: `Outlook`, `OutlookIOS
 
 Obtient une chaîne qui représente la version de l’application hôte ou du serveur Exchange Server.
 
-Si le complément de messagerie est en cours d’exécution sur le client de bureau Outlook ou `hostVersion` sur iOS, la propriété renvoie la version de l’application hôte, Outlook. Dans Outlook sur le Web, la propriété renvoie la version du serveur Exchange. Exemple : la chaîne `15.0.468.0`.
+Si le complément de messagerie est en cours d’exécution sur le client de bureau Outlook ou `hostVersion` sur iOS, la propriété renvoie la version de l’application hôte, Outlook. Dans Outlook sur le Web, la propriété renvoie la version du serveur Exchange. La chaîne «15.0.468.0» est un exemple.
 
 ##### <a name="type"></a>Type
 

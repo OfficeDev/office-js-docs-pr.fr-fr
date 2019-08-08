@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Diagnostics-ensemble de conditions requises 1,7
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/05/2019
 localization_priority: Normal
-ms.openlocfilehash: 2a79dbe7d392b809cf0de0b5ee7096473ea3e197
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: e197374267d40056c6cb1dea8808e30f48eef65c
+ms.sourcegitcommit: dc78ee2a89fe3d4cd6f748be1eec9081c1077502
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127190"
+ms.lasthandoff: 08/07/2019
+ms.locfileid: "36231262"
 ---
 # <a name="diagnostics"></a>diagnostics
 
@@ -38,7 +38,7 @@ Fournit des informations de diagnostic à un complément Outlook.
 
 Obtient une chaîne qui représente le nom de l’application hôte.
 
-Chaîne qui peut avoir l’une des valeurs suivantes : `Outlook`, `Mac Outlook`, `OutlookIOS` ou `OutlookWebApp`.
+Chaîne qui peut avoir l’une des valeurs suivantes : `Outlook`, `OutlookWebApp`, `OutlookIOS` ou `OutlookAndroid`.
 
 ##### <a name="type"></a>Type
 
@@ -59,7 +59,7 @@ Chaîne qui peut avoir l’une des valeurs suivantes : `Outlook`, `Mac Outlook`
 
 Obtient une chaîne qui représente la version de l’application hôte ou du serveur Exchange Server.
 
-Si le complément de messagerie est en cours d’exécution sur le client de bureau Outlook ou `hostVersion` sur iOS, la propriété renvoie la version de l’application hôte, Outlook. Dans Outlook sur le Web, la propriété renvoie la version du serveur Exchange. Exemple : la chaîne `15.0.468.0`.
+Si le complément de messagerie est en cours d’exécution sur le client de bureau Outlook ou `hostVersion` sur iOS, la propriété renvoie la version de l’application hôte, Outlook. Dans Outlook sur le Web, la propriété renvoie la version du serveur Exchange. La chaîne «15.0.468.0» est un exemple.
 
 ##### <a name="type"></a>Type
 
