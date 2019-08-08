@@ -1,14 +1,14 @@
 ---
 title: Attacher un débogueur à partir du volet Office
 description: ''
-ms.date: 05/08/2019
+ms.date: 08/06/2019
 localization_priority: Priority
-ms.openlocfilehash: 03926ea18963b98f44702f7213dd1768e9924265
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 4433eccc165d616c7b8ebff428e1426c4b98be49
+ms.sourcegitcommit: dc78ee2a89fe3d4cd6f748be1eec9081c1077502
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952277"
+ms.lasthandoff: 08/07/2019
+ms.locfileid: "36231304"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>Attacher un débogueur à partir du volet Office
 
@@ -30,7 +30,7 @@ Dans Visual Studio, les fichiers de code s’affichent dans **l’Explorateur de
 
 > [!NOTE]
 > Si vous ne voyez pas le menu Personnalité, vous pouvez déboguer votre complément à l’aide de Visual Studio. Vérifiez que votre complément de volet Office est ouvert dans Office, puis procédez comme suit :
-
+>
 > 1. Dans Visual Studio, choisissez **DÉBOGUER** > **Attacher au processus**.
 > 2. Dans la boîte de dialogue **Attacher au processus**, choisissez tous les processus Iexplore.exe disponibles, puis choisissez le bouton **Attacher**.
 
