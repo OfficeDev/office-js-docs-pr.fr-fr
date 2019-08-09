@@ -3,12 +3,12 @@ title: Règles de style de visualisation de données pour les compléments Offic
 description: ''
 ms.date: 12/04/2017
 localization_priority: Normal
-ms.openlocfilehash: 77e7724725e87ccef60406d00a97d0957059cdd5
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 134153f0705c810e777fd47b27a5a440e2e7bc9e
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32447297"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268144"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Règles de style de visualisation de données pour les compléments Office
 
@@ -59,10 +59,9 @@ Choisissez des couleurs qui respectent les thèmes du système d’exploitation 
 
 Pour des recommandations sur l’utilisation des couleurs dans les visualisations de données, voir les rubriques suivantes :
 
-
 - [Pourquoi les couleurs de l’arc-en-ciel ne constituent pas la meilleure option pour les visualisations de données ?](https://www.poynter.org/2013/why-rainbow-colors-arent-always-the-best-options-for-data-visualizations/224413/)
 - [Color Brewer 2.0 : Conseils en matière de couleur pour la cartographie](http://colorbrewer2.org/)
-- [Je veux une teinte](http://tools.medialab.sciences-po.fr/iwanthue/)
+- [Je veux une teinte](https://tools.medialab.sciences-po.fr/iwanthue/)
 
 ### <a name="gridlines"></a>Quadrillage
 

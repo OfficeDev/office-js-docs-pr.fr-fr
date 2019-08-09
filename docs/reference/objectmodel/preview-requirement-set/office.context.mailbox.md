@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox-Preview-ensemble de conditions requises
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/06/2019
 localization_priority: Normal
-ms.openlocfilehash: f2383ea2d2e097b4e2f786bfb1aa8c06ab9eed0e
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 8f7345532e3c65f9945f424520c37f707634bf3b
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127596"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268718"
 ---
 # <a name="mailbox"></a>boîte aux lettres
 
@@ -561,10 +561,18 @@ Le complément doit utiliser la propriété `ewsUrl` pour déterminer l’URL à
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
-| `options` | Objet | &lt;optional&gt; | Littéral d’objet contenant une ou plusieurs des propriétés suivantes. |
+| `options` | Object | &lt;optional&gt; | Littéral d’objet contenant une ou plusieurs des propriétés suivantes. |
 | `options.isRest` | Boolean |  &lt;optional&gt; | Détermine si le jeton fourni est utilisé pour les API REST Outlook ou les services web Exchange. La valeur par défaut est `false`. |
 | `options.asyncContext` | Objet |  &lt;optional&gt; | Données d’état transmises à la méthode asynchrone. |
-|`callback`| fonction||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult). Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.|
+|`callback`| fonction||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.<br><br>Si une erreur s’est produite, `asyncResult.error` les `asyncResult.diagnostics` propriétés et peuvent fournir des informations supplémentaires.|
+
+##### <a name="errors"></a>Erreurs
+
+|Code d'erreur|Description|
+|------------|-------------|
+|`HTTPRequestFailure`|La demande a échoué. Consultez l’objet Diagnostics pour obtenir le code d’erreur HTTP.|
+|`InternalServerError`|Le serveur Exchange a renvoyé une erreur. Pour plus d’informations, consultez l’objet Diagnostics.|
+|`NetworkError`|L’utilisateur n’est plus connecté au réseau. Vérifiez votre connexion réseau, puis réessayez.|
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -610,8 +618,16 @@ En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
-|`callback`| function||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult). Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.|
+|`callback`| function||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.<br><br>Si une erreur s’est produite, `asyncResult.error` les `asyncResult.diagnostics` propriétés et peuvent fournir des informations supplémentaires.|
 |`userContext`| Objet| &lt;optional&gt;|Données d’état transmises à la méthode asynchrone.|
+
+##### <a name="errors"></a>Erreurs
+
+|Code d'erreur|Description|
+|------------|-------------|
+|`HTTPRequestFailure`|La demande a échoué. Consultez l’objet Diagnostics pour obtenir le code d’erreur HTTP.|
+|`InternalServerError`|Le serveur Exchange a renvoyé une erreur. Pour plus d’informations, consultez l’objet Diagnostics.|
+|`NetworkError`|L’utilisateur n’est plus connecté au réseau. Vérifiez votre connexion réseau, puis réessayez.|
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -646,8 +662,16 @@ La méthode `getUserIdentityTokenAsync` renvoie un jeton qui vous permet d’ide
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
-|`callback`| function||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.|
-|`userContext`| Object| &lt;optional&gt;|Données d’état transmises à la méthode asynchrone.|
+|`callback`| fonction||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.<br><br>Si une erreur s’est produite, `asyncResult.error` les `asyncResult.diagnostics` propriétés et peuvent fournir des informations supplémentaires.|
+|`userContext`| Objet| &lt;optional&gt;|Données d’état transmises à la méthode asynchrone.|
+
+##### <a name="errors"></a>Erreurs
+
+|Code d'erreur|Description|
+|------------|-------------|
+|`HTTPRequestFailure`|La demande a échoué. Consultez l’objet Diagnostics pour obtenir le code d’erreur HTTP.|
+|`InternalServerError`|Le serveur Exchange a renvoyé une erreur. Pour plus d’informations, consultez l’objet Diagnostics.|
+|`NetworkError`|L’utilisateur n’est plus connecté au réseau. Vérifiez votre connexion réseau, puis réessayez.|
 
 ##### <a name="requirements"></a>Configuration requise
 

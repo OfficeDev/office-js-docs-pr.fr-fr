@@ -1,14 +1,14 @@
 ---
 title: Office.context-ensemble de conditions requises 1.2
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 194532acc9262357a54e355fcfa9b15336cd95b0
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: a7621c3e9e29d229f66ee950119770cbc31d9fe3
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064290"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268494"
 ---
 # <a name="context"></a>context
 
@@ -23,6 +23,13 @@ L’espace de noms Office.context fournit des interfaces partagées qui sont uti
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
+
+##### <a name="members-and-methods"></a>Membres et méthodes
+
+| Membre | Type |
+|--------|------|
+| [displayLanguage](#displaylanguage-string) | Member |
+| [roamingSettings](#roamingsettings-roamingsettings) | Membre |
 
 ### <a name="namespaces"></a>Espaces de noms
 

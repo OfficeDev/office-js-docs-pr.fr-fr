@@ -1,14 +1,14 @@
 ---
 title: Espace de noms Office-ensemble de conditions requises 1,2
 description: ''
-ms.date: 04/24/2019
+ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 9dd492046df6325c5c2cdb04dbd1c8bc331b3471
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 126e9392980510656bf9da8cf760b616b623d153
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064395"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268704"
 ---
 # <a name="office"></a>Office
 
@@ -20,6 +20,14 @@ L’espace de noms Office fournit des interfaces partagées qui sont utilisées 
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
+
+##### <a name="members-and-methods"></a>Membres et méthodes
+
+| Membre | Type |
+|--------|------|
+| [AsyncResultStatus](#asyncresultstatus-string) | Member |
+| [CoercionType](#coerciontype-string) | Member |
+| [SourceProperty](#sourceproperty-string) | Membre |
 
 ### <a name="namespaces"></a>Espaces de noms
 

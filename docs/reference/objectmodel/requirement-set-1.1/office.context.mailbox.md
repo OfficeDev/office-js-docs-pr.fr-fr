@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox-ensemble de conditions requises 1,1
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 6bbb79af22730dd10ca2c5f1e56a96fb102ab137
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: dc7ea23ca68f46df0a3c1762ed7994420ea7d0c0
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064423"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268711"
 ---
 # <a name="mailbox"></a>boîte aux lettres
 
@@ -23,6 +23,20 @@ Permet d’accéder au modèle d’objet du complément Outlook pour Microsoft O
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restreinte|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
+
+##### <a name="members-and-methods"></a>Membres et méthodes
+
+| Membre | Type |
+|--------|------|
+| [ewsUrl](#ewsurl-string) | Membre |
+| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) | Méthode |
+| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | Méthode |
+| [displayAppointmentForm](#displayappointmentformitemid) | Méthode |
+| [displayMessageForm](#displaymessageformitemid) | Méthode |
+| [displayNewAppointmentForm](#displaynewappointmentformparameters) | Méthode |
+| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | Méthode |
+| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | Méthode |
+| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | Méthode |
 
 ### <a name="namespaces"></a>Espaces de noms
 
@@ -204,7 +218,7 @@ Si l’un des paramètres dépasse les limites définies en matière de taille o
 
 |Nom| Type| Description|
 |---|---|---|
-| `parameters` | Objet | Dictionnaire de paramètres décrivant le nouveau rendez-vous. |
+| `parameters` | Object | Dictionnaire de paramètres décrivant le nouveau rendez-vous. |
 | `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.1)&gt; | Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un objet `EmailAddressDetails` pour chacun des participants requis du rendez-vous. Le tableau est limité à 100 entrées maximum. |
 | `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.1)&gt; | Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un objet `EmailAddressDetails` pour chacun des participants facultatifs du rendez-vous. Le tableau est limité à 100 entrées maximum. |
 | `parameters.start` | Date | Objet `Date` spécifiant la date et l’heure de début du rendez-vous. |
@@ -256,8 +270,16 @@ Votre application doit disposer de l’autorisation **ReadItem** spécifiée dan
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
-|`callback`| function||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.|
+|`callback`| function||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.<br><br>Si une erreur s’est produite, `asyncResult.error` les `asyncResult.diagnostics` propriétés et peuvent fournir des informations supplémentaires.|
 |`userContext`| Objet| &lt;optional&gt;|Données d’état transmises à la méthode asynchrone.|
+
+##### <a name="errors"></a>Erreurs
+
+|Code d'erreur|Description|
+|------------|-------------|
+|`HTTPRequestFailure`|La demande a échoué. Consultez l’objet Diagnostics pour obtenir le code d’erreur HTTP.|
+|`InternalServerError`|Le serveur Exchange a renvoyé une erreur. Pour plus d’informations, consultez l’objet Diagnostics.|
+|`NetworkError`|L’utilisateur n’est plus connecté au réseau. Vérifiez votre connexion réseau, puis réessayez.|
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -289,8 +311,16 @@ La méthode `getUserIdentityTokenAsync` renvoie un jeton qui vous permet d’ide
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
-|`callback`| function||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.|
+|`callback`| function||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.<br><br>Si une erreur s’est produite, `asyncResult.error` les `asyncResult.diagnostics` propriétés et peuvent fournir des informations supplémentaires.|
 |`userContext`| Objet| &lt;optional&gt;|Données d’état transmises à la méthode asynchrone.|
+
+##### <a name="errors"></a>Erreurs
+
+|Code d'erreur|Description|
+|------------|-------------|
+|`HTTPRequestFailure`|La demande a échoué. Consultez l’objet Diagnostics pour obtenir le code d’erreur HTTP.|
+|`InternalServerError`|Le serveur Exchange a renvoyé une erreur. Pour plus d’informations, consultez l’objet Diagnostics.|
+|`NetworkError`|L’utilisateur n’est plus connecté au réseau. Vérifiez votre connexion réseau, puis réessayez.|
 
 ##### <a name="requirements"></a>Configuration requise
 

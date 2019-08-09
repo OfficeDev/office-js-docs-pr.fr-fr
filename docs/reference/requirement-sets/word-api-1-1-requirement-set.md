@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises WordApi 1,1
 ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: a2839a2553d42701956fd2e75a86564c133d9a93
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 30a4378a74b0d2848a5a913cbafd4f6eb780f519
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064913"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268571"
 ---
 # <a name="whats-new-in-word-javascript-api-11"></a>Nouveautés de l’API JavaScript pour Word 1,1
 
@@ -24,8 +24,6 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 |[Body](/javascript/api/word/word.body)|[clear()](/javascript/api/word/word.body#clear--)|Efface le contenu de l’objet de corps. L’utilisateur peut effectuer l’opération d’annulation sur le contenu effacé.|
 ||[getHtml()](/javascript/api/word/word.body#gethtml--)|Obtient une représentation HTML de l’objet Body. Lorsqu’elle est affichée dans une page Web ou dans la visionneuse HTML, la mise en forme est une correspondance ferme, mais pas exacte, avec la mise en forme du document. Cette méthode ne renvoie pas exactement le même code HTML pour le même document sur différentes plateformes (Windows, Mac, etc.). Si vous avez besoin d’une fidélité exacte ou d’une cohérence `Body.getOoxml()` entre les plateformes, utilisez et convertissez le code XML renvoyé en html.|
 ||[getOoxml()](/javascript/api/word/word.body#getooxml--)|Obtient la représentation OOXML (Office Open XML) de l’objet de corps.|
-||[Ignorepunct,](/javascript/api/word/word.body#ignorepunct)||
-||[ignorespace,](/javascript/api/word/word.body#ignorespace)||
 ||[insertBreak (breakType: Word. BreakType, insertLocation: Word. InsertLocation)](/javascript/api/word/word.body#insertbreak-breaktype--insertlocation-)|Insère un saut à l’emplacement spécifié du document principal. La valeur insertLocation peut être « Start » (début) ou « End » (fin).|
 ||[insertContentControl()](/javascript/api/word/word.body#insertcontentcontrol--)|Encadre l’objet de corps avec un contrôle de contenu de texte enrichi.|
 ||[insertFileFromBase64 (base64File: chaîne, insertLocation: Word. InsertLocation)](/javascript/api/word/word.body#insertfilefrombase64-base64file--insertlocation-)|Insère un document dans le corps à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
@@ -33,18 +31,13 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[insertOoxml (OOXML: chaîne, insertLocation: Word. InsertLocation)](/javascript/api/word/word.body#insertooxml-ooxml--insertlocation-)|Insère du code OOXML à l’emplacement spécifié.  La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
 ||[insertParagraph (paragraphText: chaîne, insertLocation: Word. InsertLocation)](/javascript/api/word/word.body#insertparagraph-paragraphtext--insertlocation-)|Insère un paragraphe à l’emplacement spécifié. La valeur insertLocation peut être « Start » (début) ou « End » (fin).|
 ||[insertText (Text: chaîne, insertLocation: Word. InsertLocation)](/javascript/api/word/word.body#inserttext-text--insertlocation-)|Insère du texte dans le corps à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
-||[matchCase](/javascript/api/word/word.body#matchcase)||
-||[matchPrefix](/javascript/api/word/word.body#matchprefix)||
-||[matchSuffix](/javascript/api/word/word.body#matchsuffix)||
-||[matchWholeWord](/javascript/api/word/word.body#matchwholeword)||
-||[matchWildcards](/javascript/api/word/word.body#matchwildcards)||
 ||[contentControls](/javascript/api/word/word.body#contentcontrols)|Obtient la collection d’objets de contrôle de contenu de texte enrichi dans le corps. En lecture seule.|
 ||[police](/javascript/api/word/word.body#font)|Obtient le format de texte du corps. Utilisez cette valeur pour obtenir et définir le nom, la taille, la couleur et d’autres propriétés de la police. En lecture seule.|
 ||[inlinePictures](/javascript/api/word/word.body#inlinepictures)|Obtient la collection d’objets InlinePicture dans le corps. La collection n’inclut pas d’images flottantes. En lecture seule.|
 ||[paragraphs](/javascript/api/word/word.body#paragraphs)|Obtient la collection d’objets Paragraph dans le corps. En lecture seule.|
 ||[ParentContentControl,](/javascript/api/word/word.body#parentcontentcontrol)|Obtient le contrôle de contenu qui contient le corps. S’il n’existe pas de contrôle de contenu parent. En lecture seule.|
 ||[text](/javascript/api/word/word.body#text)|Obtient le texte du corps. Utilisez la méthode insertText pour insérer du texte. En lecture seule.|
-||[recherche (Texted’origine: chaîne, searchOptions?: Word. SearchOptions)](/javascript/api/word/word.body#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Effectue une recherche avec le SearchOptions spécifié sur l’étendue de l’objet Body. Les résultats de la recherche sont un ensemble d’objets de plage.|
+||[recherche (Texted’origine: chaîne, searchOptions?: Word. SearchOptions)](/javascript/api/word/word.body#search-searchtext--searchoptions-)|Effectue une recherche avec le SearchOptions spécifié sur l’étendue de l’objet Body. Les résultats de la recherche sont un ensemble d’objets de plage.|
 ||[Select (selectionMode?: Word. SelectionMode)](/javascript/api/word/word.body#select-selectionmode-)|Sélectionne le corps et y accède via l’interface utilisateur de Word.|
 ||[style](/javascript/api/word/word.body#style)|Obtient ou définit le nom de style du corps. Utilisez cette propriété pour les noms des styles personnalisés et localisés. Pour utiliser les styles prédéfinis qui sont portables entre différents paramètres régionaux, voir la propriété « styleBuiltIn ».|
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[apparence](/javascript/api/word/word.contentcontrol#appearance)|Obtient ou définit l’apparence du contrôle de contenu. La valeur peut être’BoundingBox', 'Tags’ou’Hidden'.|
@@ -55,19 +48,12 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[Delete (keepContent: valeur booléenne)](/javascript/api/word/word.contentcontrol#delete-keepcontent-)|Supprime le contrôle de contenu et son contenu. Si keepContent est défini sur true, le contenu n’est pas supprimé.|
 ||[getHtml()](/javascript/api/word/word.contentcontrol#gethtml--)|Obtient une représentation HTML de l’objet de contrôle de contenu. Lorsqu’elle est affichée dans une page Web ou dans la visionneuse HTML, la mise en forme est une correspondance ferme, mais pas exacte, avec la mise en forme du document. Cette méthode ne renvoie pas exactement le même code HTML pour le même document sur différentes plateformes (Windows, Mac, etc.). Si vous avez besoin d’une fidélité exacte ou d’une cohérence `ContentControl.getOoxml()` entre les plateformes, utilisez et convertissez le code XML renvoyé en html.|
 ||[getOoxml()](/javascript/api/word/word.contentcontrol#getooxml--)|Obtient la représentation Office Open XML (OOXML) de l’objet de contrôle de contenu.|
-||[Ignorepunct,](/javascript/api/word/word.contentcontrol#ignorepunct)||
-||[ignorespace,](/javascript/api/word/word.contentcontrol#ignorespace)||
 ||[insertBreak (breakType: Word. BreakType, insertLocation: Word. InsertLocation)](/javascript/api/word/word.contentcontrol#insertbreak-breaktype--insertlocation-)|Insère un saut à l’emplacement spécifié du document principal. La valeur insertLocation peut être «Start», «end», «Before» ou «after». Cette méthode ne peut pas être utilisée avec les contrôles de contenu «RichTextTable», «RichTextTableRow» et «RichTextTableCell».|
 ||[insertFileFromBase64 (base64File: chaîne, insertLocation: Word. InsertLocation)](/javascript/api/word/word.contentcontrol#insertfilefrombase64-base64file--insertlocation-)|Insère un document dans le contrôle de contenu à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
 ||[insertHtml (HTML: chaîne, insertLocation: Word. InsertLocation)](/javascript/api/word/word.contentcontrol#inserthtml-html--insertlocation-)|Insère du code HTML dans le contrôle de contenu, à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
 ||[insertOoxml (OOXML: chaîne, insertLocation: Word. InsertLocation)](/javascript/api/word/word.contentcontrol#insertooxml-ooxml--insertlocation-)|Insère OOXML dans le contrôle de contenu à l’emplacement spécifié.  La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
 ||[insertParagraph (paragraphText: chaîne, insertLocation: Word. InsertLocation)](/javascript/api/word/word.contentcontrol#insertparagraph-paragraphtext--insertlocation-)|Insère un paragraphe à l’emplacement spécifié. La valeur insertLocation peut être «Start», «end», «Before» ou «after».|
 ||[insertText (Text: chaîne, insertLocation: Word. InsertLocation)](/javascript/api/word/word.contentcontrol#inserttext-text--insertlocation-)|Insère du texte dans le contrôle de contenu, à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
-||[matchCase](/javascript/api/word/word.contentcontrol#matchcase)||
-||[matchPrefix](/javascript/api/word/word.contentcontrol#matchprefix)||
-||[matchSuffix](/javascript/api/word/word.contentcontrol#matchsuffix)||
-||[matchWholeWord](/javascript/api/word/word.contentcontrol#matchwholeword)||
-||[matchWildcards](/javascript/api/word/word.contentcontrol#matchwildcards)||
 ||[PlaceholderText,](/javascript/api/word/word.contentcontrol#placeholdertext)|Obtient ou définit le texte de l’espace réservé du contrôle de contenu. Ce texte apparaît de façon estompée lorsque le contrôle de contenu est vide.|
 ||[contentControls](/javascript/api/word/word.contentcontrol#contentcontrols)|Obtient la collection d’objets de contrôle de contenu compris dans le contrôle de contenu. En lecture seule.|
 ||[police](/javascript/api/word/word.contentcontrol#font)|Obtient le format de texte du contrôle de contenu. Utilisez cette propriété pour obtenir et définir le nom de la police, la taille, la couleur et d’autres propriétés. En lecture seule.|
@@ -78,7 +64,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[text](/javascript/api/word/word.contentcontrol#text)|Obtient le texte du contrôle de contenu. En lecture seule.|
 ||[type](/javascript/api/word/word.contentcontrol#type)|Obtient le type du contrôle de contenu. Actuellement, seuls les contrôles de contenu à texte enrichi sont pris en charge. En lecture seule.|
 ||[removeWhenEdited](/javascript/api/word/word.contentcontrol#removewhenedited)|Obtient ou définit une valeur qui indique si le contrôle de contenu doit être supprimé après modification. Non compatible avec cannotDelete.|
-||[recherche (Texted’origine: chaîne, searchOptions?: Word. SearchOptions)](/javascript/api/word/word.contentcontrol#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Effectue une recherche avec le SearchOptions spécifié dans l’étendue de l’objet de contrôle de contenu. Les résultats de la recherche sont un ensemble d’objets de plage.|
+||[recherche (Texted’origine: chaîne, searchOptions?: Word. SearchOptions)](/javascript/api/word/word.contentcontrol#search-searchtext--searchoptions-)|Effectue une recherche avec le SearchOptions spécifié dans l’étendue de l’objet de contrôle de contenu. Les résultats de la recherche sont un ensemble d’objets de plage.|
 ||[Select (selectionMode?: Word. SelectionMode)](/javascript/api/word/word.contentcontrol#select-selectionmode-)|Sélectionne le contrôle de contenu. Word fait défiler le document jusqu’à accéder à la sélection.|
 ||[style](/javascript/api/word/word.contentcontrol#style)|Obtient ou définit le nom du style pour le contrôle de contenu. Utilisez cette propriété pour les noms des styles personnalisés et localisés. Pour utiliser les styles prédéfinis qui sont portables entre différents paramètres régionaux, voir la propriété « styleBuiltIn ».|
 ||[Numéro](/javascript/api/word/word.contentcontrol#tag)|Obtient ou définit un indicateur pour identifier un contrôle de contenu.|
@@ -121,8 +107,6 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[FirstLineIndent,](/javascript/api/word/word.paragraph#firstlineindent)|Renvoie ou définit la valeur, en points, du retrait de première ligne ou du retrait négatif. Utilisez une valeur positive pour définir un retrait de première ligne et une valeur négative pour définir un retrait négatif.|
 ||[getHtml()](/javascript/api/word/word.paragraph#gethtml--)|Obtient une représentation HTML de l’objet Paragraph. Lorsqu’elle est affichée dans une page Web ou dans la visionneuse HTML, la mise en forme est une correspondance ferme, mais pas exacte, avec la mise en forme du document. Cette méthode ne renvoie pas exactement le même code HTML pour le même document sur différentes plateformes (Windows, Mac, etc.). Si vous avez besoin d’une fidélité exacte ou d’une cohérence `Paragraph.getOoxml()` entre les plateformes, utilisez et convertissez le code XML renvoyé en html.|
 ||[getOoxml()](/javascript/api/word/word.paragraph#getooxml--)|Obtient la représentation Office Open XML (OOXML) de l’objet de paragraphe.|
-||[Ignorepunct,](/javascript/api/word/word.paragraph#ignorepunct)||
-||[ignorespace,](/javascript/api/word/word.paragraph#ignorespace)||
 ||[insertBreak (breakType: Word. BreakType, insertLocation: Word. InsertLocation)](/javascript/api/word/word.paragraph#insertbreak-breaktype--insertlocation-)|Insère un saut à l’emplacement spécifié du document principal. La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).|
 ||[insertContentControl()](/javascript/api/word/word.paragraph#insertcontentcontrol--)|Encadre l’objet de paragraphe avec un contrôle de contenu de texte enrichi.|
 ||[insertFileFromBase64 (base64File: chaîne, insertLocation: Word. InsertLocation)](/javascript/api/word/word.paragraph#insertfilefrombase64-base64file--insertlocation-)|Insère un document dans le paragraphe à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
@@ -135,11 +119,6 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[lineSpacing](/javascript/api/word/word.paragraph#linespacing)|Obtient ou définit l’interligne, en points, pour le paragraphe spécifié. Dans l’interface utilisateur de Word, cette valeur est divisée par 12.|
 ||[LineUnitAfter,](/javascript/api/word/word.paragraph#lineunitafter)|Obtient ou définit la quantité d’espace, dans le quadrillage, après le paragraphe.|
 ||[LineUnitBefore,](/javascript/api/word/word.paragraph#lineunitbefore)|Obtient ou définit la quantité d’espace, en lignes de quadrillage, avant le paragraphe.|
-||[matchCase](/javascript/api/word/word.paragraph#matchcase)||
-||[matchPrefix](/javascript/api/word/word.paragraph#matchprefix)||
-||[matchSuffix](/javascript/api/word/word.paragraph#matchsuffix)||
-||[matchWholeWord](/javascript/api/word/word.paragraph#matchwholeword)||
-||[matchWildcards](/javascript/api/word/word.paragraph#matchwildcards)||
 ||[OutlineLevel,](/javascript/api/word/word.paragraph#outlinelevel)|Obtient ou définit le niveau hiérarchique pour le paragraphe.|
 ||[contentControls](/javascript/api/word/word.paragraph#contentcontrols)|Obtient la collection d’objets de contrôle de contenu dans le paragraphe. En lecture seule.|
 ||[police](/javascript/api/word/word.paragraph#font)|Obtient le format de texte du paragraphe. Utilisez cette propriété pour obtenir et définir le nom de la police, la taille, la couleur et d’autres propriétés. En lecture seule.|
@@ -147,7 +126,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[ParentContentControl,](/javascript/api/word/word.paragraph#parentcontentcontrol)|Obtient le contrôle de contenu qui contient le paragraphe. S’il n’existe pas de contrôle de contenu parent. En lecture seule.|
 ||[text](/javascript/api/word/word.paragraph#text)|Obtient le texte du paragraphe. En lecture seule.|
 ||[rightIndent](/javascript/api/word/word.paragraph#rightindent)|Obtient ou définit la valeur de retrait à droite, en points, pour le paragraphe.|
-||[recherche (Texted’origine: chaîne, searchOptions?: Word. SearchOptions})](/javascript/api/word/word.paragraph#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Effectue une recherche avec le SearchOptions spécifié sur l’étendue de l’objet Paragraph. Les résultats de la recherche sont un ensemble d’objets de plage.|
+||[recherche (Texted’origine: chaîne, searchOptions?: Word. SearchOptions})](/javascript/api/word/word.paragraph#search-searchtext--searchoptions-)|Effectue une recherche avec le SearchOptions spécifié sur l’étendue de l’objet Paragraph. Les résultats de la recherche sont un ensemble d’objets de plage.|
 ||[Select (selectionMode?: Word. SelectionMode)](/javascript/api/word/word.paragraph#select-selectionmode-)|Sélectionne le paragraphe et y accède via l’interface utilisateur de Word.|
 ||[spaceAfter](/javascript/api/word/word.paragraph#spaceafter)|Obtient ou définit l’espacement, en points, après le paragraphe.|
 ||[spaceBefore](/javascript/api/word/word.paragraph#spacebefore)|Obtient ou définit l’espacement, en points, avant le paragraphe.|
@@ -157,8 +136,6 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[delete()](/javascript/api/word/word.range#delete--)|Supprime la plage et son contenu du document.|
 ||[getHtml()](/javascript/api/word/word.range#gethtml--)|Obtient une représentation HTML de l’objet de plage. Lorsqu’elle est affichée dans une page Web ou dans la visionneuse HTML, la mise en forme est une correspondance ferme, mais pas exacte, avec la mise en forme du document. Cette méthode ne renvoie pas exactement le même code HTML pour le même document sur différentes plateformes (Windows, Mac, etc.). Si vous avez besoin d’une fidélité exacte ou d’une cohérence `Range.getOoxml()` entre les plateformes, utilisez et convertissez le code XML renvoyé en html.|
 ||[getOoxml()](/javascript/api/word/word.range#getooxml--)|Obtient la représentation OOXML de l’objet de plage.|
-||[Ignorepunct,](/javascript/api/word/word.range#ignorepunct)||
-||[ignorespace,](/javascript/api/word/word.range#ignorespace)||
 ||[insertBreak (breakType: Word. BreakType, insertLocation: Word. InsertLocation)](/javascript/api/word/word.range#insertbreak-breaktype--insertlocation-)|Insère un saut à l’emplacement spécifié du document principal. La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).|
 ||[insertContentControl()](/javascript/api/word/word.range#insertcontentcontrol--)|Encadre l’objet de plage avec un contrôle de contenu de texte enrichi.|
 ||[insertFileFromBase64 (base64File: chaîne, insertLocation: Word. InsertLocation)](/javascript/api/word/word.range#insertfilefrombase64-base64file--insertlocation-)|Insère un document à l’emplacement spécifié. La valeur insertLocation peut être «Replace», «Start», «end», «Before» ou «after».|
@@ -166,17 +143,12 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[insertOoxml (OOXML: chaîne, insertLocation: Word. InsertLocation)](/javascript/api/word/word.range#insertooxml-ooxml--insertlocation-)|Insère du code OOXML à l’emplacement spécifié.  La valeur insertLocation peut être «Replace», «Start», «end», «Before» ou «after».|
 ||[insertParagraph (paragraphText: chaîne, insertLocation: Word. InsertLocation)](/javascript/api/word/word.range#insertparagraph-paragraphtext--insertlocation-)|Insère un paragraphe à l’emplacement spécifié. La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).|
 ||[insertText (Text: chaîne, insertLocation: Word. InsertLocation)](/javascript/api/word/word.range#inserttext-text--insertlocation-)|Insère du texte à l’emplacement spécifié. La valeur insertLocation peut être «Replace», «Start», «end», «Before» ou «after».|
-||[matchCase](/javascript/api/word/word.range#matchcase)||
-||[matchPrefix](/javascript/api/word/word.range#matchprefix)||
-||[matchSuffix](/javascript/api/word/word.range#matchsuffix)||
-||[matchWholeWord](/javascript/api/word/word.range#matchwholeword)||
-||[matchWildcards](/javascript/api/word/word.range#matchwildcards)||
 ||[contentControls](/javascript/api/word/word.range#contentcontrols)|Obtient la collection d’objets de contrôle de contenu dans la plage. En lecture seule.|
 ||[police](/javascript/api/word/word.range#font)|Obtient le format de texte de la plage. Utilisez cette propriété pour obtenir et définir le nom de la police, la taille, la couleur et d’autres propriétés. En lecture seule.|
 ||[paragraphs](/javascript/api/word/word.range#paragraphs)|Obtient la collection d’objets Paragraph dans la plage. En lecture seule.|
 ||[ParentContentControl,](/javascript/api/word/word.range#parentcontentcontrol)|Obtient le contrôle de contenu qui contient la plage. S’il n’existe pas de contrôle de contenu parent. En lecture seule.|
 ||[text](/javascript/api/word/word.range#text)|Obtient le texte de la plage. En lecture seule.|
-||[recherche (Texted’origine: chaîne, searchOptions?: Word. SearchOptions)](/javascript/api/word/word.range#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Effectue une recherche avec le SearchOptions spécifié sur l’étendue de l’objet Range. Les résultats de la recherche sont un ensemble d’objets de plage.|
+||[recherche (Texted’origine: chaîne, searchOptions?: Word. SearchOptions)](/javascript/api/word/word.range#search-searchtext--searchoptions-)|Effectue une recherche avec le SearchOptions spécifié sur l’étendue de l’objet Range. Les résultats de la recherche sont un ensemble d’objets de plage.|
 ||[Select (selectionMode?: Word. SelectionMode)](/javascript/api/word/word.range#select-selectionmode-)|Sélectionne la plage et y accède via l’interface utilisateur de Word.|
 ||[style](/javascript/api/word/word.range#style)|Obtient ou définit le nom du style de la plage. Utilisez cette propriété pour les noms des styles personnalisés et localisés. Pour utiliser les styles prédéfinis qui sont portables entre différents paramètres régionaux, voir la propriété « styleBuiltIn ».|
 |[RangeCollection](/javascript/api/word/word.rangecollection)|[items](/javascript/api/word/word.rangecollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|

@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises WordApi 1,3
 ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 24a960b5ddab1ba96b0b45d155e1f70cb0f1a35c
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: fe72a3047fdbdd719fd115858e4010fbc2c639e5
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064878"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268557"
 ---
 # <a name="whats-new-in-word-javascript-api-13"></a>Nouveautés de l’API JavaScript 1.3 pour Word
 
@@ -201,16 +201,9 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[getRange (rangeLocation?: Word. RangeLocation)](/javascript/api/word/word.table#getrange-rangelocation-)|Obtient la plage qui contient ce tableau, ou la plage située au début ou à la fin du tableau.|
 ||[headerRowCount](/javascript/api/word/word.table#headerrowcount)|Obtient et définit le nombre de lignes d’en-tête.|
 ||[horizontalAlignment](/javascript/api/word/word.table#horizontalalignment)|Obtient et définit l’alignement horizontal de chaque cellule du tableau. La valeur peut être «Left», «centered», «Right» ou «Justified».|
-||[Ignorepunct,](/javascript/api/word/word.table#ignorepunct)||
-||[ignorespace,](/javascript/api/word/word.table#ignorespace)||
 ||[insertContentControl()](/javascript/api/word/word.table#insertcontentcontrol--)|Insère un contrôle de contenu dans le tableau.|
 ||[insertParagraph (paragraphText: chaîne, insertLocation: Word. InsertLocation)](/javascript/api/word/word.table#insertparagraph-paragraphtext--insertlocation-)|Insère un paragraphe à l’emplacement spécifié. La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).|
 ||[insertTable (rowCount: nombre, columnCount: nombre, insertLocation: Word. InsertLocation, Values?: String [] [])](/javascript/api/word/word.table#inserttable-rowcount--columncount--insertlocation--values-)|Insère un tableau avec le nombre spécifié de lignes et de colonnes. La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).|
-||[matchCase](/javascript/api/word/word.table#matchcase)||
-||[matchPrefix](/javascript/api/word/word.table#matchprefix)||
-||[matchSuffix](/javascript/api/word/word.table#matchsuffix)||
-||[matchWholeWord](/javascript/api/word/word.table#matchwholeword)||
-||[matchWildcards](/javascript/api/word/word.table#matchwildcards)||
 ||[police](/javascript/api/word/word.table#font)|Obtient la police. Utilisez cette propriété pour obtenir et définir le nom de la police, la taille, la couleur et d’autres propriétés. En lecture seule.|
 ||[isUniform](/javascript/api/word/word.table#isuniform)|Indique si toutes les lignes du tableau sont uniformes. En lecture seule.|
 ||[NestingLevel,](/javascript/api/word/word.table#nestinglevel)|Obtient le niveau d’imbrication du tableau. Les tableaux de niveau supérieur ont le niveau 1. En lecture seule.|
@@ -224,7 +217,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[Stopp](/javascript/api/word/word.table#rowcount)|Obtient le nombre de lignes dans le tableau. En lecture seule.|
 ||[rows](/javascript/api/word/word.table#rows)|Obtient toutes les lignes du tableau. En lecture seule.|
 ||[emplois](/javascript/api/word/word.table#tables)|Obtient les tableaux enfants imbriqués au niveau de profondeur suivant. En lecture seule.|
-||[recherche (Texted’origine: chaîne, searchOptions?: Word. SearchOptions](/javascript/api/word/word.table#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Effectue une recherche avec le SearchOptions spécifié sur l’étendue de l’objet table. Les résultats de la recherche sont un ensemble d’objets de plage.|
+||[recherche (Texted’origine: chaîne, searchOptions?: Word. SearchOptions](/javascript/api/word/word.table#search-searchtext--searchoptions-)|Effectue une recherche avec le SearchOptions spécifié sur l’étendue de l’objet table. Les résultats de la recherche sont un ensemble d’objets de plage.|
 ||[Select (selectionMode?: Word. SelectionMode)](/javascript/api/word/word.table#select-selectionmode-)|Sélectionne le tableau ou la position de début ou de fin du tableau et y accède dans l’interface utilisateur de Word.|
 ||[setCellPadding (cellPaddingLocation: Word. CellPaddingLocation, cellPadding: nombre)](/javascript/api/word/word.table#setcellpadding-cellpaddinglocation--cellpadding-)|Définit la marge intérieure des cellules en points.|
 ||[shadingColor](/javascript/api/word/word.table#shadingcolor)|Obtient et définit la couleur d’ombrage. La couleur est spécifiée au format « #RRVVBB » ou par son nom de couleur.|
@@ -274,14 +267,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[getNext ()](/javascript/api/word/word.tablerow#getnext--)|Obtient la ligne suivante. Lève une exception si cette ligne est la dernière.|
 ||[getNextOrNullObject ()](/javascript/api/word/word.tablerow#getnextornullobject--)|Obtient la ligne suivante. Renvoie un objet null si cette ligne est la dernière.|
 ||[horizontalAlignment](/javascript/api/word/word.tablerow#horizontalalignment)|Obtient et définit l’alignement horizontal de chaque cellule de la ligne. La valeur peut être «Left», «centered», «Right» ou «Justified».|
-||[Ignorepunct,](/javascript/api/word/word.tablerow#ignorepunct)||
-||[ignorespace,](/javascript/api/word/word.tablerow#ignorespace)||
 ||[insertRows (insertLocation: Word. InsertLocation, rowCount: nombre, Values?: chaîne [] [])](/javascript/api/word/word.tablerow#insertrows-insertlocation--rowcount--values-)|Insère des lignes en utilisant cette ligne en tant que modèle. Si les valeurs sont spécifiées, insère les valeurs sur de nouvelles lignes.|
-||[matchCase](/javascript/api/word/word.tablerow#matchcase)||
-||[matchPrefix](/javascript/api/word/word.tablerow#matchprefix)||
-||[matchSuffix](/javascript/api/word/word.tablerow#matchsuffix)||
-||[matchWholeWord](/javascript/api/word/word.tablerow#matchwholeword)||
-||[matchWildcards](/javascript/api/word/word.tablerow#matchwildcards)||
 ||[preferredHeight](/javascript/api/word/word.tablerow#preferredheight)|Obtient et définit la hauteur de ligne préférée en points.|
 ||[cellCount](/javascript/api/word/word.tablerow#cellcount)|Obtient le nombre de cellules dans la ligne. En lecture seule.|
 ||[cases](/javascript/api/word/word.tablerow#cells)|Obtient les cellules. En lecture seule.|
@@ -289,7 +275,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[IsHeader,](/javascript/api/word/word.tablerow#isheader)|Vérifie si la ligne est une ligne d’en-tête. En lecture seule. Pour définir le nombre de lignes d’en-tête, utilisez HeaderRowCount sur l’objet de table.|
 ||[parentTable](/javascript/api/word/word.tablerow#parenttable)|Obtient la table parente. En lecture seule.|
 ||[rowIndex](/javascript/api/word/word.tablerow#rowindex)|Obtient l’index de la ligne dans le tableau parent correspondant. En lecture seule.|
-||[recherche (Texted’origine: chaîne, searchOptions?: Word. SearchOptions)](/javascript/api/word/word.tablerow#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Effectue une recherche avec le SearchOptions spécifié sur l’étendue de la ligne. Les résultats de la recherche sont un ensemble d’objets de plage.|
+||[recherche (Texted’origine: chaîne, searchOptions?: Word. SearchOptions)](/javascript/api/word/word.tablerow#search-searchtext--searchoptions-)|Effectue une recherche avec le SearchOptions spécifié sur l’étendue de la ligne. Les résultats de la recherche sont un ensemble d’objets de plage.|
 ||[Select (selectionMode?: Word. SelectionMode)](/javascript/api/word/word.tablerow#select-selectionmode-)|Sélectionne la ligne et y accède via l’interface utilisateur de Word.|
 ||[setCellPadding (cellPaddingLocation: Word. CellPaddingLocation, cellPadding: nombre)](/javascript/api/word/word.tablerow#setcellpadding-cellpaddinglocation--cellpadding-)|Définit la marge intérieure des cellules en points.|
 ||[shadingColor](/javascript/api/word/word.tablerow#shadingcolor)|Obtient et définit la couleur d’ombrage. La couleur est spécifiée au format « #RRVVBB » ou par son nom de couleur.|

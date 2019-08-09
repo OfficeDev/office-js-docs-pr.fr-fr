@@ -3,12 +3,12 @@ title: Comment trouver l’ordre approprié d’éléments manifeste
 description: Découvrez comment trouver l’ordre correct dans lequel placer les éléments enfants dans un élément parent.
 ms.date: 11/16/2018
 localization_priority: Normal
-ms.openlocfilehash: 8eeaedffcc143b0e8d61e9c151f3786b67a0e3fc
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a7ec2e5b0dee5be651e4670effd86bc4acbac028
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449728"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268120"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>Comment trouver l’ordre approprié d’éléments manifeste
 
@@ -19,7 +19,7 @@ Le classement requis est spécifié dans les fichiers XSD dans le dossier [sché
 Par exemple, dans l’`<OfficeApp>`élément, le `<Id>`,`<Version>` ,`<ProviderName>` doit apparaître dans cet ordre. Si un élément `<AlternateId>` est ajouté, il doit être compris entre l’élément `<Id>` et `<Version>`. Votre manifeste ne sera pas valide et votre complément ne sera pas chargé, si un élément n’est pas dans l’ordre.
 
 > [!NOTE]
-> Le [validateur complément Office](/office/dev/add-ins/testing/troubleshoot-manifest#validate-your-manifest-with-the-office-add-in-validator) utilise le même message d’erreur lorsqu’un élément est dans le mauvais ordre que lorsqu’un élément est sous le mauvais parent. L’erreur indique que l’élément enfant n’est pas un enfant valide de l’élément parent. Si vous recevez un message d’erreur mais que la documentation de référence pour l’élément enfant indique qu’elle *est* valide pour le parent, alors le problème est probablement que l’enfant a été placé dans l’ordre incorrect.
+> Le [validateur au sein de la boîte à outils Office](../testing/troubleshoot-manifest.md#validate-your-manifest-with-office-toolbox) utilise le même message d’erreur lorsqu’un élément est absent de l’ordre lorsqu’un élément est sous un parent incorrect. L’erreur indique que l’élément enfant n’est pas un enfant valide de l’élément parent. Si vous recevez un message d’erreur mais que la documentation de référence pour l’élément enfant indique qu’elle *est* valide pour le parent, alors le problème est probablement que l’enfant a été placé dans l’ordre incorrect.
 
 Pour rechercher l’ordre correct pour les éléments enfants d’un élément parent donné, procédez comme suit. (C’est un processus simplifié, car les fichiers XSD sont relativement complexes. L’analyse entière des fichiers XSD est hors de l’étendue de ce document.)
 

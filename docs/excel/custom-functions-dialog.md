@@ -3,16 +3,16 @@ ms.date: 06/18/2019
 description: Créez une boîte de dialogue via des fonctions personnalisées dans Excel à l’aide de JavaScript.
 title: Afficher la boîte de dialogue d’une fonction personnalisée
 localization_priority: Priority
-ms.openlocfilehash: b8a2a6a68f23121fe4d3931c13fd45af6034c7d2
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 67a61bde409d45b2c96118de95f0839e7a73ddfe
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940632"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268151"
 ---
 # <a name="display-a-dialog-box-from-a-custom-function"></a>Afficher la boîte de dialogue d’une fonction personnalisée
 
-Si votre fonction personnalisée doit interagir avec l’utilisateur, vous pouvez créer une boîte de dialogue à l’aide de l’[objet`Office.Dialog`](/javascript/api/office-runtime/officeruntime.dialog?view=office-js). Un scénario classique pour l’utilisation de la boîte de dialogue consiste à authentifier un utilisateur afin que votre fonction personnalisée puisse accéder à un service web. Pour plus d’informations sur l’authentification de fonctions personnalisées, voir[authentification des fonctions personnalisées](./custom-functions-authentication.md).
+Si votre fonction personnalisée doit interagir avec l’utilisateur, vous pouvez créer une boîte de dialogue à l’aide de l’[objet`Office.Dialog`](/javascript/api/office-runtime/officeruntime.dialog). Un scénario classique pour l’utilisation de la boîte de dialogue consiste à authentifier un utilisateur afin que votre fonction personnalisée puisse accéder à un service web. Pour plus d’informations sur l’authentification de fonctions personnalisées, voir[authentification des fonctions personnalisées](./custom-functions-authentication.md).
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 

@@ -5,12 +5,12 @@ ms.date: 07/09/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 9e1dc93079a3930fc5ebd88ef4d91ef2b899e51c
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 4b74463eafd5ac1b70e59cef6ef1f9f33cf0ffa2
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771806"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268179"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Didacticiel : créer des fonctions personnalisées dans Excel
 
@@ -64,9 +64,9 @@ Dans ce didacticiel, vous allez :
 
 4. Démarrez le serveur web local qui est exécuté dans Node.js. Vous pouvez essayer le complément de fonction personnalisée dans Excel sur le Web ou Windows.
 
-# <a name="excel-on-windowstabexcel-windows"></a>[Excel sur Windows](#tab/excel-windows)
+# <a name="excel-on-windows-or-mactabexcel-windows"></a>[Excel sur Windows ou Mac](#tab/excel-windows)
 
-Pour tester votre complément dans Excel sous Windows, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur Web local démarre et Excel s’ouvre avec votre complément chargé.
+Pour tester votre complément dans Excel sous Windows ou Mac, exécutez la commande suivante: Lorsque vous exécutez cette commande, le serveur Web local démarre et Excel s’ouvre avec votre complément chargé.
 
 ```command&nbsp;line
 npm run start:desktop
@@ -146,9 +146,9 @@ Intégration de données à partir du Web est un excellent moyen pour étendre E
     npm run build
     ```
 
-4. Procédez comme suit (pour Excel sur le Web ou Windows) pour réenregistrer le complément dans Excel. Vous devez effectuer ces étapes avant que la nouvelle fonction ne soit disponible.
+4. Procédez comme suit (pour Excel sur le Web, Windows ou Mac) pour réenregistrer le complément dans Excel. Vous devez effectuer ces étapes avant que la nouvelle fonction ne soit disponible.
 
-### <a name="excel-on-windowstabexcel-windows"></a>[Excel sur Windows](#tab/excel-windows)
+### <a name="excel-on-windows-or-mactabexcel-windows"></a>[Excel sur Windows ou Mac](#tab/excel-windows)
 
 1. Fermez Excel, puis ouvrez de nouveau Excel.
 
@@ -214,9 +214,9 @@ function clock(invocation) {
     npm run build
     ```
 
-3. Procédez comme suit (pour Excel sur le Web ou Windows) pour réenregistrer le complément dans Excel. Vous devez effectuer ces étapes avant que la nouvelle fonction ne soit disponible. 
+3. Procédez comme suit (pour Excel sur le Web, Windows ou Mac) pour réenregistrer le complément dans Excel. Vous devez effectuer ces étapes avant que la nouvelle fonction ne soit disponible. 
 
-# <a name="excel-on-windowstabexcel-windows"></a>[Excel sur Windows](#tab/excel-windows)
+# <a name="excel-on-windows-or-mactabexcel-windows"></a>[Excel sur Windows ou Mac](#tab/excel-windows)
 
 1. Fermez Excel, puis ouvrez de nouveau Excel.
 

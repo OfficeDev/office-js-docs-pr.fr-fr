@@ -1,14 +1,14 @@
 ---
 title: Codes d’erreur de l’API JavaScript pour Office
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/06/2019
 localization_priority: Normal
-ms.openlocfilehash: b259d592d465dfae6569ecc2a442f249104916af
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: f51d7860c0e7b4de530d30326f56380b28b03736
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128530"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268563"
 ---
 # <a name="javascript-api-for-office-error-codes"></a>Codes d’erreur de l’API JavaScript pour Office
 
@@ -81,6 +81,7 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 |8021|En dehors de la plage|La valeur d’index de colonne se trouve en dehors de la plage autorisée. Utilisez une valeur (supérieure ou égale à 0) inférieure au nombre de colonnes.|L’index de colonne est supérieur à l’index de colonne le plus élevé du tableau ou est inférieur à 0.|
 |8022|En dehors de la plage|La valeur se trouve en dehors de la plage autorisée.|Certaines des valeurs dans le format se trouvent en dehors des plages prises en charge.|
 |9016|Autorisation refusée|Autorisation refusée|L’accès est refusé.|
+|9041|Erreur réseau|L’utilisateur n’est plus connecté au réseau. Vérifiez votre connexion réseau, puis réessayez.|L’utilisateur n’a plus d’accès réseau ou Internet.|
 |12002|||Un des éléments suivants :<br> - Aucune page n’existe à l’URL qui a été transmise à `displayDialogAsync`.<br> - La page qui a été transmise à `displayDialogAsync` a été chargée, mais la boîte de dialogue a été redirigée vers une page introuvable ou impossible à charger, ou a été redirigée vers une URL dont la syntaxe n’est pas valide. Erreur signalée dans la boîte de dialogue. Elle déclenche un événement `DialogEventReceived` dans la page hôte.|
 |12003|||La boîte de dialogue a été redirigée vers une URL avec le protocole HTTP. C’est le protocole HTTPS qui est requis. Erreur signalée dans la boîte de dialogue. Elle déclenche un événement `DialogEventReceived` dans la page hôte.|
 |12004|||Le domaine de l’URL transmis à `displayDialogAsync` n’est pas approuvé. Le domaine doit être le même domaine que celui de la page hôte (y compris le protocole et le numéro de port). Erreur générée par l’appel de `displayDialogAsync`.|
@@ -103,7 +104,7 @@ Le tableau suivant résume le comportement de liaison dans Excel.
 |Matrice|Plage de cellules (y compris dans un tableau et une cellule unique)|Une liaison de type _matrice_ est créée dans les cellules sélectionnées. Aucune modification dans le document n’est attendue.|
 |Matrice|Texte sélectionné dans la cellule|Une liaison de type _matrice_ est créée dans la cellule entière. Aucune modification dans le document n’est attendue.|
 |Matrice|Sélection multiple/sélection incorrecte (par exemple, l’utilisateur sélectionne une image, un objet ou un objet Word Art.)|Impossible de créer la liaison.|
-|Tableau|Plage de cellules (y compris une cellule unique)|Impossible de créer la liaison.|
+|Table|Plage de cellules (y compris une cellule unique)|Impossible de créer la liaison.|
 |Table|Plage de cellules dans un tableau (comprend une seule cellule dans un tableau, le tableau entier, ou du texte dans la cellule d’un tableau)|Une liaison est créée dans le tableau entier.|
 |Table|Demi-sélection dans un tableau et demie sélection en dehors du tableau|Impossible de créer la liaison.|
 |Table|Texte sélectionné dans la cellule (pas dans le tableau)|Impossible de créer la liaison.|

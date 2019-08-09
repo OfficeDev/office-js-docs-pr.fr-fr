@@ -3,12 +3,12 @@ ms.date: 07/09/2019
 description: Authentifiez les utilisateurs à l’aide de fonctions personnalisées dans Excel.
 title: Authentification des fonctions personnalisées
 localization_priority: Priority
-ms.openlocfilehash: 74e1524eaf9c5328754fee8c225cd5aca83188da
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: f746947122da7ef3d54a0dd3b4f90dd059e5830f
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771469"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268137"
 ---
 # <a name="authentication-for-custom-functions"></a>Authentification des fonctions personnalisées
 
@@ -90,7 +90,7 @@ function receiveTokenFromCustomFunction() {
 
 ## <a name="general-guidance"></a>Instructions générales
 
-Les compléments Office sont basés sur le Web et vous pouvez utiliser n’importe quelle technique d’authentification Web. Il n’existe pas de modèle ou de méthode spécifique que vous devez suivre pour implémenter votre propre authentification avec des fonctions personnalisées. Vous pouvez consulter la documentation relative à différents modèles d’authentification, en commençant par[cet article sur l’autorisation d’accès via les services externes](/office/dev/add-ins/develop/auth-external-add-ins?view=office-js).  
+Les compléments Office sont basés sur le Web et vous pouvez utiliser n’importe quelle technique d’authentification Web. Il n’existe pas de modèle ou de méthode spécifique que vous devez suivre pour implémenter votre propre authentification avec des fonctions personnalisées. Vous pouvez consulter la documentation relative à différents modèles d’authentification, en commençant par[cet article sur l’autorisation d’accès via les services externes](/office/dev/add-ins/develop/auth-external-add-ins).  
 
 Évitez d’utiliser les emplacements suivants pour stocker des données lors du développement de fonctions personnalisées :  
 

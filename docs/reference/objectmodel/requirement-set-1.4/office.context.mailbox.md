@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox-ensemble de conditions requises 1,4
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 373ac1f4361ae94f788a61e49c304a1cfdb90232
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 909746f2404f23872304e067800beac9c3c801f1
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064703"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268333"
 ---
 # <a name="mailbox"></a>boîte aux lettres
 
@@ -23,6 +23,22 @@ Permet d’accéder au modèle d’objet du complément Outlook pour Microsoft O
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restreinte|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
+
+##### <a name="members-and-methods"></a>Membres et méthodes
+
+| Membre | Type |
+|--------|------|
+| [ewsUrl](#ewsurl-string) | Membre |
+| [convertToEwsId](#converttoewsiditemid-restversion--string) | Méthode |
+| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) | Méthode |
+| [convertToRestId](#converttorestiditemid-restversion--string) | Méthode |
+| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | Méthode |
+| [displayAppointmentForm](#displayappointmentformitemid) | Méthode |
+| [displayMessageForm](#displaymessageformitemid) | Méthode |
+| [displayNewAppointmentForm](#displaynewappointmentformparameters) | Méthode |
+| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | Méthode |
+| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | Méthode |
+| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | Méthode |
 
 ### <a name="namespaces"></a>Espaces de noms
 
@@ -173,7 +189,7 @@ La méthode `convertToUtcClientTime` convertit un dictionnaire contenant une dat
 
 |Nom| Type| Description|
 |---|---|---|
-|`input`| [LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.6)|Valeur de l’heure locale à convertir.|
+|`input`| [LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.4)|Valeur de l’heure locale à convertir.|
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -338,14 +354,22 @@ En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
-|`callback`| fonction||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult). Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.|
+|`callback`| fonction||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.<br><br>Si une erreur s’est produite, `asyncResult.error` les `asyncResult.diagnostics` propriétés et peuvent fournir des informations supplémentaires.|
 |`userContext`| Objet| &lt;optional&gt;|Données d’état transmises à la méthode asynchrone.|
+
+##### <a name="errors"></a>Erreurs
+
+|Code d'erreur|Description|
+|------------|-------------|
+|`HTTPRequestFailure`|La demande a échoué. Consultez l’objet Diagnostics pour obtenir le code d’erreur HTTP.|
+|`InternalServerError`|Le serveur Exchange a renvoyé une erreur. Pour plus d’informations, consultez l’objet Diagnostics.|
+|`NetworkError`|L’utilisateur n’est plus connecté au réseau. Vérifiez votre connexion réseau, puis réessayez.|
 
 ##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Composition et lecture|
 
@@ -371,8 +395,16 @@ La méthode `getUserIdentityTokenAsync` renvoie un jeton qui vous permet d’ide
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
-|`callback`| function||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.|
-|`userContext`| Object| &lt;optional&gt;|Données d’état transmises à la méthode asynchrone.|
+|`callback`| fonction||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.<br><br>Si une erreur s’est produite, `asyncResult.error` les `asyncResult.diagnostics` propriétés et peuvent fournir des informations supplémentaires.|
+|`userContext`| Objet| &lt;optional&gt;|Données d’état transmises à la méthode asynchrone.|
+
+##### <a name="errors"></a>Erreurs
+
+|Code d'erreur|Description|
+|------------|-------------|
+|`HTTPRequestFailure`|La demande a échoué. Consultez l’objet Diagnostics pour obtenir le code d’erreur HTTP.|
+|`InternalServerError`|Le serveur Exchange a renvoyé une erreur. Pour plus d’informations, consultez l’objet Diagnostics.|
+|`NetworkError`|L’utilisateur n’est plus connecté au réseau. Vérifiez votre connexion réseau, puis réessayez.|
 
 ##### <a name="requirements"></a>Configuration requise
 
