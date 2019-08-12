@@ -1,14 +1,14 @@
 ---
 title: Office.context – ensemble de conditions requises 1.5
 description: ''
-ms.date: 04/24/2019
+ms.date: 08/06/2019
 localization_priority: Priority
-ms.openlocfilehash: 9ffb0d4d33af80a669fd81bc0130f14f673e9400
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 68912520250789b2259d59fb14387f97b24c5c7d
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064752"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268641"
 ---
 # <a name="mailbox"></a>boîte aux lettres
 
@@ -438,7 +438,15 @@ Le complément doit utiliser la propriété `ewsUrl` pour déterminer l’URL à
 | `options` | Objet | &lt;optional&gt; | Littéral d’objet contenant une ou plusieurs des propriétés suivantes. |
 | `options.isRest` | Boolean |  &lt;optional&gt; | Détermine si le jeton fourni est utilisé pour les API REST Outlook ou les services web Exchange. La valeur par défaut est `false`. |
 | `options.asyncContext` | Objet |  &lt;optional&gt; | Données d’état transmises à la méthode asynchrone. |
-|`callback`| fonction||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult). Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.|
+|`callback`| fonction||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.<br><br>En cas d’erreur, les propriétés `asyncResult.error` et `asyncResult.diagnostics` peuvent fournir des informations supplémentaires.|
+
+##### <a name="errors"></a>Erreurs
+
+|Code d'erreur|Description|
+|------------|-------------|
+|`HTTPRequestFailure`|La demande a échoué. Veuillez rechercher le code d’erreur HTTP dans l’objet de diagnostics.|
+|`InternalServerError`|Le serveur Exchange a renvoyé une erreur. Pour plus d’informations, veuillez consulter l’objet de diagnostics.|
+|`NetworkError`|L’utilisateur n’est plus connecté au réseau. Veuillez vérifier la connexion réseau et réessayer.|
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -481,14 +489,22 @@ En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
-|`callback`| function||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult). Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.|
+|`callback`| function||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.<br><br>En cas d’erreur, les propriétés `asyncResult.error` et `asyncResult.diagnostics` peuvent fournir des informations supplémentaires.|
 |`userContext`| Objet| &lt;optional&gt;|Données d’état transmises à la méthode asynchrone.|
+
+##### <a name="errors"></a>Erreurs
+
+|Code d'erreur|Description|
+|------------|-------------|
+|`HTTPRequestFailure`|La demande a échoué. Veuillez rechercher le code d’erreur HTTP dans l’objet de diagnostics.|
+|`InternalServerError`|Le serveur Exchange a renvoyé une erreur. Pour plus d’informations, veuillez consulter l’objet de diagnostics.|
+|`NetworkError`|L’utilisateur n’est plus connecté au réseau. Veuillez vérifier la connexion réseau et réessayer.|
 
 ##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Composition et lecture|
 
@@ -514,8 +530,16 @@ La méthode `getUserIdentityTokenAsync` renvoie un jeton qui vous permet d’ide
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
-|`callback`| function||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.|
-|`userContext`| Object| &lt;optional&gt;|Données d’état transmises à la méthode asynchrone.|
+|`callback`| function||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.<br><br>En cas d’erreur, les propriétés `asyncResult.error` et `asyncResult.diagnostics` peuvent fournir des informations supplémentaires.|
+|`userContext`| Objet| &lt;optional&gt;|Données d’état transmises à la méthode asynchrone.|
+
+##### <a name="errors"></a>Erreurs
+
+|Code d'erreur|Description|
+|------------|-------------|
+|`HTTPRequestFailure`|La demande a échoué. Veuillez rechercher le code d’erreur HTTP dans l’objet de diagnostics.|
+|`InternalServerError`|Le serveur Exchange a renvoyé une erreur. Pour plus d’informations, veuillez consulter l’objet de diagnostics.|
+|`NetworkError`|L’utilisateur n’est plus connecté au réseau. Veuillez vérifier la connexion réseau et réessayer.|
 
 ##### <a name="requirements"></a>Configuration requise
 
