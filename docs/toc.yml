@@ -106,10 +106,20 @@
           href: develop/addressing-same-origin-policy-limitations.md
         - name: Authentification et autorisation
           items:
+            - name: Vue d’ensemble de l’authentification et de l’autorisation
+              href: develop/overview-authn-authz.md
+            - name: Authentifier et autoriser avec l’API de boîte de dialogue Office
+              href: develop/auth-with-office-dialog-api.md
+            - name: Autoriser les services externes
+              href: develop/auth-external-add-ins.md
+            - name: Autoriser Microsoft Graph sans authentification unique
+              href: develop/authorize-to-microsoft-graph-without-sso.md
             - name: Activer l’authentification unique dans un complément
               items:
                 - name: Activer l’authentification unique
                   href: develop/sso-in-office-add-ins.md
+                - name: Autoriser l’accès à Microsoft Graph à l’aide de l’authentification unique
+                  href: develop/authorize-to-microsoft-graph.md
                 - name: Créer un complément d’authentification unique à l’aide de ASP.NET
                   href: develop/create-sso-office-add-ins-aspnet.md
                 - name: Créer un complément d’authentification unique à l’aide de node. js
@@ -120,10 +130,6 @@
                   href: develop/grant-admin-consent-to-an-add-in.md
                 - name: Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)
                   href: develop/troubleshoot-sso-in-office-add-ins.md
-            - name: Autoriser les services externes
-              href: develop/auth-external-add-ins.md
-            - name: Autoriser l’accès à Microsoft Graph
-              href: develop/authorize-to-microsoft-graph.md
         - name: Ouvrir automatiquement un volet Office avec un document
           href: develop/automatically-open-a-task-pane-with-a-document.md
         - name: Développer des compléments pour iPad
