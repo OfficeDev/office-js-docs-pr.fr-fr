@@ -1,14 +1,14 @@
 ---
 title: Présentation des compléments Excel
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 696e1b3dfcab986125eb3f5f1d9f7547a59282e5
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: fbb0f69e7c32776fdd0bce6e5c10f39c562a5cbe
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128233"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575568"
 ---
 # <a name="excel-add-ins-overview"></a>Présentation des compléments Excel
 
@@ -17,6 +17,7 @@ Un complément Excel vous permet d’étendre les fonctionnalités de l’applic
 - Interagir avec des objets Excel, lire et écrire des données Excel
 - Étendre les fonctionnalités à l’aide du volet Office web ou du volet de contenu
 - Ajouter des boutons personnalisés au ruban ou des éléments au menu contextuel
+- Ajouter des fonctions personnalisées
 - Fournir une interaction améliorée à l’aide de la fenêtre de dialogue
 
 La plateforme de compléments Office fournit la structure et les API JavaScript Office.js qui vous permettent de créer et d’exécuter des compléments Excel. En utilisant la plateforme de compléments Office pour créer votre complément Excel, vous bénéficierez des avantages suivants :
@@ -52,7 +53,7 @@ Pour permettre aux utilisateurs finals d’installer et d’utiliser un complém
 
 ## <a name="capabilities-of-an-excel-add-in"></a>Fonctionnalités d’un complément Excel
 
-En plus d’interagir avec le contenu du classeur, les compléments Excel peuvent ajouter des boutons personnalisés au ruban ou des commandes de menu, insérer des volets de tâches, ouvrir des boîtes de dialogue et même incorporer des objets web riches, tels que des graphiques ou des visualisations interactives dans une feuille de calcul.
+En plus d’interagir avec le contenu du classeur, les compléments Excel peuvent ajouter des boutons personnalisés au ruban ou des commandes de menu, insérer des volets Office, ajouter des fonctions personnalisées, ouvrir des boîtes de dialogue et même incorporer des objets web enrichis, tels que des graphiques ou des visualisations interactives dans une feuille de calcul.
 
 ### <a name="add-in-commands"></a>Commandes de complément
 
@@ -73,6 +74,16 @@ Les volets Office sont des surfaces d’interface qui s’affichent généraleme
 ![Complément du volet Office dans Excel](../images/excel-add-in-task-pane-insights.png)
 
 Pour plus d’informations sur les volets Office, reportez-vous à [Volets Office dans les compléments Office](../design/task-pane-add-ins.md). Pour consulter un exemple qui implémente un volet Office dans Excel, reportez-vous à [Excel Add-in JS WoodGrove Expense Trends](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends).
+
+### <a name="custom-functions"></a>Fonctions personnalisées
+
+Les fonctions personnalisées permettent aux développeurs d’ajouter de nouvelles fonctions dans Excel en définissant ces fonctions dans JavaScript dans le cadre d’un complément. Les utilisateurs d’Excel peuvent accéder aux fonctions personnalisées comme ils le feraient pour n’importe quelle fonction native d’Excel, telle que `SUM()`. 
+
+**Fonction personnalisée**
+
+<img alt="animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet" src="../images/SphereVolumeNew.gif" />
+
+Pour plus d’informations sur les fonctions personnalisées, voir [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md).
 
 ### <a name="dialog-boxes"></a>Boîtes de dialogue
 
@@ -100,16 +111,17 @@ Un complément Excel interagit avec des objets dans Excel en utilisant l’[API 
 
 * **API JavaScript pour Excel** : incluse dans Office 2016, l’[API JavaScript pour Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) fournit des objets Excel fortement typés que vous pouvez utiliser pour accéder aux feuilles de calcul, aux plages, aux tableaux, aux graphiques et bien plus encore. 
 
-* **API commune** : Introduite avec Office 2013, l'API commune vous permet d'accéder à des fonctionnalités telles que l'interface utilisateur, les boîtes de dialogue et les paramètres client qui sont communs à plusieurs types d'applications hôtes telles que Word, Excel et PowerPoint. Étant donné que l’API commune fournit des fonctionnalités limitées pour une interaction avec Excel, vous pouvez l’utiliser si votre complément doit s’exécuter sur Excel 2013.
+* **API commune** : incluse dans Office 2013, l’API commune vous permet d’accéder à des fonctionnalités telles qu’une interface utilisateur, des boîtes de dialogue et des paramètres du client, qui sont communes à plusieurs types d’applications Office. Étant donné que l’API commune fournit des fonctionnalités limitées pour une interaction avec Excel, vous pouvez l’utiliser si votre complément doit s’exécuter sur Excel 2013.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Apprenez à [créer votre premier complément Excel](excel-add-ins-get-started-overview.md). Découvrez ensuite les [concepts fondamentaux](excel-add-ins-core-concepts.md) de la création de compléments Excel.
+Apprenez à [créer votre premier complément Excel](../quickstarts/excel-quickstart-jquery.md). Découvrez ensuite les [concepts fondamentaux](excel-add-ins-core-concepts.md) de la création de compléments Excel.
 
 ## <a name="see-also"></a>Voir aussi
 
+- [Documentation sur les compléments Excel](index.md)
 - [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
 - [Meilleures pratiques en matière de développement de compléments Office](../concepts/add-in-development-best-practices.md)
 - [Instructions de conception pour les compléments Office](../design/add-in-design.md)
 - [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
-- [Référence de l’API JavaScript pour Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+- [Référence sur l’API JavaScript pour Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

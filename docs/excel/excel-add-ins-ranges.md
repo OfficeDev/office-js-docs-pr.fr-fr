@@ -1,14 +1,14 @@
 ---
 title: Utilisation de plages à l’aide de l’API JavaScript pour Excel (fondamental)
 description: ''
-ms.date: 02/20/2019
+ms.date: 04/30/2019
 localization_priority: Priority
-ms.openlocfilehash: bb3971a88b6721206424a62c007ce2bcdbd7d3a0
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: b434042be7328a6598d46716f2b7020e5972823e
+ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449630"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33620397"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Utilisation de plages à l’aide de l’API JavaScript pour Excel
 
@@ -23,7 +23,7 @@ Les exemples suivants montrent les différentes façons d’obtenir une référe
 
 ### <a name="get-range-by-address"></a>Obtenir une plage en fonction d’une adresse
 
-L’exemple de code suivant obtient la plage ayant l’adresse **B2 : B5** à partir de la feuille de calcul nommée **Sample**, charge sa propriété **address** et écrit un message dans la console.
+L’exemple de code suivant obtient la plage ayant l’adresse **B2 : C5** à partir de la feuille de calcul nommée **Sample**, charge sa propriété **address** et écrit un message dans la console.
 
 ```js
 Excel.run(function (context) {
@@ -543,10 +543,7 @@ Excel.run(function (context) {
 
 Des plages peuvent présenter une mise en forme de cellules individuelles en fonction de certaines conditions. Pour plus d’informations à ce sujet, consultez l’article [Appliquer une mise en forme conditionnelle à des plages Excel](excel-add-ins-conditional-formatting.md).
 
-## <a name="find-a-cell-using-string-matching-preview"></a>Rechercher une cellule en utilisant la correspondance de chaîne (Aperçu)
-
-> [!NOTE]
-> La fonction `find` de l’objet Range est actuellement disponible uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="find-a-cell-using-string-matching"></a>Rechercher une cellule en utilisant la correspondance de chaîne
 
 L’objet `Range` dispose d’une méthode`find` pour rechercher une chaîne spécifiée dans la plage. Elle renvoie la plage de la première cellule avec le texte correspondant. L’exemple de code suivant trouve la première cellule contenant une valeur égale à la chaîne **Nourriture** et connecte son adresse à la console. Notez que `find` génère une erreur `ItemNotFound` si la chaîne spécifiée n’existe pas dans la plage. Si vous pensez que la chaîne spécifiée peut ne pas exister dans la plage, utilisez la méthode[findAllOrNullObject](excel-add-ins-advanced-concepts.md#ornullobject-methods) à la place, pour que votre code gère ce scénario plus facilement.
 

@@ -4,12 +4,12 @@ description: ''
 ms.date: 06/20/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 8935a22a631699ac0314aac89936fbd8c2552212
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: e343e8eec053bb41cc4438ef42ef0a420319be94
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128565"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36302587"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>Créer un complément de volet de tâches Excel à l’aide de Vue
 
@@ -58,7 +58,7 @@ Chaque complément nécessite un fichier manifeste pour définir ses paramètres
     ```
 
     - **Sélectionnez un type de projet :** `Office Add-in project containing the manifest only`
-    - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
+    - **Comment souhaitez-vous nommer votre complément ?** `my-office-add-in`
     - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
 
     ![Générateur Yeoman](../images/yo-office-manifest-only-vue.png)
@@ -77,7 +77,7 @@ Pour activer HTTPS pour votre application, ouvrez le fichier **package.json** da
 
 ## <a name="update-the-app"></a>Mettre à jour l’application
 
-1. Dans votre éditeur de code, ouvrez le dossier **My Office Add-in** créé par Yo Office à la racine de votre projet Vue. Dans ce dossier, vous verrez le fichier manifeste qui définit les paramètres de votre complément : **manifest.xml**.
+1. Dans votre éditeur de code, ouvrez le dossier **my-office-add-in** créé par Yo Office à la racine de votre projet Vue. Dans ce dossier, vous verrez le fichier manifeste qui définit les paramètres de votre complément : **manifest.xml**.
 
 2. Ouvrir le fichier manifeste, remplacez toutes les occurrences de `https://localhost:3000` par `https://localhost:8080` et enregistrez le fichier.
 

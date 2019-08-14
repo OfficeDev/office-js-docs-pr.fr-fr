@@ -1,16 +1,16 @@
 ---
-title: Autoriser la connexion à Microsoft Graph dans votre complément Office
+title: Autoriser la connexion à Microsoft Graph avec l’authentification unique
 description: ''
-ms.date: 03/19/2019
+ms.date: 08/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 5c34e00a2083f3554480f5900929806e10576350
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 98b1219c0fe5459c497a27b915d31108545f14ae
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448807"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36302559"
 ---
-# <a name="authorize-to-microsoft-graph-in-your-office-add-in-preview"></a>Autoriser la connexion à Microsoft Graph dans votre complément Office (aperçu)
+# <a name="authorize-to-microsoft-graph-with-sso-preview"></a>Autoriser la connexion à Microsoft Graph avec l’authentification unique (préversion)
 
 Les utilisateurs se connectent à Office (plateformes en ligne, mobiles et de bureau) à l’aide de leur compte Microsoft personnel ou de leur compte professionnel ou scolaire (Office 365). Le meilleur moyen pour un complément Office d’obtenir un accès autorisé à [Microsoft Graph](https://developer.microsoft.com/graph/docs) est d’utiliser les informations d’identification Office de l’utilisateur. Cela leur permet d’accéder à leurs données Microsoft Graph sans avoir à se connecter une deuxième fois. 
 

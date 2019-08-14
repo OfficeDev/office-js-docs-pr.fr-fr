@@ -3,12 +3,12 @@ title: Chargement de version test des compléments Office dans Office sur le we
 description: Tester votre complément Office dans Office sur le web par chargement de version test
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: e382e4de62df28584da2c827433af3102486e057
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 6a61a8bfb4860ac31803c40d8ecea1b550f79368
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35126945"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575603"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>Chargement de version test des compléments Office dans Office sur le web
 
@@ -48,9 +48,9 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 >
 > - Depuis une invite de commandes Windows, exécutez la ligne suivante : `CheckNetIsolation LoopbackExempt -a -n="Microsoft.MicrosoftEdge_8wekyb3d8bbwe"`
 >
-> - Entrez « **about:flags** » dans la barre de recherche Microsoft Edge pour afficher les options des Paramètres de développeur.  Activez l’option « **Autoriser le bouclage localhost** », puis redémarrez Microsoft Edge.
+> - Entrez « **about:flags** » dans la barre de recherche Microsoft Edge pour afficher les options des Paramètres de développeur.  Cochez l’option « **Autoriser le bouclage localhost** », puis redémarrez Microsoft Edge.
 
->    ![Option Autoriser le bouclage localhost de Edge avec la case à cocher activée.](../images/allow-localhost-loopback.png)
+>    ![Option Autoriser le bouclage localhost de Microsoft Edge cochée.](../images/allow-localhost-loopback.png)
 
 
 ## <a name="sideload-an-office-add-in-in-office-365"></a>Chargement de version test d’un complément Office dans Office 365

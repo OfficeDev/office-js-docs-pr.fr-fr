@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément de volet des tâches Excel
 ms.date: 07/17/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 568f27a596fda77f263a53b551eefebc287e68e3
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 781e2c3e7cd563e6ebeeaff3e8bf0624b64aec76
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771862"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36308049"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Créer un complément de volet de tâches Excel
 
@@ -27,6 +27,8 @@ Dans cet article, vous découvrirez comment créer un complément de volet de t�
 
 ### <a name="create-the-add-in-project"></a>Création du projet de complément
 
+[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
+
 Utilisez le générateur Yeoman pour créer un projet de complément Excel. Exécutez la commande suivante, puis répondez aux invites comme suit :
 
 ```command&nbsp;line
@@ -35,10 +37,8 @@ yo office
 
 - **Sélectionnez un type de projet :** `Office Add-in Task Pane project`
 - **Sélectionnez un type de script :** `Javascript`
-- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
+- **Comment souhaitez-vous nommer votre complément ?** `my-office-add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
-
-![Générateur Yeoman](../images/yo-office-excel.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -51,7 +51,7 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 1. Accédez au dossier racine du projet.
 
     ```command&nbsp;line
-    cd "My Office Add-in"
+    cd "my-office-add-in"
     ```
 
 2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 

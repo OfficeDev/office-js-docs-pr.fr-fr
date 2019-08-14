@@ -3,12 +3,12 @@ title: Utilisation d’Office UI Fabric React dans des compléments Office
 description: Découvrez comment utiliser Office UI Fabric React dans les compléments Office.
 ms.date: 07/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 7166e9a13c89a1ef2a52659bf31561574f544420
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: c738521b82d0cb8f234fd28dc8bb24740962b817
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771339"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36302597"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>Utilisation d’Office UI Fabric React dans des compléments Office
 
@@ -29,6 +29,8 @@ Vous utiliserez le générateur Yeoman pour les compléments Office pour créer 
 
 ### <a name="create-the-project"></a>Créez le projet
 
+[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
+
 Utilisez le générateur Yeoman afin de créer un projet de complément Word. Exécutez la commande suivante, puis répondez aux invites comme suit :
 
 ```command&nbsp;line
@@ -37,10 +39,8 @@ yo office
 
 - **Sélectionnez un type de projet :** `Office Add-in Task Pane project using React framework`
 - **Sélectionnez un type de script :** `TypeScript`
-- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
+- **Comment souhaitez-vous nommer votre complément ?** `my-office-add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Word`
-
-![Générateur Yeoman](../images/yo-office-word-react.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -49,7 +49,7 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 1. Accédez au dossier racine du projet.
 
     ```command&nbsp;line
-    cd "My Office Add-in"
+    cd "my-office-add-in"
     ```
 
 2. Pour démarrer le serveur web local et charger indépendamment votre complément, procédez comme suit.

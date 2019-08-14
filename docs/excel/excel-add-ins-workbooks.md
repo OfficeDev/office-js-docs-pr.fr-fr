@@ -1,14 +1,14 @@
 ---
 title: Utiliser les classeurs utilisant l’API JavaScript Excel
 description: ''
-ms.date: 02/28/2019
+ms.date: 05/01/2019
 localization_priority: Priority
-ms.openlocfilehash: 4ced2fe36e4429b3dc0836f18ef0bdc7a823b3bf
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: e7ec76846a9097ea9e1ef6269661d51c42c21f62
+ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449763"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33620163"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Utiliser les classeurs utilisant l’API JavaScript Excel
 
@@ -51,7 +51,7 @@ Excel.createWorkbook();
 
 La `createWorkbook` méthode peut également créer une copie d’un classeur existant. La méthode accepte comme un paramètre facultatif une représentation de chaîne codée en base 64 d’un fichier .xlsx. Le classeur résultant sera une copie de ce fichier, en supposant que l’argument de chaîne est un fichier .xlsx valide.
 
-Vous pouvez accéder au classeur actif de votre complément en tant que chaîne codée en base 64 via [fichier découpage](/javascript/api/office/office.document#getfileasync-filetype--options--callback-). La classe [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) peut être utilisée pour convertir un fichier dans la chaîne codée en base 64 requise, comme indiqué dans l’exemple suivant.
+Vous pouvez accéder au classeur actif de votre complément en tant que chaîne codée en base 64 via [fichier découpage](/javascript/api/office/office.document#getfileasync-filetype--options--callback-). La catégorie[FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) peut être utilisée pour convertir un fichier dans la chaîne codée en base 64 requise, comme indiqué dans l’exemple suivant.
 
 ```js
 var myFile = document.getElementById("file");
@@ -72,10 +72,10 @@ reader.onload = (function (event) {
 reader.readAsDataURL(myFile.files[0]);
 ```
 
-### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one"></a>Insérer une copie d’un classeur existant dans l’offre actuelle
+### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one-preview"></a>Insérer une copie d’un classeur existant dans l’offre actuelle (préversion)
 
 > [!NOTE]
-> La fonction`WorksheetCollection.addFromBase64` est actuellement disponible uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> La méthode `WorksheetCollection.addFromBase64` est actuellement uniquement disponible en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 L’exemple précédent montre un nouveau classeur créé à partir d’un classeur existant. Vous pouvez également copier la totalité ou une partie d’un classeur existant dans le tableau actuellement associé à votre complément. Un classeur[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) a la `addFromBase64`méthode pour insérer des copies de feuilles de calcul du classeur cible dans lui-même. Le fichier de l’autre classeur est passé en tant que chaîne codé en base 64, comme le `Excel.createWorkbook` appel.
 
@@ -264,12 +264,60 @@ L’API Excel vous permet également de désactiver les compléments calculs jus
 context.application.suspendApiCalculationUntilNextSync();
 ```
 
-## <a name="save-the-workbook"></a>Enregistrer le classeur
+## <a name="comments-preview"></a>Commentaires (préversion)
 
 > [!NOTE]
-> La fonction`Workbook.save(saveBehavior)` est actuellement disponible uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> Les API de commentaire sont actuellement disponibles uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
-`Workbook.save(saveBehavior)` enregistre le classeur dans un espace de stockage permanent. La méthode `save` accepte un paramètre unique et facultatif qui peut être l’une des valeurs suivantes :
+Tous les [commentaires](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) d’un classeur sont suivis par la propriété `Workbook.comments`. Cela inclut les commentaires créés par les utilisateurs ainsi que les commentaires créés par votre complément. La propriété `Workbook.comments` est un objet [CommentCollection](/javascript/api/excel/excel.commentcollection) qui contient une collection d’objets [Comment](/javascript/api/excel/excel.comment).
+
+Pour ajouter des commentaires à un classeur, utilisez la méthode `CommentCollection.add`, appliquez-la au texte du commentaire, en tant que chaîne, puis à la cellule dans laquelle le commentaire sera ajouté, sous forme de chaîne ou d’objet [Range](/javascript/api/excel/excel.range). L’exemple de code suivant ajoute un commentaire à la cellule **A2**.
+
+```js
+Excel.run(function (context) {
+    var comments = context.workbook.comments;
+
+    // Note that an InvalidArgument error will be thrown if multiple cells passed to `Comment.add`.
+    comments.add("TODO: add data.", "A2");
+    return context.sync();
+});
+```
+
+Chaque commentaire contient des métadonnées concernant sa création, notamment l’auteur et la date de création. Les commentaires créés par votre complément sont considérés comme créés par l’utilisateur actuel. L’exemple suivant montre comment afficher l’adresse e-mail et le nom de l’auteur, ainsi que la date de création d’un commentaire dans la cellule **A2**.
+
+```js
+Excel.run(function (context) {
+    // Get the comment at cell A2.
+    var comment = context.workbook.comments.getItemByCell("Comments!A2");
+    comment.load(["authorEmail", "authorName", "creationDate"]);
+    return context.sync().then(function () {
+        console.log(`${comment.creationDate.toDateString()}: ${comment.authorName} (${comment.authorEmail})`);
+    });
+});
+```
+
+Chaque commentaire contient zéro ou plusieurs réponses. Les objets `Comment` ont une propriété `replies`, qui est une collection [CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection) contenant des objets [CommentReply](/javascript/api/excel/excel.commentreply). Pour ajouter une réponse à un commentaire, utilisez la méthode `CommentReplyCollection.add`, en l’appliquant au texte de la réponse. Les réponses s’affichent dans l’ordre dans lequel elles sont ajoutées. L’exemple de code suivant ajoute une réponse au premier commentaire du classeur.
+
+```js
+Excel.run(function (context) {
+    // Get the first comment added to the workbook.
+    var comment = context.workbook.comments.getItemAt(0);
+    comment.replies.add("Thanks for the reminder!");
+    return context.sync();
+});
+```
+
+Pour modifier un commentaire ou une réponse à un commentaire, configurez sa propriété `Comment.content` ou `CommentReply.content`. Pour supprimer un commentaire ou une réponse à un commentaire, utilisez la méthode `Comment.delete` ou `CommentReply.delete`. La suppression d’un commentaire entraîne également celle de toutes les réponses associées à ce commentaire.
+
+> [!TIP]
+> Les commentaires peuvent également être gérés au niveau de la [feuille de calcul](/javascript/api/excel/excel.worksheet), en utilisant les mêmes techniques.
+
+## <a name="save-the-workbook-preview"></a>Enregistrer le classeur (préversion)
+
+> [!NOTE]
+> La méthode `Workbook.save` est actuellement uniquement disponible en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+`Workbook.save` enregistre le classeur dans un espace de stockage permanent. La méthode `save` accepte un paramètre `saveBehavior` unique et facultatif qui peut être l’une des valeurs suivantes :
 
 - `Excel.SaveBehavior.save` (par défaut) : le fichier est enregistré sans inviter l’utilisateur à spécifier le nom de fichier et l’emplacement d’enregistrement. Si le fichier n’a pas été enregistré précédemment, il est enregistré dans l’emplacement par défaut. Si le fichier a été enregistré précédemment, il est enregistré au même emplacement.
 - `Excel.SaveBehavior.prompt` : si le fichier n’a pas été enregistré précédemment, l’utilisateur sera invité à spécifier le nom de fichier et l’emplacement d’enregistrement. Si le fichier a été enregistré précédemment, il est enregistré dans le même emplacement et l’utilisateur ne reçoit pas d’invite.
@@ -281,12 +329,12 @@ context.application.suspendApiCalculationUntilNextSync();
 context.workbook.save(Excel.SaveBehavior.prompt);
 ```
 
-## <a name="close-the-workbook"></a>Fermer le classeur
+## <a name="close-the-workbook-preview"></a>Fermer le classeur (préversion)
 
 > [!NOTE]
-> La fonction`Workbook.close(closeBehavior)` est actuellement disponible uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> La méthode `Workbook.close` est actuellement uniquement disponible en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
-`Workbook.close(closeBehavior)` ferme le classeur, ainsi que des compléments qui sont associées au classeur (l’application Excel reste ouverte). La méthode `close` accepte un paramètre unique et facultatif qui peut être l’une des valeurs suivantes :
+`Workbook.close` ferme le classeur, ainsi que des compléments qui sont associées au classeur (l’application Excel reste ouverte). La méthode `close` accepte un paramètre `closeBehavior` unique et facultatif qui peut être l’une des valeurs suivantes :
 
 - `Excel.CloseBehavior.save` (par défaut) : le fichier est enregistré avant d’être fermé. Si le fichier n’a pas été enregistré précédemment, l’utilisateur sera invité à spécifier le nom de fichier et l’emplacement d’enregistrement.
 - `Excel.CloseBehavior.skipSave` : le fichier est fermé immédiatement, sans enregistrer. Les modifications non enregistrées sont perdues.
