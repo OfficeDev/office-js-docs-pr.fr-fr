@@ -1,21 +1,19 @@
 ---
 title: Ensembles de conditions requises de forçage d’image
 description: Prise en charge des ensembles de conditions requises de forçage d’image avec des compléments Office dans Excel, PowerPoint et Word.
-ms.date: 07/11/2019
+ms.date: 08/13/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: bffe6c074d9e0734299d0087f2488524875931ed
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 9d622c827315f6657cf0fddaace33968bd634d64
+ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940844"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "36395672"
 ---
 # <a name="image-coercion-requirement-sets"></a>Ensembles de conditions requises de forçage d’image
 
 Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
-
-Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tableau suivant répertorie les ensembles de conditions requises de forçage d’image, les applications hôtes Office qui prennent en charge l’ensemble de conditions requises, ainsi que les numéros de build ou de version de l’application Office.
 
 ## <a name="imagecoercion-11"></a>ImageCoercion 1,1
 
@@ -23,7 +21,6 @@ ImageCoercion 1,1 permet la conversion en image (`Office.CoercionType.Image`) lo
 
 - Excel 2013 et versions ultérieures sur Windows
 - Excel 2016 et versions ultérieures sur Mac
-- Excel sur le Web
 - Excel sur iPad
 - OneNote sur le Web
 - PowerPoint 2013 et versions ultérieures sur Windows
@@ -41,7 +38,6 @@ ImageCoercion 1,2 permet d’effectuer une conversion au`Office.CoercionType.Xml
 
 - Excel sur Windows (connecté à un abonnement Office 365)
 - Excel sur Mac (connecté à un abonnement Office 365)
-- Excel sur le Web
 - PowerPoint sur Windows (connecté à un abonnement Office 365)
 - PowerPoint sur Mac (connecté à un abonnement Office 365)
 - PowerPoint sur le Web

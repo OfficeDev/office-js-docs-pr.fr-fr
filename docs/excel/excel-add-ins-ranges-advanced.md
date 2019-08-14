@@ -1,14 +1,14 @@
 ---
 title: Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)
 description: ''
-ms.date: 04/15/2019
+ms.date: 04/30/2019
 localization_priority: Normal
-ms.openlocfilehash: aacbe930e2cf3da4d10b61bfe8f34efe1094c113
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: c8fbe1dcc75080c932b4c3e2946fe62747d35c6b
+ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448410"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "36395595"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)
 
@@ -62,17 +62,11 @@ Excel.run(function (context) {
 
 Votre complément devra mettre en forme les plages pour afficher les dates dans une forme plus lisible. L’exemple de`"[$-409]m/d/yy h:mm AM/PM;@"`affiche une heure comme «12/3/18 3:57 PM». Pour plus d’informations concernant les formats de date et d’heure , veuillez consulter les «Instructions relatifs aux formats de date et heure» dans l’article[ Instructions revoir afin de personnaliser le format numérique](https://support.office.com/article/review-guidelines-for-customizing-a-number-format-c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5).
 
-## <a name="work-with-multiple-ranges-simultaneously-preview"></a>Travailler avec plusieurs plages simultanément (prévisualisation)
-
-> [!NOTE]
-> L' `RangeAreas` objet est actuellement disponible uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="work-with-multiple-ranges-simultaneously"></a>Travailler simultanément avec plusieurs plages
 
 L’`RangeAreas`objet laisse votre complément exécuter des opérations sur plusieurs plages en même temps. Ces plages peuvent être adjacentes, mais cela n’est pas obligatoire. `RangeAreas`sont abordés plus loin dans l’article[Travailler simultanément avec plusieurs plages dans des compléments Excel](excel-add-ins-multiple-ranges.md).
 
-## <a name="find-special-cells-within-a-range-preview"></a>Rechercher des cellules spéciaux dans une plage (prévisualisation)
-
-> [!NOTE]
-> Les `getSpecialCells` méthodes `getSpecialCellsOrNullObject` et sont actuellement disponibles uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="find-special-cells-within-a-range"></a>Rechercher des cellules spéciales dans une plage
 
 Les méthodes`Range.getSpecialCells()` et `Range.getSpecialCellsOrNullObject()`recherchent des plages basées sur les caractéristiques de leurs cellules et les types de valeurs de leurs cellules. Ces deux méthodes renvoient à des`RangeAreas`objets. Voici les signatures des méthodes à partir des types de fichiers de données TypeScript:
 
@@ -178,10 +172,7 @@ Excel.run(function (context) {
 })
 ```
 
-## <a name="copy-and-paste-preview"></a>Copier et coller(prévisualisation)
-
-> [!NOTE]
-> La fonction`Range.copyFrom` est actuellement disponible uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="copy-and-paste"></a>Copy and paste
 
 La fonction`copyFrom`de la plage reproduit le comportement de copier-coller de l’interface utilisateur Excel. L’objet plage sur lequel`copyFrom`est appelé est la destination.
 La source à copier est transmise en tant que plage ou qu’adresse de chaîne représentant une plage.
@@ -190,7 +181,7 @@ L’exemple de code suivant copie les données de la plage **A1:E1** dans la pla
 ```js
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
-    // copy a range starting at a single cell destination
+    // copy everything from "A1:E1" into "G1" and the cells afterwards ("G1:K1")
     sheet.getRange("G1").copyFrom("A1:E1");
     return context.sync();
 }).catch(errorHandlerFunction);
@@ -242,10 +233,7 @@ Excel.run(function (context) {
 
 ![Données dans Excel après exécution de la méthode de copie de la plage.](../images/excel-range-copyfrom-skipblanks-after.png)
 
-## <a name="remove-duplicates-preview"></a>Supprimer les doublons
-
-> [!NOTE]
-> La fonction `removeDuplicates` de l’objet Range est actuellement disponible uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="remove-duplicates"></a>Supprimer les doublons
 
 La fonction`removeDuplicates`de l’objet de la plage retire les rangées avec les entrées en doublon dans les colonnes spécifiées. La fonction circule à travers chaque rangée de la plage de l’index à la valeur la plus basse à l’index à la valeur la plus haute de la plage ( du haut vers le bas). Une rangée est supprimée si une valeur dans sa/ses colonne(s) spécifiée(s) apparue(s) plus tôt dans la plage. Les rangées de la plage en-dessous de la rangée supprimée sont déplacées. `removeDuplicates` n’affecte pas la position des cellules en dehors de la rangée.
 
