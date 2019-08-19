@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API JavaScript pour Outlook
 description: ''
-ms.date: 07/18/2019
+ms.date: 08/13/2019
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 71cea37784bd3668d3cb44a136ce12e78256f8ec
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: 010dd0519ff6b82f29e2ee7c3cdebb9a64106ac9
+ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804631"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "36395658"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Outlook
 
@@ -29,11 +29,16 @@ Toutes les API Outlook appartiennent à l’`Mailbox`[ensemble de conditions req
 
 La définition d’une version minimale d’ensemble de conditions requises dans le manifeste permet de contrôler les clients Outlook dans lesquels le complément va apparaître. Si un client ne prend pas en charge l’ensemble minimal de conditions requises, il ne charge pas le complément. Par exemple, si la version de l’ensemble de conditions requises spécifiée est 1.3, le complément n’apparaîtra pas dans les clients Outlook qui ne prennent pas en charge au minimum la version 1.3.
 
+> [!NOTE]
+> Pour utiliser des API dans l’un des ensembles de conditions requises numérotés, vous devez référencer la bibliothèque de **production** sur le CDN (https://appsforoffice.microsoft.com/lib/1/hosted/office.js).
+>
+> Pour plus d’informations sur l’utilisation des API disponibles en préversion, consultez la section [Utilisation des API disponibles en préversion](#using-preview-apis) plus loin dans cet article.
+
 ## <a name="using-apis-from-later-requirement-sets"></a>Utilisation des API d’un ensemble de conditions requises ultérieure
 
-La définition d’un ensemble de conditions requises ne limite pas votre complément à utiliser les API de cette version. Par exemple, si le complément indique l’ensemble de conditions requises 1.1, mais qu’il s’est exécuté dans un client Outlook prenant en charge la version 1.3, le complément peut utiliser les API de l’ensemble de conditions requises 1.3.
+La définition d’un ensemble de conditions requises ne limite pas votre complément à utiliser les API de cette version. Par exemple, si le complément spécifie l’ensemble de conditions requises 1.1, mais qu’il s’exécute dans un client Outlook prenant en charge la version 1.3, le complément peut utiliser les API de l’ensemble de conditions requises 1.3.
 
-Pour utiliser une nouvelle API, les développeurs peuvent vérifier si un hôte particulier prend en charge un ensemble de conditions requises en procédant comme suit.
+Pour utiliser une nouvelle API, les développeurs peuvent vérifier si un hôte particulier prend en charge l’ensemble de conditions requises en procédant comme suit.
 
 ```js
 if (Office.context.requirements.isSetSupported('Mailbox', '1.3')) {

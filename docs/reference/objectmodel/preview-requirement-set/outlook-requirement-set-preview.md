@@ -1,21 +1,26 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: ''
-ms.date: 07/24/2019
+ms.date: 08/13/2019
 localization_priority: Priority
-ms.openlocfilehash: 2ff1873afb0e0800c3056ae8de4033c56f357b2f
-ms.sourcegitcommit: 5e90a90175909e0f4f392f5c98bd1273f444fe49
+ms.openlocfilehash: b563d6cfc279a18a6a61f39c33a5ab42e1bd6984
+ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "35851566"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "36395707"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
 Le sous-ensemble de l’API pour le complément Outlook de l’interface API JavaScript pour Office comprend des objets, des méthodes, des propriétés et des événements à utiliser dans un complément Outlook.
 
 > [!NOTE]
-> Cette documentation a trait à un [ensemble de conditions requises](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) en **préversion**. Ces conditions n’ont pas encore été toutes implémentées, par conséquent les clients ne pourront pas demander une aide précise concernant ces conditions. Vous ne devez pas spécifier cet ensemble de conditions dans le manifeste de votre complément. La disponibilité des méthodes et des propriétés présentées dans cet ensemble de conditions doit être testée avant de les utiliser. Vous devrez également participer au [programme Office Insider](https://products.office.com/office-insider).
+> Cette documentation a trait à un [ensemble de conditions requises](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) en **préversion**. Ces conditions n’ont pas encore été toutes implémentées, par conséquent les clients ne pourront pas demander une aide précise concernant ces conditions. Vous ne devez pas spécifier cet ensemble de conditions dans le manifeste de votre complément. La disponibilité des méthodes et des propriétés présentées dans cet ensemble de conditions doit être testée avant de les utiliser.
+>
+> Pour utiliser les API disponibles en préversion :
+>
+> - Vous devez référencer la bibliothèque **bêta** sur le CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js).
+> - Vous devrez peut-être aussi rejoindre le [programme Office Insider](https://products.office.com/office-insider) pour accéder aux versions plus récentes d’Office.
 
 L’ensemble de conditions requises présenté en aperçu comprend toutes les fonctionnalités de l’[ensemble de conditions requises de la version 1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md).
 
