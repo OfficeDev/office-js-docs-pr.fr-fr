@@ -1,14 +1,14 @@
 ---
 title: Utiliser l’API de dialogue dans vos compléments Office
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/07/2019
 localization_priority: Priority
-ms.openlocfilehash: 12e741650b7441557ac9b28306b6eba0f1894922
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 5cafb2396c92576bd5ac6d6d52105e0bb5ee579d
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128205"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36302580"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Utiliser l’API de dialogue dans vos compléments Office
 
@@ -17,7 +17,7 @@ Vous pouvez utiliser l’[API de dialogue](/javascript/api/office/office.ui) pou
 > [!NOTE]
 > Pour plus d’informations sur les compléments où l’API de dialogue est actuellement prise en charge, consultez la rubrique relative aux [ensembles de conditions requises de l’API de dialogue](/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets). L’API de dialogue est actuellement prise en charge pour Word, Excel, PowerPoint et Outlook.
 
-> Un scénario principal pour l’API de dialogue consiste à activer l’authentification pour une ressource telle que Google ou Facebook.
+Un scénario principal pour l’API de dialogue consiste à activer l’authentification pour une ressource telle que Google, Facebook, ou Microsoft Graph. Pour plus d’informations, voir [s’authentifier auprès de l'API de boîte de dialogue Office](auth-with-office-dialog-api.md) *une fois* que vous êtes familiarisé avec cet article.
 
 Envisagez d’ouvrir une boîte de dialogue à partir d’un volet Office, d’un complément de contenu ou d’un [complément de commande](../design/add-in-commands.md) pour effectuer les opérations suivantes :
 
@@ -70,13 +70,13 @@ Définissez les deux valeurs sur 100 % pour bénéficier d’une réelle d’ex
 
 ### <a name="take-advantage-of-a-performance-option-in-office-on-the-web"></a>Tirer parti d’une option de performances dans Office sur le web
 
-La propriété `displayInIframe` est une propriété supplémentaire dans l’objet de configuration que vous pouvez transmettre à `displayDialogAsync`. Lorsque cette propriété est définie sur `true` et que le complément est en cours d’exécution dans un document ouvert dans Office sur le web, la boîte de dialogue s’ouvre sous la forme d’un iFrame flottant et non d’une fenêtre indépendante. Elle s’ouvre ainsi plus rapidement. Voici un exemple :
+La propriété `displayInIframe` est une propriété supplémentaire dans l’objet de configuration que vous pouvez transmettre à `displayDialogAsync`. Lorsque cette propriété est définie sur `true` et que le complément est en cours d’exécution dans un document ouvert dans Office sur le web, la boîte de dialogue s’ouvre sous la forme d’un iframe flottant et non d’une fenêtre indépendante ; elle s’ouvre ainsi plus rapidement. Voici un exemple :
 
 ```js
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe: true});
 ```
 
-La valeur par défaut est `false`, ce qui revient à omettre entièrement la propriété. Si le complément n’est pas exécuté dans Office sur le web, le `displayInIframe` est ignoré.
+La valeur par défaut est `false`, ce qui revient à omettre entièrement la propriété. Si le complément n’est pas exécuté dans Office sur le Web, le `displayInIframe` est ignoré.
 
 > [!NOTE]
 > Vous ne devez **pas** utiliser `displayInIframe: true` si la boîte de dialogue redirige à un moment donné l’utilisateur vers une page qui ne peut pas être ouverte dans un iFrame. Par exemple, les pages de connexion de nombreux services web connus, comme un compte Microsoft et Google, ne peuvent pas être ouvertes dans un iFrame.
@@ -385,52 +385,12 @@ Pour un échantillon qui affiche une vidéo dans une boîte de dialogue, voir le
 
 ## <a name="use-the-dialog-apis-in-an-authentication-flow"></a>Utilisation des API de dialogue dans un flux d’authentification
 
-Le scénario principal des API de dialogue consiste à activer l’authentification auprès d’un fournisseur de ressources ou d’identité qui n’autorise pas l’ouverture de sa page de connexion dans un iframe, comme un compte Microsoft, Office 365, Google et Facebook.
+Voir [Authentifier avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md).
 
-> [!NOTE]
-> Lorsque vous utilisez les API de dialogue pour ce scénario, n’utilisez *pas* l’option `displayInIframe: true` dans l’appel de `displayDialogAsync`. Reportez-vous à la section [Tirer parti d’une option de performances dans Office sur le web](#take-advantage-of-a-performance-option-in-office-on-the-web) précédemment dans cet article pour plus d’informations sur cette option.
+## <a name="using-the-office-dialog-api-with-single-page-applications-and-client-side-routing"></a>Utilisation de l’API de dialogue Office avec des applications à page unique et routage côté client
 
-Voici un flux d’authentification simple et standard :
+Si votre complément utilise le routage côté client, comme le font les applications à page unique (SPA) en règle générale, vous avez la possibilité de transmettre l’URL d’un itinéraire à la méthode [displayDialogAsync](/javascript/api/office/office.ui) (*que nous recommandons au lieu de*), au lieu de l’URL de la page HTML complète et distincte.
 
-1. La première page qui s’ouvre dans la boîte de dialogue est une page locale (ou toute autre ressource) qui est hébergée dans le domaine du complément. Autrement dit, le domaine de la fenêtre hôte. Cette page peut avoir une IU simple indiquant « Veuillez patienter, nous allons vous rediriger vers la page sur laquelle vous pouvez vous connecter à *NOM DU FOURNISSEUR* ». Le code dans cette page construit l’URL de la page de connexion du fournisseur d’identité en utilisant les informations transmises à la boîte de dialogue, comme décrit dans [Transmission d’informations à la boîte de dialogue](#pass-information-to-the-dialog-box).
-2. La fenêtre de dialogue redirige alors l’utilisateur vers la page de connexion. L’URL inclut un paramètre de requête qui indique au fournisseur d’identité de rediriger la fenêtre de dialogue une fois que l’utilisateur s’est connecté à une page spécifique. Dans cet article, nous appellerons cette page « redirectPage.html ». (*Il doit s’agir d’une page ayant le même domaine que la fenêtre hôte*, car le seul moyen pour que la fenêtre de dialogue transmette les résultats de la tentative de connexion est un appel de `messageParent`, qui ne peut être appelé que sur une page ayant le même domaine que la fenêtre hôte.)
-2. Le service du fournisseur d’identité traite la requête GET entrante à partir de la fenêtre de dialogue. Si l’utilisateur est déjà connecté, il redirige immédiatement la fenêtre vers redirectPage.html et inclut les données utilisateur sous la forme d’un paramètre de requête. Si l’utilisateur n’est pas encore connecté, la page de connexion du fournisseur apparaît dans la fenêtre et l’utilisateur se connecte. Pour la plupart des fournisseurs, si l’utilisateur ne parvient pas à se connecter, le fournisseur affiche une page d’erreur dans la fenêtre de dialogue et ne redirige pas vers redirectPage.html. L’utilisateur doit fermer la fenêtre en sélectionnant le **X** dans le coin. Si l’utilisateur se connecte avec succès, la fenêtre de dialogue est redirigée vers redirectPage.html et les données utilisateur sont incluses sous la forme d’un paramètre de requête.
-3. Lorsque la page redirectPage.html s’ouvre, elle appelle `messageParent` pour indiquer le succès ou l’échec à la page hôte et éventuellement indiquer également des données utilisateur ou des données d’erreur.
-4. L’événement `DialogMessageReceived` se déclenche dans la page hôte, et son gestionnaire ferme la fenêtre de dialogue et effectue éventuellement d’autres traitements du message.
+La boîte de dialogue se trouve dans une nouvelle fenêtre avec son propre contexte d’exécution. Si vous transmettez un itinéraire, votre page de base et son code d’initialisation et d’amorçage s’exécutent à nouveau dans ce nouveau contexte, et toutes les variables sont définies sur leurs valeurs initiales dans la fenêtre de dialogue. Donc cette technique télécharge et lance une seconde instance de votre application dans la fenêtre de la boîte de dialogue, ce qui va partiellement à l’encontre du but d’une SPA. De plus, le code qui modifie des variables dans la fenêtre de dialogue ne change pas la version du volet Office des mêmes variables. De même, la fenêtre de dialogue possède son propre stockage de session, qui n’est pas accessible à partir du code dans le volet Office.
 
-Pour examiner un exemple de complément qui utilise ce modèle, voir :
-
-- [Insérer des graphiques Excel à l’aide de Microsoft Graph dans un complément PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) : la ressource qui s’ouvre initialement dans la fenêtre de la boîte de dialogue est une méthode du contrôleur qui ne dispose d’aucun affichage propre. Elle redirige l’utilisateur vers la page de connexion Office 365.
-
-#### <a name="support-multiple-identity-providers"></a>Prise en charge de plusieurs fournisseurs d’identité
-
-Si votre complément offre à l’utilisateur le choix entre plusieurs fournisseurs, tels qu’un compte Microsoft, Google ou Facebook, vous avez besoin d’une première page locale (voir section précédente) qui fournit une IU permettant à l’utilisateur de sélectionner un fournisseur. La sélection déclenche la construction de l’URL de connexion et la redirection vers celle-ci.
-
-#### <a name="authorization-of-the-add-in-to-an-external-resource"></a>Autorisation du complément pour une ressource externe
-
-Sur le web nouvelle génération, les applications web sont des principaux de sécurité au même titre que les utilisateurs, et l’application a sa propre identité et ses propres autorisations pour une ressource en ligne comme Office 365, Google Plus, Facebook ou LinkedIn. L’application est inscrite auprès du fournisseur de ressources avant d’être déployée. L’inscription inclut :
-
-- la liste des autorisations dont l’application a besoin pour les ressources d’un utilisateur ;
-- l’URL à laquelle le service de ressources doit renvoyer un jeton d’accès lorsque l’application accède au service.  
-
-Lorsqu’un utilisateur appelle une fonction dans l’application qui accède aux données de l’utilisateur dans le service de ressources, l’utilisateur est invité à se connecter au service, puis à accorder à l’application les autorisations dont elle a besoin pour les ressources de l’utilisateur. Ensuite, le service redirige la fenêtre de connexion vers l’URL précédemment inscrite et transmet le jeton d’accès. L’application utilise le jeton d’accès pour accéder aux ressources de l’utilisateur.
-
-Vous pouvez utiliser les API de dialogue pour gérer ce processus à l’aide d’un flux semblable à celui décrit pour la connexion des utilisateurs. Les seules différences sont les suivantes :
-
-- Si l’utilisateur n’a pas préalablement accordé à l’application les autorisations nécessaires, il est invité à le faire dans la boîte de dialogue après la connexion.
-- La fenêtre de dialogue envoie le jeton d’accès à la fenêtre hôte en utilisant `messageParent` pour envoyer le jeton d’accès converti en chaîne ou en stockant jeton d’accès à un emplacement où la fenêtre hôte peut le récupérer. Le jeton a une limite de temps, mais tant qu’elle n’est pas écoulée, la fenêtre hôte peut l’utiliser pour accéder directement aux ressources de l’utilisateur sans demander d’autre confirmation.
-
-Les exemples suivants utilisent les API de dialogue à cet effet :
-- [Insérer des graphiques Excel à l’aide de Microsoft Graph dans un complément PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) : stocke le jeton d’accès dans une base de données.
-
-Pour plus d’informations sur l’authentification et l’autorisation dans des compléments, consultez les rubriques suivantes :
-- [Autoriser des services externes dans votre complément Office](auth-external-add-ins.md)
-- [Bibliothèque d’applications d’assistance des API JavaScript Office](https://github.com/OfficeDev/office-js-helpers)
-
-
-## <a name="use-the-office-dialog-api-with-single-page-applications-and-client-side-routing"></a>Utilisation de l’API de dialogue Office avec des applications à page unique et routage côté client
-
-Si votre complément utilise le routage côté client, comme le font les applications à page unique en règle générale, vous avez la possibilité de transmettre l’URL d’un itinéraire à la méthode [displayDialogAsync](/javascript/api/office/office.ui), au lieu de l’URL de la page HTML complète et distincte.
-
-> [!IMPORTANT]
->La boîte de dialogue se trouve dans une nouvelle fenêtre avec son propre contexte d’exécution. Si vous transmettez un itinéraire, votre page de base et son code d’initialisation et d’amorçage s’exécutent à nouveau dans ce nouveau contexte, et toutes les variables sont définies sur leurs valeurs initiales dans la fenêtre de dialogue. Par conséquent, cette technique lance une deuxième instance de votre application dans la fenêtre de dialogue. Le code qui modifie des variables dans la fenêtre de dialogue ne change pas la version du volet Office des mêmes variables. De même, la fenêtre de dialogue possède son propre stockage de session, qui n’est pas accessible à partir du code dans le volet Office.
+Par conséquent, si vous avez passé un itinéraire vers la méthode`displayDialogAsync`, vous n’auriez pas réellement de SPA, vous auriez deux instances de la même SPA. De plus, la plupart du code dans l’instance du volet des tâches ne serait jamais utilisé dans cette instance et la majeure partie du code de l’instance de boîte de dialogue ne serait jamais utilisée dans cette instance. Ce serait comme avoir deux SPAs dans le même lot. Si le code que vous voulez exécuter dans la boîte de dialogue est suffisamment complexe, vous souhaiterez peut-être le faire explicitement, donc avoir deux SPAs dans différents dossiers du même domaine. Dans la plupart des scénarios, seule une logique simple est nécessaire dans la boîte de dialogue. Dans de tels cas, votre projet est considérablement simplifié en hébergeant simplement une page HTML simple, avec un code JavaScript incorporé ou référencé, dans le domaine de votre SPA. Passez l’URL de la page à la méthode`displayDialogAsync`. Cela peut signifier que vous déviez de l’idée littérale d’une application de page unique ; en revanche, comme indiqué ci-dessus, vous ne disposez pas d’une seule instance de SPA quand vous utilisez la boîte de dialogue.
