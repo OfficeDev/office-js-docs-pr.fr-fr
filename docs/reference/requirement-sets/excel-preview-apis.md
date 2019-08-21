@@ -1,15 +1,15 @@
 ---
 title: Version d’évaluation API JavaScript Excel
 description: Informations détaillées sur les API JavaScript pour Excel à venir
-ms.date: 08/06/2019
+ms.date: 08/15/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 4362a5e13e0031408236f34c718f0fcb3c4527e2
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: c0b0a5757df2f5766f0e29b599e3e9b36dfd3983
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268732"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477905"
 ---
 # <a name="excel-javascript-preview-apis"></a>Version d’évaluation API JavaScript Excel
 
@@ -17,10 +17,7 @@ Les nouvelles Excel JavaScript APIs introduits dans « Aperçu » et versions 
 
 Le premier tableau fournit un résumé concis des API, tandis que le tableau suivant fournit une liste détaillée.
 
-> [!NOTE]
-> L’aperçu API peut être modifiés et n’est pas destinés à utiliser dans un environnement de production. Nous vous recommandons de les tester uniquement dans les environnements de test et de développement. N’utilisez pas un aperçu d’API dans un environnement de production ou dans les documents commerciaux importants.
->
-> Pour utiliser l’aperçu API, vous devez référencer la bibliothèque**bêta**sur le CDN : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) et vous devrez également participer au programme Office Insider pour obtenir un build Office suffisamment récent.
+[!INCLUDE [Information about using preview APIs](../../includes/using-preview-apis-host.md)]
 
 | Fonctionnalité | Description | Objets pertinents |
 |:--- |:--- |:--- |

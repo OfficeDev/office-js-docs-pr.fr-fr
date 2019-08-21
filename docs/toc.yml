@@ -188,8 +188,6 @@
           items:
             - name: "Chargement de version test des compléments\_Office sur Windows"
               href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
-            - name: "Chargement de versions test de compléments\_Office à l’aide de la commande sideload"
-              href: testing/sideload-office-addin-using-sideload-command.md
             - name: Attacher un débogueur à partir du volet Office
               href: testing/attach-debugger-from-task-pane.md
             - name: Débogage à l’aide des outils de développement
@@ -351,10 +349,18 @@
                   href: reference/manifest/action.md
                 - name: AllFormFactors
                   href: reference/manifest/allformfactors.md
+                - name: Autorisation
+                  href: reference/manifest/authorization.md
+                - name: Autorisations
+                  href: reference/manifest/authorizations.md
                 - name: Contrôle
                   href: reference/manifest/control.md
                 - name: CustomTab
                   href: reference/manifest/customtab.md
+                - name: EquivalentAddin
+                  href: reference/manifest/equivalentaddin.md
+                - name: EquivalentAddins
+                  href: reference/manifest/equivalentaddins.md
                 - name: Événement
                   href: reference/manifest/event.md
                 - name: ExtensionPoint

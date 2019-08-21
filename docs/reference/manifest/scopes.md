@@ -1,24 +1,26 @@
 ---
 title: Élément Scopes dans le fichier manifeste
 description: ''
-ms.date: 10/09/2018
+ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: cdc9ebeb6fe4167a5ed5e9407f6ecc82d5b8d507
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 1e36bdcd0cdcaa8c842e924c2543d56bdc4e26a7
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771785"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477732"
 ---
 # <a name="scopes-element"></a>Élément Scopes
 
-Contient des autorisations Microsoft Graph requises par le complément. AppSource utilise l’élément Scopes pour créer une boîte de dialogue de consentement. Lorsque les utilisateurs installent le complément à partir du Store, ils sont invités à lui accorder les autorisations spécifiées à leurs données Microsoft Graph.
+Contient les autorisations dont le complément a besoin pour une ressource externe, telle que Microsoft Graph. Lorsque Microsoft Graph est la ressource, AppSource utilise l’élément Scopes pour créer une boîte de dialogue de consentement. Lorsque les utilisateurs installent le complément à partir du Store, ils sont invités à lui accorder les autorisations spécifiées à leurs données Microsoft Graph.
+
+**Scopes** est un élément enfant des éléments [WebApplicationInfo](webapplicationinfo.md) et [authorization](authorization.md) dans le manifeste.
 
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Type  |  Description  |
+|  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
-|  **Scope**                |  string     |   Nom d’une autorisation Microsoft Graph ; par exemple, Files.Read.All. |
+|  **Scope**                |  Oui     |   Nom d’une autorisation; par exemple, files. Read. All ou Profile. |
 
 ## <a name="example"></a>Exemple
 

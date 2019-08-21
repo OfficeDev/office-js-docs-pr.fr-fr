@@ -1,24 +1,21 @@
 ---
 title: API de prévisualisation JavaScript pour Word
 description: Informations détaillées sur les API JavaScript pour Word à venir
-ms.date: 07/25/2019
+ms.date: 08/15/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 584b6ade9e4ae2d28b13eb717027361d85c4aa45
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 1bc6cf2f4b8d8bf876d0b28ead9643f14c81fde1
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064843"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477900"
 ---
 # <a name="word-javascript-preview-apis"></a>API de prévisualisation JavaScript pour Word
 
 De nouvelles API JavaScript pour Word sont introduites pour la première fois dans «Preview», puis elles deviennent une partie d’un ensemble de conditions requises spécifiques, après un test suffisant, et les commentaires des utilisateurs sont acquis.
 
-> [!NOTE]
-> L’aperçu API peut être modifiés et n’est pas destinés à utiliser dans un environnement de production. Nous vous recommandons de les tester uniquement dans les environnements de test et de développement. N’utilisez pas un aperçu d’API dans un environnement de production ou dans les documents commerciaux importants.
->
-> Pour utiliser l’aperçu API, vous devez référencer la bibliothèque**bêta**sur le CDN : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) et vous devrez également participer au programme Office Insider pour obtenir un build Office suffisamment récent.
+[!INCLUDE [Information about using preview APIs](../../includes/using-preview-apis-host.md)]
 
 ## <a name="api-list"></a>Liste des API
 

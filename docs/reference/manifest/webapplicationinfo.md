@@ -1,14 +1,14 @@
 ---
 title: Élément WebApplicationInfo dans le fichier manifeste
 description: ''
-ms.date: 03/19/2019
+ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: bdd327f942009e255dd2515fb926d294212ecec8
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: e10aee1bf3fb99099d282acd428fa0348229701c
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910316"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477865"
 ---
 # <a name="webapplicationinfo-element"></a>Élément WebApplicationInfo
 
@@ -27,11 +27,10 @@ Prend en charge l’authentification unique (SSO) dans des compléments Office. 
 |  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 |  **Id**    |  Oui   |  **ID d’application** du service associé au complément, tel qu’inscrit dans le point de terminaison Azure Active Directory (Azure AD) v2.0.|
+|  **MsaId**    |  Non   |  ID client de l’application Web de votre complément pour MSA, tel qu’inscrit dans msm.live.com.|
 |  **Resource**  |  Oui   |  Spécifie l’**URI de l’ID d’application** du complément, tel qu’inscrit dans le point de terminaison Azure AD v2.0.|
-|  [Scopes](scopes.md)                |  Non  |  Spécifie les autorisations dont le complément a besoin pour Microsoft Graph.  |
-
-> [!NOTE] 
-> À l’heure actuelle, il est nécessaire que les ressources de votre complément correspondent à son hôte. Office ne demandera pas un jeton pour un complément à moins de pouvoir prouver qu’il en est le propriétaire ; à l’heure actuelle, ceci s’effectue en hébergeant le complément sous le nom de domaine complet de la ressource.
+|  [Scopes](scopes.md)                |  Oui  |  Spécifie les autorisations dont le complément a besoin pour une ressource, telle que Microsoft Graph.  |
+|  [Autorisations](authorizations.md)  |  Non   | Spécifie les ressources externes auxquelles l’application Web du complément doit disposer et les autorisations requises.|
 
 ## <a name="webapplicationinfo-example"></a>Exemple pour WebApplicationInfo
 
@@ -47,8 +46,16 @@ Prend en charge l’authentification unique (SSO) dans des compléments Office. 
         <Scope>Files.Read.All</Scope>
         <Scope>offline_access</Scope>
         <Scope>openid</Scope>
-        <Scope>profile</Scope>        
+        <Scope>profile</Scope>
       </Scopes>
+      <Authorizations>
+        <Authorization>
+          <Resource>https://api.contoso.com</Resource>
+            <Scopes>
+              <Scope>profile</Scope>
+          </Scopes>
+        </Authorization>
+      </Authorizations>
     </WebApplicationInfo>
   </VersionOverrides>
 ...
