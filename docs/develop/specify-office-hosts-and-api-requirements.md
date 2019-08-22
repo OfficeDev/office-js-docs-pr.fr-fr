@@ -1,14 +1,14 @@
 ---
 title: Spécification des exigences en matière d’hôtes Office et d’API
 description: ''
-ms.date: 07/18/2019
+ms.date: 08/14/2019
 localization_priority: Priority
-ms.openlocfilehash: 9699379d39e4c1a9f4e1380cf6360eaf027f05f0
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: bd70f33952b4306b906896b6f4c8e00e0d768265
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804617"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477774"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>Spécification des exigences en matière d’hôtes Office et d’API
 
@@ -133,24 +133,24 @@ Cet exemple de code illustre un complément qui se charge dans toutes les applic
 
 - L’élément  **Method** spécifie une méthode individuelle qui doit être prise en charge dans l’hôte Office où votre complément est exécuté. L’attribut **Name** est obligatoire et indique le nom de la méthode qualifiée avec son objet parent.
 
-
 ## <a name="use-runtime-checks-in-your-javascript-code"></a>Utilisation des vérifications à l’exécution dans votre code JavaScript
-
 
 Vous pouvez fournir des fonctionnalités supplémentaires dans votre complément si certains ensembles de conditions requises sont pris en charge par l’hôte Office. Par exemple, vous pouvez utiliser les interfaces API JavaScript de Word dans votre complément existant si ce dernier est exécuté dans Word 2016. Pour ce faire, utilisez la méthode [isSetSupported](/javascript/api/office/office.requirementsetsupport#issetsupported-name--minversion-) avec le nom de l’ensemble de conditions requises. **isSetSupported** détermine, lors de l’exécution, si l’hôte Office exécutant le complément prend en charge l’ensemble de conditions requises. Si l’ensemble de conditions requises est pris en charge, **isSetSupported** renvoie **True** et exécute le code supplémentaire qui utilise les membres d’API provenant de l’ensemble de conditions requises. Si l’hôte Office ne prend pas en charge l’ensemble de conditions requises, **isSetSupported** renvoie **False** et le code supplémentaire n’est pas exécuté. Le code suivant indique la syntaxe à utiliser avec **isSetSupported**.
 
-
 ```js
-if (Office.context.requirements.isSetSupported(RequirementSetName, VersionNumber))
+if (Office.context.requirements.isSetSupported(RequirementSetName, MinimumVersion))
 {
    // Code that uses API members from RequirementSetName.
 }
 
 ```
 
--  _RequirementSetName_ (obligatoire) est une chaîne qui représente le nom de l’ensemble de la configuration requise. Pour plus d’informations concernant les ensembles de conditions requises disponibles, voir [Ensembles de conditions requises pour complément Office](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).
-    
--  _VersionNumber_ (facultatif) correspond à la version de l’ensemble de conditions requises.
+- _RequirementSetName_ (obligatoire) est une chaîne qui représente le nom de l’ensemble de la configuration requise (p. ex., « **ExcelApi** », « **Mailbox** », etc.). Pour plus d’informations concernant les ensembles de conditions requises disponibles, voir [Ensembles de conditions requises pour complément Office](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).
+- _MinimumVersion_ (facultatif) est une chaîne qui spécifie la version minimale requise que l’hôte doit prendre en charge afin de permettre l’exécution de l’instruction `if` dans le code (p. ex. « **1.9** »).
+
+> [!WARNING]
+> Lors de l’appel de la méthode **isSetSupported**, la valeur du paramètre `MinimumVersion` (si celui-ci est spécifié) doit être une chaîne. En effet, l’analyseur syntaxique JavaScript ne peut pas différencier les valeurs numériques, telles que 1.1 et 1.10, mais le peut pour les valeurs chaîne, telles que « 1.1 » et « 1.10 ».
+> La surcharge `number` est déconseillée.
 
 Utilisez **isSetSupported** avec le **RequirementSetName** associé à l’hôte Office comme suit.
 
@@ -180,7 +180,6 @@ else
 }
 
 ```
-
 
 ## <a name="runtime-checks-using-methods-not-in-a-requirement-set"></a>Vérifications à l’exécution à l’aide de méthodes ne faisant pas partie d’un ensemble de conditions requises
 

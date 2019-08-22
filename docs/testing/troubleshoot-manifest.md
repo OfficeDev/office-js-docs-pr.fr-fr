@@ -1,14 +1,14 @@
 ---
 title: Valider et résoudre des problèmes avec votre manifeste
 description: Utiliser ces méthodes pour valider le manifeste des compléments Office.
-ms.date: 07/29/2019
+ms.date: 08/15/2019
 localization_priority: Priority
-ms.openlocfilehash: 70ebe8be4b669167d1ba230d9dcbf19cb2289efe
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: bf70aca68135073ed92d2e4d2c176b944836c7ad
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940665"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477921"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>Valider et résoudre des problèmes avec votre manifeste
 
@@ -27,17 +27,22 @@ npm run validate
 > [!NOTE]
 > Pour accéder à cette fonctionnalité, votre projet de complément doit être créé à l’aide du [générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) (version 1.1.17 ou ultérieure).
 
-## <a name="validate-your-manifest-with-office-toolbox"></a>Valider votre manifeste avec la boîte à outils Office
+## <a name="validate-your-manifest-with-office-addin-manifest"></a>Valider votre manifeste avec office-addin-manifest
 
-Si vous n’avez pas utilisé [le générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) pour créer votre complément, vous pouvez valider le fichier manifeste à l’aide de la [boîte à outils Office](https://www.npmjs.com/package/office-toolbox).
+Si vous n’avez pas utilisé [le générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) pour créer votre complément, vous pouvez valider le fichier manifeste à l’aide de [office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest).
 
 1. Installez [Node.js](https://nodejs.org/download/).
 
 2. Exécutez la commande suivante dans le répertoire racine de votre projet. Remplacez `MANIFEST_FILE` par le nom du fichier manifeste.
 
     ```command&nbsp;line
-    npx office-toolbox validate -m MANIFEST_FILE
+    npx office-addin-manifest validate MANIFEST_FILE
     ```
+
+    > [!NOTE]
+    > Si elle s’exécute, la commande renvoie le message d’erreur « La syntaxe de la commande n’est pas valide » (étant donné que la commande `validate` n’est pas reconnue), exécutez la commande suivante pour valider le manifeste (en remplaçant `MANIFEST_FILE` par le nom du fichier manifeste) : 
+    > 
+    > `npx --ignore-existing office-addin-manifest validate MANIFEST_FILE`
 
 ## <a name="validate-your-manifest-against-the-xml-schema"></a>Validez votre manifeste par rapport au schéma XML
 

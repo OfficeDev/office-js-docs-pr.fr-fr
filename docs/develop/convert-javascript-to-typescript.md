@@ -1,14 +1,14 @@
 ---
 title: Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
 description: ''
-ms.date: 07/17/2019
+ms.date: 08/14/2019
 localization_priority: Priority
-ms.openlocfilehash: 7c51479c1a5d1df5d9b0622dbae4fe9f01ad0c2c
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 29305df541a39ad76655a0f8a848138a369bbf39
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771305"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477767"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
 
@@ -84,7 +84,7 @@ Vous pouvez utiliser le modèle de complément Office dans Visual Studio pour cr
     declare var fabric: any;
     ```
 
-12. Dans le fichier **Home.ts**, recherchez la ligne `Office.initialize = function (reason) {` et ajoutez une ligne immédiatement après celle-ci pour ajouter un polyfill à l’ensemble de `window.Promise`, comme illustré ici:
+12. Dans le fichier **Home.ts**, recherchez la ligne `Office.initialize = function (reason) {` et ajoutez une ligne immédiatement après celle-ci pour ajouter un polyfill à l’ensemble de `window.Promise`, comme illustré ici :
 
     ```typescript
     Office.initialize = function (reason) {
@@ -93,13 +93,7 @@ Vous pouvez utiliser le modèle de complément Office dans Visual Studio pour cr
         ...
     ```
 
-13. Dans le fichier **Home.ts**, remplacez **'1.1'** par **1.1** (autrement dit, supprimez les guillemets) dans la ligne suivante :
-
-    ```typescript
-    if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
-    ```
-
-14. Dans le fichier **Home.ts**, recherchez la fonction `displaySelectedCells`, remplacez-la par le code suivant, puis enregistrez le fichier :
+13. Dans le fichier **Home.ts**, recherchez la fonction `displaySelectedCells`, remplacez-la par le code suivant, puis enregistrez le fichier :
 
     ```typescript
     function displaySelectedCells() {
@@ -165,7 +159,7 @@ declare var fabric: any;
             loadSampleData();
 
             // Add a click event handler for the highlight button.
-            $('#highlight-button').click(hightlightHighestValue);
+            $('#highlight-button').click(highlightHighestValue);
         });
     };
 
@@ -189,7 +183,7 @@ declare var fabric: any;
         .catch(errorHandler);
     }
 
-    function hightlightHighestValue() {
+    function highlightHighestValue() {
         // Run a batch operation against the Excel object model
         Excel.run(function (ctx) {
             // Create a proxy object for the selected range and load its properties
