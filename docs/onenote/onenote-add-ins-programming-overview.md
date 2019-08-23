@@ -1,14 +1,14 @@
 ---
 title: Vue d’ensemble de la programmation de l’API JavaScript de OneNote
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 852c68bc9edf370d0eef687fb4869b23d4f59fe4
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 223d7cdf6770d21a16272b9a8602201cec77d111
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128635"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575659"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>Vue d’ensemble de la programmation de l’API JavaScript de OneNote
 
@@ -87,6 +87,10 @@ function getPagesInSection() {
 
 Vous pouvez déterminer les objets et les opérations OneNote pris en charge dans la [référence de l’API](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference).
 
+#### <a name="onenote-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour OneNote
+
+Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour en savoir plus sur les ensembles de conditions requises de l’API JavaScript pour OneNote, consultez [Ensembles de conditions requises de l’API JavaScript pour OneNote](../reference/requirement-sets/onenote-api-requirement-sets.md).
+
 ### <a name="accessing-the-common-api-through-the-document-object"></a>Accès à l’API commune via l’objet*Document*
 
 Utilisez l’objet **Document** pour accéder à l’API commune, par exemple les méthodes[getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) et [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-). 
@@ -131,6 +135,7 @@ Le diagramme suivant représente ce qui est actuellement disponible dans l’API
 
 ## <a name="see-also"></a>Voir aussi
 
+- [Documentation sur les compléments OneNote](index.md)
 - [Créer votre premier complément OneNote](../quickstarts/onenote-quickstart.md)
 - [Référence de l’API JavaScript de OneNote](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Exemple de grille d’évaluation](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
