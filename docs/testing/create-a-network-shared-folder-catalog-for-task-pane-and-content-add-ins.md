@@ -1,21 +1,21 @@
 ---
 title: Chargement de compléments Office pour des tests
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/15/2019
 localization_priority: Priority
-ms.openlocfilehash: acd16bb8a8d08aa6dd05f0f56921e285ee1e2e1f
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 19cd599ea743fc577a5139d3f278dd3f993ec5b1
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127017"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477928"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>Chargement de compléments Office pour des tests
 
 Vous pouvez installer un complément Office à des fins de test dans un client Office s’exécutant sur Windows à l’aide d’un catalogue de dossiers partagés pour publier le manifeste sur un partage de fichiers réseau.
 
 > [!NOTE]
-> Si votre projet de complément a été créé avec le [générateur Yeoman pour compléments Office](https://github.com/OfficeDev/generator-office), il existe une autre méthode de chargement indépendant pouvant vous convenir. Pour plus de détails, reportez-vous à [Chargement de versions test de compléments Office à l’aide de la commande sideload](sideload-office-addin-using-sideload-command.md).
+> Si votre projet de complément a été créé avec une version suffisamment récente du [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office), le complément se charge automatiquement en version de test dans le client de bureau Office lors de l’exécution de `npm start`.
 
 Cet article s’applique uniquement aux tests de compléments Word, Excel, PowerPoint ou Project sur Windows. Si vous souhaitez tester sur une autre plateforme ou tester un complément Outlook, consultez une des rubriques suivantes pour charger une version de votre complément :
 
@@ -82,7 +82,7 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 
 3. Choisissez **DOSSIER PARTAGÉ** dans la boîte de dialogue **Compléments Office**.
 
-4. Sélectionnez le nom du complément, puis choisissez **OK** pour insérer le complément.
+4. Sélectionnez le nom du complément, puis choisissez **OK** pour insérer celui-ci.
 
 ## <a name="see-also"></a>Voir aussi
 
