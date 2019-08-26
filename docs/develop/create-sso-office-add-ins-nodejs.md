@@ -1,14 +1,14 @@
 ---
 title: Création d’un complément Office Node.js qui utilise l’authentification unique
 description: ''
-ms.date: 04/15/2019
+ms.date: 08/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 2050f20139389ed1459cea7aba5e5e92858d00bc
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a5f607ce582408307165e3bc03eeeaf48d3587e3
+ms.sourcegitcommit: 70c6dcecfa2ff7a0dd89987084dc1c8e36ee85fc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448621"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "36564594"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office Node.js qui utilise l’authentification unique (aperçu)
 
@@ -38,8 +38,9 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     > * Le dossier **Before** est un projet de démarrage. L’interface utilisateur et d’autres aspects du complément qui ne sont pas directement liés à l’authentification unique ou à l’autorisation sont déjà terminés. Les sections suivantes de cet article vous guident tout au long de la procédure d’exécution de cette dernière.
     > * La version **Finale** de l’échantillon s’apparente au complément que vous auriez si vous terminiez les procédures de cet article, sauf que le projet terminé comporte des commentaires de code qui seraient redondants avec le texte de cet article. Pour utiliser la version finale, suivez simplement les instructions de cet article, mais remplacez « Avant » par « Finale » et ignorez les sections **Code côté client** et **Code côté serveur**.
     > * La version **mutualisée finale** est un échantillon final qui prend en charge l’architecture mutualisée. Si vous avez l’intention de prendre en charge des comptes Microsoft de différents domaines avec l’authentification unique, explorez cet exemple.
-    >
-    > _Quelle que soit la version que vous utilisez, vous devrez approuver un certificat pour l’hôte local. Consultez la note « IMPORTANT » dans le fichier Lisez-moi du référentiel._
+
+    > [!IMPORTANT]
+    > Quelle que soit la version que vous utilisez, vous devrez approuver un certificat pour l’hôte local. Suivez [ces instructions d’installation de certificats auto-signés](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md), si ce n’est que les dossiers `certs` de chacune des versions de ce référentiel sont dans le dossier `/src`, pas dans le dossier racine.
 
 1. Ouvrez une console Git Bash dans le dossier **Before**.
 
