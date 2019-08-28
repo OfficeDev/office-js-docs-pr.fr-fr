@@ -1,14 +1,14 @@
 ---
 title: Comment trouver l’ordre approprié d’éléments manifeste
 description: Découvrez comment trouver l’ordre correct dans lequel placer les éléments enfants dans un élément parent.
-ms.date: 08/15/2019
+ms.date: 08/22/2019
 localization_priority: Normal
-ms.openlocfilehash: 68eaa21af9a86c910a9e8701ef2ea6cf95a64000
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: c1b8e981b9348e015e14a29131eadff3a5cb08ea
+ms.sourcegitcommit: 4f039614f42ae26a1290ed025fdabb7f6b62cc8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477760"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "36642830"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>Comment trouver l’ordre approprié d’éléments manifeste
 
@@ -21,7 +21,7 @@ Par exemple, dans l’`<OfficeApp>`élément, le `<Id>`,`<Version>` ,`<ProviderN
 > [!NOTE]
 > Le [validateur d’Office-AddIn-manifest](../testing/troubleshoot-manifest.md#validate-your-manifest-with-office-addin-manifest) utilise le même message d’erreur lorsqu’un élément est absent de l’ordre lorsqu’un élément est sous un parent incorrect. L’erreur indique que l’élément enfant n’est pas un enfant valide de l’élément parent. Si vous recevez un message d’erreur mais que la documentation de référence pour l’élément enfant indique qu’elle *est* valide pour le parent, alors le problème est probablement que l’enfant a été placé dans l’ordre incorrect.
 
-Les sections suivantes présentent les éléments de manifeste dans l’ordre dans lequel ils doivent apparaître. Il existe de légères différences selon que l' `type` attribut de l' `<OfficeApp>` élément est `TaskPaneApp`, `ContentApp`ou `MailApp`. Pour éviter que ces sections deviennent trop encombrantes, l’élément hautement complexe `<VersionOverrides>` est divisé en sections distinctes.
+Les sections suivantes présentent les éléments de manifeste dans l’ordre dans lequel ils doivent apparaître. Il existe des différences selon `type` que l’attribut de l' `<OfficeApp>` élément est `TaskPaneApp`, `ContentApp`ou. `MailApp` Pour éviter que ces sections deviennent trop encombrantes, l’élément hautement complexe `<VersionOverrides>` est divisé en sections distinctes.
 
 > [!Note]
 > Tous les éléments affichés ne sont pas obligatoires. Si la `minOccurs` valeur d’un élément est **0** dans le [schéma](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas), l’élément est facultatif.
@@ -145,8 +145,10 @@ Les sections suivantes présentent les éléments de manifeste dans l’ordre da
     <RequestedHeight>
     <Permissions>
     <AllowSnapshot>
-    <VersionOverrides>
+    <VersionOverrides>*
 ```
+
+\*Consultez l’ordre des éléments de [complément de contenu dans VersionOverrides](#content-add-in-element-ordering-within-versionoverrides) pour obtenir l’ordre des éléments enfants de VersionOverrides.
 
 ## <a name="task-pane-add-in-element-ordering-within-versionoverrides"></a>Classement des éléments de complément du volet Office dans VersionOverrides
 
@@ -478,6 +480,17 @@ Les sections suivantes présentent les éléments de manifeste dans l’ordre da
         <LongStrings>
             <String>
                 <Override>
+    <WebApplicationInfo>
+        <Id>
+        <Resource>
+        <Scopes>
+            <Scope>
+```
+
+## <a name="content-add-in-element-ordering-within-versionoverrides"></a>Classement des éléments de complément de contenu dans VersionOverrides
+
+```
+<VersionOverrides>
     <WebApplicationInfo>
         <Id>
         <Resource>
