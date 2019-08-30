@@ -3,14 +3,13 @@ title: Didacticiel sur les compléments Word
 description: Dans ce didacticiel, vous allez cr?er un compl?ment Word qui ins?re (et remplace) des plages de texte, des paragraphes, des images, du code HTML, des tableaux et des contr?les de contenu. Vous découvrirez également comment mettre en forme du texte et comment insérer (et remplacer) du contenu dans les contrôles de contenu.
 ms.date: 07/17/2019
 ms.prod: word
-ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: ff57f9b46fbdc50b39890598c78f8d0f194e8a89
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: b689dc8993ad61045dac54c1024b3fbd1e1a19ad
+ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804652"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "36672865"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches Word
 

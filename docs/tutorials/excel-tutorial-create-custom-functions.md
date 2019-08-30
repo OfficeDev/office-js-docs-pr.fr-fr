@@ -3,14 +3,13 @@ title: Didacticiel de fonctions personnalisées Excel
 description: Dans ce didacticiel, vous allez créer un complément Excel qui contient une fonction personnalisée qui effectue des calculs, requiert des données web ou lance un flux de données web.
 ms.date: 07/09/2019
 ms.prod: excel
-ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: c7417c284beef787e35850ecbbb93b25ea5e1e87
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 2832df467f7e155ed026fe7f04837f18a4d2309d
+ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36302608"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "36672872"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Didacticiel : créer des fonctions personnalisées dans Excel
 

@@ -3,14 +3,13 @@ title: Didacticiel sur les compléments PowerPoint
 description: Dans ce didacticiel, vous allez créer un complément PowerPoint qui insère une image, insère du texte, obtient les métadonnées des diapositives et navigue entre les diapositives.
 ms.date: 12/31/2018
 ms.prod: powerpoint
-ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 9f5e30929c0881c0216b7ca77fbfa4b989fabc6e
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a004a510a4cc874ecaab8260862b7379efaf9cf2
+ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451667"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "36672886"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de PowerPoint
 
@@ -30,7 +29,7 @@ Dans ce didacticiel, vous utiliserez Visual Studio pour créer un complément de
 
 Procédez comme suit pour créer un projet complément PowerPoint à l’aide de Visual Studio.
 
-1. Dans la barre de menu de Visual Studio, choisissez successivement **Fichier** > **Nouveau** > **Projet**.
+1. Dans la barre de menu de Visual Studio, choisissez successivement **Fichier** > **Nouveau** > **Projet**.
     
 2. Dans la liste des types de projet sous **Visual C#** ou **Visual Basic**, développez **Office/SharePoint**, choisissez **Compléments**, puis **Complément web PowerPoint** pour le type de projet. 
 

@@ -1,15 +1,16 @@
 ---
 title: Explorer l’API JavaScript pour Office à l’aide de script Lab
 description: Utilisez script Lab pour explorer l’API Office JS et pour prototyper les fonctionnalités.
-ms.topic: article
 ms.date: 07/05/2019
+ms.topic: overview
+scenarios: getting-started
 localization_priority: Normal
-ms.openlocfilehash: f9f4a644c2d7b188c70142f4dcd2fd85dac035a7
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 908d27cdb5c8a7d4bc080c266cdb4d604114c42f
+ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771855"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "36672837"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>Explorer l’API JavaScript pour Office à l’aide de script Lab
 
