@@ -1,14 +1,14 @@
 ---
 title: Élément Extension dans le fichier manifeste
 description: ''
-ms.date: 03/11/2018
+ms.date: 08/23/2019
 localization_priority: Priority
-ms.openlocfilehash: 4473790a0dd0daeae8042f8ba15421b8e3f9dc64
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 4f6a6347ac61e48f5bdefb7759d8bddbca64ea7e
+ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450484"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "36672794"
 ---
 # <a name="extensionpoint-element"></a>Élément ExtensionPoint
 
@@ -272,7 +272,7 @@ Ce point d’extension ajoute une activation de complément contextuel sur un ty
 Pour les éléments [VersionOverrides](versionoverrides.md) la contenant, `xsi:type`l’attribut doit avoir la valeur `VersionOverridesV1_1`.
 
 > [!NOTE]
-> Ce type d’élément est uniquement pris en charge par Outlook sur le web dans Office 365.
+> Ce type d’élément est disponible pour [les clients Outlook qui prennent en charge les ensembles de conditions requises 1.6 ou version ultérieure](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets#clients).
 
 |  Élément |  Description  |
 |:-----|:-----|
