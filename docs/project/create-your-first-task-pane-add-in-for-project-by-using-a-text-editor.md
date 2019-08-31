@@ -3,16 +3,16 @@ title: Créer votre premier complément de volet des tâches pour Microsoft Proj
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 84e08c1851312f6ecca6d7c779d0b594666922b4
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 8c6a961881ca80bc61c75c78405d9f80f8a9420b
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450998"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695769"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>Créer votre premier complément de volet des tâches pour Microsoft Project à l’aide d’un éditeur de texte
 
-Vous pouvez créer un complément de volet de tâches pour Project standard 2013, Project Professional 2013 ou des versions ultérieures à l'aide du générateur Yeoman pour les compléments Office. Cet article explique comment créer un complément simple qui utilise un manifeste XML pointant vers un fichier HTML sur un partage de fichiers. Le complément exemple Project OM Test teste certaines fonctions JavaScript qui utilisent le modèle objet pour les compléments. Après avoir utilisé le **Centre de gestion de la confidentialité** dans Project pour enregistrer le partage de fichiers qui contient le fichier manifeste, vous pouvez ouvrir le complément volet de tâches à partir de l’onglet du ruban**Project**. (Le code de cet article est basé sur un exemple développé par Arvind Iyer, Microsoft Corporation.)
+Vous pouvez créer un complément de volet de tâches pour Project standard 2013, Project Professional 2013 ou des versions ultérieures à l’aide du générateur Yeoman pour les compléments Office. Cet article explique comment créer un complément simple qui utilise un manifeste XML pointant vers un fichier HTML sur un partage de fichiers. Le complément exemple Project OM Test teste certaines fonctions JavaScript qui utilisent le modèle objet pour les compléments. Après avoir utilisé le **Centre de gestion de la confidentialité** dans Project pour enregistrer le partage de fichiers qui contient le fichier manifeste, vous pouvez ouvrir le complément volet de tâches à partir de l’onglet du ruban**Project**. (Le code de cet article est basé sur un exemple développé par Arvind Iyer, Microsoft Corporation.)
 
 Project utilise le même schéma de complément manifeste que d’autres clients de Microsoft Office utilisent, et le même API JavaScript. Le code complet pour le complément décrit dans cet article est disponible dans le `Samples\Apps` sous-répertoire du téléchargement SDK Project 2013.
 
@@ -109,7 +109,7 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
 
    La variable **\_projDoc** est initialisée avec un objet **ProjectDocument**. Le code inclut des fonctions de gestion des erreurs simples, ainsi que la fonction **getContextValues** qui extrait les propriétés de contexte d’application et de contexte de document de projet. Pour plus d’informations sur le modèle d’objet JavaScript pour Project, reportez-vous à la rubrique [API JavaScript pour Office](/office/dev/add-ins/reference/javascript-api-for-office).
 
-    ```javascript
+    ```js
     /*
     * JavaScript functions for the Project OM Test example app
     * in the Project 2013 SDK.
@@ -193,7 +193,7 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
 
    Chacune des fonctions utilisées dans le code suivant inclut une fonction anonyme représentée par `function (asyncResult)` et qui est un rappel qui obtient le résultat asynchrone. Au lieu de fonctions anonymes, vous pouvez utiliser les fonctions nommées, qui peuvent améliorer la maintenabilité des compléments complexes.
 
-    ```javascript
+    ```js
     // Get the data in the selected cells of the grid in the active view.
     function getSelectedDataAsync() {
         _projDoc.getSelectedDataAsync(
@@ -550,7 +550,7 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
 
    Les fonctions **manageTaskEventHandler**, **manageResourceEventHandler** et **manageViewEventHandler** peuvent ajouter ou supprimer un gestionnaire d’événements, selon la valeur du paramètre _docMethod_.
 
-    ```javascript
+    ```js
     // Task selection changed event handler.
     function onTaskSelectionChanged(eventArgs) {
         text.value = "In task selection change event handler";
@@ -904,7 +904,7 @@ Le complément  **Test du modèle objet de Project** est un exemple qui illustre
 
 Pour un exemple simple, la sortie d’erreur dans le code suivant inclut la variable  **actionMessage** qui spécifie l’action à effectuer pour éviter une erreur dans la fonction **getSelectedResourceAsync**.
 
-```javascript
+```js
 function logError(errorText) {
     text.value = "Error in " + errorText;
 }
@@ -935,7 +935,7 @@ L’exemple **HelloProject_OData** dans le téléchargement de Project 2013 SDK 
 
 Le code suivant dans le fichier SurfaceErrors.js inclut la fonction  **throwError** qui crée un objet **Annonce**.
 
-```javascript
+```js
 /*
  * Show error messages in a "toast" notification.
  */
@@ -1072,7 +1072,7 @@ Pour utiliser la fonction  **throwError**, incluez la bibliothèque JQuery et le
 
 <br/>
 
-```javascript
+```js
 function logMethodError(methodName, errorName, errorMessage, actionMessage) {
     logError(methodName + " method.\nError name: " + errorName
         + "\nMessage: " + errorMessage

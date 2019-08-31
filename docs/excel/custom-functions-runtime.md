@@ -3,12 +3,12 @@ ms.date: 05/08/2019
 description: Comprendre les scénarios clés dans le développement de fonctions personnalisées Excel qui utilisent le nouveau runtime JavaScript.
 title: Runtime pour les fonctions personnalisées Excel
 localization_priority: Normal
-ms.openlocfilehash: e0246170bc80ec63705031cb32a36b5033d42f3a
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: bb73ab2f20eadbac3f5fc97e272d69fe8bb983cd
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771389"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695860"
 ---
 # <a name="runtime-for-excel-custom-functions"></a>Runtime pour les fonctions personnalisées Excel
 
@@ -67,7 +67,7 @@ Dans une fonction personnalisée, vous pouvez utiliser [WebSockets](https://deve
 
 L’exemple de code suivant établit une connexion `WebSocket`, puis consigne chaque message entrant provenant du serveur.
 
-```JavaScript
+```js
 const ws = new WebSocket('wss://bundles.office.com');
 ws.onmessage = function (message) {
     console.log(`Received: ${message}`);
@@ -102,7 +102,7 @@ Les méthodes suivantes sont disponibles avec l’objet `storage` :
 
 L’exemple de code suivant appelle `OfficeRuntime.storage.setItem` la fonction pour définir une clé et une `storage`valeur.
 
-```JavaScript
+```js
 function StoreValue(key, value) {
 
   return OfficeRuntime.storage.setItem(key, value).then(function (result) {

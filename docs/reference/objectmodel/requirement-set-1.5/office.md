@@ -3,12 +3,12 @@ title: Espace de noms Office-ensemble de conditions requises 1,5
 description: ''
 ms.date: 08/13/2019
 localization_priority: Normal
-ms.openlocfilehash: 402737f0f6648e42f569906df59be0fa26991146
-ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
+ms.openlocfilehash: 2236dae5421090a571c8cc658cb6f67f2a08d54a
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "36395686"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696077"
 ---
 # <a name="office"></a>Office
 
@@ -60,6 +60,9 @@ Spécifie le résultat d’un appel asynchrone.
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
+<br>
+
+---
 ---
 
 #### <a name="coerciontype-string"></a>CoercionType: chaîne
@@ -84,6 +87,9 @@ Indique comment forcer le type des données retournées ou définies par la mét
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
+<br>
+
+---
 ---
 
 #### <a name="eventtype-string"></a>EventType: chaîne
@@ -107,6 +113,9 @@ spécifie l’événement associé à un gestionnaire d’événements.
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1,5 |
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture |
 
+<br>
+
+---
 ---
 
 #### <a name="sourceproperty-string"></a>SourceProperty: chaîne

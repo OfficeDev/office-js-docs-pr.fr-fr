@@ -3,12 +3,12 @@ title: Ensemble de conditions requises pour Office. Context-preview
 description: ''
 ms.date: 06/25/2019
 localization_priority: Normal
-ms.openlocfilehash: 998e752cf2292eec4e05901325a0192e158c0b7f
-ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
+ms.openlocfilehash: f06509e291325c635581d902d1f4f440bd255314
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "35454831"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696462"
 ---
 # <a name="context"></a>context
 
@@ -56,7 +56,7 @@ La valeur `displayLanguage` reflète le paramètre **Langue d’affichage** actu
 
 ##### <a name="example"></a>Exemple
 
-```javascript
+```js
 function sayHelloWithDisplayLanguage() {
   var myDisplayLanguage = Office.context.displayLanguage;
   switch (myDisplayLanguage) {
@@ -74,6 +74,8 @@ function write(message){
   document.getElementById('message').innerText += message;
 }
 ```
+
+<br>
 
 ---
 ---
@@ -109,7 +111,7 @@ L’utilisation des couleurs de thème Office vous permet de coordonner le jeu d
 
 ##### <a name="example"></a>Exemple
 
-```javascript
+```js
 function applyOfficeTheme(){
   // Get office theme colors.
   var bodyBackgroundColor = Office.context.officeTheme.bodyBackgroundColor;
@@ -121,6 +123,8 @@ function applyOfficeTheme(){
   $('.body').css('background-color', bodyBackgroundColor);
 }
 ```
+
+<br>
 
 ---
 ---

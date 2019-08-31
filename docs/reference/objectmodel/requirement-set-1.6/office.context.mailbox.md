@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox-ensemble de conditions requises 1,6
 description: ''
-ms.date: 08/06/2019
+ms.date: 08/30/2019
 localization_priority: Normal
-ms.openlocfilehash: f394c23cf9e35e3798de1fe7559bc8083478cc6b
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: 82a7039602c1896488e6a2358cf345bc157b79de
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268361"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695979"
 ---
 # <a name="mailbox"></a>boîte aux lettres
 
@@ -80,6 +80,11 @@ En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context
 |[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
+<br>
+
+---
+---
+
 #### <a name="resturl-string"></a>restUrl: chaîne
 
 obtient l’URL du point de terminaison REST de ce compte de messagerie.
@@ -130,7 +135,7 @@ Actuellement, le seul type d’événement pris en charge est `Office.EventType.
 
 ##### <a name="example"></a>Exemple
 
-```javascript
+```js
 Office.initialize = function (reason) {
   $(document).ready(function () {
     Office.context.mailbox.addHandlerAsync(Office.EventType.ItemChanged, loadNewItem, function (result) {
@@ -146,6 +151,11 @@ function loadNewItem(eventArgs) {
   loadProps(Office.context.mailbox.item);
 };
 ```
+
+<br>
+
+---
+---
 
 #### <a name="converttoewsiditemid-restversion--string"></a>convertToEwsId(itemId, restVersion) → {String}
 
@@ -177,13 +187,18 @@ Type : String
 
 ##### <a name="example"></a>Exemple
 
-```javascript
+```js
 // Get an item's ID from a REST API.
 var restId = 'AAMkAGVlOTZjNTM3LW...';
 
 // Treat restId as coming from the v2.0 version of the Outlook Mail API.
 var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.RestVersion.v2_0);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlookofficelocalclienttimeviewoutlook-js-16"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.6)}
 
@@ -210,6 +225,11 @@ Si l’application de messagerie est en cours d’exécution dans Outlook sur un
 ##### <a name="returns"></a>Renvoie :
 
 Type : [LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.6)
+
+<br>
+
+---
+---
 
 #### <a name="converttorestiditemid-restversion--string"></a>convertToRestId(itemId, restVersion) → {String}
 
@@ -241,13 +261,18 @@ Type : String
 
 ##### <a name="example"></a>Exemple
 
-```javascript
+```js
 // Get the currently selected item's ID.
 var ewsId = Office.context.mailbox.item.itemId;
 
 // Convert to a REST ID for the v2.0 version of the Outlook Mail API.
 var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.RestVersion.v2_0);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="converttoutcclienttimeinput--date"></a>convertToUtcClientTime(input) → {Date}
 
@@ -273,13 +298,34 @@ La méthode `convertToUtcClientTime` convertit un dictionnaire contenant une dat
 
 Objet Date avec l’heure exprimée au format UTC.
 
-<dl class="param-type">
+Type: date
 
-<dt>Type</dt>
+##### <a name="example"></a>Exemple
 
-<dd>Date</dd>
+```js
+// Represents 3:37 PM PDT on Monday, August 26, 2019.
+var input = {
+  date: 26,
+  hours: 15,
+  milliseconds: 2,
+  minutes: 37,
+  month: 7,
+  seconds: 2,
+  timezoneOffset: -420,
+  year: 2019
+};
 
-</dl>
+// result should be a Date object.
+var result = Office.context.mailbox.convertToUtcClientTime(input);
+
+// Output should be "2019-08-26T22:37:02.002Z".
+console.log(result.toISOString());
+```
+
+<br>
+
+---
+---
 
 #### <a name="displayappointmentformitemid"></a>displayAppointmentForm(itemId)
 
@@ -312,9 +358,14 @@ Si l’identificateur de l’élément spécifié n’identifie aucun rendez-vou
 
 ##### <a name="example"></a>Exemple
 
-```javascript
+```js
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="displaymessageformitemid"></a>displayMessageForm(itemId)
 
@@ -347,9 +398,14 @@ N’utilisez pas la méthode `displayMessageForm` ayant une valeur `itemId` qui 
 
 ##### <a name="example"></a>Exemple
 
-```javascript
+```js
 Office.context.mailbox.displayMessageForm(messageId);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="displaynewappointmentformparameters"></a>displayNewAppointmentForm(parameters)
 
@@ -393,7 +449,7 @@ Si l’un des paramètres dépasse les limites définies en matière de taille o
 
 ##### <a name="example"></a>Exemple
 
-```javascript
+```js
 var start = new Date();
 var end = new Date();
 end.setHours(start.getHours() + 1);
@@ -410,6 +466,11 @@ Office.context.mailbox.displayNewAppointmentForm(
     body: 'Hello World!'
   });
 ```
+
+<br>
+
+---
+---
 
 #### <a name="displaynewmessageformparameters"></a>displayNewMessageForm (paramètres)
 
@@ -450,7 +511,7 @@ Si l’un des paramètres dépasse les limites définies en matière de taille o
 
 ##### <a name="example"></a>Exemple
 
-```javascript
+```js
 Office.context.mailbox.displayNewMessageForm(
   {
     toRecipients: Office.context.mailbox.item.to, // Copy the To line from current item
@@ -467,6 +528,11 @@ Office.context.mailbox.displayNewMessageForm(
     ]
   });
 ```
+
+<br>
+
+---
+---
 
 #### <a name="getcallbacktokenasyncoptions-callback"></a>getCallbackTokenAsync([options], callback)
 
@@ -516,7 +582,7 @@ Le complément doit utiliser la propriété `ewsUrl` pour déterminer l’URL à
 
 ##### <a name="example"></a>Exemple
 
-```javascript
+```js
 function getCallbackToken() {
   var options = {
     isRest: true,
@@ -530,6 +596,11 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+<br>
+
+---
+---
 
 #### <a name="getcallbacktokenasynccallback-usercontext"></a>getCallbackTokenAsync(callback, [userContext])
 
@@ -568,7 +639,7 @@ En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context
 
 ##### <a name="example"></a>Exemple
 
-```javascript
+```js
 function getCallbackToken() {
   Office.context.mailbox.getCallbackTokenAsync(cb);
 }
@@ -577,6 +648,11 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+<br>
+
+---
+---
 
 #### <a name="getuseridentitytokenasynccallback-usercontext"></a>getUserIdentityTokenAsync(callback, [userContext])
 
@@ -609,7 +685,7 @@ La méthode `getUserIdentityTokenAsync` renvoie un jeton qui vous permet d’ide
 
 ##### <a name="example"></a>Exemple
 
-```javascript
+```js
 function getIdentityToken() {
   Office.context.mailbox.getUserIdentityTokenAsync(cb);
 }
@@ -618,6 +694,11 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+<br>
+
+---
+---
 
 #### <a name="makeewsrequestasyncdata-callback-usercontext"></a>makeEwsRequestAsync(data, callback, [userContext])
 
@@ -675,7 +756,7 @@ Lorsque votre application de messagerie s’exécute dans Outlook sur le web,
 
 L’exemple suivant appelle la méthode `makeEwsRequestAsync` pour utiliser l’opération `GetItem` pour obtenir l’objet d’un élément.
 
-```javascript
+```js
 function getSubjectRequest(id) {
   // Return a GetItem operation request for the subject of the specified item.
   var request =
@@ -716,6 +797,11 @@ function callback(asyncResult)  {
   // Process the returned response here.
 }
 ```
+
+<br>
+
+---
+---
 
 #### <a name="removehandlerasynceventtype-options-callback"></a>removeHandlerAsync(eventType, [options], [callback])
 

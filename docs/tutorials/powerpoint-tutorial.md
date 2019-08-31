@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez créer un complément PowerPoint q
 ms.date: 12/31/2018
 ms.prod: powerpoint
 localization_priority: Normal
-ms.openlocfilehash: a004a510a4cc874ecaab8260862b7379efaf9cf2
-ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
+ms.openlocfilehash: 0ffd3eedf0cb1d3a118edd0a22b3066cc396d320
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "36672886"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696028"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de PowerPoint
 
@@ -65,7 +65,7 @@ Modifiez le code de complément comme suit pour créer la structure que vous uti
 
 2. Ouvrez le fichier **Home.js** à la racine du projet d’application web. Ce fichier spécifie le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
 
-    ```javascript
+    ```js
     (function () {
         "use strict";
 
@@ -179,13 +179,13 @@ Procédez comme suit pour ajouter le code qui récupère la photo[Bing](https://
 
 7. Dans le fichier **Home.js**, remplacez `TODO1` par le code suivant pour attribuer le gestionnaire d’événements pour le bouton **Insert Image** (Insérer une image).
 
-    ```javascript
+    ```js
     $('#insert-image').click(insertImage);
     ```
 
 8. Dans le fichier **Home.js**, remplacez `TODO2` par le code suivant pour définir la fonction **insertImage**. Cette fonction extrait l’image du service web Bing, puis appelle la fonction `insertImageFromBase64String` pour insérer cette image dans le document.
 
-    ```javascript
+    ```js
     function insertImage() {
         // Get image from from web service (as a Base64 encoded string).
         $.ajax({
@@ -204,7 +204,7 @@ Procédez comme suit pour ajouter le code qui récupère la photo[Bing](https://
 
     - L’objet `asyncResult` encapsule le résultat de la demande `setSelectedDataAsync`, y compris les informations d’état et d’erreur quand la demande a échoué.
 
-    ```javascript
+    ```js
     function insertImageFromBase64String(image) {
         // Call Office.js to insert the image into the document.
         Office.context.document.setSelectedDataAsync(image, {
@@ -291,13 +291,13 @@ Procédez comme suit pour ajouter le code qui insère le texte dans la diapositi
 
 2. Dans le fichier **Home.js**, remplacez `TODO4` par le code suivant pour attribuer le gestionnaire d’événements pour le bouton **Insert Text** (Insérer du texte).
 
-    ```javascript
+    ```js
     $('#insert-text').click(insertText);
     ```
 
 3. Dans le fichier **Home.js**, remplacez `TODO5` par le code suivant pour définir la fonction **insertText**. Cette fonction insère du texte dans la diapositive active.
 
-    ```javascript
+    ```js
     function insertText() {
         Office.context.document.setSelectedDataAsync('Hello World!',
             function (asyncResult) {
@@ -348,13 +348,13 @@ Procédez comme suit pour ajouter du code qui extrait les métadonnées pour la 
 
 2. Dans le fichier **Home.js**, remplacez `TODO6` par le code suivant pour attribuer le gestionnaire d’événements pour le bouton **Get Slide Metadata** (Obtenir les métadonnées de la diapositive).
 
-    ```javascript
+    ```js
     $('#get-slide-metadata').click(getSlideMetadata);
     ```
 
 3. Dans le fichier **Home.js**, remplacez `TODO7` par le code suivant pour définir la fonction **getSlideMetadata**. Cette fonction extrait les métadonnées pour la ou les diapositives sélectionnée(s), et les écrit dans une fenêtre de boîte de dialogue contextuelle dans le volet Office du complément.
 
-    ```javascript
+    ```js
     function getSlideMetadata() {
         Office.context.document.getSelectedDataAsync(Office.CoercionType.SlideRange,
             function (asyncResult) {
@@ -421,7 +421,7 @@ Procédez comme suit pour ajouter le code qui navigue entre les diapositives d�
 
 2. Dans le fichier **Home.js**, remplacez `TODO8` par le code suivant pour affecter les gestionnaires d’événements pour les quatre boutons de navigation.
 
-    ```javascript
+    ```js
     $('#go-to-first-slide').click(goToFirstSlide);
     $('#go-to-next-slide').click(goToNextSlide);
     $('#go-to-previous-slide').click(goToPreviousSlide);
@@ -430,7 +430,7 @@ Procédez comme suit pour ajouter le code qui navigue entre les diapositives d�
 
 3. Dans le fichier **Home.js**, remplacez `TODO9` par le code suivant pour définir les fonctions de navigation. Chacune de ces fonctions utilise la fonction `goToByIdAsync` pour sélectionner une diapositive en fonction de sa position dans le document (première, dernière, précédente, suivante).
 
-    ```javascript
+    ```js
     function goToFirstSlide() {
         Office.context.document.goToByIdAsync(Office.Index.First, Office.GoToType.Index,
             function (asyncResult) {

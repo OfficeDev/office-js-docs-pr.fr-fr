@@ -3,12 +3,12 @@ title: Office. Context. Mailbox. Diagnostics-ensemble de conditions requises 1,7
 description: ''
 ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 65fcaf2d7d04f56703ea6138d2d7820a34e5821c
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: 3f17f21bd4fcf48496ba7f387a57752256d4a038
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268319"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695965"
 ---
 # <a name="diagnostics"></a>diagnostics
 
@@ -55,6 +55,8 @@ Chaîne qui peut avoir l’une des valeurs suivantes : `Outlook`, `OutlookWebAp
 |[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
+<br>
+
 ---
 ---
 
@@ -75,6 +77,8 @@ Si le complément de messagerie est en cours d’exécution sur le client de bur
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
+
+<br>
 
 ---
 ---

@@ -3,12 +3,12 @@ title: Créer un complément dictionnaire du volet Office
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 5f48d4aa96609f92e7ea1e38dcdd93c91b61a755
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a7d819ea1fd424ce9d83f8437ef722593cf6efe8
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451552"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695916"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>Créer un complément dictionnaire du volet Office
 
@@ -272,7 +272,7 @@ Spécifie les paramètres pour les compléments de dictionnaire.
 
  `<TargetDialects>`,  `<QueryUri>`,  `<CitationText>`,  `<DictionaryName>`,  `<DictionaryHomePage>`
 
- **Notes**
+ **Remarques**
 
 L’élément **Dictionary** et ses éléments enfants sont ajoutés au manifeste d’un complément du volet Office quand vous créez un complément de dictionnaire.
 
@@ -290,7 +290,7 @@ Indique les langues régionales prises en charge par ce dictionnaire. Requis pou
 
  `<TargetDialect>`
 
- **Notes**
+ **Remarques**
 
 L’élément**TargetDialects** et ses éléments enfant indiquent l’ensemble de langues régionales disponibles dans votre dictionnaire. Par exemple, si votre dictionnaire s’applique à l’espagnol (Mexique) et à l’espagnol (Pérou), mais pas à l’espagnol (Espagne), vous pouvez le préciser dans cet élément. N’indiquez pas plus d’une langue (par exemple, espagnol et anglais) dans ce manifeste. Publiez les langues distinctes dans des dictionnaires différents.
 
@@ -542,7 +542,7 @@ Les principaux membres de l’API JavaScript pour Office (Office.js) qui sont ap
 
 
 
-```javascript
+```js
 // The document the dictionary add-in is interacting with.
 var _doc; 
 // The last looked-up word, which is also the currently displayed word.

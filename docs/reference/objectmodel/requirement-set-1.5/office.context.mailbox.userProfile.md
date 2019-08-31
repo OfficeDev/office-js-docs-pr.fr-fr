@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox.userProfile – ensemble de conditions requises 1.5
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/24/2019
 localization_priority: Normal
-ms.openlocfilehash: fc20497cc8df8d091ba0195f7dca9b283ff4d1c2
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 993fad674fcc616483ac927619e7ca64d81b7326
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451821"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696091"
 ---
 # <a name="userprofile"></a>userProfile
 
@@ -32,7 +32,7 @@ ms.locfileid: "32451821"
 
 ### <a name="members"></a>Membres
 
-####  <a name="displayname-string"></a>displayName :String
+#### <a name="displayname-string"></a>displayName: String
 
 Obtient le nom d’affichage de l’utilisateur.
 
@@ -50,12 +50,17 @@ Obtient le nom d’affichage de l’utilisateur.
 
 ##### <a name="example"></a>Exemple
 
-```javascript
+```js
 // Example: Allie Bellew
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
 
-####  <a name="emailaddress-string"></a>emailAddress :String
+<br>
+
+---
+---
+
+#### <a name="emailaddress-string"></a>emailAddress: chaîne
 
 Obtient l’adresse de messagerie SMTP de l’utilisateur.
 
@@ -73,12 +78,17 @@ Obtient l’adresse de messagerie SMTP de l’utilisateur.
 
 ##### <a name="example"></a>Exemple
 
-```javascript
+```js
 // Example: allieb@contoso.com
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
 
-####  <a name="timezone-string"></a>timeZone :String
+<br>
+
+---
+---
+
+#### <a name="timezone-string"></a>timeZone: chaîne
 
 Obtient le fuseau horaire par défaut de l’utilisateur.
 
@@ -96,7 +106,7 @@ Obtient le fuseau horaire par défaut de l’utilisateur.
 
 ##### <a name="example"></a>Exemple
 
-```javascript
+```js
 // Example: Pacific Standard Time
 console.log(Office.context.mailbox.userProfile.timeZone);
 ```

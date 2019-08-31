@@ -3,12 +3,12 @@ title: Office. Context. Mailbox. userProfile-ensemble de conditions requises 1,1
 description: ''
 ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: af9a7f790f56124a86af08567690452b7f497408
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: 06492623e0b9ab16792d6b23dfaeb27d99125ff1
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268487"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696399"
 ---
 # <a name="userprofile"></a>userProfile
 
@@ -50,10 +50,15 @@ Obtient le nom d’affichage de l’utilisateur.
 
 ##### <a name="example"></a>Exemple
 
-```javascript
+```js
 // Example: Allie Bellew
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="emailaddress-string"></a>emailAddress: chaîne
 
@@ -73,10 +78,15 @@ Obtient l’adresse de messagerie SMTP de l’utilisateur.
 
 ##### <a name="example"></a>Exemple
 
-```javascript
+```js
 // Example: allieb@contoso.com
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="timezone-string"></a>timeZone: chaîne
 
@@ -96,7 +106,7 @@ Obtient le fuseau horaire par défaut de l’utilisateur.
 
 ##### <a name="example"></a>Exemple
 
-```javascript
+```js
 // Example: Pacific Standard Time
 console.log(Office.context.mailbox.userProfile.timeZone);
 ```
