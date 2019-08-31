@@ -3,12 +3,12 @@ title: Création de commandes de complément dans votre manifeste pour Excel, Wo
 description: Utilisez VersionOverrides dans votre manifeste pour définir des commandes de complément pour Excel, Word et PowerPoint. Utilisez les commandes de complément pour créer des éléments d’interface utilisateur, ajouter des boutons ou des listes, et effectuer des actions.
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 9917eaa7b28ea843703a1de566b41277517b20fa
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: a614d2786652058c42dbcca726546575e71f12ef
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128177"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695895"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-word-and-powerpoint"></a>Création de commandes de complément dans votre manifeste pour Excel, Word et PowerPoint
 
@@ -166,7 +166,7 @@ Le code JavaScript dans le fichier HTML référencé par l’élément **Functio
 
 Le code suivant montre comment implémenter la fonction utilisée par **FunctionName**.
 
-```javascript
+```js
 
 <script>
     // The initialize function must be run each time a new page is loaded.

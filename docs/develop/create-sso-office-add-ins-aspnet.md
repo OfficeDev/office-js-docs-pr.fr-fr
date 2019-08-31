@@ -3,12 +3,12 @@ title: Créer un complément Office ASP.NET qui utilise l’authentification uni
 description: ''
 ms.date: 04/15/2019
 localization_priority: Priority
-ms.openlocfilehash: a28178fb309450f59435d678c013a7a73bb60978
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: bc8c2427171f06865de6c809a5d7311018fcc278
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128155"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695804"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office ASP.NET qui utilise l’authentification unique (aperçu)
 
@@ -169,7 +169,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
     * La gestion des erreurs dans le complément tente parfois automatiquement d’obtenir un jeton d’accès une deuxième fois, à l’aide d’un autre jeu d’options. La variable de compteur `timesGetOneDriveFilesHasRun` et la variable d’indicateur `triedWithoutForceConsent` permettent de s’assurer que l’utilisateur ne tente pas de manière répétée d’obtenir un jeton sans y parvenir.
     * Vous allez créer la méthode `getDataWithToken` à l’étape suivante, mais rappelez-vous qu’elle définit une option appelée `forceConsent` sur `false`. Vous en saurez plus à la prochaine étape.
 
-    ```javascript
+    ```js
     var timesGetOneDriveFilesHasRun = 0;
     var triedWithoutForceConsent = false;
 
@@ -187,7 +187,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
     * Le paramètre d’options définit `forceConsent` sur `false`, donc l’utilisateur ne sera pas invité à accorder à l’hôte Office l’accès à votre complément chaque fois qu’il utilisera le complément. La première fois que l’utilisateur exécutera le complément, l’appel à `getAccessTokenAsync` échouera, mais la logique de gestion des erreurs que vous ajouterez dans une étape ultérieure effectuera automatiquement un autre appel avec le jeu d’options `forceConsent` défini sur `true`, et l’utilisateur sera invité à donner son consentement, mais uniquement la première fois.
     * Vous créerez la méthode `handleClientSideErrors` à une étape ultérieure.
 
-    ```javascript
+    ```js
     function getDataWithToken(options) {
     Office.context.auth.getAccessTokenAsync(options,
         function (result) {
@@ -203,7 +203,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
 
 1. Remplacez TODO1 par les lignes suivantes. Vous créez la méthode `getData` et la route « /api/values » côté serveur dans les étapes suivantes. Une URL relative est utilisée pour le point de terminaison car il doit être hébergé sur le même domaine que votre complément.
 
-    ```javascript
+    ```js
     accessToken = result.value;
     getData("/api/values", accessToken);
     ```
@@ -213,7 +213,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
     * Cette méthode appelle un point de terminaison d’API Web spécifié et lui transmet le même jeton d’accès que l’application hôte Office a utilisé pour accéder à votre complément. Côté serveur, ce jeton d’accès est utilisé dans le flux « de la part de » pour obtenir un jeton d’accès à Microsoft Graph.
     * Vous créerez la méthode `handleServerSideErrors` à une étape ultérieure.
 
-    ```javascript
+    ```js
     function getData(relativeUrl, accessToken) {
         $.ajax({
             url: relativeUrl,
@@ -233,7 +233,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
 
 1. En dessous de la méthode `getData`, ajoutez la méthode suivante. Cette méthode gérera les erreurs dans le client du complément lorsque l’hôte Office ne parviendra pas à obtenir un jeton d’accès pour le service web du complément. Ces erreurs sont signalées avec un code d’erreur, donc la méthode utilise une instruction `switch` pour les distinguer.
 
-    ```javascript
+    ```js
     function handleClientSideErrors(result) {
 
         switch (result.error.code) {
@@ -266,7 +266,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
 
 1. Remplacez `TODO2` par le code suivant. L’erreur 13001 se produit si l’utilisateur n’est pas connecté, ou s’il a annulé, sans y répondre, une invite lui demandant d’indiquer un deuxième facteur d’authentification. Dans les deux cas, le code réexécute la méthode `getDataWithToken` et définit une option pour forcer une invite de connexion.
 
-    ```javascript
+    ```js
     case 13001:
         getDataWithToken({ forceAddAccount: true });
         break;
@@ -274,7 +274,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
 
 1. Remplacez `TODO3` par le code suivant. L’erreur 13002 se produit lorsque la connexion ou l’octroi du consentement de l’utilisateur a été abandonné. Demandez à l’utilisateur de réessayer, mais seulement une fois.
 
-    ```javascript
+    ```js
     case 13002:
         if (timesGetOneDriveFilesHasRun < 2) {
             showResult(['Your sign-in or consent was aborted before completion. Please try that operation again.']);
@@ -286,7 +286,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
 
 1. Remplacez `TODO4` par le code suivant. L’erreur 13003 se produit si l’utilisateur est connecté avec un compte qui n’est ni un compte professionnel ni un compte scolaire, ni un compte Microsoft. Demandez à l’utilisateur de se déconnecter, puis de se reconnecter avec un type de compte pris en charge.
 
-    ```javascript
+    ```js
     case 13003:
         showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft account. Other kinds of accounts, like corporate domain accounts do not work.']);
         break;
@@ -297,7 +297,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
 
 1. Remplacez `TODO5` par le code suivant. L’erreur 13005 se produit si Office n’a pas été autorisé à accéder au service web du complément ou si l’utilisateur n’a pas accordé l’autorisation de service à son `profile`.
 
-    ```javascript
+    ```js
     case 13005:
         getDataWithToken({ forceConsent: true });
         break;
@@ -305,7 +305,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
 
 1. Remplacez `TODO6` par le code suivant. L’erreur 13006 se produit lorsqu’une erreur non spécifiée indiquant que l’hôte est dans un état instable est survenue dans l’hôte Office. Demandez à l’utilisateur de redémarrer Office.
 
-    ```javascript
+    ```js
     case 13006:
         showResult(['Please save your work, sign out of Office, close all Office applications, and restart this Office application.']);
         break;
@@ -313,7 +313,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
 
 1. Remplacez `TODO7` par le code suivant. L’erreur 13007 se produit lorsqu’un problème est survenu au niveau de l’interaction de l’hôte Office avec AAD de telle sorte que l’hôte ne peut pas obtenir de jeton d’accès pour accéder à l’application/au service Web des compléments. Il peut s’agir d’un problème temporaire de réseau. Demandez à l’utilisateur de réessayer plus tard.
 
-    ```javascript
+    ```js
     case 13007:
         showResult(['That operation cannot be done at this time. Please try again later.']);
         break;
@@ -321,7 +321,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
 
 1. Remplacez `TODO8` par le code suivant. L’erreur 13008 se produit lorsque l’utilisateur a déclenché une opération qui appelle `getAccessTokenAsync` avant que la fin de l’appel précédent.
 
-    ```javascript
+    ```js
     case 13008:
         showResult(['Please try that operation again after the current operation has finished.']);
         break;
@@ -329,7 +329,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
 
 1. Remplacez `TODO9` par le code suivant. L’erreur 13009 se produit lorsque le complément ne prend pas en charge l’obligation d’afficher une invite de consentement, mais que `getAccessTokenAsync` a été appelé avec l’option `forceConsent` définie sur `true`. Dans le cas habituel, lorsque cela se produit, le code doit automatiquement réexécuter `getAccessTokenAsync` avec l’option de consentement définie sur `false`. Toutefois, dans certains cas, l’appel de la méthode avec `forceConsent` défini sur `true` était lui-même une réponse automatique à une erreur dans un appel à la méthode avec l’option définie sur `false`. Dans ce cas, le code ne doit pas réessayer, mais il doit à la place conseiller à l’utilisateur de se déconnecter et de se reconnecter.
 
-    ```javascript
+    ```js
     case 13009:
         if (triedWithoutForceConsent) {
             showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft account.']);
@@ -341,7 +341,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
 
 1. Remplacez `TODO10` par le code suivant.
 
-    ```javascript
+    ```js
     default:
         logError(result);
         break;
@@ -350,7 +350,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
 
 1. En dessous de la méthode `handleClientSideErrors`, ajoutez la méthode suivante. Cette méthode gérera les erreurs du service web du complément en cas de problème d’exécution du flux « de la part de » ou de problème d’obtention de données à partir de Microsoft Graph.
 
-    ```javascript
+    ```js
     function handleServerSideErrors(result) {
 
         // TODO11: Parse the JSON response.
@@ -368,7 +368,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
 
 1. Remplacez `TODO11` par le code suivant. Pour la plupart des erreurs `4xx` que le service web du complément transmettra du côté client du complément, une propriété **ExceptionMessage** se trouvera dans la réponse contenant le numéro d’erreur AADSTS (Azure Active Directory Secure Token Service), ainsi que d’autres données. Toutefois, lorsqu’AAD enverra un message au service web du complément pour demander un facteur d’authentification supplémentaire, le message contiendra une propriété **Claims** spéciale spécifiant (avec un numéro de code) le facteur supplémentaire nécessaire. Les API ASP.NET qui créent et envoient des réponses HTTP aux clients ne connaissent pas cette propriété **Claims**, donc ils ne l’incluent pas dans l’objet de la réponse. Le code côté serveur que vous allez créer dans une étape ultérieure y remédiera en ajoutant manuellement la valeur **Claims** à l’objet de réponse. Cette valeur sera dans la propriété **Message**, donc le code doit également analyser cette propriété.
 
-    ```javascript
+    ```js
     var exceptionMessage = JSON.parse(result.responseText).ExceptionMessage;
     var message = JSON.parse(result.responseText).Message;
     ```
@@ -378,7 +378,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
     * L’erreur 50076 se produit lorsque Microsoft Graph exige un formulaire d’authentification supplémentaire.
     * L’hôte Office dois obtenir un nouveau jeton avec la valeur **Claims** pour l’option `authChallenge`. Cela demande à AAD d’inviter l’utilisateur à accepter tous les formulaires d’authentification requis.
 
-    ```javascript
+    ```js
     if (message) {
         if (message.indexOf("AADSTS50076") !== -1) {
             var claims = JSON.parse(message).Claims;
@@ -390,7 +390,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
 
 1. Remplacez `TODO13` par le code suivant. Dans les prochaines étapes, vous allez remplacer les trois `TODO` dans ce code par un bloc conditionnel *interne*.
 
-    ```javascript
+    ```js
     else if (exceptionMessage) {
 
         // TODO13A: Handle the case where consent has not been granted, or has been revoked.
@@ -409,7 +409,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
     * L’erreur 65001 signifie que l’utilisateur a refusé de donner l’accès à Microsoft Graph (ou que l’accès a été révoqué) pour une ou plusieurs autorisations.
     * Le complément doit obtenir un nouveau jeton avec l’option `forceConsent` définie sur `true`.
 
-    ```javascript
+    ```js
     if (exceptionMessage.indexOf('AADSTS65001') !== -1) {
        getDataWithToken({ forceConsent: true });
     }
@@ -420,7 +420,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
     * L’erreur 70011 a plusieurs sens. Le problème qui importe pour ce complément est lorsque cette erreur indique qu’une étendue (autorisation) non valide a été demandée ; le code vérifie alors la description complète de l’erreur, pas seulement le numéro.
     * Le complément doit signaler l’erreur.
 
-    ```javascript
+    ```js
      else if (exceptionMessage.indexOf("AADSTS70011: The provided value for the input parameter 'scope' is not valid.") !== -1) {
         showResult(['The add-in is asking for a type of permission that is not recognized.']);
     }
@@ -431,7 +431,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
     * Le code côté serveur que vous allez créer dans une étape ultérieure enverra le message `Missing access_as_user` si l’étendue (autorisation) `access_as_user` ne se trouve pas dans le jeton d’accès que le client du complément envoie à AAD pour qu’il l’utilise dans flux « de la part de ».
     * Le complément doit signaler l’erreur.
 
-    ```javascript
+    ```js
     else if (exceptionMessage.indexOf('Missing access_as_user.') !== -1) {
         showResult(['Microsoft Office does not have permission to get Microsoft Graph data on behalf of the current user.']);
     }
@@ -442,7 +442,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
     * La bibliothèque d’identité que vous allez utiliser dans le code côté serveur (Microsoft Authentication Library, MSAL) doit garantir qu’aucun jeton expiré ou non valide n’est envoyé à Microsoft Graph. Cependant, si cela se produit, l’erreur renvoyée par Microsoft Graph au service web du complément a le code `InvalidAuthenticationToken`. Le code côté serveur que vous allez créer dans une étape ultérieure envoie ce message au client du complément.
     * Dans ce cas, le complément doit recommencer l’intégralité du processus d’authentification en réinitialisant les variables de compteur et d’indicateur, puis en appelant à nouveau la méthode de gestionnaire de boutons.
 
-    ```javascript
+    ```js
     // If the token sent to MS Graph is expired or invalid, start the whole process over.
     else if (result.code === 'InvalidAuthenticationToken') {
         timesGetOneDriveFilesHasRun = 0;
@@ -453,7 +453,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
 
 1. Remplacez `TODO15` par le code suivant.
 
-    ```javascript
+    ```js
     else {
         logError(result);
     }

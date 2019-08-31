@@ -3,12 +3,12 @@ title: Ensemble de conditions requises de l’API du complément Outlook (aper�
 description: ''
 ms.date: 08/15/2019
 localization_priority: Priority
-ms.openlocfilehash: 14f40830bb8f0f0e0232e6ae2305d60e400ca145
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: aa3f46c505e8c87508699f6e84194272ee4d13bb
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477888"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696455"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -69,6 +69,8 @@ Ajout de l’événement `AttachmentsChanged` à `Item`.
 
 **Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur le web (moderne), Outlook sur Mac (connecté à Office 365)
 
+<br>
+
 ---
 
 ### <a name="block-on-send"></a>Blocage lors de l’envoi
@@ -78,6 +80,8 @@ Ajout de l’événement `AttachmentsChanged` à `Item`.
 Ajout d’un nouveau paramètre facultatif `options`, qui est un dictionnaire ayant comme seule valeur valide `allowEvent`. Cette valeur est utilisée pour annuler l’exécution d’un événement.
 
 **Disponible dans** : Outlook sur le web (classique), Outlook sur Windows (connecté à Office 365), Outlook sur Mac (connecté à Office 365)
+
+<br>
 
 ---
 
@@ -124,6 +128,8 @@ Ajouté un nouvel enum qui spécifie les couleurs disponibles à associer à des
 
 **Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur Mac (connecté à Office 365)
 
+<br>
+
 ---
 
 ### <a name="delegate-access"></a>Accès délégué
@@ -157,6 +163,8 @@ Ajout d’une nouvelle énumération d’indicateur binaire qui spécifie les au
 Ajout d’un élément enfant à l’élément de manifeste [DesktopFormFactor](../../manifest/desktopformfactor.md). Définit si le complément est disponible dans les scénarios de délégué.
 
 **Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur le web (moderne), Outlook sur Mac (connecté à Office 365)
+
+<br>
 
 ---
 
@@ -198,6 +206,8 @@ Ajout de l’événement `EnhancedLocationsChanged` à `Item`.
 
 **Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur le web (moderne), Outlook sur Mac (connecté à Office 365)
 
+<br>
+
 ---
 
 ### <a name="integration-with-actionable-messages"></a>Intégration avec les messages actionnables
@@ -207,6 +217,8 @@ Ajout de l’événement `EnhancedLocationsChanged` à `Item`.
 Ajout d’une nouvelle fonction qui renvoie les données d’initialisation transmises lorsque le complément est [activé par un message actionnable](/outlook/actionable-messages/invoke-add-in-from-actionable-message).
 
 **Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur le web (classique)
+
+<br>
 
 ---
 
@@ -224,6 +236,8 @@ Ajout d’une nouvelle propriété représentant les en-têtes Internet personna
 
 **Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur Mac (connecté à Office 365)
 
+<br>
+
 ---
 
 ### <a name="office-theme"></a>Thème Office
@@ -239,6 +253,8 @@ Ajout de la possibilité d’obtenir un thème Office.
 Ajout de l’événement `OfficeThemeChanged` à `Mailbox`.
 
 **Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
+
+<br>
 
 ---
 
