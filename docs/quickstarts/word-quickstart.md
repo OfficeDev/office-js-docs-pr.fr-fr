@@ -314,6 +314,5 @@ Félicitations, vous avez créé un complément du volet des tâches de Word ! 
 ## <a name="see-also"></a>Voir aussi
 
 * [Présentation des compléments Word](../word/word-add-ins-programming-overview.md)
-* 
-  [Exemples de code pour les compléments Word](https://developer.microsoft.com/fr-FR/office/gallery/?filterBy=Samples,Word)
+* [Exemples de code pour les compléments Word](https://developer.microsoft.com/fr-FR/office/gallery/?filterBy=Samples,Word)
 * [Référence d’API JavaScript pour Word](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)
