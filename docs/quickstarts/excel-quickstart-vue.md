@@ -1,15 +1,15 @@
 ---
 title: Créer un complément de volet de tâches Excel à l’aide de Vue
 description: ''
-ms.date: 06/20/2019
+ms.date: 09/04/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: e343e8eec053bb41cc4438ef42ef0a420319be94
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 9947852a586570345ba9f3dfe09340af6d01ace6
+ms.sourcegitcommit: 78998a9f0ebb81c4dd2b77574148b16fe6725cfc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36302587"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "36715628"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>Créer un complément de volet de tâches Excel à l’aide de Vue
 
@@ -19,27 +19,21 @@ Cet article décrit le processus de création d’un complément de volet de tâ
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Installez l’[interface de ligne de commande Vue](https://github.com/vuejs/vue-cli) globalement.
+- Installez l’[interface de ligne de commande Vue](https://cli.vuejs.org/) globalement.
 
-    ```command&nbsp;line
-    npm install -g vue-cli
-    ```
+  ```command&nbsp;line
+  npm install -g @vue/cli
+  ```
 
 ## <a name="generate-a-new-vue-app"></a>Génération d’une nouvelle application Vue
 
-Utilisez l’interface de ligne de commande Vue pour générer une nouvelle application Vue. À partir du terminal, exécutez la commande suivante, puis répondez aux invites comme décrit ci-dessous.
+Utilisez l’interface de ligne de commande Vue pour générer une nouvelle application Vue. À partir du terminal, exécutez la commande suivante.
 
 ```command&nbsp;line
-vue init webpack my-add-in
+vue create my-add-in
 ```
 
-Lorsque vous répondez aux invites générées par la commande précédente, remplacez les réponses par défaut des 3 invites ci-dessous. Vous pouvez accepter les réponses par défaut de toutes les autres invites.
-
-- **Installer vue-router ?** `No`
-- **Configurer des tests d’unités :** `No`
-- **Configurer des tests e2e avec Nightwatch ?** `No`
-
-![Invites de l’interface de ligne de commande Vue](../images/vue-cli-prompts.png)
+Ensuite, sélectionnez la présélection `default`. Si vous êtes invité à utiliser Yarn ou NPM comme package, vous pouvez choisir l’un ou l’autre.
 
 ## <a name="generate-the-manifest-file"></a>Génération du fichier manifeste
 
@@ -47,164 +41,160 @@ Chaque complément nécessite un fichier manifeste pour définir ses paramètres
 
 1. Accédez au dossier de votre application.
 
-    ```command&nbsp;line
-    cd my-add-in
-    ```
+   ```command&nbsp;line
+   cd my-add-in
+   ```
 
 2. Utilisez le générateur Yeoman pour générer le fichier manifeste de votre complément. Exécutez la commande suivante, puis répondez aux invites comme indiqué ci-dessous.
 
-    ```command&nbsp;line
-    yo office
-    ```
+   ```command&nbsp;line
+   yo office
+   ```
 
-    - **Sélectionnez un type de projet :** `Office Add-in project containing the manifest only`
-    - **Comment souhaitez-vous nommer votre complément ?** `my-office-add-in`
-    - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
+   ![Générateur Yeoman](../images/yo-office-manifest-only-vue.png)
 
-    ![Générateur Yeoman](../images/yo-office-manifest-only-vue.png)
+   - **Sélectionnez un type de projet :** `Office Add-in project containing the manifest only`
+   - **Comment souhaitez-vous nommer votre complément ?** `my-office-add-in`
+   - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
 
-    Une fois l’Assistant exécuté, le générateur crée le fichier manifeste.
+Une fois que vous avez terminé les étapes de l’Assistant, celui-ci crée un dossier `my-office-add-in` qui contient un fichier `manifest.xml`. Vous utiliserez le manifeste pour charger une version test et tester votre complément à la fin du Démarrage rapide.
 
 ## <a name="secure-the-app"></a>Sécurisation de l’application
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-Pour activer HTTPS pour votre application, ouvrez le fichier **package.json** dans le dossier racine du projet Vue, modifiez le script `dev` pour ajouter le marqueur `--https` et enregistrez le fichier.
+Pour activer HTTPS pour votre application, créez un fichier `vue.config.js` dans le dossier racine du projet Vue avec le contenu suivant :
 
-```json
-"dev": "webpack-dev-server --https --inline --progress --config build/webpack.dev.conf.js"
+```js
+module.exports = {
+  devServer: {
+    port: 3000,
+    https: true
+  }
+};
 ```
 
 ## <a name="update-the-app"></a>Mettre à jour l’application
 
-1. Dans votre éditeur de code, ouvrez le dossier **my-office-add-in** créé par Yo Office à la racine de votre projet Vue. Dans ce dossier, vous verrez le fichier manifeste qui définit les paramètres de votre complément : **manifest.xml**.
+1. Ouvrez le fichier `public/index.html` et ajoutez la balise `<script>` suivante juste avant la balise `</head>` :
 
-2. Ouvrir le fichier manifeste, remplacez toutes les occurrences de `https://localhost:3000` par `https://localhost:8080` et enregistrez le fichier.
+   ```html
+   <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+   ```
 
-3. Ouvrez le fichier **index.html** (situé à la racine de votre projet Vue), ajoutez la balise `<script>` suivante immédiatement avant la balise `</head>`, puis enregistrez le fichier.
+2. Ouvrez `src/main.js` et remplacez le contenu par le code suivant :
 
-    ```html
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
-    ```
+   ```js
+   import Vue from 'vue';
+   import App from './App.vue';
 
-3. Ouvrez **src/main.js** et *supprimez* le bloc de code suivant :
+   Vue.config.productionTip = false;
 
-    ```js
-    new Vue({
-        el: '#app',
-        components: {App},
-        template: '<App/>'
-    })
-    ```
-    
-    Ajoutez le code suivant à ce même emplacement, puis enregistrez le fichier. 
-                                                         
-    ```js
-    const Office = window.Office
-    Office.initialize = () => {
-      new Vue({
-        el: '#app',
-        components: {App},
-        template: '<App/>'
-      })
-    }
-    ```
+   window.Office.initialize = () => {
+     new Vue({
+       render: h => h(App)
+     }).$mount('#app');
+   };
+   ```
 
-4. Ouvrez **src/App.vue**, remplacez le contenu du fichier par le code suivant, ajoutez un saut de ligne à la fin du fichier (c’est-à-dire, après la balise `</style>`) et enregistrez le fichier. 
+3. Ouvrez `src/App.vue` et remplacez le contenu du fichier par le code suivant :
 
-    ```html
-    <template>
-    <div id="app">
-        <div id="content">
-        <div id="content-header">
-            <div class="padding">
-            <h1>Welcome</h1>
-            </div>
-        </div>
-        <div id="content-main">
-            <div class="padding">
-            <p>Choose the button below to set the color of the selected range to green.</p>
-            <br/>
-            <h3>Try it out</h3>
-            <button @click="onSetColor">Set color</button>
-            </div>
-        </div>
-        </div>
-    </div>
-    </template>
+   ```html
+   <template>
+     <div id="app">
+       <div class="content">
+         <div class="content-header">
+           <div class="padding">
+             <h1>Welcome</h1>
+           </div>
+         </div>
+         <div id="content-main">
+           <div class="padding">
+             <p>
+               Choose the button below to set the color of the selected range to
+               green.
+             </p>
+             <br />
+             <h3>Try it out</h3>
+             <button @click="onSetColor">Set color</button>
+           </div>
+         </div>
+       </div>
+     </div>
+   </template>
 
-    <script>
-    export default {
-      name: 'App',
-      methods: {
-        onSetColor () {
-          window.Excel.run(async (context) => {
-            const range = context.workbook.getSelectedRange()
-            range.format.fill.color = 'green'
-            await context.sync()
-          })
-        }
-      }
-    }
-    </script>
+   <script>
+     export default {
+       name: 'App',
+       methods: {
+         onSetColor() {
+           window.Excel.run(async context => {
+             const range = context.workbook.getSelectedRange();
+             range.format.fill.color = 'green';
+             await context.sync();
+           });
+         }
+       }
+     };
+   </script>
 
-    <style>
-    #content-header {
-        background: #2a8dd4;
-        color: #fff;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 80px;
-        overflow: hidden;
-    }
+   <style>
+     .content-header {
+       background: #2a8dd4;
+       color: #fff;
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 80px;
+       overflow: hidden;
+     }
 
-    #content-main {
-        background: #fff;
-        position: fixed;
-        top: 80px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        overflow: auto;
-    }
+     .content-main {
+       background: #fff;
+       position: fixed;
+       top: 80px;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       overflow: auto;
+     }
 
-    .padding {
-        padding: 15px;
-    }
-    </style>
-    ```
+     .padding {
+       padding: 15px;
+     }
+   </style>
+   ```
 
 ## <a name="start-the-dev-server"></a>Démarrage du serveur de développement
 
 1. À partir du terminal, exécutez la commande suivante pour démarrer le serveur dev.
 
-    ```command&nbsp;line
-    npm start
-    ```
+   ```command&nbsp;line
+   npm run serve
+   ```
 
-2. Dans un navigateur web, accédez à `https://localhost:8080`. Si votre navigateur indique que le certificat de site n’est pas approuvé, vous devez configurer votre ordinateur pour qu’il approuve le certificat. 
+2. Dans un navigateur web, accédez à `https://localhost:3000` (remarquez le `https`). Si votre navigateur indique que le certificat de site n’est pas approuvé, vous devez [configurer votre ordinateur pour qu’il approuve le certificat](https://github.com/OfficeDev/generator-office/blob/fd600bbe00747e64aa5efb9846295a3f66d428aa/src/docs/ssl.md#add-certification-file-through-ie).
 
-3. Une fois que votre navigateur a chargé la page du complément sans erreurs de certificat, vous pouvez tester votre complément.
+3. Lorsque la page sur `https://localhost:3000` est vide et qu’aucune erreur de certificat ne s’affiche, cela signifie qu’elle fonctionne. L’application Vue est montée une fois qu’Office est initialisé, de sorte qu’elle affiche uniquement les éléments dans un environnement Excel.
 
-## <a name="try-it-out"></a>Essayez !
+## <a name="try-it-out"></a>Essayez
 
 1. Suivez les instructions pour la plateforme que vous utiliserez pour exécuter votre complément et chargez une version test du complément dans Excel.
 
-    - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Navigateur web : [Chargement de version test des compléments Office dans Office sur le web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
-    - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+   - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+   - Navigateur web : [Chargement de version test des compléments Office dans Office sur le web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
+   - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
-    ![Bouton Complément Excel](../images/excel-quickstart-addin-2a.png)
+   ![Bouton Complément Excel](../images/excel-quickstart-addin-2a.png)
 
 3. Sélectionnez une plage de cellules dans la feuille de calcul.
 
 4. Dans le volet Office, cliquez sur le bouton **Définir couleur** pour définir la couleur de la plage sélectionnée en vert.
 
-    ![Complément Excel](../images/excel-quickstart-addin-2c.png)
+   ![Complément Excel](../images/excel-quickstart-addin-2c.png)
 
 ## <a name="next-steps"></a>Étapes suivantes
 
@@ -219,4 +209,3 @@ Félicitations, vous avez créé un complément de volet de tâches Excel à l�
 * [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Référence de l’API JavaScript pour Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
-
