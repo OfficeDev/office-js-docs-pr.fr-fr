@@ -1,14 +1,14 @@
 ---
 title: Élément Extension dans le fichier manifeste
 description: ''
-ms.date: 08/23/2019
+ms.date: 09/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 4f6a6347ac61e48f5bdefb7759d8bddbca64ea7e
-ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
+ms.openlocfilehash: ed26c5e81a2c8229faad2c8af6b1edaff2f288e5
+ms.sourcegitcommit: d34aa0b282cc76ffff579da2a7945efd12fb7340
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "36672794"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "36769588"
 ---
 # <a name="extensionpoint-element"></a>Élément ExtensionPoint
 
@@ -251,7 +251,7 @@ Pour les éléments **Control** contenus dans ce point d’extension, l’attrib
 Ce point d’extension ajoute un gestionnaire d’événements pour un événement spécifié.
 
 > [!NOTE]
-> Ce type d’élément est uniquement pris en charge par Outlook sur le web dans Office 365.
+> Ce type d’élément est pris en charge par la version classique d’Outlook sur le Web, et en mode [aperçu](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) sous Windows, Mac et Outlook moderne sur le Web. Un abonnement Office 365 est également requis.
 
 | Élément | Description  |
 |:-----|:-----|
@@ -260,9 +260,9 @@ Ce point d’extension ajoute un gestionnaire d’événements pour un événeme
 #### <a name="itemsend-event-example"></a>Exemple d’événement ItemSend
 
 ```xml
-<ExtensionPoint xsi:type="Events"> 
-  <Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" /> 
-</ExtensionPoint> 
+<ExtensionPoint xsi:type="Events">
+  <Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" />
+</ExtensionPoint>
 ```
 
 ### <a name="detectedentity"></a>DetectedEntity
@@ -272,7 +272,7 @@ Ce point d’extension ajoute une activation de complément contextuel sur un ty
 Pour les éléments [VersionOverrides](versionoverrides.md) la contenant, `xsi:type`l’attribut doit avoir la valeur `VersionOverridesV1_1`.
 
 > [!NOTE]
-> Ce type d’élément est disponible pour [les clients Outlook qui prennent en charge les ensembles de conditions requises 1.6 ou version ultérieure](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets#clients).
+> Ce type d’élément est disponible pour [les clients Outlook qui prennent en charge les ensembles de conditions requises 1.6 ou version ultérieure](../requirement-sets/outlook-api-requirement-sets.md#clients).
 
 |  Élément |  Description  |
 |:-----|:-----|
