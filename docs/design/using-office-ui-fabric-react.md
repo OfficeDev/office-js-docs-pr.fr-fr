@@ -1,14 +1,14 @@
 ---
 title: Utilisation d’Office UI Fabric React dans des compléments Office
 description: Découvrez comment utiliser Office UI Fabric React dans les compléments Office.
-ms.date: 07/11/2019
+ms.date: 09/06/2019
 localization_priority: Priority
-ms.openlocfilehash: c738521b82d0cb8f234fd28dc8bb24740962b817
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: e0f552cbb6471fbafbc25e53b5e786038adea83d
+ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36302597"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "36782225"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>Utilisation d’Office UI Fabric React dans des compléments Office
 
@@ -29,8 +29,6 @@ Vous utiliserez le générateur Yeoman pour les compléments Office pour créer 
 
 ### <a name="create-the-project"></a>Créez le projet
 
-[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
-
 Utilisez le générateur Yeoman afin de créer un projet de complément Word. Exécutez la commande suivante, puis répondez aux invites comme suit :
 
 ```command&nbsp;line
@@ -39,8 +37,10 @@ yo office
 
 - **Sélectionnez un type de projet :** `Office Add-in Task Pane project using React framework`
 - **Sélectionnez un type de script :** `TypeScript`
-- **Comment souhaitez-vous nommer votre complément ?** `my-office-add-in`
+- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Word`
+
+![Générateur Yeoman](../images/yo-office-word-react.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -49,7 +49,7 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 1. Accédez au dossier racine du projet.
 
     ```command&nbsp;line
-    cd "my-office-add-in"
+    cd "My Office Add-in"
     ```
 
 2. Pour démarrer le serveur web local et charger indépendamment votre complément, procédez comme suit.

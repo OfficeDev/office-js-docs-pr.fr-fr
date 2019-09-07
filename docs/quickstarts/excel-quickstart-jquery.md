@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet des tâches d’Excel
 description: Découvrez comment créer un complément de volet des tâches Excel simple à l’aide de l’API JavaScript pour Office.
-ms.date: 07/17/2019
+ms.date: 09/06/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 781e2c3e7cd563e6ebeeaff3e8bf0624b64aec76
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 855db6f41b895f0be985a352d4a1cdcb72bf3394
+ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36308049"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "36782288"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Créer un complément de volet de tâches Excel
 
@@ -27,8 +27,6 @@ Dans cet article, vous découvrirez comment créer un complément de volet de t�
 
 ### <a name="create-the-add-in-project"></a>Création du projet de complément
 
-[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
-
 Utilisez le générateur Yeoman pour créer un projet de complément Excel. Exécutez la commande suivante, puis répondez aux invites comme suit :
 
 ```command&nbsp;line
@@ -37,8 +35,10 @@ yo office
 
 - **Sélectionnez un type de projet :** `Office Add-in Task Pane project`
 - **Sélectionnez un type de script :** `Javascript`
-- **Comment souhaitez-vous nommer votre complément ?** `my-office-add-in`
+- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
+
+![Générateur Yeoman](../images/yo-office-excel.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -51,7 +51,7 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 1. Accédez au dossier racine du projet.
 
     ```command&nbsp;line
-    cd "my-office-add-in"
+    cd "My Office Add-in"
     ```
 
 2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 

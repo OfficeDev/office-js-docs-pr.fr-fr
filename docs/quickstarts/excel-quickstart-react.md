@@ -1,15 +1,15 @@
 ---
 title: Créer un complément de volet de tâches Excel à l’aide de React
 description: ''
-ms.date: 05/02/2019
+ms.date: 09/06/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 1c0f2f4af1ee14aaf7d581509733e26013657590
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 40ecd0f29ab37df56a8d4456ced0b13f8fdc837b
+ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36308028"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "36782274"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-react"></a>Créer un complément de volet de tâches Excel à l’aide de React
 
@@ -21,8 +21,6 @@ Cet article décrit le processus de création d’un complément de volet de tâ
 
 ## <a name="create-the-add-in-project"></a>Création du projet de complément
 
-[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
-
 Utilisez le générateur Yeoman pour créer un projet de complément Excel. Exécutez la commande suivante, puis répondez aux invites comme suit :
 
 ```command&nbsp;line
@@ -31,8 +29,10 @@ yo office
 
 - **Sélectionnez un type de projet :** `Office Add-in Task Pane project using React framework`
 - **Sélectionnez un type de script :** `TypeScript`
-- **Comment souhaitez-vous nommer votre complément ?** `my-office-add-in`
+- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
+
+![Générateur Yeoman](../images/yo-office-excel-react-2.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -50,7 +50,7 @@ Le projet de complément que vous avez créé à l’aide du générateur Yeoman
 1. Accédez au dossier racine du projet.
 
     ```command&nbsp;line
-    cd "my-office-add-in"
+    cd "My Office Add-in"
     ```
 
 2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 

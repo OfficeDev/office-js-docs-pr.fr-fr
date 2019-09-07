@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet Office de OneNote
 description: ''
-ms.date: 06/20/2019
+ms.date: 09/06/2019
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 24c8854cb1f9332371f3726409f91f7cdbf53243
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 7e31933b5d38cede00983d6f3f31a284043bb769
+ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36308021"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "36782260"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>Créer votre premier complément du volet Office de OneNote
 
@@ -21,8 +21,6 @@ Cet article décrit comment créer un complément du volet Office de OneNote.
 
 ## <a name="create-the-add-in-project"></a>Création du projet de complément
 
-[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
-
 Utilisez le générateur Yeoman afin de créer un projet de complément OneNote. Exécutez la commande suivante, puis répondez aux invites comme suit :
 
 ```command&nbsp;line
@@ -31,8 +29,10 @@ yo office
 
 - **Sélectionnez un type de projet :** `Office Add-in Task Pane project`
 - **Sélectionnez un type de script :** `Javascript`
-- **Comment souhaitez-vous nommer votre complément ?** `my-office-add-in`
+- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `OneNote`
+
+![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yo-office-onenote.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
     
@@ -76,7 +76,7 @@ try {
 1. Accédez au dossier racine du projet.
 
     ```command&nbsp;line
-    cd "my-office-add-in"
+    cd "My Office Add-in"
     ```
 
 2. Démarrez le serveur web local et chargez indépendamment votre complément.

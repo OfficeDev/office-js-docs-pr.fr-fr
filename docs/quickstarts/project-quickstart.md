@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet des tâches de Project
 description: ''
-ms.date: 05/08/2019
+ms.date: 09/06/2019
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 466c8354a047c8e36741711881ad1b0e2993ddaf
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 0a7684f3d1bd4f404ba42a798908bb9d2ba2f8d2
+ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36308007"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "36782281"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Project
 
@@ -23,8 +23,6 @@ Cet article décrit comment créer un complément du volet des tâches de Projec
 
 ## <a name="create-the-add-in"></a>Créer le complément
 
-[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
-
 Utilisez le générateur Yeoman afin de créer un projet de complément Project. Exécutez la commande suivante, puis répondez aux invites comme suit :
 
 ```command&nbsp;line
@@ -33,8 +31,10 @@ yo office
 
 - **Sélectionnez un type de projet :** `Office Add-in Task Pane project`
 - **Sélectionnez un type de script :** `Javascript`
-- **Comment souhaitez-vous nommer votre complément ?** `my-office-add-in`
+- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Project`
+
+![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yo-office-project.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -94,7 +94,7 @@ Office.context.document.getSelectedTaskAsync(
 1. Accédez au dossier racine du projet.
 
     ```command&nbsp;line
-    cd "my-office-add-in"
+    cd "My Office Add-in"
     ```
 
 2. Démarrez le serveur web local.

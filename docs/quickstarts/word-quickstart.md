@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet des tâches de Word
 description: Découvrez comment créer un complément de volet des tâches Word simple à l’aide de l’API JavaScript pour Office.
-ms.date: 07/17/2019
+ms.date: 09/06/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 5b65d20a10b98dc3a4ba1e95c4ef52ff91647e97
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 98fbd61296ef56397241e402830eb8baaeebe577
+ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36308042"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "36782239"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Word
 
@@ -29,8 +29,6 @@ Cet article décrit comment créer un complément du volet des tâches de Word.
 
 ### <a name="create-the-add-in-project"></a>Création du projet de complément
 
-[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
-
 Utilisez le générateur Yeoman afin de créer un projet de complément Word. Exécutez la commande suivante, puis répondez aux invites comme suit :
 
 ```command&nbsp;line
@@ -39,8 +37,10 @@ yo office
 
 - **Sélectionnez un type de projet :** `Office Add-in Task Pane project`
 - **Sélectionnez un type de script :** `Javascript`
-- **Comment souhaitez-vous nommer votre complément ?** `my-office-add-in`
+- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Word`
+
+![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yo-office-word.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -53,7 +53,7 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 1. Accédez au dossier racine du projet.
 
     ```command&nbsp;line
-    cd "my-office-add-in"
+    cd "My Office Add-in"
     ```
 
 2. Pour démarrer le serveur web local et charger indépendamment votre complément, procédez comme suit.
