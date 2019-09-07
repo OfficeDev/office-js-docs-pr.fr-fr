@@ -1,15 +1,15 @@
 ---
-ms.date: 07/10/2019
+ms.date: 09/06/2019
 description: Développement de fonctions personnalisées dans le Guide de démarrage rapide d’Excel.
 title: Démarrage rapide des fonctions personnalisées
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 59f0b0483befda8646d823c50295d035ab7e64c6
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: b3344b19ec29b24407c83bb043dcbaa613d5e8ec
+ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36308014"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "36782232"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Prise en main du développement de fonctions personnalisées Excel
 
@@ -28,8 +28,6 @@ Avec les fonctions personnalisées, les développeurs peuvent désormais ajouter
 ## <a name="build-your-first-custom-functions-project"></a>Création de votre premier projet de fonctions personnalisées
 
 Pour commencer, vous utiliserez le Yeoman Générateur pour créer le projet de fonctions personnalisées. Cette option définit votre projet, avec la structure de dossiers correct, les fichiers source et les dépendances pour commencer le codage de vos fonctions personnalisées.
-
-[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
 
 1. Dans un dossier de votre choix, exécutez la commande suivante, puis répondez aux invites comme suit.
 
@@ -96,7 +94,7 @@ Pour utiliser votre complément de fonctions personnalisées, ouvrez un nouveau 
 
 Le projet de fonctions personnalisées que vous avez créé à l’aide du générateur Yeoman contient certaines fonctions personnalisées prédéfinies, définies dans le fichier **./SRC/Functions/functions.js** . Le fichier **./manifest.xml** dans le répertoire racine du projet indique que toutes les fonctions personnalisées appartiennent à `CONTOSO` l’espace de noms.
 
-Dans votre classeur Excel, essayez la `ADD` fonction personnalisée en procédant comme suit:
+Dans votre classeur Excel, essayez la `ADD` fonction personnalisée en procédant comme suit :
 
 1. Sélectionnez une cellule et tapez `=CONTOSO`. Notez que le menu de saisie semi-automatique affiche la liste de toutes les fonctions dans l’espace de noms `CONTOSO`.
 
@@ -106,7 +104,7 @@ Le `ADD` fonction personnalisée calcule la somme des deux nombres que vous avez
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations, vous avez créé une fonction personnalisée dans un complément Excel! Ensuite, créez un complément plus complexe avec la fonctionnalité de diffusion de données en continu. Le lien suivant vous guide tout au long des étapes suivantes du didacticiel de complément Excel avec fonctions personnalisées.
+Félicitations, vous avez créé une fonction personnalisée dans un complément Excel ! Ensuite, créez un complément plus complexe avec la fonctionnalité de diffusion de données en continu. Le lien suivant vous guide tout au long des étapes suivantes du didacticiel de complément Excel avec fonctions personnalisées.
 
 > [!div class="nextstepaction"]
 > [Didacticiel de complément de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web

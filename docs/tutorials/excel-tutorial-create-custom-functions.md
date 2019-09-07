@@ -1,15 +1,15 @@
 ---
 title: Didacticiel de fonctions personnalisées Excel
 description: Dans ce didacticiel, vous allez créer un complément Excel qui contient une fonction personnalisée qui effectue des calculs, requiert des données web ou lance un flux de données web.
-ms.date: 07/09/2019
+ms.date: 09/06/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 2832df467f7e155ed026fe7f04837f18a4d2309d
-ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
+ms.openlocfilehash: d7af566d228c3b4da87be2d3d8bfba049f8b5509
+ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "36672872"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "36782267"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Didacticiel : créer des fonctions personnalisées dans Excel
 
@@ -31,8 +31,6 @@ Dans ce didacticiel, vous allez :
 ## <a name="create-a-custom-functions-project"></a>Créer un projet de fonctions personnalisées
 
  Pour commencer, vous devez créer le projet de code pour créer votre complément de fonction personnalisée. Le [Générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) configurera votre projet avec certaines fonctions personnalisées prédéfinies que vous pouvez tester. Si vous avez déjà exécuté le démarrage rapide des fonctions personnalisées et généré un projet, continuez à utiliser ce projet et passez à [cette étape](#create-a-custom-function-that-requests-data-from-the-web) .
-
-[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
 
 1. Exécutez la commande suivante, puis répondez aux invitations comme suit.
     
@@ -67,7 +65,7 @@ Dans ce didacticiel, vous allez :
 
 # <a name="excel-on-windows-or-mactabexcel-windows"></a>[Excel sur Windows ou Mac](#tab/excel-windows)
 
-Pour tester votre complément dans Excel sous Windows ou Mac, exécutez la commande suivante: Lorsque vous exécutez cette commande, le serveur Web local démarre et Excel s’ouvre avec votre complément chargé.
+Pour tester votre complément dans Excel sous Windows ou Mac, exécutez la commande suivante : Lorsque vous exécutez cette commande, le serveur Web local démarre et Excel s’ouvre avec votre complément chargé.
 
 ```command&nbsp;line
 npm run start:desktop
@@ -113,7 +111,7 @@ Intégration de données à partir du Web est un excellent moyen pour étendre E
 
 1. Dans le projet **starcount** , recherchez le fichier **./SRC/Functions/functions.js** et ouvrez-le dans votre éditeur de code. 
 
-2. Dans **Function. js**, ajoutez le code suivant: 
+2. Dans **Function. js**, ajoutez le code suivant : 
 
 ```JS
 /**
