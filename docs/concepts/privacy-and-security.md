@@ -1,14 +1,14 @@
 ---
 title: Confidentialité et sécurité pour les compléments Office
 description: ''
-ms.date: 06/20/2019
+ms.date: 09/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 5a930f9c2d4d2c7fe049517ac812c72a8a239b40
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: 43caca7b255d11d94c3627ad87d048d1f677cd67
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575554"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838517"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Confidentialité et sécurité pour les compléments Office
 
@@ -39,7 +39,7 @@ Les sections suivantes décrivent brièvement comment l’architecture d’exéc
 
 ### <a name="clients-on-windows-and-os-x-devices"></a>Clients sur appareils Windows et OS X
 
-Dans les clients pris en charge pour les ordinateurs de bureau et les tablettes, comme Excel sur Windows, et Outlook pour Windows et Mac, les compléments Office sont pris en charge en intégrant un composant in-process, le runtime des compléments Office, qui gère le cycle de vie du complément et permet l’interopérabilité entre le complément et l’application cliente. La page web du complément elle-même est hébergée hors processus. Comme indiqué dans la figure 1, sur un ordinateur de bureau ou une tablette, la page web du complément est hébergée dans un contrôle Internet Explorer qui, à son tour, est hébergé dans un processus d’exécution du complément qui fournit la sécurité et l’isolation des performances.
+Dans les clients pris en charge pour les ordinateurs de bureau et les tablettes, comme Excel sur Windows, et Outlook pour Windows et Mac, les compléments Office sont pris en charge en intégrant un composant in-process, le runtime des compléments Office, qui gère le cycle de vie du complément et permet l’interopérabilité entre le complément et l’application cliente. La page web du complément elle-même est hébergée hors processus. Comme indiqué dans la figure 1, sur un ordinateur de bureau ou une tablette, [la page web du complément est hébergée dans un contrôle Internet Explorer ou Microsoft Edge](browsers-used-by-office-web-add-ins.md)qui, à son tour, est hébergé dans un processus d’exécution du complément qui fournit la sécurité et l’isolation des performances.
 
 Sur le bureau Windows, le mode protégé d’Internet Explorer doit être activé pour la zone de site sensible. En règle générale, il est activé par défaut. S’il est désactivé, une [erreur se produit](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer) lorsque vous essayez de lancer un complément.
 
@@ -190,7 +190,7 @@ Un utilisateur mal intentionné pourrait attaquer l’origine d’un complément
 
 - Si vous utilisez jQuery, utilisez la méthode [.text()](https://api.jquery.com/text/) au lieu de la méthode [.html()](https://api.jquery.com/html/).
 
-- Utilisez la méthode [toStaticHTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) pour supprimer les éléments et attributs HTML dynamiques des entrées des utilisateurs avant de les transmettre à **innerHTML**.
+- Utilisez la méthode [toStaticHTML](https://developer.mozilla.org/fr-FR/docs/Web/HTML/Reference) pour supprimer les éléments et attributs HTML dynamiques des entrées des utilisateurs avant de les transmettre à **innerHTML**.
 
 - Utilisez la fonction [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) ou [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) pour encoder le texte qui représente une URL ayant pour origine ou contenant une entrée utilisateur.
 
@@ -223,11 +223,11 @@ Les développeurs doivent aussi tenir compte des pratiques de sécurité suivant
 
 - Les développeurs ne doivent pas utiliser les contrôles ActiveX dans les compléments Office car les contrôles ActiveX ne prennent pas en charge la nature multiplateforme de la plateforme du complément.
 
-- Les compléments de contenu et du volet Office adoptent les mêmes paramètres SSL que les paramètres par défaut dans Internet Explorer, ce qui permet à la plupart des contenus d’être fournis uniquement par SSL. Les compléments Outlook nécessitent que le contenu soit fourni par SSL. Les développeurs doivent spécifier dans l’élément **SourceLocation** du manifeste de complément une URL qui utilise le protocole HTTPS pour identifier l’emplacement du fichier HTML du complément.
+- Les compléments de contenu et du volet des tâches adoptent les mêmes paramètres SSL que les paramètres par défaut dans le navigateur, ce qui permet à la plupart des contenus d’être fournis uniquement par SSL. Les compléments Outlook nécessitent que le contenu soit fourni par SSL. Les développeurs doivent spécifier dans l’élément **SourceLocation** du manifeste de complément une URL qui utilise le protocole HTTPS pour identifier l’emplacement du fichier HTML du complément.
 
-    Pour s’assurer que les compléments ne délivrent pas du contenu à l’aide du protocole HTTP lors du test des compléments, les développeurs doivent s’assurer que les paramètres suivants sont sélectionnés dans Internet Explorer et qu’aucun avertissement de sécurité n’apparaît dans leurs scénarios de test :
+    Pour s’assurer que les compléments ne délivrent pas du contenu à l’aide du protocole HTTP lors du test des compléments, les développeurs doivent s’assurer que les paramètres suivants sont sélectionnés dans **Options Internet** dans **Panneau de configuration** et qu’aucun avertissement de sécurité n’apparaît dans leurs scénarios de test :
 
-    - Vérifiez que le paramètre de sécurité, **Affiche un contenu mixte**, pour la zone **Internet** est défini sur **Demander**. Pour cela, procédez comme suit dans Internet Explorer : sur l’onglet **Sécurité** de la boîte de dialogue **Options Internet**, sélectionnez la zone **Internet**, sélectionnez **Personnaliser le niveau**, recherchez **Afficher un contenu mixte**, et sélectionnez **Demander** si l’option n’est pas déjà sélectionnée.
+    - Vérifiez que le paramètre de sécurité, **Affiche un contenu mixte**, pour la zone **Internet** est défini sur **Demander**. Pour cela, procédez comme suit dans **Options Internet** : sous l’onglet **Sécurité**, sélectionnez la zone **Internet**, sélectionnez **Personnaliser le niveau**, faites défiler et recherchez **Afficher un contenu mixte**, puis sélectionnez **Demander** si l’option n’est pas déjà sélectionnée.
 
     - Assurez-vous que l’option **Avertir en cas de changement entre mode sécurisé et non sécurisé** est sélectionnée sur l’onglet **Avancé** de la boîte de dialogue **Options Internet**.
 
