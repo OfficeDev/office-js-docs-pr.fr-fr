@@ -3,12 +3,12 @@ title: Comment trouver l’ordre approprié d’éléments manifeste
 description: Découvrez comment trouver l’ordre correct dans lequel placer les éléments enfants dans un élément parent.
 ms.date: 08/22/2019
 localization_priority: Normal
-ms.openlocfilehash: c1b8e981b9348e015e14a29131eadff3a5cb08ea
-ms.sourcegitcommit: 4f039614f42ae26a1290ed025fdabb7f6b62cc8a
+ms.openlocfilehash: c8ee9f2f32f7124c4914131e68c9742f87567715
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "36642830"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838500"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>Comment trouver l’ordre approprié d’éléments manifeste
 
@@ -28,7 +28,7 @@ Les sections suivantes présentent les éléments de manifeste dans l’ordre da
 
 ## <a name="basic-task-pane-add-in-element-ordering"></a>Classement des éléments de complément du volet Office de base
 
-```
+```xml
 <OfficeApp xsi:type="TaskPaneApp">
     <Id>
     <AlternateID>
@@ -70,7 +70,7 @@ Les sections suivantes présentent les éléments de manifeste dans l’ordre da
 
 ## <a name="basic-mail-add-in-element-ordering"></a>Classement des éléments des compléments de messagerie de base
 
-```
+```xml
 <OfficeApp xsi:type="MailApp">
     <Id>
     <AlternateId>
@@ -109,11 +109,11 @@ Les sections suivantes présentent les éléments de manifeste dans l’ordre da
     <VersionOverrides>*
 ```
 
-\*Consultez l’ordre des éléments de compléments de [messagerie dans VersionOverrides ver. 1,0](#mail-add-in-element-ordering-within-versionoverrides-ver-10) et classement des éléments de [complément de messagerie dans VersionOverrides ver. 1,1](#mail-add-in-element-ordering-within-versionoverrides-ver-11) pour l’ordre des éléments enfants de VersionOverrides.
+\*Consultez l’ordre des éléments de [compléments de messagerie dans VersionOverrides ver. 1,0](#mail-add-in-element-ordering-within-versionoverrides-ver-10) et classement des éléments de [complément de messagerie dans VersionOverrides ver. 1,1](#mail-add-in-element-ordering-within-versionoverrides-ver-11) pour l’ordre des éléments enfants de VersionOverrides.
 
 ## <a name="basic-content-add-in-element-ordering"></a>Classement des éléments de complément de contenu de base
 
-```
+```xml
 <OfficeApp xsi:type="ContentApp">
     <Id>
     <AlternateId>
@@ -152,7 +152,7 @@ Les sections suivantes présentent les éléments de manifeste dans l’ordre da
 
 ## <a name="task-pane-add-in-element-ordering-within-versionoverrides"></a>Classement des éléments de complément du volet Office dans VersionOverrides
 
-```
+```xml
 <VersionOverrides>
     <Description>
     <Requirements>
@@ -291,7 +291,7 @@ Les sections suivantes présentent les éléments de manifeste dans l’ordre da
 
 ## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-10"></a>Classement des éléments de complément de messagerie dans VersionOverrides ver. 1.0
 
-```
+```xml
 <VersionOverrides>
     <Description>
     <Requirements>
@@ -387,7 +387,7 @@ Les sections suivantes présentent les éléments de manifeste dans l’ordre da
 
 ## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-11"></a>Classement des éléments de complément de messagerie dans VersionOverrides ver. 1.1
 
-```
+```xml
 <VersionOverrides>
     <Description>
     <Requirements>
@@ -489,7 +489,7 @@ Les sections suivantes présentent les éléments de manifeste dans l’ordre da
 
 ## <a name="content-add-in-element-ordering-within-versionoverrides"></a>Classement des éléments de complément de contenu dans VersionOverrides
 
-```
+```xml
 <VersionOverrides>
     <WebApplicationInfo>
         <Id>
