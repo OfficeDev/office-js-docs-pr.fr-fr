@@ -33,7 +33,6 @@ Suivez les principes de conception d’Office pour créer des expériences de co
 - **Prenez en compte toutes les plateformes et les méthodes d’entrée lors de la conception**. Les compléments sont conçus pour fonctionner sur toutes les plateformes prenant en charge Office ; aussi l’expérience utilisateur de votre complément doit-elle être optimisée pour fonctionner avec toutes les plateformes et tous les facteurs de forme. Veillez à ce que votre complément prenne aussi bien en charge les périphériques de type souris/clavier que les appareils et assurez-vous que votre interface utilisateur HTML personnalisée puisse s’adapter à différents facteurs de forme. Pour plus d’informations, consultez notre section relative aux [fonctions tactiles](../concepts/add-in-development-best-practices.md#optimize-for-touch). 
 
 ## <a name="see-also"></a>Voir aussi
-- 
-  [Office UI Fabric](https://developer.microsoft.com/fr-FR/fabric) 
+- [Office UI Fabric](https://developer.microsoft.com/fr-FR/fabric) 
 - [Bonnes pratiques en matière de développement de compléments](../concepts/add-in-development-best-practices.md)
 
