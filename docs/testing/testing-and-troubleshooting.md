@@ -1,14 +1,14 @@
 ---
 title: Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 description: ''
-ms.date: 07/29/2019
+ms.date: 09/09/2019
 localization_priority: Priority
-ms.openlocfilehash: d6ede08411d9f6c69fa9fb31256ab377682fbca0
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 8c1a39e4574f7e8ea60cdf32ff3139d9b929fe5d
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940863"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838528"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 
@@ -38,9 +38,9 @@ Le tableau suivant répertorie les messages d’erreur courants que les utilisat
 
 Vous pouvez également nous adresser des commentaires : si vous utilisez Excel sur Windows ou Mac, vous pouvez adresser un commentaire à l’équipe chargée de l’extensibilité d’Office directement à partir d’Excel. Pour ce faire, sélectionnez **Fichier** | **Commentaires** | **Envoyer un smiley mécontent**. Envoyer un smiley mécontent fournit les journaux nécessaires pour comprendre le problème.
 
-## <a name="outlook-add-in-doesnt-work-correctly"></a>§LTA Le complément Outlook ne fonctionne pas correctement
+## <a name="outlook-add-in-doesnt-work-correctly"></a>Le complément Outlook ne fonctionne pas correctement
 
-Si un complément Outlook s’exécutant sous Windows ne fonctionne pas correctement, essayez d’activer le débogage de script dans Internet Explorer. 
+Si un complément Outlook s’exécutant sous Windows et [à l’aide d’Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) ne fonctionne pas correctement, essayez d’activer le débogage de script dans Internet Explorer. 
 
 
 - Accédez à Outils >  **Options Internet** > **Avancées**.
@@ -88,7 +88,7 @@ Pour résoudre le problème, les utilisateurs finals et les administrateurs peuv
 
 Pour ajouter une URL à votre liste de sites de confiance :
 
-1. Dans Internet Explorer, cliquez sur le bouton Outils et accédez à **Options Internet** > **Sécurité**.
+1. Dans Panneau de configuration, **accédez à Options InternetSécurité.
 2. Sélectionnez la zone **Sites de confiance**, puis choisissez **Sites**.
 3. Entrez l’URL qui apparaît dans le message d’erreur, puis choisissez **Ajouter**.
 4. Essayez d’utiliser le complément à nouveau. Si le problème persiste, vérifiez les paramètres pour les autres zones de sécurité et assurez-vous que le domaine du complément se trouve dans la même zone que l’URL qui s’affiche dans la barre d’adresse de l’application Office.

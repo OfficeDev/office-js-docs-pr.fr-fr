@@ -1,14 +1,14 @@
 ---
 title: Utilisation de tableaux à l’aide de l’API JavaScript pour Excel
 description: ''
-ms.date: 07/18/2019
+ms.date: 09/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 826afb9444fbb83e032f59316de00100cfdb2402
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: 7803690b4a20aa89908a20cf557f8076f5fea70a
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804638"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838549"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Utilisation de tableaux à l’aide de l’API JavaScript pour Excel
 
@@ -284,6 +284,8 @@ Excel.run(function (context) {
 **Données de tableau triées par montant (décroissant)**
 
 ![Données de tableau dans Excel](../images/excel-tables-sort.png)
+
+Lorsque les données sont triées dans une feuille de calcul, une notification d’événement est déclenchée. Pour en savoir plus sur les événements liés au tri et sur la manière dont votre complément peut inscrire des gestionnaires d’événements pour répondre à ces événements, voir [Gérer les événements de tri (aperçu)](excel-add-ins-worksheets.md#handle-sorting-events-preview).
 
 ## <a name="apply-filters-to-a-table"></a>Appliquer des filtres à un tableau
 

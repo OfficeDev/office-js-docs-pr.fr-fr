@@ -1,16 +1,16 @@
 ---
 title: Compléments du volet Office pour Project
 description: ''
-ms.date: 07/05/2019
+ms.date: 09/09/2019
 ms.topic: overview
 scenarios: getting-started
 localization_priority: Priority
-ms.openlocfilehash: 290693da0a9b73fe00798b22d957373120bd7589
-ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
+ms.openlocfilehash: d2d4019fc5f47e05ea3918d2077006468afc4bec
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "36672844"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838535"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Compléments du volet Office pour Project
 
@@ -145,7 +145,7 @@ Dans Project 2013, vous pouvez installer des compléments comme solutions auton
 Un partage de fichiers peut contenir plusieurs fichiers manifestes XML de complément et sous-répertoires. Vous pouvez ajouter ou supprimer des catalogues et des emplacements de répertoire Manifest à l’aide de l’onglet  **Catalogues de compléments approuvés** dans la boîte de dialogue **Centre de gestion de la confidentialité** dans Project 2013. Pour afficher un complément dans Project, l’élément **SourceLocation** dans un manifeste doit pointer vers un site web existant ou un fichier source HTML.
 
 > [!NOTE]
-> Internet Explorer 9 (ou version ultérieure) doit être installé, sans obligation de le définir comme navigateur par défaut. Les compléments Office nécessitent des composants d’Internet Explorer 9. Le navigateur par défaut peut être Internet Explorer 9, Safari 5.0.6, Firefox 5, Chrome 13, ou une version ultérieure de ces navigateurs.
+> Si vous développez sur un ordinateur Windows, Internet Explorer ou Microsoft Edge doit être installé. Pour plus d’informations, voir [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md).
 
 Dans la procédure 2, le complément Bing Search est installé sur l’ordinateur local où Project 2013 est installé. Toutefois, comme l’infrastructure du complément n’utilise pas directement les chemins de fichiers locaux tels que  `C:\Project\AppManifests`, vous pouvez créer un partage de fichiers sur l’ordinateur local. Si vous préférez, vous pouvez créer un partage de fichiers sur un ordinateur à distance.
 

@@ -1,14 +1,14 @@
 ---
 title: Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 description: ''
-ms.date: 06/20/2019
+ms.date: 09/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 7fd6821797269b13ad7fb1900b2024035e27d37b
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 3c06e3660c2c8d6bf362b38185b96c8012dc4b90
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940737"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838565"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 
@@ -298,6 +298,56 @@ function onWorksheetChanged(eventArgs) {
         return context.sync();
     });
 }
+```
+
+## <a name="handle-sorting-events-preview"></a>Gérer les événements de tri (aperçu)
+
+> [!NOTE]
+> Les API pour ces événements liés au tri sont actuellement disponibles uniquement en mode préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+Les  événements `onColumnSorted` et  indiquent quand les données d’une feuille de calcul sont triées. Ces événements sont connectés à des objets individuels `Worksheet` et aux classeurs `WorkbookCollection`. Il se déclenche si le tri est effectué par programme ou manuellement via l’interface utilisateur d’Excel.
+
+> [!NOTE]
+> `onColumnSorted` est déclenché lorsque les colonnes sont triées suite à une opération de tri de gauche à droite. `onRowSorted` est déclenché lorsque les lignes sont triées suite à une opération de tri de haut en bas. Le tri d’un tableau à l’aide du menu déroulant sur un en-tête de colonne génère un événement `onRowSorted`. L’événement correspond au déplacement, et non à ce qui est considéré comme les critères de tri.
+
+Les événements `onColumnSorted` et  fournissent leurs rappels avec WorksheetColumnSortedEventArgs ou WorksheetRowSortedEventArgs, respectivement. Ces éléments fournissent des détails supplémentaires sur l’événement. En particulier, les `EventArgs` ont une propriété `address` qui représente les lignes ou les colonnes déplacées suite à l’opération de tri. Une cellule avec du contenu trié est incluse, même si la valeur de cette cellule ne faisait pas partie des critères de tri.
+
+Les images suivantes montrent les plages retournées par la propriété `address` pour les événements de tri. Voici d’abord les exemples de données avant le tri :
+
+![Données d’un tableau dans Excel avant le tri](../images/excel-sort-event-before.png)
+
+Si un tri de haut en bas est effectué sur «**Q1**» (valeurs dans «**B**»), les lignes en surbrillance suivantes sont renvoyées par `WorksheetRowSortedEventArgs.address`:
+
+![Données d’un tableau dans Excel après un tri de haut en bas. Les lignes qui ont été déplacées sont mises en surbrillance.](../images/excel-sort-event-after-row.png)
+
+Si un tri de gauche à droite est effectué sur «Quinces» (valeurs dans «4») sur les données d’origine, les colonnes en surbrillance suivantes sont renvoyées par `WorksheetColumnsSortedEventArgs.address` :
+
+![Données d’un tableau dans Excel après un tri de gauche à droite. Les colonnes qui ont été déplacées sont mises en surbrillance.](../images/excel-sort-event-after-column.png)
+
+L’exemple de code suivant montre comment inscrire un gestionnaire d’événements pour l’événement `Worksheet.onRowSorted`. Le rappel du gestionnaire efface la couleur de remplissage de la plage, puis remplit les cellules des lignes déplacées.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+
+    // This will fire whenever a row has been moved as the result of a sort action.
+    sheet.onRowSorted.add(function (event) {
+        return Excel.run(function (context) {
+            console.log("Row sorted: " + event.address);
+            var sheet = context.workbook.worksheets.getActiveWorksheet();
+
+            // Clear formatting for section, then highlight the sorted area.
+            sheet.getRange("A1:E5").format.fill.clear();
+            if (event.address !== "") {
+                sheet.getRanges(event.address).format.fill.color = "yellow";
+            }
+
+            return context.sync();
+        });
+    });
+
+    return context.sync();
+}).catch(errorHandlerFunction);
 ```
 
 ## <a name="find-all-cells-with-matching-text"></a>Trouver toutes les cellules avec du texte correspondant

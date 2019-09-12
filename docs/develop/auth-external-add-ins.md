@@ -3,12 +3,12 @@ title: Autoriser des services externes dans votre complément Office
 description: Autorisation d’accès à des sources de données non-Microsoft comme Google, Facebook, LinkedIn, SalesForce et GitHub à l’aide d’OAuth 2.0, du code d’autorisation et des flux implicites.
 ms.date: 08/07/2019
 localization_priority: Priority
-ms.openlocfilehash: 58a1f5980be740ac88589af2b5b0e5ab028a12d4
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 3b6ba291912f9d6284ca5e71a7bf634261a0bd24
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36302566"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838542"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>Autoriser des services externes dans votre complément Office
 
@@ -19,7 +19,7 @@ Les services en ligne populaires, y compris Office 365, Google, Facebook, Linke
 
 L’infrastructure standard dans le secteur permettant d’activer l’accès d’une application web à un service en ligne est appelée **OAuth 2.0**. En règle générale, vous n’avez pas besoin de connaître les détails du fonctionnement de l’infrastructure pour pouvoir l’utiliser dans votre complément. Ces détails sont simplifiés pour vous dans de nombreuses bibliothèques disponibles.
 
-L’un des fondements d’OAuth est qu’une application peut être un principal de sécurité en elle-même, de la même façon qu’un utilisateur ou un groupe, avec sa propre identité et son ensemble d’autorisations. Le plus souvent, quand l’utilisateur exécute une action dans le complément Office ayant besoin du service en ligne, le complément envoie une demande au service portant sur un ensemble spécifique d’autorisations pour le compte de l’utilisateur. Le service invite ensuite l’utilisateur à octroyer ces autorisations au complément. Une fois que les autorisations sont accordées, le service envoie un petit *jeton d’accès* codé au complément. Le complément peut utiliser le service en incluant le jeton dans toutes ses demandes aux API du service. Toutefois, le complément agit uniquement dans la limite des autorisations que l’utilisateur lui a accordées. En outre, le jeton expire après un certain délai.
+L’une des idées fondamentales d’OAuth est qu’une application peut être un [principal de sécurité](/windows/security/identity-protection/access-control/security-principals) en elle-même, de la même façon qu’un utilisateur ou un groupe, avec sa propre identité et son ensemble d’autorisations. Le plus souvent, quand l’utilisateur exécute une action dans le complément Office ayant besoin du service en ligne, le complément envoie une demande au service portant sur un ensemble spécifique d’autorisations pour le compte de l’utilisateur. Le service invite ensuite l’utilisateur à octroyer ces autorisations au complément. Une fois que les autorisations sont accordées, le service envoie un petit *jeton d’accès* codé au complément. Le complément peut utiliser le service en incluant le jeton dans toutes ses demandes aux API du service. Toutefois, le complément agit uniquement dans la limite des autorisations que l’utilisateur lui a accordées. En outre, le jeton expire après un certain délai.
 
 Plusieurs modèles OAuth, appelés *flux* ou *types d’accès accordé*, sont conçus pour différents scénarios. Les deux modèles suivants sont les plus couramment implémentés :
 
