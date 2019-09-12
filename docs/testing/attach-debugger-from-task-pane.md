@@ -1,14 +1,14 @@
 ---
 title: Attacher un débogueur à partir du volet Office
 description: ''
-ms.date: 08/06/2019
+ms.date: 09/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 4433eccc165d616c7b8ebff428e1426c4b98be49
-ms.sourcegitcommit: dc78ee2a89fe3d4cd6f748be1eec9081c1077502
+ms.openlocfilehash: 39d952cc1162107881f6f6860a36be45c7eb4d30
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "36231304"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838472"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>Attacher un débogueur à partir du volet Office
 
@@ -32,13 +32,14 @@ Dans Visual Studio, les fichiers de code s’affichent dans **l’Explorateur de
 > Si vous ne voyez pas le menu Personnalité, vous pouvez déboguer votre complément à l’aide de Visual Studio. Vérifiez que votre complément de volet Office est ouvert dans Office, puis procédez comme suit :
 >
 > 1. Dans Visual Studio, choisissez **DÉBOGUER** > **Attacher au processus**.
-> 2. Dans la boîte de dialogue **Attacher au processus**, choisissez tous les processus Iexplore.exe disponibles, puis choisissez le bouton **Attacher**.
+> 2. Dans **Processus disponibles**, choisissez *soit* tous les processus `Iexplore.exe`disponibles, *soit* tous les processus `MicrosoftEdge*.exe` disponible selon que [votre complément utilise Internet Explorer ou Microsoft Edge](../concepts/browsers-used-by-office-web-add-ins.md), puis cliquez sur le bouton **Joindre**.
 
 Pour plus d’informations sur le débogage dans Visual Studio, consultez les rubriques suivantes :
 
 -   Pour lancer et utiliser l’explorateur DOM dans Visual Studio, consultez le conseil 4 dans la section relative aux [conseils et astuces](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates/#tips_tricks) du billet de blog sur la [création d’applications attrayantes pour Office à l’aide de nouveaux modèles de projet](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates).
 -   Pour définir des points d’arrêt, consultez la rubrique [Utilisation des points d’arrêt](/visualstudio/debugger/using-breakpoints?view=vs-2015).
 -   Pour utiliser F12, consultez la rubrique [Utilisation des outils de développement F12](/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85)).
+-   Pour utiliser les outils de développement Microsoft Edge, voir [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab).
 
 ## <a name="see-also"></a>Voir aussi
 

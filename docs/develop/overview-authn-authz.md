@@ -1,18 +1,18 @@
 ---
 title: Vue d’ensemble de l’authentification et de l’autorisation dans les compléments Office
 description: ''
-ms.date: 08/07/2019
+ms.date: 08/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 2733f8af9f236347e52269c9e73b322b4310e2a9
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: dab5eec14a95aea9c27e1d26151b121ac2ed82ac
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36302941"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838507"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Vue d’ensemble de l’authentification et de l’autorisation dans les compléments Office
 
-Les applications Web et par conséquent les compléments Office autorisent l’accès anonyme par défaut, mais vous pouvez demander aux utilisateurs de s’authentifier avec une connexion. Vous pouvez demander à vos utilisateurs de se connecter à l’aide d’un compte Microsoft ou d’un compte professionnel ou scolaire (Office 365). Cette tâche est appelée authentification des utilisateurs, car elle permet au complément de déterminer l’identité de l’utilisateur.
+Les applications Web et par conséquent les compléments Office autorisent l’accès anonyme par défaut, mais vous pouvez demander aux utilisateurs de s’authentifier avec une connexion. Par exemple, vous pouvez demander à vos utilisateurs de se connecter à l’aide d’un compte Microsoft, d’un compte professionnel ou scolaire Office 365 ou d’un autre compte commun. Cette tâche est appelée authentification des utilisateurs, car elle permet au complément de déterminer l’identité de l’utilisateur.
 
 Votre complément peut également obtenir l’autorisation de l’utilisateur à accéder à ses données Microsoft Graph (par exemple, son profil Office 365, ses fichiers OneDrive et ses données SharePoint) ou aux données d’autres sources externes comme Google, Facebook, LinkedIn, SalesForce et GitHub. Cette tâche est appelée autorisation de complément (ou d’application), car il s’agit du *complément* qui est autorisé et non l’utilisateur.
 
