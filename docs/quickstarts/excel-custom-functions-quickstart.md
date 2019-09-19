@@ -1,15 +1,15 @@
 ---
-ms.date: 09/06/2019
+ms.date: 09/18/2019
 description: Développement de fonctions personnalisées dans le Guide de démarrage rapide d’Excel.
 title: Démarrage rapide des fonctions personnalisées
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: b3344b19ec29b24407c83bb043dcbaa613d5e8ec
-ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
+ms.openlocfilehash: f34a8817a7c8ef2679fc8ce0a6ad17cec600531b
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "36782232"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035328"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Prise en main du développement de fonctions personnalisées Excel
 
@@ -29,11 +29,7 @@ Avec les fonctions personnalisées, les développeurs peuvent désormais ajouter
 
 Pour commencer, vous utiliserez le Yeoman Générateur pour créer le projet de fonctions personnalisées. Cette option définit votre projet, avec la structure de dossiers correct, les fichiers source et les dépendances pour commencer le codage de vos fonctions personnalisées.
 
-1. Dans un dossier de votre choix, exécutez la commande suivante, puis répondez aux invites comme suit.
-
-    ```command&nbsp;line
-    yo office
-    ```
+1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
     - **Sélectionnez un type de projet :** `Excel Custom Functions Add-in project`
     - **Sélectionnez un type de script :** `JavaScript`

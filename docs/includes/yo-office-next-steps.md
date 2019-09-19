@@ -1,0 +1,2 @@
+> [!TIP]
+> Vous pouvez ignorer les instructions des *étapes suivantes* fournies par le générateur Yeoman après la création du projet de complément. Les instructions pas à pas de cet article fournissent toutes les instructions nécessaires pour effectuer ce didacticiel.

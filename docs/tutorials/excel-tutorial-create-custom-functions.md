@@ -1,15 +1,15 @@
 ---
 title: Didacticiel de fonctions personnalisées Excel
 description: Dans ce didacticiel, vous allez créer un complément Excel qui contient une fonction personnalisée qui effectue des calculs, requiert des données web ou lance un flux de données web.
-ms.date: 09/06/2019
+ms.date: 09/18/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: d7af566d228c3b4da87be2d3d8bfba049f8b5509
-ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
+ms.openlocfilehash: 4481d63cc167c2ce05ec70331ccd7fd472d7846b
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "36782267"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035447"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Didacticiel : créer des fonctions personnalisées dans Excel
 
@@ -32,11 +32,7 @@ Dans ce didacticiel, vous allez :
 
  Pour commencer, vous devez créer le projet de code pour créer votre complément de fonction personnalisée. Le [Générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) configurera votre projet avec certaines fonctions personnalisées prédéfinies que vous pouvez tester. Si vous avez déjà exécuté le démarrage rapide des fonctions personnalisées et généré un projet, continuez à utiliser ce projet et passez à [cette étape](#create-a-custom-function-that-requests-data-from-the-web) .
 
-1. Exécutez la commande suivante, puis répondez aux invitations comme suit.
-    
-    ```command&nbsp;line
-    yo office
-    ```
+1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
     
     * **Sélectionnez un type de projet :** `Excel Custom Functions Add-in project`
     * **Sélectionnez un type de script :** `JavaScript`
@@ -45,6 +41,8 @@ Dans ce didacticiel, vous allez :
     ![Le générateur de yeoman pour les compléments Office vous invite pour les fonctions personnalisées](../images/starcountPrompt.png)
     
     Le générateur crée le projet et installe les composants Node.js de la prise en charge.
+
+    [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 2. Accédez au dossier racine du projet.
     
