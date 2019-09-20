@@ -3,12 +3,12 @@ title: Disponibilité des compléments Office sur les plateformes et les hôtes
 description: Ensembles de conditions requises pris en charge pour Excel, OneNote, Outlook, PowerPoint, Project et Word.
 ms.date: 08/13/2019
 localization_priority: Priority
-ms.openlocfilehash: 1e368fe21a1bcdb2a7f44c88ce8e881605fa96f2
-ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
+ms.openlocfilehash: a3c580f32ad7cd384309a9b53e55ea488a470a90
+ms.sourcegitcommit: f781d7cfd980cd866d6d1d00c5b9d16c8a4b7f9b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "36395651"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "37053325"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilité des compléments Office sur les plateformes et les hôtes
 
@@ -164,8 +164,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
   <tr>
     <td>Office sur iPad<br>(connecté à l’abonnement Office 365)</td>
     <td>- Volet Office<br>
-        - Contenu<br>
-        - Fonctions personnalisées</td>
+        - Contenu</td>
     <td>- <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-1-requirement-set">ExcelApi 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-2-requirement-set">ExcelApi 1.2</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-3-requirement-set">ExcelApi 1.3</a><br>
