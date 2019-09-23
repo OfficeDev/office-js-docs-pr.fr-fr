@@ -1,15 +1,15 @@
 ---
 title: Créer un complément de volet de tâches Excel à l’aide de React
 description: ''
-ms.date: 09/06/2019
+ms.date: 09/18/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 40ecd0f29ab37df56a8d4456ced0b13f8fdc837b
-ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
+ms.openlocfilehash: 1fdc9b9ab3f111414cb114e11f39794c39443918
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "36782274"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035293"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-react"></a>Créer un complément de volet de tâches Excel à l’aide de React
 
@@ -21,11 +21,7 @@ Cet article décrit le processus de création d’un complément de volet de tâ
 
 ## <a name="create-the-add-in-project"></a>Création du projet de complément
 
-Utilisez le générateur Yeoman pour créer un projet de complément Excel. Exécutez la commande suivante, puis répondez aux invites comme suit :
-
-```command&nbsp;line
-yo office
-```
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Sélectionnez un type de projet :** `Office Add-in Task Pane project using React framework`
 - **Sélectionnez un type de script :** `TypeScript`
@@ -35,6 +31,8 @@ yo office
 ![Générateur Yeoman](../images/yo-office-excel-react-2.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
+
+[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 ## <a name="explore-the-project"></a>Explorer le projet
 

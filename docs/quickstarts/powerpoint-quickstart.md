@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément de volet de tâches PowerPoint
 description: Découvrez comment créer un complément de volet des tâches PowerPoint simple à l’aide de l’API JavaScript pour Office.
-ms.date: 09/06/2019
+ms.date: 09/18/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 93ce98921ea429778505577575eef0f992be93f1
-ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
+ms.openlocfilehash: 62e11129a35a802b8f4088a93687d631c0af2ff4
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "36782246"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035315"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>Créer votre premier complément de volet de tâches PowerPoint
 
@@ -27,11 +27,7 @@ Dans cet article, vous découvrirez comment créer un complément de volet de t�
 
 ### <a name="create-the-add-in-project"></a>Création du projet de complément
 
-Utilisez le générateur Yeoman afin de créer un projet de complément PowerPoint. Exécutez la commande suivante, puis répondez aux invites comme suit :
-
-```command&nbsp;line
-yo office
-```
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Sélectionnez un type de projet :** `Office Add-in Task Pane project`
 - **Sélectionnez un type de script :** `Javascript`
@@ -41,6 +37,8 @@ yo office
 ![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yo-office-powerpoint.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
+
+[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 ### <a name="explore-the-project"></a>Explorer le projet
 

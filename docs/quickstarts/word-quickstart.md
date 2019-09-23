@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet des tâches de Word
 description: Découvrez comment créer un complément de volet des tâches Word simple à l’aide de l’API JavaScript pour Office.
-ms.date: 09/06/2019
+ms.date: 09/18/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 98fbd61296ef56397241e402830eb8baaeebe577
-ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
+ms.openlocfilehash: 1648e6ee50d45fa4811766a56ad55896267d66f8
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "36782239"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035307"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Word
 
@@ -29,11 +29,7 @@ Cet article décrit comment créer un complément du volet des tâches de Word.
 
 ### <a name="create-the-add-in-project"></a>Création du projet de complément
 
-Utilisez le générateur Yeoman afin de créer un projet de complément Word. Exécutez la commande suivante, puis répondez aux invites comme suit :
-
-```command&nbsp;line
-yo office
-```
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Sélectionnez un type de projet :** `Office Add-in Task Pane project`
 - **Sélectionnez un type de script :** `Javascript`
@@ -43,6 +39,8 @@ yo office
 ![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yo-office-word.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
+
+[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 ### <a name="explore-the-project"></a>Explorer le projet
 
