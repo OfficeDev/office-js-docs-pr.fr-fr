@@ -1,14 +1,14 @@
 ---
 title: Utilisation d’Office UI Fabric React dans des compléments Office
 description: Découvrez comment utiliser Office UI Fabric React dans les compléments Office.
-ms.date: 09/06/2019
+ms.date: 09/18/2019
 localization_priority: Priority
-ms.openlocfilehash: e0f552cbb6471fbafbc25e53b5e786038adea83d
-ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
+ms.openlocfilehash: 5c266a7b7f87e431f5a1dc4660a5026a7a163d5a
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "36782225"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035243"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>Utilisation d’Office UI Fabric React dans des compléments Office
 
@@ -29,11 +29,7 @@ Vous utiliserez le générateur Yeoman pour les compléments Office pour créer 
 
 ### <a name="create-the-project"></a>Créez le projet
 
-Utilisez le générateur Yeoman afin de créer un projet de complément Word. Exécutez la commande suivante, puis répondez aux invites comme suit :
-
-```command&nbsp;line
-yo office
-```
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Sélectionnez un type de projet :** `Office Add-in Task Pane project using React framework`
 - **Sélectionnez un type de script :** `TypeScript`
@@ -43,6 +39,8 @@ yo office
 ![Générateur Yeoman](../images/yo-office-word-react.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
+
+[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 ### <a name="try-it-out"></a>Essayez
 
