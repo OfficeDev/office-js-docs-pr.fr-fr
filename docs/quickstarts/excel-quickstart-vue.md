@@ -1,15 +1,15 @@
 ---
 title: Créer un complément de volet de tâches Excel à l’aide de Vue
 description: ''
-ms.date: 09/04/2019
+ms.date: 09/18/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 9947852a586570345ba9f3dfe09340af6d01ace6
-ms.sourcegitcommit: 78998a9f0ebb81c4dd2b77574148b16fe6725cfc
+ms.openlocfilehash: bcd4f84ce6d09db813c643d2cac8fcc5ce5f76c3
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "36715628"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035300"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>Créer un complément de volet de tâches Excel à l’aide de Vue
 
@@ -41,23 +41,31 @@ Chaque complément nécessite un fichier manifeste pour définir ses paramètres
 
 1. Accédez au dossier de votre application.
 
-   ```command&nbsp;line
-   cd my-add-in
-   ```
+    ```command&nbsp;line
+    cd my-add-in
+    ```
 
-2. Utilisez le générateur Yeoman pour générer le fichier manifeste de votre complément. Exécutez la commande suivante, puis répondez aux invites comme indiqué ci-dessous.
+2. Utilisez le générateur Yeoman pour générer le fichier manifeste de votre complément en exécutant la commande suivante :
 
-   ```command&nbsp;line
-   yo office
-   ```
+    ```command&nbsp;line
+    yo office
+    ```
 
-   ![Générateur Yeoman](../images/yo-office-manifest-only-vue.png)
+    > [!NOTE]
+    > Lorsque vous exécutez la commande `yo office`, il est possible que vous receviez des messages d’invite sur les règles de collecte de données de Yeoman et les outils CLI de complément Office. Utilisez les informations fournies pour répondre aux invites comme vous l’entendez. Si vous sélectionnez Quitter en réponse à la deuxième invite, vous devez réexécuter la commande lorsque vous êtes prêt à créer votre projet de complément.
 
-   - **Sélectionnez un type de projet :** `Office Add-in project containing the manifest only`
-   - **Comment souhaitez-vous nommer votre complément ?** `my-office-add-in`
-   - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
+    Lorsque vous y êtes invité, fournissez les informations suivantes pour créer votre projet de complément :
+
+    - **Sélectionnez un type de projet :** `Office Add-in project containing the manifest only`
+    - **Comment souhaitez-vous nommer votre complément ?** `my-office-add-in`
+    - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
+
+    ![Générateur Yeoman](../images/yo-office-manifest-only-vue.png)
 
 Une fois que vous avez terminé les étapes de l’Assistant, celui-ci crée un dossier `my-office-add-in` qui contient un fichier `manifest.xml`. Vous utiliserez le manifeste pour charger une version test et tester votre complément à la fin du Démarrage rapide.
+
+> [!TIP]
+> Vous pouvez ignorer les *instructions suivantes* fournies par le générateur Yeoman une fois que le complément a été créé. Les instructions détaillées de cet article fournissent tous les conseils nécessaires à l’exécution de ce didacticiel.
 
 ## <a name="secure-the-app"></a>Sécurisation de l’application
 

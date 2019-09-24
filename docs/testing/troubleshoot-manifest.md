@@ -1,14 +1,14 @@
 ---
 title: Valider et résoudre des problèmes avec votre manifeste
 description: Utiliser ces méthodes pour valider le manifeste des compléments Office.
-ms.date: 08/15/2019
+ms.date: 09/18/2019
 localization_priority: Priority
-ms.openlocfilehash: bf70aca68135073ed92d2e4d2c176b944836c7ad
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: c320c05b944bba9e24a4d3c0e5ef514ac13cc3c6
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477921"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035335"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>Valider et résoudre des problèmes avec votre manifeste
 
@@ -65,12 +65,10 @@ Vous pouvez utiliser la journalisation runtime pour déboguer le manifeste de vo
 > [!NOTE]
 > La fonctionnalité de journalisation runtime est actuellement disponible pour Office 2016 pour ordinateur de bureau.
 
-### <a name="to-turn-on-runtime-logging"></a>Pour activer la journalisation runtime
-
 > [!IMPORTANT]
-> La journalisation runtime réduit les performances. Activez-la uniquement lorsque vous avez besoin de déboguer des problèmes avec votre manifeste de complément.
+> La journalisation runtime affecte les performances. Activez-la uniquement lorsque vous avez besoin de déboguer des problèmes avec votre manifeste de complément.
 
-Pour activer la journalisation runtime, procédez comme suit :
+### <a name="runtime-logging-on-windows"></a>Journalisation de l’exécution sur Windows
 
 1. Vérifiez que vous exécutez la version Bureau d’Office 2016 **16.0.7019** ou une version ultérieure. 
 
@@ -89,6 +87,47 @@ Pour activer la journalisation runtime, procédez comme suit :
 L’image suivante indique à quoi doit ressembler le registre. Pour désactiver la fonctionnalité, supprimez la clé de registre `RuntimeLogging`. 
 
 ![Capture d’écran de l’Éditeur du Registre avec la clé de registre RuntimeLogging](http://i.imgur.com/Sa9TyI6.png)
+
+### <a name="runtime-logging-on-mac"></a>Journalisation de l’exécution sur Mac
+
+1. Vérifiez que vous exécutez la version Bureau d’Office 2016 **16.27** (19071500) ou une version ultérieure.
+
+2. Ouvrez **Terminal** et configurez une préférence de journalisation de l’exécution à l’aide de la commande `defaults` :
+    
+    ```command&nbsp;line
+    defaults write <bundle id> CEFRuntimeLoggingFile -string <file_name>
+    ```
+
+    `<bundle id>` identifie l’hôte pour lequel activer la journalisation de l’exécution. `<file_name>` est le nom du fichier texte dans lequel le journal sera écrit.
+
+    Configurez `<bundle id>` à l’une des valeurs suivantes pour activer la journalisation de l’exécution pour l’hôte correspondant :
+
+    - `com.microsoft.Word`
+    - `com.microsoft.Excel`
+    - `com.microsoft.Powerpoint`
+    - `com.microsoft.Outlook`
+
+L’exemple suivant montre comment activer la journalisation de l’exécution pour Word, puis ouvrir le fichier journal :
+
+```command&nbsp;line
+defaults write com.microsoft.Word CEFRuntimeLoggingFile -string "runtime_logs.txt"
+open ~/library/Containers/com.microsoft.Word/Data/runtime_logs.txt
+```
+
+> [!NOTE] 
+> Vous devrez redémarrer Office après l’exécution de la commande `defaults` pour activer la journalisation de l’exécution.
+
+Pour désactiver la journalisation de l’exécution, utilisez la commande `defaults delete` :
+
+```command&nbsp;line
+defaults delete <bundle id> CEFRuntimeLoggingFile
+```
+
+L’exemple suivant désactive la journalisation de l’exécution pour Word :
+
+```command&nbsp;line
+defaults delete com.microsoft.Word CEFRuntimeLoggingFile
+```
 
 ### <a name="to-troubleshoot-issues-with-your-manifest"></a>Résolution des problèmes avec votre manifeste
 

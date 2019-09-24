@@ -1,14 +1,14 @@
 ---
 title: Développement de compléments Office avec Angular
 description: ''
-ms.date: 03/19/2019
+ms.date: 09/18/2019
 localization_priority: Priority
-ms.openlocfilehash: 5e71b9f6db78308c1e1d1d237f3f78600c1a99a4
-ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
+ms.openlocfilehash: 6687cb5a661217e3bc6b240ce550edd082e565c7
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "33517365"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035216"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Développement de compléments Office avec Angular
 
@@ -79,7 +79,13 @@ export class AppRoutingModule { }
 
 ## <a name="consider-wrapping-fabric-components-with-angular-components"></a>Insertion de composants Fabric dans des composants Angular
 
-Nous vous recommandons d’utiliser le style de la [structure de l’interface utilisateur d’Office](https://developer.microsoft.com/fabric#/fabric-js) dans votre complément. La structure inclut des composants qui sont fournis dans différentes versions, notamment une version [basée sur TypeScript](https://github.com/OfficeDev/office-ui-fabric-js). Envisagez d’utiliser des composants de structure dans votre complément en les insérant dans les composants Angular. Pour obtenir un exemple de procédure à suivre, voir [Complément de vérification du style dans Word basé sur Angular](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker). Notez, par exemple, comment le composant Angular défini dans [fabric.textfield.wrapper](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/shared/office-fabric-component-wrappers/fabric.textfield.wrapper.component.ts) importe le fichier de structure TextField.ts, où le composant de structure est défini. 
+Nous vous recommandons d’utiliser le style [UI Fabric](https://developer.microsoft.com/fabric#) dans votre complément. L’interface utilisateur Fabric pour le Web est disponible en deux versions : 
+
+- [Fabric React](https://developer.microsoft.com/fabric#/controls/web) fournit des composants fiables, à jour et qui sont extrêmement personnalisables.
+
+- [Fabric Core](https://developer.microsoft.com/fabric#/styles/web) est un ensemble de classes CSS et de mixins Sass qui vous permettent d’accéder aux couleurs, animations, polices, icônes et grilles de Fabric.
+
+Envisagez d’utiliser des composants de structure dans votre complément en les insérant dans les composants Angular. Pour obtenir un exemple de procédure à suivre, voir [Complément de vérification du style dans Word basé sur Angular](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker). Notez, par exemple, comment le composant Angular défini dans [fabric.textfield.wrapper](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/shared/office-fabric-component-wrappers/fabric.textfield.wrapper.component.ts) importe le fichier de structure TextField.ts, où le composant de structure est défini. 
 
 
 ## <a name="using-the-office-dialog-api-with-angular"></a>Utilisation de l’API Boîte de dialogue Office
