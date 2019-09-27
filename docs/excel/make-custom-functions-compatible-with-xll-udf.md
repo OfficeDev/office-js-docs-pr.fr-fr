@@ -3,19 +3,19 @@ title: Étendre des fonctions personnalisées avec des fonctions XLL définies p
 description: Activer la compatibilité avec les fonctions Excel XLL définies par l’utilisateur qui offrent une fonctionnalité équivalente à vos fonctions personnalisées
 ms.date: 07/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 955a286956987615f904e8041a16b3c29cc80461
-ms.sourcegitcommit: d49643c4218ed8ad57575d58170dfcdbaf312d14
+ms.openlocfilehash: 7ec853e5b4d03267e1c9d33d2df8a79d86860095
+ms.sourcegitcommit: c8914ce0f48a0c19bbfc3276a80d090bb7ce68e1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "36048287"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "37235301"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>Étendre des fonctions personnalisées avec des fonctions XLL définies par l’utilisateur
 
 Si vous avez des XLL Excel existantes, vous pouvez créer des fonctions personnalisées équivalentes dans un complément Excel pour étendre les fonctionnalités de votre solution à d’autres plateformes, comme Online ou macOS. Toutefois, les compléments Excel ne disposent pas de toutes les fonctionnalités disponibles dans les XLL. En fonction de la fonctionnalité utilisée par votre solution, le XLL peut offrir une meilleure expérience que les fonctions personnalisées de complément Excel dans Excel sur Windows.
 
 > [!NOTE]
-> Le complément COM et la compatibilité UDF XLL sont pris en charge par les plateformes suivantes, lorsqu’ils sont connectés à un abonnement Office 365:
+> Le complément COM et la compatibilité UDF XLL sont pris en charge par les plateformes suivantes, lorsqu’ils sont connectés à un abonnement Office 365 :
 > - Excel sur le Web
 > - Excel sur Windows (version 1904 ou ultérieure)
 > - Excel sur Mac (version 13,329 ou ultérieure)
@@ -62,14 +62,14 @@ Le tableau suivant compare les fonctionnalités des fonctions définies par l’
 
 |         |Fonction XLL définie par l’utilisateur |Fonctions personnalisées compatibles XLL |Fonction personnalisée de complément Excel |
 |---------|---------|---------|---------|
-| Plateformes prises en charge | Windows | Windows, macOS, Excel Online | Windows, macOS, Excel Online |
+| Plateformes prises en charge | Windows | Windows, macOS, Excel sur le Web | Windows, macOS, Excel sur le Web |
 | Formats de fichiers pris en charge | XLSX, XLSB, XLSM, XLS | XLSX, XLSB, XLSM | XLSX, XLSB, XLSM |
 | Saisie semi-automatique de formule | Non | Oui | Oui |
 | Diffusion en continu | Possible via xlfRTD et le rappel XLL. | Non | Oui |
 | Localisation des fonctions | Non | Non. Le nom et l’ID doivent correspondre aux fonctions de la XLL existante. | Oui |
 | Fonctions volatiles | Oui | Oui | Oui |
 | Prise en charge du recalcul multi-thread | Oui | Oui | Oui |
-| Comportement du calcul | Aucune interface utilisateur. Excel peut ne pas répondre pendant le calcul. | Les utilisateurs verront #BUSY! jusqu’à ce qu’un résultat soit renvoyé. | Les utilisateurs verront #BUSY! jusqu’à ce qu’un résultat soit renvoyé. |
+| Comportement du calcul | Aucune interface utilisateur. Excel peut ne pas répondre pendant le calcul. | Les utilisateurs verront #BUSY ! jusqu’à ce qu’un résultat soit renvoyé. | Les utilisateurs verront #BUSY ! jusqu’à ce qu’un résultat soit renvoyé. |
 | Ensembles de conditions requises | S/O | CustomFunctions 1,1 et versions ultérieures | CustomFunctions 1,1 et versions ultérieures |
 
 ## <a name="see-also"></a>Voir aussi

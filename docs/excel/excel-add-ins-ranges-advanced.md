@@ -1,14 +1,14 @@
 ---
 title: Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)
 description: ''
-ms.date: 04/30/2019
+ms.date: 09/18/2019
 localization_priority: Normal
-ms.openlocfilehash: c8fbe1dcc75080c932b4c3e2946fe62747d35c6b
-ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
+ms.openlocfilehash: d260ee6140d0153b426e530304e95025dc235b74
+ms.sourcegitcommit: c8914ce0f48a0c19bbfc3276a80d090bb7ce68e1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "36395595"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "37235329"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)
 
@@ -64,11 +64,11 @@ Votre complément devra mettre en forme les plages pour afficher les dates dans 
 
 ## <a name="work-with-multiple-ranges-simultaneously"></a>Travailler simultanément avec plusieurs plages
 
-L’`RangeAreas`objet laisse votre complément exécuter des opérations sur plusieurs plages en même temps. Ces plages peuvent être adjacentes, mais cela n’est pas obligatoire. `RangeAreas`sont abordés plus loin dans l’article[Travailler simultanément avec plusieurs plages dans des compléments Excel](excel-add-ins-multiple-ranges.md).
+L’objet [RangeAreas](/javascript/api/excel/excel.rangeareas) permet à votre complément d’effectuer des opérations sur plusieurs plages à la fois. Ces plages peuvent être adjacentes, mais cela n’est pas obligatoire. `RangeAreas`sont abordés plus loin dans l’article[Travailler simultanément avec plusieurs plages dans des compléments Excel](excel-add-ins-multiple-ranges.md).
 
 ## <a name="find-special-cells-within-a-range"></a>Rechercher des cellules spéciales dans une plage
 
-Les méthodes`Range.getSpecialCells()` et `Range.getSpecialCellsOrNullObject()`recherchent des plages basées sur les caractéristiques de leurs cellules et les types de valeurs de leurs cellules. Ces deux méthodes renvoient à des`RangeAreas`objets. Voici les signatures des méthodes à partir des types de fichiers de données TypeScript:
+Les méthodes [Range. getSpecialCells](/javascript/api/excel/excel.range#getspecialcells-celltype--cellvaluetype-) et [Range. getSpecialCellsOrNullObject](/javascript/api/excel/excel.range#getspecialcellsornullobject-celltype--cellvaluetype-) recherchent des plages basées sur les caractéristiques de leurs cellules et les types de valeurs de leurs cellules. Ces deux méthodes renvoient à des`RangeAreas`objets. Voici les signatures des méthodes à partir des types de fichiers de données TypeScript:
 
 ```typescript
 getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
@@ -94,7 +94,7 @@ Excel.run(function (context) {
 })
 ```
 
-Si aucune cellule avec la caractéristique ciblée n’existe dans la plage `getSpecialCells` lève une erreur**ItemNotFound**. Cela dévie le flux de contrôle vers un(e)`catch`bloc/méthode, s’il en existe. S’il n’existe pas`catch`, l’erreur arrête la fonction.
+Si aucune cellule avec la caractéristique ciblée n’existe dans la plage `getSpecialCells` lève une erreur**ItemNotFound**. Cela dévie le flux de contrôle vers un(e)`catch`bloc/méthode, s’il en existe. S’il n’existe `catch` pas de bloc, l’erreur interrompt la méthode.
 
 Si vous attendez que des cellules avec la caractéristique ciblée existent toujours, vous souhaiterez probablement que votre code  lève une erreur si ces cellules ne sont pas là. Mais dans les scénarios où les cellules ne correspondent pas; votre code doit vérifier cette possibilité et le gérer gracieusement sans émettre d’erreur. Vous pouvez obtenir ce comportement avec la `getSpecialCellsOrNullObject`méthode et sa propriété renvoyée`isNullObject`. Cet exemple utilise les valeurs suivantes. Tenez compte des informations suivantes :
 
@@ -174,8 +174,8 @@ Excel.run(function (context) {
 
 ## <a name="copy-and-paste"></a>Copy and paste
 
-La fonction`copyFrom`de la plage reproduit le comportement de copier-coller de l’interface utilisateur Excel. L’objet plage sur lequel`copyFrom`est appelé est la destination.
-La source à copier est transmise en tant que plage ou qu’adresse de chaîne représentant une plage.
+La méthode [Range. CopyFrom](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) réplique le comportement de copie et de collage de l’interface utilisateur Excel. L’objet plage sur lequel`copyFrom`est appelé est la destination. La source à copier est transmise en tant que plage ou qu’adresse de chaîne représentant une plage.
+
 L’exemple de code suivant copie les données de la plage **A1:E1** dans la plage commençant en **G1** (ce qui aboutit à un collage dans la plage **G1:K1**).
 
 ```js
@@ -235,11 +235,11 @@ Excel.run(function (context) {
 
 ## <a name="remove-duplicates"></a>Supprimer les doublons
 
-La fonction`removeDuplicates`de l’objet de la plage retire les rangées avec les entrées en doublon dans les colonnes spécifiées. La fonction circule à travers chaque rangée de la plage de l’index à la valeur la plus basse à l’index à la valeur la plus haute de la plage ( du haut vers le bas). Une rangée est supprimée si une valeur dans sa/ses colonne(s) spécifiée(s) apparue(s) plus tôt dans la plage. Les rangées de la plage en-dessous de la rangée supprimée sont déplacées. `removeDuplicates` n’affecte pas la position des cellules en dehors de la rangée.
+La méthode [Range. removeDuplicates](/javascript/api/excel/excel.range#removeduplicates-columns--includesheader-) supprime les lignes contenant des entrées en double dans les colonnes spécifiées. La méthode passe par chaque ligne de la plage comprise entre l’index à la valeur la plus faible et l’index de la valeur la plus haute dans la plage (du haut vers le bas). Une rangée est supprimée si une valeur dans sa/ses colonne(s) spécifiée(s) apparue(s) plus tôt dans la plage. Les rangées de la plage en-dessous de la rangée supprimée sont déplacées. `removeDuplicates` n’affecte pas la position des cellules en dehors de la rangée.
 
-`removeDuplicates`prend un `number[]` représentant les indices de la colonne qui sont vérifiés pour les doublons. Ce tableau est à base zéro et lié à la rangée, et non à la feuille de calcul. La fonction prend également un paramètre booléen qui spécifie si la première rangée est un-tête. Lorsque**true**, la rangée du dessus est ignorée lorsque les doublons sont pris en considération. La fonction`removeDuplicates`renvoie un objet`RemoveDuplicatesResult` qui spécifie le nombre de rangée retirées et le nombre de rangées uniques restantes.
+`removeDuplicates`prend un `number[]` représentant les indices de la colonne qui sont vérifiés pour les doublons. Ce tableau est à base zéro et lié à la rangée, et non à la feuille de calcul. La méthode prend également un paramètre Boolean qui spécifie si la première ligne est un en-tête. Lorsque**true**, la rangée du dessus est ignorée lorsque les doublons sont pris en considération. La `removeDuplicates` méthode renvoie un `RemoveDuplicatesResult` objet qui spécifie le nombre de lignes supprimées et le nombre de lignes uniques restantes.
 
-Lors de l’usage d’une fonction`removeDuplicates`de la plage, gardez ce qui suit à l’esprit:
+Lorsque vous utilisez la méthode `removeDuplicates` d’une plage, gardez les points suivants à l’esprit :
 
 - `removeDuplicates`considère les valeurs de cellule, et non les résultats de la fonction. Si deux fonctions différentes évaluent le même résultat, les valeurs de la cellule ne sont pas considérées comme doublons.
 - Les cellules vides ne sont pas ignorées par`removeDuplicates`. La valeur d’une cellule vide est traitée comme toute autre valeur. Cela signifie que les rangées vides contenues au sein de la plage seront incluses dans le `RemoveDuplicatesResult`.
@@ -247,7 +247,7 @@ Lors de l’usage d’une fonction`removeDuplicates`de la plage, gardez ce qui s
 L’exemple suivant affiche la suppression des entrées avec des valeurs de doublons dans la première colonne.
 
 ```js
-Excel.run(async (context) => {
+Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
     var range = sheet.getRange("B2:D11");
 
@@ -268,6 +268,48 @@ Excel.run(async (context) => {
 *Après l’exécution de la fonction précédente.*
 
 ![Données dans Excel après exécution de la méthode de copie de suppression de la plage.](../images/excel-ranges-remove-duplicates-after.png)
+
+## <a name="group-data-for-an-outline"></a>Données de groupe pour un plan
+
+> [!NOTE]
+> Les API de plan pour le regroupement de lignes et de colonnes sont actuellement disponibles uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+Les lignes ou les colonnes d’une plage peuvent être regroupées pour créer un [plan](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF). Ces groupes peuvent être réduits et développés pour masquer et afficher les cellules correspondantes. Cela facilite l’analyse rapide des données de haut niveau. Utilisez [Range. Group](/javascript/api/excel/excel.range#group-groupoption-) pour créer ces groupes de plan.
+
+Un plan peut avoir une hiérarchie, où les groupes de plus petite taille sont imbriqués sous des groupes plus grands. Cela permet d’afficher le plan à différents niveaux. Vous pouvez modifier le niveau de plan visible par programme à l’aide de la méthode [Range. showOutlineLevels](/javascript/api/excel/excel.range#showOutlineLevels-rowLevels--columnLevels-) . Notez qu’Excel ne prend en charge que huit niveaux de groupes de plan.
+
+L’exemple de code suivant montre comment créer un plan avec deux niveaux de groupes pour les lignes et les colonnes. L’image suivante montre les regroupements de ce plan. Notez que dans l’exemple de code, les plages qui sont groupées n’incluent pas la ligne ou la colonne du contrôle de plan (« totaux » pour cet exemple). Un groupe définit ce qui sera réduit, pas la ligne ou la colonne avec le contrôle.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+
+    // Group the larger, main level. Note that the outline controls
+    // will be on row 10, meaning 4-9 will collapse and expand.
+    sheet.getRange("4:9").group(Excel.GroupOption.byRows);
+
+    // Group the smaller, sublevels. Note that the outline controls
+    // will be on rows 6 and 9, meaning 4-5 and 7-8 will collapse and expand.
+    sheet.getRange("4:5").group(Excel.GroupOption.byRows);
+    sheet.getRange("7:8").group(Excel.GroupOption.byRows);
+
+    // Group the larger, main level. Note that the outline controls
+    // will be on column R, meaning C-Q will collapse and expand.
+    sheet.getRange("C:Q").group(Excel.GroupOption.byColumns);
+
+    // Group the smaller, sublevels. Note that the outline controls
+    // will be on columns G, L, and R, meaning C-F, H-K, and M-P will collapse and expand.
+    sheet.getRange("C:F").group(Excel.GroupOption.byColumns);
+    sheet.getRange("H:K").group(Excel.GroupOption.byColumns);
+    sheet.getRange("M:P").group(Excel.GroupOption.byColumns);
+    return context.sync();
+}).catch(errorHandlerFunction);
+
+```
+
+![Une plage avec un contour à deux niveaux et deux dimensions](../images/excel-outline.png)
+
+Pour dissocier un groupe de lignes ou de colonnes, utilisez la méthode [Range. Group](/javascript/api/excel/excel.range#ungroup-groupoption-) . Cette opération supprime le niveau le plus à l’extérieur du plan. Si plusieurs groupes du même type de ligne ou de colonne se trouvent au même niveau au sein de la plage spécifiée, tous ces groupes sont dissociés.
 
 ## <a name="see-also"></a>Voir aussi
 
