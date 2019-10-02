@@ -1,14 +1,14 @@
 ---
 title: Prise en charge de l’API JavaScript pour Office pour les compléments de contenu et du volet Office dans Office 2013
 description: ''
-ms.date: 03/19/2019
+ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: aeb75d2dbdcae5636bbe81820b9387bd840120c7
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 017542766fc6fb03cd7d4038de0cf3091d74857e
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449308"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353789"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>Prise en charge de l’interface API JavaScript pour Office pour les compléments de contenu et du volet Office dans Office 2013
 
@@ -18,7 +18,7 @@ Vous pouvez utiliser l’[API JavaScript pour Office](/office/dev/add-ins/refere
 
 1. **Objets communs partagés avec d’autres compléments Office.** Parmi ces objets figurent [Office](/javascript/api/office), [Context](/javascript/api/office/office.context) et [AsyncResult](/javascript/api/office/office.asyncresult). L’objet **Office** est l’objet racine de l’interface API JavaScript pour Office. L’objet **Context** représente l’environnement d’exécution du complément. **Office** et **Context** sont les objets fondamentaux pour tout complément Office. L’objet **AsyncResult** représente les résultats d’une opération asynchrone, comme les données renvoyées vers la méthode **getSelectedDataAsync**, qui lit les éléments sélectionnés par un utilisateur dans un document.
 
-2. **Objet document.** La majorité des éléments de l’API disponibles pour les compléments de contenu et du volet Office sont exposés via les méthodes, propriétés et événements de l’objet [Document](/javascript/api/office/office.document). Un complément de contenu ou de volet de tâches peut utiliser la propriété [Office. Context. document](/javascript/api/office/office.context#document) pour accéder à l'objet **document** , et via ce dernier, peut accéder aux membres clés de l'API pour utiliser des données dans des documents, telles que les [liaisons](/javascript/api/office/office.bindings) et [ ](/javascript/api/office/office.customxmlparts)Les objets CustomXmlParts, ainsi que les méthodes [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-), [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-)et [getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-) . L’objet **Document** fournit également la propriété [mode](/javascript/api/office/office.document#mode) permettant de déterminer si un document est en mode lecture seule ou modification, la propriété [url](/javascript/api/office/office.document#url) pour obtenir l’URL du document actuel et accéder à l’objet [Settings](/javascript/api/office/office.settings). L'objet **document** prend également en charge l'ajout de gestionnaires d'événements pour l'événement [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) , afin que vous puissiez détecter lorsqu'un utilisateur modifie sa sélection dans le document.
+2. **Objet document.** La majorité des éléments de l’API disponibles pour les compléments de contenu et du volet Office sont exposés via les méthodes, propriétés et événements de l’objet [Document](/javascript/api/office/office.document). Un complément de contenu ou de volet de tâches peut utiliser la propriété [Office. Context. document](/javascript/api/office/office.context#document) pour accéder à l’objet **document** , et via ce dernier, peut accéder aux membres clés de l’API pour utiliser des données dans des documents, telles que les [liaisons](/javascript/api/office/office.bindings) et [ ](/javascript/api/office/office.customxmlparts)Les objets CustomXmlParts, ainsi que les méthodes [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-), [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-)et [getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-) . L’objet **Document** fournit également la propriété [mode](/javascript/api/office/office.document#mode) permettant de déterminer si un document est en mode lecture seule ou modification, la propriété [url](/javascript/api/office/office.document#url) pour obtenir l’URL du document actuel et accéder à l’objet [Settings](/javascript/api/office/office.settings). L’objet **document** prend également en charge l’ajout de gestionnaires d’événements pour l’événement [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) , afin que vous puissiez détecter lorsqu’un utilisateur modifie sa sélection dans le document.
 
    Un complément de contenu ou du volet Office peut accéder à l’objet **Document** uniquement après le chargement de l’environnement d’exécution et du DOM, généralement dans le gestionnaire d’événements pour l’événement [Office.initialize](/javascript/api/office). Pour plus d’informations sur le flux d’événements lors de l’initialisation d’un complément et sur la vérification du chargement correct du DOM et de l’environnement d’exécution, voir la page relative au [chargement du DOM et de l’environnement d’exécution](loading-the-dom-and-runtime-environment.md).
 
@@ -122,7 +122,7 @@ Pour obtenir des informations détaillées sur l’utilisation de parties XML pe
 
 Vous devez souvent enregistrer les données personnalisées pour votre complément, telles que les préférences d’un utilisateur ou l’état du complément, et accéder à ces données lors de la prochaine ouverture du complément. Vous pouvez utiliser des techniques de programmation web courantes pour enregistrer les données, comme les cookies de navigateur ou le stockage web HTML 5. Si votre complément est également exécuté dans Excel, PowerPoint ou Word, vous pouvez également utiliser les méthodes de l’objet [Settings](/javascript/api/office/office.settings). Les données créées avec l’objet **Settings** sont stockées dans la feuille de calcul, la présentation ou le document dans lequel le complément a été inséré et enregistré. Ces données sont disponibles seulement pour le complément qui les a créées.
 
-Pour éviter les allers-retours vers le serveur où le document est stocké, les données créées avec l'objet **Settings** sont gérées en mémoire au moment de l'exécution. Les données de paramètres enregistrées précédemment sont chargées en mémoire lors de l’initialisation du complément et les modifications apportées à ces données sont uniquement enregistrées dans le document quand vous appelez la méthode [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-). En interne, les données sont stockées dans un objet JSON sérialisé en tant que paires nom/valeur. Vous pouvez utiliser les méthodes [get](/javascript/api/office/office.settings#get-name-), [set](/javascript/api/office/office.settings#set-name--value-) et [remove](/javascript/api/office/office.settings#remove-name-) de l’objet **Settings** pour lire, écrire et supprimer des éléments dans la copie en mémoire des données. La ligne de code suivante explique comment créer un paramètre nommé `themeColor` et définir sa valeur sur « green ».
+Pour éviter les allers-retours vers le serveur où le document est stocké, les données créées avec l’objet **Settings** sont gérées en mémoire au moment de l’exécution. Les données de paramètres enregistrées précédemment sont chargées en mémoire lors de l’initialisation du complément et les modifications apportées à ces données sont uniquement enregistrées dans le document quand vous appelez la méthode [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-). En interne, les données sont stockées dans un objet JSON sérialisé en tant que paires nom/valeur. Vous pouvez utiliser les méthodes [get](/javascript/api/office/office.settings#get-name-), [set](/javascript/api/office/office.settings#set-name--value-) et [remove](/javascript/api/office/office.settings#remove-name-) de l’objet **Settings** pour lire, écrire et supprimer des éléments dans la copie en mémoire des données. La ligne de code suivante explique comment créer un paramètre nommé `themeColor` et définir sa valeur sur « green ».
 
 
 
@@ -151,7 +151,7 @@ Votre complément utilise l’élément **Permissions** dans son manifeste pour 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0"
- xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
  xsi:type="TaskPaneApp">
 ???<!-- Other manifest elements omitted. -->
   <Permissions>ReadDocument</Permissions>

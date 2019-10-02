@@ -3,12 +3,12 @@ title: Étendre des fonctions personnalisées avec des fonctions XLL définies p
 description: Activer la compatibilité avec les fonctions Excel XLL définies par l’utilisateur qui offrent une fonctionnalité équivalente à vos fonctions personnalisées
 ms.date: 07/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 7ec853e5b4d03267e1c9d33d2df8a79d86860095
-ms.sourcegitcommit: c8914ce0f48a0c19bbfc3276a80d090bb7ce68e1
+ms.openlocfilehash: a0a98dab1ec046151d2dd0d80a4a3a4542654574
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "37235301"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353880"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>Étendre des fonctions personnalisées avec des fonctions XLL définies par l’utilisateur
 
@@ -62,7 +62,7 @@ Le tableau suivant compare les fonctionnalités des fonctions définies par l’
 
 |         |Fonction XLL définie par l’utilisateur |Fonctions personnalisées compatibles XLL |Fonction personnalisée de complément Excel |
 |---------|---------|---------|---------|
-| Plateformes prises en charge | Windows | Windows, macOS, Excel sur le Web | Windows, macOS, Excel sur le Web |
+| Plateformes prises en charge | Windows | Windows, macOS, navigateur Web | Windows, macOS, navigateur Web |
 | Formats de fichiers pris en charge | XLSX, XLSB, XLSM, XLS | XLSX, XLSB, XLSM | XLSX, XLSB, XLSM |
 | Saisie semi-automatique de formule | Non | Oui | Oui |
 | Diffusion en continu | Possible via xlfRTD et le rappel XLL. | Non | Oui |

@@ -1,14 +1,14 @@
 ---
 title: Télécharger la dernière version de l’API JavaScript pour la bibliothèque Office et la version 1.1 du schéma de manifeste du complément
 description: Mettez à jour vos fichiers JavaScript (Office.js et fichiers .js propres aux applications) et le fichier de validation du manifeste du complément dans votre projet Complément Office vers la version 1.1.
-ms.date: 03/19/2019
+ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: dc3d1983d653a1b914331c9aeac1d6dae9fcc772
-ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
+ms.openlocfilehash: a685f1a2e482a99af2a7184c2ab44104fa38c6a7
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "35226768"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353859"
 ---
 # <a name="update-to-the-latest-javascript-api-for-office-library-and-version-11-add-in-manifest-schema"></a>Télécharger la dernière version de l’API JavaScript pour la bibliothèque Office et la version 1.1 du schéma de manifeste du complément
 
@@ -68,7 +68,7 @@ Dans le fichier manifeste de votre complément, mettez à jour l’attribut **xm
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xsi:type="ContentApp"
-    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="http://schemas.microsoft.com/office/appforoffice/1.1">
   
   <!-- manifest contents -->
@@ -111,7 +111,7 @@ Dans le fichier manifeste de votre complément, mettez à jour l’attribut **xm
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xsi:type="ContentApp"
-  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://schemas.microsoft.com/office/appforoffice/1.1">
   
   <!-- manifest contents -->

@@ -1,14 +1,14 @@
 ---
 title: Spécification des exigences en matière d’hôtes Office et d’API
 description: ''
-ms.date: 08/14/2019
+ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: bd70f33952b4306b906896b6f4c8e00e0d768265
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: 1d5c922787192263e5290d2a428c352ab32378b0
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477774"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353838"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>Spécification des exigences en matière d’hôtes Office et d’API
 
@@ -43,7 +43,7 @@ Votre complément doit utiliser la version la plus récente du schéma de manife
 Le manifeste de votre du complément doit utiliser la version 1.1 du schéma de manifeste de complément. Définissez l’élément **App_office** dans votre manifeste complément comme suit.
 
 ```XML
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
 ```
 
 ### <a name="specify-the-latest-javascript-api-for-office-library"></a>Indication de l’API JavaScript la plus récente pour la bibliothèque Office

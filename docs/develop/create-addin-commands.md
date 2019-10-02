@@ -1,14 +1,14 @@
 ---
 title: Création de commandes de complément dans votre manifeste pour Excel, Word et PowerPoint
 description: Utilisez VersionOverrides dans votre manifeste pour définir des commandes de complément pour Excel, Word et PowerPoint. Utilisez les commandes de complément pour créer des éléments d’interface utilisateur, ajouter des boutons ou des listes, et effectuer des actions.
-ms.date: 06/20/2019
+ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: a614d2786652058c42dbcca726546575e71f12ef
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: cf3329df845d206452b1b29ae46de4a3888a1a49
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36695895"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353824"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-word-and-powerpoint"></a>Création de commandes de complément dans votre manifeste pour Excel, Word et PowerPoint
 
@@ -43,7 +43,8 @@ Pour utiliser les commandes de complément, vous devez tout d’abord créer un 
 L’exemple suivant illustre le manifeste d’un complément Office 2013. Ce manifeste ne contient pas de commande de complément car il n’y a pas d’élément **VersionOverrides**. Office 2013 ne prend pas en charge les commandes de complément mais, en ajoutant **VersionOverrides** à ce manifeste, votre complément s’exécute dans Office 2013 et Office 2016. Dans Office 2013, votre complément n’affiche pas les commandes de complément et utilise la valeur **SourceLocation** pour exécuter votre complément sous la forme d’un complément de volet de tâches unique. Dans Office 2016, si aucun élément **VersionOverrides** n’est inclus, **SourceLocation** est utilisé pour exécuter votre complément. Cependant, si vous incluez **VersionOverrides**, votre complément affiche uniquement les commandes de complément et n’affiche pas votre complément sous la forme d’un complément de volet de tâches unique.
   
 ```xml
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID. -->
   <Id>657a32a9-ab8a-4579-ac9f-df1a11a64e52</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
@@ -51,7 +52,7 @@ L’exemple suivant illustre le manifeste d’un complément Office 2013. Ce man
   <DisplayName DefaultValue="Contoso Add-in Commands" />
   <Description DefaultValue="Contoso Add-in Commands"/>
   <IconUrl DefaultValue="~remoteAppUrl/Images/Icon_32.png" />
- 
+  <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
   <AppDomains>
     <AppDomain>AppDomain1</AppDomain>
     <AppDomain>AppDomain2</AppDomain>
