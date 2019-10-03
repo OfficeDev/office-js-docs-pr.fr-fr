@@ -1,14 +1,14 @@
 ---
 title: Utiliser les classeurs utilisant l’API JavaScript Excel
 description: ''
-ms.date: 09/03/2019
+ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: eb2313203e770e173d4db12d2bbc03048a08acaa
-ms.sourcegitcommit: 78998a9f0ebb81c4dd2b77574148b16fe6725cfc
+ms.openlocfilehash: 66e531a382d467326e5132e60f06c98d414dbb16
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "36715619"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353873"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Utiliser les classeurs utilisant l’API JavaScript Excel
 
@@ -271,14 +271,14 @@ context.application.suspendApiCalculationUntilNextSync();
 
 Tous les [commentaires](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) d’un classeur sont suivis par la propriété `Workbook.comments`. Cela inclut les commentaires créés par les utilisateurs ainsi que les commentaires créés par votre complément. La propriété `Workbook.comments` est un objet [CommentCollection](/javascript/api/excel/excel.commentcollection) qui contient une collection d’objets [Comment](/javascript/api/excel/excel.comment).
 
-Pour ajouter des commentaires à un classeur, utilisez la méthode `CommentCollection.add`, appliquez-la au texte du commentaire, en tant que chaîne, puis à la cellule dans laquelle le commentaire sera ajouté, sous forme de chaîne ou d’objet [Range](/javascript/api/excel/excel.range). L’exemple de code suivant ajoute un commentaire à la cellule **A2**.
+Pour ajouter des commentaires à un classeur, utilisez la méthode `CommentCollection.add`, appliquez-la à la cellule dans laquelle le commentaire sera ajouté, sous forme de chaîne ou d’objet [Range](/javascript/api/excel/excel.range) et au texte du commentaire, sous forme de chaîne. L’exemple de code suivant ajoute un commentaire à la cellule **A2**.
 
 ```js
 Excel.run(function (context) {
     var comments = context.workbook.comments;
 
     // Note that an InvalidArgument error will be thrown if multiple cells passed to `Comment.add`.
-    comments.add("TODO: add data.", "A2");
+    comments.add("A2", "TODO: add data.");
     return context.sync();
 });
 ```
