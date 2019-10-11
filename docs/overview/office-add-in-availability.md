@@ -1,14 +1,14 @@
 ---
 title: Disponibilité des compléments Office sur les plateformes et les hôtes
 description: Ensembles de conditions requises pris en charge pour Excel, OneNote, Outlook, PowerPoint, Project et Word.
-ms.date: 08/13/2019
+ms.date: 10/09/2019
 localization_priority: Priority
-ms.openlocfilehash: a3c580f32ad7cd384309a9b53e55ea488a470a90
-ms.sourcegitcommit: f781d7cfd980cd866d6d1d00c5b9d16c8a4b7f9b
+ms.openlocfilehash: 28d63866a03bcae99829d3a6b6c6198059a92bdc
+ms.sourcegitcommit: 4d9f3e177b0bcd62804d5045f52b03e441af244f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "37053325"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "37440149"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilité des compléments Office sur les plateformes et les hôtes
 
@@ -465,6 +465,9 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
 </table>
 
 *&ast; : ajouté avec les mises à jour après la publication.*
+
+> [!IMPORTANT]
+> La prise en charge du client pour un ensemble de conditions requises peut être limitée par la prise en charge d’Exchange Server. Consultez [Ensembles de conditions requises de l’API JavaScript pour Outlook](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) pour plus d’informations sur les ensembles de conditions requises pris en charge par Exchange Server et le client Outlook.
 
 <br/>
 
@@ -946,10 +949,10 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d’ensemble de la plateforme des compléments Office](office-add-ins.md)
-- [Versions d’Office et ensembles de conditions requises](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [Ensembles de conditions requises des API communes](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
-- [Ensembles de conditions requises concernant les commandes de complément](/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets)
-- [Référence de l’API JavaScript pour Office](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Versions d’Office et ensembles de conditions requises](../develop/office-versions-and-requirement-sets.md)
+- [Ensembles de conditions requises des API communes](../reference/requirement-sets/office-add-in-requirement-sets.md)
+- [Ensembles de conditions requises concernant les commandes de complément](../reference/requirement-sets/add-in-commands-requirement-sets.md)
+- [Référence de l’API JavaScript pour Office](../reference/javascript-api-for-office.md)
 - [Historique des mises à jour d’Office 365 ProPlus](/officeupdates/update-history-office365-proplus-by-date)
 - [Historique des mises à jour d’Office 2016 et 2019 (Démarrer en un clic)](/officeupdates/update-history-office-2019)
 - [Historique des mises à jour d’Office 2013 (Démarrer en un clic)](/officeupdates/update-history-office-2013)

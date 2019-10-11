@@ -3,12 +3,12 @@ title: Élément GetStarted dans le fichier manifeste
 description: ''
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: d9ebcba7881b388544eeb3e2c3028bff9bdcf9a6
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 82fa1b9b62674adfb05c07536a7fdf2bbabf8f45
+ms.sourcegitcommit: e5a5ec4ba32bacd0ccd13291b4e7f4bfc42901a3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32452080"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "37429736"
 ---
 # <a name="getstarted-element"></a>GetStarted, élément
 
@@ -20,7 +20,7 @@ Fournit des informations utilisées par la légende qui s’affiche lorsque le c
 |:------------------------------|:--------:|:---------------------------------------------------|
 | [Titre](#title)               | Oui      | Définit l’emplacement où se trouvent les fonctionnalités d’un complément     |
 | [Description](#description)   | Oui      | URL pointant vers un fichier qui contient les fonctions JavaScript.|
-| [LearnMoreUrl](#learnmoreurl) | Non       | URL vers une page qui décrit le complément de façon plus détaillée.   |
+| [LearnMoreUrl](#learnmoreurl) | Oui       | URL vers une page qui décrit le complément de façon plus détaillée.   |
 
 ### <a name="title"></a>Titre 
 
