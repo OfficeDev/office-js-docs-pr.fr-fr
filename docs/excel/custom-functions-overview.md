@@ -2,15 +2,15 @@
 ms.date: 09/26/2019
 description: Créer des fonctions personnalisées dans Excel à l’aide de JavaScript.
 title: Créer des fonctions personnalisées dans Excel
-ms.topic: overview
-scenarios: getting-started
+ms.topic: conceptual
+ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 49c388f7b1464ba5688ed1d7855a16c5e1ca848f
-ms.sourcegitcommit: 3159f4ed9fd8fa631300d15501912ba6293740c3
+ms.openlocfilehash: 615a20bfcae94445eb21fc460c6718917ff8a20d
+ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "37391240"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "37468734"
 ---
 # <a name="create-custom-functions-in-excel"></a>Créer des fonctions personnalisées dans Excel 
 
