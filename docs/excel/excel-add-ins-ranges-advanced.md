@@ -3,12 +3,12 @@ title: Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)
 description: ''
 ms.date: 09/18/2019
 localization_priority: Normal
-ms.openlocfilehash: d260ee6140d0153b426e530304e95025dc235b74
-ms.sourcegitcommit: c8914ce0f48a0c19bbfc3276a80d090bb7ce68e1
+ms.openlocfilehash: 90dff45ee01197a9a6f4d35fb9ab3379adf129b9
+ms.sourcegitcommit: 78bbbd6cb5a270164b26038675a222defc3be55e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "37235329"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "37471359"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)
 
@@ -276,7 +276,7 @@ Excel.run(function (context) {
 
 Les lignes ou les colonnes d’une plage peuvent être regroupées pour créer un [plan](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF). Ces groupes peuvent être réduits et développés pour masquer et afficher les cellules correspondantes. Cela facilite l’analyse rapide des données de haut niveau. Utilisez [Range. Group](/javascript/api/excel/excel.range#group-groupoption-) pour créer ces groupes de plan.
 
-Un plan peut avoir une hiérarchie, où les groupes de plus petite taille sont imbriqués sous des groupes plus grands. Cela permet d’afficher le plan à différents niveaux. Vous pouvez modifier le niveau de plan visible par programme à l’aide de la méthode [Range. showOutlineLevels](/javascript/api/excel/excel.range#showOutlineLevels-rowLevels--columnLevels-) . Notez qu’Excel ne prend en charge que huit niveaux de groupes de plan.
+Un plan peut avoir une hiérarchie, où les groupes de plus petite taille sont imbriqués sous des groupes plus grands. Cela permet d’afficher le plan à différents niveaux. Vous pouvez modifier le niveau de plan visible par programmation à l’aide de la méthode [Worksheet. showOutlineLevels](/javascript/api/excel/excel.worksheet#showoutlinelevels-rowlevels--columnlevels-) . Notez qu’Excel ne prend en charge que huit niveaux de groupes de plan.
 
 L’exemple de code suivant montre comment créer un plan avec deux niveaux de groupes pour les lignes et les colonnes. L’image suivante montre les regroupements de ce plan. Notez que dans l’exemple de code, les plages qui sont groupées n’incluent pas la ligne ou la colonne du contrôle de plan (« totaux » pour cet exemple). Un groupe définit ce qui sera réduit, pas la ligne ou la colonne avec le contrôle.
 
@@ -309,7 +309,7 @@ Excel.run(function (context) {
 
 ![Une plage avec un contour à deux niveaux et deux dimensions](../images/excel-outline.png)
 
-Pour dissocier un groupe de lignes ou de colonnes, utilisez la méthode [Range. Group](/javascript/api/excel/excel.range#ungroup-groupoption-) . Cette opération supprime le niveau le plus à l’extérieur du plan. Si plusieurs groupes du même type de ligne ou de colonne se trouvent au même niveau au sein de la plage spécifiée, tous ces groupes sont dissociés.
+Pour dissocier un groupe de lignes ou de colonnes, utilisez la méthode [Range. Ungroup](/javascript/api/excel/excel.range#ungroup-groupoption-) . Cette opération supprime le niveau le plus à l’extérieur du plan. Si plusieurs groupes du même type de ligne ou de colonne se trouvent au même niveau au sein de la plage spécifiée, tous ces groupes sont dissociés.
 
 ## <a name="see-also"></a>Voir aussi
 
