@@ -1,5 +1,3 @@
-# <a name="get-the-whole-document-from-an-add-in-for-powerpoint-or-word"></a>Obtention de l’intégralité d’un document pour un complément pour PowerPoint ou Word
-
 Vous pouvez créer un Complément Office pour permettre l’envoi ou la publication en un clic d’un document Word 2013 ou PowerPoint 2013 sur un emplacement distant. Cet article explique comment créer un complément du volet de tâches pour PowerPoint 2013 qui envoie les données d’une présentation sous la forme d’un objet de données à un serveur web via une requête HTTP.
 
 ## <a name="prerequisites-for-creating-an-add-in-for-powerpoint-or-word"></a>Éléments requis pour créer un complément pour PowerPoint ou Word

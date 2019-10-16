@@ -3,12 +3,12 @@ title: Spécification des exigences en matière d’hôtes Office et d’API
 description: ''
 ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: 1d5c922787192263e5290d2a428c352ab32378b0
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.openlocfilehash: c3f1979eb216d20f6c409010e84c1388d2069489
+ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353838"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "37524268"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>Spécification des exigences en matière d’hôtes Office et d’API
 
@@ -51,7 +51,7 @@ Le manifeste de votre du complément doit utiliser la version 1.1 du schéma de
 Si vous utilisez des vérifications à l’exécution, référencez la version la plus récente de l’API JavaScript pour la bibliothèque Office à partir du réseau de livraison de contenu (CDN). Pour ce faire, ajoutez la balise `script` suivante à votre code HTML. L’utilisation de `/1/` dans l’URL CDN garantit que vous référencez la version d’Office.js la plus récente.
 
 ```HTML
-<script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
+<script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
 ```
 
 ## <a name="options-to-specify-office-hosts-or-api-requirements"></a>Options pour spécifier des hôtes Office ou les conditions requises d’API

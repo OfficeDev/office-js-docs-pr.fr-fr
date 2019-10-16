@@ -3,12 +3,12 @@ title: Présentation de l’API JavaScript pour Office
 description: ''
 ms.date: 06/21/2019
 localization_priority: Priority
-ms.openlocfilehash: afbb24cd056d3a11c8d19f9a4316caeaafc7f066
-ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
+ms.openlocfilehash: 1954457b477472b8940841bb1ffe5954e49e01ec
+ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "35226740"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "37524233"
 ---
 # <a name="understanding-the-javascript-api-for-office"></a>Présentation de l’API JavaScript pour Office
 
@@ -22,7 +22,7 @@ Cet article fournit des informations sur l’API JavaScript pour Office et son u
 La bibliothèque de l’[interface API JavaScript pour Office](/office/dev/add-ins/reference/javascript-api-for-office) comprend le fichier Office.js et des fichiers .js propres aux applications hôtes associées, comme Excel-15.js et Outlook15.js. La méthode la plus simple pour référencer l’interface API est d’utiliser notre CDN en ajoutant le `<script>` suivant à la balise `<head>` de votre page :  
 
 ```html
-<script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
+<script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
 ```
 
 Cette opération permet de télécharger et de mettre en cache les fichiers de l’interface API JavaScript pour Office lors du premier chargement de votre complément pour garantir qu’elle utilise l’implémentation d’Office.js la plus récente et les fichiers .js qui lui sont associés pour la version indiquée.
