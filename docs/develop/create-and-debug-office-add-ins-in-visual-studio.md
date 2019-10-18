@@ -30,7 +30,7 @@ Cet article décrit comment utiliser Visual Studio 2017 pour créer un compléme
 - Office 2013 ou version ultérieure
 
     > [!TIP]
-    > Si vous n’avez pas Office, vous pouvez rejoindre le[programme Office 365 pour les développeurs](https://developer.microsoft.com/office/dev-program) pour obtenir un abonnement Office 365, ou vous pouvez[vous inscrire à un essai gratuit de 1 mois](https://products.office.com/fr-FR/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735).
+    > Si vous n’avez pas Office, vous pouvez rejoindre le[programme Office 365 pour les développeurs](https://developer.microsoft.com/office/dev-program) pour obtenir un abonnement Office 365, ou vous pouvez[vous inscrire à un essai gratuit de 1 mois](https://products.office.com/en-US/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735).
 
 ## <a name="create-the-add-in-project-in-visual-studio"></a>Créer un projet de complément Office dans Visual Studio
 
