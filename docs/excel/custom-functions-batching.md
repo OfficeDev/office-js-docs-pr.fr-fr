@@ -80,7 +80,7 @@ Enfin, lorsqu’Excel appelle votre fonction personnalisée, vous devez transmet
 
 Ce code vérifie également si un traitement par lots est planifié. Dans cet exemple, l’exécution de chaque traitement par lots est prévue toutes les 100 millisecondes. Vous pouvez ajuster cette valeur si nécessaire. Des valeurs supérieures entraînent l’envoi de traitements par lots plus grands au service à distance et l’augmentation du temps d’attente pour que l’utilisateur puisse afficher les résultats. Des valeurs inférieures ont tendance à envoyer davantage de traitements par lots au service à distance, mais avec un temps de réponse rapide pour les utilisateurs.
 
-### <a name="add-the-pushoperation-function-to-functionsts"></a>Ajouter la fonction `_pushOperation` à functions.ts
+### <a name="add-the-_pushoperation-function-to-functionsts"></a>Ajouter la fonction `_pushOperation` à functions.ts
 
 ```typescript
 function _pushOperation(op: string, args: any[]) {
@@ -118,7 +118,7 @@ function _pushOperation(op: string, args: any[]) {
 
 L’objectif de la fonction `_makeRemoteRequest` consiste à transmettre le traitement par lots d’opérations au service à distance, puis de renvoyer les résultats à chaque fonction personnalisée. Elle crée tout d’abord une copie du tableau de traitement par lots. Cela permet aux appels simultanés de fonctions personnalisées à partir d’Excel de commencer immédiatement le traitement par lots dans un nouveau tableau. La copie est ensuite transformée en un tableau plus simple qui ne contient pas les informations sur la promesse. Transmettre les promesses à un service à distance n’aurait aucun sens, car elles ne fonctionneraient pas. `_makeRemoteRequest` rejette ou résout chaque promesse en fonction de ce que le service à distance renvoie.
 
-### <a name="add-the-following-makeremoterequest-method-to-functionsts"></a>Ajouter la méthode `_makeRemoteRequest` suivante à functions.ts
+### <a name="add-the-following-_makeremoterequest-method-to-functionsts"></a>Ajouter la méthode `_makeRemoteRequest` suivante à functions.ts
 
 ```typescript
 function _makeRemoteRequest() {
@@ -150,7 +150,7 @@ function _makeRemoteRequest() {
 }
 ```
 
-### <a name="modify-makeremoterequest-for-your-own-solution"></a>Modifier `_makeRemoteRequest` pour votre propre solution
+### <a name="modify-_makeremoterequest-for-your-own-solution"></a>Modifier `_makeRemoteRequest` pour votre propre solution
 
 La fonction `_makeRemoteRequest` appelle `_fetchFromRemoteService` qui, comme vous le verrez plus tard, est simplement une imitation représentant le service à distance. Cela facilite l’étude et l’exécution du code dans cet article. Mais si vous voulez utiliser ce code pour un vrai service à distance, vous devez effectuer les modifications suivantes :
 
@@ -161,7 +161,7 @@ La fonction `_makeRemoteRequest` appelle `_fetchFromRemoteService` qui, comme vo
 
 La dernière étape consiste à gérer l’appel de traitement par lots dans le service à distance. L’exemple de code suivant affiche la fonction `_fetchFromRemoteService`. Cette fonction décompresse chaque opération, effectue l’opération spécifiée et renvoie les résultats. À des fins d’apprentissage dans cet article, la fonction `_fetchFromRemoteService` est conçue de manière à s’exécuter dans votre complément web et à imiter un service à distance. Vous pouvez ajouter ce code à votre fichier **functions.ts** afin d’examiner et d’exécuter l’ensemble du code de cet article sans devoir configurer de service à distance réel.
 
-### <a name="add-the-following-fetchfromremoteservice-function-to-functionsts"></a>Ajouter la fonction `_fetchFromRemoteService` suivante à functions.ts
+### <a name="add-the-following-_fetchfromremoteservice-function-to-functionsts"></a>Ajouter la fonction `_fetchFromRemoteService` suivante à functions.ts
 
 ```typescript
 async function _fetchFromRemoteService(
@@ -204,7 +204,7 @@ function pause(ms: number) {
 }
 ```
 
-### <a name="modify-fetchfromremoteservice-for-your-live-remote-service"></a>Modifier `_fetchFromRemoteService` pour votre service à distance en direct
+### <a name="modify-_fetchfromremoteservice-for-your-live-remote-service"></a>Modifier `_fetchFromRemoteService` pour votre service à distance en direct
 
 Pour modifier la fonction `_fetchFromRemoteService` de manière à l’exécuter dans votre service à distance en direct, apportez les modifications suivantes :
 
