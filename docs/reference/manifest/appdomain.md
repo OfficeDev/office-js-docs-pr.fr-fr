@@ -1,20 +1,20 @@
 ---
 title: Élément AppDomain dans le fichier manifeste
 description: ''
-ms.date: 05/15/2019
+ms.date: 07/03/2019
 localization_priority: Normal
-ms.openlocfilehash: b1d71648cc7646eec246f3d0a8113c843eed2e74
-ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
+ms.openlocfilehash: 2f65302d1ac3d85f2867cd13501bc67606cd00b5
+ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "34337194"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "35575638"
 ---
 # <a name="appdomain-element"></a>AppDomain, élément
 
-Indique un domaine supplémentaire permettant de charger des pages dans la fenêtre du complément.
+Spécifie les domaines supplémentaires qui chargent des pages dans la fenêtre du complément. Il répertorie également les domaines approuvés à partir desquels les appels de l’API Office. js peuvent être effectués depuis des IFrames au sein du complément.
 
-**Type de complément :** application de contenu, de volet Office, de messagerie
+**Type de complément :** application de contenu, de volet Office, de messagerie
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -24,7 +24,7 @@ Indique un domaine supplémentaire permettant de charger des pages dans la fenê
 
 > [!IMPORTANT]
 > 1. La valeur de l’élément**AppDomain**doit inclure le protocole (par exemple,`<AppDomain>https://myappdomain</AppDomain>`).
-> 2. Ne placez *pas* de barre oblique («/») sur la valeur.
+> 2. Ne placez *pas* de barre oblique (« / ») sur la valeur.
 
 ## <a name="contained-in"></a>Contenu dans
 

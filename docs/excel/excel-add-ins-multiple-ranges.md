@@ -1,21 +1,18 @@
 ---
 title: Travailler simultanément avec plusieurs plages dans des compléments Excel
 description: ''
-ms.date: 02/20/2019
+ms.date: 04/30/2019
 localization_priority: Normal
-ms.openlocfilehash: d284f3cb12153b1c05cff0b7f7a66bbf98961443
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a327b6c379884107f5e00c0663ecfa6c71b8097f
+ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449238"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "33620044"
 ---
-# <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins-preview"></a>Travailler simultanément avec plusieurs plages dans des compléments Excel (prévisualisation)
+# <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins"></a>Travailler simultanément avec plusieurs plages dans des compléments Excel
 
 La bibliothèque JavaScript Excel permet à votre complément d’effectuer des opérations et définir des propriétés, de manière simultanée sur plusieurs plages. Les plages n’ont pas besoin d’être contigus. En plus de rendre votre code plus simple, cette manière de paramétrer une propriété s’exécute beaucoup plus rapidement que paramétrer la même propriété pour chaque les plages de manière individuelle.
-
-> [!NOTE]
-> Les APIs décrits dans cet article nécessitent**la version Office 2016 «Démarrer en un Clic» 1809 Build 10820.20000**ou ultérieure. (Vous devrez peut-être rejoindre le [programme Office](https://products.office.com/office-insider) Insider pour obtenir une build appropriée.)[!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 ## <a name="rangeareas"></a>RangeAreas
 
@@ -40,43 +37,41 @@ Quelques exemples :
 
 Être familiarisé avec[Lire les propriétés de RangeAreas](#read-properties-of-rangeareas) avant d’écrire de code qui lit les propriétés répertoriées. Il existe des subtilités sur ce qui est renvoyé.
 
-- address
-- addressLocal
-- cellCount
-- conditionalFormats
-- context
-- dataValidation
-- format
-- isEntireColumn
-- isEntireRow
-- style
-- worksheet
+- `address`
+- `addressLocal`
+- `cellCount`
+- `conditionalFormats`
+- `context`
+- `dataValidation`
+- `format`
+- `isEntireColumn`
+- `isEntireRow`
+- `style`
+- `worksheet`
 
 ##### <a name="methods"></a>Méthodes
 
-Les méthodes de plage dans l’aperçu sont marquées.
-
-- calculate()
-- clear()
-- convertDataTypeToText() (preview)
-- convertToLinkedDataType() (preview)
-- copyFrom() (preview)
-- getEntireColumn()
-- getEntireRow()
-- getIntersection()
-- getIntersectionOrNullObject()
-- getOffsetRange() (appelé getOffsetRangeAreas sur l’objet RangeAreas)
-- getSpecialCells() (prévisualisation)
-- getSpecialCellsOrNullObject() (prévisualisation)
-- getTables() (prévisualisation)
-- getUsedRange() (appelé getOffsetRangeAreas sur l’objet RangeAreas)
-- getUsedRangeOrNullObject() (appelé getUsedRangeAreasOrNullObject sur l’objet RangeAreas)
-- load()
-- set()
-- setDirty() (prévisualisation)
-- toJSON()
-- track()
-- untrack()
+- `calculate()`
+- `clear()`
+- `convertDataTypeToText()`
+- `convertToLinkedDataType()`
+- `copyFrom()`
+- `getEntireColumn()`
+- `getEntireRow()`
+- `getIntersection()`
+- `getIntersectionOrNullObject()`
+- `getOffsetRange()`(nommé `getOffsetRangeAreas` sur l' `RangeAreas` objet)
+- `getSpecialCells()`
+- `getSpecialCellsOrNullObject()`
+- `getTables()`
+- `getUsedRange()`(nommé `getUsedRangeAreas` sur l' `RangeAreas` objet)
+- `getUsedRangeOrNullObject()`(nommé `getUsedRangeAreasOrNullObject` sur l' `RangeAreas` objet)
+- `load()`
+- `set()`
+- `setDirty()`
+- `toJSON()`
+- `track()`
+- `untrack()`
 
 ### <a name="rangearea-specific-properties-and-methods"></a>Méthodes et propriétés propres à une langue RangeArea
 
@@ -124,7 +119,7 @@ Cet exemple s’applique aux scénarios dans lesquels vous pouvez coder en dur l
 
 ## <a name="get-special-cells-from-multiple-ranges"></a>Obtenir des cellules spéciales à partir de plusieurs plages
 
-Les méthodes `getSpecialCells` et `getSpecialCellsOrNullObject` sur l’objet `RangeAreas` fonctionnent de manière analogue aux méthodes du même nom sur l’objet `Range`. Ces méthodes retournent les cellules disposant de la caractéristique spécifiée à partir de toutes les plages dans la collection `RangeAreas.areas`. Voir la section [Trouver des cellules spéciales dans une plage](excel-add-ins-ranges-advanced.md#find-special-cells-within-a-range-preview) pour plus d’informations sur les cellules spéciales.
+Les méthodes `getSpecialCells` et `getSpecialCellsOrNullObject` sur l’objet `RangeAreas` fonctionnent de manière analogue aux méthodes du même nom sur l’objet `Range`. Ces méthodes retournent les cellules disposant de la caractéristique spécifiée à partir de toutes les plages dans la collection `RangeAreas.areas`. Voir la section [Trouver des cellules spéciales dans une plage](excel-add-ins-ranges-advanced.md#find-special-cells-within-a-range) pour plus d’informations sur les cellules spéciales.
 
 Lors de l’appel de la méthode `getSpecialCells` ou `getSpecialCellsOrNullObject` sur un objet `RangeAreas` :
 

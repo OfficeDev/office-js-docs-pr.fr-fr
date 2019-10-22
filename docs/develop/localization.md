@@ -3,12 +3,12 @@ title: Localisation des compléments Office
 description: Vous pouvez utiliser l’API JavaScript pour Office afin de déterminer des paramètres régionaux et d’afficher des chaînes basées sur les paramètres régionaux de l’application hôte, ou afin d’interpréter ou d’afficher des données en fonction des paramètres régionaux des données.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 6d2df9ffc3364278e48e2fecc5ff427594764482
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: de0037c687e49b79acb90ff59f1babc9da1f13f5
+ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128114"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "35575561"
 ---
 # <a name="localization-for-office-add-ins"></a>Localisation des compléments Office
 
@@ -407,17 +407,17 @@ Lors de l’exécution, les chaînes de l’interface utilisateur du complément
 - [Instructions de conception pour les compléments Office](../design/add-in-design.md)
 - [Instructions de conception pour les compléments Office](/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
 
-[DefaultLocale]:        https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultlocale
-[Description]:          https://docs.microsoft.com/office/dev/add-ins/reference/manifest/description
-[DisplayName]:          https://docs.microsoft.com/office/dev/add-ins/reference/manifest/displayname
-[IconUrl]:              https://docs.microsoft.com/office/dev/add-ins/reference/manifest/iconurl
-[HighResolutionIconUrl]:https://docs.microsoft.com/office/dev/add-ins/reference/manifest/highresolutioniconurl
-[Resources]:            https://docs.microsoft.com/office/dev/add-ins/reference/manifest/resources
-[SourceLocation]:       https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation
-[Override]:             https://docs.microsoft.com/office/dev/add-ins/reference/manifest/override
-[DesktopSettings]:      https://docs.microsoft.com/office/dev/add-ins/reference/manifest/desktopsettings
-[TabletSettings]:       https://docs.microsoft.com/office/dev/add-ins/reference/manifest/tabletsettings
-[PhoneSettings]:        https://docs.microsoft.com/office/dev/add-ins/reference/manifest/phonesettings
-[displayLanguage]:  https://docs.microsoft.com/javascript/api/office/office.context#displaylanguage 
-[contentLanguage]:  https://docs.microsoft.com/javascript/api/office/office.context#contentlanguage 
+[DefaultLocale]:        /office/dev/add-ins/reference/manifest/defaultlocale
+[Description]:          /office/dev/add-ins/reference/manifest/description
+[DisplayName]:          /office/dev/add-ins/reference/manifest/displayname
+[IconUrl]:              /office/dev/add-ins/reference/manifest/iconurl
+[HighResolutionIconUrl]:/office/dev/add-ins/reference/manifest/highresolutioniconurl
+[Resources]:            /office/dev/add-ins/reference/manifest/resources
+[SourceLocation]:       /office/dev/add-ins/reference/manifest/sourcelocation
+[Override]:             /office/dev/add-ins/reference/manifest/override
+[DesktopSettings]:      /office/dev/add-ins/reference/manifest/desktopsettings
+[TabletSettings]:       /office/dev/add-ins/reference/manifest/tabletsettings
+[PhoneSettings]:        /office/dev/add-ins/reference/manifest/phonesettings
+[displayLanguage]:  /javascript/api/office/office.context#displaylanguage 
+[contentLanguage]:  /javascript/api/office/office.context#contentlanguage 
 [RFC 3066]: https://www.rfc-editor.org/info/rfc3066
