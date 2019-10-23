@@ -1,14 +1,14 @@
 ---
 title: Utiliser des thèmes de document dans vos compléments PowerPoint
 description: ''
-ms.date: 12/17/2018
+ms.date: 10/14/2019
 localization_priority: Normal
-ms.openlocfilehash: f98fe4b7d99bef2ab4c684a09490ed73f0ed3bb1
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: bb37f4a9f1860d38c2218a00fbd8c8092beadd63
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451473"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37627005"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>Utiliser des thèmes de document dans vos compléments PowerPoint
 
@@ -61,7 +61,7 @@ Suivez la procédure suivante pour ajouter et référencer le fichier OfficeThem
 #### <a name="to-add-officethemescss-to-your-visual-studio-project"></a>Pour ajouter le fichier OfficeThemes.css à votre projet Visual Studio
 
 > [!NOTE]
-> Les étapes décrites dans cette procédure s’appliquent uniquement à Visual Studio 2015. Si vous utilisez Visual Studio 2017, le fichier OfficeThemes.css est créé automatiquement pour les nouveaux projets de complément PowerPoint que vous créez.
+> Les étapes décrites dans cette procédure s’appliquent uniquement à Visual Studio 2015. Si vous utilisez Visual Studio 2019, le fichier OfficeThemes. CSS est créé automatiquement pour tous les nouveaux projets de complément PowerPoint que vous créez.
 
 1. Dans l’**explorateur de solutions**, cliquez avec le bouton droit de la souris sur le dossier **Contenu** dans le projet _**project_name**_**Web**, sélectionnez **Ajouter** et **Feuille de style**.
     
@@ -143,9 +143,17 @@ Pour effectuer cette opération dans Visual Studio, procédez comme suit.
 
 #### <a name="to-reference-officethemescss-in-your-add-in-for-powerpoint"></a>Pour référencer OfficeThemes.css dans votre complément PowerPoint
 
-1. Dans Visual Studio 2017, ouvrez ou créez un projet de **complément Office**.
-    
-2. Dans les pages HTML qui implémentent l’interface utilisateur de votre complément, telles que Home.html dans le modèle par défaut, ajoutez la balise `<link>` suivante à l’intérieur de la balise `<head>` qui référence le fichier OfficeThemes.css :
+1. Choisissez **créer un nouveau projet**.
+
+2. À l’aide de la zone de recherche, entrez **complément**. Choisissez **complément Web PowerPoint**, puis cliquez sur **suivant**.
+
+3. Nommez votre projet et sélectionnez **créer**.
+
+3. Dans la fenêtre de la boîte de dialogue **Créer un complément Office**, choisissez **Ajouter de nouvelles fonctionnalités à PowerPoint**, puis sélectionnez **Terminer** pour créer le projet.
+
+4. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
+
+5. Dans les pages HTML qui implémentent l’interface utilisateur de votre complément, telles que Home.html dans le modèle par défaut, ajoutez la balise `<link>` suivante à l’intérieur de la balise `<head>` qui référence le fichier OfficeThemes.css :
     
     ```HTML
     <link href="../../Content/OfficeThemes.css" rel="stylesheet" type="text/css" />

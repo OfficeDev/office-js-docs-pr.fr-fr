@@ -4,12 +4,12 @@ description: Informations détaillées sur les API JavaScript pour Excel à veni
 ms.date: 09/24/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 95cecd1c6a0b26f945e96834fe39757490788a97
-ms.sourcegitcommit: c8914ce0f48a0c19bbfc3276a80d090bb7ce68e1
+ms.openlocfilehash: 86be9d60f37950d11b755d89bf2dd1b1190ae4ca
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "37235315"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37627089"
 ---
 # <a name="excel-javascript-preview-apis"></a>Version d’évaluation API JavaScript Excel
 
@@ -22,7 +22,7 @@ Le premier tableau fournit un résumé concis des API, tandis que le tableau sui
 | Fonctionnalité | Description | Objets pertinents |
 |:--- |:--- |:--- |
 | [Segment](../../excel/excel-add-ins-pivottables.md#slicers-preview) | Insérer et configurez segments aux tableaux et tableaux croisés dynamiques. | [Segment](/javascript/api/excel/excel.slicer) |
-| [Commentaires](../../excel/excel-add-ins-workbooks.md#comments-preview) | Ajouter, modifier et supprimer des listes. | [Comment](/javascript/api/excel/excel.comment), [CommentCollection](/javascript/api/excel/excel.commentcollection) |
+| [Commentaires](../../excel/excel-add-ins-comments.md) | Ajouter, modifier et supprimer des listes. | [Comment](/javascript/api/excel/excel.comment), [CommentCollection](/javascript/api/excel/excel.commentcollection) |
 | Classeur [enregistrer](../../excel/excel-add-ins-workbooks.md#save-the-workbook-preview) et [fermer](../../excel/excel-add-ins-workbooks.md#close-the-workbook-preview) | Enregistrez et fermez ses classeurs.  | [Workbook](/javascript/api/excel/excel.workbook) |
 | [Insérer le classeur](../../excel/excel-add-ins-workbooks.md#insert-a-copy-of-an-existing-workbook-into-the-current-one-preview) | Insérer un classeur dans un autre.  | [Workbook](/javascript/api/excel/excel.worksheetcollection) |
 
@@ -187,18 +187,18 @@ Le tableau suivant répertorie les API JavaScript pour Excel actuellement en ver
 ||[Enregistrer (saveBehavior ? : Excel.SaveBehavior)](/javascript/api/excel/excel.workbook#save-savebehavior-)|Enregistrer le classeur actif.|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904datesystem)|True si le classeur utilise le calendrier depuis 1904.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[comments](/javascript/api/excel/excel.worksheet#comments)|Renvoie une collection de tous les objets Lecteur sur l’ordinateur. En lecture seule.|
-||[onColumnSorted](/javascript/api/excel/excel.worksheet#oncolumnsorted)|Se produit lorsqu’une ou plusieurs colonnes ont été triées. Cela se produit à la suite d’une opération de tri de gauche à droite.|
+||[onColumnSorted](/javascript/api/excel/excel.worksheet#oncolumnsorted)|Se produit lorsqu’une ou plusieurs colonnes ont été triées. Ce problème se produit en raison de l’opération de tri de gauche à droite.|
 ||[onFiltered](/javascript/api/excel/excel.worksheet#onfiltered)|Se produit lorsque le filtre est appliqué sur un tableau spécifique.|
 ||[onRowHiddenChanged](/javascript/api/excel/excel.worksheet#onrowhiddenchanged)|Survient lorsque l’état masqué d’une ou plusieurs lignes a été modifié sur une feuille de calcul spécifique.|
-||[onRowSorted](/javascript/api/excel/excel.worksheet#onrowsorted)|Se produit lorsqu’une ou plusieurs lignes ont été triées. Cela se produit à la suite d’une opération de tri de haut en bas.|
+||[onRowSorted](/javascript/api/excel/excel.worksheet#onrowsorted)|Se produit lorsqu’une ou plusieurs lignes ont été triées. Cela se produit en raison d’une opération de tri de haut en bas.|
 ||[onSingleClicked](/javascript/api/excel/excel.worksheet#onsingleclicked)|Se produit lorsque l’opération clic gauche/tape se produit dans la feuille de calcul. Cet événement ne sera pas déclenché lorsque vous cliquerez dans les cas suivants :|
 ||[Slicers](/javascript/api/excel/excel.worksheet#slicers)|Renvoie une collection de graphiques qui font partie de la feuille de calcul. En lecture seule.|
 ||[showOutlineLevels (rowLevels : nombre, columnLevels : nombre)](/javascript/api/excel/excel.worksheet#showoutlinelevels-rowlevels--columnlevels-)|Affiche les groupes de lignes ou de colonnes en fonction de leurs niveaux hiérarchiques.|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|Insère les feuilles de calcul spécifiées d’un classeur dans le classeur actif.|
-||[onColumnSorted](/javascript/api/excel/excel.worksheetcollection#oncolumnsorted)|Se produit lorsqu’une ou plusieurs colonnes ont été triées. Cela se produit à la suite d’une opération de tri de gauche à droite.|
+||[onColumnSorted](/javascript/api/excel/excel.worksheetcollection#oncolumnsorted)|Se produit lorsqu’une ou plusieurs colonnes ont été triées. Ce problème se produit en raison de l’opération de tri de gauche à droite.|
 ||[onFiltered](/javascript/api/excel/excel.worksheetcollection#onfiltered)|Se produit lorsqu’un filtre de la feuille de calcul est appliqué dans le classeur.|
 ||[onRowHiddenChanged](/javascript/api/excel/excel.worksheetcollection#onrowhiddenchanged)|Survient lorsque l’état masqué d’une ou plusieurs lignes a été modifié sur une feuille de calcul spécifique.|
-||[onRowSorted](/javascript/api/excel/excel.worksheetcollection#onrowsorted)|Se produit lorsqu’une ou plusieurs lignes ont été triées. Cela se produit à la suite d’une opération de tri de haut en bas.|
+||[onRowSorted](/javascript/api/excel/excel.worksheetcollection#onrowsorted)|Se produit lorsqu’une ou plusieurs lignes ont été triées. Cela se produit en raison d’une opération de tri de haut en bas.|
 ||[onSingleClicked](/javascript/api/excel/excel.worksheetcollection#onsingleclicked)|Cet événement se produit lorsque l’utilisateur clique dessus ou a cliqué sur une opération dans la collection Worksheet. Cet événement ne sera pas déclenché lorsque vous cliquerez dans les cas suivants :|
 |[WorksheetColumnSortedEventArgs](/javascript/api/excel/excel.worksheetcolumnsortedeventargs)|[adresse](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#address)|Obtient l’adresse de plage qui représente les zones sélectionnées dans une feuille de calcul spécifique. Seules les colonnes modifiées à la suite de l’opération de tri sont renvoyées.|
 ||[source](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#source)|Obtient la source de l’événement. Pour plus d’informations, voir Excel.EventSource.|
@@ -223,5 +223,5 @@ Le tableau suivant répertorie les API JavaScript pour Excel actuellement en ver
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Documentation de référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-preview)
+- [Documentation référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-preview)
 - [Ensembles de conditions requises de l’API JavaScript pour Excel](./excel-api-requirement-sets.md)

@@ -1,25 +1,25 @@
 ---
 title: Télécharger la dernière version de l’API JavaScript pour la bibliothèque Office et la version 1.1 du schéma de manifeste du complément
 description: Mettez à jour vos fichiers JavaScript (Office.js et fichiers .js propres aux applications) et le fichier de validation du manifeste du complément dans votre projet Complément Office vers la version 1.1.
-ms.date: 09/26/2019
+ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 83e09cee76aaea7343e456f4fed28af31d978bba
-ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
+ms.openlocfilehash: 6acd08a388b162cec4ac30fdfb256adc980d9e69
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "37524240"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626753"
 ---
 # <a name="update-to-the-latest-javascript-api-for-office-library-and-version-11-add-in-manifest-schema"></a>Télécharger la dernière version de l’API JavaScript pour la bibliothèque Office et la version 1.1 du schéma de manifeste du complément
 
 Cet article décrit comment mettre à jour vers la version 1.1 les fichiers JavaScript pour Office (Office.js et fichiers .js propres aux applications) et le fichier de validation du manifeste du complément utilisés dans votre projet de complément Office.
 
 > [!NOTE]
-> Les projets créés dans Visual Studio 2017 utiliseront déjà la version 1.1. Il existe toutefois des mises à jour mineures occasionnelles vers la version 1.1 que vous pouvez appliquer à l’aide des techniques décrites dans cet article.
+> Les projets créés dans Visual Studio 2019 utiliseront déjà la version 1,1. Il existe toutefois des mises à jour mineures occasionnelles vers la version 1.1 que vous pouvez appliquer à l’aide des techniques décrites dans cet article.
 
 ## <a name="use-the-most-up-to-date-project-files"></a>Utilisation des fichiers de projet les plus récents
 
-Si vous utilisez Visual Studio pour développer votre complément, et que vous souhaitez utiliser les nouveaux membres d’API de l’interface API JavaScript pour Office et les [fonctionnalités de la version 1.1 du manifeste du complément](../develop/add-in-manifests.md) (qui est validé par rapport à offappmanifest-1.1.xsd), vous devez télécharger Visual Studio 2017. Pour télécharger Visual Studio 2017, consultez la [Page Visual Studio IDE](https://visualstudio.microsoft.com/vs/). Lors de l’installation, vous devez sélectionner la charge de travail de développement Office/SharePoint.
+Si vous utilisez Visual Studio pour développer votre complément, pour utiliser les membres les plus récents de l’API JavaScript pour Office et les [fonctionnalités v 1.1 du manifeste de complément](../develop/add-in-manifests.md) (qui est validé par rapport à offappmanifest-1.1. xsd), vous devez télécharger Visual Studio 2019. Pour télécharger Visual Studio 2019, voir la [page Visual Studio IDE](https://visualstudio.microsoft.com/vs/). Lors de l’installation, vous devez sélectionner la charge de travail de développement Office/SharePoint.
 
 Si vous utilisez un éditeur de texte ou une interface IDE autre que Visual Studio pour développer votre complément, vous devez mettre à jour les références vers le CDN pour Office.js et la version de schéma référencée dans le manifeste de votre complément.
 
@@ -42,14 +42,13 @@ Notez que le processus de mise à jour est appliqué  _par projet_  ; vous devre
 
 
 ### <a name="update-the-javascript-api-for-office-library-files-in-your-project-to-the-newest-release"></a>Mise à jour des fichiers de bibliothèque de l’API JavaScript pour Office dans votre projet vers la dernière version
-Les étapes suivantes permettent de mettre à jour vos fichiers de bibliothèque Office vers la dernière version. Les étapes utilisent Visual Studio 2017, mais elles sont similaires pour Visual Studio 2015.
+Les étapes suivantes permettent de mettre à jour vos fichiers de bibliothèque Office. js vers la dernière version. Les étapes utilisent Visual Studio 2019, mais elles sont similaires pour les versions précédentes de Visual Studio.
 
-1. Dans Visual Studio 2017, ouvrez ou créez un projet de **complément Office**.
-2. Sélectionnez **Outils**  >  **Gestionnaire de package NuGet**  >  **Gérer les packages NuGet pour la solution**.
-3. Dans **Gestionnaire de package NuGet**, sélectionnez **nuget.org** pour **Source du package**.
-4. Sélectionnez l’onglet **Mises à jour**.
-5. Sélectionnez Microsoft.Office.js.
-6. Dans le volet de gauche, sélectionnez **Mettre à jour** et terminez le processus de mise à jour du package.
+1. Dans Visual Studio 2019, ouvrez ou créez un projet **de complément Office** .
+2. Sélectionnez **Outils** > **Gestionnaire de package NuGet** > **Gérer les packages NuGet pour la solution**.
+3. Sélectionnez l’onglet **Mises à jour**.
+4. Sélectionnez Microsoft.Office.js. Vérifiez que la source du package provient de **NuGet.org**.
+5. Dans le volet de gauche, choisissez **installer** et exécutez le processus de mise à jour du package.
 
 Vous devez effectuer quelques étapes supplémentaires pour terminer la mise à jour. Dans la balise **head** des pages HTML de votre complément, commentez ou supprimez toute référence de script office.js existante, puis référencez la bibliothèque mise à jour de l’API JavaScript pour Office de la manière suivante :
 

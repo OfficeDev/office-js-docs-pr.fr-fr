@@ -1,14 +1,14 @@
 ---
 title: Localisation des compléments Office
 description: Vous pouvez utiliser l’API JavaScript pour Office afin de déterminer des paramètres régionaux et d’afficher des chaînes basées sur les paramètres régionaux de l’application hôte, ou afin d’interpréter ou d’afficher des données en fonction des paramètres régionaux des données.
-ms.date: 06/20/2019
+ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: de0037c687e49b79acb90ff59f1babc9da1f13f5
-ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
+ms.openlocfilehash: c2404177f2188a505522d972d5bdfdf323394eba
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "35575561"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626767"
 ---
 # <a name="localization-for-office-add-ins"></a>Localisation des compléments Office
 
@@ -172,7 +172,7 @@ Pour plus d’informations, voir Walkthrough: Globalizing a Date by Using Client
 Cette section inclut des exemples expliquant comment localiser la description, le nom d’affichage et l’interface utilisateur d’une Complément Office. 
 
 > [!NOTE]
-> Pour télécharger Visual Studio 2017, voir la [Page Visual Studio IDE](https://visualstudio.microsoft.com/vs/). Lors de l’installation, vous devez sélectionner la charge de travail de développement Office/SharePoint.
+> Pour télécharger Visual Studio 2019, voir la [page Visual Studio IDE](https://visualstudio.microsoft.com/vs/). Lors de l’installation, vous devez sélectionner la charge de travail de développement Office/SharePoint.
 
 ### <a name="configure-office-to-use-additional-languages-for-display-or-editing"></a>Configurer Office pour utiliser des langues supplémentaires pour l’affichage ou l’édition
 
@@ -184,15 +184,19 @@ Après avoir installé le Pack d’accessoires linguistiques, vous pouvez config
 
 ### <a name="create-an-office-add-in-project"></a>Créer un projet de complément Office
 
-Vous devez créer un projet de complément Office Visual Studio 2017.
+Vous devez créer un projet de complément Office Visual Studio 2019.
 
 > [!NOTE]
-> Si vous n’avez pas installé Visual Studio 2017, voir la [Page Visual Studio IDE](https://visualstudio.microsoft.com/vs/) pour obtenir des instructions de téléchargement. Lors de l’installation, vous devez sélectionner la charge de travail de développement Office/SharePoint. Si vous avez déjà installé Visual Studio 2017, [utilisez Visual Studio Installer](/visualstudio/install/modify-visual-studio/) pour vérifier que la charge de travail de développement Office/SharePoint est bien installée.
+> Si vous n’avez pas installé Visual Studio 2019, reportez-vous à la [page Visual Studio IDE](https://visualstudio.microsoft.com/vs/) pour obtenir des instructions de téléchargement. Lors de l’installation, vous devez sélectionner la charge de travail de développement Office/SharePoint. Si vous avez déjà installé Visual Studio 2019, [Utilisez le programme d’installation de Visual Studio](/visualstudio/install/modify-visual-studio/) pour vous assurer que la charge de travail de développement Office/SharePoint est installée.
 
+1. Choisissez **créer un nouveau projet**.
 
-1. Dans Visual Studio, choisissez **Fichier** > **Nouveau projet**.
-2. Dans la boîte de dialogue **Nouveau projet**, développez **Visual Basic** ou **Visual C#**, développez **Office/SharePoint**, puis sélectionnez **Compléments**.
-3. Choisissez **Complément Word** et nommez votre complément **WorldReadyAddIn**. Cliquez sur **OK**.
+2. À l’aide de la zone de recherche, entrez **complément**. Choisissez **complément Word Web**, puis cliquez sur **suivant**.
+
+3. Nommez votre projet **worldreadyapp** et sélectionnez **créer**.
+
+4. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
+
 
 ### <a name="localize-the-text-used-in-your-add-in"></a>Localiser le texte utilisé dans votre complément
 
