@@ -1,60 +1,48 @@
 ---
-title: Créer le package de votre complément à l’aide de Visual Studio pour préparer la publication | Microsoft Docs
-description: Déploiement de votre projet web et empaquetage de votre complément à l’aide de Visual Studio 2017.
-ms.date: 03/19/2019
+title: Créer le package de votre complément à l’aide de Visual Studio pour préparer la publication
+description: Déploiement de votre projet web et création d’un package de votre complément à l’aide de Visual Studio 2019.
+ms.date: 10/14/2019
 localization_priority: Priority
-ms.openlocfilehash: 9233ebed217c9e4cc5def0dace67043f29462296
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 784741cffa0e3015caaa9c70fbb56f4b70df9462
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451086"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626963"
 ---
 # <a name="package-your-add-in-using-visual-studio-to-prepare-for-publishing"></a>Créer le package de votre complément à l’aide de Visual Studio pour préparer la publication
 
-Votre package de complément Office contient un [fichier manifeste](../develop/add-in-manifests.md) XML que vous allez utiliser pour publier le complément. Vous devez publier les fichiers d’application web de votre projet séparément. Cet article décrit le déploiement de votre projet web et l’empaquetage de votre complément à l’aide de Visual Studio 2017.
+Votre package de complément Office contient un [fichier manifeste](../develop/add-in-manifests.md) XML que vous allez utiliser pour publier le complément. Vous devez publier les fichiers d’application web de votre projet séparément. Cet article décrit le déploiement de votre projet web et création d’un package de votre complément à l’aide de Visual Studio 2019.
 
-## <a name="to-deploy-your-web-project-using-visual-studio-2017"></a>Déploiement de votre projet web à l’aide de Visual Studio 2017
+## <a name="to-deploy-your-web-project-using-visual-studio-2019"></a>Pour déployer votre projet web à l’aide de Visual Studio 2019
 
-Procédez comme suit pour déployer votre projet web à l’aide de Visual Studio 2017.
+Réalisez les étapes suivantes pour déployer votre projet Web à l'aide de Visual Studio 2019.
 
-1. Dans l’**explorateur de solutions**, ouvrez le menu contextuel du projet de complément, puis sélectionnez **Publier**.
+1. Depuis l’onglet **Build**, sélectionnez **Publier [nom de votre complément]**.
 
-    La page **Publier votre complément** s’ouvre.
-
-2. Dans la liste déroulante **Profil actuel**, sélectionnez un profil ou choisissez **Nouveau…** pour créer un profil.
+2. Dans la fenêtre **Choisir une cible de publication **, sélectionnez une des options pour publier sur votre cible préférée. Chaque cible de publication nécessite que vous incluiez plus d'informations pour commencer, comme l'emplacement d'une machine virtuelle Azure ou d'un emplacement de dossier. Une fois que vous avez spécifié un emplacement de publication et renseigné toutes les informations requises, sélectionnez **Publier**
 
     > [!NOTE]
-    > Un profil de publication indique le serveur sur lequel vous effectuez le déploiement, les informations d’identification nécessaires pour se connecter au serveur, les bases de données à déployer, ainsi que d’autres options de déploiement.
+    > Le choix d’une cible de publication indique le serveur sur lequel vous effectuez le déploiement, les informations d’identification nécessaires pour se connecter au serveur, les bases de données à déployer, ainsi que d’autres options de déploiement.
 
-    Si vous choisissez **Nouveau...**, un Assistant apparaît avec la page **Créer un profil de publication**. Vous pouvez utiliser cet Assistant pour importer un profil de publication à partir d’un site web d’hébergement comme Microsoft Azure ou créer un profil et ajouter votre serveur, vos informations d’identification et d’autres paramètres, comme décrit dans la procédure suivante.
+3. Pour plus d’informations sur les étapes de déploiement de chaque option cible de publication, voir [Premier aperçu du déploiement dans Visual Studio](/visualstudio/deployment/deploying-applications-services-and-components?view=vs-2019).
 
-    Pour plus d’informations sur l’importation et la création de profils de publication, reportez-vous à la rubrique [Création d’un profil de publication](https://msdn.microsoft.com/library/dd465337.aspx#creating_a_profile).
+## <a name="to-package-and-publish-your-add-in-using-iis-ftp-or-web-deploy-using-visual-studio-2019"></a>Pour créer un package et publier votre complément à l’aide d’IIS, de FTP ou du déploiement Web à l’aide de Visual Studio 2019
 
-3. Sur la page **Publier votre complément**, cliquez sur le lien **Déployer votre projet web**.
+Procédez comme suit pour créer un package de votre complément à l’aide de Visual Studio 2019.
 
-    La boîte de dialogue **Publier** s’affiche. Pour plus d’informations sur l’utilisation de cet Assistant, reportez-vous à l’article relatif à la procédure de [déploiement d’un projet web à l’aide de On-Click Publishing dans Visual Studio](https://msdn.microsoft.com/library/dd465337.aspx).
-
-## <a name="to-package-your-add-in-using-visual-studio-2017"></a>Création d’un package de votre complément avec Visual Studio 2017
-
-Procédez comme suit pour créer un package de votre projet de complément à l’aide de Visual Studio 2017.
-
-1. Sur la page **Publier votre complément**, cliquez sur le bouton permettant d’**empaqueter le complément**.
-
-    Un Assistant s’affiche avec la page permettant d’**empaqueter le complément**.
-
-2. Dans la liste déroulante **Où votre site web est-il hébergé ?**, sélectionnez ou saisissez l’URL du site web qui hébergera les fichiers de contenu de votre complément, puis cliquez sur **Terminer**.
+1. Depuis l’onglet **Build**, sélectionnez **Publier [nom de votre complément]**.
+2. Dans la fenêtre **Choisir une cible de publication**, choisissez **IIS, FTP, etc.** et sélectionnez **Configurer**. Sélectionnez ensuite **Publier**.
+3. Un assistant s’affiche pour vous guider tout au long du processus. Assurez-vous que la méthode de publication est votre méthode préférée, telle que Web Deploy.
+4. Dans la zone **URL de destination**, entrez l'URL du site Web qui hébergera les fichiers de contenu de votre complément, puis sélectionnez **Suivant**. Si vous prévoyez de soumettre votre complément à AppSource, vous pouvez choisir le bouton **Valider la connexion** pour identifier tout problème susceptible d'empêcher votre complément d'être accepté. Vous devez corriger tous les problèmes avant d’envoyer votre complément au Store.
+5. Confirmez tous les paramètres souhaités, y compris les **Options de publication de fichiers**, puis sélectionnez **Enregistrer**.
 
     > [!IMPORTANT]
     > Les sites web Azure [!include[HTTPS guidance](../includes/https-guidance.md)] fournissent automatiquement un point de terminaison HTTPS.
 
-    Visual Studio génère les fichiers nécessaires à la publication de votre complément, puis ouvre le dossier de sortie de publication.
-
-Si vous prévoyez de soumettre votre complément à AppSource, vous pouvez cliquer sur le bouton **Effectuer la vérification de la validation** pour identifier les problèmes susceptibles d’empêcher votre complément d’être accepté. Vous devez corriger tous les problèmes avant d’envoyer votre complément au Store.
-
 Vous pouvez désormais télécharger votre manifeste XML à l’emplacement approprié pour [publier votre complément](../publish/publish.md). Le manifeste XML se trouve dans `OfficeAppManifests` dans le dossier `app.publish`. Par exemple :
 
- `%UserProfile%\Documents\Visual Studio 2017\Projects\MyApp\bin\Debug\app.publish\OfficeAppManifests`
+ `%UserProfile%\Documents\Visual Studio 2019\Projects\MyApp\bin\Debug\app.publish\OfficeAppManifests`
 
 ## <a name="see-also"></a>Voir aussi
 
