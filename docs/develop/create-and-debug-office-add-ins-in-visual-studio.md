@@ -1,18 +1,18 @@
 ---
 title: Créer et déboguer des compléments Office dans Visual Studio
 description: Utiliser Visual Studio pour créer et déboguer des compléments Office dans le client de bureau Office sous Windows
-ms.date: 06/20/2019
+ms.date: 10/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 9cc4d50d9b61daa4b1f55f7dd4c1e1156f8d959c
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 878cd308747ac7049ca37b21a9fcb2282a4bf60d
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128184"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626830"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Créer et déboguer des compléments Office dans Visual Studio
 
-Cet article décrit comment utiliser Visual Studio 2017 pour créer un complément Office pour Excel, Word, PowerPoint ou Outlook et déboguer le complément, dans le client de bureau Office sur Windows. Si vous utilisez une autre version de Visual Studio, les procédures peuvent légèrement varier.
+Cet article décrit comment utiliser Visual Studio 2019 pour créer un complément Office pour Excel, Word, PowerPoint ou Outlook et déboguer le complément dans le client de bureau Office sur Windows. Si vous utilisez une autre version de Visual Studio, les procédures peuvent légèrement varier.
 
 > [!NOTE]
 > Visual Studio ne prend pas en charge la création de compléments Office pour OneNote ou un projet, mais vous pouvez utiliser le [Yeoman Générateur de compléments Office](https://github.com/OfficeDev/generator-office) pour créer ce genre de compléments.
@@ -22,10 +22,10 @@ Cet article décrit comment utiliser Visual Studio 2017 pour créer un compléme
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-- [Visual Studio 2017](https://www.visualstudio.com/vs/) avec la charge de travail de **développement Office/SharePoint** installée
+- [Visual Studio 2019](https://www.visualstudio.com/vs/) avec la charge de travail de **développement Office/SharePoint** installée
 
     > [!TIP]
-    > Si vous avez déjà installé Visual Studio 2017, [utilisez Visual Studio Installer](/visualstudio/install/modify-visual-studio) pour vérifier que la charge de travail de **développement Office/SharePoint** est bien installée. Si cette charge de travail n’est pas encore installée, utilisez Visual Studio Installer pour l’[installer](/visualstudio/install/modify-visual-studio?view=vs-2017#modify-workloads).
+    > Si vous avez déjà installé Visual Studio 2019, [utilisez Visual Studio Installer](/visualstudio/install/modify-visual-studio) pour vérifier que la charge de travail de **développement Office/SharePoint** est bien installée. Si cette charge de travail n’est pas encore installée, utilisez Visual Studio Installer pour l’[installer](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads).
 
 - Office 2013 ou version ultérieure
 
@@ -36,19 +36,19 @@ Cet article décrit comment utiliser Visual Studio 2017 pour créer un compléme
 
 Commencer en complétant ces trois étapes, puis suivez les étapes de la section suivante qui correspond au type de complément que vous créez. 
 
-1. Ouvrez Visual Studio, puis dans la barre de menus Visual Studio, sélectionnez **Fichier** > **Nouveau** > **Projet**.
+1. Ouvrez Visual Studio, puis dans la barre de menus Visual Studio, choisissez **Créer un nouveau projet**.
 
-2. Dans la liste des types de projets sous **Visual C#** ou **Visual Basic**, développez **Office/SharePoint**, choisissez **Compléments**, puis choisissez le type de complément pour le projet que vous voulez créer. 
+2. À l’aide de la zone de recherche, entrez **Compléments**, puis choisissez le type de projet de complément que vous souhaitez créer.
 
 3. Nommez le projet, puis cliquez sur **OK**.
 
 ### <a name="word-web-add-in-or-outlook-web-add-in"></a>Complément web Word ou complément web Outlook
 
-Si vous avez choisi de créer un **complément web Word** ou un **complément web Outlook**, Visual Studio crée une solution et ses deux projets s’affichent dans **l’Explorateur de solutions**. Ensuite, vous pouvez [explorer la solution Visual Studio](#explore-the-visual-studio-solution). 
+Si vous avez choisi de créer un **complément web Word** ou un **complément web Outlook**, Visual Studio crée une solution et ses deux projets s’affichent dans **l’Explorateur de solutions**. Ensuite, vous pouvez [explorer la solution Visual Studio](#explore-the-visual-studio-solution).
 
 ### <a name="powerpoint-web-add-in"></a>Complément web PowerPoint
 
-Si vous avez choisi de créer un **complément web PowerPoint**, la boîte de dialogue**créer un complément Office** s’affiche. 
+Si vous avez choisi de créer un **complément web PowerPoint**, la boîte de dialogue**créer un complément Office** s’affiche.
 
 - Pour créer un complément de volet tâche, sélectionnez **ajouter de nouvelles fonctionnalités à PowerPoint**, puis cliquez sur le bouton**Terminer** pour créer la solution Visual Studio.
 
@@ -200,7 +200,7 @@ Visual Studio effectue ensuite les actions suivantes :
 
 3. Il ouvre l’application hôte.
 
-Visual Studio n’affiche pas les erreurs de validation dans la fenêtre **Output** lorsque vous créez le projet. Visual Studio signale les erreurs et avertissements dans la fenêtre **ERRORLIST** lorsqu’elles se produisent. Visual Studio signale également des erreurs de validation en affichant les soulignements ondulés de différentes couleurs (également connus sous soulignements ondulés) dans l’éditeur de code et de texte. Ces marques signalent l’arrivée de problèmes Visual Studio détectés dans votre code. Pour plus d’informations, voir [Éditeur de code et texte](https://msdn.microsoft.com/library/se2f663y(v=vs.140).aspx). Pour plus d’informations sur comment activer ou désactiver la validation, voir [Options, éditeur de texte, JavaScript, IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2017).
+Visual Studio n’affiche pas les erreurs de validation dans la fenêtre **Output** lorsque vous créez le projet. Visual Studio signale les erreurs et avertissements dans la fenêtre **ERRORLIST** lorsqu’elles se produisent. Visual Studio signale également des erreurs de validation en affichant les soulignements ondulés de différentes couleurs (également connus sous soulignements ondulés) dans l’éditeur de code et de texte. Ces marques signalent l’arrivée de problèmes Visual Studio détectés dans votre code. Pour plus d’informations sur comment activer ou désactiver la validation, voir [Options, éditeur de texte, JavaScript, IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019).
 
 Pour réviser les règles de validation du fichier manifeste XML dans votre projet, voir [Manifeste XML des compléments Office](../develop/add-in-manifests.md).
 

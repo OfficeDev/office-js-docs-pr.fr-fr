@@ -1,18 +1,18 @@
 ---
-title: Obtenir JavaScript IntelliSense dans Visual Studio 2017
+title: Obtenir JavaScript IntelliSense dans Visual Studio 2019
 description: ''
-ms.date: 03/19/2019
+ms.date: 10/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 78a774397069d0c6ff91cc098cad0fd9b8e5c7b9
-ms.sourcegitcommit: d34aa0b282cc76ffff579da2a7945efd12fb7340
+ms.openlocfilehash: afe2890015c853c2b70a00d94ea1b6a49296a14a
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "36769546"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626781"
 ---
-# <a name="get-javascript-intellisense-in-visual-studio-2017"></a>Obtenir JavaScript IntelliSense dans Visual Studio 2017
+# <a name="get-javascript-intellisense-in-visual-studio-2019"></a>Obtenir JavaScript IntelliSense dans Visual Studio 2019
 
-Lorsque vous utilisez Visual Studio 2017 pour développer des compléments Office, vous pouvez utiliser JSDoc pour activer IntelliSense pour vos variables, objets, paramètres et valeurs renvoyées JavaScript. Cet article fournit une vue d’ensemble de JSDoc et explique comment vous pouvez l’utiliser pour créer IntellSense dans Visual Studio. Pour plus d’informations, voir [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense) et [Prise en charge de JSDoc dans JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript). 
+Lorsque vous utilisez Visual Studio 2019 pour développer des compléments Office, vous pouvez utiliser JSDoc pour activer IntelliSense pour vos variables, objets, paramètres et valeurs renvoyées JavaScript. Cet article fournit une vue d’ensemble de JSDoc et explique comment vous pouvez l’utiliser pour créer IntellSense dans Visual Studio. Pour plus d’informations, voir [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense) et [Prise en charge de JSDoc dans JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript). 
 
 ## <a name="officejs-type-definitions"></a>Définitions de type Office.js
 

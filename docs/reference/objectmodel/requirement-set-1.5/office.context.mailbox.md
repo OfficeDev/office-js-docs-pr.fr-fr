@@ -1,14 +1,14 @@
 ---
 title: Office.context – ensemble de conditions requises 1.5
 description: ''
-ms.date: 08/30/2019
+ms.date: 10/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 62834db09742f2f11eb73d571f22c7a249f36763
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: bb63d8186d41d072aa62b180b16958d61ce9a66c
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696098"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37627012"
 ---
 # <a name="mailbox"></a>boîte aux lettres
 
@@ -478,7 +478,11 @@ Obtient une chaîne contenant un jeton utilisé pour appeler les API REST ou le
 La méthode `getCallbackTokenAsync` émet un appel asynchrone pour obtenir un jeton opaque à partir du serveur Exchange qui héberge la boîte aux lettres de l’utilisateur. La durée de vie du jeton de rappel est de 5 minutes.
 
 > [!NOTE]
-> Les compléments devraient, dans la mesure du possible, utiliser les API REST à la place des services web Exchange. 
+> Les compléments devraient, dans la mesure du possible, utiliser les API REST à la place des services web Exchange.
+
+L’appel de la méthode `getCallbackTokenAsync` en mode lecture nécessite un niveau d’autorisation minimal de **ReadItem**.
+
+Pour appeler `getCallbackTokenAsync` en mode composition, vous devez avoir enregistré l’élément. La méthode [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) nécessite un niveau d’autorisation minimal de **ReadWriteItem**.
 
 **Jetons REST**
 
@@ -492,7 +496,9 @@ Quand un jeton EWS est demandé (`options.isRest = false`), le jeton fourni ne 
 
 Le complément doit utiliser la propriété `ewsUrl` pour déterminer l’URL à utiliser pendant les appels EWS.
 
-##### <a name="parameters"></a>Paramètres
+Vous pouvez passer à la fois le jeton et un identifiant de pièce jointe ou un identifiant d'élément à un système tiers. Le système tiers utilise le jeton en tant que jeton d’autorisation de support pour appeler l’opération [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) ou [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) des services web Exchange (EWS) afin de retourner une pièce jointe ou un élément. Par exemple, vous pouvez créer un service distant pour [obtenir des pièces jointes à partir de l’élément sélectionné](/outlook/add-ins/get-attachments-of-an-outlook-item).
+
+##### <a name="parameters"></a>Parameters
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
@@ -545,13 +551,13 @@ Obtient une chaîne qui contient un jeton servant à obtenir une pièce jointe o
 
 La méthode `getCallbackTokenAsync` émet un appel asynchrone pour obtenir un jeton opaque à partir du serveur Exchange qui héberge la boîte aux lettres de l’utilisateur. La durée de vie du jeton de rappel est de 5 minutes.
 
-Vous pouvez passer le jeton et un identificateur de pièce jointe ou d’élément à un système tiers. Celui-ci utilise le jeton en tant que jeton d’autorisation de support pour appeler l’opération [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) ou [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) des services web Exchange (EWS) afin de retourner une pièce jointe ou un élément. Par exemple, vous pouvez créer un service distant pour [obtenir des pièces jointes à partir de l’élément sélectionné](/outlook/add-ins/get-attachments-of-an-outlook-item).
+Vous pouvez passer à la fois le jeton et un identifiant de pièce jointe ou un identifiant d'élément à un système tiers. Le système tiers utilise le jeton en tant que jeton d’autorisation de support pour appeler l’opération [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) ou [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) des services web Exchange (EWS) afin de retourner une pièce jointe ou un élément. Par exemple, vous pouvez créer un service distant pour [obtenir des pièces jointes à partir de l’élément sélectionné](/outlook/add-ins/get-attachments-of-an-outlook-item).
 
-Votre application doit disposer de l’autorisation **ReadItem** spécifiée dans son manifeste pour pouvoir appeler la méthode `getCallbackTokenAsync` en mode de lecture.
+L’appel de la méthode `getCallbackTokenAsync` en mode lecture nécessite un niveau d’autorisation minimal de **ReadItem**.
 
-En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) permettant d’obtenir un identificateur de l’élément à transmettre à la méthode `getCallbackTokenAsync`. Votre application doit disposer des autorisations **ReadWriteItem** pour appeler la méthode `saveAsync`.
+Pour appeler `getCallbackTokenAsync` en mode composition, vous devez avoir enregistré l’élément. La méthode [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) nécessite un niveau d’autorisation minimal de **ReadWriteItem**.
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
@@ -568,11 +574,11 @@ En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context
 
 ##### <a name="requirements"></a>Configuration requise
 
-|Conditions requises| Valeur|
-|---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Composition et lecture|
+|Conditions requises|||
+|---|---|---|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0 | 1.3 |
+|[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem | ReadItem |
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Lecture | Composition |
 
 ##### <a name="example"></a>Exemple
 

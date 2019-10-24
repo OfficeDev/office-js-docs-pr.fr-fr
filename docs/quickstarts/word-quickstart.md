@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet des tâches de Word
 description: Découvrez comment créer un complément de volet des tâches Word simple à l’aide de l’API JavaScript pour Office.
-ms.date: 09/18/2019
+ms.date: 10/17/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 1648e6ee50d45fa4811766a56ad55896267d66f8
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: 87f2e4d46748328461529fd41ea11b109fe4785e
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035307"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626867"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Word
 
@@ -96,11 +96,12 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 
 ### <a name="create-the-add-in-project"></a>Création du projet de complément
 
-1. Dans la barre de menu de Visual Studio, choisissez successivement **Fichier** > **Nouveau** > **Projet**.
 
-2. Dans la liste des types de projets, sous **Visual C#** ou **Visual Basic**, développez **Office/SharePoint**, choisissez **Compléments**, puis **Complément Word Web** pour le type de projet. 
+1. Dans Visual Studio, choisissez **Créer un nouveau projet**.
 
-3. Nommez le projet, puis cliquez sur **OK**.
+2. À l’aide de la zone de recherche, entrez **complément**. Choisissez **Complément web Word**, puis sélectionnez **Suivant**.
+
+3. Nommez votre projet et sélectionnez **Créer**.
 
 4. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
 

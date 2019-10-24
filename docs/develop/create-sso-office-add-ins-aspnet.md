@@ -1,14 +1,14 @@
 ---
 title: Créer un complément Office ASP.NET qui utilise l’authentification unique
 description: ''
-ms.date: 04/15/2019
+ms.date: 10/11/2019
 localization_priority: Priority
-ms.openlocfilehash: bc8c2427171f06865de6c809a5d7311018fcc278
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 9844b8f9b9b966c0a5348f02f5797e7a07eb67b6
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36695804"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626795"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office ASP.NET qui utilise l’authentification unique (aperçu)
 
@@ -21,7 +21,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-* Version la plus récente disponible de Visual Studio 2017.
+* Version la plus récente disponible de Visual Studio 2019.
 
 * Office 365 (version d’Office par abonnement). Dernière version mensuelle et build du canal du programme Insider. Vous devez participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à [Participez au programme Office Insider](https://products.office.com/office-insider?tab=tab-1). Veuillez noter que lorsqu’un build passe au canal semi-annuel de production, la prise en charge des fonctionnalités d’aperçu, y compris l’authentification unique, est désactivée pour ce build.
 
@@ -125,7 +125,7 @@ Les instructions suivantes présentant un manière générique, vous pouvez les 
     > * La valeur **Resource** correspond à l’**URI d’ID d’application** défini lorsque vous avez ajouté la plateforme d’API web à l’enregistrement du complément.
     > * La section **Scopes** est utilisée uniquement pour générer une boîte de dialogue de consentement si le complément est vendu via AppSource.
 
-1. Ouvrez l’onglet **Avertissements** de la **liste d’erreurs** dans Visual Studio. Si un message d’avertissement indique que `<WebApplicationInfo>` n’est pas un enfant valide de `<VersionOverrides>`, votre version de Visual Studio 2017 Preview ne reconnaît pas le balisage d’authentification unique. Solution de contournement : procédez comme suit pour un complément Word, Excel ou PowerPoint. (Si vous utilisez un complément Outlook, consultez la solution de contournement ci-dessous.)
+1. Ouvrez l’onglet **Avertissements** de la **liste d’erreurs** dans Visual Studio. Si un message d’avertissement indique que `<WebApplicationInfo>` n’est pas un enfant valide de `<VersionOverrides>`, votre version de Visual Studio ne reconnaît pas le balisage d’authentification unique. Solution de contournement : procédez comme suit pour un complément Word, Excel ou PowerPoint. (Si vous utilisez un complément Outlook, consultez la solution de contournement ci-dessous.)
 
    - **Solution de contournement pour Word, Excel et PowerPoint**
 

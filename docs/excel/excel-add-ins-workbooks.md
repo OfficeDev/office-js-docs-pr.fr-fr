@@ -1,14 +1,14 @@
 ---
 title: Utiliser les classeurs utilisant l’API JavaScript Excel
 description: ''
-ms.date: 09/26/2019
+ms.date: 10/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 66e531a382d467326e5132e60f06c98d414dbb16
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.openlocfilehash: 76f1a82b22fabaab63f5dc791656720ce82250c9
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353873"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626823"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Utiliser les classeurs utilisant l’API JavaScript Excel
 
@@ -75,7 +75,7 @@ reader.readAsDataURL(myFile.files[0]);
 ### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one-preview"></a>Insérer une copie d’un classeur existant dans l’offre actuelle (préversion)
 
 > [!NOTE]
-> La méthode `WorksheetCollection.addFromBase64` est actuellement uniquement disponible en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> Pour l’instant, la méthode `WorksheetCollection.addFromBase64` est disponible uniquement dans la préversion publique et uniquement pour Office sur Windows et Mac. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 L’exemple précédent montre un nouveau classeur créé à partir d’un classeur existant. Vous pouvez également copier la totalité ou une partie d’un classeur existant dans le tableau actuellement associé à votre complément. Un classeur[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) a la `addFromBase64`méthode pour insérer des copies de feuilles de calcul du classeur cible dans lui-même. Le fichier de l’autre classeur est passé en tant que chaîne codé en base 64, comme le `Excel.createWorkbook` appel.
 
@@ -263,54 +263,6 @@ L’API Excel vous permet également de désactiver les compléments calculs jus
 ```js
 context.application.suspendApiCalculationUntilNextSync();
 ```
-
-## <a name="comments-preview"></a>Commentaires (préversion)
-
-> [!NOTE]
-> Les API de commentaire sont actuellement disponibles uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-
-Tous les [commentaires](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) d’un classeur sont suivis par la propriété `Workbook.comments`. Cela inclut les commentaires créés par les utilisateurs ainsi que les commentaires créés par votre complément. La propriété `Workbook.comments` est un objet [CommentCollection](/javascript/api/excel/excel.commentcollection) qui contient une collection d’objets [Comment](/javascript/api/excel/excel.comment).
-
-Pour ajouter des commentaires à un classeur, utilisez la méthode `CommentCollection.add`, appliquez-la à la cellule dans laquelle le commentaire sera ajouté, sous forme de chaîne ou d’objet [Range](/javascript/api/excel/excel.range) et au texte du commentaire, sous forme de chaîne. L’exemple de code suivant ajoute un commentaire à la cellule **A2**.
-
-```js
-Excel.run(function (context) {
-    var comments = context.workbook.comments;
-
-    // Note that an InvalidArgument error will be thrown if multiple cells passed to `Comment.add`.
-    comments.add("A2", "TODO: add data.");
-    return context.sync();
-});
-```
-
-Chaque commentaire contient des métadonnées concernant sa création, notamment l’auteur et la date de création. Les commentaires créés par votre complément sont considérés comme créés par l’utilisateur actuel. L’exemple suivant montre comment afficher l’adresse e-mail et le nom de l’auteur, ainsi que la date de création d’un commentaire dans la cellule **A2**.
-
-```js
-Excel.run(function (context) {
-    // Get the comment at cell A2.
-    var comment = context.workbook.comments.getItemByCell("Comments!A2");
-    comment.load(["authorEmail", "authorName", "creationDate"]);
-    return context.sync().then(function () {
-        console.log(`${comment.creationDate.toDateString()}: ${comment.authorName} (${comment.authorEmail})`);
-    });
-});
-```
-
-Chaque commentaire contient zéro ou plusieurs réponses. Les objets `Comment` ont une propriété `replies`, qui est une collection [CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection) contenant des objets [CommentReply](/javascript/api/excel/excel.commentreply). Pour ajouter une réponse à un commentaire, utilisez la méthode `CommentReplyCollection.add`, en l’appliquant au texte de la réponse. Les réponses s’affichent dans l’ordre dans lequel elles sont ajoutées. L’exemple de code suivant ajoute une réponse au premier commentaire du classeur.
-
-```js
-Excel.run(function (context) {
-    // Get the first comment added to the workbook.
-    var comment = context.workbook.comments.getItemAt(0);
-    comment.replies.add("Thanks for the reminder!");
-    return context.sync();
-});
-```
-
-Pour modifier un commentaire ou une réponse à un commentaire, configurez sa propriété `Comment.content` ou `CommentReply.content`. Pour supprimer un commentaire ou une réponse à un commentaire, utilisez la méthode `Comment.delete` ou `CommentReply.delete`. La suppression d’un commentaire entraîne également celle de toutes les réponses associées à ce commentaire.
-
-> [!TIP]
-> Les commentaires peuvent également être gérés au niveau de la [feuille de calcul](/javascript/api/excel/excel.worksheet), en utilisant les mêmes techniques.
 
 ## <a name="save-the-workbook-preview"></a>Enregistrer le classeur (préversion)
 
