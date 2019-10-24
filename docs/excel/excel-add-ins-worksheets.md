@@ -1,25 +1,25 @@
 ---
 title: Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 description: ''
-ms.date: 09/09/2019
+ms.date: 10/16/2019
 localization_priority: Priority
-ms.openlocfilehash: 3c06e3660c2c8d6bf362b38185b96c8012dc4b90
-ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
+ms.openlocfilehash: ea8dad58bdd1ce3875751661806293e9aa1222fb
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "36838565"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626844"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 
-Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes à l’aide de feuilles de calcul utilisant l’API JavaScript pour Excel. Pour une liste complète des propriétés et des méthodes prises en charge par les objets **Worksheet** et **WorksheetCollection**, reportez-vous aux rubriques [Objet Worksheet (API JavaScript pour Excel)](/javascript/api/excel/excel.worksheet) et [Objet WorksheetCollection (API JavaScript pour Excel)](/javascript/api/excel/excel.worksheetcollection).
+Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes à l’aide de feuilles de calcul utilisant l’API JavaScript pour Excel. Pour une liste complète des propriétés et des méthodes prises en charge par les objets `Worksheet` et `WorksheetCollection`, reportez-vous aux rubriques [Objet Worksheet (API JavaScript pour Excel)](/javascript/api/excel/excel.worksheet) et [Objet WorksheetCollection (API JavaScript pour Excel)](/javascript/api/excel/excel.worksheetcollection).
 
 > [!NOTE]
 > les informations contenues dans cet article s’appliquent uniquement aux feuilles de calcul standard. Elles ne concernent pas les feuilles « chart » ou « macro ».
 
 ## <a name="get-worksheets"></a>Obtenir des feuilles de calcul
 
-L’exemple de code suivant obtient la collection de feuilles de calcul, charge la propriété **name** de chaque feuille de calcul et écrit un message dans la console.
+L’exemple de code suivant obtient la collection de feuilles de calcul, charge la propriété `name` de chaque feuille de calcul et écrit un message dans la console.
 
 ```js
 Excel.run(function (context) {
@@ -41,11 +41,11 @@ Excel.run(function (context) {
 ```
 
 > [!NOTE]
-> La propriété **id** d’une feuille de calcul identifie de manière unique la feuille de calcul dans un classeur donné et sa valeur ne change pas, même lorsque la feuille de calcul est renommée ou déplacée. Lorsqu’une feuille de calcul est supprimée d’un classeur dans Excel sur Mac, la propriété **id** de la feuille de calcul supprimée peut être réaffectée à une nouvelle feuille de calcul créée par la suite.
+> La propriété `id` d’une feuille de calcul identifie de manière unique la feuille de calcul dans un classeur donné et sa valeur ne change pas, même lorsque la feuille de calcul est renommée ou déplacée. Lorsqu’une feuille de calcul est supprimée d’un classeur dans Excel sur Mac, la propriété `id` de la feuille de calcul supprimée peut être réaffectée à une nouvelle feuille de calcul créée par la suite.
 
 ## <a name="get-the-active-worksheet"></a>Obtenir la feuille de calcul active
 
-L’exemple de code suivant obtient la feuille de calcul active, charge sa propriété **name** et écrit un message dans la console.
+L’exemple de code suivant obtient la feuille de calcul active, charge sa propriété `name` et écrit un message dans la console.
 
 ```js
 Excel.run(function (context) {
@@ -61,7 +61,7 @@ Excel.run(function (context) {
 
 ## <a name="set-the-active-worksheet"></a>Définir la feuille de calcul active
 
-L’exemple de code suivant définit la feuille de calcul active sur la feuille de calcul nommée **Sample**, charge sa propriété **name** et écrit un message dans la console. S’il n’existe aucune feuille de calcul portant ce nom, la méthode **activate()** lève une erreur **ItemNotFound**.
+L’exemple de code suivant définit la feuille de calcul active sur la feuille de calcul nommée **Sample**, charge sa propriété `name` et écrit un message dans la console. S’il n’existe aucune feuille de calcul portant ce nom, la méthode `activate()` lève une erreur `ItemNotFound`.
 
 ```js
 Excel.run(function (context) {
@@ -82,7 +82,7 @@ Ces exemples montrent comment référencer une feuille de calcul en fonction de 
 
 ### <a name="get-the-first-worksheet"></a>Obtenir la première feuille de calcul
 
-L’exemple de code suivant obtient la première feuille de calcul du classeur, charge sa propriété **name** et écrit un message dans la console.
+L’exemple de code suivant obtient la première feuille de calcul du classeur, charge sa propriété `name` et écrit un message dans la console.
 
 ```js
 Excel.run(function (context) {
@@ -98,7 +98,7 @@ Excel.run(function (context) {
 
 ### <a name="get-the-last-worksheet"></a>Obtenir la dernière feuille de calcul
 
-L’exemple de code suivant obtient la dernière feuille de calcul du classeur, charge sa propriété **name** et écrit un message dans la console.
+L’exemple de code suivant obtient la dernière feuille de calcul du classeur, charge sa propriété `name` et écrit un message dans la console.
 
 ```js
 Excel.run(function (context) {
@@ -114,7 +114,7 @@ Excel.run(function (context) {
 
 ### <a name="get-the-next-worksheet"></a>Obtenir la feuille de calcul suivante
 
-L’exemple de code suivant obtient la feuille de calcul qui suit la feuille de calcul active du classeur, charge sa propriété **name** et écrit un message dans la console. S’il n’existe aucune feuille de calcul après la feuille de calcul active, la méthode **getNext()** lève une erreur **ItemNotFound**.
+L’exemple de code suivant obtient la feuille de calcul qui suit la feuille de calcul active du classeur, charge sa propriété `name` et écrit un message dans la console. S’il n’existe aucune feuille de calcul après la feuille de calcul active, la méthode `getNext()` lève une erreur `ItemNotFound`.
 
 ```js
  Excel.run(function (context) {
@@ -131,7 +131,7 @@ L’exemple de code suivant obtient la feuille de calcul qui suit la feuille de 
 
 ### <a name="get-the-previous-worksheet"></a>Obtenir la feuille de calcul précédente
 
-L’exemple de code suivant obtient la feuille de calcul qui précède la feuille de calcul active du classeur, charge sa propriété **name** et écrit un message dans la console. S’il n’existe aucune feuille de calcul avant la feuille de calcul active, la méthode **getPrevious()** lève une erreur **ItemNotFound**.
+L’exemple de code suivant obtient la feuille de calcul qui précède la feuille de calcul active du classeur, charge sa propriété `name` et écrit un message dans la console. S’il n’existe aucune feuille de calcul avant la feuille de calcul active, la méthode `getPrevious()` lève une erreur `ItemNotFound`.
 
 ```js
 Excel.run(function (context) {
@@ -148,7 +148,7 @@ Excel.run(function (context) {
 
 ## <a name="add-a-worksheet"></a>Ajouter une feuille de calcul
 
-L’exemple de code suivant ajoute une nouvelle feuille de calcul nommée **Sample** au classeur, charge ses propriétés **name** et **position**, et écrit un message dans la console. Le nouveau tableur est ajouté après toutes les feuilles de calcul existantes.
+L’exemple de code suivant ajoute une nouvelle feuille de calcul nommée **Sample** au classeur, charge ses propriétés `name` et `position`, et écrit un message dans la console. Le nouveau tableur est ajouté après toutes les feuilles de calcul existantes.
 
 ```js
 Excel.run(function (context) {
@@ -162,6 +162,24 @@ Excel.run(function (context) {
             console.log(`Added worksheet named "${sheet.name}" in position ${sheet.position}`);
         });
 }).catch(errorHandlerFunction);
+```
+
+### <a name="copy-an-existing-worksheet"></a>Copier une feuille de calcul existante
+
+`Worksheet.copy` ajoute une nouvelle feuille de calcul qui est une copie d’une feuille de calcul existante. Le nom de la nouvelle feuille de calcul aura un nombre ajouté à la fin, de façon cohérente avec la copie d’une feuille de calcul dans l’interface utilisateur d’Excel (par exemple, **MySheet (2)**). `Worksheet.copy` peut prendre deux paramètres, qui sont tous deux facultatifs :
+
+- `positionType` – Un enum [WorksheetPositionType ](/javascript/api/excel/excel.worksheetpositiontype) spécifiant l’emplacement dans le classeur où la nouvelle feuille de calcul doit être ajoutée.
+- `relativeTo` – Si le `positionType` est `Before` ou `After`, vous devez spécifier une feuille de calcul par rapport à laquelle ajouter la nouvelle feuille (ce paramètre répond à la question « Avant ou après quoi ? »).
+
+L’exemple de code suivant copie la feuille de calcul active et insère la nouvelle feuille directement après la feuille de calcul active.
+
+```js
+Excel.run(function (context) {
+    var myWorkbook = context.workbook;
+    var sampleSheet = myWorkbook.worksheets.getActiveWorksheet();
+    var copiedSheet = sampleSheet.copy(Excel.WorksheetPositionType.after, sampleSheet);
+    return context.sync();
+});
 ```
 
 ## <a name="delete-a-worksheet"></a>Supprimer une feuille de calcul
@@ -230,7 +248,7 @@ Ces exemples montrent comment définir la visibilité d’une feuille de calcul.
 
 ### <a name="hide-a-worksheet"></a>Masquer une feuille de calcul
 
-L’exemple de code suivant définit la visibilité de la feuille de calcul nommée **Sample** à masquer, charge sa propriété **name** et écrit un message dans la console.
+L’exemple de code suivant définit la visibilité de la feuille de calcul nommée **Exemple** à masquer, charge sa propriété `name` et écrit un message dans la console.
 
 ```js
 Excel.run(function (context) {
@@ -247,7 +265,7 @@ Excel.run(function (context) {
 
 ### <a name="unhide-a-worksheet"></a>Afficher une feuille de calcul
 
-L’exemple de code suivant définit la visibilité de la feuille de calcul nommée **Sample** à afficher, charge sa propriété **name** et écrit un message dans la console.
+L’exemple de code suivant définit la visibilité de la feuille de calcul nommée **Exemple** à afficher, charge sa propriété `name` et écrit un message dans la console.
 
 ```js
 Excel.run(function (context) {
@@ -264,7 +282,7 @@ Excel.run(function (context) {
 
 ## <a name="get-a-single-cell-within-a-worksheet"></a>Obtenir une cellule simple dans une feuille de calcul
 
-L’exemple de code suivant obtient la cellule située ligne 2, colonne 5 de la feuille de calcul nommée **Sample**, charge ses propriétés **address** et **values**, et écrit un message dans la console. Les valeurs transmises par la méthode `getCell(row: number, column:number)` sont le numéro de ligne avec indice zéro et le numéro de colonne pour la cellule en cours d’extraction.
+L’exemple de code suivant obtient la cellule située ligne 2, colonne 5 de la feuille de calcul nommée **Sample**, charge ses propriétés `address` et `values`, et écrit un message dans la console. Les valeurs transmises par la méthode `getCell(row: number, column:number)` sont le numéro de ligne avec indice zéro et le numéro de colonne pour la cellule en cours d’extraction.
 
 ```js
 Excel.run(function (context) {
@@ -305,12 +323,12 @@ function onWorksheetChanged(eventArgs) {
 > [!NOTE]
 > Les API pour ces événements liés au tri sont actuellement disponibles uniquement en mode préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
-Les  événements `onColumnSorted` et  indiquent quand les données d’une feuille de calcul sont triées. Ces événements sont connectés à des objets individuels `Worksheet` et aux classeurs `WorkbookCollection`. Il se déclenche si le tri est effectué par programme ou manuellement via l’interface utilisateur d’Excel.
+Les  événements `onColumnSorted` et `onRowSorted` indiquent quand les données d’une feuille de calcul sont triées. Ces événements sont connectés à des objets individuels `Worksheet` et aux classeurs `WorkbookCollection`. Il se déclenche si le tri est effectué par programme ou manuellement via l’interface utilisateur d’Excel.
 
 > [!NOTE]
 > `onColumnSorted` est déclenché lorsque les colonnes sont triées suite à une opération de tri de gauche à droite. `onRowSorted` est déclenché lorsque les lignes sont triées suite à une opération de tri de haut en bas. Le tri d’un tableau à l’aide du menu déroulant sur un en-tête de colonne génère un événement `onRowSorted`. L’événement correspond au déplacement, et non à ce qui est considéré comme les critères de tri.
 
-Les événements `onColumnSorted` et  fournissent leurs rappels avec WorksheetColumnSortedEventArgs ou WorksheetRowSortedEventArgs, respectivement. Ces éléments fournissent des détails supplémentaires sur l’événement. En particulier, les `EventArgs` ont une propriété `address` qui représente les lignes ou les colonnes déplacées suite à l’opération de tri. Une cellule avec du contenu trié est incluse, même si la valeur de cette cellule ne faisait pas partie des critères de tri.
+Les événements `onColumnSorted` et `onRowSorted` fournissent leurs rappels avec [WorksheetColumnSortedEventArgs](/javascript/api/excel/excel.worksheetcolumnsortedeventargs) ou [WorksheetRowSortedEventArgs](/javascript/api/excel/excel.worksheetrowsortedeventargs), respectivement. Ces éléments fournissent des détails supplémentaires sur l’événement. En particulier, les `EventArgs` ont une propriété `address` qui représente les lignes ou les colonnes déplacées suite à l’opération de tri. Une cellule avec du contenu trié est incluse, même si la valeur de cette cellule ne faisait pas partie des critères de tri.
 
 Les images suivantes montrent les plages retournées par la propriété `address` pour les événements de tri. Voici d’abord les exemples de données avant le tri :
 
@@ -320,7 +338,7 @@ Si un tri de haut en bas est effectué sur «**Q1**» (valeurs dans «**B**»), 
 
 ![Données d’un tableau dans Excel après un tri de haut en bas. Les lignes qui ont été déplacées sont mises en surbrillance.](../images/excel-sort-event-after-row.png)
 
-Si un tri de gauche à droite est effectué sur «Quinces» (valeurs dans «4») sur les données d’origine, les colonnes en surbrillance suivantes sont renvoyées par `WorksheetColumnsSortedEventArgs.address` :
+Si un tri de gauche à droite est effectué sur «**Quinces**» (valeurs dans «**4**») sur les données d’origine, les colonnes en surbrillance suivantes sont renvoyées par `WorksheetColumnsSortedEventArgs.address` :
 
 ![Données d’un tableau dans Excel après un tri de gauche à droite. Les colonnes qui ont été déplacées sont mises en surbrillance.](../images/excel-sort-event-after-column.png)
 

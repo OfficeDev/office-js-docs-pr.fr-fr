@@ -1,14 +1,14 @@
 ---
 title: Héberger un complément pour Office sur Microsoft Azure | Microsoft Docs
 description: Découvrez comment déployer une application web de complément sur Azure et charger une version test du complément pour le tester dans une application cliente Office.
-ms.date: 03/19/2019
+ms.date: 10/16/2019
 localization_priority: Priority
-ms.openlocfilehash: 5db98ca65aac019a027592a442f427ee3b6126f1
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 0cfddacf48bda9ed7b63d4018e3ae0437f15bcd9
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451093"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626977"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>Héberger un complément pour Office sur Microsoft Azure
 
@@ -18,10 +18,10 @@ Cet article décrit comment déployer une application web de complément sur Azu
 
 ## <a name="prerequisites"></a>Conditions préalables 
 
-1. Installez [Visual Studio 2017](https://www.visualstudio.com/downloads) et choisissez d’inclure la charge de travail de **développement Azure**.
+1. Installez [Visual Studio 2019](https://www.visualstudio.com/downloads) et choisissez d’inclure la charge de travail de **développement Azure**.
 
     > [!NOTE]
-    > Si vous avez déjà installé Visual Studio 2017, [utilisez le programme d’installation Visual Studio Installer](/visualstudio/install/modify-visual-studio) pour vous assurer que la charge de travail de **développement Azure** est installée. 
+    > Si vous avez déjà installé Visual Studio 2019, [utilisez le programme d’installation Visual Studio Installer](/visualstudio/install/modify-visual-studio) pour vous assurer que la charge de travail de **développement Azure** est installée. 
 
 2. Installation d’Office.
 
@@ -68,69 +68,37 @@ Cet article décrit comment déployer une application web de complément sur Azu
 
 6. Fermez Word.
 
-## <a name="step-3-create-a-web-app-in-azure"></a>Étape 3 : Créer une application web dans Azure
-
-Créez une application web vide dans Azure en utilisant [Visual Studio 2017](../publish/host-an-office-add-in-on-microsoft-azure.md#using-visual-studio-2017) ou le [portail Azure](../publish/host-an-office-add-in-on-microsoft-azure.md#using-the-azure-portal).
-
-### <a name="using-visual-studio-2017"></a>Utilisation de Visual Studio 2017
-
-Pour créer l’application web à l’aide de Visual Studio 2017, procédez comme suit.
-
-1. Dans Visual Studio, dans le menu **Affichage**, sélectionnez **Explorateur de serveurs**. Cliquez avec le bouton droit de la souris sur **Azure** et choisissez **Se connecter à un abonnement Microsoft Azure**. Suivez les instructions pour vous connecter à votre abonnement Azure.
-
-2. Dans Visual Studio, dans **Explorateur de serveurs**, développez **Azure**, cliquez avec le bouton droit de la souris sur **App Service**, puis choisissez **Créer un App Service**.
-
-3. Dans la boîte de dialogue **Créer App Service**, indiquez les informations suivantes :
-
-      - Entrez un **nom d’application web** unique pour votre site. Azure vérifie que le nom du site est unique dans le domaine azurewebsites.net.
-
-      - Choisissez l’**abonnement** à utiliser pour créer ce site.
-
-      - Choisissez le **groupe de ressources** pour votre site. Si vous créez un groupe, vous devez également le nommer.
-
-      - Choisissez le **plan de service d'applications** à utiliser pour créer ce site. Si vous créez un plan, vous devez également le nommer.
-
-      - Sélectionnez **Créer**.
-
-    La nouvelle application web s’affiche dans **Explorateur de serveurs** sous **Azure** >> **App Service** >> (le groupe de ressources choisi).
-
-4. Cliquez avec le bouton droit de la souris sur la nouvelle application web, puis choisissez **Afficher dans le navigateur**. Votre navigateur s’ouvre et affiche une page web avec le message « Votre service d’application a été créé. ».
-
-5. Dans la barre d’adresse du navigateur, modifiez l’URL de l’application web pour qu’elle utilise le protocole HTTPS et appuyez sur **Entrée** pour confirmer que le protocole HTTPS est activé. 
-
-    > [!IMPORTANT]
-    > Les sites web Azure [!include[HTTPS guidance](../includes/https-guidance.md)] fournissent automatiquement un point de terminaison HTTPS.
-
-### <a name="using-the-azure-portal"></a>Utilisation du portail Azure
+## <a name="step-3-create-a-web-app-in-azure-using-the-azure-portal"></a>Étape 3 : Créer une application web dans Azure à l’aide du Portail Microsoft Azure
 
 Pour créer l’application web à l’aide du portail Azure, procédez comme suit.
 
 1. Connectez-vous au [portail Azure](https://portal.azure.com/) à l’aide de vos informations d’identification Azure.
 
-2. Choisissez **Nouveau** > **Web + mobile** > **Application web**.
+2. Sous **Azure services**, sélectionnez **Applications web **.
 
-3. Dans la boîte de dialogue **Créer une application web**, renseignez ces informations :
-
-      - Entrez un **nom d’application** unique pour votre site. Azure vérifie que le nom du site est unique dans le domaine apps.net azureweb.
+3. Dans la page **Service d’applications**, sélectionnez **Ajouter**. Fournissez ces informations :
 
       - Choisissez l’**abonnement** à utiliser pour créer ce site.
-
+      
       - Choisissez le **groupe de ressources** pour votre site. Si vous créez un groupe, vous devez également le nommer.
+      
+      - Entrez un **nom d’application** unique pour votre site. Azure vérifie que le nom du site est unique dans le domaine apps.net azureweb.
+
+      - Indiquez si vous souhaitez publier à l'aide d'un code ou d'un conteneur docker.
+
+      - Spécifiez une **pile d’exécution**.
 
       - Choisissez le **système d’exploitation** de votre site.
 
-      - Choisissez le **plan de service d’applications** à utiliser pour créer ce site. Si vous créez un plan, vous devez également le nommer.
+      - Choisissez une **Région**.
+
+      - Choisissez le **plan de service d’applications** à utiliser pour créer ce site.
 
       - Sélectionnez **Créer**.
 
-4. Choisissez **Notifications** (l’icône représentant une cloche qui se trouve sur le bord supérieur du portail Azure), puis choisissez la notification **Déploiements réussis** pour ouvrir la page **Vue d’ensemble** du site dans le portail Azure.
+4. La page suivante vous indique que votre déploiement est en cours et quand il prend fin. Une fois l’opération terminée, sélectionnez **Accéder à la ressource**.  
 
-    > [!NOTE]
-    > La notification passera de **Déploiement en cours** à **Déploiements réussis** quand le déploiement du site sera terminé.
-
-5. Dans la section **Essentials** de la page **Vue d’ensemble** du site dans le portail Azure, sélectionnez l’URL qui s’affiche sous **URL**. Votre navigateur s’ouvre et affiche une page web avec le message « Votre service d’application a été créé. ». 
-
-6. Dans la barre d’adresse du navigateur, modifiez l’URL de l’application web pour qu’elle utilise le protocole HTTPS et appuyez sur **Entrée** pour confirmer que le protocole HTTPS est activé. 
+5. Dans la section **Vue d’ensemble**, choisissez l’URL qui est affichée sous **URL**. Votre navigateur s’ouvre et affiche une page web avec le message « Votre application Service d’applications est opérationnelle. »
 
     > [!IMPORTANT]
     > Les sites web Azure [!include[HTTPS guidance](../includes/https-guidance.md)] fournissent automatiquement un point de terminaison HTTPS.
@@ -139,17 +107,17 @@ Pour créer l’application web à l’aide du portail Azure, procédez comme s
 
 1. Démarrez Visual Studio en tant qu’administrateur.
 
-2. Choisissez **Fichier** > **Nouveau** > **Projet**.
+2. Choisissez **Créer un nouveau projet**.
 
-3. Sous **Modèles**, développez **Visual C#** (ou **Visual Basic**), développez **Office/SharePoint** et choisissez **Compléments**.
+3. À l’aide de la zone de recherche, entrez **complément**.
 
-4. Choisissez **Complément Word web**, puis cliquez sur **OK** pour accepter les paramètres par défaut.
+4. Choisissez **Complément Word web** comme type de projet, puis cliquez sur **Suivant** pour accepter les paramètres par défaut.
 
-Visual Studio crée un complément Word de base que vous pourrez publier tel quel, sans apporter de modifications à son projet web.
+Visual Studio crée un complément Word de base que vous pourrez publier tel quel, sans apporter de modifications à son projet web. Pour créer un complément pour un autre type d’hôte Office (par exemple, Excel), répétez les étapes et choisissez un type de projet avec l’hôte Office souhaité.
 
 ## <a name="step-5-publish-your-office-add-in-web-app-to-azure"></a>Étape 5 : Publier votre application web de complément Office sur Azure
 
-1. Avec votre projet de complément ouvert dans Visual Studio, développez le nœud de solution dans l’**explorateur de solutions** pour voir les deux projets pour la solution.
+1. Avec votre projet de complément ouvert dans Visual Studio, développez le nœud de solutions dans **Explorateur de solutions**, puis sélectionnez **Service d’applications**.
 
 2. Cliquez avec le bouton droit de la souris sur le projet web, puis choisissez **Publier**. Le projet web contient les fichiers d’application web du complément Office, et il s’agit donc du projet que vous publiez sur Azure.
 
@@ -161,11 +129,9 @@ Visual Studio crée un complément Word de base que vous pourrez publier tel qu
 
       - Choisissez **Publier**.
 
-4. Dans la boîte de dialogue **App Service**, recherchez et sélectionnez l’application web que vous avez créée à l’[étape 3 : Créer une application web dans Azure](../publish/host-an-office-add-in-on-microsoft-azure.md#step-3-create-a-web-app-in-azure), puis cliquez sur **OK**. 
+4. Visual Studio publie le projet web pour votre complément Office sur votre site web Azure. Une fois le projet web publié par Visual Studio, votre navigateur s’ouvre et affiche une page web avec le texte « Votre application de service d’application a été créée. » Il s’agit de la page active par défaut pour l’application web.
 
-    Visual Studio publie le projet web pour votre complément Office sur votre site web Azure. Une fois le projet web publié par Visual Studio, votre navigateur s’ouvre et affiche une page web avec le texte « Votre application de service d’application a été créée. » Il s’agit de la page active par défaut pour l’application web.
-
- Pour voir la page web pour votre complément, modifiez l’URL afin qu’elle utilise le protocole HTTPS et indiquez le chemin d’accès de la page HTML de votre complément (par exemple : https://YourDomain.azurewebsites.net/Home.html). Cela permet de confirmer que l’application web de votre complément est hébergée sur Azure. Copiez l’URL racine (par exemple : https://YourDomain.azurewebsites.net) ; vous en aurez besoin lorsque vous modifierez le fichier manifest de complément plus loin dans cet article.
+5. Copiez l’URL racine (par exemple : https://YourDomain.azurewebsites.net) ; vous en aurez besoin lorsque vous modifierez le fichier manifeste de complément plus loin dans cet article.
 
 ## <a name="step-6-edit-and-deploy-the-add-in-xml-manifest-file"></a>Étape 6 : Modifier et déployer le fichier manifeste XML
 
@@ -175,13 +141,9 @@ Visual Studio crée un complément Word de base que vous pourrez publier tel qu
 
 3. Dans le fichier manifeste XML, recherchez et remplacez toutes les instances de « ~remoteAppUrl » par l’URL racine de l’application web du complément sur Azure. Il s’agit de l’URL que vous avez copiée précédemment une fois que vous avez publié l’application web du complément sur Azure (par exemple : https://YourDomain.azurewebsites.net). 
 
-4. Choisissez **Fichier**, puis **Enregistrer tout**. Fermez le fichier manifeste XML du complément.
+4. Choisissez **Fichier**, puis **Enregistrer tout**. Ensuite, copiez le fichier manifeste XML du complément (par exemple, WordWebAddIn.xml).
 
-5. Retournez dans l’**explorateur de solutions**, cliquez avec le bouton droit de la souris sur le dossier du fichier manifeste et choisissez **Ouvrir le dossier dans l'Explorateur de fichiers**.
-
-6. Copiez le fichier manifeste XML du complément (par exemple, WordWebAddIn.xml). 
-
-7. Accédez au partage de fichiers réseau que vous avez créé à l’[étape 1 : Créer un dossier partagé](../publish/host-an-office-add-in-on-microsoft-azure.md#step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file) et collez le fichier manifeste dans le dossier.
+5. À l’aide du programme **Explorateur de fichier**, accédez au partage de fichiers réseau que vous avez créé à l’[Étape 1 : Créer un dossier partagé](../publish/host-an-office-add-in-on-microsoft-azure.md#step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file), puis collez le fichier manifeste dans le dossier.
 
 ## <a name="step-7-insert-and-run-the-add-in-in-the-office-client-application"></a>Étape 7 : insérer et exécuter le complément dans l’application cliente Office
 
