@@ -1,14 +1,14 @@
 ---
 title: Créer de meilleurs compléments pour Word avec Office Open XML
 description: ''
-ms.date: 03/19/2019
+ms.date: 10/10/2019
 localization_priority: Priority
-ms.openlocfilehash: e13911da0dbdb9fdb0215d433a9559bf1b747eb9
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 1eb143e60da88ac8786b9b56f5db93a20aac4e20
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450018"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37627096"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Créer de meilleurs compléments pour Word avec Office Open XML
 
@@ -834,13 +834,10 @@ Après les sept étapes précédentes, vous avez supprimé probablement entre 9
 
 Que vous vous arrêtiez à cette étape ou que vous décidiez de continuer à explorer votre contenu pour trouver les dernières lignes de balisage que vous pouvez supprimer, n’oubliez pas que vous pouvez utiliser l’exemple de code précédemment référencé [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML) comme complément de travail pour tester rapidement et facilement votre balisage modifié.
 
-
 > [!TIP]
-> Si vous mettez à jour un extrait Office Open XML dans une solution existante lors du développement, effacez les fichiers Internet temporaires avant d’exécuter à nouveau la solution pour mettre à jour le balisage Office Open XML utilisé par votre code. Le balisage qui est inclus dans votre solution pour les fichiers XML est mis en cache sur votre ordinateur. Vous pouvez évidemment effacer les fichiers Internet temporaires à partir de votre navigateur web par défaut. Pour accéder aux options Internet et supprimer ces paramètres à partir de Visual Studio 2017, dans le menu **Débogage**, choisissez **Options et paramètres**. Ensuite, sous **Environnement**, choisissez **Navigateur web**, puis **Options Internet Explorer**.
-
+> Si vous mettez à jour un extrait Office Open XML dans une solution existante lors du développement, effacez les fichiers Internet temporaires avant d’exécuter à nouveau la solution pour mettre à jour le balisage Office Open XML utilisé par votre code. Le balisage qui est inclus dans votre solution pour les fichiers XML est mis en cache sur votre ordinateur. Vous pouvez évidemment effacer les fichiers Internet temporaires à partir de votre navigateur web par défaut. Pour accéder aux options Internet et supprimer ces paramètres à partir de Visual Studio 2019, dans le menu **Débogage**, choisissez **Options et paramètres**. Ensuite, sous **Environnement**, choisissez **Navigateur web**, puis **Options Internet Explorer**.
 
 ## <a name="creating-an-add-in-for-both-template-and-stand-alone-use"></a>Création d’un complément pour une utilisation autonome et en modèle
-
 
 Dans cette rubrique, vous avez découvert plusieurs exemples de ce que vous pouvez faire avec Office Open XML dans vos compléments pour . Nous avons étudié un large éventail d’exemples de type de contenu riche que vous pouvez insérer dans des documents à l’aide du type de forçage Office Open XML, avec les méthodes JavaScript pour insérer ce contenu à l’emplacement de sélection ou à un emplacement spécifié (lié).
 

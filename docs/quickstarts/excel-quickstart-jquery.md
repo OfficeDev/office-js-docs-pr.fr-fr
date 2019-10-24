@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet des tâches d’Excel
 description: Découvrez comment créer un complément de volet des tâches Excel simple à l’aide de l’API JavaScript pour Office.
-ms.date: 09/18/2019
+ms.date: 10/17/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 6f5b78e1ffb154eb014bb4bb0ef8cb7135b2012f
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: 3ade0eb77f525ebd593a475736ab81742d915b94
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035321"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626970"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Créer un complément de volet de tâches Excel
 
@@ -72,11 +72,12 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 
 ### <a name="create-the-add-in-project"></a>Création du projet de complément
 
-1. Dans la barre de menu de Visual Studio, choisissez successivement **Fichier** > **Nouveau** > **Projet**.
 
-2. Dans la liste des types de projet, sous **Visual C#** ou **Visual Basic**, développez **Office/SharePoint**, choisissez **Compléments**, puis **Complément Excel Web** pour le type de projet. 
+1. Dans Visual Studio, choisissez **Créer un nouveau projet**.
 
-3. Nommez le projet, puis cliquez sur **OK**.
+2. À l’aide de la zone de recherche, entrez **complément**. Choisissez **Complément web Excel**, puis sélectionnez **Suivant**.
+
+3. Nommez votre projet et sélectionnez **Créer**.
 
 4. Dans la fenêtre de dialogue **Créer un complément Office**, sélectionnez **Ajouter de nouvelles fonctionnalités à Excel**, puis sélectionnez **Terminer** pour créer le projet.
 

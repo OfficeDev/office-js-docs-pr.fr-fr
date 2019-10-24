@@ -212,7 +212,7 @@
           href: testing/troubleshoot-manifest.md
     - name: Publier
       items:
-        - name: Vue d'ensemble
+        - name: Vue d’ensemble
           href: publish/publish.md
         - name: "Héberger un complément pour Office sur Microsoft\_Azure"
           href: publish/host-an-office-add-in-on-microsoft-azure.md
@@ -488,6 +488,9 @@
           displayName: Excel
         - name: Co-création dans des macros complémentaires Excel
           href: excel/co-authoring-in-excel-add-ins.md
+          displayName: Excel
+        - name: Commentaires
+          href: excel/excel-add-ins-comments.md
           displayName: Excel
         - name: Mise en forme conditionnelle de plages
           href: excel/excel-add-ins-conditional-formatting.md

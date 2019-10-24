@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément de volet de tâches PowerPoint
 description: Découvrez comment créer un complément de volet des tâches PowerPoint simple à l’aide de l’API JavaScript pour Office.
-ms.date: 09/18/2019
+ms.date: 10/17/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 62e11129a35a802b8f4088a93687d631c0af2ff4
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: f5fed49632a5e71075cd71e53a74290fdca05614
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035315"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626900"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>Créer votre premier complément de volet de tâches PowerPoint
 
@@ -94,11 +94,11 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 
 ### <a name="create-the-add-in-project"></a>Création du projet de complément
 
-1. Dans la barre de menu de Visual Studio, choisissez successivement **Fichier** > **Nouveau** > **Projet**.
-    
-2. Dans la liste des types de projet sous **Visual C#** ou **Visual Basic**, développez **Office/SharePoint**, choisissez **Compléments**, puis **Complément web PowerPoint** pour le type de projet. 
+1. Dans Visual Studio, choisissez **Créer un nouveau projet**.
 
-3. Nommez le projet, puis cliquez sur **OK**.
+2. À l’aide de la zone de recherche, entrez **complément**. Choisissez **Complément web PowerPoint**, puis sélectionnez **Suivant**.
+
+3. Nommez votre projet et sélectionnez **Créer**.
 
 4. Dans la fenêtre de la boîte de dialogue **Créer un complément Office**, choisissez **Ajouter de nouvelles fonctionnalités à PowerPoint**, puis sélectionnez **Terminer** pour créer le projet.
 
