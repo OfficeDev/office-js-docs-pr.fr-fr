@@ -1,14 +1,14 @@
 ---
 title: Utilisation des tableaux croisés dynamiques avec l’API JavaScript pour Excel
 description: Utilisez l’API JavaScript pour Excel pour créer des tableaux croisés dynamiques et interagir avec leurs composants.
-ms.date: 05/01/2019
+ms.date: 10/22/2019
 localization_priority: Normal
-ms.openlocfilehash: 4a60b820d6e50dd44a193dd08df69817330c636d
-ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
+ms.openlocfilehash: 5fc70437ce61a49ac5dcd359214b3cca79c71ac1
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "33620198"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37681955"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Utilisation des tableaux croisés dynamiques avec l’API JavaScript pour Excel
 
@@ -158,10 +158,7 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="slicers-preview"></a>Segments (aperçu)
-
-> [!NOTE]
-> Les API de Slicer sont actuellement disponibles uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="slicers"></a>Slicers
 
 Les [segments](/javascript/api/excel/excel.slicer) permettent aux données d’être filtrées à partir d’un tableau croisé dynamique ou d’un tableau Excel. Un segment utilise des valeurs d’une colonne ou d’un champ PivotField spécifié pour filtrer les lignes correspondantes. Ces valeurs sont stockées en [](/javascript/api/excel/excel.sliceritem) tant qu’objets SlicerItem `Slicer`dans le. Votre complément peut ajuster ces filtres, comme les utilisateurs peuvent les[utiliser (par le biais de l’interface utilisateur Excel](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d)). Le segment se trouve au-dessus de la feuille de calcul de la couche de dessin, comme illustré dans la capture d’écran suivante.
 

@@ -1,14 +1,14 @@
 ---
 title: Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)
 description: ''
-ms.date: 09/18/2019
+ms.date: 10/22/2019
 localization_priority: Normal
-ms.openlocfilehash: 90dff45ee01197a9a6f4d35fb9ab3379adf129b9
-ms.sourcegitcommit: 78bbbd6cb5a270164b26038675a222defc3be55e
+ms.openlocfilehash: 96f001e7c7e51a9685a52d0a07309beed2f1fe4b
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37471359"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37681934"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)
 
@@ -270,9 +270,6 @@ Excel.run(function (context) {
 ![Données dans Excel après exécution de la méthode de copie de suppression de la plage.](../images/excel-ranges-remove-duplicates-after.png)
 
 ## <a name="group-data-for-an-outline"></a>Données de groupe pour un plan
-
-> [!NOTE]
-> Les API de plan pour le regroupement de lignes et de colonnes sont actuellement disponibles uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 Les lignes ou les colonnes d’une plage peuvent être regroupées pour créer un [plan](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF). Ces groupes peuvent être réduits et développés pour masquer et afficher les cellules correspondantes. Cela facilite l’analyse rapide des données de haut niveau. Utilisez [Range. Group](/javascript/api/excel/excel.range#group-groupoption-) pour créer ces groupes de plan.
 
