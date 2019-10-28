@@ -3,23 +3,23 @@ title: Utilisation de tableaux à l’aide de l’API JavaScript pour Excel
 description: ''
 ms.date: 09/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 7803690b4a20aa89908a20cf557f8076f5fea70a
-ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
+ms.openlocfilehash: d3109d28a4eb8a1a16ff1919a201284024f10c38
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "36838549"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37681976"
 ---
-# <a name="work-with-tables-using-the-excel-javascript-api"></a><span data-ttu-id="ed0ae-102">Utilisation de tableaux à l’aide de l’API JavaScript pour Excel</span><span class="sxs-lookup"><span data-stu-id="ed0ae-102">Work with tables using the Excel JavaScript API</span></span>
+# <a name="work-with-tables-using-the-excel-javascript-api"></a><span data-ttu-id="f8813-102">Utilisation de tableaux à l’aide de l’API JavaScript pour Excel</span><span class="sxs-lookup"><span data-stu-id="f8813-102">Work with tables using the Excel JavaScript API</span></span>
 
-<span data-ttu-id="ed0ae-p101">Cet article fournit des exemples de code qui expliquent comment effectuer des tâches courantes avec des tableaux à l’aide de l’API JavaScript pour Excel. Pour obtenir une liste complète des propriétés et des méthodes prises en charge par les objets **Table** et **TableCollection**, reportez-vous à la rubrique [Objet Table (API JavaScript pour Excel)](/javascript/api/excel/excel.table) et [Objet TableCollection (API JavaScript pour Excel)](/javascript/api/excel/excel.tablecollection).</span><span class="sxs-lookup"><span data-stu-id="ed0ae-p101">This article provides code samples that show how to perform common tasks with tables using the Excel JavaScript API. For the complete list of properties and methods that the **Table** and **TableCollection** objects support, see [Table Object (JavaScript API for Excel)](/javascript/api/excel/excel.table) and [TableCollection Object (JavaScript API for Excel)](/javascript/api/excel/excel.tablecollection).</span></span>
+<span data-ttu-id="f8813-p101">Cet article fournit des exemples de code qui expliquent comment effectuer des tâches courantes avec des tableaux à l’aide de l’API JavaScript pour Excel. Pour obtenir une liste complète des propriétés et des méthodes prises en charge par les objets **Table** et **TableCollection**, reportez-vous à la rubrique [Objet Table (API JavaScript pour Excel)](/javascript/api/excel/excel.table) et [Objet TableCollection (API JavaScript pour Excel)](/javascript/api/excel/excel.tablecollection).</span><span class="sxs-lookup"><span data-stu-id="f8813-p101">This article provides code samples that show how to perform common tasks with tables using the Excel JavaScript API. For the complete list of properties and methods that the **Table** and **TableCollection** objects support, see [Table Object (JavaScript API for Excel)](/javascript/api/excel/excel.table) and [TableCollection Object (JavaScript API for Excel)](/javascript/api/excel/excel.tablecollection).</span></span>
 
-## <a name="create-a-table"></a><span data-ttu-id="ed0ae-105">Créer un tableau</span><span class="sxs-lookup"><span data-stu-id="ed0ae-105">Create a table</span></span>
+## <a name="create-a-table"></a><span data-ttu-id="f8813-105">Créer un tableau</span><span class="sxs-lookup"><span data-stu-id="f8813-105">Create a table</span></span>
 
-<span data-ttu-id="ed0ae-p102">L’exemple de code suivant crée un tableau dans la feuille de calcul nommée **Sample**. Le tableau comporte des en-têtes et contient quatre colonnes et sept lignes de données. Si l’application hôte Excel dans laquelle le code est en cours d’exécution prend en charge [l’ensemble de conditions requises](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour s’ajuster au mieux aux données actuelles du tableau.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-p102">The following code sample creates a table in the worksheet named **Sample**. The table has headers and contains four columns and seven rows of data. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.</span></span>
+<span data-ttu-id="f8813-p102">L’exemple de code suivant crée un tableau dans la feuille de calcul nommée **Sample**. Le tableau comporte des en-têtes et contient quatre colonnes et sept lignes de données. Si l’application hôte Excel dans laquelle le code est en cours d’exécution prend en charge [l’ensemble de conditions requises](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour s’ajuster au mieux aux données actuelles du tableau.</span><span class="sxs-lookup"><span data-stu-id="f8813-p102">The following code sample creates a table in the worksheet named **Sample**. The table has headers and contains four columns and seven rows of data. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ed0ae-109">Pour spécifier le nom d’un tableau, vous devez d’abord créer le tableau, puis définir sa propriété **name**, comme indiqué dans l’exemple ci-dessous.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-109">To specify a name for a table, you must first create the table and then set its **name** property, as shown in the example below.</span></span>
+> <span data-ttu-id="f8813-109">Pour spécifier le nom d’un tableau, vous devez d’abord créer le tableau, puis définir sa propriété **name**, comme indiqué dans l’exemple ci-dessous.</span><span class="sxs-lookup"><span data-stu-id="f8813-109">To specify a name for a table, you must first create the table and then set its **name** property, as shown in the example below.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -50,16 +50,16 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="ed0ae-110">**Nouveau tableau**</span><span class="sxs-lookup"><span data-stu-id="ed0ae-110">**New table**</span></span>
+<span data-ttu-id="f8813-110">**Nouveau tableau**</span><span class="sxs-lookup"><span data-stu-id="f8813-110">**New table**</span></span>
 
 ![Nouveau tableau dans Excel](../images/excel-tables-create.png)
 
-## <a name="add-rows-to-a-table"></a><span data-ttu-id="ed0ae-112">Ajouter des lignes dans un tableau</span><span class="sxs-lookup"><span data-stu-id="ed0ae-112">Add rows to a table</span></span>
+## <a name="add-rows-to-a-table"></a><span data-ttu-id="f8813-112">Ajouter des lignes dans un tableau</span><span class="sxs-lookup"><span data-stu-id="f8813-112">Add rows to a table</span></span>
 
-<span data-ttu-id="ed0ae-p103">L’exemple de code suivant ajoute sept nouvelles lignes au tableau nommé **ExpensesTable** au sein de la feuille de calcul **Sample**. Les nouvelles lignes sont ajoutées à la fin du tableau. Si l’application hôte Excel dans laquelle le code est en cours d’exécution prend en charge [l’ensemble de conditions requises](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour s’ajuster au mieux aux données actuelles du tableau.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-p103">The following code sample adds seven new rows to the table named **ExpensesTable** within the worksheet named **Sample**. The new rows are added to the end of the table. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.</span></span>
+<span data-ttu-id="f8813-p103">L’exemple de code suivant ajoute sept nouvelles lignes au tableau nommé **ExpensesTable** au sein de la feuille de calcul **Sample**. Les nouvelles lignes sont ajoutées à la fin du tableau. Si l’application hôte Excel dans laquelle le code est en cours d’exécution prend en charge [l’ensemble de conditions requises](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour s’ajuster au mieux aux données actuelles du tableau.</span><span class="sxs-lookup"><span data-stu-id="f8813-p103">The following code sample adds seven new rows to the table named **ExpensesTable** within the worksheet named **Sample**. The new rows are added to the end of the table. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ed0ae-p104">La propriété **index** d’un objet [TableRow](/javascript/api/excel/excel.tablerow) indique le numéro d’index de la ligne dans la collection de lignes du tableau. Un objet **TableRow** ne contient pas de propriété **id** qui peut être utilisée comme clé unique pour identifier la ligne.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-p104">The **index** property of a [TableRow](/javascript/api/excel/excel.tablerow) object indicates the index number of the row within the rows collection of the table. A **TableRow** object does not contain an **id** property that can be used as a unique key to identify the row.</span></span>
+> <span data-ttu-id="f8813-p104">La propriété **index** d’un objet [TableRow](/javascript/api/excel/excel.tablerow) indique le numéro d’index de la ligne dans la collection de lignes du tableau. Un objet **TableRow** ne contient pas de propriété **id** qui peut être utilisée comme clé unique pour identifier la ligne.</span><span class="sxs-lookup"><span data-stu-id="f8813-p104">The **index** property of a [TableRow](/javascript/api/excel/excel.tablerow) object indicates the index number of the row within the rows collection of the table. A **TableRow** object does not contain an **id** property that can be used as a unique key to identify the row.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -85,20 +85,20 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="ed0ae-118">**Tableau avec de nouvelles lignes**</span><span class="sxs-lookup"><span data-stu-id="ed0ae-118">**Table with new rows**</span></span>
+<span data-ttu-id="f8813-118">**Tableau avec de nouvelles lignes**</span><span class="sxs-lookup"><span data-stu-id="f8813-118">**Table with new rows**</span></span>
 
 ![Tableau avec de nouvelles lignes dans Excel](../images/excel-tables-add-rows.png)
 
-## <a name="add-a-column-to-a-table"></a><span data-ttu-id="ed0ae-120">Ajouter une colonne à un tableau</span><span class="sxs-lookup"><span data-stu-id="ed0ae-120">Add a column to a table</span></span>
+## <a name="add-a-column-to-a-table"></a><span data-ttu-id="f8813-120">Ajouter une colonne à un tableau</span><span class="sxs-lookup"><span data-stu-id="f8813-120">Add a column to a table</span></span>
 
-<span data-ttu-id="ed0ae-p105">Ces exemples montrent comment ajouter une colonne à un tableau. Le premier exemple remplit la nouvelle colonne avec des valeurs statiques ; le second exemple remplit la nouvelle colonne avec des formules.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-p105">These examples show how to add a column to a table. The first example populates the new column with static values; the second example populates the new column with formulas.</span></span>
+<span data-ttu-id="f8813-p105">Ces exemples montrent comment ajouter une colonne à un tableau. Le premier exemple remplit la nouvelle colonne avec des valeurs statiques ; le second exemple remplit la nouvelle colonne avec des formules.</span><span class="sxs-lookup"><span data-stu-id="f8813-p105">These examples show how to add a column to a table. The first example populates the new column with static values; the second example populates the new column with formulas.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ed0ae-p106">La propriété **index** d’un objet [TableColumn](/javascript/api/excel/excel.tablecolumn) indique le numéro d’index de la colonne dans la collection de colonnes du tableau. La propriété **id** d’un objet **TableColumn** contient une clé unique qui identifie la colonne.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-p106">The **index** property of a [TableColumn](/javascript/api/excel/excel.tablecolumn) object indicates the index number of the column within the columns collection of the table. The **id** property of a **TableColumn** object contains a unique key that identifies the column.</span></span>
+> <span data-ttu-id="f8813-p106">La propriété **index** d’un objet [TableColumn](/javascript/api/excel/excel.tablecolumn) indique le numéro d’index de la colonne dans la collection de colonnes du tableau. La propriété **id** d’un objet **TableColumn** contient une clé unique qui identifie la colonne.</span><span class="sxs-lookup"><span data-stu-id="f8813-p106">The **index** property of a [TableColumn](/javascript/api/excel/excel.tablecolumn) object indicates the index number of the column within the columns collection of the table. The **id** property of a **TableColumn** object contains a unique key that identifies the column.</span></span>
 
-### <a name="add-a-column-that-contains-static-values"></a><span data-ttu-id="ed0ae-125">Ajouter une colonne qui contient des valeurs statiques</span><span class="sxs-lookup"><span data-stu-id="ed0ae-125">Add a column that contains static values</span></span>
+### <a name="add-a-column-that-contains-static-values"></a><span data-ttu-id="f8813-125">Ajouter une colonne qui contient des valeurs statiques</span><span class="sxs-lookup"><span data-stu-id="f8813-125">Add a column that contains static values</span></span>
 
-<span data-ttu-id="ed0ae-p107">L’exemple de code suivant ajoute une nouvelle colonne à la table nommée **ExpensesTable** au sein de la feuille de calcul **Sample**. La nouvelle colonne est ajoutée après les colonnes existantes du tableau et contient un en-tête (« Day of the Week ») ainsi que des données pour remplir les cellules de la colonne. Si l’application hôte Excel dans laquelle le code est en cours d’exécution prend en charge [l’ensemble de conditions requises](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour s’ajuster au mieux aux données actuelles du tableau.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-p107">The following code sample adds a new column to the table named **ExpensesTable** within the worksheet named **Sample**. The new column is added after all existing columns in the table and contains a header ("Day of the Week") as well as data to populate the cells in the column. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.</span></span>
+<span data-ttu-id="f8813-p107">L’exemple de code suivant ajoute une nouvelle colonne à la table nommée **ExpensesTable** au sein de la feuille de calcul **Sample**. La nouvelle colonne est ajoutée après les colonnes existantes du tableau et contient un en-tête (« Day of the Week ») ainsi que des données pour remplir les cellules de la colonne. Si l’application hôte Excel dans laquelle le code est en cours d’exécution prend en charge [l’ensemble de conditions requises](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour s’ajuster au mieux aux données actuelles du tableau.</span><span class="sxs-lookup"><span data-stu-id="f8813-p107">The following code sample adds a new column to the table named **ExpensesTable** within the worksheet named **Sample**. The new column is added after all existing columns in the table and contains a header ("Day of the Week") as well as data to populate the cells in the column. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -125,13 +125,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="ed0ae-129">**Tableau avec une nouvelle colonne**</span><span class="sxs-lookup"><span data-stu-id="ed0ae-129">**Table with new column**</span></span>
+<span data-ttu-id="f8813-129">**Tableau avec une nouvelle colonne**</span><span class="sxs-lookup"><span data-stu-id="f8813-129">**Table with new column**</span></span>
 
 ![Tableau avec une nouvelle colonne dans Excel](../images/excel-tables-add-column.png)
 
-### <a name="add-a-column-that-contains-formulas"></a><span data-ttu-id="ed0ae-131">Ajouter une colonne qui contient des formules</span><span class="sxs-lookup"><span data-stu-id="ed0ae-131">Add a column that contains formulas</span></span>
+### <a name="add-a-column-that-contains-formulas"></a><span data-ttu-id="f8813-131">Ajouter une colonne qui contient des formules</span><span class="sxs-lookup"><span data-stu-id="f8813-131">Add a column that contains formulas</span></span>
 
-<span data-ttu-id="ed0ae-p108">L’exemple de code suivant ajoute une nouvelle colonne à la table nommée **ExpensesTable** au sein de la feuille de calcul **Sample**. La nouvelle colonne est ajoutée à la fin du tableau, contient un en-tête («Type of the Day ») et utilise une formule pour remplir chaque cellule de données dans la colonne. Si l’application hôte Excel dans laquelle le code est en cours d’exécution prend en charge [l’ensemble de conditions requises](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour s’ajuster au mieux aux données actuelles du tableau.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-p108">The following code sample adds a new column to the table named **ExpensesTable** within the worksheet named **Sample**. The new column is added to the end of the table, contains a header ("Type of the Day"), and uses a formula to populate each data cell in the column. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.</span></span>
+<span data-ttu-id="f8813-p108">L’exemple de code suivant ajoute une nouvelle colonne à la table nommée **ExpensesTable** au sein de la feuille de calcul **Sample**. La nouvelle colonne est ajoutée à la fin du tableau, contient un en-tête («Type of the Day ») et utilise une formule pour remplir chaque cellule de données dans la colonne. Si l’application hôte Excel dans laquelle le code est en cours d’exécution prend en charge [l’ensemble de conditions requises](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour s’ajuster au mieux aux données actuelles du tableau.</span><span class="sxs-lookup"><span data-stu-id="f8813-p108">The following code sample adds a new column to the table named **ExpensesTable** within the worksheet named **Sample**. The new column is added to the end of the table, contains a header ("Type of the Day"), and uses a formula to populate each data cell in the column. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -158,13 +158,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="ed0ae-135">**Tableau avec une nouvelle colonne calculée**</span><span class="sxs-lookup"><span data-stu-id="ed0ae-135">**Table with new calculated column**</span></span>
+<span data-ttu-id="f8813-135">**Tableau avec une nouvelle colonne calculée**</span><span class="sxs-lookup"><span data-stu-id="f8813-135">**Table with new calculated column**</span></span>
 
 ![Tableau avec une nouvelle colonne calculée dans Excel](../images/excel-tables-add-calculated-column.png)
 
-## <a name="update-column-name"></a><span data-ttu-id="ed0ae-137">Mettre à jour un nom de colonne</span><span class="sxs-lookup"><span data-stu-id="ed0ae-137">Update column name</span></span>
+## <a name="update-column-name"></a><span data-ttu-id="f8813-137">Mettre à jour un nom de colonne</span><span class="sxs-lookup"><span data-stu-id="f8813-137">Update column name</span></span>
 
-<span data-ttu-id="ed0ae-p109">L’exemple de code suivant remplace le nom de la première colonne du tableau par **Purchase date**. Si l’application hôte Excel dans laquelle le code est en cours d’exécution prend en charge [l’ensemble de conditions requises](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour s’ajuster au mieux aux données actuelles du tableau.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-p109">The following code sample updates the name of the first column in the table to **Purchase date**. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.</span></span>
+<span data-ttu-id="f8813-p109">L’exemple de code suivant remplace le nom de la première colonne du tableau par **Purchase date**. Si l’application hôte Excel dans laquelle le code est en cours d’exécution prend en charge [l’ensemble de conditions requises](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour s’ajuster au mieux aux données actuelles du tableau.</span><span class="sxs-lookup"><span data-stu-id="f8813-p109">The following code sample updates the name of the first column in the table to **Purchase date**. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -187,13 +187,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="ed0ae-140">**Tableau avec un nouveau nom de colonne**</span><span class="sxs-lookup"><span data-stu-id="ed0ae-140">**Table with new column name**</span></span>
+<span data-ttu-id="f8813-140">**Tableau avec un nouveau nom de colonne**</span><span class="sxs-lookup"><span data-stu-id="f8813-140">**Table with new column name**</span></span>
 
 ![Tableau avec un nouveau nom de colonne dans Excel](../images/excel-tables-update-column-name.png)
 
-## <a name="get-data-from-a-table"></a><span data-ttu-id="ed0ae-142">Obtenir des données à partir d’un tableau</span><span class="sxs-lookup"><span data-stu-id="ed0ae-142">Get data from a table</span></span>
+## <a name="get-data-from-a-table"></a><span data-ttu-id="f8813-142">Obtenir des données à partir d’un tableau</span><span class="sxs-lookup"><span data-stu-id="f8813-142">Get data from a table</span></span>
 
-<span data-ttu-id="ed0ae-143">L’exemple de code suivant lit les données d’un tableau nommé **ExpensesTable** à partir de la feuille de calcul **Sample**, puis génère ces données en dessous du tableau dans la même feuille de calcul.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-143">The following code sample reads data from a table named **ExpensesTable** in the worksheet named **Sample** and then outputs that data below the table in the same worksheet.</span></span>
+<span data-ttu-id="f8813-143">L’exemple de code suivant lit les données d’un tableau nommé **ExpensesTable** à partir de la feuille de calcul **Sample**, puis génère ces données en dessous du tableau dans la même feuille de calcul.</span><span class="sxs-lookup"><span data-stu-id="f8813-143">The following code sample reads data from a table named **ExpensesTable** in the worksheet named **Sample** and then outputs that data below the table in the same worksheet.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -233,15 +233,15 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="ed0ae-144">**Tableau et sortie des données**</span><span class="sxs-lookup"><span data-stu-id="ed0ae-144">**Table and data output**</span></span>
+<span data-ttu-id="f8813-144">**Tableau et sortie des données**</span><span class="sxs-lookup"><span data-stu-id="f8813-144">**Table and data output**</span></span>
 
 ![Données de tableau dans Excel](../images/excel-tables-get-data.png)
 
-## <a name="detect-data-changes"></a><span data-ttu-id="ed0ae-146">Détecter les modifications de données</span><span class="sxs-lookup"><span data-stu-id="ed0ae-146">Detect data changes</span></span>
+## <a name="detect-data-changes"></a><span data-ttu-id="f8813-146">Détecter les modifications de données</span><span class="sxs-lookup"><span data-stu-id="f8813-146">Detect data changes</span></span>
 
-<span data-ttu-id="ed0ae-147">Votre complément peut avoir besoin de réagir aux utilisateurs modifiant les données dans un tableau.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-147">Your add-in may need to react to users changing the data in a table.</span></span> <span data-ttu-id="ed0ae-148">Pour détecter ces modifications, vous pouvez [inscrire un gestionnaire d’événements](excel-add-ins-events.md#register-an-event-handler) à l’événement `onChanged` d’un tableau.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-148">To detect these changes, you can [register an event handler](excel-add-ins-events.md#register-an-event-handler) for the `onChanged` event of a table.</span></span> <span data-ttu-id="ed0ae-149">Le gestionnaires d’événements de l’événement `onChanged` reçoit un objet [TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs) lorsque l’événement se déclenche.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-149">Event handlers for the `onChanged` event receive a [TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs) object when the event fires.</span></span>
+<span data-ttu-id="f8813-147">Votre complément peut avoir besoin de réagir aux utilisateurs modifiant les données dans un tableau.</span><span class="sxs-lookup"><span data-stu-id="f8813-147">Your add-in may need to react to users changing the data in a table.</span></span> <span data-ttu-id="f8813-148">Pour détecter ces modifications, vous pouvez [inscrire un gestionnaire d’événements](excel-add-ins-events.md#register-an-event-handler) à l’événement `onChanged` d’un tableau.</span><span class="sxs-lookup"><span data-stu-id="f8813-148">To detect these changes, you can [register an event handler](excel-add-ins-events.md#register-an-event-handler) for the `onChanged` event of a table.</span></span> <span data-ttu-id="f8813-149">Le gestionnaires d’événements de l’événement `onChanged` reçoit un objet [TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs) lorsque l’événement se déclenche.</span><span class="sxs-lookup"><span data-stu-id="f8813-149">Event handlers for the `onChanged` event receive a [TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs) object when the event fires.</span></span>
 
-<span data-ttu-id="ed0ae-150">L’objet `TableChangedEventArgs` fournit des informations sur les modifications et la source.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-150">The `TableChangedEventArgs` object provides information about the changes and the source.</span></span> <span data-ttu-id="ed0ae-151">Puisque `onChanged` se déclenche lorsque le format ou la valeur des données sont modifiés, il peut être utile que votre complément vérifie si les valeurs ont réellement été modifiées.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-151">Since `onChanged` fires when either the format or value of the data changes, it can be useful to have your add-in check if the values have actually changed.</span></span> <span data-ttu-id="ed0ae-152">La propriété de `details` regroupe ces informations en tant qu’un [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail).</span><span class="sxs-lookup"><span data-stu-id="ed0ae-152">The `details` property encapsulates this information as a [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail).</span></span> <span data-ttu-id="ed0ae-153">L’exemple de code suivant illustre la procédure d’affichage des valeurs et des types d’une cellule qui a été modifiée, avant et après modification.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-153">The following code sample shows how to display the before and after values and types of a cell that has been changed.</span></span>
+<span data-ttu-id="f8813-150">L’objet `TableChangedEventArgs` fournit des informations sur les modifications et la source.</span><span class="sxs-lookup"><span data-stu-id="f8813-150">The `TableChangedEventArgs` object provides information about the changes and the source.</span></span> <span data-ttu-id="f8813-151">Puisque `onChanged` se déclenche lorsque le format ou la valeur des données sont modifiés, il peut être utile que votre complément vérifie si les valeurs ont réellement été modifiées.</span><span class="sxs-lookup"><span data-stu-id="f8813-151">Since `onChanged` fires when either the format or value of the data changes, it can be useful to have your add-in check if the values have actually changed.</span></span> <span data-ttu-id="f8813-152">La propriété de `details` regroupe ces informations en tant qu’un [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail).</span><span class="sxs-lookup"><span data-stu-id="f8813-152">The `details` property encapsulates this information as a [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail).</span></span> <span data-ttu-id="f8813-153">L’exemple de code suivant illustre la procédure d’affichage des valeurs et des types d’une cellule qui a été modifiée, avant et après modification.</span><span class="sxs-lookup"><span data-stu-id="f8813-153">The following code sample shows how to display the before and after values and types of a cell that has been changed.</span></span>
 
 ```js
 // This function would be used as an event handler for the Table.onChanged event.
@@ -258,9 +258,9 @@ function onTableChanged(eventArgs) {
 }
 ```
 
-## <a name="sort-data-in-a-table"></a><span data-ttu-id="ed0ae-154">Trier des données dans un tableau</span><span class="sxs-lookup"><span data-stu-id="ed0ae-154">Sort data in a table</span></span>
+## <a name="sort-data-in-a-table"></a><span data-ttu-id="f8813-154">Trier des données dans un tableau</span><span class="sxs-lookup"><span data-stu-id="f8813-154">Sort data in a table</span></span>
 
-<span data-ttu-id="ed0ae-155">L’exemple de code suivant trie les données d’un tableau dans l’ordre décroissant en fonction des valeurs de la quatrième colonne du tableau.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-155">The following code sample sorts table data in descending order according to the values in the fourth column of the table.</span></span>
+<span data-ttu-id="f8813-155">L’exemple de code suivant trie les données d’un tableau dans l’ordre décroissant en fonction des valeurs de la quatrième colonne du tableau.</span><span class="sxs-lookup"><span data-stu-id="f8813-155">The following code sample sorts table data in descending order according to the values in the fourth column of the table.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -281,15 +281,15 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="ed0ae-156">**Données de tableau triées par montant (décroissant)**</span><span class="sxs-lookup"><span data-stu-id="ed0ae-156">**Table data sorted by Amount (descending)**</span></span>
+<span data-ttu-id="f8813-156">**Données de tableau triées par montant (décroissant)**</span><span class="sxs-lookup"><span data-stu-id="f8813-156">**Table data sorted by Amount (descending)**</span></span>
 
 ![Données de tableau dans Excel](../images/excel-tables-sort.png)
 
-<span data-ttu-id="ed0ae-158">Lorsque les données sont triées dans une feuille de calcul, une notification d’événement est déclenchée.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-158">When data is sorted in a worksheet, an event notification fires.</span></span> <span data-ttu-id="ed0ae-159">Pour en savoir plus sur les événements liés au tri et sur la manière dont votre complément peut inscrire des gestionnaires d’événements pour répondre à ces événements, voir [Gérer les événements de tri (aperçu)](excel-add-ins-worksheets.md#handle-sorting-events-preview).</span><span class="sxs-lookup"><span data-stu-id="ed0ae-159">To learn more about sort-related events and how your add-in can register event handlers to respond to such events, see [Handle sorting events (preview)](excel-add-ins-worksheets.md#handle-sorting-events-preview).</span></span>
+<span data-ttu-id="f8813-158">Lorsque les données sont triées dans une feuille de calcul, une notification d’événement est déclenchée.</span><span class="sxs-lookup"><span data-stu-id="f8813-158">When data is sorted in a worksheet, an event notification fires.</span></span> <span data-ttu-id="f8813-159">Pour en savoir plus sur les événements liés au tri et sur la manière dont votre complément peut inscrire des gestionnaires d’événements pour répondre à ces événements, voir [Gérer les événements de tri](excel-add-ins-worksheets.md#handle-sorting-events).</span><span class="sxs-lookup"><span data-stu-id="f8813-159">To learn more about sort-related events and how your add-in can register event handlers to respond to such events, see [Handle sorting events (preview)](excel-add-ins-worksheets.md#handle-sorting-events).</span></span>
 
-## <a name="apply-filters-to-a-table"></a><span data-ttu-id="ed0ae-160">Appliquer des filtres à un tableau</span><span class="sxs-lookup"><span data-stu-id="ed0ae-160">Apply filters to a table</span></span>
+## <a name="apply-filters-to-a-table"></a><span data-ttu-id="f8813-160">Appliquer des filtres à un tableau</span><span class="sxs-lookup"><span data-stu-id="f8813-160">Apply filters to a table</span></span>
 
-<span data-ttu-id="ed0ae-p113">L’exemple de code suivant applique des filtres aux colonnes **Amount** et **Category** d’un tableau. Grâce à l’utilisation des filtres, seules les lignes dans lesquelles **Category** est une des valeurs spécifiées et la valeur de **Amount** est inférieure à la valeur moyenne de toutes les lignes sont affichées.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-p113">The following code sample applies filters to the **Amount** column and the **Category** column within a table. As a result of the filters, only rows where **Category** is one of the specified values and **Amount** is below the average value for all rows is shown.</span></span>
+<span data-ttu-id="f8813-p113">L’exemple de code suivant applique des filtres aux colonnes **Amount** et **Category** d’un tableau. Grâce à l’utilisation des filtres, seules les lignes dans lesquelles **Category** est une des valeurs spécifiées et la valeur de **Amount** est inférieure à la valeur moyenne de toutes les lignes sont affichées.</span><span class="sxs-lookup"><span data-stu-id="f8813-p113">The following code sample applies filters to the **Amount** column and the **Category** column within a table. As a result of the filters, only rows where **Category** is one of the specified values and **Amount** is below the average value for all rows is shown.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -315,13 +315,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="ed0ae-163">**Données de tableau avec des filtres appliqués pour les colonnes Category et Amount**</span><span class="sxs-lookup"><span data-stu-id="ed0ae-163">**Table data with filters applied for Category and Amount**</span></span>
+<span data-ttu-id="f8813-163">**Données de tableau avec des filtres appliqués pour les colonnes Category et Amount**</span><span class="sxs-lookup"><span data-stu-id="f8813-163">**Table data with filters applied for Category and Amount**</span></span>
 
 ![Données de tableau filtrées dans Excel](../images/excel-tables-filters-apply.png)
 
-## <a name="clear-table-filters"></a><span data-ttu-id="ed0ae-165">Effacer les filtres du tableau</span><span class="sxs-lookup"><span data-stu-id="ed0ae-165">Clear table filters</span></span>
+## <a name="clear-table-filters"></a><span data-ttu-id="f8813-165">Effacer les filtres du tableau</span><span class="sxs-lookup"><span data-stu-id="f8813-165">Clear table filters</span></span>
 
-<span data-ttu-id="ed0ae-166">L’exemple de code suivant efface tous les filtres appliqués actuellement sur le tableau.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-166">The following code sample clears any filters currently applied on the table.</span></span>
+<span data-ttu-id="f8813-166">L’exemple de code suivant efface tous les filtres appliqués actuellement sur le tableau.</span><span class="sxs-lookup"><span data-stu-id="f8813-166">The following code sample clears any filters currently applied on the table.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -334,13 +334,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="ed0ae-167">**Données de tableau sans filtre appliqué**</span><span class="sxs-lookup"><span data-stu-id="ed0ae-167">**Table data with no filters applied**</span></span>
+<span data-ttu-id="f8813-167">**Données de tableau sans filtre appliqué**</span><span class="sxs-lookup"><span data-stu-id="f8813-167">**Table data with no filters applied**</span></span>
 
 ![Données de tableau non filtrées dans Excel](../images/excel-tables-filters-clear.png)
 
-## <a name="get-the-visible-range-from-a-filtered-table"></a><span data-ttu-id="ed0ae-169">Obtenir la plage visible à partir d’une table filtrée</span><span class="sxs-lookup"><span data-stu-id="ed0ae-169">Get the visible range from a filtered table</span></span>
+## <a name="get-the-visible-range-from-a-filtered-table"></a><span data-ttu-id="f8813-169">Obtenir la plage visible à partir d’une table filtrée</span><span class="sxs-lookup"><span data-stu-id="f8813-169">Get the visible range from a filtered table</span></span>
 
-<span data-ttu-id="ed0ae-p114">L’exemple de code suivant recherche une plage qui contient des données uniquement pour des cellules qui sont actuellement visibles dans le tableau spécifié, et écrit ensuite les valeurs de la plage dans la console. Vous pouvez utiliser la méthode **getVisibleView()** comme indiqué ci-dessous pour rechercher le contenu d’un tableau visible dès que les filtres de colonne ont été appliqués.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-p114">The following code sample gets a range that contains data only for cells that are currently visible within the specified table, and then writes the values of that range to the console. You can use the **getVisibleView()** method as shown below to get the visible contents of a table whenever column filters have been applied.</span></span>
+<span data-ttu-id="f8813-p114">L’exemple de code suivant recherche une plage qui contient des données uniquement pour des cellules qui sont actuellement visibles dans le tableau spécifié, et écrit ensuite les valeurs de la plage dans la console. Vous pouvez utiliser la méthode **getVisibleView()** comme indiqué ci-dessous pour rechercher le contenu d’un tableau visible dès que les filtres de colonne ont été appliqués.</span><span class="sxs-lookup"><span data-stu-id="f8813-p114">The following code sample gets a range that contains data only for cells that are currently visible within the specified table, and then writes the values of that range to the console. You can use the **getVisibleView()** method as shown below to get the visible contents of a table whenever column filters have been applied.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -357,11 +357,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="autofilter"></a><span data-ttu-id="ed0ae-172">Filtre automatique</span><span class="sxs-lookup"><span data-stu-id="ed0ae-172">AutoFilter</span></span>
+## <a name="autofilter"></a><span data-ttu-id="f8813-172">Filtre automatique</span><span class="sxs-lookup"><span data-stu-id="f8813-172">AutoFilter</span></span>
 
-<span data-ttu-id="ed0ae-173">Un complément peut utiliser l’objet[filtre automatique](/javascript/api/excel/excel.autofilter) du tableau pour filtrer des données.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-173">An add-in can use the table's [AutoFilter](/javascript/api/excel/excel.autofilter) object to filter data.</span></span> <span data-ttu-id="ed0ae-174">Un `AutoFilter` objet figure la structure de filtre entière d’une tableau ou d’une plage.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-174">An `AutoFilter` object is the entire filter structure of a table or range.</span></span> <span data-ttu-id="ed0ae-175">Toutes les opérations de filtrage décrites précédemment dans cet article sont compatibles avec le filtre automatique.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-175">All of the filter operations discussed earlier in this article are compatible with the auto-filter.</span></span> <span data-ttu-id="ed0ae-176">Le point d’accès unique rend plus facile l’accès et la gestion de plusieurs filtres.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-176">The single access point does make it easier to access and manage multiple filters.</span></span>
+<span data-ttu-id="f8813-173">Un complément peut utiliser l’objet[filtre automatique](/javascript/api/excel/excel.autofilter) du tableau pour filtrer des données.</span><span class="sxs-lookup"><span data-stu-id="f8813-173">An add-in can use the table's [AutoFilter](/javascript/api/excel/excel.autofilter) object to filter data.</span></span> <span data-ttu-id="f8813-174">Un `AutoFilter` objet figure la structure de filtre entière d’une tableau ou d’une plage.</span><span class="sxs-lookup"><span data-stu-id="f8813-174">An `AutoFilter` object is the entire filter structure of a table or range.</span></span> <span data-ttu-id="f8813-175">Toutes les opérations de filtrage décrites précédemment dans cet article sont compatibles avec le filtre automatique.</span><span class="sxs-lookup"><span data-stu-id="f8813-175">All of the filter operations discussed earlier in this article are compatible with the auto-filter.</span></span> <span data-ttu-id="f8813-176">Le point d’accès unique rend plus facile l’accès et la gestion de plusieurs filtres.</span><span class="sxs-lookup"><span data-stu-id="f8813-176">The single access point does make it easier to access and manage multiple filters.</span></span>
 
-<span data-ttu-id="ed0ae-177">L’exemple de code suivant montre le même [filtrage que celui de l’exemple de code antérieur des données](#apply-filters-to-a-table), mais effectué efficacement et entièrement via le filtre automatique.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-177">The following code sample shows the same [data filtering as the earlier code sample](#apply-filters-to-a-table), but done entirely through the auto-filter.</span></span>
+<span data-ttu-id="f8813-177">L’exemple de code suivant montre le même [filtrage que celui de l’exemple de code antérieur des données](#apply-filters-to-a-table), mais effectué efficacement et entièrement via le filtre automatique.</span><span class="sxs-lookup"><span data-stu-id="f8813-177">The following code sample shows the same [data filtering as the earlier code sample](#apply-filters-to-a-table), but done entirely through the auto-filter.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -381,11 +381,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="ed0ae-178">Un `AutoFilter` peut également être appliqué à une plage au niveau de la feuille de calcul.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-178">An `AutoFilter` can also be applied to a range at the worksheet level.</span></span> <span data-ttu-id="ed0ae-179">Pour plus d’informations, consultez [Travailler avec des feuilles de calcul avec l’API JavaScript Excel](excel-add-ins-worksheets.md#filter-data).</span><span class="sxs-lookup"><span data-stu-id="ed0ae-179">See [Work with worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md#filter-data) for more information.</span></span>
+<span data-ttu-id="f8813-178">Un `AutoFilter` peut également être appliqué à une plage au niveau de la feuille de calcul.</span><span class="sxs-lookup"><span data-stu-id="f8813-178">An `AutoFilter` can also be applied to a range at the worksheet level.</span></span> <span data-ttu-id="f8813-179">Pour plus d’informations, consultez [Travailler avec des feuilles de calcul avec l’API JavaScript Excel](excel-add-ins-worksheets.md#filter-data).</span><span class="sxs-lookup"><span data-stu-id="f8813-179">See [Work with worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md#filter-data) for more information.</span></span>
 
-## <a name="format-a-table"></a><span data-ttu-id="ed0ae-180">Mettre en forme un tableau</span><span class="sxs-lookup"><span data-stu-id="ed0ae-180">Format a table</span></span>
+## <a name="format-a-table"></a><span data-ttu-id="f8813-180">Mettre en forme un tableau</span><span class="sxs-lookup"><span data-stu-id="f8813-180">Format a table</span></span>
 
-<span data-ttu-id="ed0ae-p117">L’exemple de code suivant applique une mise en forme à un tableau. Il indique différentes couleurs de remplissage pour la ligne d’en-tête, le corps, la deuxième ligne et la première colonne du tableau. Pour plus d’informations sur les propriétés que vous pouvez utiliser pour spécifier un format, reportez-vous à la rubrique [Objet RangeFormat (API JavaScript pour Excel)](/javascript/api/excel/excel.rangeformat).</span><span class="sxs-lookup"><span data-stu-id="ed0ae-p117">The following code sample applies formatting to a table. It specifies different fill colors for the header row of the table, the body of the table, the second row of the table, and the first column of the table. For information about the properties you can use to specify format, see [RangeFormat Object (JavaScript API for Excel)](/javascript/api/excel/excel.rangeformat).</span></span>
+<span data-ttu-id="f8813-p117">L’exemple de code suivant applique une mise en forme à un tableau. Il indique différentes couleurs de remplissage pour la ligne d’en-tête, le corps, la deuxième ligne et la première colonne du tableau. Pour plus d’informations sur les propriétés que vous pouvez utiliser pour spécifier un format, reportez-vous à la rubrique [Objet RangeFormat (API JavaScript pour Excel)](/javascript/api/excel/excel.rangeformat).</span><span class="sxs-lookup"><span data-stu-id="f8813-p117">The following code sample applies formatting to a table. It specifies different fill colors for the header row of the table, the body of the table, the second row of the table, and the first column of the table. For information about the properties you can use to specify format, see [RangeFormat Object (JavaScript API for Excel)](/javascript/api/excel/excel.rangeformat).</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -401,13 +401,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="ed0ae-184">**Tableau après application de la mise en forme**</span><span class="sxs-lookup"><span data-stu-id="ed0ae-184">**Table after formatting is applied**</span></span>
+<span data-ttu-id="f8813-184">**Tableau après application de la mise en forme**</span><span class="sxs-lookup"><span data-stu-id="f8813-184">**Table after formatting is applied**</span></span>
 
 ![Tableau après application de la mise en forme dans Excel](../images/excel-tables-formatting-after.png)
 
-## <a name="convert-a-range-to-a-table"></a><span data-ttu-id="ed0ae-186">Convertir une plage en tableau</span><span class="sxs-lookup"><span data-stu-id="ed0ae-186">Convert a range to a table</span></span>
+## <a name="convert-a-range-to-a-table"></a><span data-ttu-id="f8813-186">Convertir une plage en tableau</span><span class="sxs-lookup"><span data-stu-id="f8813-186">Convert a range to a table</span></span>
 
-<span data-ttu-id="ed0ae-187">L’exemple de code suivant crée une plage de données, puis la convertit en tableau.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-187">The following code sample creates a range of data and then converts that range to a table.</span></span>
+<span data-ttu-id="f8813-187">L’exemple de code suivant crée une plage de données, puis la convertit en tableau.</span><span class="sxs-lookup"><span data-stu-id="f8813-187">The following code sample creates a range of data and then converts that range to a table.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -441,17 +441,17 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="ed0ae-188">**Données de la plage (avant la conversion de la plage en tableau)**</span><span class="sxs-lookup"><span data-stu-id="ed0ae-188">**Data in the range (before the range is converted to a table)**</span></span>
+<span data-ttu-id="f8813-188">**Données de la plage (avant la conversion de la plage en tableau)**</span><span class="sxs-lookup"><span data-stu-id="f8813-188">**Data in the range (before the range is converted to a table)**</span></span>
 
 ![Données de la plage dans Excel](../images/excel-ranges.png)
 
-<span data-ttu-id="ed0ae-190">**Données du tableau (après la conversion de la plage en tableau)**</span><span class="sxs-lookup"><span data-stu-id="ed0ae-190">**Data in the table (after the range is converted to a table)**</span></span>
+<span data-ttu-id="f8813-190">**Données du tableau (après la conversion de la plage en tableau)**</span><span class="sxs-lookup"><span data-stu-id="f8813-190">**Data in the table (after the range is converted to a table)**</span></span>
 
 ![Données du tableau dans Excel](../images/excel-tables-from-range.png)
 
-## <a name="import-json-data-into-a-table"></a><span data-ttu-id="ed0ae-192">Importer des données JSON dans un tableau</span><span class="sxs-lookup"><span data-stu-id="ed0ae-192">Import JSON data into a table</span></span>
+## <a name="import-json-data-into-a-table"></a><span data-ttu-id="f8813-192">Importer des données JSON dans un tableau</span><span class="sxs-lookup"><span data-stu-id="f8813-192">Import JSON data into a table</span></span>
 
-<span data-ttu-id="ed0ae-p118">L’exemple de code suivant crée un tableau dans la feuille de calcul nommée **Sample** , puis remplit le tableau à l’aide d’un objet JSON qui définit les deux lignes de données. Si l’application hôte Excel dans laquelle le code est en cours d’exécution prend en charge [l’ensemble de conditions requises](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour s’ajuster au mieux aux données actuelles du tableau.</span><span class="sxs-lookup"><span data-stu-id="ed0ae-p118">The following code sample creates a table in the worksheet named **Sample** and then populates the table by using a JSON object that defines two rows of data. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.</span></span>
+<span data-ttu-id="f8813-p118">L’exemple de code suivant crée un tableau dans la feuille de calcul nommée **Sample** , puis remplit le tableau à l’aide d’un objet JSON qui définit les deux lignes de données. Si l’application hôte Excel dans laquelle le code est en cours d’exécution prend en charge [l’ensemble de conditions requises](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour s’ajuster au mieux aux données actuelles du tableau.</span><span class="sxs-lookup"><span data-stu-id="f8813-p118">The following code sample creates a table in the worksheet named **Sample** and then populates the table by using a JSON object that defines two rows of data. If the Excel host application where the code is running supports [requirement set](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -492,10 +492,10 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="ed0ae-195">**Nouveau tableau**</span><span class="sxs-lookup"><span data-stu-id="ed0ae-195">**New table**</span></span>
+<span data-ttu-id="f8813-195">**Nouveau tableau**</span><span class="sxs-lookup"><span data-stu-id="f8813-195">**New table**</span></span>
 
 ![Nouveau tableau dans Excel](../images/excel-tables-create-from-json.png)
 
-## <a name="see-also"></a><span data-ttu-id="ed0ae-197">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ed0ae-197">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f8813-197">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f8813-197">See also</span></span>
 
-- [<span data-ttu-id="ed0ae-198">Concepts fondamentaux de programmation avec l’API JavaScript pour Excel</span><span class="sxs-lookup"><span data-stu-id="ed0ae-198">Fundamental programming concepts with the Excel JavaScript API</span></span>](excel-add-ins-core-concepts.md)
+- [<span data-ttu-id="f8813-198">Concepts fondamentaux de programmation avec l’API JavaScript pour Excel</span><span class="sxs-lookup"><span data-stu-id="f8813-198">Fundamental programming concepts with the Excel JavaScript API</span></span>](excel-add-ins-core-concepts.md)
