@@ -1,14 +1,14 @@
 ---
 title: Résolutions des limites de stratégie d’origine identique dans les compléments Office
 description: ''
-ms.date: 02/08/2019
+ms.date: 10/17/2019
 localization_priority: Priority
-ms.openlocfilehash: 52af2eef2881b48feb141182233bc194ae406aa0
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 353dfc40df79f74614bb2eab026a65c54c3f16b9
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449070"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37681836"
 ---
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>Résolutions des limites de stratégie d’origine identique dans les compléments Office
 
@@ -18,11 +18,11 @@ Comme les Compléments Office sont hébergés dans un contrôle de navigateur, l
 
 La stratégie de la même origine peut être un handicap inutile dans de nombreuses situations, par exemple, quand une application web héberge du contenu et des API au sein de plusieurs sous-domaines. Il existe quelques techniques permettant de surmonter le renforcement de la stratégie de la même origine. Cet article peut fournir uniquement l’introduction la plus courte à certains d'entre eux. Utilisez des liens fournis pour commencer à utiliser vos recherches des techniques suivantes.
 
-## <a name="use-jsonp-for-anonymous-access"></a>Utilisation de JSON/P pour un accès anonyme
+## <a name="use-jsonp-for-anonymous-access"></a>Utilisation de JSONP pour un accès anonyme
 
-Une façon de contourner cette limitation consiste à utiliser [JSON/P](https://www.w3schools.com/js/js_json_jsonp.asp) afin de fournir un proxy pour le service web. Pour ce faire, incluez une balise `script` avec un attribut `src` qui pointe vers un script hébergé sur n’importe quel domaine. Vous pouvez créer les balises `script` par programmation, créer dynamiquement l’URL vers laquelle pointer l’attribut `src`, puis passer des paramètres à l’URL au moyen de paramètres de requête URI. Les fournisseurs de services web créent et hébergent du code JavaScript sur des URL spécifiques et renvoient des scripts différents selon les paramètres de requête URI. Ces scripts s’exécutent ensuite là où ils sont insérés et fonctionnent comme prévu.
+Une façon de contourner cette limitation consiste à utiliser [JSONP](https://www.w3schools.com/js/js_json_jsonp.asp) afin de fournir un proxy pour le service web. Pour ce faire, incluez une balise `script` avec un attribut `src` qui pointe vers un script hébergé sur n’importe quel domaine. Vous pouvez créer les balises `script` par programmation, créer dynamiquement l’URL vers laquelle pointer l’attribut `src`, puis passer des paramètres à l’URL au moyen de paramètres de requête URI. Les fournisseurs de services web créent et hébergent du code JavaScript sur des URL spécifiques et renvoient des scripts différents selon les paramètres de requête URI. Ces scripts s’exécutent ensuite là où ils sont insérés et fonctionnent comme prévu.
 
-L’exemple suivant illustre JSON/P utilisant une technique qui fonctionne dans n’importe quel Complément Office.
+L’exemple suivant illustre JSONP utilisant une technique qui fonctionne dans n’importe quel Complément Office.
 
 ```js
 // Dynamically create an HTML SCRIPT element that obtains the details for the specified video.

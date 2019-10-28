@@ -3,12 +3,12 @@ title: Utilisation de tableaux à l’aide de l’API JavaScript pour Excel
 description: ''
 ms.date: 09/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 7803690b4a20aa89908a20cf557f8076f5fea70a
-ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
+ms.openlocfilehash: d3109d28a4eb8a1a16ff1919a201284024f10c38
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "36838549"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37681976"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Utilisation de tableaux à l’aide de l’API JavaScript pour Excel
 
@@ -285,7 +285,7 @@ Excel.run(function (context) {
 
 ![Données de tableau dans Excel](../images/excel-tables-sort.png)
 
-Lorsque les données sont triées dans une feuille de calcul, une notification d’événement est déclenchée. Pour en savoir plus sur les événements liés au tri et sur la manière dont votre complément peut inscrire des gestionnaires d’événements pour répondre à ces événements, voir [Gérer les événements de tri (aperçu)](excel-add-ins-worksheets.md#handle-sorting-events-preview).
+Lorsque les données sont triées dans une feuille de calcul, une notification d’événement est déclenchée. Pour en savoir plus sur les événements liés au tri et sur la manière dont votre complément peut inscrire des gestionnaires d’événements pour répondre à ces événements, voir [Gérer les événements de tri](excel-add-ins-worksheets.md#handle-sorting-events).
 
 ## <a name="apply-filters-to-a-table"></a>Appliquer des filtres à un tableau
 

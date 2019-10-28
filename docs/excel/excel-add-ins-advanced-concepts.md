@@ -3,12 +3,12 @@ title: Concepts avancés de programmation avec l’API JavaScript Excel
 description: ''
 ms.date: 07/17/2019
 localization_priority: Priority
-ms.openlocfilehash: a4639070ed74f9beb757de7c30d1d7e32a3e63fa
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: 8755b479543d48fcbbbf2bfa1ea93fb40af87ecf
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477753"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37681927"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>Concepts avancés de programmation avec l’API JavaScript Excel
 
@@ -145,7 +145,7 @@ myWorksheets.load({
 
 ## <a name="scalar-and-navigation-properties"></a>Propriétés scalaires et de navigation
 
-Il existe deux catégories de propriétés: **scalaire** et **de navigation**. Les propriétés scalaires peuvent se voir attribuer des types, tels que des chaînes, des nombres entiers et des structures JSON. Les propriétés de navigation sont des objets en lecture seule et des collections d’objets dont les champs sont assignés, et non pas la propriété directement. Par exemple, les membres `name` et `position` sur l’objet [Worksheet](/javascript/api/excel/excel.worksheet) sont des propriétés scalaires, tandis que `protection` et `tables` sont des propriétés de navigation. `prompt` sur l’objet [DataValidation] est un exemple de propriété scalaire qui doit être définie à l’aide d’un objet JSON (`dv.prompt = { title: "MyPrompt"}`), au lieu de définir les sous-propriétés (`dv.prompt.title = "MyPrompt" // will not set the title`).
+Il existe deux catégories de propriétés: **scalaire** et **de navigation**. Les propriétés scalaires peuvent se voir attribuer des types, tels que des chaînes, des nombres entiers et des structures JSON. Les propriétés de navigation sont des objets en lecture seule et des collections d’objets dont les champs sont assignés, et non pas la propriété directement. Par exemple, les membres `name` et `position` sur l’objet [Worksheet](/javascript/api/excel/excel.worksheet) sont des propriétés scalaires, tandis que `protection` et `tables` sont des propriétés de navigation. `prompt` sur l’objet [DataValidation](/javascript/api/excel/excel.datavalidation) est un exemple de propriété scalaire qui doit être définie à l’aide d’un objet JSON (`dv.prompt = { title: "MyPrompt"}`), au lieu de définir les sous-propriétés (`dv.prompt.title = "MyPrompt" // will not set the title`).
 
 ### <a name="scalar-properties-and-navigation-properties-with-objectload"></a>Propriétés scalaires et propriétés de navigation avec `object.load()`
 

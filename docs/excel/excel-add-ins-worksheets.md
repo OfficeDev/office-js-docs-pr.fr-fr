@@ -1,14 +1,14 @@
 ---
 title: Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 description: ''
-ms.date: 10/16/2019
+ms.date: 10/22/2019
 localization_priority: Priority
-ms.openlocfilehash: ea8dad58bdd1ce3875751661806293e9aa1222fb
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 0f5e91d32e0fdd3111364dda2b00a9a62dba3d63
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626844"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37681948"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 
@@ -318,10 +318,7 @@ function onWorksheetChanged(eventArgs) {
 }
 ```
 
-## <a name="handle-sorting-events-preview"></a>Gérer les événements de tri (aperçu)
-
-> [!NOTE]
-> Les API pour ces événements liés au tri sont actuellement disponibles uniquement en mode préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="handle-sorting-events"></a>Gérer les événements de tri
 
 Les  événements `onColumnSorted` et `onRowSorted` indiquent quand les données d’une feuille de calcul sont triées. Ces événements sont connectés à des objets individuels `Worksheet` et aux classeurs `WorkbookCollection`. Il se déclenche si le tri est effectué par programme ou manuellement via l’interface utilisateur d’Excel.
 

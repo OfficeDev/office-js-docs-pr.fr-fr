@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: ''
-ms.date: 08/15/2019
+ms.date: 10/18/2019
 localization_priority: Priority
-ms.openlocfilehash: aa3f46c505e8c87508699f6e84194272ee4d13bb
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 40bf17a6bfcc429b3de013a1b232a7c054b22768
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696455"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37682528"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -226,15 +226,21 @@ Ajout d’une nouvelle fonction qui renvoie les données d’initialisation tran
 
 #### <a name="internetheadersjavascriptapioutlookofficeinternetheaders"></a>[InternetHeaders](/javascript/api/outlook/office.internetheaders)
 
-Ajout d’un nouvel objet représentant les en-têtes Internet personnalisés d’un élément de message.
+Ajout d’un nouvel objet représentant les en-têtes Internet personnalisés d’un élément de message. Mode composition uniquement.
 
 **Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur Mac (connecté à Office 365)
 
-#### <a name="officecontextmailboxiteminternetheadersofficecontextmailboxitemmdinternetheaders-internetheaders"></a>[Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#internetheaders-internetheaders)
+#### <a name="officecontextmailboxiteminternetheadersjavascriptapioutlookofficemessagecomposeinternetheaders"></a>[Office.context.mailbox.item.internetHeaders](/javascript/api/outlook/office.messagecompose#internetheaders)
 
-Ajout d’une nouvelle propriété représentant les en-têtes Internet personnalisés d’un élément de message.
+Ajout d’une nouvelle propriété représentant les en-têtes Internet personnalisés d’un élément de message. Mode composition uniquement.
 
-**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur Mac (connecté à Office 365)
+**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur Mac (connecté à l’abonnement Office 365)
+
+#### <a name="officecontextmailboxitemgetallinternetheadersasyncjavascriptapioutlookofficemessagereadgetallinternetheadersasync-options--callback-"></a>[Office.context.mailbox.item.getAllInternetHeadersAsync](/javascript/api/outlook/office.messageread#getallinternetheadersasync-options--callback-)
+
+Ajout d’une nouvelle méthode qui récupère tous les en-têtes Internet pour un élément de message. Mode Lecture uniquement.
+
+**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
 
 <br>
 

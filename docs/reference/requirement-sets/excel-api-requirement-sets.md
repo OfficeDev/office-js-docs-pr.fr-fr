@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API JavaScript pour Excel
 description: Informations sur la configuration requise pour le complément Office sur les builds Excel
-ms.date: 07/11/2019
+ms.date: 10/22/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: ec49cbdadf65b653170f9b5cbcafa6aaf0fa5177
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: 11fcf917b5dddb4a366465f11362c93660881597
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804975"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37681941"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Excel
 
@@ -27,6 +27,7 @@ Les compléments Excel peuvent être exécutés dans différentes versions d’O
 |  Ensemble de conditions requises  |  Office pour Windows<br>(connecté à l’abonnement Office 365)  |  Office sur iPad<br>(connecté à l’abonnement Office 365)  |  Office sur Mac<br>(connecté à l’abonnement Office 365)  | Office sur le web |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [Aperçu](excel-preview-apis.md)  | Veuillez utiliser la dernière version d’Office pour tester la préversion API (vous devrez peut-être rejoindre la [programme Office Insider](https://products.office.com/office-insider)) |
+| [ExcelApi 1.10](excel-api-1-10-requirement-set.md) | Version 1907 (Build 11929.20306) ou version ultérieure | 2.30 ou version ultérieure | 16.30 ou version ultérieure | Octobre 2019 |
 | [ExcelApi 1.9](excel-api-1-9-requirement-set.md)  | Version 1903 (Build 11425.20204) ou version ultérieure | 2.24 ou version ultérieure | 16.24 ou version ultérieure | Mai 2019 |
 | [ExcelApi 1.8](excel-api-1-8-requirement-set.md)  | Version 1808 (build 10730.20102) ou ultérieure | 2.17 ou version ultérieure | 16.17 ou version ultérieure | Septembre 2018 |
 | [ExcelApi 1.7](excel-api-1-7-requirement-set.md)  | Version 1801 (build 9001.2171) ou ultérieure   | 2.9 ou version ultérieure  | 16.9 ou version ultérieure  | Avril 2018 |
@@ -42,7 +43,7 @@ Les compléments Excel peuvent être exécutés dans différentes versions d’O
 
 ## <a name="office-versions-and-build-numbers"></a>Numéros de version et de build d’Office
 
-Pour plus d’informations sur les versions et les numéros de build d’Office, voir :
+Pour plus d’informations sur les versions et les numéros de build d’Office, voir :
 
 - [Numéros de version et de build des canaux de réception des mises à jour pour les clients Office 365](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [Quelle est la version d’Office que j’utilise ?](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
