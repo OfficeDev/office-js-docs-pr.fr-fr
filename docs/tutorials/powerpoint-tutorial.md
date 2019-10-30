@@ -1,15 +1,15 @@
 ---
 title: Didacticiel sur les compléments PowerPoint
 description: Dans ce didacticiel, vous allez créer un complément PowerPoint qui insère une image, insère du texte, obtient les métadonnées des diapositives et navigue entre les diapositives.
-ms.date: 10/17/2019
+ms.date: 10/29/2019
 ms.prod: powerpoint
 localization_priority: Normal
-ms.openlocfilehash: 8f1b67341c2d796ff9213682e7ee759995f915f2
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 73d7e041a10a3991d2ba87b420eece191603983a
+ms.sourcegitcommit: 818036a7163b1513d047e66a20434060415df241
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37627110"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "37775297"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de PowerPoint
 
@@ -29,11 +29,11 @@ Dans ce didacticiel, vous utiliserez Visual Studio pour créer un complément de
 
 Procédez comme suit pour créer un projet complément PowerPoint à l’aide de Visual Studio.
 
-1. Choisissez **créer un nouveau projet**.
+1. Choisissez **Créer un nouveau projet**.
 
-2. À l’aide de la zone de recherche, entrez **complément**. Choisissez **complément Web PowerPoint**, puis cliquez sur **suivant**.
+2. À l’aide de la zone de recherche, entrez **complément**. Choisissez **Complément web PowerPoint**, puis sélectionnez **Suivant**.
 
-3. Nommez votre projet et sélectionnez **créer**.
+3. Nommez le `HelloWorld`projet, puis sélectionnez **créer**.
 
 4. Dans la fenêtre de la boîte de dialogue **Créer un complément Office**, choisissez **Ajouter de nouvelles fonctionnalités à PowerPoint**, puis sélectionnez **Terminer** pour créer le projet.
 
@@ -71,11 +71,11 @@ Modifiez le code de complément comme suit pour créer la structure que vous uti
 
         var messageBanner;
 
-        Office.initialize = function (reason) {
+        Office.onReady(function () {
             $(document).ready(function () {
                 // Initialize the FabricUI notification mechanism and hide it
-                var element = document.querySelector('.ms-MessageBanner');
-                messageBanner = new fabric.MessageBanner(element);
+                var element = document.querySelector('.MessageBanner');
+                messageBanner = new components.MessageBanner(element);
                 messageBanner.hideBanner();
 
                 // TODO1: Assign event handler for insert-image button.
@@ -83,7 +83,7 @@ Modifiez le code de complément comme suit pour créer la structure que vous uti
                 // TODO6: Assign event handler for get-slide-metadata button.
                 // TODO8: Assign event handlers for the four navigation buttons.
             });
-        };
+        });
 
         // TODO2: Define the insertImage function. 
 
@@ -170,10 +170,10 @@ Procédez comme suit pour ajouter le code qui récupère la photo[Bing](https://
 6. Dans le fichier **Home.html**, remplacez `TODO1` par le balisage suivant. Ce balisage définit le bouton **Insert Image** (Insérer une image) qui s’affichera dans volet Office du complément.
 
     ```html
-    <button class="ms-Button ms-Button--primary" id="insert-image">
-        <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
-        <span class="ms-Button-label">Insert Image</span>
-        <span class="ms-Button-description">Gets the photo of the day that shows on the Bing home page and adds it to the slide.</span>
+    <button class="Button Button--primary" id="insert-image">
+        <span class="Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+        <span class="Button-label">Insert Image</span>
+        <span class="Button-description">Gets the photo of the day that shows on the Bing home page and adds it to the slide.</span>
     </button>
     ```
 
@@ -282,10 +282,10 @@ Procédez comme suit pour ajouter le code qui insère le texte dans la diapositi
 
     ```html
         <br /><br />
-        <button class="ms-Button ms-Button--primary" id="insert-text">
-            <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
-            <span class="ms-Button-label">Insert Text</span>
-            <span class="ms-Button-description">Inserts text into the slide.</span>
+        <button class="Button Button--primary" id="insert-text">
+            <span class="Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+            <span class="Button-label">Insert Text</span>
+            <span class="Button-description">Inserts text into the slide.</span>
         </button>
     ```
 
@@ -339,10 +339,10 @@ Procédez comme suit pour ajouter du code qui extrait les métadonnées pour la 
 
     ```html
     <br /><br />
-    <button class="ms-Button ms-Button--primary" id="get-slide-metadata">
-        <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
-        <span class="ms-Button-label">Get Slide Metadata</span>
-        <span class="ms-Button-description">Gets metadata for the selected slide(s).</span>
+    <button class="Button Button--primary" id="get-slide-metadata">
+        <span class="Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+        <span class="Button-label">Get Slide Metadata</span>
+        <span class="Button-description">Gets metadata for the selected slide(s).</span>
     </button>
     ```
 
@@ -394,28 +394,28 @@ Procédez comme suit pour ajouter le code qui navigue entre les diapositives d�
 
     ```html
     <br /><br />
-    <button class="ms-Button ms-Button--primary" id="go-to-first-slide">
-        <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
-        <span class="ms-Button-label">Go to First Slide</span>
-        <span class="ms-Button-description">Go to the first slide.</span>
+    <button class="Button Button--primary" id="go-to-first-slide">
+        <span class="Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+        <span class="Button-label">Go to First Slide</span>
+        <span class="Button-description">Go to the first slide.</span>
     </button>
     <br /><br />
-    <button class="ms-Button ms-Button--primary" id="go-to-next-slide">
-        <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
-        <span class="ms-Button-label">Go to Next Slide</span>
-        <span class="ms-Button-description">Go to the next slide.</span>
+    <button class="Button Button--primary" id="go-to-next-slide">
+        <span class="Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+        <span class="Button-label">Go to Next Slide</span>
+        <span class="Button-description">Go to the next slide.</span>
     </button>
     <br /><br />
-    <button class="ms-Button ms-Button--primary" id="go-to-previous-slide">
-        <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
-        <span class="ms-Button-label">Go to Previous Slide</span>
-        <span class="ms-Button-description">Go to the previous slide.</span>
+    <button class="Button Button--primary" id="go-to-previous-slide">
+        <span class="Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+        <span class="Button-label">Go to Previous Slide</span>
+        <span class="Button-description">Go to the previous slide.</span>
     </button>
     <br /><br />
-    <button class="ms-Button ms-Button--primary" id="go-to-last-slide">
-        <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
-        <span class="ms-Button-label">Go to Last Slide</span>
-        <span class="ms-Button-description">Go to the last slide.</span>
+    <button class="Button Button--primary" id="go-to-last-slide">
+        <span class="Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+        <span class="Button-label">Go to Last Slide</span>
+        <span class="Button-description">Go to the last slide.</span>
     </button>
     ```
 
