@@ -1,0 +1,150 @@
+---
+title: Office. Context. Mailbox. userProfile-ensemble de conditions requises 1,8
+description: ''
+ms.date: 10/30/2019
+localization_priority: Normal
+ms.openlocfilehash: 39a833a81eab22c70d89cdfc61784555312b23d6
+ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "37902164"
+---
+# <a name="userprofile"></a>userProfile
+
+### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmduserprofile"></a>[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile
+
+##### <a name="requirements"></a>Configuration requise
+
+|Conditions requises| Valeur|
+|---|---|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
+
+##### <a name="members-and-methods"></a>Membres et méthodes
+
+| Membre | Type |
+|--------|------|
+| [accountType](#accounttype-string) | Membre |
+| [displayName](#displayname-string) | Membre |
+| [emailAddress](#emailaddress-string) | Membre |
+| [timeZone](#timezone-string) | Membre |
+
+### <a name="members"></a>Membres
+
+#### <a name="accounttype-string"></a>accountType : chaîne
+
+> [!NOTE]
+> Actuellement, ce membre est uniquement pris en charge dans Outlook 2016 ou version ultérieure sur Mac (Build 16.9.1212 ou version ultérieure).
+
+Obtient le type de compte de l’utilisateur associé à la boîte aux lettres. Les valeurs possibles sont répertoriées dans le tableau suivant.
+
+| Valeur | Description |
+|-------|-------------|
+| `enterprise` | La boîte aux lettres se trouve sur un serveur Exchange local. |
+| `gmail` | La boîte aux lettres est associée à un compte gmail. |
+| `office365` | La boîte aux lettres est associée à un compte professionnel ou scolaire Office 365. |
+| `outlookCom` | La boîte aux lettres est associée à un compte Outlook.com personnel. |
+
+##### <a name="type"></a>Type
+
+*   String
+
+##### <a name="requirements"></a>Configuration requise
+
+|Conditions requises| Valeur|
+|---|---|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.6 |
+|[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
+
+##### <a name="example"></a>Exemple
+
+```js
+console.log(Office.context.mailbox.userProfile.accountType);
+```
+
+<br>
+
+---
+---
+
+#### <a name="displayname-string"></a>displayName : String
+
+Obtient le nom d’affichage de l’utilisateur.
+
+##### <a name="type"></a>Type
+
+*   String
+
+##### <a name="requirements"></a>Configuration requise
+
+|Conditions requises| Valeur|
+|---|---|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
+
+##### <a name="example"></a>Exemple
+
+```js
+// Example: Allie Bellew
+console.log(Office.context.mailbox.userProfile.displayName);
+```
+
+<br>
+
+---
+---
+
+#### <a name="emailaddress-string"></a>emailAddress : chaîne
+
+Obtient l’adresse de messagerie SMTP de l’utilisateur.
+
+##### <a name="type"></a>Type
+
+*   String
+
+##### <a name="requirements"></a>Configuration requise
+
+|Conditions requises| Valeur|
+|---|---|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
+
+##### <a name="example"></a>Exemple
+
+```js
+// Example: allieb@contoso.com
+console.log(Office.context.mailbox.userProfile.emailAddress);
+```
+
+<br>
+
+---
+---
+
+#### <a name="timezone-string"></a>timeZone : chaîne
+
+Obtient le fuseau horaire par défaut de l’utilisateur.
+
+##### <a name="type"></a>Type
+
+*   String
+
+##### <a name="requirements"></a>Configuration requise
+
+|Conditions requises| Valeur|
+|---|---|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
+
+##### <a name="example"></a>Exemple
+
+```js
+// Example: Pacific Standard Time
+console.log(Office.context.mailbox.userProfile.timeZone);
+```

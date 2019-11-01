@@ -1,21 +1,18 @@
 ---
 title: Élément SupportsSharedFolders dans le fichier manifest
 description: ''
-ms.date: 04/02/2019
+ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 976f8ba00f6ac9ac32def56933af1077527b7e9c
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 42fa1cf74634b183994e633d728d3be66e1e83f0
+ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32452038"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "37902241"
 ---
 # <a name="supportssharedfolders-element"></a>Élément SupportsSharedFolders
 
 Définit si le complément Outlook est disponible dans les scénarios de délégué. L’élément **SupportsSharedFolders** est un élément enfant de [DesktopFormFactor](desktopformfactor.md). Ce paramètre est défini sur *false* par défaut.
-
-> [!IMPORTANT]
-> L'accès délégué pour les compléments Outlook est actuellement [en](/office/dev/add-ins/reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview) préversion et uniquement pris en charge dans les clients qui s'exécutent sur Exchange Online. Les compléments qui utilisent cet élément ne peuvent pas être publiés dans AppSource ou déployés via la fonctionnalité déploiement centralisée.
 
 L’exemple suivant présente l’élément**SupportsSharedFolders**.
 
@@ -30,10 +27,10 @@ L’exemple suivant présente l’élément**SupportsSharedFolders**.
           <SupportsSharedFolders>true</SupportsSharedFolders>
           <FunctionFile resid="residDesktopFuncUrl" />
           <ExtensionPoint xsi:type="MessageReadCommandSurface">
-            <!-- configure selected extension point -->
+            <!-- Configure selected extension point. -->
           </ExtensionPoint>
 
-          <!-- You can define more than one ExtensionPoint element as needed -->
+          <!-- You can define more than one ExtensionPoint element as needed. -->
 
         </DesktopFormFactor>
       </Host>
