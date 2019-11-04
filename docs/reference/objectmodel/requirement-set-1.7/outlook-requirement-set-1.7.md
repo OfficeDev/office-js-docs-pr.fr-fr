@@ -3,16 +3,19 @@ title: Ensemble de conditions requises de l’API du complément Outlook 1.7
 description: ''
 ms.date: 03/20/2019
 localization_priority: Priority
-ms.openlocfilehash: aa5033422d30c41d455ad54aa71cc29c3c4c0c91
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 0f804ba44ab15749d868104719f88ecac5286480
+ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064465"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "37902066"
 ---
 # <a name="outlook-add-in-api-requirement-set-17"></a>Ensemble de conditions requises de l’API du complément Outlook 1.7
 
 Le sous-ensemble de l’API pour le complément Outlook de l’interface API JavaScript pour Office comprend des objets, des méthodes, des propriétés et des événements à utiliser dans un complément Outlook.
+
+> [!NOTE]
+> Dans cette documentation, l’[ensemble de conditions requises](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) présenté est différent de l’ensemble de conditions requises de la version précédente.
 
 ## <a name="whats-new-in-17"></a>Nouveautés de la version 1.7
 
@@ -47,3 +50,4 @@ L’ensemble de conditions requises de la version 1.7 comprend toutes les fonct
 - [Compléments Outlook](/outlook/add-ins/)
 - [Exemples de code pour les compléments Outlook](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
 - [Prise en main](/outlook/add-ins/quick-start)
+- [Ensembles de conditions requises et clients pris en charge](../../requirement-sets/outlook-api-requirement-sets.md)

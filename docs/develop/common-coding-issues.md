@@ -1,18 +1,51 @@
 ---
 title: Problèmes de codage courants et comportements de plateforme inattendus
 description: Liste des problèmes de plateforme d’API JavaScript pour Office fréquemment rencontrés par les développeurs.
-ms.date: 10/29/2019
+ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 8cea95e3214585ba8e0b77535916f9c564dde9df
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: d39c379961833cdb924628becf2c2da3f7e271b9
+ms.sourcegitcommit: 59d29d01bce7543ebebf86e5a86db00cf54ca14a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902152"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "37924793"
 ---
 # <a name="common-coding-issues-and-unexpected-platform-behaviors"></a>Problèmes de codage courants et comportements de plateforme inattendus
 
 Cet article met en évidence les aspects de l’API JavaScript pour Office qui peuvent entraîner un comportement inattendu ou nécessiter des modèles de codage spécifiques pour obtenir le résultat souhaité. Si vous rencontrez un problème qui se trouve dans cette liste, faites-le nous connaître en utilisant le formulaire de commentaires au bas de l’article.
+
+## <a name="common-apis-and-outlook-apis-are-not-promise-based"></a>Les API communes et les API Outlook ne sont pas basées sur la promesse
+
+Les [API communes](/javascript/api/office) (qui ne sont pas liées à un hôte Office particulier) et les [API Outlook](/javascript/api/outlook) utilisent un modèle de programmation basé sur les rappels. L’interaction avec le document Office sous-jacent nécessite un appel asynchrone en lecture ou en écriture qui spécifie un rappel à exécuter lorsque l’opération se termine. Pour obtenir un exemple de ce modèle, consultez la rubrique [document. getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-).
+
+Ces méthodes d’API et d’API courantes ne renvoient pas de [promesses](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise). Par conséquent, vous ne pouvez pas utiliser [await](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await) pour suspendre l’exécution jusqu’à la fin de l’opération asynchrone. Si vous avez `await` besoin de comportement, vous pouvez encapsuler l’appel de méthode dans une promesse créée de manière explicite.
+
+```js
+readDocumentFileAsync(): Promise<any> {
+    return new Promise((resolve, reject) => {
+        const chunkSize = 65536;
+        const self = this;
+
+        Office.context.document.getFileAsync(Office.FileType.Compressed, { sliceSize: chunkSize }, (asyncResult) => {
+            if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                reject(asyncResult.error);
+            } else {
+                // `getAllSlices` is a Promise-wrapped implementation of File.getSliceAsync.
+                self.getAllSlices(asyncResult.value).then(result => {
+                    if (result.IsSuccess) {
+                        resolve(result.Data);
+                    } else {
+                        reject(asyncResult.error);
+                    }
+                });
+            }
+        });
+    });
+}
+```
+
+> [!NOTE]
+> La documentation de référence contient l’implémentation encapsulée de [fichier. getSliceAsync](/javascript/api/office/office.file#getsliceasync-sliceindex--callback-).
 
 ## <a name="some-properties-must-be-set-with-json-structs"></a>Certaines propriétés doivent être définies avec des structs JSON
 
@@ -39,6 +72,17 @@ Vous pouvez identifier une propriété dont les propriétés subordonnées doive
 
 - Propriété en lecture seule : les sous-propriétés peuvent être définies via la navigation.
 - Propriété accessible en écriture : les sous-propriétés doivent être définies avec une structure JSON (et ne peuvent pas être définies via la navigation).
+
+## <a name="excel-range-limits"></a>Limites de plage Excel
+
+Si vous créez un complément Excel qui utilise des plages, gardez à l’esprit les limitations de taille suivantes :
+
+- Excel sur le web a une limite de taille de charge utile de 5 Mo pour les demandes et les réponses. L’erreur `RichAPI.Error` est déclenchée en cas de dépassement de cette limite.
+- Une plage est limitée à 5 millions cellules pour les opérations Set.
+
+Si vous prévoyez que l’entrée de l’utilisateur dépasse ces limites, veillez à vérifier les données et à les fractionner en plusieurs objets. Vous devrez également envoyer plusieurs `context.sync()` appels afin d’éviter que les opérations de plage plus petites soient regroupées.
+
+Votre complément peut utiliser [RangeAreas](/javascript/api/excel/excel.rangeareas) pour mettre à jour les cellules dans une plage plus grande de manière stratégique. Pour plus d’informations, consultez [travailler simultanément avec plusieurs plages dans des compléments Excel](../excel/excel-add-ins-multiple-ranges.md) .
 
 ## <a name="setting-read-only-properties"></a>Définition de propriétés en lecture seule
 

@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: ''
-ms.date: 10/18/2019
+ms.date: 10/30/2019
 localization_priority: Priority
-ms.openlocfilehash: 40bf17a6bfcc429b3de013a1b232a7c054b22768
-ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
+ms.openlocfilehash: bf8f140e893a19a4dec717b985f3bbf4226db9d5
+ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "37682528"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "37902115"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -19,196 +19,11 @@ Le sous-ensemble de l’API pour le complément Outlook de l’interface API Ja
 
 [!INCLUDE [Information about using preview APIs](../../../includes/using-preview-apis-host.md)]
 
-L’ensemble de conditions requises présenté en aperçu comprend toutes les fonctionnalités de l’[ensemble de conditions requises de la version 1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md).
+L’ensemble de conditions requises présenté en aperçu comprend toutes les fonctionnalités de l’[ensemble de conditions requises 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md).
 
 ## <a name="features-in-preview"></a>Fonctionnalités (aperçu) :
 
 Les fonctionnalités suivantes sont disponibles en aperçu.
-
-### <a name="attachments"></a>Pièces jointes
-
-#### <a name="attachmentcontentjavascriptapioutlookofficeattachmentcontent"></a>[AttachmentContent](/javascript/api/outlook/office.attachmentcontent)
-
-Ajout d’un nouvel objet représentant le contenu d’une pièce jointe.
-
-**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur le web (moderne), Outlook sur Mac (connecté à Office 365)
-
-#### <a name="officecontextmailboxitemaddfileattachmentfrombase64asyncofficecontextmailboxitemmdaddfileattachmentfrombase64asyncbase64file-attachmentname-options-callback"></a>[Office.context.mailbox.item.addFileAttachmentFromBase64Async](office.context.mailbox.item.md#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback)
-
-Ajout d’une nouvelle méthode qui vous permet de joindre un fichier représenté par une chaîne encodée en base 64 à un message ou à un rendez-vous.
-
-**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur le web (moderne), Outlook sur Mac (connecté à Office 365)
-
-#### <a name="officecontextmailboxitemgetattachmentcontentasyncofficecontextmailboxitemmdgetattachmentcontentasyncattachmentid-options-callback--attachmentcontent"></a>[Office.context.mailbox.item.getAttachmentContentAsync](office.context.mailbox.item.md#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent)
-
-Ajout d’une nouvelle méthode pour obtenir le contenu d’une pièce jointe spécifique.
-
-**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur le web (moderne), Outlook sur Mac (connecté à Office 365)
-
-#### <a name="officecontextmailboxitemgetattachmentsasyncofficecontextmailboxitemmdgetattachmentsasyncoptions-callback--arrayattachmentdetails"></a>[Office.context.mailbox.item.getAttachmentsAsync](office.context.mailbox.item.md#getattachmentsasyncoptions-callback--arrayattachmentdetails)
-
-Ajout d’une nouvelle méthode qui obtient les pièces jointes d’un élément en mode composition.
-
-**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur le web (moderne), Outlook sur Mac (connecté à Office 365)
-
-#### <a name="officemailboxenumsattachmentcontentformatjavascriptapioutlookofficemailboxenumsattachmentcontentformat"></a>[Office.MailboxEnums.AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat)
-
-Ajout d’une nouvelle énumération qui spécifie la mise en forme qui s’applique au contenu d’une pièce jointe.
-
-**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur le web (moderne), Outlook sur Mac (connecté à Office 365)
-
-#### <a name="officemailboxenumsattachmentstatusjavascriptapioutlookofficemailboxenumsattachmentstatus"></a>[Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus)
-
-Ajout d’une nouvelle énumération qui spécifie si une pièce jointe a été ajoutée à un élément ou supprimée d’un élément.
-
-**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur le web (moderne), Outlook sur Mac (connecté à Office 365)
-
-#### <a name="officeeventtypeattachmentschangedjavascriptapiofficeofficeeventtype"></a>[Office.EventType.AttachmentsChanged](/javascript/api/office/office.eventtype)
-
-Ajout de l’événement `AttachmentsChanged` à `Item`.
-
-**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur le web (moderne), Outlook sur Mac (connecté à Office 365)
-
-<br>
-
----
-
-### <a name="block-on-send"></a>Blocage lors de l’envoi
-
-#### <a name="eventcompletedjavascriptapiofficeofficeaddincommandseventcompleted-options-"></a>[Event.completed](/javascript/api/office/office.addincommands.event#completed-options-)
-
-Ajout d’un nouveau paramètre facultatif `options`, qui est un dictionnaire ayant comme seule valeur valide `allowEvent`. Cette valeur est utilisée pour annuler l’exécution d’un événement.
-
-**Disponible dans** : Outlook sur le web (classique), Outlook sur Windows (connecté à Office 365), Outlook sur Mac (connecté à Office 365)
-
-<br>
-
----
-
-### <a name="categories"></a>Catégories
-
-Dans Outlook, un utilisateur peut regrouper des messages et des rendez-vous à l’aide d’une catégorie pour leur appliquer un code de couleur. L’utilisateur définit les catégories dans une liste sur sa boîte aux lettres principale. Ils peuvent ensuite appliquer une ou plusieurs catégories à un élément.
-
-> [!NOTE]
-> Cette fonctionnalité n’est pas prise en charge dans Outlook sur iOS ou Android.
-
-#### <a name="categoriesjavascriptapioutlookofficecategories"></a>[Categories](/javascript/api/outlook/office.categories)
-
-Ajout d’un nouvel objet représentant des catégories d’un élément.
-
-**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur Mac (connecté à Office 365)
-
-#### <a name="categorydetailsjavascriptapioutlookofficecategorydetails"></a>[Détailscatégorie](/javascript/api/outlook/office.categorydetails)
-
-Ajout un nouvel objet qui représente les détails d’une catégorie (son nom et la couleur associée).
-
-**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur Mac (connecté à Office 365)
-
-#### <a name="mastercategoriesjavascriptapioutlookofficemastercategories"></a>[Catégoriesmaître](/javascript/api/outlook/office.mastercategories)
-
-Ajout d’ un nouvel objet qui représente la liste Catégories maître sur une boîte aux lettres.
-
-**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur Mac (connecté à Office 365)
-
-#### <a name="officecontextmailboxmastercategoriesjavascriptapioutlookofficemailboxmastercategories"></a>[Office.context.mailbox.masterCategories](/javascript/api/outlook/office.mailbox#mastercategories)
-
-Ajout d’ un nouveau propriétaire qui représente la liste Catégories maître sur une boîte aux lettres.
-
-**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur Mac (connecté à Office 365)
-
-#### <a name="officecontextmailboxitemcategoriesjavascriptapioutlookofficeitemcategories"></a>[Office.context.mailbox.item.categories](/javascript/api/outlook/office.item#categories)
-
-Ajout d’une nouvelle propriété représentant l’ensemble des emplacements sur un élément.
-
-**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur Mac (connecté à Office 365)
-
-#### <a name="officemailboxenumscategorycolorjavascriptapioutlookofficemailboxenumscategorycolor"></a>[Office.MailboxEnums.CategoryColor](/javascript/api/outlook/office.mailboxenums.categorycolor)
-
-Ajouté un nouvel enum qui spécifie les couleurs disponibles à associer à des catégories.
-
-**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur Mac (connecté à Office 365)
-
-<br>
-
----
-
-### <a name="delegate-access"></a>Accès délégué
-
-#### <a name="sharedpropertiesjavascriptapioutlookofficesharedproperties"></a>[SharedProperties](/javascript/api/outlook/office.sharedproperties)
-
-Ajout d’un nouvel objet qui représente les propriétés d’un élément rendez-vous ou message dans un dossier, un calendrier ou une boîte aux lettres partagés.
-
-**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur le web (moderne), Outlook sur Mac (connecté à Office 365)
-
-#### <a name="officecontextmailboxitemgetitemidasyncofficecontextmailboxitemmdgetitemidasyncoptions-callback"></a>[Office.context.mailbox.item.getItemIdAsync](office.context.mailbox.item.md#getitemidasyncoptions-callback)
-
-Ajout d’une nouvelle méthode qui obtient l’ID d’un rendez-vous ou d’un élément de message enregistré.
-
-**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur le web (moderne), Outlook sur Mac (connecté à Office 365)
-
-#### <a name="officecontextmailboxitemgetsharedpropertiesasyncofficecontextmailboxitemmdgetsharedpropertiesasyncoptions-callback"></a>[Office.context.mailbox.item.getSharedPropertiesAsync](office.context.mailbox.item.md#getsharedpropertiesasyncoptions-callback)
-
-Ajout d’une nouvelle méthode qui obtient un objet qui représente les sharedProperties d’un élément rendez-vous ou message.
-
-**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur le web (moderne), Outlook sur Mac (connecté à Office 365)
-
-#### <a name="officemailboxenumsdelegatepermissionsjavascriptapioutlookofficemailboxenumsdelegatepermissions"></a>[Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions)
-
-Ajout d’une nouvelle énumération d’indicateur binaire qui spécifie les autorisations accordées aux délégués.
-
-**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur le web (moderne), Outlook sur Mac (connecté à Office 365)
-
-#### <a name="supportssharedfolders-manifest-elementmanifestsupportssharedfoldersmd"></a>[Élément de manifeste SupportsSharedFolders](../../manifest/supportssharedfolders.md)
-
-Ajout d’un élément enfant à l’élément de manifeste [DesktopFormFactor](../../manifest/desktopformfactor.md). Définit si le complément est disponible dans les scénarios de délégué.
-
-**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur le web (moderne), Outlook sur Mac (connecté à Office 365)
-
-<br>
-
----
-
-### <a name="enhanced-location"></a>Emplacement amélioré
-
-#### <a name="enhancedlocationjavascriptapioutlookofficeenhancedlocation"></a>[EnhancedLocation](/javascript/api/outlook/office.enhancedlocation)
-
-Ajout d’un nouvel objet représentant l’ensemble des emplacements sur un rendez-vous.
-
-**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur le web (moderne), Outlook sur Mac (connecté à Office 365)
-
-#### <a name="locationdetailsjavascriptapioutlookofficelocationdetails"></a>[LocationDetails](/javascript/api/outlook/office.locationdetails)
-
-Ajout d’un nouvel objet représentant un emplacement. En lecture seule.
-
-**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur le web (moderne), Outlook sur Mac (connecté à Office 365)
-
-#### <a name="locationidentifierjavascriptapioutlookofficelocationidentifier"></a>[LocationIdentifier](/javascript/api/outlook/office.locationidentifier)
-
-Ajout d’un nouvel objet représentant l’ID d’un emplacement.
-
-**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur le web (moderne), Outlook sur Mac (connecté à Office 365)
-
-#### <a name="officecontextmailboxitemenhancedlocationofficecontextmailboxitemmdenhancedlocation-enhancedlocation"></a>[Office.context.mailbox.item.enhancedLocation](office.context.mailbox.item.md#enhancedlocation-enhancedlocation)
-
-Ajout d’une nouvelle propriété représentant l’ensemble des emplacements sur un rendez-vous.
-
-**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur le web (moderne), Outlook sur Mac (connecté à Office 365)
-
-#### <a name="officemailboxenumslocationtypejavascriptapioutlookofficemailboxenumslocationtype"></a>[Office.MailboxEnums.LocationType](/javascript/api/outlook/office.mailboxenums.locationtype)
-
-Ajout d’une nouvelle énumération qui spécifie le type d’emplacement d’un rendez-vous.
-
-**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur le web (moderne), Outlook sur Mac (connecté à Office 365)
-
-#### <a name="officeeventtypeenhancedlocationschangedjavascriptapiofficeofficeeventtype"></a>[Office.EventType.EnhancedLocationsChanged](/javascript/api/office/office.eventtype)
-
-Ajout de l’événement `EnhancedLocationsChanged` à `Item`.
-
-**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur le web (moderne), Outlook sur Mac (connecté à Office 365)
-
-<br>
-
----
 
 ### <a name="integration-with-actionable-messages"></a>Intégration avec les messages actionnables
 
@@ -221,28 +36,6 @@ Ajout d’une nouvelle fonction qui renvoie les données d’initialisation tran
 <br>
 
 ---
-
-### <a name="internet-headers"></a>En-têtes Internet
-
-#### <a name="internetheadersjavascriptapioutlookofficeinternetheaders"></a>[InternetHeaders](/javascript/api/outlook/office.internetheaders)
-
-Ajout d’un nouvel objet représentant les en-têtes Internet personnalisés d’un élément de message. Mode composition uniquement.
-
-**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur Mac (connecté à Office 365)
-
-#### <a name="officecontextmailboxiteminternetheadersjavascriptapioutlookofficemessagecomposeinternetheaders"></a>[Office.context.mailbox.item.internetHeaders](/javascript/api/outlook/office.messagecompose#internetheaders)
-
-Ajout d’une nouvelle propriété représentant les en-têtes Internet personnalisés d’un élément de message. Mode composition uniquement.
-
-**Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur Mac (connecté à l’abonnement Office 365)
-
-#### <a name="officecontextmailboxitemgetallinternetheadersasyncjavascriptapioutlookofficemessagereadgetallinternetheadersasync-options--callback-"></a>[Office.context.mailbox.item.getAllInternetHeadersAsync](/javascript/api/outlook/office.messageread#getallinternetheadersasync-options--callback-)
-
-Ajout d’une nouvelle méthode qui récupère tous les en-têtes Internet pour un élément de message. Mode Lecture uniquement.
-
-**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
-
-<br>
 
 ---
 
@@ -277,4 +70,4 @@ Ajout d’un accès à `getAccessTokenAsync`, qui permet aux compléments d’[o
 - [Compléments Outlook](/outlook/add-ins/)
 - [Exemples de code pour les compléments Outlook](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
 - [Prise en main](/outlook/add-ins/quick-start)
-- [Ensembles de conditions requises et clients pris en charge](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)
+- [Ensembles de conditions requises et clients pris en charge](../../requirement-sets/outlook-api-requirement-sets.md)
