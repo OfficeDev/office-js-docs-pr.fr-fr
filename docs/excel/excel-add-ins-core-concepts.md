@@ -3,12 +3,12 @@ title: Concepts fondamentaux de programmation avec l’API JavaScript pour Excel
 description: Utilisez l’API JavaScript pour Excel afin de créer des compléments pour Excel.
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: cd811a61ccd74496ab31c8b9a59ecd1c6e42aa42
-ms.sourcegitcommit: 5e90a90175909e0f4f392f5c98bd1273f444fe49
+ms.openlocfilehash: bd346764c3faba0cf3be7612c8b29dd5e0d4c28b
+ms.sourcegitcommit: 59d29d01bce7543ebebf86e5a86db00cf54ca14a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "35851580"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "37924800"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Concepts fondamentaux de programmation avec l’API JavaScript pour Excel
 
@@ -210,8 +210,7 @@ range.values = 'Due Date';
 
 Si une plage contient un grand nombre de cellules, de valeurs, de formats de nombre et/ou de formules, il n’est peut-être pas possible d’exécuter des opérations d’API sur cette plage. L’API essaie toujours d’exécuter au mieux l’opération demandée sur une plage (par exemple, pour extraire ou écrire des données spécifiées), mais essayer d’effectuer des opérations de lecture ou d’écriture pour une grande plage peut provoquer une erreur d’API en raison de l’utilisation des ressources excessive. Pour éviter ces erreurs, nous vous recommandons d’exécuter des opérations de lecture ou d’écriture distinctes pour des sous-ensembles plus petits d’une grande plage, au lieu d’essayer d’exécuter une seule opération de lecture ou d’écriture sur une grande plage.
 
-> [!IMPORTANT]
-> Excel sur le web a une limite de taille de charge utile de **5 Mo** pour les demandes et les réponses. L’erreur `RichAPI.Error` est déclenchée en cas de dépassement de cette limite.
+Pour plus d’informations sur les limites système, voir [Limites de plage Excel](../develop/common-coding-issues.md#excel-range-limits).
 
 ## <a name="update-all-cells-in-a-range"></a>Mettre à jour toutes les cellules d’une plage
 
@@ -253,3 +252,4 @@ Lorsqu’une erreur d’API se produit, l’API renvoie un objet **error** qui c
 - [Concepts avancés de programmation avec l’API JavaScript Excel](excel-add-ins-advanced-concepts.md)
 - [Optimisation des performances à l’aide de l’API JavaScript d’Excel](/office/dev/add-ins/excel/performance)
 - [Référence de l’API JavaScript pour Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+- [Problèmes courants liés au code et comportements de plateforme inattendus](../develop/common-coding-issues.md).

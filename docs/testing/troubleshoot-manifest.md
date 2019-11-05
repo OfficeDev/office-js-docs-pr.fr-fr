@@ -1,14 +1,14 @@
 ---
 title: Valider et résoudre des problèmes avec votre manifeste
 description: Utiliser ces méthodes pour valider le manifeste des compléments Office.
-ms.date: 09/18/2019
+ms.date: 10/29/2019
 localization_priority: Priority
-ms.openlocfilehash: c320c05b944bba9e24a4d3c0e5ef514ac13cc3c6
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: c1af6308a975bf9204a519e21f828454d286aa19
+ms.sourcegitcommit: 59d29d01bce7543ebebf86e5a86db00cf54ca14a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035335"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "37924807"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>Valider et résoudre des problèmes avec votre manifeste
 
@@ -68,6 +68,38 @@ Vous pouvez utiliser la journalisation runtime pour déboguer le manifeste de vo
 > [!IMPORTANT]
 > La journalisation runtime affecte les performances. Activez-la uniquement lorsque vous avez besoin de déboguer des problèmes avec votre manifeste de complément.
 
+### <a name="use-runtime-logging-from-the-command-line"></a>Utiliser la journalisation de l’exécution à partir de la ligne de commande
+
+L’activation de la journalisation de l’exécution à partir de la ligne de commande est le moyen le plus rapide d’utiliser cet outil de journalisation. Celles-ci utilisent npx, fourni par défaut dans le cadre de npm@5.2.0 +. Si vous disposez d’une version antérieure de [npm](https://www.npmjs.com/), essayez les instructions [Journalisation de l’exécution sur Windows](#runtime-logging-on-windows) ou [Journalisation de l’exécution sur Mac](#runtime-logging-on-mac), ou [install npx](https://www.npmjs.com/package/npx).
+
+- Pour activer la journalisation de l’exécution :
+    ```command&nbsp;line
+    npx office-addin-dev-settings runtime-log --enable
+    ```
+- Pour activer la journalisation de l’exécution uniquement pour un fichier spécifique, utilisez la même commande avec un nom de fichier :
+
+    ```command&nbsp;line
+    npx office-addin-dev-settings runtime-log --enable [filename.txt]
+    ```
+
+- Pour désactiver la journalisation de l’exécution :
+
+    ```command&nbsp;line
+    npx office-addin-dev-settings runtime-log --disable
+    ```
+
+- Pour indiquer si la journalisation de l’exécution est activée :
+
+    ```command&nbsp;line
+    npx office-addin-dev-settings runtime-log
+    ```
+
+- Pour afficher l’aide au sein de la ligne de commande pour la journalisation de l’exécution :
+
+    ```command&nbsp;line
+    npx office-addin-dev-settings runtime-log --help
+    ```
+
 ### <a name="runtime-logging-on-windows"></a>Journalisation de l’exécution sur Windows
 
 1. Vérifiez que vous exécutez la version Bureau d’Office 2016 **16.0.7019** ou une version ultérieure. 
@@ -79,7 +111,7 @@ Vous pouvez utiliser la journalisation runtime pour déboguer le manifeste de vo
     > 1. Cliquez avec le bouton droit de votre souris sur la clé (dossier) **WEF**, puis sélectionnez **Nouveau** > **Clé**.
     > 2. Nommez la nouvelle clé **Développeur**.
 
-3. Définissez la valeur par défaut de la clé pour le chemin d’accès complet du fichier dans lequel écrire le journal. Pour obtenir un exemple, reportez-vous à [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip). 
+3. Définissez la valeur par défaut de la clé **RuntimeLogging** pour le chemin d’accès complet du fichier dans lequel écrire le journal. Pour obtenir un exemple, voir [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip). 
 
     > [!NOTE]
     > Le répertoire dans lequel le fichier journal sera écrit doit déjà exister et vous devez disposer des autorisations d’écriture correspondantes. 
