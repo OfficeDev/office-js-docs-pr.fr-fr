@@ -3,12 +3,12 @@ ms.date: 07/10/2019
 description: Déboguez vos fonctions personnalisées dans Excel.
 title: Débogage des fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: 987df4fc638b94b7a5002c99aee6e36642f4e4a4
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 823f261af5dd50e8b965a421998234ceddd3551c
+ms.sourcegitcommit: 42bcf9059327a8d71a7ab223805aea68be9ed6b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771455"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "37962023"
 ---
 # <a name="custom-functions-debugging"></a>Débogage des fonctions personnalisées
 
@@ -16,13 +16,13 @@ Le débogage des fonctions personnalisées peut être réalisé de plusieurs man
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-Sur Windows:
+Sur Windows :
 - [Débogueur de code Visual Studio et de bureau Excel (code VS)](#use-the-vs-code-debugger-for-excel-desktop)
 - [Excel sur le Web et le débogueur de code VS](#use-the-vs-code-debugger-for-excel-in-microsoft-edge)
 - [Excel sur le Web et les outils de navigation](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web)
 - [Ligne de commande](#use-the-command-line-tools-to-debug)
 
-Sur Mac:
+Sur Mac :
 - [Excel sur le Web et les outils de navigation](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web)
 - [Ligne de commande](#use-the-command-line-tools-to-debug)
 
@@ -48,9 +48,9 @@ Vous pouvez utiliser le code VS pour déboguer des fonctions personnalisées dan
 
 ### <a name="start-the-vs-code-debugger"></a>Démarrer le débogueur de code VS
 
-4. Sélectionnez **afficher >** déboguer ou **Appuyez sur Ctrl + Maj + D** pour basculer vers l’affichage débogage.
+4. Sélectionnez **afficher > déboguer** ou **Appuyez sur Ctrl + Maj + D** pour basculer vers l’affichage débogage.
 5. Dans les options de débogage, choisissez **bureau Excel**.
-6. Sélectionnez **F5** (ou choisissez **Déboguer-> démarrer** le débogage dans le menu) pour commencer le débogage. Un nouveau classeur Excel s’ouvre avec votre complément déjà versions test chargées et prêt à être utilisé.
+6. Sélectionnez **F5** (ou choisissez **Déboguer-> démarrer le débogage** dans le menu) pour commencer le débogage. Un nouveau classeur Excel s’ouvre avec votre complément déjà versions test chargées et prêt à être utilisé.
 
 ### <a name="start-debugging"></a>Démarrer le débogage
 
@@ -62,7 +62,7 @@ Vous pouvez utiliser le code VS pour déboguer des fonctions personnalisées dan
 
 ## <a name="use-the-vs-code-debugger-for-excel-in-microsoft-edge"></a>Utiliser le débogueur de code VS pour Excel dans Microsoft Edge
 
-Vous pouvez utiliser le code VS pour déboguer des fonctions personnalisées dans Excel dans le navigateur Microsoft Edge. Pour utiliser le code VS avec Microsoft Edge, vous devez installer le débogueur pour l’extension [Microsoft Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge) .
+Vous pouvez utiliser le code VS pour déboguer des fonctions personnalisées dans Excel dans le navigateur Microsoft Edge. Pour utiliser le code VS avec Microsoft Edge, vous devez installer le [débogueur pour l’extension Microsoft Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge) .
 
 ### <a name="run-your-add-in-from-vs-code"></a>Exécuter votre complément à partir du code VS
 
@@ -72,11 +72,11 @@ Vous pouvez utiliser le code VS pour déboguer des fonctions personnalisées dan
 
 ### <a name="start-the-vs-code-debugger"></a>Démarrer le débogueur de code VS
 
-4. Sélectionnez **afficher >** déboguer ou **Appuyez sur Ctrl + Maj + D** pour basculer vers l’affichage débogage.
+4. Sélectionnez **afficher > déboguer** ou **Appuyez sur Ctrl + Maj + D** pour basculer vers l’affichage débogage.
 5. Dans les options de débogage, sélectionnez **Office Online (Microsoft Edge)**.
 6. Ouvrez Excel dans le navigateur Microsoft Edge et créez un classeur.
 7. Choisissez **partager** dans le ruban et copiez le lien de l’URL de ce nouveau classeur.
-8. Sélectionnez **F5** (ou choisissez **déboguer > démarrer** le débogage dans le menu) pour commencer le débogage. Une invite s’affiche, qui vous demande l’URL de votre document.
+8. Sélectionnez **F5** (ou choisissez **déboguer > démarrer le débogage** dans le menu) pour commencer le débogage. Une invite s’affiche, qui vous demande l’URL de votre document.
 9. Collez l’URL de votre classeur, puis appuyez sur entrée.
 
 ### <a name="sideload-your-add-in"></a>Charger une version test de votre complément
@@ -108,7 +108,7 @@ Vous pouvez utiliser les outils de développement de navigateur pour déboguer d
 
 ### <a name="sideload-your-add-in"></a>Charger une version test de votre complément
 
-1. Ouvrez [Microsoft Office sur le Web](https://office.live.com/).
+1. Ouvrez [Microsoft Office sur le web](https://office.live.com/).
 2. Ouvrez un nouveau classeur Excel.
 3. Ouvrez l’onglet **Insérer** dans le ruban, puis dans la section **Compléments**, choisissez **Compléments Office**.
 4. Dans la boîte de dialogue **Compléments Office**, sélectionnez l’onglet **MES COMPLÉMENTS**, choisissez **Gérer mes compléments**, puis **Télécharger mon complément**.
@@ -137,11 +137,11 @@ Si vous n’utilisez pas le code VS, vous pouvez utiliser la ligne de commande (
 1. À partir de la ligne `npm run watch` de commande, exécutez le suivi et la régénération lorsque les modifications du code se produisent.
 2. Ouvrir une deuxième fenêtre de ligne de commande (la première est bloquée lors de l’exécution de la fonction espion).
 
-3. Si vous souhaitez démarrer votre complément dans la version de bureau d’Excel, exécutez la commande suivante:
+3. Si vous souhaitez démarrer votre complément dans la version de bureau d’Excel, exécutez la commande suivante :
     
     `npm run start:desktop`
     
-    Ou si vous préférez démarrer votre complément dans Excel sur le Web, exécutez la commande suivante:
+    Ou si vous préférez démarrer votre complément dans Excel sur le Web, exécutez la commande suivante :
     
     `npm run start:web`
     
@@ -155,7 +155,7 @@ Si vous devez modifier le code, vous pouvez apporter des modifications dans Visu
 
 ### <a name="commands-for-building-and-running-your-add-in"></a>Commandes pour la création et l’exécution de votre complément
 
-Plusieurs tâches de génération sont disponibles:
+Plusieurs tâches de génération sont disponibles :
 - `npm run watch`: builds pour le développement et rebuilds automatiques lors de l’enregistrement d’un fichier source
 - `npm run build-dev`: builds pour le développement une seule fois
 - `npm run build`: builds pour la production
@@ -172,5 +172,6 @@ Découvrez les [pratiques d’authentification dans les fonctions personnalisée
 ## <a name="see-also"></a>Voir aussi
 
 * [Dépannage des fonctions personnalisées](custom-functions-troubleshooting.md)
+* [Gestion des erreurs liées aux fonctions personnalisées dans Excel](custom-functions-errors.md)
 * [Rendre vos fonctions personnalisées compatibles avec les fonctions XLL définies par l’utilisateur](make-custom-functions-compatible-with-xll-udf.md)
 * [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
