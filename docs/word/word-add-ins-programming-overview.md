@@ -1,16 +1,16 @@
 ---
 title: Présentation des compléments Word
 description: ''
-ms.date: 07/05/2019
+ms.date: 11/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 35bb846a587eacc23c9b4b1c27a7c4edf7c68f5c
-ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
+ms.openlocfilehash: bb4ca1de1b99ca66b716810dedf01506fb60ebe7
+ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37468762"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "38001494"
 ---
 # <a name="word-add-ins-overview"></a>Présentation des compléments Word
 
@@ -41,7 +41,7 @@ Word.run(function (context) {
 
 ```
 
-Vous pouvez utiliser n’importe quelle technologie de serveur web pour héberger votre complément Word, comme ASP.NET, NodeJS ou Python. Utilisez votre infrastructure côté client préférée (Ember, Backbone, Angular, React), ou utilisez VanillaJS pour développer votre solution et utilisez des services comme Azure pour [authentifier](../develop/use-the-oauth-authorization-framework-in-an-office-add-in.md) et héberger votre application.
+Vous pouvez utiliser n’importe quelle technologie de serveur web pour héberger votre complément Word, comme ASP.NET, NodeJS ou Python. Utilisez votre infrastructure côté client préférée (Ember, Backbone, Angular, React), ou utilisez VanillaJS pour développer votre solution et utilisez des services comme Azure pour [authentifier](../develop/overview-authn-authz.md) et héberger votre application.
 
 Les interfaces API JavaScript pour Word permettent à votre application d’accéder aux objets et aux métadonnées situés dans le document Word. Vous pouvez utiliser ces API pour créer des compléments destinés à :
 
