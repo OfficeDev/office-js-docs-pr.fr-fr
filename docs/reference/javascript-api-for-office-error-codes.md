@@ -3,12 +3,12 @@ title: Codes d’erreur de l’API JavaScript pour Office
 description: ''
 ms.date: 08/06/2019
 localization_priority: Normal
-ms.openlocfilehash: f51d7860c0e7b4de530d30326f56380b28b03736
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: b5a5480b620f6ba9869a1faa40af0cd0faa3fcfc
+ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268563"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "38001941"
 ---
 # <a name="javascript-api-for-office-error-codes"></a>Codes d’erreur de l’API JavaScript pour Office
 
@@ -81,7 +81,7 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 |8021|En dehors de la plage|La valeur d’index de colonne se trouve en dehors de la plage autorisée. Utilisez une valeur (supérieure ou égale à 0) inférieure au nombre de colonnes.|L’index de colonne est supérieur à l’index de colonne le plus élevé du tableau ou est inférieur à 0.|
 |8022|En dehors de la plage|La valeur se trouve en dehors de la plage autorisée.|Certaines des valeurs dans le format se trouvent en dehors des plages prises en charge.|
 |9016|Autorisation refusée|Autorisation refusée|L’accès est refusé.|
-|9041|Erreur réseau|L’utilisateur n’est plus connecté au réseau. Vérifiez votre connexion réseau, puis réessayez.|L’utilisateur n’a plus d’accès réseau ou Internet.|
+|9041|Erreur réseau|L’utilisateur n’est plus connecté au réseau. Veuillez vérifier la connexion réseau et réessayer.|L’utilisateur n’a plus d’accès réseau ou Internet.|
 |12002|||Un des éléments suivants :<br> - Aucune page n’existe à l’URL qui a été transmise à `displayDialogAsync`.<br> - La page qui a été transmise à `displayDialogAsync` a été chargée, mais la boîte de dialogue a été redirigée vers une page introuvable ou impossible à charger, ou a été redirigée vers une URL dont la syntaxe n’est pas valide. Erreur signalée dans la boîte de dialogue. Elle déclenche un événement `DialogEventReceived` dans la page hôte.|
 |12003|||La boîte de dialogue a été redirigée vers une URL avec le protocole HTTP. C’est le protocole HTTPS qui est requis. Erreur signalée dans la boîte de dialogue. Elle déclenche un événement `DialogEventReceived` dans la page hôte.|
 |12004|||Le domaine de l’URL transmis à `displayDialogAsync` n’est pas approuvé. Le domaine doit être le même domaine que celui de la page hôte (y compris le protocole et le numéro de port). Erreur générée par l’appel de `displayDialogAsync`.|
@@ -89,7 +89,7 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 |12006|||La boîte de dialogue a été fermée, généralement parce que l’utilisateur choisit le bouton **X**. Erreur signalée dans la boîte de dialogue. Elle déclenche un événement `DialogEventReceived` dans la page hôte.|
 |12007|||Une boîte de dialogue est déjà ouverte à partir de cette fenêtre hôte. Une fenêtre hôte, par exemple un volet Office, ne peut avoir qu’une seule boîte de dialogue ouverte à la fois. Erreur générée par l’appel de `displayDialogAsync`.|
 |12009|||L’utilisateur a choisi d’ignorer la boîte de dialogue. Cette erreur peut se produire dans les versions en ligne d’Office, quand les utilisateurs peuvent choisir d’autoriser ou non un complément à afficher une boîte de dialogue. Erreur générée par l’appel de `displayDialogAsync`.|
-|13000 – 13010|||Reportez-vous à l’article [Causes et gestion des erreurs de getAccessTokenAsync](/office/dev/add-ins/develop/troubleshoot-sso-in-office-add-ins#causes-and-handling-of-errors-from-getaccesstokenasync).|
+|13000 – 13010|||Voir [causes et gestion des erreurs à partir de getAccessToken](/office/dev/add-ins/develop/troubleshoot-sso-in-office-add-ins#causes-and-handling-of-errors-from-getAccessToken).|
 
 ## <a name="binding-creation-error-conditions"></a>Conditions d’erreur de création de liaison
 

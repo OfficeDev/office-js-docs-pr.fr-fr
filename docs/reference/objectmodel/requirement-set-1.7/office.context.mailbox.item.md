@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Item-ensemble de conditions requises 1,7
 description: ''
-ms.date: 10/23/2019
+ms.date: 11/05/2019
 localization_priority: Normal
-ms.openlocfilehash: 2cb6987191427cd5540eaa8647a78bccf2c073c1
-ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
+ms.openlocfilehash: 0cd498efb11f759dfb97d60565e2eb0bb95fd2f5
+ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "37682633"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "38001564"
 ---
 # <a name="item"></a>élément
 
@@ -145,10 +145,10 @@ console.log(outputString);
 
 Permet d’obtenir un objet qui fournit des méthodes permettant d’obtenir ou de mettre à jour les destinataires figurant sur la ligne Cci (copie carbone invisible) d’un message. Mode composition uniquement.
 
-Par défaut, la collection est limitée à un maximum de 100 membres. Toutefois, sous Windows et Mac, les limites suivantes s’appliquent.
+Par défaut, la collection est limitée à 100 membres. Toutefois, sous Windows et Mac, les limites suivantes s’appliquent.
 
-- Obtenir 500 membres maximum.
-- Définissez un maximum de 100 membres par appel, jusqu’à 500 membres au total.
+- Obtenez 500 membres au maximum.
+- Configurez un maximum de 100 membres par appel, jusqu’à 500 membres au total.
 
 ##### <a name="type"></a>Type
 
@@ -228,9 +228,9 @@ L’exemple suivant présente le paramètre de résultat transmis à la fonction
 
 Permet d’accéder aux destinataires en copie carbone (Cc) d’un message. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
-##### <a name="read-mode"></a>Mode Lecture
+##### <a name="read-mode"></a>Mode lecture
 
-La propriété `cc` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque destinataire répertorié sur la ligne **Cc** du message. Par défaut, la collection est limitée à un maximum de 100 membres. Toutefois, sous Windows et Mac, vous pouvez obtenir 500 membres au maximum.
+La propriété `cc` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque destinataire répertorié sur la ligne **Cc** du message. Par défaut, la collection est limitée à 100 membres. Cependant, sous Windows et Mac, vous pouvez obtenir 500 membres au maximum.
 
 ```js
 console.log(JSON.stringify(Office.context.mailbox.item.cc));
@@ -238,10 +238,10 @@ console.log(JSON.stringify(Office.context.mailbox.item.cc));
 
 ##### <a name="compose-mode"></a>Mode composition
 
-La propriété `cc` renvoie un objet `Recipients` qui fournit des méthodes permettant d’obtenir ou de mettre à jour les destinataires figurant sur la ligne **Cc** du message. Par défaut, la collection est limitée à un maximum de 100 membres. Toutefois, sous Windows et Mac, les limites suivantes s’appliquent.
+La propriété `cc` renvoie un objet `Recipients` qui fournit des méthodes permettant d’obtenir ou de mettre à jour les destinataires figurant sur la ligne **Cc** du message. Par défaut, la collection est limitée à 100 membres. Toutefois, sous Windows et Mac, les limites suivantes s’appliquent.
 
-- Obtenir 500 membres maximum.
-- Définissez un maximum de 100 membres par appel, jusqu’à 500 membres au total.
+- Obtenez 500 membres au maximum.
+- Configurez un maximum de 100 membres par appel, jusqu’à 500 membres au total.
 
 ```js
 Office.context.mailbox.item.cc.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -426,7 +426,7 @@ Les propriétés `from` et [`sender`](#sender-emailaddressdetails) représentent
 > [!NOTE]
 > La propriété `recipientType` de l’objet `EmailAddressDetails` dans la propriété `from` est `undefined`.
 
-##### <a name="read-mode"></a>Mode Lecture
+##### <a name="read-mode"></a>Mode lecture
 
 La `from` propriété renvoie un `EmailAddressDetails` objet.
 
@@ -530,10 +530,10 @@ console.log("Item class: " + itemClass);
 
 #### <a name="nullable-itemid-string"></a>(nullable) itemId: String
 
-Permet d’obtenir l’identificateur de l’élément des services web Exchange pour l’élément actif. Mode lecture uniquement.
+Obtient l' [identificateur d’élément des services Web Exchange](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange) pour l’élément actuel. Mode Lecture uniquement.
 
 > [!NOTE]
-> L’identificateur renvoyé par la propriété `itemId` est identique à celui de l’élément des services web Exchange. La propriété `itemId` n’est pas identique à l’ID d’entrée Outlook ni à l’ID utilisé par l’API REST Outlook. Avant que vous ne puissiez effectuer des appels d’API REST avec cette valeur, elle doit être convertie à l’aide de la commande [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string). Pour plus d’informations, voir [Utilisation des API REST Outlook à partir d’un complément Outlook](/outlook/add-ins/use-rest-api#get-the-item-id).
+> L’identificateur renvoyé par la `itemId` propriété est identique à l’identificateur d' [élément des services Web Exchange](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange). La propriété `itemId` n’est pas identique à l’ID d’entrée Outlook ni à l’ID utilisé par l’API REST Outlook. Avant que vous ne puissiez effectuer des appels d’API REST avec cette valeur, elle doit être convertie à l’aide de la commande [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string). Pour plus d’informations, voir [Utilisation des API REST Outlook à partir d’un complément Outlook](/outlook/add-ins/use-rest-api#get-the-item-id).
 
 La propriété `itemId` n’est pas disponible en mode composition. Si l’identificateur d’un élément doit être indiqué, la méthode [`saveAsync`](#saveasyncoptions-callback) peut être utilisée pour enregistrer l’élément sur le magasin, lequel renvoie l’identificateur de l’élément dans le paramètre [`AsyncResult.value`](/javascript/api/office/office.asyncresult) dans la fonction de rappel.
 
@@ -710,9 +710,9 @@ Office.context.mailbox.item.notificationMessages.getAllAsync(
 
 Permet d’accéder aux participants facultatifs d’un événement. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
-##### <a name="read-mode"></a>Mode Lecture
+##### <a name="read-mode"></a>Mode lecture
 
-La propriété `optionalAttendees` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque participant facultatif à la réunion. Par défaut, la collection est limitée à un maximum de 100 membres. Toutefois, sous Windows et Mac, vous pouvez obtenir 500 membres au maximum.
+La propriété `optionalAttendees` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque participant facultatif à la réunion. Par défaut, la collection est limitée à 100 membres. Cependant, sous Windows et Mac, vous pouvez obtenir 500 membres au maximum.
 
 ```js
 var optionalAttendees = Office.context.mailbox.item.optionalAttendees;
@@ -721,10 +721,10 @@ console.log("Optional attendees: " + JSON.stringify(optionalAttendees));
 
 ##### <a name="compose-mode"></a>Mode composition
 
-La propriété `optionalAttendees` renvoie un objet `Recipients` qui fournit des méthodes permettant d’obtenir ou de mettre à jour les participants facultatifs d’une réunion. Par défaut, la collection est limitée à un maximum de 100 membres. Toutefois, sous Windows et Mac, les limites suivantes s’appliquent.
+La propriété `optionalAttendees` renvoie un objet `Recipients` qui fournit des méthodes permettant d’obtenir ou de mettre à jour les participants facultatifs d’une réunion. Par défaut, la collection est limitée à 100 membres. Toutefois, sous Windows et Mac, les limites suivantes s’appliquent.
 
-- Obtenir 500 membres maximum.
-- Définissez un maximum de 100 membres par appel, jusqu’à 500 membres au total.
+- Obtenez 500 membres au maximum.
+- Configurez un maximum de 100 membres par appel, jusqu’à 500 membres au total.
 
 ```js
 Office.context.mailbox.item.optionalAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -757,7 +757,7 @@ function callback(asyncResult) {
 
 Obtient l’adresse de messagerie de l’organisateur d’une réunion spécifiée.
 
-##### <a name="read-mode"></a>Mode Lecture
+##### <a name="read-mode"></a>Mode lecture
 
 La `organizer` propriété renvoie un objet [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.7) qui représente l’organisateur de la réunion.
 
@@ -806,7 +806,7 @@ La `recurrence` propriété renvoie un objet [Recurrence](/javascript/api/outloo
 
 > Remarque : si l’objet de périodicité `null`est, cela indique que l’objet est un rendez-vous unique ou une demande de réunion d’un seul rendez-vous et non d’une série.
 
-##### <a name="read-mode"></a>Mode Lecture
+##### <a name="read-mode"></a>Mode lecture
 
 La `recurrence` propriété renvoie un objet [Recurrence](/javascript/api/outlook/office.recurrence?view=outlook-js-1.7) qui représente la périodicité du rendez-vous. Elle est disponible pour les rendez-vous et les demandes de réunion.
 
@@ -865,7 +865,7 @@ Permet d’accéder aux participants requis à un événement. Le type d’objet
 
 ##### <a name="read-mode"></a>Mode Lecture
 
-La propriété `requiredAttendees` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque participant requis à la réunion. Par défaut, la collection est limitée à un maximum de 100 membres. Toutefois, sous Windows et Mac, vous pouvez obtenir 500 membres au maximum.
+La propriété `requiredAttendees` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque participant requis à la réunion. Par défaut, la collection est limitée à 100 membres. Cependant, sous Windows et Mac, vous pouvez obtenir 500 membres au maximum.
 
 ```js
 var requiredAttendees = Office.context.mailbox.item.requiredAttendees;
@@ -874,10 +874,10 @@ console.log("Required attendees: " + JSON.stringify(requiredAttendees));
 
 ##### <a name="compose-mode"></a>Mode composition
 
-La propriété `requiredAttendees` renvoie un objet `Recipients` qui fournit des méthodes permettant d’obtenir ou de mettre à jour les participants requis à une réunion. Par défaut, la collection est limitée à un maximum de 100 membres. Toutefois, sous Windows et Mac, les limites suivantes s’appliquent.
+La propriété `requiredAttendees` renvoie un objet `Recipients` qui fournit des méthodes permettant d’obtenir ou de mettre à jour les participants requis à une réunion. Par défaut, la collection est limitée à 100 membres. Toutefois, sous Windows et Mac, les limites suivantes s’appliquent.
 
-- Obtenir 500 membres maximum.
-- Définissez un maximum de 100 membres par appel, jusqu’à 500 membres au total.
+- Obtenez 500 membres au maximum.
+- Configurez un maximum de 100 membres par appel, jusqu’à 500 membres au total.
 
 ```js
 Office.context.mailbox.item.requiredAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -1089,9 +1089,9 @@ function callback(asyncResult) {
 
 Permet d’accéder aux destinataires figurant sur la ligne **À** d’un message. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
-##### <a name="read-mode"></a>Mode Lecture
+##### <a name="read-mode"></a>Mode lecture
 
-La propriété `to` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque destinataire répertorié sur la ligne **À** du message. Par défaut, la collection est limitée à un maximum de 100 membres. Toutefois, sous Windows et Mac, vous pouvez obtenir 500 membres au maximum.
+La propriété `to` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque destinataire répertorié sur la ligne **À** du message. Par défaut, la collection est limitée à 100 membres. Cependant, sous Windows et Mac, vous pouvez obtenir 500 membres au maximum.
 
 ```js
 console.log(JSON.stringify(Office.context.mailbox.item.to));
@@ -1099,10 +1099,10 @@ console.log(JSON.stringify(Office.context.mailbox.item.to));
 
 ##### <a name="compose-mode"></a>Mode composition
 
-La propriété `to` renvoie un objet `Recipients` qui fournit des méthodes permettant d’obtenir ou de mettre à jour les destinataires figurant sur la ligne **À** du message. Par défaut, la collection est limitée à un maximum de 100 membres. Toutefois, sous Windows et Mac, les limites suivantes s’appliquent.
+La propriété `to` renvoie un objet `Recipients` qui fournit des méthodes permettant d’obtenir ou de mettre à jour les destinataires figurant sur la ligne **À** du message. Par défaut, la collection est limitée à 100 membres. Toutefois, sous Windows et Mac, les limites suivantes s’appliquent.
 
-- Obtenir 500 membres maximum.
-- Définissez un maximum de 100 membres par appel, jusqu’à 500 membres au total.
+- Obtenez 500 membres au maximum.
+- Configurez un maximum de 100 membres par appel, jusqu’à 500 membres au total.
 
 ```js
 Office.context.mailbox.item.to.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -1140,7 +1140,7 @@ L’identificateur peut être utilisé avec la méthode [`removeAttachmentAsync`
 |Nom|Type|Attributs|Description|
 |---|---|---|---|
 |`uri`|Chaîne||URI indiquant l’emplacement du fichier à joindre au message ou au rendez-vous. La longueur maximale est de 2 048 caractères.|
-|`attachmentName`|Chaîne||Nom de la pièce jointe affiché lors de son chargement. La taille maximale est de 255 caractères.|
+|`attachmentName`|String||Nom de la pièce jointe affiché lors de son chargement. La taille maximale est de 255 caractères.|
 |`options`|Objet|&lt;facultatif&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
 |`options.asyncContext`|Objet|&lt;facultatif&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
 |`options.isInline`|Boolean|&lt;optional&gt;|Si elle est définie sur `true`, cette valeur indique que la pièce jointe est incorporée dans le corps du message et qu’elle ne doit pas figurer dans la liste des pièces jointes.|
@@ -1214,7 +1214,7 @@ ajoute un gestionnaire d’événements pour un événement pris en charge.
 
 Actuellement, les types d’événement `Office.EventType.AppointmentTimeChanged`pris `Office.EventType.RecipientsChanged`en charge sont, et`Office.EventType.RecurrenceChanged`
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 | Nom | Type | Attributs | Description |
 |---|---|---|---|
@@ -1647,7 +1647,7 @@ Alors que le niveau d’autorisation minimal **Restricted** suffit pour utiliser
 
 |Valeur de `entityType`|Type des objets du tableau renvoyé|Niveau d’autorisation requis|
 |---|---|---|
-|`Address`|Chaîne|**Restricted**|
+|`Address`|String|**Restricted**|
 |`Contact`|Contact|**ReadItem**|
 |`EmailAddress`|String|**ReadItem**|
 |`MeetingSuggestion`|MeetingSuggestion|**ReadItem**|
@@ -1689,7 +1689,7 @@ Renvoie des entités reconnues dans l’élément sélectionné, qui transmetten
 
 La méthode `getFilteredEntitiesByName` renvoie les entités qui correspondent à l’expression régulière définie dans l’élément de règle [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) du fichier manifeste XML ayant la valeur de l’élément `FilterName` spécifié.
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 |Nom|Type|Description|
 |---|---|---|
@@ -1786,7 +1786,7 @@ La méthode `getRegExMatchesByName` renvoie les chaînes qui correspondent à l�
 
 Si vous spécifiez une règle `ItemHasRegularExpressionMatch` pour la propriété de corps d’un élément, l’expression régulière doit filtrer davantage le corps. Par ailleurs, elle ne doit pas tenter de renvoyer l’intégralité du corps de l’élément. L’utilisation d’une expression régulière telle que `.*` pour obtenir l’intégralité du corps d’un élément ne renvoie pas toujours les résultats attendus.
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 |Nom|Type|Description|
 |---|---|---|
@@ -1824,7 +1824,12 @@ Renvoie de manière asynchrone les données sélectionnées à partir de l’obj
 
 Si aucune sélection n’est effectuée, mais que le curseur est placé dans le corps ou l’objet, la méthode renvoie la valeur null pour les données sélectionnées. Si un champ autre que le corps ou l’objet est sélectionné, la méthode renvoie l’erreur `InvalidSelection`.
 
-##### <a name="parameters"></a>Paramètres
+> [!NOTE]
+> Dans Outlook sur le Web, la méthode renvoie la chaîne « NULL » si aucun texte n’est sélectionné, mais que le curseur se trouve dans le corps. Pour vérifier cette situation, incluez un code similaire à celui-ci :
+>
+> `var selectedText = (asyncResult.value.endPosition === asyncResult.value.startPosition) ? "" : asyncResult.value.data;`
+
+##### <a name="parameters"></a>Parameters
 
 |Nom|Type|Attributs|Description|
 |---|---|---|---|
@@ -2071,7 +2076,7 @@ Supprime les gestionnaires d’événements pour un type d’événement pris en
 
 Actuellement, les types d’événement `Office.EventType.AppointmentTimeChanged`pris `Office.EventType.RecipientsChanged`en charge sont, et`Office.EventType.RecurrenceChanged`
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 | Nom | Type | Attributs | Description |
 |---|---|---|---|
@@ -2124,7 +2129,7 @@ Dans la mesure où les rendez-vous n’ont pas d’état brouillon, si `saveAsyn
 > - Outlook pour Mac ne prend pas en charge l’enregistrement d’une réunion. La méthode `saveAsync` échoue lorsqu’elle est appelée à partir d’une réunion en mode composition. Pour contourner ce problème, voir [Impossible d’enregistrer une réunion en tant que brouillon dans Outlook pour Mac à l’aide des API de JS Office](https://support.microsoft.com/help/4505745).
 > - Outlook sur le web envoie toujours une invitation ou une mise à jour quand `saveAsync` est appelée sur un rendez-vous en mode composition.
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 |Nom|Type|Attributs|Description|
 |---|---|---|---|

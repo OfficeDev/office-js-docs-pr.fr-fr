@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Item-ensemble de conditions requises 1,1
 description: ''
-ms.date: 10/23/2019
+ms.date: 11/05/2019
 localization_priority: Normal
-ms.openlocfilehash: 3d0b9783ea7fd235f4f989182ced04e0bce735ff
-ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
+ms.openlocfilehash: 5cbf942ea9b1351e0f945a9ca5534a9ba090b79b
+ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "37682654"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "38001613"
 ---
 # <a name="item"></a>élément
 
@@ -28,26 +28,26 @@ L’espace de noms `item` est utilisé pour accéder au message, à la demande d
 
 | Membre	 | Type	 |
 |--------|------|
-| [attachments](#attachments-arrayattachmentdetails) | Membre |
-| [bcc](#bcc-recipients) | Membre |
-| [body](#body-body) | Membre |
-| [cc](#cc-arrayemailaddressdetailsrecipients) | Membre |
-| [conversationId](#nullable-conversationid-string) | Membre |
-| [dateTimeCreated](#datetimecreated-date) | Membre |
-| [dateTimeModified](#datetimemodified-date) | Membre |
-| [end](#end-datetime) | Membre |
-| [from](#from-emailaddressdetails) | Membre |
-| [internetMessageId](#internetmessageid-string) | Membre |
-| [itemClass](#itemclass-string) | Membre |
-| [itemId](#nullable-itemid-string) | Membre |
-| [itemType](#itemtype-officemailboxenumsitemtype) | Membre |
-| [location](#location-stringlocation) | Membre |
-| [normalizedSubject](#normalizedsubject-string) | Membre |
-| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | Membre |
-| [organizer](#organizer-emailaddressdetails) | Membre |
+| [attachments](#attachments-arrayattachmentdetails) | Member |
+| [bcc](#bcc-recipients) | Member |
+| [body](#body-body) | Member |
+| [cc](#cc-arrayemailaddressdetailsrecipients) | Member |
+| [conversationId](#nullable-conversationid-string) | Member |
+| [dateTimeCreated](#datetimecreated-date) | Member |
+| [dateTimeModified](#datetimemodified-date) | Member |
+| [end](#end-datetime) | Member |
+| [from](#from-emailaddressdetails) | Member |
+| [internetMessageId](#internetmessageid-string) | Member |
+| [itemClass](#itemclass-string) | Member |
+| [itemId](#nullable-itemid-string) | Member |
+| [itemType](#itemtype-officemailboxenumsitemtype) | Member |
+| [location](#location-stringlocation) | Member |
+| [normalizedSubject](#normalizedsubject-string) | Member |
+| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | Member |
+| [organizer](#organizer-emailaddressdetails) | Member |
 | [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | Member |
-| [sender](#sender-emailaddressdetails) | Membre |
-| [start](#start-datetime) | Membre |
+| [sender](#sender-emailaddressdetails) | Member |
+| [start](#start-datetime) | Member |
 | [subject](#subject-stringsubject) | Membre |
 | [to](#to-arrayemailaddressdetailsrecipients) | Membre |
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | Méthode |
@@ -134,10 +134,10 @@ console.log(outputString);
 
 Permet d’obtenir un objet qui fournit des méthodes permettant d’obtenir ou de mettre à jour les destinataires figurant sur la ligne Cci (copie carbone invisible) d’un message. Mode composition uniquement.
 
-Par défaut, la collection est limitée à un maximum de 100 membres. Toutefois, sous Windows et Mac, les limites suivantes s’appliquent.
+Par défaut, la collection est limitée à 100 membres. Toutefois, sous Windows et Mac, les limites suivantes s’appliquent.
 
-- Obtenir 500 membres maximum.
-- Définissez un maximum de 100 membres par appel, jusqu’à 500 membres au total.
+- Obtenez 500 membres au maximum.
+- Configurez un maximum de 100 membres par appel, jusqu’à 500 membres au total.
 
 ##### <a name="type"></a>Type
 
@@ -217,9 +217,9 @@ L’exemple suivant présente le paramètre de résultat transmis à la fonction
 
 Permet d’accéder aux destinataires en copie carbone (Cc) d’un message. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
-##### <a name="read-mode"></a>Mode Lecture
+##### <a name="read-mode"></a>Mode lecture
 
-La propriété `cc` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque destinataire répertorié sur la ligne **Cc** du message. Par défaut, la collection est limitée à un maximum de 100 membres. Toutefois, sous Windows et Mac, vous pouvez obtenir 500 membres au maximum.
+La propriété `cc` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque destinataire répertorié sur la ligne **Cc** du message. Par défaut, la collection est limitée à 100 membres. Cependant, sous Windows et Mac, vous pouvez obtenir 500 membres au maximum.
 
 ```js
 console.log(JSON.stringify(Office.context.mailbox.item.cc));
@@ -227,10 +227,10 @@ console.log(JSON.stringify(Office.context.mailbox.item.cc));
 
 ##### <a name="compose-mode"></a>Mode composition
 
-La propriété `cc` renvoie un objet `Recipients` qui fournit des méthodes permettant d’obtenir ou de mettre à jour les destinataires figurant sur la ligne **Cc** du message. Par défaut, la collection est limitée à un maximum de 100 membres. Toutefois, sous Windows et Mac, les limites suivantes s’appliquent.
+La propriété `cc` renvoie un objet `Recipients` qui fournit des méthodes permettant d’obtenir ou de mettre à jour les destinataires figurant sur la ligne **Cc** du message. Par défaut, la collection est limitée à 100 membres. Toutefois, sous Windows et Mac, les limites suivantes s’appliquent.
 
-- Obtenir 500 membres maximum.
-- Définissez un maximum de 100 membres par appel, jusqu’à 500 membres au total.
+- Obtenez 500 membres au maximum.
+- Configurez un maximum de 100 membres par appel, jusqu’à 500 membres au total.
 
 ```js
 Office.context.mailbox.item.cc.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -505,10 +505,10 @@ console.log("Item class: " + itemClass);
 
 #### <a name="nullable-itemid-string"></a>(nullable) itemId: String
 
-Permet d’obtenir l’identificateur de l’élément des services web Exchange pour l’élément actif. Mode lecture uniquement.
+Obtient l' [identificateur d’élément des services Web Exchange](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange) pour l’élément actuel. Mode Lecture uniquement.
 
 > [!NOTE]
-> L’identificateur renvoyé par la propriété `itemId` est identique à celui de l’élément des services web Exchange. La propriété `itemId` n’est pas identique à l’ID d’entrée Outlook ni à l’ID utilisé par l’API REST Outlook. Avant d’effectuer des appels d’API REST à l’aide de cette valeur `Office.context.mailbox.convertToRestId`, elle doit être convertie à l’aide de, qui est disponible à partir de l’ensemble de conditions requises 1,3. Pour plus d’informations, voir [Utilisation des API REST Outlook à partir d’un complément Outlook](/outlook/add-ins/use-rest-api#get-the-item-id).
+> L’identificateur renvoyé par la `itemId` propriété est identique à l’identificateur d' [élément des services Web Exchange](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange). La propriété `itemId` n’est pas identique à l’ID d’entrée Outlook ni à l’ID utilisé par l’API REST Outlook. Avant d’effectuer des appels d’API REST à l’aide de cette valeur `Office.context.mailbox.convertToRestId`, elle doit être convertie à l’aide de, qui est disponible à partir de l’ensemble de conditions requises 1,3. Pour plus d’informations, voir [Utilisation des API REST Outlook à partir d’un complément Outlook](/outlook/add-ins/use-rest-api#get-the-item-id).
 
 ##### <a name="type"></a>Type
 
@@ -651,9 +651,9 @@ console.log("Normalized subject: " + normalizedSubject);
 
 Permet d’accéder aux participants facultatifs d’un événement. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
-##### <a name="read-mode"></a>Mode Lecture
+##### <a name="read-mode"></a>Mode lecture
 
-La propriété `optionalAttendees` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque participant facultatif à la réunion. Par défaut, la collection est limitée à un maximum de 100 membres. Toutefois, sous Windows et Mac, vous pouvez obtenir 500 membres au maximum.
+La propriété `optionalAttendees` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque participant facultatif à la réunion. Par défaut, la collection est limitée à 100 membres. Cependant, sous Windows et Mac, vous pouvez obtenir 500 membres au maximum.
 
 ```js
 var optionalAttendees = Office.context.mailbox.item.optionalAttendees;
@@ -662,10 +662,10 @@ console.log("Optional attendees: " + JSON.stringify(optionalAttendees));
 
 ##### <a name="compose-mode"></a>Mode composition
 
-La propriété `optionalAttendees` renvoie un objet `Recipients` qui fournit des méthodes permettant d’obtenir ou de mettre à jour les participants facultatifs d’une réunion. Par défaut, la collection est limitée à un maximum de 100 membres. Toutefois, sous Windows et Mac, les limites suivantes s’appliquent.
+La propriété `optionalAttendees` renvoie un objet `Recipients` qui fournit des méthodes permettant d’obtenir ou de mettre à jour les participants facultatifs d’une réunion. Par défaut, la collection est limitée à 100 membres. Toutefois, sous Windows et Mac, les limites suivantes s’appliquent.
 
-- Obtenir 500 membres maximum.
-- Définissez un maximum de 100 membres par appel, jusqu’à 500 membres au total.
+- Obtenez 500 membres au maximum.
+- Configurez un maximum de 100 membres par appel, jusqu’à 500 membres au total.
 
 ```js
 Office.context.mailbox.item.optionalAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -729,7 +729,7 @@ Permet d’accéder aux participants requis à un événement. Le type d’objet
 
 ##### <a name="read-mode"></a>Mode Lecture
 
-La propriété `requiredAttendees` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque participant requis à la réunion. Par défaut, la collection est limitée à un maximum de 100 membres. Toutefois, sous Windows et Mac, vous pouvez obtenir 500 membres au maximum.
+La propriété `requiredAttendees` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque participant requis à la réunion. Par défaut, la collection est limitée à 100 membres. Cependant, sous Windows et Mac, vous pouvez obtenir 500 membres au maximum.
 
 ```js
 var requiredAttendees = Office.context.mailbox.item.requiredAttendees;
@@ -738,10 +738,10 @@ console.log("Required attendees: " + JSON.stringify(requiredAttendees));
 
 ##### <a name="compose-mode"></a>Mode composition
 
-La propriété `requiredAttendees` renvoie un objet `Recipients` qui fournit des méthodes permettant d’obtenir ou de mettre à jour les participants requis à une réunion. Par défaut, la collection est limitée à un maximum de 100 membres. Toutefois, sous Windows et Mac, les limites suivantes s’appliquent.
+La propriété `requiredAttendees` renvoie un objet `Recipients` qui fournit des méthodes permettant d’obtenir ou de mettre à jour les participants requis à une réunion. Par défaut, la collection est limitée à 100 membres. Toutefois, sous Windows et Mac, les limites suivantes s’appliquent.
 
-- Obtenir 500 membres maximum.
-- Définissez un maximum de 100 membres par appel, jusqu’à 500 membres au total.
+- Obtenez 500 membres au maximum.
+- Configurez un maximum de 100 membres par appel, jusqu’à 500 membres au total.
 
 ```js
 Office.context.mailbox.item.requiredAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -910,9 +910,9 @@ function callback(asyncResult) {
 
 Permet d’accéder aux destinataires figurant sur la ligne **À** d’un message. Le type d’objet et le niveau d’accès varient selon le mode de l’élément actif.
 
-##### <a name="read-mode"></a>Mode Lecture
+##### <a name="read-mode"></a>Mode lecture
 
-La propriété `to` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque destinataire répertorié sur la ligne **À** du message. Par défaut, la collection est limitée à un maximum de 100 membres. Toutefois, sous Windows et Mac, vous pouvez obtenir 500 membres au maximum.
+La propriété `to` renvoie un tableau contenant un objet `EmailAddressDetails` pour chaque destinataire répertorié sur la ligne **À** du message. Par défaut, la collection est limitée à 100 membres. Cependant, sous Windows et Mac, vous pouvez obtenir 500 membres au maximum.
 
 ```js
 console.log(JSON.stringify(Office.context.mailbox.item.to));
@@ -920,10 +920,10 @@ console.log(JSON.stringify(Office.context.mailbox.item.to));
 
 ##### <a name="compose-mode"></a>Mode composition
 
-La propriété `to` renvoie un objet `Recipients` qui fournit des méthodes permettant d’obtenir ou de mettre à jour les destinataires figurant sur la ligne **À** du message. Par défaut, la collection est limitée à un maximum de 100 membres. Toutefois, sous Windows et Mac, les limites suivantes s’appliquent.
+La propriété `to` renvoie un objet `Recipients` qui fournit des méthodes permettant d’obtenir ou de mettre à jour les destinataires figurant sur la ligne **À** du message. Par défaut, la collection est limitée à 100 membres. Toutefois, sous Windows et Mac, les limites suivantes s’appliquent.
 
-- Obtenir 500 membres maximum.
-- Définissez un maximum de 100 membres par appel, jusqu’à 500 membres au total.
+- Obtenez 500 membres au maximum.
+- Configurez un maximum de 100 membres par appel, jusqu’à 500 membres au total.
 
 ```js
 Office.context.mailbox.item.to.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -1085,7 +1085,7 @@ Si un des paramètres de chaîne dépasse la limite, `displayReplyAllForm` gén�
 > [!NOTE]
 > La possibilité d’inclure des pièces jointes dans `displayReplyAllForm` l’appel à n’est pas prise en charge dans l’ensemble de conditions requises 1,1. La prise en charge des pièces jointes a été ajoutée à `displayReplyAllForm` dans les versions d’ensemble de conditions requises 1.2 et supérieures.
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 |Nom| Type| Description|
 |---|---|---|
@@ -1157,7 +1157,7 @@ Si un des paramètres de chaîne dépasse la limite, `displayReplyForm` génère
 > [!NOTE]
 > La possibilité d’inclure des pièces jointes dans `displayReplyForm` l’appel à n’est pas prise en charge dans l’ensemble de conditions requises 1,1. La prise en charge des pièces jointes a été ajoutée à `displayReplyForm` dans les versions d’ensemble de conditions requises 1.2 et supérieures.
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 |Nom| Type| Description|
 |---|---|---|
@@ -1319,7 +1319,7 @@ Renvoie des entités reconnues dans l’élément sélectionné, qui transmetten
 
 La méthode `getFilteredEntitiesByName` renvoie les entités qui correspondent à l’expression régulière définie dans l’élément de règle [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) du fichier manifeste XML ayant la valeur de l’élément `FilterName` spécifié.
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 |Nom| Type| Description|
 |---|---|---|
@@ -1419,7 +1419,7 @@ La méthode `getRegExMatchesByName` renvoie les chaînes qui correspondent à l�
 
 Si vous spécifiez une règle `ItemHasRegularExpressionMatch` pour la propriété de corps d’un élément, l’expression régulière doit filtrer davantage le corps. Par ailleurs, elle ne doit pas tenter de renvoyer l’intégralité du corps de l’élément. L’utilisation d’une expression régulière telle que `.*` pour obtenir l’intégralité du corps d’un élément ne renvoie pas toujours les résultats attendus.
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 |Nom| Type| Description|
 |---|---|---|
@@ -1457,7 +1457,7 @@ Charge de manière asynchrone les propriétés personnalisées de ce complément
 
 Les propriétés personnalisées sont stockées sous la forme de paires clé/valeur qui s’appliquent à une application ou un élément. Cette méthode renvoie un objet `CustomProperties` dans le rappel, qui fournit des méthodes pour accéder aux propriétés personnalisées propres à l’élément et au complément actifs. Les propriétés personnalisées ne sont pas chiffrées dans l’élément, par conséquent elles ne doivent pas servir d’espace de stockage sécurisé.
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
@@ -1515,8 +1515,8 @@ La méthode `removeAttachmentAsync` supprime la pièce jointe avec l’identific
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
 |`attachmentId`| String||Identificateur de la pièce jointe à supprimer.|
-|`options`| Objet| &lt;facultatif&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
-|`options.asyncContext`| Objet| &lt;facultatif&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
+|`options`| Objet| &lt;optional&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
+|`options.asyncContext`| Objet| &lt;optional&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
 |`callback`| fonction| &lt;optional&gt;|Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult). <br/>En cas d’échec de la suppression de la pièce jointe, la propriété `asyncResult.error` contient un code d’erreur et la raison de l’échec.|
 
 ##### <a name="errors"></a>Erreurs
