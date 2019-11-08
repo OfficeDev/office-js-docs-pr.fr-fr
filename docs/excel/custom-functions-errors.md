@@ -1,32 +1,84 @@
 ---
-ms.date: 06/18/2019
-description: Gérez les erreurs dans vos fonctions personnalisées Excel.
-title: Gestion des erreurs liées aux fonctions personnalisées dans Excel
+ms.date: 11/04/2019
+description: 'Gérer et retourner des erreurs comme #NULL! à partir de votre fonction personnalisée'
+title: Gérer et retourner des erreurs à partir de votre fonction personnalisée (préversion)
 localization_priority: Priority
-ms.openlocfilehash: 30c83ea930b16e717b48b9c02ffa0e278eb78b36
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: b04da2f3023e65a4a8b1d8f9a7b8f753322e8b46
+ms.sourcegitcommit: 42bcf9059327a8d71a7ab223805aea68be9ed6b5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771574"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "37962016"
 ---
-# <a name="error-handling-within-custom-functions"></a>Gestion des erreurs dans des fonctions personnalisées
+# <a name="handle-and-return-errors-from-your-custom-function-preview"></a>Gérer et retourner des erreurs à partir de votre fonction personnalisée (préversion)
 
-Lorsque vous créez un complément à l’aide des fonctions personnalisées, veillez à inclure la logique de gestion des erreurs pour prendre en compte les erreurs d’exécution. La gestion des erreurs pour fonctions personnalisées est identique à la[gestion des erreurs pour l’API JavaScript Excel](excel-add-ins-error-handling.md).
+> [!NOTE]
+> Les fonctionnalités décrites dans cet article sont actuellement en préversion et peuvent faire l’objet de modifications. Elles ne sont pas prises en charge dans les environnements de production pour l’instant. Vous devez être [Office Insider](https://insider.office.com/fr-FR/join) pour essayer les fonctionnalités en préversion.  Un bon moyen de tester les fonctionnalités en préversion consiste à utiliser un abonnement Office 365. Si vous n’avez pas d’abonnement Office 365, vous pouvez en obtenir un en rejoignant le [programme pour les développeurs Office 365](https://developer.microsoft.com/office/dev-program).
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+Si un problème se produit alors que votre fonction personnalisée s'exécute, vous devez retourner une erreur pour informer l’utilisateur. Si vous avez des exigences spécifiques concernant les paramètres, comme des nombres positifs uniquement, vous devez tester les paramètres et générer une erreur s’ils ne sont pas corrects. Vous pouvez également utiliser un bloc `try`-`catch` pour détecter les erreurs qui se produisent pendant que votre fonction personnalisée s’exécute.
 
-Dans l’exemple de code suivant, `.catch` gère les erreurs qui se produisent précédemment dans le code.
+## <a name="detect-and-throw-an-error"></a>Détecter et générer une erreur
 
-```js
+Examinons un cas où vous devez vous assurer qu’un paramètre de code postal est dans le bon format pour que la fonction personnalisée marche. La fonction personnalisée suivante utilise une expression régulière pour vérifier le code postal. S’il est correct, elle recherche la ville (dans une autre fonction) et retourne la valeur. S’il n’est pas correct, elle retourne une erreur `#VALUE!` à la cellule.
+
+```typescript
+/**
+* Gets a city name for the given U.S. zip code.
+* @customfunction
+* @param {string} zipCode
+* @returns The city of the zip code.
+*/
+function getCity(zipCode: string): string {
+  let isValidZip = /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(zipCode);
+  if (isValidZip) return cityLookup(zipCode);
+  let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidValue, "Please provide a valid U.S. zip code.");
+  throw error;
+}
+```
+
+## <a name="the-customfunctionserror-object"></a>Objet CustomFunctions.Error
+
+L’objet `CustomFunctions.Error` est utilisé pour retourner une erreur à la cellule. Lorsque vous créez l’objet, spécifiez l’erreur que vous voulez utiliser à l’aide de l’une des valeurs enum `ErrorCode` suivantes.
+
+
+|Valeur enum ErrorCode  |Valeur de la cellule Excel  |Signification  |
+|---------------|---------|---------|
+|`invalidValue`   | `#VALUE!` | Le type d’une valeur utilisée dans la formule n’est pas bon. |
+|`notAvailable`   | `#N/A`    | La fonction ou le service n’est pas disponible. |
+|`divisionByZero` | `#DIV/0`  | Sachez que JavaScript autorise la division par zéro, donc vous devez écrire un gestionnaire d’erreurs avec attention pour détecter cette condition. |
+|`invalidNumber`  | `#NUM!`   | Un problème s’est produit au niveau du nombre utilisé dans la formule. |
+|`nullReference`  | `#NULL!`  | Les plages dans la formule ne se croisent pas. |
+
+L’exemple de code suivant montre comment créer et retourner une erreur pour un nombre non valide (`#NUM!`).
+
+```typescript
+let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidNumber);
+throw error;
+```
+
+Lorsque vous retournez une erreur `#VALUE!`, vous pouvez aussi ajouter un message personnalisé qui apparaîtra dans une fenêtre contextuelle quand l’utilisateur pointera sur la cellule. L’exemple suivant montre comment retourner un message d’erreur personnalisé.
+
+```typescript
+// You can only return a custom error message with the #VALUE! error
+let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidValue, “The parameter can only contain lowercase characters.”);
+throw error;
+```
+
+## <a name="use-try-catch-blocks"></a>Utiliser des blocs try-catch
+
+Normalement, vous devez utiliser des blocs `try`-`catch` dans votre fonction personnalisée pour détecter toute erreur potentielle qui se produit. Si vous ne gérez pas les exceptions dans votre code, celles-ci sont retournées à Excel. Par défaut, Excel retourne `#VALUE!` pour une exception non gérée.
+
+Dans l’exemple de code suivant, la fonction personnalisée effectue un appel d’extraction à un service REST. Il est possible que l’appel échoue, par exemple, si le service REST retourne une erreur ou si le réseau est défaillant. Si c’est le cas, la fonction personnalisée retourne `#N/A` pour indiquer que l’appel web a échoué.
+
+
+```typescript
 /**
  * Gets a comment from the hypothetical contoso.com/comments API.
  * @customfunction
  * @param {number} commentID ID of a comment.
  */
 function getComment(commentID) {
-  let url = "https://www.contoso.com/comments/" + x;
-
+  let url = "https://www.contoso.com/comments/" + commentID;
   return fetch(url)
     .then(function (data) {
       return data.json();
@@ -35,12 +87,13 @@ function getComment(commentID) {
       return json.body;
     })
     .catch(function (error) {
-      throw error;
+      throw new CustomFunctions.Error(CustomFunctions.ErrorCode.notAvailable);
     })
 }
 ```
 
 ## <a name="next-steps"></a>Étapes suivantes
+
 Découvrez comment [résoudre les problèmes liés à vos fonctions personnalisées](custom-functions-troubleshooting.md).
 
 ## <a name="see-also"></a>Voir aussi
