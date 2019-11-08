@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Diagnostics-ensemble de conditions requises 1,6
 description: ''
-ms.date: 08/08/2019
+ms.date: 11/05/2019
 localization_priority: Normal
-ms.openlocfilehash: 6cfd67d988e4bf2915c96f77b7bc64ea7e78222e
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 27e738b71edb5b1b1c4aad69218eea702ffbef57
+ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696119"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "38066206"
 ---
 # <a name="diagnostics"></a>diagnostics
 
@@ -34,7 +34,7 @@ Fournit des informations de diagnostic à un complément Outlook.
 
 ### <a name="members"></a>Membres
 
-#### <a name="hostname-string"></a>NomHôte: chaîne
+#### <a name="hostname-string"></a>NomHôte : chaîne
 
 Obtient une chaîne qui représente le nom de l’application hôte.
 
@@ -60,11 +60,11 @@ Chaîne qui peut avoir l’une des valeurs suivantes : `Outlook`, `OutlookWebAp
 ---
 ---
 
-#### <a name="hostversion-string"></a>hostVersion: chaîne
+#### <a name="hostversion-string"></a>hostVersion : chaîne
 
-Obtient une valeur de type String qui représente la version de l’application hôte ou du serveur Exchange (par exemple, «15.0.468.0»).
+Obtient une valeur de type String qui représente la version de l’application hôte ou du serveur Exchange (par exemple, « 15.0.468.0 »).
 
-Si le complément de messagerie est en cours d’exécution sur le client de bureau Outlook ou `hostVersion` sur iOS, la propriété renvoie la version de l’application hôte, Outlook. Dans Outlook sur le Web, la propriété renvoie la version du serveur Exchange.
+Si le complément de messagerie est exécuté sur un ordinateur de bureau ou un client mobile Outlook `hostVersion` , la propriété renvoie la version de l’application hôte, Outlook. Dans Outlook sur le Web, la propriété renvoie la version du serveur Exchange.
 
 ##### <a name="type"></a>Type
 
@@ -83,7 +83,7 @@ Si le complément de messagerie est en cours d’exécution sur le client de bur
 ---
 ---
 
-#### <a name="owaview-string"></a>OWAView: chaîne
+#### <a name="owaview-string"></a>OWAView : chaîne
 
 Obtient une valeur de type String qui représente l’affichage actuel d’Outlook sur le Web.
 
@@ -91,7 +91,7 @@ La chaîne renvoyée peut avoir une des valeurs suivantes : `OneColumn`, `TwoCol
 
 Si l’application hôte n’est pas Outlook sur le Web, l’accès à cette propriété génère `undefined`.
 
-Outlook sur le Web possède trois modes d’affichage qui correspondent à la largeur de l’écran et de la fenêtre, ainsi qu’au nombre de colonnes pouvant être affichées:
+Outlook sur le Web possède trois modes d’affichage qui correspondent à la largeur de l’écran et de la fenêtre, ainsi qu’au nombre de colonnes pouvant être affichées :
 
 *   `OneColumn`, qui est affiché lorsque l’écran est étroit. Outlook sur le Web utilise cette disposition sur une seule colonne sur la totalité de l’écran d’un smartphone.
 *   `TwoColumns`, qui est affiché lorsque l’écran est plus large. Outlook sur le Web utilise cet affichage sur la plupart des tablettes.

@@ -1,20 +1,20 @@
 ---
 title: Élément Host dans le fichier manifeste
 description: ''
-ms.date: 07/01/2019
+ms.date: 11/05/2019
 localization_priority: Normal
-ms.openlocfilehash: e7b557034f70b03ed57598b7ffb9f43878db7392
-ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
+ms.openlocfilehash: 824cc6ae51eb9db713a0a9a768e3ec48e3271e95
+ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "35454894"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "38066276"
 ---
 # <a name="host-element"></a>Élément Host
 
 Spécifie un type d’application Office individuel dans lequel le complément doit s’activer.
 
-> [!IMPORTANT] 
+> [!IMPORTANT]
 > La syntaxe des éléments **Host** varie selon que l’élément est défini dans le [manifeste de base](#basic-manifest) ou le nœud [VersionOverrides](#versionoverrides-node). Toutefois, la fonctionnalité est identique.  
 
 ## <a name="basic-manifest"></a>Manifeste de base
@@ -53,7 +53,7 @@ Spécifie le type d’hôte ciblé par ce complément. La valeur doit être l’
 
 ## <a name="versionoverrides-node"></a>Nœud VersionOverrides
 
-Lorsqu’il est défini dans [VersionOverrides](versionoverrides.md), le type d’hôte est déterminé par l’attribut `xsi:type`. 
+Lorsqu’il est défini dans [VersionOverrides](versionoverrides.md), le type d’hôte est déterminé par l’attribut `xsi:type`.
 
 ### <a name="attributes"></a>Attributs
 
@@ -63,10 +63,10 @@ Lorsqu’il est défini dans [VersionOverrides](versionoverrides.md), le type d�
 
 ### <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Obligatoire  |  Description  |
+|  Élément |  Requis  |  Description  |
 |:-----|:-----|:-----|
 |  [DesktopFormFactor](desktopformfactor.md)    |  Oui   |  Définit les paramètres pour le facteur de forme pour bureau. |
-|  [MobileFormFactor](mobileformfactor.md)    |  Non   |  Définit les paramètres pour le facteur de forme pour environnement mobile. **Remarque:** Cet élément est pris en charge uniquement dans Outlook sur iOS. |
+|  [MobileFormFactor](mobileformfactor.md)    |  Non   |  Définit les paramètres pour le facteur de forme pour environnement mobile. **Remarque :** Cet élément est pris en charge uniquement dans Outlook sur iOS et Android. |
 |  [AllFormFactors](allformfactors.md)    |  Non   |  Définit les paramètres de tous les facteurs de forme. Utilisé uniquement par des fonctions personnalisées dans Excel. |
 
 ### <a name="xsitype"></a>xsi:type
@@ -79,7 +79,7 @@ Contrôle à quel hôte Office (Word, Excel, PowerPoint, Outlook, OneNote) s’a
 - `Presentation` (PowerPoint)
 - `Workbook` (Excel)
 
-## <a name="host-example"></a>Exemple d’hôte 
+## <a name="host-example"></a>Exemple d’hôte
 
 ```xml
 <Hosts>
