@@ -1,30 +1,30 @@
 ---
 title: Compléments PowerPoint
 description: ''
-ms.date: 09/03/2019
+ms.date: 11/07/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 86f05a70478652c546f0015e6f69e71bf3dacec0
-ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
+ms.openlocfilehash: d2ae12765beedd37892c84a84607b00e33b8703f
+ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37468741"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "38066283"
 ---
 # <a name="powerpoint-add-ins"></a>Compléments PowerPoint
 
-Vous pouvez utiliser des compléments PowerPoint afin de créer des solutions attrayantes pour les présentations de vos utilisateurs sur différentes plateformes, notamment Windows, iOS et Mac, ainsi que dans un navigateur. Vous pouvez créer deux types de commandes de complément PowerPoint:
+Vous pouvez utiliser des compléments PowerPoint afin de créer des solutions attrayantes pour les présentations de vos utilisateurs sur différentes plateformes, notamment Windows, iPad et Mac, ainsi que dans un navigateur. Vous pouvez créer deux types de commandes de complément PowerPoint:
 
 - Utilisez des **compléments de contenu** pour ajouter du contenu HTML5 dynamique à vos présentations. Par exemple, consultez le complément [Diagrammes LucidChart pour PowerPoint](https://appsource.microsoft.com/product/office/WA104380117), qui vous permet d’injecter un diagramme interactif de LucidChart dans votre support de présentation.
 
-- Utilisez des **compléments de volet Office** pour faire apparaître des informations de référence ou insérer des données dans la diapositive via un service. Par exemple, consultez le complément [Pixton Comic Characters](https://appsource.microsoft.com/product/office/WA104380907), qui vous permet d’ajouter des photos professionnelles à votre présentation. 
+- Utilisez des **compléments de volet Office** pour faire apparaître des informations de référence ou insérer des données dans la diapositive via un service. Par exemple, consultez le complément [Pixton Comic Characters](https://appsource.microsoft.com/product/office/WA104380907), qui vous permet d’ajouter des photos professionnelles à votre présentation.
 
 ## <a name="powerpoint-add-in-scenarios"></a>Scénarios de complément PowerPoint
 
 Les exemples de code figurant dans l’article vous présentent certaines tâches de base en matière de développement de compléments de contenu pour PowerPoint. Notez également ce qui suit:
 
-- Pour afficher des informations, ces exemples dépendent de la fonction`app.showNotification`, qui est incluse dans les modèles de projet de compléments Office Visual Studio. Si vous n’utilisez pas Visual Studio pour développer votre complément, vous devrez remplacer la fonction`showNotification`par votre propre code. 
+- Pour afficher des informations, ces exemples dépendent de la fonction`app.showNotification`, qui est incluse dans les modèles de projet de compléments Office Visual Studio. Si vous n’utilisez pas Visual Studio pour développer votre complément, vous devrez remplacer la fonction`showNotification`par votre propre code.
 
 - Plusieurs de ces exemples dépendent également de l’objet`Globals` qui est déclaré en dehors de la portée de ces fonctions: `var Globals = {activeViewHandler:0, firstSlideId:0};`
 
