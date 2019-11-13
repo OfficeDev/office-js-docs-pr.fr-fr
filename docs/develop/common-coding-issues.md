@@ -1,14 +1,14 @@
 ---
 title: Problèmes de codage courants et comportements de plateforme inattendus
 description: Liste des problèmes de plateforme d’API JavaScript pour Office fréquemment rencontrés par les développeurs.
-ms.date: 10/31/2019
+ms.date: 11/06/2019
 localization_priority: Normal
-ms.openlocfilehash: d39c379961833cdb924628becf2c2da3f7e271b9
-ms.sourcegitcommit: 59d29d01bce7543ebebf86e5a86db00cf54ca14a
+ms.openlocfilehash: a4d7a09c1645bea181060157d933036d1924044f
+ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "37924793"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "38301931"
 ---
 # <a name="common-coding-issues-and-unexpected-platform-behaviors"></a>Problèmes de codage courants et comportements de plateforme inattendus
 
@@ -73,16 +73,16 @@ Vous pouvez identifier une propriété dont les propriétés subordonnées doive
 - Propriété en lecture seule : les sous-propriétés peuvent être définies via la navigation.
 - Propriété accessible en écriture : les sous-propriétés doivent être définies avec une structure JSON (et ne peuvent pas être définies via la navigation).
 
-## <a name="excel-range-limits"></a>Limites de plage Excel
+## <a name="excel-data-transfer-limits"></a>Limites de transfert de données Excel
 
-Si vous créez un complément Excel qui utilise des plages, gardez à l’esprit les limitations de taille suivantes :
+Si vous créez un complément Excel, tenez compte des limitations de taille suivantes lors de l’interaction avec le classeur :
 
 - Excel sur le web a une limite de taille de charge utile de 5 Mo pour les demandes et les réponses. L’erreur `RichAPI.Error` est déclenchée en cas de dépassement de cette limite.
-- Une plage est limitée à 5 millions cellules pour les opérations Set.
+- Une plage est limitée à 5 millions cellules pour les opérations Get.
 
-Si vous prévoyez que l’entrée de l’utilisateur dépasse ces limites, veillez à vérifier les données et à les fractionner en plusieurs objets. Vous devrez également envoyer plusieurs `context.sync()` appels afin d’éviter que les opérations de plage plus petites soient regroupées.
+Si vous prévoyez que l’entrée de l’utilisateur dépasse ces limites, veillez à vérifier les `context.sync()`données avant d’appeler. Fractionnez l’opération en plusieurs parties si nécessaire. Veillez à appeler `context.sync()` pour chaque sous-opération afin d’éviter que ces opérations soient regroupées par lots.
 
-Votre complément peut utiliser [RangeAreas](/javascript/api/excel/excel.rangeareas) pour mettre à jour les cellules dans une plage plus grande de manière stratégique. Pour plus d’informations, consultez [travailler simultanément avec plusieurs plages dans des compléments Excel](../excel/excel-add-ins-multiple-ranges.md) .
+Ces limitations sont généralement dépassées par les grandes plages. Votre complément peut utiliser [RangeAreas](/javascript/api/excel/excel.rangeareas) pour mettre à jour les cellules dans une plage plus grande de manière stratégique. Pour plus d’informations, consultez [travailler simultanément avec plusieurs plages dans des compléments Excel](../excel/excel-add-ins-multiple-ranges.md) .
 
 ## <a name="setting-read-only-properties"></a>Définition de propriétés en lecture seule
 

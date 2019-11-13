@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API d’identité
 description: ''
-ms.date: 06/20/2019
+ms.date: 11/11/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: a2992569f6807499156ef13aa6663267839e1853
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 96f5c305f4ecfe0fdc0ee89aed6955e090f87b02
+ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127078"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "38301924"
 ---
 # <a name="identity-api-requirement-sets"></a>Ensembles de conditions requises de l’API d’identité
 
@@ -17,11 +17,13 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 
 Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tableau suivant répertorie les ensembles de conditions requises de l’API de boîte de dialogue, les applications Office hôtes qui prennent en charge ces conditions et les numéros de build ou de version de l’application Office.
 
-|  Ensemble de conditions requises  | Office 2013 ou version ultérieure sur Windows<br>(achat définitif) | Office sur Windows<br>(connecté à l’abonnement Office 365) |  Office sur iPad<br>(connecté à l’abonnement Office 365)  |  Office sur Mac<br>(connecté à l’abonnement Office 365)  | Office sur le Web  | SharePoint Online | OneDrive.com |Outlook.com et Exchange Online|
+|  Ensemble de conditions requises  | Office 2013 ou version ultérieure sur Windows<br>(achat définitif) | Office pour Windows<br>(connecté à l’abonnement Office 365) |  Office sur iPad<br>(connecté à l’abonnement Office 365)  |  Office sur Mac<br>(connecté à l’abonnement Office 365)  | Office sur le web  | SharePoint Online | OneDrive.com |Outlook.com et Exchange Online|
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| IdentityAPI 1.1  | N/A | Préversion<b>*</b> | Bientôt disponible | Préversion<b>*</b> | Préversion<b>*</b> | Préversion<b>*</b>| Bientôt disponible | Bientôt disponible |
+| Préversion ensembles  | N/A | Préversion<b>*</b> | Bientôt disponible | Préversion<b>*</b> | Aperçu<b>* &#8224;</b> | Aperçu<b>* &#8224;</b>| Bientôt disponible | Bientôt disponible |
 
 > **&#42;** Pendant la phase d’évaluation, l’API d’identité nécessite Office 365 (la version d’abonnement d’Office). Vous devez utiliser la version et le build mensuels les plus récents du canal du programme Insider. Vous devez participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à [Participez au programme Office Insider](https://products.office.com/office-insider?tab=tab-1). Veuillez noter que lorsqu’un build passe au canal semi-annuel de production, la prise en charge des fonctionnalités d’aperçu, y compris l’authentification unique, est désactivée pour ce build.
+>
+> **&#8224;** Les compléments qui utilisent les API SSO sur ces plateformes ne fonctionnent que si l’administrateur client de l’utilisateur a accordé le consentement au complément. L’utilisateur ne peut pas accorder de consentement même à son propre profil Azure AD.
 
 Pour en savoir plus sur les versions, les numéros de build et Office Online Server, voir :
 
@@ -34,9 +36,9 @@ Pour en savoir plus sur les versions, les numéros de build et Office Online Ser
 
 Pour plus d’informations sur les ensembles de conditions requises des API communes, voir [Ensembles de conditions requises des API communes pour Office](office-add-in-requirement-sets.md).
 
-## <a name="identityapi-11"></a>IdentityAPI 1.1
+## <a name="identityapi-preview"></a>Préversion ensembles
 
-IdentityAPI 1.1 à connexion unique est la première version de l’API. Pour plus d’informations sur cette API, voir la[référence de l’API de l’authentification unique SSO](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) section d’[Activation de l’authentification unique dans un complément](/office/dev/add-ins/develop/sso-in-office-add-ins).
+Pour plus d’informations sur cette API, consultez la version qui utilise les promesses sur [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-) ou la version qui utilise les rappels sur [getAccessTokenAsync](/javascript/api/office/office.auth#getaccesstokenasync-options--callback-).
 
 ## <a name="see-also"></a>Voir aussi
 
