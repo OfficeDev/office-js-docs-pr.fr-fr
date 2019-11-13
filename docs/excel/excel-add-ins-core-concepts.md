@@ -3,12 +3,12 @@ title: Concepts fondamentaux de programmation avec l’API JavaScript pour Excel
 description: Utilisez l’API JavaScript pour Excel afin de créer des compléments pour Excel.
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: bd346764c3faba0cf3be7612c8b29dd5e0d4c28b
-ms.sourcegitcommit: 59d29d01bce7543ebebf86e5a86db00cf54ca14a
+ms.openlocfilehash: eed6a7a4dcc480d93e15bbb75432a2345364a5dc
+ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "37924800"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "38301917"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Concepts fondamentaux de programmation avec l’API JavaScript pour Excel
 
@@ -210,7 +210,7 @@ range.values = 'Due Date';
 
 Si une plage contient un grand nombre de cellules, de valeurs, de formats de nombre et/ou de formules, il n’est peut-être pas possible d’exécuter des opérations d’API sur cette plage. L’API essaie toujours d’exécuter au mieux l’opération demandée sur une plage (par exemple, pour extraire ou écrire des données spécifiées), mais essayer d’effectuer des opérations de lecture ou d’écriture pour une grande plage peut provoquer une erreur d’API en raison de l’utilisation des ressources excessive. Pour éviter ces erreurs, nous vous recommandons d’exécuter des opérations de lecture ou d’écriture distinctes pour des sous-ensembles plus petits d’une grande plage, au lieu d’essayer d’exécuter une seule opération de lecture ou d’écriture sur une grande plage.
 
-Pour plus d’informations sur les limites système, voir [Limites de plage Excel](../develop/common-coding-issues.md#excel-range-limits).
+Pour plus d’informations sur les limites système, voir [Limites de transfert de données Excel](../develop/common-coding-issues.md#excel-data-transfer-limits).
 
 ## <a name="update-all-cells-in-a-range"></a>Mettre à jour toutes les cellules d’une plage
 
