@@ -1,14 +1,14 @@
 ---
 title: Vue d’ensemble de l’authentification et de l’autorisation dans les compléments Office
 description: ''
-ms.date: 08/09/2019
+ms.date: 11/11/2019
 localization_priority: Priority
-ms.openlocfilehash: dab5eec14a95aea9c27e1d26151b121ac2ed82ac
-ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
+ms.openlocfilehash: 20b947607623ee6a8fa08995a5c08918a6fd5d87
+ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "36838507"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "38301945"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Vue d’ensemble de l’authentification et de l’autorisation dans les compléments Office
 
@@ -37,18 +37,20 @@ Vous pouvez obtenir l’autorisation d’accès aux données Microsoft Graph pou
 
 ## <a name="user-authentication-with-sso"></a>Authentification utilisateur avec authentification unique
 
-Pour utiliser l’authentification unique pour authentifier l’utilisateur, votre code dans le volet Office ou dans un fichier de fonction appelle la méthode [getAccessTokenAsync](/javascript/api/office/office.auth#getaccesstokenasync-options--callback-). Si l’utilisateur n’est pas connecté à Office, Office ouvre une boîte de dialogue et le redirige vers la page de connexion Azure Active Directory. Une fois l’utilisateur connecté, ou si l’utilisateur est déjà connecté, la méthode retourne un jeton d’accès. Ce jeton est un jeton d’amorçage dans le flux **On Behalf Of**. (Voir [accès à Microsoft Graph sans authentification unique](#access-to-microsoft-graph-with-sso).) Il peut toutefois être utilisé en tant que jeton d’ID, car il contient plusieurs revendications uniques pour l’utilisateur actuel, notamment `preferred_username`, `name`, `sub` et `oid`. Pour obtenir des instructions sur la propriété à utiliser en tant qu’ID utilisateur final, voir [Jetons d’accès à la plateforme d’identité Microsoft](https://docs.microsoft.com/fr-FR/azure/active-directory/develop/access-tokens#payload-claims). Pour obtenir un exemple d’un de ces jetons, consultez l’[exemple de jeton d’accès](sso-in-office-add-ins.md#example-access-token).
+Pour utiliser l’authentification unique afin d’authentifier l’utilisateur, votre code dans un volet Office ou qu’un fichier fonction appelle la méthode [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). Si l’utilisateur n’est pas connecté à Office, Office ouvre une boîte de dialogue et le redirige vers la page de connexion Azure Active Directory. Une fois l’utilisateur connecté, ou si l’utilisateur est déjà connecté, la méthode retourne un jeton d’accès. Ce jeton est un jeton d’amorçage dans le flux **On Behalf Of**. (Voir [accès à Microsoft Graph sans authentification unique](#access-to-microsoft-graph-with-sso).) Il peut toutefois être utilisé en tant que jeton d’ID, car il contient plusieurs revendications uniques pour l’utilisateur actuel, notamment `preferred_username`, `name`, `sub` et `oid`. Pour obtenir des instructions sur la propriété à utiliser en tant qu’ID utilisateur final, voir [Jetons d’accès à la plateforme d’identité Microsoft](https://docs.microsoft.com/azure/active-directory/develop/access-tokens#payload-claims). Pour obtenir un exemple d’un de ces jetons, consultez l’[exemple de jeton d’accès](sso-in-office-add-ins.md#example-access-token).
 
 Une fois que votre code a extrait la revendication souhaitée du jeton, il utilise cette valeur pour rechercher l’utilisateur dans une table des utilisateurs ou une base de données des utilisateurs. Utilisez la base de données pour stocker les informations relatives aux utilisateurs, comme les préférences utilisateur ou l’état du compte utilisateur. Étant donné que vous utilisez l’authentification unique, vos utilisateurs ne se connectent pas séparément à votre complément. vous n’avez donc pas besoin de stocker de mot de passe pour l’utilisateur.
 
 Avant de commencer l’implémentation de l’authentification des utilisateurs avec l’authentification unique, assurez-vous que vous êtes familiarisé avec l’article [Activer l’authentification unique pour les compléments Office](sso-in-office-add-ins.md). Notez également les exemples suivants :
 
-- [Authentification unique NodeJS de complément Office](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO), notamment le fichier [auth.ts](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/src/auth.ts) qui utilise la bibliothèque [jswebtoken](https://github.com/auth0/node-jsonwebtoken) pour décoder et analyser le jeton. (Toutefois, cet exemple n’utilise pas le jeton comme jeton d’identité. Il l’utilise pour obtenir l’accès à Microsoft Graph avec le flux **On Behalf Of**.)
-- [Authentification unique ASP.NET de complément Office](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO), notamment le fichier [ValuesController.ts](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Controllers/ValuesController.cs) qui utilise la classe [System.Security.Claims.ClaimsPrincipal](https://docs.microsoft.com/dotnet/api/system.security.claims.claimsprincipal) de la bibliothèque pour extraire les revendications du jeton. (Toutefois, cet exemple n’utilise pas le jeton comme jeton d’identité. Il extrait une revendication `scope` du jeton et l’utilise pour obtenir l’accès à Microsoft Graph avec le flux **On Behalf Of**.)
+- [Complément Office NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO), en particulier le fichier [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/src/auth.ts). 
+- [Complément Office ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO). 
 
-## <a name="access-to-microsoft-graph-with-sso"></a>Accès à Microsoft Graph avec l’authentification unique
+Toutefois, ces exemples n’utilisent pas le jeton comme jeton d’identité. Ils l’utilisent pour obtenir l’accès à Microsoft Graph avec le flux **On Behalf Of**.
 
-Pour utiliser l’authentification unique pour accéder à Microsoft Graph, votre complément dans le volet Office ou dans un fichier de fonction appelle la méthode [getAccessTokenAsync](/javascript/api/office/office.auth#getaccesstokenasync-options--callback-). Si l’utilisateur n’est pas connecté à Office, Office ouvre une boîte de dialogue et le redirige vers la page de connexion Azure Active Directory. Une fois l’utilisateur connecté, ou si l’utilisateur est déjà connecté, la méthode retourne un jeton d’accès. Ce jeton est un jeton d’amorçage dans le flux **On Behalf Of**. Plus précisément, il possède une `scope`revendication avec la valeur `access_as_user`. Pour plus d’informations sur les revendications dans le jeton, voir [Jetons d’accès à la plateforme d’identité Microsoft](https://docs.microsoft.com/fr-FR/azure/active-directory/develop/access-tokens#payload-claims). Pour obtenir un exemple d’un de ces jetons, consultez l’[exemple de jeton d’accès](sso-in-office-add-ins.md#example-access-token).
+## <a name="access-to-microsoft-graph-with-sso"></a>Accès à Microsoft Graph avec SSO
+
+Pour utiliser l’authentification unique pour accéder à Microsoft Graph, votre complément dans le volet Office ou dans un fichier de fonction appelle la méthode [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). Si l’utilisateur n’est pas connecté à Office, Office ouvre une boîte de dialogue et le redirige vers la page de connexion Azure Active Directory. Une fois l’utilisateur connecté, ou si l’utilisateur est déjà connecté, la méthode retourne un jeton d’accès. Ce jeton est un jeton d’amorçage dans le flux **On Behalf Of**. Plus précisément, il possède une `scope`revendication avec la valeur `access_as_user`. Pour plus d’informations sur les revendications dans le jeton, voir [Jetons d’accès à la plateforme d’identité Microsoft](https://docs.microsoft.com/azure/active-directory/develop/access-tokens#payload-claims). Pour obtenir un exemple d’un de ces jetons, consultez l’[exemple de jeton d’accès](sso-in-office-add-ins.md#example-access-token).
 
 Une fois que votre code a obtenu le jeton, il l’utilise dans le flux **On Behalf Of** pour obtenir un deuxième jeton : un jeton d’accès à Microsoft Graph.
 
@@ -73,4 +75,3 @@ Les services en ligne populaires, dont Google, Facebook, LinkedIn, SalesForce et
 
 > [!IMPORTANT]
 > Avant de commencer à coder, déterminez si la source de données autorise l’ouverture de son écran de connexion dans un iFrame. Lorsqu’un complément Office est exécuté sur *Office sur le Web*, le volet Office est un iFrame. Si la source de données n’autorise pas l’ouverture de l’écran de connexion dans un iFrame, vous devez ouvrir l’écran de connexion dans une boîte de dialogue ouverte avec l’API de boîte de dialogue Office. Pour plus d’informations, consultez [Authentification avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md).
-
