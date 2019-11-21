@@ -446,6 +446,9 @@
             - name: API de vue d’ensemble Excel
               href: reference/requirement-sets/excel-preview-apis.md
               displayName: Excel
+            - name: Ensemble de conditions requises pour ExcelApi en ligne uniquement
+              href: reference/requirement-sets/excel-api-online-requirement-set.md
+              displayName: Excel
             - name: "Ensemble de conditions requises ExcelApi\_1.10"
               href: reference/requirement-sets/excel-api-1-10-requirement-set.md
               displayName: Excel
@@ -546,6 +549,9 @@
           displayName: 'Excel, Custom Functions'
         - name: Didacticiel sur les fonctions personnalisées
           href: tutorials/excel-tutorial-create-custom-functions.md
+          displayName: 'Excel, Custom Functions'
+        - name: Les fonctions personnalisées partagent des données destinées au didacticiel du volet des tâches
+          href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
           displayName: 'Excel, Custom Functions'
         - name: Architecture
           href: excel/custom-functions-architecture.md
