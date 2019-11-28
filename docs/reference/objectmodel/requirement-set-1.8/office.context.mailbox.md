@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox-ensemble de conditions requises 1,8
 description: ''
-ms.date: 10/31/2019
+ms.date: 11/27/2019
 localization_priority: Normal
-ms.openlocfilehash: 3f6d639cdf8bdff6f2df365622f58eba1c4b38e0
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: 908eff7b34e63b62fbe250f1a6f810be69b17627
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902156"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629215"
 ---
 # <a name="mailbox"></a>boîte aux lettres
 
@@ -130,10 +130,6 @@ obtient l’URL du point de terminaison REST de ce compte de messagerie.
 
 La valeur `restUrl` peut être utilisée pour que l’[API REST](/outlook/rest/) appelle la boîte aux lettres de l’utilisateur.
 
-L’autorisation **ReadItem** doit être spécifiée dans le manifeste de votre application pour appeler le membre `restUrl` en mode lecture.
-
-En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) avant de pouvoir utiliser le membre `restUrl`. Votre application doit disposer des autorisations **ReadWriteItem** pour appeler la méthode `saveAsync`.
-
 ##### <a name="type"></a>Type
 
 *   String
@@ -154,7 +150,7 @@ ajoute un gestionnaire d’événements pour un événement pris en charge.
 
 Actuellement, les types d’événement pris `Office.EventType.ItemChanged` en `Office.EventType.OfficeThemeChanged`charge sont et.
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 | Nom | Type | Attributs | Description |
 |---|---|---|---|
@@ -205,7 +201,7 @@ Convertit un ID d’élément mis en forme pour REST au format EWS.
 
 Les ID d’élément extraits via une API REST (telle que l’[API Courrier Outlook](/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) ou [Microsoft Graph](https://graph.microsoft.io/)) utilisent un format différent de celui employé par les services web Exchange (EWS). La méthode `convertToEwsId` convertit un ID mis en forme pour REST au format approprié pour EWS.
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 |Nom| Type| Description|
 |---|---|---|
@@ -279,7 +275,7 @@ Convertit un ID d’élément mis en forme pour EWS au format REST.
 
 Les ID d’élément récupérés via EWS ou la propriété `itemId` utilisent un format différent de celui employé par les API REST (telles que l’[API Courrier Outlook](/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) ou [Microsoft Graph](https://graph.microsoft.io/)). La méthode `convertToRestId` convertit un ID mis en forme pour EWS au format approprié pour REST.
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 |Nom| Type| Description|
 |---|---|---|
@@ -319,7 +315,7 @@ Obtient un objet Date à partir d’un dictionnaire contenant des informations d
 
 La méthode `convertToUtcClientTime` convertit un dictionnaire contenant une date et une heure locales en objet Date avec les valeurs appropriées pour la date et l’heure locales.
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 |Nom| Type| Description|
 |---|---|---|
@@ -381,7 +377,7 @@ Dans Outlook sur le web, cette méthode ouvre le formulaire spécifié uniqueme
 
 Si l’identificateur de l’élément spécifié n’identifie aucun rendez-vous existant, un volet vierge s’ouvre sur l’ordinateur ou l’appareil client. Par ailleurs, aucun message d’erreur n’est retourné.
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 |Nom| Type| Description|
 |---|---|---|
@@ -421,11 +417,11 @@ Si l’identificateur de l’élément spécifié n’identifie aucun message ex
 
 N’utilisez pas la méthode `displayMessageForm` ayant une valeur `itemId` qui représente un rendez-vous. Utilisez la méthode `displayAppointmentForm` pour afficher un rendez-vous existant, et `displayNewAppointmentForm` pour afficher un formulaire afin de créer un nouveau rendez-vous.
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 |Nom| Type| Description|
 |---|---|---|
-|`itemId`| String|Identificateur des services web Exchange pour un message existant.|
+|`itemId`| Chaîne|Identificateur des services web Exchange pour un message existant.|
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -601,7 +597,7 @@ Le complément doit utiliser la propriété `ewsUrl` pour déterminer l’URL à
 
 Vous pouvez passer à la fois le jeton et un identifiant de pièce jointe ou un identifiant d'élément à un système tiers. Le système tiers utilise le jeton comme jeton d’autorisation du support pour appeler l’opération [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) des services Web Exchange (EWS) ou de [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) pour récupérer une pièce jointe ou un élément. Par exemple, vous pouvez créer un service distant pour [obtenir des pièces jointes à partir de l’élément sélectionné](/outlook/add-ins/get-attachments-of-an-outlook-item).
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
@@ -782,7 +778,7 @@ Lorsque vous utilisez la méthode `makeEwsRequestAsync` dans les applications de
 
 Lorsque votre application de messagerie s’exécute dans Outlook sur le web, vous n’avez pas à définir la valeur d’encodage. Vous pouvez déterminer si votre application de messagerie est en cours d’exécution dans Outlook sur le Web ou sur un client de bureau à l’aide de la propriété Mailbox. Diagnostics. hostName. Pour déterminer la version d’Outlook qui est exécutée, utilisez la propriété mailbox.diagnostics.hostVersion.
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
@@ -855,7 +851,7 @@ Supprime les gestionnaires d’événements pour un type d’événement pris en
 
 Actuellement, les types d’événement pris `Office.EventType.ItemChanged` en `Office.EventType.OfficeThemeChanged`charge sont et.
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 | Nom | Type | Attributs | Description |
 |---|---|---|---|

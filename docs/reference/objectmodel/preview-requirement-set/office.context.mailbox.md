@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox-Preview-ensemble de conditions requises
 description: ''
-ms.date: 10/30/2019
+ms.date: 11/25/2019
 localization_priority: Normal
-ms.openlocfilehash: ff649029713984b32e817bbeaf7c59a48cc5b023
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: 8c67f7cf9231dd1c0db0d9a8d4ae9fb48e458435
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902108"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629194"
 ---
 # <a name="mailbox"></a>boîte aux lettres
 
@@ -24,27 +24,41 @@ Permet d’accéder au modèle d’objet de complément Outlook pour Microsoft O
 |[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restreinte|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
-##### <a name="members-and-methods"></a>Membres et méthodes
+##### <a name="properties"></a>Propriétés
 
-| Membre | Type |
-|--------|------|
-| [ewsUrl](#ewsurl-string) | Membre |
-| [masterCategories](#mastercategories-mastercategories) | Membre |
-| [restUrl](#resturl-string) | Membre |
-| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | Méthode |
-| [convertToEwsId](#converttoewsiditemid-restversion--string) | Méthode |
-| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) | Méthode |
-| [convertToRestId](#converttorestiditemid-restversion--string) | Méthode |
-| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | Méthode |
-| [displayAppointmentForm](#displayappointmentformitemid) | Méthode |
-| [displayMessageForm](#displaymessageformitemid) | Méthode |
-| [displayNewAppointmentForm](#displaynewappointmentformparameters) | Méthode |
-| [displayNewMessageForm](#displaynewmessageformparameters) | Méthode |
-| [getCallbackTokenAsync](#getcallbacktokenasyncoptions-callback) | Méthode |
-| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | Méthode |
-| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | Méthode |
-| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | Méthode |
-| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | Méthode |
+| Propriété | Minimale<br>niveau d’autorisation | Modes | Type de retour | Minimale<br>ensemble de conditions requises |
+|---|---|---|---|---|
+| [ewsUrl](#ewsurl-string) | ReadItem | Composition<br>Lecture | String | 1.0 |
+| [masterCategories](#mastercategories-mastercategories) | ReadWriteMailbox | Composition<br>Lecture | [Catégoriesmaître](/javascript/api/outlook/office.mastercategories) | Aperçu |
+| [restUrl](#resturl-string) | ReadItem | Composition<br>Lecture | String | 1,5 |
+
+##### <a name="methods"></a>Méthodes
+
+| Méthode | Minimale<br>niveau d’autorisation | Modes | Minimale<br>ensemble de conditions requises |
+|---|---|---|---|
+| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | ReadItem | Composition<br>Lecture | 1,5 |
+| [convertToEwsId](#converttoewsiditemid-restversion--string) | Restreinte | Composition<br>Lecture | 1.3 |
+| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) | ReadItem | Composition<br>Lecture | 1.0 |
+| [convertToRestId](#converttorestiditemid-restversion--string) | Restreinte | Composition<br>Lecture | 1.3 |
+| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | ReadItem | Composition<br>Lecture | 1.0 |
+| [displayAppointmentForm](#displayappointmentformitemid) | ReadItem | Composition<br>Lecture | 1.0 |
+| [displayMessageForm](#displaymessageformitemid) | ReadItem | Composition<br>Lecture | 1.0 |
+| [displayNewAppointmentForm](#displaynewappointmentformparameters) | ReadItem | Lecture | 1.0 |
+| [displayNewMessageForm](#displaynewmessageformparameters) | ReadItem | Composition<br>Lecture | 1.6 |
+| [getCallbackTokenAsync](#getcallbacktokenasyncoptions-callback) | ReadItem | Composition<br>Lecture | 1,5 |
+| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | ReadItem | Composition<br>Lecture | 1.3<br>1.0 |
+| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | ReadItem | Composition<br>Lecture | 1.0 |
+| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | ReadWriteMailbox | Composition<br>Lecture | 1.0 |
+| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | ReadItem | Composition<br>Lecture | 1,5 |
+
+##### <a name="events"></a>Événements
+
+Vous pouvez vous abonner et annuler l’abonnement aux événements suivants à l’aide de [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) et [removeHandlerAsync](#removehandlerasynceventtype-options-callback) , respectivement.
+
+| Événement | Description | Minimale<br>ensemble de conditions requises |
+|---|---|---|
+|`ItemChanged`| Un autre élément Outlook est sélectionné pour consultation pendant que le volet Office est épinglé. | 1,5 |
+|`OfficeThemeChanged`| Le thème Office de la boîte aux lettres a été modifié. | Aperçu |
 
 ### <a name="namespaces"></a>Espaces de noms
 
@@ -54,7 +68,7 @@ Permet d’accéder au modèle d’objet de complément Outlook pour Microsoft O
 
 [userProfile](Office.context.mailbox.userProfile.md) : Fournit des informations sur l’utilisateur dans un complément Outlook.
 
-### <a name="members"></a>Members
+## <a name="property-details"></a>Détails de la propriété
 
 #### <a name="ewsurl-string"></a>ewsUrl: String
 
@@ -130,10 +144,6 @@ obtient l’URL du point de terminaison REST de ce compte de messagerie.
 
 La valeur `restUrl` peut être utilisée pour que l’[API REST](/outlook/rest/) appelle la boîte aux lettres de l’utilisateur.
 
-L’autorisation **ReadItem** doit être spécifiée dans le manifeste de votre application pour appeler le membre `restUrl` en mode lecture.
-
-En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) avant de pouvoir utiliser le membre `restUrl`. Votre application doit disposer des autorisations **ReadWriteItem** pour appeler la méthode `saveAsync`.
-
 ##### <a name="type"></a>Type
 
 *   String
@@ -146,7 +156,7 @@ En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context
 |[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
-### <a name="methods"></a>Méthodes
+## <a name="method-details"></a>Détails de méthodes
 
 #### <a name="addhandlerasynceventtype-handler-options-callback"></a>addHandlerAsync(eventType, handler, [options], [callback])
 
@@ -154,7 +164,7 @@ ajoute un gestionnaire d’événements pour un événement pris en charge.
 
 Actuellement, les types d’événement pris `Office.EventType.ItemChanged` en `Office.EventType.OfficeThemeChanged`charge sont et.
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 | Nom | Type | Attributs | Description |
 |---|---|---|---|
@@ -279,7 +289,7 @@ Convertit un ID d’élément mis en forme pour EWS au format REST.
 
 Les ID d’élément récupérés via EWS ou la propriété `itemId` utilisent un format différent de celui employé par les API REST (telles que l’[API Courrier Outlook](/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) ou [Microsoft Graph](https://graph.microsoft.io/)). La méthode `convertToRestId` convertit un ID mis en forme pour EWS au format approprié pour REST.
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 |Nom| Type| Description|
 |---|---|---|
@@ -319,7 +329,7 @@ Obtient un objet Date à partir d’un dictionnaire contenant des informations d
 
 La méthode `convertToUtcClientTime` convertit un dictionnaire contenant une date et une heure locales en objet Date avec les valeurs appropriées pour la date et l’heure locales.
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 |Nom| Type| Description|
 |---|---|---|
@@ -381,7 +391,7 @@ Dans Outlook sur le web, cette méthode ouvre le formulaire spécifié uniqueme
 
 Si l’identificateur de l’élément spécifié n’identifie aucun rendez-vous existant, un volet vierge s’ouvre sur l’ordinateur ou l’appareil client. Par ailleurs, aucun message d’erreur n’est retourné.
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 |Nom| Type| Description|
 |---|---|---|
@@ -421,11 +431,11 @@ Si l’identificateur de l’élément spécifié n’identifie aucun message ex
 
 N’utilisez pas la méthode `displayMessageForm` ayant une valeur `itemId` qui représente un rendez-vous. Utilisez la méthode `displayAppointmentForm` pour afficher un rendez-vous existant, et `displayNewAppointmentForm` pour afficher un formulaire afin de créer un nouveau rendez-vous.
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 |Nom| Type| Description|
 |---|---|---|
-|`itemId`| String|Identificateur des services web Exchange pour un message existant.|
+|`itemId`| Chaîne|Identificateur des services web Exchange pour un message existant.|
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -601,7 +611,7 @@ Le complément doit utiliser la propriété `ewsUrl` pour déterminer l’URL à
 
 Vous pouvez passer à la fois le jeton et un identifiant de pièce jointe ou un identifiant d'élément à un système tiers. Le système tiers utilise le jeton comme jeton d’autorisation du support pour appeler l’opération [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) des services Web Exchange (EWS) ou de [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) pour récupérer une pièce jointe ou un élément. Par exemple, vous pouvez créer un service distant pour [obtenir des pièces jointes à partir de l’élément sélectionné](/outlook/add-ins/get-attachments-of-an-outlook-item).
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
@@ -782,7 +792,7 @@ Lorsque vous utilisez la méthode `makeEwsRequestAsync` dans les applications de
 
 Lorsque votre application de messagerie s’exécute dans Outlook sur le web, vous n’avez pas à définir la valeur d’encodage. Vous pouvez déterminer si votre application de messagerie est en cours d’exécution dans Outlook sur le Web ou sur un client de bureau à l’aide de la propriété Mailbox. Diagnostics. hostName. Pour déterminer la version d’Outlook qui est exécutée, utilisez la propriété mailbox.diagnostics.hostVersion.
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
@@ -855,7 +865,7 @@ Supprime les gestionnaires d’événements pour un type d’événement pris en
 
 Actuellement, les types d’événement pris `Office.EventType.ItemChanged` en `Office.EventType.OfficeThemeChanged`charge sont et.
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 | Nom | Type | Attributs | Description |
 |---|---|---|---|

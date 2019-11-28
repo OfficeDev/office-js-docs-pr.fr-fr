@@ -1,14 +1,14 @@
 ---
 title: Espace de noms Office – ensemble de conditions requises
 description: ''
-ms.date: 10/30/2019
+ms.date: 11/25/2019
 localization_priority: Normal
-ms.openlocfilehash: eae6f99d166695f24f4a94e89ea4b876bea080ef
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: bd37b1be4d77d73cb56b0b2593ccc57dea6cab27
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902101"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629229"
 ---
 # <a name="office"></a>Office
 
@@ -21,14 +21,14 @@ L’espace de noms Office fournit des interfaces partagées qui sont utilisées 
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
-##### <a name="members-and-methods"></a>Membres et méthodes
+##### <a name="properties"></a>Propriétés
 
-| Membre | Type |
-|--------|------|
-| [AsyncResultStatus](#asyncresultstatus-string) | Membre |
-| [CoercionType](#coerciontype-string) | Membre |
-| [EventType](#eventtype-string) | Membre |
-| [SourceProperty](#sourceproperty-string) | Membre |
+| Propriété | Modes | Type de retour | Minimale<br>ensemble de conditions requises |
+|---|---|---|---|
+| [AsyncResultStatus](#asyncresultstatus-string) | Composition<br>Lecture | String | 1.0 |
+| [CoercionType](#coerciontype-string) | Composition<br>Lecture | String | 1.0 |
+| [EventType](#eventtype-string) | Composition<br>Lecture | String | 1,5 |
+| [SourceProperty](#sourceproperty-string) | Composition<br>Lecture | String | 1.0 |
 
 ### <a name="namespaces"></a>Espaces de noms
 
@@ -36,7 +36,7 @@ L’espace de noms Office fournit des interfaces partagées qui sont utilisées 
 
 [MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat): inclut un certain nombre d’énumérations, par exemple `ItemType` `EntityType` `AttachmentType` `RecipientType` `ResponseType`,,,,, et `ItemNotificationMessageType`.
 
-### <a name="members"></a>Members
+## <a name="property-details"></a>Détails de la propriété
 
 #### <a name="asyncresultstatus-string"></a>AsyncResultStatus : chaîne
 
@@ -50,7 +50,7 @@ Spécifie le résultat d’un appel asynchrone.
 
 |Nom| Type| Description|
 |---|---|---|
-|`Succeeded`| String|L’appel a réussi.|
+|`Succeeded`| Chaîne|L’appel a réussi.|
 |`Failed`| String|L’appel n’a pas réussi.|
 
 ##### <a name="requirements"></a>Configuration requise
@@ -77,7 +77,7 @@ Indique comment forcer le type des données retournées ou définies par la mét
 
 |Nom| Type| Description|
 |---|---|---|
-|`Html`| String|Demande que les données soient renvoyées au format HTML.|
+|`Html`| Chaîne|Demande que les données soient renvoyées au format HTML.|
 |`Text`| String|Demande que les données soient renvoyées au format texte.|
 
 ##### <a name="requirements"></a>Configuration requise
@@ -136,7 +136,7 @@ Spécifie la source des données renvoyées par la méthode appelée.
 
 |Nom| Type| Description|
 |---|---|---|
-|`Body`| String|La source de données est dans le corps d’un message.|
+|`Body`| Chaîne|La source de données est dans le corps d’un message.|
 |`Subject`| String|La source de données est dans l’objet d’un message.|
 
 ##### <a name="requirements"></a>Configuration requise

@@ -1,20 +1,20 @@
 ---
 title: Office. Context. Mailbox. Item-Preview ensemble de conditions requises
 description: ''
-ms.date: 11/06/2019
+ms.date: 11/25/2019
 localization_priority: Normal
-ms.openlocfilehash: 8a65f3b36c6c05c6885cb6925b61ee8c9520dc4a
-ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
+ms.openlocfilehash: a71d3869d5dbf91db7823118a8d0409699e17cd5
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "38066290"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629222"
 ---
 # <a name="item"></a>élément
 
 ### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmditem"></a>[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item
 
-L’espace de noms `item` est utilisé pour accéder au message, à la demande de réunion ou au rendez-vous actuellement sélectionné. Vous pouvez déterminer le type de l’élément `item` à l’aide de la propriété [itemType](#itemtype-officemailboxenumsitemtype).
+L’espace de noms `item` est utilisé pour accéder au message, à la demande de réunion ou au rendez-vous actuellement sélectionné. Vous pouvez déterminer le type de l’élément `item` à l’aide de la propriété [itemType](#itemtype-mailboxenumsitemtype).
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -24,64 +24,103 @@ L’espace de noms `item` est utilisé pour accéder au message, à la demande d
 |[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)|Restreinte|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)|Rédaction ou lecture|
 
-##### <a name="members-and-methods"></a>Membres et méthodes
+##### <a name="properties"></a>Propriétés
 
-| Membre | Type |
-|--------|------|
-| [attachments](#attachments-arrayattachmentdetails) | Membre |
-| [bcc](#bcc-recipients) | Membre |
-| [body](#body-body) | Membre |
-| [catégories](#categories-categories) | Membre |
-| [cc](#cc-arrayemailaddressdetailsrecipients) | Membre |
-| [conversationId](#nullable-conversationid-string) | Membre |
-| [dateTimeCreated](#datetimecreated-date) | Membre |
-| [dateTimeModified](#datetimemodified-date) | Membre |
-| [end](#end-datetime) | Membre |
-| [enhancedLocation](#enhancedlocation-enhancedlocation) | Membre |
-| [from](#from-emailaddressdetailsfrom) | Membre |
-| [internetHeaders](#internetheaders-internetheaders) | Membre |
-| [internetMessageId](#internetmessageid-string) | Membre |
-| [itemClass](#itemclass-string) | Membre |
-| [itemId](#nullable-itemid-string) | Membre |
-| [itemType](#itemtype-officemailboxenumsitemtype) | Membre |
-| [location](#location-stringlocation) | Membre |
-| [normalizedSubject](#normalizedsubject-string) | Membre |
-| [notificationMessages](#notificationmessages-notificationmessages) | Member |
-| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | Membre |
-| [organizer](#organizer-emailaddressdetailsorganizer) | Membre |
-| [recurrence](#nullable-recurrence-recurrence) | Membre |
-| [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | Membre |
-| [sender](#sender-emailaddressdetails) | Member |
-| [seriesId](#nullable-seriesid-string) | Member |
-| [start](#start-datetime) | Member |
-| [subject](#subject-stringsubject) | Membre |
-| [to](#to-arrayemailaddressdetailsrecipients) | Membre |
-| [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | Méthode |
-| [addFileAttachmentFromBase64Async](#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) | Méthode |
-| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | Méthode |
-| [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | Méthode |
-| [close](#close) | Méthode |
-| [displayReplyAllForm](#displayreplyallformformdata-callback) | Méthode |
-| [displayReplyForm](#displayreplyformformdata-callback) | Méthode |
-| [getAllInternetHeadersAsync](#getallinternetheadersasyncoptions-callback) | Méthode |
-| [getAttachmentContentAsync](#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent) | Méthode |
-| [getAttachmentsAsync](#getattachmentsasyncoptions-callback--arrayattachmentdetails) | Méthode |
-| [getEntities](#getentities--entities) | Méthode |
-| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Méthode |
-| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Méthode |
-| [getInitializationContextAsync](#getinitializationcontextasyncoptions-callback) | Méthode |
-| [getItemIdAsync](#getitemidasyncoptions-callback) | Méthode |
-| [getRegExMatches](#getregexmatches--object) | Méthode |
-| [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | Méthode |
-| [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | Méthode |
-| [getSelectedEntities](#getselectedentities--entities) | Méthode |
-| [getSelectedRegExMatches](#getselectedregexmatches--object) | Méthode |
-| [getSharedPropertiesAsync](#getsharedpropertiesasyncoptions-callback) | Méthode |
-| [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | Méthode |
-| [removeAttachmentAsync](#removeattachmentasyncattachmentid-options-callback) | Méthode |
-| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | Méthode |
-| [saveAsync](#saveasyncoptions-callback) | Méthode |
-| [setSelectedDataAsync](#setselecteddataasyncdata-options-callback) | Méthode |
+| Propriété | Minimale<br>niveau d’autorisation | Modes | Type de retour | Minimale<br>ensemble de conditions requises |
+|---|---|---|---|---|
+| [attachments](#attachments-arrayattachmentdetails) | ReadItem | Lecture | Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)> | 1.0 |
+| [bcc](#bcc-recipients) | ReadItem | Composition de message | [Destinataires](/javascript/api/outlook/office.recipients) | 1.1 |
+| [body](#body-body) | ReadItem | Composition | [Body](/javascript/api/outlook/office.body) | 1.1 |
+| | | Lecture | | |
+| [categories](#categories-categories) | ReadItem | Composition | [Categories](/javascript/api/outlook/office.categories) | Aperçu |
+| | | Lecture | | |
+| [cc](#cc-arrayemailaddressdetailsrecipients) | ReadItem | Composition de message | [Destinataires](/javascript/api/outlook/office.recipients) | 1.0 |
+| | | Lecture de message | Tableau. <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | |
+| [conversationId](#nullable-conversationid-string) | ReadItem | Composition de message | String | 1.0 |
+| | | Lecture de message | | |
+| [dateTimeCreated](#datetimecreated-date) | ReadItem | Lecture | Date | 1.0 |
+| [dateTimeModified](#datetimemodified-date) | ReadItem | Lecture | Date | 1.0 |
+| [end](#end-datetime) | ReadItem | Organisateur de rendez-vous | [Heure](/javascript/api/outlook/office.time) | 1.0 |
+| | | Participant à un rendez-vous | Date | |
+| | | Lecture de message<br>(Demande de réunion) | Date | |
+| [enhancedLocation](#enhancedlocation-enhancedlocation) | ReadItem | Organisateur de rendez-vous | [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) | Aperçu |
+| | | Participant à un rendez-vous | | |
+| [from](#from-emailaddressdetailsfrom) | ReadWriteItem | Composition de message | [From](/javascript/api/outlook/office.from) | 1.7 |
+| | ReadItem | Lecture de message | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | 1.0 |
+| [internetHeaders](#internetheaders-internetheaders) | ReadItem | Composition de message | [InternetHeaders](/javascript/api/outlook/office.internetheaders) | Aperçu |
+| [internetMessageId](#internetmessageid-string) | ReadItem | Lecture de message | String | 1.0 |
+| [itemClass](#itemclass-string) | ReadItem | Lecture | String | 1.0 |
+| [itemId](#nullable-itemid-string) | ReadItem | Lecture | String | 1.0 |
+| [itemType](#itemtype-mailboxenumsitemtype) | ReadItem | Composition | [MailboxEnums. ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | 1.0 |
+| | | Lecture | | |
+| [location](#location-stringlocation) | ReadItem | Organisateur de rendez-vous | [Location](/javascript/api/outlook/office.location) | 1.0 |
+| | | Participant à un rendez-vous | String | |
+| | | Lecture de message<br>(Demande de réunion) | String | |
+| [normalizedSubject](#normalizedsubject-string) | ReadItem | Lecture | String | 1.0 |
+| [notificationMessages](#notificationmessages-notificationmessages) | ReadItem | Composition de message | [NotificationMessages](/javascript/api/outlook/office.notificationmessages) | 1.3 |
+| | ReadItem | Lecture de message | | |
+| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | ReadItem | Organisateur de rendez-vous | [Destinataires](/javascript/api/outlook/office.recipients) | 1.0 |
+| | | Participant à un rendez-vous | Tableau. <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | |
+| [organizer](#organizer-emailaddressdetailsorganizer) | ReadWriteItem | Organisateur de rendez-vous | [Organizer](/javascript/api/outlook/office.organizer) | 1.7 |
+| | ReadItem | Participant à un rendez-vous | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | 1.0 |
+| [recurrence](#nullable-recurrence-recurrence) | ReadItem | Organisateur de rendez-vous | [Instances](/javascript/api/outlook/office.recurrence) | 1.7 |
+| | | Participant à un rendez-vous | | |
+| | | Lecture de message<br>(Demande de réunion) | | |
+| [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | ReadItem | Organisateur de rendez-vous | [Destinataires](/javascript/api/outlook/office.recipients) | 1.0 |
+| | | Participant à un rendez-vous | Tableau. <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | |
+| [sender](#sender-emailaddressdetails) | ReadItem | Lecture de message | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | 1.0 |
+| [seriesId](#nullable-seriesid-string) | ReadItem | Composition | String | 1.7 |
+| | | Lecture | | |
+| [start](#start-datetime) | ReadItem | Organisateur de rendez-vous | [Heure](/javascript/api/outlook/office.time) | 1.0 |
+| | | Participant à un rendez-vous | Date | |
+| | | Lecture de message<br>(Demande de réunion) | Date | |
+| [subject](#subject-stringsubject) | ReadItem | Composition | [Objet](/javascript/api/outlook/office.subject) | 1.0 |
+| | | Lecture | String | |
+| [to](#to-arrayemailaddressdetailsrecipients) | ReadItem | Composition de message | [Destinataires](/javascript/api/outlook/office.recipients) | 1.0 |
+| | | Lecture de message | Tableau. <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | |
+
+##### <a name="methods"></a>Méthodes
+
+| Méthode | Minimale<br>niveau d’autorisation | Modes | Minimale<br>ensemble de conditions requises |
+|---|---|---|---|
+| [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | ReadWriteItem | Composition | 1.1 |
+| [addFileAttachmentFromBase64Async](#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) | ReadWriteItem | Composition | Aperçu |
+| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | ReadItem | Composition<br>Lecture | 1.7 |
+| [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | ReadWriteItem | Composition | 1.1 |
+| [close](#close) | Restreinte | Composition | 1.3 |
+| [displayReplyAllForm](#displayreplyallformformdata-callback) | ReadItem | Lecture | 1.0 |
+| [displayReplyForm](#displayreplyformformdata-callback) | ReadItem | Lecture | 1.0 |
+| [getAllInternetHeadersAsync](#getallinternetheadersasyncoptions-callback) | ReadItem | Lecture de message | 1.8 |
+| [getAttachmentContentAsync](#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent) | ReadItem | Composition<br>Lecture | Aperçu |
+| [getAttachmentsAsync](#getattachmentsasyncoptions-callback--arrayattachmentdetails) | ReadItem | Composition | Aperçu |
+| [getEntities](#getentities--entities) | ReadItem | Lecture | 1.0 |
+| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Restreinte | Lecture | 1.0 |
+| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | ReadItem | Lecture | 1.0 |
+| [getInitializationContextAsync](#getinitializationcontextasyncoptions-callback) | ReadItem | Lecture | Aperçu |
+| [getItemIdAsync](#getitemidasyncoptions-callback) | ReadItem | Composition | Aperçu |
+| [getRegExMatches](#getregexmatches--object) | ReadItem | Lecture | 1.0 |
+| [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | ReadItem | Lecture | 1.0 |
+| [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | ReadItem | Composition | 1.2 |
+| [getSelectedEntities](#getselectedentities--entities) | ReadItem | Lecture | 1.6 |
+| [getSelectedRegExMatches](#getselectedregexmatches--object) | ReadItem | Lecture | 1.6 |
+| [getSharedPropertiesAsync](#getsharedpropertiesasyncoptions-callback) | ReadItem | Composition<br>Lecture | Aperçu |
+| [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | ReadItem | Composition<br>Lecture | 1.0 |
+| [removeAttachmentAsync](#removeattachmentasyncattachmentid-options-callback) | ReadWriteItem | Composition | 1.1 |
+| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | ReadItem | Composition<br>Lecture | 1.7 |
+| [saveAsync](#saveasyncoptions-callback) | ReadWriteItem | Composition | 1.3 |
+| [setSelectedDataAsync](#setselecteddataasyncdata-options-callback) | ReadWriteItem | Composition | 1.2 |
+
+##### <a name="events"></a>Événements
+
+Vous pouvez vous abonner et annuler l’abonnement aux événements suivants à l’aide de [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) et [removeHandlerAsync](#removehandlerasynceventtype-options-callback) , respectivement.
+
+| Événement | Description | Minimale<br>ensemble de conditions requises |
+|---|---|---|
+|`AppointmentTimeChanged`| La date ou l’heure de la série ou du rendez-vous sélectionné a été modifiée. | 1.7 |
+|`AttachmentsChanged`| Une pièce jointe a été ajoutée à l’élément ou supprimée de celui-ci. | Aperçu |
+|`EnhancedLocationsChanged`| L’emplacement du rendez-vous sélectionné a changé. | Aperçu |
+|`RecipientsChanged`| La liste des destinataires de l’élément sélectionné ou du lieu de rendez-vous a été modifié. | 1.7 |
+|`RecurrenceChanged`| La périodicité de la série sélectionnée a été modifiée. | 1.7 |
 
 ### <a name="example"></a>Exemple
 
@@ -101,7 +140,7 @@ Office.initialize = function () {
 };
 ```
 
-### <a name="members"></a>Members
+## <a name="property-details"></a>Détails de la propriété
 
 #### <a name="attachments-arrayattachmentdetailsjavascriptapioutlookofficeattachmentdetails"></a>attachments: Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)>
 
@@ -658,10 +697,10 @@ console.log("Item class: " + itemClass);
 
 #### <a name="nullable-itemid-string"></a>(nullable) itemId: String
 
-Obtient l' [identificateur d’élément des services Web Exchange](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange) pour l’élément actuel. Mode Lecture uniquement.
+Permet d’obtenir l’[identificateur de l’élément des services web Exchange](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange) pour l’élément actif. Mode lecture uniquement.
 
 > [!NOTE]
-> L’identificateur renvoyé par la `itemId` propriété est identique à l’identificateur d' [élément des services Web Exchange](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange). La propriété `itemId` n’est pas identique à l’ID d’entrée Outlook ni à l’ID utilisé par l’API REST Outlook. Avant que vous ne puissiez effectuer des appels d’API REST avec cette valeur, elle doit être convertie à l’aide de la commande [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string). Pour plus d’informations, voir [Utilisation des API REST Outlook à partir d’un complément Outlook](/outlook/add-ins/use-rest-api#get-the-item-id).
+> L’identificateur renvoyé par la propriété `itemId` est identique à l’[identificateur d’élément des services web Exchange](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange). La propriété `itemId` n’est pas identique à l’ID d’entrée Outlook ni à l’ID utilisé par l’API REST Outlook. Avant que vous ne puissiez effectuer des appels d’API REST avec cette valeur, elle doit être convertie à l’aide de la commande [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string). Pour plus d’informations, voir [Utilisation des API REST Outlook à partir d’un complément Outlook](/outlook/add-ins/use-rest-api#get-the-item-id).
 
 La propriété `itemId` n’est pas disponible en mode composition. Si l’identificateur d’un élément doit être indiqué, la méthode [`saveAsync`](#saveasyncoptions-callback) peut être utilisée pour enregistrer l’élément sur le magasin, lequel renvoie l’identificateur de l’élément dans le paramètre [`AsyncResult.value`](/javascript/api/office/office.asyncresult) dans la fonction de rappel.
 
@@ -695,7 +734,7 @@ if (itemId === null || itemId == undefined) {
 ---
 ---
 
-#### <a name="itemtype-officemailboxenumsitemtypejavascriptapioutlookofficemailboxenumsitemtype"></a>itemType: [Office.MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype)
+#### <a name="itemtype-mailboxenumsitemtypejavascriptapioutlookofficemailboxenumsitemtype"></a>itemType : [MailboxEnums. ItemType](/javascript/api/outlook/office.mailboxenums.itemtype)
 
 Obtient le type d’élément représenté par une instance.
 
@@ -703,7 +742,7 @@ La propriété `itemType` renvoie une des valeurs d’énumération `ItemType` i
 
 ##### <a name="type"></a>Type
 
-*   [Office.MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype)
+*   [MailboxEnums. ItemType](/javascript/api/outlook/office.mailboxenums.itemtype)
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -1253,7 +1292,7 @@ function callback(asyncResult) {
 |[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)|Rédaction ou lecture|
 
-### <a name="methods"></a>Méthodes
+## <a name="method-details"></a>Détails de méthodes
 
 #### <a name="addfileattachmentasyncuri-attachmentname-options-callback"></a>addFileAttachmentAsync(uri, attachmentName, [options], [callback])
 
@@ -1266,9 +1305,9 @@ L’identificateur peut être utilisé avec la méthode [`removeAttachmentAsync`
 ##### <a name="parameters"></a>Paramètres
 |Nom|Type|Attributs|Description|
 |---|---|---|---|
-|`uri`|Chaîne||URI indiquant l’emplacement du fichier à joindre au message ou au rendez-vous. La longueur maximale est de 2 048 caractères.|
+|`uri`|String||URI indiquant l’emplacement du fichier à joindre au message ou au rendez-vous. La longueur maximale est de 2 048 caractères.|
 |`attachmentName`|String||Nom de la pièce jointe affiché lors de son chargement. La taille maximale est de 255 caractères.|
-|`options`|Objet|&lt;optional&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
+|`options`|Objet|&lt;facultatif&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
 |`options.asyncContext`|Objet|&lt;facultatif&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
 |`options.isInline`|Boolean|&lt;optional&gt;|Si elle est définie sur `true`, cette valeur indique que la pièce jointe est incorporée dans le corps du message et qu’elle ne doit pas figurer dans la liste des pièces jointes.|
 |`callback`|fonction|&lt;optional&gt;|Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult). <br/>En cas de réussite, l’identificateur de pièce jointe est fourni dans la propriété `asyncResult.value`.<br/>En cas d’échec du téléchargement de la pièce jointe, l’objet `asyncResult` contient un objet `Error` indiquant une description de l’erreur.|
@@ -1449,11 +1488,11 @@ L’identificateur peut être utilisé avec la méthode [`removeAttachmentAsync`
 
 Si votre complément Office est exécuté dans Outlook sur le web, la méthode `addItemAttachmentAsync` peut joindre des éléments à des éléments autres que ceux que vous modifiez ; mais cette action n’est pas prise en charge et est déconseillée.
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>Paramètres
 
 |Nom|Type|Attributs|Description|
 |---|---|---|---|
-|`itemId`|Chaîne||Identificateur Exchange de l’élément à joindre. La taille maximale est de 100 caractères.|
+|`itemId`|String||Identificateur Exchange de l’élément à joindre. La taille maximale est de 100 caractères.|
 |`attachmentName`|String||Objet de l’élément à joindre. La longueur maximale est de 255 caractères.|
 |`options`|Object|&lt;facultatif&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
 |`options.asyncContext`|Objet|&lt;facultatif&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
@@ -1544,10 +1583,10 @@ Lorsque des pièces jointes sont spécifiées dans le paramètre `formData.attac
 |Nom|Type|Attributs|Description|
 |---|---|---|---|
 |`formData`|String &#124; Object||Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.<br/>**OU**<br/>Objet qui contient les données du corps du message ou des pièces jointes et une fonction de rappel. L’objet est défini de la manière suivante :|
-|`formData.htmlBody`|Chaîne|&lt;optional&gt;|Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.
+|`formData.htmlBody`|String|&lt;optional&gt;|Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.
 |`formData.attachments`|Array.&lt;Object&gt;|&lt;optional&gt;|Tableau d’objets JSON qui sont des pièces jointes de fichier ou d’élément.|
-|`formData.attachments.type`|Chaîne||Indique le type de pièce jointe. Doit être `file` pour une pièce jointe de fichier ou `item` pour une pièce jointe d’élément.|
-|`formData.attachments.name`|Chaîne||Chaîne qui contient le nom de la pièce jointe et comporte jusqu'à 255 caractères.|
+|`formData.attachments.type`|String||Indique le type de pièce jointe. Doit être `file` pour une pièce jointe de fichier ou `item` pour une pièce jointe d’élément.|
+|`formData.attachments.name`|String||Chaîne qui contient le nom de la pièce jointe et comporte jusqu'à 255 caractères.|
 |`formData.attachments.url`|Chaîne||Utilisé uniquement si `type` est défini sur `file`. Il s’agit de l’URI de l’emplacement du fichier.|
 |`formData.attachments.isInline`|Booléen||Utilisé uniquement si `type` est défini sur `file`. Si elle est définie sur `true`, cette valeur indique que la pièce jointe est incorporée dans le corps du message et qu’elle ne doit pas figurer dans la liste des pièces jointes.|
 |`formData.attachments.itemId`|String||Utilisé uniquement si `type` est défini sur `item`. Il s’agit de l’ID de l’élément EWS de la pièce jointe. Il s’agit d’une chaîne comportant un maximum de 100 caractères.|
@@ -1668,10 +1707,10 @@ Lorsque des pièces jointes sont spécifiées dans le paramètre `formData.attac
 |Nom|Type|Attributs|Description|
 |---|---|---|---|
 |`formData`|String &#124; Object||Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.<br/>**OU**<br/>Objet qui contient les données du corps du message ou des pièces jointes et une fonction de rappel. L’objet est défini de la manière suivante :|
-|`formData.htmlBody`|Chaîne|&lt;optional&gt;|Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.
+|`formData.htmlBody`|String|&lt;optional&gt;|Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.
 |`formData.attachments`|Array.&lt;Object&gt;|&lt;optional&gt;|Tableau d’objets JSON qui sont des pièces jointes de fichier ou d’élément.|
-|`formData.attachments.type`|Chaîne||Indique le type de pièce jointe. Doit être `file` pour une pièce jointe de fichier ou `item` pour une pièce jointe d’élément.|
-|`formData.attachments.name`|Chaîne||Chaîne qui contient le nom de la pièce jointe et comporte jusqu'à 255 caractères.|
+|`formData.attachments.type`|String||Indique le type de pièce jointe. Doit être `file` pour une pièce jointe de fichier ou `item` pour une pièce jointe d’élément.|
+|`formData.attachments.name`|String||Chaîne qui contient le nom de la pièce jointe et comporte jusqu'à 255 caractères.|
 |`formData.attachments.url`|Chaîne||Utilisé uniquement si `type` est défini sur `file`. Il s’agit de l’URI de l’emplacement du fichier.|
 |`formData.attachments.isInline`|Booléen||Utilisé uniquement si `type` est défini sur `file`. Si elle est définie sur `true`, cette valeur indique que la pièce jointe est incorporée dans le corps du message et qu’elle ne doit pas figurer dans la liste des pièces jointes.|
 |`formData.attachments.itemId`|String||Utilisé uniquement si `type` est défini sur `item`. Il s’agit de l’ID de l’élément EWS de la pièce jointe. Il s’agit d’une chaîne comportant un maximum de 100 caractères.|
@@ -1835,7 +1874,7 @@ La `getAttachmentContentAsync` méthode obtient la pièce jointe avec l’identi
 
 |Nom|Type|Attributs|Description|
 |---|---|---|---|
-|`attachmentId`|Chaîne||Identificateur de la pièce jointe que vous souhaitez obtenir.|
+|`attachmentId`|String||Identificateur de la pièce jointe que vous souhaitez obtenir.|
 |`options`|Objet|&lt;facultatif&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
 |`options.asyncContext`|Objet|&lt;facultatif&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
 |`callback`|fonction|&lt;optional&gt;|Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [AsyncResult](/javascript/api/office/office.asyncresult).|
@@ -1903,7 +1942,7 @@ Obtient les pièces jointes de l’élément sous la forme d’un tableau. Mode 
 |Nom|Type|Attributs|Description|
 |---|---|---|---|
 |`options`|Objet|&lt;facultatif&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
-|`options.asyncContext`|Objet|&lt;optional&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
+|`options.asyncContext`|Objet|&lt;facultatif&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
 |`callback`|fonction|&lt;optional&gt;|Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [AsyncResult](/javascript/api/office/office.asyncresult).|
 
 ##### <a name="requirements"></a>Configuration requise
@@ -2055,7 +2094,7 @@ La méthode `getFilteredEntitiesByName` renvoie les entités qui correspondent �
 
 |Nom|Type|Description|
 |---|---|---|
-|`name`|String|Nom de l’élément de règle `ItemHasKnownEntity` qui définit le filtre à respecter.|
+|`name`|Chaîne|Nom de l’élément de règle `ItemHasKnownEntity` qui définit le filtre à respecter.|
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -2087,8 +2126,8 @@ Obtient les données d’initialisation transmises lorsque le complément est [a
 
 |Nom|Type|Attributs|Description|
 |---|---|---|---|
-|`options`|Objet|&lt;optional&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
-|`options.asyncContext`|Objet|&lt;optional&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
+|`options`|Objet|&lt;facultatif&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.|
+|`options.asyncContext`|Objet|&lt;facultatif&gt;|Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.|
 |`callback`|fonction|&lt;optional&gt;|Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](/javascript/api/office/office.asyncresult). <br/>En cas de réussite, les données d’initialisation sont fournies `asyncResult.value` dans la propriété sous la forme d’une chaîne.<br/>S’il n’existe pas de contexte d’initialisation `asyncResult` , l’objet contient `Error` un objet dont `code` la propriété est `9020` définie sur `name` et sa propriété `GenericResponseError`est définie sur.|
 
 ##### <a name="requirements"></a>Configuration requise
@@ -2298,10 +2337,7 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 
 Renvoie de manière asynchrone les données sélectionnées à partir de l’objet ou du corps d’un message.
 
-S’il n’y a aucune sélection, mais que le curseur se trouve dans le corps ou l’objet, la méthode renvoie une chaîne vide pour les données sélectionnées. Si un champ autre que le corps ou l’objet est sélectionné, la méthode renvoie l’erreur `InvalidSelection`.
-
-> [!NOTE]
-> Dans Outlook sur le Web, la méthode renvoie la chaîne « NULL » si aucun texte n’est sélectionné, mais que le curseur se trouve dans le corps. Pour vérifier cette situation, reportez-vous à l’exemple plus loin dans cette section.
+Si aucune sélection n’est effectuée, mais que le curseur est placé dans le corps ou l’objet, la méthode renvoie une chaîne vide pour les données sélectionnées. Si un champ autre que le corps ou l’objet est sélectionné, la méthode renvoie l’erreur `InvalidSelection`.
 
 ##### <a name="parameters"></a>Parameters
 
@@ -2337,12 +2373,6 @@ Office.initialize = function () {
 function getCallback(asyncResult) {
   var text = asyncResult.value.data;
   var prop = asyncResult.value.sourceProperty;
-
-  // Handle where Outlook on the web erroneously returns "null" instead of empty string.
-  if (Office.context.mailbox.diagnostics.hostName === 'OutlookWebApp'
-      && asyncResult.value.endPosition === asyncResult.value.startPosition) {
-    text = "";
-  }
 
   console.log("Selected text in " + prop + ": " + text);
 }

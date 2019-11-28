@@ -1,25 +1,25 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook 1.1
 description: ''
-ms.date: 10/30/2019
+ms.date: 11/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 312d40d499531eb6f93d3b1555bfb057cd4651d6
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: 1c2e8ea26cac7ff630961b176391ef1adf2249fd
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37901954"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629236"
 ---
 # <a name="outlook-add-in-api-requirement-set-11"></a>Ensemble de conditions requises de l’API du complément Outlook 1.1
 
-Le sous-ensemble de l’API pour le complément Outlook de l’interface API JavaScript pour Office comprend des objets, des méthodes, des propriétés et des événements à utiliser dans un complément Outlook.
+Le sous-ensemble de l’API pour le complément Outlook de l’interface API JavaScript pour Office comprend des objets, des méthodes, des propriétés et des événements à utiliser dans un complément Outlook. L’API JavaScript pour Outlook 1,1 (boîte aux lettres 1,1) est la première version de l’API.
 
 > [!NOTE]
-> Dans cette documentation, l’[ensemble de conditions requises](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) présenté est différent de l’ensemble de conditions requises de la version précédente. 
+> Dans cette documentation, l’[ensemble de conditions requises](../../requirement-sets/outlook-api-requirement-sets.md) présenté est différent de l’ensemble de conditions requises de la version précédente.
 
 ## <a name="whats-new-in-11"></a>Nouveautés de la version 1.1
 
-L’ensemble de conditions requises de la version 1.1 comprend toutes les fonctionnalités de l’ensemble de conditions requises de la version 1.0. Désormais, les compléments peuvent accéder au corps des messages et des rendez-vous et vous pouvez modifier l’élément actif.
+L’ensemble de conditions requises 1,1 inclut tous les [ensembles de conditions requises d’API communs](../../requirement-sets/office-add-in-requirement-sets.md) pris en charge dans Outlook. Désormais, les compléments peuvent accéder au corps des messages et des rendez-vous et vous pouvez modifier l’élément actif.
 
 ### <a name="change-log"></a>Journal des modifications
 

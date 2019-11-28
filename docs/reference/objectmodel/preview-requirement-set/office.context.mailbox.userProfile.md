@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. userProfile-aperçu de l’ensemble de conditions requises
 description: ''
-ms.date: 06/20/2019
+ms.date: 11/25/2019
 localization_priority: Normal
-ms.openlocfilehash: 5941c4e1276535091a3ffcf5b2fb6aa972ed8c4d
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 4afc64f247155576ab3f0024d1929a29a0f7dc0c
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696469"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629257"
 ---
 # <a name="userprofile"></a>userProfile
 
@@ -22,18 +22,18 @@ ms.locfileid: "36696469"
 |[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
-##### <a name="members-and-methods"></a>Membres et méthodes
+##### <a name="properties"></a>Propriétés
 
-| Membre | Type |
-|--------|------|
-| [accountType](#accounttype-string) | Member |
-| [displayName](#displayname-string) | Member |
-| [emailAddress](#emailaddress-string) | Member |
-| [timeZone](#timezone-string) | Membre |
+| Propriété | Minimale<br>niveau d’autorisation | Modes | Type de retour | Minimale<br>ensemble de conditions requises |
+|---|---|---|---|---|
+| [accountType](#accounttype-string) | ReadItem | Composition<br>Lecture | String | 1.6 |
+| [displayName](#displayname-string) | ReadItem | Composition<br>Lecture | String | 1.0 |
+| [emailAddress](#emailaddress-string) | ReadItem | Composition<br>Lecture | String | 1.0 |
+| [timeZone](#timezone-string) | ReadItem | Composition<br>Lecture | String | 1.0 |
 
-### <a name="members"></a>Membres
+## <a name="property-details"></a>Détails de la propriété
 
-#### <a name="accounttype-string"></a>accountType: chaîne
+#### <a name="accounttype-string"></a>accountType : chaîne
 
 > [!NOTE]
 > Actuellement, ce membre est uniquement pris en charge dans Outlook 2016 ou version ultérieure sur Mac (Build 16.9.1212 ou version ultérieure).
@@ -70,7 +70,7 @@ console.log(Office.context.mailbox.userProfile.accountType);
 ---
 ---
 
-#### <a name="displayname-string"></a>displayName: String
+#### <a name="displayname-string"></a>displayName : String
 
 Obtient le nom d’affichage de l’utilisateur.
 
@@ -98,7 +98,7 @@ console.log(Office.context.mailbox.userProfile.displayName);
 ---
 ---
 
-#### <a name="emailaddress-string"></a>emailAddress: chaîne
+#### <a name="emailaddress-string"></a>emailAddress : chaîne
 
 Obtient l’adresse de messagerie SMTP de l’utilisateur.
 
@@ -126,7 +126,7 @@ console.log(Office.context.mailbox.userProfile.emailAddress);
 ---
 ---
 
-#### <a name="timezone-string"></a>timeZone: chaîne
+#### <a name="timezone-string"></a>timeZone : chaîne
 
 Obtient le fuseau horaire par défaut de l’utilisateur.
 

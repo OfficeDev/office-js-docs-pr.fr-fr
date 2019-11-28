@@ -1,15 +1,15 @@
 ---
 title: Didacticiel sur le complément Excel
 description: Dans ce didacticiel, vous allez développer un complément Excel qui crée, remplit, filtre et trie un tableau, crée un graphique, fige un en-tête de tableau, protège une feuille de calcul et ouvre une boîte de dialogue.
-ms.date: 09/18/2019
+ms.date: 11/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: ef68834085486827bb0c09b86ce60bee9c9b7b3f
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: 1611a5d6fcded6430d9ef0d21242f6dd643ae016
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035411"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629727"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 
@@ -41,7 +41,7 @@ Dans ce tutoriel, vous allez créer un complément de volet de tâches Excel qui
 
 ![Générateur Yeoman](../images/yo-office-excel.png)
 
-Une fois que vous avez terminé l’Assistant, le générateur crée le projet et installe les composants de nœud de prise en charge.
+Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -172,13 +172,13 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
 
 ### <a name="test-the-add-in"></a>Test du complément
 
-1. Procédez comme suit pour démarrer le serveur Web local et chargement votre complément.
+1. Pour démarrer le serveur web local et charger indépendamment votre complément, procédez comme suit.
 
     > [!NOTE]
     > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté une des commandes suivantes, acceptez d’installer le certificat fourni par le générateur Yeoman.
 
     > [!TIP]
-    > Si vous testez votre complément sur Mac, exécutez la commande suivante dans le répertoire racine de votre projet avant de poursuivre. Lorsque vous exécutez cette commande, le serveur Web local démarre.
+    > Si vous testez votre complément sur Mac, exécutez la commande suivante dans le répertoire racine de votre projet avant de poursuivre. Lorsque vous exécutez cette commande, le serveur web local démarre.
     >
     > ```command&nbsp;line
     > npm run dev-server
@@ -190,7 +190,7 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
         npm start
         ```
 
-    - Pour tester votre complément dans Excel sur le Web, exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur Web local démarre (s’il n’est pas déjà en cours d’exécution).
+    - Pour tester votre complément dans Excel sur le Web, exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution).
 
         ```command&nbsp;line
         npm run start:web
@@ -732,6 +732,7 @@ Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*
         > [!NOTE]
         > Si ce dossier n’existe pas, recherchez les dossiers suivants et, le cas échéant, supprimez le contenu du dossier :
         >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/`où `{host}` se trouve l’hôte Office (par exemple `Excel`,)
+        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/`où `{host}` se trouve l’hôte Office (par exemple `Excel`,)
         >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
 
 3. Si le serveur Web local est déjà en cours d’exécution, arrêtez-le en fermant la fenêtre de commande du nœud.
@@ -744,7 +745,7 @@ Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*
         npm start
         ```
 
-    - Pour tester votre complément dans Excel sur le Web, exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur Web local démarre (s’il n’est pas déjà en cours d’exécution).
+    - Pour tester votre complément dans Excel sur le Web, exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution).
 
         ```command&nbsp;line
         npm run start:web
@@ -803,7 +804,7 @@ Dans cette étape finale du didacticiel, vous allez ouvrir une boîte de dialogu
 
 4. Dans le dossier **./SRC/Dialogs** , créez un fichier nommé **Popup. js**.
 
-5. Ajoutez le code suivant à **Popup. js**. Tenez compte des informations suivantes à propos de ce code :
+5. Ajoutez le code suivant à **Popup. js**. Tenez compte des informations suivantes :
 
    - *Toutes les pages qui appellent des API dans la bibliothèque Office. js doivent d’abord s’assurer que la bibliothèque est entièrement initialisée.* La meilleure façon de procéder consiste à appeler la méthode `Office.onReady()`. Si votre complément dispose de ses propres tâches d’initialisation, le code doit passer dans une méthode `then()` chaînée à l’appel de `Office.onReady()`. L’appel de `Office.onReady()` doit être exécuté avant tout appel à Office. js ; par conséquent, l’affectation se trouve dans un fichier de script chargé par la page, comme c’est le cas dans ce cas.
 
@@ -927,7 +928,7 @@ Ouvrez le fichier **WebPack. config. js** dans le répertoire racine du projet e
 
 4. Ouvrez le fichier **./SRC/TaskPane/TaskPane.js**.
 
-5. Dans l' `Office.onReady` appel de méthode, recherchez la ligne qui attribue un gestionnaire de clic `freeze-header` au bouton, puis ajoutez le code suivant après cette ligne. Vous allez créer la méthode `openDialog` à une étape ultérieure.
+5. Dans l' `Office.onReady` appel de méthode, recherchez la ligne qui attribue un gestionnaire de clic `freeze-header` au bouton, puis ajoutez le code suivant après cette ligne. Vous créerez la méthode `openDialog` lors d’une étape ultérieure.
 
     ```js
     document.getElementById("open-dialog").onclick = openDialog;
