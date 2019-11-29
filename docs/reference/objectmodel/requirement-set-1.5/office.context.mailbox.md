@@ -1,14 +1,14 @@
 ---
 title: Office.context – ensemble de conditions requises 1.5
 description: ''
-ms.date: 10/21/2019
+ms.date: 11/27/2019
 localization_priority: Priority
-ms.openlocfilehash: bb63d8186d41d072aa62b180b16958d61ce9a66c
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: eefeab2cf6fbe78451afae7e588640fe7f50dba4
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37627012"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629685"
 ---
 # <a name="mailbox"></a>boîte aux lettres
 
@@ -89,10 +89,6 @@ En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context
 obtient l’URL du point de terminaison REST de ce compte de messagerie.
 
 La valeur `restUrl` peut être utilisée pour que l’[API REST](/outlook/rest/) appelle la boîte aux lettres de l’utilisateur.
-
-L’autorisation **ReadItem** doit être spécifiée dans le manifeste de votre application pour appeler le membre `restUrl` en mode lecture.
-
-En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) avant de pouvoir utiliser le membre `restUrl`. Votre application doit disposer des autorisations **ReadWriteItem** pour appeler la méthode `saveAsync`.
 
 > [!NOTE]
 > Les clients Outlook connectés aux installations locales d’Exchange 2016 ou version ultérieure avec une URL REST personnalisée configurée renvoient une valeur non valide pour `restUrl`.

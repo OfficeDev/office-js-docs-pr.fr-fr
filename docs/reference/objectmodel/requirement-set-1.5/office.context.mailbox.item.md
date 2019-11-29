@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox.item - ensemble de conditions requises 1.5
 description: ''
-ms.date: 11/06/2019
+ms.date: 11/25/2019
 localization_priority: Priority
-ms.openlocfilehash: c5ab134c91e156368c21722726d7ee502397b99e
-ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
+ms.openlocfilehash: f52f6bfa510d5949da5b1b542ca2a0f6e6f22750
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "38066255"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629706"
 ---
 # <a name="item"></a>élément
 
@@ -1642,9 +1642,6 @@ Renvoie de manière asynchrone les données sélectionnées à partir de l’obj
 
 Si aucune sélection n’est effectuée, mais que le curseur est placé dans le corps ou l’objet, la méthode renvoie une chaîne vide pour les données sélectionnées. Si un champ autre que le corps ou l’objet est sélectionné, la méthode renvoie l’erreur `InvalidSelection`.
 
-> [!NOTE]
-> Dans Outlook sur le web, la méthode renvoie la chaîne « NULL » si aucun texte n’est sélectionné alors que le curseur se trouve dans le corps. Pour rechercher cette situation, voir l’exemple plus loin dans cette section.
-
 ##### <a name="parameters"></a>Paramètres
 
 |Nom| Type| Attributs| Description|
@@ -1679,12 +1676,6 @@ Office.initialize = function () {
 function getCallback(asyncResult) {
   var text = asyncResult.value.data;
   var prop = asyncResult.value.sourceProperty;
-
-  // Handle where Outlook on the web erroneously returns "null" instead of empty string.
-  if (Office.context.mailbox.diagnostics.hostName === 'OutlookWebApp'
-      && asyncResult.value.endPosition === asyncResult.value.startPosition) {
-    text = "";
-  }
 
   console.log("Selected text in " + prop + ": " + text);
 }
