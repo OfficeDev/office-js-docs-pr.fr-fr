@@ -1,22 +1,22 @@
 ---
 title: Valider et résoudre des problèmes avec votre manifeste
 description: Utiliser ces méthodes pour valider le manifeste des compléments Office.
-ms.date: 10/29/2019
+ms.date: 11/26/2019
 localization_priority: Priority
-ms.openlocfilehash: c1af6308a975bf9204a519e21f828454d286aa19
-ms.sourcegitcommit: 59d29d01bce7543ebebf86e5a86db00cf54ca14a
+ms.openlocfilehash: cc9a660cdf3d4e216f9becd90ad58a6c777c6f2d
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "37924807"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629246"
 ---
-# <a name="validate-and-troubleshoot-issues-with-your-manifest"></a><span data-ttu-id="9f7d3-103">Valider et résoudre des problèmes avec votre manifeste</span><span class="sxs-lookup"><span data-stu-id="9f7d3-103">Validate and troubleshoot issues with your manifest</span></span>
+# <a name="validate-and-troubleshoot-issues-with-your-manifest"></a><span data-ttu-id="4d5af-103">Valider et résoudre des problèmes avec votre manifeste</span><span class="sxs-lookup"><span data-stu-id="4d5af-103">Validate and troubleshoot issues with your manifest</span></span>
 
-<span data-ttu-id="9f7d3-104">Vous souhaitez peut-être valider le fichier manifeste de votre complément pour vous assurer que celui-ci est correct et complet.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-104">You may want to validate your add-in's manifest file to ensure that it's correct and complete.</span></span> <span data-ttu-id="9f7d3-105">La validation peut également identifier les problèmes à l’origine de l’erreur « Votre manifeste de complément n’est pas valide » lorsque vous essayez de charger une version test de votre complément.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-105">Validation can also identify issues that are causing the error "Your add-in manifest is not valid" when you attempt to sideload your add-in.</span></span> <span data-ttu-id="9f7d3-106">Cet article décrit plusieurs méthodes de validation du fichier manifeste et de résolution des problèmes liés à votre complément.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-106">This article describes multiple ways to validate the manifest file and troubleshoot problems with your add-in.</span></span>
+<span data-ttu-id="4d5af-104">Vous souhaitez peut-être valider le fichier manifeste de votre complément pour vous assurer que celui-ci est correct et complet.</span><span class="sxs-lookup"><span data-stu-id="4d5af-104">You may want to validate your add-in's manifest file to ensure that it's correct and complete.</span></span> <span data-ttu-id="4d5af-105">La validation peut également identifier les problèmes à l’origine de l’erreur « Votre manifeste de complément n’est pas valide » lorsque vous essayez de charger une version test de votre complément.</span><span class="sxs-lookup"><span data-stu-id="4d5af-105">Validation can also identify issues that are causing the error "Your add-in manifest is not valid" when you attempt to sideload your add-in.</span></span> <span data-ttu-id="4d5af-106">Cet article décrit plusieurs méthodes de validation du fichier manifeste et de résolution des problèmes liés à votre complément.</span><span class="sxs-lookup"><span data-stu-id="4d5af-106">This article describes multiple ways to validate the manifest file and troubleshoot problems with your add-in.</span></span>
 
-## <a name="validate-your-manifest-with-the-yeoman-generator-for-office-add-ins"></a><span data-ttu-id="9f7d3-107">Valider votre manifeste avec le générateur Yeoman pour les compléments Office</span><span class="sxs-lookup"><span data-stu-id="9f7d3-107">Validate your manifest with the Yeoman generator for Office Add-ins</span></span>
+## <a name="validate-your-manifest-with-the-yeoman-generator-for-office-add-ins"></a><span data-ttu-id="4d5af-107">Valider votre manifeste avec le générateur Yeoman pour les compléments Office</span><span class="sxs-lookup"><span data-stu-id="4d5af-107">Validate your manifest with the Yeoman generator for Office Add-ins</span></span>
 
-<span data-ttu-id="9f7d3-108">Si vous avez utilisé [le générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) pour créer votre complément, vous pouvez également l’utiliser pour valider le fichier manifeste de votre projet.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-108">If you used the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) to create your add-in, you can also use it to validate your project's manifest file.</span></span> <span data-ttu-id="9f7d3-109">Exécutez la commande suivante dans le répertoire racine de votre projet :</span><span class="sxs-lookup"><span data-stu-id="9f7d3-109">Run the following command in the root directory of your project:</span></span>
+<span data-ttu-id="4d5af-108">Si vous avez utilisé [le générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) pour créer votre complément, vous pouvez également l’utiliser pour valider le fichier manifeste de votre projet.</span><span class="sxs-lookup"><span data-stu-id="4d5af-108">If you used the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) to create your add-in, you can also use it to validate your project's manifest file.</span></span> <span data-ttu-id="4d5af-109">Exécutez la commande suivante dans le répertoire racine de votre projet :</span><span class="sxs-lookup"><span data-stu-id="4d5af-109">Run the following command in the root directory of your project:</span></span>
 
 ```command&nbsp;line
 npm run validate
@@ -25,121 +25,121 @@ npm run validate
 ![Gif animé qui montre le validateur Yo Office exécuté sur la ligne de commande et les résultats générés indiquant « Validation Passed » (validation réussie)](../images/yo-office-validator.gif)
 
 > [!NOTE]
-> <span data-ttu-id="9f7d3-111">Pour accéder à cette fonctionnalité, votre projet de complément doit être créé à l’aide du [générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) (version 1.1.17 ou ultérieure).</span><span class="sxs-lookup"><span data-stu-id="9f7d3-111">To have access to this functionality, your add-in project must have been created by using [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) version 1.1.17 or later.</span></span>
+> <span data-ttu-id="4d5af-111">Pour accéder à cette fonctionnalité, votre projet de complément doit être créé à l’aide du [générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) (version 1.1.17 ou ultérieure).</span><span class="sxs-lookup"><span data-stu-id="4d5af-111">To have access to this functionality, your add-in project must have been created by using [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) version 1.1.17 or later.</span></span>
 
-## <a name="validate-your-manifest-with-office-addin-manifest"></a><span data-ttu-id="9f7d3-112">Valider votre manifeste avec office-addin-manifest</span><span class="sxs-lookup"><span data-stu-id="9f7d3-112">Validate your manifest with office-addin-manifest</span></span>
+## <a name="validate-your-manifest-with-office-addin-manifest"></a><span data-ttu-id="4d5af-112">Valider votre manifeste avec office-addin-manifest</span><span class="sxs-lookup"><span data-stu-id="4d5af-112">Validate your manifest with office-addin-manifest</span></span>
 
-<span data-ttu-id="9f7d3-113">Si vous n’avez pas utilisé [le générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) pour créer votre complément, vous pouvez valider le fichier manifeste à l’aide de [office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest).</span><span class="sxs-lookup"><span data-stu-id="9f7d3-113">If you didn't use the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) to create your add-in, you can validate the manifest by using [office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest).</span></span>
+<span data-ttu-id="4d5af-113">Si vous n’avez pas utilisé [le générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) pour créer votre complément, vous pouvez valider le fichier manifeste à l’aide de [office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest).</span><span class="sxs-lookup"><span data-stu-id="4d5af-113">If you didn't use the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) to create your add-in, you can validate the manifest by using [office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest).</span></span>
 
-1. <span data-ttu-id="9f7d3-114">Installez [Node.js](https://nodejs.org/download/).</span><span class="sxs-lookup"><span data-stu-id="9f7d3-114">Install [Node.js](https://nodejs.org/download/).</span></span>
+1. <span data-ttu-id="4d5af-114">Installez [Node.js](https://nodejs.org/download/).</span><span class="sxs-lookup"><span data-stu-id="4d5af-114">Install [Node.js](https://nodejs.org/download/).</span></span>
 
-2. <span data-ttu-id="9f7d3-115">Exécutez la commande suivante dans le répertoire racine de votre projet.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-115">Run the following command in the root directory of your project.</span></span> <span data-ttu-id="9f7d3-116">Remplacez `MANIFEST_FILE` par le nom du fichier manifeste.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-116">Replace `MANIFEST_FILE` with the name of the manifest file.</span></span>
+2. <span data-ttu-id="4d5af-115">Exécutez la commande suivante dans le répertoire racine de votre projet.</span><span class="sxs-lookup"><span data-stu-id="4d5af-115">Run the following command in the root directory of your project.</span></span> <span data-ttu-id="4d5af-116">Remplacez `MANIFEST_FILE` par le nom du fichier manifeste.</span><span class="sxs-lookup"><span data-stu-id="4d5af-116">Replace `MANIFEST_FILE` with the name of the manifest file.</span></span>
 
     ```command&nbsp;line
     npx office-addin-manifest validate MANIFEST_FILE
     ```
 
     > [!NOTE]
-    > <span data-ttu-id="9f7d3-117">Si elle s’exécute, la commande renvoie le message d’erreur « La syntaxe de la commande n’est pas valide »</span><span class="sxs-lookup"><span data-stu-id="9f7d3-117">If running this command results in the error message "The command syntax is not valid."</span></span> <span data-ttu-id="9f7d3-118">(étant donné que la commande `validate` n’est pas reconnue), exécutez la commande suivante pour valider le manifeste (en remplaçant `MANIFEST_FILE` par le nom du fichier manifeste) :</span><span class="sxs-lookup"><span data-stu-id="9f7d3-118">(because the `validate` command is not recognized), run the following command to validate the manifest (replacing `MANIFEST_FILE` with the name of the manifest file):</span></span> 
+    > <span data-ttu-id="4d5af-117">Si elle s’exécute, la commande renvoie le message d’erreur « La syntaxe de la commande n’est pas valide »</span><span class="sxs-lookup"><span data-stu-id="4d5af-117">If running this command results in the error message "The command syntax is not valid."</span></span> <span data-ttu-id="4d5af-118">(étant donné que la commande `validate` n’est pas reconnue), exécutez la commande suivante pour valider le manifeste (en remplaçant `MANIFEST_FILE` par le nom du fichier manifeste) :</span><span class="sxs-lookup"><span data-stu-id="4d5af-118">(because the `validate` command is not recognized), run the following command to validate the manifest (replacing `MANIFEST_FILE` with the name of the manifest file):</span></span> 
     > 
     > `npx --ignore-existing office-addin-manifest validate MANIFEST_FILE`
 
-## <a name="validate-your-manifest-against-the-xml-schema"></a><span data-ttu-id="9f7d3-119">Validez votre manifeste par rapport au schéma XML</span><span class="sxs-lookup"><span data-stu-id="9f7d3-119">Validate your manifest against the XML schema</span></span>
+## <a name="validate-your-manifest-against-the-xml-schema"></a><span data-ttu-id="4d5af-119">Validez votre manifeste par rapport au schéma XML</span><span class="sxs-lookup"><span data-stu-id="4d5af-119">Validate your manifest against the XML schema</span></span>
 
-<span data-ttu-id="9f7d3-120">Vous pouvez valider le fichier manifeste par rapport aux fichiers de [définition de schéma XML (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas).</span><span class="sxs-lookup"><span data-stu-id="9f7d3-120">You can validate the manifest file against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) files.</span></span> <span data-ttu-id="9f7d3-121">Cela permet de s’assurer que le fichier manifeste suit le schéma approprié, y compris les espaces de noms pour les éléments que vous utilisez.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-121">This will ensure that the manifest file follows the correct schema, including any namespaces for the elements you are using.</span></span> <span data-ttu-id="9f7d3-122">Si vous avez copié des éléments à partir d’autres exemples de manifestes, vérifiez par deux fois que vous avez également **inclus les espaces de noms appropriés**.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-122">If you copied elements from other sample manifests double check that you also **include the appropriate namespaces**.</span></span> <span data-ttu-id="9f7d3-123">Pour ce faire, vous pouvez utiliser un outil de validation de schéma XML.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-123">You can use an XML schema validation tool to perform this validation.</span></span>
+<span data-ttu-id="4d5af-120">Vous pouvez valider le fichier manifeste par rapport aux fichiers de [définition de schéma XML (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas).</span><span class="sxs-lookup"><span data-stu-id="4d5af-120">You can validate the manifest file against the [XML Schema Definition (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) files.</span></span> <span data-ttu-id="4d5af-121">Cela permet de s’assurer que le fichier manifeste suit le schéma approprié, y compris les espaces de noms pour les éléments que vous utilisez.</span><span class="sxs-lookup"><span data-stu-id="4d5af-121">This will ensure that the manifest file follows the correct schema, including any namespaces for the elements you are using.</span></span> <span data-ttu-id="4d5af-122">Si vous avez copié des éléments à partir d’autres exemples de manifestes, vérifiez par deux fois que vous avez également **inclus les espaces de noms appropriés**.</span><span class="sxs-lookup"><span data-stu-id="4d5af-122">If you copied elements from other sample manifests double check that you also **include the appropriate namespaces**.</span></span> <span data-ttu-id="4d5af-123">Pour ce faire, vous pouvez utiliser un outil de validation de schéma XML.</span><span class="sxs-lookup"><span data-stu-id="4d5af-123">You can use an XML schema validation tool to perform this validation.</span></span>
 
-### <a name="to-use-a-command-line-xml-schema-validation-tool-to-validate-your-manifest"></a><span data-ttu-id="9f7d3-124">Pour utiliser un outil de validation de schéma XML à ligne de commande pour valider votre manifeste</span><span class="sxs-lookup"><span data-stu-id="9f7d3-124">To use a command-line XML schema validation tool to validate your manifest</span></span>
+### <a name="to-use-a-command-line-xml-schema-validation-tool-to-validate-your-manifest"></a><span data-ttu-id="4d5af-124">Pour utiliser un outil de validation de schéma XML à ligne de commande pour valider votre manifeste</span><span class="sxs-lookup"><span data-stu-id="4d5af-124">To use a command-line XML schema validation tool to validate your manifest</span></span>
 
-1. <span data-ttu-id="9f7d3-125">Installez [tar](https://www.gnu.org/software/tar/) et [libxml](http://xmlsoft.org/FAQ.html), si vous ne l’avez pas déjà fait.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-125">Install [tar](https://www.gnu.org/software/tar/) and [libxml](http://xmlsoft.org/FAQ.html), if you haven't already.</span></span>
+1. <span data-ttu-id="4d5af-125">Installez [tar](https://www.gnu.org/software/tar/) et [libxml](http://xmlsoft.org/FAQ.html), si vous ne l’avez pas déjà fait.</span><span class="sxs-lookup"><span data-stu-id="4d5af-125">Install [tar](https://www.gnu.org/software/tar/) and [libxml](http://xmlsoft.org/FAQ.html), if you haven't already.</span></span>
 
-2. <span data-ttu-id="9f7d3-p106">Exécutez la commande suivante. Remplacez `XSD_FILE` par le chemin d’accès au fichier XSD manifeste et `XML_FILE` par le chemin d’accès au fichier XML manifeste.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-p106">Run the following command. Replace `XSD_FILE` with the path to the manifest XSD file, and replace `XML_FILE` with the path to the manifest XML file.</span></span>
+2. <span data-ttu-id="4d5af-p106">Exécutez la commande suivante. Remplacez `XSD_FILE` par le chemin d’accès au fichier XSD manifeste et `XML_FILE` par le chemin d’accès au fichier XML manifeste.</span><span class="sxs-lookup"><span data-stu-id="4d5af-p106">Run the following command. Replace `XSD_FILE` with the path to the manifest XSD file, and replace `XML_FILE` with the path to the manifest XML file.</span></span>
     
     ```command&nbsp;line
     xmllint --noout --schema XSD_FILE XML_FILE
     ```
 
-## <a name="use-runtime-logging-to-debug-your-add-in"></a><span data-ttu-id="9f7d3-128">Utilisation de la journalisation runtime pour déboguer votre complément</span><span class="sxs-lookup"><span data-stu-id="9f7d3-128">Use runtime logging to debug your add-in</span></span>
+## <a name="use-runtime-logging-to-debug-your-add-in"></a><span data-ttu-id="4d5af-128">Utilisation de la journalisation runtime pour déboguer votre complément</span><span class="sxs-lookup"><span data-stu-id="4d5af-128">Use runtime logging to debug your add-in</span></span>
 
-<span data-ttu-id="9f7d3-129">Vous pouvez utiliser la journalisation runtime pour déboguer le manifeste de votre complément ainsi que plusieurs erreurs d’installation.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-129">You can use runtime logging to debug your add-in's manifest as well as several installation errors.</span></span> <span data-ttu-id="9f7d3-130">Cette fonctionnalité peut vous aider à identifier et à résoudre les problèmes avec votre manifeste qui ne sont pas détectés par la validation de schéma XSD, comme une incompatibilité entre les ID de ressources.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-130">This feature can help you identify and fix issues with your manifest that are not detected by XSD schema validation, such as a mismatch between resource IDs.</span></span> <span data-ttu-id="9f7d3-131">La journalisation runtime est particulièrement utile pour déboguer des compléments qui implémentent des commandes de complément et des fonctions personnalisées Excel.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-131">Runtime logging is particularly  useful for debugging add-ins that implement add-in commands and Excel custom functions.</span></span>   
+<span data-ttu-id="4d5af-129">Vous pouvez utiliser la journalisation runtime pour déboguer le manifeste de votre complément ainsi que plusieurs erreurs d’installation.</span><span class="sxs-lookup"><span data-stu-id="4d5af-129">You can use runtime logging to debug your add-in's manifest as well as several installation errors.</span></span> <span data-ttu-id="4d5af-130">Cette fonctionnalité peut vous aider à identifier et à résoudre les problèmes avec votre manifeste qui ne sont pas détectés par la validation de schéma XSD, comme une incompatibilité entre les ID de ressources.</span><span class="sxs-lookup"><span data-stu-id="4d5af-130">This feature can help you identify and fix issues with your manifest that are not detected by XSD schema validation, such as a mismatch between resource IDs.</span></span> <span data-ttu-id="4d5af-131">La journalisation runtime est particulièrement utile pour déboguer des compléments qui implémentent des commandes de complément et des fonctions personnalisées Excel.</span><span class="sxs-lookup"><span data-stu-id="4d5af-131">Runtime logging is particularly  useful for debugging add-ins that implement add-in commands and Excel custom functions.</span></span>   
 
 > [!NOTE]
-> <span data-ttu-id="9f7d3-132">La fonctionnalité de journalisation runtime est actuellement disponible pour Office 2016 pour ordinateur de bureau.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-132">The runtime logging feature is currently available for Office 2016 desktop.</span></span>
+> <span data-ttu-id="4d5af-132">La fonctionnalité de journalisation runtime est actuellement disponible pour Office 2016 pour ordinateur de bureau.</span><span class="sxs-lookup"><span data-stu-id="4d5af-132">The runtime logging feature is currently available for Office 2016 desktop.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="9f7d3-133">La journalisation runtime affecte les performances.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-133">Runtime Logging affects performance.</span></span> <span data-ttu-id="9f7d3-134">Activez-la uniquement lorsque vous avez besoin de déboguer des problèmes avec votre manifeste de complément.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-134">Turn it on only when you need to debug issues with your add-in manifest.</span></span>
+> <span data-ttu-id="4d5af-133">La journalisation runtime affecte les performances.</span><span class="sxs-lookup"><span data-stu-id="4d5af-133">Runtime Logging affects performance.</span></span> <span data-ttu-id="4d5af-134">Activez-la uniquement lorsque vous avez besoin de déboguer des problèmes avec votre manifeste de complément.</span><span class="sxs-lookup"><span data-stu-id="4d5af-134">Turn it on only when you need to debug issues with your add-in manifest.</span></span>
 
-### <a name="use-runtime-logging-from-the-command-line"></a><span data-ttu-id="9f7d3-135">Utiliser la journalisation de l’exécution à partir de la ligne de commande</span><span class="sxs-lookup"><span data-stu-id="9f7d3-135">Use runtime logging from the command line</span></span>
+### <a name="use-runtime-logging-from-the-command-line"></a><span data-ttu-id="4d5af-135">Utiliser la journalisation de l’exécution à partir de la ligne de commande</span><span class="sxs-lookup"><span data-stu-id="4d5af-135">Use runtime logging from the command line</span></span>
 
-<span data-ttu-id="9f7d3-136">L’activation de la journalisation de l’exécution à partir de la ligne de commande est le moyen le plus rapide d’utiliser cet outil de journalisation.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-136">Enabling runtime logging from the command line is the fastest way to use this logging tool.</span></span> <span data-ttu-id="9f7d3-137">Celles-ci utilisent npx, fourni par défaut dans le cadre de npm@5.2.0 +.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-137">These use npx, which is provided by default as part of npm@5.2.0+.</span></span> <span data-ttu-id="9f7d3-138">Si vous disposez d’une version antérieure de [npm](https://www.npmjs.com/), essayez les instructions [Journalisation de l’exécution sur Windows](#runtime-logging-on-windows) ou [Journalisation de l’exécution sur Mac](#runtime-logging-on-mac), ou [install npx](https://www.npmjs.com/package/npx).</span><span class="sxs-lookup"><span data-stu-id="9f7d3-138">If you have an earlier version of [npm](https://www.npmjs.com/), try [Runtime logging on Windows](#runtime-logging-on-windows) or [Runtime logging on Mac](#runtime-logging-on-mac) instructions, or [install npx](https://www.npmjs.com/package/npx).</span></span>
+<span data-ttu-id="4d5af-136">L’activation de la journalisation de l’exécution à partir de la ligne de commande est le moyen le plus rapide d’utiliser cet outil de journalisation.</span><span class="sxs-lookup"><span data-stu-id="4d5af-136">Enabling runtime logging from the command line is the fastest way to use this logging tool.</span></span> <span data-ttu-id="4d5af-137">Celles-ci utilisent npx, fourni par défaut dans le cadre de npm@5.2.0 +.</span><span class="sxs-lookup"><span data-stu-id="4d5af-137">These use npx, which is provided by default as part of npm@5.2.0+.</span></span> <span data-ttu-id="4d5af-138">Si vous disposez d’une version antérieure de [npm](https://www.npmjs.com/), essayez les instructions [Journalisation de l’exécution sur Windows](#runtime-logging-on-windows) ou [Journalisation de l’exécution sur Mac](#runtime-logging-on-mac), ou [install npx](https://www.npmjs.com/package/npx).</span><span class="sxs-lookup"><span data-stu-id="4d5af-138">If you have an earlier version of [npm](https://www.npmjs.com/), try [Runtime logging on Windows](#runtime-logging-on-windows) or [Runtime logging on Mac](#runtime-logging-on-mac) instructions, or [install npx](https://www.npmjs.com/package/npx).</span></span>
 
-- <span data-ttu-id="9f7d3-139">Pour activer la journalisation de l’exécution :</span><span class="sxs-lookup"><span data-stu-id="9f7d3-139">To enable AD FS logging</span></span>
+- <span data-ttu-id="4d5af-139">Pour activer la journalisation de l’exécution :</span><span class="sxs-lookup"><span data-stu-id="4d5af-139">To enable runtime logging:</span></span>
     ```command&nbsp;line
     npx office-addin-dev-settings runtime-log --enable
     ```
-- <span data-ttu-id="9f7d3-140">Pour activer la journalisation de l’exécution uniquement pour un fichier spécifique, utilisez la même commande avec un nom de fichier :</span><span class="sxs-lookup"><span data-stu-id="9f7d3-140">To enable runtime logging only for a specific file, use the same command with a filename:</span></span>
+- <span data-ttu-id="4d5af-140">Pour activer la journalisation de l’exécution uniquement pour un fichier spécifique, utilisez la même commande avec un nom de fichier :</span><span class="sxs-lookup"><span data-stu-id="4d5af-140">To enable runtime logging only for a specific file, use the same command with a filename:</span></span>
 
     ```command&nbsp;line
     npx office-addin-dev-settings runtime-log --enable [filename.txt]
     ```
 
-- <span data-ttu-id="9f7d3-141">Pour désactiver la journalisation de l’exécution :</span><span class="sxs-lookup"><span data-stu-id="9f7d3-141">To disable runtime logging:</span></span>
+- <span data-ttu-id="4d5af-141">Pour désactiver la journalisation de l’exécution :</span><span class="sxs-lookup"><span data-stu-id="4d5af-141">To disable runtime logging:</span></span>
 
     ```command&nbsp;line
     npx office-addin-dev-settings runtime-log --disable
     ```
 
-- <span data-ttu-id="9f7d3-142">Pour indiquer si la journalisation de l’exécution est activée :</span><span class="sxs-lookup"><span data-stu-id="9f7d3-142">To display whether runtime logging is enabled:</span></span>
+- <span data-ttu-id="4d5af-142">Pour indiquer si la journalisation de l’exécution est activée :</span><span class="sxs-lookup"><span data-stu-id="4d5af-142">To display whether runtime logging is enabled:</span></span>
 
     ```command&nbsp;line
     npx office-addin-dev-settings runtime-log
     ```
 
-- <span data-ttu-id="9f7d3-143">Pour afficher l’aide au sein de la ligne de commande pour la journalisation de l’exécution :</span><span class="sxs-lookup"><span data-stu-id="9f7d3-143">To display help within the command line for runtime logging:</span></span>
+- <span data-ttu-id="4d5af-143">Pour afficher l’aide au sein de la ligne de commande pour la journalisation de l’exécution :</span><span class="sxs-lookup"><span data-stu-id="4d5af-143">To display help within the command line for runtime logging:</span></span>
 
     ```command&nbsp;line
     npx office-addin-dev-settings runtime-log --help
     ```
 
-### <a name="runtime-logging-on-windows"></a><span data-ttu-id="9f7d3-144">Journalisation de l’exécution sur Windows</span><span class="sxs-lookup"><span data-stu-id="9f7d3-144">Runtime logging on Windows</span></span>
+### <a name="runtime-logging-on-windows"></a><span data-ttu-id="4d5af-144">Journalisation de l’exécution sur Windows</span><span class="sxs-lookup"><span data-stu-id="4d5af-144">Runtime logging on Windows</span></span>
 
-1. <span data-ttu-id="9f7d3-145">Vérifiez que vous exécutez la version Bureau d’Office 2016 **16.0.7019** ou une version ultérieure.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-145">Make sure that you are running Office 2016 desktop build **16.0.7019** or later.</span></span> 
+1. <span data-ttu-id="4d5af-145">Vérifiez que vous exécutez la version Bureau d’Office 2016 **16.0.7019** ou une version ultérieure.</span><span class="sxs-lookup"><span data-stu-id="4d5af-145">Make sure that you are running Office 2016 desktop build **16.0.7019** or later.</span></span> 
 
-2. <span data-ttu-id="9f7d3-146">Ajoutez la clé de registre `RuntimeLogging` sous `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\`.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-146">Add the `RuntimeLogging` registry key under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\`.</span></span> 
-
-    > [!NOTE]
-    > <span data-ttu-id="9f7d3-147">Si la clé (dossier) `Developer` n’existe pas sous `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\`, procédez comme suit pour la créer :</span><span class="sxs-lookup"><span data-stu-id="9f7d3-147">If the `Developer` key (folder) does not already exist under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\`, complete the following steps to create it:</span></span> 
-    > 1. <span data-ttu-id="9f7d3-148">Cliquez avec le bouton droit de votre souris sur la clé (dossier) **WEF**, puis sélectionnez **Nouveau** > **Clé**.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-148">Right-click the **WEF** key (folder) and select **New** > **Key**.</span></span>
-    > 2. <span data-ttu-id="9f7d3-149">Nommez la nouvelle clé **Développeur**.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-149">Name the new key **Developer**.</span></span>
-
-3. <span data-ttu-id="9f7d3-150">Définissez la valeur par défaut de la clé **RuntimeLogging** pour le chemin d’accès complet du fichier dans lequel écrire le journal.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-150">Set the default value of the key to the full path of the file where you want the log to be written.</span></span> <span data-ttu-id="9f7d3-151">Pour obtenir un exemple, voir [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip).</span><span class="sxs-lookup"><span data-stu-id="9f7d3-151">For an example, see [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip).</span></span> 
+2. <span data-ttu-id="4d5af-146">Ajoutez la clé de registre `RuntimeLogging` sous `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\`.</span><span class="sxs-lookup"><span data-stu-id="4d5af-146">Add the `RuntimeLogging` registry key under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\`.</span></span> 
 
     > [!NOTE]
-    > <span data-ttu-id="9f7d3-152">Le répertoire dans lequel le fichier journal sera écrit doit déjà exister et vous devez disposer des autorisations d’écriture correspondantes.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-152">The directory in which the log file will be written must already exist, and you must have write permissions to it.</span></span> 
+    > <span data-ttu-id="4d5af-147">Si la clé (dossier) `Developer` n’existe pas sous `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\`, procédez comme suit pour la créer :</span><span class="sxs-lookup"><span data-stu-id="4d5af-147">If the `Developer` key (folder) does not already exist under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\`, complete the following steps to create it:</span></span> 
+    > 1. <span data-ttu-id="4d5af-148">Cliquez avec le bouton droit de votre souris sur la clé (dossier) **WEF**, puis sélectionnez **Nouveau** > **Clé**.</span><span class="sxs-lookup"><span data-stu-id="4d5af-148">Right-click the **WEF** key (folder) and select **New** > **Key**.</span></span>
+    > 2. <span data-ttu-id="4d5af-149">Nommez la nouvelle clé **Développeur**.</span><span class="sxs-lookup"><span data-stu-id="4d5af-149">Name the new key **Developer**.</span></span>
+
+3. <span data-ttu-id="4d5af-150">Définissez la valeur par défaut de la clé **RuntimeLogging** pour le chemin d’accès complet du fichier dans lequel écrire le journal.</span><span class="sxs-lookup"><span data-stu-id="4d5af-150">Set the default value of the **RuntimeLogging** key to the full path of the file where you want the log to be written.</span></span> <span data-ttu-id="4d5af-151">Pour obtenir un exemple, voir [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip).</span><span class="sxs-lookup"><span data-stu-id="4d5af-151">For an example, see [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip).</span></span> 
+
+    > [!NOTE]
+    > <span data-ttu-id="4d5af-152">Le répertoire dans lequel le fichier journal sera écrit doit déjà exister et vous devez disposer des autorisations d’écriture correspondantes.</span><span class="sxs-lookup"><span data-stu-id="4d5af-152">The directory in which the log file will be written must already exist, and you must have write permissions to it.</span></span> 
  
-<span data-ttu-id="9f7d3-p111">L’image suivante indique à quoi doit ressembler le registre. Pour désactiver la fonctionnalité, supprimez la clé de registre `RuntimeLogging`.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-p111">The following image shows what the registry should look like. To turn the feature off, remove the `RuntimeLogging` key from the registry.</span></span> 
+<span data-ttu-id="4d5af-p111">L’image suivante indique à quoi doit ressembler le registre. Pour désactiver la fonctionnalité, supprimez la clé de registre `RuntimeLogging`.</span><span class="sxs-lookup"><span data-stu-id="4d5af-p111">The following image shows what the registry should look like. To turn the feature off, remove the `RuntimeLogging` key from the registry.</span></span> 
 
 ![Capture d’écran de l’Éditeur du Registre avec la clé de registre RuntimeLogging](http://i.imgur.com/Sa9TyI6.png)
 
-### <a name="runtime-logging-on-mac"></a><span data-ttu-id="9f7d3-156">Journalisation de l’exécution sur Mac</span><span class="sxs-lookup"><span data-stu-id="9f7d3-156">Runtime logging on Mac</span></span>
+### <a name="runtime-logging-on-mac"></a><span data-ttu-id="4d5af-156">Journalisation de l’exécution sur Mac</span><span class="sxs-lookup"><span data-stu-id="4d5af-156">Runtime logging on Mac</span></span>
 
-1. <span data-ttu-id="9f7d3-157">Vérifiez que vous exécutez la version Bureau d’Office 2016 **16.27** (19071500) ou une version ultérieure.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-157">Make sure that you are running Office 2016 desktop build **16.27** (19071500) or later.</span></span>
+1. <span data-ttu-id="4d5af-157">Vérifiez que vous exécutez la version Bureau d’Office 2016 **16.27** (19071500) ou une version ultérieure.</span><span class="sxs-lookup"><span data-stu-id="4d5af-157">Make sure that you are running Office 2016 desktop build **16.27** (19071500) or later.</span></span>
 
-2. <span data-ttu-id="9f7d3-158">Ouvrez **Terminal** et configurez une préférence de journalisation de l’exécution à l’aide de la commande `defaults` :</span><span class="sxs-lookup"><span data-stu-id="9f7d3-158">Open **Terminal** and set a runtime logging preference by using the `defaults` command:</span></span>
+2. <span data-ttu-id="4d5af-158">Ouvrez **Terminal** et configurez une préférence de journalisation de l’exécution à l’aide de la commande `defaults` :</span><span class="sxs-lookup"><span data-stu-id="4d5af-158">Open **Terminal** and set a runtime logging preference by using the `defaults` command:</span></span>
     
     ```command&nbsp;line
     defaults write <bundle id> CEFRuntimeLoggingFile -string <file_name>
     ```
 
-    <span data-ttu-id="9f7d3-159">`<bundle id>` identifie l’hôte pour lequel activer la journalisation de l’exécution.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-159">`<bundle id>` identifies which the host for which to enable runtime logging.</span></span> <span data-ttu-id="9f7d3-160">`<file_name>` est le nom du fichier texte dans lequel le journal sera écrit.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-160">`<file_name>` is the name of the text file to which the log will be written.</span></span>
+    <span data-ttu-id="4d5af-159">`<bundle id>` identifie l’hôte pour lequel activer la journalisation de l’exécution.</span><span class="sxs-lookup"><span data-stu-id="4d5af-159">`<bundle id>` identifies which the host for which to enable runtime logging.</span></span> <span data-ttu-id="4d5af-160">`<file_name>` est le nom du fichier texte dans lequel le journal sera écrit.</span><span class="sxs-lookup"><span data-stu-id="4d5af-160">`<file_name>` is the name of the text file to which the log will be written.</span></span>
 
-    <span data-ttu-id="9f7d3-161">Configurez `<bundle id>` à l’une des valeurs suivantes pour activer la journalisation de l’exécution pour l’hôte correspondant :</span><span class="sxs-lookup"><span data-stu-id="9f7d3-161">Set `<bundle id>` to one of the following values to enable runtime logging for the corresponding host:</span></span>
+    <span data-ttu-id="4d5af-161">Configurez `<bundle id>` à l’une des valeurs suivantes pour activer la journalisation de l’exécution pour l’hôte correspondant :</span><span class="sxs-lookup"><span data-stu-id="4d5af-161">Set `<bundle id>` to one of the following values to enable runtime logging for the corresponding host:</span></span>
 
     - `com.microsoft.Word`
     - `com.microsoft.Excel`
     - `com.microsoft.Powerpoint`
     - `com.microsoft.Outlook`
 
-<span data-ttu-id="9f7d3-162">L’exemple suivant montre comment activer la journalisation de l’exécution pour Word, puis ouvrir le fichier journal :</span><span class="sxs-lookup"><span data-stu-id="9f7d3-162">The following example enables runtime logging for Word and then opens the log file:</span></span>
+<span data-ttu-id="4d5af-162">L’exemple suivant montre comment activer la journalisation de l’exécution pour Word, puis ouvrir le fichier journal :</span><span class="sxs-lookup"><span data-stu-id="4d5af-162">The following example enables runtime logging for Word and then opens the log file:</span></span>
 
 ```command&nbsp;line
 defaults write com.microsoft.Word CEFRuntimeLoggingFile -string "runtime_logs.txt"
@@ -147,63 +147,63 @@ open ~/library/Containers/com.microsoft.Word/Data/runtime_logs.txt
 ```
 
 > [!NOTE] 
-> <span data-ttu-id="9f7d3-163">Vous devrez redémarrer Office après l’exécution de la commande `defaults` pour activer la journalisation de l’exécution.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-163">You'll need to restart Office after running the `defaults` command to enable runtime logging.</span></span>
+> <span data-ttu-id="4d5af-163">Vous devrez redémarrer Office après l’exécution de la commande `defaults` pour activer la journalisation de l’exécution.</span><span class="sxs-lookup"><span data-stu-id="4d5af-163">You'll need to restart Office after running the `defaults` command to enable runtime logging.</span></span>
 
-<span data-ttu-id="9f7d3-164">Pour désactiver la journalisation de l’exécution, utilisez la commande `defaults delete` :</span><span class="sxs-lookup"><span data-stu-id="9f7d3-164">To turn off runtime logging, use the `defaults delete` command:</span></span>
+<span data-ttu-id="4d5af-164">Pour désactiver la journalisation de l’exécution, utilisez la commande `defaults delete` :</span><span class="sxs-lookup"><span data-stu-id="4d5af-164">To turn off runtime logging, use the `defaults delete` command:</span></span>
 
 ```command&nbsp;line
 defaults delete <bundle id> CEFRuntimeLoggingFile
 ```
 
-<span data-ttu-id="9f7d3-165">L’exemple suivant désactive la journalisation de l’exécution pour Word :</span><span class="sxs-lookup"><span data-stu-id="9f7d3-165">The following example will turn off runtime logging for Word:</span></span>
+<span data-ttu-id="4d5af-165">L’exemple suivant désactive la journalisation de l’exécution pour Word :</span><span class="sxs-lookup"><span data-stu-id="4d5af-165">The following example will turn off runtime logging for Word:</span></span>
 
 ```command&nbsp;line
 defaults delete com.microsoft.Word CEFRuntimeLoggingFile
 ```
 
-### <a name="to-troubleshoot-issues-with-your-manifest"></a><span data-ttu-id="9f7d3-166">Résolution des problèmes avec votre manifeste</span><span class="sxs-lookup"><span data-stu-id="9f7d3-166">To troubleshoot issues with your manifest</span></span>
+### <a name="to-troubleshoot-issues-with-your-manifest"></a><span data-ttu-id="4d5af-166">Résolution des problèmes avec votre manifeste</span><span class="sxs-lookup"><span data-stu-id="4d5af-166">To troubleshoot issues with your manifest</span></span>
 
-<span data-ttu-id="9f7d3-167">Pour utiliser la journalisation runtime pour résoudre les problèmes de chargement d’un complément, procédez comme suit :</span><span class="sxs-lookup"><span data-stu-id="9f7d3-167">To use runtime logging to troubleshoot issues loading an add-in:</span></span>
+<span data-ttu-id="4d5af-167">Pour utiliser la journalisation runtime pour résoudre les problèmes de chargement d’un complément, procédez comme suit :</span><span class="sxs-lookup"><span data-stu-id="4d5af-167">To use runtime logging to troubleshoot issues loading an add-in:</span></span>
  
-1. <span data-ttu-id="9f7d3-168">[Chargez une version test de votre complément](sideload-office-add-ins-for-testing.md).</span><span class="sxs-lookup"><span data-stu-id="9f7d3-168">[Sideload your add-in](sideload-office-add-ins-for-testing.md) for testing.</span></span> 
+1. <span data-ttu-id="4d5af-168">[Chargez une version test de votre complément](sideload-office-add-ins-for-testing.md).</span><span class="sxs-lookup"><span data-stu-id="4d5af-168">[Sideload your add-in](sideload-office-add-ins-for-testing.md) for testing.</span></span> 
 
     > [!NOTE]
-    > <span data-ttu-id="9f7d3-169">Nous vous recommandons de charger uniquement une version test du complément que vous testez pour réduire le nombre de messages dans le fichier journal.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-169">We recommend that you sideload only the add-in that you are testing to minimize the number of messages in the log file.</span></span>
+    > <span data-ttu-id="4d5af-169">Nous vous recommandons de charger uniquement une version test du complément que vous testez pour réduire le nombre de messages dans le fichier journal.</span><span class="sxs-lookup"><span data-stu-id="4d5af-169">We recommend that you sideload only the add-in that you are testing to minimize the number of messages in the log file.</span></span>
 
-2. <span data-ttu-id="9f7d3-170">Si rien ne se produit et que votre complément n’apparaît pas (et ne s’affiche pas dans la boîte de dialogue des compléments), ouvrez le fichier journal.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-170">If nothing happens and you don't see your add-in (and it's not appearing in the add-ins dialog box), open the log file.</span></span>
+2. <span data-ttu-id="4d5af-170">Si rien ne se produit et que votre complément n’apparaît pas (et ne s’affiche pas dans la boîte de dialogue des compléments), ouvrez le fichier journal.</span><span class="sxs-lookup"><span data-stu-id="4d5af-170">If nothing happens and you don't see your add-in (and it's not appearing in the add-ins dialog box), open the log file.</span></span>
 
-3. <span data-ttu-id="9f7d3-p113">Recherchez le fichier journal pour l’ID de votre complément, que vous définissez dans votre manifeste. Dans le fichier journal, cet ID est intitulé `SolutionId`.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-p113">Search the log file for your add-in ID, which you define in your manifest. In the log file, this ID is labeled `SolutionId`.</span></span> 
+3. <span data-ttu-id="4d5af-p113">Recherchez le fichier journal pour l’ID de votre complément, que vous définissez dans votre manifeste. Dans le fichier journal, cet ID est intitulé `SolutionId`.</span><span class="sxs-lookup"><span data-stu-id="4d5af-p113">Search the log file for your add-in ID, which you define in your manifest. In the log file, this ID is labeled `SolutionId`.</span></span> 
 
-<span data-ttu-id="9f7d3-p114">Dans l’exemple suivant, le fichier journal identifie un contrôle qui pointe vers un fichier de ressources qui n’existe pas. Pour cet exemple, la correction consistera à corriger la faute de frappe dans le manifeste ou à ajouter la ressource manquante.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-p114">In the following example, the log file identifies a control that points to a resource file that doesn't exist. For this example, the fix would be to correct the typo in the manifest or to add the missing resource.</span></span>
+<span data-ttu-id="4d5af-p114">Dans l’exemple suivant, le fichier journal identifie un contrôle qui pointe vers un fichier de ressources qui n’existe pas. Pour cet exemple, la correction consistera à corriger la faute de frappe dans le manifeste ou à ajouter la ressource manquante.</span><span class="sxs-lookup"><span data-stu-id="4d5af-p114">In the following example, the log file identifies a control that points to a resource file that doesn't exist. For this example, the fix would be to correct the typo in the manifest or to add the missing resource.</span></span>
 
 ![Capture d’écran d’un fichier journal avec une entrée qui spécifie un ID de ressource qui est introuvable](http://i.imgur.com/f8bouLA.png) 
 
-### <a name="known-issues-with-runtime-logging"></a><span data-ttu-id="9f7d3-176">Problèmes connus avec la journalisation runtime</span><span class="sxs-lookup"><span data-stu-id="9f7d3-176">Known issues with runtime logging</span></span>
+### <a name="known-issues-with-runtime-logging"></a><span data-ttu-id="4d5af-176">Problèmes connus avec la journalisation runtime</span><span class="sxs-lookup"><span data-stu-id="4d5af-176">Known issues with runtime logging</span></span>
 
-<span data-ttu-id="9f7d3-p115">Vous pouvez afficher des messages dans le fichier journal qui sont source de confusion ou classés de façon incorrecte. Par exemple :</span><span class="sxs-lookup"><span data-stu-id="9f7d3-p115">You might see messages in the log file that are confusing or that are classified incorrectly. For example:</span></span>
+<span data-ttu-id="4d5af-p115">Vous pouvez afficher des messages dans le fichier journal qui sont source de confusion ou classés de façon incorrecte. Par exemple :</span><span class="sxs-lookup"><span data-stu-id="4d5af-p115">You might see messages in the log file that are confusing or that are classified incorrectly. For example:</span></span>
 
-- <span data-ttu-id="9f7d3-179">Le message `Medium Current host not in add-in's host list` suivi de `Unexpected Parsed manifest targeting different host` est classé incorrectement en tant qu’erreur.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-179">The message `Medium Current host not in add-in's host list` followed by `Unexpected Parsed manifest targeting different host` is incorrectly classified as an error.</span></span>
+- <span data-ttu-id="4d5af-179">Le message `Medium Current host not in add-in's host list` suivi de `Unexpected Parsed manifest targeting different host` est classé incorrectement en tant qu’erreur.</span><span class="sxs-lookup"><span data-stu-id="4d5af-179">The message `Medium Current host not in add-in's host list` followed by `Unexpected Parsed manifest targeting different host` is incorrectly classified as an error.</span></span>
 
-- <span data-ttu-id="9f7d3-180">Si vous voyez le message `Unexpected Add-in is missing required manifest fields DisplayName` et qu’il ne contient pas de SolutionId, l’erreur n’est probablement pas liée au complément que vous déboguez.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-180">If you see the message `Unexpected Add-in is missing required manifest fields DisplayName` and it doesn't contain a SolutionId, the error is most likely not related to the add-in you are debugging.</span></span> 
+- <span data-ttu-id="4d5af-180">Si vous voyez le message `Unexpected Add-in is missing required manifest fields DisplayName` et qu’il ne contient pas de SolutionId, l’erreur n’est probablement pas liée au complément que vous déboguez.</span><span class="sxs-lookup"><span data-stu-id="4d5af-180">If you see the message `Unexpected Add-in is missing required manifest fields DisplayName` and it doesn't contain a SolutionId, the error is most likely not related to the add-in you are debugging.</span></span> 
 
-- <span data-ttu-id="9f7d3-p116">Tous les messages `Monitorable` sont des erreurs attendues du point de vue du système. Parfois, ils indiquent un problème avec votre manifeste, comme un élément mal orthographié qui a été ignoré, mais n’a pas provoqué l’échec du manifeste.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-p116">Any `Monitorable` messages are expected errors from a system point of view. Sometimes they indicate an issue with your manifest, such as a misspelled element that was skipped but didn't cause the manifest to fail.</span></span> 
+- <span data-ttu-id="4d5af-p116">Tous les messages `Monitorable` sont des erreurs attendues du point de vue du système. Parfois, ils indiquent un problème avec votre manifeste, comme un élément mal orthographié qui a été ignoré, mais n’a pas provoqué l’échec du manifeste.</span><span class="sxs-lookup"><span data-stu-id="4d5af-p116">Any `Monitorable` messages are expected errors from a system point of view. Sometimes they indicate an issue with your manifest, such as a misspelled element that was skipped but didn't cause the manifest to fail.</span></span> 
 
-## <a name="clear-the-office-cache"></a><span data-ttu-id="9f7d3-183">Vider le cache Office</span><span class="sxs-lookup"><span data-stu-id="9f7d3-183">Clear the Office cache</span></span>
+## <a name="clear-the-office-cache"></a><span data-ttu-id="4d5af-183">Vider le cache Office</span><span class="sxs-lookup"><span data-stu-id="4d5af-183">Clear the Office cache</span></span>
 
-<span data-ttu-id="9f7d3-184">Si les modifications apportées au manifeste, par exemple aux noms de fichier des icônes de bouton dans le ruban ou au texte des commandes de complément, ne semblent pas être appliquées, essayez de vider le cache Office de votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-184">If changes you've made in the manifest, such as file names of ribbon button icons or text of add-in commands, do not seem to take effect, try clearing the Office cache on your computer.</span></span> 
+<span data-ttu-id="4d5af-184">Si les modifications apportées au manifeste, par exemple aux noms de fichier des icônes de bouton dans le ruban ou au texte des commandes de complément, ne semblent pas être appliquées, essayez de vider le cache Office de votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="4d5af-184">If changes you've made in the manifest, such as file names of ribbon button icons or text of add-in commands, do not seem to take effect, try clearing the Office cache on your computer.</span></span> 
 
-#### <a name="for-windows"></a><span data-ttu-id="9f7d3-185">Pour Windows :</span><span class="sxs-lookup"><span data-stu-id="9f7d3-185">For Windows:</span></span>
-<span data-ttu-id="9f7d3-186">Supprimer le contenu du dossier `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-186">Delete the contents of the folder `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.</span></span>
+#### <a name="for-windows"></a><span data-ttu-id="4d5af-185">Pour Windows :</span><span class="sxs-lookup"><span data-stu-id="4d5af-185">For Windows:</span></span>
+<span data-ttu-id="4d5af-186">Supprimer le contenu du dossier `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.</span><span class="sxs-lookup"><span data-stu-id="4d5af-186">Delete the contents of the folder `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.</span></span>
 
-#### <a name="for-mac"></a><span data-ttu-id="9f7d3-187">Pour Mac :</span><span class="sxs-lookup"><span data-stu-id="9f7d3-187">For Mac:</span></span>
+#### <a name="for-mac"></a><span data-ttu-id="4d5af-187">Pour Mac :</span><span class="sxs-lookup"><span data-stu-id="4d5af-187">For Mac:</span></span>
 
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
-#### <a name="for-ios"></a><span data-ttu-id="9f7d3-188">Pour iOS :</span><span class="sxs-lookup"><span data-stu-id="9f7d3-188">For iOS:</span></span>
-<span data-ttu-id="9f7d3-p117">Appelez `window.location.reload(true)` à partir de JavaScript dans le complément pour forcer le rechargement. Vous pouvez également choisir de réinstaller Office.</span><span class="sxs-lookup"><span data-stu-id="9f7d3-p117">Call `window.location.reload(true)` from JavaScript in the add-in to force a reload. Alternatively, you can reinstall Office.</span></span>
+#### <a name="for-ios"></a><span data-ttu-id="4d5af-188">Pour iOS :</span><span class="sxs-lookup"><span data-stu-id="4d5af-188">For iOS:</span></span>
+<span data-ttu-id="4d5af-p117">Appelez `window.location.reload(true)` à partir de JavaScript dans le complément pour forcer le rechargement. Vous pouvez également choisir de réinstaller Office.</span><span class="sxs-lookup"><span data-stu-id="4d5af-p117">Call `window.location.reload(true)` from JavaScript in the add-in to force a reload. Alternatively, you can reinstall Office.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="9f7d3-191">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="9f7d3-191">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4d5af-191">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="4d5af-191">See also</span></span>
 
-- [<span data-ttu-id="9f7d3-192">Manifeste XML des compléments Office</span><span class="sxs-lookup"><span data-stu-id="9f7d3-192">Office Add-ins XML manifest</span></span>](../develop/add-in-manifests.md)
-- [<span data-ttu-id="9f7d3-193">Chargement de la version test des compléments Office</span><span class="sxs-lookup"><span data-stu-id="9f7d3-193">Sideload Office Add-ins for testing</span></span>](sideload-office-add-ins-for-testing.md)
-- [<span data-ttu-id="9f7d3-194">Débogage des compléments Office</span><span class="sxs-lookup"><span data-stu-id="9f7d3-194">Debug Office Add-ins</span></span>](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+- [<span data-ttu-id="4d5af-192">Manifeste XML des compléments Office</span><span class="sxs-lookup"><span data-stu-id="4d5af-192">Office Add-ins XML manifest</span></span>](../develop/add-in-manifests.md)
+- [<span data-ttu-id="4d5af-193">Chargement de la version test des compléments Office</span><span class="sxs-lookup"><span data-stu-id="4d5af-193">Sideload Office Add-ins for testing</span></span>](sideload-office-add-ins-for-testing.md)
+- [<span data-ttu-id="4d5af-194">Débogage des compléments Office</span><span class="sxs-lookup"><span data-stu-id="4d5af-194">Debug Office Add-ins</span></span>](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
