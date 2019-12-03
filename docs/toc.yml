@@ -136,6 +136,8 @@
           href: develop/develop-office-add-ins-for-the-ipad.md
         - name: Développement de compléments avec Angular
           href: develop/add-ins-with-angular2.md
+        - name: Développement d’un complément avec Visual Studio Code
+          href: develop/develop-add-ins-vscode.md
         - name: Développement d’un complément avec Visual Studio
           items:
             - name: "Créer et déboguer des compléments Office dans Visual\_Studio"
@@ -216,10 +218,14 @@
       items:
         - name: Vue d’ensemble
           href: publish/publish.md
-        - name: "Héberger un complément pour Office sur Microsoft\_Azure"
-          href: publish/host-an-office-add-in-on-microsoft-azure.md
-        - name: Créer un package de votre complément avec Visual Studio
-          href: publish/package-your-add-in-using-visual-studio.md
+        - name: Publier votre complément (VS Code)
+          href: publish/publish-add-in-vs-code.md
+        - name: "Visual\_Studio"
+          items:
+            - name: Publier votre complément (Visual Studio)
+              href: publish/package-your-add-in-using-visual-studio.md
+            - name: "Héberger un complément pour Office sur Microsoft\_Azure"
+              href: publish/host-an-office-add-in-on-microsoft-azure.md
         - name: Publication de compléments sur AppSource
           href: /office/dev/store/submit-to-the-office-store
         - name: Stratégies de validation AppSource
