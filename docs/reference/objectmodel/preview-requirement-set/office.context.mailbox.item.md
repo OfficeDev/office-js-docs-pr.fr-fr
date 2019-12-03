@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Item-Preview ensemble de conditions requises
 description: ''
-ms.date: 11/25/2019
+ms.date: 12/02/2019
 localization_priority: Normal
-ms.openlocfilehash: a71d3869d5dbf91db7823118a8d0409699e17cd5
-ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
+ms.openlocfilehash: 2ebcacb1f99df047b5f5c5ebe82c012e21e45d3c
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "39629222"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670138"
 ---
 # <a name="item"></a>élément
 
@@ -32,7 +32,7 @@ L’espace de noms `item` est utilisé pour accéder au message, à la demande d
 | [bcc](#bcc-recipients) | ReadItem | Composition de message | [Destinataires](/javascript/api/outlook/office.recipients) | 1.1 |
 | [body](#body-body) | ReadItem | Composition | [Body](/javascript/api/outlook/office.body) | 1.1 |
 | | | Lecture | | |
-| [categories](#categories-categories) | ReadItem | Composition | [Categories](/javascript/api/outlook/office.categories) | Aperçu |
+| [categories](#categories-categories) | ReadItem | Composition | [Categories](/javascript/api/outlook/office.categories) | 1.8 |
 | | | Lecture | | |
 | [cc](#cc-arrayemailaddressdetailsrecipients) | ReadItem | Composition de message | [Destinataires](/javascript/api/outlook/office.recipients) | 1.0 |
 | | | Lecture de message | Tableau. <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | |
@@ -43,11 +43,11 @@ L’espace de noms `item` est utilisé pour accéder au message, à la demande d
 | [end](#end-datetime) | ReadItem | Organisateur de rendez-vous | [Heure](/javascript/api/outlook/office.time) | 1.0 |
 | | | Participant à un rendez-vous | Date | |
 | | | Lecture de message<br>(Demande de réunion) | Date | |
-| [enhancedLocation](#enhancedlocation-enhancedlocation) | ReadItem | Organisateur de rendez-vous | [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) | Aperçu |
+| [enhancedLocation](#enhancedlocation-enhancedlocation) | ReadItem | Organisateur de rendez-vous | [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) | 1.8 |
 | | | Participant à un rendez-vous | | |
 | [from](#from-emailaddressdetailsfrom) | ReadWriteItem | Composition de message | [From](/javascript/api/outlook/office.from) | 1.7 |
 | | ReadItem | Lecture de message | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | 1.0 |
-| [internetHeaders](#internetheaders-internetheaders) | ReadItem | Composition de message | [InternetHeaders](/javascript/api/outlook/office.internetheaders) | Aperçu |
+| [internetHeaders](#internetheaders-internetheaders) | ReadItem | Composition de message | [InternetHeaders](/javascript/api/outlook/office.internetheaders) | 1.8 |
 | [internetMessageId](#internetmessageid-string) | ReadItem | Lecture de message | String | 1.0 |
 | [itemClass](#itemclass-string) | ReadItem | Lecture | String | 1.0 |
 | [itemId](#nullable-itemid-string) | ReadItem | Lecture | String | 1.0 |
@@ -84,26 +84,26 @@ L’espace de noms `item` est utilisé pour accéder au message, à la demande d
 | Méthode | Minimale<br>niveau d’autorisation | Modes | Minimale<br>ensemble de conditions requises |
 |---|---|---|---|
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | ReadWriteItem | Composition | 1.1 |
-| [addFileAttachmentFromBase64Async](#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) | ReadWriteItem | Composition | Aperçu |
+| [addFileAttachmentFromBase64Async](#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) | ReadWriteItem | Composition | 1.8 |
 | [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | ReadItem | Composition<br>Lecture | 1.7 |
 | [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | ReadWriteItem | Composition | 1.1 |
 | [close](#close) | Restreinte | Composition | 1.3 |
 | [displayReplyAllForm](#displayreplyallformformdata-callback) | ReadItem | Lecture | 1.0 |
 | [displayReplyForm](#displayreplyformformdata-callback) | ReadItem | Lecture | 1.0 |
 | [getAllInternetHeadersAsync](#getallinternetheadersasyncoptions-callback) | ReadItem | Lecture de message | 1.8 |
-| [getAttachmentContentAsync](#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent) | ReadItem | Composition<br>Lecture | Aperçu |
-| [getAttachmentsAsync](#getattachmentsasyncoptions-callback--arrayattachmentdetails) | ReadItem | Composition | Aperçu |
+| [getAttachmentContentAsync](#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent) | ReadItem | Composition<br>Lecture | 1.8 |
+| [getAttachmentsAsync](#getattachmentsasyncoptions-callback--arrayattachmentdetails) | ReadItem | Composition | 1.8 |
 | [getEntities](#getentities--entities) | ReadItem | Lecture | 1.0 |
 | [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Restreinte | Lecture | 1.0 |
 | [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | ReadItem | Lecture | 1.0 |
 | [getInitializationContextAsync](#getinitializationcontextasyncoptions-callback) | ReadItem | Lecture | Aperçu |
-| [getItemIdAsync](#getitemidasyncoptions-callback) | ReadItem | Composition | Aperçu |
+| [getItemIdAsync](#getitemidasyncoptions-callback) | ReadItem | Composition | 1.8 |
 | [getRegExMatches](#getregexmatches--object) | ReadItem | Lecture | 1.0 |
 | [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | ReadItem | Lecture | 1.0 |
 | [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | ReadItem | Composition | 1.2 |
 | [getSelectedEntities](#getselectedentities--entities) | ReadItem | Lecture | 1.6 |
 | [getSelectedRegExMatches](#getselectedregexmatches--object) | ReadItem | Lecture | 1.6 |
-| [getSharedPropertiesAsync](#getsharedpropertiesasyncoptions-callback) | ReadItem | Composition<br>Lecture | Aperçu |
+| [getSharedPropertiesAsync](#getsharedpropertiesasyncoptions-callback) | ReadItem | Composition<br>Lecture | 1.8 |
 | [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | ReadItem | Composition<br>Lecture | 1.0 |
 | [removeAttachmentAsync](#removeattachmentasyncattachmentid-options-callback) | ReadWriteItem | Composition | 1.1 |
 | [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | ReadItem | Composition<br>Lecture | 1.7 |
@@ -117,8 +117,8 @@ Vous pouvez vous abonner et annuler l’abonnement aux événements suivants à 
 | Événement | Description | Minimale<br>ensemble de conditions requises |
 |---|---|---|
 |`AppointmentTimeChanged`| La date ou l’heure de la série ou du rendez-vous sélectionné a été modifiée. | 1.7 |
-|`AttachmentsChanged`| Une pièce jointe a été ajoutée à l’élément ou supprimée de celui-ci. | Aperçu |
-|`EnhancedLocationsChanged`| L’emplacement du rendez-vous sélectionné a changé. | Aperçu |
+|`AttachmentsChanged`| Une pièce jointe a été ajoutée à l’élément ou supprimée de celui-ci. | 1.8 |
+|`EnhancedLocationsChanged`| L’emplacement du rendez-vous sélectionné a changé. | 1.8 |
 |`RecipientsChanged`| La liste des destinataires de l’élément sélectionné ou du lieu de rendez-vous a été modifié. | 1.7 |
 |`RecurrenceChanged`| La périodicité de la série sélectionnée a été modifiée. | 1.7 |
 
@@ -2301,7 +2301,7 @@ La méthode `getRegExMatchesByName` renvoie les chaînes qui correspondent à l�
 
 Si vous spécifiez une règle `ItemHasRegularExpressionMatch` pour la propriété de corps d’un élément, l’expression régulière doit filtrer davantage le corps. Par ailleurs, elle ne doit pas tenter de renvoyer l’intégralité du corps de l’élément. L’utilisation d’une expression régulière telle que `.*` pour obtenir l’intégralité du corps d’un élément ne renvoie pas toujours les résultats attendus.
 
-##### <a name="parameters"></a>Paramètres
+##### <a name="parameters"></a>Parameters
 
 |Nom|Type|Description|
 |---|---|---|
@@ -2339,7 +2339,7 @@ Renvoie de manière asynchrone les données sélectionnées à partir de l’obj
 
 Si aucune sélection n’est effectuée, mais que le curseur est placé dans le corps ou l’objet, la méthode renvoie une chaîne vide pour les données sélectionnées. Si un champ autre que le corps ou l’objet est sélectionné, la méthode renvoie l’erreur `InvalidSelection`.
 
-##### <a name="parameters"></a>Parameters
+##### <a name="parameters"></a>Paramètres
 
 |Nom|Type|Attributs|Description|
 |---|---|---|---|

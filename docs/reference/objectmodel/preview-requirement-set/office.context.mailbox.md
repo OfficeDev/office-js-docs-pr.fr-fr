@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox-Preview-ensemble de conditions requises
 description: ''
-ms.date: 11/25/2019
+ms.date: 12/02/2019
 localization_priority: Normal
-ms.openlocfilehash: 8c67f7cf9231dd1c0db0d9a8d4ae9fb48e458435
-ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
+ms.openlocfilehash: 864c4f2931762ff6d8a02abb8da1a03e1abcab80
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "39629194"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670117"
 ---
 # <a name="mailbox"></a>boîte aux lettres
 
@@ -29,7 +29,7 @@ Permet d’accéder au modèle d’objet de complément Outlook pour Microsoft O
 | Propriété | Minimale<br>niveau d’autorisation | Modes | Type de retour | Minimale<br>ensemble de conditions requises |
 |---|---|---|---|---|
 | [ewsUrl](#ewsurl-string) | ReadItem | Composition<br>Lecture | String | 1.0 |
-| [masterCategories](#mastercategories-mastercategories) | ReadWriteMailbox | Composition<br>Lecture | [Catégoriesmaître](/javascript/api/outlook/office.mastercategories) | Aperçu |
+| [masterCategories](#mastercategories-mastercategories) | ReadWriteMailbox | Composition<br>Lecture | [Catégoriesmaître](/javascript/api/outlook/office.mastercategories) | 1.8 |
 | [restUrl](#resturl-string) | ReadItem | Composition<br>Lecture | String | 1,5 |
 
 ##### <a name="methods"></a>Méthodes
