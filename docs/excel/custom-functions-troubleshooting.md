@@ -3,12 +3,12 @@ ms.date: 07/15/2019
 description: Résoudre des problèmes courants dans les fonctions personnalisées d’Excel.
 title: Résoudre des problèmes de fonctions personnalisées
 localization_priority: Priority
-ms.openlocfilehash: 10d54cc19700cb7d1dbb72f17f57b8149500d186
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 0ff10200da86ebecf9bbd6f724ed42d77b8ad293
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771382"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670173"
 ---
 # <a name="troubleshoot-custom-functions"></a>Résoudre des problèmes de fonctions personnalisées
 
@@ -41,11 +41,11 @@ Les informations relatives aux fonctions personnalisées sont mises en cache par
 
 ### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exception"></a>Impossible d’ouvrir les compléments d’hôte local : utiliser une exception de bouclage local
 
-Si vous voyez le message d’erreur « Nous ne pouvons pas ouvrir ce complément à partir de l’hôte local », vous devez activer une exception de bouclage local. Pour plus d’informations sur la façon de procéder, voir [cet article du support Microsoft](https://support.microsoft.com/en-us/help/4490419/local-loopback-exemption-does-not-work).
+Si vous voyez le message d’erreur « Nous ne pouvons pas ouvrir ce complément à partir de l’hôte local », vous devez activer une exception de bouclage local. Pour plus d’informations sur la façon de procéder, voir [cet article du support Microsoft](https://support.microsoft.com/help/4490419/local-loopback-exemption-does-not-work).
 
 ### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Rapports de journalisation d’exécution « TypeError: Network request failed » (« TypeError : échec de la requête réseau ») dans Excel sur Windows
 
-Si le message d’erreur « TypeError: Network request failed » (« TypeError : échec de la requête réseau ») figure dans votre [journal d’exécution](custom-functions-troubleshooting.md#enable-runtime-logging) lorsque vous appelez votre serveur localhost, vous devez activer une exception de bouclage locale. Pour plus d’informations sur la façon de procéder, voir la *deuxième option* décrite dans [cet article du support Microsoft](https://support.microsoft.com/en-us/help/4490419/local-loopback-exemption-does-not-work).
+Si le message d’erreur « TypeError: Network request failed » (« TypeError : échec de la requête réseau ») figure dans votre [journal d’exécution](custom-functions-troubleshooting.md#enable-runtime-logging) lorsque vous appelez votre serveur localhost, vous devez activer une exception de bouclage locale. Pour plus d’informations sur la façon de procéder, voir la *deuxième option* décrite dans [cet article du support Microsoft](https://support.microsoft.com/help/4490419/local-loopback-exemption-does-not-work).
 
 ### <a name="ensure-promises-return"></a>Veiller au renvoi de promesses
 

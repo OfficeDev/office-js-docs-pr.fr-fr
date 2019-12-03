@@ -3,12 +3,12 @@ title: Concevoir vos compléments Office
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 766110b9b1ff9d22a783f592f1e38eb848b8b737
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 1b2f6a57ddea385ec676a4981e4576c155d93886
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127673"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670145"
 ---
 # <a name="design-your-office-add-ins"></a>Concevoir vos compléments Office
 
@@ -33,6 +33,6 @@ Suivez les principes de conception d’Office pour créer des expériences de co
 - **Prenez en compte toutes les plateformes et les méthodes d’entrée lors de la conception**. Les compléments sont conçus pour fonctionner sur toutes les plateformes prenant en charge Office ; aussi l’expérience utilisateur de votre complément doit-elle être optimisée pour fonctionner avec toutes les plateformes et tous les facteurs de forme. Veillez à ce que votre complément prenne aussi bien en charge les périphériques de type souris/clavier que les appareils et assurez-vous que votre interface utilisateur HTML personnalisée puisse s’adapter à différents facteurs de forme. Pour plus d’informations, consultez notre section relative aux [fonctions tactiles](../concepts/add-in-development-best-practices.md#optimize-for-touch). 
 
 ## <a name="see-also"></a>Voir aussi
-- [Office UI Fabric](https://developer.microsoft.com/fr-FR/fabric) 
+- [Office UI Fabric](https://developer.microsoft.com/fabric) 
 - [Bonnes pratiques en matière de développement de compléments](../concepts/add-in-development-best-practices.md)
 

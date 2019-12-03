@@ -3,12 +3,12 @@ title: Créer et déboguer des compléments Office dans Visual Studio
 description: Utiliser Visual Studio pour créer et déboguer des compléments Office dans le client de bureau Office sous Windows
 ms.date: 10/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 878cd308747ac7049ca37b21a9fcb2282a4bf60d
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 8274022a6a3af6e1b5d82c9d7105142d5a49e905
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626830"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670166"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Créer et déboguer des compléments Office dans Visual Studio
 
@@ -30,7 +30,7 @@ Cet article décrit comment utiliser Visual Studio 2019 pour créer un compléme
 - Office 2013 ou version ultérieure
 
     > [!TIP]
-    > Si vous n’avez pas Office, vous pouvez rejoindre le[programme Office 365 pour les développeurs](https://developer.microsoft.com/office/dev-program) pour obtenir un abonnement Office 365, ou vous pouvez[vous inscrire à un essai gratuit de 1 mois](https://products.office.com/en-US/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735).
+    > Si vous n’avez pas Office, vous pouvez rejoindre le[programme Office 365 pour les développeurs](https://developer.microsoft.com/office/dev-program) pour obtenir un abonnement Office 365, ou vous pouvez[vous inscrire à un essai gratuit de 1 mois](https://products.office.com/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735).
 
 ## <a name="create-the-add-in-project-in-visual-studio"></a>Créer un projet de complément Office dans Visual Studio
 

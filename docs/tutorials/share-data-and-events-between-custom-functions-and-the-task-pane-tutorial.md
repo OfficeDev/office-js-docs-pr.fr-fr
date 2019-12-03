@@ -4,19 +4,19 @@ title: 'Tutoriel : Partager des données et des événements entre des fonction
 ms.prod: excel
 description: Dans Excel, partagez des données et des événements entre des fonctions personnalisées et le volet Office.
 localization_priority: Priority
-ms.openlocfilehash: dcd4bced7e1419a57256f4ec54e3ff72c0edf9ef
-ms.sourcegitcommit: 42bcf9059327a8d71a7ab223805aea68be9ed6b5
+ms.openlocfilehash: 714e2645d78293b683a4824b58cb2b9b0b72ebb8
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "37962102"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670201"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane-preview"></a>Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office (préversion)
 
 Les fonctions personnalisées Excel et le volet Office partagent des données globales et peuvent effectuer des appels de fonction entre elles. Pour configurer votre projet de sorte que les fonctions personnalisées puissent fonctionner avec le volet Office, suivez les instructions décrites dans cet article.
 
 > [!NOTE]
-> Les fonctionnalités décrites dans cet article sont actuellement en préversion et peuvent faire l’objet de modifications. Elles ne sont pas prises en charge dans les environnements de production pour l’instant. Les fonctionnalités en préversion de cet article sont uniquement disponibles dans Excel sur Windows. Pour essayer les fonctionnalités en préversion, vous devez [rejoindre Office Insider](https://insider.office.com/fr-FR/join).  Un bon moyen de tester les fonctionnalités en préversion consiste à utiliser un abonnement Office 365. Si vous n’avez pas d’abonnement Office 365, vous pouvez en obtenir un en rejoignant le [programme pour les développeurs Office 365](https://developer.microsoft.com/office/dev-program).
+> Les fonctionnalités décrites dans cet article sont actuellement en préversion et peuvent faire l’objet de modifications. Elles ne sont pas prises en charge dans les environnements de production pour l’instant. Les fonctionnalités en préversion de cet article sont uniquement disponibles dans Excel sur Windows. Pour essayer les fonctionnalités en préversion, vous devez [rejoindre Office Insider](https://insider.office.com/join).  Un bon moyen de tester les fonctionnalités en préversion consiste à utiliser un abonnement Office 365. Si vous n’avez pas d’abonnement Office 365, vous pouvez en obtenir un en rejoignant le [programme pour les développeurs Office 365](https://developer.microsoft.com/office/dev-program).
 
 ## <a name="create-the-add-in-project"></a>Création du projet de complément
 
