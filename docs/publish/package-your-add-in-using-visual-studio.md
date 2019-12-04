@@ -1,18 +1,21 @@
 ---
-title: Créer le package de votre complément à l’aide de Visual Studio pour préparer la publication
+title: Publier votre complément à l’aide de Visual Studio
 description: Déploiement de votre projet web et création d’un package de votre complément à l’aide de Visual Studio 2019.
-ms.date: 10/14/2019
+ms.date: 12/02/2019
 localization_priority: Priority
-ms.openlocfilehash: 784741cffa0e3015caaa9c70fbb56f4b70df9462
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 5da7fc643eb517f777325658d01889f3e51906bd
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626963"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670194"
 ---
-# <a name="package-your-add-in-using-visual-studio-to-prepare-for-publishing"></a>Créer le package de votre complément à l’aide de Visual Studio pour préparer la publication
+# <a name="publish-your-add-in-using-visual-studio"></a>Publier votre complément à l’aide de Visual Studio
 
 Votre package de complément Office contient un [fichier manifeste](../develop/add-in-manifests.md) XML que vous allez utiliser pour publier le complément. Vous devez publier les fichiers d’application web de votre projet séparément. Cet article décrit le déploiement de votre projet web et création d’un package de votre complément à l’aide de Visual Studio 2019.
+
+> [!NOTE]
+> Pour plus d’informations sur la publication d’un complément Office que vous avez créé à l’aide du générateur Yeoman et développé avec Visual Studio Code ou un autre éditeur, voir [Publier un complément développé avec Visual Studio Code](publish-add-in-vs-code.md).
 
 ## <a name="to-deploy-your-web-project-using-visual-studio-2019"></a>Pour déployer votre projet web à l’aide de Visual Studio 2019
 

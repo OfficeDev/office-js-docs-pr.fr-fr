@@ -3,12 +3,12 @@ title: Héberger un complément pour Office sur Microsoft Azure | Microsoft Doc
 description: Découvrez comment déployer une application web de complément sur Azure et charger une version test du complément pour le tester dans une application cliente Office.
 ms.date: 10/16/2019
 localization_priority: Priority
-ms.openlocfilehash: 0cfddacf48bda9ed7b63d4018e3ae0437f15bcd9
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 106c775fa74b83d85111922f5488477772018b90
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626977"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670180"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>Héberger un complément pour Office sur Microsoft Azure
 
@@ -26,12 +26,12 @@ Cet article décrit comment déployer une application web de complément sur Azu
 2. Installation d’Office.
 
     > [!NOTE]
-    > Si vous n’avez pas encore Office, vous pouvez vous [inscrire pour obtenir un essai gratuit d’un mois](https://products.office.com/en-US/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735).
+    > Si vous n’avez pas encore Office, vous pouvez vous [inscrire pour obtenir un essai gratuit d’un mois](https://products.office.com/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735).
 
 3. Obtenez un abonnement Azure.
 
     > [!NOTE]
-    > Si vous n’avez pas encore d’abonnement Azure, vous pouvez [en obtenir un dans le cadre de votre abonnement Visual Studio](https://azure.microsoft.com/fr-FR/pricing/member-offers/visual-studio-subscriptions/) ou vous [inscrire pour obtenir une version d’évaluation gratuite](https://azure.microsoft.com/pricing/free-trial). 
+    > Si vous n’avez pas encore d’abonnement Azure, vous pouvez [en obtenir un dans le cadre de votre abonnement Visual Studio](https://azure.microsoft.com/pricing/member-offers/visual-studio-subscriptions/) ou vous [inscrire pour obtenir une version d’évaluation gratuite](https://azure.microsoft.com/pricing/free-trial). 
 
 ## <a name="step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file"></a>Étape 1 : Créer un dossier partagé pour héberger le fichier manifeste XML de votre complément
 
@@ -162,4 +162,4 @@ Visual Studio crée un complément Word de base que vous pourrez publier tel qu
 ## <a name="see-also"></a>Voir aussi
 
 - [Publier votre complément Office](../publish/publish.md)
-- [Créer le package de votre complément à l’aide de Visual Studio pour préparer la publication](../publish/package-your-add-in-using-visual-studio.md)
+- [Publier votre complément à l’aide de Visual Studio](../publish/package-your-add-in-using-visual-studio.md)
