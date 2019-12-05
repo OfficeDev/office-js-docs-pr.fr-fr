@@ -3,12 +3,12 @@ title: Déploiement et publication de votre complément Office | Microsoft Docs
 description: Méthodes et options pour déployer votre complément Office à des fins de test ou de distribution auprès des utilisateurs.
 ms.date: 09/05/2019
 localization_priority: Priority
-ms.openlocfilehash: c47f8743edeed1fd366d948d781c97da1c97958a
-ms.sourcegitcommit: d34aa0b282cc76ffff579da2a7945efd12fb7340
+ms.openlocfilehash: 2948e558ddd063ff36ebbfdd2edcb8c986a1445a
+ms.sourcegitcommit: 960ceaf6776ec3ed41a8f5b7bf70b3c95c43386a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "36769553"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "39830201"
 ---
 # <a name="deploy-and-publish-your-office-add-in"></a>Déploiement et publication de votre complément Office
 
@@ -19,7 +19,7 @@ Vous pouvez utiliser l’une des méthodes pour déployer votre complément Offi
 |[Chargement de version test](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|Dans le cadre de votre processus de développement, pour tester l’exécution de votre complément sur Windows, iPad, Mac ou dans un navigateur.|
 |[Déploiement centralisé](centralized-deployment.md)|Dans un environnement de cloud ou hybride, utilisez cette méthode pour distribuer votre complément auprès des utilisateurs de votre organisation à l’aide du Centre d’administration Office 365.|
 |[Catalogue SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|Dans un environnement local, pour distribuer votre complément auprès des utilisateurs de votre organisation.|
-|[AppSource](/office/dev/store/submit-to-the-office-store)|Pour distribuer publiquement votre complément auprès des utilisateurs.|
+|[AppSource](/office/dev/store/submit-to-appsource-via-partner-center)|Pour distribuer publiquement votre complément auprès des utilisateurs.|
 |[Serveur Exchange](#outlook-add-in-deployment)|Dans un environnement local ou en ligne, pour distribuer des compléments Outlook à des utilisateurs.|
 |[Partage réseau](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|Sur un ordinateur Windows sur un réseau sur lequel vous voulez héberger votre complément, accédez au dossier parent ou à la lettre de lecteur du dossier que vous souhaitez utiliser comme catalogue de dossiers partagés.|
 
@@ -87,5 +87,5 @@ Pour affecter des compléments à des clients, utilisez le centre d’administra
 - [Création de descriptions efficaces dans AppSource](/office/dev/store/create-effective-office-store-listings)
 - [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](../testing/testing-and-troubleshooting.md)
 
-[AppSource]: /office/dev/store/submit-to-the-office-store
+[AppSource]: /office/dev/store/submit-to-appsource-via-partner-center
 [Office Add-in host and platform availability]: ../overview/office-add-in-availability

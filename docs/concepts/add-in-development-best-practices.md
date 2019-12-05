@@ -3,12 +3,12 @@ title: Meilleures pratiques en matière de développement de compléments Offic
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: b5f5595d9109df10e910459b2fc61a71d5180bbf
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 2b07ffa898d0db6d84bb96c9db797b91930446e0
+ms.sourcegitcommit: 960ceaf6776ec3ed41a8f5b7bf70b3c95c43386a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448243"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "39830194"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Meilleures pratiques en matière de développement de compléments Office
 
@@ -125,7 +125,7 @@ Pour les modèles de conception à appliquer lors du développement de votre pre
 
 ## <a name="market-your-add-in"></a>Commercialisation de votre complément
 
-- Publiez votre complément dans [AppSource](/office/dev/store/submit-to-the-office-store) et [faites sa promotion](/office/dev/store/promote-your-office-store-solution) sur votre site web. Créez un [référencement AppSource efficace](/office/dev/store/create-effective-office-store-listings).
+- Publiez votre complément dans [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) et [faites sa promotion](/office/dev/store/promote-your-office-store-solution) sur votre site web. Créez un [référencement AppSource efficace](/office/dev/store/create-effective-office-store-listings).
 
 - Utilisez des titres et des descriptifs courts pour le complément. Ils ne doivent pas comporter plus de 128 caractères.
 
