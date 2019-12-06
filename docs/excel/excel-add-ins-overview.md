@@ -5,12 +5,12 @@ ms.date: 07/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: c4c60482e557f85edf044ab8e68e6b96f9e860ab
-ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
+ms.openlocfilehash: 7d68dd52575f3b706ffac2751d68ea4019faaa8c
+ms.sourcegitcommit: 960ceaf6776ec3ed41a8f5b7bf70b3c95c43386a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37468783"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "39830222"
 ---
 # <a name="excel-add-ins-overview"></a>Présentation des compléments Excel
 
@@ -51,7 +51,7 @@ Le [manifeste](../develop/add-in-manifests.md) est un fichier de configuration X
 * La manière dont le complément est intégré à Excel, y compris toute interface utilisateur personnalisée créée par le complément (boutons du ruban, menus contextuels, etc.).
 * Les autorisations requises par le complément, comme la lecture du document ou l’écriture dans celui-ci.
 
-Pour permettre aux utilisateurs finals d’installer et d’utiliser un complément Excel, publiez son manifeste dans AppSource ou dans un catalogue de compléments. 
+Pour permettre aux utilisateurs finals d’installer et d’utiliser un complément Excel, publiez son manifeste dans AppSource ou dans un catalogue de compléments. Pour plus de détails sur la publication dans AppSource, reportez-vous à la rubrique [Mise à disposition de vos solutions dans AppSource et dans Office](/office/dev/store/submit-to-appsource-via-partner-center).
 
 ## <a name="capabilities-of-an-excel-add-in"></a>Fonctionnalités d’un complément Excel
 
