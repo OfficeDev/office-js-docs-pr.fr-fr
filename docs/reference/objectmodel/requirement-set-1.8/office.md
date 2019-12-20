@@ -1,14 +1,14 @@
 ---
 title: Espace de noms Office-ensemble de conditions requises 1,8
 description: ''
-ms.date: 10/31/2019
+ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: 91a0bef2a8280a068763c98b17644bd9268e2fb4
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: b23afd7b84dcd18e120f6aea4bd4fb0952791f1c
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902162"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814165"
 ---
 # <a name="office"></a>Office
 
@@ -18,25 +18,29 @@ L’espace de noms Office fournit des interfaces partagées qui sont utilisées 
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
-##### <a name="members-and-methods"></a>Membres et méthodes
+##### <a name="properties"></a>Propriétés
 
-| Membre | Type |
-|--------|------|
-| [AsyncResultStatus](#asyncresultstatus-string) | Membre |
-| [CoercionType](#coerciontype-string) | Membre |
-| [EventType](#eventtype-string) | Membre |
-| [SourceProperty](#sourceproperty-string) | Membre |
+| Propriété | Modes | Type de retour | Minimale<br>ensemble de conditions requises |
+|---|---|---|:---:|
+| [context](office.context.md) | Composition<br>Lecture | [Context](/javascript/api/office/office.context?view=outlook-js-1.8) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+
+##### <a name="enumerations"></a>Énumérations
+
+| Énumération | Modes | Type de retour | Minimale<br>ensemble de conditions requises |
+|---|---|---|:---:|
+| [AsyncResultStatus](#asyncresultstatus-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [EventType](#eventtype-string) | Composition<br>Lecture | String | [1,5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [SourceProperty](#sourceproperty-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ### <a name="namespaces"></a>Espaces de noms
 
-[context](office.context.md) : fournit des interfaces partagées à partir de l’espace de noms de contexte de l’API pour les compléments Office à utiliser dans l’API du complément Outlook.
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.8): inclut un certain nombre d’énumérations propres à Outlook, par exemple `ItemType` `EntityType` `AttachmentType` `RecipientType` `ResponseType`,,,,, et `ItemNotificationMessageType`.
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.8): inclut un certain nombre d’énumérations, par exemple `ItemType` `EntityType` `AttachmentType` `RecipientType` `ResponseType`,,,,, et `ItemNotificationMessageType`.
-
-### <a name="members"></a>Members
+## <a name="enumeration-details"></a>Détails de l’énumération
 
 #### <a name="asyncresultstatus-string"></a>AsyncResultStatus : chaîne
 
@@ -57,7 +61,7 @@ Spécifie le résultat d’un appel asynchrone.
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 <br>
@@ -84,7 +88,7 @@ Indique comment forcer le type des données retournées ou définies par la mét
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
 
 <br>
@@ -103,7 +107,7 @@ spécifie l’événement associé à un gestionnaire d’événements.
 ##### <a name="properties"></a>Propriétés :
 
 | Nom | Type | Description | Ensemble de conditions requises minimales |
-|---|---|---|---|
+|---|---|---|:---:|
 |`AppointmentTimeChanged`| String | La date ou l’heure de la série ou du rendez-vous sélectionné a été modifiée. | 1.7 |
 |`AttachmentsChanged`| String | Une pièce jointe a été ajoutée à l’élément ou supprimée de celui-ci. | 1.8 |
 |`EnhancedLocationsChanged`| String | L’emplacement du rendez-vous sélectionné a changé. | 1.8 |
@@ -115,7 +119,7 @@ spécifie l’événement associé à un gestionnaire d’événements.
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1,5 |
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../../requirement-sets/outlook-api-requirement-sets.md)| 1,5 |
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture |
 
 <br>
@@ -142,5 +146,5 @@ Spécifie la source des données renvoyées par la méthode appelée.
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|

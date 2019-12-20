@@ -1,15 +1,15 @@
 ---
 title: Ensemble de conditions requises de l’API JavaScript pour Excel en ligne uniquement
 description: Détails sur l’ensemble de conditions requises pour ExcelApiOnline
-ms.date: 11/19/2019
+ms.date: 12/05/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: e583c9832f04e17dc1c82d38d056fe2749888a77
-ms.sourcegitcommit: e56bd8f1260c73daf33272a30dc5af242452594f
+ms.openlocfilehash: ad2a3cd627552baeb449397fa917fe10e86ebbaf
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "38757491"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814151"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>Ensemble de conditions requises de l’API JavaScript pour Excel en ligne uniquement
 
@@ -40,7 +40,23 @@ Une fois que l’API se trouve dans un ensemble de conditions requises entre pla
 
 ## <a name="api-list"></a>Liste des API
 
-Il n’existe actuellement aucune API en ligne uniquement. Vérifiez à nouveau que de nouvelles fonctionnalités sont ajoutées à Excel sur le Web et prises en charge par les API JavaScript pour Office.
+Les API suivantes sont actuellement disponibles pour Excel sur le Web dans le cadre de `ExcelApiOnline 1.1` l’ensemble de conditions requises.
+
+| Class | Champs | Description |
+|:---|:---|:---|
+|[Comment](/javascript/api/excel/excel.comment)|[mentions](/javascript/api/excel/excel.comment#mentions)|Obtient les entités (par exemple, les personnes) mentionnées dans les commentaires.|
+||[richContent](/javascript/api/excel/excel.comment#richcontent)|Obtient le contenu de commentaire enrichi (par exemple, les mentions dans les commentaires). Cette chaîne n’est pas destinée à être affichée aux utilisateurs finaux. Votre complément doit uniquement l’utiliser pour analyser le contenu de commentaire enrichi.|
+||[updateMentions (contentWithMentions : Excel. CommentRichContent)](/javascript/api/excel/excel.comment#updatementions-contentwithmentions-)|Met à jour le contenu de commentaire avec une chaîne spécialement mise en forme et une liste de mentions.|
+|[CommentMention](/javascript/api/excel/excel.commentmention)|[email](/javascript/api/excel/excel.commentmention#email)|Obtient ou définit l’adresse de messagerie de l’entité mentionnée dans Comment.|
+||[id](/javascript/api/excel/excel.commentmention#id)|Obtient ou définit l’ID de l’entité. Cela correspond à l’un des ID `CommentRichContent.richContent`dans.|
+||[name](/javascript/api/excel/excel.commentmention#name)|Obtient ou définit le nom de l’entité mentionnée dans Comment.|
+|[CommentReply](/javascript/api/excel/excel.commentreply)|[mentions](/javascript/api/excel/excel.commentreply#mentions)|Obtient les entités (par exemple, les personnes) mentionnées dans les commentaires.|
+||[richContent](/javascript/api/excel/excel.commentreply#richcontent)|Obtient le contenu de commentaire enrichi (par exemple, les mentions dans les commentaires). Cette chaîne n’est pas destinée à être affichée aux utilisateurs finaux. Votre complément doit uniquement l’utiliser pour analyser le contenu de commentaire enrichi.|
+||[updateMentions (contentWithMentions : Excel. CommentRichContent)](/javascript/api/excel/excel.commentreply#updatementions-contentwithmentions-)|Met à jour le contenu de commentaire avec une chaîne spécialement mise en forme et une liste de mentions.|
+|[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)|[mentions](/javascript/api/excel/excel.commentrichcontent#mentions)|Tableau contenant toutes les entités (par exemple, les personnes) mentionnées dans le commentaire.|
+||[richContent](/javascript/api/excel/excel.commentrichcontent#richcontent)||
+|[Range](/javascript/api/excel/excel.range)|[moveTo (destinationRange : chaîne \| de plage)](/javascript/api/excel/excel.range#moveto-destinationrange-)|Déplace les valeurs de cellule, la mise en forme et les formules de la plage actuelle à la plage de destination, en remplaçant les anciennes informations de ces cellules.|
+|[RangeFormat](/javascript/api/excel/excel.rangeformat)|[adjustIndent (montant : nombre)](/javascript/api/excel/excel.rangeformat#adjustindent-amount-)|Ajuste la mise en retrait de la plage de mise en forme. La valeur de retrait est comprise entre 0 et 250 et est mesurée en caractères.|
 
 ## <a name="see-also"></a>Voir aussi
 

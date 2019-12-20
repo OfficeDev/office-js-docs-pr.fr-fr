@@ -3,12 +3,12 @@ title: Confidentialité et sécurité pour les compléments Office
 description: ''
 ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: c26f1f97382b8e8b1807a3eeeaa63cb6b553cb1e
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.openlocfilehash: bf71bfdba331f3726445c5095bd7dba1e4c5d39e
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353852"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814032"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Confidentialité et sécurité pour les compléments Office
 
@@ -33,9 +33,6 @@ En outre, l’infrastructure d’exécution offre les avantages suivants pour ga
 De plus, l’utilisation des ressources de mémoire, de processeur et réseau par les compléments Office peut être régie afin de garantir de bonnes performances et une excellente fiabilité.
 
 Les sections suivantes décrivent brièvement comment l’architecture d’exécution prend en charge l’exécution de compléments dans les clients Office sur des appareils Windows, Mac OS X et dans les navigateurs Web.
-
-> [!NOTE]
-> Pour en savoir plus sur l’utilisation de WIP et Intune avec les compléments Office, consultez la page [Utiliser WIP et Intune pour protéger les données de votre entreprise dans les document, en exécutant les compléments Office](/microsoft-365/enterprise/office-add-ins-wip).
 
 ### <a name="clients-on-windows-and-os-x-devices"></a>Clients sur appareils Windows et OS X
 

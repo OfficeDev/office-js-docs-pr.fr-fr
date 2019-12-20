@@ -1,14 +1,14 @@
 ---
 title: Navigateurs utilisés par les compléments Office
 description: Indique comment le système d’exploitation et la version d’Office déterminent le navigateur utilisé par les compléments Office.
-ms.date: 09/25/2019
+ms.date: 12/13/2019
 localization_priority: Priority
-ms.openlocfilehash: b5d7198e556f020bccdf7ba1e0a0fcffa3a9171b
-ms.sourcegitcommit: c8914ce0f48a0c19bbfc3276a80d090bb7ce68e1
+ms.openlocfilehash: 3709157449634dfb49805e2247e47debe60f468f
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "37235294"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40813983"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navigateurs utilisés par les compléments Office
 
@@ -36,19 +36,6 @@ Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes e
 
 > [!IMPORTANT]
 > Internet Explorer 11 ne prend pas en charge les versions de JavaScript ultérieures à la version ES5. Si un des utilisateurs de votre complément dispose d’une plateforme utilisant Internet Explorer 11, vous devez transpiler JavaScript vers la version ES5 ou utiliser un polyfill pour lui permettre d’utiliser la syntaxe et les fonctionnalités d’ECMAScript 2015 ou version ultérieure. Par ailleurs, Internet Explorer 11 ne prend pas en charge certaines fonctionnalités HTML5 telles que les éléments multimédias, l’enregistrement et l’emplacement.
-
-> [!NOTE]
-> En attendant leur mise à la disposition générale, vous devez participer au programme Windows Insider pour obtenir Windows 1903 ou version ultérieure, ainsi qu’au programme Office Insider pour obtenir la version 16.0.11629 ou ultérieure.
->
-> Pour participer au programme Windows Insider :
-> 
-> 1. Accédez à [Windows Insider](https://insider.windows.com) et cliquez sur le lien pour participer au programme Windows Insider.
-> 2. Vous accédez alors à une page d’instructions sur l’utilisation des paramètres Windows pour activer les builds Windows. Suivez les instructions. Lorsque vous sélectionnez le rythme des mises à jour, choisissez l’option la plus rapide.
->
-> Pour participer au programme Office Insider :
-> 
-> 1. Accédez à [Participer au programme Office Insider](https://insider.office.com/join).
-> 2. Suivez les instructions détaillées sur cette page. Lorsque vous êtes invité à spécifier un canal, sélectionnez Insider.
 
 ## <a name="troubleshooting-microsoft-edge-issues"></a>Résolution des problèmes liés à Microsoft Edge
 

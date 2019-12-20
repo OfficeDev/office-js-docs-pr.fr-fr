@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook 1.1
 description: ''
-ms.date: 11/26/2019
+ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 1c2e8ea26cac7ff630961b176391ef1adf2249fd
-ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
+ms.openlocfilehash: 17878f5ad4f12b11ef803efcb37f257181f7e2ca
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "39629236"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814401"
 ---
 # <a name="outlook-add-in-api-requirement-set-11"></a>Ensemble de conditions requises de l’API du complément Outlook 1.1
 
@@ -28,11 +28,11 @@ L’ensemble de conditions requises 1,1 inclut tous les [ensembles de conditions
 - Ajout de l’objet [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.1) : fournit des méthodes pour obtenir et définir les destinataires d’un rendez-vous ou d’un message dans un complément Outlook.
 - Ajout de l’objet [Subject](/javascript/api/outlook/office.subject?view=outlook-js-1.1) : Fournit des méthodes pour obtenir et définir l’objet d’un rendez-vous ou d’un message dans un complément Outlook.
 - Ajout de l’objet [Time](/javascript/api/outlook/office.time?view=outlook-js-1.1) : fournit des méthodes pour obtenir et définir l’heure de début ou de fin d’une réunion dans un complément Outlook.
-- Ajout de la méthode [Office.context.mailbox.item.addFileAttachmentAsync](office.context.mailbox.item.md#addfileattachmentasyncuri-attachmentname-options-callback) : ajoute un fichier à un message ou un rendez-vous en pièce jointe.
-- Ajout de la méthode [Office.context.mailbox.item.addItemAttachmentAsync](office.context.mailbox.item.md#additemattachmentasyncitemid-attachmentname-options-callback) : ajoute un élément Exchange, comme un message, en pièce jointe au message ou au rendez-vous.
-- Ajout de la méthode [Office.context.mailbox.item.removeAttachmentAsync](office.context.mailbox.item.md#removeattachmentasyncattachmentid-options-callback) : supprime une pièce jointe d’un message ou d’un rendez-vous.
-- Ajout de l’objet [Office.context.mailbox.item.body](office.context.mailbox.item.md#body-body) : obtient un objet qui fournit des méthodes permettant de manipuler le corps d’un élément.
-- Ajout de la ligne [Office. Context. Mailbox. Item. BCC](office.context.mailbox.item.md#bcc-recipients) d’un message.
+- Ajout de la méthode [Office.context.mailbox.item.addFileAttachmentAsync](office.context.mailbox.item.md#methods) : ajoute un fichier à un message ou un rendez-vous en pièce jointe.
+- Ajout de la méthode [Office.context.mailbox.item.addItemAttachmentAsync](office.context.mailbox.item.md#methods) : ajoute un élément Exchange, comme un message, en pièce jointe au message ou au rendez-vous.
+- Ajout de la méthode [Office.context.mailbox.item.removeAttachmentAsync](office.context.mailbox.item.md#methods) : supprime une pièce jointe d’un message ou d’un rendez-vous.
+- Ajout de l’objet [Office.context.mailbox.item.body](office.context.mailbox.item.md#properties) : obtient un objet qui fournit des méthodes permettant de manipuler le corps d’un élément.
+- Ajout de la ligne [Office. Context. Mailbox. Item. BCC](office.context.mailbox.item.md#properties) d’un message.
 - Ajout de l’énumération [Office.MailboxEnums.RecipientType](/javascript/api/outlook/office.mailboxenums.recipienttype?view=outlook-js-1.1) : spécifie le type de destinataire d’un rendez-vous.
 
 ## <a name="see-also"></a>Voir aussi
