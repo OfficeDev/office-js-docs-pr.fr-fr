@@ -1,112 +1,33 @@
 ---
-title: Office. Context. Mailbox. userProfile-ensemble de conditions requises 1,4
+title: Office.context.mailbox.userProfile – ensemble de conditions requises 1.5
 description: ''
-ms.date: 08/08/2019
+ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: 2f8b5bf4b98e55fcc2aa2b58a9a4a7bccc8da51b
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 6b5229c1bc300d11714f3aa2cf8fa8ff2465667c
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696189"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814263"
 ---
-# <a name="userprofile"></a><span data-ttu-id="24255-102">userProfile</span><span class="sxs-lookup"><span data-stu-id="24255-102">userProfile</span></span>
+# <a name="userprofile"></a><span data-ttu-id="de43a-102">userProfile</span><span class="sxs-lookup"><span data-stu-id="de43a-102">userProfile</span></span>
 
-### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmduserprofile"></a><span data-ttu-id="24255-103">[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile</span><span class="sxs-lookup"><span data-stu-id="24255-103">[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile</span></span>
+### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmduserprofile"></a><span data-ttu-id="de43a-103">[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).userProfile</span><span class="sxs-lookup"><span data-stu-id="de43a-103">[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).userProfile</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="24255-104">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="24255-104">Requirements</span></span>
+<span data-ttu-id="de43a-104">Fournit des informations sur l’utilisateur dans un complément Outlook.</span><span class="sxs-lookup"><span data-stu-id="de43a-104">Provides information about the user in an Outlook add-in.</span></span>
 
-|<span data-ttu-id="24255-105">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="24255-105">Requirement</span></span>| <span data-ttu-id="24255-106">Valeur</span><span class="sxs-lookup"><span data-stu-id="24255-106">Value</span></span>|
+##### <a name="requirements"></a><span data-ttu-id="de43a-105">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="de43a-105">Requirements</span></span>
+
+|<span data-ttu-id="de43a-106">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="de43a-106">Requirement</span></span>| <span data-ttu-id="de43a-107">Valeur</span><span class="sxs-lookup"><span data-stu-id="de43a-107">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="24255-107">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="24255-107">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="24255-108">1.0</span><span class="sxs-lookup"><span data-stu-id="24255-108">1.0</span></span>|
-|[<span data-ttu-id="24255-109">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="24255-109">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="24255-110">ReadItem</span><span class="sxs-lookup"><span data-stu-id="24255-110">ReadItem</span></span>|
-|[<span data-ttu-id="24255-111">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="24255-111">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="24255-112">Rédaction ou lecture</span><span class="sxs-lookup"><span data-stu-id="24255-112">Compose or Read</span></span>|
+|[<span data-ttu-id="de43a-108">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="de43a-108">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="de43a-109">1.1</span><span class="sxs-lookup"><span data-stu-id="de43a-109">1.1</span></span>|
+|[<span data-ttu-id="de43a-110">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="de43a-110">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="de43a-111">ReadItem</span><span class="sxs-lookup"><span data-stu-id="de43a-111">ReadItem</span></span>|
+|[<span data-ttu-id="de43a-112">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="de43a-112">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="de43a-113">Rédaction ou lecture</span><span class="sxs-lookup"><span data-stu-id="de43a-113">Compose or Read</span></span>|
 
-##### <a name="members-and-methods"></a><span data-ttu-id="24255-113">Membres et méthodes</span><span class="sxs-lookup"><span data-stu-id="24255-113">Members and methods</span></span>
+## <a name="properties"></a><span data-ttu-id="de43a-114">Propriétés</span><span class="sxs-lookup"><span data-stu-id="de43a-114">Properties</span></span>
 
-| <span data-ttu-id="24255-114">Membre</span><span class="sxs-lookup"><span data-stu-id="24255-114">Member</span></span> | <span data-ttu-id="24255-115">Type</span><span class="sxs-lookup"><span data-stu-id="24255-115">Type</span></span> |
-|--------|------|
-| [<span data-ttu-id="24255-116">displayName</span><span class="sxs-lookup"><span data-stu-id="24255-116">displayName</span></span>](#displayname-string) | <span data-ttu-id="24255-117">Member</span><span class="sxs-lookup"><span data-stu-id="24255-117">Member</span></span> |
-| [<span data-ttu-id="24255-118">emailAddress</span><span class="sxs-lookup"><span data-stu-id="24255-118">emailAddress</span></span>](#emailaddress-string) | <span data-ttu-id="24255-119">Member</span><span class="sxs-lookup"><span data-stu-id="24255-119">Member</span></span> |
-| [<span data-ttu-id="24255-120">timeZone</span><span class="sxs-lookup"><span data-stu-id="24255-120">timeZone</span></span>](#timezone-string) | <span data-ttu-id="24255-121">Membre</span><span class="sxs-lookup"><span data-stu-id="24255-121">Member</span></span> |
-
-### <a name="members"></a><span data-ttu-id="24255-122">Membres</span><span class="sxs-lookup"><span data-stu-id="24255-122">Members</span></span>
-
-#### <a name="displayname-string"></a><span data-ttu-id="24255-123">displayName: String</span><span class="sxs-lookup"><span data-stu-id="24255-123">displayName: String</span></span>
-
-<span data-ttu-id="24255-124">Obtient le nom d’affichage de l’utilisateur.</span><span class="sxs-lookup"><span data-stu-id="24255-124">Gets the user's display name.</span></span>
-
-##### <a name="type"></a><span data-ttu-id="24255-125">Type</span><span class="sxs-lookup"><span data-stu-id="24255-125">Type</span></span>
-
-*   <span data-ttu-id="24255-126">String</span><span class="sxs-lookup"><span data-stu-id="24255-126">String</span></span>
-
-##### <a name="requirements"></a><span data-ttu-id="24255-127">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="24255-127">Requirements</span></span>
-
-|<span data-ttu-id="24255-128">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="24255-128">Requirement</span></span>| <span data-ttu-id="24255-129">Valeur</span><span class="sxs-lookup"><span data-stu-id="24255-129">Value</span></span>|
-|---|---|
-|[<span data-ttu-id="24255-130">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="24255-130">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="24255-131">1.0</span><span class="sxs-lookup"><span data-stu-id="24255-131">1.0</span></span>|
-|[<span data-ttu-id="24255-132">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="24255-132">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="24255-133">ReadItem</span><span class="sxs-lookup"><span data-stu-id="24255-133">ReadItem</span></span>|
-|[<span data-ttu-id="24255-134">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="24255-134">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="24255-135">Rédaction ou lecture</span><span class="sxs-lookup"><span data-stu-id="24255-135">Compose or Read</span></span>|
-
-##### <a name="example"></a><span data-ttu-id="24255-136">Exemple</span><span class="sxs-lookup"><span data-stu-id="24255-136">Example</span></span>
-
-```js
-// Example: Allie Bellew
-console.log(Office.context.mailbox.userProfile.displayName);
-```
-
-<br>
-
----
----
-
-#### <a name="emailaddress-string"></a><span data-ttu-id="24255-137">emailAddress: chaîne</span><span class="sxs-lookup"><span data-stu-id="24255-137">emailAddress: String</span></span>
-
-<span data-ttu-id="24255-138">Obtient l’adresse de messagerie SMTP de l’utilisateur.</span><span class="sxs-lookup"><span data-stu-id="24255-138">Gets the user's SMTP email address.</span></span>
-
-##### <a name="type"></a><span data-ttu-id="24255-139">Type</span><span class="sxs-lookup"><span data-stu-id="24255-139">Type</span></span>
-
-*   <span data-ttu-id="24255-140">String</span><span class="sxs-lookup"><span data-stu-id="24255-140">String</span></span>
-
-##### <a name="requirements"></a><span data-ttu-id="24255-141">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="24255-141">Requirements</span></span>
-
-|<span data-ttu-id="24255-142">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="24255-142">Requirement</span></span>| <span data-ttu-id="24255-143">Valeur</span><span class="sxs-lookup"><span data-stu-id="24255-143">Value</span></span>|
-|---|---|
-|[<span data-ttu-id="24255-144">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="24255-144">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="24255-145">1.0</span><span class="sxs-lookup"><span data-stu-id="24255-145">1.0</span></span>|
-|[<span data-ttu-id="24255-146">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="24255-146">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="24255-147">ReadItem</span><span class="sxs-lookup"><span data-stu-id="24255-147">ReadItem</span></span>|
-|[<span data-ttu-id="24255-148">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="24255-148">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="24255-149">Rédaction ou lecture</span><span class="sxs-lookup"><span data-stu-id="24255-149">Compose or Read</span></span>|
-
-##### <a name="example"></a><span data-ttu-id="24255-150">Exemple</span><span class="sxs-lookup"><span data-stu-id="24255-150">Example</span></span>
-
-```js
-// Example: allieb@contoso.com
-console.log(Office.context.mailbox.userProfile.emailAddress);
-```
-
-<br>
-
----
----
-
-#### <a name="timezone-string"></a><span data-ttu-id="24255-151">timeZone: chaîne</span><span class="sxs-lookup"><span data-stu-id="24255-151">timeZone: String</span></span>
-
-<span data-ttu-id="24255-152">Obtient le fuseau horaire par défaut de l’utilisateur.</span><span class="sxs-lookup"><span data-stu-id="24255-152">Gets the user's default time zone.</span></span>
-
-##### <a name="type"></a><span data-ttu-id="24255-153">Type</span><span class="sxs-lookup"><span data-stu-id="24255-153">Type</span></span>
-
-*   <span data-ttu-id="24255-154">String</span><span class="sxs-lookup"><span data-stu-id="24255-154">String</span></span>
-
-##### <a name="requirements"></a><span data-ttu-id="24255-155">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="24255-155">Requirements</span></span>
-
-|<span data-ttu-id="24255-156">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="24255-156">Requirement</span></span>| <span data-ttu-id="24255-157">Valeur</span><span class="sxs-lookup"><span data-stu-id="24255-157">Value</span></span>|
-|---|---|
-|[<span data-ttu-id="24255-158">Version de l’ensemble minimal de conditions de boîte aux lettres</span><span class="sxs-lookup"><span data-stu-id="24255-158">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="24255-159">1.0</span><span class="sxs-lookup"><span data-stu-id="24255-159">1.0</span></span>|
-|[<span data-ttu-id="24255-160">Niveau d’autorisation minimal</span><span class="sxs-lookup"><span data-stu-id="24255-160">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="24255-161">ReadItem</span><span class="sxs-lookup"><span data-stu-id="24255-161">ReadItem</span></span>|
-|[<span data-ttu-id="24255-162">Mode Outlook applicable</span><span class="sxs-lookup"><span data-stu-id="24255-162">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="24255-163">Rédaction ou lecture</span><span class="sxs-lookup"><span data-stu-id="24255-163">Compose or Read</span></span>|
-
-##### <a name="example"></a><span data-ttu-id="24255-164">Exemple</span><span class="sxs-lookup"><span data-stu-id="24255-164">Example</span></span>
-
-```js
-// Example: Pacific Standard Time
-console.log(Office.context.mailbox.userProfile.timeZone);
-```
+| <span data-ttu-id="de43a-115">Propriété</span><span class="sxs-lookup"><span data-stu-id="de43a-115">Property</span></span> | <span data-ttu-id="de43a-116">Minimale</span><span class="sxs-lookup"><span data-stu-id="de43a-116">Minimum</span></span><br><span data-ttu-id="de43a-117">niveau d’autorisation</span><span class="sxs-lookup"><span data-stu-id="de43a-117">permission level</span></span> | <span data-ttu-id="de43a-118">Modes</span><span class="sxs-lookup"><span data-stu-id="de43a-118">Modes</span></span> | <span data-ttu-id="de43a-119">Type de retour</span><span class="sxs-lookup"><span data-stu-id="de43a-119">Return type</span></span> | <span data-ttu-id="de43a-120">Minimale</span><span class="sxs-lookup"><span data-stu-id="de43a-120">Minimum</span></span><br><span data-ttu-id="de43a-121">ensemble de conditions requises</span><span class="sxs-lookup"><span data-stu-id="de43a-121">requirement set</span></span> |
+|---|---|---|---|:---:|
+| [<span data-ttu-id="de43a-122">displayName</span><span class="sxs-lookup"><span data-stu-id="de43a-122">displayName</span></span>](/javascript/api/outlook/office.userprofile?view=outlook-js-1.5#displayname) | <span data-ttu-id="de43a-123">ReadItem</span><span class="sxs-lookup"><span data-stu-id="de43a-123">ReadItem</span></span> | <span data-ttu-id="de43a-124">Composition</span><span class="sxs-lookup"><span data-stu-id="de43a-124">Compose</span></span><br><span data-ttu-id="de43a-125">Lecture</span><span class="sxs-lookup"><span data-stu-id="de43a-125">Read</span></span> | <span data-ttu-id="de43a-126">String</span><span class="sxs-lookup"><span data-stu-id="de43a-126">String</span></span> | [<span data-ttu-id="de43a-127">1.1</span><span class="sxs-lookup"><span data-stu-id="de43a-127">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [<span data-ttu-id="de43a-128">emailAddress</span><span class="sxs-lookup"><span data-stu-id="de43a-128">emailAddress</span></span>](/javascript/api/outlook/office.userprofile?view=outlook-js-1.5#emailaddress) | <span data-ttu-id="de43a-129">ReadItem</span><span class="sxs-lookup"><span data-stu-id="de43a-129">ReadItem</span></span> | <span data-ttu-id="de43a-130">Composition</span><span class="sxs-lookup"><span data-stu-id="de43a-130">Compose</span></span><br><span data-ttu-id="de43a-131">Lecture</span><span class="sxs-lookup"><span data-stu-id="de43a-131">Read</span></span> | <span data-ttu-id="de43a-132">String</span><span class="sxs-lookup"><span data-stu-id="de43a-132">String</span></span> | [<span data-ttu-id="de43a-133">1.1</span><span class="sxs-lookup"><span data-stu-id="de43a-133">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [<span data-ttu-id="de43a-134">timeZone</span><span class="sxs-lookup"><span data-stu-id="de43a-134">timeZone</span></span>](/javascript/api/outlook/office.userprofile?view=outlook-js-1.5#timezone) | <span data-ttu-id="de43a-135">ReadItem</span><span class="sxs-lookup"><span data-stu-id="de43a-135">ReadItem</span></span> | <span data-ttu-id="de43a-136">Composition</span><span class="sxs-lookup"><span data-stu-id="de43a-136">Compose</span></span><br><span data-ttu-id="de43a-137">Lecture</span><span class="sxs-lookup"><span data-stu-id="de43a-137">Read</span></span> | <span data-ttu-id="de43a-138">String</span><span class="sxs-lookup"><span data-stu-id="de43a-138">String</span></span> | [<span data-ttu-id="de43a-139">1.1</span><span class="sxs-lookup"><span data-stu-id="de43a-139">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
