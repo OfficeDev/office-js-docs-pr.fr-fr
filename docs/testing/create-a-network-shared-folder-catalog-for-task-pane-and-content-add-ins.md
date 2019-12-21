@@ -1,14 +1,14 @@
 ---
 title: Chargement de compléments Office pour des tests
 description: ''
-ms.date: 08/15/2019
+ms.date: 12/06/2019
 localization_priority: Priority
-ms.openlocfilehash: 19cd599ea743fc577a5139d3f278dd3f993ec5b1
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: bb926b09d9381574d22e7634a578adac141e1f8f
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477928"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814478"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>Chargement de compléments Office pour des tests
 
@@ -45,7 +45,9 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 
 6. Choisissez le bouton **Fermer** pour fermer la boîte de dialogue **Propriétés**.
 
-## <a name="specify-the-shared-folder-as-a-trusted-catalog"></a>Spécifier le dossier partagé en tant que catalogue approuvé
+## <a name="specify-the-shared-folder-as-a-trusted-catalog"></a>Spécifier le dossier partagé en tant que catalogue approuvé 
+
+### <a name="configure-the-trust-manually"></a>Configurer l’approbation manuellement
       
 1. Ouvrez un nouveau document dans Excel, Word, PowerPoint ou Project.
     
@@ -68,10 +70,43 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 8. Sélectionnez le bouton **OK** pour fermer la boîte de dialogue **Options Word**.
 
 9. Fermez et ouvrez de nouveau l’application Office afin que vos modifications prennent effet.
+
+### <a name="configure-the-trust-with-a-registry-script"></a>Configurer l’approbation à l’aide d’un script du Registre
+
+1. Dans un éditeur de texte, créez un fichier nommé TrustNetworkShareCatalog.reg. 
+
+2. Ajoutez le contenu suivant au fichier :
+
+    ```
+    Windows Registry Editor Version 5.00
     
+    [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{-random-GUID-here-}]
+    "Id"="{-random-GUID-here-}"
+    "Url"="\\\\-share-\\-folder-"
+    "Flags"=dword:00000001
+    ```
+3. Utilisez l’un des nombreux outils de génération de GUID en ligne, tels que le [Générateur de GUID](https://guidgenerator.com/), pour générer un GUID aléatoire, et dans le fichier TrustNetworkShareCatalog.reg, remplacez la chaîne « -Random-GUID-here- » *dans les deux emplacements* par le GUID. (Les symboles `{}` englobantes doivent subsister).
+
+4. Remplacez la valeur`Url`, par le chemin d’accès complet du réseau vers le dossier que vous avez [partagé](#share-a-folder) précédemment. (Notez que les caractères `\` de l’URL doivent être doublés) Si vous n’avez pas noté le chemin d’accès complet du réseau lorsque vous avez partagé le dossier, vous pouvez le récupérer dans la boîte de dialogue **Propriétés** du dossier, comme illustré dans la capture d’écran suivante. 
+
+    ![Boîte de dialogue Propriétés du dossier avec l’onglet Partage et le chemin d’accès du réseau mis en évidence](../images/sideload-windows-properties-dialog-2.png)
+    
+5. Le fichier doit désormais se présenter comme suit. Enregistrez-le.
+
+    ```
+    Windows Registry Editor Version 5.00
+    
+    [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{01234567-89ab-cedf-0123-456789abcedf}]
+    "Id"="{01234567-89ab-cedf-0123-456789abcedf}"
+    "Url"="\\\\TestServer\\OfficeAddinManifests"
+    "Flags"=dword:00000001
+    ```
+
+6. Fermez *toutes* les applications Office.
+
+7. Exécutez le fichier TrustNetworkShareCatalog.reg comme vous le feriez pour n’importe quel exécutable, par exemple, double-cliquez sur celui-ci.
 
 ## <a name="sideload-your-add-in"></a>Charger une version test de votre complément
-
 
 1. Placez le fichier XML manifeste d’un complément en cours de test dans le catalogue de dossiers partagés. Notez que vous déployez l’application web sur un serveur web. Veillez à spécifier l’URL dans l’élément **SourceLocation** du fichier manifeste.
 

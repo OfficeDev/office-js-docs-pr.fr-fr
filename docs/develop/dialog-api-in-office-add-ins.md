@@ -3,12 +3,12 @@ title: Utiliser l’API de dialogue dans vos compléments Office
 description: ''
 ms.date: 08/07/2019
 localization_priority: Priority
-ms.openlocfilehash: 5cafb2396c92576bd5ac6d6d52105e0bb5ee579d
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 88c7afca2f1e800391443458e0c6f6b930288c44
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36302580"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814109"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Utiliser l’API de dialogue dans vos compléments Office
 
@@ -329,7 +329,10 @@ Pour voir un exemple de complément qui gère les erreurs de cette façon, consu
 Parfois, la page hôte doit transmettre des informations à la boîte de dialogue. Pour ce faire, il existe deux moyens :
 
 - ajouter des paramètres de requête à l’URL qui est transmise à `displayDialogAsync` ;
-- stocker les informations à un emplacement auquel à la fois la fenêtre hôte et la boîte de dialogue ont accès. Les deux fenêtres ne partagent pas un stockage de session commun, mais *si elles ont le même domaine* (y compris le même numéro de port, le cas échéant), elles utilisent un [stockage local](https://www.w3schools.com/html/html5_webstorage.asp) commun.
+- Stocker les informations à un emplacement auquel à la fois la fenêtre hôte et la boîte de dialogue ont accès. Les deux fenêtres ne partagent pas un stockage de session commun, mais *si elles ont le même domaine* (y compris le même numéro de port, le cas échéant), elles utilisent un [stockage local](https://www.w3schools.com/html/html5_webstorage.asp) commun.\*
+
+> [!NOTE]
+> \* Un bogue peut affecter votre stratégie de gestion des jetons. Si le complément s’exécute dans **Office sur le Web** dans le navigateur Safari ou Edge, la boîte de dialogue et le volet Office ne partagent pas le même stockage local, il ne peut donc pas être utilisé pour communiquer entre eux.
 
 ### <a name="use-local-storage"></a>Utilisation du stockage local
 
