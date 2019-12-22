@@ -1,30 +1,33 @@
 ---
 title: Débogage des compléments avec les outils de développement sur Windows 10
-description: ''
-ms.date: 07/01/2019
+description: Débogage des compléments avec les outils de développement Microsoft Edge sur Windows 10
+ms.date: 12/16/2019
 localization_priority: Priority
-ms.openlocfilehash: 2e6f3c10aa7e1e08aa6c4bb1b4a7724cc9e6531d
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: dd0f078b1cad0621dc99269b745a326adb69f7d6
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575673"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814471"
 ---
 # <a name="debug-add-ins-using-developer-tools-on-windows-10"></a>Débogage des compléments avec les outils de développement sur Windows 10
 
 Il existe des outils de développement en dehors des IDE pour vous aider à déboguer vos compléments sous Windows 10. Ils sont utiles lorsque vous devez examiner un problème pendant l’exécution de votre complément hors de l’IDE.
 
-L’outil que vous utilisez dépend de l’exécution du complément dans Microsoft Edge ou Internet Explorer. Cela est fonction de la version de Windows 10 et de la version d’Office qui sont installées sur l’ordinateur. Pour déterminer quel navigateur est utilisé sur votre ordinateur de développement, consultez [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md). 
-
+L’outil que vous utilisez dépend de l’exécution du complément dans Microsoft Edge ou Internet Explorer. Cela est fonction de la version de Windows 10 et de la version d’Office qui sont installées sur l’ordinateur. Pour déterminer quel navigateur est utilisé sur votre ordinateur de développement, consultez [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md).
 
 > [!NOTE]
 > Les instructions décrites dans cet article ne peuvent pas être utilisées pour déboguer un complément Outlook qui utilise des fonctions Exécuter. Pour déboguer un complément Outlook qui utilise des fonctions Exécuter, nous vous recommandons de l’attacher à Visual Studio en mode script ou à un autre débogueur de script.
 
 ## <a name="when-the-add-in-is-running-in-microsoft-edge"></a>Lorsque le complément s’exécute dans Microsoft Edge
 
-Lorsque le complément s’exécute dans Microsoft Edge, vous pouvez utiliser [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab). 
+[!include[Enable debugging on Microsoft Edge DevTools](../includes/enable-debugging-on-edge-devtools.md)]
 
-1. Exécutez le complément. 
+### <a name="debug-using-microsoft-edge-devtools"></a>Débogage avec Microsoft Edge DevTools
+
+Lorsque le complément s’exécute dans Microsoft Edge, vous pouvez utiliser [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab).
+
+1. Exécutez le complément.
 
 2. Exécutez Microsoft Edge DevTools.
 

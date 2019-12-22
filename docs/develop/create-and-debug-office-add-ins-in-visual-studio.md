@@ -1,14 +1,14 @@
 ---
 title: Créer et déboguer des compléments Office dans Visual Studio
 description: Utiliser Visual Studio pour créer et déboguer des compléments Office dans le client de bureau Office sous Windows
-ms.date: 10/11/2019
+ms.date: 12/16/2019
 localization_priority: Priority
-ms.openlocfilehash: 8274022a6a3af6e1b5d82c9d7105142d5a49e905
-ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
+ms.openlocfilehash: 2a32075420355e1b70c91c676baf00bc202b18b1
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "39670166"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814123"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Créer et déboguer des compléments Office dans Visual Studio
 
@@ -95,6 +95,7 @@ Le projet d’application web contient un fichier HTML, un fichier JavaScript et
 
 Vous pouvez utiliser Visual Studio pour déboguer votre complément dans le client de bureau Office sur Windows, comme décrit dans les sections suivantes :
 
+- [Activer le débogage pour les commandes de compléments et les codes sans interface utilisateur](#enable-debugging-for-add-in-commands-and-ui-less-code)
 - [Passez en revue les propriétés de création et débogage](#review-the-build-and-debug-properties)
 - [Utiliser un document existant pour déboguer le complément](#use-an-existing-document-to-debug-the-add-in)
 - [Démarrer le projet](#start-the-project)
@@ -103,6 +104,12 @@ Vous pouvez utiliser Visual Studio pour déboguer votre complément dans le clie
 
 > [!NOTE]
 > Vous ne pouvez pas utiliser Visual Studio pour déboguer des compléments Office dans Office sur le web ou Mac. Pour plus d’informations sur le débogage sur ces plateformes, voir [Déboguer les compléments Office dans Office sur le web](../testing/debug-add-ins-in-office-online.md) ou [Déboguer les compléments Office sur iPad et Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md).
+
+### <a name="enable-debugging-for-add-in-commands-and-ui-less-code"></a>Activer le débogage pour les commandes de compléments et les codes sans interface utilisateur
+
+Lors du débogage d’Office sous Windows par Visual Studio, le complément est hébergé dans une instance du navigateur Microsoft Internet Explorer ou Microsoft Edge. Pour identifier le navigateur utilisé sur votre ordinateur de développement, consultez [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md).
+
+[!include[Enable debugging on Microsoft Edge DevTools](../includes/enable-debugging-on-edge-devtools.md)]
 
 ### <a name="review-the-build-and-debug-properties"></a>Réviser les propriétés de création et de débogage
 

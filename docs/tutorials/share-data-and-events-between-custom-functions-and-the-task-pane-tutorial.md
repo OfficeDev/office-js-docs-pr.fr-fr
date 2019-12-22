@@ -4,12 +4,12 @@ title: 'Tutoriel : Partager des données et des événements entre des fonction
 ms.prod: excel
 description: Dans Excel, partagez des données et des événements entre des fonctions personnalisées et le volet Office.
 localization_priority: Priority
-ms.openlocfilehash: 714e2645d78293b683a4824b58cb2b9b0b72ebb8
-ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
+ms.openlocfilehash: 16affeb29bd5950198f81f85e44adaf812067829
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "39670201"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814130"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane-preview"></a>Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office (préversion)
 
@@ -204,5 +204,5 @@ Après avoir exécuté l’Assistant, le générateur crée le projet et install
 Une fois Excel démarré, vous pouvez utiliser les boutons du volet Office pour stocker ou obtenir des données partagées. Entrez `=CONTOSO.GETVALUE()` dans une cellule pour que la fonction personnalisée extraie les mêmes données partagées. Vous pouvez également utiliser `=CONTOSO.STOREVALUE(“new value”)` pour remplacer les données partagées par une nouvelle valeur.
 
 > [!NOTE]
-> La configuration de votre projet comme illustré dans cet article permet de partager le contexte entre des fonctions personnalisées et le volet Office. L’appel d’API Office à partir de fonctions personnalisées n’est pas pris en charge. Si vous avez besoin d’interagir avec le document, implémentez des appels aux API Office dans l’[événement onCalculated](https://docs.microsoft.com/javascript/api/excel/excel.worksheet?view=excel-js-preview#event-details).
+> La configuration de votre projet comme illustré dans cet article permet de partager le contexte entre des fonctions personnalisées et le volet Office. L’appel d’API Office à partir de fonctions personnalisées n’est pas pris en charge dans la préversion.
 
