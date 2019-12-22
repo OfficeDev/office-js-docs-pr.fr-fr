@@ -61,7 +61,13 @@
             - name: Couleur
               href: design/add-in-color.md
             - name: Icônes
-              href: design/add-in-icons.md
+              items:
+                - name: Conseils relatifs aux icônes
+                  href: design/add-in-icons.md
+                - name: Nouveau style
+                  href: design/add-in-icons-fresh.md
+                - name: Style ligne unique
+                  href: design/add-in-icons-monoline.md
             - name: Disposition
               href: design/add-in-layout.md
             - name: Typographie
