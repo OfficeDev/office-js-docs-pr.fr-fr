@@ -5,12 +5,12 @@ ms.date: 11/07/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: d2ae12765beedd37892c84a84607b00e33b8703f
-ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
+ms.openlocfilehash: 798e7c8357f2f2f021a76c0b88b0617764428c8c
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "38066283"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851340"
 ---
 # <a name="powerpoint-add-ins"></a>Compléments PowerPoint
 
@@ -193,7 +193,7 @@ reader.readAsDataURL(myFile.files[0]);
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Documentation sur les compléments PowerPoint](index.md)
+- [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
 - [Exemples de code PowerPoint](https://developer.microsoft.com/office/gallery/?filterBy=Samples,PowerPoint)
 - [Enregistrement de l’état et des paramètres d’un complément par document pour les compléments de contenu et du volet Office](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 - [Lecture et écriture de données dans la sélection active d’un document ou d’une feuille de calcul](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)

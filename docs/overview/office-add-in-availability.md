@@ -3,12 +3,12 @@ title: Disponibilité des compléments Office sur les plateformes et les hôtes
 description: Ensembles de conditions requises pris en charge pour Excel, OneNote, Outlook, PowerPoint, Project et Word.
 ms.date: 11/15/2019
 localization_priority: Priority
-ms.openlocfilehash: ecb906e595c08b973b5146416a5317d59547ed39
-ms.sourcegitcommit: e56bd8f1260c73daf33272a30dc5af242452594f
+ms.openlocfilehash: 956ee6b8a9e990a3d6d942ee4a65a1e9275ea025
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "38757484"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851368"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilité des compléments Office sur les plateformes et les hôtes
 
@@ -960,10 +960,11 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
 - [Versions d’Office et ensembles de conditions requises](../develop/office-versions-and-requirement-sets.md)
 - [Ensembles de conditions requises des API communes](../reference/requirement-sets/office-add-in-requirement-sets.md)
 - [Ensembles de conditions requises concernant les commandes de complément](../reference/requirement-sets/add-in-commands-requirement-sets.md)
-- [Référence de l’API JavaScript pour Office](../reference/javascript-api-for-office.md)
+- [Documentation de référence de l’API](../reference/javascript-api-for-office.md)
 - [Historique des mises à jour d’Office 365 ProPlus](/officeupdates/update-history-office365-proplus-by-date)
 - [Historique des mises à jour d’Office 2016 et 2019 (Démarrer en un clic)](/officeupdates/update-history-office-2019)
 - [Historique des mises à jour d’Office 2013 (Démarrer en un clic)](/officeupdates/update-history-office-2013)
 - [Historique des mises à jour d’Office 2010, 2013 et 2016 (MSI)](/officeupdates/office-updates-msi)
 - [Historique des mises à jour d’Outlook 2010, 2013 et 2016 (MSI)](/officeupdates/outlook-updates-msi)
 - [Historique des mises à jour d’Office pour Mac](/officeupdates/update-history-office-for-mac)
+- [Création de compléments Office](../overview/office-add-ins-fundamentals.md)

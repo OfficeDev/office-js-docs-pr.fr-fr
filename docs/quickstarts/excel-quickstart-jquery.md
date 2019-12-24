@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet des tâches d’Excel
 description: Découvrez comment créer un complément de volet des tâches Excel simple à l’aide de l’API JavaScript pour Office.
-ms.date: 10/17/2019
+ms.date: 12/24/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 3ade0eb77f525ebd593a475736ab81742d915b94
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 12eb48fc5f44b506bbce39d01e9bce4ca2a2b5e6
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626970"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851354"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Créer un complément de volet de tâches Excel
 
@@ -216,7 +216,9 @@ Félicitations, vous avez créé un complément de volet de tâches Excel ! Ens
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial-create-table.md)
+* [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
+* [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
+* [Développement de compléments Office](../develop/develop-overview.md)
 * [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Référence de l’API JavaScript pour Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

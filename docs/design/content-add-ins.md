@@ -3,12 +3,12 @@ title: Compléments Office de contenu
 description: Les compléments de contenu sont des surfaces qui peuvent être incorporées directement dans des documents Excel ou PowerPoint. Ils permettent aux utilisateurs d’accéder aux contrôles d’interface qui exécutent le code pour modifier des documents ou afficher des données d’une source de données.
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 46268f963545c3f5b7f45b9b590dc772ba37292f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: f3dec371d1500d85125c8762bbc5e80f0cdfb571
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32447107"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851284"
 ---
 # <a name="content-office-add-ins"></a>Compléments Office de contenu
 
@@ -59,4 +59,4 @@ Pour consulter un exemple qui implémente un complément de contenu, reportez-vo
 - [Disponibilité des compléments Office sur les plateformes et les hôtes](/office/dev/add-ins/overview/office-add-in-availability)
 - [Office UI Fabric dans des compléments Office](/office/dev/add-ins/design/office-ui-fabric)
 - [Modèles de conception de l’expérience utilisateur pour les compléments Office](/office/dev/add-ins/design/ux-design-pattern-templates)
-- [Demande d’autorisations d’utilisation de l’API dans des compléments de contenu et de volet des tâches](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
+- [Demande d’autorisations d’utilisation de l’API dans des compléments](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)

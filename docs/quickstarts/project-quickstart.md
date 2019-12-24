@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet des tâches de Project
 description: ''
-ms.date: 09/18/2019
+ms.date: 12/24/2019
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 78712a1fec9af2c45f6e42825740364a7cd23987
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: 3de9df0dbca53e244fe2431bfa2884694e6ac232
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035286"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851312"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Project
 
@@ -123,3 +123,8 @@ Félicitations, vous avez créé un complément du volet des tâches de Project�
 > [!div class="nextstepaction"]
 > [Compléments Project](../project/project-add-ins.md)
 
+## <a name="see-also"></a>Voir aussi
+
+- [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
+- [Concepts de base pour les compléments Office](../overview/core-concepts-office-add-ins.md)
+- [Développement de compléments Office](../develop/develop-overview.md)

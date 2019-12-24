@@ -1,15 +1,15 @@
 ---
 title: Créer un complément de volet de tâches Excel à l’aide d’Angular
 description: ''
-ms.date: 09/18/2019
+ms.date: 12/24/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 4c2cfb061dff9b5eb24642facdcb9996432d873b
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: c2565c305833335e589a53655397bcb68654d22a
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035272"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851557"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-angular"></a>Créer un complément de volet de tâches Excel à l’aide d’Angular
 
@@ -72,7 +72,9 @@ Félicitations, vous avez créé un complément de volet de tâches Excel à l�
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial-create-table.md)
+* [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
+* [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
+* [Développement de compléments Office](../develop/develop-overview.md)
 * [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Référence de l’API JavaScript pour Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

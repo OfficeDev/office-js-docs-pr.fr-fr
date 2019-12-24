@@ -3,12 +3,12 @@ title: Confidentialité et sécurité pour les compléments Office
 description: ''
 ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: bf71bfdba331f3726445c5095bd7dba1e4c5d39e
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: b40b10a0f2475a9013eb4186c852e07bfb60154f
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814032"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851298"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Confidentialité et sécurité pour les compléments Office
 
@@ -138,7 +138,7 @@ L’exemple suivant montre comment un complément du volet Office spécifie l’
 </OfficeApp>
 ```
 
-Pour plus d’informations sur les autorisations pour les compléments de contenu et du volet Office, reportez-vous à la rubrique [Demande d’autorisations d’utilisation de l’API dans des compléments de contenu et de volet des tâches](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins).
+Pour plus d’informations sur les autorisations pour les compléments de contenu et le volet des tâches, reportez-vous à la rubrique [Demande d’autorisations d’utilisation de l’API dans des compléments](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins).
 
 Pour plus d’informations sur les autorisations pour les compléments Outlook, reportez-vous aux rubriques suivantes :
 
@@ -259,7 +259,7 @@ La gestion et l’application des paramètres Office s’effectuent avec des par
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Demande d’autorisations d’utilisation de l’API dans des compléments de contenu et de volet des tâches](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
+- [Demande d’autorisations d’utilisation de l’API dans des compléments](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
 - [Confidentialité, autorisations et sécurité pour les compléments Outlook](/outlook/add-ins/privacy-and-security)
 - [Présentation des autorisations de complément Outlook](/outlook/add-ins/understanding-outlook-add-in-permissions)
 - [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)

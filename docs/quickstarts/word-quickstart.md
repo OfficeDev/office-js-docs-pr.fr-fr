@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet des tâches de Word
 description: Découvrez comment créer un complément de volet des tâches Word simple à l’aide de l’API JavaScript pour Office.
-ms.date: 10/17/2019
+ms.date: 12/24/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 87f2e4d46748328461529fd41ea11b109fe4785e
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 039348503d75746bf30da253e84402e128006497
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626867"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851333"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Word
 
@@ -312,6 +312,9 @@ Félicitations, vous avez créé un complément du volet des tâches de Word ! 
 
 ## <a name="see-also"></a>Voir aussi
 
+* [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
+* [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
+* [Développement de compléments Office](../develop/develop-overview.md)
 * [Présentation des compléments Word](../word/word-add-ins-programming-overview.md)
 * [Exemples de code pour les compléments Word](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
 * [Référence d’API JavaScript pour Word](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)

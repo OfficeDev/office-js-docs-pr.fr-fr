@@ -5,12 +5,12 @@ ms.date: 07/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 7d68dd52575f3b706ffac2751d68ea4019faaa8c
-ms.sourcegitcommit: 960ceaf6776ec3ed41a8f5b7bf70b3c95c43386a
+ms.openlocfilehash: c529dc88f310466c5aaae8c6a0ea4e7d0ea6e287
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "39830222"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851389"
 ---
 # <a name="excel-add-ins-overview"></a>Présentation des compléments Excel
 
@@ -121,9 +121,7 @@ Apprenez à [créer votre premier complément Excel](../quickstarts/excel-quicks
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Documentation sur les compléments Excel](index.md)
 - [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
-- [Meilleures pratiques en matière de développement de compléments Office](../concepts/add-in-development-best-practices.md)
-- [Instructions de conception pour les compléments Office](../design/add-in-design.md)
+- [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
 - [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
-- [Référence sur l’API JavaScript pour Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+- [Référence sur l’API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md)

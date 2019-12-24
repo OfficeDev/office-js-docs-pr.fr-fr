@@ -5,12 +5,12 @@ ms.date: 07/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 9b74a6fe9d54218a8ec114a624d085bd68ba6e2c
-ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
+ms.openlocfilehash: 9724de8c25a535884c4700a165e661028aee6608
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37468811"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851508"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>Vue d’ensemble de la programmation de l’API JavaScript de OneNote
 
@@ -125,7 +125,7 @@ Les compléments OneNote prennent en charge uniquement les API communes suivante
 | [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#set-name--value-) | Les paramètres sont pris en charge par les compléments de contenu uniquement | 
 | [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) ||
 
-En règle générale, vous utilisez uniquement l’API commune pour effectuer une action qui n’est pas prise en charge dans l’API enrichie. Pour en savoir plus sur l’utilisation de l’API commune, reportez-vous à la[documentation](../overview/office-add-ins.md) et les[références](../reference/javascript-api-for-office.md)concernant les compléments Office.
+En règle générale, vous utilisez l’API commune pour effectuer une action qui n’est pas prise en charge dans l’API enrichie. Pour plus d’informations sur les API communes, voir le [Modèle d’objet API JavaScript pour Office](../develop/office-javascript-api-object-model.md).
 
 
 <a name="om-diagram"></a>
@@ -137,7 +137,7 @@ Le diagramme suivant représente ce qui est actuellement disponible dans l’API
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Documentation sur les compléments OneNote](index.md)
+- [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
 - [Créer votre premier complément OneNote](../quickstarts/onenote-quickstart.md)
 - [Référence de l’API JavaScript de OneNote](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Exemple de grille d’évaluation](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)

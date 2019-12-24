@@ -3,12 +3,12 @@ title: Manifeste XML des compléments Office
 description: ''
 ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: 9a3081c13756bee668081e1fb9d04cf5458320d4
-ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
+ms.openlocfilehash: 07c8a563eb04ac4b707357f1e7ff43d9a8f2e761
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "38301973"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851277"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifeste XML des compléments Office
 
@@ -498,10 +498,14 @@ Pour résoudre les problèmes rencontrés avec votre manifeste, consultez la rub
 
 ## <a name="see-also"></a>Voir aussi
 
+* [Comment trouver l’ordre approprié d’éléments manifeste](manifest-element-ordering.md)
 * [Création de commandes de complément dans votre manifeste][commandes de complément]
 * [Spécification des exigences en matière d’hôtes Office et d’API](specify-office-hosts-and-api-requirements.md)
 * [Localisation des compléments Office](localization.md)
 * [Référence de schéma pour les manifestes des compléments Office](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas)
+* [Mettre à jour la version du manifeste et de l’API](update-your-javascript-api-for-office-and-manifest-schema-version.md)
+* [Identifier un complément COM équivalent](make-office-add-in-compatible-with-existing-com-add-in.md)
+* [Demande d’autorisations d’utilisation de l’API dans des compléments](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
 * [Valider et résoudre des problèmes avec votre manifeste](../testing/troubleshoot-manifest.md)
 
 [commandes de complément]: create-addin-commands.md

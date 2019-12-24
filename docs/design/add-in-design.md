@@ -1,16 +1,16 @@
 ---
-title: Concevoir vos compléments Office
+title: Concevoir des compléments Office
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 1b2f6a57ddea385ec676a4981e4576c155d93886
-ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
+ms.openlocfilehash: 5d8cf0cb56a4a77eb54ea7df68350773ead352d2
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "39670145"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851263"
 ---
-# <a name="design-your-office-add-ins"></a>Concevoir vos compléments Office
+# <a name="design-office-add-ins"></a>Concevoir des compléments Office
 
 Les compléments Office prolongent les fonctionnalités d’Office en offrant des fonctions contextuelles auxquelles les utilisateurs peuvent accéder au sein de clients Office. Les compléments permettent aux utilisateurs d’être plus productifs en leur donnant accès à des fonctionnalités tierces au sein d’Office, sans avoir à gérer de coûteux changements de contexte. 
 
