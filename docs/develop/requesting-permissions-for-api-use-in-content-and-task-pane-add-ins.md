@@ -1,16 +1,16 @@
 ---
-title: Demande d’autorisations pour l’utilisation d’API dans les compléments de contenu et du volet Office
+title: Demande d’autorisations pour l’utilisation d’API dans les compléments
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 56eef177c69b8cdbd62dd630b5e1b5133b0eed86
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: aae5359dce57ffdaf3db324475f6417f2bec63d8
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449227"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851270"
 ---
-# <a name="requesting-permissions-for-api-use-in-content-and-task-pane-add-ins"></a>Demande d’autorisations d’utilisation de l’API dans des compléments de contenu et de volet des tâches
+# <a name="requesting-permissions-for-api-use-in-add-ins"></a>Demande d’autorisations pour l’utilisation d’API dans les compléments
 
 Cet article décrit les différents niveaux d’autorisation que vous pouvez déclarer dans le manifeste de votre complément de contenu ou du volet Office afin de spécifier le niveau d’accès de l’API JavaScript requis pour les fonctionnalités de votre complément. 
 

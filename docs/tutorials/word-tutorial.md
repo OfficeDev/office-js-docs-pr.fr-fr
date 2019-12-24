@@ -1,15 +1,15 @@
 ---
 title: Didacticiel sur les compléments Word
 description: Dans ce didacticiel, vous allez cr?er un compl?ment Word qui ins?re (et remplace) des plages de texte, des paragraphes, des images, du code HTML, des tableaux et des contr?les de contenu. Vous découvrirez également comment mettre en forme du texte et comment insérer (et remplacer) du contenu dans les contrôles de contenu.
-ms.date: 09/18/2019
+ms.date: 12/24/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 24b0ab5cecf9cfbc493da4488a71ac34dff61b47
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: e6f4a0bee75a9f0de648d8354c6b23b87845c00f
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035355"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851410"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches Word
 
@@ -40,7 +40,7 @@ Dans ce tutoriel, vous allez créer un complément de volet de tâches Excel qui
 
 ![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yo-office-word.png)
 
-Une fois que vous avez terminé l’Assistant, le générateur crée le projet et installe les composants de nœud de prise en charge.
+Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -126,31 +126,31 @@ Dans cette étape du tutoriel, vous devez tester par programme que votre complé
 
 ### <a name="test-the-add-in"></a>Test du complément
 
-1. Procédez comme suit pour démarrer le serveur Web local et chargement votre complément.
+1. Pour démarrer le serveur web local et charger indépendamment votre complément, procédez comme suit.
 
     > [!NOTE]
     > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté une des commandes suivantes, acceptez d’installer le certificat fourni par le générateur Yeoman.
 
     > [!TIP]
-    > Si vous testez votre complément sur Mac, exécutez la commande suivante dans le répertoire racine de votre projet avant de poursuivre. Lorsque vous exécutez cette commande, le serveur Web local démarre.
+    > Si vous testez votre complément sur Mac, exécutez la commande suivante dans le répertoire racine de votre projet avant de poursuivre. Lorsque vous exécutez cette commande, le serveur web local démarre.
     >
     > ```command&nbsp;line
     > npm run dev-server
     > ```
 
-    - Pour tester votre complément dans Word, exécutez la commande suivante dans le répertoire racine de votre projet. Cela démarre le serveur Web local (s’il n’est pas déjà en cours d’exécution) et ouvre Word avec votre complément chargé.
+    - Pour tester votre complément dans Word, exécutez la commande suivante dans le répertoire racine de votre projet. Cela a pour effet de démarrer le serveur web local (s’il n’est pas déjà en cours d’exécution) et d’ouvrir Word avec votre complément chargé.
 
         ```command&nbsp;line
         npm start
         ```
 
-    - Pour tester votre complément dans Word sur le Web, exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur Web local démarre (s’il n’est pas déjà en cours d’exécution).
+    - Pour tester votre complément dans Word sur le Web, exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution).
 
         ```command&nbsp;line
         npm run start:web
         ```
 
-        Pour utiliser votre complément, ouvrez un nouveau document dans Word sur le Web, puis chargement votre complément en suivant les instructions de [chargement des compléments Office dans Office sur le Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
+        Pour utiliser votre complément, ouvrez un nouveau document dans Word sur le web, puis chargez la version test de votre complément en suivant les instructions de l’article relatif au [chargement de version test des compléments Office dans Office sur le web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
 2. Dans Word, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
@@ -372,7 +372,7 @@ Dans cette étape du didacticiel, vous ajouterez du texte dans les plages de tex
     }
     ``` 
 
-6. Dans la `insertTextIntoRange()` fonction, remplacez `TODO1` par le code suivant. Remarque :
+6. Dans la `insertTextIntoRange()` fonction, remplacez `TODO1` par le code suivant. Tenez compte des informations suivantes :
 
    - La méthode est destinée à insérer l’abréviation [« (C2R) »] à la fin de la plage dont le texte est « Click-to-Run » (Démarrer en un clic). Cela permet d’émettre une hypothèse simplifiée selon laquelle la chaîne est présente et l’utilisateur l’a sélectionnée.
 
@@ -941,3 +941,9 @@ Dans ce didacticiel, vous avez créé un Word tâche volet complément qui insè
 
 > [!div class="nextstepaction"]
 > [Présentation des compléments Word](../word/word-add-ins-programming-overview.md)
+
+## <a name="see-also"></a>Voir aussi
+
+* [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
+* [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
+* [Développer des compléments Office](../develop/develop-overview.md)

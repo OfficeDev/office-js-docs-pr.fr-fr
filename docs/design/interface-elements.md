@@ -1,14 +1,14 @@
 ---
 title: Éléments d’interface utilisateur Office pour les compléments Office
 description: ''
-ms.date: 12/04/2017
+ms.date: 12/24/2019
 localization_priority: Priority
-ms.openlocfilehash: 444aca7b75e35ef502075876a7d1324fcdca0603
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 1f680d93c995d306717c7b5a81af073f378b0fbd
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32446232"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851238"
 ---
 # <a name="office-ui-elements-for-office-add-ins"></a>Éléments d’interface utilisateur Office pour les compléments Office
 
@@ -16,7 +16,7 @@ Vous pouvez utiliser plusieurs types d’éléments d’interface utilisateur po
 
 L’image suivante montre les types d’éléments d’interface utilisateur d’Office que vous pouvez créer.
 
-![Image qui affiche des commandes de complément sur le ruban, un volet des tâches et une boîte de dialogue dans un document Office](../images/overview-with-app-interface-elements.png)
+![Image qui affiche des commandes de complément sur le ruban, un volet des tâches et une boîte de dialogue dans un document Office](../images/add-in-ui-elements.png)
 
 ## <a name="add-in-commands"></a>Commandes de complément
 

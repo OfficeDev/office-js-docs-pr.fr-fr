@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez développer un complément Excel qu
 ms.date: 11/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: c0a3df72d600acb34008ff574ec2ab2eee070e2e
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: 48f4decc0cadddecd5669b960238ddd3381f0932
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814214"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851417"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 
@@ -804,7 +804,7 @@ Dans cette étape finale du didacticiel, vous allez ouvrir une boîte de dialogu
 
 4. Dans le dossier **./SRC/Dialogs** , créez un fichier nommé **Popup. js**.
 
-5. Ajoutez le code suivant à **Popup. js**. Tenez compte des informations suivantes :
+5. Ajoutez le code suivant à **Popup. js**. Tenez compte des informations suivantes à propos de ce code :
 
    - *Toutes les pages qui appellent des API dans la bibliothèque Office. js doivent d’abord s’assurer que la bibliothèque est entièrement initialisée.* La meilleure façon de procéder consiste à appeler la méthode `Office.onReady()`. Si votre complément dispose de ses propres tâches d’initialisation, le code doit passer dans une méthode `then()` chaînée à l’appel de `Office.onReady()`. L’appel de `Office.onReady()` doit être exécuté avant tout appel à Office. js ; par conséquent, l’affectation se trouve dans un fichier de script chargé par la page, comme c’est le cas dans ce cas.
 
@@ -1015,3 +1015,10 @@ Ce didacticiel vous apprend à créer un complément Excel qui interagit avec de
 
 > [!div class="nextstepaction"]
 > [Présentation des compléments Excel](../excel/excel-add-ins-overview.md)
+
+## <a name="see-also"></a>Voir aussi
+
+* [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
+* [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
+* [Développer des compléments Office](../develop/develop-overview.md)
+* [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](../excel/excel-add-ins-core-concepts.md)

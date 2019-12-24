@@ -3,12 +3,12 @@ title: Prise en charge de l’API JavaScript pour Office pour les compléments d
 description: ''
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 017542766fc6fb03cd7d4038de0cf3091d74857e
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.openlocfilehash: b9a6d1f81cb86cb84c0f825394d14e8559017d11
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353789"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851382"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>Prise en charge de l’interface API JavaScript pour Office pour les compléments de contenu et du volet Office dans Office 2013
 
@@ -18,7 +18,7 @@ Vous pouvez utiliser l’[API JavaScript pour Office](/office/dev/add-ins/refere
 
 1. **Objets communs partagés avec d’autres compléments Office.** Parmi ces objets figurent [Office](/javascript/api/office), [Context](/javascript/api/office/office.context) et [AsyncResult](/javascript/api/office/office.asyncresult). L’objet **Office** est l’objet racine de l’interface API JavaScript pour Office. L’objet **Context** représente l’environnement d’exécution du complément. **Office** et **Context** sont les objets fondamentaux pour tout complément Office. L’objet **AsyncResult** représente les résultats d’une opération asynchrone, comme les données renvoyées vers la méthode **getSelectedDataAsync**, qui lit les éléments sélectionnés par un utilisateur dans un document.
 
-2. **Objet document.** La majorité des éléments de l’API disponibles pour les compléments de contenu et du volet Office sont exposés via les méthodes, propriétés et événements de l’objet [Document](/javascript/api/office/office.document). Un complément de contenu ou de volet de tâches peut utiliser la propriété [Office. Context. document](/javascript/api/office/office.context#document) pour accéder à l’objet **document** , et via ce dernier, peut accéder aux membres clés de l’API pour utiliser des données dans des documents, telles que les [liaisons](/javascript/api/office/office.bindings) et [ ](/javascript/api/office/office.customxmlparts)Les objets CustomXmlParts, ainsi que les méthodes [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-), [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-)et [getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-) . L’objet **Document** fournit également la propriété [mode](/javascript/api/office/office.document#mode) permettant de déterminer si un document est en mode lecture seule ou modification, la propriété [url](/javascript/api/office/office.document#url) pour obtenir l’URL du document actuel et accéder à l’objet [Settings](/javascript/api/office/office.settings). L’objet **document** prend également en charge l’ajout de gestionnaires d’événements pour l’événement [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) , afin que vous puissiez détecter lorsqu’un utilisateur modifie sa sélection dans le document.
+2. **Objet document.** La majorité des éléments de l’API disponibles pour les compléments de contenu et du volet Office sont exposés via les méthodes, propriétés et événements de l’objet [Document](/javascript/api/office/office.document). Un complément de contenu ou de volet de tâches peut utiliser la propriété [Office. Context. document](/javascript/api/office/office.context#document) pour accéder à l’objet **document** , et via ce dernier, peut accéder aux membres clés de l’API pour utiliser des données dans des documents, tels que les objets [bindings](/javascript/api/office/office.bindings) et [CustomXmlParts](/javascript/api/office/office.customxmlparts) , ainsi que les méthodes [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-), [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-)et [getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-) . L’objet **Document** fournit également la propriété [mode](/javascript/api/office/office.document#mode) permettant de déterminer si un document est en mode lecture seule ou modification, la propriété [url](/javascript/api/office/office.document#url) pour obtenir l’URL du document actuel et accéder à l’objet [Settings](/javascript/api/office/office.settings). L’objet **document** prend également en charge l’ajout de gestionnaires d’événements pour l’événement [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) , afin que vous puissiez détecter lorsqu’un utilisateur modifie sa sélection dans le document.
 
    Un complément de contenu ou du volet Office peut accéder à l’objet **Document** uniquement après le chargement de l’environnement d’exécution et du DOM, généralement dans le gestionnaire d’événements pour l’événement [Office.initialize](/javascript/api/office). Pour plus d’informations sur le flux d’événements lors de l’initialisation d’un complément et sur la vérification du chargement correct du DOM et de l’environnement d’exécution, voir la page relative au [chargement du DOM et de l’environnement d’exécution](loading-the-dom-and-runtime-environment.md).
 
@@ -160,7 +160,7 @@ Votre complément utilise l’élément **Permissions** dans son manifeste pour 
 
 ```
 
-Pour plus d’informations, consultez l’article [Demande d’autorisations pour l’utilisation d’API dans les compléments de contenu et du volet Office](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md).
+Pour plus d’informations, consultez la rubrique [demande d’autorisations pour l’utilisation d’API dans les compléments](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md).
 
 
 ## <a name="see-also"></a>Voir aussi
