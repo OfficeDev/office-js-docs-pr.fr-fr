@@ -4,12 +4,12 @@ description: ''
 ms.date: 07/05/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: e6064bf7e7dce6931079fc2d3eb262533da7edf3
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: 0c07bb7ce964708a9fef737fabebb13939e357f0
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575631"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851529"
 ---
 # <a name="excel-javascript-api-overview"></a>Vue d’ensemble de l’API JavaScript pour Excel
 
@@ -19,7 +19,7 @@ Un complément Excel interagit avec des objets dans Excel à l’aide de l’API
 
 * **API communes** : incluses dans Office 2013, les [API communes](/javascript/api/office) permettent d’accéder à des fonctionnalités telles qu’une interface utilisateur, des boîtes de dialogue et des paramètres du client, qui sont communes à plusieurs types d’applications Office.
 
-Cette section de la documentation traite de l’API JavaScript pour Excel, que vous allez utiliser pour développer la majorité des fonctionnalités des compléments utilisés dans Excel sur le web ou dans Excel 2016 ou versions ultérieures. Pour plus d’informations sur les API communes, voir [API JavaScript pour Office](../javascript-api-for-office.md). 
+Cette section de la documentation traite de l’API JavaScript pour Excel, que vous allez utiliser pour développer la majorité des fonctionnalités des compléments utilisés dans Excel sur le web ou dans Excel 2016 ou versions ultérieures. Pour plus d’informations sur les API communes, voir le[Modèle d’objet API JavaScript pour Office](../../develop/office-javascript-api-object-model.md). 
 
 ## <a name="learn-programming-concepts"></a>Découvrir les concepts de programmation
 
