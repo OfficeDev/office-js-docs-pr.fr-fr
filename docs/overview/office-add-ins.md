@@ -1,16 +1,16 @@
 ---
 title: Vue d’ensemble de la plateforme de compléments pour Office | Microsoft Docs
 description: Utilisez des technologies web que vous connaissez, telles que le code HTML, CSS et JavaScript, pour étendre Word, Excel, PowerPoint, OneNote, Project et Outlook, et interagir avec ces programmes.
-ms.date: 07/05/2019
+ms.date: 12/24/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: daedbc655c62bfb2ce0e363f795a632ec425acdb
-ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
+ms.openlocfilehash: bb3a2005679e82134d6dd045878349847ee6d916
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37468797"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851361"
 ---
 # <a name="office-add-ins-platform-overview"></a>Vue d’ensemble de la plateforme de compléments pour Office
 
@@ -118,12 +118,13 @@ Les API JavaScript Office sont composées d’objets et de membres permettant de
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Pour créer votre premier complément Office en moins de 5 minutes, essayez le guide de démarrage rapide pour [Excel](../quickstarts/excel-quickstart-jquery.md), [Outlook](/outlook/add-ins/quick-start?context=office/dev/add-ins/context), [Word](../quickstarts/word-quickstart.md), [OneNote](../quickstarts/onenote-quickstart.md), [PowerPoint](../quickstarts/powerpoint-quickstart.md) ou [Project](../quickstarts/project-quickstart.md). Vous pouvez commencer à créer des compléments instant en utilisant Visual Studio ou tout autre éditeur. 
-
-Pour commencer à concevoir des solutions offrant des expériences utilisateur efficaces et attrayantes, consultez les [instructions de conception](../design/add-in-design.md) et les [meilleures pratiques](../concepts/add-in-development-best-practices.md) pour les compléments Office.
+Pour une présentation en détails du développement des compléments Office, voir [Création de compléments Office](../overview/office-add-ins-fundamentals.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemples de compléments Office](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel,Outlook,PowerPoint,Word)
-- [Présentation de l’API JavaScript pour Office](../develop/understanding-the-javascript-api-for-office.md)
-- [Disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md)
+- [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
+- [Concepts de base pour les compléments Office](../overview/core-concepts-office-add-ins.md)
+- [Développement de compléments Office](../develop/develop-overview.md)
+- [Concevoir des compléments Office](../design/add-in-design.md)
+- [Test et débogage de compléments Office](../testing/test-debug-office-add-ins.md)
+- [Publier des compléments Office](../publish/publish.md)

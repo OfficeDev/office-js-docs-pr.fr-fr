@@ -5,12 +5,12 @@ ms.date: 11/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: bb4ca1de1b99ca66b716810dedf01506fb60ebe7
-ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
+ms.openlocfilehash: c8b0953655039556936c631926ed2713bdb62c57
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "38001494"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851396"
 ---
 # <a name="word-add-ins-overview"></a>Présentation des compléments Word
 
@@ -58,7 +58,7 @@ Vous pouvez utiliser les deux ensembles d’APIs JavaScript pour interagir avec 
 
 Le deuxième est l’[API JavaScript pour Word](/javascript/api/word). Il s’agit d’un modèle objet fortement typé qui vous permet de créer des compléments Word destinés à Word 2016 sur Mac et Windows. Ce modèle objet utilise les promesses et fournit un accès aux objets Word, tels que le [corps](/javascript/api/word/word.body), les [contrôles de contenu](/javascript/api/word/word.contentcontrol), les [images incorporées](/javascript/api/word/word.inlinepicture) et les [paragraphes](/javascript/api/word/word.paragraph). L’API JavaScript pour Word inclut des définitions TypeScript et des fichiers vsdoc pour vous permettre d’obtenir des conseils concernant votre code dans votre environnement de développement intégré (IDE).
 
-Actuellement, tous les clients Word prennent en charge l’API JavaScript partagée pour Office, et la plupart des clients prennent en charge l’API JavaScript pour Word. Pour plus d’informations sur les clients pris en charge, voir [Présentation de l’API JavaScript pour Office](../reference/javascript-api-for-office.md).
+Actuellement, tous les clients Word prennent en charge l’API JavaScript partagée pour Office, et la plupart des clients prennent en charge l’API JavaScript pour Word. Pour plus d’informations sur les clients pris en charge, voir [Disponibilité de la plateforme et de l’hôte du complément pour Office](../overview/office-add-in-availability.md).
 
 Nous vous recommandons de démarrer avec l’API JavaScript pour Word car le modèle d’objet est plus facile à utiliser. Utilisez l’API JavaScript pour Word pour :
 
@@ -84,6 +84,6 @@ Une fois le développement de votre complément terminé, vous pouvez le [publie
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Documentation sur les compléments Word](index.md)
+* [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
 * [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
 * [Référence sur l’API JavaScript pour Word](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)

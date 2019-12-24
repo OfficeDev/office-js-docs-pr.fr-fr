@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément de volet de tâches PowerPoint
 description: Découvrez comment créer un complément de volet des tâches PowerPoint simple à l’aide de l’API JavaScript pour Office.
-ms.date: 10/17/2019
+ms.date: 12/24/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: f5fed49632a5e71075cd71e53a74290fdca05614
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: fbf8ca6c52bd5a71f3db24d9661d7cce5f6004d2
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626900"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851347"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>Créer votre premier complément de volet de tâches PowerPoint
 
@@ -254,3 +254,8 @@ Félicitations, vous avez créé un complément de volet de tâches PowerPoint 
 > [!div class="nextstepaction"]
 > [Didacticiel sur les compléments PowerPoint](../tutorials/powerpoint-tutorial.md)
 
+## <a name="see-also"></a>Voir aussi
+
+* [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
+* [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
+* [Développement de compléments Office](../develop/develop-overview.md)

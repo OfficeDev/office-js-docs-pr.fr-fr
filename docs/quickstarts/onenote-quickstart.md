@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet Office de OneNote
 description: ''
-ms.date: 09/18/2019
+ms.date: 12/24/2019
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: dd4e16edc2dc3fa4046e3e587b3d1a1aba058e30
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: 2e8c560aa02de690fa4e6abae25d0625379e26ad
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035265"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851564"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>Créer votre premier complément du volet Office de OneNote
 
@@ -124,8 +124,10 @@ Félicitations ! Vous avez créé un complément du volet Office de OneNote ! 
 
 ## <a name="see-also"></a>Voir aussi
 
+* [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
+* [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
+* [Développement de compléments Office](../develop/develop-overview.md)
 - [Vue d’ensemble de la programmation de l’API JavaScript de OneNote](../onenote/onenote-add-ins-programming-overview.md)
 - [Référence de l’API JavaScript de OneNote](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Exemple de grille d’évaluation](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
-- [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
 

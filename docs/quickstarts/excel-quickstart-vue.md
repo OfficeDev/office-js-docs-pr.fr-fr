@@ -1,15 +1,15 @@
 ---
 title: Créer un complément de volet de tâches Excel à l’aide de Vue
 description: ''
-ms.date: 09/18/2019
+ms.date: 12/24/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: bcd4f84ce6d09db813c643d2cac8fcc5ce5f76c3
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: a8ba3ba1c401e1433eb5be121ea37b053b1a4896
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035300"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851326"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>Créer un complément de volet de tâches Excel à l’aide de Vue
 
@@ -52,7 +52,7 @@ Chaque complément nécessite un fichier manifeste pour définir ses paramètres
     ```
 
     > [!NOTE]
-    > Lorsque vous exécutez la commande `yo office`, il est possible que vous receviez des messages d’invite sur les règles de collecte de données de Yeoman et les outils CLI de complément Office. Utilisez les informations fournies pour répondre aux invites comme vous l’entendez. Si vous sélectionnez Quitter en réponse à la deuxième invite, vous devez réexécuter la commande lorsque vous êtes prêt à créer votre projet de complément.
+    > Lorsque vous exécutez la commande `yo office`, il est possible que vous receviez des messages d’invite sur les règles de collecte de données de Yeoman et les outils CLI de complément Office. Utilisez les informations fournies pour répondre aux invites comme vous l’entendez. Si vous sélectionnez **Quitter** en réponse à la deuxième invite, vous devez réexécuter la commande `yo office` lorsque vous êtes prêt à créer votre projet de complément.
 
     Lorsque vous y êtes invité, fournissez les informations suivantes pour créer votre projet de complément :
 
@@ -213,7 +213,9 @@ Félicitations, vous avez créé un complément de volet de tâches Excel à l�
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial-create-table.md)
+* [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
+* [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
+* [Développement de compléments Office](../develop/develop-overview.md)
 * [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Référence de l’API JavaScript pour Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
