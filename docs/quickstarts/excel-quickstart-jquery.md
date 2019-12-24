@@ -1,52 +1,52 @@
 ---
 title: Créer votre premier complément du volet des tâches d’Excel
 description: Découvrez comment créer un complément de volet des tâches Excel simple à l’aide de l’API JavaScript pour Office.
-ms.date: 10/17/2019
+ms.date: 12/24/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 3ade0eb77f525ebd593a475736ab81742d915b94
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 12eb48fc5f44b506bbce39d01e9bce4ca2a2b5e6
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626970"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851354"
 ---
-# <a name="build-an-excel-task-pane-add-in"></a><span data-ttu-id="d886f-103">Créer un complément de volet de tâches Excel</span><span class="sxs-lookup"><span data-stu-id="d886f-103">Build an Excel task pane add-in</span></span>
+# <a name="build-an-excel-task-pane-add-in"></a><span data-ttu-id="0e629-103">Créer un complément de volet de tâches Excel</span><span class="sxs-lookup"><span data-stu-id="0e629-103">Build an Excel task pane add-in</span></span>
 
-<span data-ttu-id="d886f-104">Dans cet article, vous découvrirez comment créer un complément de volet de tâches Excel.</span><span class="sxs-lookup"><span data-stu-id="d886f-104">In this article, you'll walk through the process of building an Excel task pane add-in.</span></span> 
+<span data-ttu-id="0e629-104">Dans cet article, vous découvrirez comment créer un complément de volet de tâches Excel.</span><span class="sxs-lookup"><span data-stu-id="0e629-104">In this article, you'll walk through the process of building an Excel task pane add-in.</span></span> 
 
-## <a name="create-the-add-in"></a><span data-ttu-id="d886f-105">Créer le complément</span><span class="sxs-lookup"><span data-stu-id="d886f-105">Create the add-in</span></span>
+## <a name="create-the-add-in"></a><span data-ttu-id="0e629-105">Créer le complément</span><span class="sxs-lookup"><span data-stu-id="0e629-105">Create the add-in</span></span>
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="yeoman-generatortabyeomangenerator"></a>[<span data-ttu-id="d886f-106">Générateur Yeoman</span><span class="sxs-lookup"><span data-stu-id="d886f-106">Yeoman generator</span></span>](#tab/yeomangenerator)
+# <a name="yeoman-generatortabyeomangenerator"></a>[<span data-ttu-id="0e629-106">Générateur Yeoman</span><span class="sxs-lookup"><span data-stu-id="0e629-106">Yeoman generator</span></span>](#tab/yeomangenerator)
 
-### <a name="prerequisites"></a><span data-ttu-id="d886f-107">Conditions préalables</span><span class="sxs-lookup"><span data-stu-id="d886f-107">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="0e629-107">Conditions préalables</span><span class="sxs-lookup"><span data-stu-id="0e629-107">Prerequisites</span></span>
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-### <a name="create-the-add-in-project"></a><span data-ttu-id="d886f-108">Création du projet de complément</span><span class="sxs-lookup"><span data-stu-id="d886f-108">Create the add-in project</span></span>
+### <a name="create-the-add-in-project"></a><span data-ttu-id="0e629-108">Création du projet de complément</span><span class="sxs-lookup"><span data-stu-id="0e629-108">Create the add-in project</span></span>
 
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-- <span data-ttu-id="d886f-109">**Sélectionnez un type de projet :** `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="d886f-109">**Choose a project type:** `Office Add-in Task Pane project`</span></span>
-- <span data-ttu-id="d886f-110">**Sélectionnez un type de script :** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="d886f-110">**Choose a script type:** `Javascript`</span></span>
-- <span data-ttu-id="d886f-111">**Comment souhaitez-vous nommer votre complément ?**</span><span class="sxs-lookup"><span data-stu-id="d886f-111">**What do you want to name your add-in?**</span></span> `My Office Add-in`
-- <span data-ttu-id="d886f-112">**Quelle application client Office voulez-vous prendre en charge ?**</span><span class="sxs-lookup"><span data-stu-id="d886f-112">**Which Office client application would you like to support?**</span></span> `Excel`
+- <span data-ttu-id="0e629-109">**Sélectionnez un type de projet :** `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="0e629-109">**Choose a project type:** `Office Add-in Task Pane project`</span></span>
+- <span data-ttu-id="0e629-110">**Sélectionnez un type de script :** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="0e629-110">**Choose a script type:** `Javascript`</span></span>
+- <span data-ttu-id="0e629-111">**Comment souhaitez-vous nommer votre complément ?**</span><span class="sxs-lookup"><span data-stu-id="0e629-111">**What do you want to name your add-in?**</span></span> `My Office Add-in`
+- <span data-ttu-id="0e629-112">**Quelle application client Office voulez-vous prendre en charge ?**</span><span class="sxs-lookup"><span data-stu-id="0e629-112">**Which Office client application would you like to support?**</span></span> `Excel`
 
 ![Générateur Yeoman](../images/yo-office-excel.png)
 
-<span data-ttu-id="d886f-114">Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.</span><span class="sxs-lookup"><span data-stu-id="d886f-114">After you complete the wizard, the generator creates the project and installs supporting Node components.</span></span>
+<span data-ttu-id="0e629-114">Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.</span><span class="sxs-lookup"><span data-stu-id="0e629-114">After you complete the wizard, the generator creates the project and installs supporting Node components.</span></span>
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
-### <a name="explore-the-project"></a><span data-ttu-id="d886f-115">Explorer le projet</span><span class="sxs-lookup"><span data-stu-id="d886f-115">Explore the project</span></span>
+### <a name="explore-the-project"></a><span data-ttu-id="0e629-115">Explorer le projet</span><span class="sxs-lookup"><span data-stu-id="0e629-115">Explore the project</span></span>
 
 [!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-js.md)]
 
-### <a name="try-it-out"></a><span data-ttu-id="d886f-116">Essayez</span><span class="sxs-lookup"><span data-stu-id="d886f-116">Try it out</span></span>
+### <a name="try-it-out"></a><span data-ttu-id="0e629-116">Essayez</span><span class="sxs-lookup"><span data-stu-id="0e629-116">Try it out</span></span>
 
-1. <span data-ttu-id="d886f-117">Accédez au dossier racine du projet.</span><span class="sxs-lookup"><span data-stu-id="d886f-117">Navigate to the root folder of the project.</span></span>
+1. <span data-ttu-id="0e629-117">Accédez au dossier racine du projet.</span><span class="sxs-lookup"><span data-stu-id="0e629-117">Navigate to the root folder of the project.</span></span>
 
     ```command&nbsp;line
     cd "My Office Add-in"
@@ -54,42 +54,42 @@ ms.locfileid: "37626970"
 
 2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
 
-3. <span data-ttu-id="d886f-118">Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.</span><span class="sxs-lookup"><span data-stu-id="d886f-118">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+3. <span data-ttu-id="0e629-118">Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.</span><span class="sxs-lookup"><span data-stu-id="0e629-118">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![Bouton Complément Excel](../images/excel-quickstart-addin-3b.png)
 
-4. <span data-ttu-id="d886f-120">Sélectionnez une plage de cellules dans la feuille de calcul.</span><span class="sxs-lookup"><span data-stu-id="d886f-120">Select any range of cells in the worksheet.</span></span>
+4. <span data-ttu-id="0e629-120">Sélectionnez une plage de cellules dans la feuille de calcul.</span><span class="sxs-lookup"><span data-stu-id="0e629-120">Select any range of cells in the worksheet.</span></span>
 
-5. <span data-ttu-id="d886f-121">En bas du volet Office, cliquez sélectionnez le lien **Exécuter** pour définir la couleur de la plage sélectionnée sur jaune.</span><span class="sxs-lookup"><span data-stu-id="d886f-121">At the bottom of the task pane, choose the **Run** link to set the color of the selected range to yellow.</span></span>
+5. <span data-ttu-id="0e629-121">En bas du volet Office, cliquez sélectionnez le lien **Exécuter** pour définir la couleur de la plage sélectionnée sur jaune.</span><span class="sxs-lookup"><span data-stu-id="0e629-121">At the bottom of the task pane, choose the **Run** link to set the color of the selected range to yellow.</span></span>
 
     ![Complément Excel](../images/excel-quickstart-addin-3c.png)
 
-# <a name="visual-studiotabvisualstudio"></a>[<span data-ttu-id="d886f-123">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="d886f-123">Visual Studio</span></span>](#tab/visualstudio)
+# <a name="visual-studiotabvisualstudio"></a>[<span data-ttu-id="0e629-123">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="0e629-123">Visual Studio</span></span>](#tab/visualstudio)
 
-### <a name="prerequisites"></a><span data-ttu-id="d886f-124">Conditions préalables</span><span class="sxs-lookup"><span data-stu-id="d886f-124">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="0e629-124">Conditions préalables</span><span class="sxs-lookup"><span data-stu-id="0e629-124">Prerequisites</span></span>
 
 [!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
-### <a name="create-the-add-in-project"></a><span data-ttu-id="d886f-125">Création du projet de complément</span><span class="sxs-lookup"><span data-stu-id="d886f-125">Create the add-in project</span></span>
+### <a name="create-the-add-in-project"></a><span data-ttu-id="0e629-125">Création du projet de complément</span><span class="sxs-lookup"><span data-stu-id="0e629-125">Create the add-in project</span></span>
 
 
-1. <span data-ttu-id="d886f-126">Dans Visual Studio, choisissez **Créer un nouveau projet**.</span><span class="sxs-lookup"><span data-stu-id="d886f-126">In Visual Studio, choose **Create a new project**.</span></span>
+1. <span data-ttu-id="0e629-126">Dans Visual Studio, choisissez **Créer un nouveau projet**.</span><span class="sxs-lookup"><span data-stu-id="0e629-126">In Visual Studio, choose **Create a new project**.</span></span>
 
-2. <span data-ttu-id="d886f-127">À l’aide de la zone de recherche, entrez **complément**.</span><span class="sxs-lookup"><span data-stu-id="d886f-127">Using the search box, enter **add-in**.</span></span> <span data-ttu-id="d886f-128">Choisissez **Complément web Excel**, puis sélectionnez **Suivant**.</span><span class="sxs-lookup"><span data-stu-id="d886f-128">Choose **Excel Web Add-in**, then select **Next**.</span></span>
+2. <span data-ttu-id="0e629-127">À l’aide de la zone de recherche, entrez **complément**.</span><span class="sxs-lookup"><span data-stu-id="0e629-127">Using the search box, enter **add-in**.</span></span> <span data-ttu-id="0e629-128">Choisissez **Complément web Excel**, puis sélectionnez **Suivant**.</span><span class="sxs-lookup"><span data-stu-id="0e629-128">Choose **Excel Web Add-in**, then select **Next**.</span></span>
 
-3. <span data-ttu-id="d886f-129">Nommez votre projet et sélectionnez **Créer**.</span><span class="sxs-lookup"><span data-stu-id="d886f-129">Name your project and select **Create**.</span></span>
+3. <span data-ttu-id="0e629-129">Nommez votre projet et sélectionnez **Créer**.</span><span class="sxs-lookup"><span data-stu-id="0e629-129">Name your project and select **Create**.</span></span>
 
-4. <span data-ttu-id="d886f-130">Dans la fenêtre de dialogue **Créer un complément Office**, sélectionnez **Ajouter de nouvelles fonctionnalités à Excel**, puis sélectionnez **Terminer** pour créer le projet.</span><span class="sxs-lookup"><span data-stu-id="d886f-130">In the **Create Office Add-in** dialog window, choose **Add new functionalities to Excel**, and then choose **Finish** to create the project.</span></span>
+4. <span data-ttu-id="0e629-130">Dans la fenêtre de dialogue **Créer un complément Office**, sélectionnez **Ajouter de nouvelles fonctionnalités à Excel**, puis sélectionnez **Terminer** pour créer le projet.</span><span class="sxs-lookup"><span data-stu-id="0e629-130">In the **Create Office Add-in** dialog window, choose **Add new functionalities to Excel**, and then choose **Finish** to create the project.</span></span>
 
-5. <span data-ttu-id="d886f-p102">Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="d886f-p102">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
+5. <span data-ttu-id="0e629-p102">Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="0e629-p102">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
 
-### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="d886f-133">Explorer la solution Visual Studio</span><span class="sxs-lookup"><span data-stu-id="d886f-133">Explore the Visual Studio solution</span></span>
+### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="0e629-133">Explorer la solution Visual Studio</span><span class="sxs-lookup"><span data-stu-id="0e629-133">Explore the Visual Studio solution</span></span>
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
-### <a name="update-the-code"></a><span data-ttu-id="d886f-134">Mise à jour du code</span><span class="sxs-lookup"><span data-stu-id="d886f-134">Update the code</span></span>
+### <a name="update-the-code"></a><span data-ttu-id="0e629-134">Mise à jour du code</span><span class="sxs-lookup"><span data-stu-id="0e629-134">Update the code</span></span>
 
-1. <span data-ttu-id="d886f-p103">**Home.html** spécifie le code HTML qui s’affichera dans le volet Office du complément. Dans **Home.html**, remplacez l’élément `<body>` par le balisage suivant et enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="d886f-p103">**Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.</span></span>
+1. <span data-ttu-id="0e629-p103">**Home.html** spécifie le code HTML qui s’affichera dans le volet Office du complément. Dans **Home.html**, remplacez l’élément `<body>` par le balisage suivant et enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="0e629-p103">**Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.</span></span>
 
     ```html
     <body class="ms-font-m ms-welcome">
@@ -109,7 +109,7 @@ ms.locfileid: "37626970"
     </body>
     ```
 
-2. <span data-ttu-id="d886f-p104">Ouvrez le fichier **Home.js** à la racine du projet d’application web. Ce fichier spécifie le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="d886f-p104">Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.</span></span> 
+2. <span data-ttu-id="0e629-p104">Ouvrez le fichier **Home.js** à la racine du projet d’application web. Ce fichier spécifie le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="0e629-p104">Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.</span></span> 
 
     ```js
     'use strict';
@@ -140,7 +140,7 @@ ms.locfileid: "37626970"
     })();
     ```
 
-3. <span data-ttu-id="d886f-p105">Ouvrez le fichier **Home.css** à la racine du projet d’application web. Ce fichier spécifie les styles personnalisés pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="d886f-p105">Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.</span></span> 
+3. <span data-ttu-id="0e629-p105">Ouvrez le fichier **Home.css** à la racine du projet d’application web. Ce fichier spécifie les styles personnalisés pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="0e629-p105">Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.</span></span> 
 
     ```css
     #content-header {
@@ -169,17 +169,17 @@ ms.locfileid: "37626970"
     }
     ```
 
-### <a name="update-the-manifest"></a><span data-ttu-id="d886f-143">Mise à jour du manifeste</span><span class="sxs-lookup"><span data-stu-id="d886f-143">Update the manifest</span></span>
+### <a name="update-the-manifest"></a><span data-ttu-id="0e629-143">Mise à jour du manifeste</span><span class="sxs-lookup"><span data-stu-id="0e629-143">Update the manifest</span></span>
 
-1. <span data-ttu-id="d886f-144">Ouvrez le fichier manifeste XML dans le projet de complément.</span><span class="sxs-lookup"><span data-stu-id="d886f-144">Open the XML manifest file in the add-in project.</span></span> <span data-ttu-id="d886f-145">Ce fichier définit les paramètres et les fonctionnalités du complément.</span><span class="sxs-lookup"><span data-stu-id="d886f-145">This file defines the add-in's settings and capabilities.</span></span>
+1. <span data-ttu-id="0e629-144">Ouvrez le fichier manifeste XML dans le projet de complément.</span><span class="sxs-lookup"><span data-stu-id="0e629-144">Open the XML manifest file in the add-in project.</span></span> <span data-ttu-id="0e629-145">Ce fichier définit les paramètres et les fonctionnalités du complément.</span><span class="sxs-lookup"><span data-stu-id="0e629-145">This file defines the add-in's settings and capabilities.</span></span>
 
-2. <span data-ttu-id="d886f-p107">L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-le par votre nom.</span><span class="sxs-lookup"><span data-stu-id="d886f-p107">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
+2. <span data-ttu-id="0e629-p107">L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-le par votre nom.</span><span class="sxs-lookup"><span data-stu-id="0e629-p107">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
 
-3. <span data-ttu-id="d886f-p108">L’attribut `DefaultValue` de l’élément `DisplayName` possède un espace réservé. Remplacez-le par **My Office Add-in**.</span><span class="sxs-lookup"><span data-stu-id="d886f-p108">The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.</span></span>
+3. <span data-ttu-id="0e629-p108">L’attribut `DefaultValue` de l’élément `DisplayName` possède un espace réservé. Remplacez-le par **My Office Add-in**.</span><span class="sxs-lookup"><span data-stu-id="0e629-p108">The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.</span></span>
 
-4. <span data-ttu-id="d886f-p109">L’attribut `DefaultValue` de l’élément `Description` possède un espace réservé. Remplacez-le par **A task pane add-in for Excel**.</span><span class="sxs-lookup"><span data-stu-id="d886f-p109">The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Excel**.</span></span>
+4. <span data-ttu-id="0e629-p109">L’attribut `DefaultValue` de l’élément `Description` possède un espace réservé. Remplacez-le par **A task pane add-in for Excel**.</span><span class="sxs-lookup"><span data-stu-id="0e629-p109">The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Excel**.</span></span>
 
-5. <span data-ttu-id="d886f-152">Enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="d886f-152">Save the file.</span></span>
+5. <span data-ttu-id="0e629-152">Enregistrez le fichier.</span><span class="sxs-lookup"><span data-stu-id="0e629-152">Save the file.</span></span>
 
     ```xml
     ...
@@ -191,32 +191,34 @@ ms.locfileid: "37626970"
     ...
     ```
 
-### <a name="try-it-out"></a><span data-ttu-id="d886f-153">Essayez</span><span class="sxs-lookup"><span data-stu-id="d886f-153">Try it out</span></span>
+### <a name="try-it-out"></a><span data-ttu-id="0e629-153">Essayez</span><span class="sxs-lookup"><span data-stu-id="0e629-153">Try it out</span></span>
 
-1. <span data-ttu-id="d886f-p110">À l’aide de Visual Studio, testez le nouveau complément Excel en appuyant sur\*\* F5\*\* ou en choisissant le bouton **Démarrer** pour lancer Excel avec le bouton du complément \*\*Show Taskpane \*\*(Afficher le volet Office) qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.</span><span class="sxs-lookup"><span data-stu-id="d886f-p110">Using Visual Studio, test the newly created Excel add-in by pressing **F5** or choosing the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
+1. <span data-ttu-id="0e629-p110">À l’aide de Visual Studio, testez le nouveau complément Excel en appuyant sur\*\* F5\*\* ou en choisissant le bouton **Démarrer** pour lancer Excel avec le bouton du complément \*\*Show Taskpane \*\*(Afficher le volet Office) qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.</span><span class="sxs-lookup"><span data-stu-id="0e629-p110">Using Visual Studio, test the newly created Excel add-in by pressing **F5** or choosing the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
 
-2. <span data-ttu-id="d886f-156">Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.</span><span class="sxs-lookup"><span data-stu-id="d886f-156">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="0e629-156">Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.</span><span class="sxs-lookup"><span data-stu-id="0e629-156">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![Bouton Complément Excel](../images/excel-quickstart-addin-2a.png)
 
-3. <span data-ttu-id="d886f-158">Sélectionnez une plage de cellules dans la feuille de calcul.</span><span class="sxs-lookup"><span data-stu-id="d886f-158">Select any range of cells in the worksheet.</span></span>
+3. <span data-ttu-id="0e629-158">Sélectionnez une plage de cellules dans la feuille de calcul.</span><span class="sxs-lookup"><span data-stu-id="0e629-158">Select any range of cells in the worksheet.</span></span>
 
-4. <span data-ttu-id="d886f-159">Dans le volet Office, cliquez sur le bouton **Définir couleur** pour définir la couleur de la plage sélectionnée en vert.</span><span class="sxs-lookup"><span data-stu-id="d886f-159">In the task pane, choose the **Set color** button to set the color of the selected range to green.</span></span>
+4. <span data-ttu-id="0e629-159">Dans le volet Office, cliquez sur le bouton **Définir couleur** pour définir la couleur de la plage sélectionnée en vert.</span><span class="sxs-lookup"><span data-stu-id="0e629-159">In the task pane, choose the **Set color** button to set the color of the selected range to green.</span></span>
 
     ![Complément Excel](../images/excel-quickstart-addin-2c.png)
 
 ---
 
-## <a name="next-steps"></a><span data-ttu-id="d886f-161">Étapes suivantes</span><span class="sxs-lookup"><span data-stu-id="d886f-161">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="0e629-161">Étapes suivantes</span><span class="sxs-lookup"><span data-stu-id="0e629-161">Next steps</span></span>
 
-<span data-ttu-id="d886f-162">Félicitations, vous avez créé un complément de volet de tâches Excel !</span><span class="sxs-lookup"><span data-stu-id="d886f-162">Congratulations, you've successfully created an Excel task pane add-in!</span></span> <span data-ttu-id="d886f-163">Ensuite, découvrez les fonctionnalités d’un complément Excel et créez-en un plus complexe en suivant le didacticiel sur les compléments Excel.</span><span class="sxs-lookup"><span data-stu-id="d886f-163">Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.</span></span>
+<span data-ttu-id="0e629-162">Félicitations, vous avez créé un complément de volet de tâches Excel !</span><span class="sxs-lookup"><span data-stu-id="0e629-162">Congratulations, you've successfully created an Excel task pane add-in!</span></span> <span data-ttu-id="0e629-163">Ensuite, découvrez les fonctionnalités d’un complément Excel et créez-en un plus complexe en suivant le didacticiel sur les compléments Excel.</span><span class="sxs-lookup"><span data-stu-id="0e629-163">Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="d886f-164">Didacticiel sur les compléments Excel</span><span class="sxs-lookup"><span data-stu-id="d886f-164">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial.md)
+> [<span data-ttu-id="0e629-164">Didacticiel sur les compléments Excel</span><span class="sxs-lookup"><span data-stu-id="0e629-164">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial.md)
 
-## <a name="see-also"></a><span data-ttu-id="d886f-165">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d886f-165">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0e629-165">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0e629-165">See also</span></span>
 
-* [<span data-ttu-id="d886f-166">Didacticiel sur les compléments Excel</span><span class="sxs-lookup"><span data-stu-id="d886f-166">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial-create-table.md)
-* [<span data-ttu-id="d886f-167">Concepts fondamentaux de programmation avec l’API JavaScript pour Excel</span><span class="sxs-lookup"><span data-stu-id="d886f-167">Fundamental programming concepts with the Excel JavaScript API</span></span>](../excel/excel-add-ins-core-concepts.md)
-* [<span data-ttu-id="d886f-168">Exemples de code pour les compléments Excel</span><span class="sxs-lookup"><span data-stu-id="d886f-168">Excel add-in code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [<span data-ttu-id="d886f-169">Référence de l’API JavaScript pour Excel</span><span class="sxs-lookup"><span data-stu-id="d886f-169">Excel JavaScript API reference</span></span>](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [<span data-ttu-id="0e629-166">Vue d’ensemble de la plateforme des compléments Office</span><span class="sxs-lookup"><span data-stu-id="0e629-166">Office Add-ins platform overview</span></span>](../overview/office-add-ins.md)
+* [<span data-ttu-id="0e629-167">Création de compléments Office</span><span class="sxs-lookup"><span data-stu-id="0e629-167">Building Office Add-ins using Office.js book</span></span>](../overview/office-add-ins-fundamentals.md)
+* <span data-ttu-id="0e629-168">[Développement de compléments Office](../develop/develop-overview.md)</span><span class="sxs-lookup"><span data-stu-id="0e629-168">[](../develop/develop-overview.md)Develop Office Add-ins with Angular</span></span>
+* [<span data-ttu-id="0e629-169">Concepts fondamentaux de programmation avec l’API JavaScript pour Excel</span><span class="sxs-lookup"><span data-stu-id="0e629-169">Fundamental programming concepts with the Excel JavaScript API</span></span>](../excel/excel-add-ins-core-concepts.md)
+* [<span data-ttu-id="0e629-170">Exemples de code pour les compléments Excel</span><span class="sxs-lookup"><span data-stu-id="0e629-170">Excel add-in code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [<span data-ttu-id="0e629-171">Référence de l’API JavaScript pour Excel</span><span class="sxs-lookup"><span data-stu-id="0e629-171">Excel JavaScript API reference</span></span>](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
