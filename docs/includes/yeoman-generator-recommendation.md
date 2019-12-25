@@ -1,0 +1,6 @@
+> [!NOTE]
+> <span data-ttu-id="d02b1-101">Bien qu’il soit possible de créer des compléments Office à l’aide de Visual Studio, l’utilisation du générateur Yeoman offre une expérience de développeur plus performante.</span><span class="sxs-lookup"><span data-stu-id="d02b1-101">Although it's possible to create Office Add-ins using Visual Studio, using the Yeoman generator provides a better developer experience in some notable ways.</span></span>
+> 
+> * <span data-ttu-id="d02b1-102">Le générateur de Yeoman offre une gamme plus large d’options pour les types de projets, les infrastructures et les langues que Visual Studio utilise pour les projets de compléments Office.</span><span class="sxs-lookup"><span data-stu-id="d02b1-102">The Yeoman generator provides a wider range of options for project types, frameworks, and languages than Visual Studio does for Office Add-in projects.</span></span>
+> 
+> * <span data-ttu-id="d02b1-103">Les modèles de projet dans le générateur Yeoman sont mis à jour plus fréquemment que les modèles de projet dans Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="d02b1-103">Project templates in the Yeoman generator are updated more frequently than project templates in Visual Studio.</span></span>
