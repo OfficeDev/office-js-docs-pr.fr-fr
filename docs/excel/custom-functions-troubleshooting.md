@@ -1,14 +1,14 @@
 ---
-ms.date: 07/15/2019
+ms.date: 12/31/2019
 description: Résoudre des problèmes courants dans les fonctions personnalisées d’Excel.
 title: Résoudre des problèmes de fonctions personnalisées
 localization_priority: Priority
-ms.openlocfilehash: 0ff10200da86ebecf9bbd6f724ed42d77b8ad293
-ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
+ms.openlocfilehash: 8b26120d193ac084662ff989ac28e0456c98be3f
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "39670173"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40915034"
 ---
 # <a name="troubleshoot-custom-functions"></a>Résoudre des problèmes de fonctions personnalisées
 
@@ -20,7 +20,7 @@ Pour résoudre des problèmes, vous pouvez [activer la journalisation du runtime
 
 ## <a name="enable-runtime-logging"></a>Activer la journalisation du runtime
 
-Si vous testez votre complément dans Office sur Windows, vous devez [activer la journalisation du runtime](/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in). La journalisation du runtime fournit des instructions `console.log` dans un fichier journal distinct que vous créez pour vous aider à découvrir des problèmes. Les instructions couvrent diverses erreurs, dont des erreurs liées au fichier manifeste XML de votre complément, aux conditions d’exécution ou à l’installation de vos fonctions personnalisées.  Pour plus d’informations sur la journalisation du runtime, voir [Utilisation de la journalisation du runtime pour déboguer votre complément](/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in).  
+Si vous testez votre complément dans Office sur Windows, vous devez [activer la journalisation du runtime](../testing/runtime-logging.md). La journalisation du runtime fournit des instructions `console.log` dans un fichier journal distinct que vous créez pour vous aider à découvrir des problèmes. Les instructions couvrent diverses erreurs, dont des erreurs liées au fichier manifeste XML de votre complément, aux conditions d’exécution ou à l’installation de vos fonctions personnalisées. Pour plus d’informations sur la journalisation du runtime, voir [Déboguer votre complément à l’aide de la journalisation du runtime](../testing/runtime-logging.md).
 
 ### <a name="check-for-excel-error-messages"></a>Rechercher les messages d’erreur Excel
 
@@ -35,7 +35,7 @@ En règle générale, ces erreurs correspondent aux erreurs que vous devez déj�
 
 ## <a name="clear-the-office-cache"></a>Vider le cache Office
 
-Les informations relatives aux fonctions personnalisées sont mises en cache par Office. Lorsque vous développez et rechargez de manière répétée un complément avec des fonctions personnalisées, il peut arriver que modifications n’apparaissent pas. Pour y remédier, videz le cache Office. Pour plus d’informations, consultez la section « Vider le cache Office » de l’article [Valider et résoudre des problèmes avec votre manifeste](../testing/troubleshoot-manifest.md#clear-the-office-cache).
+Les informations relatives aux fonctions personnalisées sont mises en cache par Office. Lorsque vous développez et rechargez de manière répétée un complément avec des fonctions personnalisées, il peut arriver que modifications n’apparaissent pas. Pour y remédier, videz le cache Office. Pour plus d’informations, voir [Vider le cache Office](../testing/clear-cache.md).
 
 ## <a name="common-issues"></a>Problèmes courants
 
