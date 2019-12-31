@@ -3,12 +3,12 @@ title: Obtenir JavaScript IntelliSense dans Visual Studio 2019
 description: ''
 ms.date: 10/11/2019
 localization_priority: Priority
-ms.openlocfilehash: afe2890015c853c2b70a00d94ea1b6a49296a14a
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 26fd5b4bff2e244d84f2f8c40e3da7049189aadf
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626781"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914887"
 ---
 # <a name="get-javascript-intellisense-in-visual-studio-2019"></a>Obtenir JavaScript IntelliSense dans Visual Studio 2019
 
@@ -84,4 +84,5 @@ function myFunc() {
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Création et débogage de compléments Office dans Visual Studio](create-and-debug-office-add-ins-in-visual-studio.md)
+- [Développer des compléments Office avec Visual Studio](develop-add-ins-visual-studio.md)
+- [Déboguer des compléments Office dans Visual Studio](debug-office-add-ins-in-visual-studio.md)

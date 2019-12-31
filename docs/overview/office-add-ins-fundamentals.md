@@ -3,12 +3,12 @@ title: Création de compléments Office
 description: Présentation du développement de compléments Office.
 ms.date: 12/24/2019
 localization_priority: Priority
-ms.openlocfilehash: e8e0b3b1ff5578ce75b56534f90be39d4b63d9f5
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: e0deeebb3a1c8761217a9fe33a3ef04a945b2cff
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851698"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40915020"
 ---
 # <a name="building-office-add-ins"></a>Création de compléments Office
 
@@ -33,11 +33,11 @@ Le[Générateur Yeoman pour les compléments Office](https://github.com/officede
 - Word
 - Fonctions personnalisées dans Excel
 
-Vous pouvez choisir de créer le projet à l’aide de HTML, CSS et JavaScript, ou d’utiliser Angular ou React. Pour l’infrastructure de votre choix, vous pouvez également choisir entre JavaScript et Typescript . Chaque [démarrage rapide de 5 minutes](../index.md) contient des instructions détaillées qui décrivent comment créer un complément Office à l’aide du générateur Yeoman.
+Vous pouvez choisir de créer le projet à l’aide de HTML, CSS et JavaScript, ou d’utiliser Angular ou React. Pour l’infrastructure de votre choix, vous pouvez également choisir entre JavaScript et Typescript . Pour en savoir plus sur la création de compléments avec le générateur Yeoman, consultez [Développez des compléments Office avec Visual Studio Code](../develop/develop-add-ins-vscode.md).
 
 ### <a name="visual-studio"></a>Visual Studio
 
-Visual Studio peut être utilisé pour créer des compléments Office pour Excel, Word, PowerPoint ou Outlook. Un projet de complément Office est créé dans le cadre d’une solution Visual Studio et utilise HTML, CSS et JavaScript. Les [démarrages rapide de 5 minutes](../index.md) pour Excel, Word, PowerPoint et Outlook contient des instructions détaillées qui expliquent comment créer un complément Office à l’aide de Visual Studio. 
+Visual Studio peut être utilisé pour créer des compléments Office pour Excel, Outlook, Word, et PowerPoint. Un projet de complément Office est créé dans le cadre d’une solution Visual Studio et utilise HTML, CSS et JavaScript. Pour en savoir plus sur la création de compléments avec Visual Studio, consultez [Développez des compléments Office avec Visual Studio](../develop/develop-add-ins-visual-studio.md).
 
 [!include[Yeoman vs Visual Studio comparision](../includes/yeoman-generator-recommendation.md)]
 
@@ -164,6 +164,8 @@ Pour en savoir plus sur le développement, le test et la publication de complém
 - [Vue d’ensemble de la plateforme des compléments Office](office-add-ins.md)
 - [Concepts de base pour les compléments Office](../overview/core-concepts-office-add-ins.md)
 - [Développement de compléments Office](../develop/develop-overview.md)
+- [Développement de compléments Office avec Visual Studio Code](../develop/develop-add-ins-vscode.md)
+- [Développement de compléments Office avec Visual Studio](../develop/develop-add-ins-visual-studio.md)
 - [Concevoir des compléments Office](../design/add-in-design.md)
 - [Test et débogage de compléments Office](../testing/test-debug-office-add-ins.md)
 - [Publier des compléments Office](../publish/publish.md)

@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet des tâches d’Excel
 description: Découvrez comment créer un complément de volet des tâches Excel simple à l’aide de l’API JavaScript pour Office.
-ms.date: 12/24/2019
+ms.date: 12/31/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 12eb48fc5f44b506bbce39d01e9bce4ca2a2b5e6
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 5b437791cea2b3f3d534b8c9053224e381f36a9e
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851354"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914950"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Créer un complément de volet de tâches Excel
 
@@ -64,6 +64,10 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 
     ![Complément Excel](../images/excel-quickstart-addin-3c.png)
 
+### <a name="next-steps"></a>Étapes suivantes
+
+Félicitations, vous avez créé un complément de volet de tâches Excel ! Ensuite, découvrez les fonctionnalités d’un complément Excel et créez-en un plus complexe en suivant le [didacticiel sur les compléments Excel](../tutorials/excel-tutorial.md).
+
 # <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
 
 ### <a name="prerequisites"></a>Conditions préalables
@@ -71,7 +75,6 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 [!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
 ### <a name="create-the-add-in-project"></a>Création du projet de complément
-
 
 1. Dans Visual Studio, choisissez **Créer un nouveau projet**.
 
@@ -205,14 +208,11 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 
     ![Complément Excel](../images/excel-quickstart-addin-2c.png)
 
+### <a name="next-steps"></a>Étapes suivantes
+
+Félicitations, vous avez créé un complément de volet de tâches Excel ! Ensuite, en savoir plus sur la [création de compléments Office avec Visual Studio](../develop/develop-add-ins-visual-studio.md).
+
 ---
-
-## <a name="next-steps"></a>Étapes suivantes
-
-Félicitations, vous avez créé un complément de volet de tâches Excel ! Ensuite, découvrez les fonctionnalités d’un complément Excel et créez-en un plus complexe en suivant le didacticiel sur les compléments Excel.
-
-> [!div class="nextstepaction"]
-> [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial.md)
 
 ## <a name="see-also"></a>Voir aussi
 

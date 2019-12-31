@@ -1,21 +1,21 @@
 ---
 title: Développement d’un complément Office avec Visual Studio Code
 description: Comment développer un complément Office avec Visual Studio Code
-ms.date: 12/02/2019
+ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: a18d8a74ff269b32e83c836b06629850873e507b
-ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
+ms.openlocfilehash: d6c6cafb28c12b2beb07f0b0cc30d8159e1df1b2
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "39670485"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914862"
 ---
 # <a name="develop-office-add-ins-with-visual-studio-code"></a>Développement d’un complément Office avec Visual Studio Code
 
 Cet article explique comment utiliser [Visual Studio Code (VS Code)](https://code.visualstudio.com) pour développer votre complément Office.
 
 > [!NOTE]
-> Pour plus d’informations sur l’utilisation de Visual Studio pour créer un complément Office, voir [Créer et déboguer des compléments Office dans Visual Studio](create-and-debug-office-add-ins-in-visual-studio.md).
+> Pour en savoir plus sur l’utilisation de Visual Studio pour créer un complément Office, voir [Développer des compléments Office avec Visual Studio](develop-add-ins-visual-studio.md).
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -48,7 +48,9 @@ Les méthodes de test, de débogage et de résolution des problèmes liés aux c
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Démarrages rapides de 5?minutes](../index.md)
-- [Explorer l’API JavaScript Office à l’aide de Script Lab](../overview/explore-with-script-lab.md)
+- [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
+- [Concepts de base pour les compléments Office](../overview/core-concepts-office-add-ins.md)
+- [Développement de compléments Office](../develop/develop-overview.md)
+- [Concevoir des compléments Office](../design/add-in-design.md)
 - [Test et débogage de compléments Office](../testing/test-debug-office-add-ins.md)
-- [Déploiement et publication de votre complément Office](../publish/publish.md)
+- [Publish Office Add-ins](../publish/publish.md)

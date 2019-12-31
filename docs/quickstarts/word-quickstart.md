@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet des tâches de Word
 description: Découvrez comment créer un complément de volet des tâches Word simple à l’aide de l’API JavaScript pour Office.
-ms.date: 12/24/2019
+ms.date: 12/31/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 039348503d75746bf30da253e84402e128006497
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 7a253f884f509cc933b02c86d4d3d6d16c0ca114
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851333"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914922"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Word
 
@@ -87,6 +87,10 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 4. En bas du volet Office, sélectionnez le lien **Exécuter** pour ajouter le texte en police de couleur bleue « Hello World » au document.
 
     ![Capture d’écran de l’application Word avec le complément du volet des tâches chargé](../images/word-quickstart-addin-1c.png)
+
+### <a name="next-steps"></a>Étapes suivantes
+
+Félicitations, vous avez créé un complément du volet des tâches de Word ! Maintenant, découvrez les fonctionnalités d’un complément Word et créez un complément plus complexe en suivant le [didacticiel dédié](../tutorials/word-tutorial.md).
 
 # <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
 
@@ -301,14 +305,11 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 
     ![Capture d’écran de l’application Word avec le complément de texte réutilisable chargé.](../images/word-quickstart-addin-1b.png)
 
+### <a name="next-steps"></a>Étapes suivantes
+
+Félicitations, vous avez créé un complément du volet des tâches de Word ! Ensuite, en savoir plus sur la [création de compléments avec Visual Studio](../develop/develop-add-ins-visual-studio.md).
+
 ---
-
-## <a name="next-steps"></a>Étapes suivantes
-
-Félicitations, vous avez créé un complément du volet des tâches de Word ! Maintenant, découvrez les fonctionnalités d’un complément Word et créez un complément plus complexe en suivant le didacticiel dédié.
-
-> [!div class="nextstepaction"]
-> [Didacticiel sur les compléments Word](../tutorials/word-tutorial.md)
 
 ## <a name="see-also"></a>Voir aussi
 

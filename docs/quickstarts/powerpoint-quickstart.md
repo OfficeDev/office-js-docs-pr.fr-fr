@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément de volet de tâches PowerPoint
 description: Découvrez comment créer un complément de volet des tâches PowerPoint simple à l’aide de l’API JavaScript pour Office.
-ms.date: 12/24/2019
+ms.date: 12/31/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: fbf8ca6c52bd5a71f3db24d9661d7cce5f6004d2
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 56168749b907cdde3b9ea235d55805e1084f020c
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851347"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914943"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>Créer votre premier complément de volet de tâches PowerPoint
 
@@ -85,6 +85,10 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 4. En bas du volet Office, sélectionnez le lien **Exécuter** pour insérer le texte « Hello World » dans la diapositive active.
 
     ![Capture d’écran de PowerPoint avec l’image d’un chien et le texte « Hello World » affichés sur la diapositive](../images/powerpoint_quickstart_addin_3c.png)
+
+### <a name="next-steps"></a>Étapes suivantes
+
+Félicitations, vous avez créé un complément de volet de tâches PowerPoint ! Maintenant, découvrez les fonctionnalités d’un complément PowerPoint et créez un complément plus complexe en suivant le [didacticiel dédié](../tutorials/powerpoint-tutorial.md).
 
 # <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
 
@@ -245,14 +249,11 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 
     ![Capture d’écran de PowerPoint avec l’image d’un chien et le texte « Hello World » affichés sur la diapositive](../images/powerpoint_quickstart_addin_3.png)
 
+### <a name="next-steps"></a>Étapes suivantes
+
+Félicitations, vous avez créé un complément de volet de tâches PowerPoint ! Ensuite, en savoir plus sur la [création de compléments Office avec Visual Studio](../develop/develop-add-ins-visual-studio.md).
+
 ---
-
-## <a name="next-steps"></a>Étapes suivantes
-
-Félicitations, vous avez créé un complément de volet de tâches PowerPoint ! Maintenant, découvrez les fonctionnalités d’un complément PowerPoint et créez un complément plus complexe en suivant le didacticiel dédié.
-
-> [!div class="nextstepaction"]
-> [Didacticiel sur les compléments PowerPoint](../tutorials/powerpoint-tutorial.md)
 
 ## <a name="see-also"></a>Voir aussi
 

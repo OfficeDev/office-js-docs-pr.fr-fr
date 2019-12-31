@@ -3,12 +3,12 @@ title: Résolution des problèmes de messages d’erreur pour l’authentificati
 description: ''
 ms.date: 11/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 0852d70337a3d372ac495824ba2aa50469117f5c
-ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
+ms.openlocfilehash: 835ae68304a6fd69648f0f182c9ff17e9cbfd56d
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "38001480"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914880"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>Résolution des messages d’erreur pour l’authentification unique (SSO) (aperçu)
 
@@ -64,7 +64,7 @@ Type d’utilisateur non pris en charge. L’utilisateur n’est pas connecté �
 
 ### <a name="13004"></a>13004
 
-Ressource non valide. (Cette erreur ne doit être détectée qu’en développement.) Le manifeste du complément n’a pas été correctement configuré. Mettez à jour le manifeste. Pour plus d’informations, voir [Validation et résolution des problèmes avec votre manifeste](../testing/troubleshoot-manifest.md). Le problème le plus courant est que l’élément **Resource** (dans l’élément **WebApplicationInfo**) a un domaine qui ne correspond pas au domaine du complément. Bien que la partie protocole de la valeur Resource devrait être « api » et non « https », toutes les autres parties du nom de domaine (dont le port éventuel) doivent être identiques à ceux du complément.
+Ressource non valide. (Cette erreur ne doit être détectée qu’en développement.) Le manifeste du complément n’a pas été correctement configuré. Mettez à jour le manifeste. Pour en savoir plus, consultez [Valider le manifeste d’un complément Office](../testing/troubleshoot-manifest.md). Le problème le plus courant est que l’élément **Resource** (dans l’élément **WebApplicationInfo**) a un domaine qui ne correspond pas au domaine du complément. Bien que la partie protocole de la valeur Resource devrait être « api » et non « https », toutes les autres parties du nom de domaine (dont le port éventuel) doivent être identiques à ceux du complément.
 
 ### <a name="13005"></a>13005
 

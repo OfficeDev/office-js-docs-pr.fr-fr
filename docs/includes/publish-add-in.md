@@ -16,4 +16,4 @@ Lorsque votre complément fonctionne comme vous le souhaitez et que vous êtes p
 
 3. Dans VS Code, ouvrez le fichier manifeste du complément situé dans le répertoire racine du projet (`manifest.xml`). Remplacez toutes les occurrences de `https://localhost:3000` par l’URL de l’application Web que vous avez déployée sur un serveur Web à l’étape précédente.
 
-4. Choisissez la méthode que vous voulez utiliser pour [déployer et publier votre complément Office](../publish/publish.md) votre complément, puis suivez les instructions pour publier le fichier manifeste.
+4. Choisissez la méthode que vous voulez utiliser pour [déployer votre complément Office](../publish/publish.md), puis suivez les instructions pour publier le fichier manifeste.

@@ -1,14 +1,14 @@
 ---
 title: Manifeste XML des compléments Office
 description: ''
-ms.date: 09/26/2019
+ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: 07c8a563eb04ac4b707357f1e7ff43d9a8f2e761
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 1d130d041819ce7e65046b9cda84fc645bed2c51
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851277"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914992"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifeste XML des compléments Office
 
@@ -492,9 +492,9 @@ Les sections suivantes présentent des exemples de fichiers manifeste XML versio
 
 ---
 
-## <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>Valider et résoudre des problèmes avec votre manifeste
+## <a name="validate-an-office-add-ins-manifest"></a>Valider un manifeste de complément Office
 
-Pour résoudre les problèmes rencontrés avec votre manifeste, consultez la rubrique relative à la [validation et à la résolution des problèmes avec votre manifeste](../testing/troubleshoot-manifest.md). Vous apprendrez à valider le manifeste par rapport à la [définition de schéma XML (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) et à utiliser la journalisation runtime pour déboguer le manifeste.
+Pour plus d’informations sur la validation d’un manifeste par rapport à la [XSD (XML Schema Definition)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas), voir [Valider le manifeste d’un complément Office](../testing/troubleshoot-manifest.md).
 
 ## <a name="see-also"></a>Voir aussi
 
@@ -506,6 +506,6 @@ Pour résoudre les problèmes rencontrés avec votre manifeste, consultez la rub
 * [Mettre à jour la version du manifeste et de l’API](update-your-javascript-api-for-office-and-manifest-schema-version.md)
 * [Identifier un complément COM équivalent](make-office-add-in-compatible-with-existing-com-add-in.md)
 * [Demande d’autorisations d’utilisation de l’API dans des compléments](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
-* [Valider et résoudre des problèmes avec votre manifeste](../testing/troubleshoot-manifest.md)
+* <bpt id="p1">[</bpt>Validate an Office Add-in's manifest<ept id="p1">](../testing/troubleshoot-manifest.md)</ept>
 
 [commandes de complément]: create-addin-commands.md

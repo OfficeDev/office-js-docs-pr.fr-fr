@@ -119,8 +119,11 @@
               href: develop/develop-add-ins-vscode.md
             - name: Développement d’un complément avec Visual Studio
               items:
-                - name: "Créer et déboguer des compléments Office dans Visual\_Studio"
-                  href: develop/create-and-debug-office-add-ins-in-visual-studio.md
+                - name: Vue d’ensemble
+                  href: develop/develop-add-ins-visual-studio.md
+                  displayName: Visual Studio
+                - name: "Déboguer des compléments Office dans Visual\_Studio"
+                  href: develop/debug-office-add-ins-in-visual-studio.md
                 - name: Obtenir JavaScript IntelliSense dans Visual Studio
                   href: develop/get-javascript-intellisense-in-visual-studio.md
                 - name: Convertir du code JavaScript en TypeScript
@@ -236,11 +239,15 @@
               href: testing/sideload-an-office-add-in-on-ipad-and-mac.md
             - name: Débogage sur Mac
               href: testing/debug-office-add-ins-on-ipad-and-mac.md
+        - name: Vider le cache Office
+          href: testing/clear-cache.md
+        - name: Déboguer avec la journalisation runtime
+          href: testing/runtime-logging.md
         - name: Résolution des erreurs de l’utilisateur
           href: testing/testing-and-troubleshooting.md
         - name: Tests d’utilisation
           href: develop/usability-testing.md
-        - name: Validation d’un manifeste de complément et résolution de problèmes
+        - name: Valider le manifeste d’un complément Office
           href: testing/troubleshoot-manifest.md
     - name: Publier
       items:

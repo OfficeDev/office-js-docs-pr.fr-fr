@@ -1,14 +1,14 @@
 ---
 title: Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 description: ''
-ms.date: 11/26/2019
+ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: fed23cfde1380e7c5728c78c995d3b89d44451f2
-ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
+ms.openlocfilehash: 76bb71cebb3c6027ac86e046e1fcfe579b7031c9
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "39629734"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40915013"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 
@@ -66,7 +66,7 @@ Pour résoudre ce problème, vérifiez que les dernières mises à jour Office s
 
 ## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>Le complément ne se charge pas dans le volet des tâches ou d’autres problèmes existent avec le manifeste du complément
 
-Consultez la rubrique relative à la [validation et à la résolution des problèmes de votre manifeste](troubleshoot-manifest.md) pour déboguer le manifeste de votre complément.
+Voir [Valider le manifeste d’un complément Office](troubleshoot-manifest.md) et [Déboguer votre complément avec la journalisation runtime](runtime-logging.md) pour déboguer les problèmes de manifeste de compléments.
 
 
 ## <a name="add-in-dialog-box-cannot-be-displayed"></a>La boîte de dialogue des compléments ne s’affiche pas
@@ -143,4 +143,5 @@ del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC
 - [Débogage de compléments dans Office sur le web](debug-add-ins-in-office-online.md) 
 - [Charger une version test d’un complément Office sur iPad ou Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
 - [Débogage des compléments Office sur iPad et Mac](debug-office-add-ins-on-ipad-and-mac.md)  
-- [Valider et résoudre des problèmes avec votre manifeste](troubleshoot-manifest.md)
+- [Valider le manifeste d’un complément Office](troubleshoot-manifest.md)
+- [Déboguer votre complément avec la journalisation runtime](runtime-logging.md)
