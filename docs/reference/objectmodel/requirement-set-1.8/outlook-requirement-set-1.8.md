@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook 1.8
 description: ''
-ms.date: 10/31/2019
+ms.date: 12/17/2019
 localization_priority: Priority
-ms.openlocfilehash: 1e1420bd355c16941c7cb4ce66ecdca56e1c8927
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: 1a542a0b00bd04674c4da4c45909ff03a152983c
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902153"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814158"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Ensemble de conditions requises de l’API du complément Outlook 1.8
 
@@ -34,16 +34,16 @@ L’ensemble de conditions requises de la version 1.8 comprend toutes les fonct
 - Ajout de [MasterCategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-1.8) : ajoute un nouvel objet représentant la liste principale des catégories d’une boîte aux lettres.
 - Ajout de [SharedProperties](/javascript/api/outlook/office.sharedproperties?view=outlook-js-1.8) : ajoute un nouvel objet représentant les propriétés d’un élément de rendez-vous ou de message dans un dossier, un calendrier ou une boîte aux lettres partagé(e).
 - Ajout d’un [élément de manifeste SupportsSharedFolders](../../manifest/supportssharedfolders.md) : ajoute un élément enfant à l’élément de manifeste [DesktopFormFactor](../../manifest/desktopformfactor.md). Définit si le complément est disponible dans les scénarios de délégué.
-- Ajout d’[Office.context.mailbox.masterCategories](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8#mastercategories) : ajoute une nouvelle propriété représentant la liste principale des catégories d’une boîte aux lettres.
-- Ajout d’[Office.context.mailbox.item.categories](/javascript/api/outlook/office.item?view=outlook-js-1.8#categories) : ajoute une nouvelle propriété représentant l’ensemble des catégories d’une boîte aux lettres.
-- Ajout d’[Office.context.mailbox.item.addFileAttachmentFromBase64Async](office.context.mailbox.item.md#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) : ajoute une nouvelle méthode qui vous permet de joindre un fichier à un message ou à un rendez-vous. Ce fichier est représenté par une chaîne encodée en base 64.
-- Ajout d’[Office.context.mailbox.item.enhancedLocation](office.context.mailbox.item.md#enhancedlocation-enhancedlocation) : ajoute une nouvelle propriété représentant l’ensemble des lieux pour un rendez-vous.
-- Ajout d'[Office.context.mailbox.item.getAllInternetHeadersAsync](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#getallinternetheadersasync-options--callback-) : ajoute une nouvelle méthode récupérant tous les en-têtes Internet pour un élément de message. Mode Lecture uniquement.
-- Ajout d’[Office.context.mailbox.item.getAttachmentContentAsync](office.context.mailbox.item.md#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent) : ajoute une nouvelle méthode pour obtenir le contenu d’une pièce jointe spécifique.
-- Ajout d’[Office.context.mailbox.item.getAttachmentsAsync](office.context.mailbox.item.md#getattachmentsasyncoptions-callback--arrayattachmentdetails) : ajoute une nouvelle méthode récupérant les pièces jointes à un élément en mode composition.
-- Ajout d’[Office.context.mailbox.item.getItemIdAsync](office.context.mailbox.item.md#getitemidasyncoptions-callback) : ajoute une nouvelle méthode obtenant l’ID d’un rendez-vous ou d’un élément de message enregistré.
-- Ajout d’[Office.context.mailbox.item.getSharedPropertiesAsync](office.context.mailbox.item.md#getsharedpropertiesasyncoptions-callback) : ajout d’une nouvelle méthode obtenant un objet représentant les sharedProperties d’un rendez-vous ou d’un élément de message.
-- Ajout d’[Office.context.mailbox.item.internetHeaders](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.8#internetheaders) : ajoute une nouvelle propriété représentant les en-têtes Internet personnalisés d’élément de message. Mode composition uniquement.
+- Ajout d’[Office.context.mailbox.masterCategories](office.context.mailbox.md#properties) : ajoute une nouvelle propriété représentant la liste principale des catégories d’une boîte aux lettres.
+- Ajout d’[Office.context.mailbox.item.categories](office.context.mailbox.item.md#properties) : ajoute une nouvelle propriété représentant l’ensemble des catégories d’une boîte aux lettres.
+- Ajout d’[Office.context.mailbox.item.addFileAttachmentFromBase64Async](office.context.mailbox.item.md#methods) : ajoute une nouvelle méthode qui vous permet de joindre un fichier à un message ou à un rendez-vous. Ce fichier est représenté par une chaîne encodée en base 64.
+- Ajout d’[Office.context.mailbox.item.enhancedLocation](office.context.mailbox.item.md#properties) : ajoute une nouvelle propriété représentant l’ensemble des lieux pour un rendez-vous.
+- Ajout d'[Office.context.mailbox.item.getAllInternetHeadersAsync](office.context.mailbox.item.md#methods) : ajoute une nouvelle méthode récupérant tous les en-têtes Internet pour un élément de message. Mode Lecture uniquement.
+- Ajout d’[Office.context.mailbox.item.getAttachmentContentAsync](office.context.mailbox.item.md#methods) : ajoute une nouvelle méthode pour obtenir le contenu d’une pièce jointe spécifique.
+- Ajout d’[Office.context.mailbox.item.getAttachmentsAsync](office.context.mailbox.item.md#methods) : ajoute une nouvelle méthode récupérant les pièces jointes à un élément en mode composition.
+- Ajout d’[Office.context.mailbox.item.getItemIdAsync](office.context.mailbox.item.md#methods) : ajoute une nouvelle méthode obtenant l’ID d’un rendez-vous ou d’un élément de message enregistré.
+- Ajout d’[Office.context.mailbox.item.getSharedPropertiesAsync](office.context.mailbox.item.md#methods) : ajout d’une nouvelle méthode obtenant un objet représentant les sharedProperties d’un rendez-vous ou d’un élément de message.
+- Ajout d’[Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#properties) : ajoute une nouvelle propriété représentant les en-têtes Internet personnalisés d’élément de message. Mode composition uniquement.
 - Modification d’[Event.Completed](/javascript/api/office/office.addincommands.event#completed-options-) : ajoute un nouveau paramètre facultatif `options`, qui est un dictionnaire dont la seule valeur valide est `allowEvent`. Cette valeur est utilisée pour annuler l’exécution d’un événement.
 - Ajout d’[Office.MailboxEnums.AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.8) : ajoute une nouvelle énumération spécifiant la mise en forme qui s’applique au contenu d’une pièce jointe.
 - Ajout d’[Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus?view=outlook-js-1.8) : ajoute une nouvelle énumération qui spécifie si une pièce jointe a été ajoutée à un élément ou supprimée d’un élément.
