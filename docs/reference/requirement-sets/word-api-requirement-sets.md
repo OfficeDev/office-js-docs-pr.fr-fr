@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API JavaScript pour Word
 description: Informations sur la configuration requise pour le complément Office sur les builds Word
-ms.date: 07/17/2019
+ms.date: 01/06/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 4af7a9c14489d148ffdc06a68ad6c26bf326abc5
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: c90daafe46d301b404ee902b38bb7417562adc44
+ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804624"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "40969530"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Word
 
@@ -32,7 +32,10 @@ Les compléments Word peuvent être exécutés dans différentes versions d’Of
 | [WordApi 1.1](word-api-1-1-requirement-set.md) | Version 1509 (Build 4266.1001) ou version ultérieure| Janvier 2016, 1.18 ou version ultérieure | Janvier 2016, 15.19 ou version ultérieure| Septembre 2016 |
 
 > [!NOTE]
-> Le numéro de build d’Office 2016 installé via MSI est 16.0.4266.1001. Cette version ne contient que l’ensemble d’exigences WordApi 1.1.
+> Les versions perpétuelles d'Office prennent en charge l'ensemble des conditions requises suivantes :
+>
+> - Office 2019 prend en charge WordApi 1.3 et versions antérieures.
+> - Office 2016 prend uniquement en charge l'ensemble des conditions requises de WordApi 1.1.
 
 ## <a name="office-versions-and-build-numbers"></a>Numéros de version et de build d’Office
 

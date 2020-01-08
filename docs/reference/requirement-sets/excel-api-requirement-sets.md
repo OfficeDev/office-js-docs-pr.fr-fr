@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API JavaScript pour Excel
 description: Informations sur la configuration requise pour le complément Office sur les builds Excel
-ms.date: 12/24/2019
+ms.date: 01/06/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: ce3a51c37128627765b587d1baef35d051c52917
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 742c2e925ed7b1be8e1449cd9021c6cf03519d7b
+ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851375"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "40969523"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Excel
 
@@ -40,7 +40,10 @@ Les compléments Excel peuvent être exécutés dans différentes versions d’O
 | [ExcelApi 1.1](excel-api-1-1-requirement-set.md)  | Version 1509 (Build 4266.1001) ou version ultérieure   | 1.19 ou version ultérieure | 15.20 ou version ultérieure | Janvier 2016 |
 
 > [!NOTE]
-> Le numéro de build d’Office 2016 installé via MSI est 16.0.4266.1001. Cette version ne contient que l’ensemble de conditions requises de l’ExcelApi 1.1.
+> Les versions perpétuelles d'Office prennent en charge l'ensemble des conditions requises suivantes :
+>
+> - Office 2019 prend en charge ExcelApi 1.8 et versions antérieures.
+> - Office 2016 prend uniquement en charge l'ensemble des conditions requises de ExcelApi 1.1.
 
 ## <a name="office-versions-and-build-numbers"></a>Numéros de version et de build d’Office
 

@@ -631,6 +631,9 @@
         - name: Ensembles de conditions requises
           href: excel/custom-functions-requirement-sets.md
           displayName: 'Excel, Custom Functions'
+        - name: Retourne un tableau dynamique
+          href: excel/custom-functions-dynamic-arrays.md
+          displayName: 'Excel, Custom Functions'
         - name: Runtime
           href: excel/custom-functions-runtime.md
           displayName: 'Excel, Custom Functions'
