@@ -1,16 +1,16 @@
 ---
-ms.date: 09/26/2019
+ms.date: 12/28/2019
 description: Créer des fonctions personnalisées dans Excel à l’aide de JavaScript.
 title: Créer des fonctions personnalisées dans Excel
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 252ff1badd935dda161f474bb7fefa8e782fd1c4
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: 331fe37bdeed55123cb1530f235fc31c00735548
+ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814464"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "40969551"
 ---
 # <a name="create-custom-functions-in-excel"></a>Créer des fonctions personnalisées dans Excel 
 
@@ -136,6 +136,8 @@ Le marquage XML suivant présente un exemple des éléments`<ExtensionPoint>` et
 
 > [!NOTE]
 > Les fonctions dans Excel sont précédées par l’espace de noms spécifié dans votre fichier manifeste XML. L’espace de noms d’une fonction vient avant le nom de fonction et les deux sont séparés par un point. Par exemple, pour appeler la fonction `ADD42` dans la cellule de feuille de calcul Excel, vous saisiriez `=CONTOSO.ADD42`, car `CONTOSO` est l’espace de noms et `ADD42` est le nom de la fonction spécifié dans le fichier JSON. L’espace de noms est destiné à être utilisé comme identificateur de votre entreprise ou du complément. Un espace de noms ne peut contenir que des points et des caractères alphanumériques.
+
+[!include[manifest guidance](../includes/manifest-guidance.md)]
 
 ## <a name="coauthoring"></a>Co-création
 

@@ -1,14 +1,14 @@
 ---
 title: Problèmes de codage courants et comportements de plateforme inattendus
 description: Liste des problèmes de plateforme d’API JavaScript pour Office fréquemment rencontrés par les développeurs.
-ms.date: 12/05/2019
+ms.date: 01/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 4271db2a9c61de419dd36fb0277574ffe0929c58
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: fa33451550ab02f76a8b41ebf682e6a73d2a3a96
+ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814011"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "40969492"
 ---
 # <a name="common-coding-issues-and-unexpected-platform-behaviors"></a>Problèmes de codage courants et comportements de plateforme inattendus
 
@@ -47,15 +47,15 @@ readDocumentFileAsync(): Promise<any> {
 > [!NOTE]
 > La documentation de référence contient l’implémentation encapsulée de [fichier. getSliceAsync](/javascript/api/office/office.file#getsliceasync-sliceindex--callback-).
 
-## <a name="some-properties-must-be-set-with-json-structs"></a>Certaines propriétés doivent être définies avec des structs JSON
+## <a name="some-properties-cannot-be-set-directly"></a>Certaines propriétés ne peuvent pas être définies directement
 
 > [!NOTE]
 > Cette section s’applique uniquement aux API propres à l’hôte pour Excel et Word.
 
-Certaines propriétés doivent être définies en tant que structs JSON, au lieu de définir leurs sous-propriétés individuelles. Vous trouverez un exemple dans [PageLayout](/javascript/api/excel/excel.pagelayout). La `zoom` propriété doit être définie avec un seul objet [PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) , comme illustré ci-dessous :
+Certaines propriétés ne peuvent pas être définies, bien qu’elles soient accessibles en écriture. Ces propriétés font partie d’une propriété parent qui doit être définie en tant qu’objet unique. Cela est dû au fait que cette propriété Parent repose sur les sous-propriétés ayant des relations logiques spécifiques. Ces propriétés parent doivent être définies à l’aide de la notation littérale d’objet pour définir l’objet entier, au lieu de définir les sous-propriétés individuelles de cet objet. Vous trouverez un exemple dans [PageLayout](/javascript/api/excel/excel.pagelayout). La `zoom` propriété doit être définie avec un seul objet [PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) , comme illustré ci-dessous :
 
 ```js
-// PageLayout.zoom must be set with JSON struct representing the PageLayoutZoomOptions object.
+// PageLayout.zoom.scale must be set by assigning PageLayout.zoom to a PageLayoutZoomOptions object.
 sheet.pageLayout.zoom = { scale: 200 };
 ```
 
@@ -68,10 +68,10 @@ Ce comportement diffère des [Propriétés de navigation](../excel/excel-add-ins
 range.format.font.size = 10;
 ```
 
-Vous pouvez identifier une propriété dont les propriétés subordonnées doivent être définies avec un struct JSON en vérifiant son modificateur en lecture seule. Les propriétés non en lecture seule de toutes les propriétés en lecture seule peuvent être définies directement. Les propriétés accessibles en `PageLayout.zoom` écriture comme doivent être définies avec une structure JSON. En Résumé :
+Vous pouvez identifier une propriété qui ne peut pas avoir ses sous-propriétés directement définies en vérifiant son modificateur en lecture seule. Les propriétés non en lecture seule de toutes les propriétés en lecture seule peuvent être définies directement. Les propriétés accessibles en `PageLayout.zoom` écriture comme doivent être définies avec un objet à ce niveau. En Résumé :
 
 - Propriété en lecture seule : les sous-propriétés peuvent être définies via la navigation.
-- Propriété accessible en écriture : les sous-propriétés doivent être définies avec une structure JSON (et ne peuvent pas être définies via la navigation).
+- Propriété accessible en écriture : les sous-propriétés ne peuvent pas être définies par le biais de la navigation (elles doivent être définies dans le cadre de l’attribution initiale de l’objet parent).
 
 ## <a name="excel-data-transfer-limits"></a>Limites de transfert de données Excel
 

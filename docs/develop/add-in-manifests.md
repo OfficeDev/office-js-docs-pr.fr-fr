@@ -1,14 +1,14 @@
 ---
 title: Manifeste XML des compléments Office
 description: ''
-ms.date: 12/31/2019
+ms.date: 01/06/2020
 localization_priority: Priority
-ms.openlocfilehash: 1d130d041819ce7e65046b9cda84fc645bed2c51
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
+ms.openlocfilehash: 90fef1186db6411290daf9b6aef14d8d81d7a13e
+ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40914992"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "40970091"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifeste XML des compléments Office
 
@@ -30,6 +30,8 @@ Un fichier de manifeste XML basé sur ce schéma permet à un Complément Office
 
 > [!NOTE]
 > Si vous prévoyez de [publier](../publish/publish.md) votre complément sur AppSource et de le rendre disponible dans l’expérience Office, assurez-vous que vous respectez les [stratégies de validation AppSource](/office/dev/store/validation-policies). Par exemple, pour réussir la validation, votre complément doit fonctionner sur toutes les plateformes prenant en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) et la [page relative à la disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md)).
+
+[!include[manifest guidance](../includes/manifest-guidance.md)]
 
 ## <a name="required-elements"></a>Éléments requis
 
@@ -506,6 +508,6 @@ Pour plus d’informations sur la validation d’un manifeste par rapport à la 
 * [Mettre à jour la version du manifeste et de l’API](update-your-javascript-api-for-office-and-manifest-schema-version.md)
 * [Identifier un complément COM équivalent](make-office-add-in-compatible-with-existing-com-add-in.md)
 * [Demande d’autorisations d’utilisation de l’API dans des compléments](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
-* <bpt id="p1">[</bpt>Validate an Office Add-in's manifest<ept id="p1">](../testing/troubleshoot-manifest.md)</ept>
+* [Valider le manifeste d’un complément Office](../testing/troubleshoot-manifest.md)
 
 [commandes de complément]: create-addin-commands.md

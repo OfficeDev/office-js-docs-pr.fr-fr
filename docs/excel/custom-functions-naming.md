@@ -1,14 +1,14 @@
 ---
-ms.date: 07/10/2019
+ms.date: 12/28/2019
 description: Découvrez les conditions requises pour les noms des fonctions personnalisées Excel et éviter les pièges de dénomination courants.
 title: Instructions d’affectation de noms pour les fonctions personnalisées dans Excel
 localization_priority: Normal
-ms.openlocfilehash: 79d0bfb069fe5abefeb6d0e88428d0728f3869e3
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 547d1edd1a8103afce8b233f77085296cd85642b
+ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771532"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "40969513"
 ---
 # <a name="naming-guidelines"></a>Instructions d’attribution de noms
 
@@ -21,7 +21,7 @@ Une fonction personnalisée est identifiée par un **ID** et une propriété de 
 
 Une fonction `name` peut différer de la `id`fonction, par exemple à des fins de localisation. En règle générale, les fonctions `name` d’une fonction doivent rester les `id` mêmes que s’il n’y a aucune raison impérieuse de les différencier.
 
-Une fonction `name` et `id` partagent des exigences communes:
+Une fonction `name` et `id` partagent des exigences communes :
 
 - Une fonction `id` ne peut utiliser que les caractères A à Z, les chiffres 0 à 9, les traits de soulignement et les points.
 
@@ -31,7 +31,7 @@ Une fonction `name` et `id` partagent des exigences communes:
 
 Excel utilise des lettres majuscules pour les noms de fonctions intégrées ( `SUM`par exemple,). Par conséquent, envisagez d’utiliser des lettres majuscules `id` pour votre fonction personnalisée et constitue `name` une meilleure pratique.
 
-Une fonction `name` ne doit pas être nommée de la manière suivante:
+Une fonction `name` ne doit pas être nommée de la manière suivante :
 
 - Toutes les cellules comprises entre a1 et XFD1048576 ou toutes les cellules comprises entre R1C1 et R1048576C16384.
 
@@ -39,7 +39,7 @@ Une fonction `name` ne doit pas être nommée de la manière suivante:
 
 ## <a name="naming-conflicts"></a>Conflits de noms
 
-Si votre fonction `name` est identique à une fonction `name` dans un complément qui existe déjà, le **#REF!** une erreur apparaît dans votre classeur.
+Si votre fonction `name` est identique à une fonction `name` dans un complément qui existe déjà, le **#REF !** une erreur apparaît dans votre classeur.
 
 Pour résoudre un conflit d’affectation de noms `name` , modifiez le dans votre complément et renouvelez la fonction. Vous pouvez également désinstaller le complément avec le nom conflictuel. Ou, si vous testez votre complément dans différents environnements, essayez d’utiliser un espace de noms différent pour différencier votre fonction ( `NAMESPACE_NAMEOFFUNCTION`telle que).
 
@@ -50,6 +50,8 @@ Pour résoudre un conflit d’affectation de noms `name` , modifiez le dans votr
 - Évitez les abréviations ambiguës dans les noms de fonction. La clarté est plus importante que la concision. Choisissez un nom tel `=INCREASETIME` que plutôt `=INC`que.
 - Utilisez régulièrement les mêmes verbes pour les fonctions qui effectuent des actions similaires. Par exemple, utilisez `=DELETEZIPCODE` and `=DELETEADDRESS`, et non `=DELETEZIPCODE` et `=REMOVEADDRESS`.
 - Lorsque vous nommez une fonction de diffusion en continu, envisagez d’ajouter une note à cet effet `STREAM` dans la description de la fonction ou d’ajouter à la fin du nom de la fonction.
+
+[!include[manifest guidance](../includes/manifest-guidance.md)]
 
 ## <a name="localizing-function-names"></a>Localisation des noms de fonction
 
