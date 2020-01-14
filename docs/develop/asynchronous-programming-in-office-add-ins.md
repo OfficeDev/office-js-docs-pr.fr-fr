@@ -3,18 +3,18 @@ title: Programmation asynchrone dans des compléments Office
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: a20fe435a9cdff97ed77496ad3aaaf48b1cbbc7f
-ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
+ms.openlocfilehash: 9a653f85a368688bdf2690ab6c564352f2ee611a
+ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37468748"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "41110905"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Programmation asynchrone dans des compléments Office
 
 Pourquoi l’API de Compléments Office a-t-elle recours à la programmation asynchrone ?JavaScript étant un langage monothread, si le script appelle un processus synchrone de longue durée, toute exécution de script ultérieure sera bloquée tant que ce processus ne sera pas terminé. Comme certaines opérations, notamment celles agissant sur les clients web Office (mais aussi sur les clients riches), peuvent bloquer l’exécution si elles sont exécutées de façon synchrone, la plupart des méthodes dans l’interface API JavaScript pour Office sont conçues pour être exécutées de façon asynchrone. Cela permet de garantir que les Compléments Office sont réactifs et très performants. Vous devez donc fréquemment écrire des fonctions de rappel lorsque vous utilisez ces méthodes asynchrones.
 
-Le nom de toutes les méthodes asynchrones de l’API se terminent par « Async », comme pour les méthodes [Document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-), [Binding.getDataAsync](/javascript/api/office/office.binding#getdataasync-options--callback-) ou [Item.loadCustomPropertiesAsync](/javascript/api/outlook/office.item#loadcustompropertiesasync-callback--usercontext-). Lorsqu’une méthode « Async » est appelée, elle est exécutée immédiatement et toute exécution de script ultérieure peut se poursuivre normalement. La fonction de rappel facultative que vous transmettez à une méthode « Async » s’exécute dès que l’opération demandée ou les données sont prêtes. L’opération est généralement rapide, mais le retour pourrait présenter un léger retard.
+Le nom de toutes les méthodes asynchrones de l’API se terminent par « Async », comme pour les méthodes `Document.getSelectedDataAsync`, `Binding.getDataAsync` ou `Item.loadCustomPropertiesAsync`. Lorsqu’une méthode « Async » est appelée, elle est exécutée immédiatement et toute exécution de script ultérieure peut se poursuivre normalement. La fonction de rappel facultative que vous transmettez à une méthode « Async » s’exécute dès que l’opération demandée ou les données sont prêtes. L’opération est généralement rapide, mais le retour pourrait présenter un léger retard.
 
 Le diagramme suivant présente le flux d’exécution d’un appel à une méthode « Async » qui lit les données sélectionnées par l’utilisateur dans un document ouvert dans l’instance Word ou Excel sur le serveur. Au moment où l’appel « Async » est effectué, le thread d’exécution JavaScript est libre d’effectuer tout traitement côté client supplémentaire (même si aucun n’est affiché dans le diagramme). Lors du retour de la méthode « Async », l’appel reprend l’exécution sur le thread et le complément peut accéder aux données, les exploiter et afficher le résultat. Le même motif d’exécution asynchrone est employé en cas d’utilisation des applications hôtes de client riche Office, telles que Word 2013 ou Excel 2013.
 

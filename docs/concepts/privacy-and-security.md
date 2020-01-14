@@ -3,12 +3,12 @@ title: Confidentialité et sécurité pour les compléments Office
 description: ''
 ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: b40b10a0f2475a9013eb4186c852e07bfb60154f
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 88f03bed084484a98d4719fb9caacf174b13acda
+ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851298"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "41110933"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Confidentialité et sécurité pour les compléments Office
 
@@ -168,7 +168,7 @@ function loadVideoDetails(videoIndex) {
 }
 ```
 
-Exchange et SharePoint sont des proxys côté client qui permettent un accès sur plusieurs domaines. En général, la stratégie d’origine identique sur un intranet n’est pas aussi stricte que sur Internet. Pour plus d’informations, voir [Stratégie d’origine identique Partie 1 : Interdiction de regarder](https://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx) et [Résolution des limites de stratégie d’origine identique dans les compléments Office](../develop/addressing-same-origin-policy-limitations.md).
+Exchange et SharePoint sont des proxys côté client qui permettent un accès sur plusieurs domaines. En général, la stratégie d’origine identique sur un intranet n’est pas aussi stricte que sur Internet. Pour plus d’informations, voir [Stratégie d’origine identique Partie 1 : Interdiction de regarder](/archive/blogs/ieinternals/same-origin-policy-part-1-no-peeking) et [Résolution des limites de stratégie d’origine identique dans les compléments Office](../develop/addressing-same-origin-policy-limitations.md).
 
 ### <a name="tips-to-prevent-malicious-cross-site-scripting"></a>Conseils pour éviter les scripts intersites malveillants
 
@@ -265,6 +265,6 @@ La gestion et l’application des paramètres Office s’effectuent avec des par
 - [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
 - [Résolutions des limites de stratégie d’origine identique dans les compléments Office](/office/dev/add-ins/develop/addressing-same-origin-policy-limitations)
 - [Stratégie d’origine identique](https://www.w3.org/Security/wiki/Same_Origin_Policy)
-- [Stratégie d’origine identique Partie 1 : Interdiction de regarder](https://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)
+- [Stratégie d’origine identique Partie 1 : Interdiction de regarder](/archive/blogs/ieinternals/same-origin-policy-part-1-no-peeking)
 - [Stratégie d’origine identique pour JavaScript](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)
 - [Mode de protection d’Internet Explorer](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)
