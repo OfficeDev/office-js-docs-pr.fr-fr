@@ -24,6 +24,8 @@
           href: quickstarts/project-quickstart.md
         - name: Complément Word
           href: quickstarts/word-quickstart.md
+        - name: "Authentification unique\_(SSO)"
+          href: quickstarts/sso-quickstart-redirect.md
     - name: Explorer les API Office JS à l’aide de Script Lab
       href: overview/explore-with-script-lab.md
       displayName: 'Excel, Word, PowerPoint'
@@ -76,6 +78,8 @@
               items:
                 - name: Activer l’authentification unique
                   href: develop/sso-in-office-add-ins.md
+                - name: Démarrage rapide authentification unique
+                  href: quickstarts/sso-quickstart.md
                 - name: Autoriser la connexion à Microsoft Graph avec l’authentification unique
                   href: develop/authorize-to-microsoft-graph.md
                 - name: Créer un complément d’authentification unique à l’aide d’ASP.NET
@@ -364,6 +368,10 @@
               href: reference/manifest/requirements.md
             - name: Rule
               href: reference/manifest/rule.md
+            - name: Runtime
+              href: reference/manifest/runtime.md
+            - name: Services d’exécution
+              href: reference/manifest/runtimes.md
             - name: Set
               href: reference/manifest/set.md
             - name: documents
