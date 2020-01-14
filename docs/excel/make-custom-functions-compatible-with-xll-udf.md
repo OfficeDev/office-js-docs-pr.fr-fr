@@ -3,12 +3,12 @@ title: Étendre des fonctions personnalisées avec des fonctions XLL définies p
 description: Activer la compatibilité avec les fonctions Excel XLL définies par l’utilisateur qui offrent une fonctionnalité équivalente à vos fonctions personnalisées
 ms.date: 07/31/2019
 localization_priority: Normal
-ms.openlocfilehash: a0a98dab1ec046151d2dd0d80a4a3a4542654574
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.openlocfilehash: d8b5349aecad1bdd6bd9f8e00b6c09bcb0071377
+ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353880"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "41111073"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>Étendre des fonctions personnalisées avec des fonctions XLL définies par l’utilisateur
 
@@ -16,7 +16,7 @@ Si vous avez des XLL Excel existantes, vous pouvez créer des fonctions personna
 
 > [!NOTE]
 > Le complément COM et la compatibilité UDF XLL sont pris en charge par les plateformes suivantes, lorsqu’ils sont connectés à un abonnement Office 365 :
-> - Excel sur le Web
+> - Excel sur le web
 > - Excel sur Windows (version 1904 ou ultérieure)
 > - Excel sur Mac (version 13,329 ou ultérieure)
 > 
@@ -49,10 +49,6 @@ L’exemple suivant montre comment spécifier un complément COM et un XLL comme
 
 > [!NOTE]
 > Si un complément déclare ses fonctions personnalisées comme étant compatibles XLL, la modification du manifeste ultérieurement pourrait entraîner la rupture du classeur d’un utilisateur, car il modifiera le format de fichier.
-
-## <a name="excel-add-in-updates"></a>Mises à jour des compléments Excel
-
-Une fois que vous avez spécifié une XLL équivalente pour votre complément Excel, Excel cesse de traiter les mises à jour pour votre complément Excel. L’utilisateur doit désinstaller le XLL afin d’obtenir les dernières mises à jour pour le complément Excel.
 
 ## <a name="custom-function-behavior-for-xll-compatible-functions"></a>Comportement des fonctions personnalisées pour les fonctions compatibles XLL
 
