@@ -1,23 +1,23 @@
 ---
 title: Création d’un complément Office Node.js qui utilise l’authentification unique
 description: Apprenez à créer un complément basé sur Node.js utilisant l’authentification unique Office.
-ms.date: 11/20/2019
+ms.date: 01/13/2020
 localization_priority: Priority
-ms.openlocfilehash: 362ca4a534800a683284b049e6e53776b1aa7f38
-ms.sourcegitcommit: 013886c1b08ef2b378cf80bb88bc73ec56c3e869
+ms.openlocfilehash: 140a18628ae03d842482721394d976207cb7fa37
+ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "39191738"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "41111066"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office Node.js qui utilise l’authentification unique (aperçu)
 
 Les utilisateurs peuvent se connecter à Office et votre complément Web Office peut tirer parti de cette procédure de connexion pour autoriser les utilisateurs à accéder à votre complément et à Microsoft Graph sans obliger les utilisateurs à se connecter une deuxième fois. Pour obtenir une vue d’ensemble, consultez [Activer l’authentification unique pour des compléments Office](sso-in-office-add-ins.md).
 
-Cet article vous guide tout au long du processus d’activation de l’authentification unique (SSO) dans un complément intégré à Node.js et Express.
+Cet article vous guide tout au long du processus d’activation de l’authentification unique (SSO) dans un complément intégré à Node.js et Express. Pour voir un article similaire sur un complément basé sur ASP.NET, reportez-vous à [Créer un complément Office ASP.NET qui utilise l’authentification unique](create-sso-office-add-ins-aspnet.md).
 
 > [!NOTE]
-> Pour voir un article similaire sur un complément basé sur ASP.NET, reportez-vous à [Créer un complément Office ASP.NET qui utilise l’authentification unique](create-sso-office-add-ins-aspnet.md).
+> Au lieu de suivre les étapes décrites dans cet article, vous pouvez utiliser le générateur d'Yeoman pour créer un complément Office compatible avec l’authentification unique, Node.js. Le générateur d’Yeoman simplifie le processus de création d’un complément avec authentification unique en automatisant les étapes nécessaires pour configurer l’authentification unique dans Azure et la génération du code nécessaire pour qu’un complément utilise l’authentification unique. Pour plus d'informations, consultez [Démarrage rapide de l'authentification unique](../quickstarts/sso-quickstart.md).
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -33,7 +33,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 * Au moins des fichiers et classeurs sont stockés sur OneDrive Entreprise dans votre abonnement Office 365.
 
-* Un locataire Microsoft Azure. Ce complément requiert Azure Active Directory (AD). Azure AD fournit des services d’identité que les applications utilisent à des fins d’authentification et d’autorisation. Un abonnement d’évaluation peut être obtenu sur le site de [Microsoft Azure](https://account.windowsazure.com/SignUp).
+* Un abonnement Microsoft Azure. Ce complément requiert Azure Active Directory (AD). Azure AD fournit des services d’identité que les applications utilisent à des fins d’authentification et d’autorisation. Un abonnement d’évaluation peut être obtenu sur le site de [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
 ## <a name="set-up-the-starter-project"></a>Configurer le projet de démarrage
 
@@ -42,7 +42,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     > [!NOTE]
     > Il existe trois versions de l’échantillon :  
     > * Le dossier **Before** est un projet de démarrage. L’interface utilisateur et d’autres aspects du complément qui ne sont pas directement liés à l’authentification unique ou à l’autorisation sont déjà terminés. Les sections suivantes de cet article vous guident tout au long de la procédure d’exécution de cette dernière.
-    > * La version **Complète** de l’échantillon s’apparente au complément obtenu si vous aviez terminé les procédures de cet article, sauf que le projet final comporte des commentaires de code qui seraient redondants avec le texte de cet article. Pour utiliser la version finale, suivez simplement les instructions de cet article, mais remplacez « Avant » par « Finale » et ignorez les sections **Code côté client** et Code côté serveur.
+    > * La version **Complète** de l’échantillon s’apparente au complément obtenu si vous aviez terminé les procédures de cet article, sauf que le projet final comporte des commentaires de code qui seraient redondants avec le texte de cet article. Pour utiliser la version finale, suivez simplement les instructions de cet article, mais remplacez « Avant » par « Finale » et ignorez les sections **Code côté client** et **Code côté serveur**.
     > * La version **SSOAutoSetup** est un exemple complet qui permet d’automatiser la plupart des étapes d’inscription du complément avec Azure AD et sa configuration. Utilisez cette version si vous voulez rapidement afficher un complément opérationnel avec SSO. Suivez simplement les étapes décrites dans le fichier Lisez-moi du dossier. Nous vous recommandons, à un certain point, de suivre les étapes d’inscription et de configuration manuelles décrites dans cet article pour mieux comprendre la relation entre Azure AD et un complément. 
 
 

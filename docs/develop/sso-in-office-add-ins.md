@@ -1,14 +1,14 @@
 ---
 title: Activer l’authentification unique pour des compléments Office
 description: ''
-ms.date: 11/11/2019
+ms.date: 01/13/2020
 localization_priority: Priority
-ms.openlocfilehash: e32f9429ee05772b1a36f5e3408eb775cc03919a
-ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
+ms.openlocfilehash: 0a42928df7e29890fcb04a417588f7a93fdeacfd
+ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "38301938"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "41111136"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Activer l’authentification unique pour des compléments Office (aperçu)
 
@@ -16,7 +16,7 @@ Users sign in to Office (online, mobile, and desktop platforms) using either the
 
 ![Image illustrant le processus de connexion pour un complément](../images/office-host-title-bar-sign-in.png)
 
-### <a name="preview-status"></a>État de Prévisualisation
+## <a name="preview-status"></a>État de Prévisualisation
 
 L’API de l’authentification unique est actuellement prise en charge uniquement en prévisualisation. Elle est disponible pour les développeurs à des fins d’expérimentation ; mais elle ne doit pas être utilisée dans un complément de production. Par ailleurs, les compléments qui utilisent l’authentification unique SSO ne sont pas acceptés dans [AppSource](https://appsource.microsoft.com).
 
@@ -24,7 +24,7 @@ L’authentification unique requiert Office 365 (version d’Office par abonnem
 
 Toutes les applications Office ne prennent pas en charge la prévisualisation de l’authentification unique (SSO). Elle est disponible dans Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur l’endroit où l’API d’authentification unique est actuellement prise en charge, consultez la rubrique [Ensembles de conditions requises de l’API d’identité](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets).
 
-### <a name="requirements-and-best-practices"></a>Meilleures Pratiques et Conditions Requises
+## <a name="requirements-and-best-practices"></a>Meilleures Pratiques et Conditions Requises
 
 > [!NOTE]
 > [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
@@ -33,7 +33,7 @@ Si vous utilisez un complément** Outlook**, veillez à activer l’Authentifica
 
 Vous ne devez*pas* dépendre de l’authentification unique SSO comme seule méthode de votre complément d’authentification. Vous devez implémenter un système d’authentification secondaire vers lequel votre complément peut revenir dans certaines situations d’erreur. Vous pouvez utiliser un système de tableaux d’utilisateur et d’authentification, ou vous pouvez tirer parti d’un des fournisseurs de connexion sociale. Pour plus d’informations sur la procédure à suivre avec un complément Office, voir[Services externes autorisées dans votre complément Office](/office/dev/add-ins/develop/auth-external-add-ins). Concernant*Outlook*, il existe un système de secours recommandé. Pour plus d’informations, voir[Scénario : Implémenter l’authentification unique sur votre service dans un complément Outlook](/outlook/add-ins/implement-sso-in-outlook-add-in). Pour consulter des exemples d’utilisation d’Azure Active Directory comme système de secours, voir [SSO NodeJS pour complément Office](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO) et [SSO ASP.NET pour complément Office](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO).
 
-### <a name="how-sso-works-at-runtime"></a>Mode de fonctionnement de l’authentification unique SSO en cours d’exécution
+## <a name="how-sso-works-at-runtime"></a>Mode de fonctionnement de l’authentification unique SSO en cours d’exécution
 
 Le diagramme suivant illustre le mode de fonctionnement du processus d’authentification unique SSO.
 
@@ -54,6 +54,9 @@ Cette section décrit les tâches impliquées dans la création d’un compléme
 
 * [Créer un complément Office Node.js qui utilise l’authentification unique](create-sso-office-add-ins-nodejs.md)
 * [Créer un complément Office ASP.NET qui utilise l’authentification unique](create-sso-office-add-ins-aspnet.md)
+
+> [!NOTE]
+> Vous pouvez utiliser le générateur Yeoman pour créer votre complément Office compatible avec l’authentification unique, Node.js.. Le générateur Yeoman simplifie le processus de création d’un complément avec authentification unique en automatisant les étapes nécessaires pour configurer l’authentification unique dans Azure et la génération du code nécessaire pour qu’un complément utilise l’authentification unique. Pour plus d'informations, consultez [Démarrage rapide de l'authentification unique](../quickstarts/sso-quickstart.md).
 
 ### <a name="create-the-service-application"></a>Créer l’application de service
 

@@ -3,12 +3,12 @@ title: Créer un complément Office ASP.NET qui utilise l’authentification uni
 description: ''
 ms.date: 12/04/2019
 localization_priority: Priority
-ms.openlocfilehash: dac45fd713de8787bd6e51f68d139915d3f572f9
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: ed648b82804d6658f3b92c5cba8d636e6dddf34b
+ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814102"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "41111059"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office ASP.NET qui utilise l’authentification unique (aperçu)
 
@@ -28,7 +28,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 * Au moins des fichiers et classeurs sont stockés sur OneDrive Entreprise dans votre abonnement Office 365.
 
-* Un locataire Microsoft Azure. Ce complément requiert Azure Active Directory (AD). Azure AD fournit des services d’identité que les applications utilisent à des fins d’authentification et d’autorisation. Un abonnement d’évaluation peut être obtenu sur le site de [Microsoft Azure](https://account.windowsazure.com/SignUp).
+* Un abonnement Microsoft Azure. Ce complément requiert Azure Active Directory (AD). Azure AD fournit des services d’identité que les applications utilisent à des fins d’authentification et d’autorisation. Un abonnement d’évaluation peut être obtenu sur le site de [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
 ## <a name="set-up-the-starter-project"></a>Configurer le projet de démarrage
 
