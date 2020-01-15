@@ -1,22 +1,18 @@
 ---
 title: Runtime dans le fichier manifeste
 description: ''
-ms.date: 01/06/2020
+ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 68def44ba74733934198ac3b32fa1fe649156766
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: 945a30527632b23a594d7bfb82cec94e74754249
+ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111169"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "41120634"
 ---
 # <a name="runtime-element"></a>Élément Runtime
 
-Cette fonctionnalité est en aperçu. Élément enfant de l' [`<Runtimes>`](runtime.md) élément. Cet élément facilite le partage des données globales et des appels de fonction entre des fonctions personnalisées Excel et le volet Office de votre complément. 
-
-## <a name="contained-in"></a>Contenu dans
-
--[Runtimes](runtimes.md)
+Cette fonctionnalité est en aperçu. Élément enfant de l' [`<Runtimes>`](runtime.md) élément. Cet élément facilite le partage des données globales et des appels de fonction entre des fonctions personnalisées Excel et le volet Office de votre complément.
 
 **Type de complément :** volet Office
 
@@ -27,6 +23,10 @@ Cette fonctionnalité est en aperçu. Élément enfant de l' [`<Runtimes>`](runt
     <Runtime resid="TaskPaneAndCustomFunction.Url" lifetime="long" />
 </Runtimes>
 ```
+
+## <a name="contained-in"></a>Contenu dans
+
+-[Runtimes](runtimes.md)
 
 ## <a name="attributes"></a>Attributs
 
