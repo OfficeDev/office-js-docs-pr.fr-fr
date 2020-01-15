@@ -3,12 +3,12 @@ title: Déboguer des compléments Office dans Visual Studio
 description: Utiliser Visual Studio pour déboguer des compléments Office dans le client de bureau Office sous Windows
 ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: 15121834dc53e31c8872b8ff87ce6a1a58608a6f
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
+ms.openlocfilehash: bf8e20891709f8d9d4d4e786976730c58406b803
+ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40915057"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "41120627"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Déboguer des compléments Office dans Visual Studio
 
@@ -20,6 +20,8 @@ Cet article décrit comment utiliser Visual Studio 2019 pour déboguer un compl�
 ## <a name="enable-debugging-for-add-in-commands-and-ui-less-code"></a>Activer le débogage pour les commandes de compléments et les codes sans interface utilisateur
 
 Lors du débogage d’Office sous Windows par Visual Studio, le complément est hébergé dans une instance du navigateur Microsoft Internet Explorer ou Microsoft Edge. Pour identifier le navigateur utilisé sur votre ordinateur de développement, consultez [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md).
+> [!NOTE]
+> La variable d'environnement JS_Debug n'est plus nécessaire dans la procédure ci-après. Pour plus d’informations, voir [Comportements de débogage dans les compléments web Office](https://developercommunity.visualstudio.com/content/problem/740413/office-development-inconsistent-script-debugging-b.html) sur le forum de support de la Communauté des développeurs Microsoft.
 
 [!include[Enable debugging on Microsoft Edge DevTools](../includes/enable-debugging-on-edge-devtools.md)]
 
