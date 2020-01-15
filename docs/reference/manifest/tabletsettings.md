@@ -1,30 +1,46 @@
 ---
 title: Élément TabletSettings dans le fichier manifeste
 description: ''
-ms.date: 10/09/2018
+ms.date: 01/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 16ef4f47cd9a499407cf9b8637376bd0b35a5d10
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 977fc2a781f3b93e4eb36041473c683196314adb
+ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451989"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "41120620"
 ---
-# <a name="tabletsettings-element"></a><span data-ttu-id="a750c-102">TabletSettings, élément</span><span class="sxs-lookup"><span data-stu-id="a750c-102">TabletSettings element</span></span>
+# <a name="tabletsettings-element"></a><span data-ttu-id="9797e-102">TabletSettings, élément</span><span class="sxs-lookup"><span data-stu-id="9797e-102">TabletSettings element</span></span>
 
-<span data-ttu-id="a750c-103">Spécifie les paramètres de contrôle qui s’appliquent lorsque votre complément de messagerie est utilisé sur une tablette.</span><span class="sxs-lookup"><span data-stu-id="a750c-103">Specifies control settings that apply when your mail add-in is used on a tablet.</span></span>
+<span data-ttu-id="9797e-103">Spécifie les paramètres de contrôle qui s’appliquent lorsque votre complément de messagerie est utilisé sur une tablette.</span><span class="sxs-lookup"><span data-stu-id="9797e-103">Specifies control settings that apply when your mail add-in is used on a tablet.</span></span>
 
-<span data-ttu-id="a750c-104">**Type de complément :** messagerie</span><span class="sxs-lookup"><span data-stu-id="a750c-104">**Add-in type:** Mail</span></span>
+> [!IMPORTANT]
+> <span data-ttu-id="9797e-104">L' `TabletSettings` élément est disponible uniquement dans les versions classiques d’Outlook sur le Web (généralement connectées à des versions antérieures du serveur Exchange local) et Outlook 2013 sur Windows.</span><span class="sxs-lookup"><span data-stu-id="9797e-104">The `TabletSettings` element is available only in classic Outlook on the web (usually connected to older versions of on-premises Exchange server) and Outlook 2013 on Windows.</span></span> <span data-ttu-id="9797e-105">Pour prendre en charge Outlook sur Android et iOS, reportez-vous à la rubrique [compléments pour Outlook Mobile](/outlook/add-ins/outlook-mobile-addins).</span><span class="sxs-lookup"><span data-stu-id="9797e-105">To support Outlook on Android and iOS, see [Add-ins for Outlook Mobile](/outlook/add-ins/outlook-mobile-addins).</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="a750c-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a750c-105">Syntax</span></span>
+<span data-ttu-id="9797e-106">**Type de complément :** messagerie</span><span class="sxs-lookup"><span data-stu-id="9797e-106">**Add-in type:** Mail</span></span>
+
+## <a name="syntax"></a><span data-ttu-id="9797e-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9797e-107">Syntax</span></span>
 
 ```XML
-<TabletSettings>
-   ...
-</TabletSettings>
+<Form xsi:type="ItemRead">
+   <!--website.html is a placeholder for your own add-in website.-->
+   <DesktopSettings>
+      <SourceLocation DefaultValue="https://website.html" />
+      <!--RequestedHeight must be between 240px to 800px, inclusive.-->
+      <RequestedHeight>360</RequestedHeight>
+   </DesktopSettings>
+   <TabletSettings>
+      <SourceLocation DefaultValue="https://website.html" />
+      <!--RequestedHeight must be between 240px to 800px, inclusive.-->
+      <RequestedHeight>360</RequestedHeight>
+   </TabletSettings>
+   <PhoneSettings>
+      <SourceLocation DefaultValue="https://website.html" />
+   </PhoneSettings>
+</Form>
 ```
 
-## <a name="contained-in"></a><span data-ttu-id="a750c-106">Contenu dans</span><span class="sxs-lookup"><span data-stu-id="a750c-106">Contained in</span></span>
+## <a name="contained-in"></a><span data-ttu-id="9797e-108">Contenu dans</span><span class="sxs-lookup"><span data-stu-id="9797e-108">Contained in</span></span>
 
-[<span data-ttu-id="a750c-107">Form</span><span class="sxs-lookup"><span data-stu-id="a750c-107">Form</span></span>](form.md)
+[<span data-ttu-id="9797e-109">Form</span><span class="sxs-lookup"><span data-stu-id="9797e-109">Form</span></span>](form.md)
 
