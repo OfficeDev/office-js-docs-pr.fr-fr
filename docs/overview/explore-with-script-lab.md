@@ -5,12 +5,12 @@ ms.date: 07/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Normal
-ms.openlocfilehash: fbefd205ac929579cea1120b8398a53146bca19c
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 3212aec08cdf4e0185ae5856ae522b1d81e28ea1
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851515"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41216972"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>Explorer l’API JavaScript Office à l’aide de Script Lab
 
@@ -22,7 +22,7 @@ Script Lab est un outil destiné aux utilisateurs qui souhaitent apprendre à d�
 
 Le bruit est-il bien fait ? Jetez un œil à cette vidéo d’une minute pour voir script Lab en action.
 
-[![Aperçu de la vidéo avec script Lab en cours d’exécution dans Excel, Word et PowerPoint.](../images/screenshot-wide-youtube.png 'Vidéo de l’aperçu de script Lab')](https://aka.ms/scriptlabvideo)
+[![Vidéo d’aperçu montrant l’exécution d’un Script Lab dans Excel, Word et PowerPoint.](../images/screenshot-wide-youtube.png 'Vidéo de la version préliminaire de Script Lab')](https://aka.ms/scriptlabvideo)
 
 ## <a name="key-features"></a>Principales fonctionnalités
 
@@ -73,5 +73,5 @@ Lorsque vous êtes prêt à créer votre premier complément Office, essayez le 
 
 - [Obtenir un laboratoire de script](https://appsource.microsoft.com/product/office/WA104380862)
 - [En savoir plus sur script Lab](https://github.com/OfficeDev/script-lab#script-lab-a-microsoft-garage-project)
-- [S’inscrire au programme de développement](https://developer.microsoft.com/office/dev-program)
+- [Rejoindre le programme pour les développeurs Office 365](https://developer.microsoft.com/office/dev-program)
 - [Création de compléments Office](../overview/office-add-ins-fundamentals.md)

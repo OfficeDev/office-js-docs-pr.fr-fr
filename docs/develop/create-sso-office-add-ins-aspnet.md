@@ -3,12 +3,12 @@ title: Créer un complément Office ASP.NET qui utilise l’authentification uni
 description: ''
 ms.date: 12/04/2019
 localization_priority: Priority
-ms.openlocfilehash: ed648b82804d6658f3b92c5cba8d636e6dddf34b
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: a5a05c8299f22bbc1a7593eebc9bde60f52b2b84
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111059"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217003"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office ASP.NET qui utilise l’authentification unique (aperçu)
 
@@ -24,7 +24,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 * [Outils de développement Office](https://www.visualstudio.com/features/office-tools-vs.aspx)
 
-* Compte Office 365 (version abonnement d’Office) que vous pouvez obtenir en rejoignant le [programme pour les développeurs Office 365](https://aka.ms/devprogramsignup) et qui inclut un abonnement gratuit de 1 an à Office 365. Nous vous recommandons d’utiliser la version mensuelle la plus récente et la build du canal Office Insider, mais vous devez être un participant au programme Office Insider pour l’obtenir. Pour plus d’informations, reportez-vous à [Participez au programme Office Insider](https://products.office.com/office-insider?tab=tab-1). Veuillez noter que lorsqu’un build passe au canal semi-annuel de production, la prise en charge des fonctionnalités d’aperçu, y compris l’authentification unique, est désactivée pour ce build.
+[!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
 * Au moins des fichiers et classeurs sont stockés sur OneDrive Entreprise dans votre abonnement Office 365.
 

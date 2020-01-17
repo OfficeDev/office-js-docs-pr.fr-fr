@@ -1,14 +1,14 @@
 ---
-ms.date: 07/15/2019
+ms.date: 01/14/2020
 description: Apprenez à implémenter des fonctions personnalisées de diffusion en continu et volatiles.
 title: Valeurs volatiles dans les fonctions
 localization_priority: Normal
-ms.openlocfilehash: 92d61aff4c3f4b4cbc79a3981db12ed1ce0ffb9d
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 57a41578f400b10806fc169fed09db7d7a66ce84
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771645"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217032"
 ---
 # <a name="volatile-values-in-functions"></a>Valeurs volatiles dans les fonctions
 
@@ -24,13 +24,15 @@ Si vous choisissez de générer automatiquement votre fichier JSON, déclarez un
 
 Voici un exemple de fonction personnalisée volatile qui simule le roulement d’un dés à six côtés.
 
+![Image gif illustrant une fonction personnalisée renvoyant une valeur aléatoire pour simuler le roulement d’un dés à six côtés](../images/six-sided-die.gif)
+
 ```JS
 /**
  * Simulates rolling a 6-sided dice.
  * @customfunction
  * @volatile
  */
-function roll6sided(): number {
+function roll6sided() {
   return Math.floor(Math.random() * 6) + 1;
 }
 ```

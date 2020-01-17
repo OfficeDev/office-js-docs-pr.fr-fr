@@ -1,14 +1,14 @@
 ---
 title: Règles de style de visualisation de données pour les compléments Office
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/14/2019
 localization_priority: Normal
-ms.openlocfilehash: 134153f0705c810e777fd47b27a5a440e2e7bc9e
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: ef82432dacb3f63e85fd305bc682325af3312aca
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268144"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217258"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Règles de style de visualisation de données pour les compléments Office
 
@@ -24,10 +24,9 @@ Nous vous recommandons d’utiliser [Office UI Fabric](https://developer.micro
 
 ## <a name="data-visualization-elements"></a>Éléments de visualisation de données
 
-Les visualisations de données partagent un cadre général et des éléments visuels et interactifs communs, notamment des titres, des étiquettes et des tracés de données, comme indiqué dans les figures suivantes.
+Les visualisations de données partagent un cadre général et des éléments visuels et interactifs communs, y compris les titres, les étiquettes et les tracés de données, comme illustré dans la figure suivante.
 
-![Image d’un graphique en courbes avec titre, axes, légende et zone de traçage avec étiquettes](../images/data-visualization-line-chart.png)
-![Image d’un histogramme avec axes, quadrillage, légende et tracé de données avec étiquettes](../images/data-visualization-column-chart.png)
+![Image d’un graphique en courbes avec titre, axes, légende et zone de traçage étiquetée](../images/excel-charts-visualization.png)
 
 ### <a name="chart-titles"></a>Titres de graphique
 
@@ -37,11 +36,6 @@ Suivez ces instructions pour les titres de graphique :
 - En règle générale, utilisez la mise en majuscule de phrase (premier mot en majuscule). Pour créer un contraste ou accentuer des hiérarchies, vous pouvez mettre tout en majuscules, mais faites-le avec parcimonie.
 - Intégrez les [recommandations relatives aux polices d’Office UI Fabric](https://developer.microsoft.com/fabric#/styles/typography) pour harmoniser vos graphiques avec l’interface utilisateur Office, qui utilise la police Segoe. Vous pouvez également utiliser une autre police pour différencier le contenu du graphique de l’interface utilisateur.
 - Utilisez des polices sans-serif avec des compteurs de grande taille.
-
-Les exemples suivants illustrent des polices serif et sans-serif utilisées dans les titres de graphique. Remarquez comment le contraste d’échelle et une utilisation efficace des espaces blancs créent une hiérarchie visuelle forte.
-
-![Image d’une visualisation de données avec une police serif](../images/data-visualization-serif.png)
-![Image d’une visualisation de données avec une police sans-serif](../images/data-visualization-sans-serif.png)
 
 ### <a name="axis-labels"></a>Étiquettes d’axe
 
@@ -71,7 +65,7 @@ Les nuances de gris clair sont les plus efficaces pour les quadrillages. Si vous
 
 L’image suivante montre une visualisation de données avec le quadrillage.
 
-![Image d’une visualisation de données avec le quadrillage](../images/data-visualization-gridlines.png)
+![Image d’une visualisation de données avec le quadrillage](../images/data-visualization.png)
 
 ### <a name="legends"></a>Légendes
 

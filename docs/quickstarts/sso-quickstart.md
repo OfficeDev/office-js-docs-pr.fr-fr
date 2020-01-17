@@ -4,12 +4,12 @@ description: Utiliser le générateur Yeoman pour créer un complément Office N
 ms.date: 01/13/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 3c67fdb2b8582546c13624dcb8a6f139bb638df0
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: 1f02f03fec0d6be32fc7a0d6b98fce30e19c28e2
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111108"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217364"
 ---
 # <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on-preview"></a>Utiliser le générateur Yeoman pour créer un complément Office qui utilise l’authentification unique (aperçu)
 
@@ -22,9 +22,9 @@ Le générateur Yeoman simplifie le processus de création d’un complément d�
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-- [Node.js](https://nodejs.org) (version 10.15.0 ou ultérieure)
+* [Node.js](https://nodejs.org) (version 10.15.0 ou ultérieure)
 
-- La dernière version de[Yeoman](https://github.com/yeoman/yo) et de [Yeoman Générateur de compléments Office](https://github.com/OfficeDev/generator-office). Pour installer ces outils globalement, exécutez la commande suivante à partir de l’invite de commande :
+* La dernière version de[Yeoman](https://github.com/yeoman/yo) et de [Yeoman Générateur de compléments Office](https://github.com/OfficeDev/generator-office). Pour installer ces outils globalement, exécutez la commande suivante à partir de l’invite de commande :
 
     ```command&nbsp;line
     npm install -g yo generator-office
@@ -32,12 +32,7 @@ Le générateur Yeoman simplifie le processus de création d’un complément d�
 
     [!include[note to update Yeoman generator](../includes/note-yeoman-generator-update.md)]
 
-- Un compte Office 365 (version d’Office par abonnement). Si vous n’avez pas un compte Office 365, vous pouvez en obtenir un abonnement Office 365 gratuit et renouvelable de 90 jours en rejoignant le [Programme pour les développeurs Office 365](https://aka.ms/devprogramsignup). 
-
-- Un build d’Insider d’Office 365. Nous vous recommandons d’utiliser la version mensuelle la plus récente et le build du canal Office Insider, mais vous devez [être un participant au programme Office Insider](https://products.office.com/office-insider?tab=tab-1) pour l’obtenir. 
-
-    > [!NOTE]
-    > Lorsqu’un build passe au canal semi-annuel de production, la prise en charge des fonctionnalités d’aperçu, y compris l’authentification unique, est désactivée pour ce build.
+[!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
 ## <a name="create-the-add-in-project"></a>Création du projet de complément
 

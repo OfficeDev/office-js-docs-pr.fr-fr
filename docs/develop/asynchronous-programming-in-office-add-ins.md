@@ -1,14 +1,14 @@
 ---
 title: Programmation asynchrone dans des compléments Office
 description: ''
-ms.date: 06/20/2019
+ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 9a653f85a368688bdf2690ab6c564352f2ee611a
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: 009f8e37cc8a6eb2e808278df88f3bfdc5b0d1b1
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41110905"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217241"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Programmation asynchrone dans des compléments Office
 
@@ -20,7 +20,7 @@ Le diagramme suivant présente le flux d’exécution d’un appel à une métho
 
 *Figure 1. Flux d’exécution de programmation asynchrone*
 
-![Flux d’exécution de thread de programmation asynchrone](../images/office15-app-async-prog-fig01.png)
+![Flux d’exécution de thread de programmation asynchrone](../images/office-addins-asynchronous-programming-flow.png)
 
 La prise en charge de cette conception asynchrone dans les clients riches et les clients web fait partie des objectifs de conception « écriture unique-exécution multiplateforme » du modèle de développement des Compléments Office. Par exemple, vous pouvez créer un complément de contenu ou du volet de tâches avec une seule base de code qui sera exécutée sur Excel 2013 et Excel sur le web.
 

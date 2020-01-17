@@ -1,14 +1,14 @@
 ---
 title: Autoriser la connexion à Microsoft Graph avec l’authentification unique
 description: ''
-ms.date: 11/11/2019
+ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 44abb05c49786f4b7e050feb7e8eaf8c535f8de8
-ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
+ms.openlocfilehash: b4c813bb3ffd2bf9025ac4cbf51096e1d7a72d8b
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "38301952"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217350"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso-preview"></a>Autoriser la connexion à Microsoft Graph avec l’authentification unique (préversion)
 
@@ -30,19 +30,19 @@ Le diagramme suivant montre comment fonctionne le processus de connexion et l’
 ![Un diagramme illustrant le processus d’authentification unique](../images/sso-access-to-microsoft-graph.png)
 
 1. Dans le complément, JavaScript appelle une nouvelle API Office.js [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). Cela indique à l’application hôte Office qu’elle doit obtenir un jeton d’accès au complément. (Ci-après, il est appelé **jeton d’accès bootstrap**, car il est remplacé par un deuxième jeton plus loin dans le processus. Pour consulter un exemple de jeton d’accès bootstrap décodé, voir [Exemple jeton d’accès](sso-in-office-add-ins.md#example-access-token).)
-1. Si l’utilisateur n’est pas connecté, l’application hôte Office ouvre une fenêtre contextuelle pour que l’utilisateur se connecte.
-1. Si c’est la première fois que l’utilisateur actuel utilise votre complément, il est invité à donner son consentement.
-1. L’application hôte Office demande le **jeton d’accès bootstrap** au point de terminaison Azure AD v2.0 pour l’utilisateur actuel.
-1. Azure AD envoie le jeton bootstrap à l’application hôte Office.
-1. L’application hôte Office envoie le**jeton d’accès bootstrap** au complément dans le cadre de l’objet de résultat renvoyé par l’appel`getAccessToken`.
-1. JavaScript dans le complément effectue une requête HTTP à une API web qui est hébergée sur le même domaine complet que le complément et inclut le **jeton d’accès bootstrap** comme preuve d’autorisation.  
-1. Le code côté serveur valide le **jeton d’accès bootstrap** entrant.
-1. Le code côté serveur utilise le flux « de la part de » (défini dans [OAuth2 Token Exchange](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02) et l’[application démon ou serveur dans un scénario Azure avec une API web](/azure/active-directory/develop/active-directory-authentication-scenarios)) pour obtenir un jeton d’accès à Microsoft Graph en échange du jeton d’accès bootstrap.
-1. Azure AD renvoie le jeton d’accès à Microsoft Graph (et un jeton d’actualisation si le complément demande l’autorisation *offline_access*) au complément.
-1. Le code côté serveur met en cache le jeton d’accès à Microsoft Graph.
-1. Le code côté serveur effectue des requêtes à Microsoft Graph et inclut le jeton d’accès à Microsoft Graph.
-1. Microsoft Graph renvoie des données au complément, qui peut les transmettre à l’interface utilisateur du complément.
-1. Lorsque le jeton d’accès à Microsoft Graph expire, le code côté serveur peut utiliser son jeton d’actualisation pour obtenir un nouveau jeton d’accès à Microsoft Graph.
+2. Si l’utilisateur n’est pas connecté, l’application hôte Office ouvre une fenêtre contextuelle pour que l’utilisateur se connecte.
+3. Si c’est la première fois que l’utilisateur actuel utilise votre complément, il est invité à donner son consentement.
+4. L’application hôte Office demande le **jeton d’accès bootstrap** au point de terminaison Azure AD v2.0 pour l’utilisateur actuel.
+5. Azure AD envoie le jeton bootstrap à l’application hôte Office.
+6. L’application hôte Office envoie le**jeton d’accès bootstrap** au complément dans le cadre de l’objet de résultat renvoyé par l’appel`getAccessToken`.
+7. JavaScript dans le complément effectue une requête HTTP à une API web qui est hébergée sur le même domaine complet que le complément et inclut le **jeton d’accès bootstrap** comme preuve d’autorisation.
+8. Le code côté serveur valide le **jeton d’accès bootstrap** entrant.
+9. Le code côté serveur utilise le flux « de la part de » (défini dans [OAuth2 Token Exchange](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02) et l’[application démon ou serveur dans un scénario Azure avec une API web](/azure/active-directory/develop/active-directory-authentication-scenarios)) pour obtenir un jeton d’accès à Microsoft Graph en échange du jeton d’accès bootstrap.
+10. Azure AD renvoie le jeton d’accès à Microsoft Graph (et un jeton d’actualisation si le complément demande l’autorisation *offline_access*) au complément.
+11. Le code côté serveur met en cache le jeton d’accès à Microsoft Graph.
+12. Le code côté serveur effectue des requêtes à Microsoft Graph et inclut le jeton d’accès à Microsoft Graph.
+13. Microsoft Graph renvoie des données au complément, qui peut les transmettre à l’interface utilisateur du complément.
+14. Lorsque le jeton d’accès à Microsoft Graph expire, le code côté serveur peut utiliser son jeton d’actualisation pour obtenir un nouveau jeton d’accès à Microsoft Graph.
 
 ## <a name="develop-an-sso-add-in-that-accesses-microsoft-graph"></a>Développer un complément authentification unique qui accède à Microsoft Graph
 

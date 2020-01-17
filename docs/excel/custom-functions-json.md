@@ -1,14 +1,14 @@
 ---
-ms.date: 07/15/2019
+ms.date: 01/14/2020
 description: Définissez des métadonnées JSON pour les fonctions personnalisées dans Excel et associez vos ID de fonction et propriétés de nom.
 title: Métadonnées pour les fonctions personnalisées dans Excel
 localization_priority: Normal
-ms.openlocfilehash: b0e015cfa439651420487db4885647f5c7de7da8
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 2a777cb0217d48caf03983d3dbfe662dfe0b2567
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771560"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217037"
 ---
 # <a name="custom-functions-metadata"></a>Métadonnées des fonctions personnalisées
 
@@ -18,7 +18,7 @@ Comme décrit dans l’article [vue d’ensemble des fonctions personnalisées](
 
 Il est recommandé d’utiliser la génération automatique JSON dans la mesure du possible `yo office` , à l’aide des fichiers de l’échafaudage, de la même manière que le processus illustré dans le [didacticiel de fonction personnalisée Excel](../tutorials/excel-tutorial-create-custom-functions.md) , car ce processus est plus facile et moins sujet aux erreurs de l’utilisateur. Pour plus d’informations sur le processus de génération de fichiers JSON de commentaire JSDoc, voir [génération de métadonnées JSON pour les fonctions personnalisées](custom-functions-json-autogeneration.md).
 
-Toutefois, vous pouvez créer un projet de fonctions personnalisées de a à z; pour ce faire, vous devez:
+Toutefois, vous pouvez créer un projet de fonctions personnalisées de a à z ; pour ce faire, vous devez :
 
 - Écrire votre fichier JSON manuellement
 - Vérifier que votre fichier manifeste est connecté à votre fichier JSON créé manuellement
@@ -26,12 +26,15 @@ Toutefois, vous pouvez créer un projet de fonctions personnalisées de a à z; 
 
 Cet article vous explique comment effectuer ces trois étapes.
 
+L’image suivante explique les différences entre l' `yo office` utilisation de fichiers de structure et l’écriture de JSON à partir de zéro.
+![Image des différences entre l’utilisation de yo Office et l’écriture de votre propre JSON](../images/custom-functions-json.png)
+
 > [!NOTE]
-> Contrairement aux fichiers de `yo office` l’échafaudage, vous devez raccorder votre manifeste au fichier JSON que vous créez, via la `<Resources>` section de votre fichier manifeste XML. Notez que [cors](https://developer.mozilla.org/docs/Web/HTTP/CORS) doit être activé pour les paramètres serveur sur le serveur qui héberge le fichier JSON afin que les fonctions personnalisées fonctionnent correctement dans Excel sur le Web.
+> Contrairement aux fichiers de `yo office` l’échafaudage, vous devez connecter votre manifeste au fichier JSON que vous créez, via la `<Resources>` section de votre fichier manifeste XML. Notez que [cors](https://developer.mozilla.org/docs/Web/HTTP/CORS) doit être activé pour les paramètres serveur sur le serveur qui héberge le fichier JSON afin que les fonctions personnalisées fonctionnent correctement dans Excel sur le Web.
 
-## <a name="authoring-metadata-and-hooking-up-to-the-manifest"></a>Création de métadonnées et raccordement au manifeste
+## <a name="authoring-metadata-and-connecting-to-the-manifest"></a>Création de métadonnées et connexion au manifeste
 
-Vous devez créer un fichier JSON dans votre projet et fournir toutes les informations sur les fonctions qu’il contient, telles que les paramètres de la fonction. Consultez l' [exemple de métadonnées suivant](#json-metadata-example) et [la référence](#metadata-reference) de métadonnées pour obtenir la liste complète des propriétés de fonction.
+Vous devez créer un fichier JSON dans votre projet et fournir toutes les informations sur les fonctions qu’il contient, telles que les paramètres de la fonction. Consultez l' [exemple de métadonnées suivant](#json-metadata-example) et [la référence de métadonnées](#metadata-reference) pour obtenir la liste complète des propriétés de fonction.
 
 Vous devez également vous assurer que votre fichier manifeste XML fait référence à votre fichier JSON `<Resources>` dans la section, comme dans l’exemple suivant.
 
@@ -157,7 +160,7 @@ L’objet `options` vous permet de personnaliser certains aspects de comment et 
 | Propriété          | Type de données | Obligatoire                               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | :---------------- | :-------- | :------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `cancelable`      | boolean   | Non<br/><br/>La valeur par défaut est `false`.  | Si la valeur est `true`, Excel appelle le gestionnaire `CancelableInvocation` chaque fois que l’utilisateur effectue une action ayant pour effet d’annuler la fonction, par exemple, en déclenchant manuellement un recalcul ou en modifiant une cellule référencée par la fonction. Les fonctions annulables sont généralement utilisées uniquement pour les fonctions asynchrones qui renvoient un seul résultat et doivent gérer l’annulation d’une demande de données. Une fonction ne peut pas être à la fois en continu et annulable. Pour plus d’informations, reportez-vous à la remarque à la fin de la [création d’une fonction de diffusion en continu](custom-functions-web-reqs.md#make-a-streaming-function). |
-| `requiresAddress` | boolean   | Non <br/><br/>La valeur par défaut est `false`. | Si `true`votre fonction personnalisée peut accéder à l’adresse de la cellule qui a appelé votre fonction personnalisée. Pour obtenir l’adresse de la cellule qui a appelé votre fonction personnalisée, utilisez Context. Address dans votre fonction personnalisée. Pour plus d’informations, consultez la rubrique relative au [paramètre context de la cellule](/office/dev/add-ins/excel/custom-functions-parameter-options#addressing-cells-context-parameter)Addressing. Les fonctions personnalisées ne peuvent pas être définies à la fois en diffusion en continu et requiresAddress. Lorsque vous utilisez cette option, le paramètre «invocation» doit être le dernier paramètre passé dans options.                                              |
+| `requiresAddress` | boolean   | Non <br/><br/>La valeur par défaut est `false`. | Si `true`votre fonction personnalisée peut accéder à l’adresse de la cellule qui a appelé votre fonction personnalisée. Pour obtenir l’adresse de la cellule qui a appelé votre fonction personnalisée, utilisez Context. Address dans votre fonction personnalisée. Pour plus d’informations, consultez la rubrique relative au [paramètre context de la cellule Addressing](/office/dev/add-ins/excel/custom-functions-parameter-options#addressing-cells-context-parameter). Les fonctions personnalisées ne peuvent pas être définies à la fois en diffusion en continu et requiresAddress. Lorsque vous utilisez cette option, le paramètre « invocation » doit être le dernier paramètre passé dans options.                                              |
 | `stream`          | boolean   | Non<br/><br/>La valeur par défaut est `false`.  | Si la valeur est `true`, la fonction peut envoyer une sortie à la cellule à plusieurs reprises, même en cas d’appel unique. Cette option est utile pour des sources de données qui changent rapidement, telles que des valeurs boursières. La fonction ne doit pas utiliser d’instruction `return`. Au lieu de cela, la valeur obtenue est transmise en tant qu’argument de la méthode de rappel `StreamingInvocation.setResult`. Pour plus d’informations, voir [Diffusion en continu de fonctions](custom-functions-web-reqs.md#make-a-streaming-function).                                                                                                                                                                |
 | `volatile`        | boolean   | Non <br/><br/>La valeur par défaut est `false`. | <br /><br /> Si la valeur est `true`, la fonction est recalculée à chaque recalcul d’Excel, et plus à chaque fois que les valeurs dépendantes de la formules sont modifiées. Une fonction ne peut pas être à la fois diffusée en continu et volatile. Si les propriétés `stream` et `volatile` sont toutes les deux définies sur `true`, l’option volatile est ignorée.                                                                                                                                                                                                                                                                                             |
 

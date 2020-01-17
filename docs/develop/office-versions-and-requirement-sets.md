@@ -1,14 +1,14 @@
 ---
 title: Versions d’Office et ensembles de conditions requises
 description: ''
-ms.date: 07/17/2019
+ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: cfa72f63fc3e74809b743584b131ee5b1fb57676
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 3b9bcbef47cdc27ad77b6bdce2b5c69f25fa6d62
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940639"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217310"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Versions d’Office et ensembles de conditions requises
 
@@ -23,7 +23,7 @@ Il existe de nombreuses versions d’Office sur plusieurs plateformes, celles-ci
 
 Pour identifier la version d’Office que vous utilisez, à partir d’une application Office, sélectionnez le menu **Fichier**, puis sélectionnez **Compte**. La version d’Office s’affiche dans la section **Informations sur le produit**. Par exemple, la capture d’écran suivante indique la version 1802 d’Office (build 9026.1000) :
 
-![Vérification de votre version d’Office](../images/office-version-number-ui.jpg)
+![Vérification de votre version d’Office](../images/office-version.png)
 
 ## <a name="office-requirement-sets-availability"></a>Disponibilité des ensembles de conditions requises Office
 

@@ -3,12 +3,12 @@ title: Étendre des fonctions personnalisées avec des fonctions XLL définies p
 description: Activer la compatibilité avec les fonctions Excel XLL définies par l’utilisateur qui offrent une fonctionnalité équivalente à vos fonctions personnalisées
 ms.date: 07/31/2019
 localization_priority: Normal
-ms.openlocfilehash: d8b5349aecad1bdd6bd9f8e00b6c09bcb0071377
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: 35b6ade70e21ca36efec928d030f79c27cc38691
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111073"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217217"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>Étendre des fonctions personnalisées avec des fonctions XLL définies par l’utilisateur
 
@@ -20,7 +20,7 @@ Si vous avez des XLL Excel existantes, vous pouvez créer des fonctions personna
 > - Excel sur Windows (version 1904 ou ultérieure)
 > - Excel sur Mac (version 13,329 ou ultérieure)
 > 
-> Pour utiliser le complément COM et la compatibilité des FDU XLL dans Excel sur le Web, connectez-vous à l’aide de votre abonnement Office 365 ou d’un [compte Microsoft](https://account.microsoft.com/account). Si vous n’avez pas d’abonnement Office 365, vous pouvez en obtenir un en rejoignant le [programme pour les développeurs Office 365](https://developer.microsoft.com/office/dev-program).
+> Pour utiliser le complément COM et la compatibilité des FDU XLL dans Excel sur le Web, connectez-vous à l’aide de votre abonnement Office 365 ou d’un [compte Microsoft](https://account.microsoft.com/account). Si vous ne disposez pas déjà d’un abonnement Office 365, vous pouvez obtenir gratuitement un abonnement Office 365 renouvelable 90 jours en joignant le [programme de développement office 365](https://developer.microsoft.com/office/dev-program).
 
 ## <a name="specify-equivalent-xll-in-the-manifest"></a>Spécifier le XLL équivalent dans le manifeste
 
@@ -66,7 +66,7 @@ Le tableau suivant compare les fonctionnalités des fonctions définies par l’
 | Fonctions volatiles | Oui | Oui | Oui |
 | Prise en charge du recalcul multi-thread | Oui | Oui | Oui |
 | Comportement du calcul | Aucune interface utilisateur. Excel peut ne pas répondre pendant le calcul. | Les utilisateurs verront #BUSY ! jusqu’à ce qu’un résultat soit renvoyé. | Les utilisateurs verront #BUSY ! jusqu’à ce qu’un résultat soit renvoyé. |
-| Ensembles de conditions requises | S/O | CustomFunctions 1,1 et versions ultérieures | CustomFunctions 1,1 et versions ultérieures |
+| Ensembles de conditions requises | N/A | CustomFunctions 1,1 et versions ultérieures | CustomFunctions 1,1 et versions ultérieures |
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -1,14 +1,14 @@
 ---
 title: Vue d’ensemble de l’authentification et de l’autorisation dans les compléments Office
 description: ''
-ms.date: 11/11/2019
+ms.date: 01/07/2020
 localization_priority: Priority
-ms.openlocfilehash: 20b947607623ee6a8fa08995a5c08918a6fd5d87
-ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
+ms.openlocfilehash: 5086095c711bbf6df98e457092f825690d43229e
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "38301945"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217275"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Vue d’ensemble de l’authentification et de l’autorisation dans les compléments Office
 
@@ -23,7 +23,7 @@ Vous avez le choix entre deux méthodes d’authentification.
 
 Le diagramme suivant montre les décisions que vous devez prendre en tant que développeur de compléments. Cet article contient d’autres détails plus avant.
 
-![Image illustrant un organigramme des décisions pour activer l’authentification et l’autorisation dans les compléments Office](../images/auth-decisions-flowchart.gif)
+![Image illustrant un organigramme des décisions pour activer l’authentification et l’autorisation dans les compléments Office](../images/authflowchart.png)
 
 ## <a name="user-authentication-without-sso"></a>Authentification utilisateur sans authentification unique
 

@@ -1,24 +1,27 @@
 ---
 title: Utilisation des formes à l’aide de l’API JavaScript pour Excel
 description: ''
-ms.date: 09/03/2019
+ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 2461416bcd7e64c2ea300d98e504ff27edcb14ac
-ms.sourcegitcommit: 78998a9f0ebb81c4dd2b77574148b16fe6725cfc
+ms.openlocfilehash: 54362baecc44f8761f2f69d21e465caa5f1c85b7
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "36715605"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217227"
 ---
 # <a name="work-with-shapes-using-the-excel-javascript-api"></a>Utilisation des formes à l’aide de l’API JavaScript pour Excel
 
 Excel définit les formes comme n’importe quel objet qui se trouve sur la couche de dessin d’Excel. Cela signifie que tout élément en dehors d’une cellule est une forme. Cet article explique comment utiliser des formes géométriques, des lignes et des images conjointement avec les API [Shape](/javascript/api/excel/excel.shape) et [ShapeCollection](/javascript/api/excel/excel.shapecollection) . Les [graphiques](/javascript/api/excel/excel.chart) sont abordés dans leur propre article, en [utilisant des graphiques à l’aide de l’API JavaScript pour Excel](excel-add-ins-charts.md).
 
+L’image suivante montre les formes qui forment un thermomètre.
+![Image d’un thermomètre effectuée en tant que forme Excel](../images/excel-shapes.png)
+
 ## <a name="create-shapes"></a>Créer des formes
 
 Les formes sont créées et stockées dans la collection Shape d’une feuille`Worksheet.shapes`de calcul (). `ShapeCollection`dispose de `.add*` plusieurs méthodes à cet effet. Toutes les formes ont des noms et des ID générés pour ceux-ci lorsqu’ils sont ajoutés à la collection. Il s’agit `name` des `id` propriétés et, respectivement. `name`peut être défini par votre complément pour une extraction facile avec la `ShapeCollection.getItem(name)` méthode.
 
-Les types de formes suivants sont ajoutés à l’aide de la méthode associée:
+Les types de formes suivants sont ajoutés à l’aide de la méthode associée :
 
 | Shape | Add, méthode | Signature |
 |-------|------------|-----------|
@@ -32,7 +35,7 @@ Les types de formes suivants sont ajoutés à l’aide de la méthode associée:
 
 Une forme géométrique est créée avec `ShapeCollection.addGeometricShape`. Cette méthode utilise une énumération [GeometricShapeType](/javascript/api/excel/excel.geometricshapetype) comme argument.
 
-L’exemple de code suivant crée un rectangle 150x150 nommé **«Square»** qui est positionné 100 pixels à partir des bords supérieur et gauche de la feuille de calcul.
+L’exemple de code suivant crée un rectangle 150x150 nommé **« Square »** qui est positionné 100 pixels à partir des bords supérieur et gauche de la feuille de calcul.
 
 ```js
 // This sample creates a rectangle positioned 100 pixels from the top and left sides
@@ -53,7 +56,7 @@ Excel.run(function (context) {
 
 Les images JPEG, PNG et SVG peuvent être insérées dans une feuille de calcul en tant que formes. La `ShapeCollection.addImage` méthode prend une chaîne codée en base64 en tant qu’argument. Il s’agit d’une image JPEG ou PNG sous forme de chaîne. `ShapeCollection.addSvg`prend également une chaîne, bien que cet argument soit un XML qui définit le graphique.
 
-L’exemple de code suivant montre un fichier image en cours de chargement par un [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) sous forme de chaîne. La chaîne contient les métadonnées «base64» supprimées avant la création de la forme.
+L’exemple de code suivant montre un fichier image en cours de chargement par un [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) sous forme de chaîne. La chaîne contient les métadonnées « base64 » supprimées avant la création de la forme.
 
 ```js
 // This sample creates an image as a Shape object in the worksheet.
@@ -91,7 +94,7 @@ Excel.run(function (context) {
 
 Les lignes peuvent être connectées à d’autres objets Shape. Les `connectBeginShape` méthodes `connectEndShape` et joignent le début et la fin d’une ligne aux formes situées aux points de connexion spécifiés. Les emplacements de ces points varient en fonction de la forme `Shape.connectionSiteCount` , mais le peut être utilisé pour s’assurer que votre complément ne se connecte pas à un point qui est hors limites. Une ligne est déconnectée de toutes les formes `disconnectBeginShape` attachées à l’aide des méthodes et `disconnectEndShape` .
 
-L’exemple de code suivant connecte la ligne **«myLine»** à deux formes nommées **«LeftShape»** et **«RightShape»**.
+L’exemple de code suivant connecte la ligne **« myLine »** à deux formes nommées **« LeftShape »** et **« RightShape »**.
 
 ```js
 // This sample connects a line between two shapes at connection points '0' and '3'.
@@ -137,7 +140,7 @@ Excel.run(function (context) {
 
 Les formes géométriques peuvent contenir du texte. Les formes ont `textFrame` une propriété de type [TextFrame](/javascript/api/excel/excel.textframe). L' `TextFrame` objet gère les options d’affichage du texte (par exemple, marges et débordement de texte). `TextFrame.textRange`est un objet [TextRange](/javascript/api/excel/excel.textrange) avec les paramètres Text Content et font.
 
-L’exemple de code suivant crée une forme géométrique appelée «Wave» avec le texte «texte de la forme». Il ajuste également la forme et les couleurs du texte, ainsi que l’alignement horizontal du texte sur le centre.
+L’exemple de code suivant crée une forme géométrique appelée « Wave » avec le texte « texte de la forme ». Il ajuste également la forme et les couleurs du texte, ainsi que l’alignement horizontal du texte sur le centre.
 
 ```js
 // This sample creates a light-blue wave shape and adds the purple text "Shape text" to the center.
@@ -159,7 +162,7 @@ Excel.run(function (context) {
 
 `addTextBox` Méthode `ShapeCollection` de création d’un `GeometricShape` type `Rectangle` avec un arrière-plan blanc et du texte noir. Il s’agit du même que celui créé par le bouton de la **zone de texte** d’Excel sous `addTextBox` l’onglet **insertion** . prend un argument de chaîne pour `TextRange`définir le texte du.
 
-L’exemple de code suivant illustre la création d’une zone de texte avec le texte «Hello!».
+L’exemple de code suivant illustre la création d’une zone de texte avec le texte « Hello ! ».
 
 ```js
 // This sample creates a text box with the text "Hello!" and sizes it appropriately.

@@ -1,18 +1,20 @@
 ---
 title: Instructions concernant les couleurs pour les compléments Office
 description: ''
-ms.date: 03/19/2019
+ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 3930cf22d40bd853c3fd6d96ade77a1a060cfc9d
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a3c9711757369ae7c8709ee4a49e7c75733bc357
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448174"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217206"
 ---
 # <a name="color"></a>Couleur
 
 La couleur est souvent utilisée pour mettre en évidence la marque et renforcer la hiérarchie visuelle. Elle permet d’identifier une interface et de guider les clients dans une expérience. Dans Office, la couleur est utilisée pour les mêmes objectifs mais elle est appliquée délibérément et au minimum. Elle ne surcharge jamais le contenu clients. Même lorsque chaque application Office est marquée avec sa propre couleur dominante, elle est utilisée avec parcimonie.
+
+![Image du jeu de couleurs d’Office et du jeu de couleurs pour Word, PowerPoint et Excel](../images/office-addins-color-schemes.png)
 
 Office UI Fabric comprend un jeu de couleurs de thème par défaut. Lorsque Fabric est appliqué à un complément Office comme composants ou dans des dispositions, les mêmes objectifs s’appliquent. La couleur doit communiquer la hiérarchie, guidant ainsi les clients vers l’action sans interférer avec le contenu. Les couleurs de thème Fabric peuvent introduire une nouvelle couleur de l’accentuation dans l’interface globale. Cette nouvelle accentuation peut entrer en conflit avec la personnalisation de l’application Office et interférer avec la hiérarchie. En d’autres termes, Fabric peut introduire une nouvelle couleur de l’accentuation dans l’interface globale lorsqu’elle est utilisée à l’intérieur d’un complément. Cette nouvelle couleur de l’accentuation peut créer une confusion et interférer avec la hiérarchie globale. Envisagez des façons d’éviter les conflits et les interférences. Utilisez des accentuations neutres ou remplacez les couleurs de thème Fabric en fonction de la personnalisation de l’application Office ou de vos propres couleurs de la marque.
 
@@ -28,6 +30,6 @@ Appliquez les recommandations générales suivantes pour la couleur :
 * L’utilisation excessive d’une couleur d’accentuation unique appliquée aux éléments interactifs et non interactifs peut être source de confusion. Par exemple, évitez d’utiliser la même couleur pour les éléments sélectionnés et non sélectionnés dans un menu de navigation.
 * Évitez les conflits inutiles avec des couleurs non Office.
 * Utilisez vos propres couleurs de la marque pour créer une association avec votre service ou votre société.
-* Assurez-vous que tout le texte est accessible. Assurez-vous qu'il existe un rapport de contraste 4,5:1 entre le texte de premier plan et l'arrière-plan.
-* Gardez à l'esprit le daltonisme. Utilisez plusieurs couleurs pour indiquer l'interactivité et la hiérarchie.
-* Consultez la [](../design/add-in-icons.md) rubrique Guidelines Icons pour en savoir plus sur la conception des icônes de commande de complément avec la couleur de l'icône Office palette couleurs.
+* Assurez-vous que tout le texte est accessible. Assurez-vous qu’il existe un rapport de contraste 4,5:1 entre le texte de premier plan et l’arrière-plan.
+* Gardez à l’esprit le daltonisme. Utilisez plusieurs couleurs pour indiquer l’interactivité et la hiérarchie.
+* Consultez la rubrique [Guidelines Icons](../design/add-in-icons.md) pour en savoir plus sur la conception des icônes de commande de complément avec la couleur de l’icône Office palette couleurs.

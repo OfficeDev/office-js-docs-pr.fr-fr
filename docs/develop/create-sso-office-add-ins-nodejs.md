@@ -3,12 +3,12 @@ title: Création d’un complément Office Node.js qui utilise l’authentificat
 description: Apprenez à créer un complément basé sur Node.js utilisant l’authentification unique Office.
 ms.date: 01/13/2020
 localization_priority: Priority
-ms.openlocfilehash: 140a18628ae03d842482721394d976207cb7fa37
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: a3ff47f26e0db06c1c79a4f80bd814b05e80b3a3
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111066"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217098"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office Node.js qui utilise l’authentification unique (aperçu)
 
@@ -27,7 +27,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 * TypeScript version 3.6.2 ou ultérieure.
 
-* Compte Office 365 (version abonnement d’Office) que vous pouvez obtenir en rejoignant le [programme pour les développeurs Office 365](https://aka.ms/devprogramsignup) et qui inclut un abonnement gratuit de 1 an à Office 365. Nous vous recommandons d’utiliser la version mensuelle la plus récente et la build du canal Office Insider, mais vous devez être un participant au programme Office Insider pour l’obtenir. Pour plus d’informations, reportez-vous à [Participez au programme Office Insider](https://products.office.com/office-insider?tab=tab-1). Veuillez noter que lorsqu’un build passe au canal semi-annuel de production, la prise en charge des fonctionnalités d’aperçu, y compris l’authentification unique, est désactivée pour ce build.
+[!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
 * Éditeur de code. Nous vous recommandons Visual Studio Code.
 
