@@ -1,14 +1,14 @@
 ---
 title: Installer la dernière version d’Office
 description: Découvrez comment s’inscrire afin d’obtenir les dernières versions d’Office.
-ms.date: 07/17/2019
+ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 2308bf8f825201f1074d56bba2ddc67c32ba7f24
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 8d248e17433a2b6b1b31ad576ecdd237cd8543d0
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940625"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217381"
 ---
 # <a name="install-the-latest-version-of-office"></a>Installer la dernière version d’Office
 
@@ -39,7 +39,7 @@ Pour obtenir la dernière version d’Office, procédez comme suit :
 
 Une fois le processus d’installation terminé, les dernières applications d’Office sont installées. Pour vérifier que la dernière version est bien installée, accédez à **Fichier** > **Compte** à partir de n’importe quelle application Office. Sous Mises à jour Office, vous verrez la mention (Office Insiders) au-dessus du numéro de version.
 
-![Capture d’écran affichant les informations du produit avec la mention Office Insiders](../images/office-insiders.png)
+![Capture d’écran affichant les informations du produit avec la mention Office Insiders](../images/office-insiders-label.png)
 
 ## <a name="minimum-office-builds-for-office-javascript-api-requirement-sets"></a>Builds Office minimum pour les ensembles de conditions requises pour l’API JavaScript pour Office
 
