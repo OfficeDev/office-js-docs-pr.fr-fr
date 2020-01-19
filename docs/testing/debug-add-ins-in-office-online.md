@@ -3,12 +3,12 @@ title: Débogage de compléments dans Office sur le web
 description: Découvrez comment utiliser Office sur le web pour tester et déboguer vos compléments.
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: ebc1296c0d6f13d5327f666e72907e016fbe8c6e
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: cf2461184f5163463f3e4fbf93f2cc7a0b70a249
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575680"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217329"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>Débogage de compléments dans Office sur le web
 
@@ -22,7 +22,7 @@ Mise en route :
 - Si vous n’en avez pas encore, créez un compte de développeur Office 365, ou accédez à un site SharePoint.
 
   > [!NOTE]
-  > Pour vous inscrire et obtenir gratuitement un abonnement Office 365 Développeur, participez à notre [programme pour les développeurs Office 365](https://developer.microsoft.com/office/dev-program). Consultez la [documentation relative au programme pour les développeurs Office 365](/office/developer-program/office-365-developer-program) pour obtenir des instructions détaillées sur la manière de rejoindre le programme, de vous inscrire et de configurer votre abonnement.
+  > Pour obtenir gratuitement un abonnement renouvelable de 90 jours à Office 365 Développeur, participez à notre [programme pour les développeurs Office 365](https://developer.microsoft.com/office/dev-program). Consultez la [documentation relative au programme pour les développeurs Office 365](/office/developer-program/office-365-developer-program) pour obtenir des instructions détaillées sur la manière de rejoindre le programme et de configurer votre abonnement.
 
 - Configurez un catalogue d’applications sur Office 365 (SharePoint Online). Un catalogue d’applications est une collection de sites dédiée dans SharePoint Online qui héberge des bibliothèques de documents pour des compléments Office. Si vous disposez de votre propre site SharePoint, vous pouvez configurer une bibliothèque de document de catalogue d’applications. Pour plus d’informations, voir [Publier des compléments de contenu et du volet Office dans un catalogue d’applications sur SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 

@@ -4,19 +4,19 @@ title: 'Tutoriel : Partager des données et des événements entre des fonction
 ms.prod: excel
 description: Dans Excel, partagez des données et des événements entre des fonctions personnalisées et le volet Office.
 localization_priority: Priority
-ms.openlocfilehash: 16affeb29bd5950198f81f85e44adaf812067829
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: d86b5bb59dd0da51d5b5472288fa802823d658ce
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814130"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217357"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane-preview"></a>Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office (préversion)
 
 Les fonctions personnalisées Excel et le volet Office partagent des données globales et peuvent effectuer des appels de fonction entre elles. Pour configurer votre projet de sorte que les fonctions personnalisées puissent fonctionner avec le volet Office, suivez les instructions décrites dans cet article.
 
 > [!NOTE]
-> Les fonctionnalités décrites dans cet article sont actuellement en préversion et peuvent faire l’objet de modifications. Elles ne sont pas prises en charge dans les environnements de production pour l’instant. Les fonctionnalités en préversion de cet article sont uniquement disponibles dans Excel sur Windows. Pour essayer les fonctionnalités en préversion, vous devez [rejoindre Office Insider](https://insider.office.com/join).  Un bon moyen de tester les fonctionnalités en préversion consiste à utiliser un abonnement Office 365. Si vous n’avez pas d’abonnement Office 365, vous pouvez en obtenir un en rejoignant le [programme pour les développeurs Office 365](https://developer.microsoft.com/office/dev-program).
+> Les fonctionnalités décrites dans cet article sont actuellement en préversion et peuvent faire l’objet de modifications. Elles ne sont pas prises en charge dans les environnements de production pour l’instant. Les fonctionnalités en préversion de cet article sont uniquement disponibles dans Excel sur Windows. Pour essayer les fonctionnalités en préversion, vous devez [rejoindre Office Insider](https://insider.office.com/join).  Un bon moyen de tester les fonctionnalités en préversion consiste à utiliser un abonnement Office 365. Si vous n’avez pas d'abonnement Office 365, vous pouvez obtenir une version Office 365 gratuite et renouvelable de 90 jours en rejoignant le [Programme pour les développeurs Office 365](https://developer.microsoft.com/office/dev-program).
 
 ## <a name="create-the-add-in-project"></a>Création du projet de complément
 
@@ -41,21 +41,23 @@ Après avoir exécuté l’Assistant, le générateur crée le projet et install
 3. Changez la section `<Requirements>` afin d’utiliser **CustomFunctionsRuntime** version **12**, comme illustré dans le code suivant.
     
     ```xml
-    <Requirements> 
+    <Requirements>
     <Sets DefaultMinVersion="1.1">
     <Set Name="CustomFunctionsRuntime" MinVersion="1.2"/>
     </Sets>
     </Requirements>
     ```
     
-4. Sous l’élément `<Host>` du classeur, ajoutez la section `<Runtimes>` suivante. La durée de vie doit être **longue** afin que les fonctions personnalisées puissent continuer de fonctionner même quand le volet Office est fermé.
+4. Recherchez la section `<VersionOverrides>`, puis ajoutez l'exemple d'entrée suivante à la section `<Runtimes>`. La durée de vie doit être **longue** afin que les fonctions personnalisées puissent continuer de fonctionner même quand le volet Office est fermé.
     
     ```xml
-    <Hosts>
-    <Host xsi:type="Workbook">
-    <Runtimes>
-    <Runtime resid="TaskPaneAndCustomFunction.Url" lifetime="long" />
-    </Runtimes>
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+      <Hosts>
+        <Host xsi:type="Workbook">
+        <Runtimes>
+          <Runtime resid="TaskPaneAndCustomFunction.Url" lifetime="long" />
+        </Runtimes>
+        <AllFormFactors>
     ```
     
 5. Dans l’élément `<Page>`, remplacez l’emplacement de la source **Functions.Page.Url** par **TaskPaneAndCustomFunction.Url**.
@@ -150,7 +152,13 @@ Après avoir exécuté l’Assistant, le générateur crée le projet et install
 ### <a name="create-task-pane-controls-to-work-with-global-data"></a>Créer des contrôles du volet Office pour utiliser des données globales 
 
 1. Ouvrez le fichier **src/taskpane/taskpane.html**.
-2. Après l’élément de fermeture `</main>`, ajoutez le code HTML suivant. Le code HTML crée deux zones de texte et des boutons permettant d’obtenir ou de stocker des données globales.
+2. Ajoutez l'élément de script suivant juste avant l’élément `</head>`.
+
+    ```html
+    <script src="functions.js"></script>
+    ```
+
+3. Après l’élément de fermeture `</main>`, ajoutez le code HTML suivant. Le code HTML crée deux zones de texte et des boutons permettant d’obtenir ou de stocker des données globales.
 
     ```html
     <ol>
@@ -172,7 +180,7 @@ Après avoir exécuté l’Assistant, le générateur crée le projet et install
     </div>
     ```
     
-3. Avant l’élément `<body>`, ajoutez le code suivant. Ce code gère les événements de clic de bouton quand l’utilisateur souhaite stocker ou obtenir des données globales.
+4. Avant l’élément `<body>`, ajoutez le code suivant. Ce code gère les événements de clic de bouton quand l’utilisateur souhaite stocker ou obtenir des données globales.
     
     ```js
     <script>
@@ -186,8 +194,8 @@ Après avoir exécuté l’Assistant, le générateur crée le projet et install
     }</script>
     ```
     
-4. Enregistrez le fichier.
-5. Générez le projet.
+5. Enregistrez le fichier.
+6. Générez le projet.
     
     ```command&nbsp;line
     npm run build 

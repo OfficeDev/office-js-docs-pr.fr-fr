@@ -1,14 +1,14 @@
 ---
 title: Concepts avancés de programmation avec l’API JavaScript Excel
 description: ''
-ms.date: 07/17/2019
+ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 8755b479543d48fcbbbf2bfa1ea93fb40af87ecf
-ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
+ms.openlocfilehash: 76308b6ce04dfcaa09e9006373caf07744572112
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "37681927"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217339"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>Concepts avancés de programmation avec l’API JavaScript Excel
 
@@ -27,6 +27,10 @@ Vous utiliserez probablement l’API JavaScript Excel pour développer la majori
 - [Context](/javascript/api/office/office.context) : l’objet **Context** représente l’environnement d’exécution du complément et permet d’accéder à des objets clés de l’API. Il se compose de détails sur la configuration du classeur comme `contentLanguage` et `officeTheme`, et fournit des informations sur l’environnement d’exécution du complément comme `host` et `platform`. En outre, il fournit la méthode `requirements.isSetSupported()` que vous pouvez utiliser pour vérifier si l’ensemble de conditions requises spécifié est pris en charge par l’application Excel dans laquelle le complément est exécuté.
 
 - [Document](/javascript/api/office/office.document) : L’objet **Document** fournit la méthode `getFileAsync()` que vous pouvez utiliser pour télécharger le fichier Excel dans lequel le complément est exécuté.
+
+L’image suivante illustre les situations dans lesquelles vous pouvez utiliser l’API JavaScript Excel ou les API communes.
+
+![Image des différences entre l’API Excel et les API communes](../images/excel-js-api-common-api.png)
 
 ## <a name="requirement-sets"></a>Ensembles de conditions requises
 
