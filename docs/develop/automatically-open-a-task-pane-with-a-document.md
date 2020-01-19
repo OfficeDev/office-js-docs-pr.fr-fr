@@ -3,12 +3,12 @@ title: Ouvrir automatiquement un volet Office avec un document
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: de848238979b68192bb8646e0ee6cb8d7c3879be
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 343b7650d9de5dfcda508c4ae134be6dd8696454
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127610"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217014"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Ouvrir automatiquement un volet Office avec un document
 
@@ -159,10 +159,9 @@ Vous pouvez déployer une version de test de votre complément qui ouvrira autom
 </we:webextension>
 ```
 
-Pour tester l’exemple précédent, songez éventuellement à rejoindre le [programme pour les développeurs Office 365](/office/developer-program/office-365-developer-program) et à créer un [compte développeur Office 365](https://developer.microsoft.com/office/dev-program) si vous ne possédez pas déjà un abonnement Office 365. Vous pouvez essayer le déploiement centralisé en conditions réelles et vérifier que votre complément fonctionne comme prévu.
+Vous pouvez tester l’exemple précédent à l’aide de votre abonnement Office 365 pour essayer le Déploiement centralisé et vérifier que votre complément fonctionne comme prévu. Si vous n’avez pas un abonnement Office 365, vous pouvez en obtenir un abonnement Office 365 gratuit et renouvelable de 90 jours en rejoignant le [Programme pour les développeurs Office 365](https://developer.microsoft.com/office/dev-program).
 
-
-## <a name="see-also"></a>Voir aussi
+## <a name="see-also"></a>Consultez aussi
 
 Pour voir un exemple illustrant comment utiliser la fonctionnalité d’ouverture automatique, reportez-vous à [Exemples de commandes de complément Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane).
-[Rejoindre le programme pour les développeurs Office 365](/office/developer-program/office-365-developer-program).
+[Rejoignez le programme pour les développeurs Office 365](/office/developer-program/office-365-developer-program).
