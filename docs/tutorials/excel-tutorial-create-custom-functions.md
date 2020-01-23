@@ -1,15 +1,15 @@
 ---
 title: Didacticiel de fonctions personnalisées Excel
 description: Dans ce didacticiel, vous allez créer un complément Excel qui contient une fonction personnalisée qui effectue des calculs, requiert des données web ou lance un flux de données web.
-ms.date: 09/18/2019
+ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 4481d63cc167c2ce05ec70331ccd7fd472d7846b
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: 63379c74897a5f232804241726ac7def1809f5c1
+ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035447"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "41265535"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Didacticiel : créer des fonctions personnalisées dans Excel
 
@@ -69,7 +69,7 @@ Pour tester votre complément dans Excel sous Windows ou Mac, exécutez la comma
 npm run start:desktop
 ```
 
-# <a name="excel-on-the-webtabexcel-online"></a>[Excel sur le Web](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Excel sur le web](#tab/excel-online)
 
 Pour tester votre complément dans Excel sur un navigateur, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local démarre.
 
@@ -155,7 +155,7 @@ Intégration de données à partir du Web est un excellent moyen pour étendre E
     ![Insérer un ruban dans Excel sur Windows avec le complément de fonctions personnalisées Excel mis en surbrillance dans la liste mes compléments](../images/list-starcount.png)
 
 
-# <a name="excel-on-the-webtabexcel-online"></a>[Excel sur le Web](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Excel sur le web](#tab/excel-online)
 
 1. Dans Excel, sélectionnez l’onglet **insertion** , puis **compléments**.  ![Insérer un ruban dans Excel sur le Web avec l’icône mes compléments mise en surbrillance](../images/excel-cf-online-register-add-in-1.png)
 
@@ -222,7 +222,7 @@ function clock(invocation) {
 3. Dans la liste des compléments disponibles, recherchez la section **compléments pour développeurs** et sélectionnez le complément **starcount** pour l’enregistrer.
     ![Insérer un ruban dans Excel sur Windows avec le complément de fonctions personnalisées Excel mis en surbrillance dans la liste mes compléments](../images/list-starcount.png)
 
-# <a name="excel-on-the-webtabexcel-online"></a>[Excel sur le Web](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Excel sur le web](#tab/excel-online)
 
 1. Dans Excel, sélectionnez l’onglet **insertion** , puis **compléments**.  ![Insérer un ruban dans Excel sur le Web avec l’icône mes compléments mise en surbrillance](../images/excel-cf-online-register-add-in-1.png)
 
