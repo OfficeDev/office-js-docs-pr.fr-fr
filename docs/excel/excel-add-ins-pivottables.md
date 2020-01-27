@@ -1,34 +1,46 @@
 ---
 title: Utilisation des tableaux croisés dynamiques avec l’API JavaScript pour Excel
 description: Utilisez l’API JavaScript pour Excel pour créer des tableaux croisés dynamiques et interagir avec leurs composants.
-ms.date: 10/22/2019
+ms.date: 01/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 5fc70437ce61a49ac5dcd359214b3cca79c71ac1
-ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
+ms.openlocfilehash: 39dca0ca3f964133af64066641d7bb07222c7834
+ms.sourcegitcommit: 72d719165cc2b64ac9d3c51fb8be277dfde7d2eb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "37681955"
+ms.lasthandoff: 01/25/2020
+ms.locfileid: "41554028"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Utilisation des tableaux croisés dynamiques avec l’API JavaScript pour Excel
 
-Les tableaux croisés dynamiques rationalisent les grands ensembles de données. Ils permettent la manipulation rapide des données groupées. L’API JavaScript pour Excel permet à votre complément de créer des tableaux croisés dynamiques et d’interagir avec leurs composants.
+Les tableaux croisés dynamiques rationalisent les grands ensembles de données. Ils permettent la manipulation rapide des données groupées. L’API JavaScript pour Excel permet à votre complément de créer des tableaux croisés dynamiques et d’interagir avec leurs composants. Cet article explique comment les tableaux croisés dynamiques sont représentés par l’API JavaScript Office et fournit des exemples de code pour les scénarios clés.
 
 Si vous n’êtes pas familiarisé avec la fonctionnalité de tableaux croisés dynamiques, envisagez de les explorer comme un utilisateur final.
 Reportez-vous à la rubrique [créer un tableau croisé dynamique pour analyser les données de feuille de calcul](https://support.office.com/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) pour obtenir une introduction à ces outils.
 
-Cet article fournit des exemples de code pour les scénarios courants. Pour mieux comprendre l’API PivotTable, consultez la rubrique [**PivotTable**](/javascript/api/excel/excel.pivottable) and [**PivotTableCollection**](/javascript/api/excel/excel.pivottablecollection).
-
 > [!IMPORTANT]
 > Les tableaux croisés dynamiques créés avec OLAP ne sont actuellement pas pris en charge. Il n’existe pas non plus de prise en charge de PowerPivot.
 
-## <a name="hierarchies"></a>Hierarchies
+## <a name="object-model"></a>Modèle d’objet
 
-Les tableaux croisés dynamiques sont organisés en fonction de quatre catégories de hiérarchie : ligne, colonne, données et filtre. Les données suivantes décrivant les ventes de fruit de différentes batteries de serveurs seront utilisées tout au long de cet article.
+Le [tableau croisé dynamique](/javascript/api/excel/excel.pivottable) est l’objet central pour les tableaux croisés dynamiques de l’API JavaScript pour Office.
+
+- `Workbook.pivotTables`et `Worksheet.pivotTables` sont [PivotTableCollections](/javascript/api/excel/excel.pivottablecollection) qui contiennent respectivement les [tableaux croisés dynamiques](/javascript/api/excel/excel.pivottable) dans le classeur et la feuille de calcul.
+- Un [tableau croisé dynamique](/javascript/api/excel/excel.pivottable) contient un [PivotTableCollections](/javascript/api/excel/excel.pivottablecollection) qui comporte plusieurs [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy).
+- Un [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) contient un [PivotFieldCollection](/javascript/api/excel/excel.pivotfieldcollection) qui comporte exactement un [champ de tableau croisé dynamique](/javascript/api/excel/excel.pivotfield). Si la conception s’étend pour inclure des tableaux croisés dynamiques OLAP, cela peut changer.
+- Un [champ de tableau croisé dynamique](/javascript/api/excel/excel.pivotfield) contient un [PivotItemCollection](/javascript/api/excel/excel.pivotitemcollection) avec plusieurs [PivotItems](/javascript/api/excel/excel.pivotitem).
+- Un [tableau croisé dynamique](/javascript/api/excel/excel.pivottable) contient un [PivotLayout](/javascript/api/excel/excel.pivotlayout) qui définit où les [champs PivotFields](/javascript/api/excel/excel.pivotfield) et [PivotItems](/javascript/api/excel/excel.pivotitem) sont affichés dans la feuille de calcul.
+
+Examinons comment ces relations s’appliquent à certains exemples de données. Les données suivantes décrivent les ventes de fruit de différentes batteries de serveurs. Il s’agit de l’exemple de cet article.
 
 ![Collection de ventes de fruit de différents types de batteries de serveurs différentes.](../images/excel-pivots-raw-data.png)
 
-Ces données ont cinq hiérarchies **: batteries de serveurs**, **type**, **classification**, **caisses vendues à la batterie de serveurs**et **caisses vendues en gros**. Chaque hiérarchie peut uniquement exister dans l’une des quatre catégories. Si le **type** est ajouté aux hiérarchies de colonnes, puis ajouté aux hiérarchies de lignes, il n’est conservé que dans ce dernier.
+Les données de ventes de la batterie de fruits seront utilisées pour créer un tableau croisé dynamique. Chaque colonne, telle que **types**, est `PivotHierarchy`. La hiérarchie de **types** contient le champ **types** . Le champ **types** contient les éléments **Apple**, **Kiwi**, **citron**, **citron**et **orange**.
+
+### <a name="hierarchies"></a>Hierarchies
+
+Les tableaux croisés dynamiques sont organisés en fonction de quatre catégories de hiérarchie : [ligne](/javascript/api/excel/excel.rowcolumnpivothierarchy), [colonne](/javascript/api/excel/excel.rowcolumnpivothierarchy), [données](/javascript/api/excel/excel.datapivothierarchy)et [filtre](/javascript/api/excel/excel.filterpivothierarchy).
+
+Les données de la batterie de serveurs affichées précédemment ont cinq hiérarchies : **batteries**de serveurs, **type**, **classification**, **caisses vendues à la batterie de serveurs**et **caisses vendues en gros**. Chaque hiérarchie peut uniquement exister dans l’une des quatre catégories. Si le **type** est ajouté aux hiérarchies de colonne, il ne peut pas également se trouver dans les hiérarchies de ligne, de données ou de filtre. Si **type** est par la suite ajouté aux hiérarchies de lignes, il est supprimé des hiérarchies de colonne. Ce comportement est le même, que l’attribution de hiérarchie soit réalisée via l’interface utilisateur Excel ou les API JavaScript pour Excel.
 
 Les hiérarchies de ligne et de colonne définissent le mode de regroupement des données. Par exemple, une hiérarchie de lignes de **batteries de serveurs** regroupe tous les jeux de données de la même batterie de serveurs. Le choix entre la hiérarchie de ligne et de colonne définit l’orientation du tableau croisé dynamique.
 
@@ -36,7 +48,7 @@ Les hiérarchies de données sont les valeurs à agréger en fonction des hiéra
 
 Les hiérarchies de filtre incluent ou excluent les données du tableau croisé dynamique en fonction des valeurs contenues dans ce type filtré. Une hiérarchie de filtrage de **classification** avec le type **Organic** Selected affiche uniquement les données pour les fruits organiques.
 
-Voici les données de la batterie de serveurs à nouveau, ainsi qu’un tableau croisé dynamique. Le tableau croisé dynamique utilise la **batterie de serveurs** et le **type** comme hiérarchies de lignes, les **caisses vendues au niveau** de la batterie de serveurs et des **caisses vendus en gros** en tant que hiérarchies de données (avec la fonction d’agrégation par défaut Sum) et une **classification** en tant que filtre hiérarchie (avec l’option **Organic** sélectionnée). 
+Voici les données de la batterie de serveurs à nouveau, ainsi qu’un tableau croisé dynamique. Le tableau croisé dynamique utilise la **batterie de serveurs** et le **type** comme hiérarchies de lignes, les **caisses vendues au niveau** de la batterie de serveurs et des **caisses vendus en gros** en tant que hiérarchies de données (avec la fonction d’agrégation par défaut Sum) et une **classification** en tant que hiérarchie de filtres (avec l’option **Organic** sélectionnée).
 
 ![Sélection de données sur les ventes de fruit en regard d’un tableau croisé dynamique avec des hiérarchies de lignes, de données et de filtres.](../images/excel-pivot-table-and-data.png)
 
@@ -275,10 +287,12 @@ Les tableaux croisés dynamiques agrègent par défaut les données de leurs hi�
 L' `ShowAsRule` objet possède trois propriétés :
 
 - `calculation`: Type de calcul relatif à appliquer à la hiérarchie de données (la valeur par `none`défaut est).
-- `baseField`: Champ au sein de la hiérarchie contenant les données de base avant l’application du calcul. Le [champ PivotField](/javascript/api/excel/excel.pivotfield) a généralement le même nom que sa hiérarchie parente.
+- `baseField`: [Champ de tableau croisé dynamique](/javascript/api/excel/excel.pivotfield) dans la hiérarchie contenant les données de base avant l’application du calcul. Étant donné que les tableaux croisés dynamiques Excel ont un mappage un-à-un de la hiérarchie sur champ, vous utiliserez le même nom pour accéder à la hiérarchie et au champ.
 - `baseItem`: La valeur de [PivotItem](/javascript/api/excel/excel.pivotitem) individuelle comparée aux valeurs des champs de base basés sur le type de calcul. Tous les calculs ne nécessitent pas ce champ.
 
-L’exemple suivant montre comment définir le calcul sur la **somme des caisses vendues dans** la hiérarchie des données de la batterie de serveurs pour qu’elle soit un pourcentage du total de la colonne. Nous souhaitons toujours que la granularité s’étende au niveau du type de fruit, c’est pourquoi nous allons utiliser la hiérarchie des lignes de **type** et le champ sous-jacent. L’exemple dispose également d’une **batterie de serveurs** comme première hiérarchie de lignes, de sorte que le nombre total d’entrées de batterie de serveurs affiche également le pourcentage de production de chaque batterie.
+L’exemple suivant montre comment définir le calcul sur la **somme des caisses vendues dans** la hiérarchie des données de la batterie de serveurs pour qu’elle soit un pourcentage du total de la colonne.
+Nous souhaitons toujours que la granularité s’étende au niveau du type de fruit, c’est pourquoi nous allons utiliser la hiérarchie des lignes de **type** et le champ sous-jacent.
+L’exemple dispose également d’une **batterie de serveurs** comme première hiérarchie de lignes, de sorte que le nombre total d’entrées de batterie de serveurs affiche également le pourcentage de production de chaque batterie.
 
 ![Tableau croisé dynamique indiquant le pourcentage de ventes de fruits par rapport au total général pour les batteries individuelles et les types de fruits individuels au sein de chaque batterie de serveurs.](../images/excel-pivots-showas-percentage.png)
 
@@ -300,9 +314,9 @@ Excel.run(function (context) {
 });
 ```
 
-L’exemple précédent définit le calcul de la colonne, par rapport à une hiérarchie de lignes individuelle. Lorsque le calcul est lié à un élément individuel, utilisez `baseItem` la propriété.
+L’exemple précédent définit le calcul sur la colonne, par rapport au champ d’une hiérarchie de lignes individuelle. Lorsque le calcul est lié à un élément individuel, utilisez `baseItem` la propriété.
 
-L’exemple suivant montre le `differenceFrom` calcul. Il affiche la différence entre les entrées de hiérarchie des données sur les ventes de la batterie de serveurs par rapport à celles des « batteries de serveurs ».
+L’exemple suivant montre le `differenceFrom` calcul. Il affiche la différence entre les entrées de hiérarchie de données ventes de la batterie de serveurs par rapport à celles d' **une**batterie de serveurs.
 La `baseField` **batterie de serveurs**is, de sorte que nous voyons les différences entre les autres batteries de serveurs, ainsi que les répartitions pour chaque type de fruit similaire (**type** est également une hiérarchie de lignes dans cet exemple).
 
 ![Tableau croisé dynamique montrant les différences entre les ventes de fruit et les autres. Cela montre à la fois la différence entre les ventes de fruits totales des batteries de serveurs et les ventes de types de fruits. Si « une batterie de serveurs » n’a pas vendu un type particulier de fruit, « #N/A » s’affiche.](../images/excel-pivots-showas-differencefrom.png)

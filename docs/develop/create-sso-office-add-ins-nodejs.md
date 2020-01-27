@@ -1,14 +1,14 @@
 ---
 title: Création d’un complément Office Node.js qui utilise l’authentification unique
 description: Apprenez à créer un complément basé sur Node.js utilisant l’authentification unique Office.
-ms.date: 01/13/2020
+ms.date: 01/16/2020
 localization_priority: Priority
-ms.openlocfilehash: a3ff47f26e0db06c1c79a4f80bd814b05e80b3a3
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: 562351011ef8aaf2ba936cceea862ebfec888b11
+ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217098"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "41265451"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office Node.js qui utilise l’authentification unique (aperçu)
 
@@ -21,7 +21,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-* [Nœud et npm](https://nodejs.org/), version 10.15.0 ou ultérieure.
+* [Node.js](https://nodejs.org/) (la dernière version de [LTS ](https://nodejs.org/about/releases))
 
 * [Git Bash](https://git-scm.com/downloads) (ou un autre client Git)
 

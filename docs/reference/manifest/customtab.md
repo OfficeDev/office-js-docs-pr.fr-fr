@@ -1,14 +1,14 @@
 ---
 title: Élément CustomTab dans le fichier manifest
 description: ''
-ms.date: 04/29/2019
+ms.date: 01/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 4fa7dd86736b5ab421be5653f2e256a6b84fb480
-ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
+ms.openlocfilehash: c48e526534a3c1295e9c3f0c6fc626df94a874d3
+ms.sourcegitcommit: 72d719165cc2b64ac9d3c51fb8be277dfde7d2eb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "33517393"
+ms.lasthandoff: 01/25/2020
+ms.locfileid: "41554012"
 ---
 # <a name="customtab-element"></a>Élément CustomTab
 
@@ -18,9 +18,12 @@ Sous les onglets personnalisés, le complément peut créer jusqu’à 10 group
 
 L’attribut **id** doit être unique au sein du manifeste.
 
+> [!IMPORTANT]
+> Dans Outlook sur Mac, l' `CustomTab` élément n’est pas disponible et vous devez utiliser [OfficeTab](officetab.md) à la place.
+
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Requis  |  Description  |
+|  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 |  [Group](group.md)      | Oui |  Définit un groupe de commandes.  |
 |  [Label](#label-tab)      | Oui |  Étiquette pour CustomTab ou Group.  |
