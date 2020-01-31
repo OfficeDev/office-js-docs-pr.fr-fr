@@ -21,7 +21,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-* [Node.js](https://nodejs.org/) (la dernière version de [LTS ](https://nodejs.org/about/releases))
+* [Node.js](https://nodejs.org/) (la dernière version [LTS](https://nodejs.org/about/releases))
 
 * [Git Bash](https://git-scm.com/downloads) (ou un autre client Git)
 

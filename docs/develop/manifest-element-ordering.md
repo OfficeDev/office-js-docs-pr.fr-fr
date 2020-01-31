@@ -3,12 +3,12 @@ title: Comment trouver l’ordre approprié d’éléments manifeste
 description: Découvrez comment trouver l’ordre correct dans lequel placer les éléments enfants dans un élément parent.
 ms.date: 08/22/2019
 localization_priority: Normal
-ms.openlocfilehash: 6e88ee4f6eac09d4af8bc79a53f5faf890551a15
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: ae09fa90345188a80c910c6bad69fbbc7ad85c5b
+ms.sourcegitcommit: 413f163729183994de61a8281685184b377ef76c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111052"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "41571382"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>Comment trouver l’ordre approprié d’éléments manifeste
 
@@ -160,6 +160,8 @@ Les sections suivantes présentent les éléments de manifeste dans l’ordre da
             <Set>
       <Hosts>
         <Host>
+            <Runtimes>
+                <Runtime>
             <AllFormFactors>
             <ExtensionPoint>
                 <Script>
@@ -257,8 +259,6 @@ Les sections suivantes présentent les éléments de manifeste dans l’ordre da
                                     <SourceLocation>
                                     <Title>
                                     <FunctionName>
-        <Runtimes>
-            <Runtime>
         <Resources>
             <Images>
                 <Image>

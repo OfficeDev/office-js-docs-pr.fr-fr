@@ -1,14 +1,14 @@
 ---
 title: Vider le cache Office
 description: Découvrez comment effacer le cache Office sur votre ordinateur.
-ms.date: 12/31/2019
+ms.date: 01/21/2020
 localization_priority: Priority
-ms.openlocfilehash: 3744d8125a5165569c262dc28622614853798c6f
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
+ms.openlocfilehash: 68e5c022671844ee44bf8ca8ac00bc5af6564bad
+ms.sourcegitcommit: 43166612e9b4bf7a73312a572663c8696353dbc6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40915056"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "41580962"
 ---
 # <a name="clear-the-office-cache"></a>Vider le cache Office
 
@@ -18,7 +18,37 @@ En outre, si vous apportez des modifications au manifeste de votre complément (
 
 ## <a name="clear-the-office-cache-on-windows"></a>Vider le cache Office sur Windows
 
-Pour vider le cache Office sur Windows, supprimez le contenu du dossier `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
+### <a name="excel-word-and-powerpoint"></a>Excel, Word et PowerPoint 
+
+Pour vider le cache Office sur Windows pour Excel, Word et PowerPoint, supprimez le contenu du dossier `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
+
+### <a name="outlook-windows-10"></a>Outlook (Windows 10)
+
+Pour vider le cache Outlook dans Windows 10 lorsque le complément s’exécute dans Microsoft Edge, vous pouvez utiliser Microsoft Edge DevTools.
+
+> [!TIP]
+> Si vous souhaitez que le complément sideloaded reflète les modifications récentes apportées à ses fichiers HTML ou JavaScript, il n’est pas nécessaire que vous utilisiez les étapes suivantes pour vider le cache. Il vous suffit, au lieu de cela, d’insérer le focus dans le volet de tâches du complément (en cliquant n’importe où dans le volet), puis d’appuyer sur **F5** pour recharger le complément. 
+
+> [!NOTE]
+> Pour effacer le cache Outlook en suivant les étapes ci-dessous, votre complément doit avoir un volet de tâches. Si vous avez un complément UI-less, par exemple un complément qui utilise la fonctionnalité [on-send](/outlook/add-ins/outlook-on-send-addins), vous devez ajouter un volet de tâches à votre complément qui utilise le même domaine pour [SourceLocation](../reference/manifest/sourcelocation.md), avant de pouvoir utiliser les étapes suivantes pour vider le cache.
+
+1. Installez [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj).
+
+2. Ouvrez votre complément dans Outlook.
+
+3. Exécutez Microsoft Edge DevTools.
+
+4. Ouvrez l’onglet **Local** dans Microsoft Edge DevTools. Votre complément est répertorié par son nom.
+
+5. Sélectionnez le nom du complément pour joindre le débogueur à votre complément. Une nouvelle fenêtre Microsoft Edge DevTools s’ouvre lorsque le débogueur s'attache à votre complément.
+
+6. Sous l’onglet **Réseau** de la nouvelle fenêtre, sélectionnez le bouton **Vider le cache**.
+
+    ![Capture d’écran Microsoft Edge DevTools avec le bouton Vider le cache mis en évidence](../images/edge-devtools-clear-cache.png)
+
+7. Si l’exécution de ces étapes ne produit pas le résultat escompté, vous pouvez également sélectionner le bouton **Toujours actualiser à partir du serveur**.
+
+    ![Capture d’écran Microsoft Edge DevTools avec le bouton Toujours actualiser à partir du serveur mis en évidence](../images/edge-devtools-refresh-from-server.png)
 
 ## <a name="clear-the-office-cache-on-mac"></a>Vider le cache Office sur Mac
 
@@ -30,8 +60,9 @@ Pour vider le cache Office sur iOS, appelez `window.location.reload(true)` à pa
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Manifeste XML des compléments Office](../develop/add-in-manifests.md)
-- [Valider le manifeste d’un complément Office](troubleshoot-manifest.md)
+- [Débogage des compléments Office](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
 - [Déboguer votre complément avec la journalisation runtime](runtime-logging.md)
 - [Chargement de la version test des compléments Office](sideload-office-add-ins-for-testing.md)
-- [Débogage des compléments Office](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+- [Manifeste XML des compléments Office](../develop/add-in-manifests.md)
+- [Valider le manifeste d’un complément Office](troubleshoot-manifest.md)
+
