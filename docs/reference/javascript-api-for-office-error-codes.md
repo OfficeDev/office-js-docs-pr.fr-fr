@@ -1,14 +1,14 @@
 ---
 title: Codes d’erreur de l’API JavaScript pour Office
 description: ''
-ms.date: 01/14/2020
+ms.date: 01/30/2020
 localization_priority: Normal
-ms.openlocfilehash: af8d53f81bdbefb5810ab02e3391cf3154096bef
-ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
+ms.openlocfilehash: 286cf00bf60d0e86a68eef9183fcd887e5f30ddf
+ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "41120613"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "41650018"
 ---
 # <a name="javascript-api-for-office-error-codes"></a>Codes d’erreur de l’API JavaScript pour Office
 
@@ -81,8 +81,10 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 |8021|En dehors de la plage|La valeur d’index de colonne se trouve en dehors de la plage autorisée. Utilisez une valeur (supérieure ou égale à 0) inférieure au nombre de colonnes.|L’index de colonne est supérieur à l’index de colonne le plus élevé du tableau ou est inférieur à 0.|
 |8022|En dehors de la plage|La valeur se trouve en dehors de la plage autorisée.|Certaines des valeurs dans le format se trouvent en dehors des plages prises en charge.|
 |9016|Autorisation refusée|Autorisation refusée|L’accès est refusé.|
+|9021|Erreur d’enregistrement|Une erreur de connexion s’est produite lors de la tentative d’enregistrement de l’élément sur le serveur.|L’élément n’a pas pu être enregistré. En mode en ligne, cela peut être dû à une erreur de connexion au serveur.|
 |9022|Erreur de message dans un autre magasin|L’ID EWS ne peut pas être récupéré car le message est enregistré dans un autre magasin.|L’ID EWS du message actif n’a pas pu être récupéré, car le message a peut-être été déplacé ou la boîte aux lettres d’envoi a peut-être été modifiée.|
 |9041|Erreur réseau|L’utilisateur n’est plus connecté au réseau. Veuillez vérifier la connexion réseau et réessayer.|L’utilisateur n’a plus d’accès réseau ou Internet.|
+|9043|Type de pièce jointe non pris en charge|Le type de pièce jointe n’est pas pris en charge.|L’API ne prend pas en charge le type de pièce jointe. Par exemple, `item.getAttachmentContentAsync` cette erreur est levée si la pièce jointe est une image incorporée au format RTF, ou si elle est d’un type autre qu’un élément de courrier électronique ou de calendrier (par exemple, un contact ou un élément de tâche).|
 |12002|||Un des éléments suivants :<br> - Aucune page n’existe à l’URL qui a été transmise à `displayDialogAsync`.<br> - La page qui a été transmise à `displayDialogAsync` a été chargée, mais la boîte de dialogue a été redirigée vers une page introuvable ou impossible à charger, ou a été redirigée vers une URL dont la syntaxe n’est pas valide. Erreur signalée dans la boîte de dialogue. Elle déclenche un événement `DialogEventReceived` dans la page hôte.|
 |12003|||La boîte de dialogue a été redirigée vers une URL avec le protocole HTTP. C’est le protocole HTTPS qui est requis. Erreur signalée dans la boîte de dialogue. Elle déclenche un événement `DialogEventReceived` dans la page hôte.|
 |12004|||Le domaine de l’URL transmis à `displayDialogAsync` n’est pas approuvé. Le domaine doit être le même domaine que celui de la page hôte (y compris le protocole et le numéro de port). Erreur générée par l’appel de `displayDialogAsync`.|
