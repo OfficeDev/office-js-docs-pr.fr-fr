@@ -1,19 +1,19 @@
 ---
 title: Utiliser le générateur Yeoman pour créer un complément Office qui utilise l’authentification unique (aperçu)
 description: Utiliser le générateur Yeoman pour créer un complément Office Node.js qui utilise l’authentification unique (aperçu)
-ms.date: 01/16/2020
+ms.date: 01/27/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: becc0a03a87dcfd5b37b5ab65f45dd6516bf105a
-ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
+ms.openlocfilehash: d3a78a99574c92d0066003f0e39e835563f473cd
+ms.sourcegitcommit: 413f163729183994de61a8281685184b377ef76c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "41265591"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "41571394"
 ---
 # <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on-preview"></a>Utiliser le générateur Yeoman pour créer un complément Office qui utilise l’authentification unique (aperçu)
 
-Dans cet article, vous allez découvrir le processus d’utilisation du générateur Yeoman pour créer un complément Office pour Excel, Word ou PowerPoint qui utilise l’authentification unique (SSO) lorsque c’est possible, et utilise une autre méthode d’authentification utilisateur lorsque l’authentification unique n’est pas prise en charge.
+Dans cet article, vous allez découvrir le processus d’utilisation du générateur Yeoman pour créer un complément Office pour Excel, Outlook, Word ou PowerPoint qui utilise l’authentification unique (SSO) lorsque c’est possible, et utilise une autre méthode d’authentification utilisateur lorsque l’authentification unique n’est pas prise en charge.
 
 > [!TIP]
 > Avant d'essayer de terminer ce démarrage rapide, consultez la section [Activer l'authentification unique pour les compléments Office](../develop/sso-in-office-add-ins.md) pour apprendre les concepts de base de l'authentification unique dans les compléments Office. 
@@ -37,7 +37,7 @@ Le générateur Yeoman simplifie le processus de création d’un complément d�
 ## <a name="create-the-add-in-project"></a>Création du projet de complément
 
 > [!TIP]
-> Le générateur Yeoman peut créer un complément Office avec authentification unique pour Excel, Word ou PowerPoint, et peut être créé avec des scripts de type JavaScript ou TypeScript. Les instructions suivantes indiquent `JavaScript` et `Excel`, mais vous devez choisir le type de script et l’application client Office les mieux adaptées à votre scénario.
+> Le générateur Yeoman peut créer un complément Office avec authentification unique pour Excel, Outlook, Word ou PowerPoint, et peut être créé avec des scripts de type JavaScript ou TypeScript. Les instructions suivantes indiquent `JavaScript` et `Excel`, mais vous devez choisir le type de script et l’application client Office les mieux adaptées à votre scénario.
 
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
@@ -98,7 +98,13 @@ Le projet de complément que vous avez créé à l’aide du générateur Yeoman
 
 4. Une fois vos informations d'identification saisies, fermez la fenêtre du navigateur et revenez à l'invite de commande. Au fur et à mesure du processus de configuration de l’authentification unique, les messages d’État s’affichent sur la console. Comme décrit dans la section messages de la console, les fichiers du projet de complément que le générateur Yeoman a créé sont automatiquement mis à jour avec les données requises par le processus d’authentification unique.
 
-## <a name="try-it-out"></a>Essayez
+## <a name="try-it-out"></a>Try it out
+
+Si vous avez créé un complément Excel, Word ou PowerPoint, suivez les étapes décrites dans la section suivante pour le tester. Si vous avez créé un complément Outlook, suivez les étapes décrites dans la section [d'Outlook](#outlook) à la place.
+
+### <a name="excel-word-and-powerpoint"></a>Excel, Word et PowerPoint
+
+Pour tester un complément Excel, Word ou PowerPoint, procédez comme suit.
 
 1. Une fois le processus de configuration de l’authentification unique terminé, exécutez la commande suivante pour créer le projet, démarrez le serveur web local et mettez votre complément en sideload dans l’application client Office précédemment sélectionnée.
 
@@ -117,9 +123,6 @@ Le projet de complément que vous avez créé à l’aide du générateur Yeoman
 
 4. Au bas du volet Office, sélectionnez le bouton **Obtenir mes informations de profil utilisateur** pour lancer le processus d’authentification unique. 
 
-    > [!NOTE] 
-    > Si vous n’êtes pas encore connecté à Office à ce stade, vous serez invité à le faire. Comme décrit précédemment, vous devez vous connecter avec un utilisateur membre de la même organisation Office 365 que le compte d’administrateur Office 365 que vous avez utilisé pour vous connecter à Azure lors de la configuration de l’authentification unique à l’étape 3 de la [section précédente](#configure-sso), si vous voulez que l’authentification unique soit réussie.
-
 5. Si une boîte de dialogue s’affiche pour demander des autorisations pour le compte du complément, cela signifie que l’authentification unique n’est pas prise en charge pour votre scénario et que le complément est plutôt repassé à une autre méthode d’authentification des utilisateurs. Cela peut se produire lorsque l’administrateur du locataire n’a pas accordé le consentement du complément pour accéder à Microsoft Graph, ou lorsque l’utilisateur n’est pas connecté à Office à l’aide d’un compte Microsoft valide ou d’un compte Office 365 (« professionnel ou scolaire »). Sélectionnez le bouton **Accepter** dans la fenêtre de boîte de dialogue pour continuer.
 
     ![Boîte de dialogue demande d’autorisation](../images/sso-permissions-request.png)
@@ -130,6 +133,40 @@ Le projet de complément que vous avez créé à l’aide du générateur Yeoman
 6. Le complément récupère les informations de profil de l’utilisateur connecté et écrit celui-ci dans le document. L’image suivante montre un exemple d’informations de profil écrites dans une feuille de calcul Excel.
 
     ![Informations de profil utilisateur dans la feuille de calcul Excel](../images/sso-user-profile-info-excel.png)
+
+### <a name="outlook"></a>Outlook
+
+Pour tester un complément Outlook, procédez comme suit.
+
+1. Une fois le processus de configuration de l’authentification unique terminé, exécutez la commande suivante pour créer le projet et démarrer le serveur web local.
+
+    > [!NOTE]
+    > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté la commande suivante, acceptez d’installer le certificat fourni par le générateur Yeoman.
+
+    ```command&nbsp;line
+    npm start
+    ```
+
+2. Suivez les instructions indiquées dans l’article [Chargement de version test des compléments Outlook](/outlook/add-ins/sideload-outlook-add-ins-for-testing) pour charger le complément dans Outlook. N'oubliez pas de vous connecter avec un utilisateur membre de la même organisation Office 365 que le compte d’administrateur Office 365 que vous avez utilisé pour vous connecter à Azure lors de la configuration de l’authentification unique à l’étape 3 de la [section précédente](#configure-sso). Cette opération permet d’établir les conditions appropriées pour la réussite de l’authentification unique. 
+
+3. Rédigez un nouveau message dans Outlook.
+
+4. Dans la fenêtre de composition du message, choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet du complément.
+
+    ![Bouton du complément Outlook](../images/outlook-sso-ribbon-button.png)
+
+5. Au bas du volet des tâches, sélectionnez le bouton **Obtenir mes informations de profil utilisateur** pour lancer le processus d’authentification unique. 
+
+6. Si une boîte de dialogue s’affiche pour demander des autorisations pour le compte du complément, cela signifie que l’authentification unique n’est pas prise en charge pour votre scénario et que le complément est plutôt repassé à une autre méthode d’authentification des utilisateurs. Cela peut se produire lorsque l’administrateur du locataire n’a pas accordé le consentement du complément pour accéder à Microsoft Graph, ou lorsque l’utilisateur n’est pas connecté à Office à l’aide d’un compte Microsoft valide ou d’un compte Office 365 (« professionnel ou scolaire »). Sélectionnez le bouton **Accepter** dans la fenêtre de boîte de dialogue pour continuer.
+
+    ![Boîte de dialogue demande d’autorisation](../images/sso-permissions-request.png)
+
+    > [!NOTE]
+    > Une fois qu’un utilisateur a accepté cette demande d’autorisation, il n’est plus invité à le faire à l’avenir.
+
+7. Le complément récupère les informations du profil de l’utilisateur connecté et les écrit dans le corps de l'e-mail. 
+
+    ![Informations du profil utilisateur dans un message Outlook](../images/sso-user-profile-info-outlook.png)
 
 ## <a name="next-steps"></a>Étapes suivantes
 

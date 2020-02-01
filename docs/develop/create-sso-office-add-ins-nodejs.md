@@ -3,12 +3,12 @@ title: Création d’un complément Office Node.js qui utilise l’authentificat
 description: Apprenez à créer un complément basé sur Node.js utilisant l’authentification unique Office.
 ms.date: 01/16/2020
 localization_priority: Priority
-ms.openlocfilehash: 562351011ef8aaf2ba936cceea862ebfec888b11
-ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
+ms.openlocfilehash: 618750cac33c7f6928a017b67a7f63deee35d29b
+ms.sourcegitcommit: 43166612e9b4bf7a73312a572663c8696353dbc6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "41265451"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "41580986"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office Node.js qui utilise l’authentification unique (aperçu)
 
@@ -101,7 +101,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
     - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
     - `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office sur le web)
-    - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Office sur le web)
+    - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook sur le web)
 
     Pour chaque ID, procédez comme suit :
 
