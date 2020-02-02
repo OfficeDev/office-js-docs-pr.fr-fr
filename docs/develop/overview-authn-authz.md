@@ -1,14 +1,14 @@
 ---
 title: Vue d’ensemble de l’authentification et de l’autorisation dans les compléments Office
 description: ''
-ms.date: 01/07/2020
+ms.date: 01/25/2020
 localization_priority: Priority
-ms.openlocfilehash: 5086095c711bbf6df98e457092f825690d43229e
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: 2bcf9f0fe4ba6f7efd55885da5ac6f972ffe4883
+ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217275"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "41650011"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Vue d’ensemble de l’authentification et de l’autorisation dans les compléments Office
 
@@ -27,9 +27,9 @@ Le diagramme suivant montre les décisions que vous devez prendre en tant que d�
 
 ## <a name="user-authentication-without-sso"></a>Authentification utilisateur sans authentification unique
 
-Vous pouvez authentifier un utilisateur dans un complément Office avec Azure Active Directory (AAD) comme vous le feriez dans n’importe quelle autre application web, à une exception près : AAD n’autorise pas la page de connexion à s’ouvrir dans un iFrame. Lorsqu’un complément Office est exécuté sur *Office sur le Web*, le volet Office est un iFrame. Cela signifie que vous devez ouvrir l’écran de connexion AAD dans une boîte de dialogue ouverte avec l’API de boîte de dialogue Office. Cela a une incidence sur la manière dont vous utilisez les bibliothèques d’aide à l’authentification. Pour plus d’informations, consultez [Authentification avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md).
+Vous pouvez authentifier un utilisateur dans un complément Office avec Azure Active Directory (AAD) comme vous le feriez dans d'autres applications web, à une exception près : AAD n’autorise pas la page de connexion à s’ouvrir dans un IFrame. Lorsqu’un complément Office est exécuté sur *Office sur le Web*, le volet Office est un iFrame. Cela signifie que vous devez ouvrir l’écran de connexion Azure Active Directory dans une boîte de dialogue ouverte avec l’API de boîte de dialogue Office. Cela a une incidence sur la manière dont vous utilisez les bibliothèques d’aide à l’authentification. Pour plus d’informations, consultez [Authentification avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md).
 
-Pour plus d’informations sur la programmation de l’authentification avec AAD, commencez par la [vue d’ensemble de Microsoft Identity Platform (v 2.0)](/azure/active-directory/develop/v2-overview). Cet article présente de nombreux tutoriels et guides, ainsi que des liens vers des exemples et des bibliothèques pertinents. Comme expliqué dans [Authentification avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md), vous devrez peut-être ajuster le code dans les exemples pour qu’il s’exécute dans la boîte de dialogue Office.
+Pour plus d’informations sur la programmation de l’authentification avec Azure Active Directory, commencez par la [Vue d’ensemble de la plateforme d’identité Microsoft (v 2.0)](/azure/active-directory/develop/v2-overview) où se trouvent de nombreux didacticiels et guides, ainsi que des liens vers des exemples et bibliothèques pertinents. Comme expliqué dans [Authentification avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md), vous devrez peut-être ajuster le code dans les exemples pour qu’il s’exécute dans la boîte de dialogue Office.
 
 ## <a name="access-to-microsoft-graph-without-sso"></a>Accès à Microsoft Graph sans authentification unique
 
@@ -37,7 +37,7 @@ Vous pouvez obtenir l’autorisation d’accès aux données Microsoft Graph pou
 
 ## <a name="user-authentication-with-sso"></a>Authentification utilisateur avec authentification unique
 
-Pour utiliser l’authentification unique afin d’authentifier l’utilisateur, votre code dans un volet Office ou qu’un fichier fonction appelle la méthode [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). Si l’utilisateur n’est pas connecté à Office, Office ouvre une boîte de dialogue et le redirige vers la page de connexion Azure Active Directory. Une fois l’utilisateur connecté, ou si l’utilisateur est déjà connecté, la méthode retourne un jeton d’accès. Ce jeton est un jeton d’amorçage dans le flux **On Behalf Of**. (Voir [accès à Microsoft Graph sans authentification unique](#access-to-microsoft-graph-with-sso).) Il peut toutefois être utilisé en tant que jeton d’ID, car il contient plusieurs revendications uniques pour l’utilisateur actuel, notamment `preferred_username`, `name`, `sub` et `oid`. Pour obtenir des instructions sur la propriété à utiliser en tant qu’ID utilisateur final, voir [Jetons d’accès à la plateforme d’identité Microsoft](https://docs.microsoft.com/azure/active-directory/develop/access-tokens#payload-claims). Pour obtenir un exemple d’un de ces jetons, consultez l’[exemple de jeton d’accès](sso-in-office-add-ins.md#example-access-token).
+Pour authentifier l'utilisateur à l'aide de l’authentification unique, votre code dans un volet Office ou un fichier fonction appelle la méthode [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). Si l’utilisateur n’est pas connecté, Office ouvre une boîte de dialogue et se redirige vers la page de connexion Azure Active Directory. Une fois que l’utilisateur se connecte, ou si l’utilisateur est déjà connecté, la méthode retourne un jeton d’accès. Ce jeton est un jeton de démarrage dans le flux **On Behalf Of**. (Voir [accès à Microsoft Graph sans authentification unique](#access-to-microsoft-graph-with-sso).) Il peut toutefois être utilisé en tant que jeton d’ID, car il contient plusieurs revendications uniques pour l’utilisateur actuel, notamment `preferred_username`, `name`, `sub` et `oid`. Pour obtenir des instructions sur la propriété à utiliser en tant qu’ID utilisateur final, voir [Jetons d’accès à la plateforme d’identité Microsoft](https://docs.microsoft.com/azure/active-directory/develop/access-tokens#payload-claims). Pour obtenir un exemple d’un de ces jetons, consultez l’[Exemple de jeton d’accès](sso-in-office-add-ins.md#example-access-token).
 
 Une fois que votre code a extrait la revendication souhaitée du jeton, il utilise cette valeur pour rechercher l’utilisateur dans une table des utilisateurs ou une base de données des utilisateurs. Utilisez la base de données pour stocker les informations relatives aux utilisateurs, comme les préférences utilisateur ou l’état du compte utilisateur. Étant donné que vous utilisez l’authentification unique, vos utilisateurs ne se connectent pas séparément à votre complément. vous n’avez donc pas besoin de stocker de mot de passe pour l’utilisateur.
 
@@ -48,9 +48,9 @@ Avant de commencer l’implémentation de l’authentification des utilisateurs 
 
 Toutefois, ces exemples n’utilisent pas le jeton comme jeton d’identité. Ils l’utilisent pour obtenir l’accès à Microsoft Graph avec le flux **On Behalf Of**.
 
-## <a name="access-to-microsoft-graph-with-sso"></a>Accès à Microsoft Graph avec SSO
+## <a name="access-to-microsoft-graph-with-sso"></a>Accès à Microsoft Graph avec l’authentification unique
 
-Pour utiliser l’authentification unique pour accéder à Microsoft Graph, votre complément dans le volet Office ou dans un fichier de fonction appelle la méthode [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). Si l’utilisateur n’est pas connecté à Office, Office ouvre une boîte de dialogue et le redirige vers la page de connexion Azure Active Directory. Une fois l’utilisateur connecté, ou si l’utilisateur est déjà connecté, la méthode retourne un jeton d’accès. Ce jeton est un jeton d’amorçage dans le flux **On Behalf Of**. Plus précisément, il possède une `scope`revendication avec la valeur `access_as_user`. Pour plus d’informations sur les revendications dans le jeton, voir [Jetons d’accès à la plateforme d’identité Microsoft](https://docs.microsoft.com/azure/active-directory/develop/access-tokens#payload-claims). Pour obtenir un exemple d’un de ces jetons, consultez l’[exemple de jeton d’accès](sso-in-office-add-ins.md#example-access-token).
+Pour utiliser l’authentification unique afin d'accéder à Microsoft Graph, votre complément dans le volet Office ou dans un fichier fonction appelle la méthode [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). Si l’utilisateur n’est pas connecté, Office ouvre une boîte de dialogue et la redirige vers la page de connexion Azure Active Directory. Une fois que l’utilisateur se connecte, ou si l’utilisateur est déjà connecté, la méthode retourne un jeton d’accès. Ce jeton est un jeton d’amorçage dans le flux **On Behalf Of**. Plus précisément, il possède une `scope`revendication avec la valeur `access_as_user`. Pour plus d’informations sur les revendications dans le jeton, voir [Jetons d’accès à la plateforme d’identité Microsoft](https://docs.microsoft.com/azure/active-directory/develop/access-tokens#payload-claims). Pour obtenir un exemple d’un de ces jetons, consultez l’[Exemple de jeton d’accès](sso-in-office-add-ins.md#example-access-token).
 
 Une fois que votre code a obtenu le jeton, il l’utilise dans le flux **On Behalf Of** pour obtenir un deuxième jeton : un jeton d’accès à Microsoft Graph.
 
@@ -74,4 +74,4 @@ Notez également les exemples suivants :
 Les services en ligne populaires, dont Google, Facebook, LinkedIn, SalesForce et GitHub, permettent aux développeurs d’accorder aux utilisateurs l’accès à leurs comptes dans d’autres applications. Vous avez ainsi la possibilité d’inclure ces services dans votre complément Office. Pour obtenir une vue d’ensemble des méthodes que votre complément peut utiliser, voir [Autoriser des services externes dans votre complément Office](auth-external-add-ins.md).
 
 > [!IMPORTANT]
-> Avant de commencer à coder, déterminez si la source de données autorise l’ouverture de son écran de connexion dans un iFrame. Lorsqu’un complément Office est exécuté sur *Office sur le Web*, le volet Office est un iFrame. Si la source de données n’autorise pas l’ouverture de l’écran de connexion dans un iFrame, vous devez ouvrir l’écran de connexion dans une boîte de dialogue ouverte avec l’API de boîte de dialogue Office. Pour plus d’informations, consultez [Authentification avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md).
+> Avant de commencer à coder, déterminez si la source de données autorise l’ouverture de son écran de connexion dans un IFrame. Lorsqu’un complément Office est exécuté sur *Office sur le Web*, le volet des tâches est un IFrame. Si la source de données n’autorise pas l’ouverture de l’écran de connexion dans un IFrame, vous devez ouvrir l’écran de connexion dans une boîte de dialogue ouverte avec l’API de dialogue Office. Pour plus d’informations, consultez [Authentification avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md).
