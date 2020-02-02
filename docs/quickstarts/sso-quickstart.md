@@ -1,15 +1,15 @@
 ---
 title: Utiliser le générateur Yeoman pour créer un complément Office qui utilise l’authentification unique (aperçu)
 description: Utiliser le générateur Yeoman pour créer un complément Office Node.js qui utilise l’authentification unique (aperçu)
-ms.date: 01/27/2020
+ms.date: 01/30/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: d3a78a99574c92d0066003f0e39e835563f473cd
-ms.sourcegitcommit: 413f163729183994de61a8281685184b377ef76c
+ms.openlocfilehash: 263a84a9084f7f75beb13b4336b61027de0bf907
+ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "41571394"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "41650025"
 ---
 # <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on-preview"></a>Utiliser le générateur Yeoman pour créer un complément Office qui utilise l’authentification unique (aperçu)
 
@@ -33,6 +33,8 @@ Le générateur Yeoman simplifie le processus de création d’un complément d�
     [!include[note to update Yeoman generator](../includes/note-yeoman-generator-update.md)]
 
 [!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
+
+* Si vous utilisez un Mac et que l'interface de ligne de commande (CLI) Azure n’est pas installée sur votre ordinateur, vous devez installer [Homebrew](https://brew.sh/). Le script de configuration de l’authentification unique exécuté lors de ce démarrage rapide utilise homebrew pour installer l’interface de ligne de commande Azure, puis utilise la CLI pour configurer l’authentification unique dans Azure.
 
 ## <a name="create-the-add-in-project"></a>Création du projet de complément
 

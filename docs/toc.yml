@@ -68,7 +68,7 @@
           items:
             - name: Vue d’ensemble de l’authentification et de l’autorisation
               href: develop/overview-authn-authz.md
-            - name: Authentifier et autoriser avec l’API de boîte de dialogue Office
+            - name: Authentifier et autoriser avec l’API de dialogue Office
               href: develop/auth-with-office-dialog-api.md
             - name: Autoriser des services externes
               href: develop/auth-external-add-ins.md
@@ -139,8 +139,16 @@
               displayName: manifest
             - name: Localisation
               href: develop/localization.md
-            - name: Ouvrir une boîte de dialogue.
-              href: develop/dialog-api-in-office-add-ins.md
+            - name: Boîtes de dialogue
+              items:
+                - name: Utiliser l’API de dialogue dans vos compléments Office
+                  href: develop/dialog-api-in-office-add-ins.md
+                - name: Pratiques recommandées et règles pour l’API de dialogue Office
+                  href: develop/dialog-best-practices.md
+                - name: Gestion des erreurs et des événements dans la boîte de dialogue Office
+                  href: develop/dialog-handle-errors-events.md
+                - name: Utiliser la boîte de dialogue Office pour lire une vidéo
+                  href: develop/dialog-video.md
             - name: Performances
               href: concepts/resource-limits-and-performance-optimization.md
             - name: Confidentialité et sécurité
@@ -606,9 +614,6 @@
         - name: Authentification
           href: excel/custom-functions-authentication.md
           displayName: 'Excel, Custom Functions'
-        - name: Traitement par lots
-          href: excel/custom-functions-batching.md
-          displayName: 'Excel, Custom Functions'
         - name: Débogage
           href: excel/custom-functions-debugging.md
           displayName: 'Excel, Custom Functions'
@@ -998,3 +1003,16 @@
         - name: Utilisation d’options de recherche pour trouver du texte dans votre complément Word
           href: word/search-option-guidance.md
           displayName: Word
+- name: Modèles et pratiques
+  items:
+    - name: Partager du code à partir d’un complément VSTO vers un complément Office
+      href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
+    - name: Traitement par lots des appels distants de fonction personnalisée
+      href: excel/custom-functions-batching.md
+      displayName: 'Excel, Custom Functions'
+    - name: Authentification
+      href: develop/authentication-pnp.md
+    - name: Enregistrer et partager l’état des fonctions personnalisées
+      href: excel/custom-functions-save-state-redirect.md
+    - name: Gérer une résolution élevée et la redimensionner dans votre solution Office
+      href: develop/dynamic-dpi.md

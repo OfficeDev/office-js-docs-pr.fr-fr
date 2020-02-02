@@ -1,22 +1,22 @@
 ---
 title: Autoriser la connexion à Microsoft Graph sans authentification unique
-description: ''
-ms.date: 12/06/2019
+description: Découvrir l'autorisation de connexion à Microsoft Graph sans authentification unique
+ms.date: 01/29/2020
 localization_priority: Priority
-ms.openlocfilehash: 2f65a76c31ba47f90860bc6a432cdcd32c992a17
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: a7dbd1fdd85852a82fcb00050283fece84a04e04
+ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814004"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "41649969"
 ---
 # <a name="authorize-to-microsoft-graph-without-sso"></a>Autoriser la connexion à Microsoft Graph sans authentification unique
 
-Vous pouvez obtenir l’autorisation d’accès aux données Microsoft Graph pour votre complément en obtenant un jeton d’accès auprès d’Azure Active Directory (AAD). Pour ce faire, utilisez le flux de codes d’autorisation ou le flux implicite, comme vous le feriez dans n’importe quelle autre application web, à une exception près : AAD n’autorise pas la page de connexion à s’ouvrir dans un iFrame. Lorsqu’un complément Office est exécuté sur *Office sur le Web*, le volet Office est un iFrame. Cela signifie que vous devez ouvrir l’écran de connexion AAD dans une boîte de dialogue ouverte avec l’API de boîte de dialogue Office. Cela a un effet sur votre utilisation des bibliothèques d’aide à l’authentification et l’autorisation. Pour plus d’informations, consultez [Authentification avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md).
+Votre complément peut recevoir une autorisation d’accès aux données Microsoft Graph en obtenant un jeton d’accès auprès d’Azure Active Directory (AAD). Utilisez le flux de codes d’autorisation ou le flux implicite, comme vous le feriez dans d'autres applications web, mais à une exception près : AAD n’autorise pas la page de connexion à s’ouvrir dans un iFrame. Lorsqu’un complément Office est exécuté sur *Office sur le web*, le volet Office est un IFrame. Cela signifie que vous devez ouvrir l’écran de connexion Azure Active Directory dans une boîte de dialogue ouverte avec l’API de boîte de dialogue Office. Cela a un effet sur votre utilisation des bibliothèques d’aide à l’authentification et l’autorisation. Pour plus d’informations, consultez l'[Authentification avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md).
 
-Pour plus d’informations sur la programmation de l’authentification avec AAD, commencez par la [vue d’ensemble de Microsoft Identity Platform (v 2.0)](/azure/active-directory/develop/v2-overview). Cet article présente de nombreux tutoriels et guides, ainsi que des liens vers des exemples pertinents. Une fois encore, rappelez-vous que vous devrez peut-être ajuster le code dans les exemples pour qu’il s’exécute dans la boîte de dialogue Office, afin de tenir compte du fait que la boîte de dialogue s’exécute dans un processus distinct de celui du volet Office.
+Pour plus d’informations sur la programmation de l’authentification avec Azure Active Directory, commencez par la [Vue d’ensemble de la plateforme d’identité Microsoft (v 2.0)](/azure/active-directory/develop/v2-overview) où se trouvent les didacticiels et guides de cet ensemble de documentation, ainsi que des liens vers des exemples pertinents. Une fois encore, vous devrez peut-être ajuster le code dans les exemples pour qu’il s’exécute dans la boîte de dialogue Office, afin de tenir compte du fait que la boîte de dialogue Office s’exécute dans un processus distinct de celui du volet Office.
 
-Une fois que votre code a obtenu le jeton d’accès à Microsoft Graph, soit il passe le jeton d’accès de la boîte de dialogue au volet Office, soit il stocke le jeton dans une base de données et signale au volet Office que le jeton y est disponible. (Pour plus d’informations, voir [Authentification avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md).) Le code dans le volet Office demande les données de Microsoft Graph et inclut le jeton dans ces demandes. Pour plus d’informations sur l’appel de Microsoft Graph et des kits de développement pour Microsoft Graph, voir la [documentation de Microsoft Graph](/graph/).
+Une fois que votre code obtient le jeton d’accès à Graph, soit il passe le jeton d’accès de la boîte de dialogue au volet Office, soit il stocke le jeton dans une base de données et signale au volet Office que le jeton est disponible. (Pour plus d’informations, voir [Authentification avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md).) Le code dans le volet Office demande les données de Graph et inclut le jeton dans ces demandes. Pour plus d’informations sur l’appel de Graph et des kits de développement Graph, voir la [documentation de Microsoft Graph](/graph/).
 
 ## <a name="recommended-libraries-and-samples"></a>Bibliothèques et exemples recommandés
 
@@ -33,4 +33,3 @@ Les exemples suivants obtiennent les données Microsoft Graph d’un complément
 - [Complément Office Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
 - [Complément Outlook Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)
 - [Complément Office Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React)
-

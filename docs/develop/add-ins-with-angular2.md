@@ -1,14 +1,14 @@
 ---
 title: Développement de compléments Office avec Angular
 description: ''
-ms.date: 09/18/2019
+ms.date: 01/27/2020
 localization_priority: Priority
-ms.openlocfilehash: 6687cb5a661217e3bc6b240ce550edd082e565c7
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: 51e47b72e819a96d4766785243d542811386dca7
+ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035216"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "41649976"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Développement de compléments Office avec Angular
 
@@ -88,9 +88,9 @@ Nous vous recommandons d’utiliser le style [UI Fabric](https://developer.micro
 Envisagez d’utiliser des composants de structure dans votre complément en les insérant dans les composants Angular. Pour obtenir un exemple de procédure à suivre, voir [Complément de vérification du style dans Word basé sur Angular](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker). Notez, par exemple, comment le composant Angular défini dans [fabric.textfield.wrapper](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/shared/office-fabric-component-wrappers/fabric.textfield.wrapper.component.ts) importe le fichier de structure TextField.ts, où le composant de structure est défini. 
 
 
-## <a name="using-the-office-dialog-api-with-angular"></a>Utilisation de l’API Boîte de dialogue Office
+## <a name="using-the-office-dialog-api-with-angular"></a>Utilisation de l’API de boîte de dialogue Office avec Angular
 
-L’API Boîte de dialogue du complément Office permet à votre complément d’ouvrir une page dans une boîte de dialogue semi-modale dans laquelle vous pouvez échanger des informations avec la page principale, qui se trouve généralement dans un volet Office.
+L’API de boîte de dialogue du complément Office permet à votre complément d’ouvrir une page dans une boîte de dialogue non modale dans laquelle vous pouvez échanger des informations avec la page principale, qui se trouve généralement dans un volet Office.
 
 La méthode [displayDialogAsync](/javascript/api/office/office.ui) accepte un paramètre qui indique l’URL de la page qui doit s’ouvrir dans la boîte de dialogue. Votre complément peut avoir une autre page HTML (différente de la page de base) pour passer à ce paramètre, ou vous pouvez passer l’URL d’un itinéraire dans votre application Angular. 
 
