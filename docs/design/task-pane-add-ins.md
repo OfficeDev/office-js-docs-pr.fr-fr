@@ -2,79 +2,79 @@
 title: Volets des tâches dans les compléments Office
 description: Les volets des tâches permettent aux utilisateurs d’accéder aux contrôles d’interface qui exécutent le code pour modifier des documents ou des e-mails, ou afficher des données d’une source de données.
 ms.date: 01/14/2020
-localization_priority: Priority
-ms.openlocfilehash: 1d2e77dd446c787daba18426f74d4788cdc6d99e
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 048c6a508a9d8106d129469880396a564b26aea4
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217291"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950466"
 ---
-# <a name="task-panes-in-office-add-ins"></a><span data-ttu-id="fd0af-103">Volets des tâches dans les compléments Office</span><span class="sxs-lookup"><span data-stu-id="fd0af-103">Task panes in Office Add-ins</span></span>
+# <a name="task-panes-in-office-add-ins"></a><span data-ttu-id="234ff-103">Volets des tâches dans les compléments Office</span><span class="sxs-lookup"><span data-stu-id="234ff-103">Task panes in Office Add-ins</span></span>
  
-<span data-ttu-id="fd0af-p101">Les volets des tâches sont des surfaces d’interface qui s’affichent généralement sur le côté droit de la fenêtre dans Word, PowerPoint, Excel et Outlook. Les volets des tâches permettent aux utilisateurs d’accéder aux contrôles d’interface qui exécutent le code pour modifier des documents ou des e-mails, ou afficher des données d’une source de données. Utilisez les volets des tâches lorsque vous n’avez pas besoin d’incorporer des fonctionnalités directement dans le document.</span><span class="sxs-lookup"><span data-stu-id="fd0af-p101">Task panes are interface surfaces that typically appear on the right side of the window within Word, PowerPoint, Excel, and Outlook. Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source. Use task panes when you don't need to embed functionality directly into the document.</span></span>
+<span data-ttu-id="234ff-p101">Les volets des tâches sont des surfaces d’interface qui s’affichent généralement sur le côté droit de la fenêtre dans Word, PowerPoint, Excel et Outlook. Les volets des tâches permettent aux utilisateurs d’accéder aux contrôles d’interface qui exécutent le code pour modifier des documents ou des e-mails, ou afficher des données d’une source de données. Utilisez les volets des tâches lorsque vous n’avez pas besoin d’incorporer des fonctionnalités directement dans le document.</span><span class="sxs-lookup"><span data-stu-id="234ff-p101">Task panes are interface surfaces that typically appear on the right side of the window within Word, PowerPoint, Excel, and Outlook. Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source. Use task panes when you don't need to embed functionality directly into the document.</span></span>
 
-<span data-ttu-id="fd0af-107">*Figure 1. Mise en page type du volet Office*</span><span class="sxs-lookup"><span data-stu-id="fd0af-107">*Figure 1. Typical task pane layout*</span></span>
+<span data-ttu-id="234ff-107">*Figure 1. Mise en page type du volet Office*</span><span class="sxs-lookup"><span data-stu-id="234ff-107">*Figure 1. Typical task pane layout*</span></span>
 
 ![Image affichant une disposition du volet des tâches](../images/overview-with-app-task-pane.png)
 
-## <a name="best-practices"></a><span data-ttu-id="fd0af-109">Meilleures pratiques</span><span class="sxs-lookup"><span data-stu-id="fd0af-109">Best practices</span></span>
+## <a name="best-practices"></a><span data-ttu-id="234ff-109">Meilleures pratiques</span><span class="sxs-lookup"><span data-stu-id="234ff-109">Best practices</span></span>
 
-|<span data-ttu-id="fd0af-110">**À faire**</span><span class="sxs-lookup"><span data-stu-id="fd0af-110">**Do**</span></span>|<span data-ttu-id="fd0af-111">**À ne pas faire**</span><span class="sxs-lookup"><span data-stu-id="fd0af-111">**Don't**</span></span>|
+|<span data-ttu-id="234ff-110">**À faire**</span><span class="sxs-lookup"><span data-stu-id="234ff-110">**Do**</span></span>|<span data-ttu-id="234ff-111">**À ne pas faire**</span><span class="sxs-lookup"><span data-stu-id="234ff-111">**Don't**</span></span>|
 |:-----|:--------|
-|<ul><li><span data-ttu-id="fd0af-112">Inclure le nom de votre complément dans le titre.</span><span class="sxs-lookup"><span data-stu-id="fd0af-112">Include the name of your add-in in the title.</span></span></li></ul>|<ul><li><span data-ttu-id="fd0af-113">Ne pas ajouter le nom de votre société au titre.</span><span class="sxs-lookup"><span data-stu-id="fd0af-113">Don't append your company name to the title.</span></span></li></ul>|
-|<ul><li><span data-ttu-id="fd0af-114">Utiliser des noms descriptifs courts dans le titre.</span><span class="sxs-lookup"><span data-stu-id="fd0af-114">Use short descriptive names in the title.</span></span></li></ul>|<ul><li><span data-ttu-id="fd0af-115">Ne pas ajouter de chaînes telles que « complément », « pour Word » ou « pour Office » au titre de votre complément.</span><span class="sxs-lookup"><span data-stu-id="fd0af-115">Don't append strings such as “add-in,” “for Word,” or “for Office” to the title of your add-in.</span></span></li></ul>|
-|<ul><li><span data-ttu-id="fd0af-116">Inclure un élément de navigation ou de commande comme le CommandBar ou le tableau croisé dynamique en haut de votre complément.</span><span class="sxs-lookup"><span data-stu-id="fd0af-116">Include some navigational or commanding element such as the CommandBar or Pivot at the top of your add-in.</span></span></li></ul>||
-|<ul><li><span data-ttu-id="fd0af-117">Inclure un élément de la marque tel que le BrandBar en bas de votre complément, sauf si votre complément doit être utilisé dans Outlook.</span><span class="sxs-lookup"><span data-stu-id="fd0af-117">Include a branding element such as the BrandBar at the bottom of your add-in unless your add-in is to be used within Outlook.</span></span></li></ul>||
+|<ul><li><span data-ttu-id="234ff-112">Inclure le nom de votre complément dans le titre.</span><span class="sxs-lookup"><span data-stu-id="234ff-112">Include the name of your add-in in the title.</span></span></li></ul>|<ul><li><span data-ttu-id="234ff-113">Ne pas ajouter le nom de votre société au titre.</span><span class="sxs-lookup"><span data-stu-id="234ff-113">Don't append your company name to the title.</span></span></li></ul>|
+|<ul><li><span data-ttu-id="234ff-114">Utiliser des noms descriptifs courts dans le titre.</span><span class="sxs-lookup"><span data-stu-id="234ff-114">Use short descriptive names in the title.</span></span></li></ul>|<ul><li><span data-ttu-id="234ff-115">Ne pas ajouter de chaînes telles que « complément », « pour Word » ou « pour Office » au titre de votre complément.</span><span class="sxs-lookup"><span data-stu-id="234ff-115">Don't append strings such as “add-in,” “for Word,” or “for Office” to the title of your add-in.</span></span></li></ul>|
+|<ul><li><span data-ttu-id="234ff-116">Inclure un élément de navigation ou de commande comme le CommandBar ou le tableau croisé dynamique en haut de votre complément.</span><span class="sxs-lookup"><span data-stu-id="234ff-116">Include some navigational or commanding element such as the CommandBar or Pivot at the top of your add-in.</span></span></li></ul>||
+|<ul><li><span data-ttu-id="234ff-117">Inclure un élément de la marque tel que le BrandBar en bas de votre complément, sauf si votre complément doit être utilisé dans Outlook.</span><span class="sxs-lookup"><span data-stu-id="234ff-117">Include a branding element such as the BrandBar at the bottom of your add-in unless your add-in is to be used within Outlook.</span></span></li></ul>||
 
 
-## <a name="variants"></a><span data-ttu-id="fd0af-118">Variantes</span><span class="sxs-lookup"><span data-stu-id="fd0af-118">Variants</span></span>
+## <a name="variants"></a><span data-ttu-id="234ff-118">Variantes</span><span class="sxs-lookup"><span data-stu-id="234ff-118">Variants</span></span>
 
-<span data-ttu-id="fd0af-p102">Les images suivantes montrent les différentes tailles de volet des tâches avec le ruban Office à une résolution de 1 366 x 768. Pour Excel, l’espace vertical supplémentaire est requis pour s’adapter à la barre de formule.</span><span class="sxs-lookup"><span data-stu-id="fd0af-p102">The following images show the various task pane sizes with the Office ribbon at a 1366x768 resolution. For Excel, additional vertical space is required to accommodate the formula bar.</span></span>  
+<span data-ttu-id="234ff-p102">Les images suivantes montrent les différentes tailles de volet des tâches avec le ruban Office à une résolution de 1 366 x 768. Pour Excel, l’espace vertical supplémentaire est requis pour s’adapter à la barre de formule.</span><span class="sxs-lookup"><span data-stu-id="234ff-p102">The following images show the various task pane sizes with the Office ribbon at a 1366x768 resolution. For Excel, additional vertical space is required to accommodate the formula bar.</span></span>  
 
-<span data-ttu-id="fd0af-121">*Figure 2. Tailles de volet des tâches du bureau Office 2016*</span><span class="sxs-lookup"><span data-stu-id="fd0af-121">*Figure 2. Office 2016 desktop task pane sizes*</span></span>
+<span data-ttu-id="234ff-121">*Figure 2. Tailles de volet des tâches du bureau Office 2016*</span><span class="sxs-lookup"><span data-stu-id="234ff-121">*Figure 2. Office 2016 desktop task pane sizes*</span></span>
 
 ![Image affichant les tailles de volet des tâches du bureau à une résolution de 1 366 x 768](../images/office-2016-taskpane-sizes.png)
 
-- <span data-ttu-id="fd0af-123">Excel - 320 x 455</span><span class="sxs-lookup"><span data-stu-id="fd0af-123">Excel - 320x455</span></span>
-- <span data-ttu-id="fd0af-124">PowerPoint - 320 x 531</span><span class="sxs-lookup"><span data-stu-id="fd0af-124">PowerPoint - 320x531</span></span>
-- <span data-ttu-id="fd0af-125">Word - 320 x 531</span><span class="sxs-lookup"><span data-stu-id="fd0af-125">Word - 320x531</span></span>
-- <span data-ttu-id="fd0af-126">Outlook - 348 x 535</span><span class="sxs-lookup"><span data-stu-id="fd0af-126">Outlook - 348x535</span></span>
+- <span data-ttu-id="234ff-123">Excel - 320 x 455</span><span class="sxs-lookup"><span data-stu-id="234ff-123">Excel - 320x455</span></span>
+- <span data-ttu-id="234ff-124">PowerPoint - 320 x 531</span><span class="sxs-lookup"><span data-stu-id="234ff-124">PowerPoint - 320x531</span></span>
+- <span data-ttu-id="234ff-125">Word - 320 x 531</span><span class="sxs-lookup"><span data-stu-id="234ff-125">Word - 320x531</span></span>
+- <span data-ttu-id="234ff-126">Outlook - 348 x 535</span><span class="sxs-lookup"><span data-stu-id="234ff-126">Outlook - 348x535</span></span>
 
 <br/>
 
-<span data-ttu-id="fd0af-127">*Figure 3. Tailles de volet des tâches Office 365*</span><span class="sxs-lookup"><span data-stu-id="fd0af-127">*Figure 3. Office 365 task pane sizes*</span></span>
+<span data-ttu-id="234ff-127">*Figure 3. Tailles de volet des tâches Office 365*</span><span class="sxs-lookup"><span data-stu-id="234ff-127">*Figure 3. Office 365 task pane sizes*</span></span>
 
 ![Image affichant les tailles de volet des tâches du bureau à une résolution de 1 366 x 768](../images/office-365-taskpane-sizes.png)
 
-- <span data-ttu-id="fd0af-129">Excel - 350 x 378</span><span class="sxs-lookup"><span data-stu-id="fd0af-129">Excel - 350x378</span></span>
-- <span data-ttu-id="fd0af-130">PowerPoint - 348 x 391</span><span class="sxs-lookup"><span data-stu-id="fd0af-130">PowerPoint - 348x391</span></span>
-- <span data-ttu-id="fd0af-131">Word - 329 x 445</span><span class="sxs-lookup"><span data-stu-id="fd0af-131">Word - 329x445</span></span>
-- <span data-ttu-id="fd0af-132">Outlook (sur le web) - 320 x 570</span><span class="sxs-lookup"><span data-stu-id="fd0af-132">Outlook (on the web) - 320x570</span></span>
+- <span data-ttu-id="234ff-129">Excel - 350 x 378</span><span class="sxs-lookup"><span data-stu-id="234ff-129">Excel - 350x378</span></span>
+- <span data-ttu-id="234ff-130">PowerPoint - 348 x 391</span><span class="sxs-lookup"><span data-stu-id="234ff-130">PowerPoint - 348x391</span></span>
+- <span data-ttu-id="234ff-131">Word - 329 x 445</span><span class="sxs-lookup"><span data-stu-id="234ff-131">Word - 329x445</span></span>
+- <span data-ttu-id="234ff-132">Outlook (sur le web) - 320 x 570</span><span class="sxs-lookup"><span data-stu-id="234ff-132">Outlook (on the web) - 320x570</span></span>
 
-## <a name="personality-menu"></a><span data-ttu-id="fd0af-133">Menu Caractéristique</span><span class="sxs-lookup"><span data-stu-id="fd0af-133">Personality menu</span></span>
+## <a name="personality-menu"></a><span data-ttu-id="234ff-133">Menu Caractéristique</span><span class="sxs-lookup"><span data-stu-id="234ff-133">Personality menu</span></span>
 
-<span data-ttu-id="fd0af-p103">Les menus Caractéristique peuvent entraver les éléments de navigation et de commande se trouvant en haut à droite du complément. Voici les dimensions actuelles du menu Caractéristique sur Windows et Mac.</span><span class="sxs-lookup"><span data-stu-id="fd0af-p103">Personality menus can obstruct navigational and commanding elements located near the top right of the add-in. The following are the current dimensions of the personality menu on Windows and Mac.</span></span>
+<span data-ttu-id="234ff-p103">Les menus Caractéristique peuvent entraver les éléments de navigation et de commande se trouvant en haut à droite du complément. Voici les dimensions actuelles du menu Caractéristique sur Windows et Mac.</span><span class="sxs-lookup"><span data-stu-id="234ff-p103">Personality menus can obstruct navigational and commanding elements located near the top right of the add-in. The following are the current dimensions of the personality menu on Windows and Mac.</span></span>
 
-<span data-ttu-id="fd0af-136">Pour Windows, le menu Caractéristique mesure 12 x 32 pixels, comme illustré.</span><span class="sxs-lookup"><span data-stu-id="fd0af-136">For Windows, the personality menu measures 12x32 pixels, as shown.</span></span>
+<span data-ttu-id="234ff-136">Pour Windows, le menu Caractéristique mesure 12 x 32 pixels, comme illustré.</span><span class="sxs-lookup"><span data-stu-id="234ff-136">For Windows, the personality menu measures 12x32 pixels, as shown.</span></span>
 
-<span data-ttu-id="fd0af-137">*Figure 4. Menu Caractéristique sur Windows*</span><span class="sxs-lookup"><span data-stu-id="fd0af-137">*Figure 4. Personality menu on Windows*</span></span>
+<span data-ttu-id="234ff-137">*Figure 4. Menu Caractéristique sur Windows*</span><span class="sxs-lookup"><span data-stu-id="234ff-137">*Figure 4. Personality menu on Windows*</span></span>
 
 ![Image illustrant le menu Caractéristique sur le bureau Windows](../images/personality-menu-win.png)
 
-<span data-ttu-id="fd0af-139">Pour Mac, le menu Caractéristique mesure 26 x 26 pixels, mais flotte à 8 pixels de la droite et à 6 pixels du haut, ce qui permet d’augmenter l’espace à 34 x 32 pixels, comme illustré.</span><span class="sxs-lookup"><span data-stu-id="fd0af-139">For Mac, the personality menu measures 26x26 pixels, but floats 8 pixels in from the right and 6 pixels from the top, which increases the space to 34x32 pixels, as shown.</span></span>
+<span data-ttu-id="234ff-139">Pour Mac, le menu Caractéristique mesure 26 x 26 pixels, mais flotte à 8 pixels de la droite et à 6 pixels du haut, ce qui permet d’augmenter l’espace à 34 x 32 pixels, comme illustré.</span><span class="sxs-lookup"><span data-stu-id="234ff-139">For Mac, the personality menu measures 26x26 pixels, but floats 8 pixels in from the right and 6 pixels from the top, which increases the space to 34x32 pixels, as shown.</span></span>
 
-<span data-ttu-id="fd0af-140">*figure 5. Menu Caractéristique sur Mac*</span><span class="sxs-lookup"><span data-stu-id="fd0af-140">*Figure 5. Personality menu on Mac*</span></span>
+<span data-ttu-id="234ff-140">*figure 5. Menu Caractéristique sur Mac*</span><span class="sxs-lookup"><span data-stu-id="234ff-140">*Figure 5. Personality menu on Mac*</span></span>
 
 ![Image illustrant le menu Caractéristique sur le bureau Mac](../images/personality-menu-mac.png)
 
-## <a name="implementation"></a><span data-ttu-id="fd0af-142">Implémentation</span><span class="sxs-lookup"><span data-stu-id="fd0af-142">Implementation</span></span>
+## <a name="implementation"></a><span data-ttu-id="234ff-142">Implémentation</span><span class="sxs-lookup"><span data-stu-id="234ff-142">Implementation</span></span>
 
-<span data-ttu-id="fd0af-143">Pour consulter un exemple qui implémente un volet des tâches, reportez-vous à [Excel Add-in JS WoodGrove Expense Trends](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends) sur GitHub.</span><span class="sxs-lookup"><span data-stu-id="fd0af-143">For a sample that implements a task pane, see [Excel Add-in JS WoodGrove Expense Trends](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends) on GitHub.</span></span> 
+<span data-ttu-id="234ff-143">Pour consulter un exemple qui implémente un volet des tâches, reportez-vous à [Excel Add-in JS WoodGrove Expense Trends](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends) sur GitHub.</span><span class="sxs-lookup"><span data-stu-id="234ff-143">For a sample that implements a task pane, see [Excel Add-in JS WoodGrove Expense Trends](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends) on GitHub.</span></span> 
 
 
-## <a name="see-also"></a><span data-ttu-id="fd0af-144">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="fd0af-144">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="234ff-144">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="234ff-144">See also</span></span>
 
-- [<span data-ttu-id="fd0af-145">Office UI Fabric dans des compléments Office</span><span class="sxs-lookup"><span data-stu-id="fd0af-145">Office UI Fabric in Office Add-ins</span></span>](office-ui-fabric.md) 
-- [<span data-ttu-id="fd0af-146">Modèles de conception de l’expérience utilisateur pour les compléments Office</span><span class="sxs-lookup"><span data-stu-id="fd0af-146">UX design patterns for Office Add-ins</span></span>](../design/ux-design-pattern-templates.md)
+- [<span data-ttu-id="234ff-145">Office UI Fabric dans des compléments Office</span><span class="sxs-lookup"><span data-stu-id="234ff-145">Office UI Fabric in Office Add-ins</span></span>](office-ui-fabric.md) 
+- [<span data-ttu-id="234ff-146">Modèles de conception de l’expérience utilisateur pour les compléments Office</span><span class="sxs-lookup"><span data-stu-id="234ff-146">UX design patterns for Office Add-ins</span></span>](../design/ux-design-pattern-templates.md)
 
