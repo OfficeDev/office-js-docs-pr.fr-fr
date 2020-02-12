@@ -2,13 +2,13 @@
 title: Compléments Office de contenu
 description: Les compléments de contenu sont des surfaces qui peuvent être incorporées directement dans des documents Excel ou PowerPoint. Ils permettent aux utilisateurs d’accéder aux contrôles d’interface qui exécutent le code pour modifier des documents ou afficher des données d’une source de données.
 ms.date: 03/19/2019
-localization_priority: Priority
-ms.openlocfilehash: f3dec371d1500d85125c8762bbc5e80f0cdfb571
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 53b61e5ba97e54a54ccd225745cdc2ce9086ebf8
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851284"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950396"
 ---
 # <a name="content-office-add-ins"></a>Compléments Office de contenu
 

@@ -2,13 +2,13 @@
 title: Déboguez votre complément avec la journalisation runtime
 description: Découvrez l’utilisation de la journalisation runtime pour déboguer votre complément.
 ms.date: 12/31/2019
-localization_priority: Priority
-ms.openlocfilehash: d69811963caf2b6d48b400ac9744d38e53859167
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: c8d58a36c4203708c87cfc9b6c6b1790f05876a7
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40915061"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950921"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>Déboguez votre complément avec la journalisation runtime
 

@@ -2,13 +2,13 @@
 title: Développement de compléments Office avec Angular
 description: ''
 ms.date: 01/27/2020
-localization_priority: Priority
-ms.openlocfilehash: 51e47b72e819a96d4766785243d542811386dca7
-ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 09092880efcf4d86f38b6559ce5e556a5e5416ce
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "41649976"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950452"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Développement de compléments Office avec Angular
 

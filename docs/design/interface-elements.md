@@ -2,13 +2,13 @@
 title: Éléments d’interface utilisateur Office pour les compléments Office
 description: ''
 ms.date: 12/24/2019
-localization_priority: Priority
-ms.openlocfilehash: 1f680d93c995d306717c7b5a81af073f378b0fbd
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: f805926894a33f74914fbd315245c93c826d5fc0
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851238"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950424"
 ---
 # <a name="office-ui-elements-for-office-add-ins"></a>Éléments d’interface utilisateur Office pour les compléments Office
 

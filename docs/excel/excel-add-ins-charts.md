@@ -2,13 +2,13 @@
 title: Utiliser des graphiques à l’aide de l’API JavaScript pour Excel
 description: ''
 ms.date: 07/17/2019
-localization_priority: Priority
-ms.openlocfilehash: 1cd1644a98ac11b68b6faba7d005d7deecd62d79
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: b89e8dffc45eb2a740b5e26373d92cc8cf4bed3e
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771659"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950879"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Utiliser des graphiques à l’aide de l’API JavaScript pour Excel
 

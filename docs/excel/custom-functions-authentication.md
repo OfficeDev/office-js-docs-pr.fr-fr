@@ -2,13 +2,13 @@
 ms.date: 07/09/2019
 description: Authentifiez les utilisateurs à l’aide de fonctions personnalisées dans Excel.
 title: Authentification des fonctions personnalisées
-localization_priority: Priority
-ms.openlocfilehash: f746947122da7ef3d54a0dd3b4f90dd059e5830f
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: aa966aeb8d8161339bab0161b4cc329a9b495d08
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268137"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950683"
 ---
 # <a name="authentication-for-custom-functions"></a>Authentification des fonctions personnalisées
 
@@ -45,7 +45,7 @@ Le diagramme suivant décrit ce processus de base. Notez que la ligne pointillé
 4. Votre fonction personnalisée définit ensuite ce jeton d’accès sur `storage`.
 5. Le volet de tâches de votre complément accède au jeton à partir de`storage`.
 
-![Diagramme de la fonction personnalisée à l’aide de l’API de boîte de dialogue pour obtenir un jeton d’accès, puis partagez le jeton avec le volet de tâches via l’API OfficeRuntime.storage.](../images/authentication-diagram.png " Diagramme d’authentification.")
+![Diagramme de la fonction personnalisée à l’aide de l’API de boîte de dialogue pour obtenir le jeton d’accès, puis partager le jeton avec le volet de tâches via l’API OfficeRuntime. Storage.](../images/authentication-diagram.png "Diagramme d’authentification.")
 
 ## <a name="storing-the-token"></a>Stockage du jeton
 

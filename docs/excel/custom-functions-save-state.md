@@ -2,13 +2,13 @@
 ms.date: 07/10/2019
 description: Utilisez `OfficeRuntime.storage` pour enregistrer l’état des fonctions personnalisées.
 title: Enregistrer et partager l’état des fonctions personnalisées
-localization_priority: Priority
-ms.openlocfilehash: a1b70433ef0c00d507175b32fc12603ff3de1e3f
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 397c785a4dedb7d2e9d1b38c8db0edb811448e1d
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771588"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950809"
 ---
 # <a name="save-and-share-state-in-custom-functions"></a>Enregistrer et partager l’état des fonctions personnalisées
 
