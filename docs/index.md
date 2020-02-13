@@ -1,27 +1,27 @@
 ---
 layout: LandingPage
 ms.topic: landing-page
-title: Documentation sur les compléments Office
+title: Documentation pour compléments Office
 description: Découvrez comment créer des compléments Office.
 author: o365devx
 ms.author: o365devx
 ms.prod: non-product-specific
 ms.date: 12/24/2019
-localization_priority: Normal
-ms.openlocfilehash: 2e0e8932214f398169f8483b4ca8bf1a65ec16a5
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
-ms.translationtype: MT
+localization_priority: Priority
+ms.openlocfilehash: 4a2134fec212b75abff95d225f6238bd1f888c3b
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111010"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950760"
 ---
-# <a name="office-add-ins-documentation"></a>Documentation sur les compléments Office
+# <a name="office-add-ins-documentation"></a>Documentation pour compléments Office
 
-Utilisez la plateforme Compléments Office pour créer des solutions qui étendent les applications Office et interagissent avec du contenu de documents Office. Avec les compléments Office, vous pouvez utiliser des technologies Web familières telles que HTML, CSS et JavaScript pour créer des solutions pouvant être exécutées dans Office sur Windows, Mac, iPad et sur le Web.
+Utilisez la plateforme des compléments Office pour créer des solutions qui étendent des applications Office et interagissent avec du contenu dans des documents Office. Les compléments Office vous permettent d’utiliser des technologies web familières telles que HTML, CSS et JavaScript pour créer des solutions pouvant s’exécuter dans Office sous Windows, Mac, iPad et sur le web.
 
 <h2>Prise en main</h2>
 
-<p>Vous débutez dans la création de compléments Office ? Commencez par vous familiariser avec la plateforme des compléments Office et créer des compléments Office :</p>
+<p>Vous débutez dans la création de compléments Office ? Commencez par en savoir plus sur la plateforme de compléments Office et la création de compléments Office :</p>
 
 <ul class="panelContent cardsF cols cols3">
     <li>
@@ -35,7 +35,7 @@ Utilisez la plateforme Compléments Office pour créer des solutions qui étende
                     </div>
                     <div class="cardText">
                         <h3>Vue d’ensemble de la plateforme de compléments pour Office</h3>
-                        <p><a href="overview/office-add-ins.md">En savoir plus sur la plateforme des compléments Office.</a></p>
+                        <p><a href="overview/office-add-ins.md">En savoir plus sur la plateforme de compléments Office.</a></p>
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@ Utilisez la plateforme Compléments Office pour créer des solutions qui étende
     </li>
 </ul>
 
-<p>Ensuite, utilisez des Démarrages rapides, des didacticiels et des laboratoires de script pour acquérir de l’expérience dans la création de compléments Office.</p>
+<p>Utilisez ensuite les démarrages rapides, les didacticiels et Script Lab pour gagner de l’expérience dans la création de compléments Office.</p>
 
 <ul class="cardsK panelContent cols cols3">
     <li>
@@ -73,18 +73,18 @@ Utilisez la plateforme Compléments Office pour créer des solutions qui étende
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Démarrage rapide 5 minutes</h3>
-                        <p>Créez votre premier complément Office dans moins de 5 minutes.</p>
+                        <h3>Démarrages rapides de 5 minutes</h3>
+                        <p>Créez votre premier complément Office en moins de 5 minutes !</p>
                         <br/>
                         <ul>
                             <li><a style="font-size: 1rem;" href="quickstarts/excel-quickstart-jquery.md">Démarrage rapide du complément Excel</a></li>
-                            <li><a style="font-size: 1rem;" href="quickstarts/excel-custom-functions-quickstart.md">Démarrage rapide des fonctions personnalisées Excel</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/excel-custom-functions-quickstart.md">Démarrage rapide des fonctions personnalisées d’Excel</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/onenote-quickstart.md">Démarrage rapide du complément OneNote</a></li>
                             <li><a style="font-size: 1rem;" href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Démarrage rapide du complément Outlook</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/powerpoint-quickstart.md">Démarrage rapide du complément PowerPoint</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/project-quickstart.md">Démarrage rapide du complément Project</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/word-quickstart.md">Démarrage rapide du complément Word</a></li>
-                            <li><a style="font-size: 1rem;" href="quickstarts/sso-quickstart.md">Démarrage rapide à l’aide de l’authentification unique (SSO)</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/sso-quickstart.md">Démarrage rapide de l’authentification unique (SSO)</a></li>
                         </ul>
                     </div>
                 </div>
@@ -102,12 +102,12 @@ Utilisez la plateforme Compléments Office pour créer des solutions qui étende
                     </div>
                     <div class="cardText">
                         <h3>Didacticiels</h3>
-                        <p>Suivez un didacticiel pour en savoir plus sur les fonctionnalités d’un complément.</p>
+                        <p>Pour en savoir plus sur les fonctionnalités d’un complément, suivez un didacticiel.</p>
                         <br/>
                         <ul>
                             <li><a style="font-size: 1rem;" href="tutorials/excel-tutorial.md">Didacticiel sur les compléments Excel</a></li>
                             <li><a style="font-size: 1rem;" href="tutorials/excel-tutorial-create-custom-functions.md">Didacticiel de fonctions personnalisées Excel</a></li>
-                            <li><a style="font-size: 1rem;" href="/outlook/add-ins/addin-tutorial?context=office/dev/add-ins/context">Didacticiel sur les compléments Outlook</a></li>
+                            <li><a style="font-size: 1rem;" href="/outlook/add-ins/addin-tutorial?context=office/dev/add-ins/context">Didacticiel sur le complément Outlook</a></li>
                             <li><a style="font-size: 1rem;" href="tutorials/powerpoint-tutorial.md">Didacticiel sur les compléments PowerPoint</a></li>
                             <li><a style="font-size: 1rem;" href="tutorials/word-tutorial.md">Didacticiel sur les compléments Word</a></li>
                         </ul>
@@ -127,7 +127,7 @@ Utilisez la plateforme Compléments Office pour créer des solutions qui étende
                     </div>
                     <div class="cardText">
                         <h3>Script Lab</h3>
-                        <p>Essayez les API JavaScript pour Excel, Word et PowerPoint dans script Lab.</p>
+                        <p>Essayez les API JavaScript Office pour Excel, Word et PowerPoint dans Script Lab.</p>
                         <br/>
                         <ul style="list-style: none!important;">
                         
@@ -154,7 +154,7 @@ Utilisez la plateforme Compléments Office pour créer des solutions qui étende
             </div>
             <div class="cardText">
                 <h3>Concepts de base</h3>
-                <p>Découvrez la plate-forme et les principaux concepts qui s’appliquent à la création d’un complément Office.</p>
+                <p>Découvrez la plateforme et les concepts importants qui s’appliquent à la création d’un complément Office.</p>
             </div>
         </a>
     </li>
@@ -254,7 +254,7 @@ Utilisez la plateforme Compléments Office pour créer des solutions qui étende
                         </div>
                     </div>
                     <div class="cardText">
-                        <a href="overview/explore-with-script-lab.md"><h3>Explorer les API<br/>avec script Lab</h3></a>
+                        <a href="overview/explore-with-script-lab.md"><h3>Explorer les API<br/>ave c Script Lab</h3></a>
                     </div>
                 </div>
             </div>
@@ -286,7 +286,7 @@ Utilisez la plateforme Compléments Office pour créer des solutions qui étende
                         </div>
                     </div>
                     <div class="cardText">
-                        <a href="https://github.com/officedev/office-js/issues" target="_blank"><h3>Signaler les problèmes</h3></a>
+                        <a href="https://github.com/officedev/office-js/issues" target="_blank"><h3>Signaler des problèmes</h3></a>
                     </div>
                 </div>
             </div>
@@ -302,7 +302,7 @@ Utilisez la plateforme Compléments Office pour créer des solutions qui étende
                         </div>
                     </div>
                     <div class="cardText">
-                        <a href="https://officespdev.uservoice.com/" target="_blank"><h3>Fonctionnalités de requête</h3></a>
+                        <a href="https://officespdev.uservoice.com/" target="_blank"><h3>Demander des fonctionnalités</h3></a>
                     </div>
                 </div>
             </div>
