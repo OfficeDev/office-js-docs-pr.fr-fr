@@ -3,13 +3,13 @@ title: Ensembles de conditions requises de l’API JavaScript pour OneNote
 description: ''
 ms.date: 07/17/2019
 ms.prod: onenote
-localization_priority: Normal
-ms.openlocfilehash: 3a1e5133b36af612156fb272651f1775e916a0fe
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
-ms.translationtype: MT
+localization_priority: Priority
+ms.openlocfilehash: 00bf9f23c307a6094345b753d7cccf1c10be7c32
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064871"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950963"
 ---
 # <a name="onenote-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour OneNote
 
@@ -17,7 +17,7 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 
 Le tableau suivant répertorie les ensembles de conditions requises pour OneNote, les applications hôtes Office qui prennent en charge ces conditions et les numéros de version ou la date de disponibilité.
 
-|  Ensemble de conditions requises  |  Office sur le Web |
+|  Ensemble de conditions requises  |  Office sur le web |
 |:-----|:-----|
 | [OneNoteApi 1.1](/javascript/api/onenote?view=onenote-js-1.1)  | Septembre 2016 |  
 
@@ -31,7 +31,7 @@ L’API JavaScript 1.1 pour OneNote est la première version de l’API. Pour pl
 
 ## <a name="runtime-requirement-support-check"></a>Vérification de la prise en charge d’un ensemble de conditions requises à l’exécution
 
-Lors de l’exécution, les compléments peuvent vérifier si un hôte particulier prend en charge un ensemble de conditions requises de l’API en procédant comme suit.
+Lors de l’exécution, les compléments peuvent vérifier si un hôte particulier prend en charge une série de conditions requises d’API en procédant comme suit.
 
 ```js
 if (Office.context.requirements.isSetSupported('OneNoteApi', '1.1')) {
@@ -44,7 +44,7 @@ else {
 
 ## <a name="manifest-based-requirement-support-check"></a>Vérification de la prise en charge des conditions requises basée sur le manifeste
 
-Utilisez l' `Requirements` élément dans le manifeste du complément pour spécifier les ensembles de conditions requises critiques ou les membres de l’API que votre complément doit utiliser. Si l’hôte ou la plateforme Office ne prend pas en charge les ensembles de conditions requises `Requirements` ou les membres d’API spécifiés dans l’élément, le complément ne s’exécutera pas sur cet hôte ou cette plateforme, et ne s’affichera pas dans mes compléments.
+Utilisez l’élément `Requirements` dans le manifeste du complément pour spécifier des ensembles de conditions requises essentiels ou des membres d’API que votre complément doit utiliser. Si la plateforme ou l’hôte Office ne prend pas en charge les ensembles de conditions requises ou les membres d’API spécifiés dans l’élément `Requirements`, le complément ne s’exécute pas dans cet hôte ou cette plateforme et ne s’affiche pas dans Mes compléments.
 
 Cet exemple de code illustre un complément qui se charge dans toutes les applications hôtes Office qui prennent en charge l’ensemble de conditions requises OneNoteApi, version 1.1.
 
@@ -62,7 +62,7 @@ Pour plus d’informations sur les ensembles de conditions requises des API comm
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Documentation de référence de l’API JavaScript pour OneNote](/javascript/api/onenote)
+- [Documentation référence de l’API JavaScript pour OneNote](/javascript/api/onenote)
 - [Versions d’Office et ensembles de conditions requises](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
 - [Spécification des exigences en matière d’hôtes Office et d’API](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
 - [Manifeste XML des compléments Office](/office/dev/add-ins/develop/add-in-manifests)

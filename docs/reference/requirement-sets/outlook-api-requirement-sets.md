@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API JavaScript pour Outlook
 description: ''
-ms.date: 01/14/2020
+ms.date: 02/11/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: bd6b20e9f0ddb5141f2f889a4e99af2c042a10ab
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: 7ea6be0cb1879ba583eaa64a7611899bf5adb73f
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217371"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950543"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Outlook
 
@@ -66,7 +66,7 @@ Les développeurs doivent utiliser l’ensemble de conditions requises le plus a
 
 ## <a name="requirement-sets-supported-by-exchange-servers-and-outlook-clients"></a>Ensembles de conditions requises pris en charge par les serveurs Exchange et les clients Outlook
 
-Dans cette section, nous prenons note de la plage d’ensembles de conditions requises pris en charge par les serveurs Exchange et les clients Outlook.
+Dans cette section, nous prenons note de la plage d’ensembles de conditions requises pris en charge par les serveurs Exchange et les clients Outlook. Pour plus d’informations sur la configuration requise pour le serveur et le client pour l’exécution de compléments Outlook, voir [Conditions requises pour les compléments Outlook](/outlook/add-ins/add-in-requirements).
 
 > [!IMPORTANT]
 > Si votre serveur Exchange cible et votre client Outlook prennent en charge différents ensembles de conditions requises, vous êtes limité à la plage inférieure d’ensembles de conditions requises. Par exemple, si un complément est exécuté dans Outlook 2016 sur Mac (configuration maximale requise : 1.6) sur Exchange 2013 (ensemble de conditions requises le plus élevé : 1.1), votre complément est limité à l’ensemble de conditions requises 1.1.
