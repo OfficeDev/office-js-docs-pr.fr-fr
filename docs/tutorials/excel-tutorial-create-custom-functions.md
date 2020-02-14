@@ -3,15 +3,15 @@ title: Didacticiel de fonctions personnalisées Excel
 description: Dans ce didacticiel, vous allez créer un complément Excel qui contient une fonction personnalisée qui effectue des calculs, requiert des données web ou lance un flux de données web.
 ms.date: 01/16/2020
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 63379c74897a5f232804241726ac7def1809f5c1
-ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
-ms.translationtype: MT
+localization_priority: Priority
+ms.openlocfilehash: 9c8cfedd5f8219f2105456597d43201068b4c21e
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "41265535"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950501"
 ---
-# <a name="tutorial-create-custom-functions-in-excel"></a>Didacticiel : créer des fonctions personnalisées dans Excel
+# <a name="tutorial-create-custom-functions-in-excel"></a>Didacticiel : créer des fonctions personnalisées dans Excel
 
 Les fonctions personnalisées vous permettent d’ajouter de nouvelles fonctions dans Excel en définissant ces fonctions dans JavaScript dans le cadre d’un complément. Les utilisateurs d’Excel peuvent accéder aux fonctions personnalisées comme ils le feraient pour n’importe quelle fonction native d’Excel, telle que `SUM()`. Vous pouvez créer des fonctions personnalisées qui effectuent des tâches simples comme des calculs personnalisés ou des tâches plus complexes telles que la diffusion en continu des données en temps réel à partir du web dans une feuille de calcul.
 
@@ -22,15 +22,15 @@ Dans ce didacticiel, vous allez :
 > * Créer une fonction personnalisée qui demande les données à partir du web.
 > * Créer une fonction personnalisée qui diffuse les données en temps réel à partir du web.
 
-## <a name="prerequisites"></a>Conditions requises
+## <a name="prerequisites"></a>Conditions préalables
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel sur Windows (version 1904 ou ultérieure, connexion à l’abonnement Office 365) ou sur le Web
+* Excel sur Windows (1904 ou version ultérieure, connecté à un abonnement Office 365) ou sur le web
 
 ## <a name="create-a-custom-functions-project"></a>Créer un projet de fonctions personnalisées
 
- Pour commencer, vous devez créer le projet de code pour créer votre complément de fonction personnalisée. Le [Générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) configurera votre projet avec certaines fonctions personnalisées prédéfinies que vous pouvez tester. Si vous avez déjà exécuté le démarrage rapide des fonctions personnalisées et généré un projet, continuez à utiliser ce projet et passez à [cette étape](#create-a-custom-function-that-requests-data-from-the-web) .
+ Pour commencer, vous devez créer le projet de code pour créer votre complément de fonction personnalisée. Le [générateur Yeoman de compléments Office](https://www.npmjs.com/package/generator-office) permettra de configurer votre projet avec certaines fonctions personnalisées prédéfinies que vous pouvez essayer. Si vous avez déjà exécuté le démarrage rapide des fonctions personnalisées et généré un projet, continuez à utiliser ce projet et passez à [cette étape](#create-a-custom-function-that-requests-data-from-the-web).
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
     
@@ -59,11 +59,11 @@ Dans ce didacticiel, vous allez :
     > [!NOTE]
     > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté `npm run build`, acceptez d’installer le certificat fourni par le générateur Yeoman.
 
-4. Démarrez le serveur web local qui est exécuté dans Node.js. Vous pouvez essayer le complément de fonction personnalisée dans Excel sur le Web ou Windows.
+4. Démarrez le serveur web local qui est exécuté dans Node.js. Vous pouvez tester le complément de fonction personnalisée dans Excel sur le web ou sur Windows.
 
 # <a name="excel-on-windows-or-mactabexcel-windows"></a>[Excel sur Windows ou Mac](#tab/excel-windows)
 
-Pour tester votre complément dans Excel sous Windows ou Mac, exécutez la commande suivante : Lorsque vous exécutez cette commande, le serveur Web local démarre et Excel s’ouvre avec votre complément chargé.
+Pour tester votre complément dans Excel sur Windows ou Mac, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local et Excel s’ouvrent avec votre complément chargé.
 
 ```command&nbsp;line
 npm run start:desktop
@@ -77,13 +77,13 @@ Pour tester votre complément dans Excel sur un navigateur, exécutez la command
 npm run start:web
 ```
 
-Pour utiliser votre complément de fonctions personnalisées, ouvrez un nouveau classeur dans Excel sur le Web. Dans ce classeur, effectuez les étapes suivantes pour chargement votre complément.
+Pour utiliser votre complément de fonctions personnalisées, ouvrez un nouveau classeur dans Excel sur le web. Dans ce classeur, chargez une version test de votre complément en procédant comme suit.
 
-1. Dans Excel, sélectionnez l’onglet **insertion** , puis **compléments**.
+1. Dans Excel, sélectionnez l’onglet **Insertion**, puis **Compléments**.
 
-   ![Insérer un ruban dans Excel sur le Web avec l’icône mes compléments mise en surbrillance](../images/excel-cf-online-register-add-in-1.png)
+   ![Ruban Insertion dans Excel sur le web avec l’icône Mes compléments mise en évidence](../images/excel-cf-online-register-add-in-1.png)
    
-2. Sélectionnez**Gérer mes compléments** et sélectionnez **Télécharger mon complément**.
+2. Sélectionnez**Gérer mes Compléments** et sélectionnez **Télécharger mon complément**.
 
 3. Sélectionnez **Parcourir... ** et accédez au répertoire racine du projet créé par le Générateur de Yo Office.
 
@@ -93,7 +93,7 @@ Pour utiliser votre complément de fonctions personnalisées, ouvrez un nouveau 
     
 ## <a name="try-out-a-prebuilt-custom-function"></a>Essayer une fonction personnalisée prédéfinie
 
-Le projet de fonctions personnalisées que vous avez créé contient des fonctions personnalisées prédéfinies, définies dans le fichier **./SRC/Functions/functions.js** . Le fichier**manifest.xml**indique que toutes les fonctions personnalisées appartiennent à l’`CONTOSO`espace de noms. L’espace de noms CONTOSO permet d’accéder aux fonctions personnalisées dans Excel.
+Le projet de fonctions personnalisées que vous avez créé contient certaines fonctions personnalisées prédéfinies, définies dans le fichier **./src/functions/functions.js**. Le fichier**manifest.xml**indique que toutes les fonctions personnalisées appartiennent à l’`CONTOSO`espace de noms. L’espace de noms CONTOSO permet d’accéder aux fonctions personnalisées dans Excel.
 
 Essayez de reproduire la`ADD` fonction personnalisée en complétant les étapes suivantes dans Excel:
 
@@ -105,11 +105,11 @@ Le `ADD` fonction personnalisée calcule la somme des deux nombres que vous avez
 
 ## <a name="create-a-custom-function-that-requests-data-from-the-web"></a>Créer une fonction personnalisée qui demande les données à partir du web
 
-Intégration de données à partir du Web est un excellent moyen pour étendre Excel via les fonctions personnalisées. Ensuite, vous allez créer une fonction personnalisée `getStarCount` nommée qui indique le nombre d’étoiles dont dispose un référentiel GitHub donné.
+Intégration de données à partir du Web est un excellent moyen pour étendre Excel via les fonctions personnalisées. Vous allez ensuite créer une fonction personnalisée nommée `getStarCount` qui affiche le nombre d’étoiles attribuées à un référentiel GitHub donné.
 
-1. Dans le projet **starcount** , recherchez le fichier **./SRC/Functions/functions.js** et ouvrez-le dans votre éditeur de code. 
+1. Dans le projet **starcount**, recherchez le fichier **./src/functions/functions.js** et ouvrez-le dans votre éditeur de code. 
 
-2. Dans **Function. js**, ajoutez le code suivant : 
+2. Dans **function. js**, ajoutez le code suivant : 
 
 ```JS
 /**
@@ -137,29 +137,29 @@ Intégration de données à partir du Web est un excellent moyen pour étendre E
   }
 ```
 
-3. Exécutez la commande suivante pour regénérer le projet.
+3. Exécutez la commande suivante pour régénérer le projet.
 
     ```command&nbsp;line
     npm run build
     ```
 
-4. Procédez comme suit (pour Excel sur le Web, Windows ou Mac) pour réenregistrer le complément dans Excel. Vous devez effectuer ces étapes avant que la nouvelle fonction ne soit disponible.
+4. Enregistrez de nouveau le complément dans Excel en procédant comme suit (pour Excel sur le web, Windows ou Mac). Vous devez suivre ces étapes pour que la nouvelle fonction devienne disponible.
 
 ### <a name="excel-on-windows-or-mactabexcel-windows"></a>[Excel sur Windows ou Mac](#tab/excel-windows)
 
-1. Fermez Excel, puis ouvrez de nouveau Excel.
+1. Fermez Excel, puis rouvrez-le.
 
-2. Dans Excel, sélectionnez l’onglet **Insérer** , puis cliquez sur la flèche vers le bas située à droite de **mes compléments**.  ![Insérer un ruban dans Excel sur Windows avec la flèche mes compléments mise en surbrillance](../images/select-insert.png)
+2. Dans Excel, sélectionnez l’onglet **Insertion**, puis cliquez sur la flèche vers le bas située à droite de **Mes compléments**.  ![Ruban Insertion dans Excel pour Windows avec la flèche Mes compléments mise en évidence](../images/select-insert.png)
 
-3. Dans la liste des compléments disponibles, recherchez la section **compléments pour développeurs** et sélectionnez le complément **starcount** pour l’enregistrer.
-    ![Insérer un ruban dans Excel sur Windows avec le complément de fonctions personnalisées Excel mis en surbrillance dans la liste mes compléments](../images/list-starcount.png)
+3. Dans la liste des compléments disponibles, recherchez la section **Compléments de développeur**, puis sélectionnez le complément **starcount** pour effectuer cette opération.
+    ![Ruban Insertion dans Excel sur Windows avec le complément Fonctions personnalisées Excel mis en évidence dans la liste Mes compléments](../images/list-starcount.png)
 
 
 # <a name="excel-on-the-webtabexcel-online"></a>[Excel sur le web](#tab/excel-online)
 
-1. Dans Excel, sélectionnez l’onglet **insertion** , puis **compléments**.  ![Insérer un ruban dans Excel sur le Web avec l’icône mes compléments mise en surbrillance](../images/excel-cf-online-register-add-in-1.png)
+1. Dans Excel, sélectionnez l’onglet **Insertion**, puis **Compléments**.  ![Ruban Insertion dans Excel sur le web avec l’icône Mes compléments mise en évidence](../images/excel-cf-online-register-add-in-1.png)
 
-2. Sélectionnez**Gérer mes compléments** et sélectionnez **Télécharger mon complément**.
+2. Sélectionnez**Gérer mes Compléments** et sélectionnez **Télécharger mon complément**.
 
 3. Sélectionnez **Parcourir... ** et accédez au répertoire racine du projet créé par le Générateur de Yo Office.
 
@@ -168,16 +168,16 @@ Intégration de données à partir du Web est un excellent moyen pour étendre E
 ---
 
 <ol start="5">
-<li> Essayez la nouvelle fonction. Dans la cellule <strong>B1</strong>, tapez le texte <strong>= contoso. GETSTARCOUNT ("OfficeDev", "Excel-Custom-Functions")</strong> et appuyez sur entrée. Vous devriez voir que le résultat dans la cellule <strong>B1</strong> est le nombre actuel d’étoiles attribuées au [référentiel GitHub de fonctions personnalisées Excel](https://github.com/OfficeDev/Excel-Custom-Functions).</li>
+<li> Essayez la nouvelle fonction. Dans la cellule <strong>B1</strong>, tapez le texte <strong>=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")</strong>, puis appuyez sur Entrée. Le résultat dans la cellule <strong>B1</strong> doit correspondre au nombre d’étoiles actuellement attribuées au [référentiel GitHub Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions).</li>
 </ol>
 
-## <a name="create-a-streaming-asynchronous-custom-function"></a>Créer une fonction personnalisée asynchrone diffusion en continu
+## <a name="create-a-streaming-asynchronous-custom-function"></a>Créer une fonction personnalisée asynchrone de diffusion en continu
 
-La `getStarCount` fonction renvoie le nombre d’étoiles qu’un référentiel a à un moment donné. Les fonctions personnalisées peuvent également renvoyer des données qui changent en permanence. Ces fonctions sont appelées fonctions de diffusion en continu. Elles doivent inclure un `invocation` paramètre qui fait référence à la cellule à partir de laquelle la fonction a été appelée. Le `invocation` paramètre est utilisé pour mettre à jour le contenu de la cellule à tout moment.  
+La fonction `getStarCount` renvoie le nombre d’étoiles attribuées à un référentiel à un moment donné. Les fonctions personnalisées peuvent également renvoyer des données qui changent continuellement. Ces fonctions sont appelées fonctions de diffusion en continu. Elles doivent inclure un paramètre `invocation` qui fait référence à la cellule à partir de laquelle la fonction a été appelée. Le paramètre `invocation` permet de mettre à jour le contenu de la cellule à tout moment.  
 
-Dans l’exemple de code suivant, vous remarquerez qu’il existe deux `currentTime` fonctions `clock`, et. La `currentTime` fonction est une fonction statique qui n’utilise pas la diffusion en continu. Elle renvoie la date sous la forme d’une chaîne. La `clock` fonction utilise la `currentTime` fonction pour fournir la nouvelle fois toutes les secondes à une cellule dans Excel. Il utilise `invocation.setResult` pour fournir le temps à la cellule Excel et `invocation.onCanceled` pour gérer ce qui se produit lorsque la fonction est annulée.
+Vous remarquerez que l’exemple de code suivant inclut deux fonctions (`currentTime` et `clock`). `currentTime` est une fonction statique qui n’utilise pas la diffusion en continu. Elle renvoie la date sous la forme d’une chaîne. La fonction `clock` utilise la fonction `currentTime` pour fournir la nouvelle heure toutes les secondes à une cellule dans Excel. Elle utilise `invocation.setResult` pour communiquer l’heure à la cellule Excel et `invocation.onCanceled` pour gérer le résultat de l’annulation de la fonction.
 
-1. Dans le projet **starcount** , ajoutez le code suivant à **./SRC/Functions/functions.js** et enregistrez le fichier.
+1. Dans le projet **starcount**, ajoutez le code suivant à **./src/functions/functions.js**, puis enregistrez le fichier.
 
 ```JS
 /**
@@ -205,28 +205,28 @@ function clock(invocation) {
 }
 ```
 
-2. Exécutez la commande suivante pour regénérer le projet.
+2. Exécutez la commande suivante pour régénérer le projet.
 
     ```command&nbsp;line
     npm run build
     ```
 
-3. Procédez comme suit (pour Excel sur le Web, Windows ou Mac) pour réenregistrer le complément dans Excel. Vous devez effectuer ces étapes avant que la nouvelle fonction ne soit disponible. 
+3. Enregistrez de nouveau le complément dans Excel en procédant comme suit (pour Excel sur le web, Windows ou Mac). Vous devez suivre ces étapes pour que la nouvelle fonction devienne disponible. 
 
 # <a name="excel-on-windows-or-mactabexcel-windows"></a>[Excel sur Windows ou Mac](#tab/excel-windows)
 
-1. Fermez Excel, puis ouvrez de nouveau Excel.
+1. Fermez Excel, puis rouvrez-le.
 
-2. Dans Excel, sélectionnez l’onglet **Insérer** , puis cliquez sur la flèche vers le bas située à droite de **mes compléments**.  ![Insérer un ruban dans Excel sur Windows avec la flèche mes compléments mise en surbrillance](../images/select-insert.png)
+2. Dans Excel, sélectionnez l’onglet **Insertion**, puis cliquez sur la flèche vers le bas située à droite de **Mes compléments**.  ![Ruban Insertion dans Excel pour Windows avec la flèche Mes compléments mise en évidence](../images/select-insert.png)
 
-3. Dans la liste des compléments disponibles, recherchez la section **compléments pour développeurs** et sélectionnez le complément **starcount** pour l’enregistrer.
-    ![Insérer un ruban dans Excel sur Windows avec le complément de fonctions personnalisées Excel mis en surbrillance dans la liste mes compléments](../images/list-starcount.png)
+3. Dans la liste des compléments disponibles, recherchez la section **Compléments de développeur**, puis sélectionnez le complément **starcount** pour effectuer cette opération.
+    ![Ruban Insertion dans Excel sur Windows avec le complément Fonctions personnalisées Excel mis en évidence dans la liste Mes compléments](../images/list-starcount.png)
 
 # <a name="excel-on-the-webtabexcel-online"></a>[Excel sur le web](#tab/excel-online)
 
-1. Dans Excel, sélectionnez l’onglet **insertion** , puis **compléments**.  ![Insérer un ruban dans Excel sur le Web avec l’icône mes compléments mise en surbrillance](../images/excel-cf-online-register-add-in-1.png)
+1. Dans Excel, sélectionnez l’onglet **Insertion**, puis **Compléments**.  ![Ruban Insertion dans Excel sur le web avec l’icône Mes compléments mise en évidence](../images/excel-cf-online-register-add-in-1.png)
 
-2. Sélectionnez**Gérer mes compléments** et sélectionnez **Télécharger mon complément**.
+2. Sélectionnez**Gérer mes Compléments** et sélectionnez **Télécharger mon complément**.
 
 3. Sélectionnez **Parcourir... ** et accédez au répertoire racine du projet créé par le Générateur de Yo Office.
 
@@ -235,12 +235,12 @@ function clock(invocation) {
 --- 
 
 <ol start="4">
-<li>Essayez la nouvelle fonction. Dans la cellule <strong>C1</strong>, tapez le texte <strong>= contoso. CLOCK ())</strong> , puis appuyez sur entrée. Vous devriez voir la date du jour, qui diffuse une mise à jour toutes les secondes. Bien que cette horloge constitue une seule horloge sur une boucle, vous pouvez utiliser la même idée de définir un minuteur sur des fonctions plus complexes qui effectuent des requêtes Web pour des données en temps réel.</li>
+<li>Essayez la nouvelle fonction. Dans la cellule <strong>C1</strong>, tapez le texte <strong>=CONTOSO.CLOCK())</strong>, puis appuyez sur Entrée. La date du jour doit apparaître. Elle est mise à jour toutes les secondes. Cette horloge n’est qu’une minuterie incluse dans une boucle, mais vous pouvez vous inspirer de cette idée pour créer des fonctions plus complexes qui récupèrent des données en temps réel en exécutant des requêtes web.</li>
 </ol>
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations ! Vous avez créé un nouveau projet de fonctions personnalisées, testé une fonction prédéfinie, créé une fonction personnalisée qui demande des données à partir du Web et créé une fonction personnalisée qui diffuse les données. Vous pouvez également essayer de déboguer cette fonction à l’aide [des instructions de débogage de la fonction personnalisée](../excel/custom-functions-debugging.md). Pour en savoir plus sur les fonctions personnalisées dans Excel, passez à l’article suivant :
+Félicitations ! Vous avez créé un nouveau projet de fonctions personnalisées, essayé une fonction prédéfinie, créé une fonction personnalisée qui récupère des données à partir du web et créé une fonction personnalisée qui diffuse des données. Vous pouvez également essayer de déboguer cette fonction à l’aide des [instructions de débogage des fonction personnalisées](../excel/custom-functions-debugging.md). Pour en savoir plus sur les fonctions personnalisées dans Excel, passez à l’article suivant :
 
 > [!div class="nextstepaction"]
 > [Créer des fonctions personnalisées dans Excel](../excel/custom-functions-overview.md)
