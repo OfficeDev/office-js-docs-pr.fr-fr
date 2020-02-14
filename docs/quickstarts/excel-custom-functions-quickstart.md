@@ -3,29 +3,29 @@ ms.date: 01/16/2020
 description: Développement de fonctions personnalisées dans le Guide de démarrage rapide d’Excel.
 title: Démarrage rapide des fonctions personnalisées
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 7446de52832a70b30bbe39c71b37e80e006dc62f
-ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
-ms.translationtype: MT
+localization_priority: Priority
+ms.openlocfilehash: 79c10a7ba032f478843ce94bf2eae39def051f40
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "41265563"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950725"
 ---
-# <a name="get-started-developing-excel-custom-functions"></a>Prise en main du développement de fonctions personnalisées Excel
+# <a name="get-started-developing-excel-custom-functions"></a>Prise en main du développement des fonctions personnalisées Excel
 
-Avec les fonctions personnalisées, les développeurs peuvent désormais ajouter de nouvelles fonctions à Excel en les définissant en JavaScript ou en une machine à écrire dans le cadre d’un complément. Les utilisateurs d’Excel peuvent accéder aux fonctions personnalisées comme ils le feraient pour n’importe `SUM()`quelle fonction native dans Excel, comme.
+Avec les fonctions personnalisées, les développeurs peuvent désormais ajouter de nouvelles fonctions dans Excel en les définissant dans JavaScript ou Typescript dans le cadre d’un complément. Les utilisateurs d’Excel peuvent accéder aux fonctions personnalisées comme ils le feraient pour n’importe quelle fonction native d’Excel, telle que `SUM()`.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel sur Windows (version 1904 ou ultérieure, connexion à l’abonnement Office 365) ou Excel sur le Web
-* Les fonctions personnalisées d’Excel sont prises en charge dans Office sur Mac (connexion à l’abonnement Office 365) et une mise à jour de ce didacticiel est prochainement prévue.
+* Excel sur Windows (1904 ou version ultérieure, connecté à un abonnement Office 365) ou Excel sur le web.
+* Les fonctions personnalisées d’Excel sont prises en charge dans Office sur Mac (connecté à l’abonnement Office 365). une mise à jour de ce didacticiel est bientôt prévue.
 
 >[!NOTE]
->Les fonctions personnalisées d’Excel ne sont pas prises en charge dans Office 2019 (achat unique).
+>Les fonctions personnalisées d’Excel ne sont pas prises en charge dans Office 2019 (achat unique).
 
-## <a name="build-your-first-custom-functions-project"></a>Création de votre premier projet de fonctions personnalisées
+## <a name="build-your-first-custom-functions-project"></a>Créer votre premier projet de fonctions personnalisées
 
 Pour commencer, vous utiliserez le Yeoman Générateur pour créer le projet de fonctions personnalisées. Cette option définit votre projet, avec la structure de dossiers correct, les fichiers source et les dépendances pour commencer le codage de vos fonctions personnalisées.
 
@@ -39,7 +39,7 @@ Pour commencer, vous utiliserez le Yeoman Générateur pour créer le projet de 
 
     Le générateur crée le projet et installe les composants Node.js de la prise en charge.
 
-2. Le générateur Yeoman vous donne des instructions dans votre ligne de commande sur ce qu’il faut faire du projet, mais il les ignore et continue de suivre nos instructions. Accédez au dossier racine du projet.
+2. Le générateur Yeoman vous fournit des instructions dans votre ligne de commande sur la procédure à suivre pour le projet, mais ignorez-les et continuez de suivre nos instructions. Accédez au dossier racine du projet.
 
     ```command&nbsp;line
     cd starcount
@@ -54,11 +54,11 @@ Pour commencer, vous utiliserez le Yeoman Générateur pour créer le projet de 
     > [!NOTE]
     > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté `npm run build`, acceptez d’installer le certificat fourni par le générateur Yeoman.
 
-4. Démarrez le serveur web local qui est exécuté dans Node.js. Vous pouvez essayer le complément de fonction personnalisée dans Excel sur le Web ou Windows. Vous serez peut-être invité à ouvrir le volet Office du complément, bien que ce soit facultatif. Vous pouvez toujours exécuter vos fonctions personnalisées sans ouvrir le volet Office de votre complément.
+4. Démarrez le serveur web local qui est exécuté dans Node.js. Vous pouvez tester le complément de fonction personnalisée dans Excel sur le web ou Windows. Vous serez peut-être invité à ouvrir le volet Office du complément, même si ce n’est pas obligatoire. Vous pouvez continuer à exécuter vos fonctions personnalisées sans ouvrir le volet Office de votre complément.
 
 # <a name="excel-on-windowstabexcel-windows"></a>[Excel sur Windows](#tab/excel-windows)
 
-Pour tester votre complément dans Excel sous Windows, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur Web local démarre et Excel s’ouvre avec votre complément chargé.
+Pour tester votre complément dans Excel sur Windows, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local et Excel s’ouvrent avec votre complément chargé.
 
 ```command&nbsp;line
 npm run start:desktop
@@ -66,19 +66,19 @@ npm run start:desktop
 
 # <a name="excel-on-the-webtabexcel-online"></a>[Excel sur le web](#tab/excel-online)
 
-Pour tester votre complément dans Excel sur le Web, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local démarre.
+Pour tester votre complément dans Excel sur le web, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local démarre.
 
 ```command&nbsp;line
 npm run start:web
 ```
 
-Pour utiliser votre complément de fonctions personnalisées, ouvrez un nouveau classeur dans Excel dans un navigateur. Dans ce classeur, effectuez les étapes suivantes pour chargement votre complément.
+Pour utiliser votre complément de fonctions personnalisées, ouvrez un nouveau classeur dans Excel sur un navigateur. Dans ce classeur, procédez comme suit pour charger une version test de votre complément.
 
-1. Dans Excel, sélectionnez l’onglet **insertion** , puis **compléments**.
+1. Dans Excel, sélectionnez l’onglet **Insérer**, puis **Compléments**.
 
-   ![Insérer un ruban dans Excel sur le Web avec l’icône mes compléments mise en surbrillance](../images/excel-cf-online-register-add-in-1.png)
+   ![Insérer du ruban dans Excel sur le web avec l’icône Mes compléments mise en évidence](../images/excel-cf-online-register-add-in-1.png)
    
-2. Sélectionnez**Gérer mes compléments** et sélectionnez **Télécharger mon complément**.
+2. Sélectionnez**Gérer mes Compléments** et sélectionnez **Télécharger mon complément**.
 
 3. Sélectionnez **Parcourir... ** et accédez au répertoire racine du projet créé par le Générateur de Yo Office.
 
@@ -88,22 +88,22 @@ Pour utiliser votre complément de fonctions personnalisées, ouvrez un nouveau 
 
 ## <a name="try-out-a-prebuilt-custom-function"></a>Essayer une fonction personnalisée prédéfinie
 
-Le projet de fonctions personnalisées que vous avez créé à l’aide du générateur Yeoman contient certaines fonctions personnalisées prédéfinies, définies dans le fichier **./SRC/Functions/functions.js** . Le fichier **./manifest.xml** dans le répertoire racine du projet indique que toutes les fonctions personnalisées appartiennent à `CONTOSO` l’espace de noms.
+Le projet de fonctions personnalisées que vous avez crées en utilisant le générateur Yeoman contient certaines fonctions personnalisées prédéfinies, définies dans le fichier **./src/functions/functions.js**. Le fichier **./manifest.xml**dans le répertoire racine du projet indique que toutes les fonctions personnalisées appartiennent à l’ `CONTOSO` espace de noms.
 
-Dans votre classeur Excel, essayez la `ADD` fonction personnalisée en procédant comme suit :
+Dans votre classeur Excel, essayez de reproduire la`ADD` fonction personnalisée en complétant les étapes suivantes :
 
-1. Sélectionnez une cellule et tapez `=CONTOSO`. Notez que le menu de saisie semi-automatique affiche la liste de toutes les fonctions dans l’espace de noms `CONTOSO`.
+1. Sélectionner une cellule, puis taper `=CONTOSO` Notez que le menu de saisie semi-automatique affiche la liste de toutes les fonctions dans l’espace de noms `CONTOSO`.
 
-2. Exécutez la `CONTOSO.ADD` fonction, en utilisant `10` des `200` nombres et comme paramètres d’entrée, en `=CONTOSO.ADD(10,200)` tapant la valeur dans la cellule et en appuyant sur entrée.
+2. Exécutez la`CONTOSO.ADD` fonction, en utilisant les nombres `10` et `200` comme paramètres d’entrée, en spécifiant la valeur`=CONTOSO.ADD(10,200)`suivante dans la cellule et appuyez sur entrée.
 
 Le `ADD` fonction personnalisée calcule la somme des deux nombres que vous avez spécifiés comme paramètres d’entrée. La saisie de`=CONTOSO.ADD(10,200)` doit générer le résultat **210** dans la cellule une fois que vous appuyez sur ENTRÉE.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations, vous avez créé une fonction personnalisée dans un complément Excel ! Ensuite, créez un complément plus complexe avec la fonctionnalité de diffusion de données en continu. Le lien suivant vous guide tout au long des étapes suivantes du didacticiel de complément Excel avec fonctions personnalisées.
+Félicitations, vous avez créé une fonction personnalisée dans un complément Excel ! Ensuite, créez un complément plus complexe avec la fonctionnalité de diffusion de données en continu. Le lien suivant vous guide tout au long des étapes suivantes dans le complément Excel avec le didacticiel de fonctions personnalisées.
 
 > [!div class="nextstepaction"]
-> [Didacticiel de complément de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web
+> [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web
 )
 
 ## <a name="see-also"></a>Voir aussi
