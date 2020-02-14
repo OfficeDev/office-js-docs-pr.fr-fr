@@ -2,13 +2,13 @@
 title: Création de commandes de complément dans votre manifeste pour Excel, Word et PowerPoint
 description: Utilisez VersionOverrides dans votre manifeste pour définir des commandes de complément pour Excel, Word et PowerPoint. Utilisez les commandes de complément pour créer des éléments d’interface utilisateur, ajouter des boutons ou des listes, et effectuer des actions.
 ms.date: 09/26/2019
-localization_priority: Priority
-ms.openlocfilehash: cf3329df845d206452b1b29ae46de4a3888a1a49
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 34dc614ea5189849e7ba16cb75ef86a66a36e968
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353824"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950578"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-word-and-powerpoint"></a>Création de commandes de complément dans votre manifeste pour Excel, Word et PowerPoint
 

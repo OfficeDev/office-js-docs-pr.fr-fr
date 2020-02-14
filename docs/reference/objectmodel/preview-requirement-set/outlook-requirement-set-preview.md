@@ -2,13 +2,13 @@
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: ''
 ms.date: 12/17/2019
-localization_priority: Priority
-ms.openlocfilehash: a3cc49562add2f6fe54cf83d2f2ed64ebb61d8c7
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 5dec8ae4f3a5f8320cf7503e81a9ea9cc8bb3a90
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40815045"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950998"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 

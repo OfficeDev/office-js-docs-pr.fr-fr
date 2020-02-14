@@ -3,12 +3,12 @@ title: Comment trouver l’ordre approprié d’éléments manifeste
 description: Découvrez comment trouver l’ordre correct dans lequel placer les éléments enfants dans un élément parent.
 ms.date: 08/22/2019
 localization_priority: Normal
-ms.openlocfilehash: ae09fa90345188a80c910c6bad69fbbc7ad85c5b
-ms.sourcegitcommit: 413f163729183994de61a8281685184b377ef76c
+ms.openlocfilehash: 95cdce30beda5eeda73e9b06b65eff5048005723
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "41571382"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950697"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>Comment trouver l’ordre approprié d’éléments manifeste
 
@@ -163,102 +163,102 @@ Les sections suivantes présentent les éléments de manifeste dans l’ordre da
             <Runtimes>
                 <Runtime>
             <AllFormFactors>
-            <ExtensionPoint>
-                <Script>
-                    <SourceLocation>
-                <Page>
-                    <SourceLocation>
-                <Metadata>
-                    <SourceLocation>
-                <Namespace>
+                <ExtensionPoint>
+                    <Script>
+                        <SourceLocation>
+                    <Page>
+                        <SourceLocation>
+                    <Metadata>
+                        <SourceLocation>
+                    <Namespace>
             <DesktopFormFactor>
-            <GetStarted>
-                <Title>
-                <Description>
-                <LearnMoreUrl>
-            <FunctionFile>
-            <ExtensionPoint>
-                <OfficeTab>
-                    <Group>
-                        <Label>
-                        <Icon>
-                            <Image>
-                        <Control>
-                        <Label>
-                        <Supertip>
-                            <Title>
-                            <Description>
-                        <Icon>
-                            <Image>  
-                        <Action>
-                            <TaskpaneId>
-                            <SourceLocation>
-                            <Title>
-                            <FunctionName>
-                        <Items>
-                            <Item>
+                <GetStarted>
+                    <Title>
+                    <Description>
+                    <LearnMoreUrl>
+                <FunctionFile>
+                <ExtensionPoint>
+                    <OfficeTab>
+                        <Group>
+                            <Label>
+                            <Icon>
+                                <Image>
+                            <Control>
                             <Label>
                             <Supertip>
                                 <Title>
                                 <Description>
+                            <Icon>
+                                <Image>  
                             <Action>
                                 <TaskpaneId>
                                 <SourceLocation>
                                 <Title>
                                 <FunctionName>
-                <CustomTab>
-                    <Group>
+                            <Items>
+                                <Item>
+                                <Label>
+                                <Supertip>
+                                    <Title>
+                                    <Description>
+                                <Action>
+                                    <TaskpaneId>
+                                    <SourceLocation>
+                                    <Title>
+                                    <FunctionName>
+                    <CustomTab>
+                        <Group>
+                            <Label>
+                            <Icon>
+                                <Image>
+                            <Control>
+                            <Label>
+                            <Supertip>
+                                <Title>
+                                <Description>
+                            <Icon>
+                                <Image>  
+                            <Action>
+                                <TaskpaneId>
+                                <SourceLocation>
+                                <Title>
+                                <FunctionName>
+                            <Items>
+                                <Item>
+                                    <Label>
+                                    <Supertip>
+                                        <Title>
+                                        <Description>
+                                    <Action>
+                                        <TaskpaneId>
+                                        <SourceLocation>
+                                        <Title>
+                                        <FunctionName>
                         <Label>
-                        <Icon>
-                            <Image>
+                    <OfficeMenu>
                         <Control>
-                        <Label>
-                        <Supertip>
-                            <Title>
-                            <Description>
-                        <Icon>
-                            <Image>  
-                        <Action>
-                            <TaskpaneId>
-                            <SourceLocation>
-                            <Title>
-                            <FunctionName>
-                        <Items>
-                            <Item>
-                                <Label>
-                                <Supertip>
-                                    <Title>
-                                    <Description>
-                                <Action>
-                                    <TaskpaneId>
-                                    <SourceLocation>
-                                    <Title>
-                                    <FunctionName>
-                    <Label>
-                <OfficeMenu>
-                    <Control>
-                        <Label>
-                        <Supertip>
-                            <Title>
-                            <Description>
-                        <Icon>
-                            <Image>  
-                        <Action>
-                            <TaskpaneId>
-                            <SourceLocation>
-                            <Title>
-                            <FunctionName>
-                        <Items>
-                            <Item>
-                                <Label>
-                                <Supertip>
-                                    <Title>
-                                    <Description>
-                                <Action>
-                                    <TaskpaneId>
-                                    <SourceLocation>
-                                    <Title>
-                                    <FunctionName>
+                            <Label>
+                            <Supertip>
+                                <Title>
+                                <Description>
+                            <Icon>
+                                <Image>  
+                            <Action>
+                                <TaskpaneId>
+                                <SourceLocation>
+                                <Title>
+                                <FunctionName>
+                            <Items>
+                                <Item>
+                                    <Label>
+                                    <Supertip>
+                                        <Title>
+                                        <Description>
+                                    <Action>
+                                        <TaskpaneId>
+                                        <SourceLocation>
+                                        <Title>
+                                        <FunctionName>
         <Resources>
             <Images>
                 <Image>
@@ -302,6 +302,102 @@ Les sections suivantes présentent les éléments de manifeste dans l’ordre da
     <Hosts>
         <Host>
             <DesktopFormFactor>
+                <ExtensionPoint>
+                    <OfficeTab>
+                        <Group>
+                            <Label>
+                            <Control>
+                                <Label>
+                                <Supertip>
+                                    <Title>
+                                    <Description>
+                                <Icon>
+                                    <Image>
+                                <Action>
+                                    <SourceLocation>
+                                    <FunctionName>
+                    <CustomTab>
+                        <Group>
+                            <Label>
+                            <Icon>
+                                <Image>
+                            <Control>
+                                <Label>
+                                <Supertip>
+                                    <Title>
+                                    <Description>
+                                <Icon>
+                                    <Image>  
+                                <Action>
+                                    <TaskpaneId>
+                                    <SourceLocation>
+                                    <Title>
+                                    <FunctionName>
+                                <Items>
+                                    <Item>
+                                        <Label>
+                                        <Supertip>
+                                            <Title>
+                                            <Description>
+                                        <Action>
+                                            <TaskpaneId>
+                                            <SourceLocation>
+                                            <Title>
+                                            <FunctionName>
+                        <Label>
+                    <OfficeMenu>
+                        <Control>
+                            <Label>
+                            <Supertip>
+                                <Title>
+                                <Description>
+                            <Icon>
+                                <Image>
+                            <Action>
+                                <TaskpaneId>
+                                <SourceLocation>
+                                <Title>
+                                <FunctionName>
+                            <Items>
+                                <Item>
+                                    <Label>
+                                    <Supertip>
+                                        <Title>
+                                        <Description>
+                                    <Action>
+                                        <TaskpaneId>
+                                        <SourceLocation>
+                                        <Title>
+                                        <FunctionName>
+    <Resources>
+        <Images>
+            <Image>
+                <Override>
+        <Urls>
+            <Url>
+                <Override>
+        <ShortStrings>
+            <String>
+                <Override>
+        <LongStrings>
+            <String>
+                <Override>
+    <VersionOverrides>*
+```
+
+\*Un VersionOverrides avec `type` une `VersionOverridesV1_1`valeur, au `VersionOverridesV1_0`lieu de, peut être imbriqué à la fin de l’VersionOverrides externe. Consultez la rubrique ordre des éléments de [complément de messagerie dans VersionOverrides ver. 1,1](#mail-add-in-element-ordering-within-versionoverrides-ver-11) pour l’ordre `VersionOverridesV1_1`des éléments dans.
+
+## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-11"></a>Classement des éléments de complément de messagerie dans VersionOverrides ver. 1.1
+
+```xml
+<VersionOverrides>
+    <Description>
+    <Requirements>
+    <Sets>
+        <Set>
+    <Hosts>
+    <Host>
+        <DesktopFormFactor>
             <ExtensionPoint>
                 <OfficeTab>
                     <Group>
@@ -352,77 +448,6 @@ Les sections suivantes présentent les éléments de manifeste dans l’ordre da
                             <Title>
                             <Description>
                         <Icon>
-                            <Image>
-                        <Action>
-                            <TaskpaneId>
-                            <SourceLocation>
-                            <Title>
-                            <FunctionName>
-                        <Items>
-                            <Item>
-                                <Label>
-                                <Supertip>
-                                    <Title>
-                                    <Description>
-                                <Action>
-                                    <TaskpaneId>
-                                    <SourceLocation>
-                                    <Title>
-                                    <FunctionName>
-    <Resources>
-        <Images>
-            <Image>
-                <Override>
-        <Urls>
-            <Url>
-                <Override>
-        <ShortStrings>
-            <String>
-                <Override>
-        <LongStrings>
-            <String>
-                <Override>
-    <VersionOverrides>*
-```
-
-\*Un VersionOverrides avec `type` une `VersionOverridesV1_1`valeur, au `VersionOverridesV1_0`lieu de, peut être imbriqué à la fin de l’VersionOverrides externe. Consultez la rubrique ordre des éléments de [complément de messagerie dans VersionOverrides ver. 1,1](#mail-add-in-element-ordering-within-versionoverrides-ver-11) pour l’ordre `VersionOverridesV1_1`des éléments dans.
-
-## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-11"></a>Classement des éléments de complément de messagerie dans VersionOverrides ver. 1.1
-
-```xml
-<VersionOverrides>
-    <Description>
-    <Requirements>
-    <Sets>
-        <Set>
-    <Hosts>
-    <Host>
-        <DesktopFormFactor>
-        <ExtensionPoint>
-            <OfficeTab>
-                <Group>
-                    <Label>
-                    <Control>
-                        <Label>
-                        <Supertip>
-                            <Title>
-                            <Description>
-                        <Icon>
-                            <Image>
-                        <Action>
-                            <SourceLocation>
-                            <FunctionName>
-            <CustomTab>
-                <Group>
-                    <Label>
-                    <Icon>
-                        <Image>
-                    <Control>
-                        <Label>
-                        <Supertip>
-                            <Title>
-                            <Description>
-                        <Icon>
                             <Image>  
                         <Action>
                             <TaskpaneId>
@@ -440,35 +465,10 @@ Les sections suivantes présentent les éléments de manifeste dans l’ordre da
                                     <SourceLocation>
                                     <Title>
                                     <FunctionName>
+                                    <SourceLocation>
+                <SourceLocation>
                 <Label>
-            <OfficeMenu>
-                <Control>
-                    <Label>
-                    <Supertip>
-                        <Title>
-                        <Description>
-                    <Icon>
-                        <Image>  
-                    <Action>
-                        <TaskpaneId>
-                        <SourceLocation>
-                        <Title>
-                        <FunctionName>
-                    <Items>
-                        <Item>
-                            <Label>
-                            <Supertip>
-                                <Title>
-                                <Description>
-                            <Action>
-                                <TaskpaneId>
-                                <SourceLocation>
-                                <Title>
-                                <FunctionName>
-                                <SourceLocation>
-            <SourceLocation>
-            <Label>
-            <CommandSurface>
+                <CommandSurface>
     <Resources>
         <Images>
             <Image>
