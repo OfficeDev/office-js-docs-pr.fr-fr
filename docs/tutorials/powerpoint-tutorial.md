@@ -3,13 +3,13 @@ title: Didacticiel sur les compléments PowerPoint
 description: Dans ce didacticiel, vous allez créer un complément PowerPoint qui insère une image, insère du texte, obtient les métadonnées des diapositives et navigue entre les diapositives.
 ms.date: 12/24/2019
 ms.prod: powerpoint
-localization_priority: Normal
-ms.openlocfilehash: 524c6727e8a1b8e4bb42156a5cec9fead45fd45c
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
-ms.translationtype: MT
+localization_priority: Priority
+ms.openlocfilehash: aace13a3dba55abcac258b48ceb852fed746adcc
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851424"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950886"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de PowerPoint
 
@@ -33,7 +33,7 @@ Procédez comme suit pour créer un projet complément PowerPoint à l’aide de
 
 2. À l’aide de la zone de recherche, entrez **complément**. Choisissez **Complément web PowerPoint**, puis sélectionnez **Suivant**.
 
-3. Nommez le `HelloWorld`projet, puis sélectionnez **créer**.
+3. Nommez le projet `HelloWorld` et sélectionnez **Créer**.
 
 4. Dans la fenêtre de la boîte de dialogue **Créer un complément Office**, choisissez **Ajouter de nouvelles fonctionnalités à PowerPoint**, puis sélectionnez **Terminer** pour créer le projet.
 
@@ -258,7 +258,7 @@ Procédez comme suit pour ajouter des marques de révision qui personnalisent l�
 
 ### <a name="test-the-add-in"></a>Test du complément
 
-1. À l’aide de Visual Studio, testez le nouveau complément PowerPoint en appuyant sur**F5**ou en choisissant le bouton **Démarrer** pour lancer PowerPoint avec le bouton du complément**Afficher le volet Office** qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
+1. À l’aide de Visual Studio, testez le nouveau complément PowerPoint en appuyant sur**F5**ou en choisissant le bouton **Démarrer** pour lancer PowerPoint avec le bouton du complément**Afficher le volet Office** qui apparaît dans le ruban. Le complément est hébergé localement sur IIS.
 
     ![Capture d’écran de Visual Studio avec le bouton Démarrer mis en évidence](../images/powerpoint-tutorial-start.png)
 
@@ -506,10 +506,10 @@ Procédez comme suit pour ajouter le code qui navigue entre les diapositives d�
 Dans ce didacticiel, vous allez créer un complément PowerPoint qui insère une image, insère du texte, obtient les métadonnées des diapositives et navigue entre les diapositives. Pour en savoir plus sur le développement des complément PowerPoint, passez à l’article suivant :
 
 > [!div class="nextstepaction"]
-> [Vue d’ensemble des Compléments PowerPoint](../powerpoint/powerpoint-add-ins.md)
+> [Vue d’ensemble des compléments PowerPoint](../powerpoint/powerpoint-add-ins.md)
 
 ## <a name="see-also"></a>Voir aussi
 
 * [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
 * [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
-* [Développer des compléments Office](../develop/develop-overview.md)
+* [Développement de compléments Office](../develop/develop-overview.md)
