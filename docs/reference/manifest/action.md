@@ -3,44 +3,44 @@ title: Élément Action dans le fichier manifeste
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: db05538fdb3f655a61050e0eeafa0b5ceb0dfd18
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: 3b0a82362988d4e64c1a376e0bd774e84e4a8fa3
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477935"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165558"
 ---
-# <a name="action-element"></a><span data-ttu-id="19101-102">Action, élément</span><span class="sxs-lookup"><span data-stu-id="19101-102">Action element</span></span>
+# <a name="action-element"></a><span data-ttu-id="d73c0-102">Action, élément</span><span class="sxs-lookup"><span data-stu-id="d73c0-102">Action element</span></span>
 
-<span data-ttu-id="19101-103">Indique l’action à réaliser lorsque l’utilisateur sélectionne des contrôles de [bouton](control.md#button-control) ou de [menu](control.md#menu-dropdown-button-controls).</span><span class="sxs-lookup"><span data-stu-id="19101-103">Specifies the action to perform when the user selects a  [Button](control.md#button-control) or [Menu](control.md#menu-dropdown-button-controls) controls.</span></span>
+<span data-ttu-id="d73c0-103">Indique l’action à réaliser lorsque l’utilisateur sélectionne des contrôles de [bouton](control.md#button-control) ou de [menu](control.md#menu-dropdown-button-controls).</span><span class="sxs-lookup"><span data-stu-id="d73c0-103">Specifies the action to perform when the user selects a  [Button](control.md#button-control) or [Menu](control.md#menu-dropdown-button-controls) controls.</span></span>
 
-## <a name="attributes"></a><span data-ttu-id="19101-104">Attributs</span><span class="sxs-lookup"><span data-stu-id="19101-104">Attributes</span></span>
+## <a name="attributes"></a><span data-ttu-id="d73c0-104">Attributs</span><span class="sxs-lookup"><span data-stu-id="d73c0-104">Attributes</span></span>
 
-|  <span data-ttu-id="19101-105">Attribut</span><span class="sxs-lookup"><span data-stu-id="19101-105">Attribute</span></span>  |  <span data-ttu-id="19101-106">Obligatoire</span><span class="sxs-lookup"><span data-stu-id="19101-106">Required</span></span>  |  <span data-ttu-id="19101-107">Description</span><span class="sxs-lookup"><span data-stu-id="19101-107">Description</span></span>  |
+|  <span data-ttu-id="d73c0-105">Attribut</span><span class="sxs-lookup"><span data-stu-id="d73c0-105">Attribute</span></span>  |  <span data-ttu-id="d73c0-106">Obligatoire</span><span class="sxs-lookup"><span data-stu-id="d73c0-106">Required</span></span>  |  <span data-ttu-id="d73c0-107">Description</span><span class="sxs-lookup"><span data-stu-id="d73c0-107">Description</span></span>  |
 |:-----|:-----|:-----|
-|  [<span data-ttu-id="19101-108">xsi:type</span><span class="sxs-lookup"><span data-stu-id="19101-108">xsi:type</span></span>](#xsitype)  |  <span data-ttu-id="19101-109">Oui</span><span class="sxs-lookup"><span data-stu-id="19101-109">Yes</span></span>  | <span data-ttu-id="19101-110">Type d’action à effectuer</span><span class="sxs-lookup"><span data-stu-id="19101-110">Action type to take</span></span>|
+|  [<span data-ttu-id="d73c0-108">xsi:type</span><span class="sxs-lookup"><span data-stu-id="d73c0-108">xsi:type</span></span>](#xsitype)  |  <span data-ttu-id="d73c0-109">Oui</span><span class="sxs-lookup"><span data-stu-id="d73c0-109">Yes</span></span>  | <span data-ttu-id="d73c0-110">Type d’action à effectuer</span><span class="sxs-lookup"><span data-stu-id="d73c0-110">Action type to take</span></span>|
 
-## <a name="child-elements"></a><span data-ttu-id="19101-111">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="19101-111">Child elements</span></span>
+## <a name="child-elements"></a><span data-ttu-id="d73c0-111">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="d73c0-111">Child elements</span></span>
 
-|  <span data-ttu-id="19101-112">Élément</span><span class="sxs-lookup"><span data-stu-id="19101-112">Element</span></span> |  <span data-ttu-id="19101-113">Description</span><span class="sxs-lookup"><span data-stu-id="19101-113">Description</span></span>  |
+|  <span data-ttu-id="d73c0-112">Élément</span><span class="sxs-lookup"><span data-stu-id="d73c0-112">Element</span></span> |  <span data-ttu-id="d73c0-113">Description</span><span class="sxs-lookup"><span data-stu-id="d73c0-113">Description</span></span>  |
 |:-----|:-----|
-|  [<span data-ttu-id="19101-114">FunctionName</span><span class="sxs-lookup"><span data-stu-id="19101-114">FunctionName</span></span>](#functionname) |    <span data-ttu-id="19101-115">Spécifie le nom de la fonction à exécuter.</span><span class="sxs-lookup"><span data-stu-id="19101-115">Specifies the name of the function to execute.</span></span> |
-|  [<span data-ttu-id="19101-116">SourceLocation</span><span class="sxs-lookup"><span data-stu-id="19101-116">SourceLocation</span></span>](#sourcelocation) |    <span data-ttu-id="19101-117">Spécifie l’emplacement du fichier source pour cette action.</span><span class="sxs-lookup"><span data-stu-id="19101-117">Specifies the source file location for this action.</span></span> |
-| <span data-ttu-id="19101-118"> [TaskpaneId](#taskpaneid)</span><span class="sxs-lookup"><span data-stu-id="19101-118"> [TaskpaneId](#taskpaneid)</span></span> | <span data-ttu-id="19101-119">Spécifie l’ID du conteneur de volet des tâches.</span><span class="sxs-lookup"><span data-stu-id="19101-119">Specifies the ID of the task pane container.</span></span>|
-| <span data-ttu-id="19101-120"> [Title](#title)</span><span class="sxs-lookup"><span data-stu-id="19101-120"> [Title](#title)</span></span> | <span data-ttu-id="19101-121">Indique le titre personnalisé du volet Office.</span><span class="sxs-lookup"><span data-stu-id="19101-121">Specifies the custom title for the task pane.</span></span>|
-| <span data-ttu-id="19101-122"> [SupportsPinning](#supportspinning)</span><span class="sxs-lookup"><span data-stu-id="19101-122"> [SupportsPinning](#supportspinning)</span></span> | <span data-ttu-id="19101-123">Indique qu’un volet des tâches prend en charge l’épinglage, ce qui conserve le volet des tâches ouvert lorsque l’utilisateur modifie la sélection.</span><span class="sxs-lookup"><span data-stu-id="19101-123">Specifies that a task pane supports pinning, which keeps the task pane open when the user changes the selection.</span></span>|
+|  [<span data-ttu-id="d73c0-114">FunctionName</span><span class="sxs-lookup"><span data-stu-id="d73c0-114">FunctionName</span></span>](#functionname) |    <span data-ttu-id="d73c0-115">Spécifie le nom de la fonction à exécuter.</span><span class="sxs-lookup"><span data-stu-id="d73c0-115">Specifies the name of the function to execute.</span></span> |
+|  [<span data-ttu-id="d73c0-116">SourceLocation</span><span class="sxs-lookup"><span data-stu-id="d73c0-116">SourceLocation</span></span>](#sourcelocation) |    <span data-ttu-id="d73c0-117">Spécifie l’emplacement du fichier source pour cette action.</span><span class="sxs-lookup"><span data-stu-id="d73c0-117">Specifies the source file location for this action.</span></span> |
+| <span data-ttu-id="d73c0-118"> [TaskpaneId](#taskpaneid)</span><span class="sxs-lookup"><span data-stu-id="d73c0-118"> [TaskpaneId](#taskpaneid)</span></span> | <span data-ttu-id="d73c0-119">Spécifie l’ID du conteneur de volet des tâches.</span><span class="sxs-lookup"><span data-stu-id="d73c0-119">Specifies the ID of the task pane container.</span></span>|
+| <span data-ttu-id="d73c0-120"> [Title](#title)</span><span class="sxs-lookup"><span data-stu-id="d73c0-120"> [Title](#title)</span></span> | <span data-ttu-id="d73c0-121">Indique le titre personnalisé du volet Office.</span><span class="sxs-lookup"><span data-stu-id="d73c0-121">Specifies the custom title for the task pane.</span></span>|
+| <span data-ttu-id="d73c0-122"> [SupportsPinning](#supportspinning)</span><span class="sxs-lookup"><span data-stu-id="d73c0-122"> [SupportsPinning](#supportspinning)</span></span> | <span data-ttu-id="d73c0-123">Indique qu’un volet des tâches prend en charge l’épinglage, ce qui conserve le volet des tâches ouvert lorsque l’utilisateur modifie la sélection.</span><span class="sxs-lookup"><span data-stu-id="d73c0-123">Specifies that a task pane supports pinning, which keeps the task pane open when the user changes the selection.</span></span>|
   
 
-## <a name="xsitype"></a><span data-ttu-id="19101-124">xsi:type</span><span class="sxs-lookup"><span data-stu-id="19101-124">xsi:type</span></span>
+## <a name="xsitype"></a><span data-ttu-id="d73c0-124">xsi:type</span><span class="sxs-lookup"><span data-stu-id="d73c0-124">xsi:type</span></span>
 
-<span data-ttu-id="19101-p101">Cet attribut indique le type d’action réalisée lorsque l’utilisateur sélectionne le bouton. Il peut s’agir de l’une des actions suivantes :</span><span class="sxs-lookup"><span data-stu-id="19101-p101">This attribute specifies the kind of action performed when the user selects the button. It can be one of the following:</span></span>
+<span data-ttu-id="d73c0-p101">Cet attribut indique le type d’action réalisée lorsque l’utilisateur sélectionne le bouton. Il peut s’agir de l’une des actions suivantes :</span><span class="sxs-lookup"><span data-stu-id="d73c0-p101">This attribute specifies the kind of action performed when the user selects the button. It can be one of the following:</span></span>
 
 - `ExecuteFunction`
 - `ShowTaskpane`
 
-## <a name="functionname"></a><span data-ttu-id="19101-127">FunctionName</span><span class="sxs-lookup"><span data-stu-id="19101-127">FunctionName</span></span>
+## <a name="functionname"></a><span data-ttu-id="d73c0-127">FunctionName</span><span class="sxs-lookup"><span data-stu-id="d73c0-127">FunctionName</span></span>
 
-<span data-ttu-id="19101-p102">Élément obligatoire lorsque **xsi:type** est « ExecuteFunction ». Indique le nom de la fonction à exécuter. La fonction est contenue dans le fichier indiqué dans l’élément [FunctionFile](functionfile.md).</span><span class="sxs-lookup"><span data-stu-id="19101-p102">Required element when **xsi:type** is "ExecuteFunction". Specifies the name of the function to execute. The function is contained in the file specified in the [FunctionFile](functionfile.md) element.</span></span>
+<span data-ttu-id="d73c0-p102">Élément obligatoire lorsque **xsi:type** est « ExecuteFunction ». Indique le nom de la fonction à exécuter. La fonction est contenue dans le fichier indiqué dans l’élément [FunctionFile](functionfile.md).</span><span class="sxs-lookup"><span data-stu-id="d73c0-p102">Required element when **xsi:type** is "ExecuteFunction". Specifies the name of the function to execute. The function is contained in the file specified in the [FunctionFile](functionfile.md) element.</span></span>
 
 ```xml
 <Action xsi:type="ExecuteFunction">
@@ -48,9 +48,9 @@ ms.locfileid: "36477935"
 </Action>
 ```
 
-## <a name="sourcelocation"></a><span data-ttu-id="19101-131">SourceLocation</span><span class="sxs-lookup"><span data-stu-id="19101-131">SourceLocation</span></span>
+## <a name="sourcelocation"></a><span data-ttu-id="d73c0-131">SourceLocation</span><span class="sxs-lookup"><span data-stu-id="d73c0-131">SourceLocation</span></span>
 
-<span data-ttu-id="19101-p103">Élément obligatoire lorsque  **xsi:type** est « ShowTaskpane ». Indique l’emplacement du fichier source pour cette action. L’attribut  **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Url** dans l’élément **Urls** dans l’élément [Resources](resources.md).</span><span class="sxs-lookup"><span data-stu-id="19101-p103">Required element when  **xsi:type** is "ShowTaskpane". Specifies the source file location for this action. The **resid** attribute must be set to the value of the **id** attribute of a **Url** element in the **Urls** element in the [Resources](resources.md) element.</span></span>
+<span data-ttu-id="d73c0-p103">Élément obligatoire lorsque  **xsi:type** est « ShowTaskpane ». Indique l’emplacement du fichier source pour cette action. L’attribut  **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Url** dans l’élément **Urls** dans l’élément [Resources](resources.md).</span><span class="sxs-lookup"><span data-stu-id="d73c0-p103">Required element when  **xsi:type** is "ShowTaskpane". Specifies the source file location for this action. The **resid** attribute must be set to the value of the **id** attribute of a **Url** element in the **Urls** element in the [Resources](resources.md) element.</span></span>
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -58,14 +58,14 @@ ms.locfileid: "36477935"
 </Action>
 ```  
 
-## <a name="taskpaneid"></a><span data-ttu-id="19101-135">TaskpaneId</span><span class="sxs-lookup"><span data-stu-id="19101-135">TaskpaneId</span></span>
+## <a name="taskpaneid"></a><span data-ttu-id="d73c0-135">TaskpaneId</span><span class="sxs-lookup"><span data-stu-id="d73c0-135">TaskpaneId</span></span>
 
-<span data-ttu-id="19101-136">Élément facultatif quand  **xsi:type** a la valeur « ShowTaskpane ».</span><span class="sxs-lookup"><span data-stu-id="19101-136">Optional element when  **xsi:type** is "ShowTaskpane".</span></span> <span data-ttu-id="19101-137">Spécifie l’ID du conteneur de volet des tâches.</span><span class="sxs-lookup"><span data-stu-id="19101-137">Specifies the ID of the task pane container.</span></span> <span data-ttu-id="19101-138">Lorsque vous avez plusieurs actions « ShowTaskpane », utilisez un autre **TaskpaneId** si vous souhaitez un volet indépendant pour chacun.</span><span class="sxs-lookup"><span data-stu-id="19101-138">When you have multiple "ShowTaskpane" actions, use a different **TaskpaneId** if you want an independent pane for each.</span></span> <span data-ttu-id="19101-139">Utilisez le même **TaskpaneId** pour différentes actions qui partagent le même volet.</span><span class="sxs-lookup"><span data-stu-id="19101-139">Use the same **TaskpaneId** for  different actions that share the same pane.</span></span> <span data-ttu-id="19101-140">Lorsque les utilisateurs choisissent des commandes qui partagent le même attribut **TaskpaneId**, le conteneur de volet reste ouvert, mais le contenu du volet sera remplacé par l’action correspondante « SourceLocation ».</span><span class="sxs-lookup"><span data-stu-id="19101-140">When users choose commands that share the same **TaskpaneId**, the pane container will remain open but the contents of the pane will be replaced with the corresponding Action "SourceLocation".</span></span>
+<span data-ttu-id="d73c0-136">Élément facultatif quand  **xsi:type** a la valeur « ShowTaskpane ».</span><span class="sxs-lookup"><span data-stu-id="d73c0-136">Optional element when  **xsi:type** is "ShowTaskpane".</span></span> <span data-ttu-id="d73c0-137">Spécifie l’ID du conteneur de volet des tâches.</span><span class="sxs-lookup"><span data-stu-id="d73c0-137">Specifies the ID of the task pane container.</span></span> <span data-ttu-id="d73c0-138">Lorsque vous avez plusieurs actions « ShowTaskpane », utilisez un autre **TaskpaneId** si vous souhaitez un volet indépendant pour chacun.</span><span class="sxs-lookup"><span data-stu-id="d73c0-138">When you have multiple "ShowTaskpane" actions, use a different **TaskpaneId** if you want an independent pane for each.</span></span> <span data-ttu-id="d73c0-139">Utilisez le même **TaskpaneId** pour différentes actions qui partagent le même volet.</span><span class="sxs-lookup"><span data-stu-id="d73c0-139">Use the same **TaskpaneId** for  different actions that share the same pane.</span></span> <span data-ttu-id="d73c0-140">Lorsque les utilisateurs choisissent des commandes qui partagent le même attribut **TaskpaneId**, le conteneur de volet reste ouvert, mais le contenu du volet sera remplacé par l’action correspondante « SourceLocation ».</span><span class="sxs-lookup"><span data-stu-id="d73c0-140">When users choose commands that share the same **TaskpaneId**, the pane container will remain open but the contents of the pane will be replaced with the corresponding Action "SourceLocation".</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="19101-141">Cet élément n’est pas pris en charge dans Outlook.</span><span class="sxs-lookup"><span data-stu-id="19101-141">This element is not supported in Outlook.</span></span>
+> <span data-ttu-id="d73c0-141">Cet élément n’est pas pris en charge dans Outlook.</span><span class="sxs-lookup"><span data-stu-id="d73c0-141">This element is not supported in Outlook.</span></span>
 
-<span data-ttu-id="19101-142">L’exemple suivant montre deux actions qui partagent la même valeur **TaskpaneId**.</span><span class="sxs-lookup"><span data-stu-id="19101-142">The following example shows two actions that share the same **TaskpaneId**.</span></span>
+<span data-ttu-id="d73c0-142">L’exemple suivant montre deux actions qui partagent la même valeur **TaskpaneId**.</span><span class="sxs-lookup"><span data-stu-id="d73c0-142">The following example shows two actions that share the same **TaskpaneId**.</span></span>
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -79,7 +79,7 @@ ms.locfileid: "36477935"
 </Action>
 ```  
 
-<span data-ttu-id="19101-p105">Les exemples suivants montrent deux actions qui utilisent une valeur **TaskpaneId** différente. Pour voir ces exemples en contexte, consultez l’article relatif à l’[exemple de commandes de complément](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/blob/master/Simple/Manifest/SimpleAddin.xml).</span><span class="sxs-lookup"><span data-stu-id="19101-p105">The following examples show two actions that use a different **TaskpaneId**. To see these examples in context, see [Simple Add-in Commands Sample](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/blob/master/Simple/Manifest/SimpleAddin.xml).</span></span>
+<span data-ttu-id="d73c0-p105">Les exemples suivants montrent deux actions qui utilisent une valeur **TaskpaneId** différente. Pour voir ces exemples en contexte, consultez l’article relatif à l’[exemple de commandes de complément](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/blob/master/Simple/Manifest/SimpleAddin.xml).</span><span class="sxs-lookup"><span data-stu-id="d73c0-p105">The following examples show two actions that use a different **TaskpaneId**. To see these examples in context, see [Simple Add-in Commands Sample](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/blob/master/Simple/Manifest/SimpleAddin.xml).</span></span>
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -100,11 +100,11 @@ ms.locfileid: "36477935"
 </bt:Urls>
 ```  
 
-## <a name="title"></a><span data-ttu-id="19101-145">Titre</span><span class="sxs-lookup"><span data-stu-id="19101-145">Title</span></span>
+## <a name="title"></a><span data-ttu-id="d73c0-145">Titre</span><span class="sxs-lookup"><span data-stu-id="d73c0-145">Title</span></span>
 
-<span data-ttu-id="19101-146">Élément facultatif quand  **xsi:type** a la valeur « ShowTaskpane ».</span><span class="sxs-lookup"><span data-stu-id="19101-146">Optional element when  **xsi:type** is "ShowTaskpane".</span></span> <span data-ttu-id="19101-147">Indique le titre personnalisé du volet Office pour cette action.</span><span class="sxs-lookup"><span data-stu-id="19101-147">Specifies the custom title for the task pane for this action.</span></span>
+<span data-ttu-id="d73c0-146">Élément facultatif quand  **xsi:type** a la valeur « ShowTaskpane ».</span><span class="sxs-lookup"><span data-stu-id="d73c0-146">Optional element when  **xsi:type** is "ShowTaskpane".</span></span> <span data-ttu-id="d73c0-147">Indique le titre personnalisé du volet Office pour cette action.</span><span class="sxs-lookup"><span data-stu-id="d73c0-147">Specifies the custom title for the task pane for this action.</span></span>
 
-<span data-ttu-id="19101-148">L’exemple suivant montre une action qui utilise l’élément **title** .</span><span class="sxs-lookup"><span data-stu-id="19101-148">The following example shows an action that uses the **Title** element.</span></span> <span data-ttu-id="19101-149">Notez que vous n’affectez pas directement le **titre** à une chaîne.</span><span class="sxs-lookup"><span data-stu-id="19101-149">Note that you don't assign the **Title** to a string directly.</span></span> <span data-ttu-id="19101-150">Au lieu de cela, vous lui affectez un ID de ressource (RESID), qui est défini dans la section **ressources** du manifeste.</span><span class="sxs-lookup"><span data-stu-id="19101-150">Instead, you assign it a resource ID (resid), that is defined in the **Resources** section of the manifest.</span></span>
+<span data-ttu-id="d73c0-148">L’exemple suivant montre une action qui utilise l’élément **title** .</span><span class="sxs-lookup"><span data-stu-id="d73c0-148">The following example shows an action that uses the **Title** element.</span></span> <span data-ttu-id="d73c0-149">Notez que vous n’affectez pas directement le **titre** à une chaîne.</span><span class="sxs-lookup"><span data-stu-id="d73c0-149">Note that you don't assign the **Title** to a string directly.</span></span> <span data-ttu-id="d73c0-150">Au lieu de cela, vous lui affectez un ID de ressource (RESID), qui est défini dans la section **ressources** du manifeste.</span><span class="sxs-lookup"><span data-stu-id="d73c0-150">Instead, you assign it a resource ID (resid), that is defined in the **Resources** section of the manifest.</span></span>
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -127,12 +127,12 @@ ms.locfileid: "36477935"
 </Resources>
 ```
 
-## <a name="supportspinning"></a><span data-ttu-id="19101-151">SupportsPinning</span><span class="sxs-lookup"><span data-stu-id="19101-151">SupportsPinning</span></span>
+## <a name="supportspinning"></a><span data-ttu-id="d73c0-151">SupportsPinning</span><span class="sxs-lookup"><span data-stu-id="d73c0-151">SupportsPinning</span></span>
 
-<span data-ttu-id="19101-152">Élément facultatif quand **xsi:type** a la valeur « ShowTaskpane ».</span><span class="sxs-lookup"><span data-stu-id="19101-152">Optional element when **xsi:type** is "ShowTaskpane".</span></span> <span data-ttu-id="19101-153">Les éléments [VersionOverrides](versionoverrides.md) le contenant doivent avoir une valeur d’attribut `xsi:type` de `VersionOverridesV1_1`.</span><span class="sxs-lookup"><span data-stu-id="19101-153">The containing [VersionOverrides](versionoverrides.md) elements must have an `xsi:type` attribute value of `VersionOverridesV1_1`.</span></span> <span data-ttu-id="19101-154">Incluez cet élément avec une valeur `true` pour prendre en charge l’épinglage du volet Office.</span><span class="sxs-lookup"><span data-stu-id="19101-154">Include this element with a value of `true` to support task pane pinning.</span></span> <span data-ttu-id="19101-155">L’utilisateur pourra alors « épingler » le volet Office qui restera ouvert pendant que la sélection est modifiée.</span><span class="sxs-lookup"><span data-stu-id="19101-155">The user will be able to "pin" the task pane, causing it to stay open when changing the selection.</span></span> <span data-ttu-id="19101-156">Pour en savoir plus, consultez l’article relatif à l’[implémentation d’un volet Office épinglable dans Outlook](/outlook/add-ins/pinnable-taskpane).</span><span class="sxs-lookup"><span data-stu-id="19101-156">For more information, see [Implement a pinnable task pane in Outlook](/outlook/add-ins/pinnable-taskpane).</span></span>
+<span data-ttu-id="d73c0-152">Élément facultatif quand **xsi:type** a la valeur « ShowTaskpane ».</span><span class="sxs-lookup"><span data-stu-id="d73c0-152">Optional element when **xsi:type** is "ShowTaskpane".</span></span> <span data-ttu-id="d73c0-153">Les éléments [VersionOverrides](versionoverrides.md) le contenant doivent avoir une valeur d’attribut `xsi:type` de `VersionOverridesV1_1`.</span><span class="sxs-lookup"><span data-stu-id="d73c0-153">The containing [VersionOverrides](versionoverrides.md) elements must have an `xsi:type` attribute value of `VersionOverridesV1_1`.</span></span> <span data-ttu-id="d73c0-154">Incluez cet élément avec une valeur `true` pour prendre en charge l’épinglage du volet Office.</span><span class="sxs-lookup"><span data-stu-id="d73c0-154">Include this element with a value of `true` to support task pane pinning.</span></span> <span data-ttu-id="d73c0-155">L’utilisateur pourra alors « épingler » le volet Office qui restera ouvert pendant que la sélection est modifiée.</span><span class="sxs-lookup"><span data-stu-id="d73c0-155">The user will be able to "pin" the task pane, causing it to stay open when changing the selection.</span></span> <span data-ttu-id="d73c0-156">Pour en savoir plus, consultez l’article relatif à l’[implémentation d’un volet Office épinglable dans Outlook](../../outlook/pinnable-taskpane.md).</span><span class="sxs-lookup"><span data-stu-id="d73c0-156">For more information, see [Implement a pinnable task pane in Outlook](../../outlook/pinnable-taskpane.md).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="19101-157">Supportspinning n’est est actuellement uniquement pris en charge par Outlook 2016 ou version ultérieure sur Windows (Build 7628,1000 ou version ultérieure) et Outlook 2016 ou version ultérieure sur Mac (Build 16.13.503 ou version ultérieure).</span><span class="sxs-lookup"><span data-stu-id="19101-157">SupportsPinning is currently only supported by Outlook 2016 or later on Windows (build 7628.1000 or later) and Outlook 2016 or later on Mac (build 16.13.503 or later).</span></span>
+> <span data-ttu-id="d73c0-157">Supportspinning n’est est actuellement uniquement pris en charge par Outlook 2016 ou version ultérieure sur Windows (Build 7628,1000 ou version ultérieure) et Outlook 2016 ou version ultérieure sur Mac (Build 16.13.503 ou version ultérieure).</span><span class="sxs-lookup"><span data-stu-id="d73c0-157">SupportsPinning is currently only supported by Outlook 2016 or later on Windows (build 7628.1000 or later) and Outlook 2016 or later on Mac (build 16.13.503 or later).</span></span>
 
 ```xml
 <Action xsi:type="ShowTaskpane">
