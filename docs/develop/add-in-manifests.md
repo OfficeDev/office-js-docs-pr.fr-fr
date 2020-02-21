@@ -3,12 +3,12 @@ title: Manifeste XML des compléments Office
 description: ''
 ms.date: 01/06/2020
 localization_priority: Priority
-ms.openlocfilehash: 90fef1186db6411290daf9b6aef14d8d81d7a13e
-ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
+ms.openlocfilehash: abc228fda18b432ddd16d04cce95a8d5af17dd8d
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "40970091"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42162831"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifeste XML des compléments Office
 
@@ -163,9 +163,9 @@ Votre complément peut effectuer des appels d’API Office.js à partir du domai
 
 Les sections suivantes présentent des exemples de fichiers manifeste XML version 1.1 pour des compléments de contenu, de volet Office et Outlook.
 
-# <a name="task-panetabtabid-1"></a>[Volet Office](#tab/tabid-1)
+# <a name="task-pane"></a>[Volet Office](#tab/tabid-1)
 
-[Schéma de manifeste d’application de volet Office](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/taskpane)
+[Schémas de manifeste de compléments](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -361,9 +361,9 @@ Les sections suivantes présentent des exemples de fichiers manifeste XML versio
 </OfficeApp>
 ```
 
-# <a name="contenttabtabid-2"></a>[Contenu](#tab/tabid-2)
+# <a name="content"></a>[Content](#tab/tabid-2)
 
-[Schéma de manifeste d’application de contenu](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/content)
+[Schémas de manifeste de compléments](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -401,9 +401,9 @@ Les sections suivantes présentent des exemples de fichiers manifeste XML versio
 </OfficeApp>
 ```
 
-# <a name="mailtabtabid-3"></a>[Messagerie](#tab/tabid-3)
+# <a name="mail"></a>[Application de messagerie](#tab/tabid-3)
 
-[Schéma de manifeste d’application de messagerie](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/mail)
+[Schémas de manifeste de compléments](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -496,7 +496,7 @@ Les sections suivantes présentent des exemples de fichiers manifeste XML versio
 
 ## <a name="validate-an-office-add-ins-manifest"></a>Valider un manifeste de complément Office
 
-Pour plus d’informations sur la validation d’un manifeste par rapport à la [XSD (XML Schema Definition)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas), voir [Valider le manifeste d’un complément Office](../testing/troubleshoot-manifest.md).
+Pour plus d’informations sur la validation d’un manifeste par rapport à la [XSD (XML Schema Definition)](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8), voir [Valider le manifeste d’un complément Office](../testing/troubleshoot-manifest.md).
 
 ## <a name="see-also"></a>Voir aussi
 
@@ -504,7 +504,7 @@ Pour plus d’informations sur la validation d’un manifeste par rapport à la 
 * [Création de commandes de complément dans votre manifeste][commandes de complément]
 * [Spécification des exigences en matière d’hôtes Office et d’API](specify-office-hosts-and-api-requirements.md)
 * [Localisation des compléments Office](localization.md)
-* [Référence de schéma pour les manifestes des compléments Office](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas)
+* [Référence de schéma pour les manifestes des compléments Office](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 * [Mettre à jour la version du manifeste et de l’API](update-your-javascript-api-for-office-and-manifest-schema-version.md)
 * [Identifier un complément COM équivalent](make-office-add-in-compatible-with-existing-com-add-in.md)
 * [Demande d’autorisations d’utilisation de l’API dans des compléments](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)

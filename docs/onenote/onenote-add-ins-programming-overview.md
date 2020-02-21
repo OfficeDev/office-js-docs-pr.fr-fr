@@ -1,16 +1,16 @@
 ---
 title: Vue d’ensemble de la programmation de l’API JavaScript de OneNote
 description: ''
-ms.date: 07/05/2019
+ms.date: 02/19/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 9724de8c25a535884c4700a165e661028aee6608
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 2023daa422bd9078271f4b989f824101dc8b85f9
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851508"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165565"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>Vue d’ensemble de la programmation de l’API JavaScript de OneNote
 
@@ -125,7 +125,7 @@ Les compléments OneNote prennent en charge uniquement les API communes suivante
 | [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#set-name--value-) | Les paramètres sont pris en charge par les compléments de contenu uniquement | 
 | [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) ||
 
-En règle générale, vous utilisez l’API commune pour effectuer une action qui n’est pas prise en charge dans l’API enrichie. Pour plus d’informations sur les API communes, voir le [Modèle d’objet API JavaScript pour Office](../develop/office-javascript-api-object-model.md).
+En règle générale, vous utilisez l’API commune pour effectuer une action qui n’est pas prise en charge dans l’API enrichie. Pour plus d’informations sur les API communes, voir le [Modèle d’objet API JavaScript communes](../develop/office-javascript-api-object-model.md).
 
 
 <a name="om-diagram"></a>

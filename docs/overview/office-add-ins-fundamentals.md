@@ -1,14 +1,14 @@
 ---
 title: Création de compléments Office
 description: Présentation du développement de compléments Office.
-ms.date: 12/24/2019
+ms.date: 02/19/2020
 localization_priority: Priority
-ms.openlocfilehash: e0deeebb3a1c8761217a9fe33a3ef04a945b2cff
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
+ms.openlocfilehash: 95a930f89c3ce6c2c4fc894c61bd4337851a8614
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40915020"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163870"
 ---
 # <a name="building-office-add-ins"></a>Création de compléments Office
 
@@ -115,7 +115,7 @@ Les API JavaScript pour Office incluent deux modèles distincts :
 
 - **Les API spécifiques aux hôtes** fournissent des objets fortement typés qui peuvent être utilisés pour interagir avec des objets natifs d’une application Office spécifique. Par exemple, vous pouvez utiliser les API JavaScript pour Excel pour accéder à des feuilles de calcul, plages, tableaux, graphiques, etc. Les API spécifiques aux hôtes sont actuellement disponibles pour [Excel](../reference/overview/excel-add-ins-reference-overview.md), [Word](../reference/overview/word-add-ins-reference-overview.md)et [OneNote](../reference/overview/onenote-add-ins-javascript-reference.md). Ce modèle API utilise [promet](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) et vous permet de spécifier plusieurs opérations dans chaque demande que vous envoyez à l’hôte Office. Ce type d'opérations peut améliorer sensiblement les performances des compléments dans Office sur les applications web. Les API spécifiques aux hôtes ont été introduites avec Office 2016 et ne peuvent pas être utilisées pour interagir avec Office 2013.
 
-- Les API **Communes** peuvent être utilisées pour accéder à des fonctionnalités telles qu’une interface utilisateur, des boîtes de dialogue et des paramètres du client, qui sont communes à plusieurs types d’applications Office. Ce modèle API utilise des [rappels](https://developer.mozilla.org/docs/Glossary/Callback_function), où vous ne pouvez spécifier qu’une seule opération dans chaque demande que vous envoyez à l’hôte Office. Les API communes ont été introduites avec Office 2013 et peuvent être utilisées pour interagir avec Office 2013 ou version ultérieure. Si vous souhaitez plus en savoir sur le modèle objet API commun, qui inclut des API pour l’interaction avec Outlook et PowerPoint, veuillez consulter [Modèle d’objet API JavaScript Office](../develop/office-javascript-api-object-model.md).
+- Les API **Communes** peuvent être utilisées pour accéder à des fonctionnalités telles qu’une interface utilisateur, des boîtes de dialogue et des paramètres du client, qui sont communes à plusieurs types d’applications Office. Ce modèle API utilise des [rappels](https://developer.mozilla.org/docs/Glossary/Callback_function), où vous ne pouvez spécifier qu’une seule opération dans chaque demande que vous envoyez à l’hôte Office. Les API communes ont été introduites avec Office 2013 et peuvent être utilisées pour interagir avec Office 2013 ou version ultérieure. Si vous souhaitez plus en savoir sur le modèle objet API commun, qui inclut des API pour l’interaction avec Outlook et PowerPoint, veuillez consulter [Modèle d’objet API JavaScript communes](../develop/office-javascript-api-object-model.md).
 
 > [!NOTE]
 > Les fonctions personnalisées d’Excel s’exécutent au sein d’un Runtime unique qui hiérarchise l’exécution des calculs, et utilise par conséquent un modèle de programmation légèrement différent. Pour plus d'informations, veuillez vous reporter à [Architecture des fonctions personnalisées](../excel/custom-functions-architecture.md).

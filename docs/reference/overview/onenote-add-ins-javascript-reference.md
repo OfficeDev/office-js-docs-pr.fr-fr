@@ -1,15 +1,15 @@
 ---
 title: Référence de l’API JavaScript pour OneNote
 description: ''
-ms.date: 07/05/2019
+ms.date: 02/19/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 3ad992bd59c33d9d8b724893db49a6e623fd1ee3
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 27d6770ae64a6f2259e7dbbf38b756d54fe7cec2
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950977"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165319"
 ---
 # <a name="onenote-javascript-api-overview"></a>Référence de l’API JavaScript pour OneNote
 
@@ -19,7 +19,7 @@ Un complément OneNote interagit avec des objets dans OneNote sur le web à l’
 
 * **API communes** : incluses dans Office 2013, les [API communes](/javascript/api/office) peuvent être utilisées pour accéder à des fonctionnalités telles qu’une interface utilisateur, des boîtes de dialogue et des paramètres du client, qui sont communes à plusieurs types d’applications Office.
 
-Cette section de la documentation traite de l’API JavaScript pour OneNote, que vous allez utiliser pour développer la majorité des fonctionnalités des compléments utilisés dans OneNote sur le web. Pour plus d’informations sur les API comm.unes, voir le [Modèle d’objet API JavaScript pour Office](../../develop/office-javascript-api-object-model.md). 
+Cette section de la documentation traite de l’API JavaScript pour OneNote, que vous allez utiliser pour développer la majorité des fonctionnalités des compléments utilisés dans OneNote sur le web. Pour plus d’informations sur les API communes, voir le [Modèle objet des API JavaScript communes](../../develop/office-javascript-api-object-model.md). 
 
 ## <a name="learn-programming-concepts"></a>Découvrir les concepts de programmation
 

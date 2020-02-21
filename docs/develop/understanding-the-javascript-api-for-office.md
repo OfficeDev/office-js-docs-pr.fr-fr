@@ -3,12 +3,12 @@ title: Présentation de l’API JavaScript pour Office
 description: ''
 ms.date: 06/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 1954457b477472b8940841bb1ffe5954e49e01ec
-ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
+ms.openlocfilehash: a82437fc82d9c9a31e75d448579f37d440784aa2
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "37524233"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163513"
 ---
 # <a name="understanding-the-javascript-api-for-office"></a>Présentation de l’API JavaScript pour Office
 
@@ -169,4 +169,4 @@ Pour plus d’informations, consultez les pages relatives à l’[événement Of
 
 ## <a name="office-javascript-api-object-model"></a>Modèle d’objet API JavaScript Office
 
-Une fois initialisé, le complément peut interagir avec l’hôte (par exemple, Excel, Outlook). La page [Modèle objet API JavaScript Office](office-javascript-api-object-model.md) comporte plus d’informations sur les modèles d’utilisation spécifiques. Il existe également une documentation de référence détaillée pour les deux[ APIs Communes](/office/dev/add-ins/reference/javascript-api-for-office) et spécifiques.
+Une fois initialisé, le complément peut interagir avec l’hôte (par exemple, Excel, Outlook). La page [Modèle objet API JavaScript communes](office-javascript-api-object-model.md) comporte plus d’informations sur les modèles d’utilisation spécifiques. Il existe également une documentation de référence détaillée pour les deux[ APIs Communes](/office/dev/add-ins/reference/javascript-api-for-office) et spécifiques.
