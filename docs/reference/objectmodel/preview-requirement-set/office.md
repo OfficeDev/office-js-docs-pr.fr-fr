@@ -3,12 +3,12 @@ title: Espace de noms Office – ensemble de conditions requises
 description: ''
 ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: ef9634058fcdc633e9ad3a0adb74c4abebf8038b
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: 2cd04cc6d333439a679803e39357e4d19c550f95
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40815059"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165509"
 ---
 # <a name="office"></a>Office
 
@@ -19,7 +19,7 @@ L’espace de noms Office fournit des interfaces partagées qui sont utilisées 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
+|[Mode Outlook applicable](../../../outlook/outlook-add-ins-overview.md#extension-points)| Rédaction ou lecture|
 
 ##### <a name="properties"></a>Propriétés
 
@@ -31,10 +31,10 @@ L’espace de noms Office fournit des interfaces partagées qui sont utilisées 
 
 | Énumération | Modes | Type de retour | Minimale<br>ensemble de conditions requises |
 |---|---|---|:---:|
-| [AsyncResultStatus](#asyncresultstatus-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [CoercionType](#coerciontype-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [EventType](#eventtype-string) | Composition<br>Lecture | String | [1,5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [SourceProperty](#sourceproperty-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [AsyncResultStatus](#asyncresultstatus-string) | Composition<br>Lire | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | Composition<br>Lire | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [EventType](#eventtype-string) | Composition<br>Lire | Chaîne | [1,5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [SourceProperty](#sourceproperty-string) | Composition<br>Lire | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ### <a name="namespaces"></a>Espaces de noms
 
@@ -54,15 +54,15 @@ Spécifie le résultat d’un appel asynchrone.
 
 |Nom| Type| Description|
 |---|---|---|
-|`Succeeded`| String|L’appel a réussi.|
-|`Failed`| String|L’appel n’a pas réussi.|
+|`Succeeded`| Chaîne|L’appel a réussi.|
+|`Failed`| Chaîne|L’appel n’a pas réussi.|
 
 ##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
+|[Mode Outlook applicable](../../../outlook/outlook-add-ins-overview.md#extension-points)| Rédaction ou lecture|
 
 <br>
 
@@ -81,7 +81,7 @@ Indique comment forcer le type des données retournées ou définies par la mét
 
 |Nom| Type| Description|
 |---|---|---|
-|`Html`| String|Demande que les données soient renvoyées au format HTML.|
+|`Html`| Chaîne|Demande que les données soient renvoyées au format HTML.|
 |`Text`| String|Demande que les données soient renvoyées au format texte.|
 
 ##### <a name="requirements"></a>Configuration requise
@@ -89,7 +89,7 @@ Indique comment forcer le type des données retournées ou définies par la mét
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
+|[Mode Outlook applicable](../../../outlook/outlook-add-ins-overview.md#extension-points)| Rédaction ou lecture|
 
 <br>
 
@@ -108,12 +108,12 @@ spécifie l’événement associé à un gestionnaire d’événements.
 
 | Nom | Type | Description | Ensemble de conditions requises minimales |
 |---|---|---|:---:|
-|`AppointmentTimeChanged`| String | La date ou l’heure de la série ou du rendez-vous sélectionné a été modifiée. | 1.7 |
-|`AttachmentsChanged`| String | Une pièce jointe a été ajoutée à l’élément ou supprimée de celui-ci. | 1.8 |
-|`EnhancedLocationsChanged`| String | L’emplacement du rendez-vous sélectionné a changé. | 1.8 |
-|`ItemChanged`| String | Un autre élément Outlook est sélectionné pour consultation pendant que le volet Office est épinglé. | 1,5 |
+|`AppointmentTimeChanged`| Chaîne | La date ou l’heure de la série ou du rendez-vous sélectionné a été modifiée. | 1.7 |
+|`AttachmentsChanged`| Chaîne | Une pièce jointe a été ajoutée à l’élément ou supprimée de celui-ci. | 1.8 |
+|`EnhancedLocationsChanged`| Chaîne | L’emplacement du rendez-vous sélectionné a changé. | 1.8 |
+|`ItemChanged`| Chaîne | Un autre élément Outlook est sélectionné pour consultation pendant que le volet Office est épinglé. | 1,5 |
 |`OfficeThemeChanged`| Chaîne | Le thème Office de la boîte aux lettres a été modifié. | Aperçu |
-|`RecipientsChanged`| String | La liste des destinataires de l’élément sélectionné ou du lieu de rendez-vous a été modifié. | 1.7 |
+|`RecipientsChanged`| Chaîne | La liste des destinataires de l’élément sélectionné ou du lieu de rendez-vous a été modifié. | 1.7 |
 |`RecurrenceChanged`| Chaîne | La périodicité de la série sélectionnée a été modifiée. | 1.7 |
 
 ##### <a name="requirements"></a>Configuration requise
@@ -121,7 +121,7 @@ spécifie l’événement associé à un gestionnaire d’événements.
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](../../requirement-sets/outlook-api-requirement-sets.md)| 1,5 |
-|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture |
+|[Mode Outlook applicable](../../../outlook/outlook-add-ins-overview.md#extension-points)| Rédaction ou lecture|
 
 <br>
 
@@ -140,7 +140,7 @@ Spécifie la source des données renvoyées par la méthode appelée.
 
 |Nom| Type| Description|
 |---|---|---|
-|`Body`| String|La source de données est dans le corps d’un message.|
+|`Body`| Chaîne|La source de données est dans le corps d’un message.|
 |`Subject`| String|La source de données est dans l’objet d’un message.|
 
 ##### <a name="requirements"></a>Configuration requise
@@ -148,4 +148,4 @@ Spécifie la source des données renvoyées par la méthode appelée.
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
+|[Mode Outlook applicable](../../../outlook/outlook-add-ins-overview.md#extension-points)| Rédaction ou lecture|

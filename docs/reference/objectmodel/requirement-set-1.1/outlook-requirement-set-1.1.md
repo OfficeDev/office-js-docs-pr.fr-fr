@@ -3,12 +3,12 @@ title: Ensemble de conditions requises de l’API du complément Outlook 1.1
 description: ''
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 17878f5ad4f12b11ef803efcb37f257181f7e2ca
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: 2ecd337cd838cd6dd9deb4fe5e77ee789106f3f9
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814401"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165467"
 ---
 # <a name="outlook-add-in-api-requirement-set-11"></a>Ensemble de conditions requises de l’API du complément Outlook 1.1
 
@@ -37,7 +37,7 @@ L’ensemble de conditions requises 1,1 inclut tous les [ensembles de conditions
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Compléments Outlook](/outlook/add-ins/)
+- [Compléments Outlook](../../../outlook/outlook-add-ins-overview.md)
 - [Exemples de code pour les compléments Outlook](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [Prise en main](/outlook/add-ins/quick-start)
+- [Prise en main](../../../quickstarts/outlook-quickstart.md)
 - [Ensembles de conditions requises et clients pris en charge](../../requirement-sets/outlook-api-requirement-sets.md)

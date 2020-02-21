@@ -3,12 +3,12 @@ title: Ensemble de conditions requises de l’API du complément Outlook 1.3
 description: ''
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: ba74102d70d2f2c38e96cb833b779d3381595f0f
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: 375fc5d7cce8592b8e4a270713c1f611129cc7d0
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814863"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165425"
 ---
 # <a name="outlook-add-in-api-requirement-set-13"></a>Ensemble de conditions requises de l’API du complément Outlook 1.3
 
@@ -21,7 +21,7 @@ Le sous-ensemble de l’API pour le complément Outlook de l’interface API Ja
 
 L’ensemble de conditions requises de la version 1.3 comprend toutes les fonctionnalités de l’[ensemble de conditions requises de la version 1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md). Les fonctionnalités suivantes ont été ajoutées :
 
-- Prise en charge des [commandes de complément](/outlook/add-ins/add-in-commands-for-outlook).
+- Prise en charge des [commandes de complément](../../../outlook/add-in-commands-for-outlook.md).
 - Possibilité d’enregistrer ou de fermer un élément en cours de composition.
 - Objet [Body](/javascript/api/outlook/office.body?view=outlook-js-1.3) amélioré pour permettre aux compléments d’obtenir ou de définir le corps entier.
 - Nouvelles méthodes de conversion pour convertir les ID aux formats EWS et REST.
@@ -44,7 +44,7 @@ L’ensemble de conditions requises de la version 1.3 comprend toutes les fonct
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Compléments Outlook](/outlook/add-ins/)
+- [Compléments Outlook](../../../outlook/outlook-add-ins-overview.md)
 - [Exemples de code pour les compléments Outlook](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [Prise en main](/outlook/add-ins/quick-start)
+- [Prise en main](../../../quickstarts/outlook-quickstart.md)
 - [Ensembles de conditions requises et clients pris en charge](../../requirement-sets/outlook-api-requirement-sets.md)

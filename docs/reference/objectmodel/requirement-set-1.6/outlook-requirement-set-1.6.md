@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook 1.6
 description: ''
-ms.date: 12/17/2019
+ms.date: 02/19/2020
 localization_priority: Normal
-ms.openlocfilehash: 22702448b82a108c401f9f81d3b8a321e14ead63
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: aedfa635c5208ddb8a0972e880fafe50ddc0b3d6
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814660"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165362"
 ---
 # <a name="outlook-add-in-api-requirement-set-16"></a>Ensemble de conditions requises de l’API du complément Outlook 1.6
 
@@ -30,11 +30,11 @@ L’ensemble de conditions requises de la version 1.6 comprend toutes les fonct
 - [Office.context.mailbox.item.getSelectedEntities](office.context.mailbox.item.md#methods) ajouté: ajout d’une fonction qui obtient les entités figurant dans une correspondance en surbrillance sélectionnée par un utilisateur. Les correspondances en surbrillance s’appliquent aux compléments contextuels.
 - [Office.context.mailbox.item.getSelectedRegExMatches](office.context.mailbox.item.md#methods) ajouté: ajout d’une fonction qui renvoie les valeurs de chaîne dans une correspondance en surbrillance qui correspondent aux expressions régulières définies dans le fichier manifeste XML. Les correspondances en surbrillance s’appliquent aux compléments contextuels.
 - [Office.context.mailbox.displayNewMessageForm](office.context.mailbox.md#methods)-Ajout d’une nouvelle fonction qui ouvre un nouveau formulaire de message.
-- [Office.context.mailbox.userProfile.accountType](office.context.mailbox.userprofile.md#properties) ajouté: ajout d’un nouveau membre dans le profil d’utilisateur qui indique le type de compte d’utilisateur.
+- [Office.context.mailbox.userProfile.accountType](/javascript/api/outlook/office.userprofile?view=outlook-js-1.6#accounttype) ajouté: ajout d’un nouveau membre dans le profil d’utilisateur qui indique le type de compte d’utilisateur.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Compléments Outlook](/outlook/add-ins/)
+- [Compléments Outlook](../../../outlook/outlook-add-ins-overview.md)
 - [Exemples de code pour les compléments Outlook](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [Prise en main](/outlook/add-ins/quick-start)
+- [Prise en main](../../../quickstarts/outlook-quickstart.md)
 - [Ensembles de conditions requises et clients pris en charge](../../requirement-sets/outlook-api-requirement-sets.md)

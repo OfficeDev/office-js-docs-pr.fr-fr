@@ -1,44 +1,42 @@
 ---
 title: Chargement de version test des compléments Office dans Office sur le web
 description: Tester votre complément Office dans Office sur le web par chargement de version test
-ms.date: 06/20/2019
+ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: b26128a912aff5a89ad839b8240f18959891d299
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 869cabec737c39d7dded04fe7c52011347e0f314
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950907"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163583"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>Chargement de version test des compléments Office dans Office sur le web
 
-Vous procéder à un chargement de version test pour installer un complément Office sans avoir à le placer au préalable dans un catalogue de compléments. Le chargement de version test s’effectue dans Office 365 ou Office sur le web. La procédure est légèrement différente entre les deux plateformes. 
+Vous procéder à un chargement de version test pour installer un complément Office sans avoir à le placer au préalable dans un catalogue de compléments. Le chargement de version test s’effectue dans Office 365 ou Office sur le web. La procédure est légèrement différente entre les deux plateformes.
 
 Lorsque vous chargez une version test d’un complément, le manifeste du complément est stocké dans le stockage local du navigateur. Ainsi, si vous videz le cache du navigateur ou si vous basculez vers un autre navigateur, vous devez à nouveau charger une version test de complément.
 
-
 > [!NOTE]
-> Tel que décrit dans cet article, le chargement de version test est pris en charge dans Word, Excel et PowerPoint. Pour charger une version test de complément Outlook, voir la rubrique relative au [chargement de version test des compléments Outlook](/outlook/add-ins/sideload-outlook-add-ins-for-testing).
+> Tel que décrit dans cet article, le chargement de version test est pris en charge dans Word, Excel et PowerPoint. Pour charger une version test de complément Outlook, voir la rubrique relative au [chargement de version test des compléments Outlook](../outlook/sideload-outlook-add-ins-for-testing.md).
 
 La vidéo suivante présente la procédure de chargement de version test de votre complément dans la version Office sur le web ou le bureau.
-
 
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
 
 ## <a name="sideload-an-office-add-in-in-office-on-the-web"></a>Chargement de version test d’un complément Office dans Office sur le web
 
 1. Ouvrez [Microsoft Office sur le web](https://office.live.com/).
-    
+
 2. Dans **Commencer à utiliser les applications en ligne maintenant**, choisissez **Excel**, **Word** ou **PowerPoint**, puis ouvrez un document.
-    
+
 3. Ouvrez l’onglet **Insérer** dans le ruban, puis dans la section **Compléments**, choisissez **Compléments Office**.
-    
+
 4. Dans la boîte de dialogue **Compléments Office**, sélectionnez l’onglet **MES COMPLÉMENTS**, choisissez **Gérer mes compléments**, puis **Télécharger mon complément**.
-    
+
     ![Boîte de dialogue Compléments Office avec une liste déroulante dans le coin supérieur droit indiquant « Gérer mes compléments » et une autre liste déroulante sous cette dernière avec l’option « Charger mon complément »](../images/office-add-ins-my-account.png)
 
-5.  **Accédez** au fichier manifeste du complément, puis sélectionnez **Télécharger**.
-    
+5. **Accédez** au fichier manifeste du complément, puis sélectionnez **Télécharger**.
+
     ![Boîte de dialogue de téléchargement de complément avec des boutons pour parcourir, télécharger et annuler.](../images/upload-add-in.png)
 
 6. Vérifiez que votre complément est installé. S’il s’agit d’une commande de complément, elle doit apparaître dans le ruban ou dans le menu contextuel. S’il s’agit d’un complément du volet Office, le volet doit apparaître.
@@ -52,15 +50,13 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 
 >    ![Option Autoriser le bouclage localhost de Microsoft Edge cochée.](../images/allow-localhost-loopback.png)
 
-
 ## <a name="sideload-an-office-add-in-in-office-365"></a>Chargement de version test d’un complément Office dans Office 365
 
 1. Connectez-vous à votre compte Office 365.
-    
-2. Ouvrez le lanceur d’applications à l’extrémité gauche de la barre d’outils et sélectionnez **Excel**,  **Word** ou **PowerPoint**, puis créez un document.
-    
-3. Les étapes 3 à 6 sont identiques à celles de la section précédente, **Chargement d’une version de test d’un complément Office dans Office sur le web**.
 
+2. Ouvrez le lanceur d’applications à l’extrémité gauche de la barre d’outils et sélectionnez **Excel**,  **Word** ou **PowerPoint**, puis créez un document.
+
+3. Les étapes 3 à 6 sont identiques à celles de la section précédente, **Chargement d’une version de test d’un complément Office dans Office sur le web**.
 
 ## <a name="sideload-an-add-in-when-using-visual-studio"></a>Chargement d’une version test d’un complément lors de l’utilisation de Visual Studio
 
@@ -77,3 +73,7 @@ Si vous développez votre complément à l’aide de Visual Studio, le processu
 6. Enregistrez le fichier XML.
 7. Cliquez avec le bouton droit sur le projet web, puis sélectionnez **Déboguer** -> **Démarrer une nouvelle instance**. Cela a pour effet d’exécuter le projet web sans lancer Office.
 8. À partir d’Office sur le web, chargez la version test du complément en suivant les étapes décrites précédemment dans [Chargement de version test d’un complément Office dans Office sur le web](#sideload-an-office-add-in-in-office-on-the-web).
+
+## <a name="remove-a-sideloaded-add-in"></a>Supprimer un complément versions test chargées
+
+Vous pouvez supprimer un complément précédemment versions test chargées en effaçant le cache de votre navigateur. En outre, si vous modifiez le manifeste de votre complément (par exemple, mettez à jour les noms de fichier des icônes ou du texte de commandes de complément), vous devrez peut-être effacer le cache, puis rechargementer le complément à l’aide d’un manifeste mis à jour. Cette action permettra à Office d’afficher le complément tel que décrit par le manifeste mis à jour.

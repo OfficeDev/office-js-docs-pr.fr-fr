@@ -3,12 +3,12 @@ title: Élément Rule dans le fichier manifeste
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 07037c43c111f735a7354a048066e4c4a88f7637
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 78fb38d8fb18c276bfe2eed1bd5b52659cadcaa3
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450470"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165530"
 ---
 # <a name="rule-element"></a>Élément Rule
 
@@ -45,7 +45,7 @@ Définit une règle qui donne la valeur true si l’élément sélectionné est 
 |:-----|:-----|:-----|
 | **ItemType** | Oui | Spécifie le type d’élément à mettre en correspondance. Peut être `Message` ou `Appointment`. Le type d’élément `Message` inclut e-mails, demandes de réunion, réponses à une demande de réunion et annulations de réunion. |
 | **FormType** | Non (dans [ExtensionPoint](extensionpoint.md)), Oui (dans [App_office](officeapp.md)) | Spécifie si l’application doit apparaître dans le formulaire de lecture ou de modification pour l’élément. Peut correspondre à l’une des valeurs suivantes : `Read`, `Edit`, `ReadOrEdit`. Si spécifiée dans un `Rule` dans un `ExtensionPoint`, cette valeur DOIT être `Read`. |
-| **ItemClass** | Non | Spécifie la classe de message personnalisé à mettre en correspondance. Pour plus d’informations, voir l’article relatif à l’[activation d’un complément de messagerie dans Outlook pour une classe de message spécifique](/outlook/add-ins/activation-rules). |
+| **ItemClass** | Non | Spécifie la classe de message personnalisé à mettre en correspondance. Pour plus d’informations, voir l’article relatif à l’[activation d’un complément de messagerie dans Outlook pour une classe de message spécifique](../../outlook/activation-rules.md). |
 | **IncludeSubClasses** | Non | Spécifie si la règle doit donner la valeur true si l’élément est une sous-classe de la classe de message spécifiée ; par défaut, la valeur est `false`. |
 
 ### <a name="example"></a>Exemple
@@ -127,6 +127,6 @@ Définit une collection de règles et l’opérateur logique à utiliser lors de
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Règles d’activation pour les compléments Outlook](/outlook/add-ins/activation-rules)
-- [Mettre en correspondance des chaînes dans un élément Outlook en tant qu’entités connues](/outlook/add-ins/match-strings-in-an-item-as-well-known-entities)    
-- [Utiliser des règles d’activation d’expression régulière pour afficher un complément Outlook](/outlook/add-ins/use-regular-expressions-to-show-an-outlook-add-in)
+- [Règles d’activation pour les compléments Outlook](../../outlook/activation-rules.md)
+- [Mettre en correspondance des chaînes dans un élément Outlook en tant qu’entités connues](../../outlook/match-strings-in-an-item-as-well-known-entities.md)    
+- [Utiliser des règles d’activation d’expression régulière pour afficher un complément Outlook](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)

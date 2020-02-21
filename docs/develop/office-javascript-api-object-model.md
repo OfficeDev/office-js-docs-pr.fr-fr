@@ -1,16 +1,16 @@
 ---
-title: Modèle d’objet API JavaScript Office
+title: Modèle d’objet d’API JavaScript courant
 description: ''
-ms.date: 03/19/2019
+ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: cc34d6ee9424c00bfc49762f779605f66bc9f36b
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 98e53140beb99d557391e332569e594250d37fca
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950774"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163499"
 ---
-# <a name="office-javascript-api-object-model"></a>Modèle d’objet API JavaScript Office
+# <a name="common-javascript-api-object-model"></a>Modèle d’objet d’API JavaScript courant
 
 Les compléments JavaScript Office donnent accès aux fonctionnalités sous-jacentes de l'hôte. La majeure partie de cet accès passe par quelques objets importants. L’objet [Context](#context-object) donne accès à l’environnement d’exécution après l’initialisation. L’objet [Document](#document-object)donne à l’utilisateur le contrôle d’un document Excel, PowerPoint ou Word. L’objet [Mailbox](#mailbox-object) permet à un complément Outlook d’accéder aux messages et aux profils utilisateur. La compréhension des relations entre ces objets de haut niveau constitue le fondement d’un complément JavaScript.
 
@@ -168,4 +168,4 @@ De plus, les compléments Outlook peuvent utiliser les objets suivants :
 
 -  Objet **RoamingSettings** : pour l’enregistrement des paramètres personnalisés propres au complément Outlook dans la boîte aux lettres de l’utilisateur dans laquelle le complément est installé.
 
-Pour plus d’informations sur l’utilisation de JavaScript dans les compléments Outlook, reportez-vous à la rubrique [Compléments Outlook](/outlook/add-ins/).
+Pour plus d’informations sur l’utilisation de JavaScript dans les compléments Outlook, reportez-vous à la rubrique [Compléments Outlook](../outlook/outlook-add-ins-overview.md).

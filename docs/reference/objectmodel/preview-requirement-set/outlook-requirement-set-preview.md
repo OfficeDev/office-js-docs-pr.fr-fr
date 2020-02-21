@@ -3,12 +3,12 @@ title: Ensemble de conditions requises de l’API du complément Outlook (aper�
 description: ''
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 5dec8ae4f3a5f8320cf7503e81a9ea9cc8bb3a90
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: c297904ff8343fd4c958c80b41170c5f2e93c739
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950998"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165502"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -27,7 +27,7 @@ Les fonctionnalités suivantes sont disponibles en aperçu.
 
 ### <a name="integration-with-actionable-messages"></a>Intégration avec les messages actionnables
 
-#### <a name="officecontextmailboxitemgetinitializationcontextasyncofficecontextmailboxitemmdmethods"></a>[Office.context.mailbox.item.getInitializationContextAsync](office.context.mailbox.item.md#methods)
+#### <a name="officecontextmailboxitemgetinitializationcontextasync"></a>[Office.context.mailbox.item.getInitializationContextAsync](office.context.mailbox.item.md#methods)
 
 Ajout d’une nouvelle fonction qui renvoie les données d’initialisation transmises lorsque le complément est [activé par un message actionnable](/outlook/actionable-messages/invoke-add-in-from-actionable-message).
 
@@ -41,13 +41,13 @@ Ajout d’une nouvelle fonction qui renvoie les données d’initialisation tran
 
 ### <a name="office-theme"></a>Thème Office
 
-#### <a name="officecontextofficethemejavascriptapiofficeofficecontextofficetheme"></a>[Office.context.officeTheme](/javascript/api/office/office.context#officetheme)
+#### <a name="officecontextofficetheme"></a>[Office.context.officeTheme](/javascript/api/office/office.context#officetheme)
 
 Ajout de la possibilité d’obtenir un thème Office.
 
 **Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
 
-#### <a name="officeeventtypeofficethemechangedjavascriptapiofficeofficeeventtype"></a>[Office.EventType.OfficeThemeChanged](/javascript/api/office/office.eventtype)
+#### <a name="officeeventtypeofficethemechanged"></a>[Office.EventType.OfficeThemeChanged](/javascript/api/office/office.eventtype)
 
 Ajout de l’événement `OfficeThemeChanged` à `Mailbox`.
 
@@ -59,15 +59,15 @@ Ajout de l’événement `OfficeThemeChanged` à `Mailbox`.
 
 ### <a name="sso"></a>Authentification unique
 
-#### <a name="officeruntimeauthgetaccesstokenofficedevadd-insdevelopsso-in-office-add-inssso-api-reference"></a>[OfficeRuntime.auth.getAccessToken](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference)
+#### <a name="officeruntimeauthgetaccesstoken"></a>[OfficeRuntime.auth.getAccessToken](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference)
 
-Ajout d’un accès à `getAccessToken`, qui permet aux compléments d’[obtenir un jeton d’accès](/outlook/add-ins/authenticate-a-user-with-an-sso-token) pour l’API Microsoft Graph.
+Ajout d’un accès à `getAccessToken`, qui permet aux compléments d’[obtenir un jeton d’accès](../../../outlook/authenticate-a-user-with-an-sso-token.md) pour l’API Microsoft Graph.
 
 **Disponible dans** : Outlook sur Windows (connecté à Office 365), Outlook sur Mac (connecté à Office 365), Outlook sur le web (moderne), Outlook sur le web (classique)
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Compléments Outlook](/outlook/add-ins/)
+- [Compléments Outlook](../../../outlook/outlook-add-ins-overview.md)
 - [Exemples de code pour les compléments Outlook](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [Prise en main](/outlook/add-ins/quick-start)
+- [Prise en main](../../../quickstarts/outlook-quickstart.md)
 - [Ensembles de conditions requises et clients pris en charge](../../requirement-sets/outlook-api-requirement-sets.md)

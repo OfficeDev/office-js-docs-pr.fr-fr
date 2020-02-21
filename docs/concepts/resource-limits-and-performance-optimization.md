@@ -3,12 +3,12 @@ title: Limites des ressources et optimisation des performances pour les complém
 description: ''
 ms.date: 09/09/2019
 localization_priority: Normal
-ms.openlocfilehash: 9cd64943e3ec612fa2cb21adcd500c6522d451a2
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 332ea72e9c96ff7a9b61a4fb0249284ca44079ac
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950375"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42162789"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites des ressources et optimisation des performances pour les compléments Office
 
@@ -107,5 +107,5 @@ Bien que les limites en matière d’utilisation des ressources de l’UC et de 
 ## <a name="see-also"></a>Voir aussi
 
 - [Confidentialité et sécurité pour les compléments Office](../concepts/privacy-and-security.md)
-- [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
+- [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
 - [Optimisation des performances à l’aide de l’API JavaScript d’Excel](../excel/performance.md)

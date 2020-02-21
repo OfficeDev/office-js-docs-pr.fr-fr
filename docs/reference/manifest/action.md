@@ -3,12 +3,12 @@ title: Élément Action dans le fichier manifeste
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: db05538fdb3f655a61050e0eeafa0b5ceb0dfd18
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: 3b0a82362988d4e64c1a376e0bd774e84e4a8fa3
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477935"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165558"
 ---
 # <a name="action-element"></a>Action, élément
 
@@ -129,7 +129,7 @@ L’exemple suivant montre une action qui utilise l’élément **title** . Note
 
 ## <a name="supportspinning"></a>SupportsPinning
 
-Élément facultatif quand **xsi:type** a la valeur « ShowTaskpane ». Les éléments [VersionOverrides](versionoverrides.md) le contenant doivent avoir une valeur d’attribut `xsi:type` de `VersionOverridesV1_1`. Incluez cet élément avec une valeur `true` pour prendre en charge l’épinglage du volet Office. L’utilisateur pourra alors « épingler » le volet Office qui restera ouvert pendant que la sélection est modifiée. Pour en savoir plus, consultez l’article relatif à l’[implémentation d’un volet Office épinglable dans Outlook](/outlook/add-ins/pinnable-taskpane).
+Élément facultatif quand **xsi:type** a la valeur « ShowTaskpane ». Les éléments [VersionOverrides](versionoverrides.md) le contenant doivent avoir une valeur d’attribut `xsi:type` de `VersionOverridesV1_1`. Incluez cet élément avec une valeur `true` pour prendre en charge l’épinglage du volet Office. L’utilisateur pourra alors « épingler » le volet Office qui restera ouvert pendant que la sélection est modifiée. Pour en savoir plus, consultez l’article relatif à l’[implémentation d’un volet Office épinglable dans Outlook](../../outlook/pinnable-taskpane.md).
 
 > [!NOTE]
 > Supportspinning n’est est actuellement uniquement pris en charge par Outlook 2016 ou version ultérieure sur Windows (Build 7628,1000 ou version ultérieure) et Outlook 2016 ou version ultérieure sur Mac (Build 16.13.503 ou version ultérieure).

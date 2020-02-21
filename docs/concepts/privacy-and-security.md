@@ -3,12 +3,12 @@ title: Confidentialité et sécurité pour les compléments Office
 description: ''
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: c4f2ea5413ff1fa404c242bc729c59f9feedaca3
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 30ebae88d40795b4be36628a60539397fb1deb29
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41949709"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42162803"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Confidentialité et sécurité pour les compléments Office
 
@@ -97,7 +97,7 @@ La plateforme du complément répond aux inquiétudes des utilisateurs finaux co
 
   - L’exécution dans un contrôle de navigateur web permet au complément de faire quasiment tout ce qu’une page web ordinaire exécutée dans un navigateur peut faire mais, en même temps, oblige le complément à suivre la stratégie d’origine identique pour l’isolation du domaine et les zones de sécurité.
 
-Les compléments Outlook fournissent des fonctionnalités supplémentaires de sécurité et de performance grâce à une analyse de l’utilisation des ressources propres aux compléments Outlook. Pour en savoir plus, voir [Confidentialité, autorisations et sécurité pour les compléments Outlook](/outlook/add-ins/privacy-and-security).
+Les compléments Outlook fournissent des fonctionnalités supplémentaires de sécurité et de performance grâce à une analyse de l’utilisation des ressources propres aux compléments Outlook. Pour en savoir plus, voir [Confidentialité, autorisations et sécurité pour les compléments Outlook](../outlook/privacy-and-security.md).
 
 ### <a name="developer-guidelines-to-handle-pii"></a>Recommandations à l’intention des développeurs en matière de gestion des PII
 
@@ -138,13 +138,13 @@ L’exemple suivant montre comment un complément du volet Office spécifie l’
 </OfficeApp>
 ```
 
-Pour plus d’informations sur les autorisations pour les compléments de contenu et le volet des tâches, reportez-vous à la rubrique [Demande d’autorisations d’utilisation de l’API dans des compléments](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins).
+Pour plus d’informations sur les autorisations pour les compléments de contenu et le volet des tâches, reportez-vous à la rubrique [Demande d’autorisations d’utilisation de l’API dans des compléments](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md).
 
 Pour plus d’informations sur les autorisations pour les compléments Outlook, reportez-vous aux rubriques suivantes :
 
-- [Confidentialité, autorisations et sécurité pour les compléments Outlook](/outlook/add-ins/privacy-and-security)
+- [Confidentialité, autorisations et sécurité pour les compléments Outlook](../outlook/privacy-and-security.md)
 
-- [Présentation des autorisations de complément Outlook](/outlook/add-ins/understanding-outlook-add-in-permissions)
+- [Présentation des autorisations de complément Outlook](../outlook/understanding-outlook-add-in-permissions.md)
 
 ### <a name="same-origin-policy"></a>Stratégie d’origine identique
 
@@ -240,7 +240,7 @@ Les développeurs doivent aussi tenir compte des pratiques de sécurité suivant
   - Produire une déclaration énonçant une stratégie de confidentialité conforme.
   - Être prêts à signer un accord contractuel lorsqu’ils soumettent le complément.
 
-Outre les règles d’utilisation des ressources, les développeurs de compléments Outlook doivent également s’assurer que leurs compléments respectent les limites de spécification des règles d’activation et l’utilisation de l’interface API JavaScript. Pour plus d’informations, voir [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins).
+Outre les règles d’utilisation des ressources, les développeurs de compléments Outlook doivent également s’assurer que leurs compléments respectent les limites de spécification des règles d’activation et l’utilisation de l’interface API JavaScript. Pour plus d’informations, voir [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md).
 
 ## <a name="it-administrators-control"></a>Contrôle des administrateurs informatiques
 
@@ -259,11 +259,11 @@ La gestion et l’application des paramètres Office s’effectuent avec des par
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Demande d’autorisations d’utilisation de l’API dans des compléments](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
-- [Confidentialité, autorisations et sécurité pour les compléments Outlook](/outlook/add-ins/privacy-and-security)
-- [Présentation des autorisations de complément Outlook](/outlook/add-ins/understanding-outlook-add-in-permissions)
-- [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
-- [Résolutions des limites de stratégie d’origine identique dans les compléments Office](/office/dev/add-ins/develop/addressing-same-origin-policy-limitations)
+- [Demande d’autorisations d’utilisation de l’API dans des compléments](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
+- [Confidentialité, autorisations et sécurité pour les compléments Outlook](../outlook/privacy-and-security.md)
+- [Présentation des autorisations de complément Outlook](../outlook/understanding-outlook-add-in-permissions.md)
+- [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
+- [Résolutions des limites de stratégie d’origine identique dans les compléments Office](../develop/addressing-same-origin-policy-limitations.md)
 - [Stratégie d’origine identique](https://www.w3.org/Security/wiki/Same_Origin_Policy)
 - [Stratégie d’origine identique Partie 1 : Interdiction de regarder](/archive/blogs/ieinternals/same-origin-policy-part-1-no-peeking)
 - [Stratégie d’origine identique pour JavaScript](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)

@@ -3,19 +3,19 @@ title: Élément PhoneSettings dans le fichier manifeste
 description: ''
 ms.date: 01/13/2020
 localization_priority: Normal
-ms.openlocfilehash: e3ea104af7e634b4e6e6cbeaac395af11ae4e376
-ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
+ms.openlocfilehash: 4614c86af865e5242657f47e21e6786545a616b6
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "41120655"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165537"
 ---
 # <a name="phonesettings-element"></a>PhoneSettings, élément
 
 Spécifie l’emplacement source et les paramètres de contrôle qui s’appliquent lorsque votre complément de messagerie est utilisé sur un téléphone.
 
 > [!IMPORTANT]
-> L' `PhoneSettings` élément est disponible uniquement dans les versions classiques d’Outlook sur le Web (généralement connectées à des versions antérieures du serveur Exchange local) et Outlook 2013 sur Windows. Pour prendre en charge Outlook sur Android et iOS, reportez-vous à la rubrique [compléments pour Outlook Mobile](/outlook/add-ins/outlook-mobile-addins).
+> L' `PhoneSettings` élément est disponible uniquement dans les versions classiques d’Outlook sur le Web (généralement connectées à des versions antérieures du serveur Exchange local) et Outlook 2013 sur Windows. Pour prendre en charge Outlook sur Android et iOS, reportez-vous à la rubrique [compléments pour Outlook Mobile](../../outlook/outlook-mobile-addins.md).
 
 **Type de complément :** messagerie
 

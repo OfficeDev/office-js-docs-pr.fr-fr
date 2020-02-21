@@ -3,12 +3,12 @@ title: Développement de compléments Office avec Visual Studio
 description: Comment développer un complément Office à l’aide de Visual Studio
 ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: 2acafc08dcbb8e1fde439f2be289afff3185272c
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
+ms.openlocfilehash: 9f250078a4da80dea3276c51a2183a072da44f81
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40915055"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42162810"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>Développement de compléments Office avec Visual Studio
 
@@ -22,7 +22,7 @@ Cet article explique comment utiliser Visual Studio pour développer votre compl
 Visual Studio peut être utilisé pour créer des compléments Office pour Excel, Outlook, Word et PowerPoint. Un projet de complément Office est créé dans le cadre d’une solution Visual Studio et utilise HTML, CSS et JavaScript. Pour créer un complément Office avec Visual Studio, suivez les instructions dans le démarrage rapide qui correspond au complément que vous souhaitez créer :
 
 - [Démarrage rapide Excel](../quickstarts/excel-quickstart-jquery.md?tabs=visualstudio)
-- [Démarrage rapide Outlook](/outlook/add-ins/quick-start?context=office/dev/add-ins/context&tabs=visualstudio)
+- [Démarrage rapide Outlook](../quickstarts/outlook-quickstart.md?tabs=visualstudio)
 - [Démarrage rapide Word](../quickstarts/word-quickstart.md?tabs=visualstudio)
 - [Démarrage rapide PowerPoint](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio)
 

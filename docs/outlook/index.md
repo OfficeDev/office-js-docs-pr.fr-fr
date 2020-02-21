@@ -5,12 +5,12 @@ title: Documentation sur les compléments Outlook
 description: Ressources pour découvrir les compléments Outlook.
 ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 2af0c791ba90df68b80ca7e4af773e1b024e337e
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: b9d7c7ff05dddda3e3ae3235e90400c6913f1f49
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35576846"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165551"
 ---
 # <a name="outlook-add-ins-documentation"></a>Documentation sur les compléments Outlook
 
@@ -28,7 +28,7 @@ Les compléments Outlook vous permettent d’utiliser des technologies web famil
                     </div>
                     <div class="cardText">
                         <h3>Vue d’ensemble</h3>
-                        <p><a href="/outlook/add-ins/index?context=office/dev/add-ins/context">Apprenez-en davantage sur les composants et fonctionnalités d’un complément Outlook.</a></p>
+                        <p><a href="outlook-add-ins-overview.md">Apprenez-en davantage sur les composants et fonctionnalités d’un complément Outlook.</a></p>
                     </div>
                 </div>
             </div>
@@ -45,24 +45,7 @@ Les compléments Outlook vous permettent d’utiliser des technologies web famil
                     </div>
                     <div class="cardText">
                         <h3>Prise en main</h3>
-                        <p><a href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Créez votre premier complément Outlook en moins de 5 minutes</a>.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-automate.svg" alt="Custom functions" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Développement de complément Outlook</h3>
-                        <p><a href="/outlook/add-ins/outlook-addin-design">Découvrez les aspects clés du développement de compléments Outlook.</a></p>
+                        <p><a href="../quickstarts/outlook-quickstart.md">Créez votre premier complément Outlook en moins de 5 minutes</a>.</p>
                     </div>
                 </div>
             </div>
@@ -79,7 +62,7 @@ Les compléments Outlook vous permettent d’utiliser des technologies web famil
                     </div>
                     <div class="cardText">
                         <h3>API JavaScript pour Outlook</h3>
-                        <p><a href="/outlook/add-ins/apis?context=office/dev/add-ins/context">Découvrez comment utiliser l’API JavaScript pour Outlook afin d’interagir avec des objets dans Outlook.</a></p>
+                        <p><a href="apis.md">Découvrez comment utiliser l’API JavaScript pour Outlook afin d’interagir avec des objets dans Outlook.</a></p>
                     </div>
                 </div>
             </div>

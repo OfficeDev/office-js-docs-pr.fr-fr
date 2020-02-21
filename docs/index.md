@@ -8,12 +8,12 @@ ms.author: o365devx
 ms.prod: non-product-specific
 ms.date: 12/24/2019
 localization_priority: Priority
-ms.openlocfilehash: 4a2134fec212b75abff95d225f6238bd1f888c3b
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 2ebef8254d264442f3f57c6e19b015a7ef18a829
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950760"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165607"
 ---
 # <a name="office-add-ins-documentation"></a>Documentation pour compléments Office
 
@@ -80,7 +80,7 @@ Utilisez la plateforme des compléments Office pour créer des solutions qui ét
                             <li><a style="font-size: 1rem;" href="quickstarts/excel-quickstart-jquery.md">Démarrage rapide du complément Excel</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/excel-custom-functions-quickstart.md">Démarrage rapide des fonctions personnalisées d’Excel</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/onenote-quickstart.md">Démarrage rapide du complément OneNote</a></li>
-                            <li><a style="font-size: 1rem;" href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Démarrage rapide du complément Outlook</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/outlook-quickstart.md">Démarrage rapide du complément Outlook</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/powerpoint-quickstart.md">Démarrage rapide du complément PowerPoint</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/project-quickstart.md">Démarrage rapide du complément Project</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/word-quickstart.md">Démarrage rapide du complément Word</a></li>
@@ -107,7 +107,7 @@ Utilisez la plateforme des compléments Office pour créer des solutions qui ét
                         <ul>
                             <li><a style="font-size: 1rem;" href="tutorials/excel-tutorial.md">Didacticiel sur les compléments Excel</a></li>
                             <li><a style="font-size: 1rem;" href="tutorials/excel-tutorial-create-custom-functions.md">Didacticiel de fonctions personnalisées Excel</a></li>
-                            <li><a style="font-size: 1rem;" href="/outlook/add-ins/addin-tutorial?context=office/dev/add-ins/context">Didacticiel sur le complément Outlook</a></li>
+                            <li><a style="font-size: 1rem;" href="tutorials/outlook-tutorial.md">Didacticiel sur le complément Outlook</a></li>
                             <li><a style="font-size: 1rem;" href="tutorials/powerpoint-tutorial.md">Didacticiel sur les compléments PowerPoint</a></li>
                             <li><a style="font-size: 1rem;" href="tutorials/word-tutorial.md">Didacticiel sur les compléments Word</a></li>
                         </ul>

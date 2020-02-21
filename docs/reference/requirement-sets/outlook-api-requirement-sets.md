@@ -4,12 +4,12 @@ description: ''
 ms.date: 02/11/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 7ea6be0cb1879ba583eaa64a7611899bf5adb73f
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: ad83a9627aba29c6b2877d83f1d359ec1f7dd3a5
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950543"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163603"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Outlook
 
@@ -66,7 +66,7 @@ Les développeurs doivent utiliser l’ensemble de conditions requises le plus a
 
 ## <a name="requirement-sets-supported-by-exchange-servers-and-outlook-clients"></a>Ensembles de conditions requises pris en charge par les serveurs Exchange et les clients Outlook
 
-Dans cette section, nous prenons note de la plage d’ensembles de conditions requises pris en charge par les serveurs Exchange et les clients Outlook. Pour plus d’informations sur la configuration requise pour le serveur et le client pour l’exécution de compléments Outlook, voir [Conditions requises pour les compléments Outlook](/outlook/add-ins/add-in-requirements).
+Dans cette section, nous prenons note de la plage d’ensembles de conditions requises pris en charge par les serveurs Exchange et les clients Outlook. Pour plus d’informations sur la configuration requise pour le serveur et le client pour l’exécution de compléments Outlook, voir [Conditions requises pour les compléments Outlook](../../outlook/add-in-requirements.md).
 
 > [!IMPORTANT]
 > Si votre serveur Exchange cible et votre client Outlook prennent en charge différents ensembles de conditions requises, vous êtes limité à la plage inférieure d’ensembles de conditions requises. Par exemple, si un complément est exécuté dans Outlook 2016 sur Mac (configuration maximale requise : 1.6) sur Exchange 2013 (ensemble de conditions requises le plus élevé : 1.1), votre complément est limité à l’ensemble de conditions requises 1.1.
@@ -108,11 +108,11 @@ Les compléments sont pris en charge dans Outlook sur les plateformes suivantes.
 >
 > **moderne**
 >
-> ![capture d’écran partielle de la barre d’outils Outlook moderne](https://docs.microsoft.com/outlook/add-ins/images/outlook-on-the-web-new-toolbar.png)
+> ![capture d’écran partielle de la barre d’outils Outlook moderne](../../images/outlook-on-the-web-new-toolbar.png)
 >
 > **classique**
 >
-> ![capture d’écran partielle de la barre d’outils Outlook classique](https://docs.microsoft.com/outlook/add-ins/images/outlook-on-the-web-classic-toolbar.png)
+> ![capture d’écran partielle de la barre d’outils Outlook classique](../../images/outlook-on-the-web-classic-toolbar.png)
 
 ## <a name="using-preview-apis"></a>Utilisation des API de préversion
 

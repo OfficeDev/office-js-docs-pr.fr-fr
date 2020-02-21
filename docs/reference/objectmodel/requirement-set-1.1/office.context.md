@@ -3,16 +3,16 @@ title: Office. Context-ensemble de conditions requises 1,1
 description: ''
 ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: 973c1604a08e897780f3a12150adffb02eb97b55
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: b5340e2a51c22489ff7e207ba2bba854a5b428ae
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111197"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165481"
 ---
 # <a name="context"></a>context
 
-### <a name="officeofficemdcontext"></a>[Office](office.md).context
+### <a name="officecontext"></a>[Office](office.md).context
 
 Office. Context fournit des interfaces partagées qui sont utilisées par des compléments dans toutes les applications Office. Cette liste répertorie uniquement les interfaces utilisées par les compléments Outlook. Pour obtenir la liste complète de l’espace de noms Office. Context, voir la [référence Office. Context dans l’API commune](/javascript/api/office/office.context?view=outlook-js-1.1).
 
@@ -21,13 +21,13 @@ Office. Context fournit des interfaces partagées qui sont utilisées par des co
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
+|[Mode Outlook applicable](../../../outlook/outlook-add-ins-overview.md#extension-points)| Rédaction ou lecture|
 
 ##### <a name="properties"></a>Propriétés
 
 | Propriété | Modes | Type de retour | Minimale<br>ensemble de conditions requises |
 |---|---|---|:---:|
-| [contentLanguage](#contentlanguage-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [contentLanguage](#contentlanguage-string) | Composition<br>Lire | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [Diagnostics](#diagnostics-contextinformation) | Composition<br>Lecture | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.1) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [displayLanguage](#displaylanguage-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [hote](#host-hosttype) | Composition<br>Lecture | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.1) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
@@ -54,7 +54,7 @@ La `contentLanguage` valeur reflète le paramètre de **langue d’édition** ac
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
+|[Mode Outlook applicable](../../../outlook/outlook-add-ins-overview.md#extension-points)| Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 
@@ -82,7 +82,7 @@ function write(message){
 ---
 ---
 
-#### <a name="diagnostics-contextinformationjavascriptapiofficeofficecontextinformation"></a>Diagnostics : [ContextInformation](/javascript/api/office/office.contextinformation)
+#### <a name="diagnostics-contextinformation"></a>Diagnostics : [ContextInformation](/javascript/api/office/office.contextinformation)
 
 Obtient des informations sur l’environnement dans lequel le complément est en cours d’exécution.
 
@@ -95,7 +95,7 @@ Obtient des informations sur l’environnement dans lequel le complément est en
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
+|[Mode Outlook applicable](../../../outlook/outlook-add-ins-overview.md#extension-points)| Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 
@@ -123,7 +123,7 @@ La valeur `displayLanguage` reflète le paramètre **Langue d’affichage** actu
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
+|[Mode Outlook applicable](../../../outlook/outlook-add-ins-overview.md#extension-points)| Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 
@@ -151,7 +151,7 @@ function write(message){
 ---
 ---
 
-#### <a name="host-hosttypejavascriptapiofficeofficehosttype"></a>hôte : [HostType](/javascript/api/office/office.hosttype)
+#### <a name="host-hosttype"></a>hôte : [HostType](/javascript/api/office/office.hosttype)
 
 Obtient l’hôte d’application Office dans lequel le complément est en cours d’exécution.
 
@@ -164,7 +164,7 @@ Obtient l’hôte d’application Office dans lequel le complément est en cours
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
+|[Mode Outlook applicable](../../../outlook/outlook-add-ins-overview.md#extension-points)| Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 
@@ -177,7 +177,7 @@ console.log(JSON.stringify(Office.context.host));
 ---
 ---
 
-#### <a name="platform-platformtypejavascriptapiofficeofficeplatformtype"></a>plateforme : [PlatformType](/javascript/api/office/office.platformtype)
+#### <a name="platform-platformtype"></a>plateforme : [PlatformType](/javascript/api/office/office.platformtype)
 
 Fournit la plateforme sur laquelle le complément est en cours d’exécution.
 
@@ -190,7 +190,7 @@ Fournit la plateforme sur laquelle le complément est en cours d’exécution.
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
+|[Mode Outlook applicable](../../../outlook/outlook-add-ins-overview.md#extension-points)| Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 
@@ -203,7 +203,7 @@ console.log(JSON.stringify(Office.context.platform));
 ---
 ---
 
-#### <a name="requirements-requirementsetsupportjavascriptapiofficeofficerequirementsetsupport"></a>Configuration requise : [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
+#### <a name="requirements-requirementsetsupport"></a>Configuration requise : [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
 
 Fournit une méthode permettant de déterminer quels ensembles de conditions requises sont pris en charge sur l’hôte et la plateforme actuels.
 
@@ -216,7 +216,7 @@ Fournit une méthode permettant de déterminer quels ensembles de conditions req
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
+|[Mode Outlook applicable](../../../outlook/outlook-add-ins-overview.md#extension-points)| Rédaction ou lecture|
 
 ##### <a name="example"></a>Exemple
 
@@ -229,7 +229,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 ---
 ---
 
-#### <a name="roamingsettings-roamingsettingsjavascriptapioutlookofficeroamingsettings"></a>roamingSettings : [roamingSettings](/javascript/api/outlook/office.roamingsettings)
+#### <a name="roamingsettings-roamingsettings"></a>roamingSettings : [roamingSettings](/javascript/api/outlook/office.roamingsettings)
 
 Obtient un objet qui représente les paramètres personnalisés ou l’état d’un complément de messagerie enregistrés dans la boîte aux lettres d’un utilisateur.
 
@@ -244,15 +244,15 @@ L’objet `RoamingSettings` vous permet de stocker et d’accéder aux données 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Niveau d’autorisation minimal](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restreinte|
-|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
+|[Niveau d’autorisation minimal](../../../outlook/understanding-outlook-add-in-permissions.md)| Restreinte|
+|[Mode Outlook applicable](../../../outlook/outlook-add-ins-overview.md#extension-points)| Rédaction ou lecture|
 
 <br>
 
 ---
 ---
 
-#### <a name="ui-uijavascriptapiofficeofficeui"></a>interface utilisateur : [interface utilisateur](/javascript/api/office/office.ui)
+#### <a name="ui-ui"></a>interface utilisateur : [interface utilisateur](/javascript/api/office/office.ui)
 
 Fournit des objets et des méthodes que vous pouvez utiliser pour créer et manipuler des composants de l’interface utilisateur, tels que des boîtes de dialogue, dans vos compléments Office.
 
@@ -265,4 +265,4 @@ Fournit des objets et des méthodes que vous pouvez utiliser pour créer et mani
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Mode Outlook applicable](/outlook/add-ins/#extension-points)| Rédaction ou lecture|
+|[Mode Outlook applicable](../../../outlook/outlook-add-ins-overview.md#extension-points)| Rédaction ou lecture|

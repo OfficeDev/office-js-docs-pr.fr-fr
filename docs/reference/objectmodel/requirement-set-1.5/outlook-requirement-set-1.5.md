@@ -3,12 +3,12 @@ title: Ensemble de conditions requises de l’API du complément Outlook 1.5
 description: ''
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 1a12156feb7a03e596e521650a757fe7198b4d76
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: 65453a0cff8db682f5f573c25a9afa4e9ff63f67
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814744"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163737"
 ---
 # <a name="outlook-add-in-api-requirement-set-15"></a>Ensemble de conditions requises de l’API du complément Outlook 1.5
 
@@ -21,8 +21,8 @@ Le sous-ensemble de l’API pour le complément Outlook de l’interface API Ja
 
 L’ensemble de conditions requises de la version 1.5 comprend toutes les fonctionnalités de l’[ensemble de conditions requises de la version 1.4](../requirement-set-1.4/outlook-requirement-set-1.4.md). Les fonctionnalités suivantes ont été ajoutées :
 
-- Prise en charge des [volets Office épinglables](/outlook/add-ins/pinnable-taskpane).
-- Prise en charge de l’appel des [API REST](/outlook/add-ins/use-rest-api).
+- Prise en charge des [volets Office épinglables](../../../outlook/pinnable-taskpane.md).
+- Prise en charge de l’appel des [API REST](../../../outlook/use-rest-api.md).
 - Possibilité de marquer une pièce jointe comme élément incorporé.
 - Possibilité de fermer un volet Office ou une boîte de dialogue.
 
@@ -40,7 +40,7 @@ L’ensemble de conditions requises de la version 1.5 comprend toutes les fonct
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Compléments Outlook](/outlook/add-ins/)
+- [Compléments Outlook](../../../outlook/outlook-add-ins-overview.md)
 - [Exemples de code pour les compléments Outlook](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [Prise en main](/outlook/add-ins/quick-start)
+- [Prise en main](../../../quickstarts/outlook-quickstart.md)
 - [Ensembles de conditions requises et clients pris en charge](../../requirement-sets/outlook-api-requirement-sets.md)

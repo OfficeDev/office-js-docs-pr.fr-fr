@@ -1,14 +1,14 @@
 ---
 title: Publication de compléments Office à l’aide du déploiement centralisé via le centre d’administration Office 365
 description: ''
-ms.date: 06/20/2019
+ms.date: 02/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 92602a6056cffd7827d851d777210a90ddda9139
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 92ae938669ad53b50c8635a998dcfa4525ac2bef
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950739"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165588"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>Publication de compléments Office à l’aide du déploiement centralisé via le centre d’administration Office 365
 
@@ -17,7 +17,7 @@ Le centre d’administration Office 365 permet aux administrateurs de déployer
 Le centre d’administration Office 365 prend actuellement en charge les scénarios suivants :
 
 - Déploiement centralisé de nouveaux compléments et de ceux mis à jour pour des utilisateurs, des groupes ou une organisation.
-- Déploiement sur plusieurs plateformes, y compris Windows, Mac et sur le web.
+- Déploiement sur plusieurs plateformes, y compris Windows, Mac, iOS/iPad, Android et sur le Web.
 - Déploiement en anglais et pour les clients du monde entier.
 - Déploiement de compléments hébergés sur le cloud.
 - Déploiement de compléments hébergés au sein d’un pare-feu.
@@ -51,7 +51,7 @@ Si votre organisation répond à toutes les conditions requises, procédez comme
 1. Connectez-vous à Office 365 avec votre compte professionnel ou scolaire.
 2. Sélectionnez l’icône du lanceur d’applications située en haut à gauche et choisissez **Administrateur**.
 3. Dans le menu de navigation, appuyez sur **Afficher plus**, puis choisissez **Paramètres** > **Services et compléments**.
-4. Si un message annonçant le nouveau Centre d’administration Office 365 apparaît en haut de la page, cliquez dessus pour accéder à la préversion du Centre d’administration (reportez-vous à l’article [À propos du Centre d’administration Office 365](https://support.office.com/en-ie/article/About-the-Office-365-admin-center-758befc4-0888-4009-9f14-0d147402fd23)).
+4. Si un message annonçant le nouveau Centre d’administration Office 365 apparaît en haut de la page, cliquez dessus pour accéder à la préversion du Centre d’administration (reportez-vous à l’article [À propos du Centre d’administration Office 365](https://support.office.com/article/About-the-Office-365-admin-center-758befc4-0888-4009-9f14-0d147402fd23)).
 5. Choisissez **Déployer un complément** en haut de la page.
 6. Choisissez **Suivant** après avoir consulté la configuration requise.
 7. Dans la page **Déploiement centralisé**, choisissez l’une des options suivantes :
@@ -67,23 +67,23 @@ Si votre organisation répond à toutes les conditions requises, procédez comme
     > [!NOTE]
     > Avec l’option Office Store, les mises à jour et améliorations du complément sont automatiquement disponibles pour les utilisateurs sans intervention de votre part.
 
-    ![Boîte de dialogue Sélectionner un module additionnel dans le Centre d’administration Office 365](../images/select-an-add-in.png)
+    ![Sélection d’une boîte de dialogue de complément dans le centre d’administration Office 365](../images/select-an-add-in.png)
 
-9. Choisissez **Suivant** après avoir consulté les détails du complément.
+9. Choisissez **Continuer** après avoir vérifié les détails du complément, la politique de confidentialité et les termes de la licence.
 
-    ![Page du complément des vignettes Power BI dans le Centre d’administration Office 365](../images/power-bi-tiles.png)
+    ![Page de complément sélectionnée dans le centre d’administration Office 365](../images/selected-add-in-admin-center.png)
 
-10. Dans la page **Modifier les utilisateurs ayant accès**, choisissez **Tout le monde**, **Utilisateurs/Groupes spécifiques** ou **Moi seul**. Utilisez la zone de recherche pour trouver les utilisateurs et groupes vers lesquels vous voulez déployer le complément.
+10. Sur la **page attribuer des utilisateurs** , choisissez **tout le monde**, **utilisateurs/groupes spécifiques**ou **moi seul**. Utilisez la zone de recherche pour trouver les utilisateurs et groupes vers lesquels vous voulez déployer le complément. Pour les compléments Outlook, vous pouvez également choisir la méthode de déploiement **fixe**, **disponible**ou **facultative**.
 
-    ![Page Modifier les utilisateurs ayant accès dans le Centre d’administration Office 365](../images/power-bi-tiles-edit.png)
+    ![Gérer les personnes ayant accès et méthode de déploiement dans le centre d’administration Office 365](../images/manage-users-deployment-admin-center.png)
 
     > [!NOTE]
     > Un système d’[authentification unique (SSO) ](/office/dev/add-ins/develop/sso-in-office-add-ins) pour les compléments est actuellement en préversion, qui ne doit pas être utilisé pour des compléments en production.Lors du déploiement d’un complément utilisant une authentification unique, les utilisateurs et les groupes affectés sont également partagés avec des compléments partageant le même ID d’application Azure. Les modifications apportées aux affectations d’utilisateurs sont également appliquées à ces compléments. Les compléments connexes sont affichés sur cette page. Uniquement pour les compléments d’authentification unique, cette page affiche la liste des autorisations Microsoft Graph requises.
 
-11. Lorsque vous avez terminé, choisissez **enregistrer** pour enregistrer le manifeste. Ce processus peut prendre jusqu’à trois minutes. Ensuite, terminez la procédure en appuyant sur **Suivant**. Votre complément apparaît à présent avec d’autres applications dans Office 365.
+11. Lorsque vous avez terminé, choisissez **déployer**. Ce processus peut prendre jusqu’à trois minutes. Ensuite, terminez la procédure en appuyant sur **Suivant**. Votre complément apparaît à présent avec d’autres applications dans Office 365.
 
     > [!NOTE]
-    > Quand un administrateur sélectionne **Enregistrer**, le consentement est donné pour tous les utilisateurs.
+    > Lorsqu’un administrateur choisit **Deploy**, le consentement est donné pour tous les utilisateurs.
 
     ![Liste des applications dans le Centre d’administration Office 365](../images/citations.png)
 
@@ -100,7 +100,7 @@ Les administrateurs peuvent affecter un complément à tout le monde ou à des u
 
 - **Groupes** : si vous affectez un complément à un groupe, le complément est automatiquement affecté aux utilisateurs ajoutés au groupe. De même, quand un utilisateur est supprimé d’un groupe, il perd l’accès au complément. Dans les deux cas, aucune action supplémentaire n’est requise de votre part en tant qu’administrateur Office 365.
 
-En général, pour faciliter la maintenance, nous vous recommandons d’affecter des compléments à l’aide de groupes. Toutefois, dans les situations où vous souhaitez restreindre l’accès au complément à un très petit nombre d’utilisateurs, il peut être plus pratique d’affecter le complément à des utilisateurs spécifiques. 
+En général, pour faciliter la maintenance, nous vous recommandons d’affecter des compléments à l’aide de groupes. Toutefois, dans les situations où vous souhaitez restreindre l’accès au complément à un très petit nombre d’utilisateurs, il peut être plus pratique d’affecter le complément à des utilisateurs spécifiques.
 
 ## <a name="add-in-states"></a>États de complément
 
@@ -118,13 +118,18 @@ Une fois qu’un complément Office a été publié via un déploiement centrali
 
 - **Complément métier** : si un administrateur a chargé explicitement un fichier manifeste lors de l’implémentation du déploiement centralisé via le Centre d’administration Office 365, il doit charger un nouveau fichier manifeste contenant les modifications souhaitées. Une fois que le fichier manifeste a été chargé, le complément est mis à jour au démarrage suivant des applications Office concernées.
 
+  > [!NOTE]
+  > Un administrateur n’a pas besoin de supprimer un complément LOB pour effectuer une mise à jour. Dans la section compléments, l’administrateur peut simplement choisir le complément LOB et appeler cette fonctionnalité en appuyant sur le bouton **mettre à jour le complément** présent dans le coin inférieur droit.
+  > 
+  > ![Capture d’écran illustrant la boîte de dialogue mettre à jour le complément dans le centre d’administration Office 365](../images/update-add-in-admin-center.png)
+
 - **Complément de l’Office Store** : si un administrateur a sélectionné un complément dans l’Office Store lors de l’implémentation du déploiement centralisé via le Centre d’administration Office 365 et que le complément est mis à jour dans l’Office Store, le complément sera mis à jour plus tard via le déploiement centralisé. Le complément est mis à jour au démarrage suivant des applications Office concernées.
 
 ## <a name="end-user-experience-with-add-ins"></a>Expérience des utilisateurs finaux avec les compléments
 
-Une fois qu’un complément a été publié via un déploiement centralisé, les utilisateurs finaux peuvent commencer à l’utiliser sur toutes les plateformes prises en charge par le complément. 
+Une fois qu’un complément a été publié via un déploiement centralisé, les utilisateurs finaux peuvent commencer à l’utiliser sur toutes les plateformes prises en charge par le complément.
 
-Si le complément prend en charge les commandes de complément, celles-ci apparaissent dans le ruban de l’application Office pour tous les utilisateurs vers lesquels le complément est déployé. Dans l’exemple suivant, la commande **Recherche de citation** apparaît dans le ruban pour le complément **Citations**. 
+Si le complément prend en charge les commandes de complément, celles-ci apparaissent dans le ruban de l’application Office pour tous les utilisateurs vers lesquels le complément est déployé. Dans l’exemple suivant, la commande **Recherche de citation** apparaît dans le ruban pour le complément **Citations**.
 
 ![Capture d’écran illustrant une section du ruban Office avec la commande Recherche de citation mise en évidence dans le complément Citations](../images/search-citation.png)
 
@@ -132,7 +137,7 @@ Si le complément ne prend pas en charge les commandes de complément, les utili
 
 1. Dans Word 2016 ou version ultérieure, Excel 2016 ou version ultérieure ou PowerPoint 2016 ou version ultérieure, choisissez **Insertion** > **Mes compléments**.
 2. Sélectionnez l’onglet **Géré par l’administrateur** dans la fenêtre du complément.
-3. Choisissez le complément, puis **Ajouter**.
+3. Choisissez le complément, puis cliquez sur **Ajouter**.
 
     ![Capture d’écran illustrant l’onglet Géré par l’administrateur de la page Compléments Office d’une application Office. Le complément Citations apparaît sur l’onglet.](../images/office-add-ins-admin-managed.png)
 

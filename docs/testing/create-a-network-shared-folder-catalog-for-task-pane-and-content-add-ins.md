@@ -1,14 +1,14 @@
 ---
 title: Chargement de compléments Office pour des tests
 description: ''
-ms.date: 12/31/2019
+ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 5008e75c1932d83070bdbc896675ce342f81e1ea
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 0eb8e6c2114b69575505508f05ed701f74b6849e
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950536"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163590"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>Chargement de compléments Office pour des tests
 
@@ -21,7 +21,7 @@ Cet article s’applique uniquement aux tests de compléments Word, Excel, Power
 
 - [Chargement de versions test des compléments Office dans Office sur le web](sideload-office-add-ins-for-testing.md)
 - [Chargement de version test des compléments Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
-- [Chargement de version test des compléments Outlook pour les tester](/outlook/add-ins/sideload-outlook-add-ins-for-testing)
+- [Chargement de version test des compléments Outlook pour les tester](../outlook/sideload-outlook-add-ins-for-testing.md)
 
 La vidéo suivante présente la procédure de chargement de version test de votre complément dans Office sur le web ou le bureau à l’aide d’un catalogue de dossiers partagés.  
 
@@ -45,22 +45,22 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 
 6. Choisissez le bouton **Fermer** pour fermer la boîte de dialogue **Propriétés**.
 
-## <a name="specify-the-shared-folder-as-a-trusted-catalog"></a>Spécifier le dossier partagé en tant que catalogue approuvé 
+## <a name="specify-the-shared-folder-as-a-trusted-catalog"></a>Spécifier le dossier partagé en tant que catalogue approuvé
 
 ### <a name="configure-the-trust-manually"></a>Configurer l’approbation manuellement
-      
+
 1. Ouvrez un nouveau document dans Excel, Word, PowerPoint ou Project.
-    
+
 2. Choisissez l’onglet **Fichier**, puis choisissez **Options**.
-    
+
 3. Choisissez l’onglet **Fichier**, puis choisissez **Options**.
-    
+
 4. Choisissez **Catalogues de compléments approuvés**.
-    
-5. Dans la zone **URL du catalogue**, entrez le chemin d’accès complet du réseau vers le dossier que vous avez [partagé](#share-a-folder) précédemment. Si vous n’avez pas noté le chemin d’accès complet du réseau lorsque vous avez partagé le dossier, vous pouvez le récupérer dans la boîte de dialogue **Propriétés** du dossier, comme illustré dans la capture d’écran suivante. 
+
+5. Dans la zone **URL du catalogue**, entrez le chemin d’accès complet du réseau vers le dossier que vous avez [partagé](#share-a-folder) précédemment. Si vous n’avez pas noté le chemin d’accès complet du réseau lorsque vous avez partagé le dossier, vous pouvez le récupérer dans la boîte de dialogue **Propriétés** du dossier, comme illustré dans la capture d’écran suivante.
 
     ![Boîte de dialogue Propriétés du dossier avec l’onglet Partage et le chemin d’accès du réseau mis en évidence](../images/sideload-windows-properties-dialog-2.png)
-    
+
 6. Après avoir entré le chemin d’accès complet du réseau du dossier dans la zone **URL du catalogue**, choisissez le bouton **Ajouter un catalogue**.
 
 7. Cochez la case **Afficher dans le menu** pour l’élément nouvellement ajouté, puis choisissez le bouton **OK** pour fermer la boîte de dialogue **Centre de gestion de la confidentialité**. 
@@ -73,13 +73,13 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 
 ### <a name="configure-the-trust-with-a-registry-script"></a>Configurer l’approbation à l’aide d’un script du Registre
 
-1. Dans un éditeur de texte, créez un fichier nommé TrustNetworkShareCatalog.reg. 
+1. Dans un éditeur de texte, créez un fichier nommé TrustNetworkShareCatalog.reg.
 
 2. Ajoutez le contenu suivant au fichier :
 
     ```
     Windows Registry Editor Version 5.00
-    
+
     [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{-random-GUID-here-}]
     "Id"="{-random-GUID-here-}"
     "Url"="\\\\-share-\\-folder-"
@@ -87,15 +87,15 @@ La vidéo suivante présente la procédure de chargement de version test de votr
     ```
 3. Utilisez l’un des nombreux outils de génération de GUID en ligne, tels que le [Générateur de GUID](https://guidgenerator.com/), pour générer un GUID aléatoire, et dans le fichier TrustNetworkShareCatalog.reg, remplacez la chaîne « -Random-GUID-here- » *dans les deux emplacements* par le GUID. (Les symboles `{}` englobantes doivent subsister).
 
-4. Remplacez la valeur`Url`, par le chemin d’accès complet du réseau vers le dossier que vous avez [partagé](#share-a-folder) précédemment. (Notez que les caractères `\` de l’URL doivent être doublés) Si vous n’avez pas noté le chemin d’accès complet du réseau lorsque vous avez partagé le dossier, vous pouvez le récupérer dans la boîte de dialogue **Propriétés** du dossier, comme illustré dans la capture d’écran suivante. 
+4. Remplacez la valeur`Url`, par le chemin d’accès complet du réseau vers le dossier que vous avez [partagé](#share-a-folder) précédemment. (Notez que les caractères `\` de l’URL doivent être doublés) Si vous n’avez pas noté le chemin d’accès complet du réseau lorsque vous avez partagé le dossier, vous pouvez le récupérer dans la boîte de dialogue **Propriétés** du dossier, comme illustré dans la capture d’écran suivante.
 
     ![Boîte de dialogue Propriétés du dossier avec l’onglet Partage et le chemin d’accès du réseau mis en évidence](../images/sideload-windows-properties-dialog-2.png)
-    
+
 5. Le fichier doit désormais se présenter comme suit. Enregistrez-le.
 
     ```
     Windows Registry Editor Version 5.00
-    
+
     [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{01234567-89ab-cedf-0123-456789abcedf}]
     "Id"="{01234567-89ab-cedf-0123-456789abcedf}"
     "Url"="\\\\TestServer\\OfficeAddinManifests"
@@ -113,11 +113,15 @@ La vidéo suivante présente la procédure de chargement de version test de votr
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-2. Dans Excel, Word ou PowerPoint, sélectionnez **Mes compléments** dans l’onglet **Insérer** du ruban. Dans Project, sélectionnez **Mes compléments** sous l’onglet **Project** du ruban. 
+2. Dans Excel, Word ou PowerPoint, sélectionnez **Mes compléments** dans l’onglet **Insérer** du ruban. Dans Project, sélectionnez **Mes compléments** sous l’onglet **Project** du ruban.
 
 3. Choisissez **DOSSIER PARTAGÉ** dans la boîte de dialogue **Compléments Office**.
 
 4. Sélectionnez le nom du complément, puis choisissez **OK** pour insérer celui-ci.
+
+## <a name="remove-a-sideloaded-add-in"></a>Supprimer un complément versions test chargées
+
+Vous pouvez supprimer un complément précédemment versions test chargées en effaçant le cache Office sur votre ordinateur. Pour plus d’informations sur la façon d’effacer le cache sur Windows, consultez l’article [effacer le cache Office](clear-cache.md#clear-the-office-cache-on-windows).
 
 ## <a name="see-also"></a>Voir aussi
 
