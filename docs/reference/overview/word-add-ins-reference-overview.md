@@ -1,15 +1,15 @@
 ---
 title: Présentation des API JavaScript pour Word
 description: ''
-ms.date: 07/05/2019
+ms.date: 02/19/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 6728c7491d84f2bc044f7e5a3199ad6d90979628
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 90dd7c787086a67dd8607479bbc46c957192d5c3
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851256"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163968"
 ---
 # <a name="word-javascript-api-overview"></a>Présentation des APIs JavaScript pour Word
 
@@ -19,7 +19,7 @@ Un complément Word interagit avec des objets dans Word via l’API JavaScript p
 
 * **API communes** : incluses dans Office 2013, les [API communes](/javascript/api/office) permettent d’accéder à des fonctionnalités telles qu’une interface utilisateur, des boîtes de dialogue et des paramètres du client, qui sont communes à plusieurs types d’applications Office.
 
-Cette section de la documentation traite de l’API JavaScript pour Word, que vous allez utiliser pour développer la majorité des fonctionnalités des compléments utilisés dans Word sur le web ou dans Word 2016 ou versions ultérieures. Pour plus d’informations sur les API comm.unes, voir le [Modèle d’objet API JavaScript pour Office](../../develop/office-javascript-api-object-model.md). 
+Cette section de la documentation traite de l’API JavaScript pour Word, que vous allez utiliser pour développer la majorité des fonctionnalités des compléments utilisés dans Word sur le web ou dans Word 2016 ou versions ultérieures. Pour plus d’informations sur les API communes, voir le [Modèle objet des API JavaScript communes](../../develop/office-javascript-api-object-model.md). 
 
 ## <a name="learn-programming-concepts"></a>Découvrir les concepts de programmation
 
