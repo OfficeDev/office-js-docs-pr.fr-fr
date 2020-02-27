@@ -1,14 +1,14 @@
 ---
 title: Présentation des autorisations de complément Outlook
 description: Les compléments Outlook spécifient le niveau d’autorisation requis dans leur manifeste (Restricted, ReadItem, ReadWriteItem ou ReadWriteMailbox).
-ms.date: 12/10/2019
+ms.date: 02/19/2020
 localization_priority: Normal
-ms.openlocfilehash: 58d21a33034475b8c33b8449ece24c9dafc84e2b
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: d3e5ac55619460e39c3853ea1a0a05c30d767bfd
+ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166069"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "42283904"
 ---
 # <a name="understanding-outlook-add-in-permissions"></a>Présentation des autorisations de complément Outlook
 
@@ -30,7 +30,7 @@ L’autorisation **Restricted** est la plus basique. Indiquez **Restricted** dan
 
 ### <a name="cant-do"></a>Vous ne pouvez pas :
 
-- Utiliser une règle [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) sur l’entité de contact, d’adresse de messagerie, de suggestion de réunion ou de suggestion de tâche.
+- Utiliser une règle [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) sur l’entité contact, adresse de messagerie, suggestion de réunion ou suggestion de tâche.
 
 - Utiliser la règle [ItemHasAttachment](../reference/manifest/rule.md#itemhasattachment-rule) ou [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule).
 
