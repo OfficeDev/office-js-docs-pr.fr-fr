@@ -1,15 +1,15 @@
 ---
 title: Utiliser le générateur Yeoman pour créer un complément Office qui utilise l’authentification unique (aperçu)
 description: Utiliser le générateur Yeoman pour créer un complément Office Node.js qui utilise l’authentification unique (aperçu)
-ms.date: 01/30/2020
+ms.date: 02/20/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: db3567a17a01af76c9db5f859a35dba46fd4858d
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: fb543516eb371b422fdd7aa91001aa9ca21ba576
+ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42163877"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "42283914"
 ---
 # <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on-preview"></a>Utiliser le générateur Yeoman pour créer un complément Office qui utilise l’authentification unique (aperçu)
 
@@ -58,21 +58,7 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 
 Le projet de complément que vous avez créé à l’aide du générateur Yeoman contient un code pour un complément de volet Office avec authentification unique.
 
-- Le fichier **./manifest.xml** du répertoire racine du projet définit les paramètres et fonctionnalités du complément.
-
-- Le fichier **./src/taskpane/taskpane.html** contient les balises HTML du volet Office.
-- Le fichier **./src/taskpane/taskpane.css** contient le style CSS appliqué au contenu du volet Office.
-- Le fichier **./src/taskpane/taskpane.js** contient le code de l’API JavaScript pour Office qui facilite l’interaction entre le volet Office et l’application hôte Office.
-
-- Le fichier **./src/helpers/documentHelper.js** utilise la bibliothèque JavaScript Office pour ajouter les données de Microsoft Graph au document Office.
-- Le fichier **./src/helpers/fallbackauthdialog.html** est la page sans interface utilisateur qui charge le code JavaScript de la méthode d’authentification de secours.
-- Le fichier **./src/helpers/fallbackauthdialog.html** contient le code JavaScript de la méthode d’authentification de secours qui se connecte l'utilisateur avec msal.js.
-- Le fichier **./SRC/helpers/fallbackauthhelper.js** contient le volet Office JavaScript qui appelle la méthode d’authentification de secours dans les scénarios lorsque l’authentification unique n’est pas prise en charge.
-- Le fichier **./src/helpers/ssoauthhelper.js** contient l’appel JavaScript à l’API de l’authentification unique, `getAccessToken`, reçoit le jeton d’amorçage, initialise le remplacement du jeton d’amorçage pour un jeton d’accès à Microsoft Graph et appelle Microsoft Graph pour les données.
-
-- Le fichier **./ENV** dans le répertoire racine du projet définit les constantes utilisées par le projet de complément.
-    > [!NOTE]
-    > Certaines des constantes définies dans ce fichier sont utilisées pour simplifier le processus d’authentification unique. Vous pouvez mettre à jour les valeurs de ce fichier pour qu'elles correspondent à votre scénario spécifique. Par exemple, vous pouvez mettre à jour ce fichier pour spécifier une autre étendue, si votre complément nécessite une autre valeur que `User.Read`.
+[!include[project structure for an SSO-enabled add-in created with the Yeoman generator](../includes/sso-yeoman-project-structure.md)]
 
 ## <a name="configure-sso"></a>Configurer l’authentification unique
 
@@ -172,10 +158,11 @@ Pour tester un complément Outlook, procédez comme suit.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations, vous avez créé un complément de volet Office qui utilise l’authentification unique lorsque c’est possible, et utilise une autre méthode d’authentification utilisateur lorsque l’authentification unique n’est pas prise en charge. Pour en savoir plus sur les étapes de configuration de l’authentification unique effectuées automatiquement par le générateur Yeoman et le code facilitant le processus d’authentification unique, veuillez consultez le didacticiel [Créer un complément Office Node.js qui utilise l’authentification unique](../develop/create-sso-office-add-ins-nodejs.md).
+Félicitations, vous avez créé un complément de volet Office qui utilise l’authentification unique lorsque c’est possible, et utilise une autre méthode d’authentification utilisateur lorsque l’authentification unique n’est pas prise en charge. Pour en savoir plus sur la personnalisation de votre complément afin d’ajouter une nouvelle fonctionnalité qui requiert des autorisations différentes, voir [Personnaliser votre complément compatible avec l’authentification unique Node.js](sso-quickstart-customize.md).
 
-## <a name="see-also"></a>Consultez aussi
+## <a name="see-also"></a>Voir aussi
 
 - [Activer l’authentification unique pour des compléments Office](../develop/sso-in-office-add-ins.md)
+- [Personnaliser votre complément compatible avec l’authentification unique Node.js](sso-quickstart-customize.md)
 - [Créer un complément Office Node.js qui utilise l’authentification unique](../develop/create-sso-office-add-ins-nodejs.md)
 - [Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)](../develop/troubleshoot-sso-in-office-add-ins.md)
