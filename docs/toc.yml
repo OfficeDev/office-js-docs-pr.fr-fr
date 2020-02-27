@@ -80,6 +80,8 @@
                   href: develop/sso-in-office-add-ins.md
                 - name: Démarrage rapide authentification unique
                   href: quickstarts/sso-quickstart.md
+                - name: Personnaliser votre complément compatible avec l’authentification unique
+                  href: quickstarts/sso-quickstart-customize.md
                 - name: Autoriser la connexion à Microsoft Graph avec l’authentification unique
                   href: develop/authorize-to-microsoft-graph.md
                 - name: Créer un complément d’authentification unique à l’aide d’ASP.NET
@@ -559,6 +561,9 @@
         - name: Mise en forme conditionnelle de plages
           href: excel/excel-add-ins-conditional-formatting.md
           displayName: Excel
+        - name: Configurer votre complément pour utiliser un runtime partagé
+          href: excel/configure-your-add-in-to-use-a-shared-runtime.md
+          displayName: Excel
         - name: Validation de données
           href: excel/excel-add-ins-data-validation.md
           displayName: Excel
@@ -583,6 +588,9 @@
         - name: Plages (avancées)
           href: excel/excel-add-ins-ranges-advanced.md
           displayName: Excel
+        - name: Exécuter le code sur le document ouvert
+          href: excel/run-code-on-document-open.md
+          displayName: Excel
         - name: Formes
           href: excel/excel-add-ins-shapes.md
           displayName: Excel
@@ -605,9 +613,6 @@
           displayName: 'Excel, Custom Functions'
         - name: Didacticiel sur les fonctions personnalisées
           href: tutorials/excel-tutorial-create-custom-functions.md
-          displayName: 'Excel, Custom Functions'
-        - name: Les fonctions personnalisées partagent des données destinées au didacticiel du volet des tâches
-          href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
           displayName: 'Excel, Custom Functions'
         - name: Architecture
           href: excel/custom-functions-architecture.md
@@ -657,6 +662,17 @@
         - name: Résolution des problèmes
           href: excel/custom-functions-troubleshooting.md
           displayName: 'Excel, Custom Functions'
+        - name: Utiliser un runtime partagé
+          items:
+            - name: Vue d’ensemble de l’utilisation d’un runtime partagé
+              href: excel/custom-functions-shared-overview.md
+              displayName: 'Excel, Custom Functions'
+            - name: Données de fonction personnalisée partagées avec le didacticiel du volet Office
+              href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
+              displayName: 'Excel, Custom Functions'
+            - name: Appeler des API Excel JS à partir de votre fonction personnalisée
+              href: excel/call-excel-apis-from-custom-function.md
+              displayName: 'Excel, Custom Functions'
         - name: Fonctions volatiles
           href: excel/custom-functions-volatile.md
           displayName: 'Excel, Custom Functions'
