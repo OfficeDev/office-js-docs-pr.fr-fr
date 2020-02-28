@@ -3,12 +3,12 @@ title: Appel de fonctions de feuille de calcul Excel intégrées à l’aide de 
 description: ''
 ms.date: 12/19/2019
 localization_priority: Normal
-ms.openlocfilehash: a2c98d21b36a88777e58d85c14169ffc2d67ae59
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
+ms.openlocfilehash: c5b725f09c4bd6be8d6061f08fe7fbf84ff30762
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40914999"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325149"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>Appel de fonctions de feuille de calcul Excel intégrées
 
@@ -19,7 +19,7 @@ Cet article explique comment appeler les fonctions de feuille de calcul Excel in
 
 ## <a name="calling-a-worksheet-function"></a>Appel d’une fonction de feuille de calcul
 
-L’extrait de code suivant montre comment appeler une fonction de feuille de calcul où `sampleFunction()` est un espace réservé devant être remplacé par le nom de la fonction à appeler et les paramètres d’entrée nécessitant la fonction. La propriété **value** de l’objet **FunctionResult** renvoyée par une fonction de feuille de calcul contient le résultat de la fonction spécifiée. Comme le montre cet exemple, vous devez charger (`load`) la propriété **value** de l’objet **FunctionResult** avant de pouvoir la lire. Dans cet exemple, le résultat de la fonction est simplement écrit sur la console.
+L’extrait de code suivant montre comment appeler une fonction de feuille de calcul où `sampleFunction()` est un espace réservé devant être remplacé par le nom de la fonction à appeler et les paramètres d’entrée nécessitant la fonction. La `value` propriété de l' `FunctionResult` objet renvoyé par une fonction de feuille de calcul contient le résultat de la fonction spécifiée. Comme le montre cet exemple, vous `load` devez `value` la propriété de `FunctionResult` l’objet avant de pouvoir le lire. Dans cet exemple, le résultat de la fonction est simplement écrit sur la console.
 
 ```js
 var functionResult = context.workbook.functions.sampleFunction();

@@ -3,18 +3,18 @@ title: Élément MobileFormFactor dans le fichier manifest
 description: ''
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: aead8ea0b60130109c5537dc0017f3a9e3ef986f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 34106011cb855b6ac7c6d0fc21c16fd13e52b281
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450568"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324840"
 ---
 # <a name="mobileformfactor-element"></a>Élément MobileFormFactor
 
 Spécifie les paramètres d’un complément pour le facteur de forme pour environnement mobile. Il contient toutes les informations de complément pour ce facteur de forme pour environnement mobile pour le nœud **Resources**.
 
-Chaque définition **MobileFormFactor** contient l’élément **FunctionFile** et au moins un élément **ExtensionPoint**. Pour plus d’informations, voir [Élément FunctionFile](functionfile.md) et [Élément ExtensionPoint](extensionpoint.md).
+Chaque définition **MobileFormFactor** contient l’élément **FunctionFile** et un ou plusieurs éléments **ExtensionPoint** . Pour plus d’informations, voir [Élément FunctionFile](functionfile.md) et [Élément ExtensionPoint](extensionpoint.md).
 
 L’élément **MobileFormFactor** est défini dans le schéma VersionOverrides 1.1. Pour les éléments [VersionOverrides](versionoverrides.md) le contenant, l’attribut `xsi:type` doit avoir la valeur `VersionOverridesV1_1`.
 

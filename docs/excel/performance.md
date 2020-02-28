@@ -3,12 +3,12 @@ title: Optimisation des performances API JavaScript Excel
 description: Optimisation des performances à l’aide de l’API JavaScript d’Excel
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 501e074e3ed859cd572aefab8acfcef090c4e9e3
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: d041356129ad5e5db8c990daaafee4e583de1dfa
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950837"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325051"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Optimisation des performances à l’aide de l’API JavaScript d’Excel
 
@@ -52,13 +52,13 @@ worksheet.getRange("A1").set({
 
 Dans l’API JavaScript Excel, vous devez charger explicitement les propriétés d’un objet proxy. Bien que vous soyez en mesure de charger les propriétés en une fois avec un appel vide```load()```, cette approche peut causer une surcharge significative des performances. Au lieu de cela, nous vous conseillons de charger uniquement les propriétés nécessaires, en particulier pour ces objets qui ont un grand nombre de propriétés.
 
-Par exemple, si vous souhaitez uniquement lire la propriété **adresse** d’un objet de la plage, spécifiez uniquement cette propriété lorsque vous appelez la méthode **load()**  :
+Par exemple, si vous avez uniquement l’intention de `address` lire la propriété d’un objet Range, spécifiez uniquement cette propriété lorsque `load()` vous appelez la méthode :
 
 ```js
 range.load('address');
 ```
 
-Vous pouvez appeler la méthode **load()** de l’une des façons suivantes :
+Vous pouvez appeler `load()` la méthode de l’une des manières suivantes :
 
 _Syntaxe :_
 
@@ -72,7 +72,7 @@ object.load({ loadOption });
 
 _Où :_
 
-* `properties` est la liste des propriétés à charger, fournie sous forme de chaînes séparées par des virgules ou de tableau de noms. Pour plus d’informations, reportez-vous aux méthodes **load()** définies pour les objets dans la rubrique [Référence de l’API JavaScript pour Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview).
+* `properties` est la liste des propriétés à charger, fournie sous forme de chaînes séparées par des virgules ou de tableau de noms. Pour plus d’informations, consultez `load()` les méthodes définies pour les objets dans la référence de l' [API JavaScript pour Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview).
 * `loadOption` spécifie un objet qui décrit les options select, expand, top et skip. Pour plus d’informations, reportez-vous aux [options](/javascript/api/office/officeextension.loadoption) de chargement d’objet.
 
 N’oubliez pas que certaines des « propriétés » sous un objet peuvent avoir le même nom qu’un autre objet. Par exemple, `format` est une propriété sous plage d’objet, mais `format` lui-même est également un objet. Par conséquent, si vous passez un appel comme `range.load("format")`, cela équivaut à `range.format.load()`, c'est-à-dire, un appel load() vide pouvant entraîner des problèmes de performances comme indiqué précédemment. Pour éviter cela, votre code devrait charger uniquement les nœuds « terminaux » dans une arborescence d’objets. 

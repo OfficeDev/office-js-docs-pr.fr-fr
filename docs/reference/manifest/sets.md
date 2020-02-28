@@ -3,16 +3,16 @@ title: Élément Sets dans le fichier manifeste
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 13777e54ec6bd2d97fa35609ebe194ed85ffa1b8
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 768f674b4afbd65df88825e871005f182d06f6ce
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450421"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325240"
 ---
 # <a name="sets-element"></a>Sets, élément
 
-Spécifie le sous-ensemble minimal de l’API JavaScript pour Office nécessaire à l’activation de votre complément Office.
+Spécifie le sous-ensemble minimal de l’API JavaScript Office requise pour l’activation de votre complément Office.
 
 **Type de complément :** application de contenu, de volet Office, de messagerie
 
@@ -36,11 +36,11 @@ Spécifie le sous-ensemble minimal de l’API JavaScript pour Office nécessaire
 
 |**Attribut**|**Type**|**Obligatoire**|**Description**|
 |:-----|:-----|:-----|:-----|
-|DefaultMinVersion|chaîne|facultatif|Spécifie la valeur de l’attribut **MinVersion** par défaut pour tous les éléments [Set](set.md) enfants. La valeur par défaut est « 1.1 ».|
+|DefaultMinVersion|chaîne|facultatif|Spécifie la valeur par défaut de l’attribut **MinVersion** pour tous les éléments [Set](set.md) enfants. La valeur par défaut est « 1.1 ».|
 
 ## <a name="remarks"></a>Remarques
 
 Pour plus d’informations concernant les ensembles de conditions requises, voir [Versions d’Office et ensembles de conditions requises](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
-Pour plus d'informations sur l’attribut **MinVersion** de l’élément **Set** et sur l’attribut **DefaultMinVersion** de l’élément **Sets**, voir l’article relatif à la [définition de l’élément Requirements dans le manifeste](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements#set-the-requirements-element-in-the-manifest).
+Pour plus d’informations sur l’attribut **MinVersion** de l’élément **Set** et sur l’attribut **DefaultMinVersion** de l’élément **sets** , voir [Set the requirements ELEMENT dans le manifeste](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements#set-the-requirements-element-in-the-manifest).
 

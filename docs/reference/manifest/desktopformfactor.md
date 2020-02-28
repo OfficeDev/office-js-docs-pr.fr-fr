@@ -3,18 +3,18 @@ title: Élément DesktopFormFactor dans le fichier manifeste
 description: ''
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: bada3cd4cff7973517aedb83235a224ef6c273eb
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: 2fe97d99ff5bdc9f23a5760824e241ee4dfb800f
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37901961"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325275"
 ---
 # <a name="desktopformfactor-element"></a>DesktopFormFactor, élément
 
-Spécifie les paramètres d’un complément en fonction du facteur de forme pour bureau. Le format de bureau inclut Office sur le Web, Windows et Mac. Il contient toutes les informations de complément pour ce facteur de forme à l’exception du nœud **Resources**.
+Spécifie les paramètres d’un complément en fonction du facteur de forme pour bureau. Le format de bureau inclut Office sur le Web, Windows et Mac. Elle contient toutes les informations de complément pour le facteur de forme de bureau, à l’exception du nœud **ressources** .
 
-Chaque définition de facteur de forme pour bureau contient l’élément **FunctionFile** et au moins un élément **ExtensionPoint**. Pour plus d’informations, voir [Élément FunctionFile](functionfile.md) et [Élément ExtensionPoint](extensionpoint.md).
+Chaque définition DesktopFormFactor contient l’élément **FunctionFile** et un ou plusieurs éléments **ExtensionPoint** . Pour plus d’informations, voir [Élément FunctionFile](functionfile.md) et [Élément ExtensionPoint](extensionpoint.md).
 
 ## <a name="child-elements"></a>Éléments enfants
 

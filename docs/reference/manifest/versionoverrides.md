@@ -3,12 +3,12 @@ title: Élémznr VersionOverrides dans le fichier manifest
 description: ''
 ms.date: 02/04/2020
 localization_priority: Normal
-ms.openlocfilehash: 26183caeb4862038d5304607310aa061d37cf3f1
-ms.sourcegitcommit: c1dbea577ae6183523fb663d364422d2adbc8bcf
+ms.openlocfilehash: 0afa3183e34a736a878217c079b7b8d0259be5b1
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "41773571"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324798"
 ---
 # <a name="versionoverrides-element"></a>Élément VersionOverrides
 
@@ -36,7 +36,7 @@ Le code suivant répertorie la valeur requise de la valeur **xmlns** en fonction
 
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Requis  |  Description  |
+|  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 |  **Description**    |  Non   |  Décrit le complément. Cela remplace l’élément `Description` dans une partie parent du manifeste. Le texte de la description est contenu dans un élément enfant de l’élément **LongString** contenu dans l’élément [Resources](./resources.md). L’attribut `resid` de l’élément **Description** est défini sur la valeur de l’attribut `id` de l’élément `String` qui contient le texte.|
 |  **Configuration requise**  |  Non   |  Spécifie l’ensemble de conditions requises minimal et la version d’Office.js qui doit être activée par le complément Office. Cela remplace l’élément `Requirements` dans la partie parent du manifeste.|

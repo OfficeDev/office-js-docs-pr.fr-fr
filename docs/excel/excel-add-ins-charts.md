@@ -3,16 +3,16 @@ title: Utiliser des graphiques à l’aide de l’API JavaScript pour Excel
 description: ''
 ms.date: 07/17/2019
 localization_priority: Normal
-ms.openlocfilehash: b89e8dffc45eb2a740b5e26373d92cc8cf4bed3e
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 2b55fee9689af03e9dbfbdb7133d2482f7ca6852
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950879"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42323853"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Utiliser des graphiques à l’aide de l’API JavaScript pour Excel
 
-This article provides code samples that show how to perform common tasks with charts using the Excel JavaScript API. For the complete list of properties and methods that the **Chart** and **ChartCollection** objects support, see [Chart Object (JavaScript API for Excel)](/javascript/api/excel/excel.chart) and [Chart Collection Object (JavaScript API for Excel)](/javascript/api/excel/excel.chartcollection).
+Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes avec des graphiques à l’aide de l’API JavaScript pour Excel. Pour obtenir la liste complète des propriétés et des méthodes `Chart` prises `ChartCollection` en charge par les objets et, voir [Chart (interface API JavaScript pour Excel)](/javascript/api/excel/excel.chart) et [Chart collection, objet (interface API JavaScript pour Excel)](/javascript/api/excel/excel.chartcollection).
 
 ## <a name="create-a-chart"></a>Création d’un graphique
 
@@ -127,7 +127,7 @@ Excel.run(function (context) {
 
 ## <a name="set-visibility-of-gridlines-in-a-chart"></a>Définir la visibilité du quadrillage dans un graphique
 
-L’exemple de code suivant masque le quadrillage principal de l’axe des ordonnées du premier graphique de la feuille de calcul. Vous pouvez afficher le quadrillage principal de l’axe des ordonnées du graphique en définissant `chart.axes.valueAxis.majorGridlines.visible` sur **true**.
+L’exemple de code suivant masque le quadrillage principal de l’axe des ordonnées du premier graphique de la feuille de calcul. Vous pouvez afficher le quadrillage principal de l’axe des ordonnées du graphique, en `chart.axes.valueAxis.majorGridlines.visible` définissant sur `true`.
 
 ```js
 Excel.run(function (context) {
@@ -168,7 +168,7 @@ Excel.run(function (context) {
 
 ### <a name="update-a-trendline"></a>Mettre à jour une courbe de tendance
 
-L’exemple de code suivant définit la courbe de tendance sur le type **Linear** pour la première série du premier graphique de la feuille de calcul nommée **Sample**.
+L’exemple de code suivant définit la courbe de `Linear` tendance sur le type de la première série du premier graphique de la feuille de calcul nommée **Sample**.
 
 ```js
 Excel.run(function (context) {

@@ -3,12 +3,12 @@ title: Élément Ressources dans le fichier manifest
 description: ''
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: e29e7e36585be8fd728eb46128d7ead538ea8069
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 7e1cd9fcb383fa4d5881917b3dd8d6dec3bbe4f8
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32452052"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324826"
 ---
 # <a name="resources-element"></a>Élément Ressources
 
@@ -28,8 +28,8 @@ Chaque ressource peut avoir plusieurs éléments enfants **Override** afin que v
 > [!NOTE]
 > Vous devez utiliser le protocole SSL (Secure Sockets Layer) pour toutes les URL dans les éléments **Image** et **Url**.
 
-### <a name="images"></a>Images
-Chaque icône doit disposer de trois éléments **Images**, un pour chacune des trois tailles obligatoires :
+### <a name="images"></a>Des images
+Chaque icône doit disposer de trois éléments **images** , un pour chacune des trois tailles obligatoires :
 
 - 16x16
 - 32x32

@@ -1,22 +1,22 @@
 ---
 title: Localisation des compléments Office
-description: Vous pouvez utiliser l’API JavaScript pour Office afin de déterminer des paramètres régionaux et d’afficher des chaînes basées sur les paramètres régionaux de l’application hôte, ou afin d’interpréter ou d’afficher des données en fonction des paramètres régionaux des données.
+description: Vous pouvez utiliser l’API JavaScript Office pour déterminer les paramètres régionaux et les chaînes d’affichage en fonction des paramètres régionaux de l’application hôte, ou pour interpréter ou afficher des données en fonction des paramètres régionaux des données.
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: c2404177f2188a505522d972d5bdfdf323394eba
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: af91923871b72279b749dec4ff2f9fa4460a72d5
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626767"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42323790"
 ---
 # <a name="localization-for-office-add-ins"></a>Localisation des compléments Office
 
-Vous pouvez librement implémenter n’importe quel schéma de localisation convenant à votre Complément Office. L’API JavaScript et le schéma du manifeste de la plateforme Compléments Office offrent quelques choix. Vous pouvez utiliser l’API JavaScript pour Office pour déterminer un paramètre régional et les chaînes d’affichage en fonction des paramètres régionaux de l’application hôte, ou pour interpréter ou afficher les données en fonction des paramètres régionaux des données. Vous pouvez utiliser le manifeste pour spécifier l’emplacement des fichiers et les informations descriptives propres à un paramètre régional. Sinon, vous pouvez utiliser un script Microsoft Ajax pour prendre en charge l’internationalisation et la localisation.
+Vous pouvez librement implémenter n’importe quel schéma de localisation convenant à votre Complément Office. L’API JavaScript et le schéma du manifeste de la plateforme Compléments Office offrent quelques choix. Vous pouvez utiliser l’API JavaScript Office pour déterminer les paramètres régionaux et les chaînes d’affichage en fonction des paramètres régionaux de l’application hôte, ou pour interpréter ou afficher des données en fonction des paramètres régionaux des données. Vous pouvez utiliser le manifeste pour spécifier l’emplacement des fichiers et les informations descriptives propres à un paramètre régional. Sinon, vous pouvez utiliser un script Microsoft Ajax pour prendre en charge l’internationalisation et la localisation.
 
 ## <a name="use-the-javascript-api-to-determine-locale-specific-strings"></a>Utiliser l’API JavaScript pour déterminer les chaînes propres aux paramètres régionaux
 
-L’API JavaScript pour Office offre deux propriétés qui prennent en charge l’affichage ou l’interprétation de valeurs cohérentes avec les paramètres régionaux de l’application hôte et des données :
+L’API JavaScript pour Office fournit deux propriétés qui prennent en charge l’affichage ou l’interprétation de valeurs cohérentes avec les paramètres régionaux de l’application hôte et des données :
 
 - [Context.displayLanguage][displayLanguage] spécifie les paramètres régionaux (ou la langue) de l’interface utilisateur de l’application hôte. L’exemple suivant vérifie si l’application hôte utilise les paramètres régionaux en-US ou fr-FR, et affiche un message de bienvenue propre aux paramètres régionaux.
 
@@ -189,9 +189,9 @@ Vous devez créer un projet de complément Office Visual Studio 2019.
 > [!NOTE]
 > Si vous n’avez pas installé Visual Studio 2019, reportez-vous à la [page Visual Studio IDE](https://visualstudio.microsoft.com/vs/) pour obtenir des instructions de téléchargement. Lors de l’installation, vous devez sélectionner la charge de travail de développement Office/SharePoint. Si vous avez déjà installé Visual Studio 2019, [Utilisez le programme d’installation de Visual Studio](/visualstudio/install/modify-visual-studio/) pour vous assurer que la charge de travail de développement Office/SharePoint est installée.
 
-1. Choisissez **créer un nouveau projet**.
+1. Choisissez **Créer un nouveau projet**.
 
-2. À l’aide de la zone de recherche, entrez **complément**. Choisissez **complément Word Web**, puis cliquez sur **suivant**.
+2. À l’aide de la zone de recherche, entrez **complément**. Choisissez **Complément web Word**, puis sélectionnez **Suivant**.
 
 3. Nommez votre projet **worldreadyapp** et sélectionnez **créer**.
 
@@ -206,9 +206,9 @@ Le texte que vous souhaitez localiser dans une autre langue apparaît à deux em
 
 -  **Interface utilisateur du complément**. Vous pouvez localiser les chaînes qui s’affichent dans l’interface utilisateur de votre complément à l’aide du code JavaScript, par exemple en utilisant un fichier de ressources séparé contenant les chaînes localisées.
 
-Pour localiser le nom d’affichage et la description du complément :
+Pour localiser le nom d’affichage et la description du complément
 
-1. Pour localiser le nom d’affichage et la description du complément
+1. Dans l’**Explorateur de solutions**, développez **WorldReadyAddIn**, **WorldReadyAddInManifest**, puis choisissez **WorldReadyAddIn.xml**.
 
 2. Dans WorldReadyAppManifest.xml, remplacez les éléments [DisplayName] et [Description] par le bloc de code suivant :
 
@@ -335,7 +335,7 @@ Ajoutez le code HTML suivant dans la balise head pour Home.html pour que **UIStr
 
 Vous pouvez désormais utiliser l’objet **UIStrings** pour définir les chaînes pour l’interface utilisateur de votre complément.
 
-Par exemple, si la langue de l’application hôte utilise l’espagnol pour afficher les menus et les commandes, la propriété **Office.context.displayLanguage** retournera le code de langue es-ES.
+Si vous souhaitez modifier la localisation de votre complément en fonction de la langue utilisée pour la modification du contenu du document, utilisez la propriété **Office. Context. contentLanguage** pour obtenir les paramètres régionaux de cette langue. Si vous voulez changer la localisation pour votre complément en fonction de la langue utilisée pour l’édition du contenu de document, utilisez la propriété  **Office.context.contentLanguage** pour obtenir les paramètres régionaux pour cette langue.
 
 Par exemple, si la langue de l’application hôte utilise l’espagnol pour l’édition de contenu de document, la propriété **Office.context.contentLanguage** retournera le code de langue es-ES.
 
@@ -391,7 +391,7 @@ Pour changer la langue utilisée pour l’affichage ou l’édition dans votre c
 
     ![Boîte de dialogue Options Word](../images/office15-app-how-to-localize-fig04.png)
 
-2. Sous **Choisir la langue d’affichage**, sélectionnez la langue que vous souhaitez afficher, par exemple espagnol, puis sélectionnez la flèche vers le haut pour déplacer la langue Espagnol en première position dans la liste. Vous pouvez également modifier la langue utilisée pour l’édition, sous **Choisir les langues d’édition**, sélectionnez la langue que vous voulez utiliser pour l’édition, par exemple, espagnol, puis **Définir par défaut**.
+2. Sous **Choisir la langue d’affichage**, sélectionnez la langue que vous souhaitez afficher, par exemple espagnol, puis sélectionnez la flèche vers le haut pour déplacer la langue Espagnol en première position dans la liste. Sinon, pour modifier la langue utilisée pour l’édition, sous **choisir les langues d’édition**, choisissez la langue que vous souhaitez utiliser pour la modification, par exemple, espagnol, puis choisissez **définir par défaut**.
 
 3. Sélectionnez **OK** pour confirmer votre choix, puis fermez Word.
 

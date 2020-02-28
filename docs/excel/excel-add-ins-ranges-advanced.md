@@ -1,18 +1,18 @@
 ---
 title: Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)
-description: ''
-ms.date: 10/22/2019
+description: Les fonctions et scénarios d’objet de plage avancés, tels que les cellules spéciales, suppriment les doublons et utilisent des dates.
+ms.date: 02/11/2020
 localization_priority: Normal
-ms.openlocfilehash: 96f001e7c7e51a9685a52d0a07309beed2f1fe4b
-ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
+ms.openlocfilehash: 0e42549c7ecb9eb8bf8ebe707906224b4059e176
+ms.sourcegitcommit: d85efbf41a3382ca7d3ab08f2c3f0664d4b26c53
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "37681934"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "42327753"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)
 
-Cet article génère des informations dans[ Utiliser des plages à l’aide de l’API JavaScript Excel (fondamental)](excel-add-ins-ranges.md) en fournissant les exemples de code qui affichent la manière d’exécuter plus de tâches avancées avec des plages à l’aide de l’API JavaScript Excel. Pour obtenir une liste complète des propriétés et des méthodes prises en charge par l’objet **Range**, reportez-vous à la rubrique [Objet Range (API JavaScript pour Excel)](/javascript/api/excel/excel.range).
+Cet article génère des informations dans[ Utiliser des plages à l’aide de l’API JavaScript Excel (fondamental)](excel-add-ins-ranges.md) en fournissant les exemples de code qui affichent la manière d’exécuter plus de tâches avancées avec des plages à l’aide de l’API JavaScript Excel. Pour obtenir la liste complète des propriétés et des méthodes `Range` prises en charge par l’objet, reportez-vous à la rubrique [objet Range (interface API JavaScript pour Excel)](/javascript/api/excel/excel.range).
 
 ## <a name="work-with-dates-using-the-moment-msdate-plug-in"></a>Utiliser des dates à l’aide de plug-in Moment-MSDate
 
@@ -78,7 +78,7 @@ getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCe
 getSpecialCellsOrNullObject(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
 ```
 
-L’exemple suivant utilise la méthode`getSpecialCells`pour rechercher toutes les cellules contenant les formules. Tenez compte des informations suivantes :
+L’exemple suivant utilise la méthode`getSpecialCells`pour rechercher toutes les cellules contenant les formules. Tenez compte du code suivant :
 
 - Cela limite la partie de la feuille qui nécessite d’être recherchée en appelant d’abord`Worksheet.getUsedRange`et en appelant`getSpecialCells`uniquement pour cette plage.
 - La`getSpecialCells`méthode renvoie un`RangeAreas`objet, toutes les cellules alors dotées de formules seront colorées en rose même si elles ne sont pas adjacentes.
@@ -96,7 +96,7 @@ Excel.run(function (context) {
 
 Si aucune cellule avec la caractéristique ciblée n’existe dans la plage `getSpecialCells` lève une erreur**ItemNotFound**. Cela dévie le flux de contrôle vers un(e)`catch`bloc/méthode, s’il en existe. S’il n’existe `catch` pas de bloc, l’erreur interrompt la méthode.
 
-Si vous attendez que des cellules avec la caractéristique ciblée existent toujours, vous souhaiterez probablement que votre code  lève une erreur si ces cellules ne sont pas là. Mais dans les scénarios où les cellules ne correspondent pas; votre code doit vérifier cette possibilité et le gérer gracieusement sans émettre d’erreur. Vous pouvez obtenir ce comportement avec la `getSpecialCellsOrNullObject`méthode et sa propriété renvoyée`isNullObject`. Cet exemple utilise les valeurs suivantes. Tenez compte des informations suivantes :
+Si vous attendez que des cellules avec la caractéristique ciblée existent toujours, vous souhaiterez probablement que votre code  lève une erreur si ces cellules ne sont pas là. Mais dans les scénarios où les cellules ne correspondent pas; votre code doit vérifier cette possibilité et le gérer gracieusement sans émettre d’erreur. Vous pouvez obtenir ce comportement avec la `getSpecialCellsOrNullObject`méthode et sa propriété renvoyée`isNullObject`. Cet exemple utilise les valeurs suivantes. Tenez compte du code suivant :
 
 - La méthode`getSpecialCellsOrNullObject`renvoie toujours un objet proxy, donc il ne s’agit jamais du sens`null`JavaScript ordinaire. Mais si les cellules non correspondantes sont introuvables, la propriété`isNullObject` de l’objet est établi à`true`.
 - Il appelle`context.sync`*avant*de tester la propriété`isNullObject`. Il s’agit d’une condition avec toutes les méthodes et propriétés`*OrNullObject`, car vous devez toujours télécharger et synchroniser une propriété afin de le lire.  Cependant, il n’est pas nécessaire de télécharger*de manière explicite*la propriété`isNullObject`. Il est automatiquement téléchargé par le`context.sync`même si`load`n’est pas appelé sur l’objet. Pour plus d'informations, consultez le[\*OrNullObject](/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#ornullobject-methods).
@@ -172,9 +172,11 @@ Excel.run(function (context) {
 })
 ```
 
-## <a name="copy-and-paste"></a>Copy and paste
+## <a name="cut-copy-and-paste"></a>Couper, copier et coller 
 
-La méthode [Range. CopyFrom](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) réplique le comportement de copie et de collage de l’interface utilisateur Excel. L’objet plage sur lequel`copyFrom`est appelé est la destination. La source à copier est transmise en tant que plage ou qu’adresse de chaîne représentant une plage.
+### <a name="copy-and-paste"></a>Copy and paste 
+
+La méthode [Range. CopyFrom](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) réplique les actions **copier** et **coller** de l’interface utilisateur Excel. L’objet plage sur lequel`copyFrom`est appelé est la destination. La source à copier est transmise en tant que plage ou qu’adresse de chaîne représentant une plage. 
 
 L’exemple de code suivant copie les données de la plage **A1:E1** dans la plage commençant en **G1** (ce qui aboutit à un collage dans la plage **G1:K1**).
 
@@ -232,6 +234,23 @@ Excel.run(function (context) {
 *Après l’exécution de la fonction précédente.*
 
 ![Données dans Excel après exécution de la méthode de copie de la plage.](../images/excel-range-copyfrom-skipblanks-after.png)
+
+### <a name="cut-and-paste-move-cells-online-only"></a>Couper et coller (déplacer) des cellules ([en ligne uniquement](../reference/requirement-sets/excel-api-online-requirement-set.md)) 
+
+La méthode [Range. MoveTo](/javascript/api/excel/excel.range#moveto-destinationrange-) déplace les cellules vers un nouvel emplacement dans le classeur. Ce comportement de déplacement de cellule fonctionne de la même manière que lorsque les cellules sont déplacées en [faisant glisser la bordure de la plage](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e) ou lorsque vous effectuez des opérations **couper** - **coller** . La mise en forme et les valeurs de la plage sont déplacées vers l’emplacement `destinationRange` spécifié en tant que paramètre. 
+
+L’exemple de code suivant montre une plage déplacée `Range.moveTo` avec la méthode. Notez que si la plage de destination est plus petite que la source, elle sera étendue de façon à inclure le contenu source. 
+
+```js 
+Excel.run(function (context) { 
+    var sheet = context.workbook.worksheets.getActiveWorksheet(); 
+    sheet.getRange("F1").values = [["Moved Range"]]; 
+
+    // Move the cells "A1:E1" to "G1" (which fills the range "G1:K1"). 
+    sheet.getRange("A1:E1").moveTo("G1"); 
+    return context.sync(); 
+}); 
+``` 
 
 ## <a name="remove-duplicates"></a>Supprimer les doublons
 

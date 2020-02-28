@@ -1,14 +1,14 @@
 ---
 title: Utiliser des commentaires à l’aide de l’API JavaScript pour Excel
-description: ''
-ms.date: 10/22/2019
+description: Informations sur l’utilisation des API pour ajouter, supprimer et modifier des commentaires et des thèmes de commentaires.
+ms.date: 02/11/2020
 localization_priority: Normal
-ms.openlocfilehash: d79f99d1922def58fe2c8887d01ec5a2b173220a
-ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
+ms.openlocfilehash: d6be0f07e0d3bb134385f0a08c20ce00da4de892
+ms.sourcegitcommit: d85efbf41a3382ca7d3ab08f2c3f0664d4b26c53
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "37681913"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "42327781"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>Utiliser des commentaires à l’aide de l’API JavaScript pour Excel
 
@@ -25,7 +25,7 @@ Les commentaires d’un classeur sont suivis `Workbook.comments` par la proprié
 Utilisez la `CommentCollection.add` méthode pour ajouter des commentaires à un classeur. Cette méthode peut prendre jusqu’à trois paramètres :
 
 - `cellAddress`: La cellule dans laquelle le commentaire est ajouté. Il peut s’agir d’un objet String ou [Range](/javascript/api/excel/excel.range) . La plage doit être une seule cellule.
-- `content`: Contenu du commentaire. Utilisez une chaîne pour les commentaires en texte brut. Utilisez un objet [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) pour les commentaires avec des [mentions](#mentions-preview).
+- `content`: Contenu du commentaire. Utilisez une chaîne pour les commentaires en texte brut. Utilisez un objet [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) pour les commentaires avec des [mentions](#mentions-online-only). 
 - `contentType`: Énumération [ContentType](/javascript/api/excel/excel.contenttype) spécifiant le type de contenu. La valeur par défaut est `ContentType.plain`.
 
 L’exemple de code suivant ajoute un commentaire à la cellule **A2**.
@@ -111,7 +111,7 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="resolve-comment-threads"></a>Résoudre les thèmes de commentaires
+## <a name="resolve-comment-threads-preview"></a>Résoudre les thèmes de commentaire ([Aperçu](../reference/requirement-sets/excel-preview-apis.md)) 
 
 Un thread de commentaire a une valeur `resolved`booléenne configurable, pour indiquer s’il est résolu. Une valeur de `true` signifie que le thread de commentaire est résolu. Une valeur de `false` signifie que le fil de commentaires est nouveau ou rouvert.
 
@@ -169,7 +169,7 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="mentions-preview"></a>Mentions (aperçu)
+## <a name="mentions-online-only"></a>Mentions ([en ligne uniquement](../reference/requirement-sets/excel-api-online-requirement-set.md)) 
 
 > [!NOTE]
 > Le commentaire mentionne les API sont actuellement disponibles uniquement en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]

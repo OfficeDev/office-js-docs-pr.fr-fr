@@ -3,16 +3,16 @@ title: Ensemble de conditions requises de l’API du complément Outlook 1.4
 description: ''
 ms.date: 10/30/2019
 localization_priority: Normal
-ms.openlocfilehash: cb4c8eecd63604aa633ade1a40eb5391b3a62ef2
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 4e0d20b5449483eb3f5737fcccd0b3cd0620382a
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165404"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325198"
 ---
 # <a name="outlook-add-in-api-requirement-set-14"></a>Ensemble de conditions requises de l’API du complément Outlook 1.4
 
-Le sous-ensemble de l’API pour le complément Outlook de l’interface API JavaScript pour Office comprend des objets, des méthodes, des propriétés et des événements à utiliser dans un complément Outlook.
+Le sous-ensemble d’API de complément Outlook de l’API JavaScript pour Office comprend des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un complément Outlook.
 
 > [!NOTE]
 > Dans cette documentation, l’[ensemble de conditions requises](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) présenté est différent de l’ensemble de conditions requises de la version précédente.

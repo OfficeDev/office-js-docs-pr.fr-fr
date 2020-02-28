@@ -3,12 +3,12 @@ title: Chargement de version test des compléments Office dans Office sur le we
 description: Tester votre complément Office dans Office sur le web par chargement de version test
 ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 869cabec737c39d7dded04fe7c52011347e0f314
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 43dafda913516119ba1aadaae24701865596205f
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42163583"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325037"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>Chargement de version test des compléments Office dans Office sur le web
 
@@ -27,11 +27,11 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 
 1. Ouvrez [Microsoft Office sur le web](https://office.live.com/).
 
-2. Dans **Commencer à utiliser les applications en ligne maintenant**, choisissez **Excel**, **Word** ou **PowerPoint**, puis ouvrez un document.
+2. Dans **commencer à utiliser les applications en ligne maintenant**, choisissez **Excel**, **Word**ou **PowerPoint**; puis ouvrez un nouveau document.
 
-3. Ouvrez l’onglet **Insérer** dans le ruban, puis dans la section **Compléments**, choisissez **Compléments Office**.
+3. Ouvrez l’onglet **Insérer** dans le ruban, puis dans la section **compléments** , choisissez **Compléments Office**.
 
-4. Dans la boîte de dialogue **Compléments Office**, sélectionnez l’onglet **MES COMPLÉMENTS**, choisissez **Gérer mes compléments**, puis **Télécharger mon complément**.
+4. Dans la boîte de dialogue **Compléments Office** , sélectionnez l’onglet **mes compléments** , choisissez **gérer mes compléments**, puis **Télécharger mon complément**.
 
     ![Boîte de dialogue Compléments Office avec une liste déroulante dans le coin supérieur droit indiquant « Gérer mes compléments » et une autre liste déroulante sous cette dernière avec l’option « Charger mon complément »](../images/office-add-ins-my-account.png)
 
@@ -54,7 +54,7 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 
 1. Connectez-vous à votre compte Office 365.
 
-2. Ouvrez le lanceur d’applications à l’extrémité gauche de la barre d’outils et sélectionnez **Excel**,  **Word** ou **PowerPoint**, puis créez un document.
+2. Ouvrez le lanceur d’applications à l’extrémité gauche de la barre d’outils et sélectionnez **Excel**, **Word**ou **PowerPoint**, puis créez un document.
 
 3. Les étapes 3 à 6 sont identiques à celles de la section précédente, **Chargement d’une version de test d’un complément Office dans Office sur le web**.
 

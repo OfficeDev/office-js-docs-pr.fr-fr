@@ -1,18 +1,18 @@
 ---
 title: API de complément Outlook
 description: Découvrez comment faire référence aux API de complément Outlook et déclarer des autorisations dans votre complément Outlook.
-ms.date: 10/31/2019
+ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 2abe365f1606789b1c6ac113b133019055767b28
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: bd7f3b5a1b52ec3ca7a48ae7a2d467c6cd30f1e4
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166229"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325469"
 ---
 # <a name="outlook-add-in-apis"></a>API de complément Outlook
 
-Pour utiliser des API dans votre complément Outlook, vous devez spécifier l’emplacement de la bibliothèque Office.js, l’ensemble des conditions requises, le schéma et les autorisations.
+Pour utiliser des API dans votre complément Outlook, vous devez spécifier l’emplacement de la bibliothèque Office.js, l’ensemble des conditions requises, le schéma et les autorisations. Vous utiliserez principalement les API JavaScript Office exposées par le biais de l’objet [Mailbox](#mailbox-object) .
 
 ## <a name="officejs-library"></a>Bibliothèque Office.js
 
@@ -26,7 +26,7 @@ Référencez le CDN dans une `<script>`balise`<head>` de la page web (fichier .h
 L’ajout de nouvelles API ne modifie pas l’URL vers Office.js. La version de l’URL sera modifiée uniquement si un comportement d’API existant est interrompu.
 
 > [!IMPORTANT]
-> Quand vous développez un complément pour une application hôte Office, référencez l’interface API JavaScript pour Office à partir de l’intérieur de la section `<head>` de la page. Ainsi, l’API est entièrement initialisée avant les éléments Body. Les hôtes Office exigent que les compléments soient initialisés 5 secondes après l’activation. Au-delà de ce délai, un message d’erreur indiquant que le complément ne répond pas s’affiche à l’écran.
+> Lorsque vous développez un complément pour une application hôte Office, référencez l’API JavaScript Office depuis l' `<head>` intérieur de la section de la page. Ainsi, l’API est entièrement initialisée avant les éléments Body. Les hôtes Office exigent que les compléments soient initialisés 5 secondes après l’activation. Au-delà de ce délai, un message d’erreur indiquant que le complément ne répond pas s’affiche à l’écran.
 
 ## <a name="requirement-sets"></a>Ensembles de conditions requises
 
@@ -66,6 +66,9 @@ Votre complément requiert les autorisations appropriées pour utiliser les API 
 
 En général, vous devez spécifier l’autorisation minimum nécessaire pour votre complément. Les autorisations sont déclarées dans l’élément `<Permissions>` dans le manifeste. Pour plus d’informations, consultez la rubrique [Manifestes des compléments Outlook](manifests.md). Pour plus d’informations sur les problèmes de sécurité, consultez la rubrique [Privacy and Security for Office Add-ins](../concepts/privacy-and-security.md).
 
+## <a name="mailbox-object"></a>Objet Mailbox
+
+[!include[information about Mailbox object](../includes/mailbox-object-desc.md)]
 
 ## <a name="see-also"></a>Voir aussi
 

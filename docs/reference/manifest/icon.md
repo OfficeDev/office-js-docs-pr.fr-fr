@@ -3,12 +3,12 @@ title: Élément Icon dans le fichier manifeste
 description: ''
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 45f3dcda8e74430cf70aa765efc6b3aae0e2b448
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: f428588aa206b1f38102b04d2f60a016813a48a6
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450617"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324854"
 ---
 # <a name="icon-element"></a>Icon, élément
 
@@ -28,7 +28,7 @@ Définit les éléments **Image** pour les contrôles de [bouton](control.md#but
 
 ### <a name="image"></a>Image
 
-Image du bouton. L’attribut  **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Image** dans l’élément **Images** dans l’élément [Resources](resources.md). L’attribut **size** indique la taille de l’image en pixels. Trois tailles d’image sont requises (16, 32 et 80 pixels) et cinq autres tailles sont prises en charge (20, 24, 40, 48 et 64 pixels).|
+Image du bouton. L’attribut **RESID** doit être défini sur la valeur de l' **attribut ID** d’un élément **image** dans l’élément **images** de l’élément [Resources](resources.md) . L’attribut **size** indique la taille de l’image en pixels. Trois tailles d’image sont requises (16, 32 et 80 pixels) et cinq autres tailles sont prises en charge (20, 24, 40, 48 et 64 pixels).|
 
 ```xml
 <Icon>

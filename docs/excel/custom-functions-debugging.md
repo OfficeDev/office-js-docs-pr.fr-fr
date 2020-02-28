@@ -3,12 +3,12 @@ ms.date: 07/10/2019
 description: Déboguez vos fonctions personnalisées dans Excel.
 title: Débogage des fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: 823f261af5dd50e8b965a421998234ceddd3551c
-ms.sourcegitcommit: 42bcf9059327a8d71a7ab223805aea68be9ed6b5
+ms.openlocfilehash: dc620d8bab50c5efb3b9d9ec4f79f6532605f48b
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "37962023"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324623"
 ---
 # <a name="custom-functions-debugging"></a>Débogage des fonctions personnalisées
 
@@ -82,11 +82,11 @@ Vous pouvez utiliser le code VS pour déboguer des fonctions personnalisées dan
 ### <a name="sideload-your-add-in"></a>Charger une version test de votre complément
 
 1. Sélectionnez l’onglet **Insérer** dans le ruban, puis dans la section **compléments** , choisissez **Compléments Office**.
-2. Dans la boîte de dialogue **Compléments Office**, sélectionnez l’onglet **MES COMPLÉMENTS**, choisissez **Gérer mes compléments**, puis **Télécharger mon complément**.
+2. Dans la boîte de dialogue **Compléments Office** , sélectionnez l’onglet **mes compléments** , choisissez **gérer mes compléments**, puis **Télécharger mon complément**.
     
     ![Boîte de dialogue Compléments Office avec une liste déroulante dans le coin supérieur droit indiquant « Gérer mes compléments » et une autre liste déroulante sous cette dernière avec l’option « Charger mon complément »](../images/office-add-ins-my-account.png)
 
-3.  **Accédez** au fichier manifeste du complément, puis sélectionnez **Télécharger**.
+3. **Accédez** au fichier manifeste du complément, puis sélectionnez **Télécharger**.
     
     ![Boîte de dialogue de téléchargement de complément avec des boutons pour parcourir, télécharger et annuler.](../images/upload-add-in.png)
 
@@ -110,12 +110,12 @@ Vous pouvez utiliser les outils de développement de navigateur pour déboguer d
 
 1. Ouvrez [Microsoft Office sur le web](https://office.live.com/).
 2. Ouvrez un nouveau classeur Excel.
-3. Ouvrez l’onglet **Insérer** dans le ruban, puis dans la section **Compléments**, choisissez **Compléments Office**.
-4. Dans la boîte de dialogue **Compléments Office**, sélectionnez l’onglet **MES COMPLÉMENTS**, choisissez **Gérer mes compléments**, puis **Télécharger mon complément**.
+3. Ouvrez l’onglet **Insérer** dans le ruban, puis dans la section **compléments** , choisissez **Compléments Office**.
+4. Dans la boîte de dialogue **Compléments Office** , sélectionnez l’onglet **mes compléments** , choisissez **gérer mes compléments**, puis **Télécharger mon complément**.
     
     ![Boîte de dialogue Compléments Office avec une liste déroulante dans le coin supérieur droit indiquant « Gérer mes compléments » et une autre liste déroulante sous cette dernière avec l’option « Charger mon complément »](../images/office-add-ins-my-account.png)
 
-5.  **Accédez** au fichier manifeste du complément, puis sélectionnez **Télécharger**.
+5. **Accédez** au fichier manifeste du complément, puis sélectionnez **Télécharger**.
     
     ![Boîte de dialogue de téléchargement de complément avec des boutons pour parcourir, télécharger et annuler.](../images/upload-add-in.png)
 

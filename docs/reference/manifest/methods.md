@@ -3,16 +3,16 @@ title: Élément Methods dans le fichier manifeste
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 0d295c2657ef03451c26a324410a684490a180fb
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 52e12de0fde9fa1ede4687c3f27707d1dc3dce5f
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32452094"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325254"
 ---
 # <a name="methods-element"></a>Élément Methods
 
-Spécifie la liste des méthodes d’API JavaScript pour Office nécessaires à l’activation de votre complément Office.
+Spécifie la liste des méthodes de l’API JavaScript pour Office que votre complément Office requiert pour l’activation.
 
 **Type de complément :** Application de contenu et de volet Office
 
@@ -34,5 +34,5 @@ Spécifie la liste des méthodes d’API JavaScript pour Office nécessaires à 
 
 ## <a name="remarks"></a>Remarques
 
-Les éléments **Methods** et **Method** ne sont pas pris en charge par les compléments de messagerie. Pour plus d’informations sur les ensembles de spécifications, voir l’article relatif à : [Versions Office et jeux de conditions requises](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Les **méthodes** et les éléments **Method** ne sont pas pris en charge dans les compléments de messagerie. Pour plus d’informations sur les ensembles de conditions requises, voir [versions d’Office et ensembles de conditions requises](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 

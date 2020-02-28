@@ -3,33 +3,33 @@ title: Créer un complément Project qui utilise REST avec un service OData Proj
 description: ''
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 604bb566a8bd7623da5dde8eaa78bc67b59a3c27
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 73099f244ef68fc1633adc9b842f64830761805f
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950746"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324911"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>Créer un complément Project qui utilise REST avec un service OData Project Server local
 
-Cet article décrit comment créer un complément de volet Office pour Project Professionnel 2013, qui compare les données de coût et les données de travail du projet actif avec les moyennes de tous les projets de l’instance actuelle de Project Web App. Le complément utilise REST avec la bibliothèque jQuery pour accéder au service de création de rapports OData **ProjectData** dans Project Server 2013.
+Cet article explique comment créer un complément du volet Office pour Project Professional 2013 qui compare les données de coût et de travail du projet actif avec les moyennes de tous les projets de l’instance Project Web App actuelle. Le complément utilise REST avec la bibliothèque jQuery pour accéder au service de création de rapports OData **ProjectData** dans Project Server 2013.
 
 Le code de cet article est basé sur un exemple développé par Saurabh Sanghvi et Arvind Iyer, Microsoft Corporation.
 
 ## <a name="prerequisites-for-creating-a-task-pane-add-in-that-reads-project-server-reporting-data"></a>Conditions requises pour la création d’un complément du volet Office qui lit les données de rapport Project Server
 
-Voici les conditions requises pour la création d’un complément du volet Office pour Project qui lit les informations du service **ProjectData** d’une instance de Project Web App dans une installation locale de Project Server 2013 :
+Les conditions requises pour la création d’un complément de volet de tâches de projet qui lit le service **ProjectData** d’une instance Project Web App dans une installation locale de project Server 2013 sont les suivantes :
 
 - Assurez-vous d’avoir installé les mises à jour Windows et les Service Packs les plus récents sur votre ordinateur de développement local. Le système d’exploitation peut être Windows 7, Windows 8, Windows Server 2008 ou Windows Server 2012.
 
-- Project Professionnel 2013 est nécessaire pour la connexion à Project Web App. Project Professionnel 2013 doit être installé sur l’ordinateur de développement pour permettre le débogage avec Visual Studio via la touche  **F5**.
+- Project Professional 2013 est nécessaire pour se connecter à Project Web App. Project Professionnel 2013 doit être installé sur l’ordinateur de développement pour pouvoir activer le débogage **F5** avec Visual Studio.
 
     > [!NOTE]
     > Project Standard 2013 peut également héberger des compléments de volet Office, mais ne peut pas se connecter à Project Web App.
 
 - Visual Studio 2015 avec Outils de développement Office pour Visual Studio comprend des modèles permettant de créer des Compléments Office et SharePoint. Assurez-vous que vous avez installé la version la plus récente des outils de développement Office. Consultez la section  _Outils_ de la page relative aux [téléchargements de compléments Office et SharePoint](https://developer.microsoft.com/office/docs)
 
-- Les procédures et les exemples de code de cet article accèdent au service **ProjectData** de Project Server 2013 dans un domaine local. Les méthodes jQuery de cet article ne fonctionnent pas avec Project sur le web.
+- Les procédures et les exemples de code dans cet article accèdent au service **ProjectData** de Project Server 2013 dans un domaine local. Les méthodes jQuery de cet article ne fonctionnent pas avec Project sur le Web.
 
     Vérifiez que le service **ProjectData** est accessible à partir de votre ordinateur de développement.
 
@@ -37,7 +37,7 @@ Voici les conditions requises pour la création d’un complément du volet Offi
 
 1. Pour permettre à votre navigateur d’afficher directement les données XML à partir d’une requête REST, désactivez le mode Lecture du flux. Pour plus d’informations sur la façon d’y parvenir dans Internet Explorer, voir la procédure 1, étape 4 dans [Interrogation des flux OData pour les données de création de rapports Project](/previous-versions/office/project-odata/jj163048(v=office.15)).
 
-2. Interrogez le service **ProjectData** en utilisant l’URL suivante dans votre navigateur : **http://ServerName /ProjectServerName /_api/ProjectData**. Par exemple, si l’instance Project Web App est `http://MyServer/pwa`, le navigateur affiche les résultats suivants :
+2. Interrogez le service **ProjectData** à l’aide de votre navigateur avec l’URL suivante : ** http://ServerName /ProjectServerName/_API/ProjectData**. Par exemple, si l’instance Project Web App est `http://MyServer/pwa`, le navigateur affiche les résultats suivants :
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -61,47 +61,47 @@ Voici les conditions requises pour la création d’un complément du volet Offi
 
 ## <a name="using-visual-studio-to-create-a-task-pane-add-in-for-project"></a>Utilisation de Visual Studio pour créer un complément du volet Office pour Project
 
-Outils de développement Office pour Visual Studio comprend un modèle pour les compléments du volet Office pour Project 2013. Si vous créez une solution nommée  **HelloProjectOData**, celle-ci contient les deux projets Visual Studio suivants :
+Les outils de développement Office pour Visual Studio incluent un modèle de compléments de volet de tâches pour le projet 2013. Si vous créez une solution nommée **HelloProjectOData**, la solution contient les deux projets Visual Studio suivants :
 
-- Le projet de complément prend le nom de la solution. Il inclut le fichier manifeste XML du complément et cible .NET Framework 4.5. La procédure 3 montre les étapes qui permettent de modifier le manifeste du complément  **HelloProjectOData**.
+- Le projet de complément prend le nom de la solution. Il inclut le fichier manifeste XML pour le complément et cible .NET Framework 4,5. La procédure 3 montre les étapes à suivre pour modifier le manifeste pour le complément **HelloProjectOData** .
 
-- Le projet web est nommé  **HelloProjectODataWeb**. Il comprend les pages web, les fichiers JavaScript, les fichiers CSS, les images, les références et les fichiers de configuration du contenu web dans le volet Office. Le projet cible .NET Framework 4. Les procédures 4 et 5 montrent comment modifier les fichiers du projet web pour créer les fonctionnalités du complément  **HelloProjectOData**.
+- Le projet Web est nommé **HelloProjectODataWeb**. Elle inclut les pages Web, les fichiers JavaScript, les fichiers CSS, les images, les références et les fichiers de configuration pour le contenu Web dans le volet Office. Le projet Web cible .NET Framework 4. La procédure 4 et la procédure 5 montrent comment modifier les fichiers dans le projet Web pour créer les fonctionnalités du complément **HelloProjectOData** .
 
 ### <a name="procedure-2-to-create-the-helloprojectodata-add-in-for-project"></a>Procédure 2. Pour créer le complément HelloProjectOData pour Project
 
-1. Exécutez Visual Studio 2015 en tant qu’administrateur, puis sélectionnez  **Nouveau projet** sur la page de démarrage.
+1. Exécutez Visual Studio 2015 en tant qu’administrateur, puis sélectionnez **nouveau projet** sur la page de démarrage.
 
-2. Dans la boîte de dialogue **Nouveau projet**, développez les **modèles**,  **Visual C#** et les nœuds **Office/SharePoint**, puis sélectionnez ** Compléments Office**. Sélectionnez **.NET Framework 4.5.2** dans la liste déroulante du cadre cible en haut du volet central, puis sélectionnez **Complément Office** (voir capture d’écran suivante).
+2. Dans la boîte de dialogue **nouveau projet** , développez les nœuds **modèles**, **Visual C#** et **Office/SharePoint** , puis sélectionnez * * Compléments Office * *. Sélectionnez **.NET Framework 4.5.2** dans la liste déroulante Framework cible en haut du volet central, puis sélectionnez **complément Office** (voir la capture d’écran suivante).
 
-3. Pour placer les deux projets Visual Studio dans le même répertoire, sélectionnez  **Créer le répertoire pour la solution**, puis accédez à l’emplacement de votre choix.
+3. Pour placer les deux projets Visual Studio dans le même répertoire, sélectionnez **Créer le répertoire pour la solution**, puis accédez à l’emplacement de votre choix.
 
-4. Dans le champ **Nom**, tapez HelloProjectOData, puis choisissez **OK**.
+4. Dans le champ **nom** , tapez helloprojectodata, puis choisissez **OK**.
 
     *Figure 1. Création d’un complément Office*
 
     ![Création d’un complément Office](../images/pj15-hello-project-o-data-creating-app.png)
 
-5. Dans la boîte de dialogue **Choisir le type de complément**, sélectionnez **Volet Office** et choisissez **Suivant** (voir la capture d’écran suivante).
+5. Dans la boîte de dialogue **Choisir le type de complément**, sélectionnez **Volet Office** et choisissez **Suivant** (voir la capture d’écran suivante).
 
     *Figure 2. Choix du type de complément à créer*
 
     ![Choix du type de complément à créer](../images/pj15-hello-project-o-data-choose-project.png)
 
-6. Dans la boîte de dialogue  **Choisir les applications hôtes**, désélectionnez toutes les cases, sauf la case  **Project** (voir la capture d’écran suivante) et cliquez sur **Terminer**.
+6. Dans la boîte de dialogue **Choisir les applications hôtes**, désélectionnez toutes les cases, sauf la case **Project** (voir la capture d’écran suivante) et cliquez sur **Terminer**.
 
     *Figure 3. Choix de l’application hôte*
 
     ![Sélection d’un projet comme application hôte unique](../images/create-office-add-in.png)
 
-    Visual Studio crée les projets **HelloProjectOdata** et **HelloProjectODataWeb**.
+    Visual Studio crée le projet **HelloProjectOdata** et le projet **HelloProjectODataWeb** .
 
-Le dossier **AddIn** (voir la capture d’écran suivante) contient le fichier App.css pour les styles CSS personnalisés. Dans le sous-dossier **Home**, le fichier Home.html contient des références aux fichiers CSS et aux fichiers JavaScript utilisés par le complément, et le contenu HTML5 pour le complément. Par ailleurs, le fichier Home.js est pour votre code JavaScript personnalisé. Le dossier **Scripts** inclut les fichiers de bibliothèque jQuery. Le sous-dossier **Office** comprend les bibliothèques JavaScript telles que office.js et project-15.js, ainsi que les bibliothèques de langage pour les chaînes standard dans les compléments Office. Dans le dossier **Content**, le fichier Office.css contient les styles par défaut pour tous les compléments Office.
+Le dossier **AddIn** (voir la capture d’écran suivante) contient le fichier App.css pour les styles CSS personnalisés. Dans le sous-dossier **Home**, le fichier Home.html contient des références aux fichiers CSS et aux fichiers JavaScript utilisés par le complément, et le contenu HTML5 pour le complément. Par ailleurs, le fichier Home.js est pour votre code JavaScript personnalisé. Le dossier **Scripts** inclut les fichiers de bibliothèque jQuery. Le sous-dossier **Office** comprend les bibliothèques JavaScript telles que office.js et project-15.js, ainsi que les bibliothèques de langage pour les chaînes standard dans les compléments Office. Dans le dossier **Content**, le fichier Office.css contient les styles par défaut pour tous les compléments Office.
 
 *Figure 4. Affichage des fichiers de projet web par défaut dans l’Explorateur de solutions*
 
 ![Affichage des fichiers de projet web dans l’Explorateur de solutions](../images/pj15-hello-project-o-data-initial-solution-explorer.png)
 
-Le manifeste du projet  **HelloProjectOData** est représenté par le fichier HelloProjectOData.xml. Vous pouvez éventuellement modifier le manifeste afin d’y ajouter une description du complément, une référence à une icône, des informations sur les langues supplémentaires et bien d’autres paramètres. La procédure 3 modifie simplement le nom d’affichage et la description du complément. En outre, elle ajoute une icône.
+Le manifeste pour le projet **HelloProjectOData** est le fichier HelloProjectOData. Xml. Vous pouvez éventuellement modifier le manifeste pour ajouter une description du complément, une référence à une icône, des informations pour des langues supplémentaires et d’autres paramètres. La procédure 3 modifie simplement le nom d’affichage et la description du complément, puis ajoute une icône.
 
 Pour plus d’informations sur le manifeste, reportez-vous à la rubrique [Manifeste XML des compléments Office](../develop/add-in-manifests.md) et [Informations de référence sur le schéma des manifestes des applications pour Office (version 1.1)](../develop/add-in-manifests.md#see-also).
 
@@ -109,23 +109,23 @@ Pour plus d’informations sur le manifeste, reportez-vous à la rubrique [Manif
 
 1. Dans Visual Studio, ouvrez le fichier HelloProjectOData.xml.
 
-2. Le nom d’affichage par défaut est le nom du projet Visual Studio (« HelloProjectOData »). Par exemple, remplacez la valeur par défaut de l’élément  **DisplayName** par"Hello ProjectData".
+2. Le nom d’affichage par défaut est le nom du projet Visual Studio (« HelloProjectOData »). Par exemple, remplacez la valeur par défaut de l’élément **DisplayName** par "Hello ProjectData".
 
 3. La description par défaut est également « HelloProjectOData ». Par exemple, remplacez la valeur par défaut de l’élément Description par "Test REST queries of the ProjectData service".
 
-4. Ajoutez une icône à afficher dans la liste déroulante **Compléments Office** sous l’onglet **PROJECT** du ruban. Vous pouvez ajouter un fichier d’icône dans la solution Visual Studio ou utiliser une URL pour une icône. 
+4. Ajoutez une icône à afficher dans la liste déroulante **Compléments Office** sous l’onglet **projet** du ruban. Vous pouvez ajouter un fichier d’icône dans la solution Visual Studio ou utiliser une URL pour une icône. 
 
 Les étapes suivantes montrent comment ajouter un fichier d’icône à la solution Visual Studio :
 
-1. Dans l’ **Explorateur de solutions**, accédez au dossier intitulé Images.
+1. Dans l' **Explorateur de solutions**, accédez au dossier nommé images.
 
-2. Pour pouvoir être affichée dans la liste déroulante **Compléments Office**, l’icône doit avoir une taille de 32 x 32 pixels. Par exemple, installez le Kit de développement logiciel (SDK) de Project 2013, puis sélectionnez le dossier **Images** et ajoutez le fichier suivant à partir du Kit de développement logiciel (SDK) : `\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`
+2. Pour être affiché dans la liste déroulante des **Compléments Office** , l’icône doit être 32 x 32 pixels. Par exemple, installez le kit de développement logiciel (SDK) Project 2013, puis choisissez le dossier **images** et ajoutez le fichier suivant à partir du kit de développement logiciel (SDK) :`\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`
 
     Vous pouvez également utiliser votre propre icône 32 x 32. Sinon, copiez l’image suivante dans un fichier nommé NewIcon.png, puis ajoutez ce fichier dans le dossier `HelloProjectODataWeb\Images` :
 
     ![Icône de l’application HelloProjectOData](../images/pj15-hello-project-data-new-icon.jpg)
 
-3. Dans le manifeste HelloProjectOData.xml, ajoutez un élément **IconUrl** sous l’élément **Description**, où la valeur de l’URL de l’icône correspond au chemin d’accès relatif du fichier d’icône 32 x 32 pixels. Par exemple, ajoutez la ligne suivante : **<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />**. Le fichier de manifeste HelloProjectOData.xml contient désormais ceci (votre valeur **Id** sera différente) :
+3. Dans le manifeste HelloProjectOData. xml, ajoutez un élément **IconUrl** sous l’élément **Description** , où la valeur de l’URL de l’icône est le chemin d’accès relatif au fichier d’icône 32x32. Par exemple, ajoutez la ligne suivante : **<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />**. Le fichier manifeste HelloProjectOData. xml contient désormais les éléments suivants (votre valeur **ID** sera différente) :
 
     ```XML
     <?xml version="1.0" encoding="UTF-8"?>
@@ -152,35 +152,35 @@ Les étapes suivantes montrent comment ajouter un fichier d’icône à la solut
 
 ## <a name="creating-the-html-content-for-the-helloprojectodata-add-in"></a>Création du contenu HTML pour le complément HelloProjectOData
 
-Le complément  **HelloProjectOData** est un exemple qui inclut une sortie de débogage et d’erreur ; il n’est pas conçu pour une utilisation en production. Avant de commencer à coder le contenu HTML, concevez l’interface utilisateur et l’expérience utilisateur du complément, et définissez également les fonctions JavaScript qui interagissent avec le code HTML. Pour plus d’informations, voir[Instructions de conception pour les compléments Office](../design/add-in-design.md). 
+Le complément **HelloProjectOData** est un exemple qui inclut le débogage et la sortie d’erreur ; Il n’est pas destiné à une utilisation de production. Avant de commencer à coder le contenu HTML, concevez l’interface utilisateur et l’expérience utilisateur pour le complément, et présentez les fonctions JavaScript qui interagissent avec le code HTML. Pour plus d’informations, consultez la rubrique[instructions de conception pour les compléments Office](../design/add-in-design.md). 
 
-Le volet Office indique le nom d’affichage du complément tout en haut, qui représente la valeur de l’élément  **DisplayName** dans le manifeste. L’élément **body** du fichier HelloProjectOData.html contient les autres éléments d’interface utilisateur, comme suit :
+Le volet Office affiche le nom complet du complément en haut, qui est la valeur de l’élément **DisplayName** dans le manifeste. L’élément **Body** dans le fichier HelloProjectOData. html contient les autres éléments de l’interface utilisateur, comme suit :
 
-- Un sous-titre indique la fonctionnalité générale ou le type de l’opération, par exemple  **ODATA REST QUERY**.
+- Un sous-titre indique la fonctionnalité générale ou le type de l’opération, par exemple **ODATA REST QUERY**.
 
-- Le bouton  **Obtenir le point de terminaison ProjectData** appelle la fonction **setOdataUrl** pour obtenir le point de terminaison du service **ProjectData**, puis l’affiche dans une zone de texte. Si Project n’est pas connecté à Project Web App, le complément appelle un gestionnaire d’erreur afin d’afficher un message d’erreur dans une fenêtre contextuelle.
+- Le bouton **obtenir le point de terminaison ProjectData** appelle la `setOdataUrl` fonction pour obtenir le point de terminaison du service **ProjectData** , puis l’affiche dans une zone de texte. Si Project n’est pas connecté à Project Web App, le complément appelle un gestionnaire d’erreurs pour afficher un message d’erreur contextuel.
 
-- Le bouton  **Comparer tous les projets** est désactivé jusqu’à ce que le complément obtienne un point de terminaison OData valide. Quand vous cliquez sur le bouton, il appelle la fonction **retrieveOData**, qui utilise une requête REST pour obtenir les données de coût et de travail du projet à partir du service  **ProjectData**.
+- Le bouton **comparer tous les projets** est désactivé jusqu’à ce que le complément récupère un point de terminaison OData valide. Lorsque vous sélectionnez le bouton, la `retrieveOData` fonction est appelée, ce qui fait appel à une requête REST pour obtenir les données de coût et de travail du projet à partir du service **ProjectData** .
 
-- Un tableau affiche les valeurs moyennes relatives au coût du projet, au coût réel, au travail et au pourcentage achevé. Le tableau compare également les valeurs actuelles du projet actif à la moyenne. Si la valeur actuelle est supérieure à la moyenne de tous les projets, elle est affichée en rouge. Si la valeur actuelle est inférieure à la moyenne, la valeur est affichée en vert. Si la valeur actuelle n’est pas disponible, le tableau affiche  **NA** en bleu.
+- Un tableau affiche les valeurs moyennes relatives au coût du projet, au coût réel, au travail et au pourcentage achevé. Le tableau compare également les valeurs actuelles du projet actif à la moyenne. Si la valeur actuelle est supérieure à la moyenne de tous les projets, elle est affichée en rouge. Si la valeur actuelle est inférieure à la moyenne, la valeur est affichée en vert. Si la valeur actuelle n’est pas disponible, le tableau affiche **NA** en bleu.
 
-    La fonction **retrieveOData** appelle la fonction **parseODataResult**, qui calcule et affiche les valeurs du tableau.
+    La `retrieveOData` fonction appelle la `parseODataResult` fonction, qui calcule et affiche les valeurs du tableau.
 
     > [!NOTE]
-    > Dans cet exemple, les données de coût et de travail du projet actif sont dérivées des valeurs publiées. Si vous modifiez des valeurs dans Project, le service **ProjectData** ne dispose pas des modifications tant que le projet n’est pas publié.
+    > Dans cet exemple, les données relatives au coût et au travail pour le projet actif sont dérivées des valeurs publiées. Si vous modifiez les valeurs dans Project, le service **ProjectData** ne dispose pas des modifications tant que le projet n’est pas publié.
 
 ### <a name="procedure-4-to-create-the-html-content"></a>Procédure 4. Pour créer du contenu HTML
 
-1. Dans l’élément  **head** du fichier Home.html, ajoutez des éléments **link** supplémentaires pour les fichiers CSS utilisés par votre complément. Le modèle de projet Visual Studio inclut un lien pour le fichier App.css que vous pouvez utiliser pour des styles CSS personnalisés.
+1. Dans l’élément **Head** du fichier Home. html, ajoutez tous les éléments de **lien** supplémentaires pour les fichiers CSS utilisés par votre complément. Le modèle de projet Visual Studio inclut un lien pour le fichier app. CSS que vous pouvez utiliser pour les styles CSS personnalisés.
 
-2. Ajoutez les éléments  **script** supplémentaires pour les bibliothèques JavaScript utilisées par votre complément. Le modèle de projet comprend des liens pour les fichiers jQuery- _ [version]_.js, office.js et MicrosoftAjax.js dans le dossier  **Scripts**.
+2. Ajoutez des éléments **script** supplémentaires pour les bibliothèques JavaScript utilisées par votre complément. Le modèle de projet inclut des liens pour les fichiers jQuery- _[version]_. js, Office. js et MicrosoftAjax. js dans le dossier **scripts** .
 
     > [!NOTE]
     > Avant de déployer le complément, remplacez la référence à office.js et celle à jQuery par la référence au réseau de distribution de contenu. Cette dernière permet d’accéder à la version la plus récente et d’obtenir de meilleures performances.
 
-    Le complément **HelloProjectOData** utilise également le fichier SurfaceErrors.js, qui affiche les erreurs dans un message contextuel. Vous pouvez copier le code à partir de la section _Robust Programming_ de la page [Créer votre premier complément du volet Office pour Project 2013 à l’aide d’un éditeur de texte](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md), puis ajoutez un fichier SurfaceErrors.js dans le dossier **Scripts\Office** du projet **HelloProjectODataWeb**.
+    Le complément **HelloProjectOData** utilise également le fichier SurfaceErrors. js, qui affiche les erreurs dans un message contextuel. Vous pouvez copier le code à partir de la section _programmation fiable_ de la section [créer votre premier complément du volet Office pour le projet 2013 à l’aide d’un éditeur de texte](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md), puis ajouter un fichier SurfaceErrors. js dans le dossier **Scripts\Office** du projet **HelloProjectODataWeb** .
 
-    Voici le code HTML mis à jour pour l’élément **head**, avec la ligne supplémentaire pour le fichier SurfaceErrors.js :
+    Voici le code HTML mis à jour pour l’élément **Head** , avec la ligne supplémentaire pour le fichier SurfaceErrors. js :
 
     ```HTML
     <!DOCTYPE html>
@@ -216,9 +216,9 @@ Le volet Office indique le nom d’affichage du complément tout en haut, qui re
     </html>
     ```
 
-3. Dans l’élément **body**, supprimez le code existant du modèle, puis ajoutez le code de l’interface utilisateur. Si un élément doit être rempli avec des données ou manipulé par une instruction jQuery, l’élément doit inclure un attribut  **id** unique. Dans le code suivant, les attributs **id** des éléments **button**, **span** et **td** (définition de cellule de tableau) utilisés par les fonctions jQuery sont affichés en caractères gras.
+3. Dans l’élément **Body** , supprimez le code existant du modèle, puis ajoutez le code de l’interface utilisateur. Si un élément doit être rempli de données ou manipulé par une instruction jQuery, l’élément doit inclure un attribut **ID** unique. Dans le code suivant, les attributs **ID** pour les éléments **Button**, **span**et **TD** (définition de cellule de table) que les fonctions jQuery utilisent sont affichés en gras.
 
-   Le code HTML suivant ajoute une image graphique, pouvant être un logo d’entreprise. Vous pouvez utiliser un logo de votre choix ou copier le fichier NewLogo.png à partir du téléchargement du Kit de développement logiciel (SDK) de Project 2013, puis utiliser l’**Explorateur de solutions** pour ajouter le fichier au dossier `HelloProjectODataWeb\Images`.
+   Le code HTML suivant ajoute une image graphique, qui peut être un logo d’entreprise. Vous pouvez utiliser un logo de votre choix ou copier le fichier NewLogo. png à partir du téléchargement du kit de développement logiciel (SDK) de Project 2013, puis utiliser l' `HelloProjectODataWeb\Images` Explorateur de **solutions** pour ajouter le fichier au dossier.
 
     ```HTML
     <body>
@@ -276,15 +276,15 @@ Le volet Office indique le nom d’affichage du complément tout en haut, qui re
 
 ## <a name="creating-the-javascript-code-for-the-add-in"></a>Création du code JavaScript pour le complément
 
-Le modèle d’un complément du volet Office pour Project comprend le code d’initialisation par défaut conçu pour illustrer les actions de base en matière d’obtention et de définition des données d’un document pour un complément Office 2013 classique. Comme Project 2013 ne prend pas en charge les actions d’écriture dans le projet actif et que le complément  **HelloProjectOData** n’utilise pas la méthode **getSelectedDataAsync**, vous pouvez supprimer le script contenu dans la fonction  **Office.initialize**. En outre, vous pouvez également supprimer les fonctions  **setData** et **getData** dans le fichier HelloProjectOData.js par défaut.
+Le modèle pour un complément de volet de tâches de projet inclut le code d’initialisation par défaut qui est conçu pour illustrer les actions Get et set de base des données dans un document pour un complément Office 2013 standard. Étant donné que le projet 2013 ne prend pas en charge les actions qui écrivent **** dans le projet actif et que le complément `getSelectedDataAsync` HelloProjectOData n’utilise pas la méthode, vous pouvez `Office.initialize` supprimer le script dans la `setData` fonction et `getData` supprimer la fonction et la fonction dans le fichier HelloProjectOData. js par défaut.
 
-JavaScript comprend des constantes globales pour la requête REST et des variables globales qui sont utilisées dans plusieurs fonctions. Le bouton  **Obtenir le point de terminaison ProjectData** appelle la fonction **setOdataUrl** qui initialise les variables globales et détermine si Project est connecté à Project Web App.
+JavaScript inclut des constantes globales pour la requête REST et des variables globales qui sont utilisées dans plusieurs fonctions. Le bouton **obtenir le point de terminaison ProjectData** appelle la `setOdataUrl` fonction, qui initialise les variables globales et détermine si le projet est connecté à Project Web App.
 
-Le reste du fichier HelloProjectOData.js comprend deux fonctions : la fonction  **retrieveOData** est appelée quand l’utilisateur sélectionne **Comparer tous les projets**. Par ailleurs, la fonction  **parseODataResult** calcule les moyennes, puis remplit le tableau de comparaison avec des valeurs mises en forme à l’aide des couleurs et des unités appropriées.
+Le reste du fichier HelloProjectOData. js comprend deux fonctions : la `retrieveOData` fonction est appelée lorsque l’utilisateur sélectionne **comparer tous les projets**; la `parseODataResult` fonction calcule les moyennes, puis remplit le tableau de comparaison avec les valeurs mises en forme pour la couleur et les unités.
 
 ### <a name="procedure-5-to-create-the-javascript-code"></a>Procédure 5. Pour créer du code JavaScript
 
-1. Supprimez tout le code du fichier HelloProjectOData.js par défaut, puis ajoutez les variables globales et la fonction  **Office.initialize**. Les noms de variables en majuscules impliquent qu’il s’agit de constantes. Ces dernières sont ensuite utilisées avec la variable  **_pwa** pour créer la requête REST de cet exemple.
+1. Supprimez tout le code dans le fichier HelloProjectOData. js par défaut, puis ajoutez les variables `**`globales et la fonction Office. Initialize. Les noms de variable qui sont tous des majuscules signifient qu’il s’agit de constantes ; elles sont ensuite utilisées avec la variable **_pwa** pour créer la requête Rest dans cet exemple.
 
     ```js
     var PROJDATA = "/_api/ProjectData";
@@ -306,10 +306,10 @@ Le reste du fichier HelloProjectOData.js comprend deux fonctions : la fonction  
     }
     ```
 
-2. Ajoutez  **setOdataUrl** et les fonctions connexes. La fonction **setOdataUrl** appelle **getProjectGuid** et **getDocumentUrl** pour initialiser les variables globales. Dans la [méthode getProjectFieldAsync](/javascript/api/office/office.document), la fonction anonyme du paramètre  _callback_ active le bouton **Comparer tous les projets** en utilisant la méthode **removeAttr** de la bibliothèque jQuery, puis affiche l’URL du service **ProjectData**. Si Project n’est pas connecté à Project Web App, la fonction génère une erreur, ce qui entraîne l’affichage d’un message d’erreur dans une fenêtre contextuelle. Le fichier SurfaceErrors.js inclut la méthode  **throwError**.
+2. Ajouter `setOdataUrl` des fonctions connexes. La `setOdataUrl` fonction appelle `getProjectGuid` et `getDocumentUrl` initialise les variables globales. Dans la [méthode getProjectFieldAsync](/javascript/api/office/office.document), la fonction anonyme pour le paramètre _callback_ active le bouton **comparer tous les projets** à l' `removeAttr` aide de la méthode dans la bibliothèque jQuery, puis affiche l’URL du service **ProjectData** . Si Project n’est pas connecté à Project Web App, la fonction génère une erreur, qui affiche un message d’erreur contextuel. Le fichier SurfaceErrors. js inclut la `throwError` méthode.
 
    > [!NOTE]
-   > Si vous exécutez Visual Studio sur l’ordinateur Project Server, pour utiliser le débogage **F5**, supprimez le commentaire du code après la ligne qui initialise la variable globale **_pwa**. Pour permettre l’utilisation de la méthode **ajax** jQuery lors du débogage sur l’ordinateur Project Server, vous devez définir la valeur **localhost** pour l’URL PWA. Si vous exécutez Visual Studio sur un ordinateur distant, l’URL **localhost** n’est pas nécessaire. Avant de déployer le complément, commentez le code.
+   > Si vous exécutez Visual Studio sur l’ordinateur Project Server, pour utiliser le débogage **F5** , supprimez les marques de commentaire du code après la ligne qui initialise la variable globale **_pwa** . Pour activer l’utilisation de `ajax` la méthode jQuery lors du débogage sur l’ordinateur Project Server, vous devez `localhost` définir la valeur de l’URL PWA. Si vous exécutez Visual Studio sur un ordinateur distant, l' `localhost` URL n’est pas obligatoire. Avant de déployer le complément, mettez en commentaire ce code.
 
     ```js
     function setOdataUrl() {
@@ -367,17 +367,15 @@ Le reste du fichier HelloProjectOData.js comprend deux fonctions : la fonction  
     }
     ```
 
-3. Ajoutez la fonction  **retrieveOData**, qui concatène les valeurs de la requête REST, puis appelle la fonction  **ajax** dans jQuery pour obtenir les données demandées à partir du service **ProjectData**. La variable  **support.cors** active le partage des ressources CORS (Cross-Origin Resource Sharing) avec la fonction **ajax**. Si l’instruction  **support.cors** est manquante ou a la valeur **false**, la fonction  **ajax** retourne l’erreur **Aucun transport**.
+3. Ajoutez la `retrieveOData` fonction, qui concatène les valeurs de la requête REST, puis appelle la `ajax` fonction dans jQuery pour obtenir les données demandées à partir du service **ProjectData** . La variable **support. cors** active le partage de ressources entre origines (cors) avec `ajax` la fonction. Si l’instruction **support. cors** est manquante ou est définie sur **false**, la `ajax` fonction **ne renvoie aucune** erreur de transport.
 
    > [!NOTE]
    > Le code suivant fonctionne avec une installation locale de Project Server 2013. Pour Project sur le web, vous pouvez utiliser OAuth pour l’authentification basée sur le jeton. Pour plus d’informations, voir [Résolutions des limites de stratégie d’origine identique dans les compléments Office](../develop/addressing-same-origin-policy-limitations.md).
 
-   Dans l’appel **ajax**, vous pouvez utiliser le paramètre _headers_ ou le paramètre _beforeSend_. Le paramètre _complete_ est une fonction anonyme. Il peut figurer dans la même portée que les variables dans **retrieveOData**. La fonction pour le paramètre _complete_ affiche les résultats dans le contrôle **odataText** et appelle également la méthode **parseODataResult** pour analyser et afficher la réponse JSON. Le paramètre _error_ spécifie la fonction **getProjectDataErrorHandler** nommée qui écrit un message d’erreur sur le contrôle **odataText** et utilise également la méthode **throwError** pour afficher un message.
+   Dans l' `ajax` appel, vous pouvez utiliser soit le paramètre _headers_ , soit le paramètre _beforeSend_ . Le paramètre _Complete_ est une fonction anonyme de sorte qu’elle se trouve dans la même étendue que `retrieveOData`les variables dans. La fonction pour le paramètre _Complete_ affiche les résultats `odataText` dans le contrôle et appelle `parseODataResult` également la méthode pour analyser et afficher la réponse JSON. Le paramètre _Error_ spécifie la `getProjectDataErrorHandler` fonction nommée, qui écrit un message d’erreur `odataText` dans le contrôle et utilise `throwError` également la méthode pour afficher un message contextuel.
 
     ```js
-    /****************************************************************
-    * Functions to get and parse the Project Server reporting data.
-    *****************************************************************/
+    // Functions to get and parse the Project Server reporting data./
 
     // Get data about all projects on Project Server,
     // by using a REST query with the ajax method in jQuery.
@@ -430,9 +428,9 @@ Le reste du fichier HelloProjectOData.js comprend deux fonctions : la fonction  
     }
     ```
 
-4. Ajoutez la méthode **parseODataResult**, qui désérialise et traite la réponse JSON en provenance du service OData. La méthode **parseODataResult** calcule les valeurs moyennes des données de coût et de travail avec une précision d’une ou de deux décimales, met en forme les valeurs avec la couleur appropriée et ajoute une unité (**$**, **hrs** ou **%**), puis affiche les valeurs dans les cellules de tableau spécifiées.
+4. Ajoutez la `parseODataResult` méthode, qui désérialise et traite la réponse JSON du service OData. La `parseODataResult` méthode calcule les valeurs moyennes des données de coût et de travail avec une précision d’une ou deux décimales, met en forme les valeurs avec la couleur correcte **$** et ajoute une unité **%**(, **HR**ou), puis affiche les valeurs dans les cellules de tableau spécifiées.
 
-   Si le GUID du projet actif correspond à la valeur **ProjectId**, la variable **myProjectIndex** est définie sur l’index de projet. Si **myProjectIndex** indique que le projet actif est publié sur Project Server, la méthode **parseODataResult** met en forme et affiche les données relatives au coût et au travail pour ce projet. Si le projet actif n’est pas publié, les valeurs pour le projet actif sont sous la forme **N/A** (en bleu).
+   Si le GUID du projet actif correspond à la `ProjectId` valeur, la `myProjectIndex` variable est définie sur l’index du projet. Si `myProjectIndex` indique que le projet actif est publié sur Project Server, `parseODataResult` la méthode met en forme et affiche les données de coût et de travail pour ce projet. Si le projet actif n’est pas publié, les valeurs du projet actif sont affichées en tant que **na**bleu.
 
     ```js
     // Calculate the average values of actual cost, cost, work, and percent complete
@@ -545,43 +543,43 @@ Le reste du fichier HelloProjectOData.js comprend deux fonctions : la fonction  
 
 ## <a name="testing-the-helloprojectodata-add-in"></a>Test du complément HelloProjectOData
 
-Pour tester et déboguer le complément  **HelloProjectOData** avec Visual Studio 2015, Project Professionnel 2013 doit être installé sur l’ordinateur de développement. Pour permettre différents scénarios de test, assurez-vous que vous pouvez choisir si Project ouvre les fichiers sur l’ordinateur local ou s’il se connecte à Project Web App. Par exemple, procédez comme suit :
+Pour tester et déboguer le complément **HelloProjectOData** avec Visual Studio 2015, Project Professionnel 2013 doit être installé sur l’ordinateur de développement. Pour activer différents scénarios de test, vérifiez que vous pouvez choisir si Project ouvre des fichiers sur l’ordinateur local ou s’il se connecte avec Project Web App. Par exemple, procédez comme suit :
 
-1. Sous l’onglet  **FICHIER** du ruban, choisissez l’onglet **Informations** en mode Backstage, puis choisissez **Gérer les comptes**.
+1. Sous l’onglet **FICHIER** du ruban, choisissez l’onglet **Informations** en mode Backstage, puis choisissez **Gérer les comptes**.
 
-2. Dans la boîte de dialogue  **Comptes Project Web App**, la liste  **Comptes disponibles** peut comporter plusieurs comptes Project Web App en plus du compte **Ordinateur** local. Dans la section **Lors du démarrage**, sélectionnez  **Choisir un compte**.
+2. Dans la boîte de dialogue **comptes Project Web App** , la liste **comptes disponibles** peut avoir plusieurs comptes Project Web App en plus du compte de l' **ordinateur** local. Dans la section **lors du démarrage** , sélectionnez **choisir un compte**.
 
 3. Fermez Project afin que Visual Studio puisse le démarrer pour le débogage du complément.
 
 Voici les tests de base préconisés :
 
-- Exécutez le complément à partir de Visual Studio, puis ouvrez un projet publié à partir de Project Web App, qui contient des données de coût et de travail. Vérifiez que le complément affiche le point de terminaison  **ProjectData** et qu’il affiche correctement les données de coût et de travail dans le tableau. Vous pouvez utiliser la sortie du contrôle **odataText** pour vérifier la requête REST et d’autres informations.
+- Exécutez le complément à partir de Visual Studio, puis ouvrez un projet publié à partir de Project Web App qui contient des données de coût et de travail. Vérifiez que le complément affiche le point de terminaison **ProjectData** et affiche correctement les données de coût et de travail dans le tableau. Vous pouvez utiliser la sortie dans le contrôle **odataText** pour vérifier la requête REST et d’autres informations.
 
-- Réexécutez le complément pour choisir le profil de l’ordinateur local dans la boîte de dialogue  **Connexion** quand Project démarre. Ouvrez un fichier .mpp local, puis testez le complément. Vérifiez que le complément affiche un message d’erreur quand vous essayez d’obtenir le point de terminaison **ProjectData**.
+- Exécutez de nouveau le complément, où vous choisirez le profil de l’ordinateur local dans la boîte de dialogue de **connexion** au démarrage de Project. Ouvrez un fichier. mpp local, puis testez le complément. Vérifiez que le complément affiche un message d’erreur lorsque vous essayez d’obtenir le point de terminaison **ProjectData** .
 
-- Réexécutez le complément pour créer un projet qui comporte des tâches avec des données de coût et de travail. Vous pouvez enregistrer le projet dans Project Web App mais ne le publiez pas. Vérifiez que le complément affiche les données de Project Server et  **NA** pour le projet actuel.
+- Exécutez de nouveau le complément, qui vous permet de créer un projet qui comporte des tâches avec des données de coût et de travail. Vous pouvez enregistrer le projet dans Project Web App, mais ne le publier pas. Vérifiez que le complément affiche les données de Project Server, mais indique le champ **na** du projet en cours.
 
 ### <a name="procedure-6-to-test-the-add-in"></a>Procédure 6. Pour tester le complément
 
 1. Exécutez Project Professionnel 2013, connectez-vous à Project Web App, puis créez un projet de test. Affectez des tâches aux ressources locales ou à des ressources d’entreprise, définissez diverses valeurs de pourcentage achevé pour certaines tâches, puis publiez le projet. Quittez Project, ce qui permet à Visual Studio de démarrer Project pour le débogage du complément.
 
-2. Dans Visual Studio, appuyez sur  **F5**. Connectez-vous à Project Web App, puis ouvrez le projet que vous avez créé à l’étape précédente. Vous pouvez ouvrir le projet en mode lecture seule ou en mode d’édition.
+2. Dans Visual Studio, appuyez sur **F5**. Ouvrez une session sur Project Web App, puis ouvrez le projet que vous avez créé à l’étape précédente. Vous pouvez ouvrir le projet en mode lecture seule ou en mode édition.
 
-3. Sous l’onglet **PROJET** du ruban, dans la liste déroulante **Compléments Office**, sélectionnez **Hello ProjectData** (voir la figure 5). Le bouton **Comparer tous les projets** devrait être désactivé.
+3. Sous l’onglet **projet** du ruban, dans la liste déroulante **Compléments Office** , sélectionnez **Hello ProjectData** (voir figure 5). Le bouton **comparer tous les projets** doit être désactivé.
 
     *Figure 5. Démarrage du complément HelloProjectOData*
 
     ![Test de l’application HelloProjectOData](../images/pj15-hello-project-data-test-the-app.png)
 
-4. Dans le volet Office **Hello ProjectData**, sélectionnez **Obtenir le point de terminaison ProjectData**. La ligne **projectDataEndPoint** doit afficher l’URL du service **ProjectData** et le bouton **Comparer tous les projets** devrait être activé (reportez-vous à la figure 6).
+4. Dans le volet Office **Hello ProjectData** , sélectionnez **obtenir le point de terminaison ProjectData**. La ligne **projectDataEndPoint** doit afficher l’URL du service **ProjectData** , et le bouton **comparer tous les projets** doit être activé (voir figure 6).
 
-5. Cliquez sur  **Comparer tous les projets**. Il est possible que le complément suspende son exécution pendant la récupération des données à partir du service  **ProjectData**. Il devrait ensuite afficher la moyenne et les valeurs actuelles mises en forme dans le tableau.
+5. Sélectionnez **comparer tous les projets**. Le complément peut s’arrêter pendant qu’il récupère des données à partir du service **ProjectData** , puis afficher les valeurs moyennes et actuelles mises en forme dans le tableau.
 
     *Figure 6. Affichage des résultats de la requête REST*
 
     ![Affichage des résultats de la requête REST](../images/pj15-hello-project-data-rest-results.png)
 
-6. Examinez la sortie dans la zone de texte. Elle doit indiquer le chemin d’accès du document, la requête REST, les informations d’état et les résultats JSON des appels à  **ajax** et **parseODataResult**. La sortie permet de comprendre, créer et déboguer le code dans la méthode  **parseODataResult**, par exemple  `projCost += Number(res.d.results[i].ProjectCost);`.
+6. Examinez la sortie dans la zone de texte. Il doit afficher le chemin d’accès au document, la requête REST, les informations d’État et l’interface JSON résultant des appels vers **Ajax** et **parseODataResult**. La sortie aide à comprendre, créer et déboguer du code `parseODataResult` dans la méthode `projCost += Number(res.d.results[i].ProjectCost);`telle que.
 
     Voici un exemple de sortie avec des sauts de ligne et des espaces ajoutés au texte pour plus de clarté, pour trois projets dans une instance de Project Web App :
 
@@ -631,15 +629,15 @@ Voici les tests de base préconisés :
     ]}}
     ```
 
-7. Arrêtez le débogage (appuyez sur **Maj + F5**), puis appuyez à nouveau sur **F5** pour exécuter une nouvelle instance de Project. Dans la boîte de dialogue **Connexion**, choisissez le profil **Ordinateur** local et non Project Web App. Créez ou ouvrez un fichier Project .mpp local, ouvrez le volet Office **Hello ProjectData**, puis cliquez sur **Obtenir le point de terminaison ProjectData**. Le complément devrait afficher l’erreur **Aucune connexion !** (voir la figure 7) et le bouton **Comparer tous les projets** devrait rester désactivé.
+7. Arrêtez le débogage (appuyez sur **Maj + F5**), puis appuyez de nouveau sur **F5** pour exécuter une nouvelle instance de Project. Dans la boîte de dialogue de **connexion** , choisissez le profil de l' **ordinateur** local, et non Project Web App. créez ou ouvrez un fichier Project. mpp local, ouvrez le volet Office **Hello ProjectData** , puis sélectionnez **obtenir le point de terminaison ProjectData**. Le complément doit afficher une erreur **No Connection !** Error (voir figure 7) et le bouton **comparer tous les projets** doit rester désactivé.
 
    *Figure 7. Utilisation du complément sans connexion à Project Web App*
 
    ![Utilisation de l’application sans connexion à Project Web App](../images/pj15-hello-project-data-no-connection.png)
 
-8. Arrêtez le débogage, puis appuyez à nouveau sur  **F5**. Connectez-vous à Project Web App, puis créez un projet qui contient des données de coût et de travail. Vous pouvez enregistrer le projet mais pas le publier.
+8. Arrêtez le débogage, puis appuyez de nouveau sur **F5** . Ouvrez une session sur Project Web App, puis créez un projet qui contient des données de coût et de travail. Vous pouvez enregistrer le projet, mais ne le publiez pas.
 
-   Dans le volet Office **Hello ProjectData**, lorsque vous sélectionnez **Comparer tous les projets**, vous devez voir la mention **N/A** (en bleu) dans la colonne **Actif** (voir la figure 8).
+   Dans le volet Office **Hello ProjectData** , lorsque vous sélectionnez **comparer tous les projets**, vous devez voir une **na** bleue pour les champs de la colonne **actuelle** (voir figure 8).
 
    *Figure 8. Comparaison d’un projet non publié à d’autres projets*
 
@@ -647,14 +645,14 @@ Voici les tests de base préconisés :
 
 Même si votre complément fonctionne correctement dans les tests précédents, il existe d’autres tests à exécuter. Par exemple :
 
-- À partir de Project Web App, ouvrez un projet qui ne dispose pas de données de coût ou de travail pour les tâches. Vous devriez voir des valeurs égales à zéro dans les champs de la colonne  **Actif**.
+- Ouvrez un projet à partir de Project Web App qui n’a pas de coût ni de données de travail pour les tâches. Les valeurs de zéro doivent apparaître dans les champs de la colonne **actuelle** .
 
 - Testez un projet qui n’a pas de tâches.
 
 - Si vous modifiez le complément et que vous le publiez, vous devez réexécuter des tests similaires avec le complément publié. Pour d’autres considérations, voir [Étapes suivantes](#next-steps).
 
 > [!NOTE]
-> La quantité de données pouvant être renvoyée dans une requête du service **ProjectData** est limitée. Celle-ci varie selon l’entité. Par exemple, le jeu d’entités **Projects** a une limite par défaut de 100 projets par requête, mais la limite par défaut du jeu d’entités **Risks** est de 200. Pour une installation de production, le code de l’exemple **HelloProjectOData** doit être modifié afin de permettre la prise en charge de requêtes de plus de 100 projets. Pour plus d’informations, reportez-vous à [Étapes suivantes](#next-steps) et [Interrogation des flux OData pour les données de création de rapports Project](/previous-versions/office/project-odata/jj163048(v=office.15)).
+> Il existe des limites à la quantité de données qui peuvent être renvoyées dans une requête du service **ProjectData** ; la quantité de données varie en fonction de l’entité. Par exemple, le `Projects` jeu d’entités a une limite par défaut de 100 projets par requête, `Risks` mais le jeu d’entités a une limite par défaut de 200. Pour une installation de production, le code dans l’exemple **HelloProjectOData** doit être modifié afin d’activer les requêtes de plus de 100 projets. Pour plus d’informations, voir [étapes suivantes](#next-steps) et [interrogation des flux OData pour les données de création de rapports Project](/previous-versions/office/project-odata/jj163048(v=office.15)).
 
 ## <a name="example-code-for-the-helloprojectodata-add-in"></a>Exemple de code pour le complément HelloProjectOData
 
@@ -831,9 +829,7 @@ function getDocumentUrl() {
     _docUrl = "Document path:\r\n" + Office.context.document.url;
 }
 
-/****************************************************************
-* Functions to get and parse the Project Server reporting data.
-*****************************************************************/
+//  Functions to get and parse the Project Server reporting data./
 
 // Get data about all projects on Project Server,
 // by using a REST query with the ajax method in jQuery.
@@ -1097,13 +1093,13 @@ Vous pouvez copier le code du fichier SurfaceErrors.js présenté dans la sectio
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Si **HelloProjectOData** était un complément de production destiné à être vendu dans AppSource ou distribué dans un catalogue d’applications SharePoint, il serait conçu différemment. Par exemple, il n’y aurait pas de sortie de débogage dans une zone de texte et probablement pas de bouton permettant d’obtenir le point de terminaison de **ProjectData**. Vous seriez également obligé de réécrire la fonction **retireveOData** pour gérer les instances de Project Web App qui ont plus de 100 projets.
+Si **HelloProjectOData** était un complément de production à vendre dans AppSource ou distribué dans un catalogue d’applications SharePoint, il serait conçu différemment. Par exemple, il n’y aurait pas de sortie de débogage dans une zone de texte, et probablement aucun bouton pour obtenir le point de terminaison **ProjectData** . Vous devez également réécrire la fonction pour `retireveOData` gérer les instances Project Web App qui contiennent plus de 100 projets.
 
 Le complément devrait contenir des contrôles d’erreurs supplémentaires, ainsi qu’une logique permettant d’identifier et d’expliquer ou d’illustrer les cas extrêmes. Par exemple, si une instance de Project Web App a 1 000 projets d’une durée moyenne de cinq jours et d’un coût moyen de 2 400 €, et que le projet actif est le seul dont la durée est supérieure à 20 jours, la comparaison des coûts et du travail est faussée. Cela pourrait être illustré avec un graphique de fréquences. Vous pouvez ajouter des options pour afficher la durée, comparer les projets de durée similaire ou comparer les projets de services identiques ou distincts. Sinon, vous pouvez également permettre à l’utilisateur d’effectuer des choix parmi une liste de champs affichés.
 
-Pour les autres requêtes du service  **ProjectData**, la longueur de la chaîne de requête est limitée, ce qui a une incidence sur le nombre d’étapes qu’une requête peut suivre d’une collection parente à un objet d’une collection enfant. Par exemple, une requête en deux étapes telle que  **Projects** vers **Tasks**, puis vers un élément de tâche fonctionne, mais une requête en trois étapes telle que  **Projects** vers **Tasks** vers **Assignments**, puis vers l’élément d’affectation risque de dépasser la longueur maximale par défaut de l’URL. Pour plus d’informations, voir [Interrogation des flux OData pour les données de création de rapports Project](/previous-versions/office/project-odata/jj163048(v=office.15)).
+Pour les autres requêtes du service **ProjectData** , il existe des limites à la longueur de la chaîne de requête, ce qui affecte le nombre d’étapes qu’une requête peut effectuer d’une collection parent vers un objet d’une collection enfant. Par exemple, une requête en deux étapes de **projets** aux **tâches** de l’élément de tâche fonctionne, mais une requête en trois étapes telle que des **projets** à des **tâches** **d’affectations à un** élément d’affectation peut dépasser la longueur d’URL maximale par défaut. Pour plus d’informations, consultez la rubrique [relative à l’interrogation des flux OData pour les données de rapport de projet](/previous-versions/office/project-odata/jj163048(v=office.15)).
 
-Si vous modifiez le complément  **HelloProjectOData** pour une utilisation en production, procédez comme suit :
+Si vous modifiez le complément **HelloProjectOData** pour une utilisation en production, procédez comme suit :
 
 - Dans le fichier HelloProjectOData.html, pour de meilleures performances, remplacez la référence du projet local à office.js par la référence au réseau de distribution de contenu :
 
@@ -1111,7 +1107,7 @@ Si vous modifiez le complément  **HelloProjectOData** pour une utilisation en p
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     ```
 
-- Réécrivez la fonction **retrieveOData** afin de permettre les requêtes pour plus de 100 projets. Par exemple, vous pouvez obtenir le nombre de projets avec une requête `~/ProjectData/Projects()/$count`, puis utiliser l’opérateur _$skip_ et l’opérateur _$top_ de la requête REST pour les données de projet. Exécutez plusieurs requêtes dans une boucle, puis établissez la moyenne des données de chaque requête. Chaque requête relative aux données de projet a la forme suivante. 
+- Réécrivez la `retrieveOData` fonction pour activer les requêtes de plus de 100 projets. Par exemple, vous pouvez obtenir le nombre de projets à l' `~/ProjectData/Projects()/$count` aide d’une requête et utiliser l’opérateur _$Skip_ et _$Top_ opérateur dans la requête REST pour les données de projet. Exécutez plusieurs requêtes dans une boucle, puis calculez la moyenne des données de chaque requête. Chaque requête de données de projet est de la forme : 
 
   `~/ProjectData/Projects()?skip= [numSkipped]&amp;$top=100&amp;$filter=[filter]&amp;$select=[field1,field2, ???????]`
 

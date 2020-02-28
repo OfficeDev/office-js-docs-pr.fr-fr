@@ -3,16 +3,16 @@ title: Obtenir et définir la récurrence dans un complément Outlook
 description: Cette rubrique vous explique comment utiliser l’API JavaScript Office pour obtenir et définir différentes propriétés de récurrence d’un élément dans un complément Outlook.
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: cc7160ed8fe82a02ced9c03bab181df57e66bb54
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 850fd49721dbb0e3835a44148d03f5687726c58c
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166228"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324974"
 ---
 # <a name="get-and-set-recurrence"></a>Obtenir et définir la récurrence
 
-Vous devez parfois créer et mettre à jour un rendez-vous périodique, par exemple une réunion hebdomadaire pour un projet d’équipe ou un rappel anniversaire annuel. Vous pouvez utiliser l’API JavaScript pour Office pour gérer les modèles de périodicité d’une série de rendez-vous dans votre complément.
+Vous devez parfois créer et mettre à jour un rendez-vous périodique, par exemple une réunion hebdomadaire pour un projet d’équipe ou un rappel anniversaire annuel. Vous pouvez utiliser l’API JavaScript pour Office pour gérer les périodicités d’une série de rendez-vous dans votre complément.
 
 > [!NOTE]
 > La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises 1,7. Voir [les clients et les plateformes](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.

@@ -3,12 +3,12 @@ title: Publier des compléments du volet Office et de contenu dans un catalogue 
 description: Pour rendre les compléments Office accessibles aux utilisateurs, les administrateurs peuvent charger des fichiers manifeste de compléments Office vers le catalogue d’applications pour leur organisation.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: fe97cdb1af0cbf75eb6f1d99f81aef430e362c8e
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: e9a600cd807379e9c55f2fc98bb4f2d71552058f
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950711"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325304"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>Publier des compléments du volet Office et de contenu dans un catalogue d’applications SharePoint
 
@@ -38,7 +38,7 @@ Une fois que vous avez créé le catalogue d’applications, suivez les étapes 
     > [!NOTE]
     > Vous devez utiliser le centre d’administration SharePoint classique pour créer le catalogue. Si c’est la première fois que vous accédez au centre d’administration SharePoint, sélectionnez **Centre d’administration SharePoint classique** dans le volet gauche.
 
-3. Dans le volet Office situé à gauche, choisissez **Applications**.
+3. Dans le volet Office de gauche, sélectionnez **applications**.
 
 4. Dans la page d’**applications**, choisissez **Catalogue d’applications**.
     > [!NOTE]
@@ -66,7 +66,7 @@ Suivez les étapes décrites dans l’une des sections suivantes pour publier un
 2. Dans la page Centre d’administration Microsoft 365, développez la liste des **centres d’administration**, puis sélectionnez **SharePoint**.
     > [!NOTE]
     > Vous devez utiliser le centre d’administration SharePoint classique pour créer le catalogue. Si c’est la première fois que vous accédez au centre d’administration SharePoint, sélectionnez **Centre d’administration SharePoint classique** dans le volet gauche.
-3. Dans le volet Office situé à gauche, choisissez **Applications**.
+3. Dans le volet Office de gauche, sélectionnez **applications**.
 4. Dans la page d’**applications**, choisissez **Catalogue d’applications**.
 5. Choisissez **Distribuer des applications pour Office**.
 6. Dans la page **Applications pour Office**, cliquez sur **Nouveau**.

@@ -3,16 +3,16 @@ title: Obtenir ou définir le lieu de rendez-vous dans un complément
 description: Découvrez comment obtenir ou définir l’heure d’un rendez-vous à partir d’un complément Outlook.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 7e2c2b604948b7630581af03aa9f8fddc4c68da6
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: cc412da5dd64d8e908b86a81b847f6479dbd4a34
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166227"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324967"
 ---
 # <a name="get-or-set-the-location-when-composing-an-appointment-in-outlook"></a>Obtenir ou définir l’emplacement lors de la composition d’un rendez-vous dans Outlook
 
-L’interface API JavaScript pour Office fournit des propriétés et des méthodes permettant de gérer l’emplacement d’un rendez-vous que l’utilisateur compose. Actuellement, il existe deux propriétés qui fournissent l’emplacement d’un rendez-vous :
+L’API JavaScript pour Office fournit des propriétés et des méthodes permettant de gérer l’emplacement d’un rendez-vous que l’utilisateur compose. Actuellement, il existe deux propriétés qui fournissent l’emplacement d’un rendez-vous :
 
 - [Item. Location](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): interface API de base qui vous permet d’obtenir et de définir l’emplacement.
 - [Item. enhancedLocation](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): API améliorée qui vous permet d’obtenir et de définir l’emplacement et inclut la spécification du [type d’emplacement](/javascript/api/outlook/office.mailboxenums.locationtype). Le type est `LocationType.Custom` si vous définissez l’emplacement à `item.location`l’aide du.

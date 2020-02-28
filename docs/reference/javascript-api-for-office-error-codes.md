@@ -3,16 +3,16 @@ title: Codes d’erreur de l’API JavaScript pour Office
 description: ''
 ms.date: 01/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 286cf00bf60d0e86a68eef9183fcd887e5f30ddf
-ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
+ms.openlocfilehash: d46254f3cd8c353bcafb9e76cf97a7244afd13e1
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "41650018"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325282"
 ---
-# <a name="javascript-api-for-office-error-codes"></a>Codes d’erreur de l’API JavaScript pour Office
+# <a name="office-javascript-api-error-codes"></a>Codes d’erreur de l’API JavaScript pour Office
 
-Cet article décrit les messages d’erreur que vous pouvez rencontrer lors de l’utilisation de l’API JavaScript pour Office (Office.js).
+Cet article décrit les messages d’erreur que vous pouvez rencontrer lors de l’utilisation de l’API JavaScript pour Office (Office. js).
 
 **S’applique à :** Compléments Office | Compléments SharePoint | Excel | Outlook | PowerPoint | Project | Word
 
@@ -50,24 +50,24 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 |3004|Une erreur s’est produite lors de la création de la liaison|Impossible de créer une liaison avec la sélection actuelle et le type de liaison spécifié.|Il existe plusieurs conditions dans lesquelles cela pourrait se produire. Consultez la section « Conditions d’erreur de création de liaison » plus loin dans cet article.|
 |3005|Opération de liaison incorrecte|Ce type de liaison ne prend pas en charge cette action.|Le développeur envoie une opération d’ajout de ligne ou d’ajout de colonne sur un type de liaison qui n’est pas de type  _tableau_.|
 |3006|Une erreur s’est produite lors de la création de la liaison|L’élément nommé n’existe pas.|L’élément nommé est introuvable. Aucune table ni aucun contrôle de contenu portant ce nom n’existe.|
-|3007|Une erreur s’est produite lors de la création de la liaison|Nous avons trouvé plusieurs objets du même nom.|Erreur de collision : plus d’un contrôle de contenu du même nom existe, et l’échec en cas de collision est défini sur  **true**.|
+|3007|Une erreur s’est produite lors de la création de la liaison|Nous avons trouvé plusieurs objets du même nom.|Erreur de collision : plus d’un contrôle de contenu du même nom existe, et l’échec en cas de collision est défini sur **true**.|
 |3008|Une erreur s’est produite lors de la création de la liaison|Le type de liaison spécifié n’est pas compatible avec l’élément nommé fourni.|L’élément nommé ne peut pas être lié au type. Par exemple, un contrôle de contenu contient du texte, mais le développeur a tenté d’effectuer une liaison à l’aide du type de forçage de type  _tableau_.|
 |3009|Opération de liaison incorrecte|Le type de liaison n’est pas pris en charge.|Utilisé pour la compatibilité descendante.|
-|3010|Opération de liaison non prise en charge|Le contenu sélectionné doit être dans un format de tableau. Placez les données sous forme de tableau, puis réessayez.|Le développeur tente d’utiliser les méthodes  **addRowsAsynch** ou **deleteAllDataValuesAsynch** de l’objet **TableBinding** sur les données du type de forçage de type _matrice_.|
+|3010|Opération de liaison non prise en charge|Le contenu sélectionné doit être dans un format de tableau. Placez les données sous forme de tableau, puis réessayez.|Le développeur tente `addRowsAsynch` d’utiliser les méthodes ou `deleteAllDataValuesAsynch` de l’objet `TableBinding` sur les données de _matrice_de type de forçage de type.|
 |4000|Une erreur s’est produite lors de la lecture des paramètres|Le nom de paramètre spécifié n’existe pas.|Un nom de paramètre non existant est fourni.|
 |4001|Une erreur s’est produite lors de l’enregistrement des paramètres|Les paramètres n’ont pas pu être enregistrés.|Les paramètres n’ont pas pu être enregistrés.|
 |4002|Une erreur relative à des paramètres périmés s’est produite|Les paramètres n’ont pas pu être enregistrés car ils sont périmés.|Les paramètres sont périmés et le développeur a indiqué de ne pas les remplacer.|
-|5000|Une erreur relative à des paramètres périmés s’est produite|L’opération n’est pas prise en charge.|L’opération n’est pas prise en charge dans l’hôte actuel. Par exemple,  **document.getSelectionAsync** est appelé à partir d’Outlook.|
+|5000|Une erreur relative à des paramètres périmés s’est produite|L’opération n’est pas prise en charge.|L’opération n’est pas prise en charge dans l’hôte actuel. Par exemple, `document.getSelectionAsync` est appelé à partir d’Outlook.|
 |5001|Erreur interne|Une erreur interne s’est produite.|Fait référence à une condition d’erreur interne, qui peut se produire pour l’une des raisons suivantes :<br/><table><tr><td>Un complément utilisé par un autre utilisateur partageant le classeur a créé une liaison quasiment au même moment et votre complément doit recommencer le processus de liaison.</tr></td><tr><td>Une erreur inconnue s’est produite.</tr></td><tr><td>L’opération a échoué.</tr></td><tr><td>L’accès a été refusé car l’utilisateur n’est pas membre d’un rôle autorisé.</tr></td><tr><td>L’accès a été refusé car une communication chiffrée sécurisée est exigée.</tr></td><tr><td>Les données sont obsolètes et l’utilisateur doit confirmer l’activation des requêtes pour les actualiser.</tr></td><tr><td>Le quota d’UC de la collection de sites est dépassé.</tr></td><tr><td>Le quota de mémoire de la collection de sites est dépassé.</tr></td><tr><td>Le quota de mémoire de la session est dépassé.</tr></td><tr><td>Le classeur est dans un état non valide et l’opération ne peut pas être effectuée.</tr></td><tr><td>La session a expiré car elle était inactive et l’utilisateur doit recharger le classeur.</tr></td><tr><td>Le nombre maximal de sessions autorisées par utilisateur est dépassé.</tr></td><tr><td>L’opération a été annulée par l’utilisateur.</tr></td><tr><td>L’opération ne peut pas aboutir car elle prend trop de temps.</tr></td><tr><td>La demande ne peut pas aboutir et une nouvelle tentative doit être effectuée.</tr></td><tr><td>La période d’évaluation du produit a expiré.</tr></td><tr><td>La session a expiré car elle était inactive.</tr></td><tr><td>L’utilisateur n’est pas autorisé à effectuer l’opération sur la plage spécifiée.</tr></td><tr><td>Les paramètres régionaux de l’utilisateur ne correspondent pas à la session de collaboration active.</tr></td><tr><td>L’utilisateur n’est plus connecté et doit actualiser ou rouvrir le classeur.</tr></td><tr><td>La plage demandée n’existe pas dans la feuille.</tr></td><tr><td>L’utilisateur n’est pas autorisé à modifier le classeur.</tr></td><tr><td>Le classeur ne peut pas être modifié car il est verrouillé.</tr></td><tr><td>La session ne peut pas enregistrer automatiquement le classeur.</tr></td><tr><td>La session ne peut pas actualiser son verrouillage du fichier du classeur.</tr></td><tr><td>La demande ne peut pas être traitée et une nouvelle tentative doit être effectuée.</tr></td><tr><td>Les informations de connexion de l’utilisateur n’ont pas pu être vérifiées et doivent être saisies de nouveau.</tr></td><tr><td>L’accès a été refusé à l’utilisateur.</tr></td><tr><td>Le classeur partagé doit être mis à jour.</tr></td></table>|
 |5002|Autorisation refusée|L’opération demandée n’est pas autorisée sur le mode de document actuel.|Le développeur de solutions soumet une opération de définition, mais le document est dans un mode qui n’autorise pas de modifications, telles que « Restreindre la modification ».|
 |5003|Une erreur s’est produite lors de l’enregistrement de l’événement|Le type d’événement spécifié n’est pas pris en charge par l’objet actuel.|Le développeur de solutions tente d’inscrire ou d’annuler l’inscription d’un gestionnaire pour un événement qui n’existe pas.|
-|5004|L’appel d’API est incorrect|L’appel d’API n’est pas correct dans le contexte actuel.|Un appel incorrect est effectué pour le contexte, par exemple, en essayant d’utiliser un objet  **CustomXMLPart** dans Excel.|
+|5004|L’appel d’API est incorrect|L’appel d’API n’est pas correct dans le contexte actuel.|Un appel incorrect est effectué pour le contexte, par exemple, en essayant d' `CustomXMLPart` utiliser un objet dans Excel.|
 |5005|Données périmées|Échec de l’opération car les données sur le serveur sont périmées.|Les données sur le serveur doivent être actualisées.|
 |5006|Expiration de la session|La session de document a expiré. Rechargez le document. |La session a expiré.|
 |5007|L’appel d’API est incorrect|L’énumération n’est pas prise en charge dans le contexte actuel.|L’énumération n’est pas prise en charge dans le contexte actuel.|
 |5009|Autorisation refusée|Accès refusé|Le complément n’est pas autorisé à appeler l’API spécifique.|
 |5012|Session non valide ou expirée|Votre session de navigateur Office a expiré ou n’est pas valide. Pour continuer, actualisez la page.|La session entre le client Office et le serveur a expiré, ou la date, l’heure ou le fuseau horaire est incorrect sur votre ordinateur.|
-|6000|Nœud incorrect|Le nœud spécifié est introuvable.|Le nœud **CustomXmlPart** est introuvable.|
+|6000|Nœud incorrect|Le nœud spécifié est introuvable.|Le `CustomXmlPart` nœud est introuvable.|
 |6100|Une erreur relative à du code XML personnalisé s’est produite.|Une erreur relative à du code XML personnalisé s’est produite.|L’appel d’API est incorrect.|
 |7000|ID incorrect|L’ID spécifié n’existe pas.|L’ID est incorrect.|
 |7001|Navigation non valide|L’objet se trouve à un emplacement dans lequel la navigation n’est pas prise en charge.|L’utilisateur peut trouver l’objet, mais ne peut pas naviguer jusqu’à celui-ci. (Par exemple, dans Word, la liaison est effectuée avec l’en-tête, le pied de page ou un commentaire.)|
@@ -92,7 +92,7 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 |12006|||La boîte de dialogue a été fermée, généralement parce que l’utilisateur choisit le bouton **X**. Erreur signalée dans la boîte de dialogue. Elle déclenche un événement `DialogEventReceived` dans la page hôte.|
 |12007|||Une boîte de dialogue est déjà ouverte à partir de cette fenêtre hôte. Une fenêtre hôte, par exemple un volet Office, ne peut avoir qu’une seule boîte de dialogue ouverte à la fois. Erreur générée par l’appel de `displayDialogAsync`.|
 |12009|||L’utilisateur a choisi d’ignorer la boîte de dialogue. Cette erreur peut se produire dans les versions en ligne d’Office, quand les utilisateurs peuvent choisir d’autoriser ou non un complément à afficher une boîte de dialogue. Erreur générée par l’appel de `displayDialogAsync`.|
-|13000 – 13010|||Voir [causes et gestion des erreurs à partir de getAccessToken](../develop/troubleshoot-sso-in-office-add-ins.md#causes-and-handling-of-errors-from-getaccesstoken).|
+|13nnn|||Voir [causes et gestion des erreurs à partir de getAccessToken](../develop/troubleshoot-sso-in-office-add-ins.md#causes-and-handling-of-errors-from-getaccesstoken).|
 
 ## <a name="binding-creation-error-conditions"></a>Conditions d’erreur de création de liaison
 

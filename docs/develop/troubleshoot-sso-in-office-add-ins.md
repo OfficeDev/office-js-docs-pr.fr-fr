@@ -1,14 +1,14 @@
 ---
 title: Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)
 description: ''
-ms.date: 11/05/2019
+ms.date: 02/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 0491a49a09ec747dfb7f63237e5099579402e69a
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: a29efa4a501ee10b185cb2bbc72cb8e8e5e8b098
+ms.sourcegitcommit: 7464eac3b54a6a6b65e27549a3ad603af6ee1011
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950816"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42315871"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>Résolution des messages d’erreur pour l’authentification unique (SSO) (aperçu)
 
@@ -106,6 +106,10 @@ Votre code doit basculer vers un autre système d’authentification des utilisa
 
 En développement, le complément est sideloaded dans Outlook et l’option `forMSGraphAccess` a été transmise dans l’appel à `getAccessToken`.
 
+### <a name="13013"></a>13013
+
+Le `getAccessToken` a été appelé trop souvent en un peu de temps, donc Office a limité l’appel le plus récent. Cela est généralement dû à une boucle infinie d’appels à la méthode. Il existe des scénarios pour rappeler la méthode. Toutefois, votre code doit utiliser un compteur ou une variable d’indicateur pour s’assurer que la méthode n’est pas rappelée à plusieurs reprises. Si le chemin d’accès du code « nouvelle tentative » s’exécute à nouveau, le code doit revenir à un autre système d’authentification des utilisateurs. Pour obtenir un exemple de code, consultez `retryGetAccessToken` la rubrique utilisation de la variable dans [HomeES6. js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) ou [ssoAuthES6. js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js).
+
 ### <a name="50001"></a>50001
 
 Cette erreur (qui n’est pas spécifique de `getAccessToken`) peut indiquer que le navigateur a mis en cache une ancienne copie des fichiers office.js. Quand vous développez, effacez le cache du navigateur. Une autre possibilité est que la version d’Office n’est pas assez récente pour prendre en charge l’authentification unique. Dans Windows, la version minimale est 16.0.12215.20006. Sur Mac, il s’agit de 16.32.19102902.
@@ -124,7 +128,7 @@ Dans certaines configurations d’identité sur AAD et Office 365, il est possib
 
 Votre code doit tester cette propriété `claims`. En fonction de l’architecture de votre complément, vous pouvez le tester côté client, ou le tester sur le serveur et le relayer sur le client. Il vous faut ces informations dans le client, car Office gère l’authentification des compléments SSO. Si vous le relayez côté serveur, le message adressé au client peut être une erreur (telle que `500 Server Error` ou `401 Unauthorized`) ou se trouver dans le corps d’une réponse de succès (telle que `200 OK`). Dans les deux cas, le rappel (réussite ou échec) de l’appel AJAX de votre code côté client à l’API web de votre complément devra tester cette réponse. 
 
-Quelle que soit votre architecture, si la valeur de revendication a été relayée, votre code doit rappeler `getAccessToken` et transmettre l’option `authChallenge: CLAIMS-STRING-HERE` dans le paramètre `options`. Lorsqu’AAD voit cette chaîne, il demande le(s) facteur(s) supplémentaire(s) à l’utilisateur, puis renvoie un nouveau jeton d’accès qui sera accepté dans le flux « de la part de ».
+Quelle que soit votre architecture, si la valeur claims a été envoyée à partir d’AAD, `getAccessToken` votre code doit rappeler `authChallenge: CLAIMS-STRING-HERE` et transmettre `options` l’option dans le paramètre. Lorsqu’AAD voit cette chaîne, il demande le(s) facteur(s) supplémentaire(s) à l’utilisateur, puis renvoie un nouveau jeton d’accès qui sera accepté dans le flux « de la part de ».
 
 ### <a name="consent-missing-errors"></a>Erreurs de consentement manquant
 

@@ -3,18 +3,18 @@ title: Élément FunctionFile dans le fichier manifest
 description: ''
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 5f87d10428b58adfb89f1119ba5741599079afba
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: eec1dc8eb2e099670469af6ef300592fc4a31e64
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450582"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324868"
 ---
 # <a name="functionfile-element"></a>Élément FunctionFile
 
-Spécifie le fichier de code source pour les opérations qu’un complément expose via les commandes de complément qui exécutent une fonction JavaScript au lieu d’afficher l’interface utilisateur. L’élément **FunctionFile** est un élément enfant de [DesktopFormFactor](desktopformfactor.md) ou de [MobileFormFactor](mobileformfactor.md). L’attribut **resid** de l’élément **FunctionFile** est défini sur la valeur de l’attribut **id** d’un élément **Url** dans l’élément **Resources** contenant l’URL d’un fichier HTML qui contient ou charge toutes les fonctions JavaScript utilisées par les boutons de commande de complément sans interface utilisateur, telles que définies par l’élément [Control](control.md).
+Spécifie le fichier de code source pour les opérations qu’un complément expose via les commandes de complément qui exécutent une fonction JavaScript au lieu d’afficher l’interface utilisateur. L' `FunctionFile` élément est un élément enfant de [DesktopFormFactor](desktopformfactor.md) ou [MobileFormFactor](mobileformfactor.md). L' `resid` attribut de l' `FunctionFile` élément est défini sur la valeur de l' `id` attribut d’un `Url` élément dans l' `Resources` élément qui contient l’URL d’un fichier HTML qui contient ou charge toutes les fonctions JavaScript utilisées par les boutons de commande de complément sans interface utilisateur, comme défini par l' [élément Control](control.md).
 
-Vous trouverez ci-dessous un exemple de l’élément **FunctionFile**.
+Voici un exemple de l' `FunctionFile` élément.
 
 ```XML
 <DesktopFormFactor>
@@ -28,9 +28,9 @@ Vous trouverez ci-dessous un exemple de l’élément **FunctionFile**.
 </DesktopFormFactor>
 ```
 
-JavaScript dans le fichier HTML indiqué par l’élément**FunctionFile**doit appeler`Office.initialize`et définir nommées fonctions qui acceptent un paramètre unique: `event`. Les fonctions doivent utiliser l’`item.notificationMessages` API pour indiquer l’avancement, réussite ou Échec de l’utilisateur. Elle doit également appeler `event.completed` lorsqu’il a fini d’exécution. Le nom des fonctions sont utilisés dans le **FunctionName** l’élément de l’interface utilisateur moins boutons.
+Le code JavaScript dans le fichier HTML indiqué par `FunctionFile` l’élément doit `Office.initialize` appeler et définir des fonctions nommées qui prennent un `event`seul paramètre :. Les fonctions doivent utiliser l’`item.notificationMessages` API pour indiquer l’avancement, réussite ou Échec de l’utilisateur. Elle doit également appeler `event.completed` lorsqu’il a fini d’exécution. Le nom des fonctions est utilisé dans l' `FunctionName` élément pour les boutons sans interface utilisateur.
 
-Vous trouverez ci-dessous un exemple d’un fichier HTML définissant une fonction **trackMessage**.
+Voici un exemple de fichier HTML définissant une `trackMessage` fonction.
 
 ```js
 Office.initialize = function () {
@@ -45,7 +45,7 @@ function trackMessage (event) {
 }
 ```
 
-Le code suivant montre comment implémenter la fonction utilisée par**FunctionName**.
+Le code suivant montre comment implémenter la fonction utilisée par `FunctionName`.
 
 ```js
 // The initialize function must be run each time a new page is loaded.
@@ -76,4 +76,4 @@ function writeText(event) {
 ```
 
 > [!IMPORTANT]
-> L’appel de l’élément**event.completed**indique que vous avez correctement géré l’événement. Lorsqu’une fonction est appelée à plusieurs reprises, par exemple, lorsque l’utilisateur clique plusieurs fois sur une même commande de complément, tous les événements sont automatiquement mis en file d’attente. Le premier événement s’exécute automatiquement, tandis que les autres événements restent dans la file d’attente. Lorsque votre fonction appelle **event.completed**, l’appel suivant de cette fonction s’exécute. Vous devez appeler **event.completed** pour que votre fonction s’exécute correctement.
+> L’appel de `event.completed` signale que vous avez réussi à gérer l’événement. Lorsqu’une fonction est appelée à plusieurs reprises, par exemple lorsque l’utilisateur clique plusieurs fois sur une même commande de complément, tous les événements sont automatiquement mis en file d’attente. Le premier événement s’exécute automatiquement, tandis que les autres événements restent dans la file d’attente. Lorsque votre fonction appelle `event.completed`, l’appel suivant de cette fonction s’exécute. Vous devez appeler `event.completed`; Sinon, votre fonction ne s’exécutera pas.

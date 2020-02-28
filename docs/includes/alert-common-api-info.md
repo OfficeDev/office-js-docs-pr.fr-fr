@@ -1,0 +1,4 @@
+> [!IMPORTANT]
+> Cet article s’applique aux **API communes**, le modèle d’API JavaScript pour Office qui est pris en charge par Office 2013 et versions ultérieures. Ces API incluent des fonctionnalités telles que l’interface utilisateur, les boîtes de dialogue et les paramètres client qui sont communs à plusieurs types d’applications Office. Les compléments Outlook utilisent exclusivement des API communes, en particulier le sous-ensemble d’API exposées par le biais de l’objet [Mailbox](/javascript/api/outlook/Office.mailbox) . 
+> 
+> Vous devez utiliser uniquement des API communes pour les scénarios qui ne sont pas pris en charge par les **API propres**à l’hôte. Pour savoir quand utiliser des API communes au lieu d’API propres à l’hôte, consultez [la rubrique Understanding the Office JavaScript API](../develop/understanding-the-javascript-api-for-office.md).

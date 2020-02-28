@@ -3,12 +3,12 @@ title: Déboguer des compléments Office dans Visual Studio
 description: Utiliser Visual Studio pour déboguer des compléments Office dans le client de bureau Office sous Windows
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 3bfbc52a8739cb5d51868794f1be701de52b292e
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: d55b764343b5dc7c850a35b013b134fa2ad5a069
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950599"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324616"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Déboguer des compléments Office dans Visual Studio
 
@@ -35,7 +35,7 @@ Ouvrir la fenêtre **Propriétés** pour le projet complément pour examiner les
 
 1. Dans **l’Explorateur de solutions**, choisissez le projet de complément (*pas* le projet d’application web).
 
-2. Dans la barre de menu, choisissez **Affichage** >  **Fenêtre Propriétés**.
+2. Dans la barre de menu, choisissez **Affichage** > **Fenêtre Propriétés**.
 
 Le tableau suivant décrit les propriétés du projet de complément.
 
@@ -59,9 +59,9 @@ Le tableau suivant décrit les propriétés du projet de complément.
 
 Ouvrir la fenêtre**Propriétés** pour le projet complément web pour examiner les propriétés du projet :
 
-1. Dans **l’Explorateur de solutions**, choisissez le projet de complément web.
+1. Dans l' **Explorateur de solutions**, choisissez le projet d’application Web.
 
-2. Dans la barre de menu, choisissez **Affichage** >  **Fenêtre Propriétés**.
+2. Dans la barre de menu, choisissez **Affichage** > **Fenêtre Propriétés**.
 
 Le tableau suivant décrit les propriétés du projet d’application web qui sont les plus pertinentes aux projets complément Office.
 
@@ -119,7 +119,7 @@ Visual Studio effectue ensuite les actions suivantes :
 
 3. Il ouvre l’application hôte.
 
-Visual Studio n’affiche pas les erreurs de validation dans la fenêtre **Output** lorsque vous créez le projet. Visual Studio signale les erreurs et avertissements dans la fenêtre **ERRORLIST** lorsqu’elles se produisent. Visual Studio signale également des erreurs de validation en affichant les soulignements ondulés de différentes couleurs (également connus sous soulignements ondulés) dans l’éditeur de code et de texte. Ces marques signalent l’arrivée de problèmes Visual Studio détectés dans votre code. Pour plus d’informations sur comment activer ou désactiver la validation, voir [Options, éditeur de texte, JavaScript, IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019).
+Visual Studio n’affiche pas les erreurs de validation dans la fenêtre **OUTPUT** lorsque vous générez le projet. Visual Studio signale les erreurs et avertissements dans la fenêtre **ERRORLIST** lorsqu’elles se produisent. Visual Studio signale également des erreurs de validation en affichant les soulignements ondulés de différentes couleurs (également connus sous soulignements ondulés) dans l’éditeur de code et de texte. Ces marques signalent l’arrivée de problèmes Visual Studio détectés dans votre code. Pour plus d’informations sur comment activer ou désactiver la validation, voir [Options, éditeur de texte, JavaScript, IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019).
 
 Pour réviser les règles de validation du fichier manifeste XML dans votre projet, voir [Manifeste XML des compléments Office](../develop/add-in-manifests.md).
 

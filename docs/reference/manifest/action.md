@@ -3,12 +3,12 @@ title: Élément Action dans le fichier manifeste
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 3b0a82362988d4e64c1a376e0bd774e84e4a8fa3
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: b05da08f4995c7d8f7270e7fba6f416c9903b066
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165558"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324890"
 ---
 # <a name="action-element"></a>Action, élément
 
@@ -50,7 +50,7 @@ Cet attribut indique le type d’action réalisée lorsque l’utilisateur séle
 
 ## <a name="sourcelocation"></a>SourceLocation
 
-Élément obligatoire lorsque  **xsi:type** est « ShowTaskpane ». Indique l’emplacement du fichier source pour cette action. L’attribut  **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Url** dans l’élément **Urls** dans l’élément [Resources](resources.md).
+Élément obligatoire lorsque **xsi : type** est « ShowTaskpane ». Indique l’emplacement du fichier source pour cette action. L’attribut  **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Url** dans l’élément **Urls** dans l’élément [Resources](resources.md).
 
 ```xml
 <Action xsi:type="ShowTaskpane">

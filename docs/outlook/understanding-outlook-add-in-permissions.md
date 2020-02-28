@@ -3,12 +3,12 @@ title: Présentation des autorisations de complément Outlook
 description: Les compléments Outlook spécifient le niveau d’autorisation requis dans leur manifeste (Restricted, ReadItem, ReadWriteItem ou ReadWriteMailbox).
 ms.date: 02/19/2020
 localization_priority: Normal
-ms.openlocfilehash: d3e5ac55619460e39c3853ea1a0a05c30d767bfd
-ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
+ms.openlocfilehash: 60b65416585b5215ed565a3689c1e7f398e001a5
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "42283904"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325325"
 ---
 # <a name="understanding-outlook-add-in-permissions"></a>Présentation des autorisations de complément Outlook
 
@@ -135,7 +135,7 @@ Vous pouvez indiquer **ReadWriteItem** dans l’élément **Permissions** du man
 
 - [Ajouter ou supprimer des pièces jointes](add-and-remove-attachments-to-an-item-in-a-compose-form.md) de cet élément.
 
-- Utiliser tous les autres membres de l’API JavaScript pour Office applicables aux compléments de messagerie, excepté **Mailbox.makeEWSRequestAsync**.
+- Utilisez tous les autres membres de l’API JavaScript pour Office qui s’appliquent aux compléments de messagerie, sauf **Mailbox. makeEWSRequestAsync**.
 
 ### <a name="cant-do"></a>Vous ne pouvez pas :
 

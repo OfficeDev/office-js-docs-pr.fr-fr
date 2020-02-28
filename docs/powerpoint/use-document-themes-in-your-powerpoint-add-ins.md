@@ -3,12 +3,12 @@ title: Utiliser des thèmes de document dans vos compléments PowerPoint
 description: ''
 ms.date: 10/14/2019
 localization_priority: Normal
-ms.openlocfilehash: bb37f4a9f1860d38c2218a00fbd8c8092beadd63
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 83b4c2192ba3c01deedfe69a8338265fbf7eaf53
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37627005"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324918"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>Utiliser des thèmes de document dans vos compléments PowerPoint
 
@@ -26,7 +26,7 @@ Chaque thème de document Office définit 12 couleurs. Dix de ces couleurs sont
 
 ![Palette de couleurs](../images/office15-app-color-palette.png)
 
-Pour afficher ou personnaliser l’intégralité des 12 couleurs de thème dans PowerPoint, dans le groupe **Variantes** de l’onglet **Conception**, cliquez sur le menu déroulant **Plus**, puis choisissez **Couleur** > **Personnaliser les couleurs** pour afficher la boîte de dialogue **Créer de nouvelles couleurs de thème**.
+Pour afficher ou personnaliser le jeu complet de 12 couleurs de thème dans PowerPoint, dans le groupe **variantes** de l’onglet **création** , cliquez sur le menu déroulant **plus** , puis sélectionnez **couleurs** > **personnaliser les couleurs** pour afficher la boîte de dialogue **créer de nouvelles couleurs de thème** .
 
 ![Boîte de dialogue Créer de nouvelles couleurs de thème](../images/office15-app-create-new-theme-colors.png)
 
@@ -34,17 +34,17 @@ Les quatre premières couleurs sont pour le texte et les arrière-plans. Un text
 
 ### <a name="document-theme-fonts"></a>Polices de thème de document
 
-Chaque thème de document Office définit également deux polices : une pour les titres et l’autre pour le corps de texte. PowerPoint utilise ces polices pour créer des styles de texte automatiques. En outre, les galeries **Styles rapides** pour le texte et **WordArt** utilisent ces mêmes polices de thème. Ces deux polices sont les deux premières proposées lorsque vous sélectionnez des polices avec le sélecteur de polices.
+Chaque thème de document Office définit également deux polices : une pour les titres et l’autre pour le corps de texte. PowerPoint utilise ces polices pour créer des styles de texte automatiques. En outre, les galeries **Styles rapides** pour le texte et **WordArt** utilisent ces mêmes polices de thème. Ces deux polices sont les deux premières proposées lorsque vous sélectionnez des polices avec le sélecteur de polices.
 
 ![Sélecteur de polices](../images/office15-app-font-picker.png)
 
-Pour afficher ou personnaliser les polices de thème dans PowerPoint, dans le groupe **Variantes** de l’onglet **Conception**, cliquez sur le menu déroulant **Plus**. Ensuite, sélectionnez **Polices** > **Personnaliser les polices** pour afficher la boîte de dialogue **Créer de nouvelles polices de thème**.
+Pour afficher ou personnaliser les polices de thème dans PowerPoint, dans le groupe **variantes** de l’onglet **création** , cliquez sur le menu déroulant **plus** , puis sélectionnez **polices** > **personnaliser les polices** pour afficher la boîte de dialogue **créer de nouvelles polices de thème** .
 
 ![Boîte de dialogue Créer de nouvelles polices de thème](../images/office15-app-create-new-theme-fonts.png)
 
 ### <a name="office-ui-theme-fonts-and-colors"></a>Couleurs et polices de thème de l’interface utilisateur Office
 
-Office vous permet également de choisir entre plusieurs thèmes prédéfinis qui spécifient certaines des couleurs et des polices utilisées dans l’interface utilisateur de toutes les applications Office. Pour cela, utilisez le menu déroulant  **Fichier** > **Compte** > **Thème Office** (dans toutes les applications Office).
+Office vous permet également de choisir entre plusieurs thèmes prédéfinis qui spécifient certaines des couleurs et des polices utilisées dans l’interface utilisateur de toutes les applications Office. Pour ce faire, utilisez la liste déroulante des**thèmes Office** du**compte** > de **fichiers** > (à partir de n’importe quelle application Office).
 
 ![Liste déroulante de thèmes Office](../images/office15-app-office-theme-picker.png)
 
@@ -143,11 +143,11 @@ Pour effectuer cette opération dans Visual Studio, procédez comme suit.
 
 #### <a name="to-reference-officethemescss-in-your-add-in-for-powerpoint"></a>Pour référencer OfficeThemes.css dans votre complément PowerPoint
 
-1. Choisissez **créer un nouveau projet**.
+1. Choisissez **Créer un nouveau projet**.
 
-2. À l’aide de la zone de recherche, entrez **complément**. Choisissez **complément Web PowerPoint**, puis cliquez sur **suivant**.
+2. À l’aide de la zone de recherche, entrez **complément**. Choisissez **Complément web PowerPoint**, puis sélectionnez **Suivant**.
 
-3. Nommez votre projet et sélectionnez **créer**.
+3. Nommez votre projet et sélectionnez **Créer**.
 
 3. Dans la fenêtre de la boîte de dialogue **Créer un complément Office**, choisissez **Ajouter de nouvelles fonctionnalités à PowerPoint**, puis sélectionnez **Terminer** pour créer le projet.
 
@@ -180,7 +180,7 @@ Ci-dessous figure un exemple simple de code HTML dans une complément de contenu
 </body>
 ```
 
-Lors de l’exécution, lorsque le complément de contenu est inséré dans une présentation qui utilise le **thème Office** par défaut, il est restitué comme suit.
+Lors de l’exécution, lorsqu’il est inséré dans une présentation qui utilise le **thème Office**par défaut, le complément de contenu est affiché comme suit.
 
 ![Application de contenu en cours d’exécution avec le thème Office](../images/office15-app-content-app-office-theme.png)
 

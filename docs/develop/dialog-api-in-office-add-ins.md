@@ -3,12 +3,12 @@ title: Utiliser l’API de boîte de dialogue Office dans vos compléments Offic
 description: Découvrir les notions de base relatives à la création d’une boîte de dialogue dans un complément Office
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 18ea221618e2a674266784517be3aa31d029c612
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: ed77173f57c8a16344d469585610917a08d3dcad
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950662"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324679"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Utiliser l’API de boîte de dialogue Office dans les compléments Office
 
@@ -86,7 +86,7 @@ La valeur par défaut est `false`, ce qui revient à omettre entièrement la pro
 La boîte de dialogue ne peut pas communiquer avec la page hôte dans le volet Office, sauf si :
 
 - la page active dans la boîte de dialogue se trouve dans le même domaine que la page hôte ;
-- la bibliothèque JavaScript Office est chargée dans la page. (Comme n’importe quelle page qui utilise la bibliothèque JavaScript Office, le script de la page doit attribuer une méthode à la propriété `Office.initialize`, bien qu’il puisse s’agir d’une méthode vide. Pour plus d’informations, voir [Initialisation de votre complément](understanding-the-javascript-api-for-office.md#initializing-your-add-in).)
+- La bibliothèque de l’API JavaScript pour Office est chargée dans la page. (Comme n’importe quelle page qui utilise la bibliothèque d’API JavaScript d’Office, le script de la page doit `Office.initialize` assigner une méthode à la propriété, bien qu’il puisse s’agir d’une méthode vide. Pour plus d’informations, consultez [la rubrique initialiser votre complément Office](initialize-add-in.md).
 
 Le code de la boîte de dialogue utilise la fonction [messageParent](/javascript/api/office/office.ui#messageparent-message-) pour envoyer une valeur booléenne ou un message de type chaîne à la page hôte. La chaîne peut être un mot, une phrase, un blob XML, un JSON converti en chaîne ou un autre élément pouvant être sérialisé en chaîne. Voici un exemple :
 

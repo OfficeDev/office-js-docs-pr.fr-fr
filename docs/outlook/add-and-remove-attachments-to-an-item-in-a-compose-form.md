@@ -3,12 +3,12 @@ title: Ajouter et supprimer des pièces jointes dans un complément Outlook
 description: Vous pouvez utiliser différentes API de pièces jointes pour gérer les fichiers ou les éléments Outlook associés à l’élément composé par l’utilisateur.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 977b8fa814a251c76aabc64345762a3a9556a60b
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 2110c22b65d1410cf4c607b6560eae72d169275c
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166222"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325481"
 ---
 # <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>Gérer les pièces jointes d’un élément dans un formulaire de composition dans Outlook
 

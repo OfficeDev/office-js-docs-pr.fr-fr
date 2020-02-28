@@ -3,12 +3,12 @@ ms.date: 01/14/2020
 description: Demander, flux de données et annuler la diffusion en continu de données externes à votre classeur avec des fonctions personnalisées dans Excel
 title: Recevoir et gérer des données à l’aide de fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: c59133389311721c4d0507337a17b346af97e690
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: ca1353fcc8c9fcd79db273f0cb1d7bf3d7d58a70
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41949708"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42323832"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>Recevoir et gérer des données à l’aide de fonctions personnalisées
 
@@ -27,7 +27,7 @@ Si une fonction personnalisée récupère des données d’une source externe co
 
 ### <a name="fetch-example"></a>Exemple de récupération
 
-Dans l’exemple de code suivant, la fonction **webRequest** s’étend à l’API hypothétique de Contoso « Nombre de personnes dans l’espace », qui effectue un suivi du nombre de personnes actuellement présentes sur International Space Station. La fonction renvoie une promesse JavaScript et utilise la récupération pour demander des informations à l’API. Les données obtenues sont transformées en JSON et la `names` propriété est convertie en chaîne, ce qui permet de résoudre la promesse.
+Dans l’exemple de code suivant, `webRequest` la fonction accède à l’API « nombre de personnes dans l’espace contoso », qui effectue le suivi du nombre de personnes actuellement présentes sur la station internationale. La fonction renvoie une promesse JavaScript et utilise la récupération pour demander des informations à l’API. Les données obtenues sont transformées en JSON et la `names` propriété est convertie en chaîne, ce qui permet de résoudre la promesse.
 
 Lorsque vous développez vos propres fonctions, vous souhaitez peut-être effectuer une action si la requête Web ne se termine pas en temps voulu ou envisager de [regrouper plusieurs demandes API](./custom-functions-batching.md).
 
@@ -60,7 +60,7 @@ Dans le runtime JavaScript, XHR implémente des mesures de sécurité supplémen
 
 Notez qu’une implémentation CORS simples ne peut pas utiliser les cookies et prend uniquement en charge les méthodes simples (GET, HEAD, POST). Le simple CORS accepte des en-têtes simples avec des noms de champs `Accept`, `Accept-Language`, `Content-Language`. Vous pouvez également utiliser un en-tête de Type de contenu dans CORS simple, autant que le type de contenu est `application/x-www-form-urlencoded`, `text/plain`, ou `multipart/form-data`.
 
-Dans l’exemple de code suivant, la fonction **getStarCount** appelle l’API GitHub pour trouver la quantité d’étoiles octroyées au référentiel d’un utilisateur en particulier. Il s’agit d’une fonction asynchrone qui renvoie une promesse JavaScript. Lorsque des données sont obtenues à partir de l’appel Web, la promesse est résolue et renvoie les données à la cellule.
+Dans l’exemple de code suivant, `getStarCount` la fonction appelle l’API GitHub pour découvrir la quantité d’étoiles donnée au référentiel d’un utilisateur particulier. Il s’agit d’une fonction asynchrone qui renvoie une promesse JavaScript. Lorsque des données sont obtenues à partir de l’appel Web, la promesse est résolue et renvoie les données à la cellule.
 
 ```TS
 /**

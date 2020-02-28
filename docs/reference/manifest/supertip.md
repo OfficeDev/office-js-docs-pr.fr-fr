@@ -3,12 +3,12 @@ title: Élément Supertip dans le fichier manifest
 description: ''
 ms.date: 05/07/2019
 localization_priority: Normal
-ms.openlocfilehash: 269a3723db6f98cdb25c61e5a88608c5fb5f3191
-ms.sourcegitcommit: 5b9c2b39dfe76cabd98bf28d5287d9718788e520
+ms.openlocfilehash: ab280ec550a58f85082c36a24f5f7c3b4112a214
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "33659654"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325233"
 ---
 # <a name="supertip"></a>Supertip
 
@@ -23,11 +23,11 @@ Définit une info-bulle enrichie (titre et description). Il est utilisé par les
 
 ### <a name="title"></a>Titre
 
-Obligatoire. Texte de la propriété SuperTip. L’attribut  **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String** dans l’élément **ShortStrings** dans l’élément [Resources](resources.md).
+Obligatoire. Texte de la propriété SuperTip. L’attribut **RESID** doit être défini sur la valeur de l' **attribut ID** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md) .
 
 ### <a name="description"></a>Description
 
-Obligatoire. Description de la propriété SuperTip. L’attribut  **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String** dans l’élément **LongStrings** dans l’élément [Resources](resources.md).
+Obligatoire. Description de l’info-bulle. L’attribut **RESID** doit être défini sur la valeur de l' **attribut ID** d’un élément **String** dans l’élément **LongStrings** de l’élément [Resources](resources.md) .
 
 > [!NOTE]
 > Pour Outlook, seuls les clients Windows et Mac prennent en charge l’élément **Description** .

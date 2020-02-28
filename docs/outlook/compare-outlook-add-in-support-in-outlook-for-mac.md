@@ -3,16 +3,16 @@ title: Comparer la prise en charge des compléments Outlook dans Outlook sur Mac
 description: Découvrez comment prend en charge les compléments dans Outlook sur Mac avec les autres hôtes Outlook.
 ms.date: 11/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 337938b9bb2e8f0e9b9343841a8240e46741eed9
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: ec5e9934249ddc1a90240890d7f0201d23599446
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166126"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325460"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-hosts"></a>Comparaison de la prise en charge des compléments Outlook dans Outlook sur Mac avec d’autres hôtes Outlook
 
-Vous pouvez créer et exécuter un complément Outlook de la même manière dans Outlook sur Mac, comme dans les autres hôtes, y compris Outlook sur le Web, Windows, iOS et Android, sans personnaliser le code JavaScript pour chaque hôte. Les mêmes appels depuis le complément vers l’API JavaScript pour Office fonctionnent généralement de la même manière, à l’exception des zones décrites dans le tableau suivant.
+Vous pouvez créer et exécuter un complément Outlook de la même manière dans Outlook sur Mac, comme dans les autres hôtes, y compris Outlook sur le Web, Windows, iOS et Android, sans personnaliser le code JavaScript pour chaque hôte. Les mêmes appels à partir du complément vers l’API JavaScript Office fonctionnent généralement de la même manière, à l’exception des zones décrites dans le tableau suivant.
 
 Pour plus d’informations, consultez la rubrique [Déployer et installer des compléments Outlook à des fins de test](testing-and-tips.md).
 

@@ -4,12 +4,12 @@ description: ''
 ms.date: 07/17/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: b37adca116c60b465e11858cb813e9a7f9247ed3
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 77ebd486f35a75f693941749a958cd122916fcfd
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950550"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325170"
 ---
 # <a name="office-common-api-requirement-sets"></a>Ensembles de conditions requises des API communes pour Office
 
@@ -182,6 +182,14 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ---
 
+### <a name="sharedruntime"></a>SharedRuntime
+
+|**Hôtes Office**|**Méthodes dans l’ensemble**|
+|:-----|:-----|
+| Voir [ensembles de conditions requises pour l’exécution partagée](shared-runtime-requirement-sets.md). | Office. AddIn. getStartupBehavior<br>Office. AddIn. Hide<br>Office. AddIn. onVisibilityModeChanged<br>Office. AddIn. setStartupBehavior<br>Office. AddIn. showAsTaskpane<br> |
+
+---
+
 ### <a name="tablebindings"></a>TableBindings
 
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
@@ -224,7 +232,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ## <a name="methods-that-arent-part-of-a-requirement-set"></a>Méthodes qui ne font pas partie d’un ensemble de conditions requises
 
-Les méthodes suivantes dans l’API JavaScript pour Office ne font pas partie d’un ensemble de conditions requises. Si votre complément requiert l’une de ces méthodes, utilisez les éléments **Methods** et **Method** dans le manifeste du complément afin de déclarer qu’ils sont requis ou effectuez la vérification de l’exécution à l’aide d’une instruction `if`. Pour plus d’informations, consultez la rubrique [Spécifier les hôtes Office et la configuration requise d’API](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements).
+Les méthodes suivantes de l’API JavaScript pour Office ne font pas partie d’un ensemble de conditions requises. Si votre complément requiert l’une de ces méthodes, utilisez les éléments **Methods** et **Method** dans le manifeste du complément afin de déclarer qu’ils sont requis ou effectuez la vérification de l’exécution à l’aide d’une instruction `if`. Pour plus d’informations, consultez la rubrique [Spécifier les hôtes Office et la configuration requise d’API](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements).
 
 |**Nom de la méthode**|**Prise en charge des hôtes Office**|
 |:-----|:-----|

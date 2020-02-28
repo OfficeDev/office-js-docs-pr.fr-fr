@@ -3,12 +3,12 @@ title: Obtenir et définir des données d’élément dans un formulaire de comp
 description: Obtenez ou définissez diverses propriétés d’un élément dans un complément Outlook d’un scénario de composition, y compris ses destinataires, son objet, son corps, et ses emplacement et heure de rendez-vous.
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: ff75c6565b6ff49dfb2ad1ac95c75499c9b32284
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 3b82f418ffa2820e5f8cf04805a62b0d85691420
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166209"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325446"
 ---
 # <a name="get-and-set-item-data-in-a-compose-form-in-outlook"></a>Obtenir et définir des données d’élément dans un formulaire de composition dans Outlook
 
@@ -20,7 +20,7 @@ Dans un formulaire de composition, vous pouvez obtenir la plupart des propriét�
 
 Pour la plupart de ces propriétés, comme il est possible qu’un complément Outlook et l’utilisateur modifient la même propriété dans l’interface utilisateur en même temps, les méthodes d’obtention et de définition de ces propriétés sont asynchrones. Le tableau 1 énumère les propriétés de niveau élément et les méthodes asynchrones correspondantes pour les obtenir et les définir dans un formulaire de composition. Les propriétés  [item.itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) et [item.conversationId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) constituent des exceptions, car les utilisateurs ne peuvent pas les modifier. Vous pouvez les obtenir par programmation de la même façon dans un formulaire de composition et dans un formulaire de lecture, directement à partir de l’objet parent.
 
-En plus d’accéder aux propriétés de niveau élément dans l’interface API JavaScript pour Office, vous pouvez également y accéder à l’aide des services web Exchange (EWS). Avec l’autorisation **ReadWriteMailbox**, vous pouvez utiliser la méthode [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) pour accéder aux opérations EWS, [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) and [UpdateItem](/exchange/client-developer/web-service-reference/updateitem-operation), pour obtenir et définir plus de propriétés d’au moins un élément dans la boîte aux lettres de l’utilisateur.
+En dehors de l’accès aux propriétés de l’élément dans l’API JavaScript pour Office, vous pouvez accéder aux propriétés au niveau de l’élément à l’aide des services Web Exchange (EWS). Avec l’autorisation **ReadWriteMailbox**, vous pouvez utiliser la méthode [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) pour accéder aux opérations EWS, [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) and [UpdateItem](/exchange/client-developer/web-service-reference/updateitem-operation), pour obtenir et définir plus de propriétés d’au moins un élément dans la boîte aux lettres de l’utilisateur.
 
 La fonction `makeEwsRequestAsync` est disponible à la fois dans les formulaires de lecture et de composition. Pour plus d’informations sur l’autorisation **ReadWriteMailbox** et l’accès à EWS par le biais de la plateforme des Compléments Office, consultez les rubriques [Présentation des autorisations de complément Outlook](understanding-outlook-add-in-permissions.md) et [Appeler des services Web à partir d’un complément Outlook](web-services.md).
 

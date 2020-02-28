@@ -3,12 +3,12 @@ title: Limites des ressources et optimisation des performances pour les complém
 description: ''
 ms.date: 09/09/2019
 localization_priority: Normal
-ms.openlocfilehash: 332ea72e9c96ff7a9b61a4fb0249284ca44079ac
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 5263abdafb6655325a22754ab22f36b99ca32cbe
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42162789"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42323888"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites des ressources et optimisation des performances pour les compléments Office
 
@@ -26,7 +26,7 @@ Les limites d’utilisation des ressources d’exécution s’appliquent à tous
 
 - **Utilisation de la mémoire** - Seuil d’utilisation de mémoire par défaut, qui est déterminé de manière dynamique en fonction de la mémoire physique disponible de l’appareil.
 
-   Par défaut, lorsqu’un client enrichi de l’hôte détecte que l’utilisation de la mémoire physique d’un appareil dépasse 80 % de la mémoire disponible, le client commence à surveiller l’utilisation de la mémoire du complément, au niveau du document pour les compléments du contenu et du volet des tâches, et au niveau de la boîte aux lettres pour les compléments Outlook. À un intervalle de 5 secondes par défaut, le client avertit l’utilisateur si l’utilisation de la mémoire physique pour un ensemble de compléments au niveau du document ou de la boîte aux lettres est supérieure à 50 %. Cette limite d’utilisation de la mémoire utilise la mémoire physique plutôt que la mémoire virtuelle pour garantir des performances sur des appareils dont la mémoire vive est limitée, comme les tablettes. Les administrateurs peuvent remplacer ce paramètre dynamique par une limite explicite en utilisant la clé de registre Windows **MemoryAlertThreshold** comme paramètre global, ou ajuster l’intervalle d’alerte en utilisant la clé **AlertInterval** comme paramètre global.
+   Par défaut, lorsqu’un client riche hôte détecte que l’utilisation de la mémoire physique sur un appareil dépasse 80% de la mémoire disponible, le client démarre la surveillance de l’utilisation de la mémoire du complément, au niveau du document pour les compléments de contenu et du volet Office, et au niveau des boîtes aux lettres pour les compléments Outlook. À un intervalle de 5 secondes par défaut, le client avertit l’utilisateur si l’utilisation de la mémoire physique pour un ensemble de compléments au niveau du document ou de la boîte aux lettres dépasse 50%. Cette limite d’utilisation de la mémoire utilise des mémoires physiques plutôt que des mémoires virtuelles pour garantir des performances sur les appareils avec une RAM limitée, comme les tablettes. Les administrateurs peuvent remplacer ce paramètre dynamique par une limite explicite à l’aide de la clé de Registre Windows **MemoryAlertThreshold** en tant que paramètre global, IR régler l’intervalle d’alerte en utilisant la clé **AlertInterval** comme paramètre global.
 
 - **Tolérance d’incident** - Limite par défaut de 4 incidents pour un complément.
 
@@ -47,11 +47,11 @@ En plus du cœur du processeur, de la mémoire et des règles de fiabilité, les
 
 - **Temps de réponse des expressions régulières** - Seuil par défaut de 1 000 millisecondes pour Outlook afin d’évaluer toutes les expressions régulières contenues dans le manifeste d’un complément Outlook. Le dépassement du seuil oblige Outlook à retenter l’évaluation un peu plus tard.
 
-    À l’aide d’une stratégie de groupe ou d’un paramètre propre à l’application dans le registre Windows, les administrateurs peuvent ajuster cette valeur seuil par défaut de 1 000 millisecondes dans le paramètre **OutlookActivationAlertThreshold**.
+    À l’aide d’une stratégie de groupe ou d’un paramètre spécifique de l’application dans le Registre Windows, les administrateurs peuvent ajuster cette valeur seuil par défaut de 1 000 millisecondes dans le paramètre **OutlookActivationAlertThreshold**.
 
-- **Réévaluation des expressions régulières** - Limite par défaut de trois tentatives pour permettre à Outlook de réévaluer toutes les expressions régulières contenues dans un manifeste. Si l’évaluation échoue à trois reprises en dépassant le seuil applicable (qui est soit la valeur par défaut de 1 000 millisecondes, soit une valeur spécifiée par **OutlookActivationAlertThreshold**, si ce paramètre existe dans le Registre Windows), Outlook désactive le complément Outlook. Le Centre d’administration Exchange affiche l’état désactivé. Par ailleurs, l’utilisation du complément est désactivée dans les clients riches Outlook, Outlook sur le web et les appareils mobiles.
+- **Réévaluation des expressions régulières** -une limite par défaut de trois fois pour qu’Outlook réévalue toutes les expressions régulières dans un manifeste. Si l’évaluation échoue toutes les trois fois en dépassant le seuil applicable (soit la valeur par défaut de 1 000 millisecondes, soit une valeur spécifiée par **OutlookActivationAlertThreshold**, si ce paramètre existe dans le Registre Windows), Outlook désactive le complément Outlook. Le centre d’administration Exchange affiche l’état désactivé et le complément est désactivé pour une utilisation dans les clients riches Outlook, et Outlook sur le Web et les appareils mobiles.
 
-    À l’aide d’une stratégie de groupe ou d’un paramètre propre à l’application dans le registre Windows, les administrateurs peuvent ajuster ce nombre de tentatives d’évaluation dans le paramètre **OutlookActivationManagerRetryLimit**.
+    À l’aide d’une stratégie de groupe ou d’un paramètre spécifique de l’application dans le Registre Windows, les administrateurs peuvent ajuster ce nombre de tentatives d’évaluation dans le paramètre **OutlookActivationManagerRetryLimit**.
 
 ### <a name="task-pane-and-content-add-ins"></a>Compléments de volet Office et de contenu
 
@@ -81,10 +81,10 @@ Le tableau suivant répertorie les événements que le journal de télémétrie 
 |8|Échec du téléchargement du manifeste du complément|Critique|L’application hôte n’a pas pu charger le fichier manifeste pour le complément Office à partir du catalogue SharePoint, du catalogue d’entreprise ou d’AppSource.|
 |9|Impossible d’analyser le balisage du complément|Critique|L’application hôte a chargé le manifeste de l’Complément Office, mais n’a pas pu lire le balisage HTML de l’application.|
 |10|Le complément a trop sollicité le processeur|Critique|L’Complément Office a utilisé plus de 90 % des ressources du processeur sur une période de temps définie.|
-|15|Le complément a été désactivé en raison de l’expiration de la recherche de chaîne||Les compléments Outlook recherchent la ligne d’objet et le corps du message d’un courrier électronique pour déterminer s’ils doivent être affichés avec une expression régulière. Le complément Outlook répertorié dans la colonne  **Fichier** a été désactivé par Outlook, car il a expiré à plusieurs reprises lors d’une tentative de mise en correspondance d’une expression régulière.|
+|15|Le complément a été désactivé en raison de l’expiration de la recherche de chaîne||§LTA Les compléments Outlook recherchent la ligne d’objet et le corps du message d’un courrier électronique pour déterminer s’ils doivent être affichés avec une expression régulière. Le complément Outlook répertorié dans la colonne **Fichier** a été désactivé par Outlook, car il a expiré à plusieurs reprises lors d’une tentative de mise en correspondance d’une expression régulière.|
 |18|Le complément a été fermé||L’application hôte a pu fermer l’Complément Office sans problème.|
-|19|Le complément a rencontré une erreur d’exécution|Critique|L’Complément Office a rencontré un problème qui l’a empêchée de s’exécuter. Pour plus de détails, consultez le journal  **Alertes Microsoft Office** à l’aide de l’Observateur d’événements Windows sur l’ordinateur sur lequel l’erreur s’est produite.|
-|20|Le complément n’a pas pu vérifier la licence|Critique|Les informations de licence de l’Complément Office n’ont pas pu être vérifiées et la licence a peut-être expiré. Pour plus de détails, consultez le journal  **Alertes Microsoft Office** à l’aide de l’Observateur d’événements Windows sur l’ordinateur sur lequel l’erreur s’est produite.|
+|19|Le complément a rencontré une erreur d’exécution|Critique|Le complément Office a rencontré un problème à l’origine de l’échec. Pour plus d’informations, consultez le journal **Microsoft Office Alerts** à l’aide de l’observateur d’événements Windows sur l’ordinateur qui a rencontré l’erreur.|
+|20|Le complément n’a pas pu vérifier la licence|Critique|Les informations de licence pour le complément Office n’ont pas pu être vérifiées et peuvent avoir expiré. Pour plus d’informations, consultez le journal **Microsoft Office Alerts** à l’aide de l’observateur d’événements Windows sur l’ordinateur qui a rencontré l’erreur.|
 
 Pour plus d’informations, consultez [Déployer le Tableau de bord de télémétrie](/previous-versions/office/office-2013-resource-kit/jj219431(v=office.15)) et [Dépannage des fichiers et des solutions personnalisées d’Office avec le journal de télémétrie](/office/client-developer/shared/troubleshooting-office-files-and-custom-solutions-with-the-telemetry-log)
 

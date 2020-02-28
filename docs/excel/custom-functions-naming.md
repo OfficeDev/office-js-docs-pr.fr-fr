@@ -3,16 +3,16 @@ ms.date: 12/28/2019
 description: Découvrez les conditions requises pour les noms des fonctions personnalisées Excel et éviter les pièges de dénomination courants.
 title: Instructions d’affectation de noms pour les fonctions personnalisées dans Excel
 localization_priority: Normal
-ms.openlocfilehash: 547d1edd1a8103afce8b233f77085296cd85642b
-ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
+ms.openlocfilehash: 2dcd35a91f460fcd556dec479fb717942a987908
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "40969513"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324658"
 ---
 # <a name="naming-guidelines"></a>Instructions d’attribution de noms
 
-Une fonction personnalisée est identifiée par un **ID** et une propriété de **nom** dans le fichier de métadonnées JSON.
+Une fonction personnalisée est identifiée par `id` une `name` propriété and dans le fichier de métadonnées JSON.
 
 - La fonction `id` est utilisée pour identifier des fonctions personnalisées de manière unique dans votre code JavaScript.
 - La fonction `name` est utilisée comme nom complet qui s’affiche pour un utilisateur dans Excel.

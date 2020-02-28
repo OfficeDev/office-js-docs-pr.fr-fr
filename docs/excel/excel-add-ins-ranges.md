@@ -3,16 +3,16 @@ title: Utilisation de plages à l’aide de l’API JavaScript pour Excel (fond
 description: ''
 ms.date: 04/30/2019
 localization_priority: Normal
-ms.openlocfilehash: af51e22535dd9d2d26c157d133b1bb16237a32d2
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: cb77721649608cf18fc7bad99974cfe96f6be6f3
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950872"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325086"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Utilisation de plages à l’aide de l’API JavaScript pour Excel
 
-Cet article fournit des exemples de code qui expliquent comment effectuer des tâches courantes avec des plages à l’aide de l’API JavaScript pour Excel. Pour obtenir une liste complète des propriétés et des méthodes prises en charge par l’objet **Range**, reportez-vous à la rubrique [Objet Range (API JavaScript pour Excel)](/javascript/api/excel/excel.range).
+Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes avec des plages à l’aide de l’API JavaScript pour Excel. Pour obtenir la liste complète des propriétés et des méthodes `Range` prises en charge par l’objet, reportez-vous à la rubrique [objet Range (interface API JavaScript pour Excel)](/javascript/api/excel/excel.range).
 
 > [!NOTE]
 > Pour plus d’exemples de code qui montrent comment effectuer des tâches plus avancées avec des plages, consultez l’article [Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)](excel-add-ins-ranges-advanced.md).
@@ -23,7 +23,7 @@ Les exemples suivants montrent les différentes façons d’obtenir une référe
 
 ### <a name="get-range-by-address"></a>Obtenir une plage en fonction d’une adresse
 
-L’exemple de code suivant obtient la plage ayant l’adresse **B2 : C5** à partir de la feuille de calcul nommée **Sample**, charge sa propriété **address** et écrit un message dans la console.
+L’exemple de code suivant obtient la plage avec l’adresse **B2 : C5** à partir **** de la feuille de `address` calcul nommée Sample, charge sa propriété et écrit un message dans la console.
 
 ```js
 Excel.run(function (context) {
@@ -40,7 +40,7 @@ Excel.run(function (context) {
 
 ### <a name="get-range-by-name"></a>Obtenir une plage en fonction d’un nom
 
-L’exemple de code suivant obtient la plage nommée **MyRange** à partir de la feuille de calcul nommée **Sample**, charge sa propriété **address** et écrit un message dans la console.
+L’exemple de code suivant obtient la plage `MyRange` nommée à partir de la feuille de calcul `address` nommée **Sample**, charge sa propriété et écrit un message dans la console.
 
 ```js
 Excel.run(function (context) {
@@ -57,7 +57,7 @@ Excel.run(function (context) {
 
 ### <a name="get-used-range"></a>Obtenir une plage utilisée
 
-L’exemple de code suivant obtient la plage  utilisée dans la feuille de calcul nommée **Sample**, charge sa propriété **address** et écrit un message dans la console. La plage utilisée est la plus petite plage qui englobe toutes les cellules de la feuille de calcul auxquelles une valeur ou un format est affecté. Si la feuille de calcul entière est vide, la méthode **getUsedRange()** renvoie une plage qui se compose d’uniquement de la cellule en haut à gauche de la feuille de calcul.
+L’exemple de code suivant obtient la plage utilisée à partir de **** la feuille de calcul `address` nommée Sample, charge sa propriété et écrit un message dans la console. La plage utilisée est la plus petite plage qui englobe toutes les cellules de la feuille de calcul auxquelles une valeur ou une mise en forme est attribuée. Si la feuille de calcul entière est vide `getUsedRange()` , la méthode renvoie une plage qui se compose uniquement de la cellule supérieure gauche de la feuille de calcul.
 
 ```js
 Excel.run(function (context) {
@@ -74,7 +74,7 @@ Excel.run(function (context) {
 
 ### <a name="get-entire-range"></a>Obtenir l’intégralité d’une plage
 
-L’exemple de code suivant obtient l’intégralité de la plage de la feuille de calcul à partir de la feuille de calcul nommée **Sample**, charge sa propriété **address** et écrit un message dans la console.
+L’exemple de code suivant obtient la plage entière de la feuille de **** calcul à partir de `address` la feuille de calcul nommée Sample, charge sa propriété et écrit un message dans la console.
 
 ```js
 Excel.run(function (context) {
@@ -179,7 +179,7 @@ Excel.run(function (context) {
 
 ## <a name="get-the-selected-range"></a>Obtenir la plage sélectionnée
 
-L’exemple de code suivant recherche la plage  sélectionnée, charge sa propriété **address** et écrit un message dans la console. 
+L’exemple de code suivant obtient la plage sélectionnée, charge `address` sa propriété et écrit un message dans la console. 
 
 ```js
 Excel.run(function (context) {
@@ -310,7 +310,7 @@ Ces exemples montrent comment obtenir des valeurs, du texte et des formules à p
 
 ### <a name="get-values-from-a-range-of-cells"></a>Obtenir des valeurs à partir d’une plage de cellules
 
-L’exemple de code suivant obtient la plage **B2:E6**, charge la propriété **values** et écrit les valeurs dans la console. La propriété **values** d’une plage spécifie les valeurs brutes contenues dans les cellules. Même si certaines cellules d’une plage contiennent des formules, la propriété **values** de la plage spécifie les valeurs brutes des cellules, et non des formules.
+L’exemple de code suivant obtient la plage **B2 : E6**, charge `values` sa propriété et écrit les valeurs dans la console. La `values` propriété d’une plage spécifie les valeurs brutes contenues dans les cellules. Même si certaines cellules d’une plage contiennent des formules, `values` la propriété de la plage spécifie les valeurs brutes de ces cellules, pas les formules.
 
 ```js
 Excel.run(function (context) {
@@ -368,7 +368,7 @@ Excel.run(function (context) {
 
 ### <a name="get-text-from-a-range-of-cells"></a>Obtenir du texte à partir d’une plage de cellules
 
-L’exemple de code suivant obtient la plage **B2:E6**, charge sa propriété **text** et l’écrit dans la console.  La propriété **text** d’une plage spécifie les valeurs d’affichage pour les cellules de la plage. Même si certaines cellules d’une plage contiennent des formules, la propriété **text** de la plage indique les valeurs d’affichage pour ces cellules, et non des formules.
+L’exemple de code suivant obtient la plage **B2 : E6**, charge `text` sa propriété et l’écrit dans la console. La `text` propriété d’une plage spécifie les valeurs d’affichage pour les cellules de la plage. Même si certaines cellules d’une plage contiennent des formules, `text` la propriété de la plage spécifie les valeurs d’affichage de ces cellules, et non des formules.
 
 ```js
 Excel.run(function (context) {
@@ -426,7 +426,7 @@ Excel.run(function (context) {
 
 ### <a name="get-formulas-from-a-range-of-cells"></a>Obtenir des formules à partir d’une plage de cellules
 
-L’exemple de code suivant obtient la plage **B2:E6**, charge sa propriété **formulas** et l’écrit dans la console.  La propriété **formulas** d’une plage spécifie les formules pour les cellules de la plage contenant des formules et des valeurs brutes pour les cellules de la plage ne contenant pas de formule.
+L’exemple de code suivant obtient la plage **B2 : E6**, charge `formulas` sa propriété et l’écrit dans la console. La `formulas` propriété d’une plage spécifie les formules pour les cellules de la plage qui contiennent des formules et les valeurs brutes pour les cellules de la plage qui ne contiennent pas de formules.
 
 ```js
 Excel.run(function (context) {

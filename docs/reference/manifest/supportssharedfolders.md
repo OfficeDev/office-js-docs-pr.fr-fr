@@ -3,12 +3,12 @@ title: Élément SupportsSharedFolders dans le fichier manifest
 description: ''
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 4ce78d9ece901d8cd6f8639ce7a286f70893a2b4
-ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
+ms.openlocfilehash: e76d17b618e2aaf15724f15ee6695a932172bba3
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "41120606"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325226"
 ---
 # <a name="supportssharedfolders-element"></a>Élément SupportsSharedFolders
 
@@ -19,7 +19,7 @@ Définit si le complément Outlook est disponible dans les scénarios de délég
 >
 > La prise en charge de cet élément a été introduite dans l’ensemble de conditions requises 1,8. Voir [les clients et les plateformes](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
 
-L’exemple suivant présente l’élément**SupportsSharedFolders**.
+Voici un exemple de l’élément **SupportsSharedFolders** .
 
 ```XML
 ...

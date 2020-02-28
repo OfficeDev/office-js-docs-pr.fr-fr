@@ -3,12 +3,12 @@ title: Élément Group dans le fichier manifeste
 description: ''
 ms.date: 12/02/2019
 localization_priority: Normal
-ms.openlocfilehash: 35db4829b40078e97fbfc007e2fb552e00875f9c
-ms.sourcegitcommit: 164b11b1e9d2ae20b3d816092025b32a9070450f
+ms.openlocfilehash: 27a168ea17352482e955e7a0d1f8267c7d6b17d8
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "39818726"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324861"
 ---
 # <a name="group-element"></a>Élément Group
 
@@ -31,9 +31,9 @@ Obligatoire. Identificateur unique du groupe. Il s’agit d’une chaîne avec u
 |  [Icon](icon.md)      | Oui |  Image d’un groupe.  |
 |  [Control](#control)    | Oui |  Ensemble d’un ou de plusieurs objets Control.  |
 
-### <a name="label"></a>Étiquette 
+### <a name="label"></a>Label 
 
-Obligatoire. Libellé du groupe. L’attribut  **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md).
+Obligatoire. Libellé du groupe. L’attribut **RESID** doit être défini sur la valeur de l' **attribut ID** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md) .
 
 ### <a name="icon"></a>Icône
 

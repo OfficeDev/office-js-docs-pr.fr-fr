@@ -3,12 +3,12 @@ title: Débogage de compléments dans Office sur le web
 description: Découvrez comment utiliser Office sur le web pour tester et déboguer vos compléments.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: d28ffc7cba6d7029799bc8d5931c873bf8390d21
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 76f26a58cca2e89e50547188b99259ee250b550d
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950928"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325163"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>Débogage de compléments dans Office sur le web
 
@@ -46,7 +46,7 @@ Pour déboguer votre complément à l’aide d’Office sur le web, procédez co
 
 4. Lancez Excel ou Word sur le web à partir du lanceur d’applications dans Office 365, puis ouvrez un nouveau document.
 
-5. Sur l’onglet Insérer, sélectionnez  **Mes compléments** ou **Compléments Office** pour insérer votre complément et le tester dans l’application.
+5. Sur l’onglet Insérer, sélectionnez **Mes compléments** ou **Compléments Office** pour insérer votre complément et le tester dans l’application.
 
 6. Utilisez l’outil de débogage de votre navigateur préféré pour déboguer votre complément.
 

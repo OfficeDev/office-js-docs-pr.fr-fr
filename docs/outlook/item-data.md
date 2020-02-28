@@ -3,12 +3,12 @@ title: Obtenir ou définir des données d’élément dans un complément Outloo
 description: Selon qu’un complément est activé dans un formulaire de lecture ou de composition, les propriétés disponibles pour le complément sur un élément diffèrent.
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: be7d14a6c417d01c0537e3375524da5cc807d749
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 925dcaff524be3f4e3d76213c0ee3413a11f43d6
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166111"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325353"
 ---
 # <a name="get-and-set-outlook-item-data-in-read-or-compose-forms"></a>Obtenir et définir des données d’élément Outlook dans des formulaires de lecture ou de composition
 
@@ -18,7 +18,7 @@ Par exemple, les propriétés [dateTimeCreated](../reference/objectmodel/preview
 
 ## <a name="item-properties-available-in-compose-and-read-forms"></a>Propriétés d’éléments disponibles dans les formulaires de composition et de lecture
 
-Le Tableau 1 indique les propriétés au niveau de l’élément dans l’interface API JavaScript pour Office qui sont disponibles dans mode (lecture et écriture) des compléments de messagerie. En règle générale, ces propriétés disponibles dans les formulaires de lecture sont en lecture seule et celles disponibles dans les formulaires de composition sont en lecture/écriture, à l’exception des propriétés [itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties), [conversationId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) et [itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) qui sont toujours en lecture seule.
+Le tableau 1 présente les propriétés de niveau élément dans l’API JavaScript pour Office qui sont disponibles dans chaque mode (lecture et composition) des compléments de messagerie. généralement, les propriétés disponibles dans les formulaires de lecture sont en lecture seule et celles disponibles dans les formulaires de composition sont en lecture/écriture, à l’exception des propriétés [ItemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties), [conversationId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)et [ItemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) , qui sont toujours en lecture seule.
 
 Pour les propriétés restantes au niveau de l’élément disponibles dans les formulaires de composition, étant donné que le complément et l’utilisateur peuvent lire ou écrire la même propriété simultanément, les méthodes pour les obtenir ou les définir dans le mode de composition sont asynchrones et par conséquent, les types des objets renvoyés par ces propriétés peuvent également être différents dans les formulaires de compositions et les formulaires de lecture. Pour plus d’informations sur l’utilisation des méthodes asynchrones pour obtenir ou définir des propriétés au niveau de l’élément en mode de composition, reportez-vous à [Obtenir et définir des données d’élément dans un formulaire de composition dans Outlook](get-and-set-item-data-in-a-compose-form.md).
 

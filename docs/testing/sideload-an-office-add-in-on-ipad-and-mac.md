@@ -3,12 +3,12 @@ title: Chargement de version test des compléments Office sur iPad et Mac
 description: ''
 ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 63e7e22bd7db3aec8808a3c7e043a48a28b14486
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: c4af2c9ac6f209ab88f9f69efa56e58af0af50cd
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42163947"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325044"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>Chargement de version test des compléments Office sur iPad et Mac
 
@@ -36,21 +36,21 @@ Pour voir comment votre complément s’exécutera dans Office sur iOS, vous pou
 
 ## <a name="sideload-an-add-in-on-excel-or-word-on-ipad"></a>Chargement d’une version test d’un complément dans Excel ou Word sur iPad
 
-1. Utilisez un câble de synchronisation pour connecter votre iPad à votre ordinateur. Lorsque vous connectez l’iPad à votre ordinateur pour la première fois, le message **Approuver cet ordinateur ?** s’affiche. Sélectionnez **Approuver** pour continuer.
+1. Utilisez un câble de synchronisation pour connecter votre iPad à votre ordinateur. Si vous connectez l’ordinateur iPad à votre ordinateur pour la première fois, vous êtes invité à **approuver cet ordinateur ?**. Sélectionnez **approuver** pour continuer.
 
 2. Dans iTunes, sélectionnez l’icône **iPad** en dessous de la barre de menu.
 
-3. Sous  **Réglages** sur le côté gauche d’iTunes, sélectionnez **Applications**.
+3. Sous **Réglages** sur le côté gauche d’iTunes, sélectionnez **Applications**.
 
-4. Sur le côté droite d’iTunes, faites défiler vers  **Partage de fichiers**, puis sélectionnez  **Excel** ou **Word** dans la colonne **Compléments**.
+4. Sur le côté droite d’iTunes, faites défiler vers **Partage de fichiers**, puis sélectionnez **Excel** ou **Word** dans la colonne **Compléments**.
 
-5. Au bas de la colonne  **Excel** ou **Documents Word**, sélectionnez  **Ajouter un fichier**, puis sélectionnez le fichier .xml de manifeste du complément dont vous voulez charger une version test.
+5. Au bas de la colonne **Excel** ou **documents Word** , sélectionnez **Ajouter un fichier**, puis sélectionnez le fichier manifest. xml du complément que vous souhaitez chargement.
 
-6. Ouvrez l'application Excel ou Word sur votre iPad. Si l'application Excel ou Word est déjà en cours d'exécution, choisissez le bouton  **Home**, puis fermez et redémarrez l'application.
+6. Ouvrez l’application Excel ou Word sur votre iPad. Si l’application Excel ou Word est déjà en cours d’exécution, cliquez sur le bouton **Accueil** , puis fermez et redémarrez l’application.
 
 7. Ouvrez un document.
 
-8. Choisissez  **Compléments** dans l’onglet **Insérer**. La version test chargée de votre complément peut être insérée sous l’en-tête  **Développeur** dans l’interface utilisateur **Compléments**.
+8. Choisissez **compléments** sous l’onglet **insertion** . Votre complément versions test chargées peut être inséré sous le titre **développeur** dans l’interface utilisateur des **compléments** .
 
     ![Insérer des compléments dans l’application Excel](../images/excel-insert-add-in.png)
 
@@ -59,19 +59,19 @@ Pour voir comment votre complément s’exécutera dans Office sur iOS, vous pou
 > [!NOTE]
 > Pour charger une version test de complément Outlook sur Mac, voir l’article relatif au [chargement de version test des compléments Outlook](../outlook/sideload-outlook-add-ins-for-testing.md).
 
-1. Ouvrez **Terminal** et accédez à l’un des dossiers suivants, dans lequel vous enregistrerez le fichier manifeste de votre complément. Si le dossier `wef` n’existe pas sur votre ordinateur, créez-le.
+1. Ouvrez le **Terminal** et accédez à l’un des dossiers suivants, dans lequel vous allez enregistrer le fichier manifeste de votre complément. Si le `wef` dossier n’existe pas sur votre ordinateur, créez-le.
 
     - Pour Word : `/Users/<username>/Library/Containers/com.microsoft.Word/Data/Documents/wef`    
     - Pour Excel : `/Users/<username>/Library/Containers/com.microsoft.Excel/Data/Documents/wef`
     - Pour PowerPoint : `/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/Documents/wef`
 
-2. Ouvrez le dossier dans **Finder** à l’aide de la commande `open .` (sans oublier le point). Copier le fichier manifeste de votre complément dans ce dossier.
+2. Ouvrez le dossier dans **Finder** à l’aide `open .` de la commande (y compris le point ou le point). Copiez le fichier manifeste de votre complément dans ce dossier.
 
     ![Dossier WEF dans Office sur Mac](../images/all-my-files.png)
 
 3. Ouvrez Word, puis ouvrez un document. Redémarrez Word si cette application est déjà en cours d'exécution.
 
-4. Dans Word, choisissez **Insertion** > **Compléments** > **Mes compléments** (menu déroulant), puis choisissez votre complément.
+4. Dans Word, sélectionnez **Insérer** > des**compléments** > **My Add-ins** (menu déroulant), puis choisissez votre complément.
 
     ![Mes compléments dans Office sur Mac](../images/my-add-ins-wikipedia.png)
 
