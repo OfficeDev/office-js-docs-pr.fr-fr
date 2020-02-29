@@ -4,16 +4,16 @@ description: ''
 ms.date: 07/05/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: c08e5af14c43d92a677e28d47b26014fd27f700e
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: ae079105b508f4e7dabb85fbf0ad8898275bdb67
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851501"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324756"
 ---
 # <a name="javascript-api-for-powerpoint"></a>API JavaScript pour PowerPoint
 
-Un complément PowerPoint interagit avec des objets dans PowerPoint à l’aide de l’API JavaScript pour Office, qui inclut deux modèles d’objets JavaScript :
+Un complément PowerPoint interagit avec des objets dans PowerPoint à l’aide de l’API JavaScript pour Office, qui comprend deux modèles d’objets JavaScript :
 
 * **API JavaScript pour PowerPoint** : l’[API JavaScript pour PowerPoint](/javascript/api/powerpoint) fournit des objets fortement typés que vous pouvez utiliser pour accéder à des objets dans PowerPoint.
 
