@@ -1,14 +1,14 @@
 ---
 title: Création de compléments Office
 description: Présentation du développement de compléments Office.
-ms.date: 02/19/2020
+ms.date: 02/27/2020
 localization_priority: Priority
-ms.openlocfilehash: 95a930f89c3ce6c2c4fc894c61bd4337851a8614
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 2ab0c79771d9aa60b2fd99984914554214978089
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42163870"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325311"
 ---
 # <a name="building-office-add-ins"></a>Création de compléments Office
 
@@ -93,42 +93,17 @@ Si vous souhaitez en savoir plus sur le manifeste, veuillez consulter l’articl
 
 Un complément Office peut utiliser l’API JavaScript Office pour interagir avec le contenu du document Office dans lequel le complément est exécuté. 
 
-#### <a name="accessing-the-office-javascript-library"></a>Accès à la bibliothèque JavaScript pour Office
+#### <a name="accessing-the-office-javascript-api-library"></a>Accès à la bibliothèque de l’API JavaScript Office
 
-La bibliothèque JavaScript Office est accessible via le réseau de distribution de contenu (CDN) d’Office JS à l’adresse suivante : `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js`. Pour utiliser les API JavaScript Office dans les pages web de votre complément, vous devez référencer le réseau de distribution de contenu dans une balise `<script>`dans la balise `<head>` de la page.
+[!include[information about accessing the Office JS API library](../includes/office-js-access-library.md)]
 
-```html
-<head>
-    ...
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
-</head>
-```
+#### <a name="api-models"></a>Modèles d’API
 
-> [!NOTE]
-> Pour utiliser les API destinées à la prévisualisation, référencez la version d’évaluation de la bibliothèque JavaScript Office dans le CDN : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-
-Si vous souhaitez en savoir plus sur l’accès à la bibliothèque JavaScript pour Office, notamment sur l’obtention d’IntelliSense, consultez [Référencement de la bibliothèque de l’interface API JavaScript pour Office à partir de son réseau de distribution de contenu (CDN)](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md).
-
-#### <a name="api-models"></a>Modèles API
-
-Les API JavaScript pour Office incluent deux modèles distincts :
-
-- **Les API spécifiques aux hôtes** fournissent des objets fortement typés qui peuvent être utilisés pour interagir avec des objets natifs d’une application Office spécifique. Par exemple, vous pouvez utiliser les API JavaScript pour Excel pour accéder à des feuilles de calcul, plages, tableaux, graphiques, etc. Les API spécifiques aux hôtes sont actuellement disponibles pour [Excel](../reference/overview/excel-add-ins-reference-overview.md), [Word](../reference/overview/word-add-ins-reference-overview.md)et [OneNote](../reference/overview/onenote-add-ins-javascript-reference.md). Ce modèle API utilise [promet](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) et vous permet de spécifier plusieurs opérations dans chaque demande que vous envoyez à l’hôte Office. Ce type d'opérations peut améliorer sensiblement les performances des compléments dans Office sur les applications web. Les API spécifiques aux hôtes ont été introduites avec Office 2016 et ne peuvent pas être utilisées pour interagir avec Office 2013.
-
-- Les API **Communes** peuvent être utilisées pour accéder à des fonctionnalités telles qu’une interface utilisateur, des boîtes de dialogue et des paramètres du client, qui sont communes à plusieurs types d’applications Office. Ce modèle API utilise des [rappels](https://developer.mozilla.org/docs/Glossary/Callback_function), où vous ne pouvez spécifier qu’une seule opération dans chaque demande que vous envoyez à l’hôte Office. Les API communes ont été introduites avec Office 2013 et peuvent être utilisées pour interagir avec Office 2013 ou version ultérieure. Si vous souhaitez plus en savoir sur le modèle objet API commun, qui inclut des API pour l’interaction avec Outlook et PowerPoint, veuillez consulter [Modèle d’objet API JavaScript communes](../develop/office-javascript-api-object-model.md).
-
-> [!NOTE]
-> Les fonctions personnalisées d’Excel s’exécutent au sein d’un Runtime unique qui hiérarchise l’exécution des calculs, et utilise par conséquent un modèle de programmation légèrement différent. Pour plus d'informations, veuillez vous reporter à [Architecture des fonctions personnalisées](../excel/custom-functions-architecture.md).
-
-Pour plus d’informations sur l’interface API JavaScript pour Office, veuillez vous reporter à [Présentation de l’API JavaScript pour Office](../develop/understanding-the-javascript-api-for-office.md).
+[!include[information about the Office JS API models](../includes/office-js-api-models.md)]
 
 #### <a name="api-requirement-sets"></a>Ensembles de conditions requises de l’API
 
-[Les ensembles de conditions requises](../develop/office-versions-and-requirement-sets.md) sont des groupes nommés de membres d’API. Les ensembles de conditions requises peuvent être spécifiques aux hôtes Office, tels que la configuration `ExcelApi 1.7` nécessaire (ensemble d’API pouvant être utilisées uniquement dans Excel), ou communes à plusieurs hôtes, tels que les conditions requises `DialogApi 1.1` (ensemble d’API pouvant être utilisées dans n’importe quelle application Office qui prend en charge l’API de boîte de dialogue).
-
-Votre complément Office peuvent utiliser des ensembles de conditions requises pour déterminer si l’hôte Office prend en charge les membres d’API nécessaires. Pour plus d’informations à ce sujet, consultez la rubrique [Spécifier les hôtes Office et la configuration requise d’API](../develop/specify-office-hosts-and-api-requirements.md).
-
-La prise en charge de l’ensemble des conditions requises varie selon l’hôte, versions et plateformes d’Office. Pour plus d’informations sur les plateformes, les ensembles de besoins et les API communes prises en charge par chaque application Office, Consultez la rubrique [Disponibilité des compléments Office sur les plateformes et les hôtes](office-add-in-availability.md).
+[!include[information about the Office JS API requirement sets](../includes/office-js-requirement-sets.md)]
 
 ## <a name="testing-and-debugging-an-office-add-in"></a>Tester et déboguer un complément Office
 
