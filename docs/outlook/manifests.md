@@ -3,12 +3,12 @@ title: Manifestes des compléments Outlook
 description: Le manifeste décrit l’intégration d’un complément Outlook avec les clients Outlook et comprend un exemple.
 ms.date: 10/31/2019
 localization_priority: Priority
-ms.openlocfilehash: 79751ea0f3b7baab28ada8ac44d71e5f4124b74a
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: f4d60919db15c4f470ecccac634abee94973bb6c
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166106"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324939"
 ---
 # <a name="outlook-add-in-manifests"></a>Manifestes des compléments Outlook
 
@@ -238,10 +238,10 @@ Les versions actuelles du schéma sont les suivantes :
 
 |Version|Description|
 |:-----|:-----|
-|v1.0|Prend en charge la version 1.0 de l’API JavaScript pour Office. Pour les compléments Outlook, la prise en charge des formulaires de lecture est également incluse. |
-|v1.1|Prend en charge la version 1.1 de l’interface API JavaScript pour Office et **VersionOverrides**. Pour les compléments Outlook, la prise en charge des formulaires de composition est incluse.|
-|**VersionOverrides** 1.0|Prend en charge les versions ultérieures de l’API JavaScript pour Office. La prise en charge des commandes de complément est incluse.|
-|**VersionOverrides** 1.1|Prend en charge les versions ultérieures de l’interface API JavaScript pour Office. Les commandes de complément sont prises en charge, ainsi que de nouvelles fonctionnalités, telles que les [volets Office épinglables](pinnable-taskpane.md) et les compléments mobiles.|
+|v1.0|Prend en charge la version 1.0 de l’API Office JavaScript. Pour les compléments Outlook, la prise en charge des formulaires de lecture est également incluse. |
+|v1.1|Prend en charge la version 1.1 de l’interface API Office JavaScript et **VersionOverrides**. Pour les compléments Outlook, la prise en charge des formulaires de composition est incluse.|
+|**VersionOverrides** 1.0|Prend en charge les versions ultérieures de l’API Office JavaScript. La prise en charge des commandes de complément est incluse.|
+|**VersionOverrides** 1.1|Prend en charge les versions ultérieures de l’interface API Office JavaScript. Les commandes de complément sont prises en charge, ainsi que de nouvelles fonctionnalités, telles que les [volets Office à épingler](pinnable-taskpane.md) et les compléments mobiles.|
 
 Cet article porte sur les conditions requises pour la version 1.1 du manifeste. Même si le manifeste de votre complément utilise l’élément **VersionOverrides**, il est important d’inclure les éléments de la version 1.1 du manifeste afin que votre complément fonctionne avec des clients plus anciens qui ne prennent pas en charge **VersionOverrides**.
 

@@ -5,12 +5,12 @@ ms.date: 09/26/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: f6d9ed0cd88f6ea2f4ba5297b4a0934bbe84dcc1
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 03f2eec24f4ae8d52f8e46021ff5ee25b8015f94
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851319"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324897"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Compléments du volet Office pour Project
 
@@ -50,9 +50,9 @@ Les scénarios des compléments pour Project comprennent les fonctionnalités su
 
 ## <a name="developing-project-add-ins"></a>Développement de compléments pour Project
 
-La bibliothèque JavaScript pour les compléments Project comprend des extensions de l’alias de l’espace de nom **Office** qui permet aux développeurs d’accéder aux propriétés de l’application Project, ainsi qu’aux tâches, ressources et vues dans un projet. Les extensions de la bibliothèque JavaScript du fichier Project-15.js sont utilisées dans un complément Project créé avec Visual Studio 2015. Les fichiers Office.js, Office.debug.js, Project-15.js, Project-15.debug.js et autres fichiers associés sont également fournis dans le téléchargement du Kit de développement logiciel (SDK) Project 2013.
+La bibliothèque JavaScript pour les compléments Project comprend des extensions de l’alias de l’espace de nom **Office** qui permet aux développeurs d’accéder aux propriétés de l’application Project, ainsi qu’aux tâches, ressources et affichages dans un projet. Les extensions de la bibliothèque JavaScript du fichier Project-15.js sont utilisées dans un complément Project créé avec Visual Studio 2015. Les fichiers Office.js, Office.debug.js, Project-15.js, Project-15.debug.js et autres fichiers associés sont également fournis dans le téléchargement du Kit de développement logiciel (SDK) Project 2013.
 
-Pour créer un complément, vous pouvez utiliser un éditeur de texte simple afin de créer une page web HTML avec les fichiers JavaScript associés, les fichiers CSS et les requêtes REST. Outre une page HTML ou une application web, le complément nécessite un fichier manifeste XML pour la configuration. Project peut utiliser un fichier manifeste qui inclut un attribut  **type** spécifié comme **TaskPaneExtension**. Le fichier manifeste peut être utilisé par plusieurs applications clientes Office 2013, ou vous pouvez créer un fichier manifeste spécifique pour Project 2013. Pour plus d’informations, voir la section  _Notions fondamentales de développement_ dans [Vue d’ensemble de la plateforme des compléments pour Office](../overview/office-add-ins.md).
+Pour créer un complément, vous pouvez utiliser un éditeur de texte simple afin de créer une page web HTML avec les fichiers JavaScript associés, les fichiers CSS et les requêtes REST. Outre une page HTML ou une application web, le complément nécessite un fichier manifeste XML pour la configuration. Project peut utiliser un fichier manifeste qui inclut un attribut **type** spécifié comme **TaskPaneExtension**. Le fichier manifeste peut être utilisé par plusieurs applications clientes Office 2013, ou vous pouvez créer un fichier manifeste spécifique pour Project 2013. Pour plus d’informations, voir la section  _Notions fondamentales de développement_ dans [Vue d’ensemble de la plateforme des compléments pour Office](../overview/office-add-ins.md).
 
 Lorsque vous installez le Kit de développement logiciel (SDK) de Project 2013, le sous-répertoire `\Samples\Apps\` inclut les exemples de compléments suivants:
 
@@ -68,7 +68,7 @@ Le fichier manifeste spécifie l’URL de la page web du complément ou l’appl
 
 ### <a name="procedure-1-to-create-the-add-in-manifest-file-for-bing-search"></a>Procédure 1. Créer le fichier manifeste du complément pour Bing Search
 
-- Créez un fichier XML dans un répertoire local. Le fichier XML inclut l’élément  **OfficeApp**, et ses éléments enfants, qui sont décrits dans [Manifeste XML des compléments Office](../develop/add-in-manifests.md). Par exemple, créez un fichier nommé BingSearch.xml qui contient le code XML suivant.
+- Créez un fichier XML dans un répertoire local. Le fichier XML inclut l’élément **OfficeApp**, et ses éléments enfants, qui sont décrits dans [Manifeste XML des compléments Office](../develop/add-in-manifests.md). Par exemple, créez un fichier nommé BingSearch.xml qui contient le code XML suivant.
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -99,16 +99,16 @@ Le fichier manifeste spécifie l’URL de la page web du complément ou l’appl
     ```
 
 - Les éléments suivants sont requis dans le manifeste du complément :
-  - Dans l’élément  **OfficeApp**, l’attribut  `xsi:type="TaskPaneApp"` spécifie que le complément est de type volet Office.
-  - L’élément  **Id** est un UUID et doit être unique.
-  - L’élément  **Version** indique la version du complément. L’élément **ProviderName** correspond au nom de l’entreprise ou du développeur qui fournit le complément. L’élément **DefaultLocale** spécifie les paramètres régionaux par défaut pour les chaînes du manifeste.
-  - L’élément  **DisplayName** correspond au nom qui s’affiche dans la liste déroulante **Complément du volet Office** de l’onglet **AFFICHAGE**, dans le ruban de Project 2013. La valeur du nom peut contenir jusqu’à 32 caractères.
-  - L’élément  **Description** contient la description du complément pour les paramètres régionaux par défaut. La valeur peut contenir jusqu’à 2 000 caractères.
-  - L’élément  **Capabilities** contient un ou plusieurs éléments enfants **Capability** qui spécifient l’application hôte.
-  - L’élément  **DefaultSettings** inclut l’élément **SourceLocation**, qui spécifie le chemin d’accès d’un fichier HTML sur un partage de fichiers ou l’URL d’une page web que le complément utilise. Un complément du volet Office ignore l’élément  **RequestedHeight** et l’élément **RequestedWidth**.
+  - Dans l’élément **OfficeApp**, l’attribut `xsi:type="TaskPaneApp"` spécifie que le complément est de type volet Office.
+  - L’élément **Id** est un UUID et doit être unique.
+  - L’élément **Version** indique la version du complément. L’élément **ProviderName** correspond au nom de l’entreprise ou du développeur qui fournit le complément. L’élément **DefaultLocale** spécifie les paramètres régionaux par défaut pour les chaînes du manifeste.
+  - L’élément **DisplayName** correspond au nom qui s’affiche dans la liste déroulante **Complément du volet Office** de l’onglet **AFFICHAGE**, dans le ruban de Project 2013. La valeur du nom peut contenir jusqu’à 32 caractères.
+  - L’élément **Description** contient la description du complément pour les paramètres régionaux par défaut. La valeur peut contenir jusqu’à 2000 caractères.
+  - L’élément **Capabilities** contient un ou plusieurs éléments enfants **Capability** qui spécifient l’application hôte.
+  - L’élément **DefaultSettings** inclut l’élément **SourceLocation**, qui spécifie le chemin d’accès d’un fichier HTML sur un partage de fichiers ou l’URL d’une page web que le complément utilise. Un complément du volet Office ignore l’élément **RequestedHeight** et l’élément **RequestedWidth**.
   - L’élément **IconUrl** est facultatif. Il peut être une icône sur un partage de fichiers ou l’URL d’une icône dans une application web.
 
-- (Facultatif) Ajoutez des éléments  **Override** qui ont des valeurs pour les autres paramètres régionaux. Par exemple, le manifeste suivant fournit des éléments **Override** pour les valeurs françaises de **DisplayName**,  **Description**,  **IconUrl** et **SourceLocation**.
+- (Facultatif) Ajoutez des éléments **Override** qui ont des valeurs pour les autres paramètres régionaux. Par exemple, le manifeste suivant fournit des éléments **Override** pour les valeurs françaises de **DisplayName**, **Description**, **IconUrl** et **SourceLocation**.
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -146,7 +146,7 @@ Le fichier manifeste spécifie l’URL de la page web du complément ou l’appl
 
 Dans Project 2013, vous pouvez installer des compléments comme solutions autonomes sur un partage de fichiers ou dans un catalogue de compléments privé. Vous pouvez également consulter et acheter des compléments dans AppSource.
 
-Un partage de fichiers peut contenir plusieurs fichiers manifestes XML de complément et sous-répertoires. Vous pouvez ajouter ou supprimer des catalogues et des emplacements de répertoire Manifest à l’aide de l’onglet  **Catalogues de compléments approuvés** dans la boîte de dialogue **Centre de gestion de la confidentialité** dans Project 2013. Pour afficher un complément dans Project, l’élément **SourceLocation** dans un manifeste doit pointer vers un site web existant ou un fichier source HTML.
+Un partage de fichiers peut contenir plusieurs fichiers manifestes XML de complément et sous-répertoires. Vous pouvez ajouter ou supprimer des catalogues et des emplacements de répertoire manifeste à l’aide de l’onglet **Catalogues de compléments approuvés** dans la boîte de dialogue **Centre de gestion de la confidentialité** dans Project 2013. Pour afficher un complément dans Project, l’élément **SourceLocation** dans un manifeste doit pointer vers un site web existant ou un fichier source HTML.
 
 > [!NOTE]
 > Si vous développez sur un ordinateur Windows, Internet Explorer ou Microsoft Edge doit être installé. Pour plus d’informations, voir [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md).
@@ -161,11 +161,11 @@ Dans la procédure 2, le complément Bing Search est installé sur l’ordinateu
 
 3. Copiez le fichier manifeste BingSearch.xml dans le répertoire  `C:\Project\AppManifests`.
 
-4. Dans Project 2013, ouvrez la boîte de dialogue  **Options de Project**, choisissez  **Centre de gestion de la confidentialité**, puis choisissez  **Paramètres du Centre de gestion de la confidentialité**.
+4. Dans Project 2013, ouvrez la boîte de dialogue **Options de Project**, choisissez **Centre de gestion de la confidentialité**, puis choisissez **Paramètres du Centre de gestion de la confidentialité**.
 
-5. Dans la boîte de dialogue  **Centre de gestion de la confidentialité**, dans le volet de gauche, choisissez  **Catalogues de compléments approuvés**.
+5. Dans la boîte de dialogue **Centre de gestion de la confidentialité**, dans le volet gauche, choisissez **Catalogues de compléments approuvés**.
 
-6. Dans le volet  **Catalogues de compléments approuvés** (voir la figure 1), ajoutez le chemin `\\ServerName\AppManifests` dans la zone de texte **URL du catalogue**, choisissez  **Ajouter un catalogue**, puis choisissez  **OK**.
+6. Dans le volet **Catalogues de compléments approuvés** (voir la figure 1), ajoutez le chemin `\\ServerName\AppManifests` dans la zone de texte **URL du catalogue**, choisissez **Ajouter un catalogue**, puis choisissez **OK**.
 
     > [!NOTE]
     > La figure 1 présente deux partages de fichiers et une URL hypothétique associée à un catalogue privé dans la liste **Adresse du catalogue approuvé**. Un seul partage de fichiers peut être défini comme partage par défaut et un seul catalogue d’URL peut être défini comme catalogue par défaut. Par exemple, si vous définissez `\\Server2\AppManifests` comme valeur par défaut, Project désélectionne la case à cocher **Par défaut** pour `\\ServerName\AppManifests`. Si vous changez la sélection par défaut, vous pouvez choisir **Effacer** pour supprimer des compléments installés, puis redémarrer Project. Si vous ajoutez un complément au partage de fichier par défaut ou au catalogue SharePoint alors que Project est ouvert, redémarrez Project.
@@ -174,13 +174,13 @@ Dans la procédure 2, le complément Bing Search est installé sur l’ordinateu
 
     ![Utilisation du Centre de gestion de la confidentialité pour ajouter des manifestes d’application](../images/pj15-agave-overview-trust-centers.png)
 
-7. Dans le ruban  **Project**, choisissez le menu déroulant  **Compléments Office**, puis choisissez  **Afficher tout**. Dans la boîte de dialogue  **Insérer un complément**, choisissez  **DOSSIER PARTAGÉ** (voir la figure 2).
+7. Dans le ruban **Project**, choisissez le menu déroulant **Compléments Office**, puis choisissez **Afficher tout**. Dans la boîte de dialogue **Insérer un complément**, choisissez **DOSSIER PARTAGÉ** (voir la figure 2).
 
     *Figure 2. Démarrage d’un complément se trouvant sur un partage de fichiers*
 
     ![Démarrage d’une application Office dans un partage de fichiers](../images/pj15-agave-overview-start-agave-apps.png)
 
-8. Sélectionnez le complément Bing Search, puis choisissez  **Insérer**.
+8. Sélectionnez le complément Bing Search, puis choisissez **Insérer**.
 
     Le complément Bing Search affiche un volet Office comme dans la figure 3. Vous pouvez redimensionner manuellement le volet Office et utiliser le complément Bing Search.
 

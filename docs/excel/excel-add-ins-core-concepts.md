@@ -3,12 +3,12 @@ title: Concepts fondamentaux de programmation avec l’API JavaScript pour Excel
 description: Utilisez l’API JavaScript pour Excel afin de créer des compléments pour Excel.
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: eed6a7a4dcc480d93e15bbb75432a2345364a5dc
-ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
+ms.openlocfilehash: d06536e08482251e2728bfdfb77a6b2d3c96eb56
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "38301917"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325114"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Concepts fondamentaux de programmation avec l’API JavaScript pour Excel
 
@@ -16,13 +16,13 @@ Cet article décrit comment utiliser l’[API JavaScript pour Excel](/office/dev
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Nature asynchrone des API Excel
 
-Les compléments Excel web s’exécutent dans un conteneur de navigateurs qui est incorporé dans l’application Office sur les plateformes basées sur un bureau, comme Office pour Windows, et s’exécute à l’intérieur d’un fichier iFrame HTML dans Office sur le web. En raison de problèmes de performances, il n’est pas possible d’activer l’API Office.js afin d’interagir de manière synchrone avec l’hôte Excel sur toutes les plateformes prises en charge. Par conséquent, l’appel de l’API **sync()** dans Office.js renvoie une [promesse](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) qui est résolue lorsque l’application Excel termine les actions de lecture ou d’écriture demandées. En outre, vous pouvez mettre en file d’attente plusieurs actions, comme la définition des propriétés ou l’appel de méthodes, et les exécuter en tant que lot de commandes avec un seul appel à **sync()**, au lieu d’envoyer une demande distincte pour chaque action. Les sections suivantes décrivent la façon d’y parvenir à l’aide des API **Excel.run()** et **sync()**.
+Les compléments Excel web s’exécutent dans un conteneur de navigateurs qui est incorporé dans l’application Office sur les plateformes basées sur un bureau, comme Office pour Windows, et s’exécute à l’intérieur d’un fichier iFrame HTML dans Office sur le web. En raison de problèmes de performances, il n’est pas possible d’activer l’API Office.js afin d’interagir de manière synchrone avec l’hôte Excel sur toutes les plateformes prises en charge. Par conséquent, l’appel de l’API `sync()` dans Office.js renvoie une [promesse](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) qui est résolue lorsque l’application Excel termine les actions de lecture ou d’écriture demandées. En outre, vous pouvez mettre en file d’attente plusieurs actions, comme la définition des propriétés ou l’appel de méthodes, et les exécuter en tant que lot de commandes avec un seul appel à `sync()`, au lieu d’envoyer une demande distincte pour chaque action. Les sections suivantes décrivent la façon d’y parvenir à l’aide des API `Excel.run()` et `sync()`.
 
 ## <a name="excelrun"></a>Excel.run
 
-**Excel.Run** exécute une fonction dans laquelle vous spécifiez les actions à effectuer concernant le modèle objet Excel. **Excel.Run** crée automatiquement un contexte de la demande que vous pouvez utiliser pour interagir avec des objets Excel. Lorsque l’API **Excel.run** a fini, une promesse est résolue, et tous les objets alloués lors de l’exécution sont automatiquement publiés.
+`Excel.run` exécute une fonction dans laquelle vous spécifiez les actions à effectuer concernant le modèle objet Excel. `Excel.run` crée automatiquement un contexte de la demande que vous pouvez utiliser pour interagir avec des objets Excel. Lorsque l’API `Excel.run` a fini, une promesse est résolue, et tous les objets alloués lors de l’exécution sont automatiquement publiés.
 
-L’exemple suivant montre comment utiliser **Excel.run**. L’instruction catch capture et enregistre les erreurs qui se produisent au sein de **Excel.run**.
+L’exemple suivant montre comment utiliser `Excel.run`. L’instruction catch capture et enregistre les erreurs qui se produisent au sein de `Excel.run`.
 
 ```js
 Excel.run(function (context) {
@@ -39,7 +39,7 @@ Excel.run(function (context) {
 
 ### <a name="run-options"></a>Options d’exécution
 
-**Excel.Run** est associé à une surcharge liée à un objet [RunOptions](/javascript/api/excel/excel.runoptions). Celui-ci contient un ensemble de propriétés qui ont une incidence sur le comportement de la plateforme lorsque la fonction est en cours d’exécution. La propriété suivante est actuellement prise en charge :
+`Excel.run` est associé à une surcharge liée à un objet [RunOptions](/javascript/api/excel/excel.runoptions). Celui-ci contient un ensemble de propriétés qui ont une incidence sur le comportement de la plateforme lorsque la fonction est en cours d’exécution. La propriété suivante est actuellement prise en charge :
 
 - `delayForCellEdit` : détermine si Excel diffère la demande de lot jusqu'à ce que l’utilisateur quitte le mode de modification de cellule. Lorsque la valeur est **true**, la demande de lot est différée et s’exécute lorsque l’utilisateur quitte le mode de modification de cellule. Lorsque la valeur est **false**, la demande de lot échoue automatiquement si l’utilisateur est en mode de modification de cellule (entraînant une erreur de contact de l’utilisateur). Le comportement par défaut sans propriété `delayForCellEdit` spécifiée est identique au comportement lorsque la valeur est **false**.
 
@@ -49,13 +49,13 @@ Excel.run({ delayForCellEdit: true }, function (context) { ... })
 
 ## <a name="request-context"></a>Contexte de demande
 
-Excel et votre complément sont exécutés dans deux processus distincts. Dans la mesure où ils utilisent des environnements d’exécution différents, les compléments Excel nécessitent un objet **RequestContext** afin de connecter votre complément aux objets dans Excel, tels que les feuilles de calcul, les plages, les graphiques et les tableaux.
+Excel et votre complément sont exécutés dans deux processus distincts. Dans la mesure où ils utilisent des environnements d’exécution différents, les compléments Excel nécessitent un objet `RequestContext` afin de connecter votre complément aux objets dans Excel, tels que les feuilles de calcul, les plages, les graphiques et les tableaux.
 
 ## <a name="proxy-objects"></a>Objets de proxy
 
-Les objets JavaScript pour Excel que vous déclarez et utilisez dans un complément sont des objets proxy. Les méthodes que vous appelez ou les propriétés que vous définissez ou chargez sur les objets proxy sont simplement ajoutées à une file d’attente de commandes en attente. Lorsque vous appelez la méthode **sync()** sur le contexte de demande (par exemple, `context.sync()`), les commandes en attente sont envoyées vers Excel et sont exécutées. L’API JavaScript pour Excel est fondamentalement centrée sur les lots. Vous pouvez mettre en file d’attente autant de modifications que vous le souhaitez dans le contexte de la demande, puis appeler la méthode **sync()** pour exécuter le lot de commandes mises en file d’attente.
+Les objets JavaScript pour Excel que vous déclarez et utilisez dans un complément sont des objets proxy. Les méthodes que vous appelez ou les propriétés que vous définissez ou chargez sur les objets proxy sont simplement ajoutées à une file d’attente de commandes en attente. Lorsque vous appelez la méthode `sync()` sur le contexte de demande (par exemple, `context.sync()`), les commandes en attente sont envoyées vers Excel et sont exécutées. L’API JavaScript pour Excel est fondamentalement centrée sur les lots. Vous pouvez mettre en file d’attente autant de modifications que vous le souhaitez dans le contexte de la demande, puis appeler la méthode `sync()` pour exécuter le lot de commandes mises en file d’attente.
 
-Par exemple, l’extrait de code suivant déclare l’objet JavaScript local **selectedRange** pour référencer une plage sélectionnée dans le document Excel, puis définit des propriétés sur cet objet. L’objet **selectedRange** est un objet proxy. Les propriétés définies et la méthode appelée sur cet objet ne seront pas répercutées dans le document Excel tant que votre complément n’a pas appelé **context.sync()**.
+Par exemple, l’extrait de code suivant déclare l’objet JavaScript local `selectedRange` pour référencer une plage sélectionnée dans le document Excel, puis définit des propriétés sur cet objet. L’objet `selectedRange` est un objet proxy. Les propriétés définies et la méthode appelée sur cet objet ne seront pas répercutées dans le document Excel tant que votre complément n’a pas appelé `context.sync()`.
 
 ```js
 var selectedRange = context.workbook.getSelectedRange();
@@ -66,9 +66,9 @@ selectedRange.format.autofitColumns();
 
 ### <a name="sync"></a>Sync()
 
-Tout appel de la méthode **sync()** concernant le contexte de demande synchronise l’état entre les objets proxy et les objets du document Excel. La méthode **sync()** exécute les commandes mises en file d’attente concernant le contexte de demande et récupère des valeurs pour les propriétés qui doivent être chargées dans les objets proxy. La méthode **sync()** est exécutée de façon asynchrone et renvoie une [promesse](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise), qui est résolue lorsque la méthode **sync()** est terminée.
+Tout appel de la méthode `sync()` concernant le contexte de demande synchronise l’état entre les objets proxy et les objets du document Excel. La méthode `sync()` exécute les commandes mises en file d’attente concernant le contexte de demande et récupère des valeurs pour les propriétés qui doivent être chargées dans les objets proxy. La méthode `sync()` est exécutée de façon asynchrone et renvoie une [promesse](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise), qui est résolue lorsque la méthode `sync()` est terminée.
 
-L’exemple suivant montre une fonction de traitement par lot qui définit un objet proxy JavaScript local (**selectedRange**), charge une propriété de cet objet et utilise ensuite le modèle de promesses JavaScript pour appeler **context.sync()** afin de synchroniser l’état entre les objets proxy et les objets du document Excel.
+L’exemple suivant montre une fonction de traitement par lot qui définit un objet proxy JavaScript local (`selectedRange`), charge une propriété de cet objet et utilise ensuite le modèle de promesses JavaScript pour appeler `context.sync()` afin de synchroniser l’état entre les objets proxy et les objets du document Excel.
 
 ```js
 Excel.run(function (context) {
@@ -86,18 +86,18 @@ Excel.run(function (context) {
 });
 ```
 
-Dans l’exemple précédent, l’objet **selectedRange** est défini et sa propriété **address** est chargée quand l’élément **context.sync()** est appelé.
+Dans l’exemple précédent, `selectedRange` est configuré et sa propriété `address` est chargée lorsque `context.sync()` est appelé.
 
-Étant donné que **sync()** est une opération asynchrone qui renvoie une promesse, vous devez toujours **renvoyer** la promesse (dans JavaScript). Cela garantit que l’opération **sync()** se termine avant que le script continue à s’exécuter. Pour plus d’informations sur l’optimisation des performances avec **sync()**, consultez la rubrique [Optimisation des performances à l’aide de l’API JavaScript d’Excel](/office/dev/add-ins/excel/performance).
+Étant donné que `sync()` est une opération asynchrone qui renvoie une promesse, vous devez toujours `return` la promesse (dans JavaScript). Cela garantit que l’opération `sync()` se termine avant que le script continue à s’exécuter. Pour plus d’informations sur l’optimisation des performances avec `sync()`, consultez la rubrique [Optimisation des performances à l’aide de l’API JavaScript d’Excel](/office/dev/add-ins/excel/performance).
 
 ### <a name="load"></a>load()
 
-Avant que vous puissiez lire les propriétés d’un objet proxy, vous devez charger explicitement les propriétés pour remplir l’objet proxy avec des données à partir du document Excel, puis appeler **context.sync()**. Par exemple, si vous créez un objet proxy pour référencer une plage sélectionnée, puis que vous voulez lire la propriété **address** de la plage sélectionnée, vous devez charger la propriété **address** avant de pouvoir la lire. Pour demander le chargement de propriétés d’un objet, appelez la méthode **load()** sur l’objet et spécifiez les propriétés à charger. 
+Avant que vous puissiez lire les propriétés d’un objet proxy, vous devez charger explicitement les propriétés pour remplir l’objet proxy avec des données à partir du document Excel, puis appeler `context.sync()`. Par exemple, si vous créez un objet proxy pour référencer une plage sélectionnée, puis que vous voulez lire la propriété `address` de la plage sélectionnée, vous devez charger la propriété `address` avant de pouvoir la lire. Pour demander le chargement de propriétés d’un objet, appelez la méthode `load()` sur l’objet et spécifiez les propriétés à charger.
 
 > [!NOTE]
-> Si vous appelez uniquement des méthodes ou définissez des propriétés sur un objet proxy, il est inutile d’appeler la méthode **load()**. La méthode **load()** n’est nécessaire que lorsque vous souhaitez lire les propriétés sur un objet proxy.
+> Si vous appelez uniquement des méthodes ou définissez des propriétés sur un objet proxy, il est inutile d’appeler la méthode `load()`. La méthode `load()` n’est nécessaire que lorsque vous souhaitez lire les propriétés sur un objet proxy.
 
-À l’instar des demandes de définition de propriétés ou d’appel de méthodes sur des objets proxy, des demandes de chargement de propriétés sur des objets proxy sont ajoutées à la file d’attente des commandes sur le contexte de demande, qui s’exécutera la prochaine fois que vous appellerez la méthode **sync()**. Vous pouvez mettre en file d’attente autant d’appels **load()** sur le contexte de la demande que nécessaire.
+À l’instar des demandes de définition de propriétés ou d’appel de méthodes sur des objets proxy, des demandes de chargement de propriétés sur des objets proxy sont ajoutées à la file d’attente des commandes sur le contexte de demande, qui s’exécutera la prochaine fois que vous appellerez la méthode `sync()`. Vous pouvez mettre en file d’attente autant d’appels `load()` sur le contexte de la demande que nécessaire.
 
 Dans l’exemple suivant, seules les propriétés spécifiques de la plage sont chargées.
 
@@ -126,9 +126,9 @@ Excel.run(function (context) {
 });
 ```
 
-Comme `format/font` n’est pas spécifié dans l’appel à **myRange.load()**, la propriété `format.font.color` ne peut pas être lue dans l’exemple précédent.
+Comme `format/font` n’est pas spécifié dans l’appel à `myRange.load()`, la propriété `format.font.color` ne peut pas être lue dans l’exemple précédent.
 
-Pour optimiser les performances, vous devez spécifier explicitement les propriétés à charger lorsque vous utilisez la méthode **load()** sur un objet, comme abordé dans la rubrique [Optimisation des performances à l’aide de l’API JavaScript d’Excel](performance.md). Pour plus d’informations sur la méthode **load()**, consultez la rubrique [Concepts avancés de programmation avec l’API JavaScript Excel](excel-add-ins-advanced-concepts.md).
+Pour optimiser les performances, vous devez spécifier explicitement les propriétés à charger lorsque vous utilisez la méthode `load()` sur un objet, comme abordé dans la rubrique [Optimisation des performances à l’aide de l’API JavaScript d’Excel](performance.md). Pour plus d’informations sur la méthode `load()`, consultez la rubrique [Concepts avancés de programmation avec l’API JavaScript Excel](excel-add-ins-advanced-concepts.md).
 
 ## <a name="null-or-blank-property-values"></a>valeurs de propriété null ou vides
 
@@ -145,13 +145,13 @@ range.numberFormat = [[null, null, null, 'm/d/yyyy;@']];
 
 ### <a name="null-input-for-a-property"></a>Entrée null pour une propriété
 
-`null` n’est pas une entrée valide pour une propriété unique. Par exemple, l’extrait de code suivant n’est pas valide, car la propriété **values** de la plage ne peut pas être définie sur `null`.
+`null` n’est pas une entrée valide pour une propriété unique. Par exemple, l’extrait de code suivant n’est pas valide, car la propriété `values` de la plage ne peut pas être définie sur `null`.
 
 ```js
 range.values = null;
 ```
 
-De même, l’extrait de code suivant n’est pas valide, car `null` n’est pas une valeur valide pour la propriété **color**.
+De même, l’extrait de code suivant n’est pas valide, car `null` n’est pas une valeur valide pour la propriété `color`.
 
 ```js
 range.format.fill.color =  null;
@@ -214,7 +214,7 @@ Pour plus d’informations sur les limites système, voir [Limites de transfert 
 
 ## <a name="update-all-cells-in-a-range"></a>Mettre à jour toutes les cellules d’une plage
 
-Pour appliquer la même mise à jour à toutes les cellules d’une plage, (par exemple, pour remplir toutes les cellules avec la même valeur, définir le même format de nombre ou renseigner toutes les cellules avec la même formule), définissez la propriété correspondante dans l’objet **range** sur la valeur (unique) de votre choix.
+Pour appliquer la même mise à jour à toutes les cellules d’une plage, (par exemple, pour remplir toutes les cellules avec la même valeur, définir le même format de nombre ou renseigner toutes les cellules avec la même formule), définissez la propriété correspondante dans l’objet `range` sur la valeur (unique) de votre choix.
 
 L’exemple suivant obtient une plage qui contient 20 cellules, puis définit le format de nombre et remplit toutes les cellules de la plage avec la valeur **3/11/2015**.
 
@@ -243,7 +243,7 @@ Excel.run(function (context) {
 
 ## <a name="handle-errors"></a>Gestion des erreurs
 
-Lorsqu’une erreur d’API se produit, l’API renvoie un objet **error** qui contient un code et un message. Pour plus d’informations sur la gestion des erreurs, notamment la liste des erreurs d’API, consultez la rubrique [Gestion des erreurs](excel-add-ins-error-handling.md).
+Lorsqu’une erreur d’API se produit, l’API renvoie un objet `error` qui contient un code et un message. Pour plus d’informations sur la gestion des erreurs, notamment la liste des erreurs d’API, consultez la rubrique [Gestion des erreurs](excel-add-ins-error-handling.md).
 
 ## <a name="see-also"></a>Voir aussi
 
