@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez créer un complément PowerPoint q
 ms.date: 12/24/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: aace13a3dba55abcac258b48ceb852fed746adcc
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: e45fe0a4d7561329b22f4d29ec295dabb2e2ee0f
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950886"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324735"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de PowerPoint
 
@@ -183,7 +183,7 @@ Procédez comme suit pour ajouter le code qui récupère la photo[Bing](https://
     $('#insert-image').click(insertImage);
     ```
 
-8. Dans le fichier **Home.js**, remplacez `TODO2` par le code suivant pour définir la fonction **insertImage**. Cette fonction extrait l’image du service web Bing, puis appelle la fonction `insertImageFromBase64String` pour insérer cette image dans le document.
+8. Dans le fichier **Home.js**, remplacez `TODO2` par le code suivant pour définir la fonction `insertImage`. Cette fonction extrait l’image du service web Bing, puis appelle la fonction `insertImageFromBase64String` pour insérer cette image dans le document.
 
     ```js
     function insertImage() {
@@ -295,7 +295,7 @@ Procédez comme suit pour ajouter le code qui insère le texte dans la diapositi
     $('#insert-text').click(insertText);
     ```
 
-3. Dans le fichier **Home.js**, remplacez `TODO5` par le code suivant pour définir la fonction **insertText**. Cette fonction insère du texte dans la diapositive active.
+3. Dans le fichier **Home.js**, remplacez `TODO5` par le code suivant pour définir la fonction `insertText`. Cette fonction insère du texte dans la diapositive active.
 
     ```js
     function insertText() {
@@ -352,7 +352,7 @@ Procédez comme suit pour ajouter du code qui extrait les métadonnées pour la 
     $('#get-slide-metadata').click(getSlideMetadata);
     ```
 
-3. Dans le fichier **Home.js**, remplacez `TODO7` par le code suivant pour définir la fonction **getSlideMetadata**. Cette fonction extrait les métadonnées pour la ou les diapositives sélectionnée(s), et les écrit dans une fenêtre de boîte de dialogue contextuelle dans le volet Office du complément.
+3. Dans le fichier **Home.js**, remplacez `TODO7` par le code suivant pour définir la fonction `getSlideMetadata`. Cette fonction extrait les métadonnées pour la ou les diapositives sélectionnée(s), et les écrit dans une fenêtre de boîte de dialogue contextuelle dans le volet Office du complément.
 
     ```js
     function getSlideMetadata() {

@@ -5,12 +5,12 @@ ms.date: 11/07/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 798e7c8357f2f2f021a76c0b88b0617764428c8c
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: a6535808a3e59723556efa3133c44767a52a250e
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851340"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324925"
 ---
 # <a name="powerpoint-add-ins"></a>Compléments PowerPoint
 
@@ -90,7 +90,7 @@ function registerActiveViewChanged() {
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>Accéder à une diapositive spécifique dans la présentation
 
-Dans l’exemple de code suivant, la fonction`getSelectedRange`appelle la méthode[Document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)pour obtenir l’objet JSON renvoyées par`asyncResult.value`, qui contient un tableau nommé **diapositives**. La matrice**diapositives**contient les IDs, les titres et les indexes de plage sélectionnées de diapositives (ou de la diapositive active si plusieurs diapositives ne sont pas sélectionnées). Elle enregistre également l’id de la première diapositive dans la plage sélectionnée à une variable globale.
+Dans l’exemple de code suivant, la fonction`getSelectedRange` appelle la méthode[Document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) pour obtenir l’objet JSON renvoyé par`asyncResult.value`, qui contient un tableau nommé `slides`. La matrice`slides`contient les IDs, les titres et les indexes de plage sélectionnées de diapositives (ou de la diapositive active si plusieurs diapositives ne sont pas sélectionnées). Elle enregistre également l’id de la première diapositive dans la plage sélectionnée à une variable globale.
 
 ```js
 function getSelectedRange() {
@@ -126,7 +126,7 @@ function goToFirstSlide() {
 
 ## <a name="navigate-between-slides-in-the-presentation"></a>Naviguer entre les diapositives de la présentation
 
-La fonction`goToSlideByIndex` appelle la méthode **Document.goToByIdAsync** pour passer à la diapositive suivante dans la présentation.
+Dans l’exemple de code suivant, la fonction`goToSlideByIndex` appelle la méthode `Document.goToByIdAsync` pour passer à la diapositive suivante dans la présentation.
 
 ```js
 function goToSlideByIndex() {

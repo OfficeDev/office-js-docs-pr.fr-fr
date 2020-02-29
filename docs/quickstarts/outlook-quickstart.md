@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément de volet des tâches Outlo
 ms.date: 12/28/2019
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 9a9835caf4ca729999a0f85a7947b82115841372
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 6c50ed57cd9fa809081060662c13af662b475ed2
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166060"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325290"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Création de votre premier complément Outlook
 
@@ -81,7 +81,7 @@ Le projet de complément que vous avez créé à l’aide du générateur Yeoman
     </main>
     ```
 
-1. Dans votre éditeur de code, ouvrez le fichier **./src/taskpane/taskpane.js** et ajoutez le code suivant à la fonction **run**. Ce code utilise l’API JavaScript pour Office afin d’obtenir une référence au message en cours et écrire sa valeur de propriété `subject` dans le volet Office.
+1. Ouvrez le fichier **./src/taskpane/taskpane.js** dans l’éditeur de code et ajoutez le code suivant à la fonction `run`. Ce code utilise l’API JavaScript pour Office afin d’obtenir une référence au message en cours et écrire sa valeur de propriété `subject` dans le volet Office.
 
     ```js
     // Get a reference to the current message

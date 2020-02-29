@@ -4,16 +4,16 @@ description: ''
 ms.date: 02/19/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: aa0e18025e539f747851f5dc9f5a25197761c5c8
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 3cdc1b19bbf2a57e26a8fe65dd55aa6f39340df7
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42163618"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324777"
 ---
 # <a name="excel-javascript-api-overview"></a>Vue d’ensemble de l’API JavaScript pour Excel
 
-Un complément Excel interagit avec des objets dans Excel à l’aide de l’API JavaScript pour Office, qui inclut deux modèles d’objets JavaScript :
+Un complément Excel interagit avec des objets dans Excel en utilisant l’API JavaScript pour Office, qui inclut deux modèles d’objets JavaScript :
 
 * **API JavaScript pour Excel** : inclut dans Office 2016, l’[API JavaScript Excel](/javascript/api/excel) fournit des objets fortement typés que vous pouvez utiliser pour accéder à des feuilles de calcul, des plages, des tableaux, des graphiques et bien plus encore. 
 

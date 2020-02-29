@@ -5,12 +5,12 @@ ms.date: 02/19/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 2023daa422bd9078271f4b989f824101dc8b85f9
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 0ea7273b15ad430d2d19d91ff5d8f57fe64c675a
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165565"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325488"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>Vue d’ensemble de la programmation de l’API JavaScript de OneNote
 
@@ -33,25 +33,25 @@ Les compléments sont constitués de deux composants de base :
 
 ## <a name="using-the-javascript-api"></a>Utilisation de l’API JavaScript
 
-Les compléments utilisent le contexte d’exécution de l’application hôte pour accéder à l’API JavaScript. L’API comporte deux couches: 
+Les compléments utilisent le contexte d’exécution de l’application hôte pour accéder à l’API JavaScript. L’API comporte deux couches:
 
-- Une **API enrichie** pour les opérations spécifiques de OneNote, accessible via l’objet**Application**.
-- Une**API commune** qui est partagée entre les applications Office, accessible via l’objet **Document**.
+- Une **API enrichie** pour les opérations spécifiques de OneNote, accessible via l’objet`Application`Application.
+- Une**API commune** qui est partagée entre les applications Office, accessible via l’objet `Document`.
 
 ### <a name="accessing-the-host-specific-api-through-the-application-object"></a>Accès à l’API enrichie via l’objet*Application*
 
-Utilisez l’objet**Application** pour accéder aux objets OneNote tels que **Notebook**, **Section** et **Page**. Grâce à l’API enrichie, vous pouvez exécuter des opérations par lot sur les objets proxy. Le flux de base ressemble à ceci: 
+Utilisez l’objet`Application` pour accéder aux objets OneNote tels que **Notebook**, **Section** et **Page**. Grâce à l’API enrichie, vous pouvez exécuter des opérations par lot sur les objets proxy. Le flux de base ressemble à ceci:
 
 1. Obtenir l’instance de l’application à partir du contexte.
 
 2. Créer un proxy qui représente l’objet OneNote que vous souhaitez utiliser. Vous interagissez simultanément avec les objets proxy en lisant et en écrivant leurs propriétés et en appelant leurs méthodes.
 
-3. Appelez la méthode **load** sur le serveur proxy pour la remplir avec les valeurs de propriété spécifiées dans le paramètre. Cet appel est ajouté à la file d’attente des commandes.
+3. Appelez la méthode `load` sur le serveur proxy pour la remplir avec les valeurs de propriété spécifiées dans le paramètre. Cet appel est ajouté à la file d’attente des commandes.
 
    > [!NOTE]
    > Les appels de méthode à l’API (tels que `context.application.getActiveSection().pages;`) sont également ajoutés à la file d’attente.
 
-4. Appelez la méthode **context.sync** pour exécuter toutes les commandes en attente dans l’ordre dans lequel elles ont été mises en file d’attente. Cela permet de synchroniser l’état entre votre script d’exécution et les objets réels, en récupérant les propriétés des objets OneNote chargés à utiliser dans vos scripts. Vous pouvez utiliser l’objet Promise renvoyé pour créer une chaîne avec les actions supplémentaires.
+4. Appelez la méthode `context.sync` pour exécuter toutes les commandes en attente dans l’ordre dans lequel elles ont été mises en file d’attente. Cela permet de synchroniser l’état entre votre script d’exécution et les objets réels, en récupérant les propriétés des objets OneNote chargés à utiliser dans vos scripts. Vous pouvez utiliser l’objet Promise renvoyé pour créer une chaîne avec les actions supplémentaires.
 
 Par exemple :
 
@@ -95,10 +95,10 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 
 ### <a name="accessing-the-common-api-through-the-document-object"></a>Accès à l’API commune via l’objet*Document*
 
-Utilisez l’objet **Document** pour accéder à l’API commune, par exemple les méthodes[getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) et [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-). 
+Utilisez l’objet `Document` pour accéder à l’API commune, par exemple les méthodes[getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) et [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-).
 
 
-Par exemple:  
+Par exemple :  
 
 ```js
 function getSelectionFromPage() {
@@ -119,8 +119,8 @@ Les compléments OneNote prennent en charge uniquement les API communes suivante
 
 | API | Commentaires |
 |:------|:------|
-| [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) | **Office.CoercionType.Text** et **Office.CoercionType.Matrix** uniquement |
-| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) | **Office.CoercionType.Text**, **Office.CoercionType.Image** et **Office.CoercionType.Html** uniquement | 
+| [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) | Office.CoercionType.Text`Office.CoercionType.Text` et Office.CoercionType.Matrix`Office.CoercionType.Matrix` uniquement |
+| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) | `Office.CoercionType.Text`, `Office.CoercionType.Image`et `Office.CoercionType.Html` uniquement | 
 | [var mySetting = Office.context.document.settings.get(name);](/javascript/api/office/office.settings#get-name-) | Les paramètres sont pris en charge par les compléments de contenu uniquement | 
 | [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#set-name--value-) | Les paramètres sont pris en charge par les compléments de contenu uniquement | 
 | [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) ||

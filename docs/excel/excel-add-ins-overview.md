@@ -5,12 +5,12 @@ ms.date: 07/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: c529dc88f310466c5aaae8c6a0ea4e7d0ea6e287
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 6f2e319c5de310df5bd30a1161332d03344f0021
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851389"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325100"
 ---
 # <a name="excel-add-ins-overview"></a>Présentation des compléments Excel
 
@@ -109,7 +109,7 @@ Pour plus d’informations sur les compléments de contenu, reportez-vous à [Co
 
 ## <a name="javascript-apis-to-interact-with-workbook-content"></a>API JavaScript permettant d’interagir avec le contenu du classeur
 
-Un complément Excel interagit avec des objets dans Excel en utilisant l’[API JavaScript pour Office](/office/dev/add-ins/reference/javascript-api-for-office), qui inclut deux modèles d’objets JavaScript :
+Un complément Excel interagit avec des objets dans Excel en utilisant l’[API Office JavaScript](/office/dev/add-ins/reference/javascript-api-for-office), qui inclut deux modèles d’objets JavaScript :
 
 * **API JavaScript pour Excel** : incluse dans Office 2016, l’[API JavaScript pour Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) fournit des objets Excel fortement typés que vous pouvez utiliser pour accéder aux feuilles de calcul, aux plages, aux tableaux, aux graphiques et bien plus encore. 
 

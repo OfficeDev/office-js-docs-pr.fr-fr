@@ -3,12 +3,12 @@ title: Versions d’Office et ensembles de conditions requises
 description: ''
 ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 3b9bcbef47cdc27ad77b6bdce2b5c69f25fa6d62
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: 946068681070e8f482a8501639f40de4e13a7513
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217310"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325135"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Versions d’Office et ensembles de conditions requises
 

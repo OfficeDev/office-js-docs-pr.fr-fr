@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: Didacticiel sur le partage de codes entre un complément VSTO et un complément Office.
 title: 'Didacticiel : partage de codes entre un complément VSTO et un complément Office à l’aide d’une bibliothèque de codes partagée'
 localization_priority: Priority
-ms.openlocfilehash: c0d90f0f808bb5a7f96f546f0f82a90815676df7
-ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
+ms.openlocfilehash: 87f34c04ce3ac475c82fbb2673d0a4b3e95f04a2
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "41650088"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324742"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>Didacticiel : partage de codes entre un complément VSTO et un complément Office avec une bibliothèque de codes partagée
 
@@ -333,7 +333,7 @@ La bibliothèque Office.js nécessite CORS pour les appels sortants, tels que ce
     ```
     
     > [!NOTE]
-    > Laissez le `/` final à la fin de l’URL lorsque vous l’utilisez dans la méthode **Builder.WithOrigins**. Par exemple, il doit ressembler à `https://localhost:44000`. Dans le cas contraire, une erreur CORS se produira lors de l’exécution.
+    > Enlevez le `/` qui se trouve à la fin de l’URL lorsque vous l’utilisez dans la méthode `builder.WithOrigins`Builder.WithOrigins.tr. Par exemple, il doit ressembler à `https://localhost:44000`. Dans le cas contraire, une erreur CORS se produira lors de l’exécution.
     
 6. Ajoutez le champs suivant à la classe `Startup` :
     
