@@ -1,14 +1,14 @@
 ---
 title: Élément Action dans le fichier manifeste
 description: ''
-ms.date: 06/20/2019
+ms.date: 02/28/2020
 localization_priority: Normal
-ms.openlocfilehash: b05da08f4995c7d8f7270e7fba6f416c9903b066
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: f7bd577fea1672f592f2b1bac2823d96f0e8a134
+ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324890"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "42413768"
 ---
 # <a name="action-element"></a>Action, élément
 
@@ -131,8 +131,11 @@ L’exemple suivant montre une action qui utilise l’élément **title** . Note
 
 Élément facultatif quand **xsi:type** a la valeur « ShowTaskpane ». Les éléments [VersionOverrides](versionoverrides.md) le contenant doivent avoir une valeur d’attribut `xsi:type` de `VersionOverridesV1_1`. Incluez cet élément avec une valeur `true` pour prendre en charge l’épinglage du volet Office. L’utilisateur pourra alors « épingler » le volet Office qui restera ouvert pendant que la sélection est modifiée. Pour en savoir plus, consultez l’article relatif à l’[implémentation d’un volet Office épinglable dans Outlook](../../outlook/pinnable-taskpane.md).
 
-> [!NOTE]
-> Supportspinning n’est est actuellement uniquement pris en charge par Outlook 2016 ou version ultérieure sur Windows (Build 7628,1000 ou version ultérieure) et Outlook 2016 ou version ultérieure sur Mac (Build 16.13.503 ou version ultérieure).
+> [!IMPORTANT]
+> Bien que `SupportsPinning` l’élément ait été introduit dans l' [ensemble de conditions requises 1,5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), il est actuellement uniquement pris en charge pour les abonnés Office 365 à l’aide des éléments suivants.
+> - Outlook 2016 ou version ultérieure sur Windows (version 7628,1000 ou ultérieure)
+> - Outlook 2016 ou version ultérieure sur Mac (Build 16.13.503 ou version ultérieure)
+> - Outlook moderne sur le web
 
 ```xml
 <Action xsi:type="ShowTaskpane">
