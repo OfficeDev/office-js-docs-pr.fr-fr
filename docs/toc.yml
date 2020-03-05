@@ -600,6 +600,9 @@
         - name: Formes
           href: excel/excel-add-ins-shapes.md
           displayName: Excel
+        - name: Afficher ou masquer un complément Office dans un runtime partagé
+          href: excel/show-hide-add-in.md
+          displayName: Excel
         - name: Tables
           href: excel/excel-add-ins-tables.md
           displayName: Excel
