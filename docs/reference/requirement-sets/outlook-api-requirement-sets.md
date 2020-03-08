@@ -8,8 +8,8 @@ ms.openlocfilehash: 06e97000cab0696f1597032f5a4709c607013eaf
 ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "42413782"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "42554709"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Outlook
 
