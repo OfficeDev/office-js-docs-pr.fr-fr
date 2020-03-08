@@ -1,14 +1,14 @@
 ---
 title: Élément Control dans le fichier manifeste
 description: ''
-ms.date: 10/09/2018
+ms.date: 01/10/2020
 localization_priority: Normal
-ms.openlocfilehash: ed76cc46c624d1b97d43e4270944b8ef4dc63723
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: ccf7c3065db13a311825498292713b619f1cd745
+ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42323797"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "42562050"
 ---
 # <a name="control-element"></a>Élément Control
 
@@ -29,15 +29,18 @@ Définit une fonction JavaScript qui exécute une action ou lance un volet Offic
 Un bouton effectue une action unique quand il est sélectionné. Il peut exécuter une fonction ou afficher un volet Office. Chaque contrôle bouton doit avoir un `id` unique dans le manifeste. 
 
 ### <a name="child-elements"></a>Éléments enfants
-|  Élément |  Obligatoire  |  Description  |
+|  Élément |  Requis  |  Description  |
 |:-----|:-----|:-----|
 |  **Label**     | Oui |  Texte du bouton. L’attribut **RESID** doit être défini sur la valeur de l' **attribut ID** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md) .        |
 |  **ToolTip**  |Non|Info-bulle pour le bouton. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Chaîne**. **String** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément [Resources](resources.md).|     
 |  [Supertip](supertip.md)  | Oui |  Info-bulle pour le bouton.    |
 |  [Icon](icon.md)      | Oui |  Image du bouton.         |
 |  [Action](action.md)    | Oui |  Spécifie l’action à effectuer.  |
+|  [Enabled](enabled.md)    | Non |  Indique si le contrôle est activé au lancement du complément.  |
 
 ### <a name="executefunction-button-example"></a>Exemple du bouton ExecuteFunction
+
+Dans l’exemple suivant, le bouton est désactivé au lancement du complément. Il peut être activé par programmation. Pour plus d’informations, consultez la rubrique [activer et désactiver les commandes de complément](/office/dev/add-ins/design/disable-add-in-commands).
 
 ```xml
 <Control xsi:type="Button" id="msgReadFunctionButton">
@@ -54,6 +57,7 @@ Un bouton effectue une action unique quand il est sélectionné. Il peut exécut
   <Action xsi:type="ExecuteFunction">
     <FunctionName>getSubject</FunctionName>
   </Action>
+  <Enabled>false</Enabled>
 </Control>
 ```
 
@@ -143,7 +147,7 @@ L’exemple suivant montre comment définir un élément de menu avec deux élé
 
 ### <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Obligatoire  |  Description  |
+|  Élément |  Requis  |  Description  |
 |:-----|:-----|:-----|
 |  **Label**     | Oui |  Texte du bouton. L’attribut **RESID** doit être défini sur la valeur de l' **attribut ID** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md) .      |
 |  **ToolTip**  |Non|Info-bulle pour le bouton. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Chaîne**. **String** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément [Resources](resources.md).|     
@@ -242,7 +246,7 @@ Un bouton mobile effectue une action unique lorsque l’utilisateur le sélectio
 La valeur `MobileButton` de **xsi:type** est définie dans le schéma VersionOverrides 1.1. Pour les éléments [VersionOverrides](versionoverrides.md) la contenant, l’attribut `xsi:type` doit avoir la valeur `VersionOverridesV1_1`.
 
 ### <a name="child-elements"></a>Éléments enfants
-|  Élément |  Obligatoire  |  Description  |
+|  Élément |  Requis  |  Description  |
 |:-----|:-----|:-----|
 |  **Label**     | Oui |  Texte du bouton. L’attribut **RESID** doit être défini sur la valeur de l' **attribut ID** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md) .        |
 |  [Icon](icon.md)      | Oui |  Image du bouton.         |

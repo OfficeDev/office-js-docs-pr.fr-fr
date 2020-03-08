@@ -4,11 +4,11 @@ description: Utilisez VersionOverrides dans votre manifeste pour définir des co
 ms.date: 09/26/2019
 localization_priority: Normal
 ms.openlocfilehash: 34dc614ea5189849e7ba16cb75ef86a66a36e968
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950578"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "42554922"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-word-and-powerpoint"></a>Création de commandes de complément dans votre manifeste pour Excel, Word et PowerPoint
 

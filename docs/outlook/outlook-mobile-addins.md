@@ -1,14 +1,14 @@
 ---
 title: Compléments Outlook pour Outlook Mobile
 description: Les compléments Outlook Mobile sont pris en charge sur tous les comptes commerciaux Office 365 et les comptes Outlook.com. Les comptes Gmail seront pris en charge très bientôt.
-ms.date: 10/31/2019
+ms.date: 02/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 7ede3165f40e644715dc488214e047f00dafbede
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 7fc4ac511fe7e101775334cad6d4b000f7dc24ae
+ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166177"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "42561795"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Compléments pour Outlook Mobile
 
@@ -25,6 +25,9 @@ Les compléments Outlook Mobile sont pris en charge sur tous les comptes commer
 **Exemple de volet Office dans Outlook sur Android**
 
 ![Capture d’écran d’un volet Office dans Outlook sur Android](../images/outlook-mobile-addin-taskpane-android.png)
+
+> [!IMPORTANT]
+> Les compléments ne fonctionnent pas dans la version moderne d’Outlook dans un navigateur mobile. Pour plus d’informations, consultez [la rubrique Outlook sur votre navigateur mobile est en cours de mise à niveau](https://techcommunity.microsoft.com/t5/outlook-blog/outlook-on-your-mobile-browser-is-being-upgraded/ba-p/1125816).
 
 ## <a name="whats-different-on-mobile"></a>Qu’est-ce qui est différent sur mobile ?
 

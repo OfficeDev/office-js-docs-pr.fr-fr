@@ -3,12 +3,12 @@ title: Utiliser l’API de boîte de dialogue Office dans vos compléments Offic
 description: Découvrir les notions de base relatives à la création d’une boîte de dialogue dans un complément Office
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: ed77173f57c8a16344d469585610917a08d3dcad
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: ba7027319016901598e381a87d69766eb44fce29
+ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324679"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "42561757"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Utiliser l’API de boîte de dialogue Office dans les compléments Office
 
@@ -247,8 +247,11 @@ Pour obtenir un exemple qui utilise cette technique, consultez l’article relat
 
 Le code dans votre boîte de dialogue peut analyser l’URL et lire la valeur du paramètre.
 
-> [!NOTE]
+> [!IMPORTANT]
 > Office ajoute automatiquement un paramètre de requête appelé `_host_info` à l’URL qui est transmise à `displayDialogAsync`. (Il est ajouté après vos paramètres de requête personnalisés, le cas échéant. Il n’est pas ajouté à toutes les autres URL auxquelles la boîte de dialogue accède.) Microsoft peut modifier le contenu de cette valeur, ou le supprimer entièrement, à l’avenir, donc votre code ne doit pas le lire. La même valeur est ajoutée au stockage de session de la boîte de dialogue. Là encore, *votre code ne doit ni lire, ni écrire cette valeur*.
+
+> [!NOTE]
+> Il existe maintenant un aperçu d' `messageChild` une API que la page parente peut utiliser pour envoyer des messages à la boîte `messageParent` de dialogue, tout comme l’API décrite ci-dessus envoie des messages à partir de la boîte de dialogue. Pour plus d’informations à ce sujet, consultez [la rubrique transmission de données et de messages à une boîte de dialogue à partir de sa page hôte](parent-to-dialog.md). Nous vous invitons à essayer, mais pour les compléments de production, nous vous recommandons d’utiliser les techniques décrites dans cette section.
 
 ## <a name="closing-the-dialog-box"></a>Fermeture de la boîte de dialogue
 

@@ -3,12 +3,12 @@ title: Runtime dans le fichier manifeste (aperçu)
 description: ''
 ms.date: 02/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 26702896604f9ecf4c69296e5110efe5cdf4218b
-ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
+ms.openlocfilehash: dd51c5b317700f92ee74c94835e68523371789f8
+ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "42283883"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "42561827"
 ---
 # <a name="runtime-element-preview"></a>Élément Runtime (aperçu)
 
@@ -19,7 +19,7 @@ ms.locfileid: "42283883"
 **Type de complément :** volet Office
 
 > [!IMPORTANT]
-<<<<<<< en-tête Shared Runtime est actuellement en préversion et n’est disponible que sur Excel sur Windows. Pour essayer les fonctionnalités d’aperçu, vous devrez rejoindre [Office Insider](https://insider.office.com/).
+> Le runtime partagé est actuellement en préversion et n’est disponible que sur Excel sur Windows. Pour essayer les fonctionnalités d’aperçu, vous devrez rejoindre [Office Insider](https://insider.office.com/).
 
 ## <a name="syntax"></a>Syntaxe
 
