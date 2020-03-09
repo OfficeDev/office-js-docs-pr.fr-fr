@@ -151,6 +151,8 @@
                   href: develop/dialog-api-in-office-add-ins.md
                 - name: Pratiques recommandées et règles pour l’API de dialogue Office
                   href: develop/dialog-best-practices.md
+                - name: Envoyer les données à partir de la page hôte vers la boîte de dialogue
+                  href: develop/parent-to-dialog.md
                 - name: Gestion des erreurs et des événements dans la boîte de dialogue Office
                   href: develop/dialog-handle-errors-events.md
                 - name: Utiliser la boîte de dialogue Office pour lire une vidéo
