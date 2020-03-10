@@ -1,14 +1,14 @@
 ---
 title: Comment trouver l’ordre approprié d’éléments manifeste
 description: Découvrez comment trouver l’ordre correct dans lequel placer les éléments enfants dans un élément parent.
-ms.date: 08/22/2019
+ms.date: 01/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 5cd755c69093267ad6ea87d5b1f0676169e7a672
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 5f6364d8403fccfd9dbb9c2c200a2c2a24a90230
+ms.sourcegitcommit: 0e7ed44019d6564c79113639af831ea512fa0a13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42162782"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "42566158"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>Comment trouver l’ordre approprié d’éléments manifeste
 
@@ -158,7 +158,7 @@ Les sections suivantes présentent les éléments de manifeste dans l’ordre da
     <Requirements>
         <Sets>
             <Set>
-      <Hosts>
+    <Hosts>
         <Host>
             <Runtimes>
                 <Runtime>
@@ -195,6 +195,7 @@ Les sections suivantes présentent les éléments de manifeste dans l’ordre da
                                 <SourceLocation>
                                 <Title>
                                 <FunctionName>
+                            <Enabled>
                             <Items>
                                 <Item>
                                 <Label>
@@ -223,6 +224,7 @@ Les sections suivantes présentent les éléments de manifeste dans l’ordre da
                                 <SourceLocation>
                                 <Title>
                                 <FunctionName>
+                            <Enabled>
                             <Items>
                                 <Item>
                                     <Label>
@@ -248,6 +250,7 @@ Les sections suivantes présentent les éléments de manifeste dans l’ordre da
                                 <SourceLocation>
                                 <Title>
                                 <FunctionName>
+                            <Enabled>
                             <Items>
                                 <Item>
                                     <Label>
