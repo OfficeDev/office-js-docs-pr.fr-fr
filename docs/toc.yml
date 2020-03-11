@@ -207,7 +207,11 @@
             - name: Vue d'ensemble
               href: design/interface-elements.md
             - name: Commandes de complément
-              href: design/add-in-commands.md
+              items:
+                - name: Concepts basiques pour les commandes de complément
+                  href: design/add-in-commands.md
+                - name: Commandes Activé et Désactivé pour les compléments
+                  href: design/disable-add-in-commands.md
             - name: Boîtes de dialogue
               href: design/dialog-boxes.md
             - name: Compléments de contenu
@@ -307,6 +311,8 @@
               href: reference/requirement-sets/image-coercion-requirement-sets.md
             - name: Séries de conditions requises des API communes pour Office
               href: reference/requirement-sets/office-add-in-requirement-sets.md
+            - name: Ensembles de conditions requises des API ruban
+              href: reference/requirement-sets/ribbon-api-requirement-sets.md
             - name: Ensembles de conditions requises d'exécution partagés
               href: reference/requirement-sets/shared-runtime-requirement-sets.md
         - name: Référence du manifeste du complément pour Office
@@ -425,6 +431,8 @@
                   href: reference/manifest/control.md
                 - name: CustomTab
                   href: reference/manifest/customtab.md
+                - name: Activé
+                  href: reference/manifest/enabled.md
                 - name: EquivalentAddin
                   href: reference/manifest/equivalentaddin.md
                 - name: EquivalentAddins
