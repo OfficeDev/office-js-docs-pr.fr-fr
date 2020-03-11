@@ -1,14 +1,14 @@
 ---
-title: Commandes de complément pour Excel, Word et PowerPoint
-description: ''
-ms.date: 06/20/2019
-localization_priority: Normal
-ms.openlocfilehash: 92e9b23eaf23aa9c6e0a2eda048dc34e3942f4ed
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
-ms.translationtype: MT
+title: Concepts basiques pour les commandes de complément
+description: Découvrez l'ajout de boutons et d'éléments de menu personnalisés au ruban dans Office dans le cadre d’un complément web Office.
+ms.date: 02/11/2020
+localization_priority: Priority
+ms.openlocfilehash: 11636838feb384cdb0761bd17a3c1c0e0f42f8ce
+ms.sourcegitcommit: 0e7ed44019d6564c79113639af831ea512fa0a13
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42162838"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "42566151"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Commandes de complément pour Excel, Word et PowerPoint
 
@@ -34,20 +34,27 @@ Les fonctionnalités de commande suivantes sont actuellement prises en charge.
 > [!NOTE]
 > Les compléments de contenu ne prennent actuellement pas en charge les commandes de complément.
 
-**Points d’extension**
+### <a name="extension-points"></a>Points d’extension
 
 - Onglets de ruban - Permet d’étendre les onglets prédéfinis ou de créer un onglet personnalisé.
 - Menus contextuels - Permet d’étendre les menus contextuels sélectionnés.
 
-**Types de contrôles**
+### <a name="control-types"></a>Types de contrôles
 
 - Boutons simples - Permettent de déclencher des actions spécifiques.
 - Menus - Menu déroulant simple avec des boutons qui déclenchent des actions.
 
-**Actions**
+### <a name="actions"></a>Actions
 
 - ShowTaskpane - Affiche un ou plusieurs volets où sont chargées des pages HTML personnalisées.
 - ExecuteFunction - Charge une page HTML invisible, puis y exécute une fonction JavaScript. Pour afficher l’interface utilisateur au sein de votre fonction (par exemple, erreurs, avancement, entrées supplémentaires), vous pouvez utiliser l’API [displayDialog](/javascript/api/office/office.ui).  
+
+### <a name="default-enabled-or-disabled-status-preview"></a>État Activé ou Désactivé par défaut (préversion)
+
+Vous pouvez spécifier si la commande est activée ou désactivée lors du lancement de votre complément et modifier le paramètre par programme. 
+
+> [!NOTE]
+> Cette fonctionnalité est en préversion et n’est pas prise en charge dans tous les hôtes ou scénarios. Pour plus d’informations, reportez-vous aux [Commandes Activé et Désactivé pour les compléments](disable-add-in-commands.md).
 
 ## <a name="supported-platforms"></a>Plateformes prises en charge
 
@@ -59,8 +66,6 @@ Les commandes de complément sont actuellement prises en charge sur les platefor
 - Office sur Mac (build 15.33+, connecté à l’abonnement Office 365)
 - Office 2019 sur Mac
 - Office sur le web
-
-D’autres plateformes seront bientôt disponibles.
 
 ## <a name="debugging"></a>Débogage
 
