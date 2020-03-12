@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément de volet des tâches Word 
 ms.date: 01/16/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 2206f18cd752bb1723d303d3fc862c72907d0afb
-ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
+ms.openlocfilehash: 90416db9847f5f78b38fb1c22c4a6751bf95d5e0
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "41265670"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596822"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Word
 
@@ -21,7 +21,7 @@ Cet article décrit comment créer un complément du volet des tâches de Word.
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="yeoman-generatortabyeomangenerator"></a>[Générateur Yeoman](#tab/yeomangenerator)
+# <a name="yeoman-generator"></a>[Générateur Yeoman](#tab/yeomangenerator)
 
 [!include[Redirect to the single sign-on (SSO) quick start](../includes/sso-quickstart-reference.md)]
 
@@ -94,7 +94,7 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 
 Félicitations, vous avez créé un complément du volet des tâches de Word ! Maintenant, découvrez les fonctionnalités d’un complément Word et créez un complément plus complexe en suivant le [didacticiel dédié](../tutorials/word-tutorial.md).
 
-# <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
+# <a name="visual-studio"></a>[Visual Studio](#tab/visualstudio)
 
 ### <a name="prerequisites"></a>Conditions préalables
 
@@ -320,4 +320,4 @@ Félicitations, vous avez créé un complément du volet des tâches de Word ! 
 * [Développement de compléments Office](../develop/develop-overview.md)
 * [Présentation des compléments Word](../word/word-add-ins-programming-overview.md)
 * [Exemples de code pour les compléments Word](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
-* [Référence d’API JavaScript pour Word](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)
+* [Référence d’API JavaScript pour Word](../reference/overview/word-add-ins-reference-overview.md)

@@ -4,16 +4,16 @@ description: ''
 ms.date: 07/17/2019
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 00bf9f23c307a6094345b753d7cccf1c10be7c32
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: d936d5f0c7c40cf79442eac76dbb9d94748a37a8
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950963"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596948"
 ---
 # <a name="onenote-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour OneNote
 
-Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
 
 Le tableau suivant répertorie les ensembles de conditions requises pour OneNote, les applications hôtes Office qui prennent en charge ces conditions et les numéros de version ou la date de disponibilité.
 
@@ -27,7 +27,7 @@ Pour plus d’informations sur les ensembles de conditions requises des API comm
 
 ## <a name="onenote-javascript-api-11"></a>API JavaScript pour OneNote 1.1
 
-L’API JavaScript 1.1 pour OneNote est la première version de l’API. Pour plus d’informations sur l’API, consultez les rubriques de référence sur l’[Récapitulatif de programmation API JavaScript pour OneNote](/office/dev/add-ins/onenote/onenote-add-ins-programming-overview).
+L’API JavaScript 1.1 pour OneNote est la première version de l’API. Pour plus d’informations sur l’API, consultez les rubriques de référence sur l’[Récapitulatif de programmation API JavaScript pour OneNote](../../onenote/onenote-add-ins-programming-overview.md).
 
 ## <a name="runtime-requirement-support-check"></a>Vérification de la prise en charge d’un ensemble de conditions requises à l’exécution
 
@@ -63,6 +63,6 @@ Pour plus d’informations sur les ensembles de conditions requises des API comm
 ## <a name="see-also"></a>Voir aussi
 
 - [Documentation référence de l’API JavaScript pour OneNote](/javascript/api/onenote)
-- [Versions d’Office et ensembles de conditions requises](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [Spécification des exigences en matière d’hôtes Office et d’API](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Manifeste XML des compléments Office](/office/dev/add-ins/develop/add-in-manifests)
+- [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md)
+- [Spécification des exigences en matière d’hôtes Office et d’API](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Manifeste XML des compléments Office](../../develop/add-in-manifests.md)

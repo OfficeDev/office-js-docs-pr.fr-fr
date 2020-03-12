@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément de volet des tâches Excel
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 41448463f33edf7bdddd27981db4e427dd0fcb74
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 3f6bc4a870d987fb367588f9db731e19a50059ba
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950732"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596836"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>Créer un complément de volet de tâches Excel à l’aide de Vue
 
@@ -218,4 +218,4 @@ Félicitations, vous avez créé un complément de volet de tâches Excel à l�
 * [Développement de compléments Office](../develop/develop-overview.md)
 * [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Référence de l’API JavaScript pour Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [Référence de l’API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md)

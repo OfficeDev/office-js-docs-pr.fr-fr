@@ -3,16 +3,16 @@ title: Concepts fondamentaux de programmation avec l’API JavaScript pour Excel
 description: Utilisez l’API JavaScript pour Excel afin de créer des compléments pour Excel.
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: d06536e08482251e2728bfdfb77a6b2d3c96eb56
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 2aa159bbccea79c68ec8cb02fe4548b35e2ec88f
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325114"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596549"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Concepts fondamentaux de programmation avec l’API JavaScript pour Excel
 
-Cet article décrit comment utiliser l’[API JavaScript pour Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) afin de créer des compléments pour Excel 2016 ou versions ultérieures. Il présente les concepts fondamentaux de l’utilisation des API et fournit des conseils pour effectuer des tâches spécifiques, comme la lecture ou l’écriture d’une grande plage, la mise à jour de toutes les cellules d’une plage, et bien plus encore.
+Cet article décrit comment utiliser l’[API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md) afin de créer des compléments pour Excel 2016 ou versions ultérieures. Il présente les concepts fondamentaux de l’utilisation des API et fournit des conseils pour effectuer des tâches spécifiques, comme la lecture ou l’écriture d’une grande plage, la mise à jour de toutes les cellules d’une plage, et bien plus encore.
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Nature asynchrone des API Excel
 
@@ -88,7 +88,7 @@ Excel.run(function (context) {
 
 Dans l’exemple précédent, `selectedRange` est configuré et sa propriété `address` est chargée lorsque `context.sync()` est appelé.
 
-Étant donné que `sync()` est une opération asynchrone qui renvoie une promesse, vous devez toujours `return` la promesse (dans JavaScript). Cela garantit que l’opération `sync()` se termine avant que le script continue à s’exécuter. Pour plus d’informations sur l’optimisation des performances avec `sync()`, consultez la rubrique [Optimisation des performances à l’aide de l’API JavaScript d’Excel](/office/dev/add-ins/excel/performance).
+Étant donné que `sync()` est une opération asynchrone qui renvoie une promesse, vous devez toujours `return` la promesse (dans JavaScript). Cela garantit que l’opération `sync()` se termine avant que le script continue à s’exécuter. Pour plus d’informations sur l’optimisation des performances avec `sync()`, consultez la rubrique [Optimisation des performances à l’aide de l’API JavaScript d’Excel](../excel/performance.md).
 
 ### <a name="load"></a>load()
 
@@ -250,6 +250,6 @@ Lorsqu’une erreur d’API se produit, l’API renvoie un objet `error` qui con
 - [Création de votre premier complément Excel](../quickstarts/excel-quickstart-jquery.md)
 - [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 - [Concepts avancés de programmation avec l’API JavaScript Excel](excel-add-ins-advanced-concepts.md)
-- [Optimisation des performances à l’aide de l’API JavaScript d’Excel](/office/dev/add-ins/excel/performance)
-- [Référence de l’API JavaScript pour Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+- [Optimisation des performances à l’aide de l’API JavaScript d’Excel](../excel/performance.md)
+- [Référence de l’API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md)
 - [Problèmes courants liés au code et comportements de plateforme inattendus](../develop/common-coding-issues.md).

@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément de volet des tâches Excel
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: b7c4fbbb26935bedb5d1d2d09f0137cfda3e34f4
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: d98d3145a092b18bdfa60f29aa5dda885b9168ed
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950627"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596843"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-react"></a>Créer un complément de volet de tâches Excel à l’aide de React
 
@@ -75,4 +75,4 @@ Félicitations, vous avez créé un complément de volet de tâches Excel à l�
 * [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial-create-table.md)
 * [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Référence de l’API JavaScript pour Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [Référence de l’API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md)

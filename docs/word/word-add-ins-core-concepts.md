@@ -3,12 +3,12 @@ title: Concepts fondamentaux de programmation avec l’API JavaScript pour Word
 description: L’API JavaScript pour Word permet de créer des compléments pour Word.
 ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 7849780c1aed48152355c3fdbf350d798b2de1f2
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 319570a7790504bdf95c6a66c07db67ca29dec55
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325016"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596766"
 ---
 # <a name="fundamental-programming-concepts-with-the-word-javascript-api"></a>Concepts fondamentaux de programmation avec l’API JavaScript pour Word
 
@@ -28,7 +28,7 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 
 ## <a name="running-word-add-ins"></a>Exécution de compléments Word
 
-Pour exécuter votre complément, utilisez un gestionnaire d’événements `Office.initialize`. Pour plus d’informations sur l’initialisation du complément, voir [Présentation de l’API](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office).
+Pour exécuter votre complément, utilisez un gestionnaire d’événements `Office.initialize`. Pour plus d’informations sur l’initialisation du complément, voir [Présentation de l’API](../develop/understanding-the-javascript-api-for-office.md).
 
 Les compléments qui ciblent Word 2016 ou version ultérieure s’exécutent en transmettant une fonction dans la méthode `Word.run()`. La fonction transmise dans la méthode `run` doit contenir un argument de contexte. Cet [objet de contexte](/javascript/api/word/word.requestcontext) est différent de celui que vous obtenez de l’objet Office, même s’il sert également à interagir avec l’environnement d’exécution de Word. L’objet de contexte permet d’accéder au modèle objet de l’API JavaScript pour Word. L’exemple suivant montre comment initialiser et exécuter un complément Word à l’aide de la méthode `Word.run()`.
 

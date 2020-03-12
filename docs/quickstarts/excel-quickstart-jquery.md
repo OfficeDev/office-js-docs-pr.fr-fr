@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément de volet des tâches Excel
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 71253cbc5b50f6d36c8c04b25573c1ed328f9df6
-ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
+ms.openlocfilehash: cdd4de9cad88c09ec33e2cb1566b0a64afdf7745
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "41265705"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596619"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Créer un complément de volet de tâches Excel
 
@@ -19,7 +19,7 @@ Dans cet article, vous découvrirez comment créer un complément de volet de t�
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="yeoman-generatortabyeomangenerator"></a>[Générateur Yeoman](#tab/yeomangenerator)
+# <a name="yeoman-generator"></a>[Générateur Yeoman](#tab/yeomangenerator)
 
 [!include[Redirect to the single sign-on (SSO) quick start](../includes/sso-quickstart-reference.md)]
 
@@ -70,7 +70,7 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 
 Félicitations, vous avez créé un complément de volet de tâches Excel ! Ensuite, découvrez les fonctionnalités d’un complément Excel et créez-en un plus complexe en suivant le [didacticiel sur les compléments Excel](../tutorials/excel-tutorial.md).
 
-# <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
+# <a name="visual-studio"></a>[Visual Studio](#tab/visualstudio)
 
 ### <a name="prerequisites"></a>Conditions préalables
 
@@ -223,4 +223,4 @@ Félicitations, vous avez créé un complément de volet de tâches Excel ! Ens
 * [Développement de compléments Office](../develop/develop-overview.md)
 * [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Référence de l’API JavaScript pour Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [Référence de l’API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md)

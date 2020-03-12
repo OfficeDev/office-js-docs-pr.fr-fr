@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément simple de volet des tâche
 ms.date: 01/16/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: cdf1dbd3f234b77bd406a66927b8fad3d5ef4859
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: d95cdca487b8f69ac8251cf007a92b99a6069885
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325297"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596612"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>Créer votre premier complément du volet Office de OneNote
 
@@ -128,6 +128,6 @@ Félicitations ! Vous avez créé un complément du volet Office de OneNote ! 
 * [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
 * [Développement de compléments Office](../develop/develop-overview.md)
 - [Vue d’ensemble de la programmation de l’API JavaScript de OneNote](../onenote/onenote-add-ins-programming-overview.md)
-- [Référence de l’API JavaScript de OneNote](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
+- [Référence de l’API JavaScript de OneNote](../reference/overview/onenote-add-ins-javascript-reference.md)
 - [Exemple de grille d’évaluation](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 

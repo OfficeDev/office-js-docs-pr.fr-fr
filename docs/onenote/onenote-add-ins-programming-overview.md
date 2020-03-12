@@ -5,12 +5,12 @@ ms.date: 02/19/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 0ea7273b15ad430d2d19d91ff5d8f57fe64c675a
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: a4e060570f4eccc3fff9017042ff6bf278714ed6
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325488"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596850"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>Vue d’ensemble de la programmation de l’API JavaScript de OneNote
 
@@ -87,7 +87,7 @@ function getPagesInSection() {
 }
 ```
 
-Vous pouvez déterminer les objets et les opérations OneNote pris en charge dans la [référence de l’API](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference).
+Vous pouvez déterminer les objets et les opérations OneNote pris en charge dans la [référence de l’API](../reference/overview/onenote-add-ins-javascript-reference.md).
 
 #### <a name="onenote-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour OneNote
 
@@ -139,6 +139,6 @@ Le diagramme suivant représente ce qui est actuellement disponible dans l’API
 
 - [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
 - [Créer votre premier complément OneNote](../quickstarts/onenote-quickstart.md)
-- [Référence de l’API JavaScript de OneNote](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
+- [Référence de l’API JavaScript de OneNote](../reference/overview/onenote-add-ins-javascript-reference.md)
 - [Exemple de grille d’évaluation](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
