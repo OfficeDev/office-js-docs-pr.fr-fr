@@ -3,19 +3,19 @@ title: Autoriser la connexion à Microsoft Graph avec l’authentification uniqu
 description: ''
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 06605ab54dc0565aaa5632abd911c68e29aba33f
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: e3dfae7c1b665dfcc5dea300ef4c3dfb6af209cd
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42162796"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596675"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso-preview"></a>Autoriser la connexion à Microsoft Graph avec l’authentification unique (préversion)
 
 Les utilisateurs se connectent à Office (plateformes en ligne, mobiles et de bureau) à l’aide de leur compte Microsoft personnel ou de leur compte professionnel ou scolaire (Office 365). Le meilleur moyen pour un complément Office d’obtenir un accès autorisé à [Microsoft Graph](https://developer.microsoft.com/graph/docs) est d’utiliser les informations d’identification Office de l’utilisateur. Cela leur permet d’accéder à leurs données Microsoft Graph sans avoir à se connecter une deuxième fois. 
 
 > [!NOTE]
-> L’API de l’authentification unique est actuellement prise en charge en mode aperçu pour Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur l’endroit où l’API d’authentification unique est actuellement prise en charge, consultez la rubrique [Ensembles de conditions requises de l’API d’identité](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets). Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location d’Office 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> L’API de l’authentification unique est actuellement prise en charge en mode aperçu pour Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur l’endroit où l’API d’authentification unique est actuellement prise en charge, consultez la rubrique [Ensembles de conditions requises de l’API d’identité](../reference/requirement-sets/identity-api-requirement-sets.md). Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location d’Office 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## <a name="add-in-architecture-for-sso-and-microsoft-graph"></a>Architecture de complément pour l’authentification unique et Microsoft Graph
 
@@ -37,20 +37,20 @@ Le diagramme suivant montre comment fonctionne le processus de connexion et l’
 6. L’application hôte Office envoie le**jeton d’accès bootstrap** au complément dans le cadre de l’objet de résultat renvoyé par l’appel`getAccessToken`.
 7. JavaScript dans le complément effectue une requête HTTP à une API web qui est hébergée sur le même domaine complet que le complément et inclut le **jeton d’accès bootstrap** comme preuve d’autorisation.
 8. Le code côté serveur valide le **jeton d’accès bootstrap** entrant.
-9. Le code côté serveur utilise le flux « de la part de » (défini dans [OAuth2 Token Exchange](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02) et l’[application démon ou serveur dans un scénario Azure avec une API web](/azure/active-directory/develop/active-directory-authentication-scenarios)) pour obtenir un jeton d’accès à Microsoft Graph en échange du jeton d’accès bootstrap.
+9. Le code côté serveur utilise le flux « de la part de » (défini dans [OAuth2 Token Exchange](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02) et le [scénario ou l’application serveur vers le scénario Azure de l’API Web](/azure/active-directory/develop/active-directory-authentication-scenarios)) pour obtenir un jeton d’accès pour Microsoft Graph dans Exchange pour le jeton d’accès bootstrap.
 10. Azure AD renvoie le jeton d’accès à Microsoft Graph (et un jeton d’actualisation si le complément demande l’autorisation *offline_access*) au complément.
 11. Le code côté serveur met en cache le jeton d’accès à Microsoft Graph.
 12. Le code côté serveur effectue des requêtes à Microsoft Graph et inclut le jeton d’accès à Microsoft Graph.
-13. Microsoft Graph renvoie des données au complément, qui peut les transmettre à l’interface utilisateur du complément.
+13. Microsoft Graph renvoie des données au complément, qui peuvent le transmettre à l’interface utilisateur du complément.
 14. Lorsque le jeton d’accès à Microsoft Graph expire, le code côté serveur peut utiliser son jeton d’actualisation pour obtenir un nouveau jeton d’accès à Microsoft Graph.
 
 ## <a name="develop-an-sso-add-in-that-accesses-microsoft-graph"></a>Développer un complément authentification unique qui accède à Microsoft Graph
 
-Vous développez un complément qui accède à Microsoft Graph comme vous le feriez pour n’importe quel autre complément qui utilise l’authentification unique. Pour obtenir une description complète, voir [Activer l’authentification unique pour les compléments Office](/office/dev/add-ins/develop/sso-in-office-add-ins). La différence est qu’il est obligatoire que le complément ait une API Web côté serveur, et ce qu’on appelle le jeton d’accès dans cet article s’appelle le « jeton d’accès bootstrap ».
+Vous développez un complément qui accède à Microsoft Graph comme vous le feriez pour n’importe quel autre complément qui utilise l’authentification unique. Pour obtenir une description complète, voir [Activer l’authentification unique pour les compléments Office](../develop/sso-in-office-add-ins.md). La différence est qu’il est obligatoire que le complément ait une API Web côté serveur, et ce qu’on appelle le jeton d’accès dans cet article s’appelle le « jeton d’accès bootstrap ».
 
 Selon votre langue et votre infrastructure, des bibliothèques peuvent être disponibles pour simplifier le code côté serveur que vous devez rédiger. Votre code côté serveur doit effectuer les opérations suivantes :
 
-* Démarrer le flux « de la part de » avec un appel du point de terminaison Azure AD v2.0 qui inclut le jeton d’accès bootstrap, certaines métadonnées relatives à l’utilisateur et les informations d’identification du complément (ID et code secret).
+* Lancez le flux « de la part de » avec un appel vers le point de terminaison Azure AD v 2.0 qui inclut le jeton d’accès bootstrap, certaines métadonnées relatives à l’utilisateur et les informations d’identification du complément (son ID et sa clé secrète).
 * Créer une ou plusieurs méthodes API Web qui obtiennent des données de Microsoft Graph en transmettant le jeton d’accès (potentiellement mis en cache) à Microsoft Graph.
 * De manière facultative, avant d’initier le flux, validez le jeton d’accès bootstrap reçu à partir du gestionnaire de jetons que vous avez créé précédemment. Pour plus d’informations, voir [Valider le jeton d’accès](sso-in-office-add-ins.md#validate-the-access-token). 
 * De manière facultative, une fois le flux terminé, mettez en cache le jeton d’accès renvoyé vers Microsoft Graph. Nous vous conseillons de le faire si le complément effectue plusieurs appels à Microsoft Graph. Pour plus d’informations sur ce flux, voir [Azure Active Directory v2.0 et OAuth 2.0 On-Behalf-Of flow](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of).

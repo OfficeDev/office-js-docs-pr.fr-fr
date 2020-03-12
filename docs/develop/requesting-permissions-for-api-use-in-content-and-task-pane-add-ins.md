@@ -3,12 +3,12 @@ title: Demande d’autorisations d’utilisation de l’API dans des complément
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: ef78764e2ccc6d1cab3783584834317331961c2d
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: d146322c6977e11eedcd7e0b9ffdc9d5eeaac7c2
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325495"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596661"
 ---
 # <a name="requesting-permissions-for-api-use-in-add-ins"></a>Demande d’autorisations d’utilisation de l’API dans des compléments
 
@@ -22,7 +22,7 @@ Le modèle d’autorisations d’accès de l’API JavaScript à cinq niveaux fo
 
 ![Niveaux d’autorisations des applications de volet de tâches](../images/office15-app-sdk-task-pane-app-permission.png)
 
-Ces autorisations spécifient le sous-ensemble de l’API auquel votre complément de contenu ou du volet Office est autorisé à accéder par l’environnement d’exécution lorsqu’un utilisateur insère, puis active (approuve) votre complément. Pour déclarer le niveau d’autorisation nécessaire à votre complément de contenu ou du volet Office, indiquez l’une des valeurs de texte d’autorisation dans l’élément [Permissions](/office/dev/add-ins/reference/manifest/permissions) du manifeste de votre complément. L’exemple suivant demande l’autorisation **WriteDocument**, laquelle n’autorise que les méthodes pouvant écrire dans le document (et non le lire).
+Ces autorisations spécifient le sous-ensemble de l’API auquel votre complément de contenu ou du volet Office est autorisé à accéder par l’environnement d’exécution lorsqu’un utilisateur insère, puis active (approuve) votre complément. Pour déclarer le niveau d’autorisation nécessaire à votre complément de contenu ou du volet Office, indiquez l’une des valeurs de texte d’autorisation dans l’élément [Permissions](../reference/manifest/permissions.md) du manifeste de votre complément. L’exemple suivant demande l’autorisation **WriteDocument**, laquelle n’autorise que les méthodes pouvant écrire dans le document (et non le lire).
 
 ```XML
 <Permissions>WriteDocument</Permissions>

@@ -3,19 +3,19 @@ title: Gérer l’État et les paramètres d’un complément Outlook
 description: Découvrez comment faire persister l’État et les paramètres des compléments pour un complément Outlook.
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 7a76da625faab98de1f6ef6d32e0274056dba9f2
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 7d981107da68c329d209834059bfac494d6ccae4
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325346"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596647"
 ---
 # <a name="manage-state-and-settings-for-an-outlook-add-in"></a>Gérer l’État et les paramètres d’un complément Outlook
 
 > [!NOTE]
 > Consultez la section relative à la conservation de l' [État et des paramètres des compléments](../develop/persisting-add-in-state-and-settings.md) dans la section **concepts principaux** de cette documentation avant de lire cet article.
 
-Pour les compléments Outlook, l’API JavaScript pour Office fournit des objets [RoamingSettings](/javascript/api/outlook/office.roamingsettings) et [CustomProperties](/javascript/api/outlook/office.customproperties) pour enregistrer l’état des compléments entre les sessions, comme décrit dans le tableau suivant. Dans tous les cas, les valeurs de paramètre enregistrées sont associées à l’[ID](/office/dev/add-ins/reference/manifest/id) du complément qui les a créées.
+Pour les compléments Outlook, l’API JavaScript pour Office fournit des objets [RoamingSettings](/javascript/api/outlook/office.roamingsettings) et [CustomProperties](/javascript/api/outlook/office.customproperties) pour enregistrer l’état des compléments entre les sessions, comme décrit dans le tableau suivant. Dans tous les cas, les valeurs de paramètre enregistrées sont associées à l’[ID](../reference/manifest/id.md) du complément qui les a créées.
 
 |**Objet**|**Emplacement de stockage**|
 |:-----|:-----|:-----|

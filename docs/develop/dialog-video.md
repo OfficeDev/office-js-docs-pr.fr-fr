@@ -3,12 +3,12 @@ title: Utiliser la boîte de dialogue Office pour lire une vidéo
 description: Obtenir des informations sur l’ouverture et la lecture d’une vidéo dans la boîte de dialogue Office
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 407eec467ed8ed51350f6195a3607c430524e6b4
-ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
+ms.openlocfilehash: 9c65dfb9c0cf1adbc827be25b655e380dc39e2d2
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "41650082"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596528"
 ---
 # <a name="use-the-office-dialog-box-to-show-a-video"></a>Afficher une vidéo à l’aide de la boîte de dialogue Office
 
@@ -31,6 +31,6 @@ Pour lire une vidéo dans une boîte de dialogue avec l’API de boîte de dialo
 2. Utilisez un appel de `displayDialogAsync` dans la page hôte pour ouvrir video.dialogbox.html.
 3. Si votre complément a besoin de savoir quand l’utilisateur ferme la boîte de dialogue, inscrivez un gestionnaire pour l’événement `DialogEventReceived` et gérez l’événement 12006. Pour plus d’informations, consultez [la rubrique Erreurs et événements dans la boîte de dialogue Office](dialog-handle-errors-events.md).
 
-Pour voir un exemple de lecture vidéo dans une boîte de dialogue, consultez le modèle de conception de la vidéo de [Présentation vidéo](/office/dev/add-ins/design/first-run-experience-patterns#video-placemat).
+Pour voir un exemple de lecture vidéo dans une boîte de dialogue, consultez le modèle de conception de la vidéo de [Présentation vidéo](../design/first-run-experience-patterns.md#video-placemat).
 
 ![Capture d’écran d’une lecture vidéo dans une boîte de dialogue de complément](../images/video-placemats-dialog-open.png)

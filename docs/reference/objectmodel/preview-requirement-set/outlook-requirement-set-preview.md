@@ -1,21 +1,21 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: ''
-ms.date: 12/17/2019
+ms.date: 03/04/2020
 localization_priority: Normal
-ms.openlocfilehash: 87c15ac889a955412e6a8350baaed8611fdb5164
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 4365dab3d8dd1ddb876536b3030926d68a89ac49
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325219"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "42605672"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
 Le sous-ensemble d’API de complément Outlook de l’API JavaScript pour Office comprend des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un complément Outlook.
 
 > [!IMPORTANT]
-> Cette documentation a trait à un [ensemble de conditions requises](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) en **préversion**. Ces conditions n’ont pas encore été toutes implémentées, par conséquent les clients ne pourront pas demander une aide précise concernant ces conditions. Vous ne devez pas spécifier cet ensemble de conditions dans le manifeste de votre complément.
+> Cette documentation a trait à un [ensemble de conditions requises](../../requirement-sets/outlook-api-requirement-sets.md) en **préversion**. Ces conditions n’ont pas encore été toutes implémentées, par conséquent les clients ne pourront pas demander une aide précise concernant ces conditions. Vous ne devez pas spécifier cet ensemble de conditions dans le manifeste de votre complément.
 
 [!INCLUDE [Information about using preview APIs](../../../includes/using-preview-apis-host.md)]
 
@@ -24,6 +24,26 @@ L’ensemble de conditions requises présenté en aperçu comprend toutes les fo
 ## <a name="features-in-preview"></a>Fonctionnalités (aperçu) :
 
 Les fonctionnalités suivantes sont disponibles en aperçu.
+
+### <a name="append-on-send"></a>Ajouter à l’envoi
+
+#### <a name="officebodyappendonsendasync"></a>[Office. Body. appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-)
+
+Ajout d’une nouvelle fonction à `Body` l’objet qui ajoute des données à la fin du corps de l’élément en mode composition.
+
+**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
+
+#### <a name="extendedpermissions"></a>[ExtendedPermissions](../../manifest/extendedpermissions.md)
+
+Ajout d’un nouvel élément au manifeste dans lequel `AppendOnSend` l’autorisation étendue doit être incluse dans la collection des autorisations étendues.
+
+**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
+
+<br>
+
+---
+
+---
 
 ### <a name="integration-with-actionable-messages"></a>Intégration avec les messages actionnables
 
@@ -59,7 +79,7 @@ Ajout de l’événement `OfficeThemeChanged` à `Mailbox`.
 
 ### <a name="sso"></a>Authentification unique
 
-#### <a name="officeruntimeauthgetaccesstoken"></a>[OfficeRuntime.auth.getAccessToken](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference)
+#### <a name="officeruntimeauthgetaccesstoken"></a>[OfficeRuntime.auth.getAccessToken](../../../develop/sso-in-office-add-ins.md#sso-api-reference)
 
 Ajout d’un accès à `getAccessToken`, qui permet aux compléments d’[obtenir un jeton d’accès](../../../outlook/authenticate-a-user-with-an-sso-token.md) pour l’API Microsoft Graph.
 

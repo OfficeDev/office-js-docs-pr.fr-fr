@@ -3,12 +3,12 @@ title: Déboguer des compléments Office dans Visual Studio
 description: Utiliser Visual Studio pour déboguer des compléments Office dans le client de bureau Office sous Windows
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: d55b764343b5dc7c850a35b013b134fa2ad5a069
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: c51ae9115482919efe09033360c8b335ee1236f2
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324616"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596514"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Déboguer des compléments Office dans Visual Studio
 
@@ -113,7 +113,7 @@ Visual Studio génère le projet et effectue les actions suivantes :
 
 Visual Studio effectue ensuite les actions suivantes :
 
-1. Il modifie l’élément [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) du fichier manifeste XML en remplaçant le jeton`~remoteAppUrl`par l’adresse complète de la page de démarrage (par exemple`https://localhost:44302/Home.html`).
+1. Il modifie l’élément [SourceLocation](../reference/manifest/sourcelocation.md) du fichier manifeste XML en remplaçant le jeton`~remoteAppUrl`par l’adresse complète de la page de démarrage (par exemple`https://localhost:44302/Home.html`).
 
 2. Il démarre le projet d’application web dans IIS Express.
 

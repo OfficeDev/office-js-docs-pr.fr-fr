@@ -1,18 +1,18 @@
 ---
 title: Navigateurs utilisés par les compléments Office
 description: Indique comment le système d’exploitation et la version d’Office déterminent le navigateur utilisé par les compléments Office.
-ms.date: 12/13/2019
+ms.date: 03/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 37d001d7feb170b11edc4f6a233f6fdc15cf3438
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: d53ea0da29c9d2cc1177d233eed9e3ee62a891f2
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950361"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596465"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navigateurs utilisés par les compléments Office
 
-Les compléments Office sont des applications web qui s’affichent à l’aide d’iFrames lorsqu’ils sont exécutés dans Office sur le web et utilisent des contrôles de navigateur incorporés dans Office pour les clients de bureau et mobiles. Les compléments ont également besoin d’un moteur JavaScript pour exécuter le code JavaScript. Le navigateur incorporé et le moteur sont fournis par un navigateur installé sur l’ordinateur de l’utilisateur.
+Les compléments Office sont des applications web qui s’affichent à l’aide d’iFrames lorsqu’ils sont exécutés dans Office sur le web et utilisent des contrôles de navigateur incorporés dans Office pour les clients de bureau et mobiles. Les compléments ont également besoin d’un moteur JavaScript pour exécuter le code JavaScript. Le navigateur et le moteur incorporés sont fournis par un navigateur installé sur l’ordinateur de l’utilisateur.
 
 Le navigateur utilisé dépend de ce qui suit :
 
@@ -38,6 +38,10 @@ Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes e
 > Internet Explorer 11 ne prend pas en charge les versions de JavaScript ultérieures à la version ES5. Si un des utilisateurs de votre complément dispose d’une plateforme utilisant Internet Explorer 11, vous devez transpiler JavaScript vers la version ES5 ou utiliser un polyfill pour lui permettre d’utiliser la syntaxe et les fonctionnalités d’ECMAScript 2015 ou version ultérieure. Par ailleurs, Internet Explorer 11 ne prend pas en charge certaines fonctionnalités HTML5 telles que les éléments multimédias, l’enregistrement et l’emplacement.
 
 ## <a name="troubleshooting-microsoft-edge-issues"></a>Résolution des problèmes liés à Microsoft Edge
+
+### <a name="service-workers-are-not-working"></a>Les travailleurs de services ne fonctionnent pas
+
+Les compléments Office ne prennent pas en charge les travailleurs de service sur [Microsoft Edge WebView](/microsoft-edge/hosting/webview). Consultez la rubrique [vue d’ensemble des compléments Office](../overview/office-add-ins.md) pour les dernières fonctionnalités prises en charge sur le contrôle Edge WebView. Nous travaillons difficilement à mettre en place la nouvelle [WebView2 Edge basée](/microsoft-edge/hosting/webview2) sur le chrome à la plateforme de compléments Office, dont nous pensons qu’elle prendra en charge les travailleurs de service.
 
 ### <a name="chromium-based-edge-is-installed-on-my-development-computer-but-my-add-in-does-not-use-it"></a>Le serveur Edge basé sur le chrome est installé sur mon ordinateur de développement, mais mon complément ne l’utilise pas
 

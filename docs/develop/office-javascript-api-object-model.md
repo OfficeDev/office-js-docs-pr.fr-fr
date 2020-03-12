@@ -1,26 +1,26 @@
 ---
 title: Modèle d’objet d’API JavaScript courant
 description: ''
-ms.date: 02/27/2020
+ms.date: 03/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 3b1e1db21f3deb4b6a311a433dbd922c4bb6b50d
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 85ecd3b7b676a11a4ff41868adbbd9a0d907f32a
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325128"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596724"
 ---
 # <a name="common-javascript-api-object-model"></a>Modèle d’objet d’API JavaScript courant
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
-Les compléments JavaScript Office donnent accès aux fonctionnalités sous-jacentes de l'hôte. La majeure partie de cet accès passe par quelques objets importants. L’objet [Context](#context-object) donne accès à l’environnement d’exécution après l’initialisation. L’objet [Document](#document-object)donne à l’utilisateur le contrôle d’un document Excel, PowerPoint ou Word. L’objet [Mailbox](#mailbox-object) permet à un complément Outlook d’accéder aux messages et aux profils utilisateur. La compréhension des relations entre ces objets de haut niveau constitue le fondement d’un complément JavaScript.
+Les compléments JavaScript Office donnent accès à la fonctionnalité sous-jacente de l’hôte. La majeure partie de cet accès passe par quelques objets importants. L’objet [Context](#context-object) donne accès à l’environnement d’exécution après l’initialisation. L’objet [Document](#document-object)donne à l’utilisateur le contrôle d’un document Excel, PowerPoint ou Word. L’objet [Mailbox](#mailbox-object) permet à un complément Outlook d’accéder aux messages et aux profils utilisateur. La compréhension des relations entre ces objets de haut niveau constitue le fondement d’un complément JavaScript.
 
 ## <a name="context-object"></a>Context, objet
 
 **S’applique à :** tous les types de complément
 
-Lorsqu’un complément est [initialisé](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in), il peut interagir avec de nombreux objets différents dans l’environnement d’exécution. Le contexte du runtime du complément est indiqué dans l’API par l’objet [Context](/javascript/api/office/office.context). **Context** est l’objet principal qui permet d’accéder aux objets les plus importants de l’API, tels que les objets [Document](/javascript/api/office/office.document) et [Mailbox](/javascript/api/outlook/Office.mailbox), qui à leur tour donnent accès au contenu des documents et boîtes aux lettres.
+Lorsqu’un complément est [initialisé](initialize-add-in.md), il peut interagir avec de nombreux objets différents dans l’environnement d’exécution. Le contexte du runtime du complément est indiqué dans l’API par l’objet [Context](/javascript/api/office/office.context). **Context** est l’objet principal qui permet d’accéder aux objets les plus importants de l’API, tels que les objets [Document](/javascript/api/office/office.document) et [Mailbox](/javascript/api/outlook/Office.mailbox), qui à leur tour donnent accès au contenu des documents et boîtes aux lettres.
 
 Par exemple, dans les compléments de contenu ou du volet Office, vous pouvez utiliser la propriété document de l’objet Context pour accéder aux propriétés et aux méthodes de l’objet Document afin d’interagir avec le contenu de documents Word, de feuilles de calcul Excel ou de planifications Project. De même, dans les compléments Outlook, vous pouvez utiliser la propriété mailbox de l’objet Context pour accéder aux méthodes et aux propriétés de l’objet Mailbox afin d’interagir avec le contenu des messages, des demandes de réunion ou des rendez-vous.
 

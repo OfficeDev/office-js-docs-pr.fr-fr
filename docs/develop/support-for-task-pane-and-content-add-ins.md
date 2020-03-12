@@ -3,12 +3,12 @@ title: Prise en charge de l’API JavaScript pour Office pour les compléments d
 description: ''
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: a9eb67ca78f89888860ff3ed11ae1632ff62b690
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 043ce34b05b3b158dcf4162fb49cfe94a791dad1
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42323820"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596654"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>Prise en charge de l’interface API JavaScript pour Office pour les compléments de contenu et du volet Office dans Office 2013
 
@@ -165,6 +165,6 @@ Pour plus d’informations, consultez la rubrique [demande d’autorisations pou
 
 ## <a name="see-also"></a>Voir aussi
 
-- [API JavaScript pour Office](/office/dev/add-ins/reference/javascript-api-for-office)
+- [API JavaScript pour Office](../reference/javascript-api-for-office.md)
 - [Référence de schéma pour les manifestes des compléments Office](../develop/add-in-manifests.md)
 - [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](../testing/testing-and-troubleshooting.md)

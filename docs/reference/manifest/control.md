@@ -3,12 +3,12 @@ title: Élément Control dans le fichier manifeste
 description: ''
 ms.date: 01/10/2020
 localization_priority: Normal
-ms.openlocfilehash: ccf7c3065db13a311825498292713b619f1cd745
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: 0add0d102b62411b67c081b74ecd0a138df3b625
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42562050"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596472"
 ---
 # <a name="control-element"></a>Élément Control
 
@@ -32,7 +32,7 @@ Un bouton effectue une action unique quand il est sélectionné. Il peut exécut
 |  Élément |  Requis  |  Description  |
 |:-----|:-----|:-----|
 |  **Label**     | Oui |  Texte du bouton. L’attribut **RESID** doit être défini sur la valeur de l' **attribut ID** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md) .        |
-|  **ToolTip**  |Non|Info-bulle pour le bouton. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Chaîne**. **String** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément [Resources](resources.md).|     
+|  **ToolTip**    |Non|Info-bulle pour le bouton. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Chaîne**. **String** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément [Resources](resources.md).|        
 |  [Supertip](supertip.md)  | Oui |  Info-bulle pour le bouton.    |
 |  [Icon](icon.md)      | Oui |  Image du bouton.         |
 |  [Action](action.md)    | Oui |  Spécifie l’action à effectuer.  |
@@ -40,7 +40,7 @@ Un bouton effectue une action unique quand il est sélectionné. Il peut exécut
 
 ### <a name="executefunction-button-example"></a>Exemple du bouton ExecuteFunction
 
-Dans l’exemple suivant, le bouton est désactivé au lancement du complément. Il peut être activé par programmation. Pour plus d’informations, consultez la rubrique [activer et désactiver les commandes de complément](/office/dev/add-ins/design/disable-add-in-commands).
+Dans l’exemple suivant, le bouton est désactivé au lancement du complément. Il peut être activé par programmation. Pour plus d’informations, reportez-vous aux [Commandes Activé et Désactivé pour les compléments](../../design/disable-add-in-commands.md).
 
 ```xml
 <Control xsi:type="Button" id="msgReadFunctionButton">
@@ -150,7 +150,7 @@ L’exemple suivant montre comment définir un élément de menu avec deux élé
 |  Élément |  Requis  |  Description  |
 |:-----|:-----|:-----|
 |  **Label**     | Oui |  Texte du bouton. L’attribut **RESID** doit être défini sur la valeur de l' **attribut ID** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md) .      |
-|  **ToolTip**  |Non|Info-bulle pour le bouton. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Chaîne**. **String** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément [Resources](resources.md).|     
+|  **ToolTip**    |Non|Info-bulle pour le bouton. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Chaîne**. **String** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément [Resources](resources.md).|        
 |  [Supertip](supertip.md)  | Oui |  Info-bulle pour ce bouton.    |
 |  [Icon](icon.md)      | Oui |  Image du bouton.         |
 |  **Éléments**     | Oui |  Collection de boutons à afficher dans le menu. Contient les éléments **Élément** pour chaque élément de sous-menu. Chaque élément **Item** contient les éléments enfants du [contrôle Button](#button-control).|

@@ -3,12 +3,12 @@ title: Élément Methods dans le fichier manifeste
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 52e12de0fde9fa1ede4687c3f27707d1dc3dce5f
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: b2ef9725b76b21af8d41b9e571d2851464aa1fcc
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325254"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596885"
 ---
 # <a name="methods-element"></a>Élément Methods
 
@@ -34,5 +34,4 @@ Spécifie la liste des méthodes de l’API JavaScript pour Office que votre com
 
 ## <a name="remarks"></a>Remarques
 
-Les **méthodes** et les éléments **Method** ne sont pas pris en charge dans les compléments de messagerie. Pour plus d’informations sur les ensembles de conditions requises, voir [versions d’Office et ensembles de conditions requises](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
-
+Les **méthodes** et les éléments **Method** ne sont pas pris en charge dans les compléments de messagerie. Pour plus d’informations sur les ensembles de conditions requises, voir [versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).

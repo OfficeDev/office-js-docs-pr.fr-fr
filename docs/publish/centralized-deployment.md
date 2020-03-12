@@ -3,12 +3,12 @@ title: Publication de compléments Office à l’aide du déploiement centralis�
 description: ''
 ms.date: 02/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 92ae938669ad53b50c8635a998dcfa4525ac2bef
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 943216ec8f42160a8eb406999fa2c86c45a0081a
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165588"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596829"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>Publication de compléments Office à l’aide du déploiement centralisé via le centre d’administration Office 365
 
@@ -78,7 +78,7 @@ Si votre organisation répond à toutes les conditions requises, procédez comme
     ![Gérer les personnes ayant accès et méthode de déploiement dans le centre d’administration Office 365](../images/manage-users-deployment-admin-center.png)
 
     > [!NOTE]
-    > Un système d’[authentification unique (SSO) ](/office/dev/add-ins/develop/sso-in-office-add-ins) pour les compléments est actuellement en préversion, qui ne doit pas être utilisé pour des compléments en production.Lors du déploiement d’un complément utilisant une authentification unique, les utilisateurs et les groupes affectés sont également partagés avec des compléments partageant le même ID d’application Azure. Les modifications apportées aux affectations d’utilisateurs sont également appliquées à ces compléments. Les compléments connexes sont affichés sur cette page. Uniquement pour les compléments d’authentification unique, cette page affiche la liste des autorisations Microsoft Graph requises.
+    > Un système d’[authentification unique (SSO) ](../develop/sso-in-office-add-ins.md) pour les compléments est actuellement en préversion, qui ne doit pas être utilisé pour des compléments en production.Lors du déploiement d’un complément utilisant une authentification unique, les utilisateurs et les groupes affectés sont également partagés avec des compléments partageant le même ID d’application Azure. Les modifications apportées aux affectations d’utilisateurs sont également appliquées à ces compléments. Les compléments connexes sont affichés sur cette page. Uniquement pour les compléments d’authentification unique, cette page affiche la liste des autorisations Microsoft Graph requises.
 
 11. Lorsque vous avez terminé, choisissez **déployer**. Ce processus peut prendre jusqu’à trois minutes. Ensuite, terminez la procédure en appuyant sur **Suivant**. Votre complément apparaît à présent avec d’autres applications dans Office 365.
 

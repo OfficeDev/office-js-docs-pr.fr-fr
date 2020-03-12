@@ -1,14 +1,14 @@
 ---
 title: Élémznr VersionOverrides dans le fichier manifest
 description: ''
-ms.date: 02/04/2020
+ms.date: 03/05/2020
 localization_priority: Normal
-ms.openlocfilehash: 0afa3183e34a736a878217c079b7b8d0259be5b1
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 5dc1013f24ef6e0cc4f000128b6f5d28ccae4432
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324798"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "42605679"
 ---
 # <a name="versionoverrides-element"></a>Élément VersionOverrides
 
@@ -25,9 +25,9 @@ ms.locfileid: "42324798"
 
 Le code suivant répertorie la valeur requise de la valeur **xmlns** en fonction de la valeur **xsi : type** de `<OfficeApp>` l’élément parent.
 
-- **Taskpaneapp,** prend en charge uniquement la version 1,0 de VersionOverrides **** et le xmlns `http://schemas.microsoft.com/office/taskpaneappversionoverrides`doit être.
-- **ContentApp** prend en charge uniquement la version 1,0 de VersionOverrides **** et le xmlns `http://schemas.microsoft.com/office/contentappversionoverrides`doit être.
-- **MailApp** prend en charge les versions 1,0 et 1,1 de VersionOverrides, de **** sorte que la valeur de xmlns `<VersionOverrides>` varie en fonction de la valeur **xsi : type** de cet élément :
+- **Taskpaneapp,** prend en charge uniquement la version 1,0 de VersionOverrides **xmlns** et le xmlns `http://schemas.microsoft.com/office/taskpaneappversionoverrides`doit être.
+- **ContentApp** prend en charge uniquement la version 1,0 de VersionOverrides **xmlns** et le xmlns `http://schemas.microsoft.com/office/contentappversionoverrides`doit être.
+- **MailApp** prend en charge les versions 1,0 et 1,1 de VersionOverrides, de **xmlns** sorte que la valeur de xmlns `<VersionOverrides>` varie en fonction de la valeur **xsi : type** de cet élément :
     - Lorsque **xsi : type** est `VersionOverridesV1_0`, **xmlns** doit être `http://schemas.microsoft.com/office/mailappversionoverrides`.
     - Lorsque **xsi : type** est `VersionOverridesV1_1`, **xmlns** doit être `http://schemas.microsoft.com/office/mailappversionoverrides/1.1`.
 
@@ -36,15 +36,16 @@ Le code suivant répertorie la valeur requise de la valeur **xmlns** en fonction
 
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Obligatoire  |  Description  |
+|  Élément |  Requis  |  Description  |
 |:-----|:-----|:-----|
-|  **Description**    |  Non   |  Décrit le complément. Cela remplace l’élément `Description` dans une partie parent du manifeste. Le texte de la description est contenu dans un élément enfant de l’élément **LongString** contenu dans l’élément [Resources](./resources.md). L’attribut `resid` de l’élément **Description** est défini sur la valeur de l’attribut `id` de l’élément `String` qui contient le texte.|
+|  **Description**    |  Non   |  Décrit le complément. Cela remplace l’élément `Description` dans une partie parent du manifeste. Le texte de la description est contenu dans un élément enfant de l’élément **LongString** contenu dans l’élément [Resources](resources.md). L’attribut `resid` de l’élément **Description** est défini sur la valeur de l’attribut `id` de l’élément `String` qui contient le texte.|
 |  **Configuration requise**  |  Non   |  Spécifie l’ensemble de conditions requises minimal et la version d’Office.js qui doit être activée par le complément Office. Cela remplace l’élément `Requirements` dans la partie parent du manifeste.|
-|  [Hôtes](./hosts.md)                |  Oui  |  Spécifie une collection d’hôtes d’Office. L’élément Hosts enfant remplace l’élément Hosts dans la partie parent du manifeste.  |
-|  [Ressources](./resources.md)    |  Oui  | Définit une collection de ressources (chaînes, URL et images) qui sont référencées par d’autres éléments de manifeste.|
-|  [EquivalentAddins](./equivalentaddins.md)    |  Non  | Spécifie les compléments natifs (COM/XLL) équivalents au complément Web. Le complément Web n’est pas activé si un complément natif équivalent est installé.|
+|  [Hôtes](hosts.md)                |  Oui  |  Spécifie une collection d’hôtes d’Office. L’élément Hosts enfant remplace l’élément Hosts dans la partie parent du manifeste.  |
+|  [Ressources](resources.md)    |  Oui  | Définit une collection de ressources (chaînes, URL et images) qui sont référencées par d’autres éléments de manifeste.|
+|  [EquivalentAddins](equivalentaddins.md)    |  Non  | Spécifie les compléments natifs (COM/XLL) équivalents au complément Web. Le complément Web n’est pas activé si un complément natif équivalent est installé.|
 |  **VersionOverrides**    |  Non  | Définit des commandes de complément sous une version plus récente du schéma. Voir [Mise en œuvre de plusieurs versions](#implementing-multiple-versions) pour plus d’informations. |
-|  [WebApplicationInfo](./webapplicationinfo.md)    |  Non  | Fournit des détails sur l’inscription du complément avec des émetteurs de jetons sécurisés, tels qu’Azure Active Directory V 2.0. |
+|  [WebApplicationInfo](webapplicationinfo.md)    |  Non  | Fournit des détails sur l’inscription du complément avec des émetteurs de jetons sécurisés, tels qu’Azure Active Directory V 2.0. |
+|  [ExtendedPermissions](extendedpermissions.md) |  Non  |  Spécifie une collection d’autorisations étendues.<br><br>**Important**: étant donné que l’API [Office. Body. appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-) est actuellement en préversion, les compléments qui utilisent l' `ExtendedPermissions` élément ne peuvent pas être publiés sur AppSource ou déployés via un déploiement centralisé. |
 
 ### <a name="versionoverrides-example"></a>Exemple VersionOverrides
 

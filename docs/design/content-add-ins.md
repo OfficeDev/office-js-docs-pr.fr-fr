@@ -3,12 +3,12 @@ title: Compléments Office de contenu
 description: Les compléments de contenu sont des surfaces qui peuvent être incorporées directement dans des documents Excel ou PowerPoint. Ils permettent aux utilisateurs d’accéder aux contrôles d’interface qui exécutent le code pour modifier des documents ou afficher des données d’une source de données.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 53b61e5ba97e54a54ccd225745cdc2ce9086ebf8
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 7de031de864eadcd3d71fc66fcc9e59d00d3abb6
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950396"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596696"
 ---
 # <a name="content-office-add-ins"></a>Compléments Office de contenu
 
@@ -50,13 +50,13 @@ Pour consulter un exemple qui implémente un complément de contenu, reportez-vo
 
 ## <a name="support-considerations"></a>Considérations relatives à la prise en charge
 
-- Vérifiez si votre complément Office fonctionne sur une [plateforme hôte Office spécifique](/office/dev/add-ins/overview/office-add-in-availability). 
-- Certains compléments de contenu peuvent exiger que l’utilisateur accepte que le complément lise et écrive dans Excel ou PowerPoint. Vous pouvez déclarer le [niveau des autorisations](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins) que vous souhaitez attribuer à votre utilisateur dans le manifeste du complément.  
+- Vérifiez si votre complément Office fonctionne sur une [plateforme hôte Office spécifique](../overview/office-add-in-availability.md).
+- Certains compléments de contenu peuvent exiger que l’utilisateur accepte que le complément lise et écrive dans Excel ou PowerPoint. Vous pouvez déclarer le [niveau des autorisations](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md) que vous souhaitez attribuer à votre utilisateur dans le manifeste du complément.  
 - Les compléments de contenu sont pris en charge dans Excel et PowerPoint dans Office 2013 et versions ultérieures. Si vous ouvrez un complément dans une version d’Office qui ne prend pas en charge les compléments web Office, le complément s’affichera comme une image.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Disponibilité des compléments Office sur les plateformes et les hôtes](/office/dev/add-ins/overview/office-add-in-availability)
-- [Office UI Fabric dans des compléments Office](/office/dev/add-ins/design/office-ui-fabric)
-- [Modèles de conception de l’expérience utilisateur pour les compléments Office](/office/dev/add-ins/design/ux-design-pattern-templates)
-- [Demande d’autorisations d’utilisation de l’API dans des compléments](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
+- [Disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md)
+- [Office UI Fabric dans des compléments Office](../design/office-ui-fabric.md)
+- [Modèles de conception de l’expérience utilisateur pour les compléments Office](../design/ux-design-pattern-templates.md)
+- [Demande d’autorisations d’utilisation de l’API dans des compléments](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)

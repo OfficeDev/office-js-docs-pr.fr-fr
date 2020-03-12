@@ -3,12 +3,12 @@ title: Ouvrir automatiquement un volet Office avec un document
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 8cad13a5ac573fc5709c31c7c1935e0ee9453221
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: c7b14259aa0bfc9f1f7a395bedc46e598eb66607
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41949668"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596479"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Ouvrir automatiquement un volet Office avec un document
 
@@ -19,7 +19,7 @@ Certains scénarios nécessitent qu’un volet des tâches s’ouvre automatique
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>En quoi la fonctionnalité d’ouverture automatique est-elle différente de l’insertion d’un volet des tâches ?
 
-Quand un utilisateur lance des compléments qui n’utilisent pas les commandes de complément, par exemple, les compléments qui s’exécutent dans Office 2013, ils sont insérés et conservés dans le document. Par conséquent, lorsque d’autres utilisateurs ouvrent le document, ils sont invités à installer le complément, puis le volet des tâches s’ouvre. La difficulté avec ce modèle est que dans de nombreux cas, les utilisateurs ne veulent pas que le complément soit conservé dans le document. Par exemple, un étudiant qui utilise un complément de dictionnaire dans un document Word ne voudra peut-être pas que ses camarades de classe ou enseignants soient invités à installer ce complément lorsqu’ils ouvrent le document.
+Lorsqu’un utilisateur lance des compléments qui n’utilisent pas de commandes de complément (par exemple, des compléments exécutés dans Office 2013), ils sont insérés dans le document et persistent dans ce document. Par conséquent, lorsque d’autres utilisateurs ouvrent le document, ils sont invités à installer le complément et le volet Office s’ouvre. Le défi de ce modèle est que, dans de nombreux cas, les utilisateurs ne veulent pas que le complément soit conservé dans le document. Par exemple, un étudiant qui utilise un complément de dictionnaire dans un document Word peut ne pas vouloir que les camarades ou les enseignants soient invités à installer ce complément lorsqu’ils ouvrent le document.
 
 Avec la fonctionnalité d’ouverture automatique, vous pouvez explicitement définir ou autoriser l’utilisateur à déterminer si un complément de volet des tâches spécifique est conservé dans un document spécifique.
 
@@ -40,8 +40,8 @@ Appliquez les meilleures pratiques suivantes lorsque vous utilisez la fonctionna
   - Lorsque le document a besoin du complément pour fonctionner correctement. Par exemple, une feuille de calcul qui contient des valeurs de stock régulièrement actualisées par un complément. Le complément doit s’ouvrir automatiquement lorsque la feuille de calcul est ouverte pour maintenir les valeurs à jour.
   - Lorsque l’utilisateur sera le plus susceptible d’utiliser le complément avec un document particulier. Par exemple, un complément qui permet aux utilisateurs de renseigner ou de modifier des données dans un document en extrayant des informations à partir d’un système principal.
 - Autorisez les utilisateurs à activer ou à désactiver la fonctionnalité d’ouverture automatique. Incluez une option dans votre interface utilisateur pour choisir de ne plus ouvrir automatiquement le volet des tâches de complément.  
-- Utilisez la détection de l’ensemble de conditions pour déterminer si la fonctionnalité d’ouverture automatique est disponible, et fournissez un comportement de secours si elle ne l’est pas.
-- N’utilisez pas la fonctionnalité d’ouverture automatique pour augmenter artificiellement l’utilisation de votre complément. Si l’ouverture automatique du complément n’est pas pertinente pour certains documents, cette fonctionnalité peut gêner les utilisateurs.
+- Utilisez la détection de l’ensemble de conditions requises pour déterminer si la fonctionnalité d’ouverture automatique est disponible et si ce n’est pas le cas.
+- N’utilisez pas la fonctionnalité d’ouverture automatique pour augmenter artificiellement l’utilisation de votre complément. S’il n’est pas logique que votre complément s’ouvre automatiquement avec certains documents, cette fonctionnalité peut gêner les utilisateurs.
 
     > [!NOTE]
     > Si Microsoft détecte un abus de la fonctionnalité d’ouverture automatique, votre complément peut être rejeté d’AppSource.
@@ -60,7 +60,7 @@ Pour implémenter la fonctionnalité d’ouverture automatique, procédez comme 
 
 ### <a name="step-1-specify-the-task-pane-to-open"></a>Étape 1 : Spécifier le volet des tâches à ouvrir
 
-Pour spécifier le volet de tâches à ouvrir automatiquement, définissez la valeur [TaskpaneId](/office/dev/add-ins/reference/manifest/action#taskpaneid) sur **Office.AutoShowTaskpaneWithDocument**. Vous pouvez uniquement définir cette valeur sur un seul volet de tâches. Si vous définissez cette valeur sur plusieurs volets de tâches, la première occurrence de la valeur sera reconnue et les autres seront ignorées.
+Pour spécifier le volet de tâches à ouvrir automatiquement, définissez la valeur [TaskpaneId](../reference/manifest/action.md#taskpaneid) sur **Office.AutoShowTaskpaneWithDocument**. Vous pouvez uniquement définir cette valeur sur un seul volet de tâches. Si vous définissez cette valeur sur plusieurs volets de tâches, la première occurrence de la valeur sera reconnue et les autres seront ignorées.
 
 L’exemple suivant illustre la valeur TaskPaneId définie sur Office.AutoShowTaskpaneWithDocument.
 

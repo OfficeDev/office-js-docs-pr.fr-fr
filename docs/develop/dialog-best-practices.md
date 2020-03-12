@@ -1,16 +1,16 @@
 ---
-title: Meilleures pratiques et règles pour l’API de boîte de dialogue Office
+title: Pratiques recommandées et règles pour l’API de dialogue Office
 description: Fournit des règles et des pratiques recommandées pour l’API de boîte de dialogue Office, telles que les meilleures pratiques pour une application à page unique (SPA)
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 7a38337ca9a263df1f8405f2883fa4481c342e6b
-ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
+ms.openlocfilehash: e684c56768cd2ca7c9b14788206c925808c90b63
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "41650083"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596598"
 ---
-# <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Meilleures pratiques et règles pour l’API de boîte de dialogue Office
+# <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Pratiques recommandées et règles pour l’API de dialogue Office
 
 Cet article fournit des règles, des pièges et des meilleures pratiques pour l’API de boîte de dialogue Office, notamment les meilleures pratiques pour la conception de l’interface utilisateur d’une boîte de dialogue et l’utilisation de l’API avec dans une application à page unique (SPA)
 
@@ -23,7 +23,7 @@ Cet article fournit des règles, des pièges et des meilleures pratiques pour l�
 
 - La boîte de dialogue ne peut accéder qu’aux URL HTTPs, et non à HTTP.
 - L’URL transmise à la méthode [displayDialogAsync](/javascript/api/office/office.ui) doit se trouver dans le même domaine que le complément lui-même. Il ne peut pas s’agir d’un sous-domaine. Mais la page qui lui est transmise peut rediriger vers une page dans un autre domaine.
-- Une fenêtre hôte, qui peut être un volet de tâches ou le fichier de [fonction](/office/dev/add-ins/reference/manifest/functionfile) sans interface utilisateur d’une commande de complément, ne peut avoir qu’une seule boîte de dialogue ouverte à la fois.
+- Une fenêtre hôte, qui peut être un volet de tâches ou le fichier de [fonction](../reference/manifest/functionfile.md) sans interface utilisateur d’une commande de complément, ne peut avoir qu’une seule boîte de dialogue ouverte à la fois.
 - Seules deux API Office peuvent être appelées dans la boîte de dialogue :
   - La fonction [messageParent](/javascript/api/office/office.ui#messageparent-message-) .
   - `Office.context.requirements.isSetSupported`(Pour plus d’informations, consultez la rubrique [spécifier les hôtes Office et les conditions requises](specify-office-hosts-and-api-requirements.md)pour les API.)
@@ -33,7 +33,7 @@ Cet article fournit des règles, des pièges et des meilleures pratiques pour l�
 
 ### <a name="avoid-overusing-dialog-boxes"></a>Éviter de surutiliser les boîtes de dialogue
 
-Étant donné que les éléments d’interface utilisateur qui se chevauchent sont déconseillés, évitez d’ouvrir une boîte de dialogue à partir d’un volet Office, sauf si votre scénario l’exige. Lorsque vous envisagez d’utiliser la surface d’exposition d’un volet Office, tenez compte du fait que les volets Office peuvent être affichés sous forme d’onglets. Pour voir un exemple, consultez la rubrique relative à l’exemple de [complément Excel JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker).
+Comme des éléments d’interface utilisateur qui se chevauchent peuvent gêner des utilisateurs, évitez d’ouvrir une boîte de dialogue à partir d’un volet Office à moins que votre scénario l’exige. Lorsque vous envisagez d’utiliser la surface d’exposition d’un volet Office, tenez compte du fait que les volets Office peuvent être affichés sous forme d’onglets. Pour voir un exemple, consultez la rubrique relative à l’exemple [Complément Excel JavaScriptSalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker).
 
 ### <a name="designing-a-dialog-box-ui"></a>Conception d’une interface utilisateur de boîte de dialogue
 

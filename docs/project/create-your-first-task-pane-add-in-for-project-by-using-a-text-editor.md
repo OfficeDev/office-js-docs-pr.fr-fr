@@ -3,12 +3,12 @@ title: Créer votre premier complément de volet des tâches pour Microsoft Proj
 description: ''
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 821c2922bd51657f89a82a58f388f8c4616de45f
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 9c742374dec8db92e076f05d8c65712d62c72a42
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324904"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596815"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>Créer votre premier complément de volet des tâches pour Microsoft Project à l’aide d’un éditeur de texte
 
@@ -109,7 +109,7 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
 
    Le code suivant obtient le contexte d’application et les informations de document en utilisant des fonctions dans le fichier Office.js. L' `text` objet est l’ID du `textarea` contrôle dans le fichier html.
 
-   La ** \_variable projDoc** est initialisée avec un `ProjectDocument` objet. Le code inclut des fonctions simples de gestion des erreurs, `getContextValues` ainsi que la fonction qui obtient les propriétés du contexte de l’application et du contexte du document du projet. Pour plus d’informations sur le modèle d’objet JavaScript pour Project, voir [API JavaScript pour Office](/office/dev/add-ins/reference/javascript-api-for-office).
+   La ** \_variable projDoc** est initialisée avec un `ProjectDocument` objet. Le code inclut des fonctions simples de gestion des erreurs, `getContextValues` ainsi que la fonction qui obtient les propriétés du contexte de l’application et du contexte du document du projet. Pour plus d’informations sur le modèle d’objet JavaScript pour Project, voir [API JavaScript pour Office](../reference/javascript-api-for-office.md).
 
 
     ```js
@@ -172,7 +172,7 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
     }
     ```
 
-   Pour plus d’informations sur les fonctions du fichier Office. Debug. js, voir [API JavaScript pour Office](/office/dev/add-ins/reference/javascript-api-for-office). Par exemple, la `getDocumentUrl` fonction obtient l’URL ou le chemin d’accès au fichier du projet ouvert.
+   Pour plus d’informations sur les fonctions du fichier Office. Debug. js, voir [API JavaScript pour Office](../reference/javascript-api-for-office.md). Par exemple, la `getDocumentUrl` fonction obtient l’URL ou le chemin d’accès au fichier du projet ouvert.
 
 3. Ajoutez les fonctions JavaScript qui appellent des fonctions asynchrones dans Office.js et Project-15.js pour obtenir les données sélectionnées :
 
@@ -1096,6 +1096,6 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 
 - [Compléments du volet Office pour Project](../project/project-add-ins.md)
 - [Présentation de l’API JavaScript pour compléments](../develop/understanding-the-javascript-api-for-office.md)
-- [Compléments d’API JavaScript pour Office](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Compléments d’API JavaScript pour Office](../reference/javascript-api-for-office.md)
 - [Informations de référence sur le schéma des manifestes des applications pour Office (version 1.1)](../develop/add-in-manifests.md)
 - [Téléchargement du Kit de développement logiciel (SDK) de Project 2013](https://www.microsoft.com/download/details.aspx?id=30435%20)

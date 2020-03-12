@@ -3,12 +3,12 @@ ms.date: 06/18/2019
 description: Créez une boîte de dialogue via des fonctions personnalisées dans Excel à l’aide de JavaScript.
 title: Afficher la boîte de dialogue d’une fonction personnalisée
 localization_priority: Normal
-ms.openlocfilehash: 8db5034cf9079ac5cd05654614087882ed1a8d52
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 54648e87cfdcb314c3d9d3ba3a4e0dbe3c708859
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950767"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596633"
 ---
 # <a name="display-a-dialog-box-from-a-custom-function"></a>Afficher la boîte de dialogue d’une fonction personnalisée
 
@@ -17,11 +17,11 @@ Si votre fonction personnalisée doit interagir avec l’utilisateur, vous pouve
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 >[!NOTE]
-> L’objet `Office.Dialog` fait partie de l’exécution de fonctions personnalisées. Les volets Office n’utilisent pas l’objet `Dialog`. Pour créer une boîte de dialogue à partir d’un volet de tâches, consultez [API de boîte de dialogue](/office/dev/add-ins/develop/dialog-api-in-office-add-ins).
+> L’objet `Office.Dialog` fait partie de l’exécution de fonctions personnalisées. Les volets Office n’utilisent pas l’objet `Dialog`. Pour créer une boîte de dialogue à partir d’un volet de tâches, consultez [API de boîte de dialogue](../develop/dialog-api-in-office-add-ins.md).
 
 ## <a name="dialog-box-api-example"></a>Exemple d’API de boîte de dialogue
 
-Dans l’exemple de code suivant, la fonction `getTokenViaDialog` utilise la fonction `Dialog` de l’API `displayWebDialogOptions` pour afficher une boîte de dialogue.
+Dans l’exemple de code suivant, la `getTokenViaDialog` fonction utilise `Dialog` la fonction `displayWebDialogOptions` de l’API pour afficher une boîte de dialogue.
 
 ```js
 /**

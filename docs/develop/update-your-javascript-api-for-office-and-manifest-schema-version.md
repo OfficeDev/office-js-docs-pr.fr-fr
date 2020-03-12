@@ -3,12 +3,12 @@ title: Mise à jour vers la dernière bibliothèque d’API JavaScript Office et
 description: Mettez à jour vos fichiers JavaScript (Office.js et fichiers .js propres aux applications) et le fichier de validation du manifeste du complément dans votre projet Complément Office vers la version 1.1.
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: a8f1193d571278531eae169b12bc56e0e560e62e
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: ccb6dade39850a656326482c3abc824ecfb6637e
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324651"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596584"
 ---
 # <a name="update-to-the-latest-office-javascript-api-library-and-version-11-add-in-manifest-schema"></a>Mise à jour vers la dernière bibliothèque d’API JavaScript Office et schéma de manifeste de complément version 1,1
 
@@ -75,7 +75,7 @@ Dans le fichier manifeste de votre complément, mettez à jour l’attribut **xm
 ```
 
 > [!NOTE]
-> Après avoir mis à jour la version du schéma de manifeste de complément en 1,1, vous devrez supprimer les éléments **Capabilities** et **Capability** , et les remplacer par les éléments [hosts](/office/dev/add-ins/reference/manifest/hosts) et [Host](/office/dev/add-ins/reference/manifest/host) ou les [éléments Requirements et](specify-office-hosts-and-api-requirements.md)requirement.
+> Après avoir mis à jour la version du schéma de manifeste de complément en 1,1, vous devrez supprimer les éléments **Capabilities** et **Capability** , et les remplacer par les éléments [hosts](../reference/manifest/hosts.md) et [Host](../reference/manifest/host.md) ou les [éléments Requirements et](specify-office-hosts-and-api-requirements.md)requirement.
 
 ## <a name="updating-an-office-add-in-project-created-with-a-text-editor-or-other-ide"></a>Mise à jour d’un projet de complément Office créé avec un éditeur de texte ou une autre IDE
 
@@ -118,11 +118,11 @@ Dans le fichier manifeste de votre complément, mettez à jour l’attribut **xm
 ```
 
 > [!NOTE]
-> Après avoir mis à jour la version du schéma de manifeste de complément en 1,1, vous devrez supprimer les éléments **Capabilities** et **Capability** , et les remplacer par les éléments [hosts](/office/dev/add-ins/reference/manifest/hosts) et [Host](/office/dev/add-ins/reference/manifest/host) ou les [éléments Requirements et](specify-office-hosts-and-api-requirements.md)requirement.
+> Après avoir mis à jour la version du schéma de manifeste de complément en 1,1, vous devrez supprimer les éléments **Capabilities** et **Capability** , et les remplacer par les éléments [hosts](../reference/manifest/hosts.md) et [Host](../reference/manifest/host.md) ou les [éléments Requirements et](specify-office-hosts-and-api-requirements.md)requirement.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Spécification des exigences en matière d’hôtes Office et d’API](specify-office-hosts-and-api-requirements.md) ]
-- [Présentation de l’API JavaScript pour Office](understanding-the-javascript-api-for-office.md)
-- [API JavaScript pour Office](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Compréhension de l’API JavaScript pour Office](understanding-the-javascript-api-for-office.md)
+- [API JavaScript pour Office](../reference/javascript-api-for-office.md)
 - [Informations de référence sur le schéma des manifestes des applications pour Office (version 1.1)](../develop/add-in-manifests.md)

@@ -3,12 +3,12 @@ title: Appliquer la mise en forme conditionnelle aux plages avec l’API Excel J
 description: ''
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: 7c6b5b5433e2dc59259eb937ef553ff265443f75
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: b09e15ba000433eaa2cc9b87cc207300a45db2f5
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449443"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596570"
 ---
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>Appliquer une mise en forme conditionnelle à des plages Excel
 
@@ -23,17 +23,17 @@ La bibliothèque JavaScript Excel fournit des API pour appliquer une mise en for
 
 La `Range.conditionalFormats` propriété est un ensemble d’objets [ConditionalFormat](/javascript/api/excel/excel.conditionalformat)qui s’appliquent à la plage.  L’`ConditionalFormat` objet contient plusieurs propriétés qui définissent le format à appliquer en fonction du [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype). 
 
--   `cellValue`
--   `colorScale`
--   `custom`
--   `dataBar`
--   `iconSet`
--   `preset`
--   `textComparison`
--   `topBottom`
+-    `cellValue`
+-    `colorScale`
+-    `custom`
+-    `dataBar`
+-    `iconSet`
+-    `preset`
+-    `textComparison`
+-    `topBottom`
 
 > [!NOTE]
-> Chacune de ces propriétés de mise en forme a une variante correspondante`*OrNullObject`. En savoir plus sur ce modèle dans la section[* OrNullObject méthodes](/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#ornullobject-methods).
+> Chacune de ces propriétés de mise en forme a une variante correspondante`*OrNullObject`. En savoir plus sur ce modèle dans la section[* OrNullObject méthodes](../excel/excel-add-ins-advanced-concepts.md#ornullobject-methods).
 
 Un seul type de format peut être défini pour l’objet ConditionalFormat. Cela est déterminé par la `type` propriété, c'est-à-dire une [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) valeur enum. `type` est défini lorsque vous ajoutez une mise en forme conditionnelle à une plage. 
 
@@ -41,7 +41,7 @@ Un seul type de format peut être défini pour l’objet ConditionalFormat. Cela
 
 Les mises en forme conditionnelles sont ajoutées à une plage à l’aide de `conditionalFormats.add`. Une fois ajoutées, vous pouvez définir les propriétés spécifiques à la mise en forme conditionnelle. Les exemples ci-dessous montrent la création de différents types de mise en forme.
 
-### <a name="cell-valuejavascriptapiexcelexcelcellvalueconditionalformat"></a>[Valeur de la cellule](/javascript/api/excel/excel.cellvalueconditionalformat)
+### <a name="cell-value"></a>[Valeur de la cellule](/javascript/api/excel/excel.cellvalueconditionalformat)
 
 La mise en forme conditionnelle de valeur de la cellule applique un format défini par l’utilisateur en fonction des résultats d’une ou deux formules dans la [ConditionalCellValueRule](/javascript/api/excel/excel.conditionalcellvaluerule). La`operator` propriété est un [ConditionalCellValueOperator](/javascript/api/excel/excel.conditionalcellvalueoperator) définissant comment les expressions qui en résultent sont liées à la mise en forme.
 
@@ -63,15 +63,15 @@ conditionalFormat.cellValue.rule = { formula1: "=0", operator: "LessThan" };
 await context.sync();
 ```
 
-### <a name="color-scalejavascriptapiexcelexcelcolorscaleconditionalformat"></a>[Échelle de couleur](/javascript/api/excel/excel.colorscaleconditionalformat)
+### <a name="color-scale"></a>[Échelle de couleur](/javascript/api/excel/excel.colorscaleconditionalformat)
 
 La mise en forme conditionnelle de l’échelle de couleur applique un dégradé de couleur au sein de la plage de données. La`criteria` propriété sur le `ColorScaleConditionalFormat` définit trois[ConditionalColorScaleCriterion](/javascript/api/excel/excel.conditionalcolorscalecriterion): `minimum`, `maximum`et éventuellement, `midpoint`. Les critères des points d’échelle ont trois propriétés :
 
--   `color` -Le code de couleur HTML pour le point de terminaison.
--   `formula` -Un nombre ou une formule représentant le point de terminaison. Il s’agit de `null` si `type` est `lowestValue` ou `highestValue`.
--   `type` -Comment la formule doit être évaluée. `highestValue` et `lowestValue` font référence à des valeurs dans la plage en cours de mise en forme.
+-    `color` -Le code de couleur HTML pour le point de terminaison.
+-    `formula` -Un nombre ou une formule représentant le point de terminaison. Il s’agit de `null` si `type` est `lowestValue` ou `highestValue`.
+-    `type` -Comment la formule doit être évaluée. `highestValue` et `lowestValue` font référence à des valeurs dans la plage en cours de mise en forme.
 
-L’exemple suivant montre une plage colorée de bleue à jaune à rouge. Notez que `minimum` et `maximum` sont les valeurs inférieures et supérieures respectivement et utilisent les `null` formules. `midpoint` utilise le `percentage` type avec une formule de `”=50”` donc la cellule jaune est la valeur moyenne.
+L’exemple suivant montre une plage colorée de bleue à jaune à rouge. Notez que `minimum` et `maximum` sont les valeurs inférieures et supérieures respectivement et utilisent les `null` formules. `midpoint` utilise le `percentage` type avec une formule de `"=50"` donc la cellule jaune est la valeur moyenne.
 
 ![Une plage avec un petit nombre en bleu, nombre moyen en jaune et élevé en rouge, avec des dégradés entre les valeurs.](../images/excel-conditional-format-color-scale.png)
 
@@ -105,13 +105,13 @@ conditionalFormat.colorScale.criteria = criteria;
 await context.sync();
 ```
 
-### <a name="customjavascriptapiexcelexcelcustomconditionalformat"></a>[Personnalisé](/javascript/api/excel/excel.customconditionalformat)
+### <a name="custom"></a>[Personnalisé](/javascript/api/excel/excel.customconditionalformat)
 
 La mise en forme conditionnelle personnalisée applique un format défini par l’utilisateur aux cellules en fonction d’une formule de complexité arbitraire. L’objet [ConditionalFormatRule](/javascript/api/excel/excel.conditionalformatrule) vous permet de définir la formule dans des notations différentes :
 
--   `formula` -Notation standard.
--   `formulaLocal` -Localisé en fonction de langue de l’utilisateur.
--   `formulaR1C1` -Notation type L1C1.
+-    `formula` -Notation standard.
+-    `formulaLocal`-Localisé en fonction de la langue de l’utilisateur.
+-    `formulaR1C1` -Notation type L1C1.
 
 L’exemple suivant colore les polices de cellules avec des valeurs supérieures à la cellule située à leur gauche en vert.
 
@@ -124,16 +124,16 @@ const conditionalFormat = range.conditionalFormats.add(
      Excel.ConditionalFormatType.custom
 );
 
-// if a cell has a higher value than the one to its left, set that cell’s font to green
+// if a cell has a higher value than the one to its left, set that cell's font to green
 conditionalFormat.custom.rule.formula = '=IF(B8>INDIRECT("RC[-1]",0),TRUE)';
 conditionalFormat.custom.format.font.color = "green";
 
 await context.sync();
 
 ```
-### <a name="data-barjavascriptapiexcelexceldatabarconditionalformat"></a>[Barre de données](/javascript/api/excel/excel.databarconditionalformat)
+### <a name="data-bar"></a>[Barre de données](/javascript/api/excel/excel.databarconditionalformat)
 
-La mise en forme conditionnelle de la barre de données ajoute des barres de données aux cellules. Par défaut, les valeurs minimales et maximales dans la plage forment les limites et les tailles proportionnelles des barres de données. L’objet `DataBarConditionalFormat` a plusieurs propriétés pour contrôler l’apparence de la barre. 
+La mise en forme conditionnelle de la barre de données ajoute des barres de données aux cellules. Par défaut, les valeurs minimales et maximales dans la plage forment les limites et les tailles proportionnelles des barres de données. L' `DataBarConditionalFormat` objet possède plusieurs propriétés permettant de contrôler l’apparence de la barre. 
 
 L’exemple suivant met en forme la plage contenant des barres de données remplissant de gauche à droite.
 
@@ -151,7 +151,7 @@ conditionalFormat.dataBar.barDirection = Excel.ConditionalDataBarDirection.leftT
 await context.sync();
 ```
 
-### <a name="icon-setjavascriptapiexcelexceliconsetconditionalformat"></a>[Jeu d’icônes](/javascript/api/excel/excel.iconsetconditionalformat)
+### <a name="icon-set"></a>[Jeu d’icônes](/javascript/api/excel/excel.iconsetconditionalformat)
 
 La mise en forme conditionnelle du jeu d’icônes utilise Excel [icônes](/javascript/api/excel/excel.icon) pour mettre en surbrillance les cellules. La `criteria` propriété est une matrice de [ConditionalIconCriterion](/javascript/api/excel/excel.ConditionalIconCriterion), qui définit le symbole à insérer et la condition sous laquelle celui-ci est inséré. Ce tableau est automatiquement pré-rempli avec éléments critères avec les propriétés par défaut. Les propriétés individuelles ne peut pas être remplacées. Au lieu de cela, l’ensemble de l’objet de critères doit être remplacé. 
 
@@ -170,7 +170,7 @@ const iconSetCF = conditionalFormat.iconSet;
 iconSetCF.style = Excel.IconSet.threeTriangles;
 
 /*
-   With a "three*” icon set style, such as "threeTriangles", the third
+   With a "three*" icon set style, such as "threeTriangles", the third
     element in the criteria array (criteria[2]) defines the "top" icon;
     e.g., a green triangle. The second (criteria[1]) defines the "middle"
     icon, The first (criteria[0]) defines the "low" icon, but it can often 
@@ -194,11 +194,11 @@ iconSetCF.criteria = [
 await context.sync();
 ```
 
-### <a name="preset-criteriajavascriptapiexcelexcelpresetcriteriaconditionalformat"></a>[Critères prédéfinis](/javascript/api/excel/excel.presetcriteriaconditionalformat)
+### <a name="preset-criteria"></a>[Critères prédéfinis](/javascript/api/excel/excel.presetcriteriaconditionalformat)
 
 La mise en forme conditionnelle prédéfinie applique un format défini par l’utilisateur pour la plage basée sur une règle standard sélectionnée. Ces règles sont définies par le [ConditionalFormatPresetCriterion](/javascript/api/excel/excel.ConditionalFormatPresetCriterion) dans le [ConditionalPresetCriteriaRule](/javascript/api/excel/excel.conditionalpresetcriteriarule). 
 
-L’exemple suivant colore la police en blanc où la valeur d’une cellule est au moins un écart-type standard au-dessus de la moyenne de la plage.
+L’exemple suivant colore la police en blanc dès que la valeur d’une cellule est au moins un écart-type au-dessus de la moyenne de la plage.
 
 ![Une plage de cellules avec police en blanc où les valeurs sont au moins un écart-type standard au-dessus de la moyenne.](../images/excel-conditional-format-preset.png)
 
@@ -209,7 +209,7 @@ const conditionalFormat = range.conditionalFormats.add(
      Excel.ConditionalFormatType.presetCriteria
 );
 
-// color every cell’s font white that is one standard deviation above average relative to the range
+// color every cell's font white that is one standard deviation above average relative to the range
 conditionalFormat.preset.format.font.color = "white";
 conditionalFormat.preset.rule = {
      criterion: Excel.ConditionalFormatPresetCriterion.oneStdDevAboveAverage
@@ -218,11 +218,11 @@ conditionalFormat.preset.rule = {
 await context.sync();
 ```
 
-### <a name="text-comparisonjavascriptapiexcelexceltextconditionalformat"></a>[Comparaison de texte](/javascript/api/excel/excel.textconditionalformat)
+### <a name="text-comparison"></a>[Comparaison de texte](/javascript/api/excel/excel.textconditionalformat)
 
 La mise en forme conditionnelle de comparaison de texte utilise des comparaisons de chaînes comme condition. La `rule` propriété est un [ConditionalTextComparisonRule](/javascript/api/excel/excel.conditionaltextcomparisonrule) définissant une chaîne à comparer avec la cellule et un opérateur pour spécifier le type de comparaison. 
 
-L’exemple suivant colore la police en rouge lorsque le texte d’une cellule contient « Différé ».
+L’exemple suivant montre comment appliquer la couleur rouge à la police lorsque le texte d’une cellule contient « retardée ».
 
 ![Une plage de cellules contenant « Différé » en rouge.](../images/excel-conditional-format-text.png)
 
@@ -233,7 +233,7 @@ const conditionalFormat = range.conditionalFormats.add(
      Excel.ConditionalFormatType.containsText
 );
 
-// color the font of every cell containing “Delayed”
+// color the font of every cell containing "Delayed"
 conditionalFormat.textComparison.format.font.color = "red";
 conditionalFormat.textComparison.rule = {
      operator: Excel.ConditionalTextOperator.contains,
@@ -243,7 +243,7 @@ conditionalFormat.textComparison.rule = {
 await context.sync();
 ```
 
-### <a name="topbottomjavascriptapiexcelexceltopbottomconditionalformat"></a>[Supérieure/inférieure](/javascript/api/excel/excel.TopBottomconditionalformat)
+### <a name="topbottom"></a>[Supérieure/inférieure](/javascript/api/excel/excel.TopBottomconditionalformat)
 
 La mise en forme conditionnelle supérieure/inférieure applique un format aux valeurs les plus élevées ou plus faibles d’une plage. La `rule` propriété, de type [ConditionalTopBottomRule](/javascript/api/excel/excel.conditionaltopbottomrule), définit si la condition est basée sur le plus élevé ou le plus bas, ainsi que si l’évaluation est en classement ou pourcentage. 
 
@@ -336,8 +336,8 @@ await context.sync();
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](/office/dev/add-ins/excel/excel-add-ins-core-concepts)
-- [Utiliser les plages à l’aide de l’API JavaScript Excel](/office/dev/add-ins/excel/excel-add-ins-ranges)
+- [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](../excel/excel-add-ins-core-concepts.md)
+- [Utiliser les plages à l’aide de l’API JavaScript Excel](../excel/excel-add-ins-ranges.md)
 - [Objet ConditionalFormat (API JavaScript pour Excel)](/javascript/api/excel/excel.conditionalformat)
 - [Ajouter, modifier ou effacer des formats conditionnels](https://support.office.com/article/add-change-or-clear-conditional-formats-8a1cc355-b113-41b7-a483-58460332a1af)
 - [Utilisez des formules avec mise en forme conditionnelle](https://support.office.com/article/Use-formulas-with-conditional-formatting-FED60DFA-1D3F-4E13-9ECB-F1951FF89D7F)

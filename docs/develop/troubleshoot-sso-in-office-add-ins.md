@@ -1,14 +1,14 @@
 ---
 title: Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)
 description: ''
-ms.date: 02/20/2020
+ms.date: 03/10/2020
 localization_priority: Normal
-ms.openlocfilehash: a29efa4a501ee10b185cb2bbc72cb8e8e5e8b098
-ms.sourcegitcommit: 7464eac3b54a6a6b65e27549a3ad603af6ee1011
+ms.openlocfilehash: 7bde083277ece303597dd1c52398f8a91cacc765
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42315871"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596801"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>Résolution des messages d’erreur pour l’authentification unique (SSO) (aperçu)
 
@@ -34,12 +34,12 @@ Pour consulter des exemples de la gestion des erreurs décrite dans cette sectio
 
 ### <a name="13000"></a>13000
 
-L’API [getAccessToken](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) n’est pas prise en charge par le complément ou la version d’Office.
+L’API [getAccessToken](../develop/sso-in-office-add-ins.md#sso-api-reference) n’est pas prise en charge par le complément ou la version d’Office.
 
-- La version d’Office ne prend pas en charge la SSO. La version requise est Office 365 (version d’Office par abonnement), quel que soit le canal mensuel. 
-- Le manifeste de complément n’inclut pas la section [WebApplicationInfo](/office/dev/add-ins/reference/manifest/webapplicationinfo) appropriée.
+- La version d’Office ne prend pas en charge la SSO. La version requise est Office 365 (version d’Office par abonnement), quel que soit le canal mensuel.
+- Le manifeste de complément n’inclut pas la section [WebApplicationInfo](../reference/manifest/webapplicationinfo.md) appropriée.
 
-Votre complément doit corriger cette erreur en basculant vers un autre système d’authentification des utilisateurs. Pour plus d’informations, voir [Meilleures Pratiques et Conditions Requises](/office/dev/add-ins/develop/sso-in-office-add-ins#requirements-and-best-practices).
+Votre complément doit corriger cette erreur en basculant vers un autre système d’authentification des utilisateurs. Pour plus d’informations, voir [Meilleures Pratiques et Conditions Requises](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
 
 ### <a name="13001"></a>13001
 
@@ -60,11 +60,11 @@ L’utilisateur a annulé la connexion ou l’autorisation, par exemple, en choi
 
 ### <a name="13003"></a>13003
 
-Type d’utilisateur non pris en charge. L’utilisateur n’est pas connecté à Office avec un compte Microsoft ou un compte Office 365 professionnel ou scolaire valide. Cela peut se produire si Office est exécuté avec un compte de domaine en local, par exemple. Votre code doit basculer vers un autre système d’authentification des utilisateurs. Pour plus d’informations, voir [Meilleures Pratiques et Conditions Requises](/office/dev/add-ins/develop/sso-in-office-add-ins##requirements-and-best-practices).
+Type d’utilisateur non pris en charge. L’utilisateur n’est pas connecté à Office avec un compte Microsoft ou un compte Office 365 professionnel ou scolaire valide. Cela peut se produire si Office est exécuté avec un compte de domaine en local, par exemple. Votre code doit basculer vers un autre système d’authentification des utilisateurs. Pour plus d’informations, voir [Meilleures Pratiques et Conditions Requises](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
 
 ### <a name="13004"></a>13004
 
-Ressource non valide. (Cette erreur ne doit être détectée qu’en développement.) Le manifeste du complément n’a pas été correctement configuré. Mettez à jour le manifeste. Pour en savoir plus, consultez [Valider le manifeste d’un complément Office](../testing/troubleshoot-manifest.md). Le problème le plus courant est que l’élément **Resource** (dans l’élément **WebApplicationInfo**) a un domaine qui ne correspond pas au domaine du complément. Bien que la partie protocole de la valeur Resource devrait être « api » et non « https », toutes les autres parties du nom de domaine (dont le port éventuel) doivent être identiques à ceux du complément.
+Ressource non valide. (Cette erreur doit uniquement être vue en développement.) Le manifeste du complément n’a pas été configuré correctement. Mettez à jour le manifeste. Pour en savoir plus, consultez [Valider le manifeste d’un complément Office](../testing/troubleshoot-manifest.md). Le problème le plus courant est que l’élément **Resource** (dans l’élément **WebApplicationInfo**) a un domaine qui ne correspond pas au domaine du complément. Bien que la partie protocole de la valeur Resource devrait être « api » et non « https », toutes les autres parties du nom de domaine (dont le port éventuel) doivent être identiques à ceux du complément.
 
 ### <a name="13005"></a>13005
 
@@ -93,13 +93,13 @@ L’utilisateur a déclenché une opération qui appelle `getAccessToken` avant 
 
 ### <a name="13010"></a>13010
 
-L’utilisateur exécute le complément dans Office sur Microsoft Edge ou Internet Explorer. Le domaine Office 365 de l’utilisateur et le domaine `login.microsoftonline.com` sont dans des zones de sécurité distinctes dans les paramètres de navigateur. Cette erreur apparaît uniquement dans **Office sur le web**. Si cette erreur est renvoyée, l’utilisateur a déjà vu une erreur expliquant cela et menant vers une page sur la modification de la configuration de la zone. Si votre complément fournit des fonctions qui ne nécessitent pas que l’utilisateur soit connecté, votre code doit intercepter cette erreur et autoriser l’exécution du complément.
+L’utilisateur exécute le complément dans Office sur Microsoft Edge ou Internet Explorer. Le domaine Office 365 de l’utilisateur, ainsi `login.microsoftonline.com` que le domaine, se trouvent dans des zones de sécurité différentes dans les paramètres du navigateur. Cette erreur apparaît uniquement dans **Office sur le web**. Si cette erreur est renvoyée, l’utilisateur a déjà vu une erreur expliquant cela et menant vers une page sur la modification de la configuration de la zone. Si votre complément fournit des fonctions qui ne nécessitent pas que l’utilisateur soit connecté, votre code doit intercepter cette erreur et autoriser l’exécution du complément.
 
 ### <a name="13012"></a>13012
 
 Il existe plusieurs causes possibles :
 
-- Le complément est en cours d’exécution sur une plateforme qui ne prend pas en charge l’API `getAccessToken`. Par exemple, elle n’est pas compatible avec iPad. Voir également [Ensembles de conditions requises de l’API d’identité](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets).
+- Le complément est en cours d’exécution sur une plateforme qui ne prend pas en charge l’API `getAccessToken`. Par exemple, elle n’est pas compatible avec iPad. Voir également [Ensembles de conditions requises de l’API d’identité](../reference/requirement-sets/identity-api-requirement-sets.md).
 - L’option `forMSGraphAccess` a été transmise à l’appel à `getAccessToken` et l’utilisateur a obtenu le complément à partir d’AppSource. Dans ce scénario, l’administrateur du client n’a pas donné son accord au complément pour les étendues Microsoft Graph (autorisations) dont il a besoin. Le fait de rappeler `getAccessToken` avec le `allowConsentPrompt` ne résoudra pas le problème, car Office est autorisé à inviter l’utilisateur à donner l’autorisation uniquement à l’étendue de `profile` AAD.
 
 Votre code doit basculer vers un autre système d’authentification des utilisateurs.
@@ -114,7 +114,7 @@ Le `getAccessToken` a été appelé trop souvent en un peu de temps, donc Office
 
 Cette erreur (qui n’est pas spécifique de `getAccessToken`) peut indiquer que le navigateur a mis en cache une ancienne copie des fichiers office.js. Quand vous développez, effacez le cache du navigateur. Une autre possibilité est que la version d’Office n’est pas assez récente pour prendre en charge l’authentification unique. Dans Windows, la version minimale est 16.0.12215.20006. Sur Mac, il s’agit de 16.32.19102902.
 
-Dans un complément de production, celui-ci doit répondre à cette erreur en basculant vers un autre système d’authentification des utilisateurs. Pour plus d’informations, voir [Meilleures Pratiques et Conditions Requises](/office/dev/add-ins/develop/sso-in-office-add-ins##requirements-and-best-practices).
+Dans un complément de production, celui-ci doit répondre à cette erreur en basculant vers un autre système d’authentification des utilisateurs. Pour plus d’informations, voir [Meilleures Pratiques et Conditions Requises](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
 
 ## <a name="errors-on-the-server-side-from-azure-active-directory"></a>Erreurs d’Azure Active Directory côté serveur
 
@@ -141,7 +141,7 @@ Si le complément a besoin d’étendues Microsoft Graph qui ne peuvent être en
 Ce type d’erreur ne doit apparaître qu’en développement.
 
 - Votre code côté serveur doit envoyer une réponse `403 Forbidden` au client qui doit consigner l’erreur dans la console ou l’enregistrer dans un journal.
-- Assurez-vous que la section [Scopes](/office/dev/add-ins/reference/manifest/scopes) du manifeste de votre complément indique toutes les autorisations nécessaires. Vérifiez également que l’alignement du service web de votre complément spécifie les mêmes autorisations. Vérifiez les fautes d’orthographe. Pour plus d’informations, voir [Inscrire votre complément avec le point de terminaison Azure AD v2.0](register-sso-add-in-aad-v2.md).
+- Assurez-vous que la section [Scopes](../reference/manifest/scopes.md) du manifeste de votre complément indique toutes les autorisations nécessaires. Vérifiez également que l’alignement du service web de votre complément spécifie les mêmes autorisations. Vérifiez les fautes d’orthographe. Pour plus d’informations, voir [Inscrire votre complément avec le point de terminaison Azure AD v2.0](register-sso-add-in-aad-v2.md).
 
 ### <a name="invalid-audience-error-in-the-access-token-not-the-bootstrap-token"></a>Erreur d’audience non valide dans le jeton d’accès (pas le jeton bootstrap)
 

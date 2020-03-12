@@ -3,12 +3,12 @@ title: Optimisation des performances API JavaScript Excel
 description: Optimisation des performances à l’aide de l’API JavaScript d’Excel
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: d041356129ad5e5db8c990daaafee4e583de1dfa
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 843a8fffbe916003b81ac974db12e3128efb7997
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325051"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596997"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Optimisation des performances à l’aide de l’API JavaScript d’Excel
 
@@ -72,10 +72,10 @@ object.load({ loadOption });
 
 _Où :_
 
-* `properties` est la liste des propriétés à charger, fournie sous forme de chaînes séparées par des virgules ou de tableau de noms. Pour plus d’informations, consultez `load()` les méthodes définies pour les objets dans la référence de l' [API JavaScript pour Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview).
+* `properties` est la liste des propriétés à charger, fournie sous forme de chaînes séparées par des virgules ou de tableau de noms. Pour plus d’informations, consultez `load()` les méthodes définies pour les objets dans la référence de l' [API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md).
 * `loadOption` spécifie un objet qui décrit les options select, expand, top et skip. Pour plus d’informations, reportez-vous aux [options](/javascript/api/office/officeextension.loadoption) de chargement d’objet.
 
-N’oubliez pas que certaines des « propriétés » sous un objet peuvent avoir le même nom qu’un autre objet. Par exemple, `format` est une propriété sous plage d’objet, mais `format` lui-même est également un objet. Par conséquent, si vous passez un appel comme `range.load("format")`, cela équivaut à `range.format.load()`, c'est-à-dire, un appel load() vide pouvant entraîner des problèmes de performances comme indiqué précédemment. Pour éviter cela, votre code devrait charger uniquement les nœuds « terminaux » dans une arborescence d’objets. 
+N’oubliez pas que certaines des « propriétés » sous un objet peuvent avoir le même nom qu’un autre objet. Par exemple, `format` est une propriété sous plage d’objet, mais `format` lui-même est également un objet. Par conséquent, si vous passez un appel comme `range.load("format")`, cela équivaut à `range.format.load()`, c'est-à-dire, un appel load() vide pouvant entraîner des problèmes de performances comme indiqué précédemment. Pour éviter cela, votre code doit uniquement charger les « nœuds feuille » dans une arborescence d’objets. 
 
 ## <a name="suspend-excel-processes-temporarily"></a>Suspendre temporairement les processus Excel
 

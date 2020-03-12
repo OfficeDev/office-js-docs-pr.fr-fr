@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1,7
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 5e923cb096c7335fbe65d18b6af0280d78be1fb2
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 5a39b961e8cce97be3bb74e4032914f60c366ffb
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064857"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596990"
 ---
 # <a name="whats-new-in-excel-javascript-api-17"></a>Nouveautés de l’API JavaScript 1.7 pour Excel
 
@@ -29,7 +29,7 @@ Avec le nouvel API graphique, vous pouvez créer des types de graphiques supplé
 
 ## <a name="events"></a>Événements
 
-Les API Événements pour Excel fournissent un grand nombre de gestionnaires d’événements autorisant votre complément à exécuter automatiquement une fonction désignée lorsqu’un événement spécifique se produit. Vous pouvez créer cette fonction pour effectuer n’importe quelle action nécessaire à votre scénario. Pour une liste des événements qui sont actuellement disponibles, voir [Manipuler des Événements à l’aide de l’API JavaScript Excel](/office/dev/add-ins/excel/excel-add-ins-events).
+Les API Événements pour Excel fournissent un grand nombre de gestionnaires d’événements autorisant votre complément à exécuter automatiquement une fonction désignée lorsqu’un événement spécifique se produit. Vous pouvez créer cette fonction pour effectuer n’importe quelle action nécessaire à votre scénario. Pour une liste des événements qui sont actuellement disponibles, voir [Manipuler des Événements à l’aide de l’API JavaScript Excel](../../excel/excel-add-ins-events.md).
 
 ## <a name="customize-the-appearance-of-worksheets-and-ranges"></a>Personnaliser l’apparence de feuilles de calcul et des plages
 
@@ -72,8 +72,8 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 |[Chart](/javascript/api/excel/excel.chart)|[chartType](/javascript/api/excel/excel.chart#charttype)|Représente le type d’un graphique. Pour plus d’informations, voir Excel. ChartType.|
 ||[id](/javascript/api/excel/excel.chart#id)|ID unique du graphique. En lecture seule.|
 ||[ShowAllFieldButtons,](/javascript/api/excel/excel.chart#showallfieldbuttons)|Représente si vous voulez afficher tous les boutons de champ dans un graphique croisé dynamique.|
-|[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[route](/javascript/api/excel/excel.chartareaformat#border)|Représente le format de bordure de la zone de graphique, qui inclut couleur, style de style et épaisseur. En lecture seule.|
-|[ChartAxes](/javascript/api/excel/excel.chartaxes)|[getItem (type: Excel. ChartAxisType, Group?: Excel. ChartAxisGroup)](/javascript/api/excel/excel.chartaxes#getitem-type--group-)|Renvoie l’axe spécifique identifié par type et par groupe.|
+|[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[bordure](/javascript/api/excel/excel.chartareaformat#border)|Représente le format de bordure de la zone de graphique, qui inclut couleur, style de style et épaisseur. En lecture seule.|
+|[ChartAxes](/javascript/api/excel/excel.chartaxes)|[getItem (type : Excel. ChartAxisType, Group ?: Excel. ChartAxisGroup)](/javascript/api/excel/excel.chartaxes#getitem-type--group-)|Renvoie l’axe spécifique identifié par type et par groupe.|
 |[ChartAxis](/javascript/api/excel/excel.chartaxis)|[baseTimeUnit](/javascript/api/excel/excel.chartaxis#basetimeunit)|Renvoie ou définit l’unité de base pour l’axe des abscisses spécifié.|
 ||[categoryType](/javascript/api/excel/excel.chartaxis#categorytype)|Renvoie ou définit le type d’axe de catégorie.|
 ||[displayUnit](/javascript/api/excel/excel.chartaxis#displayunit)|Représente l’unité d’affichage de l’axe. Pour plus d’informations, voir Excel. ChartAxisDisplayUnit.|
@@ -91,8 +91,8 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[width](/javascript/api/excel/excel.chartaxis#width)|Représente la largeur, en points, de l’axe de graphique. NULL si l’axe n’est pas visible. En lecture seule.|
 ||[reversePlotOrder](/javascript/api/excel/excel.chartaxis#reverseplotorder)|Représente si Microsoft Excel trace des points de données à du dernier au premier.|
 ||[scaleType](/javascript/api/excel/excel.chartaxis#scaletype)|Représente le type d’échelle de l’axe des ordonnées. Pour plus d’informations, voir Excel. ChartAxisScaleType.|
-||[setCategoryNames (sourceData: Range)](/javascript/api/excel/excel.chartaxis#setcategorynames-sourcedata-)|Définit tous les noms de catégorie pour l’axe spécifié.|
-||[setCustomDisplayUnit (valeur: nombre)](/javascript/api/excel/excel.chartaxis#setcustomdisplayunit-value-)|Définit l’unité d’affichage axe sur une valeur personnalisée.|
+||[setCategoryNames (sourceData : Range)](/javascript/api/excel/excel.chartaxis#setcategorynames-sourcedata-)|Définit tous les noms de catégorie pour l’axe spécifié.|
+||[setCustomDisplayUnit (valeur : nombre)](/javascript/api/excel/excel.chartaxis#setcustomdisplayunit-value-)|Définit l’unité d’affichage axe sur une valeur personnalisée.|
 ||[showDisplayUnitLabel](/javascript/api/excel/excel.chartaxis#showdisplayunitlabel)|Représente si l’étiquette d’unité de l’affichage d’axe est visible.|
 ||[tickLabelPosition](/javascript/api/excel/excel.chartaxis#ticklabelposition)|Représentant la position des étiquettes de graduation sur l’axe spécifié. Pour plus d’informations, voir Excel. ChartAxisTickLabelPosition.|
 ||[tickLabelSpacing](/javascript/api/excel/excel.chartaxis#ticklabelspacing)|Représente le nombre de catégories ou séries entre les étiquettes de graduation. Peut être une valeur de 1 à 31999 ou une chaîne vide pour le paramètre automatique. La valeur renvoyée est toujours un nombre.|
@@ -146,7 +146,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[MarkerSize,](/javascript/api/excel/excel.chartpoint#markersize)|Représente la taille du marqueur du point de données.|
 ||[MarkerStyle,](/javascript/api/excel/excel.chartpoint#markerstyle)|Représente le style du marqueur du point de données de graphique. Pour plus d’informations, voir Excel. ChartMarkerStyle.|
 ||[dataLabel](/javascript/api/excel/excel.chartpoint#datalabel)|Renvoie l’étiquette de données d’un point du graphique. En lecture seule.|
-|[ChartPointFormat](/javascript/api/excel/excel.chartpointformat)|[route](/javascript/api/excel/excel.chartpointformat#border)|Représente le format de bordure d’un point de données de graphique, qui inclut les informations de couleur, de style et de poids. En lecture seule.|
+|[ChartPointFormat](/javascript/api/excel/excel.chartpointformat)|[bordure](/javascript/api/excel/excel.chartpointformat#border)|Représente le format de bordure d’un point de données de graphique, qui inclut les informations de couleur, de style et de poids. En lecture seule.|
 |[ChartSeries](/javascript/api/excel/excel.chartseries)|[chartType](/javascript/api/excel/excel.chartseries#charttype)|Représente le type de graphique d’une série. Pour plus d’informations, voir Excel. ChartType.|
 ||[delete()](/javascript/api/excel/excel.chartseries#delete--)|Supprime la série graphique.|
 ||[doughnutHoleSize](/javascript/api/excel/excel.chartseries#doughnutholesize)|Représente la taille du centre d’une série de graphiques en anneaux.  Valide uniquement dans les graphiques en anneaux et doughnutExploded.|
@@ -159,24 +159,24 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[MarkerStyle,](/javascript/api/excel/excel.chartseries#markerstyle)|Représente le style du marqueur d’une série de graphiques. Pour plus d’informations, voir Excel. ChartMarkerStyle.|
 ||[PlotOrder,](/javascript/api/excel/excel.chartseries#plotorder)|Représente l’ordre de traçage d’une série de graphiques au sein du groupe de graphiques.|
 ||[Trendlines](/javascript/api/excel/excel.chartseries#trendlines)|Représente la collection de courbes de tendance de la série. En lecture seule.|
-||[setBubbleSizes (sourceData: Range)](/javascript/api/excel/excel.chartseries#setbubblesizes-sourcedata-)|Définit des tailles de bulles pour une série de graphiques. Fonctionne uniquement pour les graphiques en bulles.|
-||[SetValues (sourceData: Range)](/javascript/api/excel/excel.chartseries#setvalues-sourcedata-)|Définit des valeurs pour une série de graphiques. Pour un graphique en nuages de points, cela signifie des valeurs de l’axe Y.|
-||[setXAxisValues (sourceData: Range)](/javascript/api/excel/excel.chartseries#setxaxisvalues-sourcedata-)|Définit des valeurs d’axe Y pour une série de graphiques. Fonctionne uniquement pour les graphiques en nuages de points.|
+||[setBubbleSizes (sourceData : Range)](/javascript/api/excel/excel.chartseries#setbubblesizes-sourcedata-)|Définit des tailles de bulles pour une série de graphiques. Fonctionne uniquement pour les graphiques en bulles.|
+||[SetValues (sourceData : Range)](/javascript/api/excel/excel.chartseries#setvalues-sourcedata-)|Définit des valeurs pour une série de graphiques. Pour un graphique en nuages de points, cela signifie des valeurs de l’axe Y.|
+||[setXAxisValues (sourceData : Range)](/javascript/api/excel/excel.chartseries#setxaxisvalues-sourcedata-)|Définit des valeurs d’axe Y pour une série de graphiques. Fonctionne uniquement pour les graphiques en nuages de points.|
 ||[showShadow](/javascript/api/excel/excel.chartseries#showshadow)|Valeur booléenne représentant si la série a une ombre ou non.|
 ||[Unie](/javascript/api/excel/excel.chartseries#smooth)|Valeur booléenne représentant si la série est fluide ou non. Applicable uniquement aux graphiques en courbes et à nuages de points.|
-|[ChartSeriesCollection](/javascript/api/excel/excel.chartseriescollection)|[Add (Name?: String, index?: Number)](/javascript/api/excel/excel.chartseriescollection#add-name--index-)|Ajouter une nouvelle série à la collection. La nouvelle série ajoutée n’est pas visible jusqu’à ce que les valeurs de l’axe des ordonnées/valeurs de l’axe x/tailles des bulles lui soient attribuées (en fonction du type de graphique).|
-|[ChartTitle](/javascript/api/excel/excel.charttitle)|[getSubstring (début: nombre, longueur: nombre)](/javascript/api/excel/excel.charttitle#getsubstring-start--length-)|Obtenir la sous-chaîne d’un titre de graphique. Le saut de ligne «\n» compte également un seul caractère.|
+|[ChartSeriesCollection](/javascript/api/excel/excel.chartseriescollection)|[Add (Name ?: String, index ?: Number)](/javascript/api/excel/excel.chartseriescollection#add-name--index-)|Ajouter une nouvelle série à la collection. La nouvelle série ajoutée n’est pas visible jusqu’à ce que les valeurs de l’axe des ordonnées/valeurs de l’axe x/tailles des bulles lui soient attribuées (en fonction du type de graphique).|
+|[ChartTitle](/javascript/api/excel/excel.charttitle)|[getSubstring (début : nombre, longueur : nombre)](/javascript/api/excel/excel.charttitle#getsubstring-start--length-)|Obtenir la sous-chaîne d’un titre de graphique. Le saut de ligne « \n » compte également un seul caractère.|
 ||[horizontalAlignment](/javascript/api/excel/excel.charttitle#horizontalalignment)|Représente l’alignement horizontal du titre du graphique.|
 ||[left](/javascript/api/excel/excel.charttitle#left)|Représente la distance en points, du bord gauche du titre du graphique au bord gauche de la zone de graphique. NULL si le titre du graphique n’est pas visible.|
 ||[position](/javascript/api/excel/excel.charttitle#position)|Représente la position du titre du graphique. Pour plus d’informations, voir Excel. ChartTitlePosition.|
 ||[height](/javascript/api/excel/excel.charttitle#height)|Représente la hauteur, exprimée en points, du titre du graphique. NULL si le titre du graphique n’est pas visible. En lecture seule.|
 ||[width](/javascript/api/excel/excel.charttitle#width)|Représente la largeur, exprimée en points, du titre du graphique. NULL si le titre du graphique n’est pas visible. En lecture seule.|
-||[setFormula (Formula: String)](/javascript/api/excel/excel.charttitle#setformula-formula-)|Définit une valeur de chaîne qui représente la formule de titre de graphique à l’aide de la notation de style A1.|
+||[setFormula (Formula : String)](/javascript/api/excel/excel.charttitle#setformula-formula-)|Définit une valeur de chaîne qui représente la formule de titre de graphique à l’aide de la notation de style A1.|
 ||[showShadow](/javascript/api/excel/excel.charttitle#showshadow)|Représente une valeur booléenne qui détermine si le titre du graphique possède une ombre.|
 ||[textOrientation](/javascript/api/excel/excel.charttitle#textorientation)|Représente l’orientation du texte du titre du graphique. La valeur doit être un entier soit de -90 à 90, soit 180 pour le texte orienté verticalement.|
 ||[top](/javascript/api/excel/excel.charttitle#top)|Représente la distance en points, du bord supérieur du titre du graphique au bord supérieur de la zone de graphique. NULL si le titre du graphique n’est pas visible.|
 ||[verticalAlignment](/javascript/api/excel/excel.charttitle#verticalalignment)|Représente l’alignement vertical du titre du graphique. Pour plus d’informations, voir Excel. ChartTextVerticalAlignment.|
-|[ChartTitleFormat](/javascript/api/excel/excel.charttitleformat)|[route](/javascript/api/excel/excel.charttitleformat#border)|Représente le format de bordure du titre du graphique, qui inclut la couleur, le style de style et le poids. En lecture seule.|
+|[ChartTitleFormat](/javascript/api/excel/excel.charttitleformat)|[bordure](/javascript/api/excel/excel.charttitleformat#border)|Représente le format de bordure du titre du graphique, qui inclut la couleur, le style de style et le poids. En lecture seule.|
 |[ChartTrendline](/javascript/api/excel/excel.charttrendline)|[backwardPeriod](/javascript/api/excel/excel.charttrendline#backwardperiod)|Représente le nombre de points que la courbe de tendance étend en arrière.|
 ||[delete()](/javascript/api/excel/excel.charttrendline#delete--)|Supprime l’objet courbe de tendance.|
 ||[forwardPeriod](/javascript/api/excel/excel.charttrendline#forwardperiod)|Représente le nombre de points que la courbe de tendance étend en avant.|
@@ -189,7 +189,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[showEquation](/javascript/api/excel/excel.charttrendline#showequation)|Vrai si l’équation de la courbe de tendance est affichée sur le graphique.|
 ||[showRSquared](/javascript/api/excel/excel.charttrendline#showrsquared)|Vrai si le coefficient de détermination de la courbe de tendance est affiché sur le graphique.|
 ||[type](/javascript/api/excel/excel.charttrendline#type)|Représente le type de courbe de tendance de graphique.|
-|[ChartTrendlineCollection](/javascript/api/excel/excel.charttrendlinecollection)|[Add (type?: Excel. ChartTrendlineType)](/javascript/api/excel/excel.charttrendlinecollection#add-type-)|Ajoute une nouvelle courbe de tendance à la collection de courbes de tendance.|
+|[ChartTrendlineCollection](/javascript/api/excel/excel.charttrendlinecollection)|[Add (type ?: Excel. ChartTrendlineType)](/javascript/api/excel/excel.charttrendlinecollection#add-type-)|Ajoute une nouvelle courbe de tendance à la collection de courbes de tendance.|
 ||[getCount()](/javascript/api/excel/excel.charttrendlinecollection#getcount--)|Renvoie le nombre de courbes de tendance de la collection.|
 ||[getItem(index : numérique)](/javascript/api/excel/excel.charttrendlinecollection#getitem-index-)|Obtient un objet courbe de tendance par index, c'est-à-dire par ordre d’insertion dans le tableau des éléments.|
 ||[items](/javascript/api/excel/excel.charttrendlinecollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
@@ -198,7 +198,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[key](/javascript/api/excel/excel.customproperty#key)|Obtient la clé de la propriété personnalisée. En lecture seule.|
 ||[type](/javascript/api/excel/excel.customproperty#type)|Obtient le type de valeur de la propriété personnalisée. En lecture seule.|
 ||[value](/javascript/api/excel/excel.customproperty#value)|Obtient ou définit la valeur de la propriété personnalisée.|
-|[CustomPropertyCollection](/javascript/api/excel/excel.custompropertycollection)|[Add (Key: chaîne, value: any)](/javascript/api/excel/excel.custompropertycollection#add-key--value-)|Crée une nouvelle propriété personnalisée ou en définit une existante.|
+|[CustomPropertyCollection](/javascript/api/excel/excel.custompropertycollection)|[Add (Key : chaîne, value : any)](/javascript/api/excel/excel.custompropertycollection#add-key--value-)|Crée une nouvelle propriété personnalisée ou en définit une existante.|
 ||[deleteAll ()](/javascript/api/excel/excel.custompropertycollection#deleteall--)|Supprime toutes les propriétés personnalisées de cette collection.|
 ||[getCount()](/javascript/api/excel/excel.custompropertycollection#getcount--)|Obtient le nombre des propriétés personnalisées.|
 ||[getItem(key: string)](/javascript/api/excel/excel.custompropertycollection#getitem-key-)|Obtient un objet de propriété personnalisé par sa clé, qui ne tient pas compte de la casse. Lève une exception si la propriété personnalisée n’existe pas.|
@@ -210,7 +210,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[comments](/javascript/api/excel/excel.documentproperties#comments)|Obtient ou définit les commentaires du classeur.|
 ||[company](/javascript/api/excel/excel.documentproperties#company)|Obtient ou définit la compagnie du classeur.|
 ||[Mots clés](/javascript/api/excel/excel.documentproperties#keywords)|Obtient ou définit les mots clés du classeur.|
-||[dirigeant](/javascript/api/excel/excel.documentproperties#manager)|Obtient ou définit le responsable du classeur.|
+||[manager](/javascript/api/excel/excel.documentproperties#manager)|Obtient ou définit le responsable du classeur.|
 ||[creationDate](/javascript/api/excel/excel.documentproperties#creationdate)|Obtient la date de création du classeur. En lecture seule.|
 ||[personnalisé](/javascript/api/excel/excel.documentproperties#custom)|Obtient la collection de propriétés personnalisées du classeur. En lecture seule.|
 ||[lastAuthor](/javascript/api/excel/excel.documentproperties#lastauthor)|Obtient ou définit le dernier auteur du classeur. En lecture seule.|
@@ -221,7 +221,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[arrayValues](/javascript/api/excel/excel.nameditem#arrayvalues)|Renvoie un objet contenant les valeurs et les types de l’élément nommé. En lecture seule.|
 |[NamedItemArrayValues](/javascript/api/excel/excel.nameditemarrayvalues)|[types](/javascript/api/excel/excel.nameditemarrayvalues#types)|Représente les types de chaque élément dans le tableau d’éléments nommés|
 ||[values](/javascript/api/excel/excel.nameditemarrayvalues#values)|Représente les valeurs de chaque élément dans le tableau élément nommé.|
-|[Range](/javascript/api/excel/excel.range)|[getAbsoluteResizedRange (numRows: nombre, numColumns: nombre)](/javascript/api/excel/excel.range#getabsoluteresizedrange-numrows--numcolumns-)|Obtient un objet Plage avec la même cellule supérieure gauche que l’objet de Plage en cours, mais avec un nombre spécifié de lignes et colonnes.|
+|[Range](/javascript/api/excel/excel.range)|[getAbsoluteResizedRange (numRows : nombre, numColumns : nombre)](/javascript/api/excel/excel.range#getabsoluteresizedrange-numrows--numcolumns-)|Obtient un objet Plage avec la même cellule supérieure gauche que l’objet de Plage en cours, mais avec un nombre spécifié de lignes et colonnes.|
 ||[getImage ()](/javascript/api/excel/excel.range#getimage--)|Affiche la plage en tant qu’image png encodée au format Base64.|
 ||[getSurroundingRegion()](/javascript/api/excel/excel.range#getsurroundingregion--)|Renvoie un objet PLage qui représente la région environnante pour la cellule en haut à gauche de cette plage. Une région environnante est une plage délimitée par une combinaison de lignes et de colonnes vides par rapport à cette plage.|
 ||[lien hypertexte](/javascript/api/excel/excel.range#hyperlink)|Représente le lien hypertexte de la plage active.|
@@ -286,11 +286,11 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[properties](/javascript/api/excel/excel.workbook#properties)|Obtient les propriétés du classeur. En lecture seule.|
 ||[protection](/javascript/api/excel/excel.workbook#protection)|Renvoie un objet de protection de classeur pour un classeur. En lecture seule.|
 ||[proposés](/javascript/api/excel/excel.workbook#styles)|Représente une collection de styles associés au classeur. En lecture seule.|
-|[Objetworkbookprotection](/javascript/api/excel/excel.workbookprotection)|[Protect (Password?: String)](/javascript/api/excel/excel.workbookprotection#protect-password-)|Protège un classeur. Échoue si le classeur est protégé.|
+|[Objetworkbookprotection](/javascript/api/excel/excel.workbookprotection)|[Protect (Password ?: String)](/javascript/api/excel/excel.workbookprotection#protect-password-)|Protège un classeur. Échoue si le classeur est protégé.|
 ||[sécurisé](/javascript/api/excel/excel.workbookprotection#protected)|Indique si le classeur est protégé. En lecture seule.|
-||[Unprotect (Password?: String)](/javascript/api/excel/excel.workbookprotection#unprotect-password-)|Annule la protection un classeur.|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[Copy (positionType?: Excel. WorksheetPositionType, relativeTo?: Excel. Worksheet)](/javascript/api/excel/excel.worksheet#copy-positiontype--relativeto-)|Copie une feuille de calcul et la place à la position spécifiée. Renvoie la feuille de calcul copiée.|
-||[getRangeByIndexes (startRow: nombre, ColonneDébut: nombre, rowCount: nombre, columnCount: nombre)](/javascript/api/excel/excel.worksheet#getrangebyindexes-startrow--startcolumn--rowcount--columncount-)|Obtient l’objet plage commençant à un index de ligne et de colonne particulier et couvrant un certain nombre de lignes et de colonnes.|
+||[Unprotect (Password ?: String)](/javascript/api/excel/excel.workbookprotection#unprotect-password-)|Annule la protection un classeur.|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[Copy (positionType ?: Excel. WorksheetPositionType, relativeTo ?: Excel. Worksheet)](/javascript/api/excel/excel.worksheet#copy-positiontype--relativeto-)|Copie une feuille de calcul et la place à la position spécifiée. Renvoie la feuille de calcul copiée.|
+||[getRangeByIndexes (startRow : nombre, ColonneDébut : nombre, rowCount : nombre, columnCount : nombre)](/javascript/api/excel/excel.worksheet#getrangebyindexes-startrow--startcolumn--rowcount--columncount-)|Obtient l’objet plage commençant à un index de ligne et de colonne particulier et couvrant un certain nombre de lignes et de colonnes.|
 ||[freezePanes](/javascript/api/excel/excel.worksheet#freezepanes)|Obtient un objet qui peut être utilisé pour manipuler les volets figés de la feuille de calcul. En lecture seule.|
 ||[onActivated](/javascript/api/excel/excel.worksheet#onactivated)|Se produit lorsque la feuille de calcul est activée.|
 ||[onChanged](/javascript/api/excel/excel.worksheet#onchanged)|Se produit lorsque des données sont modifiées dans une feuille de calcul spécifique.|
@@ -320,13 +320,13 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 |[WorksheetDeletedEventArgs](/javascript/api/excel/excel.worksheetdeletedeventargs)|[source](/javascript/api/excel/excel.worksheetdeletedeventargs#source)|Obtient la source de l’événement. Pour plus d’informations, voir Excel.EventSource.|
 ||[type](/javascript/api/excel/excel.worksheetdeletedeventargs#type)|Obtient le type de l’événement. Pour plus d’informations, voir Excel.EventType.|
 ||[worksheetId](/javascript/api/excel/excel.worksheetdeletedeventargs#worksheetid)|Obtient l’id de la feuille de calcul qui est supprimée du classeur.|
-|[WorksheetFreezePanes](/javascript/api/excel/excel.worksheetfreezepanes)|[freezeAt (frozenRange: chaîne \| de plage)](/javascript/api/excel/excel.worksheetfreezepanes#freezeat-frozenrange-)|Définit les cellules figées dans l’affichage de la feuille de calcul active.|
-||[freezeColumns (Count?: nombre)](/javascript/api/excel/excel.worksheetfreezepanes#freezecolumns-count-)|Figer la/les première(s) colonne(s) de la feuille de calcul en place.|
-||[freezeRows (Count?: nombre)](/javascript/api/excel/excel.worksheetfreezepanes#freezerows-count-)|Figer la/les première(s) ligne(s) de la feuille de calcul en place.|
+|[WorksheetFreezePanes](/javascript/api/excel/excel.worksheetfreezepanes)|[freezeAt (frozenRange : chaîne \| de plage)](/javascript/api/excel/excel.worksheetfreezepanes#freezeat-frozenrange-)|Définit les cellules figées dans l’affichage de la feuille de calcul active.|
+||[freezeColumns (Count ?: nombre)](/javascript/api/excel/excel.worksheetfreezepanes#freezecolumns-count-)|Figer la/les première(s) colonne(s) de la feuille de calcul en place.|
+||[freezeRows (Count ?: nombre)](/javascript/api/excel/excel.worksheetfreezepanes#freezerows-count-)|Figer la/les première(s) ligne(s) de la feuille de calcul en place.|
 ||[getLocation()](/javascript/api/excel/excel.worksheetfreezepanes#getlocation--)|Obtient une plage qui définit les cellules figées dans l’affichage de la feuille de calcul active.|
 ||[getLocationOrNullObject()](/javascript/api/excel/excel.worksheetfreezepanes#getlocationornullobject--)|Obtient une plage qui définit les cellules figées dans l’affichage de la feuille de calcul active.|
 ||[Unfreeze ()](/javascript/api/excel/excel.worksheetfreezepanes#unfreeze--)|Supprime tous les volets figés dans la feuille de calcul.|
-|[WorksheetProtection](/javascript/api/excel/excel.worksheetprotection)|[Unprotect (Password?: String)](/javascript/api/excel/excel.worksheetprotection#unprotect-password-)|Annule la protection d’une feuille de calcul.|
+|[WorksheetProtection](/javascript/api/excel/excel.worksheetprotection)|[Unprotect (Password ?: String)](/javascript/api/excel/excel.worksheetprotection#unprotect-password-)|Annule la protection d’une feuille de calcul.|
 |[WorksheetProtectionOptions](/javascript/api/excel/excel.worksheetprotectionoptions)|[allowEditObjects](/javascript/api/excel/excel.worksheetprotectionoptions#alloweditobjects)|Représente l’option de protection de feuille de calcul qui autorise la modification d’objets.|
 ||[allowEditScenarios](/javascript/api/excel/excel.worksheetprotectionoptions#alloweditscenarios)|Représente l’option de protection de feuille de calcul qui autorise la modification de scénarios.|
 ||[selectionMode](/javascript/api/excel/excel.worksheetprotectionoptions#selectionmode)|Représente l’option de protection de feuille de calcul qui autorise le mode sélection.|
@@ -336,5 +336,5 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Documentation de référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.7)
+- [Documentation référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.7)
 - [Ensembles de conditions requises de l’API JavaScript pour Excel](./excel-api-requirement-sets.md)

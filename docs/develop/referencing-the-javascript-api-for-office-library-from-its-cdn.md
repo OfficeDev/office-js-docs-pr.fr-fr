@@ -1,16 +1,16 @@
 ---
-title: Référencement de la bibliothèque d’API JavaScript pour Office
+title: Référencement de la bibliothèque de l’API JavaScript Office
 description: Découvrez comment référencer la bibliothèque d’API JavaScript Office et les définitions de type dans votre complément.
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 9f7753b24e0a5861778b09ea93fecdc26fd2ca96
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 5e26d5b0454a6833c593ff60c1577d24583dcc51
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325156"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596717"
 ---
-# <a name="referencing-the-office-javascript-api-library"></a>Référencement de la bibliothèque d’API JavaScript pour Office
+# <a name="referencing-the-office-javascript-api-library"></a>Référencement de la bibliothèque de l’API JavaScript Office
 
 La bibliothèque de l' [API JavaScript pour Office](../reference/javascript-api-for-office.md) fournit les API que votre complément peut utiliser pour interagir avec l’hôte Office. Pour référencer la bibliothèque, le moyen le plus simple consiste à utiliser le réseau de distribution de contenu (CDN `<script>` ) en ajoutant `<head>` la balise suivante dans la section de votre page HTML :  
 
@@ -33,7 +33,7 @@ Dans l’extrait de code HTML précédent `/1/` , l’élément `office.js` deva
 Si vous envisagez de publier votre complément Office à partir d’AppSource, vous devez utiliser cette référence au CDN. Les références locales sont adaptées uniquement au développement interne et au débogage des scénarios.
 
 > [!NOTE]
-> Pour utiliser les API d’aperçu, référencez la version d’évaluation de la bibliothèque de l’API `https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`JavaScript pour Office sur le CDN :.
+> Pour utiliser les API destinées à la prévisualisation, référencez la version d’évaluation de la bibliothèque de l’interface API JavaScript Office dans le CDN : `https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`.
 
 ## <a name="enabling-intellisense-for-a-typescript-project"></a>Activation d’IntelliSense pour un projet de dactylographié
 
@@ -50,5 +50,5 @@ npm install --save-dev @types/office-js
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Présentation de l’API JavaScript pour Office](understanding-the-javascript-api-for-office.md)
-- [API JavaScript pour Office](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Compréhension de l’API JavaScript pour Office](understanding-the-javascript-api-for-office.md)
+- [API JavaScript pour Office](../reference/javascript-api-for-office.md)

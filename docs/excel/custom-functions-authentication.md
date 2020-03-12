@@ -3,12 +3,12 @@ ms.date: 07/09/2019
 description: Authentifiez les utilisateurs à l’aide de fonctions personnalisées dans Excel.
 title: Authentification des fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: aa966aeb8d8161339bab0161b4cc329a9b495d08
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 872553986ebb74a97fd30afa0516ae6a72cf77bf
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950683"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596501"
 ---
 # <a name="authentication-for-custom-functions"></a>Authentification des fonctions personnalisées
 
@@ -33,7 +33,7 @@ Si un jeton n’existe pas, vous devez utiliser l’API de boîte de dialogue po
 > [!NOTE]
 > Le runtime des fonctions personnalisées utilise un objet de boîte de dialogue qui est légèrement différent de l’objet de boîte de dialogue dans le moteur d’exécution du moteur d’exploration utilisé par les volets de tâches. Ils sont tous deux appelés «API de boîte de dialogue», mais utilisent `OfficeRuntime.Dialog`pour authentifier les utilisateurs dans le runtime de fonctions personnalisées.
 
-Pour plus d’informations sur l’utilisation de l’objet `Dialog`, voir [boîte de dialogue fonctions personnalisées](/office/dev/add-ins/excel/custom-functions-dialog).
+Pour plus d’informations sur l’utilisation de l’objet `Dialog`, voir [boîte de dialogue fonctions personnalisées](../excel/custom-functions-dialog.md).
 
 Lorsque vous envisagez l’intégralité du processus d’authentification, il peut être utile de considérer les éléments du volet de tâches et de l’interface utilisateur de votre complément, ainsi que les fonctions personnalisées de votre complément en tant qu’entités distinctes pouvant communiquer entre eux via`OfficeRuntime.storage`.
 
@@ -90,7 +90,7 @@ function receiveTokenFromCustomFunction() {
 
 ## <a name="general-guidance"></a>Instructions générales
 
-Les compléments Office sont basés sur le Web et vous pouvez utiliser n’importe quelle technique d’authentification Web. Il n’existe pas de modèle ou de méthode spécifique que vous devez suivre pour implémenter votre propre authentification avec des fonctions personnalisées. Vous pouvez consulter la documentation relative à différents modèles d’authentification, en commençant par[cet article sur l’autorisation d’accès via les services externes](/office/dev/add-ins/develop/auth-external-add-ins).  
+Les compléments Office sont basés sur le Web et vous pouvez utiliser n’importe quelle technique d’authentification Web. Il n’existe pas de modèle ou de méthode spécifique que vous devez suivre pour implémenter votre propre authentification avec des fonctions personnalisées. Vous pouvez consulter la documentation relative à différents modèles d’authentification, en commençant par[cet article sur l’autorisation d’accès via les services externes](../develop/auth-external-add-ins.md).  
 
 Évitez d’utiliser les emplacements suivants pour stocker des données lors du développement de fonctions personnalisées :  
 

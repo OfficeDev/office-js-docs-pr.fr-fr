@@ -3,12 +3,12 @@ title: Utilisation d’options de recherche pour trouver du texte dans votre com
 description: ''
 ms.date: 09/27/2019
 localization_priority: Normal
-ms.openlocfilehash: 213853af31ae7ae15ad3f6386da70f22698d421d
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 9f90771ebb7e6f70f2f27081ea0409e0f29b0e2d
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950480"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596759"
 ---
 # <a name="use-search-options-to-find-text-in-your-word-add-in"></a>Utilisation d’options de recherche pour trouver du texte dans votre complément Word
 
@@ -19,7 +19,7 @@ Une fonction de recherche est exposée par contrôle de contenu (cela inclut [Bo
 
 Les options de recherche sont une collection de valeurs booléennes qui définissent comment le paramètre de recherche doit être traité.
 
-| Propriété     | Description|
+| Propriété       | Description|
 |:---------------|:----|
 |ignorePunct|Obtient ou définit une valeur indiquant s’il faut ignorer tous les caractères de ponctuation entre les mots. Correspond à la case à cocher « Ignorer les caractères de ponctuation » dans la boîte de dialogue Rechercher et remplacer.|
 |ignoreSpace|Obtient ou définit une valeur indiquant s’il faut ignorer tous les espaces entre les mots. Correspond à la case à cocher « Ignorer les caractères d’espacement » dans la boîte de dialogue Rechercher et remplacer.|
@@ -204,4 +204,4 @@ Word.run(function (context) {
 });
 ```
 
-Vous trouverez plus d’informations dans l’[API JavaScript de référence pour Word](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview).
+Vous trouverez plus d’informations dans l’[API JavaScript de référence pour Word](../reference/overview/word-add-ins-reference-overview.md).

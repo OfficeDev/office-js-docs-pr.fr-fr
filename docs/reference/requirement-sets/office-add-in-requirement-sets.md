@@ -4,18 +4,18 @@ description: ''
 ms.date: 07/17/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 8410ee6d9ff7a16d58c8efab53d6cc92112f942a
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: cd8af8762fa55bde78a6eb62cabc37606db47099
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42561806"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596955"
 ---
 # <a name="office-common-api-requirement-sets"></a>Ensembles de conditions requises des API communes pour Office
 
-Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
 
-Vous avez besoin d’informations sur l’endroit où les compléments sont pris en charge par l’hôte Office ? Consultez la rubrique [Disponibilité des compléments Office sur les plateformes et les hôtes](/office/dev/add-ins/overview/office-add-in-availability).
+Vous avez besoin d’informations sur l’endroit où les compléments sont pris en charge par l’hôte Office ? Consultez la rubrique [Disponibilité des compléments Office sur les plateformes et les hôtes](../../overview/office-add-in-availability.md).
 
 Vous recherchez l’ensemble de conditions requises de l’API *propres à l’hôte* ? Reportez-vous aux ensembles de conditions requises des API suivants :
 
@@ -166,14 +166,6 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ---
 
-### <a name="ribbonapi"></a>RibbonApi
-
-|**Hôtes Office**|**Méthodes dans l’ensemble**|
-|:-----|:-----|
-| Voir [ensembles de conditions requises pour RibbonAPI](ribbon-api-requirement-sets.md).|Office. UI. getRibbon<br>Ribbon. requestUpdate|
-
----
-
 ### <a name="selection"></a>Selection
 
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
@@ -240,7 +232,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ## <a name="methods-that-arent-part-of-a-requirement-set"></a>Méthodes qui ne font pas partie d’un ensemble de conditions requises
 
-Les méthodes suivantes de l’API JavaScript pour Office ne font pas partie d’un ensemble de conditions requises. Si votre complément requiert l’une de ces méthodes, utilisez les éléments **Methods** et **Method** dans le manifeste du complément afin de déclarer qu’ils sont requis ou effectuez la vérification de l’exécution à l’aide d’une instruction `if`. Pour plus d’informations, consultez la rubrique [Spécifier les hôtes Office et la configuration requise d’API](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements).
+Les méthodes suivantes de l’API JavaScript pour Office ne font pas partie d’un ensemble de conditions requises. Si votre complément requiert l’une de ces méthodes, utilisez les éléments **Methods** et **Method** dans le manifeste du complément afin de déclarer qu’ils sont requis ou effectuez la vérification de l’exécution à l’aide d’une instruction `if`. Pour plus d’informations, consultez la rubrique [Spécifier les hôtes Office et la configuration requise d’API](../../develop/specify-office-hosts-and-api-requirements.md).
 
 |**Nom de la méthode**|**Prise en charge des hôtes Office**|
 |:-----|:-----|
@@ -263,6 +255,6 @@ Les méthodes suivantes de l’API JavaScript pour Office ne font pas partie d�
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Versions d’Office et ensembles de conditions requises](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [Spécification des exigences en matière d’hôtes Office et d’API](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Manifeste XML des compléments Office](/office/dev/add-ins/develop/add-in-manifests)
+- [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md)
+- [Spécification des exigences en matière d’hôtes Office et d’API](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Manifeste XML des compléments Office](../../develop/add-in-manifests.md)
