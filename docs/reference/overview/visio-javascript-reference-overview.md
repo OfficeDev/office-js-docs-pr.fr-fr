@@ -1,17 +1,17 @@
 ---
 title: Présentation des API JavaScript pour Visio
-description: ''
+description: Vue d’ensemble de l’API JavaScript pour Visio
 ms.date: 06/20/2019
 ms.prod: visio
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: e40349a009638828ded4bd0651f3776bbf7290fa
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 5a544d93c1a41f6c913381ee8d67d375646b2883
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324749"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717529"
 ---
 # <a name="visio-javascript-api-overview"></a>Présentation des API JavaScript pour Visio
 

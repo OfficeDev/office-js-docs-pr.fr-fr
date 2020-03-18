@@ -1,14 +1,14 @@
 ---
 title: Versions d’Office et ensembles de conditions requises
-description: ''
+description: Plateformes Office.js prises en charge à l'aide de l'API JavaScript
 ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 95c647b3362fb98402c5d8d20c0975580ae45131
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: aa3beb7177c2d6019dd85cdab5a0f4b7277506a4
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596738"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718894"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Versions d’Office et ensembles de conditions requises
 

@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API JavaScript pour Outlook
-description: ''
+description: En savoir plus sur les ensembles de conditions requises de l’API JavaScript pour Outlook
 ms.date: 03/10/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 7f220ac6e381c365494a285110264d2dd71891ee
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 71ff3111b70b047b49ac699480ea623b66b37cce
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688848"
+ms.locfileid: "42717459"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Outlook
 

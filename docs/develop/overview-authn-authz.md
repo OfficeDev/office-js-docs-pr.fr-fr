@@ -1,14 +1,14 @@
 ---
 title: Vue d’ensemble de l’authentification et de l’autorisation dans les compléments Office
-description: ''
+description: Demandez aux utilisateurs d’authentifier la connexion dans les applications Web et les Compléments Office.
 ms.date: 01/25/2020
 localization_priority: Priority
-ms.openlocfilehash: 2bcf9f0fe4ba6f7efd55885da5ac6f972ffe4883
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 79734cf0ee67c2e01db80934b2699da18a686034
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688997"
+ms.locfileid: "42719433"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Vue d’ensemble de l’authentification et de l’autorisation dans les compléments Office
 

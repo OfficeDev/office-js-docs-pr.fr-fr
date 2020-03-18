@@ -1,16 +1,16 @@
 ---
 title: Présentation des compléments Word
-description: ''
+description: Découvrez les concepts de base des Compléments Word.
 ms.date: 11/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: f894ee0274d39bc8b508436949e557bcc1e785b5
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: b27de57c821fe8278ac8a6e097aeb8e5be0cdb7b
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596913"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717326"
 ---
 # <a name="word-add-ins-overview"></a>Présentation des compléments Word
 

@@ -1,14 +1,14 @@
 ---
 title: Manifeste XML des compléments Office
-description: ''
+description: Obtenez une vue d’ensemble du manifeste de Complément Office et de ses applications.
 ms.date: 01/06/2020
 localization_priority: Priority
-ms.openlocfilehash: e3a74f3047017b8aa7b5daac1cb50fe484c99ed1
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 2e8ab3ac27756d221b24838ca4b70624f046089d
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596703"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719216"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifeste XML des compléments Office
 
