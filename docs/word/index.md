@@ -5,16 +5,16 @@ title: Documentation sur les compléments Word
 description: Ressources pour découvrir les compléments Word.
 ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 876baa0a0c1ff00f14095c2eb1ec3aead3aa76e0
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: 28cb42194e3de42634cd3b026e5924c03cd51b43
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35576832"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719657"
 ---
 # <a name="word-add-ins-documentation"></a>Documentation sur les compléments Word
 
-Les compléments Word vous permettent d’utiliser des technologies web familières telles que HTML, CSS et JavaScript pour créer une solution pouvant s’exécuter dans Word sur plusieurs plateformes, dont Windows, Mac, iPad et un navigateur web.Découvrez comment créer, tester, déboguer et publier des compléments Word. Learn how to build, test, debug, and publish Word add-ins.
+Les compléments Word vous permettent d’utiliser des technologies web familières telles que HTML, CSS et JavaScript pour créer une solution pouvant s’exécuter dans Word sur plusieurs plateformes, dont Windows, Mac, iPad et un navigateur web. Découvrez comment créer, tester, déboguer et publier des compléments Word.
 
 <ul class="panelContent cardsF cols cols3">
     <li>

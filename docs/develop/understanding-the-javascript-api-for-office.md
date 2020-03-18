@@ -3,12 +3,12 @@ title: Compréhension de l’API JavaScript pour Office
 description: Présentation de l’API JavaScript pour Office.
 ms.date: 02/27/2020
 localization_priority: Priority
-ms.openlocfilehash: 28aac00cd801019d95b2d4b487bfdf8e2187af95
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 67ee9459aab3065466ac8f52f2f835ca1e94bfc3
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324698"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718789"
 ---
 # <a name="understanding-the-office-javascript-api"></a>Compréhension de l’API JavaScript pour Office
 

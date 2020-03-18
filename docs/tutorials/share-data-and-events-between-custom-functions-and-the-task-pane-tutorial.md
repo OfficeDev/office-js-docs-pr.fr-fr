@@ -1,15 +1,15 @@
 ---
-ms.date: 02/20/2020
 title: 'Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office (préversion)'
-ms.prod: excel
 description: Dans Excel, partagez des données et des événements entre des fonctions personnalisées et le volet Office.
+ms.date: 02/20/2020
+ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 13ef4c199f7cb1de84e58f0ada554c851aee0cad
-ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
+ms.openlocfilehash: 34f2f1006a592c3ee7ab63fdc643648ca26cd01f
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "42283890"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719727"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane-preview"></a>Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office (préversion)
 
@@ -207,7 +207,7 @@ Après avoir exécuté l’Assistant, le générateur crée le projet et install
   npm run start
   ```
 
-Une fois Excel démarré, vous pouvez utiliser les boutons du volet Office pour stocker ou obtenir des données partagées. Entrez `=CONTOSO.GETVALUE()` dans une cellule pour que la fonction personnalisée extraie les mêmes données partagées. Vous pouvez également utiliser `=CONTOSO.STOREVALUE(“new value”)` pour remplacer les données partagées par une nouvelle valeur.
+Une fois Excel démarré, vous pouvez utiliser les boutons du volet Office pour stocker ou obtenir des données partagées. Entrez `=CONTOSO.GETVALUE()` dans une cellule pour que la fonction personnalisée extraie les mêmes données partagées. Vous pouvez également utiliser `=CONTOSO.STOREVALUE("new value")` pour remplacer les données partagées par une nouvelle valeur.
 
 > [!NOTE]
 > La configuration de votre projet comme illustré dans cet article permet de partager le contexte entre des fonctions personnalisées et le volet Office. L’appel d’API Office à partir de fonctions personnalisées n’est pas pris en charge dans la préversion.
