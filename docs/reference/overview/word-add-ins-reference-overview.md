@@ -1,15 +1,15 @@
 ---
-title: Présentation des API JavaScript pour Word
-description: ''
+title: Présentation des APIs JavaScript pour Word
+description: Présentation de l’API JavaScript pour Word.
 ms.date: 02/19/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 6f560b759d08fa2da239fd7bebe92bb8f58345a7
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: dfc87a8f9f5c7048262d9c2889ae68eb38c0ed30
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325177"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719888"
 ---
 # <a name="word-javascript-api-overview"></a>Présentation des APIs JavaScript pour Word
 
