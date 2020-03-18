@@ -1,14 +1,14 @@
 ---
 title: Utiliser les classeurs utilisant l’API JavaScript Excel
-description: ''
+description: Exemples de code qui montrent comment effectuer des tâches courantes avec des classeurs à l’aide de l’API JavaScript pour Excel.
 ms.date: 10/21/2019
 localization_priority: Normal
-ms.openlocfilehash: c148dab1f11ba0a4f33eb4ef4c6dc4e189069808
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 0f86278cdb52edc16e5c43323d874d985564de3a
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688638"
+ms.locfileid: "42719622"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Utiliser les classeurs utilisant l’API JavaScript Excel
 

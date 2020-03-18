@@ -1,20 +1,20 @@
 ---
 title: Élément EquivalentAddin dans le fichier manifeste
-description: ''
+description: Spécifie la compatibilité descendante pour un complément COM équivalent ou une XLL.
 ms.date: 06/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 33cfb8b73e050fad7e392e0234962d346e903713
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: 425b926901b7325665eeede04263f74e4b854d50
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059922"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718285"
 ---
 # <a name="equivalentaddin-element"></a>Élément EquivalentAddin
 
 Spécifie la compatibilité descendante pour un complément COM équivalent ou une XLL.
 
-**Type de complément:** Volet Office, fonction personnalisée
+**Type de complément :** Volet Office, fonction personnalisée
 
 ## <a name="syntax"></a>Syntaxe
 

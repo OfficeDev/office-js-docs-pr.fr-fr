@@ -1,16 +1,16 @@
 ---
 title: Élément SupportUrl dans le fichier manifest
-description: ''
+description: L’élément SupportUrl spécifie l’URL d’une page qui fournit des informations de prise en charge pour votre complément.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 18b9b7c4df9def70ab42ae213066188ac04c07a7
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: e38030062c48936f925126e896cd74e660164a5d
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450414"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720343"
 ---
-# <a name="supporturl-element"></a>Élément SupportUrl
+# <a name="supporturl-element"></a>SupportUrl, élément
 
 Spécifie l’URL d’une page qui fournit des informations de prise en charge pour votre complément.
 
@@ -39,7 +39,7 @@ Spécifie l’URL d’une page qui fournit des informations de prise en charge p
 
 ## <a name="can-contain"></a>Peut contenir
 
-|  Élément | Obligatoire | Description  |
+|  Élément | Requis | Description  |
 |:-----|:-----|:-----|
 |  [Override](override.md)   | Non | Spécifie le paramètre pour les URL de paramètres régionaux supplémentaires |
 

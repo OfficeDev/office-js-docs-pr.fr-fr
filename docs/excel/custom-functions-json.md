@@ -3,12 +3,12 @@ ms.date: 01/14/2020
 description: Définissez des métadonnées JSON pour les fonctions personnalisées dans Excel et associez vos ID de fonction et propriétés de nom.
 title: Métadonnées pour les fonctions personnalisées dans Excel
 localization_priority: Normal
-ms.openlocfilehash: 79f23f83dfd4bff40880cb39edc6ebe9bf2e052e
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 679087336fc7aea741c98d0104514ab96068ffbf
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596780"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719461"
 ---
 # <a name="custom-functions-metadata"></a>Métadonnées des fonctions personnalisées
 

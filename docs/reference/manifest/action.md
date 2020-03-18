@@ -1,18 +1,18 @@
 ---
 title: Élément Action dans le fichier manifeste
-description: ''
+description: Cet élément spécifie l’action à effectuer lorsque l’utilisateur sélectionne un bouton ou un contrôle de menu.
 ms.date: 02/28/2020
 localization_priority: Normal
-ms.openlocfilehash: f7bd577fea1672f592f2b1bac2823d96f0e8a134
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 75ad0d6a0eab81b7526acadb6079824d5a98fd5b
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688917"
+ms.locfileid: "42720966"
 ---
-# <a name="action-element"></a>Action, élément
+# <a name="action-element"></a>Élément Action
 
-Indique l’action à réaliser lorsque l’utilisateur sélectionne des contrôles de [bouton](control.md#button-control) ou de [menu](control.md#menu-dropdown-button-controls).
+Spécifie l’action à effectuer lorsque l’utilisateur sélectionne un [bouton](control.md#button-control) ou un contrôle de [menu](control.md#menu-dropdown-button-controls) .
 
 ## <a name="attributes"></a>Attributs
 

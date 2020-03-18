@@ -1,14 +1,14 @@
 ---
 title: Élément DesktopFormFactor dans le fichier manifeste
-description: ''
+description: Spécifie les paramètres d’un complément en fonction du facteur de forme pour bureau.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 2fe97d99ff5bdc9f23a5760824e241ee4dfb800f
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: bfea6900e6b07d8dc7ad5b5256703d873242d88c
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325275"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718362"
 ---
 # <a name="desktopformfactor-element"></a>DesktopFormFactor, élément
 
@@ -18,7 +18,7 @@ Chaque définition DesktopFormFactor contient l’élément **FunctionFile** et 
 
 ## <a name="child-elements"></a>Éléments enfants
 
-| Élément                               | Obligatoire | Description  |
+| Élément                               | Requis | Description  |
 |:--------------------------------------|:--------:|:-------------|
 | [ExtensionPoint](extensionpoint.md)   | Oui      | Définit l’emplacement où se trouvent les fonctionnalités d’un complément |
 | [FunctionFile](functionfile.md)       | Oui      | URL pointant vers un fichier qui contient les fonctions JavaScript.|

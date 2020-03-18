@@ -1,14 +1,14 @@
 ---
 title: Élémznr VersionOverrides dans le fichier manifest
-description: ''
+description: Documentation de référence de l’élément VersionOverrides pour les fichiers manifeste des compléments Office (XML).
 ms.date: 03/05/2020
 localization_priority: Normal
-ms.openlocfilehash: 5dc1013f24ef6e0cc4f000128b6f5d28ccae4432
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 055a796d269ffb230293639a7f69b2dde4e36eee
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "42605679"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717851"
 ---
 # <a name="versionoverrides-element"></a>Élément VersionOverrides
 

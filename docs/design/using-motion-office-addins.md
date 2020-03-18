@@ -1,14 +1,14 @@
 ---
 title: Utilisation du mouvement dans les compléments Office
-description: ''
+description: Obtenez les meilleures pratiques pour l’utilisation de transitions, de animations ou d’animations dans les compléments Office.
 ms.date: 07/19/2019
 localization_priority: Normal
-ms.openlocfilehash: d347cbf9d5879d121b226974f70044cf8a4febb7
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: effbd2c3e1e811d9f73c345c80a55a350db909d2
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804589"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719265"
 ---
 # <a name="using-motion-in-office-add-ins"></a>Utilisation du mouvement dans les compléments Office
 

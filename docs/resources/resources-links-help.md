@@ -1,14 +1,14 @@
 ---
 title: Ressources supplémentaires sur les compléments Office
-description: ''
+description: Ressources utiles sur le sujet des compléments Office
 ms.date: 03/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 537a3af0167b4f24da3ed487bc5a488942ffb409
-ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
+ms.openlocfilehash: d838535e68eaa378840732d62fd2678c3149113d
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "42413756"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719874"
 ---
 # <a name="office-add-ins-additional-resources"></a>Ressources supplémentaires sur les compléments Office
 

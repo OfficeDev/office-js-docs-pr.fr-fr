@@ -1,14 +1,14 @@
 ---
 title: Ajout de validation des données à des plages Excel
-description: ''
+description: Découvrez comment les API JavaScript pour Excel permettent à votre complément d’ajouter une validation automatique des données aux tableaux, colonnes, lignes et autres plages d’un classeur.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: e21c22468bab6df438f641e13ae95034a4b82c36
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 39962c5e6f13d4ef9a2f3458686e5e24b5a4ae45
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950851"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717179"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>Ajout de validation des données à des plages Excel
 
@@ -111,7 +111,7 @@ Excel.run(function (context) {
 
 ### <a name="list-validation-rule-type"></a>Type de règle de validation de liste
 
-Utilisez la propriété `list` dans l’objet `DataValidationRule` pour spécifier que les seules valeurs valides sont celles d’une liste de remise. Voici un exemple. Tenez compte des informations suivantes :
+Utilisez la propriété `list` dans l’objet `DataValidationRule` pour spécifier que les seules valeurs valides sont celles d’une liste de remise. Voici un exemple. Voici quelques caractéristiques notables de ce code :
 
 - Il part du principe qu’il existe une feuille de calcul nommée « Noms » et que les valeurs dans la plage « A1:A3 » sont des noms.
 - La propriété `source` indique la liste des valeurs valides. L’argument de chaîne fait référence à une plage de cellules contenant les noms. Vous pouvez également affecter une liste délimitée par des virgules ; par exemple : « Sue, Ricky, Florence ». 
@@ -136,7 +136,7 @@ Excel.run(function (context) {
 
 ### <a name="custom-validation-rule-type"></a>Type de règle de validation personnalisée
 
-Utilisez la propriété `custom` dans l’objet `DataValidationRule` pour spécifier une formule de validation personnalisée. Voici un exemple. Tenez compte des informations suivantes :
+Utilisez la propriété `custom` dans l’objet `DataValidationRule` pour spécifier une formule de validation personnalisée. Voici un exemple. Voici quelques caractéristiques notables de ce code :
 
 - Il part du principe qu’il existe un tableau de deux colonnes avec des colonnes **nom athlète** et **commentaires** dans les colonnes A et B de la feuille de calcul.
 - Pour réduire le niveau de détail dans la colonne**commentaires**, il rend les données qui incluent le nom de l’athlète invalides.

@@ -1,18 +1,18 @@
 ---
 title: Utilisation de plages à l’aide de l’API JavaScript pour Excel (fondamental)
-description: ''
+description: Exemples de code qui montrent comment effectuer des tâches courantes avec des plages à l’aide de l’API JavaScript pour Excel.
 ms.date: 04/30/2019
 localization_priority: Normal
-ms.openlocfilehash: cb77721649608cf18fc7bad99974cfe96f6be6f3
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 027f71b7927c4c8405c5c791e6f640315e46abf1
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688633"
+ms.locfileid: "42717144"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Utilisation de plages à l’aide de l’API JavaScript pour Excel
 
-Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes avec des plages à l’aide de l’API JavaScript pour Excel. Pour obtenir la liste complète des propriétés et des méthodes `Range` prises en charge par l’objet, reportez-vous à la rubrique [objet Range (interface API JavaScript pour Excel)](/javascript/api/excel/excel.range).
+Cet article fournit des exemples de code qui expliquent comment effectuer des tâches courantes avec des plages à l’aide de l’API JavaScript pour Excel. Pour obtenir la liste complète des propriétés et des méthodes `Range` prises en charge par l’objet, reportez-vous à la rubrique [objet Range (interface API JavaScript pour Excel)](/javascript/api/excel/excel.range).
 
 > [!NOTE]
 > Pour plus d’exemples de code qui montrent comment effectuer des tâches plus avancées avec des plages, consultez l’article [Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)](excel-add-ins-ranges-advanced.md).
@@ -57,7 +57,7 @@ Excel.run(function (context) {
 
 ### <a name="get-used-range"></a>Obtenir une plage utilisée
 
-L’exemple de code suivant obtient la plage utilisée à partir de **Sample**la feuille de calcul `address` nommée Sample, charge sa propriété et écrit un message dans la console. La plage utilisée est la plus petite plage qui englobe toutes les cellules de la feuille de calcul auxquelles une valeur ou une mise en forme est attribuée. Si la feuille de calcul entière est vide `getUsedRange()` , la méthode renvoie une plage qui se compose uniquement de la cellule supérieure gauche de la feuille de calcul.
+L’exemple de code suivant obtient la plage utilisée à partir de **Sample**la feuille de calcul `address` nommée Sample, charge sa propriété et écrit un message dans la console. La plage utilisée est la plus petite plage qui englobe toutes les cellules de la feuille de calcul auxquelles une valeur ou un format est affecté. Si la feuille de calcul entière est vide `getUsedRange()` , la méthode renvoie une plage qui se compose uniquement de la cellule supérieure gauche de la feuille de calcul.
 
 ```js
 Excel.run(function (context) {

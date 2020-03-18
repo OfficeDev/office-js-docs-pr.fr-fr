@@ -1,25 +1,25 @@
 ---
-ms.date: 11/04/2019
+ms.date: 03/11/2020
 description: 'Gérer et retourner des erreurs comme #NULL! à partir de votre fonction personnalisée'
 title: Gérer et retourner des erreurs à partir de votre fonction personnalisée (préversion)
 localization_priority: Normal
-ms.openlocfilehash: 19199a56d6699afd013c98c7b117b93528deb304
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 10bb7ca6ff612ef38b26b88fed5ce9ce81ed7edb
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950823"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717046"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function-preview"></a>Gérer et retourner des erreurs à partir de votre fonction personnalisée (préversion)
 
 > [!NOTE]
-> Les fonctionnalités décrites dans cet article sont actuellement en préversion et peuvent faire l’objet de modifications. Elles ne sont pas prises en charge dans les environnements de production pour l’instant. Vous devez être [Office Insider](https://insider.office.com/join) pour essayer les fonctionnalités en préversion.  Un bon moyen de tester les fonctionnalités en préversion consiste à utiliser un abonnement Office 365. Si vous n’avez pas d'abonnement Office 365, vous pouvez obtenir une version Office 365 gratuite et renouvelable de 90 jours en rejoignant le [Programme pour les développeurs Office 365](https://developer.microsoft.com/office/dev-program).
+> Les fonctionnalités décrites dans cet article sont actuellement en préversion et peuvent faire l’objet de modifications. Elles ne sont pas prises en charge dans les environnements de production pour l’instant. Vous devrez rejoindre le programme [Office Insider](https://insider.office.com/join) pour essayer les fonctionnalités d’aperçu.  Un bon moyen de tester les fonctionnalités en préversion consiste à utiliser un abonnement Office 365. Si vous n’avez pas d'abonnement Office 365, vous pouvez obtenir une version Office 365 gratuite et renouvelable de 90 jours en rejoignant le [Programme pour les développeurs Office 365](https://developer.microsoft.com/office/dev-program).
 
 Si un problème se produit alors que votre fonction personnalisée s'exécute, vous devez retourner une erreur pour informer l’utilisateur. Si vous avez des exigences spécifiques concernant les paramètres, comme des nombres positifs uniquement, vous devez tester les paramètres et générer une erreur s’ils ne sont pas corrects. Vous pouvez également utiliser un bloc `try`-`catch` pour détecter les erreurs qui se produisent pendant que votre fonction personnalisée s’exécute.
 
 ## <a name="detect-and-throw-an-error"></a>Détecter et générer une erreur
 
-Examinons un cas où vous devez vous assurer qu’un paramètre de code postal est dans le bon format pour que la fonction personnalisée marche. La fonction personnalisée suivante utilise une expression régulière pour vérifier le code postal. S’il est correct, elle recherche la ville (dans une autre fonction) et retourne la valeur. S’il n’est pas correct, elle retourne une erreur `#VALUE!` à la cellule.
+Examinons un cas où vous devez vous assurer qu’un paramètre de code postal est dans le format correct pour que la fonction personnalisée fonctionne. La fonction personnalisée suivante utilise une expression régulière pour vérifier le code postal. S’il est correct, elle recherche la ville (dans une autre fonction) et retourne la valeur. S’il n’est pas correct, elle retourne une erreur `#VALUE!` à la cellule.
 
 ```typescript
 /**
@@ -60,7 +60,7 @@ Lorsque vous retournez une erreur `#VALUE!`, vous pouvez aussi ajouter un messag
 
 ```typescript
 // You can only return a custom error message with the #VALUE! error
-let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidValue, “The parameter can only contain lowercase characters.”);
+let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidValue, "The parameter can only contain lowercase characters.");
 throw error;
 ```
 

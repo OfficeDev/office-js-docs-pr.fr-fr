@@ -1,24 +1,24 @@
 ---
 title: Authorization, élément dans le fichier manifeste
-description: ''
+description: Spécifie les ressources externes auxquelles l’application Web du complément doit disposer et les autorisations requises.
 ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: cc3b80e0e02eca9c197b82931a6f2011ba385d57
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: cece0934eb9db3175b173e97d7ab478827b7cda2
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477942"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718439"
 ---
 # <a name="authorization-element"></a>Authorization, élément
 
 Spécifie les ressources externes auxquelles l’application Web du complément doit disposer et les autorisations requises.
 
-**Authorization** est un élément enfant de [](authorizations.md) l’élément Authorizations dans le manifeste.
+**Authorization** est un élément enfant de l’élément [Authorizations](authorizations.md) dans le manifeste.
 
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Obligatoire  |  Description  |
+|  Élément |  Requis  |  Description  |
 |:-----|:-----|:-----|
 |  **Resource**  |  Oui   |  Spécifie l’URL de la ressource externe.|
 |  [Scopes](scopes.md)                |  Oui  |  Spécifie les autorisations dont le complément a besoin pour la ressource.  |

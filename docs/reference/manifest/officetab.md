@@ -1,14 +1,14 @@
 ---
 title: Élément OfficeTab dans le fichier manifest
-description: ''
+description: L’élément OfficeTab définit l’onglet du ruban où votre commande de complément s’affiche.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: b8458233ba93e98fe0bd8d51f5734b1fece65864
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 1d1810f3d3a206f72bf9544814a3fdaaa556476e
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324833"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720490"
 ---
 # <a name="officetab-element"></a>Élément OfficeTab
 
@@ -16,7 +16,7 @@ Définit l’onglet du ruban sur lequel votre commande de complément s’affich
 
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Obligatoire  |  Description  |
+|  Élément |  Requis  |  Description  |
 |:-----|:-----|:-----|
 |  Groupe      | Oui |  Définit un groupe de commandes. Vous ne pouvez ajouter qu’un seul groupe par complément à l’onglet par défaut.  |
 

@@ -1,14 +1,14 @@
 ---
 ms.date: 12/28/2019
-description: Découvrez les conditions requises pour les noms des fonctions personnalisées Excel et éviter les pièges de dénomination courants.
+description: Découvrez les conditions requises pour les noms de fonctions personnalisées Excel et éviter les pièges de dénomination courants.
 title: Instructions d’affectation de noms pour les fonctions personnalisées dans Excel
 localization_priority: Normal
-ms.openlocfilehash: 2dcd35a91f460fcd556dec479fb717942a987908
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 81ce0e1a1d510fd9558a3e57273903382326ad55
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324658"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719475"
 ---
 # <a name="naming-guidelines"></a>Instructions d’attribution de noms
 

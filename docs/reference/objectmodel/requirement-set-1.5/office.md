@@ -1,14 +1,14 @@
 ---
 title: Espace de noms Office-ensemble de conditions requises 1,5
-description: ''
+description: Modèle objet pour l’espace de noms de niveau supérieur de l’API des compléments Outlook (version 1,5 de l’API de boîte aux lettres).
 ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: 7cc8e6acc60c28b44ec7a2b91bb5e388b2618a31
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: ed65472de4acbe4f610e0355cc5de734938149ef
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688851"
+ms.locfileid: "42720021"
 ---
 # <a name="office"></a>Office
 

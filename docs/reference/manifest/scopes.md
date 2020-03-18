@@ -1,14 +1,14 @@
 ---
 title: Élément Scopes dans le fichier manifeste
-description: ''
+description: L’élément Scopes contient les autorisations dont le complément a besoin pour se connecter à une ressource externe.
 ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 1e36bdcd0cdcaa8c842e924c2543d56bdc4e26a7
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: 69a394b4cbe324b49c03425e6b2df92f44cbd21f
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477732"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717921"
 ---
 # <a name="scopes-element"></a>Élément Scopes
 
@@ -18,9 +18,9 @@ Contient les autorisations dont le complément a besoin pour une ressource exter
 
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Obligatoire  |  Description  |
+|  Élément |  Requis  |  Description  |
 |:-----|:-----|:-----|
-|  **Scope**                |  Oui     |   Nom d’une autorisation; par exemple, files. Read. All ou Profile. |
+|  **Scope**                |  Oui     |   Nom d’une autorisation ; par exemple, files. Read. All ou Profile. |
 
 ## <a name="example"></a>Exemple
 

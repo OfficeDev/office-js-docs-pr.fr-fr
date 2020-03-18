@@ -1,14 +1,14 @@
 ---
 title: Instructions de disposition pour les compléments Office
-description: ''
+description: Obtenir des instructions sur la mise en page d’un volet Office ou d’une boîte de dialogue dans un complément Office.
 ms.date: 06/27/2018
 localization_priority: Normal
-ms.openlocfilehash: 9570bf041cf1df70ab95af656decb3c458c0d480
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 38c98aeed1ddd1af5fcda95aa6d44ff1f1f2e53b
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32447167"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718509"
 ---
 # <a name="layout"></a>Disposition
 Chaque conteneur HTML incorporé dans Office aura une disposition. Ces dispositions sont les écrans principaux de votre complément. Dans ces dispositions, vous créerez des expériences qui permettent aux clients de lancer des actions, de modifier des paramètres, d’afficher, de faire défiler ou de parcourir du contenu. Concevez votre complément avec une disposition cohérente à travers les écrans afin de garantir la continuité de l’expérience. Si vous avez un site web existant que vos clients utilisent souvent, envisagez de réutiliser les dispositions de vos pages web existantes. Adaptez-les pour qu’elles s’intègrent harmonieusement dans des conteneurs HTML Office.

@@ -1,14 +1,14 @@
 ---
 title: Limites des ressources et optimisation des performances pour les compléments Office
-description: ''
+description: Découvrez les limites de ressources de la plateforme de complément Office, y compris le processeur et la mémoire.
 ms.date: 09/09/2019
 localization_priority: Normal
-ms.openlocfilehash: 5263abdafb6655325a22754ab22f36b99ca32cbe
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 2265042e9c6d94476953d3fb71d89a022897371d
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42323888"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718628"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites des ressources et optimisation des performances pour les compléments Office
 
@@ -26,7 +26,7 @@ Les limites d’utilisation des ressources d’exécution s’appliquent à tous
 
 - **Utilisation de la mémoire** - Seuil d’utilisation de mémoire par défaut, qui est déterminé de manière dynamique en fonction de la mémoire physique disponible de l’appareil.
 
-   Par défaut, lorsqu’un client riche hôte détecte que l’utilisation de la mémoire physique sur un appareil dépasse 80% de la mémoire disponible, le client démarre la surveillance de l’utilisation de la mémoire du complément, au niveau du document pour les compléments de contenu et du volet Office, et au niveau des boîtes aux lettres pour les compléments Outlook. À un intervalle de 5 secondes par défaut, le client avertit l’utilisateur si l’utilisation de la mémoire physique pour un ensemble de compléments au niveau du document ou de la boîte aux lettres dépasse 50%. Cette limite d’utilisation de la mémoire utilise des mémoires physiques plutôt que des mémoires virtuelles pour garantir des performances sur les appareils avec une RAM limitée, comme les tablettes. Les administrateurs peuvent remplacer ce paramètre dynamique par une limite explicite à l’aide de la clé de Registre Windows **MemoryAlertThreshold** en tant que paramètre global, IR régler l’intervalle d’alerte en utilisant la clé **AlertInterval** comme paramètre global.
+   Par défaut, lorsqu’un client riche hôte détecte que l’utilisation de la mémoire physique sur un appareil dépasse 80% de la mémoire disponible, le client commence à surveiller l’utilisation de la mémoire du complément, au niveau du document pour les compléments de contenu et du volet Office, et au niveau de boîte aux lettres pour Outlook compléments. À un intervalle de 5 secondes par défaut, le client avertit l’utilisateur si l’utilisation de la mémoire physique pour un ensemble de compléments au niveau du document ou de la boîte aux lettres dépasse 50%. Cette limite d’utilisation de la mémoire est basée sur la mémoire physique plutôt que sur la mémoire virtuelle afin de garantir de bonnes performances sur les appareils disposant d’une mémoire vive (RAM) limitée, par exemple les tablettes. Les administrateurs peuvent remplacer ce paramètre dynamique par une limite explicite à l’aide de la clé de Registre Windows **MemoryAlertThreshold** en tant que paramètre global, IR régler l’intervalle d’alerte en utilisant la clé **AlertInterval** comme paramètre global.
 
 - **Tolérance d’incident** - Limite par défaut de 4 incidents pour un complément.
 
@@ -70,21 +70,21 @@ Le journal de télémétrie comprend pour chaque événement suivi pour un compl
 
 |**Date/Heure**|**ID d’évènement**|**Gravité**|**Titre**|**Fichier**|**ID**|**Application**|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|08/10/2012 17:57:10|7||Le manifeste du complément a été correctement téléchargé|Who’s Who|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
-|08/10/2012 17:57:01|7||Le manifeste du complément a été correctement téléchargé|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
+|08/10/2012 17:57:10|7 ||Le manifeste du complément a été correctement téléchargé|Who’s Who|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
+|08/10/2012 17:57:01|7 ||Le manifeste du complément a été correctement téléchargé|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
 
 Le tableau suivant répertorie les événements que le journal de télémétrie suit pour les Compléments Office en général.
 
 |**ID d’évènement**|**Titre**|**Gravité**|**Description**|
 |:-----|:-----|:-----|:-----|
-|7|Le manifeste du complément a été correctement téléchargé||Le manifeste de l’Complément Office a été chargé et lu correctement par l’application hôte.|
-|8|Échec du téléchargement du manifeste du complément|Critique|L’application hôte n’a pas pu charger le fichier manifeste pour le complément Office à partir du catalogue SharePoint, du catalogue d’entreprise ou d’AppSource.|
-|9|Impossible d’analyser le balisage du complément|Critique|L’application hôte a chargé le manifeste de l’Complément Office, mais n’a pas pu lire le balisage HTML de l’application.|
-|10|Le complément a trop sollicité le processeur|Critique|L’Complément Office a utilisé plus de 90 % des ressources du processeur sur une période de temps définie.|
-|15|Le complément a été désactivé en raison de l’expiration de la recherche de chaîne||§LTA Les compléments Outlook recherchent la ligne d’objet et le corps du message d’un courrier électronique pour déterminer s’ils doivent être affichés avec une expression régulière. Le complément Outlook répertorié dans la colonne **Fichier** a été désactivé par Outlook, car il a expiré à plusieurs reprises lors d’une tentative de mise en correspondance d’une expression régulière.|
-|18|Le complément a été fermé||L’application hôte a pu fermer l’Complément Office sans problème.|
-|19|Le complément a rencontré une erreur d’exécution|Critique|Le complément Office a rencontré un problème à l’origine de l’échec. Pour plus d’informations, consultez le journal **Microsoft Office Alerts** à l’aide de l’observateur d’événements Windows sur l’ordinateur qui a rencontré l’erreur.|
-|20|Le complément n’a pas pu vérifier la licence|Critique|Les informations de licence pour le complément Office n’ont pas pu être vérifiées et peuvent avoir expiré. Pour plus d’informations, consultez le journal **Microsoft Office Alerts** à l’aide de l’observateur d’événements Windows sur l’ordinateur qui a rencontré l’erreur.|
+|7 |Le manifeste du complément a été correctement téléchargé||Le manifeste de l’Complément Office a été chargé et lu correctement par l’application hôte.|
+|8 |Échec du téléchargement du manifeste du complément|Critique|L’application hôte n’a pas pu charger le fichier manifeste pour le complément Office à partir du catalogue SharePoint, du catalogue d’entreprise ou d’AppSource.|
+|9 |Impossible d’analyser le balisage du complément|Critique|L’application hôte a chargé le manifeste de l’Complément Office, mais n’a pas pu lire le balisage HTML de l’application.|
+|10 |Le complément a trop sollicité le processeur|Critique|L’Complément Office a utilisé plus de 90 % des ressources du processeur sur une période de temps définie.|
+|15 |Le complément a été désactivé en raison de l’expiration de la recherche de chaîne||§LTA Les compléments Outlook recherchent la ligne d’objet et le corps du message d’un courrier électronique pour déterminer s’ils doivent être affichés avec une expression régulière. Le complément Outlook répertorié dans la colonne **Fichier** a été désactivé par Outlook, car il a expiré à plusieurs reprises lors d’une tentative de mise en correspondance d’une expression régulière.|
+|18 |Le complément a été fermé||L’application hôte a pu fermer l’Complément Office sans problème.|
+|neuf|Le complément a rencontré une erreur d’exécution|Critique|L'Complément Office a rencontré un problème qui l'a empêchée de s'exécuter. Pour plus de détails, consultez le journal **Alertes Microsoft Office** à l’aide de l’Observateur d’événements Windows sur l’ordinateur sur lequel l’erreur s’est produite.|
+|vingtaine|Le complément n’a pas pu vérifier la licence|Critique|Les informations de licence de l'Complément Office n'ont pas pu être vérifiées et la licence a peut-être expiré. Pour plus de détails, consultez le journal **Alertes Microsoft Office** à l’aide de l’Observateur d’événements Windows sur l’ordinateur sur lequel l’erreur s’est produite.|
 
 Pour plus d’informations, consultez [Déployer le Tableau de bord de télémétrie](/previous-versions/office/office-2013-resource-kit/jj219431(v=office.15)) et [Dépannage des fichiers et des solutions personnalisées d’Office avec le journal de télémétrie](/office/client-developer/shared/troubleshooting-office-files-and-custom-solutions-with-the-telemetry-log)
 

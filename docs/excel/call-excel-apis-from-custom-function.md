@@ -3,12 +3,12 @@ title: Appeler des API Microsoft Excel à partir d’une fonction personnalisée
 description: Découvrez les API Microsoft Excel que vous pouvez appeler à partir de votre fonction personnalisée.
 ms.date: 02/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 2f24f8fc27db65466cb586307d7f4bc8f8eefe20
-ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
+ms.openlocfilehash: e22ed897e95a74707bd0d8bded3f8dca724731d1
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "42284143"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719342"
 ---
 # <a name="call-microsoft-excel-apis-from-a-custom-function"></a>Appeler des API Microsoft Excel à partir d’une fonction personnalisée
 

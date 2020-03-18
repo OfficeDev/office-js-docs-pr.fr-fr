@@ -1,14 +1,14 @@
 ---
 title: Élément AllFormFactors dans le fichier manifeste
-description: ''
+description: Spécifie les paramètres d’un complément pour tous les facteurs de forme.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 8059501f88f966b285398ac7cf243e6b0e4e44ea
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: f1285f92b5eb89993e7fcfe79aab2325b86aca3d
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450736"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720714"
 ---
 # <a name="allformfactors-element"></a>AllFormFactors, élément
 
@@ -16,7 +16,7 @@ Spécifie les paramètres d’un complément pour tous les facteurs de forme. Ac
 
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Obligatoire  |  Description  |
+|  Élément |  Requis  |  Description  |
 |:-----|:-----|:-----|
 |  [ExtensionPoint](extensionpoint.md) |  Oui |  Définit l’emplacement où se trouvent les fonctionnalités d’un complément |
 

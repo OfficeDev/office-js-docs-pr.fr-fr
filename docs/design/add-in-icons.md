@@ -1,14 +1,14 @@
 ---
 title: Instructions concernant les îcones pour les compléments Office
-description: ''
+description: Obtenez une vue d’ensemble de la conception des icônes et des styles de conception frais et monolignes pour les commandes de complément.
 ms.date: 12/09/2019
 localization_priority: Normal
-ms.openlocfilehash: d4afaf0e131bd28778198c0a9eb5c2126c4dda0e
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: ce474ef20493e738fca7072d5b6a3bcd28594fbb
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814018"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718503"
 ---
 # <a name="icons"></a>Icônes
 
@@ -20,7 +20,7 @@ De nombreux conteneurs HTML contiennent des contrôles avec iconographie. Utilis
 
 ## <a name="design-icons-for-add-in-commands"></a>Concevoir des icônes pour les commandes de complément
 
-Les [commandes de complément](add-in-commands.md) ajoutent des boutons, du texte et des icônes à l’interface utilisateur Office. Les boutons de commande de votre complément doivent fournir des icônes significatives et des étiquettes qui identifient clairement l’action effectuée par l’utilisateur lorsqu’il utilise une commande. Les articles suivants fournissent des directives stylistiques et de production pour vous aider à concevoir des icônes qui s’intègrent en toute transparence avec Office.
+[Commandes de complément](add-in-commands.md) Ajoutez des boutons, du texte et des icônes à l’interface utilisateur Office. Vos boutons de commande de complément doivent fournir des icônes significatives et des étiquettes qui identifient clairement l’action que l’utilisateur effectue lorsqu’il utilise une commande. Les articles suivants fournissent des directives stylistiques et de production pour vous aider à concevoir des icônes qui s’intègrent en toute transparence avec Office.
 
 - Pour le style monoligne d’Office 365, reportez-vous à la rubrique [règles d’icône de style monoligne pour les compléments Office](add-in-icons-monoline.md).
 - Pour le nouveau style de non-abonnement Office 2013 +, voir [règles d’icône de style frais pour les compléments Office](add-in-icons-fresh.md).

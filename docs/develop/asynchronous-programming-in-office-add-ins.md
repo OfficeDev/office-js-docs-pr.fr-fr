@@ -1,22 +1,22 @@
 ---
 title: Programmation asynchrone dans des compléments Office
-description: ''
+description: Découvrez comment la bibliothèque JavaScript Office utilise la programmation asynchrone dans les compléments Office.
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 931ef17115885c8f96d41bf00143b3269a515d56
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 04486ec0155daeed18768297ded7aa395ccc0ad9
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596689"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719188"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Programmation asynchrone dans des compléments Office
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
-Pourquoi l’API compléments Office utilise-t-elle la programmation asynchrone ? Étant donné que JavaScript est un langage à thread unique, si le script appelle un processus synchrone long, toutes les exécutions de script suivantes seront bloquées jusqu’à ce que ce processus se termine. Étant donné que certaines opérations sur les clients Web Office (mais aussi les clients enrichis) peuvent bloquer l’exécution si elles sont exécutées de manière synchrone, la plupart des API JavaScript d’Office sont conçues pour s’exécuter de manière asynchrone. Cela permet de s’assurer que les compléments Office sont réactifs et rapides. Il est également souvent nécessaire d’écrire des fonctions de rappel lorsque vous utilisez ces méthodes asynchrones.
+Pourquoi l’API de Compléments Office a-t-elle recours à la programmation asynchrone ? JavaScript étant un langage monothread, si le script appelle un processus synchrone de longue durée, toute exécution de script ultérieure sera bloquée tant que ce processus ne sera pas terminé. Étant donné que certaines opérations sur les clients Web Office (mais aussi les clients enrichis) peuvent bloquer l’exécution si elles sont exécutées de manière synchrone, la plupart des API JavaScript d’Office sont conçues pour s’exécuter de manière asynchrone. Cela permet de s’assurer que les compléments Office sont réactifs et rapides. Vous devez donc fréquemment écrire des fonctions de rappel lorsque vous utilisez ces méthodes asynchrones.
 
-Les noms de toutes les méthodes asynchrones de l’API se terminent par « Async » `Document.getSelectedDataAsync`, `Binding.getDataAsync`comme les `Item.loadCustomPropertiesAsync` méthodes, ou. Lorsqu’une méthode « Async » est appelée, elle s’exécute immédiatement et toute exécution ultérieure du script peut se poursuivre. La fonction de rappel facultative que vous transmettez à une méthode « Async » s’exécute dès que les données ou l’opération demandée est prête. Cela se produit généralement rapidement, mais il peut y avoir un léger retard avant qu’il ne soit renvoyé.
+Les noms de toutes les méthodes asynchrones de l’API se terminent par « Async » `Document.getSelectedDataAsync`, `Binding.getDataAsync`comme les `Item.loadCustomPropertiesAsync` méthodes, ou. Lorsqu’une méthode « Async » est appelée, elle est exécutée immédiatement et toute exécution de script ultérieure peut se poursuivre normalement. La fonction de rappel facultative que vous transmettez à une méthode « Async » s’exécute dès que l’opération demandée ou les données sont prêtes. L’opération est généralement rapide, mais le retour pourrait présenter un léger retard.
 
 Le diagramme suivant présente le flux d’exécution d’un appel à une méthode « Async » qui lit les données sélectionnées par l’utilisateur dans un document ouvert dans l’instance Word ou Excel sur le serveur. Au moment où l’appel « Async » est effectué, le thread d’exécution JavaScript est libre d’effectuer tout traitement côté client supplémentaire (même si aucun n’est affiché dans le diagramme). Lors du retour de la méthode « Async », l’appel reprend l’exécution sur le thread et le complément peut accéder aux données, les exploiter et afficher le résultat. Le même motif d’exécution asynchrone est employé en cas d’utilisation des applications hôtes de client riche Office, telles que Word 2013 ou Excel 2013.
 
@@ -29,7 +29,7 @@ La prise en charge de cette conception asynchrone dans les clients riches et les
 ## <a name="writing-the-callback-function-for-an-async-method"></a>Écriture de la fonction de rappel pour une méthode « Async »
 
 
-La fonction de rappel transmise en tant qu’argument de _rappel_ à une méthode « Async » doit déclarer un paramètre unique que le runtime de complément utilisera pour fournir l’accès à un objet [asyncResult](/javascript/api/office/office.asyncresult) lors de l’exécution de la fonction de rappel. Vous pouvez écrire :
+La fonction de rappel transmise en tant qu’argument de _rappel_ à une méthode « Async » doit déclarer un paramètre unique que le runtime de complément utilisera pour fournir l’accès à un objet [asyncResult](/javascript/api/office/office.asyncresult) lors de l’exécution de la fonction de rappel. Vous pouvez écrire:
 
 
 - Une fonction anonyme qui doit être écrite et passée directement en ligne avec l’appel à la méthode « Async » en tant que paramètre _callback_ de la méthode « Async ».
@@ -71,14 +71,14 @@ function write(message){
 }
 ```
 
-Vous pouvez également utiliser le paramètre de votre fonction de rappel pour accéder à d’autres `AsyncResult` propriétés de l’objet. Utilisez la propriété [asyncResult. Status](/javascript/api/office/office.asyncresult#status) pour déterminer si l’appel a réussi ou échoué. Si votre appel échoue, vous pouvez utiliser la propriété [asyncResult. Error](/javascript/api/office/office.asyncresult#error) pour accéder à un objet [Error](/javascript/api/office/office.error) pour obtenir des informations sur l’erreur.
+Vous pouvez également utiliser le paramètre de votre fonction de rappel pour accéder à d’autres `AsyncResult` propriétés de l’objet. Utilisez la propriété [AsyncResult.status](/javascript/api/office/office.asyncresult#status) pour déterminer si l’appel a réussi ou échoué. En cas d’échec, vous pouvez utiliser la propriété [AsyncResult.error](/javascript/api/office/office.asyncresult#error) pour accéder à un objet [Error](/javascript/api/office/office.error) et obtenir des informations sur l’erreur.
 
 Pour plus d’informations sur l' `getSelectedDataAsync` utilisation de la méthode, voir [lecture et écriture de données dans la sélection active d’un document ou d’une feuille de calcul](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md). 
 
 
 ### <a name="writing-a-named-callback-function"></a>Écriture d’une fonction de rappel nommée
 
-Vous pouvez également écrire une fonction nommée et transmettre son nom au paramètre _callback_ d’une méthode « Async ». Par exemple, l’exemple précédent peut être réécrit pour transmettre une fonction nommée `writeDataCallback` comme paramètre de _rappel_ comme suit.
+Vous pouvez également écrire une fonction nommée et transmettre son nom au paramètre _callback_ d’une méthode « Async ». Par exemple, l’exemple précédent peut être réécrit pour passer une fonction nommée `writeDataCallback` en tant que paramètre _callback_ comme suit.
 
 
 ```js
@@ -121,7 +121,7 @@ L’API JavaScript pour Office prend en charge deux types de modèles de program
     
 La programmation asynchrone à l’aide des fonctions de rappel nécessite que vous imbriquiez fréquemment le résultat retourné d’un rappel au sein d’au moins deux rappels. Pour ce faire, vous pouvez utiliser les rappels imbriqués de toutes les méthodes « Async » de l’API.
 
-L’utilisation de rappels imbriqués est un modèle de programmation familier à la plupart des développeurs JavaScript, mais le code avec des rappels profondément imbriqués peut être difficile à lire et à comprendre. En guise d’alternative aux rappels imbriqués, l’API JavaScript Office prend également en charge une implémentation du modèle de promesses. Toutefois, dans la version actuelle de l’API JavaScript pour Office, le modèle de promesses fonctionne uniquement avec le code pour les [liaisons dans les feuilles de calcul Excel et les documents Word](bind-to-regions-in-a-document-or-spreadsheet.md).
+L’utilisation des rappels imbriqués est un modèle de programmation familier pour la plupart des développeurs JavaScript, mais le code contenant des rappels fortement imbriqués peut être difficile à lire et à comprendre. En guise d’alternative aux rappels imbriqués, l’API JavaScript Office prend également en charge une implémentation du modèle de promesses. Toutefois, dans la version actuelle de l’API JavaScript pour Office, le modèle de promesses fonctionne uniquement avec le code pour les [liaisons dans les feuilles de calcul Excel et les documents Word](bind-to-regions-in-a-document-or-spreadsheet.md).
 
 <a name="AsyncProgramming_NestedCallbacks" />
 ### <a name="asynchronous-programming-using-nested-callback-functions"></a>Programmation asynchrone utilisant des fonctions de rappel imbriquées
@@ -132,7 +132,7 @@ Vous devez fréquemment effectuer au moins deux opérations asynchrones pour ré
 L’exemple de code suivant imbrique deux appels asynchrones.
 
 
-- Tout d’abord, la méthode [bindings. getByIdAsync](/javascript/api/office/office.bindings#getbyidasync-id--options--callback-) est appelée pour accéder à une liaison dans le document nommé « myBinding ». L' `AsyncResult` objet renvoyé au `result` paramètre de ce rappel permet d’accéder à l’objet Binding spécifié à partir `AsyncResult.value` de la propriété.
+- D’abord, la méthode [Bindings.getByIdAsync](/javascript/api/office/office.bindings#getbyidasync-id--options--callback-) est appelée pour accéder à une liaison dans le document nommé « MyBinding ». L' `AsyncResult` objet renvoyé au `result` paramètre de ce rappel permet d’accéder à l’objet Binding spécifié à partir `AsyncResult.value` de la propriété.
 
 - Ensuite, l’objet Binding auquel vous avez accédé `result` à partir du premier paramètre est utilisé pour appeler la méthode [Binding. getDataAsync](/javascript/api/office/office.binding#getdataasync-options--callback-) .
 
@@ -161,7 +161,7 @@ Les sections suivantes montrent comment utiliser des fonctions anonymes ou nomm�
 
 #### <a name="using-anonymous-functions-for-nested-callbacks"></a>Utilisation des fonctions anonymes pour des rappels imbriqués
 
-Dans l’exemple suivant, deux fonctions anonymes sont déclarées inline et transmises `getByIdAsync` aux `getDataAsync` méthodes et en tant que rappels imbriqués. Étant donné que les fonctions sont simples et incorporées, l’objectif de l’implémentation est immédiatement clairement défini.
+Dans l’exemple suivant, deux fonctions anonymes sont déclarées inline et transmises `getByIdAsync` aux `getDataAsync` méthodes et en tant que rappels imbriqués. Comme les fonctions sont très simples, l’objet de l’implémentation est évident.
 
 
 ```js
@@ -184,7 +184,7 @@ function write(message){
 
 #### <a name="using-named-functions-for-nested-callbacks"></a>Utilisation de fonctions nommées pour des rappels imbriqués
 
-Dans les implémentations complexes, il peut être utile d’utiliser des fonctions nommées pour faciliter la lecture, la maintenance et la réutilisation de votre code. Dans l’exemple suivant, les deux fonctions anonymes de l’exemple de la section précédente ont été réécrites sous `deleteAllData` la `showResult`forme de fonctions nommées et. Ces fonctions nommées sont ensuite transmises aux `getByIdAsync` méthodes `deleteAllDataValuesAsync` et sous forme de rappels par nom.
+Dans des implémentations complexes, il peut être utile d’utiliser des fonctions nommées pour garantir une meilleure lisibilité, simplicité de gestion et possibilité de réutilisation du code. Dans l’exemple suivant, les deux fonctions anonymes de l’exemple de la section précédente ont été réécrites sous `deleteAllData` la `showResult`forme de fonctions nommées et. Ces fonctions nommées sont ensuite transmises aux `getByIdAsync` méthodes `deleteAllDataValuesAsync` et sous forme de rappels par nom.
 
 
 ```js
@@ -224,7 +224,7 @@ Le modèle des promesses à utiliser avec les liaisons se présente comme suit 
 
 Le paramètre _selectorExpression_ prend la forme `"bindings#bindingId"`, où _bindingId_ est le nom ( `id`) d’une liaison que vous avez créée précédemment dans le document ou la feuille de calcul (à l’aide de l’une `Bindings` des méthodes `addFromNamedItemAsync`« `addFromPromptAsync`addFrom » `addFromSelectionAsync`de la collection :,, ou). Par exemple, l’expression `bindings#cities` de sélecteur spécifie que vous souhaitez accéder à la liaison avec l' **ID** « villes ».
 
-Le paramètre _OnError_ est une fonction de gestion des erreurs qui accepte un seul paramètre `AsyncResult` de type qui peut être utilisé pour `Error` accéder à un objet `select` , si la méthode ne parvient pas à accéder à la liaison spécifiée. L’exemple suivant montre une fonction de gestionnaire d’erreurs de base qui peut être transmise au paramètre _OnError_ .
+Le paramètre _OnError_ est une fonction de gestion des erreurs qui accepte un seul paramètre `AsyncResult` de type qui peut être utilisé pour `Error` accéder à un objet `select` , si la méthode ne parvient pas à accéder à la liaison spécifiée. L’exemple suivant montre une fonction de gestion des erreurs de base pouvant être passée au paramètre _onError_.
 
 
 
@@ -240,7 +240,7 @@ function write(message){
 }
 ```
 
-Remplacez l’espace réservé _BindingObjectAsyncMethod_ par un appel à l’une des `Binding` quatre méthodes d’objet prises en charge par `getDataAsync`l' `setDataAsync`objet `addHandlerAsync`promise `removeHandlerAsync`:,, ou. Les appels à ces méthodes ne prennent pas en charge les promesses supplémentaires. Vous devez les appeler à l’aide du [modèle de fonction de rappel imbriqué](#AsyncProgramming_NestedCallbacks).
+Remplacez l’espace réservé _BindingObjectAsyncMethod_ par un appel à l’une des `Binding` quatre méthodes d’objet prises en charge par `getDataAsync`l' `setDataAsync`objet `addHandlerAsync`promise `removeHandlerAsync`:,, ou. Les appels à ces méthodes ne prennent pas en charge les promesses supplémentaires. Vous devez les appeler à l’aide du [modèle de fonction de rappel imbriquée](#AsyncProgramming_NestedCallbacks).
 
 Une fois `Binding` qu’une promesse d’objet est satisfaite, elle peut être réutilisée dans l’appel de la méthode chaînée comme s’il s’agissait d’une liaison (le runtime du complément ne réessaie pas de manière asynchrone de répondre à la promesse). Si la `Binding` promesse de l’objet ne peut pas être satisfaite, le runtime du complément réessaiera d’accéder à l’objet Binding lors de la prochaine appel de l’une de ses méthodes asynchrones.
 
@@ -393,7 +393,7 @@ function write(message){
 ```
 
 
-Dans les deux exemples de paramètres facultatifs, le paramètre _callback_ est spécifié en tant que dernier paramètre (en suivant les paramètres facultatifs Inline, ou en suivant l’objet d’arguments _options_ ). Vous pouvez également spécifier le paramètre _callback_ à l’intérieur de l’objet JSON en ligne ou dans l' `options` objet. Toutefois, vous pouvez transmettre le paramètre _callback_ dans un seul emplacement : dans l’objet _options_ (incorporé ou créé de manière externe) ou en tant que dernier paramètre, mais pas les deux.
+Dans les deux exemples de paramètres facultatifs, le paramètre _callback_ est spécifié en tant que dernier paramètre (en suivant les paramètres facultatifs Inline, ou en suivant l’objet d’arguments _options_ ). Vous pouvez également spécifier le paramètre _callback_ à l’intérieur de l’objet JSON incorporé, ou dans l’objet `options`. Cependant, vous ne pouvez passer le paramètre _callback_ qu’à un seul endroit : soit dans l’objet _options_ (incorporé ou créé en externe), soit comme dernier paramètre, mais pas les deux.
 
 
 ## <a name="see-also"></a>Voir aussi

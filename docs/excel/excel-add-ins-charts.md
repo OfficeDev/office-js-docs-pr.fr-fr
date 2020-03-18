@@ -1,18 +1,19 @@
 ---
 title: Utiliser des graphiques à l’aide de l’API JavaScript pour Excel
-description: ''
+description: Exemples de code illustrant les tâches de graphique à l’aide de l’API JavaScript pour Excel.
 ms.date: 07/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 2b55fee9689af03e9dbfbdb7133d2482f7ca6852
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 5dd6c2752c0ab6470c58049aa80ff4f6ebcff76a
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42323853"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719580"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Utiliser des graphiques à l’aide de l’API JavaScript pour Excel
 
-Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes avec des graphiques à l’aide de l’API JavaScript pour Excel. Pour obtenir la liste complète des propriétés et des méthodes `Chart` prises `ChartCollection` en charge par les objets et, voir [Chart (interface API JavaScript pour Excel)](/javascript/api/excel/excel.chart) et [Chart collection, objet (interface API JavaScript pour Excel)](/javascript/api/excel/excel.chartcollection).
+Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes à l’aide de graphiques utilisant l’API JavaScript pour Excel.
+Pour obtenir la liste complète des propriétés et des méthodes `Chart` prises `ChartCollection` en charge par les objets et, voir [Chart (interface API JavaScript pour Excel)](/javascript/api/excel/excel.chart) et [Chart collection, objet (interface API JavaScript pour Excel)](/javascript/api/excel/excel.chartcollection).
 
 ## <a name="create-a-chart"></a>Création d’un graphique
 
@@ -210,9 +211,9 @@ getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode):
 
 Ces paramètres déterminent la taille de l’image. Les images sont toujours mises à l’échelle proportionnellement. Les paramètres de largeur et de hauteur appliquent des limites supérieures ou inférieures à l’image mise à l’échelle. `ImageFittingMode` contient trois valeurs avec les comportements suivants :
 
-- `Fill` : la hauteur ou la largeur minimale de l’image est la hauteur ou la largeur spécifiée (dès que l’une ou l’autre est atteinte lorsque l’image est mise à l’échelle). Il s’agit du comportement par défaut lorsqu’aucun mode d’ajustement n’est spécifié.
-- `Fit` : la hauteur ou la largeur maximale de l’image est la hauteur ou la largeur spécifiée (dès que l’une ou l’autre est atteinte lorsque l’image est mise à l’échelle).
-- `FitAndCenter` : la hauteur ou la largeur maximale de l’image est la hauteur ou la largeur spécifiée (dès que l’une ou l’autre est atteinte lorsque l’image est mise à l’échelle). L’image générée est centrée par rapport à l’autre dimension.
+- `Fill`: La hauteur ou la largeur minimale de l’image est la hauteur ou la largeur spécifiée (selon la valeur atteinte en premier lors de la mise à l’échelle de l’image). Il s’agit du comportement par défaut lorsqu’aucun mode d’ajustement n’est spécifié.
+- `Fit`: La hauteur ou la largeur maximale de l’image est la hauteur ou la largeur spécifiée (selon la valeur atteinte en premier lors de la mise à l’échelle de l’image).
+- `FitAndCenter`: La hauteur ou la largeur maximale de l’image est la hauteur ou la largeur spécifiée (selon la valeur atteinte en premier lors de la mise à l’échelle de l’image). L’image générée est centrée par rapport à l’autre dimension.
 
 ## <a name="see-also"></a>Voir aussi
 

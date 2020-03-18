@@ -1,14 +1,14 @@
 ---
 title: Obtenir JavaScript IntelliSense dans Visual Studio 2019
-description: ''
+description: Découvrez comment utiliser JSDoc pour créer IntelliSense pour vos variables, objets, paramètres et valeurs de retour JavaScript.
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: a099d43cc798bb96078825930450dcad954c7418
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 88453151ffced0efcae8569ceb19c4556177fdea
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950676"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718985"
 ---
 # <a name="get-javascript-intellisense-in-visual-studio-2019"></a>Obtenir JavaScript IntelliSense dans Visual Studio 2019
 

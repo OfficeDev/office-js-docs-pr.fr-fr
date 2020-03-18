@@ -1,14 +1,14 @@
 ---
 title: Élément WebApplicationInfo dans le fichier manifeste
-description: ''
+description: Documentation de référence de l’élément VersionOverrides pour les fichiers manifeste des compléments Office (XML).
 ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: b6cf82776f683929845df83c642b28ad024d665a
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 6acd0d5688bdd93d4054d0589afe5517afb1296f
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596731"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720294"
 ---
 # <a name="webapplicationinfo-element"></a>Élément WebApplicationInfo
 

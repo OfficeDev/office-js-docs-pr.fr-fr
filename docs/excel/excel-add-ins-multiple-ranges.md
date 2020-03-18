@@ -1,14 +1,14 @@
 ---
 title: Travailler simultanément avec plusieurs plages dans des compléments Excel
-description: ''
+description: Découvrez comment la bibliothèque JavaScript d’Excel permet à votre complément d’effectuer des opérations et de définir des propriétés sur plusieurs plages simultanément.
 ms.date: 04/30/2019
 localization_priority: Normal
-ms.openlocfilehash: a327b6c379884107f5e00c0663ecfa6c71b8097f
-ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
+ms.openlocfilehash: 97481b4b8ab76f7bbc5bd10378d4cc6512bc7b6a
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "33620044"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717067"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins"></a>Travailler simultanément avec plusieurs plages dans des compléments Excel
 

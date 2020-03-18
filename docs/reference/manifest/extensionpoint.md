@@ -1,14 +1,14 @@
 ---
 title: Élément Extension dans le fichier manifeste
-description: ''
+description: Définit l’emplacement où se trouvent les fonctionnalités d’un complément dans l’interface utilisateur Office.
 ms.date: 09/05/2019
 localization_priority: Normal
-ms.openlocfilehash: 44075bd12c15b4ac9117a51d71fdcc7d6436a7ce
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: c945875140fdbdb7ba6aaeed7bb0a7bf5d06e050
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688911"
+ms.locfileid: "42720567"
 ---
 # <a name="extensionpoint-element"></a>Élément ExtensionPoint
 
@@ -74,7 +74,7 @@ Les exemples suivants montrent comment utiliser l’élément **ExtensionPoint**
 |**Élément**|**Description**|
 |:-----|:-----|
 |**CustomTab**|Obligatoire si vous souhaitez ajouter un onglet personnalisé au ruban (à l’aide de **PrimaryCommandSurface**). Si vous utilisez l’élément **CustomTab**, vous ne pouvez pas utiliser l’élément **OfficeTab**. L’attribut **id** est obligatoire. |
-|**OfficeTab**|Obligatoire si vous voulez étendre un onglet de ruban Office par défaut (à l’aide de **PrimaryCommandSurface**). Si vous utilisez l’élément **OfficeTab** , vous ne pouvez pas utiliser l’élément **CustomTab** . Pour plus d’informations, consultez la rubrique [OfficeTab](officetab.md).|
+|**OfficeTab**|Obligatoire pour étendre un onglet du ruban Office par défaut (en utilisant **PrimaryCommandSurface**). Si vous utilisez l’élément **OfficeTab**, vous ne pouvez pas utiliser l’élément **CustomTab**. Pour plus d’informations, voir [OfficeTab](officetab.md).|
 |**OfficeMenu**|Obligatoire pour ajouter des commandes de complément à un menu contextuel par défaut (en utilisant **ContextMenu**). L’attribut **id** doit être défini sur : <br/> - **ContextMenuText** pour Excel ou Word. Affiche l’élément dans le menu contextuel lorsque du texte est sélectionné et que l’utilisateur clique dessus avec le bouton droit de la souris. <br/> - **ContextMenuCell** pour Excel. Affiche l’élément dans le menu contextuel lorsque l’utilisateur clique avec le bouton droit de la souris dans une cellule de la feuille de calcul.|
 |**Group**|Groupe de points d’extension de l’interface utilisateur sur un onglet. Un groupe peut contenir jusqu’à six contrôles. L’attribut **id** est obligatoire. Il s’agit d’une chaîne avec un maximum de 125 caractères. |
 |**Label**|Obligatoire. L’étiquette du groupe. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Chaîne**. **Chaîne** est un enfant de l’élément **ShortStrings**, qui est lui-même un enfant de l’élément **Ressources**. |
@@ -282,7 +282,7 @@ Pour les éléments [VersionOverrides](versionoverrides.md) la contenant, `xsi:t
 
 #### <a name="label"></a>Étiquette
 
-Obligatoire. Étiquette du groupe. L’attribut **RESID** doit être défini sur la valeur de l' **attribut ID** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md) .
+Obligatoire. Libellé du groupe. L’attribut **RESID** doit être défini sur la valeur de l' **attribut ID** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md) .
 
 #### <a name="highlight-requirements"></a>Exigences relatives à la mise en surbrillance
 

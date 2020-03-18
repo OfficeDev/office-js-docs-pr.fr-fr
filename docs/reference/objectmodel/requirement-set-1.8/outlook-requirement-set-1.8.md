@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook 1.8
-description: ''
+description: Ensemble de conditions requises 1,8 pour l’API de complément Outlook
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 47ab498f1904046743dd0539c117441dcea8cb93
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: ca107a13080e8b25ed76bcae4bf4afe1bec9938f
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324763"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719993"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Ensemble de conditions requises de l’API du complément Outlook 1.8
 

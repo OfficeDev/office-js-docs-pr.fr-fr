@@ -1,14 +1,14 @@
 ---
 title: Ouvrir automatiquement un volet Office avec un document
-description: ''
+description: Découvrez comment configurer un complément Office pour qu’il s’ouvre automatiquement lors de l’ouverture d’un document.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: c7b14259aa0bfc9f1f7a395bedc46e598eb66607
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: eaa05bdbac600f9e12f4c8583b8bd5b6abe0b89f
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596479"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719167"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Ouvrir automatiquement un volet Office avec un document
 
@@ -19,7 +19,7 @@ Certains scénarios nécessitent qu’un volet des tâches s’ouvre automatique
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>En quoi la fonctionnalité d’ouverture automatique est-elle différente de l’insertion d’un volet des tâches ?
 
-Lorsqu’un utilisateur lance des compléments qui n’utilisent pas de commandes de complément (par exemple, des compléments exécutés dans Office 2013), ils sont insérés dans le document et persistent dans ce document. Par conséquent, lorsque d’autres utilisateurs ouvrent le document, ils sont invités à installer le complément et le volet Office s’ouvre. Le défi de ce modèle est que, dans de nombreux cas, les utilisateurs ne veulent pas que le complément soit conservé dans le document. Par exemple, un étudiant qui utilise un complément de dictionnaire dans un document Word peut ne pas vouloir que les camarades ou les enseignants soient invités à installer ce complément lorsqu’ils ouvrent le document.
+Quand un utilisateur lance des compléments qui n’utilisent pas les commandes de complément, par exemple, les compléments qui s’exécutent dans Office 2013, ils sont insérés et conservés dans le document. Par conséquent, lorsque d’autres utilisateurs ouvrent le document, ils sont invités à installer le complément, puis le volet des tâches s’ouvre. Le défi de ce modèle est que, dans de nombreux cas, les utilisateurs ne veulent pas que le complément soit conservé dans le document. Par exemple, un étudiant qui utilise un complément de dictionnaire dans un document Word ne voudra peut-être pas que ses camarades de classe ou enseignants soient invités à installer ce complément lorsqu’ils ouvrent le document.
 
 Avec la fonctionnalité d’ouverture automatique, vous pouvez explicitement définir ou autoriser l’utilisateur à déterminer si un complément de volet des tâches spécifique est conservé dans un document spécifique.
 

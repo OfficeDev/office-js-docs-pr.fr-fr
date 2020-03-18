@@ -1,18 +1,18 @@
 ---
 title: Élément Rule dans le fichier manifeste
-description: ''
-ms.date: 03/19/2019
+description: L’élément rule spécifie les règles d’activation qui doivent être évaluées pour ce complément de messagerie contextuel.
+ms.date: 03/16/2020
 localization_priority: Normal
-ms.openlocfilehash: 78fb38d8fb18c276bfe2eed1bd5b52659cadcaa3
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 06d9985615617e50567dcf614268d9181989f2a1
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688908"
+ms.locfileid: "42720434"
 ---
 # <a name="rule-element"></a>Élément Rule
 
-Spécifie les règles d’activation à évaluer pour ce complément de messagerie contextuel.
+Spécifie les règles d’activation qui doivent être évaluées pour ce complément de messagerie contextuel.
 
 **Type de complément :** complément de messagerie contextuel
 

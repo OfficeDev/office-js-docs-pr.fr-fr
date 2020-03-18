@@ -1,14 +1,14 @@
 ---
 title: Codes d’erreur de l’API JavaScript pour Office
-description: ''
+description: Cet article décrit les messages d’erreur que vous pouvez rencontrer lors de l’utilisation de l’API JavaScript pour Office.
 ms.date: 03/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 93852e7cfa7188cd30bba370ed6cfeb556af39b8
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: e85242e1cf83aef3b4173abf7ce52631cb6a8f80
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596808"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720980"
 ---
 # <a name="office-javascript-api-error-codes"></a>Codes d’erreur de l’API JavaScript pour Office
 
@@ -40,7 +40,7 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 |2005|Une erreur s’est produite lors de l’écriture des données|Les valeurs startRow ou startColumn spécifiées sont incorrectes.|L’utilisateur fournit des valeurs startRow ou startCol incorrectes.|
 |2006|Une erreur de format incorrect s’est produite|Le format de l’objet de données spécifié est incorrect.|Le développeur de solutions fournit une chaîne HTML ou OOXML incorrecte, une chaîne HTML au format incorrect ou une chaîne  OOXML incorrecte.|
 |2007|L’objet de données est incorrect|Le type de l’objet de données spécifié n’est pas compatible avec la sélection actuelle.|Le développeur de solutions fournit un objet de données qui n’est pas compatible avec le type de forçage de type spécifié.|
-|2008|Une erreur s’est produite lors de l’écriture des données|À déterminer|À déterminer|
+|2008|Une erreur s’est produite lors de l’écriture des données|À déterminer|TBD|
 |2009|Une erreur s’est produite lors de l’écriture des données|L’objet de données spécifié est trop volumineux.|L’utilisateur tente de définir des données au-delà des limites de données définies par les compléments hôte.|
 |2010|Une erreur s’est produite lors de l’écriture des données|Les paramètres de coordonnées ne peuvent pas être utilisés avec le type de forçage de type Tableau lorsque le tableau contient des cellules fusionnées.|L’utilisateur tente de définir des données partielles à partir d’un tableau non uniforme (c’est-à-dire un tableau qui contient des cellules fusionnées.)|
 |3000|Une erreur s’est produite lors de la création de la liaison|Impossible d’effectuer de liaison avec la sélection actuelle.|La sélection de l’utilisateur n’est pas prise en charge pour la liaison. (Par exemple, l’utilisateur sélectionne une image ou un autre objet non pris en charge.)|

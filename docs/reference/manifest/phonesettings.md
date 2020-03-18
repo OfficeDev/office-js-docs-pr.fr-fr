@@ -1,14 +1,14 @@
 ---
 title: Élément PhoneSettings dans le fichier manifeste
-description: ''
+description: L’élément PhoneSettings spécifie l’emplacement source et les paramètres de contrôle qui s’appliquent lorsque votre complément de messagerie est utilisé sur un téléphone.
 ms.date: 01/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 4614c86af865e5242657f47e21e6786545a616b6
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 581a3ae71a58cd05aac52129a6f4395a60c20cef
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165537"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720476"
 ---
 # <a name="phonesettings-element"></a>PhoneSettings, élément
 

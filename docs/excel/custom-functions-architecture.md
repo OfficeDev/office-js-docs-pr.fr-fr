@@ -1,14 +1,14 @@
 ---
 ms.date: 07/10/2019
-description: Découvrez comment exécuter les fonctions personnalisées dans Excel.
+description: En savoir plus sur le runtime pour les fonctions personnalisées Excel.
 title: Architecture de fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: ced62f7efb826862eee8079a66fa657ea466e4b3
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: a11ac40591e11725bb35b16bf53fa07062541c8f
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950353"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718768"
 ---
 # <a name="custom-functions-architecture"></a>Architecture de fonctions
 
@@ -24,9 +24,9 @@ Notez que si vous utilisez le [Générateur Yeoman de compléments Office](https
 
 Le tableau suivant met en évidence les différences entre l’exécution de fonctions personnalisées et l’exécution du moteur navigateur:
 
-| Exécution des fonctions personnalisées  | Exécution du moteur navigateur    |
-|------------------------------------------------------------------ |-------------------------------------------------------------------------------------------------------------- |
-| Prend en charge le renvoi d’une valeur d’une cellule    | Prend en charge les éléments Office.js APIs et éléments d’Interface Utilisateurs   |
+| Exécution des fonctions personnalisées     | Exécution du moteur navigateur     |
+|------------------------------------------------------------------    |--------------------------------------------------------------------------------------------------------------    |
+| Prend en charge le renvoi d’une valeur d’une cellule     | Prend en charge les éléments Office.js APIs et éléments d’Interface Utilisateurs     |
 | N’a pas l’objet `localStorage`, utilise à la place l’objet `OfficeRuntime.storage`.     | A l’objet `localStorage`, peut éventuellement utiliser l’objet `OfficeRuntime.storage`.     |
 | Ne prend pas en charge interaction avec le DOM ou le chargement des bibliothèques qui dépendent de DOM par exemple, jQuery.    | Ne prend pas en charge l’interaction avec le DOM ou le chargement des bibliothèques qui dépendent de DOM. |
 

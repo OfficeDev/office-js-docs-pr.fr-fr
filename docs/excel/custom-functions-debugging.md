@@ -3,12 +3,12 @@ ms.date: 07/10/2019
 description: Déboguez vos fonctions personnalisées dans Excel.
 title: Débogage des fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: dc620d8bab50c5efb3b9d9ec4f79f6532605f48b
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 4abd5f3da58c35485004b17f92b334b133cabd27
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324623"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719307"
 ---
 # <a name="custom-functions-debugging"></a>Débogage des fonctions personnalisées
 

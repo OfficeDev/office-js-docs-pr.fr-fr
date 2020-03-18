@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises concernant les commandes de complément
-description: ''
+description: Vue d’ensemble des ensembles de conditions requises pour les commandes de complément Office
 ms.date: 03/11/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 969f07ea773a49b66b8d3992ea2fb0d2681cda91
-ms.sourcegitcommit: 05b73cdec5f4db7f0b8d48a5a552ee296a0332ca
+ms.openlocfilehash: ca75f7de01b5e3a31f0b5b75461b459567b53cf3
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42600724"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717494"
 ---
 # <a name="add-in-commands-requirement-sets"></a>Ensembles de conditions requises concernant les commandes de complément
 
@@ -19,9 +19,9 @@ Les commandes de complément sont des éléments d’interface utilisateur qui �
 
 Il n’existe pas d’ensemble de conditions particulier pour la version initiale des commandes de complément (autrement dit, il n’existe pas d’ensemble de conditions AddInCommands 1.0). Le tableau suivant présente les applications hôtes Office qui prennent en charge la version initiale, ainsi que leur build ou leur numéro de version.  
 
-| Version   |  Office 2013 sur Windows<br>(achat définitif) | Office 2016 sur Windows<br>(achat définitif) | Office 2019 sur Windows<br>(achat définitif) | Office pour Windows<br>(connecté à l’abonnement Office 365)   |  Office sur iPad<br>(connecté à l’abonnement Office 365)  |  Office sur Mac<br>(connecté à l’abonnement Office 365)  | Office sur le web  |
+| Version   |  Office 2013 sur Windows<br>(achat définitif) | Office 2016 sur Windows<br>(achat définitif) | Office 2019 sur Windows<br>(achat définitif) | Office pour Windows<br>(connecté à l’abonnement Office 365)   |  Office sur iPad<br>(connecté à l’abonnement Office 365)  |  Office sur Mac<br>(connecté à l’abonnement Office 365)  | Office sur le web  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| Commandes de complément (version initiale, aucune condition) | S/O | 16.0.4678.1000 *Pris en charge uniquement dans Outlook* | Version 1809 (build 10827.20150) ou version ultérieure |Version 1603 (build 6769.0000) ou ultérieure | S/O | 15.33 ou version ultérieure| Janvier 2016 |
+| Commandes de complément (version initiale, aucune condition) | N/A | 16.0.4678.1000 *Pris en charge uniquement dans Outlook* | Version 1809 (build 10827.20150) ou version ultérieure |Version 1603 (build 6769.0000) ou ultérieure | S/O | 15.33 ou version ultérieure| Janvier 2016 |
 
 L’ensemble de conditions de la version 1.1 des commandes de complément présente la possibilité d’[ouvrir automatiquement un volet de tâches avec des documents](../../develop/automatically-open-a-task-pane-with-a-document.md).
 

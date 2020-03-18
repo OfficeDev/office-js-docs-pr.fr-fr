@@ -1,14 +1,14 @@
 ---
 title: Élément FunctionFile dans le fichier manifest
-description: ''
+description: Spécifie le fichier de code source pour les opérations qu’un complément expose via les commandes de complément qui exécutent une fonction JavaScript au lieu d’afficher l’interface utilisateur.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: eec1dc8eb2e099670469af6ef300592fc4a31e64
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 376ea82f48360d502ea9be05dc5d6b02f9294add
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324868"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718194"
 ---
 # <a name="functionfile-element"></a>Élément FunctionFile
 

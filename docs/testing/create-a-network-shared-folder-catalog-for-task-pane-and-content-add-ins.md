@@ -1,14 +1,14 @@
 ---
 title: Chargement de compléments Office pour des tests
-description: ''
+description: Découvrez comment chargement un complément Office à des fins de test
 ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 0eb8e6c2114b69575505508f05ed701f74b6849e
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: d8e1b0e1078ee534445baf275f386d85d68675c0
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42163590"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717403"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>Chargement de compléments Office pour des tests
 

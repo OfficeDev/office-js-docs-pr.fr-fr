@@ -1,14 +1,14 @@
 ---
 title: Éléments d’interface utilisateur Office pour les compléments Office
-description: ''
+description: Obtenez une vue d’ensemble des différents types d’éléments d’interface utilisateur dans un complément Office.
 ms.date: 12/24/2019
 localization_priority: Normal
-ms.openlocfilehash: f805926894a33f74914fbd315245c93c826d5fc0
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: e4bcc3badd58b3ab73b091bdb3c06eaa130dfc3e
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950424"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718642"
 ---
 # <a name="office-ui-elements-for-office-add-ins"></a>Éléments d’interface utilisateur Office pour les compléments Office
 

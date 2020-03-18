@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox-Preview-ensemble de conditions requises
-description: ''
+description: Modèle objet de l’objet de boîte aux lettres Outlook dans l’API des compléments Outlook (version préliminaire de l’API de boîte aux lettres).
 ms.date: 03/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 6239d31468982c640dc1808bb29c20b81f1a4149
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 3de58203e4ddb0f7ca8b773653bafb16eb50e322
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688914"
+ms.locfileid: "42720280"
 ---
 # <a name="mailbox"></a>boîte aux lettres
 

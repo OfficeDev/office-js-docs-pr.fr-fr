@@ -1,14 +1,14 @@
 ---
 title: Office. Context-ensemble de conditions requises 1,3
-description: ''
+description: Modèle objet de l’objet de contexte Outlook dans l’API des compléments Outlook (version 1,3 de l’API de boîte aux lettres).
 ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: adea7414da7242ba3d2f9d57210c934d61e146df
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: dc524c5657380845744e241a600fbf66f1eed5ce
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42163765"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720119"
 ---
 # <a name="context"></a>context
 
@@ -27,7 +27,7 @@ Office. Context fournit des interfaces partagées qui sont utilisées par des co
 
 | Propriété | Modes | Type de retour | Minimale<br>ensemble de conditions requises |
 |---|---|---|:---:|
-| [contentLanguage](#contentlanguage-string) | Composition<br>Lire | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [contentLanguage](#contentlanguage-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [Diagnostics](#diagnostics-contextinformation) | Composition<br>Lecture | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.3) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [displayLanguage](#displaylanguage-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [hote](#host-hosttype) | Composition<br>Lecture | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.3) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |

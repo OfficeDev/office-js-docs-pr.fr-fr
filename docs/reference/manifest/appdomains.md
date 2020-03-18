@@ -1,14 +1,14 @@
 ---
 title: Élément AppDomains dans le fichier manifeste
-description: ''
+description: Répertorie tous les domaines en plus du domaine spécifié dans `SourceLocation` l’élément qui sera utilisé par votre complément Office pour charger des pages.
 ms.date: 07/03/2019
 localization_priority: Normal
-ms.openlocfilehash: b6db3d46d004021f25edd5733566544010abb457
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: f60579d773e81a7e8006bafcf1c151874af42aeb
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575330"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720700"
 ---
 # <a name="appdomains-element"></a>AppDomains, élément
 

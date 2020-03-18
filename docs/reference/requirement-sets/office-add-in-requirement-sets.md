@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises des API communes pour Office
-description: ''
+description: En savoir plus sur les ensembles de conditions requises de l’API commune Office
 ms.date: 07/17/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: cd8af8762fa55bde78a6eb62cabc37606db47099
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 39358b26547a464b9bb1b96f571bac7741e1c32d
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596955"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717466"
 ---
 # <a name="office-common-api-requirement-sets"></a>Ensembles de conditions requises des API communes pour Office
 

@@ -1,14 +1,14 @@
 ---
 title: Créer un complément Office ASP.NET qui utilise l’authentification unique
-description: ''
+description: Guide pas à pas pour la création (ou conversion) d’un complément Office avec un serveur principal ASP.NET pour utiliser l’authentification unique (SSO).
 ms.date: 12/04/2019
-localization_priority: Priority
-ms.openlocfilehash: 6306616880138574ede8a127b7fd3c2a65061191
-ms.sourcegitcommit: 43166612e9b4bf7a73312a572663c8696353dbc6
+localization_priority: Normal
+ms.openlocfilehash: 6f8bb2c3de74d501867738da5a6a1c8282d3cc96
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "41580979"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719055"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office ASP.NET qui utilise l’authentification unique (aperçu)
 

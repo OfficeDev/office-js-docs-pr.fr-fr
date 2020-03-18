@@ -1,14 +1,14 @@
 ---
 title: Espace de noms Office-ensemble de conditions requises 1,2
-description: ''
+description: Modèle objet pour l’espace de noms de niveau supérieur de l’API des compléments Outlook (version 1,2 de l’API de boîte aux lettres).
 ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: 0f955ed8279655b4ac92dc04871a1227b045f6ea
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 10445204d3007d816ebed74ede9eeab5d3dfd83c
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165439"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720161"
 ---
 # <a name="office"></a>Office
 
@@ -31,9 +31,9 @@ L’espace de noms Office fournit des interfaces partagées qui sont utilisées 
 
 | Énumération | Modes | Type de retour | Minimale<br>ensemble de conditions requises |
 |---|---|---|:---:|
-| [AsyncResultStatus](#asyncresultstatus-string) | Composition<br>Lire | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [CoercionType](#coerciontype-string) | Composition<br>Lire | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [SourceProperty](#sourceproperty-string) | Composition<br>Lire | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [AsyncResultStatus](#asyncresultstatus-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [SourceProperty](#sourceproperty-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ### <a name="namespaces"></a>Espaces de noms
 

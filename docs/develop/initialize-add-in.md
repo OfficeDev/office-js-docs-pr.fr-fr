@@ -3,12 +3,12 @@ title: Initialiser votre complément Office
 description: Découvrez comment initialiser votre complément Office.
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 5adce84867a96917135ca379bbd032fcc3bc824a
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: ca7b21c35fc82011c673cb83d077a89cc29f56eb
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325009"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718936"
 ---
 # <a name="initialize-your-office-add-in"></a>Initialiser votre complément Office
 
@@ -139,7 +139,7 @@ Pour plus d’informations, consultez les pages relatives à l’[événement Of
 > [!NOTE]
 > Même si vous n’avez aucune logique de démarrage, appelez `Office.onReady()` ou attribuez une fonction vide à `Office.initialize` lorsque votre complément JavaScript se charge. Certaines combinaisons de plateforme et d’hôte Office ne chargeront pas le volet Office tant que l’une de ces situations se produisent. Les exemples suivants présentent ces deux approches.
 >
->```js  
+>```js    
 >Office.onReady();
 >```
 >
@@ -150,5 +150,5 @@ Pour plus d’informations, consultez les pages relatives à l’[événement Of
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Présentation de l’API JavaScript pour Office](understanding-the-javascript-api-for-office.md)
+- [Compréhension de l’API JavaScript pour Office](understanding-the-javascript-api-for-office.md)
 - [Chargement du DOM et de l’environnement d’exécution](loading-the-dom-and-runtime-environment.md)

@@ -1,14 +1,14 @@
 ---
 title: Spécification des exigences en matière d’hôtes Office et d’API
-description: ''
+description: Découvrez comment spécifier les hôtes Office et les conditions requises de l’API pour que votre complément fonctionne comme prévu.
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: bf5c263da57224036aa12ec652a1cb38f73e31c0
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: ab9b97f3d3232339010179097e1fd03dbeb86aa2
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688996"
+ms.locfileid: "42718810"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>Spécification des exigences en matière d’hôtes Office et d’API
 
@@ -40,7 +40,7 @@ Votre complément doit utiliser la version la plus récente du schéma de manife
 
 ### <a name="specify-the-latest-add-in-manifest-schema"></a>Indication du schéma de manifeste de complément le plus récent
 
-Le manifeste de votre complément doit utiliser la version 1,1 du schéma de manifeste du complément. Définissez l' `OfficeApp` élément dans le manifeste de votre complément comme suit.
+Le manifeste de votre du complément doit utiliser la version 1.1 du schéma de manifeste de complément. Définissez l' `OfficeApp` élément dans le manifeste de votre complément comme suit.
 
 ```XML
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
@@ -48,7 +48,7 @@ Le manifeste de votre complément doit utiliser la version 1,1 du schéma de man
 
 ### <a name="specify-the-latest-office-javascript-api-library"></a>Spécifier la dernière bibliothèque d’API JavaScript pour Office
 
-Si vous utilisez des vérifications à l’exécution, référencez la version la plus récente de la bibliothèque de l’API JavaScript pour Office à partir du réseau de distribution de contenu (CDN). Pour ce faire, ajoutez la balise suivante `script` à votre code html. L' `/1/` utilisation de dans l’URL du CDN garantit que vous faites référence à la version la plus récente d’Office. js.
+Si vous utilisez des vérifications à l’exécution, référencez la version la plus récente de la bibliothèque de l’API JavaScript pour Office à partir du réseau de distribution de contenu (CDN). Pour ce faire, ajoutez la balise `script` suivante à votre code HTML. L’utilisation de `/1/` dans l’URL CDN garantit que vous référencez la version d’Office.js la plus récente.
 
 ```HTML
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
@@ -60,9 +60,9 @@ Lors de la spécification des hôtes Office ou des conditions requises d’API,
 
 ![Optez pour la meilleure solution pour votre complément lorsque vous spécifiez des hôtes Office ou des exigences d’API](../images/options-for-office-hosts.png)
 
-- Si votre complément s’exécute dans un hôte Office, définissez l' `Hosts` élément dans le manifeste. Pour plus d’informations, consultez [la rubrique Set the hosts Element](#set-the-hosts-element).
+- Si votre complément s’exécute dans un hôte Office, définissez l' `Hosts` élément dans le manifeste. Pour plus d’informations, consultez [Définition de l’élément Hosts](#set-the-hosts-element).
 
-- Pour définir l’ensemble de conditions minimales ou les membres de l’API qu’un hôte Office doit prendre en charge pour exécuter votre `Requirements` complément, définissez l’élément dans le manifeste. Pour plus d’informations, voir [définir l’élément Requirements dans le manifeste](#set-the-requirements-element-in-the-manifest).
+- Pour définir l’ensemble de conditions minimales ou les membres de l’API qu’un hôte Office doit prendre en charge pour exécuter votre `Requirements` complément, définissez l’élément dans le manifeste. Pour plus d’informations, consultez la section [ Définition de l’élément Requirements dans le manifeste](#set-the-requirements-element-in-the-manifest).
 
 - Si vous souhaitez proposer des fonctionnalités supplémentaires lorsque des ensembles de conditions requises spécifiques ou des membres d’API sont disponibles dans l’hôte Office, effectuez une vérification à l’exécution dans le code JavaScript de votre complément. Par exemple, si votre complément est exécuté dans Excel 2016, utilisez les membres d’API de l’API JavaScript Excel pour fournir des fonctionnalités supplémentaires. Pour plus d’informations, consultez la section [Utilisation des vérifications à l’exécution dans votre code JavaScript](#use-runtime-checks-in-your-javascript-code).
 
@@ -125,7 +125,7 @@ Cet exemple de code illustre un complément qui se charge dans toutes les applic
 
 - L' `Requirements` élément contient les `Sets` éléments `Methods` enfants et.
 
-- L' `Sets` élément peut contenir un ou plusieurs `Set` éléments. `DefaultMinVersion` spécifie la `MinVersion` valeur par défaut de `Set` tous les éléments enfants.
+- L' `Sets` élément peut contenir un ou plusieurs `Set` éléments. `DefaultMinVersion`spécifie la `MinVersion` valeur par défaut de `Set` tous les éléments enfants.
 
 - L' `Set` élément spécifie les ensembles de conditions requises que l’hôte Office doit prendre en charge pour exécuter le complément. L' `Name` attribut spécifie le nom de l’ensemble de conditions requises. L `MinVersion` 'spécifie la version minimale de l’ensemble de conditions requises. `MinVersion`remplace la valeur de `DefaultMinVersion` pour plus d’informations sur les ensembles de conditions requises et les versions d’ensemble de conditions requises auxquelles appartiennent les membres de l’API, consultez la rubrique ensembles de conditions requises pour les [Compléments Office](../reference/requirement-sets/office-add-in-requirement-sets.md).
 

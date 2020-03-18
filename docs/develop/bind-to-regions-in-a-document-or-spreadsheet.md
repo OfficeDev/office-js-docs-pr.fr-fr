@@ -1,14 +1,14 @@
 ---
 title: Lier des régions dans un document ou une feuille de calcul
-description: ''
+description: Découvrez comment utiliser la liaison pour garantir un accès cohérent à une région ou un élément spécifique d’un document ou d’une feuille de calcul par le biais d’un identificateur.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: c927f5ceb6be1ad038185e54706a55ab21b3f63a
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 61ae64688253dede80989114f4abca2f236d48af
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324630"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719069"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>Lier des régions dans un document ou une feuille de calcul
 
@@ -34,7 +34,7 @@ Il existe [trois types différents de liaisons][Office. BindingType] que vous sp
 
     Dans Word, la plupart des sélections contiguës sont valides, tandis que dans Excel, seules les sélections de cellules uniques peuvent être la cible d’une liaison de texte. Dans Excel, seul le texte brut est pris en charge. Dans Word, trois formats sont pris en charge : texte brut, HTML et Open XML pour Office.
 
-2. **La [liaison de matrice][MatrixBinding] ** : effectue une liaison à une région fixe d’un document qui contient des données tabulaires sans en-têtes. Les données d’une liaison de matrice sont écrites ou lues sous la forme d’un **tableau**à deux dimensions, qui est implémenté sous la forme d’un tableau de tableaux. Par exemple, deux lignes de valeurs de **chaîne** dans deux colonnes peuvent être écrites ou lues ` [['a', 'b'], ['c', 'd']]`en tant que, et une seule colonne de trois lignes peut être écrite `[['a'], ['b'], ['c']]`ou lue en tant que.
+2. **La [liaison de matrice][MatrixBinding] ** : effectue une liaison à une région fixe d’un document qui contient des données tabulaires sans en-têtes. Les données d’une liaison de matrice sont écrites ou lues sous la forme d’un **tableau**à deux dimensions, qui est implémenté sous la forme d’un tableau de tableaux. Par exemple, deux lignes de valeurs **string** dans deux colonnes peuvent être écrites ou lues comme ` [['a', 'b'], ['c', 'd']]`, et une colonne unique de trois lignes peut être écrite ou lue comme `[['a'], ['b'], ['c']]`.
 
     Dans Excel, toute sélection contiguë de cellules peut être utilisée pour établir une liaison de matrice. Dans Word, seuls les tableaux prennent en charge la liaison de matrice.
 
@@ -42,7 +42,7 @@ Il existe [trois types différents de liaisons][Office. BindingType] que vous sp
 
     Tout tableau Excel ou Word peut être la base d’une liaison de tableau. Une fois que vous établissez une liaison de tableau, chaque nouvelle ligne ou colonne qu’un utilisateur ajoute au tableau est automatiquement incluse dans la liaison.
 
-Une fois qu’une liaison est créée à l’aide de l’une des trois méthodes « `Bindings` addFrom » de l’objet, vous pouvez utiliser les données et les propriétés de la liaison à l’aide des méthodes de l’objet correspondant : [MatrixBinding], [TableBinding]ou [liaison TextBinding]. Ces trois objets héritent des méthodes [getDataAsync] et [setDataAsync] de l' `Binding` objet qui vous permettent d’interagir avec les données liées.
+Une fois qu’une liaison est créée à l’aide de l’une des trois méthodes « `Bindings` addFrom » de l’objet, vous pouvez utiliser les données et les propriétés de la liaison à l’aide des méthodes de l’objet correspondant : [MatrixBinding], [TableBinding]ou [liaison TextBinding]. Ces trois objets héritent des méthodes [getDataAsync] et [setDataAsync] de l’objet `Binding` qui vous permettent d’interagir avec les données liées.
 
 > [!NOTE]
 > **Quand devez-vous utiliser une liaison de matrice ou une liaison de tableau ?** Lorsque les données tabulaires avec lesquelles vous travaillez contiennent une ligne de total, vous devez utiliser une liaison de matrice si le script de votre complément doit accéder aux valeurs figurant dans la ligne de total ou détecter que la sélection de l’utilisateur figure dans la ligne de total. Si vous établissez une liaison de tableau pour des données tabulaires qui contiennent une ligne de total, la propriété [TableBinding.rowCount] et les propriétés `rowCount` et `startRow` de l’objet [BindingSelectionChangedEventArgs] dans les gestionnaires d’événements ne reflèteront pas la ligne de total dans leurs valeurs. Pour contourner cette limitation, vous devez établir une liaison de matrice pour travailler avec la ligne de total.
@@ -133,7 +133,7 @@ function write(message){
 
 ```
 
-**Pour Excel**, le `itemName` paramètre de la méthode [addFromNamedItemAsync] peut faire référence à une plage nommée existante, une plage spécifiée avec `A1` le style `("A1:A3")`de référence ou un tableau. Par défaut, l’ajout d’une table dans Excel affecte le nom « table1 » pour la première table que vous ajoutez, « table2 » pour la seconde table que vous ajoutez, et ainsi de suite. Pour attribuer un nom explicite à une table dans l’interface utilisateur Excel, utilisez `Table Name` la propriété sur le **tableau outils | Onglet Création** du ruban.
+**Pour Excel**, le `itemName` paramètre de la méthode [addFromNamedItemAsync] peut faire référence à une plage nommée existante, une plage spécifiée avec `A1` le style `("A1:A3")`de référence ou un tableau. Par défaut, l’ajout d’un tableau dans Excel entraîne l’affectation du nom « Tableau1 » pour le premier tableau que vous ajoutez, « Tableau2 » pour le deuxième tableau que vous ajoutez, et ainsi de suite. Pour attribuer un nom explicite à une table dans l’interface utilisateur Excel, utilisez `Table Name` la propriété sur le **tableau outils | Onglet Création** du ruban.
 
 
 > [!NOTE]
@@ -166,9 +166,9 @@ function write(message){
 }
 ```
 
-**Pour Word**, le `itemName` paramètre de la méthode [addFromNamedItemAsync] fait référence à `Title` la propriété d' `Rich Text` un contrôle de contenu. (Vous ne pouvez pas établir de liaison avec des `Rich Text` contrôles de contenu autres que le contrôle de contenu.)
+**Pour Word**, le `itemName` paramètre de la méthode [addFromNamedItemAsync] fait référence à `Title` la propriété d' `Rich Text` un contrôle de contenu. (Vous ne pouvez réaliser de liaison avec des contrôles de contenu différents du contrôle de contenu `Rich Text`.)
 
-Par défaut, aucune valeur n' `Title*`est assignée à un contrôle de contenu. Pour affecter un nom explicite dans l’interface utilisateur de Word, après avoir inséré un contrôle de contenu de **texte enrichi** à partir du groupe **contrôles** de l’onglet **développeur** du ruban, utilisez la commande **Propriétés** du groupe **contrôles** pour afficher la boîte de dialogue Propriétés du **contrôle de contenu** . Définissez ensuite la `Title` propriété du contrôle de contenu sur le nom que vous souhaitez faire référence à partir de votre code.
+Par défaut, aucune valeur n' `Title*`est assignée à un contrôle de contenu. Pour affecter un nom significatif dans l’interface utilisateur de Word, après l’insertion d’un contrôle de contenu **Texte enrichi** à partir du groupe **Contrôles** sur l’onglet **Développeur** du ruban, utilisez la commande **Propriétés** du groupe **Contrôles** pour afficher la boîte de dialogue **Propriétés du contrôle de contenu**. Définissez ensuite la `Title` propriété du contrôle de contenu sur le nom que vous souhaitez faire référence à partir de votre code.
 
 L’exemple suivant crée une liaison de texte dans Word vers un contrôle de contenu de `"FirstName"`texte enrichi nommé, attribue l' **ID** `"firstName"`, puis affiche ces informations.
 
@@ -213,7 +213,7 @@ function write(message){
 }
 ```
 
-La fonction anonyme qui est passée dans la fonction en tant `callback` que paramètre est exécutée lorsque l’opération est terminée. La fonction est appelée avec un seul paramètre, `asyncResult`, qui contient un tableau des liaisons dans le document. Le tableau est itéré pour générer une chaîne qui contient les ID des liaisons. La chaîne est ensuite affichée dans une boîte de message.
+La fonction anonyme qui est passée dans la fonction en tant `callback` que paramètre est exécutée lorsque l’opération est terminée. La fonction est appelée avec un seul paramètre, `asyncResult`, qui contient un tableau des liaisons dans le document. Le tableau est répété pour générer une chaîne qui contient les ID des liaisons. La chaîne est ensuite affichée dans une boîte de message.
 
 
 ## <a name="get-a-binding-by-id-using-the-getbyidasync-method-of-the-bindings-object"></a>Obtention d’une liaison par ID en utilisant la méthode getByIdAsync de l’objet Bindings
@@ -240,7 +240,7 @@ function write(message){
 
 Dans l’exemple, le premier `id` paramètre est l’ID de la liaison à récupérer.
 
-La fonction anonyme qui est transmise à la fonction en tant que deuxième paramètre de _rappel_ est exécutée lorsque l’opération est terminée. La fonction est appelée avec un seul paramètre, _asyncResult_, qui contient l’état de l’appel et la liaison avec l’ID « myBinding ».
+La fonction anonyme qui est transmise à la fonction en tant que deuxième paramètre de _rappel_ est exécutée lorsque l’opération est terminée. La fonction est appelée avec un seul paramètre, _asyncResult_, qui contient le statut de l’appel et la liaison avec l’ID « myBinding ».
 
 
 ## <a name="get-a-binding-by-id-using-the-select-method-of-the-office-object"></a>Obtention d’une liaison par ID en utilisant la méthode Select de l’objet Office
@@ -330,7 +330,7 @@ myBinding.setDataAsync('Hello World!', function (asyncResult) { });
 
  `myBinding` est une variable qui contient une liaison de texte existante dans le document.
 
-Dans l’exemple, le premier paramètre est la valeur à définir `myBinding`. Étant donné qu’il s’agit d’une liaison de texte `string`, la valeur est. Différents types de liaisons acceptent différents types de données.
+Dans l’exemple, le premier paramètre est la valeur à définir `myBinding`. Comme il s’agit d’une liaison de texte, la valeur est de type `string`. Différents types de liaisons acceptent divers types de données.
 
 La fonction anonyme qui est passée dans la fonction est un rappel qui est exécuté lorsque l’opération est terminée. La fonction est appelée avec un seul paramètre, `asyncResult`, qui contient l’état du résultat.
 
@@ -360,9 +360,9 @@ function write(message){
 
 `myBinding` est une variable qui contient une liaison de texte existante dans le document.
 
-Le premier paramètre _eventType_ de la méthode [addHandlerAsync] spécifie le nom de l’événement auquel s’abonner. [Office. EventType] est une énumération des valeurs de type d’événement disponibles. `Office.EventType.BindingDataChanged` prend la valeur de la chaîne « bindingDataChanged ».
+Le premier paramètre _eventType_ de la méthode [addHandlerAsync] spécifie le nom de l’événement auquel s’abonner. [Office.EventType] est une énumération des valeurs de types d’événement disponibles. `Office.EventType.BindingDataChanged`prend la valeur de la chaîne « bindingDataChanged ».
 
-La `dataChanged` fonction passée dans la fonction comme deuxième paramètre _handler_ est un gestionnaire d’événements exécuté lorsque les données de la liaison sont modifiées. La fonction est appelée avec un seul paramètre, _EventArgs_, qui contient une référence à la liaison. Cette liaison peut être utilisée pour récupérer les données mises à jour.
+La `dataChanged` fonction passée dans la fonction comme deuxième paramètre _handler_ est un gestionnaire d’événements exécuté lorsque les données de la liaison sont modifiées. La fonction est appelée avec un seul paramètre, _eventArgs_, qui contient une référence à la liaison. Cette liaison peut être utilisée pour récupérer les données mises à jour.
 
 De même, vous pouvez détecter lorsqu’un utilisateur modifie la sélection dans une liaison en ajoutant un gestionnaire d’événements à l’événement [SelectionChanged] d’une liaison. Pour ce faire, spécifiez le paramètre `eventType` de la méthode [addHandlerAsync] comme `Office.EventType.BindingSelectionChanged` ou `"bindingSelectionChanged"`.
 
@@ -389,7 +389,7 @@ function removeEventHandlerFromBinding() {
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Présentation de l’API JavaScript pour Office](understanding-the-javascript-api-for-office.md) 
+- [Compréhension de l’API JavaScript pour Office](understanding-the-javascript-api-for-office.md) 
 - [Programmation asynchrone dans des compléments Office](asynchronous-programming-in-office-add-ins.md)
 - [Lecture et écriture de données dans la sélection active d’un document ou d’une feuille de calcul](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
 

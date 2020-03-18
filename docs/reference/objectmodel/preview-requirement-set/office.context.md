@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises pour Office. Context-preview
-description: ''
+description: Modèle objet de l’objet de contexte Outlook dans l’API des compléments Outlook (version préliminaire de l’API de boîte aux lettres).
 ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: 9c2c661ce870e2007bd891aee040c6b3564f7b9e
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 409f0a5b46eba667f79228f45081c160c3c3ce7f
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688902"
+ms.locfileid: "42717802"
 ---
 # <a name="context"></a>context
 

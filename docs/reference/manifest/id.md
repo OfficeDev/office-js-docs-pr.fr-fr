@@ -1,16 +1,16 @@
 ---
 title: Élément id dans le fichier manifest
-description: ''
+description: L’élément ID spécifie l’ID unique de votre complément Office sous la forme d’un GUID.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 1fbd5c7964602661d63d5c3448277e50ad301ba7
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 137daee6346f3320697cfc52963d8e98d147e5d8
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450575"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720560"
 ---
-# <a name="id-element"></a>Élément Id
+# <a name="id-element"></a>Id, élément
 
 Spécifie l’ID unique de votre complément Office comme GUID.
 

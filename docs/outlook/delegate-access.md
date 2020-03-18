@@ -3,12 +3,12 @@ title: Activer les scénarios d’accès délégué dans un complément Outlook
 description: Décrit brièvement l’accès délégué et explique comment configurer la prise en charge des compléments.
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 6cee68af9efc02bbb474effaba1a898511aea531
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 0941e4f0b5e1082b8a762acfa013d4e58be03469
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166206"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42721015"
 ---
 # <a name="enable-delegate-access-scenarios-in-an-outlook-add-in"></a>Activer les scénarios d’accès délégué dans un complément Outlook
 
@@ -26,7 +26,7 @@ Le tableau suivant décrit les autorisations déléguées prises en charge par l
 |Autorisation|Valeur|Description|
 |---|---:|---|
 |Lecture|1 (000001)|Peut lire des éléments.|
-|Write|2 (000010)|Peut créer des éléments.|
+|Écrire|2 (000010)|Peut créer des éléments.|
 |DeleteOwn|4 (000100)|Peut uniquement supprimer les éléments qu’ils ont créés.|
 |DeleteAll|8 (001000)|Peut supprimer tous les éléments.|
 |EditOwn|16 (010000)|Ne peut modifier que les éléments qu’ils ont créés.|

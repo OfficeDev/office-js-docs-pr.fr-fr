@@ -1,14 +1,14 @@
 ---
 title: Créer un complément dictionnaire du volet Office
-description: ''
+description: Découvrez comment créer un complément de volet Office de dictionnaire
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 4145727ef092bd56117dfd5d6c89e976a3aaa11a
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: e72ef049c355e756a3bd8a843fc6075a59c3c8a6
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324721"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719692"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>Créer un complément dictionnaire du volet Office
 
@@ -535,7 +535,7 @@ Les principaux membres de l’API JavaScript Office (Office. js) qui sont appel�
     
 - La méthode [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) de l' `Document` objet, qui est appelée dans la `tryUpdatingSelectedWord()` fonction lorsque le `SelectionChanged` gestionnaire d’événements est déclenché pour obtenir le mot ou l’expression sélectionné par l’utilisateur, le forcer en texte brut, puis exécuter `selectedTextCallback` la fonction de rappel asynchrone.
     
-- Lorsque la `selectTextCallback` fonction de rappel asynchrone qui est passée en __ tant qu’argument de `getSelectedDataAsync` rappel de la méthode s’exécute, elle obtient la valeur du texte sélectionné lorsque le rappel est renvoyé. Elle obtient cette valeur à partir de l’argument _SelectedText_ du rappel (qui est de type [asyncResult](/javascript/api/office/office.asyncresult)) à l’aide de la propriété `AsyncResult` [value](/javascript/api/office/office.asyncresult#status) de l’objet renvoyé.
+- Lorsque la `selectTextCallback` fonction de rappel asynchrone qui est passée en _callback_ tant qu’argument de `getSelectedDataAsync` rappel de la méthode s’exécute, elle obtient la valeur du texte sélectionné lorsque le rappel est renvoyé. Elle obtient cette valeur à partir de l’argument _SelectedText_ du rappel (qui est de type [asyncResult](/javascript/api/office/office.asyncresult)) à l’aide de la propriété `AsyncResult` [value](/javascript/api/office/office.asyncresult#status) de l’objet renvoyé.
     
 - Le reste du code dans la fonction  `selectedTextCallback` interroge le service web XML pour obtenir des définitions. Il appelle également les API de Microsoft Translator pour fournir l’URL d’un fichier .wav produisant la prononciation du mot sélectionné.
     

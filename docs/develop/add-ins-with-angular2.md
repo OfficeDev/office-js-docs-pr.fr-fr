@@ -1,14 +1,14 @@
 ---
 title: Développement de compléments Office avec Angular
-description: ''
+description: Obtenir des instructions sur l’utilisation d’angles pour créer un complément Office en tant qu’application à page unique.
 ms.date: 01/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 0e78a2e000016e28f2012902e0e8db487b80d930
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: b3796b16c8e5ddc74a172ab427866bfe8e842cae
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688969"
+ms.locfileid: "42719209"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Développement de compléments Office avec Angular
 
@@ -29,7 +29,7 @@ npm install --save-dev @types/office-js
 
 ## <a name="bootstrapping-must-be-inside-officeinitialize"></a>L’amorçage doit s’effectuer à l’intérieur d’Office.initialize
 
-Sur n’importe quelle page qui appelle les API JavaScript Office, Word ou Excel, votre code doit tout d’abord affecter une `Office.initialize` méthode à la propriété. (Si vous n’avez pas de code d’initialisation, le corps de la méthode peut`{}`être vide «», mais vous ne devez `Office.initialize` pas laisser la propriété undefined. Pour plus d’informations, consultez [la rubrique initialiser votre complément Office](initialize-add-in.md). Office appelle cette méthode immédiatement après avoir initialisé les bibliothèques JavaScript Office.
+Dans une page qui appelle les API Office, Word ou Excel JavaScript, votre code doit d’abord attribuer une méthode à la propriété `Office.initialize`. (Si vous ne possédez aucun code d’initialisation, le corps de la méthode peut contenir simplement des symboles «`{}`» vides, mais vous ne devez pas laisser la propriété `Office.initialize` non définie. Pour plus d’informations, consultez [la rubrique initialiser votre complément Office](initialize-add-in.md). Office appelle cette méthode immédiatement après avoir initialisé les bibliothèques JavaScript Office.
 
 **Votre code d’amorçage Angular doit être appelé à l’intérieur de la méthode que vous affectez à `Office.initialize`** pour vous assurer que les bibliothèques JavaScript Office ont été initialisées en premier. Voici un exemple simple qui montre comment procéder. Ce code doit figurer dans le fichier main.ts du projet.
 

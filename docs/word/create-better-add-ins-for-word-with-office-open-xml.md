@@ -1,14 +1,14 @@
 ---
 title: Créer de meilleurs compléments pour Word avec Office Open XML
-description: ''
+description: Vue d’ensemble de l’amélioration de votre complément Word avec Office Open XML
 ms.date: 10/10/2019
 localization_priority: Normal
-ms.openlocfilehash: 08e3af410d9882ed10982606fe573973365a52ef
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 710265eab022b4da3035699c353d01f567354013
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596976"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717389"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Créer de meilleurs compléments pour Word avec Office Open XML
 
@@ -109,7 +109,11 @@ Vous pouvez insérer des graphiques Excel sous forme de graphiques dynamiques da
 > [!NOTE]
 > Un document Office Open XML est en fait un package compressé de fichiers qui représentent le contenu du document. L’enregistrement du fichier au format de document XML Word vous permet d’aplatir le package Open XML entireOffice en un seul fichier XML, ce qui est également ce `getSelectedDataAsync` que vous obtenez lorsque vous utilisez pour récupérer le balisage Office Open XML.
 
-Si vous enregistrez le fichier au format XML à partir de Word, Notez qu’il existe deux options dans la liste type de fichier de la boîte de dialogue Enregistrer sous pour les fichiers au format. Xml. Veillez à choisir **document XML Word** et non l’option Word 2003. Téléchargez l’exemple de code nommé [Word-Add-in-get-set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML), que vous pouvez utiliser comme outil pour récupérer et tester votre balisage. Est-ce tout ce qu’il y a ? Eh bien, pas tout à fait. Oui, pour de nombreux scénarios, vous pouvez utiliser le résultat Office Open XML complet et aplati que vous voyez à l’aide de l’une des méthodes ci-dessus et cela fonctionnerait. La bonne nouvelle est que vous n’avez probablement pas besoin de la plupart de ces balises. Si vous êtes l’un des nombreux développeurs de compléments qui visualisent Office Open XML Markup pour la première fois, vous pouvez vous rendre compte de l’énorme quantité de balises que vous obtenez pour la plus simple partie de contenu, mais ce n’est pas obligatoire. Dans cette rubrique, nous allons utiliser certains scénarios courants que nous avons entendus de la communauté des développeurs de compléments Office pour vous montrer des techniques permettant de simplifier le code Office Open XML à utiliser dans votre complément. Nous explorerons le balisage pour certains types de contenu affichés précédemment, ainsi que les informations dont vous avez besoin pour réduire la charge utile Office Open XML. Nous examinerons également le code dont vous avez besoin pour insérer du contenu enrichi dans un document au niveau de la sélection active et comment utiliser Office Open XML avec l’objet bindings pour ajouter ou remplacer du contenu à des emplacements spécifiques.
+Si vous enregistrez le fichier au format XML à partir de Word, Notez qu’il existe deux options dans la liste type de fichier de la boîte de dialogue Enregistrer sous pour les fichiers au format. Xml. Veillez à choisir **Document XML Word** et non l’option Word 2003.
+Téléchargez l’exemple de code nommé [Word-Add-in-get-set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML), que vous pouvez utiliser comme outil pour récupérer et tester votre balisage.
+Et c’est tout ? Pas tout à fait. Pour un grand nombre de scénarios, vous pouvez utiliser le résultat Office Open XML intégral et aplati obtenu avec l’une des méthodes précédentes et tout fonctionnera. La bonne nouvelle est que vous n’avez probablement pas besoin de la plupart de ces balises.
+Si vous êtes l’un des nombreux développeurs de compléments qui visualisent Office Open XML Markup pour la première fois, vous pouvez vous rendre compte de l’énorme quantité de balises que vous obtenez pour la plus simple partie de contenu, mais ce n’est pas obligatoire.
+Dans cette rubrique, nous allons utiliser certains scénarios courants que nous avons entendus de la communauté des développeurs de compléments Office pour vous montrer des techniques permettant de simplifier le code Office Open XML à utiliser dans votre complément. Nous explorerons le balisage pour certains types de contenu affichés précédemment, ainsi que les informations dont vous avez besoin pour réduire la charge utile Office Open XML. Nous examinerons également le code dont vous avez besoin pour insérer du contenu enrichi dans un document au niveau de la sélection active et comment utiliser Office Open XML avec l’objet bindings pour ajouter ou remplacer du contenu à des emplacements spécifiques.
 
 ## <a name="exploring-the-office-open-xml-document-package"></a>Exploration du package de document Office Open XML
 
@@ -118,10 +122,10 @@ Lorsque vous utilisez [getSelectedDataAsync](/javascript/api/office/office.docum
 
 Même un simple package de document Word comprend des composants pour les propriétés du document, les styles, le thème (paramètres de mise en forme), les paramètres web, les polices, en plus d’autres composants pour le contenu réel.
 
-Par exemple, supposons que vous vouliez insérer uniquement un paragraphe de texte avec mise en forme directe, comme illustré à la figure 1. Lorsque vous récupérez le XML ouvert Office pour le texte mis `getSelectedDataAsync`en forme à l’aide de, vous voyez un grand nombre de balises. Ce balisage inclut un élément de package qui représente un document entier, qui contient plusieurs parties (communément appelées composants de document ou, dans le code Office Open XML, comme composants de package), comme indiqué dans la figure 13. Chaque composant représente un fichier distinct dans le package.
+Par exemple, supposons que vous voulez insérer uniquement un paragraphe de texte avec une mise en forme directe, comme indiqué précédemment sur la figure 1. Lorsque vous récupérez le XML ouvert Office pour le texte mis `getSelectedDataAsync`en forme à l’aide de, vous voyez un grand nombre de balises. Ce balisage comprend un élément de package qui représente un document entier, formé de plusieurs parties (communément appelées composants de document ou, dans Office Open XML, composants de package), listées dans la figure 13. Chaque composant représente un fichier distinct du package.
 
 > [!TIP]
-> Vous pouvez modifier le balisage Office Open XML dans un éditeur de texte tel que le bloc-notes. Si vous l’ouvrez dans Visual Studio, vous pouvez utiliser **modifier >Advanced > format document** (Ctrl + K, Ctrl + D) pour mettre en forme le package afin de le modifier plus facilement. Vous pouvez ensuite réduire ou développer des parties de document ou des sections de celles-ci, comme illustré à la figure 12, afin de réviser et de modifier plus facilement le contenu du package Office Open XML. Chaque composant de document commence par une balise **pkg : part** .
+> Vous pouvez modifier le balisage Office Open XML dans un éditeur de texte comme le Bloc-notes. Si vous l’ouvrez dans Visual Studio, vous pouvez utiliser **modifier >Advanced > format document** (Ctrl + K, Ctrl + D) pour mettre en forme le package afin de le modifier plus facilement. Ensuite, vous pouvez réduire ou développer des parties de document ou des sections de celles-ci, comme indiqué dans la figure 12, pour vérifier et modifier plus facilement le contenu du package Office Open XML. Chaque composant du document commence par une balise **pkg:part**.
 
 
 *Figure 12. Réduction et développement des composants de package pour faciliter la modification dans Visual Studio*
@@ -207,7 +211,7 @@ Nous avons modifié l’exemple Office Open XML affiché ici, comme décrit da
 
 
 > [!NOTE]
-> Si vous ajoutez le balisage indiqué ici à un fichier XML avec les balises de déclaration XML pour version et mso-application en haut du fichier (illustré à la figure 13), vous pouvez l’ouvrir dans Word en tant que document Word. Ou, sans ces balises, vous pouvez toujours l’ouvrir à l’aide du **fichier> ouvrir** dans Word. Le mode de **compatibilité** est affiché dans la barre de titre de Word, car vous avez supprimé les paramètres qui indiquent à Word qu’il s’agit d’un document Word. Étant donné que vous ajoutez ce balisage à un document Word existant, cela n’a aucune incidence sur votre contenu.
+> Si vous ajoutez le balisage représenté ici à un fichier XML avec les balises de déclaration XML pour version et mso-application au début du fichier (figure 13), vous pouvez l’ouvrir dans Word comme un document Word. Ou, sans ces balises, vous pouvez toujours l’ouvrir à l’aide du **fichier> ouvrir** dans Word. Le mode de **compatibilité** est affiché dans la barre de titre de Word, car vous avez supprimé les paramètres qui indiquent à Word qu’il s’agit d’un document Word. Étant donné que vous ajoutez ce balisage à un document Word existant, cela n’a aucune incidence sur votre contenu.
 
 
 ### <a name="javascript-for-using-setselecteddataasync"></a>JavaScript pour l’utilisation de setSelectedDataAsync
@@ -215,7 +219,7 @@ Nous avons modifié l’exemple Office Open XML affiché ici, comme décrit da
 
 Une fois que vous avez enregistré le code Office Open XML précédent dans un fichier XML accessible à partir de votre solution, vous pouvez utiliser la fonction suivante pour définir le contenu du texte mis en forme dans le document à l’aide du forçage Office Open XML. 
 
-Dans cette fonction, Notez que toutes les lignes sauf la dernière sont utilisées pour obtenir votre balisage enregistré afin de l’utiliser dans l’appel de méthode [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) à la fin de la fonction. `setSelectedDataASync` nécessite uniquement de spécifier le contenu à insérer et le type de forçage de type.
+Dans cette fonction, vous remarquerez que toutes les lignes sauf la dernière sont utilisées pour obtenir votre balisage enregistré afin de l’utiliser dans l’appel de méthode [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) à la fin de la fonction. `setSelectedDataASync`nécessite uniquement de spécifier le contenu à insérer et le type de forçage de type.
 
 
 > [!NOTE]
@@ -313,7 +317,7 @@ Le balisage suivant présente le composant document.xml, qui contient notre exem
 
 - La balise de début  **w:document** comprend plusieurs listes d’espaces de noms (**xmlns**). Un grand nombre de ces espaces de noms se réfèrent à des types de contenu spécifiques, dont vous avez besoin uniquement s’ils correspondent à votre contenu.
 
-    Notez que le préfixe pour les balises dans un composant de document fait référence aux espaces de noms. Dans cet exemple, le seul préfixe utilisé dans les balises de la partie document. xml est **w :**, de sorte que le seul espace de noms que nous devons laisser dans la balise **w :document** d’ouverture est **xmlns : w**.
+    Notez que le préfixe des balises dans l’ensemble d’une partie de document fait référence aux espaces de noms. Dans cet exemple, le seul préfixe utilisé dans les balises de la partie document. xml est **w :**, de sorte que le seul espace de noms que nous devons laisser dans la balise **w :document** d’ouverture est **xmlns : w**.
 
 
 > [!TIP]
@@ -413,7 +417,7 @@ Les types de contrôles de contenu dans Word comprennent du texte enrichi, du te
 
 - Activez le **mode Création** pour modifier le contenu d’espace réservé dans le contrôle.
 
-Si votre complément fonctionne avec un modèle Word, vous pouvez inclure des contrôles dans ce modèle pour améliorer le comportement du contenu. Vous pouvez également utiliser la liaison de données XML dans un document Word pour lier des contrôles de contenu à des données, telles que des propriétés de document, pour effectuer des tâches similaires ou des tâches similaires. (Recherchez les contrôles qui sont déjà liés à des propriétés de document prédéfinies dans Word sous l’onglet **insertion** , sous **composants QuickPart**.)
+Si votre complément fonctionne avec un modèle Word, vous pouvez inclure des contrôles dans ce modèle pour améliorer le comportement du contenu. Vous pouvez également utiliser une liaison de données XML dans un document Word pour lier les contrôles de contenu aux données, comme les propriétés du document, pour faciliter la réalisation d’un formulaire ou des tâches similaires. (Pour trouver les contrôles déjà liés aux propriétés intégrées du document dans Word, accédez à l’onglet **Insertion**, sous **QuickPart**.)
 
 Lorsque vous utilisez des contrôles de contenu avec votre complément, vous pouvez aussi étendre considérablement les actions que votre complément peut effectuer à l’aide d’un autre type de liaison. Vous pouvez réaliser une liaison avec un contrôle de contenu à partir du complément, puis écrire le contenu dans la liaison plutôt que dans la sélection active.
 
@@ -476,14 +480,14 @@ La balise **w:sdt** dans le corps de document.xml représente le contrôle de co
 
 
 
-- L' **alias** est la propriété Title de la boîte de dialogue Propriétés du contrôle de contenu de Word. Il s’agit d’une propriété obligatoire (représentant le nom de l’élément) si vous envisagez de créer une liaison avec le contrôle à partir de votre complément.
+- L' **alias** est la propriété Title de la boîte de dialogue Propriétés du contrôle de contenu de Word. Cette propriété est obligatoire (elle représente le nom de l’élément) si vous envisagez une liaison au contrôle à partir de votre complément.
 
 - 
             **id** (unique) est une propriété obligatoire. Si vous liez le contrôle à partir de votre complément, l’ID est la propriété que la liaison utilise dans le document pour identifier le contrôle de contenu nommé applicable.
 
-- L’attribut **Appearance** est utilisé pour masquer le conteneur de contrôles, pour un aspect plus propre. Cette fonctionnalité a été introduite dans Word 2013, comme vous pouvez le constater par l’utilisation de l’espace de noms W15 Étant donné que cette propriété est utilisée, l’espace de noms W15 est conservé au début de la partie document. Xml.
+- L’attribut **Appearance** est utilisé pour masquer le conteneur de contrôles, pour un aspect plus propre. Cette fonctionnalité a été introduite dans Word 2013, comme vous pouvez le constater par l’utilisation de l’espace de noms W15 Cette propriété étant utilisée, l’espace de noms w15 est conservé au début du composant document.xml.
 
-- L’attribut **showingPlcHdr** est un paramètre facultatif qui définit le contenu par défaut que vous incluez dans le contrôle (texte dans cet exemple) comme contenu d’espace réservé. Par conséquent, si l’utilisateur clique ou appuie sur la zone de contrôle, tout le contenu est sélectionné au lieu de se comporter comme du contenu modifiable dans lequel l’utilisateur peut modifier.
+- L’attribut **showingPlcHdr** est un paramètre facultatif qui définit le contenu par défaut que vous incluez dans le contrôle (texte dans cet exemple) comme contenu d’espace réservé. Ainsi, si l’utilisateur clique ou appuie dans la zone de contrôle, tout le contenu est sélectionné au lieu de se comporter comme du contenu modifiable dans lequel l’utilisateur peut apporter des modifications.
 
 - Bien que la marque de paragraphe vide (**w:p/**) qui précède la balise **sdt** ne soit pas nécessaire pour ajouter un contrôle de contenu (et ajoute un espace vertical au-dessus du contrôle dans le document Word), elle garantit que le contrôle est placé dans son propre paragraphe. Cela peut être important, selon le type et la mise en forme du contenu qui sera ajouté dans le contrôle.
 
@@ -522,7 +526,7 @@ En examinant le code JavaScript qui suit, prenez en compte ces exigences :
 
 - Comme mentionné précédemment, vous devez utiliser un contrôle de contenu de texte enrichi afin d’établir une liaison avec le contrôle à partir de votre complément Word.
 
-- Le contrôle de contenu doit avoir un nom (il s’agit du champ **titre** de la boîte de dialogue Propriétés du contrôle de contenu, qui correspond à la balise d' **alias** dans le balisage Office Open XML). Voici comment le code identifie l’emplacement de la liaison.
+- Le contrôle de contenu doit avoir un nom (il s’agit du champ **titre** de la boîte de dialogue Propriétés du contrôle de contenu, qui correspond à la balise d' **alias** dans le balisage Office Open XML). Voici comment le code détermine où placer la liaison.
 
 - Vous pouvez disposer de plusieurs contrôles nommés et les lier en fonction de vos besoins. Utilisez un nom de contrôle de contenu unique, des ID de contrôle de contenu uniques et un ID de liaison unique.
 
@@ -560,7 +564,7 @@ Le code présenté ici effectue les étapes suivantes :
 > [!NOTE]
 > Comme mentionné plus haut et illustré dans le code précédent, le nom du contrôle de contenu est utilisé pour déterminer où créer la liaison. Cependant, dans le balisage Office Open XML, le code ajoute la liaison au document en utilisant à la fois le nom et l’attribut ID du contrôle de contenu.
 
-Après l’exécution du code, si vous examinez le balisage du document dans lequel votre complément a créé des liaisons, vous verrez deux parties à chaque liaison. Dans le balisage du contrôle de contenu dans lequel une liaison a été ajoutée (dans document. Xml), vous verrez l’attribut **W15 : webExtensionLinked/**.
+Après l’exécution du code, si vous examinez le balisage du document dans lequel votre complément a créé des liaisons, vous voyez deux composants pour chaque liaison. Dans le balisage du contrôle de contenu dans lequel une liaison a été ajoutée (dans document. Xml), vous verrez l’attribut **W15 : webExtensionLinked/**.
 
 Dans la partie de document nommée webExtensions1.xml, vous voyez la liste des liaisons que vous avez créées. Chaque liaison est identifiée à l’aide de son ID de liaison et de l’attribut ID du contrôle applicable, comme suit, où l’attribut **appref** est l’ID de contrôle de contenu : ** **we:binding id="myBinding" type="text" appref="1382295294"/**.
 
@@ -588,7 +592,7 @@ function populateBinding(filename) {
 }
 ```
 
-Comme avec `setSelectedDataAsync`, vous spécifiez le contenu à insérer et le type de forçage de type. La seule condition supplémentaire pour l’écriture dans une liaison est d’identifier la liaison par ID. Notez la façon dont l’ID de liaison utilisé dans ce code (Bindings # myBinding) correspond à l’ID de liaison établi (myBinding) lors de la création de la liaison dans la fonction précédente.
+Comme avec `setSelectedDataAsync`, vous spécifiez le contenu à insérer et le type de forçage de type. La seule exigence supplémentaire pour l’écriture sur une liaison est l’identification de la liaison par un ID. Notez comment l’ID de liaison utilisé dans ce code (bindings#myBinding) correspond à l’ID de liaison établi (myBinding) lors de la création de la liaison dans la fonction précédente.
 
 
 > [!NOTE]
@@ -739,7 +743,7 @@ Notez que, du fait qu’une référence de relation est explicitement utilisée 
 
 
 > [!NOTE]
-> Lorsque vous examinez le balisage, notez les espaces de noms supplémentaires utilisés dans la balise a :blip. Vous verrez dans document. XML que l’espace de noms **xlmns : a** (l’espace de noms DrawingML principal) est placé de manière dynamique au début de l’utilisation de références DrawingML plutôt qu’en haut de la partie document. Xml. Toutefois, l’espace de noms relations (r) doit être conservé là où il apparaît au début du document. Xml. Vérifiez votre balisage d’image pour les besoins supplémentaires des espaces de noms. N’oubliez pas que vous ne devez pas mémoriser les types de contenu qui requièrent les espaces de noms, mais vous pouvez facilement en examiner les préfixes dans document. Xml.
+> Lorsque vous examinez le balisage, notez les espaces de noms supplémentaires utilisés dans la balise a:blip. Vous verrez dans document. XML que l’espace de noms **xlmns : a** (l’espace de noms DrawingML principal) est placé de manière dynamique au début de l’utilisation de références DrawingML plutôt qu’en haut de la partie document. Xml. Cependant, l’espace de noms de relations (r) doit être conservé lorsqu’il apparaît au début de document.xml. Vérifiez si votre balise d’image comporte des exigences d’espace de noms supplémentaires. N’oubliez pas que vous n’avez pas à mémoriser les types de contenu devant être associés aux espaces de noms : les préfixes des balises vous l’indiquent tout au long du document.xml.
 
 
 ### <a name="understanding-additional-image-parts-and-formatting"></a>Présentation des composants d’image supplémentaires et de la mise en forme
@@ -779,7 +783,7 @@ Un diagramme SmartArt possède quatre composants associés, mais seulement deux 
 > [!TIP]
 > Le fichier SmartArt layout1.xml est un bon exemple pour illustrer les parties que vous pouvez supprimer de votre balisage, mais il peut être inutile de consacrer davantage de temps à cela (car cette opération supprime une petite quantité de balisage par rapport à la totalité du package). Si vous voulez vous débarrasser de toutes les lignes possibles de balisage, vous pouvez supprimer la balise **dgm:sampData** et son contenu. Ces données d’exemple définissent l’apparence de la miniature d’aperçu pour le diagramme dans les galeries de styles SmartArt. Toutefois, si elles sont omises, les exemples de données par défaut sont utilisés.
 
-N’oubliez pas que le balisage d’un diagramme SmartArt dans document. xml contient des références ID de relation aux parties mise en page, données, couleurs et styles rapides. Vous pouvez supprimer les références dans document. XML aux parties couleurs et styles lorsque vous supprimez ces parties et leurs définitions de relation (et il est certainement préférable de le faire, puisque vous supprimez ces relations), mais vous n’obtiendrez pas d’erreur si vous les laissez, car elles ne sont pas requises pour que votre diagramme soit inséré dans un document. Recherchez ces références dans document. xml dans la balise **DGM : Recouvercles** . Que vous preniez ou non cette étape, conservez les références d’ID de relation pour les parties de disposition et de données requises.
+N’oubliez pas que le balisage d’un diagramme SmartArt dans document. xml contient des références ID de relation aux parties mise en page, données, couleurs et styles rapides. Vous pouvez supprimer les références dans document. XML aux parties couleurs et styles lorsque vous supprimez ces parties et leurs définitions de relation (et il est certainement recommandé de le faire, puisque vous supprimez ces relations), mais vous n’obtiendrez pas d’erreur si vous laissez elles ne sont pas requises pour que votre diagramme soit inséré dans un document. Recherchez ces références dans document. xml dans la balise **DGM : Recouvercles** . Que vous preniez ou non cette étape, conservez les références d’ID de relation pour les parties de disposition et de données requises.
 
 
 ### <a name="working-with-charts"></a>Utilisation de graphiques
@@ -834,7 +838,7 @@ Après les sept étapes précédentes, vous avez supprimé probablement entre 9
 Que vous vous arrêtiez à cette étape ou que vous décidiez de continuer à explorer votre contenu pour trouver les dernières lignes de balisage que vous pouvez supprimer, n’oubliez pas que vous pouvez utiliser l’exemple de code précédemment référencé [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML) comme complément de travail pour tester rapidement et facilement votre balisage modifié.
 
 > [!TIP]
-> Si vous mettez à jour un extrait Office Open XML dans une solution existante lors du développement, effacez les fichiers Internet temporaires avant d’exécuter à nouveau la solution pour mettre à jour le fichier Office Open XML utilisé par votre code. Le balisage inclus dans votre solution dans les fichiers XML est mis en cache sur votre ordinateur. Vous pouvez, bien sûr, effacer les fichiers Internet temporaires de votre navigateur Web par défaut. Pour accéder aux options Internet et supprimer ces paramètres de l’intérieur de Visual Studio 2019, dans le menu **Déboguer** , choisissez **options**. Ensuite, sous **environnement**, choisissez **navigateur Web** , puis choisissez **Options Internet Explorer**.
+> Si vous mettez à jour un extrait Office Open XML dans une solution existante lors du développement, effacez les fichiers Internet temporaires avant d’exécuter à nouveau la solution pour mettre à jour le balisage Office Open XML utilisé par votre code. Le balisage qui est inclus dans votre solution pour les fichiers XML est mis en cache sur votre ordinateur. Vous pouvez évidemment effacer les fichiers Internet temporaires à partir de votre navigateur web par défaut. Pour accéder aux options Internet et supprimer ces paramètres de l’intérieur de Visual Studio 2019, dans le menu **Déboguer** , choisissez **options**. Ensuite, sous **Environnement**, choisissez **Navigateur web**, puis **Options Internet Explorer**.
 
 ## <a name="creating-an-add-in-for-both-template-and-stand-alone-use"></a>Création d’un complément pour une utilisation autonome et en modèle
 

@@ -1,14 +1,14 @@
 ---
 title: Élément Supertip dans le fichier manifest
-description: ''
+description: L’élément SuperTip définit une info-bulle riche (titre et Description).
 ms.date: 05/07/2019
 localization_priority: Normal
-ms.openlocfilehash: ab280ec550a58f85082c36a24f5f7c3b4112a214
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: cf88473b72979c839e5d55f44938fda19be24084
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325233"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720350"
 ---
 # <a name="supertip"></a>Supertip
 
@@ -16,7 +16,7 @@ Définit une info-bulle enrichie (titre et description). Il est utilisé par les
 
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Obligatoire  |  Description  |
+|  Élément |  Requis  |  Description  |
 |:-----|:-----|:-----|
 | [Titre](#title) | Oui | Texte de l’info-bulle. |
 | [Description](#description) | Oui | Description de l’info-bulle.<br>**Remarque**: (Outlook) seuls les clients Windows et Mac sont pris en charge. |

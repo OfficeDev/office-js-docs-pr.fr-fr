@@ -1,14 +1,14 @@
 ---
 title: Élément GetStarted dans le fichier manifeste
-description: ''
+description: Fournit des informations utilisées par la légende qui s’affiche lorsque le complément est installé dans des hôtes Word, Excel, PowerPoint et OneNote.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 82fa1b9b62674adfb05c07536a7fdf2bbabf8f45
-ms.sourcegitcommit: e5a5ec4ba32bacd0ccd13291b4e7f4bfc42901a3
+ms.openlocfilehash: 7b4eb0e0413eff97751eac01c3dc6e5a452722aa
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "37429736"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718187"
 ---
 # <a name="getstarted-element"></a>GetStarted, élément
 
@@ -16,7 +16,7 @@ Fournit des informations utilisées par la légende qui s’affiche lorsque le c
 
 ## <a name="child-elements"></a>Éléments enfants
 
-| Élément                       | Obligatoire | Description                                        |
+| Élément                       | Requis | Description                                        |
 |:------------------------------|:--------:|:---------------------------------------------------|
 | [Titre](#title)               | Oui      | Définit l’emplacement où se trouvent les fonctionnalités d’un complément     |
 | [Description](#description)   | Oui      | URL pointant vers un fichier qui contient les fonctions JavaScript.|

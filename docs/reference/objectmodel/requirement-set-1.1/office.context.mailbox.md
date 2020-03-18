@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox-ensemble de conditions requises 1,1
-description: ''
+description: Modèle objet de l’objet de boîte aux lettres Outlook dans l’API des compléments Outlook (version 1,1 de l’API de boîte aux lettres).
 ms.date: 03/06/2020
 localization_priority: Normal
-ms.openlocfilehash: d79a9b95808378a95a4e8e72080ab3237600ce24
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: be948e8ff49141d591affd195b0d0fabfab0d7ff
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42561841"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720210"
 ---
 # <a name="mailbox"></a>boîte aux lettres
 
@@ -29,7 +29,7 @@ Permet d’accéder au modèle d’objet de complément Outlook pour Microsoft O
 | Propriété | Minimale<br>niveau d’autorisation | Modes | Type de retour | Minimale<br>ensemble de conditions requises |
 |---|---|---|---|:---:|
 | [Diagnostics](/javascript/api/outlook/office.mailbox?view=outlook-js-1.1#diagnostics) | ReadItem | Composition<br>Lecture | [Diagnostics](/javascript/api/outlook/office.diagnostics?view=outlook-js-1.1) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [ewsUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.1#ewsurl) | ReadItem | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [ewsUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.1#ewsurl) | ReadItem | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [item](office.context.mailbox.item.md) | Restreint | Composition<br>Lecture | [Élément](/javascript/api/outlook/office.item?view=outlook-js-1.1) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [userProfile](/javascript/api/outlook/office.mailbox?view=outlook-js-1.1#userprofile) | ReadItem | Composition<br>Lecture | [Profil](/javascript/api/outlook/office.userprofile?view=outlook-js-1.1) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 

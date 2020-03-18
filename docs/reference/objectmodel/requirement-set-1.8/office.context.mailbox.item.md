@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Item-ensemble de conditions requises 1,8
-description: ''
+description: Modèle objet pour Office. Context. Mailbox. Item (ensemble de conditions requises 1,8)
 ms.date: 03/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 2d7df72954f7c8acc052aa827007c466011dbf18
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 0e6c47db0854fd76a69bb7d4e5387ec634662676
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688839"
+ms.locfileid: "42720028"
 ---
 # <a name="item"></a>élément
 

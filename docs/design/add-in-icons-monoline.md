@@ -1,14 +1,14 @@
 ---
 title: Instructions relatives aux icônes de style monolignes pour les compléments Office
-description: ''
+description: Obtenir des instructions sur l’utilisation des icônes d’icône de style monoligne dans les compléments Office.
 ms.date: 12/09/2019
 localization_priority: Normal
-ms.openlocfilehash: 5914e85305b58fb4ab05499141f31d69c507d279
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: 8d1ac2dff76b852cd69b38bd2c138d1ba43f203c
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40816184"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718600"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>Instructions relatives aux icônes de style monolignes pour les compléments Office
 
@@ -172,7 +172,7 @@ Lorsque vous utilisez un remplissage coloré, il doit toujours être associé à
 
 #### <a name="when-to-use-color"></a>Quand utiliser la couleur
 
-La couleur doit être utilisée pour indiquer la signification de l’icône plutôt que pour l’ornement. Il doit **mettre en surbrillance l’action** pour l’utilisateur. Lorsqu’un modificateur est ajouté à un élément de base avec une couleur, l’élément de base est généralement transformé en gris foncé et remplissage d’arrière-plan de sorte que le modificateur puisse être l’élément de couleur, comme le cas ci-dessous avec le modificateur « X » ajouté à la base de l’image dans le premier i con du jeu suivant.
+La couleur doit être utilisée pour indiquer la signification de l’icône plutôt que pour l’ornement. Il doit **mettre en surbrillance l’action** pour l’utilisateur. Lorsqu’un modificateur est ajouté à un élément de base avec une couleur, l’élément de base est généralement transformé en gris foncé et remplissage d’arrière-plan de sorte que le modificateur puisse être l’élément de couleur, comme le cas ci-dessous avec le modificateur « X » ajouté à la base de l’image à l’extrême gauche icône de l’ensemble suivant.
 
 ![Cinq icônes qui utilisent la couleur](../images/monolineicon29.png)
 

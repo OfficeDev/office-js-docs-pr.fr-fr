@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Item-Preview ensemble de conditions requises
-description: ''
+description: Modèle objet de l’objet d’élément Outlook dans l’API des compléments Outlook (version préliminaire de l’API de boîte aux lettres).
 ms.date: 03/06/2020
 localization_priority: Normal
-ms.openlocfilehash: deb5006d8253c7f9fdcf0bdd1a0ee24df9342d66
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 454903016fe3bc561172367523f48eeed0916125
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688926"
+ms.locfileid: "42717816"
 ---
 # <a name="item"></a>élément
 

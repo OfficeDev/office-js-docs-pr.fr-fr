@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Item-ensemble de conditions requises 1,3
-description: ''
+description: Modèle objet de l’objet d’élément Outlook dans l’API des compléments Outlook (version 1,3 de l’API de boîte aux lettres).
 ms.date: 03/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 51ab8dd7e6b3e849d1ea0a6c71f0171d2676c209
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: dbf9a86a0fc598e7cc34425588115a5471042e50
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688896"
+ms.locfileid: "42720140"
 ---
 # <a name="item"></a>élément
 

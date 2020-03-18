@@ -3,12 +3,12 @@ title: Comparer la prise en charge des compléments Outlook dans Outlook sur Mac
 description: Découvrez comment prend en charge les compléments dans Outlook sur Mac avec les autres hôtes Outlook.
 ms.date: 11/26/2019
 localization_priority: Normal
-ms.openlocfilehash: ec5e9934249ddc1a90240890d7f0201d23599446
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 452a162a05a44477c85a99417b3a8cefbf49e515
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325460"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720826"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-hosts"></a>Comparaison de la prise en charge des compléments Outlook dans Outlook sur Mac avec d’autres hôtes Outlook
 

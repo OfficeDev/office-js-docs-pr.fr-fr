@@ -3,12 +3,12 @@ title: Ajout d’une prise en charge mobile pour un complément Outlook
 description: L’ajout de la prise en charge d’Outlook Mobile nécessite la mise à jour du manifeste de complément et éventuellement la modification de votre code pour les scénarios mobiles.
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: 2e4ff53b371fdf50ddca43142cb5a036cfc96b25
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 31f58102129ae207da55839f7b48cc8a060645ad
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166144"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720854"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Ajouter la prise en charge des commandes de complément pour Outlook Mobile
 

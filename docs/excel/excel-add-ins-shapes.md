@@ -1,14 +1,14 @@
 ---
 title: Utilisation des formes à l’aide de l’API JavaScript pour Excel
-description: ''
+description: Découvrez comment Excel définit les formes comme n’importe quel objet qui se trouve sur la couche de dessin d’Excel.
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 54362baecc44f8761f2f69d21e465caa5f1c85b7
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: 7522bf440389e983efc3ec696375694e5539c442
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217227"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717116"
 ---
 # <a name="work-with-shapes-using-the-excel-javascript-api"></a>Utilisation des formes à l’aide de l’API JavaScript pour Excel
 

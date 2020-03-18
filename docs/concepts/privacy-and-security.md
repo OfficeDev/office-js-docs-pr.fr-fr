@@ -1,14 +1,14 @@
 ---
 title: Confidentialité et sécurité pour les compléments Office
-description: ''
+description: Découvrez les aspects de confidentialité et de sécurité de la plateforme des compléments Office.
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 5782cc7fcf23190cca73cc91a35a73e82d182261
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 9d002a8cc8dff8f8f4a8e2cc08c7e9c81a1641de
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42323839"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717305"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Confidentialité et sécurité pour les compléments Office
 
@@ -90,7 +90,7 @@ La plateforme du complément répond aux inquiétudes des utilisateurs finaux co
 
 - Lorsqu’ils partagent un document, les utilisateurs partagent également les compléments insérés dans ces documents ou qui y sont associés. Si un utilisateur ouvre un document qui contient un complément qu’il n’a jamais utilisé auparavant, l’application hôte demande à l’utilisateur d’accorder l’autorisation d’exécution du complément dans le document. Dans un environnement d’entreprise, l’application hôte Office demande également à l’utilisateur si le document provient d’une source externe.
 
-- Les utilisateurs peuvent autoriser ou refuser l’accès à AppSource. Pour les compléments de contenu et du volet de tâches, les utilisateurs gèrent l’accès aux compléments et catalogues approuvés à partir du centre de gestion de la **confidentialité** sur le client Office hôte (ouvert à partir des**options** > **** > de **fichiers** > **paramètres** > du centre de gestion de la confidentialité **-catalogues de compléments approuvés**). Pour les compléments Outlook, les applications peuvent gérer les compléments en sélectionnant le bouton **gérer les compléments** : dans Outlook sur Windows, choisissez **fichier** > **gérer les compléments**. Dans Outlook sur Mac, cliquez sur le bouton **gérer les compléments** dans la barre de complément. Dans Outlook sur le web, choisissez le menu **Paramètres** (icône d’engrenage) > **Gérer les compléments**. Les administrateurs peuvent également gérer cet accès [à l’aide d’une stratégie de groupe](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
+- Les utilisateurs peuvent autoriser ou refuser l’accès à AppSource. Pour les compléments de contenu et du volet de tâches, les utilisateurs gèrent l’accès aux compléments et catalogues approuvés à partir du centre de gestion de la **confidentialité** sur le client Office hôte (ouvert à partir des**options** > **Trust Center** > de **fichiers** > **paramètres** > du centre de gestion de la confidentialité **-catalogues de compléments approuvés**). Pour les compléments Outlook, les applications peuvent gérer les compléments en sélectionnant le bouton **gérer les compléments** : dans Outlook sur Windows, choisissez **fichier** > **gérer les compléments**. Dans Outlook sur Mac, cliquez sur le bouton **gérer les compléments** dans la barre de complément. Dans Outlook sur le web, choisissez le menu **Paramètres** (icône d’engrenage) > **Gérer les compléments**. Les administrateurs peuvent également gérer cet accès [à l’aide d’une stratégie de groupe](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
 
 - La conception de la plateforme du complément offre sécurité et performance aux utilisateurs finals des façons suivantes :
 

@@ -1,14 +1,14 @@
 ---
 title: Élément CustomTab dans le fichier manifest
-description: ''
+description: Sur le ruban, indiquez l’onglet et le groupe où placer leurs commandes de complément.
 ms.date: 01/24/2020
 localization_priority: Normal
-ms.openlocfilehash: ba0419b6cf9cc4a0c1e3038dbb7f972e65868ec4
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 8db29f166b5a5238a7ecf121ba5e5adca66ebe94
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42323804"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718425"
 ---
 # <a name="customtab-element"></a>Élément CustomTab
 
@@ -23,7 +23,7 @@ L’attribut **ID** doit être unique dans le manifeste.
 
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Obligatoire  |  Description  |
+|  Élément |  Requis  |  Description  |
 |:-----|:-----|:-----|
 |  [Group](group.md)      | Oui |  Définit un groupe de commandes.  |
 |  [Label](#label-tab)      | Oui |  Étiquette pour CustomTab ou Group.  |
