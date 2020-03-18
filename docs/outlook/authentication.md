@@ -4,11 +4,11 @@ description: Les compléments Outlook offrent différentes méthodes qui permett
 ms.date: 11/05/2019
 localization_priority: Priority
 ms.openlocfilehash: 2913f770b1f0335aae4634d95b8492b204d1e577
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166137"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688964"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Options d’authentification dans les compléments Outlook
 

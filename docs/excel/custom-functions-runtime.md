@@ -4,11 +4,11 @@ description: Comprendre les scénarios clés dans le développement de fonctions
 title: Runtime pour les fonctions personnalisées Excel
 localization_priority: Normal
 ms.openlocfilehash: bb73ab2f20eadbac3f5fc97e272d69fe8bb983cd
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36695860"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688632"
 ---
 # <a name="runtime-for-excel-custom-functions"></a>Runtime pour les fonctions personnalisées Excel
 
@@ -123,6 +123,6 @@ Découvrez comment [effectuer des requêtes Web avec des fonctions personnalisé
 ## <a name="see-also"></a>Voir aussi
 
 * [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
-* [Architecture de fonctions](custom-functions-architecture.md)
+* [Architecture des fonctions personnalisées](custom-functions-architecture.md)
 * [Afficher une boîte de dialogue dans les fonctions personnalisées](custom-functions-dialog.md)
 * [Didacticiel sur les fonctions personnalisées](../tutorials/excel-tutorial-create-custom-functions.md)

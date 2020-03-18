@@ -3,12 +3,12 @@ title: Conservation de l’état et des paramètres des compléments
 description: ''
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 99b645d27ff094e50ae4ad52a1a7f96aac07b9ed
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: f3ca153367c5ba14b7095e510cea6b6791b732a8
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325142"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42689001"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>Conservation de l’état et des paramètres des compléments
 
@@ -26,7 +26,7 @@ Cet article se concentre sur l’utilisation de l’API JavaScript Office pour f
 
 ## <a name="persisting-add-in-state-and-settings-with-the-office-javascript-api"></a>Persistance de l’État et des paramètres des compléments à l’aide de l’API JavaScript pour Office
 
-L’API JavaScript pour Office fournit les objets [Settings](/javascript/api/office/office.settings), [RoamingSettings](/javascript/api/outlook/office.roamingsettings)et [CustomProperties](/javascript/api/outlook/office.customproperties) pour enregistrer l’état des compléments entre les sessions, comme décrit dans le tableau suivant. Dans tous les cas, les valeurs de paramètres enregistrées sont associées à l' [ID](/office/dev/add-ins/reference/manifest/id) du complément qui les a créées.
+L’API JavaScript pour Office fournit les objets [Settings](/javascript/api/office/office.settings), [RoamingSettings](/javascript/api/outlook/office.roamingsettings)et [CustomProperties](/javascript/api/outlook/office.customproperties) pour enregistrer l’état des compléments entre les sessions, comme décrit dans le tableau suivant. Dans tous les cas, les valeurs de paramètres enregistrées sont associées à l' [ID](../reference/manifest/id.md) du complément qui les a créées.
 
 |**Objet**|**Type de complément**|**Emplacement de stockage**|**ôte Office**|
 |:-----|:-----|:-----|:-----|
@@ -192,7 +192,7 @@ Pour plus d’informations sur l’enregistrement des paramètres dans un compl�
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Présentation de l’API JavaScript pour Office](understanding-the-javascript-api-for-office.md)
+- [Compréhension de l’API JavaScript pour Office](understanding-the-javascript-api-for-office.md)
 - [Compléments Outlook](../outlook/outlook-add-ins-overview.md)
 - [Gérer l’État et les paramètres d’un complément Outlook](../outlook/manage-state-and-settings-outlook.md)
 - [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)

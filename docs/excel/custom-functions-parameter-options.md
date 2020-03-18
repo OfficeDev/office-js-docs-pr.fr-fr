@@ -3,12 +3,12 @@ ms.date: 07/15/2019
 description: Découvrez comment utiliser différents paramètres dans vos fonctions personnalisées, telles que les plages Excel, les paramètres facultatifs, le contexte d’appel, et bien plus encore.
 title: Options pour les fonctions personnalisées Excel
 localization_priority: Normal
-ms.openlocfilehash: e5b75b098d64d5998b0393d5995896f0289337fc
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 1b4097e1190c5d9dc284393d1321c8e2d6c1a8a4
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771420"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688668"
 ---
 # <a name="custom-functions-parameter-options"></a>Options des paramètres de fonctions personnalisées
 
@@ -20,7 +20,7 @@ Les fonctions personnalisées peuvent être configurées avec de nombreuses opti
 
 Alors que les paramètres réguliers sont obligatoires, les paramètres facultatifs ne le sont pas. Lorsqu’un utilisateur appelle une fonction dans Excel, les paramètres facultatifs apparaissent entre parenthèses. Dans l’exemple suivant, la fonction Add peut éventuellement ajouter un troisième nombre. Cette fonction apparaît sous `=CONTOSO.ADD(first, second, [third])` la forme dans Excel.
 
-#### <a name="javascripttabjavascript"></a>[Script](#tab/javascript)
+#### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```js
 /**
@@ -39,7 +39,7 @@ function add(first, second, third) {
 }
 ```
 
-#### <a name="typescripttabtypescript"></a>[TypeScript](#tab/typescript)
+#### <a name="typescript"></a>[TypeScript](#tab/typescript)
 
 ```typescript
 /**
@@ -65,7 +65,7 @@ function add(first: number, second: number, third?: number): number {
 
 Lorsque vous définissez une fonction qui contient un ou plusieurs paramètres facultatifs, vous devez spécifier ce qui se produit lorsque les paramètres facultatifs sont null. Dans l’exemple suivant, `zipCode` et `dayOfWeek` sont deux paramètres facultatifs pour la fonction`getWeatherReport`. Si le `zipCode` paramètre est null, la valeur par défaut est définie `98052`sur. Si le `dayOfWeek` paramètre est null, il est défini sur mercredi.
 
-#### <a name="javascripttabjavascript"></a>[Script](#tab/javascript)
+#### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```js
 /**
@@ -89,7 +89,7 @@ function getWeatherReport(zipCode, dayOfWeek) {
 }
 ```
 
-#### <a name="typescripttabtypescript"></a>[TypeScript](#tab/typescript)
+#### <a name="typescript"></a>[TypeScript](#tab/typescript)
 
 ```typescript
 /**
@@ -197,7 +197,7 @@ function addSingleValue(singleValue) {
 
 ### <a name="single-range-parameter"></a>Paramètre de plage unique
 
-Un paramètre de plage unique n’est pas techniquement un paramètre répétitif, mais il est inclus ici, car la déclaration est très similaire aux paramètres répétitifs. Il apparaîtrait à l’utilisateur sous la forme ADD (a2: B3) où une seule plage est passée d’Excel. L’exemple suivant montre comment déclarer un paramètre de plage unique.
+Un paramètre de plage unique n’est pas techniquement un paramètre répétitif, mais il est inclus ici, car la déclaration est très similaire aux paramètres répétitifs. Il apparaîtrait à l’utilisateur sous la forme ADD (a2 : B3) où une seule plage est passée d’Excel. L’exemple suivant montre comment déclarer un paramètre de plage unique.
 
 ```JS
 /**
@@ -217,7 +217,7 @@ function addSingleRange(singleRange) {
 
 ### <a name="repeating-range-parameter"></a>Paramètre de plage extensible
 
-Un paramètre de plage extensible permet de transmettre plusieurs plages ou nombres. Par exemple, l’utilisateur peut entrer ADD (5, B2, C3, 8, E5: E8). Les plages extensibles sont généralement spécifiées avec `number[][][]` le type comme il s’agit de matrices en trois dimensions. Pour un exemple, reportez-vous à l’exemple principal ci-dessous pour les paramètres de répétition (paramètres #repeating).
+Un paramètre de plage extensible permet de transmettre plusieurs plages ou nombres. Par exemple, l’utilisateur peut entrer ADD (5, B2, C3, 8, E5 : E8). Les plages extensibles sont généralement spécifiées avec `number[][][]` le type comme il s’agit de matrices en trois dimensions. Pour un exemple, reportez-vous à l’exemple principal ci-dessous pour les paramètres de répétition (paramètres #repeating).
 
 
 ### <a name="declaring-repeating-parameters"></a>Déclaration de paramètres répétitifs
@@ -225,7 +225,7 @@ Dans la machine à écrire, indiquez que le paramètre est à plusieurs dimensio
 
 En JavaScript, utilisez `@param values {number[]}` pour les tableaux à une dimension, `@param <name> {number[][]}` pour les tableaux à deux dimensions, et ainsi de suite pour d’autres dimensions.
 
-Pour le format JSON dynamique, vérifiez que votre paramètre est spécifié en `"repeating": true` tant que dans votre fichier JSON, et vérifiez que vos paramètres sont marqués comme `"dimensionality”: matrix`.
+Pour le format JSON dynamique, vérifiez que votre paramètre est spécifié en `"repeating": true` tant que dans votre fichier JSON, et vérifiez que vos paramètres sont marqués comme `"dimensionality": matrix`.
 
 >[!NOTE]
 >Les fonctions contenant des paramètres répétitifs contiennent automatiquement un paramètre d’appel comme dernier paramètre. Pour plus d’informations sur les paramètres d’invocation, consultez la section suivante.
@@ -253,9 +253,9 @@ Le paramètre vous permet d’obtenir le contexte de la cellule d’appel, ce qu
 
 ### <a name="addressing-cells-context-parameter"></a>Paramètre de contexte de la cellule d’adressage
 
-Dans certains cas, vous devez obtenir l’adresse de la cellule qui a appelé votre fonction personnalisée. Cela est utile dans les scénarios suivants:
+Dans certains cas, vous devez obtenir l’adresse de la cellule qui a appelé votre fonction personnalisée. Cela est utile dans les scénarios suivants :
 
-- Mise en forme des plages: utilisez l’adresse de la cellule comme clé pour stocker des informations dans [OfficeRuntime. Storage](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Utilisez ensuite [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) dans Excel pour charger la clé à partir de l’élément `OfficeRuntime.storage`.
+- Mise en forme des plages : utilisez l’adresse de la cellule comme clé pour stocker des informations dans [OfficeRuntime. Storage](../excel/custom-functions-runtime.md#storing-and-accessing-data). Utilisez ensuite [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) dans Excel pour charger la clé à partir de l’élément `OfficeRuntime.storage`.
 - Affichage de valeurs mises en cache : si votre fonction est utilisée en mode hors connexion, affichez les valeurs mises en cache à partir de l’élément `OfficeRuntime.storage` à l’aide de `onCalculated`.
 - Rapprochement : utilisez l’adresse de la cellule pour découvrir la cellule d’origine afin de vous aider à réaliser un rapprochement lors du traitement.
 
@@ -284,7 +284,7 @@ Découvrez comment [enregistrer l’État dans vos fonctions personnalisées](cu
 ## <a name="see-also"></a>Voir aussi
 
 * [Recevoir et gérer des données à l’aide de fonctions personnalisées](custom-functions-web-reqs.md)
-* [Métadonnées fonctions personnalisées](custom-functions-json.md)
+* [Métadonnées de fonctions personnalisées](custom-functions-json.md)
 * [Générer automatiquement des métadonnées JSON pour des fonctions personnalisées](custom-functions-json-autogeneration.md)
 * [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
 * [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md)

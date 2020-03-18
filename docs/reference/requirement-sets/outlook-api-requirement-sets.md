@@ -5,11 +5,11 @@ ms.date: 03/10/2020
 ms.prod: outlook
 localization_priority: Priority
 ms.openlocfilehash: 7f220ac6e381c365494a285110264d2dd71891ee
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596745"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688848"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Outlook
 

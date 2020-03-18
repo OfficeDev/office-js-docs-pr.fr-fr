@@ -4,11 +4,11 @@ description: Découvrez la validation d’un manifeste de complément Office à 
 ms.date: 12/31/2019
 localization_priority: Normal
 ms.openlocfilehash: 9cd1c353d6f73decb5e39df96cf66da5912b8f9c
-ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "42554621"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688664"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>Valider un manifeste de complément Office
 

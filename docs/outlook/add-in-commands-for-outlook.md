@@ -4,11 +4,11 @@ description: Les commandes de complément Outlook permettent de lancer des actio
 ms.date: 12/05/2019
 localization_priority: Priority
 ms.openlocfilehash: 4b7249aaaad10f8ddef02540dcd6a3e08524c4db
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166150"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688961"
 ---
 # <a name="add-in-commands-for-outlook"></a>Commandes de complément pour Outlook
 

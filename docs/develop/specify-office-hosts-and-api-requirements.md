@@ -4,11 +4,11 @@ description: ''
 ms.date: 09/26/2019
 localization_priority: Normal
 ms.openlocfilehash: bf5c263da57224036aa12ec652a1cb38f73e31c0
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596493"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688996"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>Spécification des exigences en matière d’hôtes Office et d’API
 

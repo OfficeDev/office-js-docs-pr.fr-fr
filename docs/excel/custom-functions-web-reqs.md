@@ -4,11 +4,11 @@ description: Demander, flux de données et annuler la diffusion en continu de do
 title: Recevoir et gérer des données à l’aide de fonctions personnalisées
 localization_priority: Normal
 ms.openlocfilehash: ca1353fcc8c9fcd79db273f0cb1d7bf3d7d58a70
-ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "42554852"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688657"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>Recevoir et gérer des données à l’aide de fonctions personnalisées
 

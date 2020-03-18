@@ -4,11 +4,11 @@ description: ''
 ms.date: 01/27/2020
 localization_priority: Normal
 ms.openlocfilehash: 0e78a2e000016e28f2012902e0e8db487b80d930
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324637"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688969"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Développement de compléments Office avec Angular
 

@@ -4,11 +4,11 @@ description: ''
 ms.date: 12/16/2019
 localization_priority: Normal
 ms.openlocfilehash: 7cc8e6acc60c28b44ec7a2b91bb5e388b2618a31
-ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "42554723"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688851"
 ---
 # <a name="office"></a>Office
 

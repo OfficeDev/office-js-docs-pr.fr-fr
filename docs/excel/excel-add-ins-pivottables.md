@@ -4,11 +4,11 @@ description: Utilisez l’API JavaScript pour Excel pour créer des tableaux cro
 ms.date: 01/22/2020
 localization_priority: Normal
 ms.openlocfilehash: ec7d7ccd7f040185e31b59693827c31d5dab8372
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325093"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688636"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Utilisation des tableaux croisés dynamiques avec l’API JavaScript pour Excel
 
@@ -172,7 +172,7 @@ Excel.run(function (context) {
 
 ## <a name="slicers"></a>Slicers
 
-Les [segments](/javascript/api/excel/excel.slicer) permettent aux données d’être filtrées à partir d’un tableau croisé dynamique ou d’un tableau Excel. Un segment utilise des valeurs d’une colonne ou d’un champ PivotField spécifié pour filtrer les lignes correspondantes. Ces valeurs sont stockées en [](/javascript/api/excel/excel.sliceritem) tant qu’objets SlicerItem `Slicer`dans le. Votre complément peut ajuster ces filtres, comme les utilisateurs peuvent les[utiliser (par le biais de l’interface utilisateur Excel](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d)). Le segment se trouve au-dessus de la feuille de calcul de la couche de dessin, comme illustré dans la capture d’écran suivante.
+Les [segments](/javascript/api/excel/excel.slicer) permettent aux données d’être filtrées à partir d’un tableau croisé dynamique ou d’un tableau Excel. Un segment utilise des valeurs d’une colonne ou d’un champ PivotField spécifié pour filtrer les lignes correspondantes. Ces valeurs sont stockées en [SlicerItem](/javascript/api/excel/excel.sliceritem) tant qu’objets SlicerItem `Slicer`dans le. Votre complément peut ajuster ces filtres, comme les utilisateurs peuvent les[utiliser (par le biais de l’interface utilisateur Excel](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d)). Le segment se trouve au-dessus de la feuille de calcul de la couche de dessin, comme illustré dans la capture d’écran suivante.
 
 ![Données de filtrage de segment sur un tableau croisé dynamique.](../images/excel-slicer.png)
 

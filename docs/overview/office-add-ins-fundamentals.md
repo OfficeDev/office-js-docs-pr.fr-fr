@@ -4,11 +4,11 @@ description: Présentation du développement de compléments Office.
 ms.date: 02/27/2020
 localization_priority: Priority
 ms.openlocfilehash: 2ab0c79771d9aa60b2fd99984914554214978089
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325311"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688956"
 ---
 # <a name="building-office-add-ins"></a>Création de compléments Office
 
@@ -97,7 +97,7 @@ Un complément Office peut utiliser l’API JavaScript Office pour interagir ave
 
 [!include[information about accessing the Office JS API library](../includes/office-js-access-library.md)]
 
-#### <a name="api-models"></a>Modèles d’API
+#### <a name="api-models"></a>Modèles API
 
 [!include[information about the Office JS API models](../includes/office-js-api-models.md)]
 

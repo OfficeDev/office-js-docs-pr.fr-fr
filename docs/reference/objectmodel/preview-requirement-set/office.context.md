@@ -4,11 +4,11 @@ description: ''
 ms.date: 12/16/2019
 localization_priority: Normal
 ms.openlocfilehash: 9c2c661ce870e2007bd891aee040c6b3564f7b9e
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165516"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688902"
 ---
 # <a name="context"></a>context
 
@@ -28,10 +28,10 @@ Office. Context fournit des interfaces partagées qui sont utilisées par des co
 | Propriété | Modes | Type de retour | Minimale<br>ensemble de conditions requises |
 |---|---|---|:---:|
 | [auth](#auth-auth) | Composition<br>Lecture | [Auth](/javascript/api/office/office.auth?view=outlook-js-preview) | [Aperçu](../preview-requirement-set/outlook-requirement-set-preview.md) |
-| [contentLanguage](#contentlanguage-string) | Composition<br>Lire | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [contentLanguage](#contentlanguage-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [Diagnostics](#diagnostics-contextinformation) | Composition<br>Lecture | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [displayLanguage](#displaylanguage-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [hote](#host-hosttype) | Composition<br>Lire | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [hote](#host-hosttype) | Composition<br>Lecture | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [mailbox](office.context.mailbox.md) | Composition<br>Lecture | [Boîte aux lettres](/javascript/api/outlook/office.mailbox?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [officeTheme](#officetheme-officetheme) | Composition<br>Lecture | [OfficeTheme](/javascript/api/office/office.officetheme?view=outlook-js-preview) | [Aperçu](../preview-requirement-set/outlook-requirement-set-preview.md) |
 | [plateforme](#platform-platformtype) | Composition<br>Lecture | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |

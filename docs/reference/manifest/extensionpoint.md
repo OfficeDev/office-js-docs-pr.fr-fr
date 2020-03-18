@@ -4,11 +4,11 @@ description: ''
 ms.date: 09/05/2019
 localization_priority: Normal
 ms.openlocfilehash: 44075bd12c15b4ac9117a51d71fdcc7d6436a7ce
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324875"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688911"
 ---
 # <a name="extensionpoint-element"></a>Élément ExtensionPoint
 

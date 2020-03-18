@@ -5,11 +5,11 @@ ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
 ms.openlocfilehash: 9c8cfedd5f8219f2105456597d43201068b4c21e
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950501"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688660"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Didacticiel : créer des fonctions personnalisées dans Excel
 
@@ -61,7 +61,7 @@ Dans ce didacticiel, vous allez :
 
 4. Démarrez le serveur web local qui est exécuté dans Node.js. Vous pouvez tester le complément de fonction personnalisée dans Excel sur le web ou sur Windows.
 
-# <a name="excel-on-windows-or-mactabexcel-windows"></a>[Excel sur Windows ou Mac](#tab/excel-windows)
+# <a name="excel-on-windows-or-mac"></a>[Excel sur Windows ou Mac](#tab/excel-windows)
 
 Pour tester votre complément dans Excel sur Windows ou Mac, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local et Excel s’ouvrent avec votre complément chargé.
 
@@ -69,7 +69,7 @@ Pour tester votre complément dans Excel sur Windows ou Mac, exécutez la comman
 npm run start:desktop
 ```
 
-# <a name="excel-on-the-webtabexcel-online"></a>[Excel sur le web](#tab/excel-online)
+# <a name="excel-on-the-web"></a>[Excel sur le web](#tab/excel-online)
 
 Pour tester votre complément dans Excel sur un navigateur, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local démarre.
 
@@ -145,7 +145,7 @@ Intégration de données à partir du Web est un excellent moyen pour étendre E
 
 4. Enregistrez de nouveau le complément dans Excel en procédant comme suit (pour Excel sur le web, Windows ou Mac). Vous devez suivre ces étapes pour que la nouvelle fonction devienne disponible.
 
-### <a name="excel-on-windows-or-mactabexcel-windows"></a>[Excel sur Windows ou Mac](#tab/excel-windows)
+### <a name="excel-on-windows-or-mac"></a>[Excel sur Windows ou Mac](#tab/excel-windows)
 
 1. Fermez Excel, puis rouvrez-le.
 
@@ -155,7 +155,7 @@ Intégration de données à partir du Web est un excellent moyen pour étendre E
     ![Ruban Insertion dans Excel sur Windows avec le complément Fonctions personnalisées Excel mis en évidence dans la liste Mes compléments](../images/list-starcount.png)
 
 
-# <a name="excel-on-the-webtabexcel-online"></a>[Excel sur le web](#tab/excel-online)
+# <a name="excel-on-the-web"></a>[Excel sur le web](#tab/excel-online)
 
 1. Dans Excel, sélectionnez l’onglet **Insertion**, puis **Compléments**.  ![Ruban Insertion dans Excel sur le web avec l’icône Mes compléments mise en évidence](../images/excel-cf-online-register-add-in-1.png)
 
@@ -213,7 +213,7 @@ function clock(invocation) {
 
 3. Enregistrez de nouveau le complément dans Excel en procédant comme suit (pour Excel sur le web, Windows ou Mac). Vous devez suivre ces étapes pour que la nouvelle fonction devienne disponible. 
 
-# <a name="excel-on-windows-or-mactabexcel-windows"></a>[Excel sur Windows ou Mac](#tab/excel-windows)
+# <a name="excel-on-windows-or-mac"></a>[Excel sur Windows ou Mac](#tab/excel-windows)
 
 1. Fermez Excel, puis rouvrez-le.
 
@@ -222,7 +222,7 @@ function clock(invocation) {
 3. Dans la liste des compléments disponibles, recherchez la section **Compléments de développeur**, puis sélectionnez le complément **starcount** pour effectuer cette opération.
     ![Ruban Insertion dans Excel sur Windows avec le complément Fonctions personnalisées Excel mis en évidence dans la liste Mes compléments](../images/list-starcount.png)
 
-# <a name="excel-on-the-webtabexcel-online"></a>[Excel sur le web](#tab/excel-online)
+# <a name="excel-on-the-web"></a>[Excel sur le web](#tab/excel-online)
 
 1. Dans Excel, sélectionnez l’onglet **Insertion**, puis **Compléments**.  ![Ruban Insertion dans Excel sur le web avec l’icône Mes compléments mise en évidence](../images/excel-cf-online-register-add-in-1.png)
 

@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: 78fb38d8fb18c276bfe2eed1bd5b52659cadcaa3
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165530"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688908"
 ---
 # <a name="rule-element"></a>Élément Rule
 

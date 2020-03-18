@@ -3,12 +3,12 @@ title: Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)
 description: Les fonctions et scénarios d’objet de plage avancés, tels que les cellules spéciales, suppriment les doublons et utilisent des dates.
 ms.date: 02/11/2020
 localization_priority: Normal
-ms.openlocfilehash: 0e42549c7ecb9eb8bf8ebe707906224b4059e176
-ms.sourcegitcommit: d85efbf41a3382ca7d3ab08f2c3f0664d4b26c53
+ms.openlocfilehash: ed5f946c58b14f7f09b1bdc6fb0815430849f0bd
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "42327753"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688640"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)
 
@@ -99,7 +99,7 @@ Si aucune cellule avec la caractéristique ciblée n’existe dans la plage `get
 Si vous attendez que des cellules avec la caractéristique ciblée existent toujours, vous souhaiterez probablement que votre code  lève une erreur si ces cellules ne sont pas là. Mais dans les scénarios où les cellules ne correspondent pas; votre code doit vérifier cette possibilité et le gérer gracieusement sans émettre d’erreur. Vous pouvez obtenir ce comportement avec la `getSpecialCellsOrNullObject`méthode et sa propriété renvoyée`isNullObject`. Cet exemple utilise les valeurs suivantes. Tenez compte du code suivant :
 
 - La méthode`getSpecialCellsOrNullObject`renvoie toujours un objet proxy, donc il ne s’agit jamais du sens`null`JavaScript ordinaire. Mais si les cellules non correspondantes sont introuvables, la propriété`isNullObject` de l’objet est établi à`true`.
-- Il appelle`context.sync`*avant*de tester la propriété`isNullObject`. Il s’agit d’une condition avec toutes les méthodes et propriétés`*OrNullObject`, car vous devez toujours télécharger et synchroniser une propriété afin de le lire.  Cependant, il n’est pas nécessaire de télécharger*de manière explicite*la propriété`isNullObject`. Il est automatiquement téléchargé par le`context.sync`même si`load`n’est pas appelé sur l’objet. Pour plus d'informations, consultez le[\*OrNullObject](/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#ornullobject-methods).
+- Il appelle`context.sync`*avant*de tester la propriété`isNullObject`. Il s’agit d’une condition avec toutes les méthodes et propriétés`*OrNullObject`, car vous devez toujours télécharger et synchroniser une propriété afin de le lire.  Cependant, il n’est pas nécessaire de télécharger*de manière explicite*la propriété`isNullObject`. Il est automatiquement téléchargé par le`context.sync`même si`load`n’est pas appelé sur l’objet. Pour plus d'informations, consultez le[\*OrNullObject](../excel/excel-add-ins-advanced-concepts.md#ornullobject-methods).
 - Vous pouvez tester ce code en sélectionnant d’abord une plage qui n’a pas de cellules de formule et en l’exécutant. Puis sélectionnez une plage qui dispose au moins d’une cellule dotée d’une formule et en l’exécutant à nouveau.
 
 ```js
@@ -197,10 +197,10 @@ copyFrom(sourceRange: Range | RangeAreas | string, copyType?: Excel.RangeCopyTyp
 
 `copyType` spécifie les données copiées de la source vers la destination.
 
-- `Excel.RangeCopyType.formulas` transfère les formules dans les cellules sources en préservant le positionnement relatif des plages de ces formules. Les entrées autres que des formules sont copiées telles quelles.
+- `Excel.RangeCopyType.formulas`transfère les formules dans les cellules sources et conserve le positionnement relatif des plages de ces formules. Les entrées autres que des formules sont copiées telles quelles.
 - `Excel.RangeCopyType.values` copie les valeurs des données et, s’il s’agit d’une formule, le résultat de celle-ci.
 - `Excel.RangeCopyType.formats` copie la mise en forme de la plage, y compris la police, la couleur et d’autres paramètres de mise en forme, mais aucune valeur.
-- `Excel.RangeCopyType.all` (option par défaut) copie les données et la mise en forme, en conservant les formules éventuelles des cellules.
+- `Excel.RangeCopyType.all`(option par défaut) copie les données et la mise en forme, en conservant les formules, le cas échéant.
 
 `skipBlanks` définit si les cellules vides sont copiées dans la destination. Quand la valeur est true, `copyFrom` ignore les cellules vides de la plage source.
 Les cellules ignorées ne remplacent pas les données existantes dans les cellules correspondantes de la plage de destination. La valeur par défaut est false.
@@ -229,11 +229,11 @@ Excel.run(function (context) {
 
 *Avant l’exécution de la fonction précédente.*
 
-![Données dans Excel avant exécution de la méthode de copie de la plage.](../images/excel-range-copyfrom-skipblanks-before.png)
+![Données dans Excel avant l’exécution de la méthode de copie de la plage](../images/excel-range-copyfrom-skipblanks-before.png)
 
 *Après l’exécution de la fonction précédente.*
 
-![Données dans Excel après exécution de la méthode de copie de la plage.](../images/excel-range-copyfrom-skipblanks-after.png)
+![Données dans Excel après exécution de la méthode de copie de la plage](../images/excel-range-copyfrom-skipblanks-after.png)
 
 ### <a name="cut-and-paste-move-cells-online-only"></a>Couper et coller (déplacer) des cellules ([en ligne uniquement](../reference/requirement-sets/excel-api-online-requirement-set.md)) 
 
@@ -282,11 +282,11 @@ Excel.run(function (context) {
 
 *Avant l’exécution de la fonction précédente.*
 
-![Données dans Excel avant exécution de la méthode de copie de suppression de la plage.](../images/excel-ranges-remove-duplicates-before.png)
+![Données dans Excel avant l’exécution de la méthode de suppression des doublons de la plage](../images/excel-ranges-remove-duplicates-before.png)
 
 *Après l’exécution de la fonction précédente.*
 
-![Données dans Excel après exécution de la méthode de copie de suppression de la plage.](../images/excel-ranges-remove-duplicates-after.png)
+![Données dans Excel après exécution de la méthode Remove Duplicates de la plage](../images/excel-ranges-remove-duplicates-after.png)
 
 ## <a name="group-data-for-an-outline"></a>Données de groupe pour un plan
 

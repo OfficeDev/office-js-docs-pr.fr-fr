@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/30/2019
 localization_priority: Normal
 ms.openlocfilehash: cb77721649608cf18fc7bad99974cfe96f6be6f3
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325086"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688633"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Utilisation de plages à l’aide de l’API JavaScript pour Excel
 
@@ -23,7 +23,7 @@ Les exemples suivants montrent les différentes façons d’obtenir une référe
 
 ### <a name="get-range-by-address"></a>Obtenir une plage en fonction d’une adresse
 
-L’exemple de code suivant obtient la plage avec l’adresse **B2 : C5** à partir **** de la feuille de `address` calcul nommée Sample, charge sa propriété et écrit un message dans la console.
+L’exemple de code suivant obtient la plage avec l’adresse **B2 : C5** à partir **Sample**de la feuille de `address` calcul nommée Sample, charge sa propriété et écrit un message dans la console.
 
 ```js
 Excel.run(function (context) {
@@ -57,7 +57,7 @@ Excel.run(function (context) {
 
 ### <a name="get-used-range"></a>Obtenir une plage utilisée
 
-L’exemple de code suivant obtient la plage utilisée à partir de **** la feuille de calcul `address` nommée Sample, charge sa propriété et écrit un message dans la console. La plage utilisée est la plus petite plage qui englobe toutes les cellules de la feuille de calcul auxquelles une valeur ou une mise en forme est attribuée. Si la feuille de calcul entière est vide `getUsedRange()` , la méthode renvoie une plage qui se compose uniquement de la cellule supérieure gauche de la feuille de calcul.
+L’exemple de code suivant obtient la plage utilisée à partir de **Sample**la feuille de calcul `address` nommée Sample, charge sa propriété et écrit un message dans la console. La plage utilisée est la plus petite plage qui englobe toutes les cellules de la feuille de calcul auxquelles une valeur ou une mise en forme est attribuée. Si la feuille de calcul entière est vide `getUsedRange()` , la méthode renvoie une plage qui se compose uniquement de la cellule supérieure gauche de la feuille de calcul.
 
 ```js
 Excel.run(function (context) {
@@ -74,7 +74,7 @@ Excel.run(function (context) {
 
 ### <a name="get-entire-range"></a>Obtenir l’intégralité d’une plage
 
-L’exemple de code suivant obtient la plage entière de la feuille de **** calcul à partir de `address` la feuille de calcul nommée Sample, charge sa propriété et écrit un message dans la console.
+L’exemple de code suivant obtient la plage entière de la feuille de **Sample**calcul à partir de `address` la feuille de calcul nommée Sample, charge sa propriété et écrit un message dans la console.
 
 ```js
 Excel.run(function (context) {

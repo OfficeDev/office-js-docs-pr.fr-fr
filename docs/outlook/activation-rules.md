@@ -4,11 +4,11 @@ description: Outlook active certains types de complément si le message ou le re
 ms.date: 12/10/2019
 localization_priority: Normal
 ms.openlocfilehash: 44bb4d7f03ca79ef402050ff730296533b2a67e6
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324981"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688965"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>Règles d’activation des compléments contextuels Outlook 
 
