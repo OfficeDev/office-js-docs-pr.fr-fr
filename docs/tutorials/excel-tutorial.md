@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez développer un complément Excel qu
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 70df5e7e78abf64bf36d33cade0b40ff8e3c18f4
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 8d16369908f5885e20c145581c021ba69855e968
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950893"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719790"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 
@@ -163,7 +163,7 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
     - Enfin, il s’assure que la largeur des colonnes et la hauteur des lignes sont assez grandes pour contenir l’élément de données le plus long (ou le plus haut). Notez que le code doit rechercher des objets `Range` à mettre en forme. Les objets `TableColumn` et `TableRow` n’ont pas de propriétés de mise en forme.
 
     ```js
-    expensesTable.columns.getItemAt(3).getRange().numberFormat = [['€#,##0.00']];
+    expensesTable.columns.getItemAt(3).getRange().numberFormat = [['&euro;#,##0.00']];
     expensesTable.getRange().format.autofitColumns();
     expensesTable.getRange().format.autofitRows();
     ```
@@ -402,7 +402,7 @@ Dans cette étape du didacticiel, vous créerez un graphique à l’aide de donn
    
    - Les paramètres de la méthode `setPosition` spécifient les cellules situées en haut à gauche et en bas à droite de la zone de feuille de calcul devant contenir le graphique. Excel peut ajuster des éléments, tels que la largeur de ligne pour que le graphique s’affiche correctement dans l’espace attribué.
    
-   - Une « série » est un ensemble de points de données dans une colonne du tableau. Étant donné qu’il n’existe qu’une seule colonne autre que de type chaîne dans le tableau, Excel déduit que la colonne est la seule colonne de points de données pour le graphique. Il interprète les autres colonnes comme des étiquettes de graphique. Par conséquent, il y aura simplement une série dans le graphique et un index 0. Il s’agit de celle à étiqueter avec « Valeur en € ».
+   - Une « série » est un ensemble de points de données dans une colonne du tableau. Étant donné qu’il n’existe qu’une seule colonne autre que de type chaîne dans le tableau, Excel déduit que la colonne est la seule colonne de points de données pour le graphique. Il interprète les autres colonnes comme des étiquettes de graphique. Par conséquent, il y aura simplement une série dans le graphique et un index 0. Il s’agit de celle à étiqueter avec « Valeur en &euro; ».
 
     ```js
     chart.setPosition("A15", "F30");
@@ -411,7 +411,7 @@ Dans cette étape du didacticiel, vous créerez un graphique à l’aide de donn
     chart.legend.format.fill.setSolidColor("white");
     chart.dataLabels.format.font.size = 15;
     chart.dataLabels.format.font.color = "black";
-    chart.series.getItemAt(0).name = 'Value in €';
+    chart.series.getItemAt(0).name = 'Value in &euro;';
     ```
 
 9. Vérifiez que vous avez enregistré toutes les modifications que vous avez apportées au projet.
