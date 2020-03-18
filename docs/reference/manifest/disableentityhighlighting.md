@@ -1,28 +1,28 @@
 ---
 title: Élément DisableEntityHighlighting dans le fichier manifeste
-description: ''
+description: Spécifie si la mise en surbrillance de l’entité doit être désactivée pour votre complément de messagerie.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 58f9b865f0f8db9b68c138fc184b62cfe0958778
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: f64b0f8b0d3a57acfdf584bc67e9bdca1895ffb1
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450498"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718327"
 ---
-# <a name="disableentityhighlighting-element"></a><span data-ttu-id="7c71a-102">DisableEntityHighlighting, élément</span><span class="sxs-lookup"><span data-stu-id="7c71a-102">DisableEntityHighlighting element</span></span>
+# <a name="disableentityhighlighting-element"></a><span data-ttu-id="b1715-103">DisableEntityHighlighting, élément</span><span class="sxs-lookup"><span data-stu-id="b1715-103">DisableEntityHighlighting element</span></span>
 
-<span data-ttu-id="7c71a-103">Spécifie si la mise en surbrillance de l’entité doit être désactivée pour votre complément de messagerie.</span><span class="sxs-lookup"><span data-stu-id="7c71a-103">Specifies whether entity highlighting should be turned off for your mail add-in.</span></span>
+<span data-ttu-id="b1715-104">Spécifie si la mise en surbrillance de l’entité doit être désactivée pour votre complément de messagerie.</span><span class="sxs-lookup"><span data-stu-id="b1715-104">Specifies whether entity highlighting should be turned off for your mail add-in.</span></span>
 
-<span data-ttu-id="7c71a-104">**Type de complément :** messagerie</span><span class="sxs-lookup"><span data-stu-id="7c71a-104">**Add-in type:** Mail</span></span>
+<span data-ttu-id="b1715-105">**Type de complément :** messagerie</span><span class="sxs-lookup"><span data-stu-id="b1715-105">**Add-in type:** Mail</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="7c71a-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7c71a-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="b1715-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b1715-106">Syntax</span></span>
 
 ```XML
 <DisableEntityHighlighting> [true | false]</DisableEntityHighlighting>
 ```
 
-## <a name="contained-in"></a><span data-ttu-id="7c71a-106">Contenu dans</span><span class="sxs-lookup"><span data-stu-id="7c71a-106">Contained in</span></span>
+## <a name="contained-in"></a><span data-ttu-id="b1715-107">Contenu dans</span><span class="sxs-lookup"><span data-stu-id="b1715-107">Contained in</span></span>
 
-[<span data-ttu-id="7c71a-107">OfficeApp</span><span class="sxs-lookup"><span data-stu-id="7c71a-107">OfficeApp</span></span>](officeapp.md)
+[<span data-ttu-id="b1715-108">OfficeApp</span><span class="sxs-lookup"><span data-stu-id="b1715-108">OfficeApp</span></span>](officeapp.md)
 

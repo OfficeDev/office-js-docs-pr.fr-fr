@@ -1,28 +1,28 @@
 ---
 title: Authorization, élément dans le fichier manifeste
-description: ''
+description: Spécifie les ressources externes auxquelles l’application Web du complément doit disposer et les autorisations requises.
 ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 6a271423ddd549431c2f580e2793faab3c49090e
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: 7ae0b9d0ec32a20846142a9fc89c48fe9cdf8053
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477956"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720658"
 ---
-# <a name="authorizations-element"></a><span data-ttu-id="39e1a-102">Authorizations, élément</span><span class="sxs-lookup"><span data-stu-id="39e1a-102">Authorizations element</span></span>
+# <a name="authorizations-element"></a><span data-ttu-id="4ce9b-103">Authorizations, élément</span><span class="sxs-lookup"><span data-stu-id="4ce9b-103">Authorizations element</span></span>
 
-<span data-ttu-id="39e1a-103">Spécifie les ressources externes auxquelles l’application Web du complément doit disposer et les autorisations requises.</span><span class="sxs-lookup"><span data-stu-id="39e1a-103">Specifies the external resources that the add-in's web application needs authorization to and the required permissions.</span></span>
+<span data-ttu-id="4ce9b-104">Spécifie les ressources externes auxquelles l’application Web du complément doit disposer et les autorisations requises.</span><span class="sxs-lookup"><span data-stu-id="4ce9b-104">Specifies the external resources that the add-in's web application needs authorization to and the required permissions.</span></span>
 
-<span data-ttu-id="39e1a-104">**Authorizations** est un élément enfant de l’élément [WebApplicationInfo](webapplicationinfo.md) dans le manifeste.</span><span class="sxs-lookup"><span data-stu-id="39e1a-104">**Authorizations** is a child element of the [WebApplicationInfo](webapplicationinfo.md) element in the manifest.</span></span>
+<span data-ttu-id="4ce9b-105">**Authorizations** est un élément enfant de l’élément [WebApplicationInfo](webapplicationinfo.md) dans le manifeste.</span><span class="sxs-lookup"><span data-stu-id="4ce9b-105">**Authorizations** is a child element of the [WebApplicationInfo](webapplicationinfo.md) element in the manifest.</span></span>
 
-## <a name="child-elements"></a><span data-ttu-id="39e1a-105">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="39e1a-105">Child elements</span></span>
+## <a name="child-elements"></a><span data-ttu-id="4ce9b-106">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="4ce9b-106">Child elements</span></span>
 
-|  <span data-ttu-id="39e1a-106">Élément</span><span class="sxs-lookup"><span data-stu-id="39e1a-106">Element</span></span> |  <span data-ttu-id="39e1a-107">Obligatoire</span><span class="sxs-lookup"><span data-stu-id="39e1a-107">Required</span></span>  |  <span data-ttu-id="39e1a-108">Description</span><span class="sxs-lookup"><span data-stu-id="39e1a-108">Description</span></span>  |
+|  <span data-ttu-id="4ce9b-107">Élément</span><span class="sxs-lookup"><span data-stu-id="4ce9b-107">Element</span></span> |  <span data-ttu-id="4ce9b-108">Requis</span><span class="sxs-lookup"><span data-stu-id="4ce9b-108">Required</span></span>  |  <span data-ttu-id="4ce9b-109">Description</span><span class="sxs-lookup"><span data-stu-id="4ce9b-109">Description</span></span>  |
 |:-----|:-----|:-----|
-|  [<span data-ttu-id="39e1a-109">Autorisation</span><span class="sxs-lookup"><span data-stu-id="39e1a-109">Authorization</span></span>](authorization.md)                |  <span data-ttu-id="39e1a-110">Oui</span><span class="sxs-lookup"><span data-stu-id="39e1a-110">Yes</span></span>     |   <span data-ttu-id="39e1a-111">Identifie une ressource externe dont l’application Web du complément a besoin d’autorisation, ainsi que les étendues (autorisations) dont elle a besoin.</span><span class="sxs-lookup"><span data-stu-id="39e1a-111">Identifies an external resource that the add-in's web application needs authorization to, and the scopes (permissions) that it needs.</span></span> |
+|  [<span data-ttu-id="4ce9b-110">Autorisation</span><span class="sxs-lookup"><span data-stu-id="4ce9b-110">Authorization</span></span>](authorization.md)                |  <span data-ttu-id="4ce9b-111">Oui</span><span class="sxs-lookup"><span data-stu-id="4ce9b-111">Yes</span></span>     |   <span data-ttu-id="4ce9b-112">Identifie une ressource externe dont l’application Web du complément a besoin d’autorisation, ainsi que les étendues (autorisations) dont elle a besoin.</span><span class="sxs-lookup"><span data-stu-id="4ce9b-112">Identifies an external resource that the add-in's web application needs authorization to, and the scopes (permissions) that it needs.</span></span> |
 
-## <a name="example"></a><span data-ttu-id="39e1a-112">Exemple</span><span class="sxs-lookup"><span data-stu-id="39e1a-112">Example</span></span>
+## <a name="example"></a><span data-ttu-id="4ce9b-113">Exemple</span><span class="sxs-lookup"><span data-stu-id="4ce9b-113">Example</span></span>
 
 ```xml
 <OfficeApp>
