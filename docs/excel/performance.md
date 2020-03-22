@@ -3,12 +3,12 @@ title: Optimisation des performances API JavaScript Excel
 description: Optimisation des performances à l’aide de l’API JavaScript d’Excel
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 843a8fffbe916003b81ac974db12e3128efb7997
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: a09b01c698a09bbb25d60518069f6e26fe5acaf1
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688635"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891011"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Optimisation des performances à l’aide de l’API JavaScript d’Excel
 
@@ -211,5 +211,4 @@ Excel.run(async (context) => {
 - [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
 - [Concepts avancés de programmation avec l’API JavaScript Excel](excel-add-ins-advanced-concepts.md)
 - [Limites des ressources et optimisation des performances pour les compléments Office](../concepts/resource-limits-and-performance-optimization.md)
-- [Spécification d’ouverture d’API JavaScript pour Excel](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
 - [Objet de fonctions de feuille de calcul (API JavaScript pour Excel)](/javascript/api/excel/excel.functions)

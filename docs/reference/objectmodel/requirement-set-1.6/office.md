@@ -1,16 +1,16 @@
 ---
 title: Espace de noms Office-ensemble de conditions requises 1,6
-description: Modèle objet pour l’espace de noms de niveau supérieur de l’API des compléments Outlook (version 1,6 de l’API de boîte aux lettres).
-ms.date: 12/16/2019
+description: Les membres d’espace de noms Office sont disponibles pour les compléments Outlook à l’aide de l’API de boîte aux lettres Set 1,6.
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: ae2f863e054016636ebffc3ff3925cee018036a1
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: dc7f62cc3f01e56f6c05b6cf40a4b73e87aea5e4
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717648"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891312"
 ---
-# <a name="office"></a>Office
+# <a name="office-mailbox-requirement-set-16"></a>Office (boîte aux lettres requise définie sur 1,6)
 
 L’espace de noms Office fournit des interfaces partagées qui sont utilisées par des compléments dans toutes les applications Office. Cette liste documente uniquement les interfaces utilisées par des compléments Outlook. Pour obtenir une liste complète des espaces de noms Office, consultez la page relative à l’[interface API commune](/javascript/api/office).
 
@@ -31,10 +31,10 @@ L’espace de noms Office fournit des interfaces partagées qui sont utilisées 
 
 | Énumération | Modes | Type de retour | Minimale<br>ensemble de conditions requises |
 |---|---|---|:---:|
-| [AsyncResultStatus](#asyncresultstatus-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [CoercionType](#coerciontype-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [EventType](#eventtype-string) | Composition<br>Lecture | Chaîne | [1,5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [SourceProperty](#sourceproperty-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [AsyncResultStatus](#asyncresultstatus-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [EventType](#eventtype-string) | Composition<br>Lecture | String | [1,5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [SourceProperty](#sourceproperty-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ### <a name="namespaces"></a>Espaces de noms
 
@@ -54,8 +54,8 @@ Spécifie le résultat d’un appel asynchrone.
 
 |Nom| Type| Description|
 |---|---|---|
-|`Succeeded`| Chaîne|L’appel a réussi.|
-|`Failed`| Chaîne|L’appel n’a pas réussi.|
+|`Succeeded`| String|L’appel a réussi.|
+|`Failed`| String|L’appel n’a pas réussi.|
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -81,7 +81,7 @@ Indique comment forcer le type des données retournées ou définies par la mét
 
 |Nom| Type| Description|
 |---|---|---|
-|`Html`| Chaîne|Demande que les données soient renvoyées au format HTML.|
+|`Html`| String|Demande que les données soient renvoyées au format HTML.|
 |`Text`| String|Demande que les données soient renvoyées au format texte.|
 
 ##### <a name="requirements"></a>Configuration requise
@@ -134,7 +134,7 @@ Spécifie la source des données renvoyées par la méthode appelée.
 
 |Nom| Type| Description|
 |---|---|---|
-|`Body`| Chaîne|La source de données est dans le corps d’un message.|
+|`Body`| String|La source de données est dans le corps d’un message.|
 |`Subject`| String|La source de données est dans l’objet d’un message.|
 
 ##### <a name="requirements"></a>Configuration requise

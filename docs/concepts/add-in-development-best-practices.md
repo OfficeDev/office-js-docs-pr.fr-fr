@@ -1,21 +1,20 @@
 ---
 title: Meilleures pratiques en matière de développement de compléments Office
 description: Appliquer les meilleures pratiques lors du développement pour créer des compléments Office.
-ms.date: 03/19/2019
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 03e9a55d2a438ef87f144c646f06a7e7c999900b
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 71a090721768b822a058091c258dd0c6c87e1425
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717284"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890538"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Meilleures pratiques en matière de développement de compléments Office
 
 Des compléments efficaces proposent des fonctionnalités uniques et attrayantes qui étendent les applications Office d’une manière visuellement attractive. Pour créer un complément intéressant, offrez une première expérience attractive à vos utilisateurs, concevez une interface utilisateur de premier choix et optimisez les performances de votre complément. Appliquez les meilleures pratiques décrites dans cet article pour créer des compléments permettant aux utilisateurs d’accomplir leurs tâches rapidement et efficacement.
 
-> [!NOTE]
-> Si vous prévoyez de [publier](../publish/publish.md) votre complément sur AppSource et de le rendre disponible dans l’expérience Office, assurez-vous que vous respectez les [stratégies de validation AppSource](/office/dev/store/validation-policies). Par exemple, pour réussir la validation, votre complément doit fonctionner sur toutes les plateformes prenant en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) et la [page relative à la disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md)). 
+[!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 ## <a name="provide-clear-value"></a>Indication d’une valeur claire
 

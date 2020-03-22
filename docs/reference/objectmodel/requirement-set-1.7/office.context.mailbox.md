@@ -1,16 +1,16 @@
 ---
 title: Office. Context. Mailbox-ensemble de conditions requises 1,7
-description: Office.context.mailbox
-ms.date: 03/16/2020
+description: Ensemble de conditions requises de l’API de boîte aux lettres Outlook 1,7 du modèle objet boîte aux lettres.
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: e3a06346b226d4170d5dfb949bc61e63e850aada
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 2efbcbbfa3257ce7a42be3d4b4bf6d8631af9be4
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717606"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891277"
 ---
-# <a name="mailbox"></a>boîte aux lettres
+# <a name="mailbox-requirement-set-17"></a>Mailbox (ensemble de conditions requises 1,7)
 
 ### <a name="officecontextmailbox"></a>[Office](office.md)[.context](office.context.md).mailbox
 
@@ -29,9 +29,9 @@ Permet d’accéder au modèle d’objet de complément Outlook pour Microsoft O
 | Propriété | Minimale<br>niveau d’autorisation | Modes | Type de retour | Minimale<br>ensemble de conditions requises |
 |---|---|---|---|:---:|
 | [Diagnostics](/javascript/api/outlook/office.mailbox?view=outlook-js-1.7#diagnostics) | ReadItem | Composition<br>Lecture | [Diagnostics](/javascript/api/outlook/office.diagnostics?view=outlook-js-1.7) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [ewsUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.7#ewsurl) | ReadItem | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [ewsUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.7#ewsurl) | ReadItem | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [item](office.context.mailbox.item.md) | Restreint | Composition<br>Lecture | [Élément](/javascript/api/outlook/office.item?view=outlook-js-1.7) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [restUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.7#resturl) | ReadItem | Composition<br>Lecture | Chaîne | [1,5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [restUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.7#resturl) | ReadItem | Composition<br>Lecture | String | [1,5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [userProfile](/javascript/api/outlook/office.mailbox?view=outlook-js-1.7#userprofile) | ReadItem | Composition<br>Lecture | [Profil](/javascript/api/outlook/office.userprofile?view=outlook-js-1.7) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="methods"></a>Méthodes

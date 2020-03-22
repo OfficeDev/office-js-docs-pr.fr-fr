@@ -3,12 +3,12 @@ title: Règles de style de visualisation de données pour les compléments Offic
 description: Obtenez des pratiques recommandées pour visualiser les données dans un complément Office.
 ms.date: 01/14/2019
 localization_priority: Normal
-ms.openlocfilehash: c22943959408d1df5febd8f5aad84ee791c40504
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 215bea269d14245e9ac55d74f12228565f60c2a3
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717221"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891018"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Règles de style de visualisation de données pour les compléments Office
 
@@ -41,7 +41,7 @@ Suivez ces instructions pour les titres de graphique :
 
 Rendez vos étiquettes d’axe suffisamment foncées pour qu’elles soient lisibles, avec des taux de contraste adéquats entre les couleurs de texte et d’arrière-plan. Veillez à ce qu’elles ne soient pas trop foncées pour ne pas se confondre avec l’encre de données.
 
-Les nuances de gris clair sont les plus efficaces pour les étiquettes d’axe. Si vous utilisez Fabric, consultez la [palette de couleurs neutres](https://developer.microsoft.com/fabric#/styles/colors).
+Les nuances de gris clair sont les plus efficaces pour les étiquettes d’axe. Si vous utilisez fabric, reportez-vous à la [palette couleurs neutres](https://developer.microsoft.com/fabric#/styles/colors).
 
 ### <a name="data-ink"></a>Encre de données
 
@@ -54,14 +54,14 @@ Choisissez des couleurs qui respectent les thèmes du système d’exploitation 
 Pour des recommandations sur l’utilisation des couleurs dans les visualisations de données, voir les rubriques suivantes :
 
 - [Pourquoi les couleurs de l’arc-en-ciel ne constituent pas la meilleure option pour les visualisations de données ?](https://www.poynter.org/2013/why-rainbow-colors-arent-always-the-best-options-for-data-visualizations/224413/)
-- [Color Brewer 2.0 : Conseils en matière de couleur pour la cartographie](http://colorbrewer2.org/)
+- [Color Brewer 2.0 : Conseils en matière de couleur pour la cartographie](https://colorbrewer2.org/)
 - [Je veux une teinte](https://tools.medialab.sciences-po.fr/iwanthue/)
 
 ### <a name="gridlines"></a>Quadrillage
 
 Le quadrillage est souvent nécessaire pour une lecture précise d’un graphique, mais il doit être présenté comme un élément visuel secondaire, qui améliore l’encre de données, sans se confondre avec elle. Créez un quadrillage statique fin et léger, sauf s’il est conçu spécifiquement pour un contraste élevé. Vous pouvez également utiliser une interaction pour créer un quadrillage dynamique ponctuel qui s’affiche dans le contexte lorsqu’un utilisateur interagit avec un graphique.
 
-Les nuances de gris clair sont les plus efficaces pour les quadrillages. Si vous utilisez Fabric, consultez la [palette de couleurs neutres](https://developer.microsoft.com/fabric#/styles/colors).
+Les nuances de gris clair sont les plus efficaces pour les quadrillages. Si vous utilisez fabric, reportez-vous à la [palette couleurs neutres](https://developer.microsoft.com/fabric#/styles/colors).
 
 L’image suivante montre une visualisation de données avec le quadrillage.
 

@@ -1,20 +1,20 @@
 ---
 title: Utiliser des commentaires à l’aide de l’API JavaScript pour Excel
 description: Informations sur l’utilisation des API pour ajouter, supprimer et modifier des commentaires et des thèmes de commentaires.
-ms.date: 02/11/2020
+ms.date: 03/17/2020
 localization_priority: Normal
-ms.openlocfilehash: d6be0f07e0d3bb134385f0a08c20ce00da4de892
-ms.sourcegitcommit: d85efbf41a3382ca7d3ab08f2c3f0664d4b26c53
+ms.openlocfilehash: 275828915730d3438101315ee28bf76aa8b8bf3f
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "42327781"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890569"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>Utiliser des commentaires à l’aide de l’API JavaScript pour Excel
 
 Cet article explique comment ajouter, lire, modifier et supprimer des commentaires dans un classeur à l’aide de l’API JavaScript pour Excel. Pour en savoir plus sur la fonctionnalité de commentaire, consultez l’article [Insérer des commentaires et des notes dans Excel](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) .
 
-Dans l’API JavaScript pour Excel, un commentaire est à la fois la note initiale et la discussion thématique connectée. Elle est liée à une cellule individuelle. Toute personne qui consulte le classeur avec des autorisations suffisantes peut répondre à un commentaire. Un objet [Comment](/javascript/api/excel/excel.comment) stocke ces réponses en tant qu’objets [CommentReply](/javascript/api/excel/excel.commentreply) . Vous devez considérer un commentaire comme un fil de discussion et qu’un thread doit avoir une entrée spéciale comme point de départ.
+Dans l’API JavaScript pour Excel, un commentaire inclut à la fois le commentaire initial unique et la discussion liée au thread. Elle est liée à une cellule individuelle. Toute personne qui consulte le classeur avec des autorisations suffisantes peut répondre à un commentaire. Un objet [Comment](/javascript/api/excel/excel.comment) stocke ces réponses en tant qu’objets [CommentReply](/javascript/api/excel/excel.commentreply) . Vous devez considérer un commentaire comme un fil de discussion et qu’un thread doit avoir une entrée spéciale comme point de départ.
 
 ![Commentaire Excel, étiqueté « commentaire » avec deux réponses, intitulées « comment. réponses [0] » et «comment. réponses [1].](../images/excel-comments.png)
 

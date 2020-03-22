@@ -1,16 +1,16 @@
 ---
 title: Office. Context. Mailbox-Preview-ensemble de conditions requises
-description: Modèle objet de l’objet de boîte aux lettres Outlook dans l’API des compléments Outlook (version préliminaire de l’API de boîte aux lettres).
-ms.date: 03/06/2020
+description: Version d’évaluation de l’API de boîte aux lettres Outlook du modèle objet de boîte aux lettres.
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 3de58203e4ddb0f7ca8b773653bafb16eb50e322
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 9655c38821f052b21b33db0099f7aba087191d52
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720280"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890850"
 ---
-# <a name="mailbox"></a>boîte aux lettres
+# <a name="mailbox-preview-requirement-set"></a>boîte aux lettres (préversion de l’ensemble de conditions requises)
 
 ### <a name="officecontextmailbox"></a>[Office](office.md)[.context](office.context.md).mailbox
 
@@ -29,10 +29,10 @@ Permet d’accéder au modèle d’objet de complément Outlook pour Microsoft O
 | Propriété | Minimale<br>niveau d’autorisation | Modes | Type de retour | Minimale<br>ensemble de conditions requises |
 |---|---|---|---|:---:|
 | [Diagnostics](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#diagnostics) | ReadItem | Composition<br>Lecture | [Diagnostics](/javascript/api/outlook/office.diagnostics?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [ewsUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#ewsurl) | ReadItem | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [ewsUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#ewsurl) | ReadItem | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [item](office.context.mailbox.item.md) | Restreint | Composition<br>Lecture | [Élément](/javascript/api/outlook/office.item?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [masterCategories](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#mastercategories) | ReadWriteMailbox | Composition<br>Lecture | [Catégoriesmaître](/javascript/api/outlook/office.mastercategories?view=outlook-js-preview) | [1,8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| [restUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#resturl) | ReadItem | Composition<br>Lecture | Chaîne | [1,5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [restUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#resturl) | ReadItem | Composition<br>Lecture | String | [1,5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [userProfile](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#userprofile) | ReadItem | Composition<br>Lecture | [Profil](/javascript/api/outlook/office.userprofile?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="methods"></a>Méthodes

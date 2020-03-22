@@ -1,14 +1,14 @@
 ---
 title: Chargement de compléments Office pour des tests
 description: Découvrez comment chargement un complément Office à des fins de test
-ms.date: 02/18/2020
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: d8e1b0e1078ee534445baf275f386d85d68675c0
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 0cfb1060ead27f7f034880361c51f8a1d0ec87dc
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717403"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891123"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>Chargement de compléments Office pour des tests
 
@@ -77,7 +77,7 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 
 2. Ajoutez le contenu suivant au fichier :
 
-    ```
+    ```text
     Windows Registry Editor Version 5.00
 
     [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{-random-GUID-here-}]
@@ -93,7 +93,7 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 
 5. Le fichier doit désormais se présenter comme suit. Enregistrez-le.
 
-    ```
+    ```text
     Windows Registry Editor Version 5.00
 
     [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{01234567-89ab-cedf-0123-456789abcedf}]

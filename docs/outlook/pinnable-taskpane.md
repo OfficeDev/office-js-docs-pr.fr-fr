@@ -3,12 +3,12 @@ title: Implémenter un volet Office épinglable dans un complément Outlook
 description: La commande de forme UX taskpane pour complément ouvre un volet Office vertical à droite d’un message ou demande de réunion, ce qui permet au complément de fournir une interface utilisateur pour des interactions plus détaillées.
 ms.date: 02/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 09baf7f1faa7611baa85a53a3d5d92fad2d140a1
-ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
+ms.openlocfilehash: 892cee7b5ff89e210c68308f03710ee92b6f0f72
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "42413775"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890990"
 ---
 # <a name="implement-a-pinnable-task-pane-in-outlook"></a>Implémenter un volet Office épinglable dans Outlook
 
@@ -34,7 +34,7 @@ La première étape consiste à ajouter une prise en charge de l’épinglage, c
 L’élément `SupportsPinning` est défini dans le schéma VersionOverrides v1.1, vous devez donc inclure un élément [VersionOverrides](../reference/manifest/versionoverrides.md) pour les versions 1.0 et 1.1.
 
 > [!NOTE]
-> Si vous envisagez de [publier](../publish/publish.md) votre complément Outlook sur [AppSource](https://appsource.microsoft.com), lorsque vous utilisez l’élément **SupportsPinning** afin d’obtenir la [validation d’AppSource](/office/dev/store/validation-policies), le contenu de votre complément ne doit pas être statique et doit afficher clairement les données liées au message qui est ouvert ou sélectionné dans la boîte aux lettres.
+> Si vous envisagez de [publier](../publish/publish.md) votre complément Outlook sur [AppSource](https://appsource.microsoft.com), lorsque vous utilisez l’élément **SupportsPinning** afin d’obtenir la [validation d’AppSource](/legal/marketplace/certification-policies), le contenu de votre complément ne doit pas être statique et doit afficher clairement les données liées au message qui est ouvert ou sélectionné dans la boîte aux lettres.
 
 ```xml
 <!-- Task pane button -->

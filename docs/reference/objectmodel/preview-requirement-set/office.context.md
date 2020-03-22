@@ -1,16 +1,16 @@
 ---
 title: Ensemble de conditions requises pour Office. Context-preview
-description: Modèle objet de l’objet de contexte Outlook dans l’API des compléments Outlook (version préliminaire de l’API de boîte aux lettres).
-ms.date: 12/16/2019
+description: Membres de l’objet Office. Context disponibles pour les compléments Outlook à l’aide de l’ensemble de conditions requises pour l’API de boîte aux lettres.
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 409f0a5b46eba667f79228f45081c160c3c3ce7f
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: c61769cb1ae98097ffabb8b3ef19b2f82257c2b1
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717802"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890864"
 ---
-# <a name="context"></a>context
+# <a name="context-mailbox-preview-requirement-set"></a>contexte (ensemble de conditions requises pour la boîte aux lettres)
 
 ### <a name="officecontext"></a>[Office](office.md).context
 
@@ -28,9 +28,9 @@ Office. Context fournit des interfaces partagées qui sont utilisées par des co
 | Propriété | Modes | Type de retour | Minimale<br>ensemble de conditions requises |
 |---|---|---|:---:|
 | [auth](#auth-auth) | Composition<br>Lecture | [Auth](/javascript/api/office/office.auth?view=outlook-js-preview) | [Aperçu](../preview-requirement-set/outlook-requirement-set-preview.md) |
-| [contentLanguage](#contentlanguage-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [contentLanguage](#contentlanguage-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [Diagnostics](#diagnostics-contextinformation) | Composition<br>Lecture | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [displayLanguage](#displaylanguage-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [displayLanguage](#displaylanguage-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [hote](#host-hosttype) | Composition<br>Lecture | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [mailbox](office.context.mailbox.md) | Composition<br>Lecture | [Boîte aux lettres](/javascript/api/outlook/office.mailbox?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [officeTheme](#officetheme-officetheme) | Composition<br>Lecture | [OfficeTheme](/javascript/api/office/office.officetheme?view=outlook-js-preview) | [Aperçu](../preview-requirement-set/outlook-requirement-set-preview.md) |
@@ -229,8 +229,8 @@ L’utilisation des couleurs de thème Office vous permet de coordonner le jeu d
 
 |Nom| Type| Description|
 |---|---|---|
-|`bodyBackgroundColor`| Chaîne|Obtient la couleur d’arrière-plan du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
-|`bodyForegroundColor`| Chaîne|Obtient la couleur de premier plan du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
+|`bodyBackgroundColor`| String|Obtient la couleur d’arrière-plan du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
+|`bodyForegroundColor`| String|Obtient la couleur de premier plan du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
 |`controlBackgroundColor`| String|Obtient la couleur d’arrière-plan du contrôle du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
 |`controlForegroundColor`| String|Obtient la couleur du contrôle du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
 

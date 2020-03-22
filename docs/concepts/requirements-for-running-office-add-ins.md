@@ -1,21 +1,20 @@
 ---
 title: Configuration requise pour exécuter des compléments Office
 description: Découvrez la configuration requise du client et du serveur pour qu’un utilisateur final doive exécuter des compléments Office.
-ms.date: 07/01/2019
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 858a951322a34543277b1d7000ca01df12cca7bb
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: c387d3d7ca9be1d47fa9ff4033fe492ae0e0fb3a
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718635"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890503"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Configuration requise pour exécuter des compléments Office
 
 Cet article décrit la configuration logicielle et matérielle requise pour l’exécution des compléments Office.
 
-> [!NOTE]
-> Si vous prévoyez de [publier](../publish/publish.md) votre complément sur AppSource et de le rendre disponible dans l’expérience Office, assurez-vous que vous respectez les [stratégies de validation AppSource](/office/dev/store/validation-policies). Par exemple, pour réussir la validation, votre complément doit fonctionner sur toutes les plateformes prenant en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) et la [page relative à la disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md)).
+[!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 Pour savoir de manière détaillée quelle version d’Office prend en charge les compléments Office, consultez la page relative à la [disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md).
 

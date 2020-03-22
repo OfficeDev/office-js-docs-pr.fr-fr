@@ -3,12 +3,12 @@ title: Vider le cache Office
 description: Découvrez comment effacer le cache Office sur votre ordinateur.
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: c0cf6350cb77a83791f5810c8b98034792fdfd0e
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: a73a8d276f0d6301644005cf87f44f4d7606d26d
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719853"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891130"
 ---
 # <a name="clear-the-office-cache"></a>Vider le cache Office
 
@@ -18,9 +18,13 @@ En outre, si vous apportez des modifications au manifeste de votre complément (
 
 ## <a name="clear-the-office-cache-on-windows"></a>Vider le cache Office sur Windows
 
-Supprimez les contenus du dossier `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` pour éliminer tous les compléments chargés indépendamment dans Excel, Word et PowerPoint.
+Pour supprimer tous les compléments versions test chargées d’Excel, Word et PowerPoint, supprimez le contenu du dossier :
 
-Pour supprimer un complément chargé indépendamment à partir d’Outlook, suivez la procédure décrits dans [Charger indépendamment des compléments Outlook à des fins de test](../outlook/sideload-outlook-add-ins-for-testing.md) pour rechercher le complément dans la section des **Compléments personnalisés** de la boîte de dialogue qui répertorie les compléments installés. Sélectionnez les points de suspension (`...`) pour le complément, puis sélectionnez **Supprimer** pour éliminer ce complément spécifique.
+```
+%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\
+```
+
+Pour supprimer un complément versions test chargées à partir d’Outlook, suivez les étapes décrites dans [chargement des compléments Outlook à des fins de test](../outlook/sideload-outlook-add-ins-for-testing.md) pour trouver le complément dans la section **compléments personnalisés** de la boîte de dialogue qui répertorie vos compléments installés. Choisissez le bouton`...`de sélection () pour le complément, puis cliquez sur **supprimer** pour supprimer ce complément.
 
 En outre, vous pouvez utiliser Microsoft Edge DevTools pour vider le cache Office dans Windows 10 lorsque le complément s’exécute dans Microsoft Edge.
 

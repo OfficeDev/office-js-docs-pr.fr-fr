@@ -1,14 +1,14 @@
 ---
 title: Utiliser les classeurs utilisant l’API JavaScript Excel
-description: Exemples de code qui montrent comment effectuer des tâches courantes avec des classeurs à l’aide de l’API JavaScript pour Excel.
-ms.date: 10/21/2019
+description: Exemples de code qui montrent comment effectuer des tâches courantes avec des classeurs ou des fonctionnalités au niveau de l’application à l’aide de l’API JavaScript pour Excel.
+ms.date: 03/19/2020
 localization_priority: Normal
-ms.openlocfilehash: 0f86278cdb52edc16e5c43323d874d985564de3a
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: aa30f888bf6de1926d2a36522febf0001e1e6130
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719622"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891025"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Utiliser les classeurs utilisant l’API JavaScript Excel
 
@@ -51,7 +51,7 @@ Excel.createWorkbook();
 
 La `createWorkbook` méthode peut également créer une copie d’un classeur existant. La méthode accepte comme un paramètre facultatif une représentation de chaîne codée en base 64 d’un fichier .xlsx. Le classeur résultant sera une copie de ce fichier, en supposant que l’argument de chaîne est un fichier .xlsx valide.
 
-Vous pouvez accéder au classeur actif de votre complément en tant que chaîne codée en base 64 via [fichier découpage](/javascript/api/office/office.document#getfileasync-filetype--options--callback-). La catégorie[FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) peut être utilisée pour convertir un fichier dans la chaîne codée en base 64 requise, comme indiqué dans l’exemple suivant.
+Vous pouvez obtenir le classeur actif de votre complément en tant que chaîne codée en base 64 à l’aide du [découpage de fichiers](/javascript/api/office/office.document#getfileasync-filetype--options--callback-). La catégorie[FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) peut être utilisée pour convertir un fichier dans la chaîne codée en base 64 requise, comme indiqué dans l’exemple suivant.
 
 ```js
 var myFile = document.getElementById("file");
@@ -184,6 +184,41 @@ Excel.run(function (context) {
         console.log("Workbook needs review : " + needsReview.value);
     });
 }).catch(errorHandlerFunction);
+```
+
+## <a name="access-application-culture-settings-preview"></a>Paramètres de culture de l’application Access (aperçu)
+
+Un classeur comporte des paramètres de langue et de culture qui influent sur l’affichage de certaines données. Ces paramètres permettent de localiser les données lorsque les utilisateurs de votre complément partagent des classeurs dans différentes langues et cultures. Votre complément peut utiliser l’analyse de chaîne pour localiser le format des nombres, des dates et des heures en fonction des paramètres de culture du système, de sorte que chaque utilisateur voit des données dans leur propre format de culture.
+
+`Application.cultureInfo`définit les paramètres de culture du système en tant qu’objet [CultureInfo](/javascript/api/excel/excel.cultureinfo) . Contient des paramètres tels que le séparateur décimal numérique ou le format de date.
+
+Certains paramètres de culture peuvent être [modifiés via l’interface utilisateur Excel](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e). Les paramètres système sont conservés dans l' `CultureInfo` objet. Toutes les modifications locales sont conservées en tant que propriétés au niveau `Application.decimalSeparator`de l' [application](/javascript/api/excel/excel.application), telles que.
+
+L’exemple suivant montre comment remplacer le caractère séparateur décimal d’une chaîne numérique « , » par le caractère utilisé par les paramètres système.
+
+```js
+// This will convert a number like "14,37" to "14.37"
+// (assuming the system decimal separator is ".").
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    var decimalSource = sheet.getRange("B2");
+    decimalSource.load("values");
+    context.application.cultureInfo.numberFormat.load("numberDecimalSeparator");
+
+    return context.sync().then(function() {
+        var systemDecimalSeparator =
+            context.application.cultureInfo.numberFormat.numberDecimalSeparator;
+        var oldDecimalString = decimalSource.values[0][0];
+
+        // This assumes the input column is standardized to use "," as the decimal separator.
+        var newDecimalString = oldDecimalString.replace(",", systemDecimalSeparator);
+
+        var resultRange = sheet.getRange("C2");
+        resultRange.values = [[newDecimalString]];
+        resultRange.format.autofitColumns();
+        return context.sync();
+    });
+});
 ```
 
 ## <a name="add-custom-xml-data-to-the-workbook"></a>Ajouter des données XML personnalisées au classeur
