@@ -4,12 +4,12 @@ description: Présentation de l’API JavaScript pour Word.
 ms.date: 02/19/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: dfc87a8f9f5c7048262d9c2889ae68eb38c0ed30
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: b53b3324105b3bac2521ebefdca3860745a1071b
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719888"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891165"
 ---
 # <a name="word-javascript-api-overview"></a>Présentation des APIs JavaScript pour Word
 
@@ -43,4 +43,3 @@ Utilisez [Script Lab](../../overview/explore-with-script-lab.md) pour commencer 
 - [Présentation des compléments Word](../../word/word-add-ins-programming-overview.md)
 - [Référence sur l’API JavaScript pour Word](/javascript/api/word)
 - [Disponibilité des compléments Office sur les plateformes et les hôtes](../../overview/office-add-in-availability.md)
-- [Spécifications ouvertes des API](../openspec/openspec.md)

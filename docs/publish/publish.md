@@ -1,14 +1,14 @@
 ---
 title: Déployer et publier des compléments Office
 description: Méthodes et options pour déployer votre complément Office à des fins de test ou de distribution auprès des utilisateurs.
-ms.date: 09/05/2019
+ms.date: 03/18/2020
 localization_priority: Priority
-ms.openlocfilehash: a00119254f53f6dbf0e6ebc2279e0a0b70af1270
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: a21535a637ceb54d0e84a36b2a0610873d408e1c
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851543"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890983"
 ---
 # <a name="deploy-and-publish-office-add-ins"></a>Déployer et publier des compléments Office
 
@@ -23,8 +23,7 @@ Vous pouvez utiliser l’une des méthodes pour déployer votre complément Offi
 |[Serveur Exchange](#outlook-add-in-deployment)|Dans un environnement local ou en ligne, pour distribuer des compléments Outlook à des utilisateurs.|
 |[Partage réseau](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|Sur un ordinateur Windows sur un réseau sur lequel vous voulez héberger votre complément, accédez au dossier parent ou à la lettre de lecteur du dossier que vous souhaitez utiliser comme catalogue de dossiers partagés.|
 
-> [!NOTE]
-> Si vous prévoyez de [publier](../publish/publish.md) votre complément sur AppSource et de le rendre disponible dans l’expérience Office, assurez-vous que vous respectez les [stratégies de validation AppSource](/office/dev/store/validation-policies). Par exemple, pour réussir la validation, votre complément doit fonctionner sur toutes les plateformes prenant en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) et la [page relative à la disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md)).
+[!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 ## <a name="deployment-options-by-office-host"></a>Options de déploiement par l’hôte Office
 

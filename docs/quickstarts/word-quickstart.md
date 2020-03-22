@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet des tâches de Word
 description: Découvrez comment créer un complément de volet des tâches Word simple à l’aide de l’API JavaScript pour Office.
-ms.date: 01/16/2020
+ms.date: 03/19/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 90416db9847f5f78b38fb1c22c4a6751bf95d5e0
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 495fcc84ceb7705cf04be7a371c14b776eb0e560
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596822"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890936"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Word
 
@@ -306,6 +306,8 @@ Félicitations, vous avez créé un complément du volet des tâches de Word ! 
 3. Dans le volet Office, choisissez l’un des boutons pour ajouter du texte réutilisable dans le document.
 
     ![Capture d’écran de l’application Word avec le complément de texte réutilisable chargé.](../images/word-quickstart-addin-1b.png)
+
+[!include[Console tool note](../includes/console-tool-note.md)]
 
 ### <a name="next-steps"></a>Étapes suivantes
 

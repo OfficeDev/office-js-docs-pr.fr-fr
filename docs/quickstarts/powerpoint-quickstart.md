@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément de volet de tâches PowerPoint
 description: Découvrez comment créer un complément de volet des tâches PowerPoint simple à l’aide de l’API JavaScript pour Office.
-ms.date: 01/16/2020
+ms.date: 03/19/2020
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 67af5529596f6659b331379dffcea838397a5bad
-ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
+ms.openlocfilehash: 1056dcfbeb49b4f0e2b8142de1a4e66ebb0dcca5
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "41265691"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891403"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>Créer votre premier complément de volet de tâches PowerPoint
 
@@ -19,7 +19,7 @@ Dans cet article, vous découvrirez comment créer un complément de volet de t�
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="yeoman-generatortabyeomangenerator"></a>[Générateur Yeoman](#tab/yeomangenerator)
+# <a name="yeoman-generator"></a>[Générateur Yeoman](#tab/yeomangenerator)
 
 [!include[Redirect to the single sign-on (SSO) quick start](../includes/sso-quickstart-reference.md)]
 
@@ -92,7 +92,7 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 
 Félicitations, vous avez créé un complément de volet de tâches PowerPoint ! Maintenant, découvrez les fonctionnalités d’un complément PowerPoint et créez un complément plus complexe en suivant le [didacticiel dédié](../tutorials/powerpoint-tutorial.md).
 
-# <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
+# <a name="visual-studio"></a>[Visual Studio](#tab/visualstudio)
 
 ### <a name="prerequisites"></a>Conditions préalables
 
@@ -250,6 +250,8 @@ Félicitations, vous avez créé un complément de volet de tâches PowerPoint 
 4. Dans le volet Office, sélectionnez le bouton **Insérer du texte** pour ajouter du texte à la diapositive sélectionnée.
 
     ![Capture d’écran de PowerPoint avec l’image d’un chien et le texte « Hello World » affichés sur la diapositive](../images/powerpoint_quickstart_addin_3.png)
+
+[!include[Console tool note](../includes/console-tool-note.md)]
 
 ### <a name="next-steps"></a>Étapes suivantes
 

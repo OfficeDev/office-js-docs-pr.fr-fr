@@ -3,12 +3,12 @@ title: Concepts basiques pour les commandes de complément
 description: Découvrez l'ajout de boutons et d'éléments de menu personnalisés au ruban dans Office dans le cadre d’un complément web Office.
 ms.date: 02/11/2020
 localization_priority: Priority
-ms.openlocfilehash: 11636838feb384cdb0761bd17a3c1c0e0f42f8ce
-ms.sourcegitcommit: 0e7ed44019d6564c79113639af831ea512fa0a13
+ms.openlocfilehash: 6395b087ea191b37e9398096038dacfd66ed263c
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "42566151"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890555"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Commandes de complément pour Excel, Word et PowerPoint
 
@@ -85,7 +85,7 @@ Appliquez les meilleures pratiques suivantes lorsque vous développez des comman
     - N’ajoutez pas de boutons superflus pour augmenter la valeur de votre complément.
 
      > [!NOTE]
-     > Les compléments qui occupent trop d’espace peuvent ne pas obtenir la [validation d’AppSource](/office/dev/store/validation-policies).
+     > Les compléments qui occupent trop d’espace peuvent ne pas obtenir la [validation d’AppSource](/legal/marketplace/certification-policies).
 
 - Pour toutes les icônes, suivez les [règles de conception d’icône](add-in-icons.md).
 - Proposez une version de complément qui fonctionne aussi sur les hôtes qui ne prennent pas en charge les commandes. Un seul manifeste de complément peut fonctionner sur les hôtes tenant compte ou non des commandes (par exemple, un volet Office dans le second cas).

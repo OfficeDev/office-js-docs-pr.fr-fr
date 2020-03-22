@@ -1,23 +1,22 @@
 ---
 title: Vue d’ensemble de la programmation de l’API JavaScript de OneNote
 description: En savoir plus sur l’API JavaScript de OneNote pour les compléments OneNote sur le web.
-ms.date: 02/19/2020
+ms.date: 03/18/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 0e551b75d55da77d383e1335c27724834bfb2df0
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: ae88c2bba6c23a2c3ec3358db121a2ca3630f09d
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720896"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891053"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>Vue d’ensemble de la programmation de l’API JavaScript de OneNote
 
 OneNote présente une API JavaScript pour les compléments OneNote sur le web. Vous pouvez créer des compléments de volet Office et de contenu, ainsi que des commandes de complément qui interagissent avec les objets OneNote et se connectent à des services web ou à d’autres ressources basées sur le web.
 
-> [!NOTE]
-> Si vous prévoyez de [publier](../publish/publish.md) votre complément sur AppSource et de le rendre disponible dans l’expérience Office, assurez-vous que vous respectez les [stratégies de validation AppSource](/office/dev/store/validation-policies). Par exemple, pour réussir la validation, votre complément doit fonctionner sur toutes les plateformes prenant en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) et la [page relative à la disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md)).
+[!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 ## <a name="components-of-an-office-add-in"></a>Composants d’un complément Office
 

@@ -5,12 +5,12 @@ title: Documentation référence de l’API JavaScript pour Office
 description: En savoir plus sur les API JavaScript pour Office.
 ms.date: 12/24/2019
 localization_priority: Priority
-ms.openlocfilehash: 5622146d9663881eea0a97cafa5e793aa0381932
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 99c42103d8e6d7b18d6082bfdafe1da0dad8397d
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720742"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890899"
 ---
 # <a name="api-reference-documentation"></a>Documentation de référence de l'API
 
@@ -131,7 +131,3 @@ Vous devez utiliser les API propres à l’hôte dans la mesure du possible, et 
 </ul>
 
 <b>Remarque</b>: il n’existe actuellement aucune API JavaScript propre à l’hôte pour Project ; vous utiliserez des API communes pour créer des compléments Project. de plus, l’étendue de l’API propre à l’hôte pour PowerPoint est très limitée ; vous utiliserez principalement les API communes pour créer des compléments PowerPoint.
-
-<h2>Spécifications d’ouverture de l’API</h2>
-
-Au fur et à mesure que nous concevons et développons de nouvelles API pour les compléments Office, nous les mettons à votre disposition sur notre page de [spécifications d’ouverture de l’API](openspec/openspec.md) pour que vous puissiez fournir vos commentaires. Découvrez les nouvelles fonctionnalités dans le pipeline et donnez votre avis sur nos spécifications de conception.

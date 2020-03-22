@@ -4,12 +4,12 @@ description: Les compléments Outlook sont des intégrations conçues par des ti
 ms.date: 10/09/2019
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: cb6e19788390a804b0bbacb97666a3ca8a9d5971
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: d8f536940cf83899cd5586006980d14342e297c7
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688985"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891060"
 ---
 # <a name="outlook-add-ins-overview"></a>Présentation des compléments Outlook
 
@@ -23,8 +23,7 @@ Les compléments Outlook diffèrent des compléments COM ou VSTO, qui sont des i
 
 Les éléments Outlook qui prennent en charge les compléments incluent notamment les messages électroniques, les demandes de réunion, les réponses à des demandes de réunion, les annulations de réunion et les rendez-vous. Chaque complément Outlook définit le contexte dans lequel il est disponible, y compris les types d’éléments et si l’utilisateur lit ou compose un élément.
 
-> [!NOTE]
-> Lorsque vous créez votre complément, si vous envisagez de le [publier](../publish/publish.md) dans AppSource, assurez-vous que vous respectez les [stratégies de validation AppSource](/office/dev/store/validation-policies). Par exemple, pour réussir la validation, votre complément doit fonctionner sur toutes les plateformes qui prennent en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) et la page relative à la [disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md)).
+[!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 ## <a name="extension-points"></a>Points d’extension
 
