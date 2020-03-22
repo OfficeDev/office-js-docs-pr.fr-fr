@@ -289,7 +289,7 @@
         - name: Publication de compléments sur AppSource
           href: /office/dev/store/submit-to-the-office-store
         - name: Stratégies de validation AppSource
-          href: /office/dev/store/validation-policies
+          href: /legal/marketplace/certification-policies
         - name: Publier des compléments via le déploiement centralisé
           href: publish/centralized-deployment.md
         - name: Publier des compléments dans un catalogue d’applications SharePoint
@@ -477,8 +477,6 @@
                   href: reference/manifest/supportssharedfolders.md
                 - name: WebApplicationInfo
                   href: reference/manifest/webapplicationinfo.md
-        - name: Spécifications d’ouverture d’API
-          href: reference/openspec/openspec.md
         - name: Codes d’erreur
           href: reference/javascript-api-for-office-error-codes.md
     - name: Ressources
@@ -1125,4 +1123,4 @@
     - name: Enregistrer et partager l’état des fonctions personnalisées
       href: excel/custom-functions-save-state-redirect.md
     - name: Gérer une résolution élevée et la redimensionner dans votre solution Office
-      href: develop/dynamic-dpi.md
+      href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution
