@@ -1,19 +1,19 @@
 ---
 title: Créer votre premier complément du volet des tâches d’Excel
 description: Découvrez comment créer un complément de volet des tâches Excel simple à l’aide de l’API JavaScript pour Office.
-ms.date: 01/16/2020
+ms.date: 03/19/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: cdd4de9cad88c09ec33e2cb1566b0a64afdf7745
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 95491b8c346432b319c0731085c0ef763727493d
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596619"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891396"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Créer un complément de volet de tâches Excel
 
-Dans cet article, vous découvrirez comment créer un complément de volet de tâches Excel. 
+Dans cet article, vous découvrirez comment créer un complément de volet de tâches Excel.
 
 ## <a name="create-the-add-in"></a>Créer le complément
 
@@ -54,7 +54,7 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
     cd "My Office Add-in"
     ```
 
-2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
+2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)]
 
 3. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
@@ -114,7 +114,7 @@ Félicitations, vous avez créé un complément de volet de tâches Excel ! Ens
     </body>
     ```
 
-2. Ouvrez le fichier **Home.js** à la racine du projet d’application web. Ce fichier spécifie le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier. 
+2. Ouvrez le fichier **Home.js** à la racine du projet d’application web. Ce fichier spécifie le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
 
     ```js
     'use strict';
@@ -145,7 +145,7 @@ Félicitations, vous avez créé un complément de volet de tâches Excel ! Ens
     })();
     ```
 
-3. Ouvrez le fichier **Home.css** à la racine du projet d’application web. Ce fichier spécifie les styles personnalisés pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier. 
+3. Ouvrez le fichier **Home.css** à la racine du projet d’application web. Ce fichier spécifie les styles personnalisés pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
 
     ```css
     #content-header {
@@ -155,7 +155,7 @@ Félicitations, vous avez créé un complément de volet de tâches Excel ! Ens
         top: 0;
         left: 0;
         width: 100%;
-        height: 80px; 
+        height: 80px;
         overflow: hidden;
     }
 
@@ -166,7 +166,7 @@ Félicitations, vous avez créé un complément de volet de tâches Excel ! Ens
         left: 0;
         right: 0;
         bottom: 0;
-        overflow: auto; 
+        overflow: auto;
     }
 
     .padding {
@@ -198,7 +198,7 @@ Félicitations, vous avez créé un complément de volet de tâches Excel ! Ens
 
 ### <a name="try-it-out"></a>Essayez
 
-1. À l’aide de Visual Studio, testez le nouveau complément Excel en appuyant sur** F5** ou en choisissant le bouton **Démarrer** pour lancer Excel avec le bouton du complément **Show Taskpane **(Afficher le volet Office) qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
+1. À l’aide de Visual Studio, testez le nouveau complément Excel en appuyant sur **F5** ou en choisissant le bouton **Démarrer** pour lancer Excel avec le bouton du complément **Afficher le volet Office** qui apparaît dans le ruban. Le complément est hébergé localement sur IIS. Si vous êtes invité à approuver un certificat, faites-le pour autoriser le complément à se connecter à son hôte.
 
 2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
@@ -209,6 +209,8 @@ Félicitations, vous avez créé un complément de volet de tâches Excel ! Ens
 4. Dans le volet Office, cliquez sur le bouton **Définir couleur** pour définir la couleur de la plage sélectionnée en vert.
 
     ![Complément Excel](../images/excel-quickstart-addin-2c.png)
+
+[!include[Console tool note](../includes/console-tool-note.md)]
 
 ### <a name="next-steps"></a>Étapes suivantes
 
