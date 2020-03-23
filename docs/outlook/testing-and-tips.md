@@ -1,14 +1,14 @@
 ---
 title: Déployer et installer des compléments Outlook à des fins de test
 description: Créez un fichier manifeste, déployez le fichier IU de complément, installez le complément dans votre boîte aux lettres, puis testez-le.
-ms.date: 11/06/2019
+ms.date: 03/18/2020
 localization_priority: Priority
-ms.openlocfilehash: 521199a87282b58c3bf10553886174e8be26cacf
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 76688ad3e1eca2dda832a94c3a9ae815e37678bc
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166074"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890976"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>Déployer et installer des compléments Outlook à des fins de test
 
@@ -76,11 +76,11 @@ Le choix des versions du client Outlook à tester dépend de vos besoins en mati
 
 - Si vous développez un complément pour une utilisation privée ou uniquement pour les membres de votre organisation, il est important de tester les versions d’Outlook que votre entreprise utilise. Gardez à l’esprit que certains utilisateurs peuvent utiliser Outlook sur le web. Par conséquent, vous devez également tester les versions des navigateurs standard utilisés au sein de votre entreprise.
 
-- Si vous développez un complément pour [AppSource](https://appsource.microsoft.com), vous devez tester les versions requises tel que spécifié dans les [stratégies de validation d’AppSource 4.12.1](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably). Cela inclut notamment :
+- Si vous développez un complément pour [AppSource](https://appsource.microsoft.com), vous devez tester les versions requises tel que spécifié dans les [Stratégies de certification de la Place de marché commerciale 1120.3](/legal/marketplace/certification-policies#11203-functionality). Cela inclut notamment :
     - la dernière et avant-dernière version d’Outlook sur Windows ;
     - la dernière version d’Outlook sur Mac ;
     - la dernière version d’Outlook sur iOS et Android (si votre complément [prend en charge le facteur de forme pour mobile](add-mobile-support.md)) ;
-    - les versions de navigateur spécifiées dans la stratégie de validation d’AppSource 4.12.1.
+    - Les versions de navigateur spécifiées dans la stratégie de validation de la Place de marché commerciale 1120.3.
 
 > [!NOTE]
 > Si votre complément ne prend pas en charge l’un des clients ci-dessus car il demande [un ensemble de conditions requises d’API](apis.md) que le client ne prend pas en charge, ce client est supprimé de la liste des clients requis.

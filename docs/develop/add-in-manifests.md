@@ -1,14 +1,14 @@
 ---
 title: Manifeste XML des compléments Office
 description: Obtenez une vue d’ensemble du manifeste de Complément Office et de ses applications.
-ms.date: 01/06/2020
+ms.date: 03/18/2020
 localization_priority: Priority
-ms.openlocfilehash: 2e8ab3ac27756d221b24838ca4b70624f046089d
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: ad2827c45dca4652c504d57232f1aa40f72373fe
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719216"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890562"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifeste XML des compléments Office
 
@@ -28,8 +28,7 @@ Un fichier de manifeste XML basé sur ce schéma permet à un Complément Office
 
 * Pour des compléments Outlook, définir la ou les règles qui spécifient le contexte dans lequel ils seront activés et seront en interaction avec un message, un rendez-vous ou un élément de demande de réunion.
 
-> [!NOTE]
-> Si vous prévoyez de [publier](../publish/publish.md) votre complément sur AppSource et de le rendre disponible dans l’expérience Office, assurez-vous que vous respectez les [stratégies de validation AppSource](/office/dev/store/validation-policies). Par exemple, pour réussir la validation, votre complément doit fonctionner sur toutes les plateformes prenant en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) et la [page relative à la disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md)).
+[!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 [!include[manifest guidance](../includes/manifest-guidance.md)]
 
@@ -116,7 +115,7 @@ Toutes les URL, telles que les emplacements des fichiers source spécifiés dans
 
 Vérifiez que l’ID du complément est un GUID valide et unique. Vous trouverez des outils de génération de GUID sur Internet pour vous aider à créer un GUID unique.
 
-Les compléments envoyés à AppSource doivent également inclure l’élément [SupportUrl](../reference/manifest/supporturl.md). Pour plus d’informations, reportez-vous à [Stratégies de validation pour les applications et les compléments envoyés à AppSource](/office/dev/store/validation-policies).
+Les compléments envoyés à AppSource doivent également inclure l’élément [SupportUrl](../reference/manifest/supporturl.md). Pour plus d’informations, reportez-vous à [Stratégies de validation pour les applications et les compléments envoyés à AppSource](/legal/marketplace/certification-policies).
 
 Utilisez uniquement l’élément [AppDomains](../reference/manifest/appdomains.md) pour spécifier des domaines différents de celui spécifié dans l’élément [SourceLocation](../reference/manifest/sourcelocation.md) pour les scénarios d’authentification.
 
@@ -132,7 +131,7 @@ Pour remplacer ce comportement (version de bureau d’Office), spécifiez chaque
 > - Il s’applique uniquement au volet racine du complément. S’il existe un iframe incorporé dans la page de complément, l’iframe peut être dirigé vers n’importe quelle URL, qu’elle figure dans la liste des **AppDomains** ou non, y compris dans la version de bureau d’Office.
 > - Lorsqu’une boîte de dialogue est ouverte avec l’API [displayDialogAsync](/javascript/api/office/office.ui?view=common-js#displaydialogasync-startaddress--options--callback-), l’URL transmise à la méthode doit se trouver dans le même domaine que le complément, mais la boîte de dialogue peut ensuite être redirigée vers n’importe quelle URL, même si elle est répertoriée dans **AppDomains**, y compris dans la version de bureau d’Office.
 
-L’exemple de manifeste XML suivant héberge sa page de complément principale dans le domaine `https://www.contoso.com` comme indiqué dans l’élément **SourceLocation**. Il indique également le domaine `https://www.northwindtraders.com` dans un élément [AppDomain](../reference/manifest/appdomain.md) au sein de la liste d’éléments **AppDomains**. Si le complément ouvre une page dans le domaine www.northwindtraders.com, cette page s’ouvre dans le volet de complément, y compris dans la version de bureau d’Office.
+L’exemple de manifeste XML suivant héberge sa page de complément principale dans le domaine `https://www.contoso.com` comme indiqué dans l’élément **SourceLocation**. Il indique également le domaine `https://www.northwindtraders.com` dans un élément [AppDomain](../reference/manifest/appdomain.md) au sein de la liste d’éléments **AppDomains**. Si le complément ouvre une page dans le domaine `www.northwindtraders.com`, cette page s’ouvre dans le volet de complément, y compris dans le bureau Office.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
