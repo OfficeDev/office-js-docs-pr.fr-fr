@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: Les fonctionnalités et les API qui sont actuellement en préversion pour les compléments Outlook et les API JavaScript pour Office.
-ms.date: 03/17/2020
+ms.date: 03/26/2020
 localization_priority: Normal
-ms.openlocfilehash: 437629687972e030a7b34f035db5d2a2f8a5eba1
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: 55de284932a53d2226258a15c86ead4f05361c30
+ms.sourcegitcommit: 315a648cce38609c3e1c92bd4a339e268f8a2e1d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890871"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "42978619"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -65,13 +65,13 @@ Ajout d’une nouvelle fonction qui renvoie les données d’initialisation tran
 
 Ajout d’une nouvelle fonction à `Body` l’objet qui ajoute ou remplace la signature dans le corps de l’élément en mode composition.
 
-**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
+**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Office 365), Outlook sur le Web (moderne)
 
 #### <a name="officecontextmailboxitemdisableclientsignatureasync"></a>[Office. Context. Mailbox. Item. disableClientSignatureAsync](office.context.mailbox.item.md#methods)
 
 Ajout d’une fonction qui désactive la signature client pour la boîte aux lettres d’envoi en mode composition.
 
-**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
+**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Office 365), Outlook sur le Web (moderne)
 
 #### <a name="officecontextmailboxitemgetcomposetypeasync"></a>[Office. Context. Mailbox. Item. getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#getcomposetypeasync-options--callback-)
 
@@ -83,13 +83,13 @@ Ajout d’une nouvelle fonction qui obtient le type de composition d’un messag
 
 Ajout d’une fonction qui vérifie si la signature client est activée sur l’élément en mode composition.
 
-**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
+**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Office 365), Outlook sur le Web (moderne)
 
 #### <a name="officemailboxenumscomposetype"></a>[Office. MailboxEnums. ComposeType](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-preview)
 
 Ajout d’une nouvelle `ComposeType` énumération disponible en mode composition.
 
-**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
+**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Office 365), Outlook sur le Web (moderne)
 
 <br>
 
