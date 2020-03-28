@@ -1,14 +1,14 @@
 ---
 title: Optimisation des performances API JavaScript Excel
 description: Optimisation des performances à l’aide de l’API JavaScript d’Excel
-ms.date: 06/20/2019
+ms.date: 03/27/2020
 localization_priority: Normal
-ms.openlocfilehash: a09b01c698a09bbb25d60518069f6e26fe5acaf1
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: a202776569cdfc31a1221e3de1a356f0dafa2bfb
+ms.sourcegitcommit: 559a7e178e84947e830cc00dfa01c5c6e398ddc2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42891011"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "43030830"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Optimisation des performances à l’aide de l’API JavaScript d’Excel
 
@@ -75,7 +75,7 @@ _Où :_
 * `properties` est la liste des propriétés à charger, fournie sous forme de chaînes séparées par des virgules ou de tableau de noms. Pour plus d’informations, consultez `load()` les méthodes définies pour les objets dans la référence de l' [API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md).
 * `loadOption` spécifie un objet qui décrit les options select, expand, top et skip. Pour plus d’informations, reportez-vous aux [options](/javascript/api/office/officeextension.loadoption) de chargement d’objet.
 
-N’oubliez pas que certaines des « propriétés » sous un objet peuvent avoir le même nom qu’un autre objet. Par exemple, `format` est une propriété sous plage d’objet, mais `format` lui-même est également un objet. Par conséquent, si vous passez un appel comme `range.load("format")`, cela équivaut à `range.format.load()`, c'est-à-dire, un appel load() vide pouvant entraîner des problèmes de performances comme indiqué précédemment. Pour éviter cela, votre code doit uniquement charger les « nœuds feuille » dans une arborescence d’objets. 
+N’oubliez pas que certaines des « propriétés » sous un objet peuvent avoir le même nom qu’un autre objet. Par exemple, `format` est une propriété sous plage d’objet, mais `format` lui-même est également un objet. Par conséquent, si vous passez un appel comme `range.load("format")`, cela équivaut à `range.format.load()`, c'est-à-dire, un appel load() vide pouvant entraîner des problèmes de performances comme indiqué précédemment. Pour éviter cela, votre code doit uniquement charger les « nœuds feuille » dans une arborescence d’objets.
 
 ## <a name="suspend-excel-processes-temporarily"></a>Suspendre temporairement les processus Excel
 
@@ -129,6 +129,9 @@ Excel.run(async function(ctx) {
 ### <a name="suspend-screen-updating"></a>Suspendre la mise à jour de l’écran
 
 Excel affiche les modifications effectuées par votre complément à peu près au moment où elles ont lieu dans le code. Dans le cas de grands ensembles de données itératifs, il se peut que vous ne deviez pas afficher cette progression sur l’écran en temps réel. `Application.suspendScreenUpdatingUntilNextSync()` interrompt les mises à jour visuelles vers Excel tant que le complément n’appelle pas `context.sync()`, ou tant que `Excel.run` ne se termine pas (appelant implicitement `context.sync`). N’oubliez pas qu'Excel n’affiche aucun signe d’activité jusqu'à la synchronisation suivante. Votre complément doit donner des conseils aux utilisateurs pour les préparer à ce délai ou fournir une barre d’état pour démontrer l’activité.
+
+> [!NOTE]
+> Ne pas `suspendScreenUpdatingUntilNextSync` appeler de manière répétée (comme dans une boucle). Les appels répétés entraînent le scintillement de la fenêtre Excel.
 
 ### <a name="enable-and-disable-events"></a>Activation et désactivation d’événements
 
@@ -191,7 +194,7 @@ Excel.run(async (context) => {
     var largeRange = context.workbook.getSelectedRange();
     largeRange.load(["rowCount", "columnCount"]);
     await context.sync();
-    
+
     for (var i = 0; i < largeRange.rowCount; i++) {
         for (var j = 0; j < largeRange.columnCount; j++) {
             var cell = largeRange.getCell(i, j);

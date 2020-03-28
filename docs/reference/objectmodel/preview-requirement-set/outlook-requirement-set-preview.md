@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: Les fonctionnalités et les API qui sont actuellement en préversion pour les compléments Outlook et les API JavaScript pour Office.
-ms.date: 03/26/2020
+ms.date: 03/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 55de284932a53d2226258a15c86ead4f05361c30
-ms.sourcegitcommit: 315a648cce38609c3e1c92bd4a339e268f8a2e1d
+ms.openlocfilehash: 3d8eaac1b665d4bd65d5cf0383e53d6f6fb70324
+ms.sourcegitcommit: 559a7e178e84947e830cc00dfa01c5c6e398ddc2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "42978619"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "43030816"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -24,6 +24,44 @@ L’ensemble de conditions requises présenté en aperçu comprend toutes les fo
 ## <a name="features-in-preview"></a>Fonctionnalités (aperçu) :
 
 Les fonctionnalités suivantes sont disponibles en aperçu.
+
+### <a name="additional-calendar-properties"></a>Propriétés de calendrier supplémentaires
+
+#### <a name="isalldayevent"></a>[IsAllDayEvent](/javascript/api/outlook/office.isalldayevent?view=outlook-js-preview)
+
+Ajout d’un nouvel objet qui représente la propriété d’événement d’une journée entière d’un rendez-vous en mode composition.
+
+**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
+
+#### <a name="sensitivity"></a>[Sensitivity](/javascript/api/outlook/office.sensitivity?view=outlook-js-preview)
+
+Ajout d’un nouvel objet qui représente le critère de diffusion d’un rendez-vous en mode composition.
+
+**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
+
+#### <a name="officecontextmailboxitemisalldayevent"></a>[Office. Context. Mailbox. Item. isAllDayEvent](office.context.mailbox.item.md#properties)
+
+Ajout d’une nouvelle propriété qui indique si un rendez-vous est un événement d’une journée entière.
+
+**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
+
+#### <a name="officecontextmailboxitemsensitivity"></a>[Office. Context. Mailbox. Item. Sensitivity](office.context.mailbox.item.md#properties)
+
+Ajout d’une nouvelle propriété qui représente le critère de diffusion d’un rendez-vous.
+
+**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
+
+#### <a name="officemailboxenumsappointmentsensitivitytype"></a>[Office. MailboxEnums. AppointmentSensitivityType](/javascript/api/outlook/office.mailboxenums.appointmentsensitivitytype?view=outlook-js-preview)
+
+Ajout d’une nouvelle `AppointmentSensitivityType` énumération qui représente les options de critère de diffusion disponibles sur un rendez-vous.
+
+**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
+
+<br>
+
+---
+
+---
 
 ### <a name="append-on-send"></a>Ajouter à l’envoi
 
