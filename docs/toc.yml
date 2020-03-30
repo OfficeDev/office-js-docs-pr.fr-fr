@@ -56,7 +56,7 @@
               href: develop/initialize-add-in.md
             - name: Recommandations en matière de codage pour les problèmes courants
               href: develop/common-coding-issues.md
-            - name: API communes (Office 2013+)
+            - name: API courantes
               items:
                 - name: Modèle d’objet d’API JavaScript courant
                   href: develop/office-javascript-api-object-model.md
