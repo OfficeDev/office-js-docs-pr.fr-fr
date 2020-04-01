@@ -1,15 +1,15 @@
 ---
 title: Didacticiel sur le complément Excel
 description: Dans ce didacticiel, vous allez développer un complément Excel qui crée, remplit, filtre et trie un tableau, crée un graphique, fige un en-tête de tableau, protège une feuille de calcul et ouvre une boîte de dialogue.
-ms.date: 01/16/2020
+ms.date: 03/30/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 8d16369908f5885e20c145581c021ba69855e968
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: bc14027600a108f47cdf4766a51ebf2437b6f976
+ms.sourcegitcommit: 73a3df90a51acf13416d6a049bddcd9aabc32441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719790"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "43069315"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 
@@ -163,7 +163,7 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
     - Enfin, il s’assure que la largeur des colonnes et la hauteur des lignes sont assez grandes pour contenir l’élément de données le plus long (ou le plus haut). Notez que le code doit rechercher des objets `Range` à mettre en forme. Les objets `TableColumn` et `TableRow` n’ont pas de propriétés de mise en forme.
 
     ```js
-    expensesTable.columns.getItemAt(3).getRange().numberFormat = [['&euro;#,##0.00']];
+    expensesTable.columns.getItemAt(3).getRange().numberFormat = [['\u20AC#,##0.00']];
     expensesTable.getRange().format.autofitColumns();
     expensesTable.getRange().format.autofitRows();
     ```
