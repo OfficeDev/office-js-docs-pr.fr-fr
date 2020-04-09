@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet des tâches de Project
 description: Découvrez comment créer un complément simple de volet des tâches Project à l’aide de l’API JavaScript pour Office.
-ms.date: 01/16/2020
+ms.date: 04/03/2020
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 3a1a7e03ef040d24186ed71baa6fe9eea9589b34
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: f712dbfc10027ff6af0eaf618c667cd542bbf284
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42323846"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185436"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Project
 
@@ -17,6 +17,7 @@ Cet article décrit comment créer un complément du volet des tâches de Projec
 
 ## <a name="prerequisites"></a>Conditions préalables
 
+[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 - Project 2016 ou version ultérieure pour Windows

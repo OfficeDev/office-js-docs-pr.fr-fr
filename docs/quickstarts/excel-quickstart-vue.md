@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément de volet des tâches Excel
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 3f6bc4a870d987fb367588f9db731e19a50059ba
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: aff58bf3021be2efed0aef14a505dab8433d92a3
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596836"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185560"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>Créer un complément de volet de tâches Excel à l’aide de Vue
 
@@ -17,6 +17,7 @@ Cet article décrit le processus de création d’un complément de volet de tâ
 
 ## <a name="prerequisites"></a>Conditions préalables
 
+[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 - Installez l’[interface de ligne de commande Vue](https://cli.vuejs.org/) globalement.

@@ -1,15 +1,15 @@
 ---
 title: Création de votre premier complément Outlook
 description: Découvrez comment créer un complément de volet des tâches Outlook simple à l’aide de l’API JavaScript pour Office.
-ms.date: 12/28/2019
+ms.date: 03/04/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 6c50ed57cd9fa809081060662c13af662b475ed2
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: bdef3ba43d8bb016f5d79ed3cafc25a6d89c345d
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325290"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185448"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Création de votre premier complément Outlook
 
@@ -22,6 +22,8 @@ Vous pouvez créer un complément Office à l’aide du [générateur Yeoman pou
 # <a name="yeoman-generator"></a>[Générateur Yeoman](#tab/yeomangenerator)
 
 ### <a name="prerequisites"></a>Conditions préalables
+
+[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 
 - [Node.js](https://nodejs.org/) (la dernière version [LTS](https://nodejs.org/about/releases))
 
