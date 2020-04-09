@@ -1,18 +1,18 @@
 ---
 title: Élément Extension dans le fichier manifeste
 description: Définit l’emplacement où se trouvent les fonctionnalités d’un complément dans l’interface utilisateur Office.
-ms.date: 09/05/2019
+ms.date: 04/07/2020
 localization_priority: Normal
-ms.openlocfilehash: c945875140fdbdb7ba6aaeed7bb0a7bf5d06e050
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 7cdcb96fbd0766b6751917ec84c5bea9a86b0ce1
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720567"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185427"
 ---
 # <a name="extensionpoint-element"></a>Élément ExtensionPoint
 
- Définit l’emplacement où se trouvent les fonctionnalités d’un complément dans l’interface utilisateur Office. L’élément **ExtensionPoint** est un élément enfant de [AllFormFactors](allformfactors.md) ou [DesktopFormFactor](desktopformfactor.md) ou [MobileFormFactor](mobileformfactor.md). 
+ Définit l’emplacement où se trouvent les fonctionnalités d’un complément dans l’interface utilisateur Office. L’élément **ExtensionPoint** est un élément enfant de [AllFormFactors](allformfactors.md) ou [DesktopFormFactor](desktopformfactor.md) ou [MobileFormFactor](mobileformfactor.md).
 
 ## <a name="attributes"></a>Attributs
 
@@ -33,7 +33,7 @@ ms.locfileid: "42720567"
 
 Les exemples suivants montrent comment utiliser l’élément **ExtensionPoint** avec les valeurs d’attribut **PrimaryCommandSurface** et **ContextMenu**, ainsi que les éléments enfants qui doivent être utilisés avec chacune d’elles.
 
-> [!IMPORTANT] 
+> [!IMPORTANT]
 > Pour les éléments qui contiennent un attribut ID, assurez-vous que vous indiquez un ID unique. Nous vous recommandons d’utiliser le nom de votre organisation, ainsi que votre ID. Par exemple, utilisez le format suivant. <CustomTab id="mycompanyname.mygroupname">
 
 ```XML
@@ -86,16 +86,18 @@ Les exemples suivants montrent comment utiliser l’élément **ExtensionPoint**
 
 ## <a name="extension-points-for-outlook"></a>Points d’extension pour Outlook
 
-- [MessageReadCommandSurface](#messagereadcommandsurface) 
-- [MessageComposeCommandSurface](#messagecomposecommandsurface) 
-- [AppointmentOrganizerCommandSurface](#appointmentorganizercommandsurface) 
+- [MessageReadCommandSurface](#messagereadcommandsurface)
+- [MessageComposeCommandSurface](#messagecomposecommandsurface)
+- [AppointmentOrganizerCommandSurface](#appointmentorganizercommandsurface)
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
 - [Module](#module) (peut uniquement être utilisé dans [DesktopFormFactor](desktopformfactor.md).)
 - [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
+- [MobileOnlineMeetingCommandSurface](#mobileonlinemeetingcommandsurface-preview)
 - [Événements](#events)
 - [DetectedEntity](#detectedentity)
 
 ### <a name="messagereadcommandsurface"></a>MessageReadCommandSurface
+
 Ce point d’extension place des boutons dans la surface de commande pour le mode de lecture de courrier électronique. Dans l’application de bureau Outlook, cela apparaît dans le ruban.
 
 #### <a name="child-elements"></a>Éléments enfants
@@ -106,6 +108,7 @@ Ce point d’extension place des boutons dans la surface de commande pour le mod
 |  [CustomTab](customtab.md) |  Ajoute les commandes à l’onglet de ruban personnalisé.  |
 
 #### <a name="officetab-example"></a>Exemple OfficeTab
+
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
   <OfficeTab id="TabDefault">
@@ -115,6 +118,7 @@ Ce point d’extension place des boutons dans la surface de commande pour le mod
 ```
 
 #### <a name="customtab-example"></a>Exemple CustomTab
+
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
   <CustomTab id="TabCustom1">
@@ -124,6 +128,7 @@ Ce point d’extension place des boutons dans la surface de commande pour le mod
 ```
 
 ### <a name="messagecomposecommandsurface"></a>MessageComposeCommandSurface
+
 Ce point d’extension place des boutons sur le ruban pour les compléments à l’aide du formulaire de composition de messagerie. 
 
 #### <a name="child-elements"></a>Éléments enfants
@@ -134,6 +139,7 @@ Ce point d’extension place des boutons sur le ruban pour les compléments à l
 |  [CustomTab](customtab.md) |  Ajoute les commandes à l’onglet de ruban personnalisé.  |
 
 #### <a name="officetab-example"></a>Exemple OfficeTab
+
 ```xml
 <ExtensionPoint xsi:type="MessageComposeCommandSurface">
   <OfficeTab id="TabDefault">
@@ -164,6 +170,7 @@ Ce point d’extension place des boutons sur le ruban pour le formulaire qui est
 |  [CustomTab](customtab.md) |  Ajoute les commandes à l’onglet de ruban personnalisé.  |
 
 #### <a name="officetab-example"></a>Exemple OfficeTab
+
 ```xml
 <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
   <OfficeTab id="TabDefault">
@@ -173,6 +180,7 @@ Ce point d’extension place des boutons sur le ruban pour le formulaire qui est
 ```
 
 #### <a name="customtab-example"></a>Exemple CustomTab
+
 ```xml
 <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
   <CustomTab id="TabCustom1">
@@ -193,6 +201,7 @@ Ce point d’extension place des boutons sur le ruban pour le formulaire qui est
 |  [CustomTab](customtab.md) |  Ajoute les commandes à l’onglet de ruban personnalisé.  |
 
 #### <a name="officetab-example"></a>Exemple OfficeTab
+
 ```xml
 <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
   <OfficeTab id="TabDefault">
@@ -202,6 +211,7 @@ Ce point d’extension place des boutons sur le ruban pour le formulaire qui est
 ```
 
 #### <a name="customtab-example"></a>Exemple CustomTab
+
 ```xml
 <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
   <CustomTab id="TabCustom1">
@@ -212,7 +222,7 @@ Ce point d’extension place des boutons sur le ruban pour le formulaire qui est
 
 ### <a name="module"></a>Module
 
-Ce point d’extension place des boutons sur le ruban pour l’extension de module. 
+Ce point d’extension place des boutons sur le ruban pour l’extension de module.
 
 #### <a name="child-elements"></a>Éléments enfants
 
@@ -222,6 +232,7 @@ Ce point d’extension place des boutons sur le ruban pour l’extension de modu
 |  [CustomTab](customtab.md) |  Ajoute les commandes à l’onglet de ruban personnalisé.  |
 
 ### <a name="mobilemessagereadcommandsurface"></a>MobileMessageReadCommandSurface
+
 Ce point d’extension place des boutons dans la surface de commande pour le mode de lecture de courrier électronique dans le facteur de forme pour environnement mobile.
 
 #### <a name="child-elements"></a>Éléments enfants
@@ -235,6 +246,7 @@ Les éléments **ExtensionPoint** de ce type peuvent uniquement avoir un éléme
 Pour les éléments **Control** contenus dans ce point d’extension, l’attribut **xsi:type** doit avoir la valeur `MobileButton`.
 
 #### <a name="example"></a>Exemple
+
 ```xml
 <ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
   <Group id="mobileGroupID">
@@ -246,12 +258,50 @@ Pour les éléments **Control** contenus dans ce point d’extension, l’attrib
 </ExtensionPoint>
 ```
 
+### <a name="mobileonlinemeetingcommandsurface-preview"></a>MobileOnlineMeetingCommandSurface (aperçu)
+
+> [!NOTE]
+> Ce point d’extension est uniquement pris en charge en [Aperçu](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) sur Android avec un abonnement Office 365.
+
+Ce point d’extension place un bouton bascule mode-approprié dans la surface de commande pour un rendez-vous dans le facteur de forme mobile. Un organisateur de réunion peut créer une réunion en ligne. Un participant peut ensuite participer à la réunion en ligne.
+
+#### <a name="child-elements"></a>Éléments enfants
+
+|  Élément |  Description  |
+|:-----|:-----|
+|  [Control](control.md) |  Ajoute un bouton à la surface de commande.  |
+
+Les éléments **ExtensionPoint** de ce type ne peuvent avoir qu’un seul élément enfant : un élément **Control** .
+
+L’attribut **xsi : type** de l’élément **Control** contenu dans ce point d’extension doit être `MobileButton`défini sur.
+
+#### <a name="example"></a>Exemple
+
+```xml
+<ExtensionPoint xsi:type="MobileOnlineMeetingCommandSurface">
+  <Control xsi:type="MobileButton" id="onlineMeetingFunctionButton">
+    <Label resid="residUILessButton0Name" />
+    <Icon>
+      <bt:Image resid="UiLessIcon" size="25" scale="1" />
+      <bt:Image resid="UiLessIcon" size="25" scale="2" />
+      <bt:Image resid="UiLessIcon" size="25" scale="3" />
+      <bt:Image resid="UiLessIcon" size="32" scale="1" />
+      <bt:Image resid="UiLessIcon" size="32" scale="2" />
+      <bt:Image resid="UiLessIcon" size="32" scale="2" />
+      <bt:Image resid="UiLessIcon" size="48" scale="1" />
+      <bt:Image resid="UiLessIcon" size="48" scale="2" />
+      <bt:Image resid="UiLessIcon" size="48" scale="3" />
+    </Icon>
+    <Action xsi:type="ExecuteFunction">
+      <FunctionName>UiLessInsertMeetingLink</FunctionName>
+    </Action>
+  </Control>
+</ExtensionPoint>
+```
+
 ### <a name="events"></a>Événements
 
 Ce point d’extension ajoute un gestionnaire d’événements pour un événement spécifié.
-
-> [!NOTE]
-> Ce type d’élément est pris en charge par la version classique d’Outlook sur le Web, et en mode [aperçu](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) sous Windows, Mac et Outlook moderne sur le Web. Un abonnement Office 365 est également requis.
 
 | Élément | Description  |
 |:-----|:-----|
@@ -306,5 +356,5 @@ Toutefois, il existe certaines limitations à connaître. Ces limitations sont e
     <Rule xsi:type="ItemHasKnownEntity" EntityType="MeetingSuggestion" Highlight="all" />
     <Rule xsi:type="ItemHasKnownEntity" EntityType="Address" Highlight="none" />
   </Rule>
-</ExtensionPoint> 
+</ExtensionPoint>
 ```

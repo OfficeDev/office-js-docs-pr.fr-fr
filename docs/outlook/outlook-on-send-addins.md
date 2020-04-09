@@ -1,14 +1,14 @@
 ---
 title: Fonctionnalité d’envoi des compléments Outlook
 description: Permet de traiter un élément ou d’empêcher les utilisateurs d’effectuer certaines actions. Permet aussi aux compléments de définir certaines propriétés pendant l’envoi.
-ms.date: 03/30/2020
+ms.date: 04/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 59d633169fa74687032691bef65fb7f0b114822a
-ms.sourcegitcommit: 73a3df90a51acf13416d6a049bddcd9aabc32441
+ms.openlocfilehash: 017759628cd9b3716c3992f7c6631911491ca246
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "43069308"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185637"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Fonctionnalité d’envoi des compléments Outlook
 
@@ -18,7 +18,7 @@ La fonctionnalité d’envoi des compléments Outlook vous permet de traiter un
 - Ajouter un destinataire spécifique à la ligne CC dans les messages ou à la ligne destinataires facultatifs des réunions.
 
 > [!NOTE]
-> La fonctionnalité d’envoi est prise en charge pour Outlook sur le web dans Exchange Online (Office 365), Exchange 2016 en local (mise à jour cumulative 6 ou ultérieure) et Exchange 2019 en local (mise à jour cumulative 1 ou ultérieure). Cette fonctionnalité est également disponible dans les derniers builds Outlook sur Windows et Mac connectés à Exchange Online (Office 365). La fonctionnalité a été introduite dans l’ensemble de conditions requises 1,8 ([prise en charge actuelle du serveur et du client](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)).
+> La fonctionnalité d’envoi est prise en charge pour Outlook sur le web dans Exchange Online (Office 365), Exchange 2016 en local (mise à jour cumulative 6 ou ultérieure) et Exchange 2019 en local (mise à jour cumulative 1 ou ultérieure). Cette fonctionnalité est également disponible dans les derniers builds Outlook sur Windows et Mac connectés à Exchange Online (Office 365). La fonctionnalité a été introduite dans l’ensemble de conditions requises 1,8 (pour plus d’informations, consultez la rubrique [Current Server and client support](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) ).
 
 > [!IMPORTANT]
 > Les compléments qui utilisent la fonctionnalité d’envoi ne sont pas autorisés dans [AppSource](https://appsource.microsoft.com).
