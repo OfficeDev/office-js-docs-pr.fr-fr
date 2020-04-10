@@ -1,14 +1,14 @@
 ---
 title: Compléments Outlook contextuels
 description: Lancer des tâches liées à un message sans laisser le message lui-même pour faciliter et enrichir l'expérience utilisateur.
-ms.date: 10/09/2019
+ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 84ea058e031fd2334706145bcdf8ca8e530c2c38
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: b7fa034eaafb60fb3328cabfe8c39106b8f71c51
+ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720805"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43215095"
 ---
 # <a name="contextual-outlook-add-ins"></a>Compléments Outlook contextuels
 
@@ -28,13 +28,15 @@ Voici quelques exemples de compléments contextuels :
 
 ## <a name="how-to-make-a-contextual-add-in"></a>Création d’un complément contextuel
 
-Le manifeste d’un complément contextuel doit inclure un élément [ExtensionPoint](../reference/manifest/extensionpoint.md) avec une attribut `xsi:type` défini sur `DetectedEntity`. Au sein de l’élément **ExtensionPoint**, le complément spécifie les entités ou l’expression régulière qui peuvent l’activer. Si une entité est spécifiée, il peut s’agir d’une des propriétés de l’objet [Entités](/javascript/api/outlook/office.entities).
+Le manifeste d’un complément contextuel doit inclure un élément [ExtensionPoint](../reference/manifest/extensionpoint.md#detectedentity) avec une attribut `xsi:type` défini sur `DetectedEntity`. Au sein de l’élément **ExtensionPoint**, le complément spécifie les entités ou l’expression régulière qui peuvent l’activer. Si une entité est spécifiée, il peut s’agir d’une des propriétés de l’objet [Entités](/javascript/api/outlook/office.entities).
 
 Par conséquent, le manifeste du complément doit contenir un type de règle **ItemHasKnownEntity** ou **Itemhasregularexpressionmatch**. L’exemple suivant montre comment spécifier qu’un complément doit s’activer sur les messages comportant une entité détectée telle qu’un numéro de téléphone :
 
 ```XML
 <ExtensionPoint xsi:type="DetectedEntity">
   <Label resid="contextLabel" />
+  <!--If you opt to include RequestedHeight, it must be between 140px to 450px, inclusive.-->
+  <!--<RequestedHeight>360</RequestedHeight>-->
   <SourceLocation resid="detectedEntityURL" />
   <Rule xsi:type="RuleCollection" Mode="And">
     <Rule xsi:type="ItemIs" ItemType="Message" />
