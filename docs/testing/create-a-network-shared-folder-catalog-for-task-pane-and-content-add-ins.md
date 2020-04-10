@@ -3,12 +3,12 @@ title: Chargement de compléments Office pour des tests
 description: Découvrez comment chargement un complément Office à des fins de test
 ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 0cfb1060ead27f7f034880361c51f8a1d0ec87dc
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: dbadf9f7f692e1e71dd9696f531ed79bfc84f786
+ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42891123"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43215060"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>Chargement de compléments Office pour des tests
 
@@ -67,7 +67,7 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 
     ![Boîte de dialogue Centre de gestion de la confidentialité avec le catalogue sélectionné](../images/sideload-windows-trust-center-dialog.png)
 
-8. Sélectionnez le bouton **OK** pour fermer la boîte de dialogue **Options Word**.
+8. Cliquez sur le bouton **OK** pour fermer la boîte de dialogue **options** .
 
 9. Fermez et ouvrez de nouveau l’application Office afin que vos modifications prennent effet.
 
