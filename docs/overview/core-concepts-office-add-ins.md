@@ -2,15 +2,15 @@
 layout: LandingPage
 ms.topic: landing-page
 title: Concepts de base pour les compléments Office
-description: Information qui s'applique à tous les compléments Office.
+description: En savoir plus sur la plateforme de compléments Office.
 ms.date: 12/24/2019
 localization_priority: Priority
-ms.openlocfilehash: 47849cdca24d66e53a98e30b6b62ef7c08a669a4
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 9ee2f8704ae1c2e625a95c4822cd75eb76f56704
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851700"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185630"
 ---
 # <a name="core-concepts"></a>Concepts de base
 
