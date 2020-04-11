@@ -1,14 +1,14 @@
 ---
 title: Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
 description: Découvrez comment convertir un projet de complément Office dans Visual Studio pour utiliser la machine à écrire.
-ms.date: 10/29/2019
+ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 1dbb3503a521f1a7c3e71764a50f02708b667a11
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 4c26c6a04d2f6d3eb91701a1856e2c31c8d00ca0
+ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719041"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43225651"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
 
@@ -53,25 +53,12 @@ Vous pouvez utiliser le modèle de complément Office dans Visual Studio pour cr
 
 4. Sous l’onglet **Outils**, choisissez **Gestionnaire de packages NuGet**, puis **Gérer un package NuGet pour Solution...**.
 
-5. Avec l’onglet **Parcourir** sélectionné, entrez **office-js.TypeScript.DefinitelyTyped** dans la zone de recherche. Installer ou mettre à jour ce package s’il est déjà installé. Cette opération ajoute les définitions de type TypeScript pour la bibliothèque Office.js à votre projet.
-
-6. Dans la même zone de recherche, entrez **jquery.TypeScript.DefinitelyTyped**. Installer ou mettre à jour ce package s’il est déjà installé. Cette opération permet d’ajouter les définitions de TypeScript jQuery dans votre projet. Les packages pour jQuery et Office.js s’affichent désormais dans un nouveau fichier généré par Visual Studio, appelé **packages.config**.
+5. L’onglet **Parcourir** étant sélectionné, entrez **jQuery. Machine à écrire. DefinitelyTyped**. Installez ce package, ou mettez-le à jour s’il est déjà installé. Cela permet de s’assurer que les définitions d’autodactylographiés jQuery sont incluses dans votre projet. Les packages de jQuery apparaissent dans un fichier généré par Visual Studio, appelé **packages. config**.
 
     > [!NOTE]
     > Dans votre projet TypeScript, vous pouvez avoir un mélange de fichiers TypeScript et JavaScript, qui seront compilés. En effet, TypeScript est un sur-ensemble typé de code JavaScript compilé en code JavaScript.
 
-7. Dans **Home.ts**, recherchez la ligne `if(!Office.context.requirements.isSetSupported('ExcelApi', '1.1') {` et remplacez-la par ce qui suit :
-
-    ```TypeScript
-    if(!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
-    ```
-
-    > [!NOTE]
-    > Pour l’instant, pour que le projet se compile correctement après avoir été converti en TypeScript, vous devez spécifier le numéro de l’ensemble de conditions requises sous forme de valeur numérique, comme illustré dans l’extrait de code précédent. Malheureusement, cela signifie que vous ne pourrez pas utiliser `isSetSupported` pour tester la prise en charge de l’ensemble de conditions requises `1.10`, car la valeur numérique `1.10` a pour résultat `1.1` lors de l’exécution. 
-    > 
-    > Ce problème est dû au fait que le package **office-js.TypeScript.DefinitelyTyped** NuGet est actuellement obsolète. Par conséquent, votre projet n’a pas accès aux dernières définitions TypeScript pour Office.js. Ce problème est en cours de traitement et cet article sera mis à jour une fois le problème résolu.
-
-8. Dans **Home.ts**, recherchez la ligne `Office.initialize = function (reason) {` et ajoutez une ligne immédiatement après celle-ci pour ajouter un polyfill à l’ensemble de `window.Promise`, comme illustré ici :
+6. Dans **Home.ts**, recherchez la ligne `Office.initialize = function (reason) {` et ajoutez une ligne immédiatement après celle-ci pour ajouter un polyfill à l’ensemble de `window.Promise`, comme illustré ici :
 
     ```TypeScript
     Office.initialize = function (reason) {
@@ -80,7 +67,7 @@ Vous pouvez utiliser le modèle de complément Office dans Visual Studio pour cr
         ...
     ```
 
-9. Dans **Home.ts**, recherchez la fonction `displaySelectedCells`, remplacez-la entièrement par le code suivant et enregistrez le fichier :
+7. Dans **Home.ts**, recherchez la fonction `displaySelectedCells`, remplacez-la entièrement par le code suivant et enregistrez le fichier :
 
     ```TypeScript
     function displaySelectedCells() {
@@ -97,7 +84,7 @@ Vous pouvez utiliser le modèle de complément Office dans Visual Studio pour cr
     }
     ```
 
-10. Dans **./Scripts/MessageBanner.ts**, recherchez la ligne `_onResize(null);` et remplacez-la par ce qui suit :
+8. Dans **./Scripts/MessageBanner.ts**, recherchez la ligne `_onResize(null);` et remplacez-la par ce qui suit :
 
     ```TypeScript
     _onResize();
@@ -132,9 +119,9 @@ Par exemple, l’extrait de code suivant affiche le contenu du fichier **Home.ts
             var element = document.querySelector('.MessageBanner');
             messageBanner = new components.MessageBanner(element);
             messageBanner.hideBanner();
-            
-            // If not using Excel 2016, use fallback logic.
-            if (!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
+
+            // If you're using Excel 2013, use fallback logic.
+            if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
                 $("#template-description").text("This sample will display the value of the cells that you have selected in the spreadsheet.");
                 $('#button-text').text("Display!");
                 $('#button-desc').text("Display the selection");
@@ -146,7 +133,7 @@ Par exemple, l’extrait de code suivant affiche le contenu du fichier **Home.ts
             $("#template-description").text("This sample highlights the highest value from the cells you have selected in the spreadsheet.");
             $('#button-text').text("Highlight!");
             $('#button-desc').text("Highlights the largest number.");
-                
+
             loadSampleData();
 
             // Add a click event handler for the highlight button.

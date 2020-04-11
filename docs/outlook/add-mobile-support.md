@@ -1,14 +1,14 @@
 ---
 title: Ajout d’une prise en charge mobile pour un complément Outlook
 description: L’ajout de la prise en charge d’Outlook Mobile nécessite la mise à jour du manifeste de complément et éventuellement la modification de votre code pour les scénarios mobiles.
-ms.date: 12/10/2019
+ms.date: 04/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 31f58102129ae207da55839f7b48cc8a060645ad
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: de5f1209527c853afb2d0bf2061bd3e3cfa8d3e0
+ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720854"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43225665"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Ajouter la prise en charge des commandes de complément pour Outlook Mobile
 
@@ -84,7 +84,7 @@ Dans Outlook Mobile, les volets Office occupent la totalité de l’écran et e
 
 ### <a name="compose-mode-and-appointments"></a>Mode composition et rendez-vous
 
-Actuellement, les compléments dans Outlook Mobile ne prennent en charge l’activation que lors de la lecture des messages. Les compléments ne sont pas activés lors de la composition des messages, ou lors de l’affichage ou de la rédaction des rendez-vous.
+Actuellement, les compléments dans Outlook Mobile ne prennent en charge l’activation que lors de la lecture des messages. Les compléments ne sont pas activés lors de la composition des messages, ou lors de l’affichage ou de la rédaction des rendez-vous. Toutefois, les compléments intégrés à un fournisseur de réunions en ligne peuvent être activés dans le mode organisateur de rendez-vous. Pour plus d’informations sur cette exception, consultez l’article [créer un complément Outlook Mobile pour un fournisseur de réunion en ligne](online-meeting.md) .
 
 ### <a name="unsupported-apis"></a>API non prises en charge
 

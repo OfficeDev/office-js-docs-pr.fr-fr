@@ -1,14 +1,14 @@
 ---
 title: Limites des ressources et optimisation des performances pour les compléments Office
 description: Découvrez les limites de ressources de la plateforme de complément Office, y compris le processeur et la mémoire.
-ms.date: 09/09/2019
+ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 2265042e9c6d94476953d3fb71d89a022897371d
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 68f0bae8514a5f5769e648d6b74ffc3bdbccc194
+ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718628"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43225658"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites des ressources et optimisation des performances pour les compléments Office
 
@@ -26,7 +26,7 @@ Les limites d’utilisation des ressources d’exécution s’appliquent à tous
 
 - **Utilisation de la mémoire** - Seuil d’utilisation de mémoire par défaut, qui est déterminé de manière dynamique en fonction de la mémoire physique disponible de l’appareil.
 
-   Par défaut, lorsqu’un client riche hôte détecte que l’utilisation de la mémoire physique sur un appareil dépasse 80% de la mémoire disponible, le client commence à surveiller l’utilisation de la mémoire du complément, au niveau du document pour les compléments de contenu et du volet Office, et au niveau de boîte aux lettres pour Outlook compléments. À un intervalle de 5 secondes par défaut, le client avertit l’utilisateur si l’utilisation de la mémoire physique pour un ensemble de compléments au niveau du document ou de la boîte aux lettres dépasse 50%. Cette limite d’utilisation de la mémoire est basée sur la mémoire physique plutôt que sur la mémoire virtuelle afin de garantir de bonnes performances sur les appareils disposant d’une mémoire vive (RAM) limitée, par exemple les tablettes. Les administrateurs peuvent remplacer ce paramètre dynamique par une limite explicite à l’aide de la clé de Registre Windows **MemoryAlertThreshold** en tant que paramètre global, IR régler l’intervalle d’alerte en utilisant la clé **AlertInterval** comme paramètre global.
+   Par défaut, lorsqu’un client riche hôte détecte que l’utilisation de la mémoire physique sur un appareil dépasse 80% de la mémoire disponible, le client démarre la surveillance de l’utilisation de la mémoire du complément, au niveau du document pour les compléments de contenu et du volet Office, et au niveau des boîtes aux lettres pour les compléments Outlook. À un intervalle de 5 secondes par défaut, le client avertit l’utilisateur si l’utilisation de la mémoire physique pour un ensemble de compléments au niveau du document ou de la boîte aux lettres dépasse 50%. Cette limite d’utilisation de la mémoire est basée sur la mémoire physique plutôt que sur la mémoire virtuelle afin de garantir de bonnes performances sur les appareils disposant d’une mémoire vive (RAM) limitée, par exemple les tablettes. Les administrateurs peuvent remplacer ce paramètre dynamique par une limite explicite à l’aide de la clé de Registre Windows **MemoryAlertThreshold** en tant que paramètre global, IR régler l’intervalle d’alerte en utilisant la clé **AlertInterval** comme paramètre global.
 
 - **Tolérance d’incident** - Limite par défaut de 4 incidents pour un complément.
 
@@ -102,6 +102,8 @@ Bien que les limites en matière d’utilisation des ressources de l’UC et de 
 - Si votre complément utilise un algorithme qui sollicite l’UC de manière intensive et si vous pouvez décomposer les entrées ou sorties de données en jeux de données de plus petite taille, créez un service web afin de lui passer les données et d’alléger la charge de l’UC, puis attendez un rappel asynchrone.
 
 - Veillez à tester votre complément par rapport au volume de données le plus important possible, puis limitez votre complément pour lui permettre d’atteindre cette limite.
+
+- Réduisez les échanges de données entre le complément et le document Office. Pour plus d’informations, reportez-vous à [la rubrique éviter d’utiliser la méthode Context. Sync dans les boucles](correlated-objects-pattern.md).
 
 
 ## <a name="see-also"></a>Voir aussi

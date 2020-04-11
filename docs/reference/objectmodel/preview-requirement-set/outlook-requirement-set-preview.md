@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: Les fonctionnalités et les API qui sont actuellement en préversion pour les compléments Outlook et les API JavaScript pour Office.
-ms.date: 04/08/2020
+ms.date: 04/10/2020
 localization_priority: Normal
-ms.openlocfilehash: acc19c81f929596b0bd5622e696c1988cf31ee5c
-ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
+ms.openlocfilehash: f8ef7b8c37dbd7539c30457c4922c1c16262381c
+ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "43185413"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43225672"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -156,6 +156,8 @@ Ajout de l’événement `OfficeThemeChanged` à `Mailbox`.
 ---
 
 ### <a name="online-meeting-provider-integration"></a>Intégration des fournisseurs de réunions en ligne
+
+Prise en charge supplémentaire de l’intégration des réunions en ligne dans les compléments Outlook Mobile. Pour en savoir plus, reportez-vous à la rubrique [créer un complément Outlook Mobile pour un fournisseur de réunion en ligne](../../../outlook/online-meeting.md) .
 
 #### <a name="mobileonlinemeetingcommandsurface-extension-point"></a>[Point d’extension MobileOnlineMeetingCommandSurface](../../manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview)
 
