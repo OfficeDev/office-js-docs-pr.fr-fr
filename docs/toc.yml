@@ -29,6 +29,9 @@
     - name: Explorer les API Office JS à l’aide de Script Lab
       href: overview/explore-with-script-lab.md
       displayName: 'Excel, Word, PowerPoint'
+    - name: Configuration de votre environnement de développement
+      href: overview/set-up-your-dev-environment.md
+      displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
 - name: Concepts de base
   items:
     - name: Vue d’ensemble

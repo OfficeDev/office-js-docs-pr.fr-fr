@@ -1,14 +1,14 @@
 ---
 title: Disponibilité des compléments Office sur les plateformes et les hôtes
 description: Ensembles de conditions requises pris en charge pour Excel, OneNote, Outlook, PowerPoint, Project et Word.
-ms.date: 01/23/2020
+ms.date: 04/07/2020
 localization_priority: Priority
-ms.openlocfilehash: b30fe872fd89bb02afac99a7838d43d1fbee5464
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 823fd53e71c71f4a845f9a7b5c6177ad3f14745f
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688957"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185616"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilité des compléments Office sur les plateformes et les hôtes
 
@@ -328,8 +328,10 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
   </tr>
   <tr>
     <td>Office sur le web<br>(moderne)</td>
-    <td> - Lecture de message<br>
-      - Composition de message<br>
+    <td> - Message lu<br>
+      - Composer un message<br>
+      - Participant au rendez-vous (lecture)<br>
+      - Organisateur de rendez-vous (composer)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
@@ -343,8 +345,10 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
   </tr>
   <tr>
     <td>Office sur le web<br>(classique)</td>
-    <td> - Lecture de message<br>
-      - Composition de message<br>
+    <td> - Message lu<br>
+      - Composer un message<br>
+      - Participant au rendez-vous (lecture)<br>
+      - Organisateur de rendez-vous (composer)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
@@ -356,8 +360,10 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
   </tr>
   <tr>
     <td>Office pour Windows<br>(connecté à l’abonnement Office 365)</td>
-    <td> - Lecture de message<br>
-      - Composition de message<br>
+    <td> - Message lu<br>
+      - Composer un message<br>
+      - Participant au rendez-vous (lecture)<br>
+      - Organisateur de rendez-vous (composer)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a><br>
       - Modules</td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
@@ -372,8 +378,10 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
   </tr>
   <tr>
     <td>Office 2019 sur Windows<br>(achat définitif)</td>
-    <td> - Lecture de message<br>
-      - Composition de message<br>
+    <td> - Message lu<br>
+      - Composer un message<br>
+      - Participant au rendez-vous (lecture)<br>
+      - Organisateur de rendez-vous (composer)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a><br>
       - Modules</td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
@@ -387,8 +395,10 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
   </tr>
   <tr>
     <td>Office 2016 sur Windows<br>(achat définitif)</td>
-    <td> - Lecture de message<br>
-      - Composition de message<br>
+    <td> - Message lu<br>
+      - Composer un message<br>
+      - Participant au rendez-vous (lecture)<br>
+      - Organisateur de rendez-vous (composer)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a><br>
       - Modules</td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
@@ -399,8 +409,10 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
   </tr>
   <tr>
     <td>Office 2013 sur Windows<br>(achat définitif)</td>
-    <td> - Lecture de message<br>
-      - Composition de message</td>
+    <td> - Message lu<br>
+      - Composer un message<br>
+      - Participant au rendez-vous (lecture)<br>
+      - Organisateur de rendez-vous (composer)<br>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Mailbox 1.3</a>*<br>
@@ -409,7 +421,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
   </tr>
   <tr>
     <td>Office sur iOS<br>(connecté à l’abonnement Office 365)</td>
-    <td> - Lecture de message<br>
+    <td> - Message lu<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
@@ -420,8 +432,10 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
   </tr>
   <tr>
     <td>Office sur Mac<br>(connecté à l’abonnement Office 365)</td>
-    <td> - Lecture de message<br>
-      - Composition de message<br>
+    <td> - Message lu<br>
+      - Composer un message<br>
+      - Participant au rendez-vous (lecture)<br>
+      - Organisateur de rendez-vous (composer)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
@@ -435,8 +449,10 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
   </tr>
   <tr>
     <td>Office 2019 sur Mac<br>(achat définitif)</td>
-    <td> - Lecture de message<br>
-      - Composition de message<br>
+    <td> - Message lu<br>
+      - Composer un message<br>
+      - Participant au rendez-vous (lecture)<br>
+      - Organisateur de rendez-vous (composer)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
@@ -448,8 +464,10 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
   </tr>
   <tr>
     <td>Office 2016 sur Mac<br>(achat définitif)</td>
-    <td> - Lecture de message<br>
-      - Composition de message<br>
+    <td> - Message lu<br>
+      - Composer un message<br>
+      - Participant au rendez-vous (lecture)<br>
+      - Organisateur de rendez-vous (composer)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
@@ -461,7 +479,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
   </tr>
   <tr>
     <td>Office sur Android<br>(connecté à l’abonnement Office 365)</td>
-    <td> - Lecture de message<br>
+    <td> - Message lu<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Mailbox 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Mailbox 1.2</a><br>
