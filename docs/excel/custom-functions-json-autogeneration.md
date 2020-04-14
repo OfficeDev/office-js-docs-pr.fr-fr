@@ -1,14 +1,14 @@
 ---
-ms.date: 07/15/2019
+ms.date: 04/13/2020
 description: Utiliser les balises JSDOC pour créer dynamiquement vos fonctions personnalisées de métadonnées JSON.
 title: Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: e346392a5d2f643b1484de52a9bddb3e3be52f2f
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: d62def1d107d4472d2e89623c4f10b5cd012f28c
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719454"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241069"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 
@@ -103,7 +103,7 @@ Dans l’exemple suivant, Increments correspond à l’`id` et au `name` de la f
 Fournit le nom d’affichage `name`de la fonction personnalisée.
 
 * Si aucun nom n’est fourni, l’id servira aussi de nom.
-* Caractères autorisés : [caractères alphanumériques Unicode](https://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic) (lettres, chiffres), point (.) et trait de soulignement (\_).
+* Caractères autorisés : [caractères alphanumériques Unicode](http://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic) (lettres, chiffres), point (.) et trait de soulignement (\_).
 * Doit commencer par une lettre.
 * Sa longueur maximale est limitée à 128 caractères.
 
@@ -139,7 +139,7 @@ Syntaxe: @urlaide_url_
 
 L’_url_ fournie est affichée dans Excel.
 
-Dans l’exemple suivant, l’`helpurl` est www.contoso.com/weatherhelp.
+Dans l’exemple suivant, le `helpurl` est `www.contoso.com/weatherhelp`.
 
 ```js
 /**

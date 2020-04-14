@@ -1,14 +1,14 @@
 ---
-ms.date: 05/08/2019
+ms.date: 04/13/2020
 description: Comprendre les scénarios clés dans le développement de fonctions personnalisées Excel qui utilisent le nouveau runtime JavaScript.
 title: Runtime pour les fonctions personnalisées Excel
 localization_priority: Normal
-ms.openlocfilehash: 2cb950cd6f5f78ed76b19a1fa443720d7cfb86a2
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: dc049aa681ae4f7664d5bd92f925e7566c0d7103
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719496"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241041"
 ---
 # <a name="runtime-for-excel-custom-functions"></a>Runtime pour les fonctions personnalisées Excel
 
@@ -81,7 +81,7 @@ ws.onerror = function (error) {
 
 Dans une fonction personnalisée (ou tout autre partie d’un complément), vous pouvez accéder aux données et les stocker à l’aide de l’objet `OfficeRuntime.storage`. `Storage` est un système de stockage clé-valeur permanent et non chiffré qui permet de remplacer [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), qui ne peut pas être utilisé au sein de fonctions personnalisées. `Storage`offre 10 Mo de données par domaine. Les domaines peuvent être partagés par plusieurs compléments.
 
-`Storage` est conçu comme une solution de stockage partagé, ce qui signifie que plusieurs parties d’un complément ont accès aux mêmes données. Par exemple, les jetons destinés à l’authentification utilisateur peuvent être stockés dans `storage`, car ce système de stockage est accessible à la fois par le biais d’une fonction personnalisée et via des éléments d’interface utilisateur de complément, par exemple, un volet des tâches. De même, si deux compléments partagent le même domaine (par exemple, www.contoso.com/addin1, www.contoso.com/addin2), ils sont également autorisés à partager des informations entre eux via `storage`. Notez que les compléments ayant différents sous-domaines possèdent différentes instances de l’objet `storage` (par exemple, subdomain.contoso.com/addin1, differentsubdomain.contoso.com/addin2).
+`Storage` est conçu comme une solution de stockage partagé, ce qui signifie que plusieurs parties d’un complément ont accès aux mêmes données. Par exemple, les jetons destinés à l’authentification utilisateur peuvent être stockés dans `storage`, car ce système de stockage est accessible à la fois par le biais d’une fonction personnalisée et via des éléments d’interface utilisateur de complément, par exemple, un volet des tâches. De même, si deux compléments partagent le même domaine (par exemple, `www.contoso.com/addin1` `www.contoso.com/addin2`), ils sont également autorisés à partager des informations entre `storage`eux. Notez que les compléments qui ont des sous-domaines différents auront des instances différentes `storage` de (par exemple `subdomain.contoso.com/addin1`, `differentsubdomain.contoso.com/addin2`).
 
 Comme `storage` peut être un emplacement partagé, il est important de savoir qu’il est possible de remplacer des paires clé-valeur.
 

@@ -1,14 +1,14 @@
 ---
 title: Compléments Outlook pour Outlook Mobile
 description: Les compléments Outlook Mobile sont pris en charge sur tous les comptes commerciaux Office 365 et les comptes Outlook.com. Les comptes Gmail seront pris en charge très bientôt.
-ms.date: 02/28/2020
+ms.date: 04/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 7fc4ac511fe7e101775334cad6d4b000f7dc24ae
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: 4b6341ac1b340ebc46c616ae4274bfdf1e2d0672
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42561795"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241083"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Compléments pour Outlook Mobile
 
@@ -35,7 +35,7 @@ Les compléments Outlook Mobile sont pris en charge sur tous les comptes commer
     - Le complément **DOIT** respecter les [instructions concernant l’interface utilisateur](outlook-addin-design.md).
     - Le scénario du complément **DOIT** [être pertinent sur mobile](#what-makes-a-good-scenario-for-mobile-add-ins).
 
-- Seule la lecture du courrier est prise en charge pour l’instant. Cela signifie que `MobileMessageReadCommandSurface` est le seul élément [ExtensionPoint](../reference/manifest/extensionpoint.md) que vous devez déclarer dans la section mobile de votre manifeste.
+- En règle générale, seul le mode lecture de message est pris en charge pour le moment. Cela signifie `MobileMessageReadCommandSurface` qu’il s’agit du seul [ExtensionPoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) que vous devez déclarer dans la section mobile de votre manifeste. Toutefois, le mode organisateur de rendez-vous est pris en charge pour les compléments intégrés au fournisseur de réunions en ligne qui déclarent le [point d’extension MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview). Pour plus d’informations sur ce scénario, reportez-vous à l’article [créer un complément Outlook Mobile pour un fournisseur de réunion en ligne](online-meeting.md) .
 
 - L’API [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) n’est pas prise en charge sur mobile dans la mesure où l’application mobile utilise les API REST pour communiquer avec le serveur. Si le serveur principal de votre application doit se connecter au serveur Exchange, vous pouvez utiliser le jeton de rappel pour émettre des appels d’API REST. Pour plus d’informations, voir [Utilisation des API REST Outlook à partir d’un complément Outlook](use-rest-api.md).
 

@@ -1,14 +1,14 @@
 ---
 title: Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)
-description: ''
-ms.date: 03/10/2020
+description: Conseils sur la résolution des problèmes liés à l’authentification unique (SSO) dans les compléments Office et la gestion des conditions ou des erreurs spéciales.
+ms.date: 04/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 7bde083277ece303597dd1c52398f8a91cacc765
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 33826558b9b145433adbe96005e60db97fc067f7
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42689000"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241076"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>Résolution des messages d’erreur pour l’authentification unique (SSO) (aperçu)
 
@@ -29,8 +29,8 @@ Lors du développement, nous vous recommandons vivement d’utiliser un outil ca
 ## <a name="causes-and-handling-of-errors-from-getaccesstoken"></a>Causes et gestion des erreurs de getAccessToken
 
 Pour consulter des exemples de la gestion des erreurs décrite dans cette section, reportez-vous aux articles suivants :
-- [HomeES6.js dans Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/src/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)
-- [ssoAuthES6.js dans Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/src/public/javascripts/ssoAuthES6.js)
+- [HomeES6.js dans Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)
+- [ssoAuthES6.js dans Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js)
 
 ### <a name="13000"></a>13000
 

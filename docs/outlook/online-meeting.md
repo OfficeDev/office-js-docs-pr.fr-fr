@@ -2,14 +2,14 @@
 title: Créer un complément Outlook Mobile pour un fournisseur de réunions en ligne (aperçu)
 description: Explique comment configurer un complément Outlook Mobile pour un fournisseur de services en ligne.
 ms.topic: article
-ms.date: 04/10/2020
+ms.date: 04/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 841200d8db1dc4c7a89c953737f0bc5b74edf7ea
-ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
+ms.openlocfilehash: 6a9d484bb74f238c0c62e689c66afaeb284eec2d
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43226029"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241090"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider-preview"></a>Créer un complément Outlook Mobile pour un fournisseur de réunions en ligne (aperçu)
 
@@ -138,7 +138,7 @@ Suivez les instructions habituelles pour [tester et valider votre complément](t
 
 En tant qu’organisateur de la réunion, vous devez voir des écrans semblables aux trois images suivantes lors de la création d’une réunion.
 
-[capture d’écran de la création d’un écran de réunion sur Android-chargement de la capture d’écran de l’écran de création d’une réunion sur Android-contoso désactiver la capture d’écran de la création de la réunion sur Android-contoso activer/désactiver ![](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [ ![](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [ ![](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
+[capture d’écran de la boîte de création de l’écran de réunion sur Android-contoso désactiver la capture d’écran de créer un écran de réunion sur Android-chargement de la capture d’écran de la création de la réunion sur Android-contoso-activer/désactiver ![](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [ ![](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [ ![](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
 
 ### <a name="join-meeting-ui"></a>Interface utilisateur joindre une réunion
 
@@ -156,7 +156,6 @@ Les API suivantes sont disponibles pour cette fonctionnalité.
   - [Office. Context. Mailbox. Item. end](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#end) ([heure](/javascript/api/outlook/office.time?view=outlook-js-preview))
   - [Office. Context. Mailbox. Item. Location](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#location) ([emplacement](/javascript/api/outlook/office.location?view=outlook-js-preview))
   - [Office. Context. Mailbox. Item. optionalAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#optionalattendees) ([Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-preview))
-  - [Office. Context. Mailbox. Item. Organizer](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#organizer) ([organisateur](/javascript/api/outlook/office.organizer?view=outlook-js-preview))
   - [Office. Context. Mailbox. Item. requiredAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#requiredattendees) ([Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-preview))
   - [Office. Context. Mailbox. Item. Body](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#body) ([Body. getAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#getasync-coerciontype--options--callback-), [Body. setAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#setasync-data--options--callback-))
   - [Office. Context. Mailbox. Item. loadCustomPropertiesAsync](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#loadcustompropertiesasync-callback--usercontext-) ([CustomProperties](/javascript/api/outlook/office.customproperties?view=outlook-js-preview))

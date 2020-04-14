@@ -3,12 +3,12 @@ title: Élément Extension dans le fichier manifeste
 description: Définit l’emplacement où se trouvent les fonctionnalités d’un complément dans l’interface utilisateur Office.
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 89040ff84afd7e4c33bea8af04255ef19a8e0f50
-ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
+ms.openlocfilehash: 40b5ab8c2dcae01238854f5a3bfcc599f6b01a9b
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43215088"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241034"
 ---
 # <a name="extensionpoint-element"></a>Élément ExtensionPoint
 
@@ -263,7 +263,7 @@ Pour les éléments **Control** contenus dans ce point d’extension, l’attrib
 > [!NOTE]
 > Ce point d’extension est uniquement pris en charge en [Aperçu](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) sur Android avec un abonnement Office 365.
 
-Ce point d’extension place un bouton bascule mode-approprié dans la surface de commande pour un rendez-vous dans le facteur de forme mobile. Un organisateur de réunion peut créer une réunion en ligne. Un participant peut ensuite participer à la réunion en ligne.
+Ce point d’extension place un bouton bascule mode-approprié dans la surface de commande pour un rendez-vous dans le facteur de forme mobile. Un organisateur de réunion peut créer une réunion en ligne. Un participant peut ensuite participer à la réunion en ligne. Pour en savoir plus sur ce scénario, consultez l’article [créer un complément Outlook Mobile pour un fournisseur de réunions en ligne](../../outlook/online-meeting.md) .
 
 #### <a name="child-elements"></a>Éléments enfants
 
@@ -271,9 +271,11 @@ Ce point d’extension place un bouton bascule mode-approprié dans la surface d
 |:-----|:-----|
 |  [Control](control.md) |  Ajoute un bouton à la surface de commande.  |
 
-Les éléments **ExtensionPoint** de ce type ne peuvent avoir qu’un seul élément enfant : un élément **Control** .
+`ExtensionPoint`les éléments de ce type ne peuvent avoir qu’un seul élément `Control` enfant : un élément.
 
-L’attribut **xsi : type** de l’élément **Control** contenu dans ce point d’extension doit être `MobileButton`défini sur.
+L' `Control` `xsi:type` attribut de l’élément contenu dans ce point d’extension doit être `MobileButton`défini sur.
+
+Les `Icon` images doivent être en nuances de gris à `#919191` l’aide de code hexadécimal ou de leur équivalent dans d' [autres formats de couleur](https://convertingcolors.com/hex-color-919191.html).
 
 #### <a name="example"></a>Exemple
 
@@ -293,7 +295,7 @@ L’attribut **xsi : type** de l’élément **Control** contenu dans ce point 
       <bt:Image resid="UiLessIcon" size="48" scale="3" />
     </Icon>
     <Action xsi:type="ExecuteFunction">
-      <FunctionName>UiLessInsertMeetingLink</FunctionName>
+      <FunctionName>insertContosoMeeting</FunctionName>
     </Action>
   </Control>
 </ExtensionPoint>
