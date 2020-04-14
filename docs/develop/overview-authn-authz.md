@@ -1,14 +1,14 @@
 ---
 title: Vue d’ensemble de l’authentification et de l’autorisation dans les compléments Office
 description: Demandez aux utilisateurs d’authentifier la connexion dans les applications Web et les Compléments Office.
-ms.date: 01/25/2020
+ms.date: 04/13/2020
 localization_priority: Priority
-ms.openlocfilehash: 79734cf0ee67c2e01db80934b2699da18a686034
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 25dbe38497e3f375bab8ec60f541d2610753576d
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719433"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241062"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Vue d’ensemble de l’authentification et de l’autorisation dans les compléments Office
 
@@ -43,8 +43,8 @@ Une fois que votre code a extrait la revendication souhaitée du jeton, il utili
 
 Avant de commencer l’implémentation de l’authentification des utilisateurs avec l’authentification unique, assurez-vous que vous êtes familiarisé avec l’article [Activer l’authentification unique pour les compléments Office](sso-in-office-add-ins.md). Notez également les exemples suivants :
 
-- [Complément Office NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO), en particulier le fichier [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/src/auth.ts). 
-- [Complément Office ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO). 
+- [Complément Office NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO), en particulier le fichier [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js).
+- [Complément Office ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO).
 
 Toutefois, ces exemples n’utilisent pas le jeton comme jeton d’identité. Ils l’utilisent pour obtenir l’accès à Microsoft Graph avec le flux **On Behalf Of**.
 
