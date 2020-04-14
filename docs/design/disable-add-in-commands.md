@@ -1,14 +1,14 @@
 ---
 title: Commandes Activé et Désactivé pour les compléments
 description: Découvrez la modification de l'état Activé ou Désactivé des boutons de rubans et des éléments de menu personnalisés dans votre complément web Office.
-ms.date: 03/09/2020
+ms.date: 04/11/2020
 localization_priority: Priority
-ms.openlocfilehash: dbe895a121a5d10d687c9a599b85234ae62919f5
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: a0436a07ef5c7ec64ad391747da69061e1a7b0f0
+ms.sourcegitcommit: 231e23d72e04e0536480d6b16df95113f1eff738
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596682"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43238226"
 ---
 # <a name="enable-and-disable-add-in-commands-preview"></a>Commandes Activé et Désactivé pour les compléments (préversion)
 
@@ -36,19 +36,19 @@ Les API et balisages de manifeste décrits dans cet article s’appliquent uniqu
 
 ### <a name="shared-runtime-required"></a>Runtime partagé requis
 
-Les API et balisages de manifeste décrits dans cet article pour lesquels le complément de manifeste spécifie qu’il doit utiliser un runtime partagé. Pour ce faire, procédez comme suit.
+Les API et balisages de manifeste décrits dans cet article exigent que le manifeste du complément spécifie la nécessité d’utiliser un runtime partagé. Pour ce faire, procédez comme suit.
 
 1. Dans l'élément [Runtimes du manifeste](../reference/manifest/runtimes.md), ajoutez l’élément enfant suivant : `<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />`. (s’il n’y a pas encore d’élément `<Runtimes>` dans le manifeste, créez-le en tant que premier enfant sous l’élément `<Host>` dans la section `VersionOverrides`.)
 2. Dans la section [Resources.Urls](../reference/manifest/resources.md) du manifeste, ajoutez l’élément enfant suivant : `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://{MyDomain}/{path-to-start-page}" />`, où `{MyDomain}` est le domaine du complément et `{path-to-start-page}` le chemin d’accès de la page de démarrage du complément. par exemple : `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://localhost:3000/index.html" />`.
 3. En fonction du contenu de votre complément, à savoir un volet des tâches, un fichier de fonctions ou une fonction Excel personnalisée, vous devez effectuer au moins une des trois étapes suivantes :
 
-    - Si le complément contient un volet des tâches, configurez l'attribut `resid` de l’[Action](../reference/manifest/action.md).[SourceLocation](../reference/manifest/sourcelocation.md), élément de `Contoso.SharedRuntime.Url`. Le fichier doit ressembler à ceci : `<SourceLocation resid="Contoso.SharedRuntime.Url"/>`.
-    - Si le complément contient une fonction Excel personnalisée, configurez l'attribut `resid` de [Page](../reference/manifest/page.md).[SourceLocation](../reference/manifest/sourcelocation.md), élément de `Contoso.SharedRuntime.Url`. Le fichier doit ressembler à ceci : `<SourceLocation resid="Contoso.SharedRuntime.Url"/>`.
-    - Si le complément contient un fichier de fonction, configurez l’attribut `resid` de [FunctionFile](../reference/manifest/functionfile.md), élément de `Contoso.SharedRuntime.Url`. Le fichier doit ressembler à ceci : `<FunctionFile resid="Contoso.SharedRuntime.Url"/>`.
+    - Si le complément contient un volet Office, définissez l'attribut `resid` de l’élément [Action](../reference/manifest/action.md).[SourceLocation](../reference/manifest/sourcelocation.md) sur la même chaîne que celle que vous avez utilisée pour le `resid` de l’élément `<Runtime>` à l’étape 1 ; par exemple, `Contoso.SharedRuntime.Url`. Le fichier doit ressembler à ceci : `<SourceLocation resid="Contoso.SharedRuntime.Url"/>`.
+    - Si le complément contient une fonction personnalisée Excel, définissez l'attribut `resid` de l’élément [Page](../reference/manifest/page.md).[SourceLocation](../reference/manifest/sourcelocation.md) sur la même chaîne que celle que vous avez utilisée pour le `resid` de l’élément `<Runtime>` à l’étape 1 ; par exemple, `Contoso.SharedRuntime.Url`. Le fichier doit ressembler à ceci : `<SourceLocation resid="Contoso.SharedRuntime.Url"/>`.
+    - Si le complément contient un fichier de fonctions, définissez l'attribut `resid` de l’élément [FunctionFile](../reference/manifest/functionfile.md) sur la même chaîne que celle que vous avez utilisée pour le `resid` de l’élément `<Runtime>` à l’étape 1 ; par exemple, `Contoso.SharedRuntime.Url`. Le fichier doit ressembler à ceci : `<FunctionFile resid="Contoso.SharedRuntime.Url"/>`.
 
 ## <a name="set-the-default-state-to-disabled"></a>Configurer l'état par défaut sur désactivé
 
-Les commandes de complément sont activées par défaut au démarrage de l’application Office. Si vous souhaitez qu’un bouton ou un élément de menu personnalisé soit désactivé au démarrage de l’application Office, vous devez le spécifier dans le manifeste. Il vous suffit d’ajouter l'élément [activé](../reference/manifest/enabled.md) (avec la valeur `false`) juste en dessous de l'élément [action](../reference/manifest/action.md) dans la déclaration du contrôle. La structure basique est la suivante :
+Les commandes de complément sont activées par défaut au démarrage de l’application Office. Si vous souhaitez qu’un bouton ou un élément de menu personnalisé soit désactivé au démarrage de l’application Office, vous devez le spécifier dans le manifeste. Il vous suffit d’ajouter un élément [activé](../reference/manifest/enabled.md) (avec la valeur `false`) juste *au-dessous* (non à l’intérieur) de l'élément [Action](../reference/manifest/action.md) dans la déclaration du contrôle. La structure basique est la suivante :
 
 ```xml
 <OfficeApp ...>
@@ -77,52 +77,25 @@ Les commandes de complément sont activées par défaut au démarrage de l’app
 Les principales étapes pour modifier l’état activé d’une commande de complément sont les suivantes :
 
 1. Créez un objet [RibbonUpdaterData](/javascript/api/office-runtime/officeruntime.ribbonupdaterdata) qui (1) spécifie la commande et son onglet parent, selon leur ID, comme spécifié dans le manifeste. et (2) indique l’état activé ou désactivé de la commande.
-2. Passez l’objet **RibbonUpdaterData** à la méthode [OfficeRuntime.Ribbon.requestUpdate ()](/javascript/api/office-runtime/officeruntime.ribbon#requestupdate-input-).
+2. Transmettez l’objet **RibbonUpdaterData** à la méthode [Office.ribbon.requestUpdate ()](/javascript/api/office/office.ribbon?view=common-js#requestupdate-input-).
 
 Voici un exemple simple. Veuillez noter que « MyButton » et « OfficeAddinTab1 » sont copiés à partir du manifeste.
 
 ```javascript
 function enableButton() {
-    OfficeRuntime.ui.getRibbon()
-        .then(function (ribbon) {
-            ribbon.requestUpdate({
-                tabs: [
-                    {
-                        id: "OfficeAppTab1",
-                        controls: [
-                        {
-                            id: "MyButton",
-                            enabled: true
-                        }
-                    ]}
-                ]});
-        });
+    Office.ribbon.requestUpdate({
+        tabs: [
+            {
+                id: "OfficeAppTab1", 
+                controls: [
+                {
+                    id: "MyButton", 
+                    enabled: true
+                }
+            ]}
+        ]});
 }
 ```
-
-> [!NOTE]
-> Nous envisageons provisoirement de simplifier les API en avril 2020, de deux façons :
->
-> - Les API sont déplacées de l’espace de noms `OfficeRuntime` vers l’espace de noms `Office`.
-> - Vous n’avez pas besoin d’appeler une méthode `getRibbon()`. L’objet `Ribbon` sera une propriété singleton de l’objet `Office`.
->
-> Par exemple, le code antérieur sera réécrit comme suit :
->
-> ```javascript
-> function enableButton() {
->    Office.ribbon.requestUpdate({
->        tabs: [
->            {
->                id: "OfficeAppTab1", 
->                controls: [
->                {
->                    id: "MyButton", 
->                    enabled: true
->                }
->            ]}
->        ]});
-> }
-> ```
 
 Nous proposons également plusieurs interfaces (types) pour faciliter la construction de l’objet **RibbonUpdateData**. L’exemple suivant est l’équivalent de TypeScript et il utilise ces types.
 
@@ -131,8 +104,7 @@ const enableButton = async () => {
     const button: Control = {id: "MyButton", enabled: true};
     const parentTab: Tab = {id: "OfficeAddinTab1", controls: [button]};
     const ribbonUpdater: RibbonUpdaterData = { tabs: [parentTab]};
-    const ribbon: Ribbon = await OfficeRuntime.ui.getRibbon();
-    await ribbon.requestUpdate(ribbonUpdater);
+    await Office.ribbon.requestUpdate(ribbonUpdater);
 }
 ```
 
@@ -163,13 +135,10 @@ Troisièmement, définissez le gestionnaire `enableChartFormat`. Voici un exempl
 
 ```javascript
 function enableChartFormat() {
-    OfficeRuntime.ui.getRibbon()
-        .then(function (ribbon) {
-            var button = {id: "ChartFormatButton", enabled: true};
-            var parentTab = {id: "CustomChartTab", controls: [button]};
-            var ribbonUpdater = {tabs: [parentTab]};
-            await ribbon.requestUpdate(ribbonUpdater);
-        });
+    var button = {id: "ChartFormatButton", enabled: true};
+    var parentTab = {id: "CustomChartTab", controls: [button]};
+    var ribbonUpdater = {tabs: [parentTab]};
+    await Office.ribbon.requestUpdate(ribbonUpdater);
 }
 ```
 
@@ -186,15 +155,12 @@ L’exemple suivant présente une fonction qui désactive un bouton et enregistr
 
 ```javascript
 function disableChartFormat() {
-    OfficeRuntime.ui.getRibbon()
-        .then(function (ribbon) {
-            var button = {id: "ChartFormatButton", enabled: false};
-            var parentTab = {id: "CustomChartTab", controls: [button]};
-            var ribbonUpdater = {tabs: [parentTab]};
-            await ribbon.requestUpdate(ribbonUpdater);
+    var button = {id: "ChartFormatButton", enabled: false};
+    var parentTab = {id: "CustomChartTab", controls: [button]};
+    var ribbonUpdater = {tabs: [parentTab]};
+    await Office.ribbon.requestUpdate(ribbonUpdater);
 
-            chartFormatButtonEnabled = false;
-        });
+    chartFormatButtonEnabled = false;
 }
 ```
 
@@ -220,20 +186,19 @@ Dans certains scénarios, Office ne peut pas mettre à jour le ruban et renvoie 
 
 ```javascript
 function disableChartFormat() {
-    OfficeRuntime.ui.getRibbon()
-        .then(function (ribbon) {
-            var button = {id: "ChartFormatButton", enabled: false};
-            var parentTab = {id: "CustomChartTab", controls: [button]};
-            var ribbonUpdater = {tabs: [parentTab]};
-            await ribbon.requestUpdate(ribbonUpdater);
+    try {
+        var button = {id: "ChartFormatButton", enabled: false};
+        var parentTab = {id: "CustomChartTab", controls: [button]};
+        var ribbonUpdater = {tabs: [parentTab]};
+        await Office.ribbon.requestUpdate(ribbonUpdater);
 
-            chartFormatButtonEnabled = false;
-        })
-        .catch(function (error){
-            if (error.code == "HostRestartNeeded"){
-                reportError("Contoso Awesome Add-in has been upgraded. Please save your work, close the Office application, and restart it.");
-            }
-        });
+        chartFormatButtonEnabled = false;
+    }
+    catch(error) {
+        if (error.code == "HostRestartNeeded"){
+            reportError("Contoso Awesome Add-in has been upgraded. Please save your work, close the Office application, and restart it.");
+        }
+    }
 }
 ```
 
@@ -241,6 +206,6 @@ function disableChartFormat() {
 
 Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../develop/office-versions-and-requirement-sets.md).
 
-Les API activer/désactiver nécessitent la prise en charge des ensembles de configuration suivants :
+Les API activer/désactiver nécessitent la prise en charge de l’ensemble de conditions requises suivant :
 
 - [AddinCommands 1.1](../reference/requirement-sets/add-in-commands-requirement-sets.md)
