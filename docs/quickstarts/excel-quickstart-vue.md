@@ -1,15 +1,15 @@
 ---
 title: Créer un complément de volet de tâches Excel à l’aide de Vue
 description: Découvrez comment créer un complément de volet des tâches Excel simple à l’aide de l’API JavaScript et de Vue pour Office.
-ms.date: 01/16/2020
+ms.date: 04/14/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: aff58bf3021be2efed0aef14a505dab8433d92a3
-ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
+ms.openlocfilehash: ef20d56181d3b0f6c865e81de9c8500ef9906c83
+ms.sourcegitcommit: 90c5830a5f2973a9ccd5c803b055e1b98d83f099
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "43185560"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "43529119"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>Créer un complément de volet de tâches Excel à l’aide de Vue
 
@@ -58,12 +58,12 @@ Chaque complément nécessite un fichier manifeste pour définir ses paramètres
     Lorsque vous y êtes invité, fournissez les informations suivantes pour créer votre projet de complément :
 
     - **Sélectionnez un type de projet :** `Office Add-in project containing the manifest only`
-    - **Comment souhaitez-vous nommer votre complément ?** `my-office-add-in`
+    - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
     - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
 
     ![Générateur Yeoman](../images/yo-office-manifest-only-vue.png)
 
-Une fois que vous avez terminé les étapes de l’Assistant, celui-ci crée un dossier `my-office-add-in` qui contient un fichier `manifest.xml`. Vous utiliserez le manifeste pour charger une version test et tester votre complément à la fin du Démarrage rapide.
+Une fois que vous avez terminé les étapes de l’Assistant, celui-ci crée un dossier `My Office Add-in` qui contient un fichier `manifest.xml`. Vous utiliserez le manifeste pour charger une version test et tester votre complément à la fin du Démarrage rapide.
 
 > [!TIP]
 > Vous pouvez ignorer les *instructions suivantes* fournies par le générateur Yeoman une fois que le complément a été créé. Les instructions détaillées de cet article fournissent tous les conseils nécessaires à l’exécution de ce didacticiel.
@@ -72,16 +72,29 @@ Une fois que vous avez terminé les étapes de l’Assistant, celui-ci crée un 
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-Pour activer HTTPS pour votre application, créez un fichier `vue.config.js` dans le dossier racine du projet Vue avec le contenu suivant :
+1. Pour activer HTTPS pour votre application, créez un fichier `vue.config.js` dans le dossier racine du projet Vue avec le contenu suivant :
 
-```js
-module.exports = {
-  devServer: {
-    port: 3000,
-    https: true
-  }
-};
-```
+    ```js
+    var fs = require("fs");
+    var path = require("path");
+    var homedir = require('os').homedir()
+  
+    module.exports = {
+      devServer: {
+        port: 3000,
+        https: true,
+        key: fs.readFileSync(path.resolve(`${homedir}/.office-addin-dev-certs/localhost.key`)),
+        cert: fs.readFileSync(path.resolve(`${homedir}/.office-addin-dev-certs/localhost.crt`)),
+        ca: fs.readFileSync(path.resolve(`${homedir}/.office-addin-dev-certs/ca.crt`))
+      }
+    }
+    ```
+
+2. À partir du terminal, exécutez la commande suivante pour installer les certificats du complément.
+
+   ```command&nbsp;line
+   npx office-addin-dev-certs install
+   ```
 
 ## <a name="update-the-app"></a>Mettre à jour l’application
 
@@ -183,9 +196,7 @@ module.exports = {
    npm run serve
    ```
 
-2. Dans un navigateur web, accédez à `https://localhost:3000` (remarquez le `https`). Si votre navigateur indique que le certificat de site n’est pas approuvé, vous devez [configurer votre ordinateur pour qu’il approuve le certificat](https://github.com/OfficeDev/generator-office/blob/fd600bbe00747e64aa5efb9846295a3f66d428aa/src/docs/ssl.md#add-certification-file-through-ie).
-
-3. Lorsque la page sur `https://localhost:3000` est vide et qu’aucune erreur de certificat ne s’affiche, cela signifie qu’elle fonctionne. L’application Vue est montée une fois qu’Office est initialisé, de sorte qu’elle affiche uniquement les éléments dans un environnement Excel.
+2. Dans un navigateur web, accédez à `https://localhost:3000` (remarquez le `https`). Si la page sur `https://localhost:3000` est vide et qu’aucune erreur de certificat ne s’affiche, cela signifie qu’elle fonctionne. L’application Vue est montée une fois qu’Office est initialisé, de sorte qu’elle affiche uniquement les éléments dans un environnement Excel.
 
 ## <a name="try-it-out"></a>Essayez
 
