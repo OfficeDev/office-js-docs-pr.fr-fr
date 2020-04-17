@@ -2,14 +2,14 @@
 title: Créer un complément Outlook Mobile pour un fournisseur de réunions en ligne (aperçu)
 description: Explique comment configurer un complément Outlook Mobile pour un fournisseur de services en ligne.
 ms.topic: article
-ms.date: 04/13/2020
+ms.date: 04/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 6a9d484bb74f238c0c62e689c66afaeb284eec2d
-ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
+ms.openlocfilehash: ed89205962bf4662096167eb78388b475fffdf91
+ms.sourcegitcommit: 90c5830a5f2973a9ccd5c803b055e1b98d83f099
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "43241090"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "43529112"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider-preview"></a>Créer un complément Outlook Mobile pour un fournisseur de réunions en ligne (aperçu)
 
@@ -144,7 +144,7 @@ En tant qu’organisateur de la réunion, vous devez voir des écrans semblables
 
 En tant que participant à la réunion, vous devriez voir un écran semblable à l’image suivante lorsque vous affichez la réunion.
 
-[![capture d’écran de l’écran de participation à une réunion sur Android](../images/outlook-android-join-online-meeting-view.png)](../images/outlook-android-join-online-meeting-view-expanded.png#lightbox)
+[![capture d’écran de l’écran de participation à une réunion sur Android](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
 
 ## <a name="available-apis"></a>API disponibles
 
