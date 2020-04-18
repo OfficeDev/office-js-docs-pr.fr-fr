@@ -1,14 +1,14 @@
 ---
 title: Transmission de données et de messages à une boîte de dialogue à partir de sa page hôte
-description: Découvrez comment transmettre des données à une boîte de dialogue à partir de la page hôte à l’aide des API messageChild et DialogParentMessageReceived
-ms.date: 03/11/2020
+description: Découvrez comment transmettre des données à une boîte de dialogue à partir de la page hôte à l’aide des API messageChild et DialogParentMessageReceived.
+ms.date: 04/16/2020
 localization_priority: Normal
-ms.openlocfilehash: 03d89a2e5ffb9060edb25dd8e0c3c71c0dd274eb
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: cd332a58aa79a81aab7cf5a3d247950ce8bc655e
+ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42561870"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "43547056"
 ---
 # <a name="passing-data-and-messages-to-a-dialog-box-from-its-host-page-preview"></a>Transmission de données et de messages à une boîte de dialogue à partir de sa page hôte (aperçu)
 
@@ -17,7 +17,7 @@ Votre complément peut envoyer des messages à partir de la [page hôte](dialog-
 > [!Important]
 >
 > - Les API décrites dans cet article sont en aperçu. Elles sont disponibles pour les développeurs dans le cas d’expérimentation ; mais ne doit pas être utilisé dans un complément de production. Tant que cette API n’est pas publiée, utilisez les techniques décrites dans [transmettre les informations à la boîte de dialogue](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box) des compléments de production.
-> - Les API décrites dans cet article nécessitent Office 365 (la version avec abonnement d’Office). Vous devez utiliser la version et le build mensuels les plus récents du canal du programme Insider. Vous devez participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à [Participez au programme Office Insider](https://products.office.com/office-insider?tab=tab-1). Veuillez noter que lorsqu’une build est basée sur le canal semi-annuel de production, la prise en charge des fonctionnalités d’aperçu est désactivée pour cette version.
+> - Les API décrites dans cet article nécessitent Office 365 (la version avec abonnement d’Office). Vous devez utiliser la version et le build mensuels les plus récents du canal du programme Insider. Vous devez participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à [Participez au programme Office Insider](https://insider.office.com). Veuillez noter que lorsqu’une build est basée sur le canal semi-annuel de production, la prise en charge des fonctionnalités d’aperçu est désactivée pour cette version.
 > - Dans l’étape initiale de l’aperçu, les API sont prises en charge dans Excel, PowerPoint et Word ; mais pas dans Outlook.
 >
 > [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]

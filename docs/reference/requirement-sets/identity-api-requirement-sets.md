@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API d’identité
-description: ''
-ms.date: 03/11/2020
+description: Informations sur les conditions requises de l’API Identity pour les compléments Office.
+ms.date: 04/16/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 6460516c32f70995d43ae64b213c93153a015bff
-ms.sourcegitcommit: 05b73cdec5f4db7f0b8d48a5a552ee296a0332ca
+ms.openlocfilehash: 4552626d692b08bab65f866ab406988f5e88945a
+ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42600689"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "43547240"
 ---
 # <a name="identity-api-requirement-sets"></a>Ensembles de conditions requises de l’API d’identité
 
@@ -21,7 +21,7 @@ Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tab
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | Préversion ensembles  | N/A | Préversion<b>*</b> | Bientôt disponible | Préversion<b>*</b> | Aperçu<b>* &#8224;</b> | Aperçu<b>* &#8224;</b>| Bientôt disponible | Bientôt disponible |
 
-> **&#42;** Pendant la phase d’évaluation, l’API d’identité nécessite Office 365 (la version d’abonnement d’Office). Vous devez utiliser la version et le build mensuels les plus récents du canal du programme Insider. Vous devez participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à [Participez au programme Office Insider](https://products.office.com/office-insider?tab=tab-1). Veuillez noter que lorsqu’un build passe au canal semi-annuel de production, la prise en charge des fonctionnalités d’aperçu, y compris l’authentification unique, est désactivée pour ce build.
+> **&#42;** Pendant la phase d’évaluation, l’API d’identité nécessite Office 365 (la version d’abonnement d’Office). Vous devez utiliser la version et le build mensuels les plus récents du canal du programme Insider. Vous devez participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à [Participez au programme Office Insider](https://insider.office.com). Veuillez noter que lorsqu’un build passe au canal semi-annuel de production, la prise en charge des fonctionnalités d’aperçu, y compris l’authentification unique, est désactivée pour ce build.
 >
 > **&#8224;** Les compléments qui utilisent les API SSO sur ces plateformes ne fonctionnent que si l’administrateur client de l’utilisateur a accordé le consentement au complément. L’utilisateur ne peut pas accorder de consentement même à son propre profil Azure AD.
 

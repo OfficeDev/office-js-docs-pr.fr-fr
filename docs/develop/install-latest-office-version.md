@@ -1,14 +1,14 @@
 ---
 title: Installer la dernière version d’Office
 description: Découvrez comment s’inscrire afin d’obtenir les dernières versions d’Office.
-ms.date: 01/14/2020
+ms.date: 04/16/2020
 localization_priority: Normal
-ms.openlocfilehash: ad956135bea0ffccc18fc07f455af5597d0e2341
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: b9428cc67160e0680bab5a36438bc1a0dbb3ac17
+ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718922"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "43547063"
 ---
 # <a name="install-the-latest-version-of-office"></a>Installer la dernière version d’Office
 
@@ -18,7 +18,7 @@ De nouvelles fonctionnalités de développeur, y compris celles en version d’�
 
 Pour s’inscrire afin d’obtenir les dernières versions d’Office, procédez comme suit :
 
-- Si vous êtes abonné à Office 365 Famille, Personnel ou Université, consultez la page [Participez au programme Office Insider](https://products.office.com/office-insider).
+- Si vous êtes abonné à Office 365 Famille, Personnel ou Université, consultez la page [Participez au programme Office Insider](https://insider.office.com).
 - Si vous êtes un client d’Office 365 pour les entreprises, consultez l’article [Installer la version First Release pour Office 365 pour les entreprises](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead).
 - Si vous exécutez Office sur un Mac :
   - Démarrez une application Office.

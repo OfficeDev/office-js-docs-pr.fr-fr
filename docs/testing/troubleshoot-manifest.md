@@ -1,14 +1,14 @@
 ---
 title: Valider un manifeste de complément Office
 description: Découvrez comment valider le manifeste d’un complément Office à l’aide du schéma XML et d’autres outils.
-ms.date: 12/31/2019
+ms.date: 04/16/2020
 localization_priority: Normal
-ms.openlocfilehash: bb24cdca34ac92fa1ca9f292bc1f52b5fbd01688
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: a6c33603f278e092d5b2b1c85879e03ee10031e3
+ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719748"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "43547231"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>Valider un manifeste de complément Office
 
@@ -36,16 +36,18 @@ Si vous n’avez pas utilisé [le générateur Yeoman pour les compléments Offi
 
 1. Installez [Node.js](https://nodejs.org/download/).
 
-2. Exécutez la commande suivante dans le répertoire racine de votre projet. Remplacez `MANIFEST_FILE` par le nom du fichier manifeste.
+2. Exécutez la commande suivante dans le répertoire racine de votre projet. 
 
     ```command&nbsp;line
-    npx office-addin-manifest validate MANIFEST_FILE
+    npm run validate
     ```
 
     > [!NOTE]
-    > Si elle s’exécute, la commande renvoie le message d’erreur « La syntaxe de la commande n’est pas valide » (étant donné que la commande `validate` n’est pas reconnue), exécutez la commande suivante pour valider le manifeste (en remplaçant `MANIFEST_FILE` par le nom du fichier manifeste) : 
+    > Si cette commande n’est pas disponible ou ne fonctionne pas, exécutez la commande suivante pour forcer l’utilisation de la dernière version de l’outil Office-AddIn-manifest ( `MANIFEST_FILE` à remplacer par le nom du fichier manifeste) :
     >
-    > `npx --ignore-existing office-addin-manifest validate MANIFEST_FILE`
+    > ```command&nbsp;line
+    > npx --ignore-existing office-addin-manifest validate MANIFEST_FILE
+    > ```
 
 ## <a name="validate-your-manifest-against-the-xml-schema"></a>Validez votre manifeste par rapport au schéma XML
 
