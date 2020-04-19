@@ -8,12 +8,12 @@ ms.author: o365devx
 ms.prod: non-product-specific
 ms.date: 12/24/2019
 localization_priority: Priority
-ms.openlocfilehash: 2ebef8254d264442f3f57c6e19b015a7ef18a829
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 3cd783fd45ecabefac1512735b6befd4af2308ef
+ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165607"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "43547084"
 ---
 # <a name="office-add-ins-documentation"></a>Documentation pour compléments Office
 
@@ -34,25 +34,8 @@ Utilisez la plateforme des compléments Office pour créer des solutions qui ét
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Vue d’ensemble de la plateforme de compléments pour Office</h3>
-                        <p><a href="overview/office-add-ins.md">En savoir plus sur la plateforme de compléments Office.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="images/index-landing-page/i_article.svg" alt="article" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Création de compléments Office</h3>
-                        <p><a href="overview/office-add-ins-fundamentals.md">En savoir plus sur la création de compléments Office.</a></p>
+                        <h3>Commencer à utiliser les compléments Office</h3>
+                        <p><a href="overview/learning-path-beginner.md">En savoir plus sur la plateforme de compléments Office.</a></p>
                     </div>
                 </div>
             </div>

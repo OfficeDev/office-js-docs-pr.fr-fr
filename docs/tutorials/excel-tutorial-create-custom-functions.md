@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez créer un complément Excel qui con
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 83568d7bb3ec1706fb9a2fb373be75b0774d9d94
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: d7f6f30bde7b56b1dec1abb55d01e6b65f8d3c7e
+ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717368"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "43547077"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Didacticiel : créer des fonctions personnalisées dans Excel
 
@@ -235,7 +235,7 @@ function clock(invocation) {
 --- 
 
 <ol start="4">
-<li>Essayez la nouvelle fonction. Dans la cellule <strong>C1</strong>, tapez le texte <strong>=CONTOSO.CLOCK())</strong>, puis appuyez sur Entrée. La date du jour doit apparaître. Elle est mise à jour toutes les secondes. Cette horloge n’est qu’une minuterie incluse dans une boucle, mais vous pouvez vous inspirer de cette idée pour créer des fonctions plus complexes qui récupèrent des données en temps réel en exécutant des requêtes web.</li>
+<li>Essayez la nouvelle fonction. Dans la cellule <strong>C1</strong>, tapez le texte <strong>=CONTOSO.CLOCK()</strong>, puis appuyez sur Entrée. La date du jour doit apparaître. Elle est mise à jour toutes les secondes. Cette horloge n’est qu’une minuterie incluse dans une boucle, mais vous pouvez vous inspirer de cette idée pour créer des fonctions plus complexes qui récupèrent des données en temps réel en exécutant des requêtes web.</li>
 </ol>
 
 ## <a name="next-steps"></a>Étapes suivantes
