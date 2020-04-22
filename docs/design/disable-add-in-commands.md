@@ -3,12 +3,12 @@ title: Commandes Activé et Désactivé pour les compléments
 description: Découvrez la modification de l'état Activé ou Désactivé des boutons de rubans et des éléments de menu personnalisés dans votre complément web Office.
 ms.date: 04/11/2020
 localization_priority: Priority
-ms.openlocfilehash: a0436a07ef5c7ec64ad391747da69061e1a7b0f0
-ms.sourcegitcommit: 231e23d72e04e0536480d6b16df95113f1eff738
+ms.openlocfilehash: b223949c5665f0e523a6003ccb4e3f29cc3f017c
+ms.sourcegitcommit: 79c55e59294e220bd21a5006080f72acf3ec0a3f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "43238226"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "43581924"
 ---
 # <a name="enable-and-disable-add-in-commands-preview"></a>Commandes Activé et Désactivé pour les compléments (préversion)
 
@@ -76,7 +76,7 @@ Les commandes de complément sont activées par défaut au démarrage de l’app
 
 Les principales étapes pour modifier l’état activé d’une commande de complément sont les suivantes :
 
-1. Créez un objet [RibbonUpdaterData](/javascript/api/office-runtime/officeruntime.ribbonupdaterdata) qui (1) spécifie la commande et son onglet parent, selon leur ID, comme spécifié dans le manifeste. et (2) indique l’état activé ou désactivé de la commande.
+1. Créez un objet [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) qui (1) spécifie la commande et son onglet parent, selon leur ID, comme spécifié dans le manifeste. et (2) indique l’état activé ou désactivé de la commande.
 2. Transmettez l’objet **RibbonUpdaterData** à la méthode [Office.ribbon.requestUpdate ()](/javascript/api/office/office.ribbon?view=common-js#requestupdate-input-).
 
 Voici un exemple simple. Veuillez noter que « MyButton » et « OfficeAddinTab1 » sont copiés à partir du manifeste.

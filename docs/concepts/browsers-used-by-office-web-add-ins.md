@@ -1,14 +1,14 @@
 ---
 title: Navigateurs utilisés par les compléments Office
 description: Indique comment le système d’exploitation et la version d’Office déterminent le navigateur utilisé par les compléments Office.
-ms.date: 03/09/2020
+ms.date: 04/21/2020
 localization_priority: Normal
-ms.openlocfilehash: d53ea0da29c9d2cc1177d233eed9e3ee62a891f2
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 9ef4b6d4c09140fc6d6bb04eca51d845b79b6dc7
+ms.sourcegitcommit: 3355c6bd64ecb45cea4c0d319053397f11bc9834
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596465"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "43744851"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navigateurs utilisés par les compléments Office
 
@@ -29,10 +29,12 @@ Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes e
 |Android|Chrome|
 |Windows/Office 2013 sans abonnement ou version ultérieure|Internet Explorer 11|
 |Windows 10 version < 1903/Office 365|Internet Explorer 11|
-|Windows 10 version >= 1903/Office 365 version < 16.0.11629|Internet Explorer 11|
-|Windows 10 version >= 1903/Office 365 version >= 16.0.11629|Microsoft Edge\*|
+|Windows 10 version >= 1903/Office 365 ver < 16.0.11629<sup>1</sup>|Internet Explorer 11|
+|Windows 10 version >= 1903/Office 365 ver >= 16.0.11629<sup>1</sup>|Microsoft Edge<sup>2</sup>|
 
-\*Si Microsoft Edge est utilisé, le Narrateur Windows 10 (parfois appelé « lecteur d’écran ») lit la balise `<title>` de la page qui s’ouvre dans le volet Office. Si Internet Explorer 11 est utilisé, le Narrateur lit la barre de titre du volet Office, qui provient de la valeur `<DisplayName>` du manifeste du complément.
+<sup>1</sup> pour plus d’informations, consultez la [page historique des mises à jour](/officeupdates/update-history-office365-proplus-by-date) et [Découvrez comment trouver votre version de client Office et votre canal de mise à jour](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) .
+
+<sup>2</sup> lorsque Microsoft Edge est utilisé, le narrateur Windows 10 (parfois appelé « lecteur d’écran ») lit la `<title>` balise dans la page qui s’ouvre dans le volet Office. Si Internet Explorer 11 est utilisé, le Narrateur lit la barre de titre du volet Office, qui provient de la valeur `<DisplayName>` du manifeste du complément.
 
 > [!IMPORTANT]
 > Internet Explorer 11 ne prend pas en charge les versions de JavaScript ultérieures à la version ES5. Si un des utilisateurs de votre complément dispose d’une plateforme utilisant Internet Explorer 11, vous devez transpiler JavaScript vers la version ES5 ou utiliser un polyfill pour lui permettre d’utiliser la syntaxe et les fonctionnalités d’ECMAScript 2015 ou version ultérieure. Par ailleurs, Internet Explorer 11 ne prend pas en charge certaines fonctionnalités HTML5 telles que les éléments multimédias, l’enregistrement et l’emplacement.
@@ -59,6 +61,9 @@ Le paramétrage de points d'arrêt dans [Microsoft Edge DevTools](https://www.mi
 
 Microsoft Edge exige que localhost bénéficie d’une exemption de bouclage sur l’ordinateur de développement, ce qui est une raison connue. Suivez les instructions à l’emplacement suivant : [Impossible d’ouvrir le complément à partir de localhost](/office/troubleshoot/error-messages/cannot-open-add-in-from-localhost).
 
+### <a name="get-errors-trying-to-download-a-pdf-file"></a>Obtenir des erreurs lors de la tentative de téléchargement d’un fichier PDF
+
+Le téléchargement direct d’objets BLOB sous forme de fichiers PDF dans un complément n’est pas pris en charge lorsque le serveur Edge est le navigateur. La solution de contournement consiste à créer une application Web simple qui télécharge les objets BLOB en tant que fichiers PDF. Dans votre complément, appelez la `Office.context.ui.openBrowserWindow(url)` méthode et transmettez l’URL de l’application Web. Cette opération ouvre l’application Web dans une fenêtre de navigateur en dehors d’Office.
 
 ## <a name="see-also"></a>Voir aussi
 

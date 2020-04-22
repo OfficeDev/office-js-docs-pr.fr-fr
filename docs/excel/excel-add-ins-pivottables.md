@@ -1,14 +1,14 @@
 ---
 title: Utilisation des tableaux croisés dynamiques avec l’API JavaScript pour Excel
 description: Utilisez l’API JavaScript pour Excel pour créer des tableaux croisés dynamiques et interagir avec leurs composants.
-ms.date: 01/22/2020
+ms.date: 04/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 5899959b108ace2da35950655ff9313cd94243d3
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: f89e945f717982163a967971aaeff90ec0125545
+ms.sourcegitcommit: 79c55e59294e220bd21a5006080f72acf3ec0a3f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717102"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "43581938"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Utilisation des tableaux croisés dynamiques avec l’API JavaScript pour Excel
 
@@ -25,7 +25,8 @@ Reportez-vous à la rubrique [créer un tableau croisé dynamique pour analyser 
 Le [tableau croisé dynamique](/javascript/api/excel/excel.pivottable) est l’objet central pour les tableaux croisés dynamiques de l’API JavaScript pour Office.
 
 - `Workbook.pivotTables`et `Worksheet.pivotTables` sont [PivotTableCollections](/javascript/api/excel/excel.pivottablecollection) qui contiennent respectivement les [tableaux croisés dynamiques](/javascript/api/excel/excel.pivottable) dans le classeur et la feuille de calcul.
-- Un [tableau croisé dynamique](/javascript/api/excel/excel.pivottable) contient un [PivotTableCollections](/javascript/api/excel/excel.pivottablecollection) qui comporte plusieurs [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy).
+- Un [tableau croisé dynamique](/javascript/api/excel/excel.pivottable) contient un [PivotHierarchyCollection](/javascript/api/excel/excel.pivothierarchycollection) qui comporte plusieurs [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy).
+- Ces [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy) peuvent être ajoutées à des collections de hiérarchies spécifiques pour définir le mode de tableau croisé dynamique des données (comme expliqué dans la [section suivante](#hierarchies)).
 - Un [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) contient un [PivotFieldCollection](/javascript/api/excel/excel.pivotfieldcollection) qui comporte exactement un [champ de tableau croisé dynamique](/javascript/api/excel/excel.pivotfield). Si la conception s’étend pour inclure des tableaux croisés dynamiques OLAP, cela peut changer.
 - Un [champ de tableau croisé dynamique](/javascript/api/excel/excel.pivotfield) contient un [PivotItemCollection](/javascript/api/excel/excel.pivotitemcollection) avec plusieurs [PivotItems](/javascript/api/excel/excel.pivotitem).
 - Un [tableau croisé dynamique](/javascript/api/excel/excel.pivottable) contient un [PivotLayout](/javascript/api/excel/excel.pivotlayout) qui définit où les [champs PivotFields](/javascript/api/excel/excel.pivotfield) et [PivotItems](/javascript/api/excel/excel.pivotitem) sont affichés dans la feuille de calcul.
@@ -166,6 +167,61 @@ Excel.run(function (context) {
     pivotTable.dataHierarchies.add(pivotTable.hierarchies.getItem("Crates Sold at Farm"));
     pivotTable.dataHierarchies.add(pivotTable.hierarchies.getItem("Crates Sold Wholesale"));
 
+    return context.sync();
+});
+```
+
+## <a name="pivottable-layouts-and-getting-pivoted-data"></a>Dispositions de tableau croisé dynamique et obtention de données croisées dynamiques
+
+Un [PivotLayout](/javascript/api/excel/excel.pivotlayout) définit l’emplacement des hiérarchies et de leurs données. Vous accédez à la disposition pour déterminer les plages dans lesquelles les données sont stockées.
+
+Le diagramme suivant montre les appels de fonction de disposition qui correspondent aux plages du tableau croisé dynamique.
+
+![Diagramme montrant les sections d’un tableau croisé dynamique renvoyées par les fonctions Get Range de la disposition.](../images/excel-pivots-layout-breakdown.png)
+
+### <a name="get-data-from-the-pivottable"></a>Obtenir des données à partir du tableau croisé dynamique
+
+La disposition définit le mode d’affichage du tableau croisé dynamique dans la feuille de calcul. Cela signifie que `PivotLayout` l’objet contrôle les plages utilisées pour les éléments de tableau croisé dynamique. Utiliser les plages fournies par la disposition pour obtenir les données collectées et les agréger par le tableau croisé dynamique. En particulier, utilisez `PivotLayout.getDataBodyRange` pour accéder à ce que génère le tableau croisé dynamique.
+
+Le code suivant montre comment obtenir la dernière ligne des données du tableau croisé dynamique en parcourant la disposition ( **Total général** des colonnes de vente en gros des caisses **vendues au** sein de la batterie de serveurs et **de la somme des colonnes de grossiste vendues** dans l’exemple précédent). Ces valeurs sont ensuite additionnées pour un total final, qui s’affiche dans la cellule **E30** (en dehors du tableau croisé dynamique).
+
+```js
+Excel.run(function (context) {
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+
+    // Get the totals for each data hierarchy from the layout.
+    var range = pivotTable.layout.getDataBodyRange();
+    var grandTotalRange = range.getLastRow();
+    grandTotalRange.load("address");
+    return context.sync().then(function () {
+        // Sum the totals from the PivotTable data hierarchies and place them in a new range, outside of the PivotTable.
+        var masterTotalRange = context.workbook.worksheets.getActiveWorksheet().getRange("E30");
+        masterTotalRange.formulas = [["=SUM(" + grandTotalRange.address + ")"]];
+    });
+});
+```
+
+### <a name="layout-types"></a>Types de mise en page
+
+Les tableaux croisés dynamiques ont trois styles de disposition : compact, plan et tabulaire. Nous avons vu le style compact dans les exemples précédents.
+
+Les exemples suivants utilisent respectivement les styles de plan et de tableau. L’exemple de code montre comment effectuer un basculement entre les différentes dispositions.
+
+#### <a name="outline-layout"></a>Mise en page du plan
+
+![Tableau croisé dynamique à l’aide de la mise en forme du plan.](../images/excel-pivots-outline-layout.png)
+
+#### <a name="tabular-layout"></a>Disposition tabulaire
+
+![Un tableau croisé dynamique à l’aide de la disposition tabulaire.](../images/excel-pivots-tabular-layout.png)
+
+## <a name="delete-a-pivottable"></a>Supprimer un tableau croisé dynamique
+
+Les tableaux croisés dynamiques sont supprimés à l’aide de leur nom.
+
+```js
+Excel.run(function (context) {
+    context.workbook.worksheets.getItem("Pivot").pivotTables.getItem("Farm Sales").delete();
     return context.sync();
 });
 ```
@@ -340,44 +396,6 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="pivottable-layouts"></a>Dispositions du tableau croisé dynamique
-
-Un [PivotLayout](/javascript/api/excel/excel.pivotlayout) définit l’emplacement des hiérarchies et de leurs données. Vous accédez à la disposition pour déterminer les plages dans lesquelles les données sont stockées.
-
-Le diagramme suivant montre les appels de fonction de disposition qui correspondent aux plages du tableau croisé dynamique.
-
-![Diagramme montrant les sections d’un tableau croisé dynamique renvoyées par les fonctions Get Range de la disposition.](../images/excel-pivots-layout-breakdown.png)
-
-Le code suivant montre comment obtenir la dernière ligne des données du tableau croisé dynamique en parcourant la disposition. Ces valeurs sont ensuite additionnées pour un total général.
-
-```js
-Excel.run(function (context) {
-    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
-
-    // Get the totals for each data hierarchy from the layout.
-    var range = pivotTable.layout.getDataBodyRange();
-    var grandTotalRange = range.getLastRow();
-    grandTotalRange.load("address");
-    return context.sync().then(function () {
-        // Sum the totals from the PivotTable data hierarchies and place them in a new range.
-        var masterTotalRange = context.workbook.worksheets.getActiveWorksheet().getRange("B27:C27");
-        masterTotalRange.formulas = [["All Crates", "=SUM(" + grandTotalRange.address + ")"]];
-    });
-});
-```
-
-Les tableaux croisés dynamiques ont trois styles de disposition : compact, plan et tabulaire. Nous avons vu le style compact dans les exemples précédents.
-
-Les exemples suivants utilisent respectivement les styles de plan et de tableau. L’exemple de code montre comment effectuer un basculement entre les différentes dispositions.
-
-### <a name="outline-layout"></a>Mise en page du plan
-
-![Tableau croisé dynamique à l’aide de la mise en forme du plan.](../images/excel-pivots-outline-layout.png)
-
-### <a name="tabular-layout"></a>Disposition tabulaire
-
-![Un tableau croisé dynamique à l’aide de la disposition tabulaire.](../images/excel-pivots-tabular-layout.png)
-
 ## <a name="change-hierarchy-names"></a>Modifier les noms de hiérarchie
 
 Les champs de hiérarchie sont modifiables. Le code suivant montre comment modifier les noms affichés de deux hiérarchies de données.
@@ -392,17 +410,6 @@ Excel.run(function (context) {
         dataHierarchies.items[0].name = "Farm Sales";
         dataHierarchies.items[1].name = "Wholesale";
     });
-});
-```
-
-## <a name="delete-a-pivottable"></a>Supprimer un tableau croisé dynamique
-
-Les tableaux croisés dynamiques sont supprimés à l’aide de leur nom.
-
-```js
-Excel.run(function (context) {
-    context.workbook.worksheets.getItem("Pivot").pivotTables.getItem("Farm Sales").delete();
-    return context.sync();
 });
 ```
 

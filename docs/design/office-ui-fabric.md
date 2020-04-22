@@ -1,14 +1,14 @@
 ---
 title: Office UI Fabric dans des compléments Office 
 description: Découvrez comment utiliser les composants d’Office UI Fabric dans des compléments Office.
-ms.date: 12/04/2017
+ms.date: 04/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 3e65e123d6195fc435b12c477985a10a3a2b0399
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 5c504de14ee97ff740a80dc7608ae636ff8080ca
+ms.sourcegitcommit: 79c55e59294e220bd21a5006080f72acf3ec0a3f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718705"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "43581910"
 ---
 # <a name="office-ui-fabric-in-office-add-ins"></a>Office UI Fabric dans des compléments Office 
 
@@ -66,4 +66,4 @@ Vous pouvez utiliser différentes infrastructures JavaScript, comme Angular ou R
 |**Infrastructure**|**Exemple**|
 |:------------|:----------|
 |**React**|[Utilisation d’Office UI Fabric React dans des compléments Office](using-office-ui-fabric-react.md )|
-|**Angular**| Reportez-vous à [ngOfficeUIFabric](http://ngofficeuifabric.com/), qui est un projet communautaire avec des directives Angular 1.5, et [envisagez d’insérer des composants Fabric dans des composants Angular 2](../develop/add-ins-with-angular2.md#consider-wrapping-fabric-components-with-angular-components).|
+|**Angular**| [Envisagez d’emballer les composants de fabric avec des composants 2](../develop/add-ins-with-angular2.md#consider-wrapping-fabric-components-with-angular-components)|
