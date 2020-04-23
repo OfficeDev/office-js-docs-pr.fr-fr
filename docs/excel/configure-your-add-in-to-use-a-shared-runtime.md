@@ -1,15 +1,15 @@
 ---
-ms.date: 02/20/2020
+ms.date: 04/16/2020
 title: Configurez votre complément Excel pour partager le runtime du navigateur (préversion)
 ms.prod: excel
 description: Configurez votre complément Excel pour partager le runtime du navigateur et exécuter le ruban, le volet des tâches et le code de fonction personnalisée dans le même runtime.
 localization_priority: Priority
-ms.openlocfilehash: 7fad97039d5a463978ca9a2d450af9bb698b49b5
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: f84de010787921eeb13205935b733ec36b2c3d37
+ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719328"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "43547247"
 ---
 # <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime-preview"></a>Configurez votre complément Excel pour utiliser un runtime JavaScript partagé (préversion).
 
@@ -117,9 +117,8 @@ Ne concevez pas votre complément pour utiliser plusieurs volets des tâches si 
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Essayez à présent des fonctionnalités du runtime partagé en consultant les articles suivants.
-
-- [Appeler des API Excel à partir d'une fonction personnalisée](call-excel-apis-from-custom-function.md)
+- Lisez l’article [Appeler des API Microsoft Excel à partir d’une fonction personnalisée](call-excel-apis-from-custom-function.md) pour plus d’informations sur l’utilisation des API JavaScript Excel et des fonctions Excel personnalisées dans un runtime partagé.
+- Découvrez l’exemple de modèles et de pratiques [Gérer le ruban et l’interface utilisateur du volet des tâches, puis exécuter le code sur un document ouvert](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-shared-runtime-scenario) pour afficher un exemple plus complet de l’exécution JavaScript partagée en action.
 
 ## <a name="see-also"></a>Voir aussi
 
