@@ -3,12 +3,12 @@ title: Commandes de complément Outlook
 description: Les commandes de complément Outlook permettent de lancer des actions de complément spécifiques à partir du ruban en ajoutant des boutons ou des menus déroulants.
 ms.date: 12/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 130722d5d97df15c4e47561d7053c6101de24c35
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 8d0fce06277de6ef699dbde640f13c657ca4919c
+ms.sourcegitcommit: 9da68c00ecc00a2f307757e0f5a903a8e31b7769
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718474"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "43785787"
 ---
 # <a name="add-in-commands-for-outlook"></a>Commandes de complément pour Outlook
 
@@ -32,7 +32,7 @@ Les commandes de complément sont déclarées dans le manifeste de complément d
 
 Les entrées de manifeste `VersionOverrides` spécifient plusieurs éléments pour le complément, notamment l’hôte, les types de contrôles à ajouter au ruban, le texte, les icônes et toutes les fonctions associées.
 
-Lorsqu’un complément doit fournir des mises à jour d’état, telles que des indicateurs de progression ou des messages d’erreur, il doit le faire via les [API de notification](/javascript/api/outlook/office.NotificationMessages). Le traitement pour les notifications doit également être défini dans un fichier HTML distinct qui est spécifié dans le nœud `FunctionFile` du manifeste.
+Lorsqu’un complément doit fournir des mises à jour d’état, telles que des indicateurs de progression ou des messages d’erreur, il doit le faire via les [API de notification](/javascript/api/outlook/office.notificationmessages). Le traitement pour les notifications doit également être défini dans un fichier HTML distinct qui est spécifié dans le nœud `FunctionFile` du manifeste.
 
 Les développeurs doivent définir des icônes pour toutes les tailles requises afin que les commandes de complément s’ajustent parfaitement avec le ruban. Les tailles d’icône requises sont 80 x 80 pixels, 32 x 32 pixels, 16 x 16 pixels pour les versions de bureau et 48 x 48 pixels, 32 x 32 pixels et 25 x 25 pixels pour les versions mobiles.
 

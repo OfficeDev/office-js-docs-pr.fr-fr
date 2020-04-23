@@ -1,14 +1,14 @@
 ---
 title: Chargement du DOM et de l’environnement d’exécution
 description: Charger le DOM et l’environnement d’exécution des compléments Office
-ms.date: 07/01/2019
+ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 2ea5f1fdc42fe1ffde30f8145fd0c24599c7e702
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 7248f5b09a54552c3f16a9bc97bd4eae9795c8cd
+ms.sourcegitcommit: 9da68c00ecc00a2f307757e0f5a903a8e31b7769
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718915"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "43785716"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>Chargement du DOM et de l’environnement d’exécution
 
@@ -62,7 +62,7 @@ Les événements suivants se produisent lors du démarrage d’un complément Ou
 
 ## <a name="checking-the-load-status"></a>Vérification du statut de chargement
 
-Vous pouvez vérifier que le chargement du DOM et de l’environnement d’exécution est bien terminé en utilisant la fonction jQuery [.ready()](https://api.jquery.com/ready/) : `$(document).ready()`. Par exemple, le gestionnaire `onReady` d’événements suivant vérifie que le DOM est chargé pour la première fois avant l’exécution du code spécifique à l’initialisation du complément. Par la suite `onReady` , le gestionnaire continue d’utiliser la propriété [Mailbox. Item](/javascript/api/outlook/office.mailbox) pour obtenir l’élément actuellement sélectionné dans Outlook et appelle la fonction principale du complément, `initDialer`.
+Vous pouvez vérifier que le chargement du DOM et de l’environnement d’exécution est bien terminé en utilisant la fonction jQuery [.ready()](https://api.jquery.com/ready/) : `$(document).ready()`. Par exemple, le gestionnaire `onReady` d’événements suivant vérifie que le DOM est chargé pour la première fois avant l’exécution du code spécifique à l’initialisation du complément. Par la suite `onReady` , le gestionnaire continue d’utiliser la propriété [Mailbox. Item](/javascript/api/outlook/office.mailbox#item) pour obtenir l’élément actuellement sélectionné dans Outlook et appelle la fonction principale du complément, `initDialer`.
 
 ```js
 Office.onReady()

@@ -1,14 +1,14 @@
 ---
 title: Gérer l’État et les paramètres d’un complément Outlook
 description: Découvrez comment faire persister l’État et les paramètres des compléments pour un complément Outlook.
-ms.date: 02/27/2020
+ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 7d981107da68c329d209834059bfac494d6ccae4
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 3cb4f7d6e31fd4d37e01939f743682f60f24f959
+ms.sourcegitcommit: 9da68c00ecc00a2f307757e0f5a903a8e31b7769
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596647"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "43785780"
 ---
 # <a name="manage-state-and-settings-for-an-outlook-add-in"></a>Gérer l’État et les paramètres d’un complément Outlook
 
@@ -65,7 +65,7 @@ function saveMyAppSettingsCallback(asyncResult) {
 }
 ```
 
-La méthode **saveAsync** enregistre les paramètres d’itinérance de manière asynchrone et admet une fonction de rappel facultative. Cet exemple de code transmet une fonction de rappel nommée `saveMyAppSettingsCallback` à la méthode **saveAsync**. Lors du renvoi de l’appel asynchrone, le paramètre _asyncResult_ de la fonction `saveMyAppSettingsCallback` fournit un accès à un objet [AsyncResult](/javascript/api/outlook) que vous pouvez utiliser pour déterminer le succès ou l’échec de l’opération avec la propriété**AsyncResult.status**.
+La méthode **saveAsync** enregistre les paramètres d’itinérance de manière asynchrone et admet une fonction de rappel facultative. Cet exemple de code transmet une fonction de rappel nommée `saveMyAppSettingsCallback` à la méthode **saveAsync**. Lors du renvoi de l’appel asynchrone, le paramètre _asyncResult_ de la fonction `saveMyAppSettingsCallback` fournit un accès à un objet [AsyncResult](/javascript/api/office/office.asyncresult) que vous pouvez utiliser pour déterminer le succès ou l’échec de l’opération avec la propriété**AsyncResult.status**.
 
 ### <a name="removing-a-roaming-setting"></a>Suppression d’un paramètre d’itinérance
 

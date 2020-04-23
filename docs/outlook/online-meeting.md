@@ -2,14 +2,14 @@
 title: Créer un complément Outlook Mobile pour un fournisseur de réunions en ligne (aperçu)
 description: Explique comment configurer un complément Outlook Mobile pour un fournisseur de services en ligne.
 ms.topic: article
-ms.date: 04/15/2020
+ms.date: 04/21/2020
 localization_priority: Normal
-ms.openlocfilehash: ed89205962bf4662096167eb78388b475fffdf91
-ms.sourcegitcommit: 90c5830a5f2973a9ccd5c803b055e1b98d83f099
+ms.openlocfilehash: 5fd0b28a661f6d2e8f3084427920c1a31053ae5b
+ms.sourcegitcommit: 3355c6bd64ecb45cea4c0d319053397f11bc9834
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "43529112"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "43744858"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider-preview"></a>Créer un complément Outlook Mobile pour un fournisseur de réunions en ligne (aperçu)
 
@@ -24,7 +24,10 @@ Dans cet article, vous apprendrez à configurer votre complément Outlook Mobile
 
 Pour permettre aux utilisateurs de créer des réunions en ligne avec votre complément, vous devez configurer `MobileOnlineMeetingCommandSurface` le point d’extension dans le manifeste sous l' `MobileFormFactor`élément parent. Les autres facteurs de forme ne sont pas pris en charge.
 
-L’exemple suivant montre un exemple du manifeste qui inclut l’élément `MobileFormFactor` et `MobileOnlineMeetingCommandSurface` le point d’extension.
+L’exemple suivant montre un extrait du manifeste qui inclut l’élément `MobileFormFactor` et `MobileOnlineMeetingCommandSurface` le point d’extension.
+
+> [!TIP]
+> Pour en savoir plus sur les manifestes pour les compléments Outlook, consultez la rubrique [manifestes des compléments Outlook](manifests.md) et [Ajouter la prise en charge des commandes de complément pour Outlook Mobile](add-mobile-support.md).
 
 ```xml
 ...

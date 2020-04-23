@@ -1,14 +1,14 @@
 ---
 title: Optimisation des performances API JavaScript Excel
 description: Optimisation des performances à l’aide de l’API JavaScript d’Excel
-ms.date: 03/27/2020
+ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: a202776569cdfc31a1221e3de1a356f0dafa2bfb
-ms.sourcegitcommit: 559a7e178e84947e830cc00dfa01c5c6e398ddc2
+ms.openlocfilehash: 273ae6d98c5430bdcd9612670121a6b22a8288af
+ms.sourcegitcommit: 9da68c00ecc00a2f307757e0f5a903a8e31b7769
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "43030830"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "43785737"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Optimisation des performances à l’aide de l’API JavaScript d’Excel
 
@@ -16,7 +16,7 @@ Il existe plusieurs façons d’effectuer des tâches courantes avec l’API Jav
 
 ## <a name="minimize-the-number-of-sync-calls"></a>Limitez le nombre d’appels sync()
 
-Dans l’API JavaScript Excel, ```sync()``` est la seule opération asynchrone et elle peut être lente dans certaines circonstances, en particulier pour Excel sur le web. Pour optimiser les performances, vous devez limiter le nombre de fois que vous appelez ```sync()``` et mettre en file d’attente autant de modifications que possible avant d’appeler.
+Dans l’API JavaScript Excel, `sync()` est la seule opération asynchrone et elle peut être lente dans certaines circonstances, en particulier pour Excel sur le web. Pour optimiser les performances, vous devez limiter le nombre de fois que vous appelez `sync()` et mettre en file d’attente autant de modifications que possible avant d’appeler.
 
 Voir [Concepts principaux - sync()](excel-add-ins-core-concepts.md#sync) pour des exemples de code qui suivent cette pratique.
 
@@ -50,7 +50,7 @@ worksheet.getRange("A1").set({
 
 ## <a name="load-necessary-properties-only"></a>Charger les propriétés nécessaires uniquement
 
-Dans l’API JavaScript Excel, vous devez charger explicitement les propriétés d’un objet proxy. Bien que vous soyez en mesure de charger les propriétés en une fois avec un appel vide```load()```, cette approche peut causer une surcharge significative des performances. Au lieu de cela, nous vous conseillons de charger uniquement les propriétés nécessaires, en particulier pour ces objets qui ont un grand nombre de propriétés.
+Dans l’API JavaScript Excel, vous devez charger explicitement les propriétés d’un objet proxy. Bien que vous soyez en mesure de charger les propriétés en une fois avec un appel vide`load()`, cette approche peut causer une surcharge significative des performances. Au lieu de cela, nous vous conseillons de charger uniquement les propriétés nécessaires, en particulier pour ces objets qui ont un grand nombre de propriétés.
 
 Par exemple, si vous avez uniquement l’intention de `address` lire la propriété d’un objet Range, spécifiez uniquement cette propriété lorsque `load()` vous appelez la méthode :
 
@@ -125,6 +125,8 @@ Excel.run(async function(ctx) {
     console.log(rangeToGet.values);
 })
 ```
+
+Veuillez noter que seuls les calculs de formule sont suspendus. Toutes les références modifiées sont toujours recréées. Par exemple, si vous renommez une feuille de calcul, les références des formules sont toujours mises à jour dans cette feuille de calcul.
 
 ### <a name="suspend-screen-updating"></a>Suspendre la mise à jour de l’écran
 
