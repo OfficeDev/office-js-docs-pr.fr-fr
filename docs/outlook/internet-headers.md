@@ -1,14 +1,14 @@
 ---
 title: Obtenir et définir des en-têtes Internet
 description: Comment obtenir et définir des en-têtes Internet sur un message dans un complément Outlook.
-ms.date: 04/10/2020
+ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 488a4414580296da59eef3eb703e1c8da7e7d7c2
-ms.sourcegitcommit: 231e23d72e04e0536480d6b16df95113f1eff738
+ms.openlocfilehash: 1b6bdbbe77998ce92ea1b1b43874a32a30aa160a
+ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "43238214"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "43930287"
 ---
 # <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>Obtenir et définir des en-têtes Internet sur un message dans un complément Outlook
 
@@ -28,13 +28,13 @@ Bien qu’il existe un moyen de définir les en-têtes Internet par le biais de 
 
 ## <a name="purpose-of-the-internet-headers-api"></a>Objectif de l’API des en-têtes Internet
 
-Introduit dans l’ensemble de conditions requises 1,8, les API d’en-têtes Internet permettent aux développeurs d’effectuer les opérations suivantes :
+Introduit dans l' [ensemble de conditions requises 1,8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md), les API d’en-têtes Internet permettent aux développeurs d’effectuer les opérations suivantes :
 
 - Informations de marquage sur un courrier électronique qui persistent une fois qu’il a quitté Exchange sur tous les clients.
 - Lire les informations d’un e-mail qui persistent après que le courrier électronique a quitté Exchange sur tous les clients dans les scénarios de lecture de messagerie.
 - Accéder à l’intégralité de l’en-tête MIME du courrier électronique.
 
-![Diagramme des en-têtes Internet. Text : l’utilisateur 1 envoie des courriers électroniques. Le complément gère les en-têtes Internet personnalisés pendant que l’utilisateur compose le courrier électronique. L’utilisateur 2 reçoit le courrier électronique. Le complément obtient les en-têtes Internet du courrier électronique reçu, puis analyse et utilise des en-têtes personnalisés. ](../images/outlook-internet-headers.png)
+![Diagramme des en-têtes Internet. Text : l’utilisateur 1 envoie des courriers électroniques. Le complément gère les en-têtes Internet personnalisés pendant que l’utilisateur compose le courrier électronique. L’utilisateur 2 reçoit le courrier électronique. Le complément obtient les en-têtes Internet du courrier électronique reçu, puis analyse et utilise des en-têtes personnalisés.](../images/outlook-internet-headers.png)
 
 ## <a name="set-internet-headers-while-composing-a-message"></a>Définir des en-têtes Internet lors de la composition d’un message
 
@@ -133,6 +133,15 @@ Sender's preferred vegetable: broccoli
 
 > [!IMPORTANT]
 > Cet exemple fonctionne pour des cas simples. Pour une extraction plus complexe des informations (par exemple, des en-têtes à plusieurs instances ou des valeurs pliées, comme décrit dans la [norme RFC 2822](https://tools.ietf.org/html/rfc2822)), essayez d’utiliser une bibliothèque d’analyse MIME appropriée.
+
+## <a name="recommended-practices"></a>Pratiques recommandées
+
+Actuellement, les en-têtes Internet sont une ressource finie sur la boîte aux lettres d’un utilisateur. Lorsque le quota est épuisé, vous ne pouvez plus créer d’en-têtes Internet supplémentaires sur cette boîte aux lettres, ce qui peut entraîner un comportement inattendu de la part des clients qui dépendent de cette fonctionnalité.
+
+Appliquez les instructions suivantes lorsque vous créez des en-têtes Internet dans votre complément.
+
+- Créez le nombre minimal d’en-têtes requis.
+- Les en-têtes de nom afin que vous puissiez réutiliser et mettre à jour leurs valeurs ultérieurement. En tant que telle, évitez les en-têtes de nom de manière variable (par exemple, en fonction de l’entrée utilisateur, de l’horodatage, etc.).
 
 ## <a name="see-also"></a>Voir aussi
 
