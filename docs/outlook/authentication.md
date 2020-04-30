@@ -1,34 +1,36 @@
 ---
 title: Options d’authentification dans les compléments Outlook
 description: Les compléments Outlook offrent différentes méthodes qui permettent de s’authentifier en fonction de votre scénario.
-ms.date: 11/05/2019
+ms.date: 04/28/2020
 localization_priority: Priority
-ms.openlocfilehash: c7fc3f72dd04b2a64f6f5ce34732885a1a917001
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: dacd4677161def3f1580d1cbc953f73a7158ac9d
+ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720840"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "43930294"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Options d’authentification dans les compléments Outlook
 
 Votre complément Outlook peut accéder à des informations à partir de n’importe quel emplacement sur Internet, qu’il s’agisse du serveur qui héberge le complément, de votre réseau interne ou du cloud. Si ces informations sont protégées, votre complément doit trouver un moyen d’authentifier votre utilisateur. Les compléments Outlook offrent différentes méthodes qui permettent de s’authentifier en fonction de votre scénario.
 
-## <a name="single-sign-on-access-token"></a>Jeton d’accès à authentification unique
+## <a name="single-sign-on-access-token-preview"></a>Jeton d’accès à authentification unique (aperçu)
 
 Les jetons d’accès à authentification unique permettent à votre complément de s’authentifier en toute transparence et d’obtenir des jetons d’accès pour appeler l’[API Microsoft Graph](/graph/overview). Cette fonctionnalité réduit la friction étant donné que l’utilisateur n’a pas besoin de saisir ses informations d’identification.
 
 > [!NOTE]
-> L’API d’authentification unique est actuellement prise en charge en préversion pour Word, Excel, Outlook et PowerPoint. Pour savoir où l’API d’authentification unique est actuellement prise en charge, voir [Ensembles de conditions requises de l’API d’identité](../reference/requirement-sets/identity-api-requirement-sets.md).
+> L’API d’authentification unique est actuellement prise en charge dans l’aperçu pour Word, Excel, Outlook et PowerPoint, et ne doit **pas** être utilisée dans les compléments de production. Pour plus d’informations sur l’emplacement de prise en charge de l’API de l’authentification unique, voir [Configuration requise pour IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md).
+>
 > Pour utiliser l’authentification unique (SSO), vous devez télécharger la version bêta de la bibliothèque JavaScript d’Office à partir de https://appsforoffice.microsoft.com/lib/beta/hosted/office.js dans la page de démarrage HTML du complément.
+>
 > Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location d’Office 365. Pour plus d’informations sur la manière de procéder, voir [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 Vous pouvez utiliser des jetons d’accès d’authentification unique si votre complément :
 
 - est principalement utilisé par les utilisateurs d’Office 365 ;
 - doit accéder à ce qui suit :
-    - Services Microsoft exposés dans le cadre de Microsoft Graph ;
-    - Service non-Microsoft que vous contrôlez.
+  - Services Microsoft exposés dans le cadre de Microsoft Graph ;
+  - Service non-Microsoft que vous contrôlez.
 
 La méthode d’authentification unique utilise le flux [OAuth2 De la part de fourni par Azure Active Directory](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of). Cela nécessite l’enregistrement du complément dans le [portail d’inscription des applications](https://apps.dev.microsoft.com/) et la spécification de toute étendue Microsoft Graph requise dans son manifeste.
 
