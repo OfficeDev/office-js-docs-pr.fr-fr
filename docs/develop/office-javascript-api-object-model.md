@@ -1,14 +1,14 @@
 ---
 title: Modèle d’objet d’API JavaScript courant
 description: En savoir plus sur le modèle objet de l’API commune JavaScript pour Office
-ms.date: 04/22/2020
+ms.date: 04/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 4f1f3e0de81e2422c43a9777b108783bb7810c3b
-ms.sourcegitcommit: 9da68c00ecc00a2f307757e0f5a903a8e31b7769
+ms.openlocfilehash: 4bfe027b09fc806021212d00c895527bd661f3a6
+ms.sourcegitcommit: 99b41e8b90f2df6dafcc12b3883e83751de9facd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "43785704"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "43952254"
 ---
 # <a name="common-javascript-api-object-model"></a>Modèle d’objet d’API JavaScript courant
 
@@ -24,7 +24,7 @@ Lorsqu’un complément est [initialisé](initialize-add-in.md), il peut interag
 
 Par exemple, dans les compléments de contenu ou du volet Office, vous pouvez utiliser la propriété document de l’objet Context pour accéder aux propriétés et aux méthodes de l’objet Document afin d’interagir avec le contenu de documents Word, de feuilles de calcul Excel ou de planifications Project. De même, dans les compléments Outlook, vous pouvez utiliser la propriété mailbox de l’objet Context pour accéder aux méthodes et aux propriétés de l’objet Mailbox afin d’interagir avec le contenu des messages, des demandes de réunion ou des rendez-vous.
 
-L’objet **Context** donne également accès aux propriétés [contentLanguage](/javascript/api/office/office.context#contentlanguage) et [displayLanguage](/javascript/api/office/office.context#displaylanguage) qui vous permettent de déterminer les paramètres régionaux (langue) utilisés dans le document ou l’élément, ou par l’application hôte. La propriété [roamingSettings](/javascript/api/office/office.context#roamingsettings) vous permet d’accéder aux membres de l’objet [RoamingSettings](/javascript/api/office/office.context#roamingsettings) qui stocke les paramètres spécifiques à votre complément pour les boîtes aux lettres individuelles des utilisateurs. Enfin, l’objet **Context** fournit une propriété [ui](/javascript/api/office/office.ui) qui permet à votre complément d’ouvrir des boîtes de dialogue contextuelles.
+L’objet **Context** donne également accès aux propriétés [contentLanguage](/javascript/api/office/office.context#contentlanguage) et [displayLanguage](/javascript/api/office/office.context#displaylanguage) qui vous permettent de déterminer les paramètres régionaux (langue) utilisés dans le document ou l’élément, ou par l’application hôte. La propriété [roamingSettings](/javascript/api/office/office.context#roamingsettings) vous permet d’accéder aux membres de l’objet [RoamingSettings](/javascript/api/office/office.context#roamingsettings) qui stocke les paramètres spécifiques à votre complément pour les boîtes aux lettres individuelles des utilisateurs. Enfin, l’objet **Context** fournit une propriété [ui](/javascript/api/office/office.context#ui) qui permet à votre complément d’ouvrir des boîtes de dialogue contextuelles.
 
 
 ## <a name="document-object"></a>Objet Document
@@ -154,7 +154,7 @@ La méthode [Document.getFileAsync](/javascript/api/office/office.document#getfi
 
 **S’applique à :** compléments Outlook
 
-Les compléments Outlook utilisent principalement un sous-ensemble de l’API exposée via l’objet [Mailbox](/javascript/api/outlook/office.mailbox). Pour accéder aux objets et aux membres destinés spécifiquement à une utilisation dans les compléments Outlook, tels que l’objet [Item](/javascript/api/outlook/office.item), utilisez la propriété [mailbox](/javascript/api/outlook/office.context#mailbox) de l’objet **Context** pour accéder à l’objet **Mailbox**, comme illustré dans la ligne de code suivante.
+Les compléments Outlook utilisent principalement un sous-ensemble de l’API exposée via l’objet [Mailbox](/javascript/api/outlook/office.mailbox). Pour accéder aux objets et aux membres destinés spécifiquement à une utilisation dans les compléments Outlook, tels que l’objet [Item](/javascript/api/outlook/office.item), utilisez la propriété [mailbox](/javascript/api/office/office.context#mailbox) de l’objet **Context** pour accéder à l’objet **Mailbox**, comme illustré dans la ligne de code suivante.
 
 ```js
 // Access the Item object.
