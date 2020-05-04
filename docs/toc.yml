@@ -162,7 +162,7 @@
                   href: develop/dialog-video.md
             - name: Performances
               items:
-                - name: Évitez d'utiliser la méthode context.sync en boucle
+                - name: Éviter d’utiliser la méthode context.sync dans des boucles
                   href: concepts/correlated-objects-pattern.md
                 - name: Limites des ressources et optimisation des performances pour les compléments Office
                   href: concepts/resource-limits-and-performance-optimization.md
@@ -960,7 +960,7 @@
               href: outlook/get-or-set-the-time-of-an-appointment.md
             - name: Obtenir et définir un emplacement
               href: outlook/get-or-set-the-location-of-an-appointment.md
-            - name: Configurer la réunion en ligne (aperçu)
+            - name: Configurer une réunion en ligne (aperçu)
               href: outlook/online-meeting.md
         - name: Confidentialité et sécurité
           items:
