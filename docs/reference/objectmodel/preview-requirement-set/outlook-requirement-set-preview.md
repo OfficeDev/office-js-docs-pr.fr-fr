@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: Les fonctionnalités et les API qui sont actuellement en préversion pour les compléments Outlook.
-ms.date: 04/10/2020
+ms.date: 05/04/2020
 localization_priority: Normal
-ms.openlocfilehash: 94104a9fcb239d991d585abcebdd07bcab6e315f
-ms.sourcegitcommit: 3355c6bd64ecb45cea4c0d319053397f11bc9834
+ms.openlocfilehash: 433abf5ea15cfe9ee7cefa579b1ad965fdeb93cf
+ms.sourcegitcommit: 800dacf0399465318489c9d949e259b5cf0f81ca
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "43744865"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "44022182"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -69,13 +69,13 @@ Ajout d’une nouvelle `AppointmentSensitivityType` énumération qui représent
 
 Ajout d’une nouvelle fonction à `Body` l’objet qui ajoute des données à la fin du corps de l’élément en mode composition.
 
-**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Office 365), Outlook sur le Web (moderne)
+**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
 
 #### <a name="extendedpermissions"></a>[ExtendedPermissions](../../manifest/extendedpermissions.md)
 
 Ajout d’un nouvel élément au manifeste dans lequel `AppendOnSend` l’autorisation étendue doit être incluse dans la collection des autorisations étendues.
 
-**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Office 365), Outlook sur le Web (moderne)
+**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
 
 <br>
 
