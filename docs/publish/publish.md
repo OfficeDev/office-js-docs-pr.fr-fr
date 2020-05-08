@@ -1,14 +1,14 @@
 ---
 title: Déployer et publier des compléments Office
 description: Méthodes et options pour déployer votre complément Office à des fins de test ou de distribution auprès des utilisateurs.
-ms.date: 03/18/2020
+ms.date: 05/06/2020
 localization_priority: Priority
-ms.openlocfilehash: a21535a637ceb54d0e84a36b2a0610873d408e1c
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: b4ee2dab2fec0237ad06776861678c4c23da6ca8
+ms.sourcegitcommit: 1e3d7051ba7c8c0ccfd6607099d90469fc8141e2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890983"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "44066087"
 ---
 # <a name="deploy-and-publish-office-add-ins"></a>Déployer et publier des compléments Office
 
@@ -17,7 +17,7 @@ Vous pouvez utiliser l’une des méthodes pour déployer votre complément Offi
 |**Méthode**|**Use...**|
 |:---------|:------------|
 |[Chargement de version test](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|Dans le cadre de votre processus de développement, pour tester l’exécution de votre complément sur Windows, iPad, Mac ou dans un navigateur.|
-|[Déploiement centralisé](centralized-deployment.md)|Dans un environnement de cloud ou hybride, utilisez cette méthode pour distribuer votre complément auprès des utilisateurs de votre organisation à l’aide du Centre d’administration Office 365.|
+|[Déploiement centralisé](centralized-deployment.md)|Dans un environnement de cloud, utilisez cette méthode pour distribuer votre complément auprès des utilisateurs de votre organisation à l’aide du Centre d’administration Office 365.|
 |[Catalogue SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|Dans un environnement local, pour distribuer votre complément auprès des utilisateurs de votre organisation.|
 |[AppSource](/office/dev/store/submit-to-appsource-via-partner-center)|Pour distribuer publiquement votre complément auprès des utilisateurs.|
 |[Serveur Exchange](#outlook-add-in-deployment)|Dans un environnement local ou en ligne, pour distribuer des compléments Outlook à des utilisateurs.|
