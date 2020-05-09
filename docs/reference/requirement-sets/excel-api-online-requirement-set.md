@@ -1,15 +1,15 @@
 ---
 title: Ensemble de conditions requises de l’API JavaScript pour Excel en ligne uniquement
 description: Détails sur l’ensemble de conditions requises pour ExcelApiOnline
-ms.date: 12/05/2019
+ms.date: 05/06/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: ad2a3cd627552baeb449397fa917fe10e86ebbaf
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: f177e0107de7172c350f94c3a022cb3e0db5c6f5
+ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814151"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "44170785"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>Ensemble de conditions requises de l’API JavaScript pour Excel en ligne uniquement
 
@@ -44,19 +44,13 @@ Les API suivantes sont actuellement disponibles pour Excel sur le Web dans le ca
 
 | Class | Champs | Description |
 |:---|:---|:---|
-|[Comment](/javascript/api/excel/excel.comment)|[mentions](/javascript/api/excel/excel.comment#mentions)|Obtient les entités (par exemple, les personnes) mentionnées dans les commentaires.|
-||[richContent](/javascript/api/excel/excel.comment#richcontent)|Obtient le contenu de commentaire enrichi (par exemple, les mentions dans les commentaires). Cette chaîne n’est pas destinée à être affichée aux utilisateurs finaux. Votre complément doit uniquement l’utiliser pour analyser le contenu de commentaire enrichi.|
-||[updateMentions (contentWithMentions : Excel. CommentRichContent)](/javascript/api/excel/excel.comment#updatementions-contentwithmentions-)|Met à jour le contenu de commentaire avec une chaîne spécialement mise en forme et une liste de mentions.|
-|[CommentMention](/javascript/api/excel/excel.commentmention)|[email](/javascript/api/excel/excel.commentmention#email)|Obtient ou définit l’adresse de messagerie de l’entité mentionnée dans Comment.|
-||[id](/javascript/api/excel/excel.commentmention#id)|Obtient ou définit l’ID de l’entité. Cela correspond à l’un des ID `CommentRichContent.richContent`dans.|
-||[name](/javascript/api/excel/excel.commentmention#name)|Obtient ou définit le nom de l’entité mentionnée dans Comment.|
-|[CommentReply](/javascript/api/excel/excel.commentreply)|[mentions](/javascript/api/excel/excel.commentreply#mentions)|Obtient les entités (par exemple, les personnes) mentionnées dans les commentaires.|
-||[richContent](/javascript/api/excel/excel.commentreply#richcontent)|Obtient le contenu de commentaire enrichi (par exemple, les mentions dans les commentaires). Cette chaîne n’est pas destinée à être affichée aux utilisateurs finaux. Votre complément doit uniquement l’utiliser pour analyser le contenu de commentaire enrichi.|
-||[updateMentions (contentWithMentions : Excel. CommentRichContent)](/javascript/api/excel/excel.commentreply#updatementions-contentwithmentions-)|Met à jour le contenu de commentaire avec une chaîne spécialement mise en forme et une liste de mentions.|
-|[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)|[mentions](/javascript/api/excel/excel.commentrichcontent#mentions)|Tableau contenant toutes les entités (par exemple, les personnes) mentionnées dans le commentaire.|
-||[richContent](/javascript/api/excel/excel.commentrichcontent#richcontent)||
-|[Range](/javascript/api/excel/excel.range)|[moveTo (destinationRange : chaîne \| de plage)](/javascript/api/excel/excel.range#moveto-destinationrange-)|Déplace les valeurs de cellule, la mise en forme et les formules de la plage actuelle à la plage de destination, en remplaçant les anciennes informations de ces cellules.|
-|[RangeFormat](/javascript/api/excel/excel.rangeformat)|[adjustIndent (montant : nombre)](/javascript/api/excel/excel.rangeformat#adjustindent-amount-)|Ajuste la mise en retrait de la plage de mise en forme. La valeur de retrait est comprise entre 0 et 250 et est mesurée en caractères.|
+|[ChartAxisTitle](/javascript/api/excel/excel.chartaxistitle)|[textOrientation](/javascript/api/excel/excel.chartaxistitle#textorientation)|Cette énumération spécifie l’angle auquel le texte est orienté pour le titre de l’axe du graphique. La valeur doit être un entier compris entre-90 et 90 ou l’entier 180 pour le texte orienté verticalement.|
+|[PivotTableScopedCollection](/javascript/api/excel/excel.pivottablescopedcollection)|[getCount()](/javascript/api/excel/excel.pivottablescopedcollection#getcount--)|Obtient le nombre de tableaux croisés dynamiques dans la collection.|
+||[getFirst()](/javascript/api/excel/excel.pivottablescopedcollection#getfirst--)|Obtient le premier tableau croisé dynamique de la collection. Les tableaux croisés dynamiques de la collection sont triés de haut en bas et de gauche à droite, de sorte que le tableau supérieur gauche est le premier tableau croisé dynamique de la collection.|
+||[getItem(key: string)](/javascript/api/excel/excel.pivottablescopedcollection#getitem-key-)|Obtient un tableau croisé dynamique par nom.|
+||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.pivottablescopedcollection#getitemornullobject-name-)|Extrait un tableau croisé dynamique par nom. Si le tableau croisé dynamique n’existe pas, renvoie un objet null.|
+||[items](/javascript/api/excel/excel.pivottablescopedcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
+|[Range](/javascript/api/excel/excel.range)|[getPivotTables (fullyContained ?: booléen)](/javascript/api/excel/excel.range#getpivottables-fullycontained-)|Obtient une collection d’étendues de tableaux croisés dynamiques qui se chevauchent avec la plage.|
 
 ## <a name="see-also"></a>Voir aussi
 

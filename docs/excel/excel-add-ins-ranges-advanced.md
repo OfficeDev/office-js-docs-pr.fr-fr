@@ -1,14 +1,14 @@
 ---
 title: Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)
 description: Les fonctions et scénarios d’objet de plage avancés, tels que les cellules spéciales, suppriment les doublons et utilisent des dates.
-ms.date: 02/11/2020
+ms.date: 05/06/2020
 localization_priority: Normal
-ms.openlocfilehash: ed5f946c58b14f7f09b1bdc6fb0815430849f0bd
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: eb25ae3f4bbe1231cfdf49f7535490b39c7a419e
+ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688640"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "44170813"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)
 
@@ -172,11 +172,11 @@ Excel.run(function (context) {
 })
 ```
 
-## <a name="cut-copy-and-paste"></a>Couper, copier et coller 
+## <a name="cut-copy-and-paste"></a>Couper, copier et coller
 
-### <a name="copy-and-paste"></a>Copy and paste 
+### <a name="copy-and-paste"></a>Copy and paste
 
-La méthode [Range. CopyFrom](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) réplique les actions **copier** et **coller** de l’interface utilisateur Excel. L’objet plage sur lequel`copyFrom`est appelé est la destination. La source à copier est transmise en tant que plage ou qu’adresse de chaîne représentant une plage. 
+La méthode [Range. CopyFrom](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) réplique les actions **copier** et **coller** de l’interface utilisateur Excel. L’objet plage sur lequel`copyFrom`est appelé est la destination. La source à copier est transmise en tant que plage ou qu’adresse de chaîne représentant une plage.
 
 L’exemple de code suivant copie les données de la plage **A1:E1** dans la plage commençant en **G1** (ce qui aboutit à un collage dans la plage **G1:K1**).
 
@@ -235,22 +235,22 @@ Excel.run(function (context) {
 
 ![Données dans Excel après exécution de la méthode de copie de la plage](../images/excel-range-copyfrom-skipblanks-after.png)
 
-### <a name="cut-and-paste-move-cells-online-only"></a>Couper et coller (déplacer) des cellules ([en ligne uniquement](../reference/requirement-sets/excel-api-online-requirement-set.md)) 
+### <a name="cut-and-paste-move-cells"></a>Couper et coller (déplacer) des cellules
 
-La méthode [Range. MoveTo](/javascript/api/excel/excel.range#moveto-destinationrange-) déplace les cellules vers un nouvel emplacement dans le classeur. Ce comportement de déplacement de cellule fonctionne de la même manière que lorsque les cellules sont déplacées en [faisant glisser la bordure de la plage](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e) ou lorsque vous effectuez des opérations **couper** - **coller** . La mise en forme et les valeurs de la plage sont déplacées vers l’emplacement `destinationRange` spécifié en tant que paramètre. 
+La méthode [Range. MoveTo](/javascript/api/excel/excel.range#moveto-destinationrange-) déplace les cellules vers un nouvel emplacement dans le classeur. Ce comportement de déplacement de cellule fonctionne de la même manière que lorsque les cellules sont déplacées en [faisant glisser la bordure de la plage](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e) ou lorsque vous effectuez des opérations **couper** - **coller** . La mise en forme et les valeurs de la plage sont déplacées vers l’emplacement `destinationRange` spécifié en tant que paramètre.
 
-L’exemple de code suivant montre une plage déplacée `Range.moveTo` avec la méthode. Notez que si la plage de destination est plus petite que la source, elle sera étendue de façon à inclure le contenu source. 
+L’exemple de code suivant montre une plage déplacée `Range.moveTo` avec la méthode. Notez que si la plage de destination est plus petite que la source, elle sera étendue de façon à inclure le contenu source.
 
-```js 
-Excel.run(function (context) { 
-    var sheet = context.workbook.worksheets.getActiveWorksheet(); 
-    sheet.getRange("F1").values = [["Moved Range"]]; 
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    sheet.getRange("F1").values = [["Moved Range"]];
 
-    // Move the cells "A1:E1" to "G1" (which fills the range "G1:K1"). 
-    sheet.getRange("A1:E1").moveTo("G1"); 
-    return context.sync(); 
-}); 
-``` 
+    // Move the cells "A1:E1" to "G1" (which fills the range "G1:K1").
+    sheet.getRange("A1:E1").moveTo("G1");
+    return context.sync();
+});
+```
 
 ## <a name="remove-duplicates"></a>Supprimer les doublons
 

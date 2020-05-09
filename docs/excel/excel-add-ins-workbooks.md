@@ -1,14 +1,14 @@
 ---
 title: Utiliser les classeurs utilisant l’API JavaScript Excel
 description: Exemples de code qui montrent comment effectuer des tâches courantes avec des classeurs ou des fonctionnalités au niveau de l’application à l’aide de l’API JavaScript pour Excel.
-ms.date: 03/19/2020
+ms.date: 05/06/2020
 localization_priority: Normal
-ms.openlocfilehash: aa30f888bf6de1926d2a36522febf0001e1e6130
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: 4fec6a217a2764eaf664463943ca384b3a2d847b
+ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42891025"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "44170764"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Utiliser les classeurs utilisant l’API JavaScript Excel
 
@@ -186,7 +186,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="access-application-culture-settings-preview"></a>Paramètres de culture de l’application Access (aperçu)
+## <a name="access-application-culture-settings"></a>Accéder aux paramètres de culture de l’application
 
 Un classeur comporte des paramètres de langue et de culture qui influent sur l’affichage de certaines données. Ces paramètres permettent de localiser les données lorsque les utilisateurs de votre complément partagent des classeurs dans différentes langues et cultures. Votre complément peut utiliser l’analyse de chaîne pour localiser le format des nombres, des dates et des heures en fonction des paramètres de culture du système, de sorte que chaque utilisateur voit des données dans leur propre format de culture.
 
@@ -298,10 +298,7 @@ L’API Excel vous permet également de désactiver les compléments calculs jus
 context.application.suspendApiCalculationUntilNextSync();
 ```
 
-## <a name="save-the-workbook-preview"></a>Enregistrer le classeur (préversion)
-
-> [!NOTE]
-> La méthode `Workbook.save` est actuellement uniquement disponible en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="save-the-workbook"></a>Enregistrer le classeur
 
 `Workbook.save` enregistre le classeur dans un espace de stockage permanent. La méthode `save` accepte un paramètre `saveBehavior` unique et facultatif qui peut être l’une des valeurs suivantes :
 
@@ -315,10 +312,7 @@ context.application.suspendApiCalculationUntilNextSync();
 context.workbook.save(Excel.SaveBehavior.prompt);
 ```
 
-## <a name="close-the-workbook-preview"></a>Fermer le classeur (préversion)
-
-> [!NOTE]
-> La méthode `Workbook.close` est actuellement uniquement disponible en préversion publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="close-the-workbook"></a>Fermer le classeur
 
 `Workbook.close` ferme le classeur, ainsi que des compléments qui sont associées au classeur (l’application Excel reste ouverte). La méthode `close` accepte un paramètre `closeBehavior` unique et facultatif qui peut être l’une des valeurs suivantes :
 
