@@ -1,14 +1,14 @@
 ---
 title: Valider un jeton d’identité de complément Outlook
 description: Votre complément Outlook peut vous envoyer un jeton d’identité d’utilisateur Exchange, mais avant de faire confiance à la requête, vous devez valider le jeton pour vous assurer qu’il provient du serveur Exchange attendu.
-ms.date: 11/07/2019
+ms.date: 05/08/2020
 localization_priority: Normal
-ms.openlocfilehash: b412756a980d54a20a1c8deab43cd7634c0188cb
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: b416353b0d9875a2024ca4706152472c7e5012b0
+ms.sourcegitcommit: 7e6faf3dc144400a7b7e5a42adecbbec0bd4602d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166175"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "44180209"
 ---
 # <a name="validate-an-exchange-identity-token"></a>Valider un jeton d’identité Exchange
 
@@ -106,7 +106,10 @@ Vous pouvez créer un identificateur unique pour un compte Exchange en concatén
 
 ## <a name="use-a-library-to-validate-the-token"></a>Utiliser une bibliothèque pour valider le jeton
 
-Il existe un certain nombre de bibliothèques qui permettent une analyse et une validation générales du jeton JWT. Microsoft offre deux bibliothèques qui peuvent être utilisées pour valider les jetons d’identité d’utilisateur Exchange.
+Il existe un certain nombre de bibliothèques qui permettent une analyse et une validation générales du jeton JWT. Microsoft fournit la `System.IdentityModel.Tokens.Jwt` bibliothèque qui peut être utilisée pour valider les jetons d’identité d’utilisateur Exchange.
+
+> [!IMPORTANT]
+> Nous ne recommandons plus l’API managée des services Web Exchange, car Microsoft. Exchange. WebServices. auth. dll, toujours disponible, est désormais obsolète et s’appuie sur des bibliothèques non prises en charge comme Microsoft. IdentityModel. extensions. dll.
 
 ### <a name="systemidentitymodeltokensjwt"></a>System.IdentityModel.Tokens.Jwt
 
@@ -189,30 +192,6 @@ public class ExchangeAppContext
 ```
 
 Pour un exemple qui utilise cette bibliothèque pour valider les jetons Exchange et qui a une implémentation de `GetSigningKeys`, reportez-vous à [Outlook-Add-In-Token-Viewer](https://github.com/OfficeDev/Outlook-Add-In-Token-Viewer).
-
-### <a name="microsoftexchangewebservices"></a>Microsoft.Exchange.WebServices
-
-L’[API gérée Exchange Web Services](https://www.nuget.org/packages/Microsoft.Exchange.WebServices/) peut également valider les jetons d’identité d’utilisateur Exchange. Étant donné qu’il s’agit d’une API spécifique à Exchange, elle implémente toute la logique nécessaire pour analyser la réclamation `appctx` et vérifier la version du jeton.
-
-```cs
-using Microsoft.Exchange.WebServices.Auth.Validation;
-
-AppIdentityToken ValidateIdentityToken(string rawToken, string expectedAudience)
-{
-    try
-    {
-        AppIdentityToken appIdToken = AuthToken.Parse(rawToken) as AppIdentityToken;
-        appIdToken.Validate(new Uri(expectedAudience));
-
-        // No exception, validation succeeded
-        return appIdToken;
-    }
-    catch (TokenValidationException ex)
-    {
-        throw new Exception(string.Format("Token validation failed: {0}", ex.Message));
-    }
-}
-```
 
 ## <a name="see-also"></a>Voir aussi
 

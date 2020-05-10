@@ -1,25 +1,25 @@
 ---
 title: Limites pour l’activation et l’utilisation des API dans des compléments Outlook
 description: Tenez compte de certaines instructions relatives à l’activation et l’utilisation des API et implémentez vos compléments pour respecter ces limites.
-ms.date: 10/31/2019
+ms.date: 05/08/2020
 localization_priority: Normal
-ms.openlocfilehash: a86d2a350db61d843a67945348dfb8154951b53c
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: b4fbdcea72585ff77457dfb6cd3039040b012031
+ms.sourcegitcommit: 7e6faf3dc144400a7b7e5a42adecbbec0bd4602d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324946"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "44180216"
 ---
 # <a name="limits-for-activation-and-javascript-api-for-outlook-add-ins"></a>Limites pour l’activation et l’API JavaScript pour les compléments Outlook
 
-Pour offrir une expérience satisfaisante aux utilisateurs de compléments Outlook, il convient de connaître certaines recommandations relatives à l’activation et à l’utilisation de l’API afin d’implémenter vos compléments tout en respectant ces limites. Ces instructions existent afin qu’un complément individuel ne puisse pas exiger qu’Exchange Server ou Outlook consacre une période anormalement longue pour traiter ses règles d’activation ou les appels à l’API JavaScript Office, affectant l’expérience utilisateur globale pour Outlook et d’autres compléments. Ces limites s’appliquent à la conception de règles d’activation dans le manifeste de complément et à l’utilisation de propriétés personnalisées, de paramètres d’itinérance, de destinataires, de demandes et de réponses aux services Web Exchange (EWS) et d’appels asynchrones.
+Pour offrir une expérience satisfaisante aux utilisateurs de compléments Outlook, il convient de connaître certaines recommandations relatives à l’activation et à l’utilisation de l’API afin d’implémenter vos compléments tout en respectant ces limites. Ces instructions existent afin qu’un complément individuel ne puisse pas exiger qu’Exchange Server ou Outlook consacre une période anormalement longue pour traiter ses règles d’activation ou les appels à l’API JavaScript Office, affectant l’expérience globale de l’utilisateur pour Outlook et d’autres compléments. Ces limites s’appliquent à la conception de règles d’activation dans le manifeste de complément et à l’utilisation de propriétés personnalisées, de paramètres d’itinérance, de destinataires, de demandes et de réponses aux services Web Exchange (EWS) et d’appels asynchrones.
 
 > [!NOTE]
 > Si votre complément s’exécute sur un client riche Outlook, vous devez également vérifier que le complément s’exécute dans certaines limites d’utilisation des ressources au moment de l’exécution.
 
 ## <a name="limits-on-where-add-ins-activate"></a>Limites relatives à l’emplacement d’activation des compléments
 
-Les compléments sont conçus pour être activés uniquement dans la boîte aux lettres principale de l’utilisateur. Les compléments ne sont pas activés dans les boîtes aux lettres partagées, les dossiers des boîtes aux lettres d’autres utilisateurs ouverts avec l’accès délégué, les boîtes aux lettres d’archivage ou les dossiers publics.
+Par défaut, les compléments sont conçus pour s’activer uniquement dans la boîte aux lettres principale de l’utilisateur. Cela signifie que les compléments ne sont généralement pas activés dans les boîtes aux lettres partagées, les dossiers des boîtes aux lettres d’autres utilisateurs ouverts avec un accès délégué, des boîtes aux lettres d’archivage ou des dossiers publics. Toutefois, les compléments qui prennent en charge [l’accès délégué ou les dossiers partagés](delegate-access.md) doivent être activés.
 
 ## <a name="limits-for-activation-rules"></a>Limites pour les règles d’activation
 
