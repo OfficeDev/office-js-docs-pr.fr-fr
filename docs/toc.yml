@@ -8,6 +8,9 @@
     - name: Commencez ici! Guide pour les débutants
       href: overview/learning-path-beginner.md
       displayName: develop
+    - name: Transition ! Guide pour les développeurs de compléments VSTO
+      href: overview/learning-path-transition.md
+      displayName: develop
     - name: Création de compléments Office
       href: overview/office-add-ins-fundamentals.md
       displayName: develop
@@ -405,10 +408,6 @@
               href: reference/manifest/requirements.md
             - name: Rule
               href: reference/manifest/rule.md
-            - name: Runtime
-              href: reference/manifest/runtime.md
-            - name: Services d’exécution
-              href: reference/manifest/runtimes.md
             - name: Set
               href: reference/manifest/set.md
             - name: documents
@@ -475,6 +474,10 @@
                   href: reference/manifest/page.md
                 - name: Ressources
                   href: reference/manifest/resources.md
+                - name: Runtime
+                  href: reference/manifest/runtime.md
+                - name: Services d’exécution
+                  href: reference/manifest/runtimes.md
                 - name: Étendues
                   href: reference/manifest/scopes.md
                 - name: Script
@@ -532,6 +535,9 @@
               displayName: Excel
             - name: Ensemble de conditions requises pour ExcelApi en ligne uniquement
               href: reference/requirement-sets/excel-api-online-requirement-set.md
+              displayName: Excel
+            - name: Ensemble de conditions requises ExcelApi 1.11
+              href: reference/requirement-sets/excel-api-1-11-requirement-set.md
               displayName: Excel
             - name: "Ensemble de conditions requises ExcelApi\_1.10"
               href: reference/requirement-sets/excel-api-1-10-requirement-set.md
