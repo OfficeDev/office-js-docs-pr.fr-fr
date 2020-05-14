@@ -3,16 +3,16 @@ title: Utiliser des thèmes de document dans vos compléments PowerPoint
 description: Découvrez comment coordonner visuellement des thèmes tels que des polices et des couleurs à appliquer à des présentations, des documents, des feuilles de calcul et des courriers électroniques.
 ms.date: 10/14/2019
 localization_priority: Normal
-ms.openlocfilehash: 040458d504e2dbb3d9883711503a61eb955f8d89
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: e3affe277cfb4c52e83e0c27815884949afbe336
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720777"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217787"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>Utiliser des thèmes de document dans vos compléments PowerPoint
 
-Un [thème Office](https://support.office.com/Article/What-is-a-theme--7528ccc2-4327-4692-8bf5-9b5a3f2a5ef5) est constitué, en partie, d’un jeu de polices et de couleurs visuellement assortis que vous pouvez appliquer à des présentations, des documents, des feuilles de calcul et des courriers électroniques. Pour appliquer ou personnaliser le thème d’une présentation dans PowerPoint, utilisez les groupes **Thèmes** et **Variantes** dans l’onglet **Conception** du ruban. PowerPoint affecte le **thème Office** par défaut à chaque nouvelle présentation vierge, mais vous pouvez choisir parmi les autres thèmes disponibles dans l’onglet **Conception**, télécharger des thèmes supplémentaires à partir d’Office.com, ou créer et personnaliser votre propre thème.
+Un [thème Office](https://support.office.com/article/create-your-own-theme-in-powerpoint-83e68627-2c17-454a-9fd8-62deb81951a6) est constitué, en partie, d’un jeu de polices et de couleurs visuellement assortis que vous pouvez appliquer à des présentations, des documents, des feuilles de calcul et des courriers électroniques. Pour appliquer ou personnaliser le thème d’une présentation dans PowerPoint, utilisez les groupes **Thèmes** et **Variantes** dans l’onglet **Conception** du ruban. PowerPoint affecte le **thème Office** par défaut à chaque nouvelle présentation vierge, mais vous pouvez choisir parmi les autres thèmes disponibles dans l’onglet **Conception**, télécharger des thèmes supplémentaires à partir d’Office.com, ou créer et personnaliser votre propre thème.
 
 OfficeThemes.css vous permet de concevoir des compléments coordonnés à PowerPoint de deux façons :
 
@@ -26,7 +26,7 @@ Chaque thème de document Office définit 12 couleurs. Dix de ces couleurs sont
 
 ![Palette de couleurs](../images/office15-app-color-palette.png)
 
-Pour afficher ou personnaliser le jeu complet de 12 couleurs de thème dans PowerPoint, dans le groupe **variantes** de l’onglet **création** , cliquez sur le menu déroulant **plus** , puis sélectionnez **couleurs** > **personnaliser les couleurs** pour afficher la boîte de dialogue **créer de nouvelles couleurs de thème** .
+Pour afficher ou personnaliser le jeu complet de 12 couleurs de thème dans PowerPoint, dans le groupe **variantes** de l’onglet **création** , cliquez sur le menu déroulant **plus** , puis sélectionnez **couleurs**  >  **personnaliser les couleurs** pour afficher la boîte de dialogue **créer de nouvelles couleurs de thème** .
 
 ![Boîte de dialogue Créer de nouvelles couleurs de thème](../images/office15-app-create-new-theme-colors.png)
 
@@ -38,13 +38,13 @@ Chaque thème de document Office définit également deux polices : une pour les
 
 ![Sélecteur de polices](../images/office15-app-font-picker.png)
 
-Pour afficher ou personnaliser les polices de thème dans PowerPoint, dans le groupe **variantes** de l’onglet **création** , cliquez sur le menu déroulant **plus** , puis sélectionnez **polices** > **personnaliser les polices** pour afficher la boîte de dialogue **créer de nouvelles polices de thème** .
+Pour afficher ou personnaliser les polices de thème dans PowerPoint, dans le groupe **variantes** de l’onglet **création** , cliquez sur le menu déroulant **plus** , puis sélectionnez **polices**  >  **personnaliser les polices** pour afficher la boîte de dialogue **créer de nouvelles polices de thème** .
 
 ![Boîte de dialogue Créer de nouvelles polices de thème](../images/office15-app-create-new-theme-fonts.png)
 
 ### <a name="office-ui-theme-fonts-and-colors"></a>Couleurs et polices de thème de l’interface utilisateur Office
 
-Office vous permet également de choisir entre plusieurs thèmes prédéfinis qui spécifient certaines des couleurs et des polices utilisées dans l’interface utilisateur de toutes les applications Office. Pour ce faire, utilisez la liste déroulante des**thèmes Office** du**compte** > de **fichiers** > (à partir de n’importe quelle application Office).
+Office vous permet également de choisir entre plusieurs thèmes prédéfinis qui spécifient certaines des couleurs et des polices utilisées dans l’interface utilisateur de toutes les applications Office. Pour ce faire, utilisez la **File**  >  **Account**  >  liste déroulante des**thèmes Office** du compte de fichiers (à partir de n’importe quelle application Office).
 
 ![Liste déroulante de thèmes Office](../images/office15-app-office-theme-picker.png)
 

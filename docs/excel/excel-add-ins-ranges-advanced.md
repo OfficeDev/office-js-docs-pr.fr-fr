@@ -3,12 +3,12 @@ title: Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)
 description: Les fonctions et scénarios d’objet de plage avancés, tels que les cellules spéciales, suppriment les doublons et utilisent des dates.
 ms.date: 05/06/2020
 localization_priority: Normal
-ms.openlocfilehash: eb25ae3f4bbe1231cfdf49f7535490b39c7a419e
-ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
+ms.openlocfilehash: 442e31494911bd00c9def895549af3ec7fce8d76
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "44170813"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217843"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)
 
@@ -60,7 +60,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-Votre complément devra mettre en forme les plages pour afficher les dates dans une forme plus lisible. L’exemple de`"[$-409]m/d/yy h:mm AM/PM;@"`affiche une heure comme «12/3/18 3:57 PM». Pour plus d’informations concernant les formats de date et d’heure , veuillez consulter les «Instructions relatifs aux formats de date et heure» dans l’article[ Instructions revoir afin de personnaliser le format numérique](https://support.office.com/article/review-guidelines-for-customizing-a-number-format-c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5).
+Votre complément devra mettre en forme les plages pour afficher les dates dans une forme plus lisible. L’exemple de`"[$-409]m/d/yy h:mm AM/PM;@"`affiche une heure comme «12/3/18 3:57 PM». Pour plus d’informations concernant les formats de date et d’heure , veuillez consulter les «Instructions relatifs aux formats de date et heure» dans l’article[ Instructions revoir afin de personnaliser le format numérique](https://support.microsoft.com/office/c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5).
 
 ## <a name="work-with-multiple-ranges-simultaneously"></a>Travailler simultanément avec plusieurs plages
 
@@ -94,7 +94,7 @@ Excel.run(function (context) {
 })
 ```
 
-Si aucune cellule avec la caractéristique ciblée n’existe dans la plage `getSpecialCells` lève une erreur**ItemNotFound**. Cela dévie le flux de contrôle vers un(e)`catch`bloc/méthode, s’il en existe. S’il n’existe `catch` pas de bloc, l’erreur interrompt la méthode.
+Si aucune cellule avec la caractéristique ciblée n’existe dans la plage `getSpecialCells` lève une erreur**ItemNotFound**. Cela dévie le flux de contrôle vers un(e)`catch`bloc/méthode, s’il en existe. S’il n’existe pas de `catch` bloc, l’erreur interrompt la méthode.
 
 Si vous attendez que des cellules avec la caractéristique ciblée existent toujours, vous souhaiterez probablement que votre code  lève une erreur si ces cellules ne sont pas là. Mais dans les scénarios où les cellules ne correspondent pas; votre code doit vérifier cette possibilité et le gérer gracieusement sans émettre d’erreur. Vous pouvez obtenir ce comportement avec la `getSpecialCellsOrNullObject`méthode et sa propriété renvoyée`isNullObject`. Cet exemple utilise les valeurs suivantes. Tenez compte du code suivant :
 
@@ -237,9 +237,9 @@ Excel.run(function (context) {
 
 ### <a name="cut-and-paste-move-cells"></a>Couper et coller (déplacer) des cellules
 
-La méthode [Range. MoveTo](/javascript/api/excel/excel.range#moveto-destinationrange-) déplace les cellules vers un nouvel emplacement dans le classeur. Ce comportement de déplacement de cellule fonctionne de la même manière que lorsque les cellules sont déplacées en [faisant glisser la bordure de la plage](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e) ou lorsque vous effectuez des opérations **couper** - **coller** . La mise en forme et les valeurs de la plage sont déplacées vers l’emplacement `destinationRange` spécifié en tant que paramètre.
+La méthode [Range. MoveTo](/javascript/api/excel/excel.range#moveto-destinationrange-) déplace les cellules vers un nouvel emplacement dans le classeur. Ce comportement de déplacement de cellule fonctionne de la même manière que lorsque les cellules sont déplacées en [faisant glisser la bordure de la plage](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e) ou lorsque vous effectuez des opérations **couper** - **coller** . La mise en forme et les valeurs de la plage sont déplacées vers l’emplacement spécifié en tant que `destinationRange` paramètre.
 
-L’exemple de code suivant montre une plage déplacée `Range.moveTo` avec la méthode. Notez que si la plage de destination est plus petite que la source, elle sera étendue de façon à inclure le contenu source.
+L’exemple de code suivant montre une plage déplacée avec la `Range.moveTo` méthode. Notez que si la plage de destination est plus petite que la source, elle sera étendue de façon à inclure le contenu source.
 
 ```js
 Excel.run(function (context) {
@@ -258,7 +258,7 @@ La méthode [Range. removeDuplicates](/javascript/api/excel/excel.range#removedu
 
 `removeDuplicates`prend un `number[]` représentant les indices de la colonne qui sont vérifiés pour les doublons. Ce tableau est à base zéro et lié à la rangée, et non à la feuille de calcul. La méthode prend également un paramètre Boolean qui spécifie si la première ligne est un en-tête. Lorsque**true**, la rangée du dessus est ignorée lorsque les doublons sont pris en considération. La `removeDuplicates` méthode renvoie un `RemoveDuplicatesResult` objet qui spécifie le nombre de lignes supprimées et le nombre de lignes uniques restantes.
 
-Lorsque vous utilisez la méthode `removeDuplicates` d’une plage, gardez les points suivants à l’esprit :
+Lorsque vous utilisez la méthode d’une plage `removeDuplicates` , gardez les points suivants à l’esprit :
 
 - `removeDuplicates`considère les valeurs de cellule, et non les résultats de la fonction. Si deux fonctions différentes évaluent le même résultat, les valeurs de la cellule ne sont pas considérées comme doublons.
 - Les cellules vides ne sont pas ignorées par`removeDuplicates`. La valeur d’une cellule vide est traitée comme toute autre valeur. Cela signifie que les rangées vides contenues au sein de la plage seront incluses dans le `RemoveDuplicatesResult`.

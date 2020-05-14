@@ -3,22 +3,22 @@ ms.date: 12/18/2019
 description: Renvoyer plusieurs résultats à partir de votre fonction personnalisée dans un complément Office Excel.
 title: Renvoyer plusieurs résultats à partir de votre fonction personnalisée
 localization_priority: Normal
-ms.openlocfilehash: a2632c621071f0cbc55f545847d9e9392d884b90
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 753755b481ab3db0de711c80ef082aedc82177ae
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719293"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217836"
 ---
 # <a name="return-multiple-results-from-your-custom-function"></a>Renvoyer plusieurs résultats à partir de votre fonction personnalisée
 
-Vous pouvez renvoyer plusieurs résultats à partir de votre fonction personnalisée qui sera renvoyée aux cellules voisines. Ce comportement est appelé infiltration. Lorsque votre fonction personnalisée renvoie un tableau de résultats, il s’agit d’une formule matricielle dynamique. Pour plus d’informations sur les formules de tableau dynamique dans Excel, voir [tableaux dynamiques et comportement de tableau propagé](https://support.office.com/article/dynamic-arrays-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531).
+Vous pouvez renvoyer plusieurs résultats à partir de votre fonction personnalisée qui sera renvoyée aux cellules voisines. Ce comportement est appelé infiltration. Lorsque votre fonction personnalisée renvoie un tableau de résultats, il s’agit d’une formule matricielle dynamique. Pour plus d’informations sur les formules de tableau dynamique dans Excel, voir [tableaux dynamiques et comportement de tableau propagé](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531).
 
 L’image suivante montre comment la `SORT` fonction descend en cellules voisines. Votre fonction personnalisée peut également renvoyer plusieurs résultats de la manière suivante.
 
 ![Capture d’écran de la fonction « Trier » affichant plusieurs résultats en plusieurs cellules.](../images/dynamic-array-spill.png)
 
-Pour créer une fonction personnalisée qui est une formule matricielle dynamique, elle doit renvoyer un tableau à deux dimensions de valeurs. Si les résultats sont détourés en cellules voisines qui contiennent déjà des valeurs, la `#SPILL!` formule affiche une erreur.
+Pour créer une fonction personnalisée qui est une formule matricielle dynamique, elle doit renvoyer un tableau à deux dimensions de valeurs. Si les résultats sont détourés en cellules voisines qui contiennent déjà des valeurs, la formule affiche une `#SPILL!` erreur.
 
 L’exemple suivant montre comment retourner un tableau dynamique qui se renverse vers le bas.
 
@@ -65,5 +65,5 @@ function spillRectangle() {
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Tableaux dynamiques et comportement de tableau renversé](https://support.office.com/article/dynamic-arrays-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531)
+- [Tableaux dynamiques et comportement de tableau renversé](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531)
 - [Options pour les fonctions personnalisées Excel](custom-functions-parameter-options.md)

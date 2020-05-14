@@ -1,27 +1,23 @@
 ---
-title: Création de commandes de complément dans votre manifeste pour Excel, Word et PowerPoint
-description: Utilisez VersionOverrides dans votre manifeste pour définir des commandes de complément pour Excel, Word et PowerPoint. Utilisez les commandes de complément pour créer des éléments d’interface utilisateur, ajouter des boutons ou des listes, et effectuer des actions.
-ms.date: 09/26/2019
+title: Créer des commandes de complément dans votre manifeste pour Excel, PowerPoint et Word
+description: Utilisez VersionOverrides dans votre manifeste pour définir des commandes de complément pour Excel, PowerPoint et Word. Utilisez les commandes de complément pour créer des éléments d’interface utilisateur, ajouter des boutons ou des listes et effectuer des actions.
+ms.date: 05/12/2020
 localization_priority: Normal
-ms.openlocfilehash: e3b85315d68368416df9d9bc09227ad06689026a
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: d318df0ab80a4cd83c6a74e77662f3e85df9f92d
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719181"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217885"
 ---
-# <a name="create-add-in-commands-in-your-manifest-for-excel-word-and-powerpoint"></a>Création de commandes de complément dans votre manifeste pour Excel, Word et PowerPoint
+# <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Créer des commandes de complément dans votre manifeste pour Excel, PowerPoint et Word
 
+Utilisez **[VersionOverrides](../reference/manifest/versionoverrides.md)** dans votre manifeste pour définir des commandes de complément pour Excel, PowerPoint et Word. Les commandes de complément permettent de personnaliser facilement l’interface utilisateur Office par défaut à l’aide des éléments d’interface utilisateur spécifiés qui effectuent des actions. Vous pouvez utiliser les commandes de complément pour :
 
-Utilisez **[VersionOverrides](../reference/manifest/versionoverrides.md)** dans votre manifeste pour définir des commandes de complément pour Excel, Word et PowerPoint. Les commandes de complément sont un moyen de personnaliser facilement l’interface utilisateur Office par défaut en y ajoutant des éléments d’interface de votre choix qui exécutent des actions. Vous pouvez utiliser les commandes de complément pour :
-- créer des éléments d’interface utilisateur ou des points d’entrée qui facilitent l’utilisation des fonctionnalités de votre complément ;  
-  
+- créer des éléments d’interface utilisateur ou des points d’entrée qui facilitent l’utilisation des fonctionnalités de votre complément ;
 - ajouter des boutons ou une liste déroulante de boutons sur le ruban ;
-  
 - ajouter des options de menu individuelles (pouvant chacune contenir des sous-menus) à des menus contextuels spécifiques ;
-  
 - exécuter des actions lorsque vous avez choisi une commande de complément. Vous pouvez effectuer les opérations suivantes :
-
   - afficher des compléments de volet de tâches avec lesquels les utilisateurs peuvent interagir. Dans votre complément de volet de tâches, vous pouvez afficher le code HTML qui utilise la structure de l’interface utilisateur Office pour créer une interface utilisateur personnalisée ;
 
      *ou*
@@ -154,7 +150,7 @@ Vous trouverez ci-dessous un exemple de l’élément **FunctionFile**.
     <FunctionFile resid="residDesktopFuncUrl" />
     <ExtensionPoint xsi:type="PrimaryCommandSurface">
       <!-- information about this extension point -->
-    </ExtensionPoint> 
+    </ExtensionPoint>
 
     <!-- You can define more than one ExtensionPoint element as needed -->
 </DesktopFormFactor>
@@ -168,7 +164,6 @@ Le code JavaScript dans le fichier HTML référencé par l’élément **Functio
 Le code suivant montre comment implémenter la fonction utilisée par **FunctionName**.
 
 ```js
-
 <script>
     // The initialize function must be run each time a new page is loaded.
     (function () {
@@ -192,7 +187,7 @@ Le code suivant montre comment implémenter la fonction utilisée par **Function
                 }
             });
 
-        // Calling event.completed is required. event.completed lets the platform know that processing has completed. 
+        // Calling event.completed is required. event.completed lets the platform know that processing has completed.
         event.completed();
     }
 </script>
@@ -257,7 +252,6 @@ Les exemples suivants montrent comment utiliser l’élément **ExtensionPoint**
 |**Tooltip** <br/> |Facultatif. Info-bulle du groupe. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Chaîne**. **Chaîne** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément **Ressources**. <br/> |
 |**Control** <br/> |Chaque groupe exige au moins un contrôle. Un élément **Control** peut être de type **Button** ou **Menu**. Utilisez **Menu** pour spécifier une liste déroulante de contrôles de bouton. Actuellement, seuls les boutons et les menus sont pris en charge. Pour plus d’informations, reportez-vous aux sections [Contrôles de bouton](../reference/manifest/control.md#button-control) et [Contrôles de menu](../reference/manifest/control.md#menu-dropdown-button-controls). <br/>**Remarque :** pour faciliter les opérations de dépannage, nous vous recommandons d’ajouter un élément **Control** et les éléments enfants **Resources** associés un par un.          |
 
-
 ### <a name="button-controls"></a>Contrôles de bouton
 
 Un bouton effectue une action unique quand il est sélectionné. Il peut exécuter une fonction JavaScript ou afficher un volet de tâches. L’exemple suivant montre comment définir deux boutons. Le premier bouton exécute une fonction JavaScript sans afficher d’interface utilisateur et le deuxième bouton affiche un volet de tâches. Dans l’élément **Contrôle** :
@@ -312,24 +306,21 @@ Un bouton effectue une action unique quand il est sélectionné. Il peut exécut
 |**Icon** <br/> | Obligatoire. Contient les éléments **Image** pour le bouton. Les fichiers image doivent être au format .png. <br/> **Image** <br/>  Définit une image à afficher sur le bouton. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Image**. **Image** est un enfant de l’élément **Images**, qui est lui-même un enfant de l’élément **Ressources**. L’attribut **size** indique la taille, en pixels, de l’image. Trois tailles d’images sont obligatoires : 16, 32 et 80. 5 tailles facultatives sont également prises en charge : 20, 24, 40, 48 et 64. <br/> |
 |**Action** <br/> | Obligatoire. Indique l’action à réaliser lorsque l’utilisateur sélectionne le bouton. Vous pouvez spécifier une des valeurs suivantes pour l’attribut **xsi:type** : <br/> **ExecuteFunction**, qui exécute une fonction JavaScript située dans le fichier référencé par **FunctionFile**. **ExecuteFunction** n’affiche pas d’interface utilisateur. L’élément enfant **FunctionName** spécifie le nom de la fonction à exécuter.<br/> **ShowTaskPane**, qui indique un complément de volet de tâches. L’élément enfant **SourceLocation** indique l’emplacement du fichier source du complément de volet de tâches à afficher. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Url** dans l’élément **Urls** dans l’élément **Ressources**. <br/> |
 
-
 ### <a name="menu-controls"></a>Contrôles de menu
+
 Un contrôle de type **Menu** peut être utilisé avec **PrimaryCommandSurface** ou **ContextMenu**, et permet de définir :
   
 - une option de menu de niveau racine.
-
 - une liste de sous-menus.
- 
+
 Lorsqu’il est utilisé avec **PrimaryCommandSurface**, l’option de menu de niveau racine s’affiche sous la forme d’un bouton dans le ruban. Lorsque le bouton est sélectionné, le sous-menu s’affiche sous la forme d’une liste déroulante. Lorsqu’il est utilisé avec **ContextMenu**, un élément de menu avec un sous-menu est inséré dans le menu contextuel. Dans les deux cas, les éléments individuels du sous-menu peuvent exécuter une fonction JavaScript ou afficher un volet de tâches. Un seul niveau de sous-menus est pris en charge pour l’instant.
 
 L’exemple de code ci-dessous indique comment définir un élément de menu comportant deux options de sous-menu. La première option de sous-menu affiche un volet de tâches et la seconde exécute une fonction JavaScript. Dans l’élément **Control** :
 
 - l’attribut **xsi:type** est obligatoire et doit être défini sur **Menu**.
-  
 - L’attribut **id** est une chaîne avec un maximum de 125 caractères.
 
 ```xml
-
 <Control xsi:type="Menu" id="TestMenu2">
   <Label resid="residLabel3" />
   <Tooltip resid="residToolTip" />
@@ -385,13 +376,12 @@ L’exemple de code ci-dessous indique comment définir un élément de menu com
 |**Info-bulle améliorée** <br/> | Obligatoire. Info-bulle multiligne associée au menu, qui est définie de la façon suivante : <br/> **Titre** <br/>  Obligatoire. Texte de l’info-bulle améliorée. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Chaîne**. **Chaîne** est un enfant de l’élément **ShortStrings**, qui est lui-même un enfant de l’élément **Ressources**. <br/> **Description** <br/>  Obligatoire. Description de l’info-bulle. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Chaîne**. **Chaîne** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément **Ressources**. <br/> |
 |**Icon** <br/> | Obligatoire. Contient les éléments **Image** du menu. Les fichiers image doivent être au format .png. <br/> **Image** <br/>  Image du menu. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Image**. **Image** est un enfant de l’élément **Images**, qui est lui-même un enfant de l’élément **Ressources**. L’attribut **size** indique la taille, en pixels, de l’image. Trois tailles d’image, en pixels, sont nécessaires : 16, 32 et 80. 5 tailles facultatives, en pixels, sont également prises en charge : 20, 24, 40, 48 et 64. <br/> |
 |**Éléments** <br/> |Obligatoire. Contient les éléments **Élément** pour chaque élément de sous-menu. Chaque élément **Élément** contient les mêmes éléments enfants que les [contrôles de bouton](../reference/manifest/control.md#button-control).  <br/> |
-   
+
 ## <a name="step-7-add-the-resources-element"></a>Étape 7 : ajouter l’élément Resources
 
 L’élément **Ressources** contient des ressources utilisées par les différents éléments enfants de l’élément **VersionOverrides**. Les ressources incluent des icônes, des chaînes et des URL. Un élément du manifeste peut utiliser une ressource en référençant l’**id** de la ressource. L’utilisation de l’**id** permet d’organiser le manifeste, en particulier lorsqu’il existe des versions différentes de la ressource pour différents paramètres régionaux. Un **id** doit comporter 32 caractères au maximum.
   
 L’exemple suivant montre un exemple de l’utilisation de l’élément **Ressources**. Chaque ressource peut avoir plusieurs éléments enfants **Override** afin que vous puissiez définir une ressource différente pour un paramètre régional spécifique.
-
 
 ```xml
 <Resources>
@@ -430,7 +420,8 @@ L’exemple suivant montre un exemple de l’utilisation de l’élément **Ress
 |**URL**/ **Url** <br/> |Indique un emplacement d’URL HTTPS. Une URL peut comporter 2 048 caractères au maximum.  <br/> |
 |**ShortStrings**/ **Chaîne** <br/> |Texte pour les éléments **Label** et **Title**. Chaque élément **String** comporte 125 caractères au maximum. <br/> |
 |**LongStrings**/ **Chaîne** <br/> |Texte des éléments **Tooltip** et **Description**. Chaque élément **String** contient un maximum de 250 caractères. <br/> |
-   > [!NOTE]
+
+> [!NOTE]
 > Vous devez utiliser le protocole SSL (Secure Sockets Layer) pour toutes les URL dans les éléments **Image** et **Url**.
 
 ### <a name="tab-values-for-default-office-ribbon-tabs"></a>Valeurs des onglets du ruban Office par défaut
@@ -445,4 +436,4 @@ Dans Excel et Word, vous pouvez ajouter vos commandes de complément au ruban en
 
 ## <a name="see-also"></a>Voir aussi
 
--  [Commandes de complément pour Excel, Word et PowerPoint](../design/add-in-commands.md)
+- [Commandes de complément pour Excel, PowerPoint et Word](../design/add-in-commands.md)

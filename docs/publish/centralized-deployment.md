@@ -3,12 +3,12 @@ title: Publication de compléments Office à l’aide du déploiement centralis�
 description: Découvrez comment utiliser le déploiement centralisé pour déployer des compléments internes ainsi que des compléments fournis par les éditeurs de logiciels indépendants.
 ms.date: 03/24/2020
 localization_priority: Normal
-ms.openlocfilehash: cd271aec9ac222815d52adf6375d09b02cb93ea9
-ms.sourcegitcommit: 315a648cce38609c3e1c92bd4a339e268f8a2e1d
+ms.openlocfilehash: 4c19a272e448e38bb5e895cd0bc2a53707a172ad
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "42978626"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217773"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>Publication de compléments Office à l’aide du déploiement centralisé via le centre d’administration Office 365
 
@@ -44,14 +44,14 @@ Selon la taille de l’audience cible, vous pouvez ajouter des étapes à cette 
 
 ## <a name="publish-an-office-add-in-via-centralized-deployment"></a>Publication d’un complément Office via le déploiement centralisé
 
-Avant de commencer, vérifiez que votre organisation est conforme à toutes les conditions d’utilisation du déploiement centralisé, comme décrit dans la rubrique [Déterminer si un déploiement centralisé de compléments est approprié pour votre organisation Office 365](https://support.office.com/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-B4527D49-4073-4B43-8274-31B7A3166F92).
+Avant de commencer, vérifiez que votre organisation est conforme à toutes les conditions d’utilisation du déploiement centralisé, comme décrit dans la rubrique [Déterminer si un déploiement centralisé de compléments est approprié pour votre organisation Office 365](/microsoft-365/admin/manage/centralized-deployment-of-add-ins).
 
 Si votre organisation répond à toutes les conditions requises, procédez comme suit pour publier un complément Office via un déploiement centralisé :
 
 1. Connectez-vous à Office 365 avec votre compte professionnel ou scolaire.
 2. Sélectionnez l’icône du lanceur d’applications située en haut à gauche et choisissez **Administrateur**.
 3. Dans le menu de navigation, appuyez sur **Afficher plus**, puis choisissez **Paramètres** > **Services et compléments**.
-4. Si un message annonçant le nouveau Centre d’administration Office 365 apparaît en haut de la page, cliquez dessus pour accéder à la préversion du Centre d’administration (reportez-vous à l’article [À propos du Centre d’administration Office 365](https://support.office.com/article/About-the-Office-365-admin-center-758befc4-0888-4009-9f14-0d147402fd23)).
+4. Si un message annonçant le nouveau Centre d’administration Office 365 apparaît en haut de la page, cliquez dessus pour accéder à la préversion du Centre d’administration (reportez-vous à l’article [À propos du Centre d’administration Office 365](/microsoft-365/admin/admin-overview/about-the-admin-center)).
 5. Choisissez **Déployer un complément** en haut de la page.
 6. Choisissez **Suivant** après avoir consulté la configuration requise.
 7. Dans la page **Déploiement centralisé**, choisissez l’une des options suivantes :

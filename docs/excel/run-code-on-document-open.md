@@ -1,20 +1,18 @@
 ---
-title: Exécuter du code dans votre complément Excel lorsque le document s’ouvre (aperçu)
+title: Exécuter du code dans votre complément Excel lorsque le document s’ouvre
 description: Exécutez le code dans votre complément Excel lorsque le document s’ouvre.
-ms.date: 02/20/2020
+ms.date: 05/11/2020
 localization_priority: Normal
-ms.openlocfilehash: fba43fdc508245632da911acecbfa52e00847b3b
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 0a9090315a4ddca80e25a94092c779a3f3271087
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717032"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217948"
 ---
-# <a name="run-code-in-your-excel-add-in-when-the-document-opens-preview"></a>Exécuter du code dans votre complément Excel lorsque le document s’ouvre (aperçu)
+# <a name="run-code-in-your-excel-add-in-when-the-document-opens"></a>Exécuter du code dans votre complément Excel lorsque le document s’ouvre
 
-[!include[Running custom functions in browser runtime note](../includes/excel-shared-runtime-preview-note.md)]
-
-Vous pouvez configurer votre complément Excel de sorte qu’il charge et exécute le code dès que le document est ouvert. Cette opération est utile si vous devez enregistrer des gestionnaires d’événements, Précharger les données pour le volet Office, synchroniser l’interface utilisateur ou effectuer d’autres tâches avant que le complément ne soit visible.
+Vous pouvez configurer votre complément Excel de sorte qu’il charge et exécute le code dès que le document est ouvert. Cette opération est utile si vous devez enregistrer des gestionnaires d’événements, précharger des données pour le volet Office, synchroniser l’interface utilisateur ou effectuer d’autres tâches avant que le complément ne soit visible.
 
 [!include[Excel shared runtime note](../includes/note-requires-shared-runtime.md)]
 
@@ -47,7 +45,7 @@ let behavior = await Office.addin.getStartupBehavior();
 
 ## <a name="how-to-run-code-when-the-document-opens"></a>Procédure d’exécution du code lorsque le document s’ouvre
 
-Lorsque votre complément est configuré pour être chargé à l’ouverture d’un document, il s’exécutera immédiatement. Le `Office.initialize` gestionnaire d’événements est appelé. Placez votre code de démarrage dans `Office.initialize` le gestionnaire d’événements.
+Lorsque votre complément est configuré pour être chargé à l’ouverture d’un document, il s’exécutera immédiatement. Le `Office.initialize` Gestionnaire d’événements est appelé. Placez votre code de démarrage dans le `Office.initialize` Gestionnaire d’événements.
 
 Le code suivant montre comment enregistrer un gestionnaire d’événements pour les événements de modification à partir de la feuille de calcul active. Si vous configurez le chargement de votre complément à l’ouverture du document, ce code enregistrera le gestionnaire d’événements à l’ouverture du document. Vous pouvez gérer les événements de modification avant l’ouverture du volet Office.
 
