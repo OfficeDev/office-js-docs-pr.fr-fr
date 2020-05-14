@@ -1,14 +1,14 @@
 ---
 title: Déployer et installer des compléments Outlook à des fins de test
 description: Créez un fichier manifeste, déployez le fichier IU de complément, installez le complément dans votre boîte aux lettres, puis testez-le.
-ms.date: 03/18/2020
+ms.date: 05/13/2020
 localization_priority: Priority
-ms.openlocfilehash: 76688ad3e1eca2dda832a94c3a9ae815e37678bc
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: 9b539f2f70a6615cdcf87f0d8d01dd5f0e6c2241
+ms.sourcegitcommit: 9c73a6117d933f0fbe307256aa62e6c84db4e9e3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890976"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44222193"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>Déployer et installer des compléments Outlook à des fins de test
 
@@ -66,9 +66,9 @@ L’URL complète est l’emplacement du fichier de manifeste de complément que
 
 Vous pouvez utiliser les cmdlets supplémentaires suivantes pour gérer les compléments pour une boîte aux lettres :
 
--  `Get-App` : répertorie les compléments activés pour une boîte aux lettres.
--  `Set-App` : active ou désactive un complément sur une boîte aux lettres.
--  `Remove-App` : supprime un complément précédemment installé à partir d’un serveur Exchange.
+- `Get-App` : répertorie les compléments activés pour une boîte aux lettres.
+- `Set-App` : active ou désactive un complément sur une boîte aux lettres.
+- `Remove-App` : supprime un complément précédemment installé à partir d’un serveur Exchange.
 
 ## <a name="client-versions"></a>Versions client
 
@@ -77,10 +77,10 @@ Le choix des versions du client Outlook à tester dépend de vos besoins en mati
 - Si vous développez un complément pour une utilisation privée ou uniquement pour les membres de votre organisation, il est important de tester les versions d’Outlook que votre entreprise utilise. Gardez à l’esprit que certains utilisateurs peuvent utiliser Outlook sur le web. Par conséquent, vous devez également tester les versions des navigateurs standard utilisés au sein de votre entreprise.
 
 - Si vous développez un complément pour [AppSource](https://appsource.microsoft.com), vous devez tester les versions requises tel que spécifié dans les [Stratégies de certification de la Place de marché commerciale 1120.3](/legal/marketplace/certification-policies#11203-functionality). Cela inclut notamment :
-    - la dernière et avant-dernière version d’Outlook sur Windows ;
-    - la dernière version d’Outlook sur Mac ;
-    - la dernière version d’Outlook sur iOS et Android (si votre complément [prend en charge le facteur de forme pour mobile](add-mobile-support.md)) ;
-    - Les versions de navigateur spécifiées dans la stratégie de validation de la Place de marché commerciale 1120.3.
+  - la dernière et avant-dernière version d’Outlook sur Windows ;
+  - la dernière version d’Outlook sur Mac ;
+  - la dernière version d’Outlook sur iOS et Android (si votre complément [prend en charge le facteur de forme pour mobile](add-mobile-support.md)) ;
+  - Les versions de navigateur spécifiées dans la stratégie de validation de la Place de marché commerciale 1120.3.
 
 > [!NOTE]
 > Si votre complément ne prend pas en charge l’un des clients ci-dessus car il demande [un ensemble de conditions requises d’API](apis.md) que le client ne prend pas en charge, ce client est supprimé de la liste des clients requis.

@@ -4,12 +4,12 @@ description: En savoir plus sur les ensembles de conditions requises de l’API 
 ms.date: 05/06/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 80b7ed4ece8f56a767cda47df4566b5a2fdf6d7a
-ms.sourcegitcommit: 7382e1edc2705e04604d15c44b049e21709fd6ad
+ms.openlocfilehash: 290bcf815fbd0a0812dd5f675ecb6f3c109e2a5e
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "44154233"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217745"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Outlook
 
@@ -102,7 +102,7 @@ Les compléments sont pris en charge dans Outlook sur les plateformes suivantes.
 || interface utilisateur classique d’Outlook lors de sa connexion à<br>Exchange local | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md), [1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md), [1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md), [1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md), [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), [1.6](../objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md) |
 
 > [!NOTE]
-> <sup>1</sup> La prise en charge pour 1.8 dans Outlook sous Windows avec un abonnement Microsoft 365 ou un achat définitif au détail est disponible à partir de la version 1910 (build 12130,20272). Pour plus d’informations en fonction de version, consultez la page de l’historique des mises à jour d’[Office 2019](/officeupdates/update-history-office-2019) ou [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) et [comment trouver la version client et le canal de mise à jour Office que vous utilisez](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19).
+> <sup>1</sup> La prise en charge pour 1.8 dans Outlook sous Windows avec un abonnement Microsoft 365 ou un achat définitif au détail est disponible à partir de la version 1910 (build 12130,20272). Pour plus d’informations en fonction de version, consultez la page de l’historique des mises à jour d’[Office 2019](/officeupdates/update-history-office-2019) ou [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) et [comment trouver la version client et le canal de mise à jour Office que vous utilisez](https://support.office.com/article/about-office-what-version-of-office-am-i-using-932788b8-a3ce-44bf-bb09-e334518b8b19).
 >
 > <sup>2</sup> La prise en charge de la version 1.3 dans Outlook 2013 a été ajoutée dans le cadre de la [mise à jour du 8 décembre 2015 pour Outlook 2013 (KB3114349)](https://support.microsoft.com/kb/3114349). La prise en charge de la version 1.4 dans Outlook 2013 a été ajoutée dans le cadre de la [mise à jour du 13 septembre 2016 pour Outlook 2013 (KB3118280)](https://support.microsoft.com/help/3118280). La prise en charge de la version 1.4 dans Outlook 2016 a été ajoutée dans le cadre la [mise à jour du 3 juillet 2018 pour Office 2016 (KB4022223)](https://support.microsoft.com/help/4022223).
 >

@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez cr?er un compl?ment Word qui ins?re
 ms.date: 01/16/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: c04816037ec822719437affff95c1afa779f9d02
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: e3d6f2c590ae34189ce9127d55b3f4332a63e1aa
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717375"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217766"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches Word
 
@@ -316,7 +316,7 @@ Dans cette étape du didacticiel, vous devez appliquer un style intégré au tex
 
 3. Assurez-vous qu’il existe au moins trois paragraphes dans le document. Vous pouvez cliquez trois fois sur le bouton **Insérer un paragraphe**. *Vérifiez attentivement qu’aucun paragraphe vide n’apparaît à la fin du document. S’il y en a un, supprimez-le.*
 
-4. Dans Word, créez un [style personnalisé](https://support.office.com/article/Customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563) nommé « MyCustomStyle ». Vous pouvez y appliquer la mise en forme que vous souhaitez.
+4. Dans Word, créez un [style personnalisé](https://support.office.com/article/customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563) nommé « MyCustomStyle ». Vous pouvez y appliquer la mise en forme que vous souhaitez.
 
 5. Sélectionnez le bouton **Appliquer le style**. Le style prédéfini **Référence intense** est appliqué au premier paragraphe.
 

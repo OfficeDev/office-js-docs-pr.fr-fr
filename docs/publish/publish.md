@@ -3,12 +3,12 @@ title: Déployer et publier des compléments Office
 description: Méthodes et options pour déployer votre complément Office à des fins de test ou de distribution auprès des utilisateurs.
 ms.date: 05/06/2020
 localization_priority: Priority
-ms.openlocfilehash: b4ee2dab2fec0237ad06776861678c4c23da6ca8
-ms.sourcegitcommit: 1e3d7051ba7c8c0ccfd6607099d90469fc8141e2
+ms.openlocfilehash: e7bcd3a1de0c81d0626cf0f59569acb0a8a1d09e
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "44066087"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217997"
 ---
 # <a name="deploy-and-publish-office-add-ins"></a>Déployer et publier des compléments Office
 
@@ -50,9 +50,9 @@ Les options de déploiement disponibles dépendent de l’hôte Office que vous 
 
 Les sections suivantes fournissent des informations supplémentaires sur les méthodes de déploiement les plus fréquemment utilisées pour distribuer des compléments Office aux utilisateurs au sein d’une organisation.
 
-Pour plus d’informations sur l’acquisition, l’insertion et l’exécution des compléments par les utilisateurs finaux, consultez l’article relatif aux [premiers pas de l’utilisation de votre complément Office](https://support.office.com/en-ie/article/Start-using-your-Office-Add-in-82e665c4-6700-4b56-a3f3-ef5441996862?ui=en-US&rs=en-IE&ad=IE).
+Pour plus d’informations sur l’acquisition, l’insertion et l’exécution des compléments par les utilisateurs finaux, consultez l’article relatif aux [premiers pas de l’utilisation de votre complément Office](https://support.office.com/article/start-using-your-office-add-in-82e665c4-6700-4b56-a3f3-ef5441996862).
 
-### <a name="centralized-deployment-via-the-office-365-admin-center"></a>Déploiement centralisé via le centre d’administration Office 365 
+### <a name="centralized-deployment-via-the-office-365-admin-center"></a>Déploiement centralisé via le centre d’administration Office 365
 
 Le centre d’administration Office 365 permet aux administrateurs de déployer facilement des compléments Office auprès d’utilisateurs et de groupes au sein de leur organisation. Les compléments déployés via le centre d’administration sont disponibles pour les utilisateurs directement dans leurs applications Office, sans qu’aucune configuration client ne soit requise. Vous pouvez utiliser le déploiement centralisé pour déployer des compléments internes, ainsi que des compléments fournis par des éditeurs de logiciels indépendants.
 
