@@ -1,16 +1,16 @@
 ---
 title: Commandes Activé et Désactivé pour les compléments
 description: Découvrez la modification de l'état Activé ou Désactivé des boutons de rubans et des éléments de menu personnalisés dans votre complément web Office.
-ms.date: 04/11/2020
+ms.date: 05/11/2020
 localization_priority: Priority
-ms.openlocfilehash: b223949c5665f0e523a6003ccb4e3f29cc3f017c
-ms.sourcegitcommit: 79c55e59294e220bd21a5006080f72acf3ec0a3f
+ms.openlocfilehash: fa4830c0112486bbad7a13edf78e0c8c4277e143
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "43581924"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217892"
 ---
-# <a name="enable-and-disable-add-in-commands-preview"></a>Commandes Activé et Désactivé pour les compléments (préversion)
+# <a name="enable-and-disable-add-in-commands"></a>Commandes Activé et Désactivé pour les compléments
 
 Lorsque seulement quelques fonctionnalités de votre complément doivent être disponibles dans certains contextes, vous pouvez activer ou désactiver vos commandes de complément personnalisées par programme. Par exemple, une fonction qui modifie l’en-tête d’un tableau doit être uniquement activée lorsque le curseur se trouve dans un tableau.
 
@@ -20,13 +20,6 @@ Vous pouvez également préciser si la commande est activée ou désactivée lor
 > Cet article suppose que vous connaissez la documentation décrite ci-après. Étudiez-la si vous n’avez pas récemment utilisé les commandes de complément (éléments de menu et boutons de ruban personnalisés).
 >
 > [Concepts basiques pour les commandes de complément](add-in-commands.md)
-
-## <a name="preview-status"></a>État de préversion
-
-Les API décrites dans cet article sont en préversion et ne sont actuellement disponibles que dans Excel.
-
-> [!NOTE]
-> [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 ## <a name="rules-and-gotchas"></a>Règles et pièges
 
