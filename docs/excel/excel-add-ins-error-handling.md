@@ -1,21 +1,21 @@
 ---
 title: Gestion des erreurs
 description: En savoir plus sur la logique de gestion des erreurs de l’API JavaScript Excel pour prendre en compte les erreurs d’exécution.
-ms.date: 04/10/2020
+ms.date: 05/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 85fcd580828a2db95cd8e021dec3611ca6591e1c
-ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
+ms.openlocfilehash: aaadcf41f03258bdf85d9796cc611a1c05478549
+ms.sourcegitcommit: 110a7f247ce83c7434ea32098497d2864e28e096
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43225727"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "44227404"
 ---
 # <a name="error-handling"></a>Gestion des erreurs
 
 Lorsque vous créez un complément à l’aide de l’API JavaScript pour Excel, veillez à inclure la logique de gestion des erreurs pour prendre en compte les erreurs d’exécution. Il s’agit d’une étape essentielle en raison de la nature asynchrone de l’API.
 
 > [!NOTE]
-> Pour plus d’informations sur `sync()` la méthode et la nature asynchrone de l’API JavaScript pour Excel, voir [concepts de programmation fondamentaux avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md).
+> Pour plus d’informations sur la `sync()` méthode et la nature asynchrone de l’API JavaScript pour Excel, voir [concepts de programmation fondamentaux avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md).
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
@@ -76,4 +76,4 @@ Le tableau suivant contient la liste des erreurs que l’API peut renvoyer.
 ## <a name="see-also"></a>Voir aussi
 
 - [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
-- [Objet OfficeExtension.Error (API JavaScript pour Excel)](/javascript/api/office/officeextension.error)
+- [Objet OfficeExtension.Error (API JavaScript pour Excel)](/javascript/api/office/officeextension.error?view=excel-js-preview)
