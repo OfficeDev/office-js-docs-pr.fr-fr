@@ -905,6 +905,8 @@
           href: outlook/extension-module-outlook-add-ins.md
         - name: Compléments pour Outlook Mobile
           href: outlook/outlook-mobile-addins.md
+        - name: Réunion en ligne sur un appareil mobile (aperçu)
+          href: outlook/online-meeting.md
         - name: Compléments d’envoi
           href: outlook/outlook-on-send-addins.md
         - name: Volet des tâches pouvant être épinglé
@@ -969,8 +971,6 @@
               href: outlook/get-or-set-the-time-of-an-appointment.md
             - name: Obtenir et définir un emplacement
               href: outlook/get-or-set-the-location-of-an-appointment.md
-            - name: Configurer une réunion en ligne (aperçu)
-              href: outlook/online-meeting.md
         - name: Confidentialité et sécurité
           items:
             - name: Vue d’ensemble
