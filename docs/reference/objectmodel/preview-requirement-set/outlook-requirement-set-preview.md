@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: Les fonctionnalités et les API qui sont actuellement en préversion pour les compléments Outlook.
-ms.date: 05/04/2020
+ms.date: 05/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 433abf5ea15cfe9ee7cefa579b1ad965fdeb93cf
-ms.sourcegitcommit: 800dacf0399465318489c9d949e259b5cf0f81ca
+ms.openlocfilehash: c2b4d31fdb545afdc695c5aef84856aeaebdbf28
+ms.sourcegitcommit: b634bfe9a946fbd95754e87f070a904ed57586ff
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "44022182"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "44253627"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -18,6 +18,11 @@ Le sous-ensemble d’API de complément Outlook de l’API JavaScript pour Offic
 > Cette documentation a trait à un [ensemble de conditions requises](../../requirement-sets/outlook-api-requirement-sets.md) en **préversion**. Ces conditions n’ont pas encore été toutes implémentées, par conséquent les clients ne pourront pas demander une aide précise concernant ces conditions. Vous ne devez pas spécifier cet ensemble de conditions dans le manifeste de votre complément.
 
 [!INCLUDE [Information about using preview APIs](../../../includes/using-preview-apis-host.md)]
+
+> [!TIP]
+> Vous pouvez afficher un aperçu des fonctionnalités dans Outlook sur le Web en [configurant la version ciblée sur votre client Microsoft 365](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center). « Configurer l’accès en aperçu » est indiqué sur cette page pour les fonctionnalités applicables.
+>
+> Pour les autres fonctionnalités, vous pouvez demander l’accès à des bits d’aperçu pour Outlook sur le Web à l’aide de votre compte Microsoft 365 en remplissant et envoyant [ce formulaire](https://aka.ms/OWAPreview). Le « demander l’accès » est indiqué sur ces fonctionnalités.
 
 L’ensemble de conditions requises présenté en aperçu comprend toutes les fonctionnalités de l’[ensemble de conditions requises 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md).
 
@@ -53,7 +58,7 @@ Ajout d’une nouvelle propriété qui représente le critère de diffusion d’
 
 #### <a name="officemailboxenumsappointmentsensitivitytype"></a>[Office. MailboxEnums. AppointmentSensitivityType](/javascript/api/outlook/office.mailboxenums.appointmentsensitivitytype?view=outlook-js-preview)
 
-Ajout d’une nouvelle `AppointmentSensitivityType` énumération qui représente les options de critère de diffusion disponibles sur un rendez-vous.
+Ajout d’une nouvelle énumération `AppointmentSensitivityType` qui représente les options de critère de diffusion disponibles sur un rendez-vous.
 
 **Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
 
@@ -67,15 +72,15 @@ Ajout d’une nouvelle `AppointmentSensitivityType` énumération qui représent
 
 #### <a name="officecontextmailboxitembodyappendonsendasync"></a>[Office. Context. Mailbox. Item. Body. appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-)
 
-Ajout d’une nouvelle fonction à `Body` l’objet qui ajoute des données à la fin du corps de l’élément en mode composition.
+Ajout d’une nouvelle fonction à l' `Body` objet qui ajoute des données à la fin du corps de l’élément en mode composition.
 
-**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
+**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Office 365), Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 #### <a name="extendedpermissions"></a>[ExtendedPermissions](../../manifest/extendedpermissions.md)
 
-Ajout d’un nouvel élément au manifeste dans lequel `AppendOnSend` l’autorisation étendue doit être incluse dans la collection des autorisations étendues.
+Ajout d’un nouvel élément au manifeste dans lequel l' `AppendOnSend` autorisation étendue doit être incluse dans la collection des autorisations étendues.
 
-**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
+**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Office 365), Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 <br>
 
@@ -101,33 +106,33 @@ Ajout d’une nouvelle fonction qui renvoie les données d’initialisation tran
 
 #### <a name="officecontextmailboxitembodysetsignatureasync"></a>[Office. Context. Mailbox. Item. Body. setSignatureAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#setsignatureasync-data--options--callback-)
 
-Ajout d’une nouvelle fonction à `Body` l’objet qui ajoute ou remplace la signature dans le corps de l’élément en mode composition.
+Ajout d’une nouvelle fonction à l' `Body` objet qui ajoute ou remplace la signature dans le corps de l’élément en mode composition.
 
-**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
+**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Office 365), Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 #### <a name="officecontextmailboxitemdisableclientsignatureasync"></a>[Office. Context. Mailbox. Item. disableClientSignatureAsync](office.context.mailbox.item.md#methods)
 
 Ajout d’une fonction qui désactive la signature client pour la boîte aux lettres d’envoi en mode composition.
 
-**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
+**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Office 365), Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 #### <a name="officecontextmailboxitemgetcomposetypeasync"></a>[Office. Context. Mailbox. Item. getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#getcomposetypeasync-options--callback-)
 
 Ajout d’une nouvelle fonction qui obtient le type de composition d’un message en mode composition.
 
-**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
+**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Office 365), Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 #### <a name="officecontextmailboxitemisclientsignatureenabledasync"></a>[Office. Context. Mailbox. Item. isClientSignatureEnabledAsync](office.context.mailbox.item.md#methods)
 
 Ajout d’une fonction qui vérifie si la signature client est activée sur l’élément en mode composition.
 
-**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
+**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Office 365), Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 #### <a name="officemailboxenumscomposetype"></a>[Office. MailboxEnums. ComposeType](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-preview)
 
-Ajout d’une nouvelle `ComposeType` énumération disponible en mode composition.
+Ajout d’une nouvelle énumération `ComposeType` disponible en mode composition.
 
-**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
+**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Office 365), Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 <br>
 

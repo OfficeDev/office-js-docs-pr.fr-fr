@@ -1,25 +1,25 @@
 ---
 title: Élément Rule dans le fichier manifeste
 description: L’élément rule spécifie les règles d’activation qui doivent être évaluées pour ce complément de messagerie contextuel.
-ms.date: 03/16/2020
+ms.date: 05/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 06d9985615617e50567dcf614268d9181989f2a1
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: c1f2be3371333bfd87e0693d02a9a5984c18317b
+ms.sourcegitcommit: b634bfe9a946fbd95754e87f070a904ed57586ff
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720434"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "44253620"
 ---
 # <a name="rule-element"></a>Élément Rule
 
 Spécifie les règles d’activation qui doivent être évaluées pour ce complément de messagerie contextuel.
 
-**Type de complément :** complément de messagerie contextuel
+**Type de complément :** Courrier (contextuel)
 
 ## <a name="contained-in"></a>Contenu dans
 
 - [OfficeApp](officeapp.md)
-- [ExtensionPoint](extensionpoint.md)
+- [ExtensionPoint](extensionpoint.md) ([**CustomPane** (déconseillé)](https://developer.microsoft.com/outlook/blogs/make-your-add-ins-available-in-the-office-ribbon/), [**DetectedEntity**](extensionpoint.md#detectedentity))
 
 ## <a name="attributes"></a>Attributs
 
