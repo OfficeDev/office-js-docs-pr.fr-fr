@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: Les fonctionnalités et les API qui sont actuellement en préversion pour les compléments Outlook.
-ms.date: 05/15/2020
+ms.date: 05/18/2020
 localization_priority: Normal
-ms.openlocfilehash: c2b4d31fdb545afdc695c5aef84856aeaebdbf28
-ms.sourcegitcommit: b634bfe9a946fbd95754e87f070a904ed57586ff
+ms.openlocfilehash: 893c90dc7344adba86a8a92b86063ed2419eae34
+ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "44253627"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44278342"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -22,7 +22,7 @@ Le sous-ensemble d’API de complément Outlook de l’API JavaScript pour Offic
 > [!TIP]
 > Vous pouvez afficher un aperçu des fonctionnalités dans Outlook sur le Web en [configurant la version ciblée sur votre client Microsoft 365](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center). « Configurer l’accès en aperçu » est indiqué sur cette page pour les fonctionnalités applicables.
 >
-> Pour les autres fonctionnalités, vous pouvez demander l’accès à des bits d’aperçu pour Outlook sur le Web à l’aide de votre compte Microsoft 365 en remplissant et envoyant [ce formulaire](https://aka.ms/OWAPreview). Le « demander l’accès » est indiqué sur ces fonctionnalités.
+> Pour les autres fonctionnalités, vous pouvez demander l’accès à des bits d’aperçu pour Outlook sur le Web à l’aide de votre compte Microsoft 365 en remplissant et envoyant [ce formulaire](https://aka.ms/OWAPreview). « Demander un accès en aperçu » est indiqué sur ces fonctionnalités.
 
 L’ensemble de conditions requises présenté en aperçu comprend toutes les fonctionnalités de l’[ensemble de conditions requises 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md).
 
@@ -81,6 +81,34 @@ Ajout d’une nouvelle fonction à l' `Body` objet qui ajoute des données à la
 Ajout d’un nouvel élément au manifeste dans lequel l' `AppendOnSend` autorisation étendue doit être incluse dans la collection des autorisations étendues.
 
 **Disponible dans**: Outlook sur Windows (connecté à l’abonnement Office 365), Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+
+<br>
+
+---
+
+---
+
+### <a name="event-based-activation"></a>Activation basée sur les événements
+
+Prise en charge supplémentaire de la fonctionnalité d’activation basée sur un événement dans les compléments Outlook. Pour en savoir plus, reportez-vous à [la rubrique Configurer votre complément Outlook pour l’activation basée sur les événements](../../../outlook/autolaunch.md) .
+
+#### <a name="launchevent-extension-point"></a>[Point d’extension LaunchEvent](../../manifest/extensionpoint.md#launchevent-preview)
+
+Ajout `LaunchEvent` de la prise en charge du point d’extension au manifeste. Il configure les fonctionnalités d’activation basée sur les événements.
+
+**Disponible dans**: Outlook sur le Web (moderne, [demander un accès en aperçu](https://aka.ms/OWAPreview))
+
+#### <a name="launchevents-manifest-element"></a>[Élément de manifeste LaunchEvents](../../manifest/launchevents.md)
+
+Ajout `LaunchEvents` de l’élément à manifest. Il prend en charge la configuration de la fonctionnalité d’activation basée sur les événements.
+
+**Disponible dans**: Outlook sur le Web (moderne, [demander un accès en aperçu](https://aka.ms/OWAPreview))
+
+#### <a name="runtimes-manifest-element"></a>[Élément de manifeste runtimes](../../manifest/runtimes.md)
+
+Ajout de la prise en charge d’Outlook à l' `Runtimes` élément de manifeste. Il fait référence aux fichiers HTML et JavaScript nécessaires à la fonctionnalité d’activation basée sur les événements.
+
+**Disponible dans**: Outlook sur le Web (moderne, [demander un accès en aperçu](https://aka.ms/OWAPreview))
 
 <br>
 

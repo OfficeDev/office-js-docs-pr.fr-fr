@@ -1,14 +1,14 @@
 ---
 title: Comparer la prise en charge des compléments Outlook dans Outlook sur Mac
 description: Découvrez comment prend en charge les compléments dans Outlook sur Mac avec les autres hôtes Outlook.
-ms.date: 11/26/2019
+ms.date: 05/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 452a162a05a44477c85a99417b3a8cefbf49e515
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: fd03141fbcaecb88db358101a00681c8a85af382
+ms.sourcegitcommit: 71a44405e42b4798a8354f7f96d84548ae7a00f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720826"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44280351"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-hosts"></a>Comparaison de la prise en charge des compléments Outlook dans Outlook sur Mac avec d’autres hôtes Outlook
 
@@ -18,10 +18,10 @@ Pour plus d’informations, consultez la rubrique [Déployer et installer des co
 
 | Domaine | Outlook sur le Web, Windows et les appareils mobiles | Outlook sur Mac |
 |:-----|:-----|:-----|
-| Versions d’office.js et du schéma de manifeste des Compléments Office pris en charge | Toutes les API dans Office.js et le schéma version 1.1. | Toutes les API dans Office.js et le schéma version 1.1.<br><br>**Remarque**: Outlook sur Mac ne prend pas en charge l’enregistrement d’une réunion. La méthode `saveAsync` échoue lorsqu’elle est appelée à partir d’une réunion en mode composition. Pour contourner ce problème, voir [Impossible d’enregistrer une réunion en tant que brouillon dans Outlook pour Mac à l’aide des API de JS Office](https://support.microsoft.com/help/4505745). |
+| Versions d’office.js et du schéma de manifeste des Compléments Office pris en charge | Toutes les API dans Office.js et le schéma version 1.1. | Toutes les API dans Office.js et le schéma version 1.1.<br><br>**Remarque**: dans Outlook sur Mac, seul Build 16.35.308 ou version ultérieure prend en charge l’enregistrement d’une réunion. Dans le cas contraire, la `saveAsync` méthode échoue lorsqu’elle est appelée à partir d’une réunion en mode composition. Pour contourner ce problème, voir [Impossible d’enregistrer une réunion en tant que brouillon dans Outlook pour Mac à l’aide des API de JS Office](https://support.microsoft.com/help/4505745). |
 | Instances d’une série de rendez-vous périodiques | <ul><li>Peut obtenir l’ID d’élément et d’autres propriétés d’un rendez-vous principal ou d’une instance de rendez-vous d’une série périodique.</li><li>peut utiliser [mailbox.displayAppointmentForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) pour afficher une instance ou le masque d’une série périodique.</li></ul> | <ul><li>Peut obtenir l’ID d’élément et d’autres propriétés du rendez-vous principal, mais pas ceux d’une instance d’une série périodique.</li><li>Peut afficher le rendez-vous principal d’une série périodique. Sans l’ID d’élément, ne peut pas afficher une instance d’une série périodique.</li></ul> |
 | Type de destinataire d’un participant de rendez-vous | Peut utiliser [EmailAddressDetails.recipientType](/javascript/api/outlook/office.emailaddressdetails#recipienttype) pour identifier le type de destinataire d’un participant. | `EmailAddressDetails.recipientType` Renvoie `undefined` pour les participants à un rendez-vous. |
-| Chaîne de version de l’hôte | Le format de la chaîne de version renvoyée par [diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#hostversion) dépend du type de l’hôte. Par exemple :<ul><li>Outlook sur Windows :`15.0.4454.1002`</li><li>Outlook sur le Web :`15.0.918.2`</li></ul> |Exemple de la chaîne de version renvoyée `Diagnostics.hostVersion` par sur Outlook sur Mac :`15.0 (140325)` |
+| Chaîne de version de l’hôte | Le format de la chaîne de version renvoyée par [diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#hostversion) dépend du type de l’hôte. Par exemple :<ul><li>Outlook sur Windows :`15.0.4454.1002`</li><li>Outlook sur le Web :`15.0.918.2`</li></ul> |Exemple de la chaîne de version renvoyée par `Diagnostics.hostVersion` sur Outlook sur Mac :`15.0 (140325)` |
 | Propriétés personnalisées d’un élément | Si le réseau tombe en panne, un complément peut toujours accéder aux propriétés personnalisées mises en cache. | Étant donné qu’Outlook sur Mac ne met pas en cache les propriétés personnalisées, si le réseau tombe en panne, les compléments ne pourront pas y accéder. |
 | Détails des pièces jointes | Les noms du type de contenu et de la pièce jointe figurant dans un objet [AttachmentDetails](/javascript/api/outlook/office.attachmentdetails) dépendent du type d’hôte :<ul><li>Exemple JSON de `AttachmentDetails.contentType`: `"contentType": "image/x-png"`. </li><li>`AttachmentDetails.name` ne contient aucune extension de nom de fichier. Par exemple, si la pièce jointe est un message dont l’objet est « RE: Summer activity », l’objet JSON qui représente le nom de la pièce jointe serait `"name": "RE: Summer activity"`.</li></ul> | <ul><li>Exemple JSON de `AttachmentDetails.contentType`: `"contentType" "image/png"`</li><li>`AttachmentDetails.name` inclut toujours une extension de nom de fichier. Les pièces jointes qui sont des éléments de messagerie ont une extension .eml et les rendez-vous ont une extension .ics. Par exemple, si une pièce jointe est un message électronique dont l’objet est « RE: Summer activity », l’objet JSON qui représente le nom de pièce jointe sera `"name": "RE: Summer activity.eml"`<p>**REMARQUE** : si un fichier est joint par programmation (par exemple, par le biais d’un complément) sans extension, `AttachmentDetails.name` ne contient pas l’extension dans le nom de fichier.</p></li></ul> |
 | Chaîne représentant le fuseau horaire dans les propriétés `dateTimeCreated` et `dateTimeModified` |Par exemple : `Thu Mar 13 2014 14:09:11 GMT+0800 (China Standard Time)` | Par exemple : `Thu Mar 13 2014 14:09:11 GMT+0800 (CST)` |

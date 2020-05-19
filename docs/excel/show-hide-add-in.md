@@ -1,24 +1,24 @@
 ---
 title: Afficher ou masquer un complément Office dans un runtime partagé
 description: Découvrez comment masquer ou afficher par programme l’interface utilisateur d’un complément pendant qu’il s’exécute en continu
-ms.date: 05/11/2020
+ms.date: 05/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 05d254bd4dd5ddb11fd124d75e62ce1a4d8125d2
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: e49c47c86a986c85ad12e09666b7ac2fb5411322
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217906"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275713"
 ---
 # <a name="show-or-hide-an-office-add-in-in-a-shared-runtime"></a>Afficher ou masquer un complément Office dans un runtime partagé
 
 Un complément Office peut inclure n’importe lequel des éléments suivants :
 
 - Un volet Office
-- Fichier de fonctions sans interface utilisateur
+- Fichier de fonctions sans interface utilisateur (fonctions personnalisées qui n’utilisent pas de volet de tâches ou d’autres éléments d’interface utilisateur)
 - Une fonction personnalisée Excel
 
-Par défaut, chaque partie s’exécute dans son propre Runtime JavaScript distinct, avec son propre objet global et ses propres variables globales. 
+Par défaut, chaque partie s’exécute dans son propre Runtime JavaScript distinct, avec son propre objet global et ses propres variables globales.
 
 Il est possible que des compléments avec deux ou plusieurs composants partagent un Runtime JavaScript commun. Cette fonctionnalité d’exécution partagée permet de nouvelles API masquant et rouvrir le volet Office pendant l’exécution du complément.
 

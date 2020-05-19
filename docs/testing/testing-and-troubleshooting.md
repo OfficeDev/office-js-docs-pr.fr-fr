@@ -1,14 +1,14 @@
 ---
 title: Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 description: Découvrez comment résoudre les problèmes liés aux erreurs utilisateur dans les compléments Office.
-ms.date: 04/13/2020
+ms.date: 05/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 81ca9eac89fb949bd2c1f7f63861d8a4f5295a79
-ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
+ms.openlocfilehash: 1ef805f4a35431d3bd7611054963ff6adfa53de0
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "43241048"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275720"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 
@@ -43,7 +43,7 @@ Vous pouvez également nous adresser des commentaires : si vous utilisez Excel 
 Si un complément Outlook s’exécutant sous Windows et [à l’aide d’Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) ne fonctionne pas correctement, essayez d’activer le débogage de script dans Internet Explorer. 
 
 
-- Accédez à outils > **Internet options** > **avancées**.
+- Accédez à outils > **Internet options**  >  **avancées**.
     
 - Sous **Parcourir**, décochez les cases **Désactiver le débogage des scripts (Internet Explorer)** et **Désactiver le débogage des scripts (autres applications)**.
     
@@ -96,7 +96,7 @@ Pour ajouter une URL à votre liste de sites de confiance :
 Ce problème se produit lorsque l’API de la boîte de dialogue est utilisée en mode contextuel. Pour éviter ce problème, utilisez l’indicateur [displayInFrame](/javascript/api/office/office.ui). Cela nécessite que votre page prenne en charge l’affichage dans un iframe. L’exemple suivant montre comment utiliser l’indicateur.
 
 ```js
-Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callback);
+Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callback);
 ```
 
 ## <a name="changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect"></a>Les modifications apportées aux commandes de complément, y compris les éléments de menu et les boutons du ruban ne s’appliquent pas

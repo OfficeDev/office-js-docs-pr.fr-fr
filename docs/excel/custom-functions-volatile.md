@@ -3,12 +3,12 @@ ms.date: 01/14/2020
 description: Apprenez à implémenter des fonctions personnalisées de diffusion en continu et volatiles.
 title: Valeurs volatiles dans les fonctions
 localization_priority: Normal
-ms.openlocfilehash: 617599a2687696a96240c4f162f9b02788a215f4
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 7545d9928eaeb3779a8f7e04c87d0d5f33a7a131
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717207"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275776"
 ---
 # <a name="volatile-values-in-functions"></a>Valeurs volatiles dans les fonctions
 
@@ -20,7 +20,7 @@ Excel contient plusieurs fonctions volatiles intégrées, comme `RAND` et `TODAY
 
 Les fonctions personnalisées vous permettent de créer vos propres fonctions volatiles, qui peuvent être utiles lors de la gestion des dates, des heures, des nombres aléatoires et de la modélisation. Par exemple, les [simulations Monte Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_method) nécessitent la génération d’entrées aléatoires pour déterminer une solution optimale.
 
-Si vous choisissez de générer automatiquement votre fichier JSON, déclarez une fonction volatile avec la balise `@volatile`de commentaire JSDoc. À partir de plus d’informations sur la génération automatique, voir [Create JSON Metadata for Custom Functions](custom-functions-json-autogeneration.md).
+Si vous choisissez de générer automatiquement votre fichier JSON, déclarez une fonction volatile avec la balise de commentaire JSDoc `@volatile` . À partir de plus d’informations sur la génération automatique, voir [Create JSON Metadata for Custom Functions](custom-functions-json-autogeneration.md).
 
 Voici un exemple de fonction personnalisée volatile qui simule le roulement d’un dés à six côtés.
 
@@ -38,10 +38,9 @@ function roll6sided() {
 ```
 
 ## <a name="next-steps"></a>Étapes suivantes
-Découvrez comment [enregistrer l’État dans vos fonctions personnalisées](custom-functions-save-state.md).
+* En savoir plus sur les [Options des paramètres des fonctions personnalisées](custom-functions-parameter-options.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Options des paramètres de fonctions personnalisées](custom-functions-parameter-options.md)
 * [Métadonnées fonctions personnalisées](custom-functions-json.md)
 * [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)

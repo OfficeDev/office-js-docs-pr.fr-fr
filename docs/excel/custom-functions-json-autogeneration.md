@@ -1,14 +1,14 @@
 ---
-ms.date: 04/13/2020
+ms.date: 05/06/2020
 description: Utiliser les balises JSDOC pour créer dynamiquement vos fonctions personnalisées de métadonnées JSON.
 title: Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: d62def1d107d4472d2e89623c4f10b5cd012f28c
-ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
+ms.openlocfilehash: bad11e6ce8e58dc7970bc920e2619ab4732ebc34
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "43241069"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275979"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 
@@ -52,9 +52,9 @@ Voici quelles sont les balises JSDoc prises en charge dans les fonctions Excel p
 ### <a name="cancelable"></a>@ annulable
 <a id="cancelable"/>
 
-Indique qu’une fonction personnalisée souhaite effectuer une action lorsque la fonction est annulée.
+Indique qu’une fonction personnalisée effectue une action lorsque la fonction est annulée.
 
-Le dernier paramètre de la fonction doit être de type `CustomFunctions.CancelableInvocation`. La fonction peut attribuer une fonction à la propriété `oncanceled` pour désigner l’action à effectuer lors de l’annulation de la fonction.
+Le dernier paramètre de la fonction doit être de type `CustomFunctions.CancelableInvocation`. La fonction peut affecter une fonction à la `oncanceled` propriété pour indiquer le résultat lorsque la fonction est annulée.
 
 Si le dernier paramètre de fonction est de type `CustomFunctions.CancelableInvocation`, il sera considéré comme `@cancelable`, même si la balise n’apparaît pas.
 
@@ -66,11 +66,9 @@ Une fonction ne peut pas contenir les deux balises `@cancelable` et `@streaming`
 
 Syntaxe: @fonctionpersonnalisée_id_ _nom_
 
-Spécifiez cette balise pour traiter la fonction JavaScript/TypeScript comme une fonction Excel personnalisée.
+Cette balise indique que la fonction JavaScript/dactylographié est une fonction personnalisée Excel. Il est nécessaire de créer des métadonnées pour la fonction personnalisée.
 
-Cette balise est requise pour créer des métadonnées pour la fonction personnalisée.
-
-L’exemple suivant illustre la méthode la plus simple pour déclarer une fonction personnalisée.
+Voici un exemple de cette balise.
 
 ```js
 /**
@@ -82,7 +80,7 @@ L’exemple suivant illustre la méthode la plus simple pour déclarer une fonct
 
 #### <a name="id"></a>id
 
-`id` Est un identificateur invariant pour la fonction personnalisée.
+L' `id` identifie une fonction personnalisée.
 
 * Si`id`n’est pas fourni, le nom de la fonction JavaScript/TypeScript est converti en majuscules, et les caractères rejetés sont supprimés.
 * Le `id`doit être unique pour toutes les fonctions personnalisées.
@@ -119,9 +117,9 @@ Dans l’exemple suivant, INC correspond à l’`id` de la fonction, tandis que 
 
 ### <a name="description"></a>description
 
-Une description ne nécessite aucune balise spécifique. Ajoutez une description à une fonction personnalisée en ajoutant une expression pour décrire le rôle de la fonction dans le commentaire JSDoc. Par défaut, le texte non balisé dans la section commentaire JSDoc est la description de la fonction. La description s’affiche dans Excel lorsque l’utilisateur saisit la fonction. Dans l’exemple suivant, la phrase « A function that adds two numbers » (« Une fonction qui ajoute deux nombres ») est la description de la fonction personnalisée dont la propriété ID est `ADD`.
+Une description apparaît pour les utilisateurs dans Excel lorsqu’ils entrent dans la fonction et spécifie le rôle de la fonction. Une description ne nécessite aucune balise spécifique. Ajoutez une description à une fonction personnalisée en ajoutant une expression pour décrire le rôle de la fonction dans le commentaire JSDoc. Par défaut, le texte non balisé dans la section commentaire JSDoc est la description de la fonction.
 
-Dans l’exemple suivant, ADD correspond à l’`id` et au `name` de la fonction. Une description est indiquée.
+Dans l’exemple suivant, la phrase « A function that adds two numbers » (« Une fonction qui ajoute deux nombres ») est la description de la fonction personnalisée dont la propriété ID est `ADD`.
 
 ```js
 /**
@@ -139,7 +137,7 @@ Syntaxe: @urlaide_url_
 
 L’_url_ fournie est affichée dans Excel.
 
-Dans l’exemple suivant, le `helpurl` est `www.contoso.com/weatherhelp`.
+Dans l’exemple suivant, le `helpurl` est `www.contoso.com/weatherhelp` .
 
 ```js
 /**
@@ -158,9 +156,9 @@ Dans l’exemple suivant, le `helpurl` est `www.contoso.com/weatherhelp`.
 
 Syntaxe JavaScript : @param {type} nom_description_
 
-* `{type}`doit spécifier les informations de type entre deux accolades. Consultez la section [Types](#types) pour savoir quels types peuvent être utilisés. Facultatif : si aucun serveur n’est spécifié, le type `any` sera utilisé.
-* `name`spécifie le paramètre auquel s’applique la balise. Obligatoire.
-* `description`fournit la description qui s’affiche dans Excel pour le paramètre de la fonction. Facultatif.
+* `{type}`spécifie les informations de type entre accolades. Consultez la section [Types](#types) pour savoir quels types peuvent être utilisés. Si aucun type n’est spécifié, le type par défaut est `any` utilisé.
+* `name`Spécifie le paramètre auquel s’applique la balise @param. Elle est obligatoire.
+* `description`fournit la description qui s’affiche dans Excel pour le paramètre de la fonction. Elle est facultative.
 
 Pour désigner un paramètre de fonction personnalisée comme étant facultatif :
 * Placez les crochets autour du nom du paramètre. Par exemple : `@param {string} [text] Optional text`.
@@ -168,7 +166,7 @@ Pour désigner un paramètre de fonction personnalisée comme étant facultatif�
 > [!NOTE]
 > La valeur par défaut pour les paramètres facultatifs est `null`.
 
-L’exemple suivant représente une fonction ADD qui ajoute deux ou trois nombres, où le troisième nombre est un paramètre facultatif.
+L’exemple suivant montre une fonction ADD qui ajoute deux ou trois nombres, le troisième étant un paramètre facultatif.
 
 ```js
 /**
@@ -185,8 +183,8 @@ L’exemple suivant représente une fonction ADD qui ajoute deux ou trois nombre
 
 Syntaxe TypeScript : nom @param_description_
 
-* `name`spécifie le paramètre auquel s’applique la balise. Obligatoire.
-* `description`fournit la description qui s’affiche dans Excel pour le paramètre de la fonction. Facultatif.
+* `name`Spécifie le paramètre auquel s’applique la balise @param. Elle est obligatoire.
+* `description`fournit la description qui s’affiche dans Excel pour le paramètre de la fonction. Elle est facultative.
 
 Consultez la section [Types](#types) pour savoir quels types de paramètres de fonction peuvent être utilisés.
 
@@ -220,7 +218,7 @@ function add(first: number, second: number): number {
 
 Indique que l’adresse de la cellule dans laquelle la fonction est évaluée doit être fournie.
 
-Le dernier paramètre de la fonction doit être de type `CustomFunctions.Invocation` ou un type dérivé. Lorsque la fonction est appelée, la propriété `address` contiendra l’adresse. Si vous souhaitez consulter un exemple de fonction utilisant la balise `@requiresAddress`, veuillez vous reporter à la section [Adressage du paramètre de contexte d’une cellule](custom-functions-parameter-options.md#addressing-cells-context-parameter).
+Le dernier paramètre de la fonction doit être de type `CustomFunctions.Invocation` ou un type dérivé. Lorsque la fonction est appelée, la propriété `address` contiendra l’adresse.
 
 ---
 ### <a name="returns"></a>@renvoie :
@@ -253,10 +251,10 @@ function add(first: number, second: number): number {
 
 Utilisé pour indiquer qu’une fonction personnalisée est une fonction diffusion en continu. 
 
-Le dernier paramètre doit être de type `CustomFunctions.StreamingInvocation<ResultType>`.
-La fonction doit renvoyer `void`.
+Le dernier paramètre est de type `CustomFunctions.StreamingInvocation<ResultType>` .
+La fonction renvoie `void` .
 
-Les fonctions de diffusion en continu ne renvoient pas de valeurs directement, mais doivent plutôt appeler `setResult(result: ResultType)` en utilisant le dernier paramètre.
+Les fonctions de diffusion en continu ne renvoient pas directement de valeurs, mais appelent `setResult(result: ResultType)` à l’aide du dernier paramètre.
 
 Les exceptions levées par une fonction en continu sont ignorées. `setResult()`peut être appelée avec Error pour indiquer un résultat erroné. Si vous souhaitez consulter un exemple de fonction de diffusion en continu et obtenir d’autres informations, veuillez vous reporter à la section [Créer une fonction de diffusion en continu](./custom-functions-web-reqs.md#make-a-streaming-function).
 
@@ -305,7 +303,7 @@ Une fonction de diffusion en continu peut indiquer une erreur en appelant`setRes
 
 ### <a name="promise"></a>Promise
 
-Une fonction peut renvoyer un objet Promise (pour « promesse »). Ce dernier fournit une valeur lors de sa résolution. Si la résolution de l’objet Promise est refusée, cela entraîne une erreur.
+Une fonction peut renvoyer une promesse, qui fournit la valeur lorsque la promesse est résolue. Si la promesse est rejetée, elle génère une erreur.
 
 ### <a name="other-types"></a>Autres types
 

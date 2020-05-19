@@ -1,18 +1,18 @@
 ---
 title: Étendre des fonctions personnalisées avec des fonctions XLL définies par l’utilisateur
 description: Activer la compatibilité avec les fonctions Excel XLL définies par l’utilisateur qui offrent une fonctionnalité équivalente à vos fonctions personnalisées
-ms.date: 07/31/2019
+ms.date: 04/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 8c83ea8a5b97cd4f23a9e25fddabe3d178b1e482
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 82f4dba3bd82743efd84a2fe88c893042c061461
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717039"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275769"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>Étendre des fonctions personnalisées avec des fonctions XLL définies par l’utilisateur
 
-Si vous avez des XLL Excel existantes, vous pouvez créer des fonctions personnalisées équivalentes dans un complément Excel pour étendre les fonctionnalités de votre solution à d’autres plateformes, comme Online ou macOS. Toutefois, les compléments Excel ne disposent pas de toutes les fonctionnalités disponibles dans les XLL. En fonction de la fonctionnalité utilisée par votre solution, le XLL peut offrir une meilleure expérience que les fonctions personnalisées de complément Excel dans Excel sur Windows.
+Si vous avez des XLL Excel existantes, vous pouvez créer des fonctions personnalisées équivalentes dans un complément Excel afin d’étendre les fonctionnalités de votre solution à d’autres plateformes, comme Online ou sur Mac. Toutefois, les compléments Excel ne disposent pas de toutes les fonctionnalités disponibles dans les XLL. En fonction de la fonctionnalité utilisée par votre solution, le XLL peut offrir une meilleure expérience que les fonctions personnalisées de complément Excel dans Excel sur Windows.
 
 > [!NOTE]
 > Le complément COM et la compatibilité UDF XLL sont pris en charge par les plateformes suivantes, lorsqu’ils sont connectés à un abonnement Office 365 :
@@ -24,11 +24,11 @@ Si vous avez des XLL Excel existantes, vous pouvez créer des fonctions personna
 
 ## <a name="specify-equivalent-xll-in-the-manifest"></a>Spécifier le XLL équivalent dans le manifeste
 
-Pour activer la compatibilité avec un XLL existant, identifiez le XLL équivalent dans le manifeste de votre complément Excel. Ensuite, Excel utilise les fonctions de la XLL au lieu de vos fonctions personnalisées de complément Excel lors de l’exécution de Windows.
+Pour activer la compatibilité avec un XLL existant, identifiez le XLL équivalent dans le manifeste de votre complément Excel. Excel utilise ensuite les fonctions de la XLL au lieu de vos fonctions personnalisées de complément Excel lors de l’exécution de Windows.
 
-Pour définir le XLL équivalent pour vos fonctions personnalisées, spécifiez l' `FileName` élément XLL. Lorsque l’utilisateur ouvre un classeur avec des fonctions à partir de la XLL, Excel convertit les fonctions en fonctions compatibles. Le classeur utilise ensuite le XLL lorsqu’il est ouvert dans Excel sur Windows et utilise des fonctions personnalisées à partir de votre complément Excel lorsqu’il est ouvert en ligne ou sur macOS.
+Pour définir le XLL équivalent pour vos fonctions personnalisées, spécifiez l’élément `FileName` XLL. Lorsque l’utilisateur ouvre un classeur avec des fonctions à partir de la XLL, Excel convertit les fonctions en fonctions compatibles. Le classeur utilise ensuite le XLL lorsqu’il est ouvert dans Excel sur Windows et utilise des fonctions personnalisées à partir de votre complément Excel lorsqu’il est ouvert en ligne ou sur un Mac.
 
-L’exemple suivant montre comment spécifier un complément COM et un XLL comme équivalent. Souvent, vous spécifierez à la fois de manière à ce que cet exemple montre les deux dans le contexte. Ils sont identifiés par leur `ProgId` et `FileName` respectivement. L' `EquivalentAddins` élément doit être placé immédiatement avant la balise de fermeture `VersionOverrides` . Pour plus d’informations sur la compatibilité des compléments COM, consultez [la rubrique faire en sorte que votre complément Excel soit compatible avec un complément COM existant](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
+L’exemple suivant montre comment spécifier un complément COM et un XLL comme équivalent. Vous devez souvent spécifier les deux. Cet exemple montre des éléments à la fois dans le contexte. Ils sont identifiés par leur `ProgId` et `FileName` respectivement. L' `EquivalentAddins` élément doit être placé immédiatement avant la `VersionOverrides` balise de fermeture. Pour plus d’informations sur la compatibilité des compléments COM, consultez [la rubrique faire en sorte que votre complément Excel soit compatible avec un complément COM existant](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
 
 ```xml
 <VersionOverrides>
@@ -52,7 +52,7 @@ L’exemple suivant montre comment spécifier un complément COM et un XLL comme
 
 ## <a name="custom-function-behavior-for-xll-compatible-functions"></a>Comportement des fonctions personnalisées pour les fonctions compatibles XLL
 
-Lors de l’ouverture d’une feuille de calcul qui contient des fonctions XLL pour lesquelles il existe également un complément équivalent, les fonctions de la XLL sont converties en fonctions personnalisées compatibles XLL. Lors du prochain enregistrement, les utilisateurs sont écrits dans le fichier dans un mode compatible afin qu’ils fonctionnent avec les fonctions personnalisées XLL et complément Excel (sur d’autres plateformes).
+Les fonctions XLL d’un complément sont converties en fonctions personnalisées compatibles XLL lorsqu’une feuille de calcul est ouverte et qu’un complément équivalent est disponible. Lors du prochain enregistrement, les fonctions XLL sont écrites dans le fichier dans un mode compatible de sorte qu’elles fonctionnent avec les fonctions personnalisées XLL et complément Excel (sur d’autres plateformes).
 
 Le tableau suivant compare les fonctionnalités des fonctions définies par l’utilisateur XLL, des fonctions personnalisées de XLL et des fonctions personnalisées de complément Excel.
 

@@ -1,20 +1,22 @@
 ---
-ms.date: 07/10/2019
-description: Déboguez vos fonctions personnalisées dans Excel.
-title: Débogage des fonctions personnalisées
+ms.date: 05/17/2020
+description: Découvrez comment déboguer vos fonctions personnalisées Excel qui n’utilisent pas de volet de tâches.
+title: Débogage de fonctions personnalisées sans interface utilisateur
 localization_priority: Normal
-ms.openlocfilehash: 4abd5f3da58c35485004b17f92b334b133cabd27
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 6de7dda2e22195096f75cd2bd475ee0e49f4461d
+ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719307"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44278384"
 ---
-# <a name="custom-functions-debugging"></a>Débogage des fonctions personnalisées
+# <a name="ui-less-custom-functions-debugging"></a>Débogage de fonctions personnalisées sans interface utilisateur
 
-Le débogage des fonctions personnalisées peut être réalisé de plusieurs manières, en fonction de la plateforme que vous utilisez.
+Le débogage pour les fonctions personnalisées qui n’utilisent pas de volet de tâches ou d’autres éléments de l’interface utilisateur (fonctions personnalisées sans interface utilisateur) peut être réalisé de plusieurs manières, en fonction de la plateforme que vous utilisez.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+[!include[Shared runtime note](../includes/shared-runtime-note.md)]
 
 Sur Windows :
 - [Débogueur de code Visual Studio et de bureau Excel (code VS)](#use-the-vs-code-debugger-for-excel-desktop)
@@ -35,7 +37,7 @@ Avant de commencer le débogage, vous devez utiliser le [Générateur Yeoman pou
 
 ## <a name="use-the-vs-code-debugger-for-excel-desktop"></a>Utiliser le débogueur de code VS pour le bureau Excel
 
-Vous pouvez utiliser le code VS pour déboguer des fonctions personnalisées dans Office Excel sur le bureau.
+Vous pouvez utiliser le code VS pour déboguer des fonctions personnalisées sans interface utilisateur dans Office Excel sur le bureau.
 
 > [!NOTE]
 > Le débogage de bureau pour Mac n’est pas disponible, mais peut être réalisé [à l’aide des outils de navigation et de la ligne de commande pour déboguer Excel sur le Web](#use-the-command-line-tools-to-debug).
@@ -62,7 +64,7 @@ Vous pouvez utiliser le code VS pour déboguer des fonctions personnalisées dan
 
 ## <a name="use-the-vs-code-debugger-for-excel-in-microsoft-edge"></a>Utiliser le débogueur de code VS pour Excel dans Microsoft Edge
 
-Vous pouvez utiliser le code VS pour déboguer des fonctions personnalisées dans Excel dans le navigateur Microsoft Edge. Pour utiliser le code VS avec Microsoft Edge, vous devez installer le [débogueur pour l’extension Microsoft Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge) .
+Vous pouvez utiliser le code VS pour déboguer des fonctions personnalisées sans interface utilisateur dans Excel dans le navigateur Microsoft Edge. Pour utiliser le code VS avec Microsoft Edge, vous devez installer le [débogueur pour l’extension Microsoft Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge) .
 
 ### <a name="run-your-add-in-from-vs-code"></a>Exécuter votre complément à partir du code VS
 
@@ -98,7 +100,7 @@ Vous pouvez utiliser le code VS pour déboguer des fonctions personnalisées dan
 
 ## <a name="use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web"></a>Utiliser les outils de développement de navigateur pour déboguer des fonctions personnalisées dans Excel sur le Web
 
-Vous pouvez utiliser les outils de développement de navigateur pour déboguer des fonctions personnalisées dans Excel sur le Web. Les étapes suivantes fonctionnent pour Windows et macOS.
+Vous pouvez utiliser les outils de développement de navigateur pour déboguer des fonctions personnalisées sans interface utilisateur dans Excel sur le Web. Les étapes suivantes fonctionnent pour Windows et macOS.
 
 ### <a name="run-your-add-in-from-visual-studio-code"></a>Exécuter votre complément à partir de Visual Studio code
 
@@ -134,7 +136,7 @@ Si vous devez modifier le code, vous pouvez effectuer des modifications dans le 
 
 Si vous n’utilisez pas le code VS, vous pouvez utiliser la ligne de commande (par exemple, bash ou PowerShell) pour exécuter votre complément. Vous devrez utiliser les outils de développement de navigateur pour déboguer votre code dans Excel sur le Web. Vous ne pouvez pas déboguer la version de bureau d’Excel à l’aide de la ligne de commande.
 
-1. À partir de la ligne `npm run watch` de commande, exécutez le suivi et la régénération lorsque les modifications du code se produisent.
+1. À partir de la ligne de commande, exécutez le `npm run watch` suivi et la régénération lorsque les modifications du code se produisent.
 2. Ouvrir une deuxième fenêtre de ligne de commande (la première est bloquée lors de l’exécution de la fonction espion).
 
 3. Si vous souhaitez démarrer votre complément dans la version de bureau d’Excel, exécutez la commande suivante :
@@ -167,11 +169,10 @@ Vous pouvez utiliser les tâches suivantes pour démarrer le débogage sur le bu
 - `npm run stop`: Arrête Excel et le débogage.
 
 ## <a name="next-steps"></a>Étapes suivantes
-Découvrez les [pratiques d’authentification dans les fonctions personnalisées](custom-functions-authentication.md). Ou, examinez [l’architecture unique de la fonction personnalisée](custom-functions-architecture.md).
+Découvrez [les pratiques d’authentification pour les fonctions personnalisées sans interface utilisateur](custom-functions-authentication.md).
 
 ## <a name="see-also"></a>Voir aussi
 
 * [Dépannage des fonctions personnalisées](custom-functions-troubleshooting.md)
 * [Gestion des erreurs liées aux fonctions personnalisées dans Excel](custom-functions-errors.md)
-* [Rendre vos fonctions personnalisées compatibles avec les fonctions XLL définies par l’utilisateur](make-custom-functions-compatible-with-xll-udf.md)
 * [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)

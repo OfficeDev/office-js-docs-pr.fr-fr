@@ -1,14 +1,14 @@
 ---
 title: Élément Extension dans le fichier manifeste
 description: Définit l’emplacement où se trouvent les fonctionnalités d’un complément dans l’interface utilisateur Office.
-ms.date: 05/04/2020
+ms.date: 05/18/2020
 localization_priority: Normal
-ms.openlocfilehash: ede99ad73beb1e4a46c9b08188ca79efb556acb0
-ms.sourcegitcommit: 800dacf0399465318489c9d949e259b5cf0f81ca
+ms.openlocfilehash: 41d4ede1ef4198430d888891e3eedda4e050456f
+ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "44022175"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44278419"
 ---
 # <a name="extensionpoint-element"></a>Élément ExtensionPoint
 
@@ -93,6 +93,7 @@ Les exemples suivants montrent comment utiliser l’élément **ExtensionPoint**
 - [Module](#module) (peut uniquement être utilisé dans [DesktopFormFactor](desktopformfactor.md).)
 - [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
 - [MobileOnlineMeetingCommandSurface](#mobileonlinemeetingcommandsurface-preview)
+- [LaunchEvent](#launchevent-preview)
 - [Événements](#events)
 - [DetectedEntity](#detectedentity)
 
@@ -271,11 +272,11 @@ Ce point d’extension place un bouton bascule mode-approprié dans la surface d
 |:-----|:-----|
 |  [Control](control.md) |  Ajoute un bouton à la surface de commande.  |
 
-`ExtensionPoint`les éléments de ce type ne peuvent avoir qu’un seul élément `Control` enfant : un élément.
+`ExtensionPoint`les éléments de ce type ne peuvent avoir qu’un seul élément enfant : un `Control` élément.
 
-L' `Control` `xsi:type` attribut de l’élément contenu dans ce point d’extension doit être `MobileButton`défini sur.
+L' `Control` attribut de l’élément contenu dans ce point d’extension doit être `xsi:type` défini sur `MobileButton` .
 
-Les `Icon` images doivent être en nuances de gris à `#919191` l’aide de code hexadécimal ou de leur équivalent dans d' [autres formats de couleur](https://convertingcolors.com/hex-color-919191.html).
+Les `Icon` images doivent être en nuances de gris à l’aide de code hexadécimal `#919191` ou de leur équivalent dans d' [autres formats de couleur](https://convertingcolors.com/hex-color-919191.html).
 
 #### <a name="example"></a>Exemple
 
@@ -301,9 +302,36 @@ Les `Icon` images doivent être en nuances de gris à `#919191` l’aide de code
 </ExtensionPoint>
 ```
 
+### <a name="launchevent-preview"></a>LaunchEvent (aperçu)
+
+> [!NOTE]
+> Ce point d’extension est uniquement pris en [charge dans Outlook](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) sur le Web avec un abonnement Office 365.
+
+Ce point d’extension permet à un complément de s’activer en fonction des événements pris en charge dans le facteur de forme de bureau. Actuellement, les seuls événements pris en charge sont `OnNewMessageCompose` et `OnNewAppointmentOrganizer` . Pour en savoir plus sur ce scénario, reportez-vous à l’article [configurer votre complément Outlook pour l’activation basée sur les événements](../../outlook/autolaunch.md) .
+
+#### <a name="child-elements"></a>Éléments enfants
+
+|  Élément |  Description  |
+|:-----|:-----|
+| [LaunchEvents](launchevents.md) |  Liste des [LaunchEvent](launchevent.md) pour l’activation basée sur un événement.  |
+| [SourceLocation](sourcelocation.md) |  Emplacement du fichier JavaScript source.  |
+
+#### <a name="example"></a>Exemple
+
+```xml
+<ExtensionPoint xsi:type="LaunchEvent">
+  <LaunchEvents>
+    <LaunchEvent Type="OnNewMessageCompose" FunctionName="onMessageComposeHandler"/>
+    <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="onAppointmentComposeHandler"/>
+  </LaunchEvents>
+  <!-- Identifies the runtime to be used (also referenced by the Runtime element). -->
+  <SourceLocation resid="WebViewRuntime.Url"/>
+</ExtensionPoint>
+```
+
 ### <a name="events"></a>Événements
 
-Ce point d’extension ajoute un gestionnaire d’événements pour un événement spécifié.
+Ce point d’extension ajoute un gestionnaire d’événements pour un événement spécifié. Pour plus d’informations sur l’utilisation de ce point d’extension, consultez la rubrique relative à la [fonctionnalité d’envoi pour les compléments Outlook](../../outlook/outlook-on-send-addins.md).
 
 | Élément | Description  |
 |:-----|:-----|

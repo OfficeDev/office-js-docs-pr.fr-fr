@@ -1,14 +1,14 @@
 ---
 title: Élément SourceLocation dans le fichier manifeste
 description: L’élément SourceLocation spécifie les emplacements des fichiers source pour votre complément Office.
-ms.date: 03/16/2020
+ms.date: 05/12/2020
 localization_priority: Normal
-ms.openlocfilehash: fcca051b0d85c98cb011d5b886981c543ef8e3b0
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 642780c3231523ea579ca548b3f3f984b2856666
+ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717900"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44278398"
 ---
 # <a name="sourcelocation-element"></a>Élément SourceLocation
 
@@ -26,7 +26,7 @@ Spécifie les emplacements des fichiers source pour votre complément Office sou
 
 - [DefaultSettings](defaultsettings.md) (compléments de contenu et de volet Office)
 - [FormSettings](formsettings.md) (compléments de messagerie)
-- [ExtensionPoint](extensionpoint.md) (compléments de messagerie contextuels)
+- [ExtensionPoint](extensionpoint.md) (contextuel et LaunchEvent (aperçu) des compléments de messagerie)
 
 ## <a name="can-contain"></a>Peut contenir
 

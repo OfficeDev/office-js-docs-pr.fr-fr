@@ -1,20 +1,29 @@
 ---
 title: Runtime dans le fichier manifeste
-description: L’élément Runtime configure votre complément de sorte qu’il utilise un Runtime JavaScript partagé pour son ruban, son volet de tâches et ses fonctions personnalisées.
-ms.date: 05/11/2020
+description: L’élément Runtime configure votre complément de sorte qu’il utilise un Runtime JavaScript partagé pour ses différents composants, par exemple le ruban, le volet Office, les fonctions personnalisées.
+ms.date: 05/18/2020
 localization_priority: Normal
-ms.openlocfilehash: c5c7356f9985ca7b5972068629b0587f8916348e
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: c2c404bcaad6e24af58f5c0ed8835343abb97e5f
+ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217759"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44278412"
 ---
-# <a name="runtime-element"></a>Élément Runtime
+# <a name="runtime-element-preview"></a>Élément Runtime (aperçu)
 
-Élément enfant de l' [`<Runtimes>`](runtimes.md) élément. Cet élément configure votre complément de sorte qu’il utilise un Runtime JavaScript partagé de sorte que votre ruban, votre volet de tâches et vos fonctions personnalisées s’exécutent dans le même Runtime. Pour plus d’informations, reportez-vous [à la rubrique Configure Your Excel Add-in to use a Shared JavaScript Runtime](../../excel/configure-your-add-in-to-use-a-shared-runtime.md).
+Configure votre complément pour qu’il utilise un Runtime JavaScript partagé afin que les différents composants s’exécutent tous dans le même Runtime. Enfant de l' [`<Runtimes>`](runtimes.md) élément.
 
-**Type de complément :** volet Office
+Dans Excel, cet élément active le ruban, le volet des tâches et les fonctions personnalisées pour utiliser le même Runtime. Pour plus d’informations, reportez-vous [à la rubrique Configure Your Excel Add-in to use a Shared JavaScript Runtime](../../excel/configure-your-add-in-to-use-a-shared-runtime.md).
+
+Dans Outlook, cet élément active l’activation de complément basée sur les événements. Pour plus d’informations, reportez-vous à [la rubrique Configurer votre complément Outlook pour l’activation basée sur les événements](../../outlook/autolaunch.md).
+
+**Type de complément :** Volet Office, messagerie
+
+> [!IMPORTANT]
+> **Excel**: le runtime partagé est actuellement en préversion et disponible uniquement dans Excel sur Windows. Pour essayer les fonctionnalités d’aperçu, vous devrez rejoindre [Office Insider](https://insider.office.com/).
+>
+> **Outlook**: l’activation basée sur un événement est actuellement [en](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) préversion et disponible uniquement dans Outlook sur le Web. Pour plus d’informations, voir [comment afficher un aperçu de la fonctionnalité activation basée sur les événements](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature).
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -32,8 +41,8 @@ ms.locfileid: "44217759"
 
 |  Attribut  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
-|  **Lifetime = "long"**  |  Oui  | Doit toujours être `long` utilisé pour utiliser un runtime partagé pour le complément Excel. |
 |  **resid**  |  Oui  | Spécifie l’URL de la page HTML de votre complément. L' `resid` doit correspondre à un `id` attribut d’un `Url` élément dans l' `Resources` élément. |
+|  **vie**  |  Non  | La valeur par défaut de `lifetime` est `short` et n’a pas besoin d’être spécifiée. Les compléments Outlook utilisent uniquement la `short` valeur. Si vous souhaitez utiliser un runtime partagé dans un complément Excel, définissez explicitement la valeur sur `long` . |
 
 ## <a name="see-also"></a>Voir aussi
 

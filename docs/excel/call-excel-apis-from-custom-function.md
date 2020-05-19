@@ -3,12 +3,12 @@ title: Appeler des API Microsoft Excel à partir d’une fonction personnalisée
 description: Découvrez les API Microsoft Excel que vous pouvez appeler à partir de votre fonction personnalisée.
 ms.date: 05/11/2020
 localization_priority: Normal
-ms.openlocfilehash: a24cdfba2d79b6e2ad165765d22cd77743047d34
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: 0cdae939b70211367bee6317b9d5234d5b153c95
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217878"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44276021"
 ---
 # <a name="call-microsoft-excel-apis-from-a-custom-function"></a>Appeler des API Microsoft Excel à partir d’une fonction personnalisée
 
@@ -18,8 +18,6 @@ L’appel des API Office. js via une fonction personnalisée peut être utile da
 
 - Une fonction personnalisée doit obtenir des informations à partir d’Excel avant le calcul. Ces informations peuvent inclure des propriétés de document, des formats de plage, des parties XML personnalisées, un nom de classeur ou d’autres informations spécifiques à Excel.
 - Une fonction personnalisée définit le format numérique de la cellule pour les valeurs renvoyées après le calcul.
-
-[!include[Excel shared runtime note](../includes/note-requires-shared-runtime.md)]
 
 ## <a name="code-sample"></a>Exemple de code
 

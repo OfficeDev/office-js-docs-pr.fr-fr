@@ -1,21 +1,21 @@
 ---
 title: Élément Event dans le fichier manifeste
 description: Définit un gestionnaire d’événements dans un complément.
-ms.date: 10/09/2018
+ms.date: 05/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 02037a54ad4b7e91a3697b53b04fa30e8a4909a9
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 80f21d1819e3d7e335389070ccac0db583026045
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718229"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275706"
 ---
 # <a name="event-element"></a>Élément Event
 
 Définit un gestionnaire d’événements dans un complément.
 
-> [!NOTE] 
-> L' `Event` élément est actuellement uniquement pris en charge par Outlook sur le Web dans Office 365.
+> [!NOTE]
+> Pour plus d’informations sur la prise en charge et l’utilisation, consultez la rubrique relative à la [fonctionnalité d’envoi pour les compléments Outlook](../../outlook/outlook-on-send-addins.md).
 
 ## <a name="attributes"></a>Attributs
 
@@ -42,5 +42,5 @@ Obligatoire. DOIT être défini sur `synchronous`.
 Obligatoire. Indique le nom de la fonction du gestionnaire d’événements. Cette valeur doit correspondre au nom d’une fonction dans le [fichier de fonction](functionfile.md) du complément.
 
 ```xml
-<Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" /> 
+<Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" />
 ```

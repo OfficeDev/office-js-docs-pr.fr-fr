@@ -1,31 +1,31 @@
 ---
-ms.date: 07/10/2019
+ms.date: 04/29/2020
 description: Localisez vos fonctions personnalisées Excel.
 title: Localiser des fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: cbb8e3bf5bc12e9df6ff77cbede4c9f0a8deca78
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 001045f82634d7e96c4d4515ccd87b5cfaf2cd1c
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771567"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275965"
 ---
 # <a name="localize-custom-functions"></a>Localiser des fonctions personnalisées
 
-Vous pouvez localiser votre complément et vos noms de fonctions personnalisées. Vous devez fournir des noms de fonctions localisées dans le fichier JSON des fonctions et fournir des informations de paramètres régionaux dans le fichier manifeste XML.
+Vous pouvez localiser votre complément et vos noms de fonctions personnalisées. Pour ce faire, fournissez des noms de fonction localisés dans le fichier JSON des fonctions et des informations de paramètres régionaux dans le fichier manifeste XML.
 
 >[!IMPORTANT]
-> Les métadonnées générées automatiquement ne fonctionnent pas pour la localisation, c’est pourquoi vous devez mettre à jour le fichier JSON manuellement.
+> Les métadonnées générées automatiquement ne fonctionnent pas pour la localisation, c’est pourquoi vous devez mettre à jour le fichier JSON manuellement. Pour savoir comment procéder, consultez la rubrique [Metadata for Custom Functions in Excel](custom-functions-json.md)
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="localize-function-names"></a>Noms des fonctions de localisation
 
-Pour localiser vos fonctions personnalisées, créez un nouveau fichier de métadonnées JSON pour chaque langue. Dans chaque fichier JSON de langue, `name` créez `description` et des propriétés dans la langue cible. Le fichier par défaut pour l’anglais est nommé **functions. JSON**. Il est recommandé d’utiliser les paramètres régionaux dans le nom de fichier de chaque fichier JSON supplémentaire, comme les **fonctions-de-JSON** pour les identifier.
+Pour localiser vos fonctions personnalisées, créez un nouveau fichier de métadonnées JSON pour chaque langue. Dans chaque fichier JSON de langue, créez `name` et des `description` Propriétés dans la langue cible. Le fichier par défaut pour l’anglais est nommé **functions. JSON**. Utilisez les paramètres régionaux dans le nom de fichier de tous les fichiers JSON supplémentaires, tels que les **fonctions-de-JSON** pour les identifier.
 
 Le `name` et `description` s’affichent dans Excel et sont localisés. Toutefois, la `id` de chaque fonction n’est pas localisée. La `id` propriété indique comment Excel identifie votre fonction comme étant unique et ne doit pas être modifiée une fois qu’elle a été définie.
 
-Le code JSON suivant montre comment définir une fonction avec la `id` propriété «Multiply». La `name` propriété `description` et de la fonction est localisée pour l’allemand. Chaque paramètre `name` et `description` est également localisé pour l’allemand.
+Le code JSON suivant montre comment définir une fonction avec la `id` propriété « Multiply ». La `name` `description` propriété et de la fonction est localisée pour l’allemand. Chaque paramètre `name` et `description` est également localisé pour l’allemand.
 
 ```JSON
 {
@@ -81,7 +81,7 @@ Comparez le JSON précédent avec le JSON suivant pour l’anglais.
 
 ## <a name="localize-your-add-in"></a>Localiser votre complément
 
-Après avoir créé un fichier JSON pour chaque langue, vous devez mettre à jour votre fichier manifeste XML avec une valeur de remplacement pour chaque paramètre régional qui spécifie l’URL de chaque fichier de métadonnées JSON. Le code XML de manifeste suivant affiche `en-us` les paramètres régionaux par défaut avec une URL de fichier `de-de` JSON de remplacement pour (Allemagne). Le fichier **Functions-de. JSON** contient les noms et les ID des fonctions localisées en allemand.
+Après avoir créé un fichier JSON pour chaque langue, mettez à jour votre fichier manifeste XML avec une valeur de remplacement pour chaque paramètre régional qui spécifie l’URL de chaque fichier de métadonnées JSON. Le code XML de manifeste suivant affiche les `en-us` paramètres régionaux par défaut avec une URL de fichier JSON de remplacement pour `de-de` (Allemagne). Le fichier **Functions-de. JSON** contient les noms et les ID des fonctions localisées en allemand.
 
 ```XML
 <DefaultLocale>en-us</DefaultLocale>
