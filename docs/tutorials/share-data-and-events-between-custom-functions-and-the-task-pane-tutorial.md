@@ -1,21 +1,23 @@
 ---
-title: 'Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office (préversion)'
+title: 'Didacticiel : partager des données et des événements entre des fonctions personnalisées Excel et le volet Office'
 description: Dans Excel, partagez des données et des événements entre des fonctions personnalisées et le volet Office.
-ms.date: 02/20/2020
+ms.date: 05/17/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 34f2f1006a592c3ee7ab63fdc643648ca26cd01f
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
-ms.translationtype: HT
+ms.openlocfilehash: 6d96b10d6cd6e9bb7909b9d6d64b9a65fcac5b3a
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719727"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275600"
 ---
-# <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane-preview"></a>Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office (préversion)
+# <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Didacticiel : partager des données et des événements entre des fonctions personnalisées Excel et le volet Office
 
-[!include[Running custom functions in browser runtime note](../includes/excel-shared-runtime-preview-note.md)]
+Vous pouvez configurer votre complément Excel pour utiliser un runtime partagé. Cela permet de partager des données globales ou d’envoyer des événements entre le volet Office et les fonctions personnalisées.
 
-Vous pouvez configurer votre complément Excel pour utiliser un runtime partagé. Vous pouvez ainsi partager des données globales ou envoyer des événements entre le volet des tâches et les fonctions personnalisées.
+Pour la plupart des scénarios de fonctions personnalisées, nous vous recommandons d’utiliser un runtime partagé, sauf si vous avez une raison particulière d’utiliser une fonction personnalisée de volet non-tâche (sans interface utilisateur).
+
+Ce didacticiel part du principe que vous êtes familiarisé avec l’utilisation du générateur Yo Office pour créer des projets de complément. Envisagez de compléter le [Didacticiel des fonctions personnalisées Excel](./excel-tutorial-create-custom-functions.md), si vous ne l’avez pas encore fait.
 
 ## <a name="create-the-add-in-project"></a>Création du projet de complément
 
@@ -210,4 +212,4 @@ Après avoir exécuté l’Assistant, le générateur crée le projet et install
 Une fois Excel démarré, vous pouvez utiliser les boutons du volet Office pour stocker ou obtenir des données partagées. Entrez `=CONTOSO.GETVALUE()` dans une cellule pour que la fonction personnalisée extraie les mêmes données partagées. Vous pouvez également utiliser `=CONTOSO.STOREVALUE("new value")` pour remplacer les données partagées par une nouvelle valeur.
 
 > [!NOTE]
-> La configuration de votre projet comme illustré dans cet article permet de partager le contexte entre des fonctions personnalisées et le volet Office. L’appel d’API Office à partir de fonctions personnalisées n’est pas pris en charge dans la préversion.
+> La configuration de votre projet comme illustré dans cet article permet de partager le contexte entre des fonctions personnalisées et le volet Office. Il est possible d’appeler des API Office à partir de fonctions personnalisées. Pour plus d’informations, [reportez-vous à la rubrique Call Microsoft Excel API from a Custom Function](../excel/call-excel-apis-from-custom-function.md) .

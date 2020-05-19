@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez créer un complément Excel qui con
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: d7f6f30bde7b56b1dec1abb55d01e6b65f8d3c7e
-ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
-ms.translationtype: HT
+ms.openlocfilehash: 6ce3bbb4f36819599451f6f87db6c6a6f882f5a1
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "43547077"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275607"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Didacticiel : créer des fonctions personnalisées dans Excel
 
@@ -240,7 +240,7 @@ function clock(invocation) {
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations ! Vous avez créé un nouveau projet de fonctions personnalisées, essayé une fonction prédéfinie, créé une fonction personnalisée qui récupère des données à partir du web et créé une fonction personnalisée qui diffuse des données. Vous pouvez également essayer de déboguer cette fonction à l’aide des [instructions de débogage des fonction personnalisées](../excel/custom-functions-debugging.md). Pour en savoir plus sur les fonctions personnalisées dans Excel, passez à l’article suivant :
+Félicitations ! Vous avez créé un nouveau projet de fonctions personnalisées, essayé une fonction prédéfinie, créé une fonction personnalisée qui récupère des données à partir du web et créé une fonction personnalisée qui diffuse des données. Ensuite, vous pouvez modifier votre projet pour utiliser un runtime partagé, ce qui permet à votre fonction d’interagir plus facilement avec le volet Office. Suivez les étapes décrites dans l’article suivant :
 
 > [!div class="nextstepaction"]
-> [Créer des fonctions personnalisées dans Excel](../excel/custom-functions-overview.md)
+> [Configurer votre complément pour utiliser un runtime partagé](../excel/configure-your-add-in-to-use-a-shared-runtime.md)
