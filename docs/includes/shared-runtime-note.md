@@ -1,0 +1,2 @@
+>[!NOTE]
+> <span data-ttu-id="4e102-101">À moins que vous n’ayez une raison particulière d’utiliser une fonction sans interface utilisateur, nous vous recommandons d’utiliser des fonctions personnalisées avec un [Runtime partagé](../excel/configure-your-add-in-to-use-a-shared-runtime.md).</span><span class="sxs-lookup"><span data-stu-id="4e102-101">Unless you have a specific reason to use a UI-less function, we recommend using custom functions with a [shared runtime](../excel/configure-your-add-in-to-use-a-shared-runtime.md).</span></span>
