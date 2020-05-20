@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: Les fonctionnalités et les API qui sont actuellement en préversion pour les compléments Outlook.
-ms.date: 05/18/2020
+ms.date: 05/19/2020
 localization_priority: Normal
-ms.openlocfilehash: 893c90dc7344adba86a8a92b86063ed2419eae34
-ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
+ms.openlocfilehash: 3183c81a9af99f480c2dbecc787695501380cea7
+ms.sourcegitcommit: 8499a4247d1cb1e96e99c17cb520f4a8a41667e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44278342"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "44292293"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -188,23 +188,7 @@ Ajout de l’événement `OfficeThemeChanged` à `Mailbox`.
 
 ---
 
-### <a name="online-meeting-provider-integration"></a>Intégration des fournisseurs de réunions en ligne
-
-Prise en charge supplémentaire de l’intégration des réunions en ligne dans les compléments Outlook Mobile. Pour en savoir plus, reportez-vous à la rubrique [créer un complément Outlook Mobile pour un fournisseur de réunion en ligne](../../../outlook/online-meeting.md) .
-
-#### <a name="mobileonlinemeetingcommandsurface-extension-point"></a>[Point d’extension MobileOnlineMeetingCommandSurface](../../manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview)
-
-Ajout `MobileOnlineMeetingCommandSurface` du point d’extension au manifeste. Il définit l’intégration de la réunion en ligne.
-
-**Disponible dans**: Outlook sur Android (connecté à l’abonnement Office 365)
-
-<br>
-
----
-
----
-
-### <a name="sso"></a>Authentification unique
+### <a name="single-sign-on-sso"></a>Authentification unique (SSO)
 
 #### <a name="officeruntimeauthgetaccesstoken"></a>[OfficeRuntime.auth.getAccessToken](../../../develop/sso-in-office-add-ins.md#sso-api-reference)
 

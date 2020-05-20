@@ -1,14 +1,14 @@
 ---
 title: Fonctionnalité d’envoi des compléments Outlook
 description: Permet de traiter un élément ou d’empêcher les utilisateurs d’effectuer certaines actions. Permet aussi aux compléments de définir certaines propriétés pendant l’envoi.
-ms.date: 04/15/2020
+ms.date: 05/19/2020
 localization_priority: Normal
-ms.openlocfilehash: d882bf988473e71de2621c144964f6116afe962c
-ms.sourcegitcommit: 79c55e59294e220bd21a5006080f72acf3ec0a3f
+ms.openlocfilehash: 7ee9e42c5be2fc25f4f310ae5c14cebe1c5b64af
+ms.sourcegitcommit: 66c73c64ad1b5708ffccdd80817f557292c706b8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "43581931"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "44321865"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Fonctionnalité d’envoi des compléments Outlook
 
@@ -17,15 +17,26 @@ La fonctionnalité d’envoi des compléments Outlook vous permet de traiter un
 - Empêcher un utilisateur d’envoyer des informations sensibles ou de laisser la ligne d’objet vide.  
 - Ajouter un destinataire spécifique à la ligne CC dans les messages ou à la ligne destinataires facultatifs des réunions.
 
-> [!NOTE]
-> La fonctionnalité d’envoi est prise en charge pour Outlook sur le web dans Exchange Online (Office 365), Exchange 2016 en local (mise à jour cumulative 6 ou ultérieure) et Exchange 2019 en local (mise à jour cumulative 1 ou ultérieure). Cette fonctionnalité est également disponible dans les derniers builds Outlook sur Windows et Mac connectés à Exchange Online (Office 365). La fonctionnalité a été introduite dans l’ensemble de conditions requises 1,8 (pour plus d’informations, consultez la rubrique [Current Server and client support](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) ).
-
-> [!IMPORTANT]
-> Les compléments qui utilisent la fonctionnalité d’envoi ne sont pas autorisés dans [AppSource](https://appsource.microsoft.com).
-
 La fonctionnalité d’envoi est déclenchée par le type d’événement `ItemSend` et est sans interface utilisateur.
 
 Pour en savoir plus sur les limites de la fonctionnalité d’envoi, consultez la section [Limites](#limitations) plus loin dans cet article.
+
+## <a name="supported-clients-and-platforms"></a>Clients et plateformes pris en charge
+
+Le tableau suivant présente les combinaisons client-serveur prises en charge pour la fonctionnalité d’envoi. Les combinaisons exclues ne sont pas prises en charge.
+
+| Client | Exchange Online | Exchange 2016 en local<br>(Mise à jour cumulative 6 ou version ultérieure) | Exchange 2019 en local<br>(Mise à jour cumulative 1 ou ultérieure) |
+|---|:---:|:---:|:---:|
+|Windows :<br>version 1910 (Build 12130,20272) ou version ultérieure|Oui|Oui|Oui|
+|CMA<br>Build 16,30 ou version ultérieure|Oui|Non|Non|
+|Navigateur Web :<br>interface utilisateur d’Outlook moderne|Oui|Non applicable|Non applicable|
+|Navigateur Web :<br>interface utilisateur Outlook classique|Non applicable|Oui|Oui|
+
+> [!NOTE]
+> La fonctionnalité d’envoi a été publiée dans l’ensemble de conditions requises 1,8 (pour plus d’informations, consultez la rubrique [Current Server and client support](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) ).
+
+> [!IMPORTANT]
+> Les compléments qui utilisent la fonctionnalité d’envoi ne sont pas autorisés dans [AppSource](https://appsource.microsoft.com).
 
 ## <a name="how-does-the-on-send-feature-work"></a>Comment marche la fonctionnalité d’envoi ?
 
@@ -340,8 +351,8 @@ Les compléments s’exécutent pendant l’événement d’envoi pour autoriser
 
 |Scénario|Fonctionnalité d’envoi (Boîte aux lettres 1)|Fonctionnalité d’envoi (Boîte aux lettres 2)|Session web Outlook (classique)|Résultat|Pris en charge ?|
 |:------------|:------------|:--------------------------|:---------|:-------------|:-------------|
-|0,1|Activé|Activé|Nouvelle session|La boîte aux lettres 1 ne peut pas envoyer un message ou un élément de réunion provenant de la boîte aux lettres 2.|N’est pas pris en charge actuellement. Pour y remédier, utilisez le scénario 3.|
-|n°2|Désactivé|Activé|Nouvelle session|La boîte aux lettres 1 ne peut pas envoyer un message ou un élément de réunion provenant de la boîte aux lettres 2.|N’est pas pris en charge actuellement. Pour y remédier, utilisez le scénario 3.|
+|1 |Activé|Activé|Nouvelle session|La boîte aux lettres 1 ne peut pas envoyer un message ou un élément de réunion provenant de la boîte aux lettres 2.|N’est pas pris en charge actuellement. Pour y remédier, utilisez le scénario 3.|
+|2 |Désactivé|Activé|Nouvelle session|La boîte aux lettres 1 ne peut pas envoyer un message ou un élément de réunion provenant de la boîte aux lettres 2.|N’est pas pris en charge actuellement. Pour y remédier, utilisez le scénario 3.|
 |3|Activé|Activé|Même session|Les compléments d’envoi attribués à la boîte aux lettres 1 exécutent la fonctionnalité d’envoi.|Pris en charge.|
 |4 |Activé|Désactivé|Nouvelle session|Aucun complément d’envoi ne s’exécute ; un message ou un élément de réunion est envoyé.|Pris en charge.|
 
@@ -355,8 +366,8 @@ Pour appliquer l’envoi, les administrateurs doivent s’assurer que la straté
 
 |Scénario|Stratégie d’envoi de la boîte aux lettres 1|Compléments d’envoi activés ?|Action de la boîte aux lettres 1|Résultat|Pris en charge ?|
 |:------------|:-------------------------|:-------------------|:---------|:----------|:-------------|
-|0,1|Activé|Oui|La Boîte aux lettres 1 compose un nouveau message ou réunion pour le Groupe 1.|Les compléments d’envoi s’exécutent pendant l’envoi.|Oui|
-|n°2|Activé|Oui|La boîte aux lettres 1 compose un nouveau message ou réunion pour le Groupe 1, dans la fenêtre du Groupe 1 dans Outlook sur le web.|Les compléments d’envoi ne s’exécutent pas pendant l’envoi.|N’est pas pris en charge actuellement. Pour y remédier, utilisez le scénario 1.|
+|1 |Activé|Oui|La Boîte aux lettres 1 compose un nouveau message ou réunion pour le Groupe 1.|Les compléments d’envoi s’exécutent pendant l’envoi.|Oui|
+|2 |Activé|Oui|La boîte aux lettres 1 compose un nouveau message ou réunion pour le Groupe 1, dans la fenêtre du Groupe 1 dans Outlook sur le web.|Les compléments d’envoi ne s’exécutent pas pendant l’envoi.|N’est pas pris en charge actuellement. Pour y remédier, utilisez le scénario 1.|
 
 ### <a name="user-mailbox-with-on-send-add-in-featurepolicy-enabled-add-ins-that-support-on-send-are-installed-and-enabled-and-offline-mode-is-enabled"></a>La fonctionnalité/stratégie d’envoi est activée sur la boîte aux lettres de l’utilisateur, les compléments qui prennent en charge cette fonctionnalité sont installés et activés et le mode hors connexion est activé
 
@@ -408,7 +419,7 @@ Dans le fichier manifeste `Contoso Message Body Checker.xml`, insérez le fichie
 ```
 
 > [!IMPORTANT]
-> Si vous utilisez Visual Studio 2019 pour développer votre complément d’envoi, il se peut que vous obteniez un avertissement de validation semblable à celui-ci : « il s’agit d’unhttp://schemas.microsoft.com/office/mailappversionoverrides/1.1:Eventsxsi : type incorrect. » Pour contourner ce message, vous avez besoin d’une version plus récente de la MailAppVersionOverridesV1_1. xsd qui a été fournie comme GitHub dans un [blog sur cet avertissement](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/).
+> Si vous utilisez Visual Studio 2019 pour développer votre complément d’envoi, il se peut que vous obteniez un avertissement de validation semblable à celui-ci : « il s’agit d’un xsi : type incorrect http://schemas.microsoft.com/office/mailappversionoverrides/1.1:Events . » Pour contourner ce message, vous avez besoin d’une version plus récente de la MailAppVersionOverridesV1_1. xsd qui a été fournie comme GitHub dans un [blog sur cet avertissement](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/).
 
 Pour le fichier manifeste `Contoso Subject and CC Checker.xml`, l’exemple suivant montre le fichier de fonction et le nom de la fonction à appeler dans l’événement d’envoi du message.
 

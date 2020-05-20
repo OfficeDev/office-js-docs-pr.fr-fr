@@ -1,30 +1,30 @@
 ---
-title: Créer un complément Outlook Mobile pour un fournisseur de réunions en ligne (aperçu)
+title: Créer un complément Outlook Mobile pour un fournisseur de réunion en ligne
 description: Explique comment configurer un complément Outlook Mobile pour un fournisseur de services en ligne.
 ms.topic: article
-ms.date: 04/23/2020
+ms.date: 05/19/2020
 localization_priority: Normal
-ms.openlocfilehash: 8a54ddf96ca2b5e697198b4bc69b2ec5abee10d1
-ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
+ms.openlocfilehash: 1d42ec82e12e9f34f0211ca9926f5ae8b92c7804
+ms.sourcegitcommit: 8499a4247d1cb1e96e99c17cb520f4a8a41667e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "43930322"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "44292286"
 ---
-# <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider-preview"></a>Créer un complément Outlook Mobile pour un fournisseur de réunions en ligne (aperçu)
+# <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>Créer un complément Outlook Mobile pour un fournisseur de réunion en ligne
 
 La configuration d’une réunion en ligne est une expérience de base pour un utilisateur d’Outlook, et il est facile de [créer une réunion teams avec Outlook](/microsoftteams/teams-add-in-for-outlook) mobile. Toutefois, la création d’une réunion en ligne dans Outlook avec un service non-Microsoft peut être lourde. En implémentant cette fonctionnalité, les fournisseurs de services peuvent rationaliser l’expérience de création des réunions en ligne pour leurs utilisateurs des compléments Outlook.
 
-> [!NOTE]
-> Cette fonctionnalité est uniquement prise en charge en [Aperçu](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) sur Android avec un abonnement Office 365.
+> [!IMPORTANT]
+> Cette fonctionnalité est uniquement prise en charge sur Android avec un abonnement Office 365.
 
 Dans cet article, vous apprendrez à configurer votre complément Outlook Mobile pour permettre aux utilisateurs d’organiser et de participer à une réunion à l’aide de votre service de réunion en ligne. Tout au long de cet article, nous allons utiliser un fournisseur de services de réunion en ligne fictif, « contoso ».
 
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
-Pour permettre aux utilisateurs de créer des réunions en ligne avec votre complément, vous devez configurer `MobileOnlineMeetingCommandSurface` le point d’extension dans le manifeste sous l' `MobileFormFactor`élément parent. Les autres facteurs de forme ne sont pas pris en charge.
+Pour permettre aux utilisateurs de créer des réunions en ligne avec votre complément, vous devez configurer le `MobileOnlineMeetingCommandSurface` point d’extension dans le manifeste sous l’élément parent `MobileFormFactor` . Les autres facteurs de forme ne sont pas pris en charge.
 
-L’exemple suivant montre un extrait du manifeste qui inclut l’élément `MobileFormFactor` et `MobileOnlineMeetingCommandSurface` le point d’extension.
+L’exemple suivant montre un extrait du manifeste qui inclut l' `MobileFormFactor` élément et le `MobileOnlineMeetingCommandSurface` point d’extension.
 
 > [!TIP]
 > Pour en savoir plus sur les manifestes pour les compléments Outlook, consultez la rubrique [manifestes des compléments Outlook](manifests.md) et [Ajouter la prise en charge des commandes de complément pour Outlook Mobile](add-mobile-support.md).
@@ -114,7 +114,7 @@ function insertContosoMeeting(event) {
 }
 ```
 
-L’exemple suivant illustre une implémentation de la fonction `updateBody` de prise en charge utilisée dans l’exemple précédent qui ajoute les détails de réunion en ligne au corps de la réunion.
+L’exemple suivant illustre une implémentation de la fonction de prise en charge `updateBody` utilisée dans l’exemple précédent qui ajoute les détails de réunion en ligne au corps de la réunion.
 
 ```js
 function updateBody(event, existingBody) {
@@ -141,7 +141,7 @@ Suivez les instructions habituelles pour [tester et valider votre complément](t
 
 En tant qu’organisateur de la réunion, vous devez voir des écrans semblables aux trois images suivantes lors de la création d’une réunion.
 
-[capture d’écran de la boîte de création de l’écran de réunion sur Android-contoso désactiver la capture d’écran de créer un écran de réunion sur Android-chargement de la capture d’écran de la création de la réunion sur Android-contoso-activer/désactiver ![](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [ ![](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [ ![](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
+[ ![ capture d’écran de la boîte de création de l’écran de réunion sur Android-contoso désactiver](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) la [ ![ capture d’écran de créer un écran de réunion sur Android-chargement](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [ ![ de la capture d’écran de la création de la réunion sur Android-contoso-activer](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox) /désactiver
 
 ### <a name="join-meeting-ui"></a>Interface utilisateur joindre une réunion
 
@@ -171,10 +171,9 @@ Les API suivantes sont disponibles pour cette fonctionnalité.
 Plusieurs restrictions s’appliquent.
 
 - Applicable uniquement aux fournisseurs de service de réunion en ligne.
-- Actuellement en aperçu, cette fonctionnalité ne doit pas être utilisée dans les compléments de production.
 - À présent, Android est le seul client pris en charge. Le support sur iOS sera bientôt disponible.
 - Seuls les compléments installés par l’administrateur apparaissent sur l’écran de composition de la réunion et remplacent l’option teams ou Skype par défaut. Les compléments installés par l’utilisateur ne peuvent pas être activés.
-- L’icône du complément doit être en nuances de gris à l' `#919191` aide de code hexadécimal ou de son équivalent dans d' [autres formats de couleur](https://convertingcolors.com/hex-color-919191.html).
+- L’icône du complément doit être en nuances de gris à l’aide de code hexadécimal `#919191` ou de son équivalent dans d' [autres formats de couleur](https://convertingcolors.com/hex-color-919191.html).
 - Une seule commande sans interface utilisateur est prise en charge dans le mode organisateur de rendez-vous (composition).
 
 ## <a name="see-also"></a>Voir aussi
