@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook 1.8
 description: Ensemble de conditions requises 1,8 pour l’API de complément Outlook
-ms.date: 12/17/2019
+ms.date: 05/20/2020
 localization_priority: Normal
-ms.openlocfilehash: ca107a13080e8b25ed76bcae4bf4afe1bec9938f
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 1e6a903a9e627f3344eee9283e051ac84b5abf10
+ms.sourcegitcommit: b6fd04b55cb1f39b316bcb0b3f3e1e33800b1d36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719993"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "44326875"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Ensemble de conditions requises de l’API du complément Outlook 1.8
 
@@ -20,11 +20,12 @@ L’ensemble de conditions requises de la version 1.8 comprend toutes les fonct
 
 - Ajout de nouvelles fonctionnalités d’API pour les pièces jointes, de catégories, d’accès délégué, d’emplacement amélioré, d’en-têtes Internet et de blocage d’envoi.
 - Ajout d’un paramètre `options` facultatif à Event.completed.
-- Ajout d’une prise en charge des événements AttachmentsChanged et EnhancedLocationsChanged.
+- Ajout de la prise en charge de `AttachmentsChanged` et des `EnhancedLocationsChanged` événements.
 
 ### <a name="change-log"></a>Journal des modifications
 
 - Ajout d’[AttachmentContent](/javascript/api/outlook/office.attachmentcontent?view=outlook-js-1.8) : ajoute un nouvel objet représentant le contenu d’une pièce jointe.
+- Ajout de [AttachmentDetailsCompose](/javascript/api/outlook/office.attachmentdetailscompose?view=outlook-js-1.8): ajoute un nouvel objet qui représente les détails d’une pièce jointe en mode composition.
 - Ajout de [Categories](/javascript/api/outlook/office.categories?view=outlook-js-1.8) : ajoute un nouvel objet représentant les catégories d’un élément.
 - Ajout de [CategoryDetails](/javascript/api/outlook/office.categorydetails?view=outlook-js-1.8) : ajoute un nouvel objet représentant les détails d’une catégorie (son nom et la couleur associée).
 - Ajout d’[EnhancedLocation](/javascript/api/outlook/office.enhancedlocation?view=outlook-js-1.8) : ajoute un nouvel objet représentant l’ensemble des lieux pour un rendez-vous.
