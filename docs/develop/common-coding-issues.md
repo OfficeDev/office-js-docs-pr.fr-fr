@@ -1,14 +1,14 @@
 ---
 title: Conseils de codage pour les problèmes courants et les comportements de plateforme inattendus
 description: Liste des problèmes de plateforme d’API JavaScript pour Office fréquemment rencontrés par les développeurs.
-ms.date: 04/22/2020
+ms.date: 05/21/2020
 localization_priority: Normal
-ms.openlocfilehash: dea879899dce2e957d34f2eb8e7498d4fdb868c0
-ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
+ms.openlocfilehash: fee5504d1db95d59b7667e402ff246b16b07b57c
+ms.sourcegitcommit: d88b3dcfe13ba06f821b55db2de46aed152a378d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "43930315"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "44347657"
 ---
 # <a name="coding-guidance-for-common-issues-and-unexpected-platform-behaviors"></a>Conseils de codage pour les problèmes courants et les comportements de plateforme inattendus
 
@@ -18,7 +18,7 @@ Cet article met en évidence les aspects de l’API JavaScript pour Office qui p
 
 Les [API communes](/javascript/api/office) (qui ne sont pas liées à un hôte Office particulier) et les [API Outlook](/javascript/api/outlook) utilisent un modèle de programmation basé sur les rappels. L’interaction avec le document Office sous-jacent nécessite un appel asynchrone en lecture ou en écriture qui spécifie un rappel à exécuter lorsque l’opération se termine. Pour obtenir un exemple de ce modèle, consultez la rubrique [document. getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-).
 
-Ces méthodes d’API et d’API courantes ne renvoient pas de [promesses](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise). Par conséquent, vous ne pouvez pas utiliser [await](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await) pour suspendre l’exécution jusqu’à la fin de l’opération asynchrone. Si vous avez `await` besoin de comportement, vous pouvez encapsuler l’appel de méthode dans une promesse créée de manière explicite.
+Ces méthodes d’API et d’API courantes ne renvoient pas de [promesses](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise). Par conséquent, vous ne pouvez pas utiliser [await](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await) pour suspendre l’exécution jusqu’à la fin de l’opération asynchrone. Si vous avez besoin `await` de comportement, vous pouvez encapsuler l’appel de méthode dans une promesse créée de manière explicite.
 
 ```js
 readDocumentFileAsync(): Promise<any> {
@@ -59,30 +59,19 @@ Certaines propriétés ne peuvent pas être définies, bien qu’elles soient ac
 sheet.pageLayout.zoom = { scale: 200 };
 ```
 
-Dans l’exemple précédent, vous ne seriez ***pas*** en mesure d' `zoom` affecter directement une `sheet.pageLayout.zoom.scale = 200;`valeur :. Cette instruction génère une erreur car `zoom` elle n’est pas chargée. Même si `zoom` elles ont été chargées, l’ensemble de l’étendue ne prendra pas effet. Toutes les opérations de `zoom`contexte se produisent, actualisant l’objet proxy dans le complément et remplaçant les valeurs définies localement.
+Dans l’exemple précédent, vous ne seriez ***pas*** en mesure d’affecter directement `zoom` une valeur : `sheet.pageLayout.zoom.scale = 200;` . Cette instruction génère une erreur car `zoom` elle n’est pas chargée. Même si `zoom` elles ont été chargées, l’ensemble de l’étendue ne prendra pas effet. Toutes les opérations de contexte se produisent `zoom` , actualisant l’objet proxy dans le complément et remplaçant les valeurs définies localement.
 
-Ce comportement diffère des [Propriétés de navigation](../excel/excel-add-ins-advanced-concepts.md#scalar-and-navigation-properties) telles que [Range. format](/javascript/api/excel/excel.range#format). Les propriétés `format` de peuvent être définies à l’aide de la navigation d’objet, comme illustré ci-dessous :
+Ce comportement diffère des [Propriétés de navigation](../excel/excel-add-ins-advanced-concepts.md#scalar-and-navigation-properties) telles que [Range. format](/javascript/api/excel/excel.range#format). Les propriétés de `format` peuvent être définies à l’aide de la navigation d’objet, comme illustré ci-dessous :
 
 ```js
 // This will set the font size on the range during the next `content.sync()`.
 range.format.font.size = 10;
 ```
 
-Vous pouvez identifier une propriété qui ne peut pas avoir ses sous-propriétés directement définies en vérifiant son modificateur en lecture seule. Les propriétés non en lecture seule de toutes les propriétés en lecture seule peuvent être définies directement. Les propriétés accessibles en `PageLayout.zoom` écriture comme doivent être définies avec un objet à ce niveau. En Résumé :
+Vous pouvez identifier une propriété qui ne peut pas avoir ses sous-propriétés directement définies en vérifiant son modificateur en lecture seule. Les propriétés non en lecture seule de toutes les propriétés en lecture seule peuvent être définies directement. Les propriétés accessibles en écriture comme `PageLayout.zoom` doivent être définies avec un objet à ce niveau. En Résumé :
 
 - Propriété en lecture seule : les sous-propriétés peuvent être définies via la navigation.
 - Propriété accessible en écriture : les sous-propriétés ne peuvent pas être définies par le biais de la navigation (elles doivent être définies dans le cadre de l’attribution initiale de l’objet parent).
-
-## <a name="excel-data-transfer-limits"></a>Limites de transfert de données Excel
-
-Si vous créez un complément Excel, tenez compte des limitations de taille suivantes lors de l’interaction avec le classeur :
-
-- Excel sur le web a une limite de taille de charge utile de 5 Mo pour les demandes et les réponses. L’erreur `RichAPI.Error` est déclenchée en cas de dépassement de cette limite.
-- Une plage est limitée à 5 millions cellules pour les opérations Get.
-
-Si vous prévoyez que l’entrée de l’utilisateur dépasse ces limites, veillez à vérifier les `context.sync()`données avant d’appeler. Fractionnez l’opération en plusieurs parties si nécessaire. Veillez à appeler `context.sync()` pour chaque sous-opération afin d’éviter que ces opérations soient regroupées par lots.
-
-Ces limitations sont généralement dépassées par les grandes plages. Votre complément peut utiliser [RangeAreas](/javascript/api/excel/excel.rangeareas) pour mettre à jour les cellules dans une plage plus grande de manière stratégique. Pour plus d’informations, consultez [travailler simultanément avec plusieurs plages dans des compléments Excel](../excel/excel-add-ins-multiple-ranges.md) .
 
 ## <a name="setting-read-only-properties"></a>Définition de propriétés en lecture seule
 
@@ -95,7 +84,7 @@ myChart.id = "5";
 
 ## <a name="removing-event-handlers"></a>Suppression de gestionnaires d’événements
 
-Les gestionnaires d’événements doivent être supprimés à l' `RequestContext` aide du même que celui dans lequel ils ont été ajoutés. Si vous avez besoin que votre complément supprime un gestionnaire d’événements en cours d’exécution, vous devez stocker l’objet Context utilisé pour ajouter le gestionnaire.
+Les gestionnaires d’événements doivent être supprimés à l’aide du même `RequestContext` que celui dans lequel ils ont été ajoutés. Si vous avez besoin que votre complément supprime un gestionnaire d’événements en cours d’exécution, vous devez stocker l’objet Context utilisé pour ajouter le gestionnaire.
 
 ```js
 Excel.run(async (context) => {
@@ -112,6 +101,47 @@ Excel.run(async (context) => {
 ## <a name="supporting-internet-explorer"></a>Prise en charge d’Internet Explorer
 
 [!INCLUDE [How to support IE](../includes/es5-support.md)]
+
+## <a name="excel-specific-issues"></a>Problèmes spécifiques à Excel
+
+### <a name="excel-data-transfer-limits"></a>Limites de transfert de données Excel
+
+Si vous créez un complément Excel, tenez compte des limitations de taille suivantes lors de l’interaction avec le classeur :
+
+- Excel sur le web a une limite de taille de charge utile de 5 Mo pour les demandes et les réponses. L’erreur `RichAPI.Error` est déclenchée en cas de dépassement de cette limite.
+- Une plage est limitée à 5 millions cellules pour les opérations Get.
+
+Si vous prévoyez que l’entrée de l’utilisateur dépasse ces limites, veillez à vérifier les données avant d’appeler `context.sync()` . Fractionnez l’opération en plusieurs parties si nécessaire. Veillez à appeler `context.sync()` pour chaque sous-opération afin d’éviter que ces opérations soient regroupées par lots.
+
+Ces limitations sont généralement dépassées par les grandes plages. Votre complément peut utiliser [RangeAreas](/javascript/api/excel/excel.rangeareas) pour mettre à jour les cellules dans une plage plus grande de manière stratégique. Pour plus d’informations, consultez [travailler simultanément avec plusieurs plages dans des compléments Excel](../excel/excel-add-ins-multiple-ranges.md) .
+
+### <a name="api-limitations-when-the-active-workbook-switches"></a>Limitations de l’API lorsque le classeur actif bascule
+
+Les compléments pour Excel sont conçus pour fonctionner sur un seul classeur à la fois. Des erreurs peuvent se produire lorsqu’un classeur distinct de celui qui exécute le complément obtient le focus. Cela se produit uniquement lorsque des méthodes particulières sont en cours d’appel lorsque le focus est modifié.
+
+Les API suivantes sont affectées par ce commutateur de classeurs :
+
+|sur les API JavaScript pour Excel | Erreur générée |
+|--|--|
+| `Chart.activate` | GeneralException |
+| `Range.select` | GeneralException |
+| `Table.clearFilters` | GeneralException |
+| `Workbook.getActiveCell`  | InvalidSelection|
+| `Workbook.getSelectedRange` | InvalidSelection|
+| `Workbook.getSelectedRanges`  | InvalidSelection|
+| `Worksheet.activate` | GeneralException |
+| `Worksheet.delete`  | InvalidSelection|
+| `Worksheet.gridlines` | GeneralException |
+| `Worksheet.showHeadings` | GeneralException |
+| `WorksheetCollection.add` | GeneralException |
+| `WorksheetFreezePanes.freezeAt` | GeneralException |
+| `WorksheetFreezePanes.freezeColumns` | GeneralException |
+| `WorksheetFreezePanes.freezeRows` | GeneralException |
+| `WorksheetFreezePanes.getLocationOrNullObject`| GeneralException |
+| `WorksheetFreezePanes.unfreeze` | GeneralException |
+
+> [!NOTE]
+> Cela s’applique uniquement à plusieurs classeurs Excel ouverts sous Windows ou Mac.
 
 ## <a name="see-also"></a>Voir aussi
 

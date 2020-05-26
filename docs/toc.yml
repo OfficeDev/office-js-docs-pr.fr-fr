@@ -906,12 +906,12 @@
           href: outlook/online-meeting.md
         - name: Compléments d’envoi
           href: outlook/outlook-on-send-addins.md
+        - name: Activation basée sur les événements (aperçu)
+          href: outlook/autolaunch.md
         - name: Volet des tâches pouvant être épinglé
           href: outlook/pinnable-taskpane.md
         - name: Accès délégué
           href: outlook/delegate-access.md
-        - name: Configurer l’activation basée sur les événements (aperçu)
-          href: outlook/autolaunch.md
         - name: Manifestes
           items:
             - name: "Manifestes des compléments\_Outlook"

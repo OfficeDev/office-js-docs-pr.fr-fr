@@ -1,23 +1,26 @@
 ---
 title: Concepts basiques pour les commandes de complément
-description: Découvrez l'ajout de boutons et d'éléments de menu personnalisés au ruban dans Office dans le cadre d’un complément web Office.
-ms.date: 02/11/2020
+description: Découvrez l'ajout de boutons et d'éléments de menu personnalisés au ruban dans Office dans le cadre d’un complément Office.
+ms.date: 05/12/2020
 localization_priority: Priority
-ms.openlocfilehash: 6395b087ea191b37e9398096038dacfd66ed263c
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: dbd25761dcf852905a766489cf4689856115cc39
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890555"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217899"
 ---
-# <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Commandes de complément pour Excel, Word et PowerPoint
+# <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Commandes de complément pour Excel, PowerPoint et Word
 
 Les commandes de complément sont des éléments d’interface utilisateur qui étendent l’interface utilisateur d’Office et lancent des actions dans votre complément. Vous pouvez les utiliser pour ajouter un bouton sur le ruban ou un élément dans le menu contextuel. Lorsque les utilisateurs sélectionnent une commande de complément, ils lancent des actions telles que l’exécution de code JavaScript ou l’affichage d’une page du complément dans le volet Office. Les commandes de complément aident les utilisateurs à trouver et utiliser votre complément, ce qui favorise l’adoption et la réutilisation de votre complément, et améliore la fidélisation des clients.
 
 Pour en savoir plus sur les fonctionnalités, regardez la vidéo sur les [commandes de complément du ruban Office](https://channel9.msdn.com/events/Build/2016/P551).
 
 > [!NOTE]
-> Les catalogues SharePoint n’acceptent pas les commandes de complément. Vous pouvez déployer des commandes de complément via le [déploiement centralisé](../publish/centralized-deployment.md) ou [AppSource](/office/dev/store/submit-to-appsource-via-partner-center), ou utiliser le [chargement de version test](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) pour déployer votre commande de complément à des fins de test. 
+> Les catalogues SharePoint n’acceptent pas les commandes de complément. Vous pouvez déployer des commandes de complément via le [déploiement centralisé](../publish/centralized-deployment.md) ou [AppSource](/office/dev/store/submit-to-appsource-via-partner-center), ou utiliser le [chargement de version test](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) pour déployer votre commande de complément à des fins de test.
+
+> [!IMPORTANT]
+> Les commandes de complément sont actuellement prises en charge dans Outlook. Pour plus d’informations, voir [Commandes de complément pour Outlook](../outlook/add-in-commands-for-outlook.md).
 
 *Figure 1. Complément incluant des commandes en cours d’exécution dans Excel (version de bureau)*
 
@@ -51,7 +54,7 @@ Les fonctionnalités de commande suivantes sont actuellement prises en charge.
 
 ### <a name="default-enabled-or-disabled-status-preview"></a>État Activé ou Désactivé par défaut (préversion)
 
-Vous pouvez spécifier si la commande est activée ou désactivée lors du lancement de votre complément et modifier le paramètre par programme. 
+Vous pouvez spécifier si la commande est activée ou désactivée lors du lancement de votre complément et modifier le paramètre par programme.
 
 > [!NOTE]
 > Cette fonctionnalité est en préversion et n’est pas prise en charge dans tous les hôtes ou scénarios. Pour plus d’informations, reportez-vous aux [Commandes Activé et Désactivé pour les compléments](disable-add-in-commands.md).
@@ -60,12 +63,14 @@ Vous pouvez spécifier si la commande est activée ou désactivée lors du lance
 
 Les commandes de complément sont actuellement prises en charge sur les plateformes suivantes.
 
-- Outlook 2016 pour Windows (build 16.0.4678.1000+)
 - Office sur Windows (build 16.0.6769+, connecté à l’abonnement Office 365)
 - Office 2019 pour Windows
 - Office sur Mac (build 15.33+, connecté à l’abonnement Office 365)
 - Office 2019 sur Mac
 - Office sur le web
+
+> [!NOTE]
+> Pour plus d’informations sur la prise en charge dans Outlook, voir [Commandes de complément pour Outlook](../outlook/add-in-commands-for-outlook.md).
 
 ## <a name="debugging"></a>Débogage
 

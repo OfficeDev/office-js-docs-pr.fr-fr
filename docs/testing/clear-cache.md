@@ -1,14 +1,14 @@
 ---
 title: Vider le cache Office
 description: Découvrez comment effacer le cache Office sur votre ordinateur.
-ms.date: 01/29/2020
+ms.date: 05/22/2020
 localization_priority: Normal
-ms.openlocfilehash: a73a8d276f0d6301644005cf87f44f4d7606d26d
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: fb08cd3838cf9c1d12df2fc8d37453776a05c768
+ms.sourcegitcommit: d88b3dcfe13ba06f821b55db2de46aed152a378d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42891130"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "44347650"
 ---
 # <a name="clear-the-office-cache"></a>Vider le cache Office
 
@@ -24,7 +24,7 @@ Pour supprimer tous les compléments versions test chargées d’Excel, Word et 
 %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\
 ```
 
-Pour supprimer un complément versions test chargées à partir d’Outlook, suivez les étapes décrites dans [chargement des compléments Outlook à des fins de test](../outlook/sideload-outlook-add-ins-for-testing.md) pour trouver le complément dans la section **compléments personnalisés** de la boîte de dialogue qui répertorie vos compléments installés. Choisissez le bouton`...`de sélection () pour le complément, puis cliquez sur **supprimer** pour supprimer ce complément.
+Pour supprimer un complément versions test chargées à partir d’Outlook, suivez les étapes décrites dans [chargement des compléments Outlook à des fins de test](../outlook/sideload-outlook-add-ins-for-testing.md) pour trouver le complément dans la section **compléments personnalisés** de la boîte de dialogue qui répertorie vos compléments installés. Choisissez le bouton `...` de sélection () pour le complément, puis cliquez sur **supprimer** pour supprimer ce complément. Si la suppression de ce complément ne fonctionne pas, supprimez le contenu du `Wef` dossier comme indiqué précédemment pour Excel, Word et PowerPoint.
 
 En outre, vous pouvez utiliser Microsoft Edge DevTools pour vider le cache Office dans Windows 10 lorsque le complément s’exécute dans Microsoft Edge.
 
