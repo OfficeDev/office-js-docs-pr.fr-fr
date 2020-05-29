@@ -1,14 +1,14 @@
 ---
 title: Créer des commandes de complément dans votre manifeste pour Excel, PowerPoint et Word
 description: Utilisez VersionOverrides dans votre manifeste pour définir des commandes de complément pour Excel, PowerPoint et Word. Utilisez les commandes de complément pour créer des éléments d’interface utilisateur, ajouter des boutons ou des listes et effectuer des actions.
-ms.date: 05/12/2020
+ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: d318df0ab80a4cd83c6a74e77662f3e85df9f92d
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: 02d61d90f500712b2970c4dfb5b439b3367f59d7
+ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217885"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "44413174"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Créer des commandes de complément dans votre manifeste pour Excel, PowerPoint et Word
 
@@ -25,6 +25,9 @@ Utilisez **[VersionOverrides](../reference/manifest/versionoverrides.md)** dans 
   - exécuter du code JavaScript, ce qui se fait normalement sans afficher d’interface utilisateur ;
 
 Cet article explique comment modifier un manifeste pour définir des commandes de complément. Le schéma suivant illustre la hiérarchie des éléments utilisés pour définir des commandes de complément. Ces éléments sont décrits plus en détail dans cet article.
+
+> [!NOTE]
+> Les commandes de complément sont actuellement prises en charge dans Outlook. Pour plus d’informations, consultez la rubrique [commandes de complément pour Outlook](../outlook/add-in-commands-for-outlook.md)
 
 L’image ci-après est une présentation des éléments de commandes de complément dans le fichier manifeste. ![Présentation des éléments de commandes de complément dans le manifeste](../images/version-overrides.png)
 

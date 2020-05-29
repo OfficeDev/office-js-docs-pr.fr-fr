@@ -1,14 +1,14 @@
 ---
 title: Résolution des problèmes d’activation de complément contextuel Outlook
 description: Si votre complément ne s’active pas comme prévu, vous devez rechercher dans les zones suivantes les raisons possibles.
-ms.date: 10/31/2019
+ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: cfc5595257b6f8413aa3c1452fb5752e83ece631
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 555ae2a45bf49d74d1fd439258fd87035644e86a
+ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166071"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "44413181"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Résolution des problèmes d’activation des compléments Outlook
 
@@ -81,10 +81,17 @@ Si votre complément est un complément de composition et qu’il est censé êt
 Ce scénario s’applique uniquement à Outlook sur Windows. Normalement, quand vous installez un complément Outlook pour une boîte aux lettres, le serveur Exchange copie le manifeste du complément de l’emplacement que vous indiquez vers la boîte aux lettres située sur ce serveur Exchange. Chaque fois qu’Outlook démarre, il lit l’ensemble des manifestes installés pour cette boîte aux lettres dans un cache temporaire situé à l’emplacement suivant :
 
 ```text
-%LocalAppData%\Microsoft\Office\15.0\WEF
+%LocalAppData%\Microsoft\Office\16.0\WEF
 ```
 
-Par exemple, pour l’utilisateur Jean, le cache peut se situer dans C:\Users\jean\AppData\Local\Microsoft\Office\15.0\WEF.
+Par exemple, pour l’utilisateur John, le cache peut se trouver à C:\Users\john\AppData\Local\Microsoft\Office\16.0\WEF.
+
+> [!IMPORTANT]
+> Pour Outlook 2013 sur Windows, utilisez 15,0 au lieu de 16,0 pour l’emplacement :
+>
+> ```text
+> %LocalAppData%\Microsoft\Office\15.0\WEF
+> ```
 
 Si un complément ne s’active pour aucun élément, cela peut signifier que le manifeste n’a pas été correctement installé sur le serveur Exchange ou qu’Outlook n’a pas lu correctement le manifeste au démarrage. À l’aide du Centre d’administration Exchange, assurez-vous que le complément est installé et activé pour votre boîte aux lettres, puis redémarrez le serveur Exchange, si nécessaire.
 
@@ -103,7 +110,7 @@ La procédure suivante décrit les détails.
 1. Si Outlook n’active pas le complément, vérifiez si Outlook dispose d’une copie correctement mise en cache du manifeste du complément. Regardez dans le chemin d’accès suivant :
 
     ```text
-    %LocalAppData%\Microsoft\Office\15.0\WEF
+    %LocalAppData%\Microsoft\Office\16.0\WEF
     ```
 
     Vous trouverez le manifeste dans le sous-dossier suivant :
@@ -116,7 +123,7 @@ La procédure suivante décrit les détails.
     > Voici un exemple d’un chemin d’accès à un manifeste installé pour une boîte aux lettres de l’utilisateur John :
     >
     > ```text
-    > C:\Users\john\appdata\Local\Microsoft\Office\15.0\WEF\{8D8445A4-80E4-4D6B-B7AC-D4E6AF594E73}\GoRshCWa7vW8+jhKmyiDhA==\Manifests\b3d7d9d5-6f57-437d-9830-94e2aaccef16_1.2
+    > C:\Users\john\appdata\Local\Microsoft\Office\16.0\WEF\{8D8445A4-80E4-4D6B-B7AC-D4E6AF594E73}\GoRshCWa7vW8+jhKmyiDhA==\Manifests\b3d7d9d5-6f57-437d-9830-94e2aaccef16_1.2
     > ```
 
     Vérifiez si le manifeste du complément que vous testez figure parmi les manifestes mis en cache.
@@ -140,7 +147,7 @@ La procédure suivante décrit les détails.
 1. Si vous ne voyez pas d’événement réussi, fermez Outlook et supprimez tous les manifestes du chemin d’accès suivant :
 
     ```text
-    %LocalAppData%\Microsoft\Office\15.0\WEF\<insert your guid>\<insert base 64 hash>\Manifests\
+    %LocalAppData%\Microsoft\Office\16.0\WEF\<insert your guid>\<insert base 64 hash>\Manifests\
     ```
 
     Démarrez Outlook, puis vérifiez si Outlook active désormais le complément.

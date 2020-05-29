@@ -1,14 +1,14 @@
 ---
 title: Compléments Outlook pour Outlook Mobile
 description: Les compléments Outlook Mobile sont pris en charge sur tous les comptes commerciaux Office 365 et les comptes Outlook.com. Les comptes Gmail seront pris en charge très bientôt.
-ms.date: 04/13/2020
+ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 4b6341ac1b340ebc46c616ae4274bfdf1e2d0672
-ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
+ms.openlocfilehash: 6cc91bd021640988b2f216dda258b185748b2e40
+ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "43241083"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "44413209"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Compléments pour Outlook Mobile
 
@@ -35,7 +35,7 @@ Les compléments Outlook Mobile sont pris en charge sur tous les comptes commer
     - Le complément **DOIT** respecter les [instructions concernant l’interface utilisateur](outlook-addin-design.md).
     - Le scénario du complément **DOIT** [être pertinent sur mobile](#what-makes-a-good-scenario-for-mobile-add-ins).
 
-- En règle générale, seul le mode lecture de message est pris en charge pour le moment. Cela signifie `MobileMessageReadCommandSurface` qu’il s’agit du seul [ExtensionPoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) que vous devez déclarer dans la section mobile de votre manifeste. Toutefois, le mode organisateur de rendez-vous est pris en charge pour les compléments intégrés au fournisseur de réunions en ligne qui déclarent le [point d’extension MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview). Pour plus d’informations sur ce scénario, reportez-vous à l’article [créer un complément Outlook Mobile pour un fournisseur de réunion en ligne](online-meeting.md) .
+- En règle générale, seul le mode lecture de message est pris en charge pour le moment. Cela signifie qu’il `MobileMessageReadCommandSurface` s’agit du seul [ExtensionPoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) que vous devez déclarer dans la section mobile de votre manifeste. Toutefois, le mode organisateur de rendez-vous est pris en charge pour les compléments intégrés au fournisseur de réunions en ligne qui déclarent le [point d’extension MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview). Pour plus d’informations sur ce scénario, reportez-vous à l’article [créer un complément Outlook Mobile pour un fournisseur de réunion en ligne](online-meeting.md) .
 
 - L’API [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) n’est pas prise en charge sur mobile dans la mesure où l’application mobile utilise les API REST pour communiquer avec le serveur. Si le serveur principal de votre application doit se connecter au serveur Exchange, vous pouvez utiliser le jeton de rappel pour émettre des appels d’API REST. Pour plus d’informations, voir [Utilisation des API REST Outlook à partir d’un complément Outlook](use-rest-api.md).
 
@@ -69,7 +69,7 @@ Pour tester un complément sur Outlook Mobile, vous pouvez charger de manière i
 
 Une fois que votre complément fonctionne, testez-le sur différentes tailles d’écran, y compris sur des téléphones et des tablettes. Vous devez vous assurer qu’il respecte les instructions d’accessibilité en matière de contraste, de taille de police et de couleur, et qu’il peut être utilisé avec un lecteur d’écran comme VoiceOver sur iOS ou TalkBack sur Android.
 
-La résolution des problèmes sur mobile peut s’avérer difficile, car vous n’avez peut-être pas les outils auxquels vous êtes habitué. Pour résoudre les problèmes, vous pouvez [utiliser Vorlon.js](../testing/debug-office-add-ins-on-ipad-and-mac.md). Sinon, si vous avez déjà utilisé Fiddler, consultez [ce didacticiel sur son utilisation avec un appareil iOS](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices).
+Le dépannage sur mobile peut être difficile dans la mesure où vous ne disposez pas des outils que vous utilisez. Toutefois, une option de résolution des problèmes sur iOS consiste à utiliser Fiddler (consultez [ce didacticiel sur son utilisation avec un appareil iOS](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)).
 
 ## <a name="next-steps"></a>Étapes suivantes
 

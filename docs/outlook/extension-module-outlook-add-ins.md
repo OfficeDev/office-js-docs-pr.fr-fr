@@ -1,14 +1,14 @@
 ---
 title: Compléments Outlook d’extension de module
 description: Créez des applications qui s’exécutent dans Outlook pour simplifier l’accès des utilisateurs aux outils d’informations professionnelles et de productivité sans quitter Outlook.
-ms.date: 06/04/2019
+ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: a7c4031061dd5cd4605220c6839481b3a88e53d9
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 5c5c57b28f63665ac0cac1dfc443651a0d830f5f
+ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166207"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "44413202"
 ---
 # <a name="module-extension-outlook-add-ins"></a>Compléments Outlook d’extension de module
 
@@ -150,5 +150,5 @@ Vous trouverez ci-dessous une section d’un fichier de manifeste qui définit u
 ## <a name="see-also"></a>Voir aussi
 
 - [Manifestes de complément Outlook](manifests.md)
-- [Définir des commandes de complément dans votre manifeste](../develop/define-add-in-commands.md)
+- [Commandes de complément pour Outlook](add-in-commands-for-outlook.md)
 - [Exemple d’heures facturables d’extensions de module Outlook](https://github.com/OfficeDev/Outlook-Add-in-JavaScript-ModuleExtension)
