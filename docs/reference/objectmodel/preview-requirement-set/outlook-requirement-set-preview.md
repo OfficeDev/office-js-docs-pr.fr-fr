@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: Les fonctionnalités et les API qui sont actuellement en préversion pour les compléments Outlook.
-ms.date: 05/19/2020
+ms.date: 05/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 3183c81a9af99f480c2dbecc787695501380cea7
-ms.sourcegitcommit: 8499a4247d1cb1e96e99c17cb520f4a8a41667e3
+ms.openlocfilehash: 5a53b1b5f477a420c9aaafbf8d778e1e58a7fe88
+ms.sourcegitcommit: 3a72d13c82b3d627691f4712d0d24b9e71bae9dc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "44292293"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "44415876"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -69,6 +69,8 @@ Ajout d’une nouvelle énumération `AppointmentSensitivityType` qui représent
 ---
 
 ### <a name="append-on-send"></a>Ajouter à l’envoi
+
+Pour en savoir plus sur l’utilisation de la fonctionnalité Ajout à l’envoi, consultez la rubrique [implémenter Append lors de l’envoi dans votre complément Outlook](../../../outlook/append-on-send.md).
 
 #### <a name="officecontextmailboxitembodyappendonsendasync"></a>[Office. Context. Mailbox. Item. Body. appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-)
 
