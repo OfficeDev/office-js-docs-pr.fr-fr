@@ -906,6 +906,8 @@
           href: outlook/online-meeting.md
         - name: Compléments d’envoi
           href: outlook/outlook-on-send-addins.md
+        - name: Ajouter lors de l’envoi (aperçu)
+          href: outlook/outlook-on-send-addins.md
         - name: Activation basée sur les événements (aperçu)
           href: outlook/autolaunch.md
         - name: Volet des tâches pouvant être épinglé
