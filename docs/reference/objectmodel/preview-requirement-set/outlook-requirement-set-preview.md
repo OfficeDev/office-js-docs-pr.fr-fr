@@ -3,12 +3,12 @@ title: Ensemble de conditions requises de l’API du complément Outlook (aper�
 description: Les fonctionnalités et les API qui sont actuellement en préversion pour les compléments Outlook.
 ms.date: 05/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 5a53b1b5f477a420c9aaafbf8d778e1e58a7fe88
-ms.sourcegitcommit: 3a72d13c82b3d627691f4712d0d24b9e71bae9dc
+ms.openlocfilehash: 600aad32c394d35e62f4024808b185e8a9abe5e8
+ms.sourcegitcommit: 09a8683ff29cf06d0d1d822be83cf0798f1ccdf9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "44415876"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "44471344"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -111,6 +111,20 @@ Ajout `LaunchEvents` de l’élément à manifest. Il prend en charge la configu
 Ajout de la prise en charge d’Outlook à l' `Runtimes` élément de manifeste. Il fait référence aux fichiers HTML et JavaScript nécessaires à la fonctionnalité d’activation basée sur les événements.
 
 **Disponible dans**: Outlook sur le Web (moderne, [demander un accès en aperçu](https://aka.ms/OWAPreview))
+
+<br>
+
+---
+
+---
+
+### <a name="get-all-custom-properties"></a>Obtenir toutes les propriétés personnalisées
+
+#### <a name="custompropertiesgetall"></a>[CustomProperties. getAll](/javascript/api/outlook/office.customproperties?view=outlook-js-preview#getall--)
+
+Ajout d’une nouvelle fonction à l' `CustomProperties` objet qui obtient toutes les propriétés personnalisées.
+
+**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Office 365), Outlook sur le Web (moderne), Outlook sur Mac (connecté à l’abonnement Office 365), Outlook sur Android, Outlook sur iOS
 
 <br>
 

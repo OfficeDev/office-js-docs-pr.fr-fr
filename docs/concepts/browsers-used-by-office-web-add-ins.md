@@ -1,14 +1,14 @@
 ---
 title: Navigateurs utilisés par les compléments Office
 description: Indique comment le système d’exploitation et la version d’Office déterminent le navigateur utilisé par les compléments Office.
-ms.date: 04/21/2020
+ms.date: 05/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 9ef4b6d4c09140fc6d6bb04eca51d845b79b6dc7
-ms.sourcegitcommit: 3355c6bd64ecb45cea4c0d319053397f11bc9834
+ms.openlocfilehash: 0f553b0fe6a94577af438a2cb29dafc644f02960
+ms.sourcegitcommit: 09a8683ff29cf06d0d1d822be83cf0798f1ccdf9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "43744851"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "44471330"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navigateurs utilisés par les compléments Office
 
@@ -38,6 +38,9 @@ Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes e
 
 > [!IMPORTANT]
 > Internet Explorer 11 ne prend pas en charge les versions de JavaScript ultérieures à la version ES5. Si un des utilisateurs de votre complément dispose d’une plateforme utilisant Internet Explorer 11, vous devez transpiler JavaScript vers la version ES5 ou utiliser un polyfill pour lui permettre d’utiliser la syntaxe et les fonctionnalités d’ECMAScript 2015 ou version ultérieure. Par ailleurs, Internet Explorer 11 ne prend pas en charge certaines fonctionnalités HTML5 telles que les éléments multimédias, l’enregistrement et l’emplacement.
+
+>[!NOTE]
+> Si votre complément inclut l' `Runtimes` élément dans votre manifeste, il utilisera par défaut Internet Explorer 11. Pour plus d’informations, consultez la rubrique [runtimes](../reference/manifest/runtimes.md).
 
 ## <a name="troubleshooting-microsoft-edge-issues"></a>Résolution des problèmes liés à Microsoft Edge
 

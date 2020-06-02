@@ -1,14 +1,14 @@
 ---
 title: Runtime dans le fichier manifeste
 description: L’élément Runtime configure votre complément de sorte qu’il utilise un Runtime JavaScript partagé pour ses différents composants, par exemple le ruban, le volet Office, les fonctions personnalisées.
-ms.date: 05/18/2020
+ms.date: 05/29/2020
 localization_priority: Normal
-ms.openlocfilehash: c2c404bcaad6e24af58f5c0ed8835343abb97e5f
-ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
+ms.openlocfilehash: a463b72f22b41f74e2fe98acca467762bb00cf39
+ms.sourcegitcommit: 09a8683ff29cf06d0d1d822be83cf0798f1ccdf9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44278412"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "44471337"
 ---
 # <a name="runtime-element-preview"></a>Élément Runtime (aperçu)
 
@@ -21,7 +21,7 @@ Dans Outlook, cet élément active l’activation de complément basée sur les 
 **Type de complément :** Volet Office, messagerie
 
 > [!IMPORTANT]
-> **Excel**: le runtime partagé est actuellement en préversion et disponible uniquement dans Excel sur Windows. Pour essayer les fonctionnalités d’aperçu, vous devrez rejoindre [Office Insider](https://insider.office.com/).
+> **Excel**: le runtime partagé est actuellement disponible uniquement dans Excel sur Windows.
 >
 > **Outlook**: l’activation basée sur un événement est actuellement [en](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) préversion et disponible uniquement dans Outlook sur le Web. Pour plus d’informations, voir [comment afficher un aperçu de la fonctionnalité activation basée sur les événements](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature).
 
