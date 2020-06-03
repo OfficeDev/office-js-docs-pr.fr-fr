@@ -1,14 +1,14 @@
 ---
 title: Navigateurs utilisés par les compléments Office
 description: Indique comment le système d’exploitation et la version d’Office déterminent le navigateur utilisé par les compléments Office.
-ms.date: 05/29/2020
+ms.date: 06/01/2020
 localization_priority: Normal
-ms.openlocfilehash: 0f553b0fe6a94577af438a2cb29dafc644f02960
-ms.sourcegitcommit: 09a8683ff29cf06d0d1d822be83cf0798f1ccdf9
+ms.openlocfilehash: 0d94e66c9854a349758a2ed737524eb5d54fea29
+ms.sourcegitcommit: 9229102c16a1864e3a8724aaf9b0dc68b1428094
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "44471330"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "44520373"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navigateurs utilisés par les compléments Office
 
@@ -30,17 +30,16 @@ Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes e
 |Windows/Office 2013 sans abonnement ou version ultérieure|Internet Explorer 11|
 |Windows 10 version < 1903/Office 365|Internet Explorer 11|
 |Windows 10 version >= 1903/Office 365 ver < 16.0.11629<sup>1</sup>|Internet Explorer 11|
-|Windows 10 version >= 1903/Office 365 ver >= 16.0.11629<sup>1</sup>|Microsoft Edge<sup>2</sup>|
+|Windows 10 version >= 1903/Office 365 ver >= 16.0.11629<sup>1</sup>|Microsoft Edge<sup>2, 3</sup>|
 
 <sup>1</sup> pour plus d’informations, consultez la [page historique des mises à jour](/officeupdates/update-history-office365-proplus-by-date) et [Découvrez comment trouver votre version de client Office et votre canal de mise à jour](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) .
 
 <sup>2</sup> lorsque Microsoft Edge est utilisé, le narrateur Windows 10 (parfois appelé « lecteur d’écran ») lit la `<title>` balise dans la page qui s’ouvre dans le volet Office. Si Internet Explorer 11 est utilisé, le Narrateur lit la barre de titre du volet Office, qui provient de la valeur `<DisplayName>` du manifeste du complément.
 
+<sup>3</sup> si votre complément inclut l' `Runtimes` élément dans le manifeste, il utilise Internet Explorer 11 quelle que soit la version de Windows ou d’Office 365. Pour plus d’informations, consultez la rubrique [runtimes](../reference/manifest/runtimes.md).
+
 > [!IMPORTANT]
 > Internet Explorer 11 ne prend pas en charge les versions de JavaScript ultérieures à la version ES5. Si un des utilisateurs de votre complément dispose d’une plateforme utilisant Internet Explorer 11, vous devez transpiler JavaScript vers la version ES5 ou utiliser un polyfill pour lui permettre d’utiliser la syntaxe et les fonctionnalités d’ECMAScript 2015 ou version ultérieure. Par ailleurs, Internet Explorer 11 ne prend pas en charge certaines fonctionnalités HTML5 telles que les éléments multimédias, l’enregistrement et l’emplacement.
-
->[!NOTE]
-> Si votre complément inclut l' `Runtimes` élément dans votre manifeste, il utilisera par défaut Internet Explorer 11. Pour plus d’informations, consultez la rubrique [runtimes](../reference/manifest/runtimes.md).
 
 ## <a name="troubleshooting-microsoft-edge-issues"></a>Résolution des problèmes liés à Microsoft Edge
 
