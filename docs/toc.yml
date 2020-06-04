@@ -258,7 +258,7 @@
           displayName: 'test, debug'
         - name: Windows
           items:
-            - name: "Chargement de versions test de compléments\_Office sur Windows"
+            - name: Chargez des compléments Office sur Windows à partir d’un partage réseau
               href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
             - name: Attacher un débogueur à partir du volet Office
               href: testing/attach-debugger-from-task-pane.md
