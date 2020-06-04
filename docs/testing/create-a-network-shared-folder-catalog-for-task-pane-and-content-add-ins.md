@@ -1,23 +1,30 @@
 ---
-title: Chargement de compléments Office pour des tests
-description: Découvrez comment chargement un complément Office à des fins de test
-ms.date: 03/18/2020
+title: Chargement de compléments Office à des fins de test à partir d’un partage réseau
+description: Découvrez comment chargement un complément Office à des fins de test à partir d’un partage réseau
+ms.date: 06/02/2020
 localization_priority: Normal
-ms.openlocfilehash: dbadf9f7f692e1e71dd9696f531ed79bfc84f786
-ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
+ms.openlocfilehash: 3b8752f1be07cbb8e15fb2a3fddb33415a930c8f
+ms.sourcegitcommit: bec0158860925832825a45a21f73cd5dd1e20b37
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43215060"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "44543037"
 ---
-# <a name="sideload-office-add-ins-for-testing"></a>Chargement de compléments Office pour des tests
+# <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>Chargement de compléments Office à des fins de test à partir d’un partage réseau
 
-Vous pouvez installer un complément Office à des fins de test dans un client Office s’exécutant sur Windows à l’aide d’un catalogue de dossiers partagés pour publier le manifeste sur un partage de fichiers réseau.
+Vous pouvez tester un complément Office dans un client Office qui se trouve sur Windows en publiant le manifeste sur un partage de fichiers réseau (instructions ci-dessous). Cette option de déploiement est destinée à être utilisée lorsque vous avez terminé le développement et le test sur un hôte local et que vous souhaitez tester le complément à partir d’un serveur non local ou d’un compte Cloud.
+
+> [!IMPORTANT]
+> Le déploiement par partage réseau n’est pas pris en charge pour les compléments de production. Cette méthode présente les limitations suivantes :
+> 
+> - Le complément peut uniquement être installé sur les ordinateurs Windows.
+> - Si une nouvelle version d’un complément modifie le ruban, chaque utilisateur doit réinstaller le complément...
+
 
 > [!NOTE]
 > Si votre projet de complément a été créé avec une version suffisamment récente du [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office), le complément se charge automatiquement en version de test dans le client de bureau Office lors de l’exécution de `npm start`.
 
-Cet article s’applique uniquement aux tests de compléments Word, Excel, PowerPoint ou Project sur Windows. Si vous souhaitez tester sur une autre plateforme ou tester un complément Outlook, consultez une des rubriques suivantes pour charger une version de votre complément :
+Cet article s’applique uniquement au test des compléments Word, Excel, PowerPoint et Project et uniquement sur Windows. Si vous souhaitez tester sur une autre plateforme ou tester un complément Outlook, consultez une des rubriques suivantes pour charger une version de votre complément :
 
 - [Chargement de versions test des compléments Office dans Office sur le web](sideload-office-add-ins-for-testing.md)
 - [Chargement de version test des compléments Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
