@@ -1,20 +1,22 @@
 ---
 title: Comparer la prise en charge des compléments Outlook dans Outlook sur Mac
 description: Découvrez comment prend en charge les compléments dans Outlook sur Mac avec les autres hôtes Outlook.
-ms.date: 05/18/2020
+ms.date: 06/04/2020
 localization_priority: Normal
-ms.openlocfilehash: fd03141fbcaecb88db358101a00681c8a85af382
-ms.sourcegitcommit: 71a44405e42b4798a8354f7f96d84548ae7a00f0
+ms.openlocfilehash: 553d9bada0fb66a5319c998ff1c262f8815e2f7d
+ms.sourcegitcommit: c00db2625d6c222ac09b5845095c21e5cbad81d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44280351"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "44561871"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-hosts"></a>Comparaison de la prise en charge des compléments Outlook dans Outlook sur Mac avec d’autres hôtes Outlook
 
 Vous pouvez créer et exécuter un complément Outlook de la même manière dans Outlook sur Mac, comme dans les autres hôtes, y compris Outlook sur le Web, Windows, iOS et Android, sans personnaliser le code JavaScript pour chaque hôte. Les mêmes appels à partir du complément vers l’API JavaScript Office fonctionnent généralement de la même manière, à l’exception des zones décrites dans le tableau suivant.
 
-Pour plus d’informations, consultez la rubrique [Déployer et installer des compléments Outlook à des fins de test](testing-and-tips.md).
+Pour plus d'informations, voir [Déployer et installer des compléments Outlook à des fins de test](testing-and-tips.md).
+
+Pour plus d’informations sur la prise en charge de la nouvelle interface utilisateur sur Mac, consultez la rubrique [New Outlook sur Mac](#new-outlook-on-mac-preview).
 
 | Domaine | Outlook sur le Web, Windows et les appareils mobiles | Outlook sur Mac |
 |:-----|:-----|:-----|
@@ -27,3 +29,26 @@ Pour plus d’informations, consultez la rubrique [Déployer et installer des co
 | Chaîne représentant le fuseau horaire dans les propriétés `dateTimeCreated` et `dateTimeModified` |Par exemple : `Thu Mar 13 2014 14:09:11 GMT+0800 (China Standard Time)` | Par exemple : `Thu Mar 13 2014 14:09:11 GMT+0800 (CST)` |
 | Précision horaire de `dateTimeCreated` et `dateTimeModified` | Si un complément utilise le code suivant, la précision est de l’ordre de la milliseconde :<br/>`JSON.stringify(Office.context.mailbox.item, null, 4);`| La précision peut seulement atteindre une seconde. |
 
+## <a name="new-outlook-on-mac-preview"></a>Nouvelle version d’Outlook sur Mac (aperçu)
+
+Les compléments Outlook sont désormais pris en charge dans la nouvelle interface utilisateur Mac, jusqu’à l’ensemble de conditions requises 1,6. Toutefois, les ensembles de conditions requises et les fonctionnalités suivantes ne sont **pas** encore pris en charge.
+
+1. Ensembles de conditions requises de l’API 1,7 et 1,8
+1. Volet Office épinglables, `ItemChanged` événement
+1. Compléments contextuels
+1. En envoi
+1. Prise en charge des dossiers partagés
+1. `saveAsync`lors de la composition d’une réunion
+1. Authentification unique (SSO)
+
+Nous vous invitons à prévisualiser la nouvelle version d’Outlook sur Mac, disponible à partir de la version 16.38.506. Pour en savoir plus sur la façon de le tester, consultez la rubrique [relative aux notes de publication d’Outlook pour Mac pour les générations rapides Insiders](https://support.microsoft.com/office/d6347358-5613-433e-a49e-a9a0e8e0462a).
+
+Vous pouvez déterminer la version de l’interface utilisateur sur laquelle vous vous trouvez, comme suit.
+
+**Interface utilisateur actuelle**
+
+&nbsp;&nbsp;&nbsp;&nbsp;![Interface utilisateur actuelle sur Mac](../images/outlook-on-mac-classic.png)
+
+**Nouvelle interface utilisateur (aperçu)**
+
+&nbsp;&nbsp;&nbsp;&nbsp;![Nouvelle interface utilisateur en mode aperçu sur Mac](../images/outlook-on-mac-new.png)
