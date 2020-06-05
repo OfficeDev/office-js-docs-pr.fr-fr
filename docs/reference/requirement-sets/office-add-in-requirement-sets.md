@@ -4,12 +4,12 @@ description: En savoir plus sur les ensembles de conditions requises de l’API 
 ms.date: 06/03/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: cedf2a54d0582739b5c9ed13a3c859d0eaf90acf
-ms.sourcegitcommit: c00db2625d6c222ac09b5845095c21e5cbad81d9
+ms.openlocfilehash: 22379e1196b6112fe51c2e71793912d066c69864
+ms.sourcegitcommit: 6754aa2835e57c3a95b0c513095ba4b29744f9eb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "44561895"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "44567833"
 ---
 # <a name="office-common-api-requirement-sets"></a>Ensembles de conditions requises des API communes pour Office
 
@@ -164,6 +164,14 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 | Excel sur Windows<br>Excel sur le web<br>Excel sur Mac<br>PowerPoint sur Windows<br>PowerPoint sur le web<br>PowerPoint sur iPad<br>PowerPoint sur Mac<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Prend en charge la sortie au format PDF (Office.FileType.Pdf)<br>lorsque vous utilisez la méthode Document.getFileAsync.|
+
+---
+
+### <a name="ribbonapi"></a>RibbonApi
+
+|**Hôtes Office**|**Méthodes dans l’ensemble**|
+|:-----|:-----|
+| Consultez la rubrique [ensembles de conditions requises de l’API ruban](ribbon-api-requirement-sets.md). | Office. Ribbon. requestUpdate |
 
 ---
 
