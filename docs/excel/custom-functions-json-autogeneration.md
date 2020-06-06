@@ -3,12 +3,12 @@ ms.date: 05/06/2020
 description: Utiliser les balises JSDOC pour créer dynamiquement vos fonctions personnalisées de métadonnées JSON.
 title: Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: bad11e6ce8e58dc7970bc920e2619ab4732ebc34
-ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.openlocfilehash: 97cd9a06a53019c4065c4be29e46908da766ea71
+ms.sourcegitcommit: 0300165295fcbd4226aa048be2fad660892d35ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44275979"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "44591129"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 
@@ -101,7 +101,7 @@ Dans l’exemple suivant, Increments correspond à l’`id` et au `name` de la f
 Fournit le nom d’affichage `name`de la fonction personnalisée.
 
 * Si aucun nom n’est fourni, l’id servira aussi de nom.
-* Caractères autorisés : [caractères alphanumériques Unicode](http://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic) (lettres, chiffres), point (.) et trait de soulignement (\_).
+* Caractères autorisés : [caractères alphanumériques Unicode](https://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic) (lettres, chiffres), point (.) et trait de soulignement (\_).
 * Doit commencer par une lettre.
 * Sa longueur maximale est limitée à 128 caractères.
 

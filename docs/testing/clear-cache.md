@@ -3,12 +3,12 @@ title: Vider le cache Office
 description: Découvrez comment effacer le cache Office sur votre ordinateur.
 ms.date: 05/22/2020
 localization_priority: Normal
-ms.openlocfilehash: fb08cd3838cf9c1d12df2fc8d37453776a05c768
-ms.sourcegitcommit: d88b3dcfe13ba06f821b55db2de46aed152a378d
+ms.openlocfilehash: 22778aaa3459f9ea955e112dc63102062bd430ba
+ms.sourcegitcommit: 0300165295fcbd4226aa048be2fad660892d35ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "44347650"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "44591139"
 ---
 # <a name="clear-the-office-cache"></a>Vider le cache Office
 
@@ -20,7 +20,7 @@ En outre, si vous apportez des modifications au manifeste de votre complément (
 
 Pour supprimer tous les compléments versions test chargées d’Excel, Word et PowerPoint, supprimez le contenu du dossier :
 
-```
+```text
 %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\
 ```
 
