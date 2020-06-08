@@ -1,15 +1,15 @@
 ---
 title: Didacticiel sur le complément Excel
 description: Dans ce didacticiel, vous allez développer un complément Excel qui crée, remplit, filtre et trie un tableau, crée un graphique, fige un en-tête de tableau, protège une feuille de calcul et ouvre une boîte de dialogue.
-ms.date: 03/30/2020
+ms.date: 06/05/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: bc14027600a108f47cdf4766a51ebf2437b6f976
-ms.sourcegitcommit: 73a3df90a51acf13416d6a049bddcd9aabc32441
+ms.openlocfilehash: 42ce837bd03d3b8fd9be35e812b8e87e66a5e35d
+ms.sourcegitcommit: 0300165295fcbd4226aa048be2fad660892d35ea
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "43069315"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "44591150"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 
@@ -734,6 +734,7 @@ Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*
         >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/`Où se trouve `{host}` Office (par exemple, `Excel`)
         >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/`Où se trouve `{host}` Office (par exemple, `Excel`)
         >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
+        >    - `com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
 
 3. Si le serveur web local est déjà en cours d’exécution, arrêtez-le en fermant la fenêtre de commande du nœud.
 
