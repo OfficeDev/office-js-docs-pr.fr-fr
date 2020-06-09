@@ -3,12 +3,12 @@ title: Instructions concernant la typographie pour les compléments Office
 description: Découvrez les polices et les tailles de police à utiliser dans les compléments Office.
 ms.date: 06/27/2018
 localization_priority: Normal
-ms.openlocfilehash: 048506dbe7464f4031970e8bda9c3ad3976556e5
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 9f9398137c9e8a00a2743e99d94e405ff80d85dd
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718488"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44607658"
 ---
 # <a name="typography"></a>Typographie
 

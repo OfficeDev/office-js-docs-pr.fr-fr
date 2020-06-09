@@ -3,12 +3,12 @@ title: Élément Action dans le fichier manifeste
 description: Cet élément spécifie l’action à effectuer lorsque l’utilisateur sélectionne un bouton ou un contrôle de menu.
 ms.date: 02/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 75ad0d6a0eab81b7526acadb6079824d5a98fd5b
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: c542cec38b400100014c51c978c8fcd71a546f2a
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720966"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608802"
 ---
 # <a name="action-element"></a>Élément Action
 
@@ -132,7 +132,7 @@ L’exemple suivant montre une action qui utilise l’élément **title** . Note
 Élément facultatif quand **xsi:type** a la valeur « ShowTaskpane ». Les éléments [VersionOverrides](versionoverrides.md) le contenant doivent avoir une valeur d’attribut `xsi:type` de `VersionOverridesV1_1`. Incluez cet élément avec une valeur `true` pour prendre en charge l’épinglage du volet Office. L’utilisateur pourra alors « épingler » le volet Office qui restera ouvert pendant que la sélection est modifiée. Pour en savoir plus, consultez l’article relatif à l’[implémentation d’un volet Office épinglable dans Outlook](../../outlook/pinnable-taskpane.md).
 
 > [!IMPORTANT]
-> Bien que `SupportsPinning` l’élément ait été introduit dans l' [ensemble de conditions requises 1,5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), il est actuellement uniquement pris en charge pour les abonnés Office 365 à l’aide des éléments suivants.
+> Bien que l' `SupportsPinning` élément ait été introduit dans l' [ensemble de conditions requises 1,5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), il est actuellement uniquement pris en charge pour les abonnés Office 365 à l’aide des éléments suivants.
 > - Outlook 2016 ou version ultérieure sur Windows (version 7628,1000 ou ultérieure)
 > - Outlook 2016 ou version ultérieure sur Mac (Build 16.13.503 ou version ultérieure)
 > - Outlook moderne sur le web

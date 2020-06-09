@@ -3,12 +3,12 @@ title: Élément Ressources dans le fichier manifest
 description: L’élément Resources contient des icônes, des chaînes, des URL pour le nœud VersionOverrides.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 9efd1f370ff842c9df2d911c64217f489284e767
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 717e3cecd32fbf2bdb806f7484cc954a86b82e3d
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717963"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608746"
 ---
 # <a name="resources-element"></a>Élément Resources
 
@@ -28,7 +28,7 @@ Chaque ressource peut avoir plusieurs éléments enfants **Override** afin que v
 > [!NOTE]
 > Vous devez utiliser le protocole SSL (Secure Sockets Layer) pour toutes les URL dans les éléments **Image** et **Url**.
 
-### <a name="images"></a>Des images
+### <a name="images"></a>Images
 Chaque icône doit disposer de trois éléments **images** , un pour chacune des trois tailles obligatoires :
 
 - 16x16

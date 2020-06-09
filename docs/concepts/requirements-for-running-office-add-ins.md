@@ -3,12 +3,12 @@ title: Configuration requise pour exécuter des compléments Office
 description: Découvrez la configuration requise du client et du serveur pour qu’un utilisateur final doive exécuter des compléments Office.
 ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: c387d3d7ca9be1d47fa9ff4033fe492ae0e0fb3a
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: 1c135b362516bef35cab2fa50e9ceeefdaf74015
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890503"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608015"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Configuration requise pour exécuter des compléments Office
 

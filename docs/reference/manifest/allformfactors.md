@@ -3,12 +3,12 @@ title: Élément AllFormFactors dans le fichier manifeste
 description: Spécifie les paramètres d’un complément pour tous les facteurs de forme.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: f1285f92b5eb89993e7fcfe79aab2325b86aca3d
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 9dac322312c1dfd60f6deb4296413e12b55a6a49
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720714"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608795"
 ---
 # <a name="allformfactors-element"></a>AllFormFactors, élément
 

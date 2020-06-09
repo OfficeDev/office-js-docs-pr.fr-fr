@@ -3,12 +3,12 @@ title: Initialiser votre complément Office
 description: Découvrez comment initialiser votre complément Office.
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: ca7b21c35fc82011c673cb83d077a89cc29f56eb
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 8310c5efb803391f7f0d4b01fda70dc0df537b21
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718936"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608138"
 ---
 # <a name="initialize-your-office-add-in"></a>Initialiser votre complément Office
 
@@ -26,11 +26,11 @@ Les compléments Office ont souvent une logique de démarrage pour effectuer des
 
 Toutefois, un complément Office ne peut pas appeler d’API JavaScript Office tant que la bibliothèque n’a pas été chargée. Cet article décrit les deux façons dont votre code peut s’assurer que la bibliothèque a été chargée :
 
-- Initialiser avec `Office.onReady()`.
-- Initialiser avec `Office.initialize`.
+- Initialiser avec `Office.onReady()` .
+- Initialiser avec `Office.initialize` .
 
 > [!TIP]
-> Au lieu de `Office.initialize`, nous vous recommandons d’utiliser `Office.onReady()`. Bien `Office.initialize` que est toujours pris `Office.onReady()` en charge, offre davantage de flexibilité. Vous ne pouvez attribuer qu’un seul `Office.initialize` gestionnaire à et il n’est appelé qu’une seule fois par l’infrastructure Office. Vous pouvez appeler `Office.onReady()` à différents endroits de votre code et utiliser des rappels différents.
+> Au lieu de `Office.initialize`, nous vous recommandons d’utiliser `Office.onReady()`. Bien que `Office.initialize` est toujours pris en charge, `Office.onReady()` offre davantage de flexibilité. Vous ne pouvez attribuer qu’un seul gestionnaire à `Office.initialize` et il n’est appelé qu’une seule fois par l’infrastructure Office. Vous pouvez appeler `Office.onReady()` à différents endroits de votre code et utiliser des rappels différents.
 > 
 > Pour plus d’informations sur les différences entre ces techniques, reportez-vous à la rubrique [Différences majeures entre Office.initialize et Office.onReady()](#major-differences-between-officeinitialize-and-officeonready).
 
@@ -104,7 +104,7 @@ Office.initialize = function () {
 };
 ```
 
-Si vous utilisez des infrastructures JavaScript supplémentaires qui incluent leur propre gestionnaire d’initialisation ou tests, ceux-ci doivent *généralement* être placés au `Office.initialize` sein de l’événement (les exceptions décrites dans la section **Initialize with Office. onReady ()** ci-dessus s’appliquent également dans ce cas). Par exemple, la fonction `$(document).ready()` de [JQuery](https://jquery.com) sera référencée comme suit :
+Si vous utilisez des infrastructures JavaScript supplémentaires qui incluent leur propre gestionnaire d’initialisation ou tests, ceux-ci doivent *généralement* être placés au sein de l' `Office.initialize` événement (les exceptions décrites dans la section **Initialize with Office. onReady ()** ci-dessus s’appliquent également dans ce cas). Par exemple, la fonction `$(document).ready()` de [JQuery](https://jquery.com) sera référencée comme suit :
 
 ```js
 Office.initialize = function () {

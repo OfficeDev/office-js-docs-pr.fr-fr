@@ -3,12 +3,12 @@ title: Utiliser l’API de boîte de dialogue Office dans vos compléments Offic
 description: Découvrir les notions de base relatives à la création d’une boîte de dialogue dans un complément Office
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 5ebe8fe5a0411ab87e978267242c1179dec2d89f
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 96ed3169e7909e700bde894a4caf03348d039b74
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688981"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608277"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Utiliser l’API de boîte de dialogue Office dans les compléments Office
 
@@ -86,7 +86,7 @@ La valeur par défaut est `false`, ce qui revient à omettre entièrement la pro
 La boîte de dialogue ne peut pas communiquer avec la page hôte dans le volet Office, sauf si :
 
 - la page active dans la boîte de dialogue se trouve dans le même domaine que la page hôte ;
-- La bibliothèque de l’API JavaScript pour Office est chargée dans la page. (Comme n’importe quelle page qui utilise la bibliothèque d’API JavaScript d’Office, le script de la page doit `Office.initialize` assigner une méthode à la propriété, bien qu’il puisse s’agir d’une méthode vide. Pour plus d’informations, consultez [la rubrique initialiser votre complément Office](initialize-add-in.md).
+- La bibliothèque de l’API JavaScript pour Office est chargée dans la page. (Comme n’importe quelle page qui utilise la bibliothèque d’API JavaScript d’Office, le script de la page doit assigner une méthode à la `Office.initialize` propriété, bien qu’il puisse s’agir d’une méthode vide. Pour plus d’informations, consultez [la rubrique initialiser votre complément Office](initialize-add-in.md).
 
 Le code de la boîte de dialogue utilise la fonction [messageParent](/javascript/api/office/office.ui#messageparent-message-) pour envoyer une valeur booléenne ou un message de type chaîne à la page hôte. La chaîne peut être un mot, une phrase, un blob XML, un JSON converti en chaîne ou un autre élément pouvant être sérialisé en chaîne. Voici un exemple :
 
@@ -251,7 +251,7 @@ Le code dans votre boîte de dialogue peut analyser l’URL et lire la valeur du
 > Office ajoute automatiquement un paramètre de requête appelé `_host_info` à l’URL qui est transmise à `displayDialogAsync`. (Il est ajouté après vos paramètres de requête personnalisés, le cas échéant. Il n’est pas ajouté à toutes les autres URL auxquelles la boîte de dialogue accède.) Microsoft peut modifier le contenu de cette valeur, ou le supprimer entièrement, à l’avenir, donc votre code ne doit pas le lire. La même valeur est ajoutée au stockage de session de la boîte de dialogue. Là encore, *votre code ne doit ni lire, ni écrire cette valeur*.
 
 > [!NOTE]
-> Il existe maintenant un aperçu d' `messageChild` une API que la page parente peut utiliser pour envoyer des messages à la boîte `messageParent` de dialogue, tout comme l’API décrite ci-dessus envoie des messages à partir de la boîte de dialogue. Pour plus d’informations à ce sujet, consultez [la rubrique transmission de données et de messages à une boîte de dialogue à partir de sa page hôte](parent-to-dialog.md). Nous vous invitons à essayer, mais pour les compléments de production, nous vous recommandons d’utiliser les techniques décrites dans cette section.
+> Il existe maintenant un aperçu d’une `messageChild` API que la page parente peut utiliser pour envoyer des messages à la boîte de dialogue, tout comme l' `messageParent` API décrite ci-dessus envoie des messages à partir de la boîte de dialogue. Pour plus d’informations à ce sujet, consultez [la rubrique transmission de données et de messages à une boîte de dialogue à partir de sa page hôte](parent-to-dialog.md). Nous vous invitons à essayer, mais pour les compléments de production, nous vous recommandons d’utiliser les techniques décrites dans cette section.
 
 ## <a name="closing-the-dialog-box"></a>Fermeture de la boîte de dialogue
 

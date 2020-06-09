@@ -3,12 +3,12 @@ title: Limites des ressources et optimisation des performances pour les complém
 description: Découvrez les limites de ressources de la plateforme de complément Office, y compris le processeur et la mémoire.
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 68f0bae8514a5f5769e648d6b74ffc3bdbccc194
-ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
+ms.openlocfilehash: be4727ba12fa8f9b3ee8133026d9de94a612a9fc
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43225658"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608005"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites des ressources et optimisation des performances pour les compléments Office
 
@@ -81,7 +81,7 @@ Le tableau suivant répertorie les événements que le journal de télémétrie 
 |8 |Échec du téléchargement du manifeste du complément|Critique|L’application hôte n’a pas pu charger le fichier manifeste pour le complément Office à partir du catalogue SharePoint, du catalogue d’entreprise ou d’AppSource.|
 |9 |Impossible d’analyser le balisage du complément|Critique|L’application hôte a chargé le manifeste de l’Complément Office, mais n’a pas pu lire le balisage HTML de l’application.|
 |10 |Le complément a trop sollicité le processeur|Critique|L’Complément Office a utilisé plus de 90 % des ressources du processeur sur une période de temps définie.|
-|15 |Le complément a été désactivé en raison de l’expiration de la recherche de chaîne||§LTA Les compléments Outlook recherchent la ligne d’objet et le corps du message d’un courrier électronique pour déterminer s’ils doivent être affichés avec une expression régulière. Le complément Outlook répertorié dans la colonne **Fichier** a été désactivé par Outlook, car il a expiré à plusieurs reprises lors d’une tentative de mise en correspondance d’une expression régulière.|
+|0,15|Le complément a été désactivé en raison de l’expiration de la recherche de chaîne||§LTA Les compléments Outlook recherchent la ligne d’objet et le corps du message d’un courrier électronique pour déterminer s’ils doivent être affichés avec une expression régulière. Le complément Outlook répertorié dans la colonne **Fichier** a été désactivé par Outlook, car il a expiré à plusieurs reprises lors d’une tentative de mise en correspondance d’une expression régulière.|
 |18 |Le complément a été fermé||L’application hôte a pu fermer l’Complément Office sans problème.|
 |neuf|Le complément a rencontré une erreur d’exécution|Critique|L'Complément Office a rencontré un problème qui l'a empêchée de s'exécuter. Pour plus de détails, consultez le journal **Alertes Microsoft Office** à l’aide de l’Observateur d’événements Windows sur l’ordinateur sur lequel l’erreur s’est produite.|
 |vingtaine|Le complément n’a pas pu vérifier la licence|Critique|Les informations de licence de l'Complément Office n'ont pas pu être vérifiées et la licence a peut-être expiré. Pour plus de détails, consultez le journal **Alertes Microsoft Office** à l’aide de l’Observateur d’événements Windows sur l’ordinateur sur lequel l’erreur s’est produite.|

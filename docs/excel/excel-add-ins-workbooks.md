@@ -3,12 +3,12 @@ title: Utiliser les classeurs utilisant l’API JavaScript Excel
 description: Exemples de code qui montrent comment effectuer des tâches courantes avec des classeurs ou des fonctionnalités au niveau de l’application à l’aide de l’API JavaScript pour Excel.
 ms.date: 05/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 4fec6a217a2764eaf664463943ca384b3a2d847b
-ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
+ms.openlocfilehash: 16c091c3f01ffba144cf28c4f6e2bf4889872194
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "44170764"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609199"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Utiliser les classeurs utilisant l’API JavaScript Excel
 
@@ -192,7 +192,7 @@ Un classeur comporte des paramètres de langue et de culture qui influent sur l�
 
 `Application.cultureInfo`définit les paramètres de culture du système en tant qu’objet [CultureInfo](/javascript/api/excel/excel.cultureinfo) . Contient des paramètres tels que le séparateur décimal numérique ou le format de date.
 
-Certains paramètres de culture peuvent être [modifiés via l’interface utilisateur Excel](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e). Les paramètres système sont conservés dans l' `CultureInfo` objet. Toutes les modifications locales sont conservées en tant que propriétés au niveau `Application.decimalSeparator`de l' [application](/javascript/api/excel/excel.application), telles que.
+Certains paramètres de culture peuvent être [modifiés via l’interface utilisateur Excel](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e). Les paramètres système sont conservés dans l' `CultureInfo` objet. Toutes les modifications locales sont conservées en tant que propriétés au niveau de l' [application](/javascript/api/excel/excel.application), telles que `Application.decimalSeparator` .
 
 L’exemple suivant montre comment remplacer le caractère séparateur décimal d’une chaîne numérique « , » par le caractère utilisé par les paramètres système.
 

@@ -3,12 +3,12 @@ title: Appel de fonctions de feuille de calcul Excel intégrées à l’aide de 
 description: Découvrez comment appeler des fonctions de feuille de calcul Excel intégrées telles que `VLOOKUP` et `SUM` à l’aide de l’API JavaScript pour Excel.
 ms.date: 12/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 1c988f2bc7ca6a8fc60953dad5ac070051b4c281
-ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
+ms.openlocfilehash: d75dc56210425d3708b03fb0132aff5ff534da7a
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44278370"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609189"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>Appel de fonctions de feuille de calcul Excel intégrées
 

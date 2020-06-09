@@ -3,12 +3,12 @@ ms.date: 04/29/2020
 description: Localisez vos fonctions personnalisées Excel.
 title: Localiser des fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: 001045f82634d7e96c4d4515ccd87b5cfaf2cd1c
-ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.openlocfilehash: 427bff029c5e85caa216f628df450525ee187c17
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44275965"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609295"
 ---
 # <a name="localize-custom-functions"></a>Localiser des fonctions personnalisées
 

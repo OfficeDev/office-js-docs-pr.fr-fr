@@ -3,12 +3,12 @@ title: Instructions relatives aux icônes de style monolignes pour les compléme
 description: Obtenir des instructions sur l’utilisation des icônes d’icône de style monoligne dans les compléments Office.
 ms.date: 12/09/2019
 localization_priority: Normal
-ms.openlocfilehash: 8d1ac2dff76b852cd69b38bd2c138d1ba43f203c
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 36142e79853a0fad47963255eb9517acd0810920
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718600"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44607693"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>Instructions relatives aux icônes de style monolignes pour les compléments Office
 
@@ -172,7 +172,7 @@ Lorsque vous utilisez un remplissage coloré, il doit toujours être associé à
 
 #### <a name="when-to-use-color"></a>Quand utiliser la couleur
 
-La couleur doit être utilisée pour indiquer la signification de l’icône plutôt que pour l’ornement. Il doit **mettre en surbrillance l’action** pour l’utilisateur. Lorsqu’un modificateur est ajouté à un élément de base avec une couleur, l’élément de base est généralement transformé en gris foncé et remplissage d’arrière-plan de sorte que le modificateur puisse être l’élément de couleur, comme le cas ci-dessous avec le modificateur « X » ajouté à la base de l’image à l’extrême gauche icône de l’ensemble suivant.
+La couleur doit être utilisée pour indiquer la signification de l’icône plutôt que pour l’ornement. Il doit **mettre en surbrillance l’action** pour l’utilisateur. Lorsqu’un modificateur est ajouté à un élément de base avec une couleur, l’élément de base est généralement transformé en gris foncé et remplissage d’arrière-plan de sorte que le modificateur puisse être l’élément de couleur, comme le cas ci-dessous avec le modificateur « X » ajouté à la base de l’image dans l’icône la plus à gauche du jeu suivant.
 
 ![Cinq icônes qui utilisent la couleur](../images/monolineicon29.png)
 

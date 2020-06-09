@@ -3,5 +3,5 @@
 >
 > Pour utiliser les API d’aperçu :
 >
-> - Vous devez faire référence à la bibliothèque **bêta** sur lehttps://appsforoffice.microsoft.com/lib/beta/hosted/office.js)CDN (. Le [fichier de définition de type](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) pour la compilation de la machine à écrire et IntelliSense se trouve dans le CDN et [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Vous pouvez installer ces types avec `npm install --save-dev @types/office-js-preview`.
+> - Vous devez faire référence à la bibliothèque **bêta** sur le CDN ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . Le [fichier de définition de type](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) pour la compilation de la machine à écrire et IntelliSense se trouve dans le CDN et [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Vous pouvez installer ces types avec `npm install --save-dev @types/office-js-preview` .
 > - Vous devrez peut-être rejoindre le [programme Office Insider](https://insider.office.com) pour accéder à des builds Office plus récentes.

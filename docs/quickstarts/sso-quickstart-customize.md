@@ -1,17 +1,17 @@
 ---
-title: Personnaliser votre complément à extension SSO node. js
+title: Personnaliser votre complément compatible avec l’authentification unique Node.js
 description: Découvrez comment personnaliser le complément à extension SSO que vous avez créé avec le générateur Yeoman.
 ms.date: 02/20/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: c02e0f74a8ea3f3f8f831b65aa403ce49655953b
-ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
+ms.openlocfilehash: d71206d6b03b8a92e50b316cc75c401866be5334
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "42284140"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608826"
 ---
-# <a name="customize-your-nodejs-sso-enabled-add-in"></a>Personnaliser votre complément à extension SSO node. js
+# <a name="customize-your-nodejs-sso-enabled-add-in"></a>Personnaliser votre complément compatible avec l’authentification unique Node.js
 
 > [!IMPORTANT]
 > Cet article s’appuie sur le complément à extension SSO créé en remplissant le démarrage rapide de l’authentification [unique (SSO)](sso-quickstart.md). Veuillez terminer le démarrage rapide avant de lire cet article.
@@ -24,7 +24,7 @@ Le [démarrage rapide de l’authentification unique](sso-quickstart.md) crée u
 
 * Au moins des fichiers et classeurs sont stockés sur OneDrive Entreprise dans votre abonnement Office 365.
 
-* [Node. js](https://nodejs.org) (dernière version de [LTS](https://nodejs.org/about/releases) ).
+* [Node.js](https://nodejs.org) (la dernière version [LTS](https://nodejs.org/about/releases))
 
 [!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
@@ -65,7 +65,7 @@ Avant que le complément puisse lire correctement le contenu de OneDrive entrepr
 
 8. Sélectionnez le bouton **Oui, supprimer** en réponse à l’invite affichée.
 
-9. Sélectionnez le bouton **Ajouter une autorisation** .
+9. Cliquez sur le bouton **Ajouter une autorisation**.
 
 10. Dans le panneau qui s’ouvre, choisissez **Microsoft Graph** , puis sélectionnez **autorisations déléguées**.
 
@@ -103,9 +103,9 @@ Effectuez les étapes suivantes pour votre complément, pour modifier l’URL, l
 
     c. Remplacez `SCOPE=User.Read` par :`SCOPE=Files.Read.All`
 
-2. Dans **./manifest.xml**, recherchez la ligne `<Scope>User.Read</Scope>` à la fin du fichier et remplacez-la par la ligne `<Scope>Files.Read.All</Scope>`.
+2. Dans **./manifest.xml**, recherchez la ligne à `<Scope>User.Read</Scope>` la fin du fichier et remplacez-la par la ligne `<Scope>Files.Read.All</Scope>` .
 
-3. Dans **./SRC/helpers/fallbackauthdialog.js** (ou dans **./SRC/helpers/fallbackauthdialog.TS** pour un projet de type dactylographié), recherchez `https://graph.microsoft.com/User.Read` la chaîne et remplacez-la `https://graph.microsoft.com/Files.Read.All`par la chaîne `requestObj` , de la manière suivante :
+3. Dans **./SRC/helpers/fallbackauthdialog.js** (ou dans **./SRC/helpers/fallbackauthdialog.TS** pour un projet de type dactylographié), recherchez la chaîne `https://graph.microsoft.com/User.Read` et remplacez-la par la chaîne, de la manière suivante `https://graph.microsoft.com/Files.Read.All` `requestObj` :
 
     ```javascript
     var requestObj = {
@@ -129,7 +129,7 @@ Effectuez les étapes suivantes pour votre complément, pour modifier l’URL, l
     </section>
     ```
 
-5. Dans **./SRC/TaskPane/TaskPane.html**, recherchez et remplacez les deux occurrences de la `Get My User Profile Information` chaîne par la `Read my OneDrive for Business`chaîne.
+5. Dans **./SRC/TaskPane/TaskPane.html**, recherchez et remplacez les deux occurrences de la chaîne `Get My User Profile Information` par la chaîne `Read my OneDrive for Business` .
 
     ```html
     <li class="ms-ListItem">
@@ -146,7 +146,7 @@ Effectuez les étapes suivantes pour votre complément, pour modifier l’URL, l
     </p>
     ```
 
-6. Dans **./SRC/TaskPane/TaskPane.html**, recherchez et remplacez la chaîne `Your user profile information will be displayed in the document.` par la chaîne `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.`.
+6. Dans **./SRC/TaskPane/TaskPane.html**, recherchez et remplacez la chaîne `Your user profile information will be displayed in the document.` par la chaîne `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.` .
 
     ```html
     <li class="ms-ListItem">
@@ -225,11 +225,11 @@ Si votre complément est un complément Excel créé avec JavaScript, effectuez 
     }
     ```
 
-4. Supprimez `writeDataToOutlook` la fonction.
+4. Supprimez la `writeDataToOutlook` fonction.
 
-5. Supprimez `writeDataToPowerPoint` la fonction.
+5. Supprimez la `writeDataToPowerPoint` fonction.
 
-6. Supprimez `writeDataToWord` la fonction.
+6. Supprimez la `writeDataToWord` fonction.
 
 Une fois ces modifications effectuées, passez directement à la section [essayer](#try-it-out) de cet article pour tester votre complément mis à jour.
 
@@ -323,17 +323,17 @@ Si votre complément est un complément Outlook créé avec JavaScript, effectue
     }
     ```
 
-4. Supprimez `writeDataToExcel` la fonction.
+4. Supprimez la `writeDataToExcel` fonction.
 
-5. Supprimez `writeDataToPowerPoint` la fonction.
+5. Supprimez la `writeDataToPowerPoint` fonction.
 
-6. Supprimez `writeDataToWord` la fonction.
+6. Supprimez la `writeDataToWord` fonction.
 
 Une fois ces modifications effectuées, passez directement à la section [essayer](#try-it-out) de cet article pour tester votre complément mis à jour.
 
 ### <a name="changes-required-for-an-outlook-add-in-typescript"></a>Modifications requises pour un complément Outlook (machine à écrire)
 
-Si votre complément est un complément Outlook créé avec la machine à écrire, ouvrez **./SRC/TaskPane/TaskPane.TS**, recherchez la fonction et remplacez `writeDataToOfficeDocument` -la par la fonction suivante :
+Si votre complément est un complément Outlook créé avec la machine à écrire, ouvrez **./SRC/TaskPane/TaskPane.TS**, recherchez la `writeDataToOfficeDocument` fonction et remplacez-la par la fonction suivante :
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): void {
@@ -422,17 +422,17 @@ Si votre complément est un complément PowerPoint créé avec JavaScript, effec
     }
     ```
 
-4. Supprimez `writeDataToExcel` la fonction.
+4. Supprimez la `writeDataToExcel` fonction.
 
-5. Supprimez `writeDataToOutlook` la fonction.
+5. Supprimez la `writeDataToOutlook` fonction.
 
-6. Supprimez `writeDataToWord` la fonction.
+6. Supprimez la `writeDataToWord` fonction.
 
 Une fois ces modifications effectuées, passez directement à la section [essayer](#try-it-out) de cet article pour tester votre complément mis à jour.
 
 ### <a name="changes-required-for-a-powerpoint-add-in-typescript"></a>Modifications requises pour un complément PowerPoint (machine à écrire)
 
-Si votre complément est un complément PowerPoint créé avec la machine à écrire, ouvrez **./SRC/TaskPane/TaskPane.TS**, recherchez la fonction et remplacez `writeDataToOfficeDocument` -la par la fonction suivante :
+Si votre complément est un complément PowerPoint créé avec la machine à écrire, ouvrez **./SRC/TaskPane/TaskPane.TS**, recherchez la `writeDataToOfficeDocument` fonction et remplacez-la par la fonction suivante :
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): void {
@@ -523,11 +523,11 @@ Si votre complément est un complément Word créé avec JavaScript, effectuez l
     }
     ```
 
-4. Supprimez `writeDataToExcel` la fonction.
+4. Supprimez la `writeDataToExcel` fonction.
 
-5. Supprimez `writeDataToOutlook` la fonction.
+5. Supprimez la `writeDataToOutlook` fonction.
 
-6. Supprimez `writeDataToPowerPoint` la fonction.
+6. Supprimez la `writeDataToPowerPoint` fonction.
 
 Une fois ces modifications effectuées, passez directement à la section [essayer](#try-it-out) de cet article pour tester votre complément mis à jour.
 
@@ -565,7 +565,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 Une fois ces modifications effectuées, passez à la section [essayer](#try-it-out) de cet article pour tester votre complément mis à jour.
 
-## <a name="try-it-out"></a>Try it out
+## <a name="try-it-out"></a>Essayez
 
 Si votre complément est un complément Excel, Word ou PowerPoint, effectuez les étapes de la section suivante pour le tester. Si votre complément est un complément Outlook, effectuez plutôt les étapes dans la section [Outlook](#outlook) .
 

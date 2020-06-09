@@ -3,12 +3,12 @@ title: Authorization, élément dans le fichier manifeste
 description: Spécifie les ressources externes auxquelles l’application Web du complément doit disposer et les autorisations requises.
 ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: cece0934eb9db3175b173e97d7ab478827b7cda2
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: b8c6249706b8eef11f579378fe5c9dc83016d17c
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718439"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608760"
 ---
 # <a name="authorization-element"></a>Authorization, élément
 

@@ -3,12 +3,12 @@ title: Obtenir ou définir des données d’élément dans un complément Outloo
 description: Selon qu’un complément est activé dans un formulaire de lecture ou de composition, les propriétés disponibles pour le complément sur un élément diffèrent.
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: 925dcaff524be3f4e3d76213c0ee3413a11f43d6
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 6ef0b868ba83a6003c401e15b7d6dd9ee0f4f94b
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325353"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609075"
 ---
 # <a name="get-and-set-outlook-item-data-in-read-or-compose-forms"></a>Obtenir et définir des données d’élément Outlook dans des formulaires de lecture ou de composition
 

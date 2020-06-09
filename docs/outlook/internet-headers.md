@@ -3,12 +3,12 @@ title: Obtenir et définir des en-têtes Internet
 description: Comment obtenir et définir des en-têtes Internet sur un message dans un complément Outlook.
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 1b6bdbbe77998ce92ea1b1b43874a32a30aa160a
-ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
+ms.openlocfilehash: a05ba86eebd8dc01c8368b61e39d1de1d90f9efa
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "43930287"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609082"
 ---
 # <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>Obtenir et définir des en-têtes Internet sur un message dans un complément Outlook
 
@@ -21,7 +21,7 @@ Une exigence courante dans le développement des compléments Outlook est le sto
 
 Les deux types de propriétés ne sont pas conservés après que l’élément a quitté le serveur Exchange, de sorte que les destinataires du courrier électronique ne peuvent pas obtenir les propriétés définies sur l’élément. Par conséquent, les développeurs ne peuvent pas accéder à ces paramètres ou à d’autres propriétés MIME pour permettre de meilleurs scénarios de lecture.
 
-Bien qu’il existe un moyen de définir les en-têtes Internet par le biais de demandes EWS, dans certains scénarios, la demande EWS ne fonctionnera pas. Par exemple, en mode composition sur le bureau Outlook, l’ID d’élément n’est pas `saveAsync` synchronisé en mode mis en cache.
+Bien qu’il existe un moyen de définir les en-têtes Internet par le biais de demandes EWS, dans certains scénarios, la demande EWS ne fonctionnera pas. Par exemple, en mode composition sur le bureau Outlook, l’ID d’élément n’est pas synchronisé  `saveAsync`   en mode mis en cache.
 
 > [!TIP]
 > Pour en savoir plus sur l’utilisation de ces options, consultez la rubrique [obtenir et définir des métadonnées de complément pour un complément Outlook](metadata-for-an-outlook-add-in.md) .

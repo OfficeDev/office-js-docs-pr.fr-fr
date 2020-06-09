@@ -3,12 +3,12 @@ title: Co-création dans des macros complémentaires Excel
 description: Apprenez à co-auteur d’un classeur Excel stocké dans OneDrive, OneDrive entreprise ou SharePoint Online.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 3802983df28594d39e116a5af8b87a4d6b7a6590
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: b70db9c6a0f1f9582288f1078561277b395d3815
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718761"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609351"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>Co-création dans des macros complémentaires Excel  
 
@@ -45,7 +45,7 @@ Si vous souhaitez que les visualisations personnalisées de l’utilisateur A r
 
 Comme indiqué précédemment, dans certains scénarios, le déclenchement d’événements pour tous les co-auteurs permet d’améliorer l’expérience utilisateur. Toutefois, sachez que, dans certains scénarios, ce comportement peut entraîner des expériences utilisateur médiocres. 
 
-Par exemple, dans les scénarios de validation de données, il est fréquent d’afficher l’interface utilisateur en réponse aux événements. L’événement [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) décrit dans la section précédente s’exécute lorsqu’un utilisateur local ou un co-auteur modifie (à distance) le contenu du classeur dans la liaison. Si le gestionnaire d’événements de `BindingDataChanged` l’événement affiche l’interface utilisateur, les utilisateurs voient l’interface utilisateur qui n’est pas liée aux modifications sur lesquelles ils travaillaient dans le classeur, ce qui entraîne une expérience utilisateur médiocre. Évitez d’afficher l’interface utilisateur lorsque vous utilisez des événements dans votre complément.
+Par exemple, dans les scénarios de validation de données, il est fréquent d’afficher l’interface utilisateur en réponse aux événements. L’événement [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) décrit dans la section précédente s’exécute lorsqu’un utilisateur local ou un co-auteur modifie (à distance) le contenu du classeur dans la liaison. Si le gestionnaire d’événements de l' `BindingDataChanged` événement affiche l’interface utilisateur, les utilisateurs voient l’interface utilisateur qui n’est pas liée aux modifications sur lesquelles ils travaillaient dans le classeur, ce qui entraîne une expérience utilisateur médiocre. Évitez d’afficher l’interface utilisateur lorsque vous utilisez des événements dans votre complément.
 
 ## <a name="see-also"></a>Voir aussi
 

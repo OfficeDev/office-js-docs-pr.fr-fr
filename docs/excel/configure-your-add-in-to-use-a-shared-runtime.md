@@ -4,12 +4,12 @@ title: Configurer votre complément Excel pour qu’il partage le runtime du nav
 ms.prod: excel
 description: Configurez votre complément Excel pour partager le runtime du navigateur et exécuter le ruban, le volet des tâches et le code de fonction personnalisée dans le même runtime.
 localization_priority: Priority
-ms.openlocfilehash: 166e0f9f2c2fe99b303484d5212e5d8b23726d6a
-ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.openlocfilehash: 8c16642f5a945e6156fcfd93c8b4cc088b616102
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44276014"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609344"
 ---
 # <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime"></a>Configurer votre complément Excel pour utiliser un Runtime JavaScript partagé
 

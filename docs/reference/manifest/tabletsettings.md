@@ -3,19 +3,19 @@ title: Élément TabletSettings dans le fichier manifeste
 description: L’élément TabletSettings spécifie les paramètres de contrôle qui s’appliquent lorsque votre complément de messagerie est utilisé sur une tablette.
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 71b7aed6b2906a8695ac1c13e93ba60da1aa56ec
-ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
+ms.openlocfilehash: b5a74db4f9fb43df10a08ab43b59507f6e0d7952
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43215081"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608697"
 ---
 # <a name="tabletsettings-element"></a>TabletSettings, élément
 
 Spécifie les paramètres de contrôle qui s’appliquent lorsque votre complément de messagerie est utilisé sur une tablette.
 
 > [!IMPORTANT]
-> L' `TabletSettings` élément est disponible uniquement dans les versions classiques d’Outlook sur le Web (généralement connectées à des versions antérieures du serveur Exchange local) et Outlook 2013 sur Windows. Pour prendre en charge Outlook sur Android et iOS, reportez-vous à la rubrique [compléments pour Outlook Mobile](../../outlook/outlook-mobile-addins.md).
+> L' `TabletSettings` élément est disponible uniquement dans les versions classiques d’Outlook sur le Web (généralement connectées à des versions antérieures du serveur Exchange local) et outlook 2013 sur Windows. Pour prendre en charge Outlook sur Android et iOS, reportez-vous à la rubrique [compléments pour Outlook Mobile](../../outlook/outlook-mobile-addins.md).
 
 **Type de complément :** messagerie
 

@@ -3,12 +3,12 @@ title: Élément Sets dans le fichier manifeste
 description: L’élément sets spécifie l’ensemble minimal d’API JavaScript pour Office requis pour l’activation de votre complément Office.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: c9e699b4609004c49d954da2367a6c8f82d13670
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 8c1c97bfc2934ecf3cc20b472b29a03805603729
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720392"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608732"
 ---
 # <a name="sets-element"></a>Élément Sets
 

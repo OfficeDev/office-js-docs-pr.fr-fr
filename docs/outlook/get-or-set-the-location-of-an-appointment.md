@@ -3,19 +3,19 @@ title: Obtenir ou définir le lieu de rendez-vous dans un complément
 description: Découvrez comment obtenir ou définir l’heure d’un rendez-vous à partir d’un complément Outlook.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: cc412da5dd64d8e908b86a81b847f6479dbd4a34
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 79cf5ebe029d2b95b1501b6f9066a2c8f9013ef3
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324967"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609182"
 ---
 # <a name="get-or-set-the-location-when-composing-an-appointment-in-outlook"></a>Obtenir ou définir l’emplacement lors de la composition d’un rendez-vous dans Outlook
 
 L’API JavaScript pour Office fournit des propriétés et des méthodes permettant de gérer l’emplacement d’un rendez-vous que l’utilisateur compose. Actuellement, il existe deux propriétés qui fournissent l’emplacement d’un rendez-vous :
 
 - [Item. Location](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): interface API de base qui vous permet d’obtenir et de définir l’emplacement.
-- [Item. enhancedLocation](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): API améliorée qui vous permet d’obtenir et de définir l’emplacement et inclut la spécification du [type d’emplacement](/javascript/api/outlook/office.mailboxenums.locationtype). Le type est `LocationType.Custom` si vous définissez l’emplacement à `item.location`l’aide du.
+- [Item. enhancedLocation](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): API améliorée qui vous permet d’obtenir et de définir l’emplacement et inclut la spécification du [type d’emplacement](/javascript/api/outlook/office.mailboxenums.locationtype). Le type est `LocationType.Custom` si vous définissez l’emplacement à l’aide du `item.location` .
 
 Le tableau suivant répertorie les API d’emplacement et les modes (par exemple, composition ou lecture) où elles sont disponibles.
 
@@ -119,7 +119,7 @@ Vous pouvez utiliser l' `location` API pour obtenir et définir l’emplacement 
 
 Cette section présente un exemple de code qui obtient et affiche l’emplacement du rendez-vous que compose l’utilisateur.
 
-Pour utiliser `item.location.getAsync`, indiquez une méthode de rappel qui vérifie l’état et le résultat de l’appel asynchrone.  Vous pouvez fournir les arguments nécessaires à la méthode de rappel via le paramètre facultatif `asyncContext`. Vous pouvez obtenir l’État, les résultats et toute erreur à l’aide `asyncResult` du paramètre de sortie du rappel. Si l’appel asynchrone aboutit, vous pouvez obtenir l’emplacement sous forme de chaîne à l’aide de la propriété [AsyncResult.value](/javascript/api/office/office.asyncresult#value).
+Pour utiliser `item.location.getAsync`, indiquez une méthode de rappel qui vérifie l’état et le résultat de l’appel asynchrone.  Vous pouvez fournir les arguments nécessaires à la méthode de rappel via le paramètre facultatif `asyncContext`. Vous pouvez obtenir l’État, les résultats et toute erreur à l’aide du paramètre `asyncResult` de sortie du rappel. Si l’appel asynchrone aboutit, vous pouvez obtenir l’emplacement sous forme de chaîne à l’aide de la propriété [AsyncResult.value](/javascript/api/office/office.asyncresult#value).
 
 ```js
 var item;
@@ -158,7 +158,7 @@ function write(message){
 
 Cette section présente un exemple de code qui définit l’emplacement du rendez-vous composé par l’utilisateur.
 
-Pour utiliser `item.location.setAsync`, spécifiez une chaîne de 255 caractères maximum dans le paramètre de données. Si vous le souhaitez, vous pouvez fournir une méthode de rappel et tous les arguments de la méthode de rappel dans le paramètre `asyncContext`. Vous devez vérifier l’État, le résultat et tous les messages d’erreur `asyncResult` dans le paramètre de sortie du rappel. Si l’appel asynchrone aboutit, `setAsync` insère la chaîne d’emplacement spécifiée sous forme de texte brut, en écrasant tous les emplacements existants pour cet élément.
+Pour utiliser `item.location.setAsync`, spécifiez une chaîne de 255 caractères maximum dans le paramètre de données. Si vous le souhaitez, vous pouvez fournir une méthode de rappel et tous les arguments de la méthode de rappel dans le paramètre `asyncContext`. Vous devez vérifier l’État, le résultat et tous les messages d’erreur dans le `asyncResult` paramètre de sortie du rappel. Si l’appel asynchrone aboutit, `setAsync` insère la chaîne d’emplacement spécifiée sous forme de texte brut, en écrasant tous les emplacements existants pour cet élément.
 
 > [!NOTE]
 > Vous pouvez définir plusieurs emplacements à l’aide d’un point-virgule comme séparateur (par exemple, «salle de conférence A ; Salle de conférence B').

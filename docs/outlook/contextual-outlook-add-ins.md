@@ -3,12 +3,12 @@ title: Compléments Outlook contextuels
 description: Lancer des tâches liées à un message sans laisser le message lui-même pour faciliter et enrichir l'expérience utilisateur.
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: b7fa034eaafb60fb3328cabfe8c39106b8f71c51
-ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
+ms.openlocfilehash: c2cfbc1019048bb02186521c2cb81ed832934a8d
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43215095"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608956"
 ---
 # <a name="contextual-outlook-add-ins"></a>Compléments Outlook contextuels
 

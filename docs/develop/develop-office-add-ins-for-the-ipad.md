@@ -3,12 +3,12 @@ title: Développer des compléments Office pour iPad
 description: Obtenez une vue d’ensemble et les meilleures pratiques pour la création d’un complément Office qui s’exécute sur un iPad.
 ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: ca3e7e5521b44e13a26f3d6117128592b88efdc6
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: 2630b3e685c0bd0dc8d9ad9c6ce48b0f42f060c6
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890496"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608291"
 ---
 # <a name="develop-office-add-ins-for-the-ipad"></a>Développer des compléments Office pour iPad
 

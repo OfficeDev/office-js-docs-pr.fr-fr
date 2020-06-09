@@ -3,12 +3,12 @@ title: Ensemble de conditions requises de l’API du complément Outlook (aper�
 description: Les fonctionnalités et les API qui sont actuellement en préversion pour les compléments Outlook.
 ms.date: 05/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 600aad32c394d35e62f4024808b185e8a9abe5e8
-ms.sourcegitcommit: 09a8683ff29cf06d0d1d822be83cf0798f1ccdf9
+ms.openlocfilehash: a8026448f32d29de36684eb6a6d9fa0826de5f5b
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "44471344"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608078"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 

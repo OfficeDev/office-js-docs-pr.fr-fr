@@ -3,23 +3,23 @@ title: Utilisation de tableaux à l’aide de l’API JavaScript pour Excel
 description: Exemples de code qui montrent comment effectuer des tâches courantes avec des tables à l’aide de l’API JavaScript pour Excel.
 ms.date: 09/09/2019
 localization_priority: Normal
-ms.openlocfilehash: b6000773a70c74d115643f3353658287b6d66235
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 6d76edb5e13623a479a74cf69b5b87e2bbe86e3f
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717137"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609210"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Utilisation de tableaux à l’aide de l’API JavaScript pour Excel
 
-Cet article fournit des exemples de code qui expliquent comment effectuer des tâches courantes avec des tableaux à l’aide de l’API JavaScript pour Excel. Pour obtenir la liste complète des propriétés et des méthodes `Table` prises `TableCollection` en charge par les objets et, voir [table Object (interface API JavaScript pour Excel)](/javascript/api/excel/excel.table) et [objet TableCollection (interface API JavaScript pour Excel)](/javascript/api/excel/excel.tablecollection).
+Cet article fournit des exemples de code qui expliquent comment effectuer des tâches courantes avec des tableaux à l’aide de l’API JavaScript pour Excel. Pour obtenir la liste complète des propriétés et des méthodes `Table` `TableCollection` prises en charge par les objets et, voir [table Object (interface API JavaScript pour Excel)](/javascript/api/excel/excel.table) et [objet TableCollection (interface API JavaScript pour Excel)](/javascript/api/excel/excel.tablecollection).
 
 ## <a name="create-a-table"></a>Créer un tableau
 
 L’exemple de code suivant crée un tableau dans la feuille de calcul nommée **Sample**. Le tableau comporte des en-têtes et contient quatre colonnes et sept lignes de données. Si l’application hôte Excel dans laquelle le code est en cours d’exécution prend en charge [l’ensemble de conditions requises](../reference/requirement-sets/excel-api-requirement-sets.md) **ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour s’ajuster au mieux aux données actuelles du tableau.
 
 > [!NOTE]
-> Pour spécifier le nom d’une table, vous devez d’abord créer le tableau, puis définir `name` sa propriété, comme le montre l’exemple suivant.
+> Pour spécifier le nom d’une table, vous devez d’abord créer le tableau, puis définir sa `name` propriété, comme le montre l’exemple suivant.
 
 ```js
 Excel.run(function (context) {

@@ -3,12 +3,12 @@ title: Extraire des chaînes d’entités d’un élément Outlook
 description: Découvrez comment extraire des chaînes d’entités d’un élément Outlook dans un complément Outlook.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 0a9a41d0b479420c0754c0e0d283982082a1452f
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: b15ad23427f79a333ae8ae9d342acdf28e6d010c
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325453"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608942"
 ---
 # <a name="extract-entity-strings-from-an-outlook-item"></a>Extraire des chaînes d’entité d’un élément Outlook
 
@@ -205,7 +205,7 @@ Les sections suivantes expliquent comment l’exemple suivant (le fichier defaul
 
 ## <a name="extracting-entities-upon-initialization"></a>Extraction d’entités lors de l’initialisation
 
-Lors de l’événement [Office.initialize](/javascript/api/office#office-initialize-reason-), le complément pour entités appelle la méthode [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) de l’élément actuel. La `getEntities` méthode renvoie la variable `_MyEntities` globale tableau d’instances des entités prises en charge. Le code JavaScript associé est présenté ci-dessous.
+Lors de l’événement [Office.initialize](/javascript/api/office#office-initialize-reason-), le complément pour entités appelle la méthode [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) de l’élément actuel. La `getEntities` méthode renvoie la variable globale `_MyEntities` tableau d’instances des entités prises en charge. Le code JavaScript associé est présenté ci-dessous.
 
 
 ```js

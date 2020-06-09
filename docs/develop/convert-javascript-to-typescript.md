@@ -3,12 +3,12 @@ title: Conversion d’un projet de complément Office dans Visual Studio au form
 description: Découvrez comment convertir un projet de complément Office dans Visual Studio pour utiliser la machine à écrire.
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 4c26c6a04d2f6d3eb91701a1856e2c31c8d00ca0
-ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
+ms.openlocfilehash: e496fa4b3edf43e62ebad1b0c92bd6b857a40739
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43225651"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608375"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
 

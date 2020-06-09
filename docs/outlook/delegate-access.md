@@ -3,12 +3,12 @@ title: Activer les scénarios d’accès délégué dans un complément Outlook
 description: Décrit brièvement l’accès délégué et explique comment configurer la prise en charge des compléments.
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 0941e4f0b5e1082b8a762acfa013d4e58be03469
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 68b9e09afbe2bcd5cfc302d6714b1c22fd945047
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42721015"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608949"
 ---
 # <a name="enable-delegate-access-scenarios-in-an-outlook-add-in"></a>Activer les scénarios d’accès délégué dans un complément Outlook
 
@@ -23,10 +23,10 @@ Un propriétaire de boîte aux lettres peut utiliser la fonctionnalité accès d
 
 Le tableau suivant décrit les autorisations déléguées prises en charge par l’API JavaScript pour Office.
 
-|Autorisation|Valeur|Description|
+|Permission|Valeur|Description|
 |---|---:|---|
-|Lecture|1 (000001)|Peut lire des éléments.|
-|Écrire|2 (000010)|Peut créer des éléments.|
+|Read|1 (000001)|Peut lire des éléments.|
+|Écriture|2 (000010)|Peut créer des éléments.|
 |DeleteOwn|4 (000100)|Peut uniquement supprimer les éléments qu’ils ont créés.|
 |DeleteAll|8 (001000)|Peut supprimer tous les éléments.|
 |EditOwn|16 (010000)|Ne peut modifier que les éléments qu’ils ont créés.|
@@ -35,7 +35,7 @@ Le tableau suivant décrit les autorisations déléguées prises en charge par l
 > [!NOTE]
 > Actuellement, l’API prend en charge l’obtention des autorisations de délégué existantes, mais pas la définition des autorisations de délégué.
 
-L’objet [DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions) est implémenté à l’aide d’un masque de masques pour indiquer les autorisations du délégué. Chaque position dans le masque de données représente une autorisation particulière et si elle est `1` définie sur Then, le délégué dispose de l’autorisation correspondante. Par exemple, si le deuxième bit à partir de la `1`droite est, le délégué dispose alors d’une autorisation en **écriture** . Vous pouvez voir un exemple sur la façon de vérifier une autorisation spécifique dans la section [effectuer une opération en tant que délégué](#perform-an-operation-as-delegate) plus loin dans cet article.
+L’objet [DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions) est implémenté à l’aide d’un masque de masques pour indiquer les autorisations du délégué. Chaque position dans le masque de données représente une autorisation particulière et si elle est définie sur `1` Then, le délégué dispose de l’autorisation correspondante. Par exemple, si le deuxième bit à partir de la droite est `1` , le délégué dispose alors d’une autorisation en **écriture** . Vous pouvez voir un exemple sur la façon de vérifier une autorisation spécifique dans la section [effectuer une opération en tant que délégué](#perform-an-operation-as-delegate) plus loin dans cet article.
 
 ## <a name="sync-across-mailbox-clients"></a>Synchronisation entre les clients de boîte aux lettres
 
@@ -45,7 +45,7 @@ Toutefois, si le complément utilise les opérations REST ou EWS pour définir u
 
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
-Pour activer les scénarios d’accès délégué dans votre complément, vous devez définir l’élément [SupportsSharedFolders](../reference/manifest/supportssharedfolders.md) `true` dans le manifeste sous l’élément `DesktopFormFactor`parent. Actuellement, les autres facteurs de forme ne sont pas pris en charge.
+Pour activer les scénarios d’accès délégué dans votre complément, vous devez définir l’élément [SupportsSharedFolders](../reference/manifest/supportssharedfolders.md) `true` dans le manifeste sous l’élément parent `DesktopFormFactor` . Actuellement, les autres facteurs de forme ne sont pas pris en charge.
 
 L’exemple suivant montre l' `SupportsSharedFolders` élément défini `true` dans une section du manifeste.
 

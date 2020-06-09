@@ -3,12 +3,12 @@ title: Ajout d’une prise en charge mobile pour un complément Outlook
 description: L’ajout de la prise en charge d’Outlook Mobile nécessite la mise à jour du manifeste de complément et éventuellement la modification de votre code pour les scénarios mobiles.
 ms.date: 04/10/2020
 localization_priority: Normal
-ms.openlocfilehash: de5f1209527c853afb2d0bf2061bd3e3cfa8d3e0
-ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
+ms.openlocfilehash: a4fb02fee8bb429d0193903ba03fcee17b7ede48
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43225665"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44607616"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Ajouter la prise en charge des commandes de complément pour Outlook Mobile
 
@@ -20,7 +20,7 @@ La première étape de l’activation des commandes de complément dans Outlook�
 
 Cet élément contient toutes les informations pour charger le complément dans des clients mobiles. Cela vous permet de définir entièrement différents éléments de l’interface utilisateur et fichiers JavaScript pour l’expérience mobile.
 
-L’exemple suivant montre un bouton de volet Office unique dans `MobileFormFactor` un élément.
+L’exemple suivant montre un bouton de volet Office unique dans un `MobileFormFactor` élément.
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">

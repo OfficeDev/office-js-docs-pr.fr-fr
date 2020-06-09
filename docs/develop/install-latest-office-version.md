@@ -3,12 +3,12 @@ title: Installer la dernière version d’Office
 description: Découvrez comment s’inscrire afin d’obtenir les dernières versions d’Office.
 ms.date: 04/16/2020
 localization_priority: Normal
-ms.openlocfilehash: b9428cc67160e0680bab5a36438bc1a0dbb3ac17
-ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
+ms.openlocfilehash: bd76a0a36f12f2aa6add1d63c20a466b2036f805
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "43547063"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608131"
 ---
 # <a name="install-the-latest-version-of-office"></a>Installer la dernière version d’Office
 

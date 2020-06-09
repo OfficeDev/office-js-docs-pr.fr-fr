@@ -3,12 +3,12 @@ title: Développement de compléments Office avec Angular
 description: Obtenir des instructions sur l’utilisation d’angles pour créer un complément Office en tant qu’application à page unique.
 ms.date: 01/27/2020
 localization_priority: Normal
-ms.openlocfilehash: b3796b16c8e5ddc74a172ab427866bfe8e842cae
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 2cd90a51f49adfd03c0096d55399012e88da1da0
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719209"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608984"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Développement de compléments Office avec Angular
 

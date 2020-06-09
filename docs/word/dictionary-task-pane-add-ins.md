@@ -3,12 +3,12 @@ title: Créer un complément dictionnaire du volet Office
 description: Découvrez comment créer un complément de volet Office de dictionnaire
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: e72ef049c355e756a3bd8a843fc6075a59c3c8a6
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 07e2222520999729e3677296869b2367265687f8
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719692"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608648"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>Créer un complément dictionnaire du volet Office
 
@@ -94,7 +94,7 @@ Le code suivant illustre le XSD pour le schéma XML OfficeDefinitions.
 </xs:schema>
 ```
 
-Le code XML renvoyé conforme au schéma OfficeDefinitions se compose d’un élément racine `Result` qui contient un élément `Definitions` avec une valeur comprise `Definition` entre zéro et trois éléments enfants, dont chacun contient des définitions qui ne dépassent pas 400 caractères. En outre, l’URL vers la page complète sur le site du dictionnaire doit être fournie dans `SeeMoreURL` l’élément. L’exemple suivant illustre la structure du code XML renvoyé conforme au schéma OfficeDefinitions.
+Le code XML renvoyé conforme au schéma OfficeDefinitions se compose d’un élément racine `Result` qui contient un `Definitions` élément avec une valeur comprise entre zéro et trois `Definition` éléments enfants, dont chacun contient des définitions qui ne dépassent pas 400 caractères. En outre, l’URL vers la page complète sur le site du dictionnaire doit être fournie dans l' `SeeMoreURL` élément. L’exemple suivant illustre la structure du code XML renvoyé conforme au schéma OfficeDefinitions.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -377,7 +377,7 @@ Spécifie le texte à utiliser dans les citations. Requis pour les compléments 
 
 Cet élément spécifie le début du texte de citation qui sera affiché sur une ligne sous le contenu qui est renvoyé du service web (par exemple, « Résultats par : » ou « Optimisé par : »).
 
-Pour cet élément, vous pouvez spécifier des valeurs pour des paramètres régionaux supplémentaires à `Override` l’aide de l’élément. Par exemple si un utilisateur exécute le SKU espagnol d’Office, mais utilise un dictionnaire anglais, ceci permet à la ligne de citation de prendre la valeur « Resultados por: Bing » et non « Results by: Bing ». Pour plus d’informations sur la spécification de valeurs pour des paramètres régionaux supplémentaires, voir la section « Fourniture de paramètres pour différents paramètres régionaux » dans [Manifeste XML des compléments Office](../develop/add-in-manifests.md).
+Pour cet élément, vous pouvez spécifier des valeurs pour des paramètres régionaux supplémentaires à l’aide de l' `Override` élément. Par exemple si un utilisateur exécute le SKU espagnol d’Office, mais utilise un dictionnaire anglais, ceci permet à la ligne de citation de prendre la valeur « Resultados por: Bing » et non « Results by: Bing ». Pour plus d’informations sur la spécification de valeurs pour des paramètres régionaux supplémentaires, voir la section « Fourniture de paramètres pour différents paramètres régionaux » dans [Manifeste XML des compléments Office](../develop/add-in-manifests.md).
 
  **Exemple**
 
@@ -533,9 +533,9 @@ Les principaux membres de l’API JavaScript Office (Office. js) qui sont appel�
     
 - La méthode [addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) de l' `Document` objet, qui est appelée dans la `initialize` fonction pour ajouter un gestionnaire d’événements pour l’événement [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) du document afin d’écouter les modifications de sélection de l’utilisateur.
     
-- La méthode [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) de l' `Document` objet, qui est appelée dans la `tryUpdatingSelectedWord()` fonction lorsque le `SelectionChanged` gestionnaire d’événements est déclenché pour obtenir le mot ou l’expression sélectionné par l’utilisateur, le forcer en texte brut, puis exécuter `selectedTextCallback` la fonction de rappel asynchrone.
+- La méthode [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) de l' `Document` objet, qui est appelée dans la `tryUpdatingSelectedWord()` fonction lorsque le `SelectionChanged` Gestionnaire d’événements est déclenché pour obtenir le mot ou l’expression sélectionné par l’utilisateur, le forcer en texte brut, puis exécuter la `selectedTextCallback` fonction de rappel asynchrone.
     
-- Lorsque la `selectTextCallback` fonction de rappel asynchrone qui est passée en _callback_ tant qu’argument de `getSelectedDataAsync` rappel de la méthode s’exécute, elle obtient la valeur du texte sélectionné lorsque le rappel est renvoyé. Elle obtient cette valeur à partir de l’argument _SelectedText_ du rappel (qui est de type [asyncResult](/javascript/api/office/office.asyncresult)) à l’aide de la propriété `AsyncResult` [value](/javascript/api/office/office.asyncresult#status) de l’objet renvoyé.
+- Lorsque la `selectTextCallback` fonction de rappel asynchrone qui est passée en tant qu’argument de _rappel_ de la `getSelectedDataAsync` méthode s’exécute, elle obtient la valeur du texte sélectionné lorsque le rappel est renvoyé. Elle obtient cette valeur à partir de l’argument _SelectedText_ du rappel (qui est de type [asyncResult](/javascript/api/office/office.asyncresult)) à l’aide de la propriété [value](/javascript/api/office/office.asyncresult#status) de l' `AsyncResult` objet renvoyé.
     
 - Le reste du code dans la fonction  `selectedTextCallback` interroge le service web XML pour obtenir des définitions. Il appelle également les API de Microsoft Translator pour fournir l’URL d’un fichier .wav produisant la prononciation du mot sélectionné.
     

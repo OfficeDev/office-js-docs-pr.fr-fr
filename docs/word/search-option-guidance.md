@@ -3,12 +3,12 @@ title: Utilisation d’options de recherche pour trouver du texte dans votre com
 description: Apprendre à utiliser les options de recherche dans votre complément Word
 ms.date: 09/27/2019
 localization_priority: Normal
-ms.openlocfilehash: 1b0c1250b875ac2e61e68c65e9db6eba8fda4c67
-ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.openlocfilehash: 197ed066d7eece584e8e14febd0ca8f5b4f0c5d0
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44276049"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608571"
 ---
 # <a name="use-search-options-to-find-text-in-your-word-add-in"></a>Utilisation d’options de recherche pour trouver du texte dans votre complément Word
 

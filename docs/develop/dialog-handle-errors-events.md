@@ -3,12 +3,12 @@ title: Gestion des erreurs et des événements dans la boîte de dialogue Office
 description: Indique comment intercepter et gérer les erreurs lors de l’ouverture et de l’utilisation de la boîte de dialogue Office
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: a35131a46dc9f5edc18df37495abe5d8c2c5ad2a
-ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
+ms.openlocfilehash: d83d5c4627f68c3f4b1c196cf543d01bf981abbe
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "41650085"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608173"
 ---
 # <a name="handling-errors-and-events-in-the-office-dialog-box"></a>Gestion des erreurs et des événements dans la boîte de dialogue Office
 
@@ -26,7 +26,7 @@ Votre code doit gérer deux catégories d’événements :
 
 ## <a name="errors-from-displaydialogasync"></a>Erreurs provenant de displayDialogAsync
 
-En plus des erreurs système et de plateforme générales, quatre erreurs sont propres à `displayDialogAsync`l’appel.
+En plus des erreurs système et de plateforme générales, quatre erreurs sont propres à l’appel `displayDialogAsync` .
 
 |Numéro de code|Signification|
 |:-----|:-----|
@@ -35,7 +35,7 @@ En plus des erreurs système et de plateforme générales, quatre erreurs sont p
 |<span id="12007">12007</span><!-- The span is needed because office-js-helpers has an error message that links to this table row. -->|Une boîte de dialogue est déjà ouverte à partir de cette fenêtre hôte. Une fenêtre hôte, par exemple un volet Office, ne peut avoir qu’une seule boîte de dialogue ouverte à la fois.|
 |12009|L’utilisateur a choisi d’ignorer la boîte de dialogue. Cette erreur peut se produire dans Office sur le Web, où les utilisateurs peuvent choisir de ne pas autoriser un complément à présenter une boîte de dialogue. Pour plus d’informations, consultez [la rubrique gestion des bloqueurs de fenêtres publicitaires intempestives avec Office sur le Web](dialog-best-practices.md#handling-pop-up-blockers-with-office-on-the-web).|
 
-Lorsque `displayDialogAsync` est appelé, il transmet un objet [asyncResult](/javascript/api/office/office.asyncresult) à sa fonction de rappel. Une fois l’appel réussi, la boîte de dialogue est ouverte et la `value` propriété de l' `AsyncResult` objet est un objet [Dialog](/javascript/api/office/office.dialog) . Pour obtenir un exemple, reportez-vous [à la rubrique envoyer des informations de la boîte de dialogue à la page hôte](dialog-api-in-office-add-ins.md#send-information-from-the-dialog-box-to-the-host-page). Lorsque l’appel à `displayDialogAsync` échoue, la boîte de dialogue n’est pas créée `status` , la propriété `AsyncResult` de l’objet est `Office.AsyncResultStatus.Failed`définie sur et `error` la propriété de l’objet est remplie. Vous devez toujours fournir un rappel qui teste `status` le et répond lorsqu’il s’agit d’une erreur. Pour obtenir un exemple qui signale le message d’erreur quel que soit son numéro de code, consultez le code suivant. (La `showNotification` fonction, non définie dans cet article, affiche ou consigne l’erreur. Pour obtenir un exemple de la façon dont vous pouvez implémenter cette fonction dans votre complément, consultez la rubrique [exemple d’API de dialogue de complément Office](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).)
+Lorsque `displayDialogAsync` est appelé, il transmet un objet [asyncResult](/javascript/api/office/office.asyncresult) à sa fonction de rappel. Une fois l’appel réussi, la boîte de dialogue est ouverte et la `value` propriété de l' `AsyncResult` objet est un objet [Dialog](/javascript/api/office/office.dialog) . Pour obtenir un exemple, reportez-vous [à la rubrique envoyer des informations de la boîte de dialogue à la page hôte](dialog-api-in-office-add-ins.md#send-information-from-the-dialog-box-to-the-host-page). Lorsque l’appel à `displayDialogAsync` échoue, la boîte de dialogue n’est pas créée, la `status` propriété de l' `AsyncResult` objet est définie sur `Office.AsyncResultStatus.Failed` et la `error` propriété de l’objet est remplie. Vous devez toujours fournir un rappel qui teste le `status` et répond lorsqu’il s’agit d’une erreur. Pour obtenir un exemple qui signale le message d’erreur quel que soit son numéro de code, consultez le code suivant. (La `showNotification` fonction, non définie dans cet article, affiche ou consigne l’erreur. Pour obtenir un exemple de la façon dont vous pouvez implémenter cette fonction dans votre complément, consultez la rubrique [exemple d’API de dialogue de complément Office](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).)
 
 ```js
 var dialog;
@@ -52,7 +52,7 @@ function (asyncResult) {
 
 ## <a name="errors-and-events-in-the-dialog-box"></a>Erreurs et événements dans la boîte de dialogue
 
-Trois erreurs et événements dans la boîte de dialogue déclencheront `DialogEventReceived` un événement dans la page hôte. Pour un rappel de ce qu’est une page hôte, voir [ouvrir une boîte de dialogue à partir d’une page hôte](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page).
+Trois erreurs et événements dans la boîte de dialogue déclencheront un `DialogEventReceived` événement dans la page hôte. Pour un rappel de ce qu’est une page hôte, voir [ouvrir une boîte de dialogue à partir d’une page hôte](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page).
 
 |Numéro de code|Signification|
 |:-----|:-----|

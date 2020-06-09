@@ -3,12 +3,12 @@ title: Instructions concernant les îcones pour les compléments Office
 description: Obtenez une vue d’ensemble de la conception des icônes et des styles de conception frais et monolignes pour les commandes de complément.
 ms.date: 12/09/2019
 localization_priority: Normal
-ms.openlocfilehash: ce474ef20493e738fca7072d5b6a3bcd28594fbb
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: b6a960b038b7e02f75101f589469db328465d6bc
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718503"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44607672"
 ---
 # <a name="icons"></a>Icônes
 

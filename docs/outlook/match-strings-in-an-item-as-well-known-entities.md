@@ -3,12 +3,12 @@ title: Faire correspondre les chaînes en tant qu’entités connues dans un com
 description: À l’aide de l’API JavaScript pour Office, vous pouvez obtenir des chaînes qui correspondent à des entités connues spécifiques pour un traitement supplémentaire.
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: a8dfb20405f4c3add35ca1ea646ffe69fc776a26
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: c3e9e9812118e06285b76970dae49381a73206c2
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325339"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609047"
 ---
 # <a name="match-strings-in-an-outlook-item-as-well-known-entities"></a>Mettre en correspondance des chaînes dans un élément Outlook en tant qu’entités connues
 
@@ -35,11 +35,11 @@ Le tableau suivant répertorie les entités qu’Exchange Server et Outlook pren
 |:-----|:-----|:-----|
 |**Adresse**|Adresses aux États-Unis ; par exemple : 1234 Main Street, Redmond, WA 07722. En général, pour qu’une adresse soit reconnue, elle doit suivre la structure d’une adresse postale des États-Unis, où la plupart des éléments sont présents, à savoir numéro de rue, nom de rue, ville, État et code postal. L’adresse peut être spécifiée sur une ou plusieurs lignes.|Objet JavaScript **String**|
 |**Contact**|Une référence aux informations d’une personne telles que reconnues en langage naturel. La reconnaissance d’un contact varie selon le contexte. Par exemple, une signature à la fin d’un message ou le nom d’une personne apparaissant à proximité des informations suivantes : un numéro de téléphone, une adresse, une adresse électronique et une URL.|Objet [Contact](/javascript/api/outlook/office.contact)|
-|**EmailAddress**|Adresses électroniques SMTP.|Objet `String` JavaScript|
+|**EmailAddress**|Adresses électroniques SMTP.|`String`Objet JavaScript|
 |**MeetingSuggestion**|Une référence à un événement ou une réunion. Par exemple, Exchange 2013 reconnaîtrait le texte suivant comme une suggestion de réunion :  _On se voit demain pour déjeuner ?_|Objet [MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion)|
 |**PhoneNumber**|Numéros de téléphone des États-Unis ; par exemple :  _(235) 555-0110_|Objet [PhoneNumber](/javascript/api/outlook/office.phonenumber)|
 |**TaskSuggestion**|Phrases appelant une action. Par exemple :  _Veuillez mettre à jour la feuille de calcul._|Objet [TaskSuggestion](/javascript/api/outlook/office.tasksuggestion)|
-|**Url**|Adresse web qui spécifie explicitement l’identificateur et l’emplacement réseau d’une ressource web. Exchange Server ne requiert pas le protocole d’accès dans l’adresse Web et ne reconnaît pas les URL incorporées dans le texte d’un lien comme `Url` des instances de l’entité. Exchange Server peut correspondre aux exemples suivants : `www.youtube.com/user/officevideos``https://www.youtube.com/user/officevideos` |Objet `String` JavaScript|
+|**Url**|Adresse web qui spécifie explicitement l’identificateur et l’emplacement réseau d’une ressource web. Exchange Server ne requiert pas le protocole d’accès dans l’adresse Web et ne reconnaît pas les URL incorporées dans le texte d’un lien comme des instances de l' `Url` entité. Exchange Server peut correspondre aux exemples suivants : `www.youtube.com/user/officevideos``https://www.youtube.com/user/officevideos` |`String`Objet JavaScript|
 
 <br/>
 
@@ -54,7 +54,7 @@ La figure suivante décrit comment Exchange Server et Outlook prennent en charg
 
 Pour extraire les entités de votre code JavaScript ou pour activer votre complément à partir de l’existence de certaines entités connues, assurez-vous que vous avez demandé les autorisations appropriées dans le manifeste du complément.
 
-La spécification de l’autorisation restreinte par défaut permet à votre complément `Address`d' `MeetingSuggestion`extraire l' `TaskSuggestion` entité, ou. Pour extraire les autres entités, spécifiez les autorisations de lecture d’élément, de lecture/écriture d’élément ou de lecture/écriture de boîte aux lettres. Pour le faire dans le fichier manifeste, utilisez l’élément [Permissions](../reference/manifest/permissions.md) et spécifiez l’autorisation appropriée &mdash;**Restricted**, **ReadItem**, **ReadWriteItem**, ou **ReadWriteMailbox**&mdash;, comme dans l’exemple suivant :
+La spécification de l’autorisation restreinte par défaut permet à votre complément d’extraire l' `Address` `MeetingSuggestion` entité, ou `TaskSuggestion` . Pour extraire les autres entités, spécifiez les autorisations de lecture d’élément, de lecture/écriture d’élément ou de lecture/écriture de boîte aux lettres. Pour le faire dans le fichier manifeste, utilisez l’élément [Permissions](../reference/manifest/permissions.md) et spécifiez l’autorisation appropriée &mdash;**Restricted**, **ReadItem**, **ReadWriteItem**, ou **ReadWriteMailbox**&mdash;, comme dans l’exemple suivant :
 
 ```xml
 <Permissions>ReadItem</Permissions>
@@ -63,13 +63,13 @@ La spécification de l’autorisation restreinte par défaut permet à votre com
 
 ## <a name="retrieving-entities-in-your-add-in"></a>Récupération d’entités dans votre complément
 
-Tant que l’objet ou le corps de l’élément consulté par l’utilisateur contient des chaînes qu’Exchange et Outlook peuvent reconnaître comme des entités connues, ces instances sont disponibles pour les compléments, et ce même si un complément n’est pas activé en fonction des entités connues. Avec l’autorisation appropriée, vous pouvez utiliser la `getEntities` méthode `getEntitiesByType` ou pour récupérer des entités connues présentes dans le message ou le rendez-vous actuel.
+Tant que l’objet ou le corps de l’élément consulté par l’utilisateur contient des chaînes qu’Exchange et Outlook peuvent reconnaître comme des entités connues, ces instances sont disponibles pour les compléments, et ce même si un complément n’est pas activé en fonction des entités connues. Avec l’autorisation appropriée, vous pouvez utiliser la `getEntities` `getEntitiesByType` méthode ou pour récupérer des entités connues présentes dans le message ou le rendez-vous actuel.
 
 La `getEntities` méthode renvoie un tableau d’objets [Entities](/javascript/api/outlook/office.entities) qui contient toutes les entités connues de l’élément.
 
-Si vous êtes intéressé par un type d’entité particulier, utilisez la `getEntitiesByType`méthode qui renvoie un tableau des seules entités souhaitées. L’énumération [EntityType](/javascript/api/outlook/office.mailboxenums.entitytype) représente tous les types d’entités connues que vous pouvez extraire.
+Si vous êtes intéressé par un type d’entité particulier, utilisez la `getEntitiesByType` méthode qui renvoie un tableau des seules entités souhaitées. L’énumération [EntityType](/javascript/api/outlook/office.mailboxenums.entitytype) représente tous les types d’entités connues que vous pouvez extraire.
 
-Après l' `getEntities`appel, vous pouvez utiliser la propriété correspondante de l' `Entities` objet pour obtenir un tableau des instances d’un type d’entité. Selon le type d’entité, les instances dans le tableau peuvent être seulement des chaînes, ou peuvent être mappés avec des objets spécifiques. 
+Après l’appel `getEntities` , vous pouvez utiliser la propriété correspondante de l' `Entities` objet pour obtenir un tableau des instances d’un type d’entité. Selon le type d’entité, les instances dans le tableau peuvent être seulement des chaînes, ou peuvent être mappés avec des objets spécifiques. 
 
 Comme dans l’exemple illustré dans la figure précédente, pour obtenir des adresses dans l’élément, accédez au tableau renvoyé par `getEntities().addresses[]`. La `Entities.addresses` propriété renvoie un tableau de chaînes qu’Outlook reconnaît comme adresses postales. De même, la `Entities.contacts` propriété renvoie un tableau d' `Contact` objets qu’Outlook reconnaît comme informations de contact. Le tableau 1 répertorie le type d’objet d’une instance de chaque entité prise en charge.
 
@@ -88,9 +88,9 @@ if (null != entities && null != entities.addresses && undefined != entities.addr
 
 ## <a name="activating-an-add-in-based-on-the-existence-of-an-entity"></a>Activation d’un complément basé sur l’existence d’une entité
 
-Une autre façon d’utiliser des entités connues consiste à faire en sorte qu’Outlook active votre complément selon l’existence de types d’entités dans l’objet ou le corps de l’élément actuellement affiché. Vous pouvez le faire en spécifiant `ItemHasKnownEntity` une règle dans le manifeste du complément. Le type simple [EntityType](/javascript/api/outlook/office.mailboxenums.entitytype) représente les différents types d’entités bien connues prises en charge `ItemHasKnownEntity` par les règles. Une fois votre complément activé, vous pouvez également récupérer les instances de ces entités pour répondre à vos besoins, comme le décrit la section précédente [Récupération d’entités dans votre complément](#retrieving-entities-in-your-add-in).
+Une autre façon d’utiliser des entités connues consiste à faire en sorte qu’Outlook active votre complément selon l’existence de types d’entités dans l’objet ou le corps de l’élément actuellement affiché. Vous pouvez le faire en spécifiant une `ItemHasKnownEntity` règle dans le manifeste du complément. Le type simple [EntityType](/javascript/api/outlook/office.mailboxenums.entitytype) représente les différents types d’entités bien connues prises en charge par les `ItemHasKnownEntity` règles. Une fois votre complément activé, vous pouvez également récupérer les instances de ces entités pour répondre à vos besoins, comme le décrit la section précédente [Récupération d’entités dans votre complément](#retrieving-entities-in-your-add-in).
 
-Vous pouvez éventuellement appliquer une expression régulière dans une `ItemHasKnownEntity` règle, afin de filtrer davantage les instances d’une entité et faire en sorte qu’Outlook active un complément uniquement sur un sous-ensemble des instances de l’entité. Par exemple, vous pouvez spécifier un filtre pour l’entité d’adresse dans un message qui contient un code postal de l’État de Washington commençant par « 98 ». Pour appliquer un filtre aux instances d’entité, utilisez les `RegExFilter` attributs `FilterName` et dans l' `Rule` élément du type [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) .
+Vous pouvez éventuellement appliquer une expression régulière dans une `ItemHasKnownEntity` règle, afin de filtrer davantage les instances d’une entité et faire en sorte qu’Outlook active un complément uniquement sur un sous-ensemble des instances de l’entité. Par exemple, vous pouvez spécifier un filtre pour l’entité d’adresse dans un message qui contient un code postal de l’État de Washington commençant par « 98 ». Pour appliquer un filtre aux instances d’entité, utilisez les `RegExFilter` `FilterName` attributs et dans l' `Rule` élément du type [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) .
 
 Comme avec d’autres règles d’activation, vous pouvez spécifier plusieurs règles afin de former une collection de règles pour votre complément. L’exemple suivant applique une opération « AND » sur deux règles : une `ItemIs` règle et une `ItemHasKnownEntity` règle. Cette collection de règles active le complément lorsque l’élément en cours est un message et qu’Outlook reconnaît une adresse dans l’objet ou le corps de cet élément.
 
@@ -111,7 +111,7 @@ var addresses = Office.context.mailbox.item.getEntitiesByType(Office.MailboxEnum
 
 <br/>
 
-L’exemple `ItemHasKnownEntity` de règle suivant active le complément chaque fois qu’il y a une URL dans l’objet ou le corps de l’élément actif, et que l’URL contient la chaîne « YouTube », indépendamment de la casse de la chaîne.
+L' `ItemHasKnownEntity` exemple de règle suivant active le complément chaque fois qu’il y a une URL dans l’objet ou le corps de l’élément actif, et que l’URL contient la chaîne « YouTube », indépendamment de la casse de la chaîne.
 
 ```XML
 <Rule xsi:type="ItemHasKnownEntity" 
@@ -123,7 +123,7 @@ L’exemple `ItemHasKnownEntity` de règle suivant active le complément chaque 
 
 <br/>
 
-L’exemple suivant utilise `getFilteredEntitiesByName(name)` l’élément actuel pour définir une variable `videos` pour obtenir un tableau de résultats qui correspondent à l’expression régulière dans la règle `ItemHasKnownEntity` précédente.
+L’exemple suivant utilise `getFilteredEntitiesByName(name)` l’élément actuel pour définir une variable `videos` pour obtenir un tableau de résultats qui correspondent à l’expression régulière dans la `ItemHasKnownEntity` règle précédente.
 
 ```js
 var videos = Office.context.mailbox.item.getFilteredEntitiesByName(youtube);
@@ -132,7 +132,7 @@ var videos = Office.context.mailbox.item.getFilteredEntitiesByName(youtube);
 
 ## <a name="tips-for-using-well-known-entities"></a>Conseils d’utilisation des entités connues
 
-Si vous utilisez des entités connues dans votre complément, vous devez connaître certaines informations et limites. Les conditions suivantes s’appliquent aussi longtemps que votre complément est activé lorsque l’utilisateur lit un élément contenant des correspondances d’entités connues, que vous utilisiez une `ItemHasKnownEntity` règle ou non :
+Si vous utilisez des entités connues dans votre complément, vous devez connaître certaines informations et limites. Les conditions suivantes s’appliquent aussi longtemps que votre complément est activé lorsque l’utilisateur lit un élément contenant des correspondances d’entités connues, que vous utilisiez une règle ou non `ItemHasKnownEntity` :
 
 
 - Vous pouvez extraire des chaînes qui sont des entités connues uniquement si les chaînes sont en anglais.
@@ -149,11 +149,11 @@ Si vous utilisez des entités connues dans votre complément, vous devez connaî
     
 En outre, les dispositions suivantes s’appliquent si vous utilisez une règle [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule), et cela peut avoir une incidence sur les scénarios pour lesquels vous souhaiteriez que votre complément soit activé :
 
-- Lors de l' `ItemHasKnownEntity` utilisation de la règle, attendez qu’Outlook corresponde à des chaînes d’entité uniquement en anglais, indépendamment des paramètres régionaux par défaut spécifiés dans le manifeste.
+- Lors de l’utilisation de la `ItemHasKnownEntity` règle, attendez qu’Outlook corresponde à des chaînes d’entité uniquement en anglais, indépendamment des paramètres régionaux par défaut spécifiés dans le manifeste.
     
-- Lorsque votre complément est exécuté sur un client riche Outlook, attendez-vous à ce qu’Outlook `ItemHasKnownEntity` applique la règle au premier mégaoctet du corps de l’élément et non au reste du corps au-delà de cette limite.
+- Lorsque votre complément est exécuté sur un client riche Outlook, attendez-vous à ce qu’Outlook applique la `ItemHasKnownEntity` règle au premier mégaoctet du corps de l’élément et non au reste du corps au-delà de cette limite.
     
-- Vous ne pouvez pas `ItemHasKnownEntity` utiliser une règle pour activer un complément pour les éléments du dossier éléments envoyés.
+- Vous ne pouvez pas utiliser une `ItemHasKnownEntity` règle pour activer un complément pour les éléments du dossier éléments envoyés.
     
 
 ## <a name="see-also"></a>Voir aussi
