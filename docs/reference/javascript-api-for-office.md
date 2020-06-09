@@ -5,12 +5,12 @@ title: Documentation référence de l’API JavaScript pour Office
 description: En savoir plus sur les API JavaScript pour Office.
 ms.date: 12/24/2019
 localization_priority: Priority
-ms.openlocfilehash: 99c42103d8e6d7b18d6082bfdafe1da0dad8397d
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: 78e222c7cdc618d707678dc73dd4a0e5dab123de
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890899"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608816"
 ---
 # <a name="api-reference-documentation"></a>Documentation de référence de l'API
 
