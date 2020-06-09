@@ -3,12 +3,12 @@ title: Créer de meilleurs compléments pour Word avec Office Open XML
 description: Vue d’ensemble de l’amélioration de votre complément Word avec Office Open XML
 ms.date: 10/10/2019
 localization_priority: Normal
-ms.openlocfilehash: 710265eab022b4da3035699c353d01f567354013
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 2faaedec831a9ae18f218ff160fee26a8d36910e
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717389"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609586"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Créer de meilleurs compléments pour Word avec Office Open XML
 
@@ -107,7 +107,7 @@ Vous pouvez insérer des graphiques Excel sous forme de graphiques dynamiques da
 
 
 > [!NOTE]
-> Un document Office Open XML est en fait un package compressé de fichiers qui représentent le contenu du document. L’enregistrement du fichier au format de document XML Word vous permet d’aplatir le package Open XML entireOffice en un seul fichier XML, ce qui est également ce `getSelectedDataAsync` que vous obtenez lorsque vous utilisez pour récupérer le balisage Office Open XML.
+> Un document Office Open XML est en fait un package compressé de fichiers qui représentent le contenu du document. L’enregistrement du fichier au format de document XML Word vous permet d’aplatir le package Open XML entireOffice en un seul fichier XML, ce qui est également ce que vous obtenez lorsque vous utilisez `getSelectedDataAsync` pour récupérer le balisage Office Open XML.
 
 Si vous enregistrez le fichier au format XML à partir de Word, Notez qu’il existe deux options dans la liste type de fichier de la boîte de dialogue Enregistrer sous pour les fichiers au format. Xml. Veillez à choisir **Document XML Word** et non l’option Word 2003.
 Téléchargez l’exemple de code nommé [Word-Add-in-get-set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML), que vous pouvez utiliser comme outil pour récupérer et tester votre balisage.
@@ -122,7 +122,7 @@ Lorsque vous utilisez [getSelectedDataAsync](/javascript/api/office/office.docum
 
 Même un simple package de document Word comprend des composants pour les propriétés du document, les styles, le thème (paramètres de mise en forme), les paramètres web, les polices, en plus d’autres composants pour le contenu réel.
 
-Par exemple, supposons que vous voulez insérer uniquement un paragraphe de texte avec une mise en forme directe, comme indiqué précédemment sur la figure 1. Lorsque vous récupérez le XML ouvert Office pour le texte mis `getSelectedDataAsync`en forme à l’aide de, vous voyez un grand nombre de balises. Ce balisage comprend un élément de package qui représente un document entier, formé de plusieurs parties (communément appelées composants de document ou, dans Office Open XML, composants de package), listées dans la figure 13. Chaque composant représente un fichier distinct du package.
+Par exemple, supposons que vous voulez insérer uniquement un paragraphe de texte avec une mise en forme directe, comme indiqué précédemment sur la figure 1. Lorsque vous récupérez le XML ouvert Office pour le texte mis en forme à l’aide de `getSelectedDataAsync` , vous voyez un grand nombre de balises. Ce balisage comprend un élément de package qui représente un document entier, formé de plusieurs parties (communément appelées composants de document ou, dans Office Open XML, composants de package), listées dans la figure 13. Chaque composant représente un fichier distinct du package.
 
 > [!TIP]
 > Vous pouvez modifier le balisage Office Open XML dans un éditeur de texte comme le Bloc-notes. Si vous l’ouvrez dans Visual Studio, vous pouvez utiliser **modifier >Advanced > format document** (Ctrl + K, Ctrl + D) pour mettre en forme le package afin de le modifier plus facilement. Ensuite, vous pouvez réduire ou développer des parties de document ou des sections de celles-ci, comme indiqué dans la figure 12, pour vérifier et modifier plus facilement le contenu du package Office Open XML. Chaque composant du document commence par une balise **pkg:part**.
@@ -558,7 +558,7 @@ Le code présenté ici effectue les étapes suivantes :
 
   Effectuez d’abord cette opération s’il est possible que le contrôle nommé existe déjà dans le document lors de l’exécution du code. Par exemple, vous devez procéder de cette façon si le complément a été inséré et enregistré dans un modèle conçu pour fonctionner avec le complément dans lequel le contrôle a été placé à l’avance. Vous devez également procéder ainsi si vous devez créer une liaison à un contrôle qui a été placé précédemment par le complément.
 
-- Le rappel dans le premier appel à la `addFromNamedItemAsync` méthode vérifie l’état du résultat pour voir si la liaison a échoué parce que l’élément nommé n’existe pas dans le document (autrement dit, le contrôle de contenu nommé MyContentControlTitle dans cet exemple). Si c’est le cas, le code ajoute le contrôle au point de sélection `setSelectedDataAsync`actif (à l’aide de), puis il y est lié.
+- Le rappel dans le premier appel à la `addFromNamedItemAsync` méthode vérifie l’état du résultat pour voir si la liaison a échoué parce que l’élément nommé n’existe pas dans le document (autrement dit, le contrôle de contenu nommé MyContentControlTitle dans cet exemple). Si c’est le cas, le code ajoute le contrôle au point de sélection actif (à l’aide de `setSelectedDataAsync` ), puis il y est lié.
 
 
 > [!NOTE]
@@ -592,7 +592,7 @@ function populateBinding(filename) {
 }
 ```
 
-Comme avec `setSelectedDataAsync`, vous spécifiez le contenu à insérer et le type de forçage de type. La seule exigence supplémentaire pour l’écriture sur une liaison est l’identification de la liaison par un ID. Notez comment l’ID de liaison utilisé dans ce code (bindings#myBinding) correspond à l’ID de liaison établi (myBinding) lors de la création de la liaison dans la fonction précédente.
+Comme avec `setSelectedDataAsync` , vous spécifiez le contenu à insérer et le type de forçage de type. La seule exigence supplémentaire pour l’écriture sur une liaison est l’identification de la liaison par un ID. Notez comment l’ID de liaison utilisé dans ce code (bindings#myBinding) correspond à l’ID de liaison établi (myBinding) lors de la création de la liaison dans la fonction précédente.
 
 
 > [!NOTE]
@@ -783,7 +783,7 @@ Un diagramme SmartArt possède quatre composants associés, mais seulement deux 
 > [!TIP]
 > Le fichier SmartArt layout1.xml est un bon exemple pour illustrer les parties que vous pouvez supprimer de votre balisage, mais il peut être inutile de consacrer davantage de temps à cela (car cette opération supprime une petite quantité de balisage par rapport à la totalité du package). Si vous voulez vous débarrasser de toutes les lignes possibles de balisage, vous pouvez supprimer la balise **dgm:sampData** et son contenu. Ces données d’exemple définissent l’apparence de la miniature d’aperçu pour le diagramme dans les galeries de styles SmartArt. Toutefois, si elles sont omises, les exemples de données par défaut sont utilisés.
 
-N’oubliez pas que le balisage d’un diagramme SmartArt dans document. xml contient des références ID de relation aux parties mise en page, données, couleurs et styles rapides. Vous pouvez supprimer les références dans document. XML aux parties couleurs et styles lorsque vous supprimez ces parties et leurs définitions de relation (et il est certainement recommandé de le faire, puisque vous supprimez ces relations), mais vous n’obtiendrez pas d’erreur si vous laissez elles ne sont pas requises pour que votre diagramme soit inséré dans un document. Recherchez ces références dans document. xml dans la balise **DGM : Recouvercles** . Que vous preniez ou non cette étape, conservez les références d’ID de relation pour les parties de disposition et de données requises.
+N’oubliez pas que le balisage d’un diagramme SmartArt dans document. xml contient des références ID de relation aux parties mise en page, données, couleurs et styles rapides. Vous pouvez supprimer les références dans document. XML aux parties couleurs et styles lorsque vous supprimez ces parties et leurs définitions de relation (et il est certainement préférable de le faire, puisque vous supprimez ces relations), mais vous n’obtiendrez pas d’erreur si vous les laissez, car elles ne sont pas requises pour que votre diagramme soit inséré dans un document. Recherchez ces références dans document. xml dans la balise **DGM : Recouvercles** . Que vous preniez ou non cette étape, conservez les références d’ID de relation pour les parties de disposition et de données requises.
 
 
 ### <a name="working-with-charts"></a>Utilisation de graphiques

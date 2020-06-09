@@ -3,12 +3,12 @@ title: Conservation de l’état et des paramètres des compléments
 description: Découvrez comment faire persister des données dans des applications Web de complément Office s’exécutant dans l’environnement sans état d’un contrôle de navigateur.
 ms.date: 05/08/2020
 localization_priority: Normal
-ms.openlocfilehash: 0162bc17897cba99f4ce2457cea08d0da70f4341
-ms.sourcegitcommit: 7e6faf3dc144400a7b7e5a42adecbbec0bd4602d
+ms.openlocfilehash: 81f149bdff540b236252a02a0c368799a11fed10
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "44180223"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609400"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>Conservation de l’état et des paramètres des compléments
 
@@ -40,7 +40,7 @@ L’API JavaScript pour Office fournit les objets [Settings](/javascript/api/off
 > [!NOTE]
 > Les deux sections suivantes abordent les paramètres dans le contexte de l’API JavaScript courante pour Office. L’API JavaScript pour Excel propre à un hôte propose également un accès aux paramètres personnalisés. Les API Excel et les modes de programmation sont légèrement différents. Pour plus d’informations, reportez-vous à l’article sur l’objet [SettingCollection pour Excel](/javascript/api/excel/excel.settingcollection).
 
-En interne, les données du conteneur de propriétés accessibles avec le `Settings`, `CustomProperties`ou `RoamingSettings` les objets sont stockées en tant qu’objets JSON (JavaScript Object Notation) sérialisés contenant des paires nom/valeur. Le `string`nom (clé) de chaque valeur doit être, et la valeur stockée peut être un JavaScript `string`, `number`, `date`, ou `object`, mais pas une **fonction**.
+En interne, les données du conteneur de propriétés accessibles avec le `Settings` , `CustomProperties` ou les `RoamingSettings` objets sont stockées en tant qu’objets JSON (JavaScript Object Notation) sérialisés contenant des paires nom/valeur. Le nom (clé) de chaque valeur doit être `string` , et la valeur stockée peut être un JavaScript `string` , `number` , `date` , ou `object` , mais pas une **fonction**.
 
 Cet exemple de structure de conteneur des propriétés contient trois valeurs de type **string** (chaîne) définies, nommées `firstName`, `location` et `defaultView`.
 
@@ -52,19 +52,19 @@ Cet exemple de structure de conteneur des propriétés contient trois valeurs de
 }
 ```
 
-Après avoir enregistré le conteneur des propriétés de paramètres durant la session de complément précédente, vous pouvez le charger pendant ou après l’initialisation du complément, durant la session actuelle du complément. Pendant la session, les paramètres sont entièrement gérés en mémoire à l’aide `get`des `set`méthodes, `remove` et de l’objet correspondant au type de paramètres que vous créez (**paramètres**, **CustomProperties**ou **RoamingSettings**).
+Après avoir enregistré le conteneur des propriétés de paramètres durant la session de complément précédente, vous pouvez le charger pendant ou après l’initialisation du complément, durant la session actuelle du complément. Pendant la session, les paramètres sont entièrement gérés en mémoire à l’aide `get` des `set` méthodes, et `remove` de l’objet correspondant au type de paramètres que vous créez (**paramètres**, **CustomProperties**ou **RoamingSettings**).
 
 
 > [!IMPORTANT]
-> Pour conserver les ajouts, les mises à jour ou les suppressions apportées au cours de la session en cours du complément sur l’emplacement de `saveAsync` stockage, vous devez appeler la méthode de l’objet correspondant utilisé pour utiliser ce type de paramètres. Les `get`méthodes `set`, et `remove` fonctionnent uniquement sur la copie en mémoire du conteneur des propriétés des paramètres. Si votre complément est fermé sans appel `saveAsync`, toutes les modifications apportées aux paramètres au cours de cette session seront perdues.
+> Pour conserver les ajouts, les mises à jour ou les suppressions apportées au cours de la session en cours du complément sur l’emplacement de stockage, vous devez appeler la `saveAsync` méthode de l’objet correspondant utilisé pour utiliser ce type de paramètres. Les `get` `set` méthodes, et `remove` fonctionnent uniquement sur la copie en mémoire du conteneur des propriétés des paramètres. Si votre complément est fermé sans appel `saveAsync` , toutes les modifications apportées aux paramètres au cours de cette session seront perdues.
 
 
 ## <a name="how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins"></a>Enregistrement de l’état et des paramètres d’un complément par document pour les compléments de contenu et du volet Office
 
 
-Pour conserver l’état ou les paramètres personnalisés d’un complément de contenu ou du volet Office pour Word, Excel ou PowerPoint, utilisez l’objet [Settings](/javascript/api/office/office.settings) et ses méthodes. Le conteneur de propriétés créé avec les méthodes de `Settings` l’objet est disponible uniquement pour l’instance du complément de contenu ou de volet de tâches qui l’a créé, et uniquement dans le document dans lequel il est enregistré.
+Pour conserver l’état ou les paramètres personnalisés d’un complément de contenu ou du volet Office pour Word, Excel ou PowerPoint, utilisez l’objet [Settings](/javascript/api/office/office.settings) et ses méthodes. Le conteneur de propriétés créé avec les méthodes de l' `Settings` objet est disponible uniquement pour l’instance du complément de contenu ou de volet de tâches qui l’a créé, et uniquement dans le document dans lequel il est enregistré.
 
-L' `Settings` objet est automatiquement chargé en tant que partie de l’objet [document](/javascript/api/office/office.document) et est disponible lorsque le complément de volet de tâches ou de contenu est activé. Après l' `Document` instanciation de l’objet, vous pouvez accéder `Settings` à l’objet à l’aide de `Document` la propriété [Settings](/javascript/api/office/office.document#settings) de l’objet. Pendant la durée de vie de la session, vous pouvez simplement `Settings.get`utiliser `Settings.set`les méthodes `Settings.remove` , et pour lire, écrire ou supprimer des paramètres et un état de complément persistants à partir de la copie en mémoire du conteneur de propriétés.
+L' `Settings` objet est automatiquement chargé en tant que partie de l’objet [document](/javascript/api/office/office.document) et est disponible lorsque le complément de volet de tâches ou de contenu est activé. Après l' `Document` instanciation de l’objet, vous pouvez accéder `Settings` à l’objet à l’aide de la propriété [Settings](/javascript/api/office/office.document#settings) de l' `Document` objet. Pendant la durée de vie de la session, vous pouvez simplement utiliser les `Settings.get` `Settings.set` méthodes, et `Settings.remove` pour lire, écrire ou supprimer des paramètres et un état de complément persistants à partir de la copie en mémoire du conteneur de propriétés.
 
 Étant donné que les méthodes de définition (set) et de suppression (remove) fonctionnent uniquement par rapport à la copie en mémoire du conteneur des propriétés de paramètres, pour enregistrer de nouveaux paramètres ou des paramètres modifiés dans le document auquel le complément est associé, vous devez appeler la méthode [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-).
 
@@ -129,7 +129,7 @@ function write(message){
 }
 ```
 
-La fonction anonyme transmise à `saveAsync` la méthode en tant que paramètre _callback_ est exécutée lorsque l’opération est terminée. Le paramètre _asyncResult_ du rappel permet d’accéder à un `AsyncResult` objet qui contient l’état de l’opération. Dans l’exemple, la fonction vérifie la `AsyncResult.status` propriété pour voir si l’opération d’enregistrement a réussi ou échoué, puis affiche le résultat dans la page du complément.
+La fonction anonyme transmise à la `saveAsync` méthode en tant que paramètre _callback_ est exécutée lorsque l’opération est terminée. Le paramètre _asyncResult_ du rappel permet d’accéder à un `AsyncResult` objet qui contient l’état de l’opération. Dans l’exemple, la fonction vérifie la `AsyncResult.status` propriété pour voir si l’opération d’enregistrement a réussi ou échoué, puis affiche le résultat dans la page du complément.
 
 ## <a name="how-to-save-custom-xml-to-the-document"></a>Enregistrement du XML personnalisé dans le document
 

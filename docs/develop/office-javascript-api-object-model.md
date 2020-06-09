@@ -3,12 +3,12 @@ title: Modèle d’objet d’API JavaScript courant
 description: En savoir plus sur le modèle objet de l’API commune JavaScript pour Office
 ms.date: 04/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 4bfe027b09fc806021212d00c895527bd661f3a6
-ms.sourcegitcommit: 99b41e8b90f2df6dafcc12b3883e83751de9facd
+ms.openlocfilehash: 44c5258ad164c19df53ebe2fcbb00f420018a710
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "43952254"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609733"
 ---
 # <a name="common-javascript-api-object-model"></a>Modèle d’objet d’API JavaScript courant
 
@@ -45,9 +45,9 @@ Pour permettre l’interaction avec les données de document dans Excel, PowerPo
 
 Vous pouvez également utiliser l' `Document` objet pour interagir avec les données des documents de projet. La fonctionnalité propre à Project de l’API est documentée dans la classe abstraite [ProjectDocument](/javascript/api/office/office.document) des membres. Pour plus d’informations sur la création de compléments du volet Office pour Project, voir [Compléments du volet Office pour Project](../project/project-add-ins.md).
 
-Tous ces types d’accès aux données commencent à partir d’une instance `Document` de l’objet abstract.
+Tous ces types d’accès aux données commencent à partir d’une instance de l' `Document` objet abstract.
 
-Vous pouvez accéder à une instance de `Document` l’objet lors de l’initialisation du complément de contenu ou du volet Office à l’aide de la propriété `Context` [document](/javascript/api/office/office.context#document) de l’objet. L' `Document` objet définit les fonctions d’accès aux données communes partagées entre les documents Word et Excel, et `CustomXmlParts` fournit également un accès à l’objet pour les documents Word.
+Vous pouvez accéder à une instance de l' `Document` objet lors de l’initialisation du complément de contenu ou du volet Office à l’aide de la propriété [document](/javascript/api/office/office.context#document) de l' `Context` objet. L' `Document` objet définit les fonctions d’accès aux données communes partagées entre les documents Word et Excel, et fournit également un accès à l' `CustomXmlParts` objet pour les documents Word.
 
 L' `Document` objet prend en charge quatre moyens pour les développeurs d’accéder au contenu des documents :
 
@@ -80,15 +80,15 @@ Dans l’accès aux données basé sur la sélection et basé sur la liaison, le
 |:-----|:-----|:-----|
 |Texte|Fournit une représentation sous forme de chaîne des données de la sélection ou de la liaison.|Dans Excel 2013, Project 2013 et PowerPoint 2013, seul le texte brut est pris en charge. Dans Word 2013, trois formats de texte sont pris en charge : texte brut, HTML et Office Open XML (OOXML). Lorsque du texte est sélectionné dans une cellule d’Excel, les méthodes reposant sur la sélection lisent et écrivent le contenu entier de la cellule, même si uniquement une partie du texte est sélectionnée dans la cellule. Lorsque du texte est sélectionné dans Word et PowerPoint, les méthodes reposant sur la sélection lisent et écrivent uniquement la série de caractères sélectionnés. Project 2013 et PowerPoint 2013 prennent uniquement en charge l’accès aux données basé sur les sélections.|
 |Matrice|Fournit les données de la sélection ou de la liaison sous forme d’un **tableau** bidimensionnel implémenté dans JavaScript sous forme de tableau de tableaux.Par exemple, deux lignes de valeurs **string** dans deux colonnes donneront ` [['a', 'b'], ['c', 'd']]`, et une seule colonne de trois lignes donnera `[['a'], ['b'], ['c']]`.|L’accès aux données de matrice est pris en charge uniquement dans Excel 2013 et Word 2013.|
-|Tableau|Fournit les données dans la sélection ou la liaison sous forme d’objet [TableData](/javascript/api/office/office.tabledata). L' `TableData` objet expose les données via les `headers` propriétés `rows` et.|L’accès aux données de tableau est pris en charge uniquement dans Excel 2013 et Word 2013.|
+|Tableau|Fournit les données dans la sélection ou la liaison sous forme d’objet [TableData](/javascript/api/office/office.tabledata). L' `TableData` objet expose les données via les `headers` `rows` Propriétés et.|L’accès aux données de tableau est pris en charge uniquement dans Excel 2013 et Word 2013.|
 
 #### <a name="data-type-coercion"></a>Contrainte du type de données
 
-Les méthodes d’accès aux données `Document` sur les objets et [Binding](/javascript/api/office/office.binding) prennent en charge la spécification du type de données souhaité à l’aide du paramètre _coercionType_ de ces méthodes, ainsi que les valeurs d’énumération [coercionType](/javascript/api/office/office.coerciontype) correspondantes. Quelle que soit la forme réelle de la liaison, les différentes applications Office prennent en charge les types de données communs en tentant de forcer le type des données selon le type demandé. Par exemple, si un tableau ou un paragraphe Word est sélectionné, le développeur peut indiquer qu’il souhaite le lire en tant que texte brut, HTML, Office Open XML ou en tant que tableau, et l’implémentation de l’API gère les transformations et conversions de données nécessaires.
+Les méthodes d’accès aux données sur les `Document` objets et [Binding](/javascript/api/office/office.binding) prennent en charge la spécification du type de données souhaité à l’aide du paramètre _coercionType_ de ces méthodes, ainsi que les valeurs d’énumération [coercionType](/javascript/api/office/office.coerciontype) correspondantes. Quelle que soit la forme réelle de la liaison, les différentes applications Office prennent en charge les types de données communs en tentant de forcer le type des données selon le type demandé. Par exemple, si un tableau ou un paragraphe Word est sélectionné, le développeur peut indiquer qu’il souhaite le lire en tant que texte brut, HTML, Office Open XML ou en tant que tableau, et l’implémentation de l’API gère les transformations et conversions de données nécessaires.
 
 
 > [!TIP]
-> **Quand devez-vous utiliser la matrice ou le paramètre coercionType de tableau pour accéder aux données ?** Si vous souhaitez que vos données tabulaires s’étendent dynamiquement lorsque les lignes et les colonnes sont ajoutées, et que vous devez utiliser des en-têtes de tableau, vous devez utiliser le type de données `Document` table `Binding` (en spécifiant le `"table"` paramètre `Office.CoercionType.Table` _coercionType_ de la méthode d’accès aux données de l’objet ou). L’ajout de lignes et de colonnes au sein de la structure de données est pris en charge dans les données de tableau et de matrice, mais l’ajout de lignes et de colonnes à la fin est pris en charge uniquement pour les données de tableau. Si vous ne prévoyez pas d’ajouter des lignes et des colonnes, et que vos données ne nécessitent pas la fonctionnalité d’en-tête, vous devez utiliser le type de données Matrix (en spécifiant `Office.CoercionType.Matrix`le paramètre _coercionType_ de la méthode `"matrix"` d’accès aux données), ce qui fournit un modèle plus simple d’interaction avec les données.
+> **Quand devez-vous utiliser la matrice ou le paramètre coercionType de tableau pour accéder aux données ?** Si vous souhaitez que vos données tabulaires s’étendent dynamiquement lorsque les lignes et les colonnes sont ajoutées, et que vous devez utiliser des en-têtes de tableau, vous devez utiliser le type de données table (en spécifiant le paramètre _coercionType_ de la `Document` méthode d' `Binding` accès aux données de l’objet ou `"table"` `Office.CoercionType.Table` ). L’ajout de lignes et de colonnes au sein de la structure de données est pris en charge dans les données de tableau et de matrice, mais l’ajout de lignes et de colonnes à la fin est pris en charge uniquement pour les données de tableau. Si vous ne prévoyez pas d’ajouter des lignes et des colonnes, et que vos données ne nécessitent pas la fonctionnalité d’en-tête, vous devez utiliser le type de données Matrix (en spécifiant le paramètre _coercionType_ de la méthode d’accès aux données `"matrix"` `Office.CoercionType.Matrix` ), ce qui fournit un modèle plus simple d’interaction avec les données.
 
 Si les données sont d’un type qui ne peut pas être forcé vers le type spécifié, la propriété [AsyncResult.status](/javascript/api/office/office.asyncresult#status) du rappel renvoie `"failed"`. Par ailleurs, vous pouvez utiliser la propriété [AsyncResult.error](/javascript/api/office/office.asyncresult#error) pour accéder à un objet [Error](/javascript/api/office/office.error) incluant des informations sur la raison de l’échec de l’appel de la méthode.
 
@@ -96,7 +96,7 @@ Si les données sont d’un type qui ne peut pas être forcé vers le type spéc
 ## <a name="working-with-selections-using-the-document-object"></a>Utilisation des sélections à l’aide de l’objet Document
 
 
-L' `Document` objet expose des méthodes qui vous permettent de lire et d’écrire dans la sélection actuelle de l’utilisateur dans un mode « Get et Set ». Pour ce faire, l' `Document` objet fournit les `getSelectedDataAsync` méthodes `setSelectedDataAsync` et.
+L' `Document` objet expose des méthodes qui vous permettent de lire et d’écrire dans la sélection actuelle de l’utilisateur dans un mode « Get et Set ». Pour ce faire, l' `Document` objet fournit les `getSelectedDataAsync` `setSelectedDataAsync` méthodes et.
 
 Pour obtenir des exemples de code montrant comment effectuer des tâches avec les sélections, voir [Lecture et écriture de données dans la sélection active d’un document ou d’une feuille de calcul](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md).
 
@@ -115,9 +115,9 @@ L’accès aux données basé sur les liaisons permet aux compléments de conten
 
 L’établissement d’une liaison vous permet également de vous abonner aux données et aux événements de changement de sélection qui sont concernés par cette région particulière du document ou de la feuille de calcul. Cela signifie que le complément est seulement notifié des changements qui surviennent dans la région délimitée, par opposition aux changements généraux affectant l’ensemble du document ou de la feuille de calcul.
 
-L’objet [Bindings](/javascript/api/office/office.bindings) expose une méthode [getAllAsync](/javascript/api/office/office.bindings#getallasync-options--callback-) qui donne accès à toutes les liaisons établies dans le document ou la feuille de calcul. Une liaison individuelle est accessible par son ID à l’aide de la méthode [Bindings.getBindingByIdAsync](/javascript/api/office/office.bindings#getbyidasync-id--options--callback-) ou [Office.select](/javascript/api/office). Vous pouvez établir de nouvelles liaisons et supprimer des liaisons existantes à l’aide de l’une des méthodes suivantes de `Bindings` l’objet : [addFromSelectionAsync](/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-), [addFromPromptAsync](/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-), [addFromNamedItemAsync](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-)ou [releaseByIdAsync](/javascript/api/office/office.bindings#releasebyidasync-id--options--callback-).
+L’objet [Bindings](/javascript/api/office/office.bindings) expose une méthode [getAllAsync](/javascript/api/office/office.bindings#getallasync-options--callback-) qui donne accès à toutes les liaisons établies dans le document ou la feuille de calcul. Une liaison individuelle est accessible par son ID à l’aide de la méthode [Bindings.getBindingByIdAsync](/javascript/api/office/office.bindings#getbyidasync-id--options--callback-) ou [Office.select](/javascript/api/office). Vous pouvez établir de nouvelles liaisons et supprimer des liaisons existantes à l’aide de l’une des méthodes suivantes de l' `Bindings` objet [: addFromSelectionAsync](/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-), [AddFromPromptAsync](/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-), [addFromNamedItemAsync](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-)ou [releaseByIdAsync](/javascript/api/office/office.bindings#releasebyidasync-id--options--callback-).
 
-Il existe trois types de liaisons que vous pouvez spécifier avec le paramètre _bindingType_ lorsque vous créez une liaison avec les `addFromSelectionAsync`méthodes `addFromPromptAsync` ou : `addFromNamedItemAsync`
+Il existe trois types de liaisons que vous pouvez spécifier avec le paramètre _bindingType_ lorsque vous créez une liaison avec les `addFromSelectionAsync` `addFromPromptAsync` `addFromNamedItemAsync` méthodes ou :
 
 
 
@@ -129,7 +129,7 @@ Il existe trois types de liaisons que vous pouvez spécifier avec le paramètre 
 
 <br/>
 
-Une fois qu’une liaison est créée à l’aide de l’une des trois méthodes « `Bindings` Add » de l’objet, vous pouvez utiliser les données et les propriétés de la liaison à l’aide des méthodes de l’objet correspondant : [MatrixBinding](/javascript/api/office/office.matrixbinding), [TableBinding](/javascript/api/office/office.tablebinding)ou [liaison TextBinding](/javascript/api/office/office.textbinding). Ces trois objets héritent des méthodes [getDataAsync](/javascript/api/office/office.binding#getdataasync-options--callback-) et [setDataAsync](/javascript/api/office/office.binding#setdataasync-data--options--callback-) de l' `Binding` objet qui vous permettent d’interagir avec les données liées.
+Une fois qu’une liaison est créée à l’aide de l’une des trois méthodes « Add » de l' `Bindings` objet, vous pouvez utiliser les données et les propriétés de la liaison à l’aide des méthodes de l’objet correspondant : [MatrixBinding](/javascript/api/office/office.matrixbinding), [TableBinding](/javascript/api/office/office.tablebinding)ou [liaison TextBinding](/javascript/api/office/office.textbinding). Ces trois objets héritent des méthodes [getDataAsync](/javascript/api/office/office.binding#getdataasync-options--callback-) et [setDataAsync](/javascript/api/office/office.binding#setdataasync-data--options--callback-) de l' `Binding` objet qui vous permettent d’interagir avec les données liées.
 
 Pour obtenir des exemples de code qui montrent comment effectuer des tâches avec les liaisons, voir [Liaisons de régions dans un document ou une feuille de calcul](bind-to-regions-in-a-document-or-spreadsheet.md).
 
@@ -139,7 +139,7 @@ Pour obtenir des exemples de code qui montrent comment effectuer des tâches ave
 
  **S’applique à :** compléments du volet Office pour Word
 
-Les objets [CustomXmlParts](/javascript/api/office/office.customxmlparts) et [CustomXmlPart](/javascript/api/office/office.customxmlpart) de l’API donnent accès à des parties XML personnalisées dans les documents Word, qui permettent une manipulation orientée XML du contenu du document. Pour obtenir des démonstrations de `CustomXmlParts` l' `CustomXmlPart` utilisation des objets et, consultez l’exemple de code [Word-Add-in-work-with-Custom-XML-parts](https://github.com/OfficeDev/Word-Add-in-Work-with-custom-XML-parts) .
+Les objets [CustomXmlParts](/javascript/api/office/office.customxmlparts) et [CustomXmlPart](/javascript/api/office/office.customxmlpart) de l’API donnent accès à des parties XML personnalisées dans les documents Word, qui permettent une manipulation orientée XML du contenu du document. Pour obtenir des démonstrations de l’utilisation des `CustomXmlParts` `CustomXmlPart` objets et, consultez l’exemple de code [Word-Add-in-work-with-Custom-XML-parts](https://github.com/OfficeDev/Word-Add-in-Work-with-custom-XML-parts) .
 
 
 ## <a name="working-with-the-entire-document-using-the-getfileasync-method"></a>Utilisation de l’intégralité du document à l’aide de la méthode getFileAsync

@@ -3,12 +3,12 @@ title: Utilisation des tableaux croisés dynamiques avec l’API JavaScript pour
 description: Utilisez l’API JavaScript pour Excel pour créer des tableaux croisés dynamiques et interagir avec leurs composants.
 ms.date: 04/20/2020
 localization_priority: Normal
-ms.openlocfilehash: f89e945f717982163a967971aaeff90ec0125545
-ms.sourcegitcommit: 79c55e59294e220bd21a5006080f72acf3ec0a3f
+ms.openlocfilehash: 8e09f4bbd4c6429d585b4bd7d54a1f0c918ff6c3
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "43581938"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609754"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Utilisation des tableaux croisés dynamiques avec l’API JavaScript pour Excel
 
@@ -35,7 +35,7 @@ Examinons comment ces relations s’appliquent à certains exemples de données.
 
 ![Collection de ventes de fruit de différents types de batteries de serveurs différentes.](../images/excel-pivots-raw-data.png)
 
-Les données de ventes de la batterie de fruits seront utilisées pour créer un tableau croisé dynamique. Chaque colonne, telle que **types**, est `PivotHierarchy`. La hiérarchie de **types** contient le champ **types** . Le champ **types** contient les éléments **Apple**, **Kiwi**, **citron**, **citron**et **orange**.
+Les données de ventes de la batterie de fruits seront utilisées pour créer un tableau croisé dynamique. Chaque colonne, telle que **types**, est `PivotHierarchy` . La hiérarchie de **types** contient le champ **types** . Le champ **types** contient les éléments **Apple**, **Kiwi**, **citron**, **citron**et **orange**.
 
 ### <a name="hierarchies"></a>Hierarchies
 
@@ -57,7 +57,7 @@ Ce tableau croisé dynamique peut être généré via l’API JavaScript ou via 
 
 ## <a name="create-a-pivottable"></a>Créer un tableau croisé dynamique
 
-Les tableaux croisés dynamiques nécessitent un nom, une source et une destination. La source peut être une adresse de plage ou un nom de table ( `Range`transmis `string`en tant `Table` que type, ou type). La destination est une adresse de plage (sous la forme `Range` a `string`ou).
+Les tableaux croisés dynamiques nécessitent un nom, une source et une destination. La source peut être une adresse de plage ou un nom de table (transmis en tant que `Range` `string` type, ou `Table` type). La destination est une adresse de plage (sous la forme a `Range` ou `string` ).
 Les exemples suivants illustrent différentes techniques de création de tableau croisé dynamique.
 
 ### <a name="create-a-pivottable-with-range-addresses"></a>Créer un tableau croisé dynamique avec des adresses de plage
@@ -181,7 +181,7 @@ Le diagramme suivant montre les appels de fonction de disposition qui correspond
 
 ### <a name="get-data-from-the-pivottable"></a>Obtenir des données à partir du tableau croisé dynamique
 
-La disposition définit le mode d’affichage du tableau croisé dynamique dans la feuille de calcul. Cela signifie que `PivotLayout` l’objet contrôle les plages utilisées pour les éléments de tableau croisé dynamique. Utiliser les plages fournies par la disposition pour obtenir les données collectées et les agréger par le tableau croisé dynamique. En particulier, utilisez `PivotLayout.getDataBodyRange` pour accéder à ce que génère le tableau croisé dynamique.
+La disposition définit le mode d’affichage du tableau croisé dynamique dans la feuille de calcul. Cela signifie que l' `PivotLayout` objet contrôle les plages utilisées pour les éléments de tableau croisé dynamique. Utiliser les plages fournies par la disposition pour obtenir les données collectées et les agréger par le tableau croisé dynamique. En particulier, utilisez `PivotLayout.getDataBodyRange` pour accéder à ce que génère le tableau croisé dynamique.
 
 Le code suivant montre comment obtenir la dernière ligne des données du tableau croisé dynamique en parcourant la disposition ( **Total général** des colonnes de vente en gros des caisses **vendues au** sein de la batterie de serveurs et **de la somme des colonnes de grossiste vendues** dans l’exemple précédent). Ces valeurs sont ensuite additionnées pour un total final, qui s’affiche dans la cellule **E30** (en dehors du tableau croisé dynamique).
 
@@ -228,7 +228,7 @@ Excel.run(function (context) {
 
 ## <a name="slicers"></a>Slicers
 
-Les [segments](/javascript/api/excel/excel.slicer) permettent aux données d’être filtrées à partir d’un tableau croisé dynamique ou d’un tableau Excel. Un segment utilise des valeurs d’une colonne ou d’un champ PivotField spécifié pour filtrer les lignes correspondantes. Ces valeurs sont stockées en [SlicerItem](/javascript/api/excel/excel.sliceritem) tant qu’objets SlicerItem `Slicer`dans le. Votre complément peut ajuster ces filtres, comme les utilisateurs peuvent les[utiliser (par le biais de l’interface utilisateur Excel](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d)). Le segment se trouve au-dessus de la feuille de calcul de la couche de dessin, comme illustré dans la capture d’écran suivante.
+Les [segments](/javascript/api/excel/excel.slicer) permettent aux données d’être filtrées à partir d’un tableau croisé dynamique ou d’un tableau Excel. Un segment utilise des valeurs d’une colonne ou d’un champ PivotField spécifié pour filtrer les lignes correspondantes. Ces valeurs sont stockées en tant qu’objets [SlicerItem](/javascript/api/excel/excel.sliceritem) dans le `Slicer` . Votre complément peut ajuster ces filtres, comme les utilisateurs peuvent les[utiliser (par le biais de l’interface utilisateur Excel](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d)). Le segment se trouve au-dessus de la feuille de calcul de la couche de dessin, comme illustré dans la capture d’écran suivante.
 
 ![Données de filtrage de segment sur un tableau croisé dynamique.](../images/excel-slicer.png)
 
@@ -237,11 +237,11 @@ Les [segments](/javascript/api/excel/excel.slicer) permettent aux données d’�
 
 ### <a name="create-a-slicer"></a>Créer un segment
 
-Vous pouvez créer un segment dans un classeur ou une feuille de calcul `Workbook.slicers.add` à l' `Worksheet.slicers.add` aide de la méthode ou de la méthode. Cette opération ajoute un Slicer au [SlicerCollection](/javascript/api/excel/excel.slicercollection) de l’objet spécifié `Workbook` ou `Worksheet` . La `SlicerCollection.add` méthode comporte trois paramètres :
+Vous pouvez créer un segment dans un classeur ou une feuille de calcul à l’aide de la `Workbook.slicers.add` méthode ou de la `Worksheet.slicers.add` méthode. Cette opération ajoute un Slicer au [SlicerCollection](/javascript/api/excel/excel.slicercollection) de l’objet spécifié `Workbook` ou `Worksheet` . La `SlicerCollection.add` méthode comporte trois paramètres :
 
-- `slicerSource`: La source de données sur laquelle le nouveau segment est basé. Il peut s’agir `PivotTable`d' `Table`un,, ou d’une chaîne représentant le nom `PivotTable` ou `Table`l’ID d’un ou d’un.
-- `sourceField`: Champ dans la source de données à utiliser pour filtrer. Il peut s’agir `PivotField`d' `TableColumn`un,, ou d’une chaîne représentant le nom `PivotField` ou `TableColumn`l’ID d’un ou d’un.
-- `slicerDestination`: La feuille de calcul dans laquelle le nouveau segment sera créé. Il peut s’agir `Worksheet` d’un objet ou du nom ou de `Worksheet`l’ID d’un. Ce paramètre n’est pas nécessaire `SlicerCollection` lorsque le est `Worksheet.slicers`accessible via. Dans ce cas, la feuille de calcul de la collection est utilisée comme destination.
+- `slicerSource`: La source de données sur laquelle le nouveau segment est basé. Il peut s’agir `PivotTable` d’un, `Table` , ou d’une chaîne représentant le nom ou l’ID d’un ou d’un `PivotTable` `Table` .
+- `sourceField`: Champ dans la source de données à utiliser pour filtrer. Il peut s’agir `PivotField` d’un, `TableColumn` , ou d’une chaîne représentant le nom ou l’ID d’un ou d’un `PivotField` `TableColumn` .
+- `slicerDestination`: La feuille de calcul dans laquelle le nouveau segment sera créé. Il peut s’agir `Worksheet` d’un objet ou du nom ou de l’ID d’un `Worksheet` . Ce paramètre n’est pas nécessaire lorsque le `SlicerCollection` est accessible via `Worksheet.slicers` . Dans ce cas, la feuille de calcul de la collection est utilisée comme destination.
 
 L’exemple de code suivant ajoute un nouveau segment à la feuille de calcul de **tableau croisé dynamique** . La source du Slicer est le tableau croisé dynamique de la **batterie de serveurs** et les filtres utilisant les données de **type** . Le segment est également nommé **segment de fruit** pour référence ultérieure.
 
@@ -259,10 +259,10 @@ Excel.run(function (context) {
 
 ### <a name="filter-items-with-a-slicer"></a>Filtrer des éléments avec un segment
 
-Le segment filtre le tableau croisé dynamique avec les éléments `sourceField`de la. La `Slicer.selectItems` méthode définit les éléments qui restent dans le Slicer. Ces éléments sont transmis à la méthode en tant `string[]`que, représentant les clés des éléments. Toutes les lignes contenant ces éléments restent dans l’agrégation du tableau croisé dynamique. Appels suivants permettant `selectItems` de définir la liste aux clés spécifiées dans ces appels.
+Le segment filtre le tableau croisé dynamique avec les éléments de la `sourceField` . La `Slicer.selectItems` méthode définit les éléments qui restent dans le Slicer. Ces éléments sont transmis à la méthode en tant que `string[]` , représentant les clés des éléments. Toutes les lignes contenant ces éléments restent dans l’agrégation du tableau croisé dynamique. Appels suivants permettant de `selectItems` définir la liste aux clés spécifiées dans ces appels.
 
 > [!NOTE]
-> Si `Slicer.selectItems` reçoit un élément qui ne se trouve pas dans la source de données `InvalidArgument` , une erreur est générée. Le contenu peut être vérifié via la `Slicer.slicerItems` propriété, qui est une [SlicerItemCollection](/javascript/api/excel/excel.sliceritemcollection).
+> Si reçoit `Slicer.selectItems` un élément qui ne se trouve pas dans la source de données, une `InvalidArgument` erreur est générée. Le contenu peut être vérifié via la `Slicer.slicerItems` propriété, qui est une [SlicerItemCollection](/javascript/api/excel/excel.sliceritemcollection).
 
 L’exemple de code suivant montre trois éléments sélectionnés pour le Slicer : **citron**, **citron**et **orange**.
 
@@ -287,7 +287,7 @@ Excel.run(function (context) {
 
 ### <a name="style-and-format-a-slicer"></a>Style et formatage d’un segment
 
-Vous pouvez ajuster les paramètres d’affichage d’un segment par le biais `Slicer` de propriétés. L’exemple de code suivant définit le style sur **SlicerStyleLight6**, définit le texte en haut du Slicer sur **types de fruit**, place le segment à la position **(395, 15)** sur la couche de dessin et définit la taille du Slicer sur **135x150** pixels.
+Vous pouvez ajuster les paramètres d’affichage d’un segment par le biais de `Slicer` Propriétés. L’exemple de code suivant définit le style sur **SlicerStyleLight6**, définit le texte en haut du Slicer sur **types de fruit**, place le segment à la position **(395, 15)** sur la couche de dessin et définit la taille du Slicer sur **135x150** pixels.
 
 ```js
 Excel.run(function (context) {
@@ -318,7 +318,7 @@ Excel.run(function (context) {
 
 Les hiérarchies de données ont leurs valeurs agrégées. Pour les jeux de données de nombres, il s’agit d’une somme par défaut. La `summarizeBy` propriété définit ce comportement en fonction d’un type [AggregationFunction](/javascript/api/excel/excel.aggregationfunction) .
 
-Les types de fonction d’agrégation actuellement `Sum`pris `Count`en `Average`charge `Max`sont `Min`, `Product`, `CountNumbers`, `StandardDeviation`, `StandardDeviationP`, `Variance`, `VarianceP`,, `Automatic` ,, et (valeur par défaut).
+Les types de fonction d’agrégation actuellement pris en charge sont `Sum` ,, `Count` `Average` , `Max` , `Min` ,,,,,, `Product` `CountNumbers` `StandardDeviation` `StandardDeviationP` `Variance` `VarianceP` et `Automatic` (valeur par défaut).
 
 Les exemples de code suivants modifient l’agrégation pour qu’elle soit la moyenne des données.
 
@@ -342,7 +342,7 @@ Les tableaux croisés dynamiques agrègent par défaut les données de leurs hi�
 
 L' `ShowAsRule` objet possède trois propriétés :
 
-- `calculation`: Type de calcul relatif à appliquer à la hiérarchie de données (la valeur par `none`défaut est).
+- `calculation`: Type de calcul relatif à appliquer à la hiérarchie de données (la valeur par défaut est `none` ).
 - `baseField`: [Champ de tableau croisé dynamique](/javascript/api/excel/excel.pivotfield) dans la hiérarchie contenant les données de base avant l’application du calcul. Étant donné que les tableaux croisés dynamiques Excel ont un mappage un-à-un de la hiérarchie sur champ, vous utiliserez le même nom pour accéder à la hiérarchie et au champ.
 - `baseItem`: La valeur de [PivotItem](/javascript/api/excel/excel.pivotitem) individuelle comparée aux valeurs des champs de base basés sur le type de calcul. Tous les calculs ne nécessitent pas ce champ.
 
@@ -370,7 +370,7 @@ Excel.run(function (context) {
 });
 ```
 
-L’exemple précédent définit le calcul sur la colonne, par rapport au champ d’une hiérarchie de lignes individuelle. Lorsque le calcul est lié à un élément individuel, utilisez `baseItem` la propriété.
+L’exemple précédent définit le calcul sur la colonne, par rapport au champ d’une hiérarchie de lignes individuelle. Lorsque le calcul est lié à un élément individuel, utilisez la `baseItem` propriété.
 
 L’exemple suivant montre le `differenceFrom` calcul. Il affiche la différence entre les entrées de hiérarchie de données ventes de la batterie de serveurs par rapport à celles d' **une**batterie de serveurs.
 La `baseField` **batterie de serveurs**is, de sorte que nous voyons les différences entre les autres batteries de serveurs, ainsi que les répartitions pour chaque type de fruit similaire (**type** est également une hiérarchie de lignes dans cet exemple).

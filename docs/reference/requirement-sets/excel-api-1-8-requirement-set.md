@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1,8
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 4a512b10dd23b2165d72226d9df27d5f9454c24e
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: e5d40df0ec9e6b5fb307f834c239c7fa895af42e
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42597004"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611399"
 ---
 # <a name="whats-new-in-excel-javascript-api-18"></a>Nouveautés de l’API JavaScript pour Excel 1,8
 
@@ -68,7 +68,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[textOrientation](/javascript/api/excel/excel.chartaxis#textorientation)|Représente l’orientation du texte de l’étiquette de graduation de l’axe. La valeur doit être un entier soit de -90 à 90, soit 180 pour le texte orienté verticalement.|
 |[ChartAxisFormat](/javascript/api/excel/excel.chartaxisformat)|[fill](/javascript/api/excel/excel.chartaxisformat#fill)|Représente la mise en forme de remplissage du graphique. En lecture seule.|
 |[ChartAxisTitle](/javascript/api/excel/excel.chartaxistitle)|[setFormula (Formula : String)](/javascript/api/excel/excel.chartaxistitle#setformula-formula-)|Valeur de chaîne qui représente la formule de titre de l’axe graphique à l’aide de la notation de style A1.|
-|[ChartAxisTitleFormat](/javascript/api/excel/excel.chartaxistitleformat)|[bordure](/javascript/api/excel/excel.chartaxistitleformat#border)|Représente le format bordure, qui inclut couleur, style de ligne et épaisseur.|
+|[ChartAxisTitleFormat](/javascript/api/excel/excel.chartaxistitleformat)|[route](/javascript/api/excel/excel.chartaxistitleformat#border)|Représente le format bordure, qui inclut couleur, style de ligne et épaisseur.|
 ||[fill](/javascript/api/excel/excel.chartaxistitleformat#fill)|Représente la mise en forme de remplissage du graphique.|
 |[ChartBorder](/javascript/api/excel/excel.chartborder)|[clear()](/javascript/api/excel/excel.chartborder#clear--)|Désactiver le format de bordure d’un élément de graphique.|
 |[ChartCollection](/javascript/api/excel/excel.chartcollection)|[onActivated](/javascript/api/excel/excel.chartcollection#onactivated)|Se produit lorsqu’un graphique est activé.|
@@ -87,7 +87,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[textOrientation](/javascript/api/excel/excel.chartdatalabel#textorientation)|Représente l’orientation du texte de l’étiquette de données du graphique. La valeur doit être un entier soit de -90 à 90, soit 180 pour le texte orienté verticalement.|
 ||[top](/javascript/api/excel/excel.chartdatalabel#top)|Représente la distance en points, du bord supérieur de l’étiquette de données graphique au bord supérieur de la zone de graphique. Null si l’étiquette de données graphique n’est pas visible.|
 ||[verticalAlignment](/javascript/api/excel/excel.chartdatalabel#verticalalignment)|Représente l’alignement vertical de l’étiquette de données du graphique. Pour plus d’informations, voir Excel. ChartTextVerticalAlignment.|
-|[ChartDataLabelFormat](/javascript/api/excel/excel.chartdatalabelformat)|[bordure](/javascript/api/excel/excel.chartdatalabelformat#border)|Représente le format bordure, qui inclut couleur, style de ligne et épaisseur. En lecture seule.|
+|[ChartDataLabelFormat](/javascript/api/excel/excel.chartdatalabelformat)|[route](/javascript/api/excel/excel.chartdatalabelformat#border)|Représente le format bordure, qui inclut couleur, style de ligne et épaisseur. En lecture seule.|
 |[ChartDataLabels](/javascript/api/excel/excel.chartdatalabels)|[Insertion automatique](/javascript/api/excel/excel.chartdatalabels#autotext)|Représente si des étiquettes de données génèrent automatiquement le texte approprié en fonction du contexte.|
 ||[horizontalAlignment](/javascript/api/excel/excel.chartdatalabels#horizontalalignment)|Représente l’alignement horizontal de l’étiquette de données du graphique. Pour plus d’informations, voir Excel. ChartTextHorizontalAlignment.|
 ||[numberFormat](/javascript/api/excel/excel.chartdatalabels#numberformat)|Représente le code de format pour les étiquettes de données.|
@@ -105,7 +105,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[left](/javascript/api/excel/excel.chartlegendentry#left)|Représente la partie gauche d’un graphique legendEntry.|
 ||[top](/javascript/api/excel/excel.chartlegendentry#top)|Représente la partie supérieure d’un graphique legendEntry.|
 ||[width](/javascript/api/excel/excel.chartlegendentry#width)|Représente la largeur de legendEntry sur la légende d’un graphique.|
-|[ChartLegendFormat](/javascript/api/excel/excel.chartlegendformat)|[bordure](/javascript/api/excel/excel.chartlegendformat#border)|Représente le format bordure, qui inclut couleur, style de ligne et épaisseur. En lecture seule.|
+|[ChartLegendFormat](/javascript/api/excel/excel.chartlegendformat)|[route](/javascript/api/excel/excel.chartlegendformat#border)|Représente le format bordure, qui inclut couleur, style de ligne et épaisseur. En lecture seule.|
 |[ChartPlotArea](/javascript/api/excel/excel.chartplotarea)|[height](/javascript/api/excel/excel.chartplotarea#height)|Représente la valeur de hauteur de plotArea.|
 ||[insideHeight](/javascript/api/excel/excel.chartplotarea#insideheight)|Représente la valeur insideHeight de plotArea.|
 ||[insideLeft](/javascript/api/excel/excel.chartplotarea#insideleft)|Représente la valeur insideLeft de plotArea.|
@@ -116,7 +116,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[format](/javascript/api/excel/excel.chartplotarea#format)|Représente la mise en forme d’un graphique plotArea.|
 ||[top](/javascript/api/excel/excel.chartplotarea#top)|Représente la valeur supérieure de plotArea.|
 ||[width](/javascript/api/excel/excel.chartplotarea#width)|Représente la valeur de largeur de plotArea.|
-|[ChartPlotAreaFormat](/javascript/api/excel/excel.chartplotareaformat)|[bordure](/javascript/api/excel/excel.chartplotareaformat#border)|Représente les attributs de bordure d’un graphique plotArea.|
+|[ChartPlotAreaFormat](/javascript/api/excel/excel.chartplotareaformat)|[route](/javascript/api/excel/excel.chartplotareaformat#border)|Représente les attributs de bordure d’un graphique plotArea.|
 ||[fill](/javascript/api/excel/excel.chartplotareaformat#fill)|Représente le format de remplissage d’un objet, qui comprend des informations de mise en forme d’arrière-plan.|
 |[ChartSeries](/javascript/api/excel/excel.chartseries)|[axisGroup](/javascript/api/excel/excel.chartseries#axisgroup)|Renvoie ou définit le groupe de la série spécifiée. Lecture/Écriture|
 ||[barrage](/javascript/api/excel/excel.chartseries#explosion)|Renvoie ou définit la valeur d’explosion pour une coupe de graphique en secteurs ou de graphique en anneaux. Renvoie 0 (zéro) s’il n’y a aucune explosion (la pointe de la coupe est dans le centre du graphique). Lecture/écriture.|
@@ -144,7 +144,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[textOrientation](/javascript/api/excel/excel.charttrendlinelabel#textorientation)|Représente l’orientation du texte de l’étiquette de tendances du graphique. La valeur doit être un entier soit de -90 à 90, soit 180 pour le texte orienté verticalement.|
 ||[top](/javascript/api/excel/excel.charttrendlinelabel#top)|Représente la distance en points, du bord supérieur de l’étiquette de tendances du graphique au bord supérieur de la zone de graphique. Null si l’étiquette de tendances graphique n’est pas visible.|
 ||[verticalAlignment](/javascript/api/excel/excel.charttrendlinelabel#verticalalignment)|Représente l’alignement vertical de l’étiquette de tendances du graphique. Pour plus d’informations, voir Excel. ChartTextVerticalAlignment.|
-|[ChartTrendlineLabelFormat](/javascript/api/excel/excel.charttrendlinelabelformat)|[bordure](/javascript/api/excel/excel.charttrendlinelabelformat#border)|Représente le format bordure, qui inclut couleur, style de ligne et épaisseur.|
+|[ChartTrendlineLabelFormat](/javascript/api/excel/excel.charttrendlinelabelformat)|[route](/javascript/api/excel/excel.charttrendlinelabelformat#border)|Représente le format bordure, qui inclut couleur, style de ligne et épaisseur.|
 ||[fill](/javascript/api/excel/excel.charttrendlinelabelformat#fill)|Représente le format de remplissage de l’étiquette de tendances du graphique actuel.|
 ||[police](/javascript/api/excel/excel.charttrendlinelabelformat#font)|Représente les attributs de police (nom de la police, taille de police, couleur, etc.) d’une étiquette de tendances de graphique.|
 |[CustomDataValidation](/javascript/api/excel/excel.customdatavalidation)|[formula](/javascript/api/excel/excel.customdatavalidation#formula)|Une formule de validation des données personnalisée. Cette opération crée des règles d’entrée spéciales, telles que la prévention des doublons ou la limitation du total dans une plage de cellules.|
@@ -241,7 +241,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[hiérarchies](/javascript/api/excel/excel.pivottable#hierarchies)|Les hiérarchies Pivot de tableau croisé dynamique.|
 ||[disposition](/javascript/api/excel/excel.pivottable#layout)|Le PivotLayout décrivant la disposition et la structure visuelle de tableau croisé dynamique.|
 ||[rowHierarchies](/javascript/api/excel/excel.pivottable#rowhierarchies)|Les hiérarchies de lignes de tableau croisé dynamique.|
-|[PivotTableCollection](/javascript/api/excel/excel.pivottablecollection)|[Add (Name : chaîne, source : table \| de \| chaînes de plage, destination \| : chaîne de plage)](/javascript/api/excel/excel.pivottablecollection#add-name--source--destination-)|Ajoute un tableau croisé dynamique en fonction des données sources spécifiées et les insère à la cellule supérieure gauche de la plage de destination.|
+|[PivotTableCollection](/javascript/api/excel/excel.pivottablecollection)|[Add (Name : chaîne, source : \| \| table de chaînes de plage, destination : chaîne de plage \| )](/javascript/api/excel/excel.pivottablecollection#add-name--source--destination-)|Ajoute un tableau croisé dynamique en fonction des données sources spécifiées et les insère à la cellule supérieure gauche de la plage de destination.|
 |[Range](/javascript/api/excel/excel.range)|[dataValidation](/javascript/api/excel/excel.range#datavalidation)|Renvoie un objet de validation des données.|
 |[RowColumnPivotHierarchy](/javascript/api/excel/excel.rowcolumnpivothierarchy)|[name](/javascript/api/excel/excel.rowcolumnpivothierarchy#name)|Nom de la RowColumnPivotHierarchy.|
 ||[position](/javascript/api/excel/excel.rowcolumnpivothierarchy#position)|Position de la RowColumnPivotHierarchy.|

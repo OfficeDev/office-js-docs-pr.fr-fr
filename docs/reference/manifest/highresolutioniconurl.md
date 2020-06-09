@@ -3,12 +3,12 @@ title: Élément HighResolutionIconUrl dans le fichier manifeste
 description: Spécifie l’URL de l’image qui est utilisée pour représenter votre complément Office dans l’UX d’insertion UX et l’Office Store sur les écrans à haute résolution (DPI).
 ms.date: 12/04/2018
 localization_priority: Normal
-ms.openlocfilehash: 78a9296f38a688073e516fb78a77bb4cdac822c4
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 1ebe69a7576c82ec121094ed84c0d49acde1098a
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718138"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611819"
 ---
 # <a name="highresolutioniconurl-element"></a>HighResolutionIconUrl, élément
 
@@ -34,6 +34,6 @@ Spécifie l’URL de l’image qui est utilisée pour représenter votre complé
 
 ## <a name="remarks"></a>Remarques
 
-Pour un complément de messagerie **, l’icône** > est affichée dans l’interface utilisateur**gérer les compléments** . Pour un complément de contenu ou de volet Office, l’icône s’affiche dans l’interface utilisateur, sous **Insérer** > **Compléments**.
+Pour un complément de messagerie, l’icône est affichée **dans l'**  >  interface utilisateur**gérer les compléments** . Pour un complément de contenu ou de volet Office, l’icône s’affiche dans l’interface utilisateur, sous **Insérer** > **Compléments**.
 
 L’image doit être dans un des formats de fichier suivants : GIF, JPG, PNG, EXIF, BMP ou TIFF. Pour les applications de contenu et de volet des tâches, la résolution d’image recommandée est de 64 x 64 pixels. Pour les applications de messagerie, l’image doit faire 128 x 128 pixels. Pour plus d’informations, voir la section _Créer une identité visuelle cohérente pour votre application_ dans [Création de listings efficaces dans AppSource et dans Office](/office/dev/store/create-effective-office-store-listings#create-a-consistent-visual-identity).

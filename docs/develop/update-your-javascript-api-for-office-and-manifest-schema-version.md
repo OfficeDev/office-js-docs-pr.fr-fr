@@ -3,12 +3,12 @@ title: Mise à jour vers la dernière bibliothèque d’API JavaScript Office et
 description: Mettez à jour vos fichiers JavaScript (Office.js et fichiers .js propres aux applications) et le fichier de validation du manifeste du complément dans votre projet Complément Office vers la version 1.1.
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 74d940c1dfd885e1f48935776481bd5ab3bbda16
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 1c088c27319817c466e1ed9b928806c88e0f89c8
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719335"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609663"
 ---
 # <a name="update-to-the-latest-office-javascript-api-library-and-version-11-add-in-manifest-schema"></a>Mise à jour vers la dernière bibliothèque d’API JavaScript Office et schéma de manifeste de complément version 1,1
 
@@ -44,7 +44,7 @@ Notez que le processus de mise à jour est appliqué  _par projet_  ; vous devre
 Les étapes suivantes permettent de mettre à jour vos fichiers de bibliothèque Office. js vers la dernière version. Les étapes utilisent Visual Studio 2019, mais elles sont similaires pour les versions précédentes de Visual Studio.
 
 1. Dans Visual Studio 2019, ouvrez ou créez un projet **de complément Office** .
-2. Sélectionnez **Outils** > le**Gestionnaire** > **de package NuGet gérer les packages NuGet pour la solution**.
+2. Sélectionnez **Outils**le  >  **Gestionnaire de package NuGet**  >  **gérer les packages NuGet pour la solution**.
 3. Sélectionnez l’onglet **Mises à jour**.
 4. Sélectionnez Microsoft.Office.js. Vérifiez que la source du package provient de **NuGet.org**.
 5. Dans le volet de gauche, choisissez **installer** et exécutez le processus de mise à jour du package.
@@ -83,7 +83,7 @@ Pour les projets créés avant la publication de la version 1.1 de l’API JavaS
 
 Le processus de mise à jour est appliqué  _par projet_  ; vous devrez répéter le processus de mise à jour pour chaque projet de complément dans lequel vous souhaitez utiliser la version 1.1 d’Office.js et du schéma de manifeste de complément.
 
-Vous n’avez pas besoin de copies locales des fichiers d’API JavaScript Office (Office. js et des fichiers. js propres à l’application) pour développer le complément Abonnementoffice (référençant le CDN pour Office. js télécharge les fichiers nécessaires au moment de l’exécution), mais si vous souhaitez une copie locale des fichiers de bibliothèque, vous pouvez `Install-Package Microsoft.Office.js` utiliser l’utilitaire de ligne de [commande NuGet](https://docs.nuget.org/consume/installing-nuget) et la commande pour les
+Vous n’avez pas besoin de copies locales des fichiers d’API JavaScript Office (Office. js et des fichiers. js propres à l’application) pour développer le complément Abonnementoffice (référençant le CDN pour Office. js télécharge les fichiers nécessaires au moment de l’exécution), mais si vous souhaitez une copie locale des fichiers de bibliothèque, vous pouvez utiliser l' [utilitaire de ligne de commande NuGet](https://docs.nuget.org/consume/installing-nuget) et la `Install-Package Microsoft.Office.js` commande pour les
 
 > [!NOTE]
 > pour obtenir une copie du fichier XSD (définition du schéma XML) pour le manifeste de complément version 1.1, consultez les [informations de référence sur le schéma des manifestes des compléments Office (version 1.1)](../develop/add-in-manifests.md).

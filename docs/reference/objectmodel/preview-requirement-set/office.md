@@ -3,12 +3,12 @@ title: Espace de noms Office – ensemble de conditions requises
 description: Les membres d’espace de noms Office disponibles pour les compléments Outlook à l’aide de l’ensemble de conditions requises d’API de boîte aux lettres.
 ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: d72e5c78a7fd8d3c00b8f84e7d9b05ee6defc0c5
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: 634b8593e1d1a58b61c4a330ed96611903e4a27e
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890857"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611609"
 ---
 # <a name="office-mailbox-preview-requirement-set"></a>Office (préversion de la boîte aux lettres requise)
 
@@ -25,20 +25,20 @@ L’espace de noms Office fournit des interfaces partagées qui sont utilisées 
 
 | Propriété | Modes | Type de retour | Minimale<br>ensemble de conditions requises |
 |---|---|---|:---:|
-| [context](office.context.md) | Composition<br>Lecture | [Context](/javascript/api/office/office.context?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [context](office.context.md) | Composition<br>Read | [Context](/javascript/api/office/office.context?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ##### <a name="enumerations"></a>Énumérations
 
 | Énumération | Modes | Type de retour | Minimale<br>ensemble de conditions requises |
 |---|---|---|:---:|
-| [AsyncResultStatus](#asyncresultstatus-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [CoercionType](#coerciontype-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [EventType](#eventtype-string) | Composition<br>Lecture | String | [1,5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [SourceProperty](#sourceproperty-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [AsyncResultStatus](#asyncresultstatus-string) | Composition<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | Composition<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [EventType](#eventtype-string) | Composition<br>Read | String | [1,5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [SourceProperty](#sourceproperty-string) | Composition<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ### <a name="namespaces"></a>Espaces de noms
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-preview): inclut un certain nombre d’énumérations propres à Outlook, par exemple `ItemType` `EntityType` `AttachmentType` `RecipientType` `ResponseType`,,,,, et `ItemNotificationMessageType`.
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-preview): inclut un certain nombre d’énumérations propres à Outlook, par exemple,,,,, `ItemType` `EntityType` `AttachmentType` `RecipientType` `ResponseType` et `ItemNotificationMessageType` .
 
 ## <a name="enumeration-details"></a>Détails de l’énumération
 

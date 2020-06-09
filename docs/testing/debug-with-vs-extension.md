@@ -3,12 +3,12 @@ title: Extension du débogueur de complément Microsoft Office pour Visual Studi
 description: Utilisez le débogueur de complément Microsoft Office de l’extension de code Visual Studio pour déboguer votre complément Office.
 ms.date: 05/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 57a59029ee9bb9791829d9d3583ce8b85e417b16
-ms.sourcegitcommit: 71a44405e42b4798a8354f7f96d84548ae7a00f0
+ms.openlocfilehash: 1bd3814eba6da2339e7865d720b8a4c792b9310e
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44280362"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611210"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Extension du débogueur de complément Microsoft Office pour Visual Studio code
 

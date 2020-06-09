@@ -3,12 +3,12 @@ title: Ensemble de conditions requises de l’API du complément Outlook 1.2
 description: Les fonctionnalités et les API qui ont été introduites pour les compléments Outlook et les API JavaScript Office dans le cadre de l’API de boîte aux lettres 1,2.
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: e1605bb2a0d8cc7de0562833cf9cafc9fd932ad4
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 493a360a675a98ee6a364c67e83a60dc00bf35df
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717781"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44610481"
 ---
 # <a name="outlook-add-in-api-requirement-set-12"></a>Ensemble de conditions requises de l’API du complément Outlook 1.2
 

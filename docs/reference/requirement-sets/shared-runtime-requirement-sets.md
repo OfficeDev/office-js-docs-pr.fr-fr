@@ -4,12 +4,12 @@ description: Spécifie les plateformes et les hôtes Office qui prennent en char
 ms.date: 03/11/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 9750dd2e20a9f2426c7faf3864a2fccac5c11a80
-ms.sourcegitcommit: 05b73cdec5f4db7f0b8d48a5a552ee296a0332ca
+ms.openlocfilehash: ebf83216759419c092361aab1a83b234bcf22f97
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42600675"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611315"
 ---
 # <a name="shared-runtime-requirement-sets"></a>Ensembles de conditions requises pour l’exécution partagée
 
@@ -21,7 +21,7 @@ Le tableau suivant répertorie l’ensemble de conditions requises SharedRuntime
 
 |  Ensemble de conditions requises  |  Office 2013 (ou version ultérieure) sur Windows<br>(achat définitif) | Office pour Windows<br>(connecté à l’abonnement Office 365)   |  Office sur iPad<br>(connecté à l’abonnement Office 365)  |  Office sur Mac<br>(connecté à l’abonnement Office 365)  | Office sur le web  | Office Online Server |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| SharedRuntime 1,1  | S/O | Version 2002 (Build 12527,20092) ou version ultérieure | S/O | 16,35 ou version ultérieure | Février 2020 | S/O |
+| SharedRuntime 1,1  | N/A | Version 2002 (Build 12527,20092) ou version ultérieure | N/A | 16.35 ou version ultérieure | Février 2020 | N/A |
 
 ## <a name="office-versions-and-build-numbers"></a>Numéros de version et de build d’Office
 

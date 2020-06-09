@@ -3,12 +3,12 @@ title: LaunchEvents dans le fichier manifeste (aperçu)
 description: L’élément LaunchEvents configure votre complément de sorte qu’il s’active en fonction des événements pris en charge.
 ms.date: 05/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 2e1ad56d405fca0f85fad500a113fba7d0448caf
-ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
+ms.openlocfilehash: 92416f8c646326410a8cd9ee7831e17a5c5f1ffc
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44278541"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611770"
 ---
 # <a name="launchevents-element-preview"></a>Élément LaunchEvents (aperçu)
 
@@ -38,7 +38,7 @@ Configure votre complément pour qu’il s’active en fonction des événements
 
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Obligatoire  |  Description  |
+|  Élément |  Requis  |  Description  |
 |:-----|:-----|:-----|
 | [LaunchEvent](launchevent.md) | Oui |  Mappez l’événement pris en charge à sa fonction dans le fichier JavaScript pour l’activation des compléments. |
 

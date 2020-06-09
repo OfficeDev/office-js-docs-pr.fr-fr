@@ -3,12 +3,12 @@ title: Utilisation d’événements à l’aide de l’API JavaScript pour Excel
 description: Liste d’événements pour les objets JavaScript Excel. Cela inclut des informations sur l’utilisation des gestionnaires d’événements et les modèles associés.
 ms.date: 05/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 075544c529ba7200aa181d42dd5fc8c3fbd661bc
-ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
+ms.openlocfilehash: fbf92d34a0fb1d8b18b9ebb379cd24d34775c243
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "44170806"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609600"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Utilisation d’événements à l’aide de l’API JavaScript pour Excel
 

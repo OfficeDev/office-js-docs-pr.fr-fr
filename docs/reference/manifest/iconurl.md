@@ -3,12 +3,12 @@ title: Élément IconUrl dans le fichier manifeste
 description: L’élément IconUrl spécifie l’URL de l’image qui représente votre complément Office dans l’expérience utilisateur d’insertion et dans l’Office Store.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: a345971e32e64557005c8d01519589f4be5fb7d7
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 2ccfc2fc1d0a07f6d549f388bbb58e40e79a17d5
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718082"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611791"
 ---
 # <a name="iconurl-element"></a>IconUrl, élément
 
@@ -34,8 +34,8 @@ Spécifie l’URL de l’image utilisée pour représenter votre complément Off
 
 ## <a name="remarks"></a>Remarques
 
-Pour un complément de messagerie **, l’icône** > est affichée dans l’interface utilisateur de**gestion des compléments** (Outlook) ou **paramètres** > **gérer les compléments** (Outlook sur le Web). Pour un complément de contenu ou de volet Office, l’icône s’affiche dans l’interface utilisateur, sous **Insérer** > **Compléments**. Pour tous les types de complément, l’icône est également utilisée dans [AppSource](https://appsource.microsoft.com), si vous publiez votre complément dans AppSource.
+Pour un complément de messagerie **, l’icône**est affichée dans l’interface utilisateur de gestion des  >  **compléments** (Outlook) ou **paramètres**  >  **gérer les compléments** (Outlook sur le Web). Pour un complément de contenu ou de volet Office, l’icône s’affiche dans l’interface utilisateur, sous **Insérer** > **Compléments**. Pour tous les types de complément, l’icône est également utilisée dans [AppSource](https://appsource.microsoft.com), si vous publiez votre complément dans AppSource.
 
 L’image doit être dans un des formats de fichier suivants : GIF, JPG, PNG, EXIF, BMP ou TIFF. Pour les applications de volet de tâches et de contenu, l’image spécifiée doit contenir 32 x 32 pixels. Pour les applications de messagerie, la résolution d’image recommandée est de 64 x 64 pixels. Vous devez également spécifier une icône pour une utilisation avec les applications hôte Office en cours d’exécution sur des écrans haute résolution (DPI) à l’aide de l’élément [HighResolutionIconUrl](highresolutioniconurl.md). Pour plus d’informations, reportez-vous à la section _Créer une identité visuelle cohérente pour votre application_ dans [Création de listings efficaces dans AppSource et dans Office](/office/dev/store/create-effective-office-store-listings#create-a-consistent-visual-identity).
 
-La modification de la valeur `IconUrl` de l’élément au moment de l’exécution n’est actuellement pas prise en charge.
+La modification de la valeur de l' `IconUrl` élément au moment de l’exécution n’est actuellement pas prise en charge.

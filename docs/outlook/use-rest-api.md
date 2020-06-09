@@ -3,12 +3,12 @@ title: Utilisation des API REST Outlook d’un complément Outlook
 description: Découvrez comment utiliser des API REST Outlook à partir d’un complément Outlook pour obtenir un jeton d’accès.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 55420d61e16e975b44213257c6feb9affd48e78c
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 7cd26c26e277d7d5fe93664494eb84b4e94bcc47
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166072"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611616"
 ---
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>Utilisation des API REST Outlook d’un complément Outlook
 

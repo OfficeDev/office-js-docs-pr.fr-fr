@@ -4,18 +4,18 @@ description: Détails sur l’ensemble de conditions requises pour ExcelApiOnlin
 ms.date: 05/06/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f177e0107de7172c350f94c3a022cb3e0db5c6f5
-ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
+ms.openlocfilehash: e4a78cd0052be1869434cba154d470070b15a5aa
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "44170785"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611385"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>Ensemble de conditions requises de l’API JavaScript pour Excel en ligne uniquement
 
 L' `ExcelApiOnline` ensemble de conditions requises est un ensemble de conditions requises spéciales qui inclut des fonctionnalités qui sont disponibles uniquement pour Excel sur le Web. Les API de cet ensemble de conditions requises sont considérées comme des API de production (non soumises à des modifications structurelles ou comportementales non documentées) pour l’hôte Excel sur le Web. `ExcelApiOnline`sont considérés comme des API de « préversion » pour les autres plateformes (Windows, Mac, iOS) et ne sont peut-être pas pris en charge par aucune de ces plateformes.
 
-Lorsque les API dans `ExcelApiOnline` l’ensemble de conditions requises sont prises en charge sur toutes les plateformes, elles seront ajoutées`ExcelApi 1.[NEXT]`à l’ensemble de conditions requises publié suivant (). Une fois que cette nouvelle exigence est publique, ces API seront supprimées de `ExcelApiOnline`. Imaginez qu’il s’agit d’un processus de promotion similaire, qui passe de l’aperçu à la version Release.
+Lorsque les API dans l' `ExcelApiOnline` ensemble de conditions requises sont prises en charge sur toutes les plateformes, elles seront ajoutées à l’ensemble de conditions requises publié suivant ( `ExcelApi 1.[NEXT]` ). Une fois que cette nouvelle exigence est publique, ces API seront supprimées de `ExcelApiOnline` . Imaginez qu’il s’agit d’un processus de promotion similaire, qui passe de l’aperçu à la version Release.
 
 > [!IMPORTANT]
 > `ExcelApiOnline`est un sur-ensemble du jeu de conditions requises le plus récent.
@@ -25,7 +25,7 @@ Lorsque les API dans `ExcelApiOnline` l’ensemble de conditions requises sont p
 
 ## <a name="recommended-usage"></a>Utilisation recommandée
 
-Étant `ExcelApiOnline` donné que les API sont uniquement prises en charge par Excel sur le Web, votre complément doit vérifier si l’ensemble de conditions requises est pris en charge avant d’appeler ces API. Cela évite d’appeler une API en ligne uniquement sur une autre plateforme.
+Étant donné que `ExcelApiOnline` les API sont uniquement prises en charge par Excel sur le Web, votre complément doit vérifier si l’ensemble de conditions requises est pris en charge avant d’appeler ces API. Cela évite d’appeler une API en ligne uniquement sur une autre plateforme.
 
 ```js
 if (Office.context.requirements.isSetSupported("ExcelApiOnline", "1.1")) {
@@ -33,14 +33,14 @@ if (Office.context.requirements.isSetSupported("ExcelApiOnline", "1.1")) {
 }
 ```
 
-Une fois que l’API se trouve dans un ensemble de conditions requises entre plateformes, vous `isSetSupported` devez supprimer ou modifier la vérification. Cette opération active la fonctionnalité de votre complément sur d’autres plateformes. Veillez à tester la fonctionnalité sur ces plateformes lors de l’exécution de cette modification.
+Une fois que l’API se trouve dans un ensemble de conditions requises entre plateformes, vous devez supprimer ou modifier la `isSetSupported` vérification. Cette opération active la fonctionnalité de votre complément sur d’autres plateformes. Veillez à tester la fonctionnalité sur ces plateformes lors de l’exécution de cette modification.
 
 > [!IMPORTANT]
-> Votre manifeste ne peut `ExcelApiOnline 1.1` pas spécifier comme condition d’activation. Il ne s’agit pas d’une valeur valide à utiliser dans l' [élément Set](../manifest/set.md).
+> Votre manifeste ne peut pas spécifier `ExcelApiOnline 1.1` comme condition d’activation. Il ne s’agit pas d’une valeur valide à utiliser dans l' [élément Set](../manifest/set.md).
 
 ## <a name="api-list"></a>Liste des API
 
-Les API suivantes sont actuellement disponibles pour Excel sur le Web dans le cadre de `ExcelApiOnline 1.1` l’ensemble de conditions requises.
+Les API suivantes sont actuellement disponibles pour Excel sur le Web dans le cadre de l' `ExcelApiOnline 1.1` ensemble de conditions requises.
 
 | Class | Champs | Description |
 |:---|:---|:---|

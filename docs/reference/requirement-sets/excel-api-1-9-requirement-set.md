@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1,9
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: e27c4e6a93890c94f759eee451eb5168a30b1817
-ms.sourcegitcommit: 9229102c16a1864e3a8724aaf9b0dc68b1428094
+ms.openlocfilehash: 6e5de61328ef3e02bc4fcd39848c0f0ecdfff533
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "36268620"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611392"
 ---
 # <a name="whats-new-in-excel-javascript-api-19"></a>Nouveautés de l’API JavaScript pour Excel 1,9
 

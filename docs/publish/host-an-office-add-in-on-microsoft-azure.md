@@ -3,12 +3,12 @@ title: Héberger un complément pour Office sur Microsoft Azure | Microsoft Doc
 description: Découvrez comment déployer une application web de complément sur Azure et charger une version test du complément pour le tester dans une application cliente Office.
 ms.date: 10/16/2019
 localization_priority: Normal
-ms.openlocfilehash: 3488217da5aafe108ed9d38c1c4cfe415424d41a
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: a546e53d03bb08dd216c04eab9b684f651f9c5de
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950655"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612058"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>Héberger un complément pour Office sur Microsoft Azure
 

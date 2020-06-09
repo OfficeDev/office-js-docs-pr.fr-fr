@@ -3,12 +3,12 @@ ms.date: 07/10/2019
 description: Traitez ensemble les fonctions personnalisées pour réduire les appels réseau à un service à distance.
 title: Le traitement par lots de fonctions personnalisées nécessite un service à distance
 localization_priority: Normal
-ms.openlocfilehash: 5e48488b323e53e35698b2f64724b78da6abc599
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: ffafd8fee0beea2776bb7b0a0b79839e43876cc1
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718742"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609656"
 ---
 # <a name="batching-custom-function-calls-for-a-remote-service"></a>Le traitement par lots de fonctions personnalisées nécessite un service à distance
 

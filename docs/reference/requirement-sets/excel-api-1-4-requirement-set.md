@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1,4
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: b0f74d4de5ec867e21e4bec1cd9ab1983a87bab1
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 1bd6d913bf069e4b8774b8eb65ea147992f98b9b
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36695832"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611427"
 ---
 # <a name="whats-new-in-excel-javascript-api-14"></a>Nouveautés de l’API JavaScript 1.4 pour Excel
 
@@ -32,7 +32,7 @@ Nouvelles méthodes :
 
 L’objet [Setting](/javascript/api/excel/excel.setting) représente une paire clé-valeur d’un paramètre conservé dans le document. La fonctionnalité de `Excel.Setting` équivaut à `Office.Settings`, mais utilise la syntaxe d’API par lots plutôt que le modèle de rappel de l’API commune.
 
-Les API `getItem()` incluent pour obtenir une entrée de paramètre via `add()` la clé et pour ajouter la paire de paramètre key: value spécifiée au classeur.
+Les API incluent `getItem()` pour obtenir une entrée de paramètre via la clé et `add()` pour ajouter la paire de paramètre key : value spécifiée au classeur.
 
 ## <a name="others"></a>Autres
 
@@ -40,7 +40,7 @@ Les API `getItem()` incluent pour obtenir une entrée de paramètre via `add()` 
 * Ajouter une colonne de table à la fin du tableau.
 * Ajouter plusieurs lignes à un tableau à la fois.
 * `range.getColumnsAfter(count: number)` et `range.getColumnsBefore(count: number)` pour obtenir un certain nombre de colonnes à droite/gauche de l’objet de plage actuel.
-* [Fonction Get Item ou null objet](../../excel/excel-add-ins-advanced-concepts.md#ornullobject-methods): cette fonctionnalité permet d’obtenir l’objet à l’aide d’une clé. Si l’objet n’existe pas, la propriété de `isNullObject` l’objet renvoyé est true. Cela permet aux développeurs de vérifier si un objet existe ou non sans qu’il soit nécessaire de le gérer par le biais de la gestion des exceptions. La `*OrNullObject` méthode est disponible pour la plupart des objets de collection.
+* [Fonction Get Item ou null objet](../../excel/excel-add-ins-advanced-concepts.md#ornullobject-methods): cette fonctionnalité permet d’obtenir l’objet à l’aide d’une clé. Si l’objet n’existe pas, la propriété de l’objet renvoyé est `isNullObject` true. Cela permet aux développeurs de vérifier si un objet existe ou non sans qu’il soit nécessaire de le gérer par le biais de la gestion des exceptions. La `*OrNullObject` méthode est disponible pour la plupart des objets de collection.
 
 ```js
 worksheet.getItemOrNullObject("itemName")
@@ -61,40 +61,40 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 |[NamedItem](/javascript/api/excel/excel.nameditem)|[comment](/javascript/api/excel/excel.nameditem#comment)|Représente le commentaire associé à ce nom.|
 ||[delete()](/javascript/api/excel/excel.nameditem#delete--)|Supprime le nom donné.|
 ||[getRangeOrNullObject()](/javascript/api/excel/excel.nameditem#getrangeornullobject--)|Renvoie l’objet de plage qui est associé au nom. Renvoie un objet null si le type de l’élément nommé n’est pas une plage.|
-||[étendue](/javascript/api/excel/excel.nameditem#scope)|Indique si le nom est étendu au classeur ou à une feuille de calcul spécifique. Les valeurs possibles sont les suivantes: Worksheet, Workbook. En lecture seule.|
+||[scope](/javascript/api/excel/excel.nameditem#scope)|Indique si le nom est étendu au classeur ou à une feuille de calcul spécifique. Les valeurs possibles sont les suivantes : Worksheet, Workbook. En lecture seule.|
 ||[worksheet](/javascript/api/excel/excel.nameditem#worksheet)|Renvoie la feuille de calcul dans laquelle est inclus l’élément nommé. Renvoie une erreur si l’élément est inclus dans l’étendue du classeur.|
 ||[worksheetOrNullObject](/javascript/api/excel/excel.nameditem#worksheetornullobject)|Renvoie la feuille de calcul dans laquelle est inclus l’élément nommé. Renvoie un objet null si l’élément est inclus dans le classeur à la place.|
-|[NamedItemCollection](/javascript/api/excel/excel.nameditemcollection)|[Add (Name: String, Reference: Range \| String, comment?: String)](/javascript/api/excel/excel.nameditemcollection#add-name--reference--comment-)|Ajoute un nouveau nom à la collection de l’étendue donnée.|
-||[addFormulaLocal (Name: String, Formula: String, comment?: String)](/javascript/api/excel/excel.nameditemcollection#addformulalocal-name--formula--comment-)|Ajoute un nouveau nom à la collection de l’étendue donnée à l’aide des paramètres régionaux de l’utilisateur pour la formule.|
+|[NamedItemCollection](/javascript/api/excel/excel.nameditemcollection)|[Add (Name : String, Reference : Range \| String, comment ?: String)](/javascript/api/excel/excel.nameditemcollection#add-name--reference--comment-)|Ajoute un nouveau nom à la collection de l’étendue donnée.|
+||[addFormulaLocal (Name : String, Formula : String, comment ?: String)](/javascript/api/excel/excel.nameditemcollection#addformulalocal-name--formula--comment-)|Ajoute un nouveau nom à la collection de l’étendue donnée à l’aide des paramètres régionaux de l’utilisateur pour la formule.|
 ||[getCount()](/javascript/api/excel/excel.nameditemcollection#getcount--)|Obtient le nombre d’éléments nommés dans la collection.|
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.nameditemcollection#getitemornullobject-name-)|Obtient un objet NamedItem à l’aide de son nom. Si l’objet nameditem n’existe pas, renvoie un objet null.|
 |[PivotTableCollection](/javascript/api/excel/excel.pivottablecollection)|[getCount()](/javascript/api/excel/excel.pivottablecollection#getcount--)|Obtient le nombre de tableaux croisés dynamiques de la collection.|
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.pivottablecollection#getitemornullobject-name-)|Extrait un tableau croisé dynamique par nom. Si le tableau croisé dynamique n’existe pas, renvoie un objet null.|
-|[Range](/javascript/api/excel/excel.range)|[getIntersectionOrNullObject (anotherRange: chaîne \| de plage)](/javascript/api/excel/excel.range#getintersectionornullobject-anotherrange-)|Obtient l’objet de plage qui représente l’intersection rectangulaire des plages données. Si aucune intersection n’est trouvée, renvoie un objet Null.|
-||[getUsedRangeOrNullObject (valuesOnly?: booléen)](/javascript/api/excel/excel.range#getusedrangeornullobject-valuesonly-)|Renvoie la plage utilisée d’un objet de plage donné. Si aucune cellule n’est utilisée dans la plage, cette fonction renvoie un objet null.|
+|[Range](/javascript/api/excel/excel.range)|[getIntersectionOrNullObject (anotherRange : chaîne de plage \| )](/javascript/api/excel/excel.range#getintersectionornullobject-anotherrange-)|Obtient l’objet de plage qui représente l’intersection rectangulaire des plages données. Si aucune intersection n’est trouvée, renvoie un objet Null.|
+||[getUsedRangeOrNullObject (valuesOnly ?: booléen)](/javascript/api/excel/excel.range#getusedrangeornullobject-valuesonly-)|Renvoie la plage utilisée d’un objet de plage donné. Si aucune cellule n’est utilisée dans la plage, cette fonction renvoie un objet null.|
 |[RangeViewCollection](/javascript/api/excel/excel.rangeviewcollection)|[getCount()](/javascript/api/excel/excel.rangeviewcollection#getcount--)|Obtient le nombre d’objets RangeView dans la collection.|
 |[Paramètre](/javascript/api/excel/excel.setting)|[delete()](/javascript/api/excel/excel.setting#delete--)|Supprime le paramètre.|
 ||[key](/javascript/api/excel/excel.setting#key)|Renvoie la clé qui représente l’id du paramètre. En lecture seule.|
 ||[value](/javascript/api/excel/excel.setting#value)|Représente la valeur stockée pour ce paramètre.|
-|[SettingCollection](/javascript/api/excel/excel.settingcollection)|[Add (Key: chaîne, value: numéro \| \| de chaîne \| du \| tableau<any> \| de dates booléen any)](/javascript/api/excel/excel.settingcollection#add-key--value-)|Définit ou ajoute le paramètre spécifié dans le classeur.|
+|[SettingCollection](/javascript/api/excel/excel.settingcollection)|[Add (Key : chaîne, value : \| numéro de chaîne du \| \| \| tableau de dates booléen <any> \| any)](/javascript/api/excel/excel.settingcollection#add-key--value-)|Définit ou ajoute le paramètre spécifié dans le classeur.|
 ||[getCount()](/javascript/api/excel/excel.settingcollection#getcount--)|Obtient le nombre de paramètres dans la collection.|
 ||[getItem(key: string)](/javascript/api/excel/excel.settingcollection#getitem-key-)|Obtient une Entrée de paramètre via la clé.|
 ||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.settingcollection#getitemornullobject-key-)|Obtient une entrée de paramètre via la clé. Si le paramètre n’existe pas, renvoie un objet null.|
 ||[items](/javascript/api/excel/excel.settingcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
 ||[onSettingsChanged](/javascript/api/excel/excel.settingcollection#onsettingschanged)|Se produit lorsque les paramètres dans le document sont modifiés.|
-|[SettingsChangedEventArgs](/javascript/api/excel/excel.settingschangedeventargs)|[settings](/javascript/api/excel/excel.settingschangedeventargs#settings)|Obtient l’objet Setting qui représente la liaison qui a déclenché l’événement SettingsChanged.|
+|[SettingsChangedEventArgs](/javascript/api/excel/excel.settingschangedeventargs)|[paramètres](/javascript/api/excel/excel.settingschangedeventargs#settings)|Obtient l’objet Setting qui représente la liaison qui a déclenché l’événement SettingsChanged.|
 |[TableCollection](/javascript/api/excel/excel.tablecollection)|[getCount()](/javascript/api/excel/excel.tablecollection#getcount--)|Obtient le nombre de tableaux de la collection.|
 ||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.tablecollection#getitemornullobject-key-)|Obtient un tableau à l’aide de son nom ou de son ID. Si le tableau n’existe pas, renvoie un objet null.|
 |[TableColumnCollection](/javascript/api/excel/excel.tablecolumncollection)|[getCount()](/javascript/api/excel/excel.tablecolumncollection#getcount--)|Obtient le nombre de colonnes dans le tableau.|
-||[getItemOrNullObject (Key: valeur \| numérique)](/javascript/api/excel/excel.tablecolumncollection#getitemornullobject-key-)|Obtient un objet de colonne par nom ou par ID. Si la colonne n’existe pas, renvoie un objet null.|
+||[getItemOrNullObject (Key : valeur numérique \| )](/javascript/api/excel/excel.tablecolumncollection#getitemornullobject-key-)|Obtient un objet de colonne par nom ou par ID. Si la colonne n’existe pas, renvoie un objet null.|
 |[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[getCount()](/javascript/api/excel/excel.tablerowcollection#getcount--)|Obtient le nombre de lignes dans le tableau.|
-|[Workbook](/javascript/api/excel/excel.workbook)|[settings](/javascript/api/excel/excel.workbook#settings)|Représente une collection d’objets Settings associés au classeur. En lecture seule.|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[getUsedRangeOrNullObject (valuesOnly?: booléen)](/javascript/api/excel/excel.worksheet#getusedrangeornullobject-valuesonly-)|La plage utilisée est la plus petite plage qui englobe toutes les cellules auxquelles une valeur ou un format est affecté. Si la feuille de calcul entière est vide, cette fonction renvoie un objet null.|
+|[Workbook](/javascript/api/excel/excel.workbook)|[paramètres](/javascript/api/excel/excel.workbook#settings)|Représente une collection d’objets Settings associés au classeur. En lecture seule.|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[getUsedRangeOrNullObject (valuesOnly ?: booléen)](/javascript/api/excel/excel.worksheet#getusedrangeornullobject-valuesonly-)|La plage utilisée est la plus petite plage qui englobe toutes les cellules auxquelles une valeur ou un format est affecté. Si la feuille de calcul entière est vide, cette fonction renvoie un objet null.|
 ||[zone](/javascript/api/excel/excel.worksheet#names)|Collection de noms inclus dans l’étendue de la feuille de calcul active. En lecture seule.|
-|[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[getCount (visibleOnly?: Boolean)](/javascript/api/excel/excel.worksheetcollection#getcount-visibleonly-)|Obtient le nombre de feuilles de calcul dans la collection.|
+|[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[getCount (visibleOnly ?: Boolean)](/javascript/api/excel/excel.worksheetcollection#getcount-visibleonly-)|Obtient le nombre de feuilles de calcul dans la collection.|
 ||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.worksheetcollection#getitemornullobject-key-)|Obtient un objet de feuille de calcul à l’aide de son nom ou de son ID. Si la feuille de calcul n’existe pas, renvoie un objet null.|
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Documentation de référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.4)
+- [Documentation référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.4)
 - [Ensembles de conditions requises de l’API JavaScript pour Excel](./excel-api-requirement-sets.md)

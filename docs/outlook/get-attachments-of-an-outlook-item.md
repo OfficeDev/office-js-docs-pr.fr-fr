@@ -3,12 +3,12 @@ title: Obtenir des pièces jointes dans un complément Outlook
 description: Votre complément peut utiliser les API de pièces jointes pour envoyer des informations sur les pièces jointes à un service distant.
 ms.date: 01/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 7188359193e675f53d0e8358c75f03669b34a170
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: bcb8226ab0755351b9e3a365e40623d258887d3f
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166200"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612079"
 ---
 # <a name="get-attachments-of-an-outlook-item-from-the-server"></a>Obtenir des pièces jointes d’un élément Outlook à partir du serveur
 

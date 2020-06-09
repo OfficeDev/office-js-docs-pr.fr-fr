@@ -3,19 +3,19 @@ title: Élément DesktopSettings dans le fichier manifest
 description: Spécifie l’emplacement source et les paramètres de contrôle qui s’appliquent lorsque votre complément de messagerie est utilisé sur un ordinateur de bureau.
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 574e04ec577f831e17184cf4f801dae22441bca2
-ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
+ms.openlocfilehash: 50201080d8be3c8943d16730c34a4bac236d7b90
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43215074"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612275"
 ---
 # <a name="desktopsettings-element"></a>DesktopSettings, élément
 
 Spécifie l’emplacement source et les paramètres de contrôle qui s’appliquent lorsque votre complément de messagerie est utilisé sur un ordinateur de bureau.
 
 > [!IMPORTANT]
-> L' `DesktopSettings` élément est disponible uniquement dans les versions classiques d’Outlook sur le Web (généralement connectées à des versions antérieures du serveur Exchange local) et Outlook 2013 sur Windows.
+> L' `DesktopSettings` élément est disponible uniquement dans les versions classiques d’Outlook sur le Web (généralement connectées à des versions antérieures du serveur Exchange local) et outlook 2013 sur Windows.
 
 **Type de complément :** messagerie
 

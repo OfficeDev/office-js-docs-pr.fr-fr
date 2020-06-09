@@ -3,12 +3,12 @@ title: Créer un complément Project qui utilise REST avec un service OData Proj
 description: Découvrez comment créer un complément du volet Office pour Project Professional 2013 qui compare les données de coût et de travail du projet actif avec les moyennes de tous les projets de l’instance Project Web App actuelle.
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 6e53796f586e5ffa375f10cd877fc950b47203b4
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: ca5c33815b4f47ba8aa88625725b3b235853c7fb
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720994"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611896"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>Créer un complément Project qui utilise REST avec un service OData Project Server local
 
@@ -160,7 +160,7 @@ Le volet Office affiche le nom complet du complément en haut, qui est la valeur
 
 - Le bouton **obtenir le point de terminaison ProjectData** appelle la `setOdataUrl` fonction pour obtenir le point de terminaison du service **ProjectData** , puis l’affiche dans une zone de texte. Si Project n’est pas connecté à Project Web App, le complément appelle un gestionnaire d’erreur afin d’afficher un message d’erreur dans une fenêtre contextuelle.
 
-- Le bouton **Comparer tous les projets** est désactivé jusqu’à ce que le complément obtienne un point de terminaison OData valide. Lorsque vous sélectionnez le bouton, la `retrieveOData` fonction est appelée, ce qui fait appel à une requête REST pour obtenir les données de coût et de travail du projet à partir du service **ProjectData** .
+- Le bouton **Comparer tous les projets** est désactivé jusqu’à ce que le complément obtienne un point de terminaison OData valide. Lorsque vous sélectionnez le bouton, la fonction est appelée `retrieveOData` , ce qui fait appel à une requête REST pour obtenir les données de coût et de travail du projet à partir du service **ProjectData** .
 
 - Un tableau affiche les valeurs moyennes relatives au coût du projet, au coût réel, au travail et au pourcentage achevé. Le tableau compare également les valeurs actuelles du projet actif à la moyenne. Si la valeur actuelle est supérieure à la moyenne de tous les projets, elle est affichée en rouge. Si la valeur actuelle est inférieure à la moyenne, la valeur est affichée en vert. Si la valeur actuelle n’est pas disponible, le tableau affiche **NA** en bleu.
 
@@ -218,7 +218,7 @@ Le volet Office affiche le nom complet du complément en haut, qui est la valeur
 
 3. Dans l’élément **Body** , supprimez le code existant du modèle, puis ajoutez le code de l’interface utilisateur. Si un élément doit être rempli avec des données ou manipulé par une instruction jQuery, l’élément doit inclure un attribut  **id** unique. Dans le code suivant, les attributs **ID** pour les éléments **Button**, **span**et **TD** (définition de cellule de table) que les fonctions jQuery utilisent sont affichés en gras.
 
-   Le code HTML suivant ajoute une image graphique, pouvant être un logo d’entreprise. Vous pouvez utiliser un logo de votre choix ou copier le fichier NewLogo. png à partir du téléchargement du kit de développement logiciel (SDK) de Project 2013, puis utiliser l' `HelloProjectODataWeb\Images` Explorateur de **solutions** pour ajouter le fichier au dossier.
+   Le code HTML suivant ajoute une image graphique, pouvant être un logo d’entreprise. Vous pouvez utiliser un logo de votre choix ou copier le fichier NewLogo. png à partir du téléchargement du kit de développement logiciel (SDK) de Project 2013, puis utiliser l' **Explorateur de solutions** pour ajouter le fichier au `HelloProjectODataWeb\Images` dossier.
 
     ```HTML
     <body>
@@ -276,15 +276,15 @@ Le volet Office affiche le nom complet du complément en haut, qui est la valeur
 
 ## <a name="creating-the-javascript-code-for-the-add-in"></a>Création du code JavaScript pour le complément
 
-Le modèle pour un complément de volet de tâches de projet inclut le code d’initialisation par défaut qui est conçu pour illustrer les actions Get et set de base des données dans un document pour un complément Office 2013 standard. Étant donné que le projet 2013 ne prend pas en charge les actions qui écrivent **HelloProjectOData** dans le projet actif et que le complément `getSelectedDataAsync` HelloProjectOData n’utilise pas la méthode, vous pouvez `Office.initialize` supprimer le script dans la `setData` fonction et `getData` supprimer la fonction et la fonction dans le fichier HelloProjectOData. js par défaut.
+Le modèle pour un complément de volet de tâches de projet inclut le code d’initialisation par défaut qui est conçu pour illustrer les actions Get et set de base des données dans un document pour un complément Office 2013 standard. Étant donné que le projet 2013 ne prend pas en charge les actions qui écrivent dans le projet actif et que le complément **HelloProjectOData** n’utilise pas la `getSelectedDataAsync` méthode, vous pouvez supprimer le script dans la `Office.initialize` fonction et supprimer la `setData` fonction et la `getData` fonction dans le fichier HelloProjectOData. js par défaut.
 
 JavaScript comprend des constantes globales pour la requête REST et des variables globales qui sont utilisées dans plusieurs fonctions. Le bouton **obtenir le point de terminaison ProjectData** appelle la `setOdataUrl` fonction, qui initialise les variables globales et détermine si le projet est connecté à Project Web App.
 
-Le reste du fichier HelloProjectOData. js comprend deux fonctions : la `retrieveOData` fonction est appelée lorsque l’utilisateur sélectionne **comparer tous les projets**; la `parseODataResult` fonction calcule les moyennes, puis remplit le tableau de comparaison avec les valeurs mises en forme pour la couleur et les unités.
+Le reste du fichier HelloProjectOData. js comprend deux fonctions : la `retrieveOData` fonction est appelée lorsque l’utilisateur sélectionne **comparer tous les projets**, et la `parseODataResult` fonction calcule les moyennes, puis remplit le tableau de comparaison avec les valeurs mises en forme pour la couleur et les unités.
 
 ### <a name="procedure-5-to-create-the-javascript-code"></a>Procédure 5. Pour créer du code JavaScript
 
-1. Supprimez tout le code dans le fichier HelloProjectOData. js par défaut, puis ajoutez les variables `**`globales et la fonction Office. Initialize. Les noms de variable qui sont tous des majuscules signifient qu’il s’agit de constantes ; elles sont ensuite utilisées avec la variable **_pwa** pour créer la requête Rest dans cet exemple.
+1. Supprimez tout le code dans le fichier HelloProjectOData. js par défaut, puis ajoutez les variables globales et la `**` fonction Office. Initialize. Les noms de variable qui sont tous des majuscules signifient qu’il s’agit de constantes ; elles sont ensuite utilisées avec la variable **_pwa** pour créer la requête Rest dans cet exemple.
 
     ```js
     var PROJDATA = "/_api/ProjectData";
@@ -306,10 +306,10 @@ Le reste du fichier HelloProjectOData. js comprend deux fonctions : la `retriev
     }
     ```
 
-2. Ajouter `setOdataUrl` des fonctions connexes. La `setOdataUrl` fonction appelle `getProjectGuid` et `getDocumentUrl` initialise les variables globales. Dans la [méthode getProjectFieldAsync](/javascript/api/office/office.document), la fonction anonyme pour le paramètre _callback_ active le bouton **comparer tous les projets** à l' `removeAttr` aide de la méthode dans la bibliothèque jQuery, puis affiche l’URL du service **ProjectData** . Si Project n’est pas connecté à Project Web App, la fonction génère une erreur, ce qui entraîne l’affichage d’un message d’erreur dans une fenêtre contextuelle. Le fichier SurfaceErrors. js inclut la `throwError` méthode.
+2. Ajouter `setOdataUrl` des fonctions connexes. La `setOdataUrl` fonction appelle `getProjectGuid` et `getDocumentUrl` Initialise les variables globales. Dans la [méthode getProjectFieldAsync](/javascript/api/office/office.document), la fonction anonyme pour le paramètre _callback_ active le bouton **comparer tous les projets** à l’aide de la `removeAttr` méthode dans la bibliothèque jQuery, puis affiche l’URL du service **ProjectData** . Si Project n’est pas connecté à Project Web App, la fonction génère une erreur, ce qui entraîne l’affichage d’un message d’erreur dans une fenêtre contextuelle. Le fichier SurfaceErrors. js inclut la `throwError` méthode.
 
    > [!NOTE]
-   > Si vous exécutez Visual Studio sur l’ordinateur Project Server, utilisez le débogage **F5**, supprimez le commentaire de code après la ligne qui initialise la variable globale **_pwa**. Pour activer l’utilisation de `ajax` la méthode jQuery lors du débogage sur l’ordinateur Project Server, vous devez `localhost` définir la valeur de l’URL PWA. Si vous exécutez Visual Studio sur un ordinateur distant, l' `localhost` URL n’est pas obligatoire. Before you deploy the add-in, comment out that code.
+   > Si vous exécutez Visual Studio sur l’ordinateur Project Server, utilisez le débogage **F5**, supprimez le commentaire de code après la ligne qui initialise la variable globale **_pwa**. Pour activer l’utilisation de la `ajax` méthode jQuery lors du débogage sur l’ordinateur Project Server, vous devez définir la `localhost` valeur de l’URL PWA. Si vous exécutez Visual Studio sur un ordinateur distant, l' `localhost` URL n’est pas obligatoire. Before you deploy the add-in, comment out that code.
 
     ```js
     function setOdataUrl() {
@@ -367,12 +367,12 @@ Le reste du fichier HelloProjectOData. js comprend deux fonctions : la `retriev
     }
     ```
 
-3. Ajoutez la `retrieveOData` fonction, qui concatène les valeurs de la requête REST, puis appelle la `ajax` fonction dans jQuery pour obtenir les données demandées à partir du service **ProjectData** . La variable **support. cors** active le partage de ressources entre origines (cors) avec `ajax` la fonction. Si l’instruction **support. cors** est manquante ou est définie sur **false**, la `ajax` fonction **ne renvoie aucune** erreur de transport.
+3. Ajoutez la `retrieveOData` fonction, qui concatène les valeurs de la requête REST, puis appelle la `ajax` fonction dans jQuery pour obtenir les données demandées à partir du service **ProjectData** . La variable **support. cors** active le partage de ressources entre origines (cors) avec la `ajax` fonction. Si l’instruction **support. cors** est manquante ou est définie sur **false**, la `ajax` fonction **ne renvoie aucune** erreur de transport.
 
    > [!NOTE]
    > Le code suivant fonctionne avec une installation locale de Project Server 2013. Pour Project sur le web, vous pouvez utiliser OAuth pour l’authentification basée sur le jeton. Pour plus d’informations, voir [Résolutions des limites de stratégie d’origine identique dans les compléments Office](../develop/addressing-same-origin-policy-limitations.md).
 
-   Dans l' `ajax` appel, vous pouvez utiliser soit le paramètre _headers_ , soit le paramètre _beforeSend_ . Le paramètre _Complete_ est une fonction anonyme de sorte qu’elle se trouve dans la même étendue que `retrieveOData`les variables dans. La fonction pour le paramètre _Complete_ affiche les résultats `odataText` dans le contrôle et appelle `parseODataResult` également la méthode pour analyser et afficher la réponse JSON. Le paramètre _Error_ spécifie la `getProjectDataErrorHandler` fonction nommée, qui écrit un message d’erreur `odataText` dans le contrôle et utilise `throwError` également la méthode pour afficher un message contextuel.
+   Dans l' `ajax` appel, vous pouvez utiliser soit le paramètre _headers_ , soit le paramètre _beforeSend_ . Le paramètre _Complete_ est une fonction anonyme de sorte qu’elle se trouve dans la même étendue que les variables dans `retrieveOData` . La fonction pour le paramètre _Complete_ affiche les résultats dans le `odataText` contrôle et appelle également la `parseODataResult` méthode pour analyser et afficher la réponse JSON. Le paramètre _Error_ spécifie la `getProjectDataErrorHandler` fonction nommée, qui écrit un message d’erreur dans le `odataText` contrôle et utilise également la `throwError` méthode pour afficher un message contextuel.
 
     ```js
     // Functions to get and parse the Project Server reporting data./
@@ -428,9 +428,9 @@ Le reste du fichier HelloProjectOData. js comprend deux fonctions : la `retriev
     }
     ```
 
-4. Ajoutez la `parseODataResult` méthode, qui désérialise et traite la réponse JSON du service OData. La `parseODataResult` méthode calcule les valeurs moyennes des données de coût et de travail avec une précision d’une ou deux décimales, met en forme les valeurs avec la couleur correcte **$** et ajoute une unité **%**(, **HR**ou), puis affiche les valeurs dans les cellules de tableau spécifiées.
+4. Ajoutez la `parseODataResult` méthode, qui désérialise et traite la réponse JSON du service OData. La `parseODataResult` méthode calcule les valeurs moyennes des données de coût et de travail avec une précision d’une ou deux décimales, met en forme les valeurs avec la couleur correcte et ajoute une unité ( **$** , **HR**ou **%** ), puis affiche les valeurs dans les cellules de tableau spécifiées.
 
-   Si le GUID du projet actif correspond à la `ProjectId` valeur, la `myProjectIndex` variable est définie sur l’index du projet. Si `myProjectIndex` indique que le projet actif est publié sur Project Server, `parseODataResult` la méthode met en forme et affiche les données de coût et de travail pour ce projet. Si le projet actif n’est pas publié, les valeurs pour le projet actif sont sous la forme **N/A** (en bleu).
+   Si le GUID du projet actif correspond à la `ProjectId` valeur, la `myProjectIndex` variable est définie sur l’index du projet. Si `myProjectIndex` indique que le projet actif est publié sur Project Server, la `parseODataResult` méthode met en forme et affiche les données de coût et de travail pour ce projet. Si le projet actif n’est pas publié, les valeurs pour le projet actif sont sous la forme **N/A** (en bleu).
 
     ```js
     // Calculate the average values of actual cost, cost, work, and percent complete
@@ -579,7 +579,7 @@ Voici les tests de base préconisés :
 
     ![Affichage des résultats de la requête REST](../images/pj15-hello-project-data-rest-results.png)
 
-6. Examinez la sortie dans la zone de texte. Il doit afficher le chemin d’accès au document, la requête REST, les informations d’État et l’interface JSON résultant des appels vers **Ajax** et **parseODataResult**. La sortie aide à comprendre, créer et déboguer du code `parseODataResult` dans la méthode `projCost += Number(res.d.results[i].ProjectCost);`telle que.
+6. Examinez la sortie dans la zone de texte. Il doit afficher le chemin d’accès au document, la requête REST, les informations d’État et l’interface JSON résultant des appels vers **Ajax** et **parseODataResult**. La sortie aide à comprendre, créer et déboguer du code dans la `parseODataResult` méthode telle que `projCost += Number(res.d.results[i].ProjectCost);` .
 
     Voici un exemple de sortie avec des sauts de ligne et des espaces ajoutés au texte pour plus de clarté, pour trois projets dans une instance de Project Web App :
 
@@ -652,7 +652,7 @@ Même si votre complément fonctionne correctement dans les tests précédents, 
 - Si vous modifiez le complément et que vous le publiez, vous devez réexécuter des tests similaires avec le complément publié. Pour d’autres considérations, voir [Étapes suivantes](#next-steps).
 
 > [!NOTE]
-> Il existe des limites à la quantité de données qui peuvent être renvoyées dans une requête du service **ProjectData** ; la quantité de données varie en fonction de l’entité. Par exemple, le `Projects` jeu d’entités a une limite par défaut de 100 projets par requête, `Risks` mais le jeu d’entités a une limite par défaut de 200. For a production installation, the code in the **HelloProjectOData** example should be modified to enable queries of more than 100 projects. For more information, see [Next steps](#next-steps) and [Querying OData feeds for Project reporting data](/previous-versions/office/project-odata/jj163048(v=office.15)).
+> Il existe des limites à la quantité de données qui peuvent être renvoyées dans une requête du service **ProjectData** ; la quantité de données varie en fonction de l’entité. Par exemple, le `Projects` jeu d’entités a une limite par défaut de 100 projets par requête, mais le `Risks` jeu d’entités a une limite par défaut de 200. For a production installation, the code in the **HelloProjectOData** example should be modified to enable queries of more than 100 projects. For more information, see [Next steps](#next-steps) and [Querying OData feeds for Project reporting data](/previous-versions/office/project-odata/jj163048(v=office.15)).
 
 ## <a name="example-code-for-the-helloprojectodata-add-in"></a>Exemple de code pour le complément HelloProjectOData
 
@@ -1093,7 +1093,7 @@ Vous pouvez copier le code du fichier SurfaceErrors.js présenté dans la sectio
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Si **HelloProjectOData** était un complément de production à vendre dans AppSource ou distribué dans un catalogue d’applications SharePoint, il serait conçu différemment. Par exemple, il n’y aurait pas de sortie de débogage dans une zone de texte et probablement pas de bouton permettant d’obtenir le point de terminaison de **ProjectData**. Vous devez également réécrire la fonction pour `retireveOData` gérer les instances Project Web App qui contiennent plus de 100 projets.
+Si **HelloProjectOData** était un complément de production à vendre dans AppSource ou distribué dans un catalogue d’applications SharePoint, il serait conçu différemment. Par exemple, il n’y aurait pas de sortie de débogage dans une zone de texte et probablement pas de bouton permettant d’obtenir le point de terminaison de **ProjectData**. Vous devez également réécrire la `retireveOData` fonction pour gérer les instances Project Web App qui contiennent plus de 100 projets.
 
 Le complément devrait contenir des contrôles d’erreurs supplémentaires, ainsi qu’une logique permettant d’identifier et d’expliquer ou d’illustrer les cas extrêmes. Par exemple, si une instance de Project Web App a 1 000 projets d’une durée moyenne de cinq jours et d’un coût moyen de 2 400 €, et que le projet actif est le seul dont la durée est supérieure à 20 jours, la comparaison des coûts et du travail est faussée. Cela pourrait être illustré avec un graphique de fréquences. Vous pouvez ajouter des options pour afficher la durée, comparer les projets de durée similaire ou comparer les projets de services identiques ou distincts. Sinon, vous pouvez également permettre à l’utilisateur d’effectuer des choix parmi une liste de champs affichés.
 

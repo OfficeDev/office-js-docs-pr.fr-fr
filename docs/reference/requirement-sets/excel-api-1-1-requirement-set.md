@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1,1
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 4668cebd545cdefeb033f5c397afb1ad796e2d04
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 0b1c1cc6cb6b21609a716210c832b4b1cb325438
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064486"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612107"
 ---
 # <a name="excel-javascript-api-requirement-set-11"></a>Ensemble de conditions requises de l’API JavaScript pour Excel 1,1
 
@@ -21,8 +21,8 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 
 | Class | Champs | Description |
 |:---|:---|:---|
-|[Application](/javascript/api/excel/excel.application)|[Calculate (calculationType: Excel. CalculationType)](/javascript/api/excel/excel.application#calculate-calculationtype-)|Recalcule tous les classeurs actuellement ouverts dans Excel.|
-||[calculationMode](/javascript/api/excel/excel.application#calculationmode)|Renvoie le mode de calcul utilisé dans le classeur, tel que défini par les constantes dans Excel. CalculationMode. Les valeurs possibles sont `Automatic`les suivantes:, où Excel contrôle le recalcul; `AutomaticExceptTables`, où Excel contrôle le recalcul, mais ignore les modifications apportées aux tableaux; `Manual`, où le calcul est effectué lorsque l’utilisateur le demande.|
+|[Application](/javascript/api/excel/excel.application)|[Calculate (calculationType : Excel. CalculationType)](/javascript/api/excel/excel.application#calculate-calculationtype-)|Recalcule tous les classeurs actuellement ouverts dans Excel.|
+||[calculationMode](/javascript/api/excel/excel.application#calculationmode)|Renvoie le mode de calcul utilisé dans le classeur, tel que défini par les constantes dans Excel. CalculationMode. Les valeurs possibles sont les suivantes : `Automatic` , où Excel contrôle le recalcul ; `AutomaticExceptTables` , où Excel contrôle le recalcul, mais ignore les modifications apportées aux tableaux ; `Manual` où le calcul est effectué lorsque l’utilisateur le demande.|
 |[Binding](/javascript/api/excel/excel.binding)|[getRange()](/javascript/api/excel/excel.binding#getrange--)|Renvoie la plage représentée par la liaison. Génère une erreur si la liaison n’est pas du type approprié.|
 ||[getTable()](/javascript/api/excel/excel.binding#gettable--)|Renvoie le tableau représenté par la liaison. Génère une erreur si la liaison n’est pas du type approprié.|
 ||[getText()](/javascript/api/excel/excel.binding#gettext--)|Renvoie le texte représenté par la liaison. Génère une erreur si la liaison n’est pas du type approprié.|
@@ -33,19 +33,19 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[count](/javascript/api/excel/excel.bindingcollection#count)|Renvoie le nombre de liaisons de la collection. En lecture seule.|
 ||[items](/javascript/api/excel/excel.bindingcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
 |[Chart](/javascript/api/excel/excel.chart)|[delete()](/javascript/api/excel/excel.chart#delete--)|Supprime l’objet de graphique.|
-||[height](/javascript/api/excel/excel.chart#height)|Représente la hauteur, exprimée en points, de l’objet de graphique.|
-||[left](/javascript/api/excel/excel.chart#left)|Distance, en points, entre le côté gauche du graphique et l’origine de la feuille de calcul.|
-||[name](/javascript/api/excel/excel.chart#name)|Représente le nom d’un objet de graphique.|
+||[height](/javascript/api/excel/excel.chart#height)|Représente la hauteur, exprimée en points, de l’objet graphique.|
+||[left](/javascript/api/excel/excel.chart#left)|La distance, en points, entre le côté gauche du graphique et l’origine de la feuille de calcul.|
+||[name](/javascript/api/excel/excel.chart#name)|Représente le nom de l’objet graphique.|
 ||[ordonné](/javascript/api/excel/excel.chart#axes)|Représente les axes du graphique. En lecture seule.|
 ||[dataLabels](/javascript/api/excel/excel.chart#datalabels)|Représente les étiquettes des données sur le graphique. En lecture seule.|
 ||[format](/javascript/api/excel/excel.chart#format)|Regroupe les propriétés de format de la zone de graphique. En lecture seule.|
 ||[Legend](/javascript/api/excel/excel.chart#legend)|Représente la légende du graphique. En lecture seule.|
-||[série](/javascript/api/excel/excel.chart#series)|Représente une série ou une collection de séries dans le graphique. En lecture seule.|
+||[series](/javascript/api/excel/excel.chart#series)|Représente une série ou une collection de séries dans le graphique. En lecture seule.|
 ||[title](/javascript/api/excel/excel.chart#title)|Représente le titre du graphique indiqué et comprend le texte, la visibilité, la position et la mise en forme du titre. En lecture seule.|
-||[setData (sourceData: Range, seriesBy?: Excel. ChartSeriesBy)](/javascript/api/excel/excel.chart#setdata-sourcedata--seriesby-)|Redéfinit les données sources du graphique.|
-||[setPosition (startCell: chaîne \| de plage, endCell?: \| chaîne de plage)](/javascript/api/excel/excel.chart#setposition-startcell--endcell-)|Positionne le graphique par rapport aux cellules dans la feuille de calcul.|
+||[setData (sourceData : Range, seriesBy ?: Excel. ChartSeriesBy)](/javascript/api/excel/excel.chart#setdata-sourcedata--seriesby-)|Redéfinit les données sources du graphique.|
+||[setPosition (startCell : \| chaîne de plage, endCell ?: \| chaîne de plage)](/javascript/api/excel/excel.chart#setposition-startcell--endcell-)|Positionne le graphique par rapport aux cellules dans la feuille de calcul.|
 ||[top](/javascript/api/excel/excel.chart#top)|Représente la distance, en points, entre le bord supérieur de l’objet et la partie supérieure de la ligne 1 (sur une feuille de calcul) ou le haut de la zone de graphique (sur un graphique).|
-||[width](/javascript/api/excel/excel.chart#width)|Représente la largeur, en points, de l’objet de graphique.|
+||[width](/javascript/api/excel/excel.chart#width)|Représente la largeur, en points, de l’objet graphique.|
 |[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[fill](/javascript/api/excel/excel.chartareaformat#fill)|Représente le format de remplissage d’un objet, qui comprend des informations de mise en forme d’arrière-plan. En lecture seule.|
 ||[police](/javascript/api/excel/excel.chartareaformat#font)|Représente les attributs de police (nom de la police, taille de police, couleur, etc.) de l’objet. En lecture seule.|
 |[ChartAxes](/javascript/api/excel/excel.chartaxes)|[categoryAxis](/javascript/api/excel/excel.chartaxes#categoryaxis)|Représente l’axe des abscisses d’un graphique. En lecture seule.|
@@ -65,7 +65,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[text](/javascript/api/excel/excel.chartaxistitle#text)|Représente le titre de l’axe.|
 ||[visible](/javascript/api/excel/excel.chartaxistitle#visible)|Valeur booléenne qui spécifie la visibilité d’un titre d’axe.|
 |[ChartAxisTitleFormat](/javascript/api/excel/excel.chartaxistitleformat)|[police](/javascript/api/excel/excel.chartaxistitleformat#font)|Représente les attributs de police, tels que le nom de la police, la taille de police, la couleur, etc., de l’objet de titre d’axe de graphique. En lecture seule.|
-|[ChartCollection](/javascript/api/excel/excel.chartcollection)|[Add (type: Excel. ChartType, sourceData: Range, seriesBy?: Excel. ChartSeriesBy)](/javascript/api/excel/excel.chartcollection#add-type--sourcedata--seriesby-)|Crée un graphique.|
+|[ChartCollection](/javascript/api/excel/excel.chartcollection)|[Add (type : Excel. ChartType, sourceData : Range, seriesBy ?: Excel. ChartSeriesBy)](/javascript/api/excel/excel.chartcollection#add-type--sourcedata--seriesby-)|Crée un graphique.|
 ||[getItem(name: string)](/javascript/api/excel/excel.chartcollection#getitem-name-)|Extrait un graphique à l’aide de son nom. Si plusieurs graphiques portent le même nom, c’est le premier d’entre eux qui est renvoyé.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.chartcollection#getitemat-index-)|Extrait un graphique en fonction de sa position dans la collection.|
 ||[count](/javascript/api/excel/excel.chartcollection#count)|Renvoie le nombre de graphiques dans la feuille de calcul. En lecture seule.|
@@ -128,23 +128,23 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 |[NamedItemCollection](/javascript/api/excel/excel.nameditemcollection)|[getItem(name: string)](/javascript/api/excel/excel.nameditemcollection#getitem-name-)|Obtient un objet NamedItem à l’aide de son nom.|
 ||[items](/javascript/api/excel/excel.nameditemcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
 |[Range](/javascript/api/excel/excel.range)|[Effacer (applyTo ? : Excel.ClearApplyTo)](/javascript/api/excel/excel.range#clear-applyto-)|Supprime les valeurs et les propriétés de format, de remplissage, de bordure, etc. de la plage.|
-||[supprimer (Maj: Excel. DeleteShiftDirection)](/javascript/api/excel/excel.range#delete-shift-)|Supprime les cellules associées à la plage.|
+||[supprimer (Maj : Excel. DeleteShiftDirection)](/javascript/api/excel/excel.range#delete-shift-)|Supprime les cellules associées à la plage.|
 ||[formulas](/javascript/api/excel/excel.range#formulas)|Représente la formule dans le style de notation A1.|
 ||[formulasLocal](/javascript/api/excel/excel.range#formulaslocal)|Représente la formule en notation A1, en utilisant le langage et les paramètres de format de nombre régionaux de l’utilisateur. Par exemple, la formule « =SUM(A1, 1.5) » en anglais deviendrait « =SUMME(A1; 1,5) » en allemand.|
-||[getBoundingRect (anotherRange: chaîne \| de plage)](/javascript/api/excel/excel.range#getboundingrect-anotherrange-)|Renvoie le plus petit objet de plage qui englobe les plages données. Par exemple, la valeur GetBoundingRect pour « B2:C5 » et « D10:E15 » est « B2:E15 ».|
+||[getBoundingRect (anotherRange : chaîne de plage \| )](/javascript/api/excel/excel.range#getboundingrect-anotherrange-)|Renvoie le plus petit objet de plage qui englobe les plages données. Par exemple, la valeur GetBoundingRect pour « B2:C5 » et « D10:E15 » est « B2:E15 ».|
 ||[getCell(row: number, column: number)](/javascript/api/excel/excel.range#getcell-row--column-)|Renvoie l’objet de plage qui contient une cellule donnée sur la base des numéros de ligne et de colonne. La cellule peut être située en dehors des limites de sa plage parente, tant qu’elle reste dans la grille de la feuille de calcul. L’emplacement de la cellule renvoyée est déterminé à partir de la cellule supérieure gauche de la plage.|
 ||[getColumn(column: number)](/javascript/api/excel/excel.range#getcolumn-column-)|Obtient une colonne contenue dans la plage.|
-||[getEntireColumn()](/javascript/api/excel/excel.range#getentirecolumn--)|Obtient un objet qui représente la colonne entière de la plage (par exemple, si la plage actuelle représente les cellules «B4: E11», `getEntireColumn` qu’il s’agit d’une plage qui représente les colonnes «B:E»).|
-||[getEntireRow()](/javascript/api/excel/excel.range#getentirerow--)|Obtient un objet qui représente la ligne entière de la plage (par exemple, si la plage actuelle représente les cellules «B4: E11», `GetEntireRow` qu’il s’agit d’une plage qui représente les lignes «4:11»).|
-||[getIntersection (anotherRange: chaîne \| de plage)](/javascript/api/excel/excel.range#getintersection-anotherrange-)|Obtient l’objet de plage qui représente l’intersection rectangulaire des plages données.|
+||[getEntireColumn()](/javascript/api/excel/excel.range#getentirecolumn--)|Obtient un objet qui représente la colonne entière de la plage (par exemple, si la plage actuelle représente les cellules « B4 : E11 », `getEntireColumn` qu’il s’agit d’une plage qui représente les colonnes « B :E »).|
+||[getEntireRow()](/javascript/api/excel/excel.range#getentirerow--)|Obtient un objet qui représente la ligne entière de la plage (par exemple, si la plage actuelle représente les cellules « B4 : E11 », `GetEntireRow` qu’il s’agit d’une plage qui représente les lignes « 4:11 »).|
+||[getIntersection (anotherRange : chaîne de plage \| )](/javascript/api/excel/excel.range#getintersection-anotherrange-)|Obtient l’objet de plage qui représente l’intersection rectangulaire des plages données.|
 ||[getLastCell()](/javascript/api/excel/excel.range#getlastcell--)|Obtient la dernière cellule de la plage. Par exemple, la dernière cellule de la plage « B2:D5 » est « D5 ».|
 ||[getLastColumn()](/javascript/api/excel/excel.range#getlastcolumn--)|Obtient la dernière colonne de la plage. Par exemple, la dernière colonne de la plage « B2:D5 » est « D2:D5 ».|
 ||[getLastRow()](/javascript/api/excel/excel.range#getlastrow--)|Obtient la dernière ligne de la plage. Par exemple, la dernière ligne de la plage « B2:D5 » est « B5:D5 ».|
 ||[getOffsetRange(rowOffset: number, columnOffset: number)](/javascript/api/excel/excel.range#getoffsetrange-rowoffset--columnoffset-)|Obtient un objet qui représente une plage décalée par rapport à la plage spécifiée. Les dimensions de la plage renvoyée correspondent à cette plage. Si la plage obtenue se retrouve en dehors des limites de grille de la feuille de calcul, une erreur est déclenchée.|
 ||[getRow(row: number)](/javascript/api/excel/excel.range#getrow-row-)|Obtient une ligne contenue dans la plage.|
-||[Insérer (Maj: Excel. InsertShiftDirection)](/javascript/api/excel/excel.range#insert-shift-)|Insère une cellule ou une plage de cellules dans la feuille de calcul à la place d’une plage donnée et décale les autres cellules pour libérer de l’espace. Renvoie un nouvel objet Range dans l’espace vide qui s’est créé.|
+||[Insérer (Maj : Excel. InsertShiftDirection)](/javascript/api/excel/excel.range#insert-shift-)|Insère une cellule ou une plage de cellules dans la feuille de calcul à la place d’une plage donnée et décale les autres cellules pour libérer de l’espace. Renvoie un nouvel objet Range dans l’espace vide qui s’est créé.|
 ||[numberFormat](/javascript/api/excel/excel.range#numberformat)|Représente le code de format de nombre d’Excel pour la plage donnée.|
-||[adresse](/javascript/api/excel/excel.range#address)|Représente la référence de plage dans le style a1. La valeur de l’adresse contiendra la référence de la feuille (par exemple, «Sheet1! A1: B4 "). En lecture seule.|
+||[adresse](/javascript/api/excel/excel.range#address)|Représente la référence de plage dans le style a1. La valeur de l’adresse contiendra la référence de la feuille (par exemple, «Sheet1 ! A1 : B4 "). En lecture seule.|
 ||[addressLocal](/javascript/api/excel/excel.range#addresslocal)|Représente la référence de la plage spécifiée dans le langage de l’utilisateur. En lecture seule.|
 ||[cellCount](/javascript/api/excel/excel.range#cellcount)|Nombre de cellules dans la plage. Cette API renvoie -1 si le nombre de cellules est supérieur à 2^31-1 (2 147 483 647). En lecture seule.|
 ||[NbreColonnes](/javascript/api/excel/excel.range#columncount)|Représente le nombre total de colonnes dans la plage. En lecture seule.|
@@ -161,7 +161,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[sideIndex](/javascript/api/excel/excel.rangeborder#sideindex)|Valeur constante qui indique un côté spécifique de la bordure. Pour plus d’informations, voir Excel. BorderIndex. En lecture seule.|
 ||[style](/javascript/api/excel/excel.rangeborder#style)|L’une des constantes de style de ligne déterminant le style de ligne de la bordure. Pour plus d’informations, voir Excel. BorderLineStyle.|
 ||[weight](/javascript/api/excel/excel.rangeborder#weight)|Spécifie l'épaisseur de la bordure autour d'une plage. Pour plus d’informations, voir Excel. BorderWeight.|
-|[RangeBorderCollection](/javascript/api/excel/excel.rangebordercollection)|[getItem (index: Excel. BorderIndex)](/javascript/api/excel/excel.rangebordercollection#getitem-index-)|Obtient un objet de bordure à l’aide de son nom.|
+|[RangeBorderCollection](/javascript/api/excel/excel.rangebordercollection)|[getItem (index : Excel. BorderIndex)](/javascript/api/excel/excel.rangebordercollection#getitem-index-)|Obtient un objet de bordure à l’aide de son nom.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.rangebordercollection#getitemat-index-)|Obtient un objet de bordure à l’aide de son indice.|
 ||[count](/javascript/api/excel/excel.rangebordercollection#count)|Nombre d’objets de bordure de la collection. En lecture seule.|
 ||[items](/javascript/api/excel/excel.rangebordercollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
@@ -191,7 +191,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[showHeaders](/javascript/api/excel/excel.table#showheaders)|Indique si la ligne d’en-tête est visible ou non. Cette valeur peut être définie de manière à afficher ou à masquer la ligne d’en-tête.|
 ||[ShowTotals,](/javascript/api/excel/excel.table#showtotals)|Indique si la ligne de total est visible ou non. Cette valeur peut être définie de manière à afficher ou à masquer la ligne de total.|
 ||[style](/javascript/api/excel/excel.table#style)|Valeur de constante qui représente le style du tableau. Les valeurs possibles sont les suivantes : TableStyleLight1 à TableStyleLight21, TableStyleMedium1 à TableStyleMedium28, TableStyleStyleDark1 à TableStyleStyleDark11. Vous pouvez également indiquer un style personnalisé présent dans le classeur.|
-|[TableCollection](/javascript/api/excel/excel.tablecollection)|[Add (Address: Range \| String, hasHeaders: Boolean)](/javascript/api/excel/excel.tablecollection#add-address--hasheaders-)|Crée un tableau L’adresse de la source ou de l’objet de la plage détermine la feuille de calcul dans laquelle le tableau sera ajouté. Si l’ajout ne peut être effectué (par exemple, parce que l’adresse n’est pas valide, ou parce que le tableau empiéterait sur un autre tableau), un message d’erreur apparaît.|
+|[TableCollection](/javascript/api/excel/excel.tablecollection)|[Add (Address : Range \| String, hasHeaders : Boolean)](/javascript/api/excel/excel.tablecollection#add-address--hasheaders-)|Crée un tableau L’adresse de la source ou de l’objet de la plage détermine la feuille de calcul dans laquelle le tableau sera ajouté. Si l’ajout ne peut être effectué (par exemple, parce que l’adresse n’est pas valide, ou parce que le tableau empiéterait sur un autre tableau), un message d’erreur apparaît.|
 ||[getItem(key: string)](/javascript/api/excel/excel.tablecollection#getitem-key-)|Obtient un tableau à l’aide de son nom ou de son ID.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.tablecollection#getitemat-index-)|Obtient un tableau en fonction de sa position dans la collection.|
 ||[count](/javascript/api/excel/excel.tablecollection#count)|Renvoie le nombre de tableaux dans le classeur. En lecture seule.|
@@ -205,8 +205,8 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[id](/javascript/api/excel/excel.tablecolumn#id)|Renvoie une clé unique qui identifie la colonne du tableau. En lecture seule.|
 ||[index](/javascript/api/excel/excel.tablecolumn#index)|Renvoie le numéro d’indice de la colonne dans la collection de colonnes du tableau. Avec indice zéro. En lecture seule.|
 ||[values](/javascript/api/excel/excel.tablecolumn#values)|Représente les valeurs brutes de la plage spécifiée. Les données renvoyées peuvent être des chaînes, des valeurs numériques ou des valeurs booléennes. Les cellules contenant une erreur renvoie la chaîne d’erreur.|
-|[TableColumnCollection](/javascript/api/excel/excel.tablecolumncollection)|[Add (index?: Number, Values?: Array<Array<\| Boolean \| String Number \|>> \| Boolean \| String Number, Name?: String)](/javascript/api/excel/excel.tablecolumncollection#add-index--values--name-)|Ajoute une nouvelle colonne au tableau.|
-||[getItem (Key: valeur \| numérique)](/javascript/api/excel/excel.tablecolumncollection#getitem-key-)|Obtient un objet de colonne par son nom ou son ID.|
+|[TableColumnCollection](/javascript/api/excel/excel.tablecolumncollection)|[Add (index ?: Number, Values ?: Array<Array<Boolean \| String \| Number>> \| Boolean \| String \| Number, Name ?: String)](/javascript/api/excel/excel.tablecolumncollection#add-index--values--name-)|Ajoute une nouvelle colonne au tableau.|
+||[getItem (Key : valeur numérique \| )](/javascript/api/excel/excel.tablecolumncollection#getitem-key-)|Obtient un objet de colonne par son nom ou son ID.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.tablecolumncollection#getitemat-index-)|Obtient une colonne en fonction de sa position dans la collection.|
 ||[count](/javascript/api/excel/excel.tablecolumncollection#count)|Renvoie le nombre de colonnes du tableau. En lecture seule.|
 ||[items](/javascript/api/excel/excel.tablecolumncollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
@@ -214,7 +214,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[getRange()](/javascript/api/excel/excel.tablerow#getrange--)|Renvoie l’objet de plage associé à la ligne entière.|
 ||[index](/javascript/api/excel/excel.tablerow#index)|Renvoie le numéro d’indice de la ligne dans la collection de lignes du tableau. Avec indice zéro. En lecture seule.|
 ||[values](/javascript/api/excel/excel.tablerow#values)|Représente les valeurs brutes de la plage spécifiée. Les données renvoyées peuvent être des chaînes, des valeurs numériques ou des valeurs booléennes. Les cellules contenant une erreur renvoie la chaîne d’erreur.|
-|[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[Add (index?: Number, Values?: Array<Array<\| Boolean \| String Number \|>> \| Boolean \| String Number)](/javascript/api/excel/excel.tablerowcollection#add-index--values-)|Ajoute une ou plusieurs lignes dans le tableau. L’objet renvoyé sera placé en premier dans les lignes récemment ajoutées.|
+|[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[Add (index ?: Number, Values ?: Array<Array<Boolean \| String \| Number>> \| Boolean \| String \| Number)](/javascript/api/excel/excel.tablerowcollection#add-index--values-)|Ajoute une ou plusieurs lignes dans le tableau. L’objet renvoyé sera placé en premier dans les lignes récemment ajoutées.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.tablerowcollection#getitemat-index-)|Obtient une ligne en fonction de sa position dans la collection.|
 ||[count](/javascript/api/excel/excel.tablerowcollection#count)|Renvoie le nombre de lignes du tableau. En lecture seule.|
 ||[items](/javascript/api/excel/excel.tablerowcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
@@ -225,21 +225,21 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[emplois](/javascript/api/excel/excel.workbook#tables)|Représente une collection de tableaux associés au classeur. En lecture seule.|
 ||[feuilles](/javascript/api/excel/excel.workbook#worksheets)|Représente une collection de feuilles de calcul associées au classeur. En lecture seule.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[activate()](/javascript/api/excel/excel.worksheet#activate--)|Active la feuille de calcul dans l’interface utilisateur Excel.|
-||[delete()](/javascript/api/excel/excel.worksheet#delete--)|Supprime la feuille de calcul du classeur. Notez que si la visibilité de la feuille de calcul est définie sur «VeryHidden», l’opération de suppression échouera avec un GeneralException.|
+||[delete()](/javascript/api/excel/excel.worksheet#delete--)|Supprime la feuille de calcul du classeur. Notez que si la visibilité de la feuille de calcul est définie sur « VeryHidden », l’opération de suppression échouera avec un GeneralException.|
 ||[getCell(row: number, column: number)](/javascript/api/excel/excel.worksheet#getcell-row--column-)|Renvoie l’objet de plage qui contient une cellule donnée sur la base des numéros de ligne et de colonne. La cellule peut être située en dehors des limites de sa plage parente, tant qu’elle reste dans la grille de la feuille de calcul.|
-||[getRange (Address?: String)](/javascript/api/excel/excel.worksheet#getrange-address-)|Obtient l’objet de plage, représentant un seul bloc de cellules rectangulaires, spécifié par l’adresse ou le nom.|
+||[getRange (Address ?: String)](/javascript/api/excel/excel.worksheet#getrange-address-)|Obtient l’objet de plage, représentant un seul bloc de cellules rectangulaires, spécifié par l’adresse ou le nom.|
 ||[name](/javascript/api/excel/excel.worksheet#name)|Nom complet de la feuille de calcul.|
 ||[position](/javascript/api/excel/excel.worksheet#position)|Position de la feuille de calcul au sein du classeur (sur une base zéro).|
 ||[bulles](/javascript/api/excel/excel.worksheet#charts)|Renvoie une collection de graphiques qui font partie de la feuille de calcul. En lecture seule.|
 ||[id](/javascript/api/excel/excel.worksheet#id)|Renvoie une valeur qui permet d’identifier la feuille de calcul de façon unique dans un classeur donné. La valeur de l’identificateur reste identique, même lorsque la feuille de calcul est renommée ou déplacée. En lecture seule.|
 ||[emplois](/javascript/api/excel/excel.worksheet#tables)|Collection de tableaux qui font partie de la feuille de calcul. En lecture seule.|
-||[excellente](/javascript/api/excel/excel.worksheet#visibility)|Visibilité de la feuille de calcul.|
-|[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[Add (Name?: String)](/javascript/api/excel/excel.worksheetcollection#add-name-)|Ajoute une nouvelle feuille de calcul au classeur. La feuille de calcul est ajoutée à la fin des feuilles de calcul existantes. Si vous souhaitez activer la feuille de calcul nouvellement ajoutée, appelez la méthode .activate() pour cette feuille.|
+||[visibility](/javascript/api/excel/excel.worksheet#visibility)|Visibilité de la feuille de calcul.|
+|[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[Add (Name ?: String)](/javascript/api/excel/excel.worksheetcollection#add-name-)|Ajoute une nouvelle feuille de calcul au classeur. La feuille de calcul est ajoutée à la fin des feuilles de calcul existantes. Si vous souhaitez activer la feuille de calcul nouvellement ajoutée, appelez la méthode .activate() pour cette feuille.|
 ||[getActiveWorksheet()](/javascript/api/excel/excel.worksheetcollection#getactiveworksheet--)|Obtient la feuille de calcul active du classeur.|
 ||[getItem(key: string)](/javascript/api/excel/excel.worksheetcollection#getitem-key-)|Obtient un objet de feuille de calcul à l’aide de son nom ou de son ID.|
 ||[items](/javascript/api/excel/excel.worksheetcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Documentation de référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.1)
+- [Documentation référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.1)
 - [Ensembles de conditions requises de l’API JavaScript pour Excel](./excel-api-requirement-sets.md)

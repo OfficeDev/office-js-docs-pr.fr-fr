@@ -3,12 +3,12 @@ title: Élément FileName dans le fichier manifeste
 description: Spécifie le nom de fichier de l’XLL équivalent pour les fonctions personnalisées dans votre complément Web.
 ms.date: 05/03/2019
 localization_priority: Normal
-ms.openlocfilehash: a2a4dac08038a30d69fd8818f3f030adebe0728b
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: cc6f17b122ccbd3695edcf854664aa343728ae9f
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718215"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611861"
 ---
 # <a name="filename-element"></a>Élément FileName
 

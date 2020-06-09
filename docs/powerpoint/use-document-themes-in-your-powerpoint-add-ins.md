@@ -3,12 +3,12 @@ title: Utiliser des thèmes de document dans vos compléments PowerPoint
 description: Découvrez comment coordonner visuellement des thèmes tels que des polices et des couleurs à appliquer à des présentations, des documents, des feuilles de calcul et des courriers électroniques.
 ms.date: 10/14/2019
 localization_priority: Normal
-ms.openlocfilehash: e3affe277cfb4c52e83e0c27815884949afbe336
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: a07b56cda012c34d2f92cb8a0da9e6594b30188b
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217787"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611925"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>Utiliser des thèmes de document dans vos compléments PowerPoint
 

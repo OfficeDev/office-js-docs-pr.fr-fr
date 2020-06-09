@@ -3,12 +3,12 @@ title: Élément EquivalentAddin dans le fichier manifeste
 description: Spécifie la compatibilité descendante pour un complément COM équivalent ou une XLL.
 ms.date: 06/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 425b926901b7325665eeede04263f74e4b854d50
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: e14fe91bf7a5fe321019acf205ddb1753fedd569
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718285"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611560"
 ---
 # <a name="equivalentaddin-element"></a>Élément EquivalentAddin
 
@@ -34,12 +34,12 @@ Spécifie la compatibilité descendante pour un complément COM équivalent ou u
 
 ## <a name="can-contain"></a>Peut contenir
 
-[ProgID](progid.md)
-[nom de fichier](filename.md)
+[ProgID](progid.md) 
+ [Nom de fichier](filename.md)
 
 ## <a name="remarks"></a>Remarques
 
-Pour spécifier un complément COM en tant que complément équivalent, fournissez les `ProgId` éléments et. `Type` Pour spécifier un XLL en tant que complément équivalent, fournissez les `FileName` éléments et `Type` .
+Pour spécifier un complément COM en tant que complément équivalent, fournissez les `ProgId` `Type` éléments et. Pour spécifier un XLL en tant que complément équivalent, fournissez les `FileName` éléments et `Type` .
 
 ## <a name="see-also"></a>Voir aussi
 

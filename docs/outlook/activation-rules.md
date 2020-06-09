@@ -3,12 +3,12 @@ title: Règles d’activation pour les compléments Outlook
 description: Outlook active certains types de complément si le message ou le rendez-vous que l’utilisateur lit ou compose respecte les règles d’activation du complément.
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: fdc4a5f3ac00a4fb35bf3a00a359c2b55032025c
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 5fdf8499b802291539f855cce6e0a810573c8798
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720889"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611679"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>Règles d’activation des compléments contextuels Outlook 
 
@@ -22,18 +22,18 @@ La figure suivante illustre les compléments Outlook activés dans la barre des
 ## <a name="specify-activation-rules-in-a-manifest"></a>Spécifier des règles d’activation dans un manifeste
 
 
-Pour qu’Outlook active un complément pour des conditions spécifiques, spécifiez les règles d’activation dans le manifeste de complément à l’aide de l' `Rule` un des éléments suivants :
+Pour qu’Outlook active un complément pour des conditions spécifiques, spécifiez les règles d’activation dans le manifeste de complément à l’aide de l’un des `Rule` éléments suivants :
 
 - [Élément de règle (MailApp complexType)](../reference/manifest/rule.md) : spécifie une règle individuelle.
 - [Élément de règle (RuleCollection complexType)](../reference/manifest/rule.md#rulecollection) : combine plusieurs règles à l’aide d’opérations logiques.
     
 
  > [!NOTE]
- > L' `Rule` élément que vous utilisez pour spécifier une règle individuelle est du type complexe de [règle](../reference/manifest/rule.md) abstraite. Chacun des types de règles suivants étend ce type complexe `Rule` abstrait. Ainsi, quand vous spécifiez une règle individuelle dans un manifeste, vous devez utiliser l’attribut [xsi:type](https://www.w3.org/TR/xmlschema-1/) pour définir plus précisément l’un des types de règle suivants.
+ > L' `Rule` élément que vous utilisez pour spécifier une règle individuelle est du type complexe de [règle](../reference/manifest/rule.md) abstraite. Chacun des types de règles suivants étend ce `Rule` type complexe abstrait. Ainsi, quand vous spécifiez une règle individuelle dans un manifeste, vous devez utiliser l’attribut [xsi:type](https://www.w3.org/TR/xmlschema-1/) pour définir plus précisément l’un des types de règle suivants.
  > 
  > Par exemple, la règle suivante définit une règle [ItemIs](../reference/manifest/rule.md#itemis-rule) :`<Rule xsi:type="ItemIs" ItemType="Message" />`
  > 
- > L' `FormType` attribut s’applique aux règles d’activation dans le manifeste version 1.1, mais n' `VersionOverrides` est pas défini dans la version 1.0. Il ne peut donc pas être utilisé lorsque [itemis](../reference/manifest/rule.md#itemis-rule) est utilisé `VersionOverrides` dans le nœud.
+ > L' `FormType` attribut s’applique aux règles d’activation dans le manifeste version 1.1, mais n’est pas défini dans la version `VersionOverrides` 1.0. Il ne peut donc pas être utilisé lorsque [itemis](../reference/manifest/rule.md#itemis-rule) est utilisé dans le `VersionOverrides` nœud.
 
 Le tableau suivant répertorie les types de règle disponibles. Vous trouverez plus d’informations dans le tableau et dans les articles indiqués sous [Créer des compléments Outlook pour des formulaires de lecture](read-scenario.md).
 
@@ -51,7 +51,7 @@ Le tableau suivant répertorie les types de règle disponibles. Vous trouverez p
 
 Le type complexe **ItemIs** définit une règle qui a pour valeur **true** si l’élément actuel correspond au type d’élément et, éventuellement, la classe de message de l’élément s’il est indiqué dans la règle.
 
-Spécifiez l’un des types d’éléments suivants `ItemType` dans l’attribut d’une règle **itemis** . Vous pouvez spécifier plusieurs règles **ItemIs** dans un manifeste. L’élément ItemType simpleType définit les types d’élément Outlook qui prennent en charge les compléments Outlook.
+Spécifiez l’un des types d’éléments suivants dans l' `ItemType` attribut d’une règle **itemis** . Vous pouvez spécifier plusieurs règles **ItemIs** dans un manifeste. L’élément ItemType simpleType définit les types d’élément Outlook qui prennent en charge les compléments Outlook.
 
 <br/>
 
@@ -64,7 +64,7 @@ L' `FormType` attribut est utilisé pour spécifier le mode (lecture ou composit
 
 
  > [!NOTE]
- > L' `FormType` attribut itemis est défini dans le schéma v 1.1 et versions ultérieures `VersionOverrides` , mais pas dans la version 1.0. N’incluez pas `FormType` l’attribut lors de la définition des commandes de complément.
+ > L’attribut Itemis `FormType` est défini dans le schéma v 1.1 et versions ultérieures, mais pas dans la version `VersionOverrides` 1.0. N’incluez pas l' `FormType` attribut lors de la définition des commandes de complément.
 
 Une fois qu’un complément est activé, vous pouvez utiliser la propriété [mailbox.item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) pour obtenir l’élément actuellement sélectionné dans Outlook, et la propriété [item.itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) pour obtenir le type de l’élément actuel.
 
@@ -102,7 +102,7 @@ Le `ItemHasAttachment` type complexe définit une règle qui vérifie si l’él
 
 Avant qu’un élément ne soit mis à la disposition d’un complément, le serveur l’examine afin de déterminer si l’objet et le corps contiennent un texte susceptible d’être l’une des entités connues. Si l’une de ces entités est trouvée, elle est placée dans une collection d’entités connues auxquelles vous accédez à l' `getEntities` aide `getEntitiesByType` de la méthode ou de cet élément.
 
-Vous pouvez spécifier une règle à l' `ItemHasKnownEntity` aide de, qui affiche votre complément lorsqu’une entité du type spécifié est présente dans l’élément. Vous pouvez spécifier les entités connues suivantes dans l' `EntityType` attribut d’une `ItemHasKnownEntity` règle :
+Vous pouvez spécifier une règle à l’aide `ItemHasKnownEntity` de, qui affiche votre complément lorsqu’une entité du type spécifié est présente dans l’élément. Vous pouvez spécifier les entités connues suivantes dans l' `EntityType` attribut d’une `ItemHasKnownEntity` règle :
 
 - Address
 - Contact
@@ -112,7 +112,7 @@ Vous pouvez spécifier une règle à l' `ItemHasKnownEntity` aide de, qui affich
 - TaskSuggestion
 - URL
     
-Vous pouvez éventuellement inclure une expression régulière dans l' `RegularExpression` attribut de sorte que votre complément s’affiche uniquement lorsqu’une entité qui correspond à l’expression régulière dans le présent. Pour obtenir les correspondances aux expressions régulières spécifiées dans `ItemHasKnownEntity` les règles `getRegExMatches` , `getFilteredEntitiesByName` vous pouvez utiliser la méthode ou pour l’élément Outlook actuellement sélectionné.
+Vous pouvez éventuellement inclure une expression régulière dans l' `RegularExpression` attribut de sorte que votre complément s’affiche uniquement lorsqu’une entité qui correspond à l’expression régulière dans le présent. Pour obtenir les correspondances aux expressions régulières spécifiées dans les `ItemHasKnownEntity` règles, vous pouvez utiliser la `getRegExMatches` `getFilteredEntitiesByName` méthode ou pour l’élément Outlook actuellement sélectionné.
 
 L’exemple suivant montre une collection d' `Rule` éléments qui affichent le complément quand l’une des entités reconnues spécifiées est présente dans le message.
 
@@ -136,7 +136,7 @@ Pour plus d’informations sur les entités dans les règles d’activation, voi
 
 ## <a name="itemhasregularexpressionmatch-rule"></a>Règle ItemHasRegularExpressionMatch
 
-Le `ItemHasRegularExpressionMatch` type complexe définit une règle qui utilise une expression régulière pour faire correspondre le contenu de la propriété spécifiée d’un élément. Si le texte correspondant à l’expression régulière se trouve dans la propriété spécifiée de l’élément, Outlook active la barre de complément et affiche le complément. Vous pouvez utiliser la `getRegExMatches` méthode `getRegExMatchesByName` ou de l’objet qui représente l’élément actuellement sélectionné pour obtenir des correspondances pour l’expression régulière spécifiée.
+Le `ItemHasRegularExpressionMatch` type complexe définit une règle qui utilise une expression régulière pour faire correspondre le contenu de la propriété spécifiée d’un élément. Si le texte correspondant à l’expression régulière se trouve dans la propriété spécifiée de l’élément, Outlook active la barre de complément et affiche le complément. Vous pouvez utiliser la `getRegExMatches` `getRegExMatchesByName` méthode ou de l’objet qui représente l’élément actuellement sélectionné pour obtenir des correspondances pour l’expression régulière spécifiée.
 
 L’exemple suivant montre un `ItemHasRegularExpressionMatch` qui active le complément lorsque le corps de l’élément sélectionné contient « Apple », « Banana », ou « coco », sans tenir compte de la casse.
 
@@ -144,17 +144,17 @@ L’exemple suivant montre un `ItemHasRegularExpressionMatch` qui active le comp
 <Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="fruits" RegExValue="apple|banana|coconut" pPropertyName="BodyAsPlaintext" IgnoreCase="true" />
 ```
 
-Pour plus d’informations sur l' `ItemHasRegularExpressionMatch` utilisation de la règle, voir [utiliser des règles d’activation d’expression régulière pour afficher un complément Outlook](use-regular-expressions-to-show-an-outlook-add-in.md).
+Pour plus d’informations sur l’utilisation de la `ItemHasRegularExpressionMatch` règle, voir [utiliser des règles d’activation d’expression régulière pour afficher un complément Outlook](use-regular-expressions-to-show-an-outlook-add-in.md).
 
 
 ## <a name="rulecollection-rule"></a>Règle RuleCollection
 
 
-Le `RuleCollection` type complexe combine plusieurs règles en une seule règle. Vous pouvez spécifier si les règles de la collection doivent être combinées avec un opérateur logique OR ou logique et à l' `Mode` aide de l’attribut.
+Le `RuleCollection` type complexe combine plusieurs règles en une seule règle. Vous pouvez spécifier si les règles de la collection doivent être combinées avec un opérateur logique OR ou logique et à l’aide de l' `Mode` attribut.
 
 Quand un ET logique est spécifié, un élément doit correspondre à toutes les règles spécifiées dans le regroupement pour permettre l’affichage du complément. Quand un OU logique est spécifié, tout élément qui correspond à l’une des règles spécifiées dans le regroupement permet l’affichage du complément.
 
-Vous pouvez combiner `RuleCollection` des règles pour former des règles complexes. L’exemple suivant active le complément lorsque l’utilisateur visualise un élément de rendez-vous ou de message et que l’objet ou le corps de l’élément contient une adresse.
+Vous pouvez combiner des `RuleCollection` règles pour former des règles complexes. L’exemple suivant active le complément lorsque l’utilisateur visualise un élément de rendez-vous ou de message et que l’objet ou le corps de l’élément contient une adresse.
 
 ```xml
 <Rule xsi:type="RuleCollection" Mode="And">

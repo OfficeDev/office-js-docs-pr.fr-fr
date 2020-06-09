@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1,3
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: d0ab1e0a1c41d6da0104c03355f64f5f5abbb3b2
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 482d04a951acc48d34838a758834adfba273bd19
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064731"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611434"
 ---
 # <a name="whats-new-in-excel-javascript-api-13"></a>Nouveautés de l’API JavaScript 1.3 pour Excel
 
@@ -22,9 +22,9 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 | Class | Champs | Description |
 |:---|:---|:---|
 |[Binding](/javascript/api/excel/excel.binding)|[delete()](/javascript/api/excel/excel.binding#delete--)|Supprime la liaison.|
-|[BindingCollection](/javascript/api/excel/excel.bindingcollection)|[Add (Range: chaîne \| de plage, BindingType: Excel. bindingType, ID: String)](/javascript/api/excel/excel.bindingcollection#add-range--bindingtype--id-)|Ajoute une nouvelle liaison à une plage spécifique.|
-||[addFromNamedItem (Name: String, bindingType: Excel. BindingType, ID: String)](/javascript/api/excel/excel.bindingcollection#addfromnameditem-name--bindingtype--id-)|Ajoute une nouvelle liaison basée sur un élément nommé dans le classeur.|
-||[addFromSelection (bindingType: Excel. BindingType, ID: chaîne)](/javascript/api/excel/excel.bindingcollection#addfromselection-bindingtype--id-)|Ajoute une nouvelle liaison basée sur la sélection en cours.|
+|[BindingCollection](/javascript/api/excel/excel.bindingcollection)|[Add (Range : \| chaîne de plage, bindingType : Excel. bindingType, ID : String)](/javascript/api/excel/excel.bindingcollection#add-range--bindingtype--id-)|Ajoute une nouvelle liaison à une plage spécifique.|
+||[addFromNamedItem (Name : String, bindingType : Excel. BindingType, ID : String)](/javascript/api/excel/excel.bindingcollection#addfromnameditem-name--bindingtype--id-)|Ajoute une nouvelle liaison basée sur un élément nommé dans le classeur.|
+||[addFromSelection (bindingType : Excel. BindingType, ID : chaîne)](/javascript/api/excel/excel.bindingcollection#addfromselection-bindingtype--id-)|Ajoute une nouvelle liaison basée sur la sélection en cours.|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[name](/javascript/api/excel/excel.pivottable#name)|Nom du tableau croisé dynamique.|
 ||[worksheet](/javascript/api/excel/excel.pivottable#worksheet)|Feuille de calcul contenant le tableau croisé dynamique.|
 ||[refresh()](/javascript/api/excel/excel.pivottable#refresh--)|Actualise le tableau croisé dynamique.|
@@ -57,5 +57,5 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Documentation de référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.3)
+- [Documentation référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.3)
 - [Ensembles de conditions requises de l’API JavaScript pour Excel](./excel-api-requirement-sets.md)

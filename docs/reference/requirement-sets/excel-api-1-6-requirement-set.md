@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1,6
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: c38dd942c3002af05f847846145bc89f1cbbccbe
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: f86a470d39bacfe4940a6c225b9ce7d8903e2092
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064906"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611413"
 ---
 # <a name="whats-new-in-excel-javascript-api-16"></a>Nouveautés de l’API JavaScript 1.6 pour Excel
 
@@ -26,7 +26,7 @@ De plus :
 
 * Renvoie la plage à laquelle s’applique la mise en forme conditionnelle.
 * Supprime la mise en forme conditionnelle.
-* Fournit la priorité `stopifTrue` et la capacité.
+* Fournit la priorité et la `stopifTrue` capacité.
 * Obtient la collection de toutes les mises en forme conditionnelles sur une plage donnée.
 * Efface toutes les mises en forme conditionnelles actives sur la plage spécifiée actuelle.
 
@@ -82,7 +82,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[topBottomOrNullObject](/javascript/api/excel/excel.conditionalformat#topbottomornullobject)|Renvoie les propriétés de mise en forme conditionnelle de haut en bas si le format conditionnel actuel est un type de niveau inférieur.|
 ||[type](/javascript/api/excel/excel.conditionalformat#type)|Type de mise en forme conditionnelle. Une seule peut être définie à la fois. En lecture seule.|
 ||[stopIfTrue](/javascript/api/excel/excel.conditionalformat#stopiftrue)|Si les conditions de cette mise en forme conditionnelle sont remplies, aucun format de priorité inférieure ne doit prendre effet sur cette cellule.|
-|[ConditionalFormatCollection](/javascript/api/excel/excel.conditionalformatcollection)|[Add (type: Excel. ConditionalFormatType)](/javascript/api/excel/excel.conditionalformatcollection#add-type-)|Ajoute un nouveau format conditionnel à la collection à la priorité la plus haute.|
+|[ConditionalFormatCollection](/javascript/api/excel/excel.conditionalformatcollection)|[Add (type : Excel. ConditionalFormatType)](/javascript/api/excel/excel.conditionalformatcollection#add-type-)|Ajoute un nouveau format conditionnel à la collection à la priorité la plus haute.|
 ||[clearAll ()](/javascript/api/excel/excel.conditionalformatcollection#clearall--)|Efface toutes les mises en forme conditionnelles actives sur la plage spécifiée actuelle.|
 ||[getCount()](/javascript/api/excel/excel.conditionalformatcollection#getcount--)|Renvoie le nombre de mises en forme conditionnelles dans le classeur. En lecture seule.|
 ||[getItem(id: string)](/javascript/api/excel/excel.conditionalformatcollection#getitem-id-)|Renvoie une mise en forme conditionnelle à un ID donné.|
@@ -99,7 +99,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 |[ConditionalRangeBorder](/javascript/api/excel/excel.conditionalrangeborder)|[color](/javascript/api/excel/excel.conditionalrangeborder#color)|Code couleur HTML qui représente la couleur de la ligne de bordure, au format #RRGGBB (par exemple : « FFA500 ») ou sous forme de couleur HTML nommée (par exemple, « orange »).|
 ||[sideIndex](/javascript/api/excel/excel.conditionalrangeborder#sideindex)|Valeur constante qui indique un côté spécifique de la bordure. Pour plus d’informations, voir Excel. ConditionalRangeBorderIndex. En lecture seule.|
 ||[style](/javascript/api/excel/excel.conditionalrangeborder#style)|L’une des constantes de style de ligne déterminant le style de ligne de la bordure. Pour plus d’informations, voir Excel. BorderLineStyle.|
-|[ConditionalRangeBorderCollection](/javascript/api/excel/excel.conditionalrangebordercollection)|[getItem (index: Excel. ConditionalRangeBorderIndex)](/javascript/api/excel/excel.conditionalrangebordercollection#getitem-index-)|Obtient un objet de bordure à l’aide de son nom.|
+|[ConditionalRangeBorderCollection](/javascript/api/excel/excel.conditionalrangebordercollection)|[getItem (index : Excel. ConditionalRangeBorderIndex)](/javascript/api/excel/excel.conditionalrangebordercollection#getitem-index-)|Obtient un objet de bordure à l’aide de son nom.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.conditionalrangebordercollection#getitemat-index-)|Obtient un objet de bordure à l’aide de son indice.|
 ||[bas](/javascript/api/excel/excel.conditionalrangebordercollection#bottom)|Obtient la bordure inférieure. En lecture seule.|
 ||[count](/javascript/api/excel/excel.conditionalrangebordercollection#count)|Nombre d’objets de bordure de la collection. En lecture seule.|
@@ -145,9 +145,9 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[sous](/javascript/api/excel/excel.textconditionalformat#rule)|Règle de mise en forme conditionnelle.|
 |[TopBottomConditionalFormat](/javascript/api/excel/excel.topbottomconditionalformat)|[format](/javascript/api/excel/excel.topbottomconditionalformat#format)|Renvoie un objet format qui encapsule la police, le remplissage, les bordures et d’autres propriétés des formats conditionnels. En lecture seule.|
 ||[sous](/javascript/api/excel/excel.topbottomconditionalformat#rule)|Critères du format conditionnel le plus haut/bas.|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[Calculate (markAllDirty: booléen)](/javascript/api/excel/excel.worksheet#calculate-markalldirty-)|Calcule toutes les cellules d’une feuille de calcul.|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[Calculate (markAllDirty : booléen)](/javascript/api/excel/excel.worksheet#calculate-markalldirty-)|Calcule toutes les cellules d’une feuille de calcul.|
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Documentation de référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.6)
+- [Documentation référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.6)
 - [Ensembles de conditions requises de l’API JavaScript pour Excel](./excel-api-requirement-sets.md)

@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1,10
 ms.date: 10/22/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: a04e9c7b32dfece1c8a1455c7662dc71228a46f4
-ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
+ms.openlocfilehash: 50d38f610606b4d172d3f79f6a968ad7b1e8e344
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "37682549"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612100"
 ---
 # <a name="whats-new-in-excel-javascript-api-110"></a>Nouveautés de l’API JavaScript pour Excel 1,10
 
@@ -34,8 +34,8 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[authorEmail](/javascript/api/excel/excel.comment#authoremail)|Obtenir l’adresse email de l’auteur du commentaire.|
 ||[authorName](/javascript/api/excel/excel.comment#authorname)|Obtient le nom de l’auteur du commentaire.|
 ||[creationDate](/javascript/api/excel/excel.comment#creationdate)|Obtenir l’heure de création du commentaire. Renvoie la valeur null si le commentaire a été converti d’une note, étant donné que le commentaire ne dispose pas d’une date de création.|
-||[id](/javascript/api/excel/excel.comment#id)|Représente l’identificateur de commentaire. Lecture seule.|
-||[Réponses](/javascript/api/excel/excel.comment#replies)|Représente une collection de feuilles de calcul associées au classeur. Lecture seule.|
+||[id](/javascript/api/excel/excel.comment#id)|Représente l’identificateur de commentaire. En lecture seule.|
+||[Réponses](/javascript/api/excel/excel.comment#replies)|Représente une collection de feuilles de calcul associées au classeur. En lecture seule.|
 |[CommentCollection](/javascript/api/excel/excel.commentcollection)|[Add (cellAddress : Range \| String, content : CommentRichContent \| String, ContentType ?: Excel. ContentType)](/javascript/api/excel/excel.commentcollection#add-celladdress--content--contenttype-)|Crée un nouveau commentaire avec le contenu donné sur la cellule donnée. Une `InvalidArgument` erreur est générée si la plage fournie est plus grande qu’une cellule.|
 ||[getCount()](/javascript/api/excel/excel.commentcollection#getcount--)|Obtient le nombre de commentaires de la collection.|
 ||[getItem(commentId: string)](/javascript/api/excel/excel.commentcollection#getitem-commentid-)|Obtient un commentaire à partir de la collection de sites en fonction de son ID. En lecture seule.|
@@ -60,7 +60,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 |[PivotTableStyle](/javascript/api/excel/excel.pivottablestyle)|[delete()](/javascript/api/excel/excel.pivottablestyle#delete--)|Supprime le tableau croisé dynamique.|
 ||[duplicate()](/javascript/api/excel/excel.pivottablestyle#duplicate--)|Crée un doublon de cette PivotTableStyle avec une copie de tous les éléments de style.|
 ||[name](/javascript/api/excel/excel.pivottablestyle#name)|Obtient le nom du PivotTableStyle.|
-||[readOnly](/javascript/api/excel/excel.pivottablestyle#readonly)|Indique si cet objet PivotTableStyle est en lecture seule. Lecture seule.|
+||[readOnly](/javascript/api/excel/excel.pivottablestyle#readonly)|Indique si cet objet PivotTableStyle est en lecture seule. En lecture seule.|
 |[PivotTableStyleCollection](/javascript/api/excel/excel.pivottablestylecollection)|[add(name: string, makeUniqueName?: boolean)](/javascript/api/excel/excel.pivottablestylecollection#add-name--makeuniquename-)|Crée un PivotTableStyle vide avec le nom spécifié.|
 ||[getCount()](/javascript/api/excel/excel.pivottablestylecollection#getcount--)|Obtient le nombre de styles tableaux croisés dynamiques de la collection.|
 ||[getDefault()](/javascript/api/excel/excel.pivottablestylecollection#getdefault--)|Obtient PivotTableStyle par défaut pour la portée de l’objet parent portée.|
@@ -70,8 +70,8 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[setDefault (newDefaultStyle : PivotTableStyle \| chaîne)](/javascript/api/excel/excel.pivottablestylecollection#setdefault-newdefaultstyle-)|Définit le PivotTableStyle par défaut pour la portée de l’objet parent portée.|
 |[Range](/javascript/api/excel/excel.range)|[Group (groupOption : Excel. GroupOption)](/javascript/api/excel/excel.range#group-groupoption-)|Regroupe les colonnes et les lignes d’un plan.|
 ||[hideGroupDetails (groupOption : Excel. GroupOption)](/javascript/api/excel/excel.range#hidegroupdetails-groupoption-)|Masque les détails du groupe de lignes ou de colonnes.|
-||[height](/javascript/api/excel/excel.range#height)|Renvoie la distance en points pour zoom 100 %, à partir du bord supérieur de la plage au bord inférieur de la plage. Lecture seule.|
-||[left](/javascript/api/excel/excel.range#left)|Renvoie la distance en points pour zoom 100 %, à partir du bord gauche de la feuille de calcul au bord gauche de la plage. Lecture seule.|
+||[height](/javascript/api/excel/excel.range#height)|Renvoie la distance en points pour zoom 100 %, à partir du bord supérieur de la plage au bord inférieur de la plage. En lecture seule.|
+||[left](/javascript/api/excel/excel.range#left)|Renvoie la distance en points pour zoom 100 %, à partir du bord gauche de la feuille de calcul au bord gauche de la plage. En lecture seule.|
 ||[top](/javascript/api/excel/excel.range#top)|Renvoie la distance en points pour zoom 100 %, à partir du bord supérieur de la feuille de calcul au bord supérieur de la plage. En lecture seule.|
 ||[width](/javascript/api/excel/excel.range#width)|Renvoie la distance en points pour zoom 100 %, à partir du bord gauche de la plage au bord droit de la plage. En lecture seule.|
 ||[showGroupDetails (groupOption : Excel. GroupOption)](/javascript/api/excel/excel.range#showgroupdetails-groupoption-)|Affiche les détails du groupe de lignes ou de colonnes.|
@@ -81,13 +81,13 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 |[Segment](/javascript/api/excel/excel.slicer)|[caption](/javascript/api/excel/excel.slicer#caption)|Représente la légende de segment.|
 ||[clearFilters()](/javascript/api/excel/excel.slicer#clearfilters--)|Supprime tous les filtres appliqués actuellement sur le tableau.|
 ||[delete()](/javascript/api/excel/excel.slicer#delete--)|Supprime le segment.|
-||[getSelectedItems()](/javascript/api/excel/excel.slicer#getselecteditems--)|Renvoie une matrice de noms d’éléments sélectionnés. Lecture seule.|
+||[getSelectedItems()](/javascript/api/excel/excel.slicer#getselecteditems--)|Renvoie une matrice de noms d’éléments sélectionnés. En lecture seule.|
 ||[height](/javascript/api/excel/excel.slicer#height)|Représente la hauteur, exprimée en points, de l’axe de graphique.|
 ||[left](/javascript/api/excel/excel.slicer#left)|Représente la distance, en points, entre le côté gauche du graphique et l’origine de la feuille de calcul.|
 ||[name](/javascript/api/excel/excel.slicer#name)|Représente le nom de la forme.|
-||[id](/javascript/api/excel/excel.slicer#id)|Représente l’id unique du segment. Lecture seule.|
+||[id](/javascript/api/excel/excel.slicer#id)|Représente l’id unique du segment. En lecture seule.|
 ||[isFilterCleared](/javascript/api/excel/excel.slicer#isfiltercleared)|True si tous les filtres appliqués actuellement sur le segment sont effacés.|
-||[slicerItems](/javascript/api/excel/excel.slicer#sliceritems)|Représente la collection de SlicerItems qui font partie du segment. Lecture seule.|
+||[slicerItems](/javascript/api/excel/excel.slicer#sliceritems)|Représente la collection de SlicerItems qui font partie du segment. En lecture seule.|
 ||[worksheet](/javascript/api/excel/excel.slicer#worksheet)|Obtenir la feuille de calcul contenant la plage. En lecture seule.|
 ||[selectItems(items?: string[])](/javascript/api/excel/excel.slicer#selectitems-items-)|Sélectionne les éléments du Slicer en fonction de leurs clés. Les sélections précédentes sont effacées.|
 ||[sortBy](/javascript/api/excel/excel.slicer#sortby)|Représente l’ordre de tri des éléments dans le segment. Les valeurs possibles sont : "DataSourceOrder", "ascending", "Descending".|
@@ -112,7 +112,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 |[SlicerStyle](/javascript/api/excel/excel.slicerstyle)|[delete()](/javascript/api/excel/excel.slicerstyle#delete--)|Supprime le SlicerStyle.|
 ||[duplicate()](/javascript/api/excel/excel.slicerstyle#duplicate--)|Crée un doublon de cette SlicerStyle avec une copie de tous les éléments de style.|
 ||[name](/javascript/api/excel/excel.slicerstyle#name)|Obtient le nom de la SlicerStyle.|
-||[readOnly](/javascript/api/excel/excel.slicerstyle#readonly)|Indique si cet objet SlicerStyle est en lecture seule. Lecture seule.|
+||[readOnly](/javascript/api/excel/excel.slicerstyle#readonly)|Indique si cet objet SlicerStyle est en lecture seule. En lecture seule.|
 |[SlicerStyleCollection](/javascript/api/excel/excel.slicerstylecollection)|[add(name: string, makeUniqueName?: boolean)](/javascript/api/excel/excel.slicerstylecollection#add-name--makeuniquename-)|Crée un SlicerStyle vide avec le nom spécifié.|
 ||[getCount()](/javascript/api/excel/excel.slicerstylecollection#getcount--)|Obtient le nombre de styles de slicer de la collection.|
 ||[getDefault()](/javascript/api/excel/excel.slicerstylecollection#getdefault--)|Obtient SlicerStyle par défaut pour la portée de l’objet parent portée.|
@@ -123,7 +123,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 |[TableStyle](/javascript/api/excel/excel.tablestyle)|[delete()](/javascript/api/excel/excel.tablestyle#delete--)|Supprime le TableStyle.|
 ||[duplicate()](/javascript/api/excel/excel.tablestyle#duplicate--)|Crée un doublon de cette TableStyle avec une copie de tous les éléments de style.|
 ||[name](/javascript/api/excel/excel.tablestyle#name)|Obtient le nom du TableStyle.|
-||[readOnly](/javascript/api/excel/excel.tablestyle#readonly)|Indique si cet objet TableStyle est en lecture seule. Lecture seule.|
+||[readOnly](/javascript/api/excel/excel.tablestyle#readonly)|Indique si cet objet TableStyle est en lecture seule. En lecture seule.|
 |[TableStyleCollection](/javascript/api/excel/excel.tablestylecollection)|[add(name: string, makeUniqueName?: boolean)](/javascript/api/excel/excel.tablestylecollection#add-name--makeuniquename-)|Crée un TableStyle vide avec le nom spécifié.|
 ||[getCount()](/javascript/api/excel/excel.tablestylecollection#getcount--)|Obtient le nombre de styles de tableaux de la collection.|
 ||[getDefault()](/javascript/api/excel/excel.tablestylecollection#getdefault--)|Obtient le TableStyle par défaut pour la portée de l’objet parent portée.|
@@ -142,19 +142,19 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.timelinestylecollection#getitemornullobject-name-)|Obtient un TimelineStyle par nom. Si leTimelineStyle n’existe pas, renvoie un objet null.|
 ||[items](/javascript/api/excel/excel.timelinestylecollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
 ||[setDefault (newDefaultStyle : PivotTableStyle \| chaîne)](/javascript/api/excel/excel.timelinestylecollection#setdefault-newdefaultstyle-)|Définit le TimelineStyle par défaut pour la portée de l’objet parent portée.|
-|[Workbook](/javascript/api/excel/excel.workbook)|[getActiveSlicer()](/javascript/api/excel/excel.workbook#getactiveslicer--)|Obtient le segment actif actuel du classeur. S’il n’y a aucun segment actif, `ItemNotFound` une exception est générée.|
+|[Workbook](/javascript/api/excel/excel.workbook)|[getActiveSlicer()](/javascript/api/excel/excel.workbook#getactiveslicer--)|Obtient le segment actif actuel du classeur. S’il n’y a aucun segment actif, une `ItemNotFound` exception est générée.|
 ||[getActiveSlicerOrNullObject()](/javascript/api/excel/excel.workbook#getactiveslicerornullobject--)|Obtient le segment actif actuel du classeur. S’il n’existe aucun segment actif, un objet null est renvoyé.|
 ||[comments](/javascript/api/excel/excel.workbook#comments)|Représente une collection de styles associés au classeur. En lecture seule.|
-||[pivotTableStyles](/javascript/api/excel/excel.workbook#pivottablestyles)|Représente une collection de PivotTableStyles associée au classeur. Lecture seule.|
+||[pivotTableStyles](/javascript/api/excel/excel.workbook#pivottablestyles)|Représente une collection de PivotTableStyles associée au classeur. En lecture seule.|
 ||[slicerStyles](/javascript/api/excel/excel.workbook#slicerstyles)|Représente une collection de styles associés au classeur. En lecture seule.|
 ||[Slicers](/javascript/api/excel/excel.workbook#slicers)|Représente une collection de styles associés au classeur. En lecture seule.|
-||[tableStyles](/javascript/api/excel/excel.workbook#tablestyles)|Représente une collection de TableStyles associés au classeur. Lecture seule.|
-||[timelineStyles](/javascript/api/excel/excel.workbook#timelinestyles)|Représente une collection de TimelineStyles associés au classeur. Lecture seule.|
+||[tableStyles](/javascript/api/excel/excel.workbook#tablestyles)|Représente une collection de TableStyles associés au classeur. En lecture seule.|
+||[timelineStyles](/javascript/api/excel/excel.workbook#timelinestyles)|Représente une collection de TimelineStyles associés au classeur. En lecture seule.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[comments](/javascript/api/excel/excel.worksheet#comments)|Renvoie une collection de tous les objets Lecteur sur l’ordinateur. En lecture seule.|
 ||[onColumnSorted](/javascript/api/excel/excel.worksheet#oncolumnsorted)|Se produit lorsqu’une ou plusieurs colonnes ont été triées. Ce problème se produit en raison de l’opération de tri de gauche à droite.|
 ||[onRowSorted](/javascript/api/excel/excel.worksheet#onrowsorted)|Se produit lorsqu’une ou plusieurs lignes ont été triées. Cela se produit en raison d’une opération de tri de haut en bas.|
 ||[onSingleClicked](/javascript/api/excel/excel.worksheet#onsingleclicked)|Se produit lorsqu’une action de l’utilisateur clique sur la feuille de calcul. Cet événement ne sera pas déclenché lorsque vous cliquerez dans les cas suivants :|
-||[Slicers](/javascript/api/excel/excel.worksheet#slicers)|Renvoie une collection de segments qui font partie de la feuille de calcul. Lecture seule.|
+||[Slicers](/javascript/api/excel/excel.worksheet#slicers)|Renvoie une collection de segments qui font partie de la feuille de calcul. En lecture seule.|
 ||[showOutlineLevels (rowLevels : nombre, columnLevels : nombre)](/javascript/api/excel/excel.worksheet#showoutlinelevels-rowlevels--columnlevels-)|Affiche les groupes de lignes ou de colonnes en fonction de leurs niveaux hiérarchiques.|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[onColumnSorted](/javascript/api/excel/excel.worksheetcollection#oncolumnsorted)|Se produit lorsqu’une ou plusieurs colonnes ont été triées. Ce problème se produit en raison de l’opération de tri de gauche à droite.|
 ||[onRowSorted](/javascript/api/excel/excel.worksheetcollection#onrowsorted)|Se produit lorsqu’une ou plusieurs lignes ont été triées. Cela se produit en raison d’une opération de tri de haut en bas.|

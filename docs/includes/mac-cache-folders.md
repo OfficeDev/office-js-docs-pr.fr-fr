@@ -12,6 +12,6 @@ Vous pouvez également effacer le cache manuellement en supprimant le contenu du
 > [!NOTE]
 > Si ce dossier n’existe pas, recherchez les dossiers suivants et, le cas échéant, supprimez le contenu du dossier :
 >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/`Où se trouve `{host}` Office (par exemple, `Excel`)
->    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/`Où se trouve l’`{host}` Office (par exemple, `Excel`)
+>    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/`Où se trouve `{host}` Office (par exemple, `Excel`)
 >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
 >    - `com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`

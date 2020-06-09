@@ -3,12 +3,12 @@ title: Transmission de données et de messages à une boîte de dialogue à part
 description: Découvrez comment transmettre des données à une boîte de dialogue à partir de la page hôte à l’aide des API messageChild et DialogParentMessageReceived.
 ms.date: 04/16/2020
 localization_priority: Normal
-ms.openlocfilehash: cd332a58aa79a81aab7cf5a3d247950ce8bc655e
-ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
+ms.openlocfilehash: 3bef98294b15c2787b707cee4861cc9932f98166
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "43547056"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609407"
 ---
 # <a name="passing-data-and-messages-to-a-dialog-box-from-its-host-page-preview"></a>Transmission de données et de messages à une boîte de dialogue à partir de sa page hôte (aperçu)
 
@@ -45,7 +45,7 @@ function processMessage(arg) {
 
 Cet `Dialog` objet est doté d’une méthode [messageChild](/javascript/api/office/office.dialog#messagechild-message-) qui envoie une chaîne ou des données JSON à la boîte de dialogue. Cela déclenche un `DialogParentMessageReceived` événement dans la boîte de dialogue. Votre code doit gérer cet événement, comme indiqué dans la section suivante.
 
-Imaginez un scénario dans lequel l’interface utilisateur de la boîte de dialogue doit correspondre à la feuille de calcul active et la position de cette feuille de calcul par rapport aux autres feuilles de calcul. Dans l’exemple suivant, `sheetPropertiesChanged` envoie les propriétés de feuille de calcul Excel dans la boîte de dialogue. Dans ce cas, la feuille de calcul active est nommée « ma feuille » et est la seconde feuille du classeur. Les données sont encapsulées dans un objet qui est JSON afin de pouvoir être transmis à `messageChild`.
+Imaginez un scénario dans lequel l’interface utilisateur de la boîte de dialogue doit correspondre à la feuille de calcul active et la position de cette feuille de calcul par rapport aux autres feuilles de calcul. Dans l’exemple suivant, `sheetPropertiesChanged` envoie les propriétés de feuille de calcul Excel dans la boîte de dialogue. Dans ce cas, la feuille de calcul active est nommée « ma feuille » et est la seconde feuille du classeur. Les données sont encapsulées dans un objet qui est JSON afin de pouvoir être transmis à `messageChild` .
 
 ```javascript
 function sheetPropertiesChanged() {
@@ -60,7 +60,7 @@ function sheetPropertiesChanged() {
 
 ## <a name="handle-dialogparentmessagereceived-in-the-dialog-box"></a>Gérer DialogParentMessageReceived dans la boîte de dialogue
 
-Dans le JavaScript de la boîte de dialogue, inscrivez un gestionnaire `DialogParentMessageReceived` pour l’événement à l’aide de la méthode [UI. addHandlerAsync](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) . Cette opération s’effectue généralement dans les [méthodes Office. onReady ou Office. Initialize](initialize-add-in.md). Voici un exemple :
+Dans le JavaScript de la boîte de dialogue, inscrivez un gestionnaire pour l' `DialogParentMessageReceived` événement à l’aide de la méthode [UI. addHandlerAsync](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) . Cette opération s’effectue généralement dans les [méthodes Office. onReady ou Office. Initialize](initialize-add-in.md). Voici un exemple :
 
 ```javascript
 Office.onReady()
@@ -71,7 +71,7 @@ Office.onReady()
     });
 ```
 
-Ensuite, définissez le `onMessageFromParent` gestionnaire. Le code suivant poursuit l’exemple de la section précédente. Notez qu’Office transmet un argument au gestionnaire et que la `message` propriété de l’objet argument contient la chaîne de la page hôte. Dans cet exemple, le message est reconverti en objet et jQuery est utilisé pour définir le titre supérieur de la boîte de dialogue de sorte qu’il corresponde au nouveau nom de la feuille de calcul.
+Ensuite, définissez le `onMessageFromParent` Gestionnaire. Le code suivant poursuit l’exemple de la section précédente. Notez qu’Office transmet un argument au gestionnaire et que la `message` propriété de l’objet argument contient la chaîne de la page hôte. Dans cet exemple, le message est reconverti en objet et jQuery est utilisé pour définir le titre supérieur de la boîte de dialogue de sorte qu’il corresponde au nouveau nom de la feuille de calcul.
 
 ```javascript
 function onMessageFromParent(event) {
@@ -80,7 +80,7 @@ function onMessageFromParent(event) {
 }
 ```
 
-Il est recommandé de vérifier que votre gestionnaire est correctement enregistré. Pour ce faire, vous pouvez transmettre un rappel à `addHandlerAsync` la méthode qui s’exécute lorsque la tentative d’enregistrement du gestionnaire est terminée. Utilisez le gestionnaire pour consigner ou afficher une erreur si le gestionnaire n’a pas été enregistré correctement. Voici un exemple. Notez qu' `reportError` il s’agit d’une fonction, non définie ici, qui enregistre ou affiche l’erreur.
+Il est recommandé de vérifier que votre gestionnaire est correctement enregistré. Pour ce faire, vous pouvez transmettre un rappel à la `addHandlerAsync` méthode qui s’exécute lorsque la tentative d’enregistrement du gestionnaire est terminée. Utilisez le gestionnaire pour consigner ou afficher une erreur si le gestionnaire n’a pas été enregistré correctement. Voici un exemple. Notez qu' `reportError` il s’agit d’une fonction, non définie ici, qui enregistre ou affiche l’erreur.
 
 ```javascript
 Office.onReady()
@@ -100,4 +100,4 @@ function onRegisterMessageComplete(asyncResult) {
 
 ## <a name="conditional-messaging"></a>Messagerie conditionnelle
 
-Étant donné que vous pouvez `messageChild` effectuer plusieurs appels à partir de la page hôte, mais que vous n’avez qu’un seul `DialogParentMessageReceived` gestionnaire dans la boîte de dialogue de l’événement, le gestionnaire doit utiliser une logique conditionnelle pour distinguer les différents messages. Vous pouvez effectuer cette opération d’une manière parfaitement parallèle à la façon dont vous structurez la messagerie conditionnelle lorsque la boîte de dialogue envoie un message à la page hôte, comme décrit dans la section [messagerie conditionnelle](dialog-api-in-office-add-ins.md#conditional-messaging).
+Étant donné que vous pouvez effectuer plusieurs `messageChild` appels à partir de la page hôte, mais que vous n’avez qu’un seul gestionnaire dans la boîte de dialogue de l' `DialogParentMessageReceived` événement, le gestionnaire doit utiliser une logique conditionnelle pour distinguer les différents messages. Vous pouvez effectuer cette opération d’une manière parfaitement parallèle à la façon dont vous structurez la messagerie conditionnelle lorsque la boîte de dialogue envoie un message à la page hôte, comme décrit dans la section [messagerie conditionnelle](dialog-api-in-office-add-ins.md#conditional-messaging).

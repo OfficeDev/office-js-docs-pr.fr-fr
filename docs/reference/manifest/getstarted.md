@@ -3,12 +3,12 @@ title: Élément GetStarted dans le fichier manifeste
 description: Fournit des informations utilisées par la légende qui s’affiche lorsque le complément est installé dans des hôtes Word, Excel, PowerPoint et OneNote.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 7b4eb0e0413eff97751eac01c3dc6e5a452722aa
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: c1fbdd5d4f4365f9f8190805519fc7a70c8c87ca
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718187"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611833"
 ---
 # <a name="getstarted-element"></a>GetStarted, élément
 
@@ -22,7 +22,7 @@ Fournit des informations utilisées par la légende qui s’affiche lorsque le c
 | [Description](#description)   | Oui      | URL pointant vers un fichier qui contient les fonctions JavaScript.|
 | [LearnMoreUrl](#learnmoreurl) | Oui       | URL vers une page qui décrit le complément de façon plus détaillée.   |
 
-### <a name="title"></a>Titre 
+### <a name="title"></a>Title 
 
 Obligatoire. Le titre est utilisé pour la partie supérieure de la légende. L’attribut **resid** fait référence à un ID valide de l’élément **ShortStrings** dans la section [Resources](resources.md).
 

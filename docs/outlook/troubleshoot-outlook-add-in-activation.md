@@ -3,12 +3,12 @@ title: Résolution des problèmes d’activation de complément contextuel Outlo
 description: Si votre complément ne s’active pas comme prévu, vous devez rechercher dans les zones suivantes les raisons possibles.
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 555ae2a45bf49d74d1fd439258fd87035644e86a
-ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
+ms.openlocfilehash: cb8640dc2381a79bc5c0ed90da3a2f03938a0d05
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "44413181"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611630"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Résolution des problèmes d’activation des compléments Outlook
 

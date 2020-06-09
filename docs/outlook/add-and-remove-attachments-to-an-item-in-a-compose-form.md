@@ -3,12 +3,12 @@ title: Ajouter et supprimer des pièces jointes dans un complément Outlook
 description: Vous pouvez utiliser différentes API de pièces jointes pour gérer les fichiers ou les éléments Outlook associés à l’élément composé par l’utilisateur.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: bb966ff80bae37fbaa781b5a428f6e26391aa9f4
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: d162ae4c0fa8059376a3c55463080e38679d9a01
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720882"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611672"
 ---
 # <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>Gérer les pièces jointes d’un élément dans un formulaire de composition dans Outlook
 
@@ -41,7 +41,7 @@ Vous pouvez vérifier la réussite ou l’échec d’un appel de méthode asynch
 
 ### <a name="attach-a-file"></a>Joindre un fichier
 
-Vous pouvez joindre un fichier à un message ou un rendez-vous dans un formulaire de `addFileAttachmentAsync` composition à l’aide de la méthode et en spécifiant l’URI du fichier. Vous pouvez également utiliser la `addFileAttachmentFromBase64Async` méthode, mais spécifier la chaîne base64 comme entrée. Si le fichier est protégé, vous pouvez inclure une identité appropriée ou un jeton d’authentification comme paramètre de chaîne de requête d’URI. Exchange effectuera un appel à l’URI pour obtenir la pièce jointe, et le service web qui protège le fichier devra utiliser le jeton comme moyen d’authentification.
+Vous pouvez joindre un fichier à un message ou un rendez-vous dans un formulaire de composition à l’aide de la `addFileAttachmentAsync` méthode et en spécifiant l’URI du fichier. Vous pouvez également utiliser la `addFileAttachmentFromBase64Async` méthode, mais spécifier la chaîne base64 comme entrée. Si le fichier est protégé, vous pouvez inclure une identité appropriée ou un jeton d’authentification comme paramètre de chaîne de requête d’URI. Exchange effectuera un appel à l’URI pour obtenir la pièce jointe, et le service web qui protège le fichier devra utiliser le jeton comme moyen d’authentification.
 
 L’exemple JavaScript suivant est un complément de composition qui joint un fichier, picture.png, au message ou au rendez-vous en cours de composition à partir d’un serveur web. La méthode de rappel prend `asyncResult` comme paramètre, vérifie le statut du résultat et obtient l’ID de pièce jointe si la méthode a abouti.
 
@@ -84,7 +84,7 @@ function write(message){
 
 Vous pouvez joindre un élément Outlook (par exemple, un élément de messagerie, de calendrier ou de contact) à un message ou à un rendez-vous dans un formulaire de composition en précisant l’ID des services web Exchange (EWS) de l’élément et en utilisant la méthode `addItemAttachmentAsync`. Vous pouvez obtenir l’ID EWS d’un élément de messagerie, de calendrier, de contact ou de tâche dans la boîte aux lettres de l’utilisateur en utilisant la méthode [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) et en accédant à l’opération EWS [FindItem](/exchange/client-developer/web-service-reference/finditem-operation). La propriété [item.itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) fournit également l’ID EWS d’un élément existant dans un formulaire de lecture.
 
-La fonction JavaScript suivante, `addItemAttachment`, étend le premier exemple ci-dessus et ajoute un élément en tant que pièce jointe à un message électronique ou un rendez-vous composé. La fonction prend comme argument l’ID EWS de l’élément qui doit être joint. Si l’attachement réussit, il obtient l’ID de pièce jointe pour un traitement supplémentaire, y compris la suppression de cette pièce jointe dans la même session.
+La fonction JavaScript suivante, `addItemAttachment` , étend le premier exemple ci-dessus et ajoute un élément en tant que pièce jointe à un message électronique ou un rendez-vous composé. La fonction prend comme argument l’ID EWS de l’élément qui doit être joint. Si l’attachement réussit, il obtient l’ID de pièce jointe pour un traitement supplémentaire, y compris la suppression de cette pièce jointe dans la même session.
 
 ```js
 // Adds the specified item as an attachment to the composed item.
@@ -122,7 +122,7 @@ Vous pouvez utiliser la méthode [getAttachmentsAsync](../reference/objectmodel/
 
 Pour obtenir le contenu d’une pièce jointe, vous pouvez utiliser la méthode [getAttachmentContentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) . Les formats pris en charge sont répertoriés dans l’énumération [AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat) .
 
-Vous devez fournir une méthode de rappel pour vérifier l’État et toute erreur à l’aide `AsyncResult` de l’objet de paramètre de sortie. Vous pouvez également transmettre des paramètres supplémentaires à la méthode de rappel à l’aide `asyncContext` du paramètre Optional.
+Vous devez fournir une méthode de rappel pour vérifier l’État et toute erreur à l’aide de l' `AsyncResult` objet de paramètre de sortie. Vous pouvez également transmettre des paramètres supplémentaires à la méthode de rappel à l’aide du paramètre Optional `asyncContext` .
 
 L’exemple JavaScript suivant obtient les pièces jointes et vous permet de configurer des opérations de gestion distinctes pour chaque format de pièce jointe pris en charge.
 
@@ -162,9 +162,9 @@ function handleAttachmentsCallback(result) {
 
 ## <a name="remove-an-attachment"></a>Supprimer une pièce jointe
 
-Vous pouvez supprimer une pièce jointe de fichier ou d’élément d’un élément de rendez-vous ou de message dans un formulaire de composition en indiquant l’ID de pièce jointe correspondant et en utilisant la méthode [removeAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods). Vous devez uniquement supprimer les pièces jointes que le même complément a ajouté au cours de la même session. Semblable aux méthodes `addFileAttachmentAsync` et `addItemAttachmentAsync` , `removeAttachmentAsync` est une méthode asynchrone. Vous devez fournir une méthode de rappel pour vérifier l’État et toute erreur à l’aide `AsyncResult` de l’objet de paramètre de sortie. Vous pouvez également transmettre des paramètres supplémentaires à la méthode de rappel à l’aide `asyncContext` du paramètre Optional.
+Vous pouvez supprimer une pièce jointe de fichier ou d’élément d’un élément de rendez-vous ou de message dans un formulaire de composition en indiquant l’ID de pièce jointe correspondant et en utilisant la méthode [removeAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods). Vous devez uniquement supprimer les pièces jointes que le même complément a ajouté au cours de la même session. Semblable aux `addFileAttachmentAsync` méthodes et `addItemAttachmentAsync` , `removeAttachmentAsync` est une méthode asynchrone. Vous devez fournir une méthode de rappel pour vérifier l’État et toute erreur à l’aide de l' `AsyncResult` objet de paramètre de sortie. Vous pouvez également transmettre des paramètres supplémentaires à la méthode de rappel à l’aide du paramètre Optional `asyncContext` .
 
-La fonction `removeAttachment`JavaScript suivante, continue d’étendre les exemples ci-dessus et supprime la pièce jointe spécifiée de la messagerie ou du rendez-vous composé. La fonction prend comme argument l’ID de la pièce jointe à supprimer. Vous pouvez obtenir l’ID d’une pièce jointe après `addFileAttachmentAsync`un `addFileAttachmentFromBase64Async`appel de `addItemAttachmentAsync` méthode réussi, ou, et la stocker pour `removeAttachmentAsync` un appel de méthode ultérieur.
+La fonction JavaScript suivante, `removeAttachment` continue d’étendre les exemples ci-dessus et supprime la pièce jointe spécifiée de la messagerie ou du rendez-vous composé. La fonction prend comme argument l’ID de la pièce jointe à supprimer. Vous pouvez obtenir l’ID d’une pièce jointe après un appel de méthode réussi, `addFileAttachmentAsync` `addFileAttachmentFromBase64Async` ou `addItemAttachmentAsync` , et la stocker pour un `removeAttachmentAsync` appel de méthode ultérieur.
 
 ```js
 // Removes the specified attachment from the composed item.

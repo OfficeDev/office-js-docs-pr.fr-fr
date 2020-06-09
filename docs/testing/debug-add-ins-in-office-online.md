@@ -3,12 +3,12 @@ title: Débogage de compléments dans Office sur le web
 description: Découvrez comment utiliser Office sur le web pour tester et déboguer vos compléments.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 3c69c6a7008e1496fd888357968714d7abbb05d6
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: 4f2aa498e5d9f49fcdf306ac2c4c80ea6fbd496c
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42891116"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611238"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>Débogage de compléments dans Office sur le web
 

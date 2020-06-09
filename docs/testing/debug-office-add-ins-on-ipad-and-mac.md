@@ -3,12 +3,12 @@ title: Déboguer des compléments Office sur un Mac
 description: Découvrez comment utiliser un Mac pour déboguer des compléments Office
 ms.date: 11/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 0cd7edf8db40cbcb9057dc07e549e11e11b2c51c
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: bcdf16a858fa613a3248a728b45d68d02cf41a5e
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719769"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611219"
 ---
 # <a name="debug-office-add-ins-on-a-mac"></a>Déboguer des compléments Office sur un Mac
 

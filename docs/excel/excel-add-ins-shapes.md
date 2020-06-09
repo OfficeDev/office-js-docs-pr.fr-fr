@@ -3,12 +3,12 @@ title: Utilisation des formes à l’aide de l’API JavaScript pour Excel
 description: Découvrez comment Excel définit les formes comme n’importe quel objet qui se trouve sur la couche de dessin d’Excel.
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 7522bf440389e983efc3ec696375694e5539c442
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 7b9a4dba02e28187eeb0f932e245489ca61fcbcc
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717116"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609740"
 ---
 # <a name="work-with-shapes-using-the-excel-javascript-api"></a>Utilisation des formes à l’aide de l’API JavaScript pour Excel
 
@@ -19,7 +19,7 @@ L’image suivante montre les formes qui forment un thermomètre.
 
 ## <a name="create-shapes"></a>Créer des formes
 
-Les formes sont créées et stockées dans la collection Shape d’une feuille`Worksheet.shapes`de calcul (). `ShapeCollection`dispose de `.add*` plusieurs méthodes à cet effet. Toutes les formes ont des noms et des ID générés pour ceux-ci lorsqu’ils sont ajoutés à la collection. Il s’agit `name` des `id` propriétés et, respectivement. `name`peut être défini par votre complément pour une extraction facile avec la `ShapeCollection.getItem(name)` méthode.
+Les formes sont créées et stockées dans la collection Shape d’une feuille de calcul ( `Worksheet.shapes` ). `ShapeCollection`dispose `.add*` de plusieurs méthodes à cet effet. Toutes les formes ont des noms et des ID générés pour ceux-ci lorsqu’ils sont ajoutés à la collection. Il s’agit `name` des `id` Propriétés et, respectivement. `name`peut être défini par votre complément pour une extraction facile avec la `ShapeCollection.getItem(name)` méthode.
 
 Les types de formes suivants sont ajoutés à l’aide de la méthode associée :
 
@@ -33,7 +33,7 @@ Les types de formes suivants sont ajoutés à l’aide de la méthode associée�
 
 ### <a name="geometric-shapes"></a>Formes géométriques
 
-Une forme géométrique est créée avec `ShapeCollection.addGeometricShape`. Cette méthode utilise une énumération [GeometricShapeType](/javascript/api/excel/excel.geometricshapetype) comme argument.
+Une forme géométrique est créée avec `ShapeCollection.addGeometricShape` . Cette méthode utilise une énumération [GeometricShapeType](/javascript/api/excel/excel.geometricshapetype) comme argument.
 
 L’exemple de code suivant crée un rectangle 150x150 nommé **« Square »** qui est positionné 100 pixels à partir des bords supérieur et gauche de la feuille de calcul.
 
@@ -52,7 +52,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-### <a name="images"></a>Des images
+### <a name="images"></a>Images
 
 Les images JPEG, PNG et SVG peuvent être insérées dans une feuille de calcul en tant que formes. La `ShapeCollection.addImage` méthode prend une chaîne codée en base64 en tant qu’argument. Il s’agit d’une image JPEG ou PNG sous forme de chaîne. `ShapeCollection.addSvg`prend également une chaîne, bien que cet argument soit un XML qui définit le graphique.
 
@@ -80,7 +80,7 @@ reader.readAsDataURL(myFile.files[0]);
 
 ### <a name="lines"></a>Lines
 
-Une ligne est créée avec `ShapeCollection.addLine`. Cette méthode a besoin des marges gauche et supérieure des points de début et de fin du trait. Il prend également une énumération [ConnectorType](/javascript/api/excel/excel.connectortype) pour spécifier la manière dont la ligne passe d’un point de terminaison à un autre. L’exemple de code suivant crée une ligne droite sur la feuille de calcul.
+Une ligne est créée avec `ShapeCollection.addLine` . Cette méthode a besoin des marges gauche et supérieure des points de début et de fin du trait. Il prend également une énumération [ConnectorType](/javascript/api/excel/excel.connectortype) pour spécifier la manière dont la ligne passe d’un point de terminaison à un autre. L’exemple de code suivant crée une ligne droite sur la feuille de calcul.
 
 ```js
 // This sample creates a straight line from [200,50] to [300,150] on the worksheet
@@ -92,7 +92,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-Les lignes peuvent être connectées à d’autres objets Shape. Les `connectBeginShape` méthodes `connectEndShape` et joignent le début et la fin d’une ligne aux formes situées aux points de connexion spécifiés. Les emplacements de ces points varient en fonction de la forme `Shape.connectionSiteCount` , mais le peut être utilisé pour s’assurer que votre complément ne se connecte pas à un point qui est hors limites. Une ligne est déconnectée de toutes les formes `disconnectBeginShape` attachées à l’aide des méthodes et `disconnectEndShape` .
+Les lignes peuvent être connectées à d’autres objets Shape. Les `connectBeginShape` `connectEndShape` méthodes et joignent le début et la fin d’une ligne aux formes situées aux points de connexion spécifiés. Les emplacements de ces points varient en fonction de la forme, mais le `Shape.connectionSiteCount` peut être utilisé pour s’assurer que votre complément ne se connecte pas à un point qui est hors limites. Une ligne est déconnectée de toutes les formes attachées à l’aide des `disconnectBeginShape` `disconnectEndShape` méthodes et.
 
 L’exemple de code suivant connecte la ligne **« myLine »** à deux formes nommées **« LeftShape »** et **« RightShape »**.
 
@@ -109,14 +109,14 @@ Excel.run(function (context) {
 
 ## <a name="move-and-resize-shapes"></a>Déplacer et redimensionner des formes
 
-Les formes sont placées en haut de la feuille de calcul. Leur positionnement est défini par la `left` propriété `top` et. Celles-ci agissent comme des marges des arêtes respectives de la feuille de calcul, avec [0,0] correspondant au coin supérieur gauche. Ces éléments peuvent être définis directement ou ajustés à partir de leur position `incrementLeft` actuelle `incrementTop` à l’aide des méthodes et. Le degré de rotation d’une forme par rapport à la position par défaut est également défini de cette manière `rotation` , la propriété étant la valeur absolue `incrementRotation` et la méthode d’ajustement de la rotation existante.
+Les formes sont placées en haut de la feuille de calcul. Leur positionnement est défini par la `left` `top` propriété et. Celles-ci agissent comme des marges des arêtes respectives de la feuille de calcul, avec [0,0] correspondant au coin supérieur gauche. Ces éléments peuvent être définis directement ou ajustés à partir de leur position actuelle à l’aide des `incrementLeft` `incrementTop` méthodes et. Le degré de rotation d’une forme par rapport à la position par défaut est également défini de cette manière, la `rotation` propriété étant la valeur absolue et la `incrementRotation` méthode d’ajustement de la rotation existante.
 
-La profondeur d’une forme par rapport à d’autres formes est `zorderPosition` définie par la propriété. Cette valeur est définie à `setZOrder` l’aide de la méthode, qui prend un [ShapeZOrder](/javascript/api/excel/excel.shapezorder). `setZOrder`ajuste l’ordre de la forme actuelle par rapport aux autres formes.
+La profondeur d’une forme par rapport à d’autres formes est définie par la `zorderPosition` propriété. Cette valeur est définie à l’aide de la `setZOrder` méthode, qui prend un [ShapeZOrder](/javascript/api/excel/excel.shapezorder). `setZOrder`ajuste l’ordre de la forme actuelle par rapport aux autres formes.
 
 Votre complément offre plusieurs options permettant de modifier la hauteur et la largeur des formes. La définition de `height` la `width` propriété ou modifie la dimension spécifiée sans modifier l’autre dimension. Le `scaleHeight` et `scaleWidth` ajustez les dimensions respectives de la forme par rapport à la taille actuelle ou d’origine (en fonction de la valeur du [ShapeScaleType](/javascript/api/excel/excel.shapescaletype)fourni). Un paramètre [ShapeScaleFrom](/javascript/api/excel/excel.shapescalefrom) facultatif indique l’emplacement de l’échelle de la forme (angle supérieur gauche, milieu ou inférieur droit). Si la `lockAspectRatio` propriété a la **valeur true**, les méthodes d’étendue gèrent les proportions actuelles de la forme en ajustant également l’autre dimension.
 
 > [!NOTE]
-> Les `height` modifications apportées `width` aux propriétés et affectent uniquement cette propriété, quelle `lockAspectRatio` que soit la valeur de la propriété.
+> Les modifications apportées aux `height` `width` Propriétés et affectent uniquement cette propriété, quelle que soit la valeur de la `lockAspectRatio` propriété.
 
 L’exemple de code suivant montre une forme mise à l’horizontale à 1,25 fois sa taille d’origine et pivotée de 30 degrés.
 
@@ -138,7 +138,7 @@ Excel.run(function (context) {
 
 ## <a name="text-in-shapes"></a>Texte dans des formes
 
-Les formes géométriques peuvent contenir du texte. Les formes ont `textFrame` une propriété de type [TextFrame](/javascript/api/excel/excel.textframe). L' `TextFrame` objet gère les options d’affichage du texte (par exemple, marges et débordement de texte). `TextFrame.textRange`est un objet [TextRange](/javascript/api/excel/excel.textrange) avec les paramètres Text Content et font.
+Les formes géométriques peuvent contenir du texte. Les formes ont une `textFrame` propriété de type [TextFrame](/javascript/api/excel/excel.textframe). L' `TextFrame` objet gère les options d’affichage du texte (par exemple, marges et débordement de texte). `TextFrame.textRange`est un objet [TextRange](/javascript/api/excel/excel.textrange) avec les paramètres Text Content et font.
 
 L’exemple de code suivant crée une forme géométrique appelée « Wave » avec le texte « texte de la forme ». Il ajuste également la forme et les couleurs du texte, ainsi que l’alignement horizontal du texte sur le centre.
 
@@ -160,7 +160,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-`addTextBox` Méthode `ShapeCollection` de création d’un `GeometricShape` type `Rectangle` avec un arrière-plan blanc et du texte noir. Il s’agit du même que celui créé par le bouton de la **zone de texte** d’Excel sous `addTextBox` l’onglet **insertion** . prend un argument de chaîne pour `TextRange`définir le texte du.
+`addTextBox`Méthode de `ShapeCollection` création d’un `GeometricShape` type `Rectangle` avec un arrière-plan blanc et du texte noir. Il s’agit du même que celui créé par le bouton de la **zone de texte** d’Excel sous l’onglet **insertion** . `addTextBox` prend un argument de chaîne pour définir le texte du `TextRange` .
 
 L’exemple de code suivant illustre la création d’une zone de texte avec le texte « Hello ! ».
 
@@ -180,7 +180,7 @@ Excel.run(function (context) {
 
 ## <a name="shape-groups"></a>Groupes de formes
 
-Les formes peuvent être regroupées. Cela permet à un utilisateur de les traiter comme une seule entité pour le positionnement, le dimensionnement et d’autres tâches connexes. Un [ShapeGroup](/javascript/api/excel/excel.shapegroup) est un type de `Shape`, donc votre complément traite le groupe comme une seule forme.
+Les formes peuvent être regroupées. Cela permet à un utilisateur de les traiter comme une seule entité pour le positionnement, le dimensionnement et d’autres tâches connexes. Un [ShapeGroup](/javascript/api/excel/excel.shapegroup) est un type de `Shape` , donc votre complément traite le groupe comme une seule forme.
 
 L’exemple de code suivant montre trois formes regroupées. L’exemple de code suivant montre que le groupe de formes est déplacé vers la droite de 50 pixels.
 
@@ -210,11 +210,11 @@ Excel.run(function (context) {
 ```
 
 > [!IMPORTANT]
-> Les formes individuelles au sein du groupe sont référencées `ShapeGroup.shapes` par le biais de la propriété, qui est de type [GroupShapeCollection](/javascript/api/excel/excel.GroupShapeCollection). Elles ne sont plus accessibles via la collection Shape de la feuille de calcul après avoir été groupées. Par exemple, si votre feuille de calcul comporte trois formes et qu’elles ont toutes été regroupées ensemble `shapes.getCount` , la méthode de la feuille de calcul renvoie un nombre égal à 1.
+> Les formes individuelles au sein du groupe sont référencées par le biais `ShapeGroup.shapes` de la propriété, qui est de type [GroupShapeCollection](/javascript/api/excel/excel.GroupShapeCollection). Elles ne sont plus accessibles via la collection Shape de la feuille de calcul après avoir été groupées. Par exemple, si votre feuille de calcul comporte trois formes et qu’elles ont toutes été regroupées ensemble, la méthode de la feuille de calcul `shapes.getCount` renvoie un nombre égal à 1.
 
 ## <a name="export-shapes-as-images"></a>Exporter des formes en tant qu’images
 
-Tout `Shape` objet peut être converti en image. [Shape. getAsImage](/javascript/api/excel/excel.shape#getasimage-format-) renvoie une chaîne codée en base64. Le format de l’image est spécifié comme un enum [PictureFormat](/javascript/api/excel/excel.pictureformat) transmis `getAsImage`à.
+Tout `Shape` objet peut être converti en image. [Shape. getAsImage](/javascript/api/excel/excel.shape#getasimage-format-) renvoie une chaîne codée en base64. Le format de l’image est spécifié comme un enum [PictureFormat](/javascript/api/excel/excel.pictureformat) transmis à `getAsImage` .
 
 ```js
 Excel.run(function (context) {
@@ -231,7 +231,7 @@ Excel.run(function (context) {
 
 ## <a name="delete-shapes"></a>Supprimer des formes
 
-Les formes sont supprimées de la feuille `Shape` de calcul `delete` à l’aide de la méthode de l’objet. Aucune autre métadonnée n’est nécessaire.
+Les formes sont supprimées de la feuille de calcul à l’aide de la `Shape` méthode de l’objet `delete` . Aucune autre métadonnée n’est nécessaire.
 
 L’exemple de code suivant supprime toutes les formes de **MyWorksheet**.
 

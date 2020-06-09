@@ -3,12 +3,12 @@ title: Utiliser des commentaires à l’aide de l’API JavaScript pour Excel
 description: Informations sur l’utilisation des API pour ajouter, supprimer et modifier des commentaires et des thèmes de commentaires.
 ms.date: 03/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 971e0a830c0a34aea3e79b13fcd9fb869f971d2c
-ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
+ms.openlocfilehash: a0ea156c8599b98800d03d2238451c7935d6466f
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "44170820"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609775"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>Utiliser des commentaires à l’aide de l’API JavaScript pour Excel
 
@@ -18,7 +18,7 @@ Dans l’API JavaScript pour Excel, un commentaire inclut à la fois le commenta
 
 ![Commentaire Excel, étiqueté « commentaire » avec deux réponses, intitulées « comment. réponses [0] » et «comment. réponses [1].](../images/excel-comments.png)
 
-Les commentaires d’un classeur sont suivis `Workbook.comments` par la propriété. Cela inclut les commentaires créés par les utilisateurs ainsi que les commentaires créés par votre complément. La propriété `Workbook.comments` est un objet [CommentCollection](/javascript/api/excel/excel.commentcollection) qui contient une collection d’objets [Comment](/javascript/api/excel/excel.comment). Les commentaires sont également accessibles au niveau de la [feuille de calcul](/javascript/api/excel/excel.worksheet) . Les exemples de cet article utilisent des commentaires au niveau du classeur, mais ils peuvent être facilement modifiés pour utiliser `Worksheet.comments` la propriété.
+Les commentaires d’un classeur sont suivis par la `Workbook.comments` propriété. Cela inclut les commentaires créés par les utilisateurs ainsi que les commentaires créés par votre complément. La propriété `Workbook.comments` est un objet [CommentCollection](/javascript/api/excel/excel.commentcollection) qui contient une collection d’objets [Comment](/javascript/api/excel/excel.comment). Les commentaires sont également accessibles au niveau de la [feuille de calcul](/javascript/api/excel/excel.worksheet) . Les exemples de cet article utilisent des commentaires au niveau du classeur, mais ils peuvent être facilement modifiés pour utiliser la `Worksheet.comments` propriété.
 
 ## <a name="add-comments"></a>Ajouter des commentaires
 
@@ -74,7 +74,7 @@ Excel.run(function (context) {
 
 ### <a name="edit-comment-replies"></a>Modifier les réponses de commentaire
 
-Pour modifier une réponse de commentaire, définissez `CommentReply.content` sa propriété.
+Pour modifier une réponse de commentaire, définissez sa `CommentReply.content` propriété.
 
 ```js
 Excel.run(function (context) {
@@ -88,7 +88,7 @@ Excel.run(function (context) {
 
 ## <a name="delete-comments"></a>Supprimer les commentaires
 
-Pour supprimer un commentaire, utilisez `Comment.delete` la méthode. La suppression d’un commentaire supprime également les réponses associées à ce commentaire.
+Pour supprimer un commentaire, utilisez la `Comment.delete` méthode. La suppression d’un commentaire supprime également les réponses associées à ce commentaire.
 
 ```js
 Excel.run(function (context) {
@@ -100,7 +100,7 @@ Excel.run(function (context) {
 
 ### <a name="delete-comment-replies"></a>Supprimer les réponses de commentaire
 
-Pour supprimer une réponse de commentaire, utilisez `CommentReply.delete` la méthode.
+Pour supprimer une réponse de commentaire, utilisez la `CommentReply.delete` méthode.
 
 ```js
 Excel.run(function (context) {
@@ -113,7 +113,7 @@ Excel.run(function (context) {
 
 ## <a name="resolve-comment-threads"></a>Résoudre les thèmes de commentaires
 
-Un thread de commentaire a une valeur `resolved`booléenne configurable, pour indiquer s’il est résolu. Une valeur de `true` signifie que le thread de commentaire est résolu. Une valeur de `false` signifie que le fil de commentaires est nouveau ou rouvert.
+Un thread de commentaire a une valeur booléenne configurable, `resolved` pour indiquer s’il est résolu. Une valeur de `true` signifie que le thread de commentaire est résolu. Une valeur de `false` signifie que le fil de commentaires est nouveau ou rouvert.
 
 ```js
 Excel.run(function (context) {
@@ -123,7 +123,7 @@ Excel.run(function (context) {
 });
 ```
 
-Les réponses de commentaire ont `resolved` une propriété ReadOnly. Sa valeur est toujours égale à celle du reste du thread.
+Les réponses de commentaire ont une `resolved` propriété ReadOnly. Sa valeur est toujours égale à celle du reste du thread.
 
 ## <a name="comment-metadata"></a>Métadonnées de commentaire
 
@@ -173,7 +173,7 @@ Excel.run(function (context) {
 
 Les [mentions](https://support.office.com/article/use-mention-in-comments-to-tag-someone-for-feedback-644bf689-31a0-4977-a4fb-afe01820c1fd) sont utilisées pour marquer les collègues dans un commentaire. Les notifications sont envoyées avec le contenu de votre commentaire. Votre complément peut créer ces mentions à votre place.
 
-Les commentaires avec des mentions doivent être créés avec des objets [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) . Appelez `CommentCollection.add` avec un `CommentRichContent` conteneur contenant une ou plusieurs mentions et `ContentType.mention` spécifiez `contentType` comme paramètre. La `content` chaîne doit également être mise en forme pour insérer la mention dans le texte. Le format d’une mention est le `<at id="{replyIndex}">{mentionName}</at>`suivant :.
+Les commentaires avec des mentions doivent être créés avec des objets [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) . Appelez `CommentCollection.add` avec un `CommentRichContent` conteneur contenant une ou plusieurs mentions et spécifiez `ContentType.mention` comme `contentType` paramètre. La `content` chaîne doit également être mise en forme pour insérer la mention dans le texte. Le format d’une mention est le suivant : `<at id="{replyIndex}">{mentionName}</at>` .
 
 > Note Actuellement, seul le nom exact de la mention peut être utilisé comme texte du lien mention. La prise en charge des versions raccourcies d’un nom sera ajoutée ultérieurement.
 

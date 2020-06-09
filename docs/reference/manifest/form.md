@@ -3,19 +3,19 @@ title: Élément Form dans le fichier manifeste
 description: Paramètres UX pour les formulaires que votre complément de messagerie utilisera lors de l’exécution sur un appareil particulier (ordinateur de bureau, tablette ou téléphone).
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 3e8d60c13a72a50090075d7cd16a0719498c4982
-ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
+ms.openlocfilehash: c9cd1d9104fc51edc84149ef677c4308dfb1a9f5
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43215067"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611854"
 ---
 # <a name="form-element"></a>Élément Form
 
 Paramètres UX pour les formulaires que votre complément de messagerie utilisera lors de l’exécution sur un appareil particulier (ordinateur de bureau, tablette ou téléphone).
 
 > [!IMPORTANT]
-> Les `DesktopSettings`éléments `TabletSettings`, et `PhoneSettings` sont disponibles uniquement dans les versions classiques d’Outlook sur le Web (généralement connectées à des versions plus anciennes de serveur Exchange local) et Outlook 2013 sur Windows.
+> Les `DesktopSettings` `TabletSettings` éléments, et `PhoneSettings` sont disponibles uniquement dans les versions classiques d’Outlook sur le Web (généralement connectées à des versions plus anciennes de serveur Exchange local) et Outlook 2013 sur Windows.
 
 **Type de complément :** messagerie
 

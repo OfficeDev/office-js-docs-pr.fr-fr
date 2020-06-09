@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1,5
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 4860ef7153abea059d04cda5e8709c7bdbd88855
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: a722498f264ac8a681e91231d737451274b01c48
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064759"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611420"
 ---
 # <a name="whats-new-in-excel-javascript-api-15"></a>Nouveautés de l’API JavaScript 1.5 pour Excel
 
@@ -38,9 +38,9 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[getXml ()](/javascript/api/excel/excel.customxmlpart#getxml--)|Obtient l’intégralité du contenu XML de la partie XML personnalisée.|
 ||[id](/javascript/api/excel/excel.customxmlpart#id)|ID de la partie XML personnalisée. En lecture seule.|
 ||[URI](/javascript/api/excel/excel.customxmlpart#namespaceuri)|URI de l’espace de noms de la partie XML personnalisée. En lecture seule.|
-||[setXml (XML: chaîne)](/javascript/api/excel/excel.customxmlpart#setxml-xml-)|Définit l’intégralité du contenu XML de la partie XML personnalisée.|
-|[Uncustomxmlpartcollection](/javascript/api/excel/excel.customxmlpartcollection)|[Add (XML: String)](/javascript/api/excel/excel.customxmlpartcollection#add-xml-)|Ajoute une nouvelle partie XML personnalisée au classeur.|
-||[getByNamespace (namespaceUri: String)](/javascript/api/excel/excel.customxmlpartcollection#getbynamespace-namespaceuri-)|Obtient une nouvelle collection limitée de parties XML personnalisées dont les espaces de noms correspondent à l’espace de noms donné.|
+||[setXml (XML : chaîne)](/javascript/api/excel/excel.customxmlpart#setxml-xml-)|Définit l’intégralité du contenu XML de la partie XML personnalisée.|
+|[Uncustomxmlpartcollection](/javascript/api/excel/excel.customxmlpartcollection)|[Add (XML : String)](/javascript/api/excel/excel.customxmlpartcollection#add-xml-)|Ajoute une nouvelle partie XML personnalisée au classeur.|
+||[getByNamespace (namespaceUri : String)](/javascript/api/excel/excel.customxmlpartcollection#getbynamespace-namespaceuri-)|Obtient une nouvelle collection limitée de parties XML personnalisées dont les espaces de noms correspondent à l’espace de noms donné.|
 ||[getCount()](/javascript/api/excel/excel.customxmlpartcollection#getcount--)|Obtient le nombre de parties CustomXml dans la collection.|
 ||[getItem(id: string)](/javascript/api/excel/excel.customxmlpartcollection#getitem-id-)|Obtient une partie XML personnalisée en fonction de son ID.|
 ||[getItemOrNullObject(id: string)](/javascript/api/excel/excel.customxmlpartcollection#getitemornullobject-id-)|Obtient une partie XML personnalisée en fonction de son ID.|
@@ -53,14 +53,14 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[items](/javascript/api/excel/excel.customxmlpartscopedcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[id](/javascript/api/excel/excel.pivottable#id)|ID du tableau croisé dynamique. En lecture seule.|
 |[Runtime](/javascript/api/excel/excel.runtime)||[Workbook](/javascript/api/excel/excel.workbook)|[customXmlParts](/javascript/api/excel/excel.workbook#customxmlparts)|Représente la collection de parties XML personnalisées contenues dans ce classeur. En lecture seule.|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[getNext (visibleOnly?: Boolean)](/javascript/api/excel/excel.worksheet#getnext-visibleonly-)|Obtient la feuille de calcul qui suit celle-ci. S’il n’existe aucune feuille de calcul à la suite de celle-ci, cette méthode génère une erreur.|
-||[getNextOrNullObject (visibleOnly?: booléen)](/javascript/api/excel/excel.worksheet#getnextornullobject-visibleonly-)|Obtient la feuille de calcul qui suit celle-ci. S’il n’existe aucune feuille de calcul à la suite de celle-ci, cette méthode renvoie un objet null.|
-||[getPrevious (visibleOnly?: Boolean)](/javascript/api/excel/excel.worksheet#getprevious-visibleonly-)|Obtient la feuille de calcul qui précède celle-ci. S’il n’y a pas de feuille de calcul précédente, cette méthode génère une erreur.|
-||[getPreviousOrNullObject (visibleOnly?: booléen)](/javascript/api/excel/excel.worksheet#getpreviousornullobject-visibleonly-)|Obtient la feuille de calcul qui précède celle-ci. S’il n’y a pas de feuille de calcul précédente, cette méthode renvoie une valeur null.|
-|[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[getFirst (visibleOnly?: Boolean)](/javascript/api/excel/excel.worksheetcollection#getfirst-visibleonly-)|Obtient la première feuille de calcul dans la collection.|
-||[getLast (visibleOnly?: Boolean)](/javascript/api/excel/excel.worksheetcollection#getlast-visibleonly-)|Obtient la dernière feuille de calcul dans la collection.|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[getNext (visibleOnly ?: Boolean)](/javascript/api/excel/excel.worksheet#getnext-visibleonly-)|Obtient la feuille de calcul qui suit celle-ci. S’il n’existe aucune feuille de calcul à la suite de celle-ci, cette méthode génère une erreur.|
+||[getNextOrNullObject (visibleOnly ?: booléen)](/javascript/api/excel/excel.worksheet#getnextornullobject-visibleonly-)|Obtient la feuille de calcul qui suit celle-ci. S’il n’existe aucune feuille de calcul à la suite de celle-ci, cette méthode renvoie un objet null.|
+||[getPrevious (visibleOnly ?: Boolean)](/javascript/api/excel/excel.worksheet#getprevious-visibleonly-)|Obtient la feuille de calcul qui précède celle-ci. S’il n’y a pas de feuille de calcul précédente, cette méthode génère une erreur.|
+||[getPreviousOrNullObject (visibleOnly ?: booléen)](/javascript/api/excel/excel.worksheet#getpreviousornullobject-visibleonly-)|Obtient la feuille de calcul qui précède celle-ci. S’il n’y a pas de feuille de calcul précédente, cette méthode renvoie une valeur null.|
+|[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[getFirst (visibleOnly ?: Boolean)](/javascript/api/excel/excel.worksheetcollection#getfirst-visibleonly-)|Obtient la première feuille de calcul dans la collection.|
+||[getLast (visibleOnly ?: Boolean)](/javascript/api/excel/excel.worksheetcollection#getlast-visibleonly-)|Obtient la dernière feuille de calcul dans la collection.|
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Documentation de référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.5)
+- [Documentation référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.5)
 - [Ensembles de conditions requises de l’API JavaScript pour Excel](./excel-api-requirement-sets.md)

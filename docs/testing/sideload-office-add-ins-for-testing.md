@@ -3,12 +3,12 @@ title: Chargement de version test des compléments Office dans Office sur le we
 description: Tester votre complément Office dans Office sur le web par chargement de version test
 ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 2b3082eeae35a36f320ad8d1477d99f24b3fce40
-ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
+ms.openlocfilehash: 5e6352f63959dce54b3a67c79c522446913e0c38
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "43185406"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611132"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>Chargement de version test des compléments Office dans Office sur le web
 

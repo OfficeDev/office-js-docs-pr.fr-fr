@@ -3,12 +3,12 @@ title: Résolution des problèmes de messages d’erreur pour l’authentificati
 description: Conseils sur la résolution des problèmes liés à l’authentification unique (SSO) dans les compléments Office et la gestion des conditions ou des erreurs spéciales.
 ms.date: 04/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 33826558b9b145433adbe96005e60db97fc067f7
-ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
+ms.openlocfilehash: da42b3b3d9b5cf1fede999a18bbe36c5532bd866
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "43241076"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609698"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>Résolution des messages d’erreur pour l’authentification unique (SSO) (aperçu)
 
@@ -93,7 +93,7 @@ L’utilisateur a déclenché une opération qui appelle `getAccessToken` avant 
 
 ### <a name="13010"></a>13010
 
-L’utilisateur exécute le complément dans Office sur Microsoft Edge ou Internet Explorer. Le domaine Office 365 de l’utilisateur, ainsi `login.microsoftonline.com` que le domaine, se trouvent dans des zones de sécurité différentes dans les paramètres du navigateur. Cette erreur apparaît uniquement dans **Office sur le web**. Si cette erreur est renvoyée, l’utilisateur a déjà vu une erreur expliquant cela et menant vers une page sur la modification de la configuration de la zone. Si votre complément fournit des fonctions qui ne nécessitent pas que l’utilisateur soit connecté, votre code doit intercepter cette erreur et autoriser l’exécution du complément.
+L’utilisateur exécute le complément dans Office sur Microsoft Edge ou Internet Explorer. Le domaine Office 365 de l’utilisateur, ainsi que le `login.microsoftonline.com` domaine, se trouvent dans des zones de sécurité différentes dans les paramètres du navigateur. Cette erreur apparaît uniquement dans **Office sur le web**. Si cette erreur est renvoyée, l’utilisateur a déjà vu une erreur expliquant cela et menant vers une page sur la modification de la configuration de la zone. Si votre complément fournit des fonctions qui ne nécessitent pas que l’utilisateur soit connecté, votre code doit intercepter cette erreur et autoriser l’exécution du complément.
 
 ### <a name="13012"></a>13012
 
@@ -108,7 +108,7 @@ En développement, le complément est sideloaded dans Outlook et l’option `for
 
 ### <a name="13013"></a>13013
 
-Le `getAccessToken` a été appelé trop souvent en un peu de temps, donc Office a limité l’appel le plus récent. Cela est généralement dû à une boucle infinie d’appels à la méthode. Il existe des scénarios pour rappeler la méthode. Toutefois, votre code doit utiliser un compteur ou une variable d’indicateur pour s’assurer que la méthode n’est pas rappelée à plusieurs reprises. Si le chemin d’accès du code « nouvelle tentative » s’exécute à nouveau, le code doit revenir à un autre système d’authentification des utilisateurs. Pour obtenir un exemple de code, consultez `retryGetAccessToken` la rubrique utilisation de la variable dans [HomeES6. js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) ou [ssoAuthES6. js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js).
+Le `getAccessToken` a été appelé trop souvent en un peu de temps, donc Office a limité l’appel le plus récent. Cela est généralement dû à une boucle infinie d’appels à la méthode. Il existe des scénarios pour rappeler la méthode. Toutefois, votre code doit utiliser un compteur ou une variable d’indicateur pour s’assurer que la méthode n’est pas rappelée à plusieurs reprises. Si le chemin d’accès du code « nouvelle tentative » s’exécute à nouveau, le code doit revenir à un autre système d’authentification des utilisateurs. Pour obtenir un exemple de code, consultez la rubrique `retryGetAccessToken` utilisation de la variable dans [HomeES6. js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) ou [ssoAuthES6. js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js).
 
 ### <a name="50001"></a>50001
 
@@ -128,7 +128,7 @@ Dans certaines configurations d’identité sur AAD et Office 365, il est possib
 
 Votre code doit tester cette propriété `claims`. En fonction de l’architecture de votre complément, vous pouvez le tester côté client, ou le tester sur le serveur et le relayer sur le client. Il vous faut ces informations dans le client, car Office gère l’authentification des compléments SSO. Si vous le relayez côté serveur, le message adressé au client peut être une erreur (telle que `500 Server Error` ou `401 Unauthorized`) ou se trouver dans le corps d’une réponse de succès (telle que `200 OK`). Dans les deux cas, le rappel (réussite ou échec) de l’appel AJAX de votre code côté client à l’API web de votre complément devra tester cette réponse. 
 
-Quelle que soit votre architecture, si la valeur claims a été envoyée à partir d’AAD, `getAccessToken` votre code doit rappeler `authChallenge: CLAIMS-STRING-HERE` et transmettre `options` l’option dans le paramètre. Lorsqu’AAD voit cette chaîne, il demande le(s) facteur(s) supplémentaire(s) à l’utilisateur, puis renvoie un nouveau jeton d’accès qui sera accepté dans le flux « de la part de ».
+Quelle que soit votre architecture, si la valeur claims a été envoyée à partir d’AAD, votre code doit rappeler `getAccessToken` et transmettre l’option `authChallenge: CLAIMS-STRING-HERE` dans le `options` paramètre. Lorsqu’AAD voit cette chaîne, il demande le(s) facteur(s) supplémentaire(s) à l’utilisateur, puis renvoie un nouveau jeton d’accès qui sera accepté dans le flux « de la part de ».
 
 ### <a name="consent-missing-errors"></a>Erreurs de consentement manquant
 

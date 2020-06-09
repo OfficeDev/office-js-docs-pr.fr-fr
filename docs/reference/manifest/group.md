@@ -3,12 +3,12 @@ title: Élément Group dans le fichier manifeste
 description: Définit un groupe de contrôles d’interface utilisateur dans un onglet.
 ms.date: 12/02/2019
 localization_priority: Normal
-ms.openlocfilehash: 6fe07497e98bd77aad7ad296850a0b9f9e9bf9a4
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: a598232f230a120dccd58024e760c2172a769727
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718180"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611826"
 ---
 # <a name="group-element"></a>Élément Group
 

@@ -3,12 +3,12 @@ title: Optimisation des performances API JavaScript Excel
 description: Optimisation des performances à l’aide de l’API JavaScript d’Excel
 ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 273ae6d98c5430bdcd9612670121a6b22a8288af
-ms.sourcegitcommit: 9da68c00ecc00a2f307757e0f5a903a8e31b7769
+ms.openlocfilehash: 1108c3a9cbb5efa23d52f2c7d8a6601e4b4bd493
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "43785737"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44610353"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Optimisation des performances à l’aide de l’API JavaScript d’Excel
 
@@ -52,7 +52,7 @@ worksheet.getRange("A1").set({
 
 Dans l’API JavaScript Excel, vous devez charger explicitement les propriétés d’un objet proxy. Bien que vous soyez en mesure de charger les propriétés en une fois avec un appel vide`load()`, cette approche peut causer une surcharge significative des performances. Au lieu de cela, nous vous conseillons de charger uniquement les propriétés nécessaires, en particulier pour ces objets qui ont un grand nombre de propriétés.
 
-Par exemple, si vous avez uniquement l’intention de `address` lire la propriété d’un objet Range, spécifiez uniquement cette propriété lorsque `load()` vous appelez la méthode :
+Par exemple, si vous avez uniquement l’intention de lire la `address` propriété d’un objet Range, spécifiez uniquement cette propriété lorsque vous appelez la `load()` méthode :
 
 ```js
 range.load('address');
@@ -72,7 +72,7 @@ object.load({ loadOption });
 
 _Où :_
 
-* `properties` est la liste des propriétés à charger, fournie sous forme de chaînes séparées par des virgules ou de tableau de noms. Pour plus d’informations, consultez `load()` les méthodes définies pour les objets dans la référence de l' [API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md).
+* `properties` est la liste des propriétés à charger, fournie sous forme de chaînes séparées par des virgules ou de tableau de noms. Pour plus d’informations, consultez les `load()` méthodes définies pour les objets dans la référence de l' [API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md).
 * `loadOption` spécifie un objet qui décrit les options select, expand, top et skip. Pour plus d’informations, reportez-vous aux [options](/javascript/api/office/officeextension.loadoption) de chargement d’objet.
 
 N’oubliez pas que certaines des « propriétés » sous un objet peuvent avoir le même nom qu’un autre objet. Par exemple, `format` est une propriété sous plage d’objet, mais `format` lui-même est également un objet. Par conséquent, si vous passez un appel comme `range.load("format")`, cela équivaut à `range.format.load()`, c'est-à-dire, un appel load() vide pouvant entraîner des problèmes de performances comme indiqué précédemment. Pour éviter cela, votre code doit uniquement charger les « nœuds feuille » dans une arborescence d’objets.
@@ -133,7 +133,7 @@ Veuillez noter que seuls les calculs de formule sont suspendus. Toutes les réf�
 Excel affiche les modifications effectuées par votre complément à peu près au moment où elles ont lieu dans le code. Dans le cas de grands ensembles de données itératifs, il se peut que vous ne deviez pas afficher cette progression sur l’écran en temps réel. `Application.suspendScreenUpdatingUntilNextSync()` interrompt les mises à jour visuelles vers Excel tant que le complément n’appelle pas `context.sync()`, ou tant que `Excel.run` ne se termine pas (appelant implicitement `context.sync`). N’oubliez pas qu'Excel n’affiche aucun signe d’activité jusqu'à la synchronisation suivante. Votre complément doit donner des conseils aux utilisateurs pour les préparer à ce délai ou fournir une barre d’état pour démontrer l’activité.
 
 > [!NOTE]
-> Ne pas `suspendScreenUpdatingUntilNextSync` appeler de manière répétée (comme dans une boucle). Les appels répétés entraînent le scintillement de la fenêtre Excel.
+> Ne pas appeler `suspendScreenUpdatingUntilNextSync` de manière répétée (comme dans une boucle). Les appels répétés entraînent le scintillement de la fenêtre Excel.
 
 ### <a name="enable-and-disable-events"></a>Activation et désactivation d’événements
 

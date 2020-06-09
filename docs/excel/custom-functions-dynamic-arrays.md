@@ -3,12 +3,12 @@ ms.date: 05/11/2020
 description: Renvoyer plusieurs résultats à partir de votre fonction personnalisée dans un complément Office Excel.
 title: Renvoyer plusieurs résultats à partir de votre fonction personnalisée
 localization_priority: Normal
-ms.openlocfilehash: 23ca1b038d73a93e6f96167cbdc23d79ccbfe622
-ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.openlocfilehash: e25965277fbbe1c39007f79f401bf62b25760488
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44275972"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609649"
 ---
 # <a name="return-multiple-results-from-your-custom-function"></a>Renvoyer plusieurs résultats à partir de votre fonction personnalisée
 

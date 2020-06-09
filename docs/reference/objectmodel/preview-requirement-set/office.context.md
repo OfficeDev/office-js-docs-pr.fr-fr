@@ -3,12 +3,12 @@ title: Ensemble de conditions requises pour Office. Context-preview
 description: Membres de l’objet Office. Context disponibles pour les compléments Outlook à l’aide de l’ensemble de conditions requises pour l’API de boîte aux lettres.
 ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: c61769cb1ae98097ffabb8b3ef19b2f82257c2b1
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: 0e0ea973032bb5cd854856920e192522f90a26a1
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890864"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612023"
 ---
 # <a name="context-mailbox-preview-requirement-set"></a>contexte (ensemble de conditions requises pour la boîte aux lettres)
 
@@ -27,17 +27,17 @@ Office. Context fournit des interfaces partagées qui sont utilisées par des co
 
 | Propriété | Modes | Type de retour | Minimale<br>ensemble de conditions requises |
 |---|---|---|:---:|
-| [auth](#auth-auth) | Composition<br>Lecture | [Auth](/javascript/api/office/office.auth?view=outlook-js-preview) | [Aperçu](../preview-requirement-set/outlook-requirement-set-preview.md) |
-| [contentLanguage](#contentlanguage-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [Diagnostics](#diagnostics-contextinformation) | Composition<br>Lecture | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [displayLanguage](#displaylanguage-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [hote](#host-hosttype) | Composition<br>Lecture | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [mailbox](office.context.mailbox.md) | Composition<br>Lecture | [Boîte aux lettres](/javascript/api/outlook/office.mailbox?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [officeTheme](#officetheme-officetheme) | Composition<br>Lecture | [OfficeTheme](/javascript/api/office/office.officetheme?view=outlook-js-preview) | [Aperçu](../preview-requirement-set/outlook-requirement-set-preview.md) |
-| [plateforme](#platform-platformtype) | Composition<br>Lecture | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [requise](#requirements-requirementsetsupport) | Composition<br>Lecture | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [roamingSettings](#roamingsettings-roamingsettings) | Composition<br>Lecture | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [ui](#ui-ui) | Composition<br>Lecture | [UI](/javascript/api/office/office.ui?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [auth](#auth-auth) | Composition<br>Read | [Auth](/javascript/api/office/office.auth?view=outlook-js-preview) | [Aperçu](../preview-requirement-set/outlook-requirement-set-preview.md) |
+| [contentLanguage](#contentlanguage-string) | Composition<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [Diagnostics](#diagnostics-contextinformation) | Composition<br>Read | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [displayLanguage](#displaylanguage-string) | Composition<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [hote](#host-hosttype) | Composition<br>Read | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [mailbox](office.context.mailbox.md) | Composition<br>Read | [Boîte aux lettres](/javascript/api/outlook/office.mailbox?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [officeTheme](#officetheme-officetheme) | Composition<br>Read | [OfficeTheme](/javascript/api/office/office.officetheme?view=outlook-js-preview) | [Aperçu](../preview-requirement-set/outlook-requirement-set-preview.md) |
+| [plateforme](#platform-platformtype) | Composition<br>Read | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [requise](#requirements-requirementsetsupport) | Composition<br>Read | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [roamingSettings](#roamingsettings-roamingsettings) | Composition<br>Read | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [ui](#ui-ui) | Composition<br>Read | [UI](/javascript/api/office/office.ui?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="property-details"></a>Détails de la propriété
 

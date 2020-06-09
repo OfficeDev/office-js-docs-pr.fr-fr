@@ -3,12 +3,12 @@ title: Comment trouver l’ordre approprié d’éléments manifeste
 description: Découvrez comment trouver l’ordre correct dans lequel placer les éléments enfants dans un élément parent.
 ms.date: 01/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 9296c4ec52cb5a0069053efd418e964467a7d7a8
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 1c9f6323e4bc904fd254f776e1f9c132b0050e91
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718887"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611988"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>Comment trouver l’ordre approprié d’éléments manifeste
 
@@ -21,7 +21,7 @@ Par exemple, dans l’`<OfficeApp>`élément, le `<Id>`,`<Version>` ,`<ProviderN
 > [!NOTE]
 > Le [validateur d’Office-AddIn-manifest](../testing/troubleshoot-manifest.md#validate-your-manifest-with-office-addin-manifest) utilise le même message d’erreur lorsqu’un élément est absent de l’ordre lorsqu’un élément est sous un parent incorrect. L’erreur indique que l’élément enfant n’est pas un enfant valide de l’élément parent. Si vous recevez un message d’erreur mais que la documentation de référence pour l’élément enfant indique qu’elle *est* valide pour le parent, alors le problème est probablement que l’enfant a été placé dans l’ordre incorrect.
 
-Les sections suivantes présentent les éléments de manifeste dans l’ordre dans lequel ils doivent apparaître. Il existe des différences selon `type` que l’attribut de l' `<OfficeApp>` élément est `TaskPaneApp`, `ContentApp`ou. `MailApp` Pour éviter que ces sections deviennent trop encombrantes, l’élément hautement complexe `<VersionOverrides>` est divisé en sections distinctes.
+Les sections suivantes présentent les éléments de manifeste dans l’ordre dans lequel ils doivent apparaître. Il existe des différences selon que l' `type` attribut de l' `<OfficeApp>` élément est `TaskPaneApp` , `ContentApp` ou `MailApp` . Pour éviter que ces sections deviennent trop encombrantes, l’élément hautement complexe `<VersionOverrides>` est divisé en sections distinctes.
 
 > [!Note]
 > Tous les éléments affichés ne sont pas obligatoires. Si la `minOccurs` valeur d’un élément est **0** dans le [schéma](/openspecs/office_file_formats/ms-owemxml/4e112d0a-c8ab-46a6-8a6c-2a1c1d1299e3), l’élément est facultatif.
@@ -388,7 +388,7 @@ Les sections suivantes présentent les éléments de manifeste dans l’ordre da
     <VersionOverrides>*
 ```
 
-\*Un VersionOverrides avec `type` une `VersionOverridesV1_1`valeur, au `VersionOverridesV1_0`lieu de, peut être imbriqué à la fin de l’VersionOverrides externe. Consultez la rubrique ordre des éléments de [complément de messagerie dans VersionOverrides ver. 1,1](#mail-add-in-element-ordering-within-versionoverrides-ver-11) pour l’ordre `VersionOverridesV1_1`des éléments dans.
+\*Un VersionOverrides avec une `type` valeur `VersionOverridesV1_1` , au lieu de `VersionOverridesV1_0` , peut être imbriqué à la fin de l’VersionOverrides externe. Consultez la rubrique ordre des éléments de [complément de messagerie dans VersionOverrides ver. 1,1](#mail-add-in-element-ordering-within-versionoverrides-ver-11) pour l’ordre des éléments dans `VersionOverridesV1_1` .
 
 ## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-11"></a>Classement des éléments de complément de messagerie dans VersionOverrides ver. 1.1
 

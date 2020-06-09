@@ -3,12 +3,12 @@ title: Chargement de version test des compléments Office sur iPad et Mac
 description: Testez votre complément Office sur iPad et Mac par chargement
 ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 4863a55d21ab37411e76810a744f103cc364f7c1
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 092207898547969a361b10d72fad106311563907
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719776"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611139"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>Chargement de version test des compléments Office sur iPad et Mac
 
@@ -65,13 +65,13 @@ Pour voir comment votre complément s’exécutera dans Office sur iOS, vous pou
     - Pour Excel : `/Users/<username>/Library/Containers/com.microsoft.Excel/Data/Documents/wef`
     - Pour PowerPoint : `/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/Documents/wef`
 
-2. Ouvrez le dossier dans **Finder** à l’aide `open .` de la commande (y compris le point ou le point). Copier le fichier manifeste de votre complément dans ce dossier.
+2. Ouvrez le dossier dans **Finder** à l’aide de la commande `open .` (y compris le point ou le point). Copier le fichier manifeste de votre complément dans ce dossier.
 
     ![Dossier WEF dans Office sur Mac](../images/all-my-files.png)
 
 3. Ouvrez Word, puis ouvrez un document. Redémarrez Word si cette application est déjà en cours d'exécution.
 
-4. Dans Word, sélectionnez **Insérer** > des**compléments** > **My Add-ins** (menu déroulant), puis choisissez votre complément.
+4. Dans Word, sélectionnez **Insérer**des  >  **compléments**  >  **My Add-ins** (menu déroulant), puis choisissez votre complément.
 
     ![Mes compléments dans Office sur Mac](../images/my-add-ins-wikipedia.png)
 

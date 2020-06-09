@@ -3,12 +3,12 @@ title: Élément Control dans le fichier manifeste
 description: Définit une fonction JavaScript qui exécute une action ou lance un volet Office.
 ms.date: 01/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 0d13fc4fd30f32b4998d385058cff941d3f72353
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 55faa52e5020691967e65b33c2d975535405b2a4
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720672"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612318"
 ---
 # <a name="control-element"></a>Élément Control
 

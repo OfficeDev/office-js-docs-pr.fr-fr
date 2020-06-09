@@ -3,12 +3,12 @@ title: Élément permissions dans le fichier manifest
 description: L’élément permissions spécifie le niveau d’accès à l’API pour votre complément Office.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 91e024a2f13ea7605941c8c17a642f325cbcd61d
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 603494b61ef126b35cb5cdff8c5f5b911bd25840
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717998"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611490"
 ---
 # <a name="permissions-element"></a>Élément Permissions
 

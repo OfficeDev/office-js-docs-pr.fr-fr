@@ -3,12 +3,12 @@ title: Élément Scopes dans le fichier manifeste
 description: L’élément Scopes contient les autorisations dont le complément a besoin pour se connecter à une ressource externe.
 ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 69a394b4cbe324b49c03425e6b2df92f44cbd21f
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: be68033e86de736703d9d1593ad361918d5a147d
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717921"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612240"
 ---
 # <a name="scopes-element"></a>Élément Scopes
 
