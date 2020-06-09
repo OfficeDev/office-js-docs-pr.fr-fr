@@ -3,12 +3,12 @@ title: Élémznr VersionOverrides dans le fichier manifest
 description: Documentation de référence de l’élément VersionOverrides pour les fichiers manifeste des compléments Office (XML).
 ms.date: 03/05/2020
 localization_priority: Normal
-ms.openlocfilehash: 055a796d269ffb230293639a7f69b2dde4e36eee
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: cb23a78c336be891cdfa30262713ee3c80b9160f
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717851"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44604497"
 ---
 # <a name="versionoverrides-element"></a>Élément VersionOverrides
 
@@ -18,21 +18,21 @@ ms.locfileid: "42717851"
 
 |  Attribut  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
-|  **xmlns**       |  Oui  |  Espace de noms du schéma VersionOverrides. Les valeurs autorisées varient en fonction de la `<VersionOverrides>` valeur **xsi : type** de cet élément et de la valeur **xsi : type** de `<OfficeApp>` l’élément parent. Voir les [valeurs d’espace de noms](#namespace-values) ci-dessous.|
+|  **xmlns**       |  Oui  |  Espace de noms du schéma VersionOverrides. Les valeurs autorisées varient en fonction de la `<VersionOverrides>` valeur **xsi : type** de cet élément et de la valeur **xsi : type** de l' `<OfficeApp>` élément parent. Voir les [valeurs d’espace de noms](#namespace-values) ci-dessous.|
 |  **xsi:type**  |  Oui  | Version du schéma. À ce stade, les seules valeurs valides sont `VersionOverridesV1_0` et `VersionOverridesV1_1`. |
 
 ### <a name="namespace-values"></a>Valeurs d’espace de noms
 
-Le code suivant répertorie la valeur requise de la valeur **xmlns** en fonction de la valeur **xsi : type** de `<OfficeApp>` l’élément parent.
+Le code suivant répertorie la valeur requise de la valeur **xmlns** en fonction de la valeur **xsi : type** de l' `<OfficeApp>` élément parent.
 
-- **Taskpaneapp,** prend en charge uniquement la version 1,0 de VersionOverrides **xmlns** et le xmlns `http://schemas.microsoft.com/office/taskpaneappversionoverrides`doit être.
-- **ContentApp** prend en charge uniquement la version 1,0 de VersionOverrides **xmlns** et le xmlns `http://schemas.microsoft.com/office/contentappversionoverrides`doit être.
-- **MailApp** prend en charge les versions 1,0 et 1,1 de VersionOverrides, de **xmlns** sorte que la valeur de xmlns `<VersionOverrides>` varie en fonction de la valeur **xsi : type** de cet élément :
-    - Lorsque **xsi : type** est `VersionOverridesV1_0`, **xmlns** doit être `http://schemas.microsoft.com/office/mailappversionoverrides`.
-    - Lorsque **xsi : type** est `VersionOverridesV1_1`, **xmlns** doit être `http://schemas.microsoft.com/office/mailappversionoverrides/1.1`.
+- **Taskpaneapp,** prend en charge uniquement la version 1,0 de VersionOverrides et le **xmlns** doit être `http://schemas.microsoft.com/office/taskpaneappversionoverrides` .
+- **ContentApp** prend en charge uniquement la version 1,0 de VersionOverrides et le **xmlns** doit être `http://schemas.microsoft.com/office/contentappversionoverrides` .
+- **MailApp** prend en charge les versions 1,0 et 1,1 de VersionOverrides, de sorte que la valeur de **xmlns** varie en fonction de la `<VersionOverrides>` valeur **xsi : type** de cet élément :
+    - Lorsque **xsi : type** est `VersionOverridesV1_0` , **xmlns** doit être `http://schemas.microsoft.com/office/mailappversionoverrides` .
+    - Lorsque **xsi : type** est `VersionOverridesV1_1` , **xmlns** doit être `http://schemas.microsoft.com/office/mailappversionoverrides/1.1` .
 
 > [!NOTE]
-> Actuellement, seul Outlook 2016 ou version ultérieure prend en charge le schéma VersionOverrides `VersionOverridesV1_1` v 1.1 et le type.
+> Actuellement, seul Outlook 2016 ou version ultérieure prend en charge le schéma VersionOverrides v 1.1 et le `VersionOverridesV1_1` type.
 
 ## <a name="child-elements"></a>Éléments enfants
 
@@ -49,7 +49,7 @@ Le code suivant répertorie la valeur requise de la valeur **xmlns** en fonction
 
 ### <a name="versionoverrides-example"></a>Exemple VersionOverrides
 
-Voici un exemple d’un élément typique `<VersionOverrides>` , y compris des éléments enfants qui ne sont pas obligatoires, mais qui sont généralement utilisés.
+Voici un exemple d’un `<VersionOverrides>` élément typique, y compris des éléments enfants qui ne sont pas obligatoires, mais qui sont généralement utilisés.
 
 ```xml
 <OfficeApp ... xsi:type="MailApp">

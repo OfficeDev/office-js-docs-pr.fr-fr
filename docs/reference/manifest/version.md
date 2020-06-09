@@ -3,12 +3,12 @@ title: Élément version dans le fichier manifest
 description: L’élément version spécifie la version de votre complément Office.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 49ac4c6f8828504887cec0054692bfaabc77dde5
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 024fb8ad621f371394de2f0acf18845f2535a9b9
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720308"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44604565"
 ---
 # <a name="version-element"></a>Version, élément
 

@@ -3,12 +3,12 @@ title: Valider un jeton d’identité de complément Outlook
 description: Votre complément Outlook peut vous envoyer un jeton d’identité d’utilisateur Exchange, mais avant de faire confiance à la requête, vous devez valider le jeton pour vous assurer qu’il provient du serveur Exchange attendu.
 ms.date: 05/08/2020
 localization_priority: Normal
-ms.openlocfilehash: b416353b0d9875a2024ca4706152472c7e5012b0
-ms.sourcegitcommit: 7e6faf3dc144400a7b7e5a42adecbbec0bd4602d
+ms.openlocfilehash: 89be659085dbf35b4ad6644eba3b5bf3acd24a9d
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "44180209"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44604579"
 ---
 # <a name="validate-an-exchange-identity-token"></a>Valider un jeton d’identité Exchange
 
@@ -35,19 +35,19 @@ Une fois les trois composants décodés, vous pouvez poursuivre avec la validati
 Pour valider le contenu du jeton, vous devez vérifier ce qui suit.
 
 - Vérifiez l’en-tête et assurez-vous que :
-    - `typ`la revendication est définie `JWT`sur.
-    - `alg`la revendication est définie `RS256`sur.
+    - `typ`la revendication est définie sur `JWT` .
+    - `alg`la revendication est définie sur `RS256` .
     - `x5t`la revendication est présente.
 
 - Vérifiez la charge utile et assurez-vous que :
-    - `amurl`la revendication dans `appctx` le est définie sur l’emplacement d’un fichier manifeste de clés de signature de jeton autorisé. Par exemple, la valeur `amurl` attendue pour Office 365 https://outlook.office365.com:443/autodiscover/metadata/json/1est. Pour plus d’informations, reportez-vous [à la section](#verify-the-domain) suivante.
-    - L’heure actuelle est comprise entre les `nbf` heures `exp` spécifiées dans les revendications et. La revendication `nbf` spécifie le début de la période où le jeton est considéré comme valide et la revendication `exp` spécifie le délai d’expiration pour le jeton. Ceci est recommandé pour permettre certains écarts dans les paramètres de l’horloge entre les serveurs.
+    - `amurl`la revendication dans le `appctx` est définie sur l’emplacement d’un fichier manifeste de clés de signature de jeton autorisé. Par exemple, la valeur attendue `amurl` pour Office 365 est https://outlook.office365.com:443/autodiscover/metadata/json/1 . Pour plus d’informations, reportez-vous [à la section](#verify-the-domain) suivante.
+    - L’heure actuelle est comprise entre les heures spécifiées dans les `nbf` `exp` revendications et. La revendication `nbf` spécifie le début de la période où le jeton est considéré comme valide et la revendication `exp` spécifie le délai d’expiration pour le jeton. Ceci est recommandé pour permettre certains écarts dans les paramètres de l’horloge entre les serveurs.
     - `aud`claim est l’URL attendue pour votre complément.
-    - `version`la revendication à `appctx` l’intérieur de la `ExIdTok.V1`revendication est définie sur.
+    - `version`la revendication à l’intérieur de la `appctx` revendication est définie sur `ExIdTok.V1` .
 
 ### <a name="verify-the-domain"></a>Vérifier le domaine
 
-Lors de l’implémentation de la logique de vérification décrite précédemment dans cette section, vous devez également exiger que `amurl` le domaine de la revendication corresponde au domaine de découverte automatique de l’utilisateur. Pour ce faire, vous devez utiliser ou implémenter la découverte automatique. Pour en savoir plus, vous pouvez commencer à utiliser la [découverte automatique pour Exchange](/exchange/client-developer/exchange-web-services/autodiscover-for-exchange).
+Lors de l’implémentation de la logique de vérification décrite précédemment dans cette section, vous devez également exiger que le domaine de la `amurl` revendication corresponde au domaine de découverte automatique de l’utilisateur. Pour ce faire, vous devez utiliser ou implémenter la découverte automatique. Pour en savoir plus, vous pouvez commencer à utiliser la [découverte automatique pour Exchange](/exchange/client-developer/exchange-web-services/autodiscover-for-exchange).
 
 ## <a name="validate-the-identity-token-signature"></a>Validation de la signature du jeton d’identité
 

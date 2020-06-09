@@ -3,12 +3,12 @@ title: Élément type dans le fichier manifeste
 description: L’élément type spécifie si le complément équivalent est un complément COM ou un XLL.
 ms.date: 03/16/2020
 localization_priority: Normal
-ms.openlocfilehash: 9eeab172ed4ebf06fc93e42f56f8d33f5e7a92db
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: b59f903af39facd7543e7384189817d5365cf8c9
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720315"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44604558"
 ---
 # <a name="type-element"></a>Élément Type
 

@@ -3,12 +3,12 @@ title: Chargement de version test des compléments Outlook
 description: Utilisez le chargement de version test pour installer un complément Outlook sans avoir à le placer au préalable dans un catalogue de compléments.
 ms.date: 06/24/2019
 localization_priority: Normal
-ms.openlocfilehash: b177e6adbc4ac702b7bd9dcec38f2fe2d2f29cf1
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 3543eeb58f441819edb2c129e6e14206e26de524
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42166076"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44605324"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>Chargement de version test des compléments Outlook
 
@@ -91,4 +91,4 @@ Le processus de chargement de la version test d’un complément dans Outlook da
 
 ## <a name="remove-a-sideloaded-add-in"></a>Supprimer un complément versions test chargées
 
-Pour supprimer un complément versions test chargées à partir d’Outlook, suivez les étapes décrites précédemment dans cet article pour trouver le complément dans la section **compléments personnalisés** de la boîte de dialogue qui répertorie vos compléments installés. Choisissez les points de suspension (`...`) pour le complément, puis cliquez sur **supprimer** pour supprimer ce complément spécifique.
+Pour supprimer un complément versions test chargées à partir d’Outlook, suivez les étapes décrites précédemment dans cet article pour trouver le complément dans la section **compléments personnalisés** de la boîte de dialogue qui répertorie vos compléments installés. Choisissez les points de suspension ( `...` ) pour le complément, puis cliquez sur **supprimer** pour supprimer ce complément spécifique.

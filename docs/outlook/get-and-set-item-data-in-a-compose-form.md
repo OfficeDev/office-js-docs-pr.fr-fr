@@ -3,12 +3,12 @@ title: Obtenir et définir des données d’élément dans un formulaire de comp
 description: Obtenez ou définissez diverses propriétés d’un élément dans un complément Outlook d’un scénario de composition, y compris ses destinataires, son objet, son corps, et ses emplacement et heure de rendez-vous.
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: 3b82f418ffa2820e5f8cf04805a62b0d85691420
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: bf311458ef28422d7b9de3995288c05de97fca18
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325446"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44606461"
 ---
 # <a name="get-and-set-item-data-in-a-compose-form-in-outlook"></a>Obtenir et définir des données d’élément dans un formulaire de composition dans Outlook
 

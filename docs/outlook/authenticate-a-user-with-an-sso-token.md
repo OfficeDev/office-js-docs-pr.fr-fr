@@ -3,12 +3,12 @@ title: Authentifier un utilisateur avec un jeton à authentification unique
 description: Découvrez comment utiliser le jeton d’authentification unique fourni par un complément Outlook pour implémenter l’authentification unique (SSO) sur votre service.
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 588979159446b2ceb0b1bce834d72e6853cef5ee
-ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
+ms.openlocfilehash: 306867c3b71bb139c5c8ab4859618dcea282fd69
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "43930301"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44606503"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in-preview"></a>Authentification d’un utilisateur avec un jeton d’authentification unique dans un complément Outlook (préversion)
 
