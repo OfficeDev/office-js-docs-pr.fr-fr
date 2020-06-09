@@ -4,12 +4,12 @@ description: En savoir plus sur les ensembles de conditions requises de l’API 
 ms.date: 03/11/2020
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 1f7020faa042da019cff04e8f0f3e901dad24c64
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: a82d73087b19fbce12f571a2bad61e866ab62f86
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719902"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611329"
 ---
 # <a name="powerpoint-javascript-api-requirement-sets"></a>Séries de conditions requises de l’API JavaScript pour PowerPoint
 

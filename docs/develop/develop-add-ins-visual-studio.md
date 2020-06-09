@@ -3,12 +3,12 @@ title: Développement de compléments Office avec Visual Studio
 description: Comment développer un complément Office à l’aide de Visual Studio
 ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: a0ad1e347f0b1013deb6a431d4a9fdcf1133d4d5
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 198a277d56d499b2b2cfef84667ceefccec81a72
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719034"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608326"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>Développement de compléments Office avec Visual Studio
 

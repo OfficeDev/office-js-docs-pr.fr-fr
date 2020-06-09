@@ -3,12 +3,12 @@ title: Concepts avancés de programmation avec l’API JavaScript Excel
 description: Découvrez comment un complément Excel interagit avec des objets dans Excel à l'aide des modèles d'objet API JavaScript pour Office.
 ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 32c46f1979b094110d32a6fcf77699eccb5d2606
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 95ef02084e84aedc987542127a5c5c6c7fc76dee
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719587"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609782"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>Concepts avancés de programmation avec l’API JavaScript Excel
 

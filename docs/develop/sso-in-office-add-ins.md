@@ -3,12 +3,12 @@ title: Activer l’authentification unique pour des compléments Office
 description: Découvrez comment activer l’authentification unique pour les Compléments Office à l’aide de votre compte Office 365 Microsoft, professionnel ou scolaire.
 ms.date: 04/16/2020
 localization_priority: Priority
-ms.openlocfilehash: 3d64d9c5ba9bfbfa1318c1c69a6527b180a2bff1
-ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
+ms.openlocfilehash: df09f57785e5f85e2492940c90af97926f896a32
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "43547070"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609712"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Activer l’authentification unique pour des compléments Office (aperçu)
 

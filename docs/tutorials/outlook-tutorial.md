@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez créer un complément Outlook qui i
 ms.date: 12/10/2019
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 01bd595d7a962e22c3794900e3a72b9bff4103db
-ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.openlocfilehash: 66ce5aa01cc8ef82d8a4bd0030c9e94a9433daad
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44275614"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611056"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Didacticiel : créer un complément de composition de message Outlook
 

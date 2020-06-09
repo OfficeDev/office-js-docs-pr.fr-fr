@@ -5,12 +5,12 @@ title: Documentation sur les compléments Project
 description: Ressources pour découvrir les compléments Project.
 ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 725a1ee51aa0475f555df5ae5756f0ab0751b5cf
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: 5d0ae765fea57b9533bcd8546cd59f606cc16f0c
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35576838"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611882"
 ---
 # <a name="project-add-ins-documentation"></a>Documentation sur les compléments Project
 

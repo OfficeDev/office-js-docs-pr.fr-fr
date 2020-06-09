@@ -4,12 +4,12 @@ description: Développement de fonctions personnalisées dans le Guide de démar
 title: Démarrage rapide des fonctions personnalisées
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: abe4026da79f5348e9da559c8310b863ccf8abd9
-ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
+ms.openlocfilehash: 7695a8c4cb3229d2fc215e2f7111414d4227ea8f
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "43185595"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611595"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Prise en main du développement des fonctions personnalisées Excel
 

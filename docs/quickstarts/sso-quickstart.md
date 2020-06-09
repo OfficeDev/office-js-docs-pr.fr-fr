@@ -4,12 +4,12 @@ description: Utiliser le générateur Yeoman pour créer un complément Office N
 ms.date: 02/20/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: fb543516eb371b422fdd7aa91001aa9ca21ba576
-ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
+ms.openlocfilehash: 3e107d9143836798208e5cf55db28877c9c97e6d
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "42283914"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608851"
 ---
 # <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on-preview"></a>Utiliser le générateur Yeoman pour créer un complément Office qui utilise l’authentification unique (aperçu)
 

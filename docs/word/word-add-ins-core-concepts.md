@@ -3,12 +3,12 @@ title: Concepts fondamentaux de programmation avec l’API JavaScript pour Word
 description: L’API JavaScript pour Word permet de créer des compléments pour Word.
 ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: bbd9fa23ffd5e25555f2d0d5e0022ebc2e81a534
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 697f3068a039caa8ae60ed449bacb05f3999a1ee
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719643"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608564"
 ---
 # <a name="fundamental-programming-concepts-with-the-word-javascript-api"></a>Concepts fondamentaux de programmation avec l’API JavaScript pour Word
 

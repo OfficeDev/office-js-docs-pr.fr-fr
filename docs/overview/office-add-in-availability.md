@@ -3,12 +3,12 @@ title: Disponibilité des compléments Office sur les plateformes et les hôtes
 description: Ensembles de conditions requises pris en charge pour Excel, OneNote, Outlook, PowerPoint, Project et Word.
 ms.date: 05/11/2020
 localization_priority: Priority
-ms.openlocfilehash: 36c6bc6b6348ac988049f9a50127f6dd2f94bf37
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: 8c3c187d8f9b70f40a35e3773a2267dc76decbd0
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217822"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611981"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilité des compléments Office sur les plateformes et les hôtes
 
