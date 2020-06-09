@@ -1,2 +1,2 @@
 > [!NOTE]
-> <span data-ttu-id="92feb-101">Même si vous avez précédemment installé le générateur Yeoman, nous vous recommandons de mettre à jour votre package vers la dernière version de npm.</span><span class="sxs-lookup"><span data-stu-id="92feb-101">Even if you've previously installed the Yeoman generator, we recommend you update your package to the latest version from npm.</span></span>
+> <span data-ttu-id="60d33-101">Même si vous avez précédemment installé le générateur Yeoman, nous vous recommandons de mettre à jour votre package vers la dernière version de npm.</span><span class="sxs-lookup"><span data-stu-id="60d33-101">Even if you've previously installed the Yeoman generator, we recommend you update your package to the latest version from npm.</span></span>

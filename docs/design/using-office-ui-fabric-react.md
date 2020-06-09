@@ -3,91 +3,91 @@ title: Utilisation d’Office UI Fabric React dans des compléments Office
 description: Découvrez comment utiliser Office UI Fabric React dans les compléments Office.
 ms.date: 01/16/2020
 localization_priority: Normal
-ms.openlocfilehash: 4e698b58b171acc87b87d71d81d97c98c1558344
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: d0c46b30f361fcc9d2d7c08170b70c66f513bdae
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719125"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608480"
 ---
-# <a name="use-office-ui-fabric-react-in-office-add-ins"></a><span data-ttu-id="73537-103">Utilisation d’Office UI Fabric React dans des compléments Office</span><span class="sxs-lookup"><span data-stu-id="73537-103">Use Office UI Fabric React in Office Add-ins</span></span>
+# <a name="use-office-ui-fabric-react-in-office-add-ins"></a><span data-ttu-id="8b499-103">Utilisation d’Office UI Fabric React dans des compléments Office</span><span class="sxs-lookup"><span data-stu-id="8b499-103">Use Office UI Fabric React in Office Add-ins</span></span>
 
-<span data-ttu-id="73537-p101">Office UI Fabric est l’infrastructure frontale JavaScript permettant de créer des expériences pour Office et Office 365. Si vous créez votre complément à l’aide de React, envisagez d’utiliser Fabric React pour créer votre expérience utilisateur. Fabric fournit plusieurs composants UX basés sur React, tels que des boutons ou cases à cocher, que vous pouvez utiliser dans votre complément.</span><span class="sxs-lookup"><span data-stu-id="73537-p101">Office UI Fabric is a JavaScript front-end framework for building user experiences for Office and Office 365. If you build your add-in using React, consider using Fabric React to create your user experience. Fabric provides several React-based UX components, like buttons or checkboxes, that you can use in your add-in.</span></span>
+<span data-ttu-id="8b499-p101">Office UI Fabric est l’infrastructure frontale JavaScript permettant de créer des expériences pour Office et Office 365. Si vous créez votre complément à l’aide de React, envisagez d’utiliser Fabric React pour créer votre expérience utilisateur. Fabric fournit plusieurs composants UX basés sur React, tels que des boutons ou cases à cocher, que vous pouvez utiliser dans votre complément.</span><span class="sxs-lookup"><span data-stu-id="8b499-p101">Office UI Fabric is a JavaScript front-end framework for building user experiences for Office and Office 365. If you build your add-in using React, consider using Fabric React to create your user experience. Fabric provides several React-based UX components, like buttons or checkboxes, that you can use in your add-in.</span></span>
 
-<span data-ttu-id="73537-107">Cet article décrit la création d’un complément conçu avec la fonction React et utilise les composants Fabric React.</span><span class="sxs-lookup"><span data-stu-id="73537-107">This article describes how to create an add-in that's built with React and uses Fabric React components.</span></span> 
+<span data-ttu-id="8b499-107">Cet article décrit la création d’un complément conçu avec la fonction React et utilise les composants Fabric React.</span><span class="sxs-lookup"><span data-stu-id="8b499-107">This article describes how to create an add-in that's built with React and uses Fabric React components.</span></span> 
 
 > [!NOTE]
-> <span data-ttu-id="73537-108">[Fabric Core](office-ui-fabric.md#use-fabric-core-icons-fonts-colors) est inclus dans Fabric React, ce qui signifie que votre complément aura également accès à Fabric Core une fois que vous aurez effectué les étapes décrites dans cet article.</span><span class="sxs-lookup"><span data-stu-id="73537-108">[Fabric Core](office-ui-fabric.md#use-fabric-core-icons-fonts-colors) is included with Fabric React, which means your add-in will also have access to Fabric Core after you've completed the steps in this article.</span></span>
+> <span data-ttu-id="8b499-108">[Fabric Core](office-ui-fabric.md#use-fabric-core-icons-fonts-colors) est inclus dans Fabric React, ce qui signifie que votre complément aura également accès à Fabric Core une fois que vous aurez effectué les étapes décrites dans cet article.</span><span class="sxs-lookup"><span data-stu-id="8b499-108">[Fabric Core](office-ui-fabric.md#use-fabric-core-icons-fonts-colors) is included with Fabric React, which means your add-in will also have access to Fabric Core after you've completed the steps in this article.</span></span>
 
-## <a name="create-an-add-in-project"></a><span data-ttu-id="73537-109">Création d’un projet de complément</span><span class="sxs-lookup"><span data-stu-id="73537-109">Create an add-in project</span></span>
+## <a name="create-an-add-in-project"></a><span data-ttu-id="8b499-109">Création d’un projet de complément</span><span class="sxs-lookup"><span data-stu-id="8b499-109">Create an add-in project</span></span>
 
-<span data-ttu-id="73537-110">Vous utiliserez le générateur Yeoman pour les compléments Office pour créer un projet de complément utilisant React.</span><span class="sxs-lookup"><span data-stu-id="73537-110">You'll use the Yeoman generator for Office Add-ins to create an add-in project that uses React.</span></span>
+<span data-ttu-id="8b499-110">Vous utiliserez le générateur Yeoman pour les compléments Office pour créer un projet de complément utilisant React.</span><span class="sxs-lookup"><span data-stu-id="8b499-110">You'll use the Yeoman generator for Office Add-ins to create an add-in project that uses React.</span></span>
 
-### <a name="install-the-prerequisites"></a><span data-ttu-id="73537-111">Installez les composants requis</span><span class="sxs-lookup"><span data-stu-id="73537-111">Install the prerequisites</span></span>
+### <a name="install-the-prerequisites"></a><span data-ttu-id="8b499-111">Installez les composants requis</span><span class="sxs-lookup"><span data-stu-id="8b499-111">Install the prerequisites</span></span>
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-### <a name="create-the-project"></a><span data-ttu-id="73537-112">Créez le projet</span><span class="sxs-lookup"><span data-stu-id="73537-112">Create the project</span></span>
+### <a name="create-the-project"></a><span data-ttu-id="8b499-112">Créez le projet</span><span class="sxs-lookup"><span data-stu-id="8b499-112">Create the project</span></span>
 
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-- <span data-ttu-id="73537-113">**Sélectionnez un type de projet :** `Office Add-in Task Pane project using React framework`</span><span class="sxs-lookup"><span data-stu-id="73537-113">**Choose a project type:** `Office Add-in Task Pane project using React framework`</span></span>
-- <span data-ttu-id="73537-114">**Sélectionnez un type de script :** `TypeScript`</span><span class="sxs-lookup"><span data-stu-id="73537-114">**Choose a script type:** `TypeScript`</span></span>
-- <span data-ttu-id="73537-115">**Comment souhaitez-vous nommer votre complément ?**</span><span class="sxs-lookup"><span data-stu-id="73537-115">**What do you want to name your add-in?**</span></span> `My Office Add-in`
-- <span data-ttu-id="73537-116">**Quelle application client Office voulez-vous prendre en charge ?**</span><span class="sxs-lookup"><span data-stu-id="73537-116">**Which Office client application would you like to support?**</span></span> `Word`
+- <span data-ttu-id="8b499-113">**Sélectionnez un type de projet :** `Office Add-in Task Pane project using React framework`</span><span class="sxs-lookup"><span data-stu-id="8b499-113">**Choose a project type:** `Office Add-in Task Pane project using React framework`</span></span>
+- <span data-ttu-id="8b499-114">**Sélectionnez un type de script :** `TypeScript`</span><span class="sxs-lookup"><span data-stu-id="8b499-114">**Choose a script type:** `TypeScript`</span></span>
+- <span data-ttu-id="8b499-115">**Comment souhaitez-vous nommer votre complément ?**</span><span class="sxs-lookup"><span data-stu-id="8b499-115">**What do you want to name your add-in?**</span></span> `My Office Add-in`
+- <span data-ttu-id="8b499-116">**Quelle application client Office voulez-vous prendre en charge ?**</span><span class="sxs-lookup"><span data-stu-id="8b499-116">**Which Office client application would you like to support?**</span></span> `Word`
 
 ![Générateur Yeoman](../images/yo-office-word-react.png)
 
-<span data-ttu-id="73537-118">Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.</span><span class="sxs-lookup"><span data-stu-id="73537-118">After you complete the wizard, the generator creates the project and installs supporting Node components.</span></span>
+<span data-ttu-id="8b499-118">Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.</span><span class="sxs-lookup"><span data-stu-id="8b499-118">After you complete the wizard, the generator creates the project and installs supporting Node components.</span></span>
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
-### <a name="try-it-out"></a><span data-ttu-id="73537-119">Essayez</span><span class="sxs-lookup"><span data-stu-id="73537-119">Try it out</span></span>
+### <a name="try-it-out"></a><span data-ttu-id="8b499-119">Essayez</span><span class="sxs-lookup"><span data-stu-id="8b499-119">Try it out</span></span>
 
-1. <span data-ttu-id="73537-120">Accédez au dossier racine du projet.</span><span class="sxs-lookup"><span data-stu-id="73537-120">Navigate to the root folder of the project.</span></span>
+1. <span data-ttu-id="8b499-120">Accédez au dossier racine du projet.</span><span class="sxs-lookup"><span data-stu-id="8b499-120">Navigate to the root folder of the project.</span></span>
 
     ```command&nbsp;line
     cd "My Office Add-in"
     ```
 
-2. <span data-ttu-id="73537-121">Pour démarrer le serveur web local et charger indépendamment votre complément, procédez comme suit.</span><span class="sxs-lookup"><span data-stu-id="73537-121">Complete the following steps to start the local web server and sideload your add-in.</span></span>
+2. <span data-ttu-id="8b499-121">Pour démarrer le serveur web local et charger indépendamment votre complément, procédez comme suit.</span><span class="sxs-lookup"><span data-stu-id="8b499-121">Complete the following steps to start the local web server and sideload your add-in.</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="73537-122">Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez.</span><span class="sxs-lookup"><span data-stu-id="73537-122">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="73537-123">Si vous êtes invité à installer un certificat après avoir exécuté une des commandes suivantes, acceptez d’installer le certificat fourni par le générateur Yeoman.</span><span class="sxs-lookup"><span data-stu-id="73537-123">If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
+    > <span data-ttu-id="8b499-122">Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez.</span><span class="sxs-lookup"><span data-stu-id="8b499-122">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="8b499-123">Si vous êtes invité à installer un certificat après avoir exécuté une des commandes suivantes, acceptez d’installer le certificat fourni par le générateur Yeoman.</span><span class="sxs-lookup"><span data-stu-id="8b499-123">If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
 
     > [!TIP]
-    > <span data-ttu-id="73537-124">Si vous testez votre complément sur Mac, exécutez la commande suivante avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="73537-124">If you're testing your add-in on Mac, run the following command before proceeding.</span></span> <span data-ttu-id="73537-125">Lorsque vous exécutez cette commande, le serveur web local démarre.</span><span class="sxs-lookup"><span data-stu-id="73537-125">When you run this command, the local web server starts.</span></span>
+    > <span data-ttu-id="8b499-124">Si vous testez votre complément sur Mac, exécutez la commande suivante avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="8b499-124">If you're testing your add-in on Mac, run the following command before proceeding.</span></span> <span data-ttu-id="8b499-125">Lorsque vous exécutez cette commande, le serveur web local démarre.</span><span class="sxs-lookup"><span data-stu-id="8b499-125">When you run this command, the local web server starts.</span></span>
     >
     > ```command&nbsp;line
     > npm run dev-server
     > ```
 
-    - <span data-ttu-id="73537-126">Pour tester votre complément dans Word, exécutez la commande suivante dans le répertoire racine de votre projet.</span><span class="sxs-lookup"><span data-stu-id="73537-126">To test your add-in in Word, run the following command in the root directory of your project.</span></span> <span data-ttu-id="73537-127">Cela a pour effet de démarrer le serveur web local (s’il n’est pas déjà en cours d’exécution) et d’ouvrir Word avec votre complément chargé.</span><span class="sxs-lookup"><span data-stu-id="73537-127">This starts the local web server (if it's not already running) and opens Word with your add-in loaded.</span></span>
+    - <span data-ttu-id="8b499-126">Pour tester votre complément dans Word, exécutez la commande suivante dans le répertoire racine de votre projet.</span><span class="sxs-lookup"><span data-stu-id="8b499-126">To test your add-in in Word, run the following command in the root directory of your project.</span></span> <span data-ttu-id="8b499-127">Cela a pour effet de démarrer le serveur web local (s’il n’est pas déjà en cours d’exécution) et d’ouvrir Word avec votre complément chargé.</span><span class="sxs-lookup"><span data-stu-id="8b499-127">This starts the local web server (if it's not already running) and opens Word with your add-in loaded.</span></span>
 
         ```command&nbsp;line
         npm start
         ```
 
-    - <span data-ttu-id="73537-128">Pour tester votre complément dans Word sur un navigateur, exécutez la commande suivante dans le répertoire racine de votre projet.</span><span class="sxs-lookup"><span data-stu-id="73537-128">To test your add-in in Word on a browser, run the following command in the root directory of your project.</span></span> <span data-ttu-id="73537-129">Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution).</span><span class="sxs-lookup"><span data-stu-id="73537-129">When you run this command, the local web server will start (if it's not already running).</span></span>
+    - <span data-ttu-id="8b499-128">Pour tester votre complément dans Word sur un navigateur, exécutez la commande suivante dans le répertoire racine de votre projet.</span><span class="sxs-lookup"><span data-stu-id="8b499-128">To test your add-in in Word on a browser, run the following command in the root directory of your project.</span></span> <span data-ttu-id="8b499-129">Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution).</span><span class="sxs-lookup"><span data-stu-id="8b499-129">When you run this command, the local web server will start (if it's not already running).</span></span>
 
         ```command&nbsp;line
         npm run start:web
         ```
 
-        <span data-ttu-id="73537-130">Pour utiliser votre complément, ouvrez un nouveau document dans Word sur le web, puis chargez la version test de votre complément en suivant les instructions de l’article relatif au [chargement de version test des compléments Office dans Office sur le web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).</span><span class="sxs-lookup"><span data-stu-id="73537-130">To use your add-in, open a new document in Word on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).</span></span>
+        <span data-ttu-id="8b499-130">Pour utiliser votre complément, ouvrez un nouveau document dans Word sur le web, puis chargez la version test de votre complément en suivant les instructions de l’article relatif au [chargement de version test des compléments Office dans Office sur le web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).</span><span class="sxs-lookup"><span data-stu-id="8b499-130">To use your add-in, open a new document in Word on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).</span></span>
 
-3. <span data-ttu-id="73537-131">Dans Word, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.</span><span class="sxs-lookup"><span data-stu-id="73537-131">In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span> <span data-ttu-id="73537-132">Remarquez le texte par défaut et le bouton **Exécuter** en bas du volet Office.</span><span class="sxs-lookup"><span data-stu-id="73537-132">Notice the default text and the **Run** button at the bottom of the task pane.</span></span> <span data-ttu-id="73537-133">Ensuite, vous redéfinirez ce texte et ce bouton en créant un composant React qui utilise les composants UX de Fabric React.</span><span class="sxs-lookup"><span data-stu-id="73537-133">In the remainder of this walkthrough, you'll redefine this text and button by creating a React component that uses UX components from Fabric React.</span></span>
+3. <span data-ttu-id="8b499-131">Dans Word, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.</span><span class="sxs-lookup"><span data-stu-id="8b499-131">In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span> <span data-ttu-id="8b499-132">Remarquez le texte par défaut et le bouton **Exécuter** en bas du volet Office.</span><span class="sxs-lookup"><span data-stu-id="8b499-132">Notice the default text and the **Run** button at the bottom of the task pane.</span></span> <span data-ttu-id="8b499-133">Ensuite, vous redéfinirez ce texte et ce bouton en créant un composant React qui utilise les composants UX de Fabric React.</span><span class="sxs-lookup"><span data-stu-id="8b499-133">In the remainder of this walkthrough, you'll redefine this text and button by creating a React component that uses UX components from Fabric React.</span></span>
 
     ![Capture d’écran de l’application Word avec le bouton Afficher le ruban du volet Office en surbrillance et le bouton Exécuter et le texte précédent mis en surbrillance dans le volet Office](../images/word-task-pane-yo-default.png)
 
 
-## <a name="create-a-react-component-that-uses-fabric-react"></a><span data-ttu-id="73537-135">Créer un composant React utilisant Fabric React</span><span class="sxs-lookup"><span data-stu-id="73537-135">Create a React component that uses Fabric React</span></span>
+## <a name="create-a-react-component-that-uses-fabric-react"></a><span data-ttu-id="8b499-135">Créer un composant React utilisant Fabric React</span><span class="sxs-lookup"><span data-stu-id="8b499-135">Create a React component that uses Fabric React</span></span>
 
-<span data-ttu-id="73537-136">À ce stade, vous avez créé un complément très rudimentaire du volet Office standard en utilisant React.</span><span class="sxs-lookup"><span data-stu-id="73537-136">At this point, you've created a very basic task pane add-in that's built using React.</span></span> <span data-ttu-id="73537-137">Ensuite, procédez comme suit pour créer un nouveau composant React (`ButtonPrimaryExample`) dans le projet de complément.</span><span class="sxs-lookup"><span data-stu-id="73537-137">Next, complete the following steps to create a new React component (`ButtonPrimaryExample`) within the add-in project.</span></span> <span data-ttu-id="73537-138">Le composant utilise les composants `Label` et `PrimaryButton` de Fabric React.</span><span class="sxs-lookup"><span data-stu-id="73537-138">The component uses the `Label` and `PrimaryButton` components from Fabric React.</span></span>
+<span data-ttu-id="8b499-136">À ce stade, vous avez créé un complément très rudimentaire du volet Office standard en utilisant React.</span><span class="sxs-lookup"><span data-stu-id="8b499-136">At this point, you've created a very basic task pane add-in that's built using React.</span></span> <span data-ttu-id="8b499-137">Ensuite, procédez comme suit pour créer un nouveau composant React (`ButtonPrimaryExample`) dans le projet de complément.</span><span class="sxs-lookup"><span data-stu-id="8b499-137">Next, complete the following steps to create a new React component (`ButtonPrimaryExample`) within the add-in project.</span></span> <span data-ttu-id="8b499-138">Le composant utilise les composants `Label` et `PrimaryButton` de Fabric React.</span><span class="sxs-lookup"><span data-stu-id="8b499-138">The component uses the `Label` and `PrimaryButton` components from Fabric React.</span></span>
 
-1. <span data-ttu-id="73537-139">Ouvrez le dossier du projet créé par le générateur Yeoman et accédez à **src\taskpane\components**.</span><span class="sxs-lookup"><span data-stu-id="73537-139">Open the project folder created by the Yeoman generator, and go to **src\taskpane\components**.</span></span>
-2. <span data-ttu-id="73537-140">Dans ce dossier, créez un fichier nommé **Button.tsx**.</span><span class="sxs-lookup"><span data-stu-id="73537-140">In that folder, create a new file named **Button.tsx**.</span></span>
-3. <span data-ttu-id="73537-141">Dans **Button.tsx**, ajoutez le code suivant pour définir le composant `ButtonPrimaryExample`.</span><span class="sxs-lookup"><span data-stu-id="73537-141">In **Button.tsx**, add the following code to define the `ButtonPrimaryExample` component.</span></span>
+1. <span data-ttu-id="8b499-139">Ouvrez le dossier du projet créé par le générateur Yeoman et accédez à **src\taskpane\components**.</span><span class="sxs-lookup"><span data-stu-id="8b499-139">Open the project folder created by the Yeoman generator, and go to **src\taskpane\components**.</span></span>
+2. <span data-ttu-id="8b499-140">Dans ce dossier, créez un fichier nommé **Button.tsx**.</span><span class="sxs-lookup"><span data-stu-id="8b499-140">In that folder, create a new file named **Button.tsx**.</span></span>
+3. <span data-ttu-id="8b499-141">Dans **Button.tsx**, ajoutez le code suivant pour définir le composant `ButtonPrimaryExample`.</span><span class="sxs-lookup"><span data-stu-id="8b499-141">In **Button.tsx**, add the following code to define the `ButtonPrimaryExample` component.</span></span>
 
 ```typescript
 import * as React from 'react';
@@ -124,25 +124,25 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 }
 ```
 
-<span data-ttu-id="73537-142">Ce code effectue les opérations suivantes :</span><span class="sxs-lookup"><span data-stu-id="73537-142">This code does the following:</span></span>
+<span data-ttu-id="8b499-142">Ce code effectue les opérations suivantes :</span><span class="sxs-lookup"><span data-stu-id="8b499-142">This code does the following:</span></span>
 
-- <span data-ttu-id="73537-143">Fait référence à la bibliothèque React en utilisant `import * as React from 'react';`.</span><span class="sxs-lookup"><span data-stu-id="73537-143">References the React library using `import * as React from 'react';`.</span></span>
-- <span data-ttu-id="73537-144">Référence les composants de Fabric (`PrimaryButton`, `IButtonProps`, `Label`) utilisés pour créer `ButtonPrimaryExample`.</span><span class="sxs-lookup"><span data-stu-id="73537-144">References the Fabric components (`PrimaryButton`, `IButtonProps`, `Label`) that are used to create `ButtonPrimaryExample`.</span></span>
-- <span data-ttu-id="73537-145">Déclare le nouveau composant `ButtonPrimaryExample` en utilisant `export class ButtonPrimaryExample extends React.Component`.</span><span class="sxs-lookup"><span data-stu-id="73537-145">Declares the new `ButtonPrimaryExample` component using `export class ButtonPrimaryExample extends React.Component`.</span></span>
-- <span data-ttu-id="73537-146">Déclare la fonction `insertText` qui gère l’événement du bouton `onClick`.</span><span class="sxs-lookup"><span data-stu-id="73537-146">Declares the `insertText` function that will handle the button's `onClick` event.</span></span>
-- <span data-ttu-id="73537-147">Définit l’interface utilisateur du composant React dans la fonction `render`.</span><span class="sxs-lookup"><span data-stu-id="73537-147">Defines the UI of the React component in the `render` function.</span></span> <span data-ttu-id="73537-148">Le balisage HTML utilise les composants `Label` et `PrimaryButton` de Fabric React et spécifie que lorsque l’événement `onClick` se déclenche, la fonction `insertText` s’exécute.</span><span class="sxs-lookup"><span data-stu-id="73537-148">The HTML markup uses the `Label` and `PrimaryButton` components from Fabric React and specifies that when the `onClick` event fires, the `insertText` function will run.</span></span>
+- <span data-ttu-id="8b499-143">Fait référence à la bibliothèque React en utilisant `import * as React from 'react';`.</span><span class="sxs-lookup"><span data-stu-id="8b499-143">References the React library using `import * as React from 'react';`.</span></span>
+- <span data-ttu-id="8b499-144">Référence les composants de Fabric (`PrimaryButton`, `IButtonProps`, `Label`) utilisés pour créer `ButtonPrimaryExample`.</span><span class="sxs-lookup"><span data-stu-id="8b499-144">References the Fabric components (`PrimaryButton`, `IButtonProps`, `Label`) that are used to create `ButtonPrimaryExample`.</span></span>
+- <span data-ttu-id="8b499-145">Déclare le nouveau composant `ButtonPrimaryExample` en utilisant `export class ButtonPrimaryExample extends React.Component`.</span><span class="sxs-lookup"><span data-stu-id="8b499-145">Declares the new `ButtonPrimaryExample` component using `export class ButtonPrimaryExample extends React.Component`.</span></span>
+- <span data-ttu-id="8b499-146">Déclare la fonction `insertText` qui gère l’événement du bouton `onClick`.</span><span class="sxs-lookup"><span data-stu-id="8b499-146">Declares the `insertText` function that will handle the button's `onClick` event.</span></span>
+- <span data-ttu-id="8b499-147">Définit l’interface utilisateur du composant React dans la fonction `render`.</span><span class="sxs-lookup"><span data-stu-id="8b499-147">Defines the UI of the React component in the `render` function.</span></span> <span data-ttu-id="8b499-148">Le balisage HTML utilise les composants `Label` et `PrimaryButton` de Fabric React et spécifie que lorsque l’événement `onClick` se déclenche, la fonction `insertText` s’exécute.</span><span class="sxs-lookup"><span data-stu-id="8b499-148">The HTML markup uses the `Label` and `PrimaryButton` components from Fabric React and specifies that when the `onClick` event fires, the `insertText` function will run.</span></span>
 
-## <a name="add-the-react-component-to-your-add-in"></a><span data-ttu-id="73537-149">Ajoutez le composant React à votre complément</span><span class="sxs-lookup"><span data-stu-id="73537-149">Add the React component to your add-in</span></span>
+## <a name="add-the-react-component-to-your-add-in"></a><span data-ttu-id="8b499-149">Ajoutez le composant React à votre complément</span><span class="sxs-lookup"><span data-stu-id="8b499-149">Add the React component to your add-in</span></span>
 
-<span data-ttu-id="73537-150">Ajoutez le composant `ButtonPrimaryExample` à votre complément en ouvrant **src\components\App.tsx** et en effectuant les opérations suivantes :</span><span class="sxs-lookup"><span data-stu-id="73537-150">Add the `ButtonPrimaryExample` component to your add-in by opening **src\components\App.tsx** and completing the following steps:</span></span>
+<span data-ttu-id="8b499-150">Ajoutez le composant `ButtonPrimaryExample` à votre complément en ouvrant **src\components\App.tsx** et en effectuant les opérations suivantes :</span><span class="sxs-lookup"><span data-stu-id="8b499-150">Add the `ButtonPrimaryExample` component to your add-in by opening **src\components\App.tsx** and completing the following steps:</span></span>
 
-1. <span data-ttu-id="73537-151">Ajoutez l’instruction importation suivante pour référencer `ButtonPrimaryExample` dans **Button.tsx**.</span><span class="sxs-lookup"><span data-stu-id="73537-151">Add the following import statement to reference `ButtonPrimaryExample` from **Button.tsx**.</span></span>
+1. <span data-ttu-id="8b499-151">Ajoutez l’instruction importation suivante pour référencer `ButtonPrimaryExample` dans **Button.tsx**.</span><span class="sxs-lookup"><span data-stu-id="8b499-151">Add the following import statement to reference `ButtonPrimaryExample` from **Button.tsx**.</span></span>
 
     ```typescript
     import {ButtonPrimaryExample} from './Button';
     ```
 
-2. <span data-ttu-id="73537-152">Supprimez les deux instructions d’importation suivantes.</span><span class="sxs-lookup"><span data-stu-id="73537-152">Remove the following two import statements.</span></span>
+2. <span data-ttu-id="8b499-152">Supprimez les deux instructions d’importation suivantes.</span><span class="sxs-lookup"><span data-stu-id="8b499-152">Remove the following two import statements.</span></span>
 
     ```typescript
     import { Button, ButtonType } from 'office-ui-fabric-react';
@@ -150,7 +150,7 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
     import Progress from './Progress';
     ```
 
-3. <span data-ttu-id="73537-153">Remplacez la fonction `render()` par défaut par le code suivant qui utilise `ButtonPrimaryExample`.</span><span class="sxs-lookup"><span data-stu-id="73537-153">Replace the default `render()` function with the following code that uses `ButtonPrimaryExample`.</span></span>
+3. <span data-ttu-id="8b499-153">Remplacez la fonction `render()` par défaut par le code suivant qui utilise `ButtonPrimaryExample`.</span><span class="sxs-lookup"><span data-stu-id="8b499-153">Replace the default `render()` function with the following code that uses `ButtonPrimaryExample`.</span></span>
 
     ```typescript
     render() {
@@ -165,19 +165,19 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
     }
     ```
 
-  4. <span data-ttu-id="73537-154">Enregistrez les modifications apportées à **App.tsx**.</span><span class="sxs-lookup"><span data-stu-id="73537-154">Save the changes you've made to **App.tsx**.</span></span>
+  4. <span data-ttu-id="8b499-154">Enregistrez les modifications apportées à **App.tsx**.</span><span class="sxs-lookup"><span data-stu-id="8b499-154">Save the changes you've made to **App.tsx**.</span></span>
 
-## <a name="see-the-result"></a><span data-ttu-id="73537-155">Regardez le résultat</span><span class="sxs-lookup"><span data-stu-id="73537-155">See the result</span></span>
+## <a name="see-the-result"></a><span data-ttu-id="8b499-155">Regardez le résultat</span><span class="sxs-lookup"><span data-stu-id="8b499-155">See the result</span></span>
 
-<span data-ttu-id="73537-156">Dans Word, le volet Office complément se met automatiquement à jour lorsque vous enregistrez les modifications apportées à **App.tsx**.</span><span class="sxs-lookup"><span data-stu-id="73537-156">In Word, the add-in task pane automatically updates when you save changes to **App.tsx**.</span></span> <span data-ttu-id="73537-157">Le texte et le bouton par défaut en bas du volet Office indiquent désormais l’interface utilisateur définie par le composant `ButtonPrimaryExample`.</span><span class="sxs-lookup"><span data-stu-id="73537-157">The default text and button at the bottom of the task pane now shows the UI that's defined by the `ButtonPrimaryExample` component.</span></span> <span data-ttu-id="73537-158">Sélectionnez le bouton **Insérer un texte...** pour insérer du texte dans le document.</span><span class="sxs-lookup"><span data-stu-id="73537-158">Choose the **Insert text...** button to insert text into the document.</span></span>
+<span data-ttu-id="8b499-156">Dans Word, le volet Office complément se met automatiquement à jour lorsque vous enregistrez les modifications apportées à **App.tsx**.</span><span class="sxs-lookup"><span data-stu-id="8b499-156">In Word, the add-in task pane automatically updates when you save changes to **App.tsx**.</span></span> <span data-ttu-id="8b499-157">Le texte et le bouton par défaut en bas du volet Office indiquent désormais l’interface utilisateur définie par le composant `ButtonPrimaryExample`.</span><span class="sxs-lookup"><span data-stu-id="8b499-157">The default text and button at the bottom of the task pane now shows the UI that's defined by the `ButtonPrimaryExample` component.</span></span> <span data-ttu-id="8b499-158">Sélectionnez le bouton **Insérer un texte...** pour insérer du texte dans le document.</span><span class="sxs-lookup"><span data-stu-id="8b499-158">Choose the **Insert text...** button to insert text into the document.</span></span>
 
 ![Capture d’écran de l’application Word avec le bouton Insérer un texte... et le texte précédent mis en surbrillance](../images/word-task-pane-with-react-component.png)
 
-<span data-ttu-id="73537-160">Félicitations, vous avez créé un complément de volet Office à l’aide de React et Office UI Fabric React !</span><span class="sxs-lookup"><span data-stu-id="73537-160">Congratulations, you've successfully created a task pane add-in using React and Office UI Fabric React!</span></span> 
+<span data-ttu-id="8b499-160">Félicitations, vous avez créé un complément de volet Office à l’aide de React et Office UI Fabric React !</span><span class="sxs-lookup"><span data-stu-id="8b499-160">Congratulations, you've successfully created a task pane add-in using React and Office UI Fabric React!</span></span> 
 
-## <a name="see-also"></a><span data-ttu-id="73537-161">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="73537-161">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8b499-161">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8b499-161">See also</span></span>
 
-- [<span data-ttu-id="73537-162">Office UI Fabric dans des compléments Office</span><span class="sxs-lookup"><span data-stu-id="73537-162">Office UI Fabric in Office Add-ins</span></span>](office-ui-fabric.md)
-- [<span data-ttu-id="73537-163">Office UI Fabric React</span><span class="sxs-lookup"><span data-stu-id="73537-163">Office UI Fabric React</span></span>](https://developer.microsoft.com/fabric)
-- [<span data-ttu-id="73537-164">Modèles de conception de l’expérience utilisateur pour les compléments Office</span><span class="sxs-lookup"><span data-stu-id="73537-164">UX design patterns for Office Add-ins</span></span>](ux-design-pattern-templates.md)
-- [<span data-ttu-id="73537-165">Démarrer avec un exemple de code Fabric React</span><span class="sxs-lookup"><span data-stu-id="73537-165">Getting started with Fabric React code sample</span></span>](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)
+- [<span data-ttu-id="8b499-162">Office UI Fabric dans des compléments Office</span><span class="sxs-lookup"><span data-stu-id="8b499-162">Office UI Fabric in Office Add-ins</span></span>](office-ui-fabric.md)
+- [<span data-ttu-id="8b499-163">Office UI Fabric React</span><span class="sxs-lookup"><span data-stu-id="8b499-163">Office UI Fabric React</span></span>](https://developer.microsoft.com/fabric)
+- [<span data-ttu-id="8b499-164">Modèles de conception de l’expérience utilisateur pour les compléments Office</span><span class="sxs-lookup"><span data-stu-id="8b499-164">UX design patterns for Office Add-ins</span></span>](ux-design-pattern-templates.md)
+- [<span data-ttu-id="8b499-165">Démarrer avec un exemple de code Fabric React</span><span class="sxs-lookup"><span data-stu-id="8b499-165">Getting started with Fabric React code sample</span></span>](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)
