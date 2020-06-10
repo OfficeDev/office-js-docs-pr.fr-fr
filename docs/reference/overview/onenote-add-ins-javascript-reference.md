@@ -4,12 +4,12 @@ description: En savoir plus sur l’API JavaScript pour OneNote
 ms.date: 02/19/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 78569926fe656405e9159e5935606e53ade50ba7
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: c73d784cb2ca724b02b22b68bbf0b75c8e3640bf
+ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612156"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "44679282"
 ---
 # <a name="onenote-javascript-api-overview"></a>Référence de l’API JavaScript pour OneNote
 
@@ -37,7 +37,7 @@ Pour en savoir plus sur le modèle d'objet de l’API JavaScript pour OneNote, 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Documentation sur les compléments OneNote](../../onenote/index.md)
+- [Documentation sur les compléments OneNote](../../onenote/index.yml)
 - [Présentation des compléments OneNote](../../onenote/onenote-add-ins-programming-overview.md)
 - [Référence de l’API JavaScript de OneNote](/javascript/api/onenote)
 - [Disponibilité des compléments Office sur les plateformes et les hôtes](../../overview/office-add-in-availability.md)

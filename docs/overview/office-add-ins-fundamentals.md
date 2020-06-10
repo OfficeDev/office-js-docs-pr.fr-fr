@@ -3,12 +3,12 @@ title: Création de compléments Office
 description: Présentation du développement de compléments Office.
 ms.date: 02/27/2020
 localization_priority: Priority
-ms.openlocfilehash: 85f743756d552234e4ff18fd250b18904a9f63c4
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9ef552698bb0e9d71076b38d0ea3af49eee408d7
+ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611970"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "44679394"
 ---
 # <a name="building-office-add-ins"></a>Création de compléments Office
 
@@ -119,7 +119,7 @@ Cet article décrit les différentes façons de créer des compléments Office, 
 
 ### <a name="create-an-office-add-in"></a>Créer un complément Office
 
-Vous pouvez créer rapidement un complément de base pour Excel, OneNote, Outlook, PowerPoint, Project ou Word en effectuant un [démarrage rapide de 5 minutes](../index.md). Si vous avez déjà effectué un démarrage rapide et que vous voulez créer un complément légèrement plus complexe, vous devez essayer le [Didacticiel](../index.md).
+Vous pouvez créer rapidement un complément de base pour Excel, OneNote, Outlook, PowerPoint, Project ou Word en effectuant un [démarrage rapide de 5 minutes](/office/dev/add-ins/). Si vous avez déjà effectué un démarrage rapide et que vous voulez créer un complément légèrement plus complexe, vous devez essayer le [Didacticiel](/office/dev/add-ins/).
 
 ### <a name="explore-the-apis-with-script-lab"></a>Explorez des API avec Script Lab
 
@@ -130,7 +130,7 @@ Explorez la bibliothèque d’exemples intégrés dans [Script Lab](explore-with
 Pour en savoir plus sur le développement, le test et la publication de compléments Office, explorez cette documentation.
 
 > [!TIP]
-> Pour les compléments que vous créez, vous utiliserez les informations de la section [Concepts de base](core-concepts-office-add-ins.md) de cette documentation, ainsi que les informations de la section spécifique à l’hôte qui correspond au type de complément que vous créez (par exemple, [Excel](../excel/index.md)).
+> Pour les compléments que vous créez, vous utiliserez les informations de la section [Concepts de base](core-concepts-office-add-ins.md) de cette documentation, ainsi que les informations de la section spécifique à l’hôte qui correspond au type de complément que vous créez (par exemple, [Excel](../excel/index.yml)).
 >
 > ![Image affichant la table des matières](../images/top-level-toc.png)
 

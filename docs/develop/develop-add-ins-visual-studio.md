@@ -3,12 +3,12 @@ title: Développement de compléments Office avec Visual Studio
 description: Comment développer un complément Office à l’aide de Visual Studio
 ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: 198a277d56d499b2b2cfef84667ceefccec81a72
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: cf8ed9d47840115f22641d0c4b6c6426e3a01a11
+ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608326"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "44679252"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>Développement de compléments Office avec Visual Studio
 
@@ -35,7 +35,7 @@ Visual Studio crée un complément de base avec une fonctionnalité limitée. Vo
 > [!TIP]
 > Un complément Office étant une application web, vous devez maîtriser les compétences de base en matière de développement web pour personnaliser votre complément. Si vous débutez avec JavaScript, nous vous conseillons de consulter le didacticiel [Mozilla JavaScript](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Introduction).
 
-Pour personnaliser votre complément, vous devez comprendre les concepts décrits dans les [Principaux concepts > Développer](develop-overview.md) de la documentation, ainsi que ceux décrits dans la documentation spécifique de l’hôte qui correspond au complément que vous créez (par exemple, [Excel](../excel/index.md)). 
+Pour personnaliser votre complément, vous devez comprendre les concepts décrits dans les [Principaux concepts > Développer](develop-overview.md) de la documentation, ainsi que ceux décrits dans la documentation spécifique de l’hôte qui correspond au complément que vous créez (par exemple, [Excel](../excel/index.yml)). 
 
 ## <a name="test-and-debug-the-add-in"></a>Tester et déboguer le complément
 
