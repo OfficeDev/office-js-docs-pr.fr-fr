@@ -1,0 +1,65 @@
+### YamlMime:Landing
+title: Documentation sur les compléments PowerPoint
+summary: Avec les compléments PowerPoint, vous pouvez utiliser des technologies Web familières telles que HTML, CSS et JavaScript pour créer une solution pouvant être exécutée dans PowerPoint sur plusieurs plateformes, y compris sur le Web, Windows, Mac et iPad. Découvrez comment créer, tester, déboguer et publier des compléments PowerPoint.
+metadata:
+  title: Documentation sur les compléments PowerPoint
+  description: Ressources pour découvrir les compléments PowerPoint.
+  ms.prod: powerpoint
+  ms.topic: landing-page
+  ms.date: 06/08/2020
+  localization_priority: Priority
+  ms.openlocfilehash: 1b8b81f939322d9276e47003ec3e8a5765c9790b
+  ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+  ms.translationtype: MT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 06/10/2020
+  ms.locfileid: "44679443"
+landingContent:
+- title: À propos des compléments PowerPoint
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Qu’est-ce que les compléments PowerPoint ?
+      url: powerpoint-add-ins.md
+    - text: API JavaScript pour PowerPoint
+      url: ../reference/overview/powerpoint-add-ins-reference-overview.md
+  - linkListType: quickstart
+    links:
+    - text: Création de votre premier complément PowerPoint
+      url: ../quickstarts/powerpoint-quickstart.md
+    - text: Explorer l’API JavaScript Office à l’aide de Script Lab
+      url: ../overview/explore-with-script-lab.md
+  - linkListType: how-to-guide
+    links:
+    - text: Tester et déboguer des compléments PowerPoint
+      url: ../testing/test-debug-office-add-ins.md
+    - text: Déployer et publier des compléments PowerPoint
+      url: ../publish/publish.md
+- title: Concepts clés des compléments Office
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Vue d’ensemble de la plateforme de compléments pour Office
+      url: ../overview/office-add-ins.md
+  - linkListType: get-started
+    links:
+    - text: Création de compléments Office
+      url: ../overview/office-add-ins-fundamentals.md
+    - text: Concepts de base pour les compléments Office
+      url: ../overview/core-concepts-office-add-ins.md
+    - text: Concevoir des compléments Office
+      url: ../design/add-in-design.md
+    - text: Développement de compléments Office
+      url: ../develop/develop-overview.md
+- title: Ressources
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Poser des questions
+      url: https://stackoverflow.com/questions/tagged/office-js
+    - text: Demander des fonctionnalités
+      url: https://officespdev.uservoice.com/
+    - text: Signaler des problèmes
+      url: https://github.com/officedev/office-js/issues
+    - text: Ressources supplémentaires sur les compléments Office
+      url: ../resources/resources-links-help.md
