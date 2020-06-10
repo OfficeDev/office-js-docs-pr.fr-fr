@@ -1,0 +1,90 @@
+### YamlMime:Landing
+title: Documentation pour compléments Office
+summary: Utilisez la plateforme des compléments Office pour créer des solutions qui étendent des applications Office et interagissent avec du contenu dans des documents Office. Avec les compléments Office, vous pouvez utiliser des technologies Web familières telles que HTML, CSS et JavaScript pour créer des solutions pouvant être exécutées dans Office sur le Web, Windows, Mac et iPad.
+metadata:
+  title: Documentation pour compléments Office
+  description: Découvrez comment créer des compléments Office.
+  ms.prod: non-product-specific
+  ms.topic: landing-page
+  author: o365devx
+  ms.author: o365devx
+  ms.date: 06/09/2020
+  ms.openlocfilehash: 72bad801f05ae7315476abebaea0f8391d57ea42
+  ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+  ms.translationtype: MT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 06/10/2020
+  ms.locfileid: "44679448"
+landingContent:
+- title: À propos des compléments Office
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Concepts de base
+      url: overview/office-add-ins.md
+  - linkListType: overview
+    links:
+    - text: Documentation sur les compléments Excel
+      url: excel/index.yml
+    - text: Documentation sur les compléments OneNote
+      url: onenote/index.yml
+    - text: Documentation sur les compléments Outlook
+      url: outlook/index.yml
+    - text: Documentation sur les compléments PowerPoint
+      url: powerpoint/index.yml
+    - text: Documentation sur les compléments Project
+      url: project/index.yml
+    - text: Documentation sur les compléments Word
+      url: word/index.yml
+- title: Prise en main
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Commencer à utiliser les compléments Office
+      url: overview/learning-path-beginner.md
+    - text: Explorer l’API JavaScript Office à l’aide de Script Lab
+      url: overview/explore-with-script-lab.md
+  - linkListType: quickstart
+    links:
+    - text: Démarrage rapide du complément Excel
+      url: quickstarts/excel-quickstart-jquery.md
+    - text: Démarrage rapide des fonctions personnalisées d’Excel
+      url: quickstarts/excel-custom-functions-quickstart.md
+    - text: Démarrage rapide du complément OneNote
+      url: quickstarts/onenote-quickstart.md
+    - text: Démarrage rapide du complément Outlook
+      url: quickstarts/outlook-quickstart.md
+    - text: Démarrage rapide du complément PowerPoint
+      url: quickstarts/powerpoint-quickstart.md
+    - text: Démarrage rapide du complément Project
+      url: quickstarts/project-quickstart.md
+    - text: Démarrage rapide du complément Word
+      url: quickstarts/word-quickstart.md
+    - text: Démarrage rapide de l’authentification unique (SSO)
+      url: quickstarts/sso-quickstart.md
+- title: Didacticiels
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Didacticiel sur le complément Excel
+      url: tutorials/excel-tutorial.md
+    - text: Didacticiel de fonctions personnalisées Excel
+      url: tutorials/excel-tutorial-create-custom-functions.md
+    - text: Didacticiel sur le complément Outlook
+      url: tutorials/outlook-tutorial.md
+    - text: Didacticiel sur les compléments PowerPoint
+      url: tutorials/powerpoint-tutorial.md
+    - text: Didacticiel sur les compléments Word
+      url: tutorials/word-tutorial.md
+- title: Ressources
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Poser des questions
+      url: https://stackoverflow.com/questions/tagged/office-js
+    - text: Signaler des problèmes
+      url: https://github.com/officedev/office-js/issues
+    - text: Demander des fonctionnalités
+      url: https://officespdev.uservoice.com/
+    - text: Documentation sur les compléments COM ou VSTO
+      url: /office/client-developer/office-client-development

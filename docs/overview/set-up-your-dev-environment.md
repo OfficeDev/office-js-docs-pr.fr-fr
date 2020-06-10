@@ -3,12 +3,12 @@ title: Configuration de votre environnement de développement
 description: Configuration de votre environnement de développement pour créer des compléments Office
 ms.date: 04/03/2020
 localization_priority: Normal
-ms.openlocfilehash: 6c3f533b56cafc8300837cc835b26361490afedb
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f44f8e48aec402f0ffa6327732613a902ea0cfe6
+ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611953"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "44679352"
 ---
 # <a name="set-up-your-development-environment"></a>Configuration de votre environnement de développement
 
@@ -63,7 +63,7 @@ Essayez de créer votre propre complément ou utilisez script Lab pour essayer d
 
 ### <a name="create-an-office-add-in"></a>Créer un complément Office
 
-Vous pouvez créer rapidement un complément de base pour Excel, OneNote, Outlook, PowerPoint, Project ou Word en effectuant un [démarrage rapide de 5 minutes](../index.md). Si vous avez déjà effectué un démarrage rapide et que vous voulez créer un complément légèrement plus complexe, vous devez essayer le [Didacticiel](../index.md).
+Vous pouvez créer rapidement un complément de base pour Excel, OneNote, Outlook, PowerPoint, Project ou Word en effectuant un [démarrage rapide de 5 minutes](/office/dev/add-ins/). Si vous avez déjà effectué un démarrage rapide et que vous voulez créer un complément légèrement plus complexe, vous devez essayer le [Didacticiel](/office/dev/add-ins/).
 
 ### <a name="explore-the-apis-with-script-lab"></a>Explorez des API avec Script Lab
 
@@ -76,4 +76,4 @@ Explorez la bibliothèque d’exemples intégrés dans [Script Lab](explore-with
 - [Développement de compléments Office](../develop/develop-overview.md)
 - [Concevoir des compléments Office](../design/add-in-design.md)
 - [Test et débogage de compléments Office](../testing/test-debug-office-add-ins.md)
-- [Publier des compléments Office](../publish/publish.md)
+- [Publish Office Add-ins](../publish/publish.md)

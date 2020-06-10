@@ -1,0 +1,63 @@
+### YamlMime:Landing
+title: Documentation sur les compléments OneNote
+summary: Les compléments OneNote vous permettent d’utiliser des technologies web familières telles que HTML, CSS et JavaScript pour créer une solution pouvant s’exécuter dans OneNote sur Windows. Découvrez comment créer, tester, déboguer et publier des compléments OneNote.
+metadata:
+  title: Documentation sur les compléments OneNote
+  description: Ressources pour découvrir les compléments OneNote.
+  ms.prod: onenote
+  ms.topic: landing-page
+  ms.date: 06/08/2020
+  localization_priority: Priority
+  ms.openlocfilehash: e7860e0e6b1378cce3db46434b1da5931754eec6
+  ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+  ms.translationtype: MT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 06/10/2020
+  ms.locfileid: "44679447"
+landingContent:
+- title: À propos des compléments OneNote
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Qu’est-ce que les compléments OneNote ?
+      url: onenote-add-ins-programming-overview.md
+  - linkListType: quickstart
+    links:
+    - text: Créer votre premier complément OneNote
+      url: ../quickstarts/onenote-quickstart.md
+  - linkListType: how-to-guide
+    links:
+    - text: Utiliser l’API JavaScript pour OneNote pour interagir avec les objets et le contenu du bloc-notes
+      url: ../reference/overview/onenote-add-ins-javascript-reference.md
+    - text: Tester et déboguer un complément OneNote
+      url: ../testing/test-debug-office-add-ins.md
+    - text: Déploiement et publication d’un complément OneNote
+      url: ../publish/publish.md
+- title: Concepts clés des compléments Office
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Vue d’ensemble de la plateforme de compléments pour Office
+      url: ../overview/office-add-ins.md
+  - linkListType: concept
+    links:
+    - text: Création de compléments Office
+      url: ../overview/office-add-ins-fundamentals.md
+    - text: Concepts de base pour les compléments Office
+      url: ../overview/core-concepts-office-add-ins.md
+    - text: Concevoir des compléments Office
+      url: ../design/add-in-design.md
+    - text: Développement de compléments Office
+      url: ../develop/develop-overview.md
+- title: Ressources
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Poser des questions
+      url: https://stackoverflow.com/questions/tagged/office-js
+    - text: Demander des fonctionnalités
+      url: https://officespdev.uservoice.com/
+    - text: Signaler des problèmes
+      url: https://github.com/officedev/office-js/issues
+    - text: Ressources supplémentaires sur les compléments Office
+      url: ../resources/resources-links-help.md

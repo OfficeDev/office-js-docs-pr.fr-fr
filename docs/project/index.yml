@@ -1,0 +1,63 @@
+### YamlMime:Landing
+title: Documentation sur les compléments Project
+summary: Les compléments Project vous permettent d’utiliser des technologies web familières telles que HTML, CSS et JavaScript pour créer une solution pouvant s’exécuter dans Project sur Windows. Découvrez comment créer, tester, déboguer et publier des compléments Project.
+metadata:
+  title: Documentation sur les compléments Project
+  description: Ressources pour découvrir les compléments Project.
+  ms.prod: project
+  ms.topic: landing-page
+  ms.date: 06/08/2020
+  localization_priority: Priority
+  ms.openlocfilehash: 77a49026234bf1c2e8487a7b56af0940ead6813f
+  ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+  ms.translationtype: MT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 06/10/2020
+  ms.locfileid: "44679440"
+landingContent:
+- title: À propos des compléments Project
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Qu’est-ce que les compléments Project ?
+      url: project-add-ins.md
+    - text: API JavaScript pour Project
+      url: ../reference/overview/project-add-ins-reference-overview.md
+  - linkListType: quickstart
+    links:
+    - text: Création de votre premier complément Project
+      url: ../quickstarts/project-quickstart.md
+  - linkListType: how-to-guide
+    links:
+    - text: Tester et déboguer un complément de projet
+      url: ../testing/test-debug-office-add-ins.md
+    - text: Déployer et publier un complément de projet
+      url: ../publish/publish.md
+- title: Concepts clés des compléments Office
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Vue d’ensemble de la plateforme de compléments pour Office
+      url: ../overview/office-add-ins.md
+  - linkListType: get-started
+    links:
+    - text: Création de compléments Office
+      url: ../overview/office-add-ins-fundamentals.md
+    - text: Concepts de base pour les compléments Office
+      url: ../overview/core-concepts-office-add-ins.md
+    - text: Concevoir des compléments Office
+      url: ../design/add-in-design.md
+    - text: Développement de compléments Office
+      url: ../develop/develop-overview.md
+- title: Ressources
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Poser des questions
+      url: https://stackoverflow.com/questions/tagged/office-js
+    - text: Demander des fonctionnalités
+      url: https://officespdev.uservoice.com/
+    - text: Signaler des problèmes
+      url: https://github.com/officedev/office-js/issues
+    - text: Ressources supplémentaires sur les compléments Office
+      url: ../resources/resources-links-help.md
