@@ -1,5 +1,5 @@
 - name: Documentation pour compléments Office
-  href: index.md
+  href: index.yml
 - name: À propos des compléments Office
   href: overview/office-add-ins.md
   displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
@@ -506,7 +506,7 @@
 - name: Excel
   items:
     - name: Documentation sur les compléments Excel
-      href: excel/index.md
+      href: excel/index.yml
       displayName: Excel
     - name: Vue d'ensemble
       href: excel/excel-add-ins-overview.md
@@ -716,7 +716,7 @@
 - name: OneNote
   items:
     - name: Documentation sur les compléments OneNote
-      href: onenote/index.md
+      href: onenote/index.yml
       displayName: OneNote
     - name: Vue d'ensemble
       href: onenote/onenote-add-ins-programming-overview.md
@@ -741,7 +741,7 @@
 - name: Outlook
   items:
     - name: Documentation sur les compléments Outlook
-      href: outlook/index.md
+      href: outlook/index.yml
       displayName: Outlook
     - name: Vue d'ensemble
       href: outlook/outlook-add-ins-overview.md
@@ -1011,7 +1011,7 @@
 - name: PowerPoint
   items:
     - name: Documentation sur les compléments PowerPoint
-      href: powerpoint/index.md
+      href: powerpoint/index.yml
       displayName: PowerPoint
     - name: Vue d'ensemble
       href: powerpoint/powerpoint-add-ins.md
@@ -1042,7 +1042,7 @@
 - name: Project
   items:
     - name: Documentation sur les compléments Project
-      href: project/index.md
+      href: project/index.yml
       displayName: Project
     - name: Vue d’ensemble
       href: project/project-add-ins.md
@@ -1064,7 +1064,7 @@
 - name: Visio
   items:
     - name: Documentation Visio
-      href: visio/index.md
+      href: visio/index.yml
       displayName: Visio
     - name: Vue d’ensemble
       href: reference/overview/visio-javascript-reference-overview.md
@@ -1075,7 +1075,7 @@
 - name: Word
   items:
     - name: Documentation sur les compléments Word
-      href: word/index.md
+      href: word/index.yml
       displayName: Word
     - name: Vue d’ensemble
       href: word/word-add-ins-programming-overview.md
