@@ -1,14 +1,14 @@
 ---
 title: Utiliser l’API de boîte de dialogue Office dans vos compléments Office
-description: Découvrir les notions de base relatives à la création d’une boîte de dialogue dans un complément Office
-ms.date: 01/29/2020
+description: Découvrez les concepts de base de la création d’une boîte de dialogue dans un complément Office.
+ms.date: 06/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 96ed3169e7909e700bde894a4caf03348d039b74
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 749fd6041c2ef60a4d766e865e25d53e97298d01
+ms.sourcegitcommit: 449a728118db88dea22a44f83728d21604d6ee8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608277"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "44719069"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Utiliser l’API de boîte de dialogue Office dans les compléments Office
 
@@ -96,9 +96,10 @@ if (loginSuccess) {
 }
 ```
 
-> [!NOTE]
-> - La fonction `messageParent` est l’une des deux *seules* API Office pouvant être appelées dans la boîte de dialogue. L’autre est `Office.context.requirements.isSetSupported`. Pour plus d’informations, consultez la rubrique relative à la [spécification d’hôtes Office et de conditions requises d’API](specify-office-hosts-and-api-requirements.md).
+> [!IMPORTANT]
 > - La fonction `messageParent` peut uniquement être appelée sur une page ayant le même domaine (y compris les mêmes protocole et port) que la page hôte.
+> - La `messageParent` fonction est l’une des deux *seules* deux API Office js qui peuvent être appelées dans la boîte de dialogue. 
+> - L’autre API JS qui peut être appelée dans la boîte de dialogue est `Office.context.requirements.isSetSupported` . Pour plus d’informations, consultez la rubrique relative à la [spécification d’hôtes Office et de conditions requises d’API](specify-office-hosts-and-api-requirements.md). Toutefois, dans la boîte de dialogue, cette API n’est pas prise en charge dans l’achat d’Outlook 2016 1 à l’heure (autrement dit, la version MSI).
 
 Dans l’exemple suivant, `googleProfile` est une version convertie en chaîne du profil Google de l’utilisateur.
 

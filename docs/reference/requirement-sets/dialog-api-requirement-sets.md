@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API de dialogue
-description: En savoir plus sur les ensembles de conditions requises de l’API Dialog
-ms.date: 03/11/2020
+description: En savoir plus sur les ensembles de conditions requises de l’API Dialog.
+ms.date: 06/10/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 7987a1617125f218ba883e834cb892fa9d5e2d9b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: aa591a1b37c94a4db621d19786857303bb6ac473
+ms.sourcegitcommit: 449a728118db88dea22a44f83728d21604d6ee8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612114"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "44719062"
 ---
 # <a name="dialog-api-requirement-sets"></a>Ensembles de conditions requises de l’API de dialogue
 
@@ -40,6 +40,7 @@ L’API de boîte de dialogue 1.1 est la première version de l’API. Pour plus
 
 ## <a name="see-also"></a>Voir aussi
 
+- [Utiliser l’API de boîte de dialogue Office dans les compléments Office](../../develop/dialog-api-in-office-add-ins.md)
 - [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md)
 - [Spécification des exigences en matière d’hôtes Office et d’API](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Manifeste XML des compléments Office](../../develop/add-in-manifests.md)
