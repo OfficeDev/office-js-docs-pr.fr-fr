@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: Les fonctionnalités et les API qui sont actuellement en préversion pour les compléments Outlook.
-ms.date: 05/29/2020
+ms.date: 06/17/2020
 localization_priority: Normal
-ms.openlocfilehash: a8026448f32d29de36684eb6a6d9fa0826de5f5b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: d165d6ff82edf66034bb90ea40d522a23f919191
+ms.sourcegitcommit: 9eed5201a3ef556f77ba3b6790f007358188d57d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608078"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "44778661"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -83,6 +83,50 @@ Ajout d’une nouvelle fonction à l' `Body` objet qui ajoute des données à la
 Ajout d’un nouvel élément au manifeste dans lequel l' `AppendOnSend` autorisation étendue doit être incluse dans la collection des autorisations étendues.
 
 **Disponible dans**: Outlook sur Windows (connecté à l’abonnement Office 365), Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+
+<br>
+
+---
+
+---
+
+### <a name="async-versions-of-display-apis"></a>Versions Async des `display` API
+
+#### <a name="officecontextmailboxdisplayappointmentformasync"></a>[Office. Context. Mailbox. displayAppointmentFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displayappointmentformasync-itemid--options--callback-)
+
+Ajout d’une nouvelle fonction à l' `Mailbox` objet qui affiche un rendez-vous existant. Il s’agit de la version asynchrone de la `displayAppointmentForm` méthode.
+
+**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
+
+#### <a name="officecontextmailboxdisplaymessageformasync"></a>[Office. Context. Mailbox. displayMessageFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaymessageformasync-itemid--options--callback-)
+
+Ajout d’une nouvelle fonction à l' `Mailbox` objet qui affiche un message existant. Il s’agit de la version asynchrone de la `displayMessageForm` méthode.
+
+**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
+
+#### <a name="officecontextmailboxdisplaynewappointmentformasync"></a>[Office. Context. Mailbox. displayNewAppointmentFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaynewappointmentformasync-parameters--options--callback-)
+
+Ajout d’une nouvelle fonction à l' `Mailbox` objet qui affiche un nouveau formulaire de rendez-vous. Il s’agit de la version asynchrone de la `displayNewAppointmentForm` méthode.
+
+**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
+
+#### <a name="officecontextmailboxdisplaynewmessageformasync"></a>[Office. Context. Mailbox. displayNewMessageFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaynewmessageformasync-parameters--options--callback-)
+
+Ajout d’une nouvelle fonction à l' `Mailbox` objet qui affiche un nouveau formulaire de message. Il s’agit de la version asynchrone de la `displayNewMessageForm` méthode.
+
+**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
+
+#### <a name="officecontextmailboxitemdisplayreplyallformasync"></a>[Office. Context. Mailbox. Item. displayReplyAllFormAsync](office.context.mailbox.item.md#methods)
+
+Ajout d’une nouvelle fonction à l' `Item` objet qui affiche le formulaire « répondre à tous » en mode lecture. Il s’agit de la version asynchrone de la `displayReplyAllForm` méthode.
+
+**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
+
+#### <a name="officecontextmailboxitemdisplayreplyformasync"></a>[Office. Context. Mailbox. Item. displayReplyFormAsync](office.context.mailbox.item.md#methods)
+
+Ajout d’une nouvelle fonction à l' `Item` objet qui affiche le formulaire « répondre » en mode lecture. Il s’agit de la version asynchrone de la `displayReplyForm` méthode.
+
+**Disponible dans** : Outlook sur Windows (connecté à l’abonnement Office 365)
 
 <br>
 

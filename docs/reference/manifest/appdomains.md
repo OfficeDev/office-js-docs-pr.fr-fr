@@ -1,20 +1,20 @@
 ---
 title: Élément AppDomains dans le fichier manifeste
-description: Répertorie tous les domaines en plus du domaine spécifié dans l' `SourceLocation` élément qui sera utilisé par votre complément Office pour charger des pages.
-ms.date: 07/03/2019
+description: Répertorie tous les domaines en plus du domaine spécifié dans l' `SourceLocation` élément que votre complément Office utilisera et doit être approuvé par Office.
+ms.date: 06/12/2020
 localization_priority: Normal
-ms.openlocfilehash: 9183f1815e97bd8d4ac1a7e2cf72d5547d153f7e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 751e4ad2ffa5fd50739a855fad48964473b154f1
+ms.sourcegitcommit: 9eed5201a3ef556f77ba3b6790f007358188d57d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608767"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "44778654"
 ---
 # <a name="appdomains-element"></a>AppDomains, élément
 
-Répertorie tous les domaines en plus du domaine spécifié dans l' `SourceLocation` élément qui sera utilisé par votre complément Office pour charger des pages. Il répertorie également les domaines approuvés à partir desquels les appels de l’API Office. js peuvent être effectués depuis des IFrames au sein du complément. Pour chaque domaine supplémentaire, indiquez un élément AppDomain.
+Répertorie tous les domaines, en plus du domaine spécifié dans l' `SourceLocation` élément, que votre complément Office utilisera et qui doit être approuvé par Office. Cela permet aux pages des domaines d’effectuer des appels à Office.js API depuis des IFrames dans le complément et présente d’autres effets. Pour chaque domaine supplémentaire, indiquez un élément **AppDomain**.
 
- **Type de complément :** application de contenu, de volet Office, de messagerie
+ **Type de complément :** Application de contenu, de volet Office, de messagerie
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -26,7 +26,7 @@ Répertorie tous les domaines en plus du domaine spécifié dans l' `SourceLocat
 ```
 
 > [!IMPORTANT]
-> La valeur de chaque élément**AppDomain**doit inclure le protocole (par exemple,`<AppDomain>https://myappdomain<AppDomain>`).
+> Il existe des restrictions quant à ce qui peut être la valeur d’un élément **AppDomain** . Pour plus d’informations, consultez la rubrique [AppDomain](appdomain.md).
 
 ## <a name="contained-in"></a>Contenu dans
 
@@ -38,4 +38,4 @@ Répertorie tous les domaines en plus du domaine spécifié dans l' `SourceLocat
 
 ## <a name="remarks"></a>Remarques
 
-Par défaut, votre complément peut charger n’importe quelle page qui se trouve dans le même domaine que l’emplacement indiqué dans l’élément[SourceLocation](sourcelocation.md). Pour charger des pages qui ne sont pas dans le même domaine que le complément, spécifiez les domaines à l’aide des éléments **AppDomains** et **AppDomain**. Vous devez indiquer une valeur pour cet élément.
+Par défaut, votre complément peut charger n’importe quelle page qui se trouve dans le même domaine que l’emplacement indiqué dans l’élément[SourceLocation](sourcelocation.md). Vous devez indiquer une valeur pour cet élément.

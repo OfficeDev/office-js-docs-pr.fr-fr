@@ -1,32 +1,32 @@
 ---
 title: Attacher un débogueur à partir du volet Office
 description: Découvrez comment attacher un débogueur à partir du volet Office
-ms.date: 09/09/2019
+ms.date: 06/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 903ecfc577804ab052109d8a8f25c5a6eb799488
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 53cfce211241dbdf3d16e8a126e059a2f2db3f23
+ms.sourcegitcommit: b939312ffdeb6e0a0dfe085db7efe0ff143ef873
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611259"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "44810841"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>Attacher un débogueur à partir du volet Office
 
-Dans Office 2016 pour Windows, version 77xx.xxxx ou ultérieure, vous pouvez attacher le débogueur à partir du volet Office. Cette fonctionnalité attache directement le débogueur au processus Internet Explorer approprié pour vous. Vous pouvez attacher un débogueur quel que soit l’outil que vous utilisez (générateur de Yeoman, Visual Studio Code, Node.js, Angular ou autre). 
+In Office 2016 on Windows, Build 77xx.xxxx or later, you can attach the debugger from the task pane. The attach debugger feature will directly attach the debugger to the correct Internet Explorer process for you. You can attach a debugger regardless of whether you are using Yeoman Generator, Visual Studio Code, Node.js, Angular, or another tool. 
 
 Pour lancer l’outil **Attacher le débogueur**, cliquez sur le coin supérieur droit du volet Office pour activer le menu **Caractéristique** (comme illustré dans le cercle rouge dans l’image suivante).   
 
 > [!NOTE]
 > - Actuellement, le seul débogueur pris en charge est [Visual Studio 2015](https://www.visualstudio.com/downloads/) avec la [mise à jour 3](https://msdn.microsoft.com/library/mt752379.aspx) ou une mise à jour ultérieure. Si Visual Studio n’est pas installé, la sélection de l’option **attacher le débogueur** n’entraîne aucune action.   
-> - Vous ne pouvez déboguer JavaScript côté client qu’à l’aide de l’outil **Attacher le débogueur**. Pour déboguer du code côté serveur, comme avec un serveur Node.js, vous disposez de nombreuses options. Pour plus d’informations sur le débogage avec Visual Studio Code, reportez-vous à la rubrique sur le [débogage de Node.js dans VS Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging). Si vous n’utilisez pas Visual Studio Code, recherchez « déboguer Node.js » ou « déboguer {nom de serveur} ».
+> - You can only debug client-side JavaScript with the **Attach Debugger** tool. To debug server-side code, such as with a Node.js server, you have many options. For information on how to debug with Visual Studio Code, see [Node.js Debugging in VS Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging). If you are not using Visual Studio Code, search for "debug Node.js" or "debug {name-of-server}".
 
 ![Capture d’écran du menu Attacher le débogueur](../images/attach-debugger.png)
 
-Sélectionnez **Attacher le débogueur**. Cette action ouvre la boîte de dialogue **Débogueur juste-à-temps Visual Studio**, comme illustré dans l’image suivante. 
+Select **Attach Debugger**. This launches the **Visual Studio Just-in-Time Debugger** dialog box, as shown in the following image. 
 
 ![Capture d’écran de la boîte de dialogue Débogueur juste-à-temps Visual Studio](../images/visual-studio-debugger.png)
 
-Dans Visual Studio, les fichiers de code s’affichent dans **l’Explorateur de solutions**.   Vous pouvez définir des points d’arrêt à la ligne de code que vous souhaitez déboguer dans Visual Studio.
+In Visual Studio, you will see the code files in **Solution Explorer**.   You can set breakpoints to the line of code you want to debug in Visual Studio.
 
 > [!NOTE]
 > Si vous ne voyez pas le menu Personnalité, vous pouvez déboguer votre complément à l’aide de Visual Studio. Vérifiez que votre complément de volet Office est ouvert dans Office, puis procédez comme suit :
@@ -45,3 +45,4 @@ Pour plus d’informations sur le débogage dans Visual Studio, consultez les ru
 
 - [Déboguer des compléments Office dans Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md)
 - [Publier votre complément Office](../publish/publish.md)
+- [Extension du débogueur de complément Microsoft Office pour Visual Studio code](debug-with-vs-extension.md)
