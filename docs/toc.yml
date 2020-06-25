@@ -283,6 +283,8 @@
           displayName: 'uninstall, sideload'
         - name: Déboguer avec la journalisation runtime
           href: testing/runtime-logging.md
+        - name: Extension de débogueur pour Visual Studio Code
+          href: testing/debug-with-vs-extension.md
         - name: Résolution des erreurs de l’utilisateur
           href: testing/testing-and-troubleshooting.md
         - name: Tests d’utilisation
