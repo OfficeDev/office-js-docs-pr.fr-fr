@@ -1,18 +1,18 @@
 ---
 title: Disponibilité des compléments Office sur les plateformes et les hôtes
 description: Ensembles de conditions requises pris en charge pour Excel, OneNote, Outlook, PowerPoint, Project et Word.
-ms.date: 05/11/2020
+ms.date: 06/23/2020
 localization_priority: Priority
-ms.openlocfilehash: 8c3c187d8f9b70f40a35e3773a2267dc76decbd0
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 979c873b1c5f2d1d7847414f037d5c75737aa33d
+ms.sourcegitcommit: a4873c3525c7d30ef551545d27eb2c0a16b4eb50
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611981"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "44888158"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilité des compléments Office sur les plateformes et les hôtes
 
-Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôte Office spécifique, d'un ensemble de conditions requises, d'un membre API ou d'une version de l'API. Les tableaux suivants contiennent les plates-formes disponibles, les points d'extension, les ensembles de conditions requises de l’API et les API communes qui sont actuellement prises en charge pour chaque application Office.
+To work as expected, your Office Add-in might depend on a specific Office host, a requirement set, an API member, or a version of the API. The following tables contain the available platforms, extension points, API requirement sets, and Common APIs that are currently supported for each Office application.
 
 > [!NOTE]
 > La version initiale d’Office 2016 installée via MSI contient uniquement les ensembles de conditions ExcelApi 1.1, WordApi 1.1 et API commune. Pour plus d’informations sur l’historique de mise à jour des différentes versions d’Office, consultez la section [Voir aussi](#see-also).
@@ -154,7 +154,6 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
           - <a href="/office/dev/add-ins/reference/requirement-sets/image-coercion-requirement-sets#imagecoercion-11">ImageCoercion 1.1</a></td>
     <td>
         - BindingEvents<br>
-        - CompressedFile<br>
         - DocumentEvents<br>
         - File<br>
         - MatrixBindings<br>
@@ -311,7 +310,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     </td>
   </tr>
   <tr>
-    <td>Office pour Mac<br>(connecté à Office 365)</td>
+    <td>Office sur Mac<br>(connecté à Office 365)</td>
     <td>
         - Fonctions personnalisées</td>
     <td>
