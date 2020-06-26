@@ -1,19 +1,19 @@
 ---
 title: Ensembles de conditions requises des API communes pour Office
 description: En savoir plus sur les ensembles de conditions requises de l’API commune Office
-ms.date: 06/03/2020
+ms.date: 06/23/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: dfb0f1c7daa281851063eb325cd14dccab8060fa
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b4ed3f203cf5c50ab5a49c0278755d35d6826536
+ms.sourcegitcommit: a4873c3525c7d30ef551545d27eb2c0a16b4eb50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611350"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "44888144"
 ---
 # <a name="office-common-api-requirement-sets"></a>Ensembles de conditions requises des API communes pour Office
 
-Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
 
 Vous avez besoin d’informations sur l’endroit où les compléments sont pris en charge par l’hôte Office ? Consultez la rubrique [Disponibilité des compléments Office sur les plateformes et les hôtes](../../overview/office-add-in-availability.md).
 
@@ -59,7 +59,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| Excel sur Windows<br>Excel sur le web<br>Excel sur Mac<br>PowerPoint sur Windows<br>PowerPoint sur le web<br>PowerPoint sur iPad<br>PowerPoint sur Mac<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Prend en charge la sortie au format Office Open XML (OOXML) sous la forme d’un tableau d’octets<br>(Office.FileType.Compressed) lorsque vous utilisez la méthode Document.getFileAsync.|
+| Excel 2016 et versions ultérieures sur Windows<br>Excel sur le web<br>Excel 2016 et versions ultérieures sur Mac<br>PowerPoint sur Windows<br>PowerPoint sur le web<br>PowerPoint sur iPad<br>PowerPoint sur Mac<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Prend en charge la sortie au format Office Open XML (OOXML) sous la forme d’un tableau d’octets<br>(Office.FileType.Compressed) lorsque vous utilisez la méthode Document.getFileAsync.|
 
 ---
 
