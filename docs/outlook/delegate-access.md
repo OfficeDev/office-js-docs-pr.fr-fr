@@ -1,14 +1,14 @@
 ---
 title: Activer les scénarios d’accès délégué dans un complément Outlook
 description: Décrit brièvement l’accès délégué et explique comment configurer la prise en charge des compléments.
-ms.date: 01/14/2020
+ms.date: 06/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 68b9e09afbe2bcd5cfc302d6714b1c22fd945047
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: a5b4581783ca65bfe858dcf6638287418a3dcfe2
+ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608949"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "45006415"
 ---
 # <a name="enable-delegate-access-scenarios-in-an-outlook-add-in"></a>Activer les scénarios d’accès délégué dans un complément Outlook
 
@@ -25,7 +25,7 @@ Le tableau suivant décrit les autorisations déléguées prises en charge par l
 
 |Permission|Valeur|Description|
 |---|---:|---|
-|Read|1 (000001)|Peut lire des éléments.|
+|Lecture|1 (000001)|Peut lire des éléments.|
 |Écriture|2 (000010)|Peut créer des éléments.|
 |DeleteOwn|4 (000100)|Peut uniquement supprimer les éléments qu’ils ont créés.|
 |DeleteAll|8 (001000)|Peut supprimer tous les éléments.|
@@ -41,11 +41,16 @@ L’objet [DelegatePermissions](/javascript/api/outlook/office.mailboxenums.dele
 
 Les mises à jour d’un délégué vers la boîte aux lettres du propriétaire sont généralement synchronisées entre les boîtes aux lettres immédiatement.
 
-Toutefois, si le complément utilise les opérations REST ou EWS pour définir une propriété étendue sur un élément, la synchronisation de ces modifications peut prendre quelques heures. Nous vous recommandons d’utiliser à la place l’objet [CustomProperties](/javascript/api/outlook/office.customproperties) et les API associées pour éviter ce délai. Pour plus d’informations, reportez-vous à la [section Propriétés personnalisées](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties) de l’article « obtenir et définir des métadonnées dans un complément Outlook ».
+Toutefois, si les opérations REST ou services Web Exchange (EWS) ont été utilisées pour définir une propriété étendue sur un élément, la synchronisation de ces modifications peut prendre quelques heures. Nous vous recommandons d’utiliser à la place l’objet [CustomProperties](/javascript/api/outlook/office.customproperties) et les API associées pour éviter ce délai. Pour plus d’informations, reportez-vous à la [section Propriétés personnalisées](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties) de l’article « obtenir et définir des métadonnées dans un complément Outlook ».
+
+> [!IMPORTANT]
+> Dans un scénario de délégué, vous ne pouvez pas utiliser EWS avec les jetons actuellement fournis par office.js API.
 
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
 Pour activer les scénarios d’accès délégué dans votre complément, vous devez définir l’élément [SupportsSharedFolders](../reference/manifest/supportssharedfolders.md) `true` dans le manifeste sous l’élément parent `DesktopFormFactor` . Actuellement, les autres facteurs de forme ne sont pas pris en charge.
+
+Pour prendre en charge les appels REST à partir d’un délégué, définissez le nœud [autorisations](../reference/manifest/permissions.md) dans le manifeste sur `ReadWriteMailbox` .
 
 L’exemple suivant montre l' `SupportsSharedFolders` élément défini `true` dans une section du manifeste.
 
@@ -77,6 +82,9 @@ L’exemple suivant montre l' `SupportsSharedFolders` élément défini `true` d
 ## <a name="perform-an-operation-as-delegate"></a>Effectuer une opération en tant que délégué
 
 Vous pouvez obtenir les propriétés partagées d’un élément en mode de composition ou de lecture en appelant la méthode [Item. getSharedPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) . Cela renvoie un objet [SharedProperties](/javascript/api/outlook/office.sharedproperties) qui fournit actuellement les autorisations du délégué, l’adresse de messagerie du propriétaire, l’URL de base de l’API REST et la boîte aux lettres cible.
+
+> [!IMPORTANT]
+> Dans un scénario de délégué, votre complément peut utiliser REST mais pas EWS, et l’autorisation du complément doit être définie sur `ReadWriteMailbox` pour permettre l’accès Rest à la boîte aux lettres du propriétaire.
 
 L’exemple suivant montre comment obtenir les propriétés partagées d’un message ou d’un rendez-vous, vérifier si le délégué dispose d’une autorisation en **écriture** et passer un appel Rest.
 
@@ -128,6 +136,9 @@ function performOperation() {
   );
 }
 ```
+
+> [!TIP]
+> En tant que délégué, vous pouvez utiliser REST pour [obtenir le contenu d’un message Outlook attaché à un élément ou un billet de groupe Outlook](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post).
 
 ## <a name="see-also"></a>Voir aussi
 

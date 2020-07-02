@@ -1,23 +1,22 @@
 ---
 title: Chargement de version test des compléments Outlook
 description: Utilisez le chargement de version test pour installer un complément Outlook sans avoir à le placer au préalable dans un catalogue de compléments.
-ms.date: 06/24/2019
+ms.date: 06/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 3543eeb58f441819edb2c129e6e14206e26de524
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b99b72dbf4691d6a27ac9405c88f2cc642baaadd
+ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44605324"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "45006478"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>Chargement de version test des compléments Outlook
 
 Vous pouvez utiliser le chargement de version test pour installer un complément Outlook sans avoir à le placer au préalable dans un catalogue de compléments.
 
+## <a name="sideload-an-add-in-in-outlook-on-the-web"></a>Chargement d’un complément dans Outlook sur le web
 
-## <a name="sideload-an-add-in-in-outlook-in-office-365"></a>Chargement d’une version test d’un complément dans Outlook dans Office 365
-
-Le processus de chargement de la version test d’un complément dans Outlook dans Office 365 dépend de si vous utilisez la nouvelle version d’Outlook sur le web ou la version classique.
+Le processus de chargement d’un complément dans Outlook sur le Web dépend de si vous utilisez la version nouvelle ou classique.
 
 - Si la barre d’outils de boîte aux lettres ressemble à l’image suivante, reportez-vous à la section relative au [chargement de la version test d’un complément dans la nouvelle version d’Outlook sur le web](#sideload-an-add-in-in-the-new-outlook-on-the-web).
 
@@ -34,7 +33,7 @@ Le processus de chargement de la version test d’un complément dans Outlook da
 
 1. Accédez à [Outlook dans Office 365](https://outlook.office.com).
 
-1. Dans Outlook sur le web, créez un message.   
+1. Dans Outlook sur le web, créez un message.
 
 1. Sélectionnez **...** au bas du nouveau message, puis sélectionnez **Obtenir des compléments** dans le menu qui s’affiche.
 
@@ -48,7 +47,7 @@ Le processus de chargement de la version test d’un complément dans Outlook da
 
     ![Capture d’écran de gestion des compléments pointant vers l’option Ajouter à partir d’un fichier](../images/outlook-sideload-desktop-add-from-file.png)
 
-1. Localisez le fichier manifeste de votre complément personnalisé et installez-le. Acceptez toutes les invites pendant l’installation.
+1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
 
 ### <a name="sideload-an-add-in-in-classic-outlook-on-the-web"></a>Chargement d’un complément dans la version classique d’Outlook sur le web
 
@@ -66,11 +65,13 @@ Le processus de chargement de la version test d’un complément dans Outlook da
 
     ![Capture d’écran de gestion des compléments pointant vers l’option Ajouter à partir d’un fichier](../images/outlook-sideload-desktop-add-from-file.png)
 
-1. Localisez le fichier manifeste de votre complément personnalisé et installez-le. Acceptez toutes les invites pendant l’installation.
+1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
 
 ## <a name="sideload-an-add-in-in-outlook-on-the-desktop"></a>Chargement d’un complément dans la version de bureau d’Outlook
 
-1. Ouvrez Outlook 2013 ou une version ultérieure sur Windows, ou Outlook 2016 ou une version ultérieure sur Mac.
+### <a name="outlook-2016-or-later"></a>Outlook 2016 ou version ultérieure
+
+1. Ouvrez Outlook 2016 ou une version ultérieure sur Windows ou Mac.
 
 1. Cliquez sur le bouton **Obtenir des compléments** du ruban.
 
@@ -87,7 +88,15 @@ Le processus de chargement de la version test d’un complément dans Outlook da
 
     ![Capture d’écran de la page Store avec une flèche pointant vers l’option À partir d’un fichier](../images/outlook-sideload-desktop-add-from-file.png)
 
-1. Localisez le fichier manifeste de votre complément personnalisé et installez-le. Acceptez toutes les invites pendant l’installation.
+1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
+
+#### <a name="outlook-2013"></a>Outlook 2013
+
+1. Ouvrez Outlook 2013 sur Windows.
+
+1. Sélectionnez le menu **fichier** , puis cliquez sur le bouton **gérer les compléments** sous l’onglet **informations** . Outlook ouvre un navigateur.
+
+1. Suivez les étapes de la section [chargement d’un complément dans Outlook sur le Web](#sideload-an-add-in-in-outlook-on-the-web) en fonction de votre version d’Outlook sur le Web.
 
 ## <a name="remove-a-sideloaded-add-in"></a>Supprimer un complément versions test chargées
 

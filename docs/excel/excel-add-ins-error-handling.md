@@ -1,25 +1,25 @@
 ---
 title: Gestion des erreurs
 description: En savoir plus sur la logique de gestion des erreurs de l’API JavaScript Excel pour prendre en compte les erreurs d’exécution.
-ms.date: 05/13/2020
+ms.date: 06/25/2020
 localization_priority: Normal
-ms.openlocfilehash: ff6336e4d76e84ddc708d65eda70f5f2e172fde7
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 8d410ae7eea315e14383b5aa08373ede3768cace
+ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609607"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "45006443"
 ---
 # <a name="error-handling"></a>Gestion des erreurs
 
-Lorsque vous créez un complément à l’aide de l’API JavaScript pour Excel, veillez à inclure la logique de gestion des erreurs pour prendre en compte les erreurs d’exécution. Il s’agit d’une étape essentielle en raison de la nature asynchrone de l’API.
+When you build an add-in using the Excel JavaScript API, be sure to include error handling logic to account for runtime errors. Doing so is critical, due to the asynchronous nature of the API.
 
 > [!NOTE]
 > Pour plus d’informations sur la `sync()` méthode et la nature asynchrone de l’API JavaScript pour Excel, voir [concepts de programmation fondamentaux avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md).
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
-Dans l’ensemble des exemples de code de cette documentation, vous remarquerez que chaque appel à `Excel.run` est accompagné d’une instruction `catch` afin de détecter les erreurs qui se produisent au sein de `Excel.run`. Nous vous recommandons d’utiliser le même modèle lorsque vous développez un complément à l’aide des API JavaScript pour Excel.
+Throughout the code samples in this documentation, you'll notice that every call to `Excel.run` is accompanied by a `catch` statement to catch any errors that occur within the `Excel.run`. We recommend that you use the same pattern when you build an add-in using the Excel JavaScript APIs.
 
 ```js
 Excel.run(function (context) {
@@ -72,6 +72,7 @@ Le tableau suivant contient la liste des erreurs que l’API peut renvoyer.
 |`ServiceNotAvailable`|Le service n’est pas disponible.|
 |`Unauthenticated` |Les informations d’authentification requises sont manquantes ou incorrectes.|
 |`UnsupportedOperation`|L’opération tentée n’est pas prise en charge.|
+|`UnsupportedSheet`|Ce type de feuille ne prend pas en charge cette opération, car il s’agit d’une macro ou d’une feuille de graphique.|
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -3,12 +3,12 @@ ms.date: 05/16/2020
 description: Testez votre complément Office à l’aide d’Internet Explorer 11.
 title: Test Internet Explorer 11
 localization_priority: Normal
-ms.openlocfilehash: 4ea2b4da153e2908f928086cd4997502c194e578
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1d6852d08308088a020e86ce7f5ab9cfdb9ab978
+ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611203"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "45006436"
 ---
 # <a name="test-your-office-add-in-using-internet-explorer-11"></a>Tester votre complément Office à l’aide d’Internet Explorer 11
 
@@ -31,7 +31,7 @@ Ces instructions supposent que vous avez configuré un projet de générateur Of
 2. Dans le dossier racine de votre nouveau projet, exécutez la commande suivante dans la ligne de commande :
 
 ```command&nbsp;line
-office-add-dev-settings webview manifest.xml ie
+npx office-addin-dev-settings webview manifest.xml ie
 ```
 Vous devriez voir une remarque dans la ligne de commande que le type d’affichage Web est maintenant défini sur Internet Explorer.
 
@@ -41,7 +41,7 @@ Vous devriez voir une remarque dans la ligne de commande que le type d’afficha
 
 Si vous avez un chemin d’accès de manifeste différent, spécifiez-le dans la commande, comme indiqué dans l’exemple suivant :
 
-`office-add-dev-settings webview [path to your manifest] ie`
+`npx office-addin-dev-settings webview [path to your manifest] ie`
 
 La `office-addin-dev-settings webview` commande peut également prendre un certain nombre d’exécutions en tant qu’arguments :
 
