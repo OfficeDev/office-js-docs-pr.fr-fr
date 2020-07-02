@@ -3,12 +3,12 @@ title: Activer l’authentification unique pour des compléments Office
 description: Découvrez comment activer l’authentification unique pour les Compléments Office à l’aide de votre compte Office 365 Microsoft, professionnel ou scolaire.
 ms.date: 04/16/2020
 localization_priority: Priority
-ms.openlocfilehash: df09f57785e5f85e2492940c90af97926f896a32
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: af5fe3eac1b8e8d38162a41ca2a89ace7b23cd4a
+ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609712"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "45006471"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Activer l’authentification unique pour des compléments Office (aperçu)
 
@@ -60,7 +60,7 @@ Cette section décrit les tâches impliquées dans la création d’un compléme
 
 ### <a name="create-the-service-application"></a>Créer l’application de service
 
-Enregistrer le complément auprès du portail d’inscription pour le point de terminaison Azure v2.0. Il s’agit d’un processus de 5 à 10 minutes qui inclut les tâches suivantes :
+Register the add-in at the registration portal for the Azure v2.0 endpoint. This is a 5–10 minute process that includes the following tasks:
 
 * Obtenez un ID client et un code secret pour le complément.
 * Spécifiez les autorisations dont votre complément a besoin pour AAD v.  Point de terminaison 2.0 (et ?ventuellement Microsoft Graph). L'autorisation "profil" est toujours n?cessaire.
@@ -79,7 +79,7 @@ Ajoutez un nouveau balisage au manifeste du complément :
 * **Scopes**: le parent d’un ou plusieurs éléments **Scope**.
 * **Scope**: spécifie une autorisation nécessaire pour le complément dans l’AAD. L' `profile` autorisation est toujours n?cessaire et il peut s'agir de la seule autorisation n?cessaire si votre compl?ment n'acc?de pas ? Microsoft Graph. Si c'est le cas, vous avez ?galement besoin des ?l?ments d'une **?tendue**pour obtenir les autorisations Microsoft Graph requises; par exemple, `User.Read`, `Mail.Read`. Les biblioth?ques que vous utilisez dans votre code pour acc?der ? Microsoft Graph peuvent avoir des besoin d'autorisations suppl?mentaires. Par exemple, Microsoft Authentication Library (MSAL) pour .NET n?cessite `offline_access` une autorisation. Pour plus d'informations, voir [Autoriser Microsoft Graph ? partir d'un compl?ment Office](authorize-to-microsoft-graph.md).
 
-Pour les hôtes Office autres qu’Outlook, ajoutez le balisage à la fin de la section `<VersionOverrides ... xsi:type="VersionOverridesV1_0">`. Pour Outlook, ajoutez le balisage à la fin de la section `<VersionOverrides ... xsi:type="VersionOverridesV1_1">`.
+For Office hosts other than Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_0">` section. For Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_1">` section.
 
 Voici un exemple de marques de révision :
 
@@ -241,7 +241,7 @@ Cette méthode appelle le point de terminaison Azure Active Directory V 2.0 pou
 > [!NOTE]
 > Dans Outlook, cette API n'est pas prise en charge si le complément est chargé dans une boîte aux lettres Outlook.com ou Gmail.
 
-|Hôtes|Excel, OneNote, Outlook, PowerPoint, Word|
+|Hôtes|Excel, Outlook, PowerPoint, Word|
 |---|---|
 |[Ensembles de conditions requises](specify-office-hosts-and-api-requirements.md)|[IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md)|
 
