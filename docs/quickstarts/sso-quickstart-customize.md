@@ -1,111 +1,111 @@
 ---
 title: Personnaliser votre complément compatible avec l’authentification unique Node.js
 description: Découvrez comment personnaliser le complément à extension SSO que vous avez créé avec le générateur Yeoman.
-ms.date: 02/20/2020
+ms.date: 07/07/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: d71206d6b03b8a92e50b316cc75c401866be5334
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: c1d292ed8ead40201dd035d6ae8e6997174ea477
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608826"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094483"
 ---
-# <a name="customize-your-nodejs-sso-enabled-add-in"></a><span data-ttu-id="b8b29-103">Personnaliser votre complément compatible avec l’authentification unique Node.js</span><span class="sxs-lookup"><span data-stu-id="b8b29-103">Customize your Node.js SSO-enabled add-in</span></span>
+# <a name="customize-your-nodejs-sso-enabled-add-in"></a><span data-ttu-id="40636-103">Personnaliser votre complément compatible avec l’authentification unique Node.js</span><span class="sxs-lookup"><span data-stu-id="40636-103">Customize your Node.js SSO-enabled add-in</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="b8b29-104">Cet article s’appuie sur le complément à extension SSO créé en remplissant le démarrage rapide de l’authentification [unique (SSO)](sso-quickstart.md).</span><span class="sxs-lookup"><span data-stu-id="b8b29-104">This article builds upon the SSO-enabled add-in that's created by completing the [single sign-on (SSO) quick start](sso-quickstart.md).</span></span> <span data-ttu-id="b8b29-105">Veuillez terminer le démarrage rapide avant de lire cet article.</span><span class="sxs-lookup"><span data-stu-id="b8b29-105">Please complete the quick start before reading this article.</span></span>
+> <span data-ttu-id="40636-104">Cet article s’appuie sur le complément à extension SSO créé en remplissant le démarrage rapide de l’authentification [unique (SSO)](sso-quickstart.md).</span><span class="sxs-lookup"><span data-stu-id="40636-104">This article builds upon the SSO-enabled add-in that's created by completing the [single sign-on (SSO) quick start](sso-quickstart.md).</span></span> <span data-ttu-id="40636-105">Veuillez terminer le démarrage rapide avant de lire cet article.</span><span class="sxs-lookup"><span data-stu-id="40636-105">Please complete the quick start before reading this article.</span></span>
 
-<span data-ttu-id="b8b29-106">Le [démarrage rapide de l’authentification unique](sso-quickstart.md) crée un complément à extension SSO qui obtient les informations de profil de l’utilisateur connecté et l’écrit dans le document ou le message.</span><span class="sxs-lookup"><span data-stu-id="b8b29-106">The [SSO quick start](sso-quickstart.md) creates an SSO-enabled add-in that gets the signed-in user's profile information and writes it to the document or message.</span></span> <span data-ttu-id="b8b29-107">Dans cet article, vous découvrirez le processus de mise à jour du complément que vous avez créé avec le générateur Yeoman dans le démarrage rapide de l’authentification unique, afin d’ajouter de nouvelles fonctionnalités qui nécessitent des autorisations différentes.</span><span class="sxs-lookup"><span data-stu-id="b8b29-107">In this article, you'll walk through the process of updating the add-in that you created with the Yeoman generator in the SSO quick start, to add new functionality that requires different permissions.</span></span>
+<span data-ttu-id="40636-106">Le [démarrage rapide de l’authentification unique](sso-quickstart.md) crée un complément à extension SSO qui obtient les informations de profil de l’utilisateur connecté et l’écrit dans le document ou le message.</span><span class="sxs-lookup"><span data-stu-id="40636-106">The [SSO quick start](sso-quickstart.md) creates an SSO-enabled add-in that gets the signed-in user's profile information and writes it to the document or message.</span></span> <span data-ttu-id="40636-107">Dans cet article, vous découvrirez le processus de mise à jour du complément que vous avez créé avec le générateur Yeoman dans le démarrage rapide de l’authentification unique, afin d’ajouter de nouvelles fonctionnalités qui nécessitent des autorisations différentes.</span><span class="sxs-lookup"><span data-stu-id="40636-107">In this article, you'll walk through the process of updating the add-in that you created with the Yeoman generator in the SSO quick start, to add new functionality that requires different permissions.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="b8b29-108">Conditions préalables</span><span class="sxs-lookup"><span data-stu-id="b8b29-108">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="40636-108">Conditions préalables</span><span class="sxs-lookup"><span data-stu-id="40636-108">Prerequisites</span></span>
 
-* <span data-ttu-id="b8b29-109">Un complément Office que vous avez créé en suivant les instructions du [démarrage rapide de l’authentification unique](sso-quickstart.md).</span><span class="sxs-lookup"><span data-stu-id="b8b29-109">An Office Add-in that you created by following the instructions in the [SSO quick start](sso-quickstart.md).</span></span>
+* <span data-ttu-id="40636-109">Un complément Office que vous avez créé en suivant les instructions du [démarrage rapide de l’authentification unique](sso-quickstart.md).</span><span class="sxs-lookup"><span data-stu-id="40636-109">An Office Add-in that you created by following the instructions in the [SSO quick start](sso-quickstart.md).</span></span>
 
-* <span data-ttu-id="b8b29-110">Au moins des fichiers et classeurs sont stockés sur OneDrive Entreprise dans votre abonnement Office 365.</span><span class="sxs-lookup"><span data-stu-id="b8b29-110">At least a few files and folders stored on OneDrive for Business in your Office 365 subscription.</span></span>
+* <span data-ttu-id="40636-110">Au moins quelques fichiers et dossiers stockés sur OneDrive entreprise dans votre abonnement Microsoft 365.</span><span class="sxs-lookup"><span data-stu-id="40636-110">At least a few files and folders stored on OneDrive for Business in your Microsoft 365 subscription.</span></span>
 
-* <span data-ttu-id="b8b29-111">[Node.js](https://nodejs.org) (la dernière version [LTS](https://nodejs.org/about/releases))</span><span class="sxs-lookup"><span data-stu-id="b8b29-111">[Node.js](https://nodejs.org) (the latest [LTS](https://nodejs.org/about/releases) version).</span></span>
+* <span data-ttu-id="40636-111">[Node.js](https://nodejs.org) (la dernière version [LTS](https://nodejs.org/about/releases))</span><span class="sxs-lookup"><span data-stu-id="40636-111">[Node.js](https://nodejs.org) (the latest [LTS](https://nodejs.org/about/releases) version).</span></span>
 
 [!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
-## <a name="review-contents-of-the-project"></a><span data-ttu-id="b8b29-112">Vérifier le contenu du projet</span><span class="sxs-lookup"><span data-stu-id="b8b29-112">Review contents of the project</span></span>
+## <a name="review-contents-of-the-project"></a><span data-ttu-id="40636-112">Vérifier le contenu du projet</span><span class="sxs-lookup"><span data-stu-id="40636-112">Review contents of the project</span></span>
 
-<span data-ttu-id="b8b29-113">Commençons par un examen rapide du projet de complément que vous avez [créé précédemment avec le générateur Yeoman](sso-quickstart.md).</span><span class="sxs-lookup"><span data-stu-id="b8b29-113">Let's begin with a quick review of the add-in project that you previously [created with the Yeoman generator](sso-quickstart.md).</span></span>
+<span data-ttu-id="40636-113">Commençons par un examen rapide du projet de complément que vous avez [créé précédemment avec le générateur Yeoman](sso-quickstart.md).</span><span class="sxs-lookup"><span data-stu-id="40636-113">Let's begin with a quick review of the add-in project that you previously [created with the Yeoman generator](sso-quickstart.md).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="b8b29-114">Dans les emplacements où cet article fait référence à des fichiers de script utilisant l’extension de fichier **. js** , supposez plutôt l’extension de fichier **. TS** si votre projet a été créé avec une écriture.</span><span class="sxs-lookup"><span data-stu-id="b8b29-114">In places where this article references script files using **.js** file extension, assume the **.ts** file extension instead if your project was created with TypeScript.</span></span>
+> <span data-ttu-id="40636-114">Dans les emplacements où cet article fait référence à des fichiers de script utilisant l’extension de fichier **. js** , supposez plutôt l’extension de fichier **. TS** si votre projet a été créé avec une écriture.</span><span class="sxs-lookup"><span data-stu-id="40636-114">In places where this article references script files using **.js** file extension, assume the **.ts** file extension instead if your project was created with TypeScript.</span></span>
 
 [!include[project structure for an SSO-enabled add-in created with the Yeoman generator](../includes/sso-yeoman-project-structure.md)]
 
-## <a name="add-new-functionality"></a><span data-ttu-id="b8b29-115">Ajouter une nouvelle fonctionnalité</span><span class="sxs-lookup"><span data-stu-id="b8b29-115">Add new functionality</span></span> 
+## <a name="add-new-functionality"></a><span data-ttu-id="40636-115">Ajouter une nouvelle fonctionnalité</span><span class="sxs-lookup"><span data-stu-id="40636-115">Add new functionality</span></span>
 
-<span data-ttu-id="b8b29-116">Le complément que vous avez créé avec le démarrage rapide de l’authentification unique utilise Microsoft Graph pour obtenir les informations de profil de l’utilisateur connecté et écrit ces informations dans le document ou le message.</span><span class="sxs-lookup"><span data-stu-id="b8b29-116">The add-in that you created with the SSO quick start uses Microsoft Graph to get the signed-in user's profile information and writes that information to the document or message.</span></span> <span data-ttu-id="b8b29-117">Nous allons modifier les fonctionnalités du complément de sorte qu’il récupère les noms des 10 fichiers et dossiers les plus à partir de OneDrive entreprise de l’utilisateur connecté et qu’il écrit ces informations dans le document ou le message.</span><span class="sxs-lookup"><span data-stu-id="b8b29-117">Let's change the add-in's functionality such that it gets the names of the top 10 files and folders from the signed-in user's OneDrive for Business and writes that information to the document or message.</span></span> <span data-ttu-id="b8b29-118">L’activation de cette nouvelle fonctionnalité nécessite la mise à jour des autorisations d’application dans Azure et la mise à jour du code dans le projet de complément.</span><span class="sxs-lookup"><span data-stu-id="b8b29-118">Enabling this new functionality requires updating app permissions in Azure and updating code within the add-in project.</span></span>
+<span data-ttu-id="40636-116">Le complément que vous avez créé avec le démarrage rapide de l’authentification unique utilise Microsoft Graph pour obtenir les informations de profil de l’utilisateur connecté et écrit ces informations dans le document ou le message.</span><span class="sxs-lookup"><span data-stu-id="40636-116">The add-in that you created with the SSO quick start uses Microsoft Graph to get the signed-in user's profile information and writes that information to the document or message.</span></span> <span data-ttu-id="40636-117">Nous allons modifier les fonctionnalités du complément de sorte qu’il récupère les noms des 10 fichiers et dossiers les plus à partir de OneDrive entreprise de l’utilisateur connecté et qu’il écrit ces informations dans le document ou le message.</span><span class="sxs-lookup"><span data-stu-id="40636-117">Let's change the add-in's functionality such that it gets the names of the top 10 files and folders from the signed-in user's OneDrive for Business and writes that information to the document or message.</span></span> <span data-ttu-id="40636-118">L’activation de cette nouvelle fonctionnalité nécessite la mise à jour des autorisations d’application dans Azure et la mise à jour du code dans le projet de complément.</span><span class="sxs-lookup"><span data-stu-id="40636-118">Enabling this new functionality requires updating app permissions in Azure and updating code within the add-in project.</span></span>
 
-### <a name="update-app-permissions-in-azure"></a><span data-ttu-id="b8b29-119">Mettre à jour les autorisations d’application dans Azure</span><span class="sxs-lookup"><span data-stu-id="b8b29-119">Update app permissions in Azure</span></span>
+### <a name="update-app-permissions-in-azure"></a><span data-ttu-id="40636-119">Mettre à jour les autorisations d’application dans Azure</span><span class="sxs-lookup"><span data-stu-id="40636-119">Update app permissions in Azure</span></span>
 
-<span data-ttu-id="b8b29-120">Avant que le complément puisse lire correctement le contenu de OneDrive entreprise de l’utilisateur, les informations d’inscription de son application dans Azure doivent être mises à jour avec les autorisations appropriées.</span><span class="sxs-lookup"><span data-stu-id="b8b29-120">Before the add-in can successfully read the contents of the user's OneDrive for Business, its app registration information in Azure must be updated with the appropriate permissions.</span></span> <span data-ttu-id="b8b29-121">Procédez comme suit pour accorder à l’application l’autorisation **files. Read. All** et révoquer l’autorisation **User. Read** , qui n’est plus nécessaire.</span><span class="sxs-lookup"><span data-stu-id="b8b29-121">Complete the following steps to grant the app the **Files.Read.All** permission and revoke the **User.Read** permission, which is no longer needed.</span></span>
+<span data-ttu-id="40636-120">Avant que le complément puisse lire correctement le contenu de OneDrive entreprise de l’utilisateur, les informations d’inscription de son application dans Azure doivent être mises à jour avec les autorisations appropriées.</span><span class="sxs-lookup"><span data-stu-id="40636-120">Before the add-in can successfully read the contents of the user's OneDrive for Business, its app registration information in Azure must be updated with the appropriate permissions.</span></span> <span data-ttu-id="40636-121">Procédez comme suit pour accorder à l’application l’autorisation **files. Read. All** et révoquer l’autorisation **User. Read** , qui n’est plus nécessaire.</span><span class="sxs-lookup"><span data-stu-id="40636-121">Complete the following steps to grant the app the **Files.Read.All** permission and revoke the **User.Read** permission, which is no longer needed.</span></span>
 
-1. <span data-ttu-id="b8b29-122">Accédez au [portail Azure](https://ms.portal.azure.com/#home) et **Connectez-vous à l’aide de vos informations d’identification d’administrateur Office 365**.</span><span class="sxs-lookup"><span data-stu-id="b8b29-122">Navigate to the [Azure portal](https://ms.portal.azure.com/#home) and **sign in using your Office 365 administrator credentials**.</span></span> 
+1. <span data-ttu-id="40636-122">Accédez au [portail Azure](https://ms.portal.azure.com/#home) et **Connectez-vous à l’aide de vos informations d’identification d’administrateur Microsoft 365**.</span><span class="sxs-lookup"><span data-stu-id="40636-122">Navigate to the [Azure portal](https://ms.portal.azure.com/#home) and **sign in using your Microsoft 365 administrator credentials**.</span></span>
 
-2. <span data-ttu-id="b8b29-123">Accédez à la page **inscriptions des applications** .</span><span class="sxs-lookup"><span data-stu-id="b8b29-123">Navigate to the **App registrations** page.</span></span> 
+2. <span data-ttu-id="40636-123">Accédez à la page **inscriptions des applications** .</span><span class="sxs-lookup"><span data-stu-id="40636-123">Navigate to the **App registrations** page.</span></span>
     > [!TIP]
-    > <span data-ttu-id="b8b29-124">Pour ce faire, vous pouvez choisir la vignette **inscriptions des applications** sur la page d’accueil Azure ou à l’aide de la zone de recherche de la page d’accueil pour rechercher et choisir les inscriptions de l' **application**.</span><span class="sxs-lookup"><span data-stu-id="b8b29-124">You can do this either by choosing the **App registrations** tile on the Azure home page or by using the search box on the home page to find and choose **App registrations**.</span></span>
+    > <span data-ttu-id="40636-124">Pour ce faire, vous pouvez choisir la vignette **inscriptions des applications** sur la page d’accueil Azure ou à l’aide de la zone de recherche de la page d’accueil pour rechercher et choisir les inscriptions de l' **application**.</span><span class="sxs-lookup"><span data-stu-id="40636-124">You can do this either by choosing the **App registrations** tile on the Azure home page or by using the search box on the home page to find and choose **App registrations**.</span></span>
 
-3. <span data-ttu-id="b8b29-125">Sur la page **inscriptions des applications** , sélectionnez l’application que vous avez créée au démarrage rapide.</span><span class="sxs-lookup"><span data-stu-id="b8b29-125">On the **App registrations** page, choose the app that you created during the quick start.</span></span> 
+3. <span data-ttu-id="40636-125">Sur la page **inscriptions des applications** , sélectionnez l’application que vous avez créée au démarrage rapide.</span><span class="sxs-lookup"><span data-stu-id="40636-125">On the **App registrations** page, choose the app that you created during the quick start.</span></span> 
     > [!TIP]
-    > <span data-ttu-id="b8b29-126">Le **nom complet** de l’application correspond au nom du complément que vous avez spécifié lors de la création du projet avec le générateur Yeoman.</span><span class="sxs-lookup"><span data-stu-id="b8b29-126">The **Display name** of the app will match the add-in name that you specified when you created the project with the Yeoman generator.</span></span>
+    > <span data-ttu-id="40636-126">Le **nom complet** de l’application correspond au nom du complément que vous avez spécifié lors de la création du projet avec le générateur Yeoman.</span><span class="sxs-lookup"><span data-stu-id="40636-126">The **Display name** of the app will match the add-in name that you specified when you created the project with the Yeoman generator.</span></span>
 
-4. <span data-ttu-id="b8b29-127">À partir de la page vue d’ensemble de l’application, choisissez **autorisations d’API** sous l’en-tête **gérer** dans la partie gauche de la page.</span><span class="sxs-lookup"><span data-stu-id="b8b29-127">From the app overview page, choose **API permissions** under the **Manage** heading on the left side of the page.</span></span>
+4. <span data-ttu-id="40636-127">À partir de la page vue d’ensemble de l’application, choisissez **autorisations d’API** sous l’en-tête **gérer** dans la partie gauche de la page.</span><span class="sxs-lookup"><span data-stu-id="40636-127">From the app overview page, choose **API permissions** under the **Manage** heading on the left side of the page.</span></span>
 
-5. <span data-ttu-id="b8b29-128">Dans la ligne **User. Read** du tableau autorisations, cliquez sur les points de suspension, puis sélectionnez **révoquer le consentement** de l’administrateur dans le menu qui s’affiche.</span><span class="sxs-lookup"><span data-stu-id="b8b29-128">In the **User.Read** row of the permissions table, choose the ellipsis and then select **Revoke admin consent** from the menu that appears.</span></span>
+5. <span data-ttu-id="40636-128">Dans la ligne **User. Read** du tableau autorisations, cliquez sur les points de suspension, puis sélectionnez **révoquer le consentement** de l’administrateur dans le menu qui s’affiche.</span><span class="sxs-lookup"><span data-stu-id="40636-128">In the **User.Read** row of the permissions table, choose the ellipsis and then select **Revoke admin consent** from the menu that appears.</span></span>
 
-6. <span data-ttu-id="b8b29-129">Sélectionnez le bouton **Oui, supprimer** en réponse à l’invite affichée.</span><span class="sxs-lookup"><span data-stu-id="b8b29-129">Select the **Yes, remove** button in response to the prompt that's displayed.</span></span>
+6. <span data-ttu-id="40636-129">Sélectionnez le bouton **Oui, supprimer** en réponse à l’invite affichée.</span><span class="sxs-lookup"><span data-stu-id="40636-129">Select the **Yes, remove** button in response to the prompt that's displayed.</span></span>
 
-7. <span data-ttu-id="b8b29-130">Dans la ligne **User. Read** du tableau des autorisations, cliquez sur les points de suspension, puis sélectionnez **Supprimer l’autorisation** dans le menu qui s’affiche.</span><span class="sxs-lookup"><span data-stu-id="b8b29-130">In the **User.Read** row of the permissions table, choose the ellipsis and then select **Remove permission** from the menu that appears.</span></span>
+7. <span data-ttu-id="40636-130">Dans la ligne **User. Read** du tableau des autorisations, cliquez sur les points de suspension, puis sélectionnez **Supprimer l’autorisation** dans le menu qui s’affiche.</span><span class="sxs-lookup"><span data-stu-id="40636-130">In the **User.Read** row of the permissions table, choose the ellipsis and then select **Remove permission** from the menu that appears.</span></span>
 
-8. <span data-ttu-id="b8b29-131">Sélectionnez le bouton **Oui, supprimer** en réponse à l’invite affichée.</span><span class="sxs-lookup"><span data-stu-id="b8b29-131">Select the **Yes, remove** button in response to the prompt that's displayed.</span></span>
+8. <span data-ttu-id="40636-131">Sélectionnez le bouton **Oui, supprimer** en réponse à l’invite affichée.</span><span class="sxs-lookup"><span data-stu-id="40636-131">Select the **Yes, remove** button in response to the prompt that's displayed.</span></span>
 
-9. <span data-ttu-id="b8b29-132">Cliquez sur le bouton **Ajouter une autorisation**.</span><span class="sxs-lookup"><span data-stu-id="b8b29-132">Select the **Add a permission** button.</span></span>
+9. <span data-ttu-id="40636-132">Cliquez sur le bouton **Ajouter une autorisation**.</span><span class="sxs-lookup"><span data-stu-id="40636-132">Select the **Add a permission** button.</span></span>
 
-10. <span data-ttu-id="b8b29-133">Dans le panneau qui s’ouvre, choisissez **Microsoft Graph** , puis sélectionnez **autorisations déléguées**.</span><span class="sxs-lookup"><span data-stu-id="b8b29-133">On the panel that opens choose **Microsoft Graph** and then choose **Delegated permissions**.</span></span>
+10. <span data-ttu-id="40636-133">Dans le panneau qui s’ouvre, choisissez **Microsoft Graph** , puis sélectionnez **autorisations déléguées**.</span><span class="sxs-lookup"><span data-stu-id="40636-133">On the panel that opens choose **Microsoft Graph** and then choose **Delegated permissions**.</span></span>
 
-11. <span data-ttu-id="b8b29-134">Dans le panneau autorisations de l' **API de demande** :</span><span class="sxs-lookup"><span data-stu-id="b8b29-134">On the **Request API permissions** panel:</span></span>
+11. <span data-ttu-id="40636-134">Dans le panneau autorisations de l' **API de demande** :</span><span class="sxs-lookup"><span data-stu-id="40636-134">On the **Request API permissions** panel:</span></span>
 
-    <span data-ttu-id="b8b29-135">a.</span><span class="sxs-lookup"><span data-stu-id="b8b29-135">a.</span></span> <span data-ttu-id="b8b29-136">Sous **fichiers**, sélectionnez **fichiers. Read. All**.</span><span class="sxs-lookup"><span data-stu-id="b8b29-136">Under **Files**, select **Files.Read.All**.</span></span>
+    <span data-ttu-id="40636-135">a.</span><span class="sxs-lookup"><span data-stu-id="40636-135">a.</span></span> <span data-ttu-id="40636-136">Sous **fichiers**, sélectionnez **fichiers. Read. All**.</span><span class="sxs-lookup"><span data-stu-id="40636-136">Under **Files**, select **Files.Read.All**.</span></span>
 
-    <span data-ttu-id="b8b29-137">b.</span><span class="sxs-lookup"><span data-stu-id="b8b29-137">b.</span></span> <span data-ttu-id="b8b29-138">Sélectionnez le bouton **Ajouter des autorisations** en bas du panneau pour enregistrer ces modifications d’autorisations.</span><span class="sxs-lookup"><span data-stu-id="b8b29-138">Select the **Add permissions** button at the bottom of the panel to save these permissions changes.</span></span>
+    <span data-ttu-id="40636-137">b.</span><span class="sxs-lookup"><span data-stu-id="40636-137">b.</span></span> <span data-ttu-id="40636-138">Sélectionnez le bouton **Ajouter des autorisations** en bas du panneau pour enregistrer ces modifications d’autorisations.</span><span class="sxs-lookup"><span data-stu-id="40636-138">Select the **Add permissions** button at the bottom of the panel to save these permissions changes.</span></span>
 
-12. <span data-ttu-id="b8b29-139">Sélectionnez le bouton **accorder le consentement de l’administrateur pour [nom du client]** .</span><span class="sxs-lookup"><span data-stu-id="b8b29-139">Select the **Grant admin consent for [tenant name]** button.</span></span>
+12. <span data-ttu-id="40636-139">Sélectionnez le bouton **accorder le consentement de l’administrateur pour [nom du client]** .</span><span class="sxs-lookup"><span data-stu-id="40636-139">Select the **Grant admin consent for [tenant name]** button.</span></span>
 
-13. <span data-ttu-id="b8b29-140">Sélectionnez le bouton **Oui** en réponse à l’invite affichée.</span><span class="sxs-lookup"><span data-stu-id="b8b29-140">Select the **Yes** button in response to the prompt that's displayed.</span></span>
+13. <span data-ttu-id="40636-140">Sélectionnez le bouton **Oui** en réponse à l’invite affichée.</span><span class="sxs-lookup"><span data-stu-id="40636-140">Select the **Yes** button in response to the prompt that's displayed.</span></span>
 
-### <a name="update-code-in-the-add-in-project"></a><span data-ttu-id="b8b29-141">Mettre à jour le code dans le projet de complément</span><span class="sxs-lookup"><span data-stu-id="b8b29-141">Update code in the add-in project</span></span>
+### <a name="update-code-in-the-add-in-project"></a><span data-ttu-id="40636-141">Mettre à jour le code dans le projet de complément</span><span class="sxs-lookup"><span data-stu-id="40636-141">Update code in the add-in project</span></span>
 
-<span data-ttu-id="b8b29-142">Pour permettre au complément de lire le contenu de OneDrive entreprise de l’utilisateur connecté, vous devez :</span><span class="sxs-lookup"><span data-stu-id="b8b29-142">To enable the add-in to read contents of the signed-in user's OneDrive for Business, you'll need to:</span></span>
+<span data-ttu-id="40636-142">Pour permettre au complément de lire le contenu de OneDrive entreprise de l’utilisateur connecté, vous devez :</span><span class="sxs-lookup"><span data-stu-id="40636-142">To enable the add-in to read contents of the signed-in user's OneDrive for Business, you'll need to:</span></span>
 
-- <span data-ttu-id="b8b29-143">Mettez à jour le code qui fait référence à l’URL de Microsoft Graph, aux paramètres et à l’étendue d’accès requise.</span><span class="sxs-lookup"><span data-stu-id="b8b29-143">Update the code that references the Microsoft Graph URL, parameters, and required access scope.</span></span>
+- <span data-ttu-id="40636-143">Mettez à jour le code qui fait référence à l’URL de Microsoft Graph, aux paramètres et à l’étendue d’accès requise.</span><span class="sxs-lookup"><span data-stu-id="40636-143">Update the code that references the Microsoft Graph URL, parameters, and required access scope.</span></span>
 
-- <span data-ttu-id="b8b29-144">Mettez à jour le code qui définit l’interface utilisateur du volet Office, afin qu’il décrive précisément les nouvelles fonctionnalités.</span><span class="sxs-lookup"><span data-stu-id="b8b29-144">Update the code that defines the task pane UI, so that it accurately describes the new functionality.</span></span> 
+- <span data-ttu-id="40636-144">Mettez à jour le code qui définit l’interface utilisateur du volet Office, afin qu’il décrive précisément les nouvelles fonctionnalités.</span><span class="sxs-lookup"><span data-stu-id="40636-144">Update the code that defines the task pane UI, so that it accurately describes the new functionality.</span></span> 
 
-- <span data-ttu-id="b8b29-145">Mettez à jour le code qui analyse la réponse à partir de Microsoft Graph et l’écrit dans le document ou le message.</span><span class="sxs-lookup"><span data-stu-id="b8b29-145">Update the code that parses the response from Microsoft Graph and writes it to the document or message.</span></span>
+- <span data-ttu-id="40636-145">Mettez à jour le code qui analyse la réponse à partir de Microsoft Graph et l’écrit dans le document ou le message.</span><span class="sxs-lookup"><span data-stu-id="40636-145">Update the code that parses the response from Microsoft Graph and writes it to the document or message.</span></span>
 
-<span data-ttu-id="b8b29-146">Les étapes suivantes décrivent ces mises à jour.</span><span class="sxs-lookup"><span data-stu-id="b8b29-146">The following steps describe these updates.</span></span>
+<span data-ttu-id="40636-146">Les étapes suivantes décrivent ces mises à jour.</span><span class="sxs-lookup"><span data-stu-id="40636-146">The following steps describe these updates.</span></span>
 
-### <a name="changes-required-for-any-type-of-add-in"></a><span data-ttu-id="b8b29-147">Modifications requises pour tout type de complément</span><span class="sxs-lookup"><span data-stu-id="b8b29-147">Changes required for any type of add-in</span></span>
+### <a name="changes-required-for-any-type-of-add-in"></a><span data-ttu-id="40636-147">Modifications requises pour tout type de complément</span><span class="sxs-lookup"><span data-stu-id="40636-147">Changes required for any type of add-in</span></span>
 
-<span data-ttu-id="b8b29-148">Effectuez les étapes suivantes pour votre complément, pour modifier l’URL, les paramètres et l’étendue d’accès de Microsoft Graph, et mettre à jour l’interface utilisateur du volet Office.</span><span class="sxs-lookup"><span data-stu-id="b8b29-148">Complete the following steps for your add-in, to change the Microsoft Graph URL, parameters, and access scope, and update the taskpane UI.</span></span> <span data-ttu-id="b8b29-149">Ces étapes sont les mêmes, quel que soit l’hôte Office que votre complément cible.</span><span class="sxs-lookup"><span data-stu-id="b8b29-149">These steps are the same, regardless of which Office host your add-in targets.</span></span>
+<span data-ttu-id="40636-148">Effectuez les étapes suivantes pour votre complément, pour modifier l’URL, les paramètres et l’étendue d’accès de Microsoft Graph, et mettre à jour l’interface utilisateur du volet Office.</span><span class="sxs-lookup"><span data-stu-id="40636-148">Complete the following steps for your add-in, to change the Microsoft Graph URL, parameters, and access scope, and update the taskpane UI.</span></span> <span data-ttu-id="40636-149">Ces étapes sont les mêmes, quel que soit l’hôte Office que votre complément cible.</span><span class="sxs-lookup"><span data-stu-id="40636-149">These steps are the same, regardless of which Office host your add-in targets.</span></span>
 
-1. <span data-ttu-id="b8b29-150">Dans le **./. ENV** (fichier) :</span><span class="sxs-lookup"><span data-stu-id="b8b29-150">In the **./.ENV** file:</span></span>
+1. <span data-ttu-id="40636-150">Dans le **./. ENV** (fichier) :</span><span class="sxs-lookup"><span data-stu-id="40636-150">In the **./.ENV** file:</span></span>
 
-    <span data-ttu-id="b8b29-151">a.</span><span class="sxs-lookup"><span data-stu-id="b8b29-151">a.</span></span> <span data-ttu-id="b8b29-152">Remplacez `GRAPH_URL_SEGMENT=/me` par :`GRAPH_URL_SEGMENT=/me/drive/root/children`</span><span class="sxs-lookup"><span data-stu-id="b8b29-152">Replace `GRAPH_URL_SEGMENT=/me` with the following: `GRAPH_URL_SEGMENT=/me/drive/root/children`</span></span>
+    <span data-ttu-id="40636-151">a.</span><span class="sxs-lookup"><span data-stu-id="40636-151">a.</span></span> <span data-ttu-id="40636-152">Remplacez `GRAPH_URL_SEGMENT=/me` par :`GRAPH_URL_SEGMENT=/me/drive/root/children`</span><span class="sxs-lookup"><span data-stu-id="40636-152">Replace `GRAPH_URL_SEGMENT=/me` with the following: `GRAPH_URL_SEGMENT=/me/drive/root/children`</span></span>
 
-    <span data-ttu-id="b8b29-153">b.</span><span class="sxs-lookup"><span data-stu-id="b8b29-153">b.</span></span> <span data-ttu-id="b8b29-154">Remplacez `QUERY_PARAM_SEGMENT=` par :`QUERY_PARAM_SEGMENT=?$select=name&$top=10`</span><span class="sxs-lookup"><span data-stu-id="b8b29-154">Replace `QUERY_PARAM_SEGMENT=` with the following: `QUERY_PARAM_SEGMENT=?$select=name&$top=10`</span></span>
+    <span data-ttu-id="40636-153">b.</span><span class="sxs-lookup"><span data-stu-id="40636-153">b.</span></span> <span data-ttu-id="40636-154">Remplacez `QUERY_PARAM_SEGMENT=` par :`QUERY_PARAM_SEGMENT=?$select=name&$top=10`</span><span class="sxs-lookup"><span data-stu-id="40636-154">Replace `QUERY_PARAM_SEGMENT=` with the following: `QUERY_PARAM_SEGMENT=?$select=name&$top=10`</span></span>
 
-    <span data-ttu-id="b8b29-155">c.</span><span class="sxs-lookup"><span data-stu-id="b8b29-155">c.</span></span> <span data-ttu-id="b8b29-156">Remplacez `SCOPE=User.Read` par :`SCOPE=Files.Read.All`</span><span class="sxs-lookup"><span data-stu-id="b8b29-156">Replace `SCOPE=User.Read` with the following: `SCOPE=Files.Read.All`</span></span>
+    <span data-ttu-id="40636-155">c.</span><span class="sxs-lookup"><span data-stu-id="40636-155">c.</span></span> <span data-ttu-id="40636-156">Remplacez `SCOPE=User.Read` par :`SCOPE=Files.Read.All`</span><span class="sxs-lookup"><span data-stu-id="40636-156">Replace `SCOPE=User.Read` with the following: `SCOPE=Files.Read.All`</span></span>
 
-2. <span data-ttu-id="b8b29-157">Dans **./manifest.xml**, recherchez la ligne à `<Scope>User.Read</Scope>` la fin du fichier et remplacez-la par la ligne `<Scope>Files.Read.All</Scope>` .</span><span class="sxs-lookup"><span data-stu-id="b8b29-157">In **./manifest.xml**, find the line `<Scope>User.Read</Scope>` near the end of the file and replace it with the line `<Scope>Files.Read.All</Scope>`.</span></span>
+2. <span data-ttu-id="40636-157">Dans **./manifest.xml**, recherchez la ligne à `<Scope>User.Read</Scope>` la fin du fichier et remplacez-la par la ligne `<Scope>Files.Read.All</Scope>` .</span><span class="sxs-lookup"><span data-stu-id="40636-157">In **./manifest.xml**, find the line `<Scope>User.Read</Scope>` near the end of the file and replace it with the line `<Scope>Files.Read.All</Scope>`.</span></span>
 
-3. <span data-ttu-id="b8b29-158">Dans **./SRC/helpers/fallbackauthdialog.js** (ou dans **./SRC/helpers/fallbackauthdialog.TS** pour un projet de type dactylographié), recherchez la chaîne `https://graph.microsoft.com/User.Read` et remplacez-la par la chaîne, de la manière suivante `https://graph.microsoft.com/Files.Read.All` `requestObj` :</span><span class="sxs-lookup"><span data-stu-id="b8b29-158">In **./src/helpers/fallbackauthdialog.js** (or in **./src/helpers/fallbackauthdialog.ts** for a TypeScript project), find the string `https://graph.microsoft.com/User.Read` and replace it with the string `https://graph.microsoft.com/Files.Read.All`, such that `requestObj` is defined as follows:</span></span>
+3. <span data-ttu-id="40636-158">Dans **./src/helpers/fallbackauthdialog.js** (ou dans **./SRC/helpers/fallbackauthdialog.TS** pour un projet de type dactylographié), recherchez la chaîne `https://graph.microsoft.com/User.Read` et remplacez-la par la chaîne, de la manière suivante `https://graph.microsoft.com/Files.Read.All` `requestObj` :</span><span class="sxs-lookup"><span data-stu-id="40636-158">In **./src/helpers/fallbackauthdialog.js** (or in **./src/helpers/fallbackauthdialog.ts** for a TypeScript project), find the string `https://graph.microsoft.com/User.Read` and replace it with the string `https://graph.microsoft.com/Files.Read.All`, such that `requestObj` is defined as follows:</span></span>
 
     ```javascript
     var requestObj = {
@@ -119,7 +119,7 @@ ms.locfileid: "44608826"
     };
     ```
 
-4. <span data-ttu-id="b8b29-159">Dans **./SRC/TaskPane/TaskPane.html**, recherchez l’élément `<section class="ms-firstrun-instructionstep__header">` et mettez à jour le texte à l’intérieur de cet élément pour décrire les nouvelles fonctionnalités du complément.</span><span class="sxs-lookup"><span data-stu-id="b8b29-159">In **./src/taskpane/taskpane.html**, find the element `<section class="ms-firstrun-instructionstep__header">` and update the text within that element to describe the add-in's new functionality.</span></span>
+4. <span data-ttu-id="40636-159">Dans **./src/taskpane/taskpane.html**, recherchez l’élément `<section class="ms-firstrun-instructionstep__header">` et mettez à jour le texte à l’intérieur de cet élément pour décrire les nouvelles fonctionnalités du complément.</span><span class="sxs-lookup"><span data-stu-id="40636-159">In **./src/taskpane/taskpane.html**, find the element `<section class="ms-firstrun-instructionstep__header">` and update the text within that element to describe the add-in's new functionality.</span></span>
 
     ```html
     <section class="ms-firstrun-instructionstep__header">
@@ -129,7 +129,7 @@ ms.locfileid: "44608826"
     </section>
     ```
 
-5. <span data-ttu-id="b8b29-160">Dans **./SRC/TaskPane/TaskPane.html**, recherchez et remplacez les deux occurrences de la chaîne `Get My User Profile Information` par la chaîne `Read my OneDrive for Business` .</span><span class="sxs-lookup"><span data-stu-id="b8b29-160">In **./src/taskpane/taskpane.html**, find and replace both occurrences of the string `Get My User Profile Information` with the string `Read my OneDrive for Business`.</span></span>
+5. <span data-ttu-id="40636-160">Dans **./src/taskpane/taskpane.html**, recherchez et remplacez les deux occurrences de la chaîne `Get My User Profile Information` par la chaîne `Read my OneDrive for Business` .</span><span class="sxs-lookup"><span data-stu-id="40636-160">In **./src/taskpane/taskpane.html**, find and replace both occurrences of the string `Get My User Profile Information` with the string `Read my OneDrive for Business`.</span></span>
 
     ```html
     <li class="ms-ListItem">
@@ -146,7 +146,7 @@ ms.locfileid: "44608826"
     </p>
     ```
 
-6. <span data-ttu-id="b8b29-161">Dans **./SRC/TaskPane/TaskPane.html**, recherchez et remplacez la chaîne `Your user profile information will be displayed in the document.` par la chaîne `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.` .</span><span class="sxs-lookup"><span data-stu-id="b8b29-161">In **./src/taskpane/taskpane.html**, find and replace the string `Your user profile information will be displayed in the document.` with the string `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.`.</span></span>
+6. <span data-ttu-id="40636-161">Dans **./src/taskpane/taskpane.html**, recherchez et remplacez la chaîne `Your user profile information will be displayed in the document.` par la chaîne `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.` .</span><span class="sxs-lookup"><span data-stu-id="40636-161">In **./src/taskpane/taskpane.html**, find and replace the string `Your user profile information will be displayed in the document.` with the string `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.`.</span></span>
 
     ```html
     <li class="ms-ListItem">
@@ -155,22 +155,22 @@ ms.locfileid: "44608826"
     </li>
     ```
 
-7. <span data-ttu-id="b8b29-162">Mettez à jour le code qui analyse la réponse à partir de Microsoft Graph et l’écrit dans le document ou le message, en suivant les instructions de la section correspondant à votre type de complément :</span><span class="sxs-lookup"><span data-stu-id="b8b29-162">Update the code that parses the response from Microsoft Graph and writes it to the document or message, by following guidance in the section that corresponds to your type of add-in:</span></span>
+7. <span data-ttu-id="40636-162">Mettez à jour le code qui analyse la réponse à partir de Microsoft Graph et l’écrit dans le document ou le message, en suivant les instructions de la section correspondant à votre type de complément :</span><span class="sxs-lookup"><span data-stu-id="40636-162">Update the code that parses the response from Microsoft Graph and writes it to the document or message, by following guidance in the section that corresponds to your type of add-in:</span></span>
 
-    - [<span data-ttu-id="b8b29-163">Modifications requises pour un complément Excel (JavaScript)</span><span class="sxs-lookup"><span data-stu-id="b8b29-163">Changes required for an Excel add-in (JavaScript)</span></span>](#changes-required-for-an-excel-add-in-javascript)
-    - [<span data-ttu-id="b8b29-164">Modifications requises pour un complément Excel (machine à écrire)</span><span class="sxs-lookup"><span data-stu-id="b8b29-164">Changes required for an Excel add-in (TypeScript)</span></span>](#changes-required-for-an-excel-add-in-typescript)
-    - [<span data-ttu-id="b8b29-165">Modifications requises pour un complément Outlook (JavaScript)</span><span class="sxs-lookup"><span data-stu-id="b8b29-165">Changes required for an Outlook add-in (JavaScript)</span></span>](#changes-required-for-an-outlook-add-in-javascript)
-    - [<span data-ttu-id="b8b29-166">Modifications requises pour un complément Outlook (machine à écrire)</span><span class="sxs-lookup"><span data-stu-id="b8b29-166">Changes required for an Outlook add-in (TypeScript)</span></span>](#changes-required-for-an-outlook-add-in-typescript)
-    - [<span data-ttu-id="b8b29-167">Modifications requises pour un complément PowerPoint (JavaScript)</span><span class="sxs-lookup"><span data-stu-id="b8b29-167">Changes required for a PowerPoint add-in (JavaScript)</span></span>](#changes-required-for-a-powerpoint-add-in-javascript)
-    - [<span data-ttu-id="b8b29-168">Modifications requises pour un complément PowerPoint (machine à écrire)</span><span class="sxs-lookup"><span data-stu-id="b8b29-168">Changes required for a PowerPoint add-in (TypeScript)</span></span>](#changes-required-for-a-powerpoint-add-in-typescript)
-    - [<span data-ttu-id="b8b29-169">Modifications requises pour un complément Word (JavaScript)</span><span class="sxs-lookup"><span data-stu-id="b8b29-169">Changes required for a Word add-in (JavaScript)</span></span>](#changes-required-for-a-word-add-in-javascript)
-    - [<span data-ttu-id="b8b29-170">Modifications requises pour un complément Word (machine à écrire)</span><span class="sxs-lookup"><span data-stu-id="b8b29-170">Changes required for a Word add-in (TypeScript)</span></span>](#changes-required-for-a-word-add-in-typescript)
+    - [<span data-ttu-id="40636-163">Modifications requises pour un complément Excel (JavaScript)</span><span class="sxs-lookup"><span data-stu-id="40636-163">Changes required for an Excel add-in (JavaScript)</span></span>](#changes-required-for-an-excel-add-in-javascript)
+    - [<span data-ttu-id="40636-164">Modifications requises pour un complément Excel (machine à écrire)</span><span class="sxs-lookup"><span data-stu-id="40636-164">Changes required for an Excel add-in (TypeScript)</span></span>](#changes-required-for-an-excel-add-in-typescript)
+    - [<span data-ttu-id="40636-165">Modifications requises pour un complément Outlook (JavaScript)</span><span class="sxs-lookup"><span data-stu-id="40636-165">Changes required for an Outlook add-in (JavaScript)</span></span>](#changes-required-for-an-outlook-add-in-javascript)
+    - [<span data-ttu-id="40636-166">Modifications requises pour un complément Outlook (machine à écrire)</span><span class="sxs-lookup"><span data-stu-id="40636-166">Changes required for an Outlook add-in (TypeScript)</span></span>](#changes-required-for-an-outlook-add-in-typescript)
+    - [<span data-ttu-id="40636-167">Modifications requises pour un complément PowerPoint (JavaScript)</span><span class="sxs-lookup"><span data-stu-id="40636-167">Changes required for a PowerPoint add-in (JavaScript)</span></span>](#changes-required-for-a-powerpoint-add-in-javascript)
+    - [<span data-ttu-id="40636-168">Modifications requises pour un complément PowerPoint (machine à écrire)</span><span class="sxs-lookup"><span data-stu-id="40636-168">Changes required for a PowerPoint add-in (TypeScript)</span></span>](#changes-required-for-a-powerpoint-add-in-typescript)
+    - [<span data-ttu-id="40636-169">Modifications requises pour un complément Word (JavaScript)</span><span class="sxs-lookup"><span data-stu-id="40636-169">Changes required for a Word add-in (JavaScript)</span></span>](#changes-required-for-a-word-add-in-javascript)
+    - [<span data-ttu-id="40636-170">Modifications requises pour un complément Word (machine à écrire)</span><span class="sxs-lookup"><span data-stu-id="40636-170">Changes required for a Word add-in (TypeScript)</span></span>](#changes-required-for-a-word-add-in-typescript)
 
-### <a name="changes-required-for-an-excel-add-in-javascript"></a><span data-ttu-id="b8b29-171">Modifications requises pour un complément Excel (JavaScript)</span><span class="sxs-lookup"><span data-stu-id="b8b29-171">Changes required for an Excel add-in (JavaScript)</span></span>
+### <a name="changes-required-for-an-excel-add-in-javascript"></a><span data-ttu-id="40636-171">Modifications requises pour un complément Excel (JavaScript)</span><span class="sxs-lookup"><span data-stu-id="40636-171">Changes required for an Excel add-in (JavaScript)</span></span>
 
-<span data-ttu-id="b8b29-172">Si votre complément est un complément Excel créé avec JavaScript, effectuez les modifications suivantes dans **./SRC/helpers/documentHelper.js**:</span><span class="sxs-lookup"><span data-stu-id="b8b29-172">If your add-in is an Excel add-in that was created with JavaScript, make the following changes in **./src/helpers/documentHelper.js**:</span></span>
+<span data-ttu-id="40636-172">Si votre complément est un complément Excel qui a été créé avec JavaScript, effectuez les modifications suivantes dans **./src/helpers/documentHelper.js**:</span><span class="sxs-lookup"><span data-stu-id="40636-172">If your add-in is an Excel add-in that was created with JavaScript, make the following changes in **./src/helpers/documentHelper.js**:</span></span>
 
-1. <span data-ttu-id="b8b29-173">Recherchez la `writeDataToOfficeDocument` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="b8b29-173">Find the `writeDataToOfficeDocument` function and replace it with the following function:</span></span>
+1. <span data-ttu-id="40636-173">Recherchez la `writeDataToOfficeDocument` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="40636-173">Find the `writeDataToOfficeDocument` function and replace it with the following function:</span></span>
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -185,7 +185,7 @@ ms.locfileid: "44608826"
     }
     ```
 
-2. <span data-ttu-id="b8b29-174">Recherchez la `filterUserProfileInfo` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="b8b29-174">Find the `filterUserProfileInfo` function and replace it with the following function:</span></span>
+2. <span data-ttu-id="40636-174">Recherchez la `filterUserProfileInfo` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="40636-174">Find the `filterUserProfileInfo` function and replace it with the following function:</span></span>
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -198,7 +198,7 @@ ms.locfileid: "44608826"
     }
     ```
 
-3. <span data-ttu-id="b8b29-175">Recherchez la `writeDataToExcel` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="b8b29-175">Find the `writeDataToExcel` function and replace it with the following function:</span></span>
+3. <span data-ttu-id="40636-175">Recherchez la `writeDataToExcel` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="40636-175">Find the `writeDataToExcel` function and replace it with the following function:</span></span>
 
     ```javascript
     function writeDataToExcel(result) {
@@ -225,17 +225,17 @@ ms.locfileid: "44608826"
     }
     ```
 
-4. <span data-ttu-id="b8b29-176">Supprimez la `writeDataToOutlook` fonction.</span><span class="sxs-lookup"><span data-stu-id="b8b29-176">Delete the `writeDataToOutlook` function.</span></span>
+4. <span data-ttu-id="40636-176">Supprimez la `writeDataToOutlook` fonction.</span><span class="sxs-lookup"><span data-stu-id="40636-176">Delete the `writeDataToOutlook` function.</span></span>
 
-5. <span data-ttu-id="b8b29-177">Supprimez la `writeDataToPowerPoint` fonction.</span><span class="sxs-lookup"><span data-stu-id="b8b29-177">Delete the `writeDataToPowerPoint` function.</span></span>
+5. <span data-ttu-id="40636-177">Supprimez la `writeDataToPowerPoint` fonction.</span><span class="sxs-lookup"><span data-stu-id="40636-177">Delete the `writeDataToPowerPoint` function.</span></span>
 
-6. <span data-ttu-id="b8b29-178">Supprimez la `writeDataToWord` fonction.</span><span class="sxs-lookup"><span data-stu-id="b8b29-178">Delete the `writeDataToWord` function.</span></span>
+6. <span data-ttu-id="40636-178">Supprimez la `writeDataToWord` fonction.</span><span class="sxs-lookup"><span data-stu-id="40636-178">Delete the `writeDataToWord` function.</span></span>
 
-<span data-ttu-id="b8b29-179">Une fois ces modifications effectuées, passez directement à la section [essayer](#try-it-out) de cet article pour tester votre complément mis à jour.</span><span class="sxs-lookup"><span data-stu-id="b8b29-179">After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.</span></span>
+<span data-ttu-id="40636-179">Une fois ces modifications effectuées, passez directement à la section [essayer](#try-it-out) de cet article pour tester votre complément mis à jour.</span><span class="sxs-lookup"><span data-stu-id="40636-179">After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.</span></span>
 
-### <a name="changes-required-for-an-excel-add-in-typescript"></a><span data-ttu-id="b8b29-180">Modifications requises pour un complément Excel (machine à écrire)</span><span class="sxs-lookup"><span data-stu-id="b8b29-180">Changes required for an Excel add-in (TypeScript)</span></span>
+### <a name="changes-required-for-an-excel-add-in-typescript"></a><span data-ttu-id="40636-180">Modifications requises pour un complément Excel (machine à écrire)</span><span class="sxs-lookup"><span data-stu-id="40636-180">Changes required for an Excel add-in (TypeScript)</span></span>
 
-<span data-ttu-id="b8b29-181">Si votre complément est un complément Excel qui a été créé avec la machine à écrire, ouvrez **./SRC/TaskPane/TaskPane.TS**, recherchez la `writeDataToOfficeDocument` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="b8b29-181">If your add-in is an Excel add-in that was created with TypeScript, open **./src/taskpane/taskpane.ts**, find the `writeDataToOfficeDocument` function, and replace it with the following function:</span></span>
+<span data-ttu-id="40636-181">Si votre complément est un complément Excel qui a été créé avec la machine à écrire, ouvrez **./SRC/TaskPane/TaskPane.TS**, recherchez la `writeDataToOfficeDocument` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="40636-181">If your add-in is an Excel add-in that was created with TypeScript, open **./src/taskpane/taskpane.ts**, find the `writeDataToOfficeDocument` function, and replace it with the following function:</span></span>
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): Promise<any> {
@@ -267,13 +267,13 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 }
 ```
 
-<span data-ttu-id="b8b29-182">Une fois ces modifications effectuées, passez directement à la section [essayer](#try-it-out) de cet article pour tester votre complément mis à jour.</span><span class="sxs-lookup"><span data-stu-id="b8b29-182">After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.</span></span>
+<span data-ttu-id="40636-182">Une fois ces modifications effectuées, passez directement à la section [essayer](#try-it-out) de cet article pour tester votre complément mis à jour.</span><span class="sxs-lookup"><span data-stu-id="40636-182">After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.</span></span>
 
-### <a name="changes-required-for-an-outlook-add-in-javascript"></a><span data-ttu-id="b8b29-183">Modifications requises pour un complément Outlook (JavaScript)</span><span class="sxs-lookup"><span data-stu-id="b8b29-183">Changes required for an Outlook add-in (JavaScript)</span></span>
+### <a name="changes-required-for-an-outlook-add-in-javascript"></a><span data-ttu-id="40636-183">Modifications requises pour un complément Outlook (JavaScript)</span><span class="sxs-lookup"><span data-stu-id="40636-183">Changes required for an Outlook add-in (JavaScript)</span></span>
 
-<span data-ttu-id="b8b29-184">Si votre complément est un complément Outlook créé avec JavaScript, effectuez les modifications suivantes dans **./SRC/helpers/documentHelper.js**:</span><span class="sxs-lookup"><span data-stu-id="b8b29-184">If your add-in is an Outlook add-in that was created with JavaScript, make the following changes in **./src/helpers/documentHelper.js**:</span></span>
+<span data-ttu-id="40636-184">Si votre complément est un complément Outlook créé avec JavaScript, effectuez les modifications suivantes dans **./src/helpers/documentHelper.js**:</span><span class="sxs-lookup"><span data-stu-id="40636-184">If your add-in is an Outlook add-in that was created with JavaScript, make the following changes in **./src/helpers/documentHelper.js**:</span></span>
 
-1. <span data-ttu-id="b8b29-185">Recherchez la `writeDataToOfficeDocument` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="b8b29-185">Find the `writeDataToOfficeDocument` function and replace it with the following function:</span></span>
+1. <span data-ttu-id="40636-185">Recherchez la `writeDataToOfficeDocument` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="40636-185">Find the `writeDataToOfficeDocument` function and replace it with the following function:</span></span>
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -288,7 +288,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
     }
     ```
 
-2. <span data-ttu-id="b8b29-186">Recherchez la `filterUserProfileInfo` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="b8b29-186">Find the `filterUserProfileInfo` function and replace it with the following function:</span></span>
+2. <span data-ttu-id="40636-186">Recherchez la `filterUserProfileInfo` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="40636-186">Find the `filterUserProfileInfo` function and replace it with the following function:</span></span>
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -301,7 +301,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
     }
     ```
 
-3. <span data-ttu-id="b8b29-187">Recherchez la `writeDataToOutlook` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="b8b29-187">Find the `writeDataToOutlook` function and replace it with the following function:</span></span>
+3. <span data-ttu-id="40636-187">Recherchez la `writeDataToOutlook` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="40636-187">Find the `writeDataToOutlook` function and replace it with the following function:</span></span>
 
     ```javascript
     function writeDataToOutlook(result) {
@@ -323,17 +323,17 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
     }
     ```
 
-4. <span data-ttu-id="b8b29-188">Supprimez la `writeDataToExcel` fonction.</span><span class="sxs-lookup"><span data-stu-id="b8b29-188">Delete the `writeDataToExcel` function.</span></span>
+4. <span data-ttu-id="40636-188">Supprimez la `writeDataToExcel` fonction.</span><span class="sxs-lookup"><span data-stu-id="40636-188">Delete the `writeDataToExcel` function.</span></span>
 
-5. <span data-ttu-id="b8b29-189">Supprimez la `writeDataToPowerPoint` fonction.</span><span class="sxs-lookup"><span data-stu-id="b8b29-189">Delete the `writeDataToPowerPoint` function.</span></span>
+5. <span data-ttu-id="40636-189">Supprimez la `writeDataToPowerPoint` fonction.</span><span class="sxs-lookup"><span data-stu-id="40636-189">Delete the `writeDataToPowerPoint` function.</span></span>
 
-6. <span data-ttu-id="b8b29-190">Supprimez la `writeDataToWord` fonction.</span><span class="sxs-lookup"><span data-stu-id="b8b29-190">Delete the `writeDataToWord` function.</span></span>
+6. <span data-ttu-id="40636-190">Supprimez la `writeDataToWord` fonction.</span><span class="sxs-lookup"><span data-stu-id="40636-190">Delete the `writeDataToWord` function.</span></span>
 
-<span data-ttu-id="b8b29-191">Une fois ces modifications effectuées, passez directement à la section [essayer](#try-it-out) de cet article pour tester votre complément mis à jour.</span><span class="sxs-lookup"><span data-stu-id="b8b29-191">After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.</span></span>
+<span data-ttu-id="40636-191">Une fois ces modifications effectuées, passez directement à la section [essayer](#try-it-out) de cet article pour tester votre complément mis à jour.</span><span class="sxs-lookup"><span data-stu-id="40636-191">After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.</span></span>
 
-### <a name="changes-required-for-an-outlook-add-in-typescript"></a><span data-ttu-id="b8b29-192">Modifications requises pour un complément Outlook (machine à écrire)</span><span class="sxs-lookup"><span data-stu-id="b8b29-192">Changes required for an Outlook add-in (TypeScript)</span></span>
+### <a name="changes-required-for-an-outlook-add-in-typescript"></a><span data-ttu-id="40636-192">Modifications requises pour un complément Outlook (machine à écrire)</span><span class="sxs-lookup"><span data-stu-id="40636-192">Changes required for an Outlook add-in (TypeScript)</span></span>
 
-<span data-ttu-id="b8b29-193">Si votre complément est un complément Outlook créé avec la machine à écrire, ouvrez **./SRC/TaskPane/TaskPane.TS**, recherchez la `writeDataToOfficeDocument` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="b8b29-193">If your add-in is an Outlook add-in that was created with TypeScript, open **./src/taskpane/taskpane.ts**, find the `writeDataToOfficeDocument` function, and replace it with the following function:</span></span>
+<span data-ttu-id="40636-193">Si votre complément est un complément Outlook créé avec la machine à écrire, ouvrez **./SRC/TaskPane/TaskPane.TS**, recherchez la `writeDataToOfficeDocument` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="40636-193">If your add-in is an Outlook add-in that was created with TypeScript, open **./src/taskpane/taskpane.ts**, find the `writeDataToOfficeDocument` function, and replace it with the following function:</span></span>
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): void {
@@ -360,13 +360,13 @@ export function writeDataToOfficeDocument(result: Object): void {
 }
 ```
 
-<span data-ttu-id="b8b29-194">Une fois ces modifications effectuées, passez directement à la section [essayer](#try-it-out) de cet article pour tester votre complément mis à jour.</span><span class="sxs-lookup"><span data-stu-id="b8b29-194">After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.</span></span>
+<span data-ttu-id="40636-194">Une fois ces modifications effectuées, passez directement à la section [essayer](#try-it-out) de cet article pour tester votre complément mis à jour.</span><span class="sxs-lookup"><span data-stu-id="40636-194">After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.</span></span>
 
-### <a name="changes-required-for-a-powerpoint-add-in-javascript"></a><span data-ttu-id="b8b29-195">Modifications requises pour un complément PowerPoint (JavaScript)</span><span class="sxs-lookup"><span data-stu-id="b8b29-195">Changes required for a PowerPoint add-in (JavaScript)</span></span>
+### <a name="changes-required-for-a-powerpoint-add-in-javascript"></a><span data-ttu-id="40636-195">Modifications requises pour un complément PowerPoint (JavaScript)</span><span class="sxs-lookup"><span data-stu-id="40636-195">Changes required for a PowerPoint add-in (JavaScript)</span></span>
 
-<span data-ttu-id="b8b29-196">Si votre complément est un complément PowerPoint créé avec JavaScript, effectuez les modifications suivantes dans **./SRC/helpers/documentHelper.js**:</span><span class="sxs-lookup"><span data-stu-id="b8b29-196">If your add-in is a PowerPoint add-in that was created with JavaScript, make the following changes in **./src/helpers/documentHelper.js**:</span></span>
+<span data-ttu-id="40636-196">Si votre complément est un complément PowerPoint créé avec JavaScript, effectuez les modifications suivantes dans **./src/helpers/documentHelper.js**:</span><span class="sxs-lookup"><span data-stu-id="40636-196">If your add-in is a PowerPoint add-in that was created with JavaScript, make the following changes in **./src/helpers/documentHelper.js**:</span></span>
 
-1. <span data-ttu-id="b8b29-197">Recherchez la `writeDataToOfficeDocument` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="b8b29-197">Find the `writeDataToOfficeDocument` function and replace it with the following function:</span></span>
+1. <span data-ttu-id="40636-197">Recherchez la `writeDataToOfficeDocument` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="40636-197">Find the `writeDataToOfficeDocument` function and replace it with the following function:</span></span>
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -381,7 +381,7 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-2. <span data-ttu-id="b8b29-198">Recherchez la `filterUserProfileInfo` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="b8b29-198">Find the `filterUserProfileInfo` function and replace it with the following function:</span></span>
+2. <span data-ttu-id="40636-198">Recherchez la `filterUserProfileInfo` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="40636-198">Find the `filterUserProfileInfo` function and replace it with the following function:</span></span>
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -394,7 +394,7 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-3. <span data-ttu-id="b8b29-199">Recherchez la `writeDataToPowerPoint` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="b8b29-199">Find the `writeDataToPowerPoint` function and replace it with the following function:</span></span>
+3. <span data-ttu-id="40636-199">Recherchez la `writeDataToPowerPoint` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="40636-199">Find the `writeDataToPowerPoint` function and replace it with the following function:</span></span>
 
     ```javascript
     function writeDataToPowerPoint(result) {
@@ -422,17 +422,17 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-4. <span data-ttu-id="b8b29-200">Supprimez la `writeDataToExcel` fonction.</span><span class="sxs-lookup"><span data-stu-id="b8b29-200">Delete the `writeDataToExcel` function.</span></span>
+4. <span data-ttu-id="40636-200">Supprimez la `writeDataToExcel` fonction.</span><span class="sxs-lookup"><span data-stu-id="40636-200">Delete the `writeDataToExcel` function.</span></span>
 
-5. <span data-ttu-id="b8b29-201">Supprimez la `writeDataToOutlook` fonction.</span><span class="sxs-lookup"><span data-stu-id="b8b29-201">Delete the `writeDataToOutlook` function.</span></span>
+5. <span data-ttu-id="40636-201">Supprimez la `writeDataToOutlook` fonction.</span><span class="sxs-lookup"><span data-stu-id="40636-201">Delete the `writeDataToOutlook` function.</span></span>
 
-6. <span data-ttu-id="b8b29-202">Supprimez la `writeDataToWord` fonction.</span><span class="sxs-lookup"><span data-stu-id="b8b29-202">Delete the `writeDataToWord` function.</span></span>
+6. <span data-ttu-id="40636-202">Supprimez la `writeDataToWord` fonction.</span><span class="sxs-lookup"><span data-stu-id="40636-202">Delete the `writeDataToWord` function.</span></span>
 
-<span data-ttu-id="b8b29-203">Une fois ces modifications effectuées, passez directement à la section [essayer](#try-it-out) de cet article pour tester votre complément mis à jour.</span><span class="sxs-lookup"><span data-stu-id="b8b29-203">After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.</span></span>
+<span data-ttu-id="40636-203">Une fois ces modifications effectuées, passez directement à la section [essayer](#try-it-out) de cet article pour tester votre complément mis à jour.</span><span class="sxs-lookup"><span data-stu-id="40636-203">After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.</span></span>
 
-### <a name="changes-required-for-a-powerpoint-add-in-typescript"></a><span data-ttu-id="b8b29-204">Modifications requises pour un complément PowerPoint (machine à écrire)</span><span class="sxs-lookup"><span data-stu-id="b8b29-204">Changes required for a PowerPoint add-in (TypeScript)</span></span>
+### <a name="changes-required-for-a-powerpoint-add-in-typescript"></a><span data-ttu-id="40636-204">Modifications requises pour un complément PowerPoint (machine à écrire)</span><span class="sxs-lookup"><span data-stu-id="40636-204">Changes required for a PowerPoint add-in (TypeScript)</span></span>
 
-<span data-ttu-id="b8b29-205">Si votre complément est un complément PowerPoint créé avec la machine à écrire, ouvrez **./SRC/TaskPane/TaskPane.TS**, recherchez la `writeDataToOfficeDocument` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="b8b29-205">If your add-in is a PowerPoint add-in that was created with TypeScript, open **./src/taskpane/taskpane.ts**, find the `writeDataToOfficeDocument` function, and replace it with the following function:</span></span>
+<span data-ttu-id="40636-205">Si votre complément est un complément PowerPoint créé avec la machine à écrire, ouvrez **./SRC/TaskPane/TaskPane.TS**, recherchez la `writeDataToOfficeDocument` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="40636-205">If your add-in is a PowerPoint add-in that was created with TypeScript, open **./src/taskpane/taskpane.ts**, find the `writeDataToOfficeDocument` function, and replace it with the following function:</span></span>
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): void {
@@ -463,13 +463,13 @@ export function writeDataToOfficeDocument(result: Object): void {
 }
 ```
 
-<span data-ttu-id="b8b29-206">Une fois ces modifications effectuées, passez directement à la section [essayer](#try-it-out) de cet article pour tester votre complément mis à jour.</span><span class="sxs-lookup"><span data-stu-id="b8b29-206">After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.</span></span>
+<span data-ttu-id="40636-206">Une fois ces modifications effectuées, passez directement à la section [essayer](#try-it-out) de cet article pour tester votre complément mis à jour.</span><span class="sxs-lookup"><span data-stu-id="40636-206">After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.</span></span>
 
-### <a name="changes-required-for-a-word-add-in-javascript"></a><span data-ttu-id="b8b29-207">Modifications requises pour un complément Word (JavaScript)</span><span class="sxs-lookup"><span data-stu-id="b8b29-207">Changes required for a Word add-in (JavaScript)</span></span>
+### <a name="changes-required-for-a-word-add-in-javascript"></a><span data-ttu-id="40636-207">Modifications requises pour un complément Word (JavaScript)</span><span class="sxs-lookup"><span data-stu-id="40636-207">Changes required for a Word add-in (JavaScript)</span></span>
 
-<span data-ttu-id="b8b29-208">Si votre complément est un complément Word créé avec JavaScript, effectuez les modifications suivantes dans **./SRC/helpers/documentHelper.js**:</span><span class="sxs-lookup"><span data-stu-id="b8b29-208">If your add-in is a Word add-in that was created with JavaScript, make the following changes in **./src/helpers/documentHelper.js**:</span></span>
+<span data-ttu-id="40636-208">Si votre complément est un complément Word créé avec JavaScript, effectuez les modifications suivantes dans **./src/helpers/documentHelper.js**:</span><span class="sxs-lookup"><span data-stu-id="40636-208">If your add-in is a Word add-in that was created with JavaScript, make the following changes in **./src/helpers/documentHelper.js**:</span></span>
 
-1. <span data-ttu-id="b8b29-209">Recherchez la `writeDataToOfficeDocument` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="b8b29-209">Find the `writeDataToOfficeDocument` function and replace it with the following function:</span></span>
+1. <span data-ttu-id="40636-209">Recherchez la `writeDataToOfficeDocument` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="40636-209">Find the `writeDataToOfficeDocument` function and replace it with the following function:</span></span>
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -484,7 +484,7 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-2. <span data-ttu-id="b8b29-210">Recherchez la `filterUserProfileInfo` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="b8b29-210">Find the `filterUserProfileInfo` function and replace it with the following function:</span></span>
+2. <span data-ttu-id="40636-210">Recherchez la `filterUserProfileInfo` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="40636-210">Find the `filterUserProfileInfo` function and replace it with the following function:</span></span>
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -497,7 +497,7 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-3. <span data-ttu-id="b8b29-211">Recherchez la `writeDataToWord` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="b8b29-211">Find the `writeDataToWord` function and replace it with the following function:</span></span>
+3. <span data-ttu-id="40636-211">Recherchez la `writeDataToWord` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="40636-211">Find the `writeDataToWord` function and replace it with the following function:</span></span>
 
     ```javascript
     function writeDataToWord(result) {
@@ -523,17 +523,17 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-4. <span data-ttu-id="b8b29-212">Supprimez la `writeDataToExcel` fonction.</span><span class="sxs-lookup"><span data-stu-id="b8b29-212">Delete the `writeDataToExcel` function.</span></span>
+4. <span data-ttu-id="40636-212">Supprimez la `writeDataToExcel` fonction.</span><span class="sxs-lookup"><span data-stu-id="40636-212">Delete the `writeDataToExcel` function.</span></span>
 
-5. <span data-ttu-id="b8b29-213">Supprimez la `writeDataToOutlook` fonction.</span><span class="sxs-lookup"><span data-stu-id="b8b29-213">Delete the `writeDataToOutlook` function.</span></span>
+5. <span data-ttu-id="40636-213">Supprimez la `writeDataToOutlook` fonction.</span><span class="sxs-lookup"><span data-stu-id="40636-213">Delete the `writeDataToOutlook` function.</span></span>
 
-6. <span data-ttu-id="b8b29-214">Supprimez la `writeDataToPowerPoint` fonction.</span><span class="sxs-lookup"><span data-stu-id="b8b29-214">Delete the `writeDataToPowerPoint` function.</span></span>
+6. <span data-ttu-id="40636-214">Supprimez la `writeDataToPowerPoint` fonction.</span><span class="sxs-lookup"><span data-stu-id="40636-214">Delete the `writeDataToPowerPoint` function.</span></span>
 
-<span data-ttu-id="b8b29-215">Une fois ces modifications effectuées, passez directement à la section [essayer](#try-it-out) de cet article pour tester votre complément mis à jour.</span><span class="sxs-lookup"><span data-stu-id="b8b29-215">After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.</span></span>
+<span data-ttu-id="40636-215">Une fois ces modifications effectuées, passez directement à la section [essayer](#try-it-out) de cet article pour tester votre complément mis à jour.</span><span class="sxs-lookup"><span data-stu-id="40636-215">After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.</span></span>
 
-### <a name="changes-required-for-a-word-add-in-typescript"></a><span data-ttu-id="b8b29-216">Modifications requises pour un complément Word (machine à écrire)</span><span class="sxs-lookup"><span data-stu-id="b8b29-216">Changes required for a Word add-in (TypeScript)</span></span>
+### <a name="changes-required-for-a-word-add-in-typescript"></a><span data-ttu-id="40636-216">Modifications requises pour un complément Word (machine à écrire)</span><span class="sxs-lookup"><span data-stu-id="40636-216">Changes required for a Word add-in (TypeScript)</span></span>
 
-<span data-ttu-id="b8b29-217">Si votre complément est un complément Word qui a été créé avec une machine à écrire, ouvrez **./SRC/TaskPane/TaskPane.TS**, recherchez la `writeDataToOfficeDocument` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="b8b29-217">If your add-in is a Word add-in that was created with TypeScript, open **./src/taskpane/taskpane.ts**, find the `writeDataToOfficeDocument` function, and replace it with the following function:</span></span>
+<span data-ttu-id="40636-217">Si votre complément est un complément Word qui a été créé avec une machine à écrire, ouvrez **./SRC/TaskPane/TaskPane.TS**, recherchez la `writeDataToOfficeDocument` fonction et remplacez-la par la fonction suivante :</span><span class="sxs-lookup"><span data-stu-id="40636-217">If your add-in is a Word add-in that was created with TypeScript, open **./src/taskpane/taskpane.ts**, find the `writeDataToOfficeDocument` function, and replace it with the following function:</span></span>
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): Promise<any> {
@@ -563,85 +563,85 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 }
 ```
 
-<span data-ttu-id="b8b29-218">Une fois ces modifications effectuées, passez à la section [essayer](#try-it-out) de cet article pour tester votre complément mis à jour.</span><span class="sxs-lookup"><span data-stu-id="b8b29-218">After you've made these changes, continue to the [Try it out](#try-it-out) section of this article to try out your updated add-in.</span></span>
+<span data-ttu-id="40636-218">Une fois ces modifications effectuées, passez à la section [essayer](#try-it-out) de cet article pour tester votre complément mis à jour.</span><span class="sxs-lookup"><span data-stu-id="40636-218">After you've made these changes, continue to the [Try it out](#try-it-out) section of this article to try out your updated add-in.</span></span>
 
-## <a name="try-it-out"></a><span data-ttu-id="b8b29-219">Essayez</span><span class="sxs-lookup"><span data-stu-id="b8b29-219">Try it out</span></span>
+## <a name="try-it-out"></a><span data-ttu-id="40636-219">Try it out</span><span class="sxs-lookup"><span data-stu-id="40636-219">Try it out</span></span>
 
-<span data-ttu-id="b8b29-220">Si votre complément est un complément Excel, Word ou PowerPoint, effectuez les étapes de la section suivante pour le tester. Si votre complément est un complément Outlook, effectuez plutôt les étapes dans la section [Outlook](#outlook) .</span><span class="sxs-lookup"><span data-stu-id="b8b29-220">If your add-in is an Excel, Word, or PowerPoint add-in, complete the steps in the following section to try it out. If your add-in is an Outlook add-in, complete the steps in the [Outlook](#outlook) section instead.</span></span>
+<span data-ttu-id="40636-220">Si votre complément est un complément Excel, Word ou PowerPoint, effectuez les étapes de la section suivante pour le tester. Si votre complément est un complément Outlook, effectuez plutôt les étapes dans la section [Outlook](#outlook) .</span><span class="sxs-lookup"><span data-stu-id="40636-220">If your add-in is an Excel, Word, or PowerPoint add-in, complete the steps in the following section to try it out. If your add-in is an Outlook add-in, complete the steps in the [Outlook](#outlook) section instead.</span></span>
 
-### <a name="excel-word-and-powerpoint"></a><span data-ttu-id="b8b29-221">Excel, Word et PowerPoint</span><span class="sxs-lookup"><span data-stu-id="b8b29-221">Excel, Word, and PowerPoint</span></span>
+### <a name="excel-word-and-powerpoint"></a><span data-ttu-id="40636-221">Excel, Word et PowerPoint</span><span class="sxs-lookup"><span data-stu-id="40636-221">Excel, Word, and PowerPoint</span></span>
 
-<span data-ttu-id="b8b29-222">Pour tester un complément Excel, Word ou PowerPoint, procédez comme suit.</span><span class="sxs-lookup"><span data-stu-id="b8b29-222">Complete the following steps to try out an Excel, Word, or PowerPoint add-in.</span></span>
+<span data-ttu-id="40636-222">Pour tester un complément Excel, Word ou PowerPoint, procédez comme suit.</span><span class="sxs-lookup"><span data-stu-id="40636-222">Complete the following steps to try out an Excel, Word, or PowerPoint add-in.</span></span>
 
-1. <span data-ttu-id="b8b29-223">Dans le dossier racine du projet, exécutez la commande suivante pour générer le projet, démarrez le serveur Web local et chargement votre complément dans l’application cliente Office précédemment sélectionnée.</span><span class="sxs-lookup"><span data-stu-id="b8b29-223">In the root folder of the project, run the following command to build the project, start the local web server, and sideload your add-in in the previously selected Office client application.</span></span>
+1. <span data-ttu-id="40636-223">Dans le dossier racine du projet, exécutez la commande suivante pour générer le projet, démarrez le serveur Web local et chargement votre complément dans l’application cliente Office précédemment sélectionnée.</span><span class="sxs-lookup"><span data-stu-id="40636-223">In the root folder of the project, run the following command to build the project, start the local web server, and sideload your add-in in the previously selected Office client application.</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="b8b29-224">Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez.</span><span class="sxs-lookup"><span data-stu-id="b8b29-224">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="b8b29-225">Si vous êtes invité à installer un certificat après avoir exécuté la commande suivante, acceptez d’installer le certificat fourni par le générateur Yeoman.</span><span class="sxs-lookup"><span data-stu-id="b8b29-225">If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
+    > <span data-ttu-id="40636-224">Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez.</span><span class="sxs-lookup"><span data-stu-id="40636-224">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="40636-225">Si vous êtes invité à installer un certificat après avoir exécuté la commande suivante, acceptez d’installer le certificat fourni par le générateur Yeoman.</span><span class="sxs-lookup"><span data-stu-id="40636-225">If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
 
     ```command&nbsp;line
     npm start
     ```
 
-2. <span data-ttu-id="b8b29-226">Dans l’application cliente Office qui s’ouvre lorsque vous exécutez la commande précédente (Excel, Word ou PowerPoint), vérifiez que vous êtes connecté avec un utilisateur membre de la même organisation Office 365 que le compte d’administrateur 365 Office que vous avez utilisé pour vous connecter à Azure lors de la configuration de l' [authentification unique](sso-quickstart.md#configure-sso) pour l’application.</span><span class="sxs-lookup"><span data-stu-id="b8b29-226">In the Office client application that opens when you run the previous command (i.e., Excel, Word or PowerPoint), make sure that you're signed in with a user that's a member of the same Office 365 organization as the Office 365 administrator account that you used to connect to Azure while [configuring SSO](sso-quickstart.md#configure-sso) for the app.</span></span> <span data-ttu-id="b8b29-227">Cette opération permet d’établir les conditions appropriées pour la réussite de l’authentification unique.</span><span class="sxs-lookup"><span data-stu-id="b8b29-227">Doing so establishes the appropriate conditions for SSO to succeed.</span></span> 
+2. <span data-ttu-id="40636-226">Dans l’application cliente Office qui s’ouvre lorsque vous exécutez la commande précédente (Excel, Word ou PowerPoint), assurez-vous que vous êtes connecté avec un utilisateur membre de la même organisation 365 Microsoft que le compte d’administrateur Microsoft 365 que vous avez utilisé pour vous connecter à Azure lors de la configuration de l' [authentification unique](sso-quickstart.md#configure-sso) pour l’application.</span><span class="sxs-lookup"><span data-stu-id="40636-226">In the Office client application that opens when you run the previous command (i.e., Excel, Word or PowerPoint), make sure that you're signed in with a user that's a member of the same Microsoft 365 organization as the Microsoft 365 administrator account that you used to connect to Azure while [configuring SSO](sso-quickstart.md#configure-sso) for the app.</span></span> <span data-ttu-id="40636-227">Cette opération permet d’établir les conditions appropriées pour la réussite de l’authentification unique.</span><span class="sxs-lookup"><span data-stu-id="40636-227">Doing so establishes the appropriate conditions for SSO to succeed.</span></span> 
 
-3. <span data-ttu-id="b8b29-228">Dans l’application client Office, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.</span><span class="sxs-lookup"><span data-stu-id="b8b29-228">In the Office client application, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span> <span data-ttu-id="b8b29-229">L’image ci-après illustre ce bouton dans Excel.</span><span class="sxs-lookup"><span data-stu-id="b8b29-229">The following image shows this button in Excel.</span></span>
+3. <span data-ttu-id="40636-228">Dans l’application client Office, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.</span><span class="sxs-lookup"><span data-stu-id="40636-228">In the Office client application, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span> <span data-ttu-id="40636-229">L’image ci-après illustre ce bouton dans Excel.</span><span class="sxs-lookup"><span data-stu-id="40636-229">The following image shows this button in Excel.</span></span>
 
     ![Bouton Complément Excel](../images/excel-quickstart-addin-3b.png)
 
-4. <span data-ttu-id="b8b29-231">En bas du volet Office, cliquez sur le bouton **lire mon OneDrive entreprise** pour lancer le processus d’authentification unique.</span><span class="sxs-lookup"><span data-stu-id="b8b29-231">At the bottom of the task pane, choose the **Read my OneDrive for Business** button to initiate the SSO process.</span></span> 
+4. <span data-ttu-id="40636-231">En bas du volet Office, cliquez sur le bouton **lire mon OneDrive entreprise** pour lancer le processus d’authentification unique.</span><span class="sxs-lookup"><span data-stu-id="40636-231">At the bottom of the task pane, choose the **Read my OneDrive for Business** button to initiate the SSO process.</span></span> 
 
-5. <span data-ttu-id="b8b29-232">Si une boîte de dialogue s’affiche pour demander des autorisations pour le compte du complément, cela signifie que l’authentification unique n’est pas prise en charge pour votre scénario et que le complément est plutôt repassé à une autre méthode d’authentification des utilisateurs.</span><span class="sxs-lookup"><span data-stu-id="b8b29-232">If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication.</span></span> <span data-ttu-id="b8b29-233">Cela peut se produire lorsque l’administrateur du locataire n’a pas accordé le consentement du complément pour accéder à Microsoft Graph, ou lorsque l’utilisateur n’est pas connecté à Office à l’aide d’un compte Microsoft valide ou d’un compte Office 365 (« professionnel ou scolaire »).</span><span class="sxs-lookup"><span data-stu-id="b8b29-233">This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed into Office with a valid Microsoft Account or Office 365 ("Work or School") account.</span></span> <span data-ttu-id="b8b29-234">Sélectionnez le bouton **Accepter** dans la fenêtre de boîte de dialogue pour continuer.</span><span class="sxs-lookup"><span data-stu-id="b8b29-234">Choose the **Accept** button in the dialog window to continue.</span></span>
+5. <span data-ttu-id="40636-232">Si une boîte de dialogue s’affiche pour demander des autorisations pour le compte du complément, cela signifie que l’authentification unique n’est pas prise en charge pour votre scénario et que le complément est plutôt repassé à une autre méthode d’authentification des utilisateurs.</span><span class="sxs-lookup"><span data-stu-id="40636-232">If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication.</span></span> <span data-ttu-id="40636-233">Cela peut se produire lorsque l’administrateur client n’a pas accordé le consentement du complément pour accéder à Microsoft Graph ou lorsque l’utilisateur n’est pas connecté à Office avec un compte Microsoft valide ou un compte professionnel ou scolaire Microsoft 365.</span><span class="sxs-lookup"><span data-stu-id="40636-233">This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed into Office with a valid Microsoft Account or Microsoft 365 Education or Work account.</span></span> <span data-ttu-id="40636-234">Sélectionnez le bouton **Accepter** dans la fenêtre de boîte de dialogue pour continuer.</span><span class="sxs-lookup"><span data-stu-id="40636-234">Choose the **Accept** button in the dialog window to continue.</span></span>
 
     ![Boîte de dialogue demande d’autorisation](../images/sso-permissions-request.png)
 
     > [!NOTE]
-    > <span data-ttu-id="b8b29-236">Une fois qu’un utilisateur a accepté cette demande d’autorisation, il n’est plus invité à le faire à l’avenir.</span><span class="sxs-lookup"><span data-stu-id="b8b29-236">After a user accepts this permissions request, they won't be prompted again in the future.</span></span>
+    > <span data-ttu-id="40636-236">Une fois qu’un utilisateur a accepté cette demande d’autorisation, il n’est plus invité à le faire à l’avenir.</span><span class="sxs-lookup"><span data-stu-id="40636-236">After a user accepts this permissions request, they won't be prompted again in the future.</span></span>
 
-6. <span data-ttu-id="b8b29-237">Le complément lit les données de OneDrive entreprise de l’utilisateur connecté et écrit les noms des 10 premiers fichiers et dossiers dans le document.</span><span class="sxs-lookup"><span data-stu-id="b8b29-237">The add-in reads data from the signed-in user's OneDrive for Business and writes the names of the top 10 files and folders to the document.</span></span> <span data-ttu-id="b8b29-238">L’image suivante montre un exemple de noms de fichiers et de dossiers écrits dans une feuille de calcul Excel.</span><span class="sxs-lookup"><span data-stu-id="b8b29-238">The following image shows an example of file and folder names written to an Excel worksheet.</span></span>
+6. <span data-ttu-id="40636-237">Le complément lit les données de OneDrive entreprise de l’utilisateur connecté et écrit les noms des 10 premiers fichiers et dossiers dans le document.</span><span class="sxs-lookup"><span data-stu-id="40636-237">The add-in reads data from the signed-in user's OneDrive for Business and writes the names of the top 10 files and folders to the document.</span></span> <span data-ttu-id="40636-238">L’image suivante montre un exemple de noms de fichiers et de dossiers écrits dans une feuille de calcul Excel.</span><span class="sxs-lookup"><span data-stu-id="40636-238">The following image shows an example of file and folder names written to an Excel worksheet.</span></span>
 
     ![Informations OneDrive entreprise dans la feuille de calcul Excel](../images/sso-onedrive-info-excel.png)
 
-### <a name="outlook"></a><span data-ttu-id="b8b29-240">Outlook</span><span class="sxs-lookup"><span data-stu-id="b8b29-240">Outlook</span></span>
+### <a name="outlook"></a><span data-ttu-id="40636-240">Outlook</span><span class="sxs-lookup"><span data-stu-id="40636-240">Outlook</span></span>
 
-<span data-ttu-id="b8b29-241">Pour tester un complément Outlook, procédez comme suit.</span><span class="sxs-lookup"><span data-stu-id="b8b29-241">Complete the following steps to try out an Outlook add-in.</span></span>
+<span data-ttu-id="40636-241">Pour tester un complément Outlook, procédez comme suit.</span><span class="sxs-lookup"><span data-stu-id="40636-241">Complete the following steps to try out an Outlook add-in.</span></span>
 
-1. <span data-ttu-id="b8b29-242">Dans le dossier racine du projet, exécutez la commande suivante pour générer le projet et démarrer le serveur Web local.</span><span class="sxs-lookup"><span data-stu-id="b8b29-242">In the root folder of the project, run the following command to build the project and start the local web server.</span></span>
+1. <span data-ttu-id="40636-242">Dans le dossier racine du projet, exécutez la commande suivante pour générer le projet et démarrer le serveur Web local.</span><span class="sxs-lookup"><span data-stu-id="40636-242">In the root folder of the project, run the following command to build the project and start the local web server.</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="b8b29-243">Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez.</span><span class="sxs-lookup"><span data-stu-id="b8b29-243">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="b8b29-244">Si vous êtes invité à installer un certificat après avoir exécuté la commande suivante, acceptez d’installer le certificat fourni par le générateur Yeoman.</span><span class="sxs-lookup"><span data-stu-id="b8b29-244">If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
+    > <span data-ttu-id="40636-243">Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez.</span><span class="sxs-lookup"><span data-stu-id="40636-243">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="40636-244">Si vous êtes invité à installer un certificat après avoir exécuté la commande suivante, acceptez d’installer le certificat fourni par le générateur Yeoman.</span><span class="sxs-lookup"><span data-stu-id="40636-244">If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
 
     ```command&nbsp;line
     npm start
     ```
 
-2. <span data-ttu-id="b8b29-245">Suivez les instructions indiquées dans l’article [Chargement de version test des compléments Outlook](/outlook/add-ins/sideload-outlook-add-ins-for-testing) pour charger le complément dans Outlook.</span><span class="sxs-lookup"><span data-stu-id="b8b29-245">Follow the instructions in [Sideload Outlook add-ins for testing](/outlook/add-ins/sideload-outlook-add-ins-for-testing) to sideload the add-in in Outlook.</span></span> <span data-ttu-id="b8b29-246">Assurez-vous que vous êtes connecté à Outlook avec un utilisateur membre de la même organisation Office 365 que le compte d’administrateur Office 365 que vous avez utilisé pour vous connecter à Azure lors de la configuration de l' [authentification unique](sso-quickstart.md#configure-sso) pour l’application.</span><span class="sxs-lookup"><span data-stu-id="b8b29-246">Make sure that you're signed in to Outlook with a user that's a member of the same Office 365 organization as the Office 365 administrator account that you used to connect to Azure while [configuring SSO](sso-quickstart.md#configure-sso) for the app.</span></span> <span data-ttu-id="b8b29-247">Cette opération permet d’établir les conditions appropriées pour la réussite de l’authentification unique.</span><span class="sxs-lookup"><span data-stu-id="b8b29-247">Doing so establishes the appropriate conditions for SSO to succeed.</span></span> 
+2. <span data-ttu-id="40636-245">Suivez les instructions indiquées dans l’article [Chargement de version test des compléments Outlook](/outlook/add-ins/sideload-outlook-add-ins-for-testing) pour charger le complément dans Outlook.</span><span class="sxs-lookup"><span data-stu-id="40636-245">Follow the instructions in [Sideload Outlook add-ins for testing](/outlook/add-ins/sideload-outlook-add-ins-for-testing) to sideload the add-in in Outlook.</span></span> <span data-ttu-id="40636-246">Assurez-vous que vous êtes connecté à Outlook avec un utilisateur membre de la même organisation 365 Microsoft que le compte administrateur Microsoft 365 que vous avez utilisé pour vous connecter à Azure lors de la configuration de l' [authentification unique](sso-quickstart.md#configure-sso) pour l’application.</span><span class="sxs-lookup"><span data-stu-id="40636-246">Make sure that you're signed in to Outlook with a user that's a member of the same Microsoft 365 organization as the Microsoft 365 administrator account that you used to connect to Azure while [configuring SSO](sso-quickstart.md#configure-sso) for the app.</span></span> <span data-ttu-id="40636-247">Cette opération permet d’établir les conditions appropriées pour la réussite de l’authentification unique.</span><span class="sxs-lookup"><span data-stu-id="40636-247">Doing so establishes the appropriate conditions for SSO to succeed.</span></span> 
 
-3. <span data-ttu-id="b8b29-248">Rédigez un nouveau message dans Outlook.</span><span class="sxs-lookup"><span data-stu-id="b8b29-248">In Outlook, compose a new message.</span></span>
+3. <span data-ttu-id="40636-248">Rédigez un nouveau message dans Outlook.</span><span class="sxs-lookup"><span data-stu-id="40636-248">In Outlook, compose a new message.</span></span>
 
-4. <span data-ttu-id="b8b29-249">Dans la fenêtre de composition du message, choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet du complément.</span><span class="sxs-lookup"><span data-stu-id="b8b29-249">In the message compose window, choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+4. <span data-ttu-id="40636-249">Dans la fenêtre de composition du message, choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet du complément.</span><span class="sxs-lookup"><span data-stu-id="40636-249">In the message compose window, choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![Bouton du complément Outlook](../images/outlook-sso-ribbon-button.png)
 
-5. <span data-ttu-id="b8b29-251">En bas du volet Office, cliquez sur le bouton **lire mon OneDrive entreprise** pour lancer le processus d’authentification unique.</span><span class="sxs-lookup"><span data-stu-id="b8b29-251">At the bottom of the task pane, choose the **Read my OneDrive for Business** button to initiate the SSO process.</span></span> 
+5. <span data-ttu-id="40636-251">En bas du volet Office, cliquez sur le bouton **lire mon OneDrive entreprise** pour lancer le processus d’authentification unique.</span><span class="sxs-lookup"><span data-stu-id="40636-251">At the bottom of the task pane, choose the **Read my OneDrive for Business** button to initiate the SSO process.</span></span> 
 
-6. <span data-ttu-id="b8b29-252">Si une boîte de dialogue s’affiche pour demander des autorisations pour le compte du complément, cela signifie que l’authentification unique n’est pas prise en charge pour votre scénario et que le complément est plutôt repassé à une autre méthode d’authentification des utilisateurs.</span><span class="sxs-lookup"><span data-stu-id="b8b29-252">If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication.</span></span> <span data-ttu-id="b8b29-253">Cela peut se produire lorsque l’administrateur du locataire n’a pas accordé le consentement du complément pour accéder à Microsoft Graph, ou lorsque l’utilisateur n’est pas connecté à Office à l’aide d’un compte Microsoft valide ou d’un compte Office 365 (« professionnel ou scolaire »).</span><span class="sxs-lookup"><span data-stu-id="b8b29-253">This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed into Office with a valid Microsoft Account or Office 365 ("Work or School") account.</span></span> <span data-ttu-id="b8b29-254">Sélectionnez le bouton **Accepter** dans la fenêtre de boîte de dialogue pour continuer.</span><span class="sxs-lookup"><span data-stu-id="b8b29-254">Choose the **Accept** button in the dialog window to continue.</span></span>
+6. <span data-ttu-id="40636-252">Si une boîte de dialogue s’affiche pour demander des autorisations pour le compte du complément, cela signifie que l’authentification unique n’est pas prise en charge pour votre scénario et que le complément est plutôt repassé à une autre méthode d’authentification des utilisateurs.</span><span class="sxs-lookup"><span data-stu-id="40636-252">If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication.</span></span> <span data-ttu-id="40636-253">Cela peut se produire lorsque l’administrateur client n’a pas accordé le consentement du complément pour accéder à Microsoft Graph ou lorsque l’utilisateur n’est pas connecté à Office avec un compte Microsoft valide ou un compte professionnel ou scolaire Microsoft 365.</span><span class="sxs-lookup"><span data-stu-id="40636-253">This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed into Office with a valid Microsoft Account or Microsoft 365 Education or Work account.</span></span> <span data-ttu-id="40636-254">Sélectionnez le bouton **Accepter** dans la fenêtre de boîte de dialogue pour continuer.</span><span class="sxs-lookup"><span data-stu-id="40636-254">Choose the **Accept** button in the dialog window to continue.</span></span>
 
     ![Boîte de dialogue demande d’autorisation](../images/sso-permissions-request.png)
 
     > [!NOTE]
-    > <span data-ttu-id="b8b29-256">Une fois qu’un utilisateur a accepté cette demande d’autorisation, il n’est plus invité à le faire à l’avenir.</span><span class="sxs-lookup"><span data-stu-id="b8b29-256">After a user accepts this permissions request, they won't be prompted again in the future.</span></span>
+    > <span data-ttu-id="40636-256">Une fois qu’un utilisateur a accepté cette demande d’autorisation, il n’est plus invité à le faire à l’avenir.</span><span class="sxs-lookup"><span data-stu-id="40636-256">After a user accepts this permissions request, they won't be prompted again in the future.</span></span>
 
-7. <span data-ttu-id="b8b29-257">Le complément lit les données de OneDrive entreprise de l’utilisateur connecté et écrit les noms des 10 fichiers et dossiers les plus fréquents dans le corps du message électronique.</span><span class="sxs-lookup"><span data-stu-id="b8b29-257">The add-in reads data from the signed-in user's OneDrive for Business and writes the names of the top 10 files and folders to the body of the email message.</span></span>
+7. <span data-ttu-id="40636-257">Le complément lit les données de OneDrive entreprise de l’utilisateur connecté et écrit les noms des 10 fichiers et dossiers les plus fréquents dans le corps du message électronique.</span><span class="sxs-lookup"><span data-stu-id="40636-257">The add-in reads data from the signed-in user's OneDrive for Business and writes the names of the top 10 files and folders to the body of the email message.</span></span>
 
     ![Informations OneDrive entreprise dans un message Outlook](../images/sso-onedrive-info-outlook.png)
 
-## <a name="next-steps"></a><span data-ttu-id="b8b29-259">Étapes suivantes</span><span class="sxs-lookup"><span data-stu-id="b8b29-259">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="40636-259">Étapes suivantes</span><span class="sxs-lookup"><span data-stu-id="40636-259">Next steps</span></span>
 
-<span data-ttu-id="b8b29-260">Félicitations, vous avez personnalisé avec succès les fonctionnalités du complément à extension SSO que vous avez créé avec le générateur Yeoman dans le [démarrage rapide de l’authentification unique](sso-quickstart.md).</span><span class="sxs-lookup"><span data-stu-id="b8b29-260">Congratulations, you've successfully customized the functionality of the SSO-enabled add-in that you created with the Yeoman generator in the [SSO quick start](sso-quickstart.md).</span></span> <span data-ttu-id="b8b29-261">Pour en savoir plus sur les étapes de configuration de l’authentification unique effectuées automatiquement par le générateur Yeoman et le code facilitant le processus d’authentification unique, veuillez consultez le didacticiel [Créer un complément Office Node.js qui utilise l’authentification unique](../develop/create-sso-office-add-ins-nodejs.md).</span><span class="sxs-lookup"><span data-stu-id="b8b29-261">To learn more about SSO configuration steps that the Yeoman generator completed automatically, and the code that facilitates the SSO process, see the [Create a Node.js Office Add-in that uses single sign-on](../develop/create-sso-office-add-ins-nodejs.md) tutorial.</span></span>
+<span data-ttu-id="40636-260">Félicitations, vous avez personnalisé avec succès les fonctionnalités du complément à extension SSO que vous avez créé avec le générateur Yeoman dans le [démarrage rapide de l’authentification unique](sso-quickstart.md).</span><span class="sxs-lookup"><span data-stu-id="40636-260">Congratulations, you've successfully customized the functionality of the SSO-enabled add-in that you created with the Yeoman generator in the [SSO quick start](sso-quickstart.md).</span></span> <span data-ttu-id="40636-261">Pour en savoir plus sur les étapes de configuration de l’authentification unique effectuées automatiquement par le générateur Yeoman et le code facilitant le processus d’authentification unique, veuillez consultez le didacticiel [Créer un complément Office Node.js qui utilise l’authentification unique](../develop/create-sso-office-add-ins-nodejs.md).</span><span class="sxs-lookup"><span data-stu-id="40636-261">To learn more about SSO configuration steps that the Yeoman generator completed automatically, and the code that facilitates the SSO process, see the [Create a Node.js Office Add-in that uses single sign-on](../develop/create-sso-office-add-ins-nodejs.md) tutorial.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="b8b29-262">Consultez aussi</span><span class="sxs-lookup"><span data-stu-id="b8b29-262">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="40636-262">Consultez aussi</span><span class="sxs-lookup"><span data-stu-id="40636-262">See also</span></span>
 
-- [<span data-ttu-id="b8b29-263">Activer l’authentification unique pour des compléments Office</span><span class="sxs-lookup"><span data-stu-id="b8b29-263">Enable single sign-on for Office Add-ins</span></span>](../develop/sso-in-office-add-ins.md)
-- [<span data-ttu-id="b8b29-264">Démarrage rapide de l’authentification unique (SSO)</span><span class="sxs-lookup"><span data-stu-id="b8b29-264">Single sign-on (SSO) quick start</span></span>](sso-quickstart.md)
-- [<span data-ttu-id="b8b29-265">Créer un complément Office Node.js qui utilise l’authentification unique</span><span class="sxs-lookup"><span data-stu-id="b8b29-265">Create a Node.js Office Add-in that uses single sign-on</span></span>](../develop/create-sso-office-add-ins-nodejs.md)
-- [<span data-ttu-id="b8b29-266">Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)</span><span class="sxs-lookup"><span data-stu-id="b8b29-266">Troubleshoot error messages for single sign-on (SSO)</span></span>](../develop/troubleshoot-sso-in-office-add-ins.md)
+- [<span data-ttu-id="40636-263">Activer l’authentification unique pour des compléments Office</span><span class="sxs-lookup"><span data-stu-id="40636-263">Enable single sign-on for Office Add-ins</span></span>](../develop/sso-in-office-add-ins.md)
+- [<span data-ttu-id="40636-264">Démarrage rapide de l’authentification unique (SSO)</span><span class="sxs-lookup"><span data-stu-id="40636-264">Single sign-on (SSO) quick start</span></span>](sso-quickstart.md)
+- [<span data-ttu-id="40636-265">Créer un complément Office Node.js qui utilise l’authentification unique</span><span class="sxs-lookup"><span data-stu-id="40636-265">Create a Node.js Office Add-in that uses single sign-on</span></span>](../develop/create-sso-office-add-ins-nodejs.md)
+- [<span data-ttu-id="40636-266">Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)</span><span class="sxs-lookup"><span data-stu-id="40636-266">Troubleshoot error messages for single sign-on (SSO)</span></span>](../develop/troubleshoot-sso-in-office-add-ins.md)

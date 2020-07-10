@@ -4,47 +4,47 @@ description: Découvrez comment implémenter la fonctionnalité Ajout d’envoi 
 ms.topic: article
 ms.date: 05/26/2020
 localization_priority: Normal
-ms.openlocfilehash: f7f345ad726529c7ba3f8fa3ceedb46246310547
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b9c834778d68e50806da908732cd0c8663ec6680
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44607595"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093986"
 ---
-# <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a><span data-ttu-id="07e4f-103">Implémenter la fonction Append lors de l’envoi dans votre complément Outlook (aperçu)</span><span class="sxs-lookup"><span data-stu-id="07e4f-103">Implement append on send in your Outlook add-in (preview)</span></span>
+# <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a><span data-ttu-id="a179c-103">Implémenter la fonction Append lors de l’envoi dans votre complément Outlook (aperçu)</span><span class="sxs-lookup"><span data-stu-id="a179c-103">Implement append on send in your Outlook add-in (preview)</span></span>
 
-<span data-ttu-id="07e4f-104">À la fin de cette procédure pas à pas, vous disposez d’un complément Outlook qui peut insérer une clause d’exclusion de responsabilité lors de l’envoi d’un message.</span><span class="sxs-lookup"><span data-stu-id="07e4f-104">By the end of this walkthrough, you'll have an Outlook add-in that can insert a disclaimer when a message is sent.</span></span>
+<span data-ttu-id="a179c-104">À la fin de cette procédure pas à pas, vous disposez d’un complément Outlook qui peut insérer une clause d’exclusion de responsabilité lors de l’envoi d’un message.</span><span class="sxs-lookup"><span data-stu-id="a179c-104">By the end of this walkthrough, you'll have an Outlook add-in that can insert a disclaimer when a message is sent.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="07e4f-105">Cette fonctionnalité est actuellement [prise en charge pour la](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) préversion dans Outlook sur le Web et Windows avec un abonnement Office 365.</span><span class="sxs-lookup"><span data-stu-id="07e4f-105">This feature is currently supported for [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and Windows with an Office 365 subscription.</span></span> <span data-ttu-id="07e4f-106">Pour plus d’informations, reportez-vous [à la rubrique relative à l’aperçu de la fonctionnalité Ajout à l’envoi](#how-to-preview-the-append-on-send-feature) de cet article.</span><span class="sxs-lookup"><span data-stu-id="07e4f-106">See [How to preview the append-on-send feature](#how-to-preview-the-append-on-send-feature) in this article for more details.</span></span>
+> <span data-ttu-id="a179c-105">Cette fonctionnalité est actuellement [prise en charge pour la](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) préversion dans Outlook sur le Web et Windows avec un abonnement Microsoft 365.</span><span class="sxs-lookup"><span data-stu-id="a179c-105">This feature is currently supported for [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) in Outlook on the web and Windows with a Microsoft 365 subscription.</span></span> <span data-ttu-id="a179c-106">Pour plus d’informations, reportez-vous [à la rubrique relative à l’aperçu de la fonctionnalité Ajout à l’envoi](#how-to-preview-the-append-on-send-feature) de cet article.</span><span class="sxs-lookup"><span data-stu-id="a179c-106">See [How to preview the append-on-send feature](#how-to-preview-the-append-on-send-feature) in this article for more details.</span></span>
 >
-> <span data-ttu-id="07e4f-107">Les fonctionnalités d’aperçu étant susceptibles d’être modifiées sans préavis, elles ne doivent pas être utilisées dans les compléments de production.</span><span class="sxs-lookup"><span data-stu-id="07e4f-107">Because preview features are subject to change without notice, they shouldn't be used in production add-ins.</span></span>
+> <span data-ttu-id="a179c-107">Les fonctionnalités d’aperçu étant susceptibles d’être modifiées sans préavis, elles ne doivent pas être utilisées dans les compléments de production.</span><span class="sxs-lookup"><span data-stu-id="a179c-107">Because preview features are subject to change without notice, they shouldn't be used in production add-ins.</span></span>
 
-## <a name="how-to-preview-the-append-on-send-feature"></a><span data-ttu-id="07e4f-108">Comment afficher un aperçu de la fonctionnalité Ajouter-on-Send</span><span class="sxs-lookup"><span data-stu-id="07e4f-108">How to preview the append-on-send feature</span></span>
+## <a name="how-to-preview-the-append-on-send-feature"></a><span data-ttu-id="a179c-108">Comment afficher un aperçu de la fonctionnalité Ajouter-on-Send</span><span class="sxs-lookup"><span data-stu-id="a179c-108">How to preview the append-on-send feature</span></span>
 
-<span data-ttu-id="07e4f-109">Nous vous invitons à tester la fonctionnalité Ajout à l’envoi !</span><span class="sxs-lookup"><span data-stu-id="07e4f-109">We invite you to try out the append-on-send feature!</span></span> <span data-ttu-id="07e4f-110">Faites-nous part de vos scénarios et de vos possibilités d’amélioration en nous donnant des commentaires via GitHub (voir la section **Commentaires** à la fin de cette page).</span><span class="sxs-lookup"><span data-stu-id="07e4f-110">Let us know your scenarios and how we can improve by giving us feedback through GitHub (see the **Feedback** section at the end of this page).</span></span>
+<span data-ttu-id="a179c-109">Nous vous invitons à tester la fonctionnalité Ajout à l’envoi !</span><span class="sxs-lookup"><span data-stu-id="a179c-109">We invite you to try out the append-on-send feature!</span></span> <span data-ttu-id="a179c-110">Faites-nous part de vos scénarios et de vos possibilités d’amélioration en nous donnant des commentaires via GitHub (voir la section **Commentaires** à la fin de cette page).</span><span class="sxs-lookup"><span data-stu-id="a179c-110">Let us know your scenarios and how we can improve by giving us feedback through GitHub (see the **Feedback** section at the end of this page).</span></span>
 
-<span data-ttu-id="07e4f-111">Pour afficher un aperçu de cette fonctionnalité :</span><span class="sxs-lookup"><span data-stu-id="07e4f-111">To preview this feature:</span></span>
+<span data-ttu-id="a179c-111">Pour afficher un aperçu de cette fonctionnalité :</span><span class="sxs-lookup"><span data-stu-id="a179c-111">To preview this feature:</span></span>
 
-- <span data-ttu-id="07e4f-112">Faites référence à la bibliothèque **beta** sur le CDN ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) .</span><span class="sxs-lookup"><span data-stu-id="07e4f-112">Reference the **beta** library on the CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js).</span></span> <span data-ttu-id="07e4f-113">Le [fichier de définition de type](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) pour la compilation de la machine à écrire et IntelliSense se trouve dans le CDN et [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts).</span><span class="sxs-lookup"><span data-stu-id="07e4f-113">The [type definition file](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) for TypeScript compilation and IntelliSense is found at the CDN and [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts).</span></span> <span data-ttu-id="07e4f-114">Vous pouvez installer ces types avec `npm install --save-dev @types/office-js-preview` .</span><span class="sxs-lookup"><span data-stu-id="07e4f-114">You can install these types with `npm install --save-dev @types/office-js-preview`.</span></span>
-- <span data-ttu-id="07e4f-115">Pour Windows, vous devrez peut-être rejoindre le [programme Office Insider](https://insider.office.com) pour accéder à des builds Office plus récentes.</span><span class="sxs-lookup"><span data-stu-id="07e4f-115">For Windows, you may need to join the [Office Insider program](https://insider.office.com) to access more recent Office builds.</span></span>
-- <span data-ttu-id="07e4f-116">Pour Outlook sur le Web, [configurez la version ciblée sur votre client Microsoft 365](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center).</span><span class="sxs-lookup"><span data-stu-id="07e4f-116">For Outlook on the web, [configure targeted release on your Microsoft 365 tenant](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center).</span></span>
+- <span data-ttu-id="a179c-112">Faites référence à la bibliothèque **beta** sur le CDN ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) .</span><span class="sxs-lookup"><span data-stu-id="a179c-112">Reference the **beta** library on the CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js).</span></span> <span data-ttu-id="a179c-113">Le [fichier de définition de type](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) pour la compilation de la machine à écrire et IntelliSense se trouve dans le CDN et [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts).</span><span class="sxs-lookup"><span data-stu-id="a179c-113">The [type definition file](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) for TypeScript compilation and IntelliSense is found at the CDN and [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts).</span></span> <span data-ttu-id="a179c-114">Vous pouvez installer ces types avec `npm install --save-dev @types/office-js-preview` .</span><span class="sxs-lookup"><span data-stu-id="a179c-114">You can install these types with `npm install --save-dev @types/office-js-preview`.</span></span>
+- <span data-ttu-id="a179c-115">Pour Windows, vous devrez peut-être rejoindre le [programme Office Insider](https://insider.office.com) pour accéder à des builds Office plus récentes.</span><span class="sxs-lookup"><span data-stu-id="a179c-115">For Windows, you may need to join the [Office Insider program](https://insider.office.com) to access more recent Office builds.</span></span>
+- <span data-ttu-id="a179c-116">Pour Outlook sur le Web, [configurez la version ciblée sur votre client Microsoft 365](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center).</span><span class="sxs-lookup"><span data-stu-id="a179c-116">For Outlook on the web, [configure targeted release on your Microsoft 365 tenant](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center).</span></span>
 
-## <a name="set-up-your-environment"></a><span data-ttu-id="07e4f-117">Configuration de votre environnement</span><span class="sxs-lookup"><span data-stu-id="07e4f-117">Set up your environment</span></span>
+## <a name="set-up-your-environment"></a><span data-ttu-id="a179c-117">Configuration de votre environnement</span><span class="sxs-lookup"><span data-stu-id="a179c-117">Set up your environment</span></span>
 
-<span data-ttu-id="07e4f-118">Terminez le [démarrage rapide Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) qui crée un projet de complément avec le générateur Yeoman pour les compléments Office.</span><span class="sxs-lookup"><span data-stu-id="07e4f-118">Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) which creates an add-in project with the Yeoman generator for Office Add-ins.</span></span>
+<span data-ttu-id="a179c-118">Terminez le [démarrage rapide Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) qui crée un projet de complément avec le générateur Yeoman pour les compléments Office.</span><span class="sxs-lookup"><span data-stu-id="a179c-118">Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) which creates an add-in project with the Yeoman generator for Office Add-ins.</span></span>
 
-## <a name="configure-the-manifest"></a><span data-ttu-id="07e4f-119">Configurer le manifeste</span><span class="sxs-lookup"><span data-stu-id="07e4f-119">Configure the manifest</span></span>
+## <a name="configure-the-manifest"></a><span data-ttu-id="a179c-119">Configurer le manifeste</span><span class="sxs-lookup"><span data-stu-id="a179c-119">Configure the manifest</span></span>
 
-<span data-ttu-id="07e4f-120">Pour activer la fonctionnalité Ajout à l’envoi dans votre complément, vous devez inclure l' `AppendOnSend` autorisation dans la collection de [ExtendedPermissions](../reference/manifest/extendedpermissions.md).</span><span class="sxs-lookup"><span data-stu-id="07e4f-120">To enable the append-on-send feature in your add-in, you must include the `AppendOnSend` permission in the collection of [ExtendedPermissions](../reference/manifest/extendedpermissions.md).</span></span>
+<span data-ttu-id="a179c-120">Pour activer la fonctionnalité Ajout à l’envoi dans votre complément, vous devez inclure l' `AppendOnSend` autorisation dans la collection de [ExtendedPermissions](../reference/manifest/extendedpermissions.md).</span><span class="sxs-lookup"><span data-stu-id="a179c-120">To enable the append-on-send feature in your add-in, you must include the `AppendOnSend` permission in the collection of [ExtendedPermissions](../reference/manifest/extendedpermissions.md).</span></span>
 
-<span data-ttu-id="07e4f-121">Pour ce scénario, au lieu d’exécuter la `action` fonction en cliquant sur le bouton **effectuer une action** , vous exécuterez `appendOnSend` la fonction.</span><span class="sxs-lookup"><span data-stu-id="07e4f-121">For this scenario, instead of running the `action` function on choosing the **Perform an action** button, you'll be running the `appendOnSend` function.</span></span>
+<span data-ttu-id="a179c-121">Pour ce scénario, au lieu d’exécuter la `action` fonction en cliquant sur le bouton **effectuer une action** , vous exécuterez `appendOnSend` la fonction.</span><span class="sxs-lookup"><span data-stu-id="a179c-121">For this scenario, instead of running the `action` function on choosing the **Perform an action** button, you'll be running the `appendOnSend` function.</span></span>
 
-1. <span data-ttu-id="07e4f-122">Dans votre éditeur de code, ouvrez le projet Quick Start.</span><span class="sxs-lookup"><span data-stu-id="07e4f-122">In your code editor, open the quick start project.</span></span>
+1. <span data-ttu-id="a179c-122">Dans votre éditeur de code, ouvrez le projet Quick Start.</span><span class="sxs-lookup"><span data-stu-id="a179c-122">In your code editor, open the quick start project.</span></span>
 
-1. <span data-ttu-id="07e4f-123">Ouvrez le fichier **Manifest. xml** situé à la racine de votre projet.</span><span class="sxs-lookup"><span data-stu-id="07e4f-123">Open the **manifest.xml** file located at the root of your project.</span></span>
+1. <span data-ttu-id="a179c-123">Ouvrez le fichier **manifest.xml** situé à la racine de votre projet.</span><span class="sxs-lookup"><span data-stu-id="a179c-123">Open the **manifest.xml** file located at the root of your project.</span></span>
 
-1. <span data-ttu-id="07e4f-124">Sélectionnez le `<VersionOverrides>` nœud entier (y compris les balises ouvrantes et fermantes) et remplacez-le par le code XML suivant.</span><span class="sxs-lookup"><span data-stu-id="07e4f-124">Select the entire `<VersionOverrides>` node (including open and close tags) and replace it with the following XML.</span></span>
+1. <span data-ttu-id="a179c-124">Sélectionnez le `<VersionOverrides>` nœud entier (y compris les balises ouvrantes et fermantes) et remplacez-le par le code XML suivant.</span><span class="sxs-lookup"><span data-stu-id="a179c-124">Select the entire `<VersionOverrides>` node (including open and close tags) and replace it with the following XML.</span></span>
 
     ```XML
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -132,17 +132,17 @@ ms.locfileid: "44607595"
     ```
 
 > [!TIP]
-> <span data-ttu-id="07e4f-125">Pour en savoir plus sur les manifestes pour les compléments Outlook, consultez la rubrique [manifestes des compléments Outlook](manifests.md).</span><span class="sxs-lookup"><span data-stu-id="07e4f-125">To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).</span></span>
+> <span data-ttu-id="a179c-125">Pour en savoir plus sur les manifestes pour les compléments Outlook, consultez la rubrique [manifestes des compléments Outlook](manifests.md).</span><span class="sxs-lookup"><span data-stu-id="a179c-125">To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).</span></span>
 
-## <a name="implement-append-on-send-handling"></a><span data-ttu-id="07e4f-126">Implémenter la gestion des ajouts à l’envoi</span><span class="sxs-lookup"><span data-stu-id="07e4f-126">Implement append-on-send handling</span></span>
+## <a name="implement-append-on-send-handling"></a><span data-ttu-id="a179c-126">Implémenter la gestion des ajouts à l’envoi</span><span class="sxs-lookup"><span data-stu-id="a179c-126">Implement append-on-send handling</span></span>
 
-<span data-ttu-id="07e4f-127">Ensuite, implémentez l’ajout sur l’événement Send.</span><span class="sxs-lookup"><span data-stu-id="07e4f-127">Next, implement appending on the send event.</span></span>
+<span data-ttu-id="a179c-127">Ensuite, implémentez l’ajout sur l’événement Send.</span><span class="sxs-lookup"><span data-stu-id="a179c-127">Next, implement appending on the send event.</span></span>
 
-<span data-ttu-id="07e4f-128">Pour ce scénario, vous allez implémenter l’ajout d’une clause d’exclusion de responsabilité à l’élément lorsque l’utilisateur envoie.</span><span class="sxs-lookup"><span data-stu-id="07e4f-128">For this scenario, you'll implement appending a disclaimer to the item when the user sends.</span></span>
+<span data-ttu-id="a179c-128">Pour ce scénario, vous allez implémenter l’ajout d’une clause d’exclusion de responsabilité à l’élément lorsque l’utilisateur envoie.</span><span class="sxs-lookup"><span data-stu-id="a179c-128">For this scenario, you'll implement appending a disclaimer to the item when the user sends.</span></span>
 
-1. <span data-ttu-id="07e4f-129">À partir du même projet de démarrage rapide, ouvrez le fichier **./SRC/Commands/Commands.js** dans votre éditeur de code.</span><span class="sxs-lookup"><span data-stu-id="07e4f-129">From the same quick start project, open the file **./src/commands/commands.js** in your code editor.</span></span>
+1. <span data-ttu-id="a179c-129">À partir du même projet de démarrage rapide, ouvrez le fichier **./src/commands/commands.js** dans votre éditeur de code.</span><span class="sxs-lookup"><span data-stu-id="a179c-129">From the same quick start project, open the file **./src/commands/commands.js** in your code editor.</span></span>
 
-1. <span data-ttu-id="07e4f-130">Après la `action` fonction, insérez la fonction JavaScript suivante.</span><span class="sxs-lookup"><span data-stu-id="07e4f-130">After the `action` function, insert the following JavaScript function.</span></span>
+1. <span data-ttu-id="a179c-130">Après la `action` fonction, insérez la fonction JavaScript suivante.</span><span class="sxs-lookup"><span data-stu-id="a179c-130">After the `action` function, insert the following JavaScript function.</span></span>
 
     ```js
     function appendDisclaimerOnSend(event) {
@@ -168,30 +168,30 @@ ms.locfileid: "44607595"
     }
     ```
 
-1. <span data-ttu-id="07e4f-131">À la fin du fichier, ajoutez l’instruction suivante.</span><span class="sxs-lookup"><span data-stu-id="07e4f-131">At the end of the file, add the following statement.</span></span>
+1. <span data-ttu-id="a179c-131">À la fin du fichier, ajoutez l’instruction suivante.</span><span class="sxs-lookup"><span data-stu-id="a179c-131">At the end of the file, add the following statement.</span></span>
 
     ```js
     g.appendDisclaimerOnSend = appendDisclaimerOnSend;
     ```
 
-## <a name="try-it-out"></a><span data-ttu-id="07e4f-132">Essayez</span><span class="sxs-lookup"><span data-stu-id="07e4f-132">Try it out</span></span>
+## <a name="try-it-out"></a><span data-ttu-id="a179c-132">Try it out</span><span class="sxs-lookup"><span data-stu-id="a179c-132">Try it out</span></span>
 
-1. <span data-ttu-id="07e4f-133">Exécutez la commande suivante dans le répertoire racine de votre projet.</span><span class="sxs-lookup"><span data-stu-id="07e4f-133">Run the following command in the root directory of your project.</span></span> <span data-ttu-id="07e4f-134">Lorsque vous exécutez cette commande, le serveur Web local démarre s’il n’est pas déjà en cours d’exécution.</span><span class="sxs-lookup"><span data-stu-id="07e4f-134">When you run this command, the local web server will start if it's not already running.</span></span>
+1. <span data-ttu-id="a179c-133">Exécutez la commande suivante dans le répertoire racine de votre projet.</span><span class="sxs-lookup"><span data-stu-id="a179c-133">Run the following command in the root directory of your project.</span></span> <span data-ttu-id="a179c-134">Lorsque vous exécutez cette commande, le serveur Web local démarre s’il n’est pas déjà en cours d’exécution.</span><span class="sxs-lookup"><span data-stu-id="a179c-134">When you run this command, the local web server will start if it's not already running.</span></span>
 
     ```command&nbsp;line
     npm run dev-server
     ```
 
-1. <span data-ttu-id="07e4f-135">Suivez les instructions de [chargement compléments Outlook à des fins de test](sideload-outlook-add-ins-for-testing.md).</span><span class="sxs-lookup"><span data-stu-id="07e4f-135">Follow the instructions in [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md).</span></span>
+1. <span data-ttu-id="a179c-135">Suivez les instructions de [chargement compléments Outlook à des fins de test](sideload-outlook-add-ins-for-testing.md).</span><span class="sxs-lookup"><span data-stu-id="a179c-135">Follow the instructions in [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md).</span></span>
 
-1. <span data-ttu-id="07e4f-136">Créez un message et ajoutez-vous à la ligne **à** .</span><span class="sxs-lookup"><span data-stu-id="07e4f-136">Create a new message, and add yourself to the **To** line.</span></span>
+1. <span data-ttu-id="a179c-136">Créez un message et ajoutez-vous à la ligne **à** .</span><span class="sxs-lookup"><span data-stu-id="a179c-136">Create a new message, and add yourself to the **To** line.</span></span>
 
-1. <span data-ttu-id="07e4f-137">Dans le menu du ruban ou du buffer overflow, sélectionnez **effectuer une action**.</span><span class="sxs-lookup"><span data-stu-id="07e4f-137">From the ribbon or overflow menu, choose **Perform an action**.</span></span>
+1. <span data-ttu-id="a179c-137">Dans le menu du ruban ou du buffer overflow, sélectionnez **effectuer une action**.</span><span class="sxs-lookup"><span data-stu-id="a179c-137">From the ribbon or overflow menu, choose **Perform an action**.</span></span>
 
-1. <span data-ttu-id="07e4f-138">Envoyez le message, puis ouvrez-le à partir de votre dossier **boîte de réception** ou **éléments envoyés** pour afficher la clause d’exclusion de responsabilité ajoutée.</span><span class="sxs-lookup"><span data-stu-id="07e4f-138">Send the message, then open it from your **Inbox** or **Sent Items** folder to view the appended disclaimer.</span></span>
+1. <span data-ttu-id="a179c-138">Envoyez le message, puis ouvrez-le à partir de votre dossier **boîte de réception** ou **éléments envoyés** pour afficher la clause d’exclusion de responsabilité ajoutée.</span><span class="sxs-lookup"><span data-stu-id="a179c-138">Send the message, then open it from your **Inbox** or **Sent Items** folder to view the appended disclaimer.</span></span>
 
     ![Capture d’écran d’un exemple de message avec la clause d’exclusion de responsabilité ajoutée lors de l’envoi dans Outlook sur le Web.](../images/outlook-web-append-disclaimer.png)
 
-## <a name="see-also"></a><span data-ttu-id="07e4f-140">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="07e4f-140">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a179c-140">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a179c-140">See also</span></span>
 
-[<span data-ttu-id="07e4f-141">Manifestes de complément Outlook</span><span class="sxs-lookup"><span data-stu-id="07e4f-141">Outlook add-in manifests</span></span>](manifests.md)
+[<span data-ttu-id="a179c-141">Manifestes de complément Outlook</span><span class="sxs-lookup"><span data-stu-id="a179c-141">Outlook add-in manifests</span></span>](manifests.md)
