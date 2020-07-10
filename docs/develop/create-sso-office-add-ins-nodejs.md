@@ -3,12 +3,12 @@ title: Création d’un complément Office Node.js qui utilise l’authentificat
 description: Apprenez à créer un complément basé sur Node.js utilisant l’authentification unique Office.
 ms.date: 06/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 34356f1870c612990194358dbd2a0b97ab9495da
-ms.sourcegitcommit: b939312ffdeb6e0a0dfe085db7efe0ff143ef873
+ms.openlocfilehash: 580e7ecaa44529f2e6415fbec638370028e2a1af
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "44810834"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093688"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office Node.js qui utilise l’authentification unique (aperçu)
 
@@ -31,7 +31,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 * Éditeur de code. Nous vous recommandons Visual Studio Code.
 
-* Au moins des fichiers et classeurs sont stockés sur OneDrive Entreprise dans votre abonnement Office 365.
+* Au moins quelques fichiers et dossiers stockés sur OneDrive entreprise dans votre abonnement Microsoft 365.
 
 * Un abonnement Microsoft Azure. Ce complément requiert Azure Active Directory (AD). Azure AD fournit des services d’identité que les applications utilisent à des fins d’authentification et d’autorisation. Un abonnement d’évaluation peut être obtenu sur le site de [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
@@ -55,7 +55,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 1. Accédez à la page [portail Azure : enregistrement des applications](https://go.microsoft.com/fwlink/?linkid=2083908) pour enregistrer votre application.
 
-1. Connectez-vous à votre client Office 365 en utilisant les informations d’identification d’***administrateur***. Par exemple, MonNom@contoso.onmicrosoft.com.
+1. Connectez-vous avec les informations d’identification d' ***administrateur*** à votre location Microsoft 365. Par exemple, MonNom@contoso.onmicrosoft.com.
 
 1. Sélectionnez **Nouvelle inscription**. Sur la page **Inscrire une application**, définissez les valeurs comme suit.
 
@@ -210,7 +210,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 1. Remplacez `TODO 3` par ce qui suit. Tenez compte du code suivant : 
 
-    - Si le client Office 365 est configuré pour exiger l’authentification multifacteur, l' `exchangeResponse` inclut une propriété `claims` contenant des informations sur les facteurs supplémentaires requis. Dans ce cas, `OfficeRuntime.auth.getAccessToken` doit être rappelé avec l’option `authChallenge` configurée avec la valeur de la propriété revendications. Cela indique à AAD d’inviter l’utilisateur à accepter tous les formulaires d’authentification requis.
+    - Si le client Microsoft 365 a été configuré pour exiger l’authentification multifacteur, le `exchangeResponse` inclura une `claims` propriété avec des informations sur les facteurs supplémentaires requis. Dans ce cas, `OfficeRuntime.auth.getAccessToken` doit être rappelé avec l’option `authChallenge` configurée avec la valeur de la propriété revendications. Cela indique à AAD d’inviter l’utilisateur à accepter tous les formulaires d’authentification requis.
 
     ```javascript
     if (exchangeResponse.claims) {
@@ -292,8 +292,8 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
         showMessage("You can use many of the add-ins functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."); 
         break;
     case 13006:
-        // Only seen in Office on the Web.
-        showMessage("Office on the Web is experiencing a problem. Please sign out of Office, close the browser, and then start again."); 
+        // Only seen in Office on the web.
+        showMessage("Office on the web is experiencing a problem. Please sign out of Office, close the browser, and then start again."); 
         break;
     case 13008:
         // The OfficeRuntime.auth.getAccessToken method has already been called and 
@@ -481,7 +481,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 1. Remplacez `TODO 14` par le code suivant, qui termine le bloc `else`. Tenez compte du code suivant :
 
-    - Le `tenant` const est défini sur « commun », car vous avez configuré le complément en tant que multiclient lorsque vous l’avez inscrit avec Azure AD, en particulier lorsque vous configurez **types de compte pris en charge** pour **les comptes de n’importe quel annuaire d’organisation et les comptes Microsoft personnels (par exemple, Skype, Xbox, Outlook.com)**. Si vous avez en revanche choisi de prendre en charge uniquement les comptes figurant dans la même location Office 365 que le complément enregistré, `tenant` dans ce code serait défini sur le GUID du client. 
+    - Le `tenant` const est défini sur « commun », car vous avez configuré le complément en tant que multiclient lorsque vous l’avez inscrit avec Azure AD, en particulier lorsque vous configurez **types de compte pris en charge** pour **les comptes de n’importe quel annuaire d’organisation et les comptes Microsoft personnels (par exemple, Skype, Xbox, Outlook.com)**. Si, au lieu de cela, vous avez choisi de prendre en charge uniquement les comptes appartenant à la même location Microsoft 365 où le complément est enregistré, alors dans ce code `tenant` se trouve le GUID du client. 
     - Si la requête POST ne génère pas d’erreur, la réponse d’Azure AD est convertie en JSON et envoyée au client. Cet objet JSON possède une propriété `access_token` à laquelle Azure AD a attribué un jeton d’accès à Microsoft Graph.
 
     ```javascript
@@ -571,7 +571,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 1. Dans l’application Office, sur le ruban **Accueil**, sélectionnez le bouton **Afficher le complément** dans le groupe **Node.js SSO** pour ouvrir le complément du panneau des tâches.
 
-1. Cliquez sur le bouton **Obtenir des noms de fichier OneDrive**. Si vous êtes connecté à Office à l’aide d’un compte professionnel ou scolaire (Office 365) ou d’un compte Microsoft et que l’authentification unique fonctionne comme prévu, les 10 premiers noms de fichier et de dossiers dans votre espace OneDrive Entreprise sont insérés dans le document. (la première opération peut prendre jusqu’à 15 secondes). Si vous n’êtes pas connecté ou si vous êtes dans un scénario qui ne prend pas en charge SSO ou si l’authentification unique ne fonctionne pas pour une raison quelconque, vous serez invité à vous connecter. Une fois connecté, les noms de fichier et de dossier s’affichent.
+1. Cliquez sur le bouton **Obtenir des noms de fichier OneDrive**. Si vous êtes connecté à Office avec un compte Microsoft 365 éducation ou un compte professionnel ou un compte Microsoft, et que l’authentification unique fonctionne comme prévu, les 10 premiers noms de fichier et de dossier dans votre OneDrive entreprise sont insérés dans le document. (la première opération peut prendre jusqu’à 15 secondes). Si vous n’êtes pas connecté ou si vous êtes dans un scénario qui ne prend pas en charge SSO ou si l’authentification unique ne fonctionne pas pour une raison quelconque, vous serez invité à vous connecter. Une fois connecté, les noms de fichier et de dossier s’affichent.
 
 > [!NOTE]
 > Si vous étiez précédemment connecté à Office avec un ID différent et si certaines applications précédemment ouvertes Office le sont toujours, Office ne changera pas systématiquement votre identifiant même si cela semble être le cas. Dans ce cas, l’appel vers Microsoft Graph peut échouer ou des données de l’ID précédent peuvent être renvoyées. Afin d’éviter ce problème, veillez à *fermer toutes les autres applications Office* avant de cliquer sur **Obtenir des noms de fichiers OneDrive**.

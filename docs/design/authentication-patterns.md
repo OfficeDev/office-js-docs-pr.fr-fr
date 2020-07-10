@@ -3,12 +3,12 @@ title: Conception de lignes directrices relatives à l’authentification pour l
 description: Découvrez comment concevoir visuellement une page de connexion ou d’inscription dans un complément Office.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 5378404054d88e7d7bc4680630c0c0c3de63929d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 67d072b629f16ea9c5c467b8f59bc4b9211dc225
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44607651"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093853"
 ---
 # <a name="authentication-patterns"></a>Modèles d’authentification
 
@@ -49,9 +49,9 @@ Tant que l’authentification unique n’est pas disponible en aperçu, les comp
 ## <a name="single-sign-on-authentication-flow-preview"></a>Authentification unique (aperçu)
 
 > [!NOTE]
-> L’API d’authentification unique est actuellement prise en charge en préversion pour Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur la prise en charge de l’authentification unique, voir  [Ensembles de conditions requises de l’API d’identité](../reference/requirement-sets/identity-api-requirement-sets.md). Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location d’Office 365. Pour plus d’informations sur la manière de procéder, voir  [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> L’API d’authentification unique est actuellement prise en charge en préversion pour Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur la prise en charge de l’authentification unique, voir  [Ensembles de conditions requises de l’API d’identité](../reference/requirement-sets/identity-api-requirement-sets.md). Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location Microsoft 365. Pour plus d’informations sur la manière de procéder, voir  [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
-Une fois l’authentification unique généralement disponible pour les compléments de production, utilisez-la pour fluidifier l’expérience des utilisateurs finaux. L’identité de l’utilisateur au sein d’Office (compte Microsoft ou identité Office 365) est utilisée pour la connexion à votre complément. Par conséquent, les utilisateurs ne se connectent qu’une seule fois. Cela permet d’éliminer les frictions dans l’expérience, en facilitant la prise en main pour vos clients.
+Une fois l’authentification unique généralement disponible pour les compléments de production, utilisez-la pour fluidifier l’expérience des utilisateurs finaux. L’identité de l’utilisateur au sein d’Office (un compte Microsoft ou une identité Microsoft 365) est utilisée pour se connecter à votre complément. Par conséquent, les utilisateurs ne se connectent qu’une seule fois. Cela permet d’éliminer les frictions dans l’expérience, en facilitant la prise en main pour vos clients.
 
 1. Lorsqu’un complément est installé, un utilisateur voit une fenêtre de consentement semblable à la fenêtre ci-dessous : ![Capture d’écran de la fenêtre de consentement dans une application Office lorsqu’un complément est installé](../images/add-in-auth-SSO-consent-dialog.png)
 > [!NOTE]

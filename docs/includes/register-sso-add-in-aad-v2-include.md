@@ -2,7 +2,7 @@
 
 1. Accédez à la page [portail Azure : enregistrement des applications](https://go.microsoft.com/fwlink/?linkid=2083908) pour enregistrer votre application.
 
-1. Connectez-vous à votre client Office 365 en utilisant les informations d’identification d’***administrateur***. Par exemple, MonNom@contoso.onmicrosoft.com.
+1. Connectez-vous avec les informations d’identification d' ***administrateur*** à votre location Microsoft 365. Par exemple, MonNom@contoso.onmicrosoft.com.
 
 1. Sélectionnez **Nouvelle inscription**. Sur la page **Inscrire une application**, définissez les valeurs comme suit.
 
@@ -24,7 +24,7 @@
     > Il se peut que vous obteniez une erreur inexacte à ce stade indiquant « l’URI de l’ID d’application doit être une URI valide commençant par HTTPS, API, URN, MS-APPX. Elle ne doit pas se terminer pas par une barre oblique. » Si l’ID respecte les conditions indiquées, ignorez l’erreur et enregistrez vos modifications.
 
     > [!NOTE]
-    > Si un message d’erreur s’affiche indiquant que le domaine appartient déjà à quelqu’un et que c’est vous qui en êtes le propriétaire, suivez la procédure décrite dans Quickstart [ : Ajouter votre nom de domaine personnalisé à l’aide du Portail Azure Active Directory](/azure/active-directory/add-custom-domain) pour l’inscrire, puis répétez cette étape. (Cette erreur peut également se produire si vous ne vous êtes pas connecté au client Office 365 avec les informations d’identification d’un administrateur. Voir l’étape 2. Déconnectez-vous, puis reconnectez-vous avec les informations d’identification d’administrateur, puis répétez le processus décrit à l’étape 3.)
+    > Si un message d’erreur s’affiche indiquant que le domaine appartient déjà à quelqu’un et que c’est vous qui en êtes le propriétaire, suivez la procédure décrite dans Quickstart [ : Ajouter votre nom de domaine personnalisé à l’aide du Portail Azure Active Directory](/azure/active-directory/add-custom-domain) pour l’inscrire, puis répétez cette étape. (Cette erreur peut également se produire si vous n’êtes pas connecté avec des informations d’identification d’un administrateur de la location de Microsoft 365. Voir l’étape 2. Déconnectez-vous, puis reconnectez-vous avec les informations d’identification d’administrateur, puis répétez le processus décrit à l’étape 3.)
 
 1. Sélectionnez le bouton **Ajouter une étendue**. Dans le volet qui s’ouvre, entrez `access_as_user` en tant que **nom de l’étendue**.
 

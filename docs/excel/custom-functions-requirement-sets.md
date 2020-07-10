@@ -4,18 +4,18 @@ description: Détails sur les ensembles de conditions requises pour les fonction
 ms.date: 07/15/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 1b197da2ac177cdfe2a78fc6a31e675d46389bb1
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 184c78a9c0e99a79150da47d4af0e8819f079e56
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609217"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093447"
 ---
 # <a name="custom-functions-requirement-sets"></a>Ensembles de conditions requises pour les fonctions personnalisées
 
 [Fonctions personnalisées](./custom-functions-overview.md) utilisent des ensembles d’exigences distincts des API Excel JavaScript de base. Le tableau suivant répertorie les ensembles de conditions requises pour les fonctions personnalisées, les applications hôtes Office qui prennent en charge ces conditions et les version build ou le numéro pour ces applications.
 
-|  Ensemble de conditions requises  |  Office pour Windows<br>(connecté à l’abonnement Office 365)  |  Office sur iPad<br>(connecté à l’abonnement Office 365)  |  Office sur Mac<br>(connecté à l’abonnement Office 365)  | Office sur le web |
+|  Ensemble de conditions requises  |  Office pour Windows<br>(connecté à l’abonnement Microsoft 365)  |  Office sur iPad<br>(connecté à l’abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à l’abonnement Microsoft 365)  | Office sur le web |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | CustomFunctionsRuntime 1.1 | 16.0.12527.20092 ou version ultérieure | Non pris en charge | 16,34 ou version ultérieure | Que |
 

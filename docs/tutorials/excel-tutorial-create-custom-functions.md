@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez créer un complément Excel qui con
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 4e2ad0276690d0b427a6788adc89ba09a274e203
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7f8dcfa792b1bbce36055b865d6cc67fcb55d68a
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611084"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094266"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Didacticiel : créer des fonctions personnalisées dans Excel
 
@@ -26,7 +26,7 @@ Dans ce didacticiel, vous allez :
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel sur Windows (1904 ou version ultérieure, connecté à un abonnement Office 365) ou sur le web
+* Excel sur Windows (version 1904 ou ultérieure, connecté à l’abonnement Microsoft 365) ou sur le Web
 
 ## <a name="create-a-custom-functions-project"></a>Créer un projet de fonctions personnalisées
 

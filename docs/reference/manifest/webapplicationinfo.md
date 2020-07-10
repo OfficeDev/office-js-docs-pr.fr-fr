@@ -3,12 +3,12 @@ title: Élément WebApplicationInfo dans le fichier manifeste
 description: Documentation de référence de l’élément VersionOverrides pour les fichiers manifeste des compléments Office (XML).
 ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 1bbb3cc9b3db792b2d24ab2fd4003be6093fa837
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5be75c6e202e40d60961a1b930ef43e583dee240
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44604478"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094406"
 ---
 # <a name="webapplicationinfo-element"></a>Élément WebApplicationInfo
 
@@ -18,13 +18,13 @@ Prend en charge l’authentification unique (SSO) dans des compléments Office. 
 - Un *client* OAuth 2.0 pouvant requérir des autorisations dans Microsoft Graph.
 
 > [!NOTE]
-> L’API d’authentification unique est actuellement prise en charge en préversion pour Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur l’endroit où l’API d’authentification unique est actuellement prise en charge, voir [Ensembles de conditions requises de l’API d’identité](../requirement-sets/identity-api-requirement-sets.md). Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location d’Office 365. Pour savoir comment procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> L’API d’authentification unique est actuellement prise en charge en préversion pour Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur l’endroit où l’API d’authentification unique est actuellement prise en charge, voir [Ensembles de conditions requises de l’API d’identité](../requirement-sets/identity-api-requirement-sets.md). Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location Microsoft 365. Pour savoir comment procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 **WebApplicationInfo** est un élément enfant de l’élément [VersionOverrides](versionoverrides.md) dans le manifeste.  
 
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Requis  |  Description  |
+|  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 |  **Id**    |  Oui   |  **ID d’application** du service associé au complément, tel qu’inscrit dans le point de terminaison Azure Active Directory (Azure AD) v2.0.|
 |  **MsaId**    |  Non   |  ID client de l’application Web de votre complément pour MSA, tel qu’inscrit dans msm.live.com.|

@@ -4,12 +4,12 @@ description: Découvrez comment configurer votre complément Outlook pour l’ac
 ms.topic: article
 ms.date: 05/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 43c1f50f7758efed6472b4d54841c6ed662a20bc
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7b14dfb425223dbf486173e7df103d1a2cd09641
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611651"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093426"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>Configurer votre complément Outlook pour l’activation basée sur les événements (aperçu)
 
@@ -21,7 +21,7 @@ Sans la fonctionnalité d’activation basée sur un événement, un utilisateur
 À la fin de cette procédure pas à pas, vous disposez d’un complément qui s’exécute chaque fois qu’un nouveau message est créé.
 
 > [!IMPORTANT]
-> Cette fonctionnalité est uniquement prise en charge pour l' [Aperçu](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) dans Outlook sur le Web avec un abonnement Office 365. Pour plus d’informations, voir [comment afficher un aperçu de la fonctionnalité activation basée sur les événements](#how-to-preview-the-event-based-activation-feature) dans cet article.
+> Cette fonctionnalité est uniquement prise en charge pour l' [Aperçu](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) dans Outlook sur le Web avec un abonnement Microsoft 365. Pour plus d’informations, voir [comment afficher un aperçu de la fonctionnalité activation basée sur les événements](#how-to-preview-the-event-based-activation-feature) dans cet article.
 >
 > Les fonctionnalités d’aperçu étant susceptibles d’être modifiées sans préavis, elles ne doivent pas être utilisées dans les compléments de production.
 
@@ -44,7 +44,7 @@ Pour activer l’activation basée sur les événements de votre complément, vo
 
 1. Dans votre éditeur de code, ouvrez le projet Quick Start.
 
-1. Ouvrez le fichier **Manifest. xml** situé à la racine de votre projet.
+1. Ouvrez le fichier **manifest.xml** situé à la racine de votre projet.
 
 1. Sélectionnez le `<VersionOverrides>` nœud entier (y compris les balises ouvrantes et fermantes) et remplacez-le par le code XML suivant.
 
@@ -158,7 +158,7 @@ Vous devez implémenter la gestion de vos événements sélectionnés.
 
 Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux éléments.
 
-1. À partir du même projet de démarrage rapide, ouvrez le fichier **./SRC/Commands/Commands.js** dans votre éditeur de code.
+1. À partir du même projet de démarrage rapide, ouvrez le fichier **./src/commands/commands.js** dans votre éditeur de code.
 
 1. Après la `action` fonction, insérez les fonctions JavaScript suivantes.
 
@@ -183,7 +183,7 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
     g.onAppointmentComposeHandler = onAppointmentComposeHandler;
     ```
 
-## <a name="try-it-out"></a>Essayez
+## <a name="try-it-out"></a>Try it out
 
 1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution).
 
@@ -205,7 +205,7 @@ Si l’utilisateur a plusieurs compléments qui s’abonnent au même événemen
 
 L’utilisateur peut basculer ou naviguer hors de l’élément de courrier actuel dans lequel le complément a commencé. Le complément qui a été lancé terminera son opération en arrière-plan.
 
-Certaines API Office. js qui modifient ou modifient l’interface utilisateur ne sont pas autorisées dans les compléments basés sur des événements. Les API bloquées sont les suivantes.
+Certaines API de Office.js qui modifient ou modifient l’interface utilisateur ne sont pas autorisées dans les compléments basés sur des événements. Les API bloquées sont les suivantes.
 
 - Sous `Office.context.mailbox` :
   - `displayAppointmentForm`

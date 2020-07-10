@@ -3,16 +3,16 @@ title: Instructions relatives aux icônes de style frais pour les compléments O
 description: Obtenez des instructions sur l’utilisation des icônes d’icône de style fraîche dans les compléments Office.
 ms.date: 12/09/2019
 localization_priority: Normal
-ms.openlocfilehash: 1cad9035b1aaa732c84c9079bbfcb425b4fffcd3
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7f29de70712448e9ee7458db864fb40746412153
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44607686"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093930"
 ---
 # <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Instructions relatives aux icônes de style frais pour les compléments Office
 
-Les versions Office 2013 + (sans abonnement) d’Office utilisent les nouveaux styles de style iconographie. Si vous préférez que vos icônes correspondent au style monoligne d’Office 365, reportez-vous à la rubrique [règles d’icône de style monoligne pour les compléments Office](add-in-icons-monoline.md).
+Les versions Office 2013 + (sans abonnement) d’Office utilisent les nouveaux styles de style iconographie. Si vous préférez que vos icônes correspondent au style monoligne de Microsoft 365, reportez-vous à la rubrique [règles d’icône de style monoligne pour les compléments Office](add-in-icons-monoline.md).
 
 ## <a name="office-fresh-visual-style"></a>Nouveau style visuel Office
 
@@ -25,10 +25,10 @@ Suivez ces instructions lorsque vous créez vos icônes :
 |À faire|À ne pas faire|
 |:---|:---|
 |Restez simple et clair en vous concentrant sur les éléments clés de la communication.| N’utilisez pas d’artefacts qui rendent votre icône désordonnée.|
-|Utilisez le langage d’icône Office pour représenter des comportements ou des concepts.|Ne redéfinissez pas les glyphes Office UI Fabric pour les commandes de complément dans le ruban Office ou les menus contextuels. Les icônes Fabric sont stylistiquement différentes et ne correspondront pas.|
+|Utilisez le langage d’icône Office pour représenter des comportements ou des concepts.|Ne réactivez pas les glyphes de structure d’interface utilisateur Office pour les commandes de complément dans le ruban d’application Office ou les menus contextuels. Les icônes de structure sont stylistiquement différentes et ne correspondront pas.|
 |Réutilisez les métaphores visuelles d’Office courantes telles que le pinceau pour mettre en forme ou la loupe pour rechercher.|Ne réutilisez pas les métaphores visuelles pour différentes commandes. L’utilisation de la même icône pour différents comportements et concepts peut semer la confusion. |
 |Redessinez vos icônes pour les réduire ou les agrandir. Prenez le temps de redessiner les découpages, les coins et des bords arrondis pour optimiser la netteté de ligne. |Ne redimensionnez pas vos icônes en réduisant ou en agrandissant leurs tailles. Cela peut entraîner une mauvaise qualité visuelle et des actions peu claires. Les icônes complexes créées dans une plus grande taille risquent de perdre en clarté si elles sont redimensionnées pour être réduites sans être redessinées. |
-|Utilisez un remplissage blanc pour améliorer l’accessibilité. La plupart des objets dans les icônes nécessitent un arrière-plan blanc pour être lisibles sur les thèmes de l’interface utilisateur d’Office et en mode contraste élevé.  |Évitez de vous fier à votre logo ou marque pour communiquer ce que fait une commande de complément. Les repères de marque ne sont pas toujours reconnaissables sur des icônes de petites tailles et lorsque des modificateurs sont appliqués. Les repères de marque entrent souvent en conflit avec les styles d’icônes du ruban Office et peuvent gêner l’attention de l’utilisateur dans un environnement saturé. |
+|Use a white fill for accessibility. Most objects in your icons will require a white background to be legible across Office UI themes and in high-contrast modes.  |Évitez de vous fier à votre logo ou marque pour communiquer ce que fait une commande de complément. Les repères de marque ne sont pas toujours reconnaissables sur des icônes de petites tailles et lorsque des modificateurs sont appliqués. Les marques de marque sont souvent en conflit avec les styles d’icône du ruban de l’application Office et peuvent rivaliser pour attirer l’attention des utilisateurs dans un environnement saturé. |
 |Utilisez le format PNG avec un arrière-plan transparent. ||
 |Évitez le contenu localisable dans les icônes, y compris les caractères typographiques, les paragraphes en drapeau et les points d’interrogation. ||
 
@@ -78,9 +78,9 @@ The following table lists the locations for certain icon sizes.
 
 ## <a name="icon-anatomy-and-layout"></a>Mise en page et structure de l’icône
 
-Les icônes Office sont généralement constituées d’un élément de base avec des modificateurs d’action et conceptuels superposés. Les modificateurs d’action représentent des concepts tels qu’ajouter, ouvrir, nouveau ou fermer. Les modificateurs conceptuels représentent l’état, l’altération ou une description de l’icône.
+Office icons are typically comprised of a base element with action and conceptual modifiers overlayed. Action modifiers represent concepts such as add, open, new, or close. Conceptual modifiers represent status, alteration, or a description of the icon.
 
-Pour créer des commandes qui s’alignent sur l’interface utilisateur d’Office, suivez les instructions de mise en forme pour les éléments de base et les modificateurs. Cela garantit que vos commandes auront un aspect professionnel et que vos clients auront confiance en votre complément. Si vous apportez des exceptions à ces instructions, faites-le intentionnellement.
+To create commands that align with the Office UI, follow layout guidelines for the base element and modifiers. This ensures that your commands look professional and that your customers will trust your add-in. If you make exceptions to these guidelines, do so intentionally.
 
 L’image suivante montre la disposition des éléments de base et modificateurs dans une icône Office.
 
@@ -89,7 +89,7 @@ L’image suivante montre la disposition des éléments de base et modificateurs
 - Éléments de base centraux dans le cadre de pixel avec remplissage vide tout autour.
 - Placez les modificateurs d’action dans le coin supérieur gauche.
 - Placez les modificateurs conceptuels dans la partie inférieure droite.
-- Limitez le nombre d’éléments dans les icônes. En 32 px, limitez le nombre de modificateurs à un maximum de deux. En 16 px, limitez le nombre de modificateurs à un.
+- Limit the number of elements in your icons. At 32px, limit the number of modifiers to a maximum of two. At 16px, limit the number of modifiers to one.
 
 ### <a name="base-element-padding"></a>Remplissage d’un élément de base
 
@@ -97,7 +97,7 @@ Placez les éléments de base de façon cohérente en fonction des tailles. Si l
 
 ### <a name="modifiers"></a>Modificateurs
 
-Tous les modificateurs doivent avoir un découpage transparent 1 px entre chaque élément, y compris l’arrière-plan. Les éléments ne doivent pas se chevaucher directement. Créez des espaces entre les règles et les bords. Les modificateurs peuvent varier légèrement en taille, mais utilisez ces dimensions comme point de départ.
+All modifiers should have a 1px transparent cutout between each element, including the background. Elements should not directly overlap. Create whitespace between rules and edges. Modifiers can vary slightly in size, but use these dimensions as a starting point.
 
 |**Taille de l’icône**|**Remplissage autour de l’élément de base**|**Taille du modificateur**|
 |:---|:---|:---|
@@ -115,11 +115,11 @@ Tous les modificateurs doivent avoir un découpage transparent 1 px entre chaqu
 > [!NOTE]
 > Les couleurs recommandées concernent les icônes du ruban utilisées dans les [Commandes de complément](add-in-commands.md). Ces icônes ne sont pas restituées dans Microsoft UI Fabric et la palette de couleurs est différente de la palette présentée dans [Microsoft UI Fabric | Couleurs | Partagé](https://fluentfabric.azurewebsites.net/#/color/shared).
 
-Les icônes Office ont une palette de couleurs limitée. Utilisez les couleurs répertoriées dans le tableau suivant pour garantir une intégration parfaite avec l’interface utilisateur d’Office. Appliquez les instructions suivantes sur l’utilisation des couleurs :
+Office icons have a limited color palette. Use the colors listed in the following table to guarantee seamless integration with the Office UI. Apply the following guidelines to the use of color:
 
-- Utilisez la couleur pour véhiculer une signification plutôt que pour embellir. Elle doit mettre en surbrillance ou mettre en évidence une action, un état ou un élément qui différencie explicitement le repère. 
-- Si possible, n’utilisez qu’une seule couleur supplémentaire au-delà du gris. Limitez les couleurs supplémentaires à deux au maximum.
-- Les couleurs ont une apparence cohérente dans toutes les tailles d’icône. Les icônes Office ont des palettes de couleurs légèrement différentes pour des tailles d’icônes différentes. Les icônes 16 px et plus petites sont légèrement plus sombres et plus percutantes que les icônes 32 px et plus grandes. Sans ces ajustements discrets, les couleurs semblent varier en taille.
+- Use color to communicate meaning rather than for embellishment. It should highlight or emphasize an action, status, or an element that explicitly differentiates the mark. 
+- If possible, use only one additional color beyond gray. Limit additional colors to two at the most.
+- Colors should have a consistent appearance in all icon sizes. Office icons have slightly different color palettes for different icon sizes. 16px and smaller icons are slightly darker and more vibrant than 32px and larger icons. Without these subtle adjustments, colors appear to vary across sizes.
 
 |**Nom de la couleur**|**RVB**|**Hex**|**Couleur**|**Catégorie**|
 |:---|:---|:---|:---|:---|
@@ -146,7 +146,7 @@ Les icônes Office ont une palette de couleurs limitée. Utilisez les couleurs r
 
 ## <a name="icons-in-high-contrast-modes"></a>Icônes en modes de contraste élevé
 
-Les icônes Office sont conçues pour un rendu correct en mode de contraste élevé. Les éléments de premier plan sont bien différenciés des arrière-plans pour optimiser la lisibilité et permettre le recoloriage. En modes de contraste élevé, Office recolorie tous les pixels de votre icône avec une valeur rouge, verte ou bleue inférieure à 190 en noir plein. Tous les autres pixels sont blancs. Autrement dit, chaque canal RVB est évalué lorsque les valeurs 0-189 sont noires et les valeurs 190-255 sont blanches. D’autres thèmes à contraste élevé recolorient à l’aide du même seuil de valeur 190 mais avec des règles différentes. Par exemple, le thème blanc à contraste élevé recolorie tous les pixels supérieurs à 190 en opaque, mais tous les autres pixels en transparent. Appliquez les instructions suivantes pour optimiser la lisibilité dans les paramètres de contraste élevé :
+Office icons are designed to render well in high contrast modes. Foreground elements are well differentiated from backgrounds to maximize legibility and enable recoloring. In high contrast modes, Office will recolor any pixel of your icon with a red, green, or blue value less than 190 to full black. All other pixels will be white. In other words, each RGB channel is assessed where 0-189 values are black and 190-255 values are white. Other high-contrast themes recolor using the same 190 value threshold but with different rules. For example, the high-contrast white theme will recolor all pixels greater than 190 opaque but all other pixels as transparent. Apply the following guidelines to maximize legibility in high-contrast settings:
 
 - Essayez de différencier les éléments de premier plan et d’arrière-plan par rapport au seuil de valeur 190.
 - Suivez les styles visuels des icônes Office.

@@ -4,19 +4,19 @@ description: Explique comment configurer un complément Outlook Mobile pour un f
 ms.topic: article
 ms.date: 06/25/2020
 localization_priority: Normal
-ms.openlocfilehash: 052ab4e71f8bc90e655a6ba780eacc18d43069e1
-ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
+ms.openlocfilehash: 9f0b50602ab4941b16c15abe97c3f099a54f5b42
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "45006424"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094000"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>Créer un complément Outlook Mobile pour un fournisseur de réunion en ligne
 
 La configuration d’une réunion en ligne est une expérience de base pour un utilisateur d’Outlook, et il est facile de [créer une réunion teams avec Outlook](/microsoftteams/teams-add-in-for-outlook) mobile. Toutefois, la création d’une réunion en ligne dans Outlook avec un service non-Microsoft peut être lourde. En implémentant cette fonctionnalité, les fournisseurs de services peuvent rationaliser l’expérience de création des réunions en ligne pour leurs utilisateurs des compléments Outlook.
 
 > [!IMPORTANT]
-> Cette fonctionnalité est uniquement prise en charge sur Android avec un abonnement Office 365.
+> Cette fonctionnalité est uniquement prise en charge sur Android avec un abonnement Microsoft 365.
 
 Dans cet article, vous apprendrez à configurer votre complément Outlook Mobile pour permettre aux utilisateurs d’organiser et de participer à une réunion à l’aide de votre service de réunion en ligne. Tout au long de cet article, nous allons utiliser un fournisseur de services de réunion en ligne fictif, « contoso ».
 

@@ -3,22 +3,22 @@ title: Déboguer des compléments Office sur un Mac
 description: Découvrez comment utiliser un Mac pour déboguer des compléments Office
 ms.date: 11/26/2019
 localization_priority: Normal
-ms.openlocfilehash: bcdf16a858fa613a3248a728b45d68d02cf41a5e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 12785a195c336e0de8c619379a3839bd15079b2c
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611219"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094126"
 ---
 # <a name="debug-office-add-ins-on-a-mac"></a>Déboguer des compléments Office sur un Mac
 
-Étant donné que les compléments sont développés avec du code HTML et JavaScript, ils sont conçus pour fonctionner sur toutes les plateformes, mais il peut y avoir de subtiles différences dans le rendu du code HTML par les différents navigateurs. Cet article décrit la procédure de débogage des compléments qui s’exécutent sur un Mac.
+Because add-ins are developed using HTML and JavaScript, they are designed to work across platforms, but there might be subtle differences in how different browsers render the HTML. This article describes how to debug add-ins running on a Mac.
 
 ## <a name="debugging-with-safari-web-inspector-on-a-mac"></a>Débogage avec l’inspecteur web Safari sur Mac
 
 Si votre complément affiche une interface utilisateur dans un volet des tâches ou dans un complément de contenu, vous pouvez déboguer un complément Office à l’aide de avec l’inspecteur web Safari.
 
-Pour pouvoir déboguer des compléments Office sur Mac, vous devez disposer de Mac OS High Sierra ET de Mac Office version 16.9.1 (build 18012504) ou version ultérieure. Si vous n’avez pas de build Office Mac, vous pouvez en obtenir une en rejoignant le [Programme pour les développeurs Office 365](https://developer.microsoft.com/office/dev-program).
+Pour pouvoir déboguer des compléments Office sur Mac, vous devez disposer de Mac OS High Sierra ET de Mac Office version 16.9.1 (build 18012504) ou version ultérieure. Si vous n’avez pas de version Office Mac, vous pouvez en obtenir une en rejoignant le programme pour les [développeurs Microsoft 365](https://developer.microsoft.com/office/dev-program).
 
 Pour commencer, ouvrez un terminal, puis définissez la propriété `OfficeWebAddinDeveloperExtras` pour l’application Office pertinente comme suit :
 

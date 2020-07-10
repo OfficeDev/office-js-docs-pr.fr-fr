@@ -1,14 +1,14 @@
 ---
 title: Compléments Office de contenu
 description: Les compléments de contenu sont des surfaces qui peuvent être incorporées directement dans des documents Excel ou PowerPoint. Ils permettent aux utilisateurs d’accéder aux contrôles d’interface qui exécutent le code pour modifier des documents ou afficher des données d’une source de données.
-ms.date: 03/19/2019
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 6494da1a5de8f217483e2df385305c3c6583a511
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f228ae8e7cca0426b0b43e31e38454029e4c7614
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44607637"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093846"
 ---
 # <a name="content-office-add-ins"></a>Compléments Office de contenu
 
@@ -25,11 +25,11 @@ Les compléments de contenu sont des surfaces qui peuvent être incorporées dir
 
 ## <a name="variants"></a>Variantes
 
-Les tailles des compléments de contenu pour Excel et PowerPoint dans le bureau Office et Office 365 sont spécifiées par l’utilisateur.
+Les tailles des compléments de contenu pour Excel et PowerPoint dans le bureau Office et Microsoft 365 sont spécifiées par l’utilisateur.
 
 ## <a name="personality-menu"></a>Menu Caractéristique
 
-Les menus Caractéristique peuvent entraver les éléments de navigation et de commande se trouvant en haut à droite du complément. Voici les dimensions actuelles du menu Caractéristique sur Windows et Mac.
+Personality menus can obstruct navigational and commanding elements located near the top right of the add-in. The following are the current dimensions of the personality menu on Windows and Mac.
 
 Pour Windows, le menu Caractéristique mesure 12 x 32 pixels, comme illustré.
 
@@ -52,7 +52,7 @@ Pour consulter un exemple qui implémente un complément de contenu, reportez-vo
 
 - Vérifiez si votre complément Office fonctionne sur une [plateforme hôte Office spécifique](../overview/office-add-in-availability.md).
 - Certains compléments de contenu peuvent exiger que l’utilisateur accepte que le complément lise et écrive dans Excel ou PowerPoint. Vous pouvez déclarer le [niveau des autorisations](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md) que vous souhaitez attribuer à votre utilisateur dans le manifeste du complément.  
-- Les compléments de contenu sont pris en charge dans Excel et PowerPoint dans Office 2013 et versions ultérieures. Si vous ouvrez un complément dans une version d’Office qui ne prend pas en charge les compléments web Office, le complément s’affichera comme une image.
+- Content add-ins are supported in Excel and PowerPoint in Office 2013 version and later. If you open an add-in in a version of Office that doesn't support Office web add-ins, the add-in will be displayed as an image.
 
 ## <a name="see-also"></a>Voir aussi
 

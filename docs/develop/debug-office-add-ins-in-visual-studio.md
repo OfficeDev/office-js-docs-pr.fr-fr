@@ -3,12 +3,12 @@ title: Déboguer des compléments Office dans Visual Studio
 description: Utiliser Visual Studio pour déboguer des compléments Office dans le client de bureau Office sous Windows
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 52c303b1f353871fe3de7878b692204e6ec65054
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 018bfa24424514598d323c29d165e3e8ec066a8e
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608336"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093657"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Déboguer des compléments Office dans Visual Studio
 
@@ -96,7 +96,7 @@ Si vous avez un document qui contient les données de test à utiliser pendant l
 Démarrez le projet en choisissant **déboguer** > **démarrer le débogage** à partir de la barre de menus. Visual Studio créera automatiquement la solution et démarrera Office pour héberger votre complément.
 
 > [!NOTE]
-> Lorsque vous commencez un projet de complément Outlook, vous serez invité à indiquer vos informations de connexion. Si vous êtes invité à vous connecter à plusieurs reprises ou si vous recevez un message d’erreur indiquant que vous n’êtes pas autorisé, il se peut que l’authentification de base soit désactivée pour les comptes sur votre client Office 365. Dans ce cas, essayez d’utiliser un compte Microsoft à la place. Il se peut également que vous deviez définir la propriété « Utiliser l’authentification multifacteur » sur Vrai dans la boîte de dialogue Propriétés du complément Outlook Web.
+> Lorsque vous commencez un projet de complément Outlook, vous serez invité à indiquer vos informations de connexion. Si vous êtes invité à vous connecter à plusieurs reprises ou si vous recevez un message d’erreur indiquant que vous n’êtes pas autorisé, l’authentification de base peut être désactivée pour les comptes sur votre client Microsoft 365. Dans ce cas, essayez d’utiliser un compte Microsoft à la place. Il se peut également que vous deviez définir la propriété « Utiliser l’authentification multifacteur » sur Vrai dans la boîte de dialogue Propriétés du complément Outlook Web.
 
 Visual Studio génère le projet et effectue les actions suivantes :
 
@@ -145,7 +145,7 @@ Vous pouvez modifier votre code et passer en revue les effets de ces modificatio
 
 Une fois que vous avez [démarré le projet](#start-the-project) et que Visual Studio lance Outlook pour héberger votre complément, ouvrez un élément de courrier électronique ou un rendez-vous. 
 
-Outlook active le complément pour l’élément à condition que les critères d’activation soient respectés. La barre complément apparaît en haut de la fenêtre de l’inspecteur ou du volet de lecture, et votre complément Outlook apparaît sous la forme d’un bouton dans la barre du complément. Si votre complément est doté d’une commande, un bouton apparaît dans le ruban (soit dans l’onglet par défaut, soit dans un onglet personnalisé indiqué), et le complément n’apparaît pas dans la barre complément.
+Outlook activates the add-in for the item as long as the activation criteria are met. The add-in bar appears at the top of the Inspector window or Reading Pane, and your Outlook add-in appears as a button in the add-in bar. If your add-in has an add-in command, a button will appear in the ribbon, either in the default tab or a specified custom tab, and the add-in will not appear in the add-in bar.
 
 Pour voir votre complément Outlook, cliquez sur le bouton correspondant. Une fois que votre complément est affiché dans Outlook, vous pouvez déboguer votre code en procédant comme suit :
 

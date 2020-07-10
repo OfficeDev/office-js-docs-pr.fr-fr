@@ -1,15 +1,15 @@
 ---
 title: Didacticiel sur les compléments Word
 description: Dans ce didacticiel, vous allez cr?er un compl?ment Word qui ins?re (et remplace) des plages de texte, des paragraphes, des images, du code HTML, des tableaux et des contr?les de contenu. Vous découvrirez également comment mettre en forme du texte et comment insérer (et remplacer) du contenu dans les contrôles de contenu.
-ms.date: 01/16/2020
+ms.date: 07/07/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: a45cbcc9980a2f07218257f6fef0bd7c781f9992
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9ee851c9d479c15a0abce5228d89648d1268861b
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44610833"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093510"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches Word
 
@@ -87,11 +87,11 @@ Dans cette étape du tutoriel, vous devez tester par programme que votre complé
 
 8. Ajoutez la fonction suivante à la fin du fichier. Remarque :
 
-   - Votre logique métier Word.js est ajoutée à la fonction qui est transmise à `Word.run`. Cette logique n’est pas exécutée immédiatement. Au lieu de cela, elle est ajoutée à une file d’attente de commandes.
+   - Your Word.js business logic will be added to the function that is passed to `Word.run`. This logic does not execute immediately. Instead, it is added to a queue of pending commands.
 
    - La méthode `context.sync` envoie toutes les commandes en file d’attente vers Word pour exécution.
 
-   - L’élément `Word.run` est suivi par un bloc `catch`. Il s’agit d’une meilleure pratique que vous devez toujours suivre. 
+   - The `Word.run` is followed by a `catch` block. This is a best practice that you should always follow. 
 
     ```js
     function insertParagraph() {
@@ -114,11 +114,11 @@ Dans cette étape du tutoriel, vous devez tester par programme que votre complé
 
    - Le premier paramètre de la méthode `insertParagraph` correspond au texte pour le nouveau paragraphe.
 
-   - Le deuxième paramètre correspond à l’emplacement dans le corps où sera inséré le paragraphe. Les autres options d’insertion de paragraphe, lorsque l’objet parent est le corps, sont « Fin » et « Remplacer ».
+   - The second parameter is the location within the body where the paragraph will be inserted. Other options for insert paragraph, when the parent object is the body, are "End" and "Replace".
 
     ```js
     var docBody = context.document.body;
-    docBody.insertParagraph("Office has several versions, including Office 2016, Office 365 Click-to-Run, and Office on the web.",
+    docBody.insertParagraph("Office has several versions, including Office 2016, Microsoft 365 subscription, and Office on the web.",
                             "Start");
     ```
 
@@ -318,11 +318,11 @@ Dans cette étape du didacticiel, vous devez appliquer un style intégré au tex
 
 4. Dans Word, créez un [style personnalisé](https://support.office.com/article/customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563) nommé « MyCustomStyle ». Vous pouvez y appliquer la mise en forme que vous souhaitez.
 
-5. Sélectionnez le bouton **Appliquer le style**. Le style prédéfini **Référence intense** est appliqué au premier paragraphe.
+5. Choose the **Apply Style** button. The first paragraph will be styled with the built-in style **Intense Reference**.
 
-6. Sélectionnez le bouton **Appliquer un style personnalisé**. Votre style personnalisé est appliqué au dernier paragraphe. (Si rien ne semble se produire, le dernier paragraphe est peut-être vide. Si c’est le cas, ajoutez-y du texte.)
+6. Choose the **Apply Custom Style** button. The last paragraph will be styled with your custom style. (If nothing seems to happen, the last paragraph might be blank. If so, add some text to it.)
 
-7. Sélectionnez le bouton **Modifier la police**. La police Courier New, 18 pt, en gras, est appliquée au deuxième paragraphe.
+7. Choose the **Change Font** button. The font of the second paragraph changes to 18 pt., bold, Courier New.
 
     ![Didacticiel Word- Appliquer des styles et une police](../images/word-tutorial-apply-styles-and-font-2.png)
 
@@ -374,15 +374,15 @@ Dans cette étape du didacticiel, vous ajouterez du texte dans les plages de tex
 
 6. À l’intérieur de la fonction `insertTextIntoRange()`, remplacez `TODO1` par le code suivant. Remarque :
 
-   - La méthode est destinée à insérer l’abréviation [« (C2R) »] à la fin de la plage dont le texte est « Click-to-Run » (Démarrer en un clic). Cela permet d’émettre une hypothèse simplifiée selon laquelle la chaîne est présente et l’utilisateur l’a sélectionnée.
+   - The method is intended to insert the abbreviation ["(C2R)"] into the end of the Range whose text is "Click-to-Run". It makes a simplifying assumption that the string is present and the user has selected it.
 
    - Le premier paramètre de la méthode `Range.insertText` correspond à la chaîne à insérer dans l’objet `Range`.
 
-   - Le deuxième paramètre spécifie l’emplacement où le texte supplémentaire doit être inséré dans la plage. Outre « Fin », les autres options possibles sont : « Début », « Avant », « Après » et « Remplacer ». 
+   - The second parameter specifies where in the range the additional text should be inserted. Besides "End", the other possible options are "Start", "Before", "After", and "Replace". 
 
-   - La différence entre « Fin » et « Après » est que « Fin » insère le nouveau texte à la fin de la plage existante, tandis que l’option « Après » crée une plage avec la chaîne et insère la nouvelle plage après la plage existante. De même, « Début » insère le texte au début de la plage existante, tandis que l’option « Avant » insère une nouvelle plage. L’option « Remplacer » remplace le texte de la plage existante par la chaîne dans le premier paramètre.
+   - The difference between "End" and "After" is that "End" inserts the new text inside the end of the existing range, but "After" creates a new range with the string and inserts the new range after the existing range. Similarly, "Start" inserts text inside the beginning of the existing range and "Before" inserts a new range. "Replace" replaces the text of the existing range with the string in the first parameter.
 
-   - Vous avez vu lors d’une étape précédente du didacticiel que les méthodes insert* de l’objet corps ne disposent pas des options « Avant » et « Après ». Cela est dû au fait que vous ne pouvez pas placer de contenu en dehors du corps du document.
+   - You saw in an earlier stage of the tutorial that the insert* methods of the body object do not have the "Before" and "After" options. This is because you can't put content outside of the document's body.
 
     ```js
     var doc = context.document;
@@ -421,11 +421,11 @@ Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*
         //        been queued.
     ```
 
-2. Il est impossible que deux instructions `return` se trouvent dans le même chemin de code, supprimez donc la dernière ligne `return context.sync();` à la fin de la fonction `Word.run`. Vous ajouterez une nouvelle ligne finale `context.sync` par la suite dans ce didacticiel.
+2. You can't have two `return` statements in the same unbranching code path, so delete the final line `return context.sync();` at the end of the `Word.run`. You'll add a new final `context.sync` later in this tutorial.
 
 3. Coupez la ligne `doc.body.insertParagraph` et collez-la à la place de `TODO4`.
 
-4. Remplacez `TODO5` par le code suivant. Remarque :
+4. Replace `TODO5` with the following code. Note:
 
    - Le fait de transmettre la méthode `sync` à une fonction `then` permet de s’assurer qu’elle n’est pas exécutée tant que la logique `insertParagraph` n’a pas été mise en file d’attente.
 
@@ -503,11 +503,11 @@ function insertTextIntoRange() {
 
 6. À l’intérieur de la fonction `insertTextBeforeRange()`, remplacez `TODO1` par le code suivant. Remarque :
 
-   - La méthode est destinée à ajouter une plage dont le texte est « Office 2019 », avant la plage contenant le texte « Office 365 ». Cela permet d’émettre une hypothèse simplifiée selon laquelle la chaîne est présente et l’utilisateur l’a sélectionnée.
+   - The method is intended to add a range whose text is "Office 2019, " before the range with text "Office 365". It makes a simplifying assumption that the string is present and the user has selected it.
 
    - Le premier paramètre de la méthode `Range.insertText` correspond à la chaîne à ajouter.
 
-   - Le deuxième paramètre spécifie l’emplacement où le texte supplémentaire doit être inséré dans la plage. Pour plus d’informations sur les options d’emplacement, reportez-vous à la discussion précédente sur la fonction `insertTextIntoRange`.
+   - The second parameter specifies where in the range the additional text should be inserted. For more details about the location options, see the previous discussion of the `insertTextIntoRange` function.
 
     ```js
     var doc = context.document;
@@ -529,7 +529,7 @@ function insertTextIntoRange() {
         //        been queued.
     ```
 
-8. Remplacez `TODO3` par le code suivant. Ce nouveau paragraphe montre que le nouveau texte n’entre ***pas*** dans la plage sélectionnée d’origine. La plage d’origine contient toujours le texte qu’elle contenait lorsqu’elle avait été sélectionnée uniquement.
+8. Replace `TODO3` with the following code. This new paragraph will demonstrate the fact that the new text is ***not*** part of the original selected range. The original range still has only the text it had when it was selected.
 
     ```js
     doc.body.insertParagraph("Current text of original range: " + originalRange.text, "End");
@@ -598,15 +598,15 @@ function insertTextIntoRange() {
 
 4. Dans le document, sélectionnez l’expression « Click-to-Run » (Démarrer en un clic). *Veillez à ne pas inclure l’espace précédent ou la virgule suivante dans la sélection.*
 
-5. Sélectionnez le bouton **Insérer une abréviation**. L’abréviation « (C2R) » est ajoutée. Notez également qu’en bas du document, un nouveau paragraphe est ajouté avec l’intégralité du texte développé, car la nouvelle chaîne a été ajoutée à la plage existante.
+5. Choose the **Insert Abbreviation** button. Note that " (C2R)" is added. Note also that at the bottom of the document a new paragraph is added with the entire expanded text because the new string was added to the existing range.
 
 6. Dans le document, sélectionnez l’expression « Office 365 ». *Veillez à ne pas inclure tout espace précédent ou suivant dans la sélection.*
 
-7. Sélectionnez le bouton **Ajouter les informations de version**. L’expression « Office 2019 » est insérée entre « Office 2016 » et « Office 365 ». Notez également qu’en bas du document, un nouveau paragraphe est ajouté. Celui-ci contient uniquement le texte sélectionné à l’origine, car la nouvelle chaîne est devenue une nouvelle plage plutôt que d’être ajoutée à la plage d’origine.
+7. Choose the **Add Version Info** button. Note that "Office 2019, " is inserted between "Office 2016" and "Office 365". Note also that at the bottom of the document a new paragraph is added but it contains only the originally selected text because the new string became a new range rather than being added to the original range.
 
 8. Dans le document, sélectionnez l’expression « several » (plusieurs). *Veillez à ne pas inclure tout espace précédent ou suivant dans la sélection.*
 
-9. Sélectionnez le bouton permettant de **modifier la condition de quantité** (Change Quantity Term). Notez que « many » (beaucoup) remplace le texte sélectionné.
+9. Choose the **Change Quantity Term** button. Note that "many" replaces the selected text.
 
     ![Didacticiel Word- Ajout et remplacement de texte](../images/word-tutorial-text-replace-2.png)
 
@@ -716,7 +716,7 @@ Procédez comme suit pour définir l’image que vous allez insérer dans le doc
 
    - La première ligne ajoute un paragraphe vide à la fin du document. 
 
-   - La deuxième ligne insère une chaîne de code HTML à la fin du paragraphe. Plus précisément, deux paragraphes : un paragraphe avec la police Verdana, et l’autre avec le style par défaut du document Word. (Comme pour la méthode `insertImage` précédente, l’objet `context.document.body` contient également les méthodes `insert*`.)
+   - The second line inserts a string of HTML at the end of the paragraph; specifically two paragraphs, one formatted with Verdana font, the other with the default styling of the Word document. (As you saw in the `insertImage` method earlier, the `context.document.body` object also has the `insert*` methods.)
 
     ```js
     var blankParagraph = context.document.body.paragraphs.getLast().insertParagraph("", "After");
@@ -813,7 +813,7 @@ Dans cette étape du didacticiel, vous découvrirez comment créer des contrôle
 > [!NOTE]
 > Plusieurs types de contrôles de contenu peuvent être ajoutés à un document Word via l’interface utilisateur. Toutefois, actuellement, seuls les contrôles de contenu de texte enrichi sont pris en charge par Word.js.
 >
-> Avant de commencer cette étape du didacticiel, nous vous recommandons de créer et de manipuler des contrôles de contenu de texte enrichi via l’interface utilisateur Word afin de vous familiariser avec les contrôles et leurs propriétés. Pour plus d’informations, reportez-vous à l’article [Créer des formulaires à remplir ou imprimer dans Word](https://support.office.com/article/create-forms-that-users-complete-or-print-in-word-040c5cc1-e309-445b-94ac-542f732c8c8b).
+> Before you start this step of the tutorial, we recommend that you create and manipulate Rich Text content controls through the Word UI, so you can be familiar with the controls and their properties. For details, see [Create forms that users complete or print in Word](https://support.office.com/article/create-forms-that-users-complete-or-print-in-word-040c5cc1-e309-445b-94ac-542f732c8c8b).
 
 ### <a name="create-a-content-control"></a>Créer un contrôle de contenu
 
@@ -853,13 +853,13 @@ Dans cette étape du didacticiel, vous découvrirez comment créer des contrôle
 
 6. À l’intérieur de la fonction `createContentControl()`, remplacez `TODO1` par le code suivant. Remarque :
 
-   - Ce code est destiné à intégrer l’expression « Office 365 » dans un contrôle de contenu. Cela permet d’émettre une hypothèse simplifiée selon laquelle la chaîne est présente et l’utilisateur l’a sélectionnée.
+   - This code is intended to wrap the phrase "Office 365" in a content control. It makes a simplifying assumption that the string is present and the user has selected it.
 
    - La propriété `ContentControl.title` indique le titre visible du contrôle de contenu.
 
    - La propriété `ContentControl.tag` indique une balise qui peut être utilisée pour obtenir une référence à un contrôle de contenu à l’aide de la méthode `ContentControlCollection.getByTag`, que vous utiliserez dans une fonction ultérieure.
 
-   - La propriété `ContentControl.appearance` indique l’apparence visuelle du contrôle. Utiliser la valeur « Tags » (Balises) signifie que le contrôle est intégré entre des balises de début et de fin, et que la balise de début portera le titre du contrôle de contenu. Les autres valeurs possibles sont « BoundingBox » (Cadre englobant) et « None » (Aucun).
+   - The `ContentControl.appearance` property specifies the visual look of the control. Using the value "Tags" means that the control will be wrapped in opening and closing tags, and the opening tag will have the content control's title. Other possible values are "BoundingBox" and "None".
 
    - La propriété `ContentControl.color` spécifie la couleur des balises ou la bordure du cadre englobant.
 

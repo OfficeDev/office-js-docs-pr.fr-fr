@@ -1,14 +1,14 @@
 ---
 title: Navigateurs utilisés par les compléments Office
 description: Indique comment le système d’exploitation et la version d’Office déterminent le navigateur utilisé par les compléments Office.
-ms.date: 06/01/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 2dc66439ff4ab7f9bee148168df4d9d9b30a11a1
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 0cdb601da7625eb3cafdcd883192861938529e0d
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608040"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093440"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navigateurs utilisés par les compléments Office
 
@@ -17,7 +17,7 @@ Les compléments Office sont des applications web qui s’affichent à l’aide 
 Le navigateur utilisé dépend de ce qui suit :
 
 - Système d’exploitation de l’ordinateur.
-- Exécution du complément dans Office sur le web, Office 365, Office 2013 sans abonnement ou version ultérieure.
+- Si le complément est exécuté dans Office sur le Web, Microsoft 365 ou sans abonnement Office 2013 ou version ultérieure.
 
 Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes et systèmes d’exploitation.
 
@@ -36,7 +36,7 @@ Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes e
 
 <sup>2</sup> lorsque Microsoft Edge est utilisé, le narrateur Windows 10 (parfois appelé « lecteur d’écran ») lit la `<title>` balise dans la page qui s’ouvre dans le volet Office. Si Internet Explorer 11 est utilisé, le Narrateur lit la barre de titre du volet Office, qui provient de la valeur `<DisplayName>` du manifeste du complément.
 
-<sup>3</sup> si votre complément inclut l' `Runtimes` élément dans le manifeste, il utilise Internet Explorer 11 quelle que soit la version de Windows ou d’Office 365. Pour plus d’informations, consultez la rubrique [runtimes](../reference/manifest/runtimes.md).
+<sup>3</sup> si votre complément inclut l' `Runtimes` élément dans le manifeste, il utilise Internet Explorer 11 quelle que soit la version de Windows ou de Microsoft 365. Pour plus d’informations, consultez la rubrique [runtimes](../reference/manifest/runtimes.md).
 
 > [!IMPORTANT]
 > Internet Explorer 11 ne prend pas en charge les versions de JavaScript ultérieures à la version ES5. Si un des utilisateurs de votre complément dispose d’une plateforme utilisant Internet Explorer 11, vous devez transpiler JavaScript vers la version ES5 ou utiliser un polyfill pour lui permettre d’utiliser la syntaxe et les fonctionnalités d’ECMAScript 2015 ou version ultérieure. Par ailleurs, Internet Explorer 11 ne prend pas en charge certaines fonctionnalités HTML5 telles que les éléments multimédias, l’enregistrement et l’emplacement.
@@ -49,7 +49,7 @@ Les compléments Office ne prennent pas en charge les travailleurs de service su
 
 ### <a name="chromium-based-edge-is-installed-on-my-development-computer-but-my-add-in-does-not-use-it"></a>Le serveur Edge basé sur le chrome est installé sur mon ordinateur de développement, mais mon complément ne l’utilise pas
 
-Le navigateur de base dans [Microsoft Edge](https://support.microsoft.com/help/4501095/download-the-new-microsoft-edge-based-on-chromium) est passé à chrome. L’ancienne base, appelée EdgeHTML, n’est pas supprimée lorsque le serveur Edge basé sur le chrome est installé. Office continuera à utiliser la base EdgeHTML pour les compléments jusqu’à ce qu’une version d’Office 365 qui prenne en charge le chrome soit installée sur l’ordinateur. Nous prévoyons que ces builds doivent être expédiées dans 2020. Elles apparaîtront probablement dans le canal Insiders dans le premier semestre.
+Le navigateur de base dans [Microsoft Edge](https://support.microsoft.com/help/4501095/download-the-new-microsoft-edge-based-on-chromium) est passé à chrome. L’ancienne base, appelée EdgeHTML, n’est pas supprimée lorsque le serveur Edge basé sur le chrome est installé. Office continuera à utiliser la base EdgeHTML pour les compléments jusqu’à ce qu’une version de Microsoft 365 qui prenne en charge le chrome soit installée sur l’ordinateur. Nous prévoyons que ces builds doivent être expédiées dans 2020. Elles apparaîtront probablement dans le canal Insiders dans le premier semestre.
 
 ### <a name="scroll-bar-does-not-appear-in-task-pane"></a>La barre de défilement n’apparaît pas dans le volet des tâches
 

@@ -1,14 +1,14 @@
 ---
 title: Transmission de données et de messages à une boîte de dialogue à partir de sa page hôte
 description: Découvrez comment transmettre des données à une boîte de dialogue à partir de la page hôte à l’aide des API messageChild et DialogParentMessageReceived.
-ms.date: 04/16/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 3bef98294b15c2787b707cee4861cc9932f98166
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 05220fa4cecad4fe412a5590605f774f92ef8f61
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609407"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093573"
 ---
 # <a name="passing-data-and-messages-to-a-dialog-box-from-its-host-page-preview"></a>Transmission de données et de messages à une boîte de dialogue à partir de sa page hôte (aperçu)
 
@@ -17,7 +17,7 @@ Votre complément peut envoyer des messages à partir de la [page hôte](dialog-
 > [!Important]
 >
 > - Les API décrites dans cet article sont en aperçu. Elles sont disponibles pour les développeurs dans le cas d’expérimentation ; mais ne doit pas être utilisé dans un complément de production. Tant que cette API n’est pas publiée, utilisez les techniques décrites dans [transmettre les informations à la boîte de dialogue](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box) des compléments de production.
-> - Les API décrites dans cet article nécessitent Office 365 (la version avec abonnement d’Office). Vous devez utiliser la version et le build mensuels les plus récents du canal du programme Insider. Vous devez participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à [Participez au programme Office Insider](https://insider.office.com). Veuillez noter que lorsqu’une build est basée sur le canal semi-annuel de production, la prise en charge des fonctionnalités d’aperçu est désactivée pour cette version.
+> - Les API décrites dans cet article nécessitent un abonnement Microsoft 365. Vous devez utiliser la version et le build mensuels les plus récents du canal du programme Insider. Vous devez participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à [Participez au programme Office Insider](https://insider.office.com). Veuillez noter que lorsqu’une build est basée sur le canal semi-annuel de production, la prise en charge des fonctionnalités d’aperçu est désactivée pour cette version.
 > - Dans l’étape initiale de l’aperçu, les API sont prises en charge dans Excel, PowerPoint et Word ; mais pas dans Outlook.
 >
 > [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
@@ -60,7 +60,7 @@ function sheetPropertiesChanged() {
 
 ## <a name="handle-dialogparentmessagereceived-in-the-dialog-box"></a>Gérer DialogParentMessageReceived dans la boîte de dialogue
 
-Dans le JavaScript de la boîte de dialogue, inscrivez un gestionnaire pour l' `DialogParentMessageReceived` événement à l’aide de la méthode [UI. addHandlerAsync](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) . Cette opération s’effectue généralement dans les [méthodes Office. onReady ou Office. Initialize](initialize-add-in.md). Voici un exemple :
+Dans le JavaScript de la boîte de dialogue, inscrivez un gestionnaire pour l' `DialogParentMessageReceived` événement à l’aide de la méthode [UI. addHandlerAsync](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) . Cette opération s’effectue généralement dans les [méthodes Office. onReady Office.iniou tialize](initialize-add-in.md). Voici un exemple :
 
 ```javascript
 Office.onReady()

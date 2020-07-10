@@ -1,14 +1,14 @@
 ---
 title: Élément Action dans le fichier manifeste
 description: Cet élément spécifie l’action à effectuer lorsque l’utilisateur sélectionne un bouton ou un contrôle de menu.
-ms.date: 02/28/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: c542cec38b400100014c51c978c8fcd71a546f2a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 92c783a15d104aba0adb722ab887391b4511ebed
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608802"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094448"
 ---
 # <a name="action-element"></a>Élément Action
 
@@ -33,14 +33,14 @@ Spécifie l’action à effectuer lorsque l’utilisateur sélectionne un [bouto
 
 ## <a name="xsitype"></a>xsi:type
 
-Cet attribut indique le type d’action réalisée lorsque l’utilisateur sélectionne le bouton. Il peut s’agir de l’une des actions suivantes :
+This attribute specifies the kind of action performed when the user selects the button. It can be one of the following:
 
 - `ExecuteFunction`
 - `ShowTaskpane`
 
 ## <a name="functionname"></a>FunctionName
 
-Élément obligatoire lorsque **xsi:type** est « ExecuteFunction ». Indique le nom de la fonction à exécuter. La fonction est contenue dans le fichier indiqué dans l’élément [FunctionFile](functionfile.md).
+Required element when **xsi:type** is "ExecuteFunction". Specifies the name of the function to execute. The function is contained in the file specified in the [FunctionFile](functionfile.md) element.
 
 ```xml
 <Action xsi:type="ExecuteFunction">
@@ -79,7 +79,7 @@ L’exemple suivant montre deux actions qui partagent la même valeur **Taskpane
 </Action>
 ```  
 
-Les exemples suivants montrent deux actions qui utilisent une valeur **TaskpaneId** différente. Pour voir ces exemples en contexte, consultez l’article relatif à l’[exemple de commandes de complément](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/blob/master/Simple/Manifest/SimpleAddin.xml).
+The following examples show two actions that use a different **TaskpaneId**. To see these examples in context, see [Simple Add-in Commands Sample](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/blob/master/Simple/Manifest/SimpleAddin.xml).
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -132,7 +132,7 @@ L’exemple suivant montre une action qui utilise l’élément **title** . Note
 Élément facultatif quand **xsi:type** a la valeur « ShowTaskpane ». Les éléments [VersionOverrides](versionoverrides.md) le contenant doivent avoir une valeur d’attribut `xsi:type` de `VersionOverridesV1_1`. Incluez cet élément avec une valeur `true` pour prendre en charge l’épinglage du volet Office. L’utilisateur pourra alors « épingler » le volet Office qui restera ouvert pendant que la sélection est modifiée. Pour en savoir plus, consultez l’article relatif à l’[implémentation d’un volet Office épinglable dans Outlook](../../outlook/pinnable-taskpane.md).
 
 > [!IMPORTANT]
-> Bien que l' `SupportsPinning` élément ait été introduit dans l' [ensemble de conditions requises 1,5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), il est actuellement uniquement pris en charge pour les abonnés Office 365 à l’aide des éléments suivants.
+> Bien que l' `SupportsPinning` élément ait été introduit dans l' [ensemble de conditions requises 1,5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), il est actuellement uniquement pris en charge pour les abonnés Microsoft 365 à l’aide des éléments suivants.
 > - Outlook 2016 ou version ultérieure sur Windows (version 7628,1000 ou ultérieure)
 > - Outlook 2016 ou version ultérieure sur Mac (Build 16.13.503 ou version ultérieure)
 > - Outlook moderne sur le web

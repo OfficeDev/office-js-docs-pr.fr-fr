@@ -1,23 +1,23 @@
 ---
 title: Implémenter un volet Office épinglable dans un complément Outlook
 description: La commande de forme UX taskpane pour complément ouvre un volet Office vertical à droite d’un message ou demande de réunion, ce qui permet au complément de fournir une interface utilisateur pour des interactions plus détaillées.
-ms.date: 02/28/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: ea9dc255bfb3b689a05d880007282da011edef3e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 39af3a532d553835b02709301c998a78dc9958bb
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44605317"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093867"
 ---
 # <a name="implement-a-pinnable-task-pane-in-outlook"></a>Implémenter un volet Office épinglable dans Outlook
 
-La commande de forme UX [taskpane](add-in-commands-for-outlook.md#launching-a-task-pane) pour complément ouvre un volet Office vertical à droite d’un message ou demande de réunion, ce qui permet au complément de fournir une interface utilisateur pour des interactions plus détaillées (remplissage de plusieurs champs, etc.). Ce volet Office peut être affiché dans le volet de lecture lorsque vous affichez une liste des messages, ce qui permet un traitement rapide d’un message.
+The [task pane](add-in-commands-for-outlook.md#launching-a-task-pane) UX shape for add-in commands opens a vertical task pane to the right of an open message or meeting request, allowing the add-in to provide UI for more detailed interactions (filling in multiple fields, etc.). This task pane can be shown in the Reading Pane when viewing a list of messages, allowing for quick processing of a message.
 
-Toutefois, par défaut, si un utilisateur a un complément de volet Office ouvert pour un message dans le volet de lecture et sélectionne un nouveau message, le volet Office est automatiquement fermé. Pour un complément très sollicité, l’utilisateur peut préférer conserver ce volet ouvert, supprimant ainsi le besoin de réactiver le complément sur chaque message. Avec les volets Office épinglables, votre complément peut donner à l’utilisateur cette option.
+However, by default, if a user has an add-in task pane open for a message in the Reading Pane, and then selects a new message, the task pane is automatically closed. For a heavily-used add-in, the user may prefer to keep that pane open, eliminating the need to reactivate the add-in on each message. With pinnable task panes, your add-in can give the user that option.
 
 > [!NOTE]
-> Bien que la fonctionnalité des volets des tâches épinglables ait été introduite dans l' [ensemble de conditions requises 1,5](../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), elle est actuellement uniquement disponible pour les abonnés Office 365 à l’aide de la commande suivante.
+> Bien que la fonctionnalité des volets des tâches épinglables ait été introduite dans l' [ensemble de conditions requises 1,5](../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), elle est actuellement uniquement disponible pour les abonnés Microsoft 365 à l’aide des éléments suivants.
 > - Outlook 2016 ou version ultérieure sur Windows (Build 7668,2000 ou version ultérieure pour les utilisateurs des canaux actifs ou Office Insider, générer 7900. xxxx ou une version ultérieure pour les utilisateurs des canaux différés)
 > - Outlook 2016 ou version ultérieure sur Mac (version 16.13.503 ou ultérieure)
 > - Outlook moderne sur le web
@@ -29,7 +29,7 @@ Toutefois, par défaut, si un utilisateur a un complément de volet Office ouver
 
 ## <a name="support-task-pane-pinning"></a>Prise en charge de l’épinglage des volets des tâches
 
-La première étape consiste à ajouter une prise en charge de l’épinglage, ce qui est effectué dans le [manifeste](manifests.md) du complément. Cette opération est effectuée en ajoutant l’élément [SupportsPinning](../reference/manifest/action.md#supportspinning) à l’élément `Action` qui décrit le bouton du volet Office.
+The first step is to add pinning support, which is done in the add-in [manifest](manifests.md). This is done by adding the [SupportsPinning](../reference/manifest/action.md#supportspinning) element to the `Action` element that describes the task pane button.
 
 L’élément `SupportsPinning` est défini dans le schéma VersionOverrides v1.1, vous devez donc inclure un élément [VersionOverrides](../reference/manifest/versionoverrides.md) pour les versions 1.0 et 1.1.
 
@@ -64,7 +64,7 @@ Pour mettre à jour l’interface utilisateur ou les variables internes de votre
 
 ### <a name="implement-the-event-handler"></a>Mettre en œuvre le gestionnaire d’événements
 
-Le gestionnaire d’événements doit accepter un seul paramètre, qui est un littéral d’objet. La propriété `type` de cet objet est réglée sur `Office.EventType.ItemChanged`. Lorsque l’événement est appelé, l’objet `Office.context.mailbox.item` est déjà mis à jour pour refléter l’élément actuellement sélectionné.
+The event handler should accept a single parameter, which is an object literal. The `type` property of this object will be set to `Office.EventType.ItemChanged`. When the event is called, the `Office.context.mailbox.item` object is already updated to reflect the currently selected item.
 
 ```js
 function itemChanged(eventArgs) {
@@ -87,7 +87,7 @@ function itemChanged(eventArgs) {
 
 ### <a name="register-the-event-handler"></a>Enregistrement du gestionnaire d’événements
 
-Utilisez la méthode [Office.context.mailbox.addHandlerAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) pour inscrire votre gestionnaire d’événements pour l’événement `Office.EventType.ItemChanged`. Cette opération doit être effectuée dans la fonction `Office.initialize` de votre volet Office.
+Use the [Office.context.mailbox.addHandlerAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) method to register your event handler for the `Office.EventType.ItemChanged` event. This should be done in the `Office.initialize` function for your task pane.
 
 ```js
 Office.initialize = function (reason) {

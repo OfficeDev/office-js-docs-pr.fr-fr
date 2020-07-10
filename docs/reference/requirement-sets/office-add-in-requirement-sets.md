@@ -1,21 +1,19 @@
 ---
 title: Ensembles de conditions requises des API communes pour Office
-description: En savoir plus sur les ensembles de conditions requises de l’API commune Office
-ms.date: 06/23/2020
+description: En savoir plus sur les ensembles de conditions requises de l’API commune Office.
+ms.date: 07/07/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: b4ed3f203cf5c50ab5a49c0278755d35d6826536
-ms.sourcegitcommit: a4873c3525c7d30ef551545d27eb2c0a16b4eb50
+ms.openlocfilehash: b0f2fa05a5db94614257b51f6b2867705a0a5520
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "44888144"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094353"
 ---
 # <a name="office-common-api-requirement-sets"></a>Ensembles de conditions requises des API communes pour Office
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
-
-Vous avez besoin d’informations sur l’endroit où les compléments sont pris en charge par l’hôte Office ? Consultez la rubrique [Disponibilité des compléments Office sur les plateformes et les hôtes](../../overview/office-add-in-availability.md).
 
 > [!TIP]
 > Vous recherchez l’ensemble de conditions requises de l’API *propres à l’hôte* ? Reportez-vous aux ensembles de conditions requises des API suivants :
@@ -32,6 +30,9 @@ Vous avez besoin d’informations sur l’endroit où les compléments sont pris
 ## <a name="common-api-requirement-sets"></a>Ensembles de conditions requises des API communes
 
 Les sections suivantes répertorient les ensembles communs de conditions requises, les méthodes de chaque ensemble et les applications hôtes Office qui les prennent en charge. Tous ces ensembles de conditions requises d’API sont à la version 1.1., sauf indication contraire.
+
+> [!TIP]
+> Vous avez besoin d’informations sur l’emplacement où les compléments et les ensembles de conditions requises sont pris en charge par l’hôte et la version Office ? Consultez la rubrique [Disponibilité des compléments Office sur les plateformes et les hôtes](../../overview/office-add-in-availability.md).
 
 ### <a name="activeview"></a>ActiveView
 

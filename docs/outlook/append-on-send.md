@@ -4,19 +4,19 @@ description: Découvrez comment implémenter la fonctionnalité Ajout d’envoi 
 ms.topic: article
 ms.date: 05/26/2020
 localization_priority: Normal
-ms.openlocfilehash: f7f345ad726529c7ba3f8fa3ceedb46246310547
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b9c834778d68e50806da908732cd0c8663ec6680
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44607595"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093986"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a>Implémenter la fonction Append lors de l’envoi dans votre complément Outlook (aperçu)
 
 À la fin de cette procédure pas à pas, vous disposez d’un complément Outlook qui peut insérer une clause d’exclusion de responsabilité lors de l’envoi d’un message.
 
 > [!IMPORTANT]
-> Cette fonctionnalité est actuellement [prise en charge pour la](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) préversion dans Outlook sur le Web et Windows avec un abonnement Office 365. Pour plus d’informations, reportez-vous [à la rubrique relative à l’aperçu de la fonctionnalité Ajout à l’envoi](#how-to-preview-the-append-on-send-feature) de cet article.
+> Cette fonctionnalité est actuellement [prise en charge pour la](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) préversion dans Outlook sur le Web et Windows avec un abonnement Microsoft 365. Pour plus d’informations, reportez-vous [à la rubrique relative à l’aperçu de la fonctionnalité Ajout à l’envoi](#how-to-preview-the-append-on-send-feature) de cet article.
 >
 > Les fonctionnalités d’aperçu étant susceptibles d’être modifiées sans préavis, elles ne doivent pas être utilisées dans les compléments de production.
 
@@ -42,7 +42,7 @@ Pour ce scénario, au lieu d’exécuter la `action` fonction en cliquant sur le
 
 1. Dans votre éditeur de code, ouvrez le projet Quick Start.
 
-1. Ouvrez le fichier **Manifest. xml** situé à la racine de votre projet.
+1. Ouvrez le fichier **manifest.xml** situé à la racine de votre projet.
 
 1. Sélectionnez le `<VersionOverrides>` nœud entier (y compris les balises ouvrantes et fermantes) et remplacez-le par le code XML suivant.
 
@@ -140,7 +140,7 @@ Ensuite, implémentez l’ajout sur l’événement Send.
 
 Pour ce scénario, vous allez implémenter l’ajout d’une clause d’exclusion de responsabilité à l’élément lorsque l’utilisateur envoie.
 
-1. À partir du même projet de démarrage rapide, ouvrez le fichier **./SRC/Commands/Commands.js** dans votre éditeur de code.
+1. À partir du même projet de démarrage rapide, ouvrez le fichier **./src/commands/commands.js** dans votre éditeur de code.
 
 1. Après la `action` fonction, insérez la fonction JavaScript suivante.
 
@@ -174,7 +174,7 @@ Pour ce scénario, vous allez implémenter l’ajout d’une clause d’exclusio
     g.appendDisclaimerOnSend = appendDisclaimerOnSend;
     ```
 
-## <a name="try-it-out"></a>Essayez
+## <a name="try-it-out"></a>Try it out
 
 1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur Web local démarre s’il n’est pas déjà en cours d’exécution.
 

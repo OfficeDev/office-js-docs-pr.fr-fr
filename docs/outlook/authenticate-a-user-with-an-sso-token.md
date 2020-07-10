@@ -3,12 +3,12 @@ title: Authentifier un utilisateur avec un jeton à authentification unique
 description: Découvrez comment utiliser le jeton d’authentification unique fourni par un complément Outlook pour implémenter l’authentification unique (SSO) sur votre service.
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 306867c3b71bb139c5c8ab4859618dcea282fd69
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: d53e75faa2d0471b43957cfa71ff6f6a50a0da4f
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44606503"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093979"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in-preview"></a>Authentification d’un utilisateur avec un jeton d’authentification unique dans un complément Outlook (préversion)
 
@@ -24,9 +24,9 @@ Pour une vue d’ensemble de l’authentification unique dans les compléments O
 > [!NOTE]
 > Pour utiliser l’authentification unique SSO, vous devez télécharger la version bêta de la bibliothèque JavaScript d’Office à partir de https://appsforoffice.microsoft.com/lib/beta/hosted/office.js dans la page de démarrage HTML du complément. Toutefois, vous ne devez **pas** utiliser les API bêta dans les compléments de production.
 
-## <a name="enable-modern-authentication-in-your-office-365-tenancy"></a>Activation de l’authentification moderne dans votre client Office 365
+## <a name="enable-modern-authentication-in-your-microsoft-365-tenancy"></a>Activer l’authentification moderne dans votre location Microsoft 365
 
-Pour utiliser l’authentification unique avec un complément Outlook, vous devez activer l’authentification moderne pour le client Office 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+Pour utiliser l’authentification unique (SSO) avec un complément Outlook, vous devez activer l’authentification moderne pour la location Microsoft 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## <a name="register-your-add-in"></a>Inscription de votre complément
 

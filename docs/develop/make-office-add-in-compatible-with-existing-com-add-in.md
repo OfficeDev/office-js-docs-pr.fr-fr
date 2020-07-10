@@ -3,12 +3,12 @@ title: Rendre votre complément Office compatible avec un complément COM exista
 description: Activer la compatibilité entre votre complément Office et un complément COM équivalent
 ms.date: 07/31/2019
 localization_priority: Normal
-ms.openlocfilehash: ff47b75e8e560bc891c84dc839b7eceffb2400be
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1ded60366c36edb876b8b2dd0a4ea9e6a39521b0
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609421"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093594"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Rendre votre complément Office compatible avec un complément COM existant
 
@@ -17,7 +17,7 @@ Si vous disposez d’un complément COM existant, vous pouvez créer une fonctio
 Vous pouvez configurer votre complément Office de sorte que, lorsque le complément COM équivalent est déjà installé sur l’ordinateur d’un utilisateur, Office sur Windows exécute le complément COM au lieu du complément Office. Le complément COM est appelé « équivalent », car Office effectuera une transition transparente entre le complément COM et le complément Office en fonction de celui sur lequel est installé l’ordinateur d’un utilisateur.
 
 > [!NOTE]
-> Cette fonctionnalité est prise en charge par les plateformes suivantes, lorsqu’elle est connectée à un abonnement Office 365 :
+> Cette fonctionnalité est prise en charge par les plateformes suivantes, lorsqu’elle est connectée à un abonnement Microsoft 365 :
 > - Excel, Word et PowerPoint sur le Web
 > - Excel, Word et PowerPoint sur Windows (version 1904 ou ultérieure)
 > - Excel, Word et PowerPoint sur Mac (version 13,329 ou ultérieure)

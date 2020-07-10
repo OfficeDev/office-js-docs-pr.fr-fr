@@ -1,15 +1,15 @@
 ---
 title: Personnaliser votre complément compatible avec l’authentification unique Node.js
 description: Découvrez comment personnaliser le complément à extension SSO que vous avez créé avec le générateur Yeoman.
-ms.date: 02/20/2020
+ms.date: 07/07/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: d71206d6b03b8a92e50b316cc75c401866be5334
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: c1d292ed8ead40201dd035d6ae8e6997174ea477
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608826"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094483"
 ---
 # <a name="customize-your-nodejs-sso-enabled-add-in"></a>Personnaliser votre complément compatible avec l’authentification unique Node.js
 
@@ -22,7 +22,7 @@ Le [démarrage rapide de l’authentification unique](sso-quickstart.md) crée u
 
 * Un complément Office que vous avez créé en suivant les instructions du [démarrage rapide de l’authentification unique](sso-quickstart.md).
 
-* Au moins des fichiers et classeurs sont stockés sur OneDrive Entreprise dans votre abonnement Office 365.
+* Au moins quelques fichiers et dossiers stockés sur OneDrive entreprise dans votre abonnement Microsoft 365.
 
 * [Node.js](https://nodejs.org) (la dernière version [LTS](https://nodejs.org/about/releases))
 
@@ -37,7 +37,7 @@ Commençons par un examen rapide du projet de complément que vous avez [créé 
 
 [!include[project structure for an SSO-enabled add-in created with the Yeoman generator](../includes/sso-yeoman-project-structure.md)]
 
-## <a name="add-new-functionality"></a>Ajouter une nouvelle fonctionnalité 
+## <a name="add-new-functionality"></a>Ajouter une nouvelle fonctionnalité
 
 Le complément que vous avez créé avec le démarrage rapide de l’authentification unique utilise Microsoft Graph pour obtenir les informations de profil de l’utilisateur connecté et écrit ces informations dans le document ou le message. Nous allons modifier les fonctionnalités du complément de sorte qu’il récupère les noms des 10 fichiers et dossiers les plus à partir de OneDrive entreprise de l’utilisateur connecté et qu’il écrit ces informations dans le document ou le message. L’activation de cette nouvelle fonctionnalité nécessite la mise à jour des autorisations d’application dans Azure et la mise à jour du code dans le projet de complément.
 
@@ -45,9 +45,9 @@ Le complément que vous avez créé avec le démarrage rapide de l’authentific
 
 Avant que le complément puisse lire correctement le contenu de OneDrive entreprise de l’utilisateur, les informations d’inscription de son application dans Azure doivent être mises à jour avec les autorisations appropriées. Procédez comme suit pour accorder à l’application l’autorisation **files. Read. All** et révoquer l’autorisation **User. Read** , qui n’est plus nécessaire.
 
-1. Accédez au [portail Azure](https://ms.portal.azure.com/#home) et **Connectez-vous à l’aide de vos informations d’identification d’administrateur Office 365**. 
+1. Accédez au [portail Azure](https://ms.portal.azure.com/#home) et **Connectez-vous à l’aide de vos informations d’identification d’administrateur Microsoft 365**.
 
-2. Accédez à la page **inscriptions des applications** . 
+2. Accédez à la page **inscriptions des applications** .
     > [!TIP]
     > Pour ce faire, vous pouvez choisir la vignette **inscriptions des applications** sur la page d’accueil Azure ou à l’aide de la zone de recherche de la page d’accueil pour rechercher et choisir les inscriptions de l' **application**.
 
@@ -105,7 +105,7 @@ Effectuez les étapes suivantes pour votre complément, pour modifier l’URL, l
 
 2. Dans **./manifest.xml**, recherchez la ligne à `<Scope>User.Read</Scope>` la fin du fichier et remplacez-la par la ligne `<Scope>Files.Read.All</Scope>` .
 
-3. Dans **./SRC/helpers/fallbackauthdialog.js** (ou dans **./SRC/helpers/fallbackauthdialog.TS** pour un projet de type dactylographié), recherchez la chaîne `https://graph.microsoft.com/User.Read` et remplacez-la par la chaîne, de la manière suivante `https://graph.microsoft.com/Files.Read.All` `requestObj` :
+3. Dans **./src/helpers/fallbackauthdialog.js** (ou dans **./SRC/helpers/fallbackauthdialog.TS** pour un projet de type dactylographié), recherchez la chaîne `https://graph.microsoft.com/User.Read` et remplacez-la par la chaîne, de la manière suivante `https://graph.microsoft.com/Files.Read.All` `requestObj` :
 
     ```javascript
     var requestObj = {
@@ -119,7 +119,7 @@ Effectuez les étapes suivantes pour votre complément, pour modifier l’URL, l
     };
     ```
 
-4. Dans **./SRC/TaskPane/TaskPane.html**, recherchez l’élément `<section class="ms-firstrun-instructionstep__header">` et mettez à jour le texte à l’intérieur de cet élément pour décrire les nouvelles fonctionnalités du complément.
+4. Dans **./src/taskpane/taskpane.html**, recherchez l’élément `<section class="ms-firstrun-instructionstep__header">` et mettez à jour le texte à l’intérieur de cet élément pour décrire les nouvelles fonctionnalités du complément.
 
     ```html
     <section class="ms-firstrun-instructionstep__header">
@@ -129,7 +129,7 @@ Effectuez les étapes suivantes pour votre complément, pour modifier l’URL, l
     </section>
     ```
 
-5. Dans **./SRC/TaskPane/TaskPane.html**, recherchez et remplacez les deux occurrences de la chaîne `Get My User Profile Information` par la chaîne `Read my OneDrive for Business` .
+5. Dans **./src/taskpane/taskpane.html**, recherchez et remplacez les deux occurrences de la chaîne `Get My User Profile Information` par la chaîne `Read my OneDrive for Business` .
 
     ```html
     <li class="ms-ListItem">
@@ -146,7 +146,7 @@ Effectuez les étapes suivantes pour votre complément, pour modifier l’URL, l
     </p>
     ```
 
-6. Dans **./SRC/TaskPane/TaskPane.html**, recherchez et remplacez la chaîne `Your user profile information will be displayed in the document.` par la chaîne `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.` .
+6. Dans **./src/taskpane/taskpane.html**, recherchez et remplacez la chaîne `Your user profile information will be displayed in the document.` par la chaîne `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.` .
 
     ```html
     <li class="ms-ListItem">
@@ -168,7 +168,7 @@ Effectuez les étapes suivantes pour votre complément, pour modifier l’URL, l
 
 ### <a name="changes-required-for-an-excel-add-in-javascript"></a>Modifications requises pour un complément Excel (JavaScript)
 
-Si votre complément est un complément Excel créé avec JavaScript, effectuez les modifications suivantes dans **./SRC/helpers/documentHelper.js**:
+Si votre complément est un complément Excel qui a été créé avec JavaScript, effectuez les modifications suivantes dans **./src/helpers/documentHelper.js**:
 
 1. Recherchez la `writeDataToOfficeDocument` fonction et remplacez-la par la fonction suivante :
 
@@ -271,7 +271,7 @@ Une fois ces modifications effectuées, passez directement à la section [essaye
 
 ### <a name="changes-required-for-an-outlook-add-in-javascript"></a>Modifications requises pour un complément Outlook (JavaScript)
 
-Si votre complément est un complément Outlook créé avec JavaScript, effectuez les modifications suivantes dans **./SRC/helpers/documentHelper.js**:
+Si votre complément est un complément Outlook créé avec JavaScript, effectuez les modifications suivantes dans **./src/helpers/documentHelper.js**:
 
 1. Recherchez la `writeDataToOfficeDocument` fonction et remplacez-la par la fonction suivante :
 
@@ -364,7 +364,7 @@ Une fois ces modifications effectuées, passez directement à la section [essaye
 
 ### <a name="changes-required-for-a-powerpoint-add-in-javascript"></a>Modifications requises pour un complément PowerPoint (JavaScript)
 
-Si votre complément est un complément PowerPoint créé avec JavaScript, effectuez les modifications suivantes dans **./SRC/helpers/documentHelper.js**:
+Si votre complément est un complément PowerPoint créé avec JavaScript, effectuez les modifications suivantes dans **./src/helpers/documentHelper.js**:
 
 1. Recherchez la `writeDataToOfficeDocument` fonction et remplacez-la par la fonction suivante :
 
@@ -467,7 +467,7 @@ Une fois ces modifications effectuées, passez directement à la section [essaye
 
 ### <a name="changes-required-for-a-word-add-in-javascript"></a>Modifications requises pour un complément Word (JavaScript)
 
-Si votre complément est un complément Word créé avec JavaScript, effectuez les modifications suivantes dans **./SRC/helpers/documentHelper.js**:
+Si votre complément est un complément Word créé avec JavaScript, effectuez les modifications suivantes dans **./src/helpers/documentHelper.js**:
 
 1. Recherchez la `writeDataToOfficeDocument` fonction et remplacez-la par la fonction suivante :
 
@@ -565,7 +565,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 Une fois ces modifications effectuées, passez à la section [essayer](#try-it-out) de cet article pour tester votre complément mis à jour.
 
-## <a name="try-it-out"></a>Essayez
+## <a name="try-it-out"></a>Try it out
 
 Si votre complément est un complément Excel, Word ou PowerPoint, effectuez les étapes de la section suivante pour le tester. Si votre complément est un complément Outlook, effectuez plutôt les étapes dans la section [Outlook](#outlook) .
 
@@ -582,7 +582,7 @@ Pour tester un complément Excel, Word ou PowerPoint, procédez comme suit.
     npm start
     ```
 
-2. Dans l’application cliente Office qui s’ouvre lorsque vous exécutez la commande précédente (Excel, Word ou PowerPoint), vérifiez que vous êtes connecté avec un utilisateur membre de la même organisation Office 365 que le compte d’administrateur 365 Office que vous avez utilisé pour vous connecter à Azure lors de la configuration de l' [authentification unique](sso-quickstart.md#configure-sso) pour l’application. Cette opération permet d’établir les conditions appropriées pour la réussite de l’authentification unique. 
+2. Dans l’application cliente Office qui s’ouvre lorsque vous exécutez la commande précédente (Excel, Word ou PowerPoint), assurez-vous que vous êtes connecté avec un utilisateur membre de la même organisation 365 Microsoft que le compte d’administrateur Microsoft 365 que vous avez utilisé pour vous connecter à Azure lors de la configuration de l' [authentification unique](sso-quickstart.md#configure-sso) pour l’application. Cette opération permet d’établir les conditions appropriées pour la réussite de l’authentification unique. 
 
 3. Dans l’application client Office, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément. L’image ci-après illustre ce bouton dans Excel.
 
@@ -590,7 +590,7 @@ Pour tester un complément Excel, Word ou PowerPoint, procédez comme suit.
 
 4. En bas du volet Office, cliquez sur le bouton **lire mon OneDrive entreprise** pour lancer le processus d’authentification unique. 
 
-5. Si une boîte de dialogue s’affiche pour demander des autorisations pour le compte du complément, cela signifie que l’authentification unique n’est pas prise en charge pour votre scénario et que le complément est plutôt repassé à une autre méthode d’authentification des utilisateurs. Cela peut se produire lorsque l’administrateur du locataire n’a pas accordé le consentement du complément pour accéder à Microsoft Graph, ou lorsque l’utilisateur n’est pas connecté à Office à l’aide d’un compte Microsoft valide ou d’un compte Office 365 (« professionnel ou scolaire »). Sélectionnez le bouton **Accepter** dans la fenêtre de boîte de dialogue pour continuer.
+5. Si une boîte de dialogue s’affiche pour demander des autorisations pour le compte du complément, cela signifie que l’authentification unique n’est pas prise en charge pour votre scénario et que le complément est plutôt repassé à une autre méthode d’authentification des utilisateurs. Cela peut se produire lorsque l’administrateur client n’a pas accordé le consentement du complément pour accéder à Microsoft Graph ou lorsque l’utilisateur n’est pas connecté à Office avec un compte Microsoft valide ou un compte professionnel ou scolaire Microsoft 365. Sélectionnez le bouton **Accepter** dans la fenêtre de boîte de dialogue pour continuer.
 
     ![Boîte de dialogue demande d’autorisation](../images/sso-permissions-request.png)
 
@@ -614,7 +614,7 @@ Pour tester un complément Outlook, procédez comme suit.
     npm start
     ```
 
-2. Suivez les instructions indiquées dans l’article [Chargement de version test des compléments Outlook](/outlook/add-ins/sideload-outlook-add-ins-for-testing) pour charger le complément dans Outlook. Assurez-vous que vous êtes connecté à Outlook avec un utilisateur membre de la même organisation Office 365 que le compte d’administrateur Office 365 que vous avez utilisé pour vous connecter à Azure lors de la configuration de l' [authentification unique](sso-quickstart.md#configure-sso) pour l’application. Cette opération permet d’établir les conditions appropriées pour la réussite de l’authentification unique. 
+2. Suivez les instructions indiquées dans l’article [Chargement de version test des compléments Outlook](/outlook/add-ins/sideload-outlook-add-ins-for-testing) pour charger le complément dans Outlook. Assurez-vous que vous êtes connecté à Outlook avec un utilisateur membre de la même organisation 365 Microsoft que le compte administrateur Microsoft 365 que vous avez utilisé pour vous connecter à Azure lors de la configuration de l' [authentification unique](sso-quickstart.md#configure-sso) pour l’application. Cette opération permet d’établir les conditions appropriées pour la réussite de l’authentification unique. 
 
 3. Rédigez un nouveau message dans Outlook.
 
@@ -624,7 +624,7 @@ Pour tester un complément Outlook, procédez comme suit.
 
 5. En bas du volet Office, cliquez sur le bouton **lire mon OneDrive entreprise** pour lancer le processus d’authentification unique. 
 
-6. Si une boîte de dialogue s’affiche pour demander des autorisations pour le compte du complément, cela signifie que l’authentification unique n’est pas prise en charge pour votre scénario et que le complément est plutôt repassé à une autre méthode d’authentification des utilisateurs. Cela peut se produire lorsque l’administrateur du locataire n’a pas accordé le consentement du complément pour accéder à Microsoft Graph, ou lorsque l’utilisateur n’est pas connecté à Office à l’aide d’un compte Microsoft valide ou d’un compte Office 365 (« professionnel ou scolaire »). Sélectionnez le bouton **Accepter** dans la fenêtre de boîte de dialogue pour continuer.
+6. Si une boîte de dialogue s’affiche pour demander des autorisations pour le compte du complément, cela signifie que l’authentification unique n’est pas prise en charge pour votre scénario et que le complément est plutôt repassé à une autre méthode d’authentification des utilisateurs. Cela peut se produire lorsque l’administrateur client n’a pas accordé le consentement du complément pour accéder à Microsoft Graph ou lorsque l’utilisateur n’est pas connecté à Office avec un compte Microsoft valide ou un compte professionnel ou scolaire Microsoft 365. Sélectionnez le bouton **Accepter** dans la fenêtre de boîte de dialogue pour continuer.
 
     ![Boîte de dialogue demande d’autorisation](../images/sso-permissions-request.png)
 

@@ -3,17 +3,17 @@ ms.date: 05/06/2020
 description: 'Gérer et retourner des erreurs comme #NULL! à partir de votre fonction personnalisée'
 title: Gérer et retourner des erreurs à partir de votre fonction personnalisée (préversion)
 localization_priority: Normal
-ms.openlocfilehash: 6ded6a03151777c30fe5037b373272c04fc64620
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5b1efcdc22a4efc59304bbe76f8d3f2d09979bc1
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609316"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093468"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function-preview"></a>Gérer et retourner des erreurs à partir de votre fonction personnalisée (préversion)
 
 > [!NOTE]
-> Les fonctionnalités décrites dans cet article sont actuellement en préversion et peuvent faire l’objet de modifications. Elles ne sont pas prises en charge dans les environnements de production pour l’instant. Vous devrez rejoindre le programme [Office Insider](https://insider.office.com/join) pour essayer les fonctionnalités d’aperçu.  Un bon moyen de tester les fonctionnalités en préversion consiste à utiliser un abonnement Office 365. Si vous n’avez pas d'abonnement Office 365, vous pouvez obtenir une version Office 365 gratuite et renouvelable de 90 jours en rejoignant le [Programme pour les développeurs Office 365](https://developer.microsoft.com/office/dev-program).
+> Les fonctionnalités décrites dans cet article sont actuellement en préversion et peuvent faire l’objet de modifications. Elles ne sont pas prises en charge dans les environnements de production pour l’instant. Vous devrez rejoindre le programme [Office Insider](https://insider.office.com/join) pour essayer les fonctionnalités d’aperçu.  Pour tester les fonctionnalités d’aperçu, il est recommandé d’utiliser un abonnement Microsoft 365. Si vous ne disposez pas déjà d’un abonnement Microsoft 365, vous pouvez obtenir gratuitement un abonnement Microsoft 365 renouvelable 90 jours en joignant le [programme de développement microsoft 365](https://developer.microsoft.com/office/dev-program).
 
 Si un problème se présente lors de l’exécution de votre fonction personnalisée, renvoyez une erreur pour informer l’utilisateur. Si vous avez des exigences de paramètres spécifiques, telles que des nombres positifs, testez les paramètres et générez une erreur s’ils ne sont pas corrects. Vous pouvez également utiliser un bloc `try`-`catch` pour détecter les erreurs qui se produisent pendant que votre fonction personnalisée s’exécute.
 

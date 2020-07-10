@@ -1,14 +1,14 @@
 ---
 title: Valider un jeton d’identité de complément Outlook
 description: Votre complément Outlook peut vous envoyer un jeton d’identité d’utilisateur Exchange, mais avant de faire confiance à la requête, vous devez valider le jeton pour vous assurer qu’il provient du serveur Exchange attendu.
-ms.date: 05/08/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 89be659085dbf35b4ad6644eba3b5bf3acd24a9d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 6ad5f99093530528ec83cfc7a6e3a2571e0df491
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44604579"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094105"
 ---
 # <a name="validate-an-exchange-identity-token"></a>Valider un jeton d’identité Exchange
 
@@ -40,7 +40,7 @@ Pour valider le contenu du jeton, vous devez vérifier ce qui suit.
     - `x5t`la revendication est présente.
 
 - Vérifiez la charge utile et assurez-vous que :
-    - `amurl`la revendication dans le `appctx` est définie sur l’emplacement d’un fichier manifeste de clés de signature de jeton autorisé. Par exemple, la valeur attendue `amurl` pour Office 365 est https://outlook.office365.com:443/autodiscover/metadata/json/1 . Pour plus d’informations, reportez-vous [à la section](#verify-the-domain) suivante.
+    - `amurl`la revendication dans le `appctx` est définie sur l’emplacement d’un fichier manifeste de clés de signature de jeton autorisé. Par exemple, la valeur attendue `amurl` pour Microsoft 365 est https://outlook.office365.com:443/autodiscover/metadata/json/1 . Pour plus d’informations, reportez-vous [à la section](#verify-the-domain) suivante.
     - L’heure actuelle est comprise entre les heures spécifiées dans les `nbf` `exp` revendications et. La revendication `nbf` spécifie le début de la période où le jeton est considéré comme valide et la revendication `exp` spécifie le délai d’expiration pour le jeton. Ceci est recommandé pour permettre certains écarts dans les paramètres de l’horloge entre les serveurs.
     - `aud`claim est l’URL attendue pour votre complément.
     - `version`la revendication à l’intérieur de la `appctx` revendication est définie sur `ExIdTok.V1` .
@@ -109,7 +109,7 @@ Vous pouvez créer un identificateur unique pour un compte Exchange en concatén
 Il existe un certain nombre de bibliothèques qui permettent une analyse et une validation générales du jeton JWT. Microsoft fournit la `System.IdentityModel.Tokens.Jwt` bibliothèque qui peut être utilisée pour valider les jetons d’identité d’utilisateur Exchange.
 
 > [!IMPORTANT]
-> Nous ne recommandons plus l’API managée des services Web Exchange, car Microsoft. Exchange. WebServices. auth. dll, toujours disponible, est désormais obsolète et s’appuie sur des bibliothèques non prises en charge comme Microsoft. IdentityModel. extensions. dll.
+> Nous ne recommandons plus l’API managée des services Web Exchange, car le Microsoft.Exchange.WebServices.Auth.dll, bien que toujours disponible, est désormais obsolète et s’appuie sur des bibliothèques non prises en charge, telles que Microsoft.IdentityModel.Extensions.dll.
 
 ### <a name="systemidentitymodeltokensjwt"></a>System.IdentityModel.Tokens.Jwt
 

@@ -1,18 +1,18 @@
 ---
 title: Volets des tâches dans les compléments Office
 description: Les volets des tâches permettent aux utilisateurs d’accéder aux contrôles d’interface qui exécutent le code pour modifier des documents ou des e-mails, ou afficher des données d’une source de données.
-ms.date: 01/14/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 429042db7e30f5fefe48c9648e6ad5410f6594c4
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 39a96f4d5aa63d55f4dcb30d9aeb9e680357aa09
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608494"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093755"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Volets des tâches dans les compléments Office
  
-Les volets des tâches sont des surfaces d’interface qui s’affichent généralement sur le côté droit de la fenêtre dans Word, PowerPoint, Excel et Outlook. Les volets des tâches permettent aux utilisateurs d’accéder aux contrôles d’interface qui exécutent le code pour modifier des documents ou des e-mails, ou afficher des données d’une source de données. Utilisez les volets des tâches lorsque vous n’avez pas besoin d’incorporer des fonctionnalités directement dans le document.
+Task panes are interface surfaces that typically appear on the right side of the window within Word, PowerPoint, Excel, and Outlook. Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source. Use task panes when you don't need to embed functionality directly into the document.
 
 *Figure 1. Mise en page type du volet Office*
 
@@ -30,7 +30,7 @@ Les volets des tâches sont des surfaces d’interface qui s’affichent génér
 
 ## <a name="variants"></a>Variantes
 
-Les images suivantes montrent les différentes tailles de volet des tâches avec le ruban Office à une résolution de 1 366 x 768. Pour Excel, l’espace vertical supplémentaire est requis pour s’adapter à la barre de formule.  
+The following images show the various task pane sizes with the Office app ribbon at a 1366x768 resolution. For Excel, additional vertical space is required to accommodate the formula bar.  
 
 *Figure 2. Tailles de volet des tâches du bureau Office 2016*
 
@@ -43,7 +43,7 @@ Les images suivantes montrent les différentes tailles de volet des tâches avec
 
 <br/>
 
-*Figure 3. Tailles de volet des tâches Office 365*
+*Figure 3. Tailles des volets Office*
 
 ![Image affichant les tailles de volet des tâches du bureau à une résolution de 1 366 x 768](../images/office-365-taskpane-sizes.png)
 
@@ -54,7 +54,7 @@ Les images suivantes montrent les différentes tailles de volet des tâches avec
 
 ## <a name="personality-menu"></a>Menu Caractéristique
 
-Les menus Caractéristique peuvent entraver les éléments de navigation et de commande se trouvant en haut à droite du complément. Voici les dimensions actuelles du menu Caractéristique sur Windows et Mac.
+Personality menus can obstruct navigational and commanding elements located near the top right of the add-in. The following are the current dimensions of the personality menu on Windows and Mac.
 
 Pour Windows, le menu Caractéristique mesure 12 x 32 pixels, comme illustré.
 

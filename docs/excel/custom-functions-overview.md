@@ -5,12 +5,12 @@ title: Créer des fonctions personnalisées dans Excel
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 4f8416b9058def9dcb4998fb2f31684b59276ac4
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 42ace6208abbd95d0f538345a1f5b5cc15ba1823
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609281"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093461"
 ---
 # <a name="create-custom-functions-in-excel"></a>Créer des fonctions personnalisées dans Excel
 
@@ -70,7 +70,7 @@ function add(first, second){
 
 ### <a name="manifest-file"></a>Fichier manifeste
 
-Le fichier manifeste XML d’un complément qui définit des fonctions personnalisées (**./manifest.xml** dans le projet créé par le générateur Yo Office) effectue plusieurs actions :
+Le fichier manifeste XML d’un complément qui définit des fonctions personnalisées (**./manifest.xml** dans le projet créé par le générateur Yo Office) effectue plusieurs opérations :
 
 - Définit l’espace de noms pour vos fonctions personnalisées. Un espace de noms s’ajoute à vos fonctions personnalisées pour aider les clients à identifier vos fonctions dans le cadre de votre complément.
 - Utilisations `<ExtensionPoint>` et `<Resources>` éléments propres à un manifeste de fonctions personnalisées. Ces éléments contiennent des informations sur les emplacements des fichiers JavaScript, JSON et HTML.
@@ -84,7 +84,7 @@ Pour afficher un manifeste de travail complet à partir d’un exemple de compl�
 
 ## <a name="coauthoring"></a>Co-création
 
-Excel sur le Web et Windows connecté à un abonnement Office 365 vous permettent de co-auteur dans Excel. Si votre classeur utilise une fonction personnalisée, votre collègue de co-création est invité à charger le complément de la fonction personnalisée. Une fois que vous avez chargé le complément, la fonction personnalisée partage les résultats par le biais de la co-création.
+Excel sur le Web et Windows connecté à un abonnement Microsoft 365 vous permettent de co-auteur dans Excel. Si votre classeur utilise une fonction personnalisée, votre collègue de co-création est invité à charger le complément de la fonction personnalisée. Une fois que vous avez chargé le complément, la fonction personnalisée partage les résultats par le biais de la co-création.
 
 Pour plus d’informations sur la co-création, voir [À propos de la co-création dans Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
 

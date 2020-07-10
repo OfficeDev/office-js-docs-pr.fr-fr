@@ -3,24 +3,24 @@ title: Étendre des fonctions personnalisées avec des fonctions XLL définies p
 description: Activer la compatibilité avec les fonctions Excel XLL définies par l’utilisateur qui offrent une fonctionnalité équivalente à vos fonctions personnalisées
 ms.date: 04/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 06a776678c60a4b66494097385f304ddac9a4ce0
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 23fd1e78d3a570a0f13b85559ae34b887d92e2ea
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44610360"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093433"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>Étendre des fonctions personnalisées avec des fonctions XLL définies par l’utilisateur
 
 Si vous avez des XLL Excel existantes, vous pouvez créer des fonctions personnalisées équivalentes dans un complément Excel afin d’étendre les fonctionnalités de votre solution à d’autres plateformes, comme Online ou sur Mac. Toutefois, les compléments Excel ne disposent pas de toutes les fonctionnalités disponibles dans les XLL. En fonction de la fonctionnalité utilisée par votre solution, le XLL peut offrir une meilleure expérience que les fonctions personnalisées de complément Excel dans Excel sur Windows.
 
 > [!NOTE]
-> Le complément COM et la compatibilité UDF XLL sont pris en charge par les plateformes suivantes, lorsqu’ils sont connectés à un abonnement Office 365 :
+> Le complément COM et la compatibilité UDF XLL sont pris en charge par les plateformes suivantes, lorsqu’ils sont connectés à un abonnement Microsoft 365 :
 > - Excel sur le web
 > - Excel sur Windows (version 1904 ou ultérieure)
 > - Excel sur Mac (version 13,329 ou ultérieure)
 > 
-> Pour utiliser le complément COM et la compatibilité des FDU XLL dans Excel sur le Web, connectez-vous à l’aide de votre abonnement Office 365 ou d’un [compte Microsoft](https://account.microsoft.com/account). Si vous ne disposez pas déjà d’un abonnement Office 365, vous pouvez obtenir gratuitement un abonnement Office 365 renouvelable 90 jours en joignant le [programme de développement office 365](https://developer.microsoft.com/office/dev-program).
+> Pour utiliser le complément COM et la compatibilité des FDU XLL dans Excel sur le Web, connectez-vous à l’aide de votre abonnement Microsoft 365 ou d’un [compte Microsoft](https://account.microsoft.com/account). Si vous ne disposez pas déjà d’un abonnement Microsoft 365, vous pouvez obtenir gratuitement un abonnement Microsoft 365 renouvelable 90 jours en joignant le [programme de développement microsoft 365](https://developer.microsoft.com/office/dev-program).
 
 ## <a name="specify-equivalent-xll-in-the-manifest"></a>Spécifier le XLL équivalent dans le manifeste
 
@@ -66,7 +66,7 @@ Le tableau suivant compare les fonctionnalités des fonctions définies par l’
 | Fonctions volatiles | Oui | Oui | Oui |
 | Prise en charge du recalcul multi-thread | Oui | Oui | Oui |
 | Comportement du calcul | Aucune interface utilisateur. Excel peut ne pas répondre pendant le calcul. | Les utilisateurs verront #BUSY ! jusqu’à ce qu’un résultat soit renvoyé. | Les utilisateurs verront #BUSY ! jusqu’à ce qu’un résultat soit renvoyé. |
-| Ensembles de conditions requises | N/A | CustomFunctions 1,1 et versions ultérieures | CustomFunctions 1,1 et versions ultérieures |
+| Ensembles de conditions requises | S/O | CustomFunctions 1,1 et versions ultérieures | CustomFunctions 1,1 et versions ultérieures |
 
 ## <a name="see-also"></a>Voir aussi
 

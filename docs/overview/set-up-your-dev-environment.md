@@ -1,14 +1,14 @@
 ---
 title: Configuration de votre environnement de développement
 description: Configuration de votre environnement de développement pour créer des compléments Office
-ms.date: 04/03/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: f44f8e48aec402f0ffa6327732613a902ea0cfe6
-ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+ms.openlocfilehash: af59fb644d1001deb74615d6ced294ad77cbf4e6
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "44679352"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094007"
 ---
 # <a name="set-up-your-development-environment"></a>Configuration de votre environnement de développement
 
@@ -16,16 +16,16 @@ Ce guide vous aide à configurer les outils de manière à pouvoir créer des co
 
 - Node.js
 - npm
-- Un compte Office 365 (la version d’abonnement d’Office)
+- Un compte Microsoft 365 qui inclut la version d’abonnement d’Office
 - Un éditeur de code de votre choix
 
 Ce guide suppose que vous sachiez comment utiliser un outil de ligne de commande. 
 
 ## <a name="install-nodejs"></a>Installer Node.js.
 
-Node. js est un Runtime JavaScript dont vous aurez besoin pour développer des compléments Office modernes.
+Node.js est un Runtime JavaScript dont vous aurez besoin pour développer des compléments Office modernes.
 
-Installez node. js en [téléchargeant la version recommandée la plus récente à partir de leur site Web](https://nodejs.org). Suivez les instructions d’installation pour votre système d’exploitation.
+Installez Node.js en [téléchargeant la version recommandée la plus récente à partir de leur site Web](https://nodejs.org). Suivez les instructions d’installation pour votre système d’exploitation.
 
 ## <a name="install-npm"></a>Installer NPM
 
@@ -43,11 +43,11 @@ Pour vérifier si NPM est déjà installé et voir la version installée, exécu
 npm -v
 ```
 
-Vous souhaiterez peut-être utiliser un gestionnaire de version de nœud pour vous permettre de basculer entre plusieurs versions de node. js et NPM, mais ce n’est pas obligatoire. Pour plus d’informations sur la procédure à suivre, [consultez les instructions de NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+Vous souhaiterez peut-être utiliser un gestionnaire de version de nœud pour vous permettre de basculer entre plusieurs versions de Node.js et NPM, mais ce n’est pas obligatoire. Pour plus d’informations sur la procédure à suivre, [consultez les instructions de NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 
 ## <a name="get-office-365"></a>Obtenir Office 365
 
-Si vous n’avez pas un compte Office 365, vous pouvez en obtenir un abonnement Office 365 gratuit et renouvelable de 90 jours en rejoignant le [Programme pour les développeurs Office 365](https://developer.microsoft.com/office/dev-program).
+Si vous ne disposez pas déjà d’un compte Microsoft 365, vous pouvez obtenir gratuitement un abonnement Microsoft 365 renouvelable 90 jours en joignant le [programme de développement microsoft 365](https://developer.microsoft.com/office/dev-program).
 
 ## <a name="install-a-code-editor"></a>Installer un éditeur de code
 
@@ -76,4 +76,4 @@ Explorez la bibliothèque d’exemples intégrés dans [Script Lab](explore-with
 - [Développement de compléments Office](../develop/develop-overview.md)
 - [Concevoir des compléments Office](../design/add-in-design.md)
 - [Test et débogage de compléments Office](../testing/test-debug-office-add-ins.md)
-- [Publish Office Add-ins](../publish/publish.md)
+- [Publier des compléments Office](../publish/publish.md)
