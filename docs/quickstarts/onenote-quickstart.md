@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet Office de OneNote
 description: Découvrez comment créer un complément simple de volet des tâches OneNote simple à l’aide de l’API JavaScript pour Office.
-ms.date: 01/16/2020
+ms.date: 07/07/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 6c09ca26047adeaacf93d77238cf831fbd2601ea
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 6f057d650451d12e834d8f875f40d9d6d71ee4d7
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608914"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094154"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>Créer votre premier complément du volet Office de OneNote
 

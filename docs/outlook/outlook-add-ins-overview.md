@@ -1,21 +1,21 @@
 ---
 title: Présentation des compléments Outlook
 description: Les compléments Outlook sont des intégrations conçues par des tiers dans Outlook à l’aide de notre plate-forme web.
-ms.date: 10/09/2019
+ms.date: 07/07/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 82778f7118166f7ed566fc175599efd7049b9d3a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1275f7cae6211d6f6c006b7230b316ffd288a4ec
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609026"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093902"
 ---
 # <a name="outlook-add-ins-overview"></a>Présentation des compléments Outlook
 
 Les compléments Outlook sont des intégrations conçues par des tiers dans Outlook à l’aide de notre plate-forme web. Les compléments Outlook comportent trois aspects clés :
 
-- La logique métier et de complément est la même pour les versions Outlook de bureau sur Windows et Mac, sur le web (Office 365 et Outlook.com) et sur mobile.
+- La même logique complémentaire et commerciale fonctionne sur les ordinateurs de bureau (Outlook sur Windows et Mac), sur le web (Microsoft 365 et Outlook.com) et sur les téléphones portables.
 - Les compléments Outlook se composent d’un manifeste, qui décrit la manière dont le complément s’intègre dans Outlook (par exemple, un bouton ou un volet de tâches), ainsi que d’un code JavaScript/HTML, qui constitue l’interface utilisateur et la logique métier du complément.
 - Les compléments Outlook peuvent être acquis à partir d’[AppSource](https://appsource.microsoft.com) ou [chargés séparément](sideload-outlook-add-ins-for-testing.md) par les utilisateurs finals ou les administrateurs.
 
@@ -27,29 +27,28 @@ Les éléments Outlook qui prennent en charge les compléments incluent notammen
 
 ## <a name="extension-points"></a>Points d’extension
 
-Les points d’extension correspondent à la manière dont les compléments sont intégrés à Outlook. Voici les méthodes possibles :
+Extension points are the ways that add-ins integrate with Outlook. The following are the ways this can be done:
 
-- Les compléments peuvent indiquer des boutons qui apparaissent dans les surfaces de commande dans les messages et les rendez-vous. Pour plus d’informations, voir [Commandes de complément pour Outlook](add-in-commands-for-outlook.md).
+- Add-ins can declare buttons that appear in command surfaces across messages and appointments. For more information, see [Add-in commands for Outlook](add-in-commands-for-outlook.md).
 
     **Complément avec boutons de commande dans le ruban**
 
     ![Forme sans interface utilisateur de commande de complément](../images/uiless-command-shape.png)
 
-- Les compléments peuvent désactiver les correspondances d’expressions régulières ou des entités détectées dans les messages et les rendez-vous. Pour plus d’informations, voir [Compléments Outlook contextuels](contextual-outlook-add-ins.md).
+- Add-ins can link off regular expression matches or detected entities in messages and appointments. For more information, see [Contextual Outlook add-ins](contextual-outlook-add-ins.md).
 
     **Complément contextuel pour une entité en surbrillance (adresse)**
 
     ![Présente une application contextuelle dans une carte](../images/outlook-detected-entity-card.png)
-
 
 > [!NOTE]
 > [Les volets personnalisés sont déconseillés](https://developer.microsoft.com/outlook/blogs/make-your-add-ins-available-in-the-office-ribbon/). Veuillez donc vérifier que vous utilisez un point d’extension pris en charge.
 
 ## <a name="mailbox-items-available-to-add-ins"></a>Éléments de boîtes aux lettres disponibles pour les compléments
 
-Les compléments Outlook sont disponibles pour les messages ou les rendez-vous en mode de lecture ou de composition, mais pas pour d’autres types d’élément. Outlook ne les active pas si l’élément de message actuel, en mode de composition ou de lecture, fait partie des éléments suivants :
+Outlook add-ins are available on messages or appointments while composing or reading, but not other item types. Outlook does not activate add-ins if the current message item, in a compose or read form, is one of the following:
 
-- protégé par la Gestion des droits relatifs à l’information (IRM) ou chiffré par d’autres moyens de protection. Un message signé numériquement en est un exemple, puisque la signature numérique dépend de l’un de ces mécanismes ;
+- Protected by Information Rights Management (IRM) or encrypted in other ways for protection. A digitally signed message is an example since digital signing relies on one of these mechanisms.
 
 - un rapport ou une notification de remise qui a la classe de message IPM.Report.* (notamment les rapports de remise et les notifications d’échec de remise, ainsi que les notifications de lecture, de non-lecture et de retard) ;
 
@@ -67,7 +66,7 @@ En général, Outlook peut activer des compléments sous forme de lecture pour l
 
 ## <a name="supported-hosts"></a>Hôtes pris en charge
 
-Les compléments Outlook sont pris en charge dans Outlook 2013 et versions ultérieures sur Windows, Outlook 2016 et versions ultérieures sur Mac, Outlook sur le web pour Exchange 2013 sur site et versions ultérieures, Outlook sur iOS, Outlook sur Android et Outlook sur le web dans Office 365 et Outlook.com. Les fonctionnalités les plus récentes ne sont pas toutes prises en charge dans tous les [clients](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) à la fois. Reportez-vous aux articles et références API relatives à ces fonctionnalités pour savoir dans quels hôtes elles peuvent ou non être prises en charge.
+Les add-ins Outlook sont pris en charge dans Outlook 2013 ou plus récent sur Windows, Outlook 2016 ou plus récent sur Mac, Outlook sur le web pour Exchange 2013 sur site et versions ultérieures, Outlook sur iOS, Outlook sur Android, et Outlook sur le web et Outlook.com. Les fonctionnalités les plus récentes ne sont pas toutes prises en charge dans tous les [clients](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) à la fois. Reportez-vous aux articles et références API relatives à ces fonctionnalités pour savoir dans quels hôtes elles peuvent ou non être prises en charge.
 
 
 ## <a name="get-started-building-outlook-add-ins"></a>Commencer à créer des compléments Outlook

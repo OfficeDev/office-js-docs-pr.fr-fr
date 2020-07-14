@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet des tâches de Word
 description: Découvrez comment créer un complément de volet des tâches Word simple à l’aide de l’API JavaScript pour Office.
-ms.date: 04/03/2020
+ms.date: 07/07/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 2e7c819cbf2860ed742435f75240f795c52c73e8
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: ab8926eae6ddc41f82ab055d727b6279f357c316
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608875"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094472"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Word
 
@@ -110,7 +110,7 @@ Félicitations, vous avez créé un complément du volet des tâches de Word ! 
 
 3. Nommez votre projet et sélectionnez **Créer**.
 
-4. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
+4. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
 
 ### <a name="explore-the-visual-studio-solution"></a>Explorer la solution Visual Studio
 
@@ -118,7 +118,7 @@ Félicitations, vous avez créé un complément du volet des tâches de Word ! 
 
 ### <a name="update-the-code"></a>Mise à jour du code
 
-1. **Home.html** spécifie le code HTML qui s’affichera dans le volet Office du complément. Dans **Home.html**, remplacez l’élément `<body>` par le balisage suivant et enregistrez le fichier.
+1. **Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.
 
     ```html
     <body>
@@ -144,7 +144,7 @@ Félicitations, vous avez créé un complément du volet des tâches de Word ! 
     </body>
     ```
 
-2. Ouvrez le fichier **Home.js** à la racine du projet d’application web. Ce fichier spécifie le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+2. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.
 
     ```js
     'use strict';
@@ -245,7 +245,7 @@ Félicitations, vous avez créé un complément du volet des tâches de Word ! 
     })();
     ```
 
-3. Ouvrez le fichier **Home.css** à la racine du projet d’application web. Ce fichier spécifie les styles personnalisés pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+3. Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.
 
     ```css
     #content-header {
@@ -278,11 +278,11 @@ Félicitations, vous avez créé un complément du volet des tâches de Word ! 
 
 1. Ouvrez le fichier manifeste XML dans le projet de complément. Ce fichier définit les paramètres et les fonctionnalités du complément.
 
-2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-le par votre nom.
+2. The `ProviderName` element has a placeholder value. Replace it with your name.
 
-3. L’attribut `DefaultValue` de l’élément `DisplayName` possède un espace réservé. Remplacez-le par **My Office Add-in**.
+3. The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.
 
-4. L’attribut `DefaultValue` de l’élément `Description` possède un espace réservé. Remplacez-le par **A task pane add-in for Word**.
+4. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Word**.
 
 5. Enregistrez le fichier.
 
@@ -298,9 +298,9 @@ Félicitations, vous avez créé un complément du volet des tâches de Word ! 
 
 ### <a name="try-it-out"></a>Essayez
 
-1. À l’aide de Visual Studio, testez le nouveau complément en appuyant sur **F5** ou en choisissant le bouton**Démarrer** pour lancer Word avec le bouton du complément **Show Taskpane **(Afficher le volet Office) qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
+1. Using Visual Studio, test the newly created Word add-in by pressing **F5** or choosing the **Start** button to launch Word with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
-2. Dans Word, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément. (Si vous utilisez la version d’Office en achat définitif au lieu de la version d’Office 365, les boutons personnalisés ne sont pas pris en charge. Le volet Office s’ouvre immédiatement.)
+2. Dans Word, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément. (Si vous utilisez la version d’Office en achat définitif au lieu de la version Microsoft 365, les boutons personnalisés ne sont pas pris en charge. Le volet Office s’ouvre immédiatement.)
 
     ![Capture d’écran de l’application Word avec le bouton Afficher le volet Office mis en évidence](../images/word-quickstart-addin-0.png)
 

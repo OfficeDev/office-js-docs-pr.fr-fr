@@ -3,12 +3,12 @@ title: Manifeste XML des compléments Office
 description: Obtenez une vue d’ensemble du manifeste de Complément Office et de ses applications.
 ms.date: 03/18/2020
 localization_priority: Priority
-ms.openlocfilehash: 0df47ac67a924ab9fd2b3064e0a1ff1b4aa63360
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 4d2fa054cc268b68eb1c05ba82f9cd7745bc8685
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608994"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093748"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifeste XML des compléments Office
 
@@ -18,7 +18,7 @@ Un fichier de manifeste XML basé sur ce schéma permet à un Complément Office
 
 * Se décrire en fournissant un ID, une version, une description, un nom d’affichage et un paramètre régional par défaut.
 
-* Spécifier les images utilisées pour personnaliser le complément et l’iconographie utilisée pour les [commandes de complément][] dans le ruban Office.
+* Précisez les images utilisées pour l'image de marque du complément et l'iconographie utilisée pour [commandes complémentaires][] dans le ruban d'application de l'Office.
 
 * Spécifier comment le complément s’intègre à Office, y compris les interfaces utilisateur personnalisées, telles que les boutons du ruban créés par le complément.
 
@@ -113,7 +113,7 @@ Toutes les URL, telles que les emplacements des fichiers source spécifiés dans
 
 ## <a name="best-practices-for-submitting-to-appsource"></a>Bonnes pratiques pour l’envoi dans AppSource
 
-Vérifiez que l’ID du complément est un GUID valide et unique. Vous trouverez des outils de génération de GUID sur Internet pour vous aider à créer un GUID unique.
+Make sure that the add-in ID is a valid and unique GUID. Various GUID generator tools are available on the web that you can use to create a unique GUID.
 
 Les compléments envoyés à AppSource doivent également inclure l’élément [SupportUrl](../reference/manifest/supporturl.md). Pour plus d’informations, reportez-vous à [Stratégies de validation pour les applications et les compléments envoyés à AppSource](/legal/marketplace/certification-policies).
 
@@ -211,7 +211,7 @@ Les sections suivantes présentent des exemples de fichiers manifeste XML versio
             Think of the FunctionFile as the "code behind" ExecuteFunction-->
           <FunctionFile resid="Contoso.FunctionFile.Url" />
 
-          <!--PrimaryCommandSurface==Main Office Ribbon-->
+          <!--PrimaryCommandSurface==Main Office app ribbon-->
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
             <!--Use OfficeTab to extend an existing Tab. Use CustomTab to create a new tab -->
             <!-- Documentation includes all the IDs currently tested to work -->

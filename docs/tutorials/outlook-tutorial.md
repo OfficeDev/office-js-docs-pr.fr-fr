@@ -1,15 +1,15 @@
 ---
 title: 'Didacticiel : créer un complément de composition de message Outlook'
 description: Dans ce didacticiel, vous allez créer un complément Outlook qui insère des informations GitHub dans le corps d'un nouveau message.
-ms.date: 12/10/2019
+ms.date: 07/07/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 66ce5aa01cc8ef82d8a4bd0030c9e94a9433daad
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 22b06d0c455cfcf0a4331976a4e23e0eeb123415
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611056"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093503"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Didacticiel : créer un complément de composition de message Outlook
 
@@ -37,7 +37,7 @@ Dans ce didacticiel, vous allez :
     > [!NOTE]
     > Même si vous avez précédemment installé le générateur Yeoman, nous vous recommandons de mettre à jour votre package vers la dernière version de npm.
 
-- Outlook 2016 ou versions ultérieures sur Windows (connecté à un compte Office 365) ou Outlook sur le web
+- Outlook 2016 ou plus récent sur Windows (connecté à un compte Microsoft 365) ou Outlook sur le web
 
 - Un compte[GitHub](https://www.github.com) 
 

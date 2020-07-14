@@ -1,18 +1,18 @@
 ---
 title: Activer l’authentification unique pour des compléments Office
-description: Découvrez comment activer l’authentification unique pour les Compléments Office à l’aide de votre compte Office 365 Microsoft, professionnel ou scolaire.
-ms.date: 04/16/2020
+description: Découvrez comment activer l’authentification unique pour les Compléments Office à l’aide de votre compte courant Microsoft personnel, professionnel ou scolaire.
+ms.date: 07/07/2020
 localization_priority: Priority
-ms.openlocfilehash: af5fe3eac1b8e8d38162a41ca2a89ace7b23cd4a
-ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
+ms.openlocfilehash: 71f602de9096a485a4eeb16a89785cc1a2535c13
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "45006471"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093601"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Activer l’authentification unique pour des compléments Office (aperçu)
 
-Users sign in to Office (online, mobile, and desktop platforms) using either their personal Microsoft account or their work or school (Office 365) account. You can take advantage of this and use single sign-on (SSO) to authorize the user to your add-in without requiring the user to sign in a second time.
+Users sign in to Office (online, mobile, and desktop platforms) using either their personal Microsoft account or their Microsoft 365 Education or work account. You can take advantage of this and use single sign-on (SSO) to authorize the user to your add-in without requiring the user to sign in a second time.
 
 ![Image illustrant le processus de connexion pour un complément](../images/sso-for-office-addins.png)
 
@@ -20,7 +20,7 @@ Users sign in to Office (online, mobile, and desktop platforms) using either the
 
 L’API de l’authentification unique est actuellement prise en charge uniquement en prévisualisation. Elle est disponible pour les développeurs à des fins d’expérimentation ; mais elle ne doit pas être utilisée dans un complément de production. Par ailleurs, les compléments qui utilisent l’authentification unique SSO ne sont pas acceptés dans [AppSource](https://appsource.microsoft.com).
 
-L’authentification unique requiert Office 365 (version d’Office par abonnement). Vous devez utiliser la version et le build mensuels les plus récents du canal du programme Insider. Vous devez participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à [Participez au programme Office Insider](https://insider.office.com). Veuillez noter que lorsqu’un build passe au canal semi-annuel de production, la prise en charge des fonctionnalités d’aperçu, y compris l’authentification unique, est désactivée pour ce build.
+L’authentification unique (SSO) nécessite un abonnement Microsoft 365. Vous devez utiliser la version et le build mensuels les plus récents du canal du programme Insider. Vous devez participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à [Participez au programme Office Insider](https://insider.office.com). Veuillez noter que lorsqu’un build passe au canal semi-annuel de production, la prise en charge des fonctionnalités d’aperçu, y compris l’authentification unique, est désactivée pour ce build.
 
 Toutes les applications Office ne prennent pas en charge la prévisualisation de l’authentification unique (SSO). Elle est disponible dans Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur l’endroit où l’API d’authentification unique est actuellement prise en charge, consultez la rubrique [Ensembles de conditions requises de l’API d’identité](../reference/requirement-sets/identity-api-requirement-sets.md).
 
@@ -29,7 +29,7 @@ Toutes les applications Office ne prennent pas en charge la prévisualisation de
 > [!NOTE]
 > [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
-Si vous utilisez un complément** Outlook**, veillez à activer l’Authentification Moderne pour la location d’Office 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+Si vous travaillez avec un complément **Outlook**, assurez-vous d'activer l'authentification moderne pour la location de Microsoft 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 Vous ne devez*pas* dépendre de l’authentification unique SSO comme seule méthode de votre complément d’authentification. Vous devez implémenter un système d’authentification secondaire vers lequel votre complément peut revenir dans certaines situations d’erreur. Vous pouvez utiliser un système de tableaux d’utilisateur et d’authentification, ou vous pouvez tirer parti d’un des fournisseurs de connexion sociale. Pour plus d’informations sur la procédure à suivre avec un complément Office, voir[Services externes autorisées dans votre complément Office](auth-external-add-ins.md). Concernant*Outlook*, il existe un système de secours recommandé. Pour plus d’informations, voir[Scénario : Implémenter l’authentification unique sur votre service dans un complément Outlook](../outlook/implement-sso-in-outlook-add-in.md). Pour consulter des exemples d’utilisation d’Azure Active Directory comme système de secours, voir [SSO NodeJS pour complément Office](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO) et [SSO ASP.NET pour complément Office](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO).
 
@@ -121,7 +121,7 @@ async function getGraphData() {
     catch (exception) {
         if (exception.code === 13003) {
             // SSO is not supported for domain user accounts, only
-            // work or school (Office 365) or Microsoft Account IDs.
+            // work or school (Microsoft 365) or Microsoft Account IDs.
         } else {
             // Handle error
         }

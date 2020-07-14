@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément de volet des tâches Outlo
 ms.date: 06/23/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 07f4eeae8cfd4a1962c15640555b2283a8d9fa3b
-ms.sourcegitcommit: a4873c3525c7d30ef551545d27eb2c0a16b4eb50
+ms.openlocfilehash: 6eb510986ebb9cd8a4362f8c11f744e694bef5f7
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "44888151"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094161"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Création de votre premier complément Outlook
 
@@ -134,7 +134,7 @@ Félicitations, vous avez créé votre premier complément de volet de tâches O
 - Office 365
 
     > [!NOTE]
-    > Si vous n’avez pas d’abonnement Office 365, vous pouvez obtenir un abonnement gratuit en vous inscrivant au [programme pour les développeurs Office 365](https://developer.microsoft.com/office/dev-program).
+    > Si vous n’avez pas d’abonnement Microsoft 365, vous pouvez en obtenir un gratuitement en vous inscrivant au [programme développeur Microsoft 365](https://developer.microsoft.com/office/dev-program).
 
 ### <a name="create-the-add-in-project"></a>Création du projet de complément
 
@@ -267,7 +267,7 @@ Quand vous arrivez au bout de l’Assistant, Visual Studio crée une solution q
 1. Dans la boîte de dialogue**Se connecter à un compte de messagerie Exchange**, entrez l’adresse de messagerie et mot de passe pour votre [compte Microsoft](https://account.microsoft.com/account), puis sélectionnez**Se connecter**. Lorsque la page de connexion Outlook.com s’ouvre dans un navigateur, connectez-vous à votre compte de courrier avec les mêmes informations d’identification que vous avez entrées précédemment.
 
     > [!NOTE]
-    > Si la boîte de dialogue **Se connecter au compte de messagerie Exchange** vous invite à vous connecter à plusieurs reprises, l’authentification de base est peut-être désactivée pour les comptes sur votre client Office 365. Pour tester ce complément, connectez-vous à l’aide d’un [compte Microsoft](https://account.microsoft.com/account) à la place.
+    > Si la boîte de dialogue **Se connecter au compte de messagerie Exchange** vous invite à vous connecter à plusieurs reprises, l’authentification de base est peut-être désactivée pour les comptes sur votre client Microsoft 365. Pour tester ce complément, connectez-vous à l’aide d’un [compte Microsoft](https://account.microsoft.com/account) à la place.
 
 1. Dans Outlook sur le web, sélectionnez ou ouvrez un message.
 

@@ -1,18 +1,18 @@
 ---
 title: Authentifier et autoriser avec l’API de dialogue Office
 description: Découvrez comment utiliser l’API de boîte de dialogue Office pour permettre aux utilisateurs de se connecter à Google, Facebook, Microsoft 365 ainsi qu'à d’autres services protégés par la plateforme Microsoft Identity.
-ms.date: 01/25/2020
+ms.date: 07/07/2020
 localization_priority: Priority
-ms.openlocfilehash: e7dd0778e840c2cbfd415534d04f5b014f58fafc
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b119d27c0b4ca7bc91004ce8c1df7ac8f4830122
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608424"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093734"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Authentifier et autoriser avec l’API de dialogue Office
 
-De nombreuses autorités d’identité, également appelées service d’émission de jeton de sécurité (STS), empêchent leur page de connexion de s’ouvrir dans un IFRAME. Celles-ci incluent Google, Facebook et les services protégés par la plateforme d’identité Microsoft (anciennement Azure AD V 2.0) telles que le compte Microsoft et Office 365 (comptes professionnels ou scolaires). Cela a pour effet de créer un problème pour les compléments Office, car lorsque le complément est exécuté dans **Office sur le Web**, le volet Office est un IFRAME. Les utilisateurs d’un complément peuvent se connecter à l’un de ces services uniquement si le complément peut ouvrir une instance de navigateur entièrement distincte. C’est la raison pour laquelle Office fournit son [API de boîte de dialogue Office](dialog-api-in-office-add-ins.md), à savoir la méthode [displayDialogAsync](/javascript/api/office/office.ui).
+De nombreuses autorités d’identité, également appelées service d’émission de jeton de sécurité (STS), empêchent leur page de connexion de s’ouvrir dans un IFRAME. Il s'agit notamment de Google, de Facebook et des services protégés par Microsoft Identity Platform (anciennement Azure AD V 2.0) tels qu'un compte Microsoft, un compte Microsoft 365 Education ou travail, ou tout autre compte commun. Cela a pour effet de créer un problème pour les compléments Office, car lorsque le complément est exécuté dans **Office sur le Web**, le volet Office est un IFRAME. Les utilisateurs d’un complément peuvent se connecter à l’un de ces services uniquement si le complément peut ouvrir une instance de navigateur entièrement distincte. C’est la raison pour laquelle Office fournit son [API de boîte de dialogue Office](dialog-api-in-office-add-ins.md), à savoir la méthode [displayDialogAsync](/javascript/api/office/office.ui).
 
 > [!NOTE]
 > Cet article part du principe que vous êtes familiarisé(e) avec [Utiliser l’API de boîte de dialogue Office](dialog-api-in-office-add-ins.md) dans vos compléments Office.
@@ -46,16 +46,16 @@ Voici un flux d’authentification simple et standard. Les détails sont répert
 
 #### <a name="support-multiple-identity-providers"></a>Prise en charge de plusieurs fournisseurs d’identité
 
-Si votre complément offre à l’utilisateur le choix entre plusieurs fournisseurs, tels qu’un compte Microsoft, Google ou Facebook, vous avez besoin d’une première page locale (voir section précédente) qui fournit une IU permettant à l’utilisateur de sélectionner un fournisseur. La sélection déclenche la construction de l’URL de connexion et la redirection vers celle-ci.
+If your add-in gives the user a choice of providers, such as Microsoft Account, Google, or Facebook, you need a local first page (see preceding section) that provides a UI for the user to select a provider. Selection triggers the construction of the sign-in URL and redirection to it.
 
 #### <a name="authorization-of-the-add-in-to-an-external-resource"></a>Autorisation du complément pour une ressource externe
 
-Sur le web nouvelle génération, les applications web sont des principaux de sécurité au même titre que les utilisateurs. L’application a sa propre identité et ses propres autorisations pour une ressource en ligne comme Office 365, Google Plus, Facebook ou LinkedIn. L’application est inscrite auprès du fournisseur de ressources avant d’être déployée. L’inscription inclut :
+Sur le web nouvelle génération, les applications web sont des principaux de sécurité au même titre que les utilisateurs. L'application possède sa propre identité et ses propres autorisations pour une ressource en ligne telle que Microsoft 365, Google Plus, Facebook ou LinkedIn. L’application est inscrite auprès du fournisseur de ressources avant d’être déployée. L’inscription inclut :
 
 - La liste des autorisations dont l’application a besoin.
 - l’URL à laquelle le service de ressources doit renvoyer un jeton d’accès lorsque l’application accède au service.  
 
-Lorsqu’un utilisateur appelle une fonction dans l’application qui accède aux données de l’utilisateur dans le service de ressources, l’utilisateur est invité à se connecter au service, puis à accorder à l’application les autorisations dont elle a besoin pour les ressources de l’utilisateur. Ensuite, le service redirige la fenêtre de connexion vers l’URL précédemment inscrite et transmet le jeton d’accès. L’application utilise le jeton d’accès pour accéder aux ressources de l’utilisateur.
+When a user invokes a function in the application that accesses the user's data in the resource service, they are prompted to sign in to the service and then prompted to grant the application the permissions it needs to the user's resources. The service then redirects the sign-in window to the previously registered URL and passes the access token. The application uses the access token to access the user's resources.
 
 Vous pouvez utiliser les API de dialogue Office pour gérer ce processus à l’aide d’un flux semblable à celui décrit pour la connexion des utilisateurs. Les seules différences sont les suivantes :
 

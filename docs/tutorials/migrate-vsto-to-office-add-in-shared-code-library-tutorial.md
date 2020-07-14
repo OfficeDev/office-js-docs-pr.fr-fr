@@ -1,15 +1,15 @@
 ---
-ms.date: 01/21/2020
+ms.date: 07/07/2020
 ms.prod: non-product-specific
 description: Didacticiel sur le partage de codes entre un complément VSTO et un complément Office.
 title: 'Didacticiel : partage de codes entre un complément VSTO et un complément Office à l’aide d’une bibliothèque de codes partagée'
 localization_priority: Priority
-ms.openlocfilehash: f4306e4a23483b58d1503c1ee257194b430b31ef
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 42903b607bd9bb6f6d81454106b8de03cc47f1e4
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611063"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094259"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>Didacticiel : partage de codes entre un complément VSTO et un complément Office avec une bibliothèque de codes partagée
 
@@ -50,7 +50,7 @@ Pour la configuration de votre environnement de développement :
 
 Vous devez également disposer des éléments ci-après :
 
-- Un compte Office 365. Vous pouvez participer au[Programme pour les développeurs Office 365](https://aka.ms/devprogramsignup) qui inclut un abonnement gratuit d'un an à Office 365.
+- Un compte Microsoft 365. Vous pouvez participer au[Programme pour les développeurs Microsoft 365](https://aka.ms/devprogramsignup) qui inclut un an d’abonnement gratuit à Office 365.
 - Un locataire Microsoft Azure. Un abonnement d’évaluation peut être obtenu ici : [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
 ## <a name="the-cell-analyzer-vsto-add-in"></a>Le composant VSTO d’analyseur de cellule

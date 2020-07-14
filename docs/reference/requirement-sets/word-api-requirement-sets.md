@@ -4,16 +4,16 @@ description: Informations sur la configuration requise pour le complément Offic
 ms.date: 04/16/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: bffd78455cd6d87a1323c4133ce16f9723e37a4c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: d9845d6670d19ab1910410bb26ab5806c84c6b84
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611283"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094290"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Word
 
-Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
 
 ## <a name="requirement-set-availability"></a>Disponibilité d’ensemble de conditions requises
 
@@ -24,7 +24,7 @@ Les compléments Word peuvent être exécutés dans différentes versions d’Of
 >
 > Pour plus d’informations sur l’utilisation aperçu API, voir l’article[JavaScript d’Excel preview API](word-preview-apis.md).
 
-|  Ensemble de conditions requises  |   Office pour Windows\*<br>(connecté à l’abonnement Office 365)  |  Office sur iPad<br>(connecté à l’abonnement Office 365)  |  Office sur Mac<br>(connecté à l’abonnement Office 365)  | Office sur le web  |
+|  Ensemble de conditions requises  |   Office pour Windows\*<br>(connecté à l’abonnement Microsoft 365)  |  Office sur iPad<br>(connecté à l’abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à l’abonnement Microsoft 365)  | Office sur le web  |
 |:-----|-----|:-----|:-----|:-----|
 | [Aperçu](word-preview-apis.md) | Veuillez utiliser la dernière version d’Office pour tester la préversion API (vous devrez peut-être rejoindre la [programme Office Insider](https://insider.office.com)) |
 | [WordApi 1.3](word-api-1-3-requirement-set.md) | Version 1612 (Build 7668.1000) ou version ultérieure| Mars 2017, 2.22 ou version ultérieure | Mars 2017, 15.32 ou version ultérieure| Mars 2017 |

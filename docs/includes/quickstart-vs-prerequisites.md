@@ -6,4 +6,4 @@
 - Office 2016 ou version ultérieure
 
     > [!NOTE]
-    > Si vous ne disposez pas encore d’Office, vous pouvez [rejoindre le programme pour les développeurs office 365](https://developer.microsoft.com/office/dev-program) pour obtenir un abonnement Office 365 renouvelable de 90 jours à utiliser pendant le développement.
+    > Si vous ne disposez pas déjà d’Office, vous pouvez [ rejoindre le programme de développement de Microsoft 365](https://developer.microsoft.com/office/dev-program) pour obtenir un abonnement Microsoft 365 de 90 jours renouvelable gratuit à utiliser pendant son développement.

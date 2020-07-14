@@ -1,20 +1,20 @@
 ---
 title: Vue d’ensemble de l’authentification et de l’autorisation dans les compléments Office
 description: Demandez aux utilisateurs d’authentifier la connexion dans les applications Web et les Compléments Office.
-ms.date: 04/13/2020
+ms.date: 07/07/2020
 localization_priority: Priority
-ms.openlocfilehash: 9de81687c8b8eda077585f543fc10f521a3f7fb1
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 059f323870c81415df0b013101d45efa5944db0e
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609414"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093587"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Vue d’ensemble de l’authentification et de l’autorisation dans les compléments Office
 
-Les applications Web et par conséquent les compléments Office autorisent l’accès anonyme par défaut, mais vous pouvez demander aux utilisateurs de s’authentifier avec une connexion. Par exemple, vous pouvez demander à vos utilisateurs de se connecter à l’aide d’un compte Microsoft, d’un compte professionnel ou scolaire Office 365 ou d’un autre compte commun. Cette tâche est appelée authentification des utilisateurs, car elle permet au complément de déterminer l’identité de l’utilisateur.
+Les applications Web et par conséquent les compléments Office autorisent l’accès anonyme par défaut, mais vous pouvez demander aux utilisateurs de s’authentifier avec une connexion. Par exemple, vous pouvez exiger que vos utilisateurs soient connectés avec un compte Microsoft, un compte Microsoft 365 Education ou un compte de travail, ou un autre compte commun. Cette tâche est appelée authentification des utilisateurs, car elle permet au complément de déterminer l’identité de l’utilisateur.
 
-Votre complément peut également obtenir l’autorisation de l’utilisateur à accéder à ses données Microsoft Graph (par exemple, son profil Office 365, ses fichiers OneDrive et ses données SharePoint) ou aux données d’autres sources externes comme Google, Facebook, LinkedIn, SalesForce et GitHub. Cette tâche est appelée autorisation de complément (ou d’application), car il s’agit du *complément* qui est autorisé et non l’utilisateur.
+Votre add-in peut également obtenir le consentement de l'utilisateur pour accéder à ses données Microsoft Graphique (telles que son profil Microsoft 365, ses fichiers OneDrive et ses données SharePoint) ou à des données d'autres sources externes telles que Google, Facebook, LinkedIn, SalesForce et GitHub. Cette tâche est appelée autorisation de complément (ou d’application), car il s’agit du *complément* qui est autorisé et non l’utilisateur.
 
 Vous avez le choix entre deux méthodes d’authentification.
 

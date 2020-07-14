@@ -1,14 +1,14 @@
 ---
 title: Conditions requises pour les compléments Outlook
 description: Pour que les compléments Outlook se chargent et fonctionnent correctement, les serveurs et les clients doivent répondre à plusieurs conditions.
-ms.date: 10/09/2019
+ms.date: 07/07/2020
 localization_priority: Priority
-ms.openlocfilehash: 90c917f7dfa324f98f0a5d88ba59d6467e234ab3
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 700e0efd2ab2655de61d37d42038fa2c15a99cb4
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611658"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093993"
 ---
 # <a name="outlook-add-in-requirements"></a>Conditions requises pour les compléments Outlook
 
@@ -26,11 +26,11 @@ Pour que les compléments Outlook se chargent et fonctionnent correctement, les 
    - Outlook sur le web pour Exchange 2013
    - Outlook.com
 
-- Le client doit être connecté à un serveur Exchange ou Office 365 via une connexion directe. Lors de la configuration du client, l’utilisateur doit sélectionner un compte de type **Exchange**, **Office 365** ou **Outlook.com**. Si le client est configuré pour se connecter avec POP3 ou IMAP, les compléments ne seront pas chargés.
+- The client must be connected to an Exchange server or Microsoft 365 using a direct connection. When configuring the client, the user must choose an **Exchange**, **Office 365**, or **Outlook.com** account type. If the client is configured to connect with POP3 or IMAP, add-ins will not load.
 
 ## <a name="mail-server-requirements"></a>Configuration requise pour le serveur de messagerie
 
-Si l’utilisateur est connecté à Office 365 ou à Outlook.com, le serveur de messagerie a déjà la configuration requise. En revanche, pour les utilisateurs connectés à des installations locales de Microsoft Exchange Server, les conditions suivantes s’appliquent.
+If the user is connected to Microsoft 365 or Outlook.com, mail server requirements are all taken care of already. However, for users connected to on-premises installations of Exchange Server, the following requirements apply.
 
 - Le serveur doit être un serveur Exchange 2013 ou de version ultérieure.
 - Les services web Exchange doivent être activés et exposés sur Internet. De nombreux compléments exigent que les services web Exchange fonctionnent correctement.
@@ -39,7 +39,7 @@ Si l’utilisateur est connecté à Office 365 ou à Outlook.com, le serveur de
 
 ## <a name="add-in-server-requirements"></a>Conditions de serveur pour le complément
 
-Les fichiers du complément (HTML, JavaScript, etc.) peuvent être hébergés sur n’importe quelle plateforme de serveur web. Les seules conditions sont que le serveur doit être configuré de manière à utiliser le protocole HTTPS et que le certificat SSL doit être approuvé par le client.
+Add-in files (HTML, JavaScript, etc.) can be hosted on any web server platform desired. The only requirement is that the server must be configured to use HTTPS, and the SSL certificate must be trusted by the client.
 
 ## <a name="see-also"></a>Voir aussi
 

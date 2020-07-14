@@ -3,21 +3,21 @@ title: Concepts basiques pour les commandes de complément
 description: Découvrez l'ajout de boutons et d'éléments de menu personnalisés au ruban dans Office dans le cadre d’un complément Office.
 ms.date: 05/12/2020
 localization_priority: Priority
-ms.openlocfilehash: c0657ff49f52c2ac434d396fc506a879a72a6763
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 2fe14a41c93b53164ab0fa3a7d25f5b9810b9c6a
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44607707"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093874"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Commandes de complément pour Excel, PowerPoint et Word
 
-Les commandes de complément sont des éléments d’interface utilisateur qui étendent l’interface utilisateur d’Office et lancent des actions dans votre complément. Vous pouvez les utiliser pour ajouter un bouton sur le ruban ou un élément dans le menu contextuel. Lorsque les utilisateurs sélectionnent une commande de complément, ils lancent des actions telles que l’exécution de code JavaScript ou l’affichage d’une page du complément dans le volet Office. Les commandes de complément aident les utilisateurs à trouver et utiliser votre complément, ce qui favorise l’adoption et la réutilisation de votre complément, et améliore la fidélisation des clients.
+Add-in commands are UI elements that extend the Office UI and start actions in your add-in. You can use add-in commands to add a button on the ribbon or an item to a context menu. When users select an add-in command, they initiate actions such as running JavaScript code, or showing a page of the add-in in a task pane. Add-in commands help users find and use your add-in, which can help increase your add-in's adoption and reuse, and improve customer retention.
 
-Pour en savoir plus sur les fonctionnalités, regardez la vidéo sur les [commandes de complément du ruban Office](https://channel9.msdn.com/events/Build/2016/P551).
+Pour une vue d'ensemble du reportage, voir la vidéo [Ruban de l'application commandes complémentaires au sein du Bureau](https://channel9.msdn.com/events/Build/2016/P551).
 
 > [!NOTE]
-> Les catalogues SharePoint n’acceptent pas les commandes de complément. Vous pouvez déployer des commandes de complément via le [déploiement centralisé](../publish/centralized-deployment.md) ou [AppSource](/office/dev/store/submit-to-appsource-via-partner-center), ou utiliser le [chargement de version test](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) pour déployer votre commande de complément à des fins de test.
+> SharePoint catalogs do not support add-in commands. You can deploy add-in commands via [Centralized Deployment](../publish/centralized-deployment.md) or [AppSource](/office/dev/store/submit-to-appsource-via-partner-center), or use [sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) to deploy your add-in command for testing.
 
 > [!IMPORTANT]
 > Les commandes de complément sont actuellement prises en charge dans Outlook. Pour plus d’informations, voir [Commandes de complément pour Outlook](../outlook/add-in-commands-for-outlook.md).
@@ -50,7 +50,7 @@ Les fonctionnalités de commande suivantes sont actuellement prises en charge.
 ### <a name="actions"></a>Actions
 
 - ShowTaskpane - Affiche un ou plusieurs volets où sont chargées des pages HTML personnalisées.
-- ExecuteFunction - Charge une page HTML invisible, puis y exécute une fonction JavaScript. Pour afficher l’interface utilisateur au sein de votre fonction (par exemple, erreurs, avancement, entrées supplémentaires), vous pouvez utiliser l’API [displayDialog](/javascript/api/office/office.ui).  
+- ExecuteFunction - Loads an invisible HTML page and then execute a JavaScript function within it. To show UI within your function (such as errors, progress, or additional input) you can use the [displayDialog](/javascript/api/office/office.ui) API.  
 
 ### <a name="default-enabled-or-disabled-status-preview"></a>État Activé ou Désactivé par défaut (préversion)
 
@@ -63,9 +63,9 @@ Vous pouvez spécifier si la commande est activée ou désactivée lors du lance
 
 Les commandes de complément sont actuellement prises en charge sur les plateformes suivantes.
 
-- Office sur Windows (build 16.0.6769+, connecté à l’abonnement Office 365)
-- Office 2019 pour Windows
-- Office sur Mac (build 15.33+, connecté à l’abonnement Office 365)
+- Office on Windows (build 16.0.6769+, connecté à l'abonnement Microsoft 365)
+- Office 2019 sur Windows
+- Office sur Mac (build 15.33+, connecté à l'abonnement Microsoft 365)
 - Office 2019 sur Mac
 - Office sur le web
 
@@ -80,13 +80,13 @@ Pour déboguer une commande de complément, vous devez l’exécuter dans Office
 
 Appliquez les meilleures pratiques suivantes lorsque vous développez des commandes de complément :
 
-- Utilisez les commandes pour représenter une action spécifique avec un résultat clair et précis pour les utilisateurs. Ne combinez pas plusieurs actions dans un seul bouton.
-- Proposez des actions détaillées permettant de réaliser plus efficacement des tâches courantes dans votre complément. Réduisez le nombre d’étapes nécessaires à la réalisation d’une action.
-- Pour placer vos commandes dans le ruban Office :
-    - Placez les commandes sur un onglet existant (Insertion, Révision, etc.) si la fonctionnalité ajoutée lui correspond. Par exemple, si votre complément permet aux utilisateurs d’insérer un élément multimédia, ajoutez un groupe à l’onglet Insertion. Notez que l’ensemble des onglets ne sont pas nécessairement disponibles dans toutes les versions d’Office. Pour plus d’informations, voir le [manifeste XML de compléments Office](../develop/add-in-manifests.md).
-    - Placez les commandes sous l’onglet Accueil si la fonctionnalité ne correspond à aucun autre onglet, et si vous avez moins de six commandes de niveau supérieur. Vous pouvez également ajouter des commandes à l’onglet Accueil si votre complément doit fonctionner sur toutes les versions d’Office (par exemple, Office sur le web ou le bureau) et si un onglet n’est pas disponible dans toutes les versions (par exemple, si l’onglet Création n’existe pas dans Office sur le web).  
+- Use commands to represent a specific action with a clear and specific outcome for users. Do not combine multiple actions in a single button.
+- Provide granular actions that make common tasks within your add-in more efficient to perform. Minimize the number of steps an action takes to complete.
+- Pour le placement de vos commandes dans le ruban d'application de l'Office :
+    - Place commands on an existing tab (Insert, Review, and so on) if the functionality provided fits there. For example, if your add-in enables users to insert media, add a group to the Insert tab. Note that not all tabs are available across all Office versions. For more information, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).
+    - Place commands on the Home tab if the functionality doesn't fit on another tab, and you have fewer than six top-level commands. You can also add commands to the Home tab if your add-in needs to work across Office versions (such as Office on the web or desktop) and a tab is not available in all versions (for example, the Design tab doesn't exist in Office on the web).  
     - Placez des commandes dans un onglet personnalisé si vous avez plus de six commandes de niveau supérieur.
-    - Nommez votre groupe en fonction du nom de votre complément. Si vous avez plusieurs groupes, nommez chaque groupe en fonction de la fonctionnalité offerte par les commandes de ce groupe.
+    - Name your group to match the name of your add-in. If you have multiple groups, name each group based on the functionality that the commands in that group provide.
     - N’ajoutez pas de boutons superflus pour augmenter la valeur de votre complément.
 
      > [!NOTE]

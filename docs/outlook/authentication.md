@@ -3,12 +3,12 @@ title: Options d’authentification dans les compléments Outlook
 description: Les compléments Outlook offrent différentes méthodes qui permettent de s’authentifier en fonction de votre scénario.
 ms.date: 04/28/2020
 localization_priority: Priority
-ms.openlocfilehash: 0a8c61a3e722cf1bcbfd1d9706c2dc41a7271345
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7864b2cfe76154fc8f939f0838095d23ad727054
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44606489"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094014"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Options d’authentification dans les compléments Outlook
 
@@ -23,11 +23,11 @@ Les jetons d’accès à authentification unique permettent à votre complément
 >
 > Pour utiliser l’authentification unique (SSO), vous devez télécharger la version bêta de la bibliothèque JavaScript d’Office à partir de https://appsforoffice.microsoft.com/lib/beta/hosted/office.js dans la page de démarrage HTML du complément.
 >
-> Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location d’Office 365. Pour plus d’informations sur la manière de procéder, voir [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> Si vous travaillez avec un add-in Outlook, assurez-vous d'activer l'authentification moderne pour la location de Microsoft 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 Vous pouvez utiliser des jetons d’accès d’authentification unique si votre complément :
 
-- est principalement utilisé par les utilisateurs d’Office 365 ;
+- Est principalement utilisé par les utilisateurs de Microsoft 365
 - doit accéder à ce qui suit :
   - Services Microsoft exposés dans le cadre de Microsoft Graph ;
   - Service non-Microsoft que vous contrôlez.

@@ -4,16 +4,16 @@ description: Informations sur la configuration requise pour le complément Offic
 ms.date: 05/06/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 0cb70dada7fe77ff47a70a8179c96b28799950c6
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: e77bcb25437e082ce0fbf1b8a695db20ae9f14f1
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611378"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094385"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Excel
 
-Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
 
 ## <a name="requirement-set-availability"></a>Disponibilité d’ensemble de conditions requises
 
@@ -24,7 +24,7 @@ Les compléments Excel peuvent être exécutés dans différentes versions d’O
 >
 > Pour plus d’informations sur l’utilisation aperçu API, voir l’article[JavaScript d’Excel preview API](excel-preview-apis.md).
 
-|  Ensemble de conditions requises  |  Office pour Windows<br>(connecté à l’abonnement Office 365)  |  Office sur iPad<br>(connecté à l’abonnement Office 365)  |  Office sur Mac<br>(connecté à l’abonnement Office 365)  | Office sur le web |
+|  Ensemble de conditions requises  |  Office pour Windows<br>(connecté à l’abonnement Microsoft 365)  |  Office sur iPad<br>(connecté à l’abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à l’abonnement Microsoft 365)  | Office sur le web |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [Aperçu](excel-preview-apis.md)  | Veuillez utiliser la dernière version d’Office pour tester la préversion API (vous devrez peut-être rejoindre la [programme Office Insider](https://insider.office.com)) |
 | [ExcelApiOnline](excel-api-online-requirement-set.md) | N/A | N/A | N/A | Dernière version (voir la [page des ensembles de conditions requises](./excel-api-online-requirement-set.md)) |
