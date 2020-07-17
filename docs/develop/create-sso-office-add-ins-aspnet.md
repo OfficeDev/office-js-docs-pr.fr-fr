@@ -3,12 +3,12 @@ title: Créer un complément Office ASP.NET qui utilise l’authentification uni
 description: Guide pas à pas pour la création (ou conversion) d’un complément Office avec un serveur principal ASP.NET pour utiliser l’authentification unique (SSO).
 ms.date: 12/04/2019
 localization_priority: Normal
-ms.openlocfilehash: 71c5b6a90aa17ab08c1fe172be2181c9ec8650ef
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 9d2917c334a2e90736daa1b3e4ad7ef85be6b978
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093720"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159611"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office ASP.NET qui utilise l’authentification unique (aperçu)
 
@@ -428,7 +428,7 @@ Si vous avez choisi « Comptes dans ce répertoire d’organisation uniquement�
 1. Remplacez le `TODO 1` par ce qui suit. Tenez compte des informations suivantes :
 
     * Le code demande à OWIN de s'assurer que l'audience spécifiée dans le jeton d'amorçage qui provient de l'hôte Office doit correspondre à la valeur spécifiée dans le web.config.
-    * Les comptes Microsoft ont un GUID d’émetteur différent de celui de tout autre GUID de locataire organisationnel pour prendre en charge les deux types de comptes, nous ne validons pas l’émetteur.
+    * Les comptes Microsoft ont un GUID d’émetteur qui est différent de tout GUID de client organisationnel, afin de prendre en charge les deux types de comptes, il n’est pas obligatoire de valider l’émetteur.
     * Le réglage de `SaveSigninToken` sur `true` fait qu’OWIN enregistre le jeton brut d’amorçage à partir de l’hôte Office. Le complément en a besoin pour obtenir un jeton d’accès à Microsoft Graph avec le flux « de la part de ».
     * Les étendues ne sont pas validées par l’intergiciel OWIN. Les étendues du jeton d’amorçage, qui doivent inclure `access_as_user`, sont validées dans le contrôleur.
 
@@ -608,4 +608,4 @@ Si vous avez choisi « Comptes dans ce répertoire d’organisation uniquement�
 
 1. Appuyez sur la touche F5.
 1. Dans l’application Office, sur le ruban **Accueil**, sélectionnez **Afficher le complément** dans le groupe **ASP.NET SSO** pour ouvrir le complément du panneau des tâches.
-1. Cliquez sur le bouton **Obtenir des noms de fichier OneDrive**. Si vous êtes connecté à Office avec un compte Microsoft 365 éducation ou un compte professionnel ou un compte Microsoft et que l’authentification unique fonctionne comme prévu, les 10 premiers noms de fichier et de dossier dans votre OneDrive entreprise s’affichent dans le volet Office. Si vous n’êtes pas connecté ou si vous êtes dans un scénario qui ne prend pas en charge SSO ou si l’authentification unique ne fonctionne pas pour une raison quelconque, vous serez invité à vous connecter. Une fois connecté, les noms de fichier et de dossier s’affichent.
+1. Cliquez sur le bouton **Obtenir des noms de fichier OneDrive**. Si vous êtes connecté à Office à l’aide d’un compte Microsoft 365 éducation ou professionnel, ou d’un compte Microsoft, et que l’authentification unique fonctionne comme prévu, les 10 premiers noms de fichier et de dossier dans votre OneDrive entreprise s’affichent dans le volet Office. Si vous n’êtes pas connecté ou si vous êtes dans un scénario qui ne prend pas en charge SSO ou si l’authentification unique ne fonctionne pas pour une raison quelconque, vous serez invité à vous connecter. Une fois connecté, les noms de fichier et de dossier s’affichent.

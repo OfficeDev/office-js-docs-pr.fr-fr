@@ -1,18 +1,18 @@
 ---
 title: Rendre votre complément Office compatible avec un complément COM existant
 description: Activer la compatibilité entre votre complément Office et un complément COM équivalent
-ms.date: 07/31/2019
+ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 1ded60366c36edb876b8b2dd0a4ea9e6a39521b0
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: a29fcda8eb83b8fdbc3f7d170932838ffe44d233
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093594"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159548"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Rendre votre complément Office compatible avec un complément COM existant
 
-Si vous disposez d’un complément COM existant, vous pouvez créer une fonctionnalité équivalente dans votre complément Office, ce qui permet à votre solution de s’exécuter sur d’autres plateformes, telles qu’Office sur le Web ou Office sur Mac. Dans certains cas, votre complément Office peut ne pas être en mesure de fournir toutes les fonctionnalités disponibles dans le complément COM correspondant. Dans ce cas, votre complément COM peut fournir une meilleure expérience utilisateur sur Windows que le complément Office correspondant.
+Si vous disposez d’un complément COM existant, vous pouvez créer une fonctionnalité équivalente dans votre complément Office, ce qui permet à votre solution de s’exécuter sur d’autres plateformes, telles qu’Office sur le Web ou Mac. Dans certains cas, votre complément Office peut ne pas être en mesure de fournir toutes les fonctionnalités disponibles dans le complément COM correspondant. Dans ce cas, votre complément COM peut fournir une meilleure expérience utilisateur sur Windows que le complément Office correspondant.
 
 Vous pouvez configurer votre complément Office de sorte que, lorsque le complément COM équivalent est déjà installé sur l’ordinateur d’un utilisateur, Office sur Windows exécute le complément COM au lieu du complément Office. Le complément COM est appelé « équivalent », car Office effectuera une transition transparente entre le complément COM et le complément Office en fonction de celui sur lequel est installé l’ordinateur d’un utilisateur.
 
@@ -85,6 +85,6 @@ Si un utilisateur désinstalle le complément COM équivalent, Office sur Window
 
 Une fois que vous avez spécifié un complément COM équivalent pour votre complément Office, Office cesse de traiter les mises à jour pour votre complément Office. Pour obtenir les dernières mises à jour pour le complément Office, l’utilisateur doit d’abord désinstaller le complément COM.
 
-## <a name="see-also"></a>Voir aussi
+## <a name="see-also"></a>Consultez également
 
 - [Faire en sorte que vos fonctions personnalisées soient compatibles avec les fonctions XLL définies par l’utilisateur](../excel/make-custom-functions-compatible-with-xll-udf.md)

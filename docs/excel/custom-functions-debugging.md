@@ -1,14 +1,14 @@
 ---
-ms.date: 05/17/2020
+ms.date: 07/10/2020
 description: Découvrez comment déboguer vos fonctions personnalisées Excel qui n’utilisent pas de volet de tâches.
 title: Débogage de fonctions personnalisées sans interface utilisateur
 localization_priority: Normal
-ms.openlocfilehash: c984c5a46f8418006fa64f167b0f5882b0cb8a17
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9a493600b6e94d86138cd7949dad0498ec9df05b
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609326"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159513"
 ---
 # <a name="ui-less-custom-functions-debugging"></a>Débogage de fonctions personnalisées sans interface utilisateur
 
@@ -56,7 +56,7 @@ Vous pouvez utiliser le code VS pour déboguer des fonctions personnalisées san
 
 ### <a name="start-debugging"></a>Démarrer le débogage
 
-1. Dans le code VS, ouvrez votre fichier de script de code source (**functions. js** ou **functions. TS**).
+1. Dans le code VS, ouvrez votre fichier de script de code source (**functions.js** ou **functions. TS**).
 2. [Définissez un point d’arrêt](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) dans le code source de la fonction personnalisée.
 3. Dans le classeur Excel, entrez une formule qui utilise votre fonction personnalisée.
 
@@ -94,7 +94,7 @@ Vous pouvez utiliser le code VS pour déboguer des fonctions personnalisées san
 
 
 ### <a name="set-breakpoints"></a>Définir des points d’arrêt
-1. Dans le code VS, ouvrez votre fichier de script de code source (**functions. js** ou **functions. TS**).
+1. Dans le code VS, ouvrez votre fichier de script de code source (**functions.js** ou **functions. TS**).
 2. [Définissez un point d’arrêt](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) dans le code source de la fonction personnalisée.
 3. Dans le classeur Excel, entrez une formule qui utilise votre fonction personnalisée.
 
@@ -110,7 +110,7 @@ Vous pouvez utiliser les outils de développement de navigateur pour déboguer d
 
 ### <a name="sideload-your-add-in"></a>Charger une version test de votre complément
 
-1. Ouvrez [Microsoft Office sur le web](https://office.live.com/).
+1. Ouvrez [Office sur le Web](https://office.live.com/).
 2. Ouvrez un nouveau classeur Excel.
 3. Ouvrez l’onglet **Insérer** dans le ruban, puis dans la section **compléments** , choisissez **Compléments Office**.
 4. Dans la boîte de dialogue **Compléments Office** , sélectionnez l’onglet **mes compléments** , choisissez **gérer mes compléments**, puis **Télécharger mon complément**.
@@ -127,7 +127,7 @@ Vous pouvez utiliser les outils de développement de navigateur pour déboguer d
 ### <a name="start-debugging"></a>Démarrer le débogage
 
 1. Ouvrez outils de développement dans le navigateur. Pour le chrome et la plupart des navigateurs F12 ouvre les outils de développement.
-2. Dans outils de développement, ouvrez votre fichier de script de code source à l’aide de **cmd + p** ou **Ctrl + p** (**functions. js** ou **functions. TS**).
+2. Dans outils de développement, ouvrez votre fichier de script de code source à l’aide de **cmd + p** ou de **Ctrl + p** (**functions.js** ou **functions. TS**).
 3. [Définissez un point d’arrêt](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) dans le code source de la fonction personnalisée. 
 
 Si vous devez modifier le code, vous pouvez effectuer des modifications dans le code VS et enregistrer les modifications. Actualisez le navigateur pour voir les modifications chargées.
@@ -150,7 +150,7 @@ Si vous n’utilisez pas le code VS, vous pouvez utiliser la ligne de commande (
     Pour Excel sur le Web, vous devez également chargement votre complément. Suivez les étapes décrites dans [chargement votre complément](#sideload-your-add-in) pour chargement votre complément. Ensuite, passez à la section suivante pour commencer le débogage.
     
 4. Ouvrez outils de développement dans le navigateur. Pour le chrome et la plupart des navigateurs F12 ouvre les outils de développement.
-5. Dans outils de développement, ouvrez votre fichier de script de code source (**functions. js** ou **functions. TS**). Votre code de fonctions personnalisées peut être situé à la fin du fichier.
+5. Dans outils de développement, ouvrez votre fichier de script de code source (**functions.js** ou **functions. TS**). Votre code de fonctions personnalisées peut être situé à la fin du fichier.
 6. Dans le code source de la fonction personnalisée, appliquez un point d’arrêt en sélectionnant une ligne de code.
 
 Si vous devez modifier le code, vous pouvez apporter des modifications dans Visual Studio et enregistrer les modifications. Actualisez le navigateur pour voir les modifications chargées.
@@ -171,7 +171,7 @@ Vous pouvez utiliser les tâches suivantes pour démarrer le débogage sur le bu
 ## <a name="next-steps"></a>Étapes suivantes
 Découvrez [les pratiques d’authentification pour les fonctions personnalisées sans interface utilisateur](custom-functions-authentication.md).
 
-## <a name="see-also"></a>Voir aussi
+## <a name="see-also"></a>Consultez également
 
 * [Dépannage des fonctions personnalisées](custom-functions-troubleshooting.md)
 * [Gestion des erreurs liées aux fonctions personnalisées dans Excel](custom-functions-errors.md)

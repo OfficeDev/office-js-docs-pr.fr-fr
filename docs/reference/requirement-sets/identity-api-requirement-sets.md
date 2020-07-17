@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API d’identité
 description: Informations sur les conditions requises de l’API Identity pour les compléments Office.
-ms.date: 04/16/2020
+ms.date: 07/10/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 5bface00e0ffe89e7a403b251129867b334f7f69
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: d8ef8b9eaf6e5f4f59f9bb7fd05ed0c91d741c45
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094378"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159296"
 ---
 # <a name="identity-api-requirement-sets"></a>Ensembles de conditions requises de l’API d’identité
 
@@ -17,7 +17,7 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 
 Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tableau suivant répertorie les ensembles de conditions requises de l’API de boîte de dialogue, les applications Office hôtes qui prennent en charge ces conditions et les numéros de build ou de version de l’application Office.
 
-|  Ensemble de conditions requises  | Office 2013 ou version ultérieure sous Windows<br>(achat définitif) | Office pour Windows<br>(connecté à l’abonnement Microsoft 365) |  Office sur iPad<br>(connecté à l’abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à l’abonnement Microsoft 365)  | Office sur le web  | SharePoint Online | OneDrive.com |Outlook.com et Exchange Online|
+|  Ensemble de conditions requises  | Office 2013 ou version ultérieure sous Windows<br>(achat définitif) | Office pour Windows<br>(connecté à un abonnement Microsoft 365) |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à un abonnement Microsoft 365)  | Office sur le web  | SharePoint Online | OneDrive.com |Outlook.com et Exchange Online|
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | Préversion ensembles  | N/A | Préversion<b>*</b> | Bientôt disponible | Préversion<b>*</b> | Aperçu<b>* &#8224;</b> | Aperçu<b>* &#8224;</b>| Bientôt disponible | Bientôt disponible |
 

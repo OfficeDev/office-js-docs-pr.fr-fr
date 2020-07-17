@@ -3,16 +3,16 @@ title: Héberger un complément pour Office sur Microsoft Azure | Microsoft Doc
 description: Découvrez comment déployer une application web de complément sur Azure et charger une version test du complément pour le tester dans une application cliente Office.
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: a30f1a8219501a68e6f46f013ef46640a59fe4e9
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: c9d33823850925d5c05d72422262bf62f78b051e
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094231"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159422"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>Héberger un complément pour Office sur Microsoft Azure
 
-Le complément Office le plus simple est composé d’un fichier manifeste XML et d’une page HTML. Le fichier manifeste XML décrit les caractéristiques du complément, telles que son nom, les applications de bureau Office qu’il peut exécuter, ainsi que l’URL de la page HTML du complément. La page HTML est contenue dans une application Web avec laquelle les utilisateurs interagissent lors de l’installation et l’exécution de votre complément dans une application cliente Office. Vous pouvez héberger l’application Web d’un complément Office sur une plateforme d’hébergement Web, y compris Azure.
+Le complément Office le plus simple est composé d’un fichier manifeste XML et d’une page HTML. Le fichier manifeste XML décrit les caractéristiques du complément, telles que son nom, les clients de bureau Office qu’il peut exécuter, ainsi que l’URL de la page HTML du complément. La page HTML est contenue dans une application Web avec laquelle les utilisateurs interagissent lors de l’installation et l’exécution de votre complément dans une application cliente Office. Vous pouvez héberger l’application Web d’un complément Office sur une plateforme d’hébergement Web, y compris Azure.
 
 Cet article décrit comment déployer une application web de complément sur Azure et [charger une version test du complément](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) pour le tester dans une application cliente Office.
 

@@ -3,12 +3,12 @@ title: Utiliser l’API de boîte de dialogue Office dans vos compléments Offic
 description: Découvrez les concepts de base de la création d’une boîte de dialogue dans un complément Office.
 ms.date: 06/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 749fd6041c2ef60a4d766e865e25d53e97298d01
-ms.sourcegitcommit: 449a728118db88dea22a44f83728d21604d6ee8c
+ms.openlocfilehash: 5cdd457b99636dd244eed1fa88c1b76cab23ee8c
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "44719069"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159562"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Utiliser l’API de boîte de dialogue Office dans les compléments Office
 
@@ -79,7 +79,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 La valeur par défaut est `false`, ce qui revient à omettre entièrement la propriété. Si le complément n’est pas exécuté dans Office sur le Web, le `displayInIframe` est ignoré.
 
 > [!NOTE]
-> Vous ne devez **pas** utiliser `displayInIframe: true` si la boîte de dialogue redirige à un moment donné l’utilisateur vers une page qui ne peut pas être ouverte dans un IFrame. Par exemple, les pages de connexion de nombreux services web connus, comme un compte Microsoft et Google, ne peuvent pas être ouvertes dans un IFrame.
+> Vous ne devez **pas** utiliser `displayInIframe: true` si la boîte de dialogue redirige à un moment donné l’utilisateur vers une page qui ne peut pas être ouverte dans un IFrame. Par exemple, les pages de connexion de nombreux services Web populaires, tels que Google et Microsoft Account, ne peuvent pas être ouverts dans un IFRAME.
 
 ## <a name="send-information-from-the-dialog-box-to-the-host-page"></a>Envoi d’informations à la page hôte à partir de la boîte de dialogue
 
@@ -137,7 +137,7 @@ function processMessage(arg) {
 ```
 
 > [!NOTE]
-> - Office transmet l’objet `arg` au gestionnaire. Sa propriété `message` est la valeur booléenne ou la chaîne envoyée par l’appel de `messageParent` dans la boîte de dialogue. Dans cet exemple, il s’agit d’une représentation convertie en chaîne du profil de l’utilisateur à partir d’un service tel qu’un compte Microsoft ou Google, qui est donc désérialisé en objet avec `JSON.parse`.
+> - Office transmet l’objet `arg` au gestionnaire. Sa propriété `message` est la valeur booléenne ou la chaîne envoyée par l’appel de `messageParent` dans la boîte de dialogue. Dans cet exemple, il s’agit d’une représentation JSON du profil d’un utilisateur à partir d’un service tel que le compte Microsoft ou Google, de sorte qu’il soit désérialisé en un objet avec `JSON.parse` .
 > - L’implémentation `showUserName` n’est pas visible. Elle peut afficher un message de bienvenue personnalisé dans le volet Office.
 
 Lorsque l’intervention de l’utilisateur sur la boîte de dialogue est terminée, votre gestionnaire de messages doit fermer la boîte de dialogue, comme indiqué dans cet exemple.
@@ -170,7 +170,7 @@ Pour voir un exemple de complément qui effectue ce type d’action, consultez l
 
 ### <a name="conditional-messaging"></a>Messagerie conditionnelle
 
-Étant donné que vous pouvez envoyer plusieurs appels `messageParent` à partir de la boîte de dialogue, mais que vous n’avez qu’un seul gestionnaire dans la page hôte pour l’événement `DialogMessageReceived`, le gestionnaire doit utiliser la logique conditionnelle pour distinguer les différents messages. Par exemple, si la boîte de dialogue invite un utilisateur à se connecter à un fournisseur d’identité tel qu’un compte Microsoft ou Google, elle envoie le profil de l’utilisateur sous la forme d’un message. Si l’authentification échoue, la boîte de dialogue envoie des informations sur l’erreur à la page hôte, comme dans l’exemple suivant :
+Étant donné que vous pouvez envoyer plusieurs appels `messageParent` à partir de la boîte de dialogue, mais que vous n’avez qu’un seul gestionnaire dans la page hôte pour l’événement `DialogMessageReceived`, le gestionnaire doit utiliser la logique conditionnelle pour distinguer les différents messages. Par exemple, si la boîte de dialogue invite l’utilisateur à se connecter à un fournisseur d’identité tel que le compte Microsoft ou Google, il envoie le profil de l’utilisateur sous la forme d’un message. Si l’authentification échoue, la boîte de dialogue envoie des informations sur l’erreur à la page hôte, comme dans l’exemple suivant :
 
 ```js
 if (loginSuccess) {

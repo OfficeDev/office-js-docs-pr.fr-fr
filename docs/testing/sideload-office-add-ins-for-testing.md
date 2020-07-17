@@ -1,14 +1,14 @@
 ---
 title: Chargement de version test des compléments Office dans Office sur le web
-description: Tester votre complément Office dans Office sur le web par chargement de version test
-ms.date: 07/07/2020
+description: Testez votre complément Office dans Office sur le Web par chargement.
+ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 60b7e4f1d598e4f5ec09307d58294f54123112ad
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 2f9a0d058fc972316da964dd5af03b5733dc7b60
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094119"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159289"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>Chargement de version test des compléments Office dans Office sur le web
 
@@ -25,7 +25,7 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 
 ## <a name="sideload-an-office-add-in-in-office-on-the-web"></a>Chargement de version test d’un complément Office dans Office sur le web
 
-1. Ouvrez [Microsoft Office sur le web](https://office.live.com/).
+1. Ouvrez [Office sur le Web](https://office.live.com/).
 
 2. Dans **commencer à utiliser les applications en ligne maintenant**, choisissez **Excel**, **Word**ou **PowerPoint**; puis ouvrez un nouveau document.
 

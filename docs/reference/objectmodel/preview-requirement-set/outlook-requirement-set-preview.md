@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: Les fonctionnalités et les API qui sont actuellement en préversion pour les compléments Outlook.
-ms.date: 06/17/2020
+ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: d91d1e16382a9ada71210657d6111f548c85ccfd
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 457195b7511d4dabca101242400d44154a57a781
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094420"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159219"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -36,31 +36,31 @@ Les fonctionnalités suivantes sont disponibles en aperçu.
 
 Ajout d’un nouvel objet qui représente la propriété d’événement d’une journée entière d’un rendez-vous en mode composition.
 
-**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Microsoft 365)
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365)
 
 #### <a name="sensitivity"></a>[Sensitivity](/javascript/api/outlook/office.sensitivity?view=outlook-js-preview)
 
 Ajout d’un nouvel objet qui représente le critère de diffusion d’un rendez-vous en mode composition.
 
-**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Microsoft 365)
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365)
 
 #### <a name="officecontextmailboxitemisalldayevent"></a>[Office. Context. Mailbox. Item. isAllDayEvent](office.context.mailbox.item.md#properties)
 
 Ajout d’une nouvelle propriété qui indique si un rendez-vous est un événement d’une journée entière.
 
-**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Microsoft 365)
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365)
 
 #### <a name="officecontextmailboxitemsensitivity"></a>[Office. Context. Mailbox. Item. Sensitivity](office.context.mailbox.item.md#properties)
 
 Ajout d’une nouvelle propriété qui représente le critère de diffusion d’un rendez-vous.
 
-**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Microsoft 365)
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365)
 
 #### <a name="officemailboxenumsappointmentsensitivitytype"></a>[Office. MailboxEnums. AppointmentSensitivityType](/javascript/api/outlook/office.mailboxenums.appointmentsensitivitytype?view=outlook-js-preview)
 
 Ajout d’une nouvelle énumération `AppointmentSensitivityType` qui représente les options de critère de diffusion disponibles sur un rendez-vous.
 
-**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Microsoft 365)
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365)
 
 <br>
 
@@ -76,13 +76,13 @@ Pour en savoir plus sur l’utilisation de la fonctionnalité Ajout à l’envoi
 
 Ajout d’une nouvelle fonction à l' `Body` objet qui ajoute des données à la fin du corps de l’élément en mode composition.
 
-**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Microsoft 365), Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 #### <a name="extendedpermissions"></a>[ExtendedPermissions](../../manifest/extendedpermissions.md)
 
 Ajout d’un nouvel élément au manifeste dans lequel l' `AppendOnSend` autorisation étendue doit être incluse dans la collection des autorisations étendues.
 
-**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Microsoft 365), Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 <br>
 
@@ -96,37 +96,37 @@ Ajout d’un nouvel élément au manifeste dans lequel l' `AppendOnSend` autoris
 
 Ajout d’une nouvelle fonction à l' `Mailbox` objet qui affiche un rendez-vous existant. Il s’agit de la version asynchrone de la `displayAppointmentForm` méthode.
 
-**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Microsoft 365)
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365)
 
 #### <a name="officecontextmailboxdisplaymessageformasync"></a>[Office. Context. Mailbox. displayMessageFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaymessageformasync-itemid--options--callback-)
 
 Ajout d’une nouvelle fonction à l' `Mailbox` objet qui affiche un message existant. Il s’agit de la version asynchrone de la `displayMessageForm` méthode.
 
-**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Microsoft 365)
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365)
 
 #### <a name="officecontextmailboxdisplaynewappointmentformasync"></a>[Office. Context. Mailbox. displayNewAppointmentFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaynewappointmentformasync-parameters--options--callback-)
 
 Ajout d’une nouvelle fonction à l' `Mailbox` objet qui affiche un nouveau formulaire de rendez-vous. Il s’agit de la version asynchrone de la `displayNewAppointmentForm` méthode.
 
-**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Microsoft 365)
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365)
 
 #### <a name="officecontextmailboxdisplaynewmessageformasync"></a>[Office. Context. Mailbox. displayNewMessageFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaynewmessageformasync-parameters--options--callback-)
 
 Ajout d’une nouvelle fonction à l' `Mailbox` objet qui affiche un nouveau formulaire de message. Il s’agit de la version asynchrone de la `displayNewMessageForm` méthode.
 
-**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Microsoft 365)
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365)
 
 #### <a name="officecontextmailboxitemdisplayreplyallformasync"></a>[Office. Context. Mailbox. Item. displayReplyAllFormAsync](office.context.mailbox.item.md#methods)
 
 Ajout d’une nouvelle fonction à l' `Item` objet qui affiche le formulaire « répondre à tous » en mode lecture. Il s’agit de la version asynchrone de la `displayReplyAllForm` méthode.
 
-**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Microsoft 365)
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365)
 
 #### <a name="officecontextmailboxitemdisplayreplyformasync"></a>[Office. Context. Mailbox. Item. displayReplyFormAsync](office.context.mailbox.item.md#methods)
 
 Ajout d’une nouvelle fonction à l' `Item` objet qui affiche le formulaire « répondre » en mode lecture. Il s’agit de la version asynchrone de la `displayReplyForm` méthode.
 
-**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Microsoft 365)
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365)
 
 <br>
 
@@ -168,7 +168,7 @@ Ajout de la prise en charge d’Outlook à l' `Runtimes` élément de manifeste.
 
 Ajout d’une nouvelle fonction à l' `CustomProperties` objet qui obtient toutes les propriétés personnalisées.
 
-**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Microsoft 365), Outlook sur le Web (moderne), Outlook sur Mac (connecté à l’abonnement Microsoft 365), Outlook sur Android, Outlook sur iOS
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur le Web (moderne), Outlook sur Mac (connecté à un abonnement Microsoft 365), Outlook sur Android, Outlook sur iOS
 
 <br>
 
@@ -182,7 +182,7 @@ Ajout d’une nouvelle fonction à l' `CustomProperties` objet qui obtient toute
 
 Ajout d’une nouvelle fonction qui renvoie les données d’initialisation transmises lorsque le complément est [activé par un message actionnable](/outlook/actionable-messages/invoke-add-in-from-actionable-message).
 
-**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Microsoft 365), Outlook sur le Web (classique)
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur le Web (classique)
 
 <br>
 
@@ -196,31 +196,31 @@ Ajout d’une nouvelle fonction qui renvoie les données d’initialisation tran
 
 Ajout d’une nouvelle fonction à l' `Body` objet qui ajoute ou remplace la signature dans le corps de l’élément en mode composition.
 
-**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Microsoft 365), Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 #### <a name="officecontextmailboxitemdisableclientsignatureasync"></a>[Office. Context. Mailbox. Item. disableClientSignatureAsync](office.context.mailbox.item.md#methods)
 
 Ajout d’une fonction qui désactive la signature client pour la boîte aux lettres d’envoi en mode composition.
 
-**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Microsoft 365), Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 #### <a name="officecontextmailboxitemgetcomposetypeasync"></a>[Office. Context. Mailbox. Item. getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#getcomposetypeasync-options--callback-)
 
 Ajout d’une nouvelle fonction qui obtient le type de composition d’un message en mode composition.
 
-**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Microsoft 365), Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 #### <a name="officecontextmailboxitemisclientsignatureenabledasync"></a>[Office. Context. Mailbox. Item. isClientSignatureEnabledAsync](office.context.mailbox.item.md#methods)
 
 Ajout d’une fonction qui vérifie si la signature client est activée sur l’élément en mode composition.
 
-**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Microsoft 365), Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 #### <a name="officemailboxenumscomposetype"></a>[Office. MailboxEnums. ComposeType](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-preview)
 
 Ajout d’une nouvelle énumération `ComposeType` disponible en mode composition.
 
-**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Microsoft 365), Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 <br>
 
@@ -234,13 +234,13 @@ Ajout d’une nouvelle énumération `ComposeType` disponible en mode compositio
 
 Ajout de la possibilité d’obtenir un thème Office.
 
-**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Microsoft 365)
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365)
 
 #### <a name="officeeventtypeofficethemechanged"></a>[Office.EventType.OfficeThemeChanged](/javascript/api/office/office.eventtype)
 
 Ajout de l’événement `OfficeThemeChanged` à `Mailbox`.
 
-**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Microsoft 365)
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365)
 
 <br>
 
@@ -254,7 +254,7 @@ Ajout de l’événement `OfficeThemeChanged` à `Mailbox`.
 
 Ajout d’un accès à `getAccessToken`, qui permet aux compléments d’[obtenir un jeton d’accès](../../../outlook/authenticate-a-user-with-an-sso-token.md) pour l’API Microsoft Graph.
 
-**Disponible dans**: Outlook sur Windows (connecté à l’abonnement Microsoft 365), Outlook sur Mac (connecté à l’abonnement Microsoft 365), Outlook sur le Web (moderne), Outlook sur le Web (classique)
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur Mac (connecté à un abonnement Microsoft 365), Outlook sur le Web (moderne), Outlook sur le Web (classique)
 
 ## <a name="see-also"></a>Voir aussi
 

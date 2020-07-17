@@ -3,12 +3,12 @@ title: Résolution des erreurs rencontrées par l’utilisateur avec des complé
 description: Découvrez comment résoudre les problèmes liés aux erreurs utilisateur dans les compléments Office.
 ms.date: 06/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 1dbc8cc18e0c9b12ccff605b655dd7c8629fb9cf
-ms.sourcegitcommit: b939312ffdeb6e0a0dfe085db7efe0ff143ef873
+ms.openlocfilehash: 51f5ec406a09b18ece24b74dc22718e7fd422e38
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "44810848"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159184"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 
@@ -140,9 +140,9 @@ del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC
 
 ## <a name="see-also"></a>Voir également
 
-- [Débogage de compléments dans Office sur le web](debug-add-ins-in-office-online.md) 
+- [Débogage de compléments dans Office sur le web](debug-add-ins-in-office-online.md)
 - [Charger une version test d’un complément Office sur iPad ou Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
 - [Débogage des compléments Office sur iPad et Mac](debug-office-add-ins-on-ipad-and-mac.md)  
-- [Extension du débogueur de complément Microsoft Office pour Visual Studio code](./debug-with-vs-extension.md)
+- [Extension du débogueur de complément Microsoft Office pour Visual Studio code](debug-with-vs-extension.md)
 - [Valider le manifeste d’un complément Office](troubleshoot-manifest.md)
 - [Déboguer votre complément avec la journalisation runtime](runtime-logging.md)

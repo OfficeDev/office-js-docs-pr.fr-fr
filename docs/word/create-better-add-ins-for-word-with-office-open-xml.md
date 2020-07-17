@@ -1,20 +1,20 @@
 ---
 title: Créer de meilleurs compléments pour Word avec Office Open XML
-description: Vue d’ensemble de l’amélioration de votre complément Word avec Office Open XML
-ms.date: 10/10/2019
+description: Vue d’ensemble de l’amélioration de votre complément Word avec Office Open XML.
+ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 2faaedec831a9ae18f218ff160fee26a8d36910e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 8aeb0d122c85a1bf38755d1db364222359d06e58
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609586"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159303"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Créer de meilleurs compléments pour Word avec Office Open XML
 
 **Fourni par :**    Stephanie Krieger Microsoft Corporation | Juan Balmori Labra, Microsoft Corporation
 
-Si vous créez des compléments Office à exécuter dans Word, vous savez peut-être déjà que l’API JavaScript pour Office (Office. js) offre plusieurs formats de lecture et d’écriture de contenu de document. Il s’agit de types de forçage de type, qui incluent du texte brut, des tableaux, du code HTML et Office Open XML.
+Si vous créez des compléments Office à exécuter dans Word, il est possible que vous sachiez déjà que l’API JavaScript pour Office (Office.js) offre plusieurs formats pour la lecture et l’écriture de contenu de document. Il s’agit de types de forçage de type, qui incluent du texte brut, des tableaux, du code HTML et Office Open XML.
 
 Quelles sont donc les options disponibles pour ajouter du contenu riche à un document, tel que des images, des tableaux mis en forme, des graphiques ou simplement du texte mis en forme ? Vous pouvez utiliser le format HTML pour insérer certains types de contenu riche, comme des images. En fonction de votre scénario, le forçage HTML peut présenter des inconvénients, tels que les limites de la mise en forme et des options de positionnement disponibles pour votre contenu. Office Open XML étant le langage dans lequel les documents Word (notamment .docx et .dotx) sont écrits, vous pouvez insérer quasiment tous les types de contenu qu’un utilisateur peut ajouter à un document Word, avec n’importe quel type de mise en forme applicable. Déterminer le balisage Office Open XML nécessaire pour y parvenir est bien plus facile que vous ne le pensez.
 
@@ -73,7 +73,7 @@ Les effets de texte sont disponibles dans Word pour le texte situé à l’inté
 *Figure 7. Forme*
 
 
-![Un objet de dessin Microsoft Office dans Word.](../images/office15-app-create-wd-app-using-ooxml-fig07.png)
+![Une forme de dessin dans Word.](../images/office15-app-create-wd-app-using-ooxml-fig07.png)
 
 Vous pouvez insérer des formes de dessin intégrées ou personnalisées, avec ou sans texte et effets de mise en forme.
 
@@ -96,7 +96,7 @@ Vous pouvez utiliser des styles de tableau intégrés ou personnalisés aussi fa
 
 ![Graphique SmartArt dynamique dans Word.](../images/office15-app-create-wd-app-using-ooxml-fig10.png)
 
-Microsoft Office offre un large éventail de dispositions pour les diagrammes SmartArt (et vous pouvez utiliser Office Open XML pour créer les vôtres).
+Office offre un large éventail de dispositions pour les diagrammes SmartArt (et vous pouvez utiliser Office Open XML pour créer les vôtres).
 
 *Figure 11. Graphique*
 
@@ -317,7 +317,7 @@ Le balisage suivant présente le composant document.xml, qui contient notre exem
 
 - La balise de début  **w:document** comprend plusieurs listes d’espaces de noms (**xmlns**). Un grand nombre de ces espaces de noms se réfèrent à des types de contenu spécifiques, dont vous avez besoin uniquement s’ils correspondent à votre contenu.
 
-    Notez que le préfixe des balises dans l’ensemble d’une partie de document fait référence aux espaces de noms. Dans cet exemple, le seul préfixe utilisé dans les balises de la partie document. xml est **w :**, de sorte que le seul espace de noms que nous devons laisser dans la balise **w :document** d’ouverture est **xmlns : w**.
+    Notez que le préfixe des balises dans l’ensemble d’une partie de document fait référence aux espaces de noms. Dans cet exemple, le seul préfixe utilisé dans les balises de la partie document.xml est **w :**, de sorte que le seul espace de noms que nous devons laisser dans la balise **w :document** d’ouverture est **xmlns : w**.
 
 
 > [!TIP]
@@ -564,7 +564,7 @@ Le code présenté ici effectue les étapes suivantes :
 > [!NOTE]
 > Comme mentionné plus haut et illustré dans le code précédent, le nom du contrôle de contenu est utilisé pour déterminer où créer la liaison. Cependant, dans le balisage Office Open XML, le code ajoute la liaison au document en utilisant à la fois le nom et l’attribut ID du contrôle de contenu.
 
-Après l’exécution du code, si vous examinez le balisage du document dans lequel votre complément a créé des liaisons, vous voyez deux composants pour chaque liaison. Dans le balisage du contrôle de contenu dans lequel une liaison a été ajoutée (dans document. Xml), vous verrez l’attribut **W15 : webExtensionLinked/**.
+Après l’exécution du code, si vous examinez le balisage du document dans lequel votre complément a créé des liaisons, vous voyez deux composants pour chaque liaison. Dans le balisage du contrôle de contenu où une liaison a été ajoutée (dans document.xml), vous verrez l’attribut **W15 : webExtensionLinked/**.
 
 Dans la partie de document nommée webExtensions1.xml, vous voyez la liste des liaisons que vous avez créées. Chaque liaison est identifiée à l’aide de son ID de liaison et de l’attribut ID du contrôle applicable, comme suit, où l’attribut **appref** est l’ID de contrôle de contenu : ** **we:binding id="myBinding" type="text" appref="1382295294"/**.
 
@@ -743,7 +743,7 @@ Notez que, du fait qu’une référence de relation est explicitement utilisée 
 
 
 > [!NOTE]
-> Lorsque vous examinez le balisage, notez les espaces de noms supplémentaires utilisés dans la balise a:blip. Vous verrez dans document. XML que l’espace de noms **xlmns : a** (l’espace de noms DrawingML principal) est placé de manière dynamique au début de l’utilisation de références DrawingML plutôt qu’en haut de la partie document. Xml. Cependant, l’espace de noms de relations (r) doit être conservé lorsqu’il apparaît au début de document.xml. Vérifiez si votre balise d’image comporte des exigences d’espace de noms supplémentaires. N’oubliez pas que vous n’avez pas à mémoriser les types de contenu devant être associés aux espaces de noms : les préfixes des balises vous l’indiquent tout au long du document.xml.
+> Lorsque vous examinez le balisage, notez les espaces de noms supplémentaires utilisés dans la balise a:blip. Vous verrez dans document.xml que l’espace de noms **xlmns : a** (l’espace de noms DrawingML principal) est placé dynamiquement au début de l’utilisation de références DrawingML plutôt qu’en haut de la partie de document.xml. Cependant, l’espace de noms de relations (r) doit être conservé lorsqu’il apparaît au début de document.xml. Vérifiez si votre balise d’image comporte des exigences d’espace de noms supplémentaires. N’oubliez pas que vous n’avez pas à mémoriser les types de contenu devant être associés aux espaces de noms : les préfixes des balises vous l’indiquent tout au long du document.xml.
 
 
 ### <a name="understanding-additional-image-parts-and-formatting"></a>Présentation des composants d’image supplémentaires et de la mise en forme
@@ -783,7 +783,7 @@ Un diagramme SmartArt possède quatre composants associés, mais seulement deux 
 > [!TIP]
 > Le fichier SmartArt layout1.xml est un bon exemple pour illustrer les parties que vous pouvez supprimer de votre balisage, mais il peut être inutile de consacrer davantage de temps à cela (car cette opération supprime une petite quantité de balisage par rapport à la totalité du package). Si vous voulez vous débarrasser de toutes les lignes possibles de balisage, vous pouvez supprimer la balise **dgm:sampData** et son contenu. Ces données d’exemple définissent l’apparence de la miniature d’aperçu pour le diagramme dans les galeries de styles SmartArt. Toutefois, si elles sont omises, les exemples de données par défaut sont utilisés.
 
-N’oubliez pas que le balisage d’un diagramme SmartArt dans document. xml contient des références ID de relation aux parties mise en page, données, couleurs et styles rapides. Vous pouvez supprimer les références dans document. XML aux parties couleurs et styles lorsque vous supprimez ces parties et leurs définitions de relation (et il est certainement préférable de le faire, puisque vous supprimez ces relations), mais vous n’obtiendrez pas d’erreur si vous les laissez, car elles ne sont pas requises pour que votre diagramme soit inséré dans un document. Recherchez ces références dans document. xml dans la balise **DGM : Recouvercles** . Que vous preniez ou non cette étape, conservez les références d’ID de relation pour les parties de disposition et de données requises.
+N’oubliez pas que le balisage d’un diagramme SmartArt dans document.xml contient des références ID de relation vers les composants mise en page, données, couleurs et styles rapides. Vous pouvez supprimer les références dans document.xml les parties couleurs et styles lorsque vous supprimez ces parties et leurs définitions de relation (et il est certainement préférable de le faire, puisque vous supprimez ces relations), mais vous n’obtiendrez pas d’erreur si vous les quittez, car ils ne sont pas nécessaires pour que votre diagramme soit inséré dans un document. Recherchez ces références dans document.xml dans la balise **DGM : Recouvercles** . Que vous preniez ou non cette étape, conservez les références d’ID de relation pour les parties de disposition et de données requises.
 
 
 ### <a name="working-with-charts"></a>Utilisation de graphiques

@@ -3,12 +3,12 @@ title: Résolution des problèmes de messages d’erreur pour l’authentificati
 description: Conseils sur la résolution des problèmes liés à l’authentification unique (SSO) dans les compléments Office et la gestion des conditions ou des erreurs spéciales.
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 49e967aa0d500df64828c66d9dee8574eb948cec
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 0f4069ee2167a180bb4ba1fbd8db57d5d355e24b
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093559"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159569"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>Résolution des messages d’erreur pour l’authentification unique (SSO) (aperçu)
 
@@ -17,7 +17,7 @@ Cet article fournit des conseils sur la résolution des problèmes liés à l’
 > [!NOTE]
 > L’API de l’authentification unique est actuellement prise en charge en mode aperçu pour Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur l’endroit où l’API d’authentification unique est actuellement prise en charge, consultez la rubrique [Ensembles de conditions requises de l’API d’identité](../reference/requirement-sets/identity-api-requirement-sets.md).
 > [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-> Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location Microsoft 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> Si vous travaillez avec un add-in Outlook, assurez-vous d'activer l'authentification moderne pour la location de Microsoft 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## <a name="debugging-tools"></a>Outils de débogage
 
@@ -82,7 +82,7 @@ L’hôte Office n’a pas pu obtenir de jeton d’accès au service web du comp
 
 - Si cette erreur se produit en cours de développement, assurez-vous que l’enregistrement de votre complément, ainsi que son manifeste, spécifient l’autorisation `profile` (et l’autorisation `openid` si vous utilisez MSAL.NET). Pour plus d’informations, voir [Inscrire votre complément avec le point de terminaison Azure AD v2.0](register-sso-add-in-aad-v2.md).
 - En production, plusieurs causes peuvent entraîner cette erreur. En voici certaines :
-    - L’utilisateur dispose d’une identité de compte Microsoft (MSA).
+    - L’utilisateur dispose d’une identité de compte Microsoft.
     - Certaines situations entraînant l’ouverture d’une des autres erreurs 13xxx avec un compte d’éducation ou de travail Microsoft 365 entraînent une 13007 lors de l’utilisation d’un MSA.
 
   Dans tous ces cas, votre code doit basculer vers un autre système d’authentification des utilisateurs.

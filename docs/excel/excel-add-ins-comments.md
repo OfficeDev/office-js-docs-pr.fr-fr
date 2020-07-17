@@ -3,12 +3,12 @@ title: Utiliser des commentaires à l’aide de l’API JavaScript pour Excel
 description: Informations sur l’utilisation des API pour ajouter, supprimer et modifier des commentaires et des thèmes de commentaires.
 ms.date: 03/17/2020
 localization_priority: Normal
-ms.openlocfilehash: a0ea156c8599b98800d03d2238451c7935d6466f
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 59751086b645ed56cb2a00bc70678967cae085c5
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609775"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159429"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>Utiliser des commentaires à l’aide de l’API JavaScript pour Excel
 
@@ -175,7 +175,8 @@ Les [mentions](https://support.office.com/article/use-mention-in-comments-to-tag
 
 Les commentaires avec des mentions doivent être créés avec des objets [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) . Appelez `CommentCollection.add` avec un `CommentRichContent` conteneur contenant une ou plusieurs mentions et spécifiez `ContentType.mention` comme `contentType` paramètre. La `content` chaîne doit également être mise en forme pour insérer la mention dans le texte. Le format d’une mention est le suivant : `<at id="{replyIndex}">{mentionName}</at>` .
 
-> Note Actuellement, seul le nom exact de la mention peut être utilisé comme texte du lien mention. La prise en charge des versions raccourcies d’un nom sera ajoutée ultérieurement.
+> [!NOTE]
+> Actuellement, seul le nom exact de la mention peut être utilisé comme texte du lien mention. La prise en charge des versions raccourcies d’un nom sera ajoutée ultérieurement.
 
 L’exemple suivant montre un commentaire avec une seule mention.
 

@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API de dialogue
 description: En savoir plus sur les ensembles de conditions requises de l’API Dialog.
-ms.date: 06/10/2020
+ms.date: 07/10/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: d50c30fd769777c8dd3c168a9289dfb60012bbbd
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: f53bd5c62c434c361d435eb51035e45079f8e429
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094427"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159100"
 ---
 # <a name="dialog-api-requirement-sets"></a>Ensembles de conditions requises de l’API de dialogue
 
@@ -17,7 +17,7 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 
 Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tableau suivant répertorie les ensembles de conditions requises de l’API de boîte de dialogue, les applications Office hôte qui prennent en charge ces conditions et les numéros de build ou de version de l’application Office.
 
-|  Ensemble de conditions requises  | Office 2013 sur Windows\*<br>(achat définitif) | Office 2016 ou version ultérieure sur Windows\*<br>(achat définitif)   | Office pour Windows<br>(connecté à l’abonnement Microsoft 365) |  Office sur iPad<br>(connecté à l’abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à l’abonnement Microsoft 365)  | Office sur le web  |  Office Online Server  |
+|  Ensemble de conditions requises  | Office 2013 sur Windows\*<br>(achat définitif) | Office 2016 ou version ultérieure sur Windows\*<br>(achat définitif)   | Office pour Windows<br>(connecté à un abonnement Microsoft 365) |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à un abonnement Microsoft 365)  | Office sur le web  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | DialogApi 1.1  | Build 15.0.4855.1000 ou version ultérieure | Build 16.0.4390.1000 ou version ultérieure | Version 1602 (Build 6741.0000) ou version ultérieure | 1.22 ou version ultérieure | 15.20 ou version ultérieure| Janvier 2017 | Version 1608 (Build 7601.6800) ou version ultérieure|
 
@@ -38,7 +38,7 @@ Pour plus d’informations sur les ensembles de conditions requises des API comm
 
 L’API de boîte de dialogue 1.1 est la première version de l’API. Pour plus d’informations sur l’API, consultez la rubrique référence de l' [API Dialog](/javascript/api/office/office.ui) .
 
-## <a name="see-also"></a>Voir aussi
+## <a name="see-also"></a>Consultez également
 
 - [Utiliser l’API de boîte de dialogue Office dans les compléments Office](../../develop/dialog-api-in-office-add-ins.md)
 - [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md)

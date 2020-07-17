@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises pour l’exécution partagée
 description: Spécifie les plateformes et les hôtes Office qui prennent en charge les API SharedRuntime.
-ms.date: 03/11/2020
+ms.date: 07/10/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: bb1a621de9127417a8a17c2c71a3b3796e7a6ac4
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 37ab904242a07a5ae7f1f580332f709ac409c6be
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094308"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159268"
 ---
 # <a name="shared-runtime-requirement-sets"></a>Ensembles de conditions requises pour l’exécution partagée
 
@@ -19,7 +19,7 @@ Les parties d’un complément Office qui exécutent du code JavaScript, telles 
 
 Le tableau suivant répertorie l’ensemble de conditions requises SharedRuntime 1,1, les applications hôtes Office qui prennent en charge cet ensemble de conditions requises, ainsi que les numéros de build ou de version de l’application Office.
 
-|  Ensemble de conditions requises  |  Office 2013 (ou version ultérieure) sur Windows<br>(achat définitif) | Office pour Windows<br>(connecté à l’abonnement Microsoft 365)   |  Office sur iPad<br>(connecté à l’abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à l’abonnement Microsoft 365)  | Office sur le web  | Office Online Server |
+|  Ensemble de conditions requises  |  Office 2013 (ou version ultérieure) sur Windows<br>(achat définitif) | Office pour Windows<br>(connecté à un abonnement Microsoft 365)   |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à un abonnement Microsoft 365)  | Office sur le web  | Office Online Server |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | SharedRuntime 1,1  | S/O | Version 2002 (Build 12527,20092) ou version ultérieure | S/O | 16.35 ou version ultérieure | Février 2020 | S/O |
 

@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises des API ruban
 description: Spécifie les plateformes et les générations Office qui prennent en charge les API Dynamic Ribbon.
-ms.date: 07/07/2020
+ms.date: 07/10/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 6a0e6af3a74b0b0402710fd66bac6c915aa4c18a
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 1d8f17d56b779fb1590daa82e3c391423c3bfc9a
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094280"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159191"
 ---
 # <a name="ribbon-api-requirement-sets"></a>Ensembles de conditions requises des API ruban
 
@@ -19,7 +19,7 @@ L’ensemble d’API du ruban prend en charge le contrôle par programme de lors
 
 Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tableau suivant répertorie les ensembles de conditions requises de l’API du ruban, les applications hôtes Office qui prennent en charge l’ensemble de conditions requises, ainsi que les numéros de build ou de version de l’application Office.
 
-|  Ensemble de conditions requises  | Office 2013 sur Windows<br>(achat définitif) | Office 2016 ou version ultérieure sur Windows<br>(achat définitif)   | Office pour Windows\*<br>(connecté à l’abonnement Microsoft 365) |  Office sur iPad<br>(connecté à l’abonnement Microsoft 365)  |  Office sur Mac\*<br>(connecté à l’abonnement Microsoft 365)  | Office sur le web\*  |  Office Online Server  |
+|  Ensemble de conditions requises  | Office 2013 sur Windows<br>(achat définitif) | Office 2016 ou version ultérieure sur Windows<br>(achat définitif)   | Office pour Windows\*<br>(connecté à un abonnement Microsoft 365) |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac\*<br>(connecté à un abonnement Microsoft 365)  | Office sur le web\*  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | RibbonApi 1,1  | N/A | N/A | Version 2002 (Build 12527,20264) ou version ultérieure | 16,38 ou version ultérieure | S/O | Février 2020 | S/O|
 

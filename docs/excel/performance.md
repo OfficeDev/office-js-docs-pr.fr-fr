@@ -1,14 +1,14 @@
 ---
 title: Optimisation des performances API JavaScript Excel
 description: Optimisation des performances à l’aide de l’API JavaScript d’Excel
-ms.date: 04/22/2020
+ms.date: 07/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 1108c3a9cbb5efa23d52f2c7d8a6601e4b4bd493
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 193cbe8c8cd1a432c6567401ed645990cb93e5e9
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44610353"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159093"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Optimisation des performances à l’aide de l’API JavaScript d’Excel
 
@@ -138,17 +138,6 @@ Excel affiche les modifications effectuées par votre complément à peu près a
 ### <a name="enable-and-disable-events"></a>Activation et désactivation d’événements
 
 La performance d’un complément peut être améliorée en désactivant les événements. Un exemple de code montrant comment activer et désactiver les événements dans l’article[manipuler les événements](excel-add-ins-events.md#enable-and-disable-events).
-
-## <a name="update-all-cells-in-a-range"></a>Mettre à jour toutes les cellules d’une plage
-
-Lorsque vous devez mettre à jour toutes les cellules dans une plage avec la même valeur ou propriété, il peut être lent de le faire via une matrice 2 dimensions indiquant à plusieurs reprises la même valeur étant donné que cette approche nécessite qu’Excel le répète sur toutes les cellules dans la plage pour définir chacune séparément. Excel propose une méthode plus efficace pour mettre à jour toutes les cellules dans une plage avec la même valeur ou propriété.
-
-Si vous voulez appliquer la même valeur, le même format de nombre ou la même formule à une plage de cellules, il est plus efficace de spécifier une valeur unique au lieu d’une matrice de valeurs. Cette opération va améliorer sensiblement les performances. Pour voir un exemple de code indiquant cette approche en action, [principaux concepts - mettre à jour toutes les cellules dans une plage](excel-add-ins-core-concepts.md#update-all-cells-in-a-range).
-
-Un scénario classique où vous pouvez appliquer cette approche est lors de la définition de différents formats numériques différents sur différentes colonnes dans une feuille de calcul. Dans ce cas, vous pouvez simplement itérer dans les colonnes et définir le format de nombre dans chaque colonne avec une valeur unique. Traiter chaque colonne comme une plage, comme illustré dans l’exemple de code[mettre à jour toutes les cellules dans une plage](excel-add-ins-core-concepts.md#update-all-cells-in-a-range).
-
-> [!NOTE]
-> Si vous utilisez TypeScript, vous remarquerez une erreur de compilation indiquant qu’une seule valeur ne peut pas être définie à une matrice 2D.  Ceci est inévitable puisque les valeurs *sont* un tableau 2D qui extrait les propriétés et TypeScript n’autorise pas de types différents pour configurer et récolter.  Toutefois, une solution de contournement simple consiste à définir les valeurs avec un `as any` suffixe, par exemple, `range.values = "hello world" as any`.
 
 ## <a name="importing-data-into-tables"></a>Importation de données dans des tableaux
 

@@ -3,12 +3,12 @@ title: Runtime dans le fichier manifeste
 description: L’élément Runtime configure votre complément de sorte qu’il utilise un Runtime JavaScript partagé pour ses différents composants, par exemple le ruban, le volet Office, les fonctions personnalisées.
 ms.date: 05/29/2020
 localization_priority: Normal
-ms.openlocfilehash: e81bd7222585bfa7d5f0f34fe5d9b32e4d45a71e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9e6e13f83db363fb5485c8d8defbc381c80e32d6
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608103"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159366"
 ---
 # <a name="runtime-element-preview"></a>Élément Runtime (aperçu)
 
@@ -21,8 +21,6 @@ Dans Outlook, cet élément active l’activation de complément basée sur les 
 **Type de complément :** Volet Office, messagerie
 
 > [!IMPORTANT]
-> **Excel**: le runtime partagé est actuellement disponible uniquement dans Excel sur Windows.
->
 > **Outlook**: l’activation basée sur un événement est actuellement [en](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) préversion et disponible uniquement dans Outlook sur le Web. Pour plus d’informations, voir [comment afficher un aperçu de la fonctionnalité activation basée sur les événements](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature).
 
 ## <a name="syntax"></a>Syntaxe
@@ -44,6 +42,6 @@ Dans Outlook, cet élément active l’activation de complément basée sur les 
 |  **resid**  |  Oui  | Spécifie l’URL de la page HTML de votre complément. L' `resid` doit correspondre à un `id` attribut d’un `Url` élément dans l' `Resources` élément. |
 |  **vie**  |  Non  | La valeur par défaut de `lifetime` est `short` et n’a pas besoin d’être spécifiée. Les compléments Outlook utilisent uniquement la `short` valeur. Si vous souhaitez utiliser un runtime partagé dans un complément Excel, définissez explicitement la valeur sur `long` . |
 
-## <a name="see-also"></a>Voir aussi
+## <a name="see-also"></a>Consultez également
 
 - [Services d’exécution](runtimes.md)

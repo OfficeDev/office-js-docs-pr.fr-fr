@@ -3,12 +3,12 @@ title: Création d’un complément Office Node.js qui utilise l’authentificat
 description: Apprenez à créer un complément basé sur Node.js utilisant l’authentification unique Office.
 ms.date: 06/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 580e7ecaa44529f2e6415fbec638370028e2a1af
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: f2f28d0725de52c9a0647d9d1848662fb1ab7b4f
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093688"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159590"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office Node.js qui utilise l’authentification unique (aperçu)
 
@@ -571,7 +571,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 1. Dans l’application Office, sur le ruban **Accueil**, sélectionnez le bouton **Afficher le complément** dans le groupe **Node.js SSO** pour ouvrir le complément du panneau des tâches.
 
-1. Cliquez sur le bouton **Obtenir des noms de fichier OneDrive**. Si vous êtes connecté à Office avec un compte Microsoft 365 éducation ou un compte professionnel ou un compte Microsoft, et que l’authentification unique fonctionne comme prévu, les 10 premiers noms de fichier et de dossier dans votre OneDrive entreprise sont insérés dans le document. (la première opération peut prendre jusqu’à 15 secondes). Si vous n’êtes pas connecté ou si vous êtes dans un scénario qui ne prend pas en charge SSO ou si l’authentification unique ne fonctionne pas pour une raison quelconque, vous serez invité à vous connecter. Une fois connecté, les noms de fichier et de dossier s’affichent.
+1. Cliquez sur le bouton **Obtenir des noms de fichier OneDrive**. Si vous êtes connecté à Office avec un compte Microsoft 365 éducation ou professionnel, ou un compte Microsoft, et que l’authentification unique fonctionne comme prévu, les 10 premiers noms de fichier et de dossier dans votre OneDrive entreprise sont insérés dans le document. (la première opération peut prendre jusqu’à 15 secondes). Si vous n’êtes pas connecté ou si vous êtes dans un scénario qui ne prend pas en charge SSO ou si l’authentification unique ne fonctionne pas pour une raison quelconque, vous serez invité à vous connecter. Une fois connecté, les noms de fichier et de dossier s’affichent.
 
 > [!NOTE]
 > Si vous étiez précédemment connecté à Office avec un ID différent et si certaines applications précédemment ouvertes Office le sont toujours, Office ne changera pas systématiquement votre identifiant même si cela semble être le cas. Dans ce cas, l’appel vers Microsoft Graph peut échouer ou des données de l’ID précédent peuvent être renvoyées. Afin d’éviter ce problème, veillez à *fermer toutes les autres applications Office* avant de cliquer sur **Obtenir des noms de fichiers OneDrive**.

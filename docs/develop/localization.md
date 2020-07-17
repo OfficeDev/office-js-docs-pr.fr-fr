@@ -1,14 +1,14 @@
 ---
 title: Localisation des compléments Office
 description: Vous pouvez utiliser l’API JavaScript Office pour déterminer les paramètres régionaux et les chaînes d’affichage en fonction des paramètres régionaux de l’application hôte, ou pour interpréter ou afficher des données en fonction des paramètres régionaux des données.
-ms.date: 10/11/2019
+ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 72f6e7ad9c2095bffddb85be60c410963357f74c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 79994406e8477786dd93a1aa56f5cda0a1235d01
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608117"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159583"
 ---
 # <a name="localization-for-office-add-ins"></a>Localisation des compléments Office
 
@@ -176,7 +176,7 @@ Cette section inclut des exemples expliquant comment localiser la description, l
 
 ### <a name="configure-office-to-use-additional-languages-for-display-or-editing"></a>Configurer Office pour utiliser des langues supplémentaires pour l’affichage ou l’édition
 
-Pour exécuter l’exemple de code fourni, configurez Microsoft Office sur votre ordinateur pour utiliser des langues supplémentaires pour pouvoir tester votre complément en basculant d’une langue à l’autre pour l’affichage des menus et des commandes, l’édition et la vérification, ou les deux.
+Pour exécuter l’exemple de code fourni, configurez Office sur votre ordinateur afin d’utiliser des langues supplémentaires afin de pouvoir tester votre complément en changeant la langue utilisée pour l’affichage dans les menus et les commandes, pour la modification et la vérification, ou pour les deux.
 
 Vous pouvez utiliser un module linguistique Office pour installer une autre langue. Pour plus d’informations sur les Modules linguistiques et où les obtenir, voir [Pack d’accessoires linguistiques pour Office](https://office.microsoft.com/language-packs/).
 

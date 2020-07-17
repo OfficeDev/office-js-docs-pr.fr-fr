@@ -4,12 +4,12 @@ description: Découvrez comment personnaliser le complément à extension SSO qu
 ms.date: 07/07/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: c1d292ed8ead40201dd035d6ae8e6997174ea477
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 8d4ab4653bcd8fccdcbecbe2e7e8e29a49a3184f
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094483"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159450"
 ---
 # <a name="customize-your-nodejs-sso-enabled-add-in"></a>Personnaliser votre complément compatible avec l’authentification unique Node.js
 
@@ -18,7 +18,7 @@ ms.locfileid: "45094483"
 
 Le [démarrage rapide de l’authentification unique](sso-quickstart.md) crée un complément à extension SSO qui obtient les informations de profil de l’utilisateur connecté et l’écrit dans le document ou le message. Dans cet article, vous découvrirez le processus de mise à jour du complément que vous avez créé avec le générateur Yeoman dans le démarrage rapide de l’authentification unique, afin d’ajouter de nouvelles fonctionnalités qui nécessitent des autorisations différentes.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Configuration requise
 
 * Un complément Office que vous avez créé en suivant les instructions du [démarrage rapide de l’authentification unique](sso-quickstart.md).
 
@@ -565,7 +565,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 Une fois ces modifications effectuées, passez à la section [essayer](#try-it-out) de cet article pour tester votre complément mis à jour.
 
-## <a name="try-it-out"></a>Try it out
+## <a name="try-it-out"></a>Essayez
 
 Si votre complément est un complément Excel, Word ou PowerPoint, effectuez les étapes de la section suivante pour le tester. Si votre complément est un complément Outlook, effectuez plutôt les étapes dans la section [Outlook](#outlook) .
 
