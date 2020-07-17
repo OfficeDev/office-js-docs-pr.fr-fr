@@ -26,11 +26,11 @@ Pour que les compléments Outlook se chargent et fonctionnent correctement, les 
    - Outlook sur le web pour Exchange 2013
    - Outlook.com
 
-- The client must be connected to an Exchange server or Microsoft 365 using a direct connection. When configuring the client, the user must choose an **Exchange**, **Office 365**, or **Outlook.com** account type. If the client is configured to connect with POP3 or IMAP, add-ins will not load.
+- Le client doit être connecté à un serveur Exchange ou Microsoft 365 par une connexion directe. Lors de la configuration du client, l'utilisateur doit choisir un **Exchange**, **Office 365**, ou**Outlook.com** type de compte. Si le client est configuré pour se connecter avec POP3 ou IMAP, les add-ins ne se chargeront pas.
 
 ## <a name="mail-server-requirements"></a>Configuration requise pour le serveur de messagerie
 
-If the user is connected to Microsoft 365 or Outlook.com, mail server requirements are all taken care of already. However, for users connected to on-premises installations of Exchange Server, the following requirements apply.
+Si l'utilisateur est connecté à Microsoft 365 ou Outlook.com, les besoins en matière de serveur de messagerie sont déjà pris en charge. Toutefois, pour les utilisateurs connectés à des installations sur site du serveur Exchange, les exigences suivantes s'appliquent.
 
 - Le serveur doit être un serveur Exchange 2013 ou de version ultérieure.
 - Les services web Exchange doivent être activés et exposés sur Internet. De nombreux compléments exigent que les services web Exchange fonctionnent correctement.
@@ -39,7 +39,7 @@ If the user is connected to Microsoft 365 or Outlook.com, mail server requiremen
 
 ## <a name="add-in-server-requirements"></a>Conditions de serveur pour le complément
 
-Add-in files (HTML, JavaScript, etc.) can be hosted on any web server platform desired. The only requirement is that the server must be configured to use HTTPS, and the SSL certificate must be trusted by the client.
+Les fichiers du complément (HTML, JavaScript, etc.) peuvent être hébergés sur n’importe quelle plateforme de serveur web. Les seules conditions sont que le serveur doit être configuré de manière à utiliser le protocole HTTPS et que le certificat SSL doit être approuvé par le client.
 
 ## <a name="see-also"></a>Voir aussi
 

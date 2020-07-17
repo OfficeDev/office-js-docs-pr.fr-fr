@@ -30,7 +30,7 @@ Pour s’inscrire afin d’obtenir les dernières versions d’Office, procédez
 Pour obtenir la dernière version d’Office, procédez comme suit :
 
 1. Télécharger [l’outil Déploiement d’Office](https://www.microsoft.com/download/details.aspx?id=49117).
-2. Run the tool. This extracts the following two files: Setup.exe and configuration.xml.
+2. Exécutez l’outil. Cette opération extrait les deux fichiers suivants : Setup.exe et configuration.xml.
 3. Remplacez le fichier configuration.xml par le [fichier de configuration First Release](https://raw.githubusercontent.com/OfficeDev/Office-Add-in-Commands-Samples/master/Tools/FirstReleaseConfig/configuration.xml).
 4. En tant qu’administrateur, exécutez la commande suivante : `setup.exe /configure configuration.xml`
 

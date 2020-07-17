@@ -21,9 +21,9 @@ Mise en route :
 - Obtenir un compte de développeur Microsoft 365 si vous n’en avez pas ou n’avez pas accès à un site SharePoint.
 
   > [!NOTE]
-  > To get a free, 90-day renewable Microsoft 365 developer subscription, join our [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program). See the [Microsoft 365 developer program documentation](/office/developer-program/office-365-developer-program) for step-by-step instructions about how to join the Microsoft 365 developer program and configure your subscription.
+  > Pour obtenir un abonnement gratuit à 90 jours renouvelable Microsoft 365, participez à notre [programme de développement microsoft 365](https://developer.microsoft.com/office/dev-program). Consultez la [documentation relative au programme pour les développeurs microsoft 365](/office/developer-program/office-365-developer-program) pour obtenir des instructions détaillées sur la façon de rejoindre le programme de développement Microsoft 365 et de configurer votre abonnement.
 
-- Set up an app catalog on SharePoint Online. An app catalog is a dedicated site collection in SharePoint Online that hosts document libraries for Office Add-ins. If you have your own SharePoint site, you can set up an app catalog document library. For more information, see [Publish task pane and content add-ins to an app catalog on SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
+- Configurez un catalogue d’applications sur SharePoint Online. Un catalogue d’applications est une collection de sites dédiée dans SharePoint Online qui héberge des bibliothèques de documents pour les compléments Office. Si vous disposez de votre propre site SharePoint, vous pouvez configurer une bibliothèque de documents de catalogue d’applications. Pour plus d’informations, reportez-vous [à publier des compléments de contenu et du volet Office dans un catalogue d’applications sur SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
 
 ## <a name="debug-your-add-in-from-excel-or-word-on-the-web"></a>Débogage de compléments à partir d’Excel ou de Word sur le web
@@ -35,7 +35,7 @@ Pour déboguer votre complément à l’aide d’Office sur le web, procédez co
     > [!NOTE]
     > Nous vous recommandons d’utiliser le [générateur Yeoman](https://github.com/OfficeDev/generator-office) pour créer et héberger votre complément.
 
-2. In your [add-in manifest file](../develop/add-in-manifests.md), update the **SourceLocation** element value to include an absolute, rather than a relative, URI. For example:
+2. Dans le [fichier manifeste de votre complément](../develop/add-in-manifests.md), mettez à jour la valeur de l’élément **SourceLocation** afin d’inclure un URI absolu, plutôt que relatif. Par exemple :
 
     ```xml
     <SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />

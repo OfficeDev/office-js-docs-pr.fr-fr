@@ -12,7 +12,7 @@ ms.locfileid: "45093755"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Volets des tâches dans les compléments Office
  
-Task panes are interface surfaces that typically appear on the right side of the window within Word, PowerPoint, Excel, and Outlook. Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source. Use task panes when you don't need to embed functionality directly into the document.
+Les volets des tâches sont des surfaces d’interface qui s’affichent généralement sur le côté droit de la fenêtre dans Word, PowerPoint, Excel et Outlook. Les volets des tâches permettent aux utilisateurs d’accéder aux contrôles d’interface qui exécutent le code pour modifier des documents ou des e-mails, ou afficher des données d’une source de données. Utilisez les volets des tâches lorsque vous n’avez pas besoin d’incorporer des fonctionnalités directement dans le document.
 
 *Figure 1. Mise en page type du volet Office*
 
@@ -30,7 +30,7 @@ Task panes are interface surfaces that typically appear on the right side of the
 
 ## <a name="variants"></a>Variantes
 
-The following images show the various task pane sizes with the Office app ribbon at a 1366x768 resolution. For Excel, additional vertical space is required to accommodate the formula bar.  
+Les images suivantes présentent les différentes tailles de volet de tâches avec le ruban d’application Office à une résolution 1366x768. Pour Excel, un espace vertical supplémentaire est nécessaire pour accueillir la barre de formule.  
 
 *Figure 2. Tailles de volet des tâches du bureau Office 2016*
 
@@ -54,7 +54,7 @@ The following images show the various task pane sizes with the Office app ribbon
 
 ## <a name="personality-menu"></a>Menu Caractéristique
 
-Personality menus can obstruct navigational and commanding elements located near the top right of the add-in. The following are the current dimensions of the personality menu on Windows and Mac.
+Les menus Caractéristique peuvent entraver les éléments de navigation et de commande se trouvant en haut à droite du complément. Voici les dimensions actuelles du menu Caractéristique sur Windows et Mac.
 
 Pour Windows, le menu Caractéristique mesure 12 x 32 pixels, comme illustré.
 

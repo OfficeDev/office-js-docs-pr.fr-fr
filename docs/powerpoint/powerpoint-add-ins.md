@@ -16,7 +16,7 @@ ms.locfileid: "45006450"
 
 Vous pouvez utiliser des compléments PowerPoint afin de créer des solutions attrayantes pour les présentations de vos utilisateurs sur différentes plateformes, notamment Windows, iPad et Mac, ainsi que dans un navigateur. Vous pouvez créer deux types de commandes de complément PowerPoint:
 
-- Use **content add-ins** to add dynamic HTML5 content to your presentations. For example, see the [LucidChart Diagrams for PowerPoint](https://appsource.microsoft.com/product/office/wa104380117) add-in, which you can use to inject an interactive diagram from LucidChart into your deck.
+- Utilisez des **compléments de contenu** pour ajouter du contenu HTML5 dynamique à vos présentations. Par exemple, consultez le complément [Diagrammes LucidChart pour PowerPoint](https://appsource.microsoft.com/product/office/wa104380117), qui vous permet d’injecter un diagramme interactif de LucidChart dans votre support de présentation.
 
 - Utilisez des **compléments de volet Office** pour faire apparaître des informations de référence ou insérer des données dans la diapositive via un service. Par exemple, consultez le complément [Stock Photos gratuit Pexels](https://appsource.microsoft.com/product/office/wa104379997), qui vous permet d’ajouter des photos professionnelles à votre présentation.
 

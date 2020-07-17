@@ -21,7 +21,7 @@ Cet article fournit des conseils sur la résolution des problèmes liés à l’
 
 ## <a name="debugging-tools"></a>Outils de débogage
 
-We strongly recommend that you use a tool that can intercept and display the HTTP Requests from, and Responses to, your add-in's web service when you are developing. Two of the most popular are:
+Lors du développement, nous vous recommandons vivement d’utiliser un outil capable d’intercepter et d’afficher les demandes HTTP du service web de votre complément, ainsi que les réponses. Les deux outils les plus populaires sont les suivants :
 
 - [Fiddler](https://www.telerik.com/fiddler) : Gratuit ([documentation](https://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler))
 - [Charles](https://www.charlesproxy.com) : Gratuit pendant 30 jours. ([Documentation](https://www.charlesproxy.com/documentation/))

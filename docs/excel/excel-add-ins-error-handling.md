@@ -12,14 +12,14 @@ ms.locfileid: "45006443"
 ---
 # <a name="error-handling"></a>Gestion des erreurs
 
-When you build an add-in using the Excel JavaScript API, be sure to include error handling logic to account for runtime errors. Doing so is critical, due to the asynchronous nature of the API.
+Lorsque vous créez un complément à l’aide de l’API JavaScript pour Excel, veillez à inclure la logique de gestion des erreurs pour prendre en compte les erreurs d’exécution. Il s’agit d’une étape essentielle en raison de la nature asynchrone de l’API.
 
 > [!NOTE]
 > Pour plus d’informations sur la `sync()` méthode et la nature asynchrone de l’API JavaScript pour Excel, voir [concepts de programmation fondamentaux avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md).
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
-Throughout the code samples in this documentation, you'll notice that every call to `Excel.run` is accompanied by a `catch` statement to catch any errors that occur within the `Excel.run`. We recommend that you use the same pattern when you build an add-in using the Excel JavaScript APIs.
+Dans l’ensemble des exemples de code de cette documentation, vous remarquerez que chaque appel à `Excel.run` est accompagné d’une instruction `catch` afin de détecter les erreurs qui se produisent au sein de `Excel.run`. Nous vous recommandons d’utiliser le même modèle lorsque vous développez un complément à l’aide des API JavaScript pour Excel.
 
 ```js
 Excel.run(function (context) {

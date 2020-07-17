@@ -145,7 +145,7 @@ Vous pouvez modifier votre code et passer en revue les effets de ces modificatio
 
 Une fois que vous avez [démarré le projet](#start-the-project) et que Visual Studio lance Outlook pour héberger votre complément, ouvrez un élément de courrier électronique ou un rendez-vous. 
 
-Outlook activates the add-in for the item as long as the activation criteria are met. The add-in bar appears at the top of the Inspector window or Reading Pane, and your Outlook add-in appears as a button in the add-in bar. If your add-in has an add-in command, a button will appear in the ribbon, either in the default tab or a specified custom tab, and the add-in will not appear in the add-in bar.
+Outlook active le complément pour l’élément à condition que les critères d’activation soient respectés. La barre complément apparaît en haut de la fenêtre de l’inspecteur ou du volet de lecture, et votre complément Outlook apparaît sous la forme d’un bouton dans la barre du complément. Si votre complément est doté d’une commande, un bouton apparaît dans le ruban (soit dans l’onglet par défaut, soit dans un onglet personnalisé indiqué), et le complément n’apparaît pas dans la barre complément.
 
 Pour voir votre complément Outlook, cliquez sur le bouton correspondant. Une fois que votre complément est affiché dans Outlook, vous pouvez déboguer votre code en procédant comme suit :
 

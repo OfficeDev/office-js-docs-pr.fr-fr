@@ -34,7 +34,7 @@ L’image suivante illustre les situations dans lesquelles vous pouvez utiliser 
 
 ## <a name="requirement-sets"></a>Ensembles de conditions requises
 
-Requirement sets are named groups of API members. An Office Add-in can perform a runtime check or use requirement sets specified in the manifest to determine whether an Office host supports the APIs that the add-in needs. To identify the specific requirement sets that are available on each supported platform, see [Excel JavaScript API requirement sets](../reference/requirement-sets/excel-api-requirement-sets.md).
+Les ensembles de conditions requises sont des groupes nommés de membres d’API. Le complément Office peut effectuer une vérification à l’exécution ou utiliser des ensembles de conditions requises spécifiés dans le manifeste pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour identifier les ensembles de conditions requises spécifiques disponibles sur chaque plateforme prise en charge, reportez-vous à [Ensembles de conditions requises de l’API JavaScript pour Excel](../reference/requirement-sets/excel-api-requirement-sets.md).
 
 ### <a name="checking-for-requirement-set-support-at-runtime"></a>Vérification de la prise en charge de l’ensemble de conditions requises à l’exécution
 
@@ -51,7 +51,7 @@ else {
 
 ### <a name="defining-requirement-set-support-in-the-manifest"></a>Définition de la prise en charge de l’ensemble de conditions requises dans le manifeste
 
-You can use the [Requirements element](../reference/manifest/requirements.md) in the add-in manifest to specify the minimal requirement sets and/or API methods that your add-in requires to activate. If the Office host or platform doesn't support the requirement sets or API methods that are specified in the `Requirements` element of the manifest, the add-in won't run in that host or platform, and won't display in the list of add-ins that are shown in **My Add-ins**.
+Vous pouvez utiliser l’[élément Requirements](../reference/manifest/requirements.md) dans le manifeste de complément pour spécifier les ensembles de conditions requises minimales et/ou les méthodes d’API que votre complément doit activer. Si la plateforme ou l’hôte Office ne prend pas en charge les ensembles de conditions requises ou les méthodes d’API spécifiées dans l’élément `Requirements` du manifeste, le complément ne s’exécute pas dans cet hôte ou cette plateforme et ne s’affiche pas dans des compléments dans **Mes compléments**.
 
 L’exemple de code suivant montre l’élément `Requirements` dans un manifeste indiquant que le complément doit être chargé dans toutes les applications hôtes Office prenant en charge l’ensemble de conditions requises ExcelApi version 1.3 ou ultérieure.
 
@@ -72,7 +72,7 @@ Pour plus d’informations sur les ensembles de conditions requises des API comm
 
 ## <a name="loading-the-properties-of-an-object"></a>Chargement des propriétés d’un objet
 
-Calling the `load()` method on an Excel JavaScript object instructs the API to load the object into JavaScript memory when the `sync()` method runs. The `load()` method accepts a string that contains comma-delimited names of properties to load or an object that specifies properties to load, pagination options, etc.
+Tout appel de la méthode `load()` sur un objet JavaScript pour Excel demande à l’API de charger l’objet dans la mémoire JavaScript lorsque la méthode `sync()` est exécutée. La méthode `load()` accepte une chaîne qui contient des noms délimités par des virgules de propriétés à charger ou un objet spécifiant des propriétés à charger, des options de pagination, etc.
 
 ### <a name="method-details"></a>Détails des méthodes
 
@@ -98,7 +98,7 @@ void
 
 #### <a name="example"></a>Exemple
 
-The following code sample sets the properties of one Excel range by copying the properties of another range. Note that the source object must be loaded first, before its property values can be accessed and written to the target range. This example assumes that there is data the two ranges (**B2:E2** and **B7:E7**) and that the two ranges are initially formatted differently.
+L’exemple de code suivant définit les propriétés d’une plage Excel en copiant les propriétés d’une autre plage. L’objet source doit d’abord être chargé, avant que ses valeurs de propriété puissent être accessibles et écrites sur la plage cible. L’exemple suppose que les deux plages (**B2:E2** et **B7:E7**) comprennent des données, et que leur mise en forme initiale est différente.
 
 ```js
 Excel.run(function (ctx) {
@@ -128,10 +128,10 @@ Au lieu de transmettre un tableau ou une chaîne délimitée par des virgules lo
 
 |**Propriété**|**Type**|**Description**|
 |:-----------|:-------|:----------|
-|`select`|objet|Contains a comma-delimited list or an array of scalar property names. Optional.|
-|`expand`|objet|Contains a comma-delimited list or an array of navigational property names. Optional.|
-|`top`|int| Specifies the maximum number of collection items that can be included in the result. Optional. You can only use this option when you use the object notation option.|
-|`skip`|int|Specify the number of items in the collection that are to be skipped and not included in the result. If `top` is specified, the result set will start after skipping the specified number of items. Optional. You can only use this option when you use the object notation option.|
+|`select`|objet|Contient une liste délimitée par des virgules ou un tableau de propriétés scalaires. Facultatif.|
+|`expand`|objet|Contient une liste délimitée par des virgules ou un tableau de propriétés de navigation. Facultatif.|
+|`top`|int| Spécifie le nombre maximal d’éléments de collection qui peuvent être inclus dans le résultat. Facultatif. Vous pouvez utiliser cette option uniquement lorsque vous utilisez l’option de notation d’objet.|
+|`skip`|int|Indiquez le nombre d’éléments de la collection devant être ignorés et exclus du résultat. Si une valeur est définie pour `top`, la sélection du jeu de résultats démarre une fois que le nombre spécifié d’éléments a été ignoré. Facultatif. Vous pouvez utiliser cette option uniquement lorsque vous utilisez l’option de notation d’objet.|
 
 L’exemple de code suivant charge une collection de feuilles de calcul en sélectionnant la propriété `name` et l’élément `address` de la plage utilisée pour chaque feuille de calcul dans la collection. Il indique également que seules les cinq premières feuilles de calcul de la collection doivent être chargées. Vous pouvez traiter l’ensemble suivant de cinq feuilles de calcul en spécifiant `top: 10` et `skip: 5` en tant que valeurs d’attribut.
 
@@ -146,7 +146,7 @@ myWorksheets.load({
 
 ### <a name="calling-load-without-parameters"></a>Appel de `load` sans paramètres
 
-If you call the `load()` method on an object (or collection) without specifying any parameters, all scalar properties of the object (or all scalar properties of all objects in the collection) will be loaded. To reduce the amount of data transfer between the Excel host application and the add-in, you should avoid calling the `load()` method without explicitly specifying which properties to load.
+si vous appelez la méthode `load()` sur un objet (ou collection) sans spécifier de paramètre, toutes les propriétés scalaires de l’objet (ou toutes les propriétés scalaires de tous les objets de la collection) sont chargées. Pour réduire la quantité de données transférées entre l’application hôte Excel et le complément, évitez d’appeler la méthode `load()` sans spécifier explicitement les propriétés à charger.
 
 > [!IMPORTANT]
 > La quantité de données renvoyées par une `load`instruction sans paramètre peut dépasser les limites de taille du service. Pour réduire les risques pesant sur les compléments plus anciens, certaines propriétés ne sont pas renvoyées par `load` sans en faire la demande explicite. Les propriétés suivantes sont exclues des opérations de chargement suivantes :
@@ -166,18 +166,18 @@ someRange.load("format/font/name")
 ```
 
 > [!NOTE]
-> With the Excel JavaScript API, you can set scalar properties of a navigation property by traversing the path. For example, you could set the font size for a range by using `someRange.format.font.size = 10;`. You do not need to load the property before you set it. 
+> grâce à l’API JavaScript pour Excel, vous pouvez définir les propriétés scalaires d’une propriété de navigation en parcourant le chemin d’accès. Par exemple, vous pouvez définir la taille de police pour une plage à l’aide de `someRange.format.font.size = 10;`. Il est inutile de charger la propriété avant de la configurer. 
 
 ## <a name="setting-properties-of-an-object"></a>Définition des propriétés d’un objet
 
-Setting properties on an object with nested navigation properties can be cumbersome. As an alternative to setting individual properties using navigation paths as described above, you can use the `object.set()` method that is available on all objects in the Excel JavaScript API. With this method, you can set multiple properties of an object at once by passing either another object of the same Office.js type or a JavaScript object with properties that are structured like the properties of the object on which the method is called.
+La définition de propriétés sur un objet avec des propriétés de navigation imbriquées peut être laborieuse. Au lieu de définir des propriétés individuelles à l’aide de chemins de navigation comme décrit ci-dessus, vous pouvez utiliser la méthode `object.set()` qui est disponible sur tous les objets de l’API JavaScript pour Excel. Grâce à cette méthode, vous pouvez définir plusieurs propriétés d’un objet à la fois en transmettant soit un autre objet du même type Office.js, soit un objet JavaScript avec des propriétés structurées comme celles de l’objet sur lequel la méthode est appelée.
 
 > [!NOTE]
-> The `set()` method is implemented only for objects within the host-specific Office JavaScript APIs, such as the Excel JavaScript API. The common (shared) APIs do not support this method. 
+> la méthode `set()` est implémentée uniquement pour les objets dans les API JavaScript pour Office propres à un hôte, telles que l’API JavaScript pour Excel. Les API communes (partagées) ne prennent pas en charge cette méthode. 
 
 ### <a name="set-properties-object-options-object"></a>set (properties: object, options: object)
 
-Properties of the object on which the method is called are set to the values that are specified by the corresponding properties of the passed-in object. If the `properties` parameter is a JavaScript object, any property of the passed-in object that corresponds to a read-only property in the object on which the method is called will either be ignored or cause an exception to be thrown, depending on the value of the `options` parameter.
+Les propriétés de l’objet sur lequel la méthode est appelée sont définies sur les valeurs spécifiées par les propriétés correspondantes de l’objet transmis. Si le paramètre `properties` est un objet JavaScript, toute propriété de l’objet transmis qui correspond à une propriété en lecture seule dans l’objet sur lequel la méthode est appelée sera ignorée ou générera une exception, en fonction de la valeur du paramètre `options`.
 
 #### <a name="syntax"></a>Syntaxe
 
@@ -190,7 +190,7 @@ object.set(properties[, options]);
 |**Paramètre**|**Type**|**Description**|
 |:------------|:--------|:----------|
 |`properties`|objet|Objet de même type Office.js que l’objet sur lequel la méthode est appelée ou objet JavaScript avec des noms et des types de propriétés reflétant la structure de l’objet sur lequel la méthode est appelée.|
-|`options`|objet|Optional. Can only be passed when the first parameter is a JavaScript object. The object can contain the following property: `throwOnReadOnly?: boolean` (Default is `true`: throw an error if the passed in JavaScript object includes read-only properties.)|
+|`options`|objet|Facultatif. Peut être transmis uniquement si le premier paramètre est un objet JavaScript. L’objet peut contenir la propriété suivante : `throwOnReadOnly?: boolean` (La valeur par défaut est `true` : générer une erreur si l’objet JavaScript transmis inclut des propriétés en lecture seule.)|
 
 #### <a name="returns"></a>Retourne
 
@@ -198,7 +198,7 @@ void
 
 #### <a name="example"></a>Exemple
 
-The following code sample sets several format properties of a range by calling the `set()` method and passing in a JavaScript object with property names and types that mirror the structure of properties in the `Range` object. This example assumes that there is data in range **B2:E2**.
+L’exemple de code suivant définit plusieurs propriétés de mise en forme d’une plage en appelant la méthode `set()` et en transmettant un objet JavaScript avec des noms et des types de propriétés reflétant la structure des propriétés dans l’objet `Range`. Cet exemple part du principe que des données sont présentes dans la plage **B2:E2**.
 
 ```js
 Excel.run(function (ctx) {
@@ -228,11 +228,11 @@ Excel.run(function (ctx) {
 
 ## <a name="42ornullobject-methods"></a>Méthodes &#42;OrNullObject
 
-Many Excel JavaScript API methods will return an exception when the condition of the API is not met. For example, if you attempt to get a worksheet by specifying a worksheet name that doesn't exist in the workbook, the `getItem()` method will return an `ItemNotFound` exception. 
+De nombreuses méthodes d’API JavaScript pour Excel renvoient une exception lorsque la condition de l’API n’est pas remplie. Par exemple, si vous tentez d’obtenir une feuille de calcul en spécifiant le nom d’une feuille de calcul qui n’existe pas dans le classeur, la méthode `getItem()` renvoie une exception `ItemNotFound`. 
 
-Instead of implementing complex exception handling logic for scenarios like this, you can use the `*OrNullObject` method variant that's available for several methods in the Excel JavaScript API. An `*OrNullObject` method will return a null object (not the JavaScript `null`) rather than throwing an exception if the specified item doesn't exist. For example, you can call the `getItemOrNullObject()` method on a collection such as **Worksheets** to attempt to retrieve an item from the collection. The `getItemOrNullObject()` method returns the specified item if it exists; otherwise, it returns a null object. The null object that is returned contains the boolean property `isNullObject` that you can evaluate to determine whether the object exists.
+Au lieu d’implémenter une logique complexe de gestion des exceptions pour des scénarios similaires, vous pouvez utiliser la variante de la méthode `*OrNullObject` disponible pour les différentes méthodes de l’API JavaScript pour Excel. Une méthode `*OrNullObject` renvoie un objet Null (pas l’élément JavaScript `null`) au lieu de lever une exception si l’élément spécifié n’existe pas. Par exemple, vous pouvez appeler la méthode `getItemOrNullObject()` sur une collection telle que **Worksheets** pour tenter de récupérer un élément de la collection. La méthode `getItemOrNullObject()` renvoie l’élément spécifié, s’il existe. Sinon, elle renvoie un objet Null. L’objet Null renvoyé contient la propriété booléenne `isNullObject` que vous pouvez étudier pour déterminer l’existence de l’objet.
 
-The following code sample attempts to retrieve a worksheet named "Data" by using the `getItemOrNullObject()` method. If the method returns a null object, a new sheet needs to be created before actions can taken on the sheet.
+L’exemple de code suivant tente de récupérer une feuille de calcul nommée « Data » à l’aide de la méthode `getItemOrNullObject()`. Si la méthode renvoie un objet Null, une nouvelle feuille doit être créée pour pouvoir réaliser des actions sur la feuille.
 
 ```js
 var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");

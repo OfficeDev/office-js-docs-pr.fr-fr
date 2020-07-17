@@ -47,7 +47,7 @@ Le processus de chargement d’un complément dans Outlook sur le Web dépend de
 
     ![Capture d’écran de gestion des compléments pointant vers l’option Ajouter à partir d’un fichier](../images/outlook-sideload-desktop-add-from-file.png)
 
-1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
+1. Localisez le fichier manifeste de votre complément personnalisé et installez-le. Acceptez toutes les invites pendant l’installation.
 
 ### <a name="sideload-an-add-in-in-classic-outlook-on-the-web"></a>Chargement d’un complément dans la version classique d’Outlook sur le web
 
@@ -65,7 +65,7 @@ Le processus de chargement d’un complément dans Outlook sur le Web dépend de
 
     ![Capture d’écran de gestion des compléments pointant vers l’option Ajouter à partir d’un fichier](../images/outlook-sideload-desktop-add-from-file.png)
 
-1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
+1. Localisez le fichier manifeste de votre complément personnalisé et installez-le. Acceptez toutes les invites pendant l’installation.
 
 ## <a name="sideload-an-add-in-in-outlook-on-the-desktop"></a>Chargement d’un complément dans la version de bureau d’Outlook
 
@@ -88,7 +88,7 @@ Le processus de chargement d’un complément dans Outlook sur le Web dépend de
 
     ![Capture d’écran de la page Store avec une flèche pointant vers l’option À partir d’un fichier](../images/outlook-sideload-desktop-add-from-file.png)
 
-1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
+1. Localisez le fichier manifeste de votre complément personnalisé et installez-le. Acceptez toutes les invites pendant l’installation.
 
 ### <a name="outlook-2013"></a>Outlook 2013
 

@@ -153,7 +153,7 @@ Quand vous arrivez au bout de l’Assistant, Visual Studio crée une solution q
 |**Project**|**Description**|
 |:-----|:-----|
 |Projet de complément|Contient uniquement un fichier manifeste XML contenant tous les paramètres qui décrivent votre complément. Ces paramètres aident l’hôte Office à déterminer le moment où votre complément doit être activé et l’emplacement où il doit apparaître. Visual Studio génère le contenu de ce fichier pour vous permettre d’exécuter le projet et d’utiliser votre complément immédiatement. Vous pouvez modifier ces paramètres à tout moment en modifiant le fichier XML.|
-|Projet d’application web|Contains the content pages of your add-in, including all the files and file references that you need to develop Office-aware HTML and JavaScript pages. While you develop your add-in, Visual Studio hosts the web application on your local IIS server. When you're ready to publish the add-in, you'll need to deploy this web application project to a web server.|
+|Projet d’application web|Contient les pages de contenu de votre complément, notamment tous les fichiers et références de fichiers dont vous avez besoin pour développer des pages HTML et JavaScript compatibles avec Office. Pendant que vous développez votre complément, Visual Studio héberge l’application web sur votre serveur IIS local. Lorsque vous êtes prêt à publier le complément, vous devez déployer ce projet d’application web sur un serveur web.|
 
 ### <a name="update-the-code"></a>Mise à jour du code
 
@@ -240,9 +240,9 @@ Quand vous arrivez au bout de l’Assistant, Visual Studio crée une solution q
 
 ### <a name="update-the-manifest"></a>Mise à jour du manifeste
 
-1. Open the XML manifest file in the Add-in project. This file defines the add-in's settings and capabilities.
+1. Ouvrez le fichier manifeste XML dans le projet de complément. Ce fichier définit les paramètres et les fonctionnalités du complément.
 
-1. The `ProviderName` element has a placeholder value. Replace it with your name.
+1. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-le par votre nom.
 
 1. L’attribut `DefaultValue` de l’élément `DisplayName` possède un espace réservé. Remplacez-le par `My Office Add-in`.
 

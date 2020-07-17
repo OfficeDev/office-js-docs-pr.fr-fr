@@ -33,14 +33,14 @@ Spécifie l’action à effectuer lorsque l’utilisateur sélectionne un [bouto
 
 ## <a name="xsitype"></a>xsi:type
 
-This attribute specifies the kind of action performed when the user selects the button. It can be one of the following:
+Cet attribut indique le type d’action réalisée lorsque l’utilisateur sélectionne le bouton. Il peut s’agir de l’une des actions suivantes :
 
 - `ExecuteFunction`
 - `ShowTaskpane`
 
 ## <a name="functionname"></a>FunctionName
 
-Required element when **xsi:type** is "ExecuteFunction". Specifies the name of the function to execute. The function is contained in the file specified in the [FunctionFile](functionfile.md) element.
+Élément obligatoire lorsque **xsi:type** est « ExecuteFunction ». Indique le nom de la fonction à exécuter. La fonction est contenue dans le fichier indiqué dans l’élément [FunctionFile](functionfile.md).
 
 ```xml
 <Action xsi:type="ExecuteFunction">
@@ -79,7 +79,7 @@ L’exemple suivant montre deux actions qui partagent la même valeur **Taskpane
 </Action>
 ```  
 
-The following examples show two actions that use a different **TaskpaneId**. To see these examples in context, see [Simple Add-in Commands Sample](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/blob/master/Simple/Manifest/SimpleAddin.xml).
+Les exemples suivants montrent deux actions qui utilisent une valeur **TaskpaneId** différente. Pour voir ces exemples en contexte, consultez l’article relatif à l’[exemple de commandes de complément](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/blob/master/Simple/Manifest/SimpleAddin.xml).
 
 ```xml
 <Action xsi:type="ShowTaskpane">

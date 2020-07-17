@@ -29,7 +29,7 @@ Les tailles des compléments de contenu pour Excel et PowerPoint dans le bureau 
 
 ## <a name="personality-menu"></a>Menu Caractéristique
 
-Personality menus can obstruct navigational and commanding elements located near the top right of the add-in. The following are the current dimensions of the personality menu on Windows and Mac.
+Les menus Caractéristique peuvent entraver les éléments de navigation et de commande se trouvant en haut à droite du complément. Voici les dimensions actuelles du menu Caractéristique sur Windows et Mac.
 
 Pour Windows, le menu Caractéristique mesure 12 x 32 pixels, comme illustré.
 
@@ -52,7 +52,7 @@ Pour consulter un exemple qui implémente un complément de contenu, reportez-vo
 
 - Vérifiez si votre complément Office fonctionne sur une [plateforme hôte Office spécifique](../overview/office-add-in-availability.md).
 - Certains compléments de contenu peuvent exiger que l’utilisateur accepte que le complément lise et écrive dans Excel ou PowerPoint. Vous pouvez déclarer le [niveau des autorisations](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md) que vous souhaitez attribuer à votre utilisateur dans le manifeste du complément.  
-- Content add-ins are supported in Excel and PowerPoint in Office 2013 version and later. If you open an add-in in a version of Office that doesn't support Office web add-ins, the add-in will be displayed as an image.
+- Les compléments de contenu sont pris en charge dans Excel et PowerPoint dans Office 2013 et versions ultérieures. Si vous ouvrez un complément dans une version d’Office qui ne prend pas en charge les compléments web Office, le complément s’affichera comme une image.
 
 ## <a name="see-also"></a>Voir aussi
 
