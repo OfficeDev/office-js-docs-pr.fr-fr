@@ -1,14 +1,14 @@
 ---
 title: Test et débogage de compléments Office
 description: Découvrez comment tester et déboguer votre Complément Office.
-ms.date: 06/20/2019
+ms.date: 06/17/2020
 localization_priority: Priority
-ms.openlocfilehash: 5eed657382f90a6248a464b90835e01eabfbfc85
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 526204fe94d4c97ce7e1e0bc9ac2a212f69611d3
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611125"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159247"
 ---
 # <a name="test-and-debug-office-add-ins"></a>Test et débogage de compléments Office
 
@@ -37,6 +37,8 @@ La procédure pour le débogage d’un complément Office varie également selon
 - [Débogage de compléments dans Office sur le web](debug-add-ins-in-office-online.md)
 
 - [Débogage des compléments Office sur iPad et Mac](debug-office-add-ins-on-ipad-and-mac.md)
+
+- [Complément Microsoft Office Extension de débogueur pour Visual Studio Code](debug-with-vs-extension.md)
 
 ## <a name="validate-an-office-add-in-manifest"></a>Validation d’un manifeste de complément Office
 

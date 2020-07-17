@@ -1,15 +1,15 @@
 ---
 title: Séries de conditions requises de l’API JavaScript pour PowerPoint
-description: En savoir plus sur les ensembles de conditions requises de l’API JavaScript pour PowerPoint
-ms.date: 03/11/2020
+description: En savoir plus sur les ensembles de conditions requises de l’API JavaScript pour PowerPoint.
+ms.date: 07/10/2020
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 8349ff4c96e73ce93a77c86b709081f9355b1f06
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: eebcc78e69cd35732853daaee32f36df2b37252e
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094301"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159261"
 ---
 # <a name="powerpoint-javascript-api-requirement-sets"></a>Séries de conditions requises de l’API JavaScript pour PowerPoint
 
@@ -17,7 +17,7 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 
 Le tableau suivant répertorie les séries de conditions requises pour PowerPoint, les applications hôtes Office qui prennent en charge ces conditions et les numéros de version ou la date de disponibilité.
 
-|  Ensemble de conditions requises  |  Office pour Windows<br>(connecté à l’abonnement Microsoft 365)  |  Office sur iPad<br>(connecté à l’abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à l’abonnement Microsoft 365)  | Office sur le web |
+|  Ensemble de conditions requises  |  Office pour Windows<br>(connecté à un abonnement Microsoft 365)  |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à un abonnement Microsoft 365)  | Office sur le web |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | PowerPointApi 1.1 | Version 1810 (Build 11001.20074) ou version ultérieure | 2.17 ou version ultérieure | 16.19 ou version ultérieure | Octobre 2018 |
 
