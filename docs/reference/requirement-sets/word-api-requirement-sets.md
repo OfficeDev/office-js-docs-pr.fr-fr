@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API JavaScript pour Word
 description: Informations sur la configuration requise pour le complément Office sur les builds Word.
-ms.date: 04/16/2020
+ms.date: 07/10/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: d9845d6670d19ab1910410bb26ab5806c84c6b84
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 2b4de20f1f8f7e77295b49a36745d23ee044aa08
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094290"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159079"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Word
 
@@ -24,7 +24,7 @@ Les compléments Word peuvent être exécutés dans différentes versions d’Of
 >
 > Pour plus d’informations sur l’utilisation aperçu API, voir l’article[JavaScript d’Excel preview API](word-preview-apis.md).
 
-|  Ensemble de conditions requises  |   Office pour Windows\*<br>(connecté à l’abonnement Microsoft 365)  |  Office sur iPad<br>(connecté à l’abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à l’abonnement Microsoft 365)  | Office sur le web  |
+|  Ensemble de conditions requises  |   Office pour Windows\*<br>(connecté à un abonnement Microsoft 365)  |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à un abonnement Microsoft 365)  | Office sur le web  |
 |:-----|-----|:-----|:-----|:-----|
 | [Aperçu](word-preview-apis.md) | Veuillez utiliser la dernière version d’Office pour tester la préversion API (vous devrez peut-être rejoindre la [programme Office Insider](https://insider.office.com)) |
 | [WordApi 1.3](word-api-1-3-requirement-set.md) | Version 1612 (Build 7668.1000) ou version ultérieure| Mars 2017, 2.22 ou version ultérieure | Mars 2017, 15.32 ou version ultérieure| Mars 2017 |

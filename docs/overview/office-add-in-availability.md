@@ -1,14 +1,14 @@
 ---
 title: Disponibilité des compléments Office sur les plateformes et les hôtes
 description: Ensembles de conditions requises pris en charge pour Excel, OneNote, Outlook, PowerPoint, Project et Word.
-ms.date: 07/07/2020
+ms.date: 07/10/2020
 localization_priority: Priority
-ms.openlocfilehash: 3e6124373295875d607d86e0c311a34982b2c046
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 655009edc42a9daff84f20a6e0d0febf505f1601
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094112"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159135"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilité des compléments Office sur les plateformes et les hôtes
 
@@ -65,7 +65,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     </td>
   </tr>
   <tr>
-    <td>Office pour Windows<br>(connecté à l’abonnement Microsoft 365)</td>
+    <td>Office pour Windows<br>(connecté à un abonnement Microsoft 365)</td>
     <td>
       - Volet Office<br>
       - Contenu<br>
@@ -186,7 +186,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     </td>
   </tr>
   <tr>
-    <td>Office sur iPad<br>(connecté à l’abonnement Microsoft 365)</td>
+    <td>Office sur iPad<br>(connecté à un abonnement Microsoft 365)</td>
     <td>
       - Volet Office<br>
       - Contenu </td>
@@ -220,7 +220,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     </td>
   </tr>
   <tr>
-    <td>Office sur Mac<br>(connecté à l’abonnement Microsoft 365)</td>
+    <td>Office sur Mac<br>(connecté à un abonnement Microsoft 365)</td>
     <td>
       - Volet Office<br>
       - Contenu<br>
@@ -340,13 +340,13 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     <td></td>
   </tr>
   <tr>
-    <td>Office pour Windows<br>(connecté à l’abonnement Microsoft 365)</td>
+    <td>Office pour Windows<br>(connecté à un abonnement Microsoft 365)</td>
     <td>- Fonctions personnalisées</td>
     <td>- <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
     <td></td>
   </tr>
   <tr>
-    <td>Office sur Mac<br>(connecté à l’abonnement Microsoft 365)</td>
+    <td>Office sur Mac<br>(connecté à un abonnement Microsoft 365)</td>
     <td>- Fonctions personnalisées</td>
     <td>- <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
     <td></td>
@@ -403,7 +403,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     <td>Non disponible</td>
   </tr>
   <tr>
-    <td>Office pour Windows<br>(connecté à l’abonnement Microsoft 365)</td>
+    <td>Office pour Windows<br>(connecté à un abonnement Microsoft 365)</td>
     <td>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagereadcommandsurface">Message lu</a><br>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagecomposecommandsurface">Composer un message</a><br>
@@ -480,7 +480,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     <td>Non disponible</td>
   </tr>
   <tr>
-    <td>Office sur iOS<br>(connecté à l’abonnement Microsoft 365)</td>
+    <td>Office sur iOS<br>(connecté à un abonnement Microsoft 365)</td>
     <td>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#mobilemessagereadcommandsurface">Message lu</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a>
@@ -495,7 +495,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     <td>Non disponible</td>
   </tr>
   <tr>
-    <td>Office sur Mac<br>(connecté à l’abonnement Microsoft 365)</td>
+    <td>Office sur Mac<br>(connecté à un abonnement Microsoft 365)</td>
     <td>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagereadcommandsurface">Message lu</a><br>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagecomposecommandsurface">Composer un message</a><br>
@@ -554,7 +554,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     <td>Non disponible</td>
   </tr>
   <tr>
-    <td>Office sur Android<br>(connecté à l’abonnement Microsoft 365)</td>
+    <td>Office sur Android<br>(connecté à un abonnement Microsoft 365)</td>
     <td>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#mobilemessagereadcommandsurface">Message lu</a><br>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#mobileonlinemeetingcommandsurface-preview">Organisateur de rendez-vous (composer) : réunion en ligne</a> (aperçu)<br>
@@ -621,7 +621,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     </td>
   </tr>
   <tr>
-    <td>Office pour Windows<br>(connecté à l’abonnement Microsoft 365)</td>
+    <td>Office pour Windows<br>(connecté à un abonnement Microsoft 365)</td>
     <td>
       - Volet Office<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a>
@@ -743,7 +743,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     </td>
   </tr>
   <tr>
-    <td>Office sur iPad<br>(connecté à l’abonnement Microsoft 365)</td>
+    <td>Office sur iPad<br>(connecté à un abonnement Microsoft 365)</td>
     <td>- Volet Office</td>
     <td>
       - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-1-1-requirement-set">WordApi 1.1</a><br>
@@ -773,7 +773,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     </td>
   </tr>
   <tr>
-    <td>Office sur Mac<br>(connecté à l’abonnement Microsoft 365)</td>
+    <td>Office sur Mac<br>(connecté à un abonnement Microsoft 365)</td>
     <td>
       - Volet Office<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a>
@@ -907,7 +907,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     </td>
   </tr>
   <tr>
-    <td>Office pour Windows<br>(connecté à l’abonnement Microsoft 365)</td>
+    <td>Office pour Windows<br>(connecté à un abonnement Microsoft 365)</td>
     <td>
       - Contenu<br>
       - Volet Office<br>
@@ -993,7 +993,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     </td>
   </tr>
   <tr>
-    <td>Office sur iPad<br>(connecté à l’abonnement Microsoft 365)</td>
+    <td>Office sur iPad<br>(connecté à un abonnement Microsoft 365)</td>
     <td>
       - Contenu<br>
       - Volet Office </td>
@@ -1014,7 +1014,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'un hôt
     </td>
   </tr>
   <tr>
-    <td>Office sur Mac<br>(connecté à l’abonnement Microsoft 365)</td>
+    <td>Office sur Mac<br>(connecté à un abonnement Microsoft 365)</td>
     <td>
       - Contenu<br>
       - Volet Office<br>
