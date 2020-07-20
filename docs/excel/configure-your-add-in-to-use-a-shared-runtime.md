@@ -1,21 +1,21 @@
 ---
 ms.date: 05/17/2020
-title: Configurer votre complément Excel pour qu’il partage le runtime du navigateur
+title: Configurez votre complément Excel pour partager le runtime du navigateur
 ms.prod: excel
 description: Configurez votre complément Excel pour partager le runtime du navigateur et exécuter le ruban, le volet des tâches et le code de fonction personnalisée dans le même runtime.
 localization_priority: Priority
-ms.openlocfilehash: 8c16642f5a945e6156fcfd93c8b4cc088b616102
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 129541da57f6b9f0d587eff8873efa4e471e49fc
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609344"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159534"
 ---
-# <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime"></a>Configurer votre complément Excel pour utiliser un Runtime JavaScript partagé
+# <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime"></a>Configurez votre complément Excel pour utiliser un runtime JavaScript partagé
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-Lors de l’exécution d’Excel sur Windows ou Mac, votre complément exécute le code des boutons du ruban, des fonctions personnalisées et du volet des tâches dans des environnements runtime JavaScript distincts. Cela crée des limitations telles que le fait de ne pas pouvoir partager facilement des données globales, et n’ayant pas accès à toutes les fonctionnalités CORS à partir d’une fonction personnalisée.
+Lors de l’exécution d’Excel sur Windows ou Mac, votre complément exécute le code des boutons du ruban, des fonctions personnalisées et du volet des tâches dans des environnements runtime JavaScript distincts. Cela permet de créer des limitations, telles que l'impossibilité de partager aisément des données globales ou de pouvoir accéder à l'ensemble des fonctionnalités CORS à partir d’une fonction personnalisée.
 
 Vous pouvez toutefois configurer votre complément Excel pour partager un code dans un runtime JavaScript partagé. Vous pouvez ainsi améliorer la coordination dans votre complément et accéder aux DOM et CORS à partir de toutes les parties de votre complément. Il vous permet également d’exécuter un code lorsque le document s’ouvre ou pendant la fermeture du volet des tâches. Si vous voulez configurer votre complément pour utiliser un runtime partagé, suivez les instructions contenues dans cet article.
 
@@ -89,7 +89,7 @@ Procédez comme suit pour configurer un projet nouveau ou existant de manière �
    <bt:Urls>
    <bt:Url id="Functions.Script.Url" DefaultValue="https://localhost:3000/dist/functions.js"/>
    ...
-   <bt:Url id="ContosoAddin.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
+   <bt:Url id="ContosoAddin.Url" DefaultValue="https://localhost:3000/dist/taskpane.html"/>
    ...
    ```
 
@@ -103,7 +103,7 @@ Procédez comme suit pour configurer un projet nouveau ou existant de manière �
 
 Lorsque vous ajoutez l’élément `Runtime`, vous spécifiez également une durée de vie ayant une valeur de `long` ou de `short`. Configurez cette valeur sur `long` pour tirer parti de fonctionnalités telles que le démarrage de votre complément lorsque le document s’ouvre, continuer à exécuter un code après la fermeture du volet des tâches, ou utiliser CORS et DOM à partir de fonctions personnalisées.
 
->! Note La valeur de la durée de vie par défaut est `short` , mais nous vous recommandons de l’utiliser `long` dans des compléments Excel. Si vous définissez votre Runtime sur `short` dans cet exemple, votre complément Excel démarre lorsque l’utilisateur appuie sur l’un de vos boutons du ruban, mais il peut se fermer une fois l’exécution de votre gestionnaire de ruban terminée. De la même façon, le complément démarre lorsque le volet des tâches est ouvert, mais il se peut se fermer à la fermeture du volet des tâches.
+>![REMARQUE] La valeur de la durée de vie par défaut est `short`, mais nous vous recommandons d’utiliser `long` dans les compléments Excel. Si vous avez défini votre runtime sur `short` dans cet exemple, votre complément Excel démarre lorsque vous appuyez sur l’un de vos boutons du ruban, mais il se peut qu’il se ferme une fois l’exécution de votre gestionnaire de ruban terminée. De la même façon, le complément démarre lorsque le volet des tâches est ouvert, mais il se peut se fermer à la fermeture du volet des tâches.
 
 ```xml
 <Runtimes>
@@ -113,7 +113,7 @@ Lorsque vous ajoutez l’élément `Runtime`, vous spécifiez également une dur
 
 ## <a name="multiple-task-panes"></a>Multiples volets des tâches
 
-Ne concevez pas votre complément de sorte qu’il utilise plusieurs volets de tâches si vous envisagez d’utiliser un runtime partagé. Une exécution partagée prend uniquement en charge l’utilisation d’un volet de tâches. Notez que tout volet des tâches sans `<TaskpaneID>` est considéré comme un volet des tâches différent.
+Ne concevez pas votre complément pour utiliser plusieurs volets des tâches si vous envisagez d’utiliser un runtime partagé. Un runtime partagé prend uniquement en charge l’utilisation d’un volet des tâches. Notez que tout volet des tâches sans `<TaskpaneID>` est considéré comme un volet des tâches différent.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
@@ -122,4 +122,4 @@ Ne concevez pas votre complément de sorte qu’il utilise plusieurs volets de t
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble : exécuter le code de votre complément dans un Runtime JavaScript partagé](custom-functions-shared-overview.md)
+- [Vue d’ensemble : exécutez votre code de complément dans un runtime JavaScript partagé](custom-functions-shared-overview.md)
