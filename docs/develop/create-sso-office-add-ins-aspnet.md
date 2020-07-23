@@ -3,20 +3,20 @@ title: Créer un complément Office ASP.NET qui utilise l’authentification uni
 description: Guide pas à pas pour la création (ou conversion) d’un complément Office avec un serveur principal ASP.NET pour utiliser l’authentification unique (SSO).
 ms.date: 12/04/2019
 localization_priority: Normal
-ms.openlocfilehash: 9d2917c334a2e90736daa1b3e4ad7ef85be6b978
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 6c231dad045623348923a12199a627acfe240aac
+ms.sourcegitcommit: 01bc1b5d7fa16292d4ab0b40f0abe0e09f97385f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159611"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "45228359"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office ASP.NET qui utilise l’authentification unique (aperçu)
 
 Lorsque les utilisateurs sont connectés à Office, votre complément peut utiliser les mêmes informations d’identification pour permettre aux utilisateurs d’accéder à plusieurs applications sans avoir à se connecter une deuxième fois. Pour obtenir une vue d’ensemble, consultez la rubrique [Activer l’authentification unique dans un complément Office](sso-in-office-add-ins.md).
-Cet article vous guide tout au long du processus d’activation de l’authentification unique (SSO) dans un complément intégré à Node.js et Express.
+Cet article vous guide tout au long du processus d’activation de l’authentification unique (SSO) dans un complément créé avec ASP.NET.
 
 > [!NOTE]
-> Pour voir un article similaire sur un complément basé sur ASP.NET, reportez-vous à [Créer un complément Office Node.js qui utilise l’authentification unique](create-sso-office-add-ins-nodejs.md).
+> Pour un article similaire concernant un complément basé sur Node.js, consultez [Création d’un complément Office Node.js qui utilise l’authentification unique](create-sso-office-add-ins-nodejs.md).
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -54,7 +54,7 @@ Clonez ou téléchargez le référentiel sur [Complément Office ASPNET SSO](htt
     * Dans la section **redirection d’URI**, assurez-vous que **Web** est sélectionnée dans la liste déroulante, puis définissez l’URI sur` https://localhost:44355/AzureADAuth/Authorize`.
     * Choisissez **Inscrire**.
 
-1. Sur la page **Office-Add-in-NodeJS-SSO**, copiez et enregistrez les valeurs pour l’**ID de l’application (client)** et l’**ID de répertoire (client)**. Vous utiliserez les deux plus tard.
+1. Sur la page **Office-Add-in-ASPNET-SSO** , copiez et enregistrez les valeurs pour l' **ID d’application (client)** et l’ID de **répertoire (client)**. Vous utiliserez les deux plus tard.
 
     > [!NOTE]
     > Cet ID a la valeur « audience » lorsque d’autres applications, telles que l’application hôte Office (par exemple, PowerPoint, Word, Excel) demandent un accès autorisé à l’application. Il s’agit également de l’« ID client » de l’application dès que celle-ci recherche un accès autorisé à Microsoft Graph.
@@ -300,7 +300,7 @@ Si vous avez choisi « Comptes dans ce répertoire d’organisation uniquement�
         break;
     ```
 
-1. Remplacez `TODO 3` par le code suivant. Pour toutes les autres erreurs, le complément se branche au système d’autorisation de secours. Pour plus d’informations sur ces erreurs, reportez-vous à [Résoudre les problèmes liés à SSO dans les compléments Office](troubleshoot-sso-in-office-add-ins.md).Dans ce complément, le système de secours ouvre une boîte de dialogue demandant à l’utilisateur de se connecter, même si l’utilisateur l’est déjà, et utilise MSAL.js et le flux implicite pour obtenir un jeton d’accès à Microsoft Graph.
+1. Remplacez `TODO 3` par le code suivant. Pour toutes les autres erreurs, le complément se branche au système d’autorisation de secours. Pour plus d’informations sur ces erreurs, consultez la rubrique [TROUBLESHOOT SSO in Office Add-ins](troubleshoot-sso-in-office-add-ins.md). Dans ce complément, le système de secours ouvre une boîte de dialogue qui exige que l’utilisateur se connecte, même si l’utilisateur est déjà.
 
     ```javascript
     default:

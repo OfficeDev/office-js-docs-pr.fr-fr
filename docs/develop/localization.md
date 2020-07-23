@@ -1,14 +1,14 @@
 ---
 title: Localisation des compléments Office
 description: Vous pouvez utiliser l’API JavaScript Office pour déterminer les paramètres régionaux et les chaînes d’affichage en fonction des paramètres régionaux de l’application hôte, ou pour interpréter ou afficher des données en fonction des paramètres régionaux des données.
-ms.date: 07/10/2020
+ms.date: 07/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 79994406e8477786dd93a1aa56f5cda0a1235d01
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: a879f61f2257c54a4870e03740b7409a20d4772b
+ms.sourcegitcommit: 01bc1b5d7fa16292d4ab0b40f0abe0e09f97385f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159583"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "45228345"
 ---
 # <a name="localization-for-office-add-ins"></a>Localisation des compléments Office
 
@@ -178,7 +178,7 @@ Cette section inclut des exemples expliquant comment localiser la description, l
 
 Pour exécuter l’exemple de code fourni, configurez Office sur votre ordinateur afin d’utiliser des langues supplémentaires afin de pouvoir tester votre complément en changeant la langue utilisée pour l’affichage dans les menus et les commandes, pour la modification et la vérification, ou pour les deux.
 
-Vous pouvez utiliser un module linguistique Office pour installer une autre langue. Pour plus d’informations sur les Modules linguistiques et où les obtenir, voir [Pack d’accessoires linguistiques pour Office](https://office.microsoft.com/language-packs/).
+Vous pouvez utiliser un module linguistique Office pour installer une autre langue. Pour plus d’informations sur les Modules linguistiques et où les obtenir, voir [Pack d’accessoires linguistiques pour Office](https://support.microsoft.com/office/82ee1236-0f9a-45ee-9c72-05b026ee809f).
 
 Après avoir installé le Pack d’accessoires linguistiques, vous pouvez configurer Office pour utiliser la langue installée pour l’affichage dans l’interface utilisateur, pour modifier du contenu de document, ou les deux. L’exemple dans cet article utilise une installation d’Office qui contient le module linguistique espagnol.
 
