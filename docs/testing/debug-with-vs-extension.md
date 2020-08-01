@@ -1,16 +1,16 @@
 ---
-title: Extension du débogueur de complément Microsoft Office pour Visual Studio code
+title: Complément Microsoft Office Extension de débogueur pour Visual Studio Code
 description: Utilisez le débogueur de complément Microsoft Office de l’extension de code Visual Studio pour déboguer votre complément Office.
 ms.date: 05/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 1bd3814eba6da2339e7865d720b8a4c792b9310e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 2439af12f30cef1b9d291578cbababe3ed601644
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611210"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530470"
 ---
-# <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Extension du débogueur de complément Microsoft Office pour Visual Studio code
+# <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Complément Microsoft Office Extension de débogueur pour Visual Studio Code
 
 L’extension du débogueur de complément Microsoft Office pour Visual Studio code vous permet de déboguer votre complément Office par rapport au runtime Edge.
 
@@ -21,7 +21,7 @@ Ce mode de débogage est dynamique, ce qui vous permet de définir des points d�
 ## <a name="prerequisites"></a>Conditions préalables
 
 - [Visual Studio code](https://code.visualstudio.com/) (doit être exécuté en tant qu’administrateur)
-- [Node. js (version 10 +)](https://nodejs.org/)
+- [Node.js (version 10 +)](https://nodejs.org/)
 - Windows 10
 - [Microsoft Edge](https://www.microsoft.com/edge)
 
@@ -31,7 +31,8 @@ Ces instructions supposent que vous avez une expérience en utilisant la ligne d
 
 1. Si vous devez créer un projet de complément, [Utilisez le générateur Yo Office pour en créer un](https://docs.microsoft.com/office/dev/add-ins/quickstarts/excel-quickstart-jquery?tabs=yeomangenerator). Suivez les invites de la ligne de commande pour configurer votre projet. Vous pouvez choisir n’importe quelle langue ou type de projet en fonction de vos besoins.
 
-> ! Note Si vous disposez déjà d’un projet, ignorez l’étape 1 et passez à l’étape 2.
+> [!NOTE]
+> Si vous disposez déjà d’un projet, ignorez l’étape 1 et passez à l’étape 2.
 
 2. Ouvrez une invite de commandes en tant qu’administrateur.
    ![Options d’invite de commandes, y compris « exécuter en tant qu’administrateur » dans Windows 10](../images/run-as-administrator-vs-code.jpg)
@@ -51,7 +52,7 @@ Une fois Visual Studio code ouvert, accédez manuellement au dossier du projet.
 
 5. Dans le code VS, sélectionnez **Ctrl + Maj + X** pour ouvrir la barre extensions. Recherchez l’extension « Microsoft Office Add-in Debugger » et installez-la.
 
-6. Dans le dossier. vscode de votre projet, ouvrez le fichier **Launch. JSON** . Ajoutez le code suivant à la `configurations` section :
+6. Dans le dossier. vscode de votre projet, ouvrez le fichier **launch.js** . Ajoutez le code suivant à la `configurations` section :
 
 ```JSON
 {

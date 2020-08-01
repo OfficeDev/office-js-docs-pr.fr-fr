@@ -1,14 +1,14 @@
 ---
 title: Co-création dans des macros complémentaires Excel
 description: Apprenez à co-auteur d’un classeur Excel stocké dans OneDrive, OneDrive entreprise ou SharePoint Online.
-ms.date: 06/20/2019
+ms.date: 07/23/2020
 localization_priority: Normal
-ms.openlocfilehash: 4414bf64f05c29328c63d0857a6e498495712ff1
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 34ef6fbc32c686e49b9720c5249d5046d26a2952
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093475"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530442"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>Co-création dans des macros complémentaires Excel  
 
@@ -24,6 +24,7 @@ Lorsque vous modifiez le contenu d’un classeur, Excel synchronise automatiquem
 ```js
 range.values = [['Contoso']];
 ```
+
 Après la synchronisation de « Contoso » avec tous les co-auteurs, tout utilisateur ou complément en cours d’exécution dans le même classeur visualisera la nouvelle valeur de la plage.
 
 La co-création permet uniquement la synchronisation du contenu dans le classeur partagé. Les valeurs copiées du classeur vers les variables JavaScript dans un complément Excel ne sont pas synchronisées. Par exemple, si votre complément enregistre la valeur d’une cellule (par exemple, « Contoso ») dans une variable JavaScript et qu’un co-auteur modifie ensuite la valeur de la cellule sur « Exemple », après la synchronisation, tous les co-auteurs verront « Exemple » dans la cellule. Toutefois, la valeur de la variable JavaScript sera toujours définie sur « Contoso ». En outre, lorsque plusieurs co-auteurs utilisent le même complément, chaque co-auteur possède sa propre copie de la variable, qui n’est pas synchronisée. Lorsque vous utilisez des variables qui utilisent le contenu du classeur, veillez à bien rechercher les valeurs mises à jour dans le classeur avant d’utiliser la variable.
@@ -43,9 +44,18 @@ Si vous souhaitez que les visualisations personnalisées de l’utilisateur A r
 
 ## <a name="caveats-to-using-events-with-coauthoring"></a>Restrictions à l’utilisation des événements dans le cadre de la co-création
 
-Comme indiqué précédemment, dans certains scénarios, le déclenchement d’événements pour tous les co-auteurs permet d’améliorer l’expérience utilisateur. Toutefois, sachez que, dans certains scénarios, ce comportement peut entraîner des expériences utilisateur médiocres. 
+Comme indiqué précédemment, dans certains scénarios, le déclenchement d’événements pour tous les co-auteurs permet d’améliorer l’expérience utilisateur. Toutefois, sachez que, dans certains scénarios, ce comportement peut entraîner des expériences utilisateur médiocres.
 
 Par exemple, dans les scénarios de validation de données, il est fréquent d’afficher l’interface utilisateur en réponse aux événements. L’événement [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) décrit dans la section précédente s’exécute lorsqu’un utilisateur local ou un co-auteur modifie (à distance) le contenu du classeur dans la liaison. Si le gestionnaire d’événements de l' `BindingDataChanged` événement affiche l’interface utilisateur, les utilisateurs voient l’interface utilisateur qui n’est pas liée aux modifications sur lesquelles ils travaillaient dans le classeur, ce qui entraîne une expérience utilisateur médiocre. Évitez d’afficher l’interface utilisateur lorsque vous utilisez des événements dans votre complément.
+
+## <a name="avoiding-table-row-coauthoring-conflicts"></a>Éviter les conflits de cocréation de lignes de tableau
+
+Il s’agit d’un problème connu que les appels à l' [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) API peuvent entraîner des conflits de co-création. Nous vous déconseillons d’utiliser cette API si vous envisagez d’exécuter votre complément alors que d’autres utilisateurs modifient le classeur du complément (en particulier, s’ils modifient la table ou une plage située sous le tableau). Les conseils suivants devraient vous aider à éviter les problèmes liés à la `TableRowCollection.add` méthode (et à éviter de déclencher les émissions Excel de barres jaunes qui demandent aux utilisateurs d’actualiser) :
+
+1. Utilisez à la [`Range.values`](/javascript/api/excel/excel.range#values) place de [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) . La définition des `Range` valeurs directement sous le tableau développe automatiquement le tableau. Dans le cas contraire, l’ajout de lignes de table via l' `Table` API entraîne des conflits de fusion pour les utilisateurs de la coauthentification.
+1. Aucune [règle de validation des données](https://support.microsoft.com/office/apply-data-validation-to-cells-29fecbcc-d1b9-42c1-9d76-eff3ce5f7249) ne doit être appliquée aux cellules situées en-dessous du tableau, sauf si la validation des données est appliquée à la colonne entière.
+1. S’il y a des données dans la table, le complément doit gérer ce paramètre avant de définir la valeur de la plage. L’utilisation [`Range.insert`](/javascript/api/excel/excel.range##insert-shift-) de pour insérer une ligne vide déplace les données et permet de libérer de l’espace pour le tableau en expansion. Dans le cas contraire, vous risquez de remplacer les cellules en dessous du tableau.
+1. Vous ne pouvez pas ajouter une ligne vide à une table avec `Range.values` . Le tableau s’étend automatiquement uniquement si les données sont présentes dans les cellules situées directement sous le tableau. Utilisez des données temporaires ou des colonnes masquées pour ajouter une ligne de tableau vide.
 
 ## <a name="see-also"></a>Voir aussi
 

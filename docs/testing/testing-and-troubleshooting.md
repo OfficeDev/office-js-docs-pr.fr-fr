@@ -3,12 +3,12 @@ title: Résolution des erreurs rencontrées par l’utilisateur avec des complé
 description: Découvrez comment résoudre les problèmes liés aux erreurs utilisateur dans les compléments Office.
 ms.date: 06/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 51f5ec406a09b18ece24b74dc22718e7fd422e38
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: c0d08b512f61ecfd0ec149194897d31ff32741e0
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159184"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530484"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 
@@ -104,7 +104,8 @@ Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callb
 Si les modifications apportées au manifeste, par exemple aux noms de fichier des icônes de bouton dans le ruban ou au texte des éléments de menu, ne semblent pas appliquées, essayez de vider le cache Office de votre ordinateur. 
 
 #### <a name="for-windows"></a>Pour Windows :
-Supprimer le contenu du dossier `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
+
+Supprimez le contenu du dossier `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` et supprimez le contenu du dossier `%userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\` , s’il existe.
 
 #### <a name="for-mac"></a>Pour Mac :
 
@@ -143,6 +144,6 @@ del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC
 - [Débogage de compléments dans Office sur le web](debug-add-ins-in-office-online.md)
 - [Charger une version test d’un complément Office sur iPad ou Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
 - [Débogage des compléments Office sur iPad et Mac](debug-office-add-ins-on-ipad-and-mac.md)  
-- [Extension du débogueur de complément Microsoft Office pour Visual Studio code](debug-with-vs-extension.md)
+- [Complément Microsoft Office Extension de débogueur pour Visual Studio Code](debug-with-vs-extension.md)
 - [Valider le manifeste d’un complément Office](troubleshoot-manifest.md)
 - [Déboguer votre complément avec la journalisation runtime](runtime-logging.md)

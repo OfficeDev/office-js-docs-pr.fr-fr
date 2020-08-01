@@ -1,14 +1,14 @@
 ---
 title: Conseils de codage pour les problèmes courants et les comportements de plateforme inattendus
 description: Liste des problèmes de plateforme d’API JavaScript pour Office fréquemment rencontrés par les développeurs.
-ms.date: 05/21/2020
+ms.date: 07/23/2020
 localization_priority: Normal
-ms.openlocfilehash: d67a069cd2b752be3fca8ce094eaacfd0db08c18
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 8f604acaee308c3bd04e181719b091eb948d63ee
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608382"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530456"
 ---
 # <a name="coding-guidance-for-common-issues-and-unexpected-platform-behaviors"></a>Conseils de codage pour les problèmes courants et les comportements de plateforme inattendus
 
@@ -142,6 +142,10 @@ Les API suivantes sont affectées par ce commutateur de classeurs :
 
 > [!NOTE]
 > Cela s’applique uniquement à plusieurs classeurs Excel ouverts sous Windows ou Mac.
+
+### <a name="coauthoring"></a>Co-création
+
+Consultez la rubrique [co-authoring in Excel Add-ins](../excel/co-authoring-in-excel-add-ins.md) for patterns to use with Events in a CoAuthoring Environment. L’article aborde également les conflits de fusion potentiels lors de l’utilisation de certaines API, telles que [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) .
 
 ## <a name="see-also"></a>Voir aussi
 

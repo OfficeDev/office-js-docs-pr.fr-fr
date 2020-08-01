@@ -3,12 +3,12 @@ title: Authentifier un utilisateur avec un jeton à authentification unique
 description: Découvrez comment utiliser le jeton d’authentification unique fourni par un complément Outlook pour implémenter l’authentification unique (SSO) sur votre service.
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: d53e75faa2d0471b43957cfa71ff6f6a50a0da4f
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 6d144e9ae4dcaf03705deb75f58c2f67a9c03106
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093979"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530463"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in-preview"></a>Authentification d’un utilisateur avec un jeton d’authentification unique dans un complément Outlook (préversion)
 
@@ -21,8 +21,6 @@ Grâce à cette méthode, votre complément peut obtenir un jeton d’accès inc
 
 Pour une vue d’ensemble de l’authentification unique dans les compléments Office, reportez-vous à [Activer l’authentification unique pour des compléments Office ](../develop/sso-in-office-add-ins.md) et [Autorisation de l’accès à Microsoft Graph dans votre complément Office](../develop/authorize-to-microsoft-graph.md).
 
-> [!NOTE]
-> Pour utiliser l’authentification unique SSO, vous devez télécharger la version bêta de la bibliothèque JavaScript d’Office à partir de https://appsforoffice.microsoft.com/lib/beta/hosted/office.js dans la page de démarrage HTML du complément. Toutefois, vous ne devez **pas** utiliser les API bêta dans les compléments de production.
 
 ## <a name="enable-modern-authentication-in-your-microsoft-365-tenancy"></a>Activer l’authentification moderne dans votre location Microsoft 365
 
@@ -34,7 +32,7 @@ Pour utiliser l’authentification unique, votre complément Outlook devra avoir
 
 ### <a name="provide-consent-when-sideloading-an-add-in"></a>Consentement fourni pendant le chargement indépendant d’un complément
 
-Quand un complément qui utilise l’authentification unique est acquis sur l’AppSource, l’interface utilisateur Store invite l’utilisateur à accepter les demandes d’autorisation Microsoft Graph. Par contre, quand vous développez un complément, vous devez fournir le consentement à l’avance. Pour plus d’informations, reportez-vous à [Accorder le consentement de l’administrateur au complément](../develop/grant-admin-consent-to-an-add-in.md).
+Lorsqu’un complément qui utilise l’authentification unique est acquis auprès de AppSource, il doit disposer d’une méthode d’authentification de sauvegarde pour fournir son consentement s’il contient des étendues Microsoft Graph. Lorsque vous développez un complément, vous devez fournir un consentement à l’avance. Pour plus d’informations, reportez-vous à [Accorder le consentement de l’administrateur au complément](../develop/grant-admin-consent-to-an-add-in.md).
 
 ## <a name="update-the-add-in-manifest"></a>Mise à jour du manifeste de complément
 

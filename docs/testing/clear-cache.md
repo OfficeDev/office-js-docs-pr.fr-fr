@@ -3,12 +3,12 @@ title: Vider le cache Office
 description: Découvrez comment effacer le cache Office sur votre ordinateur.
 ms.date: 05/22/2020
 localization_priority: Normal
-ms.openlocfilehash: c48f3ed6f4c2f5f246341b6b878a725a54758bbe
-ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+ms.openlocfilehash: fe8184a5bd084450c3be6d3d13707bf92f5c508f
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "44679401"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530491"
 ---
 # <a name="clear-the-office-cache"></a>Vider le cache Office
 
@@ -20,8 +20,14 @@ En outre, si vous apportez des modifications au manifeste de votre complément (
 
 Pour supprimer tous les compléments versions test chargées d’Excel, Word et PowerPoint, supprimez le contenu du dossier :
 
-```text
+```
 %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\
+```
+
+Si le dossier suivant existe, supprimez son contenu :
+
+```
+%userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\
 ```
 
 Pour supprimer un complément versions test chargées à partir d’Outlook, suivez les étapes décrites dans [chargement des compléments Outlook à des fins de test](../outlook/sideload-outlook-add-ins-for-testing.md) pour trouver le complément dans la section **compléments personnalisés** de la boîte de dialogue qui répertorie vos compléments installés. Choisissez le bouton `...` de sélection () pour le complément, puis cliquez sur **supprimer** pour supprimer ce complément. Si la suppression de ce complément ne fonctionne pas, supprimez le contenu du `Wef` dossier comme indiqué précédemment pour Excel, Word et PowerPoint.
