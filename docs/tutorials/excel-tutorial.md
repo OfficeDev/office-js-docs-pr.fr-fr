@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez développer un complément Excel qu
 ms.date: 06/05/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 8cae8a91ffe70e98a504b191566e9d6ac3c29b37
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 2e637bad83432f8adf94826b906dc68a57e02fa6
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611073"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530505"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 
@@ -24,9 +24,9 @@ Dans ce tutoriel, vous allez créer un complément de volet de tâches Excel qui
 > * Ouvrir une boîte de dialogue
 
 > [!TIP]
-> Si vous avez déjà exécuté le démarrage rapide [Créer votre premier complément du volet des tâches d’Excel](../quickstarts/excel-quickstart-jquery.md) et que vous souhaitez utiliser ce projet comme point de départ pour ce didacticiel, accédez directement à la section [Créer un tableau](#create-a-table) pour commencer ce didacticiel.
+> Si vous avez déjà exécuté le démarrage rapide [Créer votre premier complément du volet des tâches d’Excel](../quickstarts/excel-quickstart-jquery.md) à l’aide du générateur Yeoman et que vous souhaitez utiliser ce projet comme point de départ pour ce didacticiel, accédez directement à la section [Créer un tableau](#create-a-table) pour commencer ce didacticiel.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Configuration requise
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
@@ -120,7 +120,7 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
 
     - Le code crée un tableau à l’aide de la méthode `add` de collection de tableau d’une feuille de calcul, qui existe toujours même si elle est vide. Il s’agit de la méthode standard de création d’objets Excel.js. Il n’existe aucune API pour le constructeur de classe API. De plus, vous n’utilisez jamais d’opérateur `new` pour créer un objet Excel. Au lieu de cela, vous l’ajoutez à un objet de la collection parent.
 
-    - Le premier paramètre de la méthode `add` est la plage comprenant uniquement la ligne supérieure du tableau, et non la plage entière utilisée en fin de compte par le tableau. La raison est que lorsque le complément remplit les lignes de données (dans l’étape suivante), il ajoute de nouvelles lignes au tableau au lieu d’écrire des valeurs dans les cellules des lignes existantes. Il s’agit d’un modèle plus courant, car le nombre de lignes contenues dans un tableau est souvent inconnu lorsque le tableau est créé.
+    - Le premier paramètre de la méthode `add` est la plage comprenant uniquement la ligne supérieure du tableau, et non la plage entière utilisée en fin de compte par le tableau. La raison est que lorsque le complément remplit les lignes de données (dans l’étape suivante), il ajoute de nouvelles lignes au tableau au lieu d’écrire des valeurs dans les cellules des lignes existantes. Il s’agit d’un modèle courant, car le nombre de lignes contenues dans un tableau est souvent inconnu lorsque le tableau est créé.
 
     - Les noms de tableau doivent être uniques dans l’ensemble du classeur, pas uniquement dans la feuille de calcul.
 
@@ -302,7 +302,7 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
 
    - Le code crée un tableau d’objets `SortField` qui ne comporte qu’un seul membre puisque le complément ne trie que la colonne Merchant.
 
-   - La propriété `key` d’un objet `SortField` est l’index de la colonne à trier qui part de zéro.
+   - La propriété `key` d’un objet `SortField` est l’index de la colonne utilisée pour le tri. Les lignes du tableau sont triées sur la base des valeurs de la colonne référencée.
 
    - Le membre `sort` d’un objet `Table` est un objet `TableSort`, et non une méthode. Les objets `SortField` sont transmis à la méthode `apply` de l’objet `TableSort`.
 
@@ -473,7 +473,7 @@ Lorsqu’un tableau est tellement long que l’utilisateur doit le faire défile
 
    - La collection `Worksheet.freezePanes` est un ensemble de volets de la feuille de calcul qui sont épinglés, c’est-à-dire figés, lorsque vous faites défiler la feuille de calcul.
 
-   - La méthode `freezeRows` prend comme paramètre le nombre de lignes, à partir du haut, qui doivent être figées. Nous transmettons `1` pour figer la première ligne.
+   - La méthode `freezeRows` prend comme paramètre le nombre de lignes, à partir du haut, qui doivent être figées. Nous transmettons la valeur `1` pour épingler la première ligne.
 
     ```js
     var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -500,13 +500,13 @@ Lorsqu’un tableau est tellement long que l’utilisateur doit le faire défile
 
 ## <a name="protect-a-worksheet"></a>Protéger une feuille de calcul
 
-Dans cette étape du didacticiel, vous allez ajouter un autre bouton au ruban qui, lorsque l’utilisateur clique dessus, exécute une fonction qui vous allez définir et qui active/désactive la protection de la feuille de calcul.
+Au cours de cette étape, vous allez ajouter un bouton au ruban pour activer ou désactiver la protection de la feuille de calcul.
 
 ### <a name="configure-the-manifest-to-add-a-second-ribbon-button"></a>Configuration du manifeste pour ajouter un deuxième bouton de ruban
 
 1. Ouvrez le fichier manifeste **./manifest.xml**.
 
-2. Recherchez l’élément `<Control>`. Cet élément définit le bouton **Afficher le volet des pages** sur le ruban **Accueil** que vous utilisez pour lancer le complément. Nous allons ajouter un deuxième bouton au même groupe sur le ruban **Accueil**. Entre la balise Control de fin (`</Control>`) et la balise Group de fin (`</Group>`), ajoutez le balisage suivant.
+2. Recherchez l’élément `<Control>`. Cet élément définit le bouton **Afficher le volet des pages** sur le ruban **Accueil** que vous utilisez pour lancer le complément. Nous allons ajouter un deuxième bouton au même groupe sur le ruban **Accueil**. Dans la balise de `</Control>` de fermeture et la balise de `</Group>` de fermeture, ajoutez la balise suivante.
 
     ```xml
     <Control xsi:type="Button" id="<!--TODO1: Unique (in manifest) name for button -->">
@@ -532,13 +532,13 @@ Dans cette étape du didacticiel, vous allez ajouter un autre bouton au ruban qu
     <Control xsi:type="Button" id="ToggleProtection">
     ```
 
-4. Les trois éléments `TODO` suivants définissent les éléments « resid », c’est-à-dire les ID de ressource. Une ressource est une chaîne. Vous allez créer ces trois chaînes lors d’une étape ultérieure. Pour l’instant, vous devez attribuer des ID aux ressources. L’étiquette du bouton doit indiquer « Toggle Protection », mais l’*ID* de cette chaîne doit être « ProtectionButtonLabel », donc l’élément `Label` doit ressembler à ceci :
+4. Les trois `TODO`s suivantes définissent les ID de ressource ou `resid`s. Une ressource est une chaîne. Vous allez créer ces trois chaînes lors d’une étape ultérieure. Pour l’instant, vous devez attribuer des ID aux ressources. L’étiquette du bouton doit indiquer « Toggle Protection », mais l’*ID* de cette chaîne doit être « ProtectionButtonLabel », donc l’élément `Label` doit ressembler à ceci :
 
     ```xml
     <Label resid="ProtectionButtonLabel" />
     ```
 
-5. L’élément `SuperTip` définit l’info-bulle du bouton. Le titre de l’info-bulle doit être identique à l’étiquette du bouton, nous utilisons donc le même ID de ressource : « ProtectionButtonLabel ». La description de l’info-bulle sera « Cliquez pour activer/désactiver la protection de la feuille de calcul ». Néanmoins, l’élément `ID` doit être « ProtectionButtonToolTip ». Lorsque vous avez terminé, l’élément `SuperTip` doit ressembler à ceci : 
+5. L’élément `SuperTip` définit l’info-bulle du bouton. Le titre de l’info-bulle doit être identique à l’étiquette du bouton, nous utilisons donc le même ID de ressource : « ProtectionButtonLabel ». La description de l’info-bulle sera « Cliquez pour activer/désactiver la protection de la feuille de calcul ». Néanmoins, l’élément `resid` doit être « ProtectionButtonToolTip ». Lorsque vous avez terminé, l’élément `SuperTip` doit ressembler à ceci : 
 
     ```xml
     <Supertip>            
@@ -550,7 +550,7 @@ Dans cette étape du didacticiel, vous allez ajouter un autre bouton au ruban qu
    > [!NOTE] 
    > Dans un complément de production, vous n’utiliseriez pas la même icône pour deux boutons différents, mais pour simplifier ce didacticiel, nous allons le faire. Par conséquent, le balisage `Icon` de notre nouvel élément `Control` est simplement une copie de l’élément `Icon` provenant de l’élément `Control` existant. 
 
-6. Le type de l’élément `Action` se trouvant à l’intérieur de l’élément `Control` d’origine qui était déjà présent dans le fichier manifeste est défini sur `ShowTaskpane`, mais notre nouveau bouton ne va pas ouvrir un volet Office, il va exécuter une fonction personnalisée que vous allez créer à une étape ultérieure. Il faut donc remplacer `TODO5` par `ExecuteFunction`, c’est-à-dire le type d’action pour les boutons qui déclenchent des fonctions personnalisées. Létiquette d’ouverture de l’élément `Action` doit ressembler à ceci :
+6. Le type de l’élément `Action` se trouvant à l’intérieur de l’élément `Control` d’origine est défini sur `ShowTaskpane`, mais notre nouveau bouton ne va pas ouvrir un volet Office, il va exécuter une fonction personnalisée que vous allez créer à une étape ultérieure. Remplacez donc `TODO5` par `ExecuteFunction`, qui correspond au type d’action des boutons qui déclenchent des fonctions personnalisées. Létiquette d’ouverture de l’élément `Action` doit ressembler à ceci :
  
     ```xml
     <Action xsi:type="ExecuteFunction">
@@ -645,7 +645,7 @@ Dans cette étape du didacticiel, vous allez ajouter un autre bouton au ruban qu
 
 ### <a name="add-code-to-fetch-document-properties-into-the-task-panes-script-objects"></a>Ajoutez du code pour récupérer des propriétés de document dans les objets de script du volet Office
 
-Dans chaque fonction que vous avez créée dans ce didacticiel jusqu’à présent, vous avez mis en file d’attente les commandes pour *écrire* dans le document Office. Chaque fonction se terminait par un appel de la méthode `context.sync()` qui envoie les commandes en file d’attente au document pour qu’elles soient exécutées. Cependant, le code que vous avez ajouté dans la dernière étape appelle la propriété `sheet.protection.protected` et c’est une différence significative par rapport aux fonctions antérieures que vous avez écrites, car l’objet `sheet` est uniquement un objet de proxy qui existe dans le script de votre volet Office. Il ne connaît pas l’état de protection réel du document, donc sa propriété `protection.protected` ne peut pas contenir une valeur réelle. Tout d’abord, il faut récupérer l’état de protection dans le document et l’utiliser pour définir la valeur de `sheet.protection.protected`. Seulement ensuite, la propriété `sheet.protection.protected` peut être appelée sans générer d’exception. Ce processus de récupération comporte trois étapes :
+Dans chaque fonction que vous avez créée dans ce didacticiel jusqu’à présent, vous avez mis en file d’attente les commandes pour *écrire* dans le document Office. Chaque fonction se terminait par un appel de la méthode `context.sync()`, qui envoie les commandes en file d’attente au document pour qu’elles soient exécutées. Toutefois, le code que vous avez ajouté dans la dernière étape appelle la `sheet.protection.protected property`. C’est une différence significative par rapport aux fonctions antérieures que vous avez écrites, car l’objet `sheet` est uniquement un objet de proxy qui existe dans le script de votre volet Office. L’objet proxy ne connaît pas l’état réel de la protection du document. par conséquent, sa propriété `protection.protected` ne peut pas avoir de valeur réelle. Pour éviter une erreur d’exception, vous devez d’abord récupérer l’état de protection du document et l’utiliser pour déterminer la valeur de `sheet.protection.protected`. Ce processus de récupération comporte trois étapes :
 
    1. Mettez en file d’attente une commande de chargement (c’est-à-dire, fetch) des propriétés que votre code doit lire.
 
@@ -723,7 +723,7 @@ Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*
 
 1. Fermez toutes les applications Office, y compris Excel. 
 
-2. Supprimez le cache Office en supprimant le contenu du dossier de cache. Cette opération est nécessaire pour effacer complètement de l’hôte l’ancienne version du complément. 
+2. Supprimez le cache Office en supprimant le contenu (tous les fichiers et sous-dossiers) du dossier de cache. Cette opération est nécessaire pour effacer complètement de l’hôte l’ancienne version du complément.
 
     - Pour Windows : `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
@@ -774,7 +774,7 @@ Dans cette étape finale du didacticiel, vous allez ouvrir une boîte de dialogu
 
 3. Ajoutez le balisage suivant au fichier **popup.html**. Remarque :
 
-   - La page comporte un champ `<input>`, dans lequel l’utilisateur entrera son nom, et un bouton qui permet d’envoyer le nom à la page dans le volet Office où il sera affiché.
+   - La page contient un champ `<input>` dans lequel l’utilisateur doit entrer son nom et un bouton qui enverra ce nom au volet Office dans lequel il s’affiche.
 
    - Le balisage charge un script nommé **popup.js** que vous allez créer dans une étape ultérieure.
 

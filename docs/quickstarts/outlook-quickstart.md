@@ -1,15 +1,15 @@
 ---
 title: Création de votre premier complément Outlook
 description: Découvrez comment créer un complément de volet des tâches Outlook simple à l’aide de l’API JavaScript pour Office.
-ms.date: 06/23/2020
+ms.date: 07/27/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 6eb510986ebb9cd8a4362f8c11f744e694bef5f7
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: ba1b3ace97c6fcf380f013b3b394eabe8b9db8b8
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094161"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530498"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Création de votre premier complément Outlook
 
@@ -111,6 +111,9 @@ Le projet de complément que vous avez créé à l’aide du générateur Yeoman
 1. Sélectionnez l’onglet **Accueil** (ou l’onglet **Message** si vous avez ouvert le message dans une nouvelle fenêtre), puis sélectionnez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
     ![Capture d’écran d’une fenêtre de message dans Outlook avec le bouton du complément mis en surbrillance](../images/quick-start-button-1.png)
+
+    > [!NOTE]
+    > Si le message d’erreur « Désolé... nous ne pouvons pas ouvrir ce complément à partir de localhost » s’affiche dans le volet Office, suivez les étapes décrites dans l’[article résolution des problèmes](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
 
 1. Faites défiler vers le bas du volet Office et sélectionnez le lien **Exécuter** pour écrire l’objet du message dans le volet Office.
 
