@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: Les fonctionnalités et les API qui sont actuellement en préversion pour les compléments Outlook.
-ms.date: 07/22/2020
+ms.date: 08/03/2020
 localization_priority: Normal
-ms.openlocfilehash: 9a2ca9a71498c954d9864f2b967b5fb240f8c506
-ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
+ms.openlocfilehash: 5ffa7021fd260f41599a771a1b11aef3cafd832e
+ms.sourcegitcommit: a3b743598025466bad19177e0ba9ca94ea66d490
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "46530477"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "46547527"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -29,6 +29,18 @@ L’ensemble de conditions requises présenté en aperçu comprend toutes les fo
 ## <a name="features-in-preview"></a>Fonctionnalités (aperçu) :
 
 Les fonctionnalités suivantes sont disponibles en aperçu.
+
+### <a name="add-in-activation-on-items-protected-by-information-rights-management-irm"></a>Activation des compléments sur les éléments protégés par la gestion des droits relatifs à l’information (IRM)
+
+Les compléments peuvent désormais être activés sur les éléments protégés par IRM. Pour activer cette fonctionnalité, un administrateur client doit activer le droit d' `OBJMODEL` utilisation en définissant l’option autoriser la stratégie personnalisée d' **accès par programme** dans Office. Pour plus d’informations [, voir droits et descriptions d’utilisation](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions) .
+
+**Disponible dans**: Outlook sur Windows, en commençant par Build 13120,1000 (connecté à un abonnement Microsoft 365)
+
+<br>
+
+---
+
+---
 
 ### <a name="additional-calendar-properties"></a>Propriétés de calendrier supplémentaires
 

@@ -1,14 +1,14 @@
 ---
 title: Résolution des problèmes d’activation de complément contextuel Outlook
 description: Si votre complément ne s’active pas comme prévu, vous devez rechercher dans les zones suivantes les raisons possibles.
-ms.date: 05/27/2020
+ms.date: 08/03/2020
 localization_priority: Normal
-ms.openlocfilehash: cb8640dc2381a79bc5c0ed90da3a2f03938a0d05
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: e9eba8abd1207c0c521fc87e310325529c9f24ac
+ms.sourcegitcommit: a3b743598025466bad19177e0ba9ca94ea66d490
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611630"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "46547541"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Résolution des problèmes d’activation des compléments Outlook
 
@@ -74,7 +74,7 @@ En outre, les rendez-vous étant toujours enregistrés au format RTF, une règle
 
 Même si un élément de messagerie ne correspond pas à l’un des types ci-dessus, si cet élément n’a pas été remis par une version d’Exchange Server correspondant au minimum à Exchange 2013, les entités et les propriétés connues telles que l’adresse SMTP de l’expéditeur ne sont pas identifiées pour l’élément. Les règles d’activation qui dépendent de ces entités ou propriétés ne sont pas satisfaites et le complément n’est pas activé.
 
-Si votre complément est un complément de composition et qu’il est censé être activé lorsque l’utilisateur compose un message ou une demande de réunion, assurez-vous que l’élément n’est pas protégé par IRM.
+Si votre complément est un complément de composition et qu’il est censé être activé lorsque l’utilisateur compose un message ou une demande de réunion, assurez-vous que l’élément n’est pas protégé par IRM. Toutefois, à partir d’Outlook Build 13120,1000 sur Windows, les compléments peuvent désormais être activés sur les éléments protégés par IRM.  Pour plus d’informations sur cette prise en charge en mode aperçu, consultez [l’article activation des compléments sur les éléments protégés par la gestion des droits relatifs à l’information (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
 
 ## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>Est-ce que le manifeste du complément est correctement installé et est-ce qu’Outlook dispose d’une copie mise en cache ?
 
@@ -247,7 +247,7 @@ Cette section s’applique à toutes les règles d’activation qui utilisent de
     |Limite de longueur d’une correspondance d’expression régulière|Clients riches Outlook|Outlook sur le web ou sur appareils mobiles|
     |:-----|:-----|:-----|
     |Corps d’élément en texte brut|1,5 Ko|3 Ko|
-    |Corps d’élément en HTML|3 Ko|3 Ko|
+    |Corps d’élément en HTML|3 Ko|3 Ko|
 
 - Temps consacré à l’évaluation de toutes les expressions régulières d’un complément de lecture (pour un client riche Outlook) : par défaut, pour chaque complément de lecture, Outlook doit terminer l’évaluation de toutes les expressions régulières contenues dans ses règles d’activation en moins d’une seconde. Sinon, Outlook effectue jusqu’à trois nouvelles tentatives avant de désactiver le complément si l’évaluation ne peut pas être achevée. Outlook affiche un message dans la barre de notification pour indiquer que le complément a été désactivé. Vous pouvez modifier le délai disponible pour votre expression régulière en définissant une stratégie de groupe ou une clé de Registre. 
 

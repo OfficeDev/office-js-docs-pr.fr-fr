@@ -1,18 +1,18 @@
 ---
 title: Utiliser les règles d’activation d’expression régulière afin d’afficher un complément
 description: Découvrez comment utiliser les règles d’activation d’expression régulière pour les compléments contextuels Outlook.
-ms.date: 10/31/2019
+ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: b697f1b0a4d20254986a7aa10a5cc7f25dbdd887
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 3943f42363bd9a34978d1f42d701dcf906aa0446
+ms.sourcegitcommit: a3b743598025466bad19177e0ba9ca94ea66d490
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44605240"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "46547520"
 ---
 # <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>Utiliser des règles d’activation d’expression régulière pour afficher un complément Outlook
 
-Vous pouvez spécifier des règles d’expressions régulières pour qu’un [complément contextuel](contextual-outlook-add-ins.md) soit activé lorsqu’une correspondance est trouvée dans les champs spécifiques du message. Les compléments contextuels sont activés uniquement en mode lecture. Outlook n’active pas de compléments contextuels lorsque l’utilisateur compose un élément. Il existe également d’autres scénarios dans lesquels Outlook n’active pas de compléments, par exemple, des éléments protégés par la gestion des droits relatifs à l’information (IRM). Pour plus d’informations, reportez-vous à la rubrique [Règles d’activation pour les compléments Outlook](activation-rules.md).
+Vous pouvez spécifier des règles d’expressions régulières pour qu’un [complément contextuel](contextual-outlook-add-ins.md) soit activé lorsqu’une correspondance est trouvée dans les champs spécifiques du message. Les compléments contextuels sont activés uniquement en mode lecture. Outlook n’active pas de compléments contextuels lorsque l’utilisateur compose un élément. Il existe également d’autres scénarios dans lesquels Outlook n’active pas de compléments, par exemple, des éléments signés numériquement. Pour plus d’informations, reportez-vous à la rubrique [Règles d’activation pour les compléments Outlook](activation-rules.md).
 
 Vous pouvez spécifier une expression régulière dans le cadre d’une règle [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) ou [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) dans le manifeste XML du complément. Les règles sont spécifiées dans un point d’extension [DetectedEntity](../reference/manifest/extensionpoint.md#detectedentity).
 
