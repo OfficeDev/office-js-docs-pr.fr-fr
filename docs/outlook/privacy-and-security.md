@@ -1,14 +1,14 @@
 ---
 title: Confidentialité, autorisations et sécurité pour les compléments Outlook
 description: Découvrez comment gérer la confidentialité, les autorisations et la sécurité dans un complément Outlook.
-ms.date: 10/31/2019
+ms.date: 08/03/2020
 localization_priority: Priority
-ms.openlocfilehash: d233eb3ac6980af24e6ba9d951834532ea79dc06
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9807cbb2346d6fc067f3894c9f5d265f83dccdc3
+ms.sourcegitcommit: a3b743598025466bad19177e0ba9ca94ea66d490
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44605331"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "46547534"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Confidentialité, autorisations et sécurité pour les compléments Outlook
 
@@ -70,6 +70,9 @@ Le modèle de sécurité résout les problèmes de sécurité, de confidentialit
 
 - Les messages des utilisateurs qui sont protégés par la Gestion des droits relatifs à l’information (IRM) d’Outlook n’ont pas d’interaction avec les compléments Outlook.
     
+  > [!IMPORTANT]
+  > Démarrer avec Outlook build 13120.1000 sur Windows, les compléments peuvent désormais activer les éléments protégés par IRM. Pour plus d’informations sur cette fonctionnalité en mode aperçu, voir [Activation de complément sur les éléments protégés par la gestion des droits relatifs à l’information (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
+
 - Avant d’installer un complément d’AppSource, les utilisateurs finals peuvent voir l’accès dont peut disposer le complément, ainsi que les actions qu’il peut effectuer sur leurs données, et doivent explicitement confirmer qu’ils veulent poursuivre. Aucun complément Outlook n’est automatiquement transmis sur un ordinateur client sans une validation manuelle par l’utilisateur ou l’administrateur.
     
 - L’octroi de l’autorisation **Restreint** permet au complément Outlook d’avoir un accès limité uniquement sur l’élément actuel. L’octroi de l’autorisation **Lire l’élément** permet au complément Outlook d’accéder à des informations d’identification personnelle, par exemple les noms et les adresses électroniques des expéditeurs et des destinataires, uniquement sur l’élément actuel.
