@@ -1,14 +1,14 @@
 ---
 title: Limites des ressources et optimisation des performances pour les compléments Office
 description: Découvrez les limites de ressources de la plateforme de complément Office, y compris le processeur et la mémoire.
-ms.date: 04/09/2020
+ms.date: 07/13/2020
 localization_priority: Normal
-ms.openlocfilehash: be4727ba12fa8f9b3ee8133026d9de94a612a9fc
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: a689f52e7f92b31cc8d6e912f73e19137233ae12
+ms.sourcegitcommit: 0b95e458f76cdfbd99dbcdbe16a0508af2cd9cd7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608005"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46563810"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites des ressources et optimisation des performances pour les compléments Office
 
@@ -70,18 +70,18 @@ Le journal de télémétrie comprend pour chaque événement suivi pour un compl
 
 |**Date/Heure**|**ID d’évènement**|**Gravité**|**Titre**|**Fichier**|**ID**|**Application**|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|08/10/2012 17:57:10|7 ||Le manifeste du complément a été correctement téléchargé|Who’s Who|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
-|08/10/2012 17:57:01|7 ||Le manifeste du complément a été correctement téléchargé|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
+|08/10/2012 17:57:10|7 ||Le manifeste du complément a été correctement téléchargé|Who’s Who|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
+|08/10/2012 17:57:01|7 ||Le manifeste du complément a été correctement téléchargé|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
 
 Le tableau suivant répertorie les événements que le journal de télémétrie suit pour les Compléments Office en général.
 
 |**ID d’évènement**|**Titre**|**Gravité**|**Description**|
 |:-----|:-----|:-----|:-----|
-|7 |Le manifeste du complément a été correctement téléchargé||Le manifeste de l’Complément Office a été chargé et lu correctement par l’application hôte.|
-|8 |Échec du téléchargement du manifeste du complément|Critique|L’application hôte n’a pas pu charger le fichier manifeste pour le complément Office à partir du catalogue SharePoint, du catalogue d’entreprise ou d’AppSource.|
-|9 |Impossible d’analyser le balisage du complément|Critique|L’application hôte a chargé le manifeste de l’Complément Office, mais n’a pas pu lire le balisage HTML de l’application.|
-|10 |Le complément a trop sollicité le processeur|Critique|L’Complément Office a utilisé plus de 90 % des ressources du processeur sur une période de temps définie.|
-|0,15|Le complément a été désactivé en raison de l’expiration de la recherche de chaîne||§LTA Les compléments Outlook recherchent la ligne d’objet et le corps du message d’un courrier électronique pour déterminer s’ils doivent être affichés avec une expression régulière. Le complément Outlook répertorié dans la colonne **Fichier** a été désactivé par Outlook, car il a expiré à plusieurs reprises lors d’une tentative de mise en correspondance d’une expression régulière.|
+|7 |Le manifeste du complément a été correctement téléchargé||Le manifeste de l’Complément Office a été chargé et lu correctement par l’application hôte.|
+|8 |Échec du téléchargement du manifeste du complément|Critique|L’application hôte n’a pas pu charger le fichier manifeste pour le complément Office à partir du catalogue SharePoint, du catalogue d’entreprise ou d’AppSource.|
+|9 |Impossible d’analyser le balisage du complément|Critique|L’application hôte a chargé le manifeste de l’Complément Office, mais n’a pas pu lire le balisage HTML de l’application.|
+|10 |Le complément a trop sollicité le processeur|Critique|L’Complément Office a utilisé plus de 90 % des ressources du processeur sur une période de temps définie.|
+|15 |Le complément a été désactivé en raison de l’expiration de la recherche de chaîne||§LTA Les compléments Outlook recherchent la ligne d’objet et le corps du message d’un courrier électronique pour déterminer s’ils doivent être affichés avec une expression régulière. Le complément Outlook répertorié dans la colonne **Fichier** a été désactivé par Outlook, car il a expiré à plusieurs reprises lors d’une tentative de mise en correspondance d’une expression régulière.|
 |18 |Le complément a été fermé||L’application hôte a pu fermer l’Complément Office sans problème.|
 |neuf|Le complément a rencontré une erreur d’exécution|Critique|L'Complément Office a rencontré un problème qui l'a empêchée de s'exécuter. Pour plus de détails, consultez le journal **Alertes Microsoft Office** à l’aide de l’Observateur d’événements Windows sur l’ordinateur sur lequel l’erreur s’est produite.|
 |vingtaine|Le complément n’a pas pu vérifier la licence|Critique|Les informations de licence de l'Complément Office n'ont pas pu être vérifiées et la licence a peut-être expiré. Pour plus de détails, consultez le journal **Alertes Microsoft Office** à l’aide de l’Observateur d’événements Windows sur l’ordinateur sur lequel l’erreur s’est produite.|
@@ -93,11 +93,9 @@ Pour plus d’informations, consultez [Déployer le Tableau de bord de télémé
 
 Bien que les limites en matière d’utilisation des ressources de l’UC et de la mémoire, de tolérance d’incident et de réactivité de l’interface utilisateur s’appliquent aux Compléments Office qui s’exécutent uniquement sur les clients enrichis, l’optimisation de l’utilisation de ces ressources et de la batterie doit constituer une priorité si vous voulez que votre complément s’exécute de manière satisfaisante sur tous les clients et appareils de prise en charge. L’optimisation est particulièrement importante si votre complément effectue des opérations de longue durée ou manipule de grands jeux de données. La liste suivante suggère quelques techniques à suivre pour réduire la taille des opérations qui utilisent beaucoup de ressources d’UC ou de données afin de permettre à votre complément d’éviter une consommation excessive des ressources et à l’application hôte de rester réactive :
 
-- Dans un scénario où votre complément a besoin de lire un important volume de données à partir d’un jeu de données illimité, vous pouvez appliquer la pagination lors de la lecture des données dans une table ou réduire la taille des données à chaque opération de lecture raccourcie, plutôt que de tenter de terminer la lecture en une seule opération. 
+- Dans un scénario où votre complément a besoin de lire un important volume de données à partir d’un jeu de données illimité, vous pouvez appliquer la pagination lors de la lecture des données dans une table ou réduire la taille des données à chaque opération de lecture raccourcie, plutôt que de tenter de terminer la lecture en une seule opération. Pour limiter la durée de l’entrée et de la sortie, vous pouvez utiliser la méthode [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) de l’objet global. It also handles the data in defined chunks instead of randomly unbounded data. Une autre option consiste à utiliser [Async](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) pour gérer vos promesses. 
 
-   For a JavaScript and jQuery code sample that shows breaking up a potentially long-running and CPU-intensive series of inputting and outputting operations on unbounded data, see [How can I give control back (briefly) to the browser during intensive JavaScript processing?](https://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript). This example uses the [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) method of the global object to limit the duration of input and output. It also handles the data in defined chunks instead of randomly unbounded data.
-
-- Si votre complément utilise un algorithme qui sollicite l’UC de manière intensive pour traiter un important volume de données, vous pouvez recourir aux API Web Worker afin d’effectuer une tâche de longue durée en arrière-plan pendant qu’un script distinct s’exécute au premier plan (par exemple, l’affichage de la progression d’une opération dans l’interface utilisateur). Les API Web Worker ne bloquent pas les activités des utilisateurs. En outre, elles permettent à la page HTML de rester réactive. Pour obtenir un exemple d’API Web Worker, voir les [bases des API Web Worker](https://www.html5rocks.com/en/tutorials/workers/basics/). Pour plus d’informations sur l’API Web Worker, voir [API Web Worker](https://developer.mozilla.org/docs/Web/API/Web_Workers_API).
+- Si votre complément utilise un algorithme qui sollicite l’UC de manière intensive pour traiter un important volume de données, vous pouvez recourir aux API Web Worker afin d’effectuer une tâche de longue durée en arrière-plan pendant qu’un script distinct s’exécute au premier plan (par exemple, l’affichage de la progression d’une opération dans l’interface utilisateur). Les API Web Worker ne bloquent pas les activités des utilisateurs. En outre, elles permettent à la page HTML de rester réactive. Pour obtenir un exemple d’API Web Worker, voir les [bases des API Web Worker](https://www.html5rocks.com/tutorials/workers/basics/). Pour plus d’informations sur l’API Web Worker, voir [API Web Worker](https://developer.mozilla.org/docs/Web/API/Web_Workers_API).
 
 - Si votre complément utilise un algorithme qui sollicite l’UC de manière intensive et si vous pouvez décomposer les entrées ou sorties de données en jeux de données de plus petite taille, créez un service web afin de lui passer les données et d’alléger la charge de l’UC, puis attendez un rappel asynchrone.
 
