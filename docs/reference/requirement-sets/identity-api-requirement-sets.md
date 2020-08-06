@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API d’identité
 description: Informations sur les conditions requises de l’API Identity pour les compléments Office.
-ms.date: 07/10/2020
+ms.date: 07/30/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: d8ef8b9eaf6e5f4f59f9bb7fd05ed0c91d741c45
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 05805451f17cc70597a61e55d1ecacbb81c383c5
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159296"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573216"
 ---
 # <a name="identity-api-requirement-sets"></a>Ensembles de conditions requises de l’API d’identité
 
@@ -17,13 +17,11 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 
 Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tableau suivant répertorie les ensembles de conditions requises de l’API de boîte de dialogue, les applications Office hôtes qui prennent en charge ces conditions et les numéros de build ou de version de l’application Office.
 
-|  Ensemble de conditions requises  | Office 2013 ou version ultérieure sous Windows<br>(achat définitif) | Office pour Windows<br>(connecté à un abonnement Microsoft 365) |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à un abonnement Microsoft 365)  | Office sur le web  | SharePoint Online | OneDrive.com |Outlook.com et Exchange Online|
+|  Ensemble de conditions requises  | Office 2013 ou version ultérieure sous Windows<br>(achat définitif) | Office pour Windows<br>(connecté à un abonnement Microsoft 365) |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à un abonnement Microsoft 365)  | Office sur le web  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| Préversion ensembles  | N/A | Préversion<b>*</b> | Bientôt disponible | Préversion<b>*</b> | Aperçu<b>* &#8224;</b> | Aperçu<b>* &#8224;</b>| Bientôt disponible | Bientôt disponible |
+| Ensembles 1,3  | S/O | 2008 (Build 13127,20000) ou version ultérieure | Bientôt disponible | 16,40 ou version ultérieure | Août, 2020 * |
 
-> **&#42;** Lors de la phase d’évaluation, l’API d’identité requiert l’abonnement Microsoft 365. Vous devez utiliser la version et le build mensuels les plus récents du canal du programme Insider. Vous devez participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à [Participez au programme Office Insider](https://insider.office.com). Veuillez noter que lorsqu’un build passe au canal semi-annuel de production, la prise en charge des fonctionnalités d’aperçu, y compris l’authentification unique, est désactivée pour ce build.
->
-> **&#8224;** Les compléments qui utilisent les API SSO sur ces plateformes ne fonctionnent que si l’administrateur client de l’utilisateur a accordé le consentement au complément. L’utilisateur ne peut pas accorder de consentement même à son propre profil Azure AD.
+> \*Initialement, l’ensemble de conditions requises est pris en charge dans Office sur le Web uniquement pour les documents ouverts à partir de SharePoint Online et OneDrive.com. La prise en charge d’autres documents arrivera sur Office sur le Web plus tard dans 2020.
 
 ## <a name="office-versions-and-build-numbers"></a>Numéros de version et de build d’Office
 

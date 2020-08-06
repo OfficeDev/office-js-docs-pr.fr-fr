@@ -1,16 +1,16 @@
 ---
 title: Authentifier un utilisateur avec un jeton à authentification unique
 description: Découvrez comment utiliser le jeton d’authentification unique fourni par un complément Outlook pour implémenter l’authentification unique (SSO) sur votre service.
-ms.date: 04/28/2020
+ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 6d144e9ae4dcaf03705deb75f58c2f67a9c03106
-ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
+ms.openlocfilehash: 79768147fc91a137a363a071beff46cec60ee819
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "46530463"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573139"
 ---
-# <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in-preview"></a>Authentification d’un utilisateur avec un jeton d’authentification unique dans un complément Outlook (préversion)
+# <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>Authentifier un utilisateur avec un jeton d’authentification unique dans un complément Outlook
 
 L’authentification unique (SSO) permet à votre complément d’authentifier les utilisateurs en toute transparence (et éventuellement d’obtenir des jetons d’accès pour appeler l’[API Microsoft Graph](/graph/overview)).
 
@@ -20,7 +20,6 @@ Grâce à cette méthode, votre complément peut obtenir un jeton d’accès inc
 - utiliser les informations d’identité dans le jeton pour établir l’identité de l’utilisateur et s’authentifier à vos services principaux.
 
 Pour une vue d’ensemble de l’authentification unique dans les compléments Office, reportez-vous à [Activer l’authentification unique pour des compléments Office ](../develop/sso-in-office-add-ins.md) et [Autorisation de l’accès à Microsoft Graph dans votre complément Office](../develop/authorize-to-microsoft-graph.md).
-
 
 ## <a name="enable-modern-authentication-in-your-microsoft-365-tenancy"></a>Activer l’authentification moderne dans votre location Microsoft 365
 
@@ -32,7 +31,7 @@ Pour utiliser l’authentification unique, votre complément Outlook devra avoir
 
 ### <a name="provide-consent-when-sideloading-an-add-in"></a>Consentement fourni pendant le chargement indépendant d’un complément
 
-Lorsqu’un complément qui utilise l’authentification unique est acquis auprès de AppSource, il doit disposer d’une méthode d’authentification de sauvegarde pour fournir son consentement s’il contient des étendues Microsoft Graph. Lorsque vous développez un complément, vous devez fournir un consentement à l’avance. Pour plus d’informations, reportez-vous à [Accorder le consentement de l’administrateur au complément](../develop/grant-admin-consent-to-an-add-in.md).
+Lorsque vous développez un complément, vous devez fournir un consentement à l’avance. Pour plus d’informations, consultez [la rubrique accorder le consentement de l’administrateur au complément](../develop/grant-admin-consent-to-an-add-in.md).
 
 ## <a name="update-the-add-in-manifest"></a>Mise à jour du manifeste de complément
 

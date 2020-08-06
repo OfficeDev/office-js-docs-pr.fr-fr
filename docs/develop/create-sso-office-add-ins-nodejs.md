@@ -1,16 +1,16 @@
 ---
 title: Création d’un complément Office Node.js qui utilise l’authentification unique
 description: Apprenez à créer un complément basé sur Node.js utilisant l’authentification unique Office.
-ms.date: 06/18/2020
+ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: f2f28d0725de52c9a0647d9d1848662fb1ab7b4f
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: fcd77f9cdf9ac817679b020fff887c975450e05d
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159590"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573155"
 ---
-# <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Créer un complément Office Node.js qui utilise l’authentification unique (aperçu)
+# <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>Création d’un complément Office Node.js qui utilise l’authentification unique
 
 Les utilisateurs peuvent se connecter à Office et votre complément Web Office peut tirer parti de cette procédure de connexion pour autoriser les utilisateurs à accéder à votre complément et à Microsoft Graph sans obliger les utilisateurs à se connecter une deuxième fois. Pour obtenir une vue d’ensemble, consultez [Activer l’authentification unique pour des compléments Office](sso-in-office-add-ins.md).
 
@@ -102,6 +102,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
     - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
     - `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office sur le web)
+    - `08e18876-6177-487e-b8b5-cf950c1e598c` (Office sur le web)
     - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook sur le web)
 
     Pour chaque ID, procédez comme suit :

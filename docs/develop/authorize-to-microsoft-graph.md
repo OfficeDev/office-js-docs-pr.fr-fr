@@ -1,22 +1,23 @@
 ---
 title: Autoriser la connexion à Microsoft Graph avec l’authentification unique
 description: Découvrez comment les utilisateurs d’un complément Office peuvent utiliser l’authentification unique (SSO) pour extraire des données de Microsoft Graph.
-ms.date: 07/07/2020
+ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 809dc4f07c6d2afba4ea47cdee0eb7466dfb9635
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 81e8a87c21682a76c73e5e7389e85cd4f20c6a1d
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093727"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573174"
 ---
-# <a name="authorize-to-microsoft-graph-with-sso-preview"></a>Autoriser la connexion à Microsoft Graph avec l’authentification unique (préversion)
+# <a name="authorize-to-microsoft-graph-with-sso"></a>Autoriser la connexion à Microsoft Graph avec l’authentification unique
 
 Les utilisateurs se connectent à Office (plateformes en ligne, mobiles et de bureau) à l’aide de leur compte Microsoft personnel ou de leur compte professionnel ou scolaire Microsoft 365. Le meilleur moyen pour un complément Office d’obtenir un accès autorisé à [Microsoft Graph](https://developer.microsoft.com/graph/docs) est d’utiliser les informations d’identification Office de l’utilisateur. Cela leur permet d’accéder à leurs données Microsoft Graph sans avoir à se connecter une deuxième fois.
 
 > [!NOTE]
-> L’API d’authentification unique est actuellement prise en charge en préversion pour Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur l’endroit où l’API d’authentification unique est actuellement prise en charge, consultez la rubrique [Ensembles de conditions requises de l’API d’identité](../reference/requirement-sets/identity-api-requirement-sets.md).
-> Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location Microsoft 365. Pour plus d’informations sur la manière de procéder, voir [Exchange Online : comment activer votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> L’API d’authentification unique est actuellement prise en charge pour Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur l’endroit où l’API d’authentification unique est actuellement prise en charge, consultez la rubrique [Ensembles de conditions requises de l’API d’identité](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets).
+> Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location d’Office 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+
 
 ## <a name="add-in-architecture-for-sso-and-microsoft-graph"></a>Architecture de complément pour l’authentification unique et Microsoft Graph
 
@@ -64,3 +65,16 @@ Pour obtenir des exemples de scénarios et procédures détaillées, consultez l
 * [Créer un complément Office Node.js qui utilise l’authentification unique](create-sso-office-add-ins-nodejs.md)
 * [Créer un complément Office ASP.NET qui utilise l’authentification unique](create-sso-office-add-ins-aspnet.md)
 * [Scénario : Implémenter l’authentification unique pour votre service dans un complément Outlook](../outlook/implement-sso-in-outlook-add-in.md)
+
+## <a name="distributing-sso-enabled-add-ins-in-microsoft-appsource"></a>Distribution de compléments à extension SSO dans Microsoft AppSource
+
+Lorsqu’un administrateur Microsoft 365 acquiert un complément à partir de [AppSource](https://appsource.microsoft.com), l’administrateur peut le redistribuer par [déploiement centralisé](../publish/centralized-deployment.md) et accorder le consentement de l’administrateur au complément pour accéder aux étendues de Microsoft Graph. Toutefois, il est également possible pour l’utilisateur final d’acquérir le complément directement à partir de AppSource, auquel cas l’utilisateur doit accorder son consentement au complément. Cela peut créer un problème de performances potentiel pour lequel nous avons fourni une solution.
+
+Si votre code transmet l' `allowConsentPrompt` option dans l’appel de `getAccessToken` , par exemple, `OfficeRuntime.auth.getAccessToken( { allowConsentPrompt: true } );` Office peut demander à l’utilisateur d’indiquer si Azure ad signale à Office que le consentement n’a pas encore été accordé au complément. Toutefois, pour des raisons de sécurité, Office peut uniquement inviter l’utilisateur à accepter l’étendue Azure AD `profile` . *Office ne peut pas demander l’autorisation de n’importe quelle étendue Microsoft Graph*, pas même `User.Read` . Cela signifie que si l’utilisateur accorde son consentement sur l’invite, Office renverra un jeton de démarrage. Toutefois, la tentative d’échange du jeton d’amorçage pour un jeton d’accès à Microsoft Graph échouera avec l’erreur AADSTS65001, ce qui signifie que le consentement (vers les étendues de Microsoft Graph) n’a pas été accordé.
+
+Votre code peut et doit gérer cette erreur en revenant à un autre système d’authentification, qui invite l’utilisateur à donner son consentement aux étendues Microsoft Graph. (Pour obtenir des exemples de code, voir [créer une Node.js complément Office qui utilise l’authentification unique](create-sso-office-add-ins-nodejs.md) et [créer un complément Office ASP.net qui utilise l’authentification unique](create-sso-office-add-ins-aspnet.md) et les exemples auxquels il est lié.) Toutefois, le processus entier nécessite plusieurs allers-retours vers Azure AD. Vous pouvez éviter cette perte de performances en incluant l' `forMSGraphAccess` option dans l’appel de `getAccessToken` ; par exemple, `OfficeRuntime.auth.getAccessToken( { forMSGraphAccess: true } )` .  Cela signale à Office que votre complément a besoin des étendues de Microsoft Graph. Office demande à Azure AD de vérifier que le consentement vers les étendues de Microsoft Graph a déjà été accordé au complément. Si c’est le cas, le jeton bootstrap sera renvoyé. Si ce n’est pas le cas, l’appel de `getAccessToken` renvoie l’erreur 13012. Votre code peut gérer cette erreur en revenant immédiatement à un autre système d’authentification, sans qu’une Doomed tente d’échanger des jetons avec Azure AD.
+
+Il est recommandé de toujours transmettre `forMSGraphAccess` à `getAccessToken` lorsque votre complément sera distribué dans AppSource et que vous avez besoin des étendues de Microsoft Graph.
+
+> [!TIP]
+> Si vous développez un complément Outlook qui utilise l’authentification unique et que vous le chargement à des fins de test, Office renverra *toujours* l’erreur 13012 lorsque `forMSGraphAccess` est passé à `getAccessToken` même si le consentement de l’administrateur a été accordé. Pour cette raison, vous devez commenter l' `forMSGraphAccess` option **lorsque vous développez** un complément Outlook. N’oubliez pas de supprimer les marques de commentaire de l’option lorsque vous déployez pour la production. Les fausses 13012 ne se produisent que lorsque vous êtes chargement dans Outlook.

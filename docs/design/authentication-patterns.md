@@ -1,14 +1,14 @@
 ---
 title: Conception de lignes directrices relatives à l’authentification pour les compléments Office
+ms.date: 07/30/2020
 description: Découvrez comment concevoir visuellement une page de connexion ou d’inscription dans un complément Office.
-ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 36465fbf156820cfc8980758cec0ed19c545588d
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: ed80f6b785c582ee3fa0e3f22e6a75b778bcdf3d
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159618"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573167"
 ---
 # <a name="authentication-patterns"></a>Modèles d’authentification
 
@@ -27,8 +27,6 @@ Des compléments peuvent exiger que des utilisateurs se connectent ou s’inscri
 
 ## <a name="authentication-flow"></a>Flux d’authentification
 
-Tant que l’authentification unique n’est pas disponible en aperçu, les compléments de production doivent donner aux utilisateurs la possibilité de se connecter directement à votre service ou à un fournisseur d’identité tel que Microsoft.
-
 1. Mise en place de la première expérience d’exécution : positionnez votre bouton de connexion en tant qu’appel à l’action clair dans l’interface de première exécution de votre complément.
 ![Capture d’écran du volet Office d’un complément dans une application Office](../images/add-in-fre-value-placemat.png)
 
@@ -46,12 +44,13 @@ Tant que l’authentification unique n’est pas disponible en aperçu, les comp
 > [!NOTE] 
 > Lorsque vous utilisez le service d’identité de Microsoft vous avez la possibilité d’utiliser un bouton de connexion personnalisable à l’aide de thèmes lumineux et sombres.En savoir plus.
 
-## <a name="single-sign-on-authentication-flow-preview"></a>Authentification unique (aperçu)
+## <a name="single-sign-on-authentication-flow"></a>Flux d’authentification unique
 
 > [!NOTE]
-> L’API d’authentification unique est actuellement prise en charge en préversion pour Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur la prise en charge de l’authentification unique, voir  [Ensembles de conditions requises de l’API d’identité](../reference/requirement-sets/identity-api-requirement-sets.md). Si vous travaillez avec un add-in Outlook, assurez-vous d'activer l'authentification moderne pour la location de Microsoft 365. Pour plus d’informations sur la manière de procéder, voir  [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> L’API d’authentification unique est actuellement prise en charge pour Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur la prise en charge de l’authentification unique, voir  [Ensembles de conditions requises de l’API d’identité](../reference/requirement-sets/identity-api-requirement-sets.md). Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location d’Office 365. Pour plus d’informations sur la manière de procéder, voir  [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
-Une fois l’authentification unique généralement disponible pour les compléments de production, utilisez-la pour fluidifier l’expérience des utilisateurs finaux. L’identité de l’utilisateur au sein d’Office (un compte Microsoft ou une identité Microsoft 365) est utilisée pour se connecter à votre complément. Par conséquent, les utilisateurs ne se connectent qu’une seule fois. Cela permet d’éliminer les frictions dans l’expérience, en facilitant la prise en main pour vos clients.
+Utilisez l’authentification unique pour une expérience utilisateur plus fluide. L’identité de l’utilisateur au sein d’Office (un compte Microsoft ou une identité Microsoft 365) est utilisée pour se connecter à votre complément. Par conséquent, les utilisateurs se connectent une seule fois. Cela permet d’éliminer les frictions dans l’expérience, en facilitant la prise en main pour vos clients.
+
 
 1. Lorsqu’un complément est installé, un utilisateur voit une fenêtre de consentement semblable à la fenêtre ci-dessous : ![Capture d’écran de la fenêtre de consentement dans une application Office lorsqu’un complément est installé](../images/add-in-auth-SSO-consent-dialog.png)
 > [!NOTE]
@@ -62,4 +61,4 @@ Une fois l’authentification unique généralement disponible pour les complém
 
 ## <a name="see-also"></a>Voir aussi
 
-- En savoir plus sur [développement de compléments d’authentification unique (aperçu)](../develop/sso-in-office-add-ins.md)
+- En savoir plus sur [le développement de compléments d’authentification unique](../develop/sso-in-office-add-ins.md)
