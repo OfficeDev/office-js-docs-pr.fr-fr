@@ -1,17 +1,17 @@
 ---
-title: Utiliser le générateur Yeoman pour créer un complément Office qui utilise l’authentification unique (aperçu)
-description: Utiliser le générateur Yeoman pour créer un complément Office Node.js qui utilise l’authentification unique (aperçu)
-ms.date: 02/20/2020
+title: Utiliser un générateur Yeoman pour créer un complément Office qui utilise SSO
+description: Utiliser le générateur Yeoman pour créer un complément Office Node.js qui utilise la connexion unique.
+ms.date: 07/30/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 7b6c6121a7a0f943a8c86276bad31f06de555b79
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: abc3c0ca7fb5068bf2964e4809970fb2ea86d5bf
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159376"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573230"
 ---
-# <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on-preview"></a>Utiliser le générateur Yeoman pour créer un complément Office qui utilise l’authentification unique (aperçu)
+# <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on"></a>Utiliser le générateur Yeoman pour créer un complément Office qui utilise la connexion unique
 
 Dans cet article, vous allez découvrir le processus d’utilisation du générateur Yeoman pour créer un complément Office pour Excel, Outlook, Word ou PowerPoint qui utilise l’authentification unique (SSO) lorsque c’est possible, et utilise une autre méthode d’authentification utilisateur lorsque l’authentification unique n’est pas prise en charge.
 
@@ -31,8 +31,6 @@ Le générateur Yeoman simplifie le processus de création d’un complément d�
     ```
 
     [!include[note to update Yeoman generator](../includes/note-yeoman-generator-update.md)]
-
-[!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
 * Si vous utilisez un Mac et que l'interface de ligne de commande (CLI) Azure n’est pas installée sur votre ordinateur, vous devez installer [Homebrew](https://brew.sh/). Le script de configuration de l’authentification unique exécuté lors de ce démarrage rapide utilise homebrew pour installer l’interface de ligne de commande Azure, puis utilise la CLI pour configurer l’authentification unique dans Azure.
 

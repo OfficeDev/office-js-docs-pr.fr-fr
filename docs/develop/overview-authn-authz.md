@@ -1,14 +1,14 @@
 ---
 title: Vue d’ensemble de l’authentification et de l’autorisation dans les compléments Office
 description: Demandez aux utilisateurs d’authentifier la connexion dans les applications Web et les Compléments Office.
-ms.date: 07/07/2020
+ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: b30e75fd37ec642f1f5a168b658e3770c15e166d
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: ba3d0aa11f8fa6537f444c063809c89c79ea7b2b
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159555"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573146"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Vue d’ensemble de l’authentification et de l’autorisation dans les compléments Office
 
@@ -18,7 +18,7 @@ Votre add-in peut également obtenir le consentement de l'utilisateur pour accé
 
 Vous avez le choix entre deux méthodes d’authentification.
 
-- **Authentification unique (SSO) d’Office** : système *actuellement en préversion* qui permet à la connexion Office d’un utilisateur de fonctionner également comme connexion au complément. Si vous le souhaitez, le complément peut également utiliser les informations d’identification Office de l’utilisateur pour autoriser le complément à accéder à Microsoft Graph. (Les sources non-Microsoft ne sont pas accessibles par ce biais.)
+- **La connexion unique Office sur (SSO)**: Un système qui permet à la connexion Office d’un utilisateur de fonctionner également comme connexion au complément. Si vous le souhaitez, le complément peut également utiliser les informations d’identification Office de l’utilisateur pour autoriser le complément à accéder à Microsoft Graph. (Les sources non-Microsoft ne sont pas accessibles par ce biais.)
 - **Authentification et autorisation des applications web avec Azure Active Directory** : il ne s’agit pas d’une nouveauté, ni d’un comportement spécial. C’est la manière dont le complément Office (et les autres applications web) authentifiait les utilisateurs et autorisait les applications avant l’arrivée d’un système d’authentification unique pour Office et elle reste utilisée dans les scénarios où l’authentification unique d’Office est impossible.
 
 Le diagramme suivant montre les décisions que vous devez prendre en tant que développeur de compléments. Cet article contient d’autres détails plus avant.

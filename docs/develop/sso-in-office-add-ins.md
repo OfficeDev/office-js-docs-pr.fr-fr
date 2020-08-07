@@ -1,33 +1,23 @@
 ---
 title: Activer l’authentification unique pour des compléments Office
 description: Découvrez comment activer l’authentification unique pour les Compléments Office à l’aide de votre compte courant Microsoft personnel, professionnel ou scolaire.
-ms.date: 07/07/2020
+ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: 6e8c93388f758514e8b6366bef7062f41fc79174
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: fa10d67d007fbcb8713fc607ca32e1c646e7f3e5
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159576"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573223"
 ---
-# <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Activer l’authentification unique pour des compléments Office (aperçu)
+# <a name="enable-single-sign-on-for-office-add-ins"></a>Activer la connexion unique pour des compléments Office
+
 
 Les utilisateurs se connectent à Office (plateformes en ligne, mobiles ou de bureau) à l’aide de leur compte Microsoft personnel ou de leur compte professionnel ou Microsoft 365 Éducation. Vous pouvez en tirer parti et utiliser l’authentification unique (SSO) pour autoriser l’utilisateur à accéder à votre complément sans qu’il doive se connecter une deuxième fois.
 
 ![Image illustrant le processus de connexion pour un complément](../images/sso-for-office-addins.png)
 
-## <a name="preview-status"></a>État de Prévisualisation
-
-L’API de l’authentification unique est actuellement prise en charge uniquement en prévisualisation. Elle est disponible pour les développeurs à des fins d’expérimentation ; mais elle ne doit pas être utilisée dans un complément de production. Par ailleurs, les compléments qui utilisent l’authentification unique SSO ne sont pas acceptés dans [AppSource](https://appsource.microsoft.com).
-
-L’authentification unique (SSO) nécessite un abonnement Microsoft 365. Vous devez utiliser la version et le build mensuels les plus récents du canal du programme Insider. Vous devez participer au programme Office Insider pour obtenir cette version. Pour plus d’informations, reportez-vous à [Participez au programme Office Insider](https://insider.office.com). Veuillez noter que lorsqu’un build passe au canal semi-annuel de production, la prise en charge des fonctionnalités d’aperçu, y compris l’authentification unique, est désactivée pour ce build.
-
-Toutes les applications Office ne prennent pas en charge la prévisualisation de l’authentification unique (SSO). Elle est disponible dans Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur l’endroit où l’API d’authentification unique est actuellement prise en charge, consultez la rubrique [Ensembles de conditions requises de l’API d’identité](../reference/requirement-sets/identity-api-requirement-sets.md).
-
 ## <a name="requirements-and-best-practices"></a>Meilleures Pratiques et Conditions Requises
-
-> [!NOTE]
-> [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 Si vous travaillez avec un complément **Outlook**, assurez-vous d'activer l'authentification moderne pour la location de Microsoft 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
@@ -112,9 +102,9 @@ Voici un exemple simple d’un appel à`getAccessToken`.
 ```js
 async function getGraphData() {
     try {
-        let bootstrapToken = await OfficeRuntime.auth.getAccessToken({ allowSignInPrompt: true, forMSGraphAccess: true });
+        let bootstrapToken = await OfficeRuntime.auth.getAccessToken();
 
-        // The /api/values controller will make the token exchange and use the
+        // The /api/DoSomething controller will make the token exchange and use the
         // access token it gets back to make the call to MS Graph.
         getData("/api/DoSomething", bootstrapToken);
     }
@@ -151,7 +141,7 @@ $.ajax({
 
 #### <a name="when-to-call-the-method"></a>Quand appeler la méthode
 
-Si votre complément ne peut pas être utilisé lorsqu’aucun utilisateur n’est connecté à Office, vous devez alors appeler`getAccessToken` * au lancement du complément* et passer `allowSignInPrompt: true` dans le paramètre `options` de `getAccessToken`.
+Si votre complément ne peut pas être utilisé lorsqu’aucun utilisateur n’est connecté à Office, vous devez alors appeler`getAccessToken` * au lancement du complément* et passer `allowSignInPrompt: true` dans le `options` paramètre de `getAccessToken`. Par exemple: `OfficeRuntime.auth.getAccessToken( { allowSignInPrompt: true });`
 
 Si le complément possède certaines fonctionnalités qui ne nécessitent pas un accès à l’utilisateur, ensuite appelez`getAccessToken`* lorsque l’utilisateur effectue une action qui requiert un utilisateur connecté*. Les appels répétés à `getAccessToken` ne causent aucune dégradation importante des performances, car Office met en cache le jeton d’amorçage et le réutilise jusqu'à ce qu’il arrive à expiration, sans effectuer un autre appel vers l’AAD v. Point de terminaison 2.0 dès que `getAccessToken` est appelé. Ainsi, vous pouvez ajouter des appels de `getAccessToken` à l’ensemble des fonctions et gestionnaires qui lancent une action dans laquelle le jeton est nécessaire.
 
