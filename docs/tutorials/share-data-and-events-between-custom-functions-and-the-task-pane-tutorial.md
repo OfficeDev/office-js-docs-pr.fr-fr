@@ -1,23 +1,23 @@
 ---
-title: 'Didacticiel : partager des données et des événements entre des fonctions personnalisées Excel et le volet Office'
-description: Dans Excel, partagez des données et des événements entre des fonctions personnalisées et le volet Office.
+title: 'Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office'
+description: Découvrez comment partager des données et des événements entre des fonctions personnalisées et le volet Office dans Excel.
 ms.date: 05/17/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: a3eb6d874b0a5a38a5fa8d05d094ed1439a7c433
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
-ms.translationtype: MT
+ms.openlocfilehash: a48d43270787648d8e5a53c885eab4b69cd8842e
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611042"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641150"
 ---
-# <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Didacticiel : partager des données et des événements entre des fonctions personnalisées Excel et le volet Office
+# <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office
 
-Vous pouvez configurer votre complément Excel pour utiliser un runtime partagé. Cela permet de partager des données globales ou d’envoyer des événements entre le volet Office et les fonctions personnalisées.
+Vous pouvez configurer votre complément Excel pour utiliser un runtime partagé. Vous pouvez ainsi partager des données globales ou envoyer des événements entre le volet des tâches et les fonctions personnalisées.
 
-Pour la plupart des scénarios de fonctions personnalisées, nous vous recommandons d’utiliser un runtime partagé, sauf si vous avez une raison particulière d’utiliser une fonction personnalisée de volet non-tâche (sans interface utilisateur).
+Pour la plupart des scénarios de fonctions personnalisées, nous vous recommandons d’utiliser un runtime partagé, sauf si vous avez une raison particulière d’utiliser une fonction personnalisée (sans interface utilisateur).
 
-Ce didacticiel part du principe que vous êtes familiarisé avec l’utilisation du générateur Yo Office pour créer des projets de complément. Envisagez de compléter le [Didacticiel des fonctions personnalisées Excel](./excel-tutorial-create-custom-functions.md), si vous ne l’avez pas encore fait.
+Ce didacticiel part du principe que vous avez l’habitude d’utiliser le générateur d’Office YÔ pour créer des projets de complément. Envisagez d’effectuer le [Didacticiel sur les fonctions Excel personnalisées](./excel-tutorial-create-custom-functions.md), si ce n’est déjà fait.
 
 ## <a name="create-the-add-in-project"></a>Création du projet de complément
 
@@ -212,4 +212,4 @@ Après avoir exécuté l’Assistant, le générateur crée le projet et install
 Une fois Excel démarré, vous pouvez utiliser les boutons du volet Office pour stocker ou obtenir des données partagées. Entrez `=CONTOSO.GETVALUE()` dans une cellule pour que la fonction personnalisée extraie les mêmes données partagées. Vous pouvez également utiliser `=CONTOSO.STOREVALUE("new value")` pour remplacer les données partagées par une nouvelle valeur.
 
 > [!NOTE]
-> La configuration de votre projet comme illustré dans cet article permet de partager le contexte entre des fonctions personnalisées et le volet Office. Il est possible d’appeler des API Office à partir de fonctions personnalisées. Pour plus d’informations, [reportez-vous à la rubrique Call Microsoft Excel API from a Custom Function](../excel/call-excel-apis-from-custom-function.md) .
+> La configuration de votre projet comme illustré dans cet article permet de partager le contexte entre des fonctions personnalisées et le volet Office. L’appel de certaines API Office à partir de fonctions personnalisées est possible. Pour plus d’informations, [consultez Appeler les API Microsoft Excel à partir d’une fonction personnalisée](../excel/call-excel-apis-from-custom-function.md).
