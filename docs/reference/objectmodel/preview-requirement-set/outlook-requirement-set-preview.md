@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: Les fonctionnalités et les API qui sont actuellement en préversion pour les compléments Outlook.
-ms.date: 08/03/2020
+ms.date: 08/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 5ffa7021fd260f41599a771a1b11aef3cafd832e
-ms.sourcegitcommit: a3b743598025466bad19177e0ba9ca94ea66d490
+ms.openlocfilehash: 99f2a47c366508be17b34dbf3e373ac078843056
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "46547527"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641276"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -285,6 +285,26 @@ Ajout de la possibilité d’obtenir un thème Office.
 #### <a name="officeeventtypeofficethemechanged"></a>[Office.EventType.OfficeThemeChanged](/javascript/api/office/office.eventtype)
 
 Ajout de l’événement `OfficeThemeChanged` à `Mailbox`.
+
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365)
+
+<br>
+
+---
+
+---
+
+### <a name="session-data"></a>Données de session
+
+#### <a name="officesessiondata"></a>[Office. SessionData](/javascript/api/outlook/office.sessiondata)
+
+Ajout d’un nouvel objet qui représente les données de session d’un élément.
+
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365)
+
+#### <a name="officecontextmailboxitemsessiondata"></a>[Office. Context. Mailbox. Item. sessionData](office.context.mailbox.item.md#properties)
+
+Ajout d’une nouvelle propriété pour gérer les données de session d’un élément en mode composition.
 
 **Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365)
 

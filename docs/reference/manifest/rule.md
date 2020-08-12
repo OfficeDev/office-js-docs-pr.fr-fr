@@ -3,12 +3,12 @@ title: Élément Rule dans le fichier manifeste
 description: L’élément rule spécifie les règles d’activation qui doivent être évaluées pour ce complément de messagerie contextuel.
 ms.date: 05/14/2020
 localization_priority: Normal
-ms.openlocfilehash: c4094cdf9e9006bbc49d180cb79845527461a543
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 79b97f2e442e9d8ce59d17467161b5b9b7a7252d
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608110"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641430"
 ---
 # <a name="rule-element"></a>Élément Rule
 
@@ -128,5 +128,5 @@ Définit une collection de règles et l’opérateur logique à utiliser lors de
 ## <a name="see-also"></a>Voir aussi
 
 - [Règles d’activation pour les compléments Outlook](../../outlook/activation-rules.md)
-- [Mettre en correspondance des chaînes dans un élément Outlook en tant qu’entités connues](../../outlook/match-strings-in-an-item-as-well-known-entities.md)    
+- [Mettre en correspondance des chaînes dans un élément Outlook en tant qu’entités connues](../../outlook/match-strings-in-an-item-as-well-known-entities.md)
 - [Utiliser des règles d’activation d’expression régulière pour afficher un complément Outlook](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)

@@ -3,12 +3,12 @@ title: Élément Extension dans le fichier manifeste
 description: Définit l’emplacement où se trouvent les fonctionnalités d’un complément dans l’interface utilisateur Office.
 ms.date: 05/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 44824e0c74b35105833f1f05cdda87bc873a4427
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 7b602f81927da34a948b1762d7b91608963d2e25
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094455"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641388"
 ---
 # <a name="extensionpoint-element"></a>Élément ExtensionPoint
 
@@ -71,7 +71,7 @@ Les exemples suivants montrent comment utiliser l’élément **ExtensionPoint**
 
 #### <a name="child-elements"></a>Éléments enfants
  
-|**Élément**|**Description**|
+|Élément|Description|
 |:-----|:-----|
 |**CustomTab**|Obligatoire si vous souhaitez ajouter un onglet personnalisé au ruban (à l’aide de **PrimaryCommandSurface**). Si vous utilisez l’élément **CustomTab**, vous ne pouvez pas utiliser l’élément **OfficeTab**. L’attribut **id** est obligatoire. |
 |**OfficeTab**|Obligatoire si vous voulez étendre un onglet de ruban d’application Office par défaut (à l’aide de **PrimaryCommandSurface**). Si vous utilisez l’élément **OfficeTab**, vous ne pouvez pas utiliser l’élément **CustomTab**. Pour plus d’informations, voir [OfficeTab](officetab.md).|

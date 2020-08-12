@@ -3,12 +3,12 @@ title: Limites pour l’activation et l’utilisation des API dans des compléme
 description: Tenez compte de certaines instructions relatives à l’activation et l’utilisation des API et implémentez vos compléments pour respecter ces limites.
 ms.date: 05/08/2020
 localization_priority: Normal
-ms.openlocfilehash: 90260e4edd2059e98bc8618c6dcb6308424f43c9
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7659b5292187f10b3176460c162405c7af249977
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609068"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641395"
 ---
 # <a name="limits-for-activation-and-javascript-api-for-outlook-add-ins"></a>Limites pour l’activation et l’API JavaScript pour les compléments Outlook
 
@@ -40,7 +40,7 @@ Le tableau 1 répertorie les limites et décrit les différences de prise en cha
 
 **Tableau 1. Différences générales dans la prise en charge des expressions régulières**
 
-|Client riche Outlook|Outlook sur le web ou sur appareils mobiles|
+|Client riche Outlook|Outlook sur le web ou sur appareils mobiles|
 |:-----|:-----|
 |Utilise le moteur d’expression régulière C++ fourni dans le cadre de la bibliothèque de modèles standard Visual Studio. Ce moteur est conforme aux normes ECMAScript 5. |Utilise l’évaluation d’expression régulière incluse dans JavaScript ; celle-ci est fournie par le navigateur et prend en charge un sur-ensemble d’ECMAScript 5.|
 |En raison des différents moteurs Regex, attendez-vous à ce qu’une expression régulière comprenant une classe de caractères personnalisée basée sur des classes de caractères prédéfinies puisse renvoyer des résultats différents dans un client riche Outlook par rapport à Outlook sur le Web ou aux appareils mobiles.<br/><br/>Par exemple, l’expression régulière `[\s\S]{0,100}` correspond à tout nombre, compris entre 0 et 100, de caractères uniques correspondant à un espace blanc ou à un espace non blanc. Cette expression régulière renvoie des résultats différents dans un client riche Outlook par rapport à Outlook sur le Web et les appareils mobiles.<br/><br/>Comme solution de contournement, vous devez réécrire l’expression régulière de la manière suivante : `(\s\|\S){0,100}`. Cette expression régulière correspond à un nombre, compris entre 0 et 100, d’espace blanc ou d’espace non blanc.<br/><br/>Vous devez tester minutieusement chaque expression régulière sur chaque hôte Outlook et, si une expression régulière renvoie des résultats différents, la réécrire. |Vous devez tester minutieusement chaque expression régulière sur chaque hôte Outlook et, si une expression régulière renvoie des résultats différents, la réécrire.|
@@ -50,11 +50,11 @@ Le tableau 2 répertorie les limites et décrit les différences dans la partie 
 
 **Tableau 2. Limites de la taille du corps d’élément évalué**
 
-||Client riche Outlook|Outlook sur les appareils mobiles|Outlook sur le web|
+||Client riche Outlook|Outlook sur les appareils mobiles|Outlook sur le web|
 |:-----|:-----|:-----|:-----|
-|Facteur de forme|Tout appareil pris en charge|Smartphones Android, iPad ou iPhone|Tout appareil pris en charge autre que les smartphones Android, l’iPad et l’iPhone|
-|Corps d’élément en texte brut|Applique le regex sur le premier mégaoctet des données du corps, mais pas sur le reste du corps au-delà de cette limite.|Active le complément uniquement si le corps < 16 000 caractères.|Active le complément uniquement si le corps < 500 000 caractères.|
-|Corps d’élément HTML|Applique le regex sur les premiers 512 Ko des données du corps, mais pas sur le reste du corps au-delà de cette limite. (Le nombre réel de caractères dépend de l’encodage qui peut varier de 1 à 4 octets par caractère.)|Applique l’expression régulière sur les 64 000 premiers caractères (y compris les caractères de balises HTML), mais pas sur le reste du corps au-delà de cette limite.|Active le complément uniquement si le corps < 500 000 caractères.|
+|**Facteur de forme**|Tout appareil pris en charge|Smartphones Android, iPad ou iPhone|Tout appareil pris en charge autre que les smartphones Android, l’iPad et l’iPhone|
+|**Corps d’élément en texte brut**|Applique le regex sur le premier mégaoctet des données du corps, mais pas sur le reste du corps au-delà de cette limite.|Active le complément uniquement si le corps < 16 000 caractères.|Active le complément uniquement si le corps < 500 000 caractères.|
+|**Corps d’élément HTML**|Applique le regex sur les premiers 512 Ko des données du corps, mais pas sur le reste du corps au-delà de cette limite. (Le nombre réel de caractères dépend de l’encodage qui peut varier de 1 à 4 octets par caractère.)|Applique l’expression régulière sur les 64 000 premiers caractères (y compris les caractères de balises HTML), mais pas sur le reste du corps au-delà de cette limite.|Active le complément uniquement si le corps < 500 000 caractères.|
 
 Le tableau 3 répertorie les limites et décrit les différences dans les correspondances que chacun des hôtes Outlook renvoie après avoir évalué une expression régulière. La prise en charge est indépendante du type spécifique d’appareil, mais peut dépendre du type de corps d’élément, si l’expression régulière est appliquée sur le corps d’élément.
 
@@ -62,9 +62,9 @@ Le tableau 3 répertorie les limites et décrit les différences dans les corres
 
 ||Client riche Outlook|Outlook sur le web ou sur appareils mobiles|
 |:-----|:-----|:-----|
-|Ordre des correspondances renvoyées|Supposons que `getRegExMatches` les correspondances renvoyées pour la même expression régulière appliquée au même élément diffèrent d’un client riche Outlook par rapport à Outlook sur le Web ou aux appareils mobiles.|Supposez que `getRegExMatches` renvoie des correspondances dans un ordre différent dans un client riche Outlook par rapport à Outlook sur le Web ou aux appareils mobiles.|
-|Corps d’élément en texte brut|`getRegExMatches`renvoie toutes les correspondances jusqu’à 1 536 (1,5 Ko) de caractères, pour un nombre maximal de 50 correspondances.<br/><br/>**Remarque**: `getRegExMatches` ne renvoie pas les correspondances dans un ordre spécifique dans le tableau renvoyé. En règle générale, supposons que l’ordre des correspondances dans un client riche Outlook pour la même expression régulière appliquée au même élément est différent de celui d’Outlook sur le Web et les appareils mobiles.|`getRegExMatches`renvoie toute correspondance de 3 072 (3 Ko) caractères au maximum, pour un nombre maximal de 50 correspondances.|
-|Corps d’élément HTML|`getRegExMatches`renvoie toute correspondance de 3 072 (3 Ko) caractères au maximum, pour un nombre maximal de 50 correspondances.<br/> <br/> **Remarque**: `getRegExMatches` ne renvoie pas les correspondances dans un ordre spécifique dans le tableau renvoyé. En règle générale, supposons que l’ordre des correspondances dans un client riche Outlook pour la même expression régulière appliquée au même élément est différent de celui d’Outlook sur le Web et les appareils mobiles.|`getRegExMatches`renvoie toute correspondance de 3 072 (3 Ko) caractères au maximum, pour un nombre maximal de 50 correspondances.|
+|**Ordre des correspondances renvoyées**|Supposons que `getRegExMatches` les correspondances renvoyées pour la même expression régulière appliquée au même élément diffèrent d’un client riche Outlook par rapport à Outlook sur le Web ou aux appareils mobiles.|Supposez que `getRegExMatches` renvoie des correspondances dans un ordre différent dans un client riche Outlook par rapport à Outlook sur le Web ou aux appareils mobiles.|
+|**Corps d’élément en texte brut**|`getRegExMatches`renvoie toutes les correspondances jusqu’à 1 536 (1,5 Ko) de caractères, pour un nombre maximal de 50 correspondances.<br/><br/>**Remarque**: `getRegExMatches` ne renvoie pas les correspondances dans un ordre spécifique dans le tableau renvoyé. En règle générale, supposons que l’ordre des correspondances dans un client riche Outlook pour la même expression régulière appliquée au même élément est différent de celui d’Outlook sur le Web et les appareils mobiles.|`getRegExMatches`renvoie toute correspondance de 3 072 (3 Ko) caractères au maximum, pour un nombre maximal de 50 correspondances.|
+|**Corps d’élément HTML**|`getRegExMatches`renvoie toute correspondance de 3 072 (3 Ko) caractères au maximum, pour un nombre maximal de 50 correspondances.<br/> <br/> **Remarque**: `getRegExMatches` ne renvoie pas les correspondances dans un ordre spécifique dans le tableau renvoyé. En règle générale, supposons que l’ordre des correspondances dans un client riche Outlook pour la même expression régulière appliquée au même élément est différent de celui d’Outlook sur le Web et les appareils mobiles.|`getRegExMatches`renvoie toute correspondance de 3 072 (3 Ko) caractères au maximum, pour un nombre maximal de 50 correspondances.|
 
 ## <a name="limits-for-javascript-api"></a>Limites pour l’API JavaScript
 

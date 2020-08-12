@@ -3,12 +3,12 @@ title: Élément HighResolutionIconUrl dans le fichier manifeste
 description: Spécifie l’URL de l’image qui est utilisée pour représenter votre complément Office dans l’UX d’insertion UX et l’Office Store sur les écrans à haute résolution (DPI).
 ms.date: 12/04/2018
 localization_priority: Normal
-ms.openlocfilehash: 1ebe69a7576c82ec121094ed84c0d49acde1098a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 77675e768895a568bdfee97fc4d5006e1e890937
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611819"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641353"
 ---
 # <a name="highresolutioniconurl-element"></a>HighResolutionIconUrl, élément
 
@@ -28,7 +28,7 @@ Spécifie l’URL de l’image qui est utilisée pour représenter votre complé
 
 ## <a name="attributes"></a>Attributs
 
-|**Attribut**|**Type**|**Obligatoire**|**Description**|
+|Attribut|Type|Requis|Description|
 |:-----|:-----|:-----|:-----|
 |DefaultValue|chaîne (URL)|obligatoire|Spécifie la valeur par défaut de ce paramètre, exprimée pour les paramètres régionaux spécifiés dans l’élément [DefaultLocale](defaultlocale.md).|
 

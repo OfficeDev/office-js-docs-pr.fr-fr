@@ -3,12 +3,12 @@ title: Élément IconUrl dans le fichier manifeste
 description: L’élément IconUrl spécifie l’URL de l’image qui représente votre complément Office dans l’expérience utilisateur d’insertion et dans l’Office Store.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 2ccfc2fc1d0a07f6d549f388bbb58e40e79a17d5
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b2c117f69259911bf4643eaddbbbcdf5fb502197
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611791"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641360"
 ---
 # <a name="iconurl-element"></a>IconUrl, élément
 
@@ -28,7 +28,7 @@ Spécifie l’URL de l’image utilisée pour représenter votre complément Off
 
 ## <a name="attributes"></a>Attributs
 
-|**Attribut**|**Type**|**Obligatoire**|**Description**|
+|Attribut|Type|Requis|Description|
 |:-----|:-----|:-----|:-----|
 |DefaultValue|chaîne|obligatoire|Spécifie la valeur par défaut de ce paramètre, exprimée pour les paramètres régionaux spécifiés dans l’élément [DefaultLocale](defaultlocale.md).|
 

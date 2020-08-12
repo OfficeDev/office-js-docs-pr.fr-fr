@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez créer un complément Outlook qui i
 ms.date: 07/07/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 22b06d0c455cfcf0a4331976a4e23e0eeb123415
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: e14cb90c79b873cfc3ebd948563941f1f9738855
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093503"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641507"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Didacticiel : créer un complément de composition de message Outlook
 
@@ -162,7 +162,7 @@ Avant d’aller plus loin, nous allons tester le complément base créé par le 
 1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution).
 
     ```command&nbsp;line
-    npm run dev-server
+    npm start
     ```
 
 1. Suivez les instructions disponibles dans [Chargement indépendant de compléments Outlook à des fins de test](../outlook/sideload-outlook-add-ins-for-testing.md) pour charger le fichier **manifest.xml** situé dans le répertoire racine du projet.

@@ -1,17 +1,17 @@
 ---
-title: Implémenter la fonction Append lors de l’envoi dans votre complément Outlook (aperçu)
+title: Implémenter Append-on-Send dans votre complément Outlook (aperçu)
 description: Découvrez comment implémenter la fonctionnalité Ajout d’envoi dans votre complément Outlook.
 ms.topic: article
-ms.date: 05/26/2020
+ms.date: 08/07/2020
 localization_priority: Normal
-ms.openlocfilehash: b9c834778d68e50806da908732cd0c8663ec6680
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 2b97d65a0f1056257b9cf79eb23fabca10be3a78
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093986"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641500"
 ---
-# <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a>Implémenter la fonction Append lors de l’envoi dans votre complément Outlook (aperçu)
+# <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a>Implémenter Append-on-Send dans votre complément Outlook (aperçu)
 
 À la fin de cette procédure pas à pas, vous disposez d’un complément Outlook qui peut insérer une clause d’exclusion de responsabilité lors de l’envoi d’un message.
 
@@ -137,6 +137,9 @@ Pour ce scénario, au lieu d’exécuter la `action` fonction en cliquant sur le
 ## <a name="implement-append-on-send-handling"></a>Implémenter la gestion des ajouts à l’envoi
 
 Ensuite, implémentez l’ajout sur l’événement Send.
+
+> [!IMPORTANT]
+> Si votre complément implémente également la [gestion des événements d’envoi à l' `ItemSend` aide ](outlook-on-send-addins.md)de, l’appel `AppendOnSendAsync` dans le gestionnaire d’envoi renvoie une erreur dans la mesure où ce scénario n’est pas pris en charge.
 
 Pour ce scénario, vous allez implémenter l’ajout d’une clause d’exclusion de responsabilité à l’élément lorsque l’utilisateur envoie.
 

@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Item-Preview ensemble de conditions requises
 description: Version de l’ensemble de conditions requises de l’API de boîte aux lettres Outlook du modèle objet d’élément.
-ms.date: 06/17/2020
+ms.date: 08/07/2020
 localization_priority: Normal
-ms.openlocfilehash: c9a384bcbac05b5a6f30b73fadcc5db19642ccb6
-ms.sourcegitcommit: 9eed5201a3ef556f77ba3b6790f007358188d57d
+ms.openlocfilehash: d51da48084291f92e463c35f87712de4cd387f4c
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "44778682"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641283"
 ---
 # <a name="item-mailbox-preview-requirement-set"></a>élément (ensemble de conditions requises pour la boîte aux lettres)
 
@@ -31,7 +31,7 @@ ms.locfileid: "44778682"
 | pièces jointes | ReadItem | [Participant à un rendez-vous](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#attachments) | Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [Message lu](/javascript/api/outlook/office.messageread?view=outlook-js-preview#attachments) | Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | bcc | ReadItem | [Composer un message](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#bcc) | [Destinataires](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| body | ReadItem | [Organisateur de rendez-vous](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#body) | [Corps](/javascript/api/outlook/office.body) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| corps | ReadItem | [Organisateur de rendez-vous](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#body) | [Corps](/javascript/api/outlook/office.body) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [Participant à un rendez-vous](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#body) | [Corps](/javascript/api/outlook/office.body) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [Composer un message](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#body) | [Corps](/javascript/api/outlook/office.body) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [Message lu](/javascript/api/outlook/office.messageread?view=outlook-js-preview#body) | [Corps](/javascript/api/outlook/office.body) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
@@ -57,7 +57,7 @@ ms.locfileid: "44778682"
 | internetHeaders | ReadItem | [Composer un message](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#internetheaders) | [InternetHeaders](/javascript/api/outlook/office.internetheaders) | [1,8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
 | internetMessageId | ReadItem | [Message lu](/javascript/api/outlook/office.messageread?view=outlook-js-preview#internetmessageid) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | isAllDayEvent | ReadItem | [Organisateur de rendez-vous](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#isalldayevent) | [IsAllDayEvent](/javascript/api/outlook/office.isalldayevent) | [Aperçu](outlook-requirement-set-preview.md) |
-| | | [Participant à un rendez-vous](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#isalldayevent) | Booléen | [Aperçu](outlook-requirement-set-preview.md) |
+| | | [Participant à un rendez-vous](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#isalldayevent) | Valeur booléenne | [Aperçu](outlook-requirement-set-preview.md) |
 | itemClass | ReadItem | [Participant à un rendez-vous](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#itemclass) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [Message lu](/javascript/api/outlook/office.messageread?view=outlook-js-preview#itemclass) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | itemId | ReadItem | [Participant à un rendez-vous](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#itemid) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
@@ -91,6 +91,8 @@ ms.locfileid: "44778682"
 | | | [Participant à un rendez-vous](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#seriesid) | String | [1,7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
 | | | [Composer un message](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#seriesid) | String | [1,7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
 | | | [Message lu](/javascript/api/outlook/office.messageread?view=outlook-js-preview#seriesid) | String | [1,7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| sessionData | ReadItem | [Organisateur de rendez-vous](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#sessiondata) | [SessionData](/javascript/api/outlook/office.sessiondata) | [Aperçu](outlook-requirement-set-preview.md) |
+| | | [Composer un message](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#sessiondata) | [SessionData](/javascript/api/outlook/office.sessiondata) | [Aperçu](outlook-requirement-set-preview.md) |
 | start | ReadItem | [Organisateur de rendez-vous](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#start) | [Time](/javascript/api/outlook/office.time) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [Participant à un rendez-vous](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview#start) | Date | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [Message lu](/javascript/api/outlook/office.messageread?view=outlook-js-preview#start)<br>(Demande de réunion) | Date | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
@@ -178,7 +180,7 @@ ms.locfileid: "44778682"
 | setSelectedDataAsync(data, [options], callback) | ReadWriteItem | [Organisateur de rendez-vous](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview#setselecteddataasync-data--options--callback-) | [1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md) |
 | | | [Composer un message](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#setselecteddataasync-data--options--callback-) | [1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md) |
 
-## <a name="events"></a>Évènements
+## <a name="events"></a>Events
 
 Vous pouvez vous abonner aux événements suivants et les annuler, à l’aide de `addHandlerAsync` et `removeHandlerAsync` respectivement.
 

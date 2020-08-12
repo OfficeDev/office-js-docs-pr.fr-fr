@@ -3,12 +3,12 @@ title: Élément OfficeMenu dans le fichier manifeste
 description: L’élément OfficeMenu définit une collection de contrôles à ajouter au menu contextuel Office.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: f5aac4e3454e1aa18021c10bfb2f06df90805980
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: d181e0c6f489997a149b9713bdc257f4a2baeb16
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611518"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641441"
 ---
 # <a name="officemenu-element"></a>Élément OfficeMenu
 
@@ -31,7 +31,7 @@ Définit un ensemble d’options à ajouter au menu contextuel Office. S’appli
 Indique un menu prédéfini de l’application cliente Office sur laquelle ajouter ce complément Office.
 
 - `ContextMenuText` -  Affiche l’élément dans le menu contextuel lorsque du texte est sélectionné et que l’utilisateur ouvre le menu contextuel (clique dessus avec le bouton droit de la souris) du texte sélectionné. S’applique à Word, Excel, PowerPoint et OneNote.
-- `ContextMenuCell` -  Affiche l’élément dans le menu contextuel lorsque l’utilisateur ouvre le menu contextuel (clique avec le bouton droit de la souris) dans une cellule de la feuille de calcul. S’applique à Excel. 
+- `ContextMenuCell` -  Affiche l’élément dans le menu contextuel lorsque l’utilisateur ouvre le menu contextuel (clique avec le bouton droit de la souris) dans une cellule de la feuille de calcul. S’applique à Excel.
 
 ## <a name="control"></a>Contrôle
 
@@ -46,12 +46,12 @@ Chaque élément **OfficeMenu** requiert une ou plusieurs options de [menu](cont
       <Supertip>
           <Title resid="residLabel" />
           <Description resid="residToolTip" />
-      </Supertip>   
+      </Supertip>
       <Icon>
         <bt:Image size="16" resid="icon1_16x16" />
         <bt:Image size="32" resid="icon1_32x32" />
         <bt:Image size="80" resid="icon1_80x80" />
-      </Icon>    
+      </Icon>
       <Items>
         <Item id="myMenuItemID">
           <Label resid="residLabel3"/>
@@ -63,12 +63,12 @@ Chaque élément **OfficeMenu** requiert une ou plusieurs options de [menu](cont
             <bt:Image size="16" resid="icon1_16x16" />
             <bt:Image size="32" resid="icon1_32x32" />
             <bt:Image size="80" resid="icon1_80x80" />
-          </Icon>    
+          </Icon>
           <Action xsi:type="ShowTaskpane">
-            <SourceLocation resid="residTaskpaneUrl2" />    
-          </Action>    
+            <SourceLocation resid="residTaskpaneUrl2" />
+          </Action>
         </Item>
       </Items>
-    </Control>   
+    </Control>
 </OfficeMenu>
 ```

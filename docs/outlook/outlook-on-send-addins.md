@@ -1,14 +1,14 @@
 ---
 title: Fonctionnalité d’envoi des compléments Outlook
 description: Permet de traiter un élément ou d’empêcher les utilisateurs d’effectuer certaines actions. Permet aussi aux compléments de définir certaines propriétés pendant l’envoi.
-ms.date: 07/06/2020
+ms.date: 08/07/2020
 localization_priority: Normal
-ms.openlocfilehash: b30c3b155a118c8142256e31b3cb34cd842cf543
-ms.sourcegitcommit: 4f2f1c0a8ee777a43bb28efa226684261f4c4b9f
+ms.openlocfilehash: a33f7c2f51e3c6d008dfc2683a43dfce46accda4
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "45081402"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641493"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Fonctionnalité d’envoi des compléments Outlook
 
@@ -68,6 +68,7 @@ La capture d’écran suivante montre une barre d’informations informant l’e
 
 Les limites de la fonctionnalité d’envoi sont les suivantes.
 
+- Fonction **Append-on-Send** (aperçu) &ndash; si vous appelez [Body. AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-) dans le gestionnaire d’envoi, une erreur est renvoyée.
 - **AppSource** &ndash; Vous ne pouvez pas publier de compléments Outlook qui utilisent la fonctionnalité d’envoi sur [AppSource](https://appsource.microsoft.com). car ils ne seront pas validés par AppSource. Les compléments qui utilisent la fonctionnalité d’envoi doivent être déployés par les administrateurs.
 - **Manifeste** &ndash; Le complément prend en charge un seul événement `ItemSend`. Si votre manifeste comprend plusieurs événements `ItemSend`, il ne sera pas validé.
 - **Performances**&ndash; : plusieurs allers-retours vers le serveur web hébergeant le complément peuvent nuire aux performances du complément. Imaginez alors ce qu’occasionnerait la création de compléments nécessitant plusieurs opérations de messagerie ou réunions.
@@ -351,9 +352,9 @@ Les compléments s’exécutent pendant l’événement d’envoi pour autoriser
 
 |Scénario|Fonctionnalité d’envoi (Boîte aux lettres 1)|Fonctionnalité d’envoi (Boîte aux lettres 2)|Session web Outlook (classique)|Résultat|Pris en charge ?|
 |:------------|:------------|:--------------------------|:---------|:-------------|:-------------|
-|1 |Activé|Activé|Nouvelle session|La boîte aux lettres 1 ne peut pas envoyer un message ou un élément de réunion provenant de la boîte aux lettres 2.|N’est pas pris en charge actuellement. Pour y remédier, utilisez le scénario 3.|
-|2 |Désactivé|Activé|Nouvelle session|La boîte aux lettres 1 ne peut pas envoyer un message ou un élément de réunion provenant de la boîte aux lettres 2.|N’est pas pris en charge actuellement. Pour y remédier, utilisez le scénario 3.|
-|3 |Activé|Activé|Même session|Les compléments d’envoi attribués à la boîte aux lettres 1 exécutent la fonctionnalité d’envoi.|Pris en charge.|
+|0,1|Activé|Activé|Nouvelle session|La boîte aux lettres 1 ne peut pas envoyer un message ou un élément de réunion provenant de la boîte aux lettres 2.|N’est pas pris en charge actuellement. Pour y remédier, utilisez le scénario 3.|
+|n°2|Désactivé|Activé|Nouvelle session|La boîte aux lettres 1 ne peut pas envoyer un message ou un élément de réunion provenant de la boîte aux lettres 2.|N’est pas pris en charge actuellement. Pour y remédier, utilisez le scénario 3.|
+|3|Activé|Activé|Même session|Les compléments d’envoi attribués à la boîte aux lettres 1 exécutent la fonctionnalité d’envoi.|Pris en charge.|
 |4 |Activé|Désactivé|Nouvelle session|Aucun complément d’envoi ne s’exécute ; un message ou un élément de réunion est envoyé.|Pris en charge.|
 
 #### <a name="web-browser-modern-outlook-windows-mac"></a>Navigateur web (Outlook moderne), Windows, Mac
@@ -366,8 +367,8 @@ Pour appliquer l’envoi, les administrateurs doivent s’assurer que la straté
 
 |Scénario|Stratégie d’envoi de la boîte aux lettres 1|Compléments d’envoi activés ?|Action de la boîte aux lettres 1|Résultat|Pris en charge ?|
 |:------------|:-------------------------|:-------------------|:---------|:----------|:-------------|
-|1 |Activé|Oui|La Boîte aux lettres 1 compose un nouveau message ou réunion pour le Groupe 1.|Les compléments d’envoi s’exécutent pendant l’envoi.|Oui|
-|2 |Activé|Oui|La boîte aux lettres 1 compose un nouveau message ou réunion pour le Groupe 1, dans la fenêtre du Groupe 1 dans Outlook sur le web.|Les compléments d’envoi ne s’exécutent pas pendant l’envoi.|N’est pas pris en charge actuellement. Pour y remédier, utilisez le scénario 1.|
+|0,1|Activé|Oui|La Boîte aux lettres 1 compose un nouveau message ou réunion pour le Groupe 1.|Les compléments d’envoi s’exécutent pendant l’envoi.|Oui|
+|n°2|Activé|Oui|La boîte aux lettres 1 compose un nouveau message ou réunion pour le Groupe 1, dans la fenêtre du Groupe 1 dans Outlook sur le web.|Les compléments d’envoi ne s’exécutent pas pendant l’envoi.|N’est pas pris en charge actuellement. Pour y remédier, utilisez le scénario 1.|
 
 ### <a name="user-mailbox-with-on-send-add-in-featurepolicy-enabled-add-ins-that-support-on-send-are-installed-and-enabled-and-offline-mode-is-enabled"></a>La fonctionnalité/stratégie d’envoi est activée sur la boîte aux lettres de l’utilisateur, les compléments qui prennent en charge cette fonctionnalité sont installés et activés et le mode hors connexion est activé
 
@@ -447,7 +448,7 @@ L’API d’envoi nécessite `VersionOverrides v1_1`. L’exemple vous montre co
 
 ```xml
  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
-     <!-- On Send requires VersionOverridesV1_1 -->
+     <!-- On-send requires VersionOverridesV1_1 -->
      <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
          ...
      </VersionOverrides>

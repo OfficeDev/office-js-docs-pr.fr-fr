@@ -3,12 +3,12 @@ title: Configuration requise pour exécuter des compléments Office
 description: Découvrez la configuration requise du client et du serveur pour qu’un utilisateur final doive exécuter des compléments Office.
 ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: fa01decddcc7cc59945ad92912fabab90cc505f7
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 49e1799961a0367d9eaf00415375c98a42534ba9
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093482"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641227"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Configuration requise pour exécuter des compléments Office
 
@@ -29,7 +29,7 @@ Pour tous les types de complément (compléments de contenu, Outlook et volet Of
 > [!TIP]
 > lorsque vous développez et déboguez un complément dans Visual Studio, Visual Studio déploie et exécute les fichiers de page web de votre complément localement avec IIS Express et ne nécessite aucun serveur web supplémentaires.
 
-Pour les compléments du volet Office et de contenu, dans les applications hôtes Office prises en charge (Excel, PowerPoint, Project ou Word), vous avez également besoin d’un [catalogue d’applications](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) sur SharePoint pour télécharger les fichiers manifeste XML des compléments.
+Pour les compléments de contenu et du volet Office, dans les applications hôtes Office prises en charge-Excel, PowerPoint, Project ou Word, vous avez également besoin d’un [catalogue d’applications](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) sur SharePoint pour télécharger le fichier manifeste XML du complément, ou vous devez déployer le complément à l’aide du [déploiement centralisé](../publish/centralized-deployment.md).
 
 Pour tester et exécuter un complément Outlook, le compte de messagerie Outlook de l’utilisateur doit résider sur Exchange 2013 ou une version ultérieure, disponible via Microsoft 365, Exchange Online ou via une installation locale. L’utilisateur ou l’administrateur installe les fichiers manifeste pour les compléments Outlook sur ce serveur.
 
