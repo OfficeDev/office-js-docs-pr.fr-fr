@@ -1,15 +1,15 @@
 ---
 title: 'Didacticiel : créer un complément de composition de message Outlook'
 description: Dans ce didacticiel, vous allez créer un complément Outlook qui insère des informations GitHub dans le corps d'un nouveau message.
-ms.date: 07/07/2020
+ms.date: 08/11/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: e14cb90c79b873cfc3ebd948563941f1f9738855
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: 3742e492c5d59b706508d2f9d9c2f3bdfc147bb8
+ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641507"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "46672735"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Didacticiel : créer un complément de composition de message Outlook
 
@@ -599,7 +599,7 @@ Enfin, ouvrez le fichier **webpack.config.js** situé dans le répertoire racine
 5. Entrez la commande suivante pour démarrer le serveur web.
 
     ```command&nbsp;line
-    npm run dev-server
+    npm start
     ```
 
 ### <a name="fetch-data-from-github"></a>Récupérer des données à partir de GitHub
@@ -900,7 +900,7 @@ function buildBodyContent(gist, callback) {
 
 ### <a name="test-the-button"></a>Tester le bouton
 
-Enregistrez toutes vos modifications et exécutez `npm run dev-server` depuis l’invite de commandes, si le serveur n’est pas déjà en cours d’exécution. Puis procédez comme suit pour tester le bouton **Insérer gist par défaut** bouton.
+Enregistrez toutes vos modifications et exécutez `npm start` depuis l’invite de commandes, si le serveur n’est pas déjà en cours d’exécution. Puis procédez comme suit pour tester le bouton **Insérer gist par défaut** bouton.
 
 1. Ouvrez Outlook et rédigez un nouveau message.
 
@@ -1261,7 +1261,7 @@ Dans le projet que vous avez créé, le code JavaScript du volet de tâches est 
 
 ### <a name="test-the-button"></a>Tester le bouton
 
-Enregistrez toutes vos modifications et exécutez `npm run dev-server` depuis l’invite de commandes, si le serveur n’est pas déjà en cours d’exécution. Puis procédez comme suit pour tester le bouton **Insérer gist**.
+Enregistrez toutes vos modifications et exécutez `npm start` depuis l’invite de commandes, si le serveur n’est pas déjà en cours d’exécution. Puis procédez comme suit pour tester le bouton **Insérer gist**.
 
 1. Ouvrez Outlook et rédigez un nouveau message.
 

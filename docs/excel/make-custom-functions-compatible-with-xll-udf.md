@@ -1,14 +1,14 @@
 ---
 title: Étendre des fonctions personnalisées avec des fonctions XLL définies par l’utilisateur
 description: Activer la compatibilité avec les fonctions Excel XLL définies par l’utilisateur qui offrent une fonctionnalité équivalente à vos fonctions personnalisées
-ms.date: 04/29/2020
+ms.date: 08/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 036421700c0415e5f0599b5917cdebb298c2c4fa
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: 3a4793053950fccca74de4b9ebf8998a7d635d67
+ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641234"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "46672686"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>Étendre des fonctions personnalisées avec des fonctions XLL définies par l’utilisateur
 
@@ -43,7 +43,7 @@ L’exemple suivant montre comment spécifier un complément COM et un XLL comme
       <FileName>contosofunctions.xll</FileName>
       <Type>XLL</Type>
     </EquivalentAddin>
-  <EquivalentAddins>
+  </EquivalentAddins>
 </VersionOverrides>
 ```
 
@@ -66,7 +66,7 @@ Le tableau suivant compare les fonctionnalités des fonctions définies par l’
 | **Fonctions volatiles** | Oui | Oui | Oui |
 | **Prise en charge du recalcul multi-thread** | Oui | Oui | Oui |
 | **Comportement du calcul** | Aucune interface utilisateur. Excel peut ne pas répondre pendant le calcul. | Les utilisateurs verront #BUSY ! jusqu’à ce qu’un résultat soit renvoyé. | Les utilisateurs verront #BUSY ! jusqu’à ce qu’un résultat soit renvoyé. |
-| **Ensembles de conditions requises** | S/O | CustomFunctions 1,1 et versions ultérieures | CustomFunctions 1,1 et versions ultérieures |
+| **Ensembles de conditions requises** | N/A | CustomFunctions 1,1 et versions ultérieures | CustomFunctions 1,1 et versions ultérieures |
 
 ## <a name="see-also"></a>Voir aussi
 

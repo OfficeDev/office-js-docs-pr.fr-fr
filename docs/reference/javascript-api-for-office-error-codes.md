@@ -1,18 +1,18 @@
 ---
 title: Codes d’erreur de l’API JavaScript pour Office
 description: Cet article décrit les messages d’erreur que vous pouvez rencontrer lors de l’utilisation de l’API JavaScript pour Office.
-ms.date: 03/10/2020
+ms.date: 08/11/2020
 localization_priority: Normal
-ms.openlocfilehash: 2c2df8be76fe9515f0cc23955a199f92e64110a8
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 54f92ac7919cce0f2d8728e9c20677b3cf8cf262
+ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608809"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "46672700"
 ---
 # <a name="office-javascript-api-error-codes"></a>Codes d’erreur de l’API JavaScript pour Office
 
-Cet article décrit les messages d’erreur que vous pouvez rencontrer lors de l’utilisation de l’API JavaScript pour Office (Office. js).
+Cet article décrit les messages d’erreur que vous pouvez rencontrer lors de l’utilisation de l’API JavaScript pour Office (Office.js).
 
 **S’applique à :** Compléments Office | Compléments SharePoint | Excel | Outlook | PowerPoint | Project | Word
 
@@ -30,7 +30,7 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 |1005|Une erreur s’est produite lors de la lecture des données|Les valeurs startRow ou startColumn spécifiées sont incorrectes.|L’utilisateur fournit des valeurs startRow ou startCol incorrectes.|
 |1006|Une erreur s’est produite lors de la lecture des données|Les paramètres de coordonnées ne peuvent pas être utilisés avec le type de forçage de type « Tableau » lorsque le tableau contient des cellules fusionnées.|L’utilisateur essaie d’obtenir des données partielles à partir d’un tableau non uniforme (c’est-à-dire un tableau qui contient des cellules fusionnées.) |
 |1007|Une erreur s’est produite lors de la lecture des données|La taille du document est trop importante.|L’utilisateur tente d’obtenir un document plus grand que la taille actuellement prise en charge.|
-|1008|Une erreur s’est produite lors de la lecture des données|La taille du jeu de données demandé est trop importante.|L’utilisateur demande à lire des données au-delà des limites de données définies par les compléments hôte.|
+|1008|Une erreur s’est produite lors de la lecture des données|La taille du jeu de données demandé est trop importante.|L’utilisateur demande à lire des données au-delà des limites de données définies par l’application Office.|
 |1009|Une erreur s’est produite lors de la lecture des données|Le type de fichier spécifié n’est pas pris en charge.|L’utilisateur envoie un type de fichier incorrect.|
 |2000|Une erreur s’est produite lors de l’écriture des données|Le type d’objet de données fourni n’est pas pris en charge. |Un objet de données non pris en charge est fourni.|
 |2001|Une erreur s’est produite lors de l’écriture des données|Impossible d’écrire dans la sélection actuelle.|La sélection actuelle de l’utilisateur n’est pas prise en charge pour une opération d’écriture. (Par exemple, lorsque l’utilisateur sélectionne une image.)|
@@ -40,8 +40,8 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 |2005|Une erreur s’est produite lors de l’écriture des données|Les valeurs startRow ou startColumn spécifiées sont incorrectes.|L’utilisateur fournit des valeurs startRow ou startCol incorrectes.|
 |2006|Une erreur de format incorrect s’est produite|Le format de l’objet de données spécifié est incorrect.|Le développeur de solutions fournit une chaîne HTML ou OOXML incorrecte, une chaîne HTML au format incorrect ou une chaîne  OOXML incorrecte.|
 |2007|L’objet de données est incorrect|Le type de l’objet de données spécifié n’est pas compatible avec la sélection actuelle.|Le développeur de solutions fournit un objet de données qui n’est pas compatible avec le type de forçage de type spécifié.|
-|2008|Une erreur s’est produite lors de l’écriture des données|À déterminer|TBD|
-|2009|Une erreur s’est produite lors de l’écriture des données|L’objet de données spécifié est trop volumineux.|L’utilisateur tente de définir des données au-delà des limites de données définies par les compléments hôte.|
+|2008|Une erreur s’est produite lors de l’écriture des données|TBD|TBD|
+|2009|Une erreur s’est produite lors de l’écriture des données|L’objet de données spécifié est trop volumineux.|L’utilisateur tente de définir des données au-delà des limites de données définies par l’application Office.|
 |2010|Une erreur s’est produite lors de l’écriture des données|Les paramètres de coordonnées ne peuvent pas être utilisés avec le type de forçage de type Tableau lorsque le tableau contient des cellules fusionnées.|L’utilisateur tente de définir des données partielles à partir d’un tableau non uniforme (c’est-à-dire un tableau qui contient des cellules fusionnées.)|
 |3000|Une erreur s’est produite lors de la création de la liaison|Impossible d’effectuer de liaison avec la sélection actuelle.|La sélection de l’utilisateur n’est pas prise en charge pour la liaison. (Par exemple, l’utilisateur sélectionne une image ou un autre objet non pris en charge.)|
 |3001|Une erreur s’est produite lors de la création de la liaison|TBD|TBD|
@@ -107,11 +107,11 @@ Le tableau suivant résume le comportement de liaison dans Excel.
 |Matrice|Plage de cellules (y compris dans un tableau et une cellule unique)|Une liaison de type _matrice_ est créée dans les cellules sélectionnées. Aucune modification dans le document n’est attendue.|
 |Matrice|Texte sélectionné dans la cellule|Une liaison de type _matrice_ est créée dans la cellule entière. Aucune modification dans le document n’est attendue.|
 |Matrice|Sélection multiple/sélection incorrecte (par exemple, l’utilisateur sélectionne une image, un objet ou un objet Word Art.)|Impossible de créer la liaison.|
-|Table|Plage de cellules (y compris une cellule unique)|Impossible de créer la liaison.|
-|Table|Plage de cellules dans un tableau (comprend une seule cellule dans un tableau, le tableau entier, ou du texte dans la cellule d’un tableau)|Une liaison est créée dans le tableau entier.|
-|Table|Demi-sélection dans un tableau et demie sélection en dehors du tableau|Impossible de créer la liaison.|
-|Table|Texte sélectionné dans la cellule (pas dans le tableau)|Impossible de créer la liaison.|
-|Table|Sélection multiple/sélection incorrecte (par exemple, l’utilisateur sélectionne une image, un objet, un objet Word Art, etc.)|Impossible de créer la liaison.|
+|Tableau|Plage de cellules (y compris une cellule unique)|Impossible de créer la liaison.|
+|Tableau|Plage de cellules dans un tableau (comprend une seule cellule dans un tableau, le tableau entier, ou du texte dans la cellule d’un tableau)|Une liaison est créée dans le tableau entier.|
+|Tableau|Demi-sélection dans un tableau et demie sélection en dehors du tableau|Impossible de créer la liaison.|
+|Tableau|Texte sélectionné dans la cellule (pas dans le tableau)|Impossible de créer la liaison.|
+|Tableau|Sélection multiple/sélection incorrecte (par exemple, l’utilisateur sélectionne une image, un objet, un objet Word Art, etc.)|Impossible de créer la liaison.|
 |Texte|Plage de cellules|Impossible de créer la liaison.|
 |Texte|Plage de cellules dans un tableau|Impossible de créer la liaison.|
 |Texte|Cellule unique|Une liaison de type  _texte_ est créée.|
@@ -128,8 +128,8 @@ Le tableau suivant résume le comportement de liaison dans Word.
 |Matrice|Tableau entier|Une liaison de type  _matrice_ est créée.Le document est modifié et un contrôle de contenu doit encapsuler le tableau. |
 |Matrice|Plage dans un tableau|Impossible de créer la liaison.|
 |Matrice|Sélection non valide (par exemple, objets multiples, incorrects, etc.)|Impossible de créer la liaison.|
-|Table|Texte|Impossible de créer la liaison.|
-|Table|Tableau entier|Une liaison de type  _texte_ est créée.|
+|Tableau|Texte|Impossible de créer la liaison.|
+|Tableau|Tableau entier|Une liaison de type  _texte_ est créée.|
 |Tableau|Plage dans un tableau|Impossible de créer la liaison.|
 |Tableau|Sélection non valide (par exemple, objets multiples, incorrects, etc.)|Impossible de créer la liaison.|
 |Texte|Tableau entier|Une liaison de type  _texte_ est créée.|

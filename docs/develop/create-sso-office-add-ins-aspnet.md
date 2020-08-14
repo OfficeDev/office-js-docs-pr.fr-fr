@@ -3,12 +3,12 @@ title: Créer un complément Office ASP.NET qui utilise l’authentification uni
 description: Guide pas à pas pour la création (ou conversion) d’un complément Office avec un serveur principal ASP.NET pour utiliser l’authentification unique (SSO).
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 5556f8486529129e5f73649722ed919899e5d87e
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: 69269f1dbffc17ef1d45e86635d4de7c4a3a0890
+ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641290"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "46672707"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>Créer un complément Office ASP.NET qui utilise l’authentification unique
 
@@ -182,7 +182,7 @@ Si vous avez choisi « Comptes dans ce répertoire d’organisation uniquement�
     var retryGetAccessToken = 0;
 
     async function getGraphData() {
-        await getDataWithToken({ allowSignInPrompt: true, forMSGraphAccess: true });
+        await getDataWithToken({ allowSignInPrompt: true, allowConsentPrompt: true, forMSGraphAccess: true });
     }
     ```
 
@@ -212,6 +212,7 @@ Si vous avez choisi « Comptes dans ce répertoire d’organisation uniquement�
 
     * `getAccessToken` indique à Office d’obtenir un jeton de démarrage à partir d’Azure AD et de revenir au complément.
     * `allowSignInPrompt` indique à Office d’inviter l’utilisateur à se connecter si l’utilisateur n’est pas encore connecté à Office.
+    * `allowConsentPrompt` indique à Office d’inviter l’utilisateur à autoriser l’accès au complément au profil AAD de l’utilisateur, si le consentement n’a pas encore été accordé. (L’invite résultante ne permet *pas* à l’utilisateur de consentir à des étendues Microsoft Graph.)
     * `forMSGraphAccess` indique à Office que le complément envisage de permuter le jeton d'amorçage d’un jeton d’accès à Microsoft Graph (au lieu d’utiliser simplement le jeton d'amorçage comme jeton ID utilisateur). La configuration de cette option permet à Office d’annuler le processus d’acquisition d’un jeton d'amorçage (et de renvoyer le code d’erreur 13012) si l’administrateur du locataire de l’utilisateur n’a pas accordé le consentement du complément. Le code côté client du complément peut répondre au 13012 en branchant un système d’autorisation de secours. Si le `forMSGraphAccess` n’est pas utilisé et que l’administrateur n’a pas accepté le consentement, le jeton bootstrap est renvoyé, mais la tentative d’échange avec le flux de la part de se traduirait par une erreur. Par conséquent, l’option `forMSGraphAccess` permet au complément de brancher rapidement vers le système de secours.
     * Vous créez la fonction `getData` dans une étape ultérieure.
     * Le paramètre `/api/values` est l’URL d’un contrôleur côté serveur qui transforme l’échange de jeton et utilise le jeton d’accès qu’il renvoie pour appeler Microsoft Graph.
@@ -219,6 +220,7 @@ Si vous avez choisi « Comptes dans ce répertoire d’organisation uniquement�
     ```javascript
     let bootstrapToken = await OfficeRuntime.auth.getAccessToken({
         allowSignInPrompt: true,
+        allowConsentPrompt: true,
         forMSGraphAccess: true });
 
     getData("/api/values", bootstrapToken);

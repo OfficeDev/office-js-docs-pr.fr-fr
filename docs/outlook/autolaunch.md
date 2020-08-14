@@ -2,14 +2,14 @@
 title: Configurer votre complément Outlook pour l’activation basée sur les événements (aperçu)
 description: Découvrez comment configurer votre complément Outlook pour l’activation basée sur les événements.
 ms.topic: article
-ms.date: 05/22/2020
+ms.date: 08/11/2020
 localization_priority: Normal
-ms.openlocfilehash: 7b14dfb425223dbf486173e7df103d1a2cd09641
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: f5df8c1efe5e1e5c4c83b1536e90d8f38729dcc3
+ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093426"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "46672721"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>Configurer votre complément Outlook pour l’activation basée sur les événements (aperçu)
 
@@ -188,7 +188,7 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
 1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution).
 
     ```command&nbsp;line
-    npm run dev-server
+    npm start
     ```
 
 1. Suivez les instructions indiquées dans l’article [Chargement de version test des compléments Outlook](sideload-outlook-add-ins-for-testing.md) pour charger le complément dans Outlook.

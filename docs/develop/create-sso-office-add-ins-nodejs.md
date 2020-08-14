@@ -3,12 +3,12 @@ title: Création d’un complément Office Node.js qui utilise l’authentificat
 description: Apprenez à créer un complément basé sur Node.js utilisant l’authentification unique Office.
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: fcd77f9cdf9ac817679b020fff887c975450e05d
-ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
+ms.openlocfilehash: 136d7c982d4eef4988e775f8235678c673169d5a
+ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "46573155"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "46672693"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>Création d’un complément Office Node.js qui utilise l’authentification unique
 
@@ -196,11 +196,12 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 1. Remplacez `TODO 1` par le code suivant. Tenez compte du code suivant:
 
     - `OfficeRuntime.auth.getAccessToken` commande à Office d’obtenir un jeton de démarrage à partir d’Azure AD. Un jeton d’amorçage est semblable à un jeton d’ID, mais il possède une `scp` propriété (étendue) ayant la valeur `access-as-user`. Ce type de jeton peut être échangé par une application Web pour un jeton d’accès à Microsoft Graph.
-    - Le paramétrage de l’option de `allowSignInPrompt`sur TRUE signifie que si aucun utilisateur n’est actuellement connecté à Office, Office ouvre une invite de connexion contextuelle.
+    - La définition de l' `allowSignInPrompt` option sur true signifie que si aucun utilisateur n’est actuellement connecté à Office, Office ouvre une invite de connexion.
+    - La définition de l' `allowConsentPrompt` option sur true signifie que si l’utilisateur n’a pas accepté de laisser le complément accéder au profil AAD de l’utilisateur, Office ouvre une invite de consentement. (L’invite permet uniquement à l’utilisateur de consentir au profil AAD de l’utilisateur, pas aux étendues Microsoft Graph.)
     - La définition de l' `forMSGraphAccess` option sur true signale à Office que le complément a l’intention d’utiliser le jeton de démarrage pour obtenir un jeton d’accès à Microsoft Graph, au lieu de l’utiliser simplement comme jeton d’ID. Si l’administrateur du client n’a pas accordé l’autorisation d’accès au complément dans Microsoft Graph, `OfficeRuntime.auth.getAccessToken` renvoie l’erreur **13012**. Le complément peut répondre en rétablissant un autre système d’autorisation, ce qui est nécessaire car Office peut uniquement inviter pour accepter le profil Azure AD de l’utilisateur, et non les étendues Microsoft Graph. Le système d’autorisation de secours demande à l’utilisateur de se reconnecter et l’utilisateur *peut* être invité à accepter les étendues de Microsoft Graph. Par conséquent, l’option `forMSGraphAccess` permet de s’assurer que le complément ne fera pas d’échange de jetons échouant en raison d’une absence d’autorisation. (ayant reçu votre consentement de la part de l’administrateur lors d’une étape précédente, ce scénario ne se produira pas pour ce complément. Mais l’option est tout de même incluse ici pour illustrer les pratiques recommandées.)
 
     ```javascript
-    let bootstrapToken = await OfficeRuntime.auth.getAccessToken({ allowSignInPrompt: true, forMSGraphAccess: true }); 
+    let bootstrapToken = await OfficeRuntime.auth.getAccessToken({ allowSignInPrompt: true, allowConsentPrompt: true, forMSGraphAccess: true }); 
     ```
 
 1. Remplacez `TODO 2` par le code suivant. Vous créerez la méthode `getGraphToken` lors d’une étape ultérieure.
