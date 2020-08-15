@@ -1,15 +1,15 @@
 ---
 title: 'Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office'
 description: Découvrez comment partager des données et des événements entre des fonctions personnalisées et le volet Office dans Excel.
-ms.date: 05/17/2020
+ms.date: 08/13/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: a48d43270787648d8e5a53c885eab4b69cd8842e
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: e4dfb8afc57dc9590d47d927d1f540431d9c8838
+ms.sourcegitcommit: 3efa932b70035dde922929d207896e1a6007f620
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641150"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "46757379"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office
 
@@ -50,6 +50,9 @@ Après avoir exécuté l’Assistant, le générateur crée le projet et install
          </Runtimes>
        <AllFormFactors>
    ```
+
+> [!NOTE]
+> Si votre complément inclut l’élément `Runtimes` dans le manifeste, il utilise Internet Explorer 11 quelle que soit la version de Windows ou de Microsoft 365. Pour plus d’informations, voir [Services d’exécution](../reference/manifest/runtimes.md).
 
 4. Dans l’élément `<Page>`, remplacez l’emplacement de la source **Functions.Page.Url** par **ContosoAddin.Url**.
 
