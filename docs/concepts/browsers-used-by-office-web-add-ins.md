@@ -1,14 +1,14 @@
 ---
 title: Navigateurs utilisés par les compléments Office
 description: Indique comment le système d’exploitation et la version d’Office déterminent le navigateur utilisé par les compléments Office.
-ms.date: 07/07/2020
+ms.date: 08/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 0cdb601da7625eb3cafdcd883192861938529e0d
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 53e3061f1729ac792e91a10e31bc9d0d908ab07b
+ms.sourcegitcommit: 3efa932b70035dde922929d207896e1a6007f620
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093440"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "46757358"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navigateurs utilisés par les compléments Office
 
@@ -21,16 +21,19 @@ Le navigateur utilisé dépend de ce qui suit :
 
 Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes et systèmes d’exploitation.
 
-|**Système d’exploitation/Plateforme**|**Navigateur**|
+|OS|Version d’Office|WebView2 Edge installé (basé sur le chrome) ?|Navigateur|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|Office sur le web|Navigateur dans lequel Office sur le web est ouvert.|
-|Mac|Safari|
-|iOS|Safari|
-|Android|Chrome|
-|Windows/Office 2013 sans abonnement ou version ultérieure|Internet Explorer 11|
-|Windows 10 version < 1903/Office 365|Internet Explorer 11|
-|Windows 10 version >= 1903/Office 365 ver < 16.0.11629<sup>1</sup>|Internet Explorer 11|
-|Windows 10 version >= 1903/Office 365 ver >= 16.0.11629<sup>1</sup>|Microsoft Edge<sup>2, 3</sup>|
+|indifférent|Office sur le web|Non applicable|Navigateur dans lequel Office sur le web est ouvert.|
+|Mac|indifférent|Non applicable|Safari|
+|iOS|indifférent|Non applicable|Safari|
+|Android|indifférent|Non applicable|Chrome|
+|Windows 7, 8,1, 10 | Office 2013 sans abonnement ou version ultérieure|Peu importe|Internet Explorer 11|
+|Windows 7 | Microsoft 365| Peu importe | Internet Explorer 11|
+|Windows 8,1,<br>Windows 10 ver. &nbsp; < &nbsp; 1903| Microsoft 365 | Non| Internet Explorer 11|
+|Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; < &nbsp; 16.0.11629<sup>1</sup>| Peu importe|Internet Explorer 11|
+|Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.11629 &nbsp; _et_ &nbsp; < &nbsp; 16.0.13127.20082<sup>1</sup>| Peu importe|Microsoft Edge<sup>2, 3</sup> avec WebView d’origine (EdgeHTML)|
+|Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.13127.20082<sup>1</sup>| Non |Microsoft Edge<sup>2, 3</sup> avec WebView d’origine (EdgeHTML)|
+|Windows 8.1<br>Windows 10| Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.13127.20082<sup>1</sup>| Oui|  Voir note 4 ci-dessous. |
 
 <sup>1</sup> pour plus d’informations, consultez la [page historique des mises à jour](/officeupdates/update-history-office365-proplus-by-date) et [Découvrez comment trouver votre version de client Office et votre canal de mise à jour](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) .
 
@@ -38,6 +41,7 @@ Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes e
 
 <sup>3</sup> si votre complément inclut l' `Runtimes` élément dans le manifeste, il utilise Internet Explorer 11 quelle que soit la version de Windows ou de Microsoft 365. Pour plus d’informations, consultez la rubrique [runtimes](../reference/manifest/runtimes.md).
 
+<sup>4</sup> le navigateur utilisé pour cette combinaison de versions dépend du canal de mise à jour de l’abonnement Microsoft 365. Si l’utilisateur est sur le [canal bêta](https://insider.office.com/join/windows) (auparavant le canal rapide des Insiders), Office utilise Microsoft Edge avec WebView2 (basé sur le chrome). Pour tout autre canal, Office utilise Microsoft Edge avec le WebView d’origine (EdgeHTML). La prise en charge de WebView2 dans d’autres canaux est attendue en début de 2021.
 > [!IMPORTANT]
 > Internet Explorer 11 ne prend pas en charge les versions de JavaScript ultérieures à la version ES5. Si un des utilisateurs de votre complément dispose d’une plateforme utilisant Internet Explorer 11, vous devez transpiler JavaScript vers la version ES5 ou utiliser un polyfill pour lui permettre d’utiliser la syntaxe et les fonctionnalités d’ECMAScript 2015 ou version ultérieure. Par ailleurs, Internet Explorer 11 ne prend pas en charge certaines fonctionnalités HTML5 telles que les éléments multimédias, l’enregistrement et l’emplacement.
 
@@ -45,11 +49,7 @@ Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes e
 
 ### <a name="service-workers-are-not-working"></a>Les travailleurs de services ne fonctionnent pas
 
-Les compléments Office ne prennent pas en charge les travailleurs de service sur [Microsoft Edge WebView](/microsoft-edge/hosting/webview). Consultez la rubrique [vue d’ensemble des compléments Office](../overview/office-add-ins.md) pour les dernières fonctionnalités prises en charge sur le contrôle Edge WebView. Nous travaillons difficilement à mettre en place la nouvelle [WebView2 Edge basée](/microsoft-edge/hosting/webview2) sur le chrome à la plateforme de compléments Office, dont nous pensons qu’elle prendra en charge les travailleurs de service.
-
-### <a name="chromium-based-edge-is-installed-on-my-development-computer-but-my-add-in-does-not-use-it"></a>Le serveur Edge basé sur le chrome est installé sur mon ordinateur de développement, mais mon complément ne l’utilise pas
-
-Le navigateur de base dans [Microsoft Edge](https://support.microsoft.com/help/4501095/download-the-new-microsoft-edge-based-on-chromium) est passé à chrome. L’ancienne base, appelée EdgeHTML, n’est pas supprimée lorsque le serveur Edge basé sur le chrome est installé. Office continuera à utiliser la base EdgeHTML pour les compléments jusqu’à ce qu’une version de Microsoft 365 qui prenne en charge le chrome soit installée sur l’ordinateur. Nous prévoyons que ces builds doivent être expédiées dans 2020. Elles apparaîtront probablement dans le canal Insiders dans le premier semestre.
+Les compléments Office ne prennent pas en charge les travailleurs de services lorsque le WebView d’origine de [Microsoft Edge](/microsoft-edge/hosting/webview) est utilisé. Elles sont prises en charge avec le [WebView2 Edge basé sur le chrome](/microsoft-edge/hosting/webview2).
 
 ### <a name="scroll-bar-does-not-appear-in-task-pane"></a>La barre de défilement n’apparaît pas dans le volet des tâches
 
