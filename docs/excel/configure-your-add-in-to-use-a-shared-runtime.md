@@ -1,15 +1,15 @@
 ---
-ms.date: 05/17/2020
+ms.date: 08/13/2020
 title: Configurez votre complément Excel pour partager le runtime du navigateur
 ms.prod: excel
 description: Configurez votre complément Excel pour partager le runtime du navigateur et exécuter le ruban, le volet des tâches et le code de fonction personnalisée dans le même runtime.
 localization_priority: Priority
-ms.openlocfilehash: 129541da57f6b9f0d587eff8873efa4e471e49fc
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 573fa5f5c3fdee0fb6a4bc3844f98bb7b5f2046d
+ms.sourcegitcommit: 3efa932b70035dde922929d207896e1a6007f620
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159534"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "46757365"
 ---
 # <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime"></a>Configurez votre complément Excel pour utiliser un runtime JavaScript partagé
 
@@ -103,13 +103,17 @@ Procédez comme suit pour configurer un projet nouveau ou existant de manière �
 
 Lorsque vous ajoutez l’élément `Runtime`, vous spécifiez également une durée de vie ayant une valeur de `long` ou de `short`. Configurez cette valeur sur `long` pour tirer parti de fonctionnalités telles que le démarrage de votre complément lorsque le document s’ouvre, continuer à exécuter un code après la fermeture du volet des tâches, ou utiliser CORS et DOM à partir de fonctions personnalisées.
 
->![REMARQUE] La valeur de la durée de vie par défaut est `short`, mais nous vous recommandons d’utiliser `long` dans les compléments Excel. Si vous avez défini votre runtime sur `short` dans cet exemple, votre complément Excel démarre lorsque vous appuyez sur l’un de vos boutons du ruban, mais il se peut qu’il se ferme une fois l’exécution de votre gestionnaire de ruban terminée. De la même façon, le complément démarre lorsque le volet des tâches est ouvert, mais il se peut se fermer à la fermeture du volet des tâches.
+>[!NOTE]
+> La valeur de la durée de vie par défaut est `short`, mais nous vous recommandons d’utiliser `long` dans les compléments Excel. Si vous avez défini votre runtime sur `short` dans cet exemple, votre complément Excel démarre lorsque vous appuyez sur l’un de vos boutons du ruban, mais il se peut qu’il se ferme une fois l’exécution de votre gestionnaire de ruban terminée. De la même façon, le complément démarre lorsque le volet des tâches est ouvert, mais il se peut se fermer à la fermeture du volet des tâches.
 
 ```xml
 <Runtimes>
   <Runtime resid="ContosoAddin.Url" lifetime="long" />
 </Runtimes>
 ```
+
+>[!NOTE]
+> Si votre complément inclut l’élément `Runtimes` dans le manifeste (nécessaire pour une exécution partagée), il utilise Internet Explorer 11 quelle que soit la version de Windows ou de Microsoft 365. Pour plus d’informations, voir [Services d’exécution](../reference/manifest/runtimes.md).
 
 ## <a name="multiple-task-panes"></a>Multiples volets des tâches
 
