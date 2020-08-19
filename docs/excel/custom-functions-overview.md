@@ -1,16 +1,16 @@
 ---
-ms.date: 05/17/2020
-description: Créez une fonction personnalisée Excel pour votre Complément Office
+ms.date: 08/13/2020
+description: Créez une fonction personnalisée Excel pour votre Complément Office.
 title: Créer des fonctions personnalisées dans Excel
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 42ace6208abbd95d0f538345a1f5b5cc15ba1823
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
-ms.translationtype: MT
+ms.openlocfilehash: 2ea2d70b0a404c15ed9b349020b76356c70cd6de
+ms.sourcegitcommit: 3efa932b70035dde922929d207896e1a6007f620
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093461"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "46757372"
 ---
 # <a name="create-custom-functions-in-excel"></a>Créer des fonctions personnalisées dans Excel
 
@@ -40,19 +40,19 @@ function sphereVolume(radius) {
 
 ## <a name="how-a-custom-function-is-defined-in-code"></a>Comment une fonction personnalisée est définie dans le code
 
-Si vous utilisez le [Générateur Yo Office](https://github.com/OfficeDev/generator-office) pour créer un projet de complément de fonctions personnalisées Excel, il crée des fichiers qui contrôlent vos fonctions et volet de tâches. Nous allons vous concentrer sur les fichiers importants pour les fonctions personnalisées :
+Si vous utilisez le [générateur de Yo Office](https://github.com/OfficeDev/generator-office) pour créer un projet de complément de fonctions personnalisées Excel, il crée des fichiers qui contrôlent totalement vos fonctions, et volet des tâches. Nous allons vous concentrer sur les fichiers importants pour les fonctions personnalisées :
 
 | File | Format de fichier | Description |
 |------|-------------|-------------|
 | **./src/functions/functions.js**<br/>ou<br/>**./src/functions/functions.ts** | JavaScript<br/>ou<br/>TypeScript | Contient le code qui définit les fonctions personnalisées. |
 | **./src/functions/functions.html** | HTML | Fournit une référence&lt;script&gt; au fichier JavaScript qui définit les fonctions personnalisées. |
-| **./manifest.xml** | XML | Spécifie l’emplacement de plusieurs fichiers que votre fonction personnalisée utilise, tels que les fichiers JavaScript, JSON et HTML des fonctions personnalisées. Il répertorie également les emplacements des fichiers de volet de tâches, des fichiers de commandes et spécifie le runtime que vos fonctions personnalisées doivent utiliser. |
+| **./manifest.xml** | XML | Indique l’emplacement de plusieurs fichiers utilisés par votre fonction personnalisée, tels que les fonctions personnalisées JavaScript, JSON et HTML. Il répertorie également les emplacements des fichiers du volet Office, des fichiers de commandes et indique le runtime que vos fonctions personnalisées doivent utiliser. |
 
 ### <a name="script-file"></a>Fichier de script
 
 Le fichier de script (**./src/functions/functions.js** ou **./src/functions/functions.ts**) contient le code qui définit des fonctions personnalisées et des commentaires qui définissent la fonction.
 
-Le code suivant définit la fonction personnalisée `add`. Les commentaires du code sont utilisés pour générer un fichier de métadonnées JSON décrivant la fonction personnalisée pour Excel. Le commentaire obligatoire `@customfunction` est déclaré en premier, pour indiquer qu’il s’agit d’une fonction personnalisée. Ensuite, deux paramètres sont déclarés `first` et `second` , suivis de leurs `description` Propriétés. Enfin, une description `returns` est fournie. Pour plus d’informations sur les commentaires requis pour votre fonction personnalisée, voir [Créer des métadonnées JSON pour des fonctions personnalisées](custom-functions-json-autogeneration.md).
+Le code suivant définit la fonction personnalisée `add`. Les commentaires du code sont utilisés pour générer un fichier de métadonnées JSON décrivant la fonction personnalisée pour Excel. Le commentaire obligatoire `@customfunction` est déclaré en premier, pour indiquer qu’il s’agit d’une fonction personnalisée. Deux paramètres sont ensuite déclarés, `first` et `second`, suivis de leurs propriétés de `description` . Enfin, une description `returns` est fournie. Pour plus d’informations sur les commentaires requis pour votre fonction personnalisée, voir [Créer des métadonnées JSON pour des fonctions personnalisées](custom-functions-json-autogeneration.md).
 
 ```js
 /**
@@ -70,21 +70,21 @@ function add(first, second){
 
 ### <a name="manifest-file"></a>Fichier manifeste
 
-Le fichier manifeste XML d’un complément qui définit des fonctions personnalisées (**./manifest.xml** dans le projet créé par le générateur Yo Office) effectue plusieurs opérations :
+Le fichier manifeste XML pour un complément qui définit des fonctions personnalisées (**./manifest.xml** dans le projet que le générateur de bureau Yo crée) effectue plusieurs opérations :
 
 - Définit l’espace de noms pour vos fonctions personnalisées. Un espace de noms s’ajoute à vos fonctions personnalisées pour aider les clients à identifier vos fonctions dans le cadre de votre complément.
-- Utilisations `<ExtensionPoint>` et `<Resources>` éléments propres à un manifeste de fonctions personnalisées. Ces éléments contiennent des informations sur les emplacements des fichiers JavaScript, JSON et HTML.
-- Spécifie le runtime à utiliser pour votre fonction personnalisée. Nous vous recommandons de toujours utiliser un runtime partagé, sauf si vous avez besoin d’un autre Runtime spécifique, car un runtime partagé autorise le partage des données entre les fonctions et le volet des tâches.
+- Utilise les éléments `<ExtensionPoint>` et `<Resources>` qui sont propres à un manifeste de fonctions personnalisées. Ces éléments contiennent les informations relatives aux emplacements des fichiers JavaScript, JSON et HTML.
+- Spécifie le runtime à utiliser pour votre fonction personnalisée. Nous vous recommandons de toujours utiliser une exécution partagée, sauf si vous avez un besoin spécifique d’autre runtime, car un runtime partagé autorise le partage de données entre les fonctions et le volet Office. Notez que l’utilisation d’un runtime partagé signifie que votre complément utilise Internet Explorer 11, et non Microsoft Edge.
 
-Si vous utilisez le générateur Yo Office pour créer des fichiers, nous vous recommandons d’ajuster votre manifeste afin qu’il utilise un runtime partagé, car il ne s’agit pas de la valeur par défaut pour ces fichiers. Pour modifier votre manifeste, suivez les instructions de la procédure de [configuration de votre complément Excel pour utiliser un Runtime JavaScript partagé](./configure-your-add-in-to-use-a-shared-runtime.md).
+Si vous utilisez le générateur Yo Office pour créer des fichiers, nous vous recommandons d’ajuster votre manifeste pour utiliser un runtime partagé, car il ne s’agit pas de la valeur par défaut pour ces fichiers. Pour modifier votre manifeste, suivez les instructions dans [Configurer votre complément Excel pour utiliser un runtime JavaScript partagé](./configure-your-add-in-to-use-a-shared-runtime.md).
 
-Pour afficher un manifeste de travail complet à partir d’un exemple de complément, reportez-vous à [ce référentiel GitHub](https://github.com/OfficeDev/PnP-OfficeAddins/blob/master/Samples/excel-shared-runtime-global-state/manifest.xml).
+Pour afficher un manifeste de travail complet à partir d’un exemple de complément, consultez [ce référentiel GitHub](https://github.com/OfficeDev/PnP-OfficeAddins/blob/master/Samples/excel-shared-runtime-global-state/manifest.xml).
 
 [!include[manifest guidance](../includes/manifest-guidance.md)]
 
-## <a name="coauthoring"></a>Co-création
+## <a name="coauthoring"></a>Co-édition
 
-Excel sur le Web et Windows connecté à un abonnement Microsoft 365 vous permettent de co-auteur dans Excel. Si votre classeur utilise une fonction personnalisée, votre collègue de co-création est invité à charger le complément de la fonction personnalisée. Une fois que vous avez chargé le complément, la fonction personnalisée partage les résultats par le biais de la co-création.
+Excel sur le web et Windows connecté à un abonnement Microsoft 365 vous permettent de co-éditer dans Excel. Si votre classeur utilise une fonction personnalisée, votre collègue coauteur est invité à charger le complément de la fonction personnalisée. Quand vous avez tous les deux chargé le complément, la fonction personnalisée partage les résultats via la co-édition.
 
 Pour plus d’informations sur la co-création, voir [À propos de la co-création dans Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
 
