@@ -1,14 +1,14 @@
 ---
 title: Obtenir et définir la récurrence dans un complément Outlook
 description: Cette rubrique vous explique comment utiliser l’API JavaScript Office pour obtenir et définir différentes propriétés de récurrence d’un élément dans un complément Outlook.
-ms.date: 01/14/2020
+ms.date: 08/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 6a50ba5eab39145d8e50a5a888a6ed0900200bc4
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 0b179725677f071fe2ae7baf1c719add5ccd8aa7
+ms.sourcegitcommit: e9f23a2857b90a7c17e3152292b548a13a90aa33
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44606454"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "46803743"
 ---
 # <a name="get-and-set-recurrence"></a>Obtenir et définir la récurrence
 
@@ -25,11 +25,11 @@ Pour configurer la récurrence, vous devez combiner les [types de récurrence](/
 
 |Type de récurrence|Propriétés de récurrence valide|Utilisation|
 |---|---|---|
-|`daily`|- [`interval`][interval link]|Un rendez-vous se produit tous les *intervalle* jours. Exemple : Un rendez-vous se produit tous les **_2_** jours.|
+|`daily`|-&nbsp;[`interval`][interval link]|Un rendez-vous se produit tous les *intervalle* jours. Exemple : Un rendez-vous se produit tous les **_2_** jours.|
 |`weekday`|Aucun.|Un rendez-vous se produit tous les jours de la semaine.|
-|`monthly`|- [`interval`][interval link]<br/>- [`dayOfMonth`][dayOfMonth link]<br/>- [`dayOfWeek`][dayOfWeek link]<br/>- [`weekNumber`][weekNumber link]|- Un rendez-vous a lieu le *dayOfMonth* de chaque *intervalle* mois. Exemple : Un rendez-vous se produit tous les **_5_** du mois**_4_**.<br/><br/>- Un rendez-vous a lieu le *dayOfWeek* de la semaine *weekNumber* de chaque mois*intervalle*. Exemple : Un rendez-vous se produit tous les **_jeudis_** **_3_** tous les **_2_** mois.|
-|`weekly`|- [`interval`][interval link]<br/>- [`days`][days link]|Un rendez-vous se produit chaque *jours*toutes les *intervalle*semaines. Exemple : Un rendez-vous se produit chaque **_mardi_ and _jeudi_** toutes les **_2_** semaines.|
-|`yearly`|- [`interval`][interval link]<br/>- [`dayOfMonth`][dayOfMonth link]<br/>- [`dayOfWeek`][dayOfWeek link]<br/>- [`weekNumber`][weekNumber link]<br/>- [`month`][month link]|- Un rendez-vous a lieu le *dayOfMonth* de chaque *intervalle* mois tous les *intervalle* ans. Exemple : Un rendez-vous se produit tous les **_7_** du mois**_septembre_** tous les **_4_** ans.<br/><br/>- Un rendez-vous a lieu le *dayOfWeek* de la semaine *weekNumber* de chaque*mois* tous les *intervalle* ans. Exemple : Un rendez-vous se produit tous les **_1er_** **_jeudi_** du mois**_Septembre_** tous les **_2_** ans.|
+|`monthly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek link]<br/>-&nbsp;[`weekNumber`][weekNumber link]|- Un rendez-vous a lieu le *dayOfMonth* de chaque *intervalle* mois. Exemple : Un rendez-vous se produit tous les **_5_** du mois**_4_**.<br/><br/>- Un rendez-vous a lieu le *dayOfWeek* de la semaine *weekNumber* de chaque mois*intervalle*. Exemple : Un rendez-vous se produit tous les **_jeudis_** **_3_** tous les **_2_** mois.|
+|`weekly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`days`][days link]|Un rendez-vous se produit chaque *jours*toutes les *intervalle*semaines. Exemple : Un rendez-vous se produit chaque **_mardi_ and _jeudi_** toutes les **_2_** semaines.|
+|`yearly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek link]<br/>-&nbsp;[`weekNumber`][weekNumber link]<br/>-&nbsp;[`month`][month link]|- Un rendez-vous a lieu le *dayOfMonth* de chaque *intervalle* mois tous les *intervalle* ans. Exemple : Un rendez-vous se produit tous les **_7_** du mois**_septembre_** tous les **_4_** ans.<br/><br/>- Un rendez-vous a lieu le *dayOfWeek* de la semaine *weekNumber* de chaque*mois* tous les *intervalle* ans. Exemple : Un rendez-vous se produit tous les **_1er_** **_jeudi_** du mois**_Septembre_** tous les **_2_** ans.|
 
 > [!NOTE]
 > Vous pouvez également utiliser la [ `firstDayOfWeek` ][firstDayOfWeek link] `weekly` propriété avec le  type de récurrence. Le jour spécifié commencera la liste des jours affichés dans la boîte de dialogue Récurrence.
@@ -73,6 +73,27 @@ Office.context.mailbox.item.recurrence.setAsync(pattern, callback);
 function callback(asyncResult)
 {
     console.log(JSON.stringify(asyncResult));
+}
+```
+
+## <a name="change-recurrence-as-the-organizer"></a>Modifier la périodicité en tant qu’organisateur
+
+Dans l’exemple suivant, en mode composition, l’organisateur de rendez-vous obtient l’objet de récurrence d’une série de rendez-vous en fonction de la série ou d’une instance de cette série, puis définit une nouvelle durée de périodicité.
+
+```js
+Office.context.mailbox.item.recurrence.getAsync(callback);
+
+function callback(asyncResult) {
+  var recurrencePattern = asyncResult.value;
+  recurrencePattern.seriesTime.setDuration(60);
+  Office.context.mailbox.item.recurrence.setAsync(recurrencePattern, (asyncResult) => {
+    if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
+      console.log("failed");
+      return;
+    }
+
+    console.log("success");
+  });
 }
 ```
 

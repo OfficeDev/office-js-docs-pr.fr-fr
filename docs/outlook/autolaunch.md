@@ -2,21 +2,24 @@
 title: Configurer votre complément Outlook pour l’activation basée sur les événements (aperçu)
 description: Découvrez comment configurer votre complément Outlook pour l’activation basée sur les événements.
 ms.topic: article
-ms.date: 08/11/2020
+ms.date: 08/18/2020
 localization_priority: Normal
-ms.openlocfilehash: f5df8c1efe5e1e5c4c83b1536e90d8f38729dcc3
-ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
+ms.openlocfilehash: 736573fb5ab5b50841348f55d89ae15e4d174a22
+ms.sourcegitcommit: e9f23a2857b90a7c17e3152292b548a13a90aa33
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "46672721"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "46803750"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>Configurer votre complément Outlook pour l’activation basée sur les événements (aperçu)
 
-Sans la fonctionnalité d’activation basée sur un événement, un utilisateur doit lancer explicitement un complément pour effectuer ses tâches. Cette fonctionnalité permet à votre complément d’exécuter des tâches en fonction de certains événements, en particulier pour les opérations qui s’appliquent à chaque élément. Vous pouvez également intégrer le volet des tâches et les fonctionnalités sans interface utilisateur. Pour le moment, les événements pris en charge sont les suivants.
+Sans la fonctionnalité d’activation basée sur un événement, un utilisateur doit lancer explicitement un complément pour effectuer ses tâches. Cette fonctionnalité permet à votre complément d’exécuter des tâches en fonction de certains événements, en particulier pour les opérations qui s’appliquent à chaque élément. Vous pouvez également intégrer le volet des tâches et les fonctionnalités sans interface utilisateur. Actuellement, les événements suivants sont pris en charge.
 
 - `OnNewMessageCompose`: Lors de la composition d’un nouveau message (inclut répondre, répondre à tous et transférer)
 - `OnNewAppointmentOrganizer`: Lors de la création d’un rendez-vous
+
+  > [!IMPORTANT]
+  > Cette fonctionnalité ne s’active **pas** lors de la modification d’un élément, par exemple, un brouillon ou un rendez-vous existant.
 
 À la fin de cette procédure pas à pas, vous disposez d’un complément qui s’exécute chaque fois qu’un nouveau message est créé.
 

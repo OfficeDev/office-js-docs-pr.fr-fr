@@ -1,14 +1,14 @@
 ---
 title: Fonctionnalité d’envoi des compléments Outlook
 description: Permet de traiter un élément ou d’empêcher les utilisateurs d’effectuer certaines actions. Permet aussi aux compléments de définir certaines propriétés pendant l’envoi.
-ms.date: 08/07/2020
+ms.date: 08/13/2020
 localization_priority: Normal
-ms.openlocfilehash: a33f7c2f51e3c6d008dfc2683a43dfce46accda4
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: e21082736bea5ac53caecc9222de317906cd220d
+ms.sourcegitcommit: e9f23a2857b90a7c17e3152292b548a13a90aa33
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641493"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "46803771"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Fonctionnalité d’envoi des compléments Outlook
 
@@ -85,7 +85,7 @@ La fonctionnalité d’envoi est uniquement prise en charge pour les boîtes aux
 Outlook bloque l’envoi si la fonctionnalité d’envoi est activée pour ces scénarios de boîtes aux lettres. Toutefois, si un utilisateur répond à un e-mail dans une boîte aux lettres de groupe, le complément d’envoi n’est pas exécuté et le message est envoyé.
 
 > [!IMPORTANT]
-> \*La fonctionnalité d’envoi doit fonctionner sur des boîtes aux lettres ou des dossiers partagés si le complément [implémente également la prise en charge des scénarios d’accès délégué](delegate-access.md).
+> \* La fonctionnalité d’envoi doit fonctionner sur des boîtes aux lettres ou des dossiers partagés si le complément [implémente également la prise en charge des scénarios d’accès délégué](delegate-access.md).
 
 ## <a name="multiple-on-send-add-ins"></a>Compléments d’envoi multiples
 
@@ -389,6 +389,17 @@ Les compléments d’envoi s’exécutent pendant l’envoi, si le serveur Excha
 > [!NOTE]
 > Sur Mac en mode hors connexion, le bouton **Envoyer** (ou le bouton **Envoyer mise à jour** pour les réunions existantes) est désactivé et une notification indique que l’organisation n’autorise pas l’envoi lorsque l’utilisateur est hors connexion.
 
+### <a name="user-can-edit-item-while-on-send-add-ins-are-working-on-it"></a>L’utilisateur peut modifier l’élément pendant que les compléments d’envoi y travaillent.
+
+Pendant que les compléments d’envoi sont en cours de traitement d’un élément, l’utilisateur peut modifier l’élément en ajoutant, par exemple, du texte inapproprié ou des pièces jointes. Si vous souhaitez empêcher l’utilisateur de modifier l’élément pendant le traitement de votre complément lors de l’envoi, vous pouvez implémenter une solution de contournement à l’aide d’une boîte de dialogue. Dans votre gestionnaire d’envoi :
+
+1. Appelez [displayDialogAsync](/javascript/api/office/office.ui?view=outlook-js-preview#displaydialogasync-startaddress--options--callback-) pour ouvrir une boîte de dialogue de sorte que les clics de souris et les séquences de touches soient désactivés.
+
+    > [!IMPORTANT]
+    > Pour obtenir ce comportement dans Outlook sur le Web, vous devez définir la [propriété displayInIframe](/javascript/api/office/office.dialogoptions?view=outlook-js-preview#displayiniframe) sur `true` dans le `options` paramètre de l' `displayDialogAsync` appel.
+
+1. Implémenter le traitement de l’élément.
+1. Fermez la boîte de dialogue. Gérez également ce qui se passe si l’utilisateur ferme la boîte de dialogue.
 
 ## <a name="code-examples"></a>Exemples de code
 
