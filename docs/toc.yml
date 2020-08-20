@@ -763,13 +763,11 @@
           href: outlook/apis.md
           displayName: Outlook
         - name: Ensembles de conditions requises de l’API
-          href: reference/requirement-sets/outlook-api-requirement-sets.md
           displayName: Outlook
-        - name: Référence d’API
-          href: reference/outlook-api-reference-1-8.md
-          displayName: Outlook
-        - name: Modèle d’objet d’API
           items:
+            - name: Vue d’ensemble
+              href: reference/requirement-sets/outlook-api-requirement-sets.md
+              displayName: Outlook
             - name: Ensemble de conditions requises (aperçu)
               items:
                 - name: Vue d'ensemble
@@ -896,6 +894,9 @@
                   href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.item.md
                 - name: Référence de l’API Outlook 1.1
                   href: reference/outlook-api-reference-1-1.md
+        - name: Référence API - dernière version
+          href: reference/outlook-api-reference-1-8.md
+          displayName: Outlook
     - name: Concepts
       items:
         - name: Instructions de création d’un complément Outlook
@@ -910,11 +911,11 @@
           href: outlook/outlook-mobile-addins.md
         - name: Réunion en ligne sur un appareil mobile
           href: outlook/online-meeting.md
-        - name: Compléments d’envoi
+        - name: Ajouts à l'envoi
           href: outlook/outlook-on-send-addins.md
-        - name: Ajouter lors de l’envoi (aperçu)
+        - name: Ajouter à l'envoi
           href: outlook/append-on-send.md
-        - name: Activation basée sur les événements (aperçu)
+        - name: Activation basée sur un événement
           href: outlook/autolaunch.md
         - name: Volet des tâches pouvant être épinglé
           href: outlook/pinnable-taskpane.md
