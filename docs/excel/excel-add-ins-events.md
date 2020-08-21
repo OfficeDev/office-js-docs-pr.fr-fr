@@ -1,14 +1,14 @@
 ---
 title: Utilisation d’événements à l’aide de l’API JavaScript pour Excel
 description: Liste d’événements pour les objets JavaScript Excel. Cela inclut des informations sur l’utilisation des gestionnaires d’événements et les modèles associés.
-ms.date: 05/06/2020
+ms.date: 08/18/2020
 localization_priority: Normal
-ms.openlocfilehash: fbf92d34a0fb1d8b18b9ebb379cd24d34775c243
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: adb924ff370c49f5b8f6a3175683ecdb959d9329
+ms.sourcegitcommit: 7faa0932b953a4983a80af70f49d116c3236d81a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609600"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "46845520"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Utilisation d’événements à l’aide de l’API JavaScript pour Excel
 
@@ -35,15 +35,6 @@ Each time certain types of changes occur in an Excel workbook, an event notifica
 | `onRowHiddenChanged` | Se produit lorsque l’état de ligne masquée change sur une feuille de calcul spécifique. | [**Worksheet**](/javascript/api/excel/excel.worksheet#onrowhiddenchanged), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onrowhiddenchanged) |
 | `onSettingsChanged` | Se produit lorsque les paramètres dans le document sont modifiés. | [**SettingCollection**](/javascript/api/excel/excel.settingcollection#onsettingschanged) |
 | `onSingleClicked` | Se produit lorsque l’opération clic gauche/tape se produit dans la feuille de calcul. | [**Worksheet**](/javascript/api/excel/excel.worksheet#onsingleclicked), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onsingleclicked) |
-
-> [!WARNING]
-> `onSelectionChanged` est actuellement instable. Il existe une solution de contournement pour utiliser `onSelectionChanged` de façon fiable. Ajoutez le code suivant dans la section `<head>` de votre page d’accueil HTML :
->
-> ```HTML
-> <script> MutationObserver=null; </script>
-> ```
->
-> Une discussion complète sur ce problème est disponible sur le [référentiel GitHub office-js](https://github.com/OfficeDev/office-js/issues/533).
 
 ### <a name="events-in-preview"></a>Événements en préversion
 
