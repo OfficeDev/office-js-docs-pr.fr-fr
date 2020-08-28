@@ -1,18 +1,18 @@
 ---
 title: Appliquer la mise en forme conditionnelle aux plages avec l’API Excel JavaScript
 description: Cet article traite de la mise en forme conditionnelle dans le contexte des compléments JavaScript pour Excel.
-ms.date: 04/15/2019
+ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 8b3b833f2c2e4d8d9b43a6d9cde7d619fc488e3d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9f0bed7fb7421984c98ad1bc396c130afda4fb50
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609628"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292654"
 ---
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>Appliquer une mise en forme conditionnelle à des plages Excel
 
-La bibliothèque JavaScript Excel fournit des API pour appliquer une mise en forme conditionnelle aux plages de données dans vos feuilles de calcul. Cette fonctionnalité simplifie l’analyse visuelle de grands ensembles de données. La mise en forme effectue également des mises à jour dynamiques en fonction des changements dans la plage. 
+La bibliothèque JavaScript Excel fournit des API pour appliquer une mise en forme conditionnelle aux plages de données dans vos feuilles de calcul. Cette fonctionnalité simplifie l’analyse visuelle de grands ensembles de données. La mise en forme effectue également des mises à jour dynamiques en fonction des changements dans la plage.
 
 > [!NOTE]
 > Cet article décrit la mise en forme conditionnelle dans le contexte de compléments Excel JavaScript. Les articles suivants offrent des informations détaillées sur les fonctionnalités de mise en forme conditionnelles complètes dans Excel.
@@ -21,7 +21,7 @@ La bibliothèque JavaScript Excel fournit des API pour appliquer une mise en for
 
 ## <a name="programmatic-control-of-conditional-formatting"></a>Contrôle par programme de mise en forme conditionnelle
 
-La `Range.conditionalFormats` propriété est un ensemble d’objets [ConditionalFormat](/javascript/api/excel/excel.conditionalformat)qui s’appliquent à la plage.  L’`ConditionalFormat` objet contient plusieurs propriétés qui définissent le format à appliquer en fonction du [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype). 
+La `Range.conditionalFormats` propriété est un ensemble d’objets [ConditionalFormat](/javascript/api/excel/excel.conditionalformat)qui s’appliquent à la plage.  L’`ConditionalFormat` objet contient plusieurs propriétés qui définissent le format à appliquer en fonction du [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype).
 
 -    `cellValue`
 -    `colorScale`
@@ -33,9 +33,9 @@ La `Range.conditionalFormats` propriété est un ensemble d’objets [Conditiona
 -    `topBottom`
 
 > [!NOTE]
-> Chacune de ces propriétés de mise en forme a une variante correspondante`*OrNullObject`. En savoir plus sur ce modèle dans la section[* OrNullObject méthodes](../excel/excel-add-ins-advanced-concepts.md#ornullobject-methods).
+> Chacune de ces propriétés de mise en forme a une variante correspondante`*OrNullObject`. Pour en savoir plus sur ce modèle, consultez la section [ \* méthodes OrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) .
 
-Un seul type de format peut être défini pour l’objet ConditionalFormat. Cela est déterminé par la `type` propriété, c'est-à-dire une [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) valeur enum. `type` est défini lorsque vous ajoutez une mise en forme conditionnelle à une plage. 
+Un seul type de format peut être défini pour l’objet ConditionalFormat. Cela est déterminé par la `type` propriété, c'est-à-dire une [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) valeur enum. `type` est défini lorsque vous ajoutez une mise en forme conditionnelle à une plage.
 
 ## <a name="creating-conditional-formatting-rules"></a>Modification des règles de mise en forme conditionnelles
 
@@ -110,7 +110,7 @@ await context.sync();
 La mise en forme conditionnelle personnalisée applique un format défini par l’utilisateur aux cellules en fonction d’une formule de complexité arbitraire. L’objet [ConditionalFormatRule](/javascript/api/excel/excel.conditionalformatrule) vous permet de définir la formule dans des notations différentes :
 
 -    `formula` -Notation standard.
--    `formulaLocal`-Localisé en fonction de la langue de l’utilisateur.
+-    `formulaLocal` -Localisé en fonction de la langue de l’utilisateur.
 -    `formulaR1C1` -Notation type L1C1.
 
 L’exemple suivant colore les polices de cellules avec des valeurs supérieures à la cellule située à leur gauche en vert.

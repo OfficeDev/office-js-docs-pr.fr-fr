@@ -3,12 +3,12 @@ title: Meilleures pratiques en matière de développement de compléments Offic
 description: Appliquer les meilleures pratiques lors du développement pour créer des compléments Office.
 ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: d94d0ff4f3ff5bed4ab9eaaae134db40f21b972c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 72bcf8c7bd994c499c1e85154a383c3a91464a79
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608056"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293064"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Meilleures pratiques en matière de développement de compléments Office
 
@@ -21,7 +21,7 @@ Des compléments efficaces proposent des fonctionnalités uniques et attrayantes
 - Créez des compléments qui aident les utilisateurs à réaliser des tâches rapidement et efficacement. Concentrez-vous sur des scénarios adaptés aux applications Office. Par exemple :
  - Réalisez des tâches de création essentielles plus rapidement et plus facilement, avec moins d’interruptions.
  - Développez de nouveaux scénarios dans Office.
- - Intégrez des services complémentaires dans des hôtes Office.
+ - Intégrez des services complémentaires dans les applications Office.
  - Améliorez l’expérience Office pour accroître la productivité.
 - Assurez-vous que la valeur de votre complément apparaîtra clairement aux utilisateurs dès la première utilisation en créant une [première expérience enrichissante](#create-an-engaging-first-run-experience).
 - Rédigez une [description claire pour AppSource](/office/dev/store/create-effective-office-store-listings). Soulignez les avantages de votre complément dans votre titre et votre description. Ne comptez pas sur votre marque pour communiquer sur les fonctionnalités de votre complément.
@@ -77,7 +77,7 @@ Pour les modèles de conception à appliquer lors du développement de votre pre
 
 ### <a name="optimize-for-touch"></a>Optimisation de la fonction tactile
 
-- Utilisez la propriété [Context.touchEnabled](/javascript/api/office/office.context) pour déterminer si l’application hôte sur laquelle votre complément est exécuté est compatible avec la fonction tactile.
+- Utilisez la propriété [Context. touchEnabled](/javascript/api/office/office.context#touchenabled) pour déterminer si l’application Office sur laquelle votre complément est exécuté est compatible avec la fonction tactile.
 
   > [!NOTE]
   > Cette propriété n’est pas prise en charge dans Outlook.

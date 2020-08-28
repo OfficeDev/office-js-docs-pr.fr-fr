@@ -4,24 +4,24 @@ description: Détails sur l’ensemble de conditions requises pour ExcelApiOnlin
 ms.date: 05/06/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: e4a78cd0052be1869434cba154d470070b15a5aa
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f4a39406328605e11d8108ddee454c339bf3919f
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611385"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294240"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>Ensemble de conditions requises de l’API JavaScript pour Excel en ligne uniquement
 
-L' `ExcelApiOnline` ensemble de conditions requises est un ensemble de conditions requises spéciales qui inclut des fonctionnalités qui sont disponibles uniquement pour Excel sur le Web. Les API de cet ensemble de conditions requises sont considérées comme des API de production (non soumises à des modifications structurelles ou comportementales non documentées) pour l’hôte Excel sur le Web. `ExcelApiOnline`sont considérés comme des API de « préversion » pour les autres plateformes (Windows, Mac, iOS) et ne sont peut-être pas pris en charge par aucune de ces plateformes.
+L' `ExcelApiOnline` ensemble de conditions requises est un ensemble de conditions requises spéciales qui inclut des fonctionnalités qui sont disponibles uniquement pour Excel sur le Web. Les API de cet ensemble de conditions requises sont considérées comme des API de production (non soumises à des modifications structurelles ou comportementales non documentées) pour l’application Excel sur le Web. `ExcelApiOnline` sont considérés comme des API de « préversion » pour les autres plateformes (Windows, Mac, iOS) et ne sont peut-être pas pris en charge par aucune de ces plateformes.
 
 Lorsque les API dans l' `ExcelApiOnline` ensemble de conditions requises sont prises en charge sur toutes les plateformes, elles seront ajoutées à l’ensemble de conditions requises publié suivant ( `ExcelApi 1.[NEXT]` ). Une fois que cette nouvelle exigence est publique, ces API seront supprimées de `ExcelApiOnline` . Imaginez qu’il s’agit d’un processus de promotion similaire, qui passe de l’aperçu à la version Release.
 
 > [!IMPORTANT]
-> `ExcelApiOnline`est un sur-ensemble du jeu de conditions requises le plus récent.
+> `ExcelApiOnline` est un sur-ensemble du jeu de conditions requises le plus récent.
 
 > [!IMPORTANT]
-> `ExcelApiOnline 1.1`est la seule version des API en ligne uniquement. En effet, Excel sur le Web disposera toujours d’une seule version disponible pour les utilisateurs qui est la version la plus récente.
+> `ExcelApiOnline 1.1` est la seule version des API en ligne uniquement. En effet, Excel sur le Web disposera toujours d’une seule version disponible pour les utilisateurs qui est la version la plus récente.
 
 ## <a name="recommended-usage"></a>Utilisation recommandée
 

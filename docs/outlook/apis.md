@@ -3,12 +3,12 @@ title: API de complément Outlook
 description: Découvrez comment faire référence aux API de complément Outlook et déclarer des autorisations dans votre complément Outlook.
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: d09713da401c0298a6ebd756d6dfb3fd8dce5f0b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: d7458eebf16a3d9373e59aa0455234437f25289b
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44607604"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293995"
 ---
 # <a name="outlook-add-in-apis"></a>API de complément Outlook
 
@@ -26,7 +26,7 @@ Référencez le CDN dans une `<script>`balise`<head>` de la page web (fichier .h
 L’ajout de nouvelles API ne modifie pas l’URL vers Office.js. La version de l’URL sera modifiée uniquement si un comportement d’API existant est interrompu.
 
 > [!IMPORTANT]
-> Lorsque vous développez un complément pour une application hôte Office, référencez l’API JavaScript Office depuis l’intérieur `<head>` de la section de la page. Ainsi, l’API est entièrement initialisée avant les éléments Body. Les hôtes Office exigent que les compléments soient initialisés 5 secondes après l’activation. Au-delà de ce délai, un message d’erreur indiquant que le complément ne répond pas s’affiche à l’écran.
+> Lorsque vous développez un complément pour une application cliente Office, référencez l’API JavaScript Office à l’intérieur `<head>` de la section de la page. Ainsi, l’API est entièrement initialisée avant les éléments Body. Les applications Office exigent que les compléments soient initialisés dans un délai de 5 secondes après l’activation. Au-delà de ce délai, un message d’erreur indiquant que le complément ne répond pas s’affiche à l’écran.
 
 ## <a name="requirement-sets"></a>Ensembles de conditions requises
 

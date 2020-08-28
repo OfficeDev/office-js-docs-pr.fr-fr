@@ -3,12 +3,12 @@ title: Héberger un complément pour Office sur Microsoft Azure | Microsoft Doc
 description: Découvrez comment déployer une application web de complément sur Azure et charger une version test du complément pour le tester dans une application cliente Office.
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: c9d33823850925d5c05d72422262bf62f78b051e
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: abe0012861a4c401f003704644fb9f530220521d
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159422"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292383"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>Héberger un complément pour Office sur Microsoft Azure
 
@@ -113,7 +113,7 @@ Pour créer l’application web à l’aide du portail Azure, procédez comme s
 
 4. Choisissez **Complément Word web** comme type de projet, puis cliquez sur **Suivant** pour accepter les paramètres par défaut.
 
-Visual Studio crée un complément Word de base que vous pourrez publier tel quel, sans apporter de modifications à son projet web. Pour créer un complément pour un autre type d’hôte Office (par exemple, Excel), répétez les étapes et choisissez un type de projet avec l’hôte Office souhaité.
+Visual Studio crée un complément Word de base que vous pourrez publier tel quel, sans apporter de modifications à son projet web. Pour créer un complément pour une autre application Office, telle qu’Excel, répétez les étapes et choisissez un type de projet avec l’application Office souhaitée.
 
 ## <a name="step-5-publish-your-office-add-in-web-app-to-azure"></a>Étape 5 : Publier votre application web de complément Office sur Azure
 

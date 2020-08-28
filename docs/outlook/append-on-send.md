@@ -2,14 +2,14 @@
 title: Implémenter Append-on-Send dans votre complément Outlook (aperçu)
 description: Découvrez comment implémenter la fonctionnalité Ajout d’envoi dans votre complément Outlook.
 ms.topic: article
-ms.date: 08/11/2020
+ms.date: 08/24/2020
 localization_priority: Normal
-ms.openlocfilehash: fbc2f11006d6f02d44365294476aee8aa3e262c7
-ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
+ms.openlocfilehash: 951f42b82a956d43796144ed94f086d9fb078ca4
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "46672728"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293988"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a>Implémenter Append-on-Send dans votre complément Outlook (aperçu)
 
@@ -184,6 +184,9 @@ Pour ce scénario, vous allez implémenter l’ajout d’une clause d’exclusio
     ```command&nbsp;line
     npm start
     ```
+
+    > [!IMPORTANT]
+    > Si une erreur « chargement n’est pas pris en charge » s’affiche, vous pouvez l’ignorer et continuer.
 
 1. Suivez les instructions de [chargement compléments Outlook à des fins de test](sideload-outlook-add-ins-for-testing.md).
 

@@ -3,12 +3,12 @@ title: Instructions relatives aux icônes de style monolignes pour les compléme
 description: Obtenir des instructions sur l’utilisation des icônes d’icône de style monoligne dans les compléments Office.
 ms.date: 12/09/2019
 localization_priority: Normal
-ms.openlocfilehash: 36142e79853a0fad47963255eb9517acd0810920
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f5e2125494fde21f22f82bee8252e79a3396c773
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44607693"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293043"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>Instructions relatives aux icônes de style monolignes pour les compléments Office
 
@@ -96,7 +96,7 @@ Chaque icône de taille possède une quantité spécifiée de remplissage entour
 
 |**16px**|**20px**|**24px**|**32px**|**40px**|**48px**|**64px**|**80 px**|**96px**|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|
-|![icône 16 PX](../images/monolineicon7.png)|![icône 20 px](../images/monolineicon8.png)|![icône 24 PX](../images/monolineicon9.png)|![icône 32 PX](../images/monolineicon10.png)|![icône 40 PX](../images/monolineicon11.png)|![icône 48 px](../images/monolineicon12.png)|![icône 64 px](../images/monolineicon13.png)|![icône 80 PX](../images/monolineicon14.png)|![icône 96 PX](../images/monolineicon15.png)|
+|![icône 16 PX avec remplissage de 0 PX](../images/monolineicon7.png)|![icône 20 px avec remplissage de 1 px](../images/monolineicon8.png)|![icône 24 PX avec remplissage de 1 px](../images/monolineicon9.png)|![icône 32 PX avec remplissage de 2 PX](../images/monolineicon10.png)|![icône 40 PX avec remplissage de 2 PX](../images/monolineicon11.png)|![icône 48 px avec remplissage de 3 PX](../images/monolineicon12.png)|![icône 64 px avec remplissage de 4 PX](../images/monolineicon13.png)|![icône 80 PX avec remplissage de 5 PX](../images/monolineicon14.png)|![icône 96 PX avec remplissage de 6 PX](../images/monolineicon15.png)|
 
 #### <a name="line-weights"></a>Épaisseurs de trait
 

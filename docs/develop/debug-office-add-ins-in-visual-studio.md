@@ -3,12 +3,12 @@ title: Déboguer des compléments Office dans Visual Studio
 description: Utiliser Visual Studio pour déboguer des compléments Office dans le client de bureau Office sous Windows
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 018bfa24424514598d323c29d165e3e8ec066a8e
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 8086eaeeb3556edcef40bdf9fea980bd4ae640cc
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093657"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292840"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Déboguer des compléments Office dans Visual Studio
 
@@ -27,7 +27,7 @@ Lors du débogage d’Office sous Windows par Visual Studio, le complément est 
 
 ## <a name="review-the-build-and-debug-properties"></a>Réviser les propriétés de création et de débogage
 
-Avant de commencer le débogage, passez en revue les propriétés de chaque projet afin de confirmer que Visual Studio ouvre l’application hôte souhaitée et que les autres propriétés de création et débogage sont définies de façon appropriée.
+Avant de commencer le débogage, passez en revue les propriétés de chaque projet pour vérifier que Visual Studio ouvre l’application Office souhaitée et que les autres propriétés de génération et de débogage sont définies correctement.
 
 ### <a name="add-in-project-properties"></a>Propriétés du projet de complément
 
@@ -100,16 +100,16 @@ Démarrez le projet en choisissant **déboguer** > **démarrer le débogage** à
 
 Visual Studio génère le projet et effectue les actions suivantes :
 
-1. Crée une copie du fichier manifeste XML et ajoute celui-ci au `_ProjectName_\bin\Debug\OfficeAppManifests` répertoire. L’application hôte consomme cette copie lorsque vous démarrez Visual Studio et débogue le complément.
+1. Crée une copie du fichier manifeste XML et ajoute celui-ci au `_ProjectName_\bin\Debug\OfficeAppManifests` répertoire. L’application Office qui héberge votre complément utilise cette copie lorsque vous démarrez Visual Studio et déboguez le complément.
 
-2. Crée un ensemble d’entrées dans le registre de votre ordinateur qui permettent au complément d’apparaître dans l’application hôte.
+2. Crée un ensemble d’entrées de Registre sur votre ordinateur qui permettent au complément d’apparaître dans l’application Office.
 
 3. Génère le projet d’application web, puis le déploie sur le serveur web IIS local (https://localhost).
 
 4. S’il s’agit du premier projet de complément que vous déployez sur un serveur web IIS local, il se peut que vous soyez invité à installer un certificat auto-signé pour le magasin de certificats racines de confiance de l’utilisateur actuel. Cela est nécessaire pour qu’IIS Express puisse afficher correctement le contenu de votre complément.
 
 > [!NOTE]
-> La dernière version d’Office peut utiliser un contrôle web plus récent pour afficher le contenu du complément lors de l’exécution de celui-ci sur Windows 10. Si tel est le cas, Visual Studio peut vous inviter à ajouter une exemption de bouclage de réseau local. Cela est nécessaire pour que le contrôle web dans l’application hôte Office puisse accéder au site web déployé sur le serveur web IIS local. Vous pouvez également modifier ce paramètre à tout moment dans Visual Studio sous **Outils** > **Options** > **Outils Office (web)** > **Débogage de compléments web**.
+> La dernière version d’Office peut utiliser un contrôle web plus récent pour afficher le contenu du complément lors de l’exécution de celui-ci sur Windows 10. Si tel est le cas, Visual Studio peut vous inviter à ajouter une exemption de bouclage de réseau local. Cela est nécessaire pour que le contrôle Web, dans l’application cliente Office, puisse accéder au site Web déployé sur le serveur Web IIS local. Vous pouvez également modifier ce paramètre à tout moment dans Visual Studio sous **Outils** > **Options** > **Outils Office (web)** > **Débogage de compléments web**.
 
 Visual Studio effectue ensuite les actions suivantes :
 
@@ -117,7 +117,7 @@ Visual Studio effectue ensuite les actions suivantes :
 
 2. Il démarre le projet d’application web dans IIS Express.
 
-3. Il ouvre l’application hôte.
+3. Ouvre l’application Office.
 
 Visual Studio n’affiche pas les erreurs de validation dans la fenêtre **OUTPUT** lorsque vous générez le projet. Visual Studio signale les erreurs et avertissements dans la fenêtre **ERRORLIST** lorsqu’elles se produisent. Visual Studio signale également des erreurs de validation en affichant les soulignements ondulés de différentes couleurs (également connus sous soulignements ondulés) dans l’éditeur de code et de texte. Ces marques signalent l’arrivée de problèmes Visual Studio détectés dans votre code. Pour plus d’informations sur comment activer ou désactiver la validation, voir [Options, éditeur de texte, JavaScript, IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019).
 
@@ -125,7 +125,7 @@ Pour réviser les règles de validation du fichier manifeste XML dans votre proj
 
 ## <a name="debug-the-code-for-an-excel-powerpoint-or-word-add-in"></a>Déboguer le code d’un complément Excel, PowerPoint ou Word
 
-Si votre complément n’apparaît pas dans le document qui s’affiche dans l’application hôte (Excel, PowerPoint ou Word) après avoir [démarré le projet](#start-the-project), lancez manuellement le complément dans l’application hôte. Par exemple, démarrez votre complément volet tâche en choisissant le bouton**Afficher le volet de tâches** dans l’onglet **Accueil**. Une fois que votre complément est affiché dans Excel, PowerPoint ou Word, vous pouvez déboguer votre code en procédant comme suit :
+Si votre complément n’est pas visible dans le document qui est affiché dans l’application Office (Excel, PowerPoint ou Word) après [le démarrage du projet](#start-the-project), lancez manuellement le complément dans l’application Office. Par exemple, démarrez votre complément volet tâche en choisissant le bouton**Afficher le volet de tâches** dans l’onglet **Accueil**. Une fois que votre complément est affiché dans Excel, PowerPoint ou Word, vous pouvez déboguer votre code en procédant comme suit :
 
 1. Dans Excel, PowerPoint ou Word, sélectionnez l’onglet **insérer**, puis cliquez sur la flèche vers le bas située à droite de **Mes compléments**.
 
@@ -139,11 +139,11 @@ Si votre complément n’apparaît pas dans le document qui s’affiche dans l�
 
 5. Lorsque des points d’arrêt sont marqués dans Visual Studio, parcourez le code si besoin.
 
-Vous pouvez modifier votre code et passer en revue les effets de ces modifications dans votre complément sans avoir à fermer l’application hôte et redémarrer le projet. Une fois que vous enregistrez des modifications à votre code, rechargez simplement le complément dans l’application hôte. Par exemple, rechargez un complément de volet de tâches en choisissant le coin supérieur droit du volet Office pour activer la [menu personnalisé](../design/task-pane-add-ins.md#personality-menu), puis**Recharger**.
+Vous pouvez modifier votre code et passer en revue les effets de ces modifications dans votre complément sans avoir à fermer l’application Office et redémarrer le projet. Une fois que vous avez enregistré les modifications apportées à votre code, rechargez simplement le complément dans l’application Office. Par exemple, rechargez un complément de volet de tâches en choisissant le coin supérieur droit du volet Office pour activer la [menu personnalisé](../design/task-pane-add-ins.md#personality-menu), puis**Recharger**.
 
 ## <a name="debug-the-code-for-an-outlook-add-in"></a>Déboguer le code d’un complément Outlook
 
-Une fois que vous avez [démarré le projet](#start-the-project) et que Visual Studio lance Outlook pour héberger votre complément, ouvrez un élément de courrier électronique ou un rendez-vous. 
+Une fois que vous avez [démarré le projet](#start-the-project) et que Visual Studio lance Outlook pour héberger votre complément, ouvrez un élément de courrier électronique ou un rendez-vous.
 
 Outlook active le complément pour l’élément à condition que les critères d’activation soient respectés. La barre complément apparaît en haut de la fenêtre de l’inspecteur ou du volet de lecture, et votre complément Outlook apparaît sous la forme d’un bouton dans la barre du complément. Si votre complément est doté d’une commande, un bouton apparaît dans le ruban (soit dans l’onglet par défaut, soit dans un onglet personnalisé indiqué), et le complément n’apparaît pas dans la barre complément.
 

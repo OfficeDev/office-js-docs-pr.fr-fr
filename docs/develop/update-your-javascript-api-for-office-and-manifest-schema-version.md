@@ -3,12 +3,12 @@ title: Mise à jour vers la dernière bibliothèque d’API JavaScript Office et
 description: Mettez à jour vos fichiers JavaScript (Office.js et fichiers .js propres aux applications) et le fichier de validation du manifeste du complément dans votre projet Complément Office vers la version 1.1.
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 34127b3920af1309d4e4c2e1c265c676640a1c24
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: b0536b4b55accd99e002e26c467572330ba72ae2
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093552"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293127"
 ---
 # <a name="update-to-the-latest-office-javascript-api-library-and-version-11-add-in-manifest-schema"></a>Mise à jour vers la dernière bibliothèque d’API JavaScript Office et schéma de manifeste de complément version 1,1
 
@@ -122,7 +122,7 @@ Dans le fichier manifeste de votre complément, mettez à jour l’attribut **xm
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Spécification des exigences en matière d’hôtes Office et d’API](specify-office-hosts-and-api-requirements.md) ]
+- [Spécifier les applications Office et les conditions requises de l’API](specify-office-hosts-and-api-requirements.md) ]
 - [Compréhension de l’API JavaScript pour Office](understanding-the-javascript-api-for-office.md)
 - [API JavaScript pour Office](../reference/javascript-api-for-office.md)
 - [Informations de référence sur le schéma des manifestes des applications pour Office (version 1.1)](../develop/add-in-manifests.md)

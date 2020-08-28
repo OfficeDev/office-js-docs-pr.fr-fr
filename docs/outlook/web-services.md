@@ -3,12 +3,12 @@ title: Utiliser les services Web Exchange (EWS) à partir d’un complément Out
 description: Fournit un exemple qui illustre comment un complément Outlook peut demander des informations à partir des Services Web Exchange.
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: a1141570c14b6905584f9398b629a75b477d3870
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: a8299b3e96db48c296fe0e61b36668a788fb8799
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44604509"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292481"
 ---
 # <a name="call-web-services-from-an-outlook-add-in"></a>Appeler des services Web à partir d’un complément Outlook
 
@@ -25,7 +25,7 @@ La méthode d’appel d’un service Web dépend de l’emplacement de ce dernie
 |:-----|:-----|
 |Serveur Exchange qui héberge la boîte aux lettres cliente|Utilisez la méthode [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) pour appeler les opérations EWS qui permettent d'ajouter des compléments de prise en charge. Le serveur Exchange qui héberge la boîte aux lettres expose également EWS.|
 |Serveur web qui fournit l’emplacement source de l’interface utilisateur du complément|Appelez le service web au moyen des techniques JavaScript standard. Le code JavaScript présent dans le cadre de l’interface utilisateur s’exécute dans le contexte du serveur web qui fournit l’interface utilisateur. Il est donc capable d’appeler les services web sur ce serveur sans provoquer d’erreur de script intersite.|
-|Tous les autres emplacements|Créez un proxy pour le service web sur le serveur web qui fournit l’emplacement source de l’interface utilisateur. Si vous n’indiquez pas de proxy, votre complément ne s’exécutera pas en raison d’erreurs de script intersites. L’un des moyens de fournir un proxy consiste à utiliser JSON/P. Pour plus d’informations, voir [Confidentialité et sécurité pour les compléments Office](../develop/privacy-and-security.md).|
+|Tous les autres emplacements|Créez un proxy pour le service web sur le serveur web qui fournit l’emplacement source de l’interface utilisateur. Si vous n’indiquez pas de proxy, votre complément ne s’exécutera pas en raison d’erreurs de script intersites. L’un des moyens de fournir un proxy consiste à utiliser JSON/P. Pour plus d’informations, voir [Confidentialité et sécurité pour les compléments Office](../concepts/privacy-and-security.md).|
 
 ## <a name="using-the-makeewsrequestasync-method-to-access-ews-operations"></a>Utilisation de la méthode makeEwsRequestAsync pour accéder aux opérations EWS
 
@@ -51,7 +51,7 @@ Lors de l’analyse d’une réponse SOAP à partir d’une opération EWS, note
 
 - Spécifier le préfixe d’un nom de balise lorsque vous utilisez la méthode DOM `getElementsByTagName` , pour inclure la prise en charge d’Internet Explorer.
 
-  `getElementsByTagName`se comporte différemment en fonction du type de navigateur. Par exemple, une réponse EWS peut contenir le code XML suivant (formaté et abrégé à des fins d’affichage) :
+  `getElementsByTagName` se comporte différemment en fonction du type de navigateur. Par exemple, une réponse EWS peut contenir le code XML suivant (formaté et abrégé à des fins d’affichage) :
 
    ```XML
         <t:ExtendedProperty><t:ExtendedFieldURI PropertySetId="00000000-0000-0000-0000-000000000000" 
@@ -154,7 +154,7 @@ Voici comment vous pouvez utiliser la `makeEwsRequestAsync` méthode :
 
 1. Dans le XML, remplacez les ID d’éléments et les attributs d’opération EWS par les valeurs appropriées.
 
-2. Incluez la demande SOAP en tant qu’argument pour le paramètre _Data_ de `makeEwsRequestAsync` .
+2. Incluez la demande SOAP en tant qu’argument pour le paramètre  _Data_ de `makeEwsRequestAsync` .
 
 3. Spécifiez une méthode de rappel et appelez `makeEwsRequestAsync` .
 
@@ -203,7 +203,7 @@ Votre complément doit spécifier l' `ReadWriteMailbox` autorisation dans son ma
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Confidentialité et sécurité pour les compléments Office](../develop/privacy-and-security.md)
+- [Confidentialité et sécurité pour les compléments Office](../concepts/privacy-and-security.md)
 - [Résolutions des limites de stratégie d’origine identique dans les compléments Office](../develop/addressing-same-origin-policy-limitations.md)
 - [Référence EWS pour Exchange](/exchange/client-developer/web-service-reference/ews-reference-for-exchange)
 - [Applications de messagerie pour Outlook et EWS dans Exchange](/exchange/client-developer/exchange-web-services/mail-apps-for-outlook-and-ews-in-exchange)

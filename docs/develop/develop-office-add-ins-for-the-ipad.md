@@ -3,12 +3,12 @@ title: Développer des compléments Office pour iPad
 description: Obtenez une vue d’ensemble et les meilleures pratiques pour la création d’un complément Office qui s’exécute sur un iPad.
 ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 2630b3e685c0bd0dc8d9ad9c6ce48b0f42f060c6
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 6738cc559cc07f747e075c17419b70558dec3c66
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608291"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292784"
 ---
 # <a name="develop-office-add-ins-for-the-ipad"></a>Développer des compléments Office pour iPad
 
@@ -38,11 +38,11 @@ Appliquez les meilleures pratiques suivantes pour développer des compléments p
 
 -  **Utilisez Visual Studio pour développer votre complément.**
 
-    Si vous développez votre complément avec Visual Studio, vous pouvez [définir des points d’arrêt et déboguer son code](../develop/debug-office-add-ins-in-visual-studio.md) dans une application hôte Office s’exécutant sous Windows, avant de charger votre complément sur iPad ou Mac. Étant donné qu’un complément exécuté dans Office sur iOS ou Mac prend en charge les mêmes API qu’un complément s’exécutant dans Office sur Windows, le code de votre complément doit s’exécuter de la même manière sur les deux plateformes.
+    Si vous développez votre complément avec Visual Studio, vous pouvez [définir des points d’arrêt et déboguer son code](../develop/debug-office-add-ins-in-visual-studio.md) dans une application cliente Office s’exécutant sur Windows, avant de chargement votre complément sur l’iPad ou Mac. Étant donné qu’un complément exécuté dans Office sur iOS ou Mac prend en charge les mêmes API qu’un complément s’exécutant dans Office sur Windows, le code de votre complément doit s’exécuter de la même manière sur les deux plateformes.
 
 -  **Précisez les conditions de fonctionnement de l’API dans le manifeste de votre complément ou avec des vérifications à l’exécution.**
 
-    Lorsque vous spécifiez des conditions requises d’API dans le manifeste de votre complément, Office détermine si l’application hôte prend en charge ces membres de l’API. Si les membres de l’API sont disponibles dans l’hôte, votre complément sera alors disponible dans cette application hôte. Par ailleurs, vous pouvez effectuer une vérification à l’exécution pour déterminer si une méthode est disponible dans l’hôte avant de l’utiliser dans votre complément. Les vérifications à l’exécution garantissent que votre complément est toujours disponible dans l’hôte et qu’il fournit des fonctionnalités supplémentaires si les méthodes sont disponibles. Pour plus d’informations, consultez la rubrique [Spécifier les hôtes Office et les conditions requises d’API](specify-office-hosts-and-api-requirements.md).
+    Lorsque vous spécifiez les conditions requises de l’API dans le manifeste de votre complément, Office détermine si l’application cliente Office prend en charge ces membres d’API. Si les membres de l’API sont disponibles dans l’application, votre complément sera disponible. Vous pouvez également effectuer une vérification à l’exécution pour déterminer si une méthode est disponible dans l’application avant de l’utiliser dans votre complément. Les vérifications à l’exécution garantissent que votre complément est toujours disponible dans l’application et qu’il fournit des fonctionnalités supplémentaires si les méthodes sont disponibles. Pour plus d’informations, voir [spécifier les applications Office et les conditions requises](specify-office-hosts-and-api-requirements.md)de l’API.
 
 Pour plus d’informations sur des pratiques plus générales en matière de développement de compléments, consultez la rubrique [Meilleures pratiques en matière de développement de compléments Office](../concepts/add-in-development-best-practices.md).
 

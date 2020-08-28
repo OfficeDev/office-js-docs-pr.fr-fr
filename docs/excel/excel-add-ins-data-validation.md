@@ -3,12 +3,12 @@ title: Ajout de validation des données à des plages Excel
 description: Découvrez comment les API JavaScript pour Excel permettent à votre complément d’ajouter une validation automatique des données aux tableaux, colonnes, lignes et autres plages d’un classeur.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 54ac86def46a130b8b95876a3c42ef8704f9549c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 422876e35d90a6f61da81f112ff61a732c1d0546
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609614"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292557"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>Ajout de validation des données à des plages Excel
 
@@ -111,7 +111,7 @@ Excel.run(function (context) {
 
 ### <a name="list-validation-rule-type"></a>Type de règle de validation de liste
 
-Utilisez la propriété `list` dans l’objet `DataValidationRule` pour spécifier que les seules valeurs valides sont celles d’une liste de remise. Voici un exemple. Voici quelques caractéristiques notables de ce code :
+Utilisez la propriété `list` dans l’objet `DataValidationRule` pour spécifier que les seules valeurs valides sont celles d’une liste de remise. Voici un exemple. Tenez compte des informations suivantes :
 
 - Il part du principe qu’il existe une feuille de calcul nommée « Noms » et que les valeurs dans la plage « A1:A3 » sont des noms.
 - La propriété `source` indique la liste des valeurs valides. L’argument de chaîne fait référence à une plage de cellules contenant les noms. Vous pouvez également affecter une liste délimitée par des virgules ; par exemple : « Sue, Ricky, Florence ». 
@@ -136,7 +136,7 @@ Excel.run(function (context) {
 
 ### <a name="custom-validation-rule-type"></a>Type de règle de validation personnalisée
 
-Utilisez la propriété `custom` dans l’objet `DataValidationRule` pour spécifier une formule de validation personnalisée. Voici un exemple. Voici quelques caractéristiques notables de ce code :
+Utilisez la propriété `custom` dans l’objet `DataValidationRule` pour spécifier une formule de validation personnalisée. Voici un exemple. Tenez compte des informations suivantes :
 
 - Il part du principe qu’il existe un tableau de deux colonnes avec des colonnes **nom athlète** et **commentaires** dans les colonnes A et B de la feuille de calcul.
 - Pour réduire le niveau de détail dans la colonne**commentaires**, il rend les données qui incluent le nom de l’athlète invalides.
@@ -163,7 +163,7 @@ Excel.run(function (context) {
 Vous pouvez créer une alerte d’erreur personnalisée qui s’affiche lorsqu’un utilisateur tente d’entrer des données non valides dans une cellule. Voici un exemple simple. Tenez compte des informations suivantes :
 
 - La propriété `style` détermine si l’utilisateur reçoit une alerte d’information, un avertissement ou une alerte « Stop ». Seule l'alerte `Stop` empêche l’utilisateur d’ajouter des données non valides. La fenêtre contextuelle pour `Warning` et `Information` affiche des options qui autorisent l’utilisateur à entrer tout de même les données non valides.
-- La propriété `showAlert` est définie par défaut sur `true`. Cela signifie que l’hôte Excel affichera une fenêtre contextuelle d’alerte générique (de type `Stop`), sauf si vous créez une alerte personnalisée qui définit `showAlert` à `false` ou un message, titre et style personnalisés. Ce code définit un message et un titre personnalisés.
+- La propriété `showAlert` est définie par défaut sur `true`. Cela signifie qu’Excel consigne une alerte générique (de type `Stop` ) sauf si vous créez une alerte personnalisée qui définit `showAlert` `false` ou définit un message, un titre et un style personnalisés. Ce code définit un message et un titre personnalisés.
 
 ```js
 Excel.run(function (context) {

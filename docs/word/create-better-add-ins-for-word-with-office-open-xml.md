@@ -3,12 +3,12 @@ title: Créer de meilleurs compléments pour Word avec Office Open XML
 description: Vue d’ensemble de l’amélioration de votre complément Word avec Office Open XML.
 ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 8aeb0d122c85a1bf38755d1db364222359d06e58
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 9bc88f99cb16a8f5b3fb28208b4ce5379f8595eb
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159303"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294212"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Créer de meilleurs compléments pour Word avec Office Open XML
 
@@ -87,7 +87,7 @@ Vous pouvez inclure la mise en forme du texte, des bordures, une trame de fond, 
 *Figure 9. Tableau mis en forme avec un style de tableau*
 
 
-![Tableau mis en forme dans Word.](../images/office15-app-create-wd-app-using-ooxml-fig09.png)
+![Tableau mis en forme avec un style de tableau dans Word.](../images/office15-app-create-wd-app-using-ooxml-fig09.png)
 
 Vous pouvez utiliser des styles de tableau intégrés ou personnalisés aussi facilement pour un paragraphe de texte.
 
@@ -122,7 +122,7 @@ Lorsque vous utilisez [getSelectedDataAsync](/javascript/api/office/office.docum
 
 Même un simple package de document Word comprend des composants pour les propriétés du document, les styles, le thème (paramètres de mise en forme), les paramètres web, les polices, en plus d’autres composants pour le contenu réel.
 
-Par exemple, supposons que vous voulez insérer uniquement un paragraphe de texte avec une mise en forme directe, comme indiqué précédemment sur la figure 1. Lorsque vous récupérez le XML ouvert Office pour le texte mis en forme à l’aide de `getSelectedDataAsync` , vous voyez un grand nombre de balises. Ce balisage comprend un élément de package qui représente un document entier, formé de plusieurs parties (communément appelées composants de document ou, dans Office Open XML, composants de package), listées dans la figure 13. Chaque composant représente un fichier distinct du package.
+Par exemple, supposons que vous voulez insérer uniquement un paragraphe de texte avec une mise en forme directe, comme indiqué précédemment sur la figure 1. Lorsque vous récupérez le XML ouvert Office pour le texte mis en forme à l’aide de  `getSelectedDataAsync` , vous voyez un grand nombre de balises. Ce balisage comprend un élément de package qui représente un document entier, formé de plusieurs parties (communément appelées composants de document ou, dans Office Open XML, composants de package), listées dans la figure 13. Chaque composant représente un fichier distinct du package.
 
 > [!TIP]
 > Vous pouvez modifier le balisage Office Open XML dans un éditeur de texte comme le Bloc-notes. Si vous l’ouvrez dans Visual Studio, vous pouvez utiliser **modifier >Advanced > format document** (Ctrl + K, Ctrl + D) pour mettre en forme le package afin de le modifier plus facilement. Ensuite, vous pouvez réduire ou développer des parties de document ou des sections de celles-ci, comme indiqué dans la figure 12, pour vérifier et modifier plus facilement le contenu du package Office Open XML. Chaque composant du document commence par une balise **pkg:part**.
@@ -130,7 +130,7 @@ Par exemple, supposons que vous voulez insérer uniquement un paragraphe de text
 
 *Figure 12. Réduction et développement des composants de package pour faciliter la modification dans Visual Studio*
 
-![Extrait de code Office Open XML pour un composant de package.](../images/office15-app-create-wd-app-using-ooxml-fig12.png)
+![Extrait de code Office Open XML pour un composant de package dans Visual Studio.](../images/office15-app-create-wd-app-using-ooxml-fig12.png)
 
 *Figure 13. Composants inclus dans un package de document Word Office Open XML de base*
 
@@ -219,7 +219,7 @@ Nous avons modifié l’exemple Office Open XML affiché ici, comme décrit da
 
 Une fois que vous avez enregistré le code Office Open XML précédent dans un fichier XML accessible à partir de votre solution, vous pouvez utiliser la fonction suivante pour définir le contenu du texte mis en forme dans le document à l’aide du forçage Office Open XML. 
 
-Dans cette fonction, vous remarquerez que toutes les lignes sauf la dernière sont utilisées pour obtenir votre balisage enregistré afin de l’utiliser dans l’appel de méthode [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) à la fin de la fonction. `setSelectedDataASync`nécessite uniquement de spécifier le contenu à insérer et le type de forçage de type.
+Dans cette fonction, vous remarquerez que toutes les lignes sauf la dernière sont utilisées pour obtenir votre balisage enregistré afin de l’utiliser dans l’appel de méthode [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) à la fin de la fonction. `setSelectedDataASync` nécessite uniquement de spécifier le contenu à insérer et le type de forçage de type.
 
 
 > [!NOTE]

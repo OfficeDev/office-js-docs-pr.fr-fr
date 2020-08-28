@@ -1,14 +1,14 @@
 ---
 title: Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)
 description: Les fonctions et scénarios d’objet de plage avancés, tels que les cellules spéciales, suppriment les doublons et utilisent des dates.
-ms.date: 05/06/2020
+ms.date: 08/26/2020
 localization_priority: Normal
-ms.openlocfilehash: 0a185551bf0ddd6b5d4d5a90e4faac7ce78e2cc9
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 47f154c2bffac2e730aba21204261bc1bd536af2
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609747"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294156"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)
 
@@ -78,7 +78,7 @@ getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCe
 getSpecialCellsOrNullObject(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
 ```
 
-L’exemple suivant utilise la méthode`getSpecialCells`pour rechercher toutes les cellules contenant les formules. Tenez compte du code suivant :
+L’exemple suivant utilise la méthode`getSpecialCells`pour rechercher toutes les cellules contenant les formules. Tenez compte du code suivant:
 
 - Cela limite la partie de la feuille qui nécessite d’être recherchée en appelant d’abord`Worksheet.getUsedRange`et en appelant`getSpecialCells`uniquement pour cette plage.
 - La`getSpecialCells`méthode renvoie un`RangeAreas`objet, toutes les cellules alors dotées de formules seront colorées en rose même si elles ne sont pas adjacentes.
@@ -96,10 +96,10 @@ Excel.run(function (context) {
 
 Si aucune cellule avec la caractéristique ciblée n’existe dans la plage `getSpecialCells` lève une erreur**ItemNotFound**. Cela dévie le flux de contrôle vers un(e)`catch`bloc/méthode, s’il en existe. S’il n’existe pas de `catch` bloc, l’erreur interrompt la méthode.
 
-Si vous attendez que des cellules avec la caractéristique ciblée existent toujours, vous souhaiterez probablement que votre code  lève une erreur si ces cellules ne sont pas là. Mais dans les scénarios où les cellules ne correspondent pas; votre code doit vérifier cette possibilité et le gérer gracieusement sans émettre d’erreur. Vous pouvez obtenir ce comportement avec la `getSpecialCellsOrNullObject`méthode et sa propriété renvoyée`isNullObject`. Cet exemple utilise les valeurs suivantes. Tenez compte du code suivant :
+Si vous attendez que des cellules avec la caractéristique ciblée existent toujours, vous souhaiterez probablement que votre code  lève une erreur si ces cellules ne sont pas là. Mais dans les scénarios où les cellules ne correspondent pas; votre code doit vérifier cette possibilité et le gérer gracieusement sans émettre d’erreur. Vous pouvez obtenir ce comportement avec la `getSpecialCellsOrNullObject`méthode et sa propriété renvoyée`isNullObject`. Cet exemple utilise les valeurs suivantes. Tenez compte du code suivant:
 
 - La méthode`getSpecialCellsOrNullObject`renvoie toujours un objet proxy, donc il ne s’agit jamais du sens`null`JavaScript ordinaire. Mais si les cellules non correspondantes sont introuvables, la propriété`isNullObject` de l’objet est établi à`true`.
-- Il appelle`context.sync`*avant*de tester la propriété`isNullObject`. Il s’agit d’une condition avec toutes les méthodes et propriétés`*OrNullObject`, car vous devez toujours télécharger et synchroniser une propriété afin de le lire.  Cependant, il n’est pas nécessaire de télécharger*de manière explicite*la propriété`isNullObject`. Il est automatiquement téléchargé par le`context.sync`même si`load`n’est pas appelé sur l’objet. Pour plus d'informations, consultez le[\*OrNullObject](../excel/excel-add-ins-advanced-concepts.md#ornullobject-methods).
+- Il appelle`context.sync`*avant*de tester la propriété`isNullObject`. Il s’agit d’une condition avec toutes les méthodes et propriétés`*OrNullObject`, car vous devez toujours télécharger et synchroniser une propriété afin de le lire.  Cependant, il n’est pas nécessaire de télécharger*de manière explicite*la propriété`isNullObject`. Il est automatiquement téléchargé par le`context.sync`même si`load`n’est pas appelé sur l’objet. Pour plus d’informations, consultez la rubrique [ \* OrNullObject Methods and Properties](../develop/application-specific-api-model.md#ornullobject-methods-and-properties).
 - Vous pouvez tester ce code en sélectionnant d’abord une plage qui n’a pas de cellules de formule et en l’exécutant. Puis sélectionnez une plage qui dispose au moins d’une cellule dotée d’une formule et en l’exécutant à nouveau.
 
 ```js
@@ -197,10 +197,10 @@ copyFrom(sourceRange: Range | RangeAreas | string, copyType?: Excel.RangeCopyTyp
 
 `copyType` spécifie les données copiées de la source vers la destination.
 
-- `Excel.RangeCopyType.formulas`transfère les formules dans les cellules sources et conserve le positionnement relatif des plages de ces formules. Les entrées autres que des formules sont copiées telles quelles.
+- `Excel.RangeCopyType.formulas` transfère les formules dans les cellules sources et conserve le positionnement relatif des plages de ces formules. Les entrées autres que des formules sont copiées telles quelles.
 - `Excel.RangeCopyType.values` copie les valeurs des données et, s’il s’agit d’une formule, le résultat de celle-ci.
 - `Excel.RangeCopyType.formats` copie la mise en forme de la plage, y compris la police, la couleur et d’autres paramètres de mise en forme, mais aucune valeur.
-- `Excel.RangeCopyType.all`(option par défaut) copie les données et la mise en forme, en conservant les formules, le cas échéant.
+- `Excel.RangeCopyType.all` (option par défaut) copie les données et la mise en forme, en conservant les formules, le cas échéant.
 
 `skipBlanks` définit si les cellules vides sont copiées dans la destination. Quand la valeur est true, `copyFrom` ignore les cellules vides de la plage source.
 Les cellules ignorées ne remplacent pas les données existantes dans les cellules correspondantes de la plage de destination. La valeur par défaut est false.
@@ -326,6 +326,37 @@ Excel.run(function (context) {
 ![Une plage avec un contour à deux niveaux et deux dimensions](../images/excel-outline.png)
 
 Pour dissocier un groupe de lignes ou de colonnes, utilisez la méthode [Range. Ungroup](/javascript/api/excel/excel.range#ungroup-groupoption-) . Cette opération supprime le niveau le plus à l’extérieur du plan. Si plusieurs groupes du même type de ligne ou de colonne se trouvent au même niveau au sein de la plage spécifiée, tous ces groupes sont dissociés.
+
+## <a name="handle-dynamic-arrays-and-spilling-preview"></a>Gérer les tableaux dynamiques et le débordement (aperçu)
+
+> [!NOTE]
+> Les API de déversion de plage et de tableau dynamiques sont actuellement en préversion. [!INCLUDE [Information about using preview Excel APIs](../includes/using-excel-preview-apis.md)]
+
+Certaines formules Excel renvoient des [tableaux dynamiques](https://support.microsoft.com/office/dynamic-array-formulas-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531). Ces valeurs remplissent les valeurs de plusieurs cellules en dehors de la cellule d’origine de la formule. Ce débordement de valeur est appelé « déversement ». Votre complément peut trouver la plage utilisée pour un déversement avec la méthode [Range. getSpillingToRange](/javascript/api/excel/excel.range#getspillingtorange--) . Il existe également une [version * OrNullObject](..//develop/application-specific-api-model.md#ornullobject-methods-and-properties), `Range.getSpillingToRangeOrNullObject` .
+
+L’exemple suivant montre une formule de base qui copie le contenu d’une plage dans une cellule, qui se transforme en cellules voisines. Le complément enregistre ensuite la plage qui contient le déversement.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+
+    // Set G4 to a formula that returns a dynamic array.
+    var targetCell = sheet.getRange("G4");
+    targetCell.formulas = [["=A4:D4"]];
+
+    // Get the address of the cells that the dynamic array spilled into.
+    var spillRange = targetCell.getSpillingToRange();
+    spillRange.load("address");
+
+    // Sync and log the spilled-to range.
+    return context.sync().then(function () {
+        // This will log the range as "G4:J4".
+        console.log(`Copying the table headers spilled into ${spillRange.address}.`);
+    });
+}).catch(errorHandlerFunction);
+```
+
+Vous pouvez également trouver la cellule responsable du débordement dans une cellule donnée à l’aide de la méthode [Range. getSpillParent](/javascript/api/excel/excel.range#getspillparent--) . Notez que `getSpillParent` ne fonctionne que si l’objet Range est une seule cellule. `getSpillParent`L’appel sur une plage comportant plusieurs cellules entraîne la levée d’une erreur (ou une plage null renvoyée pour `Range.getSpillParentOrNullObject` ).
 
 ## <a name="see-also"></a>Voir aussi
 

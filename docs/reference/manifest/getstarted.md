@@ -1,28 +1,28 @@
 ---
 title: Élément GetStarted dans le fichier manifeste
-description: Fournit des informations utilisées par la légende qui s’affiche lorsque le complément est installé dans des hôtes Word, Excel, PowerPoint et OneNote.
+description: Fournit des informations utilisées par la légende qui apparaît lorsque le complément est installé dans Word, Excel, PowerPoint et OneNote.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: c1fbdd5d4f4365f9f8190805519fc7a70c8c87ca
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 01b10b8316c87b046cf816d6f86551bf1a349267
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611833"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292292"
 ---
-# <a name="getstarted-element"></a>GetStarted, élément
+# <a name="getstarted-element"></a>Élément GetStarted
 
-Fournit des informations utilisées par la légende qui s’affiche lorsque le complément est installé dans des hôtes Word, Excel, PowerPoint et OneNote. L’élément **GetStarted** est un élément enfant de [DesktopFormFactor](desktopformfactor.md).
+Fournit des informations utilisées par la légende qui apparaît lorsque le complément est installé dans Word, Excel, PowerPoint et OneNote. L’élément **GetStarted** est un élément enfant de [DesktopFormFactor](desktopformfactor.md).
 
 ## <a name="child-elements"></a>Éléments enfants
 
-| Élément                       | Requis | Description                                        |
+| Élément                       | Obligatoire | Description                                        |
 |:------------------------------|:--------:|:---------------------------------------------------|
 | [Titre](#title)               | Oui      | Définit l’emplacement où se trouvent les fonctionnalités d’un complément     |
 | [Description](#description)   | Oui      | URL pointant vers un fichier qui contient les fonctions JavaScript.|
 | [LearnMoreUrl](#learnmoreurl) | Oui       | URL vers une page qui décrit le complément de façon plus détaillée.   |
 
-### <a name="title"></a>Title 
+### <a name="title"></a>Titre 
 
 Obligatoire. Le titre est utilisé pour la partie supérieure de la légende. L’attribut **resid** fait référence à un ID valide de l’élément **ShortStrings** dans la section [Resources](resources.md).
 

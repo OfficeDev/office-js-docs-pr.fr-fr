@@ -2,14 +2,14 @@
 title: Configurer votre complément Outlook pour l’activation basée sur les événements (aperçu)
 description: Découvrez comment configurer votre complément Outlook pour l’activation basée sur les événements.
 ms.topic: article
-ms.date: 08/18/2020
+ms.date: 08/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 736573fb5ab5b50841348f55d89ae15e4d174a22
-ms.sourcegitcommit: e9f23a2857b90a7c17e3152292b548a13a90aa33
+ms.openlocfilehash: 0131cafa8315315d63b6319ecad4fd41b1168073
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "46803750"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293925"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>Configurer votre complément Outlook pour l’activation basée sur les événements (aperçu)
 
@@ -193,6 +193,9 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
     ```command&nbsp;line
     npm start
     ```
+
+    > [!IMPORTANT]
+    > Si une erreur « chargement n’est pas pris en charge » s’affiche, vous pouvez l’ignorer et continuer.
 
 1. Suivez les instructions indiquées dans l’article [Chargement de version test des compléments Outlook](sideload-outlook-add-ins-for-testing.md) pour charger le complément dans Outlook.
 

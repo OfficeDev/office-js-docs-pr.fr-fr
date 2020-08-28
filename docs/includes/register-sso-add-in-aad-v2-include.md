@@ -14,7 +14,7 @@
 1. Sur la page **$ADD-IN-NAME$**, copiez et enregistrez les valeurs pour l’**ID de l’application (client)** et l’**ID de répertoire (client)**. Vous utiliserez les deux plus tard.
 
     > [!NOTE]
-    > Cet ID a la valeur « audience » lorsque d’autres applications, telles que l’application hôte Office (par exemple, PowerPoint, Word, Excel) demandent un accès autorisé à l’application. Il s’agit également de l’« ID client » de l’application dès que celle-ci recherche un accès autorisé à Microsoft Graph.
+    > Cet ID est la valeur « audience » lorsque d’autres applications, telles que l’application cliente Office (par exemple, PowerPoint, Word, Excel), cherchent un accès autorisé à l’application. Il s’agit également de l’« ID client » de l’application dès que celle-ci recherche un accès autorisé à Microsoft Graph.
 
 1. Sélectionnez **Certificats et secrets** sous **Gérer**. Sélectionnez le bouton **Nouveau secret client**. Entrer une valeur pour **Description** puis sélectionnez une option appropriée pour **Expire le** puis **Ajouter**. *Copier la valeur secrète client immédiatement et enregistrez-la avec l’ID d’application* avant de continuer car vous en aurez besoin dans une procédure plus loin.
 
@@ -30,7 +30,7 @@
 
 1. Donnez la valeur **Administrateurs et utilisateurs** à **Qui peut donner son consentement ?** .
 
-1. Renseignez les champs pour configurer les invites de consentement des administrateurs et utilisateurs avec les valeurs appropriées pour l’étendue `access_as_user` qui permet à l’application Office hôte d’utiliser l’API web de votre complément avec les mêmes droits que l’utilisateur actuel. Suggestions :
+1. Renseignez les champs de configuration des invites de l’administrateur et du consentement de l’utilisateur avec des valeurs appropriées pour l’étendue, ce `access_as_user` qui permet à l’application cliente Office d’utiliser les API Web de votre complément avec les mêmes droits que l’utilisateur actuel. Suggestions :
 
     - **Titre consentement administrateur :** Office peut agir en tant qu’utilisateur.
     - **Description consentement administrateur :** activez Office pour qu’il appelle l’API de complément web avec les mêmes droits que l’utilisateur actuel.

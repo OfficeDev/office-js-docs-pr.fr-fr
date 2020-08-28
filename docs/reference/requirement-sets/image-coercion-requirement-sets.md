@@ -4,20 +4,20 @@ description: Prise en charge des ensembles de conditions requises de forçage d�
 ms.date: 08/13/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 59f6891182f47bed1b7e3b6aa69a30e941bce7cb
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 7140099757c6e4b5ad405723d5fed95fded6d919
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094352"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293547"
 ---
 # <a name="image-coercion-requirement-sets"></a>Ensembles de conditions requises de coercition d’image
 
-Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
+Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une application Office prend en charge les API dont un complément a besoin. Pour plus d’informations, consultez la rubrique [versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
 
 ## <a name="imagecoercion-11"></a>ImageCoercion 1.1
 
-ImageCoercion 1,1 permet la conversion en image ( `Office.CoercionType.Image` ) lors de l’écriture de données à l’aide de la [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) méthode. Les hôtes suivants sont pris en charge :
+ImageCoercion 1,1 permet la conversion en image ( `Office.CoercionType.Image` ) lors de l’écriture de données à l’aide de la [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) méthode. Les applications suivantes sont prises en charge :
 
 - Excel 2013 et versions ultérieures sur Windows
 - Excel 2016 et versions ultérieures sur Mac
@@ -34,7 +34,7 @@ ImageCoercion 1,1 permet la conversion en image ( `Office.CoercionType.Image` ) 
 
 ## <a name="imagecoercion-12"></a>ImageCoercion 1.2
 
-ImageCoercion 1,2 permet d’effectuer une conversion au format SVG ( `Office.CoercionType.XmlSvg` ) lors de l’écriture de données à l’aide de la [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) méthode. Les hôtes suivants sont pris en charge :
+ImageCoercion 1,2 permet d’effectuer une conversion au format SVG ( `Office.CoercionType.XmlSvg` ) lors de l’écriture de données à l’aide de la [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) méthode. Les applications suivantes sont prises en charge :
 
 - Excel sur Windows (connecté à un abonnement Microsoft 365)
 - Excel sur Mac (connecté à un abonnement Microsoft 365)
@@ -52,5 +52,5 @@ Pour plus d’informations sur les ensembles de conditions requises des API comm
 ## <a name="see-also"></a>Voir aussi
 
 - [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md)
-- [Spécification des exigences en matière d’hôtes Office et d’API](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Spécification des exigences en matière d’applications et d’API Office](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Manifeste XML des compléments Office](../../develop/add-in-manifests.md)

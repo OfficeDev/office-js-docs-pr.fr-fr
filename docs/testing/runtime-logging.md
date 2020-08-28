@@ -3,12 +3,12 @@ title: Déboguez votre complément avec la journalisation runtime
 description: Découvrez l’utilisation de la journalisation runtime pour déboguer votre complément.
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: e97f989ff4791da678fbecbf8bceed3670749e01
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: e7ac3c3895830ae2fc5e26bd578d34a8d6203e7b
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611146"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292327"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>Déboguez votre complément avec la journalisation runtime
 
@@ -84,7 +84,7 @@ L’image suivante indique à quoi doit ressembler le registre. Pour désactiver
 
     `<bundle id>` identifie l’hôte pour lequel activer la journalisation de l’exécution. `<file_name>` est le nom du fichier texte dans lequel le journal sera écrit.
 
-    Configurez `<bundle id>` à l’une des valeurs suivantes pour activer la journalisation de l’exécution pour l’hôte correspondant :
+    Définissez `<bundle id>` l’une des valeurs suivantes pour activer la journalisation à l’exécution pour l’application correspondante :
 
     - `com.microsoft.Word`
     - `com.microsoft.Excel`

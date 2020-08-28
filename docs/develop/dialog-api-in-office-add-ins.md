@@ -1,14 +1,14 @@
 ---
 title: Utiliser l’API de boîte de dialogue Office dans vos compléments Office
-description: Découvrez les concepts de base de la création d’une boîte de dialogue dans un complément Office.
-ms.date: 06/10/2020
+description: Découvrir les notions de base relatives à la création d’une boîte de dialogue dans un complément Office
+ms.date: 08/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 5cdd457b99636dd244eed1fa88c1b76cab23ee8c
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 9d333c12d629232ece39bc30948318fbcafa3aa0
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159562"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292790"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Utiliser l’API de boîte de dialogue Office dans les compléments Office
 
@@ -32,7 +32,7 @@ L’image suivante montre un exemple de boîte de dialogue.
 
 ![Commandes de complément](../images/auth-o-dialog-open.png)
 
-Notez que la boîte de dialogue s’ouvre toujours au centre de l’écran. L’utilisateur peut la déplacer et la redimensionner. La fenêtre est *non modale* : un utilisateur peut continuer à interagir à la fois avec le document dans l’application Office hôte et avec la page dans le volet Office, le cas échéant.
+Notez que la boîte de dialogue s’ouvre toujours au centre de l’écran. L’utilisateur peut la déplacer et la redimensionner. La fenêtre n’est pas *modale*: un utilisateur peut continuer à interagir avec le document dans l’application Office et avec la page dans le volet Office, le cas échéant.
 
 ## <a name="open-a-dialog-box-from-a-host-page"></a>Ouvrir une boîte de dialogue à partir d’une page hôte
 
@@ -99,7 +99,8 @@ if (loginSuccess) {
 > [!IMPORTANT]
 > - La fonction `messageParent` peut uniquement être appelée sur une page ayant le même domaine (y compris les mêmes protocole et port) que la page hôte.
 > - La `messageParent` fonction est l’une des deux *seules* deux API Office js qui peuvent être appelées dans la boîte de dialogue. 
-> - L’autre API JS qui peut être appelée dans la boîte de dialogue est `Office.context.requirements.isSetSupported` . Pour plus d’informations, consultez la rubrique relative à la [spécification d’hôtes Office et de conditions requises d’API](specify-office-hosts-and-api-requirements.md). Toutefois, dans la boîte de dialogue, cette API n’est pas prise en charge dans l’achat d’Outlook 2016 1 à l’heure (autrement dit, la version MSI).
+> - L’autre API JS qui peut être appelée dans la boîte de dialogue est `Office.context.requirements.isSetSupported` . Pour plus d’informations à ce sujet, voir [spécifier les applications Office et les conditions requises](specify-office-hosts-and-api-requirements.md)de l’API. Toutefois, dans la boîte de dialogue, cette API n’est pas prise en charge dans l’achat d’Outlook 2016 1 à l’heure (autrement dit, la version MSI).
+
 
 Dans l’exemple suivant, `googleProfile` est une version convertie en chaîne du profil Google de l’utilisateur.
 
@@ -212,47 +213,96 @@ function processMessage(arg) {
 
 ## <a name="pass-information-to-the-dialog-box"></a>Transmission d’informations à la boîte de dialogue
 
-Parfois, la page hôte doit transmettre des informations à la boîte de dialogue. Pour ce faire, il existe deux moyens :
-
-- ajouter des paramètres de requête à l’URL qui est transmise à `displayDialogAsync` ;
-- stocker les informations à un emplacement auquel à la fois la fenêtre hôte et la boîte de dialogue ont accès. Les deux fenêtres ne partagent pas un stockage de session commun, mais *si elles ont le même domaine* (y compris le même numéro de port, le cas échéant), elles utilisent un [Stockage local](https://www.w3schools.com/html/html5_webstorage.asp) commun.\*
+Votre complément peut envoyer des messages à partir de la [page hôte](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page) vers une boîte de dialogue à l’aide de la [boîte de dialogue. messageChild](/javascript/api/office/office.dialog#messagechild-message-).
 
 > [!NOTE]
-> \* Un bogue peut affecter votre stratégie de gestion des jetons. Si le complément s’exécute dans **Office sur le web** dans le navigateur Safari ou Edge, la boîte de dialogue et le volet des tâches Office ne partagent pas le même stockage local. Il ne peut donc pas être utilisé pour communiquer entre eux.
+> Ces API de boîte de dialogue sont prises en charge uniquement dans Excel, PowerPoint et Word. La prise en charge d’Outlook est en cours de développement.
 
-### <a name="use-local-storage"></a>Utilisation du stockage local
+### <a name="use-messagechild-from-the-host-page"></a>Utiliser `messageChild()` à partir de la page hôte
 
-Pour utiliser le stockage local, votre code appelle la méthode `setItem` de l’objet `window.localStorage` dans la page hôte avant l’appel de `displayDialogAsync`, comme dans l’exemple suivant :
+Lorsque vous appelez l’API de boîte de dialogue Office pour ouvrir une boîte de dialogue, un objet [Dialog](/javascript/api/office/office.dialog) est renvoyé. Elle doit être assignée à une variable dont l’étendue est supérieure à celle de la méthode [displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-) , car l’objet sera référencé par d’autres méthodes. Voici un exemple :
 
-```js
-localStorage.setItem("clientID", "15963ac5-314f-4d9b-b5a1-ccb2f1aea248");
+```javascript
+var dialog;
+Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html',
+    function (asyncResult) {
+        dialog = asyncResult.value;
+        dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessage);
+    }
+);
+
+function processMessage(arg) {
+    dialog.close();
+
+  // message processing code goes here;
+
+}
 ```
 
-Le code dans la boîte de dialogue qui lit l’élément lorsqu’il est nécessaire, comme dans l’exemple suivant :
+Cet `Dialog` objet est doté d’une méthode [messageChild](/javascript/api/office/office.dialog#messagechild-message-) qui envoie n’importe quelle chaîne, y compris les données JSON, à la boîte de dialogue. Cela déclenche un `DialogParentMessageReceived` événement dans la boîte de dialogue. Votre code doit gérer cet événement, comme indiqué dans la section suivante.
 
-```js
-var clientID = localStorage.getItem("clientID");
-// You can also use property syntax:
-// var clientID = localStorage.clientID;
+Imaginez un scénario dans lequel l’interface utilisateur de la boîte de dialogue est liée à la feuille de calcul active et la position de cette feuille de calcul par rapport aux autres feuilles de calcul. Dans l’exemple suivant, `sheetPropertiesChanged` envoie les propriétés de feuille de calcul Excel dans la boîte de dialogue. Dans ce cas, la feuille de calcul active est nommée « ma feuille » et est la seconde feuille du classeur. Les données sont encapsulées dans un objet et JSON de sorte qu’il soit possible de les transmettre à `messageChild` .
+
+```javascript
+function sheetPropertiesChanged() {
+    var messageToDialog = JSON.stringify({
+                               name: "My Sheet",
+                               position: 2
+                           });
+
+    dialog.messageChild(messageToDialog);
+}
 ```
 
-### <a name="use-query-parameters"></a>Utiliser les paramètres de requête
+### <a name="handle-dialogparentmessagereceived-in-the-dialog-box"></a>Gérer DialogParentMessageReceived dans la boîte de dialogue
 
-L’exemple suivant montre comment transmettre des données à l’aide d’un paramètre de requête :
+Dans le JavaScript de la boîte de dialogue, inscrivez un gestionnaire pour l' `DialogParentMessageReceived` événement à l’aide de la méthode [UI. addHandlerAsync](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) . Cette opération s’effectue généralement dans les [méthodes Office. onReady ou Office.initialize](initialize-add-in.md), comme indiqué dans l’exemple suivant. (Un exemple plus fiable est ci-dessous.)
 
-```js
-Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?clientID=15963ac5-314f-4d9b-b5a1-ccb2f1aea248');
+```javascript
+Office.onReady()
+    .then(function() {
+        Office.context.ui.addHandlerAsync(
+            Office.EventType.DialogParentMessageReceived,
+            onMessageFromParent);
+    });
 ```
 
-Pour obtenir un exemple qui utilise cette technique, consultez l’article relatif à l’exemple [Insérer des graphiques Excel à l’aide de Microsoft Graph dans un complément PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart).
+Ensuite, définissez le `onMessageFromParent` Gestionnaire. Le code suivant poursuit l’exemple de la section précédente. Notez qu’Office transmet un argument au gestionnaire et que la `message` propriété de l’objet argument contient la chaîne de la page hôte. Dans cet exemple, le message est reconverti en objet et jQuery est utilisé pour définir le titre supérieur de la boîte de dialogue de sorte qu’il corresponde au nouveau nom de la feuille de calcul.
 
-Le code dans votre boîte de dialogue peut analyser l’URL et lire la valeur du paramètre.
+```javascript
+function onMessageFromParent(event) {
+    var messageFromParent = JSON.parse(event.message);
+    $('h1').text(messageFromParent.name);
+}
+```
+
+Il est recommandé de vérifier que votre gestionnaire est correctement enregistré. Vous pouvez effectuer cette opération en transférant un rappel à la `addHandlerAsync` méthode. Cette opération s’exécute lorsque la tentative d’enregistrement du gestionnaire est terminée. Utilisez le gestionnaire pour consigner ou afficher une erreur si le gestionnaire n’a pas été enregistré correctement. Voici un exemple. Notez qu' `reportError` il s’agit d’une fonction, non définie ici, qui enregistre ou affiche l’erreur.
+
+```javascript
+Office.onReady()
+    .then(function() {
+        Office.context.ui.addHandlerAsync(
+            Office.EventType.DialogParentMessageReceived,
+            onMessageFromParent,
+            onRegisterMessageComplete);
+    });
+
+function onRegisterMessageComplete(asyncResult) {
+    if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
+        reportError(asyncResult.error.message);
+    }
+}
+```
+
+### <a name="conditional-messaging-from-parent-page-to-dialog-box"></a>Messagerie conditionnelle de la page parent à la boîte de dialogue
+
+Étant donné que vous pouvez effectuer plusieurs `messageChild` appels à partir de la page hôte, mais que vous n’avez qu’un seul gestionnaire dans la boîte de dialogue de l' `DialogParentMessageReceived` événement, le gestionnaire doit utiliser une logique conditionnelle pour distinguer les différents messages. Vous pouvez effectuer cette opération d’une manière parfaitement parallèle à la façon dont vous structurez la messagerie conditionnelle lorsque la boîte de dialogue envoie un message à la page hôte, comme décrit dans la section [messagerie conditionnelle](#conditional-messaging).
+
+> [!NOTE]
+> Dans certains cas, l' `messageChild` API, qui fait partie de l' [ensemble de conditions requises DialogApi 1,2](../reference/requirement-sets/dialog-api-requirement-sets.md), n’est peut-être pas prise en charge. D’autres méthodes pour la messagerie de type parent-à-boîte de dialogue sont décrites dans [les autres façons de transmettre des messages à une boîte de dialogue à partir de sa page hôte](parent-to-dialog.md).
 
 > [!IMPORTANT]
-> Office ajoute automatiquement un paramètre de requête appelé `_host_info` à l’URL qui est transmise à `displayDialogAsync`. (Il est ajouté après vos paramètres de requête personnalisés, le cas échéant. Il n’est pas ajouté à toutes les autres URL auxquelles la boîte de dialogue accède.) Microsoft peut modifier le contenu de cette valeur, ou le supprimer entièrement, à l’avenir, donc votre code ne doit pas le lire. La même valeur est ajoutée au stockage de session de la boîte de dialogue. Là encore, *votre code ne doit ni lire, ni écrire cette valeur*.
-
-> [!NOTE]
-> Il existe maintenant un aperçu d’une `messageChild` API que la page parente peut utiliser pour envoyer des messages à la boîte de dialogue, tout comme l' `messageParent` API décrite ci-dessus envoie des messages à partir de la boîte de dialogue. Pour plus d’informations à ce sujet, consultez [la rubrique transmission de données et de messages à une boîte de dialogue à partir de sa page hôte](parent-to-dialog.md). Nous vous invitons à essayer, mais pour les compléments de production, nous vous recommandons d’utiliser les techniques décrites dans cette section.
+> L' [ensemble de conditions requises DialogApi 1,2](../reference/requirement-sets/dialog-api-requirement-sets.md) ne peut pas être spécifié dans la `<Requirements>` section d’un manifeste de complément. Vous devrez vérifier la prise en charge de DialogApi 1,2 lors de l’exécution à l’aide de la méthode [isSetSupported](specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code) . La prise en charge des exigences de manifeste est en cours de développement.
 
 ## <a name="closing-the-dialog-box"></a>Fermeture de la boîte de dialogue
 

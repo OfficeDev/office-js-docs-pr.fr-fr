@@ -3,12 +3,12 @@ title: Complément Microsoft Office Extension de débogueur pour Visual Studio C
 description: Utilisez le débogueur de complément Microsoft Office de l’extension de code Visual Studio pour déboguer votre complément Office.
 ms.date: 05/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 2439af12f30cef1b9d291578cbababe3ed601644
-ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
+ms.openlocfilehash: 1343014fa875509fd6f0c615c3504cc9ae50dc0d
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "46530470"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293442"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Complément Microsoft Office Extension de débogueur pour Visual Studio Code
 
@@ -18,7 +18,7 @@ Ce mode de débogage est dynamique, ce qui vous permet de définir des points d�
 
 ![Extension de débogage du complément Office AddIn débogage d’une section de compléments Excel](../images/vs-debugger-extension-for-office-addins.jpg)
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Configuration requise
 
 - [Visual Studio code](https://code.visualstudio.com/) (doit être exécuté en tant qu’administrateur)
 - [Node.js (version 10 +)](https://nodejs.org/)
@@ -67,7 +67,7 @@ Une fois Visual Studio code ouvert, accédez manuellement au dossier du projet.
 }
 ```
 
-7. Dans la section de JSON que vous venez de copier, recherchez la section « URL ». Dans cette URL, vous devrez remplacer le texte d’hôte en majuscules par l’application hôte pour votre complément Office. Par exemple, si votre complément Office est destiné à Excel, la valeur de votre URL serait « https://localhost:3000/taskpane.html?_host_Info= <strong>Excel</strong>$Win 32 $16.01 $ en-US $ \$ \$ \$ 0 ».
+7. Dans la section de JSON que vous venez de copier, recherchez la section « URL ». Dans cette URL, vous devrez remplacer le texte d’hôte en majuscules par l’application qui héberge votre complément Office. Par exemple, si votre complément Office est destiné à Excel, la valeur de votre URL serait « https://localhost:3000/taskpane.html?_host_Info= <strong>Excel</strong>$Win 32 $16.01 $ en-US $ \$ \$ \$ 0 ».
 
 8. Ouvrez l’invite de commandes et assurez-vous que vous vous trouvez dans le dossier racine de votre projet. Exécutez la commande `npm start` pour démarrer le serveur de développement. Lorsque votre complément est chargé dans le client Office, ouvrez le volet de tâches.
 

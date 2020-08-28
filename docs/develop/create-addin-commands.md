@@ -1,16 +1,16 @@
 ---
-title: Créer des commandes de complément dans votre manifeste pour Excel, PowerPoint et Word
+title: Créer des commandes complémentaires dans votre formulaire pour Excel, PowerPoint et Word
 description: Utilisez VersionOverrides dans votre manifeste pour définir des commandes de complément pour Excel, PowerPoint et Word. Utilisez les commandes de complément pour créer des éléments d’interface utilisateur, ajouter des boutons ou des listes et effectuer des actions.
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 3bcd3c6e07cdb9899601403e68e80e8d609d2e6e
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 1b86aa6c7b7303740ee03f20e28e63fd921dbbf5
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093713"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292896"
 ---
-# <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Créer des commandes de complément dans votre manifeste pour Excel, PowerPoint et Word
+# <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Créer des commandes complémentaires dans votre formulaire pour Excel, PowerPoint et Word
 
 Utilisez **[VersionOverrides](../reference/manifest/versionoverrides.md)** dans votre manifeste pour définir des commandes de complément pour Excel, PowerPoint et Word. Les commandes de complément permettent de personnaliser facilement l’interface utilisateur Office par défaut à l’aide des éléments d’interface utilisateur spécifiés qui effectuent des actions. Vous pouvez utiliser les commandes de complément pour :
 
@@ -84,8 +84,8 @@ Le tableau suivant présente les éléments enfants de **VersionOverrides**.
 |**Élément**|**Description**|
 |:-----|:-----|
 |**Description** <br/> |Facultatif. Décrit le complément. Cet élément **Description** enfant remplace un élément **Description** précédent dans la partie parent du manifeste. L’attribut **resid** pour cet élément **Description** est défini sur l’**id** d’un élément **Chaîne**. L’élément **Chaîne** contient le texte pour la **description**. <br/> |
-|**Configuration requise** <br/> |Facultatif. Spécifie l’ensemble de conditions requises minimal et la version d’Office.js qui doit être activée par le complément Office. Cet élément **Configuration requise** enfant remplace l’élément **Configuration requise** dans la partie parent du manifeste. Pour plus d’informations, consultez la rubrique [Spécifier les hôtes Office et la configuration requise d’API](../develop/specify-office-hosts-and-api-requirements.md).  <br/> |
-|**Hôtes** <br/> |Obligatoire. Spécifie une collection d’hôtes d’Office. L’élément **Hôtes** enfant remplace l’élément **Hôtes** dans la partie parent du manifeste. Vous devez inclure un ensemble d’attributs **xsi:type** à « Classeur » ou « Document ». <br/> |
+|**Configuration requise** <br/> |Facultatif. Spécifie l’ensemble de conditions requises minimal et la version d’Office.js qui doit être activée par le complément Office. Cet élément **Configuration requise** enfant remplace l’élément **Configuration requise** dans la partie parent du manifeste. Pour plus d’informations, voir [spécifier les applications Office et les conditions requises](../develop/specify-office-hosts-and-api-requirements.md)de l’API.  <br/> |
+|**Hôtes** <br/> |Obligatoire. Spécifie une collection d’applications Office. L’élément **Hôtes** enfant remplace l’élément **Hôtes** dans la partie parent du manifeste. Vous devez inclure un ensemble d’attributs **xsi:type** à « Classeur » ou « Document ». <br/> |
 |**Ressources** <br/> |Définit une collection de ressources (chaînes, URL et images) qui sont référencées par d’autres éléments de manifeste. Par exemple, la valeur de l’élément **Description** fait référence à un élément enfant dans **Ressources**. L’élément **Ressources** est décrit à l’[étape 7 : ajouter l’élément Ressources](#step-7-add-the-resources-element), plus loin dans cet article. <br/> |
 
 L’exemple suivant montre comment utiliser l’élément **VersionOverrides** et ses éléments enfants.
@@ -116,7 +116,7 @@ L’exemple suivant montre comment utiliser l’élément **VersionOverrides** e
 
 ## <a name="step-4-add-hosts-host-and-desktopformfactor-elements"></a>Étape 4 : ajouter des éléments Hosts, Host et DesktopFormFactor
 
-L’élément **Hôtes** contient un ou plusieurs éléments **Hôte**. Un élément **Hôte** spécifie un hôte Office particulier. L’élément **Hôte** contient des éléments enfants qui spécifient les commandes de complément à afficher une fois que votre complément est installé sur l’hôte Office. Pour afficher les mêmes commandes de complément dans deux ou plusieurs hôtes Office différents, vous devez dupliquer les éléments enfants dans chaque **hôte**.
+L’élément **Hôtes** contient un ou plusieurs éléments **Hôte**. Un élément **Host** spécifie une application Office particulière. L’élément **Host** contient des éléments enfants qui spécifient les commandes de complément à afficher après l’installation de votre complément dans cette application Office. Pour afficher les mêmes commandes de complément dans plusieurs applications Office, vous devez dupliquer les éléments enfants de chaque **hôte**.
 
 L’élément **DesktopFormFactor** spécifie les paramètres d’un complément exécuté dans Office sur le web (dans un navigateur) et Windows.
 
@@ -431,7 +431,7 @@ L’exemple suivant montre un exemple de l’utilisation de l’élément **Ress
 
 Dans Excel et Word, vous pouvez ajouter vos commandes de complément au ruban en utilisant les onglets de l’interface utilisateur Office par défaut. Le tableau ci-dessous contient les valeurs que vous pouvez utiliser pour l’attribut **id** de l’élément **OfficeTab**. Les valeurs des onglets respectent la casse.
 
-|**Application hôte Office**|**Valeurs des onglets**|
+|**Application cliente Office**|**Valeurs des onglets**|
 |:-----|:-----|
 |Excel  <br/> |**TabHome**         **TabInsert**         **TabPageLayoutExcel**         **TabFormulas**         **TabData**         **TabReview**         **TabView**         **TabDeveloper**         **TabAddIns**         **TabPrintPreview**         **TabBackgroundRemoval** <br/> |
 |Word  <br/> |**TabHome**         **TabInsert**         **TabWordDesign**         **TabPageLayoutWord**         **TabReferences**         **TabMailings**         **TabReviewWord**         **TabView**         **TabDeveloper**         **TabAddIns**         **TabBlogPost**         **TabBlogInsert**         **TabPrintPreview**         **TabOutlining**         **TabConflicts**         **TabBackgroundRemoval**         **TabBroadcastPresentation** <br/> |

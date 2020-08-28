@@ -3,12 +3,12 @@ title: Chargement de version test des compléments Office sur iPad et Mac
 description: Testez votre complément Office sur iPad et Mac par chargement
 ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 092207898547969a361b10d72fad106311563907
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1a1cb804a72aa182480d06009cf30b41a37276d2
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611139"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292201"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>Chargement de version test des compléments Office sur iPad et Mac
 
@@ -84,7 +84,7 @@ Pour voir comment votre complément s’exécutera dans Office sur iOS, vous pou
 
 ## <a name="remove-a-sideloaded-add-in"></a>Supprimer un complément versions test chargées
 
-Vous pouvez supprimer un complément précédemment versions test chargées en effaçant le cache Office sur votre ordinateur. Pour plus d’informations sur la façon d’effacer le cache de chaque plateforme et hôte, consultez l’article [effacer le cache Office](clear-cache.md).
+Vous pouvez supprimer un complément précédemment versions test chargées en effaçant le cache Office sur votre ordinateur. Pour plus d’informations sur la façon d’effacer le cache de chaque plateforme et application, consultez l’article [effacer le cache Office](clear-cache.md).
 
 ## <a name="see-also"></a>Voir aussi
 

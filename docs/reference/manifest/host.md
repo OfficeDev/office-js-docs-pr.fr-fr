@@ -3,12 +3,12 @@ title: Élément Host dans le fichier manifeste
 description: Spécifie un type d’application Office individuel dans lequel le complément doit s’activer.
 ms.date: 11/05/2019
 localization_priority: Normal
-ms.openlocfilehash: 5db9df97c4ba558d54756b983a26cb7b71e049d5
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5b6c6e6b5471b4117c28cf92e11eb0a99b512a97
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611812"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292285"
 ---
 # <a name="host-element"></a>Élément Host
 
@@ -25,7 +25,7 @@ Lorsqu’il est défini dans le manifeste base (sous [OfficeApp](officeapp.md)),
 
 | Attribut     | Type   | Requis | Description                                      |
 |:--------------|:-------|:---------|:-------------------------------------------------|
-| [Name](#name) | string | obligatoire | Nom du type d’application hôte Office. |
+| [Name](#name) | string | obligatoire | Nom du type d’application cliente Office. |
 
 ### <a name="name"></a>Nom
 
@@ -59,11 +59,11 @@ Lorsqu’il est défini dans [VersionOverrides](versionoverrides.md), le type d�
 
 |  Attribut  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
-|  [xsi:type](#xsitype)  |  Oui  | Décrit l’hôte d’Office dans lequel ces paramètres s’appliquent.|
+|  [xsi:type](#xsitype)  |  Oui  | Décrit l’application Office à laquelle ces paramètres s’appliquent.|
 
 ### <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Requis  |  Description  |
+|  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 |  [DesktopFormFactor](desktopformfactor.md)    |  Oui   |  Définit les paramètres pour le facteur de forme pour bureau. |
 |  [MobileFormFactor](mobileformfactor.md)    |  Non   |  Définit les paramètres pour le facteur de forme pour environnement mobile. **Remarque :** Cet élément est pris en charge uniquement dans Outlook sur iOS et Android. |
@@ -71,7 +71,7 @@ Lorsqu’il est défini dans [VersionOverrides](versionoverrides.md), le type d�
 
 ### <a name="xsitype"></a>xsi:type
 
-Contrôle à quel hôte Office (Word, Excel, PowerPoint, Outlook, OneNote) s’applique également les paramètres contenus. La valeur doit être l’une des suivantes :
+Détermine l’application Office (Word, Excel, PowerPoint, Outlook, OneNote) à laquelle les paramètres contenus s’appliquent. La valeur doit être l’une des suivantes :
 
 - `Document` (Word)
 - `MailHost` (Outlook)

@@ -3,12 +3,12 @@ title: Élément OfficeTab dans le fichier manifest
 description: L’élément OfficeTab définit l’onglet du ruban où votre commande de complément s’affiche.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 9b07ce1e57329e796545610e0c61a2c11d1ed55d
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: 25e8044d8b3264bf9ee64c54487566bf11f0065e
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641438"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292299"
 ---
 # <a name="officetab-element"></a>Élément OfficeTab
 
@@ -16,11 +16,11 @@ Définit l’onglet du ruban sur lequel votre commande de complément s’affich
 
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Requis  |  Description  |
+|  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 |  Groupe      | Oui |  Définit un groupe de commandes. Vous ne pouvez ajouter qu’un seul groupe par complément à l’onglet par défaut.  |
 
-Les valeurs suivantes sont des valeurs `id` d’onglet valides par l’hôte. Les valeurs en **gras** sont prises en charge dans l’ordinateur de bureau et en ligne (par exemple, Word 2016 ou version ultérieure sur Windows et Word sur le Web).
+Les valeurs d’onglet valides sont les suivantes `id` par application. Les valeurs en **gras** sont prises en charge dans l’ordinateur de bureau et en ligne (par exemple, Word 2016 ou version ultérieure sur Windows et Word sur le Web).
 
 ### <a name="outlook"></a>Outlook
 

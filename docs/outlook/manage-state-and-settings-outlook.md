@@ -3,12 +3,12 @@ title: Gérer l’État et les paramètres d’un complément Outlook
 description: Découvrez comment faire persister l’État et les paramètres des compléments pour un complément Outlook.
 ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 796c7b38f8c85a5680c9b7de43297c754a0ebc1b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b11468cdcd776a2d93bb4a435e5c878ca9ab42a3
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609061"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293841"
 ---
 # <a name="manage-state-and-settings-for-an-outlook-add-in"></a>Gérer l’État et les paramètres d’un complément Outlook
 
@@ -19,7 +19,7 @@ Pour les compléments Outlook, l’API JavaScript pour Office fournit des objets
 
 |**Objet**|**Emplacement de stockage**|
 |:-----|:-----|:-----|
-|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|Boîte aux lettres de serveur Exchange de l’utilisateur où le complément est installé. Comme ces paramètres sont stockés dans la boîte aux lettres de serveur de l’utilisateur, ils sont itinérants et accessibles par le complément lorsqu’il s’exécute dans le contexte d’une application hôte cliente ou d’un navigateur pris en charge accédant à la boîte aux lettres de cet utilisateur.<br/><br/> Seul le complément qui a créé les paramètres d’itinérance du complément Outlook peut y accéder, et uniquement dans la boîte aux lettres où le complément est installé.|
+|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|Boîte aux lettres de serveur Exchange de l’utilisateur où le complément est installé. Ces paramètres étant stockés dans la boîte aux lettres du serveur de l’utilisateur, ils peuvent « se déplacer » avec l’utilisateur et sont disponibles pour le complément lorsqu’il s’exécute dans le contexte d’un client qui accède à la boîte aux lettres de cet utilisateur.<br/><br/> Seul le complément qui a créé les paramètres d’itinérance du complément Outlook peut y accéder, et uniquement dans la boîte aux lettres où le complément est installé.|
 |[CustomProperties](/javascript/api/outlook/office.customproperties)|Élément de message, de rendez-vous ou de demande de réunion qu’utilise le complément. Seul le complément qui a créé les propriétés personnalisées d’élément de complément Outlook peut y accéder, et uniquement dans l’élément où elles sont enregistrées.|
 
 ## <a name="how-to-save-settings-in-the-users-mailbox-for-outlook-add-ins-as-roaming-settings"></a>Enregistrement des paramètres en tant que paramètres d’itinérance dans la boîte aux lettres de l’utilisateur pour les compléments Outlook

@@ -3,12 +3,12 @@ title: Utiliser les règles d’activation d’expression régulière afin d’a
 description: Découvrez comment utiliser les règles d’activation d’expression régulière pour les compléments contextuels Outlook.
 ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 3943f42363bd9a34978d1f42d701dcf906aa0446
-ms.sourcegitcommit: a3b743598025466bad19177e0ba9ca94ea66d490
+ms.openlocfilehash: 4a5507b410ed729f76c3efa0119e87c6a6dbc71a
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "46547520"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292474"
 ---
 # <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>Utiliser des règles d’activation d’expression régulière pour afficher un complément Outlook
 
@@ -53,7 +53,7 @@ Prêtez une attention particulière aux éléments suivants lorsque vous utilise
 
 - Le corps HTML d’un élément est légèrement différent entre un client riche Outlook et Outlook sur le web ou Outlook Mobile. Définissez attentivement vos expressions régulières.
 
-- En fonction de l’application hôte, du type de périphérique ou de la propriété à laquelle l’expression régulière est appliquée, il existe d’autres meilleures pratiques et limites pour chaque hôte, que vous devez connaître lorsque vous créez des expressions régulières comme règle d’activation. Pour plus d’informations, voir [Limites d’activation et d’API JavaScript des compléments Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md).
+- Selon le client Outlook, le type de périphérique ou la propriété auquel une expression régulière est appliquée, il existe d’autres meilleures pratiques et limites pour chacun des clients que vous devez connaître lors de la conception d’expressions régulières en tant que règles d’activation. Pour plus d’informations, consultez la rubrique [limites pour l’activation et l’API JavaScript pour les compléments Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) .
 
 ### <a name="examples"></a>Exemples
 

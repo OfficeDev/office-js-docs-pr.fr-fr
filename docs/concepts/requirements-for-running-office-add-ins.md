@@ -3,12 +3,12 @@ title: Configuration requise pour exécuter des compléments Office
 description: Découvrez la configuration requise du client et du serveur pour qu’un utilisateur final doive exécuter des compléments Office.
 ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 49e1799961a0367d9eaf00415375c98a42534ba9
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: 3c4ed1116fa83de694f390cfc26fde9a01858460
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641227"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293008"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Configuration requise pour exécuter des compléments Office
 
@@ -16,7 +16,7 @@ Cet article décrit la configuration logicielle et matérielle requise pour l’
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
-Pour savoir de manière détaillée quelle version d’Office prend en charge les compléments Office, consultez la page relative à la [disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md).
+Pour obtenir une vue d’ensemble de l’emplacement où les compléments Office sont actuellement pris en charge, consultez la rubrique [Office client Application and Platform Availability for Office Add-ins](../overview/office-add-in-availability.md).
 
 ## <a name="server-requirements"></a>Exigences en matière de serveur
 
@@ -29,7 +29,7 @@ Pour tous les types de complément (compléments de contenu, Outlook et volet Of
 > [!TIP]
 > lorsque vous développez et déboguez un complément dans Visual Studio, Visual Studio déploie et exécute les fichiers de page web de votre complément localement avec IIS Express et ne nécessite aucun serveur web supplémentaires.
 
-Pour les compléments de contenu et du volet Office, dans les applications hôtes Office prises en charge-Excel, PowerPoint, Project ou Word, vous avez également besoin d’un [catalogue d’applications](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) sur SharePoint pour télécharger le fichier manifeste XML du complément, ou vous devez déployer le complément à l’aide du [déploiement centralisé](../publish/centralized-deployment.md).
+Pour les compléments de contenu et du volet Office, dans les applications clientes Office prises en charge-Excel, PowerPoint, Project ou Word, vous avez également besoin d’un [catalogue d’applications](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) sur SharePoint pour télécharger le fichier manifeste XML du complément, ou vous devez déployer le complément à l’aide du [déploiement centralisé](../publish/centralized-deployment.md).
 
 Pour tester et exécuter un complément Outlook, le compte de messagerie Outlook de l’utilisateur doit résider sur Exchange 2013 ou une version ultérieure, disponible via Microsoft 365, Exchange Online ou via une installation locale. L’utilisateur ou l’administrateur installe les fichiers manifeste pour les compléments Outlook sur ce serveur.
 
@@ -57,7 +57,7 @@ Le logiciel suivant est requis pour développer un Complément Office pour les c
 
 ## <a name="client-requirements-os-x-desktop"></a>Exigences en matière de client : ordinateur de bureau OS X
 
-Outlook sur Mac, qui est distribué dans le cadre de Microsoft 365, prend en charge les compléments Outlook. l’exécution de compléments Outlook dans Outlook sur Mac a les mêmes conditions requises qu’Outlook sur Mac lui-même : le système d’exploitation doit être au moins le se X v 10.10 « Yosemite ». Comme Outlook sur Mac utilise WebKit comme moteur de disposition pour restituer les pages de complément, il n’existe pas de dépendance de navigateur supplémentaire.
+Outlook sur Mac, qui est distribué dans le cadre de Microsoft 365, prend en charge les compléments Outlook. L’exécution de compléments Outlook dans Outlook sur Mac a les mêmes conditions requises qu’Outlook sur Mac lui-même : le système d’exploitation doit être au moins le système d’exploitation X v 10.10 « Yosemite ». Comme Outlook sur Mac utilise WebKit comme moteur de disposition pour restituer les pages de complément, il n’existe pas de dépendance de navigateur supplémentaire.
 
 Les versions de client minimales d’Office pour Mac prenant en charge les compléments Office sont les suivantes.
 
@@ -75,7 +75,7 @@ Tout navigateur prenant en charge ECMAScript 5.1, HTML5 et CSS3, tel qu’Inter
 L’installation du logiciel suivant est nécessaire pour tester et exécuter les compléments Outlook. Ce logiciel est conçu spécialement pour les versions d’Outlook exécutées dans des navigateurs sur smartphones et tablettes utilisant d’autres systèmes d’exploitation que Windows.
 
 
-| Application hôte | Appareil | Système d’exploitation | Compte Exchange | Navigateur mobile |
+| Application Office | Appareil | Système d’exploitation | Compte Exchange | Navigateur mobile |
 |:-----|:-----|:-----|:-----|:-----|
 |Outlook sur Android|Tablettes et smartphones Android|Android KitKat 4.4 et version ultérieure|Sur la dernière mise à jour de Microsoft 365 Apps for Business ou Exchange Online|Application native pour Android, navigateur non applicable|
 |Outlook sur iOS|Tablettes iPad, smartphones iPhone|iOS 11 ou version ultérieure|Sur la dernière mise à jour de Microsoft 365 Apps for Business ou Exchange Online|Application native pour iOS, navigateur non applicable|
@@ -88,5 +88,5 @@ L’installation du logiciel suivant est nécessaire pour tester et exécuter le
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
-- [Disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md)
+- [Disponibilité de la plateforme et de l’application cliente Office pour les compléments Office](../overview/office-add-in-availability.md)
 - [Navigateurs utilisés par les compléments Office](browsers-used-by-office-web-add-ins.md)

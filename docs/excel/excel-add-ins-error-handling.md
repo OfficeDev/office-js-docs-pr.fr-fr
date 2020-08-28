@@ -3,12 +3,12 @@ title: Gestion des erreurs
 description: En savoir plus sur la logique de gestion des erreurs de l’API JavaScript Excel pour prendre en compte les erreurs d’exécution.
 ms.date: 06/25/2020
 localization_priority: Normal
-ms.openlocfilehash: 8d410ae7eea315e14383b5aa08373ede3768cace
-ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
+ms.openlocfilehash: 89df7723d48298862034751ab06bca766fedb30f
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "45006443"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292551"
 ---
 # <a name="error-handling"></a>Gestion des erreurs
 
@@ -45,7 +45,7 @@ Quand une demande d’API JavaScript pour Excel ne parvient pas à s’exécuter
 - **debugInfo** : le cas échéant, la propriété `debugInfo` du message d’erreur fournit des informations supplémentaires que vous pouvez utiliser pour comprendre la cause principale de l’erreur.
 
 > [!NOTE]
-> Si vous utilisez `console.log()` pour imprimer les messages d’erreur de la console, ces messages ne seront visibles que sur le serveur. Les utilisateurs finals ne verront pas ces messages d’erreur dans le volet Office du complément ni n’importe où dans l’application hôte.
+> si vous utilisez `console.log()` pour imprimer les messages d’erreur de la console, ces messages ne seront visibles que sur le serveur. Les utilisateurs finals ne verront pas ces messages d’erreur dans le volet Office du complément ni n’importe où dans l’application Office.
 
 ## <a name="error-messages"></a>Messages d’erreur
 

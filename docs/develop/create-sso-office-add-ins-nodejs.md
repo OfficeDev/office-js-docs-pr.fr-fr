@@ -3,12 +3,12 @@ title: Création d’un complément Office Node.js qui utilise l’authentificat
 description: Apprenez à créer un complément basé sur Node.js utilisant l’authentification unique Office.
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 136d7c982d4eef4988e775f8235678c673169d5a
-ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
+ms.openlocfilehash: 2ca1cf37bade124498c99b0b25171871522c2bc7
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "46672693"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292875"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>Création d’un complément Office Node.js qui utilise l’authentification unique
 
@@ -67,7 +67,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 1. Sur la page **Office-Add-in-NodeJS-SSO**, copiez et enregistrez les valeurs pour l’**ID de l’application (client)** et l’**ID de répertoire (client)**. Vous utiliserez les deux plus tard.
 
     > [!NOTE]
-    > Cet ID a la valeur « audience » lorsque d’autres applications, telles que l’application hôte Office (par exemple, PowerPoint, Word, Excel) demandent un accès autorisé à l’application. Il s’agit également de l’« ID client » de l’application dès que celle-ci recherche un accès autorisé à Microsoft Graph.
+    > Cet ID est la valeur « audience » lorsque d’autres applications, telles que l’application cliente Office (par exemple, PowerPoint, Word, Excel), cherchent un accès autorisé à l’application. Il s’agit également de l’« ID client » de l’application dès que celle-ci recherche un accès autorisé à Microsoft Graph.
 
 1. Sous **Gérer**, sélectionnez **Authentification**. Dans la section **Grant implicite** , activez les cases à cocher pour le **jeton d’accès** et le jeton d' **ID**. L’exemple dispose d’un système d’autorisation de secours qui est appelé lorsque l’authentification unique n’est pas disponible. Le système utilise le Flux implicite.
 
@@ -83,7 +83,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 1. Donnez la valeur **Administrateurs et utilisateurs** à **Qui peut donner son consentement ?** .
 
-1. Renseignez les champs pour configurer les invites de consentement des administrateurs et utilisateurs avec les valeurs appropriées pour l’étendue `access_as_user` qui permet à l’application Office hôte d’utiliser l’API web de votre complément avec les mêmes droits que l’utilisateur actuel. Suggestions :
+1. Renseignez les champs de configuration des invites de l’administrateur et du consentement de l’utilisateur avec des valeurs appropriées pour l’étendue, ce `access_as_user` qui permet à l’application cliente Office d’utiliser les API Web de votre complément avec les mêmes droits que l’utilisateur actuel. Suggestions :
 
     - **Nom d’affichage du consentement**de l’administrateur : Office peut agir en tant qu’utilisateur.
     - **Description consentement administrateur** : activez Office pour qu’il appelle les API de complément web avec les mêmes droits que l’utilisateur actuel.
@@ -113,7 +113,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 1. Sélectionnez **Autorisations API** sous **Gestion** et sélectionnez **Ajouter une autorisation**. Dans le volet qui s’ouvre, sélectionnez **Microsoft Graph**, puis **Autorisations déléguées**.
 
-1. Utilisez la zone de recherche **Sélectionnez les autorisations** pour rechercher les autorisations dont votre complément a besoin. Sélectionnez les éléments suivants. Votre complément proprement dit ne requiert que la première. Mais l’autorisation `profile` est également requise pour que l’hôte Office puisse obtenir un jeton pour l’application web de votre complément.
+1. Utilisez la zone de recherche **Sélectionnez les autorisations** pour rechercher les autorisations dont votre complément a besoin. Sélectionnez les éléments suivants. Seul le premier est réellement requis par votre complément proprement dit ; Toutefois `profile` , l’autorisation est requise pour que l’application Office obtient un jeton vers votre application Web de complément.
 
     * Files.Read.All
     * profil

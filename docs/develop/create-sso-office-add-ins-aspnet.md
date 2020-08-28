@@ -3,12 +3,12 @@ title: Créer un complément Office ASP.NET qui utilise l’authentification uni
 description: Guide pas à pas pour la création (ou conversion) d’un complément Office avec un serveur principal ASP.NET pour utiliser l’authentification unique (SSO).
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 69269f1dbffc17ef1d45e86635d4de7c4a3a0890
-ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
+ms.openlocfilehash: 591761c9831109cb6900cb418e83d3240ddad29d
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "46672707"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292868"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>Créer un complément Office ASP.NET qui utilise l’authentification unique
 
@@ -57,7 +57,7 @@ Clonez ou téléchargez le référentiel sur [Complément Office ASPNET SSO](htt
 1. Sur la page **Office-Add-in-ASPNET-SSO** , copiez et enregistrez les valeurs pour l' **ID d’application (client)** et l’ID de **répertoire (client)**. Vous utiliserez les deux plus tard.
 
     > [!NOTE]
-    > Cet ID a la valeur « audience » lorsque d’autres applications, telles que l’application hôte Office (par exemple, PowerPoint, Word, Excel) demandent un accès autorisé à l’application. Il s’agit également de l’« ID client » de l’application dès que celle-ci recherche un accès autorisé à Microsoft Graph.
+    > Cet ID est la valeur « audience » lorsque d’autres applications, telles que l’application cliente Office (par exemple, PowerPoint, Word, Excel), cherchent un accès autorisé à l’application. Il s’agit également de l’« ID client » de l’application dès que celle-ci recherche un accès autorisé à Microsoft Graph.
 
 1. Sous **Gérer** sélectionnez **Certificats et clés secrètes**. Sélectionnez le bouton **Nouveau secret client**. Entrer une valeur pour **Description**, puis sélectionnez une option appropriée pour **Expire le** puis **Ajouter**. *Copier la valeur secrète client immédiatement et enregistrez-la avec l’ID d’application* avant de continuer car vous en aurez besoin dans une procédure plus loin.
 
@@ -69,7 +69,7 @@ Clonez ou téléchargez le référentiel sur [Complément Office ASPNET SSO](htt
 
 1. Donnez la valeur **Administrateurs et utilisateurs** à **Qui peut donner son consentement ?** .
 
-1. Renseignez les champs pour configurer les invites de consentement des administrateurs et utilisateurs avec les valeurs appropriées pour l’étendue `access_as_user` qui permet à l’application Office hôte d’utiliser l’API web de votre complément avec les mêmes droits que l’utilisateur actuel. Suggestions :
+1. Renseignez les champs de configuration des invites de l’administrateur et du consentement de l’utilisateur avec des valeurs appropriées pour l’étendue, ce `access_as_user` qui permet à l’application cliente Office d’utiliser les API Web de votre complément avec les mêmes droits que l’utilisateur actuel. Suggestions :
 
     - **Titre consentement administrateur** : Office peut agir en tant qu’utilisateur.
     - **Description consentement administrateur** : activez Office pour qu’il appelle les API de complément web avec les mêmes droits que l’utilisateur actuel.
@@ -99,7 +99,7 @@ Clonez ou téléchargez le référentiel sur [Complément Office ASPNET SSO](htt
 
 1. Sélectionnez **Autorisations API** sous **Gestion**, puis sélectionnez **Ajouter une autorisation**. Dans le volet qui s’ouvre, sélectionnez **Microsoft Graph**, puis **Autorisations déléguées**.
 
-1. Utilisez la zone de recherche **Sélectionnez les autorisations** pour rechercher les autorisations dont votre complément a besoin. Sélectionnez les éléments suivants. Votre complément proprement dit ne requiert que la première. Mais l’autorisation `profile` est également requise pour que l’hôte Office puisse obtenir un jeton pour l’application web de votre complément. (Seuls Files.Read.All et profil sont réellement nécessaires au complément. Vous devez demander les deux autres, car la bibliothèque MSAL.NET en a besoin.)
+1. Utilisez la zone de recherche **Sélectionnez les autorisations** pour rechercher les autorisations dont votre complément a besoin. Sélectionnez les éléments suivants. Seul le premier est réellement requis par votre complément proprement dit ; Toutefois `profile` , l’autorisation est requise pour que l’application Office obtient un jeton vers votre application Web de complément. (Seuls Files.Read.All et profil sont réellement nécessaires au complément. Vous devez demander les deux autres, car la bibliothèque MSAL.NET en a besoin.)
 
     * Files.Read.All
     * offline_access
@@ -127,7 +127,7 @@ Clonez ou téléchargez le référentiel sur [Complément Office ASPNET SSO](htt
 1. Dans « web.config », utilisez les valeurs que vous avez copiées dans le version précédente. Configurez les **Ida:ClientID** et **Ida:Audience** à votre **ID d’application (client)**, puis configurez **Ida:Password** sur votre code secret client.
 
     > [!NOTE]
-    > L’**ID d’application (client)** est la valeur « audience » lorsque d’autres applications, telles que l’application hôte Office (par exemple, PowerPoint, Word, Excel) demandent un accès autorisé à l’application. Il s’agit également de l’« ID client » de l’application dès que celle-ci recherche un accès autorisé à Microsoft Graph.
+    > L' **ID d’application (client)** est la valeur « audience » lorsque d’autres applications, telles que l’application cliente Office (par exemple, PowerPoint, Word, Excel), cherchent un accès autorisé à l’application. Il s’agit également de l’« ID client » de l’application dès que celle-ci recherche un accès autorisé à Microsoft Graph.
 
 1. Si vous n’avez pas choisi « Comptes dans ce répertoire d’organisation uniquement » pour **TYPES DE COMPTES PRIS EN CHARGE** lorsque vous avez enregistré le complément, enregistrez et fermez le fichier web.config. Dans le cas contraire, enregistrez-le et laissez-le ouvert.
 
@@ -430,9 +430,9 @@ Si vous avez choisi « Comptes dans ce répertoire d’organisation uniquement�
 
 1. Remplacez le `TODO 1` par ce qui suit. Tenez compte des informations suivantes :
 
-    * Le code demande à OWIN de s'assurer que l'audience spécifiée dans le jeton d'amorçage qui provient de l'hôte Office doit correspondre à la valeur spécifiée dans le web.config.
+    * Le code demande à OWIN de s’assurer que l’audience spécifiée dans le jeton de démarrage qui provient de l’application Office doit correspondre à la valeur spécifiée dans le web.config.
     * Les comptes Microsoft ont un GUID d’émetteur qui est différent de tout GUID de client organisationnel, afin de prendre en charge les deux types de comptes, il n’est pas obligatoire de valider l’émetteur.
-    * Le réglage de `SaveSigninToken` sur `true` fait qu’OWIN enregistre le jeton brut d’amorçage à partir de l’hôte Office. Le complément en a besoin pour obtenir un jeton d’accès à Microsoft Graph avec le flux « de la part de ».
+    * Paramètre `SaveSigninToken` pour `true` obliger OWIN à enregistrer le jeton de démarrage brut à partir de l’application Office. Le complément en a besoin pour obtenir un jeton d’accès à Microsoft Graph avec le flux « de la part de ».
     * Les étendues ne sont pas validées par l’intergiciel OWIN. Les étendues du jeton d’amorçage, qui doivent inclure `access_as_user`, sont validées dans le contrôleur.
 
     ```csharp
@@ -447,7 +447,7 @@ Si vous avez choisi « Comptes dans ce répertoire d’organisation uniquement�
 1. Remplacez `TODO 2` par ce qui suit. Tenez compte des informations suivantes :
 
     * La méthode `UseOAuthBearerAuthentication` est appelée au lieu de la méthode `UseWindowsAzureActiveDirectoryBearerAuthentication` plus courante, car cette dernière n’est pas compatible avec le point de terminaison Azure AD V2.
-    * L’URL transmise à la méthode correspond à l’endroit où l’intergiciel OWIN obtient les instructions permettant d’obtenir la clé requise pour vérifier la signature sur le jeton d’amorçage reçu de l’hôte Office. Le segment d’autorité de l’URL provient du fichier web.config. Il s’agit soit de la chaîne « commun », soit d’un GUID pour un complément à un seul locataire.
+    * L’URL qui est transmise à la méthode est l’endroit où le middleware OWIN obtient des instructions pour obtenir la clé dont il a besoin pour vérifier la signature sur le jeton de démarrage reçu de l’application Office. Le segment d’autorité de l’URL provient du fichier web.config. Il s’agit soit de la chaîne « commun », soit d’un GUID pour un complément à un seul locataire.
 
     ```csharp
     string[] endAuthoritySegments = { "oauth2/v2.0" };
@@ -513,10 +513,10 @@ Si vous avez choisi « Comptes dans ce répertoire d’organisation uniquement�
 
 1. Remplacez `TODO 2` par le code suivant pour assembler toutes les informations nécessaires pour obtenir un jeton pour Microsoft Graph à l’aide du flux « de la part de ». Tenez compte du code suivant :
 
-    * Votre complément ne joue plus le rôle d’une ressource (ou audience) à laquelle l’hôte Office et l’utilisateur doivent accéder. Désormais, il est lui-même un client qui a besoin d’accéder à Microsoft Graph. `ConfidentialClientApplication` est l’objet de « contexte client » MSAL.
+    * Votre complément ne joue plus le rôle d’une ressource (ou audience) à laquelle l’application Office et l’utilisateur ont besoin d’accéder. Désormais, il est lui-même un client qui a besoin d’accéder à Microsoft Graph. `ConfidentialClientApplication` est l’objet de « contexte client » MSAL.
     * À partir de MSAL.NET 3. x. x, le `bootstrapContext` est simplement le jeton d’amorçage.
     * L’autorité provient du fichier web.config. Il s’agit soit de la chaîne « commun », soit d’un GUID pour un complément à un seul locataire.
-    * MSAL requiert les étendues `openid` et `offline_access` pour fonctionner, mais il génère une erreur si votre code les demande de façon redondante. Il génère également une erreur si votre code demande `profile`, qui est utilisé uniquement lorsque l’application Office hôte obtient le jeton pour l’application web de votre complément. Seul `Files.Read.All` est demandé explicitement.
+    * MSAL requiert les étendues `openid` et `offline_access` pour fonctionner, mais il génère une erreur si votre code les demande de façon redondante. Elle génère également une erreur si votre code demande `profile` , qui est utilisé uniquement lorsque l’application cliente Office obtient le jeton vers l’application Web de votre complément. Seul `Files.Read.All` est demandé explicitement.
 
     ```csharp
     string bootstrapContext = ClaimsPrincipal.Current.Identities.First().BootstrapContext.ToString();
@@ -557,7 +557,7 @@ Si vous avez choisi « Comptes dans ce répertoire d’organisation uniquement�
 1. Remplacez `TODO 3a` par le code suivant. Tenez compte du code suivant :
 
     * Si l’authentification multifacteur est requise par la ressource Microsoft Graph et que l’utilisateur ne l'a pas encore fournie, Azure AD renvoie « 400 : emande incorrecte » avec l’erreur `AADSTS50076` et une propriété **Claims**. MSAL génère une exception **MsalUiRequiredException** (qui hérite de **MsalServiceException**) avec ces informations.
-    * La valeur de la propriété **Claims** doit être transmise au client qui doit la transmettre à son tour à l’hôte Office, qui l’inclut alors dans une demande de nouveau jeton d’amorçage. Azure AD demandera à l’utilisateur d’accepter tous les formulaires d’authentification requis.
+    * La valeur de la propriété **claims** doit être transmise au client, qui doit la transmettre à l’application Office, qui l’inclut ensuite dans une demande de nouveau jeton de démarrage. Azure AD demandera à l’utilisateur d’accepter tous les formulaires d’authentification requis.
     * Les API qui créent des réponses HTTP à partir d’exceptions ne connaissent pas la propriété **Claims**, donc ils ne l’incluent pas dans l’objet de la réponse. Nous devons créer manuellement un message qui l’inclut. Une propriété **Message** personnalisé, cependant, bloque la création d’une propriété **ExceptionMessage**, afin que la seule façon de communiquer l’ID d’erreur `AADSTS50076` au client est de l’ajouter à la propriété **Message** personnalisée. JavaScript dans le client devra découvrir si une réponse a une propriété **Message** ou **ExceptionMessage**, afin qu’il sache laquelle lire.
     * Le message personnalisé est au format JSON pour que le code JavaScript côté client puisse l’analyser avec des méthodes d’objet `JSON` JavaScript connues.
 
@@ -607,7 +607,7 @@ Si vous avez choisi « Comptes dans ce répertoire d’organisation uniquement�
 1. Dans l’**Explorateur de solutions**, sélectionnez le nœud de projet **Office-Add-in-ASPNET-SSO** (et non le projet dont le nom se termine par « WebAPI »).
 1. Dans le volet **Propriétés**, ouvrez la liste déroulante **Document de départ**, puis choisissez l’une des trois options (Excel, Word ou PowerPoint).
 
-    ![Choisissez l’application Office hôte souhaitée : Excel, PowerPoint ou Word](../images/SelectHost.JPG)
+    ![Choisissez l’application cliente Office souhaitée : Excel, PowerPoint ou Word](../images/SelectHost.JPG)
 
 1. Appuyez sur la touche F5.
 1. Dans l’application Office, sur le ruban **Accueil**, sélectionnez **Afficher le complément** dans le groupe **ASP.NET SSO** pour ouvrir le complément du panneau des tâches.

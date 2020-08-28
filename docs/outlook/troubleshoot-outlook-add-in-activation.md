@@ -3,16 +3,16 @@ title: Résolution des problèmes d’activation de complément contextuel Outlo
 description: Si votre complément ne s’active pas comme prévu, vous devez rechercher dans les zones suivantes les raisons possibles.
 ms.date: 08/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 6eb0ec305a99375fc6d6202cbbc7776f52be1435
-ms.sourcegitcommit: e9f23a2857b90a7c17e3152292b548a13a90aa33
+ms.openlocfilehash: 3e4fd270dbd2c8e6b258e2c473a822c791dee7a6
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "46803757"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292530"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Résolution des problèmes d’activation des compléments Outlook
 
-L’activation de complément contextuel Outlook est basée sur les règles de l’activation dans le manifeste de complément. Lorsque les conditions de l’élément actuellement sélectionné respectent les règles d’activation du complément, l’application hôte active et affiche le bouton de complément dans l’interface utilisateur Outlook (volet de sélection de complément pour composer des compléments, barre de complément pour les compléments lus). Toutefois, si votre complément ne s’active pas comme prévu, vous devez rechercher les raisons possibles dans les zones suivantes.
+L’activation de complément contextuel Outlook est basée sur les règles d’activation dans le manifeste de complément. Lorsque les conditions de l’élément actuellement sélectionné satisfont aux règles d’activation pour le complément, l’application s’active et affiche le bouton complément dans le volet de sélection de l’interface utilisateur d’Outlook (volet de sélection du complément pour les compléments de composition, barre de complément pour les compléments de lecture). Toutefois, si votre complément ne s’active pas comme prévu, vous devez consulter les sections suivantes pour les raisons possibles.
 
 ## <a name="is-user-mailbox-on-a-version-of-exchange-server-that-is-at-least-exchange-2013"></a>Est-ce que la boîte aux lettres utilisateur se trouve sur une version d’Exchange Server correspondant au minimum à Exchange 2013 ?
 
@@ -76,7 +76,7 @@ Même si un élément de messagerie ne correspond pas à l’un des types ci-des
 
 Si votre complément est un complément de composition et qu’il est censé être activé lorsque l’utilisateur compose un message ou une demande de réunion, assurez-vous que l’élément n’est pas protégé par IRM. Toutefois, il existe quelques exceptions.
 
-1. Les compléments sont activés sur les messages signés numériquement dans Outlook associés à un abonnement Microsoft 365. Sous Windows, cette prise en charge a été introduite avec Build 8711,1000.
+1. Les compléments s’activent sur les messages signés numériquement dans Outlook avec un abonnement Microsoft 365. Dans Windows, cette prise en charge a été introduite avec le build 8711.1000.
 1. Démarrer avec Outlook build 13120.1000 sur Windows, les compléments peuvent désormais activer les éléments protégés par IRM.  Pour plus d’informations sur cette prise en charge en mode aperçu, consultez [l’article activation des compléments sur les éléments protégés par la gestion des droits relatifs à l’information (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
 
 ## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>Est-ce que le manifeste du complément est correctement installé et est-ce qu’Outlook dispose d’une copie mise en cache ?
@@ -183,7 +183,7 @@ Les expressions régulières contenues dans les règles d’activation font part
 
 Les clients riches Outlook utilisent un moteur d’expression régulière différent de celui utilisé par Outlook sur le web et sur appareils mobiles. Les clients riches Outlook utilisent le moteur d’expressions régulières C++ fourni avec la bibliothèque de modèles standard de Visual Studio. Ce moteur est conforme aux normes ECMAScript 5. Outlook sur le web et sur appareils mobiles utilisent l’évaluation d’expression régulière incluse dans JavaScript. Celle-ci est fournie par le navigateur et prend en charge un sur-ensemble d’ECMAScript 5.
 
-Dans la plupart des cas, ces applications hôtes recherchent des correspondances identiques pour la même expression régulière dans une règle d’activation. Il existe cependant des exceptions. Par exemple, si l’expression régulière inclut une classe de caractères personnalisée basée sur des classes de caractères prédéfinies, un client riche Outlook peut renvoyer des résultats différents à partir d’Outlook sur le web et sur appareils mobiles. Par exemple, les classes de caractères qui contiennent des classes de caractères raccourcies `[\d\w]` renverraient des résultats différents. Dans ce cas, pour éviter d’obtenir des résultats différents sur différents hôtes, utilisez `(\d|\w)` à la place.
+Dans la plupart des cas, ces clients Outlook trouvent les mêmes correspondances pour la même expression régulière dans une règle d’activation, mais il existe des exceptions. Par exemple, si l’expression régulière inclut une classe de caractères personnalisée basée sur des classes de caractères prédéfinies, un client riche Outlook peut renvoyer des résultats différents d’Outlook sur le Web et les appareils mobiles. Par exemple, les classes de caractères qui contiennent des classes de caractères abrégées  `[\d\w]` renvoient des résultats distincts. Dans ce cas, pour éviter des résultats différents sur différentes applications, utilisez à la `(\d|\w)` place.
 
 Testez minutieusement l’expression régulière. Si elle renvoie des résultats différents, réécrivez l’expression régulière pour qu’elle soit compatible avec les deux moteurs. Pour vérifier les résultats d’évaluation sur un client riche Outlook, écrivez un court programme C++ qui applique l’expression régulière par rapport à un échantillon du texte auquel vous essayez de la faire correspondre. Lors de son exécution dans Visual Studio, le programme de test C++ utilise la bibliothèque de modèles standards, simulant le comportement du client riche Outlook lors de l’exécution de la même expression régulière. Pour vérifier les résultats de l’évaluation sur Outlook sur le web ou sur appareils mobiles, utilisez le testeur d’expression régulière JavaScript privilégié.
 
@@ -235,15 +235,15 @@ Si la règle d’activation **ItemHasRegularExpressionMatch** spécifie **Subjec
 
 Après avoir vérifié la valeur de propriété, vous pouvez utiliser un outil d’évaluation d’expression régulière pour vérifier si l’expression régulière trouve une correspondance dans cette valeur.
 
-## <a name="does-the-host-application-apply-all-the-regular-expressions-to-the-portion-of-the-item-body-as-you-expect"></a>Est-ce que l’application hôte applique toutes les expressions régulières à la partie du corps de l’élément comme prévu ?
+## <a name="does-outlook-apply-all-the-regular-expressions-to-the-portion-of-the-item-body-as-you-expect"></a>Outlook applique-t-elle toutes les expressions régulières à la partie du corps de l’élément comme prévu ?
 
-Cette section s’applique à toutes les règles d’activation qui utilisent des expressions régulières, notamment celles qui sont appliquées au corps de l’élément, dont la taille peut être importante et dont l’évaluation à la recherche de correspondances peut prendre plus de temps. Sachez que même si la valeur de la propriété de l’élément dont dépend une règle d’activation est celle attendue, l’application hôte ne pourra peut-être pas évaluer toutes les expressions régulières sur la valeur entière de la propriété de l’élément. Pour fournir des performances raisonnables et contrôler l’utilisation excessive des ressources par un complément de lecture, Outlook, Outlook sur le web et sur appareils mobiles répondent aux limites suivantes concernant le traitement des expressions régulières dans les règles d’activation au moment de l’exécution :
+Cette section s’applique à toutes les règles d’activation qui utilisent des expressions régulières ; en particulier, celles appliquées au corps d’élément, qui peut être volumineux et demander plus de temps pour l’évaluation des correspondances. N’oubliez pas que même si la propriété d’élément dont dépend une règle d’activation a la valeur attendue, Outlook peut ne pas être en mesure d’évaluer toutes les expressions régulières sur la valeur entière de la propriété Item. Afin de fournir des performances raisonnables et de contrôler l’utilisation excessive des ressources par un complément de lecture, Outlook observe les limites suivantes concernant le traitement des expressions régulières dans les règles d’activation lors de l’exécution :
 
-- Taille du corps d’élément évalué -- il existe des limites à la partie d’un corps d’élément pour lequel l’application hôte évalue une expression régulière. Ces limites dépendent de l’application hôte, du facteur de forme et du format du corps d’élément. Consultez les détails du tableau 2 dans [Limites d’activation et d’API JavaScript des compléments Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md).
+- La taille du corps de l’élément est évaluée, il existe des limites à la partie du corps d’un élément sur lequel Outlook évalue une expression régulière. Ces limites dépendent du client Outlook, du facteur de forme et du format du corps de l’élément. Consultez les détails du tableau 2 dans [Limites d’activation et d’API JavaScript des compléments Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md).
 
 - Nombre de correspondances d’expression régulière : les clients riches Outlook, Outlook sur le web et sur appareils mobiles renvoient chacun un nombre maximal de 50 correspondances d’expressions régulières. Ces correspondances sont uniques et les correspondances en double ne sont pas prises en compte par rapport à cette limite. Ne partez pas du principe que les correspondances renvoyées sont classées dans un ordre précis, ni que l’ordre dans un client riche Outlook est le même que celle dans Outlook sur le web et sur appareils mobiles. Si vous attendez de nombreuses correspondances pour des expressions régulières dans vos règles d’activation et qu’il manque une correspondance, il est possible que vous ayez dépassé cette limite.
 
-- Longueur d’une correspondance d’expression régulière -- il existe des limites à la longueur d’une correspondance d’expression régulière retournée par l’application hôte. L’application hôte n’inclut aucune correspondance au-delà de la limite et n’affiche aucun message d’avertissement. Vous pouvez exécuter votre expression régulière à l’aide d’autres outils d’évaluation d’expression régulière ou via un programme de test autonome en C++ afin de vérifier s’il existe une correspondance qui dépasse les limites définies. Le tableau 3 récapitule ces limites. Pour plus d’informations, voir le tableau 3 dans [Limites d’activation et d’API JavaScript des compléments Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md).
+- Longueur d’une expression régulière, il existe des limites à la longueur d’une correspondance d’expression régulière que l’application Outlook renverra. Outlook n’inclut aucune correspondance au-dessus de la limite et n’affiche aucun message d’avertissement. Vous pouvez exécuter votre expression régulière à l’aide d’autres outils d’évaluation d’expression régulière ou via un programme de test autonome en C++ afin de vérifier s’il existe une correspondance qui dépasse les limites définies. Le tableau 3 récapitule ces limites. Pour plus d’informations, voir le tableau 3 dans [Limites d’activation et d’API JavaScript des compléments Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md).
 
     **Tableau 3. Limites de longueur pour une correspondance d’expression régulière**
 

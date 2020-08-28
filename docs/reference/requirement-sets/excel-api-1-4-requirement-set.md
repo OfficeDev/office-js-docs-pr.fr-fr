@@ -1,15 +1,15 @@
 ---
 title: Ensemble de conditions requises de l’API JavaScript pour Excel 1,4
 description: Détails sur l’ensemble de conditions requises ExcelApi 1,4
-ms.date: 07/26/2019
+ms.date: 07/28/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 1bd6d913bf069e4b8774b8eb65ea147992f98b9b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 3e2ad776383caf66c12e1402afe49962381dab61
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611427"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294268"
 ---
 # <a name="whats-new-in-excel-javascript-api-14"></a>Nouveautés de l’API JavaScript 1.4 pour Excel
 
@@ -20,13 +20,13 @@ Les ajouts apportés aux API JavaScript pour Excel dans l’ensemble de conditio
 Nouvelles propriétés :
 
 * `comment`
-* `scope`-Éléments de feuille de calcul ou d’étendue de classeur.
-* `worksheet`-Renvoie la feuille de calcul dans laquelle l’élément nommé est inclus dans l’étendue.
+* `scope` -Éléments de feuille de calcul ou d’étendue de classeur.
+* `worksheet` -Renvoie la feuille de calcul dans laquelle l’élément nommé est inclus dans l’étendue.
 
 Nouvelles méthodes :
 
-* `add(name: string, reference: Range or string, comment: string)`-Ajoute un nouveau nom à la collection de l’étendue donnée.
-* `addFormulaLocal(name: string, formula: string, comment: string)`-Ajoute un nouveau nom à la collection de l’étendue donnée à l’aide des paramètres régionaux de l’utilisateur pour la formule.
+* `add(name: string, reference: Range or string, comment: string)` -Ajoute un nouveau nom à la collection de l’étendue donnée.
+* `addFormulaLocal(name: string, formula: string, comment: string)` -Ajoute un nouveau nom à la collection de l’étendue donnée à l’aide des paramètres régionaux de l’utilisateur pour la formule.
 
 ## <a name="settings-api-in-the-excel-namespace"></a>API Settings dans l’espace de noms Excel
 
@@ -40,7 +40,7 @@ Les API incluent `getItem()` pour obtenir une entrée de paramètre via la clé 
 * Ajouter une colonne de table à la fin du tableau.
 * Ajouter plusieurs lignes à un tableau à la fois.
 * `range.getColumnsAfter(count: number)` et `range.getColumnsBefore(count: number)` pour obtenir un certain nombre de colonnes à droite/gauche de l’objet de plage actuel.
-* [Fonction Get Item ou null objet](../../excel/excel-add-ins-advanced-concepts.md#ornullobject-methods): cette fonctionnalité permet d’obtenir l’objet à l’aide d’une clé. Si l’objet n’existe pas, la propriété de l’objet renvoyé est `isNullObject` true. Cela permet aux développeurs de vérifier si un objet existe ou non sans qu’il soit nécessaire de le gérer par le biais de la gestion des exceptions. La `*OrNullObject` méthode est disponible pour la plupart des objets de collection.
+* Les [ \* méthodes et propriétés OrNullObject](../../develop/application-specific-api-model.md#ornullobject-methods-and-properties): cette fonctionnalité permet d’obtenir un objet à l’aide d’une clé. Si l’objet n’existe pas, la propriété de l’objet renvoyé est `isNullObject` true. Cela permet aux développeurs de vérifier s’il existe un objet sans qu’il soit nécessaire de le gérer par le biais de la gestion des exceptions. Une `*OrNullObject` méthode est disponible pour la plupart des objets de collection.
 
 ```js
 worksheet.getItemOrNullObject("itemName")
@@ -88,9 +88,9 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 |[TableColumnCollection](/javascript/api/excel/excel.tablecolumncollection)|[getCount()](/javascript/api/excel/excel.tablecolumncollection#getcount--)|Obtient le nombre de colonnes dans le tableau.|
 ||[getItemOrNullObject (Key : valeur numérique \| )](/javascript/api/excel/excel.tablecolumncollection#getitemornullobject-key-)|Obtient un objet de colonne par nom ou par ID. Si la colonne n’existe pas, renvoie un objet null.|
 |[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[getCount()](/javascript/api/excel/excel.tablerowcollection#getcount--)|Obtient le nombre de lignes dans le tableau.|
-|[Workbook](/javascript/api/excel/excel.workbook)|[paramètres](/javascript/api/excel/excel.workbook#settings)|Représente une collection d’objets Settings associés au classeur. En lecture seule.|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[getUsedRangeOrNullObject (valuesOnly ?: booléen)](/javascript/api/excel/excel.worksheet#getusedrangeornullobject-valuesonly-)|La plage utilisée est la plus petite plage qui englobe toutes les cellules auxquelles une valeur ou un format est affecté. Si la feuille de calcul entière est vide, cette fonction renvoie un objet null.|
-||[zone](/javascript/api/excel/excel.worksheet#names)|Collection de noms inclus dans l’étendue de la feuille de calcul active. En lecture seule.|
+|[Classeur](/javascript/api/excel/excel.workbook)|[paramètres](/javascript/api/excel/excel.workbook#settings)|Représente une collection d’objets Settings associés au classeur. En lecture seule.|
+|[Feuille de calcul](/javascript/api/excel/excel.worksheet)|[getUsedRangeOrNullObject (valuesOnly ?: booléen)](/javascript/api/excel/excel.worksheet#getusedrangeornullobject-valuesonly-)|La plage utilisée est la plus petite plage qui englobe toutes les cellules auxquelles une valeur ou un format est affecté. Si la feuille de calcul entière est vide, cette fonction renvoie un objet null.|
+||[noms](/javascript/api/excel/excel.worksheet#names)|Collection de noms inclus dans l’étendue de la feuille de calcul active. En lecture seule.|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[getCount (visibleOnly ?: Boolean)](/javascript/api/excel/excel.worksheetcollection#getcount-visibleonly-)|Obtient le nombre de feuilles de calcul dans la collection.|
 ||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.worksheetcollection#getitemornullobject-key-)|Obtient un objet de feuille de calcul à l’aide de son nom ou de son ID. Si la feuille de calcul n’existe pas, renvoie un objet null.|
 

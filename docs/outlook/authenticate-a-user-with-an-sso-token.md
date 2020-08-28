@@ -1,14 +1,14 @@
 ---
 title: Authentifier un utilisateur avec un jeton à authentification unique
 description: Découvrez comment utiliser le jeton d’authentification unique fourni par un complément Outlook pour implémenter l’authentification unique (SSO) sur votre service.
-ms.date: 07/30/2020
+ms.date: 08/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 79768147fc91a137a363a071beff46cec60ee819
-ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
+ms.openlocfilehash: e0925979d26f6b3145658d71b1edaf30431e0c7e
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "46573139"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293981"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>Authentifier un utilisateur avec un jeton d’authentification unique dans un complément Outlook
 
@@ -50,6 +50,6 @@ Dans la plupart des scénarios, il n’est pas vraiment utile d’obtenir le jet
 
 ## <a name="see-also"></a>Voir aussi
 
-- Pour consulter un exemple de complément Outlook qui utilise le jeton SSO pour accéder à l’API Microsoft Graph, consultez la rubrique relative à l’[exemple de complément AttachmentsDemo](https://github.com/OfficeDev/outlook-add-in-attachments-demo).
+- Pour obtenir un exemple de complément Outlook qui utilise le jeton SSO pour accéder à l’API Microsoft Graph, consultez la rubrique relative à l' [authentification unique du complément Outlook](https://github.com/OfficeDev/Outlook-Add-in-SSO).
 - [Référence d’API SSO](../develop/sso-in-office-add-ins.md#sso-api-reference)
 - [Ensemble d’exigences IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md)

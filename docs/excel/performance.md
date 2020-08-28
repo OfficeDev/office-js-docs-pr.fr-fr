@@ -1,81 +1,21 @@
 ---
 title: Optimisation des performances API JavaScript Excel
-description: Optimisation des performances à l’aide de l’API JavaScript d’Excel
-ms.date: 07/14/2020
+description: Optimisez les performances des compléments Excel à l’aide de l’API JavaScript.
+ms.date: 07/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 193cbe8c8cd1a432c6567401ed645990cb93e5e9
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: fdaccdca4779aaca64420794e382330994488606
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159093"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294100"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Optimisation des performances à l’aide de l’API JavaScript d’Excel
 
 Il existe plusieurs façons d’effectuer des tâches courantes avec l’API JavaScript Excel. Vous trouverez des différences de performances significatives entre les différentes approches. Cet article fournit des instructions et exemples de code pour vous montrer comment effectuer des tâches courantes efficacement à l’aide des API JavaScript Excel.
 
-## <a name="minimize-the-number-of-sync-calls"></a>Limitez le nombre d’appels sync()
-
-Dans l’API JavaScript Excel, `sync()` est la seule opération asynchrone et elle peut être lente dans certaines circonstances, en particulier pour Excel sur le web. Pour optimiser les performances, vous devez limiter le nombre de fois que vous appelez `sync()` et mettre en file d’attente autant de modifications que possible avant d’appeler.
-
-Voir [Concepts principaux - sync()](excel-add-ins-core-concepts.md#sync) pour des exemples de code qui suivent cette pratique.
-
-## <a name="minimize-the-number-of-proxy-objects-created"></a>Réduire le nombre d’objets proxy créés
-
-Éviter de créer le même objet proxy à plusieurs reprises. Au lieu de cela, si vous avez besoin du même objet proxy pour plus d’une opération, créez-le une seule fois et affectez-le à une variable, puis utilisez cette variable dans votre code.
-
-```js
-// BAD: repeated calls to .getRange() to create the same proxy object
-worksheet.getRange("A1").format.fill.color = "red";
-worksheet.getRange("A1").numberFormat = "0.00%";
-worksheet.getRange("A1").values = [[1]];
-
-// GOOD: create the range proxy object once and assign to a variable
-var range = worksheet.getRange("A1")
-range.format.fill.color = "red";
-range.numberFormat = "0.00%";
-range.values = [[1]];
-
-// ALSO GOOD: use a "set" method to immediately set all the properties without even needing to create a variable!
-worksheet.getRange("A1").set({
-    numberFormat: [["0.00%"]],
-    values: [[1]],
-    format: {
-        fill: {
-            color: "red"
-        }
-    }
-});
-```
-
-## <a name="load-necessary-properties-only"></a>Charger les propriétés nécessaires uniquement
-
-Dans l’API JavaScript Excel, vous devez charger explicitement les propriétés d’un objet proxy. Bien que vous soyez en mesure de charger les propriétés en une fois avec un appel vide`load()`, cette approche peut causer une surcharge significative des performances. Au lieu de cela, nous vous conseillons de charger uniquement les propriétés nécessaires, en particulier pour ces objets qui ont un grand nombre de propriétés.
-
-Par exemple, si vous avez uniquement l’intention de lire la `address` propriété d’un objet Range, spécifiez uniquement cette propriété lorsque vous appelez la `load()` méthode :
-
-```js
-range.load('address');
-```
-
-Vous pouvez appeler `load()` la méthode de l’une des manières suivantes :
-
-_Syntaxe :_
-
-```js
-object.load(string: properties);
-// or
-object.load(array: properties);
-// or
-object.load({ loadOption });
-```
-
-_Où :_
-
-* `properties` est la liste des propriétés à charger, fournie sous forme de chaînes séparées par des virgules ou de tableau de noms. Pour plus d’informations, consultez les `load()` méthodes définies pour les objets dans la référence de l' [API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md).
-* `loadOption` spécifie un objet qui décrit les options select, expand, top et skip. Pour plus d’informations, reportez-vous aux [options](/javascript/api/office/officeextension.loadoption) de chargement d’objet.
-
-N’oubliez pas que certaines des « propriétés » sous un objet peuvent avoir le même nom qu’un autre objet. Par exemple, `format` est une propriété sous plage d’objet, mais `format` lui-même est également un objet. Par conséquent, si vous passez un appel comme `range.load("format")`, cela équivaut à `range.format.load()`, c'est-à-dire, un appel load() vide pouvant entraîner des problèmes de performances comme indiqué précédemment. Pour éviter cela, votre code doit uniquement charger les « nœuds feuille » dans une arborescence d’objets.
+> [!IMPORTANT]
+> De nombreux problèmes de performances peuvent être résolus par le biais de l’utilisation recommandée des `load` `sync` appels et. Pour obtenir des conseils sur l’utilisation des API spécifiques aux applications de manière efficace, voir la section « améliorations des performances avec les API propres aux applications » dans [limites des ressources et optimisation des performances pour les compléments Office](../concepts/resource-limits-and-performance-optimization.md#performance-improvements-with-the-application-specific-apis) .
 
 ## <a name="suspend-excel-processes-temporarily"></a>Suspendre temporairement les processus Excel
 
@@ -141,14 +81,14 @@ La performance d’un complément peut être améliorée en désactivant les év
 
 ## <a name="importing-data-into-tables"></a>Importation de données dans des tableaux
 
-Lorsque vous tentez d’importer une quantité considérable de données directement dans un objet[tableau](/javascript/api/excel/excel.table) (par exemple, à l’aide de `TableRowCollection.add()`), vous risquez de rencontrer une dégradation des performances. Si vous essayez d’ajouter un nouveau tableau, vous devez remplir les données d’abord en définissant `range.values`, puis appelez `worksheet.tables.add()` pour créer un tableau sur la plage. Si vous essayez d’écrire des données dans un tableau existant, écrivez les données dans un objet plage via `table.getDataBodyRange()`, et le tableau s’agrandit automatiquement. 
+Lorsque vous tentez d’importer une quantité considérable de données directement dans un objet[tableau](/javascript/api/excel/excel.table) (par exemple, à l’aide de `TableRowCollection.add()`), vous risquez de rencontrer une dégradation des performances. Si vous essayez d’ajouter un nouveau tableau, vous devez remplir les données d’abord en définissant `range.values`, puis appelez `worksheet.tables.add()` pour créer un tableau sur la plage. Si vous essayez d’écrire des données dans un tableau existant, écrivez les données dans un objet plage via `table.getDataBodyRange()`, et le tableau s’agrandit automatiquement.
 
 Voici un exemple de cette approche :
 
 ```js
 Excel.run(async (ctx) => {
     var sheet = ctx.workbook.worksheets.getItem("Sheet1");
-    // Write the data into the range first 
+    // Write the data into the range first.
     var range = sheet.getRange("A1:B3");
     range.values = [["Key", "Value"], ["A", 1], ["B", 2]];
 
@@ -169,40 +109,8 @@ Excel.run(async (ctx) => {
 > [!NOTE]
 > Vous pouvez convertir un objet de Tableau en objet de Plage à l’aide de la méthode[Table.convertToRange()](/javascript/api/excel/excel.table#converttorange--).
 
-## <a name="untrack-unneeded-ranges"></a>Annuler le suivi des plages inutiles
-
-La couche JavaScript crée des objets proxy pour votre complément pour interagir avec le classeur Excel et les sous-jacentes. Ces objets sont conservés en mémoire jusqu'à `context.sync()` soit appelé. Les opérations par lots volumineux peuvent générer un grand nombre d’objets proxy qui sont uniquement utiles une fois pour le complément et peuvent être publiés à partir de la mémoire avant l’exécution du lot.
-
-La méthode [Range.untrack()](/javascript/api/excel/excel.range#untrack--) libère un objet plage Excel à partir de la mémoire. Appeler cette méthode une fois que votre complément a terminé avec la plage doit créer une amélioration notable des performances lors de l’utilisation d’un grand nombre d’objets de plage.
-
-> [!NOTE]
-> `Range.untrack()` est un raccourci pour [ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove-object-). N’importe quel objet proxy peut être non suivi en le supprimant de la liste d’objets suivis dans le contexte. En règle générale, les objets Plage sont les seuls objets Excel utilisés dans une quantité suffisante pour justifier le non suivi.
-
-L’exemple de code suivant remplit une plage sélectionnée avec des données, une cellule à la fois. Une fois que la valeur est ajoutée à la cellule, la plage représentant cette cellule est non suivie. Exécuter tout d’abord ce code avec une plage sélectionnée de 10 000 à 20 000 cellules, avec la `cell.untrack()` ligne et puis sans. Vous devez remarquer que le code est exécuté plus rapidement avec la `cell.untrack()` ligne que sans elle. Vous pouvez également remarquer un temps de réponse plus rapide par la suite, étant donné que l’étape de nettoyage prend moins de temps.
-
-```js
-Excel.run(async (context) => {
-    var largeRange = context.workbook.getSelectedRange();
-    largeRange.load(["rowCount", "columnCount"]);
-    await context.sync();
-
-    for (var i = 0; i < largeRange.rowCount; i++) {
-        for (var j = 0; j < largeRange.columnCount; j++) {
-            var cell = largeRange.getCell(i, j);
-            cell.values = [[i *j]];
-
-            // call untrack() to release the range from memory
-            cell.untrack();
-        }
-    }
-
-    await context.sync();
-});
-```
-
 ## <a name="see-also"></a>Voir aussi
 
-- [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
-- [Concepts avancés de programmation avec l’API JavaScript Excel](excel-add-ins-advanced-concepts.md)
-- [Limites des ressources et optimisation des performances pour les compléments Office](../concepts/resource-limits-and-performance-optimization.md)
-- [Objet de fonctions de feuille de calcul (API JavaScript pour Excel)](/javascript/api/excel/excel.functions)
+* [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
+* [Limites des ressources et optimisation des performances pour les compléments Office](../concepts/resource-limits-and-performance-optimization.md)
+* [Objet de fonctions de feuille de calcul (API JavaScript pour Excel)](/javascript/api/excel/excel.functions)

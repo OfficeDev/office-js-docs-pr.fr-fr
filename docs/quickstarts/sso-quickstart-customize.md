@@ -4,12 +4,12 @@ description: Découvrez comment personnaliser le complément à extension SSO qu
 ms.date: 07/07/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 8d4ab4653bcd8fccdcbecbe2e7e8e29a49a3184f
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 41644ce28040f96ff2e4a22cac33ef2d45f1dc81
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159450"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294303"
 ---
 # <a name="customize-your-nodejs-sso-enabled-add-in"></a>Personnaliser votre complément compatible avec l’authentification unique Node.js
 
@@ -93,15 +93,15 @@ Les étapes suivantes décrivent ces mises à jour.
 
 ### <a name="changes-required-for-any-type-of-add-in"></a>Modifications requises pour tout type de complément
 
-Effectuez les étapes suivantes pour votre complément, pour modifier l’URL, les paramètres et l’étendue d’accès de Microsoft Graph, et mettre à jour l’interface utilisateur du volet Office. Ces étapes sont les mêmes, quel que soit l’hôte Office que votre complément cible.
+Effectuez les étapes suivantes pour votre complément, pour modifier l’URL, les paramètres et l’étendue d’accès de Microsoft Graph, et mettre à jour l’interface utilisateur du volet Office. Ces étapes sont les mêmes, indépendamment de l’application Office ciblée par votre complément.
 
 1. Dans le **./. ENV** (fichier) :
 
-    a. Remplacez `GRAPH_URL_SEGMENT=/me` par :`GRAPH_URL_SEGMENT=/me/drive/root/children`
+    a. Remplacez `GRAPH_URL_SEGMENT=/me` par : `GRAPH_URL_SEGMENT=/me/drive/root/children`
 
-    b. Remplacez `QUERY_PARAM_SEGMENT=` par :`QUERY_PARAM_SEGMENT=?$select=name&$top=10`
+    b. Remplacez `QUERY_PARAM_SEGMENT=` par : `QUERY_PARAM_SEGMENT=?$select=name&$top=10`
 
-    c. Remplacez `SCOPE=User.Read` par :`SCOPE=Files.Read.All`
+    c. Remplacez `SCOPE=User.Read` par : `SCOPE=Files.Read.All`
 
 2. Dans **./manifest.xml**, recherchez la ligne à `<Scope>User.Read</Scope>` la fin du fichier et remplacez-la par la ligne `<Scope>Files.Read.All</Scope>` .
 
@@ -565,7 +565,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 Une fois ces modifications effectuées, passez à la section [essayer](#try-it-out) de cet article pour tester votre complément mis à jour.
 
-## <a name="try-it-out"></a>Essayez
+## <a name="try-it-out"></a>Try it out
 
 Si votre complément est un complément Excel, Word ou PowerPoint, effectuez les étapes de la section suivante pour le tester. Si votre complément est un complément Outlook, effectuez plutôt les étapes dans la section [Outlook](#outlook) .
 
@@ -590,7 +590,7 @@ Pour tester un complément Excel, Word ou PowerPoint, procédez comme suit.
 
 4. En bas du volet Office, cliquez sur le bouton **lire mon OneDrive entreprise** pour lancer le processus d’authentification unique. 
 
-5. Si une boîte de dialogue s’affiche pour demander des autorisations pour le compte du complément, cela signifie que l’authentification unique n’est pas prise en charge pour votre scénario et que le complément est plutôt repassé à une autre méthode d’authentification des utilisateurs. Cela peut se produire lorsque l’administrateur client n’a pas accordé le consentement du complément pour accéder à Microsoft Graph ou lorsque l’utilisateur n’est pas connecté à Office avec un compte Microsoft valide ou un compte professionnel ou scolaire Microsoft 365. Sélectionnez le bouton **Accepter** dans la fenêtre de boîte de dialogue pour continuer.
+5. Si une boîte de dialogue s’affiche pour demander des autorisations pour le compte du complément, cela signifie que l’authentification unique n’est pas prise en charge pour votre scénario et que le complément est plutôt repassé à une autre méthode d’authentification des utilisateurs. Cela peut se produire lorsque l’administrateur client n’a pas accordé le consentement du complément pour accéder à Microsoft Graph, ou lorsque l’utilisateur n’est pas connecté à Office à l’aide d’un compte Microsoft valide ou d’un compte Microsoft 365 (professionnel ou scolaire). Sélectionnez le bouton **Accepter** dans la fenêtre de boîte de dialogue pour continuer.
 
     ![Boîte de dialogue demande d’autorisation](../images/sso-permissions-request.png)
 
@@ -624,7 +624,7 @@ Pour tester un complément Outlook, procédez comme suit.
 
 5. En bas du volet Office, cliquez sur le bouton **lire mon OneDrive entreprise** pour lancer le processus d’authentification unique. 
 
-6. Si une boîte de dialogue s’affiche pour demander des autorisations pour le compte du complément, cela signifie que l’authentification unique n’est pas prise en charge pour votre scénario et que le complément est plutôt repassé à une autre méthode d’authentification des utilisateurs. Cela peut se produire lorsque l’administrateur client n’a pas accordé le consentement du complément pour accéder à Microsoft Graph ou lorsque l’utilisateur n’est pas connecté à Office avec un compte Microsoft valide ou un compte professionnel ou scolaire Microsoft 365. Sélectionnez le bouton **Accepter** dans la fenêtre de boîte de dialogue pour continuer.
+6. Si une boîte de dialogue s’affiche pour demander des autorisations pour le compte du complément, cela signifie que l’authentification unique n’est pas prise en charge pour votre scénario et que le complément est plutôt repassé à une autre méthode d’authentification des utilisateurs. Cela peut se produire lorsque l’administrateur client n’a pas accordé le consentement du complément pour accéder à Microsoft Graph, ou lorsque l’utilisateur n’est pas connecté à Office à l’aide d’un compte Microsoft valide ou d’un compte Microsoft 365 (professionnel ou scolaire). Sélectionnez le bouton **Accepter** dans la fenêtre de boîte de dialogue pour continuer.
 
     ![Boîte de dialogue demande d’autorisation](../images/sso-permissions-request.png)
 

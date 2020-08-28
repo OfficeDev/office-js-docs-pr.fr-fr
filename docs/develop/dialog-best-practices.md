@@ -3,12 +3,12 @@ title: Pratiques recommandées et règles pour l’API de dialogue Office
 description: Fournit des règles et des pratiques recommandées pour l’API de boîte de dialogue Office, telles que les meilleures pratiques pour une application à page unique (SPA)
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 88c833d91cc16684b5e434d6aff9e77f23bbbdb4
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5e0854137b27d8b8ae33fff8943421cc0c488abe
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608270"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292756"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Pratiques recommandées et règles pour l’API de dialogue Office
 
@@ -26,7 +26,7 @@ Cet article fournit des règles, des pièges et des meilleures pratiques pour l�
 - Une fenêtre hôte, qui peut être un volet de tâches ou le fichier de [fonction](../reference/manifest/functionfile.md) sans interface utilisateur d’une commande de complément, ne peut avoir qu’une seule boîte de dialogue ouverte à la fois.
 - Seules deux API Office peuvent être appelées dans la boîte de dialogue :
   - La fonction [messageParent](/javascript/api/office/office.ui#messageparent-message-) .
-  - `Office.context.requirements.isSetSupported`(Pour plus d’informations, consultez la rubrique [spécifier les hôtes Office et les conditions requises](specify-office-hosts-and-api-requirements.md)pour les API.)
+  - `Office.context.requirements.isSetSupported` (Pour plus d’informations, consultez la rubrique [spécifier les applications Office et les conditions requises](specify-office-hosts-and-api-requirements.md)de l’API.)
 - La fonction [messageParent](/javascript/api/office/office.ui#messageparent-message-) peut uniquement être appelée à partir d’une page dans le même domaine que le complément lui-même.
 
 ## <a name="best-practices"></a>Meilleures pratiques

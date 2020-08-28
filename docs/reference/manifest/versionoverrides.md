@@ -3,12 +3,12 @@ title: Élémznr VersionOverrides dans le fichier manifest
 description: Documentation de référence de l’élément VersionOverrides pour les fichiers manifeste des compléments Office (XML).
 ms.date: 03/05/2020
 localization_priority: Normal
-ms.openlocfilehash: cb23a78c336be891cdfa30262713ee3c80b9160f
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 588f0074941b41a617dd912d78ed2ef2c59f0886
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44604497"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293834"
 ---
 # <a name="versionoverrides-element"></a>Élément VersionOverrides
 
@@ -36,11 +36,11 @@ Le code suivant répertorie la valeur requise de la valeur **xmlns** en fonction
 
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Requis  |  Description  |
+|  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 |  **Description**    |  Non   |  Décrit le complément. Cela remplace l’élément `Description` dans une partie parent du manifeste. Le texte de la description est contenu dans un élément enfant de l’élément **LongString** contenu dans l’élément [Resources](resources.md). L’attribut `resid` de l’élément **Description** est défini sur la valeur de l’attribut `id` de l’élément `String` qui contient le texte.|
 |  **Configuration requise**  |  Non   |  Spécifie l’ensemble de conditions requises minimal et la version d’Office.js qui doit être activée par le complément Office. Cela remplace l’élément `Requirements` dans la partie parent du manifeste.|
-|  [Hôtes](hosts.md)                |  Oui  |  Spécifie une collection d’hôtes d’Office. L’élément Hosts enfant remplace l’élément Hosts dans la partie parent du manifeste.  |
+|  [Hôtes](hosts.md)                |  Oui  |  Spécifie une collection d’applications Office. L’élément hosts enfant remplace l’élément hosts dans la partie parent du manifeste.  |
 |  [Ressources](resources.md)    |  Oui  | Définit une collection de ressources (chaînes, URL et images) qui sont référencées par d’autres éléments de manifeste.|
 |  [EquivalentAddins](equivalentaddins.md)    |  Non  | Spécifie les compléments natifs (COM/XLL) équivalents au complément Web. Le complément Web n’est pas activé si un complément natif équivalent est installé.|
 |  **VersionOverrides**    |  Non  | Définit des commandes de complément sous une version plus récente du schéma. Voir [Mise en œuvre de plusieurs versions](#implementing-multiple-versions) pour plus d’informations. |

@@ -3,12 +3,12 @@ title: Volets des tâches dans les compléments Office
 description: Les volets des tâches permettent aux utilisateurs d’accéder aux contrôles d’interface qui exécutent le code pour modifier des documents ou des e-mails, ou afficher des données d’une source de données.
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 39a96f4d5aa63d55f4dcb30d9aeb9e680357aa09
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 6d1641c2262b1d1c7b0e4570c357d36d265c80de
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093755"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292959"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Volets des tâches dans les compléments Office
  
@@ -45,7 +45,7 @@ Les images suivantes présentent les différentes tailles de volet de tâches av
 
 *Figure 3. Tailles des volets Office*
 
-![Image affichant les tailles de volet des tâches du bureau à une résolution de 1 366 x 768](../images/office-365-taskpane-sizes.png)
+![Image affichant les tailles des volets des tâches sur 1366x768](../images/office-365-taskpane-sizes.png)
 
 - Excel - 350 x 378
 - PowerPoint - 348 x 391

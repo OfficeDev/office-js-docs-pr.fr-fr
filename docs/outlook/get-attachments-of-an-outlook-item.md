@@ -1,14 +1,14 @@
 ---
 title: Obtenir des pièces jointes dans un complément Outlook
 description: Votre complément peut utiliser les API de pièces jointes pour envoyer des informations sur les pièces jointes à un service distant.
-ms.date: 01/13/2020
+ms.date: 08/20/2020
 localization_priority: Normal
-ms.openlocfilehash: bcb8226ab0755351b9e3a365e40623d258887d3f
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 57191820e27bc78431d0a7c97ffd6b8f23e75f4b
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612079"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293911"
 ---
 # <a name="get-attachments-of-an-outlook-item-from-the-server"></a>Obtenir des pièces jointes d’un élément Outlook à partir du serveur
 
@@ -412,4 +412,4 @@ private string ProcessXmlResponse(XElement responseEnvelope)
 - [Créer des compléments Outlook pour des formulaires de lecture](read-scenario.md)
 - [Explorer l’API managée EWS, EWS et les services web dans Exchange](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange)
 - [Prise en main des applications clientes d'API managée EWS](/exchange/client-developer/exchange-web-services/get-started-with-ews-managed-api-client-applications)
-- [Exemple de complément Outlook AttachmentsDemo](https://github.com/OfficeDev/outlook-add-in-attachments-demo)
+- [Authentification unique du complément Outlook](https://github.com/OfficeDev/Outlook-Add-in-SSO)

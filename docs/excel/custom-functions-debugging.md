@@ -3,12 +3,12 @@ ms.date: 07/10/2020
 description: Découvrez comment déboguer vos fonctions personnalisées Excel qui n’utilisent pas de volet de tâches.
 title: Débogage de fonctions personnalisées sans interface utilisateur
 localization_priority: Normal
-ms.openlocfilehash: 9a493600b6e94d86138cd7949dad0498ec9df05b
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 73e5d40dc2bf38ce6ea0f52c55cc2a25c1467f7f
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159513"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293113"
 ---
 # <a name="ui-less-custom-functions-debugging"></a>Débogage de fonctions personnalisées sans interface utilisateur
 
@@ -171,7 +171,7 @@ Vous pouvez utiliser les tâches suivantes pour démarrer le débogage sur le bu
 ## <a name="next-steps"></a>Étapes suivantes
 Découvrez [les pratiques d’authentification pour les fonctions personnalisées sans interface utilisateur](custom-functions-authentication.md).
 
-## <a name="see-also"></a>Consultez également
+## <a name="see-also"></a>Voir aussi
 
 * [Dépannage des fonctions personnalisées](custom-functions-troubleshooting.md)
 * [Gestion des erreurs liées aux fonctions personnalisées dans Excel](custom-functions-errors.md)

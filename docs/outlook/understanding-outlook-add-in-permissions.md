@@ -3,12 +3,12 @@ title: Présentation des autorisations de complément Outlook
 description: Les compléments Outlook spécifient le niveau d’autorisation requis dans leur manifeste (Restricted, ReadItem, ReadWriteItem ou ReadWriteMailbox).
 ms.date: 02/19/2020
 localization_priority: Normal
-ms.openlocfilehash: d566c0f330ff4473fc9c71a7dff26048093707db
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7b0b481edc77170bb395d86f77688bc976f8e6e4
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611623"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292516"
 ---
 # <a name="understanding-outlook-add-in-permissions"></a>Présentation des autorisations de complément Outlook
 
@@ -176,5 +176,5 @@ Toute tentative d’utilisation d’une opération non prise en charge entraîne
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Confidentialité, autorisations et sécurité pour les compléments Outlook](../develop/privacy-and-security.md)
+- [Confidentialité, autorisations et sécurité pour les compléments Outlook](../concepts/privacy-and-security.md)
 - [Mettre en correspondance des chaînes dans un élément Outlook en tant qu’entités connues](match-strings-in-an-item-as-well-known-entities.md)

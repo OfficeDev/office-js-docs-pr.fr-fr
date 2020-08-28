@@ -3,12 +3,12 @@ title: Confidentialité et sécurité pour les compléments Office
 description: Découvrez les aspects de confidentialité et de sécurité de la plateforme des compléments Office.
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 9c947c88f62c550eae4b8a38dc1888a8a3385154
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 6707e94b53eaf714699ab666200e2c2e089b128a
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608026"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293015"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Confidentialité et sécurité pour les compléments Office
 
@@ -16,9 +16,9 @@ ms.locfileid: "44608026"
 
 Les Compléments Office sont sécurisées par un environnement d’exécution de complément, un modèle d’autorisations à plusieurs niveaux et des gouverneurs de performances. Cette infrastructure protège l’expérience utilisateur de la façon suivante : 
 
-- L’accès à l’infrastructure de l’interface utilisateur de l’application hôte est géré.
+- L’accès au cadre de l’interface utilisateur de l’application cliente Office est géré.
 
-- Seul un accès indirect au thread de l’interface utilisateur de l’application hôte est autorisé.
+- Seul l’accès indirect au thread de l’interface utilisateur de l’application cliente Office est autorisé.
 
 - Les interactions modales ne sont pas autorisées, par exemple, les appels vers JavaScript `alert` , `confirm` et les `prompt` fonctions ne sont pas autorisés, car ils sont modaux.
 
@@ -88,13 +88,13 @@ La plateforme du complément répond aux inquiétudes des utilisateurs finaux co
 
 - Avant qu’un utilisateur n’installe un complément à partir d’AppSource, il peut afficher la politique de confidentialité et les conditions requises du complément. En outre, les compléments Outlook qui interagissent avec les boîtes aux lettres des utilisateurs exposent les autorisations spécifiques nécessaires ; l’utilisateur peut lire les conditions d’utilisation, les autorisations requises et la politique de confidentialité avant d’installer un complément Outlook.
 
-- Lorsqu’ils partagent un document, les utilisateurs partagent également les compléments insérés dans ces documents ou qui y sont associés. Si un utilisateur ouvre un document qui contient un complément qu’il n’a jamais utilisé auparavant, l’application hôte demande à l’utilisateur d’accorder l’autorisation d’exécution du complément dans le document. Dans un environnement d’entreprise, l’application hôte Office demande également à l’utilisateur si le document provient d’une source externe.
+- Lorsqu’ils partagent un document, les utilisateurs partagent également les compléments insérés dans ces documents ou qui y sont associés. Si un utilisateur ouvre un document qui contient un complément que l’utilisateur n’a pas utilisé auparavant, l’application cliente Office invite l’utilisateur à accorder l’autorisation pour que le complément s’exécute dans le document. Dans un environnement d’organisation, l’application cliente Office invite également l’utilisateur si le document provient d’une source externe.
 
 - Les utilisateurs peuvent autoriser ou refuser l’accès à AppSource. Pour les compléments de contenu et du volet de tâches, les utilisateurs gèrent l’accès aux compléments et catalogues approuvés à partir du centre de gestion de la **confidentialité** sur le client Office hôte (ouvert à partir des options de **fichiers**  >  **Options**  >  paramètres du**Trust Center**  >  **Centre**de gestion de la confidentialité  >  **-catalogues de compléments approuvés**). Pour les compléments Outlook, les applications peuvent gérer les compléments en sélectionnant le bouton **gérer les compléments** : dans Outlook sur Windows, choisissez **fichier**  >  **gérer les compléments**. Dans Outlook sur Mac, cliquez sur le bouton **gérer les compléments** dans la barre de complément. Dans Outlook sur le web, choisissez le menu **Paramètres** (icône d’engrenage) > **Gérer les compléments**. Les administrateurs peuvent également gérer cet accès [à l’aide d’une stratégie de groupe](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
 
 - La conception de la plateforme du complément offre sécurité et performance aux utilisateurs finals des façons suivantes :
 
-  - Un complément Office s’exécute dans un contrôle de navigateur web, qui est hébergé dans un environnement d’exécution de compléments séparé de l’application hôte Office. Cette conception offre à la fois une sécurité et une séparation des performances de l’application hôte.
+  - Un complément Office s’exécute dans un contrôle de navigateur Web hébergé dans un environnement d’exécution de complément distinct de l’application cliente Office. Cette conception fournit à la fois une isolation de la sécurité et des performances à partir de l’application cliente.
 
   - L’exécution dans un contrôle de navigateur web permet au complément de faire quasiment tout ce qu’une page web ordinaire exécutée dans un navigateur peut faire mais, en même temps, oblige le complément à suivre la stratégie d’origine identique pour l’isolation du domaine et les zones de sécurité.
 
@@ -196,7 +196,7 @@ Un utilisateur mal intentionné pourrait attaquer l’origine d’un complément
 
 ### <a name="tips-to-prevent-clickjacking"></a>Conseils pour éviter les « détournements de clic »
 
-Comme les compléments Office sont restitués dans un iFrame lorsqu’ils sont exécutés dans un navigateur avec les applications hôtes Office, suivez les conseils ci-dessous pour minimiser le risque de [détournement de clic](https://en.wikipedia.org/wiki/Clickjacking), une technique employée par les pirates informatiques pour inciter les internautes à fournir des informations confidentielles.
+Étant donné que les compléments Office sont affichés dans un IFRAME lorsqu’ils sont exécutés dans un navigateur avec des applications clientes Office, utilisez les conseils suivants pour réduire le risque de [détournements](https://en.wikipedia.org/wiki/Clickjacking) --technique utilisée par les pirates pour tromper les utilisateurs en révélant des informations confidentielles.
 
 Tout d’abord, identifiez les actions sensibles que votre complément est en mesure d’effectuer, notamment celles qu’un utilisateur non autorisé pourrait utiliser à des fins malveillantes, comme effectuer une opération financière ou publier des données sensibles. Par exemple, votre complément peut permettre à l’utilisateur d’envoyer un paiement à un destinataire qu’il a lui-même défini.
 

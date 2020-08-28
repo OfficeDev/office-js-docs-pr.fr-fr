@@ -3,18 +3,18 @@ title: Modèle d’objet d’API JavaScript courant
 description: En savoir plus sur le modèle objet de l’API commune JavaScript pour Office
 ms.date: 04/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 44c5258ad164c19df53ebe2fcbb00f420018a710
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 37d2bca0aa4aadfc6ab7ef00d76d74e9acde4711
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609733"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293253"
 ---
 # <a name="common-javascript-api-object-model"></a>Modèle d’objet d’API JavaScript courant
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
-Les compléments JavaScript Office donnent accès à la fonctionnalité sous-jacente de l’hôte. La majeure partie de cet accès passe par quelques objets importants. L’objet [Context](#context-object) donne accès à l’environnement d’exécution après l’initialisation. L’objet [Document](#document-object)donne à l’utilisateur le contrôle d’un document Excel, PowerPoint ou Word. L’objet [Mailbox](#mailbox-object) permet à un complément Outlook d’accéder aux messages et aux profils utilisateur. La compréhension des relations entre ces objets de haut niveau constitue le fondement d’un complément JavaScript.
+Les API JavaScript Office donnent accès à la fonctionnalité sous-jacente de l’application cliente Office. La majeure partie de cet accès passe par quelques objets importants. L’objet [Context](#context-object) donne accès à l’environnement d’exécution après l’initialisation. L’objet [Document](#document-object)donne à l’utilisateur le contrôle d’un document Excel, PowerPoint ou Word. L’objet [Mailbox](#mailbox-object) permet à un complément Outlook d’accéder aux messages, aux rendez-vous et aux profils utilisateur. Comprendre les relations entre ces objets de haut niveau est la base d’un complément Office.
 
 ## <a name="context-object"></a>Context, objet
 
@@ -24,7 +24,7 @@ Lorsqu’un complément est [initialisé](initialize-add-in.md), il peut interag
 
 Par exemple, dans les compléments de contenu ou du volet Office, vous pouvez utiliser la propriété document de l’objet Context pour accéder aux propriétés et aux méthodes de l’objet Document afin d’interagir avec le contenu de documents Word, de feuilles de calcul Excel ou de planifications Project. De même, dans les compléments Outlook, vous pouvez utiliser la propriété mailbox de l’objet Context pour accéder aux méthodes et aux propriétés de l’objet Mailbox afin d’interagir avec le contenu des messages, des demandes de réunion ou des rendez-vous.
 
-L’objet **Context** donne également accès aux propriétés [contentLanguage](/javascript/api/office/office.context#contentlanguage) et [displayLanguage](/javascript/api/office/office.context#displaylanguage) qui vous permettent de déterminer les paramètres régionaux (langue) utilisés dans le document ou l’élément, ou par l’application hôte. La propriété [roamingSettings](/javascript/api/office/office.context#roamingsettings) vous permet d’accéder aux membres de l’objet [RoamingSettings](/javascript/api/office/office.context#roamingsettings) qui stocke les paramètres spécifiques à votre complément pour les boîtes aux lettres individuelles des utilisateurs. Enfin, l’objet **Context** fournit une propriété [ui](/javascript/api/office/office.context#ui) qui permet à votre complément d’ouvrir des boîtes de dialogue contextuelles.
+L’objet **Context** donne également accès aux propriétés [contentLanguage](/javascript/api/office/office.context#contentlanguage) et [displayLanguage](/javascript/api/office/office.context#displaylanguage) qui vous permettent de déterminer les paramètres régionaux (langue) utilisés dans le document ou l’élément, ou par l’application Office. La propriété [roamingSettings](/javascript/api/office/office.context#roamingsettings) vous permet d’accéder aux membres de l’objet [RoamingSettings](/javascript/api/office/office.context#roamingsettings) qui stocke les paramètres spécifiques à votre complément pour les boîtes aux lettres individuelles des utilisateurs. Enfin, l’objet **Context** fournit une propriété [ui](/javascript/api/office/office.context#ui) qui permet à votre complément d’ouvrir des boîtes de dialogue contextuelles.
 
 
 ## <a name="document-object"></a>Objet Document
@@ -88,7 +88,7 @@ Les méthodes d’accès aux données sur les `Document` objets et [Binding](/ja
 
 
 > [!TIP]
-> **Quand devez-vous utiliser la matrice ou le paramètre coercionType de tableau pour accéder aux données ?** Si vous souhaitez que vos données tabulaires s’étendent dynamiquement lorsque les lignes et les colonnes sont ajoutées, et que vous devez utiliser des en-têtes de tableau, vous devez utiliser le type de données table (en spécifiant le paramètre _coercionType_ de la `Document` méthode d' `Binding` accès aux données de l’objet ou `"table"` `Office.CoercionType.Table` ). L’ajout de lignes et de colonnes au sein de la structure de données est pris en charge dans les données de tableau et de matrice, mais l’ajout de lignes et de colonnes à la fin est pris en charge uniquement pour les données de tableau. Si vous ne prévoyez pas d’ajouter des lignes et des colonnes, et que vos données ne nécessitent pas la fonctionnalité d’en-tête, vous devez utiliser le type de données Matrix (en spécifiant le paramètre _coercionType_ de la méthode d’accès aux données `"matrix"` `Office.CoercionType.Matrix` ), ce qui fournit un modèle plus simple d’interaction avec les données.
+> **Quand devez-vous utiliser la matrice ou le paramètre coercionType de tableau pour accéder aux données ?** Si vous souhaitez que vos données tabulaires s’étendent dynamiquement lorsque les lignes et les colonnes sont ajoutées, et que vous devez utiliser des en-têtes de tableau, vous devez utiliser le type de données table (en spécifiant le paramètre _coercionType_ de la `Document` méthode d' `Binding` accès aux données de l’objet ou `"table"` `Office.CoercionType.Table` ). L’ajout de lignes et de colonnes au sein de la structure de données est pris en charge dans les données de tableau et de matrice, mais l’ajout de lignes et de colonnes à la fin est pris en charge uniquement pour les données de tableau. Si vous ne prévoyez pas d’ajouter des lignes et des colonnes, et que vos données ne nécessitent pas la fonctionnalité d’en-tête, vous devez utiliser le type de données Matrix (en spécifiant le paramètre  _coercionType_ de la méthode d’accès aux données `"matrix"` `Office.CoercionType.Matrix` ), ce qui fournit un modèle plus simple d’interaction avec les données.
 
 Si les données sont d’un type qui ne peut pas être forcé vers le type spécifié, la propriété [AsyncResult.status](/javascript/api/office/office.asyncresult#status) du rappel renvoie `"failed"`. Par ailleurs, vous pouvez utiliser la propriété [AsyncResult.error](/javascript/api/office/office.asyncresult#error) pour accéder à un objet [Error](/javascript/api/office/office.error) incluant des informations sur la raison de l’échec de l’appel de la méthode.
 
@@ -117,7 +117,7 @@ L’établissement d’une liaison vous permet également de vous abonner aux do
 
 L’objet [Bindings](/javascript/api/office/office.bindings) expose une méthode [getAllAsync](/javascript/api/office/office.bindings#getallasync-options--callback-) qui donne accès à toutes les liaisons établies dans le document ou la feuille de calcul. Une liaison individuelle est accessible par son ID à l’aide de la méthode [Bindings.getBindingByIdAsync](/javascript/api/office/office.bindings#getbyidasync-id--options--callback-) ou [Office.select](/javascript/api/office). Vous pouvez établir de nouvelles liaisons et supprimer des liaisons existantes à l’aide de l’une des méthodes suivantes de l' `Bindings` objet [: addFromSelectionAsync](/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-), [AddFromPromptAsync](/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-), [addFromNamedItemAsync](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-)ou [releaseByIdAsync](/javascript/api/office/office.bindings#releasebyidasync-id--options--callback-).
 
-Il existe trois types de liaisons que vous pouvez spécifier avec le paramètre _bindingType_ lorsque vous créez une liaison avec les `addFromSelectionAsync` `addFromPromptAsync` `addFromNamedItemAsync` méthodes ou :
+Il existe trois types de liaisons que vous pouvez spécifier avec le paramètre  _bindingType_ lorsque vous créez une liaison avec les `addFromSelectionAsync` `addFromPromptAsync` `addFromNamedItemAsync` méthodes ou :
 
 
 
@@ -164,11 +164,10 @@ var item = Office.context.mailbox.item;
 
 De plus, les compléments Outlook peuvent utiliser les objets suivants :
 
-- `Office`Object : pour l’initialisation.
+- `Office` Object : pour l’initialisation.
 
-- `Context`objet : pour accéder au contenu et aux propriétés de langue d’affichage.
+- `Context` objet : pour accéder au contenu et aux propriétés de langue d’affichage.
 
-- `RoamingSettings`objet : pour l’enregistrement des paramètres personnalisés propres au complément Outlook dans la boîte aux lettres de l’utilisateur où le complément est installé.
+- `RoamingSettings` objet : pour l’enregistrement des paramètres personnalisés propres au complément Outlook dans la boîte aux lettres de l’utilisateur où le complément est installé.
 
 Pour plus d’informations sur l’utilisation de JavaScript dans les compléments Outlook, reportez-vous à la rubrique [Compléments Outlook](../outlook/outlook-add-ins-overview.md).
-

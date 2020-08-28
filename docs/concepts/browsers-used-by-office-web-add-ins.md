@@ -3,16 +3,16 @@ title: Navigateurs utilisés par les compléments Office
 description: Indique comment le système d’exploitation et la version d’Office déterminent le navigateur utilisé par les compléments Office.
 ms.date: 08/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 53e3061f1729ac792e91a10e31bc9d0d908ab07b
-ms.sourcegitcommit: 3efa932b70035dde922929d207896e1a6007f620
+ms.openlocfilehash: 4c4462434480a82e69ebaf5a2599ceda1e4693a7
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "46757358"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293057"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navigateurs utilisés par les compléments Office
 
-Les compléments Office sont des applications web qui s’affichent à l’aide d’iFrames lorsqu’ils sont exécutés dans Office sur le web et utilisent des contrôles de navigateur incorporés dans Office pour les clients de bureau et mobiles. Les compléments ont également besoin d’un moteur JavaScript pour exécuter le code JavaScript. Le navigateur et le moteur incorporés sont fournis par un navigateur installé sur l’ordinateur de l’utilisateur.
+Les compléments Office sont des applications Web qui sont affichées à l’aide d’iFrames lorsqu’ils sont exécutés dans Office sur le Web et qui utilisent des contrôles de navigateur incorporés dans Office pour les clients mobiles et de bureau. Les compléments ont également besoin d’un moteur JavaScript pour exécuter le code JavaScript. Le navigateur et le moteur incorporés sont fournis par un navigateur installé sur l’ordinateur de l’utilisateur.
 
 Le navigateur utilisé dépend de ce qui suit :
 
@@ -39,7 +39,7 @@ Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes e
 
 <sup>2</sup> lorsque Microsoft Edge est utilisé, le narrateur Windows 10 (parfois appelé « lecteur d’écran ») lit la `<title>` balise dans la page qui s’ouvre dans le volet Office. Si Internet Explorer 11 est utilisé, le Narrateur lit la barre de titre du volet Office, qui provient de la valeur `<DisplayName>` du manifeste du complément.
 
-<sup>3</sup> si votre complément inclut l' `Runtimes` élément dans le manifeste, il utilise Internet Explorer 11 quelle que soit la version de Windows ou de Microsoft 365. Pour plus d’informations, consultez la rubrique [runtimes](../reference/manifest/runtimes.md).
+<sup>3</sup> si votre complément inclut l' `Runtimes` élément dans le manifeste, il utilise Internet Explorer 11 quelle que soit la version de Windows ou de Microsoft 365. Pour plus d’informations, voir [Services d’exécution](../reference/manifest/runtimes.md).
 
 <sup>4</sup> le navigateur utilisé pour cette combinaison de versions dépend du canal de mise à jour de l’abonnement Microsoft 365. Si l’utilisateur est sur le [canal bêta](https://insider.office.com/join/windows) (auparavant le canal rapide des Insiders), Office utilise Microsoft Edge avec WebView2 (basé sur le chrome). Pour tout autre canal, Office utilise Microsoft Edge avec le WebView d’origine (EdgeHTML). La prise en charge de WebView2 dans d’autres canaux est attendue en début de 2021.
 > [!IMPORTANT]

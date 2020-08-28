@@ -3,12 +3,12 @@ title: Règles d’activation pour les compléments Outlook
 description: Outlook active certains types de complément si le message ou le rendez-vous que l’utilisateur lit ou compose respecte les règles d’activation du complément.
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: 5fdf8499b802291539f855cce6e0a810573c8798
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7a3ed48f77146a25725d46b3e06296cb0eb5616a
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611679"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294051"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>Règles d’activation des compléments contextuels Outlook 
 
@@ -182,7 +182,7 @@ L’exemple suivant illustre l’activation du complément lorsque l’utilisate
 ## <a name="limits-for-rules-and-regular-expressions"></a>Limites pour les règles et les expressions régulières
 
 
-Pour fournir une expérience satisfaisante avec les compléments Outlook, vous devez vous conformer aux directives d’activation et d’utilisation des API. Le tableau suivant illustre les limites générales pour les expressions régulières et les règles, mais les différents hôtes impliquent des règles spécifiques. Pour plus d’informations, voir [Limites d’activation et d’API JavaScript des compléments Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) et [Résoudre les problèmes d’activation des compléments Outlook](troubleshoot-outlook-add-in-activation.md).
+Pour fournir une expérience satisfaisante avec les compléments Outlook, vous devez respecter les instructions relatives à l’activation et à l’utilisation de l’API. Le tableau suivant indique les limites générales pour les expressions régulières et les règles, mais il existe des règles spécifiques pour différentes applications. Pour plus d’informations, consultez la rubrique [limites pour l’activation et l’API JavaScript pour les compléments Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) et [résoudre les problèmes d’activation des compléments Outlook](troubleshoot-outlook-add-in-activation.md).
 
 <br/>
 
@@ -191,7 +191,7 @@ Pour fournir une expérience satisfaisante avec les compléments Outlook, vous d
 |Taille de manifeste|Inférieur à 256 Ko.|
 |Règles|Pas plus de 15 règles.|
 |ItemHasKnownEntity|Un riche client Outlook appliquera la règle au premier mégaoctet du corps, mais pas au reste.|
-|Expressions régulières|Pour les règles ItemHasKnownEntity ou ItemHasRegularExpressionMatch pour tous les hôtes Outlook :<br><ul><li>Ne spécifiez pas plus de 5 expressions régulières dans les règles d’activation pour un complément Outlook. Vous ne pouvez pas installer de complément si vous dépassez cette limite.</li><li>Spécifiez des expressions régulières dont les résultats sont renvoyés par l’appel de la méthode <b>getRegExMatches</b> dans les 50 premières correspondances. </li><li>Spécifiez des assertions avant dans les expressions régulières, mais pas d’assertions arrière, `(?<=text)`, ni d’assertions arrière négatives `(?<!text)`.</li><li>Spécifiez des expressions régulières dont la correspondance ne dépasse pas les limites figurant dans le tableau ci-dessous.<br/><br/><table><tr><th>Limite de longueur d’une correspondance d’expression régulière</th><th>Clients riches Outlook</th><th>Outlook sur iOS et Android</th></tr><tr><td>Corps d’élément en texte brut</td><td>1,5 Ko</td><td>3 Ko</td></tr><tr><td>Corps d’élément en HTML</td><td>3 Ko</td><td>3 Ko</td></tr></table>|
+|Expressions régulières|Pour les règles ItemHasKnownEntity ou ItemHasRegularExpressionMatch pour toutes les applications Outlook :<br><ul><li>Ne spécifiez pas plus de 5 expressions régulières dans les règles d’activation pour un complément Outlook. Vous ne pouvez pas installer de complément si vous dépassez cette limite.</li><li>Spécifiez des expressions régulières dont les résultats sont renvoyés par l’appel de la méthode <b>getRegExMatches</b> dans les 50 premières correspondances. </li><li>Spécifiez des assertions avant dans les expressions régulières, mais pas d’assertions arrière, `(?<=text)`, ni d’assertions arrière négatives `(?<!text)`.</li><li>Spécifiez des expressions régulières dont la correspondance ne dépasse pas les limites figurant dans le tableau ci-dessous.<br/><br/><table><tr><th>Limite de longueur d’une correspondance d’expression régulière</th><th>Clients riches Outlook</th><th>Outlook sur iOS et Android</th></tr><tr><td>Corps d’élément en texte brut</td><td>1,5 Ko</td><td>3 Ko</td></tr><tr><td>Corps d’élément en HTML</td><td>3 Ko</td><td>3 Ko</td></tr></table>|
 
 ## <a name="see-also"></a>Voir aussi
 

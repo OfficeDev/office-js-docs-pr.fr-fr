@@ -1,14 +1,14 @@
 ---
 title: Utilisation de plages à l’aide de l’API JavaScript pour Excel (fondamental)
 description: Exemples de code qui montrent comment effectuer des tâches courantes avec des plages à l’aide de l’API JavaScript pour Excel.
-ms.date: 04/30/2019
+ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 8cba0908d2179c397dc3530e9bcb4063c09fce19
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 4eb04a58fdf58425f7bb13a6dc457da28625dba5
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609593"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294163"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Utilisation de plages à l’aide de l’API JavaScript pour Excel
 
@@ -99,16 +99,16 @@ Excel.run(function (context) {
     var range = sheet.getRange("B4:E4");
 
     range.insert(Excel.InsertShiftDirection.down);
-    
+
     return context.sync();
 }).catch(errorHandlerFunction);
 ```
 
-**Données avant l’insertion de la plage**
+### <a name="data-before-range-is-inserted"></a>Données avant l’insertion de la plage
 
 ![Données dans Excel avant l’insertion de la plage](../images/excel-ranges-start.png)
 
-**Données après l’insertion de la plage**
+### <a name="data-after-range-is-inserted"></a>Données après l’insertion de la plage
 
 ![Données dans Excel après l’insertion de plage](../images/excel-ranges-after-insert.png)
 
@@ -127,11 +127,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Données avant l’effacement de la plage**
+### <a name="data-before-range-is-cleared"></a>Données avant l’effacement de la plage
 
 ![Données dans Excel avant l’effacement de la plage](../images/excel-ranges-start.png)
 
-**Données après l’effacement de plage**
+### <a name="data-after-range-is-cleared"></a>Données après l’effacement de plage
 
 ![Données dans Excel après l’effacement de plage](../images/excel-ranges-after-clear.png)
 
@@ -150,11 +150,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Données avant la suppression d’une plage**
+### <a name="data-before-range-is-deleted"></a>Données avant la suppression d’une plage
 
 ![Données dans Excel avant la suppression d’une plage](../images/excel-ranges-start.png)
 
-**Données après la suppression d’une plage**
+### <a name="data-after-range-is-deleted"></a>Données après la suppression d’une plage
 
 ![Données dans Excel après la suppression d’une plage](../images/excel-ranges-after-delete.png)
 
@@ -173,13 +173,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Plage sélectionnée  B2:E6**
+### <a name="selected-range-b2e6"></a>Plage sélectionnée  B2:E6
 
 ![Plage sélectionnée dans Excel](../images/excel-ranges-set-selection.png)
 
 ## <a name="get-the-selected-range"></a>Obtenir la plage sélectionnée
 
-L’exemple de code suivant obtient la plage sélectionnée, charge sa `address` propriété et écrit un message dans la console. 
+L’exemple de code suivant obtient la plage sélectionnée, charge sa `address` propriété et écrit un message dans la console.
 
 ```js
 Excel.run(function (context) {
@@ -213,11 +213,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Données avant la mise à jour de la valeur de la cellule**
+#### <a name="data-before-cell-value-is-updated"></a>Données avant la mise à jour de la valeur de la cellule
 
 ![Données dans Excel avant la mise à jour de la valeur de la cellule](../images/excel-ranges-set-start.png)
 
-**Données après la mise à jour de la valeur de la cellule**
+#### <a name="data-after-cell-value-is-updated"></a>Données après la mise à jour de la valeur de la cellule
 
 ![Données dans Excel après la mise à jour de la valeur de la cellule](../images/excel-ranges-set-cell-value.png)
 
@@ -232,7 +232,7 @@ Excel.run(function (context) {
     var data = [
         ["Potato Chips", 10, 1.80],
     ];
-    
+
     var range = sheet.getRange("B5:D5");
     range.values = data;
     range.format.autofitColumns();
@@ -241,11 +241,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Données avant la mise à jour des valeurs des cellules**
+#### <a name="data-before-cell-values-are-updated"></a>Données avant la mise à jour des valeurs des cellules
 
 ![Données dans Excel avant la mise à jour des valeurs des cellules](../images/excel-ranges-set-start.png)
 
-**Données après la mise à jour des valeurs des cellules**
+#### <a name="data-after-cell-values-are-updated"></a>Données après la mise à jour des valeurs des cellules
 
 ![Données dans Excel après la mise à jour des valeurs des cellules](../images/excel-ranges-set-cell-values.png)
 
@@ -265,11 +265,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Données avant la définition de la formule de la cellule**
+#### <a name="data-before-cell-formula-is-set"></a>Données avant la définition de la formule de la cellule
 
 ![Données dans Excel avant la définition de la formule de la cellule](../images/excel-ranges-start-set-formula.png)
 
-**Données après la définition de la formule de la cellule**
+#### <a name="data-after-cell-formula-is-set"></a>Données après la définition de la formule de la cellule
 
 ![Données dans Excel après la définition de la formule de la cellule](../images/excel-ranges-set-formula.png)
 
@@ -287,7 +287,7 @@ Excel.run(function (context) {
         ["=C5 * D5"],
         ["=SUM(E3:E5)"]
     ];
-    
+
     var range = sheet.getRange("E3:E6");
     range.formulas = data;
     range.format.autofitColumns();
@@ -296,11 +296,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Données avant la définition des formules des cellules**
+#### <a name="data-before-cell-formulas-are-set"></a>Données avant la définition des formules des cellules
 
 ![Données dans Excel avant la définition des formules des cellules](../images/excel-ranges-start-set-formula.png)
 
-**Données après la définition des formules des cellules**
+#### <a name="data-after-cell-formulas-are-set"></a>Données après la définition des formules des cellules
 
 ![Données dans Excel après la définition des formules des cellules](../images/excel-ranges-set-formulas.png)
 
@@ -325,11 +325,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Données de la plage (les valeurs de la colonne E sont le résultat des formules)**
+#### <a name="data-in-range-values-in-column-e-are-a-result-of-formulas"></a>Données de la plage (les valeurs de la colonne E sont le résultat des formules)
 
 ![Données dans Excel après la définition des formules des cellules](../images/excel-ranges-set-formulas.png)
 
-**range.values (comme consigné dans la console par l’exemple de code ci-dessus)**
+#### <a name="rangevalues-as-logged-to-the-console-by-the-code-sample-above"></a>range.values (comme consigné dans la console par l’exemple de code ci-dessus)
 
 ```json
 [
@@ -383,11 +383,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Données de la plage (les valeurs de la colonne E sont le résultat des formules)**
+#### <a name="data-in-range-values-in-column-e-are-a-result-of-formulas"></a>Données de la plage (les valeurs de la colonne E sont le résultat des formules)
 
 ![Données dans Excel après la définition des formules des cellules](../images/excel-ranges-set-formulas.png)
 
-**range.text (comme consigné dans la console par l’exemple de code ci-dessus)**
+#### <a name="rangetext-as-logged-to-the-console-by-the-code-sample-above"></a>range.text (comme consigné dans la console par l’exemple de code ci-dessus)
 
 ```json
 [
@@ -441,11 +441,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Données de la plage (les valeurs de la colonne E sont le résultat des formules)**
+#### <a name="data-in-range-values-in-column-e-are-a-result-of-formulas"></a>Données de la plage (les valeurs de la colonne E sont le résultat des formules)
 
 ![Données dans Excel après la définition des formules des cellules](../images/excel-ranges-set-formulas.png)
 
-**range.formulas (comme consigné dans la console par l’exemple de code ci-dessus)**
+#### <a name="rangeformulas-as-logged-to-the-console-by-the-code-sample-above"></a>range.formulas (comme consigné dans la console par l’exemple de code ci-dessus)
 
 ```json
 [
@@ -502,11 +502,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Données de la plage avant la définition de la couleur de police et de la couleur de remplissage**
+#### <a name="data-in-range-before-font-color-and-fill-color-are-set"></a>Données de la plage avant la définition de la couleur de police et de la couleur de remplissage
 
 ![Données dans Excel de la plage avant la définition de la couleur de police et de la couleur de remplissage](../images/excel-ranges-format-before.png)
 
-**Données de la plage après la définition de la couleur de police et de la couleur de remplissage**
+#### <a name="data-in-range-after-font-color-and-fill-color-are-set"></a>Données de la plage après la définition de la couleur de police et de la couleur de remplissage
 
 ![Données dans Excel après la définition du format](../images/excel-ranges-format-font-and-fill.png)
 
@@ -531,13 +531,39 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Données de la plage avant la définition du format de nombre**
+#### <a name="data-in-range-before-number-format-is-set"></a>Données de la plage avant la définition du format de nombre
 
-![Données dans Excel de la plage avant la définition de la couleur de police et de la couleur de remplissage](../images/excel-ranges-format-font-and-fill.png)
+![Données dans Excel avant la définition du format de nombre](../images/excel-ranges-format-font-and-fill.png)
 
-**Données de la plage après la définition du format de nombre**
+#### <a name="data-in-range-after-number-format-is-set"></a>Données de la plage après la définition du format de nombre
 
-![Données dans Excel après la définition du format](../images/excel-ranges-format-numbers.png)
+![Données dans Excel après la définition du format de nombre](../images/excel-ranges-format-numbers.png)
+
+## <a name="read-or-write-to-an-unbounded-range"></a>Lire ou écrire dans une plage non liée
+
+### <a name="read-an-unbounded-range"></a>Lire une plage non liée
+
+Une adresse de plage illimitée est une adresse de plage qui spécifie des colonnes entières ou des lignes entières. Par exemple :
+
+- Adresses de plage composées de colonnes entières :<ul><li>`C:C`</li><li>`A:F`</li></ul>
+- Adresses de plage composées de lignes entières :<ul><li>`2:2`</li><li>`1:4`</li></ul>
+
+Lorsque l’API effectue une demande de récupération d’une plage non liée (par exemple, `getRange('C:C')`), la réponse contient des valeurs `null` pour les propriétés définies au niveau des cellules, telles que `values`, `text`, `numberFormat` et `formula`. Les autres propriétés de la plage, telles que `address` et `cellCount`, contiennent des valeurs valides pour la plage non liée.
+
+### <a name="write-to-an-unbounded-range"></a>Écrire dans une plage non liée
+
+Vous ne pouvez pas définir des propriétés au niveau de la cellule telles que `values` , `numberFormat` , et `formula` sur une plage illimitée, car la demande d’entrée est trop volumineuse. Par exemple, l’extrait de code suivant n’est pas valide, car il tente de spécifier `values` pour une plage non liée. L’API renvoie une erreur si vous tentez de définir des propriétés au niveau de la cellule pour une plage non liée.
+
+```js
+var range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
+range.values = 'Due Date';
+```
+
+## <a name="read-or-write-to-a-large-range"></a>Lire ou écrire dans une grande plage
+
+Si une plage contient un grand nombre de cellules, de valeurs, de formats de nombre et/ou de formules, il n’est peut-être pas possible d’exécuter des opérations d’API sur cette plage. L’API essaie toujours d’exécuter au mieux l’opération demandée sur une plage (par exemple, pour extraire ou écrire des données spécifiées), mais essayer d’effectuer des opérations de lecture ou d’écriture pour une grande plage peut provoquer une erreur d’API en raison de l’utilisation des ressources excessive. Pour éviter ces erreurs, nous vous recommandons d’exécuter des opérations de lecture ou d’écriture distinctes pour des sous-ensembles plus petits d’une grande plage, au lieu d’essayer d’exécuter une seule opération de lecture ou d’écriture sur une grande plage.
+
+Pour plus d’informations sur les limitations système, consultez la section « compléments Excel » de [limites de ressources et optimisation des performances pour les compléments Office](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins).
 
 ### <a name="conditional-formatting-of-ranges"></a>Mise en forme conditionnelle de plages
 
@@ -545,7 +571,7 @@ Des plages peuvent présenter une mise en forme de cellules individuelles en fon
 
 ## <a name="find-a-cell-using-string-matching"></a>Rechercher une cellule en utilisant la correspondance de chaîne
 
-L’objet `Range` dispose d’une méthode`find` pour rechercher une chaîne spécifiée dans la plage. Elle renvoie la plage de la première cellule avec le texte correspondant. L’exemple de code suivant trouve la première cellule contenant une valeur égale à la chaîne **Nourriture** et connecte son adresse à la console. Notez que `find` génère une erreur `ItemNotFound` si la chaîne spécifiée n’existe pas dans la plage. Si vous pensez que la chaîne spécifiée peut ne pas exister dans la plage, utilisez la méthode[findAllOrNullObject](excel-add-ins-advanced-concepts.md#ornullobject-methods) à la place, pour que votre code gère ce scénario plus facilement.
+L’objet `Range` dispose d’une méthode`find` pour rechercher une chaîne spécifiée dans la plage. Elle renvoie la plage de la première cellule avec le texte correspondant. L’exemple de code suivant trouve la première cellule contenant une valeur égale à la chaîne **Nourriture** et connecte son adresse à la console. Notez que `find` génère une erreur `ItemNotFound` si la chaîne spécifiée n’existe pas dans la plage. Si vous pensez que la chaîne spécifiée peut ne pas exister dans la plage, utilisez la méthode[findAllOrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) à la place, pour que votre code gère ce scénario plus facilement.
 
 ```js
 Excel.run(function (context) {

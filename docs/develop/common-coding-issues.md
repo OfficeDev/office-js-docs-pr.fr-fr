@@ -1,14 +1,14 @@
 ---
 title: Conseils de codage pour les problèmes courants et les comportements de plateforme inattendus
 description: Liste des problèmes de plateforme d’API JavaScript pour Office fréquemment rencontrés par les développeurs.
-ms.date: 07/23/2020
+ms.date: 07/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 8f604acaee308c3bd04e181719b091eb948d63ee
-ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
+ms.openlocfilehash: f6d6a31059b32550e3176ed278d7da4c2c7a6c68
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "46530456"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292910"
 ---
 # <a name="coding-guidance-for-common-issues-and-unexpected-platform-behaviors"></a>Conseils de codage pour les problèmes courants et les comportements de plateforme inattendus
 
@@ -16,7 +16,7 @@ Cet article met en évidence les aspects de l’API JavaScript pour Office qui p
 
 ## <a name="common-apis-and-outlook-apis-are-not-promise-based"></a>Les API communes et les API Outlook ne sont pas basées sur la promesse
 
-Les [API communes](/javascript/api/office) (qui ne sont pas liées à un hôte Office particulier) et les [API Outlook](/javascript/api/outlook) utilisent un modèle de programmation basé sur les rappels. L’interaction avec le document Office sous-jacent nécessite un appel asynchrone en lecture ou en écriture qui spécifie un rappel à exécuter lorsque l’opération se termine. Pour obtenir un exemple de ce modèle, consultez la rubrique [document. getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-).
+Les [API communes](/javascript/api/office) (celles qui ne sont pas liées à une application Office particulière) et les [API Outlook](/javascript/api/outlook) utilisent un modèle de programmation basé sur les rappels. L’interaction avec le document Office sous-jacent nécessite un appel asynchrone en lecture ou en écriture qui spécifie un rappel à exécuter lorsque l’opération se termine. Pour obtenir un exemple de ce modèle, consultez la rubrique [document. getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-).
 
 Ces méthodes d’API et d’API courantes ne renvoient pas de [promesses](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise). Par conséquent, vous ne pouvez pas utiliser [await](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await) pour suspendre l’exécution jusqu’à la fin de l’opération asynchrone. Si vous avez besoin `await` de comportement, vous pouvez encapsuler l’appel de méthode dans une promesse créée de manière explicite.
 
@@ -50,7 +50,7 @@ readDocumentFileAsync(): Promise<any> {
 ## <a name="some-properties-cannot-be-set-directly"></a>Certaines propriétés ne peuvent pas être définies directement
 
 > [!NOTE]
-> Cette section s’applique uniquement aux API propres à l’hôte pour Excel et Word.
+> Cette section s’applique uniquement aux API propres à l’application pour Excel et Word.
 
 Certaines propriétés ne peuvent pas être définies, bien qu’elles soient accessibles en écriture. Ces propriétés font partie d’une propriété parent qui doit être définie en tant qu’objet unique. Cela est dû au fait que cette propriété Parent repose sur les sous-propriétés ayant des relations logiques spécifiques. Ces propriétés parent doivent être définies à l’aide de la notation littérale d’objet pour définir l’objet entier, au lieu de définir les sous-propriétés individuelles de cet objet. Vous trouverez un exemple dans [PageLayout](/javascript/api/excel/excel.pagelayout). La `zoom` propriété doit être définie avec un seul objet [PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) , comme illustré ci-dessous :
 
@@ -61,7 +61,7 @@ sheet.pageLayout.zoom = { scale: 200 };
 
 Dans l’exemple précédent, vous ne seriez ***pas*** en mesure d’affecter directement `zoom` une valeur : `sheet.pageLayout.zoom.scale = 200;` . Cette instruction génère une erreur car `zoom` elle n’est pas chargée. Même si `zoom` elles ont été chargées, l’ensemble de l’étendue ne prendra pas effet. Toutes les opérations de contexte se produisent `zoom` , actualisant l’objet proxy dans le complément et remplaçant les valeurs définies localement.
 
-Ce comportement diffère des [Propriétés de navigation](../excel/excel-add-ins-advanced-concepts.md#scalar-and-navigation-properties) telles que [Range. format](/javascript/api/excel/excel.range#format). Les propriétés de `format` peuvent être définies à l’aide de la navigation d’objet, comme illustré ci-dessous :
+Ce comportement diffère des [Propriétés de navigation](application-specific-api-model.md#scalar-and-navigation-properties) telles que [Range. format](/javascript/api/excel/excel.range#format). Les propriétés de `format` peuvent être définies à l’aide de la navigation d’objet, comme illustré ci-dessous :
 
 ```js
 // This will set the font size on the range during the next `content.sync()`.
@@ -104,17 +104,6 @@ Excel.run(async (context) => {
 
 ## <a name="excel-specific-issues"></a>Problèmes spécifiques à Excel
 
-### <a name="excel-data-transfer-limits"></a>Limites de transfert de données Excel
-
-Si vous créez un complément Excel, tenez compte des limitations de taille suivantes lors de l’interaction avec le classeur :
-
-- Excel sur le web a une limite de taille de charge utile de 5 Mo pour les demandes et les réponses. L’erreur `RichAPI.Error` est déclenchée en cas de dépassement de cette limite.
-- Une plage est limitée à 5 millions cellules pour les opérations Get.
-
-Si vous prévoyez que l’entrée de l’utilisateur dépasse ces limites, veillez à vérifier les données avant d’appeler `context.sync()` . Fractionnez l’opération en plusieurs parties si nécessaire. Veillez à appeler `context.sync()` pour chaque sous-opération afin d’éviter que ces opérations soient regroupées par lots.
-
-Ces limitations sont généralement dépassées par les grandes plages. Votre complément peut utiliser [RangeAreas](/javascript/api/excel/excel.rangeareas) pour mettre à jour les cellules dans une plage plus grande de manière stratégique. Pour plus d’informations, consultez [travailler simultanément avec plusieurs plages dans des compléments Excel](../excel/excel-add-ins-multiple-ranges.md) .
-
 ### <a name="api-limitations-when-the-active-workbook-switches"></a>Limitations de l’API lorsque le classeur actif bascule
 
 Les compléments pour Excel sont conçus pour fonctionner sur un seul classeur à la fois. Des erreurs peuvent se produire lorsqu’un classeur distinct de celui qui exécute le complément obtient le focus. Cela se produit uniquement lorsque des méthodes particulières sont en cours d’appel lorsque le focus est modifié.
@@ -143,12 +132,13 @@ Les API suivantes sont affectées par ce commutateur de classeurs :
 > [!NOTE]
 > Cela s’applique uniquement à plusieurs classeurs Excel ouverts sous Windows ou Mac.
 
-### <a name="coauthoring"></a>Co-création
+### <a name="coauthoring"></a>Co-édition
 
 Consultez la rubrique [co-authoring in Excel Add-ins](../excel/co-authoring-in-excel-add-ins.md) for patterns to use with Events in a CoAuthoring Environment. L’article aborde également les conflits de fusion potentiels lors de l’utilisation de certaines API, telles que [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) .
 
 ## <a name="see-also"></a>Voir aussi
 
+- [Limites des ressources et optimisation des performances pour les compléments Office](../concepts/resource-limits-and-performance-optimization.md)
 - [OfficeDev/Office-js](https://github.com/OfficeDev/office-js/issues): le lieu de signaler et d’afficher les problèmes liés à la plateforme des compléments Office et aux API JavaScript.
 - [Débordement de pile](https://stackoverflow.com/questions/tagged/office-js): emplacement où poser des questions de programmation sur les API JavaScript Office. Veillez à appliquer la balise « Office-js » à votre question lors de la publication dans le débordement de pile.
 - [UserVoice](https://officespdev.uservoice.com/): le lieu de suggérer de nouvelles fonctionnalités pour la plateforme des compléments Office et les API JavaScript pour Office.

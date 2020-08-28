@@ -1,14 +1,14 @@
 ---
 title: Utiliser les classeurs utilisant l’API JavaScript Excel
 description: Exemples de code qui montrent comment effectuer des tâches courantes avec des classeurs ou des fonctionnalités au niveau de l’application à l’aide de l’API JavaScript pour Excel.
-ms.date: 05/06/2020
+ms.date: 08/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 16c091c3f01ffba144cf28c4f6e2bf4889872194
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: a7a35e2627863c648f8c3e31ab05b2714ca0aebe
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609199"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294128"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Utiliser les classeurs utilisant l’API JavaScript Excel
 
@@ -146,6 +146,8 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
+### <a name="custom-properties"></a>Propriétés personnalisées
+
 Vous pouvez également définir des propriétés personnalisées. L’objet DocumentProperties contient une propriété `custom` qui représente une collection de paires de valeur clés pour les propriétés définies par l’utilisateur. L’exemple suivant montre comment créer une propriété personnalisée nommée **Introduction** avec la valeur « Hello », puis la récupérer.
 
 ```js
@@ -160,11 +162,46 @@ Excel.run(function (context) {
 Excel.run(function (context) {
     var customDocProperties = context.workbook.properties.custom;
     var customProperty = customDocProperties.getItem("Introduction");
-    customProperty.load("key, value");
+    customProperty.load(["key, value"]);
 
     return context.sync().then(function() {
         console.log("Custom key  : " + customProperty.key); // "Introduction"
         console.log("Custom value : " + customProperty.value); // "Hello"
+    });
+}).catch(errorHandlerFunction);
+```
+
+#### <a name="worksheet-level-custom-properties-preview"></a>Propriétés personnalisées au niveau de la feuille de calcul (aperçu)
+
+> [!NOTE]
+> Les propriétés personnalisées au niveau de la feuille de calcul sont actuellement en préversion. [!INCLUDE [Information about using preview Excel APIs](../includes/using-excel-preview-apis.md)]
+
+Les propriétés personnalisées peuvent également être définies au niveau de la feuille de calcul. Elles sont similaires aux propriétés personnalisées au niveau du document, à la seule différence que la même clé peut être répétée dans différentes feuilles de calcul. L’exemple suivant montre comment créer une propriété personnalisée nommée **WorksheetGroup** avec la valeur « alpha » sur la feuille de calcul active, puis la récupérer.
+
+```js
+Excel.run(function (context) {
+    // Add the custom property.
+    var customWorksheetProperties = context.workbook.worksheets.getActiveWorksheet().customProperties;
+    customWorksheetProperties.add("WorksheetGroup", "Alpha");
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+
+[...]
+
+Excel.run(function (context) {
+    // Load the keys and values of all custom properties in the current worksheet.
+    var worksheet = context.workbook.worksheets.getActiveWorksheet();
+    worksheet.load("name");
+
+    var customWorksheetProperties = worksheet.customProperties;
+    var customWorksheetProperty = customWorksheetProperties.getItem("WorksheetGroup");
+    customWorksheetProperty.load(["key", "value"]);
+
+    return context.sync().then(function() {
+        // Log the WorksheetGroup custom property to the console.
+        console.log(worksheet.name + ": " + customWorksheetProperty.key); // "WorksheetGroup"
+        console.log("  Custom value : " + customWorksheetProperty.value); // "Alpha"
     });
 }).catch(errorHandlerFunction);
 ```
@@ -190,7 +227,7 @@ Excel.run(function (context) {
 
 Un classeur comporte des paramètres de langue et de culture qui influent sur l’affichage de certaines données. Ces paramètres permettent de localiser les données lorsque les utilisateurs de votre complément partagent des classeurs dans différentes langues et cultures. Votre complément peut utiliser l’analyse de chaîne pour localiser le format des nombres, des dates et des heures en fonction des paramètres de culture du système, de sorte que chaque utilisateur voit des données dans leur propre format de culture.
 
-`Application.cultureInfo`définit les paramètres de culture du système en tant qu’objet [CultureInfo](/javascript/api/excel/excel.cultureinfo) . Contient des paramètres tels que le séparateur décimal numérique ou le format de date.
+`Application.cultureInfo` définit les paramètres de culture du système en tant qu’objet [CultureInfo](/javascript/api/excel/excel.cultureinfo) . Contient des paramètres tels que le séparateur décimal numérique ou le format de date.
 
 Certains paramètres de culture peuvent être [modifiés via l’interface utilisateur Excel](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e). Les paramètres système sont conservés dans l' `CultureInfo` objet. Toutes les modifications locales sont conservées en tant que propriétés au niveau de l' [application](/javascript/api/excel/excel.application), telles que `Application.decimalSeparator` .
 
