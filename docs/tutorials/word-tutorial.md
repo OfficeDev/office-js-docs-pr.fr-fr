@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez cr?er un compl?ment Word qui ins?re
 ms.date: 07/07/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 9ee851c9d479c15a0abce5228d89648d1268861b
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 03960f5de7e99ba4ffa52be5cd4f7fc896942b76
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093510"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294219"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches Word
 
@@ -62,7 +62,7 @@ Dans cette étape du tutoriel, vous devez tester par programme que votre complé
     <button class="ms-Button" id="insert-paragraph">Insert Paragraph</button><br/><br/>
     ```
 
-5. Ouvrez le fichier **./src/taskpane/taskpane.js**. Ce fichier contient le code de l’API JavaScript pour Office qui facilite l’interaction entre le volet des tâches et l’application hôte Office.
+5. Ouvrez le fichier **./src/taskpane/taskpane.js**. Ce fichier contient le code de l’API JavaScript pour Office qui facilite l’interaction entre le volet des tâches et l’application cliente Office.
 
 6. Supprimez toutes les références au bouton `run` et à la fonction `run()` en procédant comme suit :
 

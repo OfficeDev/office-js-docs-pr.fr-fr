@@ -5,12 +5,12 @@ ms.date: 02/13/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 6b162a166bda0c988f5fbbaade3b0bef4b650984
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 9a504a81bb15e36f937328e2f7cbb674f416842d
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094070"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292411"
 ---
 # <a name="office-add-ins-platform-overview"></a>Vue d’ensemble de la plateforme de compléments pour Office
 
@@ -26,7 +26,7 @@ Les compléments Office offrent presque les mêmes possibilités qu’une page w
 
 ## <a name="how-are-office-add-ins-different-from-com-and-vsto-add-ins"></a>En quoi les compléments Office sont-ils différents des compléments COM et VSTO ?
 
-Les compléments COM ou VSTO sont des solutions d’intégration à Office antérieures qui s’exécutent uniquement sur Office pour Windows. Contrairement aux compléments COM, les compléments Office n’incluent pas de code exécuté sur l’appareil de l’utilisateur ou sur le client Office. Pour un complément Office, l’application hôte, par exemple Excel, lit le manifeste du complément et insère les commandes de menu et les boutons de ruban personnalisés du complément dans l’interface utilisateur. Lorsque cela est nécessaire, elle charge le code JavaScript et HTML du complément, qui est exécuté dans le contexte d’un navigateur dans un bac à sable (sandbox).
+Les compléments COM ou VSTO sont des solutions d’intégration à Office antérieures qui s’exécutent uniquement dans Office pour Windows. Contrairement aux compléments COM, les compléments Office n’incluent pas de code exécuté sur l’appareil de l’utilisateur ni sur le client Office. Pour un complément Office, l’application (par exemple, Excel), lit le manifeste du complément et insère les commandes de menu et les boutons de ruban personnalisés du complément dans l’interface utilisateur. Lorsque cela est nécessaire, elle charge le code JavaScript et HTML du complément, qui est exécuté dans le contexte d’un navigateur dans un bac à sable (sandbox).
 
 ![Image expliquant les raisons d'utiliser les compléments Office](../images/why.png)
 
@@ -56,7 +56,7 @@ Le manifeste est un fichier XML qui spécifie les paramètres et les fonctionnal
 
 ### <a name="web-app"></a>Application web
 
-Le complément Office le plus simple est composé d’une page HTML statique qui est affichée dans une application Office, mais qui n’interagit pas avec le document Office ou une autre ressource Internet. Toutefois, pour créer un complément qui interagit avec des documents Office ou permet à l’utilisateur d’interagir avec les ressources en ligne à partir d’une application hôte Office, vous pouvez utiliser n’importe quelle technologie, aussi bien côté client que serveur, prise en charge par votre fournisseur d’hébergement (par exemple, ASP.NET, PHP ou Node.js). Pour interagir avec des clients et des documents Office, vous pouvez utiliser les API JavaScript Office.js.
+Le complément Office le plus simple est composé d’une page HTML statique qui est affichée dans une application Office, mais qui n’interagit pas avec le document Office ou une autre ressource Internet. Toutefois, pour créer un complément qui interagit avec des documents Office ou permet à l’utilisateur d’interagir avec les ressources en ligne à partir d’une application cliente Office, vous pouvez utiliser n’importe quelle technologie, aussi bien côté client que serveur, prise en charge par votre fournisseur d’hébergement (par exemple, ASP.NET, PHP ou Node.js). Pour interagir avec des clients et des documents Office, vous pouvez utiliser les API JavaScript Office.js.
 
 *Figure 2. Composants d’un complément Office Hello World*
 
@@ -64,7 +64,7 @@ Le complément Office le plus simple est composé d’une page HTML statique qui
 
 ## <a name="extending-and-interacting-with-office-clients"></a>Extension des clients Office et interaction avec ces clients
 
-Les compléments Office offrent les possibilités suivantes dans une application Office hôte :
+Les compléments Office offrent les possibilités suivantes dans une application cliente Office :
 
 -  Étendre les fonctionnalités (toutes les applications Office)
 
@@ -100,7 +100,7 @@ Vous pouvez utiliser des volets Office en plus des commandes de complément pour
 
 Les add-ins Outlook peuvent étendre le ruban des applications Office et s'afficher contextuellement à côté d'un élément Outlook lorsque vous le visualisez ou le composez. Ils peuvent fonctionner avec un message électronique, une demande de réunion, une réponse à une réunion, l'annulation d'une réunion ou un rendez-vous lorsqu'un utilisateur consulte un élément reçu ou répond ou crée un nouvel élément. 
 
-Les compléments Outlook peuvent accéder aux informations contextuelles de l’élément, comme l’adresse ou l’ID de suivi, puis utiliser ces données pour accéder à des informations complémentaires sur le serveur et à partir des services web pour enrichir l’expérience utilisateur. Dans la plupart des cas, un complément Outlook s’exécute sans modification dans l’application hôte Outlook afin d’offrir aux utilisateurs une expérience transparente sur le bureau, le web, les tablettes et les appareils mobiles.
+Les compléments Outlook peuvent accéder aux informations contextuelles de l’élément, comme l’adresse ou l’ID de suivi, puis utiliser ces données pour accéder à des informations complémentaires sur le serveur et à partir des services web de façon à enrichir l’expérience utilisateur. Dans la plupart des cas, un complément Outlook s’exécute sans modification dans l’application Outlook afin d’offrir aux utilisateurs une expérience transparente sur le bureau, le web, les tablettes et les appareils mobiles.
 
 Pour accéder à une vue d’ensemble des compléments Outlook, reportez-vous à la rubrique [Présentation des compléments Outlook](../outlook/outlook-add-ins-overview.md).
 
@@ -114,7 +114,7 @@ Vous pouvez incorporer des objets web, appelés compléments de contenu, dans de
 
 ## <a name="office-javascript-apis"></a>API JavaScript pour Office
 
-Les API JavaScript Office sont composées d’objets et de membres permettant de créer des compléments et d’interagir avec le contenu Office et les services web. Il existe un modèle objet commun que se partagent Excel, Outlook, Word, PowerPoint, OneNote et Project. Il existe également des modèles objet plus complets et propres à l’hôte pour Excel et Word. Ces API permettent d’accéder à des objets connus tels que des paragraphes et des classeurs, ce qui facilite la création de complément pour un hôte spécifique.  
+Les API JavaScript Office sont composées d’objets et de membres permettant de créer des compléments et d’interagir avec le contenu Office et les services web. Il existe un modèle objet commun que se partagent Excel, Outlook, Word, PowerPoint, OneNote et Project. Il existe également des modèles objet plus complets et propres à l’application pour Excel et Word. Ces API permettent d’accéder à des objets connus tels que des paragraphes et des classeurs, ce qui facilite la création de complément pour une application spécifique.
 
 ## <a name="next-steps"></a>Étapes suivantes
 

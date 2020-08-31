@@ -1,15 +1,15 @@
 ---
 title: Création de votre premier complément Outlook
 description: Découvrez comment créer un complément de volet des tâches Outlook simple à l’aide de l’API JavaScript pour Office.
-ms.date: 08/11/2020
+ms.date: 08/24/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 6ed50b52e0f4d5667e835c875851ed14c68bfe49
-ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
+ms.openlocfilehash: 6ce09b3b2f60cd4c77e966f6b920aa63caab299c
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "46672714"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294331"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Création de votre premier complément Outlook
 
@@ -104,6 +104,9 @@ Le projet de complément que vous avez créé à l’aide du générateur Yeoman
     npm start
     ```
 
+    > [!IMPORTANT]
+    > Si un message d’erreur « sideload n’est pas pris en charge » s’affiche, vous pouvez l’ignorer et continuer.
+
 1. Suivez les instructions indiquées dans l’article [Chargement de version test des compléments Outlook](../outlook/sideload-outlook-add-ins-for-testing.md) pour charger le complément dans Outlook.
 
 1. Dans Outlook, sélectionnez ou ouvrez un message.
@@ -155,7 +158,7 @@ Quand vous arrivez au bout de l’Assistant, Visual Studio crée une solution q
 
 |**Project**|**Description**|
 |:-----|:-----|
-|Projet de complément|Contient uniquement un fichier manifeste XML contenant tous les paramètres qui décrivent votre complément. Ces paramètres aident l’hôte Office à déterminer le moment où votre complément doit être activé et l’emplacement où il doit apparaître. Visual Studio génère le contenu de ce fichier pour vous permettre d’exécuter le projet et d’utiliser votre complément immédiatement. Vous pouvez modifier ces paramètres à tout moment en modifiant le fichier XML.|
+|Projet de complément|Contient uniquement un fichier manifeste XML contenant tous les paramètres qui décrivent votre complément. Ces paramètres aident l’application Office à déterminer le moment où votre complément doit être activé et l’emplacement où il doit apparaître. Visual Studio génère le contenu de ce fichier pour vous permettre d’exécuter le projet et d’utiliser votre complément immédiatement. Vous pouvez modifier ces paramètres à tout moment en modifiant le fichier XML.|
 |Projet d’application web|Contient les pages de contenu de votre complément, notamment tous les fichiers et références de fichiers dont vous avez besoin pour développer des pages HTML et JavaScript compatibles avec Office. Pendant que vous développez votre complément, Visual Studio héberge l’application web sur votre serveur IIS local. Lorsque vous êtes prêt à publier le complément, vous devez déployer ce projet d’application web sur un serveur web.|
 
 ### <a name="update-the-code"></a>Mise à jour du code

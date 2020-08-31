@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément simple de volet des tâche
 ms.date: 07/07/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 6f057d650451d12e834d8f875f40d9d6d71ee4d7
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 1eaead7f44ee3615d5779a864399ce7a00b5915d
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094154"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292320"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>Créer votre premier complément du volet Office de OneNote
 
@@ -42,9 +42,9 @@ Le projet de complément que vous avez créé à l’aide du générateur Yeoman
 - Le fichier **./manifest.xml** du répertoire racine du projet définit les paramètres et fonctionnalités du complément.
 - Le fichier **./src/taskpane/taskpane.html** contient les balises HTML du volet Office.
 - Le fichier **./src/taskpane/taskpane.css** contient le style CSS appliqué au contenu du volet Office.
-- Le fichier **./src/taskpane/taskpane.js** contient le code de l’API JavaScript pour Office qui facilite l’interaction entre le volet Office et l’application hôte Office.
+- Le fichier **./src/taskpane/taskpane.js** contient le code d’API JavaScript pour Office qui facilite l’interaction entre le volet des tâches et l’application cliente Office.
 
-## <a name="update-the-code"></a>Mise à jour du code
+## <a name="update-the-code"></a>Mettre à jour le code
 
 Ouvrez le fichier **./src/taskpane/taskpane.js** dans l’éditeur de code et ajoutez le code suivant à la fonction `run`. Ce code utilise l’API JavaScript OneNote pour définir le titre de la page et ajouter un plan au corps de celle-ci.
 

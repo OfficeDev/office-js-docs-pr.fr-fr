@@ -1,16 +1,16 @@
 ---
 title: Présentation des compléments Word
 description: Découvrez les concepts de base des Compléments Word.
-ms.date: 03/18/2020
+ms.date: 07/28/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 714bbc561c987c9f9df478e9d5a95dd7a801ea04
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b531ec5c2a5fa1e3e9366f703a57e815a5711b5a
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608557"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293071"
 ---
 # <a name="word-add-ins-overview"></a>Présentation des compléments Word
 
@@ -49,15 +49,15 @@ Les interfaces API JavaScript pour Word permettent à votre application d’acc�
 * Word 2016 ou version ultérieure sur Mac
 * Word sur iPad
 
-Écrivez votre complément une seule fois. Celui-ci s’exécutera dans toutes les versions de Word sur plusieurs plateformes. Pour plus d’informations, voir la page relative à la [disponibilité des compléments Office sur les plateformes et les hôtes](../overview/office-add-in-availability.md).
+Écrivez votre complément une seule fois. Celui-ci s’exécutera dans toutes les versions de Word sur plusieurs plateformes. Pour plus d’informations, voir [Disponibilité des compléments Office sur les plateformes et les applications clientes](../overview/office-add-in-availability.md).
 
 ## <a name="javascript-apis-for-word"></a>APIs JavaScript pour Word
 
 Vous pouvez utiliser les deux ensembles d’APIs JavaScript pour interagir avec les objets et les métadonnées d’un document Word. Le premier groupe est l’[API commune](/javascript/api/office), qui a été introduit dans Office 2013. La plupart des objets dans l’API commune peuvent être utilisés dans des compléments hébergés par deux clients Office ou plus. Cette API utilise largement les rappels.
 
-Le deuxième est l’[API JavaScript pour Word](/javascript/api/word). Il s’agit d’un modèle objet fortement typé qui vous permet de créer des compléments Word destinés à Word 2016 sur Mac et Windows. Ce modèle objet utilise les promesses et fournit un accès aux objets Word, tels que le [corps](/javascript/api/word/word.body), les [contrôles de contenu](/javascript/api/word/word.contentcontrol), les [images incorporées](/javascript/api/word/word.inlinepicture) et les [paragraphes](/javascript/api/word/word.paragraph). L’API JavaScript pour Word inclut des définitions TypeScript et des fichiers vsdoc pour vous permettre d’obtenir des conseils concernant votre code dans votre environnement de développement intégré (IDE).
+Le deuxième est l’[API JavaScript pour Word](/javascript/api/word) qui est un [modèle d’API spécifique à l’application](../develop/application-specific-api-model.md) introduit avec Word 2016. Il s’agit d’un modèle objet fortement typé qui vous permet de créer des compléments Word destinés à Word 2016 sur Mac et Windows. Ce modèle objet utilise les promesses et fournit un accès aux objets Word, tels que le [corps](/javascript/api/word/word.body), les [contrôles de contenu](/javascript/api/word/word.contentcontrol), les [images incorporées](/javascript/api/word/word.inlinepicture) et les [paragraphes](/javascript/api/word/word.paragraph). L’API JavaScript pour Word inclut des définitions TypeScript et des fichiers vsdoc pour vous permettre d’obtenir des conseils concernant votre code dans votre environnement de développement intégré (IDE).
 
-Actuellement, tous les clients Word prennent en charge l’API Office JavaScript partagée, et la plupart des clients prennent en charge l’API JavaScript pour Word. Pour plus d’informations sur les clients pris en charge, voir [Disponibilité de la plateforme et de l’hôte du complément pour Office](../overview/office-add-in-availability.md).
+Actuellement, tous les clients Word prennent en charge l’API JavaScript Office partagée, et la plupart des clients prennent en charge l’API JavaScript pour Word. Pour plus d’informations sur les clients pris en charge, voir [Disponibilité des applications clientes Office et des plateformes pour les compléments Office](../overview/office-add-in-availability.md).
 
 Nous vous recommandons de démarrer avec l’API JavaScript pour Word car le modèle d’objet est plus facile à utiliser. Utilisez l’API JavaScript pour Word pour :
 

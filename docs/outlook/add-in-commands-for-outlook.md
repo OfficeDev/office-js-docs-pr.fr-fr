@@ -3,12 +3,12 @@ title: Commandes de complément Outlook
 description: Les commandes de complément Outlook permettent de lancer des actions de complément spécifiques à partir du ruban en ajoutant des boutons ou des menus déroulants.
 ms.date: 07/07/2020
 localization_priority: Priority
-ms.openlocfilehash: 7705c168077d2a704ff16b05bfb82416cd7f4154
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 598d6e055b72d517d4a6bcfb90e3968b466e3aa0
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094028"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294009"
 ---
 # <a name="add-in-commands-for-outlook"></a>Commandes de complément pour Outlook
 
@@ -30,7 +30,7 @@ Les commandes de complément sont uniquement disponibles pour les compléments q
 
 Les commandes de complément sont déclarées dans le manifeste de complément dans l’[élément VersionOverrides](../reference/manifest/versionoverrides.md). Cet élément est un ajout au schéma de manifeste version 1.1 qui assure la compatibilité descendante. Dans un client qui ne prend pas en charge `VersionOverrides`, les compléments existants continuent à fonctionner comme ils le feraient sans commande de complément.
 
-Les entrées de manifeste `VersionOverrides` spécifient plusieurs éléments pour le complément, notamment l’hôte, les types de contrôles à ajouter au ruban, le texte, les icônes et toutes les fonctions associées.
+Les entrées de manifeste `VersionOverrides` spécifient plusieurs éléments pour le complément, notamment l’application, les types de contrôles à ajouter au ruban, le texte, les icônes et toutes les fonctions associées.
 
 Lorsqu’un complément doit fournir des mises à jour d’état, telles que des indicateurs de progression ou des messages d’erreur, il doit le faire via les [API de notification](/javascript/api/outlook/office.notificationmessages). Le traitement pour les notifications doit également être défini dans un fichier HTML distinct qui est spécifié dans le nœud `FunctionFile` du manifeste.
 
@@ -58,7 +58,7 @@ Dans Outlook sur le web, le nom du complément s’affiche dans un menu de dépa
 
 ## <a name="what-ux-shapes-exist-for-add-in-commands"></a>Quelles formes d’expérience utilisateur existent pour les commandes de complément ?
 
-La forme d’expérience utilisateur d’une commande de complément inclut un onglet de ruban dans l’application hôte qui contient des boutons permettant d’effectuer diverses actions. Actuellement, trois formes d’expérience utilisateur sont prises en charge :
+La forme d’expérience utilisateur d’une commande de complément inclut un onglet de ruban dans l’application Office qui contient des boutons permettant d’effectuer diverses actions. Actuellement, trois formes d’expérience utilisateur sont prises en charge :
 
 - Un bouton qui exécute une fonction JavaScript
 - Un bouton qui lance un volet Office

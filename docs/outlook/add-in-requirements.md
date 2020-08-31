@@ -3,12 +3,12 @@ title: Conditions requises pour les compléments Outlook
 description: Pour que les compléments Outlook se chargent et fonctionnent correctement, les serveurs et les clients doivent répondre à plusieurs conditions.
 ms.date: 07/07/2020
 localization_priority: Priority
-ms.openlocfilehash: 700e0efd2ab2655de61d37d42038fa2c15a99cb4
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 353c03fc0cdfe83c5f775df09dfb7c6b23cca191
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093993"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294002"
 ---
 # <a name="outlook-add-in-requirements"></a>Conditions requises pour les compléments Outlook
 
@@ -16,7 +16,7 @@ Pour que les compléments Outlook se chargent et fonctionnent correctement, les 
 
 ## <a name="client-requirements"></a>Configuration requise du client
 
-- Le client doit être l’un des hôtes pris en charge pour les compléments Outlook. Les clients suivants prennent en charge les compléments :
+- Le client doit être l’un des applications pris en charge pour les compléments Outlook. Les clients suivants prennent en charge les compléments :
 
    - Outlook 2013 ou version ultérieure sur Windows
    - Outlook 2016 ou version ultérieure sur Mac
@@ -44,5 +44,5 @@ Les fichiers du complément (HTML, JavaScript, etc.) peuvent être hébergés su
 ## <a name="see-also"></a>Voir aussi
 
 - [Configuration requise pour exécuter des compléments Office](../concepts/requirements-for-running-office-add-ins.md)
-- [Disponibilité des compléments Office sur les plateformes et les hôtes (section Outlook)](../overview/office-add-in-availability.md#outlook)
+- [Application cliente Office et disponibilité de la plateforme pour les compléments Office (section Outlook)](../overview/office-add-in-availability.md#outlook)
 - [Prise en charge des ensembles de conditions requises de l’API JavaScript pour Outlook](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)

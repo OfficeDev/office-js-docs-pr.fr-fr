@@ -5,23 +5,23 @@ title: Documentation référence de l’API JavaScript pour Office
 description: En savoir plus sur les API JavaScript pour Office.
 ms.date: 12/24/2019
 localization_priority: Priority
-ms.openlocfilehash: 78e222c7cdc618d707678dc73dd4a0e5dab123de
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 46f5ae8a073fe45a6f6ac7f873f9adeb37fbab15
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608816"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294282"
 ---
 # <a name="api-reference-documentation"></a>Documentation de référence de l'API
 
-Un complément peut utiliser les API JavaScript pour Office pour interagir avec des objets dans les applications hôtes Office. 
+Un complément peut utiliser les API JavaScript pour Office pour interagir avec des objets dans les applications clientes Office. 
 
 <ul>
-    <li><b>Les API propres aux hôtes</b> fournissent des objets fortement typés qui peuvent être utilisés pour interagir avec des objets natifs d’une application Office spécifique.</li>
+    <li>Les API <b>propres à l’application</b> fournissent des objets fortement typés qui peuvent être utilisés pour interagir avec des objets natifs d’une application Office spécifique.</li>
     <li>Les API <b>Communes</b> peuvent être utilisées pour accéder à des fonctionnalités telles qu’une interface utilisateur, des boîtes de dialogue et des paramètres du client, qui sont communes à plusieurs types d’applications Office.</li>
 </ul>
 
-Vous devez utiliser les API propres à l’hôte dans la mesure du possible, et utiliser les API communes uniquement pour les scénarios qui ne sont pas pris en charge par les API propres à l’hôte. Si vous souhaitez en savoir plus sur ces deux modèles API, consultez<a href="../overview/office-add-ins-fundamentals.md#api-models">Création de compléments Office</a>.
+Vous devez utiliser les API propres à l’application dans la mesure du possible, et utiliser les API communes uniquement pour les scénarios qui ne sont pas pris en charge par les API propres à l’application. Si vous souhaitez en savoir plus sur ces deux modèles API, consultez<a href="../overview/office-add-ins-fundamentals.md#api-models">Création de compléments Office</a>.
 
 <h2>Référence d’API</h2>
 
@@ -130,4 +130,4 @@ Vous devez utiliser les API propres à l’hôte dans la mesure du possible, et 
     </li>
 </ul>
 
-<b>Remarque</b>: il n’existe actuellement aucune API JavaScript propre à l’hôte pour Project ; vous utiliserez des API communes pour créer des compléments Project. de plus, l’étendue de l’API propre à l’hôte pour PowerPoint est très limitée ; vous utiliserez principalement les API communes pour créer des compléments PowerPoint.
+<b>Remarque</b>: il n’existe actuellement aucune API JavaScript propre à l’application pour Project ; vous utiliserez des API communes pour créer des compléments Project. de plus, l’étendue de l’API propre à l’application pour PowerPoint est très limitée ; vous utiliserez principalement les API communes pour créer des compléments PowerPoint.

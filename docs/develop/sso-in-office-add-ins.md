@@ -3,12 +3,12 @@ title: Activer l’authentification unique pour des compléments Office
 description: Découvrez comment activer l’authentification unique pour les Compléments Office à l’aide de votre compte courant Microsoft personnel, professionnel ou scolaire.
 ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: fa10d67d007fbcb8713fc607ca32e1c646e7f3e5
-ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
+ms.openlocfilehash: ec4fc9f91f3cbc9f8882ed491c7c5bc68be346ed
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "46573223"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293197"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins"></a>Activer la connexion unique pour des compléments Office
 
@@ -29,12 +29,12 @@ Le diagramme suivant illustre le mode de fonctionnement du processus d’authent
 
 ![Un diagramme illustrant le processus d’authentification unique](../images/sso-overview-diagram.png)
 
-1. Dans le complément, JavaScript appelle une nouvelle API Office.js [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). Cela indique à l’application hôte Office qu’elle doit obtenir un jeton d’accès au complément. Voir [Exemple de token](#example-access-token).
-2. Si l’utilisateur n’est pas connecté, l’application hôte Office ouvre une fenêtre contextuelle pour que l’utilisateur se connecte.
+1. Dans le complément, JavaScript appelle une nouvelle API Office.js [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). Cela indique à l’application cliente Office qu’elle doit obtenir un jeton d’accès au complément. Voir [Exemple de token](#example-access-token).
+2. Si l’utilisateur n’est pas connecté, l’application cliente Office ouvre une fenêtre contextuelle pour qu’il se connecte.
 3. Si c’est la première fois que l’utilisateur actuel utilise votre complément, il est invité à donner son consentement.
-4. L’application hôte Office demande le **jeton de complément** au point de terminaison Azure AD v2.0 pour l’utilisateur actuel.
-5. Azure AD envoie le jeton de complément à l’application hôte Office.
-6. L’application hôte Office envoie le**jeton de complément (token)** au complément dans le cadre de l’objet de résultat renvoyé par l’appel`getAccessToken`.
+4. L’application cliente Office demande le **jeton de complément** au point de terminaison Azure AD v2.0 pour l’utilisateur actuel.
+5. Azure AD envoie le jeton de complément à l’application cliente Office.
+6. L’application cliente Office envoie le**jeton de complément (token)** au complément dans le cadre de l’objet de résultat renvoyé par l’appel`getAccessToken`.
 7. Dans le compl?ment, JavaScript peut analyser le token et extraire les informations dont il a besoin, telles que l'adresse e-mail de l'utilisateur.
 8. Optionnellement, le compl?ment peut envoyer une requ?te HTTP ? son serveur pour obtenir plus de donn?es sur l'utilisateur, notamment les pr?f?rences de l'utilisateur. Alternativement, le token lui-m?me pourrait ?tre envoy? au serveur pour analyse et validation.
 
@@ -54,8 +54,8 @@ Enregistrer le complément auprès du portail d’inscription pour le point de t
 
 * Obtenez un ID client et un code secret pour le complément.
 * Spécifiez les autorisations dont votre complément a besoin pour AAD v.  Point de terminaison 2.0 (et ?ventuellement Microsoft Graph). L'autorisation "profil" est toujours n?cessaire.
-* Accordez la confiance de l’application hôte Office au complément.
-* Pré-autorisez l’application hôte Office pour le complément avec l’autorisation par défaut*access_as_user*.
+* Accordez la confiance de l’application cliente Office au complément.
+* Pré-autorisez l’application cliente Office pour le complément avec l’autorisation par défaut *access_as_user*.
 
 Pour plus de d?tails sur ce processus, voir [Enregistrer un compl?ment Office qui utilise l'authentification unique aupr?s du point de terminaison Azure AD v2.0](register-sso-add-in-aad-v2.md).
 
@@ -69,7 +69,7 @@ Ajoutez un nouveau balisage au manifeste du complément :
 * **Scopes**: le parent d’un ou plusieurs éléments **Scope**.
 * **Scope**: spécifie une autorisation nécessaire pour le complément dans l’AAD. L' `profile` autorisation est toujours n?cessaire et il peut s'agir de la seule autorisation n?cessaire si votre compl?ment n'acc?de pas ? Microsoft Graph. Si c'est le cas, vous avez ?galement besoin des ?l?ments d'une **?tendue**pour obtenir les autorisations Microsoft Graph requises; par exemple, `User.Read`, `Mail.Read`. Les biblioth?ques que vous utilisez dans votre code pour acc?der ? Microsoft Graph peuvent avoir des besoin d'autorisations suppl?mentaires. Par exemple, Microsoft Authentication Library (MSAL) pour .NET n?cessite `offline_access` une autorisation. Pour plus d'informations, voir [Autoriser Microsoft Graph ? partir d'un compl?ment Office](authorize-to-microsoft-graph.md).
 
-Pour les hôtes Office autres qu’Outlook, ajoutez le balisage à la fin de la section `<VersionOverrides ... xsi:type="VersionOverridesV1_0">`. Pour Outlook, ajoutez le balisage à la fin de la section `<VersionOverrides ... xsi:type="VersionOverridesV1_1">`.
+Pour les applications Office autres qu’Outlook, ajoutez le balisage à la fin de la section `<VersionOverrides ... xsi:type="VersionOverridesV1_0">`. Pour Outlook, ajoutez le balisage à la fin de la section `<VersionOverrides ... xsi:type="VersionOverridesV1_1">`.
 
 Voici un exemple de marques de révision :
 
@@ -220,7 +220,7 @@ Il existe quelques différences mineures, mais importantes, en ce qui concerne l
 
 ### <a name="getaccesstoken"></a>getAccessToken
 
-L'espace de nommage OfficeRuntime [Auth](/javascript/api/office-runtime/officeruntime.auth), `OfficeRuntime.Auth`, fournit une méthode `getAccessToken` qui permet à l'hôte Office d'obtenir un jeton d'accès à l'application Web du module complémentaire. Indirectement, ceci active également le complément pour accéder aux données de Microsoft Graph de l’utilisateur sans que l’utilisateur ne doive se connecter une deuxième fois.
+L'espace de noms OfficeRuntime [Auth](/javascript/api/office-runtime/officeruntime.auth), `OfficeRuntime.Auth`, fournit une méthode `getAccessToken` qui permet à l'application Office d'obtenir un jeton d'accès à l'application web du module complémentaire. Indirectement, ceci active également le complément pour accéder aux données de Microsoft Graph de l’utilisateur sans que l’utilisateur ne doive se connecter une deuxième fois.
 
 ```typescript
 getAccessToken(options?: AuthOptions: (result: AsyncResult<string>) => void): void;

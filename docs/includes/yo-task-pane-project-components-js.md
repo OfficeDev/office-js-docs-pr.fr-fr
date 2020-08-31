@@ -3,5 +3,5 @@ Le projet de complément que vous avez créé à l’aide du générateur Yeoman
 - Le fichier **./manifest.xml** du répertoire racine du projet définit les paramètres et fonctionnalités du complément.
 - Le fichier **./src/taskpane/taskpane.html** contient les balises HTML du volet Office.
 - Le fichier **./src/taskpane/taskpane.css** contient le style CSS appliqué au contenu du volet Office.
-- Le fichier **./src/taskpane/taskpane.js** contient le code d’API JavaScript pour Office qui facilite l’interaction entre le volet Office et l’application hôte Office.
+- Le fichier **./src/taskpane/taskpane.js** contient le code d’API JavaScript pour Office qui facilite l’interaction entre le volet des tâches et l’application cliente Office.
 

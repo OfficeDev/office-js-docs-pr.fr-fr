@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément simple de volet des tâche
 ms.date: 04/03/2020
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: db30662c93c4de4d47f3986358fb2219b84f5470
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 8bb92b7a6c2d4610a962c2b2a84d38fb545ddd34
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608840"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294310"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Project
 
@@ -44,9 +44,9 @@ Le projet de complément que vous avez créé à l’aide du générateur Yeoman
 - Le fichier **./manifest.xml** du répertoire racine du projet définit les paramètres et fonctionnalités du complément.
 - Le fichier **./src/taskpane/taskpane.html** contient les balises HTML du volet Office.
 - Le fichier **./src/taskpane/taskpane.css** contient le style CSS appliqué au contenu du volet Office.
-- Le fichier **./src/taskpane/taskpane.js** contient le code de l’API JavaScript pour Office qui facilite l’interaction entre le volet Office et l’application hôte Office.
+- Le fichier **./src/taskpane/taskpane.js** contient le code d’API JavaScript pour Office qui facilite l’interaction entre le volet des tâches et l’application cliente Office.
 
-## <a name="update-the-code"></a>Mise à jour du code
+## <a name="update-the-code"></a>Mettre à jour le code
 
 Ouvrez le fichier **./src/taskpane/taskpane.js** dans votre éditeur de code et ajoutez le code suivant à la fonction `run`. Ce code utilise l’API JavaScript Office pour définir le champ `Name` et le champ `Notes` de la tâche sélectionnée.
 

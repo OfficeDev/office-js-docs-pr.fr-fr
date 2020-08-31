@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément de volet des tâches Power
 ms.date: 04/03/2020
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 31bfc87559550d865367f6430b980620e813bed8
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9bab9c0c05ace89a1d5dc89b62108f34b49cf679
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608900"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294338"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>Créer votre premier complément de volet de tâches PowerPoint
 
@@ -242,7 +242,7 @@ Félicitations, vous avez créé un complément de volet de tâches PowerPoint 
 
 2. Dans Excel, insérez une diapositive vierge, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
-    ![Capture d’écran de PowerPoint avec le bouton Afficher le volet Office mis en évidence](../images/powerpoint_quickstart_addin_1.png)
+    ![Capture d’écran de PowerPoint avec le bouton Afficher le ruban du volet Office mis en évidence](../images/powerpoint_quickstart_addin_1.png)
 
 3. Dans le volet Office, sélectionnez le bouton **Insérer une Image** pour ajouter une image à la diapositive sélectionnée.
 
@@ -250,7 +250,7 @@ Félicitations, vous avez créé un complément de volet de tâches PowerPoint 
 
 4. Dans le volet Office, sélectionnez le bouton **Insérer du texte** pour ajouter du texte à la diapositive sélectionnée.
 
-    ![Capture d’écran de PowerPoint avec l’image d’un chien et le texte « Hello World » affichés sur la diapositive](../images/powerpoint_quickstart_addin_3.png)
+    ![Capture d’écran de PowerPoint avec l’image d’un chien et le texte « Hello World » sur la diapositive](../images/powerpoint_quickstart_addin_3.png)
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 
