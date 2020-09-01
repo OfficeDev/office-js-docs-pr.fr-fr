@@ -3,88 +3,25 @@ layout: LandingPage
 ms.topic: landing-page
 title: Concepts de base pour les compléments Office
 description: En savoir plus sur la plateforme de compléments Office.
-ms.date: 12/24/2019
+ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: f115dcf6944ef906af9dff2da7fdade884bbabc0
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f17171886133a7241838d089051b23394c38f8ee
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44604531"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292492"
 ---
 # <a name="core-concepts"></a>Concepts de base
 
-<p>Tous les compléments Office sont basés sur la plateforme de compléments Office. Ils partagent un cadre commun par lequel certaines fonctionnalités peuvent être implémentées. Par conséquent, même si vous créez un complément pour Excel, Outlook ou une autre application Office, vous pouvez implémenter des fonctionnalités telles que les boîtes de dialogue, les commandes de complément, les volets Office et l’authentification unique (SSO).</p>
+Tous les compléments Office sont basés sur la plateforme de compléments Office. Ils partagent un cadre commun par lequel certaines fonctionnalités peuvent être implémentées. Par conséquent, même si vous créez un complément pour Excel, Outlook ou une autre application Office, vous pouvez implémenter des fonctionnalités telles que les boîtes de dialogue, les commandes de complément, les volets de tâches et l’authentification unique (SSO).
 
-<p>Pour les compléments que vous créez, vous devez comprendre les concepts importants tels que la disponibilité des hôtes et des plateformes, les modèles de programmation de l’API JavaScript Office, la spécification des paramètres et fonctionnalités d’un complément dans le fichier manifeste, comment tester, déboguer et publier un complément et bien plus encore. Ces informations sont disponibles dans la section <b>Concepts de base</b> de la documentation. Consultez cette documentation avant d’explorer la documentation propre à l’hôte qui correspond au complément que vous créez (par exemple, <a href="../excel/index.md">Excel</a>).</p>
+Pour les compléments que vous créez, vous devrez comprendre les concepts importants tels que la disponibilité des applications et des plateformes Office, les modèles de programmation de l’API JavaScript Office, la spécification des paramètres et fonctionnalités d’un complément dans le fichier manifeste, comment tester, déboguer et publier un complément et bien plus encore. Ces informations sont disponibles dans la section **Concepts de base** de la documentation. Consultez cette documentation avant d’explorer la documentation propre à l’application qui correspond au complément que vous créez (par exemple, [Excel](../excel/index.yml)).
 
-<ul class="panelContent cardsF cols cols2">
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-blocks.svg" alt="Develop" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Développer</h3>
-                        <p><a href="../develop/develop-overview.md">Découvrez les concepts de développement importants pour les compléments Office.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../images/index-landing-page/i_design.svg" alt="Design" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Interface utilisateur et UX</h3>
-                        <p><a href="../design/interface-elements.md">En savoir plus sur la conception de l’interface utilisateur et de l’expérience utilisateur pour les compléments Office.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../images/index-landing-page/i_recommended-testing.svg" alt="Testing and debugging" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Test et débogage</h3>
-                        <p><a href="../testing/test-debug-office-add-ins.md">Découvrez comment tester et déboguer des compléments Office.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../images/index-landing-page/i_deploy.svg" alt="Publishing" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Publier</h3>
-                        <p><a href="../publish/publish.md">Découvrez comment déployer et publier des compléments Office.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
+|               |               |
+| ------------- | ------------- |
+| ![meilleures pratiques](../images/i_best-practices_small.svg) | **Plan**<br>[Découvrez les meilleures pratiques et les exigences du système pour les compléments Office.](../concepts/add-in-development-best-practices.md) |
+| ![blocs de code](../images/i_code-blocks_small.svg) | **Développer**<br>[Découvrez les API et modèles pour le développement des compléments Office.](../develop/develop-overview.md) |
+| ![tests recommandés](../images/i_recommended-testing_small.svg) | **Test et débogage**<br>[Découvrez comment tester et déboguer des compléments Office.](../testing/test-debug-office-add-ins.md) |
+| ![déployer](../images/i_deploy_small.svg) | **Publier**<br>[Découvrez comment déployer et publier des compléments Office.](../publish/publish.md) |
+| ![référence](../images/i_reference_small.svg) | **Référence**<br>[Consultez la documentation de référence pour les API JavaScript Office, le manifeste des compléments et les listes de codes d’erreur, et bien plus encore.](../reference/javascript-api-for-office.md) |

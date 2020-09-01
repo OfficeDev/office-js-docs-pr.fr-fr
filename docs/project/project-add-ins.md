@@ -5,12 +5,12 @@ ms.date: 09/26/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 635fd01dd9aa5ea398b2679e925b5c58dd757782
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1e471c53e39af8764840716d59a4d26719d3ac0a
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611917"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292404"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Compléments du volet Office pour Project
 
@@ -104,7 +104,7 @@ Le fichier manifeste spécifie l’URL de la page web du complément ou l’appl
   - L’élément **Version** indique la version du complément. L’élément **ProviderName** correspond au nom de l’entreprise ou du développeur qui fournit le complément. L’élément **DefaultLocale** spécifie les paramètres régionaux par défaut pour les chaînes du manifeste.
   - L’élément **DisplayName** correspond au nom qui s’affiche dans la liste déroulante **Complément du volet Office** de l’onglet **AFFICHAGE**, dans le ruban de Project 2013. La valeur du nom peut contenir jusqu’à 32 caractères.
   - L’élément **Description** contient la description du complément pour les paramètres régionaux par défaut. La valeur peut contenir jusqu’à 2000 caractères.
-  - L’élément **Capabilities** contient un ou plusieurs éléments enfants **Capability** qui spécifient l’application hôte.
+  - L’élément **Capacités** contient un ou plusieurs éléments enfants **Capacité** qui spécifient l’application Office.
   - L’élément **DefaultSettings** inclut l’élément **SourceLocation**, qui spécifie le chemin d’accès d’un fichier HTML sur un partage de fichiers ou l’URL d’une page web que le complément utilise. Un complément du volet Office ignore l’élément **RequestedHeight** et l’élément **RequestedWidth**.
   - L’élément **IconUrl** est facultatif. Il peut être une icône sur un partage de fichiers ou l’URL d’une icône dans une application web.
 

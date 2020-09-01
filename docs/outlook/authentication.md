@@ -1,14 +1,14 @@
 ---
 title: Options d’authentification dans les compléments Outlook
 description: Les compléments Outlook offrent différentes méthodes qui permettent de s’authentifier en fonction de votre scénario.
-ms.date: 07/30/2020
+ms.date: 08/20/2020
 localization_priority: Priority
-ms.openlocfilehash: 2f97ed75d6415e449970b09f5183d470e9cb4448
-ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
+ms.openlocfilehash: 2f0fd2eae9bedf67b279c2b68a61ebed001d963c
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "46573132"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293967"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Options d’authentification dans les compléments Outlook
 
@@ -40,7 +40,7 @@ Pour obtenir un aperçu plus détaillé, consultez la [présentation complète d
 
 Pour plus d’informations sur l’utilisation du jeton à authentification unique dans un complément Outlook, consultez la section [Authentifier un utilisateur avec un jeton à authentification unique dans un complément Outlook](authenticate-a-user-with-an-sso-token.md).
 
-Pour un exemple de complément qui utilise le jeton à authentification unique, consultez la section [Exemple de complément AttachmentsDemo](https://github.com/OfficeDev/outlook-add-in-attachments-demo).
+Pour un complément échantillon qui utilise le jeton à authentification unique, consultez [Authentification unique d’un complément Outlook](https://github.com/OfficeDev/Outlook-Add-in-SSO).
 
 ## <a name="exchange-user-identity-token"></a>Jeton d’identité d’utilisateur Exchange
 
