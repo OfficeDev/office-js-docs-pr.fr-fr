@@ -1,22 +1,22 @@
 ---
-title: Commencez ici ! Un guide pour les débutants qui créent des compléments Office
+title: Guide du débutant
 description: Un parcours recommandé pour les débutants à travers les ressources d’apprentissage pour les compléments Office.
 ms.date: 04/16/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: b62c7a5d2117c52f4bd3f91c1a2e1b735554028e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: fd4f1902b196399e011631a7dabaecb59a8974f9
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44604498"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292467"
 ---
-# <a name="start-here-a-guide-for-beginners-making-office-add-ins"></a>Commencez ici ! Un guide pour les débutants qui créent des compléments Office
+# <a name="beginners-guide"></a>Guide du débutant
 
 Vous voulez commencer à créer vos propres extensions Office sur plusieurs plateformes ? La procédure suivante vous montre ce qu’il convient de lire en premier, quels outils installer et quels didacticiels il est recommandé de suivre.
 
 > [!NOTE]
-> Si vous avez l’expérience de créer des compléments VSTO pour Office, nous vous recommandons d’activer immédiatement [Transition !. Guide pour les créateurs de compléments VSTO qui créent de compléments web Office](learning-path-transition.md), qui est un sur-ensemble des informations décrites dans cet article.
+> Si vous avez l’expérience dans la création des compléments VSTO pour Office, nous vous recommandons de vous tourner immédiatement vers le [Guide pour les développeurs de compléments VSTO](learning-path-transition.md), qui est un sur-ensemble des informations décrites dans cet article.
 
 ## <a name="step-0-prerequisites"></a>Étape 0 : Conditions requises
 

@@ -4,12 +4,12 @@ description: En savoir plus sur les ensembles de conditions requises de l’API 
 ms.date: 07/10/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 231b59818c1273b426a17656e67c9bb1153fb65c
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 64d906fdfbc50926ac864b1106e7cd1cb6017c77
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159282"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293498"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Outlook
 
@@ -38,7 +38,7 @@ La définition d’une version minimale d’ensemble de conditions requises dans
 
 La définition d’un ensemble de conditions requises ne limite pas votre complément à utiliser les API de cette version. Par exemple, si le complément spécifie l’ensemble de conditions requises « Mailbox 1.1 », mais qu’il s’exécute dans un client Outlook prenant en charge « Mailbox 1.3 », le complément peut utiliser les API de l’ensemble de conditions requises de « Mailbox 1.3 ».
 
-Pour utiliser une nouvelle API, les développeurs peuvent vérifier si un hôte particulier prend en charge l’ensemble de conditions requises en procédant comme suit.
+Pour utiliser une nouvelle API, les développeurs peuvent vérifier si une application particulière prend en charge l’ensemble des conditions requises en procédant comme suit.
 
 ```js
 if (Office.context.requirements.isSetSupported('Mailbox', '1.3')) {

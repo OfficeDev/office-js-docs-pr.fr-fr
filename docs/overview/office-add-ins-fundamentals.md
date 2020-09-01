@@ -1,14 +1,14 @@
 ---
 title: Création de compléments Office
-description: Présentation du développement de compléments Office.
+description: Introduction à la création des compléments Office.
 ms.date: 02/27/2020
 localization_priority: Priority
-ms.openlocfilehash: 9ef552698bb0e9d71076b38d0ea3af49eee408d7
-ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+ms.openlocfilehash: 5520a147ed1dfe234d78b4e83081e355bc3e1872
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "44679394"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292452"
 ---
 # <a name="building-office-add-ins"></a>Création de compléments Office
 
@@ -130,7 +130,7 @@ Explorez la bibliothèque d’exemples intégrés dans [Script Lab](explore-with
 Pour en savoir plus sur le développement, le test et la publication de compléments Office, explorez cette documentation.
 
 > [!TIP]
-> Pour les compléments que vous créez, vous utiliserez les informations de la section [Concepts de base](core-concepts-office-add-ins.md) de cette documentation, ainsi que les informations de la section spécifique à l’hôte qui correspond au type de complément que vous créez (par exemple, [Excel](../excel/index.yml)).
+> Pour les compléments que vous créez, vous utiliserez les informations de la section [Concepts de base](core-concepts-office-add-ins.md) de cette documentation, ainsi que les informations de la section propre à l’application qui correspond au type de complément que vous créez (par exemple, [Excel](../excel/index.yml)).
 >
 > ![Image affichant la table des matières](../images/top-level-toc.png)
 

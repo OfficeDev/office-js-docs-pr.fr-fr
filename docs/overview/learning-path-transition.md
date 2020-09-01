@@ -1,17 +1,17 @@
 ---
-title: Transition ! Guide pour les créateurs de compléments VSTO qui créent de compléments web Office
+title: Guide du développeur de compléments VSTO
 description: Chemin d’accès recommandé pour les développeurs de compléments VSTO expérimentés pour la formation de ressources pour les compléments web Office.
 ms.date: 05/10/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 499a8fdf12c2f46c5cf5fc5c37f8bb68af540e57
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 959fb23ef86f37f46425d9b7ede7f7f60f6baf3a
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44604572"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292439"
 ---
-# <a name="transition-here-a-guide-for-vsto-add-in-creators-making-office-web-add-ins"></a>Transition ! Guide pour les créateurs de compléments VSTO qui créent de compléments web Office
+# <a name="vsto-add-in-developers-guide"></a>Guide du développeur de compléments VSTO
 
 Par conséquent, vous avez créé des compléments VSTO pour les applications Office qui s’exécutent sur Windows et vous explorez maintenant la nouvelle façon d’étendre Office qui s’exécute sur Windows, Mac et la version en ligne de la suite Office : compléments web Office.
 
@@ -21,7 +21,7 @@ Votre compréhension des modèles objets pour Excel, Word et les autres applicat
 - Les compléments web Office ne sont pas déployés différemment des compléments VSTO.
 - Les compléments web Office sont des applications web qui s’exécutent dans une fenêtre de navigateur simplifiée incorporée dans l’application Office, vous devez donc obtenir une compréhension de base des applications web et de leur hébergement sur des serveurs web ou des comptes cloud. 
 
-Pour ces raisons, l’article aborde nos cours d’apprentissage pour les débutants complets pour les extensions Office : [Commencez ici ! Un guide pour les débutants qui créent des compléments Office](learning-path-beginner.md). Nous avons ajouté des ressources d’apprentissage supplémentaires pour aider les développeurs de compléments VSTO à tirer parti de leur expérience et les aider à réutiliser leur code existant.
+Pour ces raisons, une grande partie de cet article duplique notre parcours d’apprentissage pour les débutants vers les extensions Office : [Guide du débutant](learning-path-beginner.md). Nous avons ajouté des ressources d’apprentissage supplémentaires pour aider les développeurs de compléments VSTO à tirer parti de leur expérience et les aider à réutiliser leur code existant.
 
 ## <a name="step-0-prerequisites"></a>Étape 0 : Conditions requises
 

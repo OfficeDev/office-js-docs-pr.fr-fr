@@ -1,15 +1,15 @@
 ---
-ms.date: 08/13/2020
+ms.date: 08/25/2020
 title: Configurez votre complément Excel pour partager le runtime du navigateur
 ms.prod: excel
 description: Configurez votre complément Excel pour partager le runtime du navigateur et exécuter le ruban, le volet des tâches et le code de fonction personnalisée dans le même runtime.
 localization_priority: Priority
-ms.openlocfilehash: 573fa5f5c3fdee0fb6a4bc3844f98bb7b5f2046d
-ms.sourcegitcommit: 3efa932b70035dde922929d207896e1a6007f620
+ms.openlocfilehash: 08e4155b7f79101f8a61b323c623b5cb6b86decf
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "46757365"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292635"
 ---
 # <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime"></a>Configurez votre complément Excel pour utiliser un runtime JavaScript partagé
 
@@ -93,7 +93,24 @@ Procédez comme suit pour configurer un projet nouveau ou existant de manière �
    ...
    ```
 
-8. Enregistrez vos changements et reconstruisez le projet.
+8. Assurez-vous que le taskpane.html a un `<script>` tag qui fait référence au fichier dist/functions.js. Voici un exemple.
+
+   ```html
+   <script type="text/javascript" src="/dist/functions.js" ></script>
+   ```
+
+   > [!NOTE]
+   > Si le complément utilise WebPack et HtmlWebpackPlugin pour insérer des tags de script, en tant que compléments créés par le générateur Yeoman (consultez [Créer le projet du complément](#create-the-add-in-project) ci-dessus), vous devez ensuite vous assurer que le module functions.js est inclus dans la `chunks` matrice, comme dans l’exemple suivant.
+   >
+   > ```javascript
+   > new HtmlWebpackPlugin({
+   >     filename: "taskpane.html",
+   >     template: "./src/taskpane/taskpane.html",
+   >     chunks: ["polyfill", "taskpane", “functions”]
+   > }),
+   >```
+
+9. Enregistrez vos changements et reconstruisez le projet.
 
    ```command line
    npm run build

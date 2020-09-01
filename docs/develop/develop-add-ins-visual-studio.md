@@ -3,12 +3,12 @@ title: Développement de compléments Office avec Visual Studio
 description: Comment développer un complément Office à l’aide de Visual Studio
 ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: cf8ed9d47840115f22641d0c4b6c6426e3a01a11
-ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+ms.openlocfilehash: ae627b09b9160abc01deec6d52abeb922f02c833
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "44679252"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292826"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>Développement de compléments Office avec Visual Studio
 
@@ -26,16 +26,16 @@ Visual Studio peut être utilisé pour créer des compléments Office pour Excel
 - [Démarrage rapide Word](../quickstarts/word-quickstart.md?tabs=visualstudio)
 - [Démarrage rapide PowerPoint](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio)
 
-Visual Studio ne prend pas en charge la création de compléments Office pour OneNote ou Project. Pour créer des compléments Office pour l’un de ces hôtes, vous devez utiliser le générateur Yeoman pour compléments Office, comme décrit dans le [Démarrage rapide OneNote](../quickstarts/onenote-quickstart.md) ou le [Démarrage rapide Project](../quickstarts/project-quickstart.md).
+Visual Studio ne prend pas en charge la création de compléments Office pour OneNote ou Project. Pour créer des compléments Office pour l’une de ces applications, vous devrez utiliser le générateur Yeoman pour compléments Office, comme décrit dans le [Démarrage rapide OneNote](../quickstarts/onenote-quickstart.md) ou le [Démarrage rapide Project](../quickstarts/project-quickstart.md).
 
 ## <a name="develop-the-add-in-using-visual-studio"></a>Développer votre complément à l’aide de Visual Studio
 
 Visual Studio crée un complément de base avec une fonctionnalité limitée. Vous pouvez personnaliser le complément en modifiant le [manifeste](add-in-manifests.md), HTML, JavaScript et des fichiers CSS dans Visual Studio. Pour obtenir une description de haut niveau de la structure de projet et des fichiers dans le projet de complément créé par Visual Studio, consultez les guides Visual Studio dans le guide de démarrage rapide que vous avez achevé pour créer votre complément. 
 
 > [!TIP]
-> Un complément Office étant une application web, vous devez maîtriser les compétences de base en matière de développement web pour personnaliser votre complément. Si vous débutez avec JavaScript, nous vous conseillons de consulter le didacticiel [Mozilla JavaScript](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Introduction).
+> Un complément Office étant une application web, vous devez maîtriser les compétences de base en matière de développement web pour personnaliser votre complément. Si vous débutez avec JavaScript, nous vous conseillons de consulter le [didacticiel Mozilla JavaScript](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Introduction).
 
-Pour personnaliser votre complément, vous devez comprendre les concepts décrits dans les [Principaux concepts > Développer](develop-overview.md) de la documentation, ainsi que ceux décrits dans la documentation spécifique de l’hôte qui correspond au complément que vous créez (par exemple, [Excel](../excel/index.yml)). 
+Pour personnaliser votre complément, vous devrez comprendre les concepts décrits dans la zone [Principaux concepts > Développer](develop-overview.md) de la documentation, ainsi que ceux décrits dans la zone de la documentation propre à l’application qui correspond au complément que vous créez (par exemple, [Excel](../excel/index.yml)). 
 
 ## <a name="test-and-debug-the-add-in"></a>Tester et déboguer le complément
 
