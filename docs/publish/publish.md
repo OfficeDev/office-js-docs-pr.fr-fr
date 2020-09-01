@@ -3,12 +3,12 @@ title: Déployer et publier des compléments Office
 description: Méthodes et options pour déployer votre complément Office à des fins de test ou de distribution auprès des utilisateurs.
 ms.date: 06/02/2020
 localization_priority: Priority
-ms.openlocfilehash: 797abbde43e6172ba26f3dd4b128fb06f1e70bec
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 7792b2196b686f36b81869ce81a3e3b87659f1c2
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094182"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292393"
 ---
 # <a name="deploy-and-publish-office-add-ins"></a>Déployer et publier des compléments Office
 
@@ -25,9 +25,9 @@ Vous pouvez utiliser l’une des méthodes pour déployer votre complément Offi
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
-## <a name="deployment-options-by-office-host-and-add-in-type"></a>Options de déploiement par l’hôte Office et type de complément
+## <a name="deployment-options-by-office-application-and-add-in-type"></a>Options de déploiement par l’application Office et le type de complément
 
-Les options de déploiement disponibles dépendent de l’hôte Office que vous ciblez et du type de complément que vous créez.
+Les options de déploiement disponibles dépendent de l’application Office que vous ciblez et du type de complément que vous créez.
 
 ### <a name="deployment-options-for-word-excel-and-powerpoint-add-ins"></a>Options de déploiement pour les compléments Word, Excel et PowerPoint
 
@@ -87,4 +87,3 @@ Pour affecter des compléments à des clients, utilisez le centre d’administra
 - [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](../testing/testing-and-troubleshooting.md)
 
 [AppSource]: /office/dev/store/submit-to-appsource-via-partner-center
-[Office Add-in host and platform availability]: ../overview/office-add-in-availability

@@ -1,15 +1,15 @@
 ---
 title: 'Didacticiel : créer un complément de composition de message Outlook'
 description: Dans ce didacticiel, vous allez créer un complément Outlook qui insère des informations GitHub dans le corps d'un nouveau message.
-ms.date: 08/11/2020
+ms.date: 08/24/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 3742e492c5d59b706508d2f9d9c2f3bdfc147bb8
-ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
+ms.openlocfilehash: 6b4dabd803f304270fd7926a4d02e2cb485bb526
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "46672735"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293393"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Didacticiel : créer un complément de composition de message Outlook
 
@@ -164,6 +164,9 @@ Avant d’aller plus loin, nous allons tester le complément base créé par le 
     ```command&nbsp;line
     npm start
     ```
+
+    > [!IMPORTANT]
+    > Si un message d’erreur « Sideload n’est pas pris en charge » s’affiche, vous pouvez l’ignorer et continuer.
 
 1. Suivez les instructions disponibles dans [Chargement indépendant de compléments Outlook à des fins de test](../outlook/sideload-outlook-add-ins-for-testing.md) pour charger le fichier **manifest.xml** situé dans le répertoire racine du projet.
 
@@ -602,6 +605,9 @@ Enfin, ouvrez le fichier **webpack.config.js** situé dans le répertoire racine
     npm start
     ```
 
+    > [!IMPORTANT]
+    > Si un message d’erreur « Sideload n’est pas pris en charge » s’affiche, vous pouvez l’ignorer et continuer.
+
 ### <a name="fetch-data-from-github"></a>Récupérer des données à partir de GitHub
 
 Le fichier**dialog.js** que vous venez de créer spécifie que le complément doit charger les gists lorsque l’`change` événement se déclenche pour le champ nom d’utilisateur GitHub. Pour récupérer les gists de l’utilisateur à partir de GitHub, vous utiliserez le [API GitHub Gists](https://developer.github.com/v3/gists/).
@@ -901,6 +907,9 @@ function buildBodyContent(gist, callback) {
 ### <a name="test-the-button"></a>Tester le bouton
 
 Enregistrez toutes vos modifications et exécutez `npm start` depuis l’invite de commandes, si le serveur n’est pas déjà en cours d’exécution. Puis procédez comme suit pour tester le bouton **Insérer gist par défaut** bouton.
+
+> [!IMPORTANT]
+> Si un message d’erreur « Sideload n’est pas pris en charge » s’affiche, vous pouvez l’ignorer et continuer.
 
 1. Ouvrez Outlook et rédigez un nouveau message.
 
@@ -1262,6 +1271,9 @@ Dans le projet que vous avez créé, le code JavaScript du volet de tâches est 
 ### <a name="test-the-button"></a>Tester le bouton
 
 Enregistrez toutes vos modifications et exécutez `npm start` depuis l’invite de commandes, si le serveur n’est pas déjà en cours d’exécution. Puis procédez comme suit pour tester le bouton **Insérer gist**.
+
+> [!IMPORTANT]
+> Si un message d’erreur « Sideload n’est pas pris en charge » s’affiche, vous pouvez l’ignorer et continuer.
 
 1. Ouvrez Outlook et rédigez un nouveau message.
 

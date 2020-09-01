@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez créer un complément PowerPoint q
 ms.date: 12/24/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: b9c31e589369bdcc844e3c587d12e6a26406357b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 4693b8a5a2f4bd7c63f76532585113db5b0805bb
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611049"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293379"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de PowerPoint
 
@@ -268,7 +268,7 @@ Procédez comme suit pour ajouter des marques de révision qui personnalisent l�
 
 3. Notez que le volet Office contient désormais une section d’en-tête et un titre, et ne contient plus de section de pied de page.
 
-    ![Capture d’écran du complément PowerPoint avec le bouton Insérer une image mis en évidence](../images/powerpoint-tutorial-new-task-pane-ui.png)
+    ![Capture d’écran du complément PowerPoint avec le bouton Insérer une image](../images/powerpoint-tutorial-new-task-pane-ui.png)
 
 4. Dans Visual Studio, arrêtez le complément en appuyant sur **Shift + F5** ou en choisissant le bouton**Arrêter**. PowerPoint se ferme automatiquement lorsque le complément est arrêté.
 
@@ -320,7 +320,7 @@ Procédez comme suit pour ajouter le code qui insère le texte dans la diapositi
 
 3. Dans le volet Office, sélectionnez le bouton **Insert Image** (Insérer une image) pour ajouter la photo Bing du jour sur la diapositive active et choisissez une mise en page pour la diapositive qui contient une zone de texte pour le titre.
 
-    ![Capture d’écran du complément PowerPoint avec le bouton Insérer une image mis en évidence](../images/powerpoint-tutorial-insert-image-slide-design.png)
+    ![Capture d’écran de PowerPoint avec la diapositive actuelle mise en évidence, et le complément avec le bouton Insérer une image mis en évidence](../images/powerpoint-tutorial-insert-image-slide-design.png)
 
 4. Placez votre curseur dans la zone de texte sur la diapositive de titre, dans le volet Office, sélectionnez le bouton **Insert Text** (Insérer du texte) permettant d’ajouter du texte à la diapositive.
 

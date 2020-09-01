@@ -3,12 +3,12 @@ title: Authentifier et autoriser avec l’API de dialogue Office
 description: Découvrez comment utiliser l’API de boîte de dialogue Office pour permettre aux utilisateurs de se connecter à Google, Facebook, Microsoft 365 ainsi qu'à d’autres services protégés par la plateforme Microsoft Identity.
 ms.date: 07/07/2020
 localization_priority: Priority
-ms.openlocfilehash: d98576ba0f0a0bfec9ed78cbf7438b1f31a7ee26
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 22242b3e54a63b76a44f8e610be2194a1fc5f00b
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159604"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293344"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Authentifier et autoriser avec l’API de dialogue Office
 
@@ -70,7 +70,7 @@ Le fait que la boîte de dialogue Office et le volet des tâches s’exécutent 
 
 ### <a name="you-usually-cannot-use-the-librarys-internal-cache-to-store-tokens"></a>En général, vous ne pouvez pas utiliser le cache interne de la bibliothèque pour stocker des jetons
 
-En règle générale, les bibliothèques associées à l’authentification fournissent un cache en mémoire pour stocker le jeton d’accès. Si des appels ultérieurs au fournisseur de ressources (par exemple, Google, Microsoft Graph, Facebook, etc.) sont apportés, la bibliothèque vérifie tout d’abord si le jeton dans son cache a expiré. Si celui-ci n’a pas expiré, la bibliothèque renvoie le jeton mis en cache plutôt que d’effectuer un autre aller-retour vers le SJS pour un nouveau jeton. Mais ce modèle n’est pas utilisable dans les compléments Office. Dans la mesure où la connexion a lieu dans l’instance de navigateur de la boîte de dialogue Office, le cache de jetons est dans cette instance.
+En règle générale, les bibliothèques associées à l’authentification fournissent un cache en mémoire pour stocker le jeton d’accès. Si des appels ultérieurs au fournisseur de ressources (par exemple, Google, Microsoft Graph, Facebook, etc.) sont apportés, la bibliothèque vérifie tout d’abord si le jeton dans son cache a expiré. Si celui-ci n’a pas expiré, la bibliothèque renvoie le jeton mis en cache plutôt que d’effectuer un autre aller-retour vers le SJS pour un nouveau jeton. Mais ce modèle n’est pas utilisable dans les compléments Office. Dans la mesure où la connexion a lieu dans l’instance du navigateur de la boîte de dialogue Office, le cache du jeton est dans cette instance.
 
 Ceci est lié au fait qu’une bibliothèque fournit généralement des méthodes à la fois interactives et «silencieuses» pour obtenir un jeton. Lorsque vous pouvez effectuer les deux appels d’authentification et de données à la ressource dans la même instance de navigateur, votre code appelle la méthode silencieuse pour obtenir un jeton juste avant que votre code n’ajoute le jeton à l’appel de données. La méthode silencieuse vérifie la présence d’un jeton non expiré dans le cache et le renvoie, le cas échéant. Dans le cas contraire, la méthode silencieuse appelle la méthode interactive qui redirige vers la connexion de STS. Une fois la connexion terminée, la méthode interactive renvoie le jeton, mais le met en cache dans la mémoire. En revanche, lorsque l’API de boîte de dialogue Office est utilisée, les données appellent la ressource, qui appellent la méthode silencieuse, se trouvent dans l’instance de navigateur du volet des tâches. Le cache de jetons de la bibliothèque n’existe pas dans cette instance.
 
@@ -83,7 +83,7 @@ En guise d’alternative, l’instance de navigateur de la boîte de dialogue de
 
 Il arrive souvent qu’une bibliothèque liée à l’authentification ait une méthode qui récupère un jeton de façon interactive et crée également un objet «contexte d’authentification» que la méthode renvoie. Le jeton est une propriété de l’objet (potentiellement privé et inaccessible directement à partir de votre code). Cet objet possède les méthodes pour recevoir les données de la ressource. Ces méthodes incluent le jeton dans les requêtes HTTP qu’ils font au fournisseur de ressources (par exemple, Google, Microsoft Graph, Facebook, etc.).
 
-Ces objets de contexte d’authentification, ainsi que les méthodes qui les créent, ne sont pas utilisables dans les compléments Office. Dans la mesure où la connexion a lieu dans l’instance de navigateur de la boîte de dialogue Office, l’objet doit être créé à cet emplacement. Mais les appels de données à la ressource se trouvent dans l’instance de navigateur du volet des tâches et il n’est pas possible d’utiliser l’objet d’une instance à l’autre. Par exemple, vous ne pouvez pas passer l'objet avec`messageParent` car `messageParent`peut uniquement transmettre des chaînes ou des valeurs booléennes. Un objet JavaScript avec des méthodes ne peut pas être mis en chaîne de façon fiable.
+Ces objets de contexte d’authentification, ainsi que les méthodes qui les créent, ne sont pas utilisables dans les compléments Office. Dans la mesure où la connexion a lieu dans l’instance du navigateur de la boîte de dialogue Office, l’objet devrait être créé à cet emplacement. Mais les appels de données à la ressource se trouvent dans l’instance de navigateur du volet des tâches et il n’est pas possible d’utiliser l’objet d’une instance à l’autre. Par exemple, vous ne pouvez pas passer l'objet avec`messageParent` car `messageParent`peut uniquement transmettre des chaînes ou des valeurs booléennes. Un objet JavaScript avec des méthodes ne peut pas être mis en chaîne de façon fiable.
 
 ### <a name="how-you-can-use-libraries-with-the-office-dialog-api"></a>Utilisation des bibliothèques avec l’API de boîte de dialogue Office
 

@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément de volet des tâches Excel
 ms.date: 04/03/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 321fd85705df7673b48d548e88f5c3acae06655d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 4043fa56d844ca1160c61dd94d229172682c3af2
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608930"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292340"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Créer un complément de volet de tâches Excel
 
@@ -64,7 +64,7 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 
 5. En bas du volet Office, cliquez sélectionnez le lien **Exécuter** pour définir la couleur de la plage sélectionnée sur jaune.
 
-    ![Complément Excel](../images/excel-quickstart-addin-3c.png)
+    ![Complément Excel avec le bouton Exécuter](../images/excel-quickstart-addin-3c.png)
 
 ### <a name="next-steps"></a>Étapes suivantes
 
@@ -198,11 +198,11 @@ Félicitations, vous avez créé un complément de volet de tâches Excel ! Ens
 
 ### <a name="try-it-out"></a>Essayez
 
-1. À l’aide de Visual Studio, testez le nouveau complément Excel en appuyant sur **F5** ou en choisissant le bouton **Démarrer** pour lancer Excel avec le bouton du complément **Afficher le volet Office** qui apparaît dans le ruban. Le complément est hébergé localement sur IIS. Si vous êtes invité à approuver un certificat, faites-le pour autoriser le complément à se connecter à son hôte.
+1. À l’aide de Visual Studio, testez le nouveau complément Excel en appuyant sur **F5** ou en choisissant le bouton **Démarrer** pour lancer Excel avec le bouton du complément **Afficher le volet Office** qui apparaît dans le ruban. Le complément est hébergé localement sur IIS. Si on vous demande d’approuver un certificat, faites-le pour autoriser le complément à se connecter à son application Office.
 
 2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
-    ![Bouton Complément Excel](../images/excel-quickstart-addin-2a.png)
+    ![Bouton du complément Excel Afficher le volet de tâches](../images/excel-quickstart-addin-2a.png)
 
 3. Sélectionnez une plage de cellules dans la feuille de calcul.
 
