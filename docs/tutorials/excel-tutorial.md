@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez développer un complément Excel qu
 ms.date: 06/05/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 2e637bad83432f8adf94826b906dc68a57e02fa6
-ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
+ms.openlocfilehash: d75655c1bb69209cf4cdb5925d04b6c3f84bb39f
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "46530505"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293421"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 
@@ -63,7 +63,7 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
     <button class="ms-Button" id="create-table">Create Table</button><br/><br/>
     ```
 
-5. Ouvrez le fichier **./src/taskpane/taskpane.js**. Ce fichier contient le code de l’API JavaScript pour Office qui facilite l’interaction entre le volet des tâches et l’application hôte Office.
+5. Ouvrez le fichier **./src/taskpane/taskpane.js**. Ce fichier contient le code de l’API JavaScript pour Office qui facilite l’interaction entre le volet des tâches et l’application cliente Office.
 
 6. Supprimez toutes les références au bouton `run` et à la fonction `run()` en procédant comme suit :
 
@@ -602,7 +602,7 @@ Au cours de cette étape, vous allez ajouter un bouton au ruban pour activer ou 
 
 1. Ouvrez le fichier **.\commands\commands.js**.
 
-2. Ajoutez la fonction suivante immédiatement après la fonction `action`. Notez que nous spécifions un paramètre `args` pour la fonction et que la toute dernière ligne de la fonction appelle `args.completed`. Il s’agit d’une condition requise pour toutes les commandes de type **ExecuteFunction**. Elle signale à l’application hôte Office que la fonction est terminée et que l’interface utilisateur est à nouveau réactive.
+2. Ajoutez la fonction suivante immédiatement après la fonction `action`. Notez que nous spécifions un paramètre `args` pour la fonction et que la toute dernière ligne de la fonction appelle `args.completed`. Il s’agit d’une condition requise pour toutes les commandes de type **ExecuteFunction**. Elle signale à l’application cliente Office que la fonction est terminée et que l’interface utilisateur est à nouveau réactive.
 
     ```js
     function toggleProtection(args) {
@@ -721,18 +721,18 @@ Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*
 
 ### <a name="test-the-add-in"></a>Test du complément
 
-1. Fermez toutes les applications Office, y compris Excel. 
+1. Fermez toutes les applications Office, y compris Excel.
 
-2. Supprimez le cache Office en supprimant le contenu (tous les fichiers et sous-dossiers) du dossier de cache. Cette opération est nécessaire pour effacer complètement de l’hôte l’ancienne version du complément.
+2. Supprimez le cache Office en supprimant le contenu (tous les fichiers et sous-dossiers) du dossier de cache. Cette opération est nécessaire pour effacer complètement l’ancienne version du complément de
 
     - Pour Windows : `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
-    - Pour Mac : `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
+    - Pour Mac : `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
     
         > [!NOTE]
         > Si ce dossier n’existe pas, recherchez les dossiers suivants et, le cas échéant, supprimez le contenu du dossier :
-        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/`Où se trouve `{host}` Office (par exemple, `Excel`)
-        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/`Où se trouve `{host}` Office (par exemple, `Excel`)
+        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/` où `{host}` est l’application Office (par exemple, `Excel`)
+        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/` où `{host}` est l’application Office (par exemple, `Excel`)
         >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
         >    - `com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
 
@@ -764,7 +764,7 @@ Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*
 
 ## <a name="open-a-dialog"></a>Ouvrir une boîte de dialogue
 
-Dans cette étape finale du didacticiel, vous allez ouvrir une boîte de dialogue dans votre complément, transmettre un message du processus de boîte de dialogue au processus de volet Office et fermer la boîte de dialogue. Les boîtes de dialogue des compléments Office sont *non modales* : un utilisateur peut continuer à interagir à la fois avec le document dans l’application Office hôte et avec la page hôte dans le volet Office.
+Dans cette étape finale du didacticiel, vous allez ouvrir une boîte de dialogue dans votre complément, transmettre un message du processus de boîte de dialogue au processus de volet Office et fermer la boîte de dialogue. Les boîtes de dialogue des compléments Office sont *non modales* : un utilisateur peut continuer à interagir à la fois avec le document dans l’application Office et avec la page hôte dans le volet des tâches.
 
 ### <a name="create-the-dialog-page"></a>Création de la page de boîte de dialogue
 
@@ -941,7 +941,7 @@ Ouvrez le fichier **webpack.config.js** situé dans le répertoire racine du pro
     var dialog = null;
     ```
 
-7. Ajoutez la fonction suivante à la fin du fichier (après la déclaration de `dialog`). Le plus important à remarquer à propos de ce code est ce qui ne s’y trouve *pas* : il n’y a aucun appel de `Excel.run`. Cela est dû au fait que l’API d’ouverture de boîte de dialogue est partagée par tous les hôtes Office, elle fait donc partie de l’API commune JavaScript Office, pas de l’API spécifique d’Excel.
+7. Ajoutez la fonction suivante à la fin du fichier (après la déclaration de `dialog`). Le plus important à remarquer à propos de ce code est ce qui ne s’y trouve *pas* : il n’y a aucun appel de `Excel.run`. Cela est dû au fait que l’API d’ouverture d’une boîte de dialogue est partagée par toutes les applications Office, elle fait donc partie de l’API commune JavaScript Office, pas de l’API propre à Excel.
 
     ```js
     function openDialog() {
