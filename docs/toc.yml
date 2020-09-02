@@ -144,26 +144,40 @@
                   href: design/data-visualization-guidelines.md
                 - name: Voix
                   href: design/voice-guidelines.md
-            - name: Langage de création
+            - name: Modèles et langages de conception UX
               items:
-                - name: Vue d'ensemble
-                  href: design/add-in-design-language.md
-                - name: Couleur
-                  href: design/add-in-color.md
-                - name: Icônes
+                - name: Langage de création
                   items:
-                    - name: Conseils relatifs aux icônes
-                      href: design/add-in-icons.md
-                    - name: Nouveau style
-                      href: design/add-in-icons-fresh.md
-                    - name: Style ligne unique
-                      href: design/add-in-icons-monoline.md
-                - name: Disposition
-                  href: design/add-in-layout.md
-                - name: Mouvement
-                  href: design/using-motion-office-addins.md
-                - name: Typographie
-                  href: design/add-in-typography.md
+                    - name: Vue d'ensemble
+                      href: design/add-in-design-language.md
+                    - name: Couleur
+                      href: design/add-in-color.md
+                    - name: Icônes
+                      items:
+                        - name: Conseils relatifs aux icônes
+                          href: design/add-in-icons.md
+                        - name: Nouveau style
+                          href: design/add-in-icons-fresh.md
+                        - name: Style ligne unique
+                          href: design/add-in-icons-monoline.md
+                    - name: Disposition
+                      href: design/add-in-layout.md
+                    - name: Mouvement
+                      href: design/using-motion-office-addins.md
+                    - name: Typographie
+                      href: design/add-in-typography.md
+                - name: Modèles de conception UX pour les scénarios courants
+                  items:
+                    - name: Vue d’ensemble
+                      href: design/ux-design-pattern-templates.md
+                    - name: Authentification
+                      href: design/authentication-patterns.md
+                    - name: Personnalisation
+                      href: design/branding-patterns.md
+                    - name: Première exécution
+                      href: design/first-run-experience-patterns.md
+                    - name: Navigation
+                      href: design/navigation-patterns.md
             - name: Éléments de l’interface
               items:
                 - name: Vue d'ensemble
@@ -196,18 +210,6 @@
                   href: design/task-pane-add-ins.md
             - name: Localisation
               href: develop/localization.md
-            - name: Modèles de conception de l’expérience utilisateur
-              items:
-                - name: Vue d’ensemble
-                  href: design/ux-design-pattern-templates.md
-                - name: Authentification
-                  href: design/authentication-patterns.md
-                - name: Personnalisation
-                  href: design/branding-patterns.md
-                - name: Première exécution
-                  href: design/first-run-experience-patterns.md
-                - name: Navigation
-                  href: design/navigation-patterns.md
             - name: Ressources
               items:
                 - name: Kits de ressources de conception
@@ -233,7 +235,7 @@
                   href: develop/debug-office-add-ins-in-visual-studio.md
                 - name: Obtenir JavaScript IntelliSense dans Visual Studio
                   href: develop/get-javascript-intellisense-in-visual-studio.md
-                - name: Convertir du code JavaScript en TypeScript
+                - name: Convertir des projets JavaScript en TypeScript
                   href: develop/convert-javascript-to-typescript.md
     - name: Test et débogage
       items:
