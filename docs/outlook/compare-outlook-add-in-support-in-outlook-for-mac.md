@@ -1,14 +1,14 @@
 ---
 title: Comparer la prise en charge des compléments Outlook dans Outlook sur Mac
 description: Découvrez comment la prise en charge des compléments dans Outlook sur Mac est comparée à celle des autres clients Outlook.
-ms.date: 06/04/2020
+ms.date: 09/01/2020
 localization_priority: Normal
-ms.openlocfilehash: f6aa9914e1320de05a67b3ec227e373bac5c2402
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: d25d0b25ee6d3ba7d6f5d78b55764de8caeba3a0
+ms.sourcegitcommit: 4adfc368a366f00c3f3d7ed387f34aaecb47f17c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293918"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "47326316"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>Comparaison de la prise en charge des compléments Outlook dans Outlook sur Mac avec d’autres clients Outlook
 
@@ -31,9 +31,9 @@ Pour plus d’informations sur la prise en charge de la nouvelle interface utili
 
 ## <a name="new-outlook-on-mac-preview"></a>Nouvelle version d’Outlook sur Mac (aperçu)
 
-Les compléments Outlook sont désormais pris en charge dans la nouvelle interface utilisateur Mac, jusqu’à l’ensemble de conditions requises 1,6. Toutefois, les ensembles de conditions requises et les fonctionnalités suivantes ne sont **pas** encore pris en charge.
+Les compléments Outlook sont désormais pris en charge dans la nouvelle interface utilisateur Mac, jusqu’à l’ensemble de conditions requises 1,7. Toutefois, les ensembles de conditions requises et les fonctionnalités suivantes ne sont **pas** encore pris en charge.
 
-1. Ensembles de conditions requises de l’API 1,7 et 1,8
+1. Ensemble de conditions requises de l’API 1,8
 1. Volet Office épinglables, `ItemChanged` événement
 1. Compléments contextuels
 1. En envoi
