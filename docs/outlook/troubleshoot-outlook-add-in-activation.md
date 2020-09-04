@@ -1,14 +1,14 @@
 ---
 title: Résolution des problèmes d’activation de complément contextuel Outlook
 description: Si votre complément ne s’active pas comme prévu, vous devez rechercher dans les zones suivantes les raisons possibles.
-ms.date: 08/18/2020
+ms.date: 09/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 3e4fd270dbd2c8e6b258e2c473a822c791dee7a6
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 1420c1383730d6a334c181bc34b014da355d26db
+ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292530"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "47363967"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Résolution des problèmes d’activation des compléments Outlook
 
@@ -77,7 +77,7 @@ Même si un élément de messagerie ne correspond pas à l’un des types ci-des
 Si votre complément est un complément de composition et qu’il est censé être activé lorsque l’utilisateur compose un message ou une demande de réunion, assurez-vous que l’élément n’est pas protégé par IRM. Toutefois, il existe quelques exceptions.
 
 1. Les compléments s’activent sur les messages signés numériquement dans Outlook avec un abonnement Microsoft 365. Dans Windows, cette prise en charge a été introduite avec le build 8711.1000.
-1. Démarrer avec Outlook build 13120.1000 sur Windows, les compléments peuvent désormais activer les éléments protégés par IRM.  Pour plus d’informations sur cette prise en charge en mode aperçu, consultez [l’article activation des compléments sur les éléments protégés par la gestion des droits relatifs à l’information (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
+1. À partir d’Outlook Build 13229,10000 sur Windows, les compléments peuvent désormais être activés sur les éléments protégés par IRM.  Pour plus d’informations sur cette prise en charge en mode aperçu, consultez [l’article activation des compléments sur les éléments protégés par la gestion des droits relatifs à l’information (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
 
 ## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>Est-ce que le manifeste du complément est correctement installé et est-ce qu’Outlook dispose d’une copie mise en cache ?
 

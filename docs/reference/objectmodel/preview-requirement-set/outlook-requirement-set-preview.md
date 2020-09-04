@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: Les fonctionnalités et les API qui sont actuellement en préversion pour les compléments Outlook.
-ms.date: 09/01/2020
+ms.date: 09/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 0e4dae76846c2174d8eb1115dcb1098f8374b1ba
-ms.sourcegitcommit: 4adfc368a366f00c3f3d7ed387f34aaecb47f17c
+ms.openlocfilehash: 0223a8b62f60b45092866ee5f2362723912c189f
+ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "47326302"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "47363729"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -34,7 +34,7 @@ Les fonctionnalités suivantes sont disponibles en aperçu.
 
 Les compléments peuvent désormais être activés sur les éléments protégés par IRM. Pour activer cette fonctionnalité, un administrateur client doit activer le droit d' `OBJMODEL` utilisation en définissant l’option autoriser la stratégie personnalisée d' **accès par programme** dans Office. Pour plus d’informations [, voir droits et descriptions d’utilisation](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions) .
 
-**Disponible dans**: Outlook sur Windows, en commençant par Build 13120,1000 (connecté à un abonnement Microsoft 365)
+**Disponible dans**: Outlook sur Windows, en commençant par Build 13229,10000 (connecté à un abonnement Microsoft 365)
 
 <br>
 

@@ -1,21 +1,21 @@
 ---
 title: Activer les scénarios d’accès délégué dans un complément Outlook
 description: Décrit brièvement l’accès délégué et explique comment configurer la prise en charge des compléments.
-ms.date: 07/28/2020
+ms.date: 09/03/2020
 localization_priority: Normal
-ms.openlocfilehash: 9cf4d15e81e4018d819f8f47a0729a25944c0fb5
-ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
+ms.openlocfilehash: 965798995638c9ec518d1e69ed23763d845fb7ec
+ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "46530449"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "47363827"
 ---
 # <a name="enable-delegate-access-scenarios-in-an-outlook-add-in"></a>Activer les scénarios d’accès délégué dans un complément Outlook
 
 Un propriétaire de boîte aux lettres peut utiliser la fonctionnalité accès délégué pour [permettre à quelqu’un d’autre de gérer son courrier et son calendrier](https://support.office.com/article/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926). Cet article indique les autorisations déléguées prises en charge par l’API JavaScript pour Office et explique comment activer les scénarios d’accès délégué dans votre complément Outlook.
 
 > [!IMPORTANT]
-> L’accès délégué n’est pas disponible actuellement dans Outlook sur Mac, Android et iOS. En outre, cette fonctionnalité n’est pas disponible actuellement avec les [boîtes aux lettres partagées de groupe](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide#shared-mailboxes) dans Outlook sur le Web. Cette fonctionnalité peut être rendue disponible à l’avenir.
+> L’accès délégué n’est pas disponible actuellement dans Outlook sur Android et iOS. En outre, cette fonctionnalité n’est pas disponible actuellement avec les [boîtes aux lettres partagées de groupe](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide#shared-mailboxes) dans Outlook sur le Web. Cette fonctionnalité peut être rendue disponible à l’avenir.
 >
 > La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises 1,8. Voir [les clients et les plateformes](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
 
@@ -26,7 +26,7 @@ Le tableau suivant décrit les autorisations déléguées prises en charge par l
 |Autorisation|Valeur|Description|
 |---|---:|---|
 |Lire|1 (000001)|Peut lire des éléments.|
-|Écriture|2 (000010)|Peut créer des éléments.|
+|Write|2 (000010)|Peut créer des éléments.|
 |DeleteOwn|4 (000100)|Peut uniquement supprimer les éléments qu’ils ont créés.|
 |DeleteAll|8 (001000)|Peut supprimer tous les éléments.|
 |EditOwn|16 (010000)|Ne peut modifier que les éléments qu’ils ont créés.|

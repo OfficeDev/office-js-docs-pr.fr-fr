@@ -1,14 +1,14 @@
 ---
 title: Chargement de version test des compléments Office sur iPad et Mac
-description: Testez votre complément Office sur iPad et Mac par chargement
-ms.date: 02/18/2020
+description: Testez votre complément Office sur iPad et Mac par chargement.
+ms.date: 09/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 1a1cb804a72aa182480d06009cf30b41a37276d2
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 7c5e9542c6e6f9abc96defde389b9543421b8529
+ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292201"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "47364054"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>Chargement de version test des compléments Office sur iPad et Mac
 
@@ -17,8 +17,10 @@ Pour voir comment votre complément s’exécutera dans Office sur iOS, vous pou
 ## <a name="prerequisites-for-office-on-ios"></a>Configuration requise pour Office sur iOS
 
 - Un ordinateur Windows ou Mac sur lequel [iTunes](https://www.apple.com/itunes/download/) est installé.
+  > [!IMPORTANT]
+  > Si vous exécutez macOS Catalina, [iTunes n’est plus disponible](https://support.apple.com/HT210200) et vous devez suivre les instructions de la section [chargement d’un complément sur Excel ou de Word sur iPad à l’aide de MacOS Catalina](#sideload-an-add-in-on-excel-or-word-on-ipad-using-macos-catalina) plus loin dans cet article.
 
-- Un iPad fonctionnant sous iOS 8.2 ou version ultérieure sur lequel [Excel sur iPad](https://itunes.apple.com/us/app/microsoft-excel/id586683407?mt=8) est installé et disposant d’un câble de synchronisation.
+- Un iPad exécutant iOS 8,2 ou version ultérieure avec [Excel](https://apps.apple.com/app/microsoft-excel/id586683407) ou [Word](https://apps.apple.com/app/microsoft-word/id586447913) et un câble de synchronisation.
 
 - Le fichier .xml de manifeste pour le complément que vous voulez tester.
 
@@ -34,7 +36,7 @@ Pour voir comment votre complément s’exécutera dans Office sur iOS, vous pou
 
 - Le fichier .xml de manifeste pour le complément que vous voulez tester.
 
-## <a name="sideload-an-add-in-on-excel-or-word-on-ipad"></a>Chargement d’une version test d’un complément dans Excel ou Word sur iPad
+## <a name="sideload-an-add-in-on-excel-or-word-on-ipad-using-itunes"></a>Chargement d’un complément dans Excel ou Word sur iPad à l’aide d’iTunes
 
 1. Utilisez un câble de synchronisation pour connecter votre iPad à votre ordinateur. Si vous connectez l’ordinateur iPad à votre ordinateur pour la première fois, vous êtes invité à **approuver cet ordinateur ?**. Sélectionnez **approuver** pour continuer.
 
@@ -50,18 +52,39 @@ Pour voir comment votre complément s’exécutera dans Office sur iOS, vous pou
 
 7. Ouvrez un document.
 
-8. Choisissez **compléments** sous l’onglet **insertion** . Votre complément versions test chargées peut être inséré sous le titre **développeur** dans l’interface utilisateur des **compléments** .
+8. Choisissez **compléments** sous l’onglet **insertion** . (sous l’onglet **insertion** , vous devrez peut-être faire défiler horizontalement jusqu’à ce que le bouton **compléments** s’affiche.) Votre complément versions test chargées peut être inséré sous le titre **développeur** dans l’interface utilisateur des **compléments** .
+
+    ![Insérer des compléments dans l’application Excel](../images/excel-insert-add-in.png)
+
+## <a name="sideload-an-add-in-on-excel-or-word-on-ipad-using-macos-catalina"></a>Chargement d’un complément sur Excel ou Word sur iPad à l’aide de macOS Catalina
+
+> [!IMPORTANT]
+> Avec l’introduction de macOS Catalina, [Apple a abandonné iTunes sur Mac](https://support.apple.com/HT210200) et les fonctionnalités intégrées requises pour chargement les applications dans **Finder**.
+
+1. Utilisez un câble de synchronisation pour connecter votre iPad à votre ordinateur. Si vous connectez l’ordinateur iPad à votre ordinateur pour la première fois, vous êtes invité à **approuver cet ordinateur ?**. Sélectionnez **approuver** pour continuer. Vous pouvez également être invité à indiquer s’il s’agit d’un nouvel iPad ou si vous effectuez une restauration.
+
+2. Dans Finder, sous **emplacements**, sélectionnez l’icône **iPad** en dessous de la barre de menus.
+
+3. En haut de la fenêtre Finder, cliquez sur **fichiers**, puis recherchez **Excel** ou **Word**.
+
+4. Dans une fenêtre de recherche différente, glissez-déplacez le fichier de manifest.xml du complément à charger vers le fichier **Excel** ou **Word** dans la première fenêtre de recherche.
+
+5. Ouvrez l'application Excel ou Word sur votre iPad. Si l’application Excel ou Word est déjà en cours d’exécution, cliquez sur le bouton **Accueil** , puis fermez et redémarrez l’application.
+
+6. Ouvrez un document.
+
+7. Choisissez **compléments** sous l’onglet **insertion** . (sous l’onglet **insertion** , vous devrez peut-être faire défiler horizontalement jusqu’à ce que le bouton **compléments** s’affiche.) Votre complément versions test chargées peut être inséré sous le titre **développeur** dans l’interface utilisateur des **compléments** .
 
     ![Insérer des compléments dans l’application Excel](../images/excel-insert-add-in.png)
 
 ## <a name="sideload-an-add-in-in-office-on-mac"></a>Chargement d’une version test de complément dans Office sur Mac
 
 > [!NOTE]
-> Pour charger une version test de complément Outlook sur Mac, voir l’article relatif au [chargement de version test des compléments Outlook](../outlook/sideload-outlook-add-ins-for-testing.md).
+> Pour charger une version test de complément Outlook sur Mac, voir l’article relatif au [chargement de version test des compléments Outlook](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-an-add-in-in-outlook-on-the-desktop).
 
 1. Ouvrez le **Terminal** et accédez à l’un des dossiers suivants, dans lequel vous allez enregistrer le fichier manifeste de votre complément. Si le dossier `wef` n’existe pas sur votre ordinateur, créez-le.
 
-    - Pour Word : `/Users/<username>/Library/Containers/com.microsoft.Word/Data/Documents/wef`    
+    - Pour Word : `/Users/<username>/Library/Containers/com.microsoft.Word/Data/Documents/wef`
     - Pour Excel : `/Users/<username>/Library/Containers/com.microsoft.Excel/Data/Documents/wef`
     - Pour PowerPoint : `/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/Documents/wef`
 

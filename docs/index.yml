@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Documentation pour compléments Office
-summary: Utilisez la plateforme des compléments Office pour créer des solutions qui étendent des applications Office et interagissent avec du contenu dans des documents Office. Avec les compléments Office, vous pouvez utiliser des technologies Web familières telles que HTML, CSS et JavaScript pour créer des solutions pouvant être exécutées dans Office sur le Web, Windows, Mac et iPad.
+summary: Utilisez la plateforme des compléments Office pour créer des solutions qui étendent les applications Office et interagissent avec le contenu des documents Office, ainsi que dans les messages électroniques et les éléments de calendrier Outlook. Avec les compléments Office, vous pouvez utiliser des technologies Web familières telles que HTML, CSS et JavaScript pour créer des solutions pouvant être exécutées dans Office sur le Web, Windows, Mac, Android et iOS.
 metadata:
   title: Documentation pour compléments Office
   description: Découvrez comment créer des compléments Office.
@@ -9,12 +9,12 @@ metadata:
   author: o365devx
   ms.author: o365devx
   ms.date: 07/31/2020
-  ms.openlocfilehash: 7477d00b20edfc64c29f2bff39aa90da6376320c
-  ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+  ms.openlocfilehash: 993ef1e5671e42b1b6d5e6316d61d51a794be62e
+  ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 08/28/2020
-  ms.locfileid: "47294114"
+  ms.lasthandoff: 09/03/2020
+  ms.locfileid: "47363715"
 landingContent:
 - title: À propos des compléments Office
   linkLists:

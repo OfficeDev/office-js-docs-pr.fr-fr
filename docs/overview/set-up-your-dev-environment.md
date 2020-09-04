@@ -3,12 +3,12 @@ title: Configuration de votre environnement de développement
 description: Configuration de votre environnement de développement pour créer des compléments Office
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 1948cd83a252ea713c9b9a41941ceaef09d4a524
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 5e7d91d81ef3d124e9582e74151626b9fd65991a
+ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159408"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "47363694"
 ---
 # <a name="set-up-your-development-environment"></a>Configuration de votre environnement de développement
 
@@ -47,7 +47,7 @@ Vous souhaiterez peut-être utiliser un gestionnaire de version de nœud pour vo
 
 ## <a name="get-office-365"></a>Obtenir Office 365
 
-Si vous ne disposez pas déjà d’un compte Microsoft 365, vous pouvez obtenir gratuitement un abonnement Microsoft 365 renouvelable 90 jours en joignant le [programme de développement microsoft 365](https://developer.microsoft.com/office/dev-program).
+Si vous n’avez pas déjà un compte Office 365, vous pouvez obtenir gratuitement un abonnement de 90 jours renouvelable de Microsoft 365 en rejoignant le [Programme pour les développeurs Microsoft 365](https://developer.microsoft.com/office/dev-program).
 
 ## <a name="install-a-code-editor"></a>Installer un éditeur de code
 
@@ -71,9 +71,9 @@ Explorez la bibliothèque d’exemples intégrés dans [Script Lab](explore-with
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
+- [Développement de compléments Office](../develop/develop-overview.md)
 - [Concepts de base pour les compléments Office](../overview/core-concepts-office-add-ins.md)
 - [Développement de compléments Office](../develop/develop-overview.md)
 - [Concevoir des compléments Office](../design/add-in-design.md)
 - [Test et débogage de compléments Office](../testing/test-debug-office-add-ins.md)
-- [Publish Office Add-ins](../publish/publish.md)
+- [Publier des compléments Office](../publish/publish.md)
