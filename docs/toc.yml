@@ -217,8 +217,6 @@
                   href: design/office-ui-fabric.md
         - name: Infrastructures et IDE
           items:
-            - name: Développement de compléments pour l’iPad
-              href: develop/develop-office-add-ins-for-the-ipad.md
             - name: Développement de compléments avec Angular
               href: develop/add-ins-with-angular2.md
             - name: Développement d’un complément avec Visual Studio Code
@@ -234,6 +232,8 @@
                   href: develop/get-javascript-intellisense-in-visual-studio.md
                 - name: Convertir des projets JavaScript en TypeScript
                   href: develop/convert-javascript-to-typescript.md
+        - name: Conditions particulières pour les compléments sur iPad
+          href: develop/develop-office-add-ins-for-the-ipad.md
     - name: Test et débogage
       items:
         - name: Test et débogage de compléments Office
