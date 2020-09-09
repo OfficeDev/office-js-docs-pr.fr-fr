@@ -1,14 +1,14 @@
 ---
 title: Comparer la prise en charge des compléments Outlook dans Outlook sur Mac
 description: Découvrez comment la prise en charge des compléments dans Outlook sur Mac est comparée à celle des autres clients Outlook.
-ms.date: 09/01/2020
+ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: d25d0b25ee6d3ba7d6f5d78b55764de8caeba3a0
-ms.sourcegitcommit: 4adfc368a366f00c3f3d7ed387f34aaecb47f17c
+ms.openlocfilehash: d251d5c0f60e133d0d60d32a658b8f55a24ecc18
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "47326316"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408725"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>Comparaison de la prise en charge des compléments Outlook dans Outlook sur Mac avec d’autres clients Outlook
 
@@ -34,12 +34,10 @@ Pour plus d’informations sur la prise en charge de la nouvelle interface utili
 Les compléments Outlook sont désormais pris en charge dans la nouvelle interface utilisateur Mac, jusqu’à l’ensemble de conditions requises 1,7. Toutefois, les ensembles de conditions requises et les fonctionnalités suivantes ne sont **pas** encore pris en charge.
 
 1. Ensemble de conditions requises de l’API 1,8
-1. Volet Office épinglables, `ItemChanged` événement
 1. Compléments contextuels
 1. En envoi
 1. Prise en charge des dossiers partagés
 1. `saveAsync` lors de la composition d’une réunion
-1. Authentification unique (SSO)
 
 Nous vous invitons à prévisualiser la nouvelle version d’Outlook sur Mac, disponible à partir de la version 16.38.506. Pour en savoir plus sur la façon de le tester, consultez la rubrique [relative aux notes de publication d’Outlook pour Mac pour les générations rapides Insiders](https://support.microsoft.com/office/d6347358-5613-433e-a49e-a9a0e8e0462a).
 

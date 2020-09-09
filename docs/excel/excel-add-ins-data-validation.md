@@ -3,12 +3,12 @@ title: Ajout de validation des données à des plages Excel
 description: Découvrez comment les API JavaScript pour Excel permettent à votre complément d’ajouter une validation automatique des données aux tableaux, colonnes, lignes et autres plages d’un classeur.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 422876e35d90a6f61da81f112ff61a732c1d0546
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: ce792e36f9ad24eb4b26e2034c59063d65940be4
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292557"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408550"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>Ajout de validation des données à des plages Excel
 
@@ -223,6 +223,6 @@ La plage que vous désactivez ne sera pas nécessairement exactement la même pl
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
+- [Modèle objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
 - [Objet DataValidation (API JavaScript pour Excel)](/javascript/api/excel/excel.datavalidation)
 - [Objet de plage (API JavaScript pour Excel)](/javascript/api/excel/excel.range)

@@ -1,14 +1,14 @@
 ---
 title: Programmation asynchrone dans des compléments Office
 description: Découvrez comment la bibliothèque JavaScript Office utilise la programmation asynchrone dans les compléments Office.
-ms.date: 02/27/2020
+ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: affe493cdf1633b3a8749b694da479a732271195
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 96805ee0f78caedd718642a97828db26f0de7900
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292941"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408578"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Programmation asynchrone dans des compléments Office
 
@@ -121,11 +121,13 @@ L’API JavaScript pour Office prend en charge deux types de modèles de program
     
 La programmation asynchrone à l’aide des fonctions de rappel nécessite que vous imbriquiez fréquemment le résultat retourné d’un rappel au sein d’au moins deux rappels. Pour ce faire, vous pouvez utiliser les rappels imbriqués de toutes les méthodes « Async » de l’API.
 
-L’utilisation des rappels imbriqués est un modèle de programmation familier pour la plupart des développeurs JavaScript, mais le code contenant des rappels fortement imbriqués peut être difficile à lire et à comprendre. En guise d’alternative aux rappels imbriqués, l’API JavaScript Office prend également en charge une implémentation du modèle de promesses. Toutefois, dans la version actuelle de l’API JavaScript pour Office, le modèle de promesses fonctionne uniquement avec le code pour les [liaisons dans les feuilles de calcul Excel et les documents Word](bind-to-regions-in-a-document-or-spreadsheet.md).
+L’utilisation des rappels imbriqués est un modèle de programmation familier pour la plupart des développeurs JavaScript, mais le code contenant des rappels fortement imbriqués peut être difficile à lire et à comprendre. En guise d’alternative aux rappels imbriqués, l’API JavaScript Office prend également en charge une implémentation du modèle de promesses. 
 
-<a name="AsyncProgramming_NestedCallbacks" />
+> [!NOTE]
+> Dans la version actuelle de l’API JavaScript pour Office, la prise en charge *intégrée* du modèle promesses fonctionne uniquement avec le code pour les [liaisons dans les feuilles de calcul Excel et les documents Word](bind-to-regions-in-a-document-or-spreadsheet.md). Toutefois, vous pouvez encapsuler d’autres fonctions qui ont des rappels à l’intérieur de votre fonction personnalisée de renvoi de la promesse. Pour plus d’informations, consultez [la rubrique envelopper les API communes dans les fonctions de retour à la vente](#wrap-common-apis-in-promise-returning-functions).
+
+
 ### <a name="asynchronous-programming-using-nested-callback-functions"></a>Programmation asynchrone utilisant des fonctions de rappel imbriquées
-
 
 Vous devez fréquemment effectuer au moins deux opérations asynchrones pour réaliser une tâche. Pour ce faire, vous pouvez imbriquer un appel « Async » dans un autre.
 
@@ -240,7 +242,7 @@ function write(message){
 }
 ```
 
-Remplacez l’espace réservé _BindingObjectAsyncMethod_ par un appel à l’une des quatre `Binding` méthodes d’objet prises en charge par l’objet Promise : `getDataAsync` ,, `setDataAsync` `addHandlerAsync` ou `removeHandlerAsync` . Les appels à ces méthodes ne prennent pas en charge les promesses supplémentaires. Vous devez les appeler à l’aide du [modèle de fonction de rappel imbriquée](#AsyncProgramming_NestedCallbacks).
+Remplacez l’espace réservé _BindingObjectAsyncMethod_ par un appel à l’une des quatre `Binding` méthodes d’objet prises en charge par l’objet Promise : `getDataAsync` ,, `setDataAsync` `addHandlerAsync` ou `removeHandlerAsync` . Les appels à ces méthodes ne prennent pas en charge les promesses supplémentaires. Vous devez les appeler à l’aide du [modèle de fonction de rappel imbriquée](#asynchronous-programming-using-nested-callback-functions).
 
 Une fois qu’une `Binding` promesse d’objet est satisfaite, elle peut être réutilisée dans l’appel de la méthode chaînée comme s’il s’agissait d’une liaison (le runtime du complément ne réessaie pas de manière asynchrone de répondre à la promesse). Si la `Binding` promesse de l’objet ne peut pas être satisfaite, le runtime du complément réessaiera d’accéder à l’objet Binding lors de la prochaine appel de l’une de ses méthodes asynchrones.
 
@@ -395,6 +397,57 @@ function write(message){
 
 Dans les deux exemples de paramètres facultatifs, le paramètre _callback_ est spécifié en tant que dernier paramètre (en suivant les paramètres facultatifs Inline, ou en suivant l’objet d’arguments _options_ ). Vous pouvez également spécifier le paramètre _callback_ à l’intérieur de l’objet JSON incorporé, ou dans l’objet `options`. Cependant, vous ne pouvez passer le paramètre _callback_ qu’à un seul endroit : soit dans l’objet _options_ (incorporé ou créé en externe), soit comme dernier paramètre, mais pas les deux.
 
+## <a name="wrap-common-apis-in-promise-returning-functions"></a>Envelopper les API communes dans les fonctions de retour à la vente
+
+Les méthodes de l’API commune (et de l’API Outlook) ne retournent pas de [promesses](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise). Par conséquent, vous ne pouvez pas utiliser [await](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await) pour suspendre l’exécution jusqu’à la fin de l’opération asynchrone. Si vous avez besoin `await` de comportement, vous pouvez encapsuler l’appel de méthode dans une promesse créée de manière explicite. 
+
+Le modèle de base consiste à créer une méthode asynchrone qui renvoie immédiatement un objet promesse et *résout* cet objet promise au terme de la méthode interne, ou *rejette* l’objet en cas d’échec de la méthode. Voici un exemple simple
+
+```javascript
+function getDocumentFilePath() {
+    return new OfficeExtension.Promise(function (resolve, reject) {
+        try {
+            Office.context.document.getFilePropertiesAsync(function (asyncResult) {
+                resolve(asyncResult.value.url);
+            });
+        }
+        catch (error) {
+            reject(WordMarkdownConversion.errorHandler(error));
+        }
+    })
+}
+```
+
+Lorsque cette méthode doit être attendue, elle peut être appelée soit à l’aide du `await` mot clé, soit en tant que fonction passée à une `then` fonction.
+
+> [!NOTE]
+> Cette technique est particulièrement utile lorsque vous devez appeler l’une des API communes à l’intérieur d’un appel de la `run` méthode dans l’un des modèles objet spécifiques à l’application. Pour obtenir un exemple de la fonction ci-dessus utilisée de cette façon, reportez-vous au fichier [Home.js dans l’exemple Word-Add-in-JavaScript-MDConversion](https://github.com/OfficeDev/Word-Add-in-MarkdownConversion/blob/master/Word-Add-in-JavaScript-MDConversionWeb/Home.js).
+
+Voici un exemple d’utilisation de la machine à écrire.
+
+```typescript
+readDocumentFileAsync(): Promise<any> {
+    return new Promise((resolve, reject) => {
+        const chunkSize = 65536;
+        const self = this;
+
+        Office.context.document.getFileAsync(Office.FileType.Compressed, { sliceSize: chunkSize }, (asyncResult) => {
+            if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                reject(asyncResult.error);
+            } else {
+                // `getAllSlices` is a Promise-wrapped implementation of File.getSliceAsync.
+                self.getAllSlices(asyncResult.value).then(result => {
+                    if (result.IsSuccess) {
+                        resolve(result.Data);
+                    } else {
+                        reject(asyncResult.error);
+                    }
+                });
+            }
+        });
+    });
+}
+```
 
 ## <a name="see-also"></a>Voir aussi
 

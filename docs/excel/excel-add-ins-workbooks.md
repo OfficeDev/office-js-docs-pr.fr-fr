@@ -3,12 +3,12 @@ title: Utiliser les classeurs utilisant l’API JavaScript Excel
 description: Exemples de code qui montrent comment effectuer des tâches courantes avec des classeurs ou des fonctionnalités au niveau de l’application à l’aide de l’API JavaScript pour Excel.
 ms.date: 08/24/2020
 localization_priority: Normal
-ms.openlocfilehash: a7a35e2627863c648f8c3e31ab05b2714ca0aebe
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 1da664b5ebbc8bd44b1c4e558a48997291e8967e
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294128"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408697"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Utiliser les classeurs utilisant l’API JavaScript Excel
 
@@ -362,6 +362,6 @@ context.workbook.close(Excel.CloseBehavior.save);
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
+- [Modèle objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
 - [Utiliser les feuilles de calcul à l’aide de l’API JavaScript Excel](excel-add-ins-worksheets.md)
 - [Utiliser les plages à l’aide de l’API JavaScript Excel](excel-add-ins-ranges.md)

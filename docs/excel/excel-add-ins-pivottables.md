@@ -3,12 +3,12 @@ title: Utilisation des tableaux croisés dynamiques avec l’API JavaScript pour
 description: Utilisez l’API JavaScript pour Excel pour créer des tableaux croisés dynamiques et interagir avec leurs composants.
 ms.date: 04/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 8e09f4bbd4c6429d585b4bd7d54a1f0c918ff6c3
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f1a692f493fc945f114270b69b2ce2004588b731
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609754"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408522"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Utilisation des tableaux croisés dynamiques avec l’API JavaScript pour Excel
 
@@ -24,7 +24,7 @@ Reportez-vous à la rubrique [créer un tableau croisé dynamique pour analyser 
 
 Le [tableau croisé dynamique](/javascript/api/excel/excel.pivottable) est l’objet central pour les tableaux croisés dynamiques de l’API JavaScript pour Office.
 
-- `Workbook.pivotTables`et `Worksheet.pivotTables` sont [PivotTableCollections](/javascript/api/excel/excel.pivottablecollection) qui contiennent respectivement les [tableaux croisés dynamiques](/javascript/api/excel/excel.pivottable) dans le classeur et la feuille de calcul.
+- `Workbook.pivotTables` et `Worksheet.pivotTables` sont [PivotTableCollections](/javascript/api/excel/excel.pivottablecollection) qui contiennent respectivement les [tableaux croisés dynamiques](/javascript/api/excel/excel.pivottable) dans le classeur et la feuille de calcul.
 - Un [tableau croisé dynamique](/javascript/api/excel/excel.pivottable) contient un [PivotHierarchyCollection](/javascript/api/excel/excel.pivothierarchycollection) qui comporte plusieurs [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy).
 - Ces [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy) peuvent être ajoutées à des collections de hiérarchies spécifiques pour définir le mode de tableau croisé dynamique des données (comme expliqué dans la [section suivante](#hierarchies)).
 - Un [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) contient un [PivotFieldCollection](/javascript/api/excel/excel.pivotfieldcollection) qui comporte exactement un [champ de tableau croisé dynamique](/javascript/api/excel/excel.pivotfield). Si la conception s’étend pour inclure des tableaux croisés dynamiques OLAP, cela peut changer.
@@ -415,5 +415,5 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
+- [Modèle objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
 - [Référence de l’API JavaScript pour Excel](/javascript/api/excel)

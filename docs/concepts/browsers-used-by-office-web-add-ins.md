@@ -3,12 +3,12 @@ title: Navigateurs utilisés par les compléments Office
 description: Indique comment le système d’exploitation et la version d’Office déterminent le navigateur utilisé par les compléments Office.
 ms.date: 08/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 4c4462434480a82e69ebaf5a2599ceda1e4693a7
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 544388014bfef0dd647a79d655a173d09f5a4ff7
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293057"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408438"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navigateurs utilisés par les compléments Office
 
@@ -42,8 +42,14 @@ Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes e
 <sup>3</sup> si votre complément inclut l' `Runtimes` élément dans le manifeste, il utilise Internet Explorer 11 quelle que soit la version de Windows ou de Microsoft 365. Pour plus d’informations, voir [Services d’exécution](../reference/manifest/runtimes.md).
 
 <sup>4</sup> le navigateur utilisé pour cette combinaison de versions dépend du canal de mise à jour de l’abonnement Microsoft 365. Si l’utilisateur est sur le [canal bêta](https://insider.office.com/join/windows) (auparavant le canal rapide des Insiders), Office utilise Microsoft Edge avec WebView2 (basé sur le chrome). Pour tout autre canal, Office utilise Microsoft Edge avec le WebView d’origine (EdgeHTML). La prise en charge de WebView2 dans d’autres canaux est attendue en début de 2021.
+
 > [!IMPORTANT]
-> Internet Explorer 11 ne prend pas en charge les versions de JavaScript ultérieures à la version ES5. Si un des utilisateurs de votre complément dispose d’une plateforme utilisant Internet Explorer 11, vous devez transpiler JavaScript vers la version ES5 ou utiliser un polyfill pour lui permettre d’utiliser la syntaxe et les fonctionnalités d’ECMAScript 2015 ou version ultérieure. Par ailleurs, Internet Explorer 11 ne prend pas en charge certaines fonctionnalités HTML5 telles que les éléments multimédias, l’enregistrement et l’emplacement.
+> Internet Explorer 11 ne prend pas en charge les versions de JavaScript ultérieures à la version ES5. Si les utilisateurs de votre complément disposent de plateformes qui utilisent Internet Explorer 11, pour utiliser la syntaxe et les fonctionnalités d’ECMAScript 2015 ou version ultérieure, vous disposez de deux options :
+>
+> - Écrivez votre code dans ECMAScript 2015 (également appelé ES6) ou JavaScript ultérieur, ou dans une écriture à écrire, puis compilez votre code en ES5 JavaScript à l’aide d’un compilateur tel que [Babel](https://babeljs.io/) ou [TSC](https://www.typescriptlang.org/index.html).
+> - Écrivez dans ECMAScript 2015 ou une version ultérieure JavaScript, mais chargez également une bibliothèque de [Polyfill](https://wikipedia.org/wiki/Polyfill_(programming)) comme [Core-js](https://github.com/zloirock/core-js) qui permet à Internet Explorer d’exécuter votre code.
+>
+> Par ailleurs, Internet Explorer 11 ne prend pas en charge certaines fonctionnalités HTML5 telles que les éléments multimédias, l’enregistrement et l’emplacement.
 
 ## <a name="troubleshooting-microsoft-edge-issues"></a>Résolution des problèmes liés à Microsoft Edge
 

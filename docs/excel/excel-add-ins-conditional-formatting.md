@@ -3,12 +3,12 @@ title: Appliquer la mise en forme conditionnelle aux plages avec l’API Excel J
 description: Cet article traite de la mise en forme conditionnelle dans le contexte des compléments JavaScript pour Excel.
 ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 9f0bed7fb7421984c98ad1bc396c130afda4fb50
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 04a1b18c47d76d44201ea222eac305bb8d438b58
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292654"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408592"
 ---
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>Appliquer une mise en forme conditionnelle à des plages Excel
 
@@ -336,7 +336,7 @@ await context.sync();
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](../excel/excel-add-ins-core-concepts.md)
+- [Modèle objet JavaScript Excel dans les compléments Office](../excel/excel-add-ins-core-concepts.md)
 - [Utiliser les plages à l’aide de l’API JavaScript Excel](../excel/excel-add-ins-ranges.md)
 - [Objet ConditionalFormat (API JavaScript pour Excel)](/javascript/api/excel/excel.conditionalformat)
 - [Ajouter, modifier ou effacer des formats conditionnels](https://support.office.com/article/add-change-or-clear-conditional-formats-8a1cc355-b113-41b7-a483-58460332a1af)

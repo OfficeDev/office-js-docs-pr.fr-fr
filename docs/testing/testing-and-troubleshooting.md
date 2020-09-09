@@ -1,14 +1,14 @@
 ---
 title: Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 description: Découvrez comment résoudre les problèmes liés aux erreurs utilisateur dans les compléments Office.
-ms.date: 06/17/2020
+ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: c0d08b512f61ecfd0ec149194897d31ff32741e0
-ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
+ms.openlocfilehash: 878295a4a6237860c349efb04a6684ab527b7e4f
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "46530484"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408830"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 
@@ -63,12 +63,6 @@ Le complément ne s’active pas lorsque l’utilisateur effectue les étapes su
     
 Pour résoudre ce problème, vérifiez que les dernières mises à jour Office sont installées ou téléchargez la [mise à jour pour Office 2013](https://support.microsoft.com/kb/2986156/).
 
-
-## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>Le complément ne se charge pas dans le volet des tâches ou d’autres problèmes existent avec le manifeste du complément
-
-Voir [Valider le manifeste d’un complément Office](troubleshoot-manifest.md) et [Déboguer votre complément avec la journalisation runtime](runtime-logging.md) pour déboguer les problèmes de manifeste de compléments.
-
-
 ## <a name="add-in-dialog-box-cannot-be-displayed"></a>La boîte de dialogue des compléments ne s’affiche pas
 
 Lorsqu’un utilisateur utilise un complément Office, il est invité à autoriser l’affichage d’une boîte de dialogue. L’utilisateur choisit **Autoriser** et le message d’erreur suivant apparaît :
@@ -99,51 +93,7 @@ Ce problème se produit lorsque l’API de la boîte de dialogue est utilisée e
 Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callback);
 ```
 
-## <a name="changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect"></a>Les modifications apportées aux commandes de complément, y compris les éléments de menu et les boutons du ruban ne s’appliquent pas
+## <a name="see-also"></a>Voir aussi
 
-Si les modifications apportées au manifeste, par exemple aux noms de fichier des icônes de bouton dans le ruban ou au texte des éléments de menu, ne semblent pas appliquées, essayez de vider le cache Office de votre ordinateur. 
+- [Résoudre les erreurs de développement avec les compléments Office](troubleshoot-development-errors.md)
 
-#### <a name="for-windows"></a>Pour Windows :
-
-Supprimez le contenu du dossier `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` et supprimez le contenu du dossier `%userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\` , s’il existe.
-
-#### <a name="for-mac"></a>Pour Mac :
-
-[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
-
-#### <a name="for-ios"></a>Pour iOS :
-Appelez `window.location.reload(true)` à partir de JavaScript dans le complément pour forcer le rechargement. Vous pouvez également choisir de réinstaller Office.
-
-## <a name="changes-to-static-files-such-as-javascript-html-and-css-do-not-take-effect"></a>Les modifications apportées aux fichiers statiques, tels que JavaScript, HTML et CSS ne sont pas prises en compte.
-
-Le navigateur web met peut-être le contenu de ces fichiers en cache. Pour éviter cela, vous pouvez désactiver la mise en cache côté client lors du développement. Les spécifications dépendent du serveur utilisé. Dans la plupart des cas, elle implique l’ajout d’en-têtes aux réponses HTTP. Nous vous recommandons d’exécuter les actions suivantes :
-
-- Cache-Control : « privé, aucun cache, aucun magasin »
-- Pragma : « aucun cache »
-- Date d’expiration : « -1 »
-
-Un exemple d’opération dans un serveur Node.JS Express est disponible dans [ce fichier app.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/app.js). Un exemple de projet ASP.NET est disponible dans [ce fichier cshtml](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Views/Shared/_Layout.cshtml).
-
-Si votre complément est hébergé dans Internet Information Server (IIS), vous pouvez également ajouter ce qui suit à web. config.
-
-```xml
-<system.webServer>
-  <staticContent>
-    <clientCache cacheControlMode="UseMaxAge" cacheControlMaxAge="0.00:00:00" cacheControlCustom="must-revalidate" />
-  </staticContent>
-```
-
-Si ces étapes ne semblent pas fonctionner au départ, vous devrez peut-être vider le cache du navigateur web. Effectuez cette opération à l’aide de l’interface utilisateur du navigateur web. Il est possible que le cache de périmètre ne soit pas correctement vidé lorsque vous essayez de le faire dans l’interface utilisateur Edge. Si cela se produit, exécutez la commande suivante dans l’invite de commandes Windows.
-
-```bash
-del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\
-```
-
-## <a name="see-also"></a>Voir également
-
-- [Débogage de compléments dans Office sur le web](debug-add-ins-in-office-online.md)
-- [Charger une version test d’un complément Office sur iPad ou Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
-- [Débogage des compléments Office sur iPad et Mac](debug-office-add-ins-on-ipad-and-mac.md)  
-- [Complément Microsoft Office Extension de débogueur pour Visual Studio Code](debug-with-vs-extension.md)
-- [Valider le manifeste d’un complément Office](troubleshoot-manifest.md)
-- [Déboguer votre complément avec la journalisation runtime](runtime-logging.md)

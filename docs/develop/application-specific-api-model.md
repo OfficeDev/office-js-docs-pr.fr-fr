@@ -1,16 +1,16 @@
 ---
-title: Utilisation du modèle d’API propre à l’application
+title: Utilisation du modèle de l’API propre à l’application
 description: Découvrez le modèle d’API basée sur la promesse pour les compléments Excel, OneNote et Word.
-ms.date: 07/29/2020
+ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: cabd1ea0076b672a1dbda3079a767b0e8a1a62b7
-ms.sourcegitcommit: 4adfc368a366f00c3f3d7ed387f34aaecb47f17c
+ms.openlocfilehash: fb25201174dcd97b40ccf6be69b238951103db07
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "47326281"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408599"
 ---
-# <a name="using-the-application-specific-api-model"></a>Utilisation du modèle d’API propre à l’application
+# <a name="using-the-application-specific-api-model"></a>Utilisation du modèle de l’API propre à l’application
 
 Cet article explique comment utiliser le modèle d’API pour créer des compléments dans Excel, Word et OneNote. Il présente les concepts fondamentaux de l’utilisation des API basées sur les promesses.
 
@@ -223,6 +223,31 @@ Excel.run(function (ctx) {
 });
 ```
 
+### <a name="some-properties-cannot-be-set-directly"></a>Certaines propriétés ne peuvent pas être définies directement
+
+Certaines propriétés ne peuvent pas être définies, bien qu’elles soient accessibles en écriture. Ces propriétés font partie d’une propriété parent qui doit être définie en tant qu’objet unique. Cela est dû au fait que cette propriété Parent repose sur les sous-propriétés ayant des relations logiques spécifiques. Ces propriétés parent doivent être définies à l’aide de la notation littérale d’objet pour définir l’objet entier, au lieu de définir les sous-propriétés individuelles de cet objet. Vous trouverez un exemple dans [PageLayout](/javascript/api/excel/excel.pagelayout). La `zoom` propriété doit être définie avec un seul objet [PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) , comme illustré ci-dessous :
+
+```js
+// PageLayout.zoom.scale must be set by assigning PageLayout.zoom to a PageLayoutZoomOptions object.
+sheet.pageLayout.zoom = { scale: 200 };
+```
+
+Dans l’exemple précédent, vous ne seriez ***pas*** en mesure d’affecter directement `zoom` une valeur : `sheet.pageLayout.zoom.scale = 200;` . Cette instruction génère une erreur car `zoom` elle n’est pas chargée. Même si `zoom` elles ont été chargées, l’ensemble de l’étendue ne prendra pas effet. Toutes les opérations de contexte se produisent `zoom` , actualisant l’objet proxy dans le complément et remplaçant les valeurs définies localement.
+
+Ce comportement diffère des [Propriétés de navigation](application-specific-api-model.md#scalar-and-navigation-properties) telles que [Range. format](/javascript/api/excel/excel.range#format). Les propriétés de `format` peuvent être définies à l’aide de la navigation d’objet, comme illustré ci-dessous :
+
+```js
+// This will set the font size on the range during the next `content.sync()`.
+range.format.font.size = 10;
+```
+
+Vous pouvez identifier une propriété qui ne peut pas avoir ses sous-propriétés directement définies en vérifiant son modificateur en lecture seule. Les propriétés non en lecture seule de toutes les propriétés en lecture seule peuvent être définies directement. Les propriétés accessibles en écriture comme `PageLayout.zoom` doivent être définies avec un objet à ce niveau. En Résumé :
+
+- Propriété en lecture seule : les sous-propriétés peuvent être définies via la navigation.
+- Propriété accessible en écriture : les sous-propriétés ne peuvent pas être définies par le biais de la navigation (elles doivent être définies dans le cadre de l’attribution initiale de l’objet parent).
+
+
+
 ## <a name="42ornullobject-methods-and-properties"></a>&#42;des méthodes et des propriétés de OrNullObject
 
 Certaines propriétés et méthodes d’accesseur génèrent une exception lorsque l’objet souhaité n’existe pas. Par exemple, si vous tentez d’obtenir une feuille de calcul Excel en spécifiant un nom de feuille de calcul qui ne se trouve pas dans le classeur, la `getItem()` méthode génère une `ItemNotFound` exception. Les bibliothèques spécifiques de l’application permettent à votre code de tester l’existence d’entités de document sans nécessiter de code de gestion des exceptions. Pour ce faire, vous utilisez les `*OrNullObject` variantes des méthodes et des propriétés. Ces variantes renvoient un objet dont `isNullObject` la propriété est définie sur `true` , si l’élément spécifié n’existe pas, au lieu de lever une exception.
@@ -251,5 +276,4 @@ return context.sync()
 ## <a name="see-also"></a>Voir aussi
 
 * [Modèle d’objet d’API JavaScript courant](office-javascript-api-object-model.md)
-* [Problèmes courants liés au code et comportements de plateforme inattendus](common-coding-issues.md).
 * [Limites des ressources et optimisation des performances pour les compléments Office](../concepts/resource-limits-and-performance-optimization.md)

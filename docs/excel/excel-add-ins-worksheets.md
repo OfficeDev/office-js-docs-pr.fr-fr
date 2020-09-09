@@ -3,12 +3,12 @@ title: Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Ex
 description: Exemples de code qui montrent comment effectuer des tâches courantes avec des feuilles de calcul à l’aide de l’API JavaScript pour Excel.
 ms.date: 03/24/2020
 localization_priority: Normal
-ms.openlocfilehash: b73d99b7c78649f1d99729ba7e644816db0f2ade
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 0720715a38ff81196433d207148c63ffcd475003
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294121"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408648"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 
@@ -495,4 +495,4 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
+- [Modèle objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)

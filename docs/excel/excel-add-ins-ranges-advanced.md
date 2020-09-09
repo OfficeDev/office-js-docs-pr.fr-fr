@@ -3,12 +3,12 @@ title: Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)
 description: Les fonctions et scénarios d’objet de plage avancés, tels que les cellules spéciales, suppriment les doublons et utilisent des dates.
 ms.date: 08/26/2020
 localization_priority: Normal
-ms.openlocfilehash: 47f154c2bffac2e730aba21204261bc1bd536af2
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: b3854d15a85db20e1c544ebfa6e8a63712e958d9
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294156"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408445"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)
 
@@ -361,5 +361,5 @@ Vous pouvez également trouver la cellule responsable du débordement dans une c
 ## <a name="see-also"></a>Voir aussi
 
 - [Utiliser les plages à l’aide de l’API JavaScript Excel](excel-add-ins-ranges.md)
-- [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
+- [Modèle objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
 - [Travailler simultanément avec plusieurs plages dans des compléments Excel](excel-add-ins-multiple-ranges.md)

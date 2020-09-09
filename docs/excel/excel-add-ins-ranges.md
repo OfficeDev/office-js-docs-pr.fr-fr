@@ -3,12 +3,12 @@ title: Utilisation de plages à l’aide de l’API JavaScript pour Excel (fond
 description: Exemples de code qui montrent comment effectuer des tâches courantes avec des plages à l’aide de l’API JavaScript pour Excel.
 ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 4eb04a58fdf58425f7bb13a6dc457da28625dba5
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 2cb5640fa9c647c0e6d1f8083986455f2b5a59a3
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294163"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408480"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Utilisation de plages à l’aide de l’API JavaScript pour Excel
 
@@ -597,4 +597,4 @@ Lorsque la méthode `find` est appelée sur une plage représentant une cellule 
 ## <a name="see-also"></a>Voir aussi
 
 - [Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)](excel-add-ins-ranges-advanced.md)
-- [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
+- [Modèle objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
