@@ -264,8 +264,6 @@
         - name: Vider le cache Office
           href: testing/clear-cache.md
           displayName: 'uninstall, sideload'
-        - name: Recommandations en matière de codage pour les problèmes courants
-          href: develop/common-coding-issues.md
         - name: Déboguer avec la journalisation runtime
           href: testing/runtime-logging.md
         - name: Extension de débogueur pour Visual Studio Code
@@ -278,6 +276,8 @@
               href: concepts/resource-limits-and-performance-optimization.md
         - name: Résolution des erreurs de l’utilisateur
           href: testing/testing-and-troubleshooting.md
+        - name: Résolution des erreurs de développement
+          href: testing/troubleshoot-development-errors.md
         - name: Tests d’utilisation
           href: develop/usability-testing.md
         - name: Valider le manifeste d’un complément Office
@@ -580,8 +580,11 @@
         - name: Référence d’API
           href: reference/excel-api-reference.md
           displayName: Excel
-        - name: Concepts de programmation fondamentaux
+        - name: Modèle d’objet Excel
           href: excel/excel-add-ins-core-concepts.md
+          displayName: Excel
+        - name: Valeurs vides et null dans les compléments Excel
+          href: excel/excel-add-ins-blank-null-values.md
           displayName: Excel
         - name: Appel de fonctions intégrées
           href: excel/excel-add-ins-worksheet-functions.md
@@ -603,6 +606,9 @@
           displayName: Excel
         - name: Validation de données
           href: excel/excel-add-ins-data-validation.md
+          displayName: Excel
+        - name: Retarder l’exécution pendant la modification de la cellule
+          href: excel/excel-add-ins-delay-in-cell-edit.md
           displayName: Excel
         - name: Gestion des erreurs
           href: excel/excel-add-ins-error-handling.md
@@ -642,6 +648,9 @@
           displayName: Excel
         - name: Feuilles de calcul
           href: excel/excel-add-ins-worksheets.md
+          displayName: Excel
+        - name: Résoudre les problèmes liés aux compléments Excel
+          href: excel/excel-add-ins-troubleshooting.md
           displayName: Excel
     - name: Fonctions personnalisées
       items:
@@ -1109,7 +1118,7 @@
         - name: Référence d’API
           href: reference/word-api-reference.md
           displayName: Word
-        - name: Concepts de programmation fondamentaux
+        - name: Modèle d’objet Word
           href: word/word-add-ins-core-concepts.md
           displayName: Word
         - name: Liaison de régions dans un document
