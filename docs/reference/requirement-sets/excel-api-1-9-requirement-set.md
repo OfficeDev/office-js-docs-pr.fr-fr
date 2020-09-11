@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1,9
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 6e5de61328ef3e02bc4fcd39848c0f0ecdfff533
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 77e8ed886344f3761d7dfbb982a54a878a554980
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611392"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430855"
 ---
 # <a name="whats-new-in-excel-javascript-api-19"></a>Nouveautés de l’API JavaScript pour Excel 1,9
 
@@ -29,7 +29,7 @@ Plus de 500 nouvelles API Excel ont été ajoutés avec l’ensemble de conditio
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les API dans l’ensemble de conditions requises de l’API JavaScript pour Excel 1,9. Pour afficher la documentation de référence de l’API pour toutes les API prises en charge par l’ensemble de conditions requises de l’API JavaScript pour Excel 1,9 ou antérieure, voir [API Excel dans l’ensemble de conditions requises 1,9 ou version antérieure](/javascript/api/excel?view=excel-js-1.9).
+Le tableau suivant répertorie les API dans l’ensemble de conditions requises de l’API JavaScript pour Excel 1,9. Pour afficher la documentation de référence de l’API pour toutes les API prises en charge par l’ensemble de conditions requises de l’API JavaScript pour Excel 1,9 ou antérieure, voir [API Excel dans l’ensemble de conditions requises 1,9 ou version antérieure](/javascript/api/excel?view=excel-js-1.9&preserve-view=true).
 
 | Class | Champs | Description |
 |:---|:---|:---|
@@ -404,7 +404,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[Formes](/javascript/api/excel/excel.shapegroup#shapes)|Renvoie la collection d’objets de forme. En lecture seule.|
 ||[ungroup()](/javascript/api/excel/excel.shapegroup#ungroup--)|Dissocie toutes les formes groupées dans la forme spécifiée.|
 |[ShapeLineFormat](/javascript/api/excel/excel.shapelineformat)|[color](/javascript/api/excel/excel.shapelineformat#color)|Code couleur HTML qui représente la couleur de remplissage, au format #RRGGBB (par exemple : « FFA500 ») ou sous forme de couleur HTML nommée (par exemple, « orange »).|
-||[dashStyle](/javascript/api/excel/excel.shapelineformat#dashstyle)|Représente le style de trait de la forme. Renvoie null lors de la ligne n’est pas visible ou il existe des stylets tiret incohérents. Pour plus d’informations, voir Excel.ShapeLineStyle.|
+||[dashStyle](/javascript/api/excel/excel.shapelineformat#dashstyle)|Représente le style de trait de la forme. Renvoie null lors de la ligne n’est pas visible ou il existe des stylets tiret incohérents. Pour plus d’informations, voir Excel.ShapeFontUnderlineStyle.|
 ||[style](/javascript/api/excel/excel.shapelineformat#style)|Représente le style de trait de la forme. Renvoie null lors de la ligne n’est pas visible ou il existe des stylets tiret incohérents. Pour plus d’informations, voir Excel.ShapeFontUnderlineStyle.|
 ||[Transparency](/javascript/api/excel/excel.shapelineformat#transparency)|Renvoie ou définit le degré de transparence du remplissage spécifié sous la forme d’une valeur comprise entre 0,0 (opaque) et 1,0 (transparent). Renvoie la valeur null lorsque la forme a des transparences incohérentes.|
 ||[visible](/javascript/api/excel/excel.shapelineformat#visible)|Représente si la mise en forme de la ligne d’un élément de forme est visible. Renvoie la valeur null lorsque la forme a des visibilités incohérentes.|
@@ -484,5 +484,5 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Documentation référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.9)
+- [Documentation référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.9&preserve-view=true)
 - [Ensembles de conditions requises de l’API JavaScript pour Excel](./excel-api-requirement-sets.md)

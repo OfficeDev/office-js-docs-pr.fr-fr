@@ -3,12 +3,12 @@ title: Afficher ou masquer un complément Office dans un runtime partagé
 description: Découvrez comment masquer ou afficher par programme l’interface utilisateur d’un complément pendant qu’il s’exécute en continu
 ms.date: 05/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 9b6c3384fda32854e26cc4852d5bd27d77fae544
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: e09fa7d0a39c7157823911307558889e2ade89db
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44610332"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430568"
 ---
 # <a name="show-or-hide-an-office-add-in-in-a-shared-runtime"></a>Afficher ou masquer un complément Office dans un runtime partagé
 
@@ -30,7 +30,7 @@ Pour configurer le complément afin qu’il utilise un runtime partagé, reporte
 
 Les nouvelles API se trouvent dans la `Office.addin` propriété. Pour afficher le volet Office, votre code appelle `Office.addin.showAsTaskpane()` . Office affiche dans un volet des tâches la page que vous avez affectée à l’ID de ressource ( `resid` ) pour le volet de tâches. Il s’agit du `resid` que vous avez affecté à l' `<SourceLocation>` du `<Action xsi:type="ShowTaskpane">` dans le manifeste. (Consultez [la rubrique Configure Your Office Add-in to use a Shared Runtime](configure-your-add-in-to-use-a-shared-runtime.md).)
 
-Il s’agit d’une méthode asynchrone, de sorte que votre code doit l’attendre lorsque le code suivant ne doit pas s’exécuter tant qu’il n’est pas terminé. Attendez la fin de cette opération avec le `await` mot clé ou une `then()` méthode, en fonction de la syntaxe JavaScript que vous utilisez. Voici un exemple de feuille de calcul Excel nommée **CurrentQuarterSales**. Le complément doit faire apparaître le volet Office chaque fois que cette feuille de calcul est activée. La méthode `onCurrentQuarter` est un gestionnaire pour l’événement [Office. Worksheet. onActivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview#onactivated) qui a été enregistré pour la feuille de calcul.
+Il s’agit d’une méthode asynchrone, de sorte que votre code doit l’attendre lorsque le code suivant ne doit pas s’exécuter tant qu’il n’est pas terminé. Attendez la fin de cette opération avec le `await` mot clé ou une `then()` méthode, en fonction de la syntaxe JavaScript que vous utilisez. Voici un exemple de feuille de calcul Excel nommée **CurrentQuarterSales**. Le complément doit faire apparaître le volet Office chaque fois que cette feuille de calcul est activée. La méthode `onCurrentQuarter` est un gestionnaire pour l’événement [Office. Worksheet. onActivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#onactivated) qui a été enregistré pour la feuille de calcul.
 
 ```javascript
 function onCurrentQuarter() {
@@ -42,7 +42,7 @@ function onCurrentQuarter() {
 }
 ```
 
-Pour masquer le volet Office, votre code appelle `Office.addin.hide()` . L’exemple suivant est un gestionnaire inscrit pour l’événement [Office. Worksheet. onDeactivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview#ondeactivated) .
+Pour masquer le volet Office, votre code appelle `Office.addin.hide()` . L’exemple suivant est un gestionnaire inscrit pour l’événement [Office. Worksheet. onDeactivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#ondeactivated) .
 
 ```javascript
 function onCurrentQuarterDeactivated() {

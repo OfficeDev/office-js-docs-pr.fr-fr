@@ -3,12 +3,12 @@ title: Obtenir et définir des métadonnées dans un complément Outlook
 description: Vous pouvez gérer les données personnalisées dans votre complément Outlook en utilisant les paramètres d’itinérance ou propriétés personnalisées.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 526be452d4d75a902f859f4cde20b02f5fc7f300
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: abcae0766079f090ec15b9d11ec66c43355bfb0f
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609040"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431240"
 ---
 # <a name="get-and-set-add-in-metadata-for-an-outlook-add-in"></a>Obtenir et définir des métadonnées de complément pour un complément Outlook
 
@@ -69,7 +69,7 @@ Office.initialize = function () {
 
 Pour faire suite à l’exemple précédent, la fonction JavaScript suivante, `setAddInSetting`, montre comment utiliser la méthode [RoamingSettings.set](/javascript/api/outlook/office.RoamingSettings) pour définir un paramètre nommé `cookie` avec la date du jour, et conserver les données en utilisant la méthode [RoamingSettings.saveAsync](/javascript/api/outlook/office.RoamingSettings#saveasync-callback-) pour réenregistrer tous les paramètres d’itinérance sur le serveur.
 
-La `set` méthode crée le paramètre si le paramètre n’existe pas déjà et affecte le paramètre à la valeur spécifiée. La `saveAsync` méthode enregistre les paramètres d’itinérance de manière asynchrone. Cet exemple de code transmet une méthode de rappel, `saveMyAddInSettingsCallback` , à `saveAsync` la fin de l’appel asynchrone, `saveMyAddInSettingsCallback` est appelée à l’aide d’un paramètre, _asyncResult_. Ce paramètre est un objet [AsyncResult](/javascript/api/office/office.asyncresult) qui contient le résultat des détails relatifs à l’appel asynchrone. Vous pouvez utiliser le paramètre facultatif _userContext_ pour transmettre des informations d’état de l’appel asynchrone à la fonction de rappel.
+La `set` méthode crée le paramètre si le paramètre n’existe pas déjà et affecte le paramètre à la valeur spécifiée. La `saveAsync` méthode enregistre les paramètres d’itinérance de manière asynchrone. Cet exemple de code transmet une méthode de rappel, `saveMyAddInSettingsCallback` , à `saveAsync` la fin de l’appel asynchrone,  `saveMyAddInSettingsCallback` est appelée à l’aide d’un paramètre, _asyncResult_. Ce paramètre est un objet [AsyncResult](/javascript/api/office/office.asyncresult) qui contient le résultat des détails relatifs à l’appel asynchrone. Vous pouvez utiliser le paramètre facultatif _userContext_ pour transmettre des informations d’état de l’appel asynchrone à la fonction de rappel.
 
 ```js
 // Set a roaming setting.
@@ -273,7 +273,7 @@ GET https://outlook.office.com/api/v2.0/Me/Events?$filter=SingleValueExtendedPro
   {00020329-0000-0000-C000-000000000046} Name cecp-<app-guid>')
 ```
 
-Pour plus exemples qui utilisent REST pour obtenir les propriétés étendues à valeur unique base MAPI, voir [Obtenir singleValueExtendedProperty](/graph/api/singlevaluelegacyextendedproperty-get?view=graph-rest-1.0).
+Pour plus exemples qui utilisent REST pour obtenir les propriétés étendues à valeur unique base MAPI, voir [Obtenir singleValueExtendedProperty](/graph/api/singlevaluelegacyextendedproperty-get?view=graph-rest-1.0&preserve-view=true).
 
 L’exemple suivant montre comment obtenir un élément et ses propriétés personnalisées. Dans la fonction de rappel pour la méthode `done`, `item.SingleValueExtendedProperties` contient la liste des propriétés personnalisées demandées.
 

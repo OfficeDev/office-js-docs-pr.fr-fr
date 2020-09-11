@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises WordApi 1,3
 ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 15ec2129f53d0b408191ceb595f1fe115feb0d1a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 6402543ddfb2feaa116de40982dcb61c30c8597b
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611294"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430498"
 ---
 # <a name="whats-new-in-word-javascript-api-13"></a>Nouveautés de l’API JavaScript 1.3 pour Word
 
@@ -17,7 +17,7 @@ WordApi 1,3 Ajout de la prise en charge supplémentaire des contrôles de conten
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les API dans l’ensemble de conditions requises de l’API JavaScript pour Word 1,3. Pour afficher la documentation de référence de l’API pour toutes les API prises en charge par l’API JavaScript pour Word, ensemble de conditions requises 1,3 ou antérieure, voir [API Word dans l’ensemble de conditions requises 1,3 ou version antérieure](/javascript/api/word?view=word-js-1.3).
+Le tableau suivant répertorie les API dans l’ensemble de conditions requises de l’API JavaScript pour Word 1,3. Pour afficher la documentation de référence de l’API pour toutes les API prises en charge par l’API JavaScript pour Word, ensemble de conditions requises 1,3 ou antérieure, voir [API Word dans l’ensemble de conditions requises 1,3 ou version antérieure](/javascript/api/word?view=word-js-1.3&preserve-view=true).
 
 | Class | Champs | Description |
 |:---|:---|:---|
@@ -75,7 +75,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[company](/javascript/api/word/word.documentproperties#company)|Obtient ou définit la société du document.|
 ||[format](/javascript/api/word/word.documentproperties#format)|Obtient ou définit le format du document.|
 ||[Mots clés](/javascript/api/word/word.documentproperties#keywords)|Obtient ou définit les mots clés du document.|
-||[dirigeant](/javascript/api/word/word.documentproperties#manager)|Obtient ou définit le responsable du document.|
+||[manager](/javascript/api/word/word.documentproperties#manager)|Obtient ou définit le responsable du document.|
 ||[applicationName](/javascript/api/word/word.documentproperties#applicationname)|Obtient le nom d’application du document. En lecture seule.|
 ||[creationDate](/javascript/api/word/word.documentproperties#creationdate)|Obtient la date de création du document. En lecture seule.|
 ||[customProperties](/javascript/api/word/word.documentproperties#customproperties)|Obtient la collection de propriétés personnalisées du document. En lecture seule.|
@@ -132,7 +132,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[insertTable (rowCount : nombre, columnCount : nombre, insertLocation : Word. InsertLocation, Values ?: String [] [])](/javascript/api/word/word.paragraph#inserttable-rowcount--columncount--insertlocation--values-)|Insère un tableau avec le nombre spécifié de lignes et de colonnes. La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).|
 ||[isLastParagraph](/javascript/api/word/word.paragraph#islastparagraph)|Indique que le paragraphe est le dernier au sein de son corps parent. En lecture seule.|
 ||[isListItem](/javascript/api/word/word.paragraph#islistitem)|Vérifie si le paragraphe est un élément de liste. En lecture seule.|
-||[list](/javascript/api/word/word.paragraph#list)|Obtient la liste à laquelle ce paragraphe appartient. Lève une exception si le paragraphe ne se trouve pas dans une liste. En lecture seule.|
+||[liste](/javascript/api/word/word.paragraph#list)|Obtient la liste à laquelle ce paragraphe appartient. Lève une exception si le paragraphe ne se trouve pas dans une liste. En lecture seule.|
 ||[listItem](/javascript/api/word/word.paragraph#listitem)|Obtient l’élément de liste du paragraphe. Lève une exception si le paragraphe ne fait pas partie d’une liste. En lecture seule.|
 ||[listItemOrNullObject](/javascript/api/word/word.paragraph#listitemornullobject)|Obtient l’élément de liste du paragraphe. Renvoie un objet null si le paragraphe ne fait pas partie d’une liste. En lecture seule.|
 ||[listOrNullObject](/javascript/api/word/word.paragraph#listornullobject)|Obtient la liste à laquelle ce paragraphe appartient. Renvoie un objet null si le paragraphe n’est pas dans une liste. En lecture seule.|
@@ -179,7 +179,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[getNextOrNullObject ()](/javascript/api/word/word.section#getnextornullobject--)|Obtient la section suivante. Renvoie un objet null si cette section est la dernière.|
 |[SectionCollection](/javascript/api/word/word.sectioncollection)|[getFirst()](/javascript/api/word/word.sectioncollection#getfirst--)|Obtient la première section de cette collection. Lève une exception si cette collection est vide.|
 ||[getFirstOrNullObject()](/javascript/api/word/word.sectioncollection#getfirstornullobject--)|Obtient la première section de cette collection. Renvoie un objet null si cette collection est vide.|
-|[Table](/javascript/api/word/word.table)|[addColumns (insertLocation : Word. InsertLocation, columnCount : nombre, Values ?: chaîne [] [])](/javascript/api/word/word.table#addcolumns-insertlocation--columncount--values-)|Ajoute des colonnes au début ou à la fin du tableau, en utilisant la première ou la dernière colonne existante en tant que modèle. Applicable aux tableaux uniformes. Si spécifiées, les valeurs de chaîne sont définies sur les lignes nouvellement insérées.|
+|[Tableau](/javascript/api/word/word.table)|[addColumns (insertLocation : Word. InsertLocation, columnCount : nombre, Values ?: chaîne [] [])](/javascript/api/word/word.table#addcolumns-insertlocation--columncount--values-)|Ajoute des colonnes au début ou à la fin du tableau, en utilisant la première ou la dernière colonne existante en tant que modèle. Applicable aux tableaux uniformes. Si spécifiées, les valeurs de chaîne sont définies sur les lignes nouvellement insérées.|
 ||[addRows (insertLocation : Word. InsertLocation, rowCount : nombre, Values ?: chaîne [] [])](/javascript/api/word/word.table#addrows-insertlocation--rowcount--values-)|Ajoute des lignes au début ou à la fin du tableau, en utilisant la première ou la dernière ligne existante en tant que modèle. Si spécifiées, les valeurs de chaîne sont définies sur les lignes nouvellement insérées.|
 ||[aligne](/javascript/api/word/word.table#alignment)|Obtient ou définit l’alignement du tableau par rapport à la colonne de page. La valeur peut être « Left », « centered » ou « Right ».|
 ||[autoFitWindow()](/javascript/api/word/word.table#autofitwindow--)|Ajuste automatiquement les colonnes du tableau à la largeur de la fenêtre.|

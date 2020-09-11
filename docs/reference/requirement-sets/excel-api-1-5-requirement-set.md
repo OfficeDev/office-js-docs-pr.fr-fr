@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1,5
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: a722498f264ac8a681e91231d737451274b01c48
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 346b5192d6d68046b9365d3159df9c3964a59271
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611420"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430848"
 ---
 # <a name="whats-new-in-excel-javascript-api-15"></a>Nouveautés de l’API JavaScript 1.5 pour Excel
 
@@ -30,7 +30,7 @@ ExcelApi 1,5 ajoute des parties XML personnalisées. Celles-ci sont accessibles 
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les API dans l’ensemble de conditions requises de l’API JavaScript pour Excel 1,5. Pour afficher la documentation de référence de l’API pour toutes les API prises en charge par l’ensemble de conditions requises de l’API JavaScript pour Excel 1,5 ou antérieure, voir [API Excel dans l’ensemble de conditions requises 1,5 ou version antérieure](/javascript/api/excel?view=excel-js-1.5).
+Le tableau suivant répertorie les API dans l’ensemble de conditions requises de l’API JavaScript pour Excel 1,5. Pour afficher la documentation de référence de l’API pour toutes les API prises en charge par l’ensemble de conditions requises de l’API JavaScript pour Excel 1,5 ou antérieure, voir [API Excel dans l’ensemble de conditions requises 1,5 ou version antérieure](/javascript/api/excel?view=excel-js-1.5&preserve-view=true).
 
 | Class | Champs | Description |
 |:---|:---|:---|
@@ -52,8 +52,8 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[getOnlyItemOrNullObject()](/javascript/api/excel/excel.customxmlpartscopedcollection#getonlyitemornullobject--)|Si la collection contient exactement un élément, cette méthode le renvoie.|
 ||[items](/javascript/api/excel/excel.customxmlpartscopedcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[id](/javascript/api/excel/excel.pivottable#id)|ID du tableau croisé dynamique. En lecture seule.|
-|[Runtime](/javascript/api/excel/excel.runtime)||[Workbook](/javascript/api/excel/excel.workbook)|[customXmlParts](/javascript/api/excel/excel.workbook#customxmlparts)|Représente la collection de parties XML personnalisées contenues dans ce classeur. En lecture seule.|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[getNext (visibleOnly ?: Boolean)](/javascript/api/excel/excel.worksheet#getnext-visibleonly-)|Obtient la feuille de calcul qui suit celle-ci. S’il n’existe aucune feuille de calcul à la suite de celle-ci, cette méthode génère une erreur.|
+|[Runtime](/javascript/api/excel/excel.runtime)||[Classeur](/javascript/api/excel/excel.workbook)|[customXmlParts](/javascript/api/excel/excel.workbook#customxmlparts)|Représente la collection de parties XML personnalisées contenues dans ce classeur. En lecture seule.|
+|[Feuille de calcul](/javascript/api/excel/excel.worksheet)|[getNext (visibleOnly ?: Boolean)](/javascript/api/excel/excel.worksheet#getnext-visibleonly-)|Obtient la feuille de calcul qui suit celle-ci. S’il n’existe aucune feuille de calcul à la suite de celle-ci, cette méthode génère une erreur.|
 ||[getNextOrNullObject (visibleOnly ?: booléen)](/javascript/api/excel/excel.worksheet#getnextornullobject-visibleonly-)|Obtient la feuille de calcul qui suit celle-ci. S’il n’existe aucune feuille de calcul à la suite de celle-ci, cette méthode renvoie un objet null.|
 ||[getPrevious (visibleOnly ?: Boolean)](/javascript/api/excel/excel.worksheet#getprevious-visibleonly-)|Obtient la feuille de calcul qui précède celle-ci. S’il n’y a pas de feuille de calcul précédente, cette méthode génère une erreur.|
 ||[getPreviousOrNullObject (visibleOnly ?: booléen)](/javascript/api/excel/excel.worksheet#getpreviousornullobject-visibleonly-)|Obtient la feuille de calcul qui précède celle-ci. S’il n’y a pas de feuille de calcul précédente, cette méthode renvoie une valeur null.|
@@ -62,5 +62,5 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Documentation référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.5)
+- [Documentation référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.5&preserve-view=true)
 - [Ensembles de conditions requises de l’API JavaScript pour Excel](./excel-api-requirement-sets.md)

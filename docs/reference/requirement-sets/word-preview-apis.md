@@ -4,12 +4,12 @@ description: Informations détaillées sur les API JavaScript pour Word à venir
 ms.date: 08/15/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: bde7ff45c8352277b9aec38ecccb41333544172a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 90d60e1a6ef24907af7b0bff14fa43ee5c312beb
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611273"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430519"
 ---
 # <a name="word-javascript-preview-apis"></a>API de prévisualisation JavaScript pour Word
 
@@ -19,7 +19,7 @@ De nouvelles API JavaScript pour Word sont introduites pour la première fois da
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les API JavaScript pour Word actuellement en version préliminaire. Pour afficher la liste complète de toutes les API JavaScript Word (y compris les API d’aperçu et les API précédemment publiées), voir [toutes les API JavaScript pour Word](/javascript/api/word?view=word-js-preview).
+Le tableau suivant répertorie les API JavaScript pour Word actuellement en version préliminaire. Pour afficher la liste complète de toutes les API JavaScript Word (y compris les API d’aperçu et les API précédemment publiées), voir [toutes les API JavaScript pour Word](/javascript/api/word?view=word-js-preview&preserve-view=true).
 
 | Class | Champs | Description |
 |:---|:---|:---|
@@ -79,7 +79,7 @@ Le tableau suivant répertorie les API JavaScript pour Word actuellement en vers
 ||[getItem(key: string)](/javascript/api/word/word.settingcollection#getitem-key-)|Obtient un objet Setting par sa clé, qui respecte la casse. Lève une exception si le paramètre n’existe pas.|
 ||[getItemOrNullObject(key: string)](/javascript/api/word/word.settingcollection#getitemornullobject-key-)|Obtient un objet Setting par sa clé, qui respecte la casse. Renvoie un objet null si le paramètre n’existe pas.|
 ||[items](/javascript/api/word/word.settingcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
-|[Table](/javascript/api/word/word.table)|[mergeCells (topRow : nombre, firstCell : nombre, bottomRow : nombre, lastCell : nombre)](/javascript/api/word/word.table#mergecells-toprow--firstcell--bottomrow--lastcell-)|Cette méthode fusionne les cellules délimitées de façon inclusive par une première et la dernière cellule.|
+|[Tableau](/javascript/api/word/word.table)|[mergeCells (topRow : nombre, firstCell : nombre, bottomRow : nombre, lastCell : nombre)](/javascript/api/word/word.table#mergecells-toprow--firstcell--bottomrow--lastcell-)|Cette méthode fusionne les cellules délimitées de façon inclusive par une première et la dernière cellule.|
 |[TableCell](/javascript/api/word/word.tablecell)|[Split (rowCount : nombre, columnCount : nombre)](/javascript/api/word/word.tablecell#split-rowcount--columncount-)|Divise la cellule en un nombre spécifié de lignes et de colonnes.|
 |[TableRow](/javascript/api/word/word.tablerow)|[insertContentControl()](/javascript/api/word/word.tablerow#insertcontentcontrol--)|Insère un contrôle de contenu sur la ligne.|
 ||[Merge ()](/javascript/api/word/word.tablerow#merge--)|Cette méthode fusionne la ligne dans une seule cellule.|

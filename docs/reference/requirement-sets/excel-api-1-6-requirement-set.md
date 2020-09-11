@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1,6
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f86a470d39bacfe4940a6c225b9ce7d8903e2092
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: ea54b825c3d5eff71a3355c3d313feb355d3c892
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611413"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430841"
 ---
 # <a name="whats-new-in-excel-javascript-api-16"></a>Nouveautés de l’API JavaScript 1.6 pour Excel
 
@@ -32,7 +32,7 @@ De plus :
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les API dans l’ensemble de conditions requises de l’API JavaScript pour Excel 1,6. Pour afficher la documentation de référence de l’API pour toutes les API prises en charge par l’ensemble de conditions requises de l’API JavaScript pour Excel 1,6 ou antérieure, voir [API Excel dans l’ensemble de conditions requises 1,6 ou version antérieure](/javascript/api/excel?view=excel-js-1.6).
+Le tableau suivant répertorie les API dans l’ensemble de conditions requises de l’API JavaScript pour Excel 1,6. Pour afficher la documentation de référence de l’API pour toutes les API prises en charge par l’ensemble de conditions requises de l’API JavaScript pour Excel 1,6 ou antérieure, voir [API Excel dans l’ensemble de conditions requises 1,6 ou version antérieure](/javascript/api/excel?view=excel-js-1.6&preserve-view=true).
 
 | Class | Champs | Description |
 |:---|:---|:---|
@@ -43,7 +43,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[threeColorScale](/javascript/api/excel/excel.colorscaleconditionalformat#threecolorscale)|Si la valeur est true, l’échelle de couleurs aura trois points (minimum, milieu, maximum), sinon elle aura deux (minimum, maximum).|
 |[ConditionalCellValueRule](/javascript/api/excel/excel.conditionalcellvaluerule)|[Formula1](/javascript/api/excel/excel.conditionalcellvaluerule#formula1)|Formule, si nécessaire, servant à évaluer la règle de mise en forme conditionnelle.|
 ||[Formula2](/javascript/api/excel/excel.conditionalcellvaluerule#formula2)|Formule, si nécessaire, servant à évaluer la règle de mise en forme conditionnelle.|
-||[is](/javascript/api/excel/excel.conditionalcellvaluerule#operator)|Opérateur du format conditionnel de texte.|
+||[opérateur](/javascript/api/excel/excel.conditionalcellvaluerule#operator)|Opérateur du format conditionnel de texte.|
 |[ConditionalColorScaleCriteria](/javascript/api/excel/excel.conditionalcolorscalecriteria)|[maximum](/javascript/api/excel/excel.conditionalcolorscalecriteria#maximum)|Point maximal du critère d’échelle de couleurs.|
 ||[point](/javascript/api/excel/excel.conditionalcolorscalecriteria#midpoint)|Point du milieu du critère d’échelle de couleurs, si l’échelle de couleurs est une échelle à 3 couleurs.|
 ||[minimum](/javascript/api/excel/excel.conditionalcolorscalecriteria#minimum)|Point minimal du critère d’échelle de couleurs.|
@@ -93,7 +93,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[Formular1c1,](/javascript/api/excel/excel.conditionalformatrule#formular1c1)|Formule, si nécessaire, servant à évaluer la règle de mise en forme conditionnelle dans la notation du style R1C1.|
 |[ConditionalIconCriterion](/javascript/api/excel/excel.conditionaliconcriterion)|[customIcon](/javascript/api/excel/excel.conditionaliconcriterion#customicon)|Icône personnalisée pour le critère en cours si différent de la celui par défaut IconSet. Sinon, null est renvoyé.|
 ||[formula](/javascript/api/excel/excel.conditionaliconcriterion#formula)|Un nombre ou une formule en fonction du type.|
-||[is](/javascript/api/excel/excel.conditionaliconcriterion#operator)|GreaterThan ou GreaterThanOrEqual pour chaque type de règle pour le format conditionnel d’icône.|
+||[opérateur](/javascript/api/excel/excel.conditionaliconcriterion#operator)|GreaterThan ou GreaterThanOrEqual pour chaque type de règle pour le format conditionnel d’icône.|
 ||[type](/javascript/api/excel/excel.conditionaliconcriterion#type)|Ce sur quoi la formule conditionnelle de l’icône doit être basée.|
 |[ConditionalPresetCriteriaRule](/javascript/api/excel/excel.conditionalpresetcriteriarule)|[critère](/javascript/api/excel/excel.conditionalpresetcriteriarule#criterion)|Critère de la mise en forme conditionnelle.|
 |[ConditionalRangeBorder](/javascript/api/excel/excel.conditionalrangeborder)|[color](/javascript/api/excel/excel.conditionalrangeborder#color)|Code couleur HTML qui représente la couleur de la ligne de bordure, au format #RRGGBB (par exemple : « FFA500 ») ou sous forme de couleur HTML nommée (par exemple, « orange »).|
@@ -119,7 +119,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[Borders](/javascript/api/excel/excel.conditionalrangeformat#borders)|Collection d’objets Border qui s’appliquent à la plage de mise en forme conditionnelle globale. En lecture seule.|
 ||[fill](/javascript/api/excel/excel.conditionalrangeformat#fill)|Renvoie l’objet Fill défini sur la plage de mise en forme conditionnelle globale. En lecture seule.|
 ||[police](/javascript/api/excel/excel.conditionalrangeformat#font)|Renvoie l’objet font défini sur la plage de mise en forme conditionnelle globale. En lecture seule.|
-|[ConditionalTextComparisonRule](/javascript/api/excel/excel.conditionaltextcomparisonrule)|[is](/javascript/api/excel/excel.conditionaltextcomparisonrule#operator)|Opérateur du format conditionnel de texte.|
+|[ConditionalTextComparisonRule](/javascript/api/excel/excel.conditionaltextcomparisonrule)|[opérateur](/javascript/api/excel/excel.conditionaltextcomparisonrule#operator)|Opérateur du format conditionnel de texte.|
 ||[text](/javascript/api/excel/excel.conditionaltextcomparisonrule#text)|Valeur de texte de la mise en forme conditionnelle.|
 |[ConditionalTopBottomRule](/javascript/api/excel/excel.conditionaltopbottomrule)|[rank](/javascript/api/excel/excel.conditionaltopbottomrule#rank)|Rang compris entre 1 et 1000 pour les rangs numériques ou entre 1 et 100 pour les rangs en pourcentage.|
 ||[type](/javascript/api/excel/excel.conditionaltopbottomrule#type)|Mettre en forme les valeurs en fonction du rang supérieur ou inférieur.|
@@ -145,9 +145,9 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[sous](/javascript/api/excel/excel.textconditionalformat#rule)|Règle de mise en forme conditionnelle.|
 |[TopBottomConditionalFormat](/javascript/api/excel/excel.topbottomconditionalformat)|[format](/javascript/api/excel/excel.topbottomconditionalformat#format)|Renvoie un objet format qui encapsule la police, le remplissage, les bordures et d’autres propriétés des formats conditionnels. En lecture seule.|
 ||[sous](/javascript/api/excel/excel.topbottomconditionalformat#rule)|Critères du format conditionnel le plus haut/bas.|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[Calculate (markAllDirty : booléen)](/javascript/api/excel/excel.worksheet#calculate-markalldirty-)|Calcule toutes les cellules d’une feuille de calcul.|
+|[Feuille de calcul](/javascript/api/excel/excel.worksheet)|[Calculate (markAllDirty : booléen)](/javascript/api/excel/excel.worksheet#calculate-markalldirty-)|Calcule toutes les cellules d’une feuille de calcul.|
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Documentation référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.6)
+- [Documentation référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.6&preserve-view=true)
 - [Ensembles de conditions requises de l’API JavaScript pour Excel](./excel-api-requirement-sets.md)

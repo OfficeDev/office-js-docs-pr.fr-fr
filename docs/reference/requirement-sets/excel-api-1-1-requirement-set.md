@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1,1
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 0b1c1cc6cb6b21609a716210c832b4b1cb325438
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 815b90b18135be22632c39a9824f862149852a84
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612107"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430918"
 ---
 # <a name="excel-javascript-api-requirement-set-11"></a>Ensemble de conditions requises de l’API JavaScript pour Excel 1,1
 
@@ -17,7 +17,7 @@ L’API JavaScript 1.1 pour Excel est la première version de l’API. Il s’ag
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les API dans l’ensemble de conditions requises de l’API JavaScript pour Excel 1,1. Pour afficher la documentation de référence de l’API pour toutes les API prises en charge par l’ensemble de conditions requises de l’API JavaScript pour Excel 1,1, consultez [Excel API dans l’ensemble de conditions requises 1,1](/javascript/api/excel?view=excel-js-1.1).
+Le tableau suivant répertorie les API dans l’ensemble de conditions requises de l’API JavaScript pour Excel 1,1. Pour afficher la documentation de référence de l’API pour toutes les API prises en charge par l’ensemble de conditions requises de l’API JavaScript pour Excel 1,1, consultez [Excel API dans l’ensemble de conditions requises 1,1](/javascript/api/excel?view=excel-js-1.1&preserve-view=true).
 
 | Class | Champs | Description |
 |:---|:---|:---|
@@ -32,14 +32,14 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[getItemAt(index: number)](/javascript/api/excel/excel.bindingcollection#getitemat-index-)|Obtient un objet de liaison en fonction de sa position dans le tableau d’éléments.|
 ||[count](/javascript/api/excel/excel.bindingcollection#count)|Renvoie le nombre de liaisons de la collection. En lecture seule.|
 ||[items](/javascript/api/excel/excel.bindingcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
-|[Chart](/javascript/api/excel/excel.chart)|[delete()](/javascript/api/excel/excel.chart#delete--)|Supprime l’objet de graphique.|
+|[Graphique](/javascript/api/excel/excel.chart)|[delete()](/javascript/api/excel/excel.chart#delete--)|Supprime l’objet de graphique.|
 ||[height](/javascript/api/excel/excel.chart#height)|Représente la hauteur, exprimée en points, de l’objet graphique.|
 ||[left](/javascript/api/excel/excel.chart#left)|La distance, en points, entre le côté gauche du graphique et l’origine de la feuille de calcul.|
 ||[name](/javascript/api/excel/excel.chart#name)|Représente le nom de l’objet graphique.|
-||[ordonné](/javascript/api/excel/excel.chart#axes)|Représente les axes du graphique. En lecture seule.|
+||[axes](/javascript/api/excel/excel.chart#axes)|Représente les axes du graphique. En lecture seule.|
 ||[dataLabels](/javascript/api/excel/excel.chart#datalabels)|Représente les étiquettes des données sur le graphique. En lecture seule.|
 ||[format](/javascript/api/excel/excel.chart#format)|Regroupe les propriétés de format de la zone de graphique. En lecture seule.|
-||[Legend](/javascript/api/excel/excel.chart#legend)|Représente la légende du graphique. En lecture seule.|
+||[legend](/javascript/api/excel/excel.chart#legend)|Représente la légende du graphique. En lecture seule.|
 ||[series](/javascript/api/excel/excel.chart#series)|Représente une série ou une collection de séries dans le graphique. En lecture seule.|
 ||[title](/javascript/api/excel/excel.chart#title)|Représente le titre du graphique indiqué et comprend le texte, la visibilité, la position et la mise en forme du titre. En lecture seule.|
 ||[setData (sourceData : Range, seriesBy ?: Excel. ChartSeriesBy)](/javascript/api/excel/excel.chart#setdata-sourcedata--seriesby-)|Redéfinit les données sources du graphique.|
@@ -179,7 +179,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[police](/javascript/api/excel/excel.rangeformat#font)|Renvoie l’objet de police défini sur l’ensemble de la plage. En lecture seule.|
 ||[verticalAlignment](/javascript/api/excel/excel.rangeformat#verticalalignment)|Représente l’alignement vertical de l’objet spécifié. Pour plus d’informations, voir Excel. VerticalAlignment.|
 ||[wrapText](/javascript/api/excel/excel.rangeformat#wraptext)|Indique si Excel renvoie le texte à la ligne dans l’objet. Une valeur null indique que les paramètres de retour à la ligne ne sont pas les mêmes sur l’ensemble de la plage.|
-|[Table](/javascript/api/excel/excel.table)|[delete()](/javascript/api/excel/excel.table#delete--)|Supprime le tableau.|
+|[Tableau](/javascript/api/excel/excel.table)|[delete()](/javascript/api/excel/excel.table#delete--)|Supprime le tableau.|
 ||[getDataBodyRange()](/javascript/api/excel/excel.table#getdatabodyrange--)|Obtient l’objet de plage associé au corps de données du tableau.|
 ||[getHeaderRowRange()](/javascript/api/excel/excel.table#getheaderrowrange--)|Obtient l’objet de plage associé à la ligne d’en-tête du tableau.|
 ||[getRange()](/javascript/api/excel/excel.table#getrange--)|Renvoie l’objet de plage associé à l’intégralité du tableau.|
@@ -218,13 +218,13 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[getItemAt(index: number)](/javascript/api/excel/excel.tablerowcollection#getitemat-index-)|Obtient une ligne en fonction de sa position dans la collection.|
 ||[count](/javascript/api/excel/excel.tablerowcollection#count)|Renvoie le nombre de lignes du tableau. En lecture seule.|
 ||[items](/javascript/api/excel/excel.tablerowcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
-|[Workbook](/javascript/api/excel/excel.workbook)|[getSelectedRange ()](/javascript/api/excel/excel.workbook#getselectedrange--)|Obtient la plage unique actuellement sélectionnée du classeur. Si plusieurs plages sont sélectionnées, cette méthode génère une erreur.|
+|[Classeur](/javascript/api/excel/excel.workbook)|[getSelectedRange ()](/javascript/api/excel/excel.workbook#getselectedrange--)|Obtient la plage unique actuellement sélectionnée du classeur. Si plusieurs plages sont sélectionnées, cette méthode génère une erreur.|
 ||[application](/javascript/api/excel/excel.workbook#application)|Représente l’instance de l’application Excel qui contient ce classeur. En lecture seule.|
 ||[bindings](/javascript/api/excel/excel.workbook#bindings)|Représente une collection de liaisons appartenant au classeur. En lecture seule.|
 ||[noms](/javascript/api/excel/excel.workbook#names)|Représente une collection d’éléments nommés portant sur le classeur (appelés plages et constantes). En lecture seule.|
 ||[emplois](/javascript/api/excel/excel.workbook#tables)|Représente une collection de tableaux associés au classeur. En lecture seule.|
 ||[feuilles](/javascript/api/excel/excel.workbook#worksheets)|Représente une collection de feuilles de calcul associées au classeur. En lecture seule.|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[activate()](/javascript/api/excel/excel.worksheet#activate--)|Active la feuille de calcul dans l’interface utilisateur Excel.|
+|[Feuille de calcul](/javascript/api/excel/excel.worksheet)|[activate()](/javascript/api/excel/excel.worksheet#activate--)|Active la feuille de calcul dans l’interface utilisateur Excel.|
 ||[delete()](/javascript/api/excel/excel.worksheet#delete--)|Supprime la feuille de calcul du classeur. Notez que si la visibilité de la feuille de calcul est définie sur « VeryHidden », l’opération de suppression échouera avec un GeneralException.|
 ||[getCell(row: number, column: number)](/javascript/api/excel/excel.worksheet#getcell-row--column-)|Renvoie l’objet de plage qui contient une cellule donnée sur la base des numéros de ligne et de colonne. La cellule peut être située en dehors des limites de sa plage parente, tant qu’elle reste dans la grille de la feuille de calcul.|
 ||[getRange (Address ?: String)](/javascript/api/excel/excel.worksheet#getrange-address-)|Obtient l’objet de plage, représentant un seul bloc de cellules rectangulaires, spécifié par l’adresse ou le nom.|
@@ -241,5 +241,5 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Documentation référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.1)
+- [Documentation référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.1&preserve-view=true)
 - [Ensembles de conditions requises de l’API JavaScript pour Excel](./excel-api-requirement-sets.md)

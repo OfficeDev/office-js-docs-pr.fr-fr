@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1,7
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 2e7c2fb053aa16479091a2085b38b760fa86db4a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 6fc4164f233c0b1603f4b5231ed860442920c538
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611406"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430862"
 ---
 # <a name="whats-new-in-excel-javascript-api-17"></a>Nouveautés de l’API JavaScript 1.7 pour Excel
 
@@ -65,11 +65,11 @@ De plus :
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les API dans l’ensemble de conditions requises de l’API JavaScript pour Excel 1,7. Pour afficher la documentation de référence de l’API pour toutes les API prises en charge par l’ensemble de conditions requises de l’API JavaScript pour Excel 1,7 ou antérieure, voir [API Excel dans l’ensemble de conditions requises 1,7 ou version antérieure](/javascript/api/excel?view=excel-js-1.7).
+Le tableau suivant répertorie les API dans l’ensemble de conditions requises de l’API JavaScript pour Excel 1,7. Pour afficher la documentation de référence de l’API pour toutes les API prises en charge par l’ensemble de conditions requises de l’API JavaScript pour Excel 1,7 ou antérieure, voir [API Excel dans l’ensemble de conditions requises 1,7 ou version antérieure](/javascript/api/excel?view=excel-js-1.7&preserve-view=true).
 
 | Class | Champs | Description |
 |:---|:---|:---|
-|[Chart](/javascript/api/excel/excel.chart)|[chartType](/javascript/api/excel/excel.chart#charttype)|Représente le type d’un graphique. Pour plus d’informations, voir Excel. ChartType.|
+|[Graphique](/javascript/api/excel/excel.chart)|[chartType](/javascript/api/excel/excel.chart#charttype)|Représente le type d’un graphique. Pour plus d’informations, voir Excel. ChartType.|
 ||[id](/javascript/api/excel/excel.chart#id)|ID unique du graphique. En lecture seule.|
 ||[ShowAllFieldButtons,](/javascript/api/excel/excel.chart#showallfieldbuttons)|Représente l’affichage de tous les boutons de champ dans un graphique croisé dynamique.|
 |[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[route](/javascript/api/excel/excel.chartareaformat#border)|Représente le format de bordure de la zone de graphique, qui inclut couleur, style de style et épaisseur. En lecture seule.|
@@ -185,7 +185,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[name](/javascript/api/excel/excel.charttrendline#name)|Représente le nom de la courbe de tendance. Peut être configurée pour une valeur de chaîne, ou peut être configurée pour que la valeur null représente les valeurs automatiques. La valeur renvoyée est toujours une chaîne.|
 ||[polynomialOrder](/javascript/api/excel/excel.charttrendline#polynomialorder)|Représente l’ordre d’une courbe de tendance de graphique. Applicable uniquement à la courbe de tendance avec le type polynomial.|
 ||[format](/javascript/api/excel/excel.charttrendline#format)|Représente la mise en forme de courbe de tendance de graphique.|
-||[labellisé](/javascript/api/excel/excel.charttrendline#label)|Représente l’étiquette d’une courbe de tendance de graphique.|
+||[étiquette](/javascript/api/excel/excel.charttrendline#label)|Représente l’étiquette d’une courbe de tendance de graphique.|
 ||[showEquation](/javascript/api/excel/excel.charttrendline#showequation)|Vrai si l’équation de la courbe de tendance est affichée sur le graphique.|
 ||[showRSquared](/javascript/api/excel/excel.charttrendline#showrsquared)|Vrai si le coefficient de détermination de la courbe de tendance est affiché sur le graphique.|
 ||[type](/javascript/api/excel/excel.charttrendline#type)|Représente le type de courbe de tendance de graphique.|
@@ -210,7 +210,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[comments](/javascript/api/excel/excel.documentproperties#comments)|Obtient ou définit les commentaires du classeur.|
 ||[company](/javascript/api/excel/excel.documentproperties#company)|Obtient ou définit la compagnie du classeur.|
 ||[Mots clés](/javascript/api/excel/excel.documentproperties#keywords)|Obtient ou définit les mots clés du classeur.|
-||[dirigeant](/javascript/api/excel/excel.documentproperties#manager)|Obtient ou définit le responsable du classeur.|
+||[manager](/javascript/api/excel/excel.documentproperties#manager)|Obtient ou définit le responsable du classeur.|
 ||[creationDate](/javascript/api/excel/excel.documentproperties#creationdate)|Obtient la date de création du classeur. En lecture seule.|
 ||[personnalisé](/javascript/api/excel/excel.documentproperties#custom)|Obtient la collection de propriétés personnalisées du classeur. En lecture seule.|
 ||[lastAuthor](/javascript/api/excel/excel.documentproperties#lastauthor)|Obtient ou définit le dernier auteur du classeur. En lecture seule.|
@@ -264,7 +264,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 |[StyleCollection](/javascript/api/excel/excel.stylecollection)|[add(name: string)](/javascript/api/excel/excel.stylecollection#add-name-)|Ajoute un nouveau style à la collection.|
 ||[getItem(name: string)](/javascript/api/excel/excel.stylecollection#getitem-name-)|Obtient un style par nom.|
 ||[items](/javascript/api/excel/excel.stylecollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
-|[Table](/javascript/api/excel/excel.table)|[onChanged](/javascript/api/excel/excel.table#onchanged)|Survient lorsque les données des cellules changent sur une table spécifique.|
+|[Tableau](/javascript/api/excel/excel.table)|[onChanged](/javascript/api/excel/excel.table#onchanged)|Survient lorsque les données des cellules changent sur une table spécifique.|
 ||[onSelectionChanged](/javascript/api/excel/excel.table#onselectionchanged)|Se produit lorsque la sélection change sur une table spécifique.|
 |[TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs)|[adresse](/javascript/api/excel/excel.tablechangedeventargs#address)|Obtient l’adresse qui représente la zone modifiée d’un tableau figurant dans une feuille de calcul spécifique.|
 ||[changeType](/javascript/api/excel/excel.tablechangedeventargs#changetype)|Obtient le type de modification qui représente la manière dont est déclenché l’événement modifié. Pour plus d’informations, voir Excel. DataChangeType.|
@@ -280,7 +280,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[tableId](/javascript/api/excel/excel.tableselectionchangedeventargs#tableid)|Obtient l’id du tableau dans lequel la sélection est modifiée.|
 ||[type](/javascript/api/excel/excel.tableselectionchangedeventargs#type)|Obtient le type de l’événement. Pour plus d’informations, voir Excel.EventType. En lecture seule.|
 ||[worksheetId](/javascript/api/excel/excel.tableselectionchangedeventargs#worksheetid)|Obtient l’id de la feuille de calcul dans laquelle la sélection est modifiée.|
-|[Workbook](/javascript/api/excel/excel.workbook)|[getActiveCell()](/javascript/api/excel/excel.workbook#getactivecell--)|Obtient la cellule active du classeur.|
+|[Classeur](/javascript/api/excel/excel.workbook)|[getActiveCell()](/javascript/api/excel/excel.workbook#getactivecell--)|Obtient la cellule active du classeur.|
 ||[dataConnections](/javascript/api/excel/excel.workbook#dataconnections)|Représente toutes les connexions de données du classeur. En lecture seule.|
 ||[name](/javascript/api/excel/excel.workbook#name)|Obtient le nom du classeur. En lecture seule.|
 ||[properties](/javascript/api/excel/excel.workbook#properties)|Obtient les propriétés du classeur. En lecture seule.|
@@ -289,7 +289,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 |[Objetworkbookprotection](/javascript/api/excel/excel.workbookprotection)|[Protect (Password ?: String)](/javascript/api/excel/excel.workbookprotection#protect-password-)|Protège un classeur. Échoue si le classeur est protégé.|
 ||[sécurisé](/javascript/api/excel/excel.workbookprotection#protected)|Indique si le classeur est protégé. En lecture seule.|
 ||[Unprotect (Password ?: String)](/javascript/api/excel/excel.workbookprotection#unprotect-password-)|Annule la protection un classeur.|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[Copy (positionType ?: Excel. WorksheetPositionType, relativeTo ?: Excel. Worksheet)](/javascript/api/excel/excel.worksheet#copy-positiontype--relativeto-)|Copie une feuille de calcul et la place à la position spécifiée. Renvoie la feuille de calcul copiée.|
+|[Feuille de calcul](/javascript/api/excel/excel.worksheet)|[Copy (positionType ?: Excel. WorksheetPositionType, relativeTo ?: Excel. Worksheet)](/javascript/api/excel/excel.worksheet#copy-positiontype--relativeto-)|Copie une feuille de calcul et la place à la position spécifiée. Renvoie la feuille de calcul copiée.|
 ||[getRangeByIndexes (startRow : nombre, ColonneDébut : nombre, rowCount : nombre, columnCount : nombre)](/javascript/api/excel/excel.worksheet#getrangebyindexes-startrow--startcolumn--rowcount--columncount-)|Obtient l’objet plage commençant à un index de ligne et de colonne particulier et couvrant un certain nombre de lignes et de colonnes.|
 ||[freezePanes](/javascript/api/excel/excel.worksheet#freezepanes)|Obtient un objet qui peut être utilisé pour manipuler les volets figés de la feuille de calcul. En lecture seule.|
 ||[onActivated](/javascript/api/excel/excel.worksheet#onactivated)|Se produit lorsque la feuille de calcul est activée.|
@@ -336,5 +336,5 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Documentation référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.7)
+- [Documentation référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.7&preserve-view=true)
 - [Ensembles de conditions requises de l’API JavaScript pour Excel](./excel-api-requirement-sets.md)

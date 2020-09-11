@@ -3,12 +3,12 @@ title: Gestion des erreurs
 description: En savoir plus sur la logique de gestion des erreurs de l’API JavaScript Excel pour prendre en compte les erreurs d’exécution.
 ms.date: 06/25/2020
 localization_priority: Normal
-ms.openlocfilehash: 189c92a4e960c8f9f1668f67f10472fdcdf84868
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: cb06ab890fc10afd327bde0eb708ff97fabbcdca
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408452"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430554"
 ---
 # <a name="error-handling"></a>Gestion des erreurs
 
@@ -77,4 +77,4 @@ Le tableau suivant contient la liste des erreurs que l’API peut renvoyer.
 ## <a name="see-also"></a>Voir aussi
 
 - [Modèle objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
-- [Objet OfficeExtension.Error (API JavaScript pour Excel)](/javascript/api/office/officeextension.error?view=excel-js-preview)
+- [Objet OfficeExtension.Error (API JavaScript pour Excel)](/javascript/api/office/officeextension.error?view=excel-js-preview&preserve-view=true)

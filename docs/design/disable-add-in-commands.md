@@ -3,12 +3,12 @@ title: Commandes Activé et Désactivé pour les compléments
 description: Découvrez la modification de l'état Activé ou Désactivé des boutons de rubans et des éléments de menu personnalisés dans votre complément web Office.
 ms.date: 08/26/2020
 localization_priority: Normal
-ms.openlocfilehash: 54bfa06a3acfbea561d20a1b327f093429d725fc
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: fac62b20dc67db591ba2de73f96526b8a3dfdf9e
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292973"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430414"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>Commandes Activé et Désactivé pour les compléments
 
@@ -23,7 +23,7 @@ Vous pouvez également spécifier si la commande est activée ou désactivée lo
 
 ## <a name="office-application-and-platform-support-only"></a>Prise en charge de l’application et de la plateforme Office uniquement
 
-Les API décrites dans cet article sont disponibles uniquement dans Excel et uniquement sur Office sur Windows et Office sur Mac.
+Les API décrites dans cet article sont disponibles uniquement dans Excel, et uniquement dans Office sous Windows et Mac.
 
 ### <a name="test-for-platform-support-with-requirement-sets"></a>Effectuez un test pour la prise en charge des plateformes avec les ensembles de conditions requises
 
@@ -77,7 +77,7 @@ Les commandes de complément sont activées par défaut au démarrage de l’app
 Les principales étapes pour modifier l’état activé d’une commande de complément sont les suivantes :
 
 1. Créez un objet [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) qui (1) spécifie la commande et son onglet parent, selon leur ID, comme spécifié dans le manifeste. et (2) indique l’état activé ou désactivé de la commande.
-2. Transmettez l’objet **RibbonUpdaterData** à la méthode [Office.ribbon.requestUpdate ()](/javascript/api/office/office.ribbon?view=common-js#requestupdate-input-).
+2. Transmettez l’objet **RibbonUpdaterData** à la méthode [Office.ribbon.requestUpdate ()](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-).
 
 Voici un exemple simple. Veuillez noter que « MyButton » et « OfficeAddinTab1 » sont copiés à partir du manifeste.
 
@@ -204,7 +204,7 @@ function disableChartFormat() {
 
 ## <a name="test-for-platform-support-with-requirement-sets"></a>Effectuez un test pour la prise en charge des plateformes avec les ensembles de conditions requises
 
-Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une application Office prend en charge les API dont un complément a besoin. Pour plus d’informations, consultez la rubrique [versions d’Office et ensembles de conditions requises](../develop/office-versions-and-requirement-sets.md).
+Les ensembles de conditions requises sont des groupes nommés des membres de l’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si une application Office prend en charge les API requises par un complément. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../develop/office-versions-and-requirement-sets.md).
 
 Les API activer/désactiver nécessitent la prise en charge de l’ensemble de conditions requises suivant :
 

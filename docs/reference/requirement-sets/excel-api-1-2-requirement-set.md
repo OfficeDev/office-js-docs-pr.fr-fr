@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1,2
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 7404437569ba69851376fc7d5df76a6465468e1e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: e55c9dbee09228130b86c76535bb5bf8ef6666c1
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611441"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430911"
 ---
 # <a name="whats-new-in-excel-javascript-api-12"></a>Nouveautés de l’API JavaScript 1.2 pour Excel
 
@@ -17,7 +17,7 @@ ExcelApi 1,2 Ajout de la prise en charge du filtrage de table et de l’accès a
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les API dans l’ensemble de conditions requises de l’API JavaScript pour Excel 1,2. Pour afficher la documentation de référence de l’API pour toutes les API prises en charge par l’ensemble de conditions requises de l’API JavaScript pour Excel 1,2 ou antérieure, voir [API Excel dans l’ensemble de conditions requises 1,2 ou version antérieure](/javascript/api/excel?view=excel-js-1.2).
+Le tableau suivant répertorie les API dans l’ensemble de conditions requises de l’API JavaScript pour Excel 1,2. Pour afficher la documentation de référence de l’API pour toutes les API prises en charge par l’ensemble de conditions requises de l’API JavaScript pour Excel 1,2 ou antérieure, voir [API Excel dans l’ensemble de conditions requises 1,2 ou version antérieure](/javascript/api/excel?view=excel-js-1.2&preserve-view=true).
 
 | Class | Champs | Description |
 |:---|:---|:---|
@@ -29,9 +29,9 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[Stopp](/javascript/api/excel/excel.bindingselectionchangedeventargs#rowcount)|Obtient le nombre de lignes sélectionnées.|
 ||[startColumn](/javascript/api/excel/excel.bindingselectionchangedeventargs#startcolumn)|Obtient l’index de la première colonne de la sélection (de base zéro).|
 ||[startRow](/javascript/api/excel/excel.bindingselectionchangedeventargs#startrow)|Obtient l’index de la première ligne de la sélection (de base zéro).|
-|[Chart](/javascript/api/excel/excel.chart)|[getImage (largeur ?: nombre, hauteur ?: nombre, fittingMode ?: Excel. ImageFittingMode)](/javascript/api/excel/excel.chart#getimage-width--height--fittingmode-)|Affiche le graphique sous forme d’image codée en Base64 ajustée aux dimensions spécifiées.|
+|[Graphique](/javascript/api/excel/excel.chart)|[getImage (largeur ?: nombre, hauteur ?: nombre, fittingMode ?: Excel. ImageFittingMode)](/javascript/api/excel/excel.chart#getimage-width--height--fittingmode-)|Affiche le graphique sous forme d’image codée en Base64 ajustée aux dimensions spécifiées.|
 ||[worksheet](/javascript/api/excel/excel.chart#worksheet)|Feuille de calcul contenant le graphique actuel. En lecture seule.|
-|[Filtre](/javascript/api/excel/excel.filter)|[Apply (Criteria : Excel. FilterCriteria)](/javascript/api/excel/excel.filter#apply-criteria-)|Appliquer les critères de filtre donnés à la colonne indiquée.|
+|[Filter](/javascript/api/excel/excel.filter)|[Apply (Criteria : Excel. FilterCriteria)](/javascript/api/excel/excel.filter#apply-criteria-)|Appliquer les critères de filtre donnés à la colonne indiquée.|
 ||[applyBottomItemsFilter(count: number)](/javascript/api/excel/excel.filter#applybottomitemsfilter-count-)|Appliquer un filtre « Élément inférieur » à la colonne pour le nombre d’éléments donné.|
 ||[applyBottomPercentFilter(percent: number)](/javascript/api/excel/excel.filter#applybottompercentfilter-percent-)|Appliquer un filtre « Pourcentage inférieur » à la colonne pour le pourcentage d’éléments donné.|
 ||[applyCellColorFilter(color: string)](/javascript/api/excel/excel.filter#applycellcolorfilter-color-)|Appliquer un filtre « Couleur de cellule » à la colonne pour la couleur donnée.|
@@ -50,7 +50,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[dynamicCriteria](/javascript/api/excel/excel.filtercriteria#dynamiccriteria)|Critères dynamiques de l’ensemble Excel.DynamicFilterCriteria à appliquer à cette colonne. Utilisé avec un filtrage « Dynamic ».|
 ||[filterOn](/javascript/api/excel/excel.filtercriteria#filteron)|Propriété utilisée par le filtre pour déterminer si les valeurs doivent rester visibles.|
 ||[icon](/javascript/api/excel/excel.filtercriteria#icon)|Icône utilisée pour filtrer des cellules. Utilisé avec le filtrage « Icon ».|
-||[is](/javascript/api/excel/excel.filtercriteria#operator)|Opérateur utilisé pour combiner les critères 1 et 2 lorsque vous utilisez le filtrage « Custom ».|
+||[opérateur](/javascript/api/excel/excel.filtercriteria#operator)|Opérateur utilisé pour combiner les critères 1 et 2 lorsque vous utilisez le filtrage « Custom ».|
 ||[values](/javascript/api/excel/excel.filtercriteria#values)|Valeurs à utiliser pour le filtrage « Values ».|
 |[FilterDatetime](/javascript/api/excel/excel.filterdatetime)|[date](/javascript/api/excel/excel.filterdatetime#date)|Date au format ISO8601 utilisée pour filtrer des données.|
 ||[specificity](/javascript/api/excel/excel.filterdatetime#specificity)|Utilisation de la date pour conserver des données. Par exemple, si la date est 2005-04-02 et la spécificité est définie sur « mois », le filtre conservera toutes les lignes dont la date correspond au mois d’avril 2009.|
@@ -517,7 +517,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[icon](/javascript/api/excel/excel.sortfield#icon)|Représente l’icône ciblée par la condition si le tri est appliqué à l’icône de la cellule.|
 ||[key](/javascript/api/excel/excel.sortfield#key)|Colonne (ou ligne, selon l’orientation du tri) ciblée par la condition. Représentée sous forme d’un décalage par rapport à la première colonne (ou ligne).|
 ||[Sort](/javascript/api/excel/excel.sortfield#sorton)|Type de tri de cette condition.|
-|[Table](/javascript/api/excel/excel.table)|[clearFilters()](/javascript/api/excel/excel.table#clearfilters--)|Supprime tous les filtres appliqués actuellement sur le tableau.|
+|[Tableau](/javascript/api/excel/excel.table)|[clearFilters()](/javascript/api/excel/excel.table#clearfilters--)|Supprime tous les filtres appliqués actuellement sur le tableau.|
 ||[convertToRange ()](/javascript/api/excel/excel.table#converttorange--)|Convertit le tableau en plage normale de cellules. Toutes les données sont conservées.|
 ||[sort](/javascript/api/excel/excel.table#sort)|Représente le tri du tableau. En lecture seule.|
 ||[worksheet](/javascript/api/excel/excel.table#worksheet)|Feuille de calcul contenant le tableau actif. En lecture seule.|
@@ -559,9 +559,9 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 |[ThreeTrianglesSet](/javascript/api/excel/excel.threetrianglesset)|[greenUpTriangle](/javascript/api/excel/excel.threetrianglesset#greenuptriangle)||
 ||[redDownTriangle](/javascript/api/excel/excel.threetrianglesset#reddowntriangle)||
 ||[yellowDash](/javascript/api/excel/excel.threetrianglesset#yellowdash)||
-|[Workbook](/javascript/api/excel/excel.workbook)|[fonctionne](/javascript/api/excel/excel.workbook#functions)|Représente une collection de fonctions de feuille de calcul qui peuvent être utilisées pour le calcul. En lecture seule.|
+|[Classeur](/javascript/api/excel/excel.workbook)|[fonctionne](/javascript/api/excel/excel.workbook#functions)|Représente une collection de fonctions de feuille de calcul qui peuvent être utilisées pour le calcul. En lecture seule.|
 ||[onSelectionChanged](/javascript/api/excel/excel.workbook#onselectionchanged)|Se produit quand la sélection change dans le document.|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[getUsedRange (valuesOnly ?: booléen)](/javascript/api/excel/excel.worksheet#getusedrange-valuesonly-)|La plage utilisée est la plus petite plage qui englobe toutes les cellules auxquelles une valeur ou un format est affecté. Si la feuille de calcul entière est vide, cette fonction renvoie la cellule supérieure gauche (autrement dit, elle ne génère *pas* d’erreur).|
+|[Feuille de calcul](/javascript/api/excel/excel.worksheet)|[getUsedRange (valuesOnly ?: booléen)](/javascript/api/excel/excel.worksheet#getusedrange-valuesonly-)|La plage utilisée est la plus petite plage qui englobe toutes les cellules auxquelles une valeur ou un format est affecté. Si la feuille de calcul entière est vide, cette fonction renvoie la cellule supérieure gauche (autrement dit, elle ne génère *pas* d’erreur).|
 ||[protection](/javascript/api/excel/excel.worksheet#protection)|Renvoie un objet de protection de feuille pour une feuille de calcul. En lecture seule.|
 |[WorksheetProtection](/javascript/api/excel/excel.worksheetprotection)|[Protect (options ?: Excel. WorksheetProtectionOptions, password ?: String)](/javascript/api/excel/excel.worksheetprotection#protect-options--password-)|Protège une feuille de calcul. Échoue si la feuille de calcul a déjà été protégée.|
 ||[options](/javascript/api/excel/excel.worksheetprotection#options)|Options de protection de feuille. En lecture seule.|
@@ -580,5 +580,5 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Documentation référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.2)
+- [Documentation référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.2&preserve-view=true)
 - [Ensembles de conditions requises de l’API JavaScript pour Excel](./excel-api-requirement-sets.md)

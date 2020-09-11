@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises WordApi 1,1
 ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 9f7efdd0ce8f67a05d8197ec3005b2d6e9049409
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: ad1ec8b226bc958ed1be6e233a070108612661ad
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611308"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431506"
 ---
 # <a name="whats-new-in-word-javascript-api-11"></a>Nouveautés de l’API JavaScript pour Word 1,1
 
@@ -17,7 +17,7 @@ WordApi 1,1 est le premier ensemble de conditions requises de l’API JavaScript
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les API dans l’ensemble de conditions requises de l’API JavaScript pour Word 1,1. Pour afficher la documentation de référence de l’API pour toutes les API prises en charge par l’API JavaScript pour Word, ensemble de conditions requises 1,1, voir [API Word dans l’ensemble de conditions requises 1,1](/javascript/api/word?view=word-js-1.1).
+Le tableau suivant répertorie les API dans l’ensemble de conditions requises de l’API JavaScript pour Word 1,1. Pour afficher la documentation de référence de l’API pour toutes les API prises en charge par l’API JavaScript pour Word, ensemble de conditions requises 1,1, voir [API Word dans l’ensemble de conditions requises 1,1](/javascript/api/word?view=word-js-1.1&preserve-view=true).
 
 | Class | Champs | Description |
 |:---|:---|:---|
@@ -113,7 +113,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[insertHtml (HTML : chaîne, insertLocation : Word. InsertLocation)](/javascript/api/word/word.paragraph#inserthtml-html--insertlocation-)|Insère du code HTML dans le paragraphe à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
 ||[insertInlinePictureFromBase64 (base64EncodedImage : chaîne, insertLocation : Word. InsertLocation)](/javascript/api/word/word.paragraph#insertinlinepicturefrombase64-base64encodedimage--insertlocation-)|Insère une image dans le paragraphe à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
 ||[insertOoxml (OOXML : chaîne, insertLocation : Word. InsertLocation)](/javascript/api/word/word.paragraph#insertooxml-ooxml--insertlocation-)|Insère OOXML dans le paragraphe à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
-||[insertParagraph (paragraphText : chaîne, insertLocation : Word. InsertLocation)](/javascript/api/word/word.paragraph#insertparagraph-paragraphtext--insertlocation-)|Insère un paragraphe à l’emplacement spécifié. La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).|
+||[insertParagraph (paragraphText : chaîne, insertLocation : Word. InsertLocation)](/javascript/api/word/word.paragraph#insertparagraph-paragraphtext--insertlocation-)|Insère un paragraphe à l’emplacement spécifié. La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).|
 ||[insertText (Text : chaîne, insertLocation : Word. InsertLocation)](/javascript/api/word/word.paragraph#inserttext-text--insertlocation-)|Insère du texte dans le paragraphe à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
 ||[leftIndent](/javascript/api/word/word.paragraph#leftindent)|Obtient ou définit la valeur de retrait à gauche, en points, pour le paragraphe.|
 ||[lineSpacing](/javascript/api/word/word.paragraph#linespacing)|Obtient ou définit l’interligne, en points, pour le paragraphe spécifié. Dans l’interface utilisateur de Word, cette valeur est divisée par 12.|
@@ -141,7 +141,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[insertFileFromBase64 (base64File : chaîne, insertLocation : Word. InsertLocation)](/javascript/api/word/word.range#insertfilefrombase64-base64file--insertlocation-)|Insère un document à l’emplacement spécifié. La valeur insertLocation peut être « Replace », « Start », « end », « Before » ou « after ».|
 ||[insertHtml (HTML : chaîne, insertLocation : Word. InsertLocation)](/javascript/api/word/word.range#inserthtml-html--insertlocation-)|Insère du code HTML à l’emplacement spécifié. La valeur insertLocation peut être « Replace », « Start », « end », « Before » ou « after ».|
 ||[insertOoxml (OOXML : chaîne, insertLocation : Word. InsertLocation)](/javascript/api/word/word.range#insertooxml-ooxml--insertlocation-)|Insère du code OOXML à l’emplacement spécifié.  La valeur insertLocation peut être « Replace », « Start », « end », « Before » ou « after ».|
-||[insertParagraph (paragraphText : chaîne, insertLocation : Word. InsertLocation)](/javascript/api/word/word.range#insertparagraph-paragraphtext--insertlocation-)|Insère un paragraphe à l’emplacement spécifié. La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).|
+||[insertParagraph (paragraphText : chaîne, insertLocation : Word. InsertLocation)](/javascript/api/word/word.range#insertparagraph-paragraphtext--insertlocation-)|Insère un paragraphe à l’emplacement spécifié. La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).|
 ||[insertText (Text : chaîne, insertLocation : Word. InsertLocation)](/javascript/api/word/word.range#inserttext-text--insertlocation-)|Insère du texte à l’emplacement spécifié. La valeur insertLocation peut être « Replace », « Start », « end », « Before » ou « after ».|
 ||[contentControls](/javascript/api/word/word.range#contentcontrols)|Obtient la collection d’objets de contrôle de contenu dans la plage. En lecture seule.|
 ||[police](/javascript/api/word/word.range#font)|Obtient le format de texte de la plage. Utilisez cette propriété pour obtenir et définir le nom de la police, la taille, la couleur et d’autres propriétés. En lecture seule.|

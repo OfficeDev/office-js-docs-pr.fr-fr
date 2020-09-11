@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises pour ExcelApiOnlin
 ms.date: 05/06/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f4a39406328605e11d8108ddee454c339bf3919f
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: aa497ff97533ff3a414905547a949fa8430c3efe
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294240"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430813"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>Ensemble de conditions requises de l’API JavaScript pour Excel en ligne uniquement
 
@@ -54,6 +54,6 @@ Les API suivantes sont actuellement disponibles pour Excel sur le Web dans le ca
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Documentation référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-online)
+- [Documentation référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-online&preserve-view=true)
 - [Version d’évaluation API JavaScript Excel](./excel-preview-apis.md)
 - [Ensembles de conditions requises de l’API JavaScript pour Excel](./excel-api-requirement-sets.md)

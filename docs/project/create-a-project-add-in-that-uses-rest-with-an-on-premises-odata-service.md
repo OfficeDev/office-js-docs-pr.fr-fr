@@ -3,12 +3,12 @@ title: Créer un complément Project qui utilise REST avec un service OData Proj
 description: Découvrez comment créer un complément du volet Office pour Project Professional 2013 qui compare les données de coût et de travail du projet actif avec les moyennes de tous les projets de l’instance Project Web App actuelle.
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: ca5c33815b4f47ba8aa88625725b3b235853c7fb
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 17325b9a59c502d5d7331702584292579b36dc50
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611896"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431198"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>Créer un complément Project qui utilise REST avec un service OData Project Server local
 
@@ -101,7 +101,7 @@ Le dossier **AddIn** (voir la capture d’écran suivante) contient le fichier 
 
 ![Affichage des fichiers de projet web dans l’Explorateur de solutions](../images/pj15-hello-project-o-data-initial-solution-explorer.png)
 
-Le manifeste pour le projet **HelloProjectOData** est le fichier HelloProjectOData. Xml. Vous pouvez éventuellement modifier le manifeste pour ajouter une description du complément, une référence à une icône, des informations pour des langues supplémentaires et d’autres paramètres. La procédure 3 modifie simplement le nom d’affichage et la description du complément, puis ajoute une icône.
+Le manifeste du projet **HelloProjectOData** est le fichier HelloProjectOData.xml. Vous pouvez éventuellement modifier le manifeste pour ajouter une description du complément, une référence à une icône, des informations pour des langues supplémentaires et d’autres paramètres. La procédure 3 modifie simplement le nom d’affichage et la description du complément, puis ajoute une icône.
 
 Pour plus d’informations sur le manifeste, reportez-vous à la rubrique [Manifeste XML des compléments Office](../develop/add-in-manifests.md) et [Informations de référence sur le schéma des manifestes des applications pour Office (version 1.1)](../develop/add-in-manifests.md#see-also).
 
@@ -125,7 +125,7 @@ Les étapes suivantes montrent comment ajouter un fichier d’icône à la solut
 
     ![Icône de l’application HelloProjectOData](../images/pj15-hello-project-data-new-icon.jpg)
 
-3. Dans le manifeste HelloProjectOData. xml, ajoutez un élément **IconUrl** sous l’élément **Description** , où la valeur de l’URL de l’icône est le chemin d’accès relatif au fichier d’icône 32x32. Par exemple, ajoutez la ligne suivante : **<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />**. Le fichier manifeste HelloProjectOData. xml contient désormais les éléments suivants (votre valeur **ID** sera différente) :
+3. Dans le manifeste HelloProjectOData.xml, ajoutez un élément **IconUrl** sous l’élément **Description** , où la valeur de l’URL de l’icône est le chemin d’accès relatif au fichier d’icône 32x32. Par exemple, ajoutez la ligne suivante : **<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />**. Le fichier manifeste HelloProjectOData.xml contient désormais les éléments suivants (votre valeur **ID** sera différente) :
 
     ```XML
     <?xml version="1.0" encoding="UTF-8"?>
@@ -171,16 +171,16 @@ Le volet Office affiche le nom complet du complément en haut, qui est la valeur
 
 ### <a name="procedure-4-to-create-the-html-content"></a>Procédure 4. Pour créer du contenu HTML
 
-1. Dans l’élément **Head** du fichier Home. html, ajoutez tous les éléments de **lien** supplémentaires pour les fichiers CSS utilisés par votre complément. Le modèle de projet Visual Studio inclut un lien pour le fichier App.css que vous pouvez utiliser pour des styles CSS personnalisés.
+1. Dans l’élément **Head** du fichier Home.html, ajoutez des éléments de **liens** supplémentaires pour les fichiers CSS utilisés par votre complément. Le modèle de projet Visual Studio inclut un lien pour le fichier App.css que vous pouvez utiliser pour des styles CSS personnalisés.
 
-2. Ajoutez des éléments **script** supplémentaires pour les bibliothèques JavaScript utilisées par votre complément. Le modèle de projet inclut des liens pour les fichiers jQuery- _[version]_. js, Office. js et MicrosoftAjax. js dans le dossier **scripts** .
+2. Ajoutez des éléments **script** supplémentaires pour les bibliothèques JavaScript utilisées par votre complément. Le modèle de projet inclut des liens pour les fichiers jQuery- _[version]_. js, office.js et MicrosoftAjax.js dans le dossier **scripts** .
 
     > [!NOTE]
     > Avant de déployer le complément, remplacez la référence à office.js et celle à jQuery par la référence au réseau de distribution de contenu. Cette dernière permet d’accéder à la version la plus récente et d’obtenir de meilleures performances.
 
-    Le complément **HelloProjectOData** utilise également le fichier SurfaceErrors. js, qui affiche les erreurs dans un message contextuel. Vous pouvez copier le code à partir de la section _programmation fiable_ de la section [créer votre premier complément du volet Office pour le projet 2013 à l’aide d’un éditeur de texte](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md), puis ajouter un fichier SurfaceErrors. js dans le dossier **Scripts\Office** du projet **HelloProjectODataWeb** .
+    Le complément **HelloProjectOData** utilise également le fichier SurfaceErrors.js, qui affiche les erreurs dans un message contextuel. Vous pouvez copier le code à partir de la section _programmation fiable_ de la section [créer votre premier complément du volet Office pour le projet 2013 à l’aide d’un éditeur de texte](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md), puis ajouter un fichier SurfaceErrors.js dans le dossier **Scripts\Office** du projet **HelloProjectODataWeb** .
 
-    Voici le code HTML mis à jour pour l’élément **Head** , avec la ligne supplémentaire pour le fichier SurfaceErrors. js :
+    Voici le code HTML mis à jour pour l’élément **Head** , avec la ligne supplémentaire pour le fichier SurfaceErrors.js :
 
     ```HTML
     <!DOCTYPE html>
@@ -218,7 +218,7 @@ Le volet Office affiche le nom complet du complément en haut, qui est la valeur
 
 3. Dans l’élément **Body** , supprimez le code existant du modèle, puis ajoutez le code de l’interface utilisateur. Si un élément doit être rempli avec des données ou manipulé par une instruction jQuery, l’élément doit inclure un attribut  **id** unique. Dans le code suivant, les attributs **ID** pour les éléments **Button**, **span**et **TD** (définition de cellule de table) que les fonctions jQuery utilisent sont affichés en gras.
 
-   Le code HTML suivant ajoute une image graphique, pouvant être un logo d’entreprise. Vous pouvez utiliser un logo de votre choix ou copier le fichier NewLogo. png à partir du téléchargement du kit de développement logiciel (SDK) de Project 2013, puis utiliser l' **Explorateur de solutions** pour ajouter le fichier au `HelloProjectODataWeb\Images` dossier.
+   Le code HTML suivant ajoute une image graphique, pouvant être un logo d’entreprise. Vous pouvez utiliser un logo de votre choix ou copier le fichier NewLogo.png à partir du téléchargement du kit de développement logiciel (SDK) de Project 2013, puis utiliser l' **Explorateur de solutions** pour ajouter le fichier au `HelloProjectODataWeb\Images` dossier.
 
     ```HTML
     <body>
@@ -276,15 +276,15 @@ Le volet Office affiche le nom complet du complément en haut, qui est la valeur
 
 ## <a name="creating-the-javascript-code-for-the-add-in"></a>Création du code JavaScript pour le complément
 
-Le modèle pour un complément de volet de tâches de projet inclut le code d’initialisation par défaut qui est conçu pour illustrer les actions Get et set de base des données dans un document pour un complément Office 2013 standard. Étant donné que le projet 2013 ne prend pas en charge les actions qui écrivent dans le projet actif et que le complément **HelloProjectOData** n’utilise pas la `getSelectedDataAsync` méthode, vous pouvez supprimer le script dans la `Office.initialize` fonction et supprimer la `setData` fonction et la `getData` fonction dans le fichier HelloProjectOData. js par défaut.
+Le modèle pour un complément de volet de tâches de projet inclut le code d’initialisation par défaut qui est conçu pour illustrer les actions Get et set de base des données dans un document pour un complément Office 2013 standard. Étant donné que le projet 2013 ne prend pas en charge les actions qui écrivent dans le projet actif et que le complément **HelloProjectOData** n’utilise pas la `getSelectedDataAsync` méthode, vous pouvez supprimer le script dans la `Office.initialize` fonction et supprimer la `setData` fonction et la `getData` fonction dans le fichier HelloProjectOData.js par défaut.
 
 JavaScript comprend des constantes globales pour la requête REST et des variables globales qui sont utilisées dans plusieurs fonctions. Le bouton **obtenir le point de terminaison ProjectData** appelle la `setOdataUrl` fonction, qui initialise les variables globales et détermine si le projet est connecté à Project Web App.
 
-Le reste du fichier HelloProjectOData. js comprend deux fonctions : la `retrieveOData` fonction est appelée lorsque l’utilisateur sélectionne **comparer tous les projets**, et la `parseODataResult` fonction calcule les moyennes, puis remplit le tableau de comparaison avec les valeurs mises en forme pour la couleur et les unités.
+Le reste du fichier HelloProjectOData.js comprend deux fonctions : la `retrieveOData` fonction est appelée lorsque l’utilisateur sélectionne **comparer tous les projets**; la `parseODataResult` fonction calcule les moyennes, puis remplit la table de comparaison avec les valeurs mises en forme pour la couleur et les unités.
 
 ### <a name="procedure-5-to-create-the-javascript-code"></a>Procédure 5. Pour créer du code JavaScript
 
-1. Supprimez tout le code dans le fichier HelloProjectOData. js par défaut, puis ajoutez les variables globales et la `**` fonction Office. Initialize. Les noms de variable qui sont tous des majuscules signifient qu’il s’agit de constantes ; elles sont ensuite utilisées avec la variable **_pwa** pour créer la requête Rest dans cet exemple.
+1. Supprimez tout le code dans le fichier HelloProjectOData.js par défaut, puis ajoutez les variables globales et `**`Office.inifonction tialize'. Les noms de variable qui sont tous des majuscules signifient qu’il s’agit de constantes ; elles sont ensuite utilisées avec la variable **_pwa** pour créer la requête Rest dans cet exemple.
 
     ```js
     var PROJDATA = "/_api/ProjectData";
@@ -306,10 +306,10 @@ Le reste du fichier HelloProjectOData. js comprend deux fonctions : la `retriev
     }
     ```
 
-2. Ajouter `setOdataUrl` des fonctions connexes. La `setOdataUrl` fonction appelle `getProjectGuid` et `getDocumentUrl` Initialise les variables globales. Dans la [méthode getProjectFieldAsync](/javascript/api/office/office.document), la fonction anonyme pour le paramètre _callback_ active le bouton **comparer tous les projets** à l’aide de la `removeAttr` méthode dans la bibliothèque jQuery, puis affiche l’URL du service **ProjectData** . Si Project n’est pas connecté à Project Web App, la fonction génère une erreur, ce qui entraîne l’affichage d’un message d’erreur dans une fenêtre contextuelle. Le fichier SurfaceErrors. js inclut la `throwError` méthode.
+2. Ajouter `setOdataUrl` des fonctions connexes. La `setOdataUrl` fonction appelle `getProjectGuid` et `getDocumentUrl` Initialise les variables globales. Dans la [méthode getProjectFieldAsync](/javascript/api/office/office.document), la fonction anonyme pour le paramètre  _callback_ active le bouton **comparer tous les projets** à l’aide de la `removeAttr` méthode dans la bibliothèque jQuery, puis affiche l’URL du service **ProjectData** . Si Project n’est pas connecté à Project Web App, la fonction génère une erreur, ce qui entraîne l’affichage d’un message d’erreur dans une fenêtre contextuelle. Le fichier SurfaceErrors.js inclut la `throwError` méthode.
 
    > [!NOTE]
-   > Si vous exécutez Visual Studio sur l’ordinateur Project Server, utilisez le débogage **F5**, supprimez le commentaire de code après la ligne qui initialise la variable globale **_pwa**. Pour activer l’utilisation de la `ajax` méthode jQuery lors du débogage sur l’ordinateur Project Server, vous devez définir la `localhost` valeur de l’URL PWA. Si vous exécutez Visual Studio sur un ordinateur distant, l' `localhost` URL n’est pas obligatoire. Before you deploy the add-in, comment out that code.
+   > Si vous exécutez Visual Studio sur l’ordinateur Project Server, utilisez le débogage **F5**, supprimez le commentaire de code après la ligne qui initialise la variable globale **_pwa**. Pour activer l’utilisation de la `ajax` méthode jQuery lors du débogage sur l’ordinateur Project Server, vous devez définir la `localhost` valeur de l’URL PWA. Si vous exécutez Visual Studio sur un ordinateur distant, l'  `localhost` URL n’est pas obligatoire. Before you deploy the add-in, comment out that code.
 
     ```js
     function setOdataUrl() {
@@ -372,7 +372,7 @@ Le reste du fichier HelloProjectOData. js comprend deux fonctions : la `retriev
    > [!NOTE]
    > Le code suivant fonctionne avec une installation locale de Project Server 2013. Pour Project sur le web, vous pouvez utiliser OAuth pour l’authentification basée sur le jeton. Pour plus d’informations, voir [Résolutions des limites de stratégie d’origine identique dans les compléments Office](../develop/addressing-same-origin-policy-limitations.md).
 
-   Dans l' `ajax` appel, vous pouvez utiliser soit le paramètre _headers_ , soit le paramètre _beforeSend_ . Le paramètre _Complete_ est une fonction anonyme de sorte qu’elle se trouve dans la même étendue que les variables dans `retrieveOData` . La fonction pour le paramètre _Complete_ affiche les résultats dans le `odataText` contrôle et appelle également la `parseODataResult` méthode pour analyser et afficher la réponse JSON. Le paramètre _Error_ spécifie la `getProjectDataErrorHandler` fonction nommée, qui écrit un message d’erreur dans le `odataText` contrôle et utilise également la `throwError` méthode pour afficher un message contextuel.
+   Dans l' `ajax` appel, vous pouvez utiliser soit le paramètre _headers_ , soit le paramètre _beforeSend_ . Le paramètre _Complete_ est une fonction anonyme de sorte qu’elle se trouve dans la même étendue que les variables dans `retrieveOData` . La fonction pour le paramètre  _Complete_ affiche les résultats dans le `odataText` contrôle et appelle également la `parseODataResult` méthode pour analyser et afficher la réponse JSON. Le paramètre _Error_ spécifie la `getProjectDataErrorHandler` fonction nommée, qui écrit un message d’erreur dans le `odataText` contrôle et utilise également la `throwError` méthode pour afficher un message contextuel.
 
     ```js
     // Functions to get and parse the Project Server reporting data./
@@ -1111,7 +1111,7 @@ Si vous modifiez le complément **HelloProjectOData** pour une utilisation en pr
 
   `~/ProjectData/Projects()?skip= [numSkipped]&amp;$top=100&amp;$filter=[filter]&amp;$select=[field1,field2, ???????]`
 
-  For more information, see [OData System Query Options Using the REST Endpoint](/previous-versions/dynamicscrm-2015/developers-guide/gg309461(v=crm.7)). You can also use the [Set-SPProjectOdataConfiguration](/powershell/module/sharepoint-server/Set-SPProjectOdataConfiguration?view=sharepoint-ps) command in Windows PowerShell to override the default page size for a query of the **Projects** entity set (or any of the 33 entity sets). See [ProjectData - Project OData service reference](/previous-versions/office/project-odata/jj163015(v=office.15)).
+  For more information, see [OData System Query Options Using the REST Endpoint](/previous-versions/dynamicscrm-2015/developers-guide/gg309461(v=crm.7)). You can also use the [Set-SPProjectOdataConfiguration](/powershell/module/sharepoint-server/Set-SPProjectOdataConfiguration?view=sharepoint-ps&preserve-view=true) command in Windows PowerShell to override the default page size for a query of the **Projects** entity set (or any of the 33 entity sets). See [ProjectData - Project OData service reference](/previous-versions/office/project-odata/jj163015(v=office.15)).
 
 - Pour déployer le complément, voir [Publier votre complément Office](../publish/publish.md).
 

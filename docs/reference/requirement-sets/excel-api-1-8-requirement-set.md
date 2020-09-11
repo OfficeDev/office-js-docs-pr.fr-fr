@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1,8
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: e5d40df0ec9e6b5fb307f834c239c7fa895af42e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: ad8c67fddffeec7937b66d43fb58a8608d662be1
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611399"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430834"
 ---
 # <a name="whats-new-in-excel-javascript-api-18"></a>Nouveautés de l’API JavaScript pour Excel 1,8
 
@@ -33,14 +33,14 @@ Plus d’[événements](../../excel/excel-add-ins-events.md) ont été ajoutés 
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les API dans l’ensemble de conditions requises de l’API JavaScript pour Excel 1,8. Pour afficher la documentation de référence de l’API pour toutes les API prises en charge par l’ensemble de conditions requises de l’API JavaScript pour Excel 1,8 ou antérieure, voir [API Excel dans l’ensemble de conditions requises 1,8 ou version antérieure](/javascript/api/excel?view=excel-js-1.8).
+Le tableau suivant répertorie les API dans l’ensemble de conditions requises de l’API JavaScript pour Excel 1,8. Pour afficher la documentation de référence de l’API pour toutes les API prises en charge par l’ensemble de conditions requises de l’API JavaScript pour Excel 1,8 ou antérieure, voir [API Excel dans l’ensemble de conditions requises 1,8 ou version antérieure](/javascript/api/excel?view=excel-js-1.8&preserve-view=true).
 
 | Class | Champs | Description |
 |:---|:---|:---|
 |[BasicDataValidation](/javascript/api/excel/excel.basicdatavalidation)|[Formula1](/javascript/api/excel/excel.basicdatavalidation#formula1)|Spécifie l’opérande de droite lorsque la propriété Operator est définie sur un opérateur binaire tel que GreaterThan (l’opérande de gauche est la valeur que l’utilisateur tente d’entrer dans la cellule). Avec les opérateurs ternaires entre et NotBetween, spécifie l’opérande inférieur.|
 ||[Formula2](/javascript/api/excel/excel.basicdatavalidation#formula2)|Avec les opérateurs ternaires entre et NotBetween, spécifie l’opérande supérieur. N’est pas utilisé avec les opérateurs binaires, tels que GreaterThan.|
-||[is](/javascript/api/excel/excel.basicdatavalidation#operator)|L’opérateur à utiliser pour la validation des données.|
-|[Chart](/javascript/api/excel/excel.chart)|[categoryLabelLevel](/javascript/api/excel/excel.chart#categorylabellevel)|Cette propriété renvoie ou définit une constante d’énumération ChartCategoryLabelLevel faisant référence à|
+||[opérateur](/javascript/api/excel/excel.basicdatavalidation#operator)|L’opérateur à utiliser pour la validation des données.|
+|[Graphique](/javascript/api/excel/excel.chart)|[categoryLabelLevel](/javascript/api/excel/excel.chart#categorylabellevel)|Cette propriété renvoie ou définit une constante d’énumération ChartCategoryLabelLevel faisant référence à|
 ||[displayBlanksAs](/javascript/api/excel/excel.chart#displayblanksas)|Renvoie ou définit la façon dont les cellules vides sont tracées sur un graphique. Lecture/écriture.|
 ||[plotBy](/javascript/api/excel/excel.chart#plotby)|Renvoie ou spécifie la façon dont les colonnes ou les lignes sont utilisées comme séries de données sur le graphique. Lecture/écriture.|
 ||[PlotVisibleOnly,](/javascript/api/excel/excel.chart#plotvisibleonly)|Vrai si seules les cellules visibles sont tracées.Faux si les deux cellules visibles et masquées sont tracées. Lecture/écriture.|
@@ -129,7 +129,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[varyByCategories](/javascript/api/excel/excel.chartseries#varybycategories)|Vrai si Microsoft Excel affecte une couleur ou un motif différentes à chaque marqueur de données. Le graphique ne doit contenir qu’une seule série. Lecture/écriture.|
 |[ChartTrendline](/javascript/api/excel/excel.charttrendline)|[backwardPeriod](/javascript/api/excel/excel.charttrendline#backwardperiod)|Représente le nombre de points que la courbe de tendance étend en arrière.|
 ||[forwardPeriod](/javascript/api/excel/excel.charttrendline#forwardperiod)|Représente le nombre de points que la courbe de tendance étend en avant.|
-||[labellisé](/javascript/api/excel/excel.charttrendline#label)|Représente l’étiquette d’une courbe de tendance de graphique.|
+||[étiquette](/javascript/api/excel/excel.charttrendline#label)|Représente l’étiquette d’une courbe de tendance de graphique.|
 ||[showEquation](/javascript/api/excel/excel.charttrendline#showequation)|Vrai si l’équation de la courbe de tendance est affichée sur le graphique.|
 ||[showRSquared](/javascript/api/excel/excel.charttrendline#showrsquared)|Vrai si le coefficient de détermination de la courbe de tendance est affiché sur le graphique.|
 |[ChartTrendlineLabel](/javascript/api/excel/excel.charttrendlinelabel)|[Insertion automatique](/javascript/api/excel/excel.charttrendlinelabel#autotext)|Valeur booléenne représentant si l’étiquette de tendances génère automatiquement le texte approprié en fonction du contexte.|
@@ -179,13 +179,13 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 |[DataValidationRule](/javascript/api/excel/excel.datavalidationrule)|[personnalisé](/javascript/api/excel/excel.datavalidationrule#custom)|Critères de validation des données personnalisés.|
 ||[date](/javascript/api/excel/excel.datavalidationrule#date)|Critères de validation des données de date.|
 ||[fixe](/javascript/api/excel/excel.datavalidationrule#decimal)|Critères de validation des données décimales.|
-||[list](/javascript/api/excel/excel.datavalidationrule#list)|Critères de validation des données de liste.|
+||[liste](/javascript/api/excel/excel.datavalidationrule#list)|Critères de validation des données de liste.|
 ||[textLength](/javascript/api/excel/excel.datavalidationrule#textlength)|Critères de validation des données textLength.|
 ||[time](/javascript/api/excel/excel.datavalidationrule#time)|Critères de validation des données de temps.|
 ||[wholeNumber](/javascript/api/excel/excel.datavalidationrule#wholenumber)|Critères de validation des données WholeNumber.|
 |[Objetdatetimedatavalidation](/javascript/api/excel/excel.datetimedatavalidation)|[Formula1](/javascript/api/excel/excel.datetimedatavalidation#formula1)|Spécifie l’opérande de droite lorsque la propriété Operator est définie sur un opérateur binaire tel que GreaterThan (l’opérande de gauche est la valeur que l’utilisateur tente d’entrer dans la cellule). Avec les opérateurs ternaires entre et NotBetween, spécifie l’opérande inférieur.|
 ||[Formula2](/javascript/api/excel/excel.datetimedatavalidation#formula2)|Avec les opérateurs ternaires entre et NotBetween, spécifie l’opérande supérieur. N’est pas utilisé avec les opérateurs binaires, tels que GreaterThan.|
-||[is](/javascript/api/excel/excel.datetimedatavalidation#operator)|L’opérateur à utiliser pour la validation des données.|
+||[opérateur](/javascript/api/excel/excel.datetimedatavalidation#operator)|L’opérateur à utiliser pour la validation des données.|
 |[FilterPivotHierarchy](/javascript/api/excel/excel.filterpivothierarchy)|[enableMultipleFilterItems](/javascript/api/excel/excel.filterpivothierarchy#enablemultiplefilteritems)|Détermine si vous voulez autoriser plusieurs éléments de filtre.|
 ||[name](/javascript/api/excel/excel.filterpivothierarchy#name)|Nom du filterPivotHierarchy.|
 ||[position](/javascript/api/excel/excel.filterpivothierarchy#position)|Position du filterPivotHierarchy.|
@@ -272,11 +272,11 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[synthèse](/javascript/api/excel/excel.subtotals#sum)||
 ||[variante](/javascript/api/excel/excel.subtotals#variance)||
 ||[varianceP](/javascript/api/excel/excel.subtotals#variancep)||
-|[Table](/javascript/api/excel/excel.table)|[legacyId](/javascript/api/excel/excel.table#legacyid)|Renvoie un ID numérique.|
+|[Tableau](/javascript/api/excel/excel.table)|[legacyId](/javascript/api/excel/excel.table#legacyid)|Renvoie un ID numérique.|
 |[TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs)|[getRange(ctx: Excel.RequestContext)](/javascript/api/excel/excel.tablechangedeventargs#getrange-ctx-)|Obtient la plage qui représente la zone modifiée d’un tableau dans une feuille de calcul spécifique.|
 ||[getRangeOrNullObject(ctx: Excel.RequestContext)](/javascript/api/excel/excel.tablechangedeventargs#getrangeornullobject-ctx-)|Obtient la plage qui représente la zone modifiée d’un tableau dans une feuille de calcul spécifique. Il peut renvoyer un objet null.|
-|[Workbook](/javascript/api/excel/excel.workbook)|[readOnly](/javascript/api/excel/excel.workbook#readonly)|True si le classeur est ouvert en mode lecture seule. En lecture seule.|
-|[WorkbookCreated](/javascript/api/excel/excel.workbookcreated)||[Worksheet](/javascript/api/excel/excel.worksheet)|[onCalculated](/javascript/api/excel/excel.worksheet#oncalculated)|Se produit lors du calcul de la feuille de calcul.|
+|[Classeur](/javascript/api/excel/excel.workbook)|[readOnly](/javascript/api/excel/excel.workbook#readonly)|True si le classeur est ouvert en mode lecture seule. En lecture seule.|
+|[WorkbookCreated](/javascript/api/excel/excel.workbookcreated)||[Feuille de calcul](/javascript/api/excel/excel.worksheet)|[onCalculated](/javascript/api/excel/excel.worksheet#oncalculated)|Se produit lors du calcul de la feuille de calcul.|
 ||[showGridlines](/javascript/api/excel/excel.worksheet#showgridlines)|Obtient ou définit l’indicateur de quadrillage de la feuille de calcul.|
 ||[showHeadings](/javascript/api/excel/excel.worksheet#showheadings)|Obtient ou définit l’indicateur d’en-tête de la feuille de calcul.|
 |[WorksheetCalculatedEventArgs](/javascript/api/excel/excel.worksheetcalculatedeventargs)|[type](/javascript/api/excel/excel.worksheetcalculatedeventargs#type)|Obtient le type de l’événement. Pour plus d’informations, voir Excel.EventType.|
@@ -287,5 +287,5 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Documentation référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.8)
+- [Documentation référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.8&preserve-view=true)
 - [Ensembles de conditions requises de l’API JavaScript pour Excel](./excel-api-requirement-sets.md)

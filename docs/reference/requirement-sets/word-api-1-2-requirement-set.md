@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises WordApi 1,2
 ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 6fd2672462037d445c854bbc0c533c4dc5404b86
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: a71dc9b5954faaab7317d398d5e4453ecb979721
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611301"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430526"
 ---
 # <a name="whats-new-in-word-javascript-api-12"></a>Nouveautés de l’API JavaScript 1.2 pour Word
 
@@ -17,7 +17,7 @@ WordApi 1,2 Ajout de la prise en charge des images insérées.
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les API dans l’ensemble de conditions requises de l’API JavaScript pour Word 1,2. Pour afficher la documentation de référence de l’API pour toutes les API prises en charge par l’API JavaScript pour Word, ensemble de conditions requises 1,2 ou antérieure, voir [API Word dans l’ensemble de conditions requises 1,2 ou version antérieure](/javascript/api/word?view=word-js-1.2).
+Le tableau suivant répertorie les API dans l’ensemble de conditions requises de l’API JavaScript pour Word 1,2. Pour afficher la documentation de référence de l’API pour toutes les API prises en charge par l’API JavaScript pour Word, ensemble de conditions requises 1,2 ou antérieure, voir [API Word dans l’ensemble de conditions requises 1,2 ou version antérieure](/javascript/api/word?view=word-js-1.2&preserve-view=true).
 
 | Class | Champs | Description |
 |:---|:---|:---|
@@ -29,7 +29,7 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[insertHtml (HTML : chaîne, insertLocation : Word. InsertLocation)](/javascript/api/word/word.inlinepicture#inserthtml-html--insertlocation-)|Insère du code HTML à l’emplacement spécifié. La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).|
 ||[insertInlinePictureFromBase64 (base64EncodedImage : chaîne, insertLocation : Word. InsertLocation)](/javascript/api/word/word.inlinepicture#insertinlinepicturefrombase64-base64encodedimage--insertlocation-)|Insère une image insérée à l’emplacement spécifié. La valeur insertLocation peut être « Replace », « Before » ou « after ».|
 ||[insertOoxml (OOXML : chaîne, insertLocation : Word. InsertLocation)](/javascript/api/word/word.inlinepicture#insertooxml-ooxml--insertlocation-)|Insère du code OOXML à l’emplacement spécifié.  La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).|
-||[insertParagraph (paragraphText : chaîne, insertLocation : Word. InsertLocation)](/javascript/api/word/word.inlinepicture#insertparagraph-paragraphtext--insertlocation-)|Insère un paragraphe à l’emplacement spécifié. La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).|
+||[insertParagraph (paragraphText : chaîne, insertLocation : Word. InsertLocation)](/javascript/api/word/word.inlinepicture#insertparagraph-paragraphtext--insertlocation-)|Insère un paragraphe à l’emplacement spécifié. La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).|
 ||[insertText (Text : chaîne, insertLocation : Word. InsertLocation)](/javascript/api/word/word.inlinepicture#inserttext-text--insertlocation-)|Insère du texte à l’emplacement spécifié. La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).|
 ||[paragraph](/javascript/api/word/word.inlinepicture#paragraph)|Obtient le paragraphe parent qui contient l’image insérée. En lecture seule.|
 ||[Select (selectionMode ?: Word. SelectionMode)](/javascript/api/word/word.inlinepicture#select-selectionmode-)|Sélectionne l’image insérée. Word fait défiler le document jusqu’à accéder à la sélection.|
