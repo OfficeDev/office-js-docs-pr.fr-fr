@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: Les fonctionnalités et les API qui sont actuellement en préversion pour les compléments Outlook.
-ms.date: 09/02/2020
+ms.date: 09/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 24cad394f0f3ffb95a05a81ccb38ee4aa72a3797
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: c5663946a12eddf1f076a8656a6daecae9186919
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431065"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819832"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -307,20 +307,6 @@ Ajout d’un nouvel objet qui représente les données de session d’un éléme
 Ajout d’une nouvelle propriété pour gérer les données de session d’un élément en mode composition.
 
 **Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365)
-
-<br>
-
----
-
----
-
-### <a name="single-sign-on-sso"></a>Authentification unique (SSO)
-
-#### <a name="officeruntimeauthgetaccesstoken"></a>[OfficeRuntime.auth.getAccessToken](../../../develop/sso-in-office-add-ins.md#sso-api-reference)
-
-Ajout d’un accès à `getAccessToken`, qui permet aux compléments d’[obtenir un jeton d’accès](../../../outlook/authenticate-a-user-with-an-sso-token.md) pour l’API Microsoft Graph.
-
-**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur Mac (connecté à un abonnement Microsoft 365), Outlook sur le Web (moderne), Outlook sur le Web (classique)
 
 ## <a name="see-also"></a>Voir aussi
 

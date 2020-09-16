@@ -1,15 +1,15 @@
 ---
 title: Ensemble de conditions requises de l’API JavaScript pour Excel 1,11
-description: Détails sur l’ensemble de conditions requises ExcelApi 1,11
+description: Détails sur l’ensemble de conditions requises ExcelApi 1,11.
 ms.date: 05/06/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 72353b61925c05e6a9f1c3ff8a2c413f38d5693b
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 871d14beedd6c04239ca1a08222775a4e4fb293c
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431555"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819692"
 ---
 # <a name="whats-new-in-excel-javascript-api-111"></a>Nouveautés de l’API JavaScript pour Excel 1,11
 

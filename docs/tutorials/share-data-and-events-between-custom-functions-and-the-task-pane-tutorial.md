@@ -4,12 +4,12 @@ description: Découvrez comment partager des données et des événements entre 
 ms.date: 08/13/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: e4dfb8afc57dc9590d47d927d1f540431d9c8838
-ms.sourcegitcommit: 3efa932b70035dde922929d207896e1a6007f620
+ms.openlocfilehash: 02cd2269965019efb4b9ac9851103924e6c5cc2c
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "46757379"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819629"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office
 
@@ -17,7 +17,7 @@ Vous pouvez configurer votre complément Excel pour utiliser un runtime partagé
 
 Pour la plupart des scénarios de fonctions personnalisées, nous vous recommandons d’utiliser un runtime partagé, sauf si vous avez une raison particulière d’utiliser une fonction personnalisée (sans interface utilisateur).
 
-Ce didacticiel part du principe que vous avez l’habitude d’utiliser le générateur d’Office YÔ pour créer des projets de complément. Envisagez d’effectuer le [Didacticiel sur les fonctions Excel personnalisées](./excel-tutorial-create-custom-functions.md), si ce n’est déjà fait.
+Ce didacticiel part du principe que vous avez l’habitude d’utiliser le générateur d’Office YÔ pour créer des projets de complément. Envisagez d’effectuer le [Didacticiel sur les fonctions Excel personnalisées](excel-tutorial-create-custom-functions.md), si ce n’est déjà fait.
 
 ## <a name="create-the-add-in-project"></a>Création du projet de complément
 

@@ -1,15 +1,15 @@
 ---
 title: Ensemble de conditions requises de l’API JavaScript pour Excel en ligne uniquement
-description: Détails sur l’ensemble de conditions requises pour ExcelApiOnline
-ms.date: 05/06/2020
+description: Détails sur l’ensemble de conditions requises pour ExcelApiOnline.
+ms.date: 09/15/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: aa497ff97533ff3a414905547a949fa8430c3efe
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 29f5826ba2adbf18b79033b83254b046210015fe
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430813"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819804"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>Ensemble de conditions requises de l’API JavaScript pour Excel en ligne uniquement
 
@@ -40,20 +40,10 @@ Une fois que l’API se trouve dans un ensemble de conditions requises entre pla
 
 ## <a name="api-list"></a>Liste des API
 
-Les API suivantes sont actuellement disponibles pour Excel sur le Web dans le cadre de l' `ExcelApiOnline 1.1` ensemble de conditions requises.
-
-| Class | Champs | Description |
-|:---|:---|:---|
-|[ChartAxisTitle](/javascript/api/excel/excel.chartaxistitle)|[textOrientation](/javascript/api/excel/excel.chartaxistitle#textorientation)|Cette énumération spécifie l’angle auquel le texte est orienté pour le titre de l’axe du graphique. La valeur doit être un entier compris entre-90 et 90 ou l’entier 180 pour le texte orienté verticalement.|
-|[PivotTableScopedCollection](/javascript/api/excel/excel.pivottablescopedcollection)|[getCount()](/javascript/api/excel/excel.pivottablescopedcollection#getcount--)|Obtient le nombre de tableaux croisés dynamiques dans la collection.|
-||[getFirst()](/javascript/api/excel/excel.pivottablescopedcollection#getfirst--)|Obtient le premier tableau croisé dynamique de la collection. Les tableaux croisés dynamiques de la collection sont triés de haut en bas et de gauche à droite, de sorte que le tableau supérieur gauche est le premier tableau croisé dynamique de la collection.|
-||[getItem(key: string)](/javascript/api/excel/excel.pivottablescopedcollection#getitem-key-)|Obtient un tableau croisé dynamique par nom.|
-||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.pivottablescopedcollection#getitemornullobject-name-)|Extrait un tableau croisé dynamique par nom. Si le tableau croisé dynamique n’existe pas, renvoie un objet null.|
-||[items](/javascript/api/excel/excel.pivottablescopedcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
-|[Range](/javascript/api/excel/excel.range)|[getPivotTables (fullyContained ?: booléen)](/javascript/api/excel/excel.range#getpivottables-fullycontained-)|Obtient une collection d’étendues de tableaux croisés dynamiques qui se chevauchent avec la plage.|
+Il n’existe actuellement aucune API dans l' `ExcelApiOnline` ensemble de conditions requises. Toutes les API qui faisaient auparavant partie de cet ensemble ont été graduées en un ensemble de conditions requises et sont disponibles sur toutes les plateformes.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Documentation référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-online&preserve-view=true)
-- [Version d’évaluation API JavaScript Excel](./excel-preview-apis.md)
-- [Ensembles de conditions requises de l’API JavaScript pour Excel](./excel-api-requirement-sets.md)
+- [Version d’évaluation API JavaScript Excel](excel-preview-apis.md)
+- [Ensembles de conditions requises de l’API JavaScript pour Excel](excel-api-requirement-sets.md)

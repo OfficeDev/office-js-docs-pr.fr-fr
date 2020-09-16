@@ -3,12 +3,12 @@ ms.date: 04/29/2020
 description: Demander, flux de données et annuler la diffusion en continu de données externes à votre classeur avec des fonctions personnalisées dans Excel
 title: Recevoir et gérer des données à l’aide de fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: c53ad94c798f787447ab353201a245cd4f20d463
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: cd9a3eb3456cfd32d55d3caa6ccc36f2e05ed004
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44610460"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819510"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>Recevoir et gérer des données à l’aide de fonctions personnalisées
 
@@ -29,7 +29,7 @@ Si une fonction personnalisée récupère des données d’une source externe co
 
 Dans l’exemple de code suivant, la `webRequest` fonction accède à l’API « nombre de personnes dans l’espace contoso », qui effectue le suivi du nombre de personnes actuellement présentes sur la station internationale. La fonction renvoie une promesse JavaScript et utilise la récupération pour demander des informations à l’API. Les données obtenues sont transformées en JSON et la `names` propriété est convertie en chaîne, ce qui permet de résoudre la promesse.
 
-Lorsque vous développez vos propres fonctions, vous souhaitez peut-être effectuer une action si la requête Web ne se termine pas en temps voulu ou envisager de [regrouper plusieurs demandes API](./custom-functions-batching.md).
+Lorsque vous développez vos propres fonctions, vous souhaitez peut-être effectuer une action si la requête Web ne se termine pas en temps voulu ou envisager de [regrouper plusieurs demandes API](custom-functions-batching.md).
 
 ```JS
 /**

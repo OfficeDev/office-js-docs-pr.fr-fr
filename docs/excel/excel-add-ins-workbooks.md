@@ -3,12 +3,12 @@ title: Utiliser les classeurs utilisant l’API JavaScript Excel
 description: Exemples de code qui montrent comment effectuer des tâches courantes avec des classeurs ou des fonctionnalités au niveau de l’application à l’aide de l’API JavaScript pour Excel.
 ms.date: 08/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 1da664b5ebbc8bd44b1c4e558a48997291e8967e
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: f0af6cc889a110406d987664575a6f3d1b30aa7b
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408697"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819503"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Utiliser les classeurs utilisant l’API JavaScript Excel
 
@@ -171,10 +171,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-#### <a name="worksheet-level-custom-properties-preview"></a>Propriétés personnalisées au niveau de la feuille de calcul (aperçu)
-
-> [!NOTE]
-> Les propriétés personnalisées au niveau de la feuille de calcul sont actuellement en préversion. [!INCLUDE [Information about using preview Excel APIs](../includes/using-excel-preview-apis.md)]
+#### <a name="worksheet-level-custom-properties"></a>Propriétés personnalisées au niveau de la feuille de calcul
 
 Les propriétés personnalisées peuvent également être définies au niveau de la feuille de calcul. Elles sont similaires aux propriétés personnalisées au niveau du document, à la seule différence que la même clé peut être répétée dans différentes feuilles de calcul. L’exemple suivant montre comment créer une propriété personnalisée nommée **WorksheetGroup** avec la valeur « alpha » sur la feuille de calcul active, puis la récupérer.
 

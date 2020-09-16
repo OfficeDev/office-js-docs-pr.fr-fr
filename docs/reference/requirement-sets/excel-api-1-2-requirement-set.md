@@ -1,15 +1,15 @@
 ---
 title: Ensemble de conditions requises de l’API JavaScript pour Excel 1,2
-description: Détails sur l’ensemble de conditions requises ExcelApi 1,2
+description: Détails sur l’ensemble de conditions requises ExcelApi 1,2.
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: e55c9dbee09228130b86c76535bb5bf8ef6666c1
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: b0d49bf02ba459e037c31d76145a2f7dc8c8c821
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430911"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819678"
 ---
 # <a name="whats-new-in-excel-javascript-api-12"></a>Nouveautés de l’API JavaScript 1.2 pour Excel
 
@@ -581,4 +581,4 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ## <a name="see-also"></a>Voir aussi
 
 - [Documentation référence de l’API JavaScript pour Excel](/javascript/api/excel?view=excel-js-1.2&preserve-view=true)
-- [Ensembles de conditions requises de l’API JavaScript pour Excel](./excel-api-requirement-sets.md)
+- [Ensembles de conditions requises de l’API JavaScript pour Excel](excel-api-requirement-sets.md)

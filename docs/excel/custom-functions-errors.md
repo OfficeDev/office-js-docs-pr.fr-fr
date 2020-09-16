@@ -1,16 +1,16 @@
 ---
-ms.date: 05/06/2020
-description: 'Gérer et retourner des erreurs comme #NULL! à partir de votre fonction personnalisée'
-title: Gérer et retourner des erreurs à partir de votre fonction personnalisée (préversion)
+ms.date: 09/15/2020
+description: 'Gérer et retourner des erreurs comme #NULL! à partir de votre fonction personnalisée.'
+title: Gérer et renvoyer des erreurs à partir de votre fonction personnalisée
 localization_priority: Normal
-ms.openlocfilehash: 5b1efcdc22a4efc59304bbe76f8d3f2d09979bc1
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 5da68417aa52f1d14340c8c8a46f4943ffd2d223
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093468"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819531"
 ---
-# <a name="handle-and-return-errors-from-your-custom-function-preview"></a>Gérer et retourner des erreurs à partir de votre fonction personnalisée (préversion)
+# <a name="handle-and-return-errors-from-your-custom-function"></a>Gérer et renvoyer des erreurs à partir de votre fonction personnalisée
 
 > [!NOTE]
 > Les fonctionnalités décrites dans cet article sont actuellement en préversion et peuvent faire l’objet de modifications. Elles ne sont pas prises en charge dans les environnements de production pour l’instant. Vous devrez rejoindre le programme [Office Insider](https://insider.office.com/join) pour essayer les fonctionnalités d’aperçu.  Pour tester les fonctionnalités d’aperçu, il est recommandé d’utiliser un abonnement Microsoft 365. Si vous ne disposez pas déjà d’un abonnement Microsoft 365, vous pouvez obtenir gratuitement un abonnement Microsoft 365 renouvelable 90 jours en joignant le [programme de développement microsoft 365](https://developer.microsoft.com/office/dev-program).

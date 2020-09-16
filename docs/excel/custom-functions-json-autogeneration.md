@@ -3,12 +3,12 @@ ms.date: 05/06/2020
 description: Utiliser les balises JSDOC pour créer dynamiquement vos fonctions personnalisées de métadonnées JSON.
 title: Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: f09fbbfcd028d773b9e9e25eb5eb43eb1d5a93cd
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 8138e738188e50d2a1369c359fbca3e1574db32f
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609309"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819517"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 
@@ -156,8 +156,8 @@ Dans l’exemple suivant, le `helpurl` est `www.contoso.com/weatherhelp` .
 
 Syntaxe JavaScript : @param {type} nom_description_
 
-* `{type}`spécifie les informations de type entre accolades. Consultez la section [Types](#types) pour savoir quels types peuvent être utilisés. Si aucun type n’est spécifié, le type par défaut est `any` utilisé.
-* `name`Spécifie le paramètre auquel s’applique la balise @param. Elle est obligatoire.
+* `{type}` spécifie les informations de type entre accolades. Consultez la section [Types](#types) pour savoir quels types peuvent être utilisés. Si aucun type n’est spécifié, le type par défaut est `any` utilisé.
+* `name` Spécifie le paramètre auquel s’applique la balise @param. Elle est obligatoire.
 * `description`fournit la description qui s’affiche dans Excel pour le paramètre de la fonction. Elle est facultative.
 
 Pour désigner un paramètre de fonction personnalisée comme étant facultatif :
@@ -183,7 +183,7 @@ L’exemple suivant montre une fonction ADD qui ajoute deux ou trois nombres, le
 
 Syntaxe TypeScript : nom @param_description_
 
-* `name`Spécifie le paramètre auquel s’applique la balise @param. Elle est obligatoire.
+* `name` Spécifie le paramètre auquel s’applique la balise @param. Elle est obligatoire.
 * `description`fournit la description qui s’affiche dans Excel pour le paramètre de la fonction. Elle est facultative.
 
 Consultez la section [Types](#types) pour savoir quels types de paramètres de fonction peuvent être utilisés.
@@ -256,7 +256,7 @@ La fonction renvoie `void` .
 
 Les fonctions de diffusion en continu ne renvoient pas directement de valeurs, mais appelent `setResult(result: ResultType)` à l’aide du dernier paramètre.
 
-Les exceptions levées par une fonction en continu sont ignorées. `setResult()`peut être appelée avec Error pour indiquer un résultat erroné. Si vous souhaitez consulter un exemple de fonction de diffusion en continu et obtenir d’autres informations, veuillez vous reporter à la section [Créer une fonction de diffusion en continu](./custom-functions-web-reqs.md#make-a-streaming-function).
+Les exceptions levées par une fonction en continu sont ignorées. `setResult()`peut être appelée avec Error pour indiquer un résultat erroné. Si vous souhaitez consulter un exemple de fonction de diffusion en continu et obtenir d’autres informations, veuillez vous reporter à la section [Créer une fonction de diffusion en continu](custom-functions-web-reqs.md#make-a-streaming-function).
 
 Les fonctions de diffusion en continu ne peuvent pas être marquées comme étant [@volatile](#volatile).
 

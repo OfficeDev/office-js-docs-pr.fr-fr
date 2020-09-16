@@ -3,12 +3,12 @@ title: Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)
 description: Les fonctions et scénarios d’objet de plage avancés, tels que les cellules spéciales, suppriment les doublons et utilisent des dates.
 ms.date: 08/26/2020
 localization_priority: Normal
-ms.openlocfilehash: b3854d15a85db20e1c544ebfa6e8a63712e958d9
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: 485fb34c11774045308c6ed9053d01097cdc3f5b
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408445"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819573"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)
 
@@ -327,10 +327,7 @@ Excel.run(function (context) {
 
 Pour dissocier un groupe de lignes ou de colonnes, utilisez la méthode [Range. Ungroup](/javascript/api/excel/excel.range#ungroup-groupoption-) . Cette opération supprime le niveau le plus à l’extérieur du plan. Si plusieurs groupes du même type de ligne ou de colonne se trouvent au même niveau au sein de la plage spécifiée, tous ces groupes sont dissociés.
 
-## <a name="handle-dynamic-arrays-and-spilling-preview"></a>Gérer les tableaux dynamiques et le débordement (aperçu)
-
-> [!NOTE]
-> Les API de déversion de plage et de tableau dynamiques sont actuellement en préversion. [!INCLUDE [Information about using preview Excel APIs](../includes/using-excel-preview-apis.md)]
+## <a name="handle-dynamic-arrays-and-spilling"></a>Gérer les tableaux dynamiques et les débordements
 
 Certaines formules Excel renvoient des [tableaux dynamiques](https://support.microsoft.com/office/dynamic-array-formulas-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531). Ces valeurs remplissent les valeurs de plusieurs cellules en dehors de la cellule d’origine de la formule. Ce débordement de valeur est appelé « déversement ». Votre complément peut trouver la plage utilisée pour un déversement avec la méthode [Range. getSpillingToRange](/javascript/api/excel/excel.range#getspillingtorange--) . Il existe également une [version * OrNullObject](..//develop/application-specific-api-model.md#ornullobject-methods-and-properties), `Range.getSpillingToRangeOrNullObject` .
 
