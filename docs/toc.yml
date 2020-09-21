@@ -72,6 +72,8 @@
               href: develop/support-for-task-pane-and-content-add-ins.md
             - name: Conserver l’état et les paramètres
               href: develop/persisting-add-in-state-and-settings.md
+            - name: Lier des régions dans un document ou une feuille de calcul
+              href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
         - name: Configurer et exécuter votre complément
           items:
             - name: Référencer Office.js
@@ -1123,9 +1125,6 @@
           displayName: Word
         - name: Modèle d’objet Word
           href: word/word-add-ins-core-concepts.md
-          displayName: Word
-        - name: Liaison de régions dans un document
-          href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
           displayName: Word
         - name: "Créer des compléments plus performants pour Word avec Office\_Open\_XML"
           href: word/create-better-add-ins-for-word-with-office-open-xml.md
