@@ -321,6 +321,8 @@
               href: reference/requirement-sets/image-coercion-requirement-sets.md
             - name: Séries de conditions requises des API communes pour Office
               href: reference/requirement-sets/office-add-in-requirement-sets.md
+            - name: Séries de conditions requises pour ouvrir une fenêtre de navigateur
+              href: reference/requirement-sets/open-browser-window-api-requirement-sets.md
             - name: Ensembles de conditions requises des API ruban
               href: reference/requirement-sets/ribbon-api-requirement-sets.md
             - name: Ensembles de conditions requises d'exécution partagés
