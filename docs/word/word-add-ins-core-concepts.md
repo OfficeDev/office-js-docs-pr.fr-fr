@@ -1,68 +1,46 @@
 ---
-title: Concepts fondamentaux de programmation avec l’API JavaScript pour Word
-description: L’API JavaScript pour Word permet de créer des compléments pour Word.
-ms.date: 07/28/2020
+title: Modèle d’objet JavaScript Word dans les compléments Office
+description: Découvrez les classes les plus importantes dans le modèle objet JavaScript spécifique à Word.
+ms.date: 09/04/2020
 localization_priority: Priority
-ms.openlocfilehash: 1e7a90d4be378ed9b2c1f30ebebd4a0beec45a11
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 7424ee83bde0c19a574233c64811ecbb55763d93
+ms.sourcegitcommit: 0844ca7589ad3a6b0432fe126ca4e0ac9dbb80ce
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293092"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "47963837"
 ---
-# <a name="fundamental-programming-concepts-with-the-word-javascript-api"></a>Concepts fondamentaux de programmation avec l’API JavaScript pour Word
+# <a name="word-javascript-object-model-in-office-add-ins"></a>Modèle d’objet JavaScript Word dans les compléments Office
 
-Cet article décrit les concepts de base de l’utilisation de [l’API JavaScript pour Word](../reference/overview/word-add-ins-reference-overview.md) pour créer des compléments pour Word 2016 ou version ultérieure.
+Cet article décrit les concepts de base de l’utilisation de [l’API JavaScript pour Word](../reference/overview/word-add-ins-reference-overview.md) pour créer des compléments. Il présente les concepts fondamentaux de l’utilisation de l’API.
 
-## <a name="referencing-officejs"></a>Referencing Office.js
+> [!IMPORTANT]
+> Pour en savoir plus sur la nature asynchrone des API Word et la manière dont elles fonctionnent avec le document, consultez [Utilisation du modèle d’API spécifique à l’application](../develop/application-specific-api-model.md).
 
-Vous pouvez référencer Office.js à partir des emplacements suivants :
+## <a name="officejs-apis-for-word"></a>API Office.js pour Word
 
-- `https://appsforoffice.microsoft.com/lib/1/hosted/office.js` : utilisez cette ressource pour les compléments de production.
+Un complément Word interagit avec des objets dans Excel en utilisant l’API Office JavaScript, qui inclut deux modèles d’objets JavaScript :
 
-- `https://appsforoffice.microsoft.com/lib/beta/hosted/office.js` : utilisez cette ressource pour essayer les fonctionnalités en préversion.
+* **API JavaScript Word** : l’[API JavaScript Word](../reference/overview/word-add-ins-reference-overview.md) fournit des objets fortement typés que vous pouvez utiliser pour accéder au document, à des plages, à des tableaux, à des listes, à une mise en forme, etc.
 
-## <a name="word-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Word
+* **API communes** : l’[API commune](/javascript/api/office) peut être utilisée pour accéder à des fonctionnalités telles que l’interface utilisateur, les boîtes de dialogue et les paramètres de client communs à différents types d’applications Office.
 
-Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si une application Office prend en charge les API requises par le complément. Pour en savoir plus sur les ensembles de conditions requises de l’API JavaScript pour Word, voir [Ensembles de conditions requises de l’API JavaScript pour Word](../reference/requirement-sets/word-api-requirement-sets.md).
+Vous utiliserez probablement l’API JavaScript Word pour développer la majorité des fonctionnalités des compléments destinés à Word, vous utiliserez également des objets dans l’API commune. Par exemple :
 
-## <a name="running-word-add-ins"></a>Exécution de compléments Word
+* [Context](/javascript/api/office/office.context) :le `Context` représente l’environnement d’exécution du complément et permet d’accéder à des objets clés de l’API. Il se compose de détails sur la configuration du document comme `contentLanguage` et `officeTheme`, et fournit des informations sur l’environnement d’exécution du complément comme `host` et `platform`. En outre, il fournit la méthode `requirements.isSetSupported()` que vous pouvez utiliser pour vérifier si un ensemble de conditions requises spécifié est pris en charge par l’application Excel dans laquelle le complément est exécuté.
+* [Document](/javascript/api/office/office.document) : le `Document` fournit la méthode `getFileAsync()` que vous pouvez utiliser pour télécharger le fichier Word dans lequel le complément est exécuté.
 
-Pour exécuter votre complément, utilisez un gestionnaire d’événements `Office.initialize`. Pour plus d’informations sur l’initialisation du complément, voir [Présentation de l’API](../develop/understanding-the-javascript-api-for-office.md).
+![Image des différences entre l’API Word et les API communes](../images/word-js-api-common-api.png)
 
-Les compléments qui ciblent Word 2016 ou une version ultérieure peuvent utiliser les API propres à Word. Ils transmettent la logique d’interaction avec Word en tant que fonction dans la `Word.run()` méthode. Pour en savoir plus sur la manière d’interagir avec le document Word dans ce modèle de programmation, consultez [Utilisation du modèle API propre à l’application](../develop/application-specific-api-model.md) .
+## <a name="word-specific-object-model"></a>Modèle d’objet spécifique à Word
 
-L’exemple suivant montre comment initialiser et exécuter un complément Word à l’aide de la `Word.run()` méthode.
+Pour comprendre les API Word, vous devez connaître la manière dont les composants d’un document sont liés les uns aux autres.
 
-```js
-(function () {
-    "use strict";
-
-    // The initialize event handler must be run on each page to initialize Office JS.
-    // You can add optional custom initialization code that will run after OfficeJS
-    // has initialized.
-    Office.initialize = function (reason) {
-        // The reason object tells how the add-in was initialized. The values can be:
-        // inserted - the add-in was inserted to an open document.
-        // documentOpened - the add-in was already inserted in to the document and the document was opened.
-
-        // Checks for the DOM to load using the jQuery ready function.
-        $(document).ready(function () {
-            // Set your optional initialization code.
-            // You can also load saved settings from the Office object.
-        });
-    };
-
-    // Run a batch operation against the Word JavaScript API object model.
-    // Use the context argument to get access to the Word document.
-    Word.run(function (context) {
-
-        // Create a proxy object for the document.
-        var thisDocument = context.document;
-        // ...
-    })
-})();
-```
+* Le **Document** contient les **Sections**, ainsi que les entités de niveau document telles que les paramètres et les parties XML personnalisées.
+* Une **Section** contient un **Corps**.
+* Un **Corps** donne accès aux **Paragraphe**s, **ContentControl**s et **Plage** objets, entre autres.
+* Une **Plage** représente une zone contiguë de contenu, y compris du texte, un espace vide, des **Tableaux** et des images. Elle contient également la plupart des méthodes de manipulation de texte.
+* Une **Liste** représente le texte d’une liste numérotée ou une liste à puces.
 
 ## <a name="see-also"></a>Voir aussi
 

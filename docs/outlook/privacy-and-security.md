@@ -1,24 +1,24 @@
 ---
 title: Confidentialité, autorisations et sécurité pour les compléments Outlook
 description: Découvrez comment gérer la confidentialité, les autorisations et la sécurité dans un complément Outlook.
-ms.date: 08/18/2020
+ms.date: 09/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 8a95330059de39506a8f9ece6bdd10246b6c212d
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 3bad5cc3080d67cdfab8639d9140b9bfa3e25559
+ms.sourcegitcommit: 6e6de48f746416ec68b2cf4c298253986486fbfd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294296"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "47651943"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Confidentialité, autorisations et sécurité pour les compléments Outlook
 
 Les utilisateurs finaux, les développeurs et les administrateurs peuvent appliquer les niveaux d’autorisation hiérarchisés du modèle de sécurité pour les compléments Outlook afin de contrôler les performances et la confidentialité.
 
-Cet article décrit les autorisations que les compléments Outlook peuvent demander, et examine le modèle de sécurité selon les perspectives suivantes :
+Cet article décrit les autorisations que les compléments Outlook peuvent demander, et examine le modèle de sécurité selon les perspectives suivantes.
 
 - **AppSource** : intégrité de complément
 
-- **Utilisateurs** : problèmes de confidentialité et de performance
+- **Utilisateurs** : problèmes de confidentialité et de performance
 
 - **Développeurs** : choix d’autorisations et limites d’utilisation des ressources
 
@@ -49,26 +49,36 @@ L’illustration suivante affiche les quatre niveaux d’autorisations et décri
 
 ## <a name="appsource-add-in-integrity"></a>AppSource : intégrité de complément
 
-[AppSource](https://appsource.microsoft.com) héberge des compléments pouvant être installés par les utilisateurs finals et les administrateurs. AppSource applique les mesures suivantes pour maintenir l’intégrité de ces compléments Outlook :
+[AppSource](https://appsource.microsoft.com) héberge des compléments pouvant être installés par les utilisateurs finals et les administrateurs. AppSource applique les mesures suivantes pour maintenir l’intégrité de ces compléments Outlook.
 
 - Oblige le serveur hôte d’un complément à toujours utiliser SSL (Secure Socket Layer) pour communiquer.
 
-- Oblige un développeur à fournir une preuve d’identité, un accord contractuel et une politique de confidentialité conforme pour soumettre les compléments. 
+- Oblige un développeur à fournir une preuve d’identité, un accord contractuel et une politique de confidentialité conforme pour soumettre les compléments.
 
 - Archive les compléments en mode lecture seule.
 
 - Prend en charge un système d’évaluation par les utilisateurs pour les compléments disponibles afin de promouvoir une communauté exerçant une auto surveillance.
 
+## <a name="optional-connected-experiences"></a>Expériences connectées facultatives
+
+Les utilisateurs finaux et les administrateurs informatiques peuvent désactiver [expériences connectées facultatives dans ](/deployoffice/privacy/optional-connected-experiences) les clients de bureau et mobiles Office. Pour les compléments Outlook, l’impact de la désactivation du paramètres **Expériences connectées optionnelles** dépend du client, mais les compléments installés par l’utilisateur et l’accès à Office Store ne sont généralement pas autorisés. Certains compléments Microsoft sont considérés comme essentiels ou stratégiques, et les compléments déployés par l’administrateur informatique d’une organisation via [Déploiement centralisé](../publish/centralized-deployment.md) restent disponibles.
+
+- Windows, Mac : le bouton **Obtenir des compléments** ne s’affiche pas afin que les utilisateurs ne puissent plus gérer leurs compléments ou accéder à Office Store.
+- Android, iOS : la boîte de dialogue **Obtenir des compléments** affiche uniquement les compléments déployés par l’administrateur.
+- Navigateur : la disponibilité des compléments et l’accès au Store ne sont pas affectés de sorte que les utilisateurs puissent continuer à [gérer leurs compléments](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce), y compris ceux déployés par l’administrateur.
+
+Pour obtenir des informations générales sur le comportement des compléments, consultez [Confidentialité et sécurité pour les compléments Office](../concepts/privacy-and-security.md#optional-connected-experiences).
+
 ## <a name="end-users-privacy-and-performance-concerns"></a>Utilisateurs : problèmes de confidentialité et de performance
 
-Le modèle de sécurité résout les problèmes de sécurité, de confidentialité et de performance des utilisateurs des manières suivantes :
+Le modèle de sécurité résout les problèmes de sécurité, de confidentialité et de performance des utilisateurs des manières suivantes.
 
 - Les messages des utilisateurs qui sont protégés par la Gestion des droits relatifs à l’information (IRM) d’Outlook n’ont pas d’interaction avec les compléments Outlook.
 
   > [!IMPORTANT]
   > - Les compléments s’activent sur les messages signés numériquement dans Outlook avec un abonnement Microsoft 365. Dans Windows, cette prise en charge a été introduite avec le build 8711.1000.
   >
-  > - Démarrer avec Outlook build 13120.1000 sur Windows, les compléments peuvent désormais activer les éléments protégés par IRM. Pour plus d’informations sur cette fonctionnalité en mode aperçu, voir [Activation de complément sur les éléments protégés par la gestion des droits relatifs à l’information (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
+  > - Démarrer avec Outlook build 13229.10000 sur Windows, les compléments peuvent désormais activer les éléments protégés par IRM. Pour plus d’informations sur cette fonctionnalité en mode aperçu, voir [Activation de complément sur les éléments protégés par la gestion des droits relatifs à l’information (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
 
 - Avant d’installer un complément d’AppSource, les utilisateurs finals peuvent voir l’accès dont peut disposer le complément, ainsi que les actions qu’il peut effectuer sur leurs données, et doivent explicitement confirmer qu’ils veulent poursuivre. Aucun complément Outlook n’est automatiquement transmis sur un ordinateur client sans une validation manuelle par l’utilisateur ou l’administrateur.
 
@@ -82,7 +92,7 @@ Le modèle de sécurité résout les problèmes de sécurité, de confidentialit
 
 - Les données échangées avec des serveurs hébergeant des Compléments Office sont toujours chiffrées conformément au protocole SSL (Secure Socket Layer).
 
-- Applicable uniquement aux clients riches Outlook : les clients riches Outlook surveillent la performance des compléments Outlook installés, exercent un contrôle de gouvernance et désactivent les compléments Outlook qui dépassent les limites pour les aspects suivants :
+- Applicable uniquement aux clients riches Outlook : les clients riches Outlook surveillent la performance des compléments Outlook installés, exercent un contrôle de gouvernance et désactivent les compléments Outlook qui dépassent les limites pour les aspects suivants.
 
   - Temps de réponse d’activation
 
@@ -102,7 +112,7 @@ Le modèle de sécurité fournit aux développeurs des niveaux précis d’autor
 
 ### <a name="tiered-permissions-increases-transparency"></a>Les autorisations à plusieurs niveaux augmentent la transparence
 
-Les développeurs doivent suivre le modèle d’autorisations à plusieurs niveaux pour assurer la transparence et apaiser les inquiétudes des utilisateurs concernant ce que les compléments peuvent faire à leurs données et leur boîte aux lettres, en faisant la promotion indirecte de l’adoption du complément :
+Les développeurs doivent suivre le modèle d’autorisations à plusieurs niveaux pour assurer la transparence et apaiser les inquiétudes des utilisateurs concernant ce que les compléments peuvent faire à leurs données et leur boîte aux lettres, en faisant la promotion indirecte de l’adoption du complément.
 
 - Les développeurs demandent un niveau approprié d’autorisation pour un complément Outlook en fonction de la manière dont il doit être activé, et de son besoin de lire ou d’écrire certaines propriétés d’un élément, ou de créer et d’envoyer un élément.
 
@@ -135,7 +145,7 @@ Les développeurs doivent suivre le modèle d’autorisations à plusieurs nivea
 
 - Les développeurs doivent demander l’autorisation **Lire/écrire dans l’élément** si le complément Outlook doit écrire dans les propriétés de l’élément composé, comme les noms des destinataires, les adresses de messagerie, le corps et l’objet, ou s’il a besoin d’ajouter ou de supprimer des pièces jointes d’élément.
 
-- Les développeurs demandent l’autorisation **Lire/écrire dans la boîte aux lettres** uniquement si le complément Outlook doit effectuer une ou plusieurs des actions suivantes à l’aide de la méthode [mailbox.makeEWSRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) :
+- Les développeurs demandent l’autorisation **Lire/écrire dans la boîte aux lettres** uniquement si le complément Outlook doit effectuer une ou plusieurs des actions suivantes à l’aide de la méthode [mailbox.makeEWSRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods).
 
   - Lire ou écrire des propriétés d’éléments dans la boîte aux lettres.
   - Créer, lire, écrire ou envoyer des éléments dans la boîte aux lettres.
@@ -147,11 +157,11 @@ Les développeurs doivent connaître les limites de l’utilisation des ressourc
 
 ### <a name="other-measures-to-promote-user-security"></a>Autres mesures visant à promouvoir la sécurité de l’utilisateur
 
-Les développeurs doivent connaître et planifier les éléments suivants :
+Les développeurs doivent connaître et planifier les éléments suivants.
 
 - Les développeurs ne peuvent pas utiliser de contrôles ActiveX dans les compléments car ils ne sont pas pris en charge.
 
-- Les développeurs doivent procéder comme suit lorsqu’ils envoient un complément Outlook à AppSource :
+- Les développeurs doivent procéder comme suit lorsqu’ils envoient un complément Outlook à AppSource.
 
   - Produire un certificat SSL EV (Extended Validation) comme preuve d’identité.
 
@@ -163,7 +173,7 @@ Les développeurs doivent connaître et planifier les éléments suivants :
 
 ## <a name="administrators-privileges"></a>Administrateurs : privilèges
 
-Le modèle de sécurité fournit les droits et les responsabilités suivants aux administrateurs :
+Le modèle de sécurité fournit les droits et les responsabilités suivants aux administrateurs.
 
 - Peut empêcher les utilisateurs d’installer un complément Outlook, notamment les compléments sur AppSource.
 
@@ -174,5 +184,6 @@ Le modèle de sécurité fournit les droits et les responsabilités suivants aux
 ## <a name="see-also"></a>Voir aussi
 
 - [Confidentialité et sécurité pour les compléments Office](../concepts/privacy-and-security.md)
+- [Contrôles de confidentialité pour Microsoft 365 Apps](/deployoffice/privacy/overview-privacy-controls)
 - [API de complément Outlook](apis.md)
 - [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)

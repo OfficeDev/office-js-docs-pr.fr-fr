@@ -1,14 +1,14 @@
 ---
 title: Valider un manifeste de complément Office
 description: Découvrez comment valider le manifeste d’un complément Office à l’aide du schéma XML et d’autres outils.
-ms.date: 04/16/2020
+ms.date: 09/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 13ffafbb88003bbe0ba29ebbdf867f1138429e2f
-ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
+ms.openlocfilehash: 3b2ad6f89635a76828524e928c8a766840a708d5
+ms.sourcegitcommit: 2479812e677d1a7337765fe8f1c8345061d4091a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "47363834"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "48135206"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>Valider un manifeste de complément Office
 
@@ -39,7 +39,7 @@ Si vous n’avez pas utilisé [le générateur Yeoman pour les compléments Offi
 2. Ouvrez une invite de commandes et installez le validateur à l’aide de la commande suivante.
 
     ```command&nbsp;line
-    npm -g office-addin-manifest
+    npm install -g office-addin-manifest
     ```
 
 3. Exécutez la commande suivante *dans le répertoire racine de votre projet*.

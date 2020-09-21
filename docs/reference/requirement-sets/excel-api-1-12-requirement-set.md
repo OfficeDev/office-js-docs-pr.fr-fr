@@ -1,15 +1,15 @@
 ---
 title: Ensemble de conditions requises de l’API JavaScript pour Excel 1,12
 description: Détails sur l’ensemble de conditions requises ExcelApi 1,12.
-ms.date: 09/15/2020
+ms.date: 09/16/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: a88c511e90fe48e1a9997d19cb4a2851cb718f6b
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 2f2fb04c914e26aacbd8815a1d173c8af9c09342
+ms.sourcegitcommit: 0844ca7589ad3a6b0432fe126ca4e0ac9dbb80ce
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819840"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "47963821"
 ---
 # <a name="whats-new-in-excel-javascript-api-112"></a>Nouveautés de l’API JavaScript pour Excel 1,12
 
@@ -79,7 +79,6 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[Inférieures](/javascript/api/excel/excel.pivotlabelfilter#lowerbound)|La limite inférieure de la plage pour la condition entre le filtre.|
 ||[substring](/javascript/api/excel/excel.pivotlabelfilter#substring)|Sous-chaîne utilisée pour `BeginsWith` les `EndsWith` conditions de filtre,, et `Contains` .|
 ||[Haute](/javascript/api/excel/excel.pivotlabelfilter#upperbound)|La limite supérieure de la plage pour la condition entre le filtre.|
-|[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[pivotStyle](/javascript/api/excel/excel.pivotlayout#pivotstyle)|Style appliqué au tableau croisé dynamique.|
 |[PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter)|[selectedItems](/javascript/api/excel/excel.pivotmanualfilter#selecteditems)|Liste des éléments sélectionnés à filtrer manuellement. Ces éléments doivent être existants et valides dans le champ choisi.|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[allowMultipleFiltersPerField](/javascript/api/excel/excel.pivottable#allowmultiplefiltersperfield)|Indique si le tableau croisé dynamique autorise l’application de plusieurs PivotFilters sur un champ PivotField donné dans le tableau.|
 |[PivotTableScopedCollection](/javascript/api/excel/excel.pivottablescopedcollection)|[getCount()](/javascript/api/excel/excel.pivottablescopedcollection#getcount--)|Obtient le nombre de tableaux croisés dynamiques dans la collection.|
@@ -107,7 +106,6 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 |[RangeAreasCollection](/javascript/api/excel/excel.rangeareascollection)|[getCount()](/javascript/api/excel/excel.rangeareascollection#getcount--)|Obtient le nombre d’objets RangeAreas de cette collection.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.rangeareascollection#getitemat-index-)|Renvoie l’objet RangeAreas en fonction de la position dans la collection.|
 ||[items](/javascript/api/excel/excel.rangeareascollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
-|[Segment](/javascript/api/excel/excel.slicer)|[slicerStyle](/javascript/api/excel/excel.slicer#slicerstyle)|Style appliqué au Slicer.|
 |[WorkbookRangeAreas](/javascript/api/excel/excel.workbookrangeareas)|[getRangeAreasBySheet (Key : chaîne)](/javascript/api/excel/excel.workbookrangeareas#getrangeareasbysheet-key-)|Renvoie l' `RangeAreas` objet basé sur l’ID ou le nom de la feuille de calcul dans la collection.|
 ||[getRangeAreasOrNullObjectBySheet (Key : chaîne)](/javascript/api/excel/excel.workbookrangeareas#getrangeareasornullobjectbysheet-key-)|Renvoie l' `RangeAreas` objet basé sur le nom ou l’ID de la feuille de calcul dans la collection. Si la feuille de calcul n’existe pas, renvoie un objet null.|
 ||[addresses](/javascript/api/excel/excel.workbookrangeareas#addresses)|Renvoie un tableau d’adresses en style a1. La valeur Address contient le nom de la feuille de calcul pour chaque bloc rectangulaire de cellules (par exemple, «Sheet1 ! A1 : B4, Sheet1 ! D1 : D4 "). En lecture seule.|
