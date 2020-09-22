@@ -1,15 +1,15 @@
 ---
-title: Ouvrir les ensembles de conditions requises de la fenêtre du navigateur
+title: Séries de conditions requises pour ouvrir une fenêtre de navigateur
 description: Spécifie les plateformes et les générations Office qui prennent en charge l’API openBrowserWindow.
 ms.date: 09/16/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 8f6966f5bdcecd9c55a20f2d640d066906c1b6a3
-ms.sourcegitcommit: 2479812e677d1a7337765fe8f1c8345061d4091a
+ms.openlocfilehash: 8bc26525bf64ed87d46d85cd1248f79696d67f2b
+ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "48135235"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "48175506"
 ---
 # <a name="open-browser-window-api-requirement-sets"></a>Ouvrir les ensembles de conditions requises de l’API de fenêtre de navigateur
 
@@ -36,7 +36,7 @@ Pour plus d’informations sur les ensembles de conditions requises des API comm
 
 ## <a name="openbrowserwindowapi-11"></a>OpenBrowserWindowApi 1,1
 
-Le OpenBrowserWindowApi 1,1 est la première version de l’API. Pour plus d’informations sur l’API, voir la rubrique de référence [Office. Context. UI](/javascript/api/office/office.context.ui) .
+Le OpenBrowserWindowApi 1,1 est la première version de l’API. Pour plus d’informations sur l’API, voir la rubrique de référence [Office. Context. UI](/javascript/api/office/office.context#ui) .
 
 ## <a name="see-also"></a>Voir aussi
 

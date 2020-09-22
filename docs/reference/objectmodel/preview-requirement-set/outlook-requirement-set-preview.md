@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: Les fonctionnalités et les API qui sont actuellement en préversion pour les compléments Outlook.
-ms.date: 09/14/2020
+ms.date: 09/21/2020
 localization_priority: Normal
-ms.openlocfilehash: c5663946a12eddf1f076a8656a6daecae9186919
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: f7c9c7c2e60a77c30e3957a0c759d0f20b22e86a
+ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819832"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "48175541"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -154,19 +154,19 @@ Prise en charge supplémentaire de la fonctionnalité d’activation basée sur 
 
 Ajout `LaunchEvent` de la prise en charge du point d’extension au manifeste. Il configure les fonctionnalités d’activation basée sur les événements.
 
-**Disponible dans**: Outlook sur le Web (moderne, [demander un accès en aperçu](https://aka.ms/OWAPreview))
+**Disponible dans**: Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
 #### <a name="launchevents-manifest-element"></a>[Élément de manifeste LaunchEvents](../../manifest/launchevents.md)
 
 Ajout `LaunchEvents` de l’élément à manifest. Il prend en charge la configuration de la fonctionnalité d’activation basée sur les événements.
 
-**Disponible dans**: Outlook sur le Web (moderne, [demander un accès en aperçu](https://aka.ms/OWAPreview))
+**Disponible dans**: Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
 #### <a name="runtimes-manifest-element"></a>[Élément de manifeste runtimes](../../manifest/runtimes.md)
 
 Ajout de la prise en charge d’Outlook à l' `Runtimes` élément de manifeste. Il fait référence aux fichiers HTML et JavaScript nécessaires à la fonctionnalité d’activation basée sur les événements.
 
-**Disponible dans**: Outlook sur le Web (moderne, [demander un accès en aperçu](https://aka.ms/OWAPreview))
+**Disponible dans**: Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
 
 <br>
 

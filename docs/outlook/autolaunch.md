@@ -2,14 +2,14 @@
 title: Configurer votre complément Outlook pour l’activation basée sur les événements (aperçu)
 description: Découvrez comment configurer votre complément Outlook pour l’activation basée sur les événements.
 ms.topic: article
-ms.date: 09/09/2020
+ms.date: 09/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 69f14748a898c2c963c9d049b2c40c28f3aec725
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 1ddf5cd17934df261ef0002f38d92ed0dc40ca00
+ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431247"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "48175548"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>Configurer votre complément Outlook pour l’activation basée sur les événements (aperçu)
 
@@ -35,7 +35,7 @@ Nous vous invitons à tester la fonctionnalité d’activation basée sur les é
 Pour afficher un aperçu de cette fonctionnalité :
 
 - Faites référence à la bibliothèque **beta** sur le CDN ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . Le [fichier de définition de type](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) pour la compilation de la machine à écrire et IntelliSense se trouve dans le CDN et [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Vous pouvez installer ces types avec `npm install --save-dev @types/office-js-preview` .
-- Demander l’accès à des bits d’aperçu pour Outlook sur le Web à l’aide de votre compte Microsoft 365 en remplissant et envoyant [ce formulaire de demande](https://aka.ms/OWAPreview). Nous allons vous indiquer quand votre client est prêt.
+- [Configurez la version ciblée sur votre client Microsoft 365](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center).
 
 ## <a name="set-up-your-environment"></a>Configuration de votre environnement
 

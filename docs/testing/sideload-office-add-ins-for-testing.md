@@ -1,14 +1,14 @@
 ---
 title: Chargement de version test des compléments Office dans Office sur le web
 description: Testez votre complément Office dans Office sur le Web par chargement.
-ms.date: 07/10/2020
+ms.date: 09/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 2f9a0d058fc972316da964dd5af03b5733dc7b60
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 709461d19fbf4602db3ba5bd9c40f495d0dbbd52
+ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159289"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "48175534"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>Chargement de version test des compléments Office dans Office sur le web
 
@@ -42,13 +42,7 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 6. Vérifiez que votre complément est installé. S’il s’agit d’une commande de complément, elle doit apparaître dans le ruban ou dans le menu contextuel. S’il s’agit d’un complément du volet Office, le volet doit apparaître.
 
 > [!NOTE]
->Pour tester votre complément Office avec Microsoft Edge, deux étapes de configuration sont nécessaires : 
->
-> - Depuis une invite de commandes Windows, exécutez la ligne suivante : `CheckNetIsolation LoopbackExempt -a -n="Microsoft.MicrosoftEdge_8wekyb3d8bbwe"`
->
-> - Entrez «**à propos de : indicateurs**» dans la barre de recherche Microsoft Edge pour afficher les options paramètres du développeur.  Activez l’option «**autoriser le bouclage localhost**» et redémarrez Microsoft Edge.
-
->    ![Option Autoriser le bouclage localhost de Microsoft Edge cochée.](../images/allow-localhost-loopback.png)
+> Pour tester votre complément Office avec Microsoft Edge, une étape de configuration supplémentaire est requise. Depuis une invite de commandes Windows, exécutez la ligne suivante : `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes`
 
 ## <a name="sideload-an-office-add-in-in-office-365"></a>Chargement de version test d’un complément Office dans Office 365
 

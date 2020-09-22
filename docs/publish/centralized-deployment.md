@@ -3,12 +3,12 @@ title: Publier des compléments Office à l’aide du déploiement centralisé v
 description: Découvrez comment utiliser le déploiement centralisé pour déployer des compléments internes ainsi que des compléments fournis par les éditeurs de logiciels indépendants.
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 0e99742be87b477b7c78295d08539de924f02466
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: e3f0bca5605d48d7b6c2ead49591546561dadffe
+ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094252"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "48175555"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-microsoft-365-admin-center"></a>Publier des compléments Office à l’aide du déploiement centralisé via le centre d’administration Microsoft 365
 
@@ -78,7 +78,7 @@ Si votre organisation répond à toutes les conditions requises, procédez comme
     ![Gérer les personnes ayant accès et méthode de déploiement dans le centre d’administration Microsoft 365](../images/manage-users-deployment-admin-center.png)
 
     > [!NOTE]
-    > Un système d’[authentification unique (SSO) ](../develop/sso-in-office-add-ins.md) pour les compléments est actuellement en préversion, qui ne doit pas être utilisé pour des compléments en production.Lors du déploiement d’un complément utilisant une authentification unique, les utilisateurs et les groupes affectés sont également partagés avec des compléments partageant le même ID d’application Azure. Les modifications apportées aux affectations d’utilisateurs sont également appliquées à ces compléments. Les compléments connexes sont affichés sur cette page. Uniquement pour les compléments d’authentification unique, cette page affiche la liste des autorisations Microsoft Graph requises.
+    > Les compléments qui utilisent l' [authentification unique (SSO)](../develop/sso-in-office-add-ins.md) invitent l’administrateur à accepter les étendues figurant dans le manifeste du complément.  Si le même service de sauvegarde est utilisé sur plusieurs compléments (le même ID d’application Azure est utilisé avec l’authentification unique dans différents compléments), les étendues de chaque complément seront invitées à donner leur consentement à chaque déploiement. Cette page affiche également la liste des autorisations requises par le complément.
 
 11. Lorsque vous avez terminé, choisissez **déployer**. Ce processus peut prendre jusqu’à trois minutes. Ensuite, terminez la procédure en appuyant sur **Suivant**. Votre complément apparaît à présent avec d’autres applications dans Office 365.
 
@@ -137,7 +137,7 @@ Si le complément ne prend pas en charge les commandes de complément, les utili
 
 1. Dans Word 2016 ou version ultérieure, Excel 2016 ou version ultérieure ou PowerPoint 2016 ou version ultérieure, choisissez **Insertion** > **Mes compléments**.
 2. Sélectionnez l’onglet **Géré par l’administrateur** dans la fenêtre du complément.
-3. Choisissez le complément, puis cliquez sur **Ajouter**.
+3. Choisissez le complément, puis **Ajouter**.
 
     ![Capture d’écran illustrant l’onglet Géré par l’administrateur de la page Compléments Office d’une application Office. Le complément Citations apparaît sur l’onglet.](../images/office-add-ins-admin-managed.png)
 

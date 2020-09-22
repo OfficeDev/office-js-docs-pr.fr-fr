@@ -1,25 +1,22 @@
 ---
-ms.date: 09/15/2020
+ms.date: 09/21/2020
 description: 'Gérer et retourner des erreurs comme #NULL! à partir de votre fonction personnalisée.'
 title: Gérer et renvoyer des erreurs à partir de votre fonction personnalisée
 localization_priority: Normal
-ms.openlocfilehash: 5da68417aa52f1d14340c8c8a46f4943ffd2d223
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 58c2ab432a4525f660e2d89735fd3add6e76fa7f
+ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819531"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "48175527"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function"></a>Gérer et renvoyer des erreurs à partir de votre fonction personnalisée
-
-> [!NOTE]
-> Les fonctionnalités décrites dans cet article sont actuellement en préversion et peuvent faire l’objet de modifications. Elles ne sont pas prises en charge dans les environnements de production pour l’instant. Vous devrez rejoindre le programme [Office Insider](https://insider.office.com/join) pour essayer les fonctionnalités d’aperçu.  Pour tester les fonctionnalités d’aperçu, il est recommandé d’utiliser un abonnement Microsoft 365. Si vous ne disposez pas déjà d’un abonnement Microsoft 365, vous pouvez obtenir gratuitement un abonnement Microsoft 365 renouvelable 90 jours en joignant le [programme de développement microsoft 365](https://developer.microsoft.com/office/dev-program).
 
 Si un problème se présente lors de l’exécution de votre fonction personnalisée, renvoyez une erreur pour informer l’utilisateur. Si vous avez des exigences de paramètres spécifiques, telles que des nombres positifs, testez les paramètres et générez une erreur s’ils ne sont pas corrects. Vous pouvez également utiliser un bloc `try`-`catch` pour détecter les erreurs qui se produisent pendant que votre fonction personnalisée s’exécute.
 
 ## <a name="detect-and-throw-an-error"></a>Détecter et générer une erreur
 
-Examinons un cas où vous devez vous assurer qu’un paramètre de code postal est dans le format correct pour que la fonction personnalisée fonctionne. La fonction personnalisée suivante utilise une expression régulière pour vérifier le code postal. S’il est correct, il recherche la ville à l’aide d’une autre fonction et renvoie la valeur. Si ce n’est pas le cas, elle renvoie une `#VALUE!` erreur à la cellule.
+Examinons un cas où vous devez vous assurer qu’un paramètre de code postal est dans le format correct pour que la fonction personnalisée fonctionne. La fonction personnalisée suivante utilise une expression régulière pour vérifier le code postal. Si le format de code postal est correct, il recherche la ville à l’aide d’une autre fonction et renvoie la valeur. Si le format n’est pas valide, la fonction renvoie une `#VALUE!` erreur à la cellule.
 
 ```typescript
 /**
@@ -38,15 +35,17 @@ function getCity(zipCode: string): string {
 
 ## <a name="the-customfunctionserror-object"></a>Objet CustomFunctions.Error
 
-L’objet `CustomFunctions.Error` est utilisé pour retourner une erreur à la cellule. Lorsque vous créez l’objet, spécifiez l’erreur que vous voulez utiliser à l’aide de l’une des valeurs enum `ErrorCode` suivantes.
+L’objet [CustomFunctions. Error](/javascript/api/custom-functions-runtime/customfunctions.error) est utilisé pour renvoyer une erreur à la cellule. Lorsque vous créez l’objet, spécifiez l’erreur que vous souhaitez utiliser en choisissant l’une des `ErrorCode` valeurs d’énumération suivantes.
 
 
 |Valeur enum ErrorCode  |Valeur de la cellule Excel  |Signification  |
 |---------------|---------|---------|
-|`invalidValue`   | `#VALUE!` | Le type d’une valeur utilisée dans la formule n’est pas bon. |
-|`notAvailable`   | `#N/A`    | La fonction ou le service n’est pas disponible. |
 |`divisionByZero` | `#DIV/0`  | Sachez que JavaScript autorise la division par zéro, donc vous devez écrire un gestionnaire d’erreurs avec attention pour détecter cette condition. |
-|`invalidNumber`  | `#NUM!`   | Un problème s’est produit au niveau du nombre utilisé dans la formule. |
+|`invalidName`    | `#NAME?`  | Il y a une faute de frappe dans le nom de la fonction. Notez que cette erreur est prise en charge en tant qu’erreur d’entrée d’une fonction personnalisée, mais pas en tant qu’erreur de sortie d’une fonction personnalisée. | 
+|`invalidNumber`  | `#NUM!`   | Il y a un problème avec un nombre dans la formule. |
+|`invalidReference` | `#REF!` | La fonction fait référence à une cellule non valide. Notez que cette erreur est prise en charge en tant qu’erreur d’entrée d’une fonction personnalisée, mais pas en tant qu’erreur de sortie d’une fonction personnalisée.|
+|`invalidValue`   | `#VALUE!` | La valeur de la formule est de type incorrect. |
+|`notAvailable`   | `#N/A`    | La fonction ou le service n’est pas disponible. |
 |`nullReference`  | `#NULL!`  | Les plages de la formule ne se croisent pas. |
 
 L’exemple de code suivant montre comment créer et retourner une erreur pour un nombre non valide (`#NUM!`).
@@ -56,19 +55,19 @@ let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidNumber);
 throw error;
 ```
 
-Lorsque vous retournez une erreur `#VALUE!`, vous pouvez aussi ajouter un message personnalisé qui apparaîtra dans une fenêtre contextuelle quand l’utilisateur pointera sur la cellule. L’exemple suivant montre comment retourner un message d’erreur personnalisé.
+Les `#VALUE!` `#N/A` Erreurs et prennent également en charge les messages d’erreur personnalisés. Les messages d’erreur personnalisés s’affichent dans le menu indicateur d’erreur, accessible en plaçant le curseur sur l’indicateur d’erreur sur chaque cellule avec une erreur. L’exemple suivant montre comment renvoyer un message d’erreur personnalisé avec l' `#VALUE!` erreur.
 
 ```typescript
-// You can only return a custom error message with the #VALUE! error
+// You can only return a custom error message with the #VALUE! and #N/A errors.
 let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidValue, "The parameter can only contain lowercase characters.");
 throw error;
 ```
 
 ## <a name="use-try-catch-blocks"></a>Utiliser des blocs try-catch
 
-En règle générale, utilisez des `try` - `catch` blocs dans votre fonction personnalisée pour intercepter les erreurs potentielles qui se produisent. Si vous ne gérez pas les exceptions dans votre code, celles-ci sont retournées à Excel. Par défaut, Excel retourne `#VALUE!` pour une exception non gérée.
+En règle générale, utilisez des `try` - `catch` blocs dans votre fonction personnalisée pour intercepter les erreurs potentielles qui se produisent. Si vous ne gérez pas les exceptions dans votre code, celles-ci sont retournées à Excel. Par défaut, Excel renvoie `#VALUE!` des exceptions ou des erreurs non gérées.
 
-Dans l’exemple de code suivant, la fonction personnalisée effectue un appel d’extraction à un service REST. Il est possible que l’appel échoue, par exemple, si le service REST retourne une erreur ou si le réseau est défaillant. Si c’est le cas, la fonction personnalisée retourne `#N/A` pour indiquer que l’appel web a échoué.
+Dans l’exemple de code suivant, la fonction personnalisée effectue un appel d’extraction à un service REST. Il est possible que l’appel échoue, par exemple, si le service REST retourne une erreur ou si le réseau est défaillant. Dans ce cas, la fonction personnalisée renvoie `#N/A` pour indiquer que l’appel Web a échoué.
 
 
 ```typescript
