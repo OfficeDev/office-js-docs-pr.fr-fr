@@ -1,15 +1,15 @@
 ---
 title: Présentation des compléments Outlook
 description: Les compléments Outlook sont des intégrations conçues par des tiers dans Outlook à l’aide de notre plate-forme web.
-ms.date: 09/14/2020
+ms.date: 09/18/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 09f410ccbddb4cffadc700036a4da3c45d2fb6e3
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 351ebe3d99c4b321dcbb1b7c71ee72023db2eb02
+ms.sourcegitcommit: 2479812e677d1a7337765fe8f1c8345061d4091a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819566"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "48135227"
 ---
 # <a name="outlook-add-ins-overview"></a>Présentation des compléments Outlook
 
@@ -43,7 +43,7 @@ Les points d’extension correspondent à la manière dont les compléments sont
 
 ## <a name="mailbox-items-available-to-add-ins"></a>Éléments de boîtes aux lettres disponibles pour les compléments
 
-Les compléments Outlook sont disponibles pour les messages ou les rendez-vous en mode de lecture ou de composition, mais pas pour d’autres types d’élément. Outlook ne les active pas si l’élément de message actuel, en mode de composition ou de lecture, fait partie des éléments suivants :
+Les compléments Outlook s’activent lorsque l’utilisateur compose ou lit un message ou un rendez-vous, mais pas d’autres types d’éléments. Cependant, ils ne sont *pas* activés si l’élément de message actuel, en mode de composition ou de lecture, est l’un des éléments suivants :
 
 - protégé par la Gestion des droits relatifs à l’information (IRM) ou chiffré par d’autres moyens de protection. Un message signé numériquement en est un exemple, puisque la signature numérique dépend de l’un de ces mécanismes ;
 
