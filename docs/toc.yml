@@ -1145,6 +1145,9 @@
           displayName: Word
 - name: Modèles et pratiques
   items:
+    - name: Ouvrir dans Excel
+      href: excel/pnp-open-in-excel.md
+      displayName: Excel
     - name: Traitement par lots des appels distants de fonction personnalisée
       href: excel/custom-functions-batching.md
       displayName: 'Excel, Custom Functions'
