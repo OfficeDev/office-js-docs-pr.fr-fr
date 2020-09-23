@@ -1,14 +1,14 @@
 ---
 title: Règles d’activation pour les compléments Outlook
 description: Outlook active certains types de complément si le message ou le rendez-vous que l’utilisateur lit ou compose respecte les règles d’activation du complément.
-ms.date: 12/10/2019
+ms.date: 09/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 7a3ed48f77146a25725d46b3e06296cb0eb5616a
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: cdcdfbf3961ad9f627ba00f7366f49c77bba435d
+ms.sourcegitcommit: fd110305c2be8660ab8a47c1da3e3969bd1ede86
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294051"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "48214595"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>Règles d’activation des compléments contextuels Outlook 
 
@@ -141,7 +141,7 @@ Le `ItemHasRegularExpressionMatch` type complexe définit une règle qui utilise
 L’exemple suivant montre un `ItemHasRegularExpressionMatch` qui active le complément lorsque le corps de l’élément sélectionné contient « Apple », « Banana », ou « coco », sans tenir compte de la casse.
 
 ```xml
-<Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="fruits" RegExValue="apple|banana|coconut" pPropertyName="BodyAsPlaintext" IgnoreCase="true" />
+<Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="fruits" RegExValue="apple|banana|coconut" PropertyName="BodyAsPlaintext" IgnoreCase="true" />
 ```
 
 Pour plus d’informations sur l’utilisation de la `ItemHasRegularExpressionMatch` règle, voir [utiliser des règles d’activation d’expression régulière pour afficher un complément Outlook](use-regular-expressions-to-show-an-outlook-add-in.md).
