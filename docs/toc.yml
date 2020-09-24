@@ -1145,6 +1145,8 @@
           displayName: Word
 - name: Modèles et pratiques
   items:
+    - name: Vue d’ensemble
+      href: overview/patterns-and-practices-overview.md
     - name: Ouvrir dans Excel
       href: excel/pnp-open-in-excel.md
       displayName: Excel
