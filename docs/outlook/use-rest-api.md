@@ -1,14 +1,14 @@
 ---
 title: Utilisation des API REST Outlook d’un complément Outlook
 description: Découvrez comment utiliser des API REST Outlook à partir d’un complément Outlook pour obtenir un jeton d’accès.
-ms.date: 10/31/2019
+ms.date: 09/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 7cd26c26e277d7d5fe93664494eb84b4e94bcc47
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 067934f18b02d5106b58a7ec2a0de11a6ea35581
+ms.sourcegitcommit: 09e1d8ff14b3c09a3eb11c91432c224a539181a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611616"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "48268550"
 ---
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>Utilisation des API REST Outlook d’un complément Outlook
 
@@ -82,6 +82,9 @@ var restHost = Office.context.mailbox.restUrl;
 ## <a name="call-the-api"></a>Appel de l’API
 
 Une fois que votre complément a le jeton d’accès, l’ID de l’élément et l’URL de l’API REST, il peut transmettre ces informations à un service principal qui appelle l’API REST, ou l’appeler directement à l’aide d’AJAX. L’exemple suivant appelle l’API REST de courrier Outlook pour obtenir le message actuel.
+
+> [!IMPORTANT]
+> Pour les déploiements Exchange sur site, les demandes côté client utilisant AJAX ou des bibliothèques similaires échouent car CORS n’est pas pris en charge dans cette installation de serveur.
 
 ```js
 function getCurrentItem(accessToken) {

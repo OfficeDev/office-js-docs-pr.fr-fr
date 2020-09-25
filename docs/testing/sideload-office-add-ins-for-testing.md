@@ -1,14 +1,14 @@
 ---
 title: Chargement de version test des compléments Office dans Office sur le web
 description: Testez votre complément Office dans Office sur le Web par chargement.
-ms.date: 09/21/2020
+ms.date: 09/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 709461d19fbf4602db3ba5bd9c40f495d0dbbd52
-ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
+ms.openlocfilehash: 91f23200a2c393eb5c79f615765df52f205ac6e1
+ms.sourcegitcommit: 09e1d8ff14b3c09a3eb11c91432c224a539181a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "48175534"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "48268564"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>Chargement de version test des compléments Office dans Office sur le web
 
@@ -42,7 +42,7 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 6. Vérifiez que votre complément est installé. S’il s’agit d’une commande de complément, elle doit apparaître dans le ruban ou dans le menu contextuel. S’il s’agit d’un complément du volet Office, le volet doit apparaître.
 
 > [!NOTE]
-> Pour tester votre complément Office avec Microsoft Edge, une étape de configuration supplémentaire est requise. Depuis une invite de commandes Windows, exécutez la ligne suivante : `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes`
+> Pour tester votre complément Office avec Microsoft Edge avec le WebView d’origine (EdgeHTML), une étape de configuration supplémentaire est requise. Dans une invite de commandes Windows, exécutez la commande suivante : `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes` . Cela n’est pas obligatoire lorsque Office utilise le WebView2 Edge basé sur le chrome. Pour plus d’informations, consultez la rubrique [navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md).
 
 ## <a name="sideload-an-office-add-in-in-office-365"></a>Chargement de version test d’un complément Office dans Office 365
 

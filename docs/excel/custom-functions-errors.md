@@ -1,14 +1,14 @@
 ---
-ms.date: 09/21/2020
+ms.date: 09/23/2020
 description: 'Gérer et retourner des erreurs comme #NULL! à partir de votre fonction personnalisée.'
 title: Gérer et renvoyer des erreurs à partir de votre fonction personnalisée
 localization_priority: Normal
-ms.openlocfilehash: 58c2ab432a4525f660e2d89735fd3add6e76fa7f
-ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
+ms.openlocfilehash: b3d3b325649a0775d3375c9f5285bba7cde0aa16
+ms.sourcegitcommit: 09e1d8ff14b3c09a3eb11c91432c224a539181a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "48175527"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "48268543"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function"></a>Gérer et renvoyer des erreurs à partir de votre fonction personnalisée
 
@@ -38,9 +38,9 @@ function getCity(zipCode: string): string {
 L’objet [CustomFunctions. Error](/javascript/api/custom-functions-runtime/customfunctions.error) est utilisé pour renvoyer une erreur à la cellule. Lorsque vous créez l’objet, spécifiez l’erreur que vous souhaitez utiliser en choisissant l’une des `ErrorCode` valeurs d’énumération suivantes.
 
 
-|Valeur enum ErrorCode  |Valeur de la cellule Excel  |Signification  |
+|Valeur enum ErrorCode  |Valeur de la cellule Excel  |Description  |
 |---------------|---------|---------|
-|`divisionByZero` | `#DIV/0`  | Sachez que JavaScript autorise la division par zéro, donc vous devez écrire un gestionnaire d’erreurs avec attention pour détecter cette condition. |
+|`divisionByZero` | `#DIV/0`  | La fonction tente d’effectuer une division par zéro. |
 |`invalidName`    | `#NAME?`  | Il y a une faute de frappe dans le nom de la fonction. Notez que cette erreur est prise en charge en tant qu’erreur d’entrée d’une fonction personnalisée, mais pas en tant qu’erreur de sortie d’une fonction personnalisée. | 
 |`invalidNumber`  | `#NUM!`   | Il y a un problème avec un nombre dans la formule. |
 |`invalidReference` | `#REF!` | La fonction fait référence à une cellule non valide. Notez que cette erreur est prise en charge en tant qu’erreur d’entrée d’une fonction personnalisée, mais pas en tant qu’erreur de sortie d’une fonction personnalisée.|
