@@ -1,14 +1,14 @@
 ---
 title: Développement de compléments Office avec Angular
 description: Obtenir des instructions sur l’utilisation d’angles pour créer un complément Office en tant qu’application à page unique.
-ms.date: 01/27/2020
+ms.date: 09/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 2cd90a51f49adfd03c0096d55399012e88da1da0
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: c0f1050154339a5732b4f61bb8961ebecaffc342
+ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608984"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "48279476"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Développement de compléments Office avec Angular
 
@@ -94,7 +94,7 @@ L’API de boîte de dialogue du complément Office permet à votre complément
 
 La méthode [displayDialogAsync](/javascript/api/office/office.ui) accepte un paramètre qui indique l’URL de la page qui doit s’ouvrir dans la boîte de dialogue. Votre complément peut avoir une autre page HTML (différente de la page de base) pour passer à ce paramètre, ou vous pouvez passer l’URL d’un itinéraire dans votre application Angular. 
 
-Il est important de ne pas oublier, si vous passez un itinéraire, que la boîte de dialogue crée une nouvelle fenêtre avec son propre contexte d’exécution. Votre page de base et son code d’initialisation et d’amorçage s’exécutent à nouveau dans ce nouveau contexte, et toutes les variables sont définies sur leurs valeurs initiales dans la boîte de dialogue. Par conséquent, cette technique lance une deuxième instance de votre application monopage dans la boîte de dialogue. Le code qui modifie des variables dans la boîte de dialogue ne change pas la version du volet Office des mêmes variables. De même, la boîte de dialogue possède son propre stockage de session, qui n’est pas accessible à partir du code dans le volet Office.  
+Il est important de ne pas oublier, si vous passez un itinéraire, que la boîte de dialogue crée une nouvelle fenêtre avec son propre contexte d’exécution. Votre page de base et son code d’initialisation et d’amorçage s’exécutent à nouveau dans ce nouveau contexte, et toutes les variables sont définies sur leurs valeurs initiales dans la boîte de dialogue. Par conséquent, cette technique lance une deuxième instance de votre application monopage dans la boîte de dialogue. Le code qui modifie des variables dans la boîte de dialogue ne change pas la version du volet Office des mêmes variables. De même, la boîte de dialogue dispose de son propre espace de stockage de session (propriété [Window. sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) ), qui n’est pas accessible à partir du code dans le volet Office.  
 
 
 ## <a name="trigger-the-ui-update"></a>Déclencher la mise à jour de l’interface utilisateur

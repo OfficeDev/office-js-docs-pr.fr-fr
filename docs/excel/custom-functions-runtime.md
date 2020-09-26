@@ -1,14 +1,14 @@
 ---
-ms.date: 05/17/2020
+ms.date: 09/25/2020
 description: Découvrez les fonctions personnalisées Excel qui n’utilisent pas de volet de tâches ni leur propre Runtime JavaScript.
 title: Runtime pour les fonctions personnalisées Excel sans interface utilisateur
 localization_priority: Normal
-ms.openlocfilehash: 5cb9aa480d6923d31434d58a9683e9a9f5d48458
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 94254dfb5a0d03b7c9fec392b2377aff91b58af4
+ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609642"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "48279508"
 ---
 # <a name="runtime-for-ui-less-excel-custom-functions"></a>Runtime pour les fonctions personnalisées Excel sans interface utilisateur
 
@@ -30,7 +30,7 @@ Une implémentation CORS simple ne peut pas utiliser les cookies et ne prend en 
 
 ## <a name="storing-and-accessing-data"></a>Accès aux données et stockage
 
-Au sein d’une fonction personnalisée sans interface utilisateur, vous pouvez stocker et accéder aux données à l’aide de l' `OfficeRuntime.storage` objet. `Storage`est un système de stockage de valeur de clé persistante, non chiffré qui fournit une alternative à [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), qui ne peut pas être utilisé par des fonctions personnalisées sans interface utilisateur. `Storage`offre 10 Mo de données par domaine. Les domaines peuvent être partagés par plusieurs compléments.
+Au sein d’une fonction personnalisée sans interface utilisateur, vous pouvez stocker et accéder aux données à l’aide de l' `OfficeRuntime.storage` objet. `Storage` est un système de stockage de valeur de clé persistante, non chiffré qui fournit une alternative à [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), qui ne peut pas être utilisé par des fonctions personnalisées sans interface utilisateur. `Storage` offre 10 Mo de données par domaine. Les domaines peuvent être partagés par plusieurs compléments.
 
 `Storage` est conçu comme une solution de stockage partagé, ce qui signifie que plusieurs parties d’un complément ont accès aux mêmes données. Par exemple, les jetons pour l’authentification utilisateur peuvent être stockés dans `storage` , car il est accessible à la fois par une fonction personnalisée sans interface utilisateur et par des éléments d’interface utilisateur de complément tels qu’un volet de tâches. De même, si deux compléments partagent le même domaine (par exemple, `www.contoso.com/addin1` `www.contoso.com/addin2` ), ils sont également autorisés à partager des informations entre eux `storage` . Notez que les compléments qui ont des sous-domaines différents auront des instances différentes de `storage` (par exemple `subdomain.contoso.com/addin1` , `differentsubdomain.contoso.com/addin2` ).
 
@@ -46,7 +46,7 @@ Les méthodes suivantes sont disponibles avec l’objet `storage` :
  - `removeItems`
  - `getKeys`
 
-.[!NOTE]
+> [!NOTE]
 > Il n’existe pas de méthode pour effacer toutes les informations (par exemple, `clear` ). À la place, vous devez utiliser l’objet `removeItems` pour supprimer plusieurs entrées à la fois.
 
 ### <a name="officeruntimestorage-example"></a>Exemple de OfficeRuntime. Storage

@@ -1,14 +1,14 @@
 ---
 title: Pratiques recommandées et règles pour l’API de dialogue Office
 description: Fournit des règles et des pratiques recommandées pour l’API de boîte de dialogue Office, telles que les meilleures pratiques pour une application à page unique (SPA)
-ms.date: 01/29/2020
+ms.date: 09/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 5e0854137b27d8b8ae33fff8943421cc0c488abe
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 5c80b18f7eb6448de23c692683b7c991b9d95ef5
+ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292756"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "48279497"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Pratiques recommandées et règles pour l’API de dialogue Office
 
@@ -51,7 +51,7 @@ Si, pour une raison quelconque, vous souhaitez désactiver cette fonctionnalité
 
 ### <a name="do-not-use-the-_host_info-value"></a>Ne pas utiliser la \_ \_ valeur Host info
 
-Office ajoute automatiquement un paramètre de requête appelé `_host_info` à l’URL qui est transmise à `displayDialogAsync`. Il est ajouté après vos paramètres de requête personnalisés, le cas échéant. Il n’est ajouté à aucune URL suivante vers laquelle la boîte de dialogue navigue. Microsoft peut modifier le contenu de cette valeur ou le supprimer entièrement, de sorte que votre code ne doit pas le lire. La même valeur est ajoutée au stockage de session de la boîte de dialogue. Là encore, *votre code ne doit ni lire, ni écrire cette valeur*.
+Office ajoute automatiquement un paramètre de requête appelé `_host_info` à l’URL qui est transmise à `displayDialogAsync`. Il est ajouté après vos paramètres de requête personnalisés, le cas échéant. Il n’est ajouté à aucune URL suivante vers laquelle la boîte de dialogue navigue. Microsoft peut modifier le contenu de cette valeur ou le supprimer entièrement, de sorte que votre code ne doit pas le lire. La même valeur est ajoutée à l’espace de stockage de session de la boîte de dialogue (autrement dit, la propriété [Window. sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) ). Là encore, *votre code ne doit ni lire, ni écrire cette valeur*.
 
 ### <a name="best-practices-for-using-the-office-dialog-api-in-an-spa"></a>Meilleures pratiques pour l’utilisation de l’API de boîte de dialogue Office dans un SPA
 
@@ -62,7 +62,7 @@ Si votre complément utilise le routage côté client, comme le font généralem
 
 #### <a name="problems-with-spas-and-the-office-dialog-api"></a>Problèmes liés à la fonction SPAs et l’API de boîte de dialogue Office
 
-La boîte de dialogue Office se trouve dans une nouvelle fenêtre avec sa propre instance du moteur JavaScript, ce qui lui est propre. Si vous transmettez un itinéraire, votre page de base et toutes ses initialisations et codes d’amorçage s’exécutent à nouveau dans ce nouveau contexte, et toutes les variables sont définies sur leurs valeurs initiales dans la boîte de dialogue. Ainsi, cette technique télécharge et lance une deuxième instance de votre application dans la fenêtre de zone, ce qui annule partiellement l’objectif d’un SPA. De plus, le code qui modifie les variables dans la fenêtre de la boîte de dialogue ne modifie pas la version du volet Office des mêmes variables. De même, la fenêtre de la boîte de dialogue dispose de son propre stockage de session, qui n’est pas accessible à partir du code dans le volet Office. La boîte de dialogue et la page hôte sur laquelle l' `displayDialogAsync` appel a été appelé ressemblent à deux clients différents sur votre serveur. (Pour un rappel de ce qu’est une page hôte, voir [ouvrir une boîte de dialogue à partir d’une page hôte](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page).)
+La boîte de dialogue Office se trouve dans une nouvelle fenêtre avec sa propre instance du moteur JavaScript, ce qui lui est propre. Si vous transmettez un itinéraire, votre page de base et toutes ses initialisations et codes d’amorçage s’exécutent à nouveau dans ce nouveau contexte, et toutes les variables sont définies sur leurs valeurs initiales dans la boîte de dialogue. Ainsi, cette technique télécharge et lance une deuxième instance de votre application dans la fenêtre de zone, ce qui annule partiellement l’objectif d’un SPA. De plus, le code qui modifie les variables dans la fenêtre de la boîte de dialogue ne modifie pas la version du volet Office des mêmes variables. De même, la fenêtre de la boîte de dialogue dispose de son propre espace de stockage de session (propriété [Window. sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) ), qui n’est pas accessible à partir du code dans le volet Office. La boîte de dialogue et la page hôte sur laquelle l' `displayDialogAsync` appel a été appelé ressemblent à deux clients différents sur votre serveur. (Pour un rappel de ce qu’est une page hôte, voir [ouvrir une boîte de dialogue à partir d’une page hôte](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page).)
 
 Par conséquent, si vous avez passé un itinéraire à la `displayDialogAsync` méthode, vous n’auriez pas vraiment un spa ; vous auriez *deux instances du même Spa*. De plus, la majeure partie du code dans l’instance de volet de tâches ne serait jamais utilisée dans cette instance et la plus grande partie du code dans l’instance de boîte de dialogue ne seraient jamais utilisées dans cette instance. Ce serait comme avoir deux SPAs dans le même lot.
 

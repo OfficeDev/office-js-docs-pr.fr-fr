@@ -1,14 +1,14 @@
 ---
-ms.date: 05/06/2020
+ms.date: 09/25/2020
 description: Utiliser les balises JSDOC pour créer dynamiquement vos fonctions personnalisées de métadonnées JSON.
 title: Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: 8138e738188e50d2a1369c359fbca3e1574db32f
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 995f323b24efdc1964e6e9643f6dad8a999a6d39
+ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819517"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "48279499"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 
@@ -38,7 +38,9 @@ Dans cet exemple, la phrase «calcule le volume d’une sphère.» est la descri
 
 
 ## <a name="jsdoc-tags"></a>Balises JSDoc
-Voici quelles sont les balises JSDoc prises en charge dans les fonctions Excel personnalisées :
+
+Les balises JSDoc suivantes sont prises en charge dans les fonctions personnalisées Excel.
+
 * [@ annulable](#cancelable)
 * [@fonctionpersonnalisée](#customfunction)nom id
 * url[@urlaide](#helpurl)
@@ -50,7 +52,7 @@ Voici quelles sont les balises JSDoc prises en charge dans les fonctions Excel p
 
 ---
 ### <a name="cancelable"></a>@ annulable
-<a id="cancelable"/>
+<a id="cancelable"></a>
 
 Indique qu’une fonction personnalisée effectue une action lorsque la fonction est annulée.
 
@@ -62,7 +64,7 @@ Une fonction ne peut pas contenir les deux balises `@cancelable` et `@streaming`
 
 ---
 ### <a name="customfunction"></a>@fonctionpersonnalisée
-<a id="customfunction"/>
+<a id="customfunction"></a>
 
 Syntaxe: @fonctionpersonnalisée_id_ _nom_
 
@@ -131,7 +133,7 @@ Dans l’exemple suivant, la phrase « A function that adds two numbers » («
 
 ---
 ### <a name="helpurl"></a>@urlaide
-<a id="helpurl"/>
+<a id="helpurl"></a>
 
 Syntaxe: @urlaide_url_
 
@@ -150,7 +152,7 @@ Dans l’exemple suivant, le `helpurl` est `www.contoso.com/weatherhelp` .
 
 ---
 ### <a name="param"></a>@param
-<a id="param"/>
+<a id="param"></a>
 
 #### <a name="javascript"></a>JavaScript
 
@@ -161,6 +163,7 @@ Syntaxe JavaScript : @param {type} nom_description_
 * `description`fournit la description qui s’affiche dans Excel pour le paramètre de la fonction. Elle est facultative.
 
 Pour désigner un paramètre de fonction personnalisée comme étant facultatif :
+
 * Placez les crochets autour du nom du paramètre. Par exemple : `@param {string} [text] Optional text`.
 
 > [!NOTE]
@@ -189,6 +192,7 @@ Syntaxe TypeScript : nom @param_description_
 Consultez la section [Types](#types) pour savoir quels types de paramètres de fonction peuvent être utilisés.
 
 Pour désigner un paramètre de fonction personnalisée comme étant facultatif, effectuez l’une des actions suivantes :
+
 * Utilisez un paramètre facultatif. Par exemple : `function f(text?: string)`
 * Définissez ce paramètre sur une valeur par défaut. Par exemple : `function f(text: string = "abc")`
 
@@ -214,7 +218,7 @@ function add(first: number, second: number): number {
 
 ---
 ### <a name="requiresaddress"></a>@requièreuneadresse
-<a id="requiresAddress"/>
+<a id="requiresAddress"></a>
 
 Indique que l’adresse de la cellule dans laquelle la fonction est évaluée doit être fournie.
 
@@ -222,7 +226,7 @@ Le dernier paramètre de la fonction doit être de type `CustomFunctions.Invocat
 
 ---
 ### <a name="returns"></a>@renvoie :
-<a id="returns"/>
+<a id="returns"></a>
 
 Syntaxe: @renvoie {_type_}
 
@@ -247,7 +251,7 @@ function add(first: number, second: number): number {
 
 ---
 ### <a name="streaming"></a>@diffusionencontinu
-<a id="streaming"/>
+<a id="streaming"></a>
 
 Utilisé pour indiquer qu’une fonction personnalisée est une fonction diffusion en continu. 
 
@@ -262,7 +266,7 @@ Les fonctions de diffusion en continu ne peuvent pas être marquées comme étan
 
 ---
 ### <a name="volatile"></a>@volatile
-<a id="volatile"/>
+<a id="volatile"></a>
 
 Une fonction volatile est une fonction dont le résultat peut changer d’un moment à l’autre, même si elle ne récupère pas d’argument ou si ses arguments ne changent pas. À chaque calcul, Excel réévalue les cellules contenant des fonctions volatiles, ainsi que toutes leurs cellules dépendantes. C’est pourquoi, un trop grand nombre de dépendances de fonctions volatiles risque de ralentir les calculs. Nous vous recommandons d’en utiliser aussi peu que possible.
 
@@ -272,7 +276,7 @@ La fonction suivante est volatile et utilise la balise `@volatile`.
 
 ```js
 /**
- * Simulates rolling a 6-sided dice.
+ * Simulates rolling a 6-sided die.
  * @customfunction
  * @volatile
  */
@@ -310,6 +314,7 @@ Une fonction peut renvoyer une promesse, qui fournit la valeur lorsque la promes
 Tout autre type sera traité comme une erreur.
 
 ## <a name="next-steps"></a>Étapes suivantes
+
 Découvrez les [conventions d’affectation des noms des fonctions personnalisées](custom-functions-naming.md). Découvrez également comment [localiser vos fonctions](custom-functions-localize.md), ce qui implique que vous [écriviez votre fichier JSON à la main](custom-functions-json.md).
 
 ## <a name="see-also"></a>Voir aussi
