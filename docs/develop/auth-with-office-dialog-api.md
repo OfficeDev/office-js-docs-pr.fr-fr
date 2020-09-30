@@ -1,14 +1,14 @@
 ---
 title: Authentifier et autoriser avec l’API de dialogue Office
 description: Découvrez comment utiliser l’API de boîte de dialogue Office pour permettre aux utilisateurs de se connecter à Google, Facebook, Microsoft 365 ainsi qu'à d’autres services protégés par la plateforme Microsoft Identity.
-ms.date: 07/07/2020
+ms.date: 09/24/2020
 localization_priority: Priority
-ms.openlocfilehash: 22242b3e54a63b76a44f8e610be2194a1fc5f00b
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: bc0d092dad105cbdff09a5826632baa6fd4f7021
+ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293344"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "48279492"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Authentifier et autoriser avec l’API de dialogue Office
 
@@ -23,7 +23,7 @@ La boîte de dialogue ouverte avec cette API présente les caractéristiques sui
 - Il s’agit d’une instance de navigateur totalement distincte du volet de tâches, ce qui signifie :
   - Elle possède ses propres environnements d’exécution JavaScript et objets de fenêtre et variables globales.
   - Il n’existe pas d’environnement d’exécution partagé dans le volet des tâches.
-  - Elle ne partage pas le même espace de stockage de session que le volet des tâches.
+  - Il ne partage pas le même espace de stockage de session (la propriété [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)) que le volet Office.
 - La première page ouverte dans la boîte de dialogue doit être hébergée dans le même domaine que le volet des tâches, y compris le protocole, les sous-domaines et le port, le cas échéant.
 - La boîte de dialogue peut renvoyer les informations au volet des tâches à l’aide de la méthode [messageParent](/javascript/api/office/office.ui#messageparent-message-), mais cette méthode ne peut être appelée que depuis une page hébergée dans le même domaine que le volet des tâches, y compris le protocole, les sous-domaines et le port.
 
