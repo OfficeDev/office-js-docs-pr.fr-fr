@@ -3,12 +3,12 @@ ms.date: 09/25/2020
 description: Utiliser les balises JSDOC pour créer dynamiquement vos fonctions personnalisées de métadonnées JSON.
 title: Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: 995f323b24efdc1964e6e9643f6dad8a999a6d39
-ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
+ms.openlocfilehash: 151dc7c97b2a98743906b7e0a920fdc1eff62e7f
+ms.sourcegitcommit: 42202d7e2ac24dffa77cf937f5697a1cd79ee790
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "48279499"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "48308536"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 
@@ -51,8 +51,9 @@ Les balises JSDoc suivantes sont prises en charge dans les fonctions personnalis
 * [@volatile](#volatile)
 
 ---
-### <a name="cancelable"></a>@ annulable
 <a id="cancelable"></a>
+
+### <a name="cancelable"></a>@ annulable
 
 Indique qu’une fonction personnalisée effectue une action lorsque la fonction est annulée.
 
@@ -63,8 +64,9 @@ Si le dernier paramètre de fonction est de type `CustomFunctions.CancelableInvo
 Une fonction ne peut pas contenir les deux balises `@cancelable` et `@streaming`.
 
 ---
-### <a name="customfunction"></a>@fonctionpersonnalisée
 <a id="customfunction"></a>
+
+### <a name="customfunction"></a>@fonctionpersonnalisée
 
 Syntaxe: @fonctionpersonnalisée_id_ _nom_
 
@@ -132,8 +134,9 @@ Dans l’exemple suivant, la phrase « A function that adds two numbers » («
 ```
 
 ---
-### <a name="helpurl"></a>@urlaide
 <a id="helpurl"></a>
+
+### <a name="helpurl"></a>@urlaide
 
 Syntaxe: @urlaide_url_
 
@@ -151,8 +154,9 @@ Dans l’exemple suivant, le `helpurl` est `www.contoso.com/weatherhelp` .
 ```
 
 ---
-### <a name="param"></a>@param
 <a id="param"></a>
+
+### <a name="param"></a>@param
 
 #### <a name="javascript"></a>JavaScript
 
@@ -217,16 +221,18 @@ function add(first: number, second: number): number {
 ```
 
 ---
-### <a name="requiresaddress"></a>@requièreuneadresse
 <a id="requiresAddress"></a>
+
+### <a name="requiresaddress"></a>@requièreuneadresse
 
 Indique que l’adresse de la cellule dans laquelle la fonction est évaluée doit être fournie.
 
 Le dernier paramètre de la fonction doit être de type `CustomFunctions.Invocation` ou un type dérivé. Lorsque la fonction est appelée, la propriété `address` contiendra l’adresse.
 
 ---
-### <a name="returns"></a>@renvoie :
 <a id="returns"></a>
+
+### <a name="returns"></a>@renvoie :
 
 Syntaxe: @renvoie {_type_}
 
@@ -250,8 +256,9 @@ function add(first: number, second: number): number {
 ```
 
 ---
-### <a name="streaming"></a>@diffusionencontinu
 <a id="streaming"></a>
+
+### <a name="streaming"></a>@diffusionencontinu
 
 Utilisé pour indiquer qu’une fonction personnalisée est une fonction diffusion en continu. 
 
@@ -265,8 +272,9 @@ Les exceptions levées par une fonction en continu sont ignorées. `setResult()`
 Les fonctions de diffusion en continu ne peuvent pas être marquées comme étant [@volatile](#volatile).
 
 ---
-### <a name="volatile"></a>@volatile
 <a id="volatile"></a>
+
+### <a name="volatile"></a>@volatile
 
 Une fonction volatile est une fonction dont le résultat peut changer d’un moment à l’autre, même si elle ne récupère pas d’argument ou si ses arguments ne changent pas. À chaque calcul, Excel réévalue les cellules contenant des fonctions volatiles, ainsi que toutes leurs cellules dépendantes. C’est pourquoi, un trop grand nombre de dépendances de fonctions volatiles risque de ralentir les calculs. Nous vous recommandons d’en utiliser aussi peu que possible.
 

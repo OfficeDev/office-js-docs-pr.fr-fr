@@ -3,12 +3,12 @@ title: Ouvrir Excel à partir de votre page Web et incorporer votre complément 
 description: Ouvrez Excel à partir de votre page Web et incorporez votre complément Office.
 ms.date: 09/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 49df253c714f3ad84d2523b87e7df894b9027355
-ms.sourcegitcommit: ea03e4ea2e8537d5f6d52477816209f6c1a6579c
+ms.openlocfilehash: 00846ca5ca05e65fd75629f5aad0e4fb3d947ab1
+ms.sourcegitcommit: 42202d7e2ac24dffa77cf937f5697a1cd79ee790
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "48166921"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "48308543"
 ---
 # <a name="open-excel-from-your-web-page-and-embed-your-office-add-in"></a>Ouvrir Excel à partir de votre page Web et incorporer votre complément Office
 
@@ -27,7 +27,7 @@ Tout d’abord, nous allons apprendre à créer un document Excel à partir d’
 1. Extrayez l’exemple de code de  https://github.com/OfficeDev/Office-OOXML-EmbedAddin/archive/master.zip dans un dossier sur votre ordinateur.
 2. Pour générer et exécuter l’exemple, suivez les étapes de la section **pour utiliser le projet** du fichier Lisez-moi.
 3. Lorsque vous exécutez l’exemple, il affiche une page Web semblable à la capture d’écran suivante. Utilisez la page Web pour créer un nouveau document Excel qui contient script Lab lors de son ouverture.
-:::image type="content" source="../images/embed-script-lab-sample-ui.png" alt-text="Capture d’écran de la page Web que l’exemple de script embed permet d’afficher pour sélectionner un fichier Excel et incorporer le complément script Lab dans celui-ci.":::
+:::image type="content" source="../images/embed-script-lab-sample-ui.png" alt-text="Image du bouton Excel de votre page Web ouverture d’un nouveau document Excel avec votre complément incorporé et en cours d’ouverture automatique.":::
 
 ### <a name="how-the-sample-works"></a>Fonctionnement de l’exemple
 
@@ -72,7 +72,7 @@ La valeur **StoreType** est « FileSystem ».
 
 ## <a name="use-the-fluent-ui"></a>Utiliser l’interface utilisateur Fluent
 
-:::image type="content" source="../images/fluent-ui-wxp.png" alt-text="Icônes de l’interface utilisateur Fluent pour Word, Excel et PowerPoint.":::
+:::image type="content" source="../images/fluent-ui-wxp.png" alt-text="Image du bouton Excel de votre page Web ouverture d’un nouveau document Excel avec votre complément incorporé et en cours d’ouverture automatique.":::
 
 Il est recommandé d’utiliser l’interface utilisateur Fluent pour aider vos utilisateurs à effectuer une transition entre les produits Microsoft. Vous devez toujours utiliser une icône Office pour indiquer l’application Office qui sera lancée à partir de votre page Web. Nous allons modifier l’exemple de code de façon à utiliser l’icône Excel pour indiquer qu’il lance l’application Excel.
 
@@ -186,16 +186,9 @@ Une version JavaScript du kit de développement logiciel (SDK) OOXML est disponi
 
 Vous pouvez placer le code OOXML dans une fonction Azure pour séparer le code .NET du reste de votre application Web. Appelez ensuite la fonction Azure (pour générer le document Excel) à partir de votre application Web. Pour plus d’informations sur les fonctions Azure, reportez-vous à la rubrique [Présentation des fonctions Azure](https://docs.microsoft.com/azure/azure-functions/functions-overview).
 
-### <a name="simplify-authentication"></a>Simplifier l’authentification
+### <a name="use-single-sign-on"></a>Utiliser l’authentification unique
 
-En règle générale, le client est authentifié et connecté lorsqu’il travaille dans votre application Web. Il est recommandé de rester connecté lorsqu’il ouvre le document afin qu’il ne soit pas obligé de se connecter à nouveau pour utiliser votre complément Office. Un moyen efficace de gérer cela consiste à transmettre un jeton d’authentification de courte durée au complément.
-
-1. Utilisez le kit de développement logiciel (SDK) OOXML pour enregistrer le jeton d’authentification en tant que propriété personnalisée dans le document.
-1. Lire le jeton dans le document au démarrage du complément.
-1. Le complément peut ensuite se connecter à vos services sans nécessiter d’autres étapes d’authentification de la part du client.
-
-> [!WARNING]
-> L’incorporation d’un jeton d’authentification dans le document pose un risque de sécurité où un utilisateur non autorisé peut obtenir le jeton. Nous vous recommandons d’utiliser un jeton d’authentification à courte durée de vie. Lorsque le complément utilise le jeton éphémère, il doit immédiatement demander un nouveau jeton d’authentification qui n’est pas enregistré dans le document.
+Pour simplifier l’authentification, nous vous recommandons d’implémenter l’authentification unique dans votre complément. Pour plus d’informations, consultez la rubrique [activer l’authentification unique pour les compléments Office](../develop/sso-in-office-add-ins.md) .
 
 ## <a name="see-also"></a>Voir aussi
 
