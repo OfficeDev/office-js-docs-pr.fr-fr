@@ -1,14 +1,14 @@
 ---
 title: Activer les scénarios d’accès délégué dans un complément Outlook
 description: Décrit brièvement l’accès délégué et explique comment configurer la prise en charge des compléments.
-ms.date: 09/03/2020
+ms.date: 09/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 68b912d35f68cbf1177dd0b809994840092330a9
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 68e9c8003f8d223a591283fd1a73f0a38bd3c8a4
+ms.sourcegitcommit: 6c3a04acde57832feeaaa599148f93af7e3e36ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430981"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "48336418"
 ---
 # <a name="enable-delegate-access-scenarios-in-an-outlook-add-in"></a>Activer les scénarios d’accès délégué dans un complément Outlook
 
@@ -25,8 +25,8 @@ Le tableau suivant décrit les autorisations déléguées prises en charge par l
 
 |Autorisation|Valeur|Description|
 |---|---:|---|
-|Lecture|1 (000001)|Peut lire des éléments.|
-|Write|2 (000010)|Peut créer des éléments.|
+|Lire|1 (000001)|Peut lire des éléments.|
+|Écriture|2 (000010)|Peut créer des éléments.|
 |DeleteOwn|4 (000100)|Peut uniquement supprimer les éléments qu’ils ont créés.|
 |DeleteAll|8 (001000)|Peut supprimer tous les éléments.|
 |EditOwn|16 (010000)|Ne peut modifier que les éléments qu’ils ont créés.|
@@ -83,9 +83,6 @@ L’exemple suivant montre l' `SupportsSharedFolders` élément défini `true` d
 
 Vous pouvez obtenir les propriétés partagées d’un élément en mode de composition ou de lecture en appelant la méthode [Item. getSharedPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) . Cela renvoie un objet [SharedProperties](/javascript/api/outlook/office.sharedproperties) qui fournit actuellement les autorisations du délégué, l’adresse de messagerie du propriétaire, l’URL de base de l’API REST et la boîte aux lettres cible.
 
-> [!IMPORTANT]
-> Dans un scénario de délégué, votre complément peut utiliser REST mais pas EWS, et l’autorisation du complément doit être définie sur `ReadWriteMailbox` pour permettre l’accès Rest à la boîte aux lettres du propriétaire.
-
 L’exemple suivant montre comment obtenir les propriétés partagées d’un message ou d’un rendez-vous, vérifier si le délégué dispose d’une autorisation en **écriture** et passer un appel Rest.
 
 ```js
@@ -139,6 +136,46 @@ function performOperation() {
 
 > [!TIP]
 > En tant que délégué, vous pouvez utiliser REST pour [obtenir le contenu d’un message Outlook attaché à un élément ou un billet de groupe Outlook](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post).
+
+## <a name="handle-calling-rest-on-shared-and-non-shared-items"></a>Gérer l’appel de REST sur des éléments partagés et non partagés
+
+Si vous souhaitez appeler une opération REST sur un élément, que l’élément soit ou non partagé, vous pouvez utiliser l' `getSharedPropertiesAsync` API pour déterminer si l’élément est partagé. Après cela, vous pouvez construire l’URL REST pour l’opération à l’aide de l’objet approprié.
+
+```js
+if (item.getSharedPropertiesAsync) {
+  // In Windows, Mac, and the web client, this indicates a shared item so use SharedProperties properties to construct the REST URL.
+  // Add-ins don't activate on shared items in mobile so no need to handle.
+
+  // Perform operation for shared item.
+} else {
+  // In general, this is not a shared item, so construct the REST URL using info from the Call REST APIs article:
+  // https://docs.microsoft.com/office/dev/add-ins/outlook/use-rest-api
+
+  // Perform operation for non-shared item.
+}
+```
+
+## <a name="limitations"></a>Limites
+
+En fonction des scénarios de votre complément, vous devez tenir compte de deux limitations lors de la gestion des situations de délégué.
+
+### <a name="rest-and-ews"></a>REST et EWS
+
+Votre complément peut utiliser REST mais pas EWS, et l’autorisation du complément doit être définie sur `ReadWriteMailbox` pour permettre l’accès Rest à la boîte aux lettres du propriétaire.
+
+### <a name="message-compose-mode"></a>Mode composition de message
+
+En mode de composition de message, [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#getsharedpropertiesasync-options--callback-) n’est pas pris en charge dans Outlook sur le Web ou Windows, sauf si les conditions suivantes sont remplies.
+
+1. Le propriétaire partage au moins un dossier de boîte aux lettres avec le délégué.
+1. Le délégué ébauche un message dans le dossier partagé.
+
+    Exemples :
+
+    - Le délégué répond à ou transfère un message électronique dans le dossier partagé.
+    - Le délégué enregistre un brouillon, puis le déplace de son dossier **brouillons** vers le dossier partagé. Le délégué ouvre le brouillon à partir du dossier partagé, puis poursuit la composition.
+
+Une fois que le message a été envoyé, il se trouve généralement dans le dossier **éléments envoyés** du délégué.
 
 ## <a name="see-also"></a>Voir aussi
 
