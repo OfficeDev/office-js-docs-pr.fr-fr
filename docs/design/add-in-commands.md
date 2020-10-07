@@ -1,14 +1,14 @@
 ---
 title: Concepts basiques pour les commandes de complément
 description: Découvrez l'ajout de boutons et d'éléments de menu personnalisés au ruban dans Office dans le cadre d’un complément Office.
-ms.date: 07/10/2020
+ms.date: 10/03/2020
 localization_priority: Priority
-ms.openlocfilehash: 13db2191d9691a699c5976b812e1ca6d8f3bf1ae
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: eea1983d8c45d13ca48594c108e2992a1bec0d02
+ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293358"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "48370506"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Commandes de complément pour Excel, PowerPoint et Word
 
@@ -52,12 +52,12 @@ Les fonctionnalités de commande suivantes sont actuellement prises en charge.
 - ShowTaskpane - Affiche un ou plusieurs volets où sont chargées des pages HTML personnalisées.
 - ExecuteFunction - Charge une page HTML invisible, puis y exécute une fonction JavaScript. Pour afficher l’interface utilisateur au sein de votre fonction (par exemple, erreurs, avancement, entrées supplémentaires), vous pouvez utiliser l’API [displayDialog](/javascript/api/office/office.ui).  
 
-### <a name="default-enabled-or-disabled-status-preview"></a>État Activé ou Désactivé par défaut (préversion)
+### <a name="default-enabled-or-disabled-status"></a>État Activé ou Désactivé par défaut
 
 Vous pouvez spécifier si la commande est activée ou désactivée lors du lancement de votre complément et modifier le paramètre par programme.
 
 > [!NOTE]
-> Cette fonctionnalité est en aperçu et n’est pas prise en charge dans toutes les applications ou tous les scénarios Office. Pour plus d’informations, reportez-vous aux [Commandes Activé et Désactivé pour les compléments](disable-add-in-commands.md).
+> Cette fonctionnalité n’est pas prise en charge dans toutes les applications Office ni tous les scénarios. Pour plus d’informations, reportez-vous aux [Commandes Activé et Désactivé pour les compléments](disable-add-in-commands.md).
 
 ## <a name="supported-platforms"></a>Plateformes prises en charge
 

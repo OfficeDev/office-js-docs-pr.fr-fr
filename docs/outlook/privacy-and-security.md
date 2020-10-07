@@ -1,14 +1,14 @@
 ---
 title: Confidentialité, autorisations et sécurité pour les compléments Outlook
 description: Découvrez comment gérer la confidentialité, les autorisations et la sécurité dans un complément Outlook.
-ms.date: 09/14/2020
+ms.date: 10/05/2020
 localization_priority: Priority
-ms.openlocfilehash: 3bad5cc3080d67cdfab8639d9140b9bfa3e25559
-ms.sourcegitcommit: 6e6de48f746416ec68b2cf4c298253986486fbfd
+ms.openlocfilehash: 93eee06659b6452e6dd0961837715be5557e6c2c
+ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "47651943"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "48370513"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Confidentialité, autorisations et sécurité pour les compléments Outlook
 
@@ -63,9 +63,12 @@ L’illustration suivante affiche les quatre niveaux d’autorisations et décri
 
 Les utilisateurs finaux et les administrateurs informatiques peuvent désactiver [expériences connectées facultatives dans ](/deployoffice/privacy/optional-connected-experiences) les clients de bureau et mobiles Office. Pour les compléments Outlook, l’impact de la désactivation du paramètres **Expériences connectées optionnelles** dépend du client, mais les compléments installés par l’utilisateur et l’accès à Office Store ne sont généralement pas autorisés. Certains compléments Microsoft sont considérés comme essentiels ou stratégiques, et les compléments déployés par l’administrateur informatique d’une organisation via [Déploiement centralisé](../publish/centralized-deployment.md) restent disponibles.
 
-- Windows, Mac : le bouton **Obtenir des compléments** ne s’affiche pas afin que les utilisateurs ne puissent plus gérer leurs compléments ou accéder à Office Store.
+- Windows\*, Mac : le bouton **Obtenir des compléments** ne s’affiche pas afin que les utilisateurs ne puissent plus gérer leurs compléments ni accéder à Office Store.
 - Android, iOS : la boîte de dialogue **Obtenir des compléments** affiche uniquement les compléments déployés par l’administrateur.
 - Navigateur : la disponibilité des compléments et l’accès au Store ne sont pas affectés de sorte que les utilisateurs puissent continuer à [gérer leurs compléments](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce), y compris ceux déployés par l’administrateur.
+
+  > [!NOTE]
+  > \* Pour Windows, la prise en charge de cette expérience/ce comportement est disponible à partir de la version 2009 (build 13127.20296). Pour plus d’informations en fonction de votre version, consultez la page de l’historique des mises à jour de [Miicrosoft 365](/officeupdates/update-history-office365-proplus-by-date) et [comment trouver la version du client et le canal de mise à jour Office que vous utilisez](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19).
 
 Pour obtenir des informations générales sur le comportement des compléments, consultez [Confidentialité et sécurité pour les compléments Office](../concepts/privacy-and-security.md#optional-connected-experiences).
 
