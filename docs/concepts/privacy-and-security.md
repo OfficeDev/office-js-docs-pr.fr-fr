@@ -1,14 +1,14 @@
 ---
 title: Confidentialité et sécurité pour les compléments Office
 description: Découvrez les aspects de confidentialité et de sécurité de la plateforme des compléments Office.
-ms.date: 09/14/2020
+ms.date: 10/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 4e17463ee7293c74d905238904baef1344a6e6b3
-ms.sourcegitcommit: 7f25a4a15c91e173c11c2cea03bfb605d4d5a98d
+ms.openlocfilehash: 58380145add425b90a2ab2c9011db3c7709973b6
+ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "47652579"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "48370520"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Confidentialité et sécurité pour les compléments Office
 
@@ -69,13 +69,11 @@ Vous pouvez rendre vos compléments Office accessibles au public en les publian
 
 - Pour proposer des compléments, un développeur doit fournir la preuve de son identité, un accord contractuel et une stratégie de confidentialité conforme.
 
-- Assurez-vous que le code source des compléments est accessible en lecture seule.
-
-- Un système de révision par les utilisateurs est pris en charge pour les compléments disponibles afin de promouvoir une communauté d’autoréglementation.
+- Prend en charge un système d’évaluation par les utilisateurs pour les compléments disponibles afin de promouvoir une communauté exerçant une auto surveillance.
 
 ## <a name="optional-connected-experiences"></a>Expériences connectées facultatives
 
-Les utilisateurs finaux et les administrateurs informatiques peuvent désactiver les [expériences en connexion facultatives dans](/deployoffice/privacy/optional-connected-experiences) les ordinateurs de bureau et les clients mobiles Office. Pour les compléments Office, l’impact de la désactivation du paramètre d' **expériences connectées facultatif** est que les utilisateurs ne peuvent plus accéder aux compléments ou à l’Office Store par le biais de ces clients. Toutefois, certains compléments Microsoft considérés comme essentiels ou stratégiques, et les compléments déployés par l’administrateur informatique d’une organisation via un [déploiement centralisé](../publish/centralized-deployment.md) seront toujours disponibles. De plus, les compléments et le magasin restent disponibles dans Outlook sur le Web, quel que soit l’état du paramètre.
+Les utilisateurs finaux et les administrateurs informatiques peuvent désactiver [expériences connectées facultatives dans ](/deployoffice/privacy/optional-connected-experiences) les clients de bureau et mobiles Office. Pour les compléments Office, l’impact de la désactivation du paramètre d' **expériences connectées facultatif** est que les utilisateurs ne peuvent plus accéder aux compléments ou à l’Office Store par le biais de ces clients. Toutefois, certains compléments Microsoft considérés comme essentiels ou stratégiques, et les compléments déployés par l’administrateur informatique d’une organisation via un [déploiement centralisé](../publish/centralized-deployment.md) seront toujours disponibles. De plus, les compléments et le magasin restent disponibles dans Outlook sur le Web, quel que soit l’état du paramètre.
 
 Pour en savoir plus sur le comportement propre à Outlook, consultez la rubrique [confidentialité, autorisations et sécurité pour les compléments Outlook](../outlook/privacy-and-security.md#optional-connected-experiences).
 
@@ -275,4 +273,4 @@ La gestion et l’application des paramètres Office s’effectuent avec des par
 - [Stratégie d’origine identique Partie 1 : Interdiction de regarder](/archive/blogs/ieinternals/same-origin-policy-part-1-no-peeking)
 - [Stratégie d’origine identique pour JavaScript](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)
 - [Mode de protection d’Internet Explorer](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)
-- [Contrôles de confidentialité pour les applications Microsoft 365](/deployoffice/privacy/overview-privacy-controls)
+- [Contrôles de confidentialité pour Microsoft 365 Apps](/deployoffice/privacy/overview-privacy-controls)
