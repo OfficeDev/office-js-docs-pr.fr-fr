@@ -1,14 +1,14 @@
 ---
 title: Confidentialité, autorisations et sécurité pour les compléments Outlook
 description: Découvrez comment gérer la confidentialité, les autorisations et la sécurité dans un complément Outlook.
-ms.date: 10/05/2020
+ms.date: 10/07/2020
 localization_priority: Priority
-ms.openlocfilehash: 93eee06659b6452e6dd0961837715be5557e6c2c
-ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
+ms.openlocfilehash: aa30b4c9aff9a07761d06ae538d56a01f2c30e0d
+ms.sourcegitcommit: 4bfef315102bd5b4333ff9aeaa6537cffb5bca9e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "48370513"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "48398415"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Confidentialité, autorisations et sécurité pour les compléments Outlook
 
@@ -68,7 +68,7 @@ Les utilisateurs finaux et les administrateurs informatiques peuvent désactiver
 - Navigateur : la disponibilité des compléments et l’accès au Store ne sont pas affectés de sorte que les utilisateurs puissent continuer à [gérer leurs compléments](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce), y compris ceux déployés par l’administrateur.
 
   > [!NOTE]
-  > \* Pour Windows, la prise en charge de cette expérience/ce comportement est disponible à partir de la version 2009 (build 13127.20296). Pour plus d’informations en fonction de votre version, consultez la page de l’historique des mises à jour de [Miicrosoft 365](/officeupdates/update-history-office365-proplus-by-date) et [comment trouver la version du client et le canal de mise à jour Office que vous utilisez](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19).
+  > \* Pour Windows, la prise en charge de cette expérience/ce comportement est disponible à partir de la version 2008 (build 13127.20296). Pour plus d’informations en fonction de votre version, consultez la page de l’historique des mises à jour de [Miicrosoft 365](/officeupdates/update-history-office365-proplus-by-date) et [comment trouver la version du client et le canal de mise à jour Office que vous utilisez](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19).
 
 Pour obtenir des informations générales sur le comportement des compléments, consultez [Confidentialité et sécurité pour les compléments Office](../concepts/privacy-and-security.md#optional-connected-experiences).
 

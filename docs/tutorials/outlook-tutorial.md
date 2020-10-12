@@ -1,15 +1,15 @@
 ---
 title: 'Didacticiel : créer un complément de composition de message Outlook'
 description: Dans ce didacticiel, vous allez créer un complément Outlook qui insère des informations GitHub dans le corps d'un nouveau message.
-ms.date: 08/24/2020
+ms.date: 10/02/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 6b4dabd803f304270fd7926a4d02e2cb485bb526
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 78a3d2c8d3d44ceb98b0eb0964ea487bcb019aec
+ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293393"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "48370534"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Didacticiel : créer un complément de composition de message Outlook
 
@@ -103,7 +103,7 @@ Le complément que vous allez créer dans ce didacticiel lit les[gists](https://
 
     - **Sélectionnez un type de projet** - `Office Add-in Task Pane project`
 
-    - **Sélectionnez un type de script** - `Javascript`
+    - **Sélectionnez un type de script** - `JavaScript`
 
     - **Comment souhaitez-vous nommer votre complément ?** - `Git the gist`
 
@@ -157,16 +157,13 @@ Apportez les mises à jour suivantes dans le fichier **manifest.xml** pour spéc
 Avant d’aller plus loin, nous allons tester le complément base créé par le générateur pour confirmer que le projet est correctement configuré.
 
 > [!NOTE]
-> Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté la commande suivante, acceptez d’installer le certificat fourni par le générateur Yeoman.
+> Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté la commande suivante, acceptez d’installer le certificat fourni par le générateur Yeoman. Il se peut également que vous deviez exécuter votre invite de commande ou votre terminal en tant qu'administrateur pour que les modifications soient effectuées.
 
 1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution).
 
     ```command&nbsp;line
-    npm start
+    npm run dev-server
     ```
-
-    > [!IMPORTANT]
-    > Si un message d’erreur « Sideload n’est pas pris en charge » s’affiche, vous pouvez l’ignorer et continuer.
 
 1. Suivez les instructions disponibles dans [Chargement indépendant de compléments Outlook à des fins de test](../outlook/sideload-outlook-add-ins-for-testing.md) pour charger le fichier **manifest.xml** situé dans le répertoire racine du projet.
 
@@ -539,21 +536,51 @@ Enfin, ouvrez le fichier **webpack.config.js** situé dans le répertoire racine
       dialog: "./src/settings/dialog.js"
     },
     ```
-  
-2. Recherchez la matrice `plugins` dans l’objet `config` et ajoutez ces deux nouveaux objets à la fin de cette matrice.
+
+1. Recherchez la matrice `plugins` au sein de l’objet `config`. Dans la matrice `patterns` de l’objet `new CopyWebpackPlugin` , ajoutez une nouvelle entrée après l’entrée de `taskpane.css` .
+
+    ```js
+    {
+      to: "dialog.css",
+      from: "./src/settings/dialog.css"
+    },
+    ```
+
+    Lorsque c’est chose faite, l’objet `new CopyWebpackPlugin` se présente comme suit :
+
+    ```js
+      new CopyWebpackPlugin({
+        patterns: [
+        {
+          to: "taskpane.css",
+          from: "./src/taskpane/taskpane.css"
+        },
+        {
+          to: "dialog.css",
+          from: "./src/settings/dialog.css"
+        },
+        {
+          to: "[name]." + buildType + ".[ext]",
+          from: "manifest*.xml",
+          transform(content) {
+            if (dev) {
+              return content;
+            } else {
+              return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
+            }
+          }
+        }
+      ]}),
+    ```
+
+1. Recherchez la matrice `plugins` dans l’objet `config` et ajoutez ce nouvel objet à la fin de cette matrice.
 
     ```js
     new HtmlWebpackPlugin({
       filename: "dialog.html",
       template: "./src/settings/dialog.html",
       chunks: ["polyfill", "dialog"]
-    }),
-    new CopyWebpackPlugin([
-      {
-        to: "dialog.css",
-        from: "./src/settings/dialog.css"
-      }
-    ])
+    })
     ```
 
     Lorsque c’est chose faite, la nouvelle matrice `plugins` se présente comme suit :
@@ -564,14 +591,30 @@ Enfin, ouvrez le fichier **webpack.config.js** situé dans le répertoire racine
       new HtmlWebpackPlugin({
         filename: "taskpane.html",
         template: "./src/taskpane/taskpane.html",
-        chunks: ['polyfill', 'taskpane']
+        chunks: ["polyfill", "taskpane"]
       }),
-      new CopyWebpackPlugin([
-      {
-        to: "taskpane.css",
-        from: "./src/taskpane/taskpane.css"
-      }
-      ]),
+      new CopyWebpackPlugin({
+        patterns: [
+        {
+          to: "taskpane.css",
+          from: "./src/taskpane/taskpane.css"
+        },
+        {
+          to: "dialog.css",
+          from: "./src/settings/dialog.css"
+        },
+        {
+          to: "[name]." + buildType + ".[ext]",
+          from: "manifest*.xml",
+          transform(content) {
+            if (dev) {
+              return content;
+            } else {
+              return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
+            }
+          }
+        }
+      ]}),
       new HtmlWebpackPlugin({
         filename: "commands.html",
         template: "./src/commands/commands.html",
@@ -580,33 +623,24 @@ Enfin, ouvrez le fichier **webpack.config.js** situé dans le répertoire racine
       new HtmlWebpackPlugin({
         filename: "dialog.html",
         template: "./src/settings/dialog.html",
-        chunks: ['polyfill', 'dialog']
-      }),
-      new CopyWebpackPlugin([
-      {
-        to: "dialog.css",
-        from: "./src/settings/dialog.css"
-      }
-      ])
+        chunks: ["polyfill", "dialog"]
+      })
     ],
     ```
 
-3. Si le serveur web est en cours d’exécution, fermez la fenêtre de commande de nœud.
+1. Si le serveur web est en cours d’exécution, fermez la fenêtre de commande de nœud.
 
-4. Exécutez la commande suivante pour regénérer le projet.
+1. Exécutez la commande suivante pour regénérer le projet.
 
     ```command&nbsp;line
     npm run build
     ```
 
-5. Entrez la commande suivante pour démarrer le serveur web.
+1. Entrez la commande suivante pour démarrer le serveur web.
 
     ```command&nbsp;line
-    npm start
+    npm run dev-server
     ```
-
-    > [!IMPORTANT]
-    > Si un message d’erreur « Sideload n’est pas pris en charge » s’affiche, vous pouvez l’ignorer et continuer.
 
 ### <a name="fetch-data-from-github"></a>Récupérer des données à partir de GitHub
 
@@ -906,10 +940,7 @@ function buildBodyContent(gist, callback) {
 
 ### <a name="test-the-button"></a>Tester le bouton
 
-Enregistrez toutes vos modifications et exécutez `npm start` depuis l’invite de commandes, si le serveur n’est pas déjà en cours d’exécution. Puis procédez comme suit pour tester le bouton **Insérer gist par défaut** bouton.
-
-> [!IMPORTANT]
-> Si un message d’erreur « Sideload n’est pas pris en charge » s’affiche, vous pouvez l’ignorer et continuer.
+Enregistrez toutes vos modifications et exécutez `npm run dev-server` depuis l’invite de commandes, si le serveur n’est pas déjà en cours d’exécution. Puis procédez comme suit pour tester le bouton **Insérer gist par défaut** bouton.
 
 1. Ouvrez Outlook et rédigez un nouveau message.
 
@@ -1270,10 +1301,7 @@ Dans le projet que vous avez créé, le code JavaScript du volet de tâches est 
 
 ### <a name="test-the-button"></a>Tester le bouton
 
-Enregistrez toutes vos modifications et exécutez `npm start` depuis l’invite de commandes, si le serveur n’est pas déjà en cours d’exécution. Puis procédez comme suit pour tester le bouton **Insérer gist**.
-
-> [!IMPORTANT]
-> Si un message d’erreur « Sideload n’est pas pris en charge » s’affiche, vous pouvez l’ignorer et continuer.
+Enregistrez toutes vos modifications et exécutez `npm run dev-server` depuis l’invite de commandes, si le serveur n’est pas déjà en cours d’exécution. Puis procédez comme suit pour tester le bouton **Insérer gist**.
 
 1. Ouvrez Outlook et rédigez un nouveau message.
 
