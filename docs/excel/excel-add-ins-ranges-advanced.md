@@ -1,14 +1,14 @@
 ---
 title: Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)
 description: Les fonctions et scénarios d’objet de plage avancés, tels que les cellules spéciales, suppriment les doublons et utilisent des dates.
-ms.date: 08/26/2020
+ms.date: 10/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 485fb34c11774045308c6ed9053d01097cdc3f5b
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 144012177e0e070149f6cef825c63392a468773d
+ms.sourcegitcommit: 6fa29989dfaec4dfa0f8df3fe5fb038d7afbae30
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819573"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "48487886"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)
 
@@ -354,6 +354,45 @@ Excel.run(function (context) {
 ```
 
 Vous pouvez également trouver la cellule responsable du débordement dans une cellule donnée à l’aide de la méthode [Range. getSpillParent](/javascript/api/excel/excel.range#getspillparent--) . Notez que `getSpillParent` ne fonctionne que si l’objet Range est une seule cellule. `getSpillParent`L’appel sur une plage comportant plusieurs cellules entraîne la levée d’une erreur (ou une plage null renvoyée pour `Range.getSpillParentOrNullObject` ).
+
+## <a name="get-formula-precedents"></a>Obtenir les antécédents de la formule
+
+Une formule Excel fait souvent référence à d’autres cellules. Lorsqu’une cellule fournit des données à une formule, il s’agit d’une formule « antécédent ». Pour en savoir plus sur les fonctionnalités Excel liées aux relations entre les cellules, consultez l’article [afficher les relations entre les formules et les cellules](https://support.microsoft.com/office/display-the-relationships-between-formulas-and-cells-a59bef2b-3701-46bf-8ff1-d3518771d507) . 
+
+Avec [Range. getDirectPrecedents](/javascript/api/excel/excel.range#getdirectprecedents--), votre complément peut localiser les cellules précédentes d’une formule. `Range.getDirectPrecedents` renvoie un `WorkbookRangeAreas` objet. Cet objet contient les adresses de tous les antécédents du classeur. Il possède un `RangeAreas` objet distinct pour chaque feuille de calcul contenant au moins un précédent de formule. Pour plus d’informations sur l’utilisation de l’objet, voir [travailler simultanément avec plusieurs plages dans des compléments Excel](excel-add-ins-multiple-ranges.md) `RangeAreas` .
+
+Dans l’interface utilisateur Excel, le bouton **repérer les antécédents** dessine une flèche de cellules précédentes à la formule sélectionnée. Contrairement au bouton de l’interface utilisateur Excel, la `getDirectPrecedents` méthode ne dessine pas de flèches. 
+
+> [!IMPORTANT]
+> La `getDirectPrecedents` méthode ne peut pas récupérer les cellules précédentes entre les classeurs. 
+
+L’exemple suivant montre comment obtenir les antécédents directs de la plage active, puis comment modifier la couleur d’arrière-plan des cellules précédentes en jaune. 
+
+> [!NOTE]
+> La plage active doit contenir une formule qui fait référence à d’autres cellules du même classeur pour que la mise en surbrillance fonctionne correctement. 
+
+```js
+Excel.run(function (context) {
+    // Precedents are cells that provide data to the selected formula.
+    var range = context.workbook.getActiveCell();
+    var directPrecedents = range.getDirectPrecedents();
+    range.load("address");
+    directPrecedents.areas.load("address");
+    
+    return context.sync()
+        .then(function () {
+            console.log(`Direct precedent cells of ${range.address}:`);
+
+            // Use the direct precedents API to loop through precedents of the active cell.
+            for (var i = 0; i < directPrecedents.areas.items.length; i++) {
+              // Highlight and print out the address of each precedent cell.
+              directPrecedents.areas.items[i].format.fill.color = "Yellow";
+              console.log(`  ${directPrecedents.areas.items[i].address}`);
+            }
+        })
+        .then(context.sync);
+}).catch(errorHandlerFunction);
+```
 
 ## <a name="see-also"></a>Voir aussi
 
