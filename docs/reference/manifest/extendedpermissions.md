@@ -1,21 +1,21 @@
 ---
 title: Élément ExtendedPermissions dans le fichier manifeste
 description: Définit la collection d’autorisations étendues dont le complément a besoin pour accéder aux API ou fonctionnalités associées.
-ms.date: 03/05/2020
+ms.date: 10/15/2020
 localization_priority: Normal
-ms.openlocfilehash: cf59d13d794f8f303da6cc0ca39066584bc3f56c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1e3aa16c160613d34ef2c4f9c25bc2ffe4970816
+ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611532"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "48626441"
 ---
 # <a name="extendedpermissions-element"></a>Élément ExtendedPermissions
 
 Définit la collection d’autorisations étendues dont le complément a besoin pour accéder aux API ou fonctionnalités associées. L' `ExtendedPermissions` élément est un élément enfant de [VersionOverrides](versionoverrides.md).
 
 > [!IMPORTANT]
-> Cet élément est disponible uniquement dans l' [ensemble de conditions requises d’aperçu des compléments Outlook](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) sur Exchange Online. Les compléments qui utilisent cet élément ne peuvent pas être publiés dans AppSource ou déployés via la fonctionnalité de déploiement centralisée.
+> La prise en charge de cet élément a été introduite dans l’ensemble de conditions requises 1,9. Voir [les clients et les plateformes](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
 
 ## <a name="child-elements"></a>Éléments enfants
 
@@ -23,7 +23,7 @@ Définit la collection d’autorisations étendues dont le complément a besoin 
 |:-----|:-----:|:-----|
 |  [ExtendedPermission](extendedpermission.md)    |  Non   | Définit une autorisation étendue dont le complément a besoin pour accéder à l’API ou à la fonctionnalité associée. |
 
-## <a name="extendedpermissions-example"></a>`ExtendedPermissions`tels
+## <a name="extendedpermissions-example"></a>`ExtendedPermissions` tels
 
 Voici un exemple de l' `ExtendedPermissions` élément.
 

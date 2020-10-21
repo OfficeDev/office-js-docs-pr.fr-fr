@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: Les fonctionnalités et les API qui sont actuellement en préversion pour les compléments Outlook.
-ms.date: 09/21/2020
+ms.date: 10/14/2020
 localization_priority: Normal
-ms.openlocfilehash: f7c9c7c2e60a77c30e3957a0c759d0f20b22e86a
-ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
+ms.openlocfilehash: d91105e0cfbb97dc1a239e40b1c81adc4e76988b
+ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "48175541"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "48626595"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -24,7 +24,7 @@ Le sous-ensemble d’API de complément Outlook de l’API JavaScript pour Offic
 >
 > Pour les autres fonctionnalités, vous pouvez demander l’accès à des bits d’aperçu pour Outlook sur le Web à l’aide de votre compte Microsoft 365 en remplissant et envoyant [ce formulaire](https://aka.ms/OWAPreview). « Demander un accès en aperçu » est indiqué sur ces fonctionnalités.
 
-L’ensemble de conditions requises présenté en aperçu comprend toutes les fonctionnalités de l’[ensemble de conditions requises 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md).
+L’ensemble de conditions requises pour l’aperçu inclut toutes les fonctionnalités de l' [ensemble de conditions requises 1,9](../requirement-set-1.9/outlook-requirement-set-1.9.md).
 
 ## <a name="features-in-preview"></a>Fonctionnalités (aperçu) :
 
@@ -80,72 +80,6 @@ Ajout d’une nouvelle énumération `AppointmentSensitivityType` qui représent
 
 ---
 
-### <a name="append-on-send"></a>Ajouter à l'envoi
-
-Pour en savoir plus sur l’utilisation de la fonctionnalité Ajout à l’envoi, consultez la rubrique [implémenter Append lors de l’envoi dans votre complément Outlook](../../../outlook/append-on-send.md).
-
-#### <a name="officecontextmailboxitembodyappendonsendasync"></a>[Office. Context. Mailbox. Item. Body. appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#appendonsendasync-data--options--callback-)
-
-Ajout d’une nouvelle fonction à l' `Body` objet qui ajoute des données à la fin du corps de l’élément en mode composition.
-
-**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
-
-#### <a name="extendedpermissions"></a>[ExtendedPermissions](../../manifest/extendedpermissions.md)
-
-Ajout d’un nouvel élément au manifeste dans lequel l' `AppendOnSend` autorisation étendue doit être incluse dans la collection des autorisations étendues.
-
-**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
-
-<br>
-
----
-
----
-
-### <a name="async-versions-of-display-apis"></a>Versions Async des `display` API
-
-#### <a name="officecontextmailboxdisplayappointmentformasync"></a>[Office. Context. Mailbox. displayAppointmentFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displayappointmentformasync-itemid--options--callback-)
-
-Ajout d’une nouvelle fonction à l' `Mailbox` objet qui affiche un rendez-vous existant. Il s’agit de la version asynchrone de la `displayAppointmentForm` méthode.
-
-**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur le Web (moderne)
-
-#### <a name="officecontextmailboxdisplaymessageformasync"></a>[Office. Context. Mailbox. displayMessageFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displaymessageformasync-itemid--options--callback-)
-
-Ajout d’une nouvelle fonction à l' `Mailbox` objet qui affiche un message existant. Il s’agit de la version asynchrone de la `displayMessageForm` méthode.
-
-**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur le Web (moderne)
-
-#### <a name="officecontextmailboxdisplaynewappointmentformasync"></a>[Office. Context. Mailbox. displayNewAppointmentFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displaynewappointmentformasync-parameters--options--callback-)
-
-Ajout d’une nouvelle fonction à l' `Mailbox` objet qui affiche un nouveau formulaire de rendez-vous. Il s’agit de la version asynchrone de la `displayNewAppointmentForm` méthode.
-
-**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur le Web (moderne)
-
-#### <a name="officecontextmailboxdisplaynewmessageformasync"></a>[Office. Context. Mailbox. displayNewMessageFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displaynewmessageformasync-parameters--options--callback-)
-
-Ajout d’une nouvelle fonction à l' `Mailbox` objet qui affiche un nouveau formulaire de message. Il s’agit de la version asynchrone de la `displayNewMessageForm` méthode.
-
-**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur le Web (moderne)
-
-#### <a name="officecontextmailboxitemdisplayreplyallformasync"></a>[Office. Context. Mailbox. Item. displayReplyAllFormAsync](office.context.mailbox.item.md#methods)
-
-Ajout d’une nouvelle fonction à l' `Item` objet qui affiche le formulaire « répondre à tous » en mode lecture. Il s’agit de la version asynchrone de la `displayReplyAllForm` méthode.
-
-**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur le Web (moderne)
-
-#### <a name="officecontextmailboxitemdisplayreplyformasync"></a>[Office. Context. Mailbox. Item. displayReplyFormAsync](office.context.mailbox.item.md#methods)
-
-Ajout d’une nouvelle fonction à l' `Item` objet qui affiche le formulaire « répondre » en mode lecture. Il s’agit de la version asynchrone de la `displayReplyForm` méthode.
-
-**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur le Web (moderne)
-
-<br>
-
----
-
----
-
 ### <a name="event-based-activation"></a>Activation basée sur un événement
 
 Prise en charge supplémentaire de la fonctionnalité d’activation basée sur un événement dans les compléments Outlook. Pour en savoir plus, reportez-vous à [la rubrique Configurer votre complément Outlook pour l’activation basée sur les événements](../../../outlook/autolaunch.md) .
@@ -167,20 +101,6 @@ Ajout `LaunchEvents` de l’élément à manifest. Il prend en charge la configu
 Ajout de la prise en charge d’Outlook à l' `Runtimes` élément de manifeste. Il fait référence aux fichiers HTML et JavaScript nécessaires à la fonctionnalité d’activation basée sur les événements.
 
 **Disponible dans**: Outlook sur le Web (moderne, [configurer l’accès en aperçu](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center))
-
-<br>
-
----
-
----
-
-### <a name="get-all-custom-properties"></a>Obtenir toutes les propriétés personnalisées
-
-#### <a name="custompropertiesgetall"></a>[CustomProperties. getAll](/javascript/api/outlook/office.customproperties?view=outlook-js-preview&preserve-view=true#getall--)
-
-Ajout d’une nouvelle fonction à l' `CustomProperties` objet qui obtient toutes les propriétés personnalisées.
-
-**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur le Web (moderne), Outlook sur Mac (connecté à un abonnement Microsoft 365), Outlook sur Android, Outlook sur iOS
 
 <br>
 

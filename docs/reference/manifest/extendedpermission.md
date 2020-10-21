@@ -1,21 +1,21 @@
 ---
 title: Élément ExtendedPermission dans le fichier manifeste
 description: Définit une autorisation étendue dont le complément a besoin pour accéder à l’API ou la fonctionnalité associée.
-ms.date: 03/05/2020
+ms.date: 10/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 138acafb359e2b6e386b34fde7201b1b2c4b3177
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 996cac59c44220d05165c7be6ae7c3d79d853271
+ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430925"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "48626399"
 ---
 # <a name="extendedpermission-element"></a>`ExtendedPermission` élément
 
 Définit une autorisation étendue dont le complément a besoin pour accéder à l’API ou la fonctionnalité associée. L' `ExtendedPermission` élément est un élément enfant de [ExtendedPermissions](extendedpermissions.md).
 
 > [!IMPORTANT]
-> Cet élément est disponible uniquement dans l' [ensemble de conditions requises d’aperçu des compléments Outlook](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) sur Exchange Online. Les compléments qui utilisent cet élément ne peuvent pas être publiés dans AppSource ou déployés via la fonctionnalité de déploiement centralisée.
+> La prise en charge de cet élément a été introduite dans l’ensemble de conditions requises 1,9. Voir [les clients et les plateformes](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
 
 ## <a name="available-extended-permissions"></a>Autorisations étendues disponibles
 

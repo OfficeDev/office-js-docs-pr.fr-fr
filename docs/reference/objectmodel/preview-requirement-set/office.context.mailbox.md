@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox-Preview-ensemble de conditions requises
 description: Version d’évaluation de l’API de boîte aux lettres Outlook du modèle objet de boîte aux lettres.
-ms.date: 09/22/2020
+ms.date: 10/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 2a912d6b04737c1a6620a1da36a435beb89bbb77
-ms.sourcegitcommit: fd110305c2be8660ab8a47c1da3e3969bd1ede86
+ms.openlocfilehash: 5b902ced2e84b993e5b54ddfac9668a9d2b4b5f7
+ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "48214581"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "48626553"
 ---
 # <a name="mailbox-preview-requirement-set"></a>boîte aux lettres (préversion de l’ensemble de conditions requises)
 
@@ -45,13 +45,13 @@ Permet d’accéder au modèle d’objet de complément Outlook pour Microsoft O
 | [convertToRestId (itemId, restVersion)](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#converttorestid-itemid--restversion-) | Restreint | Composition<br>Lecture | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
 | [convertToUtcClientTime (entrée)](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#converttoutcclienttime-input-) | ReadItem | Composition<br>Lecture | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [displayAppointmentForm(itemId)](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displayappointmentform-itemid-) | ReadItem | Composition<br>Lecture | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [displayAppointmentFormAsync (itemId, [options], [callback])](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displayappointmentform-itemid--options--callback-) | ReadItem | Composition<br>Lecture | [Aperçu](outlook-requirement-set-preview.md) |
+| [displayAppointmentFormAsync (itemId, [options], [callback])](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displayappointmentform-itemid--options--callback-) | ReadItem | Composition<br>Lecture | [1,9](../requirement-set-1.9/outlook-requirement-set-1.9.md) |
 | [displayMessageForm(itemId)](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displaymessageform-itemid-) | ReadItem | Composition<br>Lecture | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [displayMessageFormAsync (itemId, [options], [callback])](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displaymessageform-itemid--options--callback-) | ReadItem | Composition<br>Lecture | [Aperçu](outlook-requirement-set-preview.md) |
+| [displayMessageFormAsync (itemId, [options], [callback])](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displaymessageform-itemid--options--callback-) | ReadItem | Composition<br>Lecture | [1,9](../requirement-set-1.9/outlook-requirement-set-1.9.md) |
 | [displayNewAppointmentForm(parameters)](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displaynewappointmentform-parameters-) | ReadItem | Lecture | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [displayNewAppointmentFormAsync (paramètres, [options], [Rappel])](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displaynewappointmentform-parameters--options--callback-) | ReadItem | Lecture | [Aperçu](outlook-requirement-set-preview.md) |
+| [displayNewAppointmentFormAsync (paramètres, [options], [Rappel])](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displaynewappointmentform-parameters--options--callback-) | ReadItem | Lecture | [1,9](../requirement-set-1.9/outlook-requirement-set-1.9.md) |
 | [displayNewMessageForm (paramètres)](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displaynewmessageform-parameters-) | ReadItem | Lecture | [1,6](../requirement-set-1.6/outlook-requirement-set-1.6.md) |
-| [displayNewMessageFormAsync (paramètres, [options], [Rappel])](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displaynewmessageform-parameters--options--callback-) | ReadItem | Lecture | [Aperçu](outlook-requirement-set-preview.md) |
+| [displayNewMessageFormAsync (paramètres, [options], [Rappel])](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#displaynewmessageform-parameters--options--callback-) | ReadItem | Lecture | [1,9](../requirement-set-1.9/outlook-requirement-set-1.9.md) |
 | [getCallbackTokenAsync([options], callback)](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#getcallbacktokenasync-options--callback-) | ReadItem | Composition<br>Lecture | [1,5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [getCallbackTokenAsync(callback, [userContext])](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#getcallbacktokenasync-callback--usercontext-) | ReadItem | Composition<br>Lecture | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md)<br>[1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [getUserIdentityTokenAsync(callback, [userContext])](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#getuseridentitytokenasync-callback--usercontext-) | ReadItem | Composition<br>Lecture | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |

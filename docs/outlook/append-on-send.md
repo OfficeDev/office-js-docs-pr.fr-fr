@@ -1,34 +1,22 @@
 ---
-title: Implémenter Append-on-Send dans votre complément Outlook (aperçu)
+title: Implémenter Append-on-Send dans votre complément Outlook
 description: Découvrez comment implémenter la fonctionnalité Ajout d’envoi dans votre complément Outlook.
 ms.topic: article
-ms.date: 09/09/2020
+ms.date: 10/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 2199f837351c1030e6f6d0d23db7bf81e498d433
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 62234f580f6ff6be418f1c252510f234e297b0c6
+ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430932"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "48626455"
 ---
-# <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a>Implémenter Append-on-Send dans votre complément Outlook (aperçu)
+# <a name="implement-append-on-send-in-your-outlook-add-in"></a>Implémenter Append-on-Send dans votre complément Outlook
 
 À la fin de cette procédure pas à pas, vous disposez d’un complément Outlook qui peut insérer une clause d’exclusion de responsabilité lors de l’envoi d’un message.
 
-> [!IMPORTANT]
-> Cette fonctionnalité est actuellement [prise en charge pour la](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) préversion dans Outlook sur le Web et Windows avec un abonnement Microsoft 365. Pour plus d’informations, reportez-vous [à la rubrique relative à l’aperçu de la fonctionnalité Ajout à l’envoi](#how-to-preview-the-append-on-send-feature) de cet article.
->
-> Les fonctionnalités d’aperçu étant susceptibles d’être modifiées sans préavis, elles ne doivent pas être utilisées dans les compléments de production.
-
-## <a name="how-to-preview-the-append-on-send-feature"></a>Comment afficher un aperçu de la fonctionnalité Ajouter-on-Send
-
-Nous vous invitons à tester la fonctionnalité Ajout à l’envoi ! Faites-nous part de vos scénarios et de vos possibilités d’amélioration en nous donnant des commentaires via GitHub (voir la section **Commentaires** à la fin de cette page).
-
-Pour afficher un aperçu de cette fonctionnalité :
-
-- Faites référence à la bibliothèque **beta** sur le CDN ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . Le [fichier de définition de type](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) pour la compilation de la machine à écrire et IntelliSense se trouve dans le CDN et [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Vous pouvez installer ces types avec `npm install --save-dev @types/office-js-preview` .
-- Pour Windows, vous devrez peut-être rejoindre le [programme Office Insider](https://insider.office.com) pour accéder à des builds Office plus récentes.
-- Pour Outlook sur le Web, [configurez la version ciblée sur votre client Microsoft 365](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center).
+> [!NOTE]
+> La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises 1,9. Voir [les clients et les plateformes](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
 
 ## <a name="set-up-your-environment"></a>Configuration de votre environnement
 
@@ -177,7 +165,7 @@ Pour ce scénario, vous allez implémenter l’ajout d’une clause d’exclusio
     g.appendDisclaimerOnSend = appendDisclaimerOnSend;
     ```
 
-## <a name="try-it-out"></a>Essayez
+## <a name="try-it-out"></a>Try it out
 
 1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur Web local démarre s’il n’est pas déjà en cours d’exécution.
 

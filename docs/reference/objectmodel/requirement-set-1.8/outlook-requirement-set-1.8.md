@@ -1,18 +1,21 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook 1.8
-description: Ensemble de conditions requises 1,8 pour l’API de complément Outlook
-ms.date: 05/20/2020
+description: Ensemble de conditions requises 1,8 pour l’API de complément Outlook.
+ms.date: 10/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 6da1de2529f48fa15d93846d4afcca0718b81165
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: d175cc84aa123c6a941ea57cfe4ff2114d693d32
+ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431534"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "48626588"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Ensemble de conditions requises de l’API du complément Outlook 1.8
 
 Le sous-ensemble d’API de complément Outlook de l’API JavaScript pour Office comprend des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un complément Outlook.
+
+> [!NOTE]
+> Dans cette documentation, l’[ensemble de conditions requises](../../requirement-sets/outlook-api-requirement-sets.md) présenté est différent de l’ensemble de conditions requises de la version précédente.
 
 ## <a name="whats-new-in-18"></a>Nouveautés de la version 1.8
 

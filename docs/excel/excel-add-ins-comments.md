@@ -3,12 +3,12 @@ title: Utiliser des commentaires à l’aide de l’API JavaScript pour Excel
 description: Informations sur l’utilisation des API pour ajouter, supprimer et modifier des commentaires et des thèmes de commentaires.
 ms.date: 10/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 85312cbd92aa6c9d0f82fd167e8a372c2eff8c85
-ms.sourcegitcommit: b50eebd303adcc22eb86e65756ce7e9a82f41a57
+ms.openlocfilehash: 00f7dd22fb2148902152197521098482071e5284
+ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "48456551"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "48626420"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>Utiliser des commentaires à l’aide de l’API JavaScript pour Excel
 
@@ -206,7 +206,7 @@ Excel.run(function (context) {
 
 Votre complément peut écouter les ajouts, les modifications et les suppressions de commentaires. Les [événements de commentaire](/javascript/api/excel/excel.commentcollection#event-details) se produisent sur l' `CommentCollection` objet. Pour écouter les événements de commentaire, enregistrez `onAdded` le `onChanged` Gestionnaire d’événements,, ou le `onDeleted` commentaire. Lorsqu’un événement de commentaire est détecté, utilisez ce gestionnaire d’événements pour récupérer des données sur le Commentaire ajouté, modifié ou supprimé. L' `onChanged` événement gère également les ajouts de réponse aux commentaires, les modifications et les suppressions. 
 
-Chaque événement de commentaire ne déclenche qu’une seule fois lorsque plusieurs ajouts, modifications ou suppressions sont effectués en même temps. Tous les objets [CommentAddedEventArgs](/javascript/api/excel/excel.commentaddedeventargs), [CommentChangedEventArgs](/javascript/api/excel/excel.commentchangedeventarg)et [CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs) contiennent des tableaux d’ID de commentaires permettant de mapper les actions d’événement vers les collections de commentaires.
+Chaque événement de commentaire ne déclenche qu’une seule fois lorsque plusieurs ajouts, modifications ou suppressions sont effectués en même temps. Tous les objets [CommentAddedEventArgs](/javascript/api/excel/excel.commentaddedeventargs), [CommentChangedEventArgs](/javascript/api/excel/excel.commentchangedeventargs)et [CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs) contiennent des tableaux d’ID de commentaires permettant de mapper les actions d’événement vers les collections de commentaires.
 
 Pour plus d’informations sur l’inscription de gestionnaires d’événements, la gestion des événements et la suppression de gestionnaires d’événements, voir l’article [work with Events using the Excel JavaScript API](excel-add-ins-events.md) . 
 
