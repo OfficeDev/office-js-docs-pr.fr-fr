@@ -1,14 +1,14 @@
 ---
 title: Application cliente Office et disponibilité de la plate-forme pour les compléments Office
 description: Ensembles de conditions requises pris en charge pour Excel, OneNote, Outlook, PowerPoint, Project et Word.
-ms.date: 07/10/2020
+ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 4b78b320e36f14c774c03fff56ddef7d369fb13c
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 8cd6ccf45cd63a99f70155035d4062e22fa1cbcf
+ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292425"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "48626560"
 ---
 # <a name="office-client-application-and-platform-availability-for-office-add-ins"></a>Application cliente Office et disponibilité de la plate-forme pour les compléments Office
 
@@ -379,7 +379,8 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a><br>
-      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8">Mailbox 1.8</a>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8">Mailbox 1.8</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.9">Mailbox 1.9</a>
     </td>
     <td>Non disponible</td>
   </tr>
@@ -420,7 +421,8 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a><br>
-      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8">Mailbox 1.8</a>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8">Mailbox 1.8</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.9/outlook-requirement-set-1.9">Mailbox 1.9</a>
     </td>
     <td>Non disponible</td>
   </tr>
@@ -1170,4 +1172,4 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
 - [Historique des mises à jour d’Office 2010, 2013 et 2016 (MSI)](/officeupdates/office-updates-msi)
 - [Historique des mises à jour d’Outlook 2010, 2013 et 2016 (MSI)](/officeupdates/outlook-updates-msi)
 - [Historique des mises à jour d’Office pour Mac](/officeupdates/update-history-office-for-mac)
-- [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
+- [Développement de compléments Office](../develop/develop-overview.md)
