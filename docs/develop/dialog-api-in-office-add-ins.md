@@ -1,21 +1,21 @@
 ---
 title: Utiliser l’API de boîte de dialogue Office dans vos compléments Office
-description: Découvrir les notions de base relatives à la création d’une boîte de dialogue dans un complément Office
-ms.date: 10/14/2020
+description: Découvrez les concepts de base de la création d’une boîte de dialogue dans un complément Office.
+ms.date: 10/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 5220d4876d0a8de9c731d2879f0bcb5e669066cd
-ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
+ms.openlocfilehash: 1aa7a306402885f37d1cf07010eb43958407bf0f
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "48626462"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741084"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Utiliser l’API de boîte de dialogue Office dans les compléments Office
 
 Vous pouvez utiliser l’[API de dialogue Office](/javascript/api/office/office.ui) pour ouvrir des boîtes de dialogue dans votre complément Office. Cet article fournit des conseils concernant l’utilisation de l’API de dialogue dans votre complément Office.
 
 > [!NOTE]
-> Pour plus d’informations sur les compléments où l’API de dialogue est actuellement prise en charge, consultez la rubrique relative aux [ensembles de conditions requises de l’API de dialogue](../reference/requirement-sets/dialog-api-requirement-sets.md). L’API de dialogue est actuellement prise en charge pour Word, Excel, PowerPoint et Outlook.
+> Pour plus d’informations sur les compléments où l’API de dialogue est actuellement prise en charge, consultez la rubrique relative aux [ensembles de conditions requises de l’API de dialogue](../reference/requirement-sets/dialog-api-requirement-sets.md). L’API de dialogue est actuellement prise en charge pour Excel, PowerPoint et Word. La prise en charge d’Outlook est incluse dans différents ensembles de conditions requises pour les boîtes aux lettres &mdash; consultez la référence de l’API pour plus de détails.
 
 Un scénario principal pour l’API de dialogue consiste à activer l’authentification à l'aide d'une ressource telle que Google, Facebook, ou Microsoft Graph. Pour plus d’informations, voir [S’authentifier auprès de l'API de boîte de dialogue Office](auth-with-office-dialog-api.md) *une fois* que vous êtes familiarisé(e) avec cet article.
 
@@ -220,18 +220,18 @@ Votre complément peut envoyer des messages à partir de la [page hôte](dialog-
 Lorsque vous appelez l’API de boîte de dialogue Office pour ouvrir une boîte de dialogue, un objet [Dialog](/javascript/api/office/office.dialog) est renvoyé. Elle doit être assignée à une variable dont l’étendue est supérieure à celle de la méthode [displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-) , car l’objet sera référencé par d’autres méthodes. Voici un exemple :
 
 ```javascript
-var dialog;
+var dialog;
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html',
-    function (asyncResult) {
-        dialog = asyncResult.value;
-        dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessage);
-    }
+    function (asyncResult) {
+        dialog = asyncResult.value;
+        dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessage);
+    }
 );
 
-function processMessage(arg) {
+function processMessage(arg) {
     dialog.close();
 
-  // message processing code goes here;
+  // message processing code goes here;
 
 }
 ```
@@ -241,13 +241,13 @@ Cet `Dialog` objet est doté d’une méthode [messageChild](/javascript/api/off
 Imaginez un scénario dans lequel l’interface utilisateur de la boîte de dialogue est liée à la feuille de calcul active et la position de cette feuille de calcul par rapport aux autres feuilles de calcul. Dans l’exemple suivant, `sheetPropertiesChanged` envoie les propriétés de feuille de calcul Excel dans la boîte de dialogue. Dans ce cas, la feuille de calcul active est nommée « ma feuille » et est la seconde feuille du classeur. Les données sont encapsulées dans un objet et JSON de sorte qu’il soit possible de les transmettre à `messageChild` .
 
 ```javascript
-function sheetPropertiesChanged() {
-    var messageToDialog = JSON.stringify({
-                               name: "My Sheet",
-                               position: 2
+function sheetPropertiesChanged() {
+    var messageToDialog = JSON.stringify({
+                               name: "My Sheet",
+                               position: 2
                            });
 
-    dialog.messageChild(messageToDialog);
+    dialog.messageChild(messageToDialog);
 }
 ```
 
@@ -257,19 +257,19 @@ Dans le JavaScript de la boîte de dialogue, inscrivez un gestionnaire pour l' `
 
 ```javascript
 Office.onReady()
-    .then(function() {
-        Office.context.ui.addHandlerAsync(
+    .then(function() {
+        Office.context.ui.addHandlerAsync(
             Office.EventType.DialogParentMessageReceived,
             onMessageFromParent);
-    });
+    });
 ```
 
 Ensuite, définissez le `onMessageFromParent` Gestionnaire. Le code suivant poursuit l’exemple de la section précédente. Notez qu’Office transmet un argument au gestionnaire et que la `message` propriété de l’objet argument contient la chaîne de la page hôte. Dans cet exemple, le message est reconverti en objet et jQuery est utilisé pour définir le titre supérieur de la boîte de dialogue de sorte qu’il corresponde au nouveau nom de la feuille de calcul.
 
 ```javascript
-function onMessageFromParent(event) {
-    var messageFromParent = JSON.parse(event.message);
-    $('h1').text(messageFromParent.name);
+function onMessageFromParent(event) {
+    var messageFromParent = JSON.parse(event.message);
+    $('h1').text(messageFromParent.name);
 }
 ```
 
@@ -277,17 +277,17 @@ Il est recommandé de vérifier que votre gestionnaire est correctement enregist
 
 ```javascript
 Office.onReady()
-    .then(function() {
-        Office.context.ui.addHandlerAsync(
-            Office.EventType.DialogParentMessageReceived,
-            onMessageFromParent,
+    .then(function() {
+        Office.context.ui.addHandlerAsync(
+            Office.EventType.DialogParentMessageReceived,
+            onMessageFromParent,
             onRegisterMessageComplete);
-    });
+    });
 
-function onRegisterMessageComplete(asyncResult) {
-    if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
-        reportError(asyncResult.error.message);
-    }
+function onRegisterMessageComplete(asyncResult) {
+    if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
+        reportError(asyncResult.error.message);
+    }
 }
 ```
 

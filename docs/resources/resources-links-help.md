@@ -1,14 +1,14 @@
 ---
 title: Ressources supplémentaires sur les compléments Office
 description: Ressources utiles sur le sujet des compléments Office
-ms.date: 07/14/2020
+ms.date: 10/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 25cfcf5ba56322f8bf5afb9273f94dcdf8db43c3
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: d5fa3eb95f4c6745e735f1b8667fb3b7b95a2bdb
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159072"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48740811"
 ---
 # <a name="office-add-ins-additional-resources"></a>Ressources supplémentaires sur les compléments Office
 
@@ -24,4 +24,7 @@ Ces ressources fournissent des informations supplémentaires et vous aident à d
 |**Script Lab**| Si vous souhaitez explorer les API JavaScript Office ou tester les API d’aperçu, vous pouvez utiliser script Lab dans Excel, Outlook, PowerPoint et Word. Pour plus d’informations, voir[Explorer l’API JavaScript Office à l’aide de Script Lab](../overview/explore-with-script-lab.md). |
 |**Cours Pluralsight sur les compléments Office**| Le <a href="https://www.pluralsight.com/courses/build-office-addins-js-api" target="_blank">cours « principes de base de la création de compléments Office avec les API JavaScript Office »</a> explique comment développer un complément PowerPoint de a à z, notamment des informations sur la façon de communiquer avec Trello et de publier le complément sur l’Office Store.|
 |**Cours LinkedIn sur les compléments Office**| <a href="https://www.linkedin.com/learning/microsoft-office-add-ins-for-developers/microsoft-office-add-ins?u=3322">Le cours de Bill Ayer «compléments Microsoft Office pour les développeurs»</a>offre une vue d’ensemble de la plateforme et décrit de nombreux concepts principaux des compléments Office.|
-|***Création de compléments Office à l’aide du* livre Office. js**| <a href="https://leanpub.com/buildingofficeaddins">Le livre de Michael Zlatkovsky *création des compléments Office à l’aide d'Office.js*</a> décrit les principes et modèles de conception partagés par les API 2016 pour Excel, Word et OneNote. Michael est membre de l’équipe d’extensibilité Office chez Microsoft et un MVP Microsoft, mais ce manuel est créé de façon indépendante sans contribution de Microsoft. Ni Microsoft, ni Michael ne recueillent de profits sur ce livre, car les résultats des dons sont reversés à des fins de secours et à des causes charitables humanitaires.|
+|**_Création de compléments Office à l’aide du_ livre Office. js**| <a href="https://leanpub.com/buildingofficeaddins">Le livre de Michael Zlatkovsky *création des compléments Office à l’aide d'Office.js*</a> décrit les principes et modèles de conception partagés par les API 2016 pour Excel, Word et OneNote. Michael est membre de l’équipe d’extensibilité Office chez Microsoft et un MVP Microsoft, mais ce manuel est créé de façon indépendante sans contribution de Microsoft. Ni Microsoft, ni Michael ne recueillent de profits sur ce livre, car les résultats des dons sont reversés à des fins de secours et à des causes charitables humanitaires.|
+
+## <a name="see-also"></a>Voir aussi
+- [En savoir plus sur le programme de développement Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
