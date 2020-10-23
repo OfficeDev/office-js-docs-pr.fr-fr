@@ -3,14 +3,14 @@ layout: LandingPage
 ms.topic: landing-page
 title: Documentation référence de l’API JavaScript pour Office
 description: En savoir plus sur les API JavaScript pour Office.
-ms.date: 12/24/2019
+ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 46f5ae8a073fe45a6f6ac7f873f9adeb37fbab15
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 128f4fa146ace079c8999083b49fe83b68120b07
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294282"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741126"
 ---
 # <a name="api-reference-documentation"></a>Documentation de référence de l'API
 
@@ -21,9 +21,9 @@ Un complément peut utiliser les API JavaScript pour Office pour interagir avec 
     <li>Les API <b>Communes</b> peuvent être utilisées pour accéder à des fonctionnalités telles qu’une interface utilisateur, des boîtes de dialogue et des paramètres du client, qui sont communes à plusieurs types d’applications Office.</li>
 </ul>
 
-Vous devez utiliser les API propres à l’application dans la mesure du possible, et utiliser les API communes uniquement pour les scénarios qui ne sont pas pris en charge par les API propres à l’application. Si vous souhaitez en savoir plus sur ces deux modèles API, consultez<a href="../overview/office-add-ins-fundamentals.md#api-models">Création de compléments Office</a>.
+Vous devez utiliser les API propres à l’application dans la mesure du possible, et utiliser les API communes uniquement pour les scénarios qui ne sont pas pris en charge par les API propres à l’application. Si vous souhaitez en savoir plus sur ces deux modèles API, consultez<a href="../develop/develop-overview.md#api-models">Développement de compléments Office</a>.
 
-<h2>Référence d’API</h2>
+<h2>Référence API</h2>
 
 <ul class="panelContent cardsF cols cols3">
     <li>
