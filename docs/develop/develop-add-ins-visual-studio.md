@@ -1,21 +1,21 @@
 ---
 title: Développement de compléments Office avec Visual Studio
-description: Comment développer un complément Office à l’aide de Visual Studio
-ms.date: 12/31/2019
+description: Comment développer un complément Office à l’aide de Visual Studio.
+ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: ae627b09b9160abc01deec6d52abeb922f02c833
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: cfa7adb3f8d19fcc5784a13291b7ad624919f2e7
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292826"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741105"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>Développement de compléments Office avec Visual Studio
 
 Cet article explique comment utiliser Visual Studio pour développer votre complément Office. Si votre complément est déjà créé, vous pouvez passer directement à la section [Développer le complément à l’aide de Visual Studio](#develop-the-add-in-using-visual-studio).
 
 > [!NOTE]
-> À la place de Visual Studio, vous pouvez choisir d’utiliser le générateur Yeoman pour compléments Office et le code VS afin de créer un complément. Pour en savoir plus sur cette option, voir [Création d’un complément Office](../overview/office-add-ins-fundamentals.md#creating-an-office-add-in).
+> À la place de Visual Studio, vous pouvez choisir d’utiliser le générateur Yeoman pour compléments Office et le code VS afin de créer un complément. Pour en savoir plus sur cette option, voir [Création d’un complément Office](../develop/develop-overview.md)#creating-an-office-add-in).
 
 ## <a name="create-the-add-in-project-using-visual-studio"></a>Créer un projet de complément Office à l’aide de Visual Studio
 
@@ -53,7 +53,6 @@ Lorsque vous développez votre complément dans Visual Studio, celui-ci est exé
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
 - [Concepts de base pour les compléments Office](../overview/core-concepts-office-add-ins.md)
 - [Développement de compléments Office](../develop/develop-overview.md)
 - [Concevoir des compléments Office](../design/add-in-design.md)

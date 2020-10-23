@@ -1,15 +1,15 @@
 ---
 title: Guide du débutant
 description: Un parcours recommandé pour les débutants à travers les ressources d’apprentissage pour les compléments Office.
-ms.date: 04/16/2020
+ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: fd4f1902b196399e011631a7dabaecb59a8974f9
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: a51ffc437c9d1946b886d1e665836dd6d76f52d2
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292467"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741070"
 ---
 # <a name="beginners-guide"></a>Guide du débutant
 
@@ -28,7 +28,7 @@ Vous voulez commencer à créer vos propres extensions Office sur plusieurs plat
 Nous savons que vous êtes impatient de commencer à coder, mais il convient de lire certains points concernant les compléments Office avant d’ouvrir votre IDE ou votre éditeur de code.
 
 - [Vue d’ensemble de la plateforme des compléments Office](office-add-ins.md) : découvrez les compléments web Office et leurs différences par rapport aux anciennes méthodes d’extension d’Office, telles que les compléments VSTO.
-- [Création de compléments Office](office-add-ins-fundamentals.md) : obtenez une vue d’ensemble du développement et du cycle de vie des compléments Office, y compris les outils, la création d’une interface utilisateur de complément et l’utilisation des API JavaScript pour interagir avec le document Office.
+- [Développement de compléments Office](../develop/develop-overview.md) : obtenez une vue d’ensemble du développement et du cycle de vie des compléments Office, y compris les outils, la création d’une interface utilisateur de complément et l’utilisation des API JavaScript pour interagir avec le document Office.
 
 Ces articles comportent un grand nombre de liens. Toutefois, si vous êtes débutant avec les compléments Office, nous vous recommandons de revenir ici lorsque vous les aurez lus et de passer à la section suivante.
 
@@ -73,3 +73,4 @@ Félicitations pour avoir terminé le parcours d’apprentissage pour les début
   - [Test et débogage de compléments Office](../testing/test-debug-office-add-ins.md)
   - [Déployer et publier des compléments Office](../publish/publish.md)
   - [Resources](../resources/resources-links-help.md)
+  - [Découvrez le programme pour les développeurs Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)

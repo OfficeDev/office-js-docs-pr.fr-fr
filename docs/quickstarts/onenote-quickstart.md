@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet Office de OneNote
 description: Découvrez comment créer un complément simple de volet des tâches OneNote simple à l’aide de l’API JavaScript pour Office.
-ms.date: 07/07/2020
+ms.date: 10/14/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 1eaead7f44ee3615d5779a864399ce7a00b5915d
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 0e4022b9f2b91b03cb260f2d56fc3bac2a0ddaae
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292320"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741161"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>Créer votre premier complément du volet Office de OneNote
 
@@ -81,7 +81,7 @@ try {
 2. Démarrez le serveur web local et chargez indépendamment votre complément.
 
     > [!NOTE]
-    > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté une des commandes suivantes, acceptez d’installer le certificat fourni par le générateur Yeoman.
+    > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté une des commandes suivantes, acceptez d’installer le certificat fourni par le générateur Yeoman. Il se peut également que vous deviez exécuter votre invite de commande ou votre terminal en tant qu'administrateur pour que les modifications soient effectuées.
 
     > [!TIP]
     > Si vous testez votre complément sur Mac, exécutez la commande suivante avant de continuer. Lorsque vous exécutez cette commande, le serveur web local démarre.
@@ -126,7 +126,6 @@ Félicitations ! Vous avez créé un complément du volet Office de OneNote ! 
 ## <a name="see-also"></a>Voir aussi
 
 * [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
-* [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
 * [Développement de compléments Office](../develop/develop-overview.md)
 - [Vue d’ensemble de la programmation de l’API JavaScript de OneNote](../onenote/onenote-add-ins-programming-overview.md)
 - [Référence de l’API JavaScript de OneNote](../reference/overview/onenote-add-ins-javascript-reference.md)

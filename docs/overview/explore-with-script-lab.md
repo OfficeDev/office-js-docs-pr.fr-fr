@@ -1,16 +1,16 @@
 ---
 title: Explorer l’API JavaScript Office à l’aide de Script Lab
 description: Utilisez Script Lab pour explorer l’API JS Office et pour prototyper les fonctionnalités.
-ms.date: 06/10/2020
+ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: ab2d086551dbfa5063615f505d8cb8aa5a210b7a
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 8fef3d0df73ab84cc17b2e6ff3c8fe436bf6e789
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094133"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741077"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>Explorer l’API JavaScript Office à l’aide de Script Lab
 
@@ -85,4 +85,6 @@ Lorsque vous êtes prêt à créer votre premier complément Office, essayez le 
 - [Obtenir un Script Lab pour Outlook](https://appsource.microsoft.com/product/office/wa200001603)
 - [Si vous souhaitez en savoir plus sur Script Lab](https://github.com/OfficeDev/script-lab#script-lab-a-microsoft-garage-project)
 - [Rejoignez le programme développeur de Microsoft 365](https://developer.microsoft.com/office/dev-program)
-- [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
+- [Développement de compléments Office](../develop/develop-overview.md)
+- [Découvrez le programme pour les développeurs Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
+

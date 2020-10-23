@@ -1,16 +1,16 @@
 ---
 title: Vue d’ensemble de la plateforme de compléments pour Office | Microsoft Docs
 description: Utilisez des technologies web que vous connaissez, telles que le code HTML, CSS et JavaScript, pour étendre Word, Excel, PowerPoint, OneNote, Project et Outlook, et interagir avec ces programmes.
-ms.date: 02/13/2020
+ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 9a504a81bb15e36f937328e2f7cbb674f416842d
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: cc3248427a8399532d62ca4bffc20f31c48f0aa4
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292411"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741049"
 ---
 # <a name="office-add-ins-platform-overview"></a>Vue d’ensemble de la plateforme de compléments pour Office
 
@@ -50,7 +50,7 @@ Le manifeste est un fichier XML qui spécifie les paramètres et les fonctionnal
 
 - Le nom d’affichage, la description, l’ID, la version et les paramètres régionaux par défaut du complément.
 
-- La façon dont le complément s’intègre à Office.  
+- La façon dont le complément s’intègre à Office.  
 
 - Le niveau d’autorisation et les conditions d’accès aux données pour le complément.
 
@@ -69,26 +69,26 @@ Les compléments Office offrent les possibilités suivantes dans une application
 -  Étendre les fonctionnalités (toutes les applications Office)
 
 -  Créer de nouveaux objets (Excel ou PowerPoint)
- 
+ 
 ### <a name="extend-office-functionality"></a>Étendre les fonctionnalités d’Office
 
-Vous pouvez ajouter de nouvelles fonctionnalités aux applications Office via les éléments d’interface suivants :  
+Vous pouvez ajouter de nouvelles fonctionnalités aux applications Office via les éléments d’interface suivants :  
 
 -  Commandes de menu et boutons de ruban personnalisées (collectivement appelés « commandes de complément »)
 
 -  Volets Office à insérer
 
-Les éléments d’interface personnalisés et les volets Office sont définis dans le manifeste du complément.  
+Les éléments d’interface personnalisés et les volets Office sont définis dans le manifeste du complément.  
 
-#### <a name="custom-buttons-and-menu-commands"></a>Commandes de menu et boutons personnalisés  
+#### <a name="custom-buttons-and-menu-commands"></a>Commandes de menu et boutons personnalisés  
 
-Vous pouvez ajouter des éléments de menu et des boutons de ruban personnalisé au ruban d’Office sur le web et Windows. Les utilisateurs peuvent ainsi accéder à votre complément directement à partir de leur application Office. Les boutons de commande peuvent lancer différentes actions, par exemple afficher un volet Office comportant du contenu HTML personnalisé ou exécuter une fonction JavaScript.  
+Vous pouvez ajouter des éléments de menu et des boutons de ruban personnalisé au ruban d’Office sur le web et Windows. Les utilisateurs peuvent ainsi accéder à votre complément directement à partir de leur application Office. Les boutons de commande peuvent lancer différentes actions, par exemple afficher un volet Office comportant du contenu HTML personnalisé ou exécuter une fonction JavaScript.  
 
 *Figure 3. Commandes des compléments dans le ruban*
 
 ![Commandes de menu et boutons personnalisés](../images/about-addins-addincommands.png)
 
-#### <a name="task-panes"></a>Volets Office  
+#### <a name="task-panes"></a>Volets Office  
 
 Vous pouvez utiliser des volets Office en plus des commandes de complément pour permettre aux utilisateurs d’interagir avec votre solution. Les clients qui ne prennent pas en charge les commandes de complément (Office 2013 et Office sur iPad) exécutent votre complément sous la forme d’un volet Office. Les utilisateurs lancent les compléments de volet Office via le bouton **Mes compléments** situé dans l’onglet **Insertion**.
 
@@ -98,7 +98,7 @@ Vous pouvez utiliser des volets Office en plus des commandes de complément pour
 
 ### <a name="extend-outlook-functionality"></a>Extension des fonctionnalités Outlook
 
-Les add-ins Outlook peuvent étendre le ruban des applications Office et s'afficher contextuellement à côté d'un élément Outlook lorsque vous le visualisez ou le composez. Ils peuvent fonctionner avec un message électronique, une demande de réunion, une réponse à une réunion, l'annulation d'une réunion ou un rendez-vous lorsqu'un utilisateur consulte un élément reçu ou répond ou crée un nouvel élément. 
+Les add-ins Outlook peuvent étendre le ruban des applications Office et s'afficher contextuellement à côté d'un élément Outlook lorsque vous le visualisez ou le composez. Ils peuvent fonctionner avec un message électronique, une demande de réunion, une réponse à une réunion, l'annulation d'une réunion ou un rendez-vous lorsqu'un utilisateur consulte un élément reçu ou répond ou crée un nouvel élément. 
 
 Les compléments Outlook peuvent accéder aux informations contextuelles de l’élément, comme l’adresse ou l’ID de suivi, puis utiliser ces données pour accéder à des informations complémentaires sur le serveur et à partir des services web de façon à enrichir l’expérience utilisateur. Dans la plupart des cas, un complément Outlook s’exécute sans modification dans l’application Outlook afin d’offrir aux utilisateurs une expérience transparente sur le bureau, le web, les tablettes et les appareils mobiles.
 
@@ -118,13 +118,13 @@ Les API JavaScript Office sont composées d’objets et de membres permettant de
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Pour une présentation en détails du développement des compléments Office, voir [Création de compléments Office](../overview/office-add-ins-fundamentals.md).
+Pour une présentation en détails du développement des compléments Office, voir [Développement de compléments Office](../develop/develop-overview.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
 - [Concepts de base pour les compléments Office](../overview/core-concepts-office-add-ins.md)
 - [Développement de compléments Office](../develop/develop-overview.md)
 - [Concevoir des compléments Office](../design/add-in-design.md)
 - [Test et débogage de compléments Office](../testing/test-debug-office-add-ins.md)
 - [Publish Office Add-ins](../publish/publish.md)
+- [Découvrez le programme pour les développeurs Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)

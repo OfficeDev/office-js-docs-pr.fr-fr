@@ -1,15 +1,15 @@
 ---
 title: Didacticiel sur le complément Excel
 description: Dans ce didacticiel, vous allez développer un complément Excel qui crée, remplit, filtre et trie un tableau, crée un graphique, fige un en-tête de tableau, protège une feuille de calcul et ouvre une boîte de dialogue.
-ms.date: 06/05/2020
+ms.date: 10/14/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: d75655c1bb69209cf4cdb5925d04b6c3f84bb39f
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 51bec98cd0de1d00b4bfbcda372e450ce040d8b9
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293421"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741154"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 
@@ -1020,6 +1020,5 @@ Ce didacticiel vous apprend à créer un complément Excel qui interagit avec de
 ## <a name="see-also"></a>Voir aussi
 
 * [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
-* [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
 * [Développement de compléments Office](../develop/develop-overview.md)
-* [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](../excel/excel-add-ins-core-concepts.md)
+* [Modèle d’objet JavaScript Excel dans les compléments Office](../excel/excel-add-ins-core-concepts.md)

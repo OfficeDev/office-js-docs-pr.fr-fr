@@ -1,16 +1,16 @@
 ---
 title: Compléments du volet Office pour Project
 description: En savoir plus sur les compléments du volet Office pour Project.
-ms.date: 09/26/2019
+ms.date: 10/14/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 1e471c53e39af8764840716d59a4d26719d3ac0a
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 1925e83f3c740172a22da3f2f03bf589785b9b46
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292404"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48740825"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Compléments du volet Office pour Project
 
@@ -195,7 +195,8 @@ Vous pouvez distribuer des compléments via un partage de fichiers, un catalogue
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
-- [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
+- [Découvrez le programme pour les développeurs Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Développement de compléments Office](../develop/develop-overview.md)
 - [Créer votre premier complément du volet Office pour Project 2013 à l’aide d’un éditeur de texte](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [Créer un complément Project qui utilise REST avec un service OData Project Server local](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
 - [Téléchargement du Kit de développement logiciel (SDK) de Project 2013](https://www.microsoft.com/download/details.aspx?id=30435%20)

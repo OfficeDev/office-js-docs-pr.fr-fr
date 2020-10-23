@@ -1,16 +1,16 @@
 ---
 title: Présentation des compléments Excel
 description: Le complément Excel vous permet d’étendre les fonctionnalités de l’application Excel sur plusieurs plateformes, notamment Windows, Mac et iPad, ainsi que dans un navigateur.
-ms.date: 07/05/2019
+ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 9c6f86bd5e50d97e395517d8a4887fac3554f867
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 6ecb702649a3cef0f3c3acb8432d3f8d3db65115
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609761"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48740853"
 ---
 # <a name="excel-add-ins-overview"></a>Présentation des compléments Excel
 
@@ -122,6 +122,7 @@ Apprenez à [créer votre premier complément Excel](../quickstarts/excel-quicks
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
-- [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
-- [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](excel-add-ins-core-concepts.md)
-- [Référence sur l’API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md)
+- [Découvrez le programme pour les développeurs Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Développement de compléments Office](../develop/develop-overview.md)
+- [Modèle d’objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
+- [Référence de l’API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md)
