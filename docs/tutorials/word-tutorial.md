@@ -1,15 +1,15 @@
 ---
 title: Didacticiel sur les compléments Word
 description: Dans ce didacticiel, vous allez cr?er un compl?ment Word qui ins?re (et remplace) des plages de texte, des paragraphes, des images, du code HTML, des tableaux et des contr?les de contenu. Vous découvrirez également comment mettre en forme du texte et comment insérer (et remplacer) du contenu dans les contrôles de contenu.
-ms.date: 07/07/2020
+ms.date: 10/14/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 03960f5de7e99ba4ffa52be5cd4f7fc896942b76
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: f7397ef74890fb1a2ab89a044e919c863655999f
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294219"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741133"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches Word
 
@@ -529,7 +529,7 @@ function insertTextIntoRange() {
         //        been queued.
     ```
 
-8. Remplacez `TODO3` par le code suivant. Ce nouveau paragraphe montre que le nouveau texte n’entre ***pas*** dans la plage sélectionnée d’origine. La plage d’origine contient toujours le texte qu’elle contenait lorsqu’elle avait été sélectionnée uniquement.
+8. Remplacez `TODO3` par le code suivant. Ce nouveau paragraphe montre que le nouveau texte n’entre *_pas_*_ dans la plage sélectionnée d’origine. La plage d’origine contient toujours le texte qu’elle contenait lorsqu’elle avait été sélectionnée uniquement.
 
     ```js
     doc.body.insertParagraph("Current text of original range: " + originalRange.text, "End");
@@ -543,7 +543,7 @@ function insertTextIntoRange() {
 
 ### <a name="replace-the-text-of-a-range"></a>Remplacer le texte d’une plage
 
-1. Ouvrez le fichier **./src/taskpane/taskpane.html**.
+1. Ouvrez le fichier _*./src/taskpane/taskpane.html**.
 
 2. Recherchez l’élément `<button>` du bouton `insert-text-outside-range`, puis ajoutez la balise suivante après cette ligne : 
 
@@ -945,5 +945,5 @@ Dans ce didacticiel, vous avez créé un Word tâche volet complément qui insè
 ## <a name="see-also"></a>Voir aussi
 
 * [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
-* [Création de compléments Office](../overview/office-add-ins-fundamentals.md)
 * [Développement de compléments Office](../develop/develop-overview.md)
+
