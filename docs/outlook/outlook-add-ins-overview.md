@@ -1,15 +1,15 @@
 ---
 title: Présentation des compléments Outlook
 description: Les compléments Outlook sont des intégrations conçues par des tiers dans Outlook à l’aide de notre plate-forme web.
-ms.date: 09/18/2020
+ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 351ebe3d99c4b321dcbb1b7c71ee72023db2eb02
-ms.sourcegitcommit: 2479812e677d1a7337765fe8f1c8345061d4091a
+ms.openlocfilehash: 802ea8ef55fd97e938ce945fe934d2584eea836f
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "48135227"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741140"
 ---
 # <a name="outlook-add-ins-overview"></a>Présentation des compléments Outlook
 
@@ -80,7 +80,7 @@ Pour commencer à créer des compléments Outlook, procédez comme suit.
 
 
 ## <a name="see-also"></a>Voir aussi
-
+- [Découvrez le programme pour les développeurs Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
 - [Meilleures pratiques en matière de développement de compléments Office](../concepts/add-in-development-best-practices.md)
 - [Instructions de conception pour les compléments Office](../design/add-in-design.md)
 - [Gérer les licences de compléments pour Office et SharePoint](/office/dev/store/license-your-add-ins)

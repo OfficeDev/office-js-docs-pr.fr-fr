@@ -1,16 +1,16 @@
 ---
-ms.date: 08/13/2020
+ms.date: 10/14/2020
 description: Créez une fonction personnalisée Excel pour votre Complément Office.
 title: Créer des fonctions personnalisées dans Excel
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 731e8d99a36cfef7d125838c67efcdd7a77b4bb1
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 466050a5323f0f02fb886c763f5a2a594a9e2233
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819559"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741112"
 ---
 # <a name="create-custom-functions-in-excel"></a>Créer des fonctions personnalisées dans Excel
 
@@ -99,6 +99,7 @@ Vous voulez essayer les fonctions personnalisées ? Consultez la documentation 
 Un autre moyen simple d’essayer des fonctions personnalisées consiste à utiliser [Script Lab](https://appsource.microsoft.com/product/office/WA104380862?src=office&corrid=1ada79ac-6392-438d-bb16-fce6994a2a7e&omexanonuid=f7b03101-ec22-4270-a274-bcf16c762039&referralurl=https%3a%2f%2fgithub.com%2fofficedev%2fscript-lab), un complément qui vous permet d’expérimenter des fonctions personnalisées directement dans Excel. Vous pouvez essayer de créer votre propre fonction personnalisée ou utiliser les exemples fournis.
 
 ## <a name="see-also"></a>Voir aussi 
+* [Découvrez le programme pour les développeurs Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
 * [Configuration requise de fonctions personnalisées](custom-functions-requirement-sets.md)
 * [Instructions d’attribution de noms](custom-functions-naming.md)
 * [Rendre vos fonctions personnalisées compatibles avec les fonctions XLL définies par l’utilisateur](make-custom-functions-compatible-with-xll-udf.md)
