@@ -3,12 +3,12 @@ title: Application cliente Office et disponibilité de la plate-forme pour les c
 description: Ensembles de conditions requises pris en charge pour Excel, OneNote, Outlook, PowerPoint, Project et Word.
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: a179eebcb39107633e6ca265bbc89be822ffb63b
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 587a89f948aff37e6c8c1bf699fc10a915867788
+ms.sourcegitcommit: a4e09546fd59579439025aca9cc58474b5ae7676
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741056"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "48774711"
 ---
 # <a name="office-client-application-and-platform-availability-for-office-add-ins"></a>Application cliente Office et disponibilité de la plate-forme pour les compléments Office
 
@@ -380,7 +380,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8">Mailbox 1.8</a><br>
-      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.9">Mailbox 1.9</a>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.9/outlook-requirement-set-1.9">Mailbox 1.9</a>
     </td>
     <td>Non disponible</td>
   </tr>
