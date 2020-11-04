@@ -4,12 +4,12 @@ title: Configurez votre complément Excel pour partager le runtime du navigateur
 ms.prod: excel
 description: Configurez votre complément Excel pour partager le runtime du navigateur et exécuter le ruban, le volet des tâches et le code de fonction personnalisée dans le même runtime.
 localization_priority: Priority
-ms.openlocfilehash: 08e4155b7f79101f8a61b323c623b5cb6b86decf
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 3f980ffc3ed78a4adf8c1b2cb565feb0f7c51c2f
+ms.sourcegitcommit: 6ade8891ad947094d305fc146bb4deb703093ca6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292635"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "48906021"
 ---
 # <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime"></a>Configurez votre complément Excel pour utiliser un runtime JavaScript partagé
 
@@ -23,7 +23,7 @@ Vous pouvez toutefois configurer votre complément Excel pour partager un code d
 
 Si vous démarrez un nouveau projet, suivez ces étapes pour utiliser le générateur Yeoman et créer le projet de complément Excel. Exécutez la commande suivante, puis répondez aux invites avec les réponses suivantes :
 
-```command line
+```command line
 yo office
 ```
 
@@ -106,13 +106,13 @@ Procédez comme suit pour configurer un projet nouveau ou existant de manière �
    > new HtmlWebpackPlugin({
    >     filename: "taskpane.html",
    >     template: "./src/taskpane/taskpane.html",
-   >     chunks: ["polyfill", "taskpane", “functions”]
+   >     chunks: ["polyfill", "taskpane", "functions"]
    > }),
    >```
 
 9. Enregistrez vos changements et reconstruisez le projet.
 
-   ```command line
+   ```command line
    npm run build
    ```
 
