@@ -4,12 +4,12 @@ title: Configurez votre complément Excel pour partager le runtime du navigateur
 ms.prod: excel
 description: Configurez votre complément Excel pour partager le runtime du navigateur et exécuter le ruban, le volet des tâches et le code de fonction personnalisée dans le même runtime.
 localization_priority: Priority
-ms.openlocfilehash: 3f980ffc3ed78a4adf8c1b2cb565feb0f7c51c2f
-ms.sourcegitcommit: 6ade8891ad947094d305fc146bb4deb703093ca6
+ms.openlocfilehash: be4e79ae54376a9574ffb0669681c2fba7cd158c
+ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "48906021"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "48996276"
 ---
 # <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime"></a>Configurez votre complément Excel pour utiliser un runtime JavaScript partagé
 
@@ -140,6 +140,7 @@ Ne concevez pas votre complément pour utiliser plusieurs volets des tâches si 
 
 - Lisez l’article [Appeler des API Microsoft Excel à partir d’une fonction personnalisée](call-excel-apis-from-custom-function.md) pour plus d’informations sur l’utilisation des API JavaScript Excel et des fonctions Excel personnalisées dans un runtime partagé.
 - Découvrez l’exemple de modèles et de pratiques [Gérer le ruban et l’interface utilisateur du volet des tâches, puis exécuter le code sur un document ouvert](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-shared-runtime-scenario) pour afficher un exemple plus complet de l’exécution JavaScript partagée en action.
+- Pour plus d’informations sur l’ajout de raccourcis clavier personnalisés à votre projet, consultez les [raccourcis clavier personnalisés dans les compléments Office](../design/keyboard-shortcuts.md) .
 
 ## <a name="see-also"></a>Voir aussi
 
