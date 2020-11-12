@@ -1,56 +1,53 @@
 ---
-title: Office UI Fabric dans des compléments Office 
+title: Office UI Fabric dans des compléments Office
 description: Découvrez comment utiliser les composants d’Office UI Fabric dans des compléments Office.
-ms.date: 04/20/2020
+ms.date: 10/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 7b74c734fb2559e4bf4408e40eb5366f9b79b755
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: c4a13c615fe63183f595e24895b9fe6054fdc05d
+ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608501"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "48996374"
 ---
-# <a name="office-ui-fabric-in-office-add-ins"></a>Office UI Fabric dans des compléments Office 
+# <a name="office-ui-fabric-in-office-add-ins"></a>Office UI Fabric dans des compléments Office
 
-Office UI Fabric est une infrastructure frontale JavaScript permettant de créer des expériences pour Office et Office 365. Fabric propose des composants axés sur des visuels que vous pouvez étendre, retravailler et utiliser dans votre complément Office. Fabric utilisant le langage de création d’Office, ses composants d’expérience utilisateur ressemblent à une extension naturelle d’Office. 
+Office UI Fabric est une infrastructure frontale JavaScript permettant de créer des expériences pour Office et Office 365. Fabric propose des composants axés sur des visuels que vous pouvez étendre, retravailler et utiliser dans votre complément Office. Fabric utilisant le langage de création d’Office, ses composants d’expérience utilisateur ressemblent à une extension naturelle d’Office.
 
 Si vous créez un complément, nous vous encourageons à utiliser Office UI Fabric pour mettre au point l’expérience utilisateur. L’utilisation d’Office UI Fabric est facultative.
 
-Les sections suivantes expliquent comment commencer à utiliser Fabric en fonction de vos besoins. 
+Les sections suivantes expliquent comment commencer à utiliser Fabric en fonction de vos besoins.
 
 ## <a name="use-fabric-core-icons-fonts-colors"></a>Utiliser Fabric Core : icônes, polices, couleurs
-Fabric Core contient les principaux éléments du langage de création tels que les icônes, les couleurs, le type et la grille.Fabric Core n’est pas dépendant de l’infrastructure. Fabric Core est utilisé par et inclus avec Fabric React.
+
+Fabric Core contient les principaux éléments du langage de création tels que les icônes, les couleurs, le type et la grille. Fabric Core n’est pas dépendant de l’infrastructure. Fabric Core est utilisé par et inclus avec Fabric React.
 
 Pour commencer à utiliser Fabric Core:
 
-1. Ajoutez la référence CDN au code HTML sur votre page.  
+1. Ajoutez la référence CDN au code HTML sur votre page.  
 
     ```html
     <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css">
-    ```   
-    
-2. Utilisez les polices et les icônes Fabric. 
+    ```
 
-    Pour utiliser une icône Fabric, incluez l’élément « i » sur votre page, puis référencez les classes appropriées. Vous pouvez contrôler la taille de l’icône en modifiant la taille de police. Par exemple, le code suivant montre comment créer une icône de tableau extra large qui utilise la couleur themePrimary (#0078d7). 
-   
+2. Utilisez les polices et les icônes Fabric.
+
+    Pour utiliser une icône Fabric, incluez l’élément « i » sur votre page, puis référencez les classes appropriées. Vous pouvez contrôler la taille de l’icône en modifiant la taille de police. Par exemple, le code suivant montre comment créer une icône de tableau extra large qui utilise la couleur themePrimary (#0078d7).
+
     ```html
     <i class="ms-Icon ms-font-xl ms-Icon--Table ms-fontColor-themePrimary"></i>
     ```
 
-    Pour rechercher des icônes supplémentaires disponibles dans Office UI Fabric, utilisez la fonctionnalité de recherche de la page [Icônes](https://developer.microsoft.com/fabric#/styles/icons). Lorsque vous trouvez une icône à utiliser dans votre complément, veillez à précéder le nom de l’icône de `ms-Icon--`. 
+    Pour rechercher des icônes supplémentaires disponibles dans Office UI Fabric, utilisez la fonctionnalité de recherche de la page [Icônes](https://developer.microsoft.com/fabric#/styles/icons). Lorsque vous trouvez une icône à utiliser dans votre complément, veillez à précéder le nom de l’icône de `ms-Icon--`.
 
     Pour plus d’informations sur les tailles de police et les couleurs disponibles dans Office UI Fabric, voir [Typographie](https://developer.microsoft.com/fabric#/styles/typography) et [Couleurs](https://developer.microsoft.com/fabric#/styles/colors).
- 
-## <a name="use-fabric-components"></a>Utiliser les composants Fabric 
-Fabric fournit une variété de composants UX que vous pouvez utiliser pour créer votre complément, y compris les types de composants suivants :
 
-- Composants d’entrée- exemple, bouton, case à cocher et bouton bascule
-- Composants de navigation- par exemple, tableau croisé dynamique, barre de navigation
-- Composants de notification-par exemple, MessageBar et légende  
+## <a name="use-fabric-components"></a>Utiliser les composants Fabric
 
-Pas tous les composants tissu sont recommandées pour les utiliser dans des compléments. Voici une liste des composants expérience utilisateur UX Fabric React recommandés pour les utiliser dans un complément:
+Fabric fournit un grand nombre de composants d’expérience utilisateur que vous pouvez utiliser pour créer votre complément. Nous ne prévoyons pas que tous les composants de fabric seront utilisés par un seul complément. Déterminez les meilleurs composants pour votre scénario et l’expérience utilisateur (par exemple, il peut être difficile d’afficher correctement une barre de [navigation](https://developer.microsoft.com/fabric#/components/breadcrumb) dans le volet Office).
 
-- [Barre de navigation](https://developer.microsoft.com/fabric#/components/breadcrumb)
+Voici une liste de [composants d’expérience utilisateur Fabric REACT](https://developer.microsoft.com/fluentui#/controls/web) courants que nous vous recommandons d’utiliser dans un complément :
+
 - [Bouton](https://developer.microsoft.com/fabric#/components/button)
 - [Case à cocher](https://developer.microsoft.com/fabric#/components/checkbox)
 - [ChoiceGroup](https://developer.microsoft.com/fabric#/components/choicegroup)

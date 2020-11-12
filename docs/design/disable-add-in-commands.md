@@ -1,14 +1,14 @@
 ---
 title: Commandes Activé et Désactivé pour les compléments
 description: Découvrez la modification de l'état Activé ou Désactivé des boutons de rubans et des éléments de menu personnalisés dans votre complément web Office.
-ms.date: 08/26/2020
+ms.date: 11/07/2020
 localization_priority: Normal
-ms.openlocfilehash: fac62b20dc67db591ba2de73f96526b8a3dfdf9e
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 7a9994ae25285c876236879e65861ee3cc59f7e5
+ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430414"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "48996388"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>Commandes Activé et Désactivé pour les compléments
 
@@ -23,7 +23,7 @@ Vous pouvez également spécifier si la commande est activée ou désactivée lo
 
 ## <a name="office-application-and-platform-support-only"></a>Prise en charge de l’application et de la plateforme Office uniquement
 
-Les API décrites dans cet article sont disponibles uniquement dans Excel, et uniquement dans Office sous Windows et Mac.
+Les API décrites dans cet article sont disponibles uniquement dans Excel, et uniquement dans Office sous Windows, Office sur Mac et Office sur le Web.
 
 ### <a name="test-for-platform-support-with-requirement-sets"></a>Effectuez un test pour la prise en charge des plateformes avec les ensembles de conditions requises
 
@@ -32,7 +32,7 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 Les API d’activation/de désactivation appartiennent à l’ensemble de conditions requises [RibbonApi 1,1](../reference/requirement-sets/ribbon-api-requirement-sets.md) .
 
 > [!NOTE]
-> L’ensemble de conditions requises **RibbonApi 1,1** n’étant pas encore pris en charge dans le manifeste, vous ne pouvez pas le spécifier dans la section du manifeste `<Requirements>` . Pour tester la prise en charge, votre code doit appeler `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` . Si, *et seulement si*, cet appel `true` est renvoyé, votre code peut appeler les API activer/désactiver. Si l’appel de la `isSetSupported` méthode retournée `false` est activé, toutes les commandes de complément personnalisées sont activées en totalité. Vous devez concevoir votre complément de production, ainsi que toutes les instructions dans l’application, pour tenir compte de la façon dont il fonctionnera lorsque l’ensemble de conditions requises **RibbonApi 1,1** n’est pas pris en charge. Pour plus d’informations et des exemples d’utilisation `isSetSupported` , reportez-vous à la rubrique [spécifier les applications Office et les conditions requises](../develop/specify-office-hosts-and-api-requirements.md)de l’API, notamment [utiliser les vérifications d’exécution dans votre code JavaScript](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code). (La section [définir l’élément Requirements dans le manifeste](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest) de cet article ne s’applique pas au ruban 1,1.)
+> L’ensemble de conditions requises **RibbonApi 1,1** n’étant pas encore pris en charge dans le manifeste, vous ne pouvez pas le spécifier dans la section du manifeste `<Requirements>` . Pour tester la prise en charge, votre code doit appeler `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` . Si, *et seulement si* , cet appel `true` est renvoyé, votre code peut appeler les API activer/désactiver. Si l’appel de la `isSetSupported` méthode retournée `false` est activé, toutes les commandes de complément personnalisées sont activées en totalité. Vous devez concevoir votre complément de production, ainsi que toutes les instructions dans l’application, pour tenir compte de la façon dont il fonctionnera lorsque l’ensemble de conditions requises **RibbonApi 1,1** n’est pas pris en charge. Pour plus d’informations et des exemples d’utilisation `isSetSupported` , reportez-vous à la rubrique [spécifier les applications Office et les conditions requises](../develop/specify-office-hosts-and-api-requirements.md)de l’API, notamment [utiliser les vérifications d’exécution dans votre code JavaScript](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code). (La section [définir l’élément Requirements dans le manifeste](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest) de cet article ne s’applique pas au ruban 1,1.)
 
 ## <a name="shared-runtime-required"></a>Runtime partagé requis
 
@@ -51,23 +51,23 @@ Les API et balisages de manifeste décrits dans cet article exigent que le manif
 Les commandes de complément sont activées par défaut au démarrage de l’application Office. Si vous souhaitez qu’un bouton ou un élément de menu personnalisé soit désactivé au démarrage de l’application Office, vous devez le spécifier dans le manifeste. Il vous suffit d’ajouter un élément [activé](../reference/manifest/enabled.md) (avec la valeur `false`) juste *au-dessous* (non à l’intérieur) de l'élément [Action](../reference/manifest/action.md) dans la déclaration du contrôle. La structure basique est la suivante :
 
 ```xml
-<OfficeApp ...>
-  ...
-  <VersionOverrides ...>
-    ...
-    <Hosts>
-      <Host ...>
-        ...
-        <DesktopFormFactor>
-          <ExtensionPoint ...>
-            <CustomTab ...>
-              ...
-              <Group ...>
-                ...
-                <Control ... id="MyButton">
-                  ...
-                  <Action ...>
-                  <Enabled>false</Enabled>
+<OfficeApp ...>
+  ...
+  <VersionOverrides ...>
+    ...
+    <Hosts>
+      <Host ...>
+        ...
+        <DesktopFormFactor>
+          <ExtensionPoint ...>
+            <CustomTab ...>
+              ...
+              <Group ...>
+                ...
+                <Control ... id="MyButton">
+                  ...
+                  <Action ...>
+                  <Enabled>false</Enabled>
 ...
 </OfficeApp>
 ```
@@ -119,15 +119,15 @@ Imaginez un scénario dans lequel un bouton doit être activé lorsque, et seule
 Deuxièmement, assignez des gestionnaires. Cette procédure est généralement effectuée dans la méthode **Office.onReady** comme illustré dans l’exemple suivant qui assigne des gestionnaires (créés dans une étape ultérieure) aux évènements **onActivated** et **onDeactivated** de tous les graphiques de la feuille de calcul.
 
 ```javascript
-Office.onReady(async () => {
-    await Excel.run(context => {
-        var charts = context.workbook.worksheets
-            .getActiveWorksheet()
-            .charts;
-        charts.onActivated.add(enableChartFormat);
-        charts.onDeactivated.add(disableChartFormat);
-        return context.sync();
-    });
+Office.onReady(async () => {
+    await Excel.run(context => {
+        var charts = context.workbook.worksheets
+            .getActiveWorksheet()
+            .charts;
+        charts.onActivated.add(enableChartFormat);
+        charts.onDeactivated.add(disableChartFormat);
+        return context.sync();
+    });
 });
 ```
 
@@ -167,7 +167,7 @@ function disableChartFormat() {
 L’exemple suivant présente la façon dont le gestionnaire du bouton vérifie l’état d’un bouton incorrect. Veuillez noter que `reportError` est une fonction qui affiche ou consigne une erreur.
 
 ```javascript
-function chartFormatButtonHandler() {
+function chartFormatButtonHandler() {
     if (chartFormatButtonEnabled) {
 
         // Do work here
@@ -201,12 +201,3 @@ function disableChartFormat() {
     }
 }
 ```
-
-## <a name="test-for-platform-support-with-requirement-sets"></a>Effectuez un test pour la prise en charge des plateformes avec les ensembles de conditions requises
-
-Les ensembles de conditions requises sont des groupes nommés des membres de l’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si une application Office prend en charge les API requises par un complément. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../develop/office-versions-and-requirement-sets.md).
-
-Les API activer/désactiver nécessitent la prise en charge de l’ensemble de conditions requises suivant :
-
-- [RibbonApi 1,1](../reference/requirement-sets/ribbon-api-requirement-sets.md)
-

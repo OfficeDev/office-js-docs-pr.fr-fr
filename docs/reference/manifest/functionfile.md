@@ -1,18 +1,23 @@
 ---
 title: Élément FunctionFile dans le fichier manifest
 description: Spécifie le fichier de code source pour les opérations qu’un complément expose via les commandes de complément qui exécutent une fonction JavaScript au lieu d’afficher l’interface utilisateur.
-ms.date: 10/09/2018
+ms.date: 11/06/2020
 localization_priority: Normal
-ms.openlocfilehash: db447a904c04d07d51119f1eac2556af536a647c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 4c47c3e4b824f2b93aaea17cef88e01f748d6f95
+ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611840"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "48996444"
 ---
 # <a name="functionfile-element"></a>Élément FunctionFile
 
-Spécifie le fichier de code source pour les opérations qu’un complément expose via les commandes de complément qui exécutent une fonction JavaScript au lieu d’afficher l’interface utilisateur. L' `FunctionFile` élément est un élément enfant de [DesktopFormFactor](desktopformfactor.md) ou [MobileFormFactor](mobileformfactor.md). L' `resid` attribut de l' `FunctionFile` élément est défini sur la valeur de l' `id` attribut d’un `Url` élément dans l' `Resources` élément qui contient l’URL d’un fichier HTML qui contient ou charge toutes les fonctions JavaScript utilisées par les boutons de commande de complément sans interface utilisateur, comme défini par l' [élément Control](control.md).
+Spécifie le fichier de code source pour les opérations qu’un complément expose de l’une des façons suivantes :
+
+* Commandes de complément qui exécutent une fonction JavaScript au lieu d’afficher l’interface utilisateur.
+* Raccourcis clavier qui exécutent une fonction JavaScript.
+
+L' `FunctionFile` élément est un élément enfant de [DesktopFormFactor](desktopformfactor.md) ou [MobileFormFactor](mobileformfactor.md). L' `resid` attribut de l' `FunctionFile` élément est défini sur la valeur de l' `id` attribut d’un `Url` élément dans l' `Resources` élément qui contient l’URL d’un fichier HTML qui contient ou charge toutes les fonctions JavaScript utilisées par les boutons de commande de complément sans interface utilisateur, comme défini par l' [élément Control](control.md).
 
 Voici un exemple de l' `FunctionFile` élément.
 

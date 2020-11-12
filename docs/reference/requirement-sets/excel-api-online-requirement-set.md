@@ -1,15 +1,15 @@
 ---
 title: Ensemble de conditions requises de l’API JavaScript pour Excel en ligne uniquement
 description: Détails sur l’ensemble de conditions requises pour ExcelApiOnline.
-ms.date: 09/15/2020
+ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 29f5826ba2adbf18b79033b83254b046210015fe
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 16c96f413424d5fc85a21419fb72cf6580c1ac18
+ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819804"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "48996528"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>Ensemble de conditions requises de l’API JavaScript pour Excel en ligne uniquement
 
@@ -40,7 +40,9 @@ Une fois que l’API se trouve dans un ensemble de conditions requises entre pla
 
 ## <a name="api-list"></a>Liste des API
 
-Il n’existe actuellement aucune API dans l' `ExcelApiOnline` ensemble de conditions requises. Toutes les API qui faisaient auparavant partie de cet ensemble ont été graduées en un ensemble de conditions requises et sont disponibles sur toutes les plateformes.
+| Class | Champs | Description |
+|:---|:---|:---|
+|[Range](/javascript/api/excel/excel.range)|[getMergedAreas()](/javascript/api/excel/excel.range#getmergedareas--)|Renvoie un objet RangeAreas qui représente les zones fusionnées dans cette plage.|
 
 ## <a name="see-also"></a>Voir aussi
 

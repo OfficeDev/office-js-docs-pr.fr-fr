@@ -3,12 +3,12 @@ title: Comment trouver l’ordre approprié d’éléments manifeste
 description: Découvrez comment trouver l’ordre correct dans lequel placer les éléments enfants dans un élément parent.
 ms.date: 01/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 1c9f6323e4bc904fd254f776e1f9c132b0050e91
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 8798031410e6d71fd6d9f3f08f89a4c6f78f4692
+ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611988"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "48996381"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>Comment trouver l’ordre approprié d’éléments manifeste
 
@@ -64,6 +64,7 @@ Les sections suivantes présentent les éléments de manifeste dans l’ordre da
         <DictionaryName>
         <DictionaryHomePage>
     <VersionOverrides>*
+    <ExtendedOverrides>
 ```
 
 \*Voir classement des éléments de [complément du volet Office dans VersionOverrides](#task-pane-add-in-element-ordering-within-versionoverrides) pour l’ordre des éléments enfants de VersionOverrides.
@@ -388,7 +389,7 @@ Les sections suivantes présentent les éléments de manifeste dans l’ordre da
     <VersionOverrides>*
 ```
 
-\*Un VersionOverrides avec une `type` valeur `VersionOverridesV1_1` , au lieu de `VersionOverridesV1_0` , peut être imbriqué à la fin de l’VersionOverrides externe. Consultez la rubrique ordre des éléments de [complément de messagerie dans VersionOverrides ver. 1,1](#mail-add-in-element-ordering-within-versionoverrides-ver-11) pour l’ordre des éléments dans `VersionOverridesV1_1` .
+\* Un VersionOverrides avec une `type` valeur `VersionOverridesV1_1` , au lieu de `VersionOverridesV1_0` , peut être imbriqué à la fin de l’VersionOverrides externe. Consultez la rubrique ordre des éléments de [complément de messagerie dans VersionOverrides ver. 1,1](#mail-add-in-element-ordering-within-versionoverrides-ver-11) pour l’ordre des éléments dans `VersionOverridesV1_1` .
 
 ## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-11"></a>Classement des éléments de complément de messagerie dans VersionOverrides ver. 1.1
 

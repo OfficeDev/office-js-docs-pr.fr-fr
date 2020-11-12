@@ -1,20 +1,20 @@
 ---
 title: Options d’authentification dans les compléments Outlook
 description: Les compléments Outlook offrent différentes méthodes qui permettent de s’authentifier en fonction de votre scénario.
-ms.date: 08/20/2020
+ms.date: 11/10/2020
 localization_priority: Priority
-ms.openlocfilehash: 2f0fd2eae9bedf67b279c2b68a61ebed001d963c
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 54584483b7d4fd75e3f2d6c3188465333e9f58d5
+ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293967"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "48996395"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Options d’authentification dans les compléments Outlook
 
 Votre complément Outlook peut accéder à des informations à partir de n’importe quel emplacement sur Internet, qu’il s’agisse du serveur qui héberge le complément, de votre réseau interne ou du cloud. Si ces informations sont protégées, votre complément doit trouver un moyen d’authentifier votre utilisateur. Les compléments Outlook offrent différentes méthodes qui permettent de s’authentifier en fonction de votre scénario.
 
-## <a name="single-sign-on-access-token-preview"></a>Jeton d’accès à authentification unique (aperçu)
+## <a name="single-sign-on-access-token"></a>Jeton d’accès à authentification unique
 
 Les jetons d’accès à authentification unique permettent à votre complément de s’authentifier en toute transparence et d’obtenir des jetons d’accès pour appeler l’[API Microsoft Graph](/graph/overview). Cette fonctionnalité réduit la friction étant donné que l’utilisateur n’a pas besoin de saisir ses informations d’identification.
 

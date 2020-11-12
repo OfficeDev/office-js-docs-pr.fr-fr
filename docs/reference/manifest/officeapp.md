@@ -1,14 +1,14 @@
 ---
 title: Élément OfficeApp dans le fichier manifeste
 description: L’élément OfficeApp est l’élément racine d’un manifeste de complément Office.
-ms.date: 02/04/2020
+ms.date: 11/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 770c764db6d8d7d1d2e870e48437de7c8f887101
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: c5786343173d0e130df4b786f28a8689d573b6ca
+ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641458"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "48996318"
 ---
 # <a name="officeapp-element"></a>OfficeApp, élément
 
@@ -62,6 +62,7 @@ ms.locfileid: "46641458"
 |[DisableEntityHighlighting](disableentityhighlighting.md)||x||
 |[Dictionary](dictionary.md)|||x|
 |[VersionOverrides](versionoverrides.md)|x|x|x|
+|[ExtendedOverrides](extendedoverrides.md)|||x|
 
 ## <a name="attributes"></a>Attributs
 

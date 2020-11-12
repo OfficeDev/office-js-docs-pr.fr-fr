@@ -1,15 +1,15 @@
 ---
 title: Ensemble de conditions requises de l’API JavaScript pour Excel 1,3
 description: Détails sur l’ensemble de conditions requises ExcelApi 1,3.
-ms.date: 07/26/2019
+ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: ee72e8bde7b768b2edb3dcff5217325e2336e3ab
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 520755fe4b77008da866098d851f47ae3833bf13
+ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819818"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "48996472"
 ---
 # <a name="whats-new-in-excel-javascript-api-13"></a>Nouveautés de l’API JavaScript 1.3 pour Excel
 
@@ -33,27 +33,27 @@ Le tableau suivant répertorie les API dans l’ensemble de conditions requises 
 ||[RefreshAll, ()](/javascript/api/excel/excel.pivottablecollection#refreshall--)|Actualise tous les tableaux croisés dynamiques de la collection.|
 |[Range](/javascript/api/excel/excel.range)|[getVisibleView ()](/javascript/api/excel/excel.range#getvisibleview--)|Représente les lignes visibles de la plage en cours.|
 |[RangeView](/javascript/api/excel/excel.rangeview)|[formulas](/javascript/api/excel/excel.rangeview#formulas)|Représente la formule dans le style de notation A1.|
-||[formulasLocal](/javascript/api/excel/excel.rangeview#formulaslocal)|Représente la formule en notation A1, en utilisant le langage et les paramètres de format de nombre régionaux de l’utilisateur. Par exemple, la formule « =SUM(A1, 1.5) » en anglais deviendrait « =SUMME(A1; 1,5) » en allemand.|
+||[formulasLocal](/javascript/api/excel/excel.rangeview#formulaslocal)|Représente la formule en notation A1, en utilisant le langage et les paramètres de format de nombre régionaux de l’utilisateur.|
 ||[formulasR1C1](/javascript/api/excel/excel.rangeview#formulasr1c1)|Représente la formule dans le style de notation R1C1.|
 ||[getRange()](/javascript/api/excel/excel.rangeview#getrange--)|Obtient la plage parent associée à l’affichage de plage actuel.|
 ||[numberFormat](/javascript/api/excel/excel.rangeview#numberformat)|Représente le code de format de nombre d’Excel pour une cellule donnée.|
-||[cellAddresses](/javascript/api/excel/excel.rangeview#celladdresses)|Représente les adresses de cellule de la RangeView. En lecture seule.|
-||[NbreColonnes](/javascript/api/excel/excel.rangeview#columncount)|Renvoie le nombre de colonnes visibles. En lecture seule.|
-||[index](/javascript/api/excel/excel.rangeview#index)|Renvoie une valeur qui représente l’index de l’affichage de plage. En lecture seule.|
-||[Stopp](/javascript/api/excel/excel.rangeview#rowcount)|Renvoie le nombre de lignes visibles. En lecture seule.|
-||[rows](/javascript/api/excel/excel.rangeview#rows)|Représente une collection d’affichages de plage associés à la plage. En lecture seule.|
-||[text](/javascript/api/excel/excel.rangeview#text)|Valeurs de texte de la plage spécifiée. La valeur de texte ne dépend pas de la largeur de la cellule. Le remplacement par le signe # qui se produit dans l’interface utilisateur d’Excel n’a aucun effet sur la valeur de texte renvoyée par l’API. En lecture seule.|
-||[valueTypes](/javascript/api/excel/excel.rangeview#valuetypes)|Représente le type de données de chaque cellule. En lecture seule.|
-||[values](/javascript/api/excel/excel.rangeview#values)|Représente les valeurs brutes de l’affichage de plage spécifié. Les données renvoyées peuvent être des chaînes, des valeurs numériques ou des valeurs booléennes. Les cellules contenant une erreur renvoie la chaîne d’erreur.|
-|[RangeViewCollection](/javascript/api/excel/excel.rangeviewcollection)|[getItemAt(index: number)](/javascript/api/excel/excel.rangeviewcollection#getitemat-index-)|Obtient une ligne RangeView par le biais de son index. Avec index de base zéro.|
+||[cellAddresses](/javascript/api/excel/excel.rangeview#celladdresses)|Représente les adresses de cellule de la RangeView.|
+||[NbreColonnes](/javascript/api/excel/excel.rangeview#columncount)|Nombre de colonnes visibles.|
+||[index](/javascript/api/excel/excel.rangeview#index)|Renvoie une valeur qui représente l’index de l’affichage de plage.|
+||[Stopp](/javascript/api/excel/excel.rangeview#rowcount)|Nombre de lignes visibles.|
+||[rows](/javascript/api/excel/excel.rangeview#rows)|Représente une collection d’affichages de plage associés à la plage.|
+||[text](/javascript/api/excel/excel.rangeview#text)|Valeurs de texte de la plage spécifiée.|
+||[valueTypes](/javascript/api/excel/excel.rangeview#valuetypes)|Représente le type de données de chaque cellule.|
+||[values](/javascript/api/excel/excel.rangeview#values)|Représente les valeurs brutes de l’affichage de plage spécifié.|
+|[RangeViewCollection](/javascript/api/excel/excel.rangeviewcollection)|[getItemAt(index: number)](/javascript/api/excel/excel.rangeviewcollection#getitemat-index-)|Obtient une ligne RangeView par le biais de son index.|
 ||[items](/javascript/api/excel/excel.rangeviewcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
-|[Tableau](/javascript/api/excel/excel.table)|[highlightFirstColumn](/javascript/api/excel/excel.table#highlightfirstcolumn)|Indique si la première colonne contient une mise en forme spéciale.|
+|[Table](/javascript/api/excel/excel.table)|[highlightFirstColumn](/javascript/api/excel/excel.table#highlightfirstcolumn)|Indique si la première colonne contient une mise en forme spéciale.|
 ||[highlightLastColumn](/javascript/api/excel/excel.table#highlightlastcolumn)|Indique si la dernière colonne contient une mise en forme spéciale.|
-||[showBandedColumns](/javascript/api/excel/excel.table#showbandedcolumns)|Indique si les colonnes affichent une mise en forme à bandes dans laquelle la mise en évidence des colonnes impaires diffère de celle des colonnes paires pour faciliter la lecture du tableau.|
-||[showBandedRows](/javascript/api/excel/excel.table#showbandedrows)|Indique si les lignes affichent une mise en forme à bandes dans laquelle la mise en évidence des lignes impaires diffère de celle des lignes paires pour faciliter la lecture du tableau.|
-||[showFilterButton](/javascript/api/excel/excel.table#showfilterbutton)|Indique si les boutons de filtre sont visibles dans la partie supérieure de chaque en-tête de colonne. Ce paramètre est autorisé uniquement si le tableau contient une ligne d’en-tête.|
-|[Classeur](/javascript/api/excel/excel.workbook)|[pivotTables](/javascript/api/excel/excel.workbook#pivottables)|Représente une collection de tableaux croisés dynamiques associés au classeur. En lecture seule.|
-|[Feuille de calcul](/javascript/api/excel/excel.worksheet)|[pivotTables](/javascript/api/excel/excel.worksheet#pivottables)|Collection de tableaux croisés dynamiques qui font partie de la feuille de calcul. En lecture seule.|
+||[showBandedColumns](/javascript/api/excel/excel.table#showbandedcolumns)|Spécifie si les colonnes affichent une mise en forme à bandes dans laquelle les colonnes impaires sont mises en surbrillance différemment des colonnes égales pour faciliter la lecture du tableau.|
+||[showBandedRows](/javascript/api/excel/excel.table#showbandedrows)|Indique si les lignes affichent une mise en forme à bandes dans laquelle les lignes impaires sont mises en surbrillance différemment des lignes paires pour faciliter la lecture du tableau.|
+||[showFilterButton](/javascript/api/excel/excel.table#showfilterbutton)|Indique si les boutons de filtre sont visibles en haut de chaque en-tête de colonne.|
+|[Workbook](/javascript/api/excel/excel.workbook)|[pivotTables](/javascript/api/excel/excel.workbook#pivottables)|Représente une collection de tableaux croisés dynamiques associés au classeur.|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[pivotTables](/javascript/api/excel/excel.worksheet#pivottables)|Collection de tableaux croisés dynamiques qui font partie de la feuille de calcul.|
 
 ## <a name="see-also"></a>Voir aussi
 
