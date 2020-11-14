@@ -3,12 +3,12 @@ ms.date: 01/14/2020
 description: Apprenez à implémenter des fonctions personnalisées de diffusion en continu et volatiles.
 title: Valeurs volatiles dans les fonctions
 localization_priority: Normal
-ms.openlocfilehash: a318c87cc5b5f45bf3b1f5fe1341b7008f5a3d2f
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 0f530e9d67894ebbc13c8b8a13e6219571c96ff1
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609789"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071632"
 ---
 # <a name="volatile-values-in-functions"></a>Valeurs volatiles dans les fonctions
 
@@ -20,7 +20,7 @@ Excel contient plusieurs fonctions volatiles intégrées, comme `RAND` et `TODAY
 
 Les fonctions personnalisées vous permettent de créer vos propres fonctions volatiles, qui peuvent être utiles lors de la gestion des dates, des heures, des nombres aléatoires et de la modélisation. Par exemple, les [simulations Monte Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_method) nécessitent la génération d’entrées aléatoires pour déterminer une solution optimale.
 
-Si vous choisissez de générer automatiquement votre fichier JSON, déclarez une fonction volatile avec la balise de commentaire JSDoc `@volatile` . À partir de plus d’informations sur la génération automatique, voir [Create JSON Metadata for Custom Functions](custom-functions-json-autogeneration.md).
+Si vous choisissez de générer automatiquement votre fichier JSON, déclarez une fonction volatile avec la balise de commentaire JSDoc `@volatile` . À partir de plus d’informations sur la génération automatique, consultez la rubrique [AutoGenerate JSON Metadata for Custom Functions](custom-functions-json-autogeneration.md).
 
 Voici un exemple de fonction personnalisée volatile qui simule le roulement d’un dés à six côtés.
 
@@ -42,5 +42,5 @@ function roll6sided() {
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Métadonnées fonctions personnalisées](custom-functions-json.md)
+* [Créer manuellement des métadonnées JSON pour les fonctions personnalisées](custom-functions-json.md)
 * [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)

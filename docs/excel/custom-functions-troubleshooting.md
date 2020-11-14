@@ -1,14 +1,14 @@
 ---
-ms.date: 04/29/2020
+ms.date: 11/06/2020
 description: Résoudre les problèmes courants liés aux fonctions personnalisées Excel.
 title: Résoudre des problèmes de fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: 3ee18eabd19be56eece465da880fae7af1c12f3d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: fb187c443f02df92f9d489d4c6463f76d072a5e5
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609796"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071661"
 ---
 # <a name="troubleshoot-custom-functions"></a>Résoudre des problèmes de fonctions personnalisées
 
@@ -76,7 +76,7 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-Pour plus d’informations sur ce processus, voir [Mappage des noms de fonction aux métadonnées JSON](../excel/custom-functions-json.md#associating-function-names-with-json-metadata).
+Pour plus d’informations sur ce processus, voir [Association de noms de fonction aux métadonnées JSON](../excel/custom-functions-json.md#associating-function-names-with-json-metadata).
 
 ## <a name="reporting-feedback"></a>Formulation de commentaires
 
@@ -95,5 +95,5 @@ Découvrez comment [rendre vos fonctions personnalisées compatibles avec les fo
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Génération automatique de métadonnées de fonctions personnalisées](custom-functions-json-autogeneration.md)
+* [Générer automatiquement des métadonnées JSON pour des fonctions personnalisées](custom-functions-json-autogeneration.md)
 * [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)

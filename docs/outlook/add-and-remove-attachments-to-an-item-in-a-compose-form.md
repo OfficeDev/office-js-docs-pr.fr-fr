@@ -1,14 +1,14 @@
 ---
 title: Ajouter et supprimer des pièces jointes dans un complément Outlook
 description: Vous pouvez utiliser différentes API de pièces jointes pour gérer les fichiers ou les éléments Outlook associés à l’élément composé par l’utilisateur.
-ms.date: 10/31/2019
+ms.date: 11/11/2020
 localization_priority: Normal
-ms.openlocfilehash: d162ae4c0fa8059376a3c55463080e38679d9a01
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 6f146b3efc3234313191d93af05d9c0d35111829
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611672"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071703"
 ---
 # <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>Gérer les pièces jointes d’un élément dans un formulaire de composition dans Outlook
 
@@ -117,6 +117,11 @@ function addItemAttachment(itemId) {
 > Vous pouvez utiliser un complément de composition pour joindre une instance d’un rendez-vous périodique dans Outlook sur le Web ou des appareils mobiles. Cependant, dans le client riche Outlook de prise en charge, la tentative d’attachement d’une instance entraîne l’attachement d’une série périodique (rendez-vous principal).
 
 ## <a name="get-attachments"></a>Obtention de pièces jointes
+
+Les API permettant d’obtenir des pièces jointes en mode composition sont disponibles à partir de l' [ensemble de conditions requises 1,8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md).
+
+- [getAttachmentsAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+- [getAttachmentContentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
 
 Vous pouvez utiliser la méthode [getAttachmentsAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) pour obtenir les pièces jointes du message ou du rendez-vous composé.
 

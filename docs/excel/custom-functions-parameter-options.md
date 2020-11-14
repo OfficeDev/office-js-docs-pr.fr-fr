@@ -1,14 +1,14 @@
 ---
-ms.date: 04/29/2020
+ms.date: 11/06/2020
 description: Découvrez comment utiliser différents paramètres dans vos fonctions personnalisées, telles que les plages Excel, les paramètres facultatifs, le contexte d’appel, et bien plus encore.
 title: Options pour les fonctions personnalisées Excel
 localization_priority: Normal
-ms.openlocfilehash: ee193ed68ef59bfd9068bc43cd30721d6bb7b86a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 0a803a4d41354530584b25d2bf9df944af430909
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609274"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071619"
 ---
 # <a name="custom-functions-parameter-options"></a>Options des paramètres de fonctions personnalisées
 
@@ -221,7 +221,7 @@ Un paramètre de plage extensible permet de transmettre plusieurs plages ou nomb
 
 
 ### <a name="declaring-repeating-parameters"></a>Déclaration de paramètres répétitifs
-Dans la machine à écrire, indiquez que le paramètre est à plusieurs dimensions. Par exemple, `ADD(values: number[])` un tableau à une dimension indiquerait `ADD(values:number[][])` un tableau à deux dimensions, et ainsi de suite.
+Dans la machine à écrire, indiquez que le paramètre est à plusieurs dimensions. Par exemple,  `ADD(values: number[])` un tableau à une dimension indiquerait `ADD(values:number[][])` un tableau à deux dimensions, et ainsi de suite.
 
 En JavaScript, utilisez `@param values {number[]}` pour les tableaux à une dimension, `@param <name> {number[][]}` pour les tableaux à deux dimensions, et ainsi de suite pour d’autres dimensions.
 
@@ -253,7 +253,7 @@ Découvrez comment utiliser [des valeurs volatiles dans vos fonctions personnali
 ## <a name="see-also"></a>Voir aussi
 
 * [Recevoir et gérer des données à l’aide de fonctions personnalisées](custom-functions-web-reqs.md)
-* [Métadonnées de fonctions personnalisées](custom-functions-json.md)
 * [Générer automatiquement des métadonnées JSON pour des fonctions personnalisées](custom-functions-json-autogeneration.md)
+* [Créer manuellement des métadonnées JSON pour les fonctions personnalisées](custom-functions-json.md)
 * [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
 * [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md)

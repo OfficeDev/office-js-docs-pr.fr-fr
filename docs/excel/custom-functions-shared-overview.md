@@ -3,14 +3,14 @@ ms.date: 08/13/2020
 description: Découvrez l'exécution de fonctions personnalisées, les boutons du ruban et le code du volet des tâches dans un runtime JavaScript identique pour coordonner des scénarios dans votre complément.
 title: Exécutez votre code de complément dans un runtime JavaScript partagé
 localization_priority: Priority
-ms.openlocfilehash: 04932bcf292686fd9d0abf2ff99c19f062f21456
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 70d13372dbe3ef40d527c781d0fd55dc0b1eb7ed
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819545"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071626"
 ---
-# <a name="overview-run-your-add-in-code-in-a-shared-javascript-runtimes"></a>Vue d’ensemble : exécutez votre code de complément dans un runtime JavaScript partagé
+# <a name="overview-run-your-add-in-code-in-a-shared-javascript-runtime"></a>Vue d’ensemble : exécutez votre code de complément dans un runtime JavaScript partagé
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 

@@ -1,18 +1,18 @@
 ---
-ms.date: 09/25/2020
+ms.date: 11/06/2020
 description: Utiliser les balises JSDOC pour créer dynamiquement vos fonctions personnalisées de métadonnées JSON.
 title: Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: 151dc7c97b2a98743906b7e0a920fdc1eff62e7f
-ms.sourcegitcommit: 42202d7e2ac24dffa77cf937f5697a1cd79ee790
+ms.openlocfilehash: 23ad0466c157b6dbb9d5fd5fbecf3fd5fe479752
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "48308536"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071647"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 
-Si vous écrivez une fonction Excel personnalisée en JavaScript ou TypeScript, vous pouvez utiliser les [balises JSDoc](https://jsdoc.app/) pour la détailler en ajoutant des informations supplémentaires. Les balises JSDoc sont ensuite utilisées lors de la génération pour créer le [fichier de métadonnées JSON](custom-functions-json.md). En utilisant des balises JSDoc, vous n’avez plus besoin de modifier manuellement le fichier de métadonnées JSON.
+Si vous écrivez une fonction Excel personnalisée en JavaScript ou TypeScript, vous pouvez utiliser les [balises JSDoc](https://jsdoc.app/) pour la détailler en ajoutant des informations supplémentaires. Les balises JSDoc sont ensuite utilisées lors de la génération pour créer le fichier de métadonnées JSON. L’utilisation de balises JSDoc vous évite d’avoir à [modifier manuellement le fichier de métadonnées JSON](custom-functions-json.md).
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -24,7 +24,7 @@ Vous pouvez fournir les types de paramètres de la fonction en utilisant la bali
 
 La description s’affiche pour l’utilisateur sous forme de texte d’aide lorsqu’il a besoin d’aide pour comprendre le rôle de votre fonction personnalisée. La description ne nécessite aucune balise spécifique. Il vous suffit d’entrer une brève description dans le commentaire JSDoc. En général, la description est placée au début de la section commentaires JSDoc, mais elle fonctionnera peu importe son emplacement.
 
-Pour consulter des exemples de descriptions de fonction intégrées, ouvrez Excel, accédez à l’onglet**formules** , puis sélectionnez **insérer une fonction**. Vous pouvez ensuite parcourir toutes les descriptions de fonction et voir vos propres fonctions personnalisées répertoriées.
+Pour consulter des exemples de descriptions de fonction intégrées, ouvrez Excel, accédez à l’onglet **formules** , puis sélectionnez **insérer une fonction**. Vous pouvez ensuite parcourir toutes les descriptions de fonction et voir vos propres fonctions personnalisées répertoriées.
 
 Dans cet exemple, la phrase «calcule le volume d’une sphère.» est la description de la fonction personnalisée.
 
@@ -68,7 +68,7 @@ Une fonction ne peut pas contenir les deux balises `@cancelable` et `@streaming`
 
 ### <a name="customfunction"></a>@fonctionpersonnalisée
 
-Syntaxe: @fonctionpersonnalisée_id_ _nom_
+Syntaxe: @fonctionpersonnalisée _id_ _nom_
 
 Cette balise indique que la fonction JavaScript/dactylographié est une fonction personnalisée Excel. Il est nécessaire de créer des métadonnées pour la fonction personnalisée.
 
@@ -138,9 +138,9 @@ Dans l’exemple suivant, la phrase « A function that adds two numbers » («
 
 ### <a name="helpurl"></a>@urlaide
 
-Syntaxe: @urlaide_url_
+Syntaxe: @urlaide _url_
 
-L’_url_ fournie est affichée dans Excel.
+L’ _url_ fournie est affichée dans Excel.
 
 Dans l’exemple suivant, le `helpurl` est `www.contoso.com/weatherhelp` .
 
@@ -160,7 +160,7 @@ Dans l’exemple suivant, le `helpurl` est `www.contoso.com/weatherhelp` .
 
 #### <a name="javascript"></a>JavaScript
 
-Syntaxe JavaScript : @param {type} nom_description_
+Syntaxe JavaScript : @param {type} nom _description_
 
 * `{type}` spécifie les informations de type entre accolades. Consultez la section [Types](#types) pour savoir quels types peuvent être utilisés. Si aucun type n’est spécifié, le type par défaut est `any` utilisé.
 * `name` Spécifie le paramètre auquel s’applique la balise @param. Elle est obligatoire.
@@ -188,7 +188,7 @@ L’exemple suivant montre une fonction ADD qui ajoute deux ou trois nombres, le
 
 #### <a name="typescript"></a>TypeScript
 
-Syntaxe TypeScript : nom @param_description_
+Syntaxe TypeScript : nom @param _description_
 
 * `name` Spécifie le paramètre auquel s’applique la balise @param. Elle est obligatoire.
 * `description`fournit la description qui s’affiche dans Excel pour le paramètre de la fonction. Elle est facultative.
@@ -234,7 +234,7 @@ Le dernier paramètre de la fonction doit être de type `CustomFunctions.Invocat
 
 ### <a name="returns"></a>@renvoie :
 
-Syntaxe: @renvoie {_type_}
+Syntaxe: @renvoie { _type_ }
 
 Fournit le type pour la valeur renvoyée.
 
@@ -327,5 +327,5 @@ Découvrez les [conventions d’affectation des noms des fonctions personnalisé
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Métadonnées fonctions personnalisées](custom-functions-json.md)
+* [Créer manuellement des métadonnées JSON pour les fonctions personnalisées](custom-functions-json.md)
 * [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)

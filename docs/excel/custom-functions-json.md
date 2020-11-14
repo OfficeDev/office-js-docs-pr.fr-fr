@@ -1,16 +1,16 @@
 ---
-ms.date: 10/22/2020
+ms.date: 11/06/2020
 description: Définissez des métadonnées JSON pour les fonctions personnalisées dans Excel et associez vos ID de fonction et propriétés de nom.
-title: Créer des métadonnées JSON pour les fonctions personnalisées dans Excel
+title: Créer manuellement des métadonnées JSON pour les fonctions personnalisées dans Excel
 localization_priority: Normal
-ms.openlocfilehash: c676abc3115082fa861a4650b11869009f168e7f
-ms.sourcegitcommit: a4e09546fd59579439025aca9cc58474b5ae7676
+ms.openlocfilehash: adbcbb9d2705a38b1ed9ff5cdffa6162b9d93a9c
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "48774746"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071640"
 ---
-# <a name="create-json-metadata-for-custom-functions"></a>Créer des métadonnées JSON pour des fonctions personnalisées
+# <a name="manually-create-json-metadata-for-custom-functions"></a>Créer manuellement des métadonnées JSON pour les fonctions personnalisées
 
 Comme décrit dans l’article [vue d’ensemble des fonctions personnalisées](custom-functions-overview.md) , un projet de fonctions personnalisées doit inclure un fichier de métadonnées JSON et un fichier script (JavaScript ou machine à écriture) pour enregistrer une fonction, le rendant ainsi disponible. Les fonctions personnalisées sont inscrites lorsque l’utilisateur exécute le complément pour la première fois et après qu’il est disponible pour le même utilisateur dans tous les classeurs.
 
@@ -18,7 +18,7 @@ Comme décrit dans l’article [vue d’ensemble des fonctions personnalisées](
 
 Nous vous recommandons d’utiliser la génération automatique JSON lorsque cela est possible au lieu de créer votre propre fichier JSON. La génération automatique est moins sujette aux erreurs de l’utilisateur et les fichiers générés par la génération de `yo office` modèles automatiques incluent déjà cela. Pour plus d’informations sur les balises JSDoc et le processus de génération automatique JSON, voir [génération automatique de métadonnées JSON pour les fonctions personnalisées](custom-functions-json-autogeneration.md).
 
-Toutefois, vous pouvez créer un projet de fonctions personnalisées à partir de zéro, mais vous devez :
+Toutefois, vous pouvez créer un projet de fonctions personnalisées à partir de zéro. Ce processus nécessite d’effectuer les opérations suivantes :
 
 - Écrivez votre fichier JSON.
 - Vérifiez que votre fichier manifeste est connecté à votre fichier JSON.
@@ -144,7 +144,7 @@ La propriété `functions` est un tableau d’objets de fonction personnalisés.
 
 | Propriété      | Type de données | Requis | Description                                                                                                                                                                      |
 | :------------ | :-------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `description` | string    | Non       | Description de la fonction que voient les utilisateurs finaux dans Excel. Par exemple, **convertit une valeur Celsius en valeur Fahrenheit** .                                                            |
+| `description` | string    | Non       | Description de la fonction que voient les utilisateurs finaux dans Excel. Par exemple, **convertit une valeur Celsius en valeur Fahrenheit**.                                                            |
 | `helpUrl`     | string    | Non       | URL fournissant des informations sur la fonction (elle est affichée dans un volet des tâches). Par exemple, `http://contoso.com/help/convertcelsiustofahrenheit.html`.                      |
 | `id`          | string    | Oui      | Un ID unique pour la fonction. Cet ID peut contenir uniquement des points et caractères alphanumériques et ne doit pas être modifié une fois défini.                                            |
 | `name`        | string    | Oui      | Nom de la fonction que voient les utilisateurs finaux dans Excel. Dans Excel, le nom de cette fonction est préfixé par l’espace de noms des fonctions personnalisées qui est spécifié dans le fichier manifeste XML. |
@@ -172,7 +172,7 @@ La propriété `parameters` est un tableau d’objets paramètre. Le tableau sui
 |  `description`  |  string  |  Non |  Description du paramètre. Elle s’affiche dans IntelliSense d’Excel.  |
 |  `dimensionality`  |  string  |  Non  |  Doit être **scalaire** (valeur autre que de tableau) ou **matrice** (tableau bidimensionnel).  |
 |  `name`  |  string  |  Oui  |  Le nom du paramètre. Ce nom s’affiche dans IntelliSense d’Excel.  |
-|  `type`  |  string  |  Non  |  Type de données du paramètre. Peut être **boolean** , **number** , **string** ou **any** qui vous permet d’utiliser n’importe lequel des trois types précédents. Si cette propriété n’est pas spécifiée, le type de données par défaut est **any** . |
+|  `type`  |  string  |  Non  |  Type de données du paramètre. Peut être **boolean** , **number** , **string** ou **any** qui vous permet d’utiliser n’importe lequel des trois types précédents. Si cette propriété n’est pas spécifiée, le type de données par défaut est **any**. |
 |  `optional`  | boolean | Non | Si la valeur est `true`, le paramètre est facultatif. |
 |`repeating`| boolean | Non | Si `true` , les paramètres sont renseignés à partir d’un tableau spécifié. Notez que les fonctions de tous les paramètres répétitifs sont considérées comme des paramètres facultatifs par définition.  |
 
@@ -186,7 +186,7 @@ L’objet `result` définit le type des informations renvoyées par la fonction.
 
 ## <a name="associating-function-names-with-json-metadata"></a>Mappage des noms de fonction aux métadonnées JSON
 
-Pour qu’une fonction fonctionne correctement, vous devez associer la propriété de la fonction `id` à l’implémentation JavaScript. Assurez-vous qu’il existe une association, sinon la fonction ne sera pas enregistrée et n’est pas utilisable dans Excel. L’exemple de code suivant montre comment effectuer l’Association à l’aide de la `CustomFunctions.associate()` méthode. L’exemple définit la fonction personnalisée `add` et associe à l’objet dans le fichier de métadonnées JSON où la valeur de la propriété`id`est **AJOUTER** .
+Pour qu’une fonction fonctionne correctement, vous devez associer la propriété de la fonction `id` à l’implémentation JavaScript. Assurez-vous qu’il existe une association, sinon la fonction ne sera pas enregistrée et n’est pas utilisable dans Excel. L’exemple de code suivant montre comment effectuer l’Association à l’aide de la `CustomFunctions.associate()` méthode. L’exemple définit la fonction personnalisée `add` et associe à l’objet dans le fichier de métadonnées JSON où la valeur de la propriété`id`est **AJOUTER**.
 
 ```js
 /**

@@ -1,16 +1,16 @@
 ---
-ms.date: 10/14/2020
+ms.date: 11/06/2020
 description: Créez une fonction personnalisée Excel pour votre Complément Office.
 title: Créer des fonctions personnalisées dans Excel
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 466050a5323f0f02fb886c763f5a2a594a9e2233
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: d20c2368f3cb79dc8cd43e93c4b5ecbc9603129a
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741112"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071675"
 ---
 # <a name="create-custom-functions-in-excel"></a>Créer des fonctions personnalisées dans Excel
 
@@ -50,9 +50,9 @@ Si vous utilisez le [générateur de Yo Office](https://github.com/OfficeDev/gen
 
 ### <a name="script-file"></a>Fichier de script
 
-Le fichier de script (**./src/functions/functions.js** ou **./src/functions/functions.ts**) contient le code qui définit des fonctions personnalisées et des commentaires qui définissent la fonction.
+Le fichier de script ( **./src/functions/functions.js** ou **./src/functions/functions.ts** ) contient le code qui définit des fonctions personnalisées et des commentaires qui définissent la fonction.
 
-Le code suivant définit la fonction personnalisée `add`. Les commentaires du code sont utilisés pour générer un fichier de métadonnées JSON décrivant la fonction personnalisée pour Excel. Le commentaire obligatoire `@customfunction` est déclaré en premier, pour indiquer qu’il s’agit d’une fonction personnalisée. Deux paramètres sont ensuite déclarés, `first` et `second`, suivis de leurs propriétés de `description` . Enfin, une description `returns` est fournie. Pour plus d’informations sur les commentaires requis pour votre fonction personnalisée, voir [Créer des métadonnées JSON pour des fonctions personnalisées](custom-functions-json-autogeneration.md).
+Le code suivant définit la fonction personnalisée `add`. Les commentaires du code sont utilisés pour générer un fichier de métadonnées JSON décrivant la fonction personnalisée pour Excel. Le commentaire obligatoire `@customfunction` est déclaré en premier, pour indiquer qu’il s’agit d’une fonction personnalisée. Deux paramètres sont ensuite déclarés, `first` et `second`, suivis de leurs propriétés de `description` . Enfin, une description `returns` est fournie. Pour plus d’informations sur les commentaires requis pour votre fonction personnalisée, voir [Générer automatiquement des métadonnées JSON pour des fonctions personnalisées](custom-functions-json-autogeneration.md).
 
 ```js
 /**
@@ -70,7 +70,7 @@ function add(first, second){
 
 ### <a name="manifest-file"></a>Fichier manifeste
 
-Le fichier manifeste XML pour un complément qui définit des fonctions personnalisées (**./manifest.xml** dans le projet que le générateur de bureau Yo crée) effectue plusieurs opérations :
+Le fichier manifeste XML pour un complément qui définit des fonctions personnalisées ( **./manifest.xml** dans le projet que le générateur de bureau Yo crée) effectue plusieurs opérations :
 
 - Définit l’espace de noms pour vos fonctions personnalisées. Un espace de noms s’ajoute à vos fonctions personnalisées pour aider les clients à identifier vos fonctions dans le cadre de votre complément.
 - Utilise les éléments `<ExtensionPoint>` et `<Resources>` qui sont propres à un manifeste de fonctions personnalisées. Ces éléments contiennent les informations relatives aux emplacements des fichiers JavaScript, JSON et HTML.
@@ -100,6 +100,6 @@ Un autre moyen simple d’essayer des fonctions personnalisées consiste à util
 
 ## <a name="see-also"></a>Voir aussi 
 * [Découvrez le programme pour les développeurs Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
-* [Configuration requise de fonctions personnalisées](custom-functions-requirement-sets.md)
-* [Instructions d’attribution de noms](custom-functions-naming.md)
+* [Ensembles de besoins de fonctions personnalisées](custom-functions-requirement-sets.md)
+* [Règles de noms des fonctions personnalisées](custom-functions-naming.md)
 * [Rendre vos fonctions personnalisées compatibles avec les fonctions XLL définies par l’utilisateur](make-custom-functions-compatible-with-xll-udf.md)

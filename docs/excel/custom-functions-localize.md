@@ -1,27 +1,27 @@
 ---
-ms.date: 04/29/2020
+ms.date: 11/06/2020
 description: Localisez vos fonctions personnalisées Excel.
 title: Localiser des fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: 427bff029c5e85caa216f628df450525ee187c17
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b393cbb76e4993eb77df8ddbe60247c8af74c580
+ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609295"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "49071654"
 ---
 # <a name="localize-custom-functions"></a>Localiser des fonctions personnalisées
 
 Vous pouvez localiser votre complément et vos noms de fonctions personnalisées. Pour ce faire, fournissez des noms de fonction localisés dans le fichier JSON des fonctions et des informations de paramètres régionaux dans le fichier manifeste XML.
 
 >[!IMPORTANT]
-> Les métadonnées générées automatiquement ne fonctionnent pas pour la localisation, c’est pourquoi vous devez mettre à jour le fichier JSON manuellement. Pour savoir comment procéder, consultez la rubrique [Metadata for Custom Functions in Excel](custom-functions-json.md)
+> Les métadonnées générées automatiquement ne fonctionnent pas pour la localisation, c’est pourquoi vous devez mettre à jour le fichier JSON manuellement. Pour savoir comment procéder, consultez la rubrique [Création manuelle de métadonnées JSON pour les fonctions personnalisées](custom-functions-json.md)
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="localize-function-names"></a>Noms des fonctions de localisation
 
-Pour localiser vos fonctions personnalisées, créez un nouveau fichier de métadonnées JSON pour chaque langue. Dans chaque fichier JSON de langue, créez `name` et des `description` Propriétés dans la langue cible. Le fichier par défaut pour l’anglais est nommé **functions. JSON**. Utilisez les paramètres régionaux dans le nom de fichier de tous les fichiers JSON supplémentaires, tels que les **fonctions-de-JSON** pour les identifier.
+Pour localiser vos fonctions personnalisées, créez un nouveau fichier de métadonnées JSON pour chaque langue. Dans chaque fichier JSON de langue, créez `name` et des `description` Propriétés dans la langue cible. Le fichier par défaut pour l’anglais est nommé **functions.js**. Utilisez les paramètres régionaux dans le nom de fichier de chaque fichier JSON supplémentaire, tel que **functions-de.js** pour les identifier.
 
 Le `name` et `description` s’affichent dans Excel et sont localisés. Toutefois, la `id` de chaque fonction n’est pas localisée. La `id` propriété indique comment Excel identifie votre fonction comme étant unique et ne doit pas être modifiée une fois qu’elle a été définie.
 
@@ -81,7 +81,7 @@ Comparez le JSON précédent avec le JSON suivant pour l’anglais.
 
 ## <a name="localize-your-add-in"></a>Localiser votre complément
 
-Après avoir créé un fichier JSON pour chaque langue, mettez à jour votre fichier manifeste XML avec une valeur de remplacement pour chaque paramètre régional qui spécifie l’URL de chaque fichier de métadonnées JSON. Le code XML de manifeste suivant affiche les `en-us` paramètres régionaux par défaut avec une URL de fichier JSON de remplacement pour `de-de` (Allemagne). Le fichier **Functions-de. JSON** contient les noms et les ID des fonctions localisées en allemand.
+Après avoir créé un fichier JSON pour chaque langue, mettez à jour votre fichier manifeste XML avec une valeur de remplacement pour chaque paramètre régional qui spécifie l’URL de chaque fichier de métadonnées JSON. Le code XML de manifeste suivant affiche les `en-us` paramètres régionaux par défaut avec une URL de fichier JSON de remplacement pour `de-de` (Allemagne). Le **functions-de.jssur** le fichier contient les noms et ID des fonctions localisées en allemand.
 
 ```XML
 <DefaultLocale>en-us</DefaultLocale>
@@ -103,6 +103,6 @@ Découvrez [les conventions d’affectation de noms pour les fonctions personnal
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Métadonnées fonctions personnalisées](custom-functions-json.md)
+* [Créer manuellement des métadonnées JSON pour les fonctions personnalisées](custom-functions-json.md)
 * [Générer automatiquement des métadonnées JSON pour des fonctions personnalisées](custom-functions-json-autogeneration.md)
 * [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
