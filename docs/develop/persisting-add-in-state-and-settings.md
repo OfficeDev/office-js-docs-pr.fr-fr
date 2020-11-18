@@ -1,14 +1,14 @@
 ---
 title: Conservation de l’état et des paramètres des compléments
 description: Découvrez comment faire persister des données dans des applications Web de complément Office s’exécutant dans l’environnement sans état d’un contrôle de navigateur.
-ms.date: 05/08/2020
+ms.date: 11/13/2020
 localization_priority: Normal
-ms.openlocfilehash: b885c94ed544474f101f290ab321fa12cc45de4c
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 90e072d638a3a598610c4bcbb2e6af07f1196467
+ms.sourcegitcommit: 3189c4bd62dbe5950b19f28ac2c1314b6d304dca
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293190"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "49087951"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>Conservation de l’état et des paramètres des compléments
 
@@ -17,8 +17,8 @@ ms.locfileid: "47293190"
 Les compléments Office sont essentiellement des applications web exécutées dans l’environnement sans état d’un contrôle de navigateur. En conséquence, votre complément devra peut-être faire persister les données pour assurer la continuité de certaines opérations ou fonctionnalités entre les sessions d’utilisation du complément. Par exemple, votre complément peut disposer de paramètres personnalisés ou d’autres valeurs dont il a besoin pour l’enregistrement et le rechargement à la prochaine initialisation, tels que l’affichage préféré d’un utilisateur ou l’emplacement par défaut. Pour ce faire, vous pouvez procéder comme suit :
 
 - Utilisez les membres de l’API JavaScript pour Office qui stockent les données comme suit :
-    -  Paires nom/valeur dans un conteneur de propriétés stocké dans un emplacement qui dépend du type de complément.
-    -  Éléments XML personnalisés stockés dans le document.
+  - Paires nom/valeur dans un conteneur de propriétés stocké dans un emplacement qui dépend du type de complément.
+  - Éléments XML personnalisés stockés dans le document.
 
 - Utilisez des techniques fournies par le contrôle de navigateur sous-jacent : les cookies de navigateur ou le stockage web HTML5 ([localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) ou [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)).
 
@@ -52,15 +52,12 @@ Cet exemple de structure de conteneur des propriétés contient trois valeurs de
 }
 ```
 
-Après avoir enregistré le conteneur des propriétés de paramètres durant la session de complément précédente, vous pouvez le charger pendant ou après l’initialisation du complément, durant la session actuelle du complément. Pendant la session, les paramètres sont entièrement gérés en mémoire à l’aide `get` des `set` méthodes, et `remove` de l’objet correspondant au type de paramètres que vous créez (**paramètres**, **CustomProperties**ou **RoamingSettings**).
-
+Après avoir enregistré le conteneur des propriétés de paramètres durant la session de complément précédente, vous pouvez le charger pendant ou après l’initialisation du complément, durant la session actuelle du complément. Pendant la session, les paramètres sont entièrement gérés en mémoire à l’aide `get` des `set` méthodes, et `remove` de l’objet correspondant au type de paramètres que vous créez (**paramètres**, **CustomProperties** ou **RoamingSettings**).
 
 > [!IMPORTANT]
 > Pour conserver les ajouts, les mises à jour ou les suppressions apportées au cours de la session en cours du complément sur l’emplacement de stockage, vous devez appeler la `saveAsync` méthode de l’objet correspondant utilisé pour utiliser ce type de paramètres. Les `get` `set` méthodes, et `remove` fonctionnent uniquement sur la copie en mémoire du conteneur des propriétés des paramètres. Si votre complément est fermé sans appel `saveAsync` , toutes les modifications apportées aux paramètres au cours de cette session seront perdues.
 
-
 ## <a name="how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins"></a>Enregistrement de l’état et des paramètres d’un complément par document pour les compléments de contenu et du volet Office
-
 
 Pour conserver l’état ou les paramètres personnalisés d’un complément de contenu ou du volet Office pour Word, Excel ou PowerPoint, utilisez l’objet [Settings](/javascript/api/office/office.settings) et ses méthodes. Le conteneur de propriétés créé avec les méthodes de l' `Settings` objet est disponible uniquement pour l’instance du complément de contenu ou de volet de tâches qui l’a créé, et uniquement dans le document dans lequel il est enregistré.
 
@@ -68,11 +65,9 @@ L' `Settings` objet est automatiquement chargé en tant que partie de l’objet 
 
 Étant donné que les méthodes de définition (set) et de suppression (remove) fonctionnent uniquement par rapport à la copie en mémoire du conteneur des propriétés de paramètres, pour enregistrer de nouveaux paramètres ou des paramètres modifiés dans le document auquel le complément est associé, vous devez appeler la méthode [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-).
 
-
 ### <a name="creating-or-updating-a-setting-value"></a>Création ou mise à jour d’une valeur de paramètre
 
 L’exemple de code suivant montre comment utiliser la méthode [Settings.set](/javascript/api/office/office.settings#set-name--value-) pour créer un paramètre appelé `'themeColor'` avec la valeur `'green'`. Le premier paramètre de la méthode set est le _name_ (ID) respectant la casse du paramètre à définir ou à créer. Le second paramètre est la _value_ du paramètre.
-
 
 ```js
 Office.context.document.settings.set('themeColor', 'green');
@@ -80,28 +75,24 @@ Office.context.document.settings.set('themeColor', 'green');
 
  Le paramètre avec le nom spécifié est créé s’il n’existe pas déjà ou sa valeur est mise à jour s’il existe. Utilisez la `Settings.saveAsync` méthode pour conserver les nouveaux paramètres ou les paramètres mis à jour dans le document.
 
-
 ### <a name="getting-the-value-of-a-setting"></a>Obtention de la valeur d’un paramètre
 
 L’exemple suivant illustre comment utiliser la méthode [Settings.get](/javascript/api/office/office.settings#get-name-) pour obtenir la valeur d’un paramètre nommé « themeColor ». Le seul paramètre de la `get` méthode est le _nom_ qui respecte la casse du paramètre.
-
 
 ```js
 write('Current value for mySetting: ' + Office.context.document.settings.get('themeColor'));
 
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 
  La `get` méthode renvoie la valeur qui a été précédemment enregistrée pour le _nom_ de paramètre qui a été passé. Si le paramètre n’existe pas, la méthode retourne **null**.
 
-
 ### <a name="removing-a-setting"></a>Suppression d’un paramètre
 
 L’exemple suivant illustre comment utiliser la méthode [Settings.remove](/javascript/api/office/office.settings#remove-name-) pour supprimer un paramètre portant le nom « themeColor ». Le seul paramètre de la `remove` méthode est le _nom_ qui respecte la casse du paramètre.
-
 
 ```js
 Office.context.document.settings.remove('themeColor');
@@ -109,11 +100,9 @@ Office.context.document.settings.remove('themeColor');
 
 Rien ne se produit si le paramètre n’existe pas. Utilisez la `Settings.saveAsync` méthode pour conserver la suppression du paramètre du document.
 
-
 ### <a name="saving-your-settings"></a>Enregistrement de vos paramètres
 
-Pour enregistrer les ajouts, modifications ou suppressions que votre complément a effectués sur la copie en mémoire du conteneur de propriétés des paramètres pendant la session en cours, vous devez appeler la méthode [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) pour les stocker dans le document. Le seul paramètre de la `saveAsync` méthode est _callback_, qui est une fonction de rappel avec un seul paramètre. 
-
+Pour enregistrer les ajouts, modifications ou suppressions que votre complément a effectués sur la copie en mémoire du conteneur de propriétés des paramètres pendant la session en cours, vous devez appeler la méthode [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) pour les stocker dans le document. Le seul paramètre de la `saveAsync` méthode est _callback_, qui est une fonction de rappel avec un seul paramètre.
 
 ```js
 Office.context.document.settings.saveAsync(function (asyncResult) {
@@ -125,7 +114,7 @@ Office.context.document.settings.saveAsync(function (asyncResult) {
 });
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 
@@ -136,7 +125,7 @@ La fonction anonyme transmise à la `saveAsync` méthode en tant que paramètre 
 > [!NOTE]
 > Cette section décrit les parties XML personnalisées dans le contexte de l’API JavaScript courante pour Office qui est prise en charge dans Word. L’API JavaScript Excel propre à l’application fournit également l’accès aux parties XML personnalisées. Les API Excel et les modes de programmation sont légèrement différents. Pour plus d’informations, reportez-vous à l’article sur l’objet [CustomXmlPart pour Excel](/javascript/api/excel/excel.customxmlpart).
 
-Une option de stockage supplémentaire est disponible lorsque vous avez besoin de stocker des informations dépassant les limites de taille des paramètres du document ou comportant un caractère structuré. Vous pouvez conserver le balisage XML personnalisé dans un complément de volet Office pour Word (et pour Excel, mais reportez-vous à la remarque en haut de cette section). Dans Word, utilisez l’objet [CustomXmlPart](/javascript/api/office/office.customxmlpart) et ses méthodes (rappel : pour Excel, consultez la note précédente). Le code suivant crée une partie XML personnalisée, puis affiche son ID et son contenu dans des balises div sur la page. Un attribut `xmlns` doit figurer dans la chaîne XML.
+Il existe une option de stockage supplémentaire lorsque vous devez stocker des informations qui dépassent les limites de taille des paramètres de document ou qui ont un caractère structuré. Vous pouvez conserver le balisage XML personnalisé dans un complément de volet Office pour Word (et pour Excel, mais reportez-vous à la remarque en haut de cette section). Dans Word, utilisez l’objet [CustomXmlPart](/javascript/api/office/office.customxmlpart) et ses méthodes (rappel : pour Excel, consultez la note précédente). Le code suivant crée une partie XML personnalisée, puis affiche son ID et son contenu dans des balises div sur la page. Un attribut `xmlns` doit figurer dans la chaîne XML.
 
 ```js
 function createCustomXmlPart() {
@@ -188,7 +177,6 @@ function getReviewers() {
 ## <a name="how-to-save-settings-in-an-outlook-add-in"></a>Enregistrement des paramètres dans un complément Outlook
 
 Pour plus d’informations sur l’enregistrement des paramètres dans un complément Outlook, consultez la rubrique [gestion de l’État et des paramètres d’un complément Outlook](../outlook/manage-state-and-settings-outlook.md).
-
 
 ## <a name="see-also"></a>Voir aussi
 
