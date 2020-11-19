@@ -3,12 +3,12 @@ title: Éléments d’interface utilisateur Office pour les compléments Office
 description: Obtenez une vue d’ensemble des différents types d’éléments d’interface utilisateur dans un complément Office.
 ms.date: 12/24/2019
 localization_priority: Normal
-ms.openlocfilehash: 5b9907924c674ed9db2294621123c394419d0c12
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 3e5ff84cb0d8417d6fab5ec6a39575ce7ff74e23
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093762"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132045"
 ---
 # <a name="office-ui-elements-for-office-add-ins"></a>Éléments d’interface utilisateur Office pour les compléments Office
 
@@ -16,22 +16,22 @@ Vous pouvez utiliser plusieurs types d’éléments d’interface utilisateur po
 
 L’image suivante montre les types d’éléments d’interface utilisateur d’Office que vous pouvez créer.
 
-![Image qui affiche des commandes de complément sur le ruban, un volet des tâches et une boîte de dialogue dans un document Office](../images/add-in-ui-elements.png)
+![Diagramme illustrant des commandes de complément dans le ruban, un volet de tâches et un complément de boîte de dialogue/contenu dans un document Office](../images/add-in-ui-elements.png)
 
 ## <a name="add-in-commands"></a>Commandes de complément
 
 Utilisez les [commandes de complément](add-in-commands.md) pour ajouter des points d’entrée à votre complément dans le ruban de l’application Office. Les commandes démarrent les actions dans votre complément en exécutant du code JavaScript ou en lançant un conteneur HTML. Vous pouvez créer deux types de commandes de complément.
 
-|**Type de commande**|**Description**|
+|Type de commande|Description|
 |:---------------|:--------------|
 |Onglets, menus et boutons du ruban|Permet d’ajouter des boutons personnalisés, des menus (déroulants) ou des onglets au ruban par défaut dans Office. Utilisez les boutons et menus pour déclencher une action dans Office. Utilisez les onglets pour regrouper et organiser des boutons et menus.|
-|Menus contextuels| Permet de développer le menu contextuel par défaut. Les menus contextuels s’affichent lorsque les utilisateurs cliquent avec le bouton droit de la souris sur du texte dans un document Office ou un tableau dans Excel.| 
+|Menus contextuels| Permet de développer le menu contextuel par défaut. Les menus contextuels s’affichent lorsque les utilisateurs cliquent avec le bouton droit de la souris sur du texte dans un document Office ou un tableau dans Excel.|
 
 ## <a name="html-containers"></a>Conteneurs HTML
 
 Utilisez les conteneurs HTML pour intégrer du code de l’interface utilisateur basé sur HTML dans les clients Office. Ces pages web peuvent ensuite référencer l’API JavaScript Office pour interagir avec du contenu dans le document. Vous pouvez créer trois types de conteneurs HTML.
 
-|**Conteneur HTML**|**Description**|
+|Conteneur HTML|Description|
 |:-----------------|:--------------|
 |[Volets des tâches](task-pane-add-ins.md)|Permet d’afficher l’interface utilisateur personnalisée dans le volet droit du document Office. Utilisez les volets des tâches pour permettre aux utilisateurs d’interagir côte à côte avec votre complément et le document Office.|
 |[Compléments de contenu](content-add-ins.md)|Permet d’afficher l’interface utilisateur personnalisée incorporée dans les documents Office. Utilisez les compléments de contenu pour permettre aux utilisateurs d’interagir avec votre complément directement dans le document Office. Par exemple, vous pouvez afficher du contenu externe tel que des vidéos ou des visualisations de données provenant d’autres sources. |

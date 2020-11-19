@@ -3,12 +3,12 @@ title: Confidentialité et sécurité pour les compléments Office
 description: Découvrez les aspects de confidentialité et de sécurité de la plateforme des compléments Office.
 ms.date: 10/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 58380145add425b90a2ab2c9011db3c7709973b6
-ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
+ms.openlocfilehash: e7b301c6bbc28cdcb00d178d52b1c916a5e645a9
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "48370520"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132171"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Confidentialité et sécurité pour les compléments Office
 
@@ -32,7 +32,7 @@ En outre, l’infrastructure d’exécution offre les avantages suivants pour s�
 
 De plus, l’utilisation des ressources de mémoire, de processeur et réseau par les compléments Office peut être régie afin de garantir de bonnes performances et une excellente fiabilité.
 
-Les sections suivantes décrivent brièvement comment l’architecture d’exécution prend en charge l’exécution de compléments dans les clients Office sur des appareils Windows, Mac OS X et dans les navigateurs Web.
+Les sections suivantes décrivent brièvement comment l’architecture d’exécution prend en charge l’exécution des compléments dans les clients Office sur les appareils Windows, Mac OS X et dans les navigateurs Web.
 
 ### <a name="clients-on-windows-and-os-x-devices"></a>Clients sur appareils Windows et OS X
 
@@ -42,13 +42,13 @@ Sur le bureau Windows, le mode protégé d’Internet Explorer doit être activ�
 
 *Figure 1. Environnement d’exécution des compléments Office dans les clients de bureau et de tablette Windows*
 
-![Infrastructure de client riche](../images/dk2-agave-overview-02.png)
+![Diagramme illustrant une infrastructure client riche](../images/dk2-agave-overview-02.png)
 
-Comme indiqué dans la figure suivante, sur un ordinateur de bureau Mac OS X, la page web du complément est hébergée dans un processus hôte d’exécution Webkit en mode bac à sable (sandbox) qui fournit un niveau similaire de sécurité et de protection des performances.
+Comme illustré dans la figure suivante, sur un ordinateur Mac OS X, la page Web du complément est hébergée dans un processus hôte d’exécution WebKit en bac à sable qui offre un niveau de sécurité et de protection des performances similaire.
 
-*Figure 2. Environnement d’exécution des compléments Office dans les clients Mac OS X*
+*Figure 2. Environnement d’exécution des compléments Office dans les clients Mac OS X*
 
-![Applications pour environnement d'exécution Office sur OS X Mac](../images/dk2-agave-overview-mac-02.png)
+![Diagramme montrant les applications pour l’environnement d’exécution Office sur Mac OS X](../images/dk2-agave-overview-mac-02.png)
 
 Le runtime des compléments Office gère les communications entre processus, la traduction des appels et des événements d’API JavaScript dans des appels et événements natifs, ainsi que la prise en charge à distance de l’interface utilisateur pour permettre au complément d’être restitué à l’intérieur du document, dans un volet Office ou de façon adjacente à un message électronique, une demande de réunion ou un rendez-vous.
 
@@ -56,10 +56,9 @@ Le runtime des compléments Office gère les communications entre processus, la
 
 Dans les clients Web pris en charge, les compléments Office sont hébergés dans un **IFRAME** qui s’exécute à l’aide de l’attribut HTML5 **sandbox** . Les composants ActiveX ou la navigation dans la page principale du client web ne sont pas autorisés. La prise en charge des compléments Office est activée dans les clients web par l’intégration de l’API JavaScript pour Office. Comme pour les applications clientes de bureau, l’API JavaScript gère le cycle de vie du complément et l’interopérabilité entre le complément et le client web. Cette interopérabilité est implémentée à l’aide d’une infrastructure spéciale de communication par publication de messages sur plusieurs cadres. La bibliothèque JavaScript (Office.js) utilisée sur les clients de bureau est disponible pour l’interaction avec le client web. La figure suivante illustre l’infrastructure qui prend en charge les compléments Office en cours d’exécution dans le navigateur, ainsi que les composants pertinents (le client Web, **IFRAME**, le runtime des compléments Office et l’interface API JavaScript pour Office) qui sont requis pour les prendre en charge.
 
-
 *Figure 3. Infrastructure prenant en charge les compléments Office dans les clients web Office*
 
-![Infrastructure de client web](../images/dk2-agave-overview-03.png)
+![Diagramme illustrant l’infrastructure du client Web](../images/dk2-agave-overview-03.png)
 
 ## <a name="add-in-integrity-in-appsource"></a>Intégrité de complément dans AppSource
 
@@ -95,7 +94,7 @@ La plateforme de compléments répond aux problèmes de confidentialité des uti
 
 - Lorsqu’ils partagent un document, les utilisateurs partagent également les compléments insérés dans ces documents ou qui y sont associés. Si un utilisateur ouvre un document qui contient un complément que l’utilisateur n’a pas utilisé auparavant, l’application cliente Office invite l’utilisateur à accorder l’autorisation pour que le complément s’exécute dans le document. Dans un environnement d’organisation, l’application cliente Office invite également l’utilisateur si le document provient d’une source externe.
 
-- Les utilisateurs peuvent autoriser ou refuser l’accès à AppSource. Pour les compléments de contenu et du volet de tâches, les utilisateurs gèrent l’accès aux compléments et catalogues approuvés à partir du centre de gestion de la **confidentialité** sur le client Office hôte (ouvert à partir des options de **fichiers**  >  **Options**  >  paramètres du**Trust Center**  >  **Centre**de gestion de la confidentialité  >  **-catalogues de compléments approuvés**). Pour les compléments Outlook, les applications peuvent gérer les compléments en sélectionnant le bouton **gérer les compléments** : dans Outlook sur Windows, choisissez **fichier**  >  **gérer les compléments**. Dans Outlook sur Mac, cliquez sur le bouton **gérer les compléments** dans la barre de complément. Dans Outlook sur le web, choisissez le menu **Paramètres** (icône d’engrenage) > **Gérer les compléments**. Les administrateurs peuvent également gérer cet accès [à l’aide d’une stratégie de groupe](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
+- Les utilisateurs peuvent autoriser ou refuser l’accès à AppSource. Pour les compléments de contenu et du volet de tâches, les utilisateurs gèrent l’accès aux compléments et catalogues approuvés à partir du centre de gestion de la **confidentialité** sur le client Office hôte (ouvert à partir des options de **fichiers**  >  **Options**  >  paramètres du **Trust Center**  >  **Centre** de gestion de la confidentialité  >  **-catalogues de compléments approuvés**). Pour les compléments Outlook, les applications peuvent gérer les compléments en sélectionnant le bouton **gérer les compléments** : dans Outlook sur Windows, choisissez **fichier**  >  **gérer les compléments**. Dans Outlook sur Mac, cliquez sur le bouton **gérer les compléments** dans la barre de complément. Dans Outlook sur le web, choisissez le menu **Paramètres** (icône d’engrenage) > **Gérer les compléments**. Les administrateurs peuvent également gérer cet accès [à l’aide d’une stratégie de groupe](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
 
 - La conception de la plateforme de complément offre une sécurité et des performances aux utilisateurs finaux de la manière suivante.
 
@@ -180,7 +179,6 @@ Exchange et SharePoint sont des proxys côté client qui permettent un accès su
 
 Un utilisateur mal intentionné pourrait attaquer l’origine d’un complément en entrant un script malveillant via le document ou les champs dans le complément. Un développeur doit traiter l’entrée de l’utilisateur pour éviter l’exécution du JavaScript d’un utilisateur malveillant dans son domaine. Voici quelques bonnes pratiques à suivre pour gérer l’entrée de l’utilisateur à partir d’un document ou d’un message électronique, ou via les champs d’un complément.
 
-
 - Au lieu d’utiliser la propriété DOM [innerHTML](https://developer.mozilla.org/docs/Web/API/Element/innerHTML), utilisez les propriétés [innerText](https://developer.mozilla.org/docs/Web/API/Node/innerText) et [textContent](https://developer.mozilla.org/docs/DOM/Node.textContent) chaque fois que cela est possible. Procédez comme suit pour la prise en charge entre navigateurs Internet Explorer et Firefox.
 
     ```js
@@ -227,11 +225,11 @@ Les développeurs doivent également prendre note des pratiques de sécurité su
 
 - Les compléments de contenu et du volet des tâches adoptent les mêmes paramètres SSL que les paramètres par défaut dans le navigateur, ce qui permet à la plupart des contenus d’être fournis uniquement par SSL. Les compléments Outlook nécessitent que le contenu soit fourni par SSL. Les développeurs doivent spécifier dans l’élément **SourceLocation** du manifeste de complément une URL qui utilise le protocole HTTPS pour identifier l’emplacement du fichier HTML du complément.
 
-    Pour vous assurer que les compléments ne livrent pas du contenu à l’aide du protocole HTTP, lors du test des compléments, les développeurs doivent s’assurer que les paramètres suivants sont sélectionnés dans **Options Internet** du **panneau de configuration** et qu’aucun avertissement de sécurité n’apparaît dans leurs scénarios de test.
+  Pour vous assurer que les compléments ne livrent pas du contenu à l’aide du protocole HTTP, lors du test des compléments, les développeurs doivent s’assurer que les paramètres suivants sont sélectionnés dans **Options Internet** du **panneau de configuration** et qu’aucun avertissement de sécurité n’apparaît dans leurs scénarios de test.
 
-    - Assurez-vous que le paramètre de sécurité, **Afficher un contenu mixte**, pour la zone **Internet** est défini sur **Demander**. Pour ce faire, sélectionnez l’une des options suivantes dans les **Options Internet**: sous l’onglet **sécurité** , sélectionnez la zone **Internet** , sélectionnez **niveau personnalisé**, faites défiler pour **afficher le contenu mixte**et sélectionnez **invite** s’il n’est pas déjà sélectionné.
+  - Assurez-vous que le paramètre de sécurité, **Afficher un contenu mixte**, pour la zone **Internet** est défini sur **Demander**. Pour ce faire, sélectionnez l’une des options suivantes dans les **Options Internet**: sous l’onglet **sécurité** , sélectionnez la zone **Internet** , sélectionnez **niveau personnalisé**, faites défiler pour **afficher le contenu mixte** et sélectionnez **invite** s’il n’est pas déjà sélectionné.
 
-    - Assurez-vous que l’option **Avertir en cas de changement entre mode sécurisé et non sécurisé** est sélectionnée sur l’onglet **Avancé** de la boîte de dialogue **Options Internet**.
+  - Assurez-vous que l’option **Avertir en cas de changement entre mode sécurisé et non sécurisé** est sélectionnée sur l’onglet **Avancé** de la boîte de dialogue **Options Internet**.
 
 - Afin que les compléments n’utilisent pas trop les ressources du processeur ou de la mémoire et provoquent un refus de services sur un ordinateur client, la plateforme établit des limites d’utilisation des ressources. Lors du test, les développeurs doivent vérifier si le complément fonctionne dans les limites d’utilisation des ressources.
 

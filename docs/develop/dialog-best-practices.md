@@ -3,12 +3,12 @@ title: Pratiques recommandées et règles pour l’API de dialogue Office
 description: Fournit des règles et des pratiques recommandées pour l’API de boîte de dialogue Office, telles que les meilleures pratiques pour une application à page unique (SPA)
 ms.date: 09/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 5c80b18f7eb6448de23c692683b7c991b9d95ef5
-ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
+ms.openlocfilehash: ffd609175276dc648805469847288fd2ff4f825c
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "48279497"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131786"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Pratiques recommandées et règles pour l’API de dialogue Office
 
@@ -43,7 +43,7 @@ Pour obtenir les meilleures pratiques en matière de conception de boîte de dia
 
 La tentative d’affichage d’une boîte de dialogue lors de l’utilisation d’Office sur le Web peut entraîner le blocage de la boîte de dialogue par le bloqueur de fenêtres publicitaires du navigateur. Office sur le Web est doté d’une fonctionnalité qui permet aux boîtes de dialogue de votre complément d’être une exception au bloqueur de fenêtres publicitaires intempestives du navigateur. Lorsque votre code appelle la `displayDialogAsync` méthode, Office sur le Web ouvre une invite semblable à la suivante.
 
-![Invite qu’un complément peut générer pour éviter les bloqueurs de fenêtres publicitaires intempestives dans le navigateur.](../images/dialog-prompt-before-open.png)
+![Capture d’écran illustrant l’invite avec une brève description et les boutons autoriser et ignorer qu’un complément peut générer pour éviter les bloqueurs de fenêtres publicitaires intempestives dans le navigateur](../images/dialog-prompt-before-open.png)
 
 Si l’utilisateur choisit **autoriser**, la boîte de dialogue Office s’ouvre. Si l’utilisateur choisit **Ignorer**, l’invite se ferme et la boîte de dialogue Office ne s’ouvre pas. Au lieu de cela, la `displayDialogAsync` méthode renvoie l’erreur 12009. Votre code doit intercepter cette erreur et fournir une autre expérience qui ne nécessite pas de boîte de dialogue ou afficher un message à l’utilisateur pour lui demander d’autoriser la boîte de dialogue. (Pour plus d’informations sur 12009, voir [Errors from displayDialogAsync](dialog-handle-errors-events.md#errors-from-displaydialogasync).)
 

@@ -3,12 +3,12 @@ title: Meilleures pratiques en matière de développement de compléments Offic
 description: Appliquer les meilleures pratiques lors du développement pour créer des compléments Office.
 ms.date: 10/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 8ce0482e108e7b8774442a2b0669a0e76bb401f9
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 17393d921129efcfb74eed3dd168633c2f58291b
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48740860"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132178"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Meilleures pratiques en matière de développement de compléments Office
 
@@ -19,13 +19,12 @@ Des compléments efficaces proposent des fonctionnalités uniques et attrayantes
 ## <a name="provide-clear-value"></a>Indication d’une valeur claire
 
 - Créez des compléments qui aident les utilisateurs à réaliser des tâches rapidement et efficacement. Concentrez-vous sur des scénarios adaptés aux applications Office. Par exemple :
- - Réalisez des tâches de création essentielles plus rapidement et plus facilement, avec moins d’interruptions.
- - Développez de nouveaux scénarios dans Office.
- - Intégrez des services complémentaires dans les applications Office.
- - Améliorez l’expérience Office pour accroître la productivité.
+  - Réalisez des tâches de création essentielles plus rapidement et plus facilement, avec moins d’interruptions.
+  - Développez de nouveaux scénarios dans Office.
+  - Intégrez des services complémentaires dans les applications Office.
+  - Améliorez l’expérience Office pour accroître la productivité.
 - Assurez-vous que la valeur de votre complément apparaîtra clairement aux utilisateurs dès la première utilisation en créant une [première expérience enrichissante](#create-an-engaging-first-run-experience).
 - Rédigez une [description claire pour AppSource](/office/dev/store/create-effective-office-store-listings). Soulignez les avantages de votre complément dans votre titre et votre description. Ne comptez pas sur votre marque pour communiquer sur les fonctionnalités de votre complément.
-
 
 ## <a name="create-an-engaging-first-run-experience"></a>Création d’une première expérience intéressante
 
@@ -37,11 +36,11 @@ Des compléments efficaces proposent des fonctionnalités uniques et attrayantes
 
 - Proposez une interface utilisateur pédagogique pour guider les utilisateurs et la personnaliser.
 
-   ![Capture d’écran illustrant un complément de volet Office avec des étapes de mise en route en regard d’un complément sans étapes de mise en route](../images/contoso-part-catalog-do-dont.png)
+  ![Capture d’écran illustrant une comparaison « do » vs. L’exemple de « do » affiche un complément qui inclut un bouton que les utilisateurs peuvent cliquer pour commencer. L’exemple « ne pas » montre un complément sans aucune étape ni bouton.](../images/contoso-part-catalog-do-dont.png)
 
 - Si votre complément de contenu est lié à des données dans le document de l’utilisateur, incluez des exemples de données ou un modèle pour montrer aux utilisateurs le format de données à utiliser.
 
-   ![Capture d’écran illustrant un complément de contenu avec des données en regard d’un complément de contenu sans données](../images/add-in-title.png)
+  ![Capture d’écran illustrant une comparaison « do » vs. L’exemple « do » affiche un complément qui inclut un bouton que les utilisateurs peuvent cliquer pour insérer des exemples de données. L’exemple « ne pas » montre un complément sans exemples de données ou de boutons.](../images/add-in-title.png)
 
 - Offrez des [essais gratuits](/office/dev/store/decide-on-a-pricing-model). Si votre complément nécessite un abonnement, proposez certaines fonctionnalités gratuitement.
 
@@ -100,7 +99,7 @@ Pour les modèles de conception à appliquer lors du développement de votre pre
 
 - Veillez à ce que toutes les interactions utilisateur répondent en moins d’une seconde.
 
--  Fournissez des indicateurs de chargement pour les opérations à longue durée d’exécution.
+- Fournissez des indicateurs de chargement pour les opérations à longue durée d’exécution.
 
 - Utilisez un CDN pour héberger les images, les ressources et les bibliothèques communes. Chargez autant d’éléments que possible à partir d’un seul emplacement.
 
@@ -108,7 +107,7 @@ Pour les modèles de conception à appliquer lors du développement de votre pre
 
 - Si l’exécution des opérations dure longtemps, fournissez des commentaires aux utilisateurs. Prenez en compte les seuils indiqués dans le tableau suivant. Pour plus d’informations, reportez-vous à l’article sur les [limites des ressources et l’optimisation des performances pour les compléments Office](../concepts/resource-limits-and-performance-optimization.md).
 
-  |**Classe d’interaction**|**Cible**|**Limite supérieure**|**Perception humaine**|
+  |Classe d’interaction|Target|Limite supérieure|Perception humaine|
   |:-----|:-----|:-----|:-----|
   |Instantanée|<= 50 ms|100 ms|Aucun délai notable.|
   |Rapide|50-100 ms|200 ms|Délai notable minime. Aucun commentaire n’est nécessaire.|
@@ -142,4 +141,4 @@ Pour les modèles de conception à appliquer lors du développement de votre pre
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
-- [En savoir plus sur le programme de développement Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Découvrez le programme pour les développeurs Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)

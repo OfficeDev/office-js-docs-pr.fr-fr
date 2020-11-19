@@ -3,12 +3,12 @@ title: Compléments Office de contenu
 description: Les compléments de contenu sont des surfaces qui peuvent être incorporées directement dans des documents Excel ou PowerPoint. Ils permettent aux utilisateurs d’accéder aux contrôles d’interface qui exécutent le code pour modifier des documents ou afficher des données d’une source de données.
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 6dca7e295bbc2efe0469fa4c69c14238d977c3ed
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: cf4ea46b4b924683756063bb36c3f2ea2b8c6764
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292987"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132080"
 ---
 # <a name="content-office-add-ins"></a>Compléments Office de contenu
 
@@ -16,7 +16,7 @@ Les compléments de contenu sont des surfaces qui peuvent être incorporées dir
 
 *Figure 1. Mise en page type pour les compléments de contenu*
 
-![Exemple d’image affichant une mise en page typique pour des compléments de contenu.](../images/overview-with-app-content.png)
+![Disposition standard des compléments de contenu dans une application Office](../images/overview-with-app-content.png)
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
@@ -33,16 +33,15 @@ Les menus Caractéristique peuvent entraver les éléments de navigation et de c
 
 Pour Windows, le menu Caractéristique mesure 12 x 32 pixels, comme illustré.
 
-*Figure 2. Menu Caractéristique sur Windows* 
+*Figure 2. Menu Caractéristique sur Windows*
 
-![Image illustrant le menu Caractéristique sur le bureau Windows](../images/personality-menu-win.png)
-
+![12x32 : menu de personnalité pixel sur le bureau Windows](../images/personality-menu-win.png)
 
 Pour Mac, le menu Caractéristique mesure 26 x 26 pixels, mais flotte à 8 pixels de la droite et à 6 pixels du haut, ce qui permet d’augmenter l’espace occupé à 34 x 32 pixels, comme illustré.
 
 *Figure 3. Menu Caractéristique sur Mac*
 
-![Image illustrant le menu Caractéristique sur le bureau Mac](../images/personality-menu-mac.png)
+![34-menu de personnalité pixel sur le bureau Mac](../images/personality-menu-mac.png)
 
 ## <a name="implementation"></a>Implémentation
 
@@ -56,7 +55,7 @@ Pour consulter un exemple qui implémente un complément de contenu, reportez-vo
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Disponibilité de la plateforme et de l’application cliente Office pour les compléments Office](../overview/office-add-in-availability.md)
+- [Application cliente Office et disponibilité de la plateforme pour les compléments Office](../overview/office-add-in-availability.md)
 - [Office UI Fabric dans des compléments Office](../design/office-ui-fabric.md)
 - [Modèles de conception de l’expérience utilisateur pour les compléments Office](../design/ux-design-pattern-templates.md)
 - [Demande d’autorisations d’utilisation de l’API dans des compléments](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)

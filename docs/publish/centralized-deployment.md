@@ -1,14 +1,14 @@
 ---
 title: Publier des compléments Office à l’aide du déploiement centralisé via le centre d’administration Microsoft 365
 description: Découvrez comment utiliser le déploiement centralisé pour déployer des compléments internes ainsi que des compléments fournis par les éditeurs de logiciels indépendants.
-ms.date: 07/07/2020
+ms.date: 11/17/2020
 localization_priority: Normal
-ms.openlocfilehash: e3f0bca5605d48d7b6c2ead49591546561dadffe
-ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
+ms.openlocfilehash: e0657f1b6d1b7dc3e61398b1237d1546261613e8
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "48175555"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132311"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-microsoft-365-admin-center"></a>Publier des compléments Office à l’aide du déploiement centralisé via le centre d’administration Microsoft 365
 
@@ -60,7 +60,7 @@ Si votre organisation répond à toutes les conditions requises, procédez comme
     - **J’ai le fichier manifeste (.xml) sur cet appareil**. Pour cette option, sélectionnez **Parcourir** afin de recherche le fichier manifeste (.xml) que vous voulez utiliser.
     - **J’ai une URL pour le fichier manifeste**. Pour cette option, entrez l’URL du manifeste dans le champ disponible.
 
-    ![Boîte de dialogue nouveau complément dans le centre d’administration Microsoft 365](../images/new-add-in.png)
+    ![Boîte de dialogue Nouveau Add-In dans le centre d’administration Microsoft 365](../images/new-add-in.png)
 
 8. Si vous avez sélectionné l’option d’ajout d’un complément à partir de l’Office Store, sélectionnez le complément. Vous pouvez afficher les compléments disponibles via l’une des catégories suivantes : **Suggestions**, **Évaluation** ou **Nom**. Vous ne pouvez ajouter que des compléments gratuits de l’Office Store. L’ajout de compléments payants n’est pas actuellement pris en charge.
 
@@ -73,7 +73,7 @@ Si votre organisation répond à toutes les conditions requises, procédez comme
 
     ![Page de complément sélectionnée dans le centre d’administration Microsoft 365](../images/selected-add-in-admin-center.png)
 
-10. Sur la **page attribuer des utilisateurs** , choisissez **tout le monde**, **utilisateurs/groupes spécifiques**ou **moi seul**. Utilisez la zone de recherche pour trouver les utilisateurs et groupes vers lesquels vous voulez déployer le complément. Pour les compléments Outlook, vous pouvez également choisir la méthode de déploiement **fixe**, **disponible**ou **facultative**.
+10. Sur la **page attribuer des utilisateurs** , choisissez **tout le monde**, **utilisateurs/groupes spécifiques** ou **moi seul**. Utilisez la zone de recherche pour trouver les utilisateurs et groupes vers lesquels vous voulez déployer le complément. Pour les compléments Outlook, vous pouvez également choisir la méthode de déploiement **fixe**, **disponible** ou **facultative**.
 
     ![Gérer les personnes ayant accès et méthode de déploiement dans le centre d’administration Microsoft 365](../images/manage-users-deployment-admin-center.png)
 
@@ -116,11 +116,11 @@ Le tableau suivant décrit les différents états qui s’appliquent à un compl
 
 Une fois qu’un complément Office a été publié via un déploiement centralisé, les modifications apportées à l’application web du complément sont automatiquement disponibles pour tous les utilisateurs dès qu’elles sont implémentées dans l’application web. Les modifications apportées au [fichier manifeste XML](../develop/add-in-manifests.md) d’un complément, par exemple, pour mettre à jour l’icône du complément, le texte ou les commandes du complément se produisent comme suit :
 
-- **Complément métier**: si un administrateur a explicitement téléchargé un fichier manifeste lors de l’implémentation du déploiement centralisé via le centre d’administration Microsoft 365, l’administrateur doit télécharger un nouveau fichier manifeste qui contient les modifications souhaitées. Une fois que le fichier manifeste a été chargé, le complément est mis à jour au démarrage suivant des applications Office concernées.
+- **Complément métier**: si un administrateur a explicitement téléchargé un fichier manifeste (soit à partir de son appareil, soit en pointant vers une URL) lors de l’implémentation du déploiement centralisé via le centre d’administration Microsoft 365, l’administrateur doit télécharger un nouveau fichier manifeste contenant les modifications souhaitées. Une fois que le fichier manifeste a été chargé, le complément est mis à jour au démarrage suivant des applications Office concernées.
 
   > [!NOTE]
   > Un administrateur n’a pas besoin de supprimer un complément LOB pour effectuer une mise à jour. Dans la section compléments, l’administrateur peut simplement choisir le complément LOB et appeler cette fonctionnalité en appuyant sur le bouton **mettre à jour le complément** présent dans le coin inférieur droit.
-  > 
+  >
   > ![Capture d’écran illustrant la boîte de dialogue mettre à jour le complément dans le centre d’administration Microsoft 365](../images/update-add-in-admin-center.png)
 
 - **Complément Office Store**: si un administrateur a sélectionné un complément à partir de l’Office Store lors de l’implémentation du déploiement centralisé via le centre d’administration Microsoft 365, et que le complément est mis à jour dans l’Office Store, le complément est mis à jour par la suite via un déploiement centralisé. Le complément est mis à jour au démarrage suivant des applications Office concernées.

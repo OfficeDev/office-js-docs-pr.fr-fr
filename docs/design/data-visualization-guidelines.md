@@ -3,19 +3,18 @@ title: Règles de style de visualisation de données pour les compléments Offic
 description: Obtenez des pratiques recommandées pour visualiser les données dans un complément Office.
 ms.date: 01/14/2019
 localization_priority: Normal
-ms.openlocfilehash: d03bbb471c3e538aade2f5308bbfa9220c93615b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f3fa2a6cc5a9d27135ad4290eded838dfaecb7d6
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608550"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132073"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Règles de style de visualisation de données pour les compléments Office
 
 Une bonne visualisation des données permet aux utilisateurs de rechercher des informations dans leurs données. Ils peuvent utiliser ces informations pour raconter des histoires qui informent et persuadent. Cet article fournit des instructions pour vous aider à créer des visualisations de données efficaces dans vos compléments pour Excel et d’autres applications Office.
 
-Nous vous recommandons d’utiliser [Office UI Fabric](https://developer.microsoft.com/fabric) pour créer l’apparence de vos visualisations de données. Office UI Fabric comprend des styles et des composants qui s’intègrent parfaitement à l’apparence Office. 
-
+Nous vous recommandons d’utiliser [Office UI Fabric](https://developer.microsoft.com/fabric) pour créer l’apparence de vos visualisations de données. Office UI Fabric comprend des styles et des composants qui s’intègrent parfaitement à l’apparence Office.
 <!--The following figure shows a data visualization in an add-in that uses Fabric.
 
 ![Image of a data visualization with Fabric elements applied**](../images/fabric-data-visualization.png) 
@@ -26,7 +25,7 @@ Nous vous recommandons d’utiliser [Office UI Fabric](https://developer.micro
 
 Les visualisations de données partagent un cadre général et des éléments visuels et interactifs communs, y compris les titres, les étiquettes et les tracés de données, comme illustré dans la figure suivante.
 
-![Image d’un graphique en courbes avec titre, axes, légende et zone de traçage étiquetée](../images/excel-charts-visualization.png)
+![Graphique en courbes avec titre, axes, légende et zone de traçage étiquetée](../images/excel-charts-visualization.png)
 
 ### <a name="chart-titles"></a>Titres de graphique
 
@@ -65,7 +64,7 @@ Les nuances de gris clair sont les plus efficaces pour les quadrillages. Si vous
 
 L’image suivante montre une visualisation de données avec le quadrillage.
 
-![Image d’une visualisation de données avec le quadrillage](../images/data-visualization.png)
+![Visualisation des données d’un graphique en courbes avec quadrillage](../images/data-visualization.png)
 
 ### <a name="legends"></a>Légendes
 
@@ -118,7 +117,7 @@ Le mouvement suit un stimulus. Les éléments visuels doivent se déplacer dans 
 
 Créez une perception de causalité. Lors de la préparation des animations :
 
-- Préparez une chose à la fois. 
+- Préparez une chose à la fois.
 - Préparez les modifications des axes avant les modifications de l’encre de données.
 - Préparez et animez des objets en tant que groupes s’ils se déplacent à la même vitesse dans la même direction.
 - Préparez les éléments de données en groupes de 4 à 5 objets maximum. Les visionneuses ont des difficultés à suivre plus de 4 à 5 objets indépendamment.
@@ -127,7 +126,7 @@ Le mouvement ajoute une signification.
 
 - Les animations augmentent la compréhension par l’utilisateur des modifications apportées aux données, fournissent du contexte et agissent comme un calque d’annotation non verbal.
 - Le mouvement doit se produire dans un espace de coordonnées significatif de la visualisation.
-- Adaptez l’animation en fonction du visuel. 
+- Adaptez l’animation en fonction du visuel.
 - Évitez les animations gratuites.
 
 Le mouvement suit les données.
@@ -141,7 +140,7 @@ Le mouvement suit les données.
 - Rendez tous les éléments interactifs, tels que les boutons de commande ou les listes déroulantes, accessibles à partir d’un clavier.
 - Envoyez des événements d’accessibilité aux lecteurs d’écran pour annoncer les modifications de sélection, les info-bulles et ainsi de suite.
 
-## <a name="see-also"></a>Voir aussi 
+## <a name="see-also"></a>Voir aussi
 
 - [Les cinq meilleures bibliothèques pour créer des visualisations de données](https://www.fastcompany.com/3029760/the-five-best-libraries-for-building-data-vizualizations)
 - [Affichage visuel des informations quantitatives](https://www.edwardtufte.com/tufte/books_vdqi)

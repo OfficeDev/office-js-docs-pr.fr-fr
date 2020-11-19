@@ -3,12 +3,12 @@ title: Autoriser la connexion à Microsoft Graph avec l’authentification uniqu
 description: Découvrez comment les utilisateurs d’un complément Office peuvent utiliser l’authentification unique (SSO) pour extraire des données de Microsoft Graph.
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 68440a347e11d909f0ebd4d4d29892711646da5e
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: e87c86b5302bde8122485b837759fa327251c656
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292903"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131912"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso"></a>Autoriser la connexion à Microsoft Graph avec l’authentification unique
 
@@ -16,8 +16,7 @@ Les utilisateurs se connectent à Office (plateformes en ligne, mobiles et de bu
 
 > [!NOTE]
 > La connexion unique sur API est actuellement prise en charge pour Word, Excel et PowerPoint. Pour plus d’informations sur l’endroit où l’API d’authentification unique est actuellement prise en charge, consultez la rubrique [Ensembles de conditions requises de l’API d’identité](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets).
-> Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location d’Office 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
-
+> Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location d’Office 365. Pour plus d’informations sur la manière de procéder, voir [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## <a name="add-in-architecture-for-sso-and-microsoft-graph"></a>Architecture de complément pour l’authentification unique et Microsoft Graph
 
@@ -29,10 +28,10 @@ Le manifeste du complément contient un balisage qui spécifie comment le compl�
 
 Le diagramme suivant montre comment fonctionne le processus de connexion et l’accès à Microsoft Graph.
 
-![Un diagramme illustrant le processus d’authentification unique](../images/sso-access-to-microsoft-graph.png)
+![Diagramme illustrant le processus SSO](../images/sso-access-to-microsoft-graph.png)
 
-1. Dans le complément, JavaScript appelle une nouvelle API Office.js [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). Cette option indique à l’application cliente Office d’obtenir un jeton d’accès pour le complément. (Ci-après, il est appelé **jeton d’accès bootstrap**, car il est remplacé par un deuxième jeton plus loin dans le processus. Pour consulter un exemple de jeton d’accès bootstrap décodé, voir [Exemple jeton d’accès](sso-in-office-add-ins.md#example-access-token).)
-2. Si l’utilisateur n’est pas connecté, l’application cliente Office ouvre une fenêtre contextuelle pour que l’utilisateur se connecte.
+1. Dans le complément, JavaScript appelle une nouvelle API Office.js [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). Cela indique à l’application cliente Office qu’elle doit obtenir un jeton d’accès au complément. (Ci-après, il est appelé **jeton d’accès bootstrap**, car il est remplacé par un deuxième jeton plus loin dans le processus. Pour consulter un exemple de jeton d’accès bootstrap décodé, voir [Exemple jeton d’accès](sso-in-office-add-ins.md#example-access-token).)
+2. Si l’utilisateur n’est pas connecté, l’application cliente Office ouvre une fenêtre contextuelle pour qu’il se connecte.
 3. Si c’est la première fois que l’utilisateur actuel utilise votre complément, il est invité à donner son consentement.
 4. L’application cliente Office demande le **jeton d’accès bootstrap** depuis le point de terminaison Azure ad v 2.0 pour l’utilisateur actuel.
 5. Azure AD envoie le jeton d’amorçage à l’application cliente Office.

@@ -3,12 +3,12 @@ title: Obtenir JavaScript IntelliSense dans Visual Studio 2019
 description: Découvrez comment utiliser JSDoc pour créer IntelliSense pour vos variables, objets, paramètres et valeurs de retour JavaScript.
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 963945c3ac627ab48fe8b491cd778e9cab973e16
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 495e43994d78b1e01374e348e6d21d41d9611212
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608159"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131807"
 ---
 # <a name="get-javascript-intellisense-in-visual-studio-2019"></a>Obtenir JavaScript IntelliSense dans Visual Studio 2019
 
@@ -48,7 +48,8 @@ La technique de base est de faire précéder la variable (ou le paramètre, etc.
 /** @type {Excel.Range} */
 var subsetRange;
 ```
-![IntelliSense pour variable](../images/intellisense-vs17-var.png)
+
+![Capture d’écran illustrant l’extrait d’IntelliSense pour la variable « subsetRange »](../images/intellisense-vs17-var.png)
 
 ### <a name="parameter"></a>Paramètre
 
@@ -58,7 +59,8 @@ function myFunc(paragraphs){
 
 }
 ```
-![IntelliSense pour paramètre](../images/intellisense-vs17-param.png)
+
+![Capture d’écran illustrant l’extrait d’IntelliSense pour le paramètre « paraparas » (paramètre « paragraphs » dans l’exemple de code JavaScript)](../images/intellisense-vs17-param.png)
 
 ### <a name="return-value"></a>Valeur renvoyée
 
@@ -68,7 +70,8 @@ function myFunc() {
 
 }
 ```
-![IntelliSense pour la valeur renvoyée](../images/intellisense-vs17-return.png)
+
+![Capture d’écran illustrant l’extrait d’IntelliSense pour la valeur de retour « myFunc () »](../images/intellisense-vs17-return.png)
 
 ### <a name="complex-types"></a>Types complexes
 
@@ -80,7 +83,8 @@ function myFunc() {
 
 }
 ```
-![IntelliSense pour le type complexe](../images/intellisense-vs17-complex-type.png)
+
+![Capture d’écran illustrant IntelliSense pour une déclaration de type complexe « var myVar »; par exemple](../images/intellisense-vs17-complex-type.png)
 
 ## <a name="see-also"></a>Voir aussi
 

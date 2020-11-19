@@ -3,12 +3,12 @@ title: Raccourcis clavier personnalisés dans les compléments Office
 description: Découvrez comment ajouter des raccourcis clavier personnalisés, également appelés combinaisons de touches, à votre complément Office.
 ms.date: 11/09/2020
 localization_priority: Normal
-ms.openlocfilehash: f95c26067203a4ec2659aa6a632403c96ed81674
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: 40009dd92787b7c220bb8cfc741cffb2e4b68a9e
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996688"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132038"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins-preview"></a>Ajouter des raccourcis clavier personnalisés à vos compléments Office (aperçu)
 
@@ -81,7 +81,7 @@ Créez un fichier JSON dans votre projet. Assurez-vous que le chemin d’accès 
     }
     ```
 
-    Pour plus d’informations sur les objets JSON, voir [construction des objets action](#constructing-the-action-objects) et [création des objets Shortcut](#constructing-the-shortcut-objects). Le schéma complet pour les raccourcis JSON se trouve [ surextended-manifest.schema.js](https://developer.microsoft.com/en-us/json-schemas/office-js/extended-manifest.schema.json).
+    Pour plus d’informations sur les objets JSON, voir [construction des objets action](#constructing-the-action-objects) et [création des objets Shortcut](#constructing-the-shortcut-objects). Le schéma complet pour les raccourcis JSON se trouve [ surextended-manifest.schema.js](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json). (Remarque : le lien vers le schéma peut ne pas fonctionner au début de la période de préversion.)
 
     > [!NOTE]
     > Vous pouvez utiliser le « contrôle » à la place de « CTRL » tout au long de cet article.
@@ -103,7 +103,7 @@ Créez un fichier JSON dans votre projet. Assurez-vous que le chemin d’accès 
     ```
 
 1. Pour continuer l’exemple, utilisez `'SHOWTASKPANE'` comme premier paramètre.
-1. Pour le corps de la fonction, utilisez la méthode [Office. AddIn. showTaskpane](/javascript/api/office/office.addin.md#showastaskpane--) pour ouvrir le volet Office du complément. Une fois que vous avez fini, le code doit ressembler à ce qui suit :
+1. Pour le corps de la fonction, utilisez la méthode [Office. AddIn. showTaskpane](/javascript/api/office/office.addin#showastaskpane--) pour ouvrir le volet Office du complément. Une fois que vous avez fini, le code doit ressembler à ce qui suit :
 
     ```javascript
     Office.actions.associate('SHOWTASKPANE', function () {
@@ -117,7 +117,7 @@ Créez un fichier JSON dans votre projet. Assurez-vous que le chemin d’accès 
     });
     ```
 
-1. Ajoutez un deuxième appel de `Office.actions.associate` fonction pour mapper l' `HIDETASKPANE` action sur une fonction qui appelle [Office. AddIn. Hide](/javascript/api/office/office.addin.md#hide--). Voici un exemple :
+1. Ajoutez un deuxième appel de `Office.actions.associate` fonction pour mapper l' `HIDETASKPANE` action sur une fonction qui appelle [Office. AddIn. Hide](/javascript/api/office/office.addin#hide--). Voici un exemple :
 
     ```javascript
     Office.actions.associate('HIDETASKPANE', function () {
@@ -161,7 +161,7 @@ Voici un exemple :
     ]
 ```
 
-Le schéma complet pour les raccourcis JSON se trouve [ surextended-manifest.schema.js](https://developer.microsoft.com/en-us/json-schemas/office-js/extended-manifest.schema.json).
+Le schéma complet pour les raccourcis JSON se trouve [ surextended-manifest.schema.js](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json). (Remarque : le lien vers le schéma peut ne pas fonctionner au début de la période de préversion.)
 
 ### <a name="constructing-the-shortcut-objects"></a>Construction des objets Shortcut
 
@@ -195,10 +195,10 @@ Voici un exemple :
     ]
 ```
 
-Le schéma complet pour les raccourcis JSON se trouve [ surextended-manifest.schema.js](https://developer.microsoft.com/en-us/json-schemas/office-js/extended-manifest.schema.json).
+Le schéma complet pour les raccourcis JSON se trouve [ surextended-manifest.schema.js](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json). (Remarque : le lien vers le schéma peut ne pas fonctionner au début de la période de préversion.)
 
 > [!NOTE]
-> Les KeyTips, également appelés raccourcis clavier séquentiels, tels que le raccourci Excel pour choisir une couleur de remplissage **Alt + h, h** , ne sont pas pris en charge dans les compléments Office.
+> Les KeyTips, également appelés raccourcis clavier séquentiels, tels que le raccourci Excel pour choisir une couleur de remplissage **Alt + h, h**, ne sont pas pris en charge dans les compléments Office.
 
 ### <a name="using-shortcuts-when-the-focus-is-in-the-task-pane"></a>Utilisation de raccourcis lorsque le volet Office est sélectionné
 
@@ -210,7 +210,7 @@ Pendant la période de préversion, il n’existe aucun système permettant de d
 
 Actuellement, il n’existe aucune solution de contournement lorsque deux ou plusieurs compléments ont inscrit le même raccourci clavier, mais vous pouvez réduire les conflits avec Excel avec ces bonnes pratiques :
 
-- Utilisez uniquement des raccourcis clavier avec le modèle suivant dans votre complément : * *Ctrl + Maj + Alt +* x * * *, où *x* est une autre touche.
+- Utilisez uniquement des raccourcis clavier avec le modèle suivant dans votre complément : **Ctrl + Maj + Alt +* x * * *, où *x* est une autre touche.
 - Si vous avez besoin de raccourcis clavier supplémentaires, consultez la [liste des raccourcis clavier Excel](https://support.microsoft.com/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f)et évitez de les utiliser dans votre complément.
 
 ## <a name="browser-shortcuts-that-cannot-be-overridden"></a>Raccourcis de navigateur qui ne peuvent pas être remplacés

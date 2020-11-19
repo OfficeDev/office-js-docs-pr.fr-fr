@@ -3,12 +3,12 @@ title: Créer un complément Office ASP.NET qui utilise l’authentification uni
 description: Guide pas à pas pour la création (ou conversion) d’un complément Office avec un serveur principal ASP.NET pour utiliser l’authentification unique (SSO).
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: a72cef54083499cbf1f772dd7258a1cac1fd42c6
-ms.sourcegitcommit: 6e6de48f746416ec68b2cf4c298253986486fbfd
+ms.openlocfilehash: 553477e3045aa6482688ad4fd2489f50d5f2b98d
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "47651950"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131947"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>Créer un complément Office ASP.NET qui utilise l’authentification unique
 
@@ -40,14 +40,13 @@ Clonez ou téléchargez le référentiel sur [Complément Office ASPNET SSO](htt
 > * Le dossier **Before** est un projet de démarrage. L’interface utilisateur et d’autres aspects du complément qui ne sont pas directement liés à l’authentification unique ou à l’autorisation sont déjà terminés. Les sections suivantes de cet article vous guident tout au long de la procédure d’exécution de cette dernière.
 > * La version **Complète** de l’échantillon s’apparente au complément obtenu si vous aviez terminé les procédures de cet article, sauf que le projet final comporte des commentaires de code qui seraient redondants avec le texte de cet article. Pour utiliser la version finale, suivez simplement les instructions de cet article, mais remplacez « Avant » par « Finale » et ignorez les sections **Code côté client** et **Code côté serveur**.
 
-
 ## <a name="register-the-add-in-with-azure-ad-v20-endpoint"></a>Enregistrez le complément avec le point de terminaison Azure AD v2.0
 
 1. Accédez à la page [portail Azure : enregistrement des applications](https://go.microsoft.com/fwlink/?linkid=2083908) pour enregistrer votre application.
 
-1. Connectez-vous avec les informations d’identification d' ***administrateur*** à votre location Microsoft 365. Par exemple, MonNom@contoso.onmicrosoft.com.
+1. Connectez-vous à l’aide des informations d’identification **_admin_* _ pour votre location Microsoft 365. Par exemple, MonNom@contoso.onmicrosoft.com.
 
-1. Sélectionnez **Nouvelle inscription**. Sur la page **Inscrire une application**, définissez les valeurs comme suit.
+1. Select _ * New Registration * *. Sur la page **Inscrire une application**, définissez les valeurs comme suit.
 
     * Définissez le **Nom** sur `Office-Add-in-ASPNET-SSO`.
     * Définissez les **Types de comptes pris en charge** à **Comptes dans un annuaire organisationnel (comptes Azure AD Directory multi-locataires) et les comptes personnels Microsoft (par ex. Skype, Xbox)**. (Si vous voulez que le complément soit utilisable uniquement par les utilisateurs de l’organisation où vous l’enregistrez, vous pouvez choisir **Comptes dans cet annuaire d’organisation uniquement...** à la place, mais vous devrez suivre quelques étapes de configuration supplémentaires. Si vous souhaitez en savoir plus, veuilles consulter **Configuration de pour un seul locataire**.)
@@ -71,10 +70,10 @@ Clonez ou téléchargez le référentiel sur [Complément Office ASPNET SSO](htt
 
 1. Renseignez les champs de configuration des invites de l’administrateur et du consentement de l’utilisateur avec des valeurs appropriées pour l’étendue, ce `access_as_user` qui permet à l’application cliente Office d’utiliser les API Web de votre complément avec les mêmes droits que l’utilisateur actuel. Suggestions :
 
-    - **Titre consentement administrateur** : Office peut agir en tant qu’utilisateur.
-    - **Description consentement administrateur** : activez Office pour qu’il appelle les API de complément web avec les mêmes droits que l’utilisateur actuel.
-    - **Titre consentement utilisateur** : Office peut agir à votre place.
-    - **Description consentement administrateur** : activez Office pour qu’il appelle les API de complément web avec les mêmes droits dont vous disposez.
+    * **Titre consentement administrateur** : Office peut agir en tant qu’utilisateur.
+    * **Description consentement administrateur** : activez Office pour qu’il appelle les API de complément web avec les mêmes droits que l’utilisateur actuel.
+    * **Titre consentement utilisateur** : Office peut agir à votre place.
+    * **Description consentement administrateur** : activez Office pour qu’il appelle les API de complément web avec les mêmes droits dont vous disposez.
 
 1. Vérifiez que **State** est défini comme **Activé**.
 
@@ -85,11 +84,11 @@ Clonez ou téléchargez le référentiel sur [Complément Office ASPNET SSO](htt
 
 1. Dans la section **Applications client autorisées**, vous identifiez les applications que vous souhaitez autoriser dans l’application web de votre complément. Chacun des ID suivants doit être pré-autorisé.
 
-    - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
-    - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
-    - `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office sur le web)
-    - `08e18876-6177-487e-b8b5-cf950c1e598c` (Office sur le web)
-    - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook sur le web)
+    * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
+    * `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
+    * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office sur le web)
+    * `08e18876-6177-487e-b8b5-cf950c1e598c` (Office sur le web)
+    * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook sur le web)
 
     Pour chaque ID, procédez comme suit :
 
@@ -114,11 +113,11 @@ Clonez ou téléchargez le référentiel sur [Complément Office ASPNET SSO](htt
 1. Sur la même page, sélectionnez le bouton **Accorder l’autorisation d’administrateur pour [nom du client]**, puis **Accepter** pour la confirmation qui s’affiche.
 
     > [!NOTE]
-    > Une fois que vous avez choisi **Accorder le consentement d’administrateur pour [nom du locataire]**, vous pouvez voir un message de bannière vous invitant à réessayer dans quelques minutes afin de pouvoir construire l’invite d’autorisation. Si c’est le cas, vous pouvez commencer à travailler sur la section suivante, ***mais n’oubliez pas de revenir au portail et d’appuyer sur ce bouton*** !
+    > Une fois que vous avez choisi **Accorder le consentement d’administrateur pour [nom du locataire]**, vous pouvez voir un message de bannière vous invitant à réessayer dans quelques minutes afin de pouvoir construire l’invite d’autorisation. Si c’est le cas, vous pouvez commencer à travailler dans la section suivante, **_mais n’oubliez pas de revenir au portail et de cliquer sur ce bouton_* _ !
 
 ## <a name="configure-the-solution"></a>Configurer la solution
 
-1. À la racine du dossier **Before**, ouvrez le fichier (.sln) solution dans **Visual Studio**. Cliquez avec le bouton droit sur le nœud supérieur de l’**Explorateur de solutions** (le nœud solution, et non l’un des nœuds de projet), puis sélectionnez **Définir les projets de démarrage**.
+1. À la racine du dossier _ *Before**, ouvrez le fichier de solution (. sln) dans **Visual Studio**. Cliquez avec le bouton droit sur le nœud supérieur de l’**Explorateur de solutions** (le nœud solution, et non l’un des nœuds de projet), puis sélectionnez **Définir les projets de démarrage**.
 
 1. Sous **Propriétés communes**, sélectionnez **Projet de démarrage**, puis **Plusieurs projets de démarrage**. Assurez-vous que l’**Action** pour les deux projets est définie sur **Démarrer**, et que le projet qui se termine par « ...WebAPI » apparaît en premier dans la liste. Fermez la boîte de dialogue.
 
@@ -572,9 +571,9 @@ Si vous avez choisi « Comptes dans ce répertoire d’organisation uniquement�
 1. Remplacez `TODO 3b` par le code suivant. Tenez compte du code suivant :
 
     * Si l’appel à Azure AD contenait au moins une étendue (autorisation) pour laquelle ni l’utilisateur, ni un administrateur client a consenti (ou pour laquelle le consentement a été révoqué), Azure AD renvoie « 400 demande incorrecte » avec une erreur `AADSTS65001` MSAL génère une exception **MsalUiRequiredException** avec ces informations.
-    *  Si l’appel à Azure AD contenait au moins une étendue non reconnue par Azure AD, AAD renvoie « 400 Demande incorrecte » avec l’erreur `AADSTS70011`. MSAL génère une exception **MsalUiRequiredException** avec ces informations.
-    *  La description entière est incluse, car l’erreur 70011 est renvoyée dans d’autres conditions et elle doit être gérée dans ce complément uniquement lorsqu’elle indique une étendue non valide.
-    *  L’objet **MsalUiRequiredException** est transmis à `SendErrorToClient`. Cela permet de garantir qu’une propriété **ExceptionMessage** qui contient les informations d’erreur est incluse dans la réponse HTTP.
+    * Si l’appel à Azure AD contenait au moins une étendue non reconnue par Azure AD, AAD renvoie « 400 Demande incorrecte » avec l’erreur `AADSTS70011`. MSAL génère une exception **MsalUiRequiredException** avec ces informations.
+    * La description entière est incluse, car l’erreur 70011 est renvoyée dans d’autres conditions et elle doit être gérée dans ce complément uniquement lorsqu’elle indique une étendue non valide.
+    * L’objet **MsalUiRequiredException** est transmis à `SendErrorToClient`. Cela permet de garantir qu’une propriété **ExceptionMessage** qui contient les informations d’erreur est incluse dans la réponse HTTP.
 
     ```csharp
     if ((e.Message.StartsWith("AADSTS65001")) || (e.Message.StartsWith("AADSTS70011: The provided value for the input parameter 'scope' is not valid.")))
@@ -583,7 +582,7 @@ Si vous avez choisi « Comptes dans ce répertoire d’organisation uniquement�
     }
     ```
 
-1. Remplacez `TODO 3c` par le code suivant pour gérer toutes les autres **MsalServiceException**s. Comme indiqué précédemment,
+1. Remplacez `TODO 3c` par le code suivant pour gérer toutes les autres **MsalServiceException** s. Comme indiqué précédemment,
 
     ```csharp
     else

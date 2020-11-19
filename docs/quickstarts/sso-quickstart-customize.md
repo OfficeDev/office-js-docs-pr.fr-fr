@@ -4,12 +4,12 @@ description: Découvrez comment personnaliser le complément à extension SSO qu
 ms.date: 09/09/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 45c069cbcc861fa5881b7e69cdd789071d398926
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: cc13d813e6d46296f5557d4e3374fa67aa51bc65
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430995"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132332"
 ---
 # <a name="customize-your-nodejs-sso-enabled-add-in"></a>Personnaliser votre complément compatible avec l’authentification unique Node.js
 
@@ -20,11 +20,11 @@ Le [démarrage rapide de l’authentification unique](sso-quickstart.md) crée u
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-* Un complément Office que vous avez créé en suivant les instructions du [démarrage rapide de l’authentification unique](sso-quickstart.md).
+- Un complément Office que vous avez créé en suivant les instructions du [démarrage rapide de l’authentification unique](sso-quickstart.md).
 
-* Au moins quelques fichiers et dossiers stockés sur OneDrive entreprise dans votre abonnement Microsoft 365.
+- Au moins quelques fichiers et dossiers stockés sur OneDrive entreprise dans votre abonnement Microsoft 365.
 
-* [Node.js](https://nodejs.org) (la dernière version [LTS](https://nodejs.org/about/releases))
+- [Node.js](https://nodejs.org) (la dernière version [LTS](https://nodejs.org/about/releases))
 
 [!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
@@ -51,7 +51,7 @@ Avant que le complément puisse lire correctement le contenu de OneDrive entrepr
     > [!TIP]
     > Pour ce faire, vous pouvez choisir la vignette **inscriptions des applications** sur la page d’accueil Azure ou à l’aide de la zone de recherche de la page d’accueil pour rechercher et choisir les inscriptions de l' **application**.
 
-3. Sur la page **inscriptions des applications** , sélectionnez l’application que vous avez créée au démarrage rapide. 
+3. Sur la page **inscriptions des applications** , sélectionnez l’application que vous avez créée au démarrage rapide.
     > [!TIP]
     > Le **nom complet** de l’application correspond au nom du complément que vous avez spécifié lors de la création du projet avec le générateur Yeoman.
 
@@ -85,7 +85,7 @@ Pour permettre au complément de lire le contenu de OneDrive entreprise de l’u
 
 - Mettez à jour le code qui fait référence à l’URL de Microsoft Graph, aux paramètres et à l’étendue d’accès requise.
 
-- Mettez à jour le code qui définit l’interface utilisateur du volet Office, afin qu’il décrive précisément les nouvelles fonctionnalités. 
+- Mettez à jour le code qui définit l’interface utilisateur du volet Office, afin qu’il décrive précisément les nouvelles fonctionnalités.
 
 - Mettez à jour le code qui analyse la réponse à partir de Microsoft Graph et l’écrit dans le document ou le message.
 
@@ -256,7 +256,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
         data.push(innerArray);
       }
     }
-    
+
     const rangeAddress = `B5:B${5 + (data.length - 1)}`;
     const range = sheet.getRange(rangeAddress);
     range.values = data;
@@ -355,7 +355,7 @@ export function writeDataToOfficeDocument(result: Object): void {
     for (let i = 0; i < data.length; i++) {
         objectNames += data[i] + "<br/>";
     }
-    
+
     Office.context.mailbox.item.body.setSelectedDataAsync(objectNames, { coercionType: Office.CoercionType.Html });
 }
 ```
@@ -565,7 +565,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 Une fois ces modifications effectuées, passez à la section [essayer](#try-it-out) de cet article pour tester votre complément mis à jour.
 
-## <a name="try-it-out"></a>Essayez
+## <a name="try-it-out"></a>Try it out
 
 Si votre complément est un complément Excel, Word ou PowerPoint, effectuez les étapes de la section suivante pour le tester. Si votre complément est un complément Outlook, effectuez plutôt les étapes dans la section [Outlook](#outlook) .
 
@@ -586,20 +586,20 @@ Pour tester un complément Excel, Word ou PowerPoint, procédez comme suit.
 
 3. Dans l’application client Office, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément. L’image ci-après illustre ce bouton dans Excel.
 
-    ![Bouton Complément Excel](../images/excel-quickstart-addin-3b.png)
+    ![Capture d’écran illustrant le bouton de complément en surbrillance dans le ruban Excel](../images/excel-quickstart-addin-3b.png)
 
-4. En bas du volet Office, cliquez sur le bouton **lire mon OneDrive entreprise** pour lancer le processus d’authentification unique. 
+4. En bas du volet Office, cliquez sur le bouton **lire mon OneDrive entreprise** pour lancer le processus d’authentification unique.
 
 5. Si une boîte de dialogue s’affiche pour demander des autorisations pour le compte du complément, cela signifie que l’authentification unique n’est pas prise en charge pour votre scénario et que le complément est plutôt repassé à une autre méthode d’authentification des utilisateurs. Cela peut se produire lorsque l’administrateur client n’a pas accordé le consentement du complément pour accéder à Microsoft Graph, ou lorsque l’utilisateur n’est pas connecté à Office à l’aide d’un compte Microsoft valide ou d’un compte Microsoft 365 (professionnel ou scolaire). Sélectionnez le bouton **Accepter** dans la fenêtre de boîte de dialogue pour continuer.
 
-    ![Boîte de dialogue demande d’autorisation](../images/sso-permissions-request.png)
+    ![Capture d’écran montrant les autorisations demandées boîte de dialogue avec le bouton accepter mis en évidence](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > Une fois qu’un utilisateur a accepté cette demande d’autorisation, il n’est plus invité à le faire à l’avenir.
 
 6. Le complément lit les données de OneDrive entreprise de l’utilisateur connecté et écrit les noms des 10 premiers fichiers et dossiers dans le document. L’image suivante montre un exemple de noms de fichiers et de dossiers écrits dans une feuille de calcul Excel.
 
-    ![Informations OneDrive entreprise dans la feuille de calcul Excel](../images/sso-onedrive-info-excel.png)
+    ![Capture d’écran illustrant les informations OneDrive entreprise dans la feuille de calcul Excel](../images/sso-onedrive-info-excel.png)
 
 ### <a name="outlook"></a>Outlook
 
@@ -608,32 +608,32 @@ Pour tester un complément Outlook, procédez comme suit.
 1. Dans le dossier racine du projet, exécutez la commande suivante pour générer le projet et démarrer le serveur Web local.
 
     > [!NOTE]
-    > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté la commande suivante, acceptez d’installer le certificat fourni par le générateur Yeoman. Vous devrez peut-être également exécuter votre invite de commandes ou votre terminal en tant qu’administrateur pour que les modifications soient apportées.
+    > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté la commande suivante, acceptez d’installer le certificat fourni par le générateur Yeoman. Il se peut également que vous deviez exécuter votre invite de commande ou votre terminal en tant qu'administrateur pour que les modifications soient effectuées.
 
     ```command&nbsp;line
     npm run dev-server
     ```
 
-2. Suivez les instructions indiquées dans l’article [Chargement de version test des compléments Outlook](/outlook/add-ins/sideload-outlook-add-ins-for-testing) pour charger le complément dans Outlook. Assurez-vous que vous êtes connecté à Outlook avec un utilisateur membre de la même organisation 365 Microsoft que le compte administrateur Microsoft 365 que vous avez utilisé pour vous connecter à Azure lors de la configuration de l' [authentification unique](sso-quickstart.md#configure-sso) pour l’application. Cette opération permet d’établir les conditions appropriées pour la réussite de l’authentification unique. 
+2. Suivez les instructions indiquées dans l’article [Chargement de version test des compléments Outlook](/outlook/add-ins/sideload-outlook-add-ins-for-testing) pour charger le complément dans Outlook. Assurez-vous que vous êtes connecté à Outlook avec un utilisateur membre de la même organisation 365 Microsoft que le compte administrateur Microsoft 365 que vous avez utilisé pour vous connecter à Azure lors de la configuration de l' [authentification unique](sso-quickstart.md#configure-sso) pour l’application. Cette opération permet d’établir les conditions appropriées pour la réussite de l’authentification unique.
 
 3. Rédigez un nouveau message dans Outlook.
 
 4. Dans la fenêtre de composition du message, choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet du complément.
 
-    ![Bouton du complément Outlook](../images/outlook-sso-ribbon-button.png)
+    ![Capture d’écran illustrant le bouton de ruban de complément en surbrillance dans la fenêtre de message de composition Outlook](../images/outlook-sso-ribbon-button.png)
 
-5. En bas du volet Office, cliquez sur le bouton **lire mon OneDrive entreprise** pour lancer le processus d’authentification unique. 
+5. En bas du volet Office, cliquez sur le bouton **lire mon OneDrive entreprise** pour lancer le processus d’authentification unique.
 
 6. Si une boîte de dialogue s’affiche pour demander des autorisations pour le compte du complément, cela signifie que l’authentification unique n’est pas prise en charge pour votre scénario et que le complément est plutôt repassé à une autre méthode d’authentification des utilisateurs. Cela peut se produire lorsque l’administrateur client n’a pas accordé le consentement du complément pour accéder à Microsoft Graph, ou lorsque l’utilisateur n’est pas connecté à Office à l’aide d’un compte Microsoft valide ou d’un compte Microsoft 365 (professionnel ou scolaire). Sélectionnez le bouton **Accepter** dans la fenêtre de boîte de dialogue pour continuer.
 
-    ![Boîte de dialogue demande d’autorisation](../images/sso-permissions-request.png)
+    ![Capture d’écran des autorisations demandées boîte de dialogue avec le bouton accepter mis en surbrillance](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > Une fois qu’un utilisateur a accepté cette demande d’autorisation, il n’est plus invité à le faire à l’avenir.
 
 7. Le complément lit les données de OneDrive entreprise de l’utilisateur connecté et écrit les noms des 10 fichiers et dossiers les plus fréquents dans le corps du message électronique.
 
-    ![Informations OneDrive entreprise dans un message Outlook](../images/sso-onedrive-info-outlook.png)
+    ![Capture d’écran montrant les informations OneDrive entreprise dans la fenêtre de message de composition Outlook](../images/sso-onedrive-info-outlook.png)
 
 ## <a name="next-steps"></a>Étapes suivantes
 

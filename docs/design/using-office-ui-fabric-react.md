@@ -3,18 +3,18 @@ title: Utilisation d’Office UI Fabric React dans des compléments Office
 description: Découvrez comment utiliser Office UI Fabric React dans les compléments Office.
 ms.date: 09/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 1d1e89d51c4e5efa0ead1b1716e0f1014a63e85f
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: c1671fdd2ea616398f9c57f76898a6cc96daf502
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430582"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131982"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>Utilisation d’Office UI Fabric React dans des compléments Office
 
 Office UI Fabric est l’infrastructure frontale JavaScript permettant de créer des expériences pour Office et Office 365. Si vous créez votre complément à l’aide de React, envisagez d’utiliser Fabric React pour créer votre expérience utilisateur. Fabric fournit plusieurs composants UX basés sur React, tels que des boutons ou cases à cocher, que vous pouvez utiliser dans votre complément.
 
-Cet article décrit la création d’un complément conçu avec la fonction React et utilise les composants Fabric React. 
+Cet article décrit la création d’un complément conçu avec la fonction React et utilise les composants Fabric React.
 
 > [!NOTE]
 > [Fabric Core](office-ui-fabric.md#use-fabric-core-icons-fonts-colors) est inclus dans Fabric React, ce qui signifie que votre complément aura également accès à Fabric Core une fois que vous aurez effectué les étapes décrites dans cet article.
@@ -36,7 +36,7 @@ Vous utiliserez le générateur Yeoman pour les compléments Office pour créer 
 - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Word`
 
-![Générateur Yeoman](../images/yo-office-word-react.png)
+![Capture d’écran montrant les invites et les réponses pour le générateur Yeoman dans une interface de ligne de commande](../images/yo-office-word-react.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -53,7 +53,7 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 2. Pour démarrer le serveur web local et charger indépendamment votre complément, procédez comme suit.
 
     > [!NOTE]
-    > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté une des commandes suivantes, acceptez d’installer le certificat fourni par le générateur Yeoman. Vous devrez peut-être également exécuter votre invite de commandes ou votre terminal en tant qu’administrateur pour que les modifications soient apportées.
+    > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté une des commandes suivantes, acceptez d’installer le certificat fourni par le générateur Yeoman. Il se peut également que vous deviez exécuter votre invite de commande ou votre terminal en tant qu'administrateur pour que les modifications soient effectuées.
 
     > [!TIP]
     > Si vous testez votre complément sur Mac, exécutez la commande suivante avant de continuer. Lorsque vous exécutez cette commande, le serveur web local démarre.
@@ -78,8 +78,7 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 
 3. Dans Word, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément. Remarquez le texte par défaut et le bouton **Exécuter** en bas du volet Office. Ensuite, vous redéfinirez ce texte et ce bouton en créant un composant React qui utilise les composants UX de Fabric React.
 
-    ![Capture d’écran de l’application Word avec le bouton Afficher le ruban du volet Office en surbrillance et le bouton Exécuter et le texte précédent mis en surbrillance dans le volet Office](../images/word-task-pane-yo-default.png)
-
+    ![Capture d’écran illustrant l’application Word avec le bouton afficher le ruban du volet Office en surbrillance et le bouton Exécuter et le texte immédiatement avant de mettre en surbrillance dans le volet Office](../images/word-task-pane-yo-default.png)
 
 ## <a name="create-a-react-component-that-uses-fabric-react"></a>Créer un composant React utilisant Fabric React
 
@@ -165,15 +164,15 @@ Ajoutez le composant `ButtonPrimaryExample` à votre complément en ouvrant **sr
     }
     ```
 
-  4. Enregistrez les modifications apportées à **App.tsx**.
+4. Enregistrez les modifications apportées à **App.tsx**.
 
 ## <a name="see-the-result"></a>Regardez le résultat
 
 Dans Word, le volet Office complément se met automatiquement à jour lorsque vous enregistrez les modifications apportées à **App.tsx**. Le texte et le bouton par défaut en bas du volet Office indiquent désormais l’interface utilisateur définie par le composant `ButtonPrimaryExample`. Sélectionnez le bouton **Insérer un texte...** pour insérer du texte dans le document.
 
-![Capture d’écran de l’application Word avec le bouton Insérer un texte... et le texte précédent mis en surbrillance](../images/word-task-pane-with-react-component.png)
+![Capture d’écran illustrant l’application Word avec l’instruction «insérer du texte... et le texte précédant immédiatement la mise en surbrillance](../images/word-task-pane-with-react-component.png)
 
-Félicitations, vous avez créé un complément de volet Office à l’aide de React et Office UI Fabric React ! 
+Félicitations, vous avez créé un complément de volet Office à l’aide de React et Office UI Fabric React !
 
 ## <a name="see-also"></a>Voir aussi
 

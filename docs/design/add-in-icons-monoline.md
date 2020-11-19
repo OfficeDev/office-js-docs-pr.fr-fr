@@ -3,12 +3,12 @@ title: Instructions relatives aux icônes de style monolignes pour les compléme
 description: Obtenir des instructions sur l’utilisation des icônes d’icône de style monoligne dans les compléments Office.
 ms.date: 12/09/2019
 localization_priority: Normal
-ms.openlocfilehash: f5e2125494fde21f22f82bee8252e79a3396c773
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 264aa9e01bd70924cfee01a864c515c8c7a4d138
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293043"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132199"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>Instructions relatives aux icônes de style monolignes pour les compléments Office
 
@@ -22,21 +22,21 @@ Les recommandations suivantes sont destinées aux développeurs tiers qui souhai
 
 ### <a name="design-principles"></a>Principes de conception
 
--   Simple, propre, clair.
--   Contenir uniquement les éléments nécessaires.
--   Style d’icône inspiré par Windows.
--   Accessible à tous les utilisateurs.
+- Simple, propre, clair.
+- Contenir uniquement les éléments nécessaires.
+- Style d’icône inspiré par Windows.
+- Accessible à tous les utilisateurs.
 
 #### <a name="conveying-meaning"></a>Transport de sens
 
--   Utilisez des éléments descriptifs, tels qu’une page, pour représenter un document ou une enveloppe qui représente le courrier.
--   Utilisez le même élément pour représenter le même concept, c’est-à-dire que le courrier est toujours représenté par une enveloppe, pas par un cachet.
--   Utilisez une métaphore de base lors du développement du concept.
+- Utilisez des éléments descriptifs, tels qu’une page, pour représenter un document ou une enveloppe qui représente le courrier.
+- Utilisez le même élément pour représenter le même concept, c’est-à-dire que le courrier est toujours représenté par une enveloppe, pas par un cachet.
+- Utilisez une métaphore de base lors du développement du concept.
 
 #### <a name="reduction-of-elements"></a>Réduction des éléments
 
--   Réduisez l’icône à sa signification fondamentale, en utilisant uniquement des éléments essentiels à la métaphore.
--   Limitez le nombre d’éléments d’une icône à deux, quelle que soit la taille des icônes.
+- Réduisez l’icône à sa signification fondamentale, en utilisant uniquement des éléments essentiels à la métaphore.
+- Limitez le nombre d’éléments d’une icône à deux, quelle que soit la taille des icônes.
 
 #### <a name="consistency"></a>Concordance
 
@@ -56,15 +56,15 @@ La numérotation monoligne est un style minimal minimal. Tout utilise la couleur
 
 ### <a name="sizes"></a>Quelle
 
-Nous vous recommandons de créer chaque icône dans toutes ces tailles afin de prendre en charge les périphériques haute résolution. Les tailles absolument *requises* sont 16px, 20px et des, car il s’agit de la taille 100%.
+Nous vous recommandons de créer chaque icône dans toutes ces tailles afin de prendre en charge les périphériques haute résolution. Les tailles absolument *requises* sont 16 PX, 20 px et 32 PX, car il s’agit de la taille 100%.
 
-**16px, 20px, des, des, 40px, 48px, 64px, 80px, 96px**
+**16 PX, 20 px, 24 PX, 32 PX, 40 PX, 48 px, 64 px, 80 PX, 96 PX**
 
 ### <a name="layout"></a>Disposition
 
 Voici un exemple de mise en page d’icône avec un modificateur.
 
-![Exemple d’icône avec un modificateur](../images/monolineicon1.png)  ![Le même exemple avec une légende d’arrière-plan de grille pour la base, le modificateur, le remplissage et le découpage.](../images/monolineicon2.png)
+![Diagramme de l’icône avec le modificateur dans le coin inférieur droit](../images/monolineicon1.png)  ![Diagramme de la même icône avec ajout d’arrière-plan de grille et de légendes pour la base, le modificateur, le remplissage et le découpage](../images/monolineicon2.png)
 
 #### <a name="elements"></a>Éléments
 
@@ -72,58 +72,60 @@ Voici un exemple de mise en page d’icône avec un modificateur.
 
 - **Modificateur** Tout élément qui chevauche la base ; autrement dit, un modificateur qui représente généralement une action ou un État. Il modifie l’élément base en agissant comme un ajout, une modification ou un descripteur.
 
-![Grille contenant les zones de la zone de base et du modificateur.](../images/monolineicon3.png)
+![Diagramme de la grille avec des zones de base et de modificateur dénommées](../images/monolineicon3.png)
 
 ### <a name="construction"></a>Construction
 
 #### <a name="element-placement"></a>Placement d’un élément
 
-Les éléments de base sont placés au centre de l’icône dans le remplissage. Si elle ne peut pas être placée comme étant parfaitement centrée, la base doit se présenter sous la partie supérieure droite. Dans l’exemple suivant, l’icône est parfaitement centrée :
+Les éléments de base sont placés au centre de l’icône dans le remplissage. Si elle ne peut pas être placée comme étant parfaitement centrée, la base doit se présenter sous la partie supérieure droite. Dans l’exemple suivant, l’icône est parfaitement centrée.
 
-![Image montrant une icône parfaitement centré](../images/monolineicon4.png)
+![Diagramme illustrant une icône parfaitement centrée](../images/monolineicon4.png)
 
 Dans l’exemple suivant, l’icône est erring vers la gauche.
 
-![Image illustrant une icône errs vers la gauche](../images/monolineicon5.png)
+![Diagramme illustrant une icône errs à gauche de 1 px](../images/monolineicon5.png)
 
 Les modificateurs sont presque toujours placés dans le coin inférieur droit de la zone de dessin icône. Dans certains cas rares, les modificateurs sont placés dans un coin différent. Par exemple, si l’élément base ne peut pas être reconnaissable avec le modificateur dans le coin inférieur droit, envisagez de le placer dans le coin supérieur gauche.
 
-![Image montrant quelques icônes avec le modificateur dans la partie inférieure droite, mais un autre avec le modificateur dans le coin supérieur gauche](../images/monolineicon6.png)
+![Diagramme montrant quatre icônes avec le modificateur en bas à droite et une icône avec le modificateur dans le coin supérieur gauche](../images/monolineicon6.png)
 
 #### <a name="padding"></a>Remplissage
 
-Chaque icône de taille possède une quantité spécifiée de remplissage entourant l’icône. L’élément base reste dans le remplissage, mais le modificateur doit se déplacer jusqu’au bord de la zone de dessin, en s’étendant en dehors du---de remplissage vers le bord de la bordure de l’icône. Les images suivantes montrent le remplissage recommandé à utiliser pour chaque taille d’icône.
+Chaque icône de taille possède une quantité spécifiée de remplissage entourant l’icône. L’élément base reste dans le remplissage, mais le modificateur doit se déplacer jusqu’au bord de la zone de dessin, en s’étendant en dehors du remplissage vers le bord de la bordure de l’icône. Les images suivantes montrent le remplissage recommandé à utiliser pour chaque taille d’icône.
 
 |**16px**|**20px**|**24px**|**32px**|**40px**|**48px**|**64px**|**80 px**|**96px**|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|
-|![icône 16 PX avec remplissage de 0 PX](../images/monolineicon7.png)|![icône 20 px avec remplissage de 1 px](../images/monolineicon8.png)|![icône 24 PX avec remplissage de 1 px](../images/monolineicon9.png)|![icône 32 PX avec remplissage de 2 PX](../images/monolineicon10.png)|![icône 40 PX avec remplissage de 2 PX](../images/monolineicon11.png)|![icône 48 px avec remplissage de 3 PX](../images/monolineicon12.png)|![icône 64 px avec remplissage de 4 PX](../images/monolineicon13.png)|![icône 80 PX avec remplissage de 5 PX](../images/monolineicon14.png)|![icône 96 PX avec remplissage de 6 PX](../images/monolineicon15.png)|
+|![icône 16 PX avec le remplissage 0px](../images/monolineicon7.png)|![icône 20 px avec remplissage 1 pixel](../images/monolineicon8.png)|![icône 24 PX avec remplissage 1 pixel](../images/monolineicon9.png)|![icône 32 PX avec remplissage "Medium](../images/monolineicon10.png)|![icône 40 PX avec remplissage "Medium](../images/monolineicon11.png)|![icône 48 px avec remplissage 3 pixels](../images/monolineicon12.png)|![icône 64 px avec remplissage 4px](../images/monolineicon13.png)|![icône 80 PX avec remplissage 5px](../images/monolineicon14.png)|![icône 96 PX avec remplissage 6px](../images/monolineicon15.png)|
 
 #### <a name="line-weights"></a>Épaisseurs de trait
 
 La numérotation monoligne est un style dominée par ligne et avec contour. En fonction de la taille que vous générez, l’icône doit utiliser les épaisseurs de trait suivantes.
 
-|**Taille de l’icône :**|**16px**|**20px**|**24px**|**32px**|**40px**|**48px**|**64px**|**80 px**|**96px**|
+|Taille de l’icône :|16px|20px|24px|32px|40px|48px|64px|80 px|96px|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|
 |**Épaisseur de trait :**|1px|1px|1px|1px|2px|2px|2px|2px|3px|
-||![icône 16 PX](../images/monolineicon16.png)|![icône 20 px](../images/monolineicon17.png)|![icône 24 PX](../images/monolineicon18.png)|![icône 32 PX](../images/monolineicon19.png)|![icône 40 PX](../images/monolineicon20.png)|![icône 48 px](../images/monolineicon21.png)|![icône 64 px](../images/monolineicon22.png)|![icône 80 PX](../images/monolineicon23.png)|![icône 96 PX](../images/monolineicon24.png)|
+|**Exemple d’icône :**|![icône 16 PX](../images/monolineicon16.png)|![icône 20 px](../images/monolineicon17.png)|![icône 24 PX](../images/monolineicon18.png)|![icône 32 PX](../images/monolineicon19.png)|![icône 40 PX](../images/monolineicon20.png)|![icône 48 px](../images/monolineicon21.png)|![icône 64 px](../images/monolineicon22.png)|![icône 80 PX](../images/monolineicon23.png)|![icône 96 PX](../images/monolineicon24.png)|
 
 #### <a name="cutouts"></a>Découpages
 
 Lorsqu’un élément Icon est placé au-dessus d’un autre élément, une découpe (de l’élément du bas) est utilisée pour fournir l’espace entre les deux éléments, principalement pour des raisons de lisibilité. Cela se produit généralement lorsqu’un modificateur est placé au-dessus d’un élément de base, mais il y a également des cas où aucun des éléments n’est un modificateur. Ces découpages entre les deux éléments sont parfois appelés « Gap ».
 
-La taille de l’écart doit être de la même largeur que l’épaisseur de trait utilisée sur cette taille. Si vous créez une icône 16px, la largeur de l’intervalle est 1 pixel et s’il s’agit d’une icône 48px, l’intervalle doit être "Medium. L’exemple suivant montre une icône des avec un intervalle de 1 pixel entre le modificateur et la base sous-jacente.
+La taille de l’écart doit être de la même largeur que l’épaisseur de trait utilisée sur cette taille. Si vous créez une icône de 16 PX, la largeur de l’intervalle sera 1 pixel et s’il s’agit d’une icône de 48 px, l’intervalle doit être "Medium. L’exemple suivant montre une icône 32 PX avec un intervalle de 1 pixel entre le modificateur et la base sous-jacente.
 
-![icône des avec un intervalle de 1 pixel entre le modificateur et la base sous-jacente](../images/monolineicon25.png)
+![icône 32 PX avec un intervalle de 1 pixel entre le modificateur et la base sous-jacente](../images/monolineicon25.png)
 
-Dans certains cas, l’écart peut être augmenté de 1/"Medium si le modificateur a une arête diagonale ou courbée et que l’intervalle standard ne fournit pas une séparation suffisante. Cela affectera probablement seulement les icônes avec 1 pixel épaisseur de trait ; 16px, 20px, des et des.
+Dans certains cas, l’écart peut être augmenté de 1/2 PX si le modificateur a une arête diagonale ou courbée et que l’intervalle standard ne fournit pas une séparation suffisante. Cela affectera probablement uniquement les icônes avec une épaisseur de trait 1 pixel : 16 PX, 20 px, 24 PX et 32 px.
 
 #### <a name="background-fills"></a>Remplissages d’arrière-plan
 
-La plupart des icônes du jeu d’icônes monolignes nécessitent des remplissages d’arrière-plan. Toutefois, dans certains cas, l’objet n’aura pas de remplissage naturellement, aucun remplissage ne doit donc être appliqué. Les icônes suivantes ont un remplissage blanc :
+La plupart des icônes du jeu d’icônes monolignes nécessitent des remplissages d’arrière-plan. Toutefois, dans certains cas, l’objet n’aura pas de remplissage naturellement, aucun remplissage ne doit donc être appliqué. Les icônes suivantes ont un remplissage blanc.
 
-![Cinq icônes ont un remplissage blanc](../images/monolineicon26.png)
+![Compilation de cinq icônes avec remplissage blanc](../images/monolineicon26.png)
 
-Les icônes suivantes n’ont pas de remplissage. (L’icône d’engrenage est incluse pour indiquer que le trou central n’est pas rempli.) ![Cinq icônes sans remplissage](../images/monolineicon27.png)
+Les icônes suivantes n’ont pas de remplissage. (L’icône d’engrenage est incluse pour indiquer que le trou central n’est pas rempli.)
+
+![Compilation de cinq icônes sans remplissage](../images/monolineicon27.png)
 
 ##### <a name="best-practices-for-fills"></a>Meilleures pratiques pour les remplissages
 
@@ -147,9 +149,9 @@ La palette de couleurs a été conçue pour des fins de simplicité et d’acces
 
 #### <a name="palette"></a>Texture
 
-![Les quatre nuances de gris en monoligne](../images/monoline-grayshades.png)
+![Les quatre nuances de gris en lignes monolignes : gris foncé pour le mode autonome ou le plan, gris moyen pour le plan ou le contenu, gris très clair pour le remplissage de l’arrière-plan et gris clair pour le remplissage](../images/monoline-grayshades.png)
 
-![Palette de couleurs sur une seule ligne](../images/monoline-colors.png)
+![La palette de couleurs en ligne comprend une nuance de bleu, de vert, de jaune, de rouge et de violet pour l’autonomie, le contour et le remplissage](../images/monoline-colors.png)
 
 #### <a name="how-to-use-color"></a>Utilisation de la couleur
 
@@ -161,7 +163,7 @@ Dans la palette de couleurs monolignes, toutes les couleurs ont des variantes au
 
 Voici des exemples d’utilisation de la couleur.
 
-![Trois icônes avec une couleur dans une bordure ou un remplissage ou les deux](../images/monolineicon28.png)
+![Compilation de trois icônes avec une couleur dans une bordure ou un remplissage ou les deux](../images/monolineicon28.png)
 
 La situation la plus courante consistera à utiliser un élément gris foncé avec remplissage d’arrière-plan.
 
@@ -174,20 +176,19 @@ Lorsque vous utilisez un remplissage coloré, il doit toujours être associé à
 
 La couleur doit être utilisée pour indiquer la signification de l’icône plutôt que pour l’ornement. Il doit **mettre en surbrillance l’action** pour l’utilisateur. Lorsqu’un modificateur est ajouté à un élément de base avec une couleur, l’élément de base est généralement transformé en gris foncé et remplissage d’arrière-plan de sorte que le modificateur puisse être l’élément de couleur, comme le cas ci-dessous avec le modificateur « X » ajouté à la base de l’image dans l’icône la plus à gauche du jeu suivant.
 
-![Cinq icônes qui utilisent la couleur](../images/monolineicon29.png)
+![Compilation de cinq icônes qui utilisent la couleur](../images/monolineicon29.png)
 
 Vous devez limiter vos icônes à **une** couleur supplémentaire, autre que le contour et le remplissage mentionnés ci-dessus. Toutefois, il est possible d’utiliser davantage de couleurs s’il est vital pour sa métaphore, avec une limite de deux couleurs supplémentaires autres que le gris. Dans de rares cas, il existe des exceptions lorsque des couleurs supplémentaires sont nécessaires. Voici des exemples intéressants d’icônes qui n’utilisent qu’une seule couleur.
 
-  ![Image de cinq icônes avec une couleur chacune](../images/monolineicon30.png)
+  ![Compilation de cinq icônes qui utilisent chacune une couleur](../images/monolineicon30.png)
 
 Toutefois, les icônes suivantes utilisent trop de couleurs.
 
-  ![Image de cinq icônes avec plusieurs couleurs](../images/monolineicon31.png)
-
+  ![Compilation de cinq icônes qui utilisent chacune plusieurs couleurs](../images/monolineicon31.png)
 
 Utiliser le **gris moyen** pour le « contenu » intérieur, comme le quadrillage dans une icône d’une feuille de calcul. Des couleurs d’intérieur supplémentaires sont utilisées lorsque le contenu doit afficher le comportement du contrôle.
 
-![Cinq icônes avec des éléments intérieurs de gris moyen](../images/monolineicon32.png)
+![Compilation de cinq icônes avec des éléments intérieurs de gris moyen](../images/monolineicon32.png)
 
 #### <a name="text-lines"></a>Lignes de texte
 

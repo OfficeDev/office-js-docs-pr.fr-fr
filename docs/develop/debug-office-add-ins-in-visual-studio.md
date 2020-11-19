@@ -3,16 +3,16 @@ title: Déboguer des compléments Office dans Visual Studio
 description: Utiliser Visual Studio pour déboguer des compléments Office dans le client de bureau Office sous Windows
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 7c49e3019c22af0b5d44a382b33187e5d2de4ceb
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 1de4ead92cb26ba68663d9473ad26c40a3c83459
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430477"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131884"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Déboguer des compléments Office dans Visual Studio
 
-Cet article décrit comment utiliser Visual Studio 2019 pour déboguer un complément Office dans le client de bureau Office sur Windows. Si vous utilisez une autre version de Visual Studio, les procédures peuvent légèrement varier. 
+Cet article décrit comment utiliser Visual Studio 2019 pour déboguer un complément Office dans le client de bureau Office sur Windows. Si vous utilisez une autre version de Visual Studio, les procédures peuvent légèrement varier.
 
 > [!NOTE]
 > Vous ne pouvez pas utiliser Visual Studio pour déboguer des compléments Office dans Office sur le web ou sur Mac. Pour plus d’informations sur le débogage sur ces plateformes, voir [Déboguer les compléments Office dans Office sur le web](../testing/debug-add-ins-in-office-online.md) ou [Déboguer les compléments Office sur Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md).
@@ -39,7 +39,7 @@ Ouvrir la fenêtre **Propriétés** pour le projet complément pour examiner les
 
 Le tableau suivant décrit les propriétés du projet de complément.
 
-|**Propriété**|**Description**|
+|Propriété|Description|
 |:-----|:-----|
 |**Action de démarrage**|Spécifie le mode de débogage pour votre complément. Actuellement, seul le mode **Client Office pour bureau** est pris en charge pour les projets complément Office.|
 |**Document de démarrage**<br/>(Compléments Excel, PowerPoint et Word uniquement)|Spécifie le document à ouvrir lors du démarrage du projet.|
@@ -53,11 +53,11 @@ Le tableau suivant décrit les propriétés du projet de complément.
 |**Dossier du projet**|Emplacement du fichier de projet.|
 
 > [!NOTE]
-> Pour un complément Outlook, vous pouvez choisir de spécifier des valeurs pour une ou plusieurs des propriétés du*complément Outlook uniquement*dans la fenêtre**propriétés**, mais cette opération n’est pas obligatoire.
+> Pour un complément Outlook, vous pouvez choisir de spécifier des valeurs pour une ou plusieurs des propriétés du *complément Outlook uniquement* dans la fenêtre **propriétés**, mais cette opération n’est pas obligatoire.
 
 ### <a name="web-application-project-properties"></a>Propriétés du projet application Web
 
-Ouvrir la fenêtre**Propriétés** pour le projet complément web pour examiner les propriétés du projet :
+Ouvrir la fenêtre **Propriétés** pour le projet complément web pour examiner les propriétés du projet :
 
 1. Dans l' **Explorateur de solutions**, choisissez le projet d’application Web.
 
@@ -65,7 +65,7 @@ Ouvrir la fenêtre**Propriétés** pour le projet complément web pour examiner 
 
 Le tableau suivant décrit les propriétés du projet d’application web qui sont les plus pertinentes aux projets complément Office.
 
-|**Propriété**|**Description**|
+|Propriété|Description|
 |:-----|:-----|
 |**SSL activé**|Spécifie si SSL est activé sur le site. Cette propriété doit être définie sur **vrai** pour les projets complément Office.|
 |**URL SSL**|Spécifie l’URL HTTPS sécurité pour le site. Lecture seule.|
@@ -83,13 +83,13 @@ Si vous avez un document qui contient les données de test à utiliser pendant l
 
 3. Dans la boîte de dialogue **Ajouter un élément existant**, recherchez et sélectionnez le document que vous souhaitez ajouter.
 
-4. Choisissez le bouton**Ajouter** pour ajouter le document à votre projet.
+4. Choisissez le bouton **Ajouter** pour ajouter le document à votre projet.
 
 5. Dans **l’Explorateur de solutions**, choisissez le projet de complément (*pas* le projet d’application web).
 
 6. Dans la barre de menu, choisissez **Affichage** > **Fenêtre Propriétés**.
 
-7. Dans la fenêtre**propriétés**, choisissez la liste**Document de démarrage** et sélectionnez le document que vous avez ajouté au projet. Le projet est désormais configuré pour démarrer le complément dans ce document.
+7. Dans la fenêtre **propriétés**, choisissez la liste **Document de démarrage** et sélectionnez le document que vous avez ajouté au projet. Le projet est désormais configuré pour démarrer le complément dans ce document.
 
 ## <a name="start-the-project"></a>Démarrer le projet
 
@@ -125,11 +125,11 @@ Pour réviser les règles de validation du fichier manifeste XML dans votre proj
 
 ## <a name="debug-the-code-for-an-excel-powerpoint-or-word-add-in"></a>Déboguer le code d’un complément Excel, PowerPoint ou Word
 
-Si votre complément n’est pas visible dans le document qui est affiché dans l’application Office (Excel, PowerPoint ou Word) après [le démarrage du projet](#start-the-project), lancez manuellement le complément dans l’application Office. Par exemple, démarrez votre complément volet tâche en choisissant le bouton**Afficher le volet de tâches** dans l’onglet **Accueil**. Une fois que votre complément est affiché dans Excel, PowerPoint ou Word, vous pouvez déboguer votre code en procédant comme suit :
+Si votre complément n’est pas visible dans le document qui est affiché dans l’application Office (Excel, PowerPoint ou Word) après [le démarrage du projet](#start-the-project), lancez manuellement le complément dans l’application Office. Par exemple, démarrez votre complément volet tâche en choisissant le bouton **Afficher le volet de tâches** dans l’onglet **Accueil**. Une fois que votre complément est affiché dans Excel, PowerPoint ou Word, vous pouvez déboguer votre code en procédant comme suit :
 
 1. Dans Excel, PowerPoint ou Word, sélectionnez l’onglet **insérer**, puis cliquez sur la flèche vers le bas située à droite de **Mes compléments**.
 
-    ![Insérer du ruban dans Excel pour Windows avec la flèche Mes compléments mise en évidence](../images/excel-cf-register-add-in-1b.png)
+    ![Capture d’écran illustrant l’insertion d’un ruban dans Excel sur Windows avec la flèche mes compléments mise en surbrillance](../images/excel-cf-register-add-in-1b.png)
 
 2. Dans la liste des compléments disponibles, recherchez la section **Compléments développeur** et sélectionnez votre complément pour effectuer cette opération.
 
@@ -139,7 +139,7 @@ Si votre complément n’est pas visible dans le document qui est affiché dans 
 
 5. Lorsque des points d’arrêt sont marqués dans Visual Studio, parcourez le code si besoin.
 
-Vous pouvez modifier votre code et passer en revue les effets de ces modifications dans votre complément sans avoir à fermer l’application Office et redémarrer le projet. Une fois que vous avez enregistré les modifications apportées à votre code, rechargez simplement le complément dans l’application Office. Par exemple, rechargez un complément de volet de tâches en choisissant le coin supérieur droit du volet Office pour activer la [menu personnalisé](../design/task-pane-add-ins.md#personality-menu), puis**Recharger**.
+Vous pouvez modifier votre code et passer en revue les effets de ces modifications dans votre complément sans avoir à fermer l’application Office et redémarrer le projet. Une fois que vous avez enregistré les modifications apportées à votre code, rechargez simplement le complément dans l’application Office. Par exemple, rechargez un complément de volet de tâches en choisissant le coin supérieur droit du volet Office pour activer la [menu personnalisé](../design/task-pane-add-ins.md#personality-menu), puis **Recharger**.
 
 ## <a name="debug-the-code-for-an-outlook-add-in"></a>Déboguer le code d’un complément Outlook
 

@@ -3,12 +3,12 @@ title: Utiliser l’API de boîte de dialogue Office dans vos compléments Offic
 description: Découvrez les concepts de base de la création d’une boîte de dialogue dans un complément Office.
 ms.date: 10/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 1aa7a306402885f37d1cf07010eb43958407bf0f
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 56c12aa5b15f8f79273923402c5a5bfa92a2dde8
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741084"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131758"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Utiliser l’API de boîte de dialogue Office dans les compléments Office
 
@@ -30,7 +30,7 @@ Envisagez d’ouvrir une boîte de dialogue à partir d’un volet Office, d’u
 
 L’image suivante montre un exemple de boîte de dialogue.
 
-![Commandes de complément](../images/auth-o-dialog-open.png)
+![Capture d’écran montrant la boîte de dialogue avec 3 options de connexion affichées devant Word](../images/auth-o-dialog-open.png)
 
 Notez que la boîte de dialogue s’ouvre toujours au centre de l’écran. L’utilisateur peut la déplacer et la redimensionner. La fenêtre n’est pas *modale*: un utilisateur peut continuer à interagir avec le document dans l’application Office et avec la page dans le volet Office, le cas échéant.
 
@@ -47,7 +47,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 ```
 
 > [!NOTE]
-> - L’URL utilise le protocole HTTP**S**. Ceci est obligatoire pour toutes les pages chargées dans une boîte de dialogue, pas seulement la première page chargée.
+> - L’URL utilise le protocole HTTP **S**. Ceci est obligatoire pour toutes les pages chargées dans une boîte de dialogue, pas seulement la première page chargée.
 > - Le domaine de la boîte de dialogue est le même que celui de la page hôte, qui peut être la page d’un volet Office ou le [fichier de fonctions](../reference/manifest/functionfile.md) d’une commande de complément. Obligatoire : la page, la méthode du contrôleur ou toute autre ressource qui est transmise à la méthode `displayDialogAsync` doit se trouver dans le même domaine que la page hôte.
 
 > [!IMPORTANT]
@@ -98,9 +98,8 @@ if (loginSuccess) {
 
 > [!IMPORTANT]
 > - La fonction `messageParent` peut uniquement être appelée sur une page ayant le même domaine (y compris les mêmes protocole et port) que la page hôte.
-> - La `messageParent` fonction est l’une des deux *seules* deux API Office js qui peuvent être appelées dans la boîte de dialogue. 
+> - La `messageParent` fonction est l’une des deux *seules* deux API Office js qui peuvent être appelées dans la boîte de dialogue.
 > - L’autre API JS qui peut être appelée dans la boîte de dialogue est `Office.context.requirements.isSetSupported` . Pour plus d’informations à ce sujet, voir [spécifier les applications Office et les conditions requises](specify-office-hosts-and-api-requirements.md)de l’API. Toutefois, dans la boîte de dialogue, cette API n’est pas prise en charge dans l’achat d’Outlook 2016 1 à l’heure (autrement dit, la version MSI).
-
 
 Dans l’exemple suivant, `googleProfile` est une version convertie en chaîne du profil Google de l’utilisateur.
 
