@@ -1,15 +1,15 @@
 ---
-ms.date: 07/10/2020
+ms.date: 11/09/2020
 description: Développement de fonctions personnalisées dans le Guide de démarrage rapide d’Excel.
 title: Démarrage rapide des fonctions personnalisées
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: adf420618ff744a409c6fc61af9b854f786055c0
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: ae8176b030e7542b22c62998311fd598f2191ffd
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159443"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132353"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Prise en main du développement des fonctions personnalisées Excel
 
@@ -36,7 +36,7 @@ Pour commencer, vous utiliserez le Yeoman Générateur pour créer le projet de 
     - **Sélectionnez un type de script :** `JavaScript`
     - **Comment souhaitez-vous nommer votre complément ?** `starcount`
 
-    ![Le générateur de yeoman pour les compléments Office vous invite pour les fonctions personnalisées](../images/starcountPrompt.png)
+    ![Capture d’écran des invites d’interface de ligne de commande du générateur de compléments Yeoman Office pour les projets de fonctions personnalisées](../images/starcountPrompt.png)
 
     Le générateur crée le projet et installe les composants Node.js de la prise en charge.
 
@@ -77,19 +77,19 @@ Pour utiliser votre complément de fonctions personnalisées, ouvrez un nouveau 
 
 1. Dans Excel, sélectionnez l’onglet **Insertion**, puis **Compléments**.
 
-   ![Ruban Insertion dans Excel sur le web avec l’icône Mes compléments mise en évidence](../images/excel-cf-online-register-add-in-1.png)
+   ![Capture d’écran du ruban Insertion dans Excel sur le web, avec le bouton Mes compléments mise en évidence](../images/excel-cf-online-register-add-in-1.png)
    
-2. Sélectionnez**Gérer mes Compléments** et sélectionnez **Télécharger mon complément**.
+2. Sélectionnez **Gérer mes Compléments** et sélectionnez **Télécharger mon complément**.
 
-3. Sélectionnez **Parcourir... ** et accédez au répertoire racine du projet créé par le Générateur de Yo Office.
+3. Sélectionnez **Parcourir...** et accédez au répertoire racine du projet créé par le Générateur de Yo Office.
 
-4. Sélectionnez le fichier**manifest.xml** puis sélectionnez**Ouvrir**, puis sélectionnez **Télécharger**.
+4. Sélectionnez le fichier **manifest.xml** puis sélectionnez **Ouvrir**, puis sélectionnez **Télécharger**.
 
 ---
 
 ## <a name="try-out-a-prebuilt-custom-function"></a>Essayer une fonction personnalisée prédéfinie
 
-Le projet de fonctions personnalisées que vous avez crées en utilisant le générateur Yeoman contient certaines fonctions personnalisées prédéfinies, définies dans le fichier **./src/functions/functions.js**. Le fichier **./manifest.xml**dans le répertoire racine du projet indique que toutes les fonctions personnalisées appartiennent à l’ `CONTOSO` espace de noms.
+Le projet de fonctions personnalisées que vous avez crées en utilisant le générateur Yeoman contient certaines fonctions personnalisées prédéfinies, définies dans le fichier **./src/functions/functions.js**. Le fichier **./manifest.xml** dans le répertoire racine du projet indique que toutes les fonctions personnalisées appartiennent à l’ `CONTOSO` espace de noms.
 
 Dans votre classeur Excel, essayez de reproduire la`ADD` fonction personnalisée en complétant les étapes suivantes :
 
