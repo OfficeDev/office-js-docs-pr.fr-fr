@@ -4,18 +4,18 @@ description: Découvrez comment créer un complément de volet des tâches Power
 ms.date: 10/14/2020
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: e2720ce1c894f2692e797c5c1ae76c09fb3d5d72
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 47ca14b4dd8ab67ffc20551b1e13ca62cc75ee34
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741196"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132360"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>Créer votre premier complément de volet de tâches PowerPoint
 
 Dans cet article, vous découvrirez comment créer un complément de volet de tâches PowerPoint.
 
-## <a name="create-the-add-in"></a>Créer le complément 
+## <a name="create-the-add-in"></a>Créer le complément
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
@@ -37,9 +37,9 @@ Dans cet article, vous découvrirez comment créer un complément de volet de t�
 - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `PowerPoint`
 
-![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yo-office-powerpoint.png)
+![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande](../images/yo-office-powerpoint.png)
 
-Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
+Après avoir exécuté l’Assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -110,7 +110,7 @@ Félicitations, vous avez créé un complément de volet de tâches PowerPoint 
 4. Dans la fenêtre de la boîte de dialogue **Créer un complément Office**, choisissez **Ajouter de nouvelles fonctionnalités à PowerPoint**, puis sélectionnez **Terminer** pour créer le projet.
 
 5. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
-    
+
 ### <a name="explore-the-visual-studio-solution"></a>Explorer la solution Visual Studio
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
@@ -118,7 +118,7 @@ Félicitations, vous avez créé un complément de volet de tâches PowerPoint 
 ### <a name="update-the-code"></a>Mise à jour du code
 
 1. **Home.html** spécifie le code HTML qui s’affichera dans le volet Office du complément. Dans **Home.html**, remplacez l’élément `<body>` par le balisage suivant et enregistrez le fichier.
- 
+
     ```html
     <body class="ms-font-m ms-welcome">
         <div id="content-header">
@@ -246,7 +246,7 @@ Félicitations, vous avez créé un complément de volet de tâches PowerPoint 
 
 3. Dans le volet Office, sélectionnez le bouton **Insérer une Image** pour ajouter une image à la diapositive sélectionnée.
 
-    ![Capture d’écran de PowerPoint avec l’image d’un chien affichée sur la diapositive](../images/powerpoint_quickstart_addin_2.png)
+    ![Capture d’écran de PowerPoint avec l’image d’un chien sur la diapositive](../images/powerpoint_quickstart_addin_2.png)
 
 4. Dans le volet Office, sélectionnez le bouton **Insérer du texte** pour ajouter du texte à la diapositive sélectionnée.
 
@@ -262,5 +262,5 @@ Félicitations, vous avez créé un complément de volet de tâches PowerPoint 
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
-* [Développement de compléments Office](../develop/develop-overview.md)
+- [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
+- [Développement de compléments Office](../develop/develop-overview.md)
