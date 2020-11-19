@@ -4,12 +4,12 @@ description: Découvrez comment partager des données et des événements entre 
 ms.date: 08/13/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 02cd2269965019efb4b9ac9851103924e6c5cc2c
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 0def8178a06231a866bbb87573f936314ac064f1
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819629"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131779"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office
 
@@ -23,15 +23,15 @@ Ce didacticiel part du principe que vous avez l’habitude d’utiliser le gén�
 
 Utilisez le générateur Yeoman pour créer un projet de complément Excel. Exécutez la commande suivante, puis répondez aux invites avec les réponses suivantes :
 
-```command line
+```command line
 yo office
 ```
 
 - Choose a project type (Choisissez un type de projet) : **projet de complément Fonctions personnalisées Excel**
 - Choose a script type (Choisissez un type de script) :  **JavaScript**
-- What do you want to name your add-in? (Comment souhaitez-vous nommer votre complément ?)  **My Office Add-in**
+- Comment voulez-vous nommer votre complément ? **Mon complément Office**
 
-![Capture d’écran de réponse aux invites à partir d’Office pour créer le projet de complément.](../images/yo-office-excel-project.png)
+![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande](../images/yo-office-excel-project.png)
 
 Après avoir exécuté l’Assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -96,7 +96,7 @@ Après avoir exécuté l’Assistant, le générateur crée le projet et install
 
 8. Enregistrez vos changements et regénérez le projet.
 
-   ```command line
+   ```command line
    npm run build
    ```
 
@@ -200,7 +200,7 @@ Après avoir exécuté l’Assistant, le générateur crée le projet et install
 5. Enregistrez le fichier.
 6. Générez le projet.
 
-   ```command line
+   ```command line
    npm run build
    ```
 
@@ -208,7 +208,7 @@ Après avoir exécuté l’Assistant, le générateur crée le projet et install
 
 - Démarrez le projet à l’aide de la commande suivante.
 
-  ```command line
+  ```command line
   npm run start
   ```
 
